@@ -1,0 +1,110 @@
+"""Cấu trúc tích hợp cả 5 chặng của buổi học — khóa cứng giữa AI và template Jinja2.
+
+AI chỉ tạo ra dữ liệu theo schema này (đề + lời giải + bố cục khối nội dung),
+TUYỆT ĐỐI không tạo mã LaTeX giao diện. Khối nội dung được dựng từ các Block
+nguyên thủy; chỗ trống cho HS điền dùng token [[blank]] / [[mblank:W]] trong text,
+do renderer dịch sang lệnh LaTeX an toàn (xem src/compiler/jinja_renderer.py).
+"""
+from __future__ import annotations
+
+from typing import Literal, Union
+
+from pydantic import BaseModel, Field
+
+# ----- Các Block nội dung nguyên thủy (discriminated union theo 'type') -----
+
+
+class ParaBlock(BaseModel):
+    type: Literal["para"] = "para"
+    text: str = Field(..., description="Đoạn văn; cho phép $...$ và token [[blank]]")
+
+
+class MathBlock(BaseModel):
+    type: Literal["math"] = "math"
+    latex: str = Field(..., description="Công thức hiển thị giữa dòng (không kèm $$)")
+
+
+class NotedBlock(BaseModel):
+    type: Literal["noted"] = "noted"
+    text: str = Field(..., description="Nội dung trong hộp nền xám (vd ô điền khuyết)")
+
+
+class WriteLinesBlock(BaseModel):
+    type: Literal["writelines"] = "writelines"
+    count: int = Field(2, ge=1, le=12, description="Số dòng kẻ trống cho HS viết")
+
+
+class ProblemBlock(BaseModel):
+    type: Literal["problem"] = "problem"
+    label: str = Field(..., description="Nhãn, vd 'Bài 1.' / 'Bài toán.'")
+    statement: str = Field(..., description="Đề bài (LaTeX inline cho phép)")
+    # Tầng bài (hỗ trợ gradient gate + nhãn): "" | onclass | btvn | extend.
+    tier: Literal["", "onclass", "btvn", "extend"] = Field(
+        "", description="onclass=trên lớp, btvn=về nhà, extend=mở rộng/nâng cao"
+    )
+    # Gợi ý phân tầng "mở khi bí" — IN TRÊN PHIẾU HS (định hướng, KHÔNG phải lời
+    # giải). Hạ ngưỡng nhập cho bài khó mà không lộ đáp án (lời giải vẫn ở solution).
+    hints: list[str] = Field(
+        default_factory=list, description="Gợi ý mở dần, mỗi phần tử một gợi ý; cho phép $...$ và [[blank]]"
+    )
+
+
+class MindmapNode(BaseModel):
+    """Một nút trong sơ đồ tư duy điền khuyết. label có thể chứa [[blank:W]] để HS điền."""
+    label: str = Field(..., description="Nhãn nút; cho phép $...$ và token [[blank]] để chừa chỗ điền")
+    children: list["MindmapNode"] = Field(default_factory=list)
+
+
+class MindmapBlock(BaseModel):
+    """Sơ đồ tư duy điền khuyết — khung kiến thức bài học, HS điền các nút trống.
+
+    AI/Thầy chỉ khai báo cây (root + branches), renderer dựng TikZ/forest.
+    Dùng trong reflection thay cho ô tự chấm nhàm. size='large' cho phiếu tổng kết
+    cả chương (Phase 2)."""
+    type: Literal["mindmap"] = "mindmap"
+    root: str = Field(..., description="Nhãn nút gốc (trung tâm sơ đồ)")
+    branches: list[MindmapNode] = Field(default_factory=list)
+    caption: str = Field("", description="Chú thích nhỏ phía trên sơ đồ, vd 'Điền các ô trống'")
+    size: Literal["small", "large"] = Field("small", description="small=trong phiếu; large=phiếu tổng kết chương")
+
+
+MindmapNode.model_rebuild()
+
+Block = Union[ParaBlock, MathBlock, NotedBlock, WriteLinesBlock, ProblemBlock, MindmapBlock]
+
+# ----- Chặng & gói bài học -----
+
+StageKind = Literal["review", "concept", "practice1", "practice2", "reflection"]
+
+
+class Stage(BaseModel):
+    kind: StageKind
+    number: int = Field(..., ge=1, le=5)
+    title: str
+    blocks: list[Block] = Field(default_factory=list)
+    # Hai field dưới chỉ in trong Sổ tay GV (guide.pdf). Mặc định rỗng để
+    # tương thích ngược với JSON cũ — handout/slide bỏ qua hoàn toàn.
+    solution: str = Field("", description="Lời giải đầy đủ của chặng (chỉ hiện ở Guide, đỏ trầm)")
+    teacher_note: str = Field("", description="Mẹo sư phạm điều phối chặng (chỉ hiện ở Guide)")
+
+
+class LessonPackage(BaseModel):
+    slug: str = Field(..., description="Định danh không dấu, dùng đặt tên thư mục outputs/")
+    title: str
+    eyebrow: str = Field("", description="Dòng nhỏ trên tiêu đề, vd 'ĐẠI SỐ — KỸ THUẬT XÉT HIỆU'")
+    grade_label: str = Field("", description="vd 'Lớp 9 • Ôn vào 10'")
+    stages: list[Stage] = Field(default_factory=list)
+
+
+class ChapterSummary(BaseModel):
+    """Phiếu TỔNG KẾT CHƯƠNG (1 trang) — gom nhiều phiếu của một chương/tuần thành
+    MỘT sơ đồ tư duy to (size large) cho HS điền. Là artifact riêng, sinh sau khi
+    các phiếu thành viên đã có. Render bằng base_summary.tex.j2 (xem renderer)."""
+    slug: str = Field(..., description="Định danh không dấu, đặt tên thư mục outputs/")
+    title: str
+    eyebrow: str = Field("", description="Dòng nhỏ trên tiêu đề, vd 'ĐẠI SỐ — TỔNG KẾT CHƯƠNG'")
+    grade_label: str = Field("", description="vd 'Lớp 9 • Ôn vào 10'")
+    intro: str = Field("", description="1–2 câu dẫn; cho phép $...$ và [[br]]")
+    lessons: list[str] = Field(default_factory=list, description="slug các phiếu thành viên (tham chiếu)")
+    mindmap: MindmapBlock = Field(..., description="Sơ đồ tư duy to gom cả chương (size='large')")
+    solution: str = Field("", description="Đáp án các ô trống — CHỈ in ở bản GV")

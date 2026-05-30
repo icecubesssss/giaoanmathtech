@@ -1,0 +1,70 @@
+% SLIDE TRÌNH CHIẾU (16:9) — sinh tự động, không sửa tay.
+% Mỗi chặng = 1 frame (tự bẻ trang nếu dài). Font sans to, toán STIX.
+\documentclass[aspectratio=169,11pt]{beamer}
+
+((* include "preamble/_beamer.tex.j2" *))
+
+((* import "_slide_blocks.j2" as SB with context *))
+
+\begin{document}
+
+% --- Slide tiêu đề ---
+\watermarkfalse
+\begin{frame}[plain]
+  % TikZ background for cover slide
+  \begin{tikzpicture}[remember picture,overlay]
+    % Left decorative band (brand red)
+    \fill[color=brand] (current page.north west) rectangle ([xshift=0.3in]current page.south west);
+    % Muted ink stripe next to it
+    \fill[color=ink] ([xshift=0.3in]current page.north west) rectangle ([xshift=0.33in]current page.south west);
+    % Top-left logo
+    \node[anchor=north west, xshift=0.6in, yshift=-0.4in] at (current page.north west) {
+      \includegraphics[height=28pt]{/Users/admin/Library/CloudStorage/OneDrive-lovenhu/Code/giaoan/assets/Logo4.png}
+    };
+  \end{tikzpicture}
+  
+  \vfill
+  \begin{flushleft}
+    \hspace*{0.4in}
+    \begin{minipage}{0.8\textwidth}
+      \vspace*{0.3in}
+      ((* if lesson.eyebrow *))
+      {\color{brand}\sffamily\bfseries\normalsize ((( lesson.eyebrow | upper )))}\par\vspace{8pt}
+      ((* endif *))
+      {\bfseries\Huge\color{ink}((( lesson.title | upper )))}\par\vspace{12pt}
+      {\color{brand}\rule{120pt}{3pt}}\par\vspace{12pt}
+      ((* if lesson.grade_label *))
+      \hspace{2pt}{\color{muted}\large\sffamily ((( lesson.grade_label )))}\par
+      ((* endif *))
+      \vspace{10pt}\hspace{2pt}{\color{muted}\normalsize\sffamily Biên soạn: \textbf{Thầy Thái MathTech} • 0386969199}\par
+    \end{minipage}
+  \end{flushleft}
+  \vfill
+\end{frame}
+\watermarktrue
+
+% --- 5 chặng (reflection tách thêm 2 frame phụ: BTVN, Mở rộng) ---
+((* for stage in lesson.stages *))
+((* if stage.kind == "reflection" *))
+((* set parts = split_reflection(stage.blocks) *))
+\begin{frame}[allowframebreaks]{((( stage.number ))). ((( stage.title )))}
+((( SB.render_blocks(parts.tong_ket) )))
+\end{frame}
+((* if parts.btvn *))
+\begin{frame}[allowframebreaks]{Bài tập về nhà}
+((( SB.render_blocks(parts.btvn) )))
+\end{frame}
+((* endif *))
+((* if parts.mo_rong *))
+\begin{frame}[allowframebreaks]{Bài tập mở rộng (tự chọn)}
+((( SB.render_blocks(parts.mo_rong) )))
+\end{frame}
+((* endif *))
+((* else *))
+\begin{frame}[allowframebreaks]{((( stage.number ))). ((( stage.title )))}
+((( SB.render_blocks(stage.blocks) )))
+\end{frame}
+((* endif *))
+((* endfor *))
+
+\end{document}

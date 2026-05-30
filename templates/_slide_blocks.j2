@@ -1,0 +1,21 @@
+((= Macro dựng Block cho Slide TV. Khác handout: bỏ dòng kẻ viết tay (writelines),
+    không có lời giải. Token [[blank]]/[[mblank]] do filter `tex` xử lý. =))
+((* macro render_block(b) *))
+((* if b.type == "para" *))
+((( b.text | tex )))
+\par\medskip
+((* elif b.type == "math" *))
+\[ ((( b.latex | tex ))) \]
+((* elif b.type == "noted" *))
+\begin{block}{}((( b.text | tex )))\end{block}
+\medskip
+((* elif b.type == "problem" *))
+{\bfseries\color{brand}((( b.label | tex )))}\; ((( b.statement | tex )))
+\par\medskip
+((* endif *))
+((= writelines: bỏ qua trên slide =))
+((* endmacro *))
+
+((* macro render_blocks(blocks) *))
+((* for b in blocks *))((( render_block(b) )))((* endfor *))
+((* endmacro *))

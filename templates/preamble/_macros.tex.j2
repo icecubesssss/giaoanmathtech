@@ -1,0 +1,93 @@
+% Linh kiện giao diện dùng chung (bất biến đối với AI) — Design System Mục III
+\usepackage{enumitem}
+\usepackage{ragged2e}
+\usepackage{fancyhdr}
+\usepackage[most]{tcolorbox}
+\usepackage{amsmath}
+\usepackage{tabularx}
+\usepackage[edges]{forest}
+
+
+% Dấu QED \square — STIX Two Math (unicode-math) không nạp sẵn ký hiệu này;
+% định nghĩa lại bằng hộp rỗng để lời giải Ground Truth dùng \square không vỡ.
+\providecommand{\square}{\ensuremath{\mathord{\hbox{\framebox[1.25ex]{\rule{0pt}{0.95ex}}}}}}
+
+% Huy hiệu số chặng (badge tròn, đồng nhất)
+\newcommand{\stagebadge}[1]{%
+  \tikz[baseline=(c.base)]{\node[circle,fill=brand,text=white,inner sep=0pt,
+    minimum size=22pt,font=\sffamily\bfseries\small](c){#1};}}
+
+% Dòng "eyebrow" nhận diện chặng (sắc độ brand, chữ sans nhỏ)
+\newcommand{\stageeyebrow}[1]{{\sffamily\footnotesize\color{brand}\textbf{#1}}\par\vspace{2pt}}
+
+% Khối CHẶNG — thanh nhấn trái, bo nhẹ
+\newtcolorbox{stage}[2]{
+  enhanced, breakable, colback=white, colframe=brand,
+  boxrule=0pt, arc=3pt, outer arc=3pt,
+  top=10pt,bottom=10pt,left=14pt,right=14pt, boxsep=0pt,
+  borderline west={3pt}{0pt}{brand},
+  overlay unbroken and first={
+    \node[anchor=north west,xshift=14pt,yshift=-9pt] at (frame.north west)
+      {\stagebadge{#1}\hspace{8pt}\raisebox{4pt}{\sffamily\bfseries\large\color{ink}#2}}; },
+  before upper={\vspace{28pt}} }
+
+% Hộp "kiến thức điền khuyết"
+\newtcolorbox{noted}{enhanced, colback=neutral, colframe=rule, boxrule=0.5pt, arc=3pt,
+  top=8pt,bottom=8pt,left=12pt,right=12pt }
+
+% Banner MỤC PHỤ (BTVN / Bài tập mở rộng) — tách hẳn khỏi hộp chặng đánh số.
+% Một thanh nền brand, chữ trắng, full width; đứng riêng ngoài hộp \begin{stage}.
+\newcommand{\worksheetsection}[1]{%
+  \par\addvspace{13pt}\noindent
+  \colorbox{brand}{\makebox[\dimexpr\linewidth-2\fboxsep\relax][l]{%
+    \sffamily\bfseries\color{white}\strut #1}}%
+  \par\addvspace{7pt}%
+}
+
+% Chỗ trống cho HS điền (dòng kẻ mảnh)
+\newcommand{\blank}[1][5cm]{\tikz[baseline]{\draw[rule,line width=.6pt,dotted](0,0)--(\dimexpr#1-2pt,0);}}
+\newcommand{\fillline}{\par\nointerlineskip\vspace{7pt}\noindent\blank[\dimexpr\linewidth-8pt]}
+
+% Hộp "gợi ý mở khi bí" cho bài khó — hạ ngưỡng nhập, KHÔNG phải lời giải.
+\newtcolorbox{hintbox}{enhanced, breakable, colback=brand!3, colframe=brand!35,
+  boxrule=0.4pt, arc=2pt, top=4pt,bottom=4pt,left=10pt,right=10pt,
+  fontupper=\small, before=\vspace{3pt}}
+
+% Sơ đồ tư duy điền khuyết — style chung cho forest (nút bo, viền brand, nút gốc nổi).
+\forestset{
+  mindmap/.style={
+    for tree={
+      draw=brand!50, rounded corners=2pt, line width=0.5pt,
+      font=\sffamily\footnotesize, align=left, inner sep=3pt,
+      fill=neutral, edge={brand!45, line width=0.6pt},
+      grow'=0, parent anchor=east, child anchor=west, anchor=west,
+      l sep=14pt, s sep=5pt,
+    },
+    where level=0{fill=brand!12, draw=brand, font=\sffamily\bfseries\footnotesize}{},
+    forked edges,
+  },
+}
+
+% --- Linh kiện riêng cho Sổ tay GV (guide.pdf) ---
+% Hộp LỜI GIẢI: viền + nhãn đỏ trầm (brand), chữ giải cũng đỏ trầm để tách khỏi đề.
+\newtcolorbox{solutionbox}{enhanced, breakable, colback=brand!4, colframe=brand,
+  boxrule=0.5pt, arc=3pt, top=7pt,bottom=7pt,left=12pt,right=12pt,
+  fonttitle=\sffamily\bfseries\small\color{white},
+  coltitle=white, colbacktitle=brand, attach boxed title to top left={xshift=10pt,yshift=-8pt},
+  boxed title style={arc=2pt,boxrule=0pt}, title={LỜI GIẢI}}
+\newcommand{\solutiontext}[1]{{\color{brand}#1}}
+
+% Hộp MẸO SƯ PHẠM: nền trung tính, nhãn mực than — GV đọc nhanh trước giờ lên lớp.
+\newtcolorbox{tipbox}{enhanced, breakable, colback=neutral, colframe=ink!55,
+  boxrule=0.5pt, arc=3pt, top=7pt,bottom=7pt,left=12pt,right=12pt,
+  coltitle=white, colbacktitle=ink, attach boxed title to top left={xshift=10pt,yshift=-8pt},
+  boxed title style={arc=2pt,boxrule=0pt}, fonttitle=\sffamily\bfseries\small,
+  title={MẸO SƯ PHẠM ĐIỀU PHỐI}}
+
+% Đường phân cách chặng nghệ thuật: dòng kẻ ngang màu đỏ mảnh
+\newcommand{\stageseparator}{%
+  \par\vspace{10pt}
+  {\color{brand!40}\hrule height 0.5pt}
+  \par\vspace{10pt}%
+}
+
