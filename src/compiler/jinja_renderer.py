@@ -87,7 +87,15 @@ def _env() -> Environment:
 
 
 def load_tokens() -> dict:
-    return json.loads(Path(settings.DESIGN_TOKENS).read_text(encoding="utf-8"))
+    tokens = json.loads(Path(settings.DESIGN_TOKENS).read_text(encoding="utf-8"))
+    # Chuyển đổi tương đối sang tuyệt đối động để XeLaTeX/Tectonic tìm thấy chính xác
+    root_str = str(settings.ROOT.resolve()).replace("\\", "/") + "/"
+    if "fonts" in tokens and "dir" in tokens["fonts"]:
+        if not tokens["fonts"]["dir"].startswith("/") and not (len(tokens["fonts"]["dir"]) > 1 and tokens["fonts"]["dir"][1] == ":"):
+            tokens["fonts"]["dir"] = f"{root_str}assets/fonts/"
+    # Thêm các hằng số assets tuyệt đối vào tokens để chèn vào watermark/logo
+    tokens["assets_dir"] = f"{root_str}assets/"
+    return tokens
 
 
 def _render(template_name: str, lesson: LessonPackage, tokens: dict | None) -> str:
