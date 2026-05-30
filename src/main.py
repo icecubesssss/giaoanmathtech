@@ -490,6 +490,8 @@ def cmd_progress(args: argparse.Namespace) -> int:
 
     tot = dict(weeks=0, src=0, json=0, built=0)
     for grade, subjects in tree.items():
+        if args.grade and args.grade not in grade:
+            continue
         print(f"\n{'═'*60}\n{_grade_label(grade)}  [{grade}]")
         for subject, weeks in subjects.items():
             if args.subject and args.subject not in subject:
@@ -777,19 +779,20 @@ def main(argv: list[str] | None = None) -> int:
     cs.set_defaults(func=cmd_curriculum_sync)
 
     pr = sub.add_parser("progress", help="Báo trạng thái từng tuần: PDF nguồn / JSON / build")
+    pr.add_argument("--grade", help="Lọc theo lớp (vd lop-9, lop-8)")
     pr.add_argument("--subject", help="Lọc theo môn (vd dai-so, hinh-hoc)")
     pr.add_argument("--todo", action="store_true", help="Chỉ hiện tuần CHƯA build xong")
     pr.set_defaults(func=cmd_progress)
 
     nl = sub.add_parser("new-lesson", help="Sinh khung lesson JSON 5 chặng/4 tầng vào folder tuần")
-    nl.add_argument("folder", help="Folder tuần dưới inputs/seeds/<mon>/")
+    nl.add_argument("folder", help="Folder tuần dưới inputs/seeds/<lop>/<mon>/")
     nl.add_argument("--slug", help="Mã bài (mặc định = chủ đề trong tên folder)")
     nl.add_argument("--title", help="Tiêu đề bài (mặc định suy từ chủ đề)")
     nl.add_argument("--force", action="store_true", help="Ghi đè nếu file đã tồn tại")
     nl.set_defaults(func=cmd_new_lesson)
 
     ns = sub.add_parser("new-summary", help="Sinh khung phiếu TỔNG KẾT CHƯƠNG (truyền các folder tuần của chương)")
-    ns.add_argument("folders", nargs="+", help="Các folder tuần của chương dưới inputs/seeds/<mon>/")
+    ns.add_argument("folders", nargs="+", help="Các folder tuần của chương dưới inputs/seeds/<lop>/<mon>/")
     ns.add_argument("--slug", help="Mã phiếu tổng kết (nên đặt cho chương nhiều tuần)")
     ns.add_argument("--title", help="Tiêu đề chương")
     ns.add_argument("--force", action="store_true", help="Ghi đè nếu đã tồn tại")

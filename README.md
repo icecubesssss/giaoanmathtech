@@ -15,6 +15,7 @@ source .venv/bin/activate          # môi trường Python
 ```bash
 # 1. Xem còn thiếu gì
 python -m src.main progress --todo               # chỉ tuần CHƯA build xong
+python -m src.main progress --grade lop-9         # lọc theo lớp
 python -m src.main progress --subject dai-so     # lọc theo môn
 
 # 2. Bắt đầu một bài: thả PDF nguồn vào folder tuần rồi sinh khung
@@ -35,7 +36,7 @@ python -m src.main build     <file.json>
 
 | Lệnh | Việc |
 |------|------|
-| `progress [--subject X] [--todo]` | Quét sống cây tuần: có PDF nguồn? có JSON? đã build chưa |
+| `progress [--grade X] [--subject X] [--todo]` | Quét sống cây tuần: có PDF nguồn? có JSON? đã build chưa |
 | `new-lesson <folder> [--slug --title --force]` | Sinh khung JSON 5 chặng/4 tầng đầy block TODO |
 | `curriculum-sync` | Sinh/cập nhật `config/curriculum.json` (giữ deadline/giờ đã điền) |
 | `validate <file.json>` | Trọng tài S2: sanitizer + schema + difficulty_gate + **gradient_gate** (độ dốc mở rộng) + linter |
