@@ -1,0 +1,47 @@
+((= Macro Jinja dựng các Block nội dung. Token [[blank]] do filter `tex` xử lý. =))
+((* macro render_block(b) *))
+((* if b.type == "para" *))
+((( b.text | tex )))
+
+((* elif b.type == "math" *))
+\[ ((( b.latex | tex ))) \]
+((* elif b.type == "noted" *))
+\begin{noted}((( b.text | tex )))\end{noted}
+
+((* elif b.type == "writelines" *))
+((* for _ in range(b.count) *))\fillline
+((* endfor *))
+\par
+((* elif b.type == "problem" *))
+\textbf{((( b.label | tex )))} ((( b.statement | tex )))
+((* if b.hints *))
+\par\vspace{3pt}
+\begin{hintbox}{\itshape\color{brand}Gợi ý:}\par
+((* for h in b.hints *))\textbullet\ ((( h | tex )))((* if not loop.last *))\par((* endif *))
+((* endfor *))\end{hintbox}
+((* endif *))
+
+((* elif b.type == "mindmap" *))
+((* if b.caption *)){\sffamily\footnotesize\color{brand}\textbf{((( b.caption | tex )))}}\par\vspace{2pt}
+((* endif *))
+\begin{center}
+\begin{forest}
+[{((( b.root | tex )))}, mindmap
+((* for br in b.branches *))((( mm_node(br) )))((* endfor *))
+]
+\end{forest}
+\end{center}
+
+((* endif *))
+((* endmacro *))
+
+((= Nút sơ đồ tư duy — đệ quy; label cho phép [[blank]]. Bọc trong {} để né dấu phẩy. =))
+((* macro mm_node(node) *))
+[{((( node.label | tex )))}
+((* for c in node.children *))((( mm_node(c) )))((* endfor *))
+]
+((* endmacro *))
+
+((* macro render_blocks(blocks) *))
+((* for b in blocks *))((( render_block(b) )))((* endfor *))
+((* endmacro *))

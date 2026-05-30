@@ -1,0 +1,12 @@
+% Font tiếng Việt — XeLaTeX + fontspec, nhúng từ design_tokens.json
+\usepackage{fontspec}
+\usepackage{unicode-math}
+\def\FONTDIR{((( fonts.dir )))}
+% Thân bài (serif, phủ dấu tiếng Việt)
+\setmainfont{((( fonts.main_family )))}[Path=\FONTDIR, Extension=((( fonts.main_ext ))),
+  UprightFont=*-Regular, BoldFont=*-Bold, ItalicFont=*-Italic, BoldItalicFont=*-BoldItalic ]
+% Tiêu đề & nhãn (sans hình học)
+\setsansfont{((( fonts.sans_family )))}[Path=\FONTDIR, Extension=((( fonts.sans_ext ))),
+  UprightFont=*-Regular, BoldFont=*-Bold, ItalicFont=*-Italic, FontFace={sb}{n}{*-SemiBold} ]
+% Toán (khớp thân bài)
+\setmathfont{((( fonts.math_file )))}[Path=\FONTDIR]

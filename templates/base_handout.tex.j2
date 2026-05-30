@@ -1,0 +1,89 @@
+% PHIẾU HỌC SINH (A4 dọc) — sinh tự động, không sửa tay.
+\documentclass[((( type.body_pt )))pt]{article}
+\usepackage[((( page.paper ))),top=0.85in,bottom=1.5in,left=0.75in,right=0.75in,headsep=8pt,footskip=30pt]{geometry}
+\setlength{\headheight}{26pt}
+
+((* include "preamble/_fonts.tex.j2" *))
+((* include "preamble/_colors.tex.j2" *))
+((* include "preamble/_macros.tex.j2" *))
+
+\usepackage{setspace}\setstretch{((( type.linestretch )))}
+\setlength{\parindent}{0pt}
+\setlength{\parskip}{4pt}
+
+% Header / footer (MathTech Premium Layout)
+\usepackage[colorlinks=true,linkcolor=blue,urlcolor=blue]{hyperref}
+\usepackage{eso-pic}
+\AddToShipoutPictureBG{%
+  \begin{tikzpicture}[remember picture,overlay]
+        \node[rotate=60,opacity=1.0] at (current page.center) {\includegraphics[scale=1.2]{/Users/admin/Library/CloudStorage/OneDrive-lovenhu/Code/giaoan/assets/Watermark_Opacity_20.png}};
+        \draw[line width=0.5pt,color=rule] 
+          ([xshift=8mm,yshift=-8mm]current page.north west) rectangle ([xshift=-8mm,yshift=8mm]current page.south east);
+        \draw[line width=1.5pt,color=brand] 
+          ([xshift=8.5mm,yshift=-8.5mm]current page.north west) -- ([xshift=18mm,yshift=-8.5mm]current page.north west);
+        \draw[line width=1.5pt,color=brand] 
+          ([xshift=8.5mm,yshift=-8.5mm]current page.north west) -- ([xshift=8.5mm,yshift=-18mm]current page.north west);
+        \draw[line width=1.5pt,color=brand] 
+          ([xshift=-8.5mm,yshift=-8.5mm]current page.north east) -- ([xshift=-18mm,yshift=-8.5mm]current page.north east);
+        \draw[line width=1.5pt,color=brand] 
+          ([xshift=-8.5mm,yshift=-8.5mm]current page.north east) -- ([xshift=-8.5mm,yshift=-18mm]current page.north east);
+        \draw[line width=1.5pt,color=brand] 
+          ([xshift=8.5mm,yshift=8.5mm]current page.south west) -- ([xshift=18mm,yshift=8.5mm]current page.south west);
+        \draw[line width=1.5pt,color=brand] 
+          ([xshift=8.5mm,yshift=8.5mm]current page.south west) -- ([xshift=8.5mm,yshift=18mm]current page.south west);
+        \draw[line width=1.5pt,color=brand] 
+          ([xshift=-8.5mm,yshift=8.5mm]current page.south east) -- ([xshift=-18mm,yshift=8.5mm]current page.south east);
+        \draw[line width=1.5pt,color=brand] 
+          ([xshift=-8.5mm,yshift=8.5mm]current page.south east) -- ([xshift=-8.5mm,yshift=18mm]current page.south east);
+  \end{tikzpicture}%
+}
+
+\pagestyle{fancy}\fancyhf{}
+\renewcommand{\headrulewidth}{0pt}
+\renewcommand{\footrulewidth}{1.0pt}
+
+\fancyhead[L]{\includegraphics[scale=0.32]{/Users/admin/Library/CloudStorage/OneDrive-lovenhu/Code/giaoan/assets/Logo4.png}}
+\fancyhead[R]{\raisebox{7pt}{\small\textit{((( lesson.title )))((* if lesson.grade_label *)) • ((( lesson.grade_label )))((* endif *))}}}
+
+\fancyfoot[LE,LO]{\footnotesize {\textbf{\color{red}{CÔNG TY CỔ PHẦN GIÁO DỤC \& CÔNG NGHỆ MATHTECH}}\\[1pt] Hotline:\quad {\renewcommand{\arraystretch}{0.9}\begin{tabular}{@{}l l l@{}}
+    Kim Giang: 0986.482.343 & Minh Khai: 0917.551.881 & Long Biên: 0941.201.881\\
+    Mỹ Đình: 0911.301.881 & Hà Đông: 0886.541.881 & Hoàng Cầu: 0946.201.881
+\end{tabular}}\\[1pt] Website: \href{www.mathtech.vn}{\underline{www.mathtech.vn}}\quad•\quad Biên soạn: \textbf{Thầy Thái MathTech} -- ĐT 0386969199\hfill Trang~\thepage}}
+\fancyfoot[RE,RO]{}
+
+\futurelet\TMPfootrule\def\footrule{{\color{red}\TMPfootrule}}
+
+((* import "_blocks.j2" as B with context *))
+
+\begin{document}
+
+% Khối tiêu đề với Top Card thông tin học sinh
+\begin{tcolorbox}[
+  enhanced, colback=neutral, colframe=brand!40, boxrule=0.8pt, arc=4pt,
+  top=6pt, bottom=6pt, left=10pt, right=10pt, boxsep=0pt,
+  before=\vspace{2pt}, after=\vspace{10pt}
+]
+  \sffamily
+  \begin{tabularx}{\linewidth}{@{}X r@{}}
+    \begin{tabular}[c]{@{}l@{}}
+      {\bfseries\fontsize{13pt}{15pt}\selectfont\color{ink}PHIẾU HỌC TẬP}\\[6pt]
+      {\bfseries\fontsize{18pt}{20pt}\selectfont\color{brand}((( lesson.title | upper )))}
+    \end{tabular}
+    &
+    \begin{tabular}[c]{@{}l l@{}}
+      Họ và tên: & \blank[4.5cm] \\[10pt]
+      Lớp:       & \blank[4.5cm]
+    \end{tabular}
+  \end{tabularx}
+\end{tcolorbox}
+
+((* for stage in lesson.stages *))
+((* include "components/" ~ stage.kind ~ ".tex.j2" *))
+((* if not loop.last *))
+\stageseparator
+((* else *))
+\vspace{4pt}
+((* endif *))
+((* endfor *))
+
+\end{document}

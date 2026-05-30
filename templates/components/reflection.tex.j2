@@ -1,0 +1,17 @@
+((= Chặng 5 — Tổng kết (hộp chặng) + 2 MỤC PHỤ tách riêng: BTVN, Mở rộng. =))
+((* import "_blocks.j2" as B with context *))
+((* set parts = split_reflection(stage.blocks) *))
+\begin{stage}{((( stage.number )))}{((( stage.title )))}
+\justifying\setlength{\parindent}{0pt}
+((( B.render_blocks(parts.tong_ket) )))
+\end{stage}
+((* if parts.btvn *))
+\worksheetsection{BÀI TẬP VỀ NHÀ}
+\justifying\setlength{\parindent}{0pt}
+((( B.render_blocks(parts.btvn) )))
+((* endif *))
+((* if parts.mo_rong *))
+\worksheetsection{BÀI TẬP MỞ RỘNG (tự chọn)}
+\justifying\setlength{\parindent}{0pt}
+((( B.render_blocks(parts.mo_rong) )))
+((* endif *))

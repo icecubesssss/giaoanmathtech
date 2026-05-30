@@ -1,0 +1,61 @@
+% Thiết lập Beamer cho Slide TV (16:9) — font sans + toán to, sạch, không "phèn".
+% KHÔNG dùng _macros.tex.j2 (đó là linh kiện cho article); slide có theme riêng.
+\usefonttheme{professionalfonts}   % nhường việc chọn font toán cho unicode-math
+\usepackage{fontspec}
+\usepackage{unicode-math}
+\def\FONTDIR{((( fonts.dir )))}
+% Slide dùng font SANS làm thân (Design System: slide = sans hình học)
+\setmainfont{((( fonts.sans_family )))}[Path=\FONTDIR, Extension=((( fonts.sans_ext ))),
+  UprightFont=*-Regular, BoldFont=*-Bold, ItalicFont=*-Italic, FontFace={sb}{n}{*-SemiBold} ]
+\setsansfont{((( fonts.sans_family )))}[Path=\FONTDIR, Extension=((( fonts.sans_ext ))),
+  UprightFont=*-Regular, BoldFont=*-Bold, ItalicFont=*-Italic ]
+\setmathfont{((( fonts.math_file )))}[Path=\FONTDIR]
+
+\usepackage{tikz}
+
+((* include "preamble/_colors.tex.j2" *))
+
+
+% Theme tối giản: bỏ thanh điều hướng, tiêu đề brand, chữ to để đọc cuối lớp.
+\usetheme{default}
+\setbeamertemplate{navigation symbols}{}
+\setbeamercolor{normal text}{fg=ink}
+\setbeamercolor{structure}{fg=brand}
+\setbeamercolor{frametitle}{fg=brand}
+\setbeamercolor{block title}{fg=white,bg=ink}
+\setbeamercolor{block body}{bg=neutral}
+\setbeamerfont{frametitle}{series=\bfseries, size=\LARGE}
+\setbeamerfont{normal text}{size=\large}
+\setbeamerfont{block title}{series=\bfseries, size=\normalsize}
+\usefonttheme{serif}        % để \textbf, \emph dùng đúng face của Be Vietnam Pro
+\usefonttheme{professionalfonts}
+\renewcommand{\normalsize}{\large}   % nâng cỡ nền: thân slide tối thiểu ~\large
+
+% Watermark mờ căn giữa mọi slide nội dung (slide bìa tắt qua \watermarkfalse)
+\newif\ifwatermark\watermarktrue
+\setbeamertemplate{background}{%
+  \ifwatermark
+    \begin{tikzpicture}[remember picture,overlay]
+      \node[opacity=0.45] at (current page.center)
+        {\includegraphics[width=0.5\paperwidth]{/Users/admin/Library/CloudStorage/OneDrive-lovenhu/Code/giaoan/assets/Watermark_Opacity_20.png}};
+    \end{tikzpicture}%
+  \fi}
+
+% Chỗ trống cho slide (đơn giản, không tikz): [[blank]] -> \blank, [[mblank]] -> \rule
+\newcommand{\blank}[1][4cm]{\rule[-0.3ex]{#1}{0.5pt}}
+
+% Footline mảnh: tên bài • số slide
+\setbeamertemplate{footline}{%
+  \vskip3pt%
+  \hbox to \paperwidth{%
+    \hspace*{0.6cm}%
+    \raisebox{-1pt}{\includegraphics[height=12pt]{/Users/admin/Library/CloudStorage/OneDrive-lovenhu/Code/giaoan/assets/Logo4.png}}%
+    \hspace*{4pt}{\scriptsize\color{muted}((( lesson.title )))((* if lesson.grade_label *)) • ((( lesson.grade_label )))((* endif *)) • Thầy Thái MathTech}%
+    \hfill%
+    {\scriptsize\color{muted}Slide \insertframenumber}%
+    \hspace*{0.6cm}%
+  }%
+  \vskip3pt}
+\setbeamertemplate{frametitle}{%
+  \vspace*{10pt}\hspace*{0.2cm}{\usebeamerfont{frametitle}\usebeamercolor[fg]{frametitle}\insertframetitle}\par
+  \vspace{2pt}\hspace*{0.2cm}{\color{brand}\rule{42pt}{3pt}}\par\vspace{4pt}}
