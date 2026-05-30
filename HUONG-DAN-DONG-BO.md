@@ -98,30 +98,54 @@ Xong phần cài. Từ giờ chỉ còn vòng lặp hằng ngày ở mục 3.
 
 ## 4. Việc của Thầy Thái (người quản kho)
 
+Repo: <https://github.com/icecubesssss/giaoanmathtech>
+
 ### a) Tạo kho và đẩy code lên (làm 1 lần)
-1. Tạo **kho riêng tư (Private)** trên GitHub: github.com → **New repository** → đặt tên
-   `giaoan` → chọn **Private** → **Create**. (Đừng tick "Add README".)
+1. Tạo kho trên GitHub: github.com → **New repository** → đặt tên `giaoanmathtech` →
+   **Create**. (Đừng tick "Add README".) *Lúc đầu để Private cũng được, sau muốn chia sẻ
+   rộng thì chuyển sang Public ở mục (a-bis).*
 2. Liên kết kho đã có ở máy (đã `git init` + commit sẵn) lên GitHub. Trong GitHub Desktop:
-   **File → Add local repository →** chọn thư mục `giaoan` → **Publish repository**
-   (nhớ giữ tick **Keep this code private**).
+   **File → Add local repository →** chọn thư mục `giaoan` → **Publish repository**.
 3. Mời thầy cô khác: trên GitHub vào kho → **Settings → Collaborators → Add people** →
-   nhập tài khoản/email GitHub của họ. Họ bấm chấp nhận lời mời trong email là vào được.
+   nhập **username hoặc email GitHub** của họ. Họ bấm **Accept invitation** trong email là vào được.
+   *(Mỗi thầy cô cần có sẵn một tài khoản GitHub.)*
+
+### a-bis) Chuyển kho thành Public (khi muốn chia sẻ rộng)
+Public = ai trên Internet cũng **xem và clone** được code, nhưng **chỉ collaborator mới sửa được**.
+
+1. Vào kho trên GitHub → **Settings**.
+2. Kéo xuống cuối cùng, mục **Danger Zone**.
+3. Dòng **Change repository visibility** → bấm **Change visibility** → chọn **Make public**.
+4. Gõ xác nhận tên kho → xác nhận.
+
+> ⚠️ Khi đã Public: tuyệt đối **không commit file nhạy cảm** (mật khẩu, API key, thông tin
+> học sinh). File `.env` đã bị chặn sẵn nên key vẫn an toàn — nhưng hãy kiểm tra kỹ trước khi commit.
 
 ### b) Bật chế độ kiểm duyệt (Branch Protection — làm 1 lần)
-Mục đích: **chặn không cho ai push thẳng vào `main`**, bắt buộc phải tạo Pull Request và
-được Admin duyệt thì bài mới được gộp vào.
+Mục đích: **chặn không cho ai push thẳng vào `main`** (kể cả lỡ tay xoá/ghi đè), bắt buộc
+phải tạo Pull Request và được Admin duyệt thì bài mới được gộp vào.
 
-1. Trên GitHub, vào kho `giaoan` → **Settings** (thanh menu phía trên).
+> Lưu ý: tính năng này dùng được khi kho **Public**, hoặc kho Private với gói **GitHub Pro/Team**.
+
+1. Trên GitHub, vào kho `giaoanmathtech` → **Settings** (thanh menu phía trên).
 2. Cột bên trái chọn **Branches**.
-3. Mục **Branch protection rules** → bấm **Add branch protection rule** (hoặc **Add rule**).
+3. Mục **Branch protection rules** → bấm **Add branch protection rule** (hoặc **Add rule** /
+   **Add ruleset** ở giao diện mới).
 4. Ô **Branch name pattern** → gõ: `main`.
-5. Tích chọn:
-   - ☑ **Require a pull request before merging** — bắt buộc tạo Pull Request.
-   - ☑ **Require approvals** — chọn số người duyệt là **1** (chính là Admin).
+5. Tích chọn các mục khuyến nghị:
+   - ☑ **Require a pull request before merging** — bắt buộc tạo Pull Request, cấm push thẳng.
+     - ☑ **Require approvals** — chọn số người duyệt là **1** (chính là Admin).
+   - ☑ **Require conversation resolution before merging** — phải xử lý hết comment review.
+   - ☑ **Block force pushes** — cấm ghi đè lịch sử.
+   - ☑ **Restrict deletions** — cấm xoá branch `main`.
 6. Kéo xuống cuối trang → bấm **Create** (hoặc **Save changes**).
 
 Sau bước này, không ai (kể cả Admin) có thể push thẳng vào `main` nữa. Mọi thay đổi đều
 phải đi qua Pull Request.
+
+> 💡 Mẹo: nếu chỉ có mình Admin làm và muốn nhanh, có thể **không** tích "Require approvals"
+> để tự merge Pull Request của mình mà không cần người khác duyệt — vẫn giữ được lịch sử
+> sạch và tránh push nhầm vào `main`.
 
 ### c) Duyệt bài mỗi ngày (quy trình của Admin)
 1. Khi giáo viên gửi Pull Request, Admin nhận được **email thông báo** từ GitHub.
@@ -153,7 +177,7 @@ Không. PDF không lên GitHub (cho nhẹ kho); ai cần thì `build` lại từ
 PDF y hệt.
 
 **Hỏi: API key của tôi có bị lộ cho người khác không?**
-Không. `.env` bị chặn đẩy lên. Mỗi người tự giữ key riêng.
+Không. `.env` bị chặn đẩy lên. Mỗi người tự giữ key riêng. *(Kể cả khi kho để Public.)*
 
 **Hỏi: Một người dùng Mac, một người dùng Windows thì có bị lỗi khi gộp không?**
 Không. Dự án đã được cấu hình để hoạt động chéo nền tảng:
