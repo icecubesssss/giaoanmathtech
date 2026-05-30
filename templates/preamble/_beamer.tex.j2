@@ -37,7 +37,7 @@
   \ifwatermark
     \begin{tikzpicture}[remember picture,overlay]
       \node[opacity=0.45] at (current page.center)
-        {\includegraphics[width=0.5\paperwidth]{/Users/admin/Library/CloudStorage/OneDrive-lovenhu/Code/giaoan/assets/Watermark_Opacity_20.png}};
+        {\includegraphics[width=0.5\paperwidth]{((( assets_dir )))((( branding.watermark_file )))}};
     \end{tikzpicture}%
   \fi}
 
@@ -49,8 +49,8 @@
   \vskip3pt%
   \hbox to \paperwidth{%
     \hspace*{0.6cm}%
-    \raisebox{-1pt}{\includegraphics[height=12pt]{/Users/admin/Library/CloudStorage/OneDrive-lovenhu/Code/giaoan/assets/Logo4.png}}%
-    \hspace*{4pt}{\scriptsize\color{muted}((( lesson.title )))((* if lesson.grade_label *)) • ((( lesson.grade_label )))((* endif *)) • Thầy Thái MathTech}%
+    \raisebox{-1pt}{\includegraphics[height=12pt]{((( assets_dir )))((( branding.logo_file )))}}%
+    \hspace*{4pt}{\scriptsize\color{muted}((( lesson.title )))((* if lesson.grade_label *)) • ((( lesson.grade_label )))((* endif *)) • ((( branding.author_name )))}%
     \hfill%
     {\scriptsize\color{muted}Slide \insertframenumber}%
     \hspace*{0.6cm}%
