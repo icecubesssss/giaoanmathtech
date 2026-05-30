@@ -7,7 +7,7 @@ import pytest
 from src.schema import LessonPackage
 from src.validators.difficulty_gate import check_difficulty, load_profile
 
-SEED_JSON = Path("inputs/seeds/dai-so/tuan09-bat-dang-thuc/bdt-tinh-chat-va-so-sanh.json")
+SEED_JSON = Path("inputs/seeds/lop-9/dai-so/tuan09-bat-dang-thuc/bdt-tinh-chat-va-so-sanh.json")
 
 
 @pytest.fixture

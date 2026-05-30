@@ -18,8 +18,8 @@ python -m src.main progress --todo               # chỉ tuần CHƯA build xong
 python -m src.main progress --subject dai-so     # lọc theo môn
 
 # 2. Bắt đầu một bài: thả PDF nguồn vào folder tuần rồi sinh khung
-#    inputs/seeds/<mon>/tuanNN-<chu-de>/
-python -m src.main new-lesson inputs/seeds/dai-so/tuan10-11-bat-phuong-trinh-bac-nhat-mot-an
+#    inputs/seeds/<lop>/<mon>/tuanNN-<chu-de>/
+python -m src.main new-lesson inputs/seeds/lop-9/dai-so/tuan10-11-bat-phuong-trinh-bac-nhat-mot-an
 
 # 3. Đổ đề vào các block TODO  ← bước này nhờ Claude làm
 #    (mở chat, chỉ folder + PDF nguồn; Claude điền đúng convention)
@@ -28,7 +28,7 @@ python -m src.main new-lesson inputs/seeds/dai-so/tuan10-11-bat-phuong-trinh-bac
 python -m src.main validate  <file.json>
 python -m src.main approve   <slug>
 python -m src.main build     <file.json>
-#    → outputs/<mon>/<tuan>/<slug>/{handout,guide,slide}.pdf
+#    → outputs/<lop>/<mon>/<tuan>/<slug>/{handout,guide,slide}.pdf
 ```
 
 ## Bảng lệnh
@@ -83,26 +83,26 @@ Hai cấp, **dùng chung lệnh** `new-summary` (1 folder = tổng kết bài; n
 **(a) Tổng kết BÀI/tuần** — gom các phiếu A/B của một tuần:
 
 ```bash
-python -m src.main new-summary inputs/seeds/dai-so/tuan09-bat-dang-thuc
+python -m src.main new-summary inputs/seeds/lop-9/dai-so/tuan09-bat-dang-thuc
 #   → tong-ket-<chủ-đề>.json NGAY TRONG folder tuần
-python -m src.main build-summary inputs/seeds/dai-so/tuan09-bat-dang-thuc/tong-ket-bat-dang-thuc.json
+python -m src.main build-summary inputs/seeds/lop-9/dai-so/tuan09-bat-dang-thuc/tong-ket-bat-dang-thuc.json
 #   → outputs/.../tong-ket-bat-dang-thuc/tongket-hs.pdf + tongket-gv.pdf
 ```
 
 **(b) Tổng kết CHƯƠNG** — **1 tuần = 1 bài**, **1 CHƯƠNG = nhiều tuần** (xem cột *"Nội dung đưa cho HS"*
-trong `inputs/seeds/chuong-trinh-hoc/`, vd chương BĐT–BPT trải tuần 9–12). Làm **sau khi xong hết các tuần của chương**:
+trong `inputs/seeds/lop-9/chuong-trinh-hoc/`, vd chương BĐT–BPT trải tuần 9–12). Làm **sau khi xong hết các tuần của chương**:
 
 ```bash
 # Truyền TẤT CẢ folder tuần của chương:
 python -m src.main new-summary \
-  inputs/seeds/dai-so/tuan09-bat-dang-thuc \
-  inputs/seeds/dai-so/tuan10-11-bat-phuong-trinh-bac-nhat-mot-an \
-  inputs/seeds/dai-so/tuan12-on-tap-bdt-bpt \
+  inputs/seeds/lop-9/dai-so/tuan09-bat-dang-thuc \
+  inputs/seeds/lop-9/dai-so/tuan10-11-bat-phuong-trinh-bac-nhat-mot-an \
+  inputs/seeds/lop-9/dai-so/tuan12-on-tap-bdt-bpt \
   --slug tong-ket-bdt-bpt --title "Bất đẳng thức & Bất phương trình"
-#   → inputs/seeds/dai-so/tong-ket-bdt-bpt.json  (đặt ở CẤP MÔN, gom phiếu mọi tuần)
+#   → inputs/seeds/lop-9/dai-so/tong-ket-bdt-bpt.json  (đặt ở CẤP MÔN, gom phiếu mọi tuần)
 #   Điền sơ đồ (nút trống [[blank:W]]), rồi:
-python -m src.main build-summary inputs/seeds/dai-so/tong-ket-bdt-bpt.json
-#   → outputs/dai-so/<slug>/tongket-hs.pdf (sơ đồ trống) + tongket-gv.pdf (kèm đáp án)
+python -m src.main build-summary inputs/seeds/lop-9/dai-so/tong-ket-bdt-bpt.json
+#   → outputs/lop-9/dai-so/<slug>/tongket-hs.pdf (sơ đồ trống) + tongket-gv.pdf (kèm đáp án)
 ```
 
 File tổng kết (`mindmap` ở cấp cao nhất, không có `stages`) được `progress` tự bỏ qua khi đếm bài.

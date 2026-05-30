@@ -97,7 +97,16 @@ def _iter_text(lesson: LessonPackage):
 SEEDS_DIR = settings.ROOT / "inputs" / "seeds"
 CURRICULUM_PATH = settings.CONFIG_DIR / "curriculum.json"
 SUBJECT_LABELS = {"dai-so": "ĐẠI SỐ", "hinh-hoc": "HÌNH HỌC"}
+GRADE_LABELS = {"lop-9": "Lớp 9 • Ôn vào 10"}
 _BUILD_KINDS = ("handout", "guide", "slide")
+
+
+def _grade_label(grade_slug: str) -> str:
+    """`lop-9` → 'Lớp 9 • Ôn vào 10' (đặc thù), `lop-8` → 'Lớp 8' (suy từ số)."""
+    if grade_slug in GRADE_LABELS:
+        return GRADE_LABELS[grade_slug]
+    m = re.match(r"lop-?(\d+)", grade_slug)
+    return f"Lớp {m.group(1)}" if m else "Lớp 9 • Ôn vào 10"
 
 
 def _week_nums(folder_name: str) -> list[int]:
@@ -376,73 +385,96 @@ def cmd_validate(args: argparse.Namespace) -> int:
 
 # ── Curriculum / progress / scaffold commands ───────────────────────────────────
 
+def _load_curriculum_meta() -> dict:
+    """Đọc curriculum.json → {folder: row}, chấp nhận cả schema cũ (`subjects`)
+    lẫn mới (`grades` → `subjects`). Dùng để giữ metadata Thầy điền tay khi sync."""
+    meta: dict = {}
+    if not CURRICULUM_PATH.exists():
+        return meta
+    try:
+        data = json.loads(CURRICULUM_PATH.read_text(encoding="utf-8"))
+    except (json.JSONDecodeError, OSError):
+        return meta
+    subject_blocks = (
+        [s for g in data["grades"].values() for s in g.values()]
+        if "grades" in data
+        else list(data.get("subjects", {}).values())
+    )
+    for rows in subject_blocks:
+        for wk in rows:
+            meta[wk.get("folder", "")] = wk
+    return meta
+
+
 def _scan_tree() -> dict:
-    """Quét inputs/seeds → {subject: [ {folder, weeks, topic, has_source_pdf,
-    lessons:[{file, slug, ok_json, pdfs}]} ]}. Bỏ folder chuong-trinh-hoc."""
+    """Quét inputs/seeds/<lớp>/<môn>/<tuần>/ → {grade: {subject: [ {folder, weeks,
+    topic, has_source_pdf, lessons:[{file, slug, ok_json, pdfs}]} ]}}.
+    Bỏ folder chuong-trinh-hoc (ở cấp môn)."""
     tree: dict = {}
     if not SEEDS_DIR.exists():
         return tree
-    for subject_dir in sorted(d for d in SEEDS_DIR.iterdir() if d.is_dir()):
-        if subject_dir.name == "chuong-trinh-hoc":
-            continue
-        weeks = []
-        for wf in _week_folders(subject_dir):
-            lessons = [
-                {"file": j.name, **_build_status(j)}
-                for j in sorted(wf.glob("*.json")) if not _is_summary_json(j)
-            ]
-            weeks.append({
-                "folder": wf.name,
-                "weeks": _week_nums(wf.name),
-                "topic": _topic_slug(wf.name),
-                "has_source_pdf": any(wf.glob("*.pdf")),
-                "lessons": lessons,
-            })
-        tree[subject_dir.name] = weeks
+    for grade_dir in sorted(d for d in SEEDS_DIR.iterdir() if d.is_dir()):
+        subjects: dict = {}
+        for subject_dir in sorted(d for d in grade_dir.iterdir() if d.is_dir()):
+            if subject_dir.name == "chuong-trinh-hoc":
+                continue
+            weeks = []
+            for wf in _week_folders(subject_dir):
+                lessons = [
+                    {"file": j.name, **_build_status(j)}
+                    for j in sorted(wf.glob("*.json")) if not _is_summary_json(j)
+                ]
+                weeks.append({
+                    "folder": wf.name,
+                    "weeks": _week_nums(wf.name),
+                    "topic": _topic_slug(wf.name),
+                    "has_source_pdf": any(wf.glob("*.pdf")),
+                    "lessons": lessons,
+                })
+            subjects[subject_dir.name] = weeks
+        tree[grade_dir.name] = subjects
     return tree
 
 
 def cmd_curriculum_sync(args: argparse.Namespace) -> int:
     """Sinh/cập nhật config/curriculum.json từ cây tuần — giữ lại metadata Thầy
     đã điền tay (deadline, duration_hours, target_lessons, note) theo folder."""
-    old: dict = {}
-    if CURRICULUM_PATH.exists():
-        try:
-            for subj in json.loads(CURRICULUM_PATH.read_text(encoding="utf-8")).get("subjects", {}).values():
-                for wk in subj:
-                    old[wk.get("folder", "")] = wk
-        except (json.JSONDecodeError, OSError):
-            pass
+    old = _load_curriculum_meta()
 
     tree = _scan_tree()
     manifest = {
         "_doc": "Manifest chương trình — sinh tự động từ inputs/seeds bởi `curriculum-sync`. "
+                "Cấu trúc: grades → subjects → tuần. "
                 "Các trường deadline/duration_hours/target_lessons/note được giữ nguyên khi sync lại; "
                 "Thầy điền tay vào đây.",
         "generated_at": datetime.now().isoformat(timespec="seconds"),
-        "subjects": {},
+        "grades": {},
     }
-    n_weeks = 0
-    for subject, weeks in tree.items():
-        rows = []
-        for wk in weeks:
-            prev = old.get(wk["folder"], {})
-            rows.append({
-                "folder": wk["folder"],
-                "weeks": wk["weeks"],
-                "topic": wk["topic"],
-                "deadline": prev.get("deadline"),
-                "duration_hours": prev.get("duration_hours"),
-                "target_lessons": prev.get("target_lessons"),
-                "note": prev.get("note", ""),
-            })
-            n_weeks += 1
-        manifest["subjects"][subject] = rows
+    n_weeks = n_subjects = 0
+    for grade, subjects in tree.items():
+        grade_block: dict = {}
+        for subject, weeks in subjects.items():
+            rows = []
+            for wk in weeks:
+                prev = old.get(wk["folder"], {})
+                rows.append({
+                    "folder": wk["folder"],
+                    "weeks": wk["weeks"],
+                    "topic": wk["topic"],
+                    "deadline": prev.get("deadline"),
+                    "duration_hours": prev.get("duration_hours"),
+                    "target_lessons": prev.get("target_lessons"),
+                    "note": prev.get("note", ""),
+                })
+                n_weeks += 1
+            grade_block[subject] = rows
+            n_subjects += 1
+        manifest["grades"][grade] = grade_block
 
     CURRICULUM_PATH.write_text(
         json.dumps(manifest, ensure_ascii=False, indent=2), encoding="utf-8"
     )
-    print(f"✓ Manifest → {CURRICULUM_PATH}  ({len(tree)} môn, {n_weeks} tuần)")
+    print(f"✓ Manifest → {CURRICULUM_PATH}  ({len(tree)} lớp, {n_subjects} môn, {n_weeks} tuần)")
     print("  Mở file để điền deadline/duration_hours/target_lessons cho từng tuần.")
     return 0
 
@@ -451,54 +483,49 @@ def cmd_progress(args: argparse.Namespace) -> int:
     """Quét sống cây tuần, báo trạng thái: PDF nguồn? lesson JSON? đã build chưa?"""
     tree = _scan_tree()
     if not tree:
-        print("(Chưa có cây seeds. Tạo inputs/seeds/<mon>/tuanNN-<chu-de>/ trước.)")
+        print("(Chưa có cây seeds. Tạo inputs/seeds/<lớp>/<mon>/tuanNN-<chu-de>/ trước.)")
         return 0
 
-    meta: dict = {}
-    if CURRICULUM_PATH.exists():
-        try:
-            for subj in json.loads(CURRICULUM_PATH.read_text(encoding="utf-8")).get("subjects", {}).values():
-                for wk in subj:
-                    meta[wk.get("folder", "")] = wk
-        except (json.JSONDecodeError, OSError):
-            pass
+    meta = _load_curriculum_meta()
 
     tot = dict(weeks=0, src=0, json=0, built=0)
-    for subject, weeks in tree.items():
-        if args.subject and args.subject not in subject:
-            continue
-        print(f"\n{SUBJECT_LABELS.get(subject, subject.upper())}")
-        for wk in weeks:
-            tot["weeks"] += 1
-            has_src = wk["has_source_pdf"]
-            lessons = wk["lessons"]
-            n_built = sum(1 for l in lessons if l["ok_json"] and all(l["pdfs"].values()))
-            if has_src:
-                tot["src"] += 1
-            if lessons:
-                tot["json"] += 1
-            if lessons and n_built == len(lessons):
-                tot["built"] += 1
-
-            done = bool(lessons) and n_built == len(lessons)
-            if args.todo and done:
+    for grade, subjects in tree.items():
+        print(f"\n{'═'*60}\n{_grade_label(grade)}  [{grade}]")
+        for subject, weeks in subjects.items():
+            if args.subject and args.subject not in subject:
                 continue
+            print(f"\n{SUBJECT_LABELS.get(subject, subject.upper())}")
+            for wk in weeks:
+                tot["weeks"] += 1
+                has_src = wk["has_source_pdf"]
+                lessons = wk["lessons"]
+                n_built = sum(1 for l in lessons if l["ok_json"] and all(l["pdfs"].values()))
+                if has_src:
+                    tot["src"] += 1
+                if lessons:
+                    tot["json"] += 1
+                if lessons and n_built == len(lessons):
+                    tot["built"] += 1
 
-            src_tag = "PDF✓" if has_src else "PDF✗"
-            md = meta.get(wk["folder"], {})
-            extra = ""
-            if md.get("deadline"):
-                extra += f"  ⏰{md['deadline']}"
-            if md.get("duration_hours"):
-                extra += f"  {md['duration_hours']}h"
-            print(f"  {wk['folder']:<42} [{src_tag}] {len(lessons)} bài{extra}")
-            for l in lessons:
-                if not l["ok_json"]:
-                    print(f"      • {l['file']:<36} [JSON LỖI]")
+                done = bool(lessons) and n_built == len(lessons)
+                if args.todo and done:
                     continue
-                b = l["pdfs"]
-                btag = " ".join(f"{k}{'✓' if v else '✗'}" for k, v in b.items())
-                print(f"      • {l['slug']:<36} [build: {btag}]")
+
+                src_tag = "PDF✓" if has_src else "PDF✗"
+                md = meta.get(wk["folder"], {})
+                extra = ""
+                if md.get("deadline"):
+                    extra += f"  ⏰{md['deadline']}"
+                if md.get("duration_hours"):
+                    extra += f"  {md['duration_hours']}h"
+                print(f"  {wk['folder']:<42} [{src_tag}] {len(lessons)} bài{extra}")
+                for l in lessons:
+                    if not l["ok_json"]:
+                        print(f"      • {l['file']:<36} [JSON LỖI]")
+                        continue
+                    b = l["pdfs"]
+                    btag = " ".join(f"{k}{'✓' if v else '✗'}" for k, v in b.items())
+                    print(f"      • {l['slug']:<36} [build: {btag}]")
 
     print(f"\n{'─'*60}")
     print(f"Tổng: {tot['weeks']} tuần | {tot['src']} có nguồn | "
@@ -581,18 +608,19 @@ def cmd_new_lesson(args: argparse.Namespace) -> int:
         print(f"✗ Đã tồn tại {out_path} — dùng --force để ghi đè.", file=sys.stderr)
         return 1
 
-    # Suy ra eyebrow/grade từ vị trí folder dưới seeds.
-    subject = ""
+    # Suy ra eyebrow/grade từ vị trí folder dưới seeds (<lớp>/<môn>/<tuần>).
+    grade = subject = ""
     try:
         rel = folder.resolve().relative_to(SEEDS_DIR.resolve())
-        subject = rel.parts[0] if rel.parts else ""
+        grade = rel.parts[0] if rel.parts else ""
+        subject = rel.parts[1] if len(rel.parts) >= 2 else ""
     except ValueError:
         pass
     subj_label = SUBJECT_LABELS.get(subject, "")
     title = args.title or topic.replace("-", " ").strip().capitalize() or slug
     eyebrow = f"CHỦ ĐỀ • {subj_label}".rstrip(" •") if subj_label else "CHỦ ĐỀ"
 
-    skeleton = _skeleton(slug, title, eyebrow, "Lớp 9 • Ôn vào 10")
+    skeleton = _skeleton(slug, title, eyebrow, _grade_label(grade))
     out_path.write_text(
         json.dumps(skeleton, ensure_ascii=False, indent=2), encoding="utf-8"
     )
@@ -655,10 +683,11 @@ def cmd_new_summary(args: argparse.Namespace) -> int:
         print(f"✗ Đã tồn tại {out_path} — dùng --force để ghi đè.", file=sys.stderr)
         return 1
 
-    subject = ""
+    grade = subject = ""
     try:
         rel = base.resolve().relative_to(SEEDS_DIR.resolve())
-        subject = rel.parts[0] if rel.parts else ""
+        grade = rel.parts[0] if rel.parts else ""
+        subject = rel.parts[1] if len(rel.parts) >= 2 else ""
     except ValueError:
         pass
     eyebrow = SUBJECT_LABELS.get(subject, "")
@@ -675,7 +704,7 @@ def cmd_new_summary(args: argparse.Namespace) -> int:
             except Exception:
                 members.append(j.stem)
 
-    skeleton = _summary_skeleton(slug, title, eyebrow, "Lớp 9 • Ôn vào 10", members)
+    skeleton = _summary_skeleton(slug, title, eyebrow, _grade_label(grade), members)
     out_path.write_text(json.dumps(skeleton, ensure_ascii=False, indent=2), encoding="utf-8")
     print(f"✓ Khung phiếu tổng kết → {out_path}")
     print(f"  {len(folders)} tuần → phiếu thành viên: {', '.join(members) if members else '(chưa có)'}")
