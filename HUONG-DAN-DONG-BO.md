@@ -4,7 +4,7 @@ Tài liệu này thay cho cách gửi file zip. Mục tiêu: **một kho chung t
 cập nhật engine cũng đẩy lên được, mọi người kéo về là có bản mới — không gửi zip lần nào nữa.
 
 > Dành cho thầy cô **không rành kỹ thuật**: cứ làm theo phần "Cài 1 lần" rồi mỗi buổi
-> chỉ cần nhớ **2 nút: Pull (lấy về) và Push (đẩy lên)** trong GitHub Desktop.
+> chỉ cần nhớ **tạo nhánh phụ, làm xong bấm Commit & Push rồi gửi Pull Request** để Admin duyệt.
 
 ---
 
@@ -75,39 +75,61 @@ Xong phần cài. Từ giờ chỉ còn vòng lặp hằng ngày ở mục 3.
 
 ---
 
-## 3. Vòng lặp mỗi buổi làm việc (chỉ cần nhớ 2 bước)
+## 3. Vòng lặp mỗi buổi làm việc
 
-### ⬇️ TRƯỚC khi làm: **Pull** (lấy bản mới nhất)
-- Mở GitHub Desktop → bấm **“Fetch origin”** rồi **“Pull origin”**.
-- Mục đích: có ngay mọi cải tiến engine + bài mới mà người khác vừa đẩy lên.
+### ⬇️ TRƯỚC khi làm: **Lấy bản mới nhất & Tạo nhánh phụ**
+1. Mở GitHub Desktop $\rightarrow$ chọn Current Branch (nhánh hiện tại) ở thanh công cụ phía trên là **`main`**.
+2. Bấm **“Fetch origin”** rồi **“Pull origin”** để tải bản mới nhất về máy.
+3. Bấm lại vào nút **Current Branch** $\rightarrow$ chọn **New branch** $\rightarrow$ đặt tên cho nhánh của mình (vd: `bai-tuan-12` hoặc tên của mình) $\rightarrow$ bấm **Create branch** (để tạo nhánh từ `main`).
 
 ### ✍️ Làm việc như bình thường
-- Soạn bài bằng các lệnh trong [README.md](README.md) (nhờ Antigravity/Claude điền block
-  cũng được). `build` ra PDF trong `outputs/` để in.
+- Soạn bài bằng các lệnh trong [README.md](README.md). `build` ra PDF trong `outputs/` để in.
 
-### ⬆️ SAU khi làm: **Push** (đẩy đóng góp lên)
-- Quay lại GitHub Desktop → ô bên trái hiện các file đã đổi.
-- Gõ một dòng mô tả ngắn ở ô **“Summary”** (vd: *“Thêm bài bất phương trình tuần 11”*).
-- Bấm **“Commit to main”** → rồi bấm **“Push origin”**.
-- Xong! Người khác Pull là thấy.
+### ⬆️ SAU khi làm: **Gửi yêu cầu duyệt (Pull Request)**
+1. Quay lại GitHub Desktop $\rightarrow$ ô bên trái hiện các file đã đổi.
+2. Gõ một dòng mô tả ngắn ở ô **“Summary”** (vd: *“Thêm bài bất phương trình tuần 11”*).
+3. Bấm **“Commit to [tên-nhánh-của-bạn]”**.
+4. Bấm **“Publish branch”** (hoặc **Push origin**) để đưa nhánh lên GitHub.
+5. GitHub Desktop sẽ hiện ra nút màu xanh **“Create Pull Request”** $\rightarrow$ bấm vào đó để mở trang web GitHub $\rightarrow$ bấm nút **“Create pull request”** trên web để gửi yêu cầu cho Admin duyệt.
 
-> Quy tắc vàng: **Pull đầu buổi, Push cuối buổi.** Làm đúng thứ tự này thì gần như không
-> bao giờ gặp xung đột.
+> Quy tắc vàng: **Luôn cập nhật `main` trước, tạo nhánh riêng để làm, và gửi Pull Request sau cùng.**
 
 ---
 
 ## 4. Việc của Thầy Thái (người quản kho)
 
+### a) Tạo kho và đẩy code lên (làm 1 lần)
 1. Tạo **kho riêng tư (Private)** trên GitHub: github.com → **New repository** → đặt tên
-   `giaoan` → chọn **Private** → **Create**. (Đừng tick “Add README”.)
+   `giaoan` → chọn **Private** → **Create**. (Đừng tick "Add README".)
 2. Liên kết kho đã có ở máy (đã `git init` + commit sẵn) lên GitHub. Trong GitHub Desktop:
    **File → Add local repository →** chọn thư mục `giaoan` → **Publish repository**
    (nhớ giữ tick **Keep this code private**).
 3. Mời thầy cô khác: trên GitHub vào kho → **Settings → Collaborators → Add people** →
    nhập tài khoản/email GitHub của họ. Họ bấm chấp nhận lời mời trong email là vào được.
 
-Với 3 người tin nhau, cho mọi người **push thẳng vào `main`** là đơn giản nhất. Khi nào
-muốn “duyệt trước khi gộp” thì chuyển sang dùng nhánh + Pull Request (nhờ tôi hướng dẫn thêm).
+### b) Bật chế độ kiểm duyệt (Branch Protection — làm 1 lần)
+Mục đích: **chặn không cho ai push thẳng vào `main`**, bắt buộc phải tạo Pull Request và
+được Admin duyệt thì bài mới được gộp vào.
+
+1. Trên GitHub, vào kho `giaoan` → **Settings** (thanh menu phía trên).
+2. Cột bên trái chọn **Branches**.
+3. Mục **Branch protection rules** → bấm **Add branch protection rule** (hoặc **Add rule**).
+4. Ô **Branch name pattern** → gõ: `main`.
+5. Tích chọn:
+   - ☑ **Require a pull request before merging** — bắt buộc tạo Pull Request.
+   - ☑ **Require approvals** — chọn số người duyệt là **1** (chính là Admin).
+6. Kéo xuống cuối trang → bấm **Create** (hoặc **Save changes**).
+
+Sau bước này, không ai (kể cả Admin) có thể push thẳng vào `main` nữa. Mọi thay đổi đều
+phải đi qua Pull Request.
+
+### c) Duyệt bài mỗi ngày (quy trình của Admin)
+1. Khi giáo viên gửi Pull Request, Admin nhận được **email thông báo** từ GitHub.
+2. Vào GitHub → mở tab **Pull requests** → bấm vào yêu cầu đang chờ.
+3. Chuyển sang tab **Files changed** để xem họ thêm/sửa gì.
+4. Nếu ổn → bấm **Review changes** → chọn **Approve** → bấm **Submit review**.
+5. Bấm nút xanh **Merge pull request** → **Confirm merge** để gộp bài vào `main`.
+6. Xong! Từ giờ mọi người khác Pull về sẽ có bài mới.
 
 ---
 
@@ -132,6 +154,12 @@ PDF y hệt.
 
 **Hỏi: API key của tôi có bị lộ cho người khác không?**
 Không. `.env` bị chặn đẩy lên. Mỗi người tự giữ key riêng.
+
+**Hỏi: Một người dùng Mac, một người dùng Windows thì có bị lỗi khi gộp không?**
+Không. Dự án đã được cấu hình để hoạt động chéo nền tảng:
+- Có file `.gitattributes` tự chuẩn hóa dấu xuống dòng (LF/CRLF) tránh lỗi lệch định dạng.
+- Các file rác hệ điều hành (`.DS_Store` của Mac, `Thumbs.db` của Win) đã bị chặn trong `.gitignore`.
+- Mỗi máy tự giữ cấu hình đường dẫn và môi trường ảo riêng (`.env`, `.venv`), không chia sẻ lên GitHub.
 
 ---
 
