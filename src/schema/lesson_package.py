@@ -49,6 +49,18 @@ class ProblemBlock(BaseModel):
     )
 
 
+class TableBlock(BaseModel):
+    """Bảng (vd bảng đại lượng $s=v\\cdot t$) — IN RA BẢNG THẬT cho HS điền.
+
+    QUY TẮC: hễ đề/ghi chú nhắc 'lập bảng / kẻ bảng' thì PHẢI có block này, không
+    được nói suông. Mỗi ô cho phép $...$ và token [[blank:W]] để chừa chỗ HS điền.
+    Số cột lấy theo `headers` (hoặc hàng đầu nếu không có headers)."""
+    type: Literal["table"] = "table"
+    caption: str = Field("", description="Chú thích nhỏ phía trên bảng")
+    headers: list[str] = Field(default_factory=list, description="Hàng tiêu đề cột (in đậm)")
+    rows: list[list[str]] = Field(default_factory=list, description="Các hàng; mỗi ô cho phép $...$ và [[blank:W]]")
+
+
 class MindmapNode(BaseModel):
     """Một nút trong sơ đồ tư duy điền khuyết. label có thể chứa [[blank:W]] để HS điền."""
     label: str = Field(..., description="Nhãn nút; cho phép $...$ và token [[blank]] để chừa chỗ điền")
@@ -70,7 +82,7 @@ class MindmapBlock(BaseModel):
 
 MindmapNode.model_rebuild()
 
-Block = Union[ParaBlock, MathBlock, NotedBlock, WriteLinesBlock, ProblemBlock, MindmapBlock]
+Block = Union[ParaBlock, MathBlock, NotedBlock, WriteLinesBlock, ProblemBlock, MindmapBlock, TableBlock]
 
 # ----- Chặng & gói bài học -----
 

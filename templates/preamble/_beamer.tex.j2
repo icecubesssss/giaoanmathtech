@@ -19,6 +19,9 @@
 % Theme tối giản: bỏ thanh điều hướng, tiêu đề brand, chữ to để đọc cuối lớp.
 \usetheme{default}
 \setbeamertemplate{navigation symbols}{}
+% allowframebreaks mặc định chèn số La Mã ("I", "II"…) vào CUỐI tiêu đề — kể cả
+% frame chỉ 1 trang → ra chữ "I" lạc dính vào tiêu đề. Chỉ hiện số từ trang 2 trở đi.
+\setbeamertemplate{frametitle continuation}[from second]
 \setbeamercolor{normal text}{fg=ink}
 \setbeamercolor{structure}{fg=brand}
 \setbeamercolor{frametitle}{fg=brand}
@@ -50,7 +53,7 @@
   \hbox to \paperwidth{%
     \hspace*{0.6cm}%
     \raisebox{-1pt}{\includegraphics[height=12pt]{((( assets_dir )))((( branding.logo_file )))}}%
-    \hspace*{4pt}{\scriptsize\color{muted}((( lesson.title )))((* if lesson.grade_label *)) • ((( lesson.grade_label )))((* endif *)) • ((( branding.author_name )))}%
+    \hspace*{4pt}{\scriptsize\color{muted}((* if lesson.grade_label *))((( lesson.grade_label ))) • ((* endif *))Biên soạn: ((( branding.author_name )))}%
     \hfill%
     {\scriptsize\color{muted}Slide \insertframenumber}%
     \hspace*{0.6cm}%

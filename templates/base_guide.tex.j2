@@ -65,17 +65,9 @@
   before=\vspace{2pt}, after=\vspace{10pt}
 ]
   \sffamily
-  \begin{tabularx}{\linewidth}{@{}X r@{}}
-    \begin{tabular}[c]{@{}l@{}}
-      {\bfseries\fontsize{13pt}{15pt}\selectfont\color{brand}SỔ TAY GIÁO VIÊN}\\[6pt]
-      {\bfseries\fontsize{18pt}{20pt}\selectfont\color{brand}((( lesson.title | upper )))}
-    \end{tabular}
-    &
-    \begin{tabular}[c]{@{}r@{}}
-      Tài liệu lưu hành nội bộ \\[10pt]
-      Đáp án \& Mẹo sư phạm điều phối
-    \end{tabular}
-  \end{tabularx}
+  {\bfseries\fontsize{12pt}{14pt}\selectfont\color{brand}SỔ TAY GIÁO VIÊN}\par\vspace{4pt}
+  \titlefit{\bfseries\fontsize{18pt}{21pt}\selectfont\color{brand}((( lesson.title | upper )))}\par\vspace{10pt}
+  {Tài liệu lưu hành nội bộ \hfill \textbf{Đáp án \& Mẹo sư phạm điều phối}}
 \end{tcolorbox}
 
 ((* for stage in lesson.stages *))

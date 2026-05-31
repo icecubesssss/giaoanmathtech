@@ -12,10 +12,28 @@
 ((* elif b.type == "problem" *))
 {\bfseries\color{brand}((( b.label | tex )))}\; ((( b.statement | tex )))
 \par\medskip
+((* elif b.type == "table" *))
+((* if b.caption *)){\color{brand}\small\textbf{((( b.caption | tex )))}}\par\vspace{2pt}
+((* endif *))
+((* set ncols = (b.headers | length) or ((b.rows[0] | length) if b.rows else 1) *))
+\begin{center}\renewcommand{\arraystretch}{1.4}
+\begin{tabular}{|((* for i in range(ncols) *))((* if loop.first *))l((* else *))c((* endif *))|((* endfor *))}
+\hline
+((* if b.headers *))((* for h in b.headers *))((* if not loop.first *)) & ((* endif *))\textbf{((( h | tex )))}((* endfor *)) \\ \hline
+((* endif *))((* for row in b.rows *))((* for cell in row *))((* if not loop.first *)) & ((* endif *))((( cell | tex )))((* endfor *)) \\ \hline
+((* endfor *))\end{tabular}
+\end{center}
+\par\medskip
 ((* endif *))
 ((= writelines: bỏ qua trên slide =))
 ((* endmacro *))
 
+((= Mỗi bài (problem) / mỗi khái niệm (noted) tách RIÊNG một slide — chiếu từng
+    cái một như đang dạy trên lớp. Block đầu khung không chèn ngắt (tránh slide rỗng). =))
 ((* macro render_blocks(blocks) *))
-((* for b in blocks *))((( render_block(b) )))((* endfor *))
+((* for b in blocks *))
+((* if not loop.first and (b.type == "problem" or b.type == "noted") *))\framebreak
+((* endif *))
+((( render_block(b) )))
+((* endfor *))
 ((* endmacro *))

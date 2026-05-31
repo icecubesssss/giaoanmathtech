@@ -64,17 +64,9 @@
   before=\vspace{2pt}, after=\vspace{10pt}
 ]
   \sffamily
-  \begin{tabularx}{\linewidth}{@{}X r@{}}
-    \begin{tabular}[c]{@{}l@{}}
-      {\bfseries\fontsize{13pt}{15pt}\selectfont\color{ink}PHIẾU HỌC TẬP}\\[6pt]
-      {\bfseries\fontsize{18pt}{20pt}\selectfont\color{brand}((( lesson.title | upper )))}
-    \end{tabular}
-    &
-    \begin{tabular}[c]{@{}l l@{}}
-      Họ và tên: & \blank[4.5cm] \\[10pt]
-      Lớp:       & \blank[4.5cm]
-    \end{tabular}
-  \end{tabularx}
+  {\bfseries\fontsize{12pt}{14pt}\selectfont\color{ink}PHIẾU HỌC TẬP}\par\vspace{4pt}
+  \titlefit{\bfseries\fontsize{18pt}{21pt}\selectfont\color{brand}((( lesson.title | upper )))}\par\vspace{10pt}
+  {Họ và tên:~\blank[6cm]\hfill Lớp:~\blank[3.2cm]}
 \end{tcolorbox}
 
 ((* for stage in lesson.stages *))

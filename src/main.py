@@ -99,10 +99,19 @@ def _iter_text(lesson: LessonPackage):
             if v:
                 yield f"stage[{stage.kind}].{attr}", v
         for i, b in enumerate(stage.blocks):
-            for attr in ("text", "latex", "statement"):
+            for attr in ("text", "latex", "statement", "caption"):
                 v = getattr(b, attr, None)
                 if v:
                     yield f"stage[{stage.kind}].block[{i}].{attr}", v
+            # Ô bảng (TableBlock) cũng phải qua sanitizer.
+            if getattr(b, "type", "") == "table":
+                for h in getattr(b, "headers", []) or []:
+                    if h:
+                        yield f"stage[{stage.kind}].block[{i}].header", h
+                for r, row in enumerate(getattr(b, "rows", []) or []):
+                    for c, cell in enumerate(row):
+                        if cell:
+                            yield f"stage[{stage.kind}].block[{i}].cell[{r}][{c}]", cell
 
 
 # ── Curriculum / cây tuần helpers ───────────────────────────────────────────────

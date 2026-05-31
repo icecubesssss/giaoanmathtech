@@ -64,6 +64,14 @@ def find_presentation_warnings(lesson) -> list[str]:
         if st.solution and len(_SUBITEM.findall(st.solution)) >= 2 and "[[br]]" not in st.solution:
             warns.append(f"stage[{st.kind}].solution: nhiều ý a)b)c) nhưng thiếu [[br]] — nên xuống dòng từng ý.")
 
+        # Lời giải KHÔNG được là 'bức tường chữ': tách theo [[br]] / \par, nếu còn
+        # đoạn quá dài (nhiều bước dồn một dòng) -> cảnh báo chèn [[br]] tách bước.
+        if st.solution:
+            segs = re.split(r"\[\[br\]\]|\\par", st.solution)
+            longest = max((len(s.strip()) for s in segs), default=0)
+            if longest > 220:
+                warns.append(f"stage[{st.kind}].solution: có đoạn dài {longest} ký tự không xuống dòng — chèn [[br]] tách từng bước cho dễ đọc.")
+
     # Reflection phải giao BTVN (bài tập về nhà).
     refl = next((s for s in lesson.stages if s.kind == "reflection"), None)
     if refl is not None:

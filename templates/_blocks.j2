@@ -21,6 +21,18 @@
 ((* endfor *))\end{hintbox}
 ((* endif *))
 
+((* elif b.type == "table" *))
+((* if b.caption *)){\sffamily\footnotesize\color{brand}\textbf{((( b.caption | tex )))}}\par\vspace{2pt}
+((* endif *))
+((* set ncols = (b.headers | length) or ((b.rows[0] | length) if b.rows else 1) *))
+\begin{center}\renewcommand{\arraystretch}{1.5}
+\begin{tabular}{|((* for i in range(ncols) *))((* if loop.first *))l((* else *))c((* endif *))|((* endfor *))}
+\hline
+((* if b.headers *))((* for h in b.headers *))((* if not loop.first *)) & ((* endif *))\textbf{((( h | tex )))}((* endfor *)) \\ \hline
+((* endif *))((* for row in b.rows *))((* for cell in row *))((* if not loop.first *)) & ((* endif *))((( cell | tex )))((* endfor *)) \\ \hline
+((* endfor *))\end{tabular}
+\end{center}
+
 ((* elif b.type == "mindmap" *))
 ((* if b.caption *)){\sffamily\footnotesize\color{brand}\textbf{((( b.caption | tex )))}}\par\vspace{2pt}
 ((* endif *))

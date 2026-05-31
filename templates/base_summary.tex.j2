@@ -64,14 +64,9 @@
   before=\vspace{2pt}, after=\vspace{8pt}
 ]
   \sffamily
-  \begin{tabularx}{\linewidth}{@{}X r@{}}
-    \begin{tabular}[c]{@{}l@{}}
-      {\bfseries\fontsize{12pt}{14pt}\selectfont\color{ink}((* if summary.eyebrow *))((( summary.eyebrow | upper ))) • ((* endif *))TỔNG KẾT CHƯƠNG}\\[5pt]
-      {\bfseries\fontsize{18pt}{20pt}\selectfont\color{brand}((( summary.title | upper )))}
-    \end{tabular}
-    &
-    ((* if show_solution *))\begin{tabular}[c]{@{}r@{}}Bản Giáo viên \\[6pt] (có đáp án sơ đồ)\end{tabular}((* else *))\begin{tabular}[c]{@{}l l@{}}Họ và tên: & \blank[4cm] \\[10pt] Lớp: & \blank[4cm]\end{tabular}((* endif *))
-  \end{tabularx}
+  {\bfseries\fontsize{12pt}{14pt}\selectfont\color{ink}((* if summary.eyebrow *))((( summary.eyebrow | upper ))) • ((* endif *))TỔNG KẾT CHƯƠNG}\par\vspace{4pt}
+  \titlefit{\bfseries\fontsize{18pt}{21pt}\selectfont\color{brand}((( summary.title | upper )))}\par\vspace{10pt}
+  ((* if show_solution *)){\textbf{Bản Giáo viên} — có đáp án sơ đồ}((* else *)){Họ và tên:~\blank[6cm]\hfill Lớp:~\blank[3.2cm]}((* endif *))
 \end{tcolorbox}
 
 ((* if summary.intro *))

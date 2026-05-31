@@ -6,6 +6,12 @@
 \usepackage{amsmath}
 \usepackage{tabularx}
 \usepackage[edges]{forest}
+\usepackage{adjustbox}
+
+% Tiêu đề tự CO cho vừa bề ngang: tên bài dài → thu nhỏ cỡ chữ cho khít một dòng,
+% KHÔNG wrap nhiều dòng đẩy các phần cố định (Họ và tên, dòng phụ) đi lung tung.
+% Tên bài ngắn giữ nguyên cỡ gốc. Cấu trúc header BẤT BIẾN.
+\newcommand{\titlefit}[1]{\adjustbox{max width=\linewidth}{#1}}
 
 
 % Dấu QED \square — STIX Two Math (unicode-math) không nạp sẵn ký hiệu này;
