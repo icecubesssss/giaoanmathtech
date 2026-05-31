@@ -1,15 +1,17 @@
 """Điểm chạy CLI trung tâm — MathTech Engine đầy đủ.
 
-Luồng soạn cả năm (xem README.md):
+Luồng soạn cả năm (xem README.md; luật soạn: HUONG-DAN-SOAN-BAI.md):
     python -m src.main progress  --todo          # còn thiếu bài nào
     python -m src.main new-lesson <folder tuần>  # sinh khung JSON 5 chặng/4 tầng
-    # → đổ đề vào các block TODO
+    # → đổ đề vào các block TODO (Claude điền theo HUONG-DAN-SOAN-BAI.md)
     python -m src.main validate  <file.json>
+    python -m src.main validate-all              # gác cổng cả kho
     python -m src.main approve   <slug>
     python -m src.main build     <file.json>     # ra 3 PDF ở outputs/<mon>/<tuan>/
 
 Tiện ích kế hoạch:
     python -m src.main curriculum-sync           # sinh/cập nhật config/curriculum.json
+    python -m src.main rebuild                    # build lại hàng loạt (sau khi đổi design_tokens)
     python -m src.main status                    # trạng thái trong run_state.json
 """
 from __future__ import annotations
@@ -25,7 +27,6 @@ from src.schema import LessonPackage, ChapterSummary
 from src.compiler import render_handout, render_guide, render_slide, render_summary, build_pdf
 from src.validators import (
     sanitize,
-    find_unsafe,
     UnsafeLatexError,
     validate_lesson_structure,
     check_difficulty,
@@ -41,7 +42,11 @@ STATE_PATH = settings.STORAGE_DIR / "run_state.json"
 
 def _load_state() -> dict:
     if STATE_PATH.exists():
-        return json.loads(STATE_PATH.read_text(encoding="utf-8"))
+        try:
+            return json.loads(STATE_PATH.read_text(encoding="utf-8"))
+        except (json.JSONDecodeError, OSError):
+            print(f"⚠ {STATE_PATH.name} hỏng/không đọc được — khởi tạo lại checkpoint mới.",
+                  file=sys.stderr)
     return {"_doc": "checkpoint", "lessons": {}}
 
 
@@ -63,7 +68,15 @@ def _set_lesson_status(slug: str, status: str, extra: dict | None = None):
 # ── Shared helper ──────────────────────────────────────────────────────────────
 
 def _load(lesson_path: str) -> LessonPackage:
-    data = json.loads(Path(lesson_path).read_text(encoding="utf-8"))
+    path = Path(lesson_path)
+    if not path.exists():
+        print(f"✗ Không tìm thấy file lesson: {path}", file=sys.stderr)
+        sys.exit(1)
+    try:
+        data = json.loads(path.read_text(encoding="utf-8"))
+    except (json.JSONDecodeError, OSError) as e:
+        print(f"✗ JSON lesson sai cú pháp ({path}): {e}", file=sys.stderr)
+        sys.exit(1)
     return LessonPackage.model_validate(data)
 
 
@@ -154,81 +167,6 @@ def _build_status(json_path: Path) -> dict:
 
 # ── S4 commands ────────────────────────────────────────────────────────────────
 
-def cmd_ingest(args: argparse.Namespace) -> int:
-    """Bóc tách file hạt giống của Thầy qua OCR → sinh difficulty_profile.json."""
-    from src.ingest.mathpix_ocr import process_seed_file
-    from src.agents.seed_parser import generate_difficulty_profile
-
-    seed = Path(args.seed)
-    if not seed.exists():
-        print(f"✗ Không tìm thấy file hạt giống: {seed}", file=sys.stderr)
-        return 1
-
-    print(f"▶ OCR hạt giống: {seed.name} …")
-    ocr_path = process_seed_file(seed)
-    print(f"  • OCR thành công → {ocr_path}")
-
-    print("▶ Phân tích ADN sư phạm (seed_parser) …")
-    profile_path = generate_difficulty_profile(ocr_path)
-    print(f"  • difficulty_profile.json → {profile_path}")
-    print("✓ Ingest hoàn tất. Bước tiếp: python -m src.main scrape")
-    return 0
-
-
-def cmd_scrape(args: argparse.Namespace) -> int:
-    """Gom đề từ nguồn uy tín vào verified_scraped_bank/ (có thể chạy thủ công bất cứ lúc nào)."""
-    from src.scrapers.offline_worker import run_scraping_job
-    print("▶ Đang cào đề toán …")
-    stats = run_scraping_job()
-    print(f"  • Đại số: {stats['algebra_count']} bài")
-    print(f"  • Hình học: {stats['geometry_count']} bài")
-    print("✓ Scrape hoàn tất. Bước tiếp: python -m src.main weave <slug>")
-    return 0
-
-
-def cmd_weave(args: argparse.Namespace) -> int:
-    """Dệt kịch bản 5 chặng cho bài học → JSON trong storage/ (chưa compile PDF)."""
-    from src.agents.content_weaver import weave_lesson_package
-
-    profile_path = Path("config/difficulty_profile.json")
-    if not profile_path.exists():
-        print("✗ Thiếu config/difficulty_profile.json. Chạy `ingest` trước.", file=sys.stderr)
-        return 1
-
-    slug = args.slug
-    print(f"▶ Dệt kịch bản '{slug}' …")
-    lesson = weave_lesson_package(slug, profile_path)
-
-    out_path = settings.STORAGE_DIR / f"{slug}_woven.json"
-    out_path.write_text(
-        json.dumps(lesson.model_dump(), ensure_ascii=False, indent=2), encoding="utf-8"
-    )
-    _set_lesson_status(slug, "woven", {"woven_path": str(out_path)})
-
-    # Human-in-the-loop preview (Bước 1 giao thức §5)
-    print(f"\n{'─'*60}")
-    print(f"  BÀI: {lesson.title}  |  {lesson.grade_label}")
-    print(f"{'─'*60}")
-    for stage in lesson.stages:
-        print(f"\n  [{stage.number}] {stage.kind.upper()} — {stage.title}")
-        for blk in stage.blocks:
-            btype = blk.type
-            if btype == "para":
-                print(f"      ¶ {blk.text[:80]}{'…' if len(blk.text) > 80 else ''}")
-            elif btype == "math":
-                print(f"      $ {blk.latex[:80]}")
-            elif btype == "problem":
-                print(f"      ▶ {blk.statement[:80]}")
-            elif btype == "noted":
-                print(f"      □ {blk.text[:80]}")
-            elif btype == "writelines":
-                print(f"      ✏ {blk.count} dòng kẻ trống")
-    print(f"\n{'─'*60}")
-    print(f"✓ Kịch bản '{slug}' đã lưu → {out_path}")
-    print("  Bước tiếp: python -m src.main approve <slug>  (sau khi Thầy xem qua)")
-    return 0
-
-
 def cmd_approve(args: argparse.Namespace) -> int:
     """Đánh dấu APPROVE để mở khoá compile PDF."""
     slug = args.slug
@@ -249,7 +187,7 @@ def cmd_status(args: argparse.Namespace) -> int:
     state = _load_state()
     lessons = state.get("lessons", {})
     if not lessons:
-        print("(Chưa có bài nào được theo dõi. Bắt đầu bằng lệnh `ingest`.)")
+        print("(Chưa có bài nào được theo dõi. Bắt đầu bằng lệnh `new-lesson`.)")
         return 0
     print(f"{'SLUG':<30} {'STATUS':<15} {'CẬP NHẬT'}")
     print("─" * 65)
@@ -333,40 +271,43 @@ def cmd_build_summary(args: argparse.Namespace) -> int:
     return 0
 
 
-def cmd_validate(args: argparse.Namespace) -> int:
-    data = json.loads(Path(args.lesson).read_text(encoding="utf-8"))
-    lesson = LessonPackage.model_validate(data)
-
-    print(f"▶ Đang trọng tài '{lesson.slug}' — {lesson.title}")
+def _run_validation(lesson: LessonPackage) -> tuple[list[str], list[str], list[str]]:
+    """Chạy toàn bộ trọng tài S2 trên 1 gói bài. Trả về (vi phạm chặn, cảnh báo
+    trình bày, cảnh báo độ dốc). Dùng chung cho `validate` lẫn `validate-all`."""
     violations: list[str] = []
-
-    unsafe_hits = 0
     for loc, text in _iter_text(lesson):
         try:
             sanitize(text)
         except UnsafeLatexError as e:
-            unsafe_hits += 1
-            violations.append(f"  [latex_sanitizer] {loc}: {e}")
-    print(f"  • latex_sanitizer:  {'OK' if unsafe_hits == 0 else f'{unsafe_hits} vi phạm'}")
+            violations.append(f"[latex_sanitizer] {loc}: {e}")
 
     sch = validate_lesson_structure(lesson)
-    print(f"  • schema_validator: {'OK' if sch.ok else f'{len(sch.errors)} lỗi'}")
     for e in sch.errors:
-        violations.append(f"  [schema_validator] {e}")
+        violations.append(f"[schema_validator] {e}")
 
     diff = check_difficulty(lesson)
-    print(f"  • difficulty_gate:  {'OK' if diff.passed else f'{len(diff.reasons)} lý do từ chối'}")
     for r in diff.reasons:
-        violations.append(f"  [difficulty_gate] {r}")
+        violations.append(f"[difficulty_gate] {r}")
 
-    # Cảnh báo trình bày (không chặn build): chú thích GV lọt phiếu HS / thiếu xuống dòng.
     warns = find_presentation_warnings(lesson)
+    ramp_warns = check_ramp(lesson)
+    return violations, warns, ramp_warns
+
+
+def cmd_validate(args: argparse.Namespace) -> int:
+    lesson = _load(args.lesson)
+    print(f"▶ Đang trọng tài '{lesson.slug}' — {lesson.title}")
+    violations, warns, ramp_warns = _run_validation(lesson)
+
+    n_unsafe = sum(1 for v in violations if v.startswith("[latex_sanitizer]"))
+    n_schema = sum(1 for v in violations if v.startswith("[schema_validator]"))
+    n_diff = sum(1 for v in violations if v.startswith("[difficulty_gate]"))
+    print(f"  • latex_sanitizer:  {'OK' if n_unsafe == 0 else f'{n_unsafe} vi phạm'}")
+    print(f"  • schema_validator: {'OK' if n_schema == 0 else f'{n_schema} lỗi'}")
+    print(f"  • difficulty_gate:  {'OK' if n_diff == 0 else f'{n_diff} lý do từ chối'}")
     print(f"  • visual_linter:    {'OK' if not warns else f'{len(warns)} cảnh báo trình bày'}")
     for w in warns:
         print(f"    ⚠ {w}")
-
-    # Cảnh báo ĐỘ DỐC tầng Mở rộng (không chặn build): thang bậc / nhịp cầu / gợi ý.
-    ramp_warns = check_ramp(lesson)
     print(f"  • gradient_gate:    {'OK' if not ramp_warns else f'{len(ramp_warns)} cảnh báo độ dốc'}")
     for w in ramp_warns:
         print(f"    ⚠ {w}")
@@ -374,13 +315,107 @@ def cmd_validate(args: argparse.Namespace) -> int:
     if violations:
         print("\n✗ TỪ CHỐI — vi phạm cần dệt lại:")
         for v in violations:
-            print(v)
+            print(f"  {v}")
         _set_lesson_status(lesson.slug, "validation_failed")
         return 1
 
     _set_lesson_status(lesson.slug, "validated")
     print("\n✓ Gói bài qua cổng S2. Bước kế tiếp: approve → build")
     return 0
+
+
+def _is_lesson_json(json_path: Path) -> bool:
+    """Lesson thường: có 'stages' ở cấp cao nhất (phân biệt với phiếu tổng kết /
+    file metadata chương trình)."""
+    try:
+        d = json.loads(json_path.read_text(encoding="utf-8"))
+    except (json.JSONDecodeError, OSError):
+        return False
+    return isinstance(d, dict) and "stages" in d
+
+
+def _iter_lesson_files(grade: str | None, subject: str | None):
+    """Duyệt mọi file lesson JSON dưới inputs/seeds (bỏ chuong-trinh-hoc, bỏ tổng kết
+    & metadata). Trả về Path, lọc theo --grade/--subject nếu có."""
+    if not SEEDS_DIR.exists():
+        return
+    for j in sorted(SEEDS_DIR.rglob("*.json")):
+        rel = j.resolve().relative_to(SEEDS_DIR.resolve())
+        if "chuong-trinh-hoc" in rel.parts or not _is_lesson_json(j):
+            continue
+        g = rel.parts[0] if len(rel.parts) >= 1 else ""
+        s = rel.parts[1] if len(rel.parts) >= 2 else ""
+        if grade and g != grade:
+            continue
+        if subject and s != subject:
+            continue
+        yield j
+
+
+def cmd_validate_all(args: argparse.Namespace) -> int:
+    """Chạy trọng tài S2 trên TẤT CẢ lesson JSON — gác cổng cả kho trước khi build/commit."""
+    files = list(_iter_lesson_files(args.grade, args.subject))
+    if not files:
+        print("(Không thấy lesson JSON nào khớp bộ lọc.)")
+        return 0
+
+    n_fail = n_warn = 0
+    for j in files:
+        try:
+            lesson = LessonPackage.model_validate(json.loads(j.read_text(encoding="utf-8")))
+        except Exception as e:  # noqa: BLE001 — báo file hỏng, không dừng cả mẻ
+            n_fail += 1
+            print(f"  ✗ {j.name:<40} [KHÔNG LOAD ĐƯỢC] {e}")
+            continue
+        violations, warns, ramp_warns = _run_validation(lesson)
+        nw = len(warns) + len(ramp_warns)
+        if violations:
+            n_fail += 1
+            print(f"  ✗ {lesson.slug:<40} {len(violations)} vi phạm")
+            for v in violations:
+                print(f"        {v}")
+        else:
+            if nw:
+                n_warn += 1
+            tag = "OK" if not nw else f"OK ({nw} cảnh báo)"
+            print(f"  ✓ {lesson.slug:<40} {tag}")
+
+    print(f"\n{'─'*60}")
+    print(f"Tổng: {len(files)} bài | {len(files) - n_fail} qua | {n_fail} TỪ CHỐI | {n_warn} có cảnh báo")
+    return 1 if n_fail else 0
+
+
+def cmd_rebuild(args: argparse.Namespace) -> int:
+    """Build LẠI mọi bài ĐÃ CÓ output (đủ 3 PDF) — để lan thay đổi design_tokens /
+    template ra toàn bộ phiếu, không sót. Dùng --all để build cả bài chưa từng build."""
+    files = list(_iter_lesson_files(args.grade, args.subject))
+    if not files:
+        print("(Không thấy lesson JSON nào khớp bộ lọc.)")
+        return 0
+
+    n_ok = n_skip = n_err = 0
+    for j in files:
+        status = _build_status(j)
+        if not args.all and not (status["ok_json"] and all(status["pdfs"].values())):
+            n_skip += 1
+            continue
+        try:
+            lesson = _load(str(j))
+            out_root = _out_root(str(j))
+            for fn, render in (("handout", render_handout), ("guide", render_guide), ("slide", render_slide)):
+                build_pdf(render(lesson), slug=lesson.slug, filename=fn, out_root=out_root)
+            _set_lesson_status(lesson.slug, "built")
+            n_ok += 1
+            print(f"  ✓ {lesson.slug}")
+        except SystemExit:
+            raise
+        except Exception as e:  # noqa: BLE001 — 1 bài lỗi không chặn cả mẻ
+            n_err += 1
+            print(f"  ✗ {j.name}: {e}")
+
+    print(f"\n{'─'*60}")
+    print(f"Rebuild: {n_ok} bài OK | {n_skip} bỏ qua (chưa từng build) | {n_err} lỗi")
+    return 1 if n_err else 0
 
 
 # ── Curriculum / progress / scaffold commands ───────────────────────────────────
@@ -490,11 +525,11 @@ def cmd_progress(args: argparse.Namespace) -> int:
 
     tot = dict(weeks=0, src=0, json=0, built=0)
     for grade, subjects in tree.items():
-        if args.grade and args.grade not in grade:
+        if args.grade and args.grade != grade:
             continue
         print(f"\n{'═'*60}\n{_grade_label(grade)}  [{grade}]")
         for subject, weeks in subjects.items():
-            if args.subject and args.subject not in subject:
+            if args.subject and args.subject != subject:
                 continue
             print(f"\n{SUBJECT_LABELS.get(subject, subject.upper())}")
             for wk in weeks:
@@ -725,18 +760,7 @@ def main(argv: list[str] | None = None) -> int:
     )
     sub = p.add_subparsers(dest="cmd", required=True)
 
-    # S4 commands
-    i = sub.add_parser("ingest", help="OCR hạt giống PDF/ảnh → sinh difficulty_profile.json")
-    i.add_argument("seed", help="Đường dẫn file hạt giống (.pdf / ảnh)")
-    i.set_defaults(func=cmd_ingest)
-
-    sc = sub.add_parser("scrape", help="Gom đề từ nguồn uy tín vào verified_scraped_bank/")
-    sc.set_defaults(func=cmd_scrape)
-
-    w = sub.add_parser("weave", help="Dệt kịch bản 5 chặng → JSON (chưa compile)")
-    w.add_argument("slug", help="Mã bài học, ví dụ: bdt-xet-hieu")
-    w.set_defaults(func=cmd_weave)
-
+    # Soạn bài (human-in-the-loop)
     ap = sub.add_parser("approve", help="Đánh dấu APPROVE để mở khoá compile")
     ap.add_argument("slug", help="Mã bài học cần duyệt")
     ap.set_defaults(func=cmd_approve)
@@ -773,6 +797,17 @@ def main(argv: list[str] | None = None) -> int:
     v = sub.add_parser("validate", help="Chạy trọng tài S2: sanitizer + schema + difficulty_gate")
     v.add_argument("lesson", help="Đường dẫn file lesson .json")
     v.set_defaults(func=cmd_validate)
+
+    va = sub.add_parser("validate-all", help="Chạy trọng tài S2 trên TẤT CẢ lesson JSON (gác cổng cả kho)")
+    va.add_argument("--grade", help="Lọc theo lớp (vd lop-9)")
+    va.add_argument("--subject", help="Lọc theo môn (vd dai-so, hinh-hoc)")
+    va.set_defaults(func=cmd_validate_all)
+
+    rb = sub.add_parser("rebuild", help="Build LẠI mọi bài đã có output (lan thay đổi design_tokens/template)")
+    rb.add_argument("--grade", help="Lọc theo lớp (vd lop-9)")
+    rb.add_argument("--subject", help="Lọc theo môn (vd dai-so, hinh-hoc)")
+    rb.add_argument("--all", action="store_true", help="Build cả bài CHƯA từng build (không chỉ bài đã có PDF)")
+    rb.set_defaults(func=cmd_rebuild)
 
     # Curriculum / kế hoạch cả năm
     cs = sub.add_parser("curriculum-sync", help="Sinh/cập nhật config/curriculum.json từ cây tuần")

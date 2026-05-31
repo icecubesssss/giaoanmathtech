@@ -50,15 +50,12 @@ phòng cá nhân thì được, nhưng **chỉ làm việc trên bản ngoài On
 - Trong GitHub Desktop: **File → Clone repository →** chọn kho `giaoan` (Thầy Thái mời bạn
   vào trước, xem mục 4) → chọn nơi lưu **ngoài OneDrive** (mục 1) → **Clone**.
 
-### c) Tạo file key riêng `.env`
-- Copy file `.env.example` thành `.env`, mở bằng Notepad và điền key của mình:
+### c) Tạo file cấu hình riêng `.env`
+- Copy file `.env.example` thành `.env`, mở bằng Notepad và điền đường dẫn tectonic của máy mình:
   ```
-  MATHPIX_APP_ID=...
-  MATHPIX_APP_KEY=...
-  LLM_API_KEY=...
   TECTONIC_BIN=...đường dẫn tới tectonic...
   ```
-- File `.env` **không bao giờ lên GitHub** (đã chặn sẵn) → key của ai người nấy giữ.
+- File `.env` **không bao giờ lên GitHub** (đã chặn sẵn) → cấu hình của ai người nấy giữ.
 
 ### d) Cài thư viện Python (mở Terminal / PowerShell trong thư mục dự án)
 ```bash

@@ -2,6 +2,13 @@
 
 > Phiên bản 2.0 — đã vá các lỗ hổng cấu trúc, bổ sung tầng biên dịch, chốt chặn bảo mật LaTeX, và đặc biệt nâng cấp **Hệ Thống Thiết Kế (Design System)** để phiếu in/slide đạt chuẩn xuất bản chuyên nghiệp, không còn "phèn".
 
+> ⚠️ **TRẠNG THÁI HIỆN HÀNH (cập nhật 2026-05-30) — ĐỌC TRƯỚC.**
+> Tài liệu này mô tả **tầm nhìn v1**: dây chuyền tự động hoàn toàn `ingest → scrape → weave` (Mathpix OCR + bot cào đề đêm + LLM tự dệt). **Nhánh tự động đó đã được RÚT GỌN/GỠ BỎ.** Thực tế vận hành đã hội tụ về luồng gọn hơn, do **người soạn + Claude** điền nội dung trực tiếp rồi để máy kiểm & in:
+> `progress → new-lesson → (Claude điền) → validate → approve → build`.
+> - Các phần **không còn trong code:** `ingest/` (Mathpix), `scrapers/` (cào + APScheduler), và các agent `seed_parser.py` / `web_scouter.py` / `content_weaver.py`. Phần lõi vẫn nguyên: `schema/`, `validators/`, `templates/`, `compiler/`, `feedback/` + `evolution_engine.py`.
+> - **Luồng & lệnh hiện hành:** xem [README.md](README.md). **Luật soạn bài** (kết tinh từ prompt cũ): xem [HUONG-DAN-SOAN-BAI.md](HUONG-DAN-SOAN-BAI.md).
+> - Phần dưới giữ nguyên làm **lịch sử thiết kế**; các mục đã đổi được chú thích **[v1 — đã rút gọn]** ngay tại chỗ.
+
 Tài liệu này cung cấp sơ đồ thư mục hoàn chỉnh cùng bộ Master System Prompt để nạp vào Claude (hoặc Cursor/Roo Code) nhằm xây dựng, vận hành và nâng cấp hệ thống phiếu học tập tự động.
 
 ---
@@ -15,7 +22,7 @@ math-worksheet-factory/
 ├── .env                                # API Keys thật (KHÔNG commit) — Mathpix, LLMs
 ├── .env.example                        # Mẫu khai báo biến môi trường (commit cái này)
 ├── .gitignore                          # Bỏ qua .env, outputs/, __pycache__, *.aux, *.log
-├── requirements.txt                    # pydantic, sympy, jinja2, requests, beautifulsoup4, python-dotenv, APScheduler
+├── requirements.txt                    # [hiện hành] jinja2, pydantic, sympy, python-dotenv, pytest  (đã bỏ requests/bs4/APScheduler theo nhánh auto v1)
 ├── pyproject.toml                      # Cấu hình project + pytest + ruff (lint)
 ├── README.md                           # Hướng dẫn cài đặt TeX Live + chạy hệ thống
 │
@@ -114,12 +121,12 @@ math-worksheet-factory/
 
 ## II. GIẢI THÍCH CHỨC NĂNG CÁC TẦNG TƯƠNG TÁC
 
-### Tầng 0 — `ingest/` (Bóc tách hạt giống)
-Thầy ném file cũ vào `inputs/seeds/`. `mathpix_ocr.py` gọi Mathpix bóc PDF/ảnh thành LaTeX sạch, rồi `seed_parser.py` rút "ADN sư phạm" (phong cách ra đề, độ khó, cách trình bày) của Thầy.
+### Tầng 0 — `ingest/` (Bóc tách hạt giống) — **[v1 — ĐÃ RÚT GỌN]**
+*(Đã gỡ.)* Ý tưởng cũ: `mathpix_ocr.py` gọi Mathpix bóc PDF/ảnh hạt giống thành LaTeX, rồi `seed_parser.py` rút "ADN sư phạm". **Hiện hành:** Thầy để PDF nguồn trong folder tuần; **Claude đọc trực tiếp** đề trong PDF khi soạn (không cần OCR riêng). Hồ sơ độ khó `config/difficulty_profile.json` nay **chỉnh tay**/để Claude điền theo chương.
 
-### Tầng 1 — `scrapers/` (Cào dữ liệu nền)
-`scheduler.py` kích `offline_worker.py` chạy **lúc 0h** gom đề từ nguồn uy tín đã có sẵn đáp án con người. `html_cleaner.py` tôn trọng `robots.txt`, `dedup.py` khử trùng lặp.
-**Nguyên tắc bất di:** Tuyệt đối không cho AI tự bịa số/tự nghĩ đề. Mọi bài toán phải có Ground Truth (đáp án con người).
+### Tầng 1 — `scrapers/` (Cào dữ liệu nền) — **[v1 — ĐÃ RÚT GỌN]**
+*(Đã gỡ toàn bộ `scrapers/` + APScheduler.)* Ý tưởng cũ: bot cào đề đêm vào `verified_scraped_bank`. **Hiện hành:** nguồn đề là **PDF của Thầy** trong `inputs/seeds/...`.
+**Nguyên tắc bất di (vẫn giữ — nay là kỷ luật con người):** Tuyệt đối không bịa số/đề. Mọi bài phải bám PDF nguồn của Thầy (Ground Truth có đáp án); thiếu dạng nào thì **hỏi Thầy**, không tự chế. Xem [HUONG-DAN-SOAN-BAI.md](HUONG-DAN-SOAN-BAI.md) §0.
 
 ### Tầng 2 — `schema/` & `validators/` (Chốt chặn Logic & Bảo mật)
 - Dữ liệu thô ép vào **Pydantic Schema** (đúng cấu trúc).
@@ -133,20 +140,22 @@ Thầy ném file cũ vào `inputs/seeds/`. `mathpix_ocr.py` gọi Mathpix bóc P
 ### Tầng 4 — `feedback/` & `evolution_engine.py` (Tiến hóa có kiểm soát)
 `feedback_parser.py` chuyển nhận xét markdown tự do của Thầy thành `feedback_schema`. `evolution_engine.py` nâng cấp prompt/style nhưng **mỗi lần sửa đều lưu snapshot** vào `style_history/` để rollback — chống "trôi style".
 
-### Luồng điều hành CLI (`main.py`)
-Mỗi giai đoạn là một sub-command độc lập, ghi tiến độ vào `storage/run_state.json` để **resume được khi session đứt**:
+### Luồng điều hành CLI (`main.py`) — **[CẬP NHẬT]**
+Mỗi giai đoạn là một sub-command độc lập, ghi tiến độ vào `storage/run_state.json` để **resume được khi session đứt**. Luồng **hiện hành** (đã bỏ `ingest/scrape/weave`):
 ```
-python -m src.main ingest                 # OCR + parse hạt giống (1 lần)
-python -m src.main scrape                 # chạy thủ công mẻ cào (hoặc để scheduler tự chạy 0h)
-python -m src.main weave   <ten_bai>      # dệt 5 chặng → JSON (chưa compile)
-python -m src.main validate <ten_bai>     # SymPy + sanitizer + geometry_gate
-python -m src.main approve <ten_bai>      # đánh dấu APPROVE 5 chặng (human-in-the-loop)
-python -m src.main build   <ten_bai>      # render Jinja + latexmk → outputs/<ten_bai>/
-python -m src.main status                 # xem run_state.json: bài nào tới bước nào
+python -m src.main progress [--grade --subject --todo]  # quét tuần còn thiếu
+python -m src.main new-lesson <folder tuần>             # sinh khung 5 chặng đầy block TODO
+#   → Claude điền nội dung theo HUONG-DAN-SOAN-BAI.md (bám PDF nguồn của Thầy)
+python -m src.main validate <file.json>                # SymPy + sanitizer + schema + difficulty + gradient + linter
+python -m src.main validate-all [--grade --subject]    # gác cổng cả kho trước khi build/commit
+python -m src.main approve <slug>                       # APPROVE (human-in-the-loop)
+python -m src.main build   <file.json>                 # render Jinja + Tectonic → outputs/<...>/<slug>/
+python -m src.main rebuild  [--grade --subject --all]  # build lại hàng loạt sau khi đổi design_tokens
+python -m src.main status                               # xem run_state.json: bài nào tới bước nào
 ```
 
-### Đường lui khi ngân hàng thiếu bài (no-fabrication safe-fail)
-Nếu `verified_scraped_bank` **không có** bài khớp node taxonomy đang soạn, hệ thống **KHÔNG được bịa**. Hành vi bắt buộc: dừng bước `weave`, ghi `status="blocked_no_source"` vào `run_state.json`, báo Thầy rõ node nào thiếu, và đề xuất 1 trong 3 lối: (a) chờ mẻ cào kế tiếp, (b) Thầy nạp thêm hạt giống cho node đó, (c) Thầy duyệt tay nới tiêu chí khớp.
+### Đường lui khi nguồn thiếu bài (no-fabrication safe-fail) — **[CẬP NHẬT: kỷ luật con người]**
+Nếu PDF nguồn của Thầy **không có** dạng bài đang cần, hệ thống **KHÔNG được bịa**. Trước đây cổng `weave` tự ghi `status="blocked_no_source"`; nay khâu dệt do người + Claude làm nên đây là **kỷ luật bắt buộc khi soạn**: dừng lại, báo Thầy rõ thiếu dạng nào, và đề xuất 1 trong 2 lối: (a) Thầy bổ sung đề/PDF nguồn cho dạng đó, (b) Thầy duyệt tay nới tiêu chí. Tuyệt đối không tự chế đề/đáp án.
 
 ---
 
@@ -192,21 +201,23 @@ Comic Sans/Times mặc định • > 2 font • cầu vồng màu • emoji thay
 
 > Rủi ro lớn nhất của hệ thống không phải lỗi kỹ thuật, mà là **đẻ ra phiếu ngây ngô dưới tầm học sinh**. Một AI ráp đúng quy trình vẫn có thể cho ra Hook kiểu "vì sao cần dấu lớn hơn" cho học sinh lớp 9 ôn thi vào 10. Mục này khóa chặt 3 điểm rò rỉ.
 
-### 1. seed_parser phải quét TOÀN BỘ & chốt "trần độ khó"
-Cấm chỉ đọc trang lý thuyết đầu. `seed_parser.py` quét hết file hạt giống, rút `difficulty_profile.json`:
+> **[v1 — cơ chế đã đổi, LUẬT vẫn giữ]** `seed_parser.py`/`content_weaver.py` đã gỡ; nhưng các LUẬT chống "đần" dưới đây vẫn bắt buộc — nay do **Claude tuân theo khi soạn** ([HUONG-DAN-SOAN-BAI.md](HUONG-DAN-SOAN-BAI.md) §1–§2) và được `difficulty_gate`/`gradient_gate` soi khi `validate`.
+
+### 1. seed_parser phải quét TOÀN BỘ & chốt "trần độ khó" — *(nay: chỉnh `difficulty_profile.json` tay)*
+Cấm chỉ đọc trang lý thuyết đầu. Hồ sơ `difficulty_profile.json` (trước do `seed_parser.py` sinh, nay điền tay theo chương) phải chốt:
 - **Đối tượng** (vd: HS lớp 9 ôn thi vào 10).
 - **Trần độ khó** = bài KHÓ NHẤT trong seed (vd với file Bất đẳng thức: chứng minh $a^2+b^2+c^2\ge ab+bc+ca$, BĐT trong tam giác, GTNN/GTLN của phân thức).
 - **Sàn độ khó** = mức thấp nhất được phép xuất hiện (thường là Level Up, KHÔNG phải nhắc lại định nghĩa vỡ lòng).
 - **Kỹ thuật cốt lõi** seed dạy (vd: "xét hiệu $A-B$", dùng $M^2\ge0$).
 
-### 2. content_weaver bám trần + luật giọng văn (chống trẻ con hoá)
-Prompt `content_weaver.txt` phải nhúng các luật cứng:
+### 2. Bám trần + luật giọng văn (chống trẻ con hoá) — *(nay: Claude tuân khi soạn)*
+Khi soạn (Claude điền lesson JSON) phải tuân các luật cứng:
 - Mọi chặng bám `difficulty_profile.json`; chặng cuối (Boss) phải chạm **trần** độ khó của seed.
 - **Hook KHÔNG được giảng lại khái niệm vỡ lòng.** Hook là một bài toán/tình huống gây tò mò ĐÚNG TẦM (vd "không quy đồng, so sánh $\frac{2024}{2023}$ và $\frac{2025}{2024}$"; hoặc bài thực tế BMI/nồng độ cồn có sẵn trong seed).
 - **Giọng văn**: tôn trọng trình độ người học, không hạ cố, không emoji trẻ con, không câu cảm thán thừa.
 
 ### 3. difficulty_gate.py — cổng gác sàn
-Trước khi cho compile, `difficulty_gate.py` từ chối gói bài nếu **bài khó nhất còn dưới sàn** của `difficulty_profile.json`, hoặc nếu Hook bị phát hiện chỉ là định nghĩa/nhắc lại lý thuyết. Vi phạm → trả về `weave` làm lại.
+Trước khi cho compile, `difficulty_gate.py` từ chối gói bài nếu **bài khó nhất còn dưới sàn** của `difficulty_profile.json`, hoặc nếu Hook bị phát hiện chỉ là định nghĩa/nhắc lại lý thuyết. Vi phạm → **soạn lại** (sửa lesson JSON) rồi `validate` lại.
 
 ### 4. Lưới an toàn cuối: Human-in-the-loop
 Thầy luôn thấy **nội dung thô của cả 5 chặng trước khi compile** (Mục IV §5). Bài nào đần → gõ "REJECT", chưa tốn token render. Đây là chốt chặn cuối cùng, đảm bảo không bao giờ in ra phiếu dưới tầm.
@@ -353,7 +364,7 @@ Dựng cả engine (~40 file, 3.000–5.000 dòng) trong **một** session là q
 | **S1 — Khung xương** | `schema/` + `config/` + `templates/` (preamble + 3 base + 5 component) + `design_tokens.json` | Chốt Design System trước |
 | **S2 — Trọng tài** | `validators/` (sympy_solver, latex_sanitizer, geometry_gate, visual_linter) + tests | Bảo mật + logic toán |
 | **S3 — Biên dịch** | `compiler/` (jinja_renderer, latex_builder) + compile thử 1 PDF "hello" | Xác nhận toolchain XeLaTeX chạy |
-| **S4 — Dữ liệu & AI** | `ingest/`, `scrapers/`, `agents/` + chạy thật ra **1 phiếu hoàn chỉnh** | Nghiệm thu end-to-end |
+| **S4 — Dữ liệu & AI** ~~`ingest/`, `scrapers/`, auto-`agents/`~~ **[v1 — đã rút gọn]** | Nay: người + Claude điền lesson JSON (`new-lesson` → `validate` → `build`) ra **1 phiếu hoàn chỉnh** | Nghiệm thu end-to-end |
 
 ### Ngân sách token khi đã build xong (cửa sổ ~200K/session)
 Render LaTeX do Python/Jinja2 lo, **không tốn token LLM**. LLM chỉ tốn ở phân tích + dệt nội dung + đối thoại duyệt:
@@ -381,7 +392,7 @@ Render LaTeX do Python/Jinja2 lo, **không tốn token LLM**. LLM chỉ tốn �
 12. ⭐ Thêm hẳn **Mục III — Design System** để phiếu chuyên nghiệp, hết "phèn".
 13. Siết bộ test: render thật, chặn shell-escape, chặn LaTeX độc hại.
 14. ⭐ Thêm `storage/run_state.json` — checkpoint/resume khi session đứt.
-15. ⭐ Định nghĩa luồng CLI trong `main.py` (ingest → scrape → weave → validate → approve → build → status).
+15. ⭐ Định nghĩa luồng CLI trong `main.py`. **[Hiện hành]** progress → new-lesson → (Claude điền) → validate → validate-all → approve → build → rebuild → status (đã bỏ ingest/scrape/weave).
 16. ⭐ Đường lui "no-fabrication safe-fail" khi ngân hàng thiếu bài khớp taxonomy.
 17. ⭐ Mục VI: điều kiện môi trường (TeX Live + **cài font tiếng Việt**) + lưu ý rate-limit/chi phí.
 18. ⭐ Mục VII: lộ trình build 4 session (S1–S4) + ngân sách token + đường cong chi phí phiếu đầu/sau.

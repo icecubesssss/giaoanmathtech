@@ -25,8 +25,3 @@ DESIGN_TOKENS = CONFIG_DIR / "design_tokens.json"
 
 # Engine biên dịch — Tectonic (XeLaTeX, không cần root). TUYỆT ĐỐI không bật -shell-escape.
 TECTONIC_BIN = os.path.expanduser(os.getenv("TECTONIC_BIN", "~/bin/tectonic"))
-
-# API keys (rỗng nếu chưa cấu hình — các tầng AI sẽ báo lỗi rõ ràng khi cần)
-MATHPIX_APP_ID = os.getenv("MATHPIX_APP_ID", "")
-MATHPIX_APP_KEY = os.getenv("MATHPIX_APP_KEY", "")
-LLM_API_KEY = os.getenv("LLM_API_KEY", "")

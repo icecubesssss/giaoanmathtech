@@ -18,6 +18,27 @@ __all__ = ["wrap_long_math", "BuildLogReport", "scan_build_log", "find_presentat
 _TEACHER_ASIDE = re.compile(r"\bGV\b|gi[áa]o\s*vi[êe]n", re.IGNORECASE)
 # Nhiều ý a)…b)…c) nằm cùng một block mà không có token xuống dòng [[br]] -> dễ dính chữ.
 _SUBITEM = re.compile(r"(?<![A-Za-zÀ-ỹ])[b-fB-F]\)")
+# Ký tự đặc biệt LaTeX chưa escape trong field VĂN BẢN THUẦN (title/eyebrow/label) —
+# sanitizer KHÔNG bắt, nhưng '&' '%' '#' thô sẽ làm VỠ build (vd & -> "Misplaced
+# alignment tab"). Phải viết \& \% \#. (Trong $...$ thì & là hợp lệ nên không quét math.)
+_RAW_SPECIAL = re.compile(r"(?<!\\)[&%#]")
+
+
+def _raw_special_warnings(lesson) -> list[str]:
+    """Cảnh báo '&' '%' '#' chưa escape ở field văn bản thuần (sẽ làm vỡ LaTeX)."""
+    out: list[str] = []
+    for name in ("title", "eyebrow"):
+        v = getattr(lesson, name, None)
+        if v and _RAW_SPECIAL.search(v):
+            out.append(f"lesson.{name}: có ký tự '&' '%' '#' chưa escape — phải viết \\& \\% \\# (nếu không sẽ VỠ build).")
+    for st in lesson.stages:
+        if st.title and _RAW_SPECIAL.search(st.title):
+            out.append(f"stage[{st.kind}].title: có '&' '%' '#' chưa escape — dùng \\& \\% \\#.")
+        for i, b in enumerate(st.blocks):
+            lab = getattr(b, "label", None)
+            if lab and _RAW_SPECIAL.search(lab):
+                out.append(f"stage[{st.kind}].block[{i}].label: có '&' '%' '#' chưa escape — dùng \\& \\% \\#.")
+    return out
 
 
 def find_presentation_warnings(lesson) -> list[str]:
@@ -55,6 +76,8 @@ def find_presentation_warnings(lesson) -> list[str]:
         )
         if not has_btvn:
             warns.append("stage[reflection]: chưa thấy BÀI TẬP VỀ NHÀ (gắn tier=\"btvn\") — nên giao bài cho HS.")
+
+    warns.extend(_raw_special_warnings(lesson))
     return warns
 
 # Bẻ ưu tiên tại toán tử quan hệ trước, rồi cộng/trừ ở mức ngoài cùng.

@@ -24,6 +24,7 @@ python -m src.main new-lesson inputs/seeds/lop-9/dai-so/tuan10-11-bat-phuong-tri
 
 # 3. Đổ đề vào các block TODO  ← bước này nhờ Claude làm
 #    (mở chat, chỉ folder + PDF nguồn; Claude điền đúng convention)
+#    Luật soạn bài đầy đủ: HUONG-DAN-SOAN-BAI.md
 
 # 4. Kiểm + duyệt + in 3 bản
 python -m src.main validate  <file.json>
@@ -39,10 +40,12 @@ python -m src.main build     <file.json>
 | `progress [--grade X] [--subject X] [--todo]` | Quét sống cây tuần: có PDF nguồn? có JSON? đã build chưa |
 | `new-lesson <folder> [--slug --title --force]` | Sinh khung JSON 5 chặng/4 tầng đầy block TODO |
 | `curriculum-sync` | Sinh/cập nhật `config/curriculum.json` (giữ deadline/giờ đã điền) |
-| `validate <file.json>` | Trọng tài S2: sanitizer + schema + difficulty_gate + **gradient_gate** (độ dốc mở rộng) + linter |
+| `validate <file.json>` | Trọng tài S2: sanitizer + schema + difficulty_gate + **gradient_gate** (độ dốc mở rộng) + linter (gồm cảnh báo `&`/`%`/`#` chưa escape) |
+| `validate-all [--grade X] [--subject X]` | Chạy `validate` trên **toàn bộ** lesson JSON — gác cổng cả kho trước khi build/commit |
 | `approve <slug>` | Mở khoá compile |
 | `build <file.json>` | Render + compile cả 3 bản PDF |
 | `build-handout / build-guide / build-slide <file.json>` | In riêng từng bản |
+| `rebuild [--grade X] [--subject X] [--all]` | Build **lại hàng loạt** mọi bài đã có output — lan thay đổi `design_tokens`/template ra mọi phiếu (dùng sau khi sửa màu/font/branding) |
 | `new-summary <folder> [--slug --title --force]` | Sinh khung **phiếu tổng kết chương** (tự liệt kê phiếu thành viên trong folder) |
 | `build-summary <file.json>` | Render phiếu tổng kết chương 1 trang: bản HS (sơ đồ trống) + bản GV (có đáp án) |
 | `status` | Trạng thái mọi bài trong `run_state.json` |
