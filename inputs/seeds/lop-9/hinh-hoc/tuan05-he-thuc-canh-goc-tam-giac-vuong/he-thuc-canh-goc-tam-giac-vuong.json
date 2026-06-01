@@ -22,6 +22,12 @@
           "text": "\\textbf{Thử thách khởi động.} Một chiếc thang dài $8$ m dựa vào tường, tạo với mặt đất góc $30^\\circ$. [[br]] Không trèo lên đo, làm sao biết đầu thang chạm tường ở \\emph{độ cao} bao nhiêu và chân thang cách tường \\emph{bao xa}?"
         },
         {
+          "type": "figure",
+          "tikz": "\\begin{tikzpicture}[line width=0.9pt,font=\\small]\\coordinate (B) at (0,0);\\coordinate (A) at (0,4);\\coordinate (C) at (6.93,0);\\draw[ink,line width=1.3pt] (0,-0.05)--(0,4.6);\\draw[ink] (-0.7,0)--(7.7,0);\\draw[brand,line width=1.1pt] (A)--(C);\\rightanglemark{B}{A}{C}\\pic[draw=brand,line width=0.9pt,angle radius=0.95cm,\"$30^\\circ$\",angle eccentricity=1.5,font=\\small]{angle=A--C--B};\\node[brand] at (3.7,2.5) {Thang $8$ m};\\node[above left] at (A) {$A$};\\node[below left] at (B) {$B$};\\node[below right] at (C) {$C$};\\node[ink,rotate=90,anchor=south] at (-0.18,2) {\\footnotesize tường};\\node[ink] at (6.4,-0.32) {\\footnotesize mặt đất};\\end{tikzpicture}",
+          "caption": "Thang dài $8$ m dựa tường, nghiêng $30^\\circ$ với mặt đất.",
+          "width": "0.42\\linewidth"
+        },
+        {
           "type": "para",
           "text": "\\textbf{Ví dụ mẫu (thầy + trò cùng làm).} Tam giác $ABC$ vuông tại $A$, $\\widehat{C}=30^\\circ$, cạnh huyền $BC=8$. [[br]] Cạnh đối với góc $C$: $AB=BC\\cdot\\sin C=8\\sin30^\\circ=[[mblank:1.2cm]]$. [[br]] Cạnh kề góc $C$: $AC=BC\\cdot\\cos C=8\\cos30^\\circ\\approx[[mblank:1.6cm]]$ (làm tròn hàng phần trăm)."
         }
@@ -43,8 +49,20 @@
           "text": "\\textbf{Định lí 2 (hai cạnh góc vuông).} Mỗi cạnh góc vuông bằng cạnh góc vuông kia nhân $\\tan$ góc đối hoặc nhân $\\cot$ góc kề. [[br]] $b=c\\tan B=c\\cot C$;\\quad $c=b\\tan C=b\\cot B$."
         },
         {
+          "type": "figure",
+          "tikz": "\\begin{tikzpicture}[line width=0.9pt,font=\\small]\\coordinate (B) at (0,0);\\coordinate (C) at (5,0);\\coordinate (A) at (1.8,2.4);\\draw[ink] (A)--(B)--(C)--cycle;\\rightanglemark{A}{B}{C}\\node[above] at (A) {$A$};\\node[below left] at (B) {$B$};\\node[below right] at (C) {$C$};\\node[ink,left] at ($(A)!0.5!(B)$) {$c$};\\node[ink,right] at ($(A)!0.5!(C)$) {$b$};\\node[ink,below] at ($(B)!0.5!(C)$) {$a$};\\end{tikzpicture}",
+          "caption": "Tam giác $ABC$ vuông tại $A$: huyền $a=BC$; cạnh góc vuông $b=AC$, $c=AB$.",
+          "width": "0.42\\linewidth"
+        },
+        {
           "type": "para",
           "text": "\\textbf{Ví dụ mẫu 1 (dùng hai định lí).} Làm tròn hàng phần trăm. [[br]] Tam giác $ABC$ vuông tại $B$, huyền $AC=8$, $\\widehat{C}=30^\\circ$: $x=AB=AC\\sin C=8\\sin30^\\circ=[[mblank:1cm]]$;\\; $y=BC=AC\\cos C=8\\cos30^\\circ\\approx[[mblank:1.4cm]]$. [[br]] Tam giác $DEF$ vuông tại $E$, $EF=5$, $\\widehat{F}=55^\\circ$: $z=DE=EF\\tan F=5\\tan55^\\circ\\approx[[mblank:1.4cm]]$;\\; $t=DF=\\dfrac{EF}{\\cos F}=\\dfrac{5}{\\cos55^\\circ}\\approx[[mblank:1.4cm]]$."
+        },
+        {
+          "type": "figure",
+          "tikz": "\\begin{tikzpicture}[line width=0.9pt,font=\\small]\\coordinate (B) at (0,0);\\coordinate (A) at (0,4);\\coordinate (C) at (6.93,0);\\draw[ink] (A)--(B)--(C)--cycle;\\rightanglemark{B}{A}{C}\\pic[draw=brand,line width=0.9pt,angle radius=0.7cm,\"$30^\\circ$\",angle eccentricity=1.5,font=\\small]{angle=A--C--B};\\node[above] at (A) {$A$};\\node[below left] at (B) {$B$};\\node[below right] at (C) {$C$};\\node[ink,left] at ($(A)!0.5!(B)$) {$x$};\\node[ink,below] at ($(B)!0.5!(C)$) {$y$};\\node[ink,above right] at ($(A)!0.5!(C)$) {$8$};\\coordinate (E) at (10,0);\\coordinate (D) at (10,7.14);\\coordinate (F) at (15,0);\\draw[ink] (D)--(E)--(F)--cycle;\\rightanglemark{E}{D}{F}\\pic[draw=brand,line width=0.9pt,angle radius=0.7cm,\"$55^\\circ$\",angle eccentricity=1.5,font=\\small]{angle=D--F--E};\\node[above] at (D) {$D$};\\node[below left] at (E) {$E$};\\node[below right] at (F) {$F$};\\node[ink,left] at ($(D)!0.5!(E)$) {$z$};\\node[ink,below] at ($(E)!0.5!(F)$) {$5$};\\node[ink,above right] at ($(D)!0.5!(F)$) {$t$};\\end{tikzpicture}",
+          "caption": "Vuông tại $B$ ($AC=8$, $\\widehat C=30^\\circ$) và vuông tại $E$ ($EF=5$, $\\widehat F=55^\\circ$).",
+          "width": "0.82\\linewidth"
         },
         {
           "type": "noted",
@@ -53,6 +71,12 @@
         {
           "type": "para",
           "text": "\\textbf{Ví dụ mẫu 2 (giải tam giác vuông).} Làm tròn góc đến độ, cạnh đến hàng phần mười. [[br]] $\\triangle ABC$ vuông tại $C$, $AB=5$, $AC=3$: $BC=\\sqrt{AB^2-AC^2}=[[mblank:1cm]]$;\\; $\\cos A=\\dfrac{AC}{AB}=0{,}6\\Rightarrow\\widehat{A}\\approx[[mblank:1.2cm]]$;\\; $\\widehat{B}\\approx[[mblank:1.2cm]]$. [[br]] $\\triangle DEF$ vuông tại $D$, $EF=6$, $\\widehat{E}=28^\\circ$: $DE=EF\\cos E\\approx[[mblank:1.2cm]]$;\\; $DF=EF\\sin E\\approx[[mblank:1.2cm]]$;\\; $\\widehat{F}=[[mblank:1cm]]$."
+        },
+        {
+          "type": "figure",
+          "tikz": "\\begin{tikzpicture}[line width=0.9pt,font=\\small]\\coordinate (A) at (0,0);\\coordinate (C) at (3,0);\\coordinate (B) at (3,4);\\draw[ink] (A)--(C)--(B)--cycle;\\rightanglemark{C}{A}{B}\\node[below left] at (A) {$A$};\\node[below right] at (C) {$C$};\\node[above] at (B) {$B$};\\node[ink,below] at ($(A)!0.5!(C)$) {$3$};\\node[ink,right] at ($(C)!0.5!(B)$) {$4$};\\node[ink,above left] at ($(A)!0.5!(B)$) {$5$};\\coordinate (D) at (7,0);\\coordinate (F) at (7,2.8);\\coordinate (E) at (12.3,0);\\draw[ink] (F)--(D)--(E)--cycle;\\rightanglemark{D}{F}{E}\\pic[draw=brand,line width=0.9pt,angle radius=0.7cm,\"$28^\\circ$\",angle eccentricity=1.5,font=\\small]{angle=F--E--D};\\node[above] at (F) {$F$};\\node[below left] at (D) {$D$};\\node[below right] at (E) {$E$};\\node[ink,above right] at ($(F)!0.5!(E)$) {$6$};\\end{tikzpicture}",
+          "caption": "Vuông tại $C$ ($AB=5$, $AC=3$) và vuông tại $D$ ($EF=6$, $\\widehat E=28^\\circ$).",
+          "width": "0.74\\linewidth"
         },
         {
           "type": "noted",
@@ -101,10 +125,22 @@
           "text": "\\textbf{Ví dụ mẫu (giải tam giác thường — kẻ đường cao).} Giải $\\triangle ABC$ có $\\widehat{B}=65^\\circ,\\ \\widehat{C}=45^\\circ,\\ AB=2{,}8$. [[br]] $\\widehat{A}=180^\\circ-65^\\circ-45^\\circ=[[mblank:1cm]]$. Kẻ đường cao $AH\\ (H\\in BC)$. [[br]] $\\triangle ABH$ vuông tại $H$: $AH=AB\\sin B=2{,}8\\sin65^\\circ\\approx[[mblank:1.2cm]]$;\\; $BH=AB\\cos B\\approx[[mblank:1.2cm]]$. [[br]] $\\triangle AHC$ vuông cân tại $H$ (vì $\\widehat{C}=45^\\circ$) nên $HC=AH$; $BC=BH+HC\\approx[[mblank:1cm]]$;\\; $AC=\\dfrac{AH}{\\sin C}\\approx[[mblank:1cm]]$."
         },
         {
+          "type": "figure",
+          "tikz": "\\begin{tikzpicture}[line width=0.9pt,font=\\small]\\coordinate (B) at (0,0);\\coordinate (A) at (1.183,2.538);\\coordinate (H) at (1.183,0);\\coordinate (C) at (3.721,0);\\draw[ink] (A)--(B)--(C)--cycle;\\draw[ink,dashed,line width=0.7pt] (A)--(H);\\rightanglemark{H}{A}{C}\\pic[draw=brand,line width=0.9pt,angle radius=0.8cm,\"$65^\\circ$\",angle eccentricity=1.5,font=\\small]{angle=C--B--A};\\pic[draw=brand,line width=0.9pt,angle radius=0.8cm,\"$45^\\circ$\",angle eccentricity=1.5,font=\\small]{angle=A--C--B};\\node[above] at (A) {$A$};\\node[below left] at (B) {$B$};\\node[below right] at (C) {$C$};\\node[below] at (H) {$H$};\\node[ink,above left] at ($(A)!0.5!(B)$) {$2{,}8$};\\end{tikzpicture}",
+          "caption": "Kẻ đường cao $AH$: $\\widehat B=65^\\circ$, $\\widehat C=45^\\circ$, $AB=2{,}8$.",
+          "width": "0.5\\linewidth"
+        },
+        {
           "type": "problem",
           "label": "Bài 3.",
           "tier": "onclass",
           "statement": "Một khúc sông rộng $AB=100$ m. Một chiếc thuyền đi thẳng từ vị trí $B$ bên này sang vị trí $C$ bên kia bờ, với tam giác $ABC$ vuông tại $A$ và $\\widehat{ABC}=35^\\circ$. Tính quãng đường $BC$ (làm tròn hàng phần mười mét)."
+        },
+        {
+          "type": "figure",
+          "tikz": "\\begin{tikzpicture}[line width=0.9pt,font=\\small]\\coordinate (A) at (0,4);\\coordinate (B) at (0,0);\\coordinate (C) at (2.8,4);\\fill[ink!7] (-1,0) rectangle (4,4);\\draw[ink,line width=1.1pt] (-1,4)--(4,4);\\draw[ink,line width=1.1pt] (-1,0)--(4,0);\\draw[brand] (A)--(B)--(C)--cycle;\\rightanglemark{A}{B}{C}\\pic[draw=brand,line width=0.9pt,angle radius=0.85cm,\"$35^\\circ$\",angle eccentricity=1.5,font=\\small]{angle=C--B--A};\\node[above left] at (A) {$A$};\\node[below left] at (B) {$B$};\\node[above] at (C) {$C$};\\node[ink,left] at ($(A)!0.5!(B)$) {$100$ m};\\node[ink] at (3.7,4.3) {\\footnotesize bờ xa};\\node[ink] at (3.7,-0.32) {\\footnotesize bờ gần};\\end{tikzpicture}",
+          "caption": "Sông rộng $AB=100$ m, vuông tại $A$, $\\widehat{ABC}=35^\\circ$; thuyền đi $B\\to C$.",
+          "width": "0.52\\linewidth"
         },
         {
           "type": "writelines",
@@ -117,6 +153,12 @@
           "statement": "Cho tam giác $ABC$ có $BC=6$ cm, $\\widehat{B}=60^\\circ,\\ \\widehat{C}=40^\\circ$. Kẻ đường cao $CH$ ($H\\in AB$). Tính (làm tròn hàng phần mười): a) đường cao $CH$ và cạnh $AC$; b) diện tích tam giác $ABC$."
         },
         {
+          "type": "figure",
+          "tikz": "\\begin{tikzpicture}[line width=0.9pt,font=\\small]\\coordinate (B) at (0,0);\\coordinate (C) at (3,5.196);\\coordinate (A) at (3.915,0);\\coordinate (H) at (3,0);\\draw[ink] (A)--(B)--(C)--cycle;\\draw[ink,dashed,line width=0.7pt] (C)--(H);\\rightanglemark{H}{C}{A}\\pic[draw=brand,line width=0.9pt,angle radius=0.8cm,\"$60^\\circ$\",angle eccentricity=1.5,font=\\small]{angle=A--B--C};\\pic[draw=brand,line width=0.9pt,angle radius=0.85cm,\"$40^\\circ$\",angle eccentricity=1.5,font=\\small]{angle=B--C--A};\\node[above] at (C) {$C$};\\node[below left] at (B) {$B$};\\node[below right] at (A) {$A$};\\node[below] at (H) {$H$};\\node[ink,above left] at ($(B)!0.5!(C)$) {$6$};\\end{tikzpicture}",
+          "caption": "$BC=6$, $\\widehat B=60^\\circ$, $\\widehat C=40^\\circ$, đường cao $CH$ ($H\\in AB$).",
+          "width": "0.44\\linewidth"
+        },
+        {
           "type": "writelines",
           "count": 3
         },
@@ -125,6 +167,12 @@
           "label": "Bài 5.",
           "tier": "onclass",
           "statement": "Hình thang $ABCD$ có hai đáy $AD\\parallel BC$ với $AD=10$, $BC=21$; cạnh bên $AB=9$ và $\\widehat{B}=66^\\circ$. Tính cạnh bên $CD$ (làm tròn hàng phần mười). [[br]] (Gợi ý: hạ đường cao $AH$ và $DK$ xuống $BC$.)"
+        },
+        {
+          "type": "figure",
+          "tikz": "\\begin{tikzpicture}[line width=0.9pt,font=\\small]\\coordinate (B) at (0,0);\\coordinate (C) at (21,0);\\coordinate (A) at (3.66,8.22);\\coordinate (D) at (13.66,8.22);\\coordinate (H) at (3.66,0);\\coordinate (K) at (13.66,0);\\draw[ink] (A)--(B)--(C)--(D)--cycle;\\draw[ink,dashed,line width=0.7pt] (A)--(H);\\draw[ink,dashed,line width=0.7pt] (D)--(K);\\rightanglemark{H}{A}{C}\\rightanglemark{K}{D}{C}\\pic[draw=brand,line width=0.9pt,angle radius=0.95cm,\"$66^\\circ$\",angle eccentricity=1.5,font=\\small]{angle=C--B--A};\\node[above left] at (A) {$A$};\\node[above right] at (D) {$D$};\\node[below left] at (B) {$B$};\\node[below right] at (C) {$C$};\\node[below] at (H) {$H$};\\node[below] at (K) {$K$};\\node[ink,above] at ($(A)!0.5!(D)$) {$10$};\\node[ink,below=4pt] at (10.5,0) {$21$};\\node[ink,above left] at ($(B)!0.5!(A)$) {$9$};\\end{tikzpicture}",
+          "caption": "Hình thang $AD\\parallel BC$; hạ $AH,DK\\perp BC$.",
+          "width": "0.85\\linewidth"
         },
         {
           "type": "writelines",
@@ -202,6 +250,12 @@
           "statement": "Cho tam giác $ABC$ cân tại $A$, đường cao $BH$ ($H\\in AC$). Biết $\\widehat{A}=50^\\circ$ và $BH=2{,}3$. Tính chu vi tam giác $ABC$ (làm tròn hàng phần mười)."
         },
         {
+          "type": "figure",
+          "tikz": "\\begin{tikzpicture}[line width=0.9pt,font=\\small]\\coordinate (A) at (0,2.719);\\coordinate (B) at (-1.268,0);\\coordinate (C) at (1.268,0);\\coordinate (H) at (0.815,0.972);\\draw[ink] (A)--(B)--(C)--cycle;\\draw[ink,dashed,line width=0.7pt] (B)--(H);\\rightanglemark{H}{B}{C}\\pic[draw=brand,line width=0.9pt,angle radius=0.75cm,\"$50^\\circ$\",angle eccentricity=1.5,font=\\small]{angle=B--A--C};\\node[above] at (A) {$A$};\\node[below left] at (B) {$B$};\\node[below right] at (C) {$C$};\\node[right] at (H) {$H$};\\node[ink,below=1pt] at ($(B)!0.5!(H)$) {$2{,}3$};\\end{tikzpicture}",
+          "caption": "Cân tại $A$: $\\widehat A=50^\\circ$, đường cao $BH\\perp AC$, $BH=2{,}3$.",
+          "width": "0.4\\linewidth"
+        },
+        {
           "type": "para",
           "text": "\\textbf{Nhịp cầu lên mở rộng.} Các bài sau cần \\emph{kết hợp nhiều tam giác vuông} hoặc \\emph{lập luận tổng quát} — thêm đúng một bước so với bài trên lớp. [[br]] Mẹo chung: dựng thêm đường vuông góc để tách bài toán thành các tam giác vuông quen thuộc."
         },
@@ -216,6 +270,12 @@
           ]
         },
         {
+          "type": "figure",
+          "tikz": "\\begin{tikzpicture}[line width=0.9pt,font=\\small]\\coordinate (C) at (0,0);\\coordinate (B) at (2.517,3);\\coordinate (A) at (3.575,3);\\coordinate (K) at (2.517,0);\\coordinate (H) at (3.575,0);\\draw[ink] (-0.4,0)--(4.2,0);\\draw[ink,dashed,line width=0.7pt] (B)--(K);\\draw[ink,dashed,line width=0.7pt] (A)--(H);\\draw[ink] (C)--(A);\\draw[ink] (C)--(B);\\draw[brand,fill=brand!12] (A) circle (0.16);\\draw[brand,fill=brand!12] (B) circle (0.16);\\rightanglemark{H}{A}{C}\\rightanglemark{K}{B}{C}\\pic[draw=brand,line width=0.9pt,angle radius=1.0cm,\"$40^\\circ$\",angle eccentricity=1.5,font=\\small]{angle=H--C--A};\\pic[draw=brand,line width=0.9pt,angle radius=1.75cm,\"$10^\\circ$\",angle eccentricity=1.18,font=\\small]{angle=A--C--B};\\node[above] at (A) {$A$};\\node[above] at (B) {$B$};\\node[below left] at (C) {$C$};\\node[below] at (H) {$H$};\\node[below] at (K) {$K$};\\node[ink,right] at ($(A)!0.5!(H)$) {$350$ m};\\end{tikzpicture}",
+          "caption": "Hai khinh khí cầu cùng cao $350$ m; tại $C$: $\\widehat{ACH}=40^\\circ$, $\\widehat{ACB}=10^\\circ$.",
+          "width": "0.62\\linewidth"
+        },
+        {
           "type": "problem",
           "label": "Bài 10.",
           "tier": "extend",
@@ -224,6 +284,12 @@
             "Trong $\\triangle OAB$ vuông tại $B$: $AB=OA\\sin30^\\circ$ và $OB=OA\\cos30^\\circ$ — rồi $OB$ thành huyền của tam giác kế tiếp.",
             "Mỗi đoạn bằng đoạn trước nhân $\\cos30^\\circ=\\tfrac{\\sqrt3}{2}$; tổng là cấp số nhân $6$ số hạng."
           ]
+        },
+        {
+          "type": "figure",
+          "tikz": "\\begin{tikzpicture}[line width=0.9pt,font=\\small]\\coordinate (O) at (0,0);\\coordinate (A) at (2,0);\\coordinate (B) at (1.5,0.866);\\coordinate (C) at (0.75,1.299);\\coordinate (D) at (0,1.299);\\coordinate (E) at (-0.5625,0.974);\\coordinate (G) at (-0.843,0.487);\\coordinate (H) at (-0.843,0);\\draw[ink!55] (O)--(A) (O)--(B) (O)--(C) (O)--(D) (O)--(E) (O)--(G) (O)--(H);\\draw[brand,line width=1pt] (A)--(B)--(C)--(D)--(E)--(G)--(H);\\rightanglemark{B}{A}{O}\\rightanglemark{C}{B}{O}\\rightanglemark{D}{C}{O}\\rightanglemark{E}{D}{O}\\rightanglemark{G}{E}{O}\\rightanglemark{H}{G}{O}\\pic[draw=brand,line width=0.9pt,angle radius=1.15cm,\"$30^\\circ$\",angle eccentricity=1.3,font=\\small]{angle=A--O--B};\\node[below] at (O) {$O$};\\node[right] at (A) {$A$};\\node[above right] at (B) {$B$};\\node[above right] at (C) {$C$};\\node[above] at (D) {$D$};\\node[above left] at (E) {$E$};\\node[above left] at (G) {$G$};\\node[left] at (H) {$H$};\\node[ink,below] at ($(O)!0.5!(A)$) {$2$ cm};\\end{tikzpicture}",
+          "caption": "Đường gấp khúc $ABCDEGH$; mỗi góc tại $O$ bằng $30^\\circ$, $OA=2$ cm.",
+          "width": "0.5\\linewidth"
         },
         {
           "type": "problem",

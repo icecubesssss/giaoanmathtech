@@ -12,6 +12,13 @@
 \setmathfont{((( fonts.math_file )))}[Path=\FONTDIR]
 
 \usepackage{tikz}
+\usetikzlibrary{calc,angles,quotes}
+\usepackage{adjustbox}   % co hình figure trong cột: giới hạn CẢ bề ngang lẫn chiều cao
+% Ký hiệu góc vuông tại đỉnh #1 giữa hai tia #1->#2 và #1->#3 (dùng trong block figure).
+\newcommand{\rightanglemark}[3]{%
+  \coordinate (ra1) at ($(#1)!0.26cm!(#2)$);
+  \coordinate (ra2) at ($(#1)!0.26cm!(#3)$);
+  \draw[line width=0.6pt] (ra1)--($(ra1)+(ra2)-(#1)$)--(ra2);}
 
 ((* include "preamble/_colors.tex.j2" *))
 

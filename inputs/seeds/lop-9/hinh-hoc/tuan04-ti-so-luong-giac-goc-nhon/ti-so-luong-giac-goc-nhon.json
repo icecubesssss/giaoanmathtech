@@ -18,6 +18,12 @@
           "text": "\\textbf{Khởi động.} Tam giác $ABC$ vuông tại $A$, xét góc nhọn $B$: [[br]] cạnh \\emph{đối} của $B$ là $[[mblank:1.2cm]]$; cạnh \\emph{kề} của $B$ là $[[mblank:1.2cm]]$; cạnh \\emph{huyền} là $[[mblank:1.2cm]]$. [[br]] Nếu $AB=3,\\ AC=4$ thì $BC=[[mblank:1.2cm]]$ (Pythagore)."
         },
         {
+          "type": "figure",
+          "tikz": "\\begin{tikzpicture}[line width=0.9pt,font=\\small]\\coordinate (B) at (0,0);\\coordinate (C) at (5,0);\\coordinate (A) at (1.8,2.4);\\draw[ink] (A)--(B)--(C)--cycle;\\draw[ink,line width=0.7pt] (1.62,2.16)--(1.86,1.98)--(2.04,2.22);\\pic[draw=brand,line width=0.9pt,angle radius=0.8cm,\"$\\alpha$\",angle eccentricity=1.5,font=\\small]{angle=C--B--A};\\node[above] at (A) {$A$};\\node[below left] at (B) {$B$};\\node[below right] at (C) {$C$};\\end{tikzpicture}",
+          "caption": "Tam giác $ABC$ vuông tại $A$, xét góc nhọn $B=\\alpha$.",
+          "width": "0.42\\linewidth"
+        },
+        {
           "type": "para",
           "text": "\\textbf{Thử thách khởi động.} Hai chiếc thang dài $3$ m và $5$ m cùng dựa vào tường, \\emph{cùng} nghiêng $30^\\circ$ với mặt đất. [[br]] Tỉ số $\\dfrac{\\text{độ cao đầu thang chạm tường}}{\\text{độ dài thang}}$ của hai chiếc có bằng nhau không? Vì sao?"
         },
@@ -37,6 +43,12 @@
         {
           "type": "noted",
           "text": "\\textbf{Định nghĩa.} Tam giác $ABC$ vuông tại $A$, góc nhọn $B=\\alpha$: [[br]] $\\sin\\alpha=\\dfrac{\\text{đối}}{\\text{huyền}}=\\dfrac{AC}{BC}$;\\quad $\\cos\\alpha=\\dfrac{\\text{kề}}{\\text{huyền}}=\\dfrac{AB}{BC}$;\\quad $\\tan\\alpha=\\dfrac{\\text{đối}}{\\text{kề}}=\\dfrac{AC}{AB}$;\\quad $\\cot\\alpha=\\dfrac{\\text{kề}}{\\text{đối}}=\\dfrac{AB}{AC}$. [[br]] Luôn có $0<\\sin\\alpha<1,\\ 0<\\cos\\alpha<1$ và $\\cot\\alpha=\\dfrac{1}{\\tan\\alpha}$."
+        },
+        {
+          "type": "figure",
+          "tikz": "\\begin{tikzpicture}[line width=0.9pt,font=\\small]\\coordinate (B) at (0,0);\\coordinate (C) at (5,0);\\coordinate (A) at (1.8,2.4);\\draw[ink] (A)--(B)--(C)--cycle;\\draw[ink,line width=0.7pt] (1.62,2.16)--(1.86,1.98)--(2.04,2.22);\\pic[draw=brand,line width=0.9pt,angle radius=0.8cm,\"$\\alpha$\",angle eccentricity=1.5,font=\\small]{angle=C--B--A};\\node[above] at (A) {$A$};\\node[below left] at (B) {$B$};\\node[below right] at (C) {$C$};\\node[brand,left] at ($(A)!0.5!(B)$) {Cạnh kề};\\node[brand,right] at ($(A)!0.5!(C)$) {Cạnh đối};\\node[brand,below=2pt] at ($(B)!0.5!(C)$) {Cạnh huyền};\\end{tikzpicture}",
+          "caption": "Cạnh đối, cạnh kề (theo góc $B$) và cạnh huyền.",
+          "width": "0.5\\linewidth"
         },
         {
           "type": "noted",
@@ -264,6 +276,12 @@
             "$H$ là trung điểm $BC$ nên $BH=3$; tính $AB$ bằng Pythagore trong tam giác $ABH$ vuông tại $H$.",
             "Xét góc $B$ trong tam giác vuông $ABH$: đối là $AH$, kề là $BH$, huyền là $AB$."
           ]
+        },
+        {
+          "type": "figure",
+          "tikz": "\\begin{tikzpicture}[line width=0.9pt,font=\\small]\\coordinate (B) at (0,0);\\coordinate (C) at (6,0);\\coordinate (H) at (3,0);\\coordinate (A) at (3,4);\\draw[ink] (A)--(B)--(C)--cycle;\\draw[ink,dashed,line width=0.7pt] (A)--(H);\\draw[ink,line width=0.7pt] (3.3,0)--(3.3,0.3)--(3,0.3);\\node[above] at (A) {$A$};\\node[below left] at (B) {$B$};\\node[below right] at (C) {$C$};\\node[below] at (H) {$H$};\\node[brand,left=1pt] at ($(A)!0.5!(H)$) {$4$};\\node[below=1pt] at (1.5,0) {$3$};\\node[below=1pt] at (4.5,0) {$3$};\\end{tikzpicture}",
+          "caption": "Tam giác $ABC$ cân tại $A$, đường cao $AH$ ($H$ là trung điểm $BC$).",
+          "width": "0.44\\linewidth"
         },
         {
           "type": "problem",

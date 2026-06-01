@@ -72,6 +72,32 @@ def split_reflection(blocks):
     return out
 
 
+def group_slide_segments(blocks):
+    """Gom blocks của một frame slide thành các "đơn vị dạy" để bố cục đẹp.
+
+    Mỗi segment = {text: [...], figures: [...]} ứng với MỘT slide con. Quy tắc:
+      • `problem`/`noted`/`para`/`mindmap` mở segment mới (một đề/một ý/một ví dụ
+        một slide) — tránh dồn nhiều đoạn vào một slide rồi tràn/tự ngắt lung tung.
+      • `math`/`table` NỐI vào segment hiện hành (công thức/bảng đi liền phần dẫn
+        ngay trước, không tách rời).
+      • `figure` GẮN vào segment hiện hành (render cột phải, cạnh chữ bên trái).
+    Nhờ vậy: phiếu CÓ hình → 'chữ trái, hình phải' cùng một slide; phiếu KHÔNG
+    hình (đại số) → mỗi đề/ý một slide gọn, không dính đoạn trước."""
+    HEADERS = ("problem", "noted", "para", "mindmap")
+    segs: list[dict] = []
+    for b in blocks:
+        typ = getattr(b, "type", "")
+        if typ == "figure":
+            if not segs:
+                segs.append({"text": [], "figures": []})
+            segs[-1]["figures"].append(b)
+            continue
+        if typ in HEADERS or not segs:
+            segs.append({"text": [], "figures": []})
+        segs[-1]["text"].append(b)
+    return segs
+
+
 def _env() -> Environment:
     env = Environment(
         loader=FileSystemLoader(str(settings.TEMPLATES_DIR)),
@@ -83,6 +109,7 @@ def _env() -> Environment:
     )
     env.filters["tex"] = _texify
     env.globals["split_reflection"] = split_reflection
+    env.globals["group_slide_segments"] = group_slide_segments
     return env
 
 

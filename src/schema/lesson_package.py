@@ -61,6 +61,23 @@ class TableBlock(BaseModel):
     rows: list[list[str]] = Field(default_factory=list, description="Các hàng; mỗi ô cho phép $...$ và [[blank:W]]")
 
 
+class FigureBlock(BaseModel):
+    """Hình minh hoạ hình học — VECTOR TikZ (ưu tiên) hoặc ảnh cắt từ phiếu gốc.
+
+    Dùng cho mọi hình trong phiếu Hình học (tam giác, sơ đồ đo đạc…). Chọn MỘT
+    trong hai nguồn:
+      • `tikz`  : mã TikZ ĐẦY ĐỦ `\\begin{tikzpicture}...\\end{tikzpicture}`.
+                  Ưu tiên dùng (sắc nét, sửa được, đồng bộ phong cách phiếu).
+      • `image` : đường dẫn ảnh TƯƠNG ĐỐI so với folder phiếu (vd 'fig/thang.png'),
+                  chỉ dùng khi không dựng lại chính xác bằng TikZ (ảnh thực tế).
+    Renderer tự căn giữa và co cho vừa bề ngang (không tràn trang)."""
+    type: Literal["figure"] = "figure"
+    tikz: str = Field("", description="Mã TikZ đầy đủ \\begin{tikzpicture}...\\end{tikzpicture}; để trống nếu dùng ảnh")
+    image: str = Field("", description="Đường dẫn ảnh tương đối folder phiếu (vd 'fig/x.png'); để trống nếu dùng tikz")
+    caption: str = Field("", description="Chú thích nhỏ dưới hình; cho phép $...$")
+    width: str = Field("", description="Bề rộng tối đa, vd '0.6\\linewidth'. Trống = tự co vừa khung")
+
+
 class MindmapNode(BaseModel):
     """Một nút trong sơ đồ tư duy điền khuyết. label có thể chứa [[blank:W]] để HS điền."""
     label: str = Field(..., description="Nhãn nút; cho phép $...$ và token [[blank]] để chừa chỗ điền")
@@ -82,7 +99,7 @@ class MindmapBlock(BaseModel):
 
 MindmapNode.model_rebuild()
 
-Block = Union[ParaBlock, MathBlock, NotedBlock, WriteLinesBlock, ProblemBlock, MindmapBlock, TableBlock]
+Block = Union[ParaBlock, MathBlock, NotedBlock, WriteLinesBlock, ProblemBlock, MindmapBlock, TableBlock, FigureBlock]
 
 # ----- Chặng & gói bài học -----
 

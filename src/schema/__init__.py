@@ -11,6 +11,8 @@ from .lesson_package import (
     ProblemBlock,
     MindmapBlock,
     MindmapNode,
+    TableBlock,
+    FigureBlock,
 )
 
 __all__ = [
@@ -26,4 +28,6 @@ __all__ = [
     "ProblemBlock",
     "MindmapBlock",
     "MindmapNode",
+    "TableBlock",
+    "FigureBlock",
 ]

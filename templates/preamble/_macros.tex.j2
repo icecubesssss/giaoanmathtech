@@ -7,6 +7,14 @@
 \usepackage{tabularx}
 \usepackage[edges]{forest}
 \usepackage{adjustbox}
+% Thư viện TikZ cho HÌNH HỌC (block figure): calc=toạ độ suy diễn, angles/quotes=cung góc.
+\usetikzlibrary{calc,angles,quotes}
+% Ký hiệu góc vuông tại đỉnh #1 giữa hai tia #1->#2 và #1->#3 (vẽ ô vuông nhỏ).
+% Dùng trong block figure: \rightanglemark{A}{B}{C}. Vẽ theo màu hiện hành.
+\newcommand{\rightanglemark}[3]{%
+  \coordinate (ra1) at ($(#1)!0.26cm!(#2)$);
+  \coordinate (ra2) at ($(#1)!0.26cm!(#3)$);
+  \draw[line width=0.6pt] (ra1)--($(ra1)+(ra2)-(#1)$)--(ra2);}
 
 % Tiêu đề tự CO cho vừa bề ngang: tên bài dài → thu nhỏ cỡ chữ cho khít một dòng,
 % KHÔNG wrap nhiều dòng đẩy các phần cố định (Họ và tên, dòng phụ) đi lung tung.

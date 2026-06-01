@@ -24,6 +24,12 @@
         {
           "type": "para",
           "text": "\\textbf{Ví dụ mẫu (thầy + trò cùng làm).} Tháp nghiêng Pisa: một người đứng trên tháp ở vị trí $A$, cách mặt đất $AH=45$ m, thả rơi một vật. Biết tháp nghiêng góc $\\widehat{A}=4^\\circ$ so với phương thẳng đứng. [[br]] Khoảng cách từ chỗ vật chạm đất $H$ đến chân tháp $B$: trong tam giác $ABH$ vuông tại $H$, $BH=AH\\cdot\\tan A=45\\tan4^\\circ\\approx[[mblank:1.4cm]]$ m."
+        },
+        {
+          "type": "figure",
+          "tikz": "\\begin{tikzpicture}[line width=0.9pt,font=\\small]\\coordinate (A) at (0,4.5);\\coordinate (H) at (0,0);\\coordinate (B) at (0.9,0);\\draw[ink,line width=1.1pt] (-0.6,0)--(1.8,0);\\draw[ink,dashed,line width=0.7pt] (A)--(H);\\draw[brand,line width=1.2pt] (A)--(B);\\rightanglemark{H}{A}{B}\\pic[draw=brand,line width=0.9pt,angle radius=1.1cm,\"$4^\\circ$\",angle eccentricity=1.5,font=\\small]{angle=H--A--B};\\node[above] at (A) {$A$};\\node[below left] at (H) {$H$};\\node[below right] at (B) {$B$};\\node[ink,left] at ($(A)!0.5!(H)$) {$45$ m};\\end{tikzpicture}",
+          "caption": "Tháp nghiêng: $AH=45$ m, $\\widehat A=4^\\circ$ (sơ đồ phóng đại góc nghiêng).",
+          "width": "0.32\\linewidth"
         }
       ],
       "solution": "Khởi động: $AB=BC\\cos B$; $AB=AC\\tan C=AC\\cot B$. [[br]] Thử thách: ngắm góc nâng tới đỉnh từ một điểm đã biết khoảng cách tới chân tháp, rồi dùng $\\tan$. [[br]] Ví dụ mẫu: $BH=45\\tan4^\\circ\\approx3{,}15$ m.",
@@ -43,8 +49,20 @@
           "text": "\\textbf{Góc nâng và góc hạ.} So với \\emph{phương nằm ngang}: nhìn \\textbf{lên} một vật cao tạo \\emph{góc nâng}; nhìn \\textbf{xuống} một vật thấp tạo \\emph{góc hạ}. Hai góc này là góc nhọn của tam giác vuông ta dựng."
         },
         {
+          "type": "figure",
+          "tikz": "\\begin{tikzpicture}[line width=0.9pt,font=\\small]\\coordinate (O) at (0,0);\\coordinate (Hr) at (4,0);\\coordinate (U) at (3.5,1.8);\\coordinate (Dn) at (3.5,-1.8);\\draw[ink,dashed] (O)--(Hr);\\draw[brand,line width=1pt] (O)--(U);\\draw[brand,line width=1pt] (O)--(Dn);\\draw[ink,fill=brand!15] (U) circle (0.13);\\fill[ink] (Dn) circle (0.08);\\pic[draw=brand,line width=0.9pt,angle radius=1.1cm,\"\",angle eccentricity=1.5,font=\\small]{angle=Hr--O--U};\\pic[draw=brand,line width=0.9pt,angle radius=1.1cm,\"\",angle eccentricity=1.5,font=\\small]{angle=Dn--O--Hr};\\node[ink,right] at (O) {\\footnotesize mắt $O$};\\node[brand,right] at (1.5,0.55) {\\footnotesize góc nâng};\\node[brand,right] at (1.5,-0.55) {\\footnotesize góc hạ};\\node[ink,right] at (Hr) {\\footnotesize phương ngang};\\end{tikzpicture}",
+          "caption": "Góc nâng (nhìn lên) và góc hạ (nhìn xuống) so với phương ngang.",
+          "width": "0.55\\linewidth"
+        },
+        {
           "type": "para",
           "text": "\\textbf{Ví dụ mẫu (hai trạm quan sát — tháp Eiffel).} Trên mặt đất, hai điểm $A,C$ cách nhau $AB=101$ m và thẳng hàng với chân tháp; nhìn đỉnh $D$ với góc nâng lần lượt $60^\\circ$ và $75^\\circ$; gọi chiều cao tháp là $h$. [[br]] $AC=h\\cot60^\\circ$, $BC=h\\cot75^\\circ$. Vì $AC-BC=AB=101$ nên $h(\\cot60^\\circ-\\cot75^\\circ)=101$. [[br]] Suy ra $h=\\dfrac{101}{\\cot60^\\circ-\\cot75^\\circ}\\approx[[mblank:1.6cm]]$ m."
+        },
+        {
+          "type": "figure",
+          "tikz": "\\begin{tikzpicture}[line width=0.9pt,font=\\small]\\coordinate (C) at (0,0);\\coordinate (D) at (0,4);\\coordinate (A) at (-2.31,0);\\coordinate (B) at (-1.07,0);\\draw[ink,line width=1.1pt] (-2.9,0)--(0.5,0);\\draw[ink,line width=1.2pt] (C)--(D);\\draw[brand,line width=0.9pt] (A)--(D);\\draw[brand,line width=0.9pt] (B)--(D);\\rightanglemark{C}{D}{A}\\pic[draw=brand,line width=0.9pt,angle radius=0.95cm,\"$60^\\circ$\",angle eccentricity=1.5,font=\\small]{angle=C--A--D};\\pic[draw=brand,line width=0.9pt,angle radius=0.7cm,\"$75^\\circ$\",angle eccentricity=1.5,font=\\small]{angle=C--B--D};\\node[above] at (D) {$D$};\\node[below right] at (C) {$C$};\\node[below] at (A) {$A$};\\node[below] at (B) {$B$};\\node[ink,right] at ($(C)!0.5!(D)$) {$h$};\\node[ink,below=3pt] at ($(A)!0.5!(B)$) {$101$};\\end{tikzpicture}",
+          "caption": "Hai trạm $A,B$ thẳng hàng với chân tháp $C$; góc nâng tới đỉnh $D$ là $60^\\circ$ và $75^\\circ$.",
+          "width": "0.5\\linewidth"
         },
         {
           "type": "noted",
@@ -66,6 +84,12 @@
           "statement": "Ba vị trí $A,B,C$ là ba đỉnh của một tam giác vuông tại $A$, không đo được trực tiếp $CA$ và $CB$. Biết $AB=50$ m và $\\widehat{ABC}=40^\\circ$. Tính khoảng cách $CA$ và $CB$ (làm tròn đến hàng đơn vị mét)."
         },
         {
+          "type": "figure",
+          "tikz": "\\begin{tikzpicture}[line width=0.9pt,font=\\small]\\coordinate (A) at (0,0);\\coordinate (B) at (5,0);\\coordinate (C) at (0,4.2);\\draw[ink] (A)--(B)--(C)--cycle;\\rightanglemark{A}{B}{C}\\pic[draw=brand,line width=0.9pt,angle radius=0.9cm,\"$40^\\circ$\",angle eccentricity=1.5,font=\\small]{angle=C--B--A};\\node[below left] at (A) {$A$};\\node[below right] at (B) {$B$};\\node[above] at (C) {$C$};\\node[ink,below] at ($(A)!0.5!(B)$) {$50$ m};\\end{tikzpicture}",
+          "caption": "Vuông tại $A$, $AB=50$ m, $\\widehat{ABC}=40^\\circ$.",
+          "width": "0.4\\linewidth"
+        },
+        {
           "type": "writelines",
           "count": 3
         },
@@ -76,6 +100,12 @@
           "statement": "Từ đỉnh một toà nhà cao $54$ m, người ta nhìn thấy một ô tô đang đỗ dưới một góc hạ (so với phương nằm ngang) là $40^\\circ$. Hỏi ô tô đang đỗ cách toà nhà khoảng bao nhiêu mét (làm tròn hàng phần mười)?"
         },
         {
+          "type": "figure",
+          "tikz": "\\begin{tikzpicture}[line width=0.9pt,font=\\small]\\coordinate (T) at (0,5.4);\\coordinate (B) at (0,0);\\coordinate (Car) at (6.44,0);\\coordinate (Hr) at (3,5.4);\\draw[ink,line width=1.1pt] (-0.5,0)--(7.2,0);\\draw[ink,line width=1.3pt] (B)--(T);\\draw[ink,dashed,line width=0.7pt] (T)--(Hr);\\draw[brand,line width=0.9pt] (T)--(Car);\\rightanglemark{B}{T}{Car}\\pic[draw=brand,line width=0.9pt,angle radius=1.1cm,\"$40^\\circ$\",angle eccentricity=1.5,font=\\small]{angle=Car--T--Hr};\\node[above] at (T) {$T$};\\node[below left] at (B) {$B$};\\node[below] at (Car) {ô tô};\\node[ink,left] at ($(B)!0.5!(T)$) {$54$ m};\\end{tikzpicture}",
+          "caption": "Toà nhà cao $54$ m; góc hạ tới ô tô $40^\\circ$.",
+          "width": "0.46\\linewidth"
+        },
+        {
           "type": "writelines",
           "count": 2
         },
@@ -84,6 +114,12 @@
           "label": "Bài 3.",
           "tier": "onclass",
           "statement": "Một cái cây có bóng trên mặt đất dài $20$ m. Tia nắng qua ngọn cây nghiêng một góc $31^\\circ$ so với mặt đất. Tính chiều cao của cây (làm tròn hàng phần mười)."
+        },
+        {
+          "type": "figure",
+          "tikz": "\\begin{tikzpicture}[line width=0.9pt,font=\\small]\\coordinate (B) at (0,0);\\coordinate (T) at (0,3.0);\\coordinate (S) at (5,0);\\draw[ink,line width=1.1pt] (-0.5,0)--(5.6,0);\\draw[ink,line width=1.3pt] (B)--(T);\\draw[brand,line width=0.9pt] (S)--(T);\\rightanglemark{B}{T}{S}\\pic[draw=brand,line width=0.9pt,angle radius=0.95cm,\"$31^\\circ$\",angle eccentricity=1.5,font=\\small]{angle=T--S--B};\\node[above] at (T) {ngọn};\\node[below left] at (B) {gốc};\\node[below right] at (S) {$S$};\\node[ink,below] at ($(B)!0.5!(S)$) {bóng $20$ m};\\end{tikzpicture}",
+          "caption": "Bóng cây dài $20$ m; tia nắng nghiêng $31^\\circ$ với mặt đất.",
+          "width": "0.46\\linewidth"
         },
         {
           "type": "writelines",
@@ -105,6 +141,12 @@
           "statement": "Một người đứng chào cờ ở vị trí $A$, cách cột cờ (chân cột ở $C$) với $AC=20$ m. Người đó đặt mắt ở vị trí $B$ cách mặt đất $AB=1{,}5$ m, nhìn lên đỉnh cột cờ (ở $E$) theo phương $BE$ tạo với phương nằm ngang $BD$ một góc $\\widehat{EBD}=32^\\circ$. Tính chiều cao cột cờ (làm tròn hàng đơn vị mét)."
         },
         {
+          "type": "figure",
+          "tikz": "\\begin{tikzpicture}[line width=0.9pt,font=\\small]\\coordinate (A) at (0,0);\\coordinate (B) at (0,0.375);\\coordinate (C) at (5,0);\\coordinate (D) at (5,0.375);\\coordinate (E) at (5,3.5);\\draw[ink,line width=1.1pt] (-0.5,0)--(5.6,0);\\draw[ink,line width=0.7pt] (A)--(B);\\draw[ink,line width=1.3pt] (C)--(E);\\draw[ink,dashed,line width=0.7pt] (B)--(D);\\draw[brand,line width=0.9pt] (B)--(E);\\rightanglemark{C}{E}{A}\\rightanglemark{D}{E}{B}\\pic[draw=brand,line width=0.9pt,angle radius=0.95cm,\"$32^\\circ$\",angle eccentricity=1.5,font=\\small]{angle=D--B--E};\\node[left] at (B) {$B$};\\node[below left] at (A) {$A$};\\node[below right] at (C) {$C$};\\node[above] at (E) {$E$};\\node[ink,below] at ($(A)!0.5!(C)$) {$20$ m};\\node[ink,left=1pt] at (A) {};\\node[ink,left,font=\\scriptsize] at ($(A)!0.5!(B)$) {$1{,}5$};\\end{tikzpicture}",
+          "caption": "Mắt ở $B$ cao $1{,}5$ m, cách cột $AC=20$ m; góc nâng tới đỉnh $E$ là $32^\\circ$.",
+          "width": "0.5\\linewidth"
+        },
+        {
           "type": "writelines",
           "count": 3
         },
@@ -115,6 +157,12 @@
           "statement": "Từ trên một ngọn hải đăng cao $75$ m, người ta quan sát hai lần thấy một chiếc thuyền đang hướng về phía hải đăng với góc hạ lần lượt là $30^\\circ$ và $45^\\circ$. Hỏi giữa hai lần quan sát, thuyền đi được bao nhiêu mét (làm tròn hàng phần mười)?"
         },
         {
+          "type": "figure",
+          "tikz": "\\begin{tikzpicture}[line width=0.9pt,font=\\small]\\coordinate (T) at (0,3);\\coordinate (L) at (0,0);\\coordinate (P1) at (5.2,0);\\coordinate (P2) at (3,0);\\coordinate (Hr) at (2,3);\\draw[ink,line width=1.1pt] (-0.4,0)--(5.8,0);\\draw[ink,line width=1.3pt] (L)--(T);\\draw[ink,dashed,line width=0.7pt] (T)--(Hr);\\draw[brand,line width=0.9pt] (T)--(P1);\\draw[brand,line width=0.9pt] (T)--(P2);\\rightanglemark{L}{T}{P1}\\pic[draw=brand,line width=0.9pt,angle radius=1.7cm,\"$30^\\circ$\",angle eccentricity=1.5,font=\\small]{angle=P1--T--Hr};\\pic[draw=brand,line width=0.9pt,angle radius=0.85cm,\"$45^\\circ$\",angle eccentricity=1.55,font=\\small]{angle=P2--T--Hr};\\node[above] at (T) {$T$};\\node[below left] at (L) {$L$};\\node[below] at (P1) {(xa)};\\node[below] at (P2) {(gần)};\\node[ink,left] at ($(L)!0.5!(T)$) {$75$ m};\\end{tikzpicture}",
+          "caption": "Hải đăng cao $75$ m; góc hạ tới thuyền $30^\\circ$ rồi $45^\\circ$.",
+          "width": "0.5\\linewidth"
+        },
+        {
           "type": "writelines",
           "count": 3
         },
@@ -123,6 +171,12 @@
           "label": "Bài 6.",
           "tier": "onclass",
           "statement": "Mặt tiền mái nhà có dạng tam giác cân $ABC$ với đáy (chiều rộng) $BC=3$ m và hai bên mái $AB=AC=1{,}8$ m. [[br]] a) Tính chiều cao $AH$ của mái nhà (hạ từ $A$, làm tròn hàng phần mười). [[br]] b) Tính góc $\\widehat{BAC}$ tạo bởi hai mép mái (làm tròn đến độ)."
+        },
+        {
+          "type": "figure",
+          "tikz": "\\begin{tikzpicture}[line width=0.9pt,font=\\small]\\coordinate (B) at (0,0);\\coordinate (C) at (3,0);\\coordinate (H) at (1.5,0);\\coordinate (A) at (1.5,0.995);\\draw[ink] (A)--(B)--(C)--cycle;\\draw[ink,dashed,line width=0.7pt] (A)--(H);\\rightanglemark{H}{A}{C}\\node[above] at (A) {$A$};\\node[below left] at (B) {$B$};\\node[below right] at (C) {$C$};\\node[below left] at (H) {$H$};\\node[ink,above left] at ($(A)!0.5!(B)$) {$1{,}8$};\\node[ink,above right] at ($(A)!0.5!(C)$) {$1{,}8$};\\node[ink,below=9pt] at ($(B)!0.5!(C)$) {$3$};\\end{tikzpicture}",
+          "caption": "Mái nhà cân: $BC=3$ m, $AB=AC=1{,}8$ m, đường cao $AH$.",
+          "width": "0.42\\linewidth"
         },
         {
           "type": "writelines",
@@ -191,10 +245,22 @@
           "statement": "Một người đẩy một vật lên hết một con dốc nghiêng $35^\\circ$ so với mặt đất. Tính độ cao của vật so với mặt đất (làm tròn hàng phần mười), biết độ dài con dốc là $4$ m."
         },
         {
+          "type": "figure",
+          "tikz": "\\begin{tikzpicture}[line width=0.9pt,font=\\small]\\coordinate (O) at (0,0);\\coordinate (P) at (3.28,2.29);\\coordinate (Q) at (3.28,0);\\draw[ink,line width=1.1pt] (-0.4,0)--(4,0);\\draw[brand,line width=1.1pt] (O)--(P);\\draw[ink,dashed,line width=0.7pt] (P)--(Q);\\rightanglemark{Q}{P}{O}\\pic[draw=brand,line width=0.9pt,angle radius=1.0cm,\"$35^\\circ$\",angle eccentricity=1.5,font=\\small]{angle=Q--O--P};\\draw[ink,fill=brand!15] (2.7,1.95) rectangle (3.1,2.35);\\node[below left] at (O) {$O$};\\node[below right] at (Q) {$Q$};\\node[above] at (P) {vật};\\node[brand] at (1.4,1.45) {dốc $4$ m};\\end{tikzpicture}",
+          "caption": "Dốc dài $4$ m, nghiêng $35^\\circ$ với mặt đất.",
+          "width": "0.42\\linewidth"
+        },
+        {
           "type": "problem",
           "label": "Bài 9.",
           "tier": "btvn",
           "statement": "Trong một buổi tập trận, một tàu ngầm đang ở trên mặt biển bắt đầu lặn theo đường thẳng tạo với mặt nước một góc $21^\\circ$. [[br]] a) Khi tàu đi được $200$ m theo hướng đó thì tàu ở độ sâu bao nhiêu so với mặt nước (làm tròn hàng đơn vị mét)? [[br]] b) Nếu tốc độ tàu là $9$ km/h thì sau bao lâu (tính từ lúc bắt đầu lặn) tàu ở độ sâu $200$ m (làm tròn hàng phần mười phút)?"
+        },
+        {
+          "type": "figure",
+          "tikz": "\\begin{tikzpicture}[line width=0.9pt,font=\\small]\\coordinate (S) at (0,0);\\coordinate (P) at (3.73,-1.43);\\coordinate (Q) at (3.73,0);\\draw[ink,line width=1.1pt] (-0.4,0)--(4.2,0);\\draw[ink,dashed,line width=0.7pt] (P)--(Q);\\draw[brand,line width=1.1pt] (S)--(P);\\rightanglemark{Q}{S}{P}\\pic[draw=brand,line width=0.9pt,angle radius=1.0cm,\"$21^\\circ$\",angle eccentricity=1.5,font=\\small]{angle=P--S--Q};\\draw[brand,fill=brand!15] (P) circle (0.13);\\node[above left] at (S) {$S$};\\node[above right] at (Q) {mặt nước};\\node[below right] at (P) {tàu};\\node[brand,below left] at ($(S)!0.55!(P)$) {$200$ m};\\end{tikzpicture}",
+          "caption": "Tàu ngầm lặn theo đường nghiêng $21^\\circ$ với mặt nước.",
+          "width": "0.46\\linewidth"
         },
         {
           "type": "para",
@@ -211,6 +277,12 @@
           ]
         },
         {
+          "type": "figure",
+          "tikz": "\\begin{tikzpicture}[line width=0.9pt,font=\\small]\\coordinate (B) at (0,0);\\coordinate (K) at (0,1.82);\\coordinate (T) at (5,0);\\draw[ink,line width=1.1pt] (-0.4,0)--(5.6,0);\\draw[ink,line width=1.3pt] (B)--(K);\\draw[brand,line width=1.1pt] (K)--(T);\\rightanglemark{B}{K}{T}\\pic[draw=brand,line width=0.9pt,angle radius=0.95cm,\"$20^\\circ$\",angle eccentricity=1.5,font=\\small]{angle=K--T--B};\\node[above left] at (K) {$K$};\\node[below left] at (B) {$B$};\\node[below right] at (T) {$T$};\\node[ink,left] at ($(B)!0.5!(K)$) {thân};\\node[brand,above] at ($(K)!0.5!(T)$) {phần gãy};\\node[ink,below] at ($(B)!0.5!(T)$) {$5$ m};\\end{tikzpicture}",
+          "caption": "Cây gãy: ngọn chạm đất cách gốc $5$ m, đoạn gãy nghiêng $20^\\circ$.",
+          "width": "0.46\\linewidth"
+        },
+        {
           "type": "problem",
           "label": "Bài 11.",
           "tier": "extend",
@@ -221,6 +293,12 @@
           ]
         },
         {
+          "type": "figure",
+          "tikz": "\\begin{tikzpicture}[line width=0.9pt,font=\\small]\\coordinate (D) at (0,0);\\coordinate (H) at (2.8,0);\\coordinate (K) at (5.8,0);\\coordinate (C) at (8.13,0);\\coordinate (A) at (2.8,3.5);\\coordinate (B) at (5.8,3.5);\\draw[ink] (A)--(B)--(C)--(D)--cycle;\\draw[ink,dashed,line width=0.7pt] (A)--(H);\\draw[ink,dashed,line width=0.7pt] (B)--(K);\\rightanglemark{H}{A}{C}\\rightanglemark{K}{B}{C}\\node[above left] at (A) {$A$};\\node[above right] at (B) {$B$};\\node[below right] at (C) {$C$};\\node[below left] at (D) {$D$};\\node[below] at (H) {$H$};\\node[below] at (K) {$K$};\\node[ink,above] at ($(A)!0.5!(B)$) {$3$};\\node[ink,left] at ($(A)!0.5!(H)$) {$3{,}5$};\\end{tikzpicture}",
+          "caption": "Mặt cắt đập (hình thang $AB\\parallel CD$): $AB=3$ m, cao $3{,}5$ m; $\\tan D=1{,}25$, $\\tan C=1{,}5$.",
+          "width": "0.58\\linewidth"
+        },
+        {
           "type": "problem",
           "label": "Bài 12.",
           "tier": "extend",
@@ -229,6 +307,12 @@
             "Đặt $h=MN$; khoảng cách ngang $PN=h\\cot38^\\circ$ và $QN=h\\cot44^\\circ$.",
             "$PN-QN=PQ=203\\Rightarrow h(\\cot38^\\circ-\\cot44^\\circ)=203$, từ đó tìm $h$."
           ]
+        },
+        {
+          "type": "figure",
+          "tikz": "\\begin{tikzpicture}[line width=0.9pt,font=\\small]\\coordinate (N) at (0,0);\\coordinate (M) at (0,4);\\coordinate (P) at (-5.12,0);\\coordinate (Q) at (-4.14,0);\\coordinate (Hl) at (-2.6,4);\\draw[ink,line width=1.1pt] (-5.7,0)--(0.5,0);\\draw[ink,line width=1.3pt] (N)--(M);\\draw[ink,dashed,line width=0.7pt] (M)--(Hl);\\draw[brand,line width=0.9pt] (M)--(P);\\draw[brand,line width=0.9pt] (M)--(Q);\\rightanglemark{N}{M}{P}\\pic[draw=brand,line width=0.9pt,angle radius=1.7cm,\"$38^\\circ$\",angle eccentricity=1.5,font=\\small]{angle=Hl--M--P};\\pic[draw=brand,line width=0.9pt,angle radius=0.85cm,\"$44^\\circ$\",angle eccentricity=1.55,font=\\small]{angle=Hl--M--Q};\\node[above] at (M) {$M$};\\node[below right] at (N) {$N$};\\node[below] at (P) {$P$};\\node[below] at (Q) {$Q$};\\node[ink,right] at ($(N)!0.5!(M)$) {$h$};\\node[ink,below=3pt] at ($(P)!0.5!(Q)$) {$203$};\\end{tikzpicture}",
+          "caption": "Tháp $MN$; góc hạ tới $P,Q$ là $38^\\circ$ và $44^\\circ$; $PQ=203$ m.",
+          "width": "0.5\\linewidth"
         }
       ],
       "solution": "\\textbf{Bài 7.} Chiều cao $=10{,}5\\tan36^\\circ\\approx7{,}63$ m.\\par\\smallskip \\textbf{Bài 8.} Độ cao $=4\\sin35^\\circ\\approx2{,}3$ m.\\par\\smallskip \\textbf{Bài 9.} a) Độ sâu $=200\\sin21^\\circ\\approx72$ m. [[br]] b) Quãng đường để đạt độ sâu $200$ m: $\\dfrac{200}{\\sin21^\\circ}\\approx557{,}9$ m $=0{,}5579$ km; thời gian $=\\dfrac{0{,}5579}{9}$ giờ $\\approx0{,}062$ giờ $\\approx3{,}7$ phút.\\par\\smallskip \\textbf{Bài 10.} Phần đứng $=5\\tan20^\\circ\\approx1{,}82$ m; phần gãy $=\\dfrac{5}{\\cos20^\\circ}\\approx5{,}32$ m. [[br]] Chiều cao ban đầu $\\approx1{,}82+5{,}32=7{,}1$ m.\\par\\smallskip \\textbf{Bài 11.} $HD=\\dfrac{3{,}5}{1{,}25}=2{,}8$; $KC=\\dfrac{3{,}5}{1{,}5}\\approx2{,}33$; $CD=2{,}8+3+2{,}33\\approx8{,}1$ m. [[br]] $\\tan D=1{,}25\\Rightarrow\\widehat{D}\\approx51^\\circ$, $AD=\\dfrac{3{,}5}{\\sin D}\\approx4{,}5$ m; $\\tan C=1{,}5\\Rightarrow\\widehat{C}\\approx56^\\circ$, $BC=\\dfrac{3{,}5}{\\sin C}\\approx4{,}2$ m.\\par\\smallskip \\textbf{Bài 12.} $h(\\cot38^\\circ-\\cot44^\\circ)=203$; $\\cot38^\\circ\\approx1{,}280,\\ \\cot44^\\circ\\approx1{,}036$. [[br]] $h=\\dfrac{203}{1{,}280-1{,}036}\\approx831$ m.\\par\\medskip \\textbf{Đáp án sơ đồ:} tam giác; góc \\emph{hạ}; $\\cos$; $\\cot$; hai \\emph{khoảng cách} ngang.",

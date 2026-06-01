@@ -44,6 +44,16 @@
 \end{forest}
 \end{center}
 
+((* elif b.type == "figure" *))
+\begin{center}
+((* if b.image *))
+\includegraphics[width=((* if b.width *))((( b.width )))((* else *))0.55\linewidth((* endif *))]{((( b.image )))}
+((* else *))
+\adjustbox{max width=((* if b.width *))((( b.width )))((* else *))0.9\linewidth((* endif *))}{((( b.tikz )))}
+((* endif *))
+((* if b.caption *))\par\vspace{3pt}{\sffamily\footnotesize\itshape\color{muted}((( b.caption | tex )))}((* endif *))
+\end{center}
+
 ((* endif *))
 ((* endmacro *))
 

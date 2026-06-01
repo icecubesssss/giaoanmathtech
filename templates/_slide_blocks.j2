@@ -24,16 +24,50 @@
 ((* endfor *))\end{tabular}
 \end{center}
 \par\medskip
+((* elif b.type == "figure" *))
+\begin{center}
+((* if b.image *))
+\includegraphics[width=((* if b.width *))((( b.width )))((* else *))0.5\textwidth((* endif *))]{((( b.image )))}
+((* else *))
+\resizebox{((* if b.width *))((( b.width )))((* else *))0.6\textwidth((* endif *))}{!}{((( b.tikz )))}
+((* endif *))
+((* if b.caption *))\par\vspace{3pt}{\footnotesize\itshape\color{muted}((( b.caption | tex )))}((* endif *))
+\end{center}
+\par\medskip
 ((* endif *))
 ((= writelines: bỏ qua trên slide =))
 ((* endmacro *))
 
-((= Mỗi bài (problem) / mỗi khái niệm (noted) tách RIÊNG một slide — chiếu từng
-    cái một như đang dạy trên lớp. Block đầu khung không chèn ngắt (tránh slide rỗng). =))
+((= Hình trong CỘT PHẢI: lấp đầy bề ngang cột (cạnh phần lý thuyết bên trái), giới
+    hạn CẢ chiều cao để không tràn xuống footer. BỎ caption trên slide (đề/lý thuyết
+    bên trái đã mô tả; thầy giảng trực tiếp) — vừa gọn vừa chừa lề an toàn. =))
+((* macro render_figure_col(b) *))
+\begin{center}
+((* if b.image *))\includegraphics[width=\linewidth,height=0.5\textheight,keepaspectratio]{((( b.image )))}
+((* else *))\adjustbox{max width=\linewidth,max totalheight=0.5\textheight}{((( b.tikz )))}((* endif *))
+\end{center}
+((* endmacro *))
+
+((= Mỗi "đơn vị dạy" (group_slide_segments) = MỘT slide con. Segment có hình →
+    bố cục 2 cột: lý thuyết/đề bên TRÁI, hình bên PHẢI (dễ giảng, liền mạch).
+    Segment chỉ-chữ → full width như cũ; chỉ-hình → căn giữa. =))
 ((* macro render_blocks(blocks) *))
-((* for b in blocks *))
-((* if not loop.first and (b.type == "problem" or b.type == "noted") *))\framebreak
+((* for seg in group_slide_segments(blocks) *))
+((* if not loop.first *))\framebreak
 ((* endif *))
-((( render_block(b) )))
+((* if seg.figures and seg.text *))
+\begin{columns}[T,onlytextwidth]
+\begin{column}{0.58\textwidth}
+{\small ((* for b in seg.text *))((( render_block(b) )))((* endfor *))}
+\end{column}
+\begin{column}{0.38\textwidth}
+((* for f in seg.figures *))((( render_figure_col(f) )))((* endfor *))
+\end{column}
+\end{columns}
+((* elif seg.figures *))
+((* for f in seg.figures *))((( render_block(f) )))((* endfor *))
+((* else *))
+((* for b in seg.text *))((( render_block(b) )))((* endfor *))
+((* endif *))
 ((* endfor *))
 ((* endmacro *))

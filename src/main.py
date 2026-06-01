@@ -99,7 +99,7 @@ def _iter_text(lesson: LessonPackage):
             if v:
                 yield f"stage[{stage.kind}].{attr}", v
         for i, b in enumerate(stage.blocks):
-            for attr in ("text", "latex", "statement", "caption"):
+            for attr in ("text", "latex", "statement", "caption", "tikz", "image"):
                 v = getattr(b, attr, None)
                 if v:
                     yield f"stage[{stage.kind}].block[{i}].{attr}", v

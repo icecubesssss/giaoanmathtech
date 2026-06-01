@@ -69,6 +69,12 @@ Mỗi bài đúng **5 chặng** (kind cố định), mỗi chặng mang các blo
    - Bảng ở **ví dụ mẫu (chặng `concept`)** → để **TRỐNG cho thầy + trò cùng điền** tại lớp; đáp án (giá trị đúng của từng ô) ghi trong `solution` để GV tham chiếu.
    - Bảng ở **luyện tập (`practice1/2`)** → để **TRỐNG HẲN các ô đại lượng** (cả số đã cho lẫn ẩn) cho HS tự điền; chỉ giữ tiêu đề cột + nhãn hàng làm giàn giáo.
 9. **Ký hiệu cực trị: GHI RÕ BIẾN** — viết `$\min A=1$` / `$\max B=\tfrac94$` (KHÔNG viết trống "min = 1"). Nêu rõ điều kiện đạt cực trị qua bước bình phương: "dấu $=$ xảy ra khi $(x-3)^2=0$, tức $x=3$" (đừng nhảy thẳng "khi $x=3$"). Áp cho cả ví dụ mẫu lẫn `solution`.
+10. **Hình hình học (`figure`) — ƯU TIÊN TikZ.** Mọi hình trong phiếu Hình học dùng block `figure`. Chọn MỘT nguồn:
+    - `tikz`: mã `\begin{tikzpicture}...\end{tikzpicture}` **đầy đủ** — ưu tiên (vector sắc nét, sửa được, đồng bộ phong cách phiếu). Đã nạp sẵn thư viện `calc,angles,quotes` và macro `\rightanglemark{V}{P}{Q}` (vẽ ký hiệu góc vuông tại đỉnh `V`). Vẽ cung góc bằng `\pic[...,"$30^\circ$",...]{angle=P--V--Q}` — **BẪY:** thư viện `angles` vẽ NGƯỢC CHIỀU KIM từ tia `VP`→`VQ`; đặt sai thứ tự `P/Q` sẽ ra **góc lồi (reflex)** = cung gần trọn vòng. Luôn build rồi **soi lại PDF**.
+    - `image`: đường dẫn ảnh **tương đối** so với folder phiếu (vd `fig/thang.png`) — chỉ dùng khi KHÔNG dựng lại chính xác bằng TikZ (ảnh thực tế); để file ảnh **trong chính folder tuần đó**.
+    - Kèm `caption` (chú thích nhỏ dưới hình) và `width` (bề rộng tối đa trên handout, vd `0.5\linewidth`).
+    - **KHÔNG lộ đáp án trên hình của bài tự điền:** hình ở "Khởi động"/đề bài chỉ vẽ khung (đỉnh, góc $\alpha$, ký hiệu vuông), KHÔNG ghi sẵn cạnh đối/kề hay số đo mà HS phải tìm.
+    - **Canh không đè chữ / không tràn trang:** đặt nhãn tránh đỉnh và tránh nhãn khác. Chỉ thêm hình ở chỗ **phiếu gốc có hình** hoặc bài đố thực sự cần; bài tính thuần (đã cho đủ số đo) thì thôi.
 
 ## 5. Quy trình lệnh (nhắc lại)
 
@@ -94,7 +100,7 @@ Các phần này do template lo, **luôn ở yên một chỗ**; AI/người so�
 - **Logo** (góc trái header), **watermark**, **khung viền brand 4 góc** — cố định mọi trang.
 - **Footer**: tên công ty + bảng hotline + Website + **chữ ký `Biên soạn: Thầy Thái MathTech — ĐT 0386969199`** — cố định mọi trang (xem README §"Dấu ấn giáo viên"). **Đừng gỡ.**
 - **Badge số chặng** (huy hiệu tròn), thanh nhấn trái khối chặng — cố định.
-- **Slide**: mỗi `problem` / mỗi `noted` **tự tách một slide riêng** (chiếu từng bài như đang dạy); slide bìa + footline chữ ký cố định.
+- **Slide**: renderer gom blocks thành **"đơn vị dạy"** (`group_slide_segments`): mỗi `problem`/`noted`/`para`/`mindmap` một slide; `math`/`table` đi LIỀN phần dẫn ngay trước (không tách rời). Segment **có `figure`** → bố cục **2 cột: lý thuyết/đề bên TRÁI, hình bên PHẢI** (liền mạch, dễ giảng); chỉ-chữ → full width; chỉ-hình → căn giữa. Phiếu KHÔNG hình (đại số) → mỗi đề/ý một slide gọn, không dính đoạn. Slide bìa + footline chữ ký cố định.
 
 → Tên bài **dài bao nhiêu cũng được** — template tự co, không vỡ layout. Nguồn chỉnh các phần cố định: `templates/base_*.tex.j2` + `templates/preamble/_macros.tex.j2` (`\titlefit`) + `_beamer.tex.j2`. Sửa xong một chỗ → `rebuild` để áp cho tất cả.
 
