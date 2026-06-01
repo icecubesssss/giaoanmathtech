@@ -18,26 +18,69 @@ __all__ = ["wrap_long_math", "BuildLogReport", "scan_build_log", "find_presentat
 _TEACHER_ASIDE = re.compile(r"\bGV\b|gi[áa]o\s*vi[êe]n", re.IGNORECASE)
 # Nhiều ý a)…b)…c) nằm cùng một block mà không có token xuống dòng [[br]] -> dễ dính chữ.
 _SUBITEM = re.compile(r"(?<![A-Za-zÀ-ỹ])[b-fB-F]\)")
-# Ký tự đặc biệt LaTeX chưa escape trong field VĂN BẢN THUẦN (title/eyebrow/label) —
-# sanitizer KHÔNG bắt, nhưng '&' '%' '#' thô sẽ làm VỠ build (vd & -> "Misplaced
-# alignment tab"). Phải viết \& \% \#. (Trong $...$ thì & là hợp lệ nên không quét math.)
-_RAW_SPECIAL = re.compile(r"(?<!\\)[&%#]")
+# Ký tự đặc biệt LaTeX chưa escape — sanitizer KHÔNG bắt, nhưng sẽ làm VỠ build.
+#  - '%' '#' thô SAI Ở MỌI NƠI (kể cả trong $...$): '%' là comment (nuốt luôn lệnh
+#    đóng hộp tcolorbox -> hỏng guide.pdf), '#' là tham số macro.
+#  - '&' chỉ sai NGOÀI công thức (trong $...$ như aligned/array/cases thì '&' hợp lệ).
+# Phải viết \% \# \&. Quét TOÀN BỘ field văn bản, không chỉ title/eyebrow/label.
+_RAW_PCT_HASH = re.compile(r"(?<!\\)[%#]")
+_RAW_AMP = re.compile(r"(?<!\\)&")
+_MATH_SPAN = re.compile(r"(?<!\\)\$.*?(?<!\\)\$", re.DOTALL)
+
+
+def _check_special(loc: str, s: str, out: list[str], is_math: bool = False) -> None:
+    """Quét một chuỗi: '%'/'#' thô (mọi nơi) và '&' thô (ngoài $...$)."""
+    if not s:
+        return
+    if _RAW_PCT_HASH.search(s):
+        out.append(f"{loc}: có '%' hoặc '#' chưa escape — phải viết \\% \\# (nếu không sẽ VỠ build).")
+    # '&' hợp lệ trong môi trường toán; chỉ quét phần NGOÀI $...$ (trừ field thuần math).
+    outside = s if is_math is False else ""
+    if not is_math:
+        outside = _MATH_SPAN.sub(" ", s)
+        if _RAW_AMP.search(outside):
+            out.append(f"{loc}: có '&' chưa escape ngoài công thức — phải viết \\& (nếu không sẽ VỠ build).")
+
+
+def _walk_mindmap_labels(node, loc, out):
+    lab = node.get("label") if isinstance(node, dict) else getattr(node, "label", None)
+    if lab:
+        _check_special(loc, lab, out)
+    kids = node.get("children") if isinstance(node, dict) else getattr(node, "children", None)
+    for c in (kids or []):
+        _walk_mindmap_labels(c, loc, out)
 
 
 def _raw_special_warnings(lesson) -> list[str]:
-    """Cảnh báo '&' '%' '#' chưa escape ở field văn bản thuần (sẽ làm vỡ LaTeX)."""
+    """Cảnh báo '&' '%' '#' chưa escape ở MỌI field (title, text, statement, solution,
+    teacher_note, caption, hints, nhãn mindmap, ô bảng) — sẽ làm vỡ LaTeX khi build."""
     out: list[str] = []
-    for name in ("title", "eyebrow"):
-        v = getattr(lesson, name, None)
-        if v and _RAW_SPECIAL.search(v):
-            out.append(f"lesson.{name}: có ký tự '&' '%' '#' chưa escape — phải viết \\& \\% \\# (nếu không sẽ VỠ build).")
+    for name in ("title", "eyebrow", "grade_label"):
+        _check_special(f"lesson.{name}", getattr(lesson, name, "") or "", out)
     for st in lesson.stages:
-        if st.title and _RAW_SPECIAL.search(st.title):
-            out.append(f"stage[{st.kind}].title: có '&' '%' '#' chưa escape — dùng \\& \\% \\#.")
+        base = f"stage[{st.kind}]"
+        _check_special(f"{base}.title", st.title or "", out)
+        _check_special(f"{base}.solution", getattr(st, "solution", "") or "", out)
+        _check_special(f"{base}.teacher_note", getattr(st, "teacher_note", "") or "", out)
         for i, b in enumerate(st.blocks):
-            lab = getattr(b, "label", None)
-            if lab and _RAW_SPECIAL.search(lab):
-                out.append(f"stage[{st.kind}].block[{i}].label: có '&' '%' '#' chưa escape — dùng \\& \\% \\#.")
+            loc = f"{base}.block[{i}]"
+            for attr in ("text", "statement", "caption", "label", "root"):
+                v = getattr(b, attr, None)
+                if v:
+                    _check_special(f"{loc}.{attr}", v, out)
+            # MathBlock.latex: cả chuỗi là toán -> '&' hợp lệ, vẫn cấm '%' '#'.
+            lx = getattr(b, "latex", None)
+            if lx:
+                _check_special(f"{loc}.latex", lx, out, is_math=True)
+            for h in (getattr(b, "hints", None) or []):
+                _check_special(f"{loc}.hint", h, out)
+            for nd in (getattr(b, "branches", None) or []):
+                _walk_mindmap_labels(nd, f"{loc}.mindmap", out)
+            for r, row in enumerate(getattr(b, "rows", None) or []):
+                for c, cell in enumerate(row or []):
+                    _check_special(f"{loc}.row[{r}][{c}]", cell, out)
+            for h in (getattr(b, "headers", None) or []):
+                _check_special(f"{loc}.header", h, out)
     return out
 
 
@@ -86,7 +129,29 @@ def find_presentation_warnings(lesson) -> list[str]:
             warns.append("stage[reflection]: chưa thấy BÀI TẬP VỀ NHÀ (gắn tier=\"btvn\") — nên giao bài cho HS.")
 
     warns.extend(_raw_special_warnings(lesson))
+    warns.extend(_scaffolding_warnings(lesson))
     return warns
+
+
+# Dạng dễ trừu tượng mà Thầy yêu cầu PHẢI có "ví dụ mồi" dẫn dắt (hạ độ dốc) —
+# nếu xuất hiện dạng này mà cả phiếu không có chữ "mồi" thì nhắc soạn thêm scaffolding
+# (hoặc hỏi Thầy cách dạy). Cố ý hẹp & chính xác để khỏi báo nhầm.
+_HARD_SCAFFOLD = (
+    (re.compile(r"làm\s+chung|làm\s+riêng", re.I),
+     "Có dạng 'làm chung – làm riêng' nhưng chưa thấy 'ví dụ mồi' dẫn dắt (vd hình ảnh pizza/vòi nước) — nên thêm scaffolding hoặc HỎI Thầy cách dạy."),
+    (re.compile(r"xu[ôo]i\s*dòng|ngược\s*dòng", re.I),
+     "Có dạng 'xuôi/ngược dòng' nhưng chưa thấy 'ví dụ mồi' (vd con thuyền trôi theo dòng) — nên thêm scaffolding hoặc HỎI Thầy cách dạy."),
+)
+
+
+def _scaffolding_warnings(lesson) -> list[str]:
+    joined = " ".join(
+        str(getattr(b, a, "") or "")
+        for st in lesson.stages for b in st.blocks for a in ("text", "statement")
+    )
+    if "mồi" in joined.lower():  # đã có ví dụ mồi -> coi như đã dẫn dắt
+        return []
+    return [msg for rx, msg in _HARD_SCAFFOLD if rx.search(joined)]
 
 # Bẻ ưu tiên tại toán tử quan hệ trước, rồi cộng/trừ ở mức ngoài cùng.
 _REL = re.compile(r"\s*(\\ge|\\geq|\\le|\\leq|=|\\Longleftrightarrow|\\Rightarrow)\s*")

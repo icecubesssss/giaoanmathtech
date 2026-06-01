@@ -1,0 +1,251 @@
+{
+  "slug": "giai-bai-toan-bang-lap-he",
+  "title": "Giải bài toán bằng cách lập hệ phương trình",
+  "eyebrow": "CHỦ ĐỀ • ĐẠI SỐ — PHIẾU B",
+  "grade_label": "Lớp 9 • Ôn vào 10",
+  "stages": [
+    {
+      "kind": "review",
+      "number": 1,
+      "title": "Khám phá — KTBC: từ lập hệ sang giải trọn vẹn",
+      "blocks": [
+        {
+          "type": "para",
+          "text": "Tuần trước ta đã \\emph{lập hệ} từ bài toán thực tế; Phiếu A đã biết \\emph{giải hệ}. Ghép lại, ta giải trọn vẹn một bài toán đố — dạng câu nghị luận quen thuộc của đề vào 10."
+        },
+        {
+          "type": "noted",
+          "text": "\\textbf{Khởi động.}\\; Gọi $x$ là giá một hộp bánh, $y$ là giá một túi kẹo (nghìn đồng). [[br]] \"Mua $15$ hộp bánh và $5$ túi kẹo hết $850$\" cho phương trình: $[[mblank:3cm]]=850$. [[br]] \"Mỗi hộp bánh đắt hơn mỗi túi kẹo $10$\" cho phương trình: $x-y=[[mblank:1.2cm]]$."
+        },
+        {
+          "type": "para",
+          "text": "\\textbf{Thử thách khởi động.} Cùng một bài toán, hai bạn đặt ẩn khác nhau (bạn thì gọi ẩn là giá tiền, bạn thì gọi ẩn là số lượng). [[br]] Theo em, chọn ẩn thế nào để hệ \\emph{dễ lập} và \\emph{dễ giải} nhất? Vì sao bước \\textbf{đặt điều kiện} cho ẩn lại quan trọng?"
+        },
+        {
+          "type": "para",
+          "text": "\\textbf{Ví dụ mẫu (thầy + trò cùng làm).} Với hệ $\\begin{cases} 15x+5y=850\\\\ x-y=10 \\end{cases}$, từ (2) rút $x=y+10$. [[br]] Thay vào (1): $15(y+10)+5y=850\\Rightarrow 20y=[[mblank:1.2cm]]\\Rightarrow y=[[mblank:1cm]]$. [[br]] $x=y+10=[[mblank:1cm]]$. Vậy giá một hộp bánh $45$ nghìn, một túi kẹo $35$ nghìn."
+        }
+      ],
+      "solution": "Khởi động: $15x+5y=850$; $x-y=10$. [[br]] Ví dụ mẫu: $15y+150+5y=850\\Rightarrow 20y=700\\Rightarrow y=35$; $x=45$. Giá: bánh $45$ nghìn, kẹo $35$ nghìn (thoả điều kiện dương).",
+      "teacher_note": "Nhấn: bước khó nhất là DỊCH lời thành phương trình. Đặt điều kiện ($x,y>0$) để loại nghiệm vô lí ở bước kết luận."
+    },
+    {
+      "kind": "concept",
+      "number": 2,
+      "title": "Khái niệm — Ba bước giải bài toán bằng cách lập hệ",
+      "blocks": [
+        {
+          "type": "noted",
+          "text": "\\textbf{Ba bước.} [[br]] \\textbf{B1 — Lập hệ:} chọn \\emph{hai ẩn} (thường là hai đại lượng cần tìm) + đặt điều kiện/đơn vị; biểu diễn các đại lượng chưa biết theo ẩn; lập hai phương trình. [[br]] \\textbf{B2 — Giải hệ} vừa lập (thế hoặc cộng đại số). [[br]] \\textbf{B3 — Kiểm tra} nghiệm với điều kiện rồi \\emph{trả lời} bài toán."
+        },
+        {
+          "type": "para",
+          "text": "\\textbf{Ví dụ mẫu 1 (quan hệ tổng – hiệu).} Tìm hai số tự nhiên, biết tổng của chúng bằng $2021$ và hiệu (số lớn trừ số bé) bằng $15$. [[br]] Gọi số lớn $x$, số bé $y$ ($x>y$): $\\begin{cases} x+y=2021\\\\ x-y=15 \\end{cases}$. [[br]] Cộng vế: $2x=2036\\Rightarrow x=[[mblank:1.2cm]]$; $y=x-15=[[mblank:1.2cm]]$."
+        },
+        {
+          "type": "para",
+          "text": "\\textbf{Ví dụ mẫu 2 (vượt mức – phần trăm).} Hai xí nghiệp theo kế hoạch làm tổng cộng $360$ dụng cụ. Thực tế xí nghiệp I vượt mức $10\\%$, xí nghiệp II vượt mức $15\\%$ nên cả hai làm được $404$ dụng cụ. Tính số dụng cụ mỗi xí nghiệp phải làm theo kế hoạch. [[br]] Gọi kế hoạch hai xí nghiệp là $x,y$: $\\begin{cases} x+y=360\\\\ 1{,}1x+1{,}15y=404 \\end{cases}$. [[br]] Giải ra $x=[[mblank:1.2cm]]$, $y=[[mblank:1.2cm]]$."
+        },
+        {
+          "type": "noted",
+          "text": "\\textbf{Chú ý phần trăm.} 'Tăng $10\\%$' cho \\emph{phần tăng thêm} $=0{,}1x$; còn \\emph{giá trị mới} (gốc $+$ phần tăng) $=x+0{,}1x=1{,}1x$. [[br]] Đọc kĩ đề hỏi theo cái nào: '\\emph{nhiều thêm / vượt thêm}' $\\to$ dùng $0{,}1x$; '\\emph{tất cả / phải trả / số mới}' $\\to$ dùng $1{,}1x$."
+        },
+        {
+          "type": "noted",
+          "text": "\\textbf{Đích đến thi vào 10.} Câu \\emph{giải bài toán bằng cách lập hệ} gần như năm nào cũng có ($1$–$1{,}5$ điểm). [[br]] Các \\emph{dạng ruột}: số tiền/quan hệ số lượng, chữ số, hình học, chuyển động, dòng nước, năng suất – phần trăm, làm chung – làm riêng."
+        }
+      ],
+      "solution": "Ví dụ mẫu 1: $2x=2036\\Rightarrow x=1018$; $y=1003$. [[br]] Ví dụ mẫu 2: trừ $1{,}1(x+y)=396$ khỏi PT(2): $0{,}05y=8\\Rightarrow y=160$, $x=200$. Kế hoạch: XN I $200$, XN II $160$ dụng cụ.",
+      "teacher_note": "Cho HS điền ô trống trước. Chốt khung 3 bước; mỗi dạng có 'từ khoá' dịch sang phương trình (tổng, hiệu, gấp, vượt mức \\%...)."
+    },
+    {
+      "kind": "practice1",
+      "number": 3,
+      "title": "Luyện tập 1 — Quan hệ số lượng, chữ số, hình học (trên lớp)",
+      "blocks": [
+        {
+          "type": "problem",
+          "label": "Bài 1.",
+          "tier": "onclass",
+          "statement": "Một trường tổ chức cho $160$ người đi du lịch sinh thái. Vé mỗi thầy cô phụ trách là $30\\,000$ đồng, vé mỗi học sinh là $20\\,000$ đồng; tổng tiền mua vé là $3\\,300\\,000$ đồng. Hỏi có bao nhiêu thầy cô và bao nhiêu học sinh tham gia?"
+        },
+        {
+          "type": "writelines",
+          "count": 3
+        },
+        {
+          "type": "problem",
+          "label": "Bài 2.",
+          "tier": "onclass",
+          "statement": "Tìm một số tự nhiên có hai chữ số, biết tổng hai chữ số của nó bằng $11$; nếu đổi chỗ chữ số hàng chục và hàng đơn vị thì số đó tăng thêm $27$ đơn vị."
+        },
+        {
+          "type": "writelines",
+          "count": 3
+        },
+        {
+          "type": "problem",
+          "label": "Bài 3.",
+          "tier": "onclass",
+          "statement": "Một mảnh vườn hình chữ nhật có chu vi bằng $34$ m. Nếu tăng chiều dài thêm $3$ m và chiều rộng thêm $2$ m thì diện tích tăng thêm $45$ m$^2$. Tính chiều dài và chiều rộng của mảnh vườn."
+        },
+        {
+          "type": "writelines",
+          "count": 3
+        }
+      ],
+      "solution": "\\textbf{Bài 1.} Gọi số thầy cô $x$, số học sinh $y$ ($x,y\\in\\mathbb{N}^*$): $\\begin{cases} x+y=160\\\\ 3x+2y=330 \\end{cases}$ (chia $10\\,000$). [[br]] Giải: $x=10$, $y=150$. Vậy có $10$ thầy cô và $150$ học sinh.\\par\\smallskip \\textbf{Bài 2.} Gọi chữ số hàng chục $x$, hàng đơn vị $y$ ($1\\le x\\le9,\\ 0\\le y\\le9$). Số đó là $10x+y$. [[br]] $\\begin{cases} x+y=11\\\\ (10y+x)-(10x+y)=27 \\end{cases}\\Rightarrow \\begin{cases} x+y=11\\\\ y-x=3 \\end{cases}\\Rightarrow x=4,\\ y=7$. Số cần tìm là $47$.\\par\\smallskip \\textbf{Bài 3.} Gọi chiều dài $x$, chiều rộng $y$ (m, $x>y>0$): $\\begin{cases} x+y=17\\\\ (x+3)(y+2)=xy+45 \\end{cases}$ [[br]] Khai triển PT(2): $2x+3y=39$. Giải với $x+y=17$ được $x=12,\\ y=5$. [[br]] Chiều dài $12$ m, chiều rộng $5$ m.",
+      "teacher_note": "Bài 2: nhắc biểu diễn số hai chữ số $\\overline{xy}=10x+y$. Bài 3: khai triển $(x+3)(y+2)$ rồi trừ $xy$ để được phương trình bậc nhất."
+    },
+    {
+      "kind": "practice2",
+      "number": 4,
+      "title": "Luyện tập 2 — Chuyển động, dòng nước, phần trăm (chạm trần thi)",
+      "blocks": [
+        {
+          "type": "para",
+          "text": "\\textbf{Ví dụ mẫu (chuyển động – vận tốc dự định).} Một ô tô đi từ A, dự định đến B lúc $9$ giờ. Nếu chạy $30$ km/h thì đến B chậm $1$ giờ; nếu chạy $60$ km/h thì tới B sớm $1$ giờ. Tính quãng đường AB và giờ xuất phát. [[br]] Gọi $x,y$ là thời gian đi với vận tốc $30$ và $60$ km/h (giờ). Cùng quãng đường: $30x=60y$. Chênh thời gian: $x-1=y+1$. [[br]] $\\begin{cases} 30x-60y=0\\\\ x-y=2 \\end{cases}\\Rightarrow x=[[mblank:1cm]],\\ y=[[mblank:1cm]]$. AB $=30x=[[mblank:1.4cm]]$ km."
+        },
+        {
+          "type": "noted",
+          "text": "\\textbf{Ví dụ mồi — dòng nước.} Một dòng sông chảy với vận tốc $5$ km/h. [[br]] Thuyền \\emph{không} động cơ thả trên sông sẽ trôi theo dòng với vận tốc $[[mblank:1.2cm]]$ km/h. [[br]] Thuyền có động cơ (vận tốc riêng $v$): xuôi dòng $v_{\\text{xuôi}}=v\\,[[mblank:0.7cm]]\\,5$ (nước đẩy theo); ngược dòng $v_{\\text{ngược}}=v\\,[[mblank:0.7cm]]\\,5$ (nước cản). [[br]] Quãng đường $=$ vận tốc $\\times$ thời gian, hay $t_{\\text{xuôi}}=\\dfrac{S}{v+5}$, $t_{\\text{ngược}}=\\dfrac{S}{[[mblank:1.4cm]]}$."
+        },
+        {
+          "type": "problem",
+          "label": "Bài 4.",
+          "tier": "onclass",
+          "statement": "Một ca nô xuôi dòng $3$ giờ và ngược dòng $4$ giờ đi được tổng cộng $380$ km. Lần khác, ca nô xuôi dòng $1$ giờ và ngược dòng $30$ phút được $85$ km. Tính vận tốc ca nô khi nước yên lặng và vận tốc dòng nước (vận tốc xuôi $=$ ca nô $+$ nước, ngược $=$ ca nô $-$ nước)."
+        },
+        {
+          "type": "writelines",
+          "count": 3
+        },
+        {
+          "type": "problem",
+          "label": "Bài 5.",
+          "tier": "onclass",
+          "statement": "Năm ngoái, tổng dân số của hai tỉnh A và B là $4\\,000\\,000$ người. Năm nay dân số tỉnh A tăng $1{,}2\\%$, dân số tỉnh B tăng $1{,}1\\%$ nên tổng dân số hai tỉnh năm nay là $4\\,045\\,000$ người. Tính dân số năm ngoái của mỗi tỉnh."
+        },
+        {
+          "type": "writelines",
+          "count": 3
+        },
+        {
+          "type": "problem",
+          "label": "Bài 6.",
+          "tier": "onclass",
+          "statement": "Trong môn bóng rổ, mỗi quả ném phạt thành công được $1$ điểm; mỗi quả ném rổ thành công được $2$ hoặc $3$ điểm. Một mùa giải, một vận động viên ghi được $1234$ điểm, trong đó thực hiện thành công $237$ quả ném phạt và tổng số quả ném rổ thành công ở khu $2$ điểm và $3$ điểm là $496$ quả. Tìm số quả ném rổ thành công ở khu $2$ điểm và khu $3$ điểm."
+        },
+        {
+          "type": "writelines",
+          "count": 3
+        }
+      ],
+      "solution": "\\textbf{Ví dụ mồi (dòng nước):} thuyền trôi $5$ km/h; $v_{\\text{xuôi}}=v+5$, $v_{\\text{ngược}}=v-5$; $t_{\\text{ngược}}=\\dfrac{S}{v-5}$.\\par\\smallskip \\textbf{Ví dụ mẫu:} $30x=60y\\Rightarrow x=2y$; $2y-y=2\\Rightarrow y=2,\\ x=4$. AB $=30\\cdot4=120$ km; dự định đi $4-1=3$ giờ nên xuất phát lúc $9-3=6$ giờ.\\par\\smallskip \\textbf{Bài 4.} Gọi vận tốc ca nô (yên lặng) $a$, dòng nước $b$ (km/h, $a>b>0$): $\\begin{cases} 3(a+b)+4(a-b)=380\\\\ (a+b)+0{,}5(a-b)=85 \\end{cases}\\Rightarrow \\begin{cases} 7a-b=380\\\\ 3a+b=170 \\end{cases}$. [[br]] Cộng vế: $10a=550\\Rightarrow a=55$; $b=170-165=5$. Ca nô $55$ km/h, dòng nước $5$ km/h.\\par\\smallskip \\textbf{Bài 5.} Gọi dân số năm ngoái của A, B là $x,y$ (người): $\\begin{cases} x+y=4\\,000\\,000\\\\ 1{,}012x+1{,}011y=4\\,045\\,000 \\end{cases}$. [[br]] Trừ $1{,}011(x+y)=4\\,044\\,000$: $0{,}001x=1000\\Rightarrow x=1\\,000\\,000$, $y=3\\,000\\,000$.\\par\\smallskip \\textbf{Bài 6.} Gọi số quả $2$ điểm $x$, số quả $3$ điểm $y$: $\\begin{cases} x+y=496\\\\ 2x+3y+237=1234 \\end{cases}\\Rightarrow \\begin{cases} x+y=496\\\\ 2x+3y=997 \\end{cases}\\Rightarrow x=491,\\ y=5$.",
+      "teacher_note": "Boss: dạng chuyển động/dòng nước hay gặp ở đề vào 10. Nhắc quy đổi $30$ phút $=0{,}5$ giờ. Bài 5 mẹo: trừ $1{,}011\\times$ phương trình tổng để khử nhanh."
+    },
+    {
+      "kind": "reflection",
+      "number": 5,
+      "title": "Tổng kết",
+      "blocks": [
+        {
+          "type": "para",
+          "text": "Khung cố định: \\textbf{lập hệ} (gọi ẩn + điều kiện, dịch dữ kiện thành 2 phương trình) $\\to$ \\textbf{giải hệ} $\\to$ \\textbf{kiểm tra điều kiện và trả lời}. [[br]] Chìa khoá là nhận ra \\emph{từ khoá} của mỗi dạng để dịch sang phương trình."
+        },
+        {
+          "type": "mindmap",
+          "caption": "Sơ đồ tư duy — em điền các ô trống để chốt quy trình",
+          "root": "Giải toán bằng lập hệ",
+          "branches": [
+            {
+              "label": "B1: Lập hệ",
+              "children": [
+                {
+                  "label": "Chọn ẩn $+$ [[blank:1.8cm]]"
+                },
+                {
+                  "label": "Dữ kiện $\\to$ [[blank:1.8cm]]"
+                }
+              ]
+            },
+            {
+              "label": "B2: [[blank:1.8cm]]",
+              "children": [
+                {
+                  "label": "Thế hoặc [[blank:1.8cm]]"
+                }
+              ]
+            },
+            {
+              "label": "B3: Trả lời",
+              "children": [
+                {
+                  "label": "[[blank:1.8cm]] điều kiện"
+                }
+              ]
+            }
+          ]
+        },
+        {
+          "type": "problem",
+          "label": "Bài 7.",
+          "tier": "btvn",
+          "statement": "Hai xí nghiệp theo kế hoạch phải làm tổng cộng $360$ dụng cụ. Thực tế, xí nghiệp I vượt mức $12\\%$, xí nghiệp II vượt mức $10\\%$ nên cả hai làm được $400$ dụng cụ. Tính số dụng cụ mỗi xí nghiệp phải làm theo kế hoạch."
+        },
+        {
+          "type": "problem",
+          "label": "Bài 8.",
+          "tier": "btvn",
+          "statement": "Hai trường X và Y có tổng cộng $420$ học sinh đậu vào lớp $10$, đạt tỉ lệ $84\\%$ trên tổng số dự thi. Riêng trường X tỉ lệ đậu $80\\%$, riêng trường Y tỉ lệ đậu $90\\%$. Tính số học sinh dự thi của mỗi trường."
+        },
+        {
+          "type": "problem",
+          "label": "Bài 9.",
+          "tier": "btvn",
+          "statement": "Một vật là hợp kim của đồng và kẽm có khối lượng $124$ g và thể tích $15$ cm$^3$. Biết $89$ g đồng có thể tích $10$ cm$^3$ và $7$ g kẽm có thể tích $1$ cm$^3$. Tính khối lượng đồng và khối lượng kẽm trong hợp kim đó."
+        },
+        {
+          "type": "para",
+          "text": "\\textbf{Nhịp cầu lên mở rộng.} Khi đại lượng nằm \\emph{ở mẫu} (năng suất một ngày, một giờ) ta \\textbf{đặt ẩn phụ} rồi mới lập hệ bậc nhất. [[br]] Ngoài ra bài toán \\emph{trộn – pha} và \\emph{liên môn} cũng quy về lập hệ. Mỗi bài sau thêm đúng một bước so với bài trên lớp."
+        },
+        {
+          "type": "noted",
+          "text": "\\textbf{Ví dụ mồi — làm chung, làm riêng.} Một chiếc pizza $8$ miếng: bạn A ăn hết trong $16$ phút, bạn B trong $24$ phút. [[br]] Mỗi phút A ăn $\\dfrac{1}{16}$ chiếc, B ăn $\\dfrac{1}{24}$ chiếc; cùng ăn thì mỗi phút hết $\\dfrac{1}{16}+\\dfrac{1}{24}=\\dfrac{5}{48}$ chiếc, nên xong sau $\\dfrac{48}{5}=9{,}6$ phút. [[br]] \\emph{Ý tưởng cốt lõi:} 'mỗi đơn vị thời gian làm được \\textbf{một phần} công việc' $\\Rightarrow$ đặt ẩn $\\dfrac{1}{x}$ cho năng suất. Bài 10 dùng đúng ý này."
+        },
+        {
+          "type": "problem",
+          "label": "Bài 10.",
+          "tier": "extend",
+          "statement": "Hai đội xe cùng chở đất thì xong một khu đất trong $18$ ngày. Nếu đội I làm $6$ ngày rồi đội II làm tiếp $8$ ngày thì được $40\\%$ công việc. Hỏi mỗi đội làm một mình thì bao lâu xong công việc?",
+          "hints": [
+            "Coi cả công việc là $1$; mỗi ngày đội I làm $\\dfrac1x$, đội II làm $\\dfrac1y$ công việc.",
+            "Đặt $u=\\dfrac1x$, $v=\\dfrac1y$ để được hệ bậc nhất: $\\begin{cases} u+v=\\dfrac{1}{18}\\\\ 6u+8v=0{,}4 \\end{cases}$, giải rồi trả ẩn."
+          ]
+        },
+        {
+          "type": "problem",
+          "label": "Bài 11.",
+          "tier": "extend",
+          "statement": "Dung dịch A có nồng độ $20\\%$ muối, dung dịch B có nồng độ $10\\%$ muối. Hỏi cần lấy bao nhiêu gam mỗi loại để pha được $500$ g dung dịch có nồng độ $14\\%$ muối?",
+          "hints": [
+            "Khối lượng muối trong $500$ g dung dịch $14\\%$ là $\\dfrac{500\\cdot14}{100}=70$ g.",
+            "Lập hệ theo khối lượng dung dịch và khối lượng muối: $\\begin{cases} x+y=500\\\\ 0{,}2x+0{,}1y=70 \\end{cases}$."
+          ]
+        },
+        {
+          "type": "problem",
+          "label": "Bài 12.",
+          "tier": "extend",
+          "statement": "\\textbf{Thử thách (tự chọn) — liên môn.} Hãy cân bằng phương trình phản ứng hoá học $P+O_2 \\to P_2O_5$ bằng cách \\emph{lập hệ}: tìm các hệ số nguyên nhỏ nhất.",
+          "hints": [
+            "Đặt hệ số: $xP+yO_2\\to P_2O_5$. Cân bằng số nguyên tử P và O ở hai vế cho hệ $\\begin{cases} x=2\\\\ 2y=5 \\end{cases}$.",
+            "Giải ra $x=2,\\ y=\\dfrac52$; nhân cả hai vế với $2$ để hệ số thành số nguyên."
+          ]
+        }
+      ],
+      "solution": "\\textbf{Bài 7.} $\\begin{cases} x+y=360\\\\ 1{,}12x+1{,}10y=400 \\end{cases}\\Rightarrow 0{,}02x=4\\Rightarrow x=200,\\ y=160$. Kế hoạch: XN I $200$, XN II $160$.\\par\\smallskip \\textbf{Bài 8.} Tổng dự thi $=\\dfrac{420}{0{,}84}=500$. Gọi số dự thi của X, Y là $x,y$: $\\begin{cases} x+y=500\\\\ 0{,}8x+0{,}9y=420 \\end{cases}$ [[br]] $0{,}8x+0{,}9(500-x)=420\\Rightarrow -0{,}1x=-30\\Rightarrow x=300,\\ y=200$. Trường X dự thi $300$, trường Y $200$.\\par\\smallskip \\textbf{Bài 9.} $1$ cm$^3$ đồng nặng $8{,}9$ g, $1$ cm$^3$ kẽm nặng $7$ g. [[br]] Gọi thể tích đồng, kẽm là $x,y$ (cm$^3$): $\\begin{cases} x+y=15\\\\ 8{,}9x+7y=124 \\end{cases}\\Rightarrow x=10,\\ y=5$. [[br]] Khối lượng đồng $89$ g, kẽm $35$ g.\\par\\smallskip \\textbf{Bài 10.} Đặt $u=\\dfrac1x,v=\\dfrac1y$: $\\begin{cases} u+v=\\dfrac1{18}\\\\ 6u+8v=0{,}4 \\end{cases}\\Rightarrow u=\\dfrac1{45},\\ v=\\dfrac1{30}$. Đội I làm một mình $45$ ngày, đội II $30$ ngày.\\par\\smallskip \\textbf{Bài 11.} $\\begin{cases} x+y=500\\\\ 0{,}2x+0{,}1y=70 \\end{cases}\\Rightarrow 0{,}1x=20\\Rightarrow x=200,\\ y=300$. Lấy $200$ g dung dịch A và $300$ g dung dịch B.\\par\\smallskip \\textbf{Bài 12.} Cân bằng P: $x=2$; cân bằng O: $2y=5\\Rightarrow y=\\dfrac52$. Nhân $2$: $4P+5O_2\\to 2P_2O_5$.\\par\\medskip \\textbf{Đáp án sơ đồ:} chọn ẩn $+$ \\emph{điều kiện/đơn vị}; mỗi dữ kiện $\\to$ một \\emph{phương trình}; B2 \\emph{Giải} hệ; thế hoặc \\emph{cộng đại số}; B3 \\emph{đối chiếu} điều kiện.",
+      "teacher_note": "BTVN 7–9 củng cố dạng \\%, hình/liên môn. Thang mở rộng: 10 (làm chung – đặt ẩn phụ ở mẫu) $\\to$ 11 (pha trộn) $\\to$ 12 (liên môn cân bằng hoá học). Bài 8: tổng dự thi $=420/0{,}84$."
+    }
+  ]
+}

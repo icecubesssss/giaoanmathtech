@@ -54,3 +54,53 @@ Output written on out.pdf
     rep = scan_build_log(log)
     assert rep.errors and rep.warnings
     assert not rep.clean
+
+
+# --- Cảnh báo ký tự đặc biệt thô ('%' '#' mọi nơi, '&' ngoài $...$) — chống lỗi vỡ build ---
+from src.validators.visual_linter import find_presentation_warnings
+
+
+def _mk_lesson(**over):
+    base = {
+        "slug": "x", "title": "T", "eyebrow": "E", "grade_label": "G",
+        "stages": [
+            {"kind": "review", "number": 1, "title": "r", "blocks": [{"type": "para", "text": "ok"}]},
+            {"kind": "concept", "number": 2, "title": "c", "blocks": [{"type": "math", "latex": "x=1"}]},
+            {"kind": "practice1", "number": 3, "title": "p1", "blocks": [{"type": "problem", "label": "Bài 1.", "statement": "$x=1$"}]},
+            {"kind": "practice2", "number": 4, "title": "p2", "blocks": [{"type": "problem", "label": "Bài 2.", "statement": "$x=2$"}]},
+            {"kind": "reflection", "number": 5, "title": "tk", "blocks": [{"type": "problem", "label": "Bài 3.", "tier": "btvn", "statement": "$x=3$"}]},
+        ],
+    }
+    base.update(over)
+    return LessonPackage.model_validate(base)
+
+
+def test_raw_percent_in_teacher_note_warned():
+    """Regression: '%' thô trong teacher_note (làm vỡ guide.pdf) phải bị cảnh báo."""
+    les = _mk_lesson()
+    les.stages[4].teacher_note = "ôn dạng % phần trăm"
+    ws = find_presentation_warnings(les)
+    assert any("teacher_note" in w and "%" in w for w in ws)
+
+
+def test_raw_amp_outside_math_warned_but_inside_math_ok():
+    les = _mk_lesson()
+    les.stages[0].blocks[0].text = "A & B ngoài toán"   # '&' thô ngoài $...$ -> cảnh báo
+    assert any("&" in w for w in find_presentation_warnings(les))
+    les2 = _mk_lesson()
+    les2.stages[0].blocks[0].text = "Hệ $\\begin{aligned} x &= 1 \\end{aligned}$ và PT \\& kia"  # '&' trong toán + '\&' escaped -> sạch
+    assert not any("&" in w for w in find_presentation_warnings(les2))
+
+
+def test_scaffolding_workrate_without_moi_warned():
+    """'làm chung – làm riêng' mà thiếu 'ví dụ mồi' -> nhắc thêm scaffolding."""
+    les = _mk_lesson()
+    les.stages[2].blocks[0].statement = "Hai đội làm chung xong trong 18 ngày; đội I làm riêng bao lâu?"
+    assert any("làm chung" in w for w in find_presentation_warnings(les))
+
+
+def test_scaffolding_ok_when_moi_present():
+    les = _mk_lesson()
+    les.stages[0].blocks[0].text = "Ví dụ mồi — pizza dẫn vào năng suất."
+    les.stages[2].blocks[0].statement = "Hai đội làm chung xong trong 18 ngày."
+    assert not any("làm chung" in w for w in find_presentation_warnings(les))

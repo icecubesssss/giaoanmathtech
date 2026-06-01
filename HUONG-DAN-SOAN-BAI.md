@@ -9,6 +9,9 @@
 - **KHÔNG bịa đề (no-fabrication).** Bài toán phải lấy từ **PDF nguồn của Thầy** trong folder tuần (hoặc đề thi thật đã có đáp án). Trước đây cổng `weave` ép điều này bằng `verified_scraped_bank`; giờ nó là **kỷ luật con người**: nếu nguồn thiếu dạng cần, **hỏi Thầy**, đừng tự chế đề/đáp án.
 - **Đáp án phải đúng.** Sau khi điền, chạy `validate` — `sympy_solver` sẽ giải lại đại số độc lập để đối chiếu. Hình học SymPy yếu → tự kiểm tay.
 - **Human-in-the-loop:** soạn → `validate` → Thầy xem → `approve` → `build`. Không tự ý in khi chưa duyệt.
+- **Chưa chắc CÁCH DẠY thì HỎI Thầy (không tự đoán).** Khi không chắc nên *dẫn dắt / scaffolding* một dạng thế nào (cách trình bày lời giải mẫu, mức chia bước, ví dụ mồi, chỉnh độ dốc), hãy **liệt kê các bài/dạng đó và hỏi Thầy trước** rồi mới soạn. Thầy sẵn sàng mô tả cách dạy (vd dùng hình ảnh *pizza 8 miếng* để dẫn vào $\tfrac1x+\tfrac1y$; dùng *con thuyền trôi theo dòng* để dẫn $v_{xuôi}=v+v_{nước}$). Dạng dễ trừu tượng (làm chung–làm riêng, đặt ẩn phụ, chuyển động, %…) nên có **một bậc trung gian/ví dụ mồi cụ thể** trước bài chính.
+- **Ưu tiên "nghiệm đẹp" cho bài đại số.** Với PT/hệ, nếu nguồn cho ra nghiệm xấu (phân số lẻ), **được phép chỉnh số liệu đề** để nghiệm gọn — ưu tiên **số nguyên**; dùng SymPy soi lại cả phiếu để chắc. (Bài lượng giác/đo đạc thì đáp số dạng tỉ số hoặc gần đúng là bình thường, không ép.)
+- **Tránh `%` và `&` thô làm vỡ build.** `validate` *không* bắt lỗi này: luôn viết `\%`, `\&` trong mọi field văn bản (kể cả `solution`/`teacher_note`). Một `%` thô = comment LaTeX, nuốt luôn lệnh đóng hộp → hỏng `guide.pdf`.
 
 ## 1. Bám đúng tầm — chống "đần", chống "trẻ con hoá"
 
