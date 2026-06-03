@@ -131,6 +131,33 @@
   .release .step span{ font-size:.64em; color:var(--muted); font-weight:600; }
   .release .step.me{ background:var(--brand); border-color:var(--brand); }
   .release .step.me b{ color:#fff; } .release .step.me span{ color:#ffd9d4; }
+
+  /* Styling for print/PDF export */
+  @media print {
+    @page {
+      size: landscape;
+      margin: 0;
+    }
+    body > .brandfoot {
+      display: none !important;
+    }
+  }
+
+  /* Specific styling for the injected footer in print-pdf mode */
+  .reveal .slides section .brandfoot {
+    position: absolute;
+    bottom: 20px;
+    left: 30px;
+    font-size: 12px;
+    color: var(--muted);
+    z-index: 30;
+  }
+  
+  /* Make footer text lighter on dark backgrounds */
+  section.cover .brandfoot,
+  section.dark .brandfoot {
+    color: rgba(255, 255, 255, 0.6);
+  }
 </style>
 </head>
 <body>
@@ -790,11 +817,23 @@ Verdict: <span class="ok">OK</span> — Dạng toàn phương PSD (trị riêng 
 </section>
 
 </div></div>
-<div class="brandfoot">Học liệu MathTech · soạn một lần, in ba bản · Thầy Thái</div>
+<div class="brandfoot">Học liệu MathTech · soạn một lần, in ba bản · Thầy Thái MathTech · 0386969199</div>
 
 <script src="https://cdn.jsdelivr.net/npm/reveal.js@5.1.0/dist/reveal.js"></script>
 <script src="https://cdn.jsdelivr.net/npm/reveal.js@5.1.0/plugin/notes/notes.js"></script>
 <script>
+  // In print-pdf mode, duplicate the footer to each slide section
+  if (window.location.search.match(/print-pdf/gi)) {
+    var footerHTML = '<div class="brandfoot">Học liệu MathTech · soạn một lần, in ba bản · Thầy Thái MathTech · 0386969199</div>';
+    var sections = document.querySelectorAll('.reveal .slides section');
+    sections.forEach(function(section) {
+      // Only append to slides that contain actual content (not container slides)
+      if (section.querySelector('section') === null) {
+        section.insertAdjacentHTML('beforeend', footerHTML);
+      }
+    });
+  }
+
   Reveal.initialize({
     width:1280, height:720, margin:0.055,
     hash:true, slideNumber:'c/t', controls:true, progress:true,

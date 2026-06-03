@@ -12,7 +12,7 @@
 \setmathfont{((( fonts.math_file )))}[Path=\FONTDIR]
 
 \usepackage{tikz}
-\usetikzlibrary{calc,angles,quotes,positioning,arrows.meta}
+\usetikzlibrary{calc,angles,quotes,positioning,arrows.meta,shapes.geometric}
 % Sơ đồ bước giải (đặc sản) — style khối + mũi tên, dùng trong block figure.
 \tikzset{
   flownode/.style={draw=ink!70, line width=0.8pt, rounded corners=3pt, fill=neutral,
@@ -22,6 +22,7 @@
 }
 \usepackage{adjustbox}   % co hình figure trong cột: giới hạn CẢ bề ngang lẫn chiều cao
 \usepackage{pifont}      % dingbat cho nhãn block (bẫy/đích/mẹo/mở màn) — không cần font ngoài
+\usepackage[most]{tcolorbox}  % thẻ "cam kết lớp học" (slide 2) + hộp nhấn
 % Ký hiệu góc vuông tại đỉnh #1 giữa hai tia #1->#2 và #1->#3 (dùng trong block figure).
 \newcommand{\rightanglemark}[3]{%
   \coordinate (ra1) at ($(#1)!0.26cm!(#2)$);
@@ -77,3 +78,50 @@
 \setbeamertemplate{frametitle}{%
   \vspace*{10pt}\hspace*{0.2cm}{\usebeamerfont{frametitle}\usebeamercolor[fg]{frametitle}\insertframetitle}\par
   \vspace{2pt}\hspace*{0.2cm}{\color{brand}\rule{42pt}{3pt}}\par\vspace{4pt}}
+
+% --- NỘI QUY lớp học (slide 2) — bộ ICON NÉT VẼ "cute" + thẻ DỌC 7 cột --------
+% Icon vẽ bằng MÀU HIỆN HÀNH (đặt trong huy hiệu tròn → tô trắng); cùng phong cách
+% nét tay với bộ icon chặng. MỌI icon ép CHUNG một bounding box ±3.6pt (\ricbb) và
+% cùng cỡ nét → đồng đều tuyệt đối khi đặt vào huy hiệu.
+\newcommand{\ricbb}{\useasboundingbox (-3.6pt,-3.6pt) rectangle (3.6pt,3.6pt);}
+\tikzset{ricstyle/.style={line width=1pt,line cap=round,line join=round}}
+\newcommand{\ricclock}{\tikz[ricstyle]{\ricbb% đồng hồ báo thức
+  \draw (0,-0.3pt) circle (3pt);
+  \draw (-2.6pt,3pt)--(-1.2pt,1.9pt); \draw (2.6pt,3pt)--(1.2pt,1.9pt);
+  \draw (0,-0.3pt)--(0,1.7pt); \draw (0,-0.3pt)--(1.5pt,0.2pt);}}
+\newcommand{\ricpencil}{\tikz[ricstyle]{\ricbb% bút chì
+  \draw[line width=2.3pt] (-2.3pt,-2.3pt)--(1.5pt,1.5pt);
+  \draw (1.5pt,1.5pt)--(3.3pt,3.3pt);
+  \draw (-2.3pt,-2.3pt)--(-3.3pt,-3.3pt);}}
+\newcommand{\ricask}{\tikz[ricstyle]{\ricbb% bong bóng hỏi
+  \draw[rounded corners=1.6pt] (-3.4pt,-0.1pt) rectangle (3.4pt,3.5pt);
+  \draw (-1.6pt,-0.1pt)--(-2.5pt,-2.6pt)--(0.4pt,-0.1pt);
+  \node[font=\fontsize{5}{5}\sffamily\bfseries] at (0,1.7pt) {?};}}
+\newcommand{\ricbook}{\tikz[ricstyle]{\ricbb% quyển vở mở
+  \draw (-3.4pt,-2.7pt)--(-3.4pt,2.2pt)--(0,2.9pt)--(3.4pt,2.2pt)--(3.4pt,-2.7pt)--(0,-2pt)--cycle;
+  \draw (0,-2pt)--(0,2.9pt);}}
+\newcommand{\richeart}{\tikz[ricstyle]{\ricbb% trái tim
+  \draw (0,-3pt) .. controls (-4.2pt,0.9pt) and (-2pt,3.7pt) .. (0,1.4pt)
+                 .. controls (2pt,3.7pt) and (4.2pt,0.9pt) .. (0,-3pt);}}
+\newcommand{\ricstar}{\tikz[ricstyle]{\ricbb% ngôi sao (TikZ, đồng cỡ icon khác)
+  \node[star, star points=5, star point ratio=0.42, draw, line width=1pt,
+    line join=round, minimum size=7.6pt, inner sep=0pt] at (0,0) {};}}
+\newcommand{\ricsparkle}{\tikz[ricstyle]{\ricbb% lấp lánh (sạch sẽ)
+  \draw (0,3.4pt)--(0,-3.4pt); \draw (3.4pt,0)--(-3.4pt,0);
+  \draw (1.9pt,1.9pt)--(-1.9pt,-1.9pt); \draw (-1.9pt,1.9pt)--(1.9pt,-1.9pt);}}
+
+% Huy hiệu tròn cho nội quy: nền màu #1, icon trắng #2.
+\newcommand{\rulebadge}[2]{\begin{tikzpicture}[baseline=-3pt]
+  \node[circle,fill=#1,inner sep=0pt,minimum size=23pt]{\color{white}#2};\end{tikzpicture}}
+
+% Thẻ DỌC: icon (huy hiệu) trên → "số. TỪ KHOÁ" → nội dung. Dùng trong tcbraster 7 cột.
+% #1=màu, #2=icon, #3=số, #4=TỪ KHOÁ, #5=nội dung.
+\newtcolorbox{rulecardvbox}[1]{enhanced, nobeforeafter,
+  colback=#1!5, colframe=#1!55, boxrule=0.6pt, arc=4pt,
+  left=3pt, right=3pt, top=6pt, bottom=6pt, halign=center,
+  borderline north={2.5pt}{0pt}{#1}}
+\newcommand{\rulecardv}[5]{\begin{rulecardvbox}{#1}%
+  \rulebadge{#1}{#2}\par\vspace{3pt}%
+  {\sffamily\bfseries\scriptsize\color{#1}#3.\,#4}\par\vspace{3pt}%
+  {\sffamily\fontsize{6.8}{8.2}\selectfont\color{ink} #5}%
+  \end{rulecardvbox}}
