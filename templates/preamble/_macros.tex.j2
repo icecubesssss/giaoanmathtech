@@ -7,8 +7,20 @@
 \usepackage{tabularx}
 \usepackage[edges]{forest}
 \usepackage{adjustbox}
+\usepackage{pifont}         % Zapf Dingbats (sao ★, ✓…) — bundled, không cần font ngoài
+\usepackage{qrcode}         % QR sinh thẳng trong TeX (không cần internet/shell-escape)
 % Thư viện TikZ cho HÌNH HỌC (block figure): calc=toạ độ suy diễn, angles/quotes=cung góc.
-\usetikzlibrary{calc,angles,quotes}
+% positioning: đặt nhãn dưới nút (thanh hành trình). arrows.meta: mũi tên sơ đồ bước giải.
+\usetikzlibrary{calc,angles,quotes,positioning,arrows.meta}
+
+% --- SƠ ĐỒ BƯỚC GIẢI (đặc sản): style dùng trong block figure để vẽ quy trình
+%     dạng khối + mũi tên (vd 4 bước ẩn ở mẫu) thay vì liệt kê chữ. In đen trắng rõ. ---
+\tikzset{
+  flownode/.style={draw=ink!70, line width=0.8pt, rounded corners=3pt, fill=neutral,
+    inner sep=4pt, font=\sffamily\footnotesize, align=center, minimum height=20pt, text width=2.2cm},
+  flowkey/.style={flownode, draw=trap, fill=trap!8},   % bước "bẫy"/then chốt
+  flowarrow/.style={-{Stealth[length=5pt]}, line width=0.9pt, draw=brand},
+}
 % Ký hiệu góc vuông tại đỉnh #1 giữa hai tia #1->#2 và #1->#3 (vẽ ô vuông nhỏ).
 % Dùng trong block figure: \rightanglemark{A}{B}{C}. Vẽ theo màu hiện hành.
 \newcommand{\rightanglemark}[3]{%
@@ -26,24 +38,113 @@
 % định nghĩa lại bằng hộp rỗng để lời giải Ground Truth dùng \square không vỡ.
 \providecommand{\square}{\ensuremath{\mathord{\hbox{\framebox[1.25ex]{\rule{0pt}{0.95ex}}}}}}
 
-% Huy hiệu số chặng (badge tròn, đồng nhất)
-\newcommand{\stagebadge}[1]{%
-  \tikz[baseline=(c.base)]{\node[circle,fill=brand,text=white,inner sep=0pt,
-    minimum size=22pt,font=\sffamily\bfseries\small](c){#1};}}
+% --- Bộ ICON NÉT VẼ theo chặng (vector, vẽ bằng MÀU HIỆN HÀNH → in đen trắng vẫn rõ;
+%     đây là thứ KHÔI PHỤC nhận diện chặng khi bản in mất hết màu). ---
+\newcommand{\iconreview}{\tikz[line width=1.1pt,line cap=round]{% kính lúp
+  \draw (0,1pt) circle (3.1pt); \draw (2.3pt,-1.3pt)--(4.7pt,-3.7pt);}}
+\newcommand{\iconconcept}{\tikz[line width=1.1pt,line cap=round,line join=round]{% bóng đèn
+  \draw (0,1.4pt) circle (3pt);
+  \draw (-1.5pt,-1.4pt)--(-1.5pt,-2.7pt)--(1.5pt,-2.7pt)--(1.5pt,-1.4pt);
+  \draw (-1.3pt,-3.6pt)--(1.3pt,-3.6pt);}}
+\newcommand{\iconpractice}{\tikz[line cap=round]{% tạ tay
+  \draw[line width=1.1pt] (-4.2pt,0)--(4.2pt,0);
+  \draw[line width=3pt] (-4.2pt,-2.4pt)--(-4.2pt,2.4pt);
+  \draw[line width=3pt] (4.2pt,-2.4pt)--(4.2pt,2.4pt);}}
+\newcommand{\iconapply}{\tikz[line width=1pt]{% bia bắn (vận dụng/chạm trần)
+  \draw (0,0) circle (4pt); \draw (0,0) circle (2pt); \fill (0,0) circle (0.7pt);}}
+\newcommand{\iconreflect}{\tikz[line width=1.1pt,line cap=round,line join=round]{% lá cờ
+  \draw (-1.4pt,-4.4pt)--(-1.4pt,4.4pt);
+  \draw (-1.4pt,4.4pt)--(4.6pt,2.6pt)--(-1.4pt,0.8pt);}}
+
+% Huy hiệu chặng (badge tròn) — màu nền theo chặng, ICON nét vẽ trắng bên trong.
+% #1=màu chặng, #2=icon (vd \iconreview).
+\newcommand{\stagebadge}[2]{%
+  \begin{tikzpicture}[baseline=-3pt]
+    \node[circle,fill=#1,inner sep=0pt,minimum size=26pt]{\color{white}#2};
+  \end{tikzpicture}}
 
 % Dòng "eyebrow" nhận diện chặng (sắc độ brand, chữ sans nhỏ)
 \newcommand{\stageeyebrow}[1]{{\sffamily\footnotesize\color{brand}\textbf{#1}}\par\vspace{2pt}}
 
-% Khối CHẶNG — thanh nhấn trái, bo nhẹ
-\newtcolorbox{stage}[2]{
-  enhanced, breakable, colback=white, colframe=brand,
+% Khối CHẶNG — thanh nhấn trái + nền tô NHẠT theo màu chặng (zoning thị giác).
+% #1=số chặng, #2=tiêu đề, #3=màu chặng, #4=icon nét vẽ.
+\newtcolorbox{stage}[4]{
+  enhanced, breakable, colback=#3!3, colframe=#3,
   boxrule=0pt, arc=3pt, outer arc=3pt,
   top=10pt,bottom=10pt,left=14pt,right=14pt, boxsep=0pt,
-  borderline west={3pt}{0pt}{brand},
+  borderline west={3pt}{0pt}{#3},
   overlay unbroken and first={
-    \node[anchor=north west,xshift=14pt,yshift=-9pt] at (frame.north west)
-      {\stagebadge{#1}\hspace{8pt}\raisebox{4pt}{\sffamily\bfseries\large\color{ink}#2}}; },
-  before upper={\vspace{28pt}} }
+    \node[anchor=north west,xshift=14pt,yshift=-8pt] (sb) at (frame.north west) {\stagebadge{#3}{#4}};
+    \node[anchor=west,font=\sffamily\bfseries\large,text=ink] at ([xshift=9pt]sb.east) {#1.\;\;#2}; },
+  before upper={\vspace{32pt}} }
+
+% --- Thanh HÀNH TRÌNH 5 chặng (tuyến "metro") — ICON trong vòng tròn màu chặng,
+%     tô đậm chặng hiện tại (#1=1..5; truyền 0 = bản đồ tĩnh, không tô đậm chặng nào).
+\newcommand{\journeybar}[1]{%
+  \begin{center}\begin{tikzpicture}[x=2.55cm,baseline]
+    \draw[line width=1.4pt,rule] (0,0) -- (4,0);
+    \foreach \i/\c/\ic/\lb in {%
+        0/stage1/{\iconreview}/{Khám phá}, 1/stage2/{\iconconcept}/{Khái niệm},%
+        2/stage3/{\iconpractice}/{Luyện tập}, 3/stage4/{\iconapply}/{Vận dụng},%
+        4/stage5/{\iconreflect}/{Tổng kết}}{%
+      \pgfmathtruncatemacro{\num}{\i+1}%
+      \ifnum\num=#1\relax
+        \node[circle,fill=\c,minimum size=24pt,inner sep=0pt] (jn\i) at (\i,0) {\color{white}\ic};
+        \node[font=\sffamily\bfseries\tiny,text=\c,below=3pt of jn\i,align=center] {\lb};
+      \else
+        \node[circle,draw=\c!70,line width=0.9pt,fill=\c!12,minimum size=22pt,inner sep=0pt] (jn\i) at (\i,0) {\color{\c}\ic};
+        \node[font=\sffamily\tiny,text=muted,below=3pt of jn\i,align=center] {\lb};
+      \fi}
+  \end{tikzpicture}\end{center}}
+
+% --- Thẻ CALLOUT (nhãn màu, icon) cho block noted có 'variant'. ---
+\newtcolorbox{calloutexample}{enhanced, breakable, colback=info!4, colframe=info!50,
+  boxrule=0.6pt, arc=3pt, top=6pt,bottom=7pt,left=11pt,right=11pt, before=\vspace{3pt},
+  coltitle=white, colbacktitle=info, fonttitle=\sffamily\bfseries\small,
+  attach boxed title to top left={xshift=10pt,yshift=-8pt}, boxed title style={arc=2pt,boxrule=0pt},
+  title={\ding{46}\ \ VÍ DỤ MẪU}}
+\newtcolorbox{callouttrap}{enhanced, breakable, colback=trap!4, colframe=trap!55,
+  boxrule=0.6pt, arc=3pt, top=6pt,bottom=7pt,left=11pt,right=11pt, before=\vspace{3pt},
+  coltitle=white, colbacktitle=trap, fonttitle=\sffamily\bfseries\small,
+  attach boxed title to top left={xshift=10pt,yshift=-8pt}, boxed title style={arc=2pt,boxrule=0pt},
+  title={\ding{43}\ \ BẪY ĐIỂM}}
+\newtcolorbox{callouttarget}{enhanced, breakable, colback=gold!8, colframe=gold!75,
+  boxrule=0.6pt, arc=3pt, top=6pt,bottom=7pt,left=11pt,right=11pt, before=\vspace{3pt},
+  coltitle=ink, colbacktitle=gold, fonttitle=\sffamily\bfseries\small,
+  attach boxed title to top left={xshift=10pt,yshift=-8pt}, boxed title style={arc=2pt,boxrule=0pt},
+  title={\ding{72}\ \ ĐÍCH THI VÀO 10}}
+\newtcolorbox{callouttip}{enhanced, breakable, colback=stage2!5, colframe=stage2!45,
+  boxrule=0.6pt, arc=3pt, top=6pt,bottom=7pt,left=11pt,right=11pt, before=\vspace{3pt},
+  coltitle=white, colbacktitle=stage2, fonttitle=\sffamily\bfseries\small,
+  attach boxed title to top left={xshift=10pt,yshift=-8pt}, boxed title style={arc=2pt,boxrule=0pt},
+  title={\ding{42}\ \ MẸO}}
+
+% --- Thẻ MỞ MÀN THỰC TẾ (đặc sản: hook đời thực mở đầu phiếu) ---
+\newtcolorbox{openerbox}{enhanced, breakable, colback=stage1!5, colframe=stage1!55,
+  boxrule=0.8pt, arc=4pt, top=7pt,bottom=8pt,left=12pt,right=12pt, before=\vspace{2pt},
+  coltitle=white, colbacktitle=stage1, fonttitle=\sffamily\bfseries\small,
+  attach boxed title to top left={xshift=10pt,yshift=-8pt}, boxed title style={arc=2pt,boxrule=0pt},
+  title={\ding{44}\ \ MỞ MÀN THỰC TẾ}}
+
+% --- "Thầy mách nhỏ" (chỗ dành cho linh vật; nay dùng icon GV, sau thay ảnh mascot) ---
+\newcommand{\mascottip}[1]{%
+  \par\vspace{3pt}\noindent
+  \begin{tcolorbox}[enhanced,breakable,colback=stage5!5,colframe=stage5!40,
+    boxrule=0.5pt,arc=8pt,left=42pt,top=6pt,bottom=6pt,right=10pt,before=\vspace{2pt},
+    overlay={\node[anchor=west,font=\LARGE,text=stage5] at ([xshift=10pt]frame.west) {\ding{43}};}]
+    {\sffamily\footnotesize\bfseries\color{stage5}THẦY MÁCH NHỎ:}\; #1
+  \end{tcolorbox}}
+
+% --- Sao độ khó (game hoá tier): #1 = 1..3 sao tô vàng, còn lại mờ ---
+\newcommand{\diffstars}[1]{{\footnotesize\color{gold}\ding{72}\hspace{0.5pt}%
+  \ifnum#1>1\color{gold}\else\color{gold!30}\fi\ding{72}\hspace{0.5pt}%
+  \ifnum#1>2\color{gold}\else\color{gold!30}\fi\ding{72}}}
+
+% --- QR video lời giải (đặc sản: cầu nối giấy → video). #1 = URL ---
+\newcommand{\videoqr}[1]{%
+  \par\nobreak\vspace{1pt}\hfill
+  \begin{tabular}{@{}c@{}}\qrcode[height=0.95cm]{#1}\\[1pt]
+  {\tiny\sffamily\color{muted}\ding{42}\,video lời giải}\end{tabular}\par\vspace{-2pt}}
 
 % Hộp "kiến thức điền khuyết"
 \newtcolorbox{noted}{enhanced, colback=neutral, colframe=rule, boxrule=0.5pt, arc=3pt,

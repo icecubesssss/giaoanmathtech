@@ -1,7 +1,7 @@
 ((= Chặng 5 — Tổng kết (hộp chặng) + 2 MỤC PHỤ tách riêng: BTVN, Mở rộng. =))
 ((* import "_blocks.j2" as B with context *))
 ((* set parts = split_reflection(stage.blocks) *))
-\begin{stage}{((( stage.number )))}{((( stage.title )))}
+\begin{stage}{((( stage.number )))}{((( stage.title )))}{stage5}{\iconreflect}
 \justifying\setlength{\parindent}{0pt}
 ((( B.render_blocks(parts.tong_ket) )))
 \end{stage}

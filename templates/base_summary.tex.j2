@@ -64,8 +64,8 @@
   before=\vspace{2pt}, after=\vspace{8pt}
 ]
   \sffamily
-  {\bfseries\fontsize{12pt}{14pt}\selectfont\color{ink}((* if summary.eyebrow *))((( summary.eyebrow | upper ))) • ((* endif *))TỔNG KẾT CHƯƠNG}\par\vspace{4pt}
-  \titlefit{\bfseries\fontsize{18pt}{21pt}\selectfont\color{brand}((( summary.title | upper )))}\par\vspace{10pt}
+  {\setlength{\fboxsep}{4pt}\colorbox{brand}{\color{white}\bfseries\footnotesize\strut\,((* if summary.eyebrow *))((( summary.eyebrow | upper ))) • ((* endif *))TỔNG KẾT CHƯƠNG\,}}\hfill((* if summary.grade_label *)){\footnotesize\color{muted}((( summary.grade_label )))}((* endif *))\par\vspace{6pt}
+  \titlefit{\bfseries\fontsize{18pt}{21pt}\selectfont\color{brand}((( summary.title | upper )))}\par\vspace{9pt}
   ((* if show_solution *)){\textbf{Bản Giáo viên} — có đáp án sơ đồ}((* else *)){Họ và tên:~\blank[6cm]\hfill Lớp:~\blank[3.2cm]}((* endif *))
 \end{tcolorbox}
 

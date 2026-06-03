@@ -27,6 +27,14 @@ class MathBlock(BaseModel):
 class NotedBlock(BaseModel):
     type: Literal["noted"] = "noted"
     text: str = Field(..., description="Nội dung trong hộp nền xám (vd ô điền khuyết)")
+    # Thẻ callout có nhãn màu + icon. "" = hộp xám trung tính như cũ (tương thích ngược).
+    #   trap   = "BẪY ĐIỂM" (đỏ, cảnh báo lỗi hay mất điểm)
+    #   target = "ĐÍCH THI VÀO 10" (vàng, chốt mục tiêu thi)
+    #   tip    = "MẸO" (tím, mẹo nhanh)
+    #   example= "VÍ DỤ MẪU" (xanh dương)
+    variant: Literal["", "note", "trap", "target", "tip", "example"] = Field(
+        "", description="Kiểu thẻ callout; rỗng = hộp xám trung tính như cũ"
+    )
 
 
 class WriteLinesBlock(BaseModel):
@@ -47,6 +55,9 @@ class ProblemBlock(BaseModel):
     hints: list[str] = Field(
         default_factory=list, description="Gợi ý mở dần, mỗi phần tử một gợi ý; cho phép $...$ và [[blank]]"
     )
+    # Đặc sản "QR video lời giải": URL video Thầy giải bài. Có giá trị → in QR nhỏ ở
+    # lề phải bài (cầu nối giấy → điện thoại). Rỗng = không in QR (tương thích ngược).
+    video: str = Field("", description="URL video lời giải; có → in QR cạnh bài")
 
 
 class TableBlock(BaseModel):
@@ -78,6 +89,18 @@ class FigureBlock(BaseModel):
     width: str = Field("", description="Bề rộng tối đa, vd '0.6\\linewidth'. Trống = tự co vừa khung")
 
 
+class OpenerBlock(BaseModel):
+    """Thẻ "MỞ MÀN THỰC TẾ" — hook đời thực mở đầu phiếu (đặc sản nhận diện).
+
+    Thay câu mở khô khan bằng một tình huống/bài toán thực tế kéo HS vào bài
+    (vd hai vòi nước → ẩn ở mẫu). Đặt ở ĐẦU chặng 'review'. Cho phép kèm ảnh
+    minh hoạ (đường dẫn tương đối folder phiếu) ở cột phải."""
+    type: Literal["opener"] = "opener"
+    text: str = Field(..., description="Nội dung hook; cho phép $...$, [[br]], [[blank]]")
+    image: str = Field("", description="Ảnh minh hoạ (đường dẫn tương đối folder phiếu); trống = chỉ chữ")
+    tikz: str = Field("", description="Hình minh hoạ NÉT VẼ TikZ (\\begin{tikzpicture}…) ở cột phải — ưu tiên dùng cái này thay ảnh để in đen trắng sắc nét")
+
+
 class MindmapNode(BaseModel):
     """Một nút trong sơ đồ tư duy điền khuyết. label có thể chứa [[blank:W]] để HS điền."""
     label: str = Field(..., description="Nhãn nút; cho phép $...$ và token [[blank]] để chừa chỗ điền")
@@ -99,7 +122,7 @@ class MindmapBlock(BaseModel):
 
 MindmapNode.model_rebuild()
 
-Block = Union[ParaBlock, MathBlock, NotedBlock, WriteLinesBlock, ProblemBlock, MindmapBlock, TableBlock, FigureBlock]
+Block = Union[ParaBlock, MathBlock, NotedBlock, WriteLinesBlock, ProblemBlock, MindmapBlock, TableBlock, FigureBlock, OpenerBlock]
 
 # ----- Chặng & gói bài học -----
 

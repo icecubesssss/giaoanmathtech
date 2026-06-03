@@ -7,7 +7,15 @@
 ((* elif b.type == "math" *))
 \[ ((( b.latex | tex ))) \]
 ((* elif b.type == "noted" *))
-\begin{block}{}((( b.text | tex )))\end{block}
+((* if b.variant == "trap" *))\begin{block}{\ding{43}\ \ Bẫy điểm}((( b.text | tex )))\end{block}
+((* elif b.variant == "target" *))\begin{block}{\ding{72}\ \ Đích thi vào 10}((( b.text | tex )))\end{block}
+((* elif b.variant == "tip" *))\begin{block}{\ding{42}\ \ Mẹo}((( b.text | tex )))\end{block}
+((* elif b.variant == "example" *))\begin{block}{\ding{46}\ \ Ví dụ mẫu}((( b.text | tex )))\end{block}
+((* else *))\begin{block}{}((( b.text | tex )))\end{block}((* endif *))
+\medskip
+((* elif b.type == "opener" *))
+\begin{block}{\ding{44}\ \ Mở màn thực tế}((( b.text | tex )))\end{block}
+((* if b.tikz *))\begin{center}\adjustbox{max width=0.5\linewidth,max totalheight=0.42\textheight}{((( b.tikz )))}\end{center}((* elif b.image *))\begin{center}\adjustbox{max width=0.5\linewidth,max totalheight=0.42\textheight}{\includegraphics{((( b.image )))}}\end{center}((* endif *))
 \medskip
 ((* elif b.type == "problem" *))
 {\bfseries\color{brand}((( b.label | tex )))}\; ((( b.statement | tex )))

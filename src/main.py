@@ -595,13 +595,19 @@ def _skeleton(slug: str, title: str, eyebrow: str, grade: str) -> dict:
         "grade_label": grade,
         "stages": [
             stage("review", 1, "Khám phá — KTBC / nhịp cầu vào bài", [
+                # MỞ MÀN THỰC TẾ (đặc sản): hook đời thực kéo HS vào bài. Xoá nếu bài
+                # thuần kỹ thuật không hợp. Thêm "tikz":"\\begin{tikzpicture}…" để có TRANH
+                # MINH HOẠ nét vẽ ở cột phải (vd vòi nước/thuyền/thang) — ưu tiên hơn "image".
+                {"type": "opener", "text": "TODO: MỞ MÀN THỰC TẾ — một tình huống/bài toán đời thực hấp dẫn dẫn vào bài (vd hai vòi nước, quãng đường đi học, lãi suất…)."},
                 {"type": "para", "text": "TODO: ôn nhanh kiến thức nền sẽ dùng + 1 worked example GV làm mẫu trọn vẹn (đừng nhảy thẳng sang lý thuyết mới)."},
                 {"type": "noted", "text": "TODO: các sự thật nền, tách ý bằng [[br]]; chỗ HS điền dùng [[blank:3cm]] hoặc [[mblank:0.8cm]]."},
             ], solution="TODO: đáp án phần ôn.", note="TODO: mẹo điều phối 3–5 phút."),
             stage("concept", 2, "Khái niệm — kèm Ví dụ mẫu", [
                 {"type": "noted", "text": "\\textbf{Khái niệm.} TODO: phát biểu khái niệm/định lí trọng tâm."},
-                {"type": "para", "text": "\\textbf{Ví dụ mẫu.} TODO: 1–2 ví dụ GV làm mẫu cùng kỹ thuật với bài luyện tập (KHÔNG ghi chú \"GV\" trong block HS)."},
-                {"type": "noted", "text": "\\textbf{Đích đến thi vào 10.} TODO: nêu kỹ thuật này tái xuất ở câu nào trong đề thi vào 10."},
+                {"type": "noted", "variant": "example", "text": "TODO: 1–2 ví dụ GV làm mẫu cùng kỹ thuật với bài luyện tập (KHÔNG ghi chú \"GV\" trong block HS)."},
+                # Thẻ callout có nhãn màu: variant "trap" = bẫy điểm; "target" = đích thi.
+                {"type": "noted", "variant": "trap", "text": "TODO: BẪY ĐIỂM — lỗi HS hay mất điểm oan ở dạng này (vd quên ĐKXĐ, quên dấu, quên loại nghiệm)."},
+                {"type": "noted", "variant": "target", "text": "TODO: ĐÍCH THI VÀO 10 — kỹ thuật này tái xuất ở câu nào của đề vào 10; mục tiêu buổi học."},
             ], solution="TODO: lời giải đầy đủ ví dụ mẫu.", note="TODO: trọng tâm buổi học, lỗi sai phổ biến."),
             stage("practice1", 3, "Luyện tập 1 — BÀI TẬP TRÊN LỚP (nền)", [
                 {"type": "problem", "label": "Bài 1.", "statement": "TODO: bài nền, dạng cơ bản từ nguồn.", "tier": "onclass"},
@@ -633,6 +639,8 @@ def _skeleton(slug: str, title: str, eyebrow: str, grade: str) -> dict:
                 {"type": "problem", "label": "Bài 4.", "statement": "TODO: mở rộng bậc 1 — biến thể Bài 2 thêm 1 yếu tố.", "tier": "extend",
                  "hints": ["TODO: gợi ý định hướng (KHÔNG lộ lời giải).", "TODO: gợi ý thứ 2 nếu vẫn bí."]},
                 {"type": "problem", "label": "Bài 5.", "statement": "TODO: mở rộng bậc 2 — nâng cao nhất, vẫn không vượt tầm vào 10.", "tier": "extend",
+                 # QR video lời giải (DÀNH BẢN THƯƠNG MẠI): thêm "video":"https://…" vào
+                 # problem để in QR cạnh bài. Mặc định KHÔNG bật (bản hiện tại bỏ QR).
                  "hints": ["TODO: gợi ý mở dần cho bài khó nhất."]},
             ], solution="TODO: LỜI GIẢI ĐẦY ĐỦ mọi bài BTVN + mở rộng (để GV ứng phó HS giỏi) + ĐÁP ÁN các ô trống của sơ đồ tư duy.",
                note="TODO: gợi ý chữa BTVN buổi sau; chốt sơ đồ tư duy cùng HS."),

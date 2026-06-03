@@ -27,6 +27,15 @@ _RAW_PCT_HASH = re.compile(r"(?<!\\)[%#]")
 _RAW_AMP = re.compile(r"(?<!\\)&")
 _MATH_SPAN = re.compile(r"(?<!\\)\$.*?(?<!\\)\$", re.DOTALL)
 
+# Glyph TOÁN nằm NGOÀI $...$ -> dùng font chữ thường (STIX Two Text) vốn THIẾU các
+# ký hiệu này -> in ra "khung ?" (tofu) trên phiếu. Phải bọc trong $...$ để dùng font
+# toán: '→' viết '$\to$', '√2' viết '$\sqrt2$', 'α' viết '$\alpha$'… (loại × ÷ ° · ′ ″
+# vì STIX Text có sẵn, tránh báo nhầm).
+_TOFU_GLYPHS = set(
+    "←→↔⇐⇒⇔√≤≥≠≈≡≢∞∑∏∫∮∈∉∋⊂⊃⊆⊇⊄∪∩∅±∓∝∠∥⊥∀∃∄∂∇⋅"
+    "αβγδεζηθικλμνξοπρστυφχψωΓΔΘΛΞΠΣΦΨΩ"
+)
+
 
 def _check_special(loc: str, s: str, out: list[str], is_math: bool = False) -> None:
     """Quét một chuỗi: '%'/'#' thô (mọi nơi) và '&' thô (ngoài $...$)."""
@@ -40,6 +49,12 @@ def _check_special(loc: str, s: str, out: list[str], is_math: bool = False) -> N
         outside = _MATH_SPAN.sub(" ", s)
         if _RAW_AMP.search(outside):
             out.append(f"{loc}: có '&' chưa escape ngoài công thức — phải viết \\& (nếu không sẽ VỠ build).")
+        tofu = sorted({c for c in outside if c in _TOFU_GLYPHS})
+        if tofu:
+            out.append(
+                f"{loc}: ký hiệu {' '.join(tofu)} nằm NGOÀI $...$ — sẽ in ra 'khung ?' "
+                f"(font chữ thiếu glyph); hãy bọc trong $...$ (vd $\\to$, $\\sqrt2$, $\\alpha$)."
+            )
 
 
 def _walk_mindmap_labels(node, loc, out):

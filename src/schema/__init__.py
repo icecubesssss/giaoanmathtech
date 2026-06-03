@@ -13,6 +13,7 @@ from .lesson_package import (
     MindmapNode,
     TableBlock,
     FigureBlock,
+    OpenerBlock,
 )
 
 __all__ = [
@@ -30,4 +31,5 @@ __all__ = [
     "MindmapNode",
     "TableBlock",
     "FigureBlock",
+    "OpenerBlock",
 ]

@@ -6,14 +6,24 @@
 ((* elif b.type == "math" *))
 \[ ((( b.latex | tex ))) \]
 ((* elif b.type == "noted" *))
-\begin{noted}((( b.text | tex )))\end{noted}
+((* if b.variant == "trap" *))\begin{callouttrap}((( b.text | tex )))\end{callouttrap}
+((* elif b.variant == "target" *))\begin{callouttarget}((( b.text | tex )))\end{callouttarget}
+((* elif b.variant == "tip" *))\begin{callouttip}((( b.text | tex )))\end{callouttip}
+((* elif b.variant == "example" *))\begin{calloutexample}((( b.text | tex )))\end{calloutexample}
+((* else *))\begin{noted}((( b.text | tex )))\end{noted}((* endif *))
+
+((* elif b.type == "opener" *))
+\begin{openerbox}
+((* if b.tikz *))\begin{minipage}[c]{0.63\linewidth}((( b.text | tex )))\end{minipage}\hfill\begin{minipage}[c]{0.34\linewidth}\centering\adjustbox{max width=\linewidth,max totalheight=3.4cm}{((( b.tikz )))}\end{minipage}((* elif b.image *))\begin{minipage}[c]{0.63\linewidth}((( b.text | tex )))\end{minipage}\hfill\begin{minipage}[c]{0.33\linewidth}\centering\adjustbox{max width=\linewidth,max totalheight=3.4cm}{\includegraphics{((( b.image )))}}\end{minipage}((* else *))((( b.text | tex )))((* endif *))
+\end{openerbox}
 
 ((* elif b.type == "writelines" *))
 ((* for _ in range(b.count) *))\fillline
 ((* endfor *))
 \par
 ((* elif b.type == "problem" *))
-\textbf{((( b.label | tex )))} ((( b.statement | tex )))
+\textbf{((( b.label | tex )))}((* if b.tier == "onclass" *))~\diffstars{2}((* elif b.tier == "btvn" *))~\diffstars{1}((* elif b.tier == "extend" *))~\diffstars{3}((* endif *)) ((( b.statement | tex )))
+((* if b.video *))\videoqr{((( b.video )))}((* endif *))
 ((* if b.hints *))
 \par\vspace{3pt}
 \begin{hintbox}{\itshape\color{brand}Gợi ý:}\par

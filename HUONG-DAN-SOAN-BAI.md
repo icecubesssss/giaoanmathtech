@@ -53,7 +53,7 @@ Mỗi bài đúng **5 chặng** (kind cố định), mỗi chặng mang các blo
 2. **Tách ý/bước bằng `[[br]]`.** Khi 1 block có nhiều ý a) b) c) hoặc nhiều bước (Bước 1, 2…), chèn `[[br]]` giữa các ý để mỗi ý xuống dòng riêng. **KHÔNG** đặt `[[br]]` ở cuối block.
 3. **Ví dụ mẫu hiển thị cho HS** (bỏ nhãn "GV") và phải trình bày **từng bước** — tách bằng `[[br]]` hoặc đặt phép biến đổi chính trong block `math` riêng; không dồn cả lời giải vào một dòng dài. → **Để CHỖ ĐIỀN, KHÔNG in sẵn đáp số:** kết quả/đáp án trong ví dụ mẫu dùng `[[mblank:W]]` để **thầy + trò cùng làm tại lớp**; đáp án đầy đủ **chỉ ghi trong `solution`** (bản GV). Áp cho cả bảng ở ví dụ mẫu.
 4. **Giao chỗ làm bài:** dùng block `writelines` (count phù hợp) sau cụm bài để HS có chỗ trình bày; chỗ điền ngắn dùng `[[blank:3cm]]`, chỗ điền trong công thức dùng `[[mblank:0.8cm]]`.
-5. **Không dùng ký hiệu unicode thô** (→, ⟹, ≥, ≤, …) trong `text`/`title` — font có thể thiếu glyph (ra ô vuông). Dùng lệnh LaTeX trong `$...$`: `$\to$`, `$\Rightarrow$`, `$\ge$`, `$\le$`.
+5. **Không dùng ký hiệu unicode thô** (→, ⟹, ≥, ≤, √, α…) trong `text`/`title` ngoài `$...$` — font chữ thiếu glyph nên in ra **"khung ?"** (ô vuông). Dùng lệnh LaTeX trong `$...$`: `$\to$`, `$\Rightarrow$`, `$\ge$`, `$\le$`, `$\sqrt2$`, `$\alpha$`. → `validate` (visual_linter) **nay cảnh báo tự động** mọi ký hiệu toán nằm ngoài `$...$`.
 6. **Escape ký tự đặc biệt ở field văn bản thuần:** `&` → `\&`, `%` → `\%`, `#` → `\#` trong `title`/`eyebrow`/`label`. Sanitizer **không** bắt lỗi này nhưng nó **làm vỡ build** (lỗi "Misplaced alignment tab"). `validate` nay có cảnh báo riêng cho nó.
 7. **Sơ đồ tư duy (`mindmap`):** nhãn nút ngắn gọn; chừa chỗ điền bằng `[[blank:W]]`; cây 3–5 nhánh, mỗi nhánh tối đa 2 cấp để không tràn trang.
 8. **`solution` cũng phải xuống dòng (BẮT BUỘC):** mỗi bài một đoạn (dùng `\par\smallskip` giữa các bài); **mỗi bước biến đổi / mỗi dòng `⇒`** đặt trên dòng riêng bằng `[[br]]`. **Không** dồn cả lời giải thành một khối chữ. `solution` phải gồm **cả đáp án các ô trống của sơ đồ tư duy**. → **Cổng tự kiểm:** `validate` (visual_linter) **cảnh báo** nếu một đoạn lời giải dài hơn ~220 ký tự mà không có `[[br]]` — đó là dấu hiệu "bức tường chữ", phải tách bước.
@@ -75,6 +75,25 @@ Mỗi bài đúng **5 chặng** (kind cố định), mỗi chặng mang các blo
     - Kèm `caption` (chú thích nhỏ dưới hình) và `width` (bề rộng tối đa trên handout, vd `0.5\linewidth`).
     - **KHÔNG lộ đáp án trên hình của bài tự điền:** hình ở "Khởi động"/đề bài chỉ vẽ khung (đỉnh, góc $\alpha$, ký hiệu vuông), KHÔNG ghi sẵn cạnh đối/kề hay số đo mà HS phải tìm.
     - **Canh không đè chữ / không tràn trang:** đặt nhãn tránh đỉnh và tránh nhãn khác. Chỉ thêm hình ở chỗ **phiếu gốc có hình** hoặc bài đố thực sự cần; bài tính thuần (đã cho đủ số đo) thì thôi.
+
+11. **Đặc sản nhận diện (mới — dùng để phiếu/slide "khác phiếu chợ").** Khung `new-lesson` đã chèn sẵn các slot này:
+    - **Mở màn thực tế** — block `{"type":"opener","text":"…","image":"(tuỳ chọn)"}` đặt **đầu chặng `review`**: một tình huống/bài toán đời thực kéo HS vào bài (vd hai vòi nước → ẩn ở mẫu). In thành thẻ "MỞ MÀN THỰC TẾ". Xoá nếu bài thuần kỹ thuật không hợp.
+    - **Thẻ callout có nhãn màu** — `noted` thêm field `"variant"`:
+      - `"trap"` → **BẪY ĐIỂM** (đỏ): lỗi HS hay mất điểm oan (quên ĐKXĐ, quên loại nghiệm…).
+      - `"target"` → **ĐÍCH THI VÀO 10** (vàng): kỹ thuật này gặp ở câu nào của đề.
+      - `"example"` → **VÍ DỤ MẪU** (xanh); `"tip"` → **MẸO** (tím). Bỏ trống = hộp xám như cũ.
+    - **QR video lời giải** *(DÀNH BẢN THƯƠNG MẠI — mặc định TẮT)*: bộ máy còn nguyên — `problem` thêm `"video":"https://…"` sẽ in QR nhỏ ở lề bài (cầu nối giấy → điện thoại). Bản hiện tại **không gắn** `video` ở phiếu nào.
+    - **Sao độ khó** in **tự động** theo `tier`: `btvn`→★, `onclass`→★★, `extend`→★★★ (không phải khai báo).
+    - **Icon nét vẽ mỗi chặng** in **tự động** (kính lúp/bóng đèn/tạ/bia/cờ) — không phải khai báo. Đây là thứ giữ nhận diện chặng khi **in đen trắng** (màu mất, hình còn).
+    - **Sơ đồ bước giải** (thay vì liệt kê chữ): dùng block `figure` với `tikz` + style có sẵn `flownode` / `flowkey` (bước "bẫy"/chốt, viền đỏ) / `flowarrow`. Ví dụ 4 bước ẩn ở mẫu:
+      ```json
+      {"type":"figure","width":"0.96\\linewidth","caption":"Quy trình 4 bước…",
+       "tikz":"\\begin{tikzpicture}[node distance=5mm and 7mm]\\node[flownode](a){\\textbf{B1}\\\\Tìm ĐKXĐ};\\node[flownode,right=of a](b){\\textbf{B2}\\\\Khử mẫu};\\node[flowkey,right=of b](c){\\textbf{B3}\\\\Đối chiếu ĐKXĐ};\\draw[flowarrow](a)--(b);\\draw[flowarrow](b)--(c);\\end{tikzpicture}"}
+      ```
+    - **Tranh minh hoạ đề thực tế** (vẽ NÉT, in đen trắng sắc): `opener` thêm field `"tikz":"\\begin{tikzpicture}…"` → hình hiện ở **cột phải** thẻ Mở màn (vd hai vòi nước, con thuyền, cái thang). Ưu tiên `tikz` hơn `image`.
+    - Lưu ý: phiếu **in đen trắng** nên màu/callout ăn nhất ở **slide** (chiếu màu); handout giữ nhận diện nhờ **icon + nét vẽ + nhãn + viền**, không dựa vào màu.
+
+12. **Phiếu TỔNG KẾT CHƯƠNG/TUẦN** (`ChapterSummary`, 1 trang sơ đồ tư duy to): sinh bằng `new-summary <các folder tuần>`, build bằng `build-summary` (ra `tongket-hs.pdf` + `tongket-gv.pdf`). Đã đồng bộ "áo mới" (title-card chip + màu + font) với phiếu thường — không cần chỉnh thêm.
 
 ## 5. Quy trình lệnh (nhắc lại)
 

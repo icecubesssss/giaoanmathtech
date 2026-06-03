@@ -12,8 +12,16 @@
 \setmathfont{((( fonts.math_file )))}[Path=\FONTDIR]
 
 \usepackage{tikz}
-\usetikzlibrary{calc,angles,quotes}
+\usetikzlibrary{calc,angles,quotes,positioning,arrows.meta}
+% Sơ đồ bước giải (đặc sản) — style khối + mũi tên, dùng trong block figure.
+\tikzset{
+  flownode/.style={draw=ink!70, line width=0.8pt, rounded corners=3pt, fill=neutral,
+    inner sep=4pt, font=\sffamily\scriptsize, align=center, minimum height=20pt, text width=2.2cm},
+  flowkey/.style={flownode, draw=trap, fill=trap!8},
+  flowarrow/.style={-{Stealth[length=5pt]}, line width=0.9pt, draw=brand},
+}
 \usepackage{adjustbox}   % co hình figure trong cột: giới hạn CẢ bề ngang lẫn chiều cao
+\usepackage{pifont}      % dingbat cho nhãn block (bẫy/đích/mẹo/mở màn) — không cần font ngoài
 % Ký hiệu góc vuông tại đỉnh #1 giữa hai tia #1->#2 và #1->#3 (dùng trong block figure).
 \newcommand{\rightanglemark}[3]{%
   \coordinate (ra1) at ($(#1)!0.26cm!(#2)$);
