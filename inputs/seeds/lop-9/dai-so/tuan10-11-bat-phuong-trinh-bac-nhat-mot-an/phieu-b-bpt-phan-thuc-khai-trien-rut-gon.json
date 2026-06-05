@@ -1,0 +1,247 @@
+{
+  "slug": "phieu-b-bpt-phan-thuc-khai-trien-rut-gon",
+  "title": "Giải bất phương trình quy về bậc nhất",
+  "eyebrow": "CHỦ ĐỀ • ĐẠI SỐ — PHIẾU B: PHÂN THỨC, KHAI TRIỂN \\& RÚT GỌN",
+  "grade_label": "Lớp 9 • Ôn vào 10",
+  "stages": [
+    {
+      "kind": "review",
+      "number": 1,
+      "title": "Khám phá — Bất phương trình có mẫu số",
+      "blocks": [
+        {
+          "type": "opener",
+          "text": "Để được xếp loại \\textbf{Giỏi}, điểm trung bình ba môn phải \\emph{không dưới} $8$: $\\dfrac{\\text{đ}_1+\\text{đ}_2+\\text{đ}_3}{3}\\ge8$. [[br]] Đây là một bất phương trình \\textbf{có mẫu số}. Hôm nay ta luyện ba kĩ năng đưa BPT phức tạp \\emph{về bậc nhất}: khử mẫu, khai triển hằng đẳng thức, và rút gọn biểu thức rồi xét dấu."
+        },
+        {
+          "type": "noted",
+          "text": "\\textbf{Khử mẫu là SỐ — không đổi chiều.} Mẫu chung của các phân thức ở đây là một \\emph{số dương} (vd $3,4,12$). Nhân hai vế với số dương thì \\textbf{giữ nguyên chiều} bất đẳng thức. [[br]] (Khác hẳn BPT \\emph{thương} có ẩn ở mẫu — sẽ học ở phiếu sau.)",
+          "variant": "tip"
+        },
+        {
+          "type": "para",
+          "text": "\\textbf{Ví dụ mẫu (thầy + trò cùng làm).} Giải $\\dfrac{x+1}{3}+\\dfrac{x}{2}\\le4$. [[br]] Nhân hai vế với $6>0$ (giữ chiều): $2(x+1)+3x\\le24$. [[br]] $5x+2\\le24 \\Rightarrow 5x\\le22 \\Rightarrow x\\ [[mblank:0.8cm]]\\ [[mblank:1.2cm]]$."
+        }
+      ],
+      "solution": "Ví dụ mẫu: $\\dfrac{x+1}{3}+\\dfrac{x}{2}\\le4 \\Rightarrow 2(x+1)+3x\\le24 \\Rightarrow 5x+2\\le24 \\Rightarrow x\\le\\dfrac{22}{5}$.",
+      "teacher_note": "Nhấn ngay điểm dễ nhầm: mẫu ở các BPT phiếu này là HẰNG SỐ DƯƠNG nên khử mẫu KHÔNG đổi chiều — đừng lẫn với quy tắc nhân số âm. Ví dụ mẫu để trống đáp số cho trò điền."
+    },
+    {
+      "kind": "concept",
+      "number": 2,
+      "title": "Khái niệm — Ba kĩ thuật đưa về bậc nhất",
+      "blocks": [
+        {
+          "type": "noted",
+          "text": "\\textbf{KT1 — Khử mẫu.} Quy đồng, nhân hai vế với mẫu chung (số dương) để mất phân số, rồi giải như BPT bậc nhất.",
+          "variant": "example"
+        },
+        {
+          "type": "noted",
+          "text": "\\textbf{KT2 — Khai triển hằng đẳng thức.} Với BPT chứa $(a\\pm b)^2$, $(a-b)(a+b)$\\ldots, hãy khai triển; các hạng tử bậc hai thường \\textbf{triệt tiêu}, còn lại BPT bậc nhất. [[br]] Có hai kết cục đặc biệt: nếu mất luôn ẩn và còn khẳng định \\emph{sai} ($2<2$) thì \\textbf{vô nghiệm}; nếu còn khẳng định \\emph{đúng} ($41\\ge41$) thì \\textbf{nghiệm đúng với mọi $x$}.",
+          "variant": "example"
+        },
+        {
+          "type": "noted",
+          "text": "\\textbf{KT3 — Rút gọn biểu thức rồi xét dấu.} Rút gọn biểu thức $A$ về một phân thức tối giản (kèm \\textbf{ĐKXĐ}), sau đó câu hỏi ``tìm $x$ để $A<0$ ($A>1$\\ldots)'' trở thành một BPT thương — xét dấu tử và mẫu.",
+          "variant": "example"
+        },
+        {
+          "type": "para",
+          "text": "\\textbf{Ví dụ mẫu (KT2 — kết cục đặc biệt).} Giải $(x+3)(x-1)<(x+1)^2-4$. [[br]] Vế trái $=x^2+2x-3$; vế phải $=x^2+2x+1-4=x^2+2x-3$. [[br]] BPT thành $x^2+2x-3<x^2+2x-3$, tức $[[mblank:1.6cm]]$ — một khẳng định \\emph{sai}, nên bất phương trình \\textbf{vô nghiệm}."
+        },
+        {
+          "type": "noted",
+          "text": "\\textbf{Đích đến thi vào 10.} KT3 chính là \\textbf{câu rút gọn} kinh điển của đề vào 10: rút gọn biểu thức rồi ``tìm $x$ để biểu thức âm/dương/lớn hơn $1$''. Luôn ghi \\textbf{ĐKXĐ} trước, và \\textbf{đối chiếu ĐKXĐ} khi kết luận.",
+          "variant": "target"
+        }
+      ],
+      "solution": "Ví dụ mẫu KT2: hai vế đều bằng $x^2+2x-3$ nên BPT thành $-3<-3$ (sai) $\\Rightarrow$ vô nghiệm.",
+      "teacher_note": "Ba kĩ thuật là xương sống phiếu. KT2 dạy HS bình tĩnh khi mất ẩn: kết luận vô nghiệm hoặc vô số nghiệm tuỳ khẳng định còn lại đúng/sai. KT3 là cầu nối sang câu rút gọn đề thi — nhấn kỉ luật ĐKXĐ."
+    },
+    {
+      "kind": "practice1",
+      "number": 3,
+      "title": "Luyện tập 1 — Khử mẫu, quy về bậc nhất",
+      "blocks": [
+        {
+          "type": "problem",
+          "label": "Bài 1.",
+          "tier": "onclass",
+          "statement": "Giải các bất phương trình sau (khử mẫu trước — mẫu chung là số dương nên giữ chiều):"
+        },
+        {
+          "type": "para",
+          "text": "1) $\\dfrac{x-1}{3}>2x-1$ [[br]] 2) $\\dfrac{2x-1}{3}-3<\\dfrac{x+1}{5}$ [[br]] 3) $2x+\\dfrac{2x+1}{3}>3x-\\dfrac{1}{5}$"
+        },
+        {
+          "type": "writelines",
+          "count": 4
+        },
+        {
+          "type": "problem",
+          "label": "Bài 2.",
+          "tier": "onclass",
+          "statement": "Giải các bất phương trình sau:"
+        },
+        {
+          "type": "para",
+          "text": "1) $\\dfrac{2x-1}{3}-\\dfrac{x+2}{6}\\ge\\dfrac{5x+4}{6}$ [[br]] 2) $\\dfrac{4x+5}{2}-1\\le\\dfrac{5x+6}{3}+x$ [[br]] 3) $\\dfrac{5x+3}{8}-\\dfrac{x-1}{2}\\ge\\dfrac{3x+1}{4}$"
+        },
+        {
+          "type": "writelines",
+          "count": 4
+        }
+      ],
+      "solution": "\\textbf{Bài 1.} [[br]] 1) nhân $3$: $x-1>6x-3 \\Rightarrow -5x>-2 \\Rightarrow x<\\dfrac{2}{5}$; [[br]] 2) nhân $15$: $5(2x-1)-45<3(x+1) \\Rightarrow 10x-50<3x+3 \\Rightarrow 7x<53 \\Rightarrow x<\\dfrac{53}{7}$; [[br]] 3) nhân $15$: $30x+5(2x+1)>45x-3 \\Rightarrow 40x+5>45x-3 \\Rightarrow -5x>-8 \\Rightarrow x<\\dfrac{8}{5}$.\\par\\smallskip \\textbf{Bài 2.} [[br]] 1) nhân $6$: $2(2x-1)-(x+2)\\ge5x+4 \\Rightarrow 3x-4\\ge5x+4 \\Rightarrow -2x\\ge8 \\Rightarrow x\\le-4$; [[br]] 2) nhân $6$: $3(4x+5)-6\\le2(5x+6)+6x \\Rightarrow 12x+9\\le16x+12 \\Rightarrow -4x\\le3 \\Rightarrow x\\ge-\\dfrac{3}{4}$; [[br]] 3) nhân $8$: $(5x+3)-4(x-1)\\ge2(3x+1) \\Rightarrow x+7\\ge6x+2 \\Rightarrow -5x\\ge-5 \\Rightarrow x\\le1$.",
+      "teacher_note": "Phần nền của phiếu. Nhắc HS chọn đúng mẫu chung và nhân ĐỦ mọi hạng tử (kể cả số nguyên như $-3$, $-1$, $+x$). Tất cả mẫu là số dương nên giữ chiều — lỗi hay gặp là quên nhân hạng tử không có mẫu."
+    },
+    {
+      "kind": "practice2",
+      "number": 4,
+      "title": "Luyện tập 2 — Khai triển \\& rút gọn biểu thức",
+      "blocks": [
+        {
+          "type": "problem",
+          "label": "Bài 3.",
+          "tier": "onclass",
+          "statement": "Giải các bất phương trình sau (khai triển, các hạng tử bậc hai sẽ triệt tiêu):"
+        },
+        {
+          "type": "para",
+          "text": "1) $(2x+1)(2-x)+x^2<2-x^2$ [[br]] 2) $(4x+3)(x+2)<(2x+1)^2-5$ [[br]] 3) $(2x+3)(2x-3)>4x(x+3)$ [[br]] 4) $(x+3)(x-2)<(x+3)^2-4$"
+        },
+        {
+          "type": "writelines",
+          "count": 4
+        },
+        {
+          "type": "problem",
+          "label": "Bài 4.",
+          "tier": "onclass",
+          "statement": "Giải các bất phương trình sau — chú ý hai \\textbf{kết cục đặc biệt} (vô nghiệm / nghiệm đúng với mọi $x$):"
+        },
+        {
+          "type": "para",
+          "text": "1) $(x+3)(x-1)<(x+1)^2-4$ [[br]] 2) $(x-4)^2-(x+5)(x-5)\\ge-8x+41$"
+        },
+        {
+          "type": "writelines",
+          "count": 2
+        },
+        {
+          "type": "problem",
+          "label": "Bài 5.",
+          "tier": "onclass",
+          "statement": "(Câu rút gọn — đề vào 10) Cho biểu thức $A=\\left(\\dfrac{1}{2x-1}+\\dfrac{3}{1-4x^2}-\\dfrac{2}{2x+1}\\right):\\dfrac{x}{2x+1}$. [[br]] a) Rút gọn biểu thức $A$. [[br]] b) Tìm giá trị của $x$ để $A<0$."
+        },
+        {
+          "type": "writelines",
+          "count": 5
+        }
+      ],
+      "solution": "\\textbf{Bài 3.} [[br]] 1) $-2x^2+3x+2<2-x^2$? Khai triển vế trái $=(2x+1)(2-x)+x^2=-2x^2+3x+2+x^2=-x^2+3x+2$; BPT: $-x^2+3x+2<2-x^2 \\Rightarrow 3x<0 \\Rightarrow x<0$; [[br]] 2) $4x^2+11x+6<4x^2+4x-4 \\Rightarrow 7x<-10 \\Rightarrow x<-\\dfrac{10}{7}$; [[br]] 3) $4x^2-9>4x^2+12x \\Rightarrow -9>12x \\Rightarrow x<-\\dfrac{3}{4}$; [[br]] 4) $x^2+x-6<x^2+6x+5 \\Rightarrow -5x<11 \\Rightarrow x>-\\dfrac{11}{5}$.\\par\\smallskip \\textbf{Bài 4.} [[br]] 1) hai vế đều $=x^2+2x-3$ nên thành $-3<-3$ \\emph{sai} $\\Rightarrow$ \\textbf{vô nghiệm}; [[br]] 2) vế trái $=(x^2-8x+16)-(x^2-25)=-8x+41$; BPT thành $-8x+41\\ge-8x+41$, tức $41\\ge41$ \\emph{đúng} $\\Rightarrow$ \\textbf{nghiệm đúng với mọi $x$}.\\par\\smallskip \\textbf{Bài 5.} ĐKXĐ: $x\\neq\\pm\\dfrac{1}{2},\\ x\\neq0$. [[br]] $1-4x^2=-(2x-1)(2x+1)$; quy đồng trong ngoặc: $\\dfrac{(2x+1)-3-2(2x-1)}{(2x-1)(2x+1)}=\\dfrac{-2x}{(2x-1)(2x+1)}$. [[br]] $A=\\dfrac{-2x}{(2x-1)(2x+1)}\\cdot\\dfrac{2x+1}{x}=\\dfrac{-2}{2x-1}$. [[br]] b) $A<0 \\Leftrightarrow \\dfrac{-2}{2x-1}<0 \\Leftrightarrow 2x-1>0 \\Leftrightarrow x>\\dfrac{1}{2}$ (thoả ĐKXĐ).",
+      "teacher_note": "Boss của phiếu. Bài 4 là cặp BẪY kinh điển: mất ẩn rồi đọc khẳng định còn lại — sai $\\Rightarrow$ vô nghiệm, đúng $\\Rightarrow$ mọi $x$. Bài 5 là câu rút gọn đề thi: chốt ĐKXĐ trước, phân tích $1-4x^2$ thành nhân tử, đối chiếu ĐKXĐ khi kết luận. Đã đối chiếu rút gọn $A=\\dfrac{-2}{2x-1}$ bằng SymPy."
+    },
+    {
+      "kind": "reflection",
+      "number": 5,
+      "title": "Tổng kết",
+      "blocks": [
+        {
+          "type": "para",
+          "text": "Ba con đường đưa BPT phức tạp về bậc nhất: \\textbf{khử mẫu} (số dương, giữ chiều) $\\to$ \\textbf{khai triển} hằng đẳng thức (bậc hai triệt tiêu, cảnh giác vô nghiệm / mọi $x$) $\\to$ \\textbf{rút gọn} biểu thức rồi xét dấu (kèm ĐKXĐ)."
+        },
+        {
+          "type": "mindmap",
+          "caption": "Sơ đồ tư duy — em điền các ô trống để chốt cả buổi",
+          "root": "BPT quy về bậc nhất",
+          "branches": [
+            {
+              "label": "Khử mẫu",
+              "children": [
+                {
+                  "label": "Nhân mẫu chung [[blank:1.2cm]] $\\to$ giữ chiều"
+                }
+              ]
+            },
+            {
+              "label": "Khai triển",
+              "children": [
+                {
+                  "label": "Sai ($2<2$): [[blank:1.8cm]]"
+                },
+                {
+                  "label": "Đúng ($41\\ge41$): nghiệm [[blank:1.6cm]]"
+                }
+              ]
+            },
+            {
+              "label": "Rút gọn",
+              "children": [
+                {
+                  "label": "Ghi [[blank:1.4cm]] trước"
+                },
+                {
+                  "label": "$A<0$: xét dấu tử / [[blank:1.2cm]]"
+                }
+              ]
+            }
+          ]
+        },
+        {
+          "type": "para",
+          "text": "\\textbf{BÀI TẬP VỀ NHÀ} (làm vào vở, tiết sau nộp)."
+        },
+        {
+          "type": "problem",
+          "label": "Bài 6.",
+          "tier": "btvn",
+          "statement": "Giải các bất phương trình sau: [[br]] a) $\\dfrac{x+1}{3}+\\dfrac{x}{2}\\le4$ [[br]] b) $(4x+3)(x+2)<(2x+1)^2-5$ [[br]] c) $(x-2)(x+4)>(x-2)(x+8)+26$"
+        },
+        {
+          "type": "problem",
+          "label": "Bài 7.",
+          "tier": "btvn",
+          "statement": "Giải bất phương trình rồi cho biết kết cục: [[br]] a) $\\dfrac{x-1}{2}-\\dfrac{7x+3}{15}\\le\\dfrac{2x+1}{3}+\\dfrac{3-2x}{5}$ [[br]] b) $(x+3)(x-1)<(x+1)^2-4$"
+        },
+        {
+          "type": "para",
+          "text": "\\textbf{Nhịp cầu lên Mở rộng.} Bài trên lớp đã gặp \\emph{một} câu rút gọn (Bài 5). [[br]] Các bài sau là trọn vẹn \\textbf{câu 2 của đề vào 10}: mỗi bài thêm một bước biến đổi phân thức phức tạp hơn trước khi xét dấu. [[br]] Mẹo: phân tích mẫu thành nhân tử, tìm mẫu chung, rút gọn rồi mới giải BPT thương."
+        },
+        {
+          "type": "problem",
+          "label": "Bài 8.",
+          "tier": "extend",
+          "statement": "Cho $A=\\left(\\dfrac{2-x}{x+3}-\\dfrac{3-x}{x+2}+\\dfrac{2-x}{x^2+5x+6}\\right):\\left(1-\\dfrac{x}{x-1}\\right)$. [[br]] a) Rút gọn $A$. [[br]] b) Tìm $x$ để $A>1$.",
+          "hints": [
+            "$x^2+5x+6=(x+2)(x+3)$; ĐKXĐ $x\\neq-3,-2,1$. Mẫu chung trong ngoặc thứ nhất là $(x+2)(x+3)$.",
+            "Sau rút gọn $A=\\dfrac{x-1}{x+2}$; $A>1 \\Leftrightarrow A-1=\\dfrac{-3}{x+2}>0 \\Leftrightarrow x+2<0$."
+          ]
+        },
+        {
+          "type": "problem",
+          "label": "Bài 9.",
+          "tier": "extend",
+          "statement": "Cho $A=\\left(\\dfrac{1}{1-x}+\\dfrac{2}{x+1}-\\dfrac{5-x}{1-x^2}\\right):\\dfrac{1-2x}{x^2-1}$. [[br]] a) Rút gọn $A$. [[br]] b) Tìm $x$ để $A>0$.",
+          "hints": [
+            "$1-x^2=(1-x)(1+x)$, $x^2-1=(x-1)(x+1)$; ĐKXĐ $x\\neq\\pm1,\\ x\\neq\\dfrac{1}{2}$.",
+            "Sau rút gọn $A=\\dfrac{-2}{2x-1}$; $A>0 \\Leftrightarrow 2x-1<0 \\Leftrightarrow x<\\dfrac{1}{2}$ (kết hợp ĐKXĐ)."
+          ]
+        },
+        {
+          "type": "problem",
+          "label": "Bài 10.",
+          "tier": "extend",
+          "statement": "\\textbf{Thử thách (tự chọn) —} Cho $B=\\left(\\dfrac{1}{3}+\\dfrac{3}{x^2-3x}\\right):\\left(\\dfrac{x^2}{27-3x^2}+\\dfrac{1}{x+3}\\right)$. [[br]] a) Rút gọn $B$. [[br]] b) Tìm $x$ để $B<-1$.",
+          "hints": [
+            "$x^2-3x=x(x-3)$; $27-3x^2=3(9-x^2)=3(3-x)(3+x)$; ĐKXĐ $x\\neq0,\\ x\\neq\\pm3$.",
+            "Sau rút gọn $B=\\dfrac{-x-3}{x}$; $B<-1 \\Leftrightarrow B+1=\\dfrac{-3}{x}<0 \\Leftrightarrow x>0$."
+          ]
+        }
+      ],
+      "solution": "\\textbf{BTVN.}\\par\\smallskip \\textbf{Bài 6.} [[br]] a) nhân $6$: $2(x+1)+3x\\le24 \\Rightarrow 5x+2\\le24 \\Rightarrow x\\le\\dfrac{22}{5}$; [[br]] b) $4x^2+11x+6<4x^2+4x-4 \\Rightarrow 7x<-10 \\Rightarrow x<-\\dfrac{10}{7}$; [[br]] c) $x^2+2x-8>x^2+6x-16+26 \\Rightarrow 2x-8>6x+10 \\Rightarrow -4x>18 \\Rightarrow x<-\\dfrac{9}{2}$.\\par\\smallskip \\textbf{Bài 7.} [[br]] a) nhân $30$: $15(x-1)-2(7x+3)\\le10(2x+1)+6(3-2x) \\Rightarrow x-21\\le8x+28 \\Rightarrow -7x\\le49 \\Rightarrow x\\ge-7$; [[br]] b) hai vế đều $=x^2+2x-3$ nên $-3<-3$ sai $\\Rightarrow$ vô nghiệm.\\par\\smallskip \\textbf{Mở rộng.}\\par\\smallskip \\textbf{Bài 8.} ĐKXĐ $x\\neq-3,-2,1$. Ngoặc 1 $=\\dfrac{(2-x)(x+2)-(3-x)(x+3)+(2-x)}{(x+2)(x+3)}$; tử $=(-x^2+4)-(-x^2+9)+(2-x)=4-9+2-x=-3-x=-(x+3)$. [[br]] Vậy ngoặc 1 $=\\dfrac{-(x+3)}{(x+2)(x+3)}=\\dfrac{-1}{x+2}$. Ngoặc 2 $=1-\\dfrac{x}{x-1}=\\dfrac{-1}{x-1}$. [[br]] $A=\\dfrac{-1}{x+2}:\\dfrac{-1}{x-1}=\\dfrac{x-1}{x+2}$. [[br]] b) $A>1 \\Leftrightarrow \\dfrac{x-1}{x+2}-1>0 \\Leftrightarrow \\dfrac{-3}{x+2}>0 \\Leftrightarrow x+2<0 \\Leftrightarrow x<-2$ (kết hợp ĐKXĐ: $x<-2,\\ x\\neq-3$).\\par\\smallskip \\textbf{Bài 9.} ĐKXĐ $x\\neq\\pm1,\\ x\\neq\\dfrac{1}{2}$. Rút gọn ngoặc về $\\dfrac{-2x}{(1-x)(1+x)}$ rồi nhân $\\dfrac{x^2-1}{1-2x}$ được $A=\\dfrac{-2}{2x-1}$. [[br]] b) $A>0 \\Leftrightarrow 2x-1<0 \\Leftrightarrow x<\\dfrac{1}{2}$ (kết hợp ĐKXĐ).\\par\\smallskip \\textbf{Bài 10.} ĐKXĐ $x\\neq0,\\ x\\neq\\pm3$. Ngoặc 1 $=\\dfrac{x(x-3)+9}{3x(x-3)}$; ngoặc 2 $=\\dfrac{-x^2+3(3-x)}{3(3-x)(3+x)}$. Sau rút gọn $B=\\dfrac{-x-3}{x}$. [[br]] b) $B<-1 \\Leftrightarrow \\dfrac{-x-3}{x}+1<0 \\Leftrightarrow \\dfrac{-3}{x}<0 \\Leftrightarrow x>0$ (kết hợp ĐKXĐ: $x>0,\\ x\\neq3$).\\par\\medskip \\textbf{Đáp án sơ đồ:} nhân mẫu chung \\emph{dương} giữ chiều; [[br]] khẳng định sai $\\Rightarrow$ \\emph{vô nghiệm}; khẳng định đúng $\\Rightarrow$ nghiệm \\emph{đúng với mọi $x$}; [[br]] ghi \\emph{ĐKXĐ} trước; $A<0$ xét dấu tử / \\emph{mẫu}.",
+      "teacher_note": "BTVN 6,7 củng cố khử mẫu + khai triển (gồm 1 bẫy vô nghiệm). Thang mở rộng là ba câu rút gọn đề thi tăng dần: Bài 8 ($A=\\dfrac{x-1}{x+2}$, $A>1$) $\\to$ Bài 9 ($A=\\dfrac{-2}{2x-1}$, $A>0$) $\\to$ Bài 10 ($B=\\dfrac{-x-3}{x}$, $B<-1$). Mỗi bài đã đối chiếu rút gọn bằng SymPy; nhấn HS đối chiếu ĐKXĐ khi kết luận (vd Bài 8 loại $x=-3$)."
+    }
+  ]
+}

@@ -75,7 +75,7 @@
   borderline west={3pt}{0pt}{#3},
   overlay unbroken and first={
     \node[anchor=north west,xshift=14pt,yshift=-8pt] (sb) at (frame.north west) {\stagebadge{#3}{#4}};
-    \node[anchor=west,font=\sffamily\bfseries\large,text=ink] at ([xshift=9pt]sb.east) {#1.\;\;#2}; },
+    \node[anchor=west,text=ink] at ([xshift=9pt]sb.east) {\adjustbox{max width=0.8\linewidth}{\sffamily\bfseries\large #1.\;\;#2}}; },
   before upper={\vspace{32pt}} }
 
 % --- Thanh HÀNH TRÌNH 5 chặng (tuyến "metro") — ICON trong vòng tròn màu chặng,
@@ -135,10 +135,11 @@
     {\sffamily\footnotesize\bfseries\color{stage5}THẦY MÁCH NHỎ:}\; #1
   \end{tcolorbox}}
 
-% --- Sao độ khó (game hoá tier): #1 = 1..3 sao tô vàng, còn lại mờ ---
+% --- Sao độ khó (game hoá tier): #1 = số sao ĐẦY (\ding{72}); còn lại sao RỖNG
+%     (\ding{73}) cho rõ tier khi in nhỏ / đen trắng. btvn=1, onclass=2, extend=3.
 \newcommand{\diffstars}[1]{{\footnotesize\color{gold}\ding{72}\hspace{0.5pt}%
-  \ifnum#1>1\color{gold}\else\color{gold!30}\fi\ding{72}\hspace{0.5pt}%
-  \ifnum#1>2\color{gold}\else\color{gold!30}\fi\ding{72}}}
+  \ifnum#1>1\ding{72}\else\ding{73}\fi\hspace{0.5pt}%
+  \ifnum#1>2\ding{72}\else\ding{73}\fi}}
 
 % --- QR video lời giải (đặc sản: cầu nối giấy → video). #1 = URL ---
 \newcommand{\videoqr}[1]{%

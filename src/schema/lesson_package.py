@@ -7,7 +7,7 @@ do renderer dịch sang lệnh LaTeX an toàn (xem src/compiler/jinja_renderer.p
 """
 from __future__ import annotations
 
-from typing import Literal, Union
+from typing import Literal, Optional, Union
 
 from pydantic import BaseModel, Field
 
@@ -42,6 +42,34 @@ class WriteLinesBlock(BaseModel):
     count: int = Field(2, ge=1, le=12, description="Số dòng kẻ trống cho HS viết")
 
 
+# ----- Đáp án MÁY-ĐỌC để validate tự soi bằng SymPy (tùy chọn, KHÔNG in ra phiếu) -----
+
+
+class SolvesetCheck(BaseModel):
+    """Kiểm nghiệm phương trình một ẩn (→ sympy_solver.check_solution_set)."""
+    kind: Literal["solveset"] = "solveset"
+    equation: str = Field(..., description="PT dạng 'lhs = rhs' hoặc 'expr = 0' (LaTeX/text)")
+    answer: list[Union[str, int, float]] = Field(..., description="Tập nghiệm người tuyên bố, vd [2, 3]")
+    symbol: str = Field("x", description="Tên ẩn (mặc định x)")
+
+
+class IdentityCheck(BaseModel):
+    """Kiểm đẳng thức hai vế (→ sympy_solver.verify_identity)."""
+    kind: Literal["identity"] = "identity"
+    lhs: str = Field(..., description="Vế trái")
+    rhs: str = Field(..., description="Vế phải")
+
+
+class NonnegCheck(BaseModel):
+    """Kiểm 'biểu thức bậc hai >= 0 với mọi biến thực' (→ sympy_solver.prove_quadratic_nonneg)."""
+    kind: Literal["nonneg"] = "nonneg"
+    expr: str = Field(..., description="Biểu thức bậc hai thuần nhất, vd 'a**2+b**2-2*a*b'")
+    symbols: list[str] = Field(..., description="Danh sách biến, vd ['a','b']")
+
+
+AnswerCheck = Union[SolvesetCheck, IdentityCheck, NonnegCheck]
+
+
 class ProblemBlock(BaseModel):
     type: Literal["problem"] = "problem"
     label: str = Field(..., description="Nhãn, vd 'Bài 1.' / 'Bài toán.'")
@@ -58,6 +86,11 @@ class ProblemBlock(BaseModel):
     # Đặc sản "QR video lời giải": URL video Thầy giải bài. Có giá trị → in QR nhỏ ở
     # lề phải bài (cầu nối giấy → điện thoại). Rỗng = không in QR (tương thích ngược).
     video: str = Field("", description="URL video lời giải; có → in QR cạnh bài")
+    # (TÙY CHỌN) Đáp án MÁY-ĐỌC để `validate` tự soi bằng SymPy. None = bỏ qua (như cũ).
+    # KHÔNG in ra phiếu — chỉ phục vụ answer_gate. Phân biệt loại bằng khóa "kind".
+    check: Optional[AnswerCheck] = Field(
+        None, description="Đáp án máy-đọc cho answer_gate; KHÔNG hiển thị trên phiếu"
+    )
 
 
 class TableBlock(BaseModel):

@@ -1,0 +1,230 @@
+{
+  "slug": "phieu-c-bpt-tich-thuong-va-dang-dac-biet",
+  "title": "Bất phương trình tích, thương và dạng đặc biệt",
+  "eyebrow": "CHỦ ĐỀ • ĐẠI SỐ — PHIẾU C: TÍCH, THƯƠNG \\& NÂNG CAO",
+  "grade_label": "Lớp 9 • Ôn vào 10",
+  "stages": [
+    {
+      "kind": "review",
+      "number": 1,
+      "title": "Khám phá — Dấu của một tích, một thương",
+      "blocks": [
+        {
+          "type": "opener",
+          "text": "Nhân hai số được kết quả \\textbf{dương} — em đoán ngay hai số đó \\emph{cùng dấu}. Nếu tích \\textbf{âm} thì hai số \\emph{trái dấu}. [[br]] Quy tắc dấu quen thuộc ấy chính là chìa khoá giải \\textbf{bất phương trình tích} $A\\cdot B>0$ và \\textbf{bất phương trình thương} $\\dfrac{A}{B}>0$ — nội dung hôm nay."
+        },
+        {
+          "type": "noted",
+          "text": "Điền ``cùng dấu'' hoặc ``trái dấu'': [[br]] $A\\cdot B>0$ (hay $\\dfrac{A}{B}>0$) khi $A,B$ [[blank:2.4cm]]. [[br]] $A\\cdot B<0$ (hay $\\dfrac{A}{B}<0$) khi $A,B$ [[blank:2.4cm]].",
+          "variant": "trap"
+        },
+        {
+          "type": "para",
+          "text": "\\textbf{Ví dụ mẫu (thầy + trò cùng làm).} Giải bất phương trình tích $(x-2)(x+5)>0$. [[br]] Tích dương $\\Rightarrow$ hai thừa số cùng dấu. [[br]] TH1: cả hai dương $x-2>0$ và $x+5>0 \\Rightarrow x>[[mblank:1cm]]$. [[br]] TH2: cả hai âm $x-2<0$ và $x+5<0 \\Rightarrow x<[[mblank:1cm]]$. [[br]] Vậy nghiệm: $x>2$ hoặc $x<-5$."
+        }
+      ],
+      "solution": "Điền: cùng dấu; trái dấu. [[br]] Ví dụ mẫu: TH1 $x>2$; TH2 $x<-5$. Nghiệm $x>2$ hoặc $x<-5$.",
+      "teacher_note": "Khởi động bằng trực giác dấu của tích — không hỏi định nghĩa. Ví dụ mẫu $(x-2)(x+5)>0$ dựng sẵn khung hai trường hợp để trò điền, làm mẫu cho cả phiếu."
+    },
+    {
+      "kind": "concept",
+      "number": 2,
+      "title": "Khái niệm — Giải BPT tích \\& BPT thương",
+      "blocks": [
+        {
+          "type": "noted",
+          "text": "\\textbf{Phương pháp.} [[br]] $\\bullet$\\; Với tích: $A\\cdot B>0$ ($\\ge0$) khi $A,B$ \\textbf{cùng dấu}; $A\\cdot B<0$ ($\\le0$) khi $A,B$ \\textbf{trái dấu}. [[br]] $\\bullet$\\; Với thương $\\dfrac{A}{B}$: quy tắc dấu \\emph{y hệt}, nhưng phải có \\textbf{ĐKXĐ} $B\\neq0$ (mẫu khác $0$). [[br]] Mỗi trường hợp là một hệ hai bất phương trình; lấy \\textbf{hợp} các nghiệm.",
+          "variant": "example"
+        },
+        {
+          "type": "para",
+          "text": "\\textbf{Ví dụ mẫu 1 (tích).} Giải $(2x-9)(1945+x)>0$. [[br]] TH1: $2x-9>0$ và $1945+x>0 \\Rightarrow x>4{,}5$ và $x>-1945 \\Rightarrow x>[[mblank:1cm]]$. [[br]] TH2: $2x-9<0$ và $1945+x<0 \\Rightarrow x<4{,}5$ và $x<-1945 \\Rightarrow x<[[mblank:1.4cm]]$. [[br]] Vậy $x>4{,}5$ hoặc $x<-1945$."
+        },
+        {
+          "type": "para",
+          "text": "\\textbf{Ví dụ mẫu 2 (thương).} Giải $\\dfrac{x-1}{x+2}<0$. [[br]] ĐKXĐ: $x\\neq-2$. Thương âm $\\Rightarrow$ tử và mẫu \\emph{trái dấu}. [[br]] TH1: $x-1>0$ và $x+2<0 \\Rightarrow x>1$ và $x<-2$: \\emph{vô lí}. [[br]] TH2: $x-1<0$ và $x+2>0 \\Rightarrow -2<x<[[mblank:1cm]]$. [[br]] Vậy $-2<x<1$."
+        },
+        {
+          "type": "figure",
+          "width": "0.96\\linewidth",
+          "caption": "Quy trình giải BPT tích / thương — bước ĐKXĐ chỉ có ở thương.",
+          "tikz": "\\begin{tikzpicture}[node distance=5mm and 7mm,font=\\small]\\node[flownode](a){\\textbf{B1}\\\\Đưa về dạng\\\\$A\\cdot B$ hoặc $\\frac{A}{B}$};\\node[flowkey,right=of a](b){\\textbf{B2}\\\\ĐKXĐ $B\\neq0$\\\\(nếu là thương)};\\node[flownode,right=of b](c){\\textbf{B3}\\\\Xét 2 TH\\\\dấu của $A,B$};\\node[flownode,right=of c](d){\\textbf{B4}\\\\Hợp nghiệm,\\\\đối chiếu ĐKXĐ};\\draw[flowarrow](a)--(b);\\draw[flowarrow](b)--(c);\\draw[flowarrow](c)--(d);\\end{tikzpicture}"
+        },
+        {
+          "type": "noted",
+          "text": "\\textbf{Đích đến thi vào 10.} Sau khi rút gọn biểu thức (phiếu B), câu ``tìm $x$ để biểu thức $<0$, $>0$'' chính là một BPT thương — đúng kĩ thuật ở đây. Một số BPT bậc hai cũng đưa được về tích/bình phương để xét dấu.",
+          "variant": "target"
+        }
+      ],
+      "solution": "Ví dụ 1: TH1 $x>4{,}5$; TH2 $x<-1945$. Nghiệm $x>4{,}5$ hoặc $x<-1945$. [[br]] Ví dụ 2: ĐKXĐ $x\\neq-2$; TH2 cho $-2<x<1$. Nghiệm $-2<x<1$.",
+      "teacher_note": "Trọng tâm. Nhấn hai khác biệt của thương so với tích: (1) phải đặt ĐKXĐ $B\\neq0$; (2) đối chiếu ĐKXĐ khi kết luận. Khung hai trường hợp nên kẻ rõ; loại nhanh trường hợp vô lí (giao rỗng)."
+    },
+    {
+      "kind": "practice1",
+      "number": 3,
+      "title": "Luyện tập 1 — BPT tích \\& thương cơ bản",
+      "blocks": [
+        {
+          "type": "problem",
+          "label": "Bài 1.",
+          "tier": "onclass",
+          "statement": "Giải các bất phương trình tích sau:"
+        },
+        {
+          "type": "para",
+          "text": "a) $(x-5)(7-2x)<0$ [[br]] b) $(3x+5)(x-5)\\le0$ [[br]] c) $(x^2+2x+1)(x-5)\\ge0$"
+        },
+        {
+          "type": "writelines",
+          "count": 4
+        },
+        {
+          "type": "problem",
+          "label": "Bài 2.",
+          "tier": "onclass",
+          "statement": "Giải bất phương trình thương: $\\dfrac{-7x+14}{2-x}\\ge0$. [[br]] (Gợi ý: phân tích tử $-7x+14$ thành nhân tử trước khi xét dấu — có bất ngờ.)"
+        },
+        {
+          "type": "writelines",
+          "count": 3
+        }
+      ],
+      "solution": "\\textbf{Bài 1.} [[br]] a) $7-2x=-(2x-7)$ nên $(x-5)(7-2x)<0 \\Leftrightarrow (x-5)(2x-7)>0$: cùng dấu $\\Rightarrow x>5$ hoặc $x<\\dfrac{7}{2}$; [[br]] b) trái dấu (hoặc bằng $0$): $-\\dfrac{5}{3}\\le x\\le5$; [[br]] c) $x^2+2x+1=(x+1)^2\\ge0$ với mọi $x$, nên BPT $\\Leftrightarrow x-5\\ge0$ hoặc $x+1=0$, tức $x\\ge5$ hoặc $x=-1$.\\par\\smallskip \\textbf{Bài 2.} ĐKXĐ $x\\neq2$. $-7x+14=-7(x-2)=7(2-x)$ nên $\\dfrac{-7x+14}{2-x}=\\dfrac{7(2-x)}{2-x}=7>0$ với mọi $x\\neq2$. Vậy nghiệm là mọi $x\\neq2$.",
+      "teacher_note": "Nền của tích/thương. Bài 1a nhắc đổi dấu thừa số $7-2x$ để chuẩn hoá. Bài 1c là BẪY: $(x+1)^2\\ge0$ luôn đúng nên chỉ cần xét $x-5$, nhớ giữ điểm $x=-1$. Bài 2 là BẪY thương: rút gọn thành hằng số $7$, nghiệm là mọi $x\\neq2$."
+    },
+    {
+      "kind": "practice2",
+      "number": 4,
+      "title": "Luyện tập 2 — Tích, thương \\& bình phương",
+      "blocks": [
+        {
+          "type": "problem",
+          "label": "Bài 3.",
+          "tier": "onclass",
+          "statement": "Giải các bất phương trình thương sau (chuyển vế, quy đồng đưa về dạng $\\dfrac{A}{B}$ rồi xét dấu; nhớ ĐKXĐ):"
+        },
+        {
+          "type": "para",
+          "text": "a) $\\dfrac{-x+3}{x+2}\\ge-3$ [[br]] b) $\\dfrac{x-1}{x+4}\\le2$ [[br]] c) $\\dfrac{x+2}{4-x}>2$"
+        },
+        {
+          "type": "writelines",
+          "count": 5
+        },
+        {
+          "type": "problem",
+          "label": "Bài 4.",
+          "tier": "onclass",
+          "statement": "Giải các bất phương trình sau (đưa về bình phương $(\\,\\cdot\\,)^2$ để xét dấu):"
+        },
+        {
+          "type": "para",
+          "text": "a) $4x^2-4x+1>9$ [[br]] b) $x^2-4x+1<0$ [[br]] c) $3x^2-x+1>0$"
+        },
+        {
+          "type": "writelines",
+          "count": 4
+        }
+      ],
+      "solution": "\\textbf{Bài 3.} [[br]] a) ĐKXĐ $x\\neq-2$. $\\dfrac{-x+3}{x+2}+3\\ge0 \\Rightarrow \\dfrac{-x+3+3(x+2)}{x+2}\\ge0 \\Rightarrow \\dfrac{2x+9}{x+2}\\ge0$: cùng dấu $\\Rightarrow x\\le-\\dfrac{9}{2}$ hoặc $x>-2$. [[br]] b) ĐKXĐ $x\\neq-4$. $\\dfrac{x-1}{x+4}-2\\le0 \\Rightarrow \\dfrac{x-1-2(x+4)}{x+4}\\le0 \\Rightarrow \\dfrac{-x-9}{x+4}\\le0 \\Rightarrow \\dfrac{x+9}{x+4}\\ge0 \\Rightarrow x\\le-9$ hoặc $x>-4$. [[br]] c) ĐKXĐ $x\\neq4$. $\\dfrac{x+2}{4-x}-2>0 \\Rightarrow \\dfrac{x+2-2(4-x)}{4-x}>0 \\Rightarrow \\dfrac{3x-6}{4-x}>0$: trái dấu của $3(x-2)$ và $-(x-4) \\Rightarrow 2<x<4$.\\par\\smallskip \\textbf{Bài 4.} [[br]] a) $4x^2-4x+1=(2x-1)^2>9 \\Rightarrow |2x-1|>3 \\Rightarrow 2x-1>3$ hoặc $2x-1<-3 \\Rightarrow x>2$ hoặc $x<-1$; [[br]] b) $x^2-4x+1=(x-2)^2-3<0 \\Rightarrow (x-2)^2<3 \\Rightarrow 2-\\sqrt3<x<2+\\sqrt3$; [[br]] c) $3x^2-x+1=3\\left(x-\\dfrac{1}{6}\\right)^2+\\dfrac{11}{12}>0$ với mọi $x$, nên \\textbf{nghiệm đúng với mọi $x$}.",
+      "teacher_note": "Boss. Bài 3 luyện chuẩn hoá: chuyển vế, quy đồng, đưa về một thương rồi xét dấu — mỗi câu một ĐKXĐ. Bài 4 dùng hằng đẳng thức/bình phương: a) đưa về $(2x-1)^2>9$; b) hoàn chỉnh bình phương; c) tổng bình phương dương nên đúng mọi $x$. Đã đối chiếu SymPy."
+    },
+    {
+      "kind": "reflection",
+      "number": 5,
+      "title": "Tổng kết",
+      "blocks": [
+        {
+          "type": "para",
+          "text": "BPT tích/thương: đưa về $A\\cdot B$ hay $\\dfrac{A}{B}$, rồi xét dấu hai trường hợp (\\textbf{cùng dấu} cho $>0$, \\textbf{trái dấu} cho $<0$); riêng thương phải có \\textbf{ĐKXĐ}. [[br]] Nhiều BPT bậc hai đưa về \\textbf{bình phương} $(\\,\\cdot\\,)^2$ để xét dấu."
+        },
+        {
+          "type": "mindmap",
+          "caption": "Sơ đồ tư duy — em điền các ô trống để chốt cả buổi",
+          "root": "BPT tích, thương \\& nâng cao",
+          "branches": [
+            {
+              "label": "Tích $A\\cdot B$",
+              "children": [
+                {
+                  "label": "$>0$: [[blank:1.6cm]] dấu"
+                },
+                {
+                  "label": "$<0$: [[blank:1.6cm]] dấu"
+                }
+              ]
+            },
+            {
+              "label": "Thương $\\dfrac{A}{B}$",
+              "children": [
+                {
+                  "label": "Như tích $+$ [[blank:1.4cm]] $B\\neq0$"
+                }
+              ]
+            },
+            {
+              "label": "Dạng đặc biệt",
+              "children": [
+                {
+                  "label": "Cộng/trừ hằng số $\\to$ tử $[[blank:1.4cm]]$ chung"
+                }
+              ]
+            }
+          ]
+        },
+        {
+          "type": "para",
+          "text": "\\textbf{BÀI TẬP VỀ NHÀ} (làm vào vở, tiết sau nộp)."
+        },
+        {
+          "type": "problem",
+          "label": "Bài 5.",
+          "tier": "btvn",
+          "statement": "Giải các bất phương trình sau: [[br]] a) $(x-1)(x-3)\\ge0$ [[br]] b) $\\dfrac{x+1}{5-x}\\le0$ [[br]] c) $\\dfrac{(x+3)^2+(x+3)}{x-1}\\ge x+3$ [[br]] d) $(x-6)(x+10)<-x^2+x+30$"
+        },
+        {
+          "type": "problem",
+          "label": "Bài 6.",
+          "tier": "btvn",
+          "statement": "Tìm giá trị của $m$ để phương trình $\\dfrac{2}{x-1}=4-m$ có nghiệm âm."
+        },
+        {
+          "type": "para",
+          "text": "\\textbf{Nhịp cầu lên Mở rộng.} Các bài sau là \\textbf{dạng đặc biệt} $\\dfrac{x+a}{b}+\\dfrac{x+c}{d}<\\dfrac{x+e}{f}+\\dfrac{x+g}{h}$, mẫu rất lớn nên \\emph{không} quy đồng nổi. [[br]] Kĩ thuật MỚI: \\textbf{cộng (hoặc trừ) cùng một số} vào mỗi phân thức để mọi tử thành $x+k$ giống nhau, rồi đưa về $(x+k)\\left(\\dfrac{1}{b}+\\dfrac{1}{d}-\\dfrac{1}{f}-\\dfrac{1}{h}\\right)<0$ — xét dấu phần trong ngoặc. [[br]] \\emph{Ví dụ mồi:} $\\dfrac{x+2}{6}+\\dfrac{x+5}{3}>\\dfrac{x+3}{5}+\\dfrac{x+6}{2}$, cộng $1$ vào mỗi phân thức $\\to$ tử đều là $x+8$, được $(x+8)\\left(\\dfrac{1}{6}+\\dfrac{1}{3}-\\dfrac{1}{5}-\\dfrac{1}{2}\\right)>0$; ngoặc $<0$ nên $x+8<0$, tức $x<-8$."
+        },
+        {
+          "type": "problem",
+          "label": "Bài 7.",
+          "tier": "extend",
+          "statement": "Giải bất phương trình: $\\dfrac{x+1}{99}+\\dfrac{x+3}{97}<\\dfrac{x+2}{98}+\\dfrac{x+4}{96}$.",
+          "hints": [
+            "Cộng $1$ vào mỗi phân thức: mọi tử đều thành $x+100$.",
+            "Đưa về $(x+100)\\left(\\dfrac{1}{99}+\\dfrac{1}{97}-\\dfrac{1}{98}-\\dfrac{1}{96}\\right)<0$; phần trong ngoặc $<0$ nên đổi chiều."
+          ]
+        },
+        {
+          "type": "problem",
+          "label": "Bài 8.",
+          "tier": "extend",
+          "statement": "Giải bất phương trình: $\\dfrac{x-10}{1994}+\\dfrac{x-8}{1996}+\\dfrac{x-6}{1998}>\\dfrac{x-1998}{6}+\\dfrac{x-1996}{8}+\\dfrac{x-1994}{10}$.",
+          "hints": [
+            "Lần này \\emph{trừ} $1$ ở mỗi phân thức: mọi tử đều thành $x-2004$.",
+            "Đưa về $(x-2004)\\left(\\dfrac{1}{1994}+\\dfrac{1}{1996}+\\dfrac{1}{1998}-\\dfrac{1}{6}-\\dfrac{1}{8}-\\dfrac{1}{10}\\right)>0$; ngoặc $<0$ nên đổi chiều."
+          ]
+        },
+        {
+          "type": "problem",
+          "label": "Bài 9.",
+          "tier": "extend",
+          "statement": "\\textbf{Thử thách (tự chọn) —} Giải bất phương trình: $\\dfrac{x-1009}{1001}+\\dfrac{x-4}{1003}+\\dfrac{x+2010}{1005}\\ge7$.",
+          "hints": [
+            "Vế phải $7=1+2+4$; trừ lần lượt $1,\\ 2,\\ 4$ ở ba phân thức để mọi tử thành $x-2010$.",
+            "$\\dfrac{x-1009}{1001}-1=\\dfrac{x-2010}{1001}$; $\\dfrac{x-4}{1003}-2=\\dfrac{x-2010}{1003}$; $\\dfrac{x+2010}{1005}-4=\\dfrac{x-2010}{1005}$; đưa về $(x-2010)\\left(\\dfrac{1}{1001}+\\dfrac{1}{1003}+\\dfrac{1}{1005}\\right)\\ge0$."
+          ]
+        }
+      ],
+      "solution": "\\textbf{BTVN.}\\par\\smallskip \\textbf{Bài 5.} [[br]] a) cùng dấu: $x\\ge3$ hoặc $x\\le1$; [[br]] b) ĐKXĐ $x\\neq5$; trái dấu (hoặc tử $=0$): $x\\le-1$ hoặc $x>5$; [[br]] c) ĐKXĐ $x\\neq1$. $\\dfrac{(x+3)^2+(x+3)}{x-1}-(x+3)\\ge0 \\Rightarrow (x+3)\\cdot\\dfrac{(x+3)+1-(x-1)}{x-1}\\ge0 \\Rightarrow \\dfrac{5(x+3)}{x-1}\\ge0 \\Rightarrow x\\le-3$ hoặc $x>1$; [[br]] d) $x^2+4x-60<-x^2+x+30 \\Rightarrow 2x^2+3x-90<0$; nghiệm $-\\dfrac{15}{2}<x<6$.\\par\\smallskip \\textbf{Bài 6.} ĐKXĐ $x\\neq1$. $\\dfrac{2}{x-1}=4-m \\Rightarrow x-1=\\dfrac{2}{4-m} \\Rightarrow x=1+\\dfrac{2}{4-m}=\\dfrac{6-m}{4-m}$ (cần $m\\neq4$). [[br]] Nghiệm âm: $\\dfrac{6-m}{4-m}<0 \\Rightarrow 4<m<6$ (khi đó $x\\neq1$ tự thoả). Vậy $4<m<6$.\\par\\smallskip \\textbf{Mở rộng.}\\par\\smallskip \\textbf{Bài 7.} Cộng $1$: $\\dfrac{x+100}{99}+\\dfrac{x+100}{97}<\\dfrac{x+100}{98}+\\dfrac{x+100}{96} \\Rightarrow (x+100)\\left(\\dfrac{1}{99}+\\dfrac{1}{97}-\\dfrac{1}{98}-\\dfrac{1}{96}\\right)<0$. [[br]] Ngoặc $<0$ nên $x+100>0$, tức $x>-100$.\\par\\smallskip \\textbf{Bài 8.} Trừ $1$: mọi tử thành $x-2004$, được $(x-2004)\\left(\\dfrac{1}{1994}+\\dfrac{1}{1996}+\\dfrac{1}{1998}-\\dfrac{1}{6}-\\dfrac{1}{8}-\\dfrac{1}{10}\\right)>0$. [[br]] Ngoặc $<0$ nên $x-2004<0$, tức $x<2004$.\\par\\smallskip \\textbf{Bài 9.} Trừ $1,2,4$: mọi tử thành $x-2010$, được $(x-2010)\\left(\\dfrac{1}{1001}+\\dfrac{1}{1003}+\\dfrac{1}{1005}\\right)\\ge0$. [[br]] Ngoặc $>0$ nên $x-2010\\ge0$, tức $x\\ge2010$.\\par\\medskip \\textbf{Đáp án sơ đồ:} tích $>0$ \\emph{cùng} dấu, $<0$ \\emph{trái} dấu; thương như tích $+$ \\emph{ĐKXĐ} $B\\neq0$; cộng/trừ hằng số $\\to$ tử \\emph{giống nhau} ($x+k$) chung.",
+      "teacher_note": "BTVN 5 gom tích/thương còn lại (5c dùng nhân tử chung $(x+3)$; 5d đưa về tam thức bậc hai). Bài 6 là dạng tham số $m$ — biểu diễn $x$ theo $m$ rồi giải BPT thương theo $m$. Thang mở rộng dạng đặc biệt: Bài 7 (cộng $1$) $\\to$ Bài 8 (trừ $1$) $\\to$ Bài 9 (trừ $1,2,4$ khác nhau — chạm trần HSG). Các bài Dạng 4 còn lại (Bài 1c, Bài 3c của nguồn) làm tương tự. Đã đối chiếu SymPy toàn bộ."
+    }
+  ]
+}

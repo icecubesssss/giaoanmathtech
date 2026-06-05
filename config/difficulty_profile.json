@@ -1,36 +1,37 @@
 {
   "audience": "HS lớp 9 ôn thi vào 10",
-  "topic_root": "he-thuc-luong-tam-giac-vuong",
+  "topic_root": "bat-phuong-trinh-bac-nhat-mot-an",
   "ceiling": {
     "level": 7,
     "exemplars": [
-      "Chứng minh tam giác vuông (Pythagore đảo) rồi tính 4 tỉ số lượng giác",
-      "Sắp xếp/so sánh các tỉ số lượng giác KHÔNG dùng máy tính (đưa về cùng loại qua góc phụ nhau)",
-      "Rút gọn/tính biểu thức lượng giác dùng sin^2+cos^2=1, tan.cot=1 và góc phụ nhau"
+      "Giải bất phương trình có ngoặc / phân thức / khai triển hằng đẳng thức rồi quy về bậc nhất (chú ý ĐỔI CHIỀU khi chia số âm)",
+      "Tìm số nguyên lớn nhất / nghiệm nguyên thỏa mãn bất phương trình",
+      "Giải bất phương trình tích / thương (xét dấu qua hai trường hợp cùng dấu — trái dấu)",
+      "Giải bài toán thực tế bằng cách lập bất phương trình (lãi suất, diện tích còn lại, taxi, %, điểm trung bình)"
     ]
   },
   "floor": {
     "level": 4,
-    "note": "Mức thấp nhất: tự tính 4 tỉ số lượng giác từ một tam giác vuông cho sẵn cạnh (có giàn giáo). KHÔNG nhắc lại định nghĩa vỡ lòng kiểu 'cạnh huyền là gì'."
+    "note": "Mức thấp nhất: tự giải một BPT bậc nhất cho sẵn dạng ax+b>0 (có giàn giáo chuyển vế — thu gọn — chia hệ số). KHÔNG nhắc lại định nghĩa vỡ lòng kiểu 'bất phương trình là gì'."
   },
   "core_techniques": [
-    "Xác định cạnh đối/kề/huyền THEO GÓC đang xét rồi lập tỉ số",
-    "Dùng định lí Pythagore tìm cạnh còn thiếu",
-    "Góc phụ nhau: sin a = cos(90-a), tan a = cot(90-a)",
-    "Đẳng thức sin^2 a + cos^2 a = 1, tan a . cot a = 1"
+    "Chuyển vế đổi dấu, thu gọn về dạng ax+b so với 0",
+    "Chia hai vế cho hệ số a: a>0 giữ chiều, a<0 ĐỔI CHIỀU bất đẳng thức",
+    "Quy đồng khử mẫu / khai triển ngoặc trước khi quy về bậc nhất",
+    "Lập BPT từ điều kiện thực tế: 'ít nhất/không dưới' là $\\ge$, 'nhiều nhất/không quá/tối đa' là $\\le$",
+    "BPT tích/thương: A.B>0 (hoặc A/B>0) khi A,B cùng dấu; <0 khi trái dấu (kèm ĐKXĐ với thương)"
   ],
   "boss_must_hit_ceiling": true,
   "ramp": {
     "extend_min_problems": 2,
     "require_hints_on_extend": true,
     "require_bridge_before_extend": true,
-    "note": "Tầng Mở rộng là thang >=2 bậc, có nhịp cầu (para) trước cụm extend, mỗi bài extend có gợi ý mở khi bí."
+    "note": "Tầng Mở rộng là thang >=2 bậc, có nhịp cầu (para) trước cụm extend, mỗi bài extend có gợi ý mở khi bí. BPT tích/thương -> 1 thử thách HSG (cộng phân thức dạng đặc biệt)."
   },
   "hook_forbidden_patterns": [
-    "tỉ số lượng giác là gì",
-    "sin là gì",
-    "thế nào là tỉ số lượng giác",
-    "định nghĩa sin cosin",
-    "cạnh huyền là gì"
+    "bất phương trình là gì",
+    "thế nào là bất phương trình",
+    "định nghĩa bất phương trình bậc nhất",
+    "nghiệm của bất phương trình là gì"
   ]
 }

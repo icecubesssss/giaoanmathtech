@@ -1,0 +1,307 @@
+{
+  "slug": "phieu-d-giai-bai-toan-bang-lap-bpt",
+  "title": "Giải bài toán bằng cách lập bất phương trình",
+  "eyebrow": "CHỦ ĐỀ • ĐẠI SỐ — PHIẾU D: LẬP BẤT PHƯƠNG TRÌNH",
+  "grade_label": "Lớp 9 • Ôn vào 10",
+  "stages": [
+    {
+      "kind": "review",
+      "number": 1,
+      "title": "Khám phá — Dịch lời văn thành BPT",
+      "blocks": [
+        {
+          "type": "opener",
+          "text": "Bạn Lan để dành tiền mua quà cho em, hiện có \\textbf{không quá $50\\,000$ đồng}. [[br]] Cụm ``không quá $50\\,000$'' dịch sang ký hiệu là: số tiền $\\ [[mblank:0.8cm]]\\ 50\\,000$. Cả buổi hôm nay ta luyện một việc: \\textbf{dịch điều kiện trong đề thành một bất phương trình} rồi giải để trả lời.",
+          "tikz": "\\begin{tikzpicture}[line width=0.9pt,font=\\small]\\fill[brand!72] (-0.5,1.45) .. controls (-1.18,0.95) and (-1.08,0.02) .. (-0.66,-0.16) .. controls (-0.24,-0.42) and (0.24,-0.42) .. (0.66,-0.16) .. controls (1.08,0.02) and (1.18,0.95) .. (0.5,1.45) -- cycle;\\fill[brand!58] (-0.5,1.45) .. controls (-0.28,1.6) and (0.28,1.6) .. (0.5,1.45) -- (0.5,1.22) -- (-0.5,1.22) -- cycle;\\fill[brand!42] (-0.56,1.16) rectangle (0.56,1.3);\\foreach \\x/\\y/\\r in {-0.32/1.6/0.24, 0.32/1.64/0.24, 0/1.85/0.26}{\\fill[gold] (\\x,\\y) circle (\\r);\\draw[brand!65!black,line width=0.6pt] (\\x,\\y) circle (\\r);}\\node[font=\\scriptsize\\bfseries,brand!70!black] at (0,1.85) {đ};\\node[ink,below=3pt] at (0,-0.44) {\\scriptsize tiền để dành $\\le 50$k};\\end{tikzpicture}"
+        },
+        {
+          "type": "noted",
+          "text": "\\textbf{Từ khoá $\\to$ dấu.} Điền dấu thích hợp ($\\ge$ hay $\\le$): [[br]] ``ít nhất'', ``không dưới'', ``tối thiểu'' $\\to\\ [[mblank:0.8cm]]$. [[br]] ``nhiều nhất'', ``không quá'', ``tối đa'' $\\to\\ [[mblank:0.8cm]]$.",
+          "variant": "trap"
+        },
+        {
+          "type": "para",
+          "text": "\\textbf{Ví dụ mẫu (thầy + trò cùng làm).} Bạn Trung lấy một số nhân với $3$ rồi cộng thêm $5$, kết quả là một số \\emph{âm}. Gọi số Trung chọn là $x$. [[br]] ``Kết quả âm'' nghĩa là $3x+5\\ [[mblank:0.8cm]]\\ 0$. Giải: $3x<-5 \\Rightarrow x<[[mblank:1.4cm]]$. [[br]] Vậy số Trung chọn là số nhỏ hơn $-\\dfrac{5}{3}$ (chắc chắn là số âm)."
+        }
+      ],
+      "solution": "Mở màn: số tiền $\\le50\\,000$. [[br]] Từ khoá: ``ít nhất/không dưới/tối thiểu'' $\\to\\ \\ge$; ``nhiều nhất/không quá/tối đa'' $\\to\\ \\le$. [[br]] Ví dụ mẫu: $3x+5<0 \\Rightarrow x<-\\dfrac{5}{3}$.",
+      "teacher_note": "Mục tiêu review: cài chắc bảng từ khoá $\\to$ dấu — đây là chỗ HS dịch sai nhiều nhất (nhầm 'không quá' thành dấu ngặt, quên dấu bằng). Ví dụ mẫu Trung là bài 1 bước để mồi quy trình gọi ẩn $\\to$ lập BPT $\\to$ giải."
+    },
+    {
+      "kind": "concept",
+      "number": 2,
+      "title": "Khái niệm — Bốn bước lập BPT",
+      "blocks": [
+        {
+          "type": "noted",
+          "text": "\\textbf{Quy trình 4 bước.} [[br]] B1: \\textbf{Gọi ẩn} $x$ cho đại lượng cần tìm, kèm \\textbf{điều kiện} (vd $x>0$, $x$ nguyên\\ldots). [[br]] B2: Biểu diễn các đại lượng khác theo $x$; \\textbf{lập bất phương trình} từ điều kiện ``ít nhất/không quá\\ldots''. [[br]] B3: \\textbf{Giải} bất phương trình. [[br]] B4: \\textbf{Đối chiếu điều kiện} rồi trả lời (kèm đơn vị).",
+          "variant": "example"
+        },
+        {
+          "type": "figure",
+          "width": "0.96\\linewidth",
+          "caption": "Bốn bước — bước lập BPT (chọn đúng dấu theo từ khoá) là then chốt.",
+          "tikz": "\\begin{tikzpicture}[node distance=5mm and 7mm,font=\\small]\\node[flownode](a){\\textbf{B1}\\\\Gọi ẩn $x$,\\\\điều kiện};\\node[flowkey,right=of a](b){\\textbf{B2}\\\\Lập BPT\\\\(chọn dấu)};\\node[flownode,right=of b](c){\\textbf{B3}\\\\Giải BPT};\\node[flownode,right=of c](d){\\textbf{B4}\\\\Đối chiếu,\\\\trả lời};\\draw[flowarrow](a)--(b);\\draw[flowarrow](b)--(c);\\draw[flowarrow](c)--(d);\\end{tikzpicture}"
+        },
+        {
+          "type": "noted",
+          "text": "\\textbf{Mồi về phần trăm.} Gửi tiết kiệm lãi $7{,}2\\%$/năm nghĩa là sau một năm em \\emph{nhận lại cả vốn lẫn lãi} $=100\\%+7{,}2\\%=107{,}2\\%$ số tiền gửi. [[br]] Vậy gửi $x$ đồng thì nhận $\\left(1+\\dfrac{7{,}2}{100}\\right)x=\\dfrac{134}{125}x$ đồng — \\emph{không phải} chỉ $7{,}2\\%\\cdot x$.",
+          "variant": "tip"
+        },
+        {
+          "type": "para",
+          "text": "\\textbf{Ví dụ mẫu.} Bác Ngọc gửi tiết kiệm kì hạn $12$ tháng, lãi suất $7{,}2\\%$/năm. Bác muốn tổng tiền nhận được sau $12$ tháng \\emph{ít nhất} $21\\,440\\,000$ đồng. Hỏi bác phải gửi ít nhất bao nhiêu?"
+        },
+        {
+          "type": "para",
+          "text": "B1: Gọi số tiền gửi là $x$ (đồng), $x>0$. [[br]] B2: Tổng nhận được $=\\dfrac{134}{125}x$; điều kiện ``ít nhất'' cho $\\dfrac{134}{125}x\\ [[mblank:0.8cm]]\\ 21\\,440\\,000$. [[br]] B3: $x\\ge21\\,440\\,000\\cdot\\dfrac{125}{134}=[[mblank:2.4cm]]$. [[br]] B4: Vậy bác Ngọc phải gửi ít nhất $20\\,000\\,000$ đồng ($20$ triệu)."
+        },
+        {
+          "type": "noted",
+          "text": "\\textbf{Đích đến thi vào 10.} Toán thực tế lập BPT (lãi suất, năng suất, mua bán, điểm trung bình) là một câu quen của đề. Điểm ăn chắc: \\textbf{gọi ẩn kèm điều kiện} và \\textbf{chọn đúng dấu} theo từ khoá; chốt bằng câu trả lời có đơn vị.",
+          "variant": "target"
+        }
+      ],
+      "solution": "Ví dụ mẫu: $\\dfrac{134}{125}x\\ge21\\,440\\,000 \\Rightarrow x\\ge21\\,440\\,000\\cdot\\dfrac{125}{134}=20\\,000\\,000$. Bác gửi ít nhất $20$ triệu đồng.",
+      "teacher_note": "Trọng tâm. Mồi phần trăm xử lý ngay hiểu lầm '7,2\\% là nhận 7,2\\%' — nhấn nhận lại 107,2\\%. Bài lãi suất cho nghiệm tròn 20 triệu (đã chỉnh ngưỡng 21,44 triệu để đẹp). Để trống đáp số cho trò điền."
+    },
+    {
+      "kind": "practice1",
+      "number": 3,
+      "title": "Luyện tập 1 — Lập BPT từ tình huống quen",
+      "blocks": [
+        {
+          "type": "problem",
+          "label": "Bài 1.",
+          "tier": "onclass",
+          "statement": "Để hưởng ứng phong trào ``Trồng cây gây rừng'', lớp 9A có kế hoạch trồng \\emph{ít nhất} $1000$ cây xanh. Lớp đã trồng được $540$ cây. Hỏi lớp 9A cần trồng thêm ít nhất bao nhiêu cây nữa?"
+        },
+        {
+          "type": "writelines",
+          "count": 3
+        },
+        {
+          "type": "problem",
+          "label": "Bài 2.",
+          "tier": "onclass",
+          "statement": "Một kì thi Tiếng Anh gồm bốn kĩ năng: nghe, nói, đọc, viết. Kết quả của bài thi là điểm trung bình của bốn kĩ năng này. Bạn Hà đã đạt điểm ba kĩ năng nghe, nói, viết lần lượt là $6{,}5$; $6$; $5{,}5$. Hỏi bạn Hà cần đạt bao nhiêu điểm ở kĩ năng đọc để kết quả bài thi \\emph{ít nhất} là $6$?"
+        },
+        {
+          "type": "writelines",
+          "count": 3
+        },
+        {
+          "type": "problem",
+          "label": "Bài 3.",
+          "tier": "onclass",
+          "statement": "Bạn Lan để dành tiền mua quà tặng em nhân dịp ``Quốc tế thiếu nhi $1/6$''. Hiện bạn Lan đã để dành được số tiền \\emph{không quá} $50\\,000$ đồng gồm $15$ tờ giấy bạc với hai loại mệnh giá $5000$ đồng và $2000$ đồng. Hỏi bạn Lan có thể có nhiều nhất bao nhiêu tờ giấy bạc loại $5000$ đồng? [[br]] Em hãy lập bảng số tờ — thành tiền rồi lập bất phương trình."
+        },
+        {
+          "type": "table",
+          "caption": "Em điền bảng rồi lập bất phương trình (gọi số tờ loại $5000$ là $x$)",
+          "headers": [
+            "Loại tờ",
+            "Mệnh giá (đồng)",
+            "Số tờ",
+            "Thành tiền (đồng)"
+          ],
+          "rows": [
+            [
+              "Loại $5000$",
+              "$5000$",
+              "[[blank:1.8cm]]",
+              "[[blank:2.4cm]]"
+            ],
+            [
+              "Loại $2000$",
+              "$2000$",
+              "[[blank:1.8cm]]",
+              "[[blank:2.4cm]]"
+            ],
+            [
+              "Tổng",
+              "",
+              "$15$",
+              "[[blank:2.4cm]]"
+            ]
+          ]
+        },
+        {
+          "type": "writelines",
+          "count": 2
+        }
+      ],
+      "solution": "\\textbf{Bài 1.} Gọi số cây trồng thêm là $x$ ($x>0$, nguyên). Điều kiện ``ít nhất $1000$'': $540+x\\ge1000 \\Rightarrow x\\ge460$. Vậy cần trồng thêm ít nhất $460$ cây.\\par\\smallskip \\textbf{Bài 2.} Gọi điểm kĩ năng đọc là $x$ ($0\\le x\\le10$). Điều kiện: $\\dfrac{6{,}5+6+5{,}5+x}{4}\\ge6 \\Rightarrow 18+x\\ge24 \\Rightarrow x\\ge6$. Vậy Hà cần đạt ít nhất $6$ điểm.\\par\\smallskip \\textbf{Bài 3.} Gọi số tờ loại $5000$ là $x$ ($0\\le x\\le15$, nguyên); số tờ loại $2000$ là $15-x$. [[br]] Tổng tiền: $5000x+2000(15-x)\\le50\\,000 \\Rightarrow 3000x+30\\,000\\le50\\,000 \\Rightarrow 3000x\\le20\\,000 \\Rightarrow x\\le\\dfrac{20}{3}\\approx6{,}67$. [[br]] Vì $x$ nguyên nên nhiều nhất $x=6$ tờ loại $5000$ đồng.",
+      "teacher_note": "Ba bài nền, mỗi bài một từ khoá: 'ít nhất' ($\\ge$), 'ít nhất' (điểm TB), 'không quá' ($\\le$). Bài 3 bắt buộc kẻ bảng đại lượng (đã cho block table để trống) và nhớ ĐK $x$ nguyên, $0\\le x\\le15$ khi chốt đáp số nguyên."
+    },
+    {
+      "kind": "practice2",
+      "number": 4,
+      "title": "Luyện tập 2 — Toán thực tế nhiều bước",
+      "blocks": [
+        {
+          "type": "problem",
+          "label": "Bài 4.",
+          "tier": "onclass",
+          "statement": "Trong cuộc thi ``Đố vui để học'', mỗi thí sinh trả lời $12$ câu hỏi. Mỗi câu trả lời đúng được cộng $5$ điểm, trả lời sai bị trừ $2$ điểm. Khi bắt đầu, mỗi thí sinh có sẵn $20$ điểm. Thí sinh đạt từ $50$ điểm trở lên được vào vòng tiếp theo. Hỏi thí sinh phải trả lời đúng \\emph{ít nhất} bao nhiêu câu thì được vào vòng tiếp theo?"
+        },
+        {
+          "type": "writelines",
+          "count": 3
+        },
+        {
+          "type": "problem",
+          "label": "Bài 5.",
+          "tier": "onclass",
+          "statement": "Một hãng taxi có giá mở cửa là $15$ nghìn đồng và giá $12$ nghìn đồng cho mỗi ki-lô-mét tiếp theo. Hỏi với $200$ nghìn đồng thì hành khách đi được tối đa bao nhiêu ki-lô-mét (làm tròn đến hàng đơn vị)?"
+        },
+        {
+          "type": "writelines",
+          "count": 2
+        },
+        {
+          "type": "problem",
+          "label": "Bài 6.",
+          "tier": "onclass",
+          "statement": "Cho một khu đất hình vuông cạnh $21$ m. Bác Lan dành ra một mảnh vườn hình chữ nhật chiều rộng $7$ m, chiều dài $x$ (m) ở góc khu đất để trồng rau (với $7<x<21$). Tìm giá trị \\emph{nhỏ nhất} của $x$ để diện tích phần đất còn lại \\emph{không quá} $350$ m\\textsuperscript{2}."
+        },
+        {
+          "type": "figure",
+          "width": "0.4\\linewidth",
+          "caption": "Khu đất vuông cạnh $21$ m; vườn rau $7\\times x$ ở góc.",
+          "tikz": "\\begin{tikzpicture}[line width=0.9pt,font=\\small]\\draw[ink,line width=1.1pt] (0,0) rectangle (4,4);\\draw[brand,fill=brand!12,line width=1pt] (2.6,2.5) rectangle (4,4);\\node[ink] at (3.3,3.25) {\\scriptsize vườn};\\node[ink,below] at (2,0) {$21$ m};\\node[ink,left] at (0,2) {$21$ m};\\node[ink,above] at (3.3,4) {\\scriptsize $7$};\\node[ink,right] at (4,3.25) {\\scriptsize $x$};\\end{tikzpicture}"
+        },
+        {
+          "type": "writelines",
+          "count": 3
+        },
+        {
+          "type": "problem",
+          "label": "Bài 7.",
+          "tier": "onclass",
+          "statement": "Cho khu đất hình thang có đáy nhỏ $15$ m, đáy lớn $25$ m, chiều cao $18$ m. Bác Lâm dành ra một mảnh vườn hình bình hành cạnh đáy $x$ (m), chiều cao $18$ m (với $0<x<15$). Tìm giá trị \\emph{lớn nhất} của $x$ để diện tích phần đất còn lại \\emph{không dưới} $270$ m\\textsuperscript{2}."
+        },
+        {
+          "type": "figure",
+          "width": "0.46\\linewidth",
+          "caption": "Khu đất hình thang ($15$ m \\& $25$ m, cao $18$ m); lối/vườn hình bình hành đáy $x$.",
+          "tikz": "\\begin{tikzpicture}[line width=0.9pt,font=\\small]\\coordinate (A) at (1,3);\\coordinate (B) at (3.4,3);\\coordinate (C) at (4.4,0);\\coordinate (D) at (0,0);\\draw[ink,line width=1.1pt] (A)--(B)--(C)--(D)--cycle;\\draw[brand,fill=brand!12,line width=1pt] (1.9,3)--(2.5,3)--(2.0,0)--(1.4,0)--cycle;\\node[ink,above] at ($(A)!0.5!(B)$) {\\scriptsize $15$};\\node[ink,below] at ($(D)!0.5!(C)$) {\\scriptsize $25$};\\node[ink,right] at (4.0,1.5) {\\scriptsize $18$};\\node[brand] at (2.1,1.5) {\\scriptsize $x$};\\end{tikzpicture}"
+        },
+        {
+          "type": "writelines",
+          "count": 3
+        }
+      ],
+      "solution": "\\textbf{Bài 4.} Gọi số câu đúng là $x$ ($0\\le x\\le12$, nguyên); số câu sai $12-x$. [[br]] Điểm $=20+5x-2(12-x)=7x-4\\ge50 \\Rightarrow 7x\\ge54 \\Rightarrow x\\ge\\dfrac{54}{7}\\approx7{,}71$. Vì $x$ nguyên nên ít nhất $8$ câu.\\par\\smallskip \\textbf{Bài 5.} Gọi số km đi được là $x$ ($x>0$). [[br]] $15+12x\\le200 \\Rightarrow 12x\\le185 \\Rightarrow x\\le\\dfrac{185}{12}\\approx15{,}4$. Vậy đi được tối đa $15$ km.\\par\\smallskip \\textbf{Bài 6.} Diện tích còn lại $=21^2-7x=441-7x$. [[br]] $441-7x\\le350 \\Rightarrow -7x\\le-91 \\Rightarrow x\\ge13$. Vậy giá trị nhỏ nhất của $x$ là $13$ m (thoả $7<13<21$).\\par\\smallskip \\textbf{Bài 7.} Diện tích hình thang $=\\dfrac{(15+25)\\cdot18}{2}=360$ m\\textsuperscript{2}; vườn hình bình hành $=18x$. [[br]] Còn lại $360-18x\\ge270 \\Rightarrow -18x\\ge-90 \\Rightarrow x\\le5$. Vậy giá trị lớn nhất của $x$ là $5$ m (thoả $0<5<15$).",
+      "teacher_note": "Boss của phiếu. Bài 4 nhắc điểm sai bị TRỪ (dấu $-$) và chốt số nguyên. Bài 5 'mở cửa 15k' là phí cố định cộng một lần. Bài 6,7 là dạng 'diện tích còn lại' có hình: lập biểu thức diện tích còn lại rồi so ngưỡng; nhớ đối chiếu miền $x$ cho sẵn. Đã đối chiếu SymPy."
+    },
+    {
+      "kind": "reflection",
+      "number": 5,
+      "title": "Tổng kết",
+      "blocks": [
+        {
+          "type": "para",
+          "text": "Mọi bài toán lập BPT đi theo bốn bước: \\textbf{gọi ẩn} (kèm điều kiện) $\\to$ \\textbf{lập BPT} (chọn dấu theo từ khoá) $\\to$ \\textbf{giải} $\\to$ \\textbf{đối chiếu \\& trả lời}. [[br]] Khắc cốt: ``ít nhất/không dưới'' là $\\ge$; ``nhiều nhất/không quá/tối đa'' là $\\le$; đáp số đếm được thì lấy số nguyên thoả điều kiện."
+        },
+        {
+          "type": "mindmap",
+          "caption": "Sơ đồ tư duy — em điền các ô trống để chốt cả buổi",
+          "root": "Giải toán bằng lập BPT",
+          "branches": [
+            {
+              "label": "Bốn bước",
+              "children": [
+                {
+                  "label": "Gọi ẩn $x$ + [[blank:1.6cm]]"
+                },
+                {
+                  "label": "Lập BPT $\\to$ giải $\\to$ [[blank:1.6cm]]"
+                }
+              ]
+            },
+            {
+              "label": "Từ khoá $\\to$ dấu",
+              "children": [
+                {
+                  "label": "ít nhất / không dưới: [[blank:0.9cm]]"
+                },
+                {
+                  "label": "tối đa / không quá: [[blank:0.9cm]]"
+                }
+              ]
+            },
+            {
+              "label": "Phần trăm",
+              "children": [
+                {
+                  "label": "lãi $7{,}2\\%$ $\\to$ nhận [[blank:1.4cm]] vốn"
+                }
+              ]
+            }
+          ]
+        },
+        {
+          "type": "para",
+          "text": "\\textbf{BÀI TẬP VỀ NHÀ} (làm vào vở, tiết sau nộp)."
+        },
+        {
+          "type": "problem",
+          "label": "Bài 8.",
+          "tier": "btvn",
+          "statement": "Hai vòi nước cùng một bể. Vòi thứ nhất chảy \\emph{vào} bể $60$ lít mỗi phút. Cùng lúc đó vòi thứ hai chảy \\emph{ra}, lượng nước chảy ra bằng $\\dfrac{1}{3}$ lượng nước chảy vào của vòi thứ nhất. Hỏi sau ít nhất bao nhiêu giờ thì trong bể có \\emph{không ít hơn} $1200$ lít nước (bể ban đầu không chứa nước)?"
+        },
+        {
+          "type": "problem",
+          "label": "Bài 9.",
+          "tier": "btvn",
+          "statement": "Số đo (theo độ) của ba góc $A,B,C$ trong tứ giác $ABCD$ lần lượt là $x,\\ 2x,\\ 3(x-10)$ với $x>10$. [[br]] a) Viết một bất phương trình bậc nhất ẩn $x$ (từ điều kiện góc $D$ phải dương). [[br]] b) Giải bất phương trình đó. [[br]] c) Hai góc $2x$ và $3(x-10)$ có thể bằng nhau được không? Vì sao?"
+        },
+        {
+          "type": "problem",
+          "label": "Bài 10.",
+          "tier": "btvn",
+          "statement": "Một người dùng xe tải chở bia cho một nhà máy. Mỗi thùng bia (gồm $24$ lon) nặng trung bình $6{,}7$ kg. Theo khuyến nghị, trọng tải của xe (tổng khối lượng tối đa mà xe được phép chở, gồm cả người lái) là $5{,}25$ tấn. Hỏi xe chở được tối đa bao nhiêu thùng bia, biết bác lái xe nặng $65$ kg?"
+        },
+        {
+          "type": "problem",
+          "label": "Bài 11.",
+          "tier": "btvn",
+          "statement": "Tìm $x>0$ sao cho trong hình vẽ bên, chu vi của hình tam giác (ba cạnh $x+4$, $x+2$, $x+5$) luôn lớn hơn chu vi của hình chữ nhật (hai cạnh $x+1$ và $x+3$)."
+        },
+        {
+          "type": "figure",
+          "width": "0.62\\linewidth",
+          "caption": "Tam giác (cạnh $x+4$, $x+2$, đáy $x+5$) và hình chữ nhật ($x+1$ \\& $x+3$).",
+          "tikz": "\\begin{tikzpicture}[line width=0.9pt,font=\\small]\\coordinate (B) at (0,0);\\coordinate (C) at (3.4,0);\\coordinate (A) at (1.5,2.1);\\draw[ink] (A)--(B)--(C)--cycle;\\node[ink,above left] at ($(A)!0.5!(B)$) {$x+4$};\\node[ink,above right] at ($(A)!0.5!(C)$) {$x+2$};\\node[ink,below] at ($(B)!0.5!(C)$) {$x+5$};\\draw[brand,line width=1pt] (4.6,0) rectangle (7.2,1.5);\\node[ink,below] at (5.9,0) {$x+3$};\\node[ink,right] at (7.2,0.75) {$x+1$};\\end{tikzpicture}"
+        },
+        {
+          "type": "para",
+          "text": "\\textbf{Nhịp cầu lên Mở rộng.} Bài trên lớp đề đã cho sẵn công thức/đại lượng. [[br]] Việc MỚI ở các bài sau: \\emph{tự thiết lập biểu thức} qua nhiều tầng (diện tích xung quanh hình hộp, đổi đơn vị, gộp nhiều quý) trước khi lập BPT — đọc kĩ và biểu diễn từng đại lượng theo $x$."
+        },
+        {
+          "type": "problem",
+          "label": "Bài 12.",
+          "tier": "extend",
+          "statement": "Một xí nghiệp sản xuất hai loại hộp giấy hình hộp chữ nhật để đựng đồ ăn. Hộp loại I chiều rộng $x$ (cm), chiều dài hơn chiều rộng $9$ cm, chiều cao $18$ cm. Hộp loại II chiều rộng $10$ cm, chiều dài $15$ cm, chiều cao $x+1$ (cm), với $x>0$. Tổng diện tích xung quanh của $25$ hộp loại I \\emph{không dưới} tổng diện tích xung quanh của $20$ hộp loại II một lượng $175$ dm\\textsuperscript{2}. Tìm giá trị nhỏ nhất của $x$ (bỏ qua mép dán).",
+          "hints": [
+            "Diện tích xung quanh hình hộp chữ nhật $=$ chu vi đáy $\\times$ chiều cao $=2\\,(\\text{dài}+\\text{rộng})\\times\\text{cao}$.",
+            "Đổi $175$ dm\\textsuperscript{2} $=17\\,500$ cm\\textsuperscript{2}; lập $25\\,S_{\\mathrm{I}}-20\\,S_{\\mathrm{II}}\\ge17\\,500$ rồi giải."
+          ]
+        },
+        {
+          "type": "problem",
+          "label": "Bài 13.",
+          "tier": "extend",
+          "statement": "\\textbf{Thử thách (tự chọn) —} Tổng chi phí của một công ty sản xuất nước rửa tay là $80$ triệu đồng mỗi quý. Mỗi chai nước rửa tay bán được $18\\,000$ đồng. Hỏi sau bốn quý, công ty phải bán ít nhất bao nhiêu chai để có lợi nhuận \\emph{không dưới} $328$ triệu đồng (lợi nhuận $=$ doanh thu $-$ chi phí)?",
+          "hints": [
+            "Chi phí của bốn quý $=80\\times4=320$ triệu đồng.",
+            "Gọi số chai bán trong bốn quý là $x$: doanh thu $=18\\,000x$; lập $18\\,000x-320\\,000\\,000\\ge328\\,000\\,000$."
+          ]
+        }
+      ],
+      "solution": "\\textbf{BTVN.}\\par\\smallskip \\textbf{Bài 8.} Vòi 2 chảy ra $\\dfrac{1}{3}\\cdot60=20$ lít/phút; lượng nước tăng thực $=60-20=40$ lít/phút. [[br]] Gọi thời gian là $t$ phút ($t>0$): $40t\\ge1200 \\Rightarrow t\\ge30$ phút $=\\dfrac{1}{2}$ giờ. Vậy sau ít nhất $\\dfrac{1}{2}$ giờ.\\par\\smallskip \\textbf{Bài 9.} a) Góc $D=360-\\big(x+2x+3(x-10)\\big)=390-6x$; cần $D>0$: $390-6x>0$. [[br]] b) $6x<390 \\Rightarrow x<65$ (kết hợp $x>10$ nên $10<x<65$). [[br]] c) $2x=3(x-10) \\Rightarrow 2x=3x-30 \\Rightarrow x=30$; vì $10<30<65$ nên \\emph{được}: khi $x=30$ hai góc đều bằng $60^\\circ$.\\par\\smallskip \\textbf{Bài 10.} Gọi số thùng bia chở được là $x$ ($x>0$, nguyên). Tổng khối lượng (gồm bác lái): $6{,}7x+65\\le5250 \\Rightarrow 6{,}7x\\le5185 \\Rightarrow x\\le773{,}9$. Vì $x$ nguyên nên chở tối đa $773$ thùng.\\par\\smallskip \\textbf{Bài 11.} Chu vi tam giác $=(x+4)+(x+2)+(x+5)=3x+11$; chu vi hình chữ nhật $=2\\big((x+1)+(x+3)\\big)=4x+8$. [[br]] $3x+11>4x+8 \\Rightarrow -x>-3 \\Rightarrow x<3$. Kết hợp $x>0$: $0<x<3$.\\par\\smallskip \\textbf{Mở rộng.}\\par\\smallskip \\textbf{Bài 12.} $S_{\\mathrm{I}}=2\\big(x+(x+9)\\big)\\cdot18=36(2x+9)=72x+324$; $S_{\\mathrm{II}}=2(10+15)(x+1)=50(x+1)=50x+50$. [[br]] $25S_{\\mathrm{I}}-20S_{\\mathrm{II}}\\ge17\\,500$ [[br]] $\\Rightarrow (1800x+8100)-(1000x+1000)\\ge17\\,500$ [[br]] $\\Rightarrow 800x+7100\\ge17\\,500 \\Rightarrow 800x\\ge10\\,400 \\Rightarrow x\\ge13$. Giá trị nhỏ nhất $x=13$ cm.\\par\\smallskip \\textbf{Bài 13.} Chi phí bốn quý $=320$ triệu. Gọi số chai là $x$ ($x>0$, nguyên): [[br]] $18\\,000x-320\\,000\\,000\\ge328\\,000\\,000 \\Rightarrow 18\\,000x\\ge648\\,000\\,000 \\Rightarrow x\\ge36\\,000$. [[br]] Vậy phải bán ít nhất $36\\,000$ chai.\\par\\medskip \\textbf{Đáp án sơ đồ:} gọi ẩn $+$ \\emph{điều kiện}; giải $\\to$ \\emph{đối chiếu \\& trả lời}; ``ít nhất/không dưới'' $\\to\\ \\ge$; ``tối đa/không quá'' $\\to\\ \\le$; lãi $7{,}2\\%$ $\\to$ nhận \\emph{$107{,}2\\%$} vốn.",
+      "teacher_note": "BTVN 8 (vòi nước, lượng tăng thực $=$ vào $-$ ra), 9 (góc tứ giác, tổng $4$ góc $=360^\\circ$), 10 (xe tải — trừ cân nặng bác lái, chốt số nguyên $773$), 11 (so sánh chu vi, có hình) là bài quen đã có công cụ. Thang mở rộng: Bài 12 (diện tích xung quanh hình hộp $+$ đổi đơn vị dm$^2\\to$cm$^2$ — bẫy đơn vị) $\\to$ Bài 13 (gộp bốn quý, lợi nhuận — chạm trần). Đã đối chiếu SymPy toàn bộ."
+    }
+  ]
+}

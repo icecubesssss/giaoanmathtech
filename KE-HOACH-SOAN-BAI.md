@@ -54,8 +54,8 @@ Mỗi ô tick gồm: `new-lesson → điền → validate → approve → build`
 - ☐ **Hình** [tuan09-10-duong-tron-vi-tri-tuong-doi-hai-duong-tron](inputs/seeds/lop-9/hinh-hoc/tuan09-10-duong-tron-vi-tri-tuong-doi-hai-duong-tron) — 1–2 phiếu (Đường tròn · vị trí 2 đường tròn) · *(mở chương: set profile C5)*
 
 ### Tuần 10–11
-- ☐ **Đại** [tuan10-11-bat-phuong-trinh-bac-nhat-mot-an](inputs/seeds/lop-9/dai-so/tuan10-11-bat-phuong-trinh-bac-nhat-mot-an) — 1–2 phiếu
-- ☐ **Hình** [tuan11-12-vi-tri-tuong-doi-duong-thang-duong-tron](inputs/seeds/lop-9/hinh-hoc/tuan11-12-vi-tri-tuong-doi-duong-thang-duong-tron) — 1 phiếu
+- ✅ **Đại** [tuan10-11-bat-phuong-trinh-bac-nhat-mot-an](inputs/seeds/lop-9/dai-so/tuan10-11-bat-phuong-trinh-bac-nhat-mot-an) — **4 phiếu** phủ kín nguồn (A: nhận biết+giải BPT bậc nhất · B: phân thức/khai triển/rút gọn · C: tích/thương+dạng đặc biệt HSG · D: lập BPT) — *validate sạch + đã build, chờ Thầy duyệt* · *(mở chương: set profile C2 BPT)*
+- ☐ **Hình** [tuan11-12-vi-tri-tuong-doi-duong-thang-duong-tron](inputs/seeds/lop-9/hinh-hoc/tuan11-12-vi-tri-tuong-doi-duong-thang-duong-tron) — đã chốt 2 phiếu A/B (xác định vị trí · tính độ dài+tiếp tuyến), *tạm hoãn theo yêu cầu Thầy* · *(mở chương: set profile C5)*
 
 ### Tuần 12
 - ⏭ **Đại** [tuan12-on-tap-bdt-bpt](inputs/seeds/lop-9/dai-so/tuan12-on-tap-bdt-bpt) — *trống, bổ sung nguồn sau*

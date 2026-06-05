@@ -1,0 +1,304 @@
+{
+  "slug": "phieu-b-bdt-chung-minh-va-cuc-tri",
+  "title": "Bất đẳng thức",
+  "eyebrow": "CHỦ ĐỀ • ĐẠI SỐ — PHIẾU B: CHỨNG MINH \\& TÌM CỰC TRỊ",
+  "grade_label": "Lớp 9 • Ôn vào 10",
+  "stages": [
+    {
+      "kind": "review",
+      "number": 1,
+      "title": "Khám phá — Hai sự thật làm nên mọi chứng minh",
+      "blocks": [
+        {
+          "type": "para",
+          "text": "Buổi này ta học cách \\textbf{chứng minh} bất đẳng thức và \\textbf{tìm giá trị lớn nhất / nhỏ nhất}. Tất cả dựa trên hai sự thật nhỏ mà cực mạnh:"
+        },
+        {
+          "type": "noted",
+          "text": "(1) Với mọi biểu thức $M$: $M^2\\ [[mblank:0.8cm]]\\ 0$; dấu $=$ khi $M\\ [[mblank:0.8cm]]\\ 0$. [[br]] (2) Muốn so sánh $A$ với $B$, xét \\textbf{hiệu} $A-B$: nếu $A-B\\ge 0$ thì $A\\ [[mblank:0.8cm]]\\ B$."
+        },
+        {
+          "type": "para",
+          "text": "\\textbf{Khởi động — nhớ hai hằng đẳng thức.}"
+        },
+        {
+          "type": "para",
+          "text": "$(a-b)^2=a^2- [[mblank:1cm]] +b^2\\ge 0$ [[br]] $(a+b)^2=a^2+ [[mblank:1cm]] +b^2\\ge 0$"
+        }
+      ],
+      "solution": "(1) $M^2\\ge 0$; $=0 \\Leftrightarrow M=0$. [[br]] (2) $A-B\\ge 0 \\Rightarrow A\\ge B$. [[br]] $(a-b)^2=a^2-2ab+b^2$;\\quad $(a+b)^2=a^2+2ab+b^2$.",
+      "teacher_note": "Viết to hai sự thật này lên bảng, để nguyên suốt giờ. Mọi bài chứng minh hôm nay đều quy về chúng."
+    },
+    {
+      "kind": "concept",
+      "number": 2,
+      "title": "Khái niệm — Xét hiệu \\& đưa về bình phương",
+      "blocks": [
+        {
+          "type": "noted",
+          "text": "\\textbf{Phương pháp xét hiệu.} Để chứng minh $A\\ge B$, ta xét hiệu $A-B$ và chứng minh $A-B\\ge 0$, thường bằng cách đưa về dạng bình phương $M^2\\ge 0$."
+        },
+        {
+          "type": "para",
+          "text": "\\textbf{Ví dụ mẫu 1.} Chứng minh $a^2+b^2\\ge 2ab$ với mọi $a,b$."
+        },
+        {
+          "type": "para",
+          "text": "Bước 1 — Lập hiệu: $a^2+b^2-2ab$. [[br]] Bước 2 — Đưa về bình phương:"
+        },
+        {
+          "type": "math",
+          "latex": "a^2+b^2-2ab=(a-b)^2\\ge 0 \\ \\Rightarrow\\ a^2+b^2\\ge 2ab."
+        },
+        {
+          "type": "para",
+          "text": "Bước 3 — Dấu bằng: xảy ra khi $(a-b)^2=0$, tức $a=b$. \\hfill$\\square$"
+        },
+        {
+          "type": "para",
+          "text": "\\textbf{Ví dụ mẫu 2 — tìm GTNN} của $A=x^2-6x+10$. [[br]] Thêm bớt tạo bình phương: $A=(x^2-6x+9)+1=(x-3)^2+1$. [[br]] Vì $(x-3)^2\\ge 0$ nên $A\\ge 1$. [[br]] Dấu $=$ xảy ra khi $(x-3)^2=0$, tức $x=3$. [[br]] Vậy $\\min A=1$ tại $x=3$."
+        },
+        {
+          "type": "para",
+          "text": "\\textbf{Ví dụ mẫu 3 — tìm GTLN} của $B=-x^2+5x-4$. [[br]] Thêm bớt tạo bình phương: $B=-\\left(x-\\dfrac{5}{2}\\right)^2+\\dfrac{9}{4}$. [[br]] Vì $-\\left(x-\\dfrac{5}{2}\\right)^2\\le 0$ nên $B\\le \\dfrac{9}{4}$. [[br]] Dấu $=$ xảy ra khi $\\left(x-\\dfrac{5}{2}\\right)^2=0$, tức $x=\\dfrac{5}{2}$. [[br]] Vậy $\\max B=\\dfrac{9}{4}$ tại $x=\\dfrac{5}{2}$."
+        },
+        {
+          "type": "noted",
+          "text": "\\textbf{Đích đến thi vào 10.} Dạng tìm GTNN/GTLN bằng cách \\emph{thêm bớt tạo bình phương} chính là \\textbf{câu phụ} hay gặp ở bài rút gọn biểu thức (thường với biểu thức \\textbf{chứa căn}). [[br]] Nắm chắc kỹ thuật này ở đây để sau áp thẳng vào biểu thức có $\\sqrt{x}$."
+        }
+      ],
+      "solution": "Ví dụ mẫu 1: $(a-b)^2\\ge 0 \\Rightarrow a^2+b^2\\ge 2ab$; dấu $=$ khi $a=b$.\\par\\smallskip Ví dụ mẫu 2: $A=(x-3)^2+1\\ge 1$, suy ra $\\min A=1$ khi $(x-3)^2=0$, tức $x=3$.\\par\\smallskip Ví dụ mẫu 3: $B=-\\left(x-\\tfrac52\\right)^2+\\tfrac94\\le \\tfrac94$, suy ra $\\max B=\\tfrac94$ khi $\\left(x-\\tfrac52\\right)^2=0$, tức $x=\\tfrac52$.",
+      "teacher_note": "Khắc sâu quy trình 3 bước cho chứng minh và 'thêm bớt tạo bình phương' cho cực trị. Liên hệ ngay tới câu phụ rút gọn chứa căn để HS thấy vì sao phải học kỹ."
+    },
+    {
+      "kind": "practice1",
+      "number": 3,
+      "title": "Luyện tập 1 — Chứng minh bất đẳng thức",
+      "blocks": [
+        {
+          "type": "para",
+          "text": "\\textbf{Ví dụ mẫu (có hướng dẫn).} Với $a<b$, chứng minh $3(b-1)>3(a-1)$. [[br]] Xét hiệu: $3(b-1)-3(a-1)=3(b-a)$. [[br]] Vì $a<b$ nên $b-a>0$, suy ra $3(b-a)>0$. [[br]] Vậy $3(b-1)>3(a-1)$."
+        },
+        {
+          "type": "problem",
+          "label": "Bài 1.",
+          "statement": "Không thực hiện phép tính, hãy chứng minh:"
+        },
+        {
+          "type": "para",
+          "text": "a) $2\\cdot(-1)+2023<2\\cdot 1+2023$ [[br]] b) $(-3)\\cdot(-8)+1975>(-3)\\cdot(-7)+1975$ [[br]] c) $\\sqrt{29}-\\sqrt{6}>\\sqrt{28}-\\sqrt{6}$"
+        },
+        {
+          "type": "writelines",
+          "count": 2
+        },
+        {
+          "type": "problem",
+          "label": "Bài 2.",
+          "statement": "Cho $a<b$. Chứng minh:"
+        },
+        {
+          "type": "para",
+          "text": "a) $a+b>2a$ [[br]] b) $5a-b<4a$ [[br]] c) $a-1<b+6$ [[br]] d) $-3a+19>-3b+19$ [[br]] e) $-2a-8>-2b-8$ [[br]] f) $2a+1<2b+1$"
+        },
+        {
+          "type": "writelines",
+          "count": 3
+        },
+        {
+          "type": "problem",
+          "label": "Bài 3.",
+          "statement": "Mỗi khẳng định sau đúng hay sai? Vì sao?"
+        },
+        {
+          "type": "para",
+          "text": "a) $-3x^2\\le 0$ với mọi số thực $x$. [[br]] b) Vì $5>-3$ nên $\\dfrac{5}{a}>\\dfrac{-3}{a}$ với mọi số thực $a\\ne 0$."
+        },
+        {
+          "type": "writelines",
+          "count": 2
+        },
+        {
+          "type": "problem",
+          "label": "Bài 4.",
+          "statement": "Chứng minh $x^2+y^2\\ge 2xy$ với mọi $x,y$ (nền tảng của kỹ thuật xét hiệu)."
+        },
+        {
+          "type": "writelines",
+          "count": 2
+        }
+      ],
+      "solution": "Bài 1: [[br]] a) $-2<2 \\Rightarrow$ cộng $2023$: $<$. [[br]] b) $24>21 \\Rightarrow >$. [[br]] c) $\\sqrt{29}>\\sqrt{28}\\Rightarrow >$ (cùng trừ $\\sqrt6$).\\par\\smallskip Bài 2: từ $a<b$: [[br]] a) cộng $a$: $a+b>2a$; [[br]] b) $5a-b<4a\\Leftrightarrow a<b$; [[br]] c) $a-1<b<b+6$; [[br]] d) nhân $-3$ đổi chiều, cộng 19: $>$; [[br]] e) nhân $-2$ đổi chiều: $>$; [[br]] f) nhân $2$ giữ chiều, cộng 1: $<$.\\par\\smallskip Bài 3: [[br]] a) đúng ($x^2\\ge0\\Rightarrow -3x^2\\le0$); [[br]] b) sai (nếu $a<0$ chia phải đổi chiều).\\par\\smallskip Bài 4: xét hiệu $x^2+y^2-2xy=(x-y)^2\\ge0$, suy ra $x^2+y^2\\ge2xy$, dấu $=$ khi $x=y$.",
+      "teacher_note": "Phần nền của kỹ thuật xét hiệu (có trong đề thi). Bài 3b là bẫy chiều dấu khi $a<0$ — cho HS phản ví dụ $a=-1$."
+    },
+    {
+      "kind": "practice2",
+      "number": 4,
+      "title": "Luyện tập 2 — Tìm cực trị (trọng tâm thi)",
+      "blocks": [
+        {
+          "type": "para",
+          "text": "Đây là dạng \\textbf{hay ra trong câu phụ bài rút gọn}: đưa biểu thức về $(\\,\\cdot\\,)^2+\\text{hằng số}$ rồi dùng $M^2\\ge 0$."
+        },
+        {
+          "type": "problem",
+          "label": "Bài 5.",
+          "statement": "Tìm giá trị nhỏ nhất:"
+        },
+        {
+          "type": "para",
+          "text": "a) $A=2x^2+28x+101$ [[br]] b) $B=5x^2-10x+3$ [[br]] c) $C=2x^2+8x+y^2-10y+43$"
+        },
+        {
+          "type": "writelines",
+          "count": 3
+        },
+        {
+          "type": "problem",
+          "label": "Bài 6.",
+          "statement": "Tìm giá trị lớn nhất:"
+        },
+        {
+          "type": "para",
+          "text": "a) $M=-x^2+5x$ [[br]] b) $P=\\dfrac{2024}{2x^2+4x+7}$"
+        },
+        {
+          "type": "writelines",
+          "count": 3
+        },
+        {
+          "type": "problem",
+          "label": "Bài 7.",
+          "statement": "Tìm GTLN và GTNN của phân thức $M=\\dfrac{3-4x}{x^2+1}$."
+        },
+        {
+          "type": "writelines",
+          "count": 3
+        },
+        {
+          "type": "problem",
+          "label": "Bài 8.",
+          "statement": "(Thực tế) Một ca nô đi xuôi dòng trong $2$ giờ $30$ phút. Tốc độ ca nô khi nước yên lặng không quá $40$ km/h, tốc độ dòng nước $6$ km/h. Chứng minh quãng đường đi được không vượt quá $115$ km. [[br]] \\emph{Ví dụ mồi:} tốc độ xuôi dòng $=$ tốc độ riêng $+$ tốc độ nước (dòng đẩy ca nô đi nhanh hơn)."
+        },
+        {
+          "type": "writelines",
+          "count": 2
+        }
+      ],
+      "solution": "Bài 5: [[br]] a) $A=2(x+7)^2+3\\ge3$, suy ra $\\min A=3$ khi $x=-7$; [[br]] b) $B=5(x-1)^2-2\\ge-2$, suy ra $\\min B=-2$ khi $x=1$; [[br]] c) $C=2(x+2)^2+(y-5)^2+10\\ge10$, suy ra $\\min C=10$ khi $x=-2,\\ y=5$.\\par\\smallskip Bài 6: [[br]] a) $M=-(x-\\tfrac52)^2+\\tfrac{25}{4}\\le\\tfrac{25}{4}$, suy ra $\\max M=\\tfrac{25}{4}$ khi $x=\\tfrac52$; [[br]] b) mẫu $2(x+1)^2+5\\ge5$ nên $\\max P=\\dfrac{2024}{5}$ khi $x=-1$.\\par\\smallskip Bài 7: quy về $Mx^2+4x+(M-3)=0$ có nghiệm $\\Rightarrow \\Delta'=4-M(M-3)\\ge0\\Rightarrow -1\\le M\\le4$; vậy $\\min M=-1,\\ \\max M=4$.\\par\\smallskip Bài 8: quãng đường $\\le (40+6)\\cdot 2{,}5=115$ km.",
+      "teacher_note": "Trọng tâm thi vào 10. Bài 7 dùng kĩ thuật delta (nâng cao) — lớp yếu có thể chỉ chặn một phía. Nhấn: cùng kỹ thuật này áp cho biểu thức chứa căn ở câu phụ rút gọn."
+    },
+    {
+      "kind": "reflection",
+      "number": 5,
+      "title": "Tổng kết",
+      "blocks": [
+        {
+          "type": "para",
+          "text": "Vũ khí hôm nay: (1) \\textbf{xét hiệu} $A-B$ rồi đưa về $M^2\\ge 0$ để chứng minh; (2) \\textbf{thêm bớt tạo bình phương} để tìm cực trị (đích đến: câu phụ rút gọn chứa căn); (3) với ba biến, gom thành \\textbf{tổng ba bình phương}."
+        },
+        {
+          "type": "mindmap",
+          "caption": "Sơ đồ tư duy — em điền các ô trống để chốt cả buổi",
+          "root": "Chứng minh BĐT và tìm cực trị",
+          "branches": [
+            {
+              "label": "Nền: $M^2[[blank:0.8cm]]0$; xét hiệu $A-B$",
+              "children": [
+                {
+                  "label": "$A-B\\ge0\\Rightarrow A[[blank:0.7cm]]B$"
+                }
+              ]
+            },
+            {
+              "label": "Chứng minh: đưa về [[blank:2.2cm]]",
+              "children": [
+                {
+                  "label": "$a^2+b^2\\ge[[blank:1cm]]$"
+                }
+              ]
+            },
+            {
+              "label": "Cực trị: thêm bớt tạo [[blank:2cm]]",
+              "children": [
+                {
+                  "label": "GTNN khi $(\\cdot)^2=[[blank:0.7cm]]$"
+                }
+              ]
+            },
+            {
+              "label": "3 biến: tổng [[blank:1.2cm]] bình phương"
+            },
+            {
+              "label": "Dấu \"=\" khi [[blank:1.8cm]]"
+            }
+          ]
+        },
+        {
+          "type": "para",
+          "text": "\\textbf{BÀI TẬP VỀ NHÀ} (làm vào vở, tiết sau nộp)."
+        },
+        {
+          "type": "problem",
+          "label": "Bài 9.",
+          "tier": "btvn",
+          "statement": "Cho $a>b$ và $c>d$. Chứng minh $a+c>b+d$. Nếu thêm $a,b,c,d>0$ thì có $ac>bd$ không? Vì sao?"
+        },
+        {
+          "type": "problem",
+          "label": "Bài 10.",
+          "tier": "btvn",
+          "statement": "Chứng minh: [[br]] a) $26{,}2<2a+3{,}2<26{,}4$ với $11{,}5<a<11{,}6$; [[br]] b) $\\dfrac{1}{a}<\\dfrac{1}{b}$ với $a>b>0$."
+        },
+        {
+          "type": "problem",
+          "label": "Bài 11.",
+          "tier": "btvn",
+          "statement": "Tìm GTNN: [[br]] a) $D=\\dfrac{x^2+6x+11}{5}$; [[br]] b) $F=\\dfrac{5x^2-4x+4}{x^2}$ (với $x\\ne 0$)."
+        },
+        {
+          "type": "problem",
+          "label": "Bài 12.",
+          "tier": "btvn",
+          "statement": "(Thực tế) Hình chữ nhật $ABCD$ có chiều dài gấp đôi chiều rộng; chiều rộng lớn hơn $5$ cm. Bạn Mai nói chu vi lớn hơn $30$ cm. Đúng không? Vì sao?"
+        },
+        {
+          "type": "para",
+          "text": "\\textbf{Nhịp cầu lên Mở rộng.} Trên lớp ta xét hiệu với 1–2 biến; lên \\textbf{3 biến} chỉ thêm một bước — gom thành \\emph{tổng ba bình phương}. [[br]] Riêng bài cuối \\textbf{đổi vũ khí}: dùng bất đẳng thức tam giác $a<b+c$. Mỗi bài chỉ thêm một ý mới so với bài trước."
+        },
+        {
+          "type": "problem",
+          "label": "Bài 13.",
+          "tier": "extend",
+          "statement": "Với mọi $x,y,z$ chứng minh: [[br]] a) $x^2+y^2+z^2\\ge xy+yz+zx$; [[br]] b) $x^2+y^2+z^2+3\\ge 2(x+y+z)$.",
+          "hints": [
+            "Nhân hai vế với 2 rồi chuyển hết sang một vế.",
+            "a) gom $(x-y)^2+(y-z)^2+(z-x)^2$; b) ghép mỗi biến với 1: $(x-1)^2+(y-1)^2+(z-1)^2$."
+          ]
+        },
+        {
+          "type": "problem",
+          "label": "Bài 14.",
+          "tier": "extend",
+          "statement": "Với mọi $a,b,c$ chứng minh: [[br]] a) $\\dfrac{a^2+b^2}{2}\\ge\\left(\\dfrac{a+b}{2}\\right)^2$; [[br]] b) $a^2+b^2+1\\ge ab+a+b$; [[br]] c) $a^2+b^2+c^2\\ge\\dfrac{(a+b+c)^2}{3}$.",
+          "hints": [
+            "Quy đồng bỏ mẫu rồi xét hiệu, đưa về bình phương.",
+            "b) nhân 2 hai vế; c) nhân 3 hai vế rồi gom ba bình phương."
+          ]
+        },
+        {
+          "type": "problem",
+          "label": "Bài 15 — Trùm cuối.",
+          "tier": "extend",
+          "statement": "Cho $a,b,c$ là độ dài ba cạnh một tam giác. Chứng minh $a^2+b^2+c^2<2(ab+bc+ca)$.",
+          "hints": [
+            "Bài này KHÔNG dùng tổng bình phương — hãy nhớ tính chất ba cạnh của tam giác.",
+            "Từ $a<b+c$, nhân hai vế với $a>0$ được $a^2<a(b+c)$; làm tương tự với $b,c$ rồi cộng lại."
+          ]
+        }
+      ],
+      "solution": "\\textbf{BTVN.}\\par\\smallskip Bài 9: cộng hai BĐT cùng chiều $\\Rightarrow a+c>b+d$; nếu $a,b,c,d>0$ thì $ac>bc>bd$ nên $ac>bd$.\\par\\smallskip Bài 10: [[br]] a) $11{,}5<a<11{,}6\\Rightarrow 23<2a<23{,}2\\Rightarrow 26{,}2<2a+3{,}2<26{,}4$; [[br]] b) $a>b>0\\Rightarrow \\tfrac1a<\\tfrac1b$.\\par\\smallskip Bài 11: [[br]] a) $D=\\dfrac{(x+3)^2+2}{5}\\ge\\dfrac25$, suy ra $\\min D=\\dfrac25$ khi $x=-3$; [[br]] b) $F=\\left(\\dfrac2x-1\\right)^2+4\\ge4$, suy ra $\\min F=4$ khi $\\dfrac2x-1=0$, tức $x=2$.\\par\\smallskip Bài 12: rộng $x>5$, dài $2x$, chu vi $6x>30$. Mai đúng.\\par\\smallskip \\textbf{Mở rộng.}\\par\\smallskip Bài 13: [[br]] a) nhân 2: $(x-y)^2+(y-z)^2+(z-x)^2\\ge0$; [[br]] b) $(x-1)^2+(y-1)^2+(z-1)^2\\ge0$.\\par\\smallskip Bài 14: [[br]] a) $\\Leftrightarrow (a-b)^2\\ge0$; [[br]] b) nhân 2: $(a-b)^2+(a-1)^2+(b-1)^2\\ge0$; [[br]] c) nhân 3: $(a-b)^2+(b-c)^2+(c-a)^2\\ge0$.\\par\\smallskip Bài 15: vì $a<b+c$ nên $a^2<a(b+c)$; tương tự $b^2<b(c+a)$, $c^2<c(a+b)$; cộng lại $a^2+b^2+c^2<2(ab+bc+ca)$.\\par\\smallskip \\textbf{Đáp án sơ đồ tư duy:} [[br]] $\\bullet$\\; Nền: $M^2\\ge0$; $A-B\\ge0\\Rightarrow A\\ge B$. [[br]] $\\bullet$\\; Chứng minh: đưa về bình phương; $a^2+b^2\\ge 2ab$. [[br]] $\\bullet$\\; Cực trị: thêm bớt tạo bình phương; $\\min$ đạt khi $(\\cdot)^2=0$. [[br]] $\\bullet$\\; 3 biến: tổng ba bình phương; dấu $=$ khi các biến bằng nhau.",
+      "teacher_note": "BTVN (Bài 9–12) cùng kiểu bài đã chữa, có đáp án đầy đủ ở trên để GV ứng phó khi HS hỏi. Mở rộng (Bài 13–15) là nâng cao tổng-bình-phương + BĐT tam giác, dành cho HS khá giỏi; đã có lời giải để chữa kịp."
+    }
+  ]
+}

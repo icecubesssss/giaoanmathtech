@@ -32,6 +32,7 @@ from src.validators import (
     check_difficulty,
     check_ramp,
     find_presentation_warnings,
+    check_answers,
 )
 from config import settings
 
@@ -234,8 +235,30 @@ def cmd_evolve(args: argparse.Namespace) -> int:
 
 # ── S2/S3 commands (giữ nguyên từ trước) ──────────────────────────────────────
 
+def _gate_before_build(lesson: LessonPackage, force: bool) -> bool:
+    """Cổng AGENTS.md: 'bắt buộc validate sạch trước build'. Chạy trọng tài S2;
+    có vi phạm thì in lý do và trả False (chặn build) trừ khi `force=True` (build
+    nháp). Cảnh báo trình bày/độ dốc chỉ in, không chặn."""
+    violations, warns, ramp_warns = _run_validation(lesson)
+    for w in warns + ramp_warns:
+        print(f"  ⚠ {w}")
+    if not violations:
+        return True
+    print(f"✗ '{lesson.slug}' CHƯA qua validate — {len(violations)} vi phạm:", file=sys.stderr)
+    for v in violations:
+        print(f"  {v}", file=sys.stderr)
+    if force:
+        print("  (--force: build nháp dù còn vi phạm)", file=sys.stderr)
+        return True
+    print("  → Sửa cho sạch rồi build lại, hoặc dùng --force để build nháp.", file=sys.stderr)
+    _set_lesson_status(lesson.slug, "validation_failed")
+    return False
+
+
 def cmd_build_handout(args: argparse.Namespace) -> int:
     lesson = _load(args.lesson)
+    if not _gate_before_build(lesson, getattr(args, "force", False)):
+        return 1
     pdf = build_pdf(render_handout(lesson), slug=lesson.slug, filename="handout", out_root=_out_root(args.lesson))
     print(f"OK → {pdf}")
     return 0
@@ -243,6 +266,8 @@ def cmd_build_handout(args: argparse.Namespace) -> int:
 
 def cmd_build_guide(args: argparse.Namespace) -> int:
     lesson = _load(args.lesson)
+    if not _gate_before_build(lesson, getattr(args, "force", False)):
+        return 1
     pdf = build_pdf(render_guide(lesson), slug=lesson.slug, filename="guide", out_root=_out_root(args.lesson))
     print(f"OK → {pdf}")
     return 0
@@ -250,20 +275,70 @@ def cmd_build_guide(args: argparse.Namespace) -> int:
 
 def cmd_build_slide(args: argparse.Namespace) -> int:
     lesson = _load(args.lesson)
+    if not _gate_before_build(lesson, getattr(args, "force", False)):
+        return 1
     pdf = build_pdf(render_slide(lesson), slug=lesson.slug, filename="slide", out_root=_out_root(args.lesson))
     print(f"OK → {pdf}")
     return 0
 
 
 def cmd_build_all(args: argparse.Namespace) -> int:
-    """Sinh đồng thời cả 3 bản từ cùng một gói bài."""
+    """Sinh đồng thời cả 3 bản từ cùng một gói bài (validate sạch trước)."""
     lesson = _load(args.lesson)
+    if not _gate_before_build(lesson, getattr(args, "force", False)):
+        return 1
     out_root = _out_root(args.lesson)
     for fn, render in (("handout", render_handout), ("guide", render_guide), ("slide", render_slide)):
         pdf = build_pdf(render(lesson), slug=lesson.slug, filename=fn, out_root=out_root)
         print(f"OK → {pdf}")
     _set_lesson_status(lesson.slug, "built")
     return 0
+
+
+def cmd_build_folder(args: argparse.Namespace) -> int:
+    """Build MỌI phiếu trong một folder tuần (vd folder có phieu-a + phieu-b).
+
+    Mỗi file: validate trước, sạch mới build cả 3 bản. File nào còn vi phạm thì
+    bỏ qua (trừ --force) — in bảng tổng kết để không sót/không build mù."""
+    folder = Path(args.folder)
+    if not folder.is_dir():
+        print(f"✗ Không phải folder: {folder}", file=sys.stderr)
+        return 1
+    files = [j for j in sorted(folder.glob("*.json")) if _is_lesson_json(j)]
+    if not files:
+        print(f"(Không thấy lesson JSON nào trong {folder}.)")
+        return 0
+
+    force = getattr(args, "force", False)
+    built, skipped, failed = [], [], []
+    for j in files:
+        try:
+            lesson = _load(str(j))
+        except SystemExit:
+            failed.append((j.name, "không load được"))
+            continue
+        print(f"\n▶ {lesson.slug} — {lesson.title}")
+        if not _gate_before_build(lesson, force):
+            skipped.append(lesson.slug)
+            continue
+        out_root = _out_root(str(j))
+        try:
+            for fn, render in (("handout", render_handout), ("guide", render_guide), ("slide", render_slide)):
+                pdf = build_pdf(render(lesson), slug=lesson.slug, filename=fn, out_root=out_root)
+                print(f"  OK → {pdf}")
+            _set_lesson_status(lesson.slug, "built")
+            built.append(lesson.slug)
+        except Exception as e:  # noqa: BLE001 — báo lỗi build 1 phiếu, vẫn chạy tiếp phiếu khác
+            failed.append((lesson.slug, str(e).splitlines()[0]))
+            print(f"  ✗ build lỗi: {str(e).splitlines()[0]}", file=sys.stderr)
+
+    print(f"\n{'─'*60}")
+    print(f"Tổng {len(files)} phiếu: {len(built)} build | {len(skipped)} bỏ (chưa sạch) | {len(failed)} lỗi build")
+    for slug in skipped:
+        print(f"  ⤳ bỏ qua (chưa sạch): {slug}")
+    for name, why in failed:
+        print(f"  ✗ {name}: {why}")
+    return 1 if (skipped or failed) else 0
 
 
 def cmd_build_summary(args: argparse.Namespace) -> int:
@@ -300,6 +375,10 @@ def _run_validation(lesson: LessonPackage) -> tuple[list[str], list[str], list[s
 
     warns = find_presentation_warnings(lesson)
     ramp_warns = check_ramp(lesson)
+
+    ans_fail, ans_incon = check_answers(lesson)
+    violations.extend(f"[answer_gate] {m}" for m in ans_fail)
+    warns = warns + [f"[answer_gate] (cần kiểm tay) {m}" for m in ans_incon]
     return violations, warns, ramp_warns
 
 
@@ -311,9 +390,11 @@ def cmd_validate(args: argparse.Namespace) -> int:
     n_unsafe = sum(1 for v in violations if v.startswith("[latex_sanitizer]"))
     n_schema = sum(1 for v in violations if v.startswith("[schema_validator]"))
     n_diff = sum(1 for v in violations if v.startswith("[difficulty_gate]"))
+    n_ans = sum(1 for v in violations if v.startswith("[answer_gate]"))
     print(f"  • latex_sanitizer:  {'OK' if n_unsafe == 0 else f'{n_unsafe} vi phạm'}")
     print(f"  • schema_validator: {'OK' if n_schema == 0 else f'{n_schema} lỗi'}")
     print(f"  • difficulty_gate:  {'OK' if n_diff == 0 else f'{n_diff} lý do từ chối'}")
+    print(f"  • answer_gate:      {'OK' if n_ans == 0 else f'{n_ans} đáp án SAI'}")
     print(f"  • visual_linter:    {'OK' if not warns else f'{len(warns)} cảnh báo trình bày'}")
     for w in warns:
         print(f"    ⚠ {w}")
@@ -792,19 +873,28 @@ def main(argv: list[str] | None = None) -> int:
     # S3 commands
     b = sub.add_parser("build-handout", help="Render + compile phiếu HS từ file lesson JSON")
     b.add_argument("lesson", help="Đường dẫn file lesson .json")
+    b.add_argument("--force", action="store_true", help="Build nháp dù validate còn vi phạm")
     b.set_defaults(func=cmd_build_handout)
 
     g = sub.add_parser("build-guide", help="Render + compile Sổ tay GV (có đáp án + mẹo)")
     g.add_argument("lesson", help="Đường dẫn file lesson .json")
+    g.add_argument("--force", action="store_true", help="Build nháp dù validate còn vi phạm")
     g.set_defaults(func=cmd_build_guide)
 
     s = sub.add_parser("build-slide", help="Render + compile Slide TV (Beamer 16:9)")
     s.add_argument("lesson", help="Đường dẫn file lesson .json")
+    s.add_argument("--force", action="store_true", help="Build nháp dù validate còn vi phạm")
     s.set_defaults(func=cmd_build_slide)
 
-    a = sub.add_parser("build", help="Sinh đồng thời cả 3 bản (handout, guide, slide)")
+    a = sub.add_parser("build", help="Sinh đồng thời cả 3 bản (handout, guide, slide) — validate sạch trước")
     a.add_argument("lesson", help="Đường dẫn file lesson .json")
+    a.add_argument("--force", action="store_true", help="Build nháp dù validate còn vi phạm")
     a.set_defaults(func=cmd_build_all)
+
+    bf = sub.add_parser("build-folder", help="Build MỌI phiếu trong 1 folder tuần (validate từng file trước)")
+    bf.add_argument("folder", help="Folder tuần dưới inputs/seeds/<lop>/<mon>/")
+    bf.add_argument("--force", action="store_true", help="Build nháp dù validate còn vi phạm")
+    bf.set_defaults(func=cmd_build_folder)
 
     bs = sub.add_parser("build-summary", help="Render phiếu TỔNG KẾT CHƯƠNG 1 trang (bản HS + GV)")
     bs.add_argument("summary", help="Đường dẫn file ChapterSummary .json")

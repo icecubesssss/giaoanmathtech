@@ -94,6 +94,32 @@ Mỗi bài đúng **5 chặng** (kind cố định), mỗi chặng mang các blo
     - Lưu ý: phiếu **in đen trắng** nên màu/callout ăn nhất ở **slide** (chiếu màu); handout giữ nhận diện nhờ **icon + nét vẽ + nhãn + viền**, không dựa vào màu.
 
 12. **Phiếu TỔNG KẾT CHƯƠNG/TUẦN** (`ChapterSummary`, 1 trang sơ đồ tư duy to): sinh bằng `new-summary <các folder tuần>`, build bằng `build-summary` (ra `tongket-hs.pdf` + `tongket-gv.pdf`). Đã đồng bộ "áo mới" (title-card chip + màu + font) với phiếu thường — không cần chỉnh thêm.
+13. **Trường `check` (tự động kiểm đáp án đại số — máy đọc):** trường `check` là tùy chọn (mặc định `None`), dùng để `validate` tự động kiểm tra bằng SymPy và chặn nếu sai (không in ra bất kỳ phiếu nào). Khai báo trong `ProblemBlock` (`type: "problem"`). Có 3 loại `kind`:
+    - **Giải phương trình một ẩn** (`kind: "solveset"`):
+      ```json
+      "check": {
+        "kind": "solveset",
+        "equation": "x^2 - 5x + 6 = 0",
+        "answer": [2, 3],
+        "symbol": "x"
+      }
+      ```
+    - **Chứng minh đẳng thức** (`kind: "identity"`):
+      ```json
+      "check": {
+        "kind": "identity",
+        "lhs": "(a+b)^2",
+        "rhs": "a^2 + 2*a*b + b^2"
+      }
+      ```
+    - **Bất đẳng thức bậc hai thuần nhất không âm** (`kind: "nonneg"`):
+      ```json
+      "check": {
+        "kind": "nonneg",
+        "expr": "a**2 + b**2 - 2*a*b",
+        "symbols": ["a", "b"]
+      }
+      ```
 
 ## 5. Quy trình lệnh (nhắc lại)
 
@@ -132,7 +158,7 @@ Các phần này do template lo, **luôn ở yên một chỗ**; AI/người so�
 - **Bài `★` Thử thách (tự chọn)** — 1–2 bài khó nhất của nguồn (đặt ẩn phụ bậc cao, tình huống lạ); gắn `tier="extend"`, `statement` mở đầu `"\\textbf{Thử thách (tự chọn) —} …"`. Dành cho nhóm cày tới kiệt.
 
 **Tách phiếu khi nguồn giàu / nhiều dạng:** một folder tuần được phép chứa **nhiều lesson JSON** (mỗi file = một phiếu, slug riêng, output riêng). Quy ước:
-- Đặt `eyebrow` có hậu tố **"PHIẾU A" / "PHIẾU B"** và `slug` mô tả nội dung (vd `pt-tich-va-an-o-mau`, `giai-bai-toan-lap-pt`).
+- Đặt `eyebrow` có hậu tố **"PHIẾU A" / "PHIẾU B" / …** và **`slug` + tên file PHẢI mang tiền tố `phieu-a-` / `phieu-b-` / `phieu-c-` / `phieu-d-`** theo đúng thứ tự bài học, rồi mới tới phần mô tả nội dung (vd `phieu-a-nhan-biet-va-giai-bpt-bac-nhat`). Tiền tố này giữ cho file trong thư mục tuần **và** thư mục output luôn sort đúng A→B→C→D — KHÔNG đặt slug thuần theo nội dung (sẽ sort lộn, phiếu tạo sau lên trước). Nhãn `eyebrow` "PHIẾU X" phải khớp tiền tố; khi tách lại/đổi số phiếu nhớ sửa cả ba (file, slug, eyebrow).
 - Chia theo **mạch sư phạm**, không chia ngẫu nhiên: vd tuần "PT quy về bậc nhất" → **Phiếu A** (PT tích + ẩn ở mẫu) · **Phiếu B** (giải bài toán bằng lập PT). Mỗi phiếu tự đủ 5 chặng + core + đệm cho một buổi.
 - `progress` tự đếm từng phiếu là một bài; build từng phiếu độc lập.
 

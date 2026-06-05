@@ -104,7 +104,23 @@ def find_presentation_warnings(lesson) -> list[str]:
     a)b)c) thiếu [[br]] (dính chữ); đoạn quá dài thiếu xuống dòng; thiếu BTVN."""
     warns: list[str] = []
     for st in lesson.stages:
+        # Tiêu đề chặng đặt trong thanh header (TikZ node), tự co nhưng dài quá sẽ
+        # bị thu nhỏ/ép — giữ <= ~46 ký tự để hiện đẹp một dòng cạnh badge.
+        if st.title and len(st.title) > 46:
+            warns.append(
+                f"stage[{st.kind}].title: tiêu đề dài ({len(st.title)} ký tự) — dễ tràn/ép ở thanh header, nên rút gọn ≤ 46 ký tự."
+            )
         for i, b in enumerate(st.blocks):
+            # Figure/opener: phải có nguồn hình hợp lệ (tikz hoặc image); nếu khai
+            # báo tikz thì phải là mã tikzpicture đầy đủ (tránh hình rỗng/hỏng).
+            if getattr(b, "type", "") in ("figure", "opener"):
+                tk = (getattr(b, "tikz", "") or "").strip()
+                img = (getattr(b, "image", "") or "").strip()
+                loc = f"stage[{st.kind}].block[{i}]"
+                if b.type == "figure" and not tk and not img:
+                    warns.append(f"{loc}: block figure không có 'tikz' lẫn 'image' — hình rỗng.")
+                if tk and "\\begin{tikzpicture}" not in tk:
+                    warns.append(f"{loc}.tikz: thiếu \\begin{{tikzpicture}} — mã hình không đầy đủ, sẽ vỡ/khuyết khi build.")
             for attr in ("text", "latex", "statement"):
                 v = getattr(b, attr, None)
                 if not v:
