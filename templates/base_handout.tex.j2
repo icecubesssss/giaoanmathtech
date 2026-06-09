@@ -64,7 +64,7 @@
   before=\vspace{2pt}, after=\vspace{10pt}
 ]
   \sffamily
-  ((* if lesson.eyebrow *)){\setlength{\fboxsep}{4pt}\colorbox{brand}{\color{white}\bfseries\footnotesize\strut\,((( lesson.eyebrow )))\,}}\hfill((* else *)){\bfseries\fontsize{12pt}{14pt}\selectfont\color{ink}PHIẾU HỌC TẬP}\hfill((* endif *))((* if lesson.grade_label *)){\footnotesize\color{muted}((( lesson.grade_label )))}((* endif *))\par\vspace{6pt}
+  ((* if lesson.class_tier *)){\setlength{\fboxsep}{4pt}\colorbox{ink}{\color{white}\bfseries\footnotesize\strut\,LỚP ((( lesson.class_tier )))\,}}\hspace{5pt}((* endif *))((* if lesson.eyebrow *)){\setlength{\fboxsep}{4pt}\colorbox{brand}{\color{white}\bfseries\footnotesize\strut\,((( lesson.eyebrow )))\,}}\hfill((* else *)){\bfseries\fontsize{12pt}{14pt}\selectfont\color{ink}PHIẾU HỌC TẬP}\hfill((* endif *))((* if lesson.grade_label *)){\footnotesize\color{muted}((( lesson.grade_label )))}((* endif *))\par\vspace{6pt}
   \titlefit{\bfseries\fontsize{18pt}{21pt}\selectfont\color{brand}((( lesson.title | upper )))}\par\vspace{9pt}
   {Họ và tên:~\blank[6cm]\hfill Lớp:~\blank[3.2cm]}
 \end{tcolorbox}

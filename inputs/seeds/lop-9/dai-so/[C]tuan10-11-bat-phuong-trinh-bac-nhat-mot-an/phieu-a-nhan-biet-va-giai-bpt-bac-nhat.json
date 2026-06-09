@@ -1,0 +1,302 @@
+{
+  "slug": "phieu-a-nhan-biet-va-giai-bpt-bac-nhat",
+  "title": "Bất phương trình bậc nhất một ẩn",
+  "eyebrow": "ĐẠI SỐ — PHIẾU A: NHẬN BIẾT \\& GIẢI BPT",
+  "grade_label": "Lớp 9 • Ôn vào 10",
+  "class_tier": "C",
+  "stages": [
+    {
+      "kind": "review",
+      "number": 1,
+      "title": "Khám phá — Gặp bất phương trình",
+      "blocks": [
+        {
+          "type": "opener",
+          "text": "Một thang máy dán biển \\textbf{``Tải trọng tối đa $630$ kg''}. Gọi tổng cân nặng của những người trong thang là $x$ (kg). [[br]] Thang chạy an toàn khi tổng cân nặng \\emph{không vượt quá} $630$ kg, viết gọn: $x\\ [[mblank:0.8cm]]\\ 630$. [[br]] Hệ thức $x\\le630$ có ẩn $x$ và dấu $\\le$ — ta gọi nó là một \\textbf{bất phương trình}. [[br]] \\emph{Thử nhanh:} $9$ bạn đều nặng như Long ($75$ kg) cùng vào thang thì tổng cân nặng $=9\\times75=[[mblank:1.1cm]]$ kg. So với $630$, thang có an toàn không? [[mblank:2cm]]",
+          "tikz": "\\begin{tikzpicture}[line width=0.9pt,font=\\small]\\draw[ink,line width=1.1pt] (0,0) rectangle (2.2,2.8);\\draw[ink] (1.1,0)--(1.1,2.8);\\draw[ink,line width=0.7pt] (0.2,2.5) rectangle (2.0,2.78);\\node[ink] at (1.1,2.64) {\\scriptsize $630$ kg};\\fill[brand!70] (0.55,0.5) circle (0.16);\\draw[brand!70,line width=1.4pt] (0.55,0.46)--(0.55,1.0);\\fill[brand!70] (1.65,0.5) circle (0.16);\\draw[brand!70,line width=1.4pt] (1.65,0.46)--(1.65,1.0);\\node[ink,below] at (1.1,0) {\\scriptsize thang máy};\\end{tikzpicture}"
+        },
+        {
+          "type": "noted",
+          "text": "\\textbf{Làm quen qua ví dụ.} Mấy hệ thức sau đây \\emph{cũng} là bất phương trình — chúng giống phương trình nhưng \\textbf{thay dấu $=$ bằng dấu so sánh} $<,\\ >,\\ \\le,\\ \\ge$: [[br]] $\\bullet$\\; $3x+8<20$ \\qquad $\\bullet$\\; $5x-12<0$ \\qquad $\\bullet$\\; $2x-6\\ge0$. [[br]] Hôm nay ta học cách \\textbf{nhận ra} và \\textbf{giải} loại bất phương trình đơn giản nhất.",
+          "variant": "note"
+        },
+        {
+          "type": "noted",
+          "text": "\\textbf{Ôn 4 tính chất biến đổi BĐT} (công cụ để giải BPT lát nữa). Cho $a<b$, điền dấu thích hợp: [[br]] (1) Cộng cùng số $c$: $a+c\\ [[mblank:0.8cm]]\\ b+c$ \\;(giữ chiều). [[br]] (2) Nhân số dương $c>0$: $ac\\ [[mblank:0.8cm]]\\ bc$ \\;(giữ chiều). [[br]] (3) Nhân số âm $c<0$: $ac\\ [[mblank:0.8cm]]\\ bc$ \\;(\\textbf{ĐỔI CHIỀU!}).",
+          "variant": "trap"
+        }
+      ],
+      "solution": "Mở màn: $x\\le630$ (``không vượt quá'' là $\\le$). [[br]] Thử nhanh: $9\\times75=675$ kg $>630$ kg $\\Rightarrow$ vượt tải trọng, thang \\textbf{KHÔNG an toàn} (báo quá tải). [[br]] Bốn tính chất: (1) $a+c<b+c$; (2) $ac<bc$; (3) $ac>bc$ (đổi chiều).",
+      "teacher_note": "PHIẾU LỚP C (tỉ lệ NB-TH-VD = 40-40-20, buổi 3 giờ trừ 15 phút giải lao). MẠCH QUY NẠP: cho HS GẶP bất phương trình qua ví dụ thật TRƯỚC (thang máy + vài hệ thức) — chỉ cần thấy 'giống PT nhưng đổi dấu', CHƯA định nghĩa hình thức, CHƯA nói nghiệm, CHƯA giải. Ôn 4 tính chất BĐT vì lát nữa dùng để giải. Nguồn đề: ~70 phần trăm bê từ 10 đề GKI 2024-2025 + 30 phần trăm từ phiếu bài tập TOANMATH."
+    },
+    {
+      "kind": "concept",
+      "number": 2,
+      "title": "Khái niệm — BPT bậc nhất một ẩn \\& cách giải",
+      "blocks": [
+        {
+          "type": "noted",
+          "text": "\\textbf{(1) Bất phương trình bậc nhất một ẩn là gì?} Các hệ thức ở phần Khám phá đều chỉ có \\textbf{một ẩn} và ẩn ở \\textbf{bậc nhất}. Ta gọi chúng là \\textbf{bất phương trình bậc nhất một ẩn} — dạng chung: [[br]] $$ax+b>0 \\quad(\\text{hoặc } ax+b<0,\\ ax+b\\ge0,\\ ax+b\\le0),\\quad a\\neq0.$$",
+          "variant": ""
+        },
+        {
+          "type": "noted",
+          "text": "\\textbf{(2) Ví dụ nhận biết.} Mỗi hệ thức dưới đây \\emph{có} là BPT bậc nhất một ẩn không? Cùng điền (\\emph{là} / \\emph{không}) rồi nói rõ vì sao. [[br]] a) $5x-12<0$:\\;\\; [[mblank:1.2cm]] \\;— nếu là, ghi $a=[[mblank:0.7cm]],\\ b=[[mblank:0.9cm]]$. [[br]] b) $x^3-2x\\ge0$:\\;\\; [[mblank:1.2cm]] \\;— vì vế trái bậc [[mblank:0.7cm]]. [[br]] c) $0\\cdot x+4>0$:\\;\\; [[mblank:1.2cm]] \\;— vì hệ số của ẩn $a=[[mblank:0.7cm]]$ (không thoả $a\\neq0$). [[br]] d) $0{,}5u-3\\le0$:\\;\\; [[mblank:1.2cm]] \\;— ẩn là [[mblank:0.7cm]].",
+          "variant": "example"
+        },
+        {
+          "type": "noted",
+          "text": "\\textbf{(3) Nghiệm của bất phương trình.} Thay một số vào ẩn: nếu được khẳng định \\textbf{đúng} thì số đó là \\textbf{một nghiệm}. Cùng thử với $3x+8<20$: [[br]] $\\bullet$\\; $x=2$: vế trái $=3\\cdot2+8=14$, mà $14<20$ \\emph{đúng}, nên $x=2$ [[mblank:1.4cm]] nghiệm. [[br]] $\\bullet$\\; $x=4$: vế trái $=3\\cdot4+8=20$, mà $20<20$ \\emph{sai}, nên $x=4$ [[mblank:1.8cm]] nghiệm. [[br]] \\textbf{Giải} một bất phương trình là tìm \\emph{tất cả} các nghiệm của nó.",
+          "variant": ""
+        },
+        {
+          "type": "noted",
+          "text": "\\textbf{(4) Cách giải.} \\;Ví dụ mẫu 1: giải $-2x-4>0$. [[br]] $-2x-4>0$ [[br]] $-2x\\ [[mblank:0.7cm]]\\ [[mblank:0.7cm]]$ \\;(chuyển $-4$ sang vế phải, đổi dấu) [[br]] $x\\ [[mblank:0.8cm]]\\ [[mblank:1cm]]$ \\;(chia hai vế cho $-2<0$, \\textbf{đổi chiều}) [[br]] Vậy nghiệm là $x\\ [[mblank:1.6cm]]$.",
+          "variant": "example"
+        },
+        {
+          "type": "noted",
+          "text": "\\textbf{(5) Rút ra quy tắc} (từ ví dụ trên). Giải $ax+b<0$ ($a\\neq0$): chuyển $b$ sang vế phải rồi chia hai vế cho $a$ ($ax<-b$): [[br]] $\\bullet$\\; Nếu $a>0$: $x<-\\dfrac{b}{a}$ \\;(giữ chiều). [[br]] $\\bullet$\\; Nếu $a<0$: $x>-\\dfrac{b}{a}$ \\;(\\textbf{đổi chiều} do chia số âm). [[br]] Các dạng $>0,\\ \\ge0,\\ \\le0$ làm tương tự.",
+          "variant": ""
+        },
+        {
+          "type": "figure",
+          "width": "0.92\\linewidth",
+          "caption": "Quy trình 3 bước giải BPT bậc nhất — bước chia hệ số là chỗ hay sai dấu.",
+          "tikz": "\\begin{tikzpicture}[node distance=6mm and 9mm,font=\\small]\\node[flownode](a){\\textbf{B1}\\\\Chuyển vế,\\\\đổi dấu};\\node[flownode,right=of a](b){\\textbf{B2}\\\\Thu gọn về\\\\$ax$ và số};\\node[flowkey,right=of b](c){\\textbf{B3}\\\\Chia cho $a$:\\\\$a<0$ ĐỔI CHIỀU};\\draw[flowarrow](a)--(b);\\draw[flowarrow](b)--(c);\\end{tikzpicture}"
+        },
+        {
+          "type": "noted",
+          "text": "\\textbf{Ví dụ mẫu 2.} Giải $2x-6\\ge0$. [[br]] $2x\\ [[mblank:0.7cm]]\\ [[mblank:0.7cm]]$ \\;(chuyển $-6$ sang vế phải, đổi dấu) [[br]] $x\\ [[mblank:0.8cm]]\\ [[mblank:1cm]]$ \\;(chia $2>0$, giữ chiều) [[br]] Vậy nghiệm là $x\\ [[mblank:1.6cm]]$.",
+          "variant": "example"
+        },
+        {
+          "type": "noted",
+          "text": "\\textbf{Khắc cốt.} Giải BPT bậc nhất chỉ có \\textbf{3 bước}: chuyển vế (đổi dấu) $\\to$ thu gọn $\\to$ chia hệ số. Riêng bước chia: \\textbf{số dương giữ chiều, số âm ĐỔI CHIỀU}. Đây là điểm ăn chắc của lớp mình.",
+          "variant": "target"
+        }
+      ],
+      "solution": "(1) dạng $ax+b$ với $a\\neq0$. [[br]] (2) a) \\emph{là} ($a=5,\\ b=-12$); b) \\emph{không} (vế trái bậc $3$); c) \\emph{không} ($a=0$); d) \\emph{là} (ẩn $u$). [[br]] (3) $x=2$ \\emph{là} nghiệm; $x=4$ \\emph{không là} nghiệm. [[br]] (4) Ví dụ 1: $-2x>4 \\Rightarrow x<-2$. [[br]] Ví dụ 2: $2x\\ge6 \\Rightarrow x\\ge3$.",
+      "teacher_note": "Trọng tâm — dạy theo ĐÚNG THỨ TỰ LOGIC + QUY NẠP: (1) định nghĩa BPT bậc nhất (chốt từ ví dụ Khám phá) $\\to$ (2) nhận biết $\\to$ (3) MỚI tới 'nghiệm' (lúc này HS đã biết BPT là gì) $\\to$ (4) cho VÍ DỤ GIẢI trước $\\to$ (5) rồi mới RÚT RA quy tắc. Hộp 'VÍ DỤ MẪU' chỉ dán lên ví dụ thật; định nghĩa/quy tắc để hộp thường. Bước biến đổi nói 'chuyển vế đổi dấu' (không máy móc). Cho HS đọc TO quy tắc đổi chiều."
+    },
+    {
+      "kind": "practice1",
+      "number": 3,
+      "title": "Luyện tập 1 — Nhận biết \\& thử nghiệm",
+      "blocks": [
+        {
+          "type": "problem",
+          "label": "Bài 1.",
+          "tier": "onclass",
+          "level": 1,
+          "statement": "Bất phương trình nào sau đây là BPT bậc nhất một ẩn? Với những BPT đó, chỉ ra hệ số $a,\\ b$."
+        },
+        {
+          "type": "para",
+          "text": "\\begin{minipage}[t]{0.47\\linewidth} a) $3x+16\\le0$ [[br]] b) $-5x+5>0$ [[br]] c) $x^2-4>0$ [[br]] d) $-3x<0$ \\end{minipage}\\hfill\\begin{minipage}[t]{0.47\\linewidth} e) $-3x+7\\le0$ [[br]] f) $4x-\\dfrac{3}{2}>0$ [[br]] g) $x^3>0$ [[br]] h) $2x^2-19\\le0$ \\end{minipage}"
+        },
+        {
+          "type": "writelines",
+          "count": 0
+        },
+        {
+          "type": "problem",
+          "label": "Bài 2.",
+          "tier": "onclass",
+          "level": 1,
+          "statement": "Bất phương trình nào sau đây là BPT bậc nhất một ẩn? (giải thích vì sao những cái còn lại không phải)"
+        },
+        {
+          "type": "para",
+          "text": "\\begin{minipage}[t]{0.47\\linewidth} a) $0x<0$ [[br]] b) $3x<0$ [[br]] c) $x^3+1\\ge0$ [[br]] d) $-x+1\\le0$ \\end{minipage}\\hfill\\begin{minipage}[t]{0.47\\linewidth} e) $a+2023>0$ [[br]] f) $0x-5<0$ [[br]] g) $5x-7\\le0$ [[br]] h) $x^2+1\\le0$ \\end{minipage}"
+        },
+        {
+          "type": "writelines",
+          "count": 0
+        },
+        {
+          "type": "problem",
+          "label": "Bài 3.",
+          "tier": "onclass",
+          "level": 1,
+          "statement": "a) Xác định hệ số $a,\\ b$ của BPT bậc nhất $x-2024>0$. [[br]] b) Tìm $m$ để $(m-1)x+3>0$ là BPT bậc nhất một ẩn. [[br]] c) Nhân hai vế của $-3x>30$ với $-\\dfrac{1}{3}$ (nhớ đổi chiều) ta được BPT nào?"
+        },
+        {
+          "type": "writelines",
+          "count": 0
+        },
+        {
+          "type": "problem",
+          "label": "Bài 4.",
+          "tier": "onclass",
+          "level": 1,
+          "statement": "Thử nghiệm (thay số rồi xét khẳng định đúng/sai):"
+        },
+        {
+          "type": "para",
+          "text": "a) Trong các số $-2;\\ 0;\\ 5$, số nào là nghiệm của $2x-10<0$? [[br]] b) Kiểm tra $x=3$ có là nghiệm của mỗi BPT sau không: [[br]] \\quad $\\bullet$\\; $2x-7<0$ [[br]] \\quad $\\bullet$\\; $-0{,}3x+1{,}7\\le0$ [[br]] \\quad $\\bullet$\\; $-5x^2+2x>0$ [[br]] c) Số $x=-3$ \\textbf{không} là nghiệm của bất phương trình nào dưới đây: [[br]] \\quad $\\bullet$\\; $2x+1>-5$ [[br]] \\quad $\\bullet$\\; $7-2x\\le10-x$ [[br]] \\quad $\\bullet$\\; $-3x>4x+3$"
+        },
+        {
+          "type": "writelines",
+          "count": 0
+        }
+      ],
+      "solution": "\\textbf{Bài 1.} BPT bậc nhất một ẩn: [[br]] a) $3x+16\\le0$ ($a=3,\\ b=16$); b) $-5x+5>0$ ($a=-5,\\ b=5$); d) $-3x<0$ ($a=-3,\\ b=0$); e) $-3x+7\\le0$ ($a=-3,\\ b=7$); f) $4x-\\dfrac{3}{2}>0$ ($a=4,\\ b=-\\dfrac{3}{2}$). [[br]] Không phải: c), h) bậc hai; g) bậc ba.\\par\\smallskip \\textbf{Bài 2.} BPT bậc nhất một ẩn: [[br]] b) $3x<0$; d) $-x+1\\le0$; e) $a+2023>0$ (ẩn $a$); g) $5x-7\\le0$. [[br]] Không phải: a), f) hệ số ẩn $=0$; c) bậc ba; h) bậc hai.\\par\\smallskip \\textbf{Bài 3.} a) $a=1,\\ b=-2024$. [[br]] b) cần $m-1\\neq0 \\Leftrightarrow m\\neq1$. [[br]] c) $-3x>30 \\Rightarrow x<-10$.\\par\\smallskip \\textbf{Bài 4.} [[br]] a) $2x-10<0\\Leftrightarrow x<5$: $-2$ và $0$ là nghiệm; $5$ không. [[br]] b) $x=3$: $-1<0$ đúng (là nghiệm); $0{,}8\\le0$ sai (không); $-39>0$ sai (không). [[br]] c) Thay $x=-3$: $2x+1>-5$ cho $-5>-5$ \\emph{sai} $\\Rightarrow$ \\textbf{không} là nghiệm của $2x+1>-5$; hai cái còn lại đều đúng (là nghiệm).",
+      "teacher_note": "LUYỆN TẬP 1 = toàn NHẬN BIẾT (tầng C cần thạo 100 phần trăm nền). Bài 1,2 nhận biết dạng (2 cột, nguồn TOANMATH); Bài 3 điều kiện a khác 0 + tìm m + nhân số âm đổi chiều; Bài 4 thử nghiệm (câu c bẫy dấu ngặt: -5>-5 là SAI). Tất cả là sao ★☆☆. Đã đối chiếu SymPy."
+    },
+    {
+      "kind": "practice2",
+      "number": 4,
+      "title": "Luyện tập 2 — Giải bất phương trình",
+      "blocks": [
+        {
+          "type": "noted",
+          "text": "\\textbf{Ví dụ mẫu.} Giải $5x+7>8x-5$. [[br]] $5x-8x\\ [[mblank:0.7cm]]\\ [[mblank:1.4cm]]$ \\;(chuyển vế, đổi dấu) [[br]] $-3x\\ [[mblank:0.7cm]]\\ [[mblank:1cm]]$ [[br]] $x\\ [[mblank:1.4cm]]$ \\;(chia $-3<0$, \\textbf{đổi chiều}) [[br]] Vậy nghiệm là $x\\ [[mblank:1.4cm]]$.",
+          "variant": "example"
+        },
+        {
+          "type": "problem",
+          "label": "Bài 5.",
+          "tier": "onclass",
+          "level": 2,
+          "statement": "Giải các bất phương trình bậc nhất sau (trích đề GIỮA KÌ I):"
+        },
+        {
+          "type": "para",
+          "text": "\\begin{minipage}[t]{0.47\\linewidth} a) $7x-14\\ge0$ [[br]] b) $5x-8<2x+1$ [[br]] c) $2(x-3)<5x$ \\end{minipage}\\hfill\\begin{minipage}[t]{0.47\\linewidth} d) $-2x-4>0$ [[br]] e) $2x-6\\ge0$ [[br]] f) $-8x-27<0$ \\end{minipage}"
+        },
+        {
+          "type": "writelines",
+          "count": 0
+        },
+        {
+          "type": "problem",
+          "label": "Bài 6.",
+          "tier": "onclass",
+          "level": 2,
+          "statement": "Giải các bất phương trình sau (bỏ ngoặc trước, rồi quy về bậc nhất):"
+        },
+        {
+          "type": "para",
+          "text": "a) $-15x+4(2x-1)\\ge10(x+3)$ \\;(GKI Thái Thịnh) [[br]] b) $3x-(6+2x)\\le3(x+4)$ [[br]] c) $2x-5\\le4x+3$"
+        },
+        {
+          "type": "writelines",
+          "count": 0
+        },
+        {
+          "type": "problem",
+          "label": "Bài 7.",
+          "tier": "onclass",
+          "level": 2,
+          "statement": "Giải các bất phương trình sau (khai triển hằng đẳng thức; các hạng tử bậc hai sẽ \\emph{triệt tiêu}, đưa về bậc nhất):"
+        },
+        {
+          "type": "para",
+          "text": "a) $(x+1)(2x-1)<2x^2-4x-1$ \\;(GKI Bát Tràng) [[br]] b) $(x+1)^2-x(x-1)\\ge5x$ \\;(GKI Nguyễn Du)"
+        },
+        {
+          "type": "writelines",
+          "count": 0
+        },
+        {
+          "type": "problem",
+          "label": "Bài 8.",
+          "tier": "onclass",
+          "level": 2,
+          "statement": "Tìm \\emph{số nguyên lớn nhất} thoả $9-5x>1{,}5$; và \\emph{số nguyên nhỏ nhất} thoả $-8x-27<0$. (Giải xong mới chọn số nguyên thoả dấu.)"
+        },
+        {
+          "type": "writelines",
+          "count": 0
+        }
+      ],
+      "solution": "\\textbf{Ví dụ mẫu.} $5x-8x>-5-7 \\Rightarrow -3x>-12 \\Rightarrow x<4$.\\par\\smallskip \\textbf{Bài 5.} [[br]] a) $7x\\ge14\\Rightarrow x\\ge2$; b) $3x<9\\Rightarrow x<3$; c) $2x-6<5x\\Rightarrow -3x<6\\Rightarrow x>-2$; [[br]] d) $-2x>4\\Rightarrow x<-2$; e) $2x\\ge6\\Rightarrow x\\ge3$; f) $-8x<27\\Rightarrow x>-\\dfrac{27}{8}$.\\par\\smallskip \\textbf{Bài 6.} [[br]] a) $-15x+8x-4\\ge10x+30 \\Rightarrow -17x\\ge34 \\Rightarrow x\\le-2$; [[br]] b) $x-6\\le3x+12 \\Rightarrow -2x\\le18 \\Rightarrow x\\ge-9$; [[br]] c) $-2x\\le8 \\Rightarrow x\\ge-4$.\\par\\smallskip \\textbf{Bài 7.} [[br]] a) $2x^2-x-1<2x^2-4x-1 \\Rightarrow 3x<0 \\Rightarrow x<0$; [[br]] b) $x^2+2x+1-x^2+x\\ge5x \\Rightarrow 3x+1\\ge5x \\Rightarrow -2x\\ge-1 \\Rightarrow x\\le\\dfrac{1}{2}$.\\par\\smallskip \\textbf{Bài 8.} $9-5x>1{,}5 \\Rightarrow x<1{,}5$: số nguyên lớn nhất là $1$. [[br]] $-8x-27<0 \\Rightarrow x>-\\dfrac{27}{8}=-3{,}375$: số nguyên nhỏ nhất là $-3$.",
+      "teacher_note": "LUYỆN TẬP 2 = GIẢI (sao ★★☆). Bài 5 giải cơ bản (a,b,c bê GKI Bát Tràng/Cổ Nhuế/Ngô Gia Tự; câu c,d,f đổi chiều). Bài 6 có ngoặc (a Thái Thịnh ra x<=-2). Bài 7 KHAI TRIỂN: nhấn bậc hai TRIỆT TIÊU rồi quy bậc nhất (Bát Tràng ra x<0, Nguyễn Du ra x<=1/2) — vẫn ra nghiệm thường, hợp lớp C. Bài 8 nghiệm nguyên. ĐÃ BỎ dạng vô-nghiệm/đúng-mọi-x (vận dụng cao, không hợp lớp C). Đã đối chiếu SymPy."
+    },
+    {
+      "kind": "reflection",
+      "number": 5,
+      "title": "Tổng kết",
+      "blocks": [
+        {
+          "type": "para",
+          "text": "Giải BPT bậc nhất là quy trình ba bước: \\textbf{chuyển vế} (đổi dấu) $\\to$ \\textbf{thu gọn} về $ax$ và số $\\to$ \\textbf{chia hệ số} (nhớ đổi chiều khi chia số âm). [[br]] Có ngoặc/khai triển thì rút gọn trước rồi quy về bậc nhất. Gặp ``số nguyên lớn nhất / nhỏ nhất'' thì giải xong mới chọn số nguyên thoả dấu. [[br]] \\emph{Em tự điền sơ đồ dưới đây để hệ thống lại cả buổi — giữ làm bản tóm tắt ôn nhanh trước khi thi.}"
+        },
+        {
+          "type": "mindmap",
+          "caption": "Tự điền sơ đồ để hệ thống lại cả buổi (bản tóm tắt mang về ôn)",
+          "root": "BPT bậc nhất một ẩn",
+          "branches": [
+            {
+              "label": "Dạng \\& nhận biết",
+              "children": [
+                { "label": "$ax+b>0$ với $a[[blank:1cm]]0$" },
+                { "label": "Loại: bậc $\\ge2$, ẩn ở [[blank:1.4cm]]" }
+              ]
+            },
+            {
+              "label": "Cách giải",
+              "children": [
+                { "label": "Chia $a>0$: [[blank:1.4cm]] chiều" },
+                { "label": "Chia $a<0$: [[blank:1.4cm]] chiều" }
+              ]
+            },
+            {
+              "label": "Thử nghiệm",
+              "children": [
+                { "label": "Thay số $\\to$ khẳng định [[blank:1.2cm]]" }
+              ]
+            }
+          ]
+        },
+        {
+          "type": "para",
+          "text": "\\textbf{BÀI TẬP VỀ NHÀ} (làm vào vở, tiết sau nộp)."
+        },
+        {
+          "type": "problem",
+          "label": "Bài 9.",
+          "tier": "btvn",
+          "level": 2,
+          "statement": "Giải các bất phương trình sau:"
+        },
+        {
+          "type": "para",
+          "text": "\\begin{minipage}[t]{0.47\\linewidth} a) $6x+5<0$ [[br]] b) $-2x-7>0$ [[br]] c) $2x+5<3x-4$ [[br]] d) $-3x+5\\ge-4x+3$ \\end{minipage}\\hfill\\begin{minipage}[t]{0.47\\linewidth} e) $5x+7>8x-5$ [[br]] f) $-4x+3\\le3x-1$ [[br]] g) $-0{,}3x+12>0$ [[br]] h) $\\dfrac{3}{4}x-6\\le0$ \\end{minipage}"
+        },
+        {
+          "type": "problem",
+          "label": "Bài 10.",
+          "tier": "btvn",
+          "level": 1,
+          "statement": "Kiểm tra nghiệm:"
+        },
+        {
+          "type": "para",
+          "text": "a) Bất phương trình nào trong ba BPT sau nhận $x=-2{,}5$ làm nghiệm: [[br]] \\quad $\\bullet$\\; $3x-5>2x-8$ [[br]] \\quad $\\bullet$\\; $x-1\\le5x+9$ [[br]] \\quad $\\bullet$\\; $5x<12$ [[br]] b) Tìm một số là nghiệm và một số không là nghiệm của $4x+5>0$."
+        },
+        {
+          "type": "problem",
+          "label": "Bài 11.",
+          "tier": "btvn",
+          "level": 2,
+          "statement": "Giải các bất phương trình sau (bỏ ngoặc / quy về bậc nhất):"
+        },
+        {
+          "type": "para",
+          "text": "\\begin{minipage}[t]{0.47\\linewidth} a) $-8x-27<0$ [[br]] b) $\\dfrac{5}{4}x+20\\ge0$ \\end{minipage}\\hfill\\begin{minipage}[t]{0.47\\linewidth} c) $5+7x>4x-7$ [[br]] d) $2(x-0{,}5)-1{,}4\\ge1{,}5-(x+1{,}2)$ \\end{minipage}"
+        },
+        {
+          "type": "problem",
+          "label": "Bài 12.",
+          "tier": "btvn",
+          "level": 3,
+          "statement": "\\textbf{(Vận dụng — GKI Bát Tràng)} Lãi suất gửi tiết kiệm kì hạn $12$ tháng là $4{,}5\\%$/năm. Bác Hoàng muốn nhận tiền lãi sau $12$ tháng \\emph{ít nhất} $1{,}8$ triệu đồng. Gọi số tiền gửi là $x$ (triệu đồng), $x>0$. [[br]] a) \\;[NB] ``ít nhất $1{,}8$ triệu'' cho ta dấu nào? [[br]] b) \\;[TH] Viết biểu thức tiền lãi $12$ tháng theo $x$ (lãi $=4{,}5\\%\\cdot x$). [[br]] c) \\;[VD] Lập bất phương trình, giải và trả lời: gửi ít nhất bao nhiêu triệu?"
+        }
+      ],
+      "solution": "\\textbf{BTVN.}\\par\\smallskip \\textbf{Bài 9.} [[br]] a) $x<-\\dfrac{5}{6}$; b) $-2x>7\\Rightarrow x<-\\dfrac{7}{2}$; c) $-x<-9\\Rightarrow x>9$; d) $x\\ge-2$; [[br]] e) $-3x>-12\\Rightarrow x<4$; f) $-7x\\le-4\\Rightarrow x\\ge\\dfrac{4}{7}$; g) $-0{,}3x>-12\\Rightarrow x<40$; h) $\\dfrac{3}{4}x\\le6\\Rightarrow x\\le8$.\\par\\smallskip \\textbf{Bài 10.} [[br]] a) Thay $x=-2{,}5$: $3x-5>2x-8\\Leftrightarrow x>-3$ (đúng); $x-1\\le5x+9\\Leftrightarrow x\\ge-2{,}5$ (đúng); $5x<12\\Leftrightarrow x<2{,}4$ (đúng). Vậy $x=-2{,}5$ là nghiệm của \\emph{cả ba}. [[br]] b) $4x+5>0\\Leftrightarrow x>-1{,}25$; vd $x=0$ là nghiệm, $x=-2$ không.\\par\\smallskip \\textbf{Bài 11.} [[br]] a) $-8x<27\\Rightarrow x>-\\dfrac{27}{8}$; b) $\\dfrac{5}{4}x\\ge-20\\Rightarrow x\\ge-16$; c) $3x>-12\\Rightarrow x>-4$; [[br]] d) $2x-2{,}4\\ge0{,}3-x \\Rightarrow 3x\\ge2{,}7 \\Rightarrow x\\ge0{,}9$.\\par\\smallskip \\textbf{Bài 12.} a) ``ít nhất'' $\\to$ dấu $\\ge$. [[br]] b) Tiền lãi $=4{,}5\\%\\cdot x=0{,}045x$ (triệu đồng). [[br]] c) $0{,}045x\\ge1{,}8 \\Rightarrow x\\ge40$. Vậy bác Hoàng phải gửi \\emph{ít nhất $40$ triệu đồng}.\\par\\medskip \\textbf{Đáp án sơ đồ:} $a\\neq0$; loại khi bậc $\\ge2$ hoặc ẩn ở \\emph{mẫu}; chia $a>0$ \\emph{giữ} chiều; chia $a<0$ \\emph{đổi} chiều; thử nghiệm $\\to$ khẳng định \\emph{đúng}.",
+      "teacher_note": "BTVN tầng C: Bài 9 (8 BPT giải drill, 2 cột — TH), Bài 10 (kiểm nghiệm — NB), Bài 11 (4 BPT có ngoặc — TH), Bài 12 (1 VẬN DỤNG lãi suất GKI Bát Tràng, TÁCH a-b-c để HS yếu ăn điểm a,b; nghiệm tròn 40 triệu). KHÔNG giao tích/thương, vô-nghiệm hay HSG ở lớp C. Đã đối chiếu SymPy toàn bộ."
+    }
+  ]
+}

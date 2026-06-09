@@ -1,0 +1,459 @@
+{
+  "slug": "demo-c-bat-dang-thuc",
+  "title": "Bất đẳng thức",
+  "eyebrow": "CHỦ ĐỀ • ĐẠI SỐ — PHIẾU C: TÍNH CHẤT \\& SO SÁNH BĐT",
+  "grade_label": "Lớp 9 • Ôn vào 10",
+  "stages": [
+    {
+      "kind": "review",
+      "number": 1,
+      "title": "Khám phá — Thứ tự trên trục số",
+      "blocks": [
+        {
+          "type": "opener",
+          "text": "\\textbf{Hai biển báo tốc độ.} Trên đường cao tốc có hai biển: biển đỏ \\emph{tốc độ tối đa $50$}, biển xanh \\emph{tốc độ tối thiểu $30$}. Gọi $v$ là tốc độ xe (km/h). [[br]] ``Tối đa $50$'' nghĩa là $v$ \\textbf{không vượt quá} $50$, tức $v\\le 50$; ``tối thiểu $30$'' nghĩa là $v$ \\textbf{không nhỏ hơn} $30$, tức $v\\ge 30$. [[br]] Cả buổi hôm nay xoay quanh đúng kiểu hệ thức ``lớn hơn / nhỏ hơn'' này — gọi là \\textbf{bất đẳng thức} — và cách \\textbf{biến đổi} chúng mà không cần tính cụ thể.",
+          "tikz": "\\begin{tikzpicture}[line width=0.9pt,line cap=round]\\draw[rule,line width=2.2pt] (0,0) circle (0.82);\\node[font=\\large\\bfseries] at (0,0){50};\\node[font=\\scriptsize\\sffamily] at (0,-1.2){tối đa: $v\\le 50$};\\draw[brand,line width=2.2pt] (2.6,0) circle (0.82);\\node[font=\\large\\bfseries] at (2.6,0){30};\\node[font=\\scriptsize\\sffamily] at (2.6,-1.2){tối thiểu: $v\\ge 30$};\\end{tikzpicture}"
+        },
+        {
+          "type": "para",
+          "text": "Trên trục số, điểm biểu diễn số bé hơn luôn nằm bên \\textbf{trái}. Em nhắc lại vài sự thật nền sẽ dùng suốt buổi:"
+        },
+        {
+          "type": "noted",
+          "text": "\\textbf{Nền 1 — đọc dấu số âm.} Số âm có trị tuyệt đối lớn hơn thì \\textbf{bé hơn}: $-\\dfrac{1}{2}\\ [[mblank:0.7cm]]\\ -\\dfrac{1}{3}$;\\quad $-2{,}5\\ [[mblank:0.7cm]]\\ -1$. [[br]] \\textbf{Nền 2 — bình phương.} Với mọi số thực $a$: $a^2\\ [[mblank:0.7cm]]\\ 0$, nên $(-3)^2\\ [[mblank:0.7cm]]\\ 0$. [[br]] \\textbf{Nền 3 — dấu của tổng.} Tổng hai số dương là số [[blank:1.8cm]]; tổng hai số âm là số [[blank:1.8cm]]."
+        },
+        {
+          "type": "noted",
+          "variant": "trap",
+          "text": "\\textbf{Luật sống còn của cả buổi.} Khi \\textbf{nhân hoặc chia hai vế cho một số ÂM} thì phải \\textbf{ĐỔI CHIỀU} dấu bất đẳng thức. [[br]] \\emph{Ví dụ:} $-7<-5$, nhân với $-3$ (âm) $\\Rightarrow 21\\ [[mblank:0.7cm]]\\ 15$. [[br]] Gần như mọi điểm mất oan đều nằm ở chỗ quên đổi chiều này — khoanh đỏ lại."
+        },
+        {
+          "type": "para",
+          "text": "\\textbf{Khởi động.} Điền dấu thích hợp ($<,\\ >,\\ =$): [[br]] $0\\ [[mblank:0.7cm]]\\ 1{,}5$ \\qquad $(-3)^2\\ [[mblank:0.7cm]]\\ 0$ \\qquad $-\\dfrac{1}{2}\\ [[mblank:0.7cm]]\\ -\\dfrac{1}{3}$ \\qquad $-2{,}5\\ [[mblank:0.7cm]]\\ -1$"
+        }
+      ],
+      "solution": "Nền 1: $-\\dfrac12<-\\dfrac13$;\\ $-2{,}5<-1$. [[br]] Nền 2: $a^2\\ge 0$;\\ $(-3)^2=9>0$. [[br]] Nền 3: tổng hai số dương là số \\emph{dương}; tổng hai số âm là số \\emph{âm}. [[br]] Luật đổi chiều: $21>15$. [[br]] Khởi động: $0<1{,}5$;\\ $(-3)^2>0$;\\ $-\\dfrac12<-\\dfrac13$;\\ $-2{,}5<-1$.",
+      "teacher_note": "CHẶNG 1 (~15′) — phần NỀN cho nhóm C yếu gốc. Ôn nhanh trên bảng tương tác, để trống ô dấu cho HS điền. Bẫy chí mạng: HS hay ghi $(-3)^2<0$ vì thấy dấu trừ — nhấn 'bình phương luôn không âm'. Đọc to luật ĐỔI CHIỀU 1 lần cả lớp."
+    },
+    {
+      "kind": "concept",
+      "number": 2,
+      "title": "Khái niệm — Bất đẳng thức \\& bốn tính chất",
+      "blocks": [
+        {
+          "type": "noted",
+          "text": "\\textbf{Khái niệm.} Hệ thức dạng $a<b$ (hay $a>b$, $a\\le b$, $a\\ge b$) gọi là \\textbf{bất đẳng thức}; $a$ là \\textbf{vế trái}, $b$ là \\textbf{vế phải}. Nếu đồng thời $a<b$ và $b<c$ thì viết gộp $a<b<c$. [[br]] Hai BĐT \\emph{cùng chiều} nếu cùng dấu $<$ (hoặc cùng $>$)."
+        },
+        {
+          "type": "noted",
+          "text": "\\textbf{Dịch lời văn sang ký hiệu (đóng khung — học thuộc).} [[br]] ``tối đa / không quá / nhiều nhất / không lớn hơn'' $\\Rightarrow\\ \\le$ \\qquad ``tối thiểu / ít nhất / không nhỏ hơn'' $\\Rightarrow\\ \\ge$ [[br]] ``là số dương'' $\\Rightarrow\\ >0$ \\qquad ``là số âm'' $\\Rightarrow\\ <0$ \\qquad ``không âm'' $\\Rightarrow\\ \\ge 0$"
+        },
+        {
+          "type": "noted",
+          "variant": "example",
+          "text": "\\textbf{Ví dụ mẫu (thầy + trò cùng điền).} Viết bất đẳng thức diễn tả: [[br]] a) $x$ nhỏ hơn $5$ $\\;\\Rightarrow\\;$ $[[mblank:1.6cm]]$. [[br]] b) $a$ \\emph{không lớn hơn} $b$ $\\;\\Rightarrow\\;$ $[[mblank:1.6cm]]$. [[br]] c) $m$ \\emph{không nhỏ hơn} $n$ $\\;\\Rightarrow\\;$ $[[mblank:1.6cm]]$."
+        },
+        {
+          "type": "para",
+          "text": "\\textbf{Bốn tính chất — vũ khí biến đổi bất đẳng thức.} Theo dõi ví dụ rồi điền dấu còn thiếu:"
+        },
+        {
+          "type": "noted",
+          "text": "\\textbf{T1 — Bắc cầu:} nếu $a<b$ và $b<c$ thì $a\\ [[mblank:0.7cm]]\\ c$. [[br]] \\emph{Ví dụ:} $2<5$ và $5<9 \\Rightarrow 2<9$."
+        },
+        {
+          "type": "noted",
+          "text": "\\textbf{T2 — Cộng (trừ) cùng một số:} $a<b \\Rightarrow a+c\\ [[mblank:0.7cm]]\\ b+c$ (chiều giữ nguyên). [[br]] \\emph{Ví dụ:} $3<7 \\Rightarrow 3+10<7+10$, tức $13<17$."
+        },
+        {
+          "type": "noted",
+          "text": "\\textbf{T3 — Nhân (chia) với số DƯƠNG} ($c>0$): $a<b \\Rightarrow ac\\ [[mblank:0.7cm]]\\ bc$ (chiều giữ nguyên). [[br]] \\emph{Ví dụ:} $-7<-5$, nhân $3>0 \\Rightarrow -21<-15$."
+        },
+        {
+          "type": "noted",
+          "variant": "trap",
+          "text": "\\textbf{T4 — Nhân (chia) với số ÂM} ($c<0$): $a<b \\Rightarrow ac\\ [[mblank:0.7cm]]\\ bc$ \\;(\\textbf{ĐỔI CHIỀU!}). [[br]] \\emph{Ví dụ:} $-7<-5$, nhân $-3<0 \\Rightarrow 21>15$. [[br]] Khắc cốt: nhân/chia hai vế cho số \\textbf{âm} thì \\textbf{đổi chiều} — lỗi mất điểm oan phổ biến nhất."
+        },
+        {
+          "type": "noted",
+          "variant": "target",
+          "text": "\\textbf{Vì sao phải thuộc bốn tính chất này?} Đây chính là các \\emph{thao tác biến đổi} mà em sẽ dùng lại khi \\textbf{giải bất phương trình} ở bài sau (chuyển vế đổi dấu = T2; chia hệ số = T3/T4). [[br]] Hôm nay luyện chắc trên bất đẳng thức để bài sau giải bất phương trình không vấp."
+        }
+      ],
+      "solution": "Ví dụ mẫu: a) $x<5$; b) $a\\le b$; c) $m\\ge n$.\\par\\smallskip T1: $a<c$. [[br]] T2: $a+c<b+c$. [[br]] T3: $ac<bc$ (giữ chiều). [[br]] T4: $ac>bc$ (đổi chiều).",
+      "teacher_note": "CHẶNG 2 (~25′) — lý thuyết trọng tâm. Viết T4 bằng phấn đỏ, đóng khung. Để trống toàn bộ ví dụ mẫu + ô dấu cho HS điền trên bảng tương tác, GV chốt sau. Cho HS đọc to T4 (nhân số âm đổi chiều). Thẻ 'target' là NHỊP CẦU sang bất phương trình — chỉ nói miệng 1 câu, KHÔNG giải BPT ở đây."
+    },
+    {
+      "kind": "practice1",
+      "number": 3,
+      "title": "Luyện tập 1 — Trắc nghiệm \\& nhận biết",
+      "blocks": [
+        {
+          "type": "noted",
+          "text": "\\textbf{PHẦN I — TRẮC NGHIỆM.} Mỗi câu chỉ có \\textbf{một} đáp án đúng; khoanh tròn chữ cái đứng trước đáp án em chọn."
+        },
+        {
+          "type": "problem",
+          "label": "Câu 1.",
+          "tier": "onclass",
+          "level": 1,
+          "statement": "``$m$ lớn hơn hoặc bằng $2024$'' được viết là: [[br]] A.~$m>2024$ \\qquad B.~$m\\ge 2024$ \\qquad C.~$m<2024$ \\qquad D.~$m\\le 2024$"
+        },
+        {
+          "type": "problem",
+          "label": "Câu 2.",
+          "tier": "onclass",
+          "level": 1,
+          "statement": "``$y$ không lớn hơn $-\\dfrac{1}{3}$'' được viết là: [[br]] A.~$y>-\\dfrac{1}{3}$ \\qquad B.~$y\\ge -\\dfrac{1}{3}$ \\qquad C.~$y<-\\dfrac{1}{3}$ \\qquad D.~$y\\le -\\dfrac{1}{3}$"
+        },
+        {
+          "type": "problem",
+          "label": "Câu 3.",
+          "tier": "onclass",
+          "level": 1,
+          "statement": "Biển báo \\emph{tốc độ tối đa $60$ km/h}. Gọi $v$ là tốc độ xe. Chọn câu đúng: [[br]] A.~$v<60$ \\qquad B.~$v\\le 60$ \\qquad C.~$v>60$ \\qquad D.~$v=60$"
+        },
+        {
+          "type": "problem",
+          "label": "Câu 4.",
+          "tier": "onclass",
+          "level": 1,
+          "statement": "Biển báo \\emph{khoảng cách tối thiểu giữa hai xe là $8$ m}. Gọi $d$ là khoảng cách. Chọn câu đúng: [[br]] A.~$d>8$ \\qquad B.~$d\\le 8$ \\qquad C.~$d=8$ \\qquad D.~$d\\ge 8$"
+        },
+        {
+          "type": "problem",
+          "label": "Câu 5.",
+          "tier": "onclass",
+          "level": 2,
+          "statement": "Hãy chọn câu \\textbf{SAI}: [[br]] A.~Nếu $ab>0$ thì $a,b$ cùng dấu. \\qquad B.~Nếu $ab<0$ thì $a,b$ trái dấu. [[br]] C.~Nếu $a>b$ và $b>c$ thì $a<c$. \\qquad D.~Với $a,b>0$, nếu $a>b$ thì $\\sqrt a>\\sqrt b$."
+        },
+        {
+          "type": "problem",
+          "label": "Câu 6.",
+          "tier": "onclass",
+          "level": 2,
+          "statement": "Cho $m$ bất kỳ. Chọn câu đúng: [[br]] A.~$m-3>m-4$ \\qquad B.~$m-3<m-5$ \\qquad C.~$m-3\\ge m-2$ \\qquad D.~$m-3\\le m-6$"
+        },
+        {
+          "type": "problem",
+          "label": "Câu 7.",
+          "tier": "onclass",
+          "level": 2,
+          "statement": "Nếu $a<b$ thì: [[br]] A.~$-3a\\ge -3b$ \\qquad B.~$-3a<-3b$ \\qquad C.~$-3a>-3b$ \\qquad D.~$-3b\\le -3a$"
+        },
+        {
+          "type": "problem",
+          "label": "Câu 8.",
+          "tier": "onclass",
+          "level": 2,
+          "statement": "Cho $-3x-1<-3y-1$. Đáp án nào đúng? [[br]] A.~$x<y$ \\qquad B.~$x>y$ \\qquad C.~$x=y$ \\qquad D.~$x\\le y$"
+        },
+        {
+          "type": "problem",
+          "label": "Câu 9.",
+          "tier": "onclass",
+          "level": 1,
+          "statement": "Cho $a>b$. Khi đó: [[br]] A.~$a-b>0$ \\qquad B.~$a-b<0$ \\qquad C.~$a-b=0$ \\qquad D.~$a-b\\le 0$"
+        },
+        {
+          "type": "problem",
+          "label": "Câu 10.",
+          "tier": "onclass",
+          "level": 2,
+          "statement": "So sánh $m$ và $n$ biết $m-\\dfrac{1}{2}=n$. Chọn câu đúng: [[br]] A.~$m<n$ \\qquad B.~$n\\ge m$ \\qquad C.~$m\\le n$ \\qquad D.~$m>n$"
+        },
+        {
+          "type": "para",
+          "text": "\\textbf{PHẦN II — TỰ LUẬN.}"
+        },
+        {
+          "type": "problem",
+          "label": "Bài 1.",
+          "tier": "onclass",
+          "level": 1,
+          "statement": "(Viết BĐT từ lời văn) Hãy chỉ ra bất đẳng thức diễn tả: [[br]] a) $m$ lớn hơn $8$: [[blank:2.4cm]] [[br]] b) $n$ nhỏ hơn $21$: [[blank:2.4cm]] [[br]] c) Phải \\emph{ít nhất} $18$ tuổi mới được lái ô tô (gọi số tuổi là $t$): [[blank:2.4cm]] [[br]] d) Xe buýt chở \\emph{tối đa} $45$ người (gọi số người là $k$): [[blank:2.4cm]]"
+        },
+        {
+          "type": "problem",
+          "label": "Bài 2.",
+          "tier": "onclass",
+          "level": 1,
+          "statement": "(Ký hiệu \\& biển báo) [[br]] Dùng kí hiệu viết bất đẳng thức: a) $x$ nhỏ hơn hoặc bằng $-2$: [[blank:2.2cm]] \\quad b) $m$ là số âm: [[blank:2.2cm]] \\quad c) $y$ là số dương: [[blank:2.2cm]] [[br]] Biển báo (gọi tốc độ xe là $v$): biển \\emph{tối đa $50$}: $v\\ [[mblank:1cm]]\\ 50$;\\quad biển \\emph{tối thiểu $30$}: $v\\ [[mblank:1cm]]\\ 30$."
+        },
+        {
+          "type": "problem",
+          "label": "Bài 3.",
+          "tier": "onclass",
+          "level": 1,
+          "statement": "(Củng cố nền — điền dấu, làm thật nhanh) Điền dấu thích hợp ($<,\\ >,\\ =$): [[br]] a) $-2{,}5\\ [[mblank:1cm]]\\ -1$ \\qquad b) $0\\ [[mblank:1cm]]\\ 1{,}5$ \\qquad c) $(-3)^2\\ [[mblank:1cm]]\\ 0$ \\qquad d) $-\\dfrac{1}{2}\\ [[mblank:1cm]]\\ -\\dfrac{1}{3}$"
+        },
+        {
+          "type": "writelines",
+          "count": 3
+        }
+      ],
+      "solution": "\\textbf{Trắc nghiệm:} 1.B \\quad 2.D \\quad 3.B \\quad 4.D \\quad 5.C \\quad 6.A \\quad 7.C \\quad 8.B \\quad 9.A \\quad 10.D. [[br]] Giải nhanh vài câu: Câu 5C sai vì bắc cầu phải là $a>c$. Câu 7: $a<b$ nhân $-3<0$ đổi chiều $\\Rightarrow -3a>-3b$. Câu 8: chia $-3<0$ đổi chiều $\\Rightarrow x>y$. Câu 10: $m=n+\\dfrac12>n$.\\par\\smallskip \\textbf{Tự luận.} Bài 1: a) $m>8$; b) $n<21$; c) $t\\ge 18$; d) $k\\le 45$.\\par\\smallskip Bài 2: a) $x\\le -2$; b) $m<0$; c) $y>0$. [[br]] Biển báo: $v\\le 50$ (tối đa); $v\\ge 30$ (tối thiểu).\\par\\smallskip Bài 3: a) $-2{,}5<-1$; b) $0<1{,}5$; c) $(-3)^2>0$; d) $-\\dfrac12<-\\dfrac13$.",
+      "teacher_note": "CHẶNG 3 (~35′) — TRẮC NGHIỆM (10 câu, ~12′: NB Câu 1–4,9; TH Câu 5–8,10) + TỰ LUẬN NB (Bài 1–3, ~20′). Trắc nghiệm chiếu bảng tương tác, HS bấm/khoanh, GV chốt ngay — tạo nhịp nhanh, đúng format thi 2025. Câu 7,8 là đổi chiều khi nhân/chia số âm = thao tác y hệt giải BPT (nhịp cầu). Bài 3 = chùm điền dấu nền cho em hổng gốc. Trắc nghiệm lấy/đổi số từ GEMINI.pdf (Cánh Diều) — đáp án đã verify."
+    },
+    {
+      "kind": "practice2",
+      "number": 4,
+      "title": "Luyện tập 2 — So sánh \\& chứng minh BĐT",
+      "blocks": [
+        {
+          "type": "noted",
+          "variant": "example",
+          "text": "\\textbf{Mẹo nhìn hệ số trước biến (thao tác y hệt khi giải bất phương trình).} [[br]] Cho $a\\le b$, so sánh $-3a-9$ và $-3b-9$: hệ số nhân biến là $-3$ (âm) $\\Rightarrow$ lập tức ĐỔI CHIỀU: $-3a\\ [[mblank:0.6cm]]\\ -3b$; trừ $9$ giữ chiều: $-3a-9\\ [[mblank:0.6cm]]\\ -3b-9$."
+        },
+        {
+          "type": "problem",
+          "label": "Bài 4.",
+          "tier": "onclass",
+          "level": 2,
+          "statement": "(Nhìn hệ số, điền dấu) Cho $a\\le b$, điền dấu và nói nhanh lý do: [[br]] a) $20a-5\\ [[mblank:1cm]]\\ 20b-5$ [[br]] b) $-3a-9\\ [[mblank:1cm]]\\ -3b-9$ [[br]] c) $-4a+3\\ [[mblank:1cm]]\\ -4b+3$"
+        },
+        {
+          "type": "problem",
+          "label": "Bài 5.",
+          "tier": "onclass",
+          "level": 2,
+          "statement": "(Không tính cụ thể, hãy so sánh) [[br]] a) $2+28{,}56$ và $3+28{,}56$ [[br]] b) $(-3)\\cdot(-8)+1975$ và $(-3)\\cdot(-7)+1975$ [[br]] c) $m$ và $n$, biết $-10m\\le -10n$"
+        },
+        {
+          "type": "problem",
+          "label": "Bài 6.",
+          "tier": "onclass",
+          "level": 2,
+          "statement": "(So sánh có căn, dùng bắc cầu) [[br]] a) $\\sqrt2+2$ và $4$ \\;(gợi ý: $\\sqrt2<2$ rồi cộng $2$) [[br]] b) $\\sqrt{29}-\\sqrt6$ và $\\sqrt{28}-\\sqrt6$"
+        },
+        {
+          "type": "problem",
+          "label": "Bài 7.",
+          "tier": "onclass",
+          "level": 2,
+          "statement": "(So sánh $x$ và $y$) [[br]] a) $x-\\dfrac{1}{3}\\le y-\\dfrac{1}{3}$ [[br]] b) $3x+2026>3y+2026$ [[br]] c) $-5x\\ge -5y$"
+        },
+        {
+          "type": "writelines",
+          "count": 4
+        },
+        {
+          "type": "noted",
+          "text": "\\textbf{Phương pháp xét hiệu (để chứng minh).} Muốn so sánh $A$ với $B$, ta xét \\textbf{hiệu} $A-B$: [[br]] nếu $A-B>0$ thì $A>B$;\\quad nếu $A-B<0$ thì $A<B$;\\quad nếu $A-B\\ge 0$ thì $A\\ge B$. [[br]] Công cụ mạnh nhất để chứng minh ``hiệu không âm'': với mọi biểu thức $M$ thì $M^2\\ge 0$."
+        },
+        {
+          "type": "noted",
+          "variant": "example",
+          "text": "\\textbf{Ví dụ mẫu (thầy + trò cùng làm).} Với $a<b$, chứng minh $3(b-1)>3(a-1)$. [[br]] Xét hiệu: $3(b-1)-3(a-1)=3\\big([[mblank:1.4cm]]\\big)$. [[br]] Vì $a<b$ nên $b-a\\ [[mblank:0.7cm]]\\ 0$, suy ra $3(b-a)\\ [[mblank:0.7cm]]\\ 0$. [[br]] Vậy $3(b-1)\\ [[mblank:0.7cm]]\\ 3(a-1)$."
+        },
+        {
+          "type": "figure",
+          "width": "0.92\\linewidth",
+          "caption": "Quy trình xét hiệu 3 bước — bước B2 (đưa về dấu rõ ràng hoặc bình phương) là chốt.",
+          "tikz": "\\begin{tikzpicture}[node distance=5mm and 8mm]\\node[flownode](a){\\textbf{B1}\\\\Lập hiệu $A-B$};\\node[flownode,right=of a](b){\\textbf{B2}\\\\Biến đổi: dấu rõ\\\\hoặc $(\\cdot)^2\\ge 0$};\\node[flowkey,right=of b](c){\\textbf{B3}\\\\Kết luận \\& xét dấu $=$};\\draw[flowarrow](a)--(b);\\draw[flowarrow](b)--(c);\\end{tikzpicture}"
+        },
+        {
+          "type": "problem",
+          "label": "Bài 8.",
+          "tier": "onclass",
+          "level": 3,
+          "statement": "(Xét hiệu) Cho $a<b$. Chứng minh: [[br]] a) $a+b>2a$ [[br]] b) $-3a+19>-3b+19$ [[br]] c) $2a+1<2b+1$"
+        },
+        {
+          "type": "problem",
+          "label": "Bài 9.",
+          "tier": "onclass",
+          "level": 3,
+          "statement": "(Xét hiệu — hai biến) [[br]] a) Cho $m>n$, chứng minh $2m+4>2n+3$. [[br]] b) Cho $a<b$, chứng minh $-3a+5>-3b+5$.",
+          "check": {
+            "kind": "identity",
+            "lhs": "(2*m + 4) - (2*n + 3)",
+            "rhs": "2*(m - n) + 1"
+          }
+        },
+        {
+          "type": "problem",
+          "label": "Bài 10.",
+          "tier": "onclass",
+          "level": 3,
+          "statement": "(Đúng hay sai? Vì sao) [[br]] a) $-3x^2\\le 0$ với mọi số thực $x$. [[br]] b) Vì $5>-3$ nên $\\dfrac{5}{a}>\\dfrac{-3}{a}$ với mọi số thực $a\\ne 0$."
+        },
+        {
+          "type": "problem",
+          "label": "Bài 11.",
+          "tier": "onclass",
+          "level": 3,
+          "statement": "(Xét hiệu \\& bình phương) Chứng minh với mọi số thực $x,\\ y$: $x^2+y^2\\ge 2xy$. \\;(gợi ý: xét hiệu rồi đưa về $(x-y)^2$)",
+          "check": {
+            "kind": "nonneg",
+            "expr": "x**2 + y**2 - 2*x*y",
+            "symbols": ["x", "y"]
+          }
+        },
+        {
+          "type": "writelines",
+          "count": 4
+        }
+      ],
+      "solution": "Mẹo: $-3a\\ge -3b\\Rightarrow -3a-9\\ge -3b-9$.\\par\\smallskip Bài 4: a) $\\le$ (nhân $20>0$ giữ chiều); [[br]] b) $\\ge$ (nhân $-3<0$ đổi chiều); [[br]] c) $\\ge$ (nhân $-4<0$ đổi chiều).\\par\\smallskip Bài 5: a) $<$ (cộng cùng số, $2<3$); [[br]] b) $24>21$ nên $>$; [[br]] c) chia $-10<0$ đổi chiều: $m\\ge n$.\\par\\smallskip Bài 6: a) $\\sqrt2<2\\Rightarrow \\sqrt2+2<4$; [[br]] b) $\\sqrt{29}>\\sqrt{28}\\Rightarrow \\sqrt{29}-\\sqrt6>\\sqrt{28}-\\sqrt6$.\\par\\smallskip Bài 7: a) trừ $\\dfrac13$ giữ chiều: $x\\le y$; [[br]] b) trừ $2026$ rồi chia $3>0$: $x>y$; [[br]] c) chia $-5<0$ đổi chiều: $x\\le y$.\\par\\smallskip Ví dụ mẫu xét hiệu: $3(b-1)-3(a-1)=3(b-a)>0$, vậy $3(b-1)>3(a-1)$.\\par\\smallskip Bài 8: a) $(a+b)-2a=b-a>0$ nên $a+b>2a$; [[br]] b) hiệu $=3(b-a)>0$ nên $-3a+19>-3b+19$; [[br]] c) hiệu $=2(a-b)<0$ nên $2a+1<2b+1$.\\par\\smallskip Bài 9: a) $(2m+4)-(2n+3)=2(m-n)+1>0$ (vì $m>n$) nên $2m+4>2n+3$; [[br]] b) $(-3a+5)-(-3b+5)=3(b-a)>0$ (vì $a<b$) nên $-3a+5>-3b+5$.\\par\\smallskip Bài 10: a) \\emph{đúng}: $x^2\\ge0\\Rightarrow -3x^2\\le0$; [[br]] b) \\emph{sai}: nếu $a<0$ chia phải đổi chiều — phản ví dụ $a=-1$: $\\dfrac{5}{-1}=-5<3=\\dfrac{-3}{-1}$.\\par\\smallskip Bài 11: $x^2+y^2-2xy=(x-y)^2\\ge0$, vậy $x^2+y^2\\ge2xy$ (dấu $=$ khi $x=y$).",
+      "teacher_note": "CHẶNG 4 (~75′; 10′ giải lao TÁCH RIÊNG đặt ngay trước chặng) — TH (Bài 4–7) + VD (Bài 8–11). Bài 4 \\& 7 = điền dấu khi nhân hệ số, y hệt bước biến đổi giải BPT (nhịp cầu). Bài 7,9 lấy ý từ GEMINI Dạng 2–3 (đã đổi số). Bài 10b là BẪY ĐỔI CHIỀU kinh điển — để HS sập rồi chữa bằng phản ví dụ $a=-1$. Bài 11 là đỉnh VD nhưng vẫn cơ bản; máy soi $(x-y)^2\\ge0$ + identity Bài 9a. KHÔNG đẩy lên cực trị/3 biến (đất nhóm B)."
+    },
+    {
+      "kind": "reflection",
+      "number": 5,
+      "title": "Tổng kết \\& bài tập về nhà",
+      "blocks": [
+        {
+          "type": "para",
+          "text": "Hôm nay em đã: (1) đọc–viết bất đẳng thức, gọi tên vế trái/vế phải; (2) nắm bốn tính chất (bắc cầu, cộng, nhân số dương, nhân số âm \\textbf{đổi chiều}); (3) so sánh không tính cụ thể \\& chứng minh bằng cách \\textbf{xét hiệu}."
+        },
+        {
+          "type": "mindmap",
+          "caption": "Sơ đồ tư duy — điền các ô trống để chốt cả buổi",
+          "root": "BĐT: tính chất \\& so sánh",
+          "branches": [
+            {
+              "label": "Khái niệm $a<b$: vế trái [[blank:1.3cm]], vế phải [[blank:1.3cm]]"
+            },
+            {
+              "label": "Bốn tính chất",
+              "children": [
+                {
+                  "label": "T1 bắc cầu: $a<b<c\\Rightarrow a[[blank:0.7cm]]c$"
+                },
+                {
+                  "label": "cộng / nhân số dương: [[blank:1.4cm]] chiều"
+                },
+                {
+                  "label": "nhân số ÂM: [[blank:1.4cm]] chiều"
+                }
+              ]
+            },
+            {
+              "label": "Chứng minh: xét hiệu $A-B$",
+              "children": [
+                {
+                  "label": "$A-B>0\\Rightarrow A[[blank:0.7cm]]B$"
+                },
+                {
+                  "label": "$(x-y)^2\\ge[[blank:1cm]]$"
+                }
+              ]
+            },
+            {
+              "label": "Nhịp cầu: tính chất BĐT $\\to$ dùng khi giải [[blank:2.4cm]]"
+            }
+          ]
+        },
+        {
+          "type": "para",
+          "text": "\\textbf{Hướng tới bài tiếp theo.} Bốn tính chất biến đổi hôm nay — đặc biệt \\textbf{luật đổi chiều khi nhân/chia số âm} — chính là công cụ em sẽ dùng để \\textbf{giải bất phương trình} ở bài tiếp theo. [[br]] Nắm chắc bất đẳng thức hôm nay thì bài sau chỉ là áp dụng lại."
+        },
+        {
+          "type": "para",
+          "text": "\\textbf{BÀI TẬP VỀ NHÀ} (làm vào vở, tiết sau nộp) — cùng dạng đã chữa trên lớp."
+        },
+        {
+          "type": "problem",
+          "label": "Câu 11.",
+          "tier": "btvn",
+          "level": 2,
+          "statement": "(Trắc nghiệm) Cho $-2x+3<-2y+3$. Đáp án nào đúng? [[br]] A.~$x<y$ \\qquad B.~$x>y$ \\qquad C.~$x=y$ \\qquad D.~$x\\le y$"
+        },
+        {
+          "type": "problem",
+          "label": "Câu 12.",
+          "tier": "btvn",
+          "level": 2,
+          "statement": "(Trắc nghiệm) Biết $m>n$. Chọn câu đúng: [[br]] A.~$m-2025>n-2025$ \\qquad B.~$m+2025<n+2025$ \\qquad C.~$m-2<n-2$ \\qquad D.~$n+2>m+2$"
+        },
+        {
+          "type": "problem",
+          "label": "Câu 13.",
+          "tier": "btvn",
+          "level": 1,
+          "statement": "(Trắc nghiệm) Cho $m>n$. Chọn câu đúng: [[br]] A.~$m-3>n-3$ \\qquad B.~$m+2<n+2$ \\qquad C.~$3m<3n$ \\qquad D.~$m-5<n-5$"
+        },
+        {
+          "type": "problem",
+          "label": "Câu 14.",
+          "tier": "btvn",
+          "level": 2,
+          "statement": "(Trắc nghiệm) Nếu $a>b$ thì: [[br]] A.~$3a<3b$ \\qquad B.~$3b<3a$ \\qquad C.~$4b>4a$ \\qquad D.~$a+1<b+1$"
+        },
+        {
+          "type": "problem",
+          "label": "Câu 15.",
+          "tier": "btvn",
+          "level": 2,
+          "statement": "(Trắc nghiệm) Cho $a-1=b+2=c-3$. Sắp xếp $a,\\ b,\\ c$ theo thứ tự tăng dần: [[br]] A.~$b<a<c$ \\qquad B.~$a<b<c$ \\qquad C.~$c<a<b$ \\qquad D.~$a<c<b$"
+        },
+        {
+          "type": "problem",
+          "label": "Câu 16.",
+          "tier": "btvn",
+          "level": 2,
+          "statement": "(Đúng / Sai) Cho $a<b$. Mỗi khẳng định sau \\textbf{Đúng} hay \\textbf{Sai}? (ghi Đ/S vào ô) [[br]] a) $a-1<b-1$\\ [[mblank:1cm]] \\qquad b) $a+2<b+1$\\ [[mblank:1cm]] [[br]] c) $-2a>-2b$\\ [[mblank:1cm]] \\qquad d) $3a+1<3b+1$\\ [[mblank:1cm]]"
+        },
+        {
+          "type": "problem",
+          "label": "Bài 12.",
+          "tier": "btvn",
+          "level": 1,
+          "statement": "(Viết BĐT, song song Bài 1) Viết bất đẳng thức diễn tả: [[br]] a) Thang máy chở \\emph{tối đa} $4$ người (gọi số người là $n$): [[blank:2.4cm]] [[br]] b) Điểm thi \\emph{ít nhất} $5$ mới đậu (gọi điểm là $d$): [[blank:2.4cm]] [[br]] c) $x$ là số \\emph{không âm}: [[blank:2.4cm]]"
+        },
+        {
+          "type": "problem",
+          "label": "Bài 13.",
+          "tier": "btvn",
+          "level": 1,
+          "statement": "(Điền dấu, song song Bài 3) Điền dấu ($<,\\ >,\\ =$): [[br]] a) $-\\dfrac{3}{4}\\ [[mblank:1cm]]\\ -\\dfrac{2}{3}$ \\qquad b) $0\\ [[mblank:1cm]]\\ -5$ \\qquad c) $(-2)^2\\ [[mblank:1cm]]\\ 0$"
+        },
+        {
+          "type": "problem",
+          "label": "Bài 14.",
+          "tier": "btvn",
+          "level": 2,
+          "statement": "(Điền dấu theo $a<b$, song song Bài 4) Cho $a<b$, điền dấu: [[br]] a) $7a\\ [[mblank:1cm]]\\ 7b$ \\qquad b) $-5a\\ [[mblank:1cm]]\\ -5b$ \\qquad c) $2a+3\\ [[mblank:1cm]]\\ 2b+3$ \\qquad d) $-a\\ [[mblank:1cm]]\\ -b$"
+        },
+        {
+          "type": "problem",
+          "label": "Bài 15.",
+          "tier": "btvn",
+          "level": 2,
+          "statement": "(So sánh không tính, song song Bài 5–6) [[br]] a) $19+2023$ và $-31+2023$ [[br]] b) $\\sqrt2+2$ và $4$"
+        },
+        {
+          "type": "problem",
+          "label": "Bài 16.",
+          "tier": "btvn",
+          "level": 2,
+          "statement": "(Số $a$ âm hay dương?) Không tính $a$, hãy cho biết $a$ là số âm hay số dương nếu: [[br]] a) $-4a<2a$ [[br]] b) $3a>15a$"
+        },
+        {
+          "type": "problem",
+          "label": "Bài 17.",
+          "tier": "btvn",
+          "level": 2,
+          "statement": "(So sánh $m$ và $n$) [[br]] a) $m+2024<n+2024$ [[br]] b) $-7m\\ge -7n$"
+        },
+        {
+          "type": "problem",
+          "label": "Bài 18.",
+          "tier": "btvn",
+          "level": 3,
+          "statement": "(Xét hiệu, song song Bài 8–9) Cho $a<b$. Chứng minh: [[br]] a) $5a-b<4a$ [[br]] b) $a-1<b+6$"
+        },
+        {
+          "type": "problem",
+          "label": "Bài 19.",
+          "tier": "btvn",
+          "level": 3,
+          "statement": "(Xét hiệu \\& bình phương, song song Bài 11) Chứng minh với mọi số thực $a$: $a^2-2a+1\\ge 0$. \\;(gợi ý: đưa về $(a-1)^2$)"
+        }
+      ],
+      "solution": "\\textbf{BTVN.}\\par\\smallskip Trắc nghiệm: Câu 11.~B (chia $-2<0$ đổi chiều $\\Rightarrow x>y$); [[br]] Câu 12.~A; \\quad Câu 13.~A; \\quad Câu 14.~B ($a>b\\Rightarrow 3a>3b\\Rightarrow 3b<3a$); \\quad Câu 15.~A (đặt $=k$: $a=k{+}1,b=k{-}2,c=k{+}3\\Rightarrow b<a<c$). [[br]] Câu 16 (Đ/S): a) Đ; \\ b) S (chỉ suy ra $a<b$, không suy ra $a+2<b+1$); \\ c) Đ (đổi chiều); \\ d) Đ.\\par\\smallskip Bài 12: a) $n\\le 4$; b) $d\\ge 5$; c) $x\\ge 0$.\\par\\smallskip Bài 13: a) $-\\dfrac34<-\\dfrac23$; b) $0>-5$; c) $(-2)^2>0$.\\par\\smallskip Bài 14: a) $7a<7b$; [[br]] b) $-5a>-5b$ (đổi chiều); [[br]] c) $2a+3<2b+3$; [[br]] d) $-a>-b$ (đổi chiều).\\par\\smallskip Bài 15: a) $19>-31$ nên $19+2023>-31+2023$; b) $\\sqrt2<2\\Rightarrow \\sqrt2+2<4$.\\par\\smallskip Bài 16: a) $-4a<2a\\Leftrightarrow 0<6a\\Leftrightarrow a>0$ — \\emph{dương}; [[br]] b) $3a>15a\\Leftrightarrow 0>12a\\Leftrightarrow a<0$ — \\emph{âm}.\\par\\smallskip Bài 17: a) trừ $2024$ giữ chiều: $m<n$; [[br]] b) chia $-7<0$ đổi chiều: $m\\le n$.\\par\\smallskip Bài 18: a) $(5a-b)-4a=a-b<0$ nên $5a-b<4a$; b) $(b+6)-(a-1)=(b-a)+7>0$ nên $a-1<b+6$.\\par\\smallskip Bài 19: $a^2-2a+1=(a-1)^2\\ge0$ (dấu $=$ khi $a=1$).\\par\\smallskip \\textbf{Đáp án sơ đồ tư duy:} vế trái $a$, vế phải $b$; T1: $a<c$; cộng/nhân số dương: \\emph{giữ} chiều; nhân số âm: \\emph{đổi} chiều; $A-B>0\\Rightarrow A>B$; $(x-y)^2\\ge 0$; nhịp cầu: dùng khi giải \\emph{bất phương trình}.",
+      "teacher_note": "CHẶNG 5 (~15′ trên lớp; BTVN làm Ở NHÀ) — sơ đồ tư duy + nhịp cầu lên BPT + giao BTVN. BTVN dày hơn (Thầy yêu cầu): 5 trắc nghiệm 1-đáp-án (Câu 11–15) + 1 câu Đúng/Sai 4 ý (Câu 16, format thi mới) + 8 tự luận (Bài 12–19), giữ ~30-40-30, mỗi bài song song một bài đã chữa. Bài 16–17 (số âm/dương, so sánh qua biến đổi) lấy ý GEMINI Dạng 3 — vẫn TH, đổi số. Câu 16b là bẫy: $a<b$ KHÔNG suy ra $a+2<b+1$. KHÔNG vận dụng cao, KHÔNG giải BPT. Trắc nghiệm + Đ/S đã verify tay. Đoạn 'Hướng tới bài tiếp theo' chỉ định hướng — bài BPT là buổi sau."
+    }
+  ]
+}

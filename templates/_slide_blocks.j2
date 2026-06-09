@@ -14,8 +14,9 @@
 ((* else *))\begin{block}{}((( b.text | tex )))\end{block}((* endif *))
 \medskip
 ((* elif b.type == "opener" *))
+((= Hình của opener KHÔNG render ở đây: render_blocks đưa nó sang cột phải
+    (mode "opener") để chữ + hình luôn cùng một slide, không bị bẻ trang. =))
 \begin{block}{\ding{44}\ \ Mở màn thực tế}((( b.text | tex )))\end{block}
-((* if b.tikz *))\begin{center}\adjustbox{max width=0.5\linewidth,max totalheight=0.42\textheight}{((( b.tikz )))}\end{center}((* elif b.image *))\begin{center}\adjustbox{max width=0.5\linewidth,max totalheight=0.42\textheight}{\includegraphics{((( b.image )))}}\end{center}((* endif *))
 \medskip
 ((* elif b.type == "problem" *))
 {\bfseries\color{brand}((( b.label | tex )))}\; ((( b.statement | tex )))
@@ -63,7 +64,7 @@
 ((* for seg in group_slide_segments(blocks) *))
 ((* if not loop.first *))\framebreak
 ((* endif *))
-((* if seg.figures and seg.text *))
+((* if seg.mode == "cols" *))
 \begin{columns}[T,onlytextwidth]
 \begin{column}{0.58\textwidth}
 {\small ((* for b in seg.text *))((( render_block(b) )))((* endfor *))}
@@ -72,8 +73,36 @@
 ((* for f in seg.figures *))((( render_figure_col(f) )))((* endfor *))
 \end{column}
 \end{columns}
-((* elif seg.figures *))
+((* elif seg.mode == "opener" *))
+\begin{columns}[T,onlytextwidth]
+\begin{column}{0.56\textwidth}
+{\small ((* for b in seg.text *))((( render_block(b) )))((* endfor *))}
+\end{column}
+\begin{column}{0.40\textwidth}
+\vspace{6pt}((( render_figure_col(seg.text[0]) )))
+\end{column}
+\end{columns}
+((* elif seg.mode == "stacked" *))
+((= Bảng 2 hàng GIỮ CHUNG MỘT SLIDE: HÀNG 1 phần rút ra quy tắc (chữ), HÀNG 2 sơ
+    đồ bước NẰM NGANG ở dưới. Bọc minipage để allowframebreaks KHÔNG tách đôi; bọc
+    adjustbox (max totalheight) để CẢ CỤM tự co vừa khung, không đè footer. =))
+\begin{center}
+\adjustbox{max width=\linewidth,max totalheight=0.58\textheight}{%
+\begin{minipage}{\linewidth}
+{\small ((* for b in seg.text *))((( render_block(b) )))((* endfor *))}
+\vspace{4pt}
+((* for f in seg.figures *))\begin{center}((* if f.image *))\includegraphics[width=0.9\linewidth,height=0.3\textheight,keepaspectratio]{((( f.image )))}((* else *))\adjustbox{max width=0.9\linewidth,max totalheight=0.3\textheight}{((( f.tikz )))}((* endif *))\end{center}((* endfor *))
+\end{minipage}}
+\end{center}
+((* elif seg.mode == "figonly" *))
 ((* for f in seg.figures *))((( render_block(f) )))((* endfor *))
+((* elif seg.mode == "probfit" *))
+((= Đề + câu nhỏ a,b,c: bọc minipage (không bị bẻ trang) + adjustbox (tự co nếu
+    quá dài) → đề và các câu nhỏ LUÔN cùng một slide. =))
+\adjustbox{max width=\linewidth,max totalheight=0.66\textheight}{%
+\begin{minipage}{\linewidth}
+((* for b in seg.text *))((( render_block(b) )))((* endfor *))
+\end{minipage}}
 ((* else *))
 ((* for b in seg.text *))((( render_block(b) )))((* endfor *))
 ((* endif *))

@@ -132,15 +132,32 @@ def _grade_label(grade_slug: str) -> str:
     return f"Lớp {m.group(1)}" if m else "Lớp 9 • Ôn vào 10"
 
 
+_TIER_RE = re.compile(r"^\[([ABCX])\]")
+
+
+def _class_tier(folder_name: str) -> str:
+    """`[C]tuan10-11-...` → 'C'; '' nếu không có tiền tố tầng lớp.
+
+    Phân tầng HS theo năng lực: A/B/C (C = nền) và X (HS chuyên). Tiền tố
+    đứng TRƯỚC `tuanNN` để khỏi nhầm với hệ đếm tuần."""
+    m = _TIER_RE.match(folder_name)
+    return m.group(1) if m else ""
+
+
+def _strip_tier(folder_name: str) -> str:
+    """Bỏ tiền tố tầng lớp `[X]` (nếu có) để lộ phần `tuanNN-<chủ đề>`."""
+    return _TIER_RE.sub("", folder_name)
+
+
 def _week_nums(folder_name: str) -> list[int]:
-    """`tuan10-11-...` → [10, 11]; trả [] nếu không khớp tiền tố tuần."""
-    m = re.match(r"tuan(\d+(?:-\d+)*)", folder_name)
+    """`[C]tuan10-11-...` / `tuan10-11-...` → [10, 11]; [] nếu không khớp."""
+    m = re.match(r"tuan(\d+(?:-\d+)*)", _strip_tier(folder_name))
     return [int(x) for x in m.group(1).split("-")] if m else []
 
 
 def _topic_slug(folder_name: str) -> str:
-    """Bỏ tiền tố `tuanNN[-NN]-` để lấy phần chủ đề."""
-    return re.sub(r"^tuan\d+(?:-\d+)*-", "", folder_name)
+    """Bỏ tiền tố tầng lớp `[X]` rồi `tuanNN[-NN]-` để lấy phần chủ đề."""
+    return re.sub(r"^tuan\d+(?:-\d+)*-", "", _strip_tier(folder_name))
 
 
 def _week_folders(subject_dir: Path) -> list[Path]:
@@ -662,7 +679,7 @@ def cmd_progress(args: argparse.Namespace) -> int:
     return 0
 
 
-def _skeleton(slug: str, title: str, eyebrow: str, grade: str) -> dict:
+def _skeleton(slug: str, title: str, eyebrow: str, grade: str, class_tier: str = "") -> dict:
     """Khung 5 chặng map 4 tầng: concept=Ví dụ mẫu, practice1/2=BT trên lớp,
     reflection=BTVN + Bài tập mở rộng. Đánh số bài LIỀN MẠCH cả phiếu khi điền."""
     def stage(kind, number, title, blocks, solution="", note=""):
@@ -674,6 +691,7 @@ def _skeleton(slug: str, title: str, eyebrow: str, grade: str) -> dict:
         "title": title,
         "eyebrow": eyebrow,
         "grade_label": grade,
+        "class_tier": class_tier,
         "stages": [
             stage("review", 1, "Khám phá — KTBC / nhịp cầu vào bài", [
                 # MỞ MÀN THỰC TẾ (đặc sản): hook đời thực kéo HS vào bài. Xoá nếu bài
@@ -753,9 +771,12 @@ def cmd_new_lesson(args: argparse.Namespace) -> int:
         pass
     subj_label = SUBJECT_LABELS.get(subject, "")
     title = args.title or topic.replace("-", " ").strip().capitalize() or slug
+    # Tầng lớp: ưu tiên cờ --tier, nếu không suy từ tiền tố `[X]` của folder.
+    # Tầng KHÔNG nhồi vào eyebrow — badge "LỚP X" trên PDF do `class_tier` lo.
+    tier = (getattr(args, "tier", "") or _class_tier(folder.name)).upper()
     eyebrow = f"CHỦ ĐỀ • {subj_label}".rstrip(" •") if subj_label else "CHỦ ĐỀ"
 
-    skeleton = _skeleton(slug, title, eyebrow, _grade_label(grade))
+    skeleton = _skeleton(slug, title, eyebrow, _grade_label(grade), tier)
     out_path.write_text(
         json.dumps(skeleton, ensure_ascii=False, indent=2), encoding="utf-8"
     )
@@ -930,6 +951,7 @@ def main(argv: list[str] | None = None) -> int:
     nl.add_argument("folder", help="Folder tuần dưới inputs/seeds/<lop>/<mon>/")
     nl.add_argument("--slug", help="Mã bài (mặc định = chủ đề trong tên folder)")
     nl.add_argument("--title", help="Tiêu đề bài (mặc định suy từ chủ đề)")
+    nl.add_argument("--tier", choices=["A", "B", "C", "X"], help="Tầng lớp (mặc định suy từ tiền tố [X] của folder)")
     nl.add_argument("--force", action="store_true", help="Ghi đè nếu file đã tồn tại")
     nl.set_defaults(func=cmd_new_lesson)
 

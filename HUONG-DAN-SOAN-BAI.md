@@ -162,4 +162,6 @@ Các phần này do template lo, **luôn ở yên một chỗ**; AI/người so�
 - Chia theo **mạch sư phạm**, không chia ngẫu nhiên: vd tuần "PT quy về bậc nhất" → **Phiếu A** (PT tích + ẩn ở mẫu) · **Phiếu B** (giải bài toán bằng lập PT). Mỗi phiếu tự đủ 5 chặng + core + đệm cho một buổi.
 - `progress` tự đếm từng phiếu là một bài; build từng phiếu độc lập.
 
+**Phiếu PHÂN TẦNG theo năng lực (A/B/C/X):** ngoài bản chuẩn, có thể soạn phiếu riêng cho từng tầng lớp. Đặt cả folder vào tiền tố `[A]`/`[B]`/`[C]`/`[X]` **đứng TRƯỚC `tuanNN`** (vd `[C]tuan10-11-bat-phuong-trinh-bac-nhat-mot-an/`) để khỏi nhầm hệ đếm tuần; trong folder vẫn `phieu-a-/phieu-b-`. Đặt `"class_tier":"C"` (badge "LỚP C" tự in trên PDF; eyebrow giữ phần chủ đề, không lặp "LỚP C"). **Chuẩn tỉ lệ NB-TH-VD + số câu theo giờ của từng tầng** ở [HUONG-DAN-PHAN-TANG-LOP.md](HUONG-DAN-PHAN-TANG-LOP.md) (hiện chốt: Lớp 9 Đại số tầng C = 40-40-20, buổi 3 giờ −15′ giải lao).
+
 **Slide:** vì mỗi `problem` đã tách một slide riêng (mục 6), HS giỏi trên màn chiếu cũng theo nhịp từng bài — phần BTVN/mở rộng nằm ở các slide "Bài tập về nhà"/"Bài tập mở rộng (tự chọn)" cuối, lật tới khi cần.

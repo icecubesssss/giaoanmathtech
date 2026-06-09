@@ -225,12 +225,12 @@
     <div class="t"><div class="ic">📊</div><b>Slide trình chiếu</b><span>xem slide sau</span></div>
   </div>
   <div class="evi">
-    <figure><img src="assets/deck/t4-B-handout-1.png" alt="Phiếu HS Tuần 4">
-      <figcaption><b>Phiếu học sinh</b> — ví dụ chừa chỗ trống + bảng đại lượng điền được, ẩn lời giải</figcaption></figure>
-    <figure><img src="assets/deck/t4-B-guide-1.png" alt="Sổ tay GV Tuần 4">
-      <figcaption><b>Sổ tay GV</b> — cùng trang, thêm hộp <b>LỜI GIẢI</b> đỏ + <b>MẸO SƯ PHẠM</b>; footer <b>[SỔ TAY GIÁO VIÊN — CÓ ĐÁP ÁN]</b></figcaption></figure>
+    <figure><img src="assets/deck/bpt-C-handout.png" alt="Phiếu HS — BPT lớp C">
+      <figcaption><b>Phiếu học sinh</b> (LỚP C) — ví dụ mẫu <b>điền khuyết hết</b>, không kẻ dòng (HS làm vào vở), ẩn lời giải</figcaption></figure>
+    <figure><img src="assets/deck/bpt-C-guide.png" alt="Sổ tay GV — BPT lớp C">
+      <figcaption><b>Sổ tay GV</b> — cùng bài, thêm hộp <b>LỜI GIẢI</b> đỏ + <b>MẸO SƯ PHẠM</b>; footer <b>[SỔ TAY GIÁO VIÊN — CÓ ĐÁP ÁN]</b></figcaption></figure>
   </div>
-  <p class="note-est">Hai bản sinh từ <strong>đúng một file</strong> <code>giai-bai-toan-lap-pt.json</code>. Bản GV = bản HS + (mỗi chặng) một hộp lời giải đỏ và một hộp mẹo điều phối — máy tự chèn, không gõ hai lần.</p>
+  <p class="note-est">Hai bản sinh từ <strong>đúng một file</strong> <code>phieu-a-…-bpt-bac-nhat.json</code>. Bản GV = bản HS + (mỗi chặng) một hộp lời giải đỏ và một hộp mẹo điều phối — máy tự chèn, không gõ hai lần.</p>
   <aside class="notes">Cùng một nguồn ra ba bản. Bản HS để trống và có bảng tự điền. Bản GV là đúng bản đó cộng thêm, ở mỗi chặng, một hộp lời giải đỏ và một hộp mẹo sư phạm để điều phối lớp; footer ghi rõ Sổ tay giáo viên có đáp án. Không ai gõ hai lần. Bản thứ ba là slide — xem ngay slide sau.</aside>
 </section>
 
@@ -240,10 +240,10 @@
   <h2>Bản thứ ba = <span class="accent">slide chiếu, cùng nguồn — không dựng riêng</span></h2>
   <div class="titlebar"></div>
   <div class="evi">
-    <figure><img src="assets/deck/slide-body-04.png" alt="Slide trình chiếu">
+    <figure><img src="assets/deck/bpt-C-slide.png" alt="Slide trình chiếu — BPT">
       <figcaption><b>Slide Beamer 16:9</b> — chữ &amp; công thức to, đọc từ cuối lớp; sinh từ cùng file</figcaption></figure>
-    <figure><img src="assets/deck/tongket-gv-1.png" alt="Phiếu tổng kết chương">
-      <figcaption><b>Phiếu tổng kết chương</b> — sơ đồ tư duy (<code>mindmap</code>); bản GV điền sẵn đáp án đỏ</figcaption></figure>
+    <figure><img src="assets/deck/bpt-C-mindmap.png" alt="Tổng kết — sơ đồ tư duy">
+      <figcaption><b>Chặng Tổng kết</b> — sơ đồ tư duy (<code>mindmap</code>) HS <b>tự điền</b> để tóm tắt cả buổi</figcaption></figure>
   </div>
   <p class="lead">Sửa một chỗ ở nguồn → <strong>cả ba bản tự cập nhật</strong>, không bao giờ lệch. Bên trong mỗi phiếu được dựng thế nào?</p>
   <aside class="notes">Vẫn nguồn đó ra slide chữ to cho máy chiếu, và phiếu tổng kết chương dạng sơ đồ tư duy. Không ai dựng slide riêng hay vẽ lại sơ đồ. Sửa một chỗ, cả ba bản cập nhật. Vậy bên trong mỗi phiếu được dựng ra sao?</aside>
@@ -267,12 +267,27 @@
     </svg>
   </div>
   <div class="release">
-    <div class="step"><b>TÔI LÀM</b><span>GV làm mẫu, lời giải mẫu</span></div>
-    <div class="step"><b>CÙNG LÀM</b><span>ví dụ chừa chỗ trống + bảng điền được</span></div>
-    <div class="step me"><b>EM LÀM</b><span>bảng trống hẳn, HS tự lập</span></div>
+    <div class="step"><b>TÔI LÀM</b><span>GV giải mẫu trọn vẹn một bài</span></div>
+    <div class="step"><b>CÙNG LÀM</b><span>ví dụ điền khuyết — Thầy &amp; trò cùng điền</span></div>
+    <div class="step me"><b>EM LÀM</b><span>bài tự luyện — HS làm vào vở</span></div>
   </div>
   <p class="lead fs-86">4 tầng mỗi phiếu: <strong>onclass</strong> (lõi trên lớp) → <strong>btvn</strong> → <strong>extend</strong> (thang + gợi ý, máy kiểm) → <strong>★ Thử thách</strong>. Bảng điền thật: <em>“Thầy và trò cùng điền bảng (gọi năng suất dự định là x)”</em>.</p>
   <aside class="notes">Mọi phiếu, dù ai soạn, đi đúng năm chặng tên thật này: Khám phá, Khái niệm lập bảng, Luyện tập 1 chuyển động, Luyện tập 2 năng suất và hình chạm trần thi, rồi Tổng kết sơ đồ tư duy — độ khó lên như bậc thang. Trong từng đơn vị là nhịp Tôi làm – Cùng làm – Em làm, có bảng đại lượng điền được ngay trên phiếu. Bốn tầng onclass, btvn, extend và bài sao thử thách để HS giỏi cày tiếp. Đây là phần nội dung — việc của giáo viên; máy lo định dạng, đồng bộ, gác cổng.</aside>
+</section>
+
+<!-- S6b · PHÂN TẦNG THEO LỚP A/B/C/X -->
+<section>
+  <span class="eyebrow">Hồi 2 · phân hoá theo lớp</span>
+  <h2>Cùng một bài → <span class="accent">phiếu riêng cho từng tầng lớp A · B · C · X</span></h2>
+  <div class="titlebar"></div>
+  <div class="trio" style="grid-template-columns:repeat(4,1fr)">
+    <div class="t"><div class="ic">🎯</div><b>Lớp A</b><span>khá – giỏi</span></div>
+    <div class="t"><div class="ic">📘</div><b>Lớp B</b><span>trung bình – khá</span></div>
+    <div class="t now"><div class="ic">🧱</div><b>Lớp C</b><span>nền · tỉ lệ 40–40–20</span></div>
+    <div class="t"><div class="ic">🚀</div><b>Lớp X</b><span>chuyên</span></div>
+  </div>
+  <p class="lead fs-86">Giữ nguyên <strong>đề gốc</strong>, máy đổi <strong>tỉ lệ NB–TH–VD · số câu · độ khó</strong> cho khớp năng lực — chung một động cơ, chỉ khác <strong>cấu hình</strong>. Phiếu lớp <strong>C</strong> (nền): bỏ vận dụng cao, ví dụ mẫu <strong>điền khuyết hết</strong> để Thầy–trò cùng làm, HS trình bày vào vở; badge <strong>“LỚP C”</strong> tự in trên cả ba bản.</p>
+  <aside class="notes">Đây là năng lực then chốt để đi xa: cùng một bài, mỗi lớp một phiếu. Trung tâm chia học sinh theo năng lực — A khá giỏi, B trung bình, C nền, X chuyên. Máy giữ nguyên đề gốc nhưng đổi tỉ lệ nhận biết – thông hiểu – vận dụng, số câu, độ khó cho khớp. Ví dụ phiếu lớp C: bỏ phần vận dụng cao, ví dụ mẫu để trống cho thầy trò cùng điền, in sẵn nhãn LỚP C. Một bộ đề phục vụ được nhiều trình độ — và nhiều vùng miền.</aside>
 </section>
 
 <!-- S7 · KHÁC GÌ PHIẾU CŨ -->
@@ -382,9 +397,9 @@
   </div>
   <p class="lead fs-86">Phần “vấp–ngã” đã xảy ra <strong>trong lúc dựng cỗ máy</strong>: mỗi việc nhỏ tôi vấp được nâng thành một bước có gác cổng. “Đứng vững” đó <strong>đo được</strong>, không nói suông:</p>
   <div class="mgrid">
-    <div class="metric"><div class="num">41/41</div><div class="lab">Bài test tự động PASS</div><div class="src"><span class="tag real">pytest</span></div></div>
+    <div class="metric"><div class="num">61/61</div><div class="lab">Bài test tự động PASS</div><div class="src"><span class="tag real">pytest</span></div></div>
     <div class="metric"><div class="num">6<small>+ SymPy</small></div><div class="lab">Trình kiểm tra gác cổng</div><div class="src"><span class="tag real">đếm thật</span></div></div>
-    <div class="metric"><div class="num">28</div><div class="lab">Snapshot — lỡ hỏng lùi được</div><div class="src"><span class="tag real">đếm thật</span></div></div>
+    <div class="metric"><div class="num">56</div><div class="lab">Snapshot — lỡ hỏng lùi được</div><div class="src"><span class="tag real">đếm thật</span></div></div>
     <div class="metric"><div class="num">~20<small>giây</small></div><div class="lab">Máy ráp 3 PDF / bài</div><div class="src"><span class="tag real">đo thật</span></div></div>
     <div class="metric"><div class="num">41<small>tuần</small></div><div class="lab">Khung phủ cả năm</div><div class="src"><span class="tag real">đếm thật</span></div></div>
     <div class="metric"><div class="num">0<small>đ</small></div><div class="lab">Phần mềm — build/in</div><div class="src"><span class="tag real">mã nguồn mở</span></div></div>
@@ -506,7 +521,7 @@ Verdict: <span class="ok">OK</span> — Dạng toàn phương PSD (trị riêng 
     <div class="g"><b>GĐ 2</b><span>đào tạo ≥2 đầu mối + quy trình duyệt cho GV</span></div>
     <div class="g"><b>GĐ 3</b><span>GitHub web + CI tự build → GV khỏi đụng terminal; mở rộng lớp/môn</span></div>
   </div>
-  <p class="subline">1 thuê bao AI dùng chung · pipeline build/in miễn phí · đã chạy thật (41/41 test).</p>
+  <p class="subline">1 thuê bao AI dùng chung · pipeline build/in miễn phí · đã chạy thật (61/61 test).</p>
   <aside class="notes">Xin một điều rõ ràng: chấp thuận đây là chuẩn sản xuất học liệu Toán 9, và cử hai đầu mối vận hành. Lộ trình ba giai đoạn: đang chạy, đào tạo người, rồi giao diện để GV khỏi đụng terminal.</aside>
 </section>
 
@@ -631,7 +646,7 @@ Verdict: <span class="ok">OK</span> — Dạng toàn phương PSD (trị riêng 
         <rect x="890" y="196" width="182" height="42" rx="9" fill="#FBEDEC" stroke="#C0392B"/><text x="981" y="223" fill="#1B1B2A">📊 Slide TV</text>
       </g>
       <rect x="710" y="288" width="362" height="50" rx="10" fill="#1B1B2A"/>
-      <text x="891" y="310" text-anchor="middle" font-size="13" font-weight="700" fill="#fff">config/design_tokens · 25 nhóm khoá thiết kế</text>
+      <text x="891" y="310" text-anchor="middle" font-size="13" font-weight="700" fill="#fff">config/design_tokens · 34 khoá thiết kế</text>
       <text x="891" y="330" text-anchor="middle" font-size="12" fill="#ffd9d4">đổi 1 chỗ → rebuild → in lại CẢ KHO</text>
       <line x1="785" y1="288" x2="785" y2="209" stroke="#9aa3b2" stroke-width="2" marker-end="url(#ag)"/>
     </svg>
@@ -653,6 +668,7 @@ Verdict: <span class="ok">OK</span> — Dạng toàn phương PSD (trị riêng 
   • latex_sanitizer:  <span class="ok">OK</span>
   • schema_validator: <span class="ok">OK</span>
   • difficulty_gate:  <span class="ok">OK</span>
+  • answer_gate:      <span class="ok">OK</span>
   • visual_linter:    <span class="ok">OK</span>
   • gradient_gate:    <span class="ok">OK</span>
 <span class="ok">✓ Gói bài qua cổng S2.</span>
@@ -677,11 +693,11 @@ Verdict: <span class="ok">OK</span> — Dạng toàn phương PSD (trị riêng 
   <h2>Đẹp như sách xuất bản — nhờ <span class="accent">XeLaTeX</span></h2>
   <div class="titlebar"></div>
   <div class="cols">
-    <div class="evi solo evi-block"><figure><img src="assets/deck/slide-cover-01.png" class="img-cap" alt="bìa slide"><figcaption>Slide bìa tự sinh — đồng bộ thương hiệu</figcaption></figure></div>
+    <div class="evi solo evi-block"><figure><img src="assets/deck/bpt-C-slide-cover.png" class="img-cap" alt="bìa slide"><figcaption>Slide bìa tự sinh — đồng bộ thương hiệu</figcaption></figure></div>
     <div>
       <ul class="fs-86">
         <li><strong>Toán chuẩn nhà in</strong>: typesetting LaTeX, công thức không vỡ.</li>
-        <li><strong>Hệ thiết kế thống nhất</strong>: 25 nhóm khoá (font/màu/lề).</li>
+        <li><strong>Hệ thiết kế thống nhất</strong>: 34 khoá (font/màu/lề).</li>
         <li><strong>Font tiếng Việt nhúng sẵn</strong> → mở máy nào cũng y hệt.</li>
         <li><strong>Bảo mật</strong>: trình biên dịch <em>tắt</em> thực thi lệnh hệ thống (<code>-shell-escape</code>).</li>
       </ul>
@@ -697,24 +713,24 @@ Verdict: <span class="ok">OK</span> — Dạng toàn phương PSD (trị riêng 
   <div class="titlebar"></div>
   <div class="cols">
     <div class="card card--brand">
-      <h3>Phiếu A · PT tích &amp; ẩn ở mẫu</h3>
+      <h3>Phiếu A · Nhận biết &amp; giải BPT</h3>
       <ul class="fs-80">
-        <li><strong>Lõi trên lớp</strong>: PT tích → PT chứa ẩn ở mẫu.</li>
-        <li><strong>Ngân hàng BTVN</strong> + <strong>thang mở rộng</strong> có gợi ý.</li>
-        <li><strong>Bài ★ thử thách</strong> — HS giỏi tự cày.</li>
+        <li><strong>Lõi trên lớp</strong>: nhận biết dạng · thử nghiệm · giải BPT bậc nhất.</li>
+        <li>Ví dụ mẫu <strong>điền khuyết</strong>; nhận biết dồn vào Luyện tập 1.</li>
+        <li>BTVN gồm 1 bài <strong>vận dụng</strong> (lãi suất) tách bước.</li>
       </ul>
     </div>
     <div class="card card--brand">
-      <h3>Phiếu B · Giải toán bằng lập PT</h3>
+      <h3>Phiếu B · Khử mẫu &amp; toán thực tế</h3>
       <ul class="fs-80">
-        <li><strong>Lõi trên lớp</strong> + <strong>bảng đại lượng điền được</strong>.</li>
-        <li>Chuyển động · năng suất · hình học — <strong>chạm trần thi</strong>.</li>
-        <li><strong>Bài ★ thử thách</strong> — HS giỏi tự cày.</li>
+        <li><strong>Lõi trên lớp</strong>: khử mẫu quy về bậc nhất + lập BPT thực tế.</li>
+        <li>Bài thực tế <strong>tách a–d</strong> — HS yếu vẫn ăn điểm từng phần.</li>
+        <li>Bê <strong>nguyên câu đề GKI</strong> (mua bán · tải trọng · lãi suất).</li>
       </ul>
     </div>
   </div>
-  <p class="note-est">Mỗi phiếu <strong>tự đủ 4 tầng</strong> và vừa một buổi ~3h.</p>
-  <aside class="notes">Tuần 4 tách đôi để không quá tải. Mỗi phiếu tự đủ bốn tầng, vừa một buổi ba tiếng.</aside>
+  <p class="note-est">Cân theo <strong>thời gian</strong> (~120′ luyện tập/phiếu), không theo số đề rời — mỗi phiếu vừa một buổi <strong>~3h</strong>.</p>
+  <aside class="notes">Tuần BPT lớp C tách đôi để không quá tải: phiếu A nhận biết và giải, phiếu B khử mẫu và toán thực tế. Mấu chốt khi cân: tính theo thời gian, không theo số đề — câu nhận biết nhanh nên cần đông, còn khử mẫu hay thực tế ăn nhiều phút nên ít đề mà vẫn đủ một buổi ba tiếng.</aside>
 </section>
 
 <!-- P5 · số liệu đầy đủ -->
@@ -724,15 +740,15 @@ Verdict: <span class="ok">OK</span> — Dạng toàn phương PSD (trị riêng 
   <div class="titlebar"></div>
   <div class="mgrid">
     <div class="metric"><div class="num">~20<small>giây</small></div><div class="lab">Máy ráp 3 PDF / 1 bài</div><div class="src"><span class="tag real">đo thật</span></div></div>
-    <div class="metric"><div class="num">28<small>trang</small></div><div class="lab">Tổng 3 bản /bài (4+7+17)</div><div class="src"><span class="tag real">đo thật</span></div></div>
+    <div class="metric"><div class="num">40<small>trang</small></div><div class="lab">Tổng 3 bản /bài (6+9+25)</div><div class="src"><span class="tag real">đo thật</span></div></div>
     <div class="metric"><div class="num">41<small>tuần</small></div><div class="lab">Khung cả năm (22 ĐS+19 HH)</div><div class="src"><span class="tag real">đếm thật</span></div></div>
     <div class="metric"><div class="num">6<small>+ SymPy</small></div><div class="lab">Trình kiểm tra độc lập</div><div class="src"><span class="tag real">đếm thật</span></div></div>
     <div class="metric"><div class="num">15</div><div class="lab">Template khuôn in (.j2)</div><div class="src"><span class="tag real">đếm thật</span></div></div>
-    <div class="metric"><div class="num">25</div><div class="lab">Nhóm khoá thiết kế</div><div class="src"><span class="tag real">design_tokens</span></div></div>
-    <div class="metric"><div class="num">41/41</div><div class="lab">Bài test tự động PASS</div><div class="src"><span class="tag real">pytest</span></div></div>
-    <div class="metric"><div class="num">28</div><div class="lab">Snapshot style (rollback)</div><div class="src"><span class="tag real">đếm thật</span></div></div>
+    <div class="metric"><div class="num">34</div><div class="lab">Khoá thiết kế</div><div class="src"><span class="tag real">design_tokens</span></div></div>
+    <div class="metric"><div class="num">61/61</div><div class="lab">Bài test tự động PASS</div><div class="src"><span class="tag real">pytest</span></div></div>
+    <div class="metric"><div class="num">56</div><div class="lab">Snapshot style (rollback)</div><div class="src"><span class="tag real">đếm thật</span></div></div>
   </div>
-  <p class="lead">~1.950 dòng code, có bộ test riêng. Hạ tầng <strong>đã dựng xong</strong> — thêm bài là tận dụng lại.</p>
+  <p class="lead">~2.440 dòng code, có bộ test riêng. Hạ tầng <strong>đã dựng xong</strong> — thêm bài là tận dụng lại.</p>
   <aside class="notes">Phần cho người soi số. Riêng bước máy ráp PDF khoảng 20 giây; trọn bài lâu hơn vì phần nội dung. Hạ tầng dựng một lần, dùng cả năm.</aside>
 </section>
 
@@ -744,7 +760,7 @@ Verdict: <span class="ok">OK</span> — Dạng toàn phương PSD (trị riêng 
   <ul>
     <li>Lưu trên <strong>Git/GitHub</strong>: soạn song song, có lịch sử, hoàn tác được.</li>
     <li>Hết cảnh <em>“phieu_final_v3_sửa_lần_cuối_thật.docx”</em>.</li>
-    <li><strong>28 snapshot style</strong> đã lưu → đổi thiết kế lỡ hỏng, quay lại trong vài giây.</li>
+    <li><strong>56 snapshot style</strong> đã lưu → đổi thiết kế lỡ hỏng, quay lại trong vài giây.</li>
     <li>Đã có sẵn hướng dẫn đồng bộ đa trung tâm.</li>
   </ul>
   <aside class="notes">Học liệu là file văn bản thuần nên quản lý như mã nguồn: ai sửa gì khi nào đều có vết. 28 snapshot để rollback. Nhiều trung tâm cùng một kho mà không giẫm chân nhau.</aside>

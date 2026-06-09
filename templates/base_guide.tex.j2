@@ -65,7 +65,7 @@
   before=\vspace{2pt}, after=\vspace{10pt}
 ]
   \sffamily
-  {\bfseries\fontsize{12pt}{14pt}\selectfont\color{brand}SỔ TAY GIÁO VIÊN}\par\vspace{4pt}
+  {\bfseries\fontsize{12pt}{14pt}\selectfont\color{brand}SỔ TAY GIÁO VIÊN}((* if lesson.class_tier *))\hspace{6pt}{\setlength{\fboxsep}{4pt}\colorbox{ink}{\color{white}\bfseries\footnotesize\strut\,LỚP ((( lesson.class_tier )))\,}}((* endif *))\par\vspace{4pt}
   \titlefit{\bfseries\fontsize{18pt}{21pt}\selectfont\color{brand}((( lesson.title | upper )))}\par\vspace{10pt}
   {Tài liệu lưu hành nội bộ \hfill \textbf{Đáp án \& Mẹo sư phạm điều phối}}
 \end{tcolorbox}

@@ -1,0 +1,129 @@
+{
+  "xuat_xu": {
+    "truong": "THCS Ngô Gia Tự",
+    "ky": "GK1",
+    "nam": "2025-2026",
+    "thoi_gian_phut": 90,
+    "ngay_kiem_tra": "2025-11-06",
+    "tong_diem": 10,
+    "nguon": "inputs/seeds/lop-9/de-giua-ki-1/de-giua-ki-1-toan-9-nam-2025-2026-truong-thcs-ngo-gia-tu-ha-noi.pdf",
+    "loai_pdf": "text",
+    "co_bieu_diem": true,
+    "co_ma_tran": true
+  },
+  "da_duyet": false,
+  "ghi_chu_can_Thay_xem": [
+    "HDC có vài lỗi đánh máy: hệ PT 1.2 ghi nhầm KL '(1;2)' nhưng nghiệm đúng là (7;5); Bài 2.2 ghi nhầm 'x+y=700' nhưng đề là 750 → nghiệm x=400, y=300 vẫn đúng."
+  ],
+  "cau": [
+    {
+      "id": "gk1-ngo-gia-tu-1a", "vi_tri": "Bài 1.1a",
+      "dang": ["DS-PT-QUYVE"], "chuong": "C1", "do_kho": 1, "diem": 0.75,
+      "de": "Giải phương trình: (x − 2)(2x + 6) = 0.",
+      "dap_an": "x = 2 hoặc x = −3", "barem_nguon": "goc",
+      "barem": [{"buoc": "Giải x − 2 = 0 và 2x + 6 = 0, kết luận x = 2; x = −3", "diem": 0.75}]
+    },
+    {
+      "id": "gk1-ngo-gia-tu-1b", "vi_tri": "Bài 1.1b",
+      "dang": ["DS-PT-QUYVE"], "chuong": "C1", "do_kho": 2, "diem": 0.75,
+      "de": "Giải phương trình: 4/(x+3) + (x−1)/(x−3) = (x²+x)/(x²−9).",
+      "dap_an": "Vô nghiệm (x = 3 không TMĐK x ≠ ±3)", "barem_nguon": "goc",
+      "barem": [
+        {"buoc": "ĐK x ≠ ±3; quy đồng mẫu (x+3)(x−3)", "diem": 0.25},
+        {"buoc": "4(x−3) + (x−1)(x+3) = x²+x ⇒ 5x = 15", "diem": 0.25},
+        {"buoc": "x = 3 (KTM) ⇒ vô nghiệm", "diem": 0.25}
+      ]
+    },
+    {
+      "id": "gk1-ngo-gia-tu-1c", "vi_tri": "Bài 1.1c",
+      "dang": ["DS-BPT-GIAI"], "chuong": "C2", "do_kho": 1, "diem": 0.75,
+      "de": "Giải bất phương trình: 2(x − 3) < 5x.",
+      "dap_an": "x > −2", "barem_nguon": "goc",
+      "barem": [
+        {"buoc": "2x − 6 < 5x ⇒ −3x < 6", "diem": 0.5},
+        {"buoc": "x > −2", "diem": 0.25}
+      ]
+    },
+    {
+      "id": "gk1-ngo-gia-tu-2", "vi_tri": "Bài 1.2",
+      "dang": ["DS-HEPT-GIAI"], "chuong": "C1", "do_kho": 1, "diem": 0.75,
+      "de": "Giải hệ phương trình: −2x + 3y = 1 ; x + 5y = 32.",
+      "dap_an": "(x; y) = (7; 5)", "barem_nguon": "goc",
+      "barem": [{"buoc": "Giải hệ, kết luận nghiệm (7; 5)", "diem": 0.75}]
+    },
+    {
+      "id": "gk1-ngo-gia-tu-3-1", "vi_tri": "Bài 2.1",
+      "dang": ["DS-THUCTE-LAPPT-BPT"], "chuong": "C1", "do_kho": 2, "diem": 1.5,
+      "de": "Tổ dự định mỗi ngày may 50 áo. Thực tế may 55 áo/ngày nên xong sớm 2 ngày và dư 15 áo. Tính số áo phải may theo dự định.",
+      "dap_an": "1250 cái áo", "barem_nguon": "goc",
+      "barem": [
+        {"buoc": "Gọi x là số áo dự định (x ∈ ℕ*); thực tế may x+15 áo", "diem": 0.5},
+        {"buoc": "Lập PT thời gian: x/50 − (x+15)/55 = 2", "diem": 0.5},
+        {"buoc": "Giải x = 1250 (TM); kết luận 1250 cái áo", "diem": 0.5}
+      ]
+    },
+    {
+      "id": "gk1-ngo-gia-tu-3-2", "vi_tri": "Bài 2.2",
+      "dang": ["DS-THUCTE-LAPHE"], "chuong": "C1", "do_kho": 2, "diem": 1.5,
+      "de": "Mua một bàn là và một quạt điện, tổng giá niêm yết 750 nghìn. Bàn là giảm 10%, quạt giảm 20% nên được giảm 100 nghìn. Tính giá niêm yết mỗi món.",
+      "dap_an": "Bàn là 400 nghìn; quạt điện 300 nghìn", "barem_nguon": "goc",
+      "barem": [
+        {"buoc": "Gọi giá x, y (nghìn đồng, > 0); pt x + y = 750", "diem": 0.5},
+        {"buoc": "Pt 0,1x + 0,2y = 100; lập hệ", "diem": 0.5},
+        {"buoc": "Giải x = 400, y = 300 (TM); kết luận", "diem": 0.5}
+      ]
+    },
+    {
+      "id": "gk1-ngo-gia-tu-4-eiffel", "vi_tri": "Bài 3",
+      "dang": ["HH-TSLG-THUCTE"], "chuong": "C4", "do_kho": 2, "diem": 1.0,
+      "de": "Tính chiều cao tháp Eiffel: góc giữa tia nắng và mặt đất là 62°, bóng tháp trên mặt đất 172m (làm tròn đến hàng phần mười).",
+      "dap_an": "AB = 172·tan62° ≈ 323,7 m", "barem_nguon": "goc",
+      "barem": [
+        {"buoc": "Xét tam giác ABC vuông tại A: AB = AC·tanC = 172·tan62°", "diem": 0.5},
+        {"buoc": "AB ≈ 323,7 m", "diem": 0.5}
+      ]
+    },
+    {
+      "id": "gk1-ngo-gia-tu-5a", "vi_tri": "Bài 4a",
+      "dang": ["HH-TSLG-TINH"], "chuong": "C4", "do_kho": 2, "diem": 1.0,
+      "de": "Tam giác ABC vuông tại A (AB < AC), AB = 6cm, AC = 8cm. Tính BC và số đo góc B, góc C (góc làm tròn đến độ).",
+      "dap_an": "BC = 10cm; góc B ≈ 53°; góc C ≈ 37°", "barem_nguon": "goc",
+      "barem": [
+        {"buoc": "Vẽ hình đúng", "diem": 0.25},
+        {"buoc": "BC = 10cm", "diem": 0.25},
+        {"buoc": "Góc B ≈ 53°", "diem": 0.25},
+        {"buoc": "Góc C ≈ 37°", "diem": 0.25}
+      ]
+    },
+    {
+      "id": "gk1-ngo-gia-tu-5b", "vi_tri": "Bài 4b",
+      "dang": ["HH-TSLG-CM"], "chuong": "C4", "do_kho": 3, "diem": 1.0,
+      "de": "Gọi M là trung điểm AC, I là hình chiếu của A trên BC. Chứng minh ΔABC đồng dạng ΔIMA, từ đó suy ra sin²(ABC) = IM/BC.",
+      "dap_an": "ΔABC ∽ ΔIMA ⇒ sin²(ABC) = (AC/BC)·(IM/AM) = IM/BC", "barem_nguon": "goc",
+      "barem": [
+        {"buoc": "Chứng minh ΔABC đồng dạng ΔIMA", "diem": 0.5},
+        {"buoc": "Suy ra sin²(ABC) = IM/BC", "diem": 0.5}
+      ]
+    },
+    {
+      "id": "gk1-ngo-gia-tu-5c", "vi_tri": "Bài 4c",
+      "dang": ["HH-TSLG-CM"], "chuong": "C4", "do_kho": 4, "diem": 0.5,
+      "de": "Gọi K là hình chiếu của M trên BC. Tia AI cắt đường thẳng qua C vuông góc với AC tại N. Chứng minh M, K, N thẳng hàng.",
+      "dap_an": "ΔABI ∽ ΔCAN ⇒ AB/AC = CA/CN; ΔABI ∽ ΔKMC ⇒ ... ⇒ ΔKMC ∽ ΔCAN ⇒ góc CKM = góc CKN ⇒ thẳng hàng", "barem_nguon": "goc",
+      "barem": [
+        {"buoc": "Lập các tỉ số đồng dạng dẫn tới CM/CN = KM/KC", "diem": 0.25},
+        {"buoc": "ΔKMC đồng dạng ΔCAN ⇒ góc bằng nhau ⇒ M, K, N thẳng hàng", "diem": 0.25}
+      ]
+    },
+    {
+      "id": "gk1-ngo-gia-tu-6", "vi_tri": "Bài 5",
+      "dang": ["DS-CUCTRI"], "chuong": "C2", "do_kho": 4, "diem": 0.5,
+      "de": "Khu đất hình chữ nhật chu vi 60m, chiều rộng x (m). Tìm x để diện tích vườn hoa lớn nhất.",
+      "dap_an": "x = 15m (diện tích lớn nhất 225 m²)", "barem_nguon": "goc",
+      "barem": [
+        {"buoc": "Chiều dài 30−x; diện tích x(30−x) ≤ ((x+30−x)/2)² = 225", "diem": 0.25},
+        {"buoc": "Dấu '=' khi x = 30−x ⇒ x = 15m", "diem": 0.25}
+      ]
+    }
+  ]
+}

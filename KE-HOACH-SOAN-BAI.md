@@ -55,6 +55,7 @@ Mỗi ô tick gồm: `new-lesson → điền → validate → approve → build`
 
 ### Tuần 10–11
 - ✅ **Đại** [tuan10-11-bat-phuong-trinh-bac-nhat-mot-an](inputs/seeds/lop-9/dai-so/tuan10-11-bat-phuong-trinh-bac-nhat-mot-an) — **4 phiếu** phủ kín nguồn (A: nhận biết+giải BPT bậc nhất · B: phân thức/khai triển/rút gọn · C: tích/thương+dạng đặc biệt HSG · D: lập BPT) — *validate sạch + đã build, chờ Thầy duyệt* · *(mở chương: set profile C2 BPT)*
+- 🟦 **Đại — bản LỚP C** `[C]tuan10-11-bat-phuong-trinh-bac-nhat-mot-an` — **2 phiếu** phân hoá tầng C (A tuần 10: nhận biết + giải BPT bậc nhất/có ngoặc/khai triển/đặc biệt · B tuần 11: khử mẫu + toán thực tế lập BPT), theo chuẩn spec [HUONG-DAN-PHAN-TANG-LOP.md](HUONG-DAN-PHAN-TANG-LOP.md) (40-40-20, buổi 3 giờ −15′ giải lao). **Đề ~70% bê từ 10 đề GKI + 30% từ phiếu BT TOANMATH**; phủ gần hết dạng BPT trong GKI. *Demo phân tầng cho các sếp.*
 - ☐ **Hình** [tuan11-12-vi-tri-tuong-doi-duong-thang-duong-tron](inputs/seeds/lop-9/hinh-hoc/tuan11-12-vi-tri-tuong-doi-duong-thang-duong-tron) — đã chốt 2 phiếu A/B (xác định vị trí · tính độ dài+tiếp tuyến), *tạm hoãn theo yêu cầu Thầy* · *(mở chương: set profile C5)*
 
 ### Tuần 12

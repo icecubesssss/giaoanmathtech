@@ -18,11 +18,16 @@
     \fill[color=ink] ([xshift=0.3in]current page.north west) rectangle ([xshift=0.33in]current page.south west);
   \end{tikzpicture}
 
-  \vspace*{0.3in}
+  % Có badge "LỚP C" thì nhích lề trên lên để badge KHÔNG đẩy tiêu đề/chữ ký
+  % tràn xuống đáy (badge + khoảng hở chiếm thêm ~1 dòng).
+  ((* if lesson.class_tier *))\vspace*{0.12in}((* else *))\vspace*{0.3in}((* endif *))
   \begin{flushleft}
     \hspace*{0.55in}
     \begin{minipage}{0.82\textwidth}
       \includegraphics[height=26pt]{((( assets_dir )))((( branding.logo_file )))}\par\vspace{14pt}
+      ((* if lesson.class_tier *))
+      {\setlength{\fboxsep}{4pt}\colorbox{ink}{\color{white}\sffamily\bfseries\normalsize\strut\,LỚP ((( lesson.class_tier )))\,}}\par\vspace{7pt}
+      ((* endif *))
       ((* if lesson.eyebrow *))
       {\color{brand}\sffamily\bfseries\normalsize ((( lesson.eyebrow | upper )))}\par\vspace{7pt}
       ((* endif *))

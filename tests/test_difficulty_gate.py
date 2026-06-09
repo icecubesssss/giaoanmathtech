@@ -5,6 +5,7 @@ from pathlib import Path
 import pytest
 
 from src.schema import LessonPackage
+from src.schema.lesson_package import ParaBlock
 from src.validators.difficulty_gate import check_difficulty, load_profile
 
 SEED_JSON = Path("inputs/seeds/lop-9/dai-so/tuan09-bat-dang-thuc/phieu-a-bdt-tinh-chat-va-so-sanh.json")
@@ -25,7 +26,7 @@ def test_seed_passes_difficulty_gate(seed_lesson):
 def test_empty_practice2_rejected(seed_lesson):
     """Luyện tập 2 chỉ có chữ giảng suông, không công thức/đề — phải bị chặn."""
     seed_lesson.stages[3].blocks = [
-        type(seed_lesson.stages[3].blocks[0])(type="para", text="Hôm nay khó lắm các em ơi.")
+        ParaBlock(type="para", text="Hôm nay khó lắm các em ơi.")
     ]
     rep = check_difficulty(seed_lesson)
     assert not rep.passed

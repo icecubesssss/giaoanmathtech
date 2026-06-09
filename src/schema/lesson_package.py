@@ -39,7 +39,7 @@ class NotedBlock(BaseModel):
 
 class WriteLinesBlock(BaseModel):
     type: Literal["writelines"] = "writelines"
-    count: int = Field(2, ge=1, le=12, description="Số dòng kẻ trống cho HS viết")
+    count: int = Field(2, ge=0, le=12, description="Số dòng kẻ trống cho HS viết (0 = chỉ chừa 1 dòng trắng, KHÔNG kẻ — lớp HS trình bày vào vở)")
 
 
 # ----- Đáp án MÁY-ĐỌC để validate tự soi bằng SymPy (tùy chọn, KHÔNG in ra phiếu) -----
@@ -74,9 +74,24 @@ class ProblemBlock(BaseModel):
     type: Literal["problem"] = "problem"
     label: str = Field(..., description="Nhãn, vd 'Bài 1.' / 'Bài toán.'")
     statement: str = Field(..., description="Đề bài (LaTeX inline cho phép)")
-    # Tầng bài (hỗ trợ gradient gate + nhãn): "" | onclass | btvn | extend.
+    # Tầng bài = NƠI LÀM (đặt mục + gradient gate): "" | onclass | btvn | extend.
     tier: Literal["", "onclass", "btvn", "extend"] = Field(
         "", description="onclass=trên lớp, btvn=về nhà, extend=mở rộng/nâng cao"
+    )
+    # MỨC ĐỘ NHẬN THỨC (Bloom) → SỐ SAO in trên phiếu. ĐỘC LẬP với `tier` (nơi làm):
+    # một bài btvn vẫn có thể là mức Vận dụng (3 sao). Định nghĩa CHỐT:
+    #   1 = Nhận biết   (★☆☆, vàng)  : 1 bước, nhận ra / áp dụng TRỰC TIẾP 1 công thức,
+    #                                   định nghĩa, quy tắc — "nhìn phát thấy ngay".
+    #   2 = Thông hiểu  (★★☆, vàng)  : 1–2 bước, phải hiểu quan hệ rồi mới suy ra
+    #                                   (giải thích, so sánh, biến đổi/tính toán cơ bản).
+    #   3 = Vận dụng    (★★★, vàng)  : 2–4 bước, ghép nhiều ý cùng chủ đề / bài thực tế
+    #                                   ĐƠN GIẢN (lãi suất, lập kế hoạch, %, đo đạc).
+    #   4 = Vận dụng cao (◆◆◆◆, MÀU KIM CƯƠNG): đa tầng, không giải "rập khuôn"
+    #                                   (chứng minh BĐT, tìm cực trị, đổi biến phức tạp…).
+    #   0 = chưa chấm → renderer tự suy sao từ `tier` (tương thích ngược file cũ);
+    #       visual_linter sẽ nhắc gắn level.
+    level: Literal[0, 1, 2, 3, 4] = Field(
+        0, description="Mức nhận thức→số sao: 1 NB, 2 TH, 3 VD, 4 VD cao (kim cương); 0=chưa chấm"
     )
     # Gợi ý phân tầng "mở khi bí" — IN TRÊN PHIẾU HS (định hướng, KHÔNG phải lời
     # giải). Hạ ngưỡng nhập cho bài khó mà không lộ đáp án (lời giải vẫn ở solution).
@@ -178,6 +193,7 @@ class LessonPackage(BaseModel):
     title: str
     eyebrow: str = Field("", description="Dòng nhỏ trên tiêu đề, vd 'ĐẠI SỐ — KỸ THUẬT XÉT HIỆU'")
     grade_label: str = Field("", description="vd 'Lớp 9 • Ôn vào 10'")
+    class_tier: str = Field("", description="Tầng lớp phân hoá: ''=chuẩn | 'A' | 'B' | 'C' | 'X' (HS chuyên)")
     stages: list[Stage] = Field(default_factory=list)
 
 

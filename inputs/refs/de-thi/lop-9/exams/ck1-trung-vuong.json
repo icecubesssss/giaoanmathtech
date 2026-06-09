@@ -1,0 +1,165 @@
+{
+  "xuat_xu": {
+    "truong": "THCS Trưng Vương",
+    "ky": "CK1",
+    "nam": "2025-2026",
+    "thoi_gian_phut": 90,
+    "tong_diem": 10,
+    "nguon": "inputs/seeds/lop-9/de-cuoi-ki-1/de-cuoi-hoc-ki-1-toan-9-nam-2025-2026-truong-thcs-trung-vuong-ha-noi.pdf",
+    "loai_pdf": "text",
+    "co_bieu_diem": true
+  },
+  "da_duyet": false,
+  "ghi_chu_can_Thay_xem": [
+    "Bài I.1: tiêu đề biểu điểm gốc ghi nhầm 'x = 9' nhưng đề và lời giải đều là x = 16 → đã lấy theo đề (x=16, A=3/2).",
+    "Đã đối chiếu lại toàn bộ đề bằng ảnh trang (300 DPI): sửa Bài I.3 thành |P| − P = 0; hoàn thiện barem Bài III.2 (góc lệch 9°)."
+  ],
+  "cau": [
+    {
+      "id": "ck1-trung-vuong-1-1",
+      "vi_tri": "Bài I.1",
+      "dang": ["DS-CAN-TINH-RUTGON"], "chuong": "C3", "do_kho": 1, "diem": 1.0,
+      "de": "Cho A = (√x − 1)/(√x − 2) với x ≥ 0, x ≠ 4, x ≠ 1. Tính giá trị của A khi x = 16.",
+      "dap_an": "A = 3/2",
+      "barem_nguon": "goc",
+      "barem": [
+        {"buoc": "Thay x = 16 (TMĐK) vào A", "diem": 0.25},
+        {"buoc": "A = (√16 − 1)/(√16 − 2) = (4 − 1)/(4 − 2)", "diem": 0.5},
+        {"buoc": "Kết luận A = 3/2", "diem": 0.25}
+      ]
+    },
+    {
+      "id": "ck1-trung-vuong-1-2",
+      "vi_tri": "Bài I.2",
+      "dang": ["DS-CAN-TINH-RUTGON"], "chuong": "C3", "do_kho": 2, "diem": 1.0,
+      "de": "Cho B = (3x + 1)/(x − 1) − 2√x/(√x + 1) − 1/(√x − 1) với x ≥ 0, x ≠ 4, x ≠ 1. Chứng minh B = √x/(√x − 1).",
+      "dap_an": "B = √x/(√x − 1)",
+      "barem_nguon": "goc",
+      "barem": [
+        {"buoc": "Viết lại B với mẫu chung (√x + 1)(√x − 1)", "diem": 0.25},
+        {"buoc": "Quy đồng tử: 3x + 1 − 2√x(√x − 1) − 1(√x + 1)", "diem": 0.25},
+        {"buoc": "Rút gọn tử về (x + √x)", "diem": 0.25},
+        {"buoc": "Kết luận B = √x/(√x − 1)", "diem": 0.25}
+      ]
+    },
+    {
+      "id": "ck1-trung-vuong-1-3",
+      "vi_tri": "Bài I.3",
+      "dang": ["DS-CAN-CAUPHU"], "chuong": "C3", "do_kho": 3, "diem": 0.5,
+      "de": "Xét biểu thức P = A·B. Tìm x để |P| − P = 0.",
+      "dap_an": "x = 0 hoặc x > 4",
+      "barem_nguon": "goc",
+      "barem": [
+        {"buoc": "P = AB = √x/(√x − 2); nhận xét P − |P| = 0 ⇔ P ≥ 0", "diem": 0.25},
+        {"buoc": "Xét x = 0 (P = 0, TM) và x > 0 ⇒ √x − 2 > 0 ⇒ x > 4; kết hợp ĐK ⇒ x = 0 hoặc x > 4", "diem": 0.25}
+      ]
+    },
+    {
+      "id": "ck1-trung-vuong-2-1",
+      "vi_tri": "Bài II.1",
+      "dang": ["DS-THUCTE-LAPPT-BPT"], "chuong": "C2", "do_kho": 2, "diem": 1.5,
+      "de": "Thi 'Rung Chuông Vàng': 20 câu, đúng +5 điểm, sai hoặc không trả lời −2 điểm. Đạt ≥ 74 điểm thì vào vòng trường. Hỏi cần trả lời đúng tối thiểu bao nhiêu câu?",
+      "dap_an": "Ít nhất 17 câu",
+      "barem_nguon": "goc",
+      "barem": [
+        {"buoc": "Gọi số câu đúng là x (x ∈ ℕ*); điểm cộng 5x", "diem": 0.25},
+        {"buoc": "Điểm bị trừ 2(20 − x)", "diem": 0.25},
+        {"buoc": "Lập bất phương trình 5x − 2(20 − x) ≥ 74", "diem": 0.25},
+        {"buoc": "Giải BPT được x ≥ 17 (x = 17)", "diem": 0.5},
+        {"buoc": "Kết luận cần trả lời đúng ít nhất 17 câu", "diem": 0.25}
+      ]
+    },
+    {
+      "id": "ck1-trung-vuong-2-2",
+      "vi_tri": "Bài II.2",
+      "dang": ["DS-THUCTE-LAPHE"], "chuong": "C1", "do_kho": 2, "diem": 1.5,
+      "de": "Du thuyền: tour A xuôi 25km, ngược 15km hết 2h45'; tour B xuôi 30km, ngược 20km hết 3h30'. Tính vận tốc riêng của du thuyền và vận tốc dòng nước.",
+      "dap_an": "Vận tốc riêng 15 km/h, vận tốc dòng nước 5 km/h",
+      "barem_nguon": "goc",
+      "barem": [
+        {"buoc": "Gọi vận tốc riêng x, vận tốc dòng nước y (km/h, x, y > 0)", "diem": 0.25},
+        {"buoc": "Lập hệ: 25/(x+y) + 15/(x−y) = 2,75 và 30/(x+y) + 20/(x−y) = 3,5", "diem": 0.5},
+        {"buoc": "Giải hệ được x = 15 (TMĐK), y = 5 (TMĐK)", "diem": 0.5},
+        {"buoc": "Kết luận 15 km/h và 5 km/h", "diem": 0.25}
+      ]
+    },
+    {
+      "id": "ck1-trung-vuong-3-1",
+      "vi_tri": "Bài III.1",
+      "dang": ["HH-TRON-CUNG"], "chuong": "C5", "do_kho": 2, "diem": 0.5,
+      "de": "Con lắc dài 60cm, góc ở tâm 30°. Tính độ dài quãng đường (cung tròn) con lắc đi từ A đến B (π ≈ 3,14).",
+      "dap_an": "≈ 31,4 cm",
+      "barem_nguon": "goc",
+      "barem": [
+        {"buoc": "l = π·60·30/180 ≈ 31,4 cm", "diem": 0.25},
+        {"buoc": "Kết luận con lắc di chuyển khoảng 31,4 cm", "diem": 0.25}
+      ]
+    },
+    {
+      "id": "ck1-trung-vuong-3-2",
+      "vi_tri": "Bài III.2",
+      "dang": ["HH-TRON-CUNG"], "chuong": "C5", "do_kho": 3, "diem": 0.5,
+      "de": "Con lắc đi được 339,12cm thì dừng tại D. Hỏi lúc này con lắc lệch bao nhiêu độ so với phương thẳng đứng?",
+      "dap_an": "Con lắc lệch 9° so với phương thẳng đứng",
+      "barem_nguon": "goc",
+      "barem": [
+        {"buoc": "339,12cm = 10 lượt cung AB (10·31,4 = 314cm) + 25,12cm; tính được cung AD = 25,12cm ⇒ góc AOD = 24°", "diem": 0.25},
+        {"buoc": "Góc AOC = 15° (nửa góc ở tâm) ⇒ góc lệch COD = 24° − 15° = 9°", "diem": 0.25}
+      ]
+    },
+    {
+      "id": "ck1-trung-vuong-4-1",
+      "vi_tri": "Bài IV.1",
+      "dang": ["HH-TRON-CM"], "chuong": "C5", "do_kho": 3, "diem": 1.0,
+      "de": "Đường tròn (O; R) đường kính AB. Từ A kẻ tiếp tuyến Ax; trên Ax lấy M (MA > R). Từ M kẻ tiếp tuyến MC (C là tiếp điểm). Chứng minh A, O, C, M cùng thuộc một đường tròn.",
+      "dap_an": "A, M, O thuộc đường tròn đường kính MO; C, M, O thuộc đường tròn đường kính MO ⇒ ĐPCM",
+      "barem_nguon": "goc",
+      "barem": [
+        {"buoc": "Vẽ hình đúng đề bài", "diem": 0.25},
+        {"buoc": "Chỉ ra A, M, O nằm trên đường tròn đường kính MO", "diem": 0.25},
+        {"buoc": "Chỉ ra C, M, O nằm trên đường tròn đường kính MO", "diem": 0.25},
+        {"buoc": "Suy ra ĐPCM", "diem": 0.25}
+      ]
+    },
+    {
+      "id": "ck1-trung-vuong-4-2",
+      "vi_tri": "Bài IV.2",
+      "dang": ["HH-TRON-CM"], "chuong": "C5", "do_kho": 3, "diem": 1.5,
+      "de": "Gọi E là giao điểm của MB với (O). Chứng minh OM song song BC và góc BMO = góc CAE.",
+      "dap_an": "BC ⊥ AC và OM ⊥ AC ⇒ OM // BC; góc BMO = góc CBE = góc CAE",
+      "barem_nguon": "goc",
+      "barem": [
+        {"buoc": "Chỉ ra BC ⊥ AC", "diem": 0.25},
+        {"buoc": "Chỉ ra OM ⊥ AC", "diem": 0.25},
+        {"buoc": "Suy ra OM // BC", "diem": 0.25},
+        {"buoc": "Chỉ ra góc BMO = góc CBE", "diem": 0.25},
+        {"buoc": "Chỉ ra góc CAE = góc CBE", "diem": 0.25},
+        {"buoc": "Suy ra góc BMO = góc CAE (ĐPCM)", "diem": 0.25}
+      ]
+    },
+    {
+      "id": "ck1-trung-vuong-4-3",
+      "vi_tri": "Bài IV.3",
+      "dang": ["HH-TRON-CM"], "chuong": "C5", "do_kho": 4, "diem": 0.5,
+      "de": "Từ B kẻ tiếp tuyến By. Đường thẳng qua O song song AC cắt By tại D. Gọi I là trung điểm OB. Chứng minh MB vuông góc với ID.",
+      "dap_an": "ΔOBD ∽ ΔMAO ⇒ ΔIBD ∽ ΔMAB ⇒ ĐPCM",
+      "barem_nguon": "goc",
+      "barem": [
+        {"buoc": "Chỉ ra ΔOBD đồng dạng ΔMAO", "diem": 0.25},
+        {"buoc": "Suy ra ΔIBD đồng dạng ΔMAB ⇒ MB ⊥ ID", "diem": 0.25}
+      ]
+    },
+    {
+      "id": "ck1-trung-vuong-5",
+      "vi_tri": "Bài V",
+      "dang": ["DS-CUCTRI", "DS-BDT-CM"], "chuong": "C2", "do_kho": 4, "diem": 0.5,
+      "de": "Hai khu vực hình vuông cạnh x, y (x, y ≥ 1), x² + y² = 5. Trồng hoa bao quanh 4 cạnh mỗi khu: khu I 30000đ/m, khu II 70000đ/m. Hỏi chi phí trồng hoa dao động từ ít nhất đến nhiều nhất bao nhiêu?",
+      "dap_an": "Từ 520 000 đồng (x=2, y=1) đến 680 000 đồng (x=1, y=2)",
+      "barem_nguon": "goc",
+      "barem": [
+        {"buoc": "Lập chi phí = 40000·[3(x+y) + 4y]; dùng (y−1)(y−2) ≤ 0 ⇒ x+y ≥ 3 ⇒ chi phí nhỏ nhất 520 000đ", "diem": 0.25},
+        {"buoc": "Dùng (x−1)² ≥ 0, (y−2)² ≥ 0 ⇒ 3x + 6y ≤ 15 ⇒ chi phí lớn nhất 680 000đ", "diem": 0.25}
+      ]
+    }
+  ]
+}

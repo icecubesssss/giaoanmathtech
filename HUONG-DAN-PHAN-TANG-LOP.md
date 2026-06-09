@@ -1,0 +1,120 @@
+# Phân tầng lớp & chuẩn spec phiếu theo năng lực HS
+
+> Nguồn sự thật cho việc soạn phiếu **phân hoá theo tầng lớp**. Bổ trợ [AGENTS.md](AGENTS.md) (nguồn gốc quy trình) và [HUONG-DAN-SOAN-BAI.md](HUONG-DAN-SOAN-BAI.md) (luật soạn chi tiết).
+
+Trung tâm chia HS theo năng lực thành các **tầng lớp**. Mỗi tầng nhận **cùng một bài** nhưng phiếu được **điều chỉnh thông số** (độ khó, tỉ lệ NB-TH-VD, số câu) cho khớp năng lực.
+
+| Tầng | Đối tượng | Yêu cầu cốt lõi | Tỉ lệ NB-TH-VD |
+|---|---|---|---|
+| **A** | Khá – giỏi | *(chuẩn hoá sau)* | *(sau)* |
+| **B** | Trung bình – khá | *(chuẩn hoá sau)* | *(sau)* |
+| **C** | Nền (yếu – trung bình) | Thạo **100% Nhận biết + Thông hiểu**, làm được **1 phần Vận dụng** | **40 – 40 – 20** |
+| **X** | HS chuyên | *(chuẩn hoá sau)* | *(sau)* |
+
+> Hiện đã chuẩn hoá **tầng C cho Lớp 9 – Đại số**. Các tầng A/B/X và môn/khối khác sẽ chuẩn hoá khi soạn tới.
+
+---
+
+## 1. Quy ước đặt tên & dấu hiệu (áp dụng MỌI tầng)
+
+- **Folder phiếu theo tầng:** thêm tiền tố `[A]`/`[B]`/`[C]`/`[X]` **đứng TRƯỚC** `tuanNN`, ví dụ:
+  `inputs/seeds/lop-9/dai-so/[C]tuan10-11-bat-phuong-trinh-bac-nhat-mot-an/`.
+  Tiền tố đặt trước để **không nhầm với hệ đếm tuần** (`tuanNN-`). Tool đã hiểu tiền tố này (`new-lesson`, `build`, `progress`… vẫn đọc đúng số tuần/chủ đề).
+- **Phiếu bản chuẩn** (mọi trình độ) **không** mang tiền tố — giữ nguyên `tuanNN-<chủ đề>/`.
+- **Trong folder tầng** vẫn theo quy ước `phieu-a-/phieu-b-/…` (HUONG-DAN §7).
+- **Trường máy-đọc:** đặt `"class_tier": "C"` trong JSON phiếu. `new-lesson` tự suy từ tiền tố folder (hoặc cờ `--tier C`).
+- **Hiển thị trên PDF:** badge **"LỚP C"** (hộp đậm) tự in ở header cả 3 bản (handout/guide/slide) khi có `class_tier` — KHÔNG nhồi "LỚP C" vào `eyebrow` nữa (tránh lặp). `eyebrow` giữ phần chủ đề như thường (vd `ĐẠI SỐ — PHIẾU A: …`). Cầm tờ in ra biết ngay tờ nào cho lớp nào.
+
+---
+
+## 2. Chuẩn SPEC giờ — **Lớp 9 · Đại số · tầng C**
+
+**Buổi học Lớp 9 Đại số = 3 tiếng = 180′.** Trừ **15′ giải lao** → **165′ học trên lớp** = *Ví dụ GV giảng* + *Luyện tập trên lớp*. **BTVN** làm ở nhà, tính riêng. **Mỗi buổi = 1 phiếu.**
+
+Số câu suy từ: chia thời lượng mỗi đoạn theo **40-40-20** (NB-TH-VD), rồi chia cho **thời lượng ước tính mỗi câu** (theo bảng Thầy chốt):
+
+| Đoạn | Ngân sách | Phút/câu NB / TH / VD | **Câu NB** | **Câu TH** | **Câu VD** |
+|---|---|---|---|---|---|
+| Ví dụ GV giảng | 45′ | 1 / 4 / 8 | 18 | 4 | 1 |
+| Luyện tập trên lớp (×1,5) | 120′ | 1,5 / 6 / 12 | 32 | 8 | 2 |
+| BTVN (ở nhà) | 90′ | 1,5 / 6 / 12 ¹ | 24 | 6 | 2 |
+| **Tổng / phiếu** | | | **≈ 74** | **≈ 18** | **≈ 5** |
+
+¹ Bảng gốc của Thầy **bỏ trống** cột thời lượng/câu của BTVN → tạm dùng nhịp luyện tập (×1,5). **Thầy chỉnh lại con số này nếu cần.**
+
+**Cách hiểu & áp dụng (quan trọng — kẻo over/under soạn):**
+- "Câu" là **đơn vị tính giờ**, KHÔNG phải số đề rời. Gom thành *Bài* nhiều ý — vd 1 Bài liệt kê a)–f) tính là **6 câu NB**. ⇒ ~74 câu NB ≈ **12–14 Bài**.
+- **VD ≈ 5 câu/phiếu** đúng tinh thần "làm được **1 phần** VD" của lớp C (1 ví dụ + 2 luyện + 2 BTVN).
+- Chấm `level`: NB → `1` (★☆☆), TH → `2` (★★☆), VD → `3` (★★★). **Tầng C KHÔNG có** `level 4`/kim cương, KHÔNG có `tier:extend`/HSG.
+- Giữ **khung 5 chặng** chuẩn (review→concept→practice1→practice2→reflection); cắt phần nâng cao, dồn giàn giáo (ví dụ mẫu điền khuyết, chia bước) cho NB-TH thật chắc.
+
+> Bảng gốc Thầy gửi (tham chiếu nhanh, "buổi thường" của trung tâm ≈ 1h30): ví dụ ~17′ · luyện tập ~45′ · BTVN ~60′. Bảng trên là bản **scale cho buổi 3 tiếng của Lớp 9 Đại số**.
+
+---
+
+## 3. Nguồn đề khi soạn phiếu tầng (BẮT BUỘC — không bịa)
+
+Chỉ lấy từ ngân hàng đề **không đủ dạng** để dẫn dắt scaffolding. Phối hợp nguồn theo **tỉ trọng ~70% đề GKI + ~30% phiếu BT bổ trợ** (tương đối), **ưu tiên bê được HẾT / gần hết các dạng có trong đề GKI**:
+1. **Ngân hàng đề GKI** `inputs/refs/de-thi/` (~70%) — bê NGUYÊN câu hay ra thi, ghi `(GKI)` / `(GKI — <trường>)` cuối đề để truy nguồn (vd với BPT: `DS-BPT-GIAI` 9/10 đề, `DS-THUCTE-LAPPT-BPT` 8/10 đề; xem `ma-tran-thong-ke.md`).
+2. **Phiếu BT bổ trợ / SGK** trong folder bài (~30%) — bù dạng/đa dạng số liệu cho đủ scaffolding (vd file *Phiếu bài tập Toán 9 … TOANMATH* trong folder tuần).
+3. **Phiếu bản chuẩn đã soạn** (cùng bài, folder không tiền tố) — *tận dụng đề & đáp án ĐÃ kiểm SymPy*, chỉ re-level + regroup.
+
+Đáp án mọi PT/BPT vẫn phải **đối chiếu SymPy** + nên kèm trường `check` để `validate` tự soi (AGENTS §2).
+
+**Trình bày (rút từ góp ý của Thầy):**
+- Bài có **nhiều ý nhỏ a),b),c)…** dàn **2 cột** cho gọn — dùng `\begin{minipage}[t]{0.47\linewidth} … [[br]] … \end{minipage}\hfill\begin{minipage}[t]{0.47\linewidth} … \end{minipage}` trong block `para` (minipage qua được sanitizer; [[br]] vẫn xuống dòng trong minipage).
+- **Hình minh hoạ KHÔNG được lộ đáp án** ô điền (vd opener thang máy chỉ ghi `630 kg`, không ghi `≤630`).
+- Hộp **"VÍ DỤ MẪU"** (`variant:"example"`) chỉ dán lên **ví dụ thật**; định nghĩa/quy tắc để hộp thường (`variant:""`).
+- Ví dụ giải: bước biến đổi nói **"chuyển vế đổi dấu"** (đừng máy móc "cộng … vào hai vế"); câu **"Vậy nghiệm …"** xuống dòng riêng (`[[br]]`).
+- Chấm sao theo **mức nhận thức TỪNG CÂU** (giải BPT 1 bước là TH ★★☆, không phải NB).
+
+---
+
+## 4. Quy trình soạn phiếu tầng (tóm tắt)
+
+```bash
+mkdir "inputs/seeds/<lop>/<mon>/[C]tuanNN-<chu-de>"        # tiền tố [C] trước tuanNN
+python -m src.main new-lesson "<folder [C]…>" --tier C      # khung + class_tier="C" (badge LỚP C tự in trên PDF)
+# → điền nội dung bám 3 nguồn (§3), số câu theo bảng SPEC (§2), chấm level 1–3
+python -m src.main validate <file.json>                     # cổng sạch (gồm SymPy)
+python -m src.main build-folder "<folder [C]…>"             # 3 PDF/phiếu — badge LỚP C hiện ở header
+# → Thầy xem PDF rồi approve
+```
+
+## 5. Công thức soạn NỘI DUNG phiếu lớp C (checklist sư phạm — Thầy chốt qua nhiều vòng)
+
+> Đây là "quy trình riêng cho phiếu lớp [C]". Làm đúng từng mục để khỏi soạn lại.
+
+**A. Mạch dẫn dắt = QUY NẠP + ĐÚNG THỨ TỰ LOGIC** (HS bình thường/yếu học từ cụ thể → trừu tượng):
+1. **Khám phá**: cho HS *GẶP* đối tượng qua **ví dụ thật** trước (chưa định nghĩa hình thức, chưa nói khái niệm phụ, chưa giải). Ôn kiến thức nền sẽ dùng.
+2. **Khái niệm**: chốt **định nghĩa GỐC trước** rồi mới tới khái niệm phụ thuộc (vd định nghĩa "BPT" *trước* "nghiệm của BPT" — đừng nói nghiệm khi HS chưa biết BPT là gì). Với cách giải/quy tắc: **cho VÍ DỤ MẪU trước → RÚT RA quy tắc sau** (không nêu quy tắc trừu tượng trước).
+3. **Luyện tập 1 = dồn NHẬN BIẾT** (nhận biết dạng, điền dấu, tìm điều kiện hệ số, thử nghiệm thay số). Đây là phần lớp C cần thạo 100%.
+4. **Luyện tập 2 = GIẢI (Thông hiểu)** — kỹ năng trục của bài.
+5. **Tổng kết + BTVN**.
+
+**B. Độ khó:** **BỎ HẲN vận dụng cao** (vô nghiệm/đúng-mọi-x, tích-thương, HSG, kỹ thuật lạ). Lớp C = thạo NB+TH + làm được **1 phần VD**.
+
+**C. Tách bài VẬN DỤNG thành chuỗi câu nhỏ** (gỡ giàn — HS yếu vẫn ăn điểm từng phần):
+`a) [NB] từ khoá → dấu (≤/≥)` → `b) [TH] viết biểu thức theo ẩn` → `c) [TH] lập BPT` → `d) [VD] giải & trả lời`. Gắn thẻ `[NB]/[TH]/[VD]` ở đầu mỗi ý để truy tỉ lệ.
+
+**D. Cân tỉ lệ:** hiểu **40-40-20 là tỉ lệ THỜI GIAN, không phải số câu** (câu NB làm nhanh 1,5′, TH 6′, VD 12′ → muốn cân thì NB phải đông câu hơn). Thực tế: dồn NB vào LT1 cho **NB ≈ TH về số câu** (≈40-40); VD ít và đã tách bước. Buổi luyện kỹ năng tự nhiên hơi nặng TH — chấp nhận, defend bằng "đây là buổi luyện GIẢI".
+
+**E. Trình bày (lỗi đã từng bị bắt — tránh):**
+- Bài nhiều ý a)b)c)… → xếp **2 cột** (`minipage`).
+- Trong một câu mà liệt kê **nhiều BPT** → mỗi BPT **xuống dòng riêng** (`[[br]] \quad $\bullet$\;`), đừng để cùng dòng (rối).
+- **Hình minh hoạ KHÔNG được lộ đáp án** ô điền — kể cả **chú thích dưới hình**: thang máy ghi `630 kg` (không `≤630`); heo đất ghi `tiền để dành` (KHÔNG `≤ 50k`). Soi lại tikz: nếu có `\node` chú thích trùng với đáp số ô điền thì **xoá node đó**.
+- **VÍ DỤ MẪU phải điền khuyết HẾT** — Thầy + HS cùng làm: blank cả **bước biến đổi LẪN câu kết luận** ("Vậy nghiệm là $x\ \rule{}{}$"), KHÔNG ghi sẵn đáp số. Đáp án dồn về trường `solution` (answer key, chỉ hiện ở bản GV). Ví dụ NHẬN BIẾT cũng để ô điền cho TỪNG ý (đừng `\underline{là}` sẵn).
+- **KHÔNG dùng dấu suy ra `⇒` (`\Rightarrow`) trong nội dung HS đọc** — THCS chưa dạy ký hiệu này. Thay bằng **xuống dòng từng bước** (`[[br]]`) hoặc chữ "nên/được". (Trường `solution`/`teacher_note` của bản GV thì chấp nhận `⇒` cho gọn.)
+- **Khai triển giữ dấu trung gian** — đừng nhảy tắt nuốt dấu: `$3(x+1)-6$` phải qua `$3x+3-6$` rồi mới gộp `$3x-3$` (viết thẳng `3x-3` khiến Thầy tưởng sai dấu `+1`).
+- **Lớp C: HS trình bày VÀO VỞ → KHÔNG kẻ dòng** trên phiếu. Dùng `{"type":"writelines","count":0}` = chỉ chừa **một dòng trắng** sau mỗi bài (không vẽ `\fillline`). `count≥1` mới ra dòng kẻ (dành tầng/bài cần viết tại chỗ).
+- **Không thêm chữ thừa** kiểu "— cùng làm", "— xem ví dụ trước" vào tiêu đề ví dụ; để tiêu đề gọn ("(4) Cách giải.").
+- Hộp **"VÍ DỤ MẪU"** (`variant:"example"`) chỉ dán lên **ví dụ thật**; định nghĩa/quy tắc để hộp thường (`variant:""`).
+- **Sơ đồ tư duy** phải **nói rõ mục đích** ngay trên nó (vd "tự điền để hệ thống lại cả buổi — bản tóm tắt mang về ôn"), đừng để HS không biết để làm gì.
+- Bước giải nói **"chuyển vế đổi dấu"** (đừng máy móc "cộng … vào hai vế"); câu **"Vậy nghiệm …"** xuống dòng riêng.
+- **KHÔNG dùng ký hiệu vòng tròn ①②③** (font thiếu glyph → ô vuông) — dùng `(1)(2)(3)`. Mũi tên `→` trong text phải bọc `$\to$`.
+
+**H. Cân thời lượng — đếm theo "câu" (đơn vị giờ), không theo số đề rời:** mỗi phiếu A/B đều **3 tiếng** ⇒ đoạn *Luyện tập trên lớp* phải lấp **~120′** (xem bảng §2). Khử mẫu/thực-tế ăn nhiều phút mỗi bài (TH 6′, VD 12′) nên **ít đề mà vẫn đủ giờ**; buổi nhận-biết thì cần **đông đề NB** (1,5′/câu). Khi soạn xong: nhẩm `Σ(số câu × phút/câu)` cho LT1+LT2 ≈ 120′ — thiếu thì thêm bài, dư thì bớt. Đừng nhìn "phiếu này ít bài hơn" mà vội thêm: so bằng **thời gian**, không bằng **đếm đề**.
+
+**F. Nguồn & đáp án:** ~70% bê NGUYÊN câu GKI (ghi `(GKI — trường)`) + ~30% phiếu BT bổ trợ; phủ gần hết dạng GKI. Mọi BPT **đối chiếu SymPy** trước khi viết đáp án.
+
+**G. Sau build (BẮT BUỘC):** đọc lại PDF — soát mạch dẫn dắt đúng thứ tự, 2 cột/xuống dòng, badge LỚP C, sao theo từng câu, không còn VDC, đáp án khớp. Rồi mới trình Thầy.

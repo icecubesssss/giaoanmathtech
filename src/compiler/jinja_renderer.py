@@ -72,18 +72,45 @@ def split_reflection(blocks):
     return out
 
 
+def _seg_mode(seg) -> str:
+    """Chọn bố cục cho MỘT segment slide (xem group_slide_segments).
+
+      • "cols"    : chữ trái — hình phải (segment có cả chữ lẫn hình hình học).
+      • "stacked" : chữ TRÊN — sơ đồ bước (B1→B2→B3) NẰM NGANG ở DƯỚI, full-width
+                    (hình flownode quá rộng, nhét cột phải bị bóp/đè watermark).
+      • "opener"  : thẻ Mở màn bên trái — hình minh hoạ bên phải (luôn CÙNG slide).
+      • "figonly" : chỉ hình → căn giữa.   • "textonly": chỉ chữ → full width.
+    """
+    txt, figs = seg["text"], seg["figures"]
+    if figs and txt:
+        wide = any(getattr(f, "tikz", "") and "flownode" in f.tikz for f in figs)
+        return "stacked" if wide else "cols"
+    op = txt[0] if txt and getattr(txt[0], "type", "") == "opener" else None
+    if op is not None and (getattr(op, "tikz", "") or getattr(op, "image", "")):
+        return "opener"
+    if figs:
+        return "figonly"
+    # Đề bài (+ các câu nhỏ a,b,c kèm theo): giữ TRỌN trên MỘT slide, tự co nếu
+    # quá dài — tránh allowframebreaks bẻ "đề một chỗ, câu nhỏ một nẻo".
+    if any(getattr(b, "type", "") == "problem" for b in txt):
+        return "probfit"
+    return "textonly"
+
+
 def group_slide_segments(blocks):
     """Gom blocks của một frame slide thành các "đơn vị dạy" để bố cục đẹp.
 
-    Mỗi segment = {text: [...], figures: [...]} ứng với MỘT slide con. Quy tắc:
-      • `problem`/`noted`/`para`/`mindmap` mở segment mới (một đề/một ý/một ví dụ
-        một slide) — tránh dồn nhiều đoạn vào một slide rồi tràn/tự ngắt lung tung.
-      • `math`/`table` NỐI vào segment hiện hành (công thức/bảng đi liền phần dẫn
-        ngay trước, không tách rời).
-      • `figure` GẮN vào segment hiện hành (render cột phải, cạnh chữ bên trái).
+    Mỗi segment = {text: [...], figures: [...], mode: ...} ứng với MỘT slide con:
+      • `problem`/`noted`/`mindmap` mở segment mới (một đề/một ý/một ví dụ một
+        slide) — tránh dồn nhiều đoạn vào một slide rồi tràn/tự ngắt lung tung.
+      • `para` đứng NGAY SAU một `problem` = các câu nhỏ (a,b,c) của đề đó → DÍNH
+        vào cùng segment (đề và câu nhỏ KHÔNG bị tách hai slide). `para` đứng một
+        mình (dẫn nhập/tổng kết) thì mở segment riêng như cũ.
+      • `math`/`table`/`writelines` NỐI vào segment hiện hành.
+      • `figure` GẮN vào segment hiện hành (cột phải hoặc xếp dưới — xem _seg_mode).
     Nhờ vậy: phiếu CÓ hình → 'chữ trái, hình phải' cùng một slide; phiếu KHÔNG
     hình (đại số) → mỗi đề/ý một slide gọn, không dính đoạn trước."""
-    HEADERS = ("problem", "noted", "para", "mindmap")
+    HEADERS = ("problem", "noted", "mindmap")
     segs: list[dict] = []
     for b in blocks:
         typ = getattr(b, "type", "")
@@ -92,9 +119,17 @@ def group_slide_segments(blocks):
                 segs.append({"text": [], "figures": []})
             segs[-1]["figures"].append(b)
             continue
+        if typ == "para":
+            prev = segs[-1]["text"][-1] if (segs and segs[-1]["text"]) else None
+            if getattr(prev, "type", "") != "problem":
+                segs.append({"text": [], "figures": []})
+            segs[-1]["text"].append(b)
+            continue
         if typ in HEADERS or not segs:
             segs.append({"text": [], "figures": []})
         segs[-1]["text"].append(b)
+    for seg in segs:
+        seg["mode"] = _seg_mode(seg)
     return segs
 
 

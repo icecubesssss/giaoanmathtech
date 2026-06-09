@@ -121,6 +121,15 @@ def find_presentation_warnings(lesson) -> list[str]:
                     warns.append(f"{loc}: block figure không có 'tikz' lẫn 'image' — hình rỗng.")
                 if tk and "\\begin{tikzpicture}" not in tk:
                     warns.append(f"{loc}.tikz: thiếu \\begin{{tikzpicture}} — mã hình không đầy đủ, sẽ vỡ/khuyết khi build.")
+            # Chấm sao MỨC ĐỘ: mỗi bài nên gắn level 1..4 (1 NB, 2 TH, 3 VD, 4 VD cao).
+            # Chưa gắn (level 0) -> renderer lùi về sao theo tier, nhưng nhắc Thầy chấm
+            # đúng mức nhận thức để sao phản ánh độ khó thật, không phải nơi làm bài.
+            if getattr(b, "type", "") == "problem" and getattr(b, "level", 0) == 0:
+                lbl = getattr(b, "label", "") or f"block[{i}]"
+                warns.append(
+                    f"stage[{st.kind}] '{lbl}': chưa chấm sao mức độ — gắn level 1..4 "
+                    "(1=Nhận biết, 2=Thông hiểu, 3=Vận dụng, 4=Vận dụng cao)."
+                )
             for attr in ("text", "latex", "statement"):
                 v = getattr(b, attr, None)
                 if not v:
