@@ -86,11 +86,12 @@ python -m src.main build-folder "<folder [C]…>"             # 3 PDF/phiếu �
 > Đây là "quy trình riêng cho phiếu lớp [C]". Làm đúng từng mục để khỏi soạn lại.
 
 **A. Mạch dẫn dắt = QUY NẠP + ĐÚNG THỨ TỰ LOGIC** (HS bình thường/yếu học từ cụ thể → trừu tượng):
-1. **Khám phá**: cho HS *GẶP* đối tượng qua **ví dụ thật** trước (chưa định nghĩa hình thức, chưa nói khái niệm phụ, chưa giải). Ôn kiến thức nền sẽ dùng.
-2. **Khái niệm**: chốt **định nghĩa GỐC trước** rồi mới tới khái niệm phụ thuộc (vd định nghĩa "BPT" *trước* "nghiệm của BPT" — đừng nói nghiệm khi HS chưa biết BPT là gì). Với cách giải/quy tắc: **cho VÍ DỤ MẪU trước → RÚT RA quy tắc sau** (không nêu quy tắc trừu tượng trước).
-3. **Luyện tập 1 = dồn NHẬN BIẾT** (nhận biết dạng, điền dấu, tìm điều kiện hệ số, thử nghiệm thay số). Đây là phần lớp C cần thạo 100%.
-4. **Luyện tập 2 = GIẢI (Thông hiểu)** — kỹ năng trục của bài.
-5. **Tổng kết + BTVN**.
+1. **Khám phá**: mở bằng **ÔN KIẾN THỨC CŨ liên quan trực tiếp** (vd giải lại 1 PT trước khi học BPT) — khái niệm mới trình bày như **MỞ RỘNG của cái đã thạo**, không phải chủ đề lạ. Rồi cho HS *GẶP* đối tượng qua **ví dụ/tình huống thật** (chưa định nghĩa hình thức, chưa nói khái niệm phụ, chưa giải).
+2. **Khái niệm**: HS **quan sát & phân nhóm ví dụ TRƯỚC** → chốt **định nghĩa NGẮN** sau (mục tiêu là **NHẬN BIẾT**, không bắt thuộc câu chữ; kèm "mẹo soi" 1 dòng). Định nghĩa GỐC trước khái niệm phụ thuộc (vd "BPT" *trước* "nghiệm của BPT"). Với cách giải/quy tắc: **VÍ DỤ MẪU trước → RÚT RA quy tắc sau**; nếu có kiến thức cũ tương đồng thì đặt **SONG SONG 2 cột "đã thạo | mới"** (vd giải PT | giải BPT cùng một bài).
+3. **"HS thấy CẦN mới đưa công cụ":** hộp BẪY ĐIỂM/quy tắc/bảng ôn **KHÔNG đặt trước** khi HS gặp tình huống dùng nó (đừng ôn "4 tính chất BĐT" ở Khám phá khi chưa giải gì). Bẫy hay nhất là để HS **tự đụng**: **cài LỖI SAI có giàn giáo** — nhân vật "bạn Minh/bạn Lan" giải sai kiểu kinh điển → HS kiểm tra bằng **thử số chỉ định sẵn** (vd x=0) thấy mâu thuẫn → tự rút ra quy tắc → hộp **BẪY ĐIỂM chốt NGAY SAU** (lớp C: không để quy tắc ở dạng "tự hiểu").
+4. **Luyện tập 1 = dồn NHẬN BIẾT** (nhận biết dạng, điền dấu, tìm điều kiện hệ số, thử nghiệm thay số). Đây là phần lớp C cần thạo 100%.
+5. **Luyện tập 2 = GIẢI (Thông hiểu)** — kỹ năng trục của bài.
+6. **Tổng kết + BTVN**.
 
 **B. Độ khó:** **BỎ HẲN vận dụng cao** (vô nghiệm/đúng-mọi-x, tích-thương, HSG, kỹ thuật lạ). Lớp C = thạo NB+TH + làm được **1 phần VD**.
 
@@ -108,6 +109,9 @@ python -m src.main build-folder "<folder [C]…>"             # 3 PDF/phiếu �
 - **Khai triển giữ dấu trung gian** — đừng nhảy tắt nuốt dấu: `$3(x+1)-6$` phải qua `$3x+3-6$` rồi mới gộp `$3x-3$` (viết thẳng `3x-3` khiến Thầy tưởng sai dấu `+1`).
 - **Lớp C: HS trình bày VÀO VỞ → KHÔNG kẻ dòng** trên phiếu. Dùng `{"type":"writelines","count":0}` = chỉ chừa **một dòng trắng** sau mỗi bài (không vẽ `\fillline`). `count≥1` mới ra dòng kẻ (dành tầng/bài cần viết tại chỗ).
 - **Không thêm chữ thừa** kiểu "— cùng làm", "— xem ví dụ trước" vào tiêu đề ví dụ; để tiêu đề gọn ("(4) Cách giải.").
+- **Câu dẫn viết bằng TỪ KHÓA, không viết văn** — bỏ hẳn câu đưa đẩy/động viên ("Đây là điểm ăn chắc của lớp mình", "(lớp 8 đã thạo)", "bộ áo mới", "Bảng này dùng suốt buổi hôm nay…", "— chắc điểm tuyệt đối"). Diễn đạt dạng đẳng thức/mệnh đề ngắn: *"BPT = PT thay dấu = bằng dấu so sánh"*, *"Dịch sai dấu = sai cả bài!"*. Hộp bẫy/chốt = **gạch đầu dòng từ khóa**, không đoạn văn.
+- **Chuỗi biến đổi nhiều bước trong phần HS đọc → MỖI BƯỚC MỘT DÒNG** kèm chú thích trong ngoặc (kể cả khi viết lời giải sai của "bạn Minh") — không viết chuỗi ngang một dòng; chuỗi ngang chỉ dành cho `solution`/`teacher_note` bản GV.
+- **Sơ đồ Tổng kết: mọi Ô ĐIỀN phải có "móc treo" đã dạy trong phiếu** — không bắt HS điền khái niệm chưa gặp (muốn có ô "ẩn ở mẫu" thì phải cài ví dụ $2/x$ vào hoạt động phân nhóm trước). Câu dẫn phía trên sơ đồ **không lặp ý** với caption của sơ đồ.
 - Hộp **"VÍ DỤ MẪU"** (`variant:"example"`) chỉ dán lên **ví dụ thật**; định nghĩa/quy tắc để hộp thường (`variant:""`).
 - **Sơ đồ tư duy** phải **nói rõ mục đích** ngay trên nó (vd "tự điền để hệ thống lại cả buổi — bản tóm tắt mang về ôn"), đừng để HS không biết để làm gì.
 - Bước giải nói **"chuyển vế đổi dấu"** (đừng máy móc "cộng … vào hai vế"); câu **"Vậy nghiệm …"** xuống dòng riêng.
