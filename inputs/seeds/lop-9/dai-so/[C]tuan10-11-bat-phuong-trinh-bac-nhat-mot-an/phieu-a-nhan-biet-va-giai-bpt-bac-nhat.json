@@ -8,26 +8,26 @@
     {
       "kind": "review",
       "number": 1,
-      "title": "Khám phá — Gặp bất phương trình",
+      "title": "Khám phá — Từ phương trình đến BPT",
       "blocks": [
         {
+          "type": "noted",
+          "text": "\\textbf{Ôn bài cũ.} Giải phương trình: $2x-6=0$. [[br]] $2x\\ [[mblank:0.7cm]]\\ [[mblank:0.7cm]]$ \\;(chuyển vế, đổi dấu) [[br]] $x\\ [[mblank:0.7cm]]\\ [[mblank:0.7cm]]$ \\;(chia hai vế cho $2$) [[br]] \\emph{Nhớ kết quả — lát nữa gặp lại!}",
+          "variant": "note"
+        },
+        {
           "type": "opener",
-          "text": "Một thang máy dán biển \\textbf{``Tải trọng tối đa $630$ kg''}. Gọi tổng cân nặng của những người trong thang là $x$ (kg). [[br]] Thang chạy an toàn khi tổng cân nặng \\emph{không vượt quá} $630$ kg, viết gọn: $x\\ [[mblank:0.8cm]]\\ 630$. [[br]] Hệ thức $x\\le630$ có ẩn $x$ và dấu $\\le$ — ta gọi nó là một \\textbf{bất phương trình}. [[br]] \\emph{Thử nhanh:} $9$ bạn đều nặng như Long ($75$ kg) cùng vào thang thì tổng cân nặng $=9\\times75=[[mblank:1.1cm]]$ kg. So với $630$, thang có an toàn không? [[mblank:2cm]]",
+          "text": "Một thang máy dán biển \\textbf{``Tải trọng tối đa $630$ kg''}. Gọi tổng cân nặng của những người trong thang là $x$ (kg). [[br]] Dấu $=$ không tả nổi ý ``tối đa''! Thang an toàn khi $x$ \\emph{không vượt quá} $630$: $x\\ [[mblank:0.8cm]]\\ 630$. [[br]] Hệ thức $x\\le630$: giống phương trình, chỉ thay dấu $=$ bằng dấu so sánh — gọi là \\textbf{bất phương trình}. [[br]] \\emph{Thử nhanh:} $9$ bạn đều nặng như Long ($75$ kg) cùng vào thang thì tổng cân nặng $=9\\times75=[[mblank:1.1cm]]$ kg. So với $630$, thang có an toàn không? [[mblank:2cm]]",
           "tikz": "\\begin{tikzpicture}[line width=0.9pt,font=\\small]\\draw[ink,line width=1.1pt] (0,0) rectangle (2.2,2.8);\\draw[ink] (1.1,0)--(1.1,2.8);\\draw[ink,line width=0.7pt] (0.2,2.5) rectangle (2.0,2.78);\\node[ink] at (1.1,2.64) {\\scriptsize $630$ kg};\\fill[brand!70] (0.55,0.5) circle (0.16);\\draw[brand!70,line width=1.4pt] (0.55,0.46)--(0.55,1.0);\\fill[brand!70] (1.65,0.5) circle (0.16);\\draw[brand!70,line width=1.4pt] (1.65,0.46)--(1.65,1.0);\\node[ink,below] at (1.1,0) {\\scriptsize thang máy};\\end{tikzpicture}"
         },
         {
           "type": "noted",
-          "text": "\\textbf{Làm quen qua ví dụ.} Mấy hệ thức sau đây \\emph{cũng} là bất phương trình — chúng giống phương trình nhưng \\textbf{thay dấu $=$ bằng dấu so sánh} $<,\\ >,\\ \\le,\\ \\ge$: [[br]] $\\bullet$\\; $3x+8<20$ \\qquad $\\bullet$\\; $5x-12<0$ \\qquad $\\bullet$\\; $2x-6\\ge0$. [[br]] Hôm nay ta học cách \\textbf{nhận ra} và \\textbf{giải} loại bất phương trình đơn giản nhất.",
+          "text": "\\textbf{BPT = phương trình thay dấu $=$ bằng dấu so sánh} $<,\\ >,\\ \\le,\\ \\ge$: [[br]] $\\bullet$\\; $2x-6=0\\ \\to\\ 2x-6\\ge0$ [[br]] $\\bullet$\\; $3x+8=20\\ \\to\\ 3x+8<20$ [[br]] $\\bullet$\\; $5x-12=0\\ \\to\\ 5x-12<0$. [[br]] Giải BPT \\emph{gần như y hệt} giải phương trình — chỉ khác đúng \\textbf{MỘT chỗ}.",
           "variant": "note"
-        },
-        {
-          "type": "noted",
-          "text": "\\textbf{Ôn 4 tính chất biến đổi BĐT} (công cụ để giải BPT lát nữa). Cho $a<b$, điền dấu thích hợp: [[br]] (1) Cộng cùng số $c$: $a+c\\ [[mblank:0.8cm]]\\ b+c$ \\;(giữ chiều). [[br]] (2) Nhân số dương $c>0$: $ac\\ [[mblank:0.8cm]]\\ bc$ \\;(giữ chiều). [[br]] (3) Nhân số âm $c<0$: $ac\\ [[mblank:0.8cm]]\\ bc$ \\;(\\textbf{ĐỔI CHIỀU!}).",
-          "variant": "trap"
         }
       ],
-      "solution": "Mở màn: $x\\le630$ (``không vượt quá'' là $\\le$). [[br]] Thử nhanh: $9\\times75=675$ kg $>630$ kg $\\Rightarrow$ vượt tải trọng, thang \\textbf{KHÔNG an toàn} (báo quá tải). [[br]] Bốn tính chất: (1) $a+c<b+c$; (2) $ac<bc$; (3) $ac>bc$ (đổi chiều).",
-      "teacher_note": "PHIẾU LỚP C (tỉ lệ NB-TH-VD = 40-40-20, buổi 3 giờ trừ 15 phút giải lao). MẠCH QUY NẠP: cho HS GẶP bất phương trình qua ví dụ thật TRƯỚC (thang máy + vài hệ thức) — chỉ cần thấy 'giống PT nhưng đổi dấu', CHƯA định nghĩa hình thức, CHƯA nói nghiệm, CHƯA giải. Ôn 4 tính chất BĐT vì lát nữa dùng để giải. Nguồn đề: ~70 phần trăm bê từ 10 đề GKI 2024-2025 + 30 phần trăm từ phiếu bài tập TOANMATH."
+      "solution": "Ôn bài cũ: $2x=6 \\Rightarrow x=3$. [[br]] Mở màn: $x\\le630$ (``không vượt quá'' là $\\le$). [[br]] Thử nhanh: $9\\times75=675$ kg $>630$ kg $\\Rightarrow$ vượt tải trọng, thang \\textbf{KHÔNG an toàn} (báo quá tải).",
+      "teacher_note": "PHIẾU LỚP C (tỉ lệ NB-TH-VD = 40-40-20, buổi 3 giờ trừ 15 phút giải lao). MẠCH SỬA THEO GÓP Ý: mở bài bằng ÔN PT BẬC NHẤT (kiến thức cũ) rồi mới sang tình huống thang máy — HS thấy BPT = PT đổi dấu '=' thành dấu so sánh, là MỞ RỘNG của cái đã thạo chứ không phải chủ đề lạ. ĐÃ BỎ hộp 'ôn 4 tính chất BĐT' khỏi khởi động (tránh đưa công cụ khi HS chưa thấy cần): quy tắc đổi chiều sẽ do HS TỰ RÚT RA ở chặng 2 qua hoạt động bắt lỗi bạn Minh. Nguồn đề: ~70 phần trăm bê từ 10 đề GKI 2024-2025 + 30 phần trăm từ phiếu bài tập TOANMATH."
     },
     {
       "kind": "concept",
@@ -36,13 +36,13 @@
       "blocks": [
         {
           "type": "noted",
-          "text": "\\textbf{(1) Bất phương trình bậc nhất một ẩn là gì?} Các hệ thức ở phần Khám phá đều chỉ có \\textbf{một ẩn} và ẩn ở \\textbf{bậc nhất}. Ta gọi chúng là \\textbf{bất phương trình bậc nhất một ẩn} — dạng chung: [[br]] $$ax+b>0 \\quad(\\text{hoặc } ax+b<0,\\ ax+b\\ge0,\\ ax+b\\le0),\\quad a\\neq0.$$",
-          "variant": ""
+          "text": "\\textbf{(1) Quan sát \\& phân nhóm.} Ba bất phương trình gặp ở phần Khám phá: $3x+8<20$;\\quad $5x-12<0$;\\quad $2x-6\\ge0$. [[br]] Điểm chung của cả ba: mỗi hệ thức chỉ có [[mblank:1.1cm]] ẩn, và ẩn ở bậc [[mblank:0.9cm]]. [[br]] Xét tiếp $4$ hệ thức mới — cái nào \\emph{cùng nhóm} với ba bất phương trình trên? Điền \\emph{cùng} / \\emph{khác}: [[br]] a) $0{,}5u-3\\le0$:\\;\\; [[mblank:1.1cm]] \\;— ẩn là [[mblank:0.7cm]], vẫn bậc nhất. [[br]] b) $x^3-2x\\ge0$:\\;\\; [[mblank:1.1cm]] \\;— vì ẩn ở bậc [[mblank:0.7cm]]. [[br]] c) $0\\cdot x+4>0$:\\;\\; [[mblank:1.1cm]] \\;— hệ số của ẩn bằng [[mblank:0.7cm]], coi như ``mất'' ẩn. [[br]] d) $\\dfrac{2}{x}+1>0$:\\;\\; [[mblank:1.1cm]] \\;— ẩn nằm ở [[mblank:0.9cm]] (không phải dạng $ax+b$).",
+          "variant": "example"
         },
         {
           "type": "noted",
-          "text": "\\textbf{(2) Ví dụ nhận biết.} Mỗi hệ thức dưới đây \\emph{có} là BPT bậc nhất một ẩn không? Cùng điền (\\emph{là} / \\emph{không}) rồi nói rõ vì sao. [[br]] a) $5x-12<0$:\\;\\; [[mblank:1.2cm]] \\;— nếu là, ghi $a=[[mblank:0.7cm]],\\ b=[[mblank:0.9cm]]$. [[br]] b) $x^3-2x\\ge0$:\\;\\; [[mblank:1.2cm]] \\;— vì vế trái bậc [[mblank:0.7cm]]. [[br]] c) $0\\cdot x+4>0$:\\;\\; [[mblank:1.2cm]] \\;— vì hệ số của ẩn $a=[[mblank:0.7cm]]$ (không thoả $a\\neq0$). [[br]] d) $0{,}5u-3\\le0$:\\;\\; [[mblank:1.2cm]] \\;— ẩn là [[mblank:0.7cm]].",
-          "variant": "example"
+          "text": "\\textbf{(2) Chốt tên gọi} (từ chính các ví dụ trên). Hệ thức \\emph{một ẩn, ẩn bậc nhất} như thế gọi là \\textbf{bất phương trình bậc nhất một ẩn}: dạng $ax+b>0$ (hoặc $<0,\\ \\ge0,\\ \\le0$) với $a\\neq0$. [[br]] \\emph{Mẹo nhận biết — soi $2$ câu hỏi:} \\textbf{một ẩn?} — \\textbf{ẩn bậc nhất} ($a\\neq0$)\\textbf{?}",
+          "variant": ""
         },
         {
           "type": "noted",
@@ -51,13 +51,18 @@
         },
         {
           "type": "noted",
-          "text": "\\textbf{(4) Cách giải.} \\;Ví dụ mẫu 1: giải $-2x-4>0$. [[br]] $-2x-4>0$ [[br]] $-2x\\ [[mblank:0.7cm]]\\ [[mblank:0.7cm]]$ \\;(chuyển $-4$ sang vế phải, đổi dấu) [[br]] $x\\ [[mblank:0.8cm]]\\ [[mblank:1cm]]$ \\;(chia hai vế cho $-2<0$, \\textbf{đổi chiều}) [[br]] Vậy nghiệm là $x\\ [[mblank:1.6cm]]$.",
+          "text": "\\textbf{(4) Cách giải — Y HỆT giải phương trình.} So sánh từng bước: [[br]] \\begin{minipage}[t]{0.47\\linewidth}\\centering \\textbf{PT (đã thạo)} [[br]] $2x-6=0$ [[br]] $2x=6$ \\;(chuyển vế, đổi dấu) [[br]] $x=3$ \\;(chia hai vế cho $2$) \\end{minipage}\\hfill\\begin{minipage}[t]{0.47\\linewidth}\\centering \\textbf{BPT (mới)} [[br]] $2x-6\\ge0$ [[br]] $2x\\ [[mblank:0.6cm]]\\ [[mblank:0.6cm]]$ \\;(chuyển vế, đổi dấu) [[br]] $x\\ [[mblank:0.6cm]]\\ [[mblank:0.6cm]]$ \\;(chia hai vế cho $2$) \\end{minipage} [[br]] Mọi bước \\emph{giống hệt} — chỉ giữ nguyên dấu $\\ge$ ở chỗ dấu $=$. Vậy nghiệm là $x\\ [[mblank:1.4cm]]$.",
           "variant": "example"
         },
         {
           "type": "noted",
-          "text": "\\textbf{(5) Rút ra quy tắc} (từ ví dụ trên). Giải $ax+b<0$ ($a\\neq0$): chuyển $b$ sang vế phải rồi chia hai vế cho $a$ ($ax<-b$): [[br]] $\\bullet$\\; Nếu $a>0$: $x<-\\dfrac{b}{a}$ \\;(giữ chiều). [[br]] $\\bullet$\\; Nếu $a<0$: $x>-\\dfrac{b}{a}$ \\;(\\textbf{đổi chiều} do chia số âm). [[br]] Các dạng $>0,\\ \\ge0,\\ \\le0$ làm tương tự.",
-          "variant": ""
+          "text": "\\textbf{(5) Khoan! Bắt lỗi giúp bạn Minh.} Minh cũng giải ``y như phương trình'' với bài $-2x-4>0$: [[br]] \\quad $-2x-4>0$ [[br]] \\quad $-2x>4$ \\;(chuyển vế, đổi dấu) [[br]] \\quad $x>-2$ \\;(chia hai vế cho $-2$) [[br]] Kiểm tra: $x=0$ thoả $x>-2$ — theo Minh, nó là nghiệm. Thay vào vế trái: $-2\\cdot0-4=[[mblank:0.8cm]]$; khẳng định $[[mblank:0.8cm]]>0$ \\emph{đúng} hay \\emph{sai}? [[mblank:1cm]] [[br]] Vậy $x=0$ [[mblank:1.8cm]] nghiệm $\\Rightarrow$ Minh \\textbf{sai}! Sai ở bước nào? Khoanh lại và sửa: chia hai vế cho $-2$ (số \\textbf{âm}) thì phải [[mblank:2.2cm]].",
+          "variant": "example"
+        },
+        {
+          "type": "noted",
+          "text": "Lỗi của Minh = bẫy điểm số một của cả chương: [[br]] $\\bullet$\\; Nhân/chia hai vế với số \\textbf{ÂM} $\\to$ \\textbf{ĐỔI CHIỀU} \\;(tính chất BĐT: $a<b$, $c<0$ thì $ac>bc$). [[br]] $\\bullet$\\; Số \\textbf{dương} $\\to$ giữ chiều. \\quad $\\bullet$\\; Cộng/trừ (chuyển vế) $\\to$ \\textbf{không bao giờ} đổi chiều. [[br]] Giải đúng bài Minh: $-2x>4 \\Rightarrow x<-2$.",
+          "variant": "trap"
         },
         {
           "type": "figure",
@@ -67,7 +72,7 @@
         },
         {
           "type": "noted",
-          "text": "\\textbf{Ví dụ mẫu 2.} Giải $2x-6\\ge0$. [[br]] $2x\\ [[mblank:0.7cm]]\\ [[mblank:0.7cm]]$ \\;(chuyển $-6$ sang vế phải, đổi dấu) [[br]] $x\\ [[mblank:0.8cm]]\\ [[mblank:1cm]]$ \\;(chia $2>0$, giữ chiều) [[br]] Vậy nghiệm là $x\\ [[mblank:1.6cm]]$.",
+          "text": "\\textbf{Ví dụ mẫu — trình bày lại bài của Minh cho chuẩn.} Giải $-2x-4>0$. [[br]] $-2x\\ [[mblank:0.7cm]]\\ [[mblank:0.7cm]]$ \\;(chuyển $-4$ sang vế phải, đổi dấu) [[br]] $x\\ [[mblank:0.8cm]]\\ [[mblank:1cm]]$ \\;(chia hai vế cho $-2<0$, \\textbf{ĐỔI CHIỀU}) [[br]] Vậy nghiệm là $x\\ [[mblank:1.6cm]]$.",
           "variant": "example"
         },
         {
@@ -76,8 +81,8 @@
           "variant": "target"
         }
       ],
-      "solution": "(1) dạng $ax+b$ với $a\\neq0$. [[br]] (2) a) \\emph{là} ($a=5,\\ b=-12$); b) \\emph{không} (vế trái bậc $3$); c) \\emph{không} ($a=0$); d) \\emph{là} (ẩn $u$). [[br]] (3) $x=2$ \\emph{là} nghiệm; $x=4$ \\emph{không là} nghiệm. [[br]] (4) Ví dụ 1: $-2x>4 \\Rightarrow x<-2$. [[br]] Ví dụ 2: $2x\\ge6 \\Rightarrow x\\ge3$.",
-      "teacher_note": "Trọng tâm — dạy theo ĐÚNG THỨ TỰ LOGIC + QUY NẠP: (1) định nghĩa BPT bậc nhất (chốt từ ví dụ Khám phá) $\\to$ (2) nhận biết $\\to$ (3) MỚI tới 'nghiệm' (lúc này HS đã biết BPT là gì) $\\to$ (4) cho VÍ DỤ GIẢI trước $\\to$ (5) rồi mới RÚT RA quy tắc. Hộp 'VÍ DỤ MẪU' chỉ dán lên ví dụ thật; định nghĩa/quy tắc để hộp thường. Bước biến đổi nói 'chuyển vế đổi dấu' (không máy móc). Cho HS đọc TO quy tắc đổi chiều."
+      "solution": "(1) một ẩn, bậc nhất; a) \\emph{cùng} (ẩn $u$); b) \\emph{khác} (bậc $3$); c) \\emph{khác} ($a=0$); d) \\emph{khác} (ẩn ở \\emph{mẫu}). [[br]] (2) dạng $ax+b>0$ với $a\\neq0$. [[br]] (3) $x=2$ \\emph{là} nghiệm; $x=4$ \\emph{không là} nghiệm. [[br]] (4) $2x\\ge6 \\Rightarrow x\\ge3$. [[br]] (5) $-2\\cdot0-4=-4$; $-4>0$ \\emph{sai} $\\Rightarrow$ $x=0$ \\emph{không là} nghiệm; Minh hỏng ở bước chia cho $-2$: chia số âm phải \\textbf{đổi chiều}. [[br]] Ví dụ mẫu: $-2x>4 \\Rightarrow x<-2$ (đổi chiều).",
+      "teacher_note": "Trọng tâm — SỬA THEO GÓP Ý, mạch quy nạp + học qua lỗi: (1) HS PHÂN NHÓM ví dụ trước $\\to$ (2) mới chốt tên gọi NGẮN GỌN (mục tiêu là NHẬN BIẾT, không bắt thuộc định nghĩa) $\\to$ (3) nghiệm $\\to$ (4) giải BPT đặt SONG SONG với giải PT đã ôn đầu giờ (HS thấy 'không có gì mới') $\\to$ (5) cài LỖI SAI của bạn Minh (chia số âm không đổi chiều) cho HS tự kiểm tra bằng thử số và TỰ RÚT RA bẫy $\\to$ hộp BẪY ĐIỂM lúc này mới xuất hiện để CHỐT — công cụ chỉ đưa khi HS đã thấy cần. Lớp C: hoạt động (5) dẫn từng bước, chỉ định sẵn x=0 để thử; cho HS đọc TO quy tắc đổi chiều. Câu d) ẩn-ở-mẫu trong phân nhóm cài CHỦ ĐÍCH để ô 'ẩn ở mẫu' của sơ đồ Tổng kết có móc treo (mọi ô điền trong sơ đồ đều phải được dạy trong phiếu)."
     },
     {
       "kind": "practice1",
@@ -108,7 +113,7 @@
         },
         {
           "type": "para",
-          "text": "\\begin{minipage}[t]{0.47\\linewidth} a) $0x<0$ [[br]] b) $3x<0$ [[br]] c) $x^3+1\\ge0$ [[br]] d) $-x+1\\le0$ \\end{minipage}\\hfill\\begin{minipage}[t]{0.47\\linewidth} e) $a+2023>0$ [[br]] f) $0x-5<0$ [[br]] g) $5x-7\\le0$ [[br]] h) $x^2+1\\le0$ \\end{minipage}"
+          "text": "\\begin{minipage}[t]{0.47\\linewidth} a) $0x<0$ [[br]] b) $3x<0$ [[br]] c) $x^3+1\\ge0$ [[br]] d) $-x+1\\le0$ \\end{minipage}\\hfill\\begin{minipage}[t]{0.47\\linewidth} e) $a+2023>0$ [[br]] f) $\\dfrac{3}{x}-5<0$ [[br]] g) $5x-7\\le0$ [[br]] h) $x^2+1\\le0$ \\end{minipage}"
         },
         {
           "type": "writelines",
@@ -141,7 +146,7 @@
           "count": 0
         }
       ],
-      "solution": "\\textbf{Bài 1.} BPT bậc nhất một ẩn: [[br]] a) $3x+16\\le0$ ($a=3,\\ b=16$); b) $-5x+5>0$ ($a=-5,\\ b=5$); d) $-3x<0$ ($a=-3,\\ b=0$); e) $-3x+7\\le0$ ($a=-3,\\ b=7$); f) $4x-\\dfrac{3}{2}>0$ ($a=4,\\ b=-\\dfrac{3}{2}$). [[br]] Không phải: c), h) bậc hai; g) bậc ba.\\par\\smallskip \\textbf{Bài 2.} BPT bậc nhất một ẩn: [[br]] b) $3x<0$; d) $-x+1\\le0$; e) $a+2023>0$ (ẩn $a$); g) $5x-7\\le0$. [[br]] Không phải: a), f) hệ số ẩn $=0$; c) bậc ba; h) bậc hai.\\par\\smallskip \\textbf{Bài 3.} a) $a=1,\\ b=-2024$. [[br]] b) cần $m-1\\neq0 \\Leftrightarrow m\\neq1$. [[br]] c) $-3x>30 \\Rightarrow x<-10$.\\par\\smallskip \\textbf{Bài 4.} [[br]] a) $2x-10<0\\Leftrightarrow x<5$: $-2$ và $0$ là nghiệm; $5$ không. [[br]] b) $x=3$: $-1<0$ đúng (là nghiệm); $0{,}8\\le0$ sai (không); $-39>0$ sai (không). [[br]] c) Thay $x=-3$: $2x+1>-5$ cho $-5>-5$ \\emph{sai} $\\Rightarrow$ \\textbf{không} là nghiệm của $2x+1>-5$; hai cái còn lại đều đúng (là nghiệm).",
+      "solution": "\\textbf{Bài 1.} BPT bậc nhất một ẩn: [[br]] a) $3x+16\\le0$ ($a=3,\\ b=16$); b) $-5x+5>0$ ($a=-5,\\ b=5$); d) $-3x<0$ ($a=-3,\\ b=0$); e) $-3x+7\\le0$ ($a=-3,\\ b=7$); f) $4x-\\dfrac{3}{2}>0$ ($a=4,\\ b=-\\dfrac{3}{2}$). [[br]] Không phải: c), h) bậc hai; g) bậc ba.\\par\\smallskip \\textbf{Bài 2.} BPT bậc nhất một ẩn: [[br]] b) $3x<0$; d) $-x+1\\le0$; e) $a+2023>0$ (ẩn $a$); g) $5x-7\\le0$. [[br]] Không phải: a) hệ số ẩn $=0$; c) bậc ba; f) ẩn ở \\emph{mẫu}; h) bậc hai.\\par\\smallskip \\textbf{Bài 3.} a) $a=1,\\ b=-2024$. [[br]] b) cần $m-1\\neq0 \\Leftrightarrow m\\neq1$. [[br]] c) $-3x>30 \\Rightarrow x<-10$.\\par\\smallskip \\textbf{Bài 4.} [[br]] a) $2x-10<0\\Leftrightarrow x<5$: $-2$ và $0$ là nghiệm; $5$ không. [[br]] b) $x=3$: $-1<0$ đúng (là nghiệm); $0{,}8\\le0$ sai (không); $-39>0$ sai (không). [[br]] c) Thay $x=-3$: $2x+1>-5$ cho $-5>-5$ \\emph{sai} $\\Rightarrow$ \\textbf{không} là nghiệm của $2x+1>-5$; hai cái còn lại đều đúng (là nghiệm).",
       "teacher_note": "LUYỆN TẬP 1 = toàn NHẬN BIẾT (tầng C cần thạo 100 phần trăm nền). Bài 1,2 nhận biết dạng (2 cột, nguồn TOANMATH); Bài 3 điều kiện a khác 0 + tìm m + nhân số âm đổi chiều; Bài 4 thử nghiệm (câu c bẫy dấu ngặt: -5>-5 là SAI). Tất cả là sao ★☆☆. Đã đối chiếu SymPy."
     },
     {
@@ -221,7 +226,7 @@
       "blocks": [
         {
           "type": "para",
-          "text": "Giải BPT bậc nhất là quy trình ba bước: \\textbf{chuyển vế} (đổi dấu) $\\to$ \\textbf{thu gọn} về $ax$ và số $\\to$ \\textbf{chia hệ số} (nhớ đổi chiều khi chia số âm). [[br]] Có ngoặc/khai triển thì rút gọn trước rồi quy về bậc nhất. Gặp ``số nguyên lớn nhất / nhỏ nhất'' thì giải xong mới chọn số nguyên thoả dấu. [[br]] \\emph{Em tự điền sơ đồ dưới đây để hệ thống lại cả buổi — giữ làm bản tóm tắt ôn nhanh trước khi thi.}"
+          "text": "Giải BPT bậc nhất = $3$ bước: \\textbf{chuyển vế} (đổi dấu) $\\to$ \\textbf{thu gọn} $\\to$ \\textbf{chia hệ số} (số âm: đổi chiều). [[br]] Có ngoặc/khai triển: rút gọn trước. Hỏi ``số nguyên lớn nhất/nhỏ nhất'': giải xong mới chọn số nguyên thoả dấu."
         },
         {
           "type": "mindmap",
@@ -232,7 +237,7 @@
               "label": "Dạng \\& nhận biết",
               "children": [
                 { "label": "$ax+b>0$ với $a[[blank:1cm]]0$" },
-                { "label": "Loại: bậc $\\ge2$, ẩn ở [[blank:1.4cm]]" }
+                { "label": "Loại: bậc $\\ge2$, $a=0$, ẩn ở [[blank:1cm]]" }
               ]
             },
             {
@@ -295,7 +300,7 @@
           "statement": "\\textbf{(Vận dụng — GKI Bát Tràng)} Lãi suất gửi tiết kiệm kì hạn $12$ tháng là $4{,}5\\%$/năm. Bác Hoàng muốn nhận tiền lãi sau $12$ tháng \\emph{ít nhất} $1{,}8$ triệu đồng. Gọi số tiền gửi là $x$ (triệu đồng), $x>0$. [[br]] a) \\;[NB] ``ít nhất $1{,}8$ triệu'' cho ta dấu nào? [[br]] b) \\;[TH] Viết biểu thức tiền lãi $12$ tháng theo $x$ (lãi $=4{,}5\\%\\cdot x$). [[br]] c) \\;[VD] Lập bất phương trình, giải và trả lời: gửi ít nhất bao nhiêu triệu?"
         }
       ],
-      "solution": "\\textbf{BTVN.}\\par\\smallskip \\textbf{Bài 9.} [[br]] a) $x<-\\dfrac{5}{6}$; b) $-2x>7\\Rightarrow x<-\\dfrac{7}{2}$; c) $-x<-9\\Rightarrow x>9$; d) $x\\ge-2$; [[br]] e) $-3x>-12\\Rightarrow x<4$; f) $-7x\\le-4\\Rightarrow x\\ge\\dfrac{4}{7}$; g) $-0{,}3x>-12\\Rightarrow x<40$; h) $\\dfrac{3}{4}x\\le6\\Rightarrow x\\le8$.\\par\\smallskip \\textbf{Bài 10.} [[br]] a) Thay $x=-2{,}5$: $3x-5>2x-8\\Leftrightarrow x>-3$ (đúng); $x-1\\le5x+9\\Leftrightarrow x\\ge-2{,}5$ (đúng); $5x<12\\Leftrightarrow x<2{,}4$ (đúng). Vậy $x=-2{,}5$ là nghiệm của \\emph{cả ba}. [[br]] b) $4x+5>0\\Leftrightarrow x>-1{,}25$; vd $x=0$ là nghiệm, $x=-2$ không.\\par\\smallskip \\textbf{Bài 11.} [[br]] a) $-8x<27\\Rightarrow x>-\\dfrac{27}{8}$; b) $\\dfrac{5}{4}x\\ge-20\\Rightarrow x\\ge-16$; c) $3x>-12\\Rightarrow x>-4$; [[br]] d) $2x-2{,}4\\ge0{,}3-x \\Rightarrow 3x\\ge2{,}7 \\Rightarrow x\\ge0{,}9$.\\par\\smallskip \\textbf{Bài 12.} a) ``ít nhất'' $\\to$ dấu $\\ge$. [[br]] b) Tiền lãi $=4{,}5\\%\\cdot x=0{,}045x$ (triệu đồng). [[br]] c) $0{,}045x\\ge1{,}8 \\Rightarrow x\\ge40$. Vậy bác Hoàng phải gửi \\emph{ít nhất $40$ triệu đồng}.\\par\\medskip \\textbf{Đáp án sơ đồ:} $a\\neq0$; loại khi bậc $\\ge2$ hoặc ẩn ở \\emph{mẫu}; chia $a>0$ \\emph{giữ} chiều; chia $a<0$ \\emph{đổi} chiều; thử nghiệm $\\to$ khẳng định \\emph{đúng}.",
+      "solution": "\\textbf{BTVN.}\\par\\smallskip \\textbf{Bài 9.} [[br]] a) $x<-\\dfrac{5}{6}$; b) $-2x>7\\Rightarrow x<-\\dfrac{7}{2}$; c) $-x<-9\\Rightarrow x>9$; d) $x\\ge-2$; [[br]] e) $-3x>-12\\Rightarrow x<4$; f) $-7x\\le-4\\Rightarrow x\\ge\\dfrac{4}{7}$; g) $-0{,}3x>-12\\Rightarrow x<40$; h) $\\dfrac{3}{4}x\\le6\\Rightarrow x\\le8$.\\par\\smallskip \\textbf{Bài 10.} [[br]] a) Thay $x=-2{,}5$: $3x-5>2x-8\\Leftrightarrow x>-3$ (đúng); $x-1\\le5x+9\\Leftrightarrow x\\ge-2{,}5$ (đúng); $5x<12\\Leftrightarrow x<2{,}4$ (đúng). Vậy $x=-2{,}5$ là nghiệm của \\emph{cả ba}. [[br]] b) $4x+5>0\\Leftrightarrow x>-1{,}25$; vd $x=0$ là nghiệm, $x=-2$ không.\\par\\smallskip \\textbf{Bài 11.} [[br]] a) $-8x<27\\Rightarrow x>-\\dfrac{27}{8}$; b) $\\dfrac{5}{4}x\\ge-20\\Rightarrow x\\ge-16$; c) $3x>-12\\Rightarrow x>-4$; [[br]] d) $2x-2{,}4\\ge0{,}3-x \\Rightarrow 3x\\ge2{,}7 \\Rightarrow x\\ge0{,}9$.\\par\\smallskip \\textbf{Bài 12.} a) ``ít nhất'' $\\to$ dấu $\\ge$. [[br]] b) Tiền lãi $=4{,}5\\%\\cdot x=0{,}045x$ (triệu đồng). [[br]] c) $0{,}045x\\ge1{,}8 \\Rightarrow x\\ge40$. Vậy bác Hoàng phải gửi \\emph{ít nhất $40$ triệu đồng}.\\par\\medskip \\textbf{Đáp án sơ đồ:} $a\\neq0$; loại khi bậc $\\ge2$, $a=0$ hoặc ẩn ở \\emph{mẫu}; chia $a>0$ \\emph{giữ} chiều; chia $a<0$ \\emph{đổi} chiều; thử nghiệm $\\to$ khẳng định \\emph{đúng}.",
       "teacher_note": "BTVN tầng C: Bài 9 (8 BPT giải drill, 2 cột — TH), Bài 10 (kiểm nghiệm — NB), Bài 11 (4 BPT có ngoặc — TH), Bài 12 (1 VẬN DỤNG lãi suất GKI Bát Tràng, TÁCH a-b-c để HS yếu ăn điểm a,b; nghiệm tròn 40 triệu). KHÔNG giao tích/thương, vô-nghiệm hay HSG ở lớp C. Đã đối chiếu SymPy toàn bộ."
     }
   ]
