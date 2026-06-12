@@ -1,0 +1,301 @@
+{
+  "slug": "phieu-b-giai-bai-toan-lap-pt",
+  "title": "Giải bài toán bằng cách lập phương trình",
+  "eyebrow": "ĐẠI SỐ — PHIẾU B: GIẢI TOÁN BẰNG LẬP PT",
+  "grade_label": "Lớp 9 • Ôn vào 10",
+  "class_tier": "C",
+  "stages": [
+    {
+      "kind": "review",
+      "number": 1,
+      "title": "Khám phá — Dịch lời văn thành phương trình",
+      "blocks": [
+        {
+          "type": "opener",
+          "text": "Hai chị em được mừng tuổi tổng cộng \\textbf{$200$ nghìn}; chị nhiều hơn em \\textbf{$40$ nghìn}. Gọi số tiền của em là $x$ (nghìn). [[br]] Số tiền của chị là $x+[[mblank:0.8cm]]$. [[br]] Tổng hai chị em: [[br]] \\quad $x+(x+40)\\ =\\ [[mblank:1cm]]$ [[br]] (Chưa cần giải — hôm nay học cách \\textbf{dịch lời văn thành phương trình} rồi giải.)",
+          "tikz": "\\begin{tikzpicture}[line width=0.9pt,font=\\small]\\foreach \\dx in {0,1.7}{\\fill[brand!70] (\\dx,0) rectangle (\\dx+1.3,1.8);\\draw[brand!45!black,line width=0.7pt] (\\dx,1.8)--(\\dx+0.65,1.2)--(\\dx+1.3,1.8);\\fill[gold] (\\dx+0.65,0.75) circle (0.2);\\draw[brand!45!black,line width=0.5pt] (\\dx+0.65,0.75) circle (0.2);}\\end{tikzpicture}"
+        },
+        {
+          "type": "noted",
+          "text": "\\textbf{Ôn phiếu A.} Giải nhanh: [[br]] $2x+40=200$ [[br]] $2x\\ =\\ [[mblank:1cm]]$ \\;(chuyển vế, đổi dấu) [[br]] $x\\ =\\ [[mblank:1cm]]$ \\;(chia hai vế cho $2$) [[br]] Bài toán chuyển động / năng suất thường cho \\textbf{phương trình chứa ẩn ở mẫu} (vì thời gian $=$ quãng đường $\\div$ tốc độ) — kỹ năng giải đã luyện ở phiếu A.",
+          "variant": "note"
+        },
+        {
+          "type": "noted",
+          "text": "\\textbf{Ba việc khi giải toán bằng lập phương trình:} [[br]] $\\bullet$\\; \\textbf{Gọi ẩn} $x$ cho đại lượng cần tìm, kèm \\textbf{điều kiện}. [[br]] $\\bullet$\\; \\textbf{Biểu diễn} các đại lượng còn lại theo $x$ (nên kẻ bảng). [[br]] $\\bullet$\\; \\textbf{Lập phương trình} từ mối quan hệ trong đề, giải và \\textbf{đối chiếu điều kiện}.",
+          "variant": "note"
+        }
+      ],
+      "solution": "Mở màn: chị $=x+40$; tổng $x+(x+40)=200$. [[br]] Ôn phiếu A: $2x=160$ nên $x=80$ (em $80$ nghìn, chị $120$ nghìn). [[br]] Ba việc: gọi ẩn + điều kiện; biểu diễn đại lượng theo ẩn; lập PT rồi đối chiếu.",
+      "teacher_note": "PHIẾU LỚP C buổi 2 — 40-40-20 áp cho giờ TRÊN LỚP từng phiếu (sai số 5 phần trăm; BTVN chỉ giữ quỹ ~90 phút — Thầy chốt 2026-06-11, duration-gate trong validate tự soi). Giờ giảng chặng 1+2 nhắm 20-30 phút, KHÔNG đếm vào quỹ luyện tập. [[br]] $\\bullet$ KỊCH BẢN LỜI DẪN (nói miệng, không in lên phiếu HS): mở đầu hỏi 2-3 HS ''Tết vừa rồi em được mừng tuổi bao nhiêu, để dành mua gì?'' rồi mới vào tình huống chia tiền (chuyện sát sườn HS); chốt miệng: ''hôm nay luyện đúng MỘT việc — DỊCH lời văn thành phương trình rồi giải bằng kỹ năng phiếu A''; nhắc kết quả $x=80$ và rằng các bài chuyển động/năng suất sẽ ra PT chứa ẩn ở mẫu (đã thạo phiếu A). [[br]] $\\bullet$ MẠCH QUY NẠP: mở bằng KIẾN THỨC CŨ (giải PT phiếu A) + tình huống GẦN HS (mừng tuổi), chưa định nghĩa hình thức; 4 bước lập PT để chặng 2 mới chốt. [[br]] $\\bullet$ PHÂN CÔNG 2 PHIẾU (Thầy chốt): phiếu A gom TOÀN BỘ kỹ thuật giải (PT tích + ẩn ở mẫu); phiếu B CHỈ toán lời văn lập phương trình. [[br]] $\\bullet$ Nguồn đề: GKI Ngô Gia Tự (năng suất may áo) + phiếu chuẩn tuần04 đã kiểm SymPy (chuyển động / năng suất / làm chung / phần trăm). DS-PT-QUYVE của GKI chủ yếu là GIẢI PT (đã nằm ở phiếu A); toán lời văn lập PT lấy từ phiếu chuẩn + GKI."
+    },
+    {
+      "kind": "concept",
+      "number": 2,
+      "title": "Khái niệm — 4 bước \\& lập bảng đại lượng",
+      "blocks": [
+        {
+          "type": "noted",
+          "text": "\\textbf{Ví dụ mẫu (thầy + trò cùng làm).} Một tổ \\emph{dự định} may $14$ áo trong một thời gian; thực tế mỗi giờ may thêm $3$ áo nên cùng thời gian đó may được $21$ áo. Tính năng suất dự định. [[br]] Gọi năng suất dự định là $x$ (áo/giờ, $x>0$); năng suất thực tế là $x+[[mblank:0.8cm]]$.",
+          "variant": "example"
+        },
+        {
+          "type": "table",
+          "caption": "Thầy và trò cùng điền bảng (thời gian $=$ số áo $\\div$ năng suất):",
+          "headers": [
+            "",
+            "Năng suất (áo/giờ)",
+            "Số áo",
+            "Thời gian (giờ)"
+          ],
+          "rows": [
+            [
+              "Dự định",
+              "[[blank:2cm]]",
+              "[[blank:1.6cm]]",
+              "[[blank:2cm]]"
+            ],
+            [
+              "Thực tế",
+              "[[blank:2cm]]",
+              "[[blank:1.6cm]]",
+              "[[blank:2cm]]"
+            ]
+          ]
+        },
+        {
+          "type": "noted",
+          "text": "Hai dòng \\emph{cùng thời gian}, nên lập phương trình: [[br]] \\quad $\\dfrac{14}{x}=\\dfrac{21}{x+[[mblank:0.8cm]]}$ [[br]] Khử mẫu: $14(x+3)=21x$ [[br]] $14x+42\\ =\\ 21x$ \\;(bỏ ngoặc) [[br]] $x\\ =\\ [[mblank:1cm]]$ \\;(chuyển vế, thu gọn) [[br]] Đối chiếu $x>0$: thoả. Vậy năng suất dự định $[[mblank:1.2cm]]$ áo/giờ.",
+          "variant": "example"
+        },
+        {
+          "type": "noted",
+          "text": "\\textbf{4 bước giải toán bằng lập phương trình.} [[br]] B1: \\textbf{gọi ẩn} $x$ (đại lượng cần tìm) kèm \\textbf{điều kiện}. [[br]] B2: \\textbf{biểu diễn} các đại lượng theo $x$ (kẻ bảng). [[br]] B3: \\textbf{lập phương trình} từ quan hệ trong đề rồi giải. [[br]] B4: \\textbf{đối chiếu điều kiện}, trả lời (kèm đơn vị).",
+          "variant": ""
+        },
+        {
+          "type": "figure",
+          "width": "0.96\\linewidth",
+          "caption": "Bốn bước — kẻ bảng (B2) giúp lập đúng phương trình ở B3.",
+          "tikz": "\\begin{tikzpicture}[node distance=5mm and 7mm,font=\\small]\\node[flownode](a){\\textbf{B1}\\\\Gọi ẩn $x$,\\\\điều kiện};\\node[flowkey,right=of a](b){\\textbf{B2}\\\\Biểu diễn,\\\\kẻ bảng};\\node[flownode,right=of b](c){\\textbf{B3}\\\\Lập PT\\\\rồi giải};\\node[flownode,right=of c](d){\\textbf{B4}\\\\Đối chiếu,\\\\trả lời};\\draw[flowarrow](a)--(b);\\draw[flowarrow](b)--(c);\\draw[flowarrow](c)--(d);\\end{tikzpicture}"
+        },
+        {
+          "type": "noted",
+          "text": "\\textbf{Ba ví dụ mồi cho dạng dễ nhầm.} [[br]] $\\bullet$\\; \\emph{Làm chung} (như chia một chiếc bánh): một mình xong trong $x$ giờ thì mỗi giờ làm $\\dfrac{1}{x}$ \\emph{phần việc}; hai người làm chung mỗi giờ được $\\dfrac{1}{x}+\\dfrac{1}{y}$. [[br]] $\\bullet$\\; \\emph{Xuôi / ngược dòng} (thuyền trôi theo dòng nước): tốc độ \\emph{xuôi} $=$ tốc độ riêng $+$ tốc độ nước; tốc độ \\emph{ngược} $=$ tốc độ riêng $-$ tốc độ nước. [[br]] $\\bullet$\\; \\emph{Phần trăm}: giá $200$ nghìn tăng $10\\%$ thì phần tăng $=200\\times10\\%=20$ nghìn, giá mới $=220$ nghìn (hỏi đề tính theo \\emph{phần thêm} hay \\emph{tổng phải trả}).",
+          "variant": "tip"
+        },
+        {
+          "type": "noted",
+          "text": "Ba chỗ mất điểm toán lời văn: [[br]] (i) quên \\textbf{điều kiện} cho ẩn (số tiền, tốc độ, số người $>0$); [[br]] (ii) quên \\textbf{đổi đơn vị} ($1$ giờ $30$ phút $=1{,}5$ giờ; $40$ phút $=\\dfrac23$ giờ); [[br]] (iii) giải xong quên \\textbf{đối chiếu} điều kiện và \\textbf{trả lời kèm đơn vị}.",
+          "variant": "trap"
+        },
+        {
+          "type": "noted",
+          "text": "\\textbf{Khắc cốt.} Gọi ẩn KÈM điều kiện $\\cdot$ kẻ bảng để biểu diễn đại lượng $\\cdot$ lập đúng phương trình từ quan hệ $\\cdot$ đối chiếu rồi trả lời có đơn vị.",
+          "variant": "target"
+        }
+      ],
+      "solution": "Ví dụ mẫu: năng suất thực tế $x+3$. Bảng — Dự định: năng suất $x$, số áo $14$, thời gian $\\dfrac{14}{x}$; Thực tế: năng suất $x+3$, số áo $21$, thời gian $\\dfrac{21}{x+3}$. [[br]] Cùng thời gian: $\\dfrac{14}{x}=\\dfrac{21}{x+3} \\Rightarrow 14x+42=21x \\Rightarrow 7x=42 \\Rightarrow x=6$ (thoả). Năng suất dự định $6$ áo/giờ.",
+      "teacher_note": "QUY NẠP + LẬP BẢNG: cho HS điền BẢNG đại lượng TRƯỚC khi lập PT (chống lập sai) — đây là giàn giáo lõi của toán lời văn. Giờ GV giảng (~25-30 phút), KHÔNG đếm vào quỹ câu. [[br]] $\\bullet$ KHI HS BÍ — dẫn 4 câu hỏi miệng (dùng cho MỌI bài về sau): ''gọi GÌ là x, điều kiện gì? — đại lượng còn lại bằng bao nhiêu theo x (điền bảng)? — hai dòng có gì BẰNG NHAU để lập PT? — giải xong đối chiếu/đổi đơn vị/đơn vị trả lời chưa?''. [[br]] $\\bullet$ Ví dụ mồi (làm chung / dòng nước / phần trăm) chỉ GIẢNG khi sắp gặp dạng đó — làm chung dẫn vào Bài 3c-d + BTVN; dòng nước dẫn Bài 3e-h + BTVN ca nô; phần trăm dẫn bài mua áo. Nhấn ''1/x là PHẦN VIỆC mỗi giờ'', ''xuôi cộng — ngược trừ tốc độ nước''. [[br]] $\\bullet$ Để trống đáp số cho trò điền — đáp án chỉ in ở bản GV. Lớp C: KHÔNG dùng ký hiệu suy ra trong phần HS đọc; mỗi bước một dòng."
+    },
+    {
+      "kind": "practice1",
+      "number": 3,
+      "title": "Luyện tập 1 — Biểu diễn đại lượng theo ẩn",
+      "blocks": [
+        {
+          "type": "problem",
+          "label": "Bài 1.",
+          "tier": "onclass",
+          "level": 1,
+          "statement": "Viết biểu thức theo $x$ (hoặc $a$) — chưa cần lập phương trình:"
+        },
+        {
+          "type": "para",
+          "text": "\\begin{minipage}[t]{0.47\\linewidth} a) Quãng đường $60$ km, tốc độ $x$ km/h: thời gian $=$ [[blank:1.4cm]] (giờ). [[br]] b) Tốc độ $x$ giảm $20$ km/h: tốc độ mới $=$ [[blank:1.4cm]]. [[br]] c) Tốc độ $x$ gấp $3$ lần: tốc độ xe kia $=$ [[blank:1.2cm]]. [[br]] d) Năng suất $x$ áo/giờ, làm $14$ áo: thời gian $=$ [[blank:1.4cm]] (giờ). [[br]] e) Năng suất $x$ tăng $3$ áo/giờ: năng suất mới $=$ [[blank:1.4cm]]. [[br]] f) Giá mỗi áo $a$ nghìn, giảm $30$ nghìn: giá mới $=$ [[blank:1.4cm]]. \\end{minipage}\\hfill\\begin{minipage}[t]{0.47\\linewidth} g) Có $600$ nghìn, mỗi áo giá $a$ nghìn: mua được [[blank:1.4cm]] áo. [[br]] h) Làm một mình xong trong $x$ giờ: $1$ giờ làm [[blank:1.2cm]] phần việc. [[br]] i) Tốc độ riêng $x$, nước $3$ km/h: tốc độ xuôi $=$ [[blank:1.2cm]]. [[br]] j) \\ldots tốc độ ngược $=$ [[blank:1.2cm]]. [[br]] k) Đề $25$ câu, đúng $x$ câu: số câu sai $=$ [[blank:1.2cm]]. [[br]] l) Có $480$ nghìn, giá $a$ nghìn/kg: mua được [[blank:1.4cm]] kg. \\end{minipage}"
+        },
+        {
+          "type": "writelines",
+          "count": 0
+        },
+        {
+          "type": "problem",
+          "label": "Bài 2.",
+          "tier": "onclass",
+          "level": 1,
+          "statement": "Đổi đơn vị và viết biểu thức \\emph{thay đổi} theo $x$:"
+        },
+        {
+          "type": "para",
+          "text": "\\begin{minipage}[t]{0.47\\linewidth} a) $1$ giờ $30$ phút $=$ [[blank:1.2cm]] giờ. [[br]] b) $40$ phút $=$ [[blank:1.2cm]] giờ. [[br]] c) $1$ giờ $40$ phút $=$ [[blank:1.2cm]] giờ. [[br]] d) $20\\%$ viết thành số thập phân $=$ [[blank:1.2cm]]. \\end{minipage}\\hfill\\begin{minipage}[t]{0.47\\linewidth} e) Năng suất $x$ tăng $25\\%$: năng suất mới $=$ [[blank:1.4cm]]. [[br]] f) Số tiền $x$ giảm $10\\%$: còn lại [[blank:1.4cm]]. [[br]] g) Gấp rưỡi của $x$ $=$ [[blank:1.2cm]]. [[br]] h) Một nửa của $x$ $=$ [[blank:1.2cm]]. \\end{minipage}"
+        },
+        {
+          "type": "writelines",
+          "count": 0
+        },
+        {
+          "type": "problem",
+          "label": "Bài 3.",
+          "tier": "onclass",
+          "level": 1,
+          "statement": "Hai dạng dễ nhầm — bám đúng ví dụ mồi (làm chung dùng \\emph{phần việc} $\\dfrac1x$; xuôi/ngược \\emph{cộng/trừ} tốc độ nước):"
+        },
+        {
+          "type": "para",
+          "text": "\\begin{minipage}[t]{0.47\\linewidth} a) Người A xong trong $16$ giờ: $1$ giờ làm [[blank:1.2cm]]. [[br]] b) Người B xong trong $24$ giờ: $1$ giờ làm [[blank:1.2cm]]. [[br]] c) A và B làm chung: $1$ giờ làm [[blank:1.6cm]]. [[br]] d) Cả hai làm chung xong trong $8$ giờ: $1$ giờ chung làm [[blank:1.2cm]]. \\end{minipage}\\hfill\\begin{minipage}[t]{0.47\\linewidth} e) Thuyền riêng $12$, nước $2$ km/h: tốc độ xuôi $=$ [[blank:1cm]]. [[br]] f) \\ldots tốc độ ngược $=$ [[blank:1cm]]. [[br]] g) Ca nô riêng $x$, nước $3$, $AB=40$ km: thời gian xuôi $=$ [[blank:1.4cm]]. [[br]] h) \\ldots thời gian ngược $=$ [[blank:1.4cm]]. \\end{minipage}"
+        },
+        {
+          "type": "writelines",
+          "count": 0
+        },
+        {
+          "type": "problem",
+          "label": "Bài 4.",
+          "tier": "onclass",
+          "level": 2,
+          "statement": "Gọi ẩn rồi \\textbf{lập phương trình} (chưa cần giải) — ghép biểu thức Bài 1 với quan hệ trong đề:"
+        },
+        {
+          "type": "para",
+          "text": "a) Quãng $AB=30$ km. Tốc độ dự định $x$; thực tế giảm $20$ km/h nên thời gian \\emph{gấp rưỡi} dự định. (gợi ý: thời gian $=\\dfrac{30}{\\text{tốc độ}}$) [[br]] b) Tổ dự định may $14$ áo với năng suất $x$; thực tế năng suất $x+3$ nên cùng thời gian may được $21$ áo."
+        },
+        {
+          "type": "writelines",
+          "count": 0
+        }
+      ],
+      "solution": "\\textbf{Bài 1.} a) $\\dfrac{60}{x}$; b) $x-20$; c) $3x$; d) $\\dfrac{14}{x}$; e) $x+3$; f) $a-30$; [[br]] g) $\\dfrac{600}{a}$; h) $\\dfrac{1}{x}$; i) $x+3$; j) $x-3$; k) $25-x$; l) $\\dfrac{480}{a}$.\\par\\smallskip \\textbf{Bài 2.} a) $1{,}5$; b) $\\dfrac23$; c) $\\dfrac53$; d) $0{,}2$; [[br]] e) $1{,}25x$ (hay $\\dfrac54x$); f) $0{,}9x$; g) $1{,}5x$ (hay $\\dfrac32x$); h) $\\dfrac{x}{2}$.\\par\\smallskip \\textbf{Bài 3.} a) $\\dfrac{1}{16}$; b) $\\dfrac{1}{24}$; c) $\\dfrac{1}{16}+\\dfrac{1}{24}$; d) $\\dfrac18$; [[br]] e) $14$; f) $10$; g) $\\dfrac{40}{x+3}$; h) $\\dfrac{40}{x-3}$.\\par\\smallskip \\textbf{Bài 4.} a) $\\dfrac{30}{x-20}=\\dfrac32\\cdot\\dfrac{30}{x}$ (tức $\\dfrac{30}{x-20}=\\dfrac{45}{x}$), điều kiện $x>20$. [[br]] b) $\\dfrac{14}{x}=\\dfrac{21}{x+3}$, điều kiện $x>0$.",
+      "teacher_note": "LUYỆN TẬP 1 = 28 câu NB (Bài 1-3, 1,5 phút/câu) + Bài 4 (2 câu TH) — HS cầm sẵn từng viên gạch trước khi vào bài boss. [[br]] $\\bullet$ DẠNG \\& MỨC: Bài 1 viết biểu thức theo ẩn (NB — viên gạch lõi: thời gian=s/v, năng suất, phần việc 1/x, xuôi/ngược; câu cài MÓC cho boss Bài 5-6 và BTVN); Bài 2 đổi đơn vị + phần trăm (NB — chặn lỗi quên đổi 1h40'=5/3, tăng 25\\%=1,25x); Bài 3 hai dạng dễ nhầm theo ví dụ mồi (NB — làm chung / dòng nước, bám mồi đã giảng); Bài 4 lập PT chưa giải (TH — ghép Bài 1 với quan hệ ''gấp rưỡi'' / ''cùng thời gian''). [[br]] $\\bullet$ KHI HS BÍ — gợi mở: Bài 1a: ''đi 60 km với tốc độ x thì hết bao lâu? quãng đường CHIA tốc độ''; Bài 1h: ''xong cả việc trong x giờ thì 1 giờ làm được mấy phần của việc?''; Bài 3c: ''mỗi giờ A làm 1/16, B làm 1/24, chung thì CỘNG lại''; Bài 4: ''gạch chân quan hệ trong đề — gấp rưỡi nghĩa là vế nào bằng 1,5 lần vế nào?''. [[br]] $\\bullet$ BIẾN THỂ CHO THÊM: HS yếu làm lại Bài 1a-d với số khác (quãng 90 km, năng suất 20); HS xong sớm tự đặt 1 đại lượng rồi viết biểu thức theo x. [[br]] $\\bullet$ Đã đối chiếu SymPy."
+    },
+    {
+      "kind": "practice2",
+      "number": 4,
+      "title": "Luyện tập 2 — Toán lời văn: gỡ giàn dần",
+      "blocks": [
+        {
+          "type": "problem",
+          "label": "Bài 5.",
+          "tier": "onclass",
+          "level": 3,
+          "statement": "\\textbf{(GKI — Ngô Gia Tự)} Một tổ may áo \\emph{dự định} mỗi ngày may $50$ áo. Thực tế mỗi ngày may $55$ áo nên \\emph{xong sớm $2$ ngày} và còn \\emph{dư $15$ áo}. Tính số áo tổ phải may theo dự định. Gọi số áo dự định là $N$ ($N>0$, nguyên); làm lần lượt: [[br]] a) \\;[NB] Năng suất dự định [[blank:1cm]] áo/ngày; thực tế [[blank:1cm]] áo/ngày. [[br]] b) \\;[NB] Số ngày dự định $=\\dfrac{N}{[[blank:0.8cm]]}$ (ngày). [[br]] c) \\;[NB] Thực tế may nhiều hơn $15$ áo nên tổng số áo thực tế $=N+[[blank:0.8cm]]$. [[br]] d) \\;[TH] Số ngày thực tế $=\\dfrac{N+15}{[[blank:0.8cm]]}$ (ngày). [[br]] e) \\;[TH] ``Xong sớm $2$ ngày'' nghĩa là số ngày dự định trừ số ngày thực tế $=2$. Lập phương trình: [[blank:3.4cm]] [[br]] f) \\;[TH] Khử mẫu (nhân hai vế với $550$): $11N-10(N+15)=[[blank:1.2cm]]$. [[br]] g) \\;[TH] Giải: $N=[[blank:1.4cm]]$ (áo). [[br]] h) \\;[VD] Đối chiếu $N>0$ và \\emph{thử lại} (số ngày dự định, số ngày thực tế lệch đúng $2$). Trả lời: dự định may [[blank:1.4cm]] áo."
+        },
+        {
+          "type": "writelines",
+          "count": 0
+        },
+        {
+          "type": "problem",
+          "label": "Bài 6.",
+          "tier": "onclass",
+          "level": 3,
+          "statement": "Một ô tô dự định đi quãng đường $AB$ dài $30$ km. Thực tế tốc độ \\emph{giảm $20$ km/h} so với dự định nên thời gian đi hết $AB$ \\emph{gấp rưỡi} thời gian dự định. Tìm tốc độ thực tế. [[br]] a) \\;[NB] Gọi tốc độ dự định là $x$ (km/h, $x>20$). Thời gian dự định $=\\dfrac{30}{x}$; thời gian thực tế $=\\dfrac{30}{x-[[blank:0.8cm]]}$. [[br]] b) \\;[TH] ``Gấp rưỡi'' nghĩa là thời gian thực tế $=\\dfrac32\\times$ thời gian dự định. Lập phương trình: [[blank:3.4cm]] [[br]] c) \\;[TH] Khử mẫu rồi giải: $x=[[blank:1.4cm]]$ (km/h). [[br]] d) \\;[VD] Đối chiếu $x>20$, trả lời: tốc độ thực tế $=x-20=[[blank:1.4cm]]$ km/h."
+        },
+        {
+          "type": "writelines",
+          "count": 0
+        }
+      ],
+      "solution": "\\textbf{Bài 5.} a) $50$; $55$. b) $\\dfrac{N}{50}$. c) $N+15$. d) $\\dfrac{N+15}{55}$. [[br]] e) $\\dfrac{N}{50}-\\dfrac{N+15}{55}=2$. f) $11N-10(N+15)=1100$. g) $11N-10N-150=1100 \\Rightarrow N=1250$. [[br]] h) Số ngày dự định $\\dfrac{1250}{50}=25$; thực tế $\\dfrac{1265}{55}=23$; lệch $25-23=2$ (đúng). Trả lời: dự định may $\\textbf{1250}$ áo.\\par\\smallskip \\textbf{Bài 6.} a) thời gian thực tế $\\dfrac{30}{x-20}$. [[br]] b) $\\dfrac{30}{x-20}=\\dfrac32\\cdot\\dfrac{30}{x}$, tức $\\dfrac{30}{x-20}=\\dfrac{45}{x}$. [[br]] c) $30x=45(x-20) \\Rightarrow 15x=900 \\Rightarrow x=60$. [[br]] d) Tốc độ thực tế $=60-20=\\textbf{40}$ km/h.",
+      "teacher_note": "LUYỆN TẬP 2 = BOSS toán lời văn, GIẢM DẦN GIÀN: 8 câu TH (6 phút/câu) + 2 câu VD (12 phút/câu) — đếm theo thẻ [NB]/[TH]/[VD] từng ý (duration-gate tự soi). [[br]] $\\bullet$ DẠNG \\& MỨC: Bài 5 năng suất may áo GKI Ngô Gia Tự CHẺ 8 câu CÓ Ô ĐIỀN (a, b, c là NB; d, e, f, g là TH; h là VD — câu c chặn bẫy ''dư 15 áo'' = thực tế may N+15; câu h bắt THỬ LẠI hiệu số ngày); Bài 6 ô tô CHẺ 4 ý GIÀN VỪA (a NB; b, c TH; d VD — HS tự đi lại đường của Bài 5: lập tỉ lệ ''gấp rưỡi'', khử mẫu, đối chiếu). [[br]] $\\bullet$ KHI HS BÍ — gợi mở: Bài 5b: ''may 50 áo/ngày, có N áo thì mất mấy ngày? N CHIA 50''; Bài 5e: ''dự định nhiều ngày hơn hay ít hơn? xong SỚM 2 ngày nghĩa là số ngày dự định LỚN HƠN, hiệu bằng 2''; Bài 6b: ''thời gian thực tế GẤP RƯỠI thời gian dự định — viết dấu bằng giữa hai vế nào?''. [[br]] $\\bullet$ BIẾN THỂ CHO THÊM: HS xong sớm — đổi số Bài 6 (giảm 10 km/h, thời gian gấp đôi) tự giải lại; HS yếu — chắc Bài 5 trọn vẹn, Bài 6 nghe chữa. Lớp C: CHỈ 2 câu VD trên lớp, KHÔNG thêm bài hình học/phân số nghịch đảo. [[br]] $\\bullet$ Đã đối chiếu SymPy (Bài 5: N=1250; Bài 6: x=60, thực tế 40)."
+    },
+    {
+      "kind": "reflection",
+      "number": 5,
+      "title": "Tổng kết",
+      "blocks": [
+        {
+          "type": "para",
+          "text": "Quy trình: \\textbf{gọi ẩn} (kèm điều kiện) $\\to$ \\textbf{biểu diễn đại lượng} (kẻ bảng) $\\to$ \\textbf{lập \\& giải phương trình} $\\to$ \\textbf{đối chiếu điều kiện}, trả lời. [[br]] Chuyển động dùng $s=v\\cdot t$; năng suất dùng số lượng $=$ năng suất $\\times$ thời gian; làm chung dùng phần việc $\\dfrac1x$ mỗi giờ."
+        },
+        {
+          "type": "mindmap",
+          "caption": "Tự điền sơ đồ để hệ thống lại cả buổi (bản tóm tắt mang về ôn)",
+          "root": "Giải toán bằng lập PT",
+          "branches": [
+            {
+              "label": "Bốn bước",
+              "children": [
+                { "label": "B1: gọi ẩn $+$ [[blank:1.8cm]]" },
+                { "label": "B4: [[blank:1.8cm]] $+$ trả lời" }
+              ]
+            },
+            {
+              "label": "Công thức nền",
+              "children": [
+                { "label": "Chuyển động: $s=[[blank:1.4cm]]$" },
+                { "label": "Làm chung: $1$ giờ làm [[blank:1cm]] việc" }
+              ]
+            },
+            {
+              "label": "Dòng nước",
+              "children": [
+                { "label": "Xuôi $=$ riêng [[blank:0.8cm]] nước" },
+                { "label": "Ngược $=$ riêng [[blank:0.8cm]] nước" }
+              ]
+            }
+          ]
+        },
+        {
+          "type": "para",
+          "text": "\\textbf{BÀI TẬP VỀ NHÀ} (làm vào vở, tiết sau nộp)."
+        },
+        {
+          "type": "problem",
+          "label": "Bài 7.",
+          "tier": "btvn",
+          "level": 1,
+          "statement": "Viết biểu thức theo $x$ (hoặc $a$):"
+        },
+        {
+          "type": "para",
+          "text": "\\begin{minipage}[t]{0.47\\linewidth} a) Quãng $120$ km, tốc độ $x$ km/h: thời gian $=$ [[blank:1.4cm]]. [[br]] b) Tốc độ $x$ tăng $5$ km/h: tốc độ mới $=$ [[blank:1.2cm]]. [[br]] c) Giá $a$ nghìn/kg tăng $2$ nghìn: giá mới $=$ [[blank:1.2cm]]. [[br]] d) Có $480$ nghìn, giá $a$ nghìn/kg: mua [[blank:1.4cm]] kg. \\end{minipage}\\hfill\\begin{minipage}[t]{0.47\\linewidth} e) Một mình xong $x$ giờ: $1$ giờ làm [[blank:1.2cm]]. [[br]] f) Ca nô riêng $x$, nước $4$: xuôi $=$ [[blank:1cm]]. [[br]] g) \\ldots ngược $=$ [[blank:1cm]]. \\end{minipage}"
+        },
+        {
+          "type": "problem",
+          "label": "Bài 8.",
+          "tier": "btvn",
+          "level": 1,
+          "statement": "Đổi đơn vị / chọn quan hệ lập phương trình (điền vào chỗ trống):"
+        },
+        {
+          "type": "para",
+          "text": "\\begin{minipage}[t]{0.47\\linewidth} a) $2$ giờ $15$ phút $=$ [[blank:1.2cm]] giờ. [[br]] b) $50$ phút $=$ [[blank:1.2cm]] giờ. [[br]] c) Số tiền $x$ tăng $20\\%$: thành [[blank:1.4cm]]. [[br]] d) Hai bạn đến nơi \\emph{cùng lúc}: hai thời gian [[blank:1.6cm]] nhau. \\end{minipage}\\hfill\\begin{minipage}[t]{0.47\\linewidth} e) Xuôi rồi ngược, \\emph{tổng} thời gian $3$ giờ: thời gian xuôi $+$ thời gian ngược $=$ [[blank:1cm]]. [[br]] f) Làm chung xong: tổng phần việc $1$ giờ của hai người $=$ [[blank:1cm]] (cả việc trong $1$ giờ). [[br]] g) Đề $25$ câu, đúng $x$: số câu sai $=$ [[blank:1.2cm]]. \\end{minipage}"
+        },
+        {
+          "type": "problem",
+          "label": "Bài 9.",
+          "tier": "btvn",
+          "level": 2,
+          "statement": "Gọi ẩn (kèm điều kiện) rồi \\textbf{lập phương trình} (chưa cần giải — tiết sau chữa):"
+        },
+        {
+          "type": "para",
+          "text": "a) Quãng $AB=120$ km. Tốc độ thực tế hơn dự định $10$ km/h nên thời gian thực tế ít hơn dự định $1$ giờ. (gọi tốc độ dự định là $x$) [[br]] b) Một người gửi $x$ triệu đồng, lãi suất $6\\%$/năm; sau một năm cả gốc lẫn lãi được $53$ triệu. [[br]] c) Hai vòi cùng chảy đầy bể trong $4$ giờ; vòi I chảy riêng đầy bể trong $x$ giờ, vòi II trong $x+6$ giờ."
+        },
+        {
+          "type": "problem",
+          "label": "Bài 10.",
+          "tier": "btvn",
+          "level": 3,
+          "statement": "\\textbf{(Phần trăm — mua áo)} Bạn Hoa dự định dùng hết $600$ nghìn đồng mua một số áo đồng giá. Đến nơi mỗi áo \\emph{giảm $30$ nghìn} nên Hoa mua được số lượng \\emph{gấp $1{,}25$ lần} dự định. Tính giá mỗi áo Hoa đã mua. [[br]] a) \\;[NB] Gọi giá dự định mỗi áo là $a$ nghìn ($a>30$). Giá đã mua $=a-[[blank:0.8cm]]$. [[br]] b) \\;[TH] Số áo dự định $=\\dfrac{600}{a}$; số áo đã mua $=\\dfrac{600}{a-30}$. Quan hệ ``gấp $1{,}25$ lần'': lập phương trình. [[br]] c) \\;[VD] Giải và trả lời: giá mỗi áo Hoa đã mua là bao nhiêu nghìn?"
+        },
+        {
+          "type": "problem",
+          "label": "Bài 11.",
+          "tier": "btvn",
+          "level": 3,
+          "statement": "\\textbf{(Làm chung)} Hai người cùng làm chung một công việc thì xong trong $8$ giờ. Sau khi cùng làm $4$ giờ thì người thứ nhất nghỉ, người thứ hai làm tiếp $12$ giờ nữa mới xong. Hỏi làm một mình thì mỗi người mất bao lâu? [[br]] a) \\;[TH] Gọi thời gian người $1$ làm một mình là $x$ giờ ($x>8$). Mỗi giờ: người $1$ làm $\\dfrac1x$, cả hai làm $\\dfrac18$, nên người $2$ làm $\\dfrac18-\\dfrac1x$. [[br]] b) \\;[TH] $4$ giờ chung làm được $\\dfrac12$ việc; người $2$ làm tiếp $12$ giờ nốt $\\dfrac12$. Lập phương trình. [[br]] c) \\;[VD] Giải và trả lời thời gian mỗi người."
+        },
+        {
+          "type": "problem",
+          "label": "Bài 12.",
+          "tier": "btvn",
+          "level": 3,
+          "statement": "\\textbf{(Xuôi / ngược dòng)} Một ca nô xuôi dòng từ $A$ đến $B$ rồi ngược dòng về $A$, tổng thời gian $3$ giờ. Biết tốc độ ca nô khi nước yên lặng là $27$ km/h và $AB=40$ km. Tính tốc độ dòng nước (gọi tốc độ dòng nước là $y$, $0<y<27$)."
+        }
+      ],
+      "solution": "\\textbf{BTVN.}\\par\\smallskip \\textbf{Bài 7.} a) $\\dfrac{120}{x}$; b) $x+5$; c) $a+2$; [[br]] d) $\\dfrac{480}{a}$; e) $\\dfrac1x$; f) $x+4$; g) $x-4$.\\par\\smallskip \\textbf{Bài 8.} a) $2{,}25$; b) $\\dfrac56$; c) $1{,}2x$; [[br]] d) bằng; e) $3$; f) $\\dfrac18$; g) $25-x$.\\par\\smallskip \\textbf{Bài 9.} a) $\\dfrac{120}{x}-\\dfrac{120}{x+10}=1$ ($x>0$). [[br]] b) $x+6\\%\\cdot x=53$ tức $1{,}06x=53$ ($x>0$). [[br]] c) $\\dfrac1x+\\dfrac{1}{x+6}=\\dfrac14$ ($x>0$).\\par\\smallskip \\textbf{Bài 10.} a) giá đã mua $=a-30$. [[br]] b) $\\dfrac{600}{a-30}=1{,}25\\cdot\\dfrac{600}{a}$, tức $\\dfrac{1}{a-30}=\\dfrac{1{,}25}{a}$. [[br]] c) $a=1{,}25(a-30) \\Rightarrow 0{,}25a=37{,}5 \\Rightarrow a=150$; giá đã mua $=150-30=\\textbf{120}$ nghìn/áo.\\par\\smallskip \\textbf{Bài 11.} a) người $2$ mỗi giờ làm $\\dfrac18-\\dfrac1x$. [[br]] b) $12\\Big(\\dfrac18-\\dfrac1x\\Big)=\\dfrac12$. [[br]] c) $\\dfrac{12}{x}=1 \\Rightarrow x=12$; người $1$: $12$ giờ, người $2$: $\\dfrac18-\\dfrac1{12}=\\dfrac1{24} \\Rightarrow 24$ giờ.\\par\\smallskip \\textbf{Bài 12.} Xuôi $27+y$, ngược $27-y$: $\\dfrac{40}{27+y}+\\dfrac{40}{27-y}=3 \\Rightarrow 40\\cdot54=3(27^2-y^2) \\Rightarrow 2160=2187-3y^2 \\Rightarrow y^2=9 \\Rightarrow y=3$. Dòng nước $3$ km/h.\\par\\medskip \\textbf{Đáp án sơ đồ:} B1 gọi ẩn $+$ \\emph{điều kiện}; B4 \\emph{đối chiếu điều kiện} $+$ trả lời. [[br]] Chuyển động $s=v\\cdot t$; làm chung $1$ giờ làm $\\dfrac1x$ việc; xuôi $=$ riêng $+$ nước; ngược $=$ riêng $-$ nước.",
+      "teacher_note": "BTVN — chỉ cần giữ quỹ ~90 phút (40-40-20 là tỉ lệ giờ TRÊN LỚP, không áp cho BTVN — Thầy chốt). 15 NB + 7 TH + 3 VD. Gỡ giàn dần: Bài 10 còn 3 ý $\\to$ Bài 11 còn 3 ý $\\to$ Bài 12 gần đề trần (chỉ gợi gọi ẩn). [[br]] $\\bullet$ DẠNG \\& MỨC: Bài 7-8 drill NB song song bài trên lớp (biểu thức / đổi đơn vị / chọn quan hệ — HS yếu ăn chắc phần này); Bài 9 CHỈ lập PT 3 tình huống chuyển động/lãi/làm chung (TH — kỹ năng ăn điểm; nghiệm tham khảo để chữa: a) $x=30$, b) $x=50$, c) $x=6$); Bài 10 mua áo phần trăm CHẺ 3 ý (NB+TH+VD, ra giá mua 120 nghìn); Bài 11 làm chung CHẺ 3 ý (TH+TH+VD, ra 12 và 24 giờ); Bài 12 ca nô gần đề trần (VD, ra dòng nước 3 km/h — có $y^2=9$ nhưng nghiệm đẹp). [[br]] $\\bullet$ DẶN DÒ KHI GIAO BÀI: bí Bài 9-12 thì mở lại 4 bước + bảng đại lượng chặng 2 và bộ 4 câu hỏi của Bài 5; nhớ ĐỔI ĐƠN VỊ và ĐỐI CHIẾU điều kiện. Tiết sau GV chữa trọn Bài 9 (giải tiếp) + Bài 11, 12. [[br]] $\\bullet$ Bài hình học (vườn rau) và phân số nghịch đảo đã BỎ (vượt tầm lớp C). Đã đối chiếu SymPy toàn bộ."
+    }
+  ]
+}

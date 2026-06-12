@@ -21,6 +21,22 @@
   flowarrow/.style={-{Stealth[length=5pt]}, line width=0.9pt, draw=brand},
 }
 \usepackage{adjustbox}   % co hình figure trong cột: giới hạn CẢ bề ngang lẫn chiều cao
+% Sơ đồ tư duy điền khuyết (block mindmap) — cùng style với handout (_macros.tex.j2);
+% thiếu nhánh render này slide Tổng kết từng ra TRANG TRỐNG.
+\usepackage[edges]{forest}
+\forestset{
+  mindmap/.style={
+    for tree={
+      draw=brand!50, rounded corners=2pt, line width=0.5pt,
+      font=\sffamily\footnotesize, align=left, inner sep=3pt,
+      fill=neutral, edge={brand!45, line width=0.6pt},
+      grow'=0, parent anchor=east, child anchor=west, anchor=west,
+      l sep=14pt, s sep=5pt,
+    },
+    where level=0{fill=brand!12, draw=brand, font=\sffamily\bfseries\footnotesize}{},
+    forked edges,
+  },
+}
 \usepackage{pifont}      % dingbat cho nhãn block (bẫy/đích/mẹo/mở màn) — không cần font ngoài
 \usepackage[most]{tcolorbox}  % thẻ "cam kết lớp học" (slide 2) + hộp nhấn
 % Ký hiệu góc vuông tại đỉnh #1 giữa hai tia #1->#2 và #1->#3 (dùng trong block figure).

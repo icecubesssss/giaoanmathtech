@@ -110,7 +110,10 @@ def group_slide_segments(blocks):
       • `figure` GẮN vào segment hiện hành (cột phải hoặc xếp dưới — xem _seg_mode).
     Nhờ vậy: phiếu CÓ hình → 'chữ trái, hình phải' cùng một slide; phiếu KHÔNG
     hình (đại số) → mỗi đề/ý một slide gọn, không dính đoạn trước."""
-    HEADERS = ("problem", "noted", "mindmap")
+    # "opener" phải MỞ segment riêng: nếu dính vào segment của block đứng trước
+    # (vd hộp "Ôn bài cũ"), txt[0] không còn là opener → mode "opener" không kích
+    # hoạt và HÌNH minh hoạ mở màn bị RƠI khỏi slide.
+    HEADERS = ("problem", "noted", "mindmap", "opener")
     segs: list[dict] = []
     for b in blocks:
         typ = getattr(b, "type", "")

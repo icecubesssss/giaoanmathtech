@@ -1,0 +1,348 @@
+{
+  "slug": "phieu-a-pt-tich-va-an-o-mau",
+  "title": "Phương trình tích và phương trình chứa ẩn ở mẫu",
+  "eyebrow": "ĐẠI SỐ — PHIẾU A: PHƯƠNG TRÌNH TÍCH \\& ẨN Ở MẪU",
+  "grade_label": "Lớp 9 • Ôn vào 10",
+  "class_tier": "C",
+  "stages": [
+    {
+      "kind": "review",
+      "number": 1,
+      "title": "Khám phá — Tích bằng 0 và PT tích",
+      "blocks": [
+        {
+          "type": "noted",
+          "text": "\\textbf{Ôn bài cũ.} (1) Giải phương trình bậc nhất: [[br]] $3x-9=0$ [[br]] $3x\\ [[mblank:0.7cm]]\\ [[mblank:0.7cm]]$ \\;(chuyển vế, đổi dấu) [[br]] $x\\ [[mblank:0.7cm]]\\ [[mblank:0.7cm]]$ \\;(chia hai vế cho $3$) [[br]] (2) Phân tích thành nhân tử (lớp $8$): [[br]] \\quad $x^2+x=[[mblank:1.6cm]]$;\\qquad $x^2-9=([[mblank:1.4cm]])([[mblank:1.4cm]])$",
+          "variant": "note"
+        },
+        {
+          "type": "opener",
+          "text": "Trong một game, điểm mỗi vòng tính bằng: \\textbf{số sao} $\\times$ \\textbf{hệ số combo}. Hết vòng, màn hình báo \\textbf{điểm $=0$}. [[br]] Đoán nhanh: muốn tích hai số bằng $0$ thì ít nhất một thừa số phải bằng [[mblank:0.8cm]]. [[br]] Vậy ``điểm $=0$'' nghĩa là: số sao $=0$ \\emph{hoặc} hệ số combo $=0$? [[mblank:2cm]]",
+          "tikz": "\\begin{tikzpicture}[line width=0.9pt,font=\\small]\\draw[ink,line width=1.1pt,rounded corners=4pt] (0,0) rectangle (2.7,2.5);\\draw[ink,line width=0.5pt,rounded corners=2pt] (0.18,0.5) rectangle (2.52,2.28);\\node[font=\\scriptsize\\bfseries,ink] at (1.35,1.95) {KẾT QUẢ VÒNG};\\node[font=\\scriptsize,brand!70!black] at (1.35,1.5) {sao $\\times$ combo};\\node[font=\\bfseries,ink] at (1.35,1.02) {$=0$};\\fill[ink] (1.35,0.26) circle (0.12);\\end{tikzpicture}"
+        },
+        {
+          "type": "noted",
+          "text": "\\textbf{Tích bằng $0$ khi một thừa số bằng $0$.} Áp vào phương trình: [[br]] \\quad $(x+5)(3x-9)=0$ [[br]] giải khi $x+5=0$ \\emph{hoặc} $3x-9=0$. [[br]] Phương trình bậc nhất $ax+b=0$ ($a\\neq0$) đã thạo. Hôm nay học $2$ dạng đều \\textbf{quy về} bậc nhất: \\emph{phương trình tích} và \\emph{phương trình chứa ẩn ở mẫu}.",
+          "variant": "note"
+        }
+      ],
+      "solution": "Ôn bài cũ: (1) $3x=9$ nên $x=3$. (2) $x^2+x=x(x+1)$; $x^2-9=(x-3)(x+3)$. [[br]] Mở màn: tích hai số bằng $0$ thì ít nhất một thừa số bằng $0$; ``điểm $=0$'' nghĩa là số sao $=0$ \\emph{hoặc} combo $=0$ (chỉ cần MỘT thừa số bằng $0$).",
+      "teacher_note": "PHIẾU LỚP C buổi 1 — 40-40-20 áp cho giờ TRÊN LỚP từng phiếu (sai số 5 phần trăm; BTVN chỉ giữ quỹ ~90 phút — Thầy chốt 2026-06-11, duration-gate trong validate tự soi). Giờ giảng chặng 1+2 nhắm 20-30 phút, KHÔNG đếm vào quỹ luyện tập. [[br]] $\\bullet$ KỊCH BẢN LỜI DẪN (nói miệng, không in lên phiếu HS): mở đầu hỏi cả lớp ''bạn nào hay chơi game tính điểm theo combo?'' rồi mới phát phiếu; chốt miệng sau ô điền: ''nhân mà ra 0 thì kiểu gì cũng có một thừa số bằng 0 — đó là chìa khoá giải PHƯƠNG TRÌNH TÍCH''; dặn HS nhớ kết quả $3x-9=0$ và cách phân tích nhân tử vừa ôn — lát gặp lại ở chặng 2. [[br]] $\\bullet$ MẠCH QUY NẠP: mở bằng KIẾN THỨC CŨ trực tiếp (giải PT bậc nhất + phân tích nhân tử lớp 8) rồi cho HS GẶP tích-bằng-0 qua tình huống game GẦN HS, chưa định nghĩa hình thức — định nghĩa PT tích để chặng 2 mới chốt. [[br]] $\\bullet$ PHÂN CÔNG 2 PHIẾU (Thầy chốt): phiếu A gom TOÀN BỘ kỹ thuật giải (PT tích + PT chứa ẩn ở mẫu, gồm quy đồng khử mẫu); toán lời văn (lập phương trình) dồn HẾT sang phiếu B. [[br]] $\\bullet$ Nguồn đề: ~70 phần trăm bê NGUYÊN từ 10 đề GKI 2024-2025 (DS-PT-QUYVE có ở 10/10 đề) + 30 phần trăm phiếu chuẩn tuần04 đã kiểm SymPy."
+    },
+    {
+      "kind": "concept",
+      "number": 2,
+      "title": "Khái niệm — Hai cách giải: tích \\& ẩn ở mẫu",
+      "blocks": [
+        {
+          "type": "noted",
+          "text": "\\textbf{(1) Phương trình tích.} Dạng $A\\cdot B=0$: giải khi $A=0$ \\emph{hoặc} $B=0$. [[br]] \\emph{Ví dụ mẫu} — giải $(x+5)(3x-9)=0$: [[br]] \\quad $x+5=0$ cho $x\\ =\\ [[mblank:1cm]]$ [[br]] \\quad $3x-9=0$ cho $x\\ =\\ [[mblank:1cm]]$ [[br]] Vậy nghiệm là $x=[[mblank:1cm]]$ hoặc $x=[[mblank:1cm]]$.",
+          "variant": "example"
+        },
+        {
+          "type": "noted",
+          "text": "\\textbf{(2) Nếu chưa ở dạng tích:} chuyển hết về một vế ($=0$) rồi \\textbf{phân tích nhân tử}. [[br]] \\emph{Ví dụ mẫu} — giải $x^2-x=-2x+2$: [[br]] \\quad $x^2-x+2x-2\\ =\\ 0$ \\;(chuyển vế, đổi dấu) [[br]] \\quad $x^2+x-2\\ =\\ 0$ \\;(thu gọn) [[br]] \\quad $(x+[[mblank:0.7cm]])(x-[[mblank:0.7cm]])\\ =\\ 0$ \\;(phân tích nhân tử) [[br]] Vậy $x=[[mblank:1cm]]$ hoặc $x=[[mblank:1cm]]$.",
+          "variant": "example"
+        },
+        {
+          "type": "noted",
+          "text": "\\textbf{(3) Phương trình chứa ẩn ở mẫu — bắt lỗi giúp bạn Lan.} Lan giải: [[br]] \\quad $\\dfrac{2}{x+1}+\\dfrac{1}{x-2}=\\dfrac{3}{(x+1)(x-2)}$ [[br]] Khử mẫu, Lan được $2(x-2)+(x+1)=3$, giải ra $x=2$ và kết luận ``$x=2$ là nghiệm''. [[br]] \\emph{Thử lại} $x=2$ vào mẫu $x-2$: [[br]] \\quad $x-2=2-2=[[mblank:0.8cm]]$ [[br]] Mẫu bằng $0$ thì phân số có nghĩa không? [[mblank:1.4cm]] [[br]] Vậy $x=2$ phải bị [[mblank:1.4cm]] — Lan quên một bước!",
+          "variant": "example"
+        },
+        {
+          "type": "noted",
+          "text": "\\textbf{4 bước giải phương trình chứa ẩn ở mẫu.} [[br]] B1: tìm \\textbf{ĐKXĐ} (mọi mẫu $\\neq0$). [[br]] B2: quy đồng rồi \\textbf{khử mẫu}. [[br]] B3: giải phương trình vừa nhận. [[br]] B4: \\textbf{đối chiếu ĐKXĐ} rồi kết luận (loại giá trị làm mẫu bằng $0$).",
+          "variant": ""
+        },
+        {
+          "type": "figure",
+          "width": "0.96\\linewidth",
+          "caption": "Bốn bước — B4 (đối chiếu ĐKXĐ) là chốt chặn mất điểm oan.",
+          "tikz": "\\begin{tikzpicture}[node distance=5mm and 7mm,font=\\small]\\node[flownode](a){\\textbf{B1}\\\\Tìm ĐKXĐ};\\node[flownode,right=of a](b){\\textbf{B2}\\\\Quy đồng,\\\\khử mẫu};\\node[flownode,right=of b](c){\\textbf{B3}\\\\Giải PT\\\\vừa nhận};\\node[flowkey,right=of c](d){\\textbf{B4}\\\\Đối chiếu\\\\ĐKXĐ};\\draw[flowarrow](a)--(b);\\draw[flowarrow](b)--(c);\\draw[flowarrow](c)--(d);\\end{tikzpicture}"
+        },
+        {
+          "type": "noted",
+          "text": "Lỗi của Lan = bẫy điểm số một của dạng ẩn ở mẫu: [[br]] $\\bullet$\\; Giải xong ra giá trị \\textbf{đẹp} (như $x=2$) vẫn phải \\textbf{thử lại ĐKXĐ}. [[br]] $\\bullet$\\; Giá trị làm \\textbf{mẫu $=0$} thì \\textbf{LOẠI}. [[br]] $\\bullet$\\; Loại hết thì kết luận \\textbf{vô nghiệm} (bài của Lan: $x=2$ bị loại nên \\emph{vô nghiệm}).",
+          "variant": "trap"
+        },
+        {
+          "type": "noted",
+          "text": "\\textbf{Ví dụ mẫu — làm đủ 4 bước.} Giải $\\dfrac{x}{x+1}=\\dfrac{x-1}{x-2}$: [[br]] \\quad ĐKXĐ: $x\\neq[[mblank:1cm]]$ và $x\\neq[[mblank:1cm]]$ [[br]] \\quad khử mẫu: $x(x-2)=(x-1)(x+1)$ [[br]] \\quad $x^2-2x\\ =\\ x^2-1$ \\;(khai triển hai vế) [[br]] \\quad $-2x\\ =\\ [[mblank:1cm]]$ \\;(chuyển $x^2$ sang, thu gọn) [[br]] \\quad $x\\ =\\ [[mblank:1cm]]$ [[br]] Đối chiếu ĐKXĐ: thoả. Vậy nghiệm là $x\\ =\\ [[mblank:1cm]]$.",
+          "variant": "example"
+        },
+        {
+          "type": "noted",
+          "text": "\\textbf{Khắc cốt.} Phương trình tích: đưa về một vế $=0$, phân tích nhân tử, cho từng thừa số $=0$. Ẩn ở mẫu: làm đủ $4$ bước, \\textbf{không bao giờ} quên đối chiếu ĐKXĐ.",
+          "variant": "target"
+        }
+      ],
+      "solution": "(1) $x+5=0$ cho $x=-5$; $3x-9=0$ cho $x=3$. Nghiệm $x=-5$ hoặc $x=3$. [[br]] (2) $x^2+x-2=(x+2)(x-1)=0$ nên $x=-2$ hoặc $x=1$. [[br]] (3) $x-2=0$; mẫu bằng $0$ thì phân số \\emph{vô nghĩa} nên $x=2$ bị \\textbf{loại} (Lan quên ĐKXĐ) — bài này \\emph{vô nghiệm}. [[br]] Ví dụ 4 bước: ĐKXĐ $x\\neq-1,\\ x\\neq2$; $-2x=-1$ nên $x=\\dfrac12$ (thoả).",
+      "teacher_note": "MẠCH QUY NẠP + HỌC QUA LỖI: (1)-(2) HS điền ví dụ mẫu PT tích trước, GV chốt cách làm; (3) bắt lỗi Lan (thử x=2 chỉ định sẵn vào mẫu) cho HS TỰ thấy mâu thuẫn $\\to$ rút ra cần ĐKXĐ $\\to$ hộp BẪY ĐIỂM chốt NGAY SAU $\\to$ ví dụ mẫu làm đủ 4 bước. Đây là giờ GV giảng (~25-30 phút), KHÔNG đếm vào quỹ câu luyện tập. [[br]] $\\bullet$ KHI HS BÍ — câu hỏi gợi mở: (2) ''chuyển hết sang trái thì vế phải còn gì? hai số nào nhân được -2 mà cộng được 1?''; (3) ''thay x=2 vào mẫu x-2 ra mấy? chia cho 0 có được không? vậy x=2 giữ hay bỏ?''; (4) ''mẫu x+1 và x-2 khác 0 thì x khác mấy?''. [[br]] $\\bullet$ Cài CHỦ ĐÍCH: ví dụ Lan dùng đúng bài Bài 9 (LT2) để khi HS gặp lại là đã được cảnh báo; ô ''ẩn ở mẫu'' của sơ đồ Tổng kết có móc treo từ 4 bước ở đây. [[br]] $\\bullet$ Lớp C: KHÔNG dùng ký hiệu suy ra trong phần HS đọc — mỗi bước một dòng kèm chú thích trong ngoặc; cho HS đọc TO quy tắc ''mẫu bằng 0 thì loại''."
+    },
+    {
+      "kind": "practice1",
+      "number": 3,
+      "title": "Luyện tập 1 — Phương trình tích (nhận biết)",
+      "blocks": [
+        {
+          "type": "problem",
+          "label": "Bài 1.",
+          "tier": "onclass",
+          "level": 1,
+          "statement": "Giải các phương trình tích sau (cho từng thừa số bằng $0$; nhiều câu trích đề GIỮA KÌ I):"
+        },
+        {
+          "type": "para",
+          "text": "\\begin{minipage}[t]{0.47\\linewidth} a) $(4x+7)(5-x)=0$ [[br]] b) $(2x-5)(x-3)=0$ \\;(Cổ Nhuế 2) [[br]] c) $(x-2)(2x+6)=0$ \\;(Ngô Gia Tự) \\end{minipage}\\hfill\\begin{minipage}[t]{0.47\\linewidth} d) $(x-10)(24+5x)=0$ \\;(Nguyễn Bỉnh Khiêm) [[br]] e) $(3x-6)(x+5)=0$ \\;(Phú Diễn) [[br]] f) $(2x+1)(6-3x)=0$ \\;(Thái Thịnh) \\end{minipage}"
+        },
+        {
+          "type": "writelines",
+          "count": 0
+        },
+        {
+          "type": "problem",
+          "label": "Bài 2.",
+          "tier": "onclass",
+          "level": 1,
+          "statement": "Tìm $x$ (giải từng phương trình bậc nhất — đây là viên gạch của Bài 1):"
+        },
+        {
+          "type": "para",
+          "text": "\\begin{minipage}[t]{0.47\\linewidth} a) $2x-5=0$:\\; $x=[[blank:1.2cm]]$ [[br]] b) $3x+6=0$:\\; $x=[[blank:1.2cm]]$ [[br]] c) $5-x=0$:\\; $x=[[blank:1.2cm]]$ [[br]] d) $4x+7=0$:\\; $x=[[blank:1.2cm]]$ [[br]] e) $6-3x=0$:\\; $x=[[blank:1.2cm]]$ \\end{minipage}\\hfill\\begin{minipage}[t]{0.47\\linewidth} f) $2x+1=0$:\\; $x=[[blank:1.2cm]]$ [[br]] g) $24+5x=0$:\\; $x=[[blank:1.2cm]]$ [[br]] h) $x-10=0$:\\; $x=[[blank:1.2cm]]$ [[br]] i) $3x-6=0$:\\; $x=[[blank:1.2cm]]$ [[br]] j) $x+5=0$:\\; $x=[[blank:1.2cm]]$ \\end{minipage}"
+        },
+        {
+          "type": "writelines",
+          "count": 0
+        },
+        {
+          "type": "problem",
+          "label": "Bài 3.",
+          "tier": "onclass",
+          "level": 1,
+          "statement": "Mỗi phương trình sau \\textbf{đã ở dạng tích} hay \\textbf{cần đưa về tích}? Điền \\emph{đã} / \\emph{cần}:"
+        },
+        {
+          "type": "para",
+          "text": "\\begin{minipage}[t]{0.47\\linewidth} a) $(x-1)(x+4)=0$:\\; [[blank:1.2cm]] [[br]] b) $x^2-5x=0$:\\; [[blank:1.2cm]] [[br]] c) $3x(x-7)=0$:\\; [[blank:1.2cm]] \\end{minipage}\\hfill\\begin{minipage}[t]{0.47\\linewidth} d) $x^2-1=5(x+1)$:\\; [[blank:1.2cm]] [[br]] e) $(2x+3)(x-8)=0$:\\; [[blank:1.2cm]] [[br]] f) $x^2-9=3(x+3)$:\\; [[blank:1.2cm]] \\end{minipage}"
+        },
+        {
+          "type": "writelines",
+          "count": 0
+        },
+        {
+          "type": "problem",
+          "label": "Bài 4.",
+          "tier": "onclass",
+          "level": 1,
+          "statement": "Phân tích thành nhân tử (viên gạch để đưa về phương trình tích):"
+        },
+        {
+          "type": "para",
+          "text": "\\begin{minipage}[t]{0.47\\linewidth} a) $x^2+x=[[blank:1.8cm]]$ [[br]] b) $x^2+3x=[[blank:1.8cm]]$ [[br]] c) $2x^2-x=[[blank:1.8cm]]$ [[br]] d) $x^2-9=[[blank:2cm]]$ [[br]] e) $x^2-16=[[blank:2cm]]$ \\end{minipage}\\hfill\\begin{minipage}[t]{0.47\\linewidth} f) $4x^2-1=[[blank:2cm]]$ [[br]] g) $x^2-x-2=[[blank:2cm]]$ [[br]] h) $x^2-4x+4=[[blank:2cm]]$ [[br]] i) $x^2-25=[[blank:2cm]]$ [[br]] j) $x^2+6x+9=[[blank:2cm]]$ \\end{minipage}"
+        },
+        {
+          "type": "writelines",
+          "count": 0
+        }
+      ],
+      "solution": "\\textbf{Bài 1.} a) $x=-\\dfrac74;\\ 5$. b) $x=\\dfrac52;\\ 3$. c) $x=2;\\ -3$. [[br]] d) $x=10;\\ -\\dfrac{24}{5}$. e) $x=2;\\ -5$. f) $x=-\\dfrac12;\\ 2$.\\par\\smallskip \\textbf{Bài 2.} a) $\\dfrac52$; b) $-2$; c) $5$; d) $-\\dfrac74$; e) $2$; [[br]] f) $-\\dfrac12$; g) $-\\dfrac{24}{5}$; h) $10$; i) $2$; j) $-5$.\\par\\smallskip \\textbf{Bài 3.} a) đã; b) cần ($x(x-5)=0$); c) đã; d) cần; e) đã; f) cần.\\par\\smallskip \\textbf{Bài 4.} a) $x(x+1)$; b) $x(x+3)$; c) $x(2x-1)$; d) $(x-3)(x+3)$; e) $(x-4)(x+4)$; [[br]] f) $(2x-1)(2x+1)$; g) $(x-2)(x+1)$; h) $(x-2)^2$; i) $(x-5)(x+5)$; j) $(x+3)^2$.",
+      "teacher_note": "LUYỆN TẬP 1 = 32 câu NHẬN BIẾT = 48 phút (1,5 phút/câu — HS tự làm, GV đi vòng). [[br]] $\\bullet$ DẠNG \\& MỨC: Bài 1 giải PT tích cho sẵn (NB — câu a bổ sung + 5 câu bê NGUYÊN đề GKI, DS-PT-QUYVE 10/10 đề; chỉ việc cho từng thừa số bằng 0); Bài 2 giải từng thừa số (NB — viên gạch của Bài 1, đúng các thừa số xuất hiện ở Bài 1); Bài 3 nhận-biết-dạng đã/cần đưa về tích (NB — bài nhận dạng DUY NHẤT); Bài 4 phân tích nhân tử (NB — viên gạch để ''đưa về tích'' ở LT2, gồm đặt nhân tử chung + hằng đẳng thức $A^2-B^2$ và $(A\\pm B)^2$). [[br]] $\\bullet$ KHI HS BÍ — gợi mở: Bài 1: ''tích bằng 0 thì thừa số nào phải bằng 0? giải mỗi cái như Bài 2''; Bài 4 câu d-f: ''có dạng $A^2$ trừ $B^2$ không? bằng $(A-B)(A+B)$''; câu h, j: ''có phải bình phương một tổng/hiệu?''. [[br]] $\\bullet$ BIẾN THỂ CHO THÊM: HS yếu chưa phản xạ Bài 2 thì GV đọc thêm 2-3 câu cùng khuôn ($7x-14=0$; $-2x+8=0$) tới khi làm không cần nghĩ. HS xong sớm: ghép Bài 4d với Bài 1 — tự đặt một PT tích rồi đố bạn. [[br]] $\\bullet$ Đã đối chiếu SymPy."
+    },
+    {
+      "kind": "practice2",
+      "number": 4,
+      "title": "Luyện tập 2 — Đưa về tích \\& giải ẩn ở mẫu",
+      "blocks": [
+        {
+          "type": "problem",
+          "label": "Bài 5.",
+          "tier": "onclass",
+          "level": 2,
+          "statement": "Đưa về phương trình tích rồi giải (chuyển hết về một vế, phân tích nhân tử) — trích đề GIỮA KÌ I:"
+        },
+        {
+          "type": "para",
+          "text": "a) $(x-3)(x+2)-x^2+9=0$ \\;(Dịch Vọng Hậu) [[br]] b) $x^2-1=5(x+1)$ \\;(Nguyễn Du) [[br]] c) $x(x-2)-3x+6=0$ \\;(Vạn Yên)"
+        },
+        {
+          "type": "writelines",
+          "count": 0
+        },
+        {
+          "type": "problem",
+          "label": "Bài 6.",
+          "tier": "onclass",
+          "level": 2,
+          "statement": "Dùng hằng đẳng thức hiệu hai bình phương $A^2-B^2$ để đưa về tích rồi giải:"
+        },
+        {
+          "type": "para",
+          "text": "a) $(2x+1)^2-9x^2=0$ [[br]] b) $(2x-3)^2=(x+7)^2$"
+        },
+        {
+          "type": "writelines",
+          "count": 0
+        },
+        {
+          "type": "noted",
+          "text": "\\textbf{Ví dụ mẫu — ẩn ở mẫu (khử mẫu).} Giải $\\dfrac{x-1}{x}=\\dfrac{2}{3}$: [[br]] \\quad ĐKXĐ: $x\\neq[[mblank:0.8cm]]$ [[br]] \\quad khử mẫu (nhân chéo): $3(x-1)=2x$ [[br]] \\quad $3x-3\\ =\\ 2x$ \\;(bỏ ngoặc) [[br]] \\quad $x\\ =\\ [[mblank:1cm]]$ \\;(chuyển vế, thu gọn) [[br]] Đối chiếu ĐKXĐ: thoả. Vậy nghiệm là $x\\ =\\ [[mblank:1cm]]$.",
+          "variant": "example"
+        },
+        {
+          "type": "problem",
+          "label": "Bài 7.",
+          "tier": "onclass",
+          "level": 2,
+          "statement": "Giải các phương trình chứa ẩn ở mẫu (tìm ĐKXĐ trước, khử mẫu, đối chiếu) — trích đề GIỮA KÌ I:"
+        },
+        {
+          "type": "para",
+          "text": "a) $\\dfrac{6}{x-2}+\\dfrac{2}{x}=\\dfrac{5}{x-2}$ \\;(Thái Thịnh) [[br]] b) $\\dfrac{2}{x-2}-\\dfrac{3}{x}=\\dfrac{5}{x(x-2)}$ \\;(Phú Diễn) [[br]] c) $\\dfrac{x+6}{x+5}+\\dfrac{3}{2}=2$"
+        },
+        {
+          "type": "writelines",
+          "count": 0
+        },
+        {
+          "type": "noted",
+          "text": "Hai chỗ mất điểm khi giải ẩn ở mẫu: [[br]] (i) quên tìm \\textbf{ĐKXĐ} (mọi mẫu $\\neq0$) ngay từ đầu; [[br]] (ii) giải xong \\textbf{không đối chiếu} — giữ nhầm giá trị làm mẫu $=0$ (lỗi của Lan).",
+          "variant": "trap"
+        },
+        {
+          "type": "problem",
+          "label": "Bài 8.",
+          "tier": "onclass",
+          "level": 3,
+          "statement": "\\textbf{(GKI — Cổ Nhuế 2)} Giải phương trình (mẫu $x^2-4=(x-2)(x+2)$; nhớ tìm ĐKXĐ trước): [[br]] \\quad $\\dfrac{2}{x+2}-\\dfrac{5}{x-2}=\\dfrac{x+6}{x^2-4}$"
+        },
+        {
+          "type": "writelines",
+          "count": 0
+        },
+        {
+          "type": "problem",
+          "label": "Bài 9.",
+          "tier": "onclass",
+          "level": 3,
+          "statement": "\\textbf{(Bẫy ĐKXĐ — bài của Lan)} Giải phương trình (giải xong nhớ đối chiếu ĐKXĐ rồi mới kết luận): [[br]] \\quad $\\dfrac{2}{x+1}+\\dfrac{1}{x-2}=\\dfrac{3}{(x+1)(x-2)}$"
+        },
+        {
+          "type": "writelines",
+          "count": 0
+        }
+      ],
+      "solution": "\\textbf{Bài 5.} a) $(x-3)(x+2)-(x^2-9)=0 \\Rightarrow (x-3)(x+2)-(x-3)(x+3)=0 \\Rightarrow (x-3)(-1)=0 \\Rightarrow x=3$. [[br]] b) $x^2-1-5(x+1)=0 \\Rightarrow (x+1)(x-1)-5(x+1)=0 \\Rightarrow (x+1)(x-6)=0 \\Rightarrow x=-1;\\ 6$. [[br]] c) $x(x-2)-3(x-2)=0 \\Rightarrow (x-2)(x-3)=0 \\Rightarrow x=2;\\ 3$.\\par\\smallskip \\textbf{Bài 6.} a) $(2x+1)^2-(3x)^2=(2x+1-3x)(2x+1+3x)=(1-x)(5x+1)=0 \\Rightarrow x=1;\\ -\\dfrac15$. [[br]] b) $(2x-3)^2-(x+7)^2=(x-10)(3x+4)=0 \\Rightarrow x=10;\\ -\\dfrac43$.\\par\\smallskip \\textbf{Ví dụ mẫu.} ĐKXĐ $x\\neq0$; $3x-3=2x \\Rightarrow x=3$ (thoả).\\par\\smallskip \\textbf{Bài 7.} a) ĐKXĐ $x\\neq0;2$. Khử mẫu (nhân $x(x-2)$): $6x+2(x-2)=5x \\Rightarrow 8x-4=5x \\Rightarrow 3x=4 \\Rightarrow x=\\dfrac43$ (thoả). [[br]] b) ĐKXĐ $x\\neq0;2$. $2x-3(x-2)=5 \\Rightarrow -x+6=5 \\Rightarrow x=1$ (thoả). [[br]] c) ĐKXĐ $x\\neq-5$. $\\dfrac{x+6}{x+5}=\\dfrac12 \\Rightarrow 2(x+6)=x+5 \\Rightarrow x=-7$ (thoả).\\par\\smallskip \\textbf{Bài 8.} ĐKXĐ $x\\neq\\pm2$. Khử mẫu $(x-2)(x+2)$: $2(x-2)-5(x+2)=x+6 \\Rightarrow -3x-14=x+6 \\Rightarrow -4x=20 \\Rightarrow x=-5$ (thoả).\\par\\smallskip \\textbf{Bài 9.} ĐKXĐ $x\\neq-1;2$. Khử mẫu: $2(x-2)+(x+1)=3 \\Rightarrow 3x-3=3 \\Rightarrow x=2$ — nhưng $x=2$ làm mẫu $=0$ nên \\textbf{loại}. Phương trình \\textbf{vô nghiệm}.",
+      "teacher_note": "LUYỆN TẬP 2 = GIẢI: 8 câu TH (6 phút/câu) + 2 câu VD (12 phút/câu) = 72 phút, phủ đủ các kiểu DS-PT-QUYVE của đề GKI. [[br]] $\\bullet$ DẠNG \\& MỨC: Bài 5 đưa về tích (TH — bê GKI DVH/Nguyễn Du/Vạn Yên; câu a hạng tử bậc hai TRIỆT TIÊU còn bậc nhất); Bài 6 hằng đẳng thức $A^2-B^2$ (TH); Bài 7 ẩn ở mẫu mẫu đơn (TH — Thái Thịnh/Phú Diễn, làm VÍ DỤ MẪU khử mẫu ngay trước); Bài 8 ẩn ở mẫu mẫu bậc hai phân tích được (VD — Cổ Nhuế 2, ra x=-5 thoả); Bài 9 BẪY ĐKXĐ (VD — đúng bài của Lan ở chặng 2, ra x=2 bị loại nên VÔ NGHIỆM). [[br]] $\\bullet$ KHI HS BÍ — hỏi theo 4 bước: ''bài CÓ MẪU không? ĐKXĐ là gì (mẫu khác 0)? mẫu chung là gì? khử mẫu xong còn PT gì?''; Bài 5a: ''$x^2-9$ phân tích được không? có thừa số chung với $(x-3)(x+2)$ không?''; Bài 9: ''giải ra x=2, mà ĐKXĐ nói x khác mấy? vậy giữ hay loại?''. [[br]] $\\bullet$ BIẾN THỂ CHO THÊM: HS xong sớm — đổi dấu giữa hai phân số ở Bài 7a rồi giải lại; HS yếu — chắc Bài 5 + Bài 7a, phần còn lại nghe chữa. Lưu ý lớp C: Bài 8-9 chỉ cần 2 câu VD, KHÔNG thêm bài tích-thương/HSG. [[br]] $\\bullet$ Đã đối chiếu SymPy (gồm Bài 9 vô nghiệm)."
+    },
+    {
+      "kind": "reflection",
+      "number": 5,
+      "title": "Tổng kết",
+      "blocks": [
+        {
+          "type": "para",
+          "text": "Hai chìa khoá của buổi: \\textbf{(1) phương trình tích} — đưa về một vế $=0$, phân tích nhân tử, cho từng thừa số $=0$; \\textbf{(2) ẩn ở mẫu} — làm đủ $4$ bước, luôn đối chiếu ĐKXĐ."
+        },
+        {
+          "type": "mindmap",
+          "caption": "Tự điền sơ đồ để hệ thống lại cả buổi (bản tóm tắt mang về ôn)",
+          "root": "PT quy về bậc nhất",
+          "branches": [
+            {
+              "label": "Phương trình tích",
+              "children": [
+                { "label": "$A\\cdot B=0$ khi $A=0$ [[blank:1cm]] $B=0$" },
+                { "label": "Chưa là tích: về một vế rồi [[blank:2cm]]" }
+              ]
+            },
+            {
+              "label": "Ẩn ở mẫu — 4 bước",
+              "children": [
+                { "label": "B1: tìm [[blank:1.6cm]]" },
+                { "label": "B4: [[blank:2.4cm]]" }
+              ]
+            },
+            {
+              "label": "Hằng đẳng thức hay dùng",
+              "children": [
+                { "label": "$A^2-B^2=$ [[blank:2.4cm]]" }
+              ]
+            }
+          ]
+        },
+        {
+          "type": "para",
+          "text": "\\textbf{BÀI TẬP VỀ NHÀ} (làm vào vở, tiết sau nộp)."
+        },
+        {
+          "type": "problem",
+          "label": "Bài 10.",
+          "tier": "btvn",
+          "level": 1,
+          "statement": "Giải các phương trình tích sau:"
+        },
+        {
+          "type": "para",
+          "text": "\\begin{minipage}[t]{0.47\\linewidth} a) $5x(2x-3)=0$ [[br]] b) $(x-7)(x+2)=0$ [[br]] c) $(3x+9)(2x-1)=0$ [[br]] d) $-2x(x+4)=0$ \\end{minipage}\\hfill\\begin{minipage}[t]{0.47\\linewidth} e) $(4x-1)(x+6)=0$ [[br]] f) $(2x+5)(7-x)=0$ [[br]] g) $x(3x-2)(x+1)=0$ \\end{minipage}"
+        },
+        {
+          "type": "problem",
+          "label": "Bài 11.",
+          "tier": "btvn",
+          "level": 1,
+          "statement": "Phân tích thành nhân tử:"
+        },
+        {
+          "type": "para",
+          "text": "\\begin{minipage}[t]{0.47\\linewidth} a) $x^2-2x=[[blank:1.8cm]]$ [[br]] b) $3x^2+x=[[blank:1.8cm]]$ [[br]] c) $x^2-36=[[blank:2cm]]$ [[br]] d) $9x^2-4=[[blank:2cm]]$ \\end{minipage}\\hfill\\begin{minipage}[t]{0.47\\linewidth} e) $x^2+x-6=[[blank:2cm]]$ [[br]] f) $x^2-7x+12=[[blank:2cm]]$ [[br]] g) $x^2+10x+25=[[blank:2cm]]$ \\end{minipage}"
+        },
+        {
+          "type": "problem",
+          "label": "Bài 12.",
+          "tier": "btvn",
+          "level": 2,
+          "statement": "Đưa về phương trình tích rồi giải:"
+        },
+        {
+          "type": "para",
+          "text": "a) $x^2-3x=2x-6$ [[br]] b) $x^2-9=3(x+3)$ \\;(đặt nhân tử chung $x+3$) [[br]] c) $9x^2-6x+1=x^2$ \\;(đưa về $A^2-B^2$)"
+        },
+        {
+          "type": "problem",
+          "label": "Bài 13.",
+          "tier": "btvn",
+          "level": 2,
+          "statement": "Giải các phương trình chứa ẩn ở mẫu (tìm ĐKXĐ, khử mẫu, đối chiếu):"
+        },
+        {
+          "type": "para",
+          "text": "a) $\\dfrac{3x-8}{x+6}=2$ [[br]] b) $\\dfrac{1}{x}=\\dfrac{5}{3(x+2)}$ [[br]] c) $\\dfrac{6}{x-2}+\\dfrac{2}{x}=\\dfrac{5}{x-2}$"
+        },
+        {
+          "type": "problem",
+          "label": "Bài 14.",
+          "tier": "btvn",
+          "level": 2,
+          "statement": "Giải các phương trình chứa ẩn ở mẫu (có câu trích đề GIỮA KÌ I):"
+        },
+        {
+          "type": "para",
+          "text": "a) $\\dfrac{2}{x-2}-\\dfrac{3}{x}=\\dfrac{5}{x(x-2)}$ \\;(Phú Diễn) [[br]] b) $\\dfrac{x}{2x-1}=\\dfrac{x-2}{2x+5}$ [[br]] c) $\\dfrac{5}{x+1}+\\dfrac{1}{x-2}=\\dfrac{3x}{(x+1)(x-2)}$ \\;(Nguyễn Bỉnh Khiêm)"
+        },
+        {
+          "type": "problem",
+          "label": "Bài 15.",
+          "tier": "btvn",
+          "level": 3,
+          "statement": "\\textbf{(GKI — nâng dần)} Giải các phương trình (mẫu bậc hai phân tích được; tìm ĐKXĐ trước, đối chiếu sau):"
+        },
+        {
+          "type": "para",
+          "text": "a) $\\dfrac{x}{x-3}+\\dfrac{1}{x^2-3x}=\\dfrac{x-1}{x}$ \\;(Trưng Vương) [[br]] b) $\\dfrac{x}{x+2}+\\dfrac{17}{x^2-4}=\\dfrac{4}{x-2}$ \\;(Nguyễn Du)"
+        }
+      ],
+      "solution": "\\textbf{BTVN.}\\par\\smallskip \\textbf{Bài 10.} a) $x=0;\\ \\dfrac32$. b) $x=7;\\ -2$. c) $x=-3;\\ \\dfrac12$. d) $x=0;\\ -4$. e) $x=\\dfrac14;\\ -6$. f) $x=-\\dfrac52;\\ 7$. g) $x=0;\\ \\dfrac23;\\ -1$.\\par\\smallskip \\textbf{Bài 11.} a) $x(x-2)$; b) $x(3x+1)$; c) $(x-6)(x+6)$; d) $(3x-2)(3x+2)$; e) $(x+3)(x-2)$; f) $(x-3)(x-4)$; g) $(x+5)^2$.\\par\\smallskip \\textbf{Bài 12.} a) $x^2-5x+6=0 \\Rightarrow (x-2)(x-3)=0 \\Rightarrow x=2;\\ 3$. [[br]] b) $(x+3)(x-3)-3(x+3)=0 \\Rightarrow (x+3)(x-6)=0 \\Rightarrow x=-3;\\ 6$. [[br]] c) $8x^2-6x+1=0$; hoặc $(3x-1)^2=x^2 \\Rightarrow (2x-1)(4x-1)=0 \\Rightarrow x=\\dfrac12;\\ \\dfrac14$.\\par\\smallskip \\textbf{Bài 13.} a) ĐKXĐ $x\\neq-6$: $3x-8=2(x+6) \\Rightarrow x=20$ (thoả). [[br]] b) ĐKXĐ $x\\neq0;-2$: $3(x+2)=5x \\Rightarrow x=3$ (thoả). [[br]] c) ĐKXĐ $x\\neq0;2$: $6x+2(x-2)=5x \\Rightarrow 3x=4 \\Rightarrow x=\\dfrac43$ (thoả).\\par\\smallskip \\textbf{Bài 14.} a) ĐKXĐ $x\\neq0;2$: $2x-3(x-2)=5 \\Rightarrow x=1$ (thoả). [[br]] b) ĐKXĐ $x\\neq\\dfrac12;-\\dfrac52$: $x(2x+5)=(x-2)(2x-1) \\Rightarrow 2x^2+5x=2x^2-5x+2 \\Rightarrow 10x=2 \\Rightarrow x=\\dfrac15$ (thoả). [[br]] c) ĐKXĐ $x\\neq-1;2$: $5(x-2)+(x+1)=3x \\Rightarrow 6x-9=3x \\Rightarrow x=3$ (thoả).\\par\\smallskip \\textbf{Bài 15.} a) ĐKXĐ $x\\neq0;3$; mẫu $x^2-3x=x(x-3)$: $x\\cdot x+1=(x-1)(x-3) \\Rightarrow x^2+1=x^2-4x+3 \\Rightarrow 4x=2 \\Rightarrow x=\\dfrac12$ (thoả). [[br]] b) ĐKXĐ $x\\neq\\pm2$; mẫu $x^2-4$: $x(x-2)+17=4(x+2) \\Rightarrow x^2-2x+17=4x+8 \\Rightarrow x^2-6x+9=0 \\Rightarrow (x-3)^2=0 \\Rightarrow x=3$ (thoả).\\par\\medskip \\textbf{Đáp án sơ đồ:} $A\\cdot B=0$ khi $A=0$ \\emph{hoặc} $B=0$; chưa là tích thì về một vế rồi \\emph{phân tích nhân tử}. [[br]] B1 tìm \\emph{ĐKXĐ}; B4 \\emph{đối chiếu ĐKXĐ} (loại giá trị làm mẫu $=0$); $A^2-B^2=(A-B)(A+B)$.",
+      "teacher_note": "BTVN — chỉ cần giữ quỹ ~90 phút (40-40-20 là tỉ lệ giờ TRÊN LỚP, không áp cho BTVN — Thầy chốt). 14 NB + 9 TH + 2 VD. [[br]] $\\bullet$ DẠNG \\& MỨC: Bài 10 giải PT tích (NB — câu g tích BA thừa số, vẫn cho từng cái bằng 0); Bài 11 phân tích nhân tử (NB); Bài 12 đưa về tích (TH); Bài 13 ẩn ở mẫu mẫu đơn (TH); Bài 14 ẩn ở mẫu GKI Phú Diễn + chuẩn (TH); Bài 15 ẩn ở mẫu mẫu bậc hai GKI Trưng Vương/Nguyễn Du (VD — câu b ra nghiệm KÉP x=3). [[br]] $\\bullet$ DẶN DÒ KHI GIAO BÀI: bí Bài 12 thì mở lại Bài 5; bí Bài 13-15 thì mở lại 4 bước + 2 ví dụ mẫu ẩn ở mẫu của LT2 rồi tự hỏi ''ĐKXĐ là gì? đã đối chiếu chưa?''. Tiết sau GV chữa kỹ Bài 15. [[br]] $\\bullet$ Bài lập phương trình (toán lời văn) nằm TRỌN ở PHIẾU B. Đã đối chiếu SymPy toàn bộ."
+    }
+  ]
+}

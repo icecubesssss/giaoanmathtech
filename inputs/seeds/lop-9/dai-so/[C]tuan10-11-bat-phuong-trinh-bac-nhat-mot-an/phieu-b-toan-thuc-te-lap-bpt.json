@@ -1,0 +1,278 @@
+{
+  "slug": "phieu-b-toan-thuc-te-lap-bpt",
+  "title": "Toán thực tế lập bất phương trình",
+  "eyebrow": "ĐẠI SỐ — PHIẾU B: TOÁN THỰC TẾ LẬP BPT",
+  "grade_label": "Lớp 9 • Ôn vào 10",
+  "class_tier": "C",
+  "stages": [
+    {
+      "kind": "review",
+      "number": 1,
+      "title": "Khám phá — Dịch lời văn thành BPT",
+      "blocks": [
+        {
+          "type": "opener",
+          "text": "Bạn Giang để dành tiền mua vé concert \\textbf{``Anh Trai Say Hi''}, hiện đã để dành được \\textbf{không quá $50\\,000$ đồng}. [[br]] Dịch ``không quá $50\\,000$'' sang ký hiệu: [[br]] \\quad số tiền $\\ [[mblank:0.8cm]]\\ 50\\,000$",
+          "tikz": "\\begin{tikzpicture}[line width=0.9pt,font=\\small]\\fill[brand!72] (-0.5,1.45) .. controls (-1.18,0.95) and (-1.08,0.02) .. (-0.66,-0.16) .. controls (-0.24,-0.42) and (0.24,-0.42) .. (0.66,-0.16) .. controls (1.08,0.02) and (1.18,0.95) .. (0.5,1.45) -- cycle;\\fill[brand!58] (-0.5,1.45) .. controls (-0.28,1.6) and (0.28,1.6) .. (0.5,1.45) -- (0.5,1.22) -- (-0.5,1.22) -- cycle;\\fill[brand!42] (-0.56,1.16) rectangle (0.56,1.3);\\foreach \\x/\\y/\\r in {-0.32/1.6/0.24, 0.32/1.64/0.24, 0/1.85/0.26}{\\fill[gold] (\\x,\\y) circle (\\r);\\draw[brand!65!black,line width=0.6pt] (\\x,\\y) circle (\\r);}\\node[font=\\scriptsize\\bfseries,brand!70!black] at (0,1.85) {đ};\\end{tikzpicture}"
+        },
+        {
+          "type": "noted",
+          "text": "\\textbf{Ôn nhanh (phiếu A).} Giải BPT: [[br]] $2x-6\\ge0$ [[br]] $2x\\ge6$ \\;(chuyển vế, đổi dấu) [[br]] $x\\ [[mblank:0.8cm]]\\ [[mblank:0.8cm]]$ \\;(chia $2>0$, giữ chiều)",
+          "variant": "note"
+        },
+        {
+          "type": "noted",
+          "text": "\\textbf{Hoạt động — lập ``từ điển'' từ khoá $\\to$ dấu} (như vừa dịch ``không quá''). Điền $\\ge$ hay $\\le$: [[br]] ``ít nhất'', ``không dưới'', ``tối thiểu'', ``từ \\ldots trở lên'' $\\to\\ [[mblank:0.8cm]]$. [[br]] ``nhiều nhất'', ``không quá'', ``tối đa'' $\\to\\ [[mblank:0.8cm]]$. [[br]] \\emph{Dịch sai dấu = sai cả bài!}",
+          "variant": "example"
+        }
+      ],
+      "solution": "Mở màn: số tiền $\\le50\\,000$. [[br]] Ôn nhanh: $x\\ge3$. [[br]] Từ khoá: ``ít nhất/không dưới/tối thiểu/từ \\ldots trở lên'' $\\to\\ \\ge$; ``nhiều nhất/không quá/tối đa'' $\\to\\ \\le$.",
+      "teacher_note": "PHIẾU LỚP C buổi 2 — 40-40-20 áp cho giờ TRÊN LỚP từng phiếu (sai số 5 phần trăm; BTVN chỉ giữ quỹ ~90 phút — Thầy chốt, duration-gate tự soi). Giờ giảng chặng 1+2 nhắm 20-30 phút, không đếm vào quỹ. [[br]] $\\bullet$ KỊCH BẢN LỜI DẪN: mở đầu hỏi 2-3 HS ''em đang để dành tiền mua gì?'' rồi mới vào tình huống concert (chuyện tiêu tiền của chính các em); chốt miệng: ''hôm nay luyện đúng MỘT việc — dịch đề thực tế thành BPT rồi giải''. [[br]] $\\bullet$ PHÂN CÔNG 2 PHIẾU: toàn bộ khử mẫu đã sang phiếu A; phiếu B CHỈ CÒN toán thực tế lập BPT (nhận bài lãi suất Bát Tràng từ A). [[br]] $\\bullet$ MẠCH SCAFFOLDING: LT1 drill từng viên gạch (từ khoá $\\to$ dấu; biểu thức theo x; chiều làm tròn; lập BPT chưa giải) $\\to$ Bài 5 chẻ 8 câu nhỏ $\\to$ Bài 6 còn 4 ý $\\to$ BTVN gần đề trần. [[br]] $\\bullet$ Nguồn: ~70 phần trăm bê từ 10 đề GKI 2024-2025 (toàn bộ câu thực tế lập BPT) + 30 phần trăm TOANMATH."
+    },
+    {
+      "kind": "concept",
+      "number": 2,
+      "title": "Khái niệm — 4 bước lập BPT từ lời văn",
+      "blocks": [
+        {
+          "type": "noted",
+          "text": "\\textbf{(1) Ví dụ mẫu.} Bạn Thanh có $100$ nghìn đồng, mua một cái bút $18$ nghìn và mỗi quyển vở $7$ nghìn. Mua \\emph{nhiều nhất} mấy quyển vở? [[br]] $\\bullet$\\; Gọi số vở là $x$ ($x\\ge0$, nguyên). [[br]] $\\bullet$\\; ``không quá $100$'': [[br]] \\quad $7x+18\\ [[mblank:0.8cm]]\\ 100$ [[br]] $\\bullet$\\; Giải: $7x\\le[[mblank:0.8cm]]$ [[br]] \\quad được $x\\le\\dfrac{82}{7}\\approx11{,}7$ [[br]] $\\bullet$\\; Bạn Lan kết luận: ``$11{,}7$ làm tròn thành $12$ quyển''. Thử lại — $12$ quyển $+$ bút hết: [[br]] \\quad $7\\cdot12+18=[[mblank:0.9cm]]$ (nghìn) [[br]] Quá $100$ nghìn không? [[mblank:0.9cm]] [[br]] $\\bullet$\\; Vậy ``nhiều nhất'' phải làm tròn [[mblank:1.2cm]]: mua nhiều nhất [[mblank:0.8cm]] quyển.",
+          "variant": "example"
+        },
+        {
+          "type": "noted",
+          "text": "\\textbf{(2) Rút ra 4 bước lập BPT} (từ ví dụ trên). [[br]] B1: \\textbf{Gọi ẩn} $x$ kèm \\textbf{điều kiện} ($x>0$, $x$ nguyên\\ldots). [[br]] B2: Biểu diễn đại lượng theo $x$; \\textbf{lập BPT} (chọn dấu theo từ khoá). [[br]] B3: \\textbf{Giải} BPT. [[br]] B4: \\textbf{Đối chiếu điều kiện} rồi trả lời (kèm đơn vị).",
+          "variant": ""
+        },
+        {
+          "type": "noted",
+          "text": "\\textbf{Bẫy làm tròn} (lỗi của Lan) — đáp số \\emph{đếm được} (vở, thùng, ngày) thì: [[br]] $\\bullet$\\; ``nhiều nhất / tối đa'' $\\to$ làm tròn \\textbf{XUỐNG}; [[br]] $\\bullet$\\; ``ít nhất / tối thiểu'' $\\to$ làm tròn \\textbf{LÊN}. [[br]] Chốt xong: \\emph{thử lại} đáp số vào đề.",
+          "variant": "trap"
+        },
+        {
+          "type": "figure",
+          "width": "0.96\\linewidth",
+          "caption": "Bốn bước — bước lập BPT (chọn đúng dấu theo từ khoá) là then chốt.",
+          "tikz": "\\begin{tikzpicture}[node distance=5mm and 7mm,font=\\small]\\node[flownode](a){\\textbf{B1}\\\\Gọi ẩn $x$,\\\\điều kiện};\\node[flowkey,right=of a](b){\\textbf{B2}\\\\Lập BPT\\\\(chọn dấu)};\\node[flownode,right=of b](c){\\textbf{B3}\\\\Giải BPT};\\node[flownode,right=of c](d){\\textbf{B4}\\\\Đối chiếu,\\\\trả lời};\\draw[flowarrow](a)--(b);\\draw[flowarrow](b)--(c);\\draw[flowarrow](c)--(d);\\end{tikzpicture}"
+        },
+        {
+          "type": "noted",
+          "text": "\\textbf{Điểm chấm câu thực tế đề GKI:} gọi ẩn KÈM điều kiện $\\cdot$ đúng dấu theo từ khoá $\\cdot$ làm tròn đúng chiều $\\cdot$ trả lời có đơn vị.",
+          "variant": "target"
+        }
+      ],
+      "solution": "(1) $7x+18\\le100 \\Rightarrow 7x\\le82 \\Rightarrow x\\le\\dfrac{82}{7}\\approx11{,}7$. Lan sai: $7\\cdot12+18=102>100$ (quá tiền!) $\\Rightarrow$ ``nhiều nhất'' phải làm tròn \\textbf{XUỐNG}: mua nhiều nhất $11$ quyển.",
+      "teacher_note": "QUY NẠP + HỌC QUA LỖI: ví dụ mua vở CÀI LỖI LÀM TRÒN của bạn Lan (11,7 $\\to$ 12) cho HS tự thử lại phát hiện $\\to$ rút ra 4 bước $\\to$ hộp bẫy làm tròn chốt khi HS đã thấy cần. [[br]] $\\bullet$ KHI HS BÍ ở ví dụ — gợi mở từng nấc: ''mua 12 quyển + bút thì hết bao nhiêu tiền? có vượt 100 nghìn không? vậy lấy 12 được không — phải lùi về mấy?'' (để HS TỰ nói ra con số 11). [[br]] $\\bullet$ DẪN 4 BƯỚC bằng 4 câu hỏi miệng (dùng cho MỌI bài thực tế về sau): ''gọi GÌ là x, điều kiện gì? — từ khoá nào, dấu gì? — giải ra bao nhiêu? — đối chiếu/làm tròn chưa, trả lời có đơn vị chưa?''. [[br]] $\\bullet$ Hai block khử mẫu đã chuyển sang phiếu A; hộp 'Đích thi vào 10' rút còn 1 dòng tiêu chí chấm. Để trống đáp số cho trò điền — đáp án chỉ in ở bản GV."
+    },
+    {
+      "kind": "practice1",
+      "number": 3,
+      "title": "Luyện tập 1 — Từ khoá, biểu thức, lập BPT",
+      "blocks": [
+        {
+          "type": "problem",
+          "label": "Bài 1.",
+          "tier": "onclass",
+          "level": 1,
+          "statement": "a) Điền dấu ($\\ge,\\ \\le,\\ >,\\ <$) cho mỗi cụm từ khoá: [[br]] \\quad $\\bullet$\\; ``tối thiểu'' $\\to$ [[blank:0.9cm]] \\qquad $\\bullet$\\; ``không quá'' $\\to$ [[blank:0.9cm]] [[br]] \\quad $\\bullet$\\; ``không dưới'' $\\to$ [[blank:0.9cm]] \\qquad $\\bullet$\\; ``từ $25$ điểm trở lên'' $\\to$ [[blank:0.9cm]] [[br]] \\quad $\\bullet$\\; ``vượt quá'' $\\to$ [[blank:0.9cm]] \\qquad $\\bullet$\\; ``chưa đến'' $\\to$ [[blank:0.9cm]] [[br]] b) Dịch mỗi câu sau thành một bất phương trình (gọi ẩn là $x$, KHÔNG cần giải): [[br]] \\quad $\\bullet$\\; Số tiền có \\emph{không quá} $50$ nghìn đồng. [[br]] \\quad $\\bullet$\\; Gửi tiết kiệm \\emph{ít nhất} $12$ tháng. [[br]] \\quad $\\bullet$\\; Mua được \\emph{nhiều nhất} $8$ quyển vở. [[br]] \\quad $\\bullet$\\; Điểm thi đạt \\emph{từ $25$ điểm trở lên}. [[br]] \\quad $\\bullet$\\; Xe chở \\emph{không quá} $1$ tấn ($=1\\,000$ kg) hàng."
+        },
+        {
+          "type": "writelines",
+          "count": 0
+        },
+        {
+          "type": "problem",
+          "label": "Bài 2.",
+          "tier": "onclass",
+          "level": 1,
+          "statement": "Viết biểu thức theo $x$ (chưa cần lập BPT):"
+        },
+        {
+          "type": "para",
+          "text": "\\begin{minipage}[t]{0.47\\linewidth} a) Mỗi quyển vở giá $7$ nghìn đồng. Mua $x$ quyển hết [[blank:1.2cm]] (nghìn đồng). [[br]] b) Mua thêm một cái bút $18$ nghìn đồng nữa: tổng cộng hết [[blank:1.6cm]] (nghìn đồng). [[br]] c) Mỗi ngày để dành $400$ nghìn đồng; sau $x$ ngày để dành được [[blank:1.2cm]] (nghìn đồng). [[br]] d) Mỗi vé xem phim $45$ nghìn đồng; mua $x$ vé hết [[blank:1.2cm]] (nghìn đồng). [[br]] e) Trả lời đúng $x$ câu, mỗi câu được $2$ điểm: được [[blank:1.2cm]] (điểm). \\end{minipage}\\hfill\\begin{minipage}[t]{0.47\\linewidth} f) Đề có $25$ câu, trả lời đúng $x$ câu: số câu sai là [[blank:1.2cm]]. [[br]] g) Mỗi tháng để dành $250$ nghìn đồng; sau $x$ tháng có [[blank:1.2cm]] (nghìn đồng). [[br]] h) Đã trả trước $300$ triệu, mỗi tháng trả thêm $20$ triệu; sau $x$ tháng đã trả [[blank:1.6cm]] (triệu đồng). [[br]] i) $40$ quyển vở giá $8$ nghìn/quyển $+$ $x$ quyển giá $12$ nghìn/quyển: tổng [[blank:1.8cm]] (nghìn đồng). [[br]] j) Tiền lãi $4{,}5\\%$ của $x$ triệu đồng là [[blank:1.4cm]] (triệu đồng). \\end{minipage}"
+        },
+        {
+          "type": "writelines",
+          "count": 0
+        },
+        {
+          "type": "problem",
+          "label": "Bài 3.",
+          "tier": "onclass",
+          "level": 1,
+          "statement": "Đáp số đếm được — làm tròn \\textbf{LÊN} hay \\textbf{XUỐNG}? Điền vào chỗ trống:"
+        },
+        {
+          "type": "para",
+          "text": "\\begin{minipage}[t]{0.47\\linewidth} a) Mua được \\emph{nhiều nhất} mấy quyển vở? [[blank:1.3cm]] [[br]] b) Cần \\emph{ít nhất} mấy ngày? [[blank:1.3cm]] [[br]] c) Chở \\emph{tối đa} mấy thùng hàng? [[blank:1.3cm]] \\end{minipage}\\hfill\\begin{minipage}[t]{0.47\\linewidth} d) Phải đúng \\emph{tối thiểu} mấy câu? [[blank:1.3cm]] [[br]] e) Mời được \\emph{nhiều nhất} mấy khách? [[blank:1.3cm]] [[br]] f) Gửi \\emph{ít nhất} mấy tháng? [[blank:1.3cm]] \\end{minipage}"
+        },
+        {
+          "type": "writelines",
+          "count": 0
+        },
+        {
+          "type": "problem",
+          "label": "Bài 4.",
+          "tier": "onclass",
+          "level": 2,
+          "statement": "Lập bất phương trình cho mỗi tình huống (KHÔNG cần giải):"
+        },
+        {
+          "type": "para",
+          "text": "a) Bạn An có $80$ nghìn đồng, mua $x$ gói kẹo giá $12$ nghìn đồng/gói; tổng tiền mua không vượt quá số tiền đang có. [[br]] b) Mỗi ngày tiết kiệm $5$ nghìn đồng; sau $x$ ngày muốn có ít nhất $60$ nghìn đồng. [[br]] c) Xe tải chở tối đa $1\\,000$ kg; chở $x$ bao gạo, mỗi bao nặng $50$ kg."
+        },
+        {
+          "type": "writelines",
+          "count": 0
+        }
+      ],
+      "solution": "\\textbf{Bài 1.} a) ``tối thiểu'' $\\to\\ \\ge$; ``không quá'' $\\to\\ \\le$; ``không dưới'' $\\to\\ \\ge$; ``từ $25$ điểm trở lên'' $\\to\\ \\ge$; ``vượt quá'' $\\to\\ >$; ``chưa đến'' $\\to\\ <$. [[br]] b) số tiền $\\le50$ (nghìn); số tháng $\\ge12$; số vở $\\le8$; điểm $\\ge25$; khối lượng $\\le1\\,000$ (kg).\\par\\smallskip \\textbf{Bài 2.} a) $7x$; b) $7x+18$; c) $400x$; d) $45x$; e) $2x$; f) $25-x$; g) $250x$; h) $300+20x$; i) $8\\cdot40+12x=320+12x$; j) $4{,}5\\%\\cdot x=0{,}045x$.\\par\\smallskip \\textbf{Bài 3.} a) XUỐNG; b) LÊN; c) XUỐNG; d) LÊN; e) XUỐNG; f) LÊN.\\par\\smallskip \\textbf{Bài 4.} a) $12x\\le80$; b) $5x\\ge60$; c) $50x\\le1\\,000$.",
+      "teacher_note": "LUYỆN TẬP 1 = thang 32 câu NB (48 phút) dẫn lên 3 câu TH — HS vào Bài 5 là đã cầm sẵn từng viên gạch. [[br]] $\\bullet$ DẠNG \\& MỨC: Bài 1 từ khoá $\\to$ dấu (NB — thêm ''vượt quá/chưa đến'' phủ cả dấu ngặt); Bài 2 viết biểu thức theo x (NB — câu g, h, i, j CÀI MÓC cho các bài BTVN: trả góp Nguyễn Du, vở Trưng Vương, lãi Bát Tràng; câu f = $25-x$ móc Bài 13); Bài 3 chiều làm tròn (NB — drill riêng bẫy của bạn Lan); Bài 4 lập BPT chưa giải (TH = ghép Bài 1 với Bài 2). [[br]] $\\bullet$ KHI HS BÍ — gợi mở: Bài 2: ''MỘT quyển hết bao nhiêu? HAI quyển? BA quyển? \\ldots vậy x quyển?'' (đếm cụ thể trước, khái quát sau — đặc trị HS sợ chữ x); Bài 4: ''gạch chân TỪ KHOÁ trong đề — nó cho dấu gì? vế trái chính là biểu thức nào em vừa viết ở Bài 2?''. [[br]] $\\bullet$ BIẾN THỂ CHO THÊM: HS yếu làm lại Bài 2a-c với giá khác (vở 5 nghìn, 10 nghìn); HS xong sớm tự đặt 1 tình huống ''tối đa/ít nhất'' rồi dịch thành BPT. [[br]] $\\bullet$ Đã đối chiếu SymPy."
+    },
+    {
+      "kind": "practice2",
+      "number": 4,
+      "title": "Luyện tập 2 — Toán thực tế: gỡ giàn dần",
+      "blocks": [
+        {
+          "type": "problem",
+          "label": "Bài 5.",
+          "tier": "onclass",
+          "level": 3,
+          "statement": "\\textbf{(GKI — Dịch Vọng Hậu)} Một thang máy chở hàng có tải trọng \\emph{tối đa} $800$ kg. Một nhân viên giao hàng nặng $60$ kg, mỗi thùng hàng nặng $35$ kg. Gọi số thùng chở một lượt là $x$ ($x\\ge0$, nguyên). Làm lần lượt $8$ câu nhỏ: [[br]] a) \\;[NB] ``tối đa $800$ kg'' cho ta dấu nào ($\\le$ hay $\\ge$)? [[blank:0.9cm]] [[br]] b) \\;[NB] $x$ thùng hàng nặng [[blank:1.2cm]] (kg). [[br]] c) \\;[NB] Tổng khối lượng cả người lẫn hàng: [[blank:1.8cm]] (kg). [[br]] d) \\;[TH] Lập bất phương trình tải trọng: [[blank:2.4cm]] [[br]] e) \\;[TH] Chuyển vế, đổi dấu: $35x\\ \\le\\ [[blank:1cm]]$ [[br]] f) \\;[TH] Chia hai vế cho $35$ (dương, giữ chiều): $x\\ \\le\\ [[blank:1.1cm]]\\ \\approx21{,}1$. [[br]] g) \\;[NB] ``chở \\emph{nhiều nhất}'' $\\to$ làm tròn LÊN hay XUỐNG? [[blank:1.4cm]] [[br]] h) \\;[VD] Kết luận và thử lại: chở nhiều nhất [[blank:0.8cm]] thùng; khi đó tổng khối lượng $=60+35\\cdot[[blank:0.8cm]]=[[blank:1cm]]$ kg, không vượt $800$ kg."
+        },
+        {
+          "type": "writelines",
+          "count": 0
+        },
+        {
+          "type": "problem",
+          "label": "Bài 6.",
+          "tier": "onclass",
+          "level": 3,
+          "statement": "\\textbf{(GKI — Phú Diễn)} Bạn Ngân có $100\\,000$ đồng mua sách và bút. Sách giá $40\\,000$ đồng; mỗi chiếc bút $5\\,500$ đồng. Gọi số bút mua được là $x$ ($x\\ge0$, nguyên). [[br]] a) \\;[NB] ``Số tiền không vượt quá $100\\,000$'' cho ta dấu nào? [[br]] b) \\;[TH] Viết biểu thức tổng số tiền (sách $+$ $x$ bút) theo $x$. [[br]] c) \\;[TH] Lập bất phương trình. [[br]] d) \\;[VD] Giải rồi trả lời: mua \\emph{tối đa} mấy chiếc bút? (nhớ chiều làm tròn)"
+        },
+        {
+          "type": "writelines",
+          "count": 0
+        }
+      ],
+      "solution": "\\textbf{Bài 5.} a) $\\le$. b) $35x$ (kg). c) $60+35x$ (kg). d) $60+35x\\le800$. [[br]] e) $35x\\le740$. f) $x\\le\\dfrac{148}{7}\\approx21{,}1$. g) làm tròn XUỐNG. [[br]] h) nhiều nhất $21$ thùng; thử lại $60+35\\cdot21=795\\le800$ (thoả); lấy $22$ thùng thì $830>800$, quá tải.\\par\\smallskip \\textbf{Bài 6.} a) ``không vượt quá'' $\\to$ dấu $\\le$. [[br]] b) Tổng tiền $=40\\,000+5\\,500x$. [[br]] c) $40\\,000+5\\,500x\\le100\\,000$. [[br]] d) $5\\,500x\\le60\\,000 \\Rightarrow x\\le\\dfrac{120}{11}\\approx10{,}9$; $x$ nguyên nên mua \\emph{tối đa $10$ bút} (tròn XUỐNG).",
+      "teacher_note": "BOSS của phiếu — bài VD bê NGUYÊN GKI, GIẢM DẦN GIÀN đúng scaffolding. [[br]] $\\bullet$ DẠNG \\& MỨC: Bài 5 thang máy DVH chẻ 8 câu CÓ Ô ĐIỀN (a, b, c, g là NB; d, e, f là TH; h là VD — câu g hỏi chiều làm tròn TRƯỚC khi kết luận, chặn lỗi 21,1 $\\to$ 22; câu h bắt THỬ LẠI); Bài 6 Phú Diễn còn 4 ý KHÔNG ô điền (giàn vừa — HS tự đi lại đường của Bài 5). [[br]] $\\bullet$ KHI HS BÍ — gợi mở: Bài 5b: ''MỘT thùng 35 kg, HAI thùng? vậy x thùng?''; Bài 5d: ''tổng cân nặng phải THẾ NÀO so với 800 — từ khoá nào nói lên điều đó?''; Bài 5h: ''21,1 thùng có chở được 22 thùng không? thử cộng lại xem''; Bài 6: ''bài này giống hệt Bài 5 — tự đi lại 8 câu nhỏ trong đầu: dấu? biểu thức? lập? giải? tròn chiều nào?''. [[br]] $\\bullet$ BIẾN THỂ CHO THÊM: đổi số tại chỗ cho HS làm lại Bài 5 không ô điền — thang 700 kg, thùng 40 kg, nhân viên 60 kg (ra $x\\le16$, đúng ngưỡng $60+40\\cdot16=700$, đẹp để hỏi lại ý ''chạm ngưỡng vẫn an toàn''). [[br]] $\\bullet$ Bài Cổ Nhuế 2 đã chuyển xuống BTVN dạng chỉ-lập (Bài 12a) để VD trên lớp đúng 2 câu = 24 phút. Đã đối chiếu SymPy."
+    },
+    {
+      "kind": "reflection",
+      "number": 5,
+      "title": "Tổng kết",
+      "blocks": [
+        {
+          "type": "para",
+          "text": "Toán thực tế: \\textbf{gọi ẩn} (kèm điều kiện) $\\to$ \\textbf{lập BPT} (dấu theo từ khoá) $\\to$ \\textbf{giải} $\\to$ \\textbf{đối chiếu \\& trả lời}. Đáp số đếm được: ``nhiều nhất'' $\\to$ tròn xuống, ``ít nhất'' $\\to$ tròn lên."
+        },
+        {
+          "type": "mindmap",
+          "caption": "Tự điền sơ đồ để hệ thống lại cả buổi (bản tóm tắt mang về ôn)",
+          "root": "Toán thực tế lập BPT",
+          "branches": [
+            {
+              "label": "Bốn bước",
+              "children": [
+                { "label": "Gọi ẩn + [[blank:1.6cm]]" },
+                { "label": "Giải $\\to$ [[blank:1.6cm]] \\& trả lời" }
+              ]
+            },
+            {
+              "label": "Từ khoá $\\to$ dấu",
+              "children": [
+                { "label": "ít nhất / không dưới: [[blank:0.9cm]]" },
+                { "label": "tối đa / không quá: [[blank:0.9cm]]" }
+              ]
+            },
+            {
+              "label": "Làm tròn (đáp số đếm được)",
+              "children": [
+                { "label": "``nhiều nhất'': tròn [[blank:1.2cm]]" },
+                { "label": "``ít nhất'': tròn [[blank:1.2cm]]" }
+              ]
+            }
+          ]
+        },
+        {
+          "type": "para",
+          "text": "\\textbf{BÀI TẬP VỀ NHÀ} (làm vào vở, tiết sau nộp)."
+        },
+        {
+          "type": "problem",
+          "label": "Bài 7.",
+          "tier": "btvn",
+          "level": 1,
+          "statement": "Điền dấu ($\\ge,\\ \\le,\\ >,\\ <$) cho mỗi cụm từ khoá:"
+        },
+        {
+          "type": "para",
+          "text": "\\begin{minipage}[t]{0.47\\linewidth} a) ``không vượt quá'' $\\to$ [[blank:0.9cm]] [[br]] b) ``tối đa'' $\\to$ [[blank:0.9cm]] [[br]] c) ``ít nhất'' $\\to$ [[blank:0.9cm]] [[br]] d) ``không ít hơn'' $\\to$ [[blank:0.9cm]] \\end{minipage}\\hfill\\begin{minipage}[t]{0.47\\linewidth} e) ``nhiều hơn'' $\\to$ [[blank:0.9cm]] [[br]] f) ``chưa đầy'' $\\to$ [[blank:0.9cm]] [[br]] g) ``đạt từ \\ldots trở lên'' $\\to$ [[blank:0.9cm]] [[br]] h) ``không nhiều hơn'' $\\to$ [[blank:0.9cm]] \\end{minipage}"
+        },
+        {
+          "type": "problem",
+          "label": "Bài 8.",
+          "tier": "btvn",
+          "level": 1,
+          "statement": "Dịch mỗi câu thành một bất phương trình (KHÔNG cần giải):"
+        },
+        {
+          "type": "para",
+          "text": "a) Bạn Bình có $120$ nghìn đồng, mua $x$ hộp sữa giá $30$ nghìn đồng/hộp; tổng tiền không vượt quá số tiền có. [[br]] b) Mỗi tháng để dành $250$ nghìn đồng; sau $x$ tháng muốn có ít nhất $2\\,000$ nghìn đồng. [[br]] c) Thang máy ghi tải trọng tối đa $900$ kg; trong thang có $x$ người, mỗi người nặng trung bình $60$ kg. [[br]] d) Có $200$ nghìn đồng, mua $x$ vé xem phim giá $45$ nghìn/vé; tiền mua không quá tiền có. [[br]] e) Mỗi ngày đọc $20$ trang; sau $x$ ngày muốn đọc được ít nhất $300$ trang. [[br]] f) Mua một quyển sách $40$ nghìn và $x$ chiếc bút $5{,}5$ nghìn/chiếc; tổng tiền không quá $100$ nghìn."
+        },
+        {
+          "type": "problem",
+          "label": "Bài 9.",
+          "tier": "btvn",
+          "level": 1,
+          "statement": "Viết biểu thức theo $x$:"
+        },
+        {
+          "type": "para",
+          "text": "\\begin{minipage}[t]{0.47\\linewidth} a) Mỗi hộp sữa $30$ nghìn đồng; mua $x$ hộp hết [[blank:1.2cm]] (nghìn đồng). [[br]] b) Mua thêm ổ bánh mì $15$ nghìn đồng: tổng [[blank:1.4cm]] (nghìn đồng). [[br]] c) Mỗi ngày đọc $20$ trang; sau $x$ ngày đọc được [[blank:1.2cm]] (trang). [[br]] d) Quyển sách $350$ trang; sau $x$ ngày còn lại [[blank:1.6cm]] (trang). \\end{minipage}\\hfill\\begin{minipage}[t]{0.47\\linewidth} e) Mỗi vé $45$ nghìn đồng; $x$ vé hết [[blank:1.2cm]] (nghìn đồng). [[br]] f) Đề $25$ câu, đúng $x$ câu: số câu sai [[blank:1.2cm]]. [[br]] g) Tiền lãi $4{,}5\\%$/năm của $x$ triệu: [[blank:1.4cm]] (triệu đồng). [[br]] h) Trả trước $300$ triệu $+$ $20$ triệu/tháng; sau $x$ tháng đã trả [[blank:1.6cm]] (triệu đồng). \\end{minipage}"
+        },
+        {
+          "type": "problem",
+          "label": "Bài 10.",
+          "tier": "btvn",
+          "level": 1,
+          "statement": "Làm tròn \\textbf{LÊN} hay \\textbf{XUỐNG}? Điền vào chỗ trống:"
+        },
+        {
+          "type": "para",
+          "text": "\\begin{minipage}[t]{0.47\\linewidth} a) Mua \\emph{nhiều nhất} mấy chiếc bút? [[blank:1.3cm]] [[br]] b) \\emph{Ít nhất} mấy tháng thì trả hết? [[blank:1.3cm]] [[br]] c) Mua \\emph{nhiều nhất} mấy quyển vở? [[blank:1.3cm]] \\end{minipage}\\hfill\\begin{minipage}[t]{0.47\\linewidth} d) Phải đúng \\emph{ít nhất} mấy câu? [[blank:1.3cm]] [[br]] e) Chở \\emph{nhiều nhất} mấy bao gạo? [[blank:1.3cm]] [[br]] f) Cần \\emph{ít nhất} mấy ngày? [[blank:1.3cm]] \\end{minipage}"
+        },
+        {
+          "type": "problem",
+          "label": "Bài 11.",
+          "tier": "btvn",
+          "level": 3,
+          "statement": "\\textbf{(GKI — Bát Tràng)} Lãi suất gửi tiết kiệm kì hạn $12$ tháng là $4{,}5\\%$/năm. Bác Hoàng muốn nhận tiền lãi sau $12$ tháng \\emph{ít nhất} $1{,}8$ triệu đồng. Gọi số tiền gửi là $x$ (triệu đồng), $x>0$. [[br]] a) \\;[NB] ``ít nhất $1{,}8$ triệu'' cho ta dấu nào? [[br]] b) \\;[TH] Viết biểu thức tiền lãi $12$ tháng theo $x$ (như Bài 9g). [[br]] c) \\;[VD] Lập bất phương trình, giải và trả lời: gửi ít nhất bao nhiêu triệu?"
+        },
+        {
+          "type": "problem",
+          "label": "Bài 12.",
+          "tier": "btvn",
+          "level": 2,
+          "statement": "Gọi ẩn (kèm điều kiện) rồi \\textbf{lập} bất phương trình cho mỗi bài sau (KHÔNG cần giải — tiết sau chữa):"
+        },
+        {
+          "type": "para",
+          "text": "a) \\textbf{(GKI — Cổ Nhuế 2)} Mỗi ngày chị Mai thu $600\\,000$ đồng, chi sinh hoạt $200\\,000$ đồng, phần còn lại để dành. Chị muốn để dành \\emph{đủ} mua chiếc điện thoại giá $7\\,500\\,000$ đồng sau $x$ ngày. [[br]] b) \\textbf{(GKI — Nguyễn Du)} Mua căn hộ $790$ triệu đồng trả góp không lãi: đã trả trước $300$ triệu, mỗi tháng trả thêm $20$ triệu; sau $x$ tháng thì \\emph{trả đủ}. [[br]] c) \\textbf{(GKI — Trưng Vương)} Bạn Quân có $600\\,000$ đồng mua vở: đã mua $40$ quyển vở Tiểu học giá $8\\,000$ đồng/quyển, mua thêm $x$ quyển vở Trung học giá $12\\,000$ đồng/quyển; tổng tiền \\emph{không quá} số tiền có. [[br]] d) Bể chứa $2\\,000$ lít: trong bể đã có $500$ lít, mỗi phút máy bơm thêm $25$ lít; sau $x$ phút thì bể \\emph{đầy} (được ít nhất $2\\,000$ lít)."
+        },
+        {
+          "type": "problem",
+          "label": "Bài 13.",
+          "tier": "btvn",
+          "level": 3,
+          "statement": "\\textbf{(Vận dụng — tuyển dụng)} Vòng sơ tuyển có $25$ câu, phải trả lời hết; mỗi câu đúng được $+2$ điểm, mỗi câu sai bị $-1$ điểm; được tặng sẵn $5$ điểm. Đạt \\emph{từ $25$ điểm trở lên} mới qua vòng. Gọi số câu đúng là $x$ ($0\\le x\\le25$, nguyên). [[br]] a) \\;[TH] Viết số câu sai theo $x$ (như Bài 2f). [[br]] b) \\;[TH] Viết biểu thức tổng điểm theo $x$ rồi rút gọn. [[br]] c) \\;[VD] Lập bất phương trình, giải và trả lời: phải đúng \\emph{ít nhất} mấy câu?"
+        }
+      ],
+      "solution": "\\textbf{BTVN.}\\par\\smallskip \\textbf{Bài 7.} a) $\\le$; b) $\\le$; c) $\\ge$; d) $\\ge$; e) $>$; f) $<$; g) $\\ge$; h) $\\le$.\\par\\smallskip \\textbf{Bài 8.} a) $30x\\le120$; b) $250x\\ge2\\,000$; c) $60x\\le900$; d) $45x\\le200$; e) $20x\\ge300$; f) $40+5{,}5x\\le100$.\\par\\smallskip \\textbf{Bài 9.} a) $30x$; b) $30x+15$; c) $20x$; d) $350-20x$; e) $45x$; f) $25-x$; g) $0{,}045x$; h) $300+20x$.\\par\\smallskip \\textbf{Bài 10.} a) XUỐNG; b) LÊN; c) XUỐNG; d) LÊN; e) XUỐNG; f) LÊN.\\par\\smallskip \\textbf{Bài 11.} a) ``ít nhất'' $\\to$ dấu $\\ge$. [[br]] b) Tiền lãi $=4{,}5\\%\\cdot x=0{,}045x$ (triệu đồng). [[br]] c) $0{,}045x\\ge1{,}8 \\Rightarrow x\\ge40$. Vậy bác Hoàng phải gửi \\emph{ít nhất $40$ triệu đồng}.\\par\\smallskip \\textbf{Bài 12.} a) Mỗi ngày để dành $600\\,000-200\\,000=400\\,000$; BPT: $400\\,000x\\ge7\\,500\\,000$ ($x>0$, nguyên). [[br]] b) $300+20x\\ge790$ ($x>0$, nguyên). [[br]] c) $8\\,000\\cdot40+12\\,000x\\le600\\,000$ tức $320\\,000+12\\,000x\\le600\\,000$ ($x\\ge0$, nguyên). [[br]] d) $500+25x\\ge2\\,000$ ($x>0$). [[br]] (Tham khảo nghiệm để chữa: a) $x\\ge18{,}75$ $\\to$ ít nhất $19$ ngày; b) $x\\ge24{,}5$ $\\to$ $25$ tháng; c) $x\\le\\dfrac{70}{3}\\approx23{,}3$ $\\to$ nhiều nhất $23$ quyển; d) $x\\ge60$ phút.)\\par\\smallskip \\textbf{Bài 13.} a) Số câu sai $=25-x$. [[br]] b) Điểm $=5+2x-(25-x)=3x-20$. [[br]] c) $3x-20\\ge25 \\Rightarrow 3x\\ge45 \\Rightarrow x\\ge15$. Vậy phải đúng \\emph{ít nhất $15$ câu}.\\par\\medskip \\textbf{Đáp án sơ đồ:} gọi ẩn $+$ \\emph{điều kiện}; giải $\\to$ \\emph{đối chiếu} \\& trả lời; ``ít nhất'' $\\to\\ \\ge$; ``tối đa'' $\\to\\ \\le$; ``nhiều nhất'' tròn \\emph{xuống}; ``ít nhất'' tròn \\emph{lên}.",
+      "teacher_note": "BTVN — chỉ cần giữ quỹ ~90 phút (40-40-20 là tỉ lệ giờ TRÊN LỚP, không áp cho BTVN — Thầy chốt). Gỡ giàn dần: Bài 11 còn 3 ý $\\to$ Bài 12 chỉ đề + yêu cầu lập $\\to$ Bài 13 gần đề trần. [[br]] $\\bullet$ DẠNG \\& MỨC: Bài 7-10 drill NB song song bài trên lớp (từ khoá / dịch câu / biểu thức / chiều tròn — HS yếu ăn chắc phần này); Bài 11 lãi suất Bát Tràng (NB + TH + VD — nghiệm tròn 40 triệu, không cần làm tròn); Bài 12 CHỈ LẬP BPT 4 bài: 3 bài GKI Cổ Nhuế/Nguyễn Du/Trưng Vương + bể nước (TH — lập BPT là kỹ năng ăn điểm nhất, ~1,3đ/đề; nghiệm tham khảo in kèm để tiết sau chữa trọn); Bài 13 tuyển dụng (TH + TH + VD, ra $x\\ge15$ — gợi ý móc Bài 2f). [[br]] $\\bullet$ DẶN DÒ KHI GIAO BÀI: bí Bài 12 thì tự hỏi lại bộ 4 câu của Bài 5 (''dấu nào? biểu thức nào? lập thế nào?''); bí Bài 13 thì mở lại Bài 2e, 2f. Tiết sau GV chữa trọn Bài 12 (giải + làm tròn từng bài) và Bài 13. [[br]] $\\bullet$ Đã đối chiếu SymPy toàn bộ."
+    }
+  ]
+}

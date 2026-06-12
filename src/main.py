@@ -33,6 +33,7 @@ from src.validators import (
     check_ramp,
     find_presentation_warnings,
     check_answers,
+    check_duration,
 )
 from config import settings
 
@@ -396,6 +397,9 @@ def _run_validation(lesson: LessonPackage) -> tuple[list[str], list[str], list[s
     ans_fail, ans_incon = check_answers(lesson)
     violations.extend(f"[answer_gate] {m}" for m in ans_fail)
     warns = warns + [f"[answer_gate] (cần kiểm tay) {m}" for m in ans_incon]
+
+    # Phiếu phân tầng: kiểm quỹ phút + tỉ lệ 40-40-20 từng phiếu (Thầy chốt 2026-06-11).
+    warns = warns + [f"[duration_gate] {m}" for m in check_duration(lesson)]
     return violations, warns, ramp_warns
 
 

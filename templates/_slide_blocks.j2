@@ -33,6 +33,18 @@
 ((* endfor *))\end{tabular}
 \end{center}
 \par\medskip
+((* elif b.type == "mindmap" *))
+((* if b.caption *)){\color{brand}\small\textbf{((( b.caption | tex )))}}\par\vspace{2pt}
+((* endif *))
+\begin{center}
+\adjustbox{max width=0.95\linewidth,max totalheight=0.62\textheight}{%
+\begin{forest}
+[{((( b.root | tex )))}, mindmap
+((* for br in b.branches *))((( mm_node(br) )))((* endfor *))
+]
+\end{forest}}
+\end{center}
+\par\medskip
 ((* elif b.type == "figure" *))
 \begin{center}
 ((* if b.image *))
@@ -45,6 +57,13 @@
 \par\medskip
 ((* endif *))
 ((= writelines: bỏ qua trên slide =))
+((* endmacro *))
+
+((= Nút sơ đồ tư duy — đệ quy; label cho phép [[blank]]. Bọc trong {} để né dấu phẩy. =))
+((* macro mm_node(node) *))
+[{((( node.label | tex )))}
+((* for c in node.children *))((( mm_node(c) )))((* endfor *))
+]
 ((* endmacro *))
 
 ((= Hình trong CỘT PHẢI: lấp đầy bề ngang cột (cạnh phần lý thuyết bên trái), giới
@@ -64,10 +83,14 @@
 ((* for seg in group_slide_segments(blocks) *))
 ((* if not loop.first *))\framebreak
 ((* endif *))
+((= Cột CHỮ của cols/opener cũng bọc adjustbox: chữ dài thì tự co, không tràn
+    đè footer (đã dính với opener 3 câu hỏi thử nhanh). =))
 ((* if seg.mode == "cols" *))
 \begin{columns}[T,onlytextwidth]
 \begin{column}{0.58\textwidth}
+\adjustbox{max width=\linewidth,max totalheight=0.62\textheight}{\begin{minipage}{\linewidth}
 {\small ((* for b in seg.text *))((( render_block(b) )))((* endfor *))}
+\end{minipage}}
 \end{column}
 \begin{column}{0.38\textwidth}
 ((* for f in seg.figures *))((( render_figure_col(f) )))((* endfor *))
@@ -76,7 +99,9 @@
 ((* elif seg.mode == "opener" *))
 \begin{columns}[T,onlytextwidth]
 \begin{column}{0.56\textwidth}
+\adjustbox{max width=\linewidth,max totalheight=0.62\textheight}{\begin{minipage}{\linewidth}
 {\small ((* for b in seg.text *))((( render_block(b) )))((* endfor *))}
+\end{minipage}}
 \end{column}
 \begin{column}{0.40\textwidth}
 \vspace{6pt}((( render_figure_col(seg.text[0]) )))
@@ -104,7 +129,14 @@
 ((* for b in seg.text *))((( render_block(b) )))((* endfor *))
 \end{minipage}}
 ((* else *))
+((= Bọc minipage + adjustbox như probfit: segment chỉ-chữ KHÔNG bao giờ để beamer
+    TỰ bẻ trang giữa block (auto-break trộn với \framebreak làm beamer dồn phần
+    còn lại của frame vào một vbox quá khổ rồi CẮT MẤT — từng nuốt cả chặng
+    Khái niệm; kèm thanh tiêu đề block mồ côi + slide trống). Dài quá thì tự co. =))
+\adjustbox{max width=\linewidth,max totalheight=0.66\textheight}{%
+\begin{minipage}{\linewidth}
 ((* for b in seg.text *))((( render_block(b) )))((* endfor *))
+\end{minipage}}
 ((* endif *))
 ((* endfor *))
 ((* endmacro *))

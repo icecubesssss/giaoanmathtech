@@ -37,13 +37,16 @@ Số câu suy từ: chia thời lượng mỗi đoạn theo **40-40-20** (NB-TH-
 |---|---|---|---|---|---|
 | Ví dụ GV giảng | 45′ | 1 / 4 / 8 | 18 | 4 | 1 |
 | Luyện tập trên lớp (×1,5) | 120′ | 1,5 / 6 / 12 | 32 | 8 | 2 |
-| BTVN (ở nhà) | 90′ | 1,5 / 6 / 12 ¹ | 24 | 6 | 2 |
-| **Tổng / phiếu** | | | **≈ 74** | **≈ 18** | **≈ 5** |
+| BTVN (ở nhà) (×1,3) | 90′ | 1,3 / 5,2 / 10,4 ¹ | 28 | 7 | 2 |
+| **Tổng / phiếu** | | | **≈ 78** | **≈ 19** | **≈ 5** |
 
-¹ Bảng gốc của Thầy **bỏ trống** cột thời lượng/câu của BTVN → tạm dùng nhịp luyện tập (×1,5). **Thầy chỉnh lại con số này nếu cần.**
+¹ Thầy chốt 2026-06-11 (khi lập bảng thống kê số câu/thời gian chung các lớp): hệ số gốc **1/4/8** là nhịp **GV hướng dẫn (Ví dụ)**; HS tự làm **trên lớp ×1,5** → 1,5/6/12; **BTVN ×1,3** → 1,3/5,2/10,4.
 
-**Cách hiểu & áp dụng (quan trọng — kẻo over/under soạn):**
-- "Câu" là **đơn vị tính giờ**, KHÔNG phải số đề rời. Gom thành *Bài* nhiều ý — vd 1 Bài liệt kê a)–f) tính là **6 câu NB**. ⇒ ~74 câu NB ≈ **12–14 Bài**.
+**Cách hiểu & áp dụng (quan trọng — kẻo over/under soạn; Thầy chốt thêm 2026-06-11):**
+- "Câu" là **đơn vị tính giờ**, KHÔNG phải số đề rời. Gom thành *Bài* nhiều ý — vd 1 Bài liệt kê a)–f) tính là **6 câu NB**. Bài VD đã tách ý thì đếm **theo thẻ `[NB]/[TH]/[VD]` từng ý** (4 ý = 1 NB + 2 TH + 1 VD, KHÔNG phải 1 VD).
+- **KHÔNG đếm phần Khám phá/Khái niệm** vào quỹ câu — đó là **giờ GV giảng**, với một bài bình thường nhắm **~20–30′** (đừng phình to hơn).
+- **40-40-20 áp cho TỪNG PHIẾU, theo THỜI GIAN, sai số ±5 điểm %, và CHỈ tính giờ LUYỆN TẬP TRÊN LỚP** (không cân theo cụm tuần; **BTVN KHÔNG thuộc tỉ lệ này** — nó là thời lượng trên lớp). BTVN chỉ cần giữ quỹ phút. Quỹ mỗi đoạn (Luyện tập 120′ · BTVN 90′) cho lệch **±10%**.
+- **`validate` tự soi tất cả** các mục trên qua `duration_gate` (cảnh báo khi lệch — phải xử lý hết trước khi trình Thầy, như mọi cảnh báo khác).
 - **VD ≈ 5 câu/phiếu** đúng tinh thần "làm được **1 phần** VD" của lớp C (1 ví dụ + 2 luyện + 2 BTVN).
 - Chấm `level`: NB → `1` (★☆☆), TH → `2` (★★☆), VD → `3` (★★★). **Tầng C KHÔNG có** `level 4`/kim cương, KHÔNG có `tier:extend`/HSG.
 - Giữ **khung 5 chặng** chuẩn (review→concept→practice1→practice2→reflection); cắt phần nâng cao, dồn giàn giáo (ví dụ mẫu điền khuyết, chia bước) cho NB-TH thật chắc.
@@ -86,21 +89,26 @@ python -m src.main build-folder "<folder [C]…>"             # 3 PDF/phiếu �
 > Đây là "quy trình riêng cho phiếu lớp [C]". Làm đúng từng mục để khỏi soạn lại.
 
 **A. Mạch dẫn dắt = QUY NẠP + ĐÚNG THỨ TỰ LOGIC** (HS bình thường/yếu học từ cụ thể → trừu tượng):
-1. **Khám phá**: mở bằng **ÔN KIẾN THỨC CŨ liên quan trực tiếp** (vd giải lại 1 PT trước khi học BPT) — khái niệm mới trình bày như **MỞ RỘNG của cái đã thạo**, không phải chủ đề lạ. Rồi cho HS *GẶP* đối tượng qua **ví dụ/tình huống thật** (chưa định nghĩa hình thức, chưa nói khái niệm phụ, chưa giải).
+1. **Khám phá**: mở bằng **ÔN KIẾN THỨC CŨ liên quan trực tiếp** (vd giải lại 1 PT trước khi học BPT) — khái niệm mới trình bày như **MỞ RỘNG của cái đã thạo**, không phải chủ đề lạ. Rồi cho HS *GẶP* đối tượng qua **ví dụ/tình huống thật** (chưa định nghĩa hình thức, chưa nói khái niệm phụ, chưa giải). **Tình huống mở màn phải GẮN LIỀN ĐỜI SỐNG HS** (góp ý 2026-06-11): điểm trung bình xét HSG, tiền tiêu vặt, vé concert, nạp game… — bối cảnh "người lớn/kỹ thuật" (thang máy chở hàng, lãi suất, trả góp) KHÔNG đặt ở mở màn, để dành cho bài luyện theo đề GKI.
 2. **Khái niệm**: HS **quan sát & phân nhóm ví dụ TRƯỚC** → chốt **định nghĩa NGẮN** sau (mục tiêu là **NHẬN BIẾT**, không bắt thuộc câu chữ; kèm "mẹo soi" 1 dòng). Định nghĩa GỐC trước khái niệm phụ thuộc (vd "BPT" *trước* "nghiệm của BPT"). Với cách giải/quy tắc: **VÍ DỤ MẪU trước → RÚT RA quy tắc sau**; nếu có kiến thức cũ tương đồng thì đặt **SONG SONG 2 cột "đã thạo | mới"** (vd giải PT | giải BPT cùng một bài).
 3. **"HS thấy CẦN mới đưa công cụ":** hộp BẪY ĐIỂM/quy tắc/bảng ôn **KHÔNG đặt trước** khi HS gặp tình huống dùng nó (đừng ôn "4 tính chất BĐT" ở Khám phá khi chưa giải gì). Bẫy hay nhất là để HS **tự đụng**: **cài LỖI SAI có giàn giáo** — nhân vật "bạn Minh/bạn Lan" giải sai kiểu kinh điển → HS kiểm tra bằng **thử số chỉ định sẵn** (vd x=0) thấy mâu thuẫn → tự rút ra quy tắc → hộp **BẪY ĐIỂM chốt NGAY SAU** (lớp C: không để quy tắc ở dạng "tự hiểu").
-4. **Luyện tập 1 = dồn NHẬN BIẾT** (nhận biết dạng, điền dấu, tìm điều kiện hệ số, thử nghiệm thay số). Đây là phần lớp C cần thạo 100%.
+4. **Luyện tập 1 = dồn NHẬN BIẾT** (nhận biết dạng, điền dấu, tìm điều kiện hệ số, thử nghiệm thay số). Đây là phần lớp C cần thạo 100%. **NB phải BÁM DẠNG THI** (góp ý 2026-06-11): chỉ giữ **MỘT** bài nhận-biết-dạng (không đặt 2 bài trùng kiểu); chỗ còn lại dồn cho NB là *viên gạch của kỹ năng được chấm điểm* (vd drill ĐIỀN CHIỀU khi nhân/chia hai vế — nuôi thẳng câu "giải BPT" của đề).
 5. **Luyện tập 2 = GIẢI (Thông hiểu)** — kỹ năng trục của bài.
-6. **Tổng kết + BTVN**.
+6. **Tổng kết + BTVN**. **Sơ đồ Tổng kết phải BÁM MỤC TIÊU + ĐI SÁT BÀI ĐỀ GKI** (góp ý 2026-06-11): vẽ **đường đi ĐỦ BƯỚC của một câu thi** (vd BPT: khử mẫu $\to$ mở ngoặc $\to$ chuyển vế đổi dấu $\to$ thu gọn $\to$ chia hệ số), **mỗi ô ghi rõ Bài tương ứng vừa luyện** để HS tra ngược; KHÔNG vẽ quy trình rút gọn sai bản chất (BPT thuần không có bước "thu gọn" đứng riêng).
+7. **Buổi đôi (2 phiếu/tuần): phân công RÕ** (góp ý 2026-06-11) — phiếu A gom **toàn bộ kỹ thuật giải** (kể cả quy đồng khử mẫu); **toán lời văn dồn hết** sang phiếu B.
 
 **B. Độ khó:** **BỎ HẲN vận dụng cao** (vô nghiệm/đúng-mọi-x, tích-thương, HSG, kỹ thuật lạ). Lớp C = thạo NB+TH + làm được **1 phần VD**.
 
 **C. Tách bài VẬN DỤNG thành chuỗi câu nhỏ** (gỡ giàn — HS yếu vẫn ăn điểm từng phần):
 `a) [NB] từ khoá → dấu (≤/≥)` → `b) [TH] viết biểu thức theo ẩn` → `c) [TH] lập BPT` → `d) [VD] giải & trả lời`. Gắn thẻ `[NB]/[TH]/[VD]` ở đầu mỗi ý để truy tỉ lệ.
+**Gỡ giàn DẦN qua CHUỖI BÀI** (góp ý 2026-06-11 — scaffolding fade): bài VD đầu chẻ NHỎ NHẤT (vd 8 câu a–h, có Ô ĐIỀN từng bước, hỏi cả chiều làm tròn trước khi kết luận) → bài sau còn 4 ý không ô điền → bài kế còn 2 ý (tự gọi ẩn, tự giải) → BTVN gần đề trần (chỉ 1 gợi ý móc về bài đã luyện). TRƯỚC chuỗi VD, LT1 drill rời từng "viên gạch" NB (từ khoá → dấu; viết biểu thức theo $x$) rồi 1 bài TH lập-BPT-chưa-giải nối chúng lại.
 
 **D. Cân tỉ lệ:** hiểu **40-40-20 là tỉ lệ THỜI GIAN, không phải số câu** (câu NB làm nhanh 1,5′, TH 6′, VD 12′ → muốn cân thì NB phải đông câu hơn). Thực tế: dồn NB vào LT1 cho **NB ≈ TH về số câu** (≈40-40); VD ít và đã tách bước. Buổi luyện kỹ năng tự nhiên hơi nặng TH — chấp nhận, defend bằng "đây là buổi luyện GIẢI".
 
 **E. Trình bày (lỗi đã từng bị bắt — tránh):**
+- **Phiếu HS chỉ in ĐỀ + HOẠT ĐỘNG** (góp ý 2026-06-11): câu thuyết minh/dẫn dắt dài KHÔNG in lên phiếu — GV nói miệng; chuyển vào `teacher_note` (hiện ở guide) dưới mục "KỊCH BẢN LỜI DẪN GV" để GV nào cầm phiếu cũng giảng được.
+- **`teacher_note` phải là DÀN Ý ĐIỀU PHỐI có cấu trúc, XUỐNG DÒNG bằng `[[br]]`** (góp ý 2026-06-11 — không viết thành một khối văn): mỗi chặng luyện tập tối thiểu 3 mục gạch đầu dòng: **DẠNG & MỨC** (bài nào NB/TH/VD, kỹ năng gì, nguồn GKI nào), **KHI HS BÍ — câu hỏi gợi mở** (chuỗi câu hỏi dẫn từng nấc, kiểu "MỘT quyển bao nhiêu? HAI quyển? vậy x quyển?"), **BIẾN THỂ CHO THÊM** (GV đổi hệ số/bối cảnh tại chỗ cho HS yếu luyện thêm hoặc HS nhanh làm tiếp). GV cầm guide phải điều phối được mà không cần người soạn.
+- **Công thức toán PHẢI XUỐNG DÒNG riêng** (góp ý 2026-06-11): mọi PT/BPT/biểu thức HS cần đọc-giải không để dính giữa câu văn — câu dẫn kết thúc bằng dấu hai chấm rồi `[[br]] \quad $...$` (áp cho cả đề bài, ví dụ mẫu, hộp bẫy, opener).
 - Bài nhiều ý a)b)c)… → xếp **2 cột** (`minipage`).
 - Trong một câu mà liệt kê **nhiều BPT** → mỗi BPT **xuống dòng riêng** (`[[br]] \quad $\bullet$\;`), đừng để cùng dòng (rối).
 - **Hình minh hoạ KHÔNG được lộ đáp án** ô điền — kể cả **chú thích dưới hình**: thang máy ghi `630 kg` (không `≤630`); heo đất ghi `tiền để dành` (KHÔNG `≤ 50k`). Soi lại tikz: nếu có `\node` chú thích trùng với đáp số ô điền thì **xoá node đó**.
