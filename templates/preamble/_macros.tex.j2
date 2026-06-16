@@ -210,3 +210,12 @@
   \par\vspace{10pt}%
 }
 
+% --- Lưới ô ly chuẩn tiểu học (ô vuông lớn 10mm x 10mm chia 4x4 ô nhỏ 2.5mm) ---
+% #1 = số dòng ô vuông lớn (chiều cao, tính theo cm)
+\newcommand{\olyline}[1][2]{%
+  \par\nointerlineskip\vspace{5pt}\noindent
+  \begin{tikzpicture}
+    \draw[step=0.25cm,ink!15,line width=0.3pt] (0,0) grid (\linewidth, #1);
+    \draw[step=1cm,ink!35,line width=0.5pt] (0,0) grid (\linewidth, #1);
+  \end{tikzpicture}\par\vspace{2pt}%
+}

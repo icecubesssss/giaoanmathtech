@@ -40,6 +40,7 @@ class NotedBlock(BaseModel):
 class WriteLinesBlock(BaseModel):
     type: Literal["writelines"] = "writelines"
     count: int = Field(2, ge=0, le=12, description="Số dòng kẻ trống cho HS viết (0 = chỉ chừa 1 dòng trắng, KHÔNG kẻ — lớp HS trình bày vào vở)")
+    variant: Optional[str] = Field(None, description="Variant của block (ví dụ: 'oly' cho ô ly tiểu học)")
 
 
 # ----- Đáp án MÁY-ĐỌC để validate tự soi bằng SymPy (tùy chọn, KHÔNG in ra phiếu) -----

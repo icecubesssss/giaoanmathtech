@@ -18,7 +18,7 @@
 \end{openerbox}
 
 ((* elif b.type == "writelines" *))
-((* if b.count == 0 *))\par\vspace{5mm}((* else *))((* for _ in range(b.count) *))\fillline
+((* if b.count == 0 *))\par\vspace{5mm}((* elif b.variant == "oly" *))\olyline[((( b.count )))](* else *))((* for _ in range(b.count) *))\fillline
 ((* endfor *))((* endif *))
 \par
 ((* elif b.type == "problem" *))
