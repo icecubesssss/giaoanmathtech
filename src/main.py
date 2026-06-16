@@ -162,8 +162,18 @@ def _topic_slug(folder_name: str) -> str:
 
 
 def _week_folders(subject_dir: Path) -> list[Path]:
+    folders = []
+    for d in subject_dir.iterdir():
+        if not d.is_dir():
+            continue
+        if d.name.startswith("lop-"):
+            for wd in d.iterdir():
+                if wd.is_dir() and "tuan" in wd.name:
+                    folders.append(wd)
+        elif "tuan" in d.name:
+            folders.append(d)
     return sorted(
-        (d for d in subject_dir.iterdir() if d.is_dir()),
+        folders,
         key=lambda d: (_week_nums(d.name) or [999], d.name),
     )
 
@@ -765,19 +775,21 @@ def cmd_new_lesson(args: argparse.Namespace) -> int:
         print(f"✗ Đã tồn tại {out_path} — dùng --force để ghi đè.", file=sys.stderr)
         return 1
 
-    # Suy ra eyebrow/grade từ vị trí folder dưới seeds (<lớp>/<môn>/<tuần>).
-    grade = subject = ""
+    # Suy ra eyebrow/grade từ vị trí folder dưới seeds (<lớp>/<môn>/<phân_lớp>/<tuần>).
+    grade = subject = tier_from_path = ""
     try:
         rel = folder.resolve().relative_to(SEEDS_DIR.resolve())
         grade = rel.parts[0] if rel.parts else ""
         subject = rel.parts[1] if len(rel.parts) >= 2 else ""
+        if len(rel.parts) >= 3 and rel.parts[2].startswith("lop-"):
+            tier_from_path = rel.parts[2].split("-")[1].upper()
     except ValueError:
         pass
     subj_label = SUBJECT_LABELS.get(subject, "")
     title = args.title or topic.replace("-", " ").strip().capitalize() or slug
-    # Tầng lớp: ưu tiên cờ --tier, nếu không suy từ tiền tố `[X]` của folder.
+    # Tầng lớp: ưu tiên cờ --tier, sau đó suy từ tiền tố `[X]` của folder, rồi tới folder cha `lop-x`.
     # Tầng KHÔNG nhồi vào eyebrow — badge "LỚP X" trên PDF do `class_tier` lo.
-    tier = (getattr(args, "tier", "") or _class_tier(folder.name)).upper()
+    tier = (getattr(args, "tier", "") or _class_tier(folder.name) or tier_from_path).upper()
     eyebrow = f"CHỦ ĐỀ • {subj_label}".rstrip(" •") if subj_label else "CHỦ ĐỀ"
 
     skeleton = _skeleton(slug, title, eyebrow, _grade_label(grade), tier)
