@@ -29,11 +29,14 @@ _BR_TRAIL = re.compile(r"(?:\s*\[\[br\]\]\s*)+$")
 _BR = re.compile(r"\s*\[\[br\]\]\s*")
 
 
+_OLY_W = re.compile(r"\[\[oly:([^\]]+)\]\]")
+
 def _texify(s: str) -> str:
     """Dịch token chỗ trống / xuống dòng sang lệnh LaTeX. (Khử mã độc là việc của S2.)"""
     s = _BLANK_W.sub(r"\\blank[\1]", s)
     s = _BLANK.sub(r"\\blank[5cm]", s)
     s = _MBLANK.sub(r"\\rule{\1}{0.4pt}", s)
+    s = _OLY_W.sub(r"\\olybox{\1}", s)
     s = _BR_TRAIL.sub("", s)
     # [[br]] -> xuống dòng kèm 3pt hở dọc, để dòng chứa \dfrac không chạm dòng kế.
     s = _BR.sub(r" \\\\[3pt] ", s)
