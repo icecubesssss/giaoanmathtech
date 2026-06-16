@@ -1,0 +1,30 @@
+% PHIẾU THUYẾT MINH (đặc tả phiếu) — A4 ngang. Sinh từ src, không sửa tay.
+% Biến: body (LaTeX thô), tiêu đề/màu/font nhúng từ design_tokens.json.
+\documentclass[11pt]{article}
+\usepackage[a4paper,landscape,top=1.2cm,bottom=1.2cm,left=1.3cm,right=1.3cm]{geometry}
+
+((* include "preamble/_fonts.tex.j2" *))
+((* include "preamble/_colors.tex.j2" *))
+
+\usepackage{array}
+\usepackage{tabularx}
+\usepackage{booktabs}
+\usepackage{colortbl}
+\usepackage{multirow}
+\usepackage{enumitem}
+\usepackage{ragged2e}
+\usepackage[colorlinks=true,linkcolor=brand,urlcolor=brand]{hyperref}
+
+\setlength{\parindent}{0pt}
+\setlength{\parskip}{3pt}
+\renewcommand{\arraystretch}{1.32}
+\setlist[itemize]{leftmargin=1.4em,topsep=1pt,itemsep=1pt,parsep=0pt}
+
+\newcommand{\tmtitle}[1]{{\sffamily\bfseries\fontsize{19pt}{22pt}\selectfont\color{brand}#1}}
+\newcommand{\tmsub}[1]{{\sffamily\color{muted}#1}}
+\newcommand{\tmsec}[1]{\par\vspace{5pt}{\setlength{\fboxsep}{4pt}\colorbox{brand}{\color{white}\sffamily\bfseries\small\strut\,#1\,}}\par\vspace{3pt}}
+\newcommand{\tmlbl}[1]{{\sffamily\bfseries\color{ink}#1}}
+
+\begin{document}
+((( body )))
+\end{document}
