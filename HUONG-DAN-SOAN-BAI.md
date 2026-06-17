@@ -77,7 +77,11 @@ Mỗi bài đúng **5 chặng** (kind cố định), mỗi chặng mang các blo
     - **Canh không đè chữ / không tràn trang:** đặt nhãn tránh đỉnh và tránh nhãn khác. Chỉ thêm hình ở chỗ **phiếu gốc có hình** hoặc bài đố thực sự cần; bài tính thuần (đã cho đủ số đo) thì thôi.
 
 11. **Đặc sản nhận diện (mới — dùng để phiếu/slide "khác phiếu chợ").** Khung `new-lesson` đã chèn sẵn các slot này:
-    - **Mở màn thực tế** — block `{"type":"opener","text":"…","image":"(tuỳ chọn)"}` đặt **đầu chặng `review`**: một tình huống/bài toán đời thực kéo HS vào bài (vd hai vòi nước → ẩn ở mẫu). In thành thẻ "MỞ MÀN THỰC TẾ". Xoá nếu bài thuần kỹ thuật không hợp.
+    - **Mở màn thực tế** — block `{"type":"opener","text":"…","image":"(tuỳ chọn)"}` đặt **đầu chặng `review`**. Quy chuẩn bắt buộc: 
+      + Nội dung phải liên quan đến cái HS đã biết và sở thích giới trẻ (trend, idol, game...).
+      + **Chưa được nhắc đến khái niệm mới** nhưng mô tả đúng bản chất.
+      + Khuyến khích tạo và chèn hình ảnh sinh động bằng AI Image Generator (như Gemini Banana) vào trường `"image"`.
+      + In thành thẻ "MỞ MÀN THỰC TẾ". Xoá nếu bài thuần kỹ thuật không hợp lý.
     - **Thẻ callout có nhãn màu** — `noted` thêm field `"variant"`:
       - `"trap"` → **BẪY ĐIỂM** (đỏ): lỗi HS hay mất điểm oan (quên ĐKXĐ, quên loại nghiệm…).
       - `"target"` → **ĐÍCH THI VÀO 10** (vàng): kỹ thuật này gặp ở câu nào của đề.
