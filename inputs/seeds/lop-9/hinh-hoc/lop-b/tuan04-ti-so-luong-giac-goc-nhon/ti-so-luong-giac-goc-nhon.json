@@ -1,4 +1,5 @@
 {
+  "class_tier": "B",
   "slug": "ti-so-luong-giac-goc-nhon",
   "title": "Tỉ số lượng giác của góc nhọn",
   "eyebrow": "CHỦ ĐỀ • HÌNH HỌC",
@@ -7,184 +8,125 @@
     {
       "kind": "review",
       "number": 1,
-      "title": "Khám phá — KTBC: cạnh đối, cạnh kề, cạnh huyền",
+      "title": "Khám phá",
       "blocks": [
         {
           "type": "para",
-          "text": "Trong tam giác vuông, định lí Pythagore nối ba cạnh: bình phương cạnh huyền bằng tổng bình phương hai cạnh góc vuông. [[br]] Hôm nay ta khám phá một thứ mới: \\emph{tỉ số} giữa các cạnh — thứ chỉ phụ thuộc \\textbf{góc}, không phụ thuộc tam giác to hay nhỏ."
-        },
-        {
-          "type": "noted",
-          "text": "\\textbf{Khởi động.} Tam giác $ABC$ vuông tại $A$, xét góc nhọn $B$: [[br]] cạnh \\emph{đối} của $B$ là $[[mblank:1.2cm]]$; cạnh \\emph{kề} của $B$ là $[[mblank:1.2cm]]$; cạnh \\emph{huyền} là $[[mblank:1.2cm]]$. [[br]] Nếu $AB=3,\\ AC=4$ thì $BC=[[mblank:1.2cm]]$ (Pythagore)."
+          "text": "Trong tam giác vuông, định lí Pythagore kết nối độ dài ba cạnh. Nếu ta muốn kết nối \\textbf{góc} và \\textbf{cạnh}? Tỉ số lượng giác sẽ làm điều đó, nó chỉ phụ thuộc vào góc, không phụ thuộc tam giác to hay nhỏ."
         },
         {
           "type": "figure",
-          "tikz": "\\begin{tikzpicture}[line width=0.9pt,font=\\small]\\coordinate (B) at (0,0);\\coordinate (C) at (5,0);\\coordinate (A) at (1.8,2.4);\\draw[ink] (A)--(B)--(C)--cycle;\\draw[ink,line width=0.7pt] (1.62,2.16)--(1.86,1.98)--(2.04,2.22);\\pic[draw=brand,line width=0.9pt,angle radius=0.8cm,\"$\\alpha$\",angle eccentricity=1.5,font=\\small]{angle=C--B--A};\\node[above] at (A) {$A$};\\node[below left] at (B) {$B$};\\node[below right] at (C) {$C$};\\end{tikzpicture}",
-          "caption": "Tam giác $ABC$ vuông tại $A$, xét góc nhọn $B=\\alpha$.",
-          "width": "0.42\\linewidth"
+          "caption": "Hai chiếc thang cùng dựa vào tường tạo một góc $60^\\circ$ với mặt đất.",
+          "width": "0.45\\linewidth",
+          "image": "images/ladder.png"
         },
         {
           "type": "para",
-          "text": "\\textbf{Thử thách khởi động.} Hai chiếc thang dài $3$ m và $5$ m cùng dựa vào tường, \\emph{cùng} nghiêng $30^\\circ$ với mặt đất. [[br]] Tỉ số $\\dfrac{\\text{độ cao đầu thang chạm tường}}{\\text{độ dài thang}}$ của hai chiếc có bằng nhau không? Vì sao?"
+          "text": "\\textbf{Thử thách.} Hai chiếc thang dài $3$ m và $5$ m cùng dựa vào tường, \\emph{cùng} nghiêng $60^\\circ$ với mặt đất. [[br]] Tỉ số $\\dfrac{\\text{độ cao chạm tường}}{\\text{độ dài thang}}$ của hai chiếc thang có bằng nhau không? Vì sao?"
         },
         {
-          "type": "para",
-          "text": "\\textbf{Ví dụ mẫu (thầy + trò cùng làm).} Tam giác $ABC$ vuông tại $A$, $AB=3,\\ AC=4$ nên $BC=5$. Xét góc $B$: [[br]] $\\dfrac{\\text{đối}}{\\text{huyền}}=\\dfrac{AC}{BC}=[[mblank:1cm]]$;\\quad $\\dfrac{\\text{kề}}{\\text{huyền}}=\\dfrac{AB}{BC}=[[mblank:1cm]]$;\\quad $\\dfrac{\\text{đối}}{\\text{kề}}=\\dfrac{AC}{AB}=[[mblank:1cm]]$."
+          "type": "noted",
+          "variant": "example",
+          "text": "\\textbf{Trả lời:} Do hai thang tạo với mặt đất cùng góc $60^\\circ$ và cùng dựa vào tường thẳng đứng, nên hai tam giác vuông tạo thành là hai tam giác $[[mblank:2cm]]$ (g.g). [[br]] $\\Rightarrow$ Tỉ số $\\dfrac{\\text{độ cao chạm tường}}{\\text{độ dài thang}}$ của chúng là $[[mblank:2cm]]$. Tỉ số này cố định cho góc $60^\\circ$, gọi là $\\sin 60^\\circ$."
         }
       ],
-      "solution": "Khởi động: đối của $B$ là $AC$; kề là $AB$; huyền là $BC$; $BC=\\sqrt{3^2+4^2}=5$. [[br]] Thử thách: \\textbf{bằng nhau} — hai tam giác vuông cùng góc $30^\\circ$ thì \\emph{đồng dạng}, nên các tỉ số cạnh tương ứng bằng nhau (tỉ số chỉ phụ thuộc góc). [[br]] Ví dụ mẫu: $\\dfrac{AC}{BC}=\\dfrac45$; $\\dfrac{AB}{BC}=\\dfrac35$; $\\dfrac{AC}{AB}=\\dfrac43$.",
-      "teacher_note": "Thử thách 'hai cái thang' để HS tự thấy: tỉ số cạnh KHÔNG đổi theo kích thước, chỉ phụ thuộc góc (nhờ đồng dạng). Đó chính là lí do định nghĩa được tỉ số lượng giác ở chặng sau."
+      "solution": "\\textbf{Trả lời:} Đồng dạng; bằng nhau.",
+      "teacher_note": "- DẠNG \\& MỨC: Khám phá bằng thực tế.\n- KHI HS BÍ: Nhắc lại tính chất tam giác đồng dạng."
     },
     {
       "kind": "concept",
       "number": 2,
-      "title": "Khái niệm — Tỉ số lượng giác và góc phụ nhau",
+      "title": "Khái niệm",
       "blocks": [
         {
-          "type": "noted",
-          "text": "\\textbf{Định nghĩa.} Tam giác $ABC$ vuông tại $A$, góc nhọn $B=\\alpha$: [[br]] $\\sin\\alpha=\\dfrac{\\text{đối}}{\\text{huyền}}=\\dfrac{AC}{BC}$;\\quad $\\cos\\alpha=\\dfrac{\\text{kề}}{\\text{huyền}}=\\dfrac{AB}{BC}$;\\quad $\\tan\\alpha=\\dfrac{\\text{đối}}{\\text{kề}}=\\dfrac{AC}{AB}$;\\quad $\\cot\\alpha=\\dfrac{\\text{kề}}{\\text{đối}}=\\dfrac{AB}{AC}$. [[br]] Luôn có $0<\\sin\\alpha<1,\\ 0<\\cos\\alpha<1$ và $\\cot\\alpha=\\dfrac{1}{\\tan\\alpha}$."
-        },
-        {
-          "type": "figure",
-          "tikz": "\\begin{tikzpicture}[line width=0.9pt,font=\\small]\\coordinate (B) at (0,0);\\coordinate (C) at (5,0);\\coordinate (A) at (1.8,2.4);\\draw[ink] (A)--(B)--(C)--cycle;\\draw[ink,line width=0.7pt] (1.62,2.16)--(1.86,1.98)--(2.04,2.22);\\pic[draw=brand,line width=0.9pt,angle radius=0.8cm,\"$\\alpha$\",angle eccentricity=1.5,font=\\small]{angle=C--B--A};\\node[above] at (A) {$A$};\\node[below left] at (B) {$B$};\\node[below right] at (C) {$C$};\\node[brand,left] at ($(A)!0.5!(B)$) {Cạnh kề};\\node[brand,right] at ($(A)!0.5!(C)$) {Cạnh đối};\\node[brand,below=2pt] at ($(B)!0.5!(C)$) {Cạnh huyền};\\end{tikzpicture}",
-          "caption": "Cạnh đối, cạnh kề (theo góc $B$) và cạnh huyền.",
-          "width": "0.5\\linewidth"
+          "type": "para",
+          "text": "Cho tam giác vuông có góc nhọn $\\alpha$. Ta định nghĩa 4 tỉ số lượng giác (TSLG) của $\\alpha$:"
         },
         {
           "type": "noted",
-          "text": "\\textbf{Bảng tỉ số lượng giác của góc đặc biệt} — em điền vào bảng để thuộc tại lớp:"
-        },
-        {
-          "type": "table",
-          "caption": "Điền giá trị $\\sin,\\cos,\\tan,\\cot$ của $30^\\circ,45^\\circ,60^\\circ$",
-          "headers": [
-            "$\\alpha$",
-            "$\\sin\\alpha$",
-            "$\\cos\\alpha$",
-            "$\\tan\\alpha$",
-            "$\\cot\\alpha$"
-          ],
-          "rows": [
-            [
-              "$30^\\circ$",
-              "[[blank:1.4cm]]",
-              "[[blank:1.4cm]]",
-              "[[blank:1.4cm]]",
-              "[[blank:1.4cm]]"
-            ],
-            [
-              "$45^\\circ$",
-              "[[blank:1.4cm]]",
-              "[[blank:1.4cm]]",
-              "[[blank:1.4cm]]",
-              "[[blank:1.4cm]]"
-            ],
-            [
-              "$60^\\circ$",
-              "[[blank:1.4cm]]",
-              "[[blank:1.4cm]]",
-              "[[blank:1.4cm]]",
-              "[[blank:1.4cm]]"
-            ]
-          ]
-        },
-        {
-          "type": "noted",
-          "text": "\\textbf{Hai góc phụ nhau} ($\\alpha+\\beta=90^\\circ$): \\emph{sin góc này bằng cos góc kia, tan góc này bằng cot góc kia.} [[br]] $\\sin\\alpha=\\cos(90^\\circ-\\alpha)$;\\quad $\\cos\\alpha=\\sin(90^\\circ-\\alpha)$;\\quad $\\tan\\alpha=\\cot(90^\\circ-\\alpha)$;\\quad $\\cot\\alpha=\\tan(90^\\circ-\\alpha)$."
+          "text": "- $\\sin \\alpha = \\dfrac{\\text{cạnh đối}}{\\text{cạnh huyền}}$ \n- $\\cos \\alpha = \\dfrac{\\text{cạnh kề}}{\\text{cạnh huyền}}$ \n- $\\tan \\alpha = \\dfrac{\\text{cạnh đối}}{\\text{cạnh kề}}$ \n- $\\cot \\alpha = \\dfrac{\\text{cạnh kề}}{\\text{cạnh đối}}$"
         },
         {
           "type": "para",
-          "text": "\\textbf{Ví dụ mẫu (góc phụ nhau).} Viết thành tỉ số lượng giác của góc nhỏ hơn $45^\\circ$: [[br]] $\\sin60^\\circ=\\cos[[mblank:1.2cm]]$;\\quad $\\cos75^\\circ=\\sin[[mblank:1.2cm]]$;\\quad $\\tan80^\\circ=\\cot[[mblank:1.2cm]]$."
+          "text": "$\\bullet$ \\textbf{Mẹo nhớ:} \\emph{Sin đi học, Cos không hư, Tang đoàn kết, Cotang kết đoàn}."
         },
         {
           "type": "noted",
-          "text": "\\textbf{Đích đến thi vào 10.} Đây là \\emph{nền} của cả chương Hệ thức lượng. [[br]] Kĩ năng tính 4 tỉ số từ tam giác vuông, dùng góc phụ nhau và các đẳng thức $\\sin^2\\alpha+\\cos^2\\alpha=1$, $\\tan\\alpha\\cdot\\cot\\alpha=1$ sẽ tái xuất ở mọi bài hình tính cạnh/góc."
+          "text": "\\textbf{Chú ý (Góc phụ nhau):} Nếu $\\alpha + \\beta = 90^\\circ$ thì: [[br]] $\\sin \\alpha = \\cos \\beta$; \\quad $\\cos \\alpha = \\sin \\beta$; \\quad $\\tan \\alpha = \\cot \\beta$; \\quad $\\cot \\alpha = \\tan \\beta$."
         }
-      ],
-      "solution": "Bảng đặc biệt: [[br]] $30^\\circ$: $\\sin=\\dfrac12$, $\\cos=\\dfrac{\\sqrt3}{2}$, $\\tan=\\dfrac{1}{\\sqrt3}=\\dfrac{\\sqrt3}{3}$, $\\cot=\\sqrt3$. [[br]] $45^\\circ$: $\\sin=\\cos=\\dfrac{\\sqrt2}{2}$, $\\tan=\\cot=1$. [[br]] $60^\\circ$: $\\sin=\\dfrac{\\sqrt3}{2}$, $\\cos=\\dfrac12$, $\\tan=\\sqrt3$, $\\cot=\\dfrac{1}{\\sqrt3}=\\dfrac{\\sqrt3}{3}$. [[br]] Ví dụ mẫu: $\\sin60^\\circ=\\cos30^\\circ$; $\\cos75^\\circ=\\sin15^\\circ$; $\\tan80^\\circ=\\cot10^\\circ$.",
-      "teacher_note": "Cho HS điền bảng đặc biệt trước (mẹo nhớ: $\\sin$ tăng $\\tfrac12,\\ \\tfrac{\\sqrt2}{2},\\ \\tfrac{\\sqrt3}{2}$). Nhấn 'đối/kề/huyền XÉT THEO GÓC NÀO' — đổi góc thì đối–kề đổi vai."
+      ]
     },
     {
       "kind": "practice1",
       "number": 3,
-      "title": "Luyện tập 1 — Tính tỉ số lượng giác (trên lớp)",
+      "title": "Luyện tập 1",
       "blocks": [
         {
           "type": "problem",
-          "label": "Bài 1.",
-          "tier": "onclass",
-          "statement": "Cho tam giác $ABC$ vuông tại $A$. Tính bốn tỉ số lượng giác của góc $B$ trong mỗi trường hợp: [[br]] a) $BC=13$ cm, $AC=12$ cm; [[br]] b) $BC=5\\sqrt2$ cm, $AB=5$ cm; [[br]] c) $AB=a\\sqrt3$, $AC=a$."
-        },
-        {
-          "type": "writelines",
-          "count": 4
+          "level": 1,
+          "statement": "Tính 4 TSLG của góc nhọn chỉ định trong mỗi trường hợp (đã cho 3 cạnh): \n[[br]] a) [NB] $\\Delta ABC$ vuông tại $A$ có $AB=6$, $AC=8$, $BC=10$. Tính TSLG của $\\widehat{B}$. [[br]] b) [NB] $\\Delta DEF$ vuông tại $D$ có $DE=5$, $DF=12$, $EF=13$. Tính TSLG của $\\widehat{E}$.",
+          "label": "Bài 1."
         },
         {
           "type": "problem",
-          "label": "Bài 2.",
-          "tier": "onclass",
-          "statement": "Tam giác $ABC$ vuông tại $A$, $AB=1{,}5$ cm, $BC=3{,}5$ cm. Tính các tỉ số lượng giác của góc $C$, rồi suy ra các tỉ số lượng giác của góc $B$ (dùng góc phụ nhau)."
-        },
-        {
-          "type": "writelines",
-          "count": 3
+          "level": 2,
+          "statement": "Cho $\\Delta MNP$ vuông tại $M$. Dùng định lý Pythagore tính cạnh còn lại, rồi tính 4 TSLG của góc $N$: \n[[br]] a) [TH] $NP = 13$ cm, $MP = 12$ cm; [[br]] b) [TH] $NP = 5\\sqrt{2}$ cm, $MN = 5$ cm.",
+          "label": "Bài 2."
         },
         {
           "type": "problem",
-          "label": "Bài 3.",
-          "tier": "onclass",
-          "statement": "a) Mỗi tỉ số lượng giác sau bằng tỉ số lượng giác nào của góc $63^\\circ$: $\\sin27^\\circ,\\ \\cos27^\\circ,\\ \\tan27^\\circ,\\ \\cot27^\\circ$? [[br]] b) Viết thành tỉ số lượng giác của các góc nhỏ hơn $45^\\circ$: $\\sin55^\\circ,\\ \\cos62^\\circ,\\ \\tan57^\\circ,\\ \\cot64^\\circ$."
+          "level": 1,
+          "statement": "Thay tỉ số giữa các góc phụ nhau (không dùng máy tính): \n[[br]] a) [NB] $\\sin 40^\\circ = \\cos\\dots$; \\quad $\\cos 25^\\circ = \\sin\\dots$ [[br]] b) [NB] $\\tan 57^\\circ = \\cot\\dots$; \\quad $\\cot 64^\\circ = \\tan\\dots$",
+          "label": "Bài 3."
         },
         {
-          "type": "writelines",
-          "count": 2
+          "type": "problem",
+          "level": 2,
+          "statement": "\\emph{(Đề GKI - Nguyễn Du)} Cho $\\Delta ABC$ vuông tại $A$ ($AB < AC$), $AB = 6$ cm, $BC = 10$ cm. \n[[br]] a) [TH] Tính $AC$. \n[[br]] b) [TH] Viết tỉ số $\\sin \\widehat{C}$ từ đó suy ra số đo $\\widehat{C}$ (làm tròn đến độ).",
+          "label": "Bài 4."
         }
       ],
-      "solution": "\\textbf{Bài 1.} a) $AB=\\sqrt{13^2-12^2}=5$. Góc $B$: đối $=AC=12$, kề $=AB=5$. $\\sin B=\\dfrac{12}{13}$, $\\cos B=\\dfrac{5}{13}$, $\\tan B=\\dfrac{12}{5}$, $\\cot B=\\dfrac{5}{12}$. [[br]] b) $AC=\\sqrt{(5\\sqrt2)^2-5^2}=5$. $\\sin B=\\dfrac{5}{5\\sqrt2}=\\dfrac{\\sqrt2}{2}$, $\\cos B=\\dfrac{\\sqrt2}{2}$, $\\tan B=1$, $\\cot B=1$ (góc $B=45^\\circ$). [[br]] c) $BC=\\sqrt{3a^2+a^2}=2a$. $\\sin B=\\dfrac{a}{2a}=\\dfrac12$, $\\cos B=\\dfrac{a\\sqrt3}{2a}=\\dfrac{\\sqrt3}{2}$, $\\tan B=\\dfrac{1}{\\sqrt3}=\\dfrac{\\sqrt3}{3}$, $\\cot B=\\sqrt3$ (góc $B=30^\\circ$).\\par\\smallskip \\textbf{Bài 2.} $AC=\\sqrt{3{,}5^2-1{,}5^2}=\\sqrt{10}\\approx3{,}16$. Góc $C$: đối $=AB=1{,}5$, kề $=AC$, huyền $=BC=3{,}5$. [[br]] $\\sin C=\\dfrac{1{,}5}{3{,}5}=\\dfrac{3}{7}$, $\\cos C=\\dfrac{\\sqrt{10}}{3{,}5}=\\dfrac{2\\sqrt{10}}{7}$, $\\tan C=\\dfrac{1{,}5}{\\sqrt{10}}=\\dfrac{3\\sqrt{10}}{20}$, $\\cot C=\\dfrac{\\sqrt{10}}{1{,}5}=\\dfrac{2\\sqrt{10}}{3}$. [[br]] Vì $B,C$ phụ nhau: $\\sin B=\\cos C=\\dfrac{2\\sqrt{10}}{7}$, $\\cos B=\\sin C=\\dfrac37$, $\\tan B=\\cot C=\\dfrac{2\\sqrt{10}}{3}$, $\\cot B=\\tan C=\\dfrac{3\\sqrt{10}}{20}$.\\par\\smallskip \\textbf{Bài 3.} a) $27^\\circ+63^\\circ=90^\\circ$ nên $\\sin27^\\circ=\\cos63^\\circ$, $\\cos27^\\circ=\\sin63^\\circ$, $\\tan27^\\circ=\\cot63^\\circ$, $\\cot27^\\circ=\\tan63^\\circ$. [[br]] b) $\\sin55^\\circ=\\cos35^\\circ$, $\\cos62^\\circ=\\sin28^\\circ$, $\\tan57^\\circ=\\cot33^\\circ$, $\\cot64^\\circ=\\tan26^\\circ$.",
-      "teacher_note": "Bài 1 dùng Pythagore tìm cạnh thiếu trước. Nhắc 'đối–kề theo góc B'. Bài 2 chốt mẹo: tính cho góc dễ rồi suy góc phụ. Bài 3 luyện phản xạ góc phụ nhau."
+      "solution": "\\textbf{Bài 1.} a) $\\sin B=\\dfrac{4}{5}; \\cos B=\\dfrac{3}{5}; \\tan B=\\dfrac{4}{3}; \\cot B=\\dfrac{3}{4}$. b) $\\sin E=\\dfrac{12}{13}; \\cos E=\\dfrac{5}{13}; \\tan E=\\dfrac{12}{5}; \\cot E=\\dfrac{5}{12}$. [[br]] \\textbf{Bài 2.} a) Tính $MN=5$. $\\sin N=\\dfrac{12}{13}; \\cos N=\\dfrac{5}{13}; \\tan N=\\dfrac{12}{5}; \\cot N=\\dfrac{5}{12}$. b) Tính $MP=5$. $\\sin N=\\cos N=\\dfrac{\\sqrt{2}}{2}; \\tan N=\\cot N=1$. [[br]] \\textbf{Bài 3.} a) $\\cos 50^\\circ; \\sin 65^\\circ$. b) $\\cot 33^\\circ; \\tan 26^\\circ$. [[br]] \\textbf{Bài 4.} a) Tính Pythagore $AC=8$ cm. b) $\\sin C = \\dfrac{AB}{BC} = \\dfrac{6}{10} = 0,6 \\Rightarrow \\widehat{C} \\approx 37^\\circ$.",
+      "teacher_note": "- DẠNG \\& MỨC: Bài 1-3 là [NB] rèn công thức. Bài 4 là đề GKI Nguyễn Du (câu tính toán cho điểm).\n- LƯU Ý: Lớp B phải đảm bảo 100\\% làm được bài 1, 2, 4 vì đây là gạch đá xây dựng các câu thực tế."
     },
     {
       "kind": "practice2",
       "number": 4,
-      "title": "Luyện tập 2 — Biểu thức lượng giác, so sánh",
+      "title": "Luyện tập 2",
       "blocks": [
         {
-          "type": "noted",
-          "text": "\\textbf{Mẹo so sánh (không máy tính).} Đưa về \\emph{cùng một loại} (vd cùng $\\sin$) qua góc phụ nhau, rồi dùng: khi góc nhọn tăng thì $\\sin,\\tan$ \\textbf{tăng}, còn $\\cos,\\cot$ \\textbf{giảm}."
+          "type": "figure",
+          "caption": "Mô phỏng tháp Bát Tràng (ảnh minh họa).",
+          "width": "0.35\\linewidth",
+          "image": "images/tower.png"
         },
         {
           "type": "problem",
-          "label": "Bài 4.",
-          "tier": "onclass",
-          "statement": "Không dùng máy tính, hãy so sánh: [[br]] a) $\\cos60^\\circ$ và $\\cos70^\\circ$; [[br]] b) $\\tan73^\\circ20'$ và $\\tan45^\\circ$; [[br]] c) $\\sin40^\\circ$ và $\\cos70^\\circ$."
+          "level": 3,
+          "statement": "\\emph{(Đề GKI - Bát Tràng)} [VD] Tia nắng mặt trời tạo với mặt đất một góc $34^\\circ$. Bóng của một tòa tháp trên mặt đất dài $8,6$ m. Tính chiều cao của tòa tháp (làm tròn đến chữ số thập phân thứ nhất).",
+          "label": "Bài 5."
         },
         {
-          "type": "writelines",
-          "count": 3
-        },
-        {
-          "type": "problem",
-          "label": "Bài 5.",
-          "tier": "onclass",
-          "statement": "Sắp xếp các tỉ số lượng giác sau theo thứ tự \\textbf{tăng dần} (đưa về cùng loại trước): $\\sin70^\\circ,\\ \\cos30^\\circ,\\ \\cos40^\\circ,\\ \\sin51^\\circ$."
-        },
-        {
-          "type": "writelines",
-          "count": 3
+          "type": "figure",
+          "caption": "Máy bay cất cánh theo đường xiên.",
+          "width": "0.45\\linewidth",
+          "image": "images/airplane.png"
         },
         {
           "type": "problem",
-          "label": "Bài 6.",
-          "tier": "onclass",
-          "statement": "Tính giá trị các biểu thức: [[br]] a) $\\sin45^\\circ\\cdot\\cos45^\\circ+\\sin30^\\circ$; [[br]] b) $1+\\tan^2 60^\\circ$; [[br]] c) $\\dfrac{\\sin39^\\circ}{\\cos51^\\circ}$ và $\\tan73^\\circ-\\cot17^\\circ$ (dùng góc phụ nhau)."
+          "level": 3,
+          "statement": "\\emph{(Đề GKI - Nguyễn Du)} [VD] Một chiếc máy bay cất cánh, đường bay tạo với phương ngang một góc $30^\\circ$. Hỏi sau khi bay được quảng đường $12$ km thì máy bay đang ở độ cao bao nhiêu km so với mặt đất?",
+          "label": "Bài 6."
         },
         {
-          "type": "writelines",
-          "count": 3
+          "type": "problem",
+          "level": 4,
+          "statement": "\\emph{(Đề GKI - Nguyễn Du)} Cho $\\Delta ABC$ vuông tại $A$. Gọi $M$ là trung điểm của $AC$. Kẻ $AH \\perp BM$ tại $H$. \n[[br]] a) [TH] Chứng minh $\\Delta HAM \\sim \\Delta ABM$. Suy ra $\\dfrac{AM}{BM} = \\dfrac{HM}{AM}$. \n[[br]] b) [VDC] Dựa vào góc nhọn $\\widehat{AMB}$, chứng minh: $\\cos^2 \\widehat{AMB} = \\dfrac{HM}{BM}$.",
+          "label": "Bài 7."
         }
       ],
-      "solution": "\\textbf{Bài 4.} a) $\\cos$ giảm theo góc nên $\\cos60^\\circ>\\cos70^\\circ$. [[br]] b) $\\tan$ tăng theo góc nên $\\tan73^\\circ20'>\\tan45^\\circ$. [[br]] c) $\\cos70^\\circ=\\sin20^\\circ$ và $40^\\circ>20^\\circ$ nên $\\sin40^\\circ>\\sin20^\\circ$, tức $\\sin40^\\circ>\\cos70^\\circ$.\\par\\smallskip \\textbf{Bài 5.} Đưa về $\\sin$: $\\cos30^\\circ=\\sin60^\\circ$, $\\cos40^\\circ=\\sin50^\\circ$. So $\\sin50^\\circ<\\sin51^\\circ<\\sin60^\\circ<\\sin70^\\circ$. [[br]] Vậy thứ tự tăng dần: $\\cos40^\\circ<\\sin51^\\circ<\\cos30^\\circ<\\sin70^\\circ$.\\par\\smallskip \\textbf{Bài 6.} a) $\\dfrac{\\sqrt2}{2}\\cdot\\dfrac{\\sqrt2}{2}+\\dfrac12=\\dfrac12+\\dfrac12=1$. [[br]] b) $1+(\\sqrt3)^2=1+3=4$. [[br]] c) $\\cos51^\\circ=\\sin39^\\circ$ nên $\\dfrac{\\sin39^\\circ}{\\cos51^\\circ}=1$; $\\cot17^\\circ=\\tan73^\\circ$ nên $\\tan73^\\circ-\\cot17^\\circ=0$.",
-      "teacher_note": "Boss của phiếu. Bài 5 chốt kĩ thuật 'đổi cos sang sin' để cùng loại rồi so sánh đơn điệu. Bài 6 dùng bảng đặc biệt + góc phụ nhau; nhắc $\\sin^2\\alpha+\\cos^2\\alpha=1$ cho phần biểu thức."
+      "solution": "\\textbf{Bài 5.} Gọi chiều cao tháp là $h$, bóng dài $8,6$ m. Xét tam giác vuông: $\\tan 34^\\circ = \\dfrac{h}{8,6} \\Rightarrow h = 8,6 \\cdot \\tan 34^\\circ \\approx 5,8$ m. [[br]] \\textbf{Bài 6.} Quãng đường bay là cạnh huyền $12$ km, độ cao là cạnh đối góc $30^\\circ$. Độ cao $h = 12 \\cdot \\sin 30^\\circ = 6$ km. [[br]] \\textbf{Bài 7.} a) $\\Delta HAM$ và $\\Delta ABM$ có $\\widehat{AMB}$ chung, $\\widehat{AHM}=\\widehat{BAM}=90^\\circ$ $\\Rightarrow$ $\\Delta HAM \\sim \\Delta ABM$ (g.g). Tỉ số đồng dạng $\\dfrac{AM}{BM} = \\dfrac{HM}{AM}$. [[br]] b) Xét $\\Delta ABM$ vuông tại $A$: $\\cos \\widehat{AMB} = \\dfrac{AM}{BM}$. Suy ra $\\cos^2 \\widehat{AMB} = \\left(\\dfrac{AM}{BM}\\right)^2 = \\dfrac{AM^2}{BM^2}$. Mà từ (a) có $AM^2 = HM \\cdot BM$. Do đó $\\cos^2 \\widehat{AMB} = \\dfrac{HM \\cdot BM}{BM^2} = \\dfrac{HM}{BM}$ (đpcm).",
+      "teacher_note": "- DẠNG \\& MỨC: Bài 5, 6 là [VD] bài toán thực tế lấy trực tiếp từ đề thi. Bài 7 là [VDC] phân loại 9 điểm.\n- KHI HS BÍ: Nhắc HS tự vẽ hình cho Bài 5, 6 thành tam giác vuông. Bài 7b: gợi ý viết tỉ số $\\cos AMB$ trước, bình phương lên rồi thay $AM^2$ từ câu a."
     },
     {
       "kind": "reflection",
@@ -192,110 +134,46 @@
       "title": "Tổng kết",
       "blocks": [
         {
-          "type": "para",
-          "text": "Bốn tỉ số $\\sin,\\cos,\\tan,\\cot$ của một góc nhọn chỉ phụ thuộc \\emph{góc} (do tam giác đồng dạng). [[br]] Ba công cụ vàng: \\textbf{bảng góc đặc biệt}, \\textbf{góc phụ nhau}, và đẳng thức $\\sin^2\\alpha+\\cos^2\\alpha=1$, $\\tan\\alpha\\cdot\\cot\\alpha=1$."
-        },
-        {
-          "type": "mindmap",
-          "caption": "Sơ đồ tư duy — em điền các ô trống để chốt kiến thức",
-          "root": "Tỉ số lượng giác góc nhọn",
-          "branches": [
-            {
-              "label": "4 tỉ số (góc $\\alpha$)",
-              "children": [
-                {
-                  "label": "$\\sin=$ đối$/$[[blank:1.4cm]]"
-                },
-                {
-                  "label": "$\\tan=$ đối$/$[[blank:1.2cm]]"
-                }
-              ]
-            },
-            {
-              "label": "Góc phụ nhau",
-              "children": [
-                {
-                  "label": "$\\sin\\alpha=\\cos$ [[blank:1.6cm]]"
-                },
-                {
-                  "label": "$\\tan\\alpha=\\cot$ [[blank:1.6cm]]"
-                }
-              ]
-            },
-            {
-              "label": "Đẳng thức",
-              "children": [
-                {
-                  "label": "$\\sin^2\\alpha+\\cos^2\\alpha=$ [[blank:1cm]]"
-                },
-                {
-                  "label": "$\\tan\\alpha\\cdot\\cot\\alpha=$ [[blank:1cm]]"
-                }
-              ]
-            }
-          ]
+          "type": "noted",
+          "text": "\\textbf{Kiến thức cốt lõi:}\n- Luôn vẽ hình và đánh dấu góc cần tính.\n- Xác định đúng 3 vai trò: KỀ, ĐỐI, HUYỀN so với góc nhọn đang xét.\n- \\emph{Sin = Đối / Huyền}; \\emph{Cos = Kề / Huyền}; \\emph{Tan = Đối / Kề}; \\emph{Cot = Kề / Đối}."
         },
         {
           "type": "problem",
-          "label": "Bài 7.",
-          "tier": "btvn",
-          "statement": "Cho góc nhọn $\\alpha$ có $\\sin\\alpha=\\dfrac35$. Tính $\\cos\\alpha,\\ \\tan\\alpha,\\ \\cot\\alpha$ (dùng $\\sin^2\\alpha+\\cos^2\\alpha=1$)."
-        },
-        {
-          "type": "problem",
+          "level": 1,
+          "statement": "Cho tam giác $PQR$ vuông tại $P$ có $PQ=9, PR=12, QR=15$. Tính 4 TSLG của góc $R$.",
           "label": "Bài 8.",
-          "tier": "btvn",
-          "statement": "Dùng tỉ số lượng giác của hai góc phụ nhau, tính: [[br]] a) $\\cos37^\\circ30'-\\sin52^\\circ30'$; [[br]] b) $\\cot44^\\circ\\cdot\\cot46^\\circ$; [[br]] c) $\\sin^2 79^\\circ+\\cos^2 79^\\circ$."
+          "tier": "btvn"
         },
         {
           "type": "problem",
+          "level": 2,
+          "statement": "Cho tam giác $XYZ$ vuông tại $X$, biết $XY=3$ và $YZ=7$. Dùng Pythagore tính $XZ$ và tính các TSLG của góc $Y$.",
           "label": "Bài 9.",
-          "tier": "btvn",
-          "statement": "Dùng máy tính cầm tay, tìm số đo góc nhọn $\\alpha$ (làm tròn đến phút), biết: [[br]] a) $\\sin\\alpha=0{,}3$; [[br]] b) $\\cos\\alpha=\\dfrac12$; [[br]] c) $\\tan\\alpha=\\dfrac57$; [[br]] d) $\\cot\\alpha=4$."
-        },
-        {
-          "type": "para",
-          "text": "\\textbf{Nhịp cầu lên mở rộng.} Khi đề \\emph{chưa} cho biết tam giác vuông, ta dùng \\textbf{Pythagore đảo} để chứng minh vuông trước, rồi mới tính tỉ số — thêm đúng một bước so với bài trên lớp."
+          "tier": "btvn"
         },
         {
           "type": "problem",
+          "level": 1,
+          "statement": "Thay bằng tỉ số của góc phụ nhau: [[br]] a) $\\sin 75^\\circ$; [[br]] b) $\\cot 82^\\circ$; [[br]] c) $\\cos 15^\\circ$; [[br]] d) $\\tan 44^\\circ$.",
           "label": "Bài 10.",
-          "tier": "extend",
-          "statement": "Cho tam giác $MNP$ có $MN=5$ cm, $MP=12$ cm, $NP=13$ cm. Chứng minh tam giác $MNP$ vuông tại $M$, rồi tính bốn tỉ số lượng giác của góc $N$.",
-          "hints": [
-            "So sánh $MN^2+MP^2$ với $NP^2$ (Pythagore đảo) để chỉ ra góc vuông ở $M$.",
-            "Với góc $N$: cạnh đối là $MP$, cạnh kề là $MN$, cạnh huyền là $NP$."
-          ]
+          "tier": "btvn"
         },
         {
           "type": "problem",
+          "level": 3,
+          "statement": "\\emph{(Đề GKI - Nguyễn Du)} Một chiếc máy bay bay lên với vận tốc $250$ km/h. Đường bay tạo với phương ngang góc $30^\\circ$. Hỏi sau bao nhiêu phút kể từ lúc cất cánh thì máy bay đạt độ cao $5000$ m?",
           "label": "Bài 11.",
-          "tier": "extend",
-          "statement": "Tam giác $ABC$ cân tại $A$ có $BC=6$ và đường cao $AH=4$. Tính bốn tỉ số lượng giác của góc $B$.",
-          "hints": [
-            "$H$ là trung điểm $BC$ nên $BH=3$; tính $AB$ bằng Pythagore trong tam giác $ABH$ vuông tại $H$.",
-            "Xét góc $B$ trong tam giác vuông $ABH$: đối là $AH$, kề là $BH$, huyền là $AB$."
-          ]
-        },
-        {
-          "type": "figure",
-          "tikz": "\\begin{tikzpicture}[line width=0.9pt,font=\\small]\\coordinate (B) at (0,0);\\coordinate (C) at (6,0);\\coordinate (H) at (3,0);\\coordinate (A) at (3,4);\\draw[ink] (A)--(B)--(C)--cycle;\\draw[ink,dashed,line width=0.7pt] (A)--(H);\\draw[ink,line width=0.7pt] (3.3,0)--(3.3,0.3)--(3,0.3);\\node[above] at (A) {$A$};\\node[below left] at (B) {$B$};\\node[below right] at (C) {$C$};\\node[below] at (H) {$H$};\\node[brand,left=1pt] at ($(A)!0.5!(H)$) {$4$};\\node[below=1pt] at (1.5,0) {$3$};\\node[below=1pt] at (4.5,0) {$3$};\\end{tikzpicture}",
-          "caption": "Tam giác $ABC$ cân tại $A$, đường cao $AH$ ($H$ là trung điểm $BC$).",
-          "width": "0.44\\linewidth"
+          "tier": "btvn"
         },
         {
           "type": "problem",
+          "level": 3,
+          "statement": "\\emph{(Đề GKI - Bát Tràng)} Cho tam giác $ABC$ có góc $B$ và góc $C$ nhọn. Kẻ đường cao $AH$ ($H \\in BC$). Chứng minh: $BC = AB \\cdot \\cos \\widehat{ABC} + AC \\cdot \\cos \\widehat{ACB}$.",
           "label": "Bài 12.",
-          "tier": "extend",
-          "statement": "\\textbf{Thử thách (tự chọn) —} Tính giá trị các biểu thức (không dùng máy tính): [[br]] a) $\\tan73^\\circ\\cdot\\tan37^\\circ\\cdot\\tan53^\\circ\\cdot\\tan17^\\circ$; [[br]] b) $\\cos^2 73^\\circ+\\cos^2 53^\\circ+\\cos^2 17^\\circ+\\cos^2 37^\\circ$.",
-          "hints": [
-            "Ghép các góc phụ nhau: $73^\\circ+17^\\circ=90^\\circ$, $37^\\circ+53^\\circ=90^\\circ$; nhớ $\\tan\\alpha\\cdot\\cot\\alpha=1$ và $\\tan(90^\\circ-\\alpha)=\\cot\\alpha$.",
-            "Ở b) đổi $\\cos73^\\circ=\\sin17^\\circ$, $\\cos53^\\circ=\\sin37^\\circ$ rồi gom từng cặp $\\sin^2+\\cos^2=1$."
-          ]
+          "tier": "btvn"
         }
       ],
-      "solution": "\\textbf{Bài 7.} $\\cos\\alpha=\\sqrt{1-\\dfrac{9}{25}}=\\dfrac45$; $\\tan\\alpha=\\dfrac{\\sin}{\\cos}=\\dfrac34$; $\\cot\\alpha=\\dfrac43$.\\par\\smallskip \\textbf{Bài 8.} a) $\\sin52^\\circ30'=\\cos37^\\circ30'$ nên hiệu $=0$. [[br]] b) $\\cot46^\\circ=\\tan44^\\circ$ nên $\\cot44^\\circ\\cdot\\tan44^\\circ=1$. [[br]] c) $\\sin^2 79^\\circ+\\cos^2 79^\\circ=1$.\\par\\smallskip \\textbf{Bài 9.} a) $\\alpha\\approx17^\\circ27'$. [[br]] b) $\\alpha=60^\\circ$. [[br]] c) $\\alpha\\approx35^\\circ32'$. [[br]] d) $\\tan\\alpha=\\dfrac14\\Rightarrow\\alpha\\approx14^\\circ2'$.\\par\\smallskip \\textbf{Bài 10.} $MN^2+MP^2=25+144=169=NP^2$ nên $\\triangle MNP$ vuông tại $M$. [[br]] Góc $N$: $\\sin N=\\dfrac{MP}{NP}=\\dfrac{12}{13}$, $\\cos N=\\dfrac{MN}{NP}=\\dfrac{5}{13}$, $\\tan N=\\dfrac{12}{5}$, $\\cot N=\\dfrac{5}{12}$.\\par\\smallskip \\textbf{Bài 11.} $BH=3$; $AB=\\sqrt{AH^2+BH^2}=\\sqrt{16+9}=5$. [[br]] Góc $B$: $\\sin B=\\dfrac{AH}{AB}=\\dfrac45$, $\\cos B=\\dfrac{BH}{AB}=\\dfrac35$, $\\tan B=\\dfrac43$, $\\cot B=\\dfrac34$.\\par\\smallskip \\textbf{Bài 12.} a) $\\tan73^\\circ\\cdot\\tan17^\\circ=1$ và $\\tan53^\\circ\\cdot\\tan37^\\circ=1$ (góc phụ, $\\tan\\cdot\\cot=1$), nên tích $=1$. [[br]] b) $\\cos73^\\circ=\\sin17^\\circ$, $\\cos53^\\circ=\\sin37^\\circ$: biểu thức $=(\\sin^2 17^\\circ+\\cos^2 17^\\circ)+(\\sin^2 37^\\circ+\\cos^2 37^\\circ)=1+1=2$.\\par\\medskip \\textbf{Đáp án sơ đồ:} $\\sin=$ đối$/$\\emph{huyền}; $\\tan=$ đối$/$\\emph{kề}; $\\sin\\alpha=\\cos(90^\\circ-\\alpha)$; $\\tan\\alpha=\\cot(90^\\circ-\\alpha)$; $\\sin^2\\alpha+\\cos^2\\alpha=1$; $\\tan\\alpha\\cdot\\cot\\alpha=1$.",
-      "teacher_note": "BTVN 7–9 phủ: đẳng thức cơ bản, góc phụ nhau, dùng MTCT. Thang mở rộng: 10 (Pythagore đảo $\\to$ tính tỉ số) $\\to$ 11 (dựng đường cao trong tam giác cân) $\\to$ 12 (gom biểu thức bằng góc phụ + $\\sin^2+\\cos^2=1$)."
+      "solution": "\n\n\\textbf{Bài 1.} $\\sin R=9/15=3/5; \\cos R=12/15=4/5; \\tan R=3/4; \\cot R=4/3$. [[br]] \\textbf{Bài 2.} Tính $XZ=\\sqrt{40}=2\\sqrt{10}$. $\\sin Y=2\\sqrt{10}/7; \\cos Y=3/7; \\tan Y=2\\sqrt{10}/3; \\cot Y=3/(2\\sqrt{10})$. [[br]] \\textbf{Bài 3.} a) $\\cos 15^\\circ$; b) $\\tan 8^\\circ$; c) $\\sin 75^\\circ$; d) $\\cot 46^\\circ$. [[br]] \\textbf{Bài 4.} Đổi $5000$ m = $5$ km. Quãng đường cần bay là cạnh huyền $x$. Độ cao là $5$ km. $5 = x \\cdot \\sin 30^\\circ \\Rightarrow x = 10$ km. Thời gian bay: $t = s/v = 10 / 250 = 0,04$ giờ = $2,4$ phút. [[br]] \\textbf{Bài 5.} Xét $\\Delta ABH$ vuông tại $H$: $\\cos \\widehat{ABC} = \\dfrac{BH}{AB} \\Rightarrow BH = AB \\cdot \\cos \\widehat{ABC}$. Tương tự trong $\\Delta ACH$: $CH = AC \\cdot \\cos \\widehat{ACB}$. Mà $H$ nằm giữa $B, C$ nên $BC = BH + CH = AB \\cdot \\cos \\widehat{ABC} + AC \\cdot \\cos \\widehat{ACB}$."
     }
   ]
 }

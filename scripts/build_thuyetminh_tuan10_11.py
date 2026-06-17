@@ -32,28 +32,30 @@ def meta_table(rows: list[tuple[str, str]]) -> str:
 
 
 def phieu_table(groups, total) -> str:
-    col = (r"|>{\RaggedRight\arraybackslash}p{10.2cm}|"
-           r"*{6}{>{\centering\arraybackslash}p{2.0cm}|}")
+    col = (r"|>{\RaggedRight\arraybackslash}p{8.4cm}|"
+           r"*{8}{>{\centering\arraybackslash}p{1.7cm}|}")
     L = [rf"\begin{{tabular}}{{{col}}}", r"\arrayrulecolor{rule}\hline"]
     # header 2 dòng
     L.append(r"\rowcolor{neutral}\multirow{2}{*}{\sffamily\bfseries Dạng bài} "
+             r"& \multicolumn{2}{>{\columncolor{neutral}}c|}{\sffamily\bfseries Lý thuyết} "
              r"& \multicolumn{2}{>{\columncolor{neutral}}c|}{\sffamily\bfseries Ví dụ lý thuyết} "
              r"& \multicolumn{2}{>{\columncolor{neutral}}c|}{\sffamily\bfseries Bài tập trên lớp} "
-             r"& \multicolumn{2}{>{\columncolor{neutral}}c|}{\sffamily\bfseries BTVN} \\ \cline{2-7}")
-    L.append(r"\rowcolor{neutral} & \sffamily\footnotesize Số câu & \sffamily\footnotesize Thời gian "
+             r"& \multicolumn{2}{>{\columncolor{neutral}}c|}{\sffamily\bfseries BTVN} \\ \cline{2-9}")
+    L.append(r"\rowcolor{neutral} & \sffamily\footnotesize Số mục & \sffamily\footnotesize Thời gian "
+             r"& \sffamily\footnotesize Số câu & \sffamily\footnotesize Thời gian "
              r"& \sffamily\footnotesize Số câu & \sffamily\footnotesize Thời gian "
              r"& \sffamily\footnotesize Số câu & \sffamily\footnotesize Thời gian \\ \hline")
     for title, tint, rows, sub in groups:
-        L.append(rf"\multicolumn{{7}}{{|l|}}{{\cellcolor{{{tint}!16}}\sffamily\bfseries\color{{{tint}}}{title}}} \\ \hline")
-        for dang, ex, exT, on, onT, bt, btT in rows:
-            L.append(f"{dang} & {ex} & {exT} & {on} & {onT} & {bt} & {btT} \\\\ \\hline")
-        sx, son, sonT, sbt, sbtT = sub
+        L.append(rf"\multicolumn{{9}}{{|l|}}{{\cellcolor{{{tint}!16}}\sffamily\bfseries\color{{{tint}}}{title}}} \\ \hline")
+        for dang, lt, ltT, ex, exT, on, onT, bt, btT in rows:
+            L.append(f"{dang} & {lt} & {ltT} & {ex} & {exT} & {on} & {onT} & {bt} & {btT} \\\\ \\hline")
+        sltN, sltT, sxN, sxT, son, sonT, sbt, sbtT = sub
         L.append(rf"\multicolumn{{1}}{{|r|}}{{\itshape\bfseries Cộng nhóm}} & "
-                 rf"\multicolumn{{2}}{{c|}}{{\itshape {sx}}} & "
+                 rf"\itshape {sltN} & \itshape {sltT} & \itshape {sxN} & \itshape {sxT} & "
                  rf"\bfseries {son} & \bfseries {sonT} & \bfseries {sbt} & \bfseries {sbtT} \\ \hline")
-    tx, ton, tonT, tbt, tbtT = total
+    tltN, tltT, txN, txT, ton, tonT, tbt, tbtT = total
     L.append(rf"\rowcolor{{brand!12}}\multicolumn{{1}}{{|r|}}{{\sffamily\bfseries\color{{brand}}TỔNG}} & "
-             rf"\multicolumn{{2}}{{>{{\columncolor{{brand!12}}}}c|}}{{\bfseries {tx}}} & "
+             rf"\bfseries {tltN} & \bfseries {tltT} & \bfseries {txN} & \bfseries {txT} & "
              rf"\bfseries {ton} & \bfseries {tonT} & \bfseries {tbt} & \bfseries {tbtT} \\ \hline")
     L.append(r"\end{tabular}")
     return "\n".join(L)
@@ -64,14 +66,9 @@ meta = [
     ("Tên bài", r"\textbf{Bất phương trình bậc nhất một ẩn} — Tuần 10–11 \textbf{(LỚP C)}. "
                 r"Gồm 2 phiếu: \textbf{Phiếu A} — Nhận biết \& giải BPT; "
                 r"\textbf{Phiếu B} — Toán thực tế lập BPT."),
-    ("Thời gian", r"Mỗi phiếu $=$ 1 buổi $=$ 180′ ($=$ 165′ trên lớp $+$ 15′ giải lao). "
-                  r"Trên lớp: Ví dụ/giảng (Khám phá \& Khái niệm) $\approx$ 25–30′ "
-                  r"$+$ Luyện tập 120′. BTVN $\approx$ 90′ ở nhà."),
-    ("Nguồn đề", r"$\approx$ 70\% bê nguyên từ 10 đề GIỮA KÌ I 2024–2025 (ghi rõ tên trường) "
-                 r"$+$ 30\% phiếu bổ trợ TOANMATH/SGK. \textbf{Không bịa đề.}"),
-    ("Cách dùng", r"\textbf{Phiếu A:} Luyện tập \& BTVN in \textbf{ĐỀ BÀI tối giản} — HS chép đề, làm vào vở "
-                  r"(Thầy hướng dẫn trực tiếp). \textbf{Phiếu B:} \textbf{GIỮ GIÀN GIÁO} — bài toán thực tế (boss) "
-                  r"chẻ câu nhỏ a–h có ô điền, gỡ giàn dần; các bài drill nhận biết in đề gọn."),
+    ("Thời gian", r"\textbf{1 ca $=$ 180 phút} (lớp 9 đại số) $=$ \textbf{Dạy lý thuyết} $\approx$45′ "
+                  r"(Khám phá $+$ Khái niệm $+$ ví dụ mẫu) $+$ \textbf{Giải lao} 10–15′ "
+                  r"$+$ \textbf{Luyện tập trên lớp} 120′. BTVN $\approx$90′ (ở nhà, ngoài ca)."),
 ]
 
 lythuyet = [
@@ -117,39 +114,35 @@ kienthucNB = [
 
 phieuA = ([
     (r"NHẬN BIẾT — NB ($\bigstar$)", "stage1", [
-        (r"Nhận biết BPT bậc nhất một ẩn; hệ số $a,b$; điều kiện tham số (Bài 1, 3 / BTVN 11, 14)", "1", "~2′", "10", "15′", "12", "16′"),
-        (r"Giải BPT một bước; điền dấu khi nhân/chia (Bài 2 / BTVN 12)", "1", "~2′", "10", "15′", "8", "10′"),
-        (r"Thử nghiệm: thay số xét nghiệm đúng/sai (Bài 4 / BTVN 13)", "1", "~1′", "7", "11′", "7", "9′"),
-        (r"Nhận \& sửa lỗi đổi chiều — Đúng/Sai (Bài 5)", "—", "—", "5", "8′", "—", "—"),
-    ], ("3 ví dụ", "32", "48′", "27", "35′")),
+        (r"Nhận biết BPT bậc nhất một ẩn; hệ số $a,b$; điều kiện tham số (Bài 1, 3 / BTVN 11, 14)", "1", "7′", "1", "7′", "10", "15′", "12", "16′"),
+        (r"Giải BPT một bước; điền dấu khi nhân/chia (Bài 2 / BTVN 12)", "1", "5′", "1", "5′", "10", "15′", "8", "10′"),
+        (r"Thử nghiệm: thay số xét nghiệm đúng/sai (Bài 4 / BTVN 13)", "1", "3′", "1", "3′", "7", "11′", "7", "9′"),
+        (r"Nhận \& sửa lỗi đổi chiều — Đúng/Sai (Bài 5)", "—", "—", "—", "—", "5", "8′", "—", "—"),
+    ], ("3", "15′", "3", "15′", "32", "49′", "27", "35′")),
     (r"THÔNG HIỂU — TH ($\bigstar\bigstar$)", "stage2", [
-        (r"Giải BPT: cơ bản, có ngoặc, khai triển HĐT (Bài 6, 7, 8 / BTVN 15)", "2", "~8′", "6", "36′", "7", "36′"),
-        (r"Giải BPT có mẫu: quy đồng khử mẫu (Bài 9)", "—", "—", "2", "12′", "—", "—"),
-    ], ("2 ví dụ", "8", "48′", "7", "36′")),
+        (r"Giải BPT: cơ bản, có ngoặc, khai triển HĐT (Bài 6, 7, 8 / BTVN 15)", "1", "5′", "1", "10′", "6", "36′", "7", "36′"),
+        (r"Giải BPT có mẫu: quy đồng khử mẫu — Thầy làm mẫu trên bảng (Bài 9)", "1", "5′", "1", "10′", "2", "12′", "—", "—"),
+    ], ("2", "10′", "2", "20′", "8", "48′", "7", "36′")),
     (r"VẬN DỤNG — VD ($\bigstar\bigstar\bigstar$)", "stage3", [
-        (r"Tìm số nguyên lớn nhất / nhỏ nhất thoả BPT (Bài 10 / BTVN 16)", "—", "—", "2", "24′", "2", "21′"),
-    ], ("—", "2", "24′", "2", "21′")),
-], ("4 ví dụ", "42", "120′", "36", "92′"))
+        (r"Tìm số nguyên lớn nhất / nhỏ nhất thoả BPT (Bài 10 / BTVN 16)", "—", "—", "—", "—", "2", "24′", "2", "21′"),
+    ], ("—", "—", "—", "—", "2", "24′", "2", "21′")),
+], ("5", "25′", "5", "35′", "42", "121′", "36", "92′"))
 
 phieuB = ([
     (r"NHẬN BIẾT — NB ($\bigstar$)", "stage1", [
-        (r"Từ khoá $\to$ dấu; dịch câu thành BPT (Bài 1 / BTVN 7, 8)", "1", "~1′", "6", "9′", "14", "18′"),
-        (r"Viết biểu thức theo ẩn $x$ (Bài 2 / BTVN 9)", "—", "—", "10", "15′", "8", "10′"),
-        (r"Xác định chiều làm tròn (Bài 3 / BTVN 10)", "—", "—", "6", "9′", "6", "8′"),
-        (r"Ý nhận biết trong toán thực tế chẻ câu (Bài 5, 6 / BTVN 11)", "—", "—", "5", "8′", "1", "1′"),
-    ], ("1 ví dụ", "27", "40′", "29", "38′")),
+        (r"Từ khoá $\to$ dấu; dịch câu thành BPT (Bài 1 / BTVN 9, 10)", "1", "8′", "1", "10′", "6", "9′", "14", "18′"),
+        (r"Viết biểu thức theo ẩn $x$ (Bài 2 / BTVN 11)", "—", "—", "—", "—", "10", "15′", "8", "10′"),
+        (r"Xác định chiều làm tròn (Bài 3 / BTVN 12)", "—", "—", "—", "—", "6", "9′", "6", "8′"),
+        (r"Ý nhận biết trong toán thực tế (Bài 5, 6, 7 / BTVN 15)", "—", "—", "—", "—", "6", "9′", "1", "1′"),
+    ], ("1", "8′", "1", "10′", "28", "42′", "29", "37′")),
     (r"THÔNG HIỂU — TH ($\bigstar\bigstar$)", "stage2", [
-        (r"Lập BPT từ tình huống — chưa giải (Bài 4 / BTVN 12)", "1", "~4′", "3", "18′", "4", "21′"),
-        (r"Ý thông hiểu trong toán thực tế chẻ câu: lập \& biến đổi BPT (Bài 5, 6 / BTVN 11, 13)", "—", "—", "5", "30′", "3", "15′"),
-    ], ("1 ví dụ", "8", "48′", "7", "36′")),
+        (r"Lập BPT từ tình huống — chưa giải (Bài 4 / BTVN 13)", "1", "7′", "1", "10′", "3", "18′", "4", "21′"),
+        (r"Ý thông hiểu toán thực tế chẻ câu (Bài 5, 6, 7, 8 / BTVN 14, 15, 16)", "—", "—", "1", "10′", "8", "48′", "3", "16′"),
+    ], ("1", "7′", "2", "20′", "11", "66′", "7", "37′")),
     (r"VẬN DỤNG — VD ($\bigstar\bigstar\bigstar$)", "stage3", [
-        (r"Kết luận \& thử lại trong toán thực tế (Bài 5, 6 / BTVN 11, 13)", "—", "—", "2", "24′", "2", "21′"),
-    ], ("—", "2", "24′", "2", "21′")),
-], ("2 ví dụ", "37", "112′", "38", "95′"))
-
-noteB = (r"\textit{\small\color{muted}Ghi chú:} bài toán thực tế (boss) của Phiếu B \textbf{giữ giàn giáo} — chẻ câu nhỏ "
-         r"a–h có ô điền, gỡ giàn dần (Bài 5 đủ 8 ý $\to$ Bài 6 còn 4 ý $\to$ BTVN gần đề trần); ý gắn thẻ NB/TH/VD "
-         r"nên trải ở cả 3 mức. Tỉ lệ giờ trên lớp $\approx$ \textbf{36-43-21\%} (trong sai số 40-40-20 $\pm$5).")
+        (r"Kết luận \& giải BPT trong toán thực tế (Bài 5, 6, 7, 8 / BTVN 14, 16)", "—", "—", "—", "—", "4", "48′", "2", "21′"),
+    ], ("—", "—", "—", "—", "4", "48′", "2", "21′")),
+], ("2", "15′", "3", "30′", "43", "156′", "38", "95′"))
 
 # ----------------------------------------------------------------------------
 parts = []
@@ -166,17 +159,26 @@ parts.append(r"\begin{minipage}[t]{0.485\linewidth}\tmlbl{Ví dụ với BPT (GV
 parts.append(r"\par\vspace{4pt}")
 parts.append(r"\begin{minipage}[t]{0.485\linewidth}\tmlbl{Lỗi sai thường gặp ở học sinh:}" + itemize(loisai) + r"\end{minipage}\hfill\begin{minipage}[t]{0.485\linewidth}\tmlbl{Kiến thức NHẬN BIẾT cần nhớ (để làm bài VẬN DỤNG):}" + itemize(kienthucNB) + r"\end{minipage}")
 
+canA = (r"\par\vspace{3pt}{\small\textbf{\color{brand}Cân buổi (1 ca $=$ 180′):} "
+        r"Dạy lý thuyết $\approx$45′ (Khám phá $+$ Khái niệm) $+$ Giải lao 10–15′ $+$ "
+        r"Luyện tập 120′ $=$ \textbf{180′} tại lớp. BTVN $\approx$92′ ở nhà.}")
+canB = (r"\par\vspace{3pt}{\small\textbf{\color{brand}Cân buổi (1 ca $=$ 180′):} "
+        r"Dạy lý thuyết $\approx$45′ $+$ Giải lao 10–15′ $+$ Luyện tập 112′ "
+        r"(khung 120′, còn $\approx$8′ GV chữa bài) $=$ \textbf{$\approx$180′} tại lớp. BTVN $\approx$95′ ở nhà.}")
+
 parts.append(r"\tmsec{NỘI DUNG PHIẾU — PHIẾU A: NHẬN BIẾT \& GIẢI BPT}")
 parts.append(phieu_table(*phieuA))
+parts.append(canA)
 
 parts.append(r"\tmsec{NỘI DUNG PHIẾU — PHIẾU B: TOÁN THỰC TẾ LẬP BPT}")
 parts.append(phieu_table(*phieuB))
-parts.append(r"\par\vspace{3pt}" + noteB)
+parts.append(canB)
 
 parts.append(r"\par\vspace{6pt}{\footnotesize\color{muted}\itshape Quy ước đếm (Thầy chốt): "
              r"``câu'' $=$ ý nhỏ a),b)…; phút/câu trên lớp 1,5/6/12 (NB/TH/VD), BTVN 1,3/5,2/10,4; "
-             r"Ví dụ lý thuyết $=$ số ví dụ GV làm mẫu ở Khám phá/Khái niệm (giờ giảng $\approx$25–30′/buổi, "
-             r"ngoài quỹ Luyện tập 120′). Số liệu khớp cổng \texttt{duration-gate}.}")
+             r"cột \textbf{Ví dụ lý thuyết} $=$ ví dụ mẫu $+$ giờ DẠY lý thuyết ở Khám phá/Khái niệm "
+             r"(tổng $\approx$45′/ca, KHÔNG nằm trong quỹ Luyện tập 120′). "
+             r"\texttt{duration-gate} chỉ soi phần Luyện tập trên lớp $+$ BTVN.}")
 
 body = "\n\n".join(parts)
 
