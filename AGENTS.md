@@ -41,6 +41,7 @@ python -m src.main approve <slug>              # Thầy xem PDF rồi DUYỆT (s
    - **Đề + các câu nhỏ a,b,c CÙNG MỘT slide** (đề dài thì renderer tự co `probfit`; KHÔNG để "đề một chỗ, câu nhỏ một nẻo").
    - Không có **chữ/hình đè footer** "MathTech … Slide N", không có trang trống.
    Renderer (`group_slide_segments`/`_seg_mode` + `_slide_blocks.j2`) đã lo các bố cục trên; nếu vẫn lệch thì sửa renderer/template rồi build lại, KHÔNG sửa tay JSON cho hợp một slide.
+7. **KIỂM SOÁT THỜI LƯỢNG (CHỐNG THIẾU CÂU):** AI rất hay tạo thiếu bài tập, làm hụt quỹ giờ của buổi học (120 phút trên lớp). Bắt buộc xem log `[duration_gate]` sau lệnh `validate`. Nếu bị báo thiếu giờ, **PHẢI tự động sinh thêm bài tương đương hoặc kéo bài từ BTVN lên** sao cho lấp đủ quỹ thời gian (định mức: NB 1.5'/câu, TH 6'/câu, VD 12'/câu). Tuyệt đối không giao phiếu bị hụt thời lượng!
 Sửa xong checklist → build lại → mới trình Thầy.
 Kế hoạch tuần: [KE-HOACH-SOAN-BAI.md](KE-HOACH-SOAN-BAI.md). Luật soạn chi tiết: [HUONG-DAN-SOAN-BAI.md](HUONG-DAN-SOAN-BAI.md).
 

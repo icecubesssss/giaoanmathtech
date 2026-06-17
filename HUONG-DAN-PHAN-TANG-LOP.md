@@ -7,7 +7,7 @@ Trung tâm chia HS theo năng lực thành các **tầng lớp**. Mỗi tầng n
 | Tầng | Đối tượng | Yêu cầu cốt lõi | Tỉ lệ NB-TH-VD |
 |---|---|---|---|
 | **A** | Khá – giỏi | *(chuẩn hoá sau)* | *(sau)* |
-| **B** | Trung bình – khá | *(chuẩn hoá sau)* | *(sau)* |
+| **B** | Trung bình – khá | Nắm chắc NB, TH, rèn luyện tư duy VD và cọ xát 1 phần VDC | **30 – 40 – 20 – 10 (VDC)** |
 | **C** | Nền (yếu – trung bình) | Thạo **100% Nhận biết + Thông hiểu**, làm được **1 phần Vận dụng** | **40 – 40 – 20** |
 | **X** | HS chuyên | *(chuẩn hoá sau)* | *(sau)* |
 

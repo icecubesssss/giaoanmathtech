@@ -1,0 +1,160 @@
+{
+  "xuat_xu": {
+    "truong": "THCS Ái Mộ",
+    "ky": "CK1",
+    "nam": "2025-2026",
+    "ma_de": "902",
+    "thoi_gian_phut": 90,
+    "tong_diem": 10,
+    "nguon": "inputs/seeds/lop-9/de-cuoi-ki-1/de-cuoi-hoc-ki-1-toan-9-nam-2025-2026-truong-thcs-ai-mo-ha-noi.pdf",
+    "loai_pdf": "text",
+    "co_bieu_diem": true
+  },
+  "da_duyet": false,
+  "ghi_chu_can_Thay_xem": [
+    "PDF có HDC (hướng dẫn chấm) gốc trang 2-5 → barem_nguon = 'goc'. Đối chiếu lại bằng ảnh trang 200 DPI.",
+    "Đề Bài III.1: PDF nguồn bị mất phân số ở câu 'cả hai làm được … công việc'; căn cứ phương trình (2) trong HDC (5/x + 4/y = 7/9) nên phục hồi thành '7/9 công việc'.",
+    "HDC Bài IV.1 ghi đơn vị '(cm²)' nhưng đề dùng mét (cạnh 5m, dây 1,5m) → đáp số đúng là m²: 25 − 9π/16 ≈ 23,23 m²."
+  ],
+  "cau": [
+    {
+      "id": "ck1-ai-mo-1-1",
+      "vi_tri": "Bài I.1",
+      "dang": ["DS-PT-QUYVE"], "chuong": "C1", "do_kho": 1, "diem": 0.5,
+      "de": "Giải phương trình: (−x + 5)(x − 7) = 0.",
+      "dap_an": "x = 5 hoặc x = 7",
+      "barem_nguon": "goc",
+      "barem": [
+        {"buoc": "TH1: −x + 5 = 0 ⇒ x = 5", "diem": 0.25},
+        {"buoc": "TH2: x − 7 = 0 ⇒ x = 7; kết luận pt có hai nghiệm x = 5 và x = 7", "diem": 0.25}
+      ]
+    },
+    {
+      "id": "ck1-ai-mo-1-2",
+      "vi_tri": "Bài I.2",
+      "dang": ["DS-PT-QUYVE"], "chuong": "C1", "do_kho": 2, "diem": 0.5,
+      "de": "Giải phương trình: 60/x = 90/(x + 20).",
+      "dap_an": "x = 40",
+      "barem_nguon": "goc",
+      "barem": [
+        {"buoc": "ĐKXĐ: x ≠ 0; x ≠ −20; quy đồng 60(x + 20) = 90x", "diem": 0.25},
+        {"buoc": "Giải được x = 40 (TMĐK); kết luận pt có nghiệm x = 40", "diem": 0.25}
+      ]
+    },
+    {
+      "id": "ck1-ai-mo-2-1",
+      "vi_tri": "Bài II.1",
+      "dang": ["DS-HEPT-GIAI"], "chuong": "C1", "do_kho": 2, "diem": 0.5,
+      "de": "Giải hệ phương trình: (3x + 2)(2y − 3) = 6xy và (4x + 5)(y − 5) = 4xy.",
+      "dap_an": "(x; y) = (−2; −3)",
+      "barem_nguon": "goc",
+      "barem": [
+        {"buoc": "Khai triển, rút gọn về hệ −9x + 4y = 6 và −20x + 5y = 25", "diem": 0.25},
+        {"buoc": "Giải hệ được (x; y) = (−2; −3)", "diem": 0.25}
+      ]
+    },
+    {
+      "id": "ck1-ai-mo-2-2",
+      "vi_tri": "Bài II.2",
+      "dang": ["DS-BPT-GIAI"], "chuong": "C2", "do_kho": 1, "diem": 0.5,
+      "de": "Giải bất phương trình: (8 − 3x)/2 − x < 5.",
+      "dap_an": "x > −2/5",
+      "barem_nguon": "goc",
+      "barem": [
+        {"buoc": "Nhân hai vế với 2: 8 − 3x − 2x < 10 ⇒ −5x < 2", "diem": 0.25},
+        {"buoc": "Chia −5 (đổi chiều) ⇒ x > −2/5; kết luận nghiệm x > −2/5", "diem": 0.25}
+      ]
+    },
+    {
+      "id": "ck1-ai-mo-3-1",
+      "vi_tri": "Bài III.1",
+      "dang": ["DS-THUCTE-LAPHE"], "chuong": "C1", "do_kho": 3, "diem": 2.0,
+      "de": "Hai người thợ quét sơn một ngôi nhà. Nếu cùng làm thì 6 ngày xong việc. Nếu người thứ nhất làm một mình 5 ngày rồi nghỉ, người thứ hai làm tiếp 4 ngày thì cả hai làm được 7/9 công việc. Hỏi làm riêng thì mỗi người mất bao nhiêu ngày để xong việc?",
+      "dap_an": "Người thứ nhất 9 ngày, người thứ hai 18 ngày",
+      "barem_nguon": "goc",
+      "barem": [
+        {"buoc": "Gọi thời gian làm riêng của người thứ nhất là x ngày, người thứ hai là y ngày (x, y > 6)", "diem": 0.25},
+        {"buoc": "Mỗi ngày người thứ nhất làm 1/x, người thứ hai làm 1/y (công việc)", "diem": 0.25},
+        {"buoc": "Cùng làm 6 ngày xong: 1 ngày cả hai làm 1/6 công việc", "diem": 0.25},
+        {"buoc": "Phương trình (1): 1/x + 1/y = 1/6", "diem": 0.25},
+        {"buoc": "5 ngày người thứ nhất làm 5/x; 4 ngày người thứ hai làm 4/y", "diem": 0.25},
+        {"buoc": "Phương trình (2): 5/x + 4/y = 7/9", "diem": 0.25},
+        {"buoc": "Giải hệ (1), (2) được x = 9; y = 18", "diem": 0.25},
+        {"buoc": "Kết luận: người thứ nhất 9 ngày, người thứ hai 18 ngày", "diem": 0.25}
+      ]
+    },
+    {
+      "id": "ck1-ai-mo-3-2",
+      "vi_tri": "Bài III.2",
+      "dang": ["DS-THUCTE-LAPPT-BPT"], "chuong": "C1", "do_kho": 2, "diem": 2.0,
+      "de": "Một người đi xe máy từ A đến B với vận tốc 40 km/h. Lúc về trên cùng quãng đường đó đi với vận tốc 30 km/h nên thời gian về nhiều hơn thời gian đi 45 phút. Tính độ dài quãng đường AB.",
+      "dap_an": "AB = 90 km",
+      "barem_nguon": "goc",
+      "barem": [
+        {"buoc": "Gọi độ dài AB là x (km), x > 0", "diem": 0.25},
+        {"buoc": "Thời gian đi x/40 (h)", "diem": 0.25},
+        {"buoc": "Thời gian về x/30 (h)", "diem": 0.25},
+        {"buoc": "45 phút = 3/4 h, lập phương trình x/30 − x/40 = 3/4", "diem": 0.25},
+        {"buoc": "Biến đổi 4x − 3x = 90", "diem": 0.5},
+        {"buoc": "Giải được x = 90 (TMĐK)", "diem": 0.25},
+        {"buoc": "Kết luận AB = 90 km", "diem": 0.25}
+      ]
+    },
+    {
+      "id": "ck1-ai-mo-4-1",
+      "vi_tri": "Bài IV.1",
+      "dang": ["HH-TRON-CUNG"], "chuong": "C5", "do_kho": 3, "diem": 1.0,
+      "de": "Một con bò bị nhốt trong mảnh vườn cỏ hình vuông cạnh 5 m, buộc bằng sợi dây dài 1,5 m vào một cái cột ở góc vườn. Nếu diện tích cỏ con bò ăn được là nhiều nhất thì diện tích phần cỏ còn lại là bao nhiêu? (lấy π ≈ 3,14)",
+      "dap_an": "25 − 9π/16 ≈ 23,23 m²",
+      "barem_nguon": "goc",
+      "barem": [
+        {"buoc": "Vẽ hình; diện tích cỏ bò ăn nhiều nhất = hình quạt 90° bán kính 1,5 m", "diem": 0.25},
+        {"buoc": "Diện tích hình quạt = π·1,5²·90/360 = 9π/16 (m²)", "diem": 0.25},
+        {"buoc": "Diện tích phần còn lại = S_vuông − S_quạt = 5² − 9π/16", "diem": 0.25},
+        {"buoc": "= 25 − 9π/16 ≈ 23,23 m²", "diem": 0.25}
+      ]
+    },
+    {
+      "id": "ck1-ai-mo-4-2a",
+      "vi_tri": "Bài IV.2a",
+      "dang": ["HH-TRON-CM"], "chuong": "C5", "do_kho": 2, "diem": 1.0,
+      "de": "Cho (O; R) đường kính AB. Lấy C ∈ (O; R) sao cho AC > BC. Kẻ đường cao CH của ΔABC (H ∈ AB), kéo dài CH cắt (O; R) tại D (D ≠ C). Tiếp tuyến tại A và tiếp tuyến tại C của (O; R) cắt nhau tại M. Gọi I là giao của OM và AC; F là giao của MC và AB. Chứng minh 4 điểm A, C, M, O cùng thuộc một đường tròn.",
+      "dap_an": "A, M, O và C, M, O cùng nằm trên đường tròn đường kính MO ⇒ 4 điểm A, C, M, O cùng thuộc đường tròn đường kính MO",
+      "barem_nguon": "goc",
+      "barem": [
+        {"buoc": "Vẽ hình đúng", "diem": 0.25},
+        {"buoc": "MA là tiếp tuyến ⇒ góc MAO = 90° ⇒ A thuộc đường tròn đường kính MO", "diem": 0.25},
+        {"buoc": "MC là tiếp tuyến ⇒ góc MCO = 90° ⇒ C thuộc đường tròn đường kính MO", "diem": 0.25},
+        {"buoc": "Suy ra 4 điểm A, C, M, O cùng thuộc đường tròn đường kính MO", "diem": 0.25}
+      ]
+    },
+    {
+      "id": "ck1-ai-mo-4-2b",
+      "vi_tri": "Bài IV.2b",
+      "dang": ["HH-TRON-CM"], "chuong": "C5", "do_kho": 3, "diem": 1.0,
+      "de": "Chứng minh DF là tiếp tuyến của (O; R).",
+      "dap_an": "ΔOCF = ΔODF (c.g.c) ⇒ góc ODF = góc OCF = 90° ⇒ OD ⊥ DF tại D ⇒ DF là tiếp tuyến của (O; R)",
+      "barem_nguon": "goc",
+      "barem": [
+        {"buoc": "ΔOCD cân tại O (OC = OD = R); OH là đường cao nên cũng là phân giác ⇒ góc COF = góc DOF", "diem": 0.25},
+        {"buoc": "Chứng minh ΔCOF = ΔDOF (c.g.c)", "diem": 0.25},
+        {"buoc": "⇒ góc ODF = góc OCF = 90° (do OC ⊥ MF)", "diem": 0.25},
+        {"buoc": "⇒ OD ⊥ DF tại D ⇒ DF là tiếp tuyến của (O; R)", "diem": 0.25}
+      ]
+    },
+    {
+      "id": "ck1-ai-mo-4-2c",
+      "vi_tri": "Bài IV.2c",
+      "dang": ["HH-TRON-CM"], "chuong": "C5", "do_kho": 4, "diem": 1.0,
+      "de": "Chứng minh BC = 2·IO và AF·BH = BF·AH.",
+      "dap_an": "IO là đường trung bình ΔABC ⇒ BC = 2·IO; AF·BH = BF·AH (dùng hệ thức trong tam giác và tính chất đường cao CH)",
+      "barem_nguon": "goc",
+      "barem": [
+        {"buoc": "OM ⊥ AC tại I ⇒ I là trung điểm AC; O là trung điểm AB ⇒ IO là đường trung bình ΔABC", "diem": 0.25},
+        {"buoc": "⇒ IO // BC và BC = 2·IO (đpcm)", "diem": 0.25},
+        {"buoc": "Thiết lập tỉ số BH/CH và AH/CH (CH ⊥ AB) ⇒ AF/BF = AH/BH", "diem": 0.25},
+        {"buoc": "⇒ AF·BH = BF·AH (đpcm)", "diem": 0.25}
+      ]
+    }
+  ]
+}
