@@ -36,12 +36,12 @@ def phieu_table(groups, total) -> str:
            r"*{8}{>{\centering\arraybackslash}p{1.7cm}|}")
     L = [rf"\begin{{tabular}}{{{col}}}", r"\arrayrulecolor{rule}\hline"]
     # header 2 dòng
-    L.append(r"\rowcolor{neutral}\multirow{2}{*}{\sffamily\bfseries Dạng bài} "
+    L.append(r"\rowcolor{neutral} "
              r"& \multicolumn{2}{>{\columncolor{neutral}}c|}{\sffamily\bfseries Lý thuyết} "
              r"& \multicolumn{2}{>{\columncolor{neutral}}c|}{\sffamily\bfseries Ví dụ lý thuyết} "
              r"& \multicolumn{2}{>{\columncolor{neutral}}c|}{\sffamily\bfseries Bài tập trên lớp} "
              r"& \multicolumn{2}{>{\columncolor{neutral}}c|}{\sffamily\bfseries BTVN} \\ \cline{2-9}")
-    L.append(r"\rowcolor{neutral} & \sffamily\footnotesize Số mục & \sffamily\footnotesize Thời gian "
+    L.append(r"\rowcolor{neutral}\multirow{-2}{*}{\sffamily\bfseries Dạng bài} & \sffamily\footnotesize Số mục & \sffamily\footnotesize Thời gian "
              r"& \sffamily\footnotesize Số câu & \sffamily\footnotesize Thời gian "
              r"& \sffamily\footnotesize Số câu & \sffamily\footnotesize Thời gian "
              r"& \sffamily\footnotesize Số câu & \sffamily\footnotesize Thời gian \\ \hline")
@@ -166,10 +166,12 @@ canB = (r"\par\vspace{3pt}{\small\textbf{\color{brand}Cân buổi (1 ca $=$ 180�
         r"Dạy lý thuyết $\approx$45′ $+$ Giải lao 10–15′ $+$ Luyện tập 112′ "
         r"(khung 120′, còn $\approx$8′ GV chữa bài) $=$ \textbf{$\approx$180′} tại lớp. BTVN $\approx$95′ ở nhà.}")
 
+parts.append(r"\newpage")
 parts.append(r"\tmsec{NỘI DUNG PHIẾU — PHIẾU A: NHẬN BIẾT \& GIẢI BPT}")
 parts.append(phieu_table(*phieuA))
 parts.append(canA)
 
+parts.append(r"\newpage")
 parts.append(r"\tmsec{NỘI DUNG PHIẾU — PHIẾU B: TOÁN THỰC TẾ LẬP BPT}")
 parts.append(phieu_table(*phieuB))
 parts.append(canB)
