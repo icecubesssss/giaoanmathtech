@@ -76,18 +76,32 @@ def _problem_units(lesson: LessonPackage):
 
 def check_duration(lesson: LessonPackage) -> list[str]:
     """Cảnh báo khi phiếu tầng lệch quỹ phút hoặc tỉ lệ 40-40-20 (±5%)."""
-    if lesson.class_tier != "C":
-        return []  # mới chuẩn hoá tầng C; tầng khác bổ sung khi có SPEC
+    is_grade_8 = getattr(lesson, "grade_label", "") == "Lớp 8"
+    if not is_grade_8 and lesson.class_tier != "C":
+        return []  # mới chuẩn hoá tầng C cho khối 9; tầng khác bổ sung khi có SPEC
+    if is_grade_8 and lesson.class_tier not in ("B", "C"):
+        return []
 
     minutes = {"onclass": {"NB": 0.0, "TH": 0.0, "VD": 0.0},
                "btvn": {"NB": 0.0, "TH": 0.0, "VD": 0.0}}
     counts = {"onclass": {"NB": 0, "TH": 0, "VD": 0},
               "btvn": {"NB": 0, "TH": 0, "VD": 0}}
 
+    if is_grade_8:
+        rate_onclass = {"NB": 0.5, "TH": 3.0, "VD": 8.0}
+        rate_btvn = {"NB": 0.5, "TH": 2.5, "VD": 7.0}
+        budget_dict = {"onclass": 60.0, "btvn": 35.0}
+        ratio_target = {"NB": 25.0, "TH": 45.0, "VD": 30.0}
+    else:
+        rate_onclass = _MIN_ONCLASS
+        rate_btvn = _MIN_BTVN
+        budget_dict = _BUDGET
+        ratio_target = _RATIO_TARGET
+
     for tier, level, texts in _problem_units(lesson):
-        if tier not in minutes:      # extend… không thuộc quỹ giờ tầng C
+        if tier not in minutes:      # extend… không thuộc quỹ giờ
             continue
-        rate = _MIN_ONCLASS if tier == "onclass" else _MIN_BTVN
+        rate = rate_onclass if tier == "onclass" else rate_btvn
         text = " ".join(texts)
         tags = _TAG_RE.findall(text)
         if tags:
@@ -102,7 +116,7 @@ def check_duration(lesson: LessonPackage) -> list[str]:
 
     warns: list[str] = []
     label = {"onclass": "Luyện tập trên lớp", "btvn": "BTVN"}
-    for seg, budget in _BUDGET.items():
+    for seg, budget in budget_dict.items():
         total = sum(minutes[seg].values())
         if total == 0:
             continue
@@ -114,7 +128,7 @@ def check_duration(lesson: LessonPackage) -> list[str]:
                 f"duration: {label[seg]} {total:.0f}′ lệch quỹ {budget:.0f}′ quá ±10% — {detail}.")
         if seg != "onclass":   # 40-40-20 là tỉ lệ giờ TRÊN LỚP — BTVN chỉ soi quỹ phút
             continue
-        for band, target in _RATIO_TARGET.items():
+        for band, target in ratio_target.items():
             share = minutes[seg][band] / total * 100
             if abs(share - target) > _RATIO_TOL:
                 warns.append(
