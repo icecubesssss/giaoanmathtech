@@ -1,0 +1,359 @@
+<!DOCTYPE html>
+<html lang="vi">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Đừng để AI quên — Training MathTech</title>
+
+<link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/reveal.js@5.1.0/dist/reveal.css">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Be+Vietnam+Pro:wght@400;600;700;800;900&family=JetBrains+Mono:wght@400;600&display=swap" rel="stylesheet">
+
+<style>
+  :root{
+    --ink:#161624; --brand:#C0392B; --brand-2:#E74C3C; --brand-soft:#FBEDEC;
+    --bg:#FFFFFF; --bg-soft:#F4F6F8; --rule:#E1E4EA; --muted:#5b6472;
+    --green:#1e7a3d; --green-bg:#E6F4EA; --gold:#D99A19; --gold-bg:#FFF6E3;
+    --night:#15151f; --accent-dark:#FF8C7A;
+  }
+  .reveal{ font-family:'Be Vietnam Pro',system-ui,sans-serif; font-size:29px; color:var(--ink); }
+  .reveal .slides{ text-align:left; }
+  .reveal .backgrounds{ background:linear-gradient(160deg,#FFFFFF 0%,#F1F4F7 100%); }
+
+  .eyebrow{ display:inline-block; font-size:.58em; font-weight:800; letter-spacing:.16em;
+    text-transform:uppercase; color:var(--brand); border-left:5px solid var(--brand);
+    padding-left:.5em; margin-bottom:.3em; }
+  .reveal h1{ font-size:1.7em; font-weight:900; line-height:1.05; letter-spacing:-.015em; margin:.1em 0 .2em; text-transform:none; }
+  .reveal h2{ font-size:1.12em; font-weight:800; line-height:1.12; margin:0 0 .35em; text-transform:none; }
+  .reveal h2 .accent{ color:var(--brand); }
+  .titlebar{ width:84px; height:7px; border-radius:6px; margin:.08em 0 .55em;
+    background:linear-gradient(90deg,var(--brand),var(--brand-2)); }
+  .reveal strong{ font-weight:800; }
+  .reveal em{ color:var(--brand); font-style:normal; font-weight:700; }
+  .reveal ul{ list-style:none; margin-left:0; }
+  .reveal ul li{ position:relative; padding-left:1.2em; margin:.4em 0; line-height:1.4; }
+  .reveal ul li::before{ content:""; position:absolute; left:0; top:.5em; width:.48em; height:.48em;
+    background:var(--brand); border-radius:2px; transform:rotate(45deg); }
+  .lead{ font-size:1.0em; color:var(--muted); font-weight:600; }
+  .big-quote{ font-size:1.16em; font-weight:700; line-height:1.32; }
+
+  section.cover, section.dark{ color:#fff; }
+  section.cover .eyebrow, section.dark .eyebrow{ color:#fff; border-color:var(--brand-2); }
+  section.cover h1, section.dark h1, section.dark h2{ color:#fff; }
+  section.dark .c-brand2, section.cover .c-brand2,
+  section.dark h1 .accent, section.dark h2 .accent, section.cover h1 .accent{ color:var(--accent-dark); }
+  section.dark .foot-name, section.cover .foot-name{ color:#FFD9D4; }
+  section.dark .subline, section.cover .subline{ color:#c2c8d2; }
+
+  .brandfoot{ position:fixed; bottom:12px; left:30px; font-size:12px; color:var(--muted); z-index:30; }
+
+  .tag{ font-size:.5em; font-weight:800; letter-spacing:.04em; padding:.12em .5em; border-radius:20px;
+    vertical-align:middle; text-transform:uppercase; }
+  .tag.est{ background:var(--brand-soft); color:var(--brand); }
+
+  .metric{ background:#fff; border:1px solid var(--rule); border-radius:14px; padding:.7em .8em; text-align:center;
+    box-shadow:0 4px 16px rgba(20,20,40,.05); }
+  .metric .num{ font-size:2.2em; font-weight:900; line-height:1; letter-spacing:-.02em;
+    background:linear-gradient(90deg,var(--brand),var(--brand-2)); -webkit-background-clip:text;
+    background-clip:text; -webkit-text-fill-color:transparent; }
+  .metric .num small{ font-size:.38em; color:var(--ink); font-weight:800; -webkit-text-fill-color:var(--ink); }
+  .metric .lab{ font-size:.62em; color:var(--ink); font-weight:700; margin-top:.3em; line-height:1.2; }
+  .metric.gray .num{ -webkit-text-fill-color:var(--muted); background:none; color:var(--muted); }
+
+  .cols{ display:grid; grid-template-columns:1fr 1fr; gap:.9em; align-items:start; }
+  .card{ background:#fff; border:1px solid var(--rule); border-radius:14px; padding:.75em .9em;
+    box-shadow:0 4px 16px rgba(20,20,40,.05); }
+  .card h3{ font-size:.82em; color:var(--brand); margin:0 0 .25em; font-weight:800; }
+  .card p, .card ul{ font-size:.78em; margin:0; }
+  .card.card--brand{ border-color:var(--brand); border-width:1.5px; }
+  .card.bad{ border-color:#cdd2da; } .card.bad h3{ color:#3a4150; }
+  .card .big-ic{ font-size:2em; line-height:1; }
+
+  /* pains 3 cột */
+  .pains{ display:grid; grid-template-columns:repeat(3,1fr); gap:.6em; margin:.35em 0; }
+  .paincard{ background:#fff; border:1px solid var(--rule); border-top:4px solid var(--brand);
+    border-radius:14px; padding:.7em .75em; box-shadow:0 8px 22px rgba(20,20,40,.07); }
+  .paincard .pic{ font-size:1.7em; line-height:1; }
+  .paincard h3{ font-size:.72em; color:var(--ink); font-weight:800; margin:.28em 0 .18em; line-height:1.2; }
+  .paincard p{ font-size:.6em; color:var(--muted); font-weight:600; line-height:1.36; margin:0; }
+
+  /* khối code / mẫu copy-paste */
+  .code{ background:var(--night); color:#e8eaf0; font-family:'JetBrains Mono',monospace; font-size:.5em;
+    line-height:1.55; border-radius:12px; padding:.9em 1.05em; border:1px solid #2a2a3a; white-space:pre-wrap;
+    box-shadow:0 14px 40px rgba(10,10,25,.28); }
+  .code b{ color:#f5c451; font-weight:700; }
+  .code .v{ color:#8b95a8; }
+  .codelabel{ font-size:.62em; color:var(--brand); font-weight:800; margin:0 0 .2em; }
+
+  /* 5 bước đánh số */
+  .reveal ol.steps{ list-style:none; counter-reset:s; margin:.3em 0; }
+  .reveal ol.steps li{ counter-increment:s; position:relative; padding-left:2.3em; margin:.5em 0; line-height:1.42; font-size:.92em; }
+  .reveal ol.steps li::before{ content:counter(s); position:absolute; left:0; top:.02em; width:1.55em; height:1.55em;
+    background:linear-gradient(135deg,var(--brand),var(--brand-2)); color:#fff; border-radius:50%;
+    display:flex; align-items:center; justify-content:center; font-size:.72em; font-weight:800; }
+
+  .reveal .slide-number{ background:transparent; color:var(--muted); font-size:12px; }
+  .reveal .progress{ color:var(--brand); height:5px; }
+
+  .c-white{ color:#fff; } .c-brand{ color:var(--brand); } .c-brand2{ color:var(--brand-2); } .c-muted{ color:var(--muted); }
+  .subline{ color:#9aa3b2; font-size:.8em; }
+  .fs-80{ font-size:.8em; } .fs-86{ font-size:.86em; } .fs-90{ font-size:.9em; }
+  .foot-name{ margin-top:.6em; color:var(--brand-2); font-weight:800; }
+  .center{ text-align:center; }
+
+  @keyframes sheen{ 0%{ background-position:-200% 0; } 100%{ background-position:200% 0; } }
+  .cover-sheen{ background:linear-gradient(100deg,transparent 30%,rgba(231,76,60,.16) 50%,transparent 70%);
+    background-size:200% 100%; animation:sheen 6s linear infinite; position:absolute; inset:0; pointer-events:none; }
+</style>
+</head>
+<body>
+<div class="reveal"><div class="slides">
+
+<!-- S1 · BÌA -->
+<section class="cover" data-background-color="#15151f">
+  <div class="cover-sheen"></div>
+  <span class="eyebrow">MathTech · Đào tạo nội bộ</span>
+  <h1>Bắt AI soạn ra giáo án — <span class="c-brand2">và nhớ đúng cách bạn muốn</span></h1>
+  <div class="titlebar"></div>
+  <p class="big-quote c-white">Không phải gõ giỏi hơn. Là <span class="c-brand2">ghim đúng thứ</span> để AI không bao giờ quên.</p>
+  <p class="subline">30–60 phút · Gemini (bản free) · Kết thúc: mỗi người tự tạo được <strong class="c-white">1 GEM</strong> và dùng nó soạn 1 phiếu.</p>
+  <aside class="notes">Mục tiêu duy nhất cả buổi: ai cũng tạo được 1 Gem tái dùng. Ba hồi: khơi nhu cầu → đổi tư duy → cách làm.</aside>
+</section>
+
+<!-- ============================================================= -->
+<!-- HỒI 1 · KHƠI NHU CẦU -->
+<!-- ============================================================= -->
+<section class="dark" data-background-color="#15151f">
+  <span class="eyebrow">Hồi 1</span>
+  <h1 class="c-white">Cái bạn <span class="c-brand2">thật sự muốn</span></h1>
+  <div class="titlebar"></div>
+  <p class="subline">Soạn được giáo án / phiếu đẹp như người ta vẫn khoe trên mạng — trong vài phút, bằng tài khoản free.</p>
+</section>
+
+<!-- S3 · DREAM + GAP -->
+<section>
+  <span class="eyebrow">Hồi 1 · khoảng cách</span>
+  <h2>Cùng một việc soạn phiếu — <span class="accent">người 2 tiếng, người 3 phút</span></h2>
+  <div class="titlebar"></div>
+  <div class="cols">
+    <div class="metric gray">
+      <div class="num">2<small>tiếng</small></div>
+      <div class="lab">Làm tay / dùng AI sai cách<br>— mệt, mà vẫn phải sửa</div>
+    </div>
+    <div class="metric">
+      <div class="num">3<small>phút</small></div>
+      <div class="lab">Dùng AI ĐÚNG cách<br>— ra đúng phong cách, đều tay</div>
+    </div>
+  </div>
+  <p class="lead">Khác biệt <strong>không nằm ở phần mềm xịn hay tài khoản trả phí</strong> — cùng là Gemini free. Nó nằm ở <em>cách dùng</em>. Hôm nay học đúng cái "cách" đó.</p>
+  <aside class="notes">Khơi thèm. Tốt nhất: chèn 1 ảnh chụp phiếu đẹp do AI làm vào slide này để cả phòng "muốn". Nhấn: không phải tiền, là kỹ năng.</aside>
+</section>
+
+<!-- S4 · TỰ NHẬN DIỆN -->
+<section>
+  <span class="eyebrow">Hồi 1 · bạn đang ở kiểu nào?</span>
+  <h2>Thành thật — <span class="accent">bạn dùng AI kiểu nào trong số này?</span></h2>
+  <div class="titlebar"></div>
+  <ul class="fs-90">
+    <li>Hỏi 1 câu, lấy 1 câu — dùng AI <strong>như Google biết nói chuyện</strong>.</li>
+    <li>Chat dài lê thê, sửa tới sửa lui, đến lúc nó <strong>quên</strong> thì bỏ.</li>
+    <li>Prompt xong đoạn nào ổn thì copy dán, <strong>không liền mạch</strong>, rồi lười đọc lại.</li>
+    <li>Hôm sau mở chat mới, <strong>gõ lại từ đầu</strong>.</li>
+  </ul>
+  <p class="lead">Thấy mình trong đây? <span class="c-brand">Bình thường — cả phòng giống nhau.</span> Vấn đề không ở bạn, ở <em>cách</em>. Và cách thì sửa được.</p>
+  <aside class="notes">Tạo nhu cầu bằng tự nhận diện. Tuỳ chọn: gom nhanh trên Padlet "bạn đang dùng AI làm gì?" để cả phòng thấy điểm chung trước khi sang Hồi 2.</aside>
+</section>
+
+<!-- ============================================================= -->
+<!-- HỒI 2 · ĐỔI TƯ DUY -->
+<!-- ============================================================= -->
+<section class="dark" data-background-color="#15151f">
+  <span class="eyebrow">Hồi 2</span>
+  <h1 class="c-white">Đổi <span class="c-brand2">tư duy</span></h1>
+  <div class="titlebar"></div>
+  <p class="subline">Vì sao bạn thử lại không đẹp như họ — nguyên lý nằm ở đâu — và nghĩ thế nào mới đúng.</p>
+</section>
+
+<!-- S6 · 3 LỖI TƯ DUY -->
+<section>
+  <span class="eyebrow">Hồi 2 · lỗi sai thường gặp</span>
+  <h2>Ba lỗi tư duy <span class="accent">gần như ai cũng mắc</span></h2>
+  <div class="titlebar"></div>
+  <div class="pains">
+    <div class="paincard">
+      <div class="pic">🔍</div>
+      <h3>1 · Coi AI như Google</h3>
+      <p>Hỏi cụt lủn ("soạn bài BPT") → nhận lại đồ chung chung, không đúng lớp, không đúng phong cách.</p>
+    </div>
+    <div class="paincard">
+      <div class="pic">🌊</div>
+      <h3>2 · Dồn hết vào 1 cuộc chat</h3>
+      <p>Nói qua nói lại mãi → đến lúc <strong>tràn ngữ cảnh</strong>, AI quên điều dặn lúc đầu → công cốc.</p>
+    </div>
+    <div class="paincard">
+      <div class="pic">✨</div>
+      <h3>3 · Tưởng đẹp = prompt thần kỳ</h3>
+      <p>Đi săn "câu lệnh ma thuật". Thật ra kết quả đẹp đến từ <strong>ngữ cảnh tốt + một cái mẫu</strong>.</p>
+    </div>
+  </div>
+  <p class="lead">Sửa đúng ba cái này là xong <strong>80%</strong>. Hai cái sau bắt nguồn từ cùng một nguyên lý — xem tiếp.</p>
+  <aside class="notes">Gọi tên lỗi để họ nhận ra mình. Lỗi 2 và 3 dẫn thẳng vào nguyên lý ngữ cảnh ở slide sau.</aside>
+</section>
+
+<!-- S7 · NGUYÊN LÝ: CÁI BÀN -->
+<section>
+  <span class="eyebrow">Hồi 2 · nguyên lý xuất phát từ đâu</span>
+  <h2>Vì sao xài một lúc, AI lại <span class="accent">"đần" đi?</span></h2>
+  <div class="titlebar"></div>
+  <div class="cols">
+    <div class="card bad" style="border-top:4px solid var(--muted)">
+      <div class="big-ic">🪑📄📄📄</div>
+      <h3>Trí nhớ AI = một cái BÀN có hạn chỗ</h3>
+      <p class="fs-86">Mỗi câu bạn nói là <strong>một tờ giấy</strong> đặt lên bàn. Bàn đầy → giấy cũ (đúng điều bạn dặn lúc đầu) <strong>rơi xuống đất</strong> → AI "quên".</p>
+    </div>
+    <div class="card card--brand">
+      <h3>Đó gọi là TRÀN NGỮ CẢNH</h3>
+      <p class="fs-86">Mọi AI hiện nay đều có giới hạn này (gọi là <em>cửa sổ ngữ cảnh</em>). Cuộc chat càng dài, phần đầu càng dễ bị đẩy ra ngoài.</p>
+      <p class="fs-86" style="margin-top:.4em"><strong>Không phải AI dốt</strong> — là cái bàn có hạn. Mẹo nằm ở chỗ: đừng để thứ quan trọng trên bàn.</p>
+    </div>
+  </div>
+  <aside class="notes">Đây là "vì sao" họ hỏi. Ẩn dụ cái bàn dễ nhớ. Chốt: giới hạn thật, không phải lỗi người dùng — nên cần một cách chứa ngữ cảnh khác.</aside>
+</section>
+
+<!-- S8 · TƯ DUY ĐÚNG: TƯỜNG vs BÀN -->
+<section>
+  <span class="eyebrow">Hồi 2 · tư duy đúng</span>
+  <h2>Ghim lên <span class="accent">TƯỜNG</span>, đừng để trên BÀN</h2>
+  <div class="titlebar"></div>
+  <div class="cols">
+    <div class="card bad" style="border-top:4px solid var(--muted)">
+      <div class="big-ic">🪑</div>
+      <h3>CÁI BÀN = cuộc chat</h3>
+      <p class="fs-86">Chỉ để thứ <strong>THAY ĐỔI</strong> hằng ngày: "hôm nay soạn bài gì". Bàn đầy thì rơi — chấp nhận được, vì nó tạm.</p>
+    </div>
+    <div class="card card--brand">
+      <div class="big-ic">📌</div>
+      <h3>BỨC TƯỜNG = GEM</h3>
+      <p class="fs-86">Ghim thứ <strong>CỐ ĐỊNH</strong>: bạn là ai · muốn phiếu kiểu gì · <strong>một cái mẫu đẹp</strong>. AI luôn nhìn thấy, không bao giờ rơi.</p>
+    </div>
+  </div>
+  <p class="lead">Còn "đẹp như người ta"? Họ <strong>ghim sẵn một mẫu đẹp</strong> cho AI bắt chước — <span class="c-brand">không hề có phép màu.</span></p>
+  <aside class="notes">Đây là cú lật tư duy của cả buổi. Tường = nơi chứa ngữ cảnh cố định, không tràn. Dẫn sang: cái tường đó tên là Gem.</aside>
+</section>
+
+<!-- ============================================================= -->
+<!-- HỒI 3 · CÁCH LÀM: TẠO GEM -->
+<!-- ============================================================= -->
+<section class="dark" data-background-color="#15151f">
+  <span class="eyebrow">Hồi 3</span>
+  <h1 class="c-white">Cách làm: <span class="c-brand2">tạo GEM</span></h1>
+  <div class="titlebar"></div>
+  <p class="subline">Cái "tường" đó trong Gemini gọi là Gem. Tạo một lần — dùng lại mãi. Mất 3 phút.</p>
+</section>
+
+<!-- S10 · GEM LÀ GÌ + BEFORE/AFTER -->
+<section>
+  <span class="eyebrow">Hồi 3 · GEM là gì</span>
+  <h2>GEM = <span class="accent">bức tường riêng của bạn</span></h2>
+  <div class="titlebar"></div>
+  <div class="cols">
+    <div class="card bad">
+      <h3>❌ Trước</h3>
+      <p class="fs-86">Mở chat → tả phong cách → sửa 20 lượt → nó quên cái đầu → bỏ. <strong>Hôm sau gõ lại từ đầu.</strong></p>
+    </div>
+    <div class="card card--brand">
+      <h3>✅ Sau (có Gem)</h3>
+      <p class="fs-86">Mở Gem đã ghim sẵn → gõ <em>"soạn phiếu BPT lớp 9 tuần 10"</em> → ra đúng kiểu ngay. <strong>Mai mở lại vẫn nhớ y nguyên.</strong></p>
+    </div>
+  </div>
+  <p class="lead">Một cái Gem = đóng gói toàn bộ "ý muốn cố định" của bạn vào một chỗ AI luôn đọc lại.</p>
+  <aside class="notes">Cho thấy lợi ích trước khi dạy thao tác. Nhấn: tạo 1 lần, tái dùng mãi — đó là điểm khác cốt lõi với cuộc chat.</aside>
+</section>
+
+<!-- S11 · 5 BƯỚC TẠO GEM -->
+<section>
+  <span class="eyebrow">Hồi 3 · thao tác</span>
+  <h2>Tạo Gem trong 3 phút — <span class="accent">5 bước</span></h2>
+  <div class="titlebar"></div>
+  <ol class="steps">
+    <li>Mở <strong>Gemini</strong> → mục <strong>Gems</strong> → <em>Tạo Gem mới</em>.</li>
+    <li>Đặt tên: <em>"Trợ lý soạn phiếu MathTech"</em>.</li>
+    <li>Dán phần <strong>Hướng dẫn</strong> (ngữ cảnh cố định) → dùng <strong>Mẫu A</strong> ở slide sau.</li>
+    <li>Lười viết? <strong>Nhờ chính Gemini viết hộ</strong> → dùng <strong>Prompt B</strong> ở slide sau.</li>
+    <li>Đính kèm <strong>1 phiếu mẫu đẹp</strong> → Lưu → thử ngay: <em>"soạn phiếu BPT lớp 9 tuần 10"</em>.</li>
+  </ol>
+  <p class="lead">Demo trực tiếp ngay đây — vừa làm vừa giải thích từng bước.</p>
+  <aside class="notes">DEMO LIVE. Chuẩn bị sẵn 1 phiên đã chạy để fallback nếu mạng lỗi. Mời 1 người cho 1 việc thật để nhét vào Gem thử.</aside>
+</section>
+
+<!-- S12 · 2 MẪU COPY-PASTE -->
+<section>
+  <span class="eyebrow">Hồi 3 · hai thứ cầm về</span>
+  <h2>Hai mẫu <span class="accent">copy-paste là dùng được ngay</span></h2>
+  <div class="titlebar"></div>
+  <div class="cols">
+    <div>
+      <p class="codelabel">MẪU A — dán vào ô "Hướng dẫn" của Gem</p>
+      <div class="code"><b>VAI TRÒ:</b> Trợ lý soạn phiếu cho trung tâm Toán MathTech.
+<b>VIỆC:</b> Tôi đưa (lớp, tuần, dạng bài) → soạn 1 phiếu hoàn chỉnh.
+<b>PHONG CÁCH:</b> bám đúng phiếu mẫu đính kèm <span class="v">[mấy phần, giọng, mức độ]</span>.
+<b>RANH GIỚI:</b> đúng cấp lớp; đáp án phải đúng; không bịa đề.
+<b>KHI THIẾU TIN:</b> hỏi lại tôi 1 câu trước khi làm.
+<b>ĐÍNH KÈM:</b> <span class="v">[1 phiếu mẫu đẹp]</span></div>
+    </div>
+    <div>
+      <p class="codelabel">PROMPT B — nhờ AI viết hướng dẫn hộ</p>
+      <div class="code">Tôi muốn tạo một trợ lý AI chuyên soạn
+<span class="v">[loại phiếu]</span> cho <span class="v">[đối tượng]</span>.
+
+Hãy <b>phỏng vấn tôi vài câu</b>, rồi viết
+giúp phần "Hướng dẫn" cho trợ lý đó gồm:
+vai trò, việc cần làm, phong cách, ranh giới.
+Viết ngắn gọn, rõ ràng.</div>
+      <p class="fs-80 c-muted" style="margin-top:.4em">Prompt B chính là <em>"dùng AI để tạo ngữ cảnh cho Gem"</em> — để người lười viết vẫn có Gem xịn.</p>
+    </div>
+  </div>
+  <aside class="notes">Đây là vàng học viên mang về. Mẫu A = khung ngữ cảnh; Prompt B = cách nhờ AI tự viết khung đó. Phát kèm QR/link tới 2 mẫu này.</aside>
+</section>
+
+<!-- S13 · THỰC HÀNH -->
+<section>
+  <span class="eyebrow">Hồi 3 · tới lượt bạn</span>
+  <h2>Thực hành: <span class="accent">1 Gem + 1 phiếu của chính bạn</span></h2>
+  <div class="titlebar"></div>
+  <ol class="steps">
+    <li>Tạo 1 Gem cho việc bạn <strong>hay phải soạn nhất</strong>.</li>
+    <li>Dán Mẫu A (hoặc dùng Prompt B nhờ Gemini viết hộ) + đính kèm 1 mẫu.</li>
+    <li>Test: bảo Gem soạn 1 phiếu → chỉnh tới khi <strong>đúng ý</strong>.</li>
+  </ol>
+  <p class="lead">Mục tiêu: trước khi rời phòng, ai cũng có <strong>1 Gem chạy được + 1 phiếu nháp</strong>. Vướng đâu cứ hỏi.</p>
+  <aside class="notes">15 phút làm tay, đi vòng hỗ trợ. Đây là thước đo thành công của cả buổi. Bản 30': rút xuống 8'.</aside>
+</section>
+
+<!-- S14 · KẾT -->
+<section class="dark" data-background-color="#15151f">
+  <span class="eyebrow">Lời kết</span>
+  <h2 class="c-white">Tạo một lần — <span class="c-brand2">dùng lại mãi</span></h2>
+  <div class="titlebar"></div>
+  <p class="big-quote c-white">AI không hữu ích hơn vì bạn <span class="c-brand2">gõ hay hơn</span> — mà vì bạn <span class="c-brand2">ghim đúng thứ lên tường</span>.</p>
+  <p class="lead foot-name">Tuần này: mở lại Gem vừa tạo thay vì gõ chat mới. Hẹn mỗi tuần một Gem!</p>
+  <aside class="notes">Đóng vòng: cái bàn dễ rơi → bức tường ghim chắc. Chốt bằng 1 hành động cụ thể tuần này.</aside>
+</section>
+
+</div></div>
+<div class="brandfoot">MathTech · Đừng để AI quên — tạo GEM tái dùng</div>
+
+<script src="https://cdn.jsdelivr.net/npm/reveal.js@5.1.0/dist/reveal.js"></script>
+<script src="https://cdn.jsdelivr.net/npm/reveal.js@5.1.0/plugin/notes/notes.js"></script>
+<script>
+  Reveal.initialize({
+    width:1280, height:720, margin:0.055,
+    hash:true, slideNumber:'c/t', controls:true, progress:true,
+    transition:'slide', transitionSpeed:'fast',
+    autoAnimate:true, autoAnimateDuration:0.9,
+    plugins:[ RevealNotes ],
+  });
+</script>
+</body>
+</html>
