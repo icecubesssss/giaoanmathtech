@@ -4,6 +4,18 @@
 
 Đây là **MathTech Engine**: soạn phiếu học tập Toán lớp 9 (ôn thi vào 10) từ PDF nguồn của Thầy → render ra 3 bản PDF (handout HS / guide GV / slide).
 
+## ⚡ Bắt đầu nhanh (agent land-and-go — đọc cái này là chạy được)
+1. **Đọc [PROJECT_MAP.md](PROJECT_MAP.md) TRƯỚC** (bản đồ module + symbol, tự sinh) — biết code nằm đâu mà khỏi mở từng file. Cũ thì `make map`.
+2. **Menu việc:** `make help` (hoặc xem [Makefile](Makefile)). Quy trình 1 phiếu:
+   ```bash
+   make new FOLDER="inputs/seeds/lop-9/dai-so/.../tuanNN-<chu-de>"   # sinh khung
+   # → điền nội dung bám PDF nguồn (docs/HUONG-DAN-SOAN-BAI.md)
+   make validate FILE=<file.json>        # gác cổng (FAST=1 bỏ SymPy lúc nháp)
+   make build FILE=<file.json>           # 3 PDF song song (ONLY=handout xem nhanh)
+   python -m src.main approve <slug>     # Thầy xem PDF rồi DUYỆT
+   ```
+3. Lệnh đầy đủ: `python -m src.main -h`. Tiến độ: `make progress`.
+
 ## Luật CỨNG độc lập công cụ — chạy `validate`
 Dù bạn là Claude, Codex, Antigravity, Copilot hay người không dùng AI: mọi luật kiểm được tự động đều nằm trong **code Python**, không phải prompt. Chỉ cần chạy `python -m src.main validate <file.json>` (và `python -m pytest`) là nhận **cùng một bộ gác cổng** (sanitizer/schema/difficulty/visual_linter/gradient + SymPy). **Bắt buộc** validate sạch trước khi `approve`/`build`. Các nguyên tắc dưới đây là phần *con người/tác nhân* phải tự giữ (validator không soi được).
 
