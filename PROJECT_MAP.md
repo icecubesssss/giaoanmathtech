@@ -88,6 +88,14 @@ _Cấu trúc tích hợp cả 5 chặng của buổi học — khóa cứng gi�
 - **class LessonPackage**
 - **class ChapterSummary** — Phiếu TỔNG KẾT CHƯƠNG (1 trang) — gom nhiều phiếu của một chương/tuần thành
 
+### `src/schema/tier_spec.py`
+_Đọc `config/tier_spec.json` — RATE CARD cố định theo tầng lớp._
+- `load_tier_spec(path)` — Đọc (và cache) tier_spec.json.
+- `subject_block(spec, grade, subject)` — Khối cấu hình của (lớp, môn), vd ('lop-9','dai-so'). KeyError nếu chưa khai báo.
+- `rates_for(spec, grade, subject)` — Phút/câu mỗi đoạn×band cho (lớp, môn): gộp `rates` toàn cục với
+- `tier_ratio(spec, grade, subject, tier)` — Tỉ lệ NB-TH-VD-VDC (%) của tầng; None nếu tầng chưa chốt (vd X chuyên).
+- `target_counts(spec, grade, subject, tier)` — Số câu MỤC TIÊU mỗi đoạn×band cho (lớp, môn, tầng). {} nếu tầng chưa có tỉ lệ.
+
 ### `src/validators/__init__.py`
 _Tầng trọng tài — kiểm thử KHÔNG ba phải trước khi cho compile._
 - _(không có symbol công khai)_
@@ -166,6 +174,11 @@ _Dựng PHIẾU THUYẾT MINH (đặc tả) cho [C]tuần 10-11 — BPT bậc nh
 
 ### `scripts/repomap.py`
 _Sinh PROJECT_MAP.md — bản đồ codebase TIẾT KIỆM TOKEN cho agent/người._
+- `main()`
+
+### `scripts/spike_coverage.py`
+_SPIKE de-risk (Bước 2): bank có đủ câu để 'bốc' cho 1 phiếu tầng không?_
+- `load_bank_cau()`
 - `main()`
 
 ### `scripts/update_phieu_b.py`
