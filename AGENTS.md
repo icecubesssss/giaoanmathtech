@@ -9,7 +9,7 @@
 2. **Menu việc:** `make help` (hoặc xem [Makefile](Makefile)). Quy trình 1 phiếu:
    ```bash
    make new FOLDER="inputs/seeds/lop-9/dai-so/.../tuanNN-<chu-de>"   # sinh khung
-   # → điền nội dung bám PDF nguồn (docs/HUONG-DAN-SOAN-BAI.md)
+   # → điền nội dung bám PDF nguồn (HUONG-DAN-SOAN-BAI.md)
    make validate FILE=<file.json>        # gác cổng (FAST=1 bỏ SymPy lúc nháp)
    make build FILE=<file.json>           # 3 PDF song song (ONLY=handout xem nhanh)
    python -m src.main approve <slug>     # Thầy xem PDF rồi DUYỆT
