@@ -20,6 +20,7 @@ import argparse
 import json
 import re
 import sys
+from concurrent.futures import ThreadPoolExecutor
 from pathlib import Path
 from datetime import datetime
 
@@ -263,11 +264,11 @@ def cmd_evolve(args: argparse.Namespace) -> int:
 
 # ── S2/S3 commands (giữ nguyên từ trước) ──────────────────────────────────────
 
-def _gate_before_build(lesson: LessonPackage, force: bool) -> bool:
+def _gate_before_build(lesson: LessonPackage, force: bool, fast: bool = False) -> bool:
     """Cổng AGENTS.md: 'bắt buộc validate sạch trước build'. Chạy trọng tài S2;
     có vi phạm thì in lý do và trả False (chặn build) trừ khi `force=True` (build
-    nháp). Cảnh báo trình bày/độ dốc chỉ in, không chặn."""
-    violations, warns, ramp_warns = _run_validation(lesson)
+    nháp). Cảnh báo trình bày/độ dốc chỉ in, không chặn. `fast=True` bỏ SymPy (nháp)."""
+    violations, warns, ramp_warns = _run_validation(lesson, fast=fast)
     for w in warns + ramp_warns:
         print(f"  ⚠ {w}")
     if not violations:
@@ -281,6 +282,25 @@ def _gate_before_build(lesson: LessonPackage, force: bool) -> bool:
     print("  → Sửa cho sạch rồi build lại, hoặc dùng --force để build nháp.", file=sys.stderr)
     _set_lesson_status(lesson.slug, "validation_failed")
     return False
+
+
+_RENDERERS = {"handout": render_handout, "guide": render_guide, "slide": render_slide}
+
+
+def _build_kinds(lesson: LessonPackage, kinds, out_root: Path, force: bool = False,
+                 prefix: str = "", quiet: bool = False):
+    """Build các bản (handout/guide/slide) SONG SONG. Tectonic chạy ở subprocess
+    (nhả GIL) nên 3 bản dựng đồng thời thay vì tuần tự → nhanh ~3×. Giữ thứ tự in
+    theo `kinds`; lỗi 1 bản ném ra ngoài (caller xử lý)."""
+    def one(fn):
+        return fn, build_pdf(_RENDERERS[fn](lesson), slug=lesson.slug, filename=fn,
+                             out_root=out_root, force=force)
+    with ThreadPoolExecutor(max_workers=max(1, len(kinds))) as ex:
+        results = list(ex.map(one, kinds))
+    if not quiet:
+        for _fn, pdf in results:
+            print(f"{prefix}OK → {pdf}")
+    return results
 
 
 def cmd_build_handout(args: argparse.Namespace) -> int:
@@ -311,14 +331,14 @@ def cmd_build_slide(args: argparse.Namespace) -> int:
 
 
 def cmd_build_all(args: argparse.Namespace) -> int:
-    """Sinh đồng thời cả 3 bản từ cùng một gói bài (validate sạch trước)."""
+    """Sinh cả 3 bản SONG SONG từ cùng một gói bài (validate sạch trước).
+    `--only handout|guide|slide` để dựng nhanh 1 bản khi soạn nháp."""
     lesson = _load(args.lesson)
-    if not _gate_before_build(lesson, getattr(args, "force", False)):
+    if not _gate_before_build(lesson, getattr(args, "force", False), getattr(args, "fast", False)):
         return 1
-    out_root = _out_root(args.lesson)
-    for fn, render in (("handout", render_handout), ("guide", render_guide), ("slide", render_slide)):
-        pdf = build_pdf(render(lesson), slug=lesson.slug, filename=fn, out_root=out_root)
-        print(f"OK → {pdf}")
+    only = getattr(args, "only", None)
+    kinds = [only] if only else list(_BUILD_KINDS)
+    _build_kinds(lesson, kinds, _out_root(args.lesson), force=getattr(args, "force", False))
     _set_lesson_status(lesson.slug, "built")
     return 0
 
@@ -351,9 +371,7 @@ def cmd_build_folder(args: argparse.Namespace) -> int:
             continue
         out_root = _out_root(str(j))
         try:
-            for fn, render in (("handout", render_handout), ("guide", render_guide), ("slide", render_slide)):
-                pdf = build_pdf(render(lesson), slug=lesson.slug, filename=fn, out_root=out_root)
-                print(f"  OK → {pdf}")
+            _build_kinds(lesson, list(_BUILD_KINDS), out_root, force=force, prefix="  ")
             _set_lesson_status(lesson.slug, "built")
             built.append(lesson.slug)
         except Exception as e:  # noqa: BLE001 — báo lỗi build 1 phiếu, vẫn chạy tiếp phiếu khác
@@ -383,9 +401,12 @@ def cmd_build_summary(args: argparse.Namespace) -> int:
     return 0
 
 
-def _run_validation(lesson: LessonPackage) -> tuple[list[str], list[str], list[str]]:
+def _run_validation(lesson: LessonPackage, fast: bool = False) -> tuple[list[str], list[str], list[str]]:
     """Chạy toàn bộ trọng tài S2 trên 1 gói bài. Trả về (vi phạm chặn, cảnh báo
-    trình bày, cảnh báo độ dốc). Dùng chung cho `validate` lẫn `validate-all`."""
+    trình bày, cảnh báo độ dốc). Dùng chung cho `validate` lẫn `validate-all`.
+
+    `fast=True` BỎ QUA answer_gate (SymPy — chậm nhất) để soi nhanh lúc soạn nháp;
+    full validate (có SymPy) vẫn BẮT BUỘC trước approve."""
     violations: list[str] = []
     for loc, text in _iter_text(lesson):
         try:
@@ -404,9 +425,10 @@ def _run_validation(lesson: LessonPackage) -> tuple[list[str], list[str], list[s
     warns = find_presentation_warnings(lesson)
     ramp_warns = check_ramp(lesson)
 
-    ans_fail, ans_incon = check_answers(lesson)
-    violations.extend(f"[answer_gate] {m}" for m in ans_fail)
-    warns = warns + [f"[answer_gate] (cần kiểm tay) {m}" for m in ans_incon]
+    if not fast:  # answer_gate chạy SymPy (đắt) — bỏ khi --fast, bắt buộc lại trước approve
+        ans_fail, ans_incon = check_answers(lesson)
+        violations.extend(f"[answer_gate] {m}" for m in ans_fail)
+        warns = warns + [f"[answer_gate] (cần kiểm tay) {m}" for m in ans_incon]
 
     # Phiếu phân tầng: kiểm quỹ phút + tỉ lệ 40-40-20 từng phiếu (Thầy chốt 2026-06-11).
     warns = warns + [f"[duration_gate] {m}" for m in check_duration(lesson)]
@@ -415,8 +437,10 @@ def _run_validation(lesson: LessonPackage) -> tuple[list[str], list[str], list[s
 
 def cmd_validate(args: argparse.Namespace) -> int:
     lesson = _load(args.lesson)
-    print(f"▶ Đang trọng tài '{lesson.slug}' — {lesson.title}")
-    violations, warns, ramp_warns = _run_validation(lesson)
+    fast = getattr(args, "fast", False)
+    note = "  (--fast: BỎ SymPy answer_gate — nhớ chạy full trước approve)" if fast else ""
+    print(f"▶ Đang trọng tài '{lesson.slug}' — {lesson.title}{note}")
+    violations, warns, ramp_warns = _run_validation(lesson, fast=fast)
 
     n_unsafe = sum(1 for v in violations if v.startswith("[latex_sanitizer]"))
     n_schema = sum(1 for v in violations if v.startswith("[schema_validator]"))
@@ -523,8 +547,8 @@ def cmd_rebuild(args: argparse.Namespace) -> int:
         try:
             lesson = _load(str(j))
             out_root = _out_root(str(j))
-            for fn, render in (("handout", render_handout), ("guide", render_guide), ("slide", render_slide)):
-                build_pdf(render(lesson), slug=lesson.slug, filename=fn, out_root=out_root)
+            # rebuild = lan thay đổi template/design_tokens → FORCE compile lại (bỏ skip-hash).
+            _build_kinds(lesson, list(_BUILD_KINDS), out_root, force=True, quiet=True)
             _set_lesson_status(lesson.slug, "built")
             n_ok += 1
             print(f"  ✓ {lesson.slug}")
@@ -923,9 +947,11 @@ def main(argv: list[str] | None = None) -> int:
     s.add_argument("--force", action="store_true", help="Build nháp dù validate còn vi phạm")
     s.set_defaults(func=cmd_build_slide)
 
-    a = sub.add_parser("build", help="Sinh đồng thời cả 3 bản (handout, guide, slide) — validate sạch trước")
+    a = sub.add_parser("build", help="Sinh cả 3 bản SONG SONG (handout, guide, slide) — validate sạch trước")
     a.add_argument("lesson", help="Đường dẫn file lesson .json")
     a.add_argument("--force", action="store_true", help="Build nháp dù validate còn vi phạm")
+    a.add_argument("--only", choices=["handout", "guide", "slide"], help="Chỉ dựng 1 bản (xem nhanh khi nháp)")
+    a.add_argument("--fast", action="store_true", help="Bỏ SymPy answer_gate khi build nháp (nhớ build full trước approve)")
     a.set_defaults(func=cmd_build_all)
 
     bf = sub.add_parser("build-folder", help="Build MỌI phiếu trong 1 folder tuần (validate từng file trước)")
@@ -940,6 +966,7 @@ def main(argv: list[str] | None = None) -> int:
     # S2 command
     v = sub.add_parser("validate", help="Chạy trọng tài S2: sanitizer + schema + difficulty_gate")
     v.add_argument("lesson", help="Đường dẫn file lesson .json")
+    v.add_argument("--fast", action="store_true", help="Bỏ SymPy answer_gate (soi nhanh khi nháp)")
     v.set_defaults(func=cmd_validate)
 
     va = sub.add_parser("validate-all", help="Chạy trọng tài S2 trên TẤT CẢ lesson JSON (gác cổng cả kho)")

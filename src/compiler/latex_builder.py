@@ -6,6 +6,7 @@ trước khi tới bước này.
 """
 from __future__ import annotations
 
+import hashlib
 import subprocess
 from pathlib import Path
 
@@ -48,18 +49,30 @@ def _summarize_tex_log(log: str, tex_path: Path) -> str:
     return "\n".join(parts)
 
 
-def build_pdf(tex_source: str, slug: str, filename: str = "handout", out_root: Path | None = None) -> Path:
+def build_pdf(tex_source: str, slug: str, filename: str = "handout",
+              out_root: Path | None = None, force: bool = False) -> Path:
     """Ghi .tex vào <out_root>/<slug>/ rồi compile ra PDF. Trả về đường dẫn PDF.
 
     `out_root` mặc định là OUTPUTS_DIR; truyền vào để output mirror theo cây
     inputs/seeds (vd outputs/dai-so/tuan09-bat-dang-thuc/<slug>/).
-    """
+
+    TỐI ƯU TỐC ĐỘ: ghi kèm sidecar `<filename>.tex.sha256`. Lần build sau, nếu
+    `tex_source` KHÔNG đổi (hash trùng) và PDF còn đó thì BỎ QUA compile Tectonic
+    (khâu chậm nhất) — tăng tốc `build-folder`/`rebuild` khi chỉ vài phiếu đổi.
+    `force=True` luôn compile lại (vd khi đổi template/design_tokens)."""
     base = out_root if out_root is not None else settings.OUTPUTS_DIR
     out_dir = base / slug
     out_dir.mkdir(parents=True, exist_ok=True)
     tex_path = out_dir / f"{filename}.tex"
-    tex_path.write_text(tex_source, encoding="utf-8")
+    pdf_path = out_dir / f"{filename}.pdf"
+    sha_path = out_dir / f"{filename}.tex.sha256"
 
+    digest = hashlib.sha256(tex_source.encode("utf-8")).hexdigest()
+    if (not force and pdf_path.exists() and sha_path.exists()
+            and sha_path.read_text(encoding="utf-8").strip() == digest):
+        return pdf_path  # .tex không đổi & PDF còn đó → khỏi compile
+
+    tex_path.write_text(tex_source, encoding="utf-8")
     cmd = [settings.TECTONIC_BIN, "-X", "compile", str(tex_path), "--outdir", str(out_dir)]
     proc = subprocess.run(cmd, capture_output=True, text=True)
     if proc.returncode != 0:
@@ -69,7 +82,7 @@ def build_pdf(tex_source: str, slug: str, filename: str = "handout", out_root: P
             + _summarize_tex_log(log, tex_path)
         )
 
-    pdf_path = out_dir / f"{filename}.pdf"
     if not pdf_path.exists():
         raise LatexBuildError("Compile xong nhưng không thấy PDF.")
+    sha_path.write_text(digest, encoding="utf-8")  # chốt hash để lần sau bỏ qua nếu không đổi
     return pdf_path
