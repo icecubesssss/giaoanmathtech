@@ -8,7 +8,7 @@ from src.schema import LessonPackage
 from src.validators.schema_validator import validate_lesson_structure
 from src.validators.visual_linter import wrap_long_math, scan_build_log
 
-SEED_JSON = Path("inputs/seeds/lop-9/dai-so/tuan09-bat-dang-thuc/phieu-a-bdt-tinh-chat-va-so-sanh.json")
+SEED_JSON = Path("inputs/seeds/lop-9/dai-so/lop-b/tuan09-bat-dang-thuc/phieu-a-bdt-tinh-chat-va-so-sanh.json")
 
 
 @pytest.fixture
