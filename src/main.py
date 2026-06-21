@@ -35,6 +35,7 @@ from src.validators import (
     check_difficulty,
     check_ramp,
     find_presentation_warnings,
+    find_text_escape_issues,
     check_answers,
     check_duration,
     check_spec_conformance,
@@ -408,6 +409,22 @@ def cmd_build_thuyetminh(args: argparse.Namespace) -> int:
     """Render PHIẾU THUYẾT MINH (spec) → PDF cho Thầy xem & chốt số câu (spec-first)."""
     data = json.loads(Path(args.spec).read_text(encoding="utf-8"))
     spec = ThuyetMinhSpec.model_validate(data)
+
+    # Cổng hygiene: %/# thô (& thô ngoài $) làm VỠ build — báo rõ trước, đừng để Tectonic crash.
+    issues: list[str] = []
+    issues += find_text_escape_issues(spec.title, "title")
+    for fld in ("lythuyet", "vidu", "dang_vd", "loisai", "kienthuc_nb"):
+        for i, t in enumerate(getattr(spec, fld, [])):
+            issues += find_text_escape_issues(t, f"{fld}[{i}]")
+    for p in spec.phieu:
+        for i, r in enumerate(p.rows):
+            issues += find_text_escape_issues(r.dang, f"phiếu {p.code}.row[{i}].dang")
+    if issues:
+        print("✗ Spec có ký tự chưa escape (sẽ vỡ build) — sửa rồi build lại:", file=sys.stderr)
+        for m in issues:
+            print(f"  {m}", file=sys.stderr)
+        return 1
+
     pdf = build_pdf(render_thuyetminh(spec), slug=spec.slug, filename="thuyet-minh",
                     out_root=_out_root(args.spec), force=getattr(args, "force", False))
     print(f"OK → {pdf}")

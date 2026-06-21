@@ -57,6 +57,14 @@ def _check_special(loc: str, s: str, out: list[str], is_math: bool = False) -> N
             )
 
 
+def find_text_escape_issues(text: str, loc: str = "text") -> list[str]:
+    """Cảnh báo escape (%/# thô mọi nơi, & thô ngoài $...$, glyph tofu) cho MỘT chuỗi
+    LaTeX tự do — dùng cho nội dung spec thuyết minh (không phải LessonPackage)."""
+    out: list[str] = []
+    _check_special(loc, text or "", out)
+    return out
+
+
 def _walk_mindmap_labels(node, loc, out):
     lab = node.get("label") if isinstance(node, dict) else getattr(node, "label", None)
     if lab:

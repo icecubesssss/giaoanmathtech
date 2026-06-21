@@ -167,6 +167,7 @@ _Trọng tài Đại số — giải ĐỘC LẬP bằng SymPy rồi đối chi�
 
 ### `src/validators/visual_linter.py`
 _Trọng tài Thị giác — xử lý BẰNG CODE XÁC ĐỊNH (không giao LLM)._
+- `find_text_escape_issues(text, loc)` — Cảnh báo escape (%/# thô mọi nơi, & thô ngoài $...$, glyph tofu) cho MỘT chuỗi
 - `find_presentation_warnings(lesson)` — Cảnh báo trình bày (không chặn build): chú thích GV lọt phiếu HS; nhiều ý
 - `wrap_long_math(latex, max_len)` — Nếu công thức dài hơn `max_len` ký tự, bẻ tại quan hệ thành aligned.
 - **class BuildLogReport**
