@@ -130,8 +130,8 @@ _Cổng gác SÀN độ khó — chống đẻ ra phiếu ngây ngô dưới t�
 - `check_ramp(lesson, profile)` — Cổng ĐỘ DỐC (cảnh báo, KHÔNG chặn build): tầng Mở rộng phải là thang nhiều
 
 ### `src/validators/duration_gate.py`
-_duration_gate — kiểm thời lượng & tỉ lệ NB-TH-VD cho phiếu PHÂN TẦNG._
-- `check_duration(lesson)` — Cảnh báo khi phiếu tầng lệch quỹ phút hoặc tỉ lệ 40-40-20 (±5%).
+_duration_gate — kiểm thời lượng & tỉ lệ NB-TH-VD(-VDC) cho phiếu PHÂN TẦNG._
+- `check_duration(lesson)` — Cảnh báo khi phiếu tầng lệch quỹ phút hoặc tỉ lệ (đọc chuẩn từ tier_spec).
 
 ### `src/validators/geometry_gate.py`
 _Cổng hình học — SymPy YẾU với hình học tổng hợp nên KHÔNG được "duyệt mù"._

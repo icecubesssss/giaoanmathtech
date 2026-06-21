@@ -1,44 +1,35 @@
-"""duration_gate — kiểm thời lượng & tỉ lệ NB-TH-VD cho phiếu PHÂN TẦNG.
+"""duration_gate — kiểm thời lượng & tỉ lệ NB-TH-VD(-VDC) cho phiếu PHÂN TẦNG.
 
-Thầy chốt 2026-06-11 (xem HUONG-DAN-PHAN-TANG-LOP §2):
-  • "Câu" = Ý NHỎ a), b), c)… (mỗi ý 1 câu); bài VD đã tách thì đếm theo thẻ
-    [NB]/[TH]/[VD] gắn ở đầu từng ý. KHÔNG đếm phần Khám phá/Khái niệm
-    (giờ GV giảng, thực tế ~20–30′/bài).
-  • Phút/câu: trên lớp ×1,5 = 1,5/6/12 (NB/TH/VD); BTVN ×1,3 = 1,3/5,2/10,4.
-  • Quỹ: Luyện tập trên lớp 120′ · BTVN 90′ (sai số ±10%).
-  • Tỉ lệ 40-40-20 áp cho TỪNG PHIẾU, theo THỜI GIAN, sai số ±5 điểm % —
-    CHỈ tính phần TRÊN LỚP (Thầy chốt: BTVN không thuộc tỉ lệ này,
-    BTVN chỉ cần giữ quỹ phút).
+Số liệu (phút/câu, ngân sách, tỉ lệ) NAY đọc từ `config/tier_spec.json` (trước cứng
+trong file này). Bảo toàn hành vi tầng C lớp 9 + B/C lớp 8; tổng quát cho mọi tầng
+có rate card + thêm band VDC. Tầng chưa chốt tỉ lệ (X) → KHÔNG gate.
 
-Hiện chuẩn hoá cho tầng C (lớp 9 đại số). Trả về list cảnh báo (kiểu
-visual_linter) — "validate sạch" nghĩa là phải xử lý hết trước khi trình Thầy.
+Quy ước đếm (Thầy chốt 2026-06-11):
+  • "Câu" = ý nhỏ a),b),c)… (mỗi ý 1 câu); bài VD tách thì đếm theo thẻ [NB]/[TH]/
+    [VD]/[VDC] đầu mỗi ý. KHÔNG đếm Khám phá/Khái niệm (giờ GV giảng).
+  • Phút/câu + ngân sách + tỉ lệ: lấy từ tier_spec theo (lớp, môn, tầng).
+  • Tỉ lệ áp cho TỪNG PHIẾU theo THỜI GIAN, sai số ±ratio_tol điểm %, CHỈ phần
+    TRÊN LỚP (BTVN không thuộc tỉ lệ — chỉ giữ quỹ phút).
 """
 from __future__ import annotations
 
 import re
 
 from src.schema.lesson_package import LessonPackage
+from src.schema.tier_spec import load_tier_spec, subject_block, rates_for, tier_ratio
 
-# Phút/câu theo mức (NB, TH, VD) — Thầy chốt 2026-06-11.
-_MIN_ONCLASS = {"NB": 1.5, "TH": 6.0, "VD": 12.0}
-_MIN_BTVN = {"NB": 1.3, "TH": 5.2, "VD": 10.4}
-_BUDGET = {"onclass": 120.0, "btvn": 90.0}
-_BUDGET_TOL = 0.10        # ±10% tổng phút mỗi đoạn
-_RATIO_TARGET = {"NB": 40.0, "TH": 40.0, "VD": 20.0}
-_RATIO_TOL = 5.0          # ±5 điểm % từng mức
-
-_TAG_RE = re.compile(r"\[(NB|TH|VD)\]")
-# Ý a)…j): không dính sau chữ (kể cả chữ Việt có dấu — né "chữa)"), số hay
-# backslash (né "(2x-1)", "\linewidth)" …). \w của Python bắt cả Unicode.
+_TAG_RE = re.compile(r"\[(NB|TH|VD|VDC)\]")
+# Ý a)…j): không dính sau chữ (kể cả chữ Việt — né "chữa)"), số hay backslash.
 _ITEM_RE = re.compile(r"(?<!\w)(?<!\\)([a-j])\)")
 _BULLET_RE = re.compile(r"\\bullet")
 
-_LEVEL_TO_BAND = {1: "NB", 2: "TH", 3: "VD", 4: "VD"}
+_LEVEL_TO_BAND = {1: "NB", 2: "TH", 3: "VD", 4: "VDC"}
+_BANDS = ("NB", "TH", "VD", "VDC")
 
 
 def _count_items(text: str) -> int:
-    """Đếm số "câu" trong một bài KHÔNG gắn thẻ mức: mỗi ý a),b)… = 1 câu;
-    ý nào liệt kê bullet con thì đếm theo số bullet (vd "b) thử 3 BPT" = 3 câu)."""
+    """Đếm số "câu" trong bài KHÔNG gắn thẻ mức: mỗi ý a),b)… = 1 câu; ý liệt kê
+    bullet con thì đếm theo số bullet (vd "b) thử 3 BPT" = 3 câu)."""
     marks = list(_ITEM_RE.finditer(text))
     if not marks:
         return max(1, len(_BULLET_RE.findall(text)))
@@ -51,12 +42,12 @@ def _count_items(text: str) -> int:
 
 
 def _problem_units(lesson: LessonPackage):
-    """Gom mỗi `problem` + các `para` đi liền sau nó thành một đơn vị đếm.
-    CHỈ đếm các chặng luyện tập/tổng kết (review/concept = giờ GV giảng, bỏ)."""
+    """Gom mỗi `problem` + các `para` đi liền sau thành 1 đơn vị đếm. CHỈ đếm chặng
+    luyện tập/tổng kết (review/concept = giờ GV giảng, bỏ)."""
     for stage in lesson.stages:
         if stage.kind in ("review", "concept"):
             continue
-        current = None  # (tier, level, [texts])
+        current = None
         for b in stage.blocks:
             typ = getattr(b, "type", "")
             if typ == "problem":
@@ -66,7 +57,7 @@ def _problem_units(lesson: LessonPackage):
                            getattr(b, "level", 0), [b.statement or ""])
             elif typ == "para" and current:
                 current[2].append(getattr(b, "text", "") or "")
-            elif typ in ("noted", "mindmap"):  # ví dụ mẫu/sơ đồ cắt chuỗi para của đề
+            elif typ in ("noted", "mindmap"):
                 if current:
                     yield current
                     current = None
@@ -74,45 +65,54 @@ def _problem_units(lesson: LessonPackage):
             yield current
 
 
+def _grade_subject(lesson: LessonPackage) -> tuple[str, str]:
+    """Suy (lớp, môn) để tra tier_spec. Lesson chỉ có grade_label → phân lớp 8/9;
+    môn mặc định 'dai-so' (chỉ dai-so có rate card; giữ đúng hành vi cũ)."""
+    gl = getattr(lesson, "grade_label", "") or ""
+    grade = "lop-8" if "Lớp 8" in gl else "lop-9"
+    return grade, "dai-so"
+
+
 def check_duration(lesson: LessonPackage) -> list[str]:
-    """Cảnh báo khi phiếu tầng lệch quỹ phút hoặc tỉ lệ 40-40-20 (±5%)."""
-    is_grade_8 = getattr(lesson, "grade_label", "") == "Lớp 8"
-    if not is_grade_8 and lesson.class_tier != "C":
-        return []  # mới chuẩn hoá tầng C cho khối 9; tầng khác bổ sung khi có SPEC
-    if is_grade_8 and lesson.class_tier not in ("B", "C"):
+    """Cảnh báo khi phiếu tầng lệch quỹ phút hoặc tỉ lệ (đọc chuẩn từ tier_spec)."""
+    tier = lesson.class_tier
+    if not tier:
+        return []
+    grade, subject = _grade_subject(lesson)
+    try:
+        spec = load_tier_spec()
+        ratio_target = tier_ratio(spec, grade, subject, tier)
+        block = subject_block(spec, grade, subject)
+        rates = rates_for(spec, grade, subject)
+    except KeyError:
+        return []                       # chưa có rate card cho (lớp, môn, tầng)
+    if not ratio_target:                # tầng chưa chốt tỉ lệ (vd X chuyên)
         return []
 
-    minutes = {"onclass": {"NB": 0.0, "TH": 0.0, "VD": 0.0},
-               "btvn": {"NB": 0.0, "TH": 0.0, "VD": 0.0}}
-    counts = {"onclass": {"NB": 0, "TH": 0, "VD": 0},
-              "btvn": {"NB": 0, "TH": 0, "VD": 0}}
+    budgets = block.get("budgets", {})
+    budget_tol = block.get("budget_tol", 0.10)
+    ratio_tol = block.get("ratio_tol", 5.0)
+    seg_rate = {"onclass": rates.get("onclass", {}), "btvn": rates.get("btvn", {})}
+    budget_dict = {"onclass": budgets.get("onclass", 0.0), "btvn": budgets.get("btvn", 0.0)}
 
-    if is_grade_8:
-        rate_onclass = {"NB": 0.5, "TH": 3.0, "VD": 8.0}
-        rate_btvn = {"NB": 0.5, "TH": 2.5, "VD": 7.0}
-        budget_dict = {"onclass": 60.0, "btvn": 35.0}
-        ratio_target = {"NB": 25.0, "TH": 45.0, "VD": 30.0}
-    else:
-        rate_onclass = _MIN_ONCLASS
-        rate_btvn = _MIN_BTVN
-        budget_dict = _BUDGET
-        ratio_target = _RATIO_TARGET
+    minutes = {seg: {b: 0.0 for b in _BANDS} for seg in budget_dict}
+    counts = {seg: {b: 0 for b in _BANDS} for seg in budget_dict}
 
-    for tier, level, texts in _problem_units(lesson):
-        if tier not in minutes:      # extend… không thuộc quỹ giờ
+    for seg, level, texts in _problem_units(lesson):
+        if seg not in minutes:          # extend… không thuộc quỹ giờ
             continue
-        rate = rate_onclass if tier == "onclass" else rate_btvn
+        rate = seg_rate[seg]
         text = " ".join(texts)
         tags = _TAG_RE.findall(text)
         if tags:
             for band in tags:
-                counts[tier][band] += 1
-                minutes[tier][band] += rate[band]
+                counts[seg][band] += 1
+                minutes[seg][band] += rate.get(band, 0.0)
         else:
             band = _LEVEL_TO_BAND.get(level, "TH")
             n = _count_items(text)
-            counts[tier][band] += n
-            minutes[tier][band] += n * rate[band]
+            counts[seg][band] += n
+            minutes[seg][band] += n * rate.get(band, 0.0)
 
     warns: list[str] = []
     label = {"onclass": "Luyện tập trên lớp", "btvn": "BTVN"}
@@ -122,16 +122,21 @@ def check_duration(lesson: LessonPackage) -> list[str]:
             continue
         c, m = counts[seg], minutes[seg]
         detail = (f"NB {c['NB']} câu/{m['NB']:.0f}′ · TH {c['TH']} câu/{m['TH']:.0f}′ "
-                  f"· VD {c['VD']} câu/{m['VD']:.0f}′ = {total:.0f}′")
-        if abs(total - budget) > budget * _BUDGET_TOL:
+                  f"· VD {c['VD']} câu/{m['VD']:.0f}′"
+                  + (f" · VDC {c['VDC']} câu/{m['VDC']:.0f}′" if c["VDC"] or m["VDC"] else "")
+                  + f" = {total:.0f}′")
+        if budget and abs(total - budget) > budget * budget_tol:
             warns.append(
-                f"duration: {label[seg]} {total:.0f}′ lệch quỹ {budget:.0f}′ quá ±10% — {detail}.")
-        if seg != "onclass":   # 40-40-20 là tỉ lệ giờ TRÊN LỚP — BTVN chỉ soi quỹ phút
+                f"duration: {label[seg]} {total:.0f}′ lệch quỹ {budget:.0f}′ "
+                f"quá ±{budget_tol*100:.0f}% — {detail}.")
+        if seg != "onclass":            # 40-40-20 là tỉ lệ giờ TRÊN LỚP
             continue
         for band, target in ratio_target.items():
+            if target == 0 and minutes[seg].get(band, 0) == 0:
+                continue                # band không dùng ở tầng này & không xuất hiện
             share = minutes[seg][band] / total * 100
-            if abs(share - target) > _RATIO_TOL:
+            if abs(share - target) > ratio_tol:
                 warns.append(
                     f"duration: {label[seg]} tỉ lệ {band} = {share:.0f}% lệch chuẩn "
-                    f"{target:.0f}% quá ±5 điểm (Thầy chốt 40-40-20 TỪNG PHIẾU) — {detail}.")
+                    f"{target:.0f}% quá ±{ratio_tol:.0f} điểm (tier_spec {tier}) — {detail}.")
     return warns

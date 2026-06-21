@@ -65,3 +65,21 @@ def test_non_tier_c_skipped():
     lesson = _lesson([("onclass", 2, "a) x")])
     lesson.class_tier = ""
     assert check_duration(lesson) == []
+
+
+def test_tier_b_now_checked_with_vdc_band():
+    # Sau refactor đọc tier_spec: tầng B lớp 9 (trước bị bỏ) NAY được soi;
+    # level 4 → band VDC (trước gộp vào VD).
+    lesson = _lesson([("onclass", 4, "a) x")])
+    lesson.class_tier = "B"
+    lesson.grade_label = "Lớp 9 • Ôn vào 10"
+    warns = check_duration(lesson)
+    assert warns and any("VDC" in w for w in warns)
+
+
+def test_tier_x_not_gated():
+    # X (chuyên) chưa chốt tỉ lệ trong tier_spec → không gate.
+    lesson = _lesson([("onclass", 2, "a) x b) x")])
+    lesson.class_tier = "X"
+    lesson.grade_label = "Lớp 9 • Ôn vào 10"
+    assert check_duration(lesson) == []
