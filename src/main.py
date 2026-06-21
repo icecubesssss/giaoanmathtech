@@ -25,7 +25,8 @@ from pathlib import Path
 from datetime import datetime
 
 from src.schema import LessonPackage, ChapterSummary
-from src.compiler import render_handout, render_guide, render_slide, render_summary, build_pdf
+from src.schema.thuyetminh_spec import ThuyetMinhSpec
+from src.compiler import render_handout, render_guide, render_slide, render_summary, build_pdf, render_thuyetminh
 from src.validators import (
     sanitize,
     UnsafeLatexError,
@@ -401,6 +402,16 @@ def cmd_build_summary(args: argparse.Namespace) -> int:
     return 0
 
 
+def cmd_build_thuyetminh(args: argparse.Namespace) -> int:
+    """Render PHIẾU THUYẾT MINH (spec) → PDF cho Thầy xem & chốt số câu (spec-first)."""
+    data = json.loads(Path(args.spec).read_text(encoding="utf-8"))
+    spec = ThuyetMinhSpec.model_validate(data)
+    pdf = build_pdf(render_thuyetminh(spec), slug=spec.slug, filename="thuyet-minh",
+                    out_root=_out_root(args.spec), force=getattr(args, "force", False))
+    print(f"OK → {pdf}")
+    return 0
+
+
 def _run_validation(lesson: LessonPackage, fast: bool = False) -> tuple[list[str], list[str], list[str]]:
     """Chạy toàn bộ trọng tài S2 trên 1 gói bài. Trả về (vi phạm chặn, cảnh báo
     trình bày, cảnh báo độ dốc). Dùng chung cho `validate` lẫn `validate-all`.
@@ -602,7 +613,7 @@ def _scan_tree() -> dict:
             for wf in _week_folders(subject_dir):
                 lessons = [
                     {"file": j.name, **_build_status(j)}
-                    for j in sorted(wf.glob("*.json")) if not _is_summary_json(j)
+                    for j in sorted(wf.glob("*.json")) if _is_lesson_json(j)
                 ]
                 weeks.append({
                     "folder": wf.name,
@@ -962,6 +973,11 @@ def main(argv: list[str] | None = None) -> int:
     bs = sub.add_parser("build-summary", help="Render phiếu TỔNG KẾT CHƯƠNG 1 trang (bản HS + GV)")
     bs.add_argument("summary", help="Đường dẫn file ChapterSummary .json")
     bs.set_defaults(func=cmd_build_summary)
+
+    tm = sub.add_parser("build-thuyetminh", help="Render PHIẾU THUYẾT MINH (spec) ra PDF A4 ngang")
+    tm.add_argument("spec", help="Đường dẫn file ThuyetMinhSpec .json")
+    tm.add_argument("--force", action="store_true", help="Build lại dù .tex không đổi")
+    tm.set_defaults(func=cmd_build_thuyetminh)
 
     # S2 command
     v = sub.add_parser("validate", help="Chạy trọng tài S2: sanitizer + schema + difficulty_gate")

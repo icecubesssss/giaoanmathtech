@@ -37,6 +37,10 @@ _Gọi Tectonic (engine XeLaTeX) biên dịch mã LaTeX → PDF._
 - **class LatexBuildError**
 - `build_pdf(tex_source, slug, filename, out_root, force)` — Ghi .tex vào <out_root>/<slug>/ rồi compile ra PDF. Trả về đường dẫn PDF.
 
+### `src/compiler/thuyetminh_renderer.py`
+_Render PHIẾU THUYẾT MINH (spec) → LaTeX (A4 ngang) dùng base_thuyetminh.tex.j2._
+- `render_thuyetminh(spec)`
+
 ### `src/main.py`
 _Điểm chạy CLI trung tâm — MathTech Engine đầy đủ._
 - `cmd_approve(args)` — Đánh dấu APPROVE để mở khoá compile PDF.
@@ -48,6 +52,7 @@ _Điểm chạy CLI trung tâm — MathTech Engine đầy đủ._
 - `cmd_build_all(args)` — Sinh cả 3 bản SONG SONG từ cùng một gói bài (validate sạch trước).
 - `cmd_build_folder(args)` — Build MỌI phiếu trong một folder tuần (vd folder có phieu-a + phieu-b).
 - `cmd_build_summary(args)` — Sinh phiếu TỔNG KẾT CHƯƠNG 1 trang: bản HS (sơ đồ trống) + bản GV (có đáp án).
+- `cmd_build_thuyetminh(args)` — Render PHIẾU THUYẾT MINH (spec) → PDF cho Thầy xem & chốt số câu (spec-first).
 - `cmd_validate(args)`
 - `cmd_validate_all(args)` — Chạy trọng tài S2 trên TẤT CẢ lesson JSON — gác cổng cả kho trước khi build/commit.
 - `cmd_rebuild(args)` — Build LẠI mọi bài ĐÃ CÓ output (đủ 3 PDF) — để lan thay đổi design_tokens /
@@ -87,6 +92,17 @@ _Cấu trúc tích hợp cả 5 chặng của buổi học — khóa cứng gi�
 - **class Stage**
 - **class LessonPackage**
 - **class ChapterSummary** — Phiếu TỔNG KẾT CHƯƠNG (1 trang) — gom nhiều phiếu của một chương/tuần thành
+
+### `src/schema/thuyetminh_spec.py`
+_PHIẾU THUYẾT MINH (spec) — artifact MÁY-ĐỌC, là HỢP ĐỒNG chốt số câu trước khi soạn._
+- **class SpecRow** — Một DẠNG bài trong phiếu, gắn band + số câu mỗi đoạn. Thời gian tự tính.
+- **class SpecPhieu** — Một phiếu trong buổi (A = kỹ thuật, B = thực tế…).
+- **class ThuyetMinhSpec** — Đặc tả 1 buổi học (≥1 phiếu) — hợp đồng số câu + nội dung khung.
+- `row_minutes(row, rates)` — Phút mỗi đoạn của 1 dòng = số câu × phút/câu(đoạn, band).
+- `phieu_band_counts(phieu)` — Tổng số câu theo {đoạn: {band: count}} của 1 phiếu (để so spec_gate sau).
+- `phieu_totals(phieu, rates)` — Tổng số câu + phút mỗi đoạn của phiếu.
+- `rates_for_spec(spec)` — Phút/câu áp cho spec này (theo lớp/môn của spec).
+- `session_info(spec)` — Thông tin buổi (phút buổi, giải lao, ngân sách) từ tier_spec.
 
 ### `src/schema/tier_spec.py`
 _Đọc `config/tier_spec.json` — RATE CARD cố định theo tầng lớp._
