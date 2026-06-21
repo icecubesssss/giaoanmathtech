@@ -37,6 +37,7 @@ from src.validators import (
     find_presentation_warnings,
     check_answers,
     check_duration,
+    check_spec_conformance,
 )
 from config import settings
 
@@ -467,6 +468,11 @@ def cmd_validate(args: argparse.Namespace) -> int:
         print(f"    ⚠ {w}")
     print(f"  • gradient_gate:    {'OK' if not ramp_warns else f'{len(ramp_warns)} cảnh báo độ dốc'}")
     for w in ramp_warns:
+        print(f"    ⚠ {w}")
+
+    spec_warns = check_spec_conformance(lesson, args.lesson)
+    print(f"  • spec_gate:        {'OK (hoặc không có spec)' if not spec_warns else f'{len(spec_warns)} lệch hợp đồng'}")
+    for w in spec_warns:
         print(f"    ⚠ {w}")
 
     if violations:

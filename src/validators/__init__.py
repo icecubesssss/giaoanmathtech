@@ -10,7 +10,8 @@ from .difficulty_gate import check_difficulty, check_ramp, load_profile, Difficu
 from .geometry_gate import check_geometry_problems, is_geometry, GeometryViolation
 from .visual_linter import wrap_long_math, scan_build_log, BuildLogReport, find_presentation_warnings
 from .answer_gate import check_answers
-from .duration_gate import check_duration
+from .duration_gate import check_duration, band_counts
+from .spec_gate import check_spec_conformance
 from . import sympy_solver
 
 __all__ = [
@@ -20,6 +21,7 @@ __all__ = [
     "check_geometry_problems", "is_geometry", "GeometryViolation",
     "wrap_long_math", "scan_build_log", "BuildLogReport", "find_presentation_warnings",
     "check_answers",
-    "check_duration",
+    "check_duration", "band_counts",
+    "check_spec_conformance",
     "sympy_solver",
 ]

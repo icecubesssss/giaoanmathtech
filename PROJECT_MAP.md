@@ -131,6 +131,7 @@ _Cổng gác SÀN độ khó — chống đẻ ra phiếu ngây ngô dưới t�
 
 ### `src/validators/duration_gate.py`
 _duration_gate — kiểm thời lượng & tỉ lệ NB-TH-VD(-VDC) cho phiếu PHÂN TẦNG._
+- `band_counts(lesson)` — Đếm số câu LUYỆN TẬP theo {onclass|btvn: {band: n}} — đơn vị ý nhỏ/thẻ mức.
 - `check_duration(lesson)` — Cảnh báo khi phiếu tầng lệch quỹ phút hoặc tỉ lệ (đọc chuẩn từ tier_spec).
 
 ### `src/validators/geometry_gate.py`
@@ -149,6 +150,10 @@ _Chốt bảo mật LaTeX — quét và TỪ CHỐI mọi lệnh có thể thự
 _Kiểm toàn vẹn cấu trúc GÓI BÀI ngoài Pydantic._
 - **class SchemaReport**
 - `validate_lesson_structure(lesson)`
+
+### `src/validators/spec_gate.py`
+_spec_gate — so số câu phiếu (JSON) với HỢP ĐỒNG thuyet-minh.json cạnh bên._
+- `check_spec_conformance(lesson, lesson_path)` — [] nếu không có spec cạnh bên (opt-in) hoặc khớp; ngược lại list cảnh báo.
 
 ### `src/validators/sympy_solver.py`
 _Trọng tài Đại số — giải ĐỘC LẬP bằng SymPy rồi đối chiếu với đáp án con người._

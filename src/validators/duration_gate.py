@@ -65,6 +65,23 @@ def _problem_units(lesson: LessonPackage):
             yield current
 
 
+def band_counts(lesson: LessonPackage) -> dict[str, dict[str, int]]:
+    """Đếm số câu LUYỆN TẬP theo {onclass|btvn: {band: n}} — đơn vị ý nhỏ/thẻ mức.
+    Dùng chung cho duration_gate (×rate ra phút) và spec_gate (so với spec)."""
+    counts = {"onclass": {b: 0 for b in _BANDS}, "btvn": {b: 0 for b in _BANDS}}
+    for seg, level, texts in _problem_units(lesson):
+        if seg not in counts:                # extend… không thuộc quỹ giờ
+            continue
+        text = " ".join(texts)
+        tags = _TAG_RE.findall(text)
+        if tags:
+            for band in tags:
+                counts[seg][band] += 1
+        else:
+            counts[seg][_LEVEL_TO_BAND.get(level, "TH")] += _count_items(text)
+    return counts
+
+
 def _grade_subject(lesson: LessonPackage) -> tuple[str, str]:
     """Suy (lớp, môn) để tra tier_spec. Lesson chỉ có grade_label → phân lớp 8/9;
     môn mặc định 'dai-so' (chỉ dai-so có rate card; giữ đúng hành vi cũ)."""
@@ -95,24 +112,9 @@ def check_duration(lesson: LessonPackage) -> list[str]:
     seg_rate = {"onclass": rates.get("onclass", {}), "btvn": rates.get("btvn", {})}
     budget_dict = {"onclass": budgets.get("onclass", 0.0), "btvn": budgets.get("btvn", 0.0)}
 
-    minutes = {seg: {b: 0.0 for b in _BANDS} for seg in budget_dict}
-    counts = {seg: {b: 0 for b in _BANDS} for seg in budget_dict}
-
-    for seg, level, texts in _problem_units(lesson):
-        if seg not in minutes:          # extend… không thuộc quỹ giờ
-            continue
-        rate = seg_rate[seg]
-        text = " ".join(texts)
-        tags = _TAG_RE.findall(text)
-        if tags:
-            for band in tags:
-                counts[seg][band] += 1
-                minutes[seg][band] += rate.get(band, 0.0)
-        else:
-            band = _LEVEL_TO_BAND.get(level, "TH")
-            n = _count_items(text)
-            counts[seg][band] += n
-            minutes[seg][band] += n * rate.get(band, 0.0)
+    counts = band_counts(lesson)        # {onclass|btvn: {band: n}}
+    minutes = {seg: {b: counts[seg][b] * seg_rate[seg].get(b, 0.0) for b in _BANDS}
+               for seg in budget_dict}
 
     warns: list[str] = []
     label = {"onclass": "Luyện tập trên lớp", "btvn": "BTVN"}
