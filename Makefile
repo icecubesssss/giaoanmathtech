@@ -27,7 +27,16 @@ validate: ## Validate 1 phiếu:  make validate FILE=path.json  [FAST=1 bỏ Sym
 build: ## Build 3 PDF song song:  make build FILE=path.json  [ONLY=handout]
 	@$(PY) -m src.main build "$(FILE)" $(if $(ONLY),--only $(ONLY),)
 
+spec: ## Sinh khung THUYẾT MINH (số câu auto):  make spec FOLDER="..." TIER=C
+	@$(PY) -m src.main new-thuyetminh "$(FOLDER)" $(if $(TIER),--tier $(TIER),)
+
+thuyetminh: ## Render thuyết minh ra PDF:  make thuyetminh SPEC=path/thuyet-minh.json
+	@$(PY) -m src.main build-thuyetminh "$(SPEC)"
+
+coverage: ## Spike: bank đủ câu để bốc không (BPT lớp C)
+	@$(PY) scripts/spike_coverage.py
+
 deadcode: ## Soi code chết (cần: pip install vulture)
 	@$(PY) -m vulture src/ --min-confidence 80 || echo "  (cài vulture: .venv/bin/pip install vulture)"
 
-.PHONY: help map test progress check new validate build deadcode
+.PHONY: help map test progress check new validate build spec thuyetminh coverage deadcode

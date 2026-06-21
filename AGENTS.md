@@ -8,13 +8,19 @@
 1. **Đọc [PROJECT_MAP.md](PROJECT_MAP.md) TRƯỚC** (bản đồ module + symbol, tự sinh) — biết code nằm đâu mà khỏi mở từng file. Cũ thì `make map`.
 2. **Menu việc:** `make help` (hoặc xem [Makefile](Makefile)). Quy trình 1 phiếu:
    ```bash
+   # (MỚI · phân tầng) CHỐT SỐ CÂU TRƯỚC bằng phiếu thuyết minh (spec-first):
+   make spec FOLDER="inputs/seeds/lop-9/dai-so/.../[C]tuanNN-<chu-de>" TIER=C
+   make thuyetminh SPEC="<…>/thuyet-minh.json"   # → PDF Thầy đọc, chỉnh số câu & KHOÁ
+   # rồi soạn phiếu bám spec đó:
    make new FOLDER="inputs/seeds/lop-9/dai-so/.../tuanNN-<chu-de>"   # sinh khung
-   # → điền nội dung bám PDF nguồn (HUONG-DAN-SOAN-BAI.md)
-   make validate FILE=<file.json>        # gác cổng (FAST=1 bỏ SymPy lúc nháp)
+   # → điền nội dung bám PDF nguồn (HUONG-DAN-SOAN-BAI.md) + ĐÚNG số câu spec
+   make validate FILE=<file.json>        # gác cổng (FAST=1 bỏ SymPy lúc nháp); spec_gate so số câu với thuyết minh
    make build FILE=<file.json>           # 3 PDF song song (ONLY=handout xem nhanh)
    python -m src.main approve <slug>     # Thầy xem PDF rồi DUYỆT
    ```
-3. Lệnh đầy đủ: `python -m src.main -h`. Tiến độ: `make progress`.
+3. Lệnh đầy đủ: `python -m src.main -h`. Tiến độ: `make progress`. Bank đủ câu không: `make coverage`.
+
+> **SPEC-FIRST (Thầy chốt 2026-06-21):** số câu NB/TH/VD/VDC theo tầng A/B/C/X **cố định trong [config/tier_spec.json](config/tier_spec.json)** (đổi khi mở tầng/khối mới, soạn từng tuần không đụng). `new-thuyetminh` tự tính số câu mục tiêu từ đó; `build-thuyetminh` render PDF cho Thầy chốt; `spec_gate` (trong `validate`) so phiếu JSON với spec (±1 câu/band, opt-in khi có `thuyet-minh.json` cạnh bên). `duration_gate` cũng đọc tier_spec (hết số cứng). **VDC = band 4**; bài giàu **cắt bước (scaffold-decompose)** sinh NB/TH (xem HUONG-DAN-PHAN-TANG-LOP).
 
 ## Luật CỨNG độc lập công cụ — chạy `validate`
 Dù bạn là Claude, Codex, Antigravity, Copilot hay người không dùng AI: mọi luật kiểm được tự động đều nằm trong **code Python**, không phải prompt. Chỉ cần chạy `python -m src.main validate <file.json>` (và `python -m pytest`) là nhận **cùng một bộ gác cổng** (sanitizer/schema/difficulty/visual_linter/gradient + SymPy). **Bắt buộc** validate sạch trước khi `approve`/`build`. Các nguyên tắc dưới đây là phần *con người/tác nhân* phải tự giữ (validator không soi được).

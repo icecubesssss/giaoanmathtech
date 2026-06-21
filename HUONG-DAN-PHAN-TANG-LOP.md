@@ -29,6 +29,8 @@ Trung tâm chia HS theo năng lực thành các **tầng lớp**. Mỗi tầng n
 
 ## 2. Chuẩn SPEC giờ — **Lớp 9 · Đại số · tầng C**
 
+> **MÁY-ĐỌC (2026-06-21):** mọi con số dưới đây nay nằm trong **[config/tier_spec.json](config/tier_spec.json)** (phút/câu, ngân sách, tỉ lệ theo tầng). `duration_gate` + `new-thuyetminh` + `spec_gate` đọc chung từ đó — sửa số ở 1 chỗ. Đã chốt: **C 40-40-20-0 · B 30-40-20-10 · A 20-35-30-15**; **X** (chuyên) chưa chốt tỉ lệ. **VDC = band 4** (phút/câu 12/18/15,6). Bài giàu (VD/VDC) **cắt bước scaffold-decompose** → sinh câu NB/TH *từ chính bài* (vì bank đề hầu như không có câu NB rời — xem `make coverage`).
+
 **Buổi học Lớp 9 Đại số = 3 tiếng = 180′.** Trừ **15′ giải lao** → **165′ học trên lớp** = *Ví dụ GV giảng* + *Luyện tập trên lớp*. **BTVN** làm ở nhà, tính riêng. **Mỗi buổi = 1 phiếu.**
 
 Số câu suy từ: chia thời lượng mỗi đoạn theo **40-40-20** (NB-TH-VD), rồi chia cho **thời lượng ước tính mỗi câu** (theo bảng Thầy chốt):
