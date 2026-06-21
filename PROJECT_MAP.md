@@ -60,6 +60,7 @@ _Điểm chạy CLI trung tâm — MathTech Engine đầy đủ._
 - `cmd_progress(args)` — Quét sống cây tuần, báo trạng thái: PDF nguồn? lesson JSON? đã build chưa?
 - `cmd_new_lesson(args)` — Sinh khung lesson JSON 5 chặng/4 tầng trong folder tuần để đổ đề vào.
 - `cmd_new_summary(args)` — Sinh khung phiếu TỔNG KẾT CHƯƠNG. Một chương = NHIỀU tuần (mỗi tuần 1 bài,
+- `cmd_new_thuyetminh(args)` — Sinh khung PHIẾU THUYẾT MINH (spec) — số câu mục tiêu auto từ tier_spec.
 - `main(argv)`
 
 ### `src/schema/__init__.py`

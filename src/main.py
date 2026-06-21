@@ -26,6 +26,7 @@ from datetime import datetime
 
 from src.schema import LessonPackage, ChapterSummary
 from src.schema.thuyetminh_spec import ThuyetMinhSpec
+from src.schema.tier_spec import load_tier_spec, target_counts
 from src.compiler import render_handout, render_guide, render_slide, render_summary, build_pdf, render_thuyetminh
 from src.validators import (
     sanitize,
@@ -921,6 +922,73 @@ def cmd_new_summary(args: argparse.Namespace) -> int:
     return 0
 
 
+def _thuyetminh_skeleton(slug, title, grade, subject, tier, tuan) -> dict:
+    """Khung spec: mỗi band 1 dòng TODO, onclass/btvn = SỐ CÂU MỤC TIÊU (tier_spec).
+    Build ngay là ra PDF khung đúng quỹ giờ để Thầy thấy hợp đồng, rồi tách dạng."""
+    tc = target_counts(load_tier_spec(), grade, subject, tier)  # {} nếu tầng chưa có tỉ lệ (X)
+    bands = [b for b in ("NB", "TH", "VD", "VDC") if any(tc.get(seg, {}).get(b) for seg in tc)]
+    rows = [{
+        "dang": f"TODO ({b}) — mô tả dạng + nguồn (Bài … / BTVN …)",
+        "band": b, "lythuyet": 0, "vidu": 0,
+        "onclass": tc.get("onclass", {}).get(b, 0),
+        "btvn": tc.get("btvn", {}).get(b, 0),
+        "source_refs": [],
+        "decompose": ("vdc" if b == "VDC" else "vd" if b == "VD" else "none"),
+    } for b in bands]
+    return {
+        "slug": slug, "title": title, "grade": grade, "subject": subject, "tier": tier, "tuan": tuan,
+        "lythuyet": ["TODO: lý thuyết trọng tâm."],
+        "vidu": ["TODO: ví dụ GV làm mẫu."],
+        "dang_vd": ["TODO: dạng VẬN DỤNG trong đề (bám GKI)."],
+        "loisai": ["TODO: lỗi sai thường gặp."],
+        "kienthuc_nb": ["TODO: kiến thức NHẬN BIẾT cần nhớ."],
+        "phieu": [{"code": "A", "title": "TODO tên phiếu", "rows": rows}],
+    }
+
+
+def cmd_new_thuyetminh(args: argparse.Namespace) -> int:
+    """Sinh khung PHIẾU THUYẾT MINH (spec) — số câu mục tiêu auto từ tier_spec."""
+    folder = Path(args.folder)
+    if not folder.exists() or not folder.is_dir():
+        print(f"✗ Không thấy folder: {folder}", file=sys.stderr)
+        return 1
+    grade = subject = ""
+    try:
+        rel = folder.resolve().relative_to(SEEDS_DIR.resolve())
+        grade = rel.parts[0] if rel.parts else ""
+        subject = rel.parts[1] if len(rel.parts) >= 2 else ""
+    except ValueError:
+        pass
+    tier = (getattr(args, "tier", "") or _class_tier(folder.name)).upper()
+    if not tier:
+        print("✗ Cần --tier A/B/C/X (hoặc folder tiền tố [X]).", file=sys.stderr)
+        return 1
+    tuan = "-".join(str(n) for n in _week_nums(folder.name))
+    topic = _topic_slug(folder.name)
+    slug = args.slug or f"thuyet-minh-{topic or folder.name}"
+    title = args.title or topic.replace("-", " ").strip().capitalize() or slug
+    out_path = folder / "thuyet-minh.json"
+    if out_path.exists() and not args.force:
+        print(f"✗ Đã tồn tại {out_path} — dùng --force để ghi đè.", file=sys.stderr)
+        return 1
+    try:
+        skel = _thuyetminh_skeleton(slug, title, grade, subject, tier, tuan)
+    except KeyError:
+        print(f"✗ tier_spec.json chưa có rate card cho {grade}/{subject}/tầng {tier}.", file=sys.stderr)
+        return 1
+
+    out_path.write_text(json.dumps(skel, ensure_ascii=False, indent=2), encoding="utf-8")
+    tc = target_counts(load_tier_spec(), grade, subject, tier)
+    print(f"✓ Khung thuyết minh → {out_path}")
+    if tc:
+        print("  Mục tiêu số câu (tầng " + tier + "): " + " | ".join(
+            f"{seg}: " + " ".join(f"{b}{n}" for b, n in bands.items()) for seg, bands in tc.items()))
+    else:
+        print(f"  ⚠ Tầng {tier} chưa chốt tỉ lệ trong tier_spec → khung rỗng (điền tay).")
+    print(f"  Điền dạng/nguồn rồi: build-thuyetminh {out_path}")
+    return 0
+
+
 # ── Main ───────────────────────────────────────────────────────────────────────
 
 def main(argv: list[str] | None = None) -> int:
@@ -1020,6 +1088,14 @@ def main(argv: list[str] | None = None) -> int:
     ns.add_argument("--title", help="Tiêu đề chương")
     ns.add_argument("--force", action="store_true", help="Ghi đè nếu đã tồn tại")
     ns.set_defaults(func=cmd_new_summary)
+
+    ntm = sub.add_parser("new-thuyetminh", help="Sinh khung PHIẾU THUYẾT MINH (spec) — số câu mục tiêu auto từ tier_spec")
+    ntm.add_argument("folder", help="Folder tuần dưới inputs/seeds/<lop>/<mon>/")
+    ntm.add_argument("--tier", choices=["A", "B", "C", "X"], help="Tầng lớp (mặc định suy từ tiền tố [X] của folder)")
+    ntm.add_argument("--slug", help="Mã spec (mặc định thuyet-minh-<chủ đề>)")
+    ntm.add_argument("--title", help="Tiêu đề bài")
+    ntm.add_argument("--force", action="store_true", help="Ghi đè nếu đã tồn tại")
+    ntm.set_defaults(func=cmd_new_thuyetminh)
 
     args = p.parse_args(argv)
     return args.func(args)
