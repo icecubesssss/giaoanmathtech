@@ -39,6 +39,7 @@ from src.validators import (
     check_answers,
     check_duration,
     check_spec_conformance,
+    check_thuyetminh,
 )
 from config import settings
 
@@ -405,28 +406,67 @@ def cmd_build_summary(args: argparse.Namespace) -> int:
     return 0
 
 
-def cmd_build_thuyetminh(args: argparse.Namespace) -> int:
-    """Render PHIẾU THUYẾT MINH (spec) → PDF cho Thầy xem & chốt số câu (spec-first)."""
-    data = json.loads(Path(args.spec).read_text(encoding="utf-8"))
-    spec = ThuyetMinhSpec.model_validate(data)
-
-    # Cổng hygiene: %/# thô (& thô ngoài $) làm VỠ build — báo rõ trước, đừng để Tectonic crash.
+def _thuyetminh_escape_issues(spec: ThuyetMinhSpec) -> list[str]:
+    """Cổng hygiene: %/# thô (& thô ngoài $) làm VỠ build — soi mọi field text của spec."""
     issues: list[str] = []
     issues += find_text_escape_issues(spec.title, "title")
     for fld in ("lythuyet", "vidu", "dang_vd", "loisai", "kienthuc_nb"):
         for i, t in enumerate(getattr(spec, fld, [])):
             issues += find_text_escape_issues(t, f"{fld}[{i}]")
     for p in spec.phieu:
+        issues += find_text_escape_issues(p.title, f"phiếu {p.code}.title")
         for i, r in enumerate(p.rows):
             issues += find_text_escape_issues(r.dang, f"phiếu {p.code}.row[{i}].dang")
-    if issues:
-        print("✗ Spec có ký tự chưa escape (sẽ vỡ build) — sửa rồi build lại:", file=sys.stderr)
-        for m in issues:
+    return issues
+
+
+def _print_thuyetminh_report(spec: ThuyetMinhSpec) -> tuple[list[str], list[str]]:
+    """In kết quả gác cổng spec (escape + giờ vô lý). Trả (errors, warnings).
+    errors = escape + timing-error (CHẶN build); warnings chỉ cảnh báo."""
+    escape = _thuyetminh_escape_issues(spec)
+    timing_err, timing_warn = check_thuyetminh(spec)
+    errors = [f"[escape] {m}" for m in escape] + [f"[thuyetminh_gate] {m}" for m in timing_err]
+
+    print(f"  • escape:          {'OK' if not escape else f'{len(escape)} ký tự chưa escape'}")
+    print(f"  • thuyetminh_gate: {'OK' if not timing_err else f'{len(timing_err)} giờ VÔ LÝ'}")
+    for m in timing_err:
+        print(f"    ✗ {m}")
+    print(f"  • cân giờ (cảnh báo): {'OK' if not timing_warn else f'{len(timing_warn)} lệch chuẩn'}")
+    for m in timing_warn:
+        print(f"    ⚠ {m}")
+    return errors, timing_warn
+
+
+def cmd_validate_thuyetminh(args: argparse.Namespace) -> int:
+    """Gác cổng PHIẾU THUYẾT MINH (spec) — soi giờ vô lý TRƯỚC khi Thầy chốt số câu."""
+    spec = ThuyetMinhSpec.model_validate(json.loads(Path(args.spec).read_text(encoding="utf-8")))
+    print(f"▶ Soi spec '{spec.slug}' — {spec.title} (tầng {spec.tier}, {spec.grade}/{spec.subject})")
+    errors, _ = _print_thuyetminh_report(spec)
+    if errors:
+        print("\n✗ TỪ CHỐI — spec có vấn đề cần sửa:")
+        for m in errors:
+            print(f"  {m}")
+        return 1
+    print("\n✓ Spec qua cổng. Bước kế: build-thuyetminh → Thầy chốt số câu.")
+    return 0
+
+
+def cmd_build_thuyetminh(args: argparse.Namespace) -> int:
+    """Render PHIẾU THUYẾT MINH (spec) → PDF cho Thầy xem & chốt số câu (spec-first)."""
+    spec = ThuyetMinhSpec.model_validate(json.loads(Path(args.spec).read_text(encoding="utf-8")))
+    force = getattr(args, "force", False)
+
+    errors, _ = _print_thuyetminh_report(spec)
+    if errors and not force:
+        print("\n✗ TỪ CHỐI BUILD — spec có vấn đề (thêm --force để build nháp):", file=sys.stderr)
+        for m in errors:
             print(f"  {m}", file=sys.stderr)
         return 1
+    if errors and force:
+        print("  (--force: bỏ qua lỗi spec, build nháp)")
 
     pdf = build_pdf(render_thuyetminh(spec), slug=spec.slug, filename="thuyet-minh",
-                    out_root=_out_root(args.spec), force=getattr(args, "force", False))
+                    out_root=_out_root(args.spec), force=force)
     print(f"OK → {pdf}")
     return 0
 
@@ -1067,8 +1107,12 @@ def main(argv: list[str] | None = None) -> int:
 
     tm = sub.add_parser("build-thuyetminh", help="Render PHIẾU THUYẾT MINH (spec) ra PDF A4 ngang")
     tm.add_argument("spec", help="Đường dẫn file ThuyetMinhSpec .json")
-    tm.add_argument("--force", action="store_true", help="Build lại dù .tex không đổi")
+    tm.add_argument("--force", action="store_true", help="Bỏ qua lỗi giờ vô lý + build lại dù .tex không đổi")
     tm.set_defaults(func=cmd_build_thuyetminh)
+
+    vtm = sub.add_parser("validate-thuyetminh", help="Soi GIỜ VÔ LÝ trong spec trước khi chốt số câu")
+    vtm.add_argument("spec", help="Đường dẫn file ThuyetMinhSpec .json")
+    vtm.set_defaults(func=cmd_validate_thuyetminh)
 
     # S2 command
     v = sub.add_parser("validate", help="Chạy trọng tài S2: sanitizer + schema + difficulty_gate")

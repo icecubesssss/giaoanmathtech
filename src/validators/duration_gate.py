@@ -19,8 +19,9 @@ from src.schema.lesson_package import LessonPackage
 from src.schema.tier_spec import load_tier_spec, subject_block, rates_for, tier_ratio
 
 _TAG_RE = re.compile(r"\[(NB|TH|VD|VDC)\]")
-# Ý a)…j): không dính sau chữ (kể cả chữ Việt — né "chữa)"), số hay backslash.
-_ITEM_RE = re.compile(r"(?<!\w)(?<!\\)([a-j])\)")
+# Ý a)…j) ở VỊ TRÍ LIỆT KÊ: chỉ tính khi trước nó là khoảng trắng / `]` (từ [[br]]) /
+# `}` (sau minipage) / `>` / đầu chuỗi. Tránh đếm nhầm "b)" trong "(a+b)", "(a-b)"…
+_ITEM_RE = re.compile(r"(?<![^\s\]>}])([a-j])\)")
 _BULLET_RE = re.compile(r"\\bullet")
 
 _LEVEL_TO_BAND = {1: "NB", 2: "TH", 3: "VD", 4: "VDC"}

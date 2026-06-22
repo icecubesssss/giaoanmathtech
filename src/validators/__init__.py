@@ -12,6 +12,7 @@ from .visual_linter import wrap_long_math, scan_build_log, BuildLogReport, find_
 from .answer_gate import check_answers
 from .duration_gate import check_duration, band_counts
 from .spec_gate import check_spec_conformance
+from .thuyetminh_gate import check_thuyetminh
 from . import sympy_solver
 
 __all__ = [
@@ -24,5 +25,6 @@ __all__ = [
     "check_answers",
     "check_duration", "band_counts",
     "check_spec_conformance",
+    "check_thuyetminh",
     "sympy_solver",
 ]

@@ -52,6 +52,7 @@ _Điểm chạy CLI trung tâm — MathTech Engine đầy đủ._
 - `cmd_build_all(args)` — Sinh cả 3 bản SONG SONG từ cùng một gói bài (validate sạch trước).
 - `cmd_build_folder(args)` — Build MỌI phiếu trong một folder tuần (vd folder có phieu-a + phieu-b).
 - `cmd_build_summary(args)` — Sinh phiếu TỔNG KẾT CHƯƠNG 1 trang: bản HS (sơ đồ trống) + bản GV (có đáp án).
+- `cmd_validate_thuyetminh(args)` — Gác cổng PHIẾU THUYẾT MINH (spec) — soi giờ vô lý TRƯỚC khi Thầy chốt số câu.
 - `cmd_build_thuyetminh(args)` — Render PHIẾU THUYẾT MINH (spec) → PDF cho Thầy xem & chốt số câu (spec-first).
 - `cmd_validate(args)`
 - `cmd_validate_all(args)` — Chạy trọng tài S2 trên TẤT CẢ lesson JSON — gác cổng cả kho trước khi build/commit.
@@ -69,6 +70,11 @@ _Điểm chạy CLI trung tâm — MathTech Engine đầy đủ._
 ### `src/schema/base_schema.py`
 _Định dạng của 1 bài toán — đơn vị Ground Truth nhỏ nhất._
 - **class MathProblem**
+
+### `src/schema/exam_bank.py`
+_Loader ngân hàng đề (đã gắn band/phut) — tra cứu câu theo id cho gate/spec._
+- `load_bank(force)` — id câu → {band, phut, diem, dang, chuong, de}. Cache; rỗng nếu chưa có bank.
+- `lookup(ids)` — Các (id, record) có thật trong bank (bỏ qua id không khớp — opt-in, không báo lỗi).
 
 ### `src/schema/feedback_schema.py`
 _Định dạng cấu trúc tệp phản hồi (feedback_parser.py sẽ map từ active_feedback.md sang đây)._
@@ -165,6 +171,10 @@ _Trọng tài Đại số — giải ĐỘC LẬP bằng SymPy rồi đối chi�
 - `verify_identity(lhs, rhs)` — Chứng minh đẳng thức: rút gọn (lhs - rhs) về 0 thì OK.
 - `prove_quadratic_nonneg(expr, symbols)` — Chứng minh `expr >= 0 với mọi biến thực` cho biểu thức BẬC HAI thuần nhất.
 
+### `src/validators/thuyetminh_gate.py`
+_thuyetminh_gate — soi GIỜ VÔ LÝ trong phiếu THUYẾT MINH (spec) TRƯỚC khi Thầy chốt._
+- `check_thuyetminh(spec)` — Trả (errors, warnings). errors CHẶN build; warnings chỉ cảnh báo.
+
 ### `src/validators/visual_linter.py`
 _Trọng tài Thị giác — xử lý BẰNG CODE XÁC ĐỊNH (không giao LLM)._
 - `find_text_escape_issues(text, loc)` — Cảnh báo escape (%/# thô mọi nơi, & thô ngoài $...$, glyph tofu) cho MỘT chuỗi
@@ -183,12 +193,27 @@ _Cấu hình tập trung — đọc biến môi trường từ .env (KHÔNG hard
 
 ## scripts/
 
+### `scripts/build_exam_weights.py`
+_Sinh file WEIGHT dẫn xuất từ ngân hàng đề (đã gắn band/phut) — "trọng số tần suất"._
+- `build()`
+- `main()`
+
 ### `scripts/build_thuyetminh_tuan10_11.py`
 _Dựng PHIẾU THUYẾT MINH (đặc tả) cho [C]tuần 10-11 — BPT bậc nhất một ẩn._
 - `esc(s)`
 - `itemize(items)`
 - `meta_table(rows)`
 - `phieu_table(groups, total)`
+
+### `scripts/exam_annotate.py`
+_Gắn `band` (NB/TH/VD/VDC) + `phut` (thời gian HS làm, ước) vào từng câu trong_
+- `cmd_ensure_ids(args)` — Ghi trường `id` (tổng hợp từ bai+y) vào câu nào còn thiếu — chuẩn hoá bank.
+- `cmd_extract(args)` — In mọi câu CHƯA có band (hoặc --all) để chấm. Mặc định format người-đọc;
+- `cmd_apply(args)` — Đổ phán đoán {id: {band, phut}} vào các đề; gắn cờ _band_auto/_phut_auto.
+- `cmd_report(args)` — Phút/câu THỰC theo band (đối chiếu tier_spec) + độ phủ band/phut.
+- `cmd_check(args)` — Gác cổng ngân hàng đề: Σdiem≠tong_diem, thiếu band/phut, trùng id, band lạ.
+- `cmd_fix_headers(args)` — Backfill thoi_gian_phut/tong_diem còn thiếu; cảnh báo Σdiem ≠ tong_diem.
+- `main(argv)`
 
 ### `scripts/organize_lop8_kntt.py`
 - `normalize_text(text)`
@@ -197,6 +222,11 @@ _Dựng PHIẾU THUYẾT MINH (đặc tả) cho [C]tuần 10-11 — BPT bậc nh
 
 ### `scripts/repomap.py`
 _Sinh PROJECT_MAP.md — bản đồ codebase TIẾT KIỆM TOKEN cho agent/người._
+- `main()`
+
+### `scripts/seed_exam_bands.py`
+_Seed band (NB/TH/VD/VDC) + phut (thời gian HS làm, ước) cho ngân hàng đề lớp 9._
+- `judge(dangs, do_kho)`
 - `main()`
 
 ### `scripts/spike_coverage.py`

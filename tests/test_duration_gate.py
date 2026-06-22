@@ -18,6 +18,11 @@ def test_count_items_ignores_vietnamese_and_math_parens():
     assert _count_items("a) A b) B c) C d) D e) E f) F g) G h) H i) I j) J") == 10
 
 
+def test_count_items_skips_letters_inside_math_groups():
+    # "(a+b)", "(a-b)" KHÔNG được tính là ý — chỉ a) và b) ở vị trí liệt kê = 2.
+    assert _count_items(r"a) Chứng minh $(a+b)^2-(a-b)^2=4ab$ [[br]] b) Tìm GTNN") == 2
+
+
 def _lesson(problems):
     """Dựng phiếu C tối giản: 1 chặng practice1 chứa các problem cho trước."""
     return LessonPackage(slug="t", title="t", class_tier="C", stages=[{

@@ -33,10 +33,22 @@ spec: ## Sinh khung THUYẾT MINH (số câu auto):  make spec FOLDER="..." TIER
 thuyetminh: ## Render thuyết minh ra PDF:  make thuyetminh SPEC=path/thuyet-minh.json
 	@$(PY) -m src.main build-thuyetminh "$(SPEC)"
 
+check-tm: ## Soi giờ vô lý trong spec:  make check-tm SPEC=path/thuyet-minh.json
+	@$(PY) -m src.main validate-thuyetminh "$(SPEC)"
+
 coverage: ## Spike: bank đủ câu để bốc không (BPT lớp C)
 	@$(PY) scripts/spike_coverage.py
+
+exam-report: ## Phút/câu thực theo band trong ngân hàng đề (đối chiếu rate card)
+	@$(PY) -m scripts.exam_annotate report
+
+exam-check: ## Gác cổng ngân hàng đề: Σdiem, band/phut, trùng id
+	@$(PY) -m scripts.exam_annotate check
+
+exam-weights: ## Sinh file trọng số tần suất dạng (từ bank đã gắn band/phut)
+	@$(PY) -m scripts.build_exam_weights
 
 deadcode: ## Soi code chết (cần: pip install vulture)
 	@$(PY) -m vulture src/ --min-confidence 80 || echo "  (cài vulture: .venv/bin/pip install vulture)"
 
-.PHONY: help map test progress check new validate build spec thuyetminh coverage deadcode
+.PHONY: help map test progress check new validate build spec thuyetminh check-tm coverage exam-report exam-check exam-weights deadcode
