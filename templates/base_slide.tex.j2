@@ -62,27 +62,38 @@
   \vfill
 \end{frame}
 
-% --- 5 chặng (reflection tách thêm 2 frame phụ: BTVN, Mở rộng) ---
+% --- 5 chặng: MỖI "đơn vị dạy" (segment) = MỘT frame riêng, KHÔNG allowframebreaks.
+% Nhờ vậy mỗi slide chỉ chứa 1 segment (đã bọc adjustbox tự co) → không tràn đè
+% footer, không sinh slide "divider" trống do beamer tự bẻ trang.
+% (reflection tách thêm frame phụ: BTVN, Mở rộng)
 ((* for stage in lesson.stages *))
 ((* if stage.kind == "reflection" *))
 ((* set parts = split_reflection(stage.blocks) *))
-\begin{frame}[allowframebreaks]{((( stage.number ))). ((( stage.title )))}
-((( SB.render_blocks(parts.tong_ket) )))
+((* for seg in group_slide_segments(parts.tong_ket) *))
+\begin{frame}{((( stage.number ))). ((( stage.title )))((* if not loop.first *)) (tiếp)((* endif *))}
+((( SB.render_seg(seg) )))
 \end{frame}
+((* endfor *))
 ((* if parts.btvn *))
-\begin{frame}[allowframebreaks]{Bài tập về nhà}
-((( SB.render_blocks(parts.btvn) )))
+((* for seg in group_slide_segments(parts.btvn) *))
+\begin{frame}{Bài tập về nhà((* if not loop.first *)) (tiếp)((* endif *))}
+((( SB.render_seg(seg) )))
 \end{frame}
+((* endfor *))
 ((* endif *))
 ((* if parts.mo_rong *))
-\begin{frame}[allowframebreaks]{Bài tập mở rộng (tự chọn)}
-((( SB.render_blocks(parts.mo_rong) )))
+((* for seg in group_slide_segments(parts.mo_rong) *))
+\begin{frame}{Bài tập mở rộng (tự chọn)((* if not loop.first *)) (tiếp)((* endif *))}
+((( SB.render_seg(seg) )))
 \end{frame}
+((* endfor *))
 ((* endif *))
 ((* else *))
-\begin{frame}[allowframebreaks]{((( stage.number ))). ((( stage.title )))}
-((( SB.render_blocks(stage.blocks) )))
+((* for seg in group_slide_segments(stage.blocks) *))
+\begin{frame}{((( stage.number ))). ((( stage.title )))((* if not loop.first *)) (tiếp)((* endif *))}
+((( SB.render_seg(seg) )))
 \end{frame}
+((* endfor *))
 ((* endif *))
 ((* endfor *))
 

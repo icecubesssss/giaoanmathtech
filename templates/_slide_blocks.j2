@@ -79,10 +79,7 @@
 ((= Mỗi "đơn vị dạy" (group_slide_segments) = MỘT slide con. Segment có hình →
     bố cục 2 cột: lý thuyết/đề bên TRÁI, hình bên PHẢI (dễ giảng, liền mạch).
     Segment chỉ-chữ → full width như cũ; chỉ-hình → căn giữa. =))
-((* macro render_blocks(blocks) *))
-((* for seg in group_slide_segments(blocks) *))
-((* if not loop.first *))\framebreak
-((* endif *))
+((* macro render_seg(seg) *))
 ((= Cột CHỮ của cols/opener cũng bọc adjustbox: chữ dài thì tự co, không tràn
     đè footer (đã dính với opener 3 câu hỏi thử nhanh). =))
 ((* if seg.mode == "cols" *))
@@ -138,5 +135,16 @@
 ((* for b in seg.text *))((( render_block(b) )))((* endfor *))
 \end{minipage}}
 ((* endif *))
+((* endmacro *))
+
+((= render_blocks: render mọi segment trong MỘT frame, ngăn bằng \framebreak — giữ
+    cho tương thích chỗ gọi cũ. base_slide nay gọi render_seg theo TỪNG frame (mỗi
+    segment = 1 slide), KHÔNG allowframebreaks → hết tràn đè footer + hết slide
+    "divider" trống. =))
+((* macro render_blocks(blocks) *))
+((* for seg in group_slide_segments(blocks) *))
+((* if not loop.first *))\framebreak
+((* endif *))
+((( render_seg(seg) )))
 ((* endfor *))
 ((* endmacro *))
