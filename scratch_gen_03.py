@@ -1,0 +1,180 @@
+import json
+
+data = {
+  "slug": "phieu-b-ti-le-thuc-tim-x",
+  "title": "Ôn hè 03 — Tỉ lệ thức và Bài toán tìm x",
+  "eyebrow": "PHIẾU B",
+  "grade_label": "Lớp 8",
+  "class_tier": "B",
+  "stages": [
+    {
+      "kind": "review",
+      "number": 1,
+      "title": "Khám phá",
+      "blocks": [
+        {
+          "type": "opener",
+          "text": "MỞ MÀN: Con người luôn muốn chia đều mọi thứ: cái bánh chia làm 3, phần thưởng chia theo thành tích. \"Tỉ lệ\" là ngôn ngữ của sự công bằng đó. Kết hợp với kỹ năng \"truy tìm ẩn số x\", hôm nay chúng ta sẽ giải quyết những bài toán chia phần cực kỳ thú vị!"
+        },
+        {
+          "type": "para",
+          "text": "Ôn tập nhanh:[[br]]- Tính chất tỉ lệ thức: Nếu \\( \\dfrac{a}{b} = \\dfrac{c}{d} \\) thì \\( ad = bc \\).[[br]]- Quy tắc chuyển vế: Chuyển một số hạng từ vế này sang vế kia phải đổi dấu của nó: đang \\( + \\) thành \\( - \\), đang \\( - \\) thành \\( + \\)."
+        }
+      ],
+      "solution": "1. Mở màn:[[br]]2. Ôn tập:[[br]]Học sinh nghe và tự ghi nhớ.",
+      "teacher_note": "Khởi động nhanh."
+    },
+    {
+      "kind": "concept",
+      "number": 2,
+      "title": "Khái niệm và Ví dụ mẫu",
+      "blocks": [
+        {
+          "type": "noted",
+          "text": "\\textbf{1. Tính chất Tỉ lệ thức và Dãy tỉ số bằng nhau}[[br]]Từ đẳng thức \\( ad = bc \\) ta có thể lập các tỉ lệ thức bằng cách đưa \\( a, d \\) vào hai vị trí chéo nhau, \\( b, c \\) vào hai vị trí chéo nhau còn lại.[[br]]Dãy tỉ số bằng nhau: \\( \\dfrac{a}{b} = \\dfrac{c}{d} = \\dfrac{a+c}{b+d} = \\dfrac{a-c}{b-d} \\)."
+        },
+        {
+          "type": "noted",
+          "variant": "example",
+          "text": "\\textbf{Ví dụ 1 (NB):}[[br]]a) Tìm \\( x \\) biết: \\( \\dfrac{x}{3} = \\dfrac{-2}{5} \\).[[br]]b) Từ đẳng thức \\( 2 \\cdot 6 = 3 \\cdot 4 \\), lập các tỉ lệ thức."
+        },
+        {
+          "type": "noted",
+          "text": "\\textbf{2. Quy tắc chuyển vế tìm x}[[br]]Đưa tất cả các số hạng chứa \\( x \\) về một vế, các hằng số về vế còn lại. Chú ý nhớ ĐỔI DẤU."
+        },
+        {
+          "type": "noted",
+          "variant": "example",
+          "text": "\\textbf{Ví dụ 2 (NB):}[[br]]a) Tìm \\( x \\) biết: \\( x - \\dfrac{1}{2} = \\dfrac{3}{4} \\).[[br]]b) Tìm \\( x, y \\) biết \\( \\dfrac{x}{2} = \\dfrac{y}{3} \\) và \\( x + y = 10 \\)."
+        },
+        {
+          "type": "noted",
+          "text": "\\textbf{3. Bài toán thực tế và Phá ngoặc}[[br]]Khi giải toán thực tế, ta gọi ẩn (có đơn vị, điều kiện) và lập dãy tỉ số.[[br]]Khi phương trình chứa ngoặc, ta áp dụng quy tắc nhân phân phối hoặc quy tắc dấu ngoặc trước khi chuyển vế."
+        },
+        {
+          "type": "noted",
+          "variant": "example",
+          "text": "\\textbf{Ví dụ 3 (TH):}[[br]]a) Ba lớp 7A, 7B, 7C trồng được 120 cây, số cây tỉ lệ với 3, 4, 5. Tính số cây mỗi lớp.[[br]]b) Tìm \\( x \\) biết: \\( 2(x - 1) - 3(2x + 1) = 5 \\)."
+        },
+        {
+          "type": "noted",
+          "variant": "example",
+          "text": "\\textbf{Ví dụ 4 (VD):} Tìm \\( x, y, z \\) biết \\( \\dfrac{x}{2} = \\dfrac{y}{3} \\); \\( \\dfrac{y}{4} = \\dfrac{z}{5} \\) và \\( x + y - z = 10 \\)."
+        }
+      ],
+      "solution": "Ví dụ 1:[[br]]a) \\( x = \\dfrac{3 \\cdot (-2)}{5} = -\\dfrac{6}{5} \\).[[br]]b) \\( \\dfrac{2}{3} = \\dfrac{4}{6}; \\dfrac{2}{4} = \\dfrac{3}{6}; \\dfrac{6}{3} = \\dfrac{4}{2}; \\dfrac{6}{4} = \\dfrac{3}{2} \\).[[br]]Ví dụ 2:[[br]]a) \\( x = \\dfrac{3}{4} + \\dfrac{1}{2} = \\dfrac{5}{4} \\).[[br]]b) \\( \\dfrac{x}{2} = \\dfrac{y}{3} = \\dfrac{x+y}{2+3} = \\dfrac{10}{5} = 2 \\). Suy ra \\( x = 4, y = 6 \\).[[br]]Ví dụ 3:[[br]]a) Gọi số cây là \\( a, b, c \\). \\( \\dfrac{a}{3} = \\dfrac{b}{4} = \\dfrac{c}{5} = \\dfrac{120}{12} = 10 \\). Vậy 7A: 30, 7B: 40, 7C: 50.[[br]]b) \\( 2x - 2 - 6x - 3 = 5 \\Rightarrow -4x - 5 = 5 \\Rightarrow -4x = 10 \\Rightarrow x = -2,5 \\).[[br]]Ví dụ 4:[[br]]Quy đồng y: \\( \\dfrac{x}{8} = \\dfrac{y}{12} = \\dfrac{z}{15} = \\dfrac{x+y-z}{8+12-15} = \\dfrac{10}{5} = 2 \\). Suy ra \\( x = 16, y = 24, z = 30 \\).",
+      "teacher_note": "Lưu ý HS khi phá ngoặc có dấu trừ đằng trước thường rất hay sai dấu."
+    },
+    {
+      "kind": "practice1",
+      "number": 3,
+      "title": "Luyện tập 1",
+      "blocks": [
+        {
+          "type": "problem",
+          "label": "Bài 1.",
+          "level": 1,
+          "tier": "onclass",
+          "statement": "Tìm \\( x \\) trong các tỉ lệ thức sau và lập các tỉ lệ thức từ đẳng thức:[[br]]a) \\( \\dfrac{x}{4} = \\dfrac{3}{2} \\)[[br]]b) \\( \\dfrac{-5}{x} = \\dfrac{10}{3} \\)[[br]]c) \\( \\dfrac{x}{7} = \\dfrac{-2}{14} \\)[[br]]d) \\( \\dfrac{2}{5} = \\dfrac{x}{15} \\)[[br]]e) Từ đẳng thức \\( 3 \\cdot 8 = 4 \\cdot 6 \\), lập một tỉ lệ thức (1).[[br]]f) Lập một tỉ lệ thức thứ hai (2).[[br]]g) Lập một tỉ lệ thức thứ ba (3).[[br]]h) Lập một tỉ lệ thức thứ tư (4)."
+        },
+        {
+          "type": "problem",
+          "label": "Bài 2.",
+          "level": 1,
+          "tier": "onclass",
+          "statement": "Tìm \\( x \\) bằng quy tắc chuyển vế:[[br]]a) \\( x - 5 = 12 \\)[[br]]b) \\( 2x + 1 = 7 \\)[[br]]c) \\( 3 - x = 8 \\)[[br]]d) \\( 4x - 2 = 10 \\)[[br]]e) \\( x + \\dfrac{1}{3} = \\dfrac{1}{2} \\)[[br]]f) \\( 5x + 3 = 18 \\)[[br]]g) \\( -2x + 4 = 10 \\)[[br]]h) \\( 7 - 3x = 1 \\)"
+        },
+        {
+          "type": "problem",
+          "label": "Bài 3.",
+          "level": 1,
+          "tier": "onclass",
+          "statement": "Tìm hai số \\( x, y \\) biết:[[br]]a) \\( \\dfrac{x}{3} = \\dfrac{y}{5} \\) và \\( x + y = 16 \\) (Tìm x).[[br]]b) (Tìm y của câu a).[[br]]c) \\( \\dfrac{x}{2} = \\dfrac{y}{7} \\) và \\( y - x = 20 \\) (Tìm x).[[br]]d) (Tìm y của câu c).[[br]]e) \\( \\dfrac{x}{4} = \\dfrac{y}{3} \\) và \\( x + y = 21 \\) (Tìm x).[[br]]f) (Tìm y của câu e).[[br]]g) \\( \\dfrac{x}{5} = \\dfrac{y}{2} \\) và \\( x - y = 9 \\) (Tìm x).[[br]]h) (Tìm y của câu g)."
+        }
+      ],
+      "solution": "Bài 1: a) x=6, b) x=-1,5, c) x=-1, d) x=6, e) 3/4=6/8, f) 3/6=4/8, g) 8/4=6/3, h) 8/6=4/3.[[br]]Bài 2: a) 17, b) 3, c) -5, d) 3, e) 1/6, f) 3, g) -3, h) 2.[[br]]Bài 3: a) x=6, b) y=10, c) x=8, d) y=28, e) x=12, f) y=9, g) x=15, h) y=6.",
+      "teacher_note": "Bài 3 yêu cầu HS trình bày cẩn thận bước áp dụng tính chất."
+    },
+    {
+      "kind": "practice2",
+      "number": 4,
+      "title": "Luyện tập 2",
+      "blocks": [
+        {
+          "type": "problem",
+          "label": "Bài 4.",
+          "level": 2,
+          "tier": "onclass",
+          "statement": "Tìm \\( x \\) biết:[[br]]a) \\( 2(x - 3) = 8 \\)[[br]]b) \\( 3(2x + 1) - 4 = 11 \\)[[br]]c) \\( 5x - 2(x + 3) = 9 \\)[[br]]d) \\( 4(x - 1) + 2(3x - 2) = 14 \\)[[br]]e) \\( -3(x + 2) + 5(x - 1) = 7 \\)"
+        },
+        {
+          "type": "problem",
+          "label": "Bài 5.",
+          "level": 2,
+          "tier": "onclass",
+          "statement": "Giải toán thực tế:[[br]]a) Một hình chữ nhật có chu vi 40m, tỉ số giữa hai cạnh là 2/3. Tính chiều dài.[[br]]b) Tính chiều rộng hình chữ nhật đó.[[br]]c) Số học sinh 3 lớp 7A, 7B, 7C tỉ lệ với 4, 5, 6. Biết 7C nhiều hơn 7A là 10 bạn. Tính số học sinh 7A.[[br]]d) Tính số học sinh 7B, 7C."
+        },
+        {
+          "type": "para",
+          "text": "\\textbf{Nhịp cầu.} Với bài toán nhiều ràng buộc tỉ lệ (vd: \\( a/2 = b/3 \\) và \\( b/4 = c/5 \\)), ta cần quy đồng mẫu số của phần chung (biến b) để tạo thành một dãy tỉ số bằng nhau duy nhất."
+        },
+        {
+          "type": "problem",
+          "label": "Bài 6.",
+          "level": 3,
+          "tier": "onclass",
+          "statement": "Giải bài toán nâng cao:[[br]]a) Tìm \\( x, y, z \\) biết \\( \\dfrac{x}{3} = \\dfrac{y}{4} \\), \\( \\dfrac{y}{5} = \\dfrac{z}{6} \\) và \\( x + y + z = 118 \\).[[br]]b) Tìm \\( x \\) biết: \\( |x - 2| + 3 = 8 \\)."
+        }
+      ],
+      "solution": "Bài 4: a) x=7, b) x=2, c) x=5, d) x=2, e) x=9.[[br]]Bài 5: a) nửa chu vi 20. dài=12, b) rộng=8, c) 7A: 20, d) 7B: 25, 7C: 30.[[br]]Bài 6: a) x/15 = y/20 = z/24 = 118/59 = 2. x=30, y=40, z=48. b) |x-2|=5 suy ra x-2=5 hoặc x-2=-5 => x=7 hoặc x=-3.",
+      "teacher_note": "Bài 5 chú ý nhắc HS công thức nửa chu vi."
+    },
+    {
+      "kind": "reflection",
+      "number": 5,
+      "title": "Tổng kết và BTVN",
+      "blocks": [
+        {
+          "type": "problem",
+          "label": "Bài 7.",
+          "level": 1,
+          "tier": "btvn",
+          "statement": "Tìm \\( x \\) cơ bản:[[br]]a) \\( \\dfrac{x}{5} = \\dfrac{4}{10} \\)[[br]]b) \\( \\dfrac{3}{x} = \\dfrac{-6}{8} \\)[[br]]c) \\( x - 4 = 15 \\)[[br]]d) \\( 2x + 5 = 11 \\)[[br]]e) \\( 3 - 2x = 9 \\)[[br]]f) \\( 5x - 2 = 13 \\)[[br]]g) \\( -4x + 1 = 9 \\)[[br]]h) \\( 8 - 3x = 2 \\)[[br]]i) \\( x + \\dfrac{2}{5} = 1 \\)"
+        },
+        {
+          "type": "problem",
+          "label": "Bài 8.",
+          "level": 1,
+          "tier": "btvn",
+          "statement": "Tìm \\( x, y \\) từ dãy tỉ số:[[br]]a) \\( \\dfrac{x}{4} = \\dfrac{y}{5} \\) và \\( x+y=27 \\) (Tìm x).[[br]]b) (Tìm y).[[br]]c) \\( \\dfrac{x}{3} = \\dfrac{y}{8} \\) và \\( y-x=15 \\) (Tìm x).[[br]]d) (Tìm y).[[br]]e) \\( \\dfrac{x}{2} = \\dfrac{y}{5} \\) và \\( x+y=14 \\) (Tìm x).[[br]]f) (Tìm y).[[br]]g) \\( \\dfrac{x}{7} = \\dfrac{y}{3} \\) và \\( x-y=16 \\) (Tìm x).[[br]]h) (Tìm y)."
+        },
+        {
+          "type": "problem",
+          "label": "Bài 9.",
+          "level": 2,
+          "tier": "btvn",
+          "statement": "Tìm \\( x \\) (phá ngoặc):[[br]]a) \\( 3(x - 2) + 4 = 13 \\)[[br]]b) \\( 2(3x + 1) - (x - 2) = 14 \\)[[br]]c) \\( -4(x + 1) + 5(2x - 1) = 9 \\)"
+        },
+        {
+          "type": "problem",
+          "label": "Bài 10.",
+          "level": 2,
+          "tier": "btvn",
+          "statement": "Toán thực tế:[[br]]a) Hai lớp 7A và 7B thu gom giấy vụn được 90kg, tỉ lệ với 4 và 5. Tính số kg của 7A.[[br]]b) Tính số kg giấy vụn của 7B.[[br]]c) Ba bạn An, Bình, Cường chia 60 viên bi theo tỉ lệ 2:3:5. Tính số bi của mỗi bạn."
+        },
+        {
+          "type": "problem",
+          "label": "Bài 11.",
+          "level": 3,
+          "tier": "btvn",
+          "statement": "Nâng cao:[[br]]a) Tìm \\( x, y, z \\) biết \\( \\dfrac{x}{2} = \\dfrac{y}{3} = \\dfrac{z}{4} \\) và \\( 2x + 3y - z = 27 \\).[[br]]b) Tìm \\( x \\) biết \\( 2|x - 1| - 5 = 3 \\)."
+        }
+      ],
+      "solution": "Bài 7: a) 2, b) -4, c) 19, d) 3, e) -3, f) 3, g) -2, h) 2, i) 3/5. (9 ý).[[br]]Bài 8: a,b: x=12, y=15; c,d: x=9, y=24; e,f: x=4, y=10; g,h: x=28, y=12. (8 ý).[[br]]Bài 9: a) x=5, b) x=2, c) x=3. (3 ý).[[br]]Bài 10: a) 40, b) 50, c) 12, 18, 30. (3 ý).[[br]]Bài 11: a) z/4 nên tử là 2x+3y-z = 4+9-4=9. 27/9=3 => x=6, y=9, z=12. b) |x-1|=4 => x=5 hoặc x=-3. (2 ý).",
+      "teacher_note": "Nhắc HS ôn kỹ quy tắc chuyển vế."
+    }
+  ]
+}
+
+with open("/Users/admin/Documents/thaitd/Code/giaoanMathtech/inputs/seeds/lop-8/dai-so/lop-b/on-he-03-ti-le-thuc-bai-toan-tim-x/phieu-b-ti-le-thuc-tim-x.json", "w") as f:
+    json.dump(data, f, indent=2, ensure_ascii=False)
