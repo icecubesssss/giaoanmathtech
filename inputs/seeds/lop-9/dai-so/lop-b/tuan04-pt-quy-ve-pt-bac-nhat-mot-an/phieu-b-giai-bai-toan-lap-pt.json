@@ -7,455 +7,352 @@
     {
       "kind": "review",
       "number": 1,
-      "title": "Khám phá — KTBC: ba bước lập phương trình",
+      "title": "Khám phá — Các bước giải toán lập PT",
       "blocks": [
         {
           "type": "noted",
-          "text": "\\textbf{Ba bước.} [[br]] B1: \\textbf{chọn ẩn} (đại lượng cần tìm), đặt \\textbf{điều kiện} cho ẩn. [[br]] B2: \\textbf{biểu diễn} các đại lượng chưa biết theo ẩn. [[br]] B3: \\textbf{lập phương trình} từ mối quan hệ trong đề; giải và \\textbf{đối chiếu điều kiện}."
+          "text": "\\textbf{Ba bước giải bài toán lập phương trình.} [[br]] B1: \\textbf{chọn ẩn} (đại lượng cần tìm), đặt \\textbf{điều kiện} cho ẩn. [[br]] B2: \\textbf{biểu diễn} các đại lượng chưa biết theo ẩn (thường kẻ bảng). [[br]] B3: \\textbf{lập phương trình} từ mối quan hệ; giải và \\textbf{đối chiếu điều kiện}."
         },
         {
           "type": "para",
-          "text": "\\textbf{Ví dụ mẫu (thầy + trò cùng làm).} Hai bạn Phong và Khang đạp xe tới một điểm cách Phong $6$ km, cách Khang $7$ km; xuất phát và đến cùng lúc; Khang nhanh hơn Phong $2$ km/h. Tính tốc độ mỗi bạn. [[br]] Gọi tốc độ Phong là $x$ (km/h, $x>0$); Khang là $[[mblank:1.6cm]]$. [[br]] Thời gian bằng nhau: $\\dfrac{6}{x}=\\dfrac{7}{[[mblank:1.4cm]]}$. [[br]] Giải ra: $x=[[mblank:1.2cm]]$. Vậy Phong $[[mblank:1.3cm]]$, Khang $[[mblank:1.3cm]]$ km/h."
+          "text": "\\textbf{Ví dụ mẫu.} Hai bạn Phong và Khang đạp xe xuất phát cùng lúc; Khang đi xa $7$ km, Phong đi $6$ km. Khang đi nhanh hơn Phong $2$ km/h. Cả hai đến cùng lúc. Tính tốc độ mỗi bạn. [[br]] Gọi tốc độ Phong là $[[mblank:1.5cm]]$ (km/h, ĐK: $[[mblank:1.2cm]]$). Khi đó tốc độ Khang là: $[[mblank:2.5cm]]$. [[br]] Thời gian Phong đi hết $6$ km là: $[[mblank:2.5cm]]$. [[br]] Thời gian Khang đi hết $7$ km là: $[[mblank:2.5cm]]$. [[br]] Vì cả hai xuất phát và đến cùng lúc (thời gian bằng nhau), ta có phương trình: $[[mblank:3.5cm]]$. [[br]] Khử mẫu và giải PT: $[[mblank:3.5cm]] \\Rightarrow x=[[mblank:1.5cm]]$ (thỏa mãn ĐK). [[br]] Trả lời: Tốc độ Phong là $[[mblank:1cm]]$ km/h, tốc độ Khang là $[[mblank:1cm]]$ km/h."
         }
       ],
-      "solution": "Ví dụ mẫu: $\\dfrac{6}{x}=\\dfrac{7}{x+2}\\Rightarrow 6x+12=7x\\Rightarrow x=12$ (thỏa). [[br]] Phong $12$ km/h, Khang $14$ km/h.",
-      "teacher_note": "Nhấn: thời gian $=\\dfrac{\\text{quãng đường}}{\\text{tốc độ}}$; 'đến cùng lúc' cho ta phương trình."
+      "solution": "Gọi tốc độ Phong là $x$ ($x>0$). Khang là $x+2$. [[br]] Thời gian Phong: $\\dfrac{6}{x}$. Thời gian Khang: $\\dfrac{7}{x+2}$. [[br]] PT: $\\dfrac{6}{x} = \\dfrac{7}{x+2} \\Rightarrow 6(x+2) = 7x \\Rightarrow x=12$.",
+      "teacher_note": "Giáo viên hướng dẫn học sinh điền vào các chỗ trống, phân tích cách kẻ bảng (nếu cần) ra nháp."
     },
     {
       "kind": "concept",
       "number": 2,
-      "title": "Khái niệm — Lập bảng đại lượng",
+      "title": "Khái niệm — Các dạng bài thường gặp",
       "blocks": [
         {
-          "type": "noted",
-          "text": "\\textbf{Mẹo lập bảng.} Chuyển động dùng $s=v\\cdot t$; năng suất dùng \\emph{số lượng $=$ năng suất $\\times$ thời gian}; làm chung dùng \\emph{phần việc trong $1$ giờ}. Kẻ bảng rồi mới lập phương trình."
+          "type": "para",
+          "text": "\\textbf{1. Dạng Làm chung – Làm riêng}"
+        },
+        {
+          "type": "figure",
+          "tikz": "\\begin{tikzpicture}[scale=0.8]\n\\draw[thick,fill=orange!20] (0,0) circle (1.5);\n\\foreach \\a in {0, 45, 90, 135, 180, 225, 270, 315} {\n\\draw[thick] (0,0) -- (\\a:1.5);\n}\n\\end{tikzpicture}"
         },
         {
           "type": "para",
-          "text": "\\textbf{Ví dụ mẫu.} Một công nhân dự định làm $14$ sản phẩm trong thời gian đã định; thực tế phải làm $21$ sản phẩm nên mỗi giờ làm thêm $3$ sản phẩm mà vẫn đúng hạn. Tính năng suất dự định."
-        },
-        {
-          "type": "table",
-          "caption": "Thầy và trò cùng điền bảng (gọi năng suất dự định là $x$):",
-          "headers": [
-            "",
-            "Năng suất (sp/giờ)",
-            "Số sản phẩm",
-            "Thời gian (giờ)"
-          ],
-          "rows": [
-            [
-              "[[blank:2cm]]",
-              "[[blank:2.4cm]]",
-              "[[blank:1.8cm]]",
-              "[[blank:2.4cm]]"
-            ],
-            [
-              "[[blank:2cm]]",
-              "[[blank:2.4cm]]",
-              "[[blank:1.8cm]]",
-              "[[blank:2.4cm]]"
-            ]
-          ]
+          "text": "\\emph{Giải thích:} Tưởng tượng việc hoàn thành công việc giống như ăn chung 1 chiếc bánh pizza. [[br]] Nếu bạn A ăn một mình hết chiếc bánh trong $8$ phút, thì mỗi phút bạn A sẽ ăn được $\\dfrac{1}{8}$ chiếc bánh. [[br]] Cốt lõi của dạng bài này là phải quy về: \\textbf{1 đơn vị thời gian (1 giờ / 1 ngày) thì làm được bao nhiêu phần công việc}."
         },
         {
           "type": "para",
-          "text": "Sau khi điền bảng, lập phương trình: $\\dfrac{14}{x}=\\dfrac{21}{[[mblank:1.4cm]]}$. [[br]] Giải ra: $x=[[mblank:1.2cm]]$. Năng suất dự định $[[mblank:1.6cm]]$ sản phẩm/giờ."
+          "text": "\\textbf{2. Dạng Chuyển động trên dòng nước}"
+        },
+        {
+          "type": "figure",
+          "tikz": "\\begin{tikzpicture}[scale=0.8]\n\\draw[blue, thick, ->] (0,0) -- (3,0) node[midway, below] {vận tốc nước $= 2$ km/h};\n\\draw[red, thick, ->] (0.5,0.5) -- (2.5,0.5) node[midway, above] {vận tốc riêng $= 5$ km/h};\n\\end{tikzpicture}"
+        },
+        {
+          "type": "para",
+          "text": "\\emph{Giải thích:} Nếu thả một chiếc thuyền đồ chơi không nổ máy xuống dòng sông chảy với tốc độ $2$ km/h, nó sẽ tự trôi với tốc độ đúng $2$ km/h. [[br]] Nếu thuyền nổ máy bơi với tốc độ thực tế (vận tốc riêng) là $5$ km/h: [[br]] $\\bullet$ Khi \\textbf{xuôi dòng} (nước đẩy thêm): vận tốc xuôi $= 5 + 2 = 7$ km/h. [[br]] $\\bullet$ Khi \\textbf{ngược dòng} (nước cản lại): vận tốc ngược $= 5 - 2 = 3$ km/h."
+        },
+        {
+          "type": "para",
+          "text": "\\textbf{3. Dạng Toán phần trăm (Kinh tế)}"
         },
         {
           "type": "noted",
           "variant": "tip",
-          "text": "\\textbf{Hai ví dụ mồi cho dạng dễ nhầm.} [[br]] \\emph{Làm chung} (như chia một chiếc pizza): nếu làm một mình xong trong $x$ giờ thì mỗi giờ làm được $\\dfrac{1}{x}$ \\emph{phần việc}; hai người làm chung, mỗi giờ được $\\dfrac{1}{x}+\\dfrac{1}{y}$ phần việc. [[br]] \\emph{Xuôi/ngược dòng} (như con thuyền trôi theo dòng nước): tốc độ \\emph{xuôi} $=$ tốc độ riêng $+$ tốc độ nước; tốc độ \\emph{ngược} $=$ tốc độ riêng $-$ tốc độ nước (dòng đẩy đi nhanh hơn, cản về chậm hơn)."
-        },
-        {
-          "type": "noted",
-          "text": "\\textbf{Đích đến thi vào 10.} Bài toán đố lập phương trình gần như \\textbf{luôn có} trong đề vào 10 (chuyển động / năng suất / hình học). Nhớ \\textbf{đặt điều kiện} và \\textbf{đối chiếu} ở cuối."
+          "text": "\\emph{Giải thích:} Mua một cốc trà sữa giá $50\\,000$ đ. Cửa hàng thông báo \"giảm $20\\%$\". [[br]] Số tiền được giảm là $20\\%$ của $50\\,000$, tức là $10\\,000$ đ. Ta phải trả $40\\,000$ đ. [[br]] \\textbf{Tính nhanh:} Giá mới sẽ bằng $100\\% - 20\\% = 80\\%$ giá cũ. Lấy $50\\,000 \\times 0{,}8 = 40\\,000$ đ. [[br]] Tổng quát: \\emph{Nếu giảm $a\\%$, nhân giá cũ với $(1 - \\dfrac{a}{100})$. Nếu tăng (chịu thuế) $a\\%$, nhân giá cũ với $(1 + \\dfrac{a}{100})$.}"
         }
       ],
-      "solution": "\\textbf{Điền bảng:} Dự định — năng suất $x$, số sản phẩm $14$, thời gian $\\dfrac{14}{x}$. [[br]] Thực tế — năng suất $x+3$, số sản phẩm $21$, thời gian $\\dfrac{21}{x+3}$. [[br]] Cùng thời gian nên $\\dfrac{14}{x}=\\dfrac{21}{x+3}\\Rightarrow 14x+42=21x\\Rightarrow x=6$ (thỏa). [[br]] Năng suất dự định $6$ sản phẩm/giờ.",
-      "teacher_note": "Điền bảng CÙNG HS tại lớp; bắt HS điền bảng TRƯỚC khi lập phương trình — chống lập sai."
+      "solution": "Học sinh hiểu và ghi nhớ 3 ví dụ đơn giản này để áp dụng vào bài tập.",
+      "teacher_note": "Các ví dụ trực quan bằng số cụ thể (không dùng $x$) giúp học sinh dễ dàng hình dung bản chất trước khi làm toán."
     },
     {
       "kind": "practice1",
       "number": 3,
-      "title": "Luyện tập 1 — Lập ẩn và chuyển động",
+      "title": "Luyện tập 1 — Năng suất, chuyển động",
       "blocks": [
         {
+          "type": "para",
+          "text": "\\textbf{Bài 1 (Trích GK1 Ngô Gia Tự).} Một tổ dự định mỗi ngày may $50$ áo. Thực tế mỗi ngày may được $55$ áo nên không những xong sớm $2$ ngày mà còn may dư $15$ áo. Tính số áo phải may theo dự định."
+        },
+        {
           "type": "problem",
-          "label": "Bài 1.",
+          "label": "Bài 1a.",
           "tier": "onclass",
           "level": 1,
-          "statement": "Gọi ẩn rồi biểu diễn đại lượng còn lại (điền vào chỗ trống, chưa giải): [[br]] a) Một xe đi $150$ km với tốc độ $x$ km/h thì hết $[[mblank:1.8cm]]$ giờ. [[br]] b) Năm nay Nam $x$ tuổi thì $6$ năm nữa Nam $[[mblank:1.6cm]]$ tuổi. [[br]] c) Số có hai chữ số, chữ số hàng chục là $x$, hàng đơn vị là $4$, có giá trị $[[mblank:1.8cm]]$. [[br]] d) Một người làm xong việc trong $x$ giờ thì mỗi giờ làm được $[[mblank:1.6cm]]$ công việc. [[br]] e) Một chiếc áo giá $a$ nghìn đồng, giảm $20\\%$ thì giá mới là $[[mblank:1.8cm]]$ nghìn đồng. [[br]] f) Ca nô tốc độ riêng $v$ km/h, dòng nước $3$ km/h: xuôi dòng $[[mblank:1.6cm]]$, ngược dòng $[[mblank:1.6cm]]$."
+          "statement": "Gọi $x$ là số áo dự định may ($x\\in\\mathbb{N}^{*}$). Viết biểu thức số áo thực tế đã may."
         },
         {
           "type": "problem",
-          "label": "Bài 2.",
+          "label": "Bài 1b.",
           "tier": "onclass",
           "level": 1,
-          "statement": "Lập phương trình cho mỗi tình huống (chưa cần giải): [[br]] a) Hai số hơn kém nhau $5$ và có tổng bằng $31$; gọi số bé là $x$: $[[mblank:4cm]]$. [[br]] b) Một xe đi $60$ km với tốc độ $x$ km/h; nếu nhanh hơn $10$ km/h thì tới sớm $1$ giờ: $[[mblank:4.5cm]]$. [[br]] c) Vòi I chảy riêng đầy bể trong $x$ giờ, vòi II trong $x+2$ giờ; hai vòi cùng chảy được $\\dfrac16$ bể mỗi giờ: $[[mblank:4.5cm]]$. [[br]] d) Mảnh đất rộng $x$ m, dài hơn rộng $3$ m, diện tích $40$ m$^2$: $[[mblank:4cm]]$."
-        },
-        {
-          "type": "writelines",
-          "count": 2
+          "statement": "Viết biểu thức thời gian dự định may xong $x$ áo."
         },
         {
           "type": "problem",
-          "label": "Bài 3.",
+          "label": "Bài 1c.",
           "tier": "onclass",
-          "level": 3,
-          "statement": "Một ô tô dự định đi hết quãng đường $AB$ dài $30$ km. Thực tế do thời tiết xấu, tốc độ giảm $20$ km/h so với dự định nên thời gian đi hết $AB$ gấp rưỡi thời gian dự định. Tìm tốc độ thực tế của ô tô."
+          "level": 1,
+          "statement": "Viết biểu thức thời gian thực tế đã may xong."
         },
         {
-          "type": "table",
-          "caption": "Em tự điền các đại lượng vào bảng rồi lập phương trình (đơn vị: km/h, km, giờ):",
-          "headers": [
-            "",
-            "",
-            "",
-            ""
-          ],
-          "rows": [
-            [
-              "[[blank:1.8cm]]",
-              "[[blank:2.2cm]]",
-              "[[blank:2.2cm]]",
-              "[[blank:2.4cm]]"
-            ],
-            [
-              "[[blank:1.8cm]]",
-              "[[blank:2.2cm]]",
-              "[[blank:2.2cm]]",
-              "[[blank:2.4cm]]"
-            ]
-          ]
+          "type": "problem",
+          "label": "Bài 1d.",
+          "tier": "onclass",
+          "level": 2,
+          "statement": "Lập phương trình thể hiện việc thực tế xong sớm 2 ngày so với dự định."
         },
         {
-          "type": "writelines",
-          "count": 3
+          "type": "problem",
+          "label": "Bài 1e.",
+          "tier": "onclass",
+          "level": 2,
+          "statement": "Giải phương trình và kết luận."
+        },
+        {
+          "type": "para",
+          "text": "\\textbf{Bài 2 (Trích CK1 Phúc Đồng).} Một người đi xe đạp từ $A$ đến $B$ với tốc độ trung bình $15$ km/h. Lúc về đi tốc độ $12$ km/h, nên thời gian về nhiều hơn đi là $45$ phút. Tính quãng đường $AB$."
+        },
+        {
+          "type": "problem",
+          "label": "Bài 2a.",
+          "tier": "onclass",
+          "level": 1,
+          "statement": "Gọi $x$ là độ dài quãng đường $AB$ ($x>0$, km). Viết thời gian lúc đi."
+        },
+        {
+          "type": "problem",
+          "label": "Bài 2b.",
+          "tier": "onclass",
+          "level": 1,
+          "statement": "Viết thời gian lúc về."
+        },
+        {
+          "type": "problem",
+          "label": "Bài 2c.",
+          "tier": "onclass",
+          "level": 1,
+          "statement": "Đổi $45$ phút ra đơn vị giờ."
+        },
+        {
+          "type": "problem",
+          "label": "Bài 2d.",
+          "tier": "onclass",
+          "level": 2,
+          "statement": "Lập phương trình thời gian về nhiều hơn thời gian đi là 45 phút."
+        },
+        {
+          "type": "problem",
+          "label": "Bài 2e.",
+          "tier": "onclass",
+          "level": 2,
+          "statement": "Giải phương trình tìm $x$."
+        }
+      ],
+      "solution": "Bài 1: [[br]] a) $x+15$. [[br]] b) $\\dfrac{x}{50}$. [[br]] c) $\\dfrac{x+15}{55}$. [[br]] d) $\\dfrac{x}{50}-\\dfrac{x+15}{55}=2$. [[br]] e) Khử mẫu: $11x - 10(x+15) = 1100 \\Rightarrow x = 1250$ (thỏa). Dự định may $1250$ áo.\\par\\smallskip Bài 2: [[br]] a) $\\dfrac{x}{15}$. [[br]] b) $\\dfrac{x}{12}$. [[br]] c) $45$ phút = $\\dfrac{3}{4}$ giờ. [[br]] d) $\\dfrac{x}{12}-\\dfrac{x}{15}=\\dfrac{3}{4}$. [[br]] e) Quy đồng $60$: $5x - 4x = 45 \\Rightarrow x=45$ km.",
+      "teacher_note": "Học sinh tự làm các câu nhỏ vào vở. Việc chia nhỏ câu hỏi giúp các bạn định hình được cách tư duy."
+    },
+    {
+      "kind": "practice2",
+      "number": 4,
+      "title": "Luyện tập 2 — Kinh tế, vận dụng trọn vẹn",
+      "blocks": [
+        {
+          "type": "para",
+          "text": "\\textbf{Bài 3 (Trích CK1 Chu Văn An).} Trường THCS dự định mua $1400$ quyển vở và $700$ bút với dự tính tổng tiền niêm yết $22\\,400\\,000$ đ. [[br]] Do mua sỉ, giảm $5\\%$ giá vở, $10\\%$ giá bút, trường chỉ trả $21\\,000\\,000$ đ. Tính giá niêm yết mỗi quyển vở."
+        },
+        {
+          "type": "problem",
+          "label": "Bài 3a.",
+          "tier": "onclass",
+          "level": 1,
+          "statement": "Gọi $x$ là giá niêm yết 1 quyển vở ($x>0$, đồng). Viết số tiền mua $1400$ quyển vở (niêm yết)."
+        },
+        {
+          "type": "problem",
+          "label": "Bài 3b.",
+          "tier": "onclass",
+          "level": 1,
+          "statement": "Tính giá niêm yết 1 cây bút theo $x$ dựa vào tổng $22\\,400\\,000$ đồng."
+        },
+        {
+          "type": "problem",
+          "label": "Bài 3c.",
+          "tier": "onclass",
+          "level": 1,
+          "statement": "Tính giá 1 quyển vở sau khi giảm $5\\%$ (dùng hệ số thập phân như phần Khái niệm)."
+        },
+        {
+          "type": "problem",
+          "label": "Bài 3d.",
+          "tier": "onclass",
+          "level": 1,
+          "statement": "Tính giá 1 cây bút sau khi giảm $10\\%$."
+        },
+        {
+          "type": "problem",
+          "label": "Bài 3e.",
+          "tier": "onclass",
+          "level": 1,
+          "statement": "Lập biểu thức tổng số tiền mua $1400$ vở và $700$ bút với giá đã giảm."
+        },
+        {
+          "type": "problem",
+          "label": "Bài 3f.",
+          "tier": "onclass",
+          "level": 1,
+          "statement": "Viết phương trình thể hiện tổng số tiền thực trả là $21\\,000\\,000$ đồng và giải phương trình."
         },
         {
           "type": "problem",
           "label": "Bài 4.",
           "tier": "onclass",
           "level": 3,
-          "statement": "Một người đi xe đạp từ $A$ đến $B$ cách nhau $60$ km. Sau $1$ giờ $40$ phút, một xe máy cũng đi từ $A$ đến $B$ và đến sớm hơn xe đạp $1$ giờ. Tính tốc độ mỗi xe, biết tốc độ xe máy gấp $3$ lần tốc độ xe đạp."
-        },
-        {
-          "type": "table",
-          "caption": "Em tự điền các đại lượng (gọi tốc độ xe đạp là $x$):",
-          "headers": [
-            "",
-            "",
-            "",
-            ""
-          ],
-          "rows": [
-            [
-              "[[blank:1.8cm]]",
-              "[[blank:2.2cm]]",
-              "[[blank:2.2cm]]",
-              "[[blank:2.4cm]]"
-            ],
-            [
-              "[[blank:1.8cm]]",
-              "[[blank:2.2cm]]",
-              "[[blank:2.2cm]]",
-              "[[blank:2.4cm]]"
-            ]
-          ]
-        },
-        {
-          "type": "writelines",
-          "count": 3
+          "statement": "\\textbf{(Vận dụng - Trích CK1 Ái Mộ).} Xe máy đi từ $A$ đến $B$ với vận tốc $40$ km/h. Lúc về đi $30$ km/h, thời gian về nhiều hơn đi $45$ phút. Tính $AB$."
         },
         {
           "type": "problem",
           "label": "Bài 5.",
           "tier": "onclass",
-          "level": 2,
-          "statement": "Một ô tô đi quãng đường dài $120$ km. Nếu mỗi giờ ô tô đi nhanh hơn $10$ km thì đến nơi sớm hơn $1$ giờ. Tính tốc độ ban đầu của ô tô."
-        },
-        {
-          "type": "writelines",
-          "count": 3
-        },
-        {
-          "type": "problem",
-          "label": "Bài 6.",
-          "tier": "onclass",
-          "level": 3,
-          "statement": "Một người đi xe máy từ $A$ đến $B$ dài $150$ km. Lúc về người đó tăng tốc thêm $10$ km/h nên thời gian về ít hơn lượt đi $30$ phút. Tính tốc độ lúc đi."
-        },
-        {
-          "type": "writelines",
-          "count": 3
-        },
-        {
-          "type": "problem",
-          "label": "Bài 7.",
-          "tier": "onclass",
-          "level": 3,
-          "statement": "Hai xe khởi hành cùng lúc từ hai địa điểm $A$ và $B$ cách nhau $120$ km, đi ngược chiều nhau và gặp nhau sau $2$ giờ. Tính tốc độ mỗi xe, biết xe đi từ $A$ nhanh hơn xe đi từ $B$ là $10$ km/h."
-        },
-        {
-          "type": "writelines",
-          "count": 3
-        },
-        {
-          "type": "problem",
-          "label": "Bài 8.",
-          "tier": "onclass",
-          "level": 3,
-          "statement": "Một xe tải đi từ $A$ đến $B$ dài $100$ km. Lúc về trời mưa nên tốc độ giảm $10$ km/h, khiến thời gian về nhiều hơn thời gian đi $30$ phút. Tính tốc độ lúc đi."
-        },
-        {
-          "type": "writelines",
-          "count": 3
+          "level": 4,
+          "statement": "\\textbf{(Vận dụng cao - Trích CK1 Chu Văn An).} Cửa hàng bán điện thoại giá nhập $14$ triệu đ, bán ra $16$ triệu đ, tiêu thụ $50$ chiếc/tháng. Nếu giảm giá bán $100\\,000$ đ/chiếc thì bán thêm được $5$ chiếc/tháng. Giảm bao nhiêu để lợi nhuận cao nhất?",
+          "hints": [
+            "Gọi số lần giảm giá là n. Giá bán mới: 16 - 0.1n. Số lượng: 50 + 5n.",
+            "Lợi nhuận một chiếc = (16 - 0.1n) - 14. Tổng lợi nhuận P = (2 - 0.1n)(50 + 5n).",
+            "Đưa P về dạng hàm số bậc hai P(n) và tìm đỉnh."
+          ]
         }
       ],
-      "solution": "\\textbf{Bài 1.} a) $\\dfrac{150}{x}$. [[br]] b) $x+6$. [[br]] c) $10x+4$. [[br]] d) $\\dfrac1x$. [[br]] e) $0{,}8a$. [[br]] f) xuôi $v+3$, ngược $v-3$.\\par\\smallskip \\textbf{Bài 2.} a) $x+(x+5)=31$. [[br]] b) $\\dfrac{60}{x}-\\dfrac{60}{x+10}=1$. [[br]] c) $\\dfrac1x+\\dfrac1{x+2}=\\dfrac16$. [[br]] d) $x(x+3)=40$.\\par\\smallskip \\textbf{Bài 3.} Gọi tốc độ dự định $x>20$ (km/h): $\\dfrac{30}{x-20}=\\dfrac32\\cdot\\dfrac{30}{x}\\Rightarrow 30x=45(x-20)\\Rightarrow x=60$. [[br]] Tốc độ thực tế $=60-20=40$ km/h.\\par\\smallskip \\textbf{Bài 4.} Gọi tốc độ xe đạp $x>0$, xe máy $3x$; đổi $1$h$40'=\\dfrac53$ giờ. [[br]] $\\dfrac{20}{x}=\\dfrac{60}{x}-\\dfrac53-1\\Rightarrow \\dfrac{40}{x}=\\dfrac83\\Rightarrow x=15$. [[br]] Xe đạp $15$ km/h, xe máy $45$ km/h.\\par\\smallskip \\textbf{Bài 5.} Gọi tốc độ ban đầu $x>0$: $\\dfrac{120}{x}-\\dfrac{120}{x+10}=1\\Rightarrow (x-30)(x+40)=0\\Rightarrow x=30$ km/h.\\par\\smallskip \\textbf{Bài 6.} Gọi tốc độ lúc đi $x>0$: $\\dfrac{150}{x}-\\dfrac{150}{x+10}=\\dfrac12\\Rightarrow (x-50)(x+60)=0\\Rightarrow x=50$ km/h.\\par\\smallskip \\textbf{Bài 7.} Gọi tốc độ xe từ $B$ là $x>0$, xe từ $A$ là $x+10$: $2\\big(x+(x+10)\\big)=120\\Rightarrow 4x+20=120\\Rightarrow x=25$. [[br]] Xe từ $B$ $25$ km/h, xe từ $A$ $35$ km/h.\\par\\smallskip \\textbf{Bài 8.} Gọi tốc độ lúc đi $x>10$: $\\dfrac{100}{x-10}-\\dfrac{100}{x}=\\dfrac12\\Rightarrow (x-50)(x+40)=0\\Rightarrow x=50$ km/h.",
-      "teacher_note": "Bài 1–2 luyện ĐẶT ẨN và BIỂU DIỄN/LẬP PT (mỗi ý ~0,5'). Bài 3–4 bắt HS điền bảng trước. Bài 5–8 là chuyển động một quan hệ; nhắc đổi $30'=\\dfrac12$ giờ."
-    },
-    {
-      "kind": "practice2",
-      "number": 4,
-      "title": "Luyện tập 2 — Năng suất, dòng nước, hình học",
-      "blocks": [
-        {
-          "type": "problem",
-          "label": "Bài 9.",
-          "tier": "onclass",
-          "level": 3,
-          "statement": "Một ca nô xuôi dòng từ $A$ đến $B$ rồi ngược dòng về $A$, tổng thời gian $3$ giờ. Biết tốc độ ca nô khi nước yên lặng là $27$ km/h và $AB=40$ km. Tính tốc độ dòng nước."
-        },
-        {
-          "type": "writelines",
-          "count": 4
-        },
-        {
-          "type": "problem",
-          "label": "Bài 10.",
-          "tier": "onclass",
-          "level": 3,
-          "statement": "Một ca nô đi $45$ km xuôi dòng rồi $45$ km ngược dòng hết tổng cộng $8$ giờ. Biết tốc độ dòng nước là $3$ km/h. Tính tốc độ ca nô khi nước yên lặng."
-        },
-        {
-          "type": "writelines",
-          "count": 4
-        },
-        {
-          "type": "problem",
-          "label": "Bài 11.",
-          "tier": "onclass",
-          "level": 3,
-          "statement": "Hai người cùng làm chung một công việc thì xong trong $8$ giờ. Sau khi cùng làm $4$ giờ thì người thứ nhất nghỉ, người thứ hai làm tiếp $12$ giờ nữa thì xong. Hỏi nếu làm một mình thì mỗi người làm trong bao lâu?"
-        },
-        {
-          "type": "writelines",
-          "count": 4
-        },
-        {
-          "type": "problem",
-          "label": "Bài 12.",
-          "tier": "onclass",
-          "level": 2,
-          "statement": "Hai người cùng làm chung một công việc thì hoàn thành trong $6$ giờ. Nếu làm một mình, người thứ nhất hoàn thành trong $10$ giờ. Hỏi người thứ hai làm một mình thì hoàn thành trong bao lâu?"
-        },
-        {
-          "type": "writelines",
-          "count": 3
-        },
-        {
-          "type": "problem",
-          "label": "Bài 13.",
-          "tier": "onclass",
-          "level": 3,
-          "statement": "Hai vòi nước cùng chảy vào một bể cạn thì sau $6$ giờ đầy bể. Nếu chảy riêng, vòi I chảy đầy bể nhanh hơn vòi II là $5$ giờ. Tính thời gian mỗi vòi chảy riêng để đầy bể."
-        },
-        {
-          "type": "writelines",
-          "count": 4
-        },
-        {
-          "type": "problem",
-          "label": "Bài 14.",
-          "tier": "onclass",
-          "level": 2,
-          "statement": "Hai vòi nước cùng chảy vào một bể thì sau $12$ giờ đầy bể. Nếu chảy riêng, vòi I chảy một mình đầy bể trong $20$ giờ. Hỏi vòi II chảy một mình thì sau bao lâu đầy bể?"
-        },
-        {
-          "type": "writelines",
-          "count": 3
-        },
-        {
-          "type": "problem",
-          "label": "Bài 15.",
-          "tier": "onclass",
-          "level": 3,
-          "statement": "Một mảnh đất hình chữ nhật có chu vi $52$ m. Trên đó làm một vườn rau hình chữ nhật có diện tích $112$ m$^2$ và một lối đi xung quanh vườn rộng $1$ m. Tính các kích thước của mảnh đất."
-        },
-        {
-          "type": "writelines",
-          "count": 4
-        },
-        {
-          "type": "problem",
-          "label": "Bài 16.",
-          "tier": "onclass",
-          "level": 2,
-          "statement": "Một mảnh vườn hình chữ nhật có chiều dài hơn chiều rộng $5$ m và diện tích $84$ m$^2$. Tính các kích thước của mảnh vườn."
-        },
-        {
-          "type": "writelines",
-          "count": 3
-        },
-        {
-          "type": "problem",
-          "label": "Bài 17.",
-          "tier": "onclass",
-          "level": 3,
-          "statement": "Một tổ sản xuất theo kế hoạch phải làm $240$ sản phẩm. Khi làm, mỗi ngày tổ làm thêm được $4$ sản phẩm so với dự định nên hoàn thành sớm hơn kế hoạch $5$ ngày. Tính số sản phẩm dự định làm mỗi ngày."
-        },
-        {
-          "type": "writelines",
-          "count": 4
-        },
-        {
-          "type": "problem",
-          "label": "Bài 18.",
-          "tier": "onclass",
-          "level": 3,
-          "statement": "Hiện nay tuổi cha gấp $3$ lần tuổi con. Sau $12$ năm nữa, tuổi cha chỉ còn gấp $2$ lần tuổi con. Tính tuổi mỗi người hiện nay."
-        },
-        {
-          "type": "writelines",
-          "count": 3
-        },
-        {
-          "type": "problem",
-          "label": "Bài 19.",
-          "tier": "onclass",
-          "level": 3,
-          "statement": "Một nhóm bạn dự định góp đều nhau $360$ nghìn đồng để mua quà. Đến khi mua, có thêm $3$ bạn cùng góp nên mỗi bạn chỉ phải trả ít hơn dự định $6$ nghìn đồng. Hỏi lúc đầu nhóm có bao nhiêu bạn?"
-        },
-        {
-          "type": "writelines",
-          "count": 3
-        }
-      ],
-      "solution": "\\textbf{Bài 9.} Gọi tốc độ dòng nước $y$ ($0<y<27$): $\\dfrac{40}{27+y}+\\dfrac{40}{27-y}=3\\Rightarrow 2160=2187-3y^2\\Rightarrow y^2=9\\Rightarrow y=3$ km/h.\\par\\smallskip \\textbf{Bài 10.} Gọi tốc độ ca nô $v>3$: $\\dfrac{45}{v+3}+\\dfrac{45}{v-3}=8\\Rightarrow (v-12)(4v+3)=0\\Rightarrow v=12$ km/h.\\par\\smallskip \\textbf{Bài 11.} Gọi người 1 làm một mình hết $x$ giờ ($x>8$). [[br]] $4$ giờ chung làm $\\dfrac12$ việc; người 2 làm tiếp $12$ giờ nốt $\\dfrac12$: $12\\big(\\dfrac18-\\dfrac1x\\big)=\\dfrac12\\Rightarrow \\dfrac{12}{x}=1\\Rightarrow x=12$. [[br]] Người 1: $12$ giờ; người 2: $24$ giờ.\\par\\smallskip \\textbf{Bài 12.} Gọi người 2 hết $x$ giờ: $\\dfrac1{10}+\\dfrac1x=\\dfrac16\\Rightarrow \\dfrac1x=\\dfrac1{15}\\Rightarrow x=15$ giờ.\\par\\smallskip \\textbf{Bài 13.} Gọi vòi I (nhanh hơn) hết $x$ giờ, vòi II hết $x+5$ giờ: $\\dfrac1x+\\dfrac1{x+5}=\\dfrac16\\Rightarrow (x-10)(x+3)=0\\Rightarrow x=10$. [[br]] Vòi I: $10$ giờ; vòi II: $15$ giờ.\\par\\smallskip \\textbf{Bài 14.} Gọi vòi II hết $x$ giờ: $\\dfrac1{20}+\\dfrac1x=\\dfrac1{12}\\Rightarrow \\dfrac1x=\\dfrac1{30}\\Rightarrow x=30$ giờ.\\par\\smallskip \\textbf{Bài 15.} Nửa chu vi $=26$; gọi hai kích thước $a,b$ thì $a+b=26$. [[br]] Vườn lùi $1$ m mỗi phía: $(a-2)(b-2)=112\\Rightarrow ab=160$. [[br]] $a,b$ là nghiệm $t^2-26t+160=0\\Rightarrow t=16;10$. Kích thước $16$ m $\\times\\,10$ m.\\par\\smallskip \\textbf{Bài 16.} Gọi chiều rộng $x>0$: $x(x+5)=84\\Rightarrow (x-7)(x+12)=0\\Rightarrow x=7$. [[br]] Vườn rộng $7$ m, dài $12$ m.\\par\\smallskip \\textbf{Bài 17.} Gọi số sản phẩm dự định mỗi ngày $x>0$: $\\dfrac{240}{x}-\\dfrac{240}{x+4}=5\\Rightarrow (x-12)(x+16)=0\\Rightarrow x=12$ sản phẩm/ngày.\\par\\smallskip \\textbf{Bài 18.} Gọi tuổi con hiện nay $x>0$, cha $3x$: $3x+12=2(x+12)\\Rightarrow x=12$. [[br]] Con $12$ tuổi, cha $36$ tuổi.\\par\\smallskip \\textbf{Bài 19.} Gọi số bạn lúc đầu $x\\in\\mathbb{N}^{*}$: $\\dfrac{360}{x}-\\dfrac{360}{x+3}=6\\Rightarrow (x-12)(x+15)=0\\Rightarrow x=12$ bạn.",
-      "teacher_note": "Bài 9–10 dòng nước (xuôi $v+v_n$, ngược $v-v_n$). Bài 11–14 'phần việc trong 1 giờ'. Bài 15–16 hình học. Bài 17–19 năng suất/tuổi/chia đều. Nhắc đặt điều kiện và đối chiếu cuối bài."
+      "solution": "Bài 3: [[br]] a) $1400x$. [[br]] b) $\\dfrac{22400000-1400x}{700} = 32000 - 2x$. [[br]] c) $0{,}95x$. [[br]] d) $0{,}9(32000-2x)$. [[br]] e) $1400 \\cdot 0{,}95x + 700 \\cdot 0{,}9(32000-2x)$. [[br]] f) $1330x + 630(32000-2x) = 21\\,000\\,000 \\Rightarrow x = 12\\,000$. Giá vở là $12\\,000$ đ.\\par\\smallskip Bài 4: [[br]] Gọi $x$ là quãng đường $AB$ ($x>0$). [[br]] Phương trình: $\\dfrac{x}{30} - \\dfrac{x}{40} = \\dfrac{3}{4} \\Rightarrow x=90$ km.\\par\\smallskip Bài 5: [[br]] Lợi nhuận $P = (2 - 0{,}1n)(50 + 5n) = -0{,}5(n-5)^2 + 112{,}5 \\le 112{,}5$. [[br]] Max khi $n=5$, tức giảm $5 \\times 100\\,000 = 500\\,000$ đ.",
+      "teacher_note": "Học sinh tự nháp và ghi lời giải vào vở."
     },
     {
       "kind": "reflection",
       "number": 5,
-      "title": "Tổng kết",
+      "title": "Bài tập về nhà",
       "blocks": [
         {
           "type": "para",
-          "text": "Quy trình: \\textbf{chọn ẩn + điều kiện} $\\to$ \\textbf{biểu diễn đại lượng} (nên kẻ bảng) $\\to$ \\textbf{lập \\& giải phương trình} $\\to$ \\textbf{đối chiếu điều kiện}, trả lời."
-        },
-        {
-          "type": "mindmap",
-          "caption": "Sơ đồ tư duy — em điền các ô trống để chốt quy trình",
-          "root": "Lập phương trình giải toán",
-          "branches": [
-            {
-              "label": "B1: chọn ẩn + [[blank:2.6cm]]",
-              "children": [
-                {
-                  "label": "Ẩn thường là đại lượng [[blank:2.4cm]]"
-                }
-              ]
-            },
-            {
-              "label": "B2: biểu diễn đại lượng theo [[blank:2cm]]",
-              "children": [
-                {
-                  "label": "Chuyển động: $s=[[blank:1.6cm]]$"
-                }
-              ]
-            },
-            {
-              "label": "B3: lập PT rồi [[blank:2.6cm]] điều kiện"
-            }
-          ]
+          "text": "\\textbf{Bài 6 (Trích GK1 Văn Yên).} Một ô tô đi từ $A$ đến $B$ dài $120$ km. Nếu đi nhanh hơn dự định $10$ km/h thì đến sớm $1$ giờ. Tính tốc độ ban đầu."
         },
         {
           "type": "problem",
-          "label": "Bài 20.",
+          "label": "Bài 6a.",
           "tier": "btvn",
-          "level": 3,
-          "statement": "Bạn Hoa dự định dùng hết $600$ nghìn đồng để mua một số chiếc áo đồng giá. Khi đến nơi, loại áo đó được giảm $30$ nghìn đồng mỗi chiếc nên Hoa mua được số lượng gấp $1{,}25$ lần dự định. Tính giá tiền mỗi chiếc áo Hoa đã mua."
+          "level": 1,
+          "statement": "Gọi $x$ (km/h) là tốc độ ban đầu ($x>0$). Viết thời gian dự định."
         },
         {
           "type": "problem",
-          "label": "Bài 21.",
+          "label": "Bài 6b.",
           "tier": "btvn",
-          "level": 3,
-          "statement": "Bác Lan dự định dùng hết $480$ nghìn đồng mua gạo nếp. Khi đến nơi, giá gạo tăng $2$ nghìn đồng mỗi ki-lô-gam nên bác mua được số gạo giảm $\\dfrac{1}{16}$ lần so với dự định. Tính giá mỗi ki-lô-gam gạo bác Lan đã mua."
+          "level": 1,
+          "statement": "Viết biểu thức thời gian nếu đi nhanh hơn $10$ km/h."
         },
         {
           "type": "problem",
-          "label": "Bài 22.",
+          "label": "Bài 6c.",
           "tier": "btvn",
-          "level": 3,
-          "statement": "Một phân số có mẫu lớn hơn tử $2$. Nếu bớt tử đi $3$ và bớt mẫu đi $6$ thì được phân số mới bằng nghịch đảo của phân số đã cho. Tìm phân số đó."
-        },
-        {
-          "type": "problem",
-          "label": "Bài 23.",
-          "tier": "btvn",
-          "level": 3,
-          "statement": "Một xí nghiệp dự định chia đều $12\\,600\\,000$ đồng thưởng cho các công nhân dự hội thao. Khi đến ngày, chỉ có $80\\%$ số công nhân tham gia nên mỗi người được thêm $105\\,000$ đồng. Tính số công nhân dự định ban đầu."
-        },
-        {
-          "type": "problem",
-          "label": "Bài 24.",
-          "tier": "btvn",
-          "level": 3,
-          "statement": "Một ô tô đi quãng đường $90$ km. Nếu mỗi giờ đi thêm $9$ km thì thời gian giảm $30$ phút. Tính tốc độ ban đầu."
+          "level": 2,
+          "statement": "Lập phương trình và giải tìm $x$."
         },
         {
           "type": "para",
-          "text": "\\textbf{Nhịp cầu lên mở rộng.} Các bài sau thêm \\emph{một} tình huống lạ (chuyển động hai chặng, công thức thực tế) — vẫn quy về một phương trình bậc nhất."
+          "text": "\\textbf{Bài 7.} Một ca nô đi xuôi dòng $45$ km rồi ngược dòng $45$ km hết $8$ giờ. Biết tốc độ dòng nước $3$ km/h. Tính tốc độ ca nô khi nước yên lặng."
         },
         {
           "type": "problem",
-          "label": "Bài 25.",
-          "tier": "extend",
+          "label": "Bài 7a.",
+          "tier": "btvn",
+          "level": 1,
+          "statement": "Gọi $v$ là vận tốc ca nô ($v>3$). Vận tốc xuôi dòng là bao nhiêu?"
+        },
+        {
+          "type": "problem",
+          "label": "Bài 7b.",
+          "tier": "btvn",
+          "level": 1,
+          "statement": "Vận tốc ngược dòng là bao nhiêu?"
+        },
+        {
+          "type": "problem",
+          "label": "Bài 7c.",
+          "tier": "btvn",
+          "level": 1,
+          "statement": "Thời gian đi xuôi dòng là biểu thức nào?"
+        },
+        {
+          "type": "problem",
+          "label": "Bài 7d.",
+          "tier": "btvn",
+          "level": 1,
+          "statement": "Thời gian đi ngược dòng là biểu thức nào?"
+        },
+        {
+          "type": "problem",
+          "label": "Bài 7e.",
+          "tier": "btvn",
+          "level": 2,
+          "statement": "Lập phương trình và giải tìm $v$."
+        },
+        {
+          "type": "para",
+          "text": "\\textbf{Bài 8.} Mảnh vườn hình chữ nhật có chiều dài hơn rộng $5$ m và diện tích $84$ m$^2$. Tính kích thước mảnh vườn."
+        },
+        {
+          "type": "problem",
+          "label": "Bài 8a.",
+          "tier": "btvn",
+          "level": 1,
+          "statement": "Gọi $x$ (m) là chiều rộng ($x>0$). Chiều dài là bao nhiêu?"
+        },
+        {
+          "type": "problem",
+          "label": "Bài 8b.",
+          "tier": "btvn",
+          "level": 1,
+          "statement": "Lập phương trình diện tích bằng $84$."
+        },
+        {
+          "type": "problem",
+          "label": "Bài 8c.",
+          "tier": "btvn",
+          "level": 2,
+          "statement": "Khai triển, đưa về phương trình bậc hai và giải tìm $x$."
+        },
+        {
+          "type": "para",
+          "text": "\\textbf{Bài 9 (Làm chung).} Hai người làm chung xong việc trong $6$ giờ. Nếu làm một mình, người 1 xong trong $10$ giờ. Hỏi người 2 xong trong bao lâu?"
+        },
+        {
+          "type": "problem",
+          "label": "Bài 9a.",
+          "tier": "btvn",
+          "level": 1,
+          "statement": "1 giờ cả hai người cùng làm được bao nhiêu phần công việc?"
+        },
+        {
+          "type": "problem",
+          "label": "Bài 9b.",
+          "tier": "btvn",
+          "level": 1,
+          "statement": "1 giờ người thứ nhất làm được bao nhiêu phần công việc?"
+        },
+        {
+          "type": "problem",
+          "label": "Bài 9c.",
+          "tier": "btvn",
           "level": 3,
-          "statement": "Một ca nô đi xuôi dòng từ $A$ đến $B$ rồi ngược dòng về $A$; thời gian xuôi ít hơn thời gian ngược $40$ phút. Biết $AB=24$ km và tốc độ dòng nước $3$ km/h. Tính tốc độ ca nô khi nước yên lặng.",
-          "hints": [
-            "Gọi tốc độ ca nô $v$; xuôi $v+3$, ngược $v-3$. Đổi $40$ phút $=\\dfrac23$ giờ.",
-            "Lập hiệu thời gian ngược trừ xuôi $=\\dfrac23$."
-          ]
+          "statement": "Gọi thời gian người 2 xong việc là $x$. Lập phương trình và giải tìm $x$."
         },
         {
           "type": "problem",
-          "label": "Bài 26.",
-          "tier": "extend",
-          "level": 3,
-          "statement": "Để loại bỏ $p\\%$ chất ô nhiễm trong khí thải của một nhà máy, chi phí $C$ (triệu đồng) tính theo $C=\\dfrac{80}{100-p}$ với $0\\le p<100$. Nếu chi $420$ triệu đồng thì loại bỏ được bao nhiêu phần trăm chất ô nhiễm (làm tròn đến hàng phần mười)?",
-          "hints": [
-            "Thay $C=420$ rồi giải tìm $p$.",
-            "Đưa về $100-p=\\dfrac{80}{420}$ rồi suy ra $p$."
-          ]
-        },
-        {
-          "type": "problem",
-          "label": "Bài 27.",
-          "tier": "extend",
+          "label": "Bài 10.",
+          "tier": "btvn",
           "level": 4,
-          "statement": "\\textbf{Thử thách (tự chọn) —} Một ô tô đi quãng đường $AB$ dài $61{,}5$ km. Sau khi đi $30$ km với một tốc độ không đổi, ô tô đi tiếp phần còn lại với tốc độ tăng thêm $2$ km/h. Tính tốc độ ban đầu, biết thời gian đi $30$ km đầu bằng thời gian đi $31{,}5$ km còn lại.",
-          "hints": [
-            "Quãng còn lại $=61{,}5-30=31{,}5$ km; gọi tốc độ ban đầu $v$, phần sau $v+2$.",
-            "Cho hai thời gian bằng nhau: $\\dfrac{30}{v}=\\dfrac{31{,}5}{v+2}$."
-          ]
+          "statement": "\\textbf{(Vận dụng cao).} Xí nghiệp dự định chia đều $12\\,600\\,000$ đ thưởng. Khi đến ngày, có $80\\%$ số công nhân tham gia nên mỗi người nhận thêm $105\\,000$ đ. Tính số công nhân dự định."
         }
       ],
-      "solution": "\\textbf{Bài 20.} Gọi giá dự định mỗi áo $a>30$ (nghìn): $\\dfrac{600}{a-30}=1{,}25\\cdot\\dfrac{600}{a}\\Rightarrow a=1{,}25(a-30)\\Rightarrow a=150$. [[br]] Giá đã mua $=a-30=120$ nghìn/chiếc.\\par\\smallskip \\textbf{Bài 21.} Gọi giá dự định $a>0$ (nghìn/kg), giá mới $a+2$: $\\dfrac{480}{a+2}=\\dfrac{15}{16}\\cdot\\dfrac{480}{a}\\Rightarrow 16a=15(a+2)\\Rightarrow a=30$. [[br]] Giá đã mua $=a+2=32$ nghìn/kg.\\par\\smallskip \\textbf{Bài 22.} Gọi tử $x$, mẫu $x+2$ ($x\\ne0;4$): $\\dfrac{x-3}{x-4}=\\dfrac{x+2}{x}\\Rightarrow x(x-3)=(x+2)(x-4)\\Rightarrow x=8$. [[br]] Phân số là $\\dfrac{8}{10}$.\\par\\smallskip \\textbf{Bài 23.} Gọi số công nhân dự định $n\\in\\mathbb{N}^{*}$: $\\dfrac{12\\,600\\,000}{0{,}8n}-\\dfrac{12\\,600\\,000}{n}=105\\,000\\Rightarrow n=30$ công nhân.\\par\\smallskip \\textbf{Bài 24.} Gọi tốc độ ban đầu $x>0$: $\\dfrac{90}{x}-\\dfrac{90}{x+9}=\\dfrac12\\Rightarrow (x-36)(x+45)=0\\Rightarrow x=36$ km/h.\\par\\smallskip \\textbf{Bài 25.} Gọi tốc độ ca nô $v>3$: $\\dfrac{24}{v-3}-\\dfrac{24}{v+3}=\\dfrac23\\Rightarrow v^2-9=216\\Rightarrow v=15$ km/h.\\par\\smallskip \\textbf{Bài 26.} $\\dfrac{80}{100-p}=420\\Rightarrow 100-p=\\dfrac{80}{420}\\approx0{,}19\\Rightarrow p\\approx99{,}8\\%$.\\par\\smallskip \\textbf{Bài 27.} Gọi tốc độ ban đầu $v>0$: $\\dfrac{30}{v}=\\dfrac{31{,}5}{v+2}\\Rightarrow 30(v+2)=31{,}5v\\Rightarrow 1{,}5v=60\\Rightarrow v=40$ km/h.\\par\\medskip \\textbf{Đáp án sơ đồ:} B1 chọn ẩn + \\emph{điều kiện}; ẩn là đại lượng \\emph{cần tìm}; B2 biểu diễn theo \\emph{ẩn}, chuyển động $s=v\\cdot t$; B3 lập PT rồi \\emph{đối chiếu} điều kiện.",
-      "teacher_note": "Bài 20–24 là ngân hàng BTVN (\\%/tiền, phân số, chia đều, chuyển động). Mở rộng: 25 (hiệu thời gian) $\\to$ 26 (công thức thực tế) $\\to$ 27 (chuyển động hai chặng)."
+      "solution": "Bài 6: [[br]] a) $\\dfrac{120}{x}$. [[br]] b) $\\dfrac{120}{x+10}$. [[br]] c) PT: $\\dfrac{120}{x} - \\dfrac{120}{x+10} = 1 \\Rightarrow x(x+10) = 1200 \\Rightarrow x=30$ (thỏa).\\par\\smallskip Bài 7: [[br]] a) $v+3$. b) $v-3$. c) $\\dfrac{45}{v+3}$. d) $\\dfrac{45}{v-3}$. e) $\\dfrac{45}{v+3}+\\dfrac{45}{v-3}=8 \\Rightarrow v=12$.\\par\\smallskip Bài 8: [[br]] a) $x+5$. b) $x(x+5)=84$. c) $x^2+5x-84=0 \\Rightarrow x=7$. Rộng 7m, dài 12m.\\par\\smallskip Bài 9: [[br]] a) $\\dfrac{1}{6}$. b) $\\dfrac{1}{10}$. c) PT: $\\dfrac{1}{10}+\\dfrac{1}{x}=\\dfrac{1}{6} \\Rightarrow x=15$ giờ.\\par\\smallskip Bài 10: [[br]] Gọi số công nhân là $n$. Số người tham gia: $0{,}8n$. PT: $\\dfrac{12600000}{0{,}8n} - \\dfrac{12600000}{n} = 105000 \\Rightarrow n=30$. Dự định $30$ công nhân.",
+      "teacher_note": "BTVN luyện tập lại đúng các dạng đã phân rã trên lớp."
     }
   ]
 }

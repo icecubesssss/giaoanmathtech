@@ -9,9 +9,13 @@
 \usepackage{adjustbox}
 \usepackage{pifont}         % Zapf Dingbats (sao ★, ✓…) — bundled, không cần font ngoài
 \usepackage{qrcode}         % QR sinh thẳng trong TeX (không cần internet/shell-escape)
+\usepackage{setspace}
+\setstretch{1.15}
+\tcbset{opacityback=0.92, opacitybacktitle=0.92}
+\AtBeginDocument{\color{ink}}
 % Thư viện TikZ cho HÌNH HỌC (block figure): calc=toạ độ suy diễn, angles/quotes=cung góc.
 % positioning: đặt nhãn dưới nút (thanh hành trình). arrows.meta: mũi tên sơ đồ bước giải.
-\usetikzlibrary{calc,angles,quotes,positioning,arrows.meta}
+\usetikzlibrary{calc,angles,quotes,positioning,arrows.meta,shapes.geometric}
 
 % --- SƠ ĐỒ BƯỚC GIẢI (đặc sản): style dùng trong block figure để vẽ quy trình
 %     dạng khối + mũi tên (vd 4 bước ẩn ở mẫu) thay vì liệt kê chữ. In đen trắng rõ. ---
@@ -70,7 +74,7 @@
 % #1=số chặng, #2=tiêu đề, #3=màu chặng, #4=icon nét vẽ.
 \newtcolorbox{stage}[4]{
   enhanced, breakable, colback=#3!3, colframe=#3,
-  boxrule=0pt, arc=3pt, outer arc=3pt,
+  boxrule=0pt, arc=6pt, outer arc=6pt,
   top=10pt,bottom=10pt,left=14pt,right=14pt, boxsep=0pt,
   borderline west={3pt}{0pt}{#3},
   overlay unbroken and first={
@@ -98,33 +102,34 @@
   \end{tikzpicture}\end{center}}
 
 % --- Thẻ CALLOUT (nhãn màu, icon) cho block noted có 'variant'. ---
-\newtcolorbox{calloutexample}{enhanced, breakable, colback=info!4, colframe=info!50,
-  boxrule=0.6pt, arc=3pt, top=6pt,bottom=7pt,left=11pt,right=11pt, before=\vspace{3pt},
+\newtcolorbox{calloutexample}{enhanced, breakable, drop shadow=black!8, colback=info!2, colframe=info!50,
+  boxrule=0.6pt, arc=6pt, top=6pt,bottom=6pt,left=10pt,right=10pt, before=\vspace{2pt},
   coltitle=white, colbacktitle=info, fonttitle=\sffamily\bfseries\small,
-  attach boxed title to top left={xshift=10pt,yshift=-8pt}, boxed title style={arc=2pt,boxrule=0pt},
+  attach boxed title to top left={xshift=10pt,yshift=-8pt}, boxed title style={arc=3pt,boxrule=0pt},
   title={\ding{46}\ \ VÍ DỤ MẪU}}
-\newtcolorbox{callouttrap}{enhanced, breakable, colback=trap!4, colframe=trap!55,
-  boxrule=0.6pt, arc=3pt, top=6pt,bottom=7pt,left=11pt,right=11pt, before=\vspace{3pt},
+\newtcolorbox{callouttrap}{enhanced, breakable, drop shadow=black!8, colback=trap!2, colframe=trap!55,
+  boxrule=0.6pt, arc=6pt, top=6pt,bottom=6pt,left=10pt,right=10pt, before=\vspace{2pt},
   coltitle=white, colbacktitle=trap, fonttitle=\sffamily\bfseries\small,
-  attach boxed title to top left={xshift=10pt,yshift=-8pt}, boxed title style={arc=2pt,boxrule=0pt},
+  attach boxed title to top left={xshift=10pt,yshift=-8pt}, boxed title style={arc=3pt,boxrule=0pt},
   title={\ding{43}\ \ BẪY ĐIỂM}}
-\newtcolorbox{callouttarget}{enhanced, breakable, colback=gold!8, colframe=gold!75,
-  boxrule=0.6pt, arc=3pt, top=6pt,bottom=7pt,left=11pt,right=11pt, before=\vspace{3pt},
+\newtcolorbox{callouttarget}{enhanced, breakable, drop shadow=black!8, colback=gold!4, colframe=gold!75,
+  boxrule=0.6pt, arc=6pt, top=6pt,bottom=6pt,left=10pt,right=10pt, before=\vspace{2pt},
   coltitle=ink, colbacktitle=gold, fonttitle=\sffamily\bfseries\small,
-  attach boxed title to top left={xshift=10pt,yshift=-8pt}, boxed title style={arc=2pt,boxrule=0pt},
+  attach boxed title to top left={xshift=10pt,yshift=-8pt}, boxed title style={arc=3pt,boxrule=0pt},
   title={\ding{72}\ \ ĐÍCH THI VÀO 10}}
-\newtcolorbox{callouttip}{enhanced, breakable, colback=stage2!5, colframe=stage2!45,
-  boxrule=0.6pt, arc=3pt, top=6pt,bottom=7pt,left=11pt,right=11pt, before=\vspace{3pt},
+\newtcolorbox{callouttip}{enhanced, breakable, drop shadow=black!8, colback=stage2!3, colframe=stage2!45,
+  boxrule=0.6pt, arc=6pt, top=6pt,bottom=6pt,left=10pt,right=10pt, before=\vspace{2pt},
   coltitle=white, colbacktitle=stage2, fonttitle=\sffamily\bfseries\small,
-  attach boxed title to top left={xshift=10pt,yshift=-8pt}, boxed title style={arc=2pt,boxrule=0pt},
+  attach boxed title to top left={xshift=10pt,yshift=-8pt}, boxed title style={arc=3pt,boxrule=0pt},
   title={\ding{42}\ \ MẸO}}
 
 % --- Thẻ MỞ MÀN THỰC TẾ (đặc sản: hook đời thực mở đầu phiếu) ---
-\newtcolorbox{openerbox}{enhanced, breakable, colback=stage1!5, colframe=stage1!55,
-  boxrule=0.8pt, arc=4pt, top=7pt,bottom=8pt,left=12pt,right=12pt, before=\vspace{2pt},
+\newtcolorbox{openerbox}{enhanced, breakable, drop shadow=black!10, colback=stage1!3, colframe=stage1!55,
+  boxrule=0.6pt, arc=6pt, top=7pt,bottom=8pt,left=12pt,right=2.8cm, before=\vspace{2pt},
   coltitle=white, colbacktitle=stage1, fonttitle=\sffamily\bfseries\small,
-  attach boxed title to top left={xshift=10pt,yshift=-8pt}, boxed title style={arc=2pt,boxrule=0pt},
-  title={\ding{44}\ \ MỞ MÀN THỰC TẾ}}
+  attach boxed title to top left={xshift=10pt,yshift=-8pt}, boxed title style={arc=3pt,boxrule=0pt},
+  title={\ding{44}\ \ MỞ MÀN THỰC TẾ},
+  overlay={\node[anchor=south east, xshift=-5pt, yshift=5pt, opacity=0.9] at (frame.south east) {\includegraphics[height=2.5cm]{((( assets_dir )))images/mascot_owl.png}};}}
 
 % --- "Thầy mách nhỏ" (chỗ dành cho linh vật; nay dùng icon GV, sau thay ảnh mascot) ---
 \newcommand{\mascottip}[1]{%
@@ -151,8 +156,8 @@
   {\tiny\sffamily\color{muted}\ding{42}\,video lời giải}\end{tabular}\par\vspace{-2pt}}
 
 % Hộp "kiến thức điền khuyết"
-\newtcolorbox{noted}{enhanced, colback=neutral, colframe=rule, boxrule=0.5pt, arc=3pt,
-  top=8pt,bottom=8pt,left=12pt,right=12pt }
+\newtcolorbox{noted}{enhanced, drop shadow=black!8, colback=neutral, colframe=rule, boxrule=0.4pt, arc=6pt,
+  left=12pt, right=12pt, top=8pt, bottom=8pt, before=\vspace{4pt}}
 
 % Banner MỤC PHỤ (BTVN / Bài tập mở rộng) — tách hẳn khỏi hộp chặng đánh số.
 % Một thanh nền brand, chữ trắng, full width; đứng riêng ngoài hộp \begin{stage}.
@@ -189,19 +194,18 @@
 
 % --- Linh kiện riêng cho Sổ tay GV (guide.pdf) ---
 % Hộp LỜI GIẢI: viền + nhãn đỏ trầm (brand), chữ giải cũng đỏ trầm để tách khỏi đề.
-\newtcolorbox{solutionbox}{enhanced, breakable, colback=brand!4, colframe=brand,
-  boxrule=0.5pt, arc=3pt, top=7pt,bottom=7pt,left=12pt,right=12pt,
-  fonttitle=\sffamily\bfseries\small\color{white},
+\newtcolorbox{solutionbox}{enhanced, breakable, drop shadow=black!8, colback=brand!2, colframe=brand,
+  boxrule=0.6pt, arc=6pt, top=6pt,bottom=6pt,left=10pt,right=10pt, before=\vspace{2pt},
   coltitle=white, colbacktitle=brand, attach boxed title to top left={xshift=10pt,yshift=-8pt},
-  boxed title style={arc=2pt,boxrule=0pt}, title={LỜI GIẢI}}
-\newcommand{\solutiontext}[1]{{\color{brand}#1}}
+  boxed title style={arc=3pt,boxrule=0pt}, fonttitle=\sffamily\bfseries\small,
+  title={HƯỚNG DẪN CHI TIẾT}}
 
-% Hộp MẸO SƯ PHẠM: nền trung tính, nhãn mực than — GV đọc nhanh trước giờ lên lớp.
-\newtcolorbox{tipbox}{enhanced, breakable, colback=neutral, colframe=ink!55,
-  boxrule=0.5pt, arc=3pt, top=7pt,bottom=7pt,left=12pt,right=12pt,
+% Hộp MẸO chung
+\newtcolorbox{tipbox}{enhanced, breakable, drop shadow=black!8, colback=neutral, colframe=ink!55,
+  boxrule=0.6pt, arc=6pt, top=6pt,bottom=6pt,left=10pt,right=10pt, before=\vspace{2pt},
   coltitle=white, colbacktitle=ink, attach boxed title to top left={xshift=10pt,yshift=-8pt},
-  boxed title style={arc=2pt,boxrule=0pt}, fonttitle=\sffamily\bfseries\small,
-  title={MẸO SƯ PHẠM ĐIỀU PHỐI}}
+  boxed title style={arc=3pt,boxrule=0pt}, fonttitle=\sffamily\bfseries\small,
+  title={\ding{42}\ \ MẸO SƯ PHẠM ĐIỀU PHỐI}}
 
 % Đường phân cách chặng nghệ thuật: dòng kẻ ngang màu đỏ mảnh
 \newcommand{\stageseparator}{%

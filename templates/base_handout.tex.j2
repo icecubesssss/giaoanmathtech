@@ -45,11 +45,25 @@
 \fancyhead[L]{\includegraphics[scale=0.32]{((( assets_dir )))((( branding.logo_file )))}}
 \fancyhead[R]{\raisebox{7pt}{\small\textit{((( lesson.title )))((* if lesson.grade_label *)) • ((( lesson.grade_label )))((* endif *))}}}
 
+((* if lesson is defined and lesson.grade == "lop-10" *))
+\fancyfoot[C]{%
+  \makebox[\linewidth]{%
+    \color{ink}\footnotesize%
+    \raisebox{1pt}{\textbf{\guillemotright}}\quad
+    \textit{Trương Đình Thái} -- \ding{37}\ 0969 157 998\quad
+    \leaders\hrule height 2pt depth -1.5pt\hfill\quad
+    \tikz[baseline=-3.5pt] \node[diamond, fill=diamond!25, minimum size=18pt, inner sep=0pt, font=\sffamily\bfseries] {\thepage};%
+  }%
+}
+\fancyfoot[L]{}
+\fancyfoot[R]{}
+((* else *))
 \fancyfoot[LE,LO]{\footnotesize {\textbf{\color{red}{((( branding.company_fullname )))}}\\[1pt] Hotline:\quad {\renewcommand{\arraystretch}{0.9}\begin{tabular}{@{}l l l@{}}
     ((( branding.hotlines[0].name ))): ((( branding.hotlines[0].phone ))) & ((( branding.hotlines[1].name ))): ((( branding.hotlines[1].phone ))) & ((( branding.hotlines[2].name ))): ((( branding.hotlines[2].phone )))\\
     ((( branding.hotlines[3].name ))): ((( branding.hotlines[3].phone ))) & ((( branding.hotlines[4].name ))): ((( branding.hotlines[4].phone ))) & ((( branding.hotlines[5].name ))): ((( branding.hotlines[5].phone )))
 \end{tabular}}\\[1pt] Website: \href{http://((( branding.website )))}{\underline{((( branding.website )))}}\quad•\quad Biên soạn: \textbf{((( branding.author_name )))} -- ĐT ((( branding.author_phone )))\hfill Trang~\thepage}}
 \fancyfoot[RE,RO]{}
+((* endif *))
 
 \futurelet\TMPfootrule\def\footrule{{\color{red}\TMPfootrule}}
 

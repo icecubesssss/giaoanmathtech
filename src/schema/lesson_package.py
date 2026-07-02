@@ -195,6 +195,7 @@ class LessonPackage(BaseModel):
     eyebrow: str = Field("", description="Dòng nhỏ trên tiêu đề, vd 'ĐẠI SỐ — KỸ THUẬT XÉT HIỆU'")
     grade_label: str = Field("", description="vd 'Lớp 9 • Ôn vào 10'")
     class_tier: str = Field("", description="Tầng lớp phân hoá: ''=chuẩn | 'A' | 'B' | 'C' | 'X' (HS chuyên)")
+    theme: str = Field("", description="Giao diện (vd: 'thay_thai' cho giao diện mới, để trống cho mặc định)")
     stages: list[Stage] = Field(default_factory=list)
 
 

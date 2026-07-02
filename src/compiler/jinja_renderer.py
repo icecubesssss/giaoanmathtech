@@ -175,17 +175,23 @@ def _render(template_name: str, lesson: LessonPackage, tokens: dict | None) -> s
 
 def render_handout(lesson: LessonPackage, tokens: dict | None = None) -> str:
     """Mã LaTeX phiếu HS (A4 dọc, ẩn lời giải)."""
-    return _render("base_handout.tex.j2", lesson, tokens)
+    theme = getattr(lesson, "theme", "")
+    template = "base_handout_thay_thai.tex.j2" if theme == "thay_thai" else "base_handout.tex.j2"
+    return _render(template, lesson, tokens)
 
 
 def render_guide(lesson: LessonPackage, tokens: dict | None = None) -> str:
     """Mã LaTeX Sổ tay GV (A4 dọc, hiện lời giải đỏ trầm + mẹo sư phạm)."""
-    return _render("base_guide.tex.j2", lesson, tokens)
+    theme = getattr(lesson, "theme", "")
+    template = "base_guide_thay_thai.tex.j2" if theme == "thay_thai" else "base_guide.tex.j2"
+    return _render(template, lesson, tokens)
 
 
 def render_slide(lesson: LessonPackage, tokens: dict | None = None) -> str:
     """Mã LaTeX Slide TV (Beamer 16:9, font sans to, ẩn lời giải)."""
-    return _render("base_slide.tex.j2", lesson, tokens)
+    theme = getattr(lesson, "theme", "")
+    template = "base_slide_thay_thai.tex.j2" if theme == "thay_thai" else "base_slide.tex.j2"
+    return _render(template, lesson, tokens)
 
 
 def render_summary(summary, tokens: dict | None = None, show_solution: bool = False) -> str:
