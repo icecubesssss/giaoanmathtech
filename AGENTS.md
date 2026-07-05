@@ -85,6 +85,8 @@ python -m src.main approve <slug>              # Thầy xem PDF rồi DUYỆT (s
 6. **Ưu tiên "nghiệm đẹp" cho bài đại số** — được phép chỉnh số liệu đề cho nghiệm gọn (số nguyên); soi lại bằng SymPy. (Lượng giác/đo đạc thì đáp số gần đúng/tỉ số là bình thường.)
 7. **Escape `\%` `\&` `\#`** trong MỌI field (kể cả `solution`/`teacher_note`). `visual_linter` nay có cảnh báo; `%`/`#` thô sai mọi nơi, `&` thô chỉ sai ngoài `$...$`.
 8. **Quy chuẩn thiết kế "Mở màn thực tế":** Tình huống mồi phải (1) liên quan đến cái HS đã biết, (2) liên quan đến những gì HS thích (vé concert idol, phim C16, trend giới trẻ...). (3) Tuyệt đối **chưa nhắc đến khái niệm mới** nhưng phải diễn tả đúng bản chất khái niệm đó. Cần sử dụng công cụ AI sinh ảnh (như Gemini Banana) để tạo hình ảnh bắt mắt và chèn vào thông qua trường `"image"`.
+9. **Không dùng câu Nhận biết (NB) rời rạc, trắc nghiệm đơn lẻ hay Đúng/Sai vụn vặt.** Các câu NB phải được chẻ ra từ giàn giáo (scaffolding) các bước giải của bài toán lớn mức độ Thông hiểu (TH), Vận dụng (VD) hoặc Vận dụng cao (VDC). Giúp học sinh học cách lập luận qua từng bước thay vì làm các câu hỏi vụn vặt.
+
 
 ## Nền tảng sư phạm — Thang Bloom \& Vygotsky (đọc để hiểu "vì sao")
 
