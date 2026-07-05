@@ -57,7 +57,7 @@
           "type": "problem",
           "label": "Bài 1.",
           "level": 1,
-          "statement": "Trả lời Đúng (Đ) / Sai (S): [[br]] \\begin{minipage}[t]{0.47\\linewidth} a) $2x+3y=5$ là PT bậc nhất hai ẩn. [[br]] b) $x^2+y=1$ là PT bậc nhất hai ẩn. [[br]] c) $0x+0y=3$ là PT bậc nhất hai ẩn. [[br]] d) $5x-y=0$ là PT bậc nhất hai ẩn. \\end{minipage}\\hfill\\begin{minipage}[t]{0.47\\linewidth} e) $(1;1)$ là nghiệm của $2x+3y=5$. [[br]] f) $(2;0)$ là nghiệm của $2x+3y=5$. [[br]] g) $(0;2)$ là nghiệm của $x-y=-2$. [[br]] h) $(1;3)$ là nghiệm của $x+y=4$. \\end{minipage}",
+          "statement": "Trả lời Đúng (Đ) / Sai (S): [[br]] \\begin{minipage}[t]{0.47\\linewidth} a) $2x+3y=5$ là PT bậc nhất hai ẩn. [[br]] b) $x^2+y=1$ là PT bậc nhất hai ẩn. [[br]] c) $(1;1)$ là nghiệm của $2x+3y=5$. \\end{minipage}\\hfill\\begin{minipage}[t]{0.47\\linewidth} d) $(2;0)$ là nghiệm của $2x+3y=5$. [[br]] e) $(0;2)$ là nghiệm của $x-y=-2$. [[br]] f) $(1;3)$ là nghiệm của $x+y=4$. \\end{minipage}",
           "tier": "onclass",
           "writelines": 2
         },
@@ -81,7 +81,9 @@
         {
           "type": "figure",
           "tikz": "\\begin{tikzpicture}[scale=0.7]\n\\draw[->] (-1.5,0)--(4.5,0) node[right]{$x$};\n\\draw[->] (0,-1.5)--(0,4.5) node[above]{$y$};\n\\foreach \\i in {1,2,3} {\\draw (\\i,0.08)--(\\i,-0.08); \\draw (0.08,\\i)--(-0.08,\\i);}\n\\draw[thick] (-0.8,3.8)--(3.8,-0.8);\n\\fill (0,3) circle (2.4pt);\n\\fill (1,2) circle (2.4pt);\n\\fill (3,0) circle (2.4pt);\n\\node[above right] at (0,3) {$(0;3)$};\n\\node[above right] at (1,2) {$(1;2)$};\n\\node[above right] at (3,0) {$(3;0)$};\n\\node[below left] at (3.6,-0.6) {$x+y=3$};\n\\end{tikzpicture}",
-          "caption": "Tập nghiệm của $x+y=3$ là một đường thẳng đi qua $(0;3),(1;2),(3;0)\\ldots$"
+          "caption": "Tập nghiệm của $x+y=3$ là một đường thẳng đi qua $(0;3),(1;2),(3;0)\\ldots$",
+          "statement": "a) Viết nghiệm tổng quát của $x+y=3$. [[br]] b) Hoàn thành bảng nghiệm của $x+y=3$ tại $x=0;\\,1;\\,3$. [[br]] c) Viết nghiệm tổng quát của $2x-y=1$. [[br]] d) Tìm một nghiệm nguyên dương của $x+y=3$. [[br]] e) PT $0x+y=2$ có tập nghiệm là đường thẳng nào?",
+          "writelines": 4
         },
         {
           "type": "problem",
@@ -92,7 +94,7 @@
           "writelines": 4
         }
       ],
-      "solution": "\\textbf{Bài 1:} a) Đ; b) S (có $x^2$); c) S ($a=b=0$); d) Đ; e) Đ ($2+3=5$); f) S ($4\\neq 5$); g) Đ ($0-2=-2$); h) Đ ($1+3=4$). [[br]] \\textbf{Bài 2:} a) $1+0=1$ ✓, $3-0=3$ ✓ $\\Rightarrow$ là nghiệm. b) $3-2=1$ ✓, $9+2=11\\neq 3$ $\\Rightarrow$ không. c) $1$ ✓, $1$ ✓ $\\Rightarrow$ là nghiệm. d) $3$ ✓, $1$ ✓ $\\Rightarrow$ là nghiệm. [[br]] \\textbf{Ví dụ mẫu:} một đường thẳng. [[br]] \\textbf{Bài 3:} a) $y=3-x$, nghiệm $(x;\\,3-x)$, $x\\in\\mathbb{R}$. b) $x=0\\to y=3$; $x=1\\to y=2$; $x=3\\to y=0$. c) $(x;\\,2x-1)$. d) $x=2y+4$, nghiệm $(2y+4;\\,y)$. e) ví dụ $(1;2)$ hoặc $(2;1)$. f) đường thẳng $y=2$ (nằm ngang).",
+      "solution": "\\textbf{Bài 1:} a) Đ; b) S (có $x^2$); c) Đ ($2+3=5$); d) S ($4\\neq 5$); e) Đ ($0-2=-2$); f) Đ ($1+3=4$). [[br]] \\textbf{Bài 2:} a) $1+0=1$ ✓, $3-0=3$ ✓ $\\Rightarrow$ là nghiệm. [[br]] b) $3-2=1$ ✓, $9+2=11\\neq 3$ $\\Rightarrow$ không. [[br]] c) $1$ ✓, $1$ ✓ $\\Rightarrow$ là nghiệm. [[br]] d) $3$ ✓, $1$ ✓ $\\Rightarrow$ là nghiệm. [[br]] \\textbf{Ví dụ mẫu:} một đường thẳng. [[br]] \\textbf{Bài 3:} a) $y=3-x$, nghiệm $(x;\\,3-x)$, $x\\in\\mathbb{R}$. [[br]] b) $x=0\\to y=3$; $x=1\\to y=2$; $x=3\\to y=0$. [[br]] c) $(x;\\,2x-1)$. [[br]] d) ví dụ $(1;2)$ hoặc $(2;1)$. [[br]] e) đường thẳng $y=2$ (nằm ngang).",
       "teacher_note": "Bài 1c là bẫy 'a,b đồng thời 0'. Bài 3f: $a=0$ cho đường nằm ngang. Khoảng 36 phút."
     },
     {
@@ -108,7 +110,7 @@
           "type": "problem",
           "label": "Bài 4.",
           "level": 2,
-          "statement": "Mua $2$ cái bút và $3$ quyển vở hết $32$ nghìn đồng; mua $4$ cái bút và $1$ quyển vở hết $24$ nghìn đồng. [[br]] a) Gọi giá một bút là $x$, một vở là $y$ (nghìn đồng, $x,y>0$); lập hệ phương trình. [[br]] b) Giải hệ tìm giá mỗi loại.",
+          "statement": "Mua $2$ cái bút và $3$ quyển vở hết $32$ nghìn đồng; mua $4$ cái bút và $1$ quyển vở hết $24$ nghìn đồng. Gọi giá một bút là $x$, một vở là $y$ (nghìn đồng, $x,y>0$). [[br]] [NB] a) Biểu diễn số tiền mua $2$ cái bút và $3$ quyển vở theo $x$ và $y$. [[br]] [NB] b) Biểu diễn số tiền mua $4$ cái bút và $1$ quyển vở theo $x$ và $y$. [[br]] [TH] c) Lập phương trình thứ nhất từ dữ kiện $32$ nghìn đồng. [[br]] [TH] d) Lập phương trình thứ hai từ dữ kiện $24$ nghìn đồng. [[br]] [VD] e) Viết hệ phương trình và giải tìm $x, y$.",
           "tier": "onclass",
           "writelines": 6,
           "hints": [
@@ -120,7 +122,7 @@
           "type": "problem",
           "label": "Bài 5.",
           "level": 2,
-          "statement": "Vừa gà vừa chó đếm được $35$ con và $94$ chân. [[br]] a) Gọi số gà $x$, số chó $y$ ($x,y$ nguyên dương); lập hệ phương trình. [[br]] b) Tính số gà \\& số chó.",
+          "statement": "Vừa gà vừa chó đếm được $35$ con và $94$ chân. Gọi số gà $x$, số chó $y$ ($x,y$ nguyên dương). [[br]] [NB] a) Lập phương trình thể hiện tổng số con là $35$. [[br]] [NB] b) Biểu diễn số chân gà theo $x$. [[br]] [NB] c) Biểu diễn số chân chó theo $y$. [[br]] [TH] d) Lập phương trình thể hiện tổng số chân là $94$. [[br]] [TH] e) Viết hệ phương trình và giải tìm số gà, số chó.",
           "tier": "onclass",
           "writelines": 6,
           "hints": [
@@ -136,7 +138,7 @@
           "type": "problem",
           "label": "Bài 6.",
           "level": 3,
-          "statement": "Một cửa hàng bán kẹo loại A giá $6$ nghìn/gói và loại B giá $10$ nghìn/gói. Bạn Minh mua tổng cộng $8$ gói cả hai loại hết đúng $60$ nghìn đồng. [[br]] [TH] Lập hệ phương trình (gọi số gói A là $x$, số gói B là $y$). [[br]] [VD] Tìm số gói mỗi loại.",
+          "statement": "Một cửa hàng bán kẹo loại A giá $6$ nghìn/gói và loại B giá $10$ nghìn/gói. Bạn Minh mua tổng cộng $8$ gói cả hai loại hết đúng $60$ nghìn đồng. Gọi số gói A là $x$, số gói B là $y$. [[br]] [NB] a) Lập phương trình thể hiện tổng số gói kẹo. [[br]] [NB] b) Biểu diễn số tiền mua kẹo loại A và loại B theo $x$ và $y$. [[br]] [TH] c) Lập phương trình thể hiện tổng số tiền là $60$ nghìn đồng. [[br]] [TH] d) Giải hệ phương trình và kết luận.",
           "tier": "onclass",
           "writelines": 6,
           "hints": [
@@ -148,7 +150,7 @@
           "type": "problem",
           "label": "Bài 7.",
           "level": 4,
-          "statement": "Trộn dung dịch loại I (nồng độ $10\\%$) với dung dịch loại II (nồng độ $30\\%$) để được $200$ g dung dịch nồng độ $25\\%$. [[br]] Gọi khối lượng loại I là $x$ (g), loại II là $y$ (g). Lập hệ phương trình rồi tính $x,\\ y$.",
+          "statement": "Trộn dung dịch loại I (nồng độ $10\\%$) với dung dịch loại II (nồng độ $30\\%$) để được $200$ g dung dịch nồng độ $25\\%$. Gọi khối lượng loại I là $x$ (g), loại II là $y$ (g). [[br]] [NB] a) Viết phương trình tổng khối lượng hai dung dịch. [[br]] [NB] b) Tính lượng chất tan trong $x$ gam loại I và $y$ gam loại II. [[br]] [TH] c) Tính lượng chất tan trong $200$ g dung dịch $25\\%$. [[br]] [TH] d) Lập phương trình tổng lượng chất tan. [[br]] [VD] e) Viết hệ phương trình hoàn chỉnh. [[br]] [VDC] f) Giải hệ và đối chiếu điều kiện để kết luận.",
           "tier": "onclass",
           "writelines": 6,
           "hints": [
@@ -157,7 +159,7 @@
           ]
         }
       ],
-      "solution": "\\textbf{Bài 4:} a) $\\begin{cases} 2x+3y=32 \\\\ 4x+y=24 \\end{cases}$. b) $y=24-4x \\Rightarrow 2x+3(24-4x)=32 \\Rightarrow 2x+72-12x=32 \\Rightarrow -10x=-40 \\Rightarrow x=4,\\ y=8$. Giá bút $4$ nghìn, vở $8$ nghìn. [[br]] \\textbf{Bài 5:} a) $\\begin{cases} x+y=35 \\\\ 2x+4y=94 \\end{cases}$. b) $x=35-y \\Rightarrow 2(35-y)+4y=94 \\Rightarrow 70+2y=94 \\Rightarrow y=12,\\ x=23$. Có $23$ con gà, $12$ con chó. [[br]] \\textbf{Bài 6:} [TH] $\\begin{cases} x+y=8 \\\\ 6x+10y=60 \\end{cases}$. [VD] $6x+10(8-x)=60 \\Rightarrow -4x+80=60 \\Rightarrow x=5,\\ y=3$. Mua $5$ gói A, $3$ gói B. [[br]] \\textbf{Bài 7:} $\\begin{cases} x+y=200 \\\\ 0{,}1x+0{,}3y=50 \\end{cases}$. Thế $x=200-y$: $0{,}1(200-y)+0{,}3y=50 \\Rightarrow 20+0{,}2y=50 \\Rightarrow y=150,\\ x=50$. Dùng $50$ g loại I và $150$ g loại II.",
+      "solution": "\\textbf{Bài 4:} a) $2x+3y$. b) $4x+y$. c) $2x+3y=32$. d) $4x+y=24$. e) Hệ $\\begin{cases} 2x+3y=32 \\\\ 4x+y=24 \\end{cases}$. [[br]] Từ PT hai rút $y=24-4x$ thế vào PT đầu $\\Rightarrow 2x+3(24-4x)=32 \\Rightarrow -10x=-40 \\Rightarrow x=4, y=8$. Giá bút $4$k, vở $8$k. [[br]] \\textbf{Bài 5:} a) $x+y=35$. b) $2x$. c) $4y$. d) $2x+4y=94$. e) Hệ $\\begin{cases} x+y=35 \\\\ 2x+4y=94 \\end{cases}$. [[br]] $\\Rightarrow x=35-y \\Rightarrow 2(35-y)+4y=94 \\Rightarrow y=12, x=23$. Vậy $23$ gà, $12$ chó. [[br]] \\textbf{Bài 6:} a) $x+y=8$. b) Loại A: $6x$, loại B: $10y$. c) $6x+10y=60$. d) Hệ $\\begin{cases} x+y=8 \\\\ 6x+10y=60 \\end{cases}$. [[br]] $\\Rightarrow 6x+10(8-x)=60 \\Rightarrow -4x=-20 \\Rightarrow x=5, y=3$. Mua $5$ gói A, $3$ gói B. [[br]] \\textbf{Bài 7:} a) $x+y=200$. b) Loại I: $0{,}1x$, loại II: $0{,}3y$. c) $200 \\cdot 0{,}25=50$ (g). d) $0{,}1x+0{,}3y=50$. e) Hệ $\\begin{cases} x+y=200 \\\\ 0{,}1x+0{,}3y=50 \\end{cases}$. [[br]] f) Thế $x=200-y \\Rightarrow 0{,}1(200-y)+0{,}3y=50 \\Rightarrow 0{,}2y=30 \\Rightarrow y=150, x=50$. Dùng $50$ g loại I và $150$ g loại II.",
       "teacher_note": "Bài 4, 5 (lập hệ) là TH lõi đề GK1. Bài 7 (pha trộn nồng độ) VDC — nhấn lập PT 'lượng chất tan'. Luôn KÈM điều kiện ẩn."
     },
     {
@@ -173,7 +175,7 @@
           "type": "problem",
           "label": "Bài 8.",
           "level": 1,
-          "statement": "Đúng (Đ) / Sai (S): [[br]] \\begin{minipage}[t]{0.47\\linewidth} a) $4x-y=2$ là PT bậc nhất hai ẩn. [[br]] b) $xy=1$ là PT bậc nhất hai ẩn. [[br]] c) $(2;1)$ là nghiệm của $x+y=3$. [[br]] d) $(1;2)$ là nghiệm của $2x-y=0$. \\end{minipage}\\hfill\\begin{minipage}[t]{0.47\\linewidth} e) $(0;3)$ là nghiệm của $x+y=3$. [[br]] f) $(1;1)$ là nghiệm của hệ $\\begin{cases} x+y=2 \\\\ x-y=0 \\end{cases}$. [[br]] g) PT bậc nhất hai ẩn có đúng một nghiệm. [[br]] h) $(2;2)$ là nghiệm của $x-y=0$. \\end{minipage}",
+          "statement": "Đúng (Đ) / Sai (S): [[br]] \\begin{minipage}[t]{0.47\\linewidth} a) $4x-y=2$ là PT bậc nhất hai ẩn. [[br]] b) $xy=1$ là PT bậc nhất hai ẩn. [[br]] c) $(2;1)$ là nghiệm của $x+y=3$. [[br]] d) $(1;2)$ là nghiệm của $2x-y=0$. \\end{minipage}\\hfill\\begin{minipage}[t]{0.47\\linewidth} e) $(0;3)$ là nghiệm của $x+y=3$. [[br]] f) $(1;1)$ là nghiệm của hệ $\\begin{cases} x+y=2 \\\\ x-y=0 \\end{cases}$. [[br]] g) $(2;2)$ là nghiệm của $x-y=0$. \\end{minipage}",
           "tier": "btvn",
           "writelines": 3
         },
@@ -189,7 +191,7 @@
           "type": "problem",
           "label": "Bài 10.",
           "level": 2,
-          "statement": "Một mảnh đất hình chữ nhật có chu vi $200$ m, chiều dài hơn chiều rộng $20$ m. [[br]] a) Gọi chiều dài $x$, chiều rộng $y$ (m); lập hệ phương trình. [[br]] b) Tìm chiều dài \\& chiều rộng.",
+          "statement": "Một mảnh đất hình chữ nhật có chu vi $200$ m, chiều dài hơn chiều rộng $20$ m. Gọi chiều dài $x$, chiều rộng $y$ (m). [[br]] [NB] a) Công thức tính nửa chu vi hình chữ nhật theo $x$ và $y$ là gì? [[br]] [NB] b) Lập phương trình từ dữ kiện nửa chu vi. [[br]] [NB] c) Lập phương trình chiều dài hơn chiều rộng $20$ m. [[br]] [TH] d) Viết hệ phương trình. [[br]] [TH] e) Giải hệ bằng phương pháp cộng đại số (hoặc thế). [[br]] [TH] f) Kết luận.",
           "tier": "btvn",
           "writelines": 5,
           "hints": [
@@ -200,7 +202,7 @@
           "type": "problem",
           "label": "Bài 11.",
           "level": 3,
-          "statement": "Lớp 9A có $40$ học sinh. Số học sinh nam nhiều hơn số học sinh nữ $4$ bạn. [[br]] [TH] Lập hệ phương trình (gọi số nam $x$, số nữ $y$). [[br]] [VD] Tính số học sinh nam \\& nữ.",
+          "statement": "Lớp 9A có $40$ học sinh. Số học sinh nam nhiều hơn số học sinh nữ $4$ bạn. Gọi số nam $x$, số nữ $y$. [[br]] [NB] a) Lập phương trình tổng số học sinh. [[br]] [NB] b) Lập phương trình số nam hơn số nữ. [[br]] [TH] c) Lập hệ phương trình. [[br]] [TH] d) Trình bày bước giải hệ. [[br]] [VD] e) Kết luận số lượng học sinh.",
           "tier": "btvn",
           "writelines": 5,
           "hints": [
@@ -211,7 +213,7 @@
           "type": "problem",
           "label": "Bài 12.",
           "level": 4,
-          "statement": "Trộn $x$ lít dung dịch loại I ($20\\%$ muối) với $y$ lít loại II ($50\\%$ muối) được $300$ lít dung dịch $40\\%$ muối. Lập hệ phương trình rồi tính $x,\\ y$.",
+          "statement": "Trộn $x$ lít dung dịch loại I ($20\\%$ muối) với $y$ lít loại II ($50\\%$ muối) được $300$ lít dung dịch $40\\%$ muối. [[br]] [NB] a) Viết phương trình tổng thể tích hai loại dung dịch. [[br]] [NB] b) Biểu diễn lượng muối trong dung dịch loại I. [[br]] [NB] c) Biểu diễn lượng muối trong dung dịch loại II. [[br]] [TH] d) Tính lượng muối trong dung dịch mới. [[br]] [TH] e) Lập phương trình tổng lượng muối. [[br]] [VD] f) Viết hệ phương trình hoàn chỉnh. [[br]] [VDC] g) Giải hệ và kết luận.",
           "tier": "btvn",
           "writelines": 6,
           "hints": [
@@ -219,7 +221,7 @@
           ]
         }
       ],
-      "solution": "\\textbf{Bài 8:} a) Đ; b) S (có $xy$); c) Đ; d) Đ ($2-2=0$); e) Đ; f) Đ ($2$ ✓, $0$ ✓); g) S (vô số nghiệm); h) Đ. [[br]] \\textbf{Bài 9:} a) $(x;\\,5-x)$. b) $x=0\\to y=5$; $x=2\\to y=3$; $x=5\\to y=0$. c) $(x;\\,3x-2)$. d) ví dụ $(1;4),(2;2)$. e) đường thẳng $x=4$ (thẳng đứng). [[br]] \\textbf{Bài 10:} a) $\\begin{cases} x+y=100 \\\\ x-y=20 \\end{cases}$. b) $2x=120 \\Rightarrow x=60,\\ y=40$. Dài $60$ m, rộng $40$ m. [[br]] \\textbf{Bài 11:} [TH] $\\begin{cases} x+y=40 \\\\ x-y=4 \\end{cases}$. [VD] $2x=44 \\Rightarrow x=22,\\ y=18$. Có $22$ nam, $18$ nữ. [[br]] \\textbf{Bài 12:} $\\begin{cases} x+y=300 \\\\ 0{,}2x+0{,}5y=120 \\end{cases}$. Thế $x=300-y$: $0{,}2(300-y)+0{,}5y=120 \\Rightarrow 60+0{,}3y=120 \\Rightarrow y=200,\\ x=100$. Dùng $100$ lít loại I, $200$ lít loại II.",
+      "solution": "\\textbf{Bài 8:} a) Đ; b) S (có $xy$); c) Đ; d) Đ ($2-2=0$); e) Đ; f) Đ ($2$ ✓, $0$ ✓); g) Đ. [[br]] \\textbf{Bài 9:} a) $(x;\\,5-x)$. b) $x=0\\to y=5$; $x=2\\to y=3$; $x=5\\to y=0$. c) $(x;\\,3x-2)$. d) ví dụ $(1;4),(2;2)$. e) đường thẳng $x=4$ (thẳng đứng). [[br]] \\textbf{Bài 10:} a) $x+y$. b) $x+y=100$. c) $x-y=20$. [[br]] d) Hệ $\\begin{cases} x+y=100 \\\\ x-y=20 \\end{cases}$. [[br]] e) Cộng hai vế $\\Rightarrow 2x=120 \\Rightarrow x=60, y=40$. f) Dài $60$ m, rộng $40$ m. [[br]] \\textbf{Bài 11:} a) $x+y=40$. b) $x-y=4$. c) Hệ $\\begin{cases} x+y=40 \\\\ x-y=4 \\end{cases}$. [[br]] d) $2x=44 \\Rightarrow x=22, y=18$. e) Có $22$ nam, $18$ nữ. [[br]] \\textbf{Bài 12:} a) $x+y=300$. b) $0{,}2x$. c) $0{,}5y$. d) $300 \\cdot 0{,}4 = 120$. e) $0{,}2x+0{,}5y=120$. [[br]] f) Hệ $\\begin{cases} x+y=300 \\\\ 0{,}2x+0{,}5y=120 \\end{cases}$. [[br]] g) Thế $x=300-y \\Rightarrow 0{,}2(300-y)+0{,}5y=120 \\Rightarrow y=200, x=100$. Dùng $100$ lít loại I, $200$ lít loại II.",
       "teacher_note": "Bài 10, 11 (lập hệ tổng–hiệu) TH. Bài 12 (pha trộn) VDC. Nhắc HS đặt ẩn KÈM điều kiện và trả lời đúng câu hỏi."
     }
   ]

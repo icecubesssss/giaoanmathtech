@@ -46,7 +46,7 @@
 \fancyhead[L]{\includegraphics[scale=0.32]{((( assets_dir )))((( branding.logo_file )))}}
 \fancyhead[R]{\raisebox{7pt}{\small\textit{((( lesson.title )))((* if lesson.grade_label *)) • ((( lesson.grade_label )))((* endif *))}}}
 
-((* if lesson is defined and lesson.grade == "lop-10" *))
+((* if lesson is defined and lesson.grade is defined and lesson.grade == "lop-10" *))
 \fancyfoot[C]{%
   \makebox[\linewidth]{%
     \color{ink}\footnotesize%
@@ -87,7 +87,7 @@
 ((* for stage in lesson.stages *))
 ((* include "components/" ~ stage.kind ~ ".tex.j2" *))
 ((* if stage.solution *))
-\vspace{4pt}\begin{solutionbox}\solutiontext{((( stage.solution | tex )))}\end{solutionbox}
+\vspace{4pt}\begin{solutionbox}((( stage.solution | tex )))\end{solutionbox}
 ((* endif *))
 ((* if stage.teacher_note *))
 \vspace{2pt}\begin{tipbox}((( stage.teacher_note | tex )))\end{tipbox}

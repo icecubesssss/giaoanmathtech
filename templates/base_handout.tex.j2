@@ -45,7 +45,7 @@
 \fancyhead[L]{\includegraphics[scale=0.32]{((( assets_dir )))((( branding.logo_file )))}}
 \fancyhead[R]{\raisebox{7pt}{\small\textit{((( lesson.title )))((* if lesson.grade_label *)) • ((( lesson.grade_label )))((* endif *))}}}
 
-((* if lesson is defined and lesson.grade == "lop-10" *))
+((* if lesson is defined and lesson.grade is defined and lesson.grade == "lop-10" *))
 \fancyfoot[C]{%
   \makebox[\linewidth]{%
     \color{ink}\footnotesize%
