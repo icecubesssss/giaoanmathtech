@@ -48,7 +48,7 @@ def _meta_table(rows: list[tuple[str, str]]) -> str:
 def _phieu_table(phieu, rates):
     col = (r"|>{\RaggedRight\arraybackslash}p{8.4cm}|"
            r"*{8}{>{\centering\arraybackslash}p{1.7cm}|}")
-    L = [rf"\begin{{tabular}}{{{col}}}", r"\arrayrulecolor{rule}\hline"]
+    L = [r"\begingroup\footnotesize\renewcommand{\arraystretch}{1.06}", rf"\begin{{longtable}}{{{col}}}", r"\arrayrulecolor{rule}\hline"]
     L.append(r"\rowcolor{neutral} "
              r"& \multicolumn{2}{>{\columncolor{neutral}}c|}{\sffamily\bfseries Lý thuyết} "
              r"& \multicolumn{2}{>{\columncolor{neutral}}c|}{\sffamily\bfseries Ví dụ} "
@@ -59,6 +59,18 @@ def _phieu_table(phieu, rates):
              r"& \sffamily\footnotesize Số câu & \sffamily\footnotesize TG "
              r"& \sffamily\footnotesize Số câu & \sffamily\footnotesize TG "
              r"& \sffamily\footnotesize Số câu & \sffamily\footnotesize TG \\ \hline")
+    L.append(r"\endfirsthead")
+    L.append(r"\rowcolor{neutral} "
+             r"& \multicolumn{2}{>{\columncolor{neutral}}c|}{\sffamily\bfseries Lý thuyết} "
+             r"& \multicolumn{2}{>{\columncolor{neutral}}c|}{\sffamily\bfseries Ví dụ} "
+             r"& \multicolumn{2}{>{\columncolor{neutral}}c|}{\sffamily\bfseries Bài tập trên lớp} "
+             r"& \multicolumn{2}{>{\columncolor{neutral}}c|}{\sffamily\bfseries BTVN} \\ \cline{2-9}")
+    L.append(r"\rowcolor{neutral}\multirow{-2}{*}{\sffamily\bfseries Dạng bài} "
+             r"& \sffamily\footnotesize Số mục & \sffamily\footnotesize TG "
+             r"& \sffamily\footnotesize Số câu & \sffamily\footnotesize TG "
+             r"& \sffamily\footnotesize Số câu & \sffamily\footnotesize TG "
+             r"& \sffamily\footnotesize Số câu & \sffamily\footnotesize TG \\ \hline")
+    L.append(r"\endhead")
 
     grand = [0.0] * 8  # xen kẽ (n, phút) ×4 đoạn
     for band in _BAND_ORDER:
@@ -92,7 +104,7 @@ def _phieu_table(phieu, rates):
     gcells = " & ".join(rf"\bfseries {_n(int(grand[2*i]))} & \bfseries {_t(grand[2*i+1])}" for i in range(4))
     L.append(rf"\rowcolor{{brand!12}}\multicolumn{{1}}{{|r|}}"
              rf"{{\sffamily\bfseries\color{{brand}}TỔNG}} & {gcells} \\ \hline")
-    L.append(r"\end{tabular}")
+    L.append(r"\end{longtable}\endgroup")
     return "\n".join(L), grand
 
 
@@ -125,7 +137,7 @@ def render_thuyetminh(spec: ThuyetMinhSpec) -> str:
                           f"{round(info.get('budgets',{}).get('onclass',0))}′. "
                           f"BTVN $\\approx${round(info.get('budgets',{}).get('btvn',0))}′ ở nhà."),
         ]),
-        r"\tmsec{LÝ THUYẾT}", _itemize(spec.lythuyet),
+        r"\tmsec{MỤC TIÊU LÝ THUYẾT \& CHUẨN ĐẦU RA}", _itemize(spec.lythuyet),
         r"\tmsec{BÀI TẬP}",
         r"\begin{minipage}[t]{0.485\linewidth}\tmlbl{Ví dụ GV làm mẫu:}" + _itemize(spec.vidu) +
         r"\end{minipage}\hfill\begin{minipage}[t]{0.485\linewidth}\tmlbl{Dạng VẬN DỤNG trong đề:}" +
@@ -134,14 +146,14 @@ def render_thuyetminh(spec: ThuyetMinhSpec) -> str:
         r"\begin{minipage}[t]{0.485\linewidth}\tmlbl{Lỗi sai thường gặp:}" + _itemize(spec.loisai) +
         r"\end{minipage}\hfill\begin{minipage}[t]{0.485\linewidth}\tmlbl{Kiến thức NHẬN BIẾT cần nhớ:}" +
         _itemize(spec.kienthuc_nb) + r"\end{minipage}",
+        r"\par\vspace{8pt}{\footnotesize\color{muted}\itshape Quy ước đếm: "
+        r"``câu'' $=$ ý nhỏ a),b)…; thời gian tự tính theo phút/câu của tier\_spec.json "
+        r"(NB/TH/VD/VDC). duration\_gate chỉ soi Luyện tập trên lớp $+$ BTVN.}"
     ]
     for p in spec.phieu:
         table, grand = _phieu_table(p, rates)
         parts += [r"\newpage", rf"\tmsec{{NỘI DUNG PHIẾU — PHIẾU {p.code}: {p.title}}}", table,
                   _canbuoi(grand, info)]
-    parts.append(r"\par\vspace{6pt}{\footnotesize\color{muted}\itshape Quy ước đếm: "
-                 r"``câu'' $=$ ý nhỏ a),b)…; thời gian tự tính theo phút/câu của tier\_spec.json "
-                 r"(NB/TH/VD/VDC). duration\_gate chỉ soi Luyện tập trên lớp $+$ BTVN.}")
 
     tokens = load_tokens()
     return _env().get_template("base_thuyetminh.tex.j2").render(body="\n\n".join(parts), **tokens)

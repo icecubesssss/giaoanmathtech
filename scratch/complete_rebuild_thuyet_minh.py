@@ -1,0 +1,912 @@
+import json
+
+filepath_c1 = "/Users/admin/Documents/thaitd/Code/giaoanMathtech/inputs/seeds/lop-9/dai-so/lop-c/chuong-1-he-pt/thuyet-minh-tong-hop-chuong-1.json"
+
+c1_data = {
+  "slug": "thuyet-minh-tong-hop-chuong-1",
+  "title": "Chương I (SGK KNTT): Phương trình \\& hệ hai phương trình bậc nhất hai ẩn — Kế hoạch 4 buổi (12 tiết)",
+  "grade": "lop-9",
+  "subject": "dai-so",
+  "tier": "C",
+  "tuan": "04-07",
+  "lythuyet": [
+    "Học sinh lớp C nắm chắc lý thuyết nền tảng: khái niệm phương trình và hệ hai phương trình bậc nhất hai ẩn, cách giải hệ cơ bản bằng phương pháp thế và cộng đại số.",
+    "Thành thạo các kỹ năng biến đổi hệ phức tạp, giải hệ chứa mẫu bằng phương pháp đặt ẩn phụ.",
+    "Rèn luyện nhuần nhuyễn quy trình 3 bước giải bài toán bằng cách lập hệ hai phương trình bậc nhất hai ẩn, đặc biệt là bước phân tích đại lượng.",
+    "Hạn chế các bài toán hệ phương trình chứa tham số m phức tạp hoặc hệ đối xứng/đẳng cấp khó, tập trung vào kỹ năng tính toán thực hành cơ bản để chuẩn bị thi Giữa kì 1."
+  ],
+  "vidu": [
+    "Ví dụ mẫu: Giải hệ phương trình cơ bản bằng phương pháp thế và phương pháp cộng đại số (hệ số đối hoặc bằng nhau).",
+    "Ví dụ giải hệ phương trình nâng cao: Quy đồng mẫu, nhân phá ngoặc, giải hệ chứa ẩn ở mẫu bằng đặt ẩn phụ.",
+    "Ví dụ thực tế mua bán: Đặt ẩn là số lượng/giá tiền của hai đối tượng thực tế (như bút, vở) để lập hệ phương trình.",
+    "Ví dụ bài toán chuyển động hoặc năng suất: Chia nhỏ bước hướng dẫn thiết lập bảng đại lượng và lập hệ phương trình."
+  ],
+  "dang_vd": [
+    "Giải hệ phương trình bậc nhất hai ẩn có chứa dấu ngoặc hoặc quy đồng mẫu số đơn giản.",
+    "Giải bài toán thực tế chuyển động hoặc năng suất làm chung - làm riêng bằng cách lập hệ hai phương trình bậc nhất hai ẩn (được chia nhỏ bước)."
+  ],
+  "loisai": [
+    "Nhầm lẫn khi xác định nghiệm của phương trình bậc nhất hai ẩn (vô số nghiệm) with nghiệm của hệ (cặp nghiệm duy nhất).",
+    "Sai dấu khi thực hiện phép thế ẩn hoặc cộng/trừ đại số các vế của hệ phương trình.",
+    "Lập hệ phương trình thực tế quên đặt điều kiện cho các ẩn (số nguyên dương, vận tốc riêng lớn hơn vận tốc dòng nước).",
+    "Sai lầm khi đổi đơn vị thời gian trong bài toán chuyển động (ví dụ đổi 15 phút thành 0,15 giờ thay vì 1/4 giờ)."
+  ],
+  "kienthuc_nb": [
+    "Nhận biết và thực hiện các bước giải hệ cơ bản: thế ẩn, rút ẩn, nhân vế để cân bằng hệ số.",
+    "Nhận biết các biến đổi đưa hệ chưa chuẩn về hệ tiêu chuẩn, tìm ĐKXĐ và đặt ẩn phụ thích hợp cho hệ chứa mẫu.",
+    "Biết cách chọn ẩn, đặt điều kiện thực tế và biểu diễn mối quan hệ đơn giản giữa hai đại lượng."
+  ],
+  "phieu": [
+    {
+      "code": "A",
+      "title": "Buổi 1 (Tuần 4): Khái niệm hệ \\& Giải hệ phương trình cơ bản (Bài 1 \\& 2)",
+      "rows": [
+        {
+          "dang": "Rút một ẩn theo ẩn còn lại từ phương trình bậc nhất hai ẩn",
+          "band": "NB",
+          "lythuyet": 0,
+          "vidu": 1,
+          "onclass": 2,
+          "btvn": 2,
+          "source_refs": [],
+          "decompose": "none"
+        },
+        {
+          "dang": "Thực hiện phép thế ẩn để đưa hệ về phương trình một ẩn",
+          "band": "NB",
+          "lythuyet": 0,
+          "vidu": 1,
+          "onclass": 2,
+          "btvn": 2,
+          "source_refs": [],
+          "decompose": "none"
+        },
+        {
+          "dang": "Thu gọn phương trình một ẩn thu được sau khi thế ẩn",
+          "band": "NB",
+          "lythuyet": 0,
+          "vidu": 1,
+          "onclass": 2,
+          "btvn": 2,
+          "source_refs": [],
+          "decompose": "none"
+        },
+        {
+          "dang": "Giải phương trình một ẩn thu được sau phép thế ẩn",
+          "band": "NB",
+          "lythuyet": 0,
+          "vidu": 1,
+          "onclass": 2,
+          "btvn": 2,
+          "source_refs": [],
+          "decompose": "none"
+        },
+        {
+          "dang": "Lựa chọn phép cộng hoặc trừ đại số dựa trên hệ số của ẩn",
+          "band": "NB",
+          "lythuyet": 0,
+          "vidu": 1,
+          "onclass": 2,
+          "btvn": 2,
+          "source_refs": [],
+          "decompose": "none"
+        },
+        {
+          "dang": "Cộng đại số vế theo vế hai phương trình có hệ số đối nhau",
+          "band": "NB",
+          "lythuyet": 0,
+          "vidu": 1,
+          "onclass": 2,
+          "btvn": 2,
+          "source_refs": [],
+          "decompose": "none"
+        },
+        {
+          "dang": "Trừ đại số vế theo vế hai phương trình có hệ số bằng nhau",
+          "band": "NB",
+          "lythuyet": 0,
+          "vidu": 1,
+          "onclass": 2,
+          "btvn": 2,
+          "source_refs": [],
+          "decompose": "none"
+        },
+        {
+          "dang": "Giải phương trình một ẩn thu được sau phép cộng trừ đại số",
+          "band": "NB",
+          "lythuyet": 0,
+          "vidu": 1,
+          "onclass": 2,
+          "btvn": 2,
+          "source_refs": [],
+          "decompose": "none"
+        },
+        {
+          "dang": "Thay giá trị ẩn đã tìm được vào một phương trình để tìm ẩn còn lại",
+          "band": "NB",
+          "lythuyet": 0,
+          "vidu": 1,
+          "onclass": 2,
+          "btvn": 1,
+          "source_refs": [],
+          "decompose": "none"
+        },
+        {
+          "dang": "Viết kết quả nghiệm dưới dạng cặp số $(x_0; y_0)$ và kiểm tra lại",
+          "band": "NB",
+          "lythuyet": 0,
+          "vidu": 1,
+          "onclass": 2,
+          "btvn": 1,
+          "source_refs": [],
+          "decompose": "none"
+        },
+        {
+          "dang": "Thay tọa độ điểm để tìm tham số trong phương trình bậc nhất hai ẩn",
+          "band": "NB",
+          "lythuyet": 0,
+          "vidu": 1,
+          "onclass": 2,
+          "btvn": 1,
+          "source_refs": [],
+          "decompose": "none"
+        },
+        {
+          "dang": "Xác định điều kiện để phương trình $Ax + By = C$ là phương trình bậc nhất hai ẩn",
+          "band": "NB",
+          "lythuyet": 0,
+          "vidu": 1,
+          "onclass": 2,
+          "btvn": 1,
+          "source_refs": [],
+          "decompose": "none"
+        },
+        {
+          "dang": "Tìm giao điểm đường biểu diễn nghiệm của phương trình với trục $Ox$",
+          "band": "NB",
+          "lythuyet": 0,
+          "vidu": 1,
+          "onclass": 2,
+          "btvn": 1,
+          "source_refs": [],
+          "decompose": "none"
+        },
+        {
+          "dang": "Tìm giao điểm đường biểu diễn nghiệm của phương trình với trục $Oy$",
+          "band": "NB",
+          "lythuyet": 0,
+          "vidu": 1,
+          "onclass": 2,
+          "btvn": 1,
+          "source_refs": [],
+          "decompose": "none"
+        },
+        {
+          "dang": "Thay cặp nghiệm $(x_0; y_0)$ để tìm tham số m trong một phương trình của hệ",
+          "band": "NB",
+          "lythuyet": 0,
+          "vidu": 1,
+          "onclass": 2,
+          "btvn": 1,
+          "source_refs": [],
+          "decompose": "none"
+        },
+        {
+          "dang": "Nhận dạng hệ phương trình bậc nhất hai ẩn từ các hệ thức cho trước",
+          "band": "NB",
+          "lythuyet": 0,
+          "vidu": 1,
+          "onclass": 2,
+          "btvn": 1,
+          "source_refs": [],
+          "decompose": "none"
+        },
+        {
+          "dang": "Giải hệ phương trình bằng phương pháp thế khi hệ số một ẩn bằng $1$ hoặc $-1$",
+          "band": "TH",
+          "lythuyet": 1,
+          "vidu": 1,
+          "onclass": 2,
+          "btvn": 2,
+          "source_refs": [],
+          "decompose": "none"
+        },
+        {
+          "dang": "Giải hệ phương trình bằng phương pháp thế khi các hệ số là số nguyên bất kỳ",
+          "band": "TH",
+          "lythuyet": 1,
+          "vidu": 1,
+          "onclass": 2,
+          "btvn": 2,
+          "source_refs": [],
+          "decompose": "none"
+        },
+        {
+          "dang": "Giải hệ phương trình bằng phương pháp cộng đại số khi hệ số của một ẩn bằng hoặc đối nhau",
+          "band": "TH",
+          "lythuyet": 1,
+          "vidu": 1,
+          "onclass": 2,
+          "btvn": 2,
+          "source_refs": [],
+          "decompose": "none"
+        },
+        {
+          "dang": "Giải hệ phương trình tìm hai tham số a, b khi biết hệ có nghiệm duy nhất $(x_0; y_0)$",
+          "band": "TH",
+          "lythuyet": 1,
+          "vidu": 1,
+          "onclass": 2,
+          "btvn": 2,
+          "source_refs": [],
+          "decompose": "none"
+        },
+        {
+          "dang": "Giải hệ phương trình cơ bản có chứa tham số bậc nhất",
+          "band": "VD",
+          "lythuyet": 0,
+          "vidu": 1,
+          "onclass": 1,
+          "btvn": 1,
+          "source_refs": [],
+          "decompose": "none"
+        },
+        {
+          "dang": "Lập và giải hệ phương trình cơ bản tìm hai số khi biết tổng và hiệu",
+          "band": "VD",
+          "lythuyet": 0,
+          "vidu": 1,
+          "onclass": 1,
+          "btvn": 1,
+          "source_refs": [],
+          "decompose": "none"
+        }
+      ]
+    },
+    {
+      "code": "B",
+      "title": "Buổi 2 (Tuần 5): Biến đổi hệ phức tạp \\& Giải hệ chứa ẩn ở mẫu (Đặt ẩn phụ) (Bài 2)",
+      "rows": [
+        {
+          "dang": "Cân bằng hệ số của ẩn trong hệ bằng phép nhân hai vế phương trình",
+          "band": "NB",
+          "lythuyet": 0,
+          "vidu": 1,
+          "onclass": 2,
+          "btvn": 2,
+          "source_refs": [],
+          "decompose": "none"
+        },
+        {
+          "dang": "Tìm nhân tử phụ thích hợp để cân bằng hệ số của một ẩn",
+          "band": "NB",
+          "lythuyet": 0,
+          "vidu": 1,
+          "onclass": 2,
+          "btvn": 2,
+          "source_refs": [],
+          "decompose": "none"
+        },
+        {
+          "dang": "Biến đổi đưa phương trình của hệ về dạng tiêu chuẩn $ax + by = c$",
+          "band": "NB",
+          "lythuyet": 0,
+          "vidu": 1,
+          "onclass": 2,
+          "btvn": 2,
+          "source_refs": [],
+          "decompose": "none"
+        },
+        {
+          "dang": "Biến đổi hệ số thập phân thành hệ số nguyên trong hệ phương trình",
+          "band": "NB",
+          "lythuyet": 0,
+          "vidu": 1,
+          "onclass": 2,
+          "btvn": 2,
+          "source_refs": [],
+          "decompose": "none"
+        },
+        {
+          "dang": "Biến đổi hệ số phân số thành hệ số nguyên bằng quy đồng",
+          "band": "NB",
+          "lythuyet": 0,
+          "vidu": 1,
+          "onclass": 2,
+          "btvn": 2,
+          "source_refs": [],
+          "decompose": "none"
+        },
+        {
+          "dang": "Lựa chọn ẩn phụ $u, v$ thích hợp cho hệ phương trình chứa ẩn ở mẫu",
+          "band": "NB",
+          "lythuyet": 0,
+          "vidu": 1,
+          "onclass": 2,
+          "btvn": 2,
+          "source_refs": [],
+          "decompose": "none"
+        },
+        {
+          "dang": "Tìm điều kiện xác định (ĐKXĐ) của hệ phương trình chứa ẩn ở mẫu",
+          "band": "NB",
+          "lythuyet": 0,
+          "vidu": 1,
+          "onclass": 2,
+          "btvn": 2,
+          "source_refs": [],
+          "decompose": "none"
+        },
+        {
+          "dang": "Giải hệ phương trình bậc nhất hai ẩn trung gian theo hai ẩn phụ $u, v$",
+          "band": "NB",
+          "lythuyet": 0,
+          "vidu": 1,
+          "onclass": 2,
+          "btvn": 2,
+          "source_refs": [],
+          "decompose": "none"
+        },
+        {
+          "dang": "Thay ngược giá trị ẩn phụ $u, v$ đã tìm được để lập phương trình chứa $x, y$",
+          "band": "NB",
+          "lythuyet": 0,
+          "vidu": 1,
+          "onclass": 2,
+          "btvn": 1,
+          "source_refs": [],
+          "decompose": "none"
+        },
+        {
+          "dang": "Đối chiếu nghiệm $x, y$ tìm được với điều kiện xác định ban đầu",
+          "band": "NB",
+          "lythuyet": 0,
+          "vidu": 1,
+          "onclass": 2,
+          "btvn": 1,
+          "source_refs": [],
+          "decompose": "none"
+        },
+        {
+          "dang": "Biểu diễn mẫu thức của hệ phương trình dưới dạng tích hoặc lũy thừa",
+          "band": "NB",
+          "lythuyet": 0,
+          "vidu": 1,
+          "onclass": 2,
+          "btvn": 1,
+          "source_refs": [],
+          "decompose": "none"
+        },
+        {
+          "dang": "Thu gọn phương trình chứa ẩn ở mẫu sau khi đặt ẩn phụ",
+          "band": "NB",
+          "lythuyet": 0,
+          "vidu": 1,
+          "onclass": 2,
+          "btvn": 1,
+          "source_refs": [],
+          "decompose": "none"
+        },
+        {
+          "dang": "Phát hiện lỗi sai trong quá trình tìm điều kiện xác định của hệ",
+          "band": "NB",
+          "lythuyet": 0,
+          "vidu": 1,
+          "onclass": 2,
+          "btvn": 1,
+          "source_refs": [],
+          "decompose": "none"
+        },
+        {
+          "dang": "Xác định tập giá trị không thỏa mãn điều kiện xác định của hệ",
+          "band": "NB",
+          "lythuyet": 0,
+          "vidu": 1,
+          "onclass": 2,
+          "btvn": 1,
+          "source_refs": [],
+          "decompose": "none"
+        },
+        {
+          "dang": "Nhận diện hệ phương trình đưa được về dạng đặt ẩn phụ",
+          "band": "NB",
+          "lythuyet": 0,
+          "vidu": 1,
+          "onclass": 2,
+          "btvn": 1,
+          "source_refs": [],
+          "decompose": "none"
+        },
+        {
+          "dang": "Nhận dạng và phân tích đa thức mẫu thành nhân tử để tìm mẫu chung",
+          "band": "NB",
+          "lythuyet": 0,
+          "vidu": 1,
+          "onclass": 2,
+          "btvn": 1,
+          "source_refs": [],
+          "decompose": "none"
+        },
+        {
+          "dang": "Giải hệ bằng cộng đại số cần nhân vế để cân bằng hệ số",
+          "band": "TH",
+          "lythuyet": 1,
+          "vidu": 1,
+          "onclass": 2,
+          "btvn": 2,
+          "source_refs": [],
+          "decompose": "none"
+        },
+        {
+          "dang": "Biến đổi hệ chưa chuẩn chứa dấu ngoặc hoặc mẫu số là hằng số rồi giải",
+          "band": "TH",
+          "lythuyet": 1,
+          "vidu": 1,
+          "onclass": 2,
+          "btvn": 2,
+          "source_refs": [],
+          "decompose": "none"
+        },
+        {
+          "dang": "Giải hệ phương trình chứa mẫu là ẩn dạng đơn giản (không cần biến đổi mẫu)",
+          "band": "TH",
+          "lythuyet": 1,
+          "vidu": 1,
+          "onclass": 2,
+          "btvn": 2,
+          "source_refs": [],
+          "decompose": "none"
+        },
+        {
+          "dang": "Giải hệ phương trình bằng phương pháp đặt ẩn phụ cơ bản (mẫu số chỉ chứa ẩn x, y)",
+          "band": "TH",
+          "lythuyet": 1,
+          "vidu": 1,
+          "onclass": 2,
+          "btvn": 2,
+          "source_refs": [],
+          "decompose": "none"
+        },
+        {
+          "dang": "Giải hệ phương trình bằng phương pháp đặt ẩn phụ nâng cao (mẫu số là nhị thức bậc nhất)",
+          "band": "VD",
+          "lythuyet": 0,
+          "vidu": 1,
+          "onclass": 1,
+          "btvn": 1,
+          "source_refs": [],
+          "decompose": "none"
+        },
+        {
+          "dang": "Giải hệ phương trình bằng phương pháp đặt ẩn phụ phức tạp hoặc chứa tham số",
+          "band": "VD",
+          "lythuyet": 0,
+          "vidu": 1,
+          "onclass": 1,
+          "btvn": 1,
+          "source_refs": [],
+          "decompose": "none"
+        }
+      ]
+    },
+    {
+      "code": "C",
+      "title": "Buổi 3 (Tuần 6): Giải bài toán bằng cách lập hệ phương trình (Bài 3)",
+      "rows": [
+        {
+          "dang": "Chọn hai ẩn số cho đại lượng thực tế và đặt điều kiện",
+          "band": "NB",
+          "lythuyet": 0,
+          "vidu": 2,
+          "onclass": 2,
+          "btvn": 2,
+          "source_refs": [],
+          "decompose": "none"
+        },
+        {
+          "dang": "Biểu diễn tổng hoặc hiệu số lượng đối tượng thực tế qua hai ẩn",
+          "band": "NB",
+          "lythuyet": 0,
+          "vidu": 2,
+          "onclass": 2,
+          "btvn": 2,
+          "source_refs": [],
+          "decompose": "none"
+        },
+        {
+          "dang": "Biểu diễn tổng số tiền qua đơn giá và hai ẩn số tương ứng",
+          "band": "NB",
+          "lythuyet": 0,
+          "vidu": 1,
+          "onclass": 2,
+          "btvn": 2,
+          "source_refs": [],
+          "decompose": "none"
+        },
+        {
+          "dang": "Biểu diễn thời gian chuyển động theo quãng đường và vận tốc",
+          "band": "NB",
+          "lythuyet": 0,
+          "vidu": 1,
+          "onclass": 2,
+          "btvn": 2,
+          "source_refs": [],
+          "decompose": "none"
+        },
+        {
+          "dang": "Biểu diễn vận tốc chuyển động xuôi dòng của vật thể",
+          "band": "NB",
+          "lythuyet": 0,
+          "vidu": 1,
+          "onclass": 2,
+          "btvn": 2,
+          "source_refs": [],
+          "decompose": "none"
+        },
+        {
+          "dang": "Biểu diễn vận tốc chuyển động ngược dòng của vật thể",
+          "band": "NB",
+          "lythuyet": 0,
+          "vidu": 1,
+          "onclass": 2,
+          "btvn": 2,
+          "source_refs": [],
+          "decompose": "none"
+        },
+        {
+          "dang": "Biểu diễn số lượng đối tượng phân chia đều theo các nhóm/xe",
+          "band": "NB",
+          "lythuyet": 0,
+          "vidu": 1,
+          "onclass": 2,
+          "btvn": 2,
+          "source_refs": [],
+          "decompose": "none"
+        },
+        {
+          "dang": "Biểu diễn số tiền được giảm giá theo phần trăm ưu đãi",
+          "band": "NB",
+          "lythuyet": 0,
+          "vidu": 1,
+          "onclass": 2,
+          "btvn": 2,
+          "source_refs": [],
+          "decompose": "none"
+        },
+        {
+          "dang": "Biểu diễn chu vi hình học theo kích thước của ẩn",
+          "band": "NB",
+          "lythuyet": 0,
+          "vidu": 1,
+          "onclass": 2,
+          "btvn": 2,
+          "source_refs": [],
+          "decompose": "none"
+        },
+        {
+          "dang": "Biểu diễn diện tích hình học theo kích thước của ẩn",
+          "band": "NB",
+          "lythuyet": 0,
+          "vidu": 1,
+          "onclass": 2,
+          "btvn": 2,
+          "source_refs": [],
+          "decompose": "none"
+        },
+        {
+          "dang": "Thiết lập phương trình thứ nhất từ mối liên hệ số lượng",
+          "band": "NB",
+          "lythuyet": 0,
+          "vidu": 1,
+          "onclass": 2,
+          "btvn": 2,
+          "source_refs": [],
+          "decompose": "none"
+        },
+        {
+          "dang": "Thiết lập phương trình thứ hai từ mối liên hệ giá trị, chi phí",
+          "band": "NB",
+          "lythuyet": 0,
+          "vidu": 1,
+          "onclass": 2,
+          "btvn": 2,
+          "source_refs": [],
+          "decompose": "none"
+        },
+        {
+          "dang": "Viết hệ phương trình hoàn chỉnh biểu diễn bài toán thực tế",
+          "band": "NB",
+          "lythuyet": 0,
+          "vidu": 1,
+          "onclass": 2,
+          "btvn": 1,
+          "source_refs": [],
+          "decompose": "none"
+        },
+        {
+          "dang": "Biểu diễn chiều dài và rộng mới của hình chữ nhật sau tăng/giảm",
+          "band": "NB",
+          "lythuyet": 0,
+          "vidu": 1,
+          "onclass": 2,
+          "btvn": 1,
+          "source_refs": [],
+          "decompose": "none"
+        },
+        {
+          "dang": "Biểu diễn số đối tượng thừa hoặc thiếu khi phân chia vào các nhóm",
+          "band": "NB",
+          "lythuyet": 0,
+          "vidu": 1,
+          "onclass": 2,
+          "btvn": 1,
+          "source_refs": [],
+          "decompose": "none"
+        },
+        {
+          "dang": "Biểu diễn quãng đường chuyển động theo vận tốc và thời gian",
+          "band": "NB",
+          "lythuyet": 0,
+          "vidu": 1,
+          "onclass": 2,
+          "btvn": 1,
+          "source_refs": [],
+          "decompose": "none"
+        },
+        {
+          "dang": "Bài toán thực tế tìm hai số biết tổng hiệu hoặc tỉ số",
+          "band": "TH",
+          "lythuyet": 1,
+          "vidu": 1,
+          "onclass": 2,
+          "btvn": 2,
+          "source_refs": [],
+          "decompose": "none"
+        },
+        {
+          "dang": "Bài toán thực tế mua sắm (sticker, sách vở) tính số lượng, giá tiền",
+          "band": "TH",
+          "lythuyet": 1,
+          "vidu": 1,
+          "onclass": 2,
+          "btvn": 1,
+          "source_refs": [],
+          "decompose": "none"
+        },
+        {
+          "dang": "Bài toán thực tế hình chữ nhật khi thay đổi kích thước",
+          "band": "TH",
+          "lythuyet": 1,
+          "vidu": 1,
+          "onclass": 2,
+          "btvn": 2,
+          "source_refs": [
+            "ck1-dich-vong-III"
+          ],
+          "decompose": "none"
+        },
+        {
+          "dang": "Bài toán thực tế chia tổ, chia xe vận chuyển hàng hóa",
+          "band": "TH",
+          "lythuyet": 1,
+          "vidu": 1,
+          "onclass": 2,
+          "btvn": 2,
+          "source_refs": [],
+          "decompose": "none"
+        },
+        {
+          "dang": "Bài toán thực tế chuyển động đường bộ (cùng hoặc ngược chiều)",
+          "band": "VD",
+          "lythuyet": 0,
+          "vidu": 1,
+          "onclass": 1,
+          "btvn": 1,
+          "source_refs": [],
+          "decompose": "none"
+        },
+        {
+          "dang": "Bài toán thực tế chuyển động xuôi dòng, ngược dòng trên nước",
+          "band": "VD",
+          "lythuyet": 0,
+          "vidu": 0,
+          "onclass": 1,
+          "btvn": 1,
+          "source_refs": [],
+          "decompose": "none"
+        }
+      ]
+    },
+    {
+      "code": "D",
+      "title": "Buổi 4 (Tuần 7): Ôn tập \\& Luyện tập chung Chương I",
+      "rows": [
+        {
+          "dang": "Xác định điều kiện xác định (ĐKXĐ) của hệ phương trình chứa mẫu số là các nhị thức đơn giản",
+          "band": "NB",
+          "lythuyet": 0,
+          "vidu": 1,
+          "onclass": 3,
+          "btvn": 2,
+          "source_refs": [],
+          "decompose": "none"
+        },
+        {
+          "dang": "Xác định ĐKXĐ của hệ phương trình chứa mẫu số là các biểu thức dạng bình phương hoặc tích",
+          "band": "NB",
+          "lythuyet": 0,
+          "vidu": 1,
+          "onclass": 2,
+          "btvn": 2,
+          "source_refs": [],
+          "decompose": "none"
+        },
+        {
+          "dang": "Nhận dạng và đặt ẩn phụ u, v thích hợp cho hệ phương trình chứa ẩn ở mẫu",
+          "band": "NB",
+          "lythuyet": 0,
+          "vidu": 1,
+          "onclass": 3,
+          "btvn": 2,
+          "source_refs": [],
+          "decompose": "none"
+        },
+        {
+          "dang": "Biểu diễn ẩn này theo ẩn kia từ phương trình bậc nhất hai ẩn có hệ số nguyên",
+          "band": "NB",
+          "lythuyet": 0,
+          "vidu": 1,
+          "onclass": 3,
+          "btvn": 2,
+          "source_refs": [],
+          "decompose": "none"
+        },
+        {
+          "dang": "Biểu diễn ẩn này theo ẩn kia từ phương trình bậc nhất hai ẩn có chứa phân số/thập phân",
+          "band": "NB",
+          "lythuyet": 0,
+          "vidu": 1,
+          "onclass": 2,
+          "btvn": 2,
+          "source_refs": [],
+          "decompose": "none"
+        },
+        {
+          "dang": "Thực hiện phép thế ẩn và thu gọn đưa hệ về phương trình bậc nhất một ẩn",
+          "band": "NB",
+          "lythuyet": 0,
+          "vidu": 1,
+          "onclass": 3,
+          "btvn": 2,
+          "source_refs": [],
+          "decompose": "none"
+        },
+        {
+          "dang": "Cộng hoặc trừ đại số vế theo vế hai phương trình có hệ số đối hoặc bằng nhau",
+          "band": "NB",
+          "lythuyet": 0,
+          "vidu": 1,
+          "onclass": 3,
+          "btvn": 2,
+          "source_refs": [],
+          "decompose": "none"
+        },
+        {
+          "dang": "Nhân hệ số thích hợp vào hai vế của phương trình trong hệ để cân bằng hệ số",
+          "band": "NB",
+          "lythuyet": 0,
+          "vidu": 1,
+          "onclass": 3,
+          "btvn": 2,
+          "source_refs": [],
+          "decompose": "none"
+        },
+        {
+          "dang": "Biểu diễn mối quan hệ tổng hoặc hiệu số lượng hai đối tượng thực tế",
+          "band": "NB",
+          "lythuyet": 0,
+          "vidu": 1,
+          "onclass": 3,
+          "btvn": 2,
+          "source_refs": [],
+          "decompose": "none"
+        },
+        {
+          "dang": "Biểu diễn số tiền mua hàng theo đơn giá và ẩn số lượng đối tượng",
+          "band": "NB",
+          "lythuyet": 0,
+          "vidu": 1,
+          "onclass": 3,
+          "btvn": 2,
+          "source_refs": [],
+          "decompose": "none"
+        },
+        {
+          "dang": "Biểu diễn chiều dài và chiều rộng mới của hình chữ nhật sau khi tăng/giảm kích thước",
+          "band": "NB",
+          "lythuyet": 0,
+          "vidu": 1,
+          "onclass": 2,
+          "btvn": 2,
+          "source_refs": [],
+          "decompose": "none"
+        },
+        {
+          "dang": "Biểu diễn quãng đường chuyển động theo ẩn vận tốc và thời gian cho trước",
+          "band": "NB",
+          "lythuyet": 0,
+          "vidu": 1,
+          "onclass": 2,
+          "btvn": 2,
+          "source_refs": [],
+          "decompose": "none"
+        },
+        {
+          "dang": "Giải hệ hai phương trình bậc nhất hai ẩn bằng phương pháp thế",
+          "band": "TH",
+          "lythuyet": 1,
+          "vidu": 1,
+          "onclass": 2,
+          "btvn": 2,
+          "source_refs": [],
+          "decompose": "none"
+        },
+        {
+          "dang": "Giải hệ phương trình bậc nhất hai ẩn bằng phương pháp cộng đại số",
+          "band": "TH",
+          "lythuyet": 1,
+          "vidu": 2,
+          "onclass": 2,
+          "btvn": 2,
+          "source_refs": [],
+          "decompose": "none"
+        },
+        {
+          "dang": "Lập và giải hệ phương trình cho bài toán mua sắm thực tế",
+          "band": "TH",
+          "lythuyet": 1,
+          "vidu": 1,
+          "onclass": 2,
+          "btvn": 2,
+          "source_refs": [],
+          "decompose": "none"
+        },
+        {
+          "dang": "Lập và giải hệ phương trình cho bài toán hình học tính kích thước",
+          "band": "TH",
+          "lythuyet": 1,
+          "vidu": 1,
+          "onclass": 2,
+          "btvn": 2,
+          "source_refs": [],
+          "decompose": "none"
+        },
+        {
+          "dang": "Giải bài toán thực tế chuyển động bằng cách lập hệ phương trình",
+          "band": "VD",
+          "lythuyet": 0,
+          "vidu": 1,
+          "onclass": 1,
+          "btvn": 1,
+          "source_refs": [],
+          "decompose": "none"
+        },
+        {
+          "dang": "Giải bài toán thực tế năng suất bằng cách lập hệ phương trình",
+          "band": "VD",
+          "lythuyet": 0,
+          "vidu": 1,
+          "onclass": 1,
+          "btvn": 1,
+          "source_refs": [],
+          "decompose": "none"
+        }
+    ]
+  }
+]
+}
+
+with open(filepath_c1, "w", encoding="utf-8") as f:
+    json.dump(c1_data, f, ensure_ascii=False, indent=2)
+
+print("SUCCESS: Hoàn tất tái cấu trúc Chương I thành công!")

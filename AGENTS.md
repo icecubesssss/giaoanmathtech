@@ -22,7 +22,20 @@
    ```
 3. Lệnh đầy đủ: `python -m src.main -h`. Tiến độ: `make progress`. Bank đủ câu không: `make coverage`.
 
-> **SPEC-FIRST (Thầy chốt 2026-06-21):** số câu NB/TH/VD/VDC theo tầng A/B/C/X **cố định trong [config/tier_spec.json](config/tier_spec.json)** (đổi khi mở tầng/khối mới, soạn từng tuần không đụng). `new-thuyetminh` tự tính số câu mục tiêu từ đó; `build-thuyetminh` render PDF cho Thầy chốt — **nay tự chạy `thuyetminh_gate` và CHẶN nếu giờ vô lý** (vượt quỹ buổi >±10%, một dạng nuốt >60% quỹ onclass, VDC ở tầng cấm, phiếu rỗng); soi riêng bằng `make check-tm SPEC=…` (lệnh `validate-thuyetminh`), cần build nháp khi chưa sạch thì thêm `--force`. `spec_gate` (trong `validate`) so phiếu JSON với spec (±1 câu/band, opt-in khi có `thuyet-minh.json` cạnh bên). `duration_gate` cũng đọc tier_spec (hết số cứng). **VDC = band 4**; bài giàu **cắt bước (scaffold-decompose)** sinh NB/TH (xem HUONG-DAN-PHAN-TANG-LOP).
+> **SPEC-FIRST (Thầy chốt 2026-06-21, cập nhật 2026-07-07):** số câu NB/TH/VD/VDC theo tầng A/B/C/X **cố định trong [config/tier_spec.json](config/tier_spec.json)** (đổi khi mở tầng/khối mới, soạn từng tuần không đụng). `new-thuyetminh` tự tính số câu mục tiêu từ đó; `build-thuyetminh` render PDF cho Thầy chốt — **nay tự chạy `thuyetminh_gate` và CHẶN nếu giờ vô lý** (vượt quỹ buổi >±10%, một dạng nuốt >60% quỹ onclass, VDC ở tầng cấm, phiếu rỗng); soi riêng bằng `make check-tm SPEC=…` (lệnh `validate-thuyetminh`), cần build nháp khi chưa sạch thì thêm `--force`. `spec_gate` (trong `validate`) so phiếu JSON với spec (±1 câu/band, opt-in khi có `thuyet-minh.json` cạnh bên). `duration_gate` cũng đọc tier_spec (hết số cứng). **VDC = band 4**; bài giàu **cắt bước (scaffold-decompose)** sinh NB/TH (xem HUONG-DAN-PHAN-TANG-LOP).
+>
+> **Quy định thuyết minh chốt ngày 2026-07-07 (Cập nhật 2026-07-08):**
+> 1. *Không dùng NB nhận dạng hình thức và kiểm tra nghiệm*: Không liệt kê các dạng nhận biết chỉ để "nhận diện kiểu đây là phương trình/bất phương trình/ký hiệu" hoặc "kiểm tra một cặp số/giá trị có là nghiệm hay không" (không đi thi). Đồng thời loại bỏ các dạng bài không sát đề thi hoặc quá nâng cao so với năng lực của tầng (ví dụ: tìm nghiệm nguyên của phương trình bậc nhất hai ẩn cho học sinh lớp C). NB **chỉ được tách/trích làm bước đệm từ chính câu hỏi TH và VD** (các viên gạch kỹ năng giải quyết trực tiếp của bài thi như chuyển vế đổi dấu, phá ngoặc, tìm ĐKXĐ mẫu thức, đặt ẩn phụ, lập biểu thức theo ẩn, v.v.). Tránh tuyệt đối trùng lặp các dòng thuyết minh.
+> 2. *Tối đa 3 câu NB cho 1 dạng*: Để giữ luật này, thay vì tạo 3-4 dạng NB lớn mỗi dạng 8 câu, hãy **chia nhỏ ra 11-12 dạng NB cụ thể** (mỗi dạng chỉ có 2-3 câu). Điều này giúp spec chi tiết, sát đề thi thực tế hơn.
+> 3. *Escape toán trong spec*: Mọi biểu thức toán học trong tên dạng thuyết minh bắt buộc phải bọc trong `$ ... $` (ví dụ: `$A^2 - B^2$`, `$ax + b = 0$`) để biên dịch LaTeX không bị lỗi `Missing $ inserted`.
+> 4. *Công thức vàng cho Tầng C (40% NB / 40% TH / 20% VD - 120 phút)*: Để thiết kế một phiếu học tập tầng C vừa tuân thủ quy tắc tối đa 3 câu NB/dạng vừa khớp tuyệt đối các mốc thời gian, áp dụng cấu trúc phân bổ sau:
+>    * **NB (40% - 48 phút)**: Thiết kế đúng **16 dạng nhận biết cụ thể** (mỗi dạng có `onclass: 2`, `vidu: 1`). Để thời gian BTVN cân bằng, phân bổ 8 dạng có `btvn: 2` và 8 dạng có `btvn: 1` xen kẽ.
+>    * **TH (40% - 48 phút)**: Thiết kế đúng **4 dạng thông hiểu cụ thể** (mỗi dạng có `onclass: 2`, `btvn: 2`, `vidu: 1`).
+>    * **VD (20% - 24 phút)**: Thiết kế đúng **2 dạng vận dụng cụ thể** (mỗi dạng có `onclass: 1`, `btvn: 1`, `vidu: 1`).
+>    * **Tổng cộng**: Onclass đạt đúng **120.0 phút**, BTVN đạt đúng **93.6 phút** (nằm trong khoảng ±10% của 90 phút), và Ví dụ đạt **48.0 phút** (nằm trong khoảng ±10% của 45 phút) $\rightarrow$ 0 lỗi, 0 cảnh báo.
+>
+
+>
 
 > **NGÂN HÀNG ĐỀ có band + phút (2026-06-21):** mỗi câu trong `inputs/refs/de-thi/lop-9/exams/*.json` nay gắn `band` (NB/TH/VD/VDC) + `phut` (giờ HS làm, ước) — AI chấm theo Bloom, cờ `_band_auto`/`_phut_auto` để Thầy rà (LƯU Ý: **điểm KHÔNG suy ra giờ** — câu cực trị 0,5đ vẫn ~13′). Công cụ: `make exam-check` (gác Σdiem/band/phut/trùng id), `make exam-report` (phút thực vs rate card), `make exam-weights` (sinh `exam-weights.json` — trọng số tần suất dạng = ty_le_de×diem_tb, để biết dạng nào đáng nhiều giờ). Spec có thể trỏ `source_refs` vào id câu bank → `thuyetminh_gate` cảnh báo nếu câu lệch band ≥2 mức. Tool ngân hàng: `scripts/exam_annotate.py` + `scripts/seed_exam_bands.py` (rubric chấm).
 
@@ -70,6 +83,7 @@ python -m src.main approve <slug>              # Thầy xem PDF rồi DUYỆT (s
      Renderer (`group_slide_segments`/`_seg_mode` + `_slide_blocks.j2`) đã lo các bố cục trên; nếu vẫn lệch thì sửa renderer/template rồi build lại, KHÔNG sửa tay JSON cho hợp một slide.
 7. **KIỂM SOÁT THỜI LƯỢNG (CHỐNG THIẾU CÂU):** AI rất hay tạo thiếu bài tập, làm hụt quỹ giờ của buổi học (120 phút trên lớp). Bắt buộc xem log `[duration_gate]` sau lệnh `validate`. Nếu bị báo thiếu giờ, **PHẢI tự động sinh thêm bài tương đương hoặc kéo bài từ BTVN lên** sao cho lấp đủ quỹ thời gian (định mức: NB 1.5'/câu, TH 6'/câu, VD 12'/câu). Tuyệt đối không giao phiếu bị hụt thời lượng!
    Sửa xong checklist → build lại → mới trình Thầy.
+8. **Tự động ngắt trang bảng Thuyết minh**: Đối với các thuyết minh có số câu phân mảnh lớn (ví dụ phiếu Tầng C với 22 dòng phân mảnh), bảng tự động ngắt trang nhờ sử dụng môi trường `longtable` kết hợp cấu trúc `\endfirsthead` và `\endhead` để tự động lặp lại dòng tiêu đề bảng ở đầu các trang tiếp theo. Khi thiết kế/chỉnh sửa mã nguồn của renderer, bắt buộc giữ cấu trúc `longtable` này để tránh bảng bị tràn mất khỏi lề dưới của trang A4 ngang.
    Kế hoạch tuần: [KE-HOACH-SOAN-BAI.md](KE-HOACH-SOAN-BAI.md). Luật soạn chi tiết: [HUONG-DAN-SOAN-BAI.md](HUONG-DAN-SOAN-BAI.md).
 
 ## Nguyên tắc BẮT BUỘC khi soạn (bám HUONG-DAN §0)

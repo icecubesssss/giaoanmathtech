@@ -30,10 +30,11 @@
     "Làm toán thực tế hay quên đặt điều kiện cho ẩn, thiếu đơn vị hoặc làm tròn kết quả sai yêu cầu."
   ],
   "kienthuc_nb": [
-    "Nhận diện được đâu là phương trình tích, đâu là phương trình chứa ẩn ở mẫu.",
+    "Nắm chắc các bước biến đổi cơ bản: phá ngoặc, chuyển vế, quy đồng tìm mẫu chung để giải các phương trình bậc nhất và quy về bậc nhất.",
     "Nhận biết và đọc đúng các kí hiệu bất đẳng thức $>, <, \\ge, \\le$.",
     "Nắm được quy tắc cộng cùng một số vào hai vế của bất đẳng thức.",
-    "Nắm chắc quy tắc nhân hai vế: nhân số dương thì giữ nguyên chiều, nhân số âm bắt buộc phải đổi chiều."
+    "Nắm chắc quy tắc nhân hai vế: nhân số dương thì giữ nguyên chiều, nhân số âm bắt buộc phải đổi chiều.",
+    "Tìm điều kiện xác định (ĐKXĐ) của bất phương trình chứa ẩn ở mẫu thức."
   ],
   "phieu": [
     {
@@ -41,78 +42,178 @@
       "title": "Buổi 1 (Tuần 9): Phương trình quy về phương trình bậc nhất một ẩn (Bài 4)",
       "rows": [
         {
-          "dang": "Mở đầu: Nhận diện phương trình tích và phương trình chứa ẩn ở mẫu",
-          "band": "NB",
-          "lythuyet": 1,
-          "vidu": 3,
-          "onclass": 8,
-          "btvn": 8,
-          "source_refs": [],
-          "decompose": "none"
-        },
-        {
-          "dang": "Giải phương trình tích cơ bản dạng phân tích sẵn",
+          "dang": "Khai triển phá ngoặc bằng quy tắc phân phối: $a(bx + c)$",
           "band": "NB",
           "lythuyet": 0,
-          "vidu": 3,
-          "onclass": 8,
-          "btvn": 8,
+          "vidu": 2,
+          "onclass": 3,
+          "btvn": 3,
           "source_refs": [],
           "decompose": "none"
         },
         {
-          "dang": "Đặt nhân tử chung hoặc dùng hằng đẳng thức để đưa đa thức về dạng tích",
+          "dang": "Chuyển vế đổi dấu hạng tử đưa về dạng $ax = b$",
           "band": "NB",
-          "lythuyet": 1,
-          "vidu": 4,
-          "onclass": 8,
-          "btvn": 8,
+          "lythuyet": 0,
+          "vidu": 2,
+          "onclass": 3,
+          "btvn": 3,
           "source_refs": [],
           "decompose": "none"
         },
         {
-          "dang": "Tìm ĐKXĐ và quy đồng các phân thức",
+          "dang": "Quy đồng và khử mẫu số (mẫu là các số nguyên dương)",
           "band": "NB",
-          "lythuyet": 1,
-          "vidu": 4,
-          "onclass": 8,
-          "btvn": 8,
+          "lythuyet": 0,
+          "vidu": 2,
+          "onclass": 3,
+          "btvn": 3,
           "source_refs": [],
           "decompose": "none"
         },
         {
-          "dang": "Giải phương trình bằng phương pháp đưa về phương trình tích",
+          "dang": "Giải phương trình bậc nhất một bước đơn giản (thừa số của PT tích)",
+          "band": "NB",
+          "lythuyet": 0,
+          "vidu": 1,
+          "onclass": 3,
+          "btvn": 2,
+          "source_refs": [],
+          "decompose": "none"
+        },
+        {
+          "dang": "Nhận diện và đặt nhân tử chung cơ bản để đưa về tích",
+          "band": "NB",
+          "lythuyet": 0,
+          "vidu": 1,
+          "onclass": 3,
+          "btvn": 2,
+          "source_refs": [],
+          "decompose": "none"
+        },
+        {
+          "dang": "Áp dụng hằng đẳng thức bình phương một tổng hoặc một hiệu",
+          "band": "NB",
+          "lythuyet": 0,
+          "vidu": 1,
+          "onclass": 3,
+          "btvn": 2,
+          "source_refs": [],
+          "decompose": "none"
+        },
+        {
+          "dang": "Áp dụng hằng đẳng thức hiệu hai bình phương: $A^2 - B^2$",
+          "band": "NB",
+          "lythuyet": 0,
+          "vidu": 1,
+          "onclass": 3,
+          "btvn": 2,
+          "source_refs": [],
+          "decompose": "none"
+        },
+        {
+          "dang": "Tìm điều kiện xác định (ĐKXĐ) của phương trình chứa ẩn ở mẫu thức",
+          "band": "NB",
+          "lythuyet": 0,
+          "vidu": 2,
+          "onclass": 3,
+          "btvn": 3,
+          "source_refs": [],
+          "decompose": "none"
+        },
+        {
+          "dang": "Quy đồng mẫu thức và khử mẫu (mẫu chung có sẵn hoặc đơn giản)",
+          "band": "NB",
+          "lythuyet": 0,
+          "vidu": 2,
+          "onclass": 3,
+          "btvn": 3,
+          "source_refs": [],
+          "decompose": "none"
+        },
+        {
+          "dang": "Phân tích mẫu thức thành nhân tử để tìm mẫu thức chung",
+          "band": "NB",
+          "lythuyet": 0,
+          "vidu": 2,
+          "onclass": 3,
+          "btvn": 3,
+          "source_refs": [],
+          "decompose": "none"
+        },
+        {
+          "dang": "Đối chiếu nghiệm với ĐKXĐ và kết luận nghiệm (bẫy loại nghiệm)",
+          "band": "NB",
+          "lythuyet": 0,
+          "vidu": 2,
+          "onclass": 2,
+          "btvn": 2,
+          "source_refs": [],
+          "decompose": "none"
+        },
+        {
+          "dang": "Giải phương trình bậc nhất có chứa ngoặc hoặc mẫu là số",
           "band": "TH",
           "lythuyet": 1,
           "vidu": 1,
-          "onclass": 4,
-          "btvn": 4,
+          "onclass": 2,
+          "btvn": 2,
+          "source_refs": [],
+          "decompose": "none"
+        },
+        {
+          "dang": "Giải phương trình tích dạng phân tích sẵn",
+          "band": "TH",
+          "lythuyet": 1,
+          "vidu": 1,
+          "onclass": 2,
+          "btvn": 1,
+          "source_refs": [],
+          "decompose": "none"
+        },
+        {
+          "dang": "Giải phương trình đưa về dạng tích bằng cách đặt nhân tử chung hoặc dùng HĐT",
+          "band": "TH",
+          "lythuyet": 1,
+          "vidu": 1,
+          "onclass": 2,
+          "btvn": 2,
           "source_refs": [
             "gk1-bat-trang-2a"
           ],
           "decompose": "none"
         },
         {
-          "dang": "Giải phương trình chứa ẩn ở mẫu cơ bản",
+          "dang": "Giải phương trình chứa ẩn ở mẫu cơ bản (mẫu chung có sẵn/đơn giản)",
           "band": "TH",
           "lythuyet": 1,
           "vidu": 1,
-          "onclass": 4,
-          "btvn": 4,
+          "onclass": 2,
+          "btvn": 2,
           "source_refs": [
             "gk1-co-nhue-2-1a"
           ],
           "decompose": "none"
         },
         {
-          "dang": "Giải phương trình chứa ẩn ở mẫu nâng cao",
+          "dang": "Giải phương trình chứa ẩn ở mẫu nâng cao (cần phân tích mẫu tìm mẫu chung)",
           "band": "VD",
           "lythuyet": 0,
           "vidu": 1,
-          "onclass": 2,
-          "btvn": 2,
+          "onclass": 1,
+          "btvn": 1,
           "source_refs": [],
-          "decompose": "vd"
+          "decompose": "none"
+        },
+        {
+          "dang": "Giải phương trình chứa ẩn ở mẫu có hệ số ở vế phải (bẫy loại nghiệm)",
+          "band": "VD",
+          "lythuyet": 0,
+          "vidu": 0,
+          "onclass": 1,
+          "btvn": 1,
+          "source_refs": [],
+          "decompose": "none"
         }
       ]
     },
@@ -121,76 +222,176 @@
       "title": "Buổi 2 (Tuần 10): Bất đẳng thức và tính chất (Bài 5)",
       "rows": [
         {
-          "dang": "Nhận biết các kí hiệu $>, <, \\ge, \\le$ và kiểm tra tính đúng sai của BĐT",
+          "dang": "So sánh hai số hoặc hai biểu thức bằng cách xét hiệu (tìm dấu của hiệu)",
           "band": "NB",
-          "lythuyet": 1,
+          "lythuyet": 0,
           "vidu": 2,
-          "onclass": 6,
-          "btvn": 6,
+          "onclass": 3,
+          "btvn": 3,
           "source_refs": [],
           "decompose": "none"
         },
         {
-          "dang": "Viết bất đẳng thức mô tả các tình huống thực tế cơ bản",
+          "dang": "Sử dụng tính chất cộng cùng một số vào hai vế của bất đẳng thức",
           "band": "NB",
-          "lythuyet": 1,
-          "vidu": 3,
-          "onclass": 6,
-          "btvn": 6,
+          "lythuyet": 0,
+          "vidu": 2,
+          "onclass": 3,
+          "btvn": 3,
           "source_refs": [],
           "decompose": "none"
         },
         {
-          "dang": "Thực hành tính chất cộng cùng một số vào hai vế của BĐT",
+          "dang": "Sử dụng tính chất nhân cả hai vế của bất đẳng thức với số dương",
           "band": "NB",
-          "lythuyet": 1,
-          "vidu": 3,
-          "onclass": 6,
-          "btvn": 6,
+          "lythuyet": 0,
+          "vidu": 2,
+          "onclass": 3,
+          "btvn": 3,
           "source_refs": [],
           "decompose": "none"
         },
         {
-          "dang": "Thực hành tính chất nhân hai vế của BĐT với số dương",
+          "dang": "Sử dụng tính chất nhân cả hai vế của bất đẳng thức với số âm (đổi chiều)",
           "band": "NB",
-          "lythuyet": 1,
-          "vidu": 3,
-          "onclass": 7,
-          "btvn": 7,
+          "lythuyet": 0,
+          "vidu": 2,
+          "onclass": 3,
+          "btvn": 3,
           "source_refs": [],
           "decompose": "none"
         },
         {
-          "dang": "Thực hành tính chất nhân hai vế của BĐT với số âm",
+          "dang": "Sử dụng tính chất bắc cầu của bất đẳng thức để so sánh",
           "band": "NB",
-          "lythuyet": 1,
-          "vidu": 3,
-          "onclass": 7,
-          "btvn": 7,
+          "lythuyet": 0,
+          "vidu": 1,
+          "onclass": 3,
+          "btvn": 2,
           "source_refs": [],
           "decompose": "none"
         },
         {
-          "dang": "Sử dụng phối hợp tính chất nhân và cộng để so sánh biểu thức",
+          "dang": "Chuyển dịch từ khóa thực tế (tối đa, tối thiểu) sang kí hiệu bất đẳng thức",
+          "band": "NB",
+          "lythuyet": 0,
+          "vidu": 1,
+          "onclass": 3,
+          "btvn": 2,
+          "source_refs": [],
+          "decompose": "none"
+        },
+        {
+          "dang": "Thiết lập bất đẳng thức biểu diễn tình huống thực tế một bước",
+          "band": "NB",
+          "lythuyet": 0,
+          "vidu": 1,
+          "onclass": 3,
+          "btvn": 2,
+          "source_refs": [],
+          "decompose": "none"
+        },
+        {
+          "dang": "So sánh hai số cụ thể bằng cách sử dụng các tính chất cơ bản",
+          "band": "NB",
+          "lythuyet": 0,
+          "vidu": 2,
+          "onclass": 3,
+          "btvn": 3,
+          "source_refs": [],
+          "decompose": "none"
+        },
+        {
+          "dang": "Tìm điều kiện của biến để bất đẳng thức đúng",
+          "band": "NB",
+          "lythuyet": 0,
+          "vidu": 2,
+          "onclass": 3,
+          "btvn": 3,
+          "source_refs": [],
+          "decompose": "none"
+        },
+        {
+          "dang": "Nhận dạng tính chất cộng/nhân bị dùng sai trong bài giải mẫu",
+          "band": "NB",
+          "lythuyet": 0,
+          "vidu": 1,
+          "onclass": 3,
+          "btvn": 2,
+          "source_refs": [],
+          "decompose": "none"
+        },
+        {
+          "dang": "Nhận biết chiều bất đẳng thức khi thực hiện nhân/chia hai vế",
+          "band": "NB",
+          "lythuyet": 0,
+          "vidu": 2,
+          "onclass": 2,
+          "btvn": 2,
+          "source_refs": [],
+          "decompose": "none"
+        },
+        {
+          "dang": "Sử dụng phối hợp tính chất nhân (số dương) và cộng để so sánh biểu thức",
           "band": "TH",
           "lythuyet": 1,
-          "vidu": 2,
-          "onclass": 8,
-          "btvn": 8,
+          "vidu": 1,
+          "onclass": 2,
+          "btvn": 2,
           "source_refs": [
             "gk1-nbk-3-1"
           ],
           "decompose": "none"
         },
         {
-          "dang": "Chứng minh bất đẳng thức đơn giản bằng cách phối hợp các tính chất",
-          "band": "VD",
-          "lythuyet": 0,
+          "dang": "Sử dụng phối hợp tính chất nhân (số âm) và cộng để so sánh (đổi chiều)",
+          "band": "TH",
+          "lythuyet": 1,
+          "vidu": 1,
+          "onclass": 2,
+          "btvn": 1,
+          "source_refs": [],
+          "decompose": "none"
+        },
+        {
+          "dang": "So sánh hai biểu thức chứa biến bằng cách xét hiệu",
+          "band": "TH",
+          "lythuyet": 1,
           "vidu": 1,
           "onclass": 2,
           "btvn": 2,
           "source_refs": [],
-          "decompose": "vd"
+          "decompose": "none"
+        },
+        {
+          "dang": "Giải quyết bài toán thực tế đơn giản bằng thiết lập và biến đổi BĐT",
+          "band": "TH",
+          "lythuyet": 1,
+          "vidu": 1,
+          "onclass": 2,
+          "btvn": 2,
+          "source_refs": [],
+          "decompose": "none"
+        },
+        {
+          "dang": "Chứng minh bất đẳng thức đơn giản bằng cách phối hợp tính chất cơ bản",
+          "band": "VD",
+          "lythuyet": 0,
+          "vidu": 1,
+          "onclass": 1,
+          "btvn": 1,
+          "source_refs": [],
+          "decompose": "none"
+        },
+        {
+          "dang": "Chứng minh bất đẳng thức bằng phương pháp xét hiệu",
+          "band": "VD",
+          "lythuyet": 0,
+          "vidu": 0,
+          "onclass": 1,
+          "btvn": 1,
+          "source_refs": [],
+          "decompose": "none"
         }
       ]
     },
@@ -199,78 +400,178 @@
       "title": "Buổi 3 (Tuần 11): Bất phương trình bậc nhất một ẩn (Bài 6)",
       "rows": [
         {
-          "dang": "Nhận diện BPT bậc nhất một ẩn và kiểm tra nghiệm",
+          "dang": "Tìm điều kiện xác định (ĐKXĐ) của bất phương trình chứa ẩn ở mẫu thức",
           "band": "NB",
-          "lythuyet": 1,
-          "vidu": 3,
-          "onclass": 8,
-          "btvn": 8,
+          "lythuyet": 0,
+          "vidu": 2,
+          "onclass": 3,
+          "btvn": 3,
           "source_refs": [],
           "decompose": "none"
         },
         {
-          "dang": "Sử dụng quy tắc chuyển vế để giải BPT",
+          "dang": "Sử dụng quy tắc chuyển vế và đổi dấu hạng tử để biến đổi BPT",
           "band": "NB",
-          "lythuyet": 1,
-          "vidu": 3,
-          "onclass": 8,
-          "btvn": 8,
+          "lythuyet": 0,
+          "vidu": 2,
+          "onclass": 3,
+          "btvn": 3,
           "source_refs": [],
           "decompose": "none"
         },
         {
-          "dang": "Sử dụng quy tắc nhân số dương để giải BPT",
+          "dang": "Thực hiện bước nhân hoặc chia hai vế của BPT với số dương",
           "band": "NB",
-          "lythuyet": 1,
-          "vidu": 4,
-          "onclass": 8,
-          "btvn": 8,
+          "lythuyet": 0,
+          "vidu": 2,
+          "onclass": 3,
+          "btvn": 3,
           "source_refs": [],
           "decompose": "none"
         },
         {
-          "dang": "Sử dụng quy tắc nhân số âm để giải BPT",
+          "dang": "Thực hiện bước nhân hoặc chia hai vế của BPT với số âm (bắt buộc đổi chiều)",
           "band": "NB",
-          "lythuyet": 1,
-          "vidu": 4,
-          "onclass": 8,
-          "btvn": 8,
+          "lythuyet": 0,
+          "vidu": 2,
+          "onclass": 3,
+          "btvn": 3,
           "source_refs": [],
           "decompose": "none"
         },
         {
-          "dang": "Giải hoàn chỉnh BPT bậc nhất một ẩn",
+          "dang": "Giải bất phương trình bậc nhất một bước đưa về dạng $x > m$ hoặc $x < m$",
+          "band": "NB",
+          "lythuyet": 0,
+          "vidu": 1,
+          "onclass": 3,
+          "btvn": 2,
+          "source_refs": [],
+          "decompose": "none"
+        },
+        {
+          "dang": "Quy đồng mẫu thức của bất phương trình có mẫu là các số nguyên dương",
+          "band": "NB",
+          "lythuyet": 0,
+          "vidu": 1,
+          "onclass": 3,
+          "btvn": 2,
+          "source_refs": [],
+          "decompose": "none"
+        },
+        {
+          "dang": "Tìm nghiệm nguyên lớn nhất hoặc nhỏ nhất thỏa mãn bất phương trình",
+          "band": "NB",
+          "lythuyet": 0,
+          "vidu": 1,
+          "onclass": 3,
+          "btvn": 2,
+          "source_refs": [],
+          "decompose": "none"
+        },
+        {
+          "dang": "Viết bất phương trình biểu thị tình huống thực tế cơ bản",
+          "band": "NB",
+          "lythuyet": 0,
+          "vidu": 2,
+          "onclass": 3,
+          "btvn": 3,
+          "source_refs": [],
+          "decompose": "none"
+        },
+        {
+          "dang": "Nhận dạng bước biến đổi sai trong quá trình giải bất phương trình",
+          "band": "NB",
+          "lythuyet": 0,
+          "vidu": 2,
+          "onclass": 3,
+          "btvn": 3,
+          "source_refs": [],
+          "decompose": "none"
+        },
+        {
+          "dang": "Giải bất phương trình bậc nhất cơ bản dạng $x + a \\ge b$ hoặc $x - a \\le b$",
+          "band": "NB",
+          "lythuyet": 0,
+          "vidu": 1,
+          "onclass": 3,
+          "btvn": 2,
+          "source_refs": [],
+          "decompose": "none"
+        },
+        {
+          "dang": "Giải bất phương trình cơ bản dạng $ax \\le b$ với $a > 0$",
+          "band": "NB",
+          "lythuyet": 0,
+          "vidu": 2,
+          "onclass": 2,
+          "btvn": 2,
+          "source_refs": [],
+          "decompose": "none"
+        },
+        {
+          "dang": "Giải bất phương trình bậc nhất một ẩn (kết hợp chuyển vế và nhân số dương)",
           "band": "TH",
           "lythuyet": 1,
           "vidu": 1,
-          "onclass": 4,
-          "btvn": 4,
+          "onclass": 2,
+          "btvn": 2,
           "source_refs": [
             "gk1-bat-trang-2c"
           ],
           "decompose": "none"
         },
         {
-          "dang": "Giải BPT bậc nhất có chứa dấu ngoặc",
+          "dang": "Giải bất phương trình bậc nhất một ẩn (kết hợp chuyển vế và nhân số âm)",
           "band": "TH",
           "lythuyet": 1,
           "vidu": 1,
-          "onclass": 4,
-          "btvn": 4,
+          "onclass": 2,
+          "btvn": 1,
+          "source_refs": [],
+          "decompose": "none"
+        },
+        {
+          "dang": "Giải bất phương trình bậc nhất một ẩn có chứa dấu ngoặc",
+          "band": "TH",
+          "lythuyet": 1,
+          "vidu": 1,
+          "onclass": 2,
+          "btvn": 2,
           "source_refs": [
             "ck1-tan-trieu-12"
           ],
           "decompose": "none"
         },
         {
-          "dang": "Xử lý BPT thu về dạng đặc biệt vô nghiệm hoặc luôn đúng",
-          "band": "VD",
-          "lythuyet": 0,
+          "dang": "Giải bất phương trình bậc nhất một ẩn có mẫu là số",
+          "band": "TH",
+          "lythuyet": 1,
           "vidu": 1,
           "onclass": 2,
           "btvn": 2,
           "source_refs": [],
-          "decompose": "vd"
+          "decompose": "none"
+        },
+        {
+          "dang": "Giải bất phương trình bậc nhất đưa về bài toán tìm nghiệm nguyên lớn nhất/nhỏ nhất",
+          "band": "VD",
+          "lythuyet": 0,
+          "vidu": 1,
+          "onclass": 1,
+          "btvn": 1,
+          "source_refs": [],
+          "decompose": "none"
+        },
+        {
+          "dang": "Tìm giá trị của biến để biểu thức nhận giá trị âm hoặc dương",
+          "band": "VD",
+          "lythuyet": 0,
+          "vidu": 0,
+          "onclass": 1,
+          "btvn": 1,
+          "source_refs": [],
+          "decompose": "none"
         }
       ]
     },
@@ -279,80 +580,180 @@
       "title": "Buổi 4 (Tuần 12): Giải toán lập PT/BPT thực tế \\& Luyện tập chung",
       "rows": [
         {
-          "dang": "Chọn ẩn số và đặt điều kiện cho ẩn từ đề bài toán thực tế",
-          "band": "NB",
-          "lythuyet": 1,
-          "vidu": 3,
-          "onclass": 8,
-          "btvn": 8,
-          "source_refs": [],
-          "decompose": "none"
-        },
-        {
-          "dang": "Chuyển đổi các từ khóa thực tế sang dấu BPT tương ứng",
-          "band": "NB",
-          "lythuyet": 1,
-          "vidu": 3,
-          "onclass": 8,
-          "btvn": 8,
-          "source_refs": [],
-          "decompose": "none"
-        },
-        {
-          "dang": "Lập bảng phân tích và biểu diễn các đại lượng chưa biết",
-          "band": "NB",
-          "lythuyet": 1,
-          "vidu": 4,
-          "onclass": 8,
-          "btvn": 8,
-          "source_refs": [],
-          "decompose": "none"
-        },
-        {
-          "dang": "Thiết lập phương trình hoặc bất phương trình từ bảng phân tích",
+          "dang": "Gọi ẩn và đặt điều kiện cho ẩn trong bài toán thực tế chuyển động",
           "band": "NB",
           "lythuyet": 0,
-          "vidu": 4,
-          "onclass": 8,
-          "btvn": 8,
+          "vidu": 2,
+          "onclass": 3,
+          "btvn": 3,
           "source_refs": [],
           "decompose": "none"
         },
         {
-          "dang": "Giải trọn vẹn bài toán thực tế bằng phương trình",
+          "dang": "Lập biểu thức biểu diễn đại lượng chưa biết theo ẩn (toán chuyển động)",
+          "band": "NB",
+          "lythuyet": 0,
+          "vidu": 2,
+          "onclass": 3,
+          "btvn": 3,
+          "source_refs": [],
+          "decompose": "none"
+        },
+        {
+          "dang": "Gọi ẩn và lập biểu thức biểu diễn năng suất, lượng công việc hoàn thành",
+          "band": "NB",
+          "lythuyet": 0,
+          "vidu": 2,
+          "onclass": 3,
+          "btvn": 3,
+          "source_refs": [],
+          "decompose": "none"
+        },
+        {
+          "dang": "Thiết lập phương trình biểu diễn quan hệ giữa các đại lượng năng suất",
+          "band": "NB",
+          "lythuyet": 0,
+          "vidu": 2,
+          "onclass": 3,
+          "btvn": 3,
+          "source_refs": [],
+          "decompose": "none"
+        },
+        {
+          "dang": "Chuyển đổi từ khóa thực tế (tối đa, không vượt quá) sang dấu BPT tương ứng",
+          "band": "NB",
+          "lythuyet": 0,
+          "vidu": 1,
+          "onclass": 3,
+          "btvn": 2,
+          "source_refs": [],
+          "decompose": "none"
+        },
+        {
+          "dang": "Thiết lập bất phương trình tính tổng chi phí mua sắm theo số lượng sản phẩm",
+          "band": "NB",
+          "lythuyet": 0,
+          "vidu": 1,
+          "onclass": 3,
+          "btvn": 2,
+          "source_refs": [],
+          "decompose": "none"
+        },
+        {
+          "dang": "Biểu diễn chu vi, diện tích hình chữ nhật theo ẩn kích thước",
+          "band": "NB",
+          "lythuyet": 0,
+          "vidu": 1,
+          "onclass": 3,
+          "btvn": 2,
+          "source_refs": [],
+          "decompose": "none"
+        },
+        {
+          "dang": "Thiết lập BPT liên quan đến giới hạn kích thước hoặc chu vi, diện tích",
+          "band": "NB",
+          "lythuyet": 0,
+          "vidu": 2,
+          "onclass": 3,
+          "btvn": 3,
+          "source_refs": [],
+          "decompose": "none"
+        },
+        {
+          "dang": "Tìm điều kiện thực tế phù hợp cho ẩn số (số nguyên dương, số lớn hơn $0$)",
+          "band": "NB",
+          "lythuyet": 0,
+          "vidu": 2,
+          "onclass": 3,
+          "btvn": 3,
+          "source_refs": [],
+          "decompose": "none"
+        },
+        {
+          "dang": "Thực hiện bước làm tròn số trong kết quả bài toán lập BPT thực tế",
+          "band": "NB",
+          "lythuyet": 0,
+          "vidu": 1,
+          "onclass": 3,
+          "btvn": 2,
+          "source_refs": [],
+          "decompose": "none"
+        },
+        {
+          "dang": "Đối chiếu điều kiện thực tế và kết luận nghiệm cho bài toán lập phương trình",
+          "band": "NB",
+          "lythuyet": 0,
+          "vidu": 2,
+          "onclass": 2,
+          "btvn": 2,
+          "source_refs": [],
+          "decompose": "none"
+        },
+        {
+          "dang": "Giải bài toán bằng cách lập phương trình (dạng toán chuyển động)",
           "band": "TH",
           "lythuyet": 1,
           "vidu": 1,
-          "onclass": 4,
-          "btvn": 4,
+          "onclass": 2,
+          "btvn": 2,
           "source_refs": [
             "gk1-bat-trang-3-2"
           ],
           "decompose": "none"
         },
         {
-          "dang": "Giải trọn vẹn bài toán thực tế bằng bất phương trình",
+          "dang": "Giải bài toán bằng cách lập phương trình (dạng toán năng suất, công việc)",
           "band": "TH",
           "lythuyet": 1,
           "vidu": 1,
-          "onclass": 4,
-          "btvn": 4,
+          "onclass": 2,
+          "btvn": 1,
+          "source_refs": [],
+          "decompose": "none"
+        },
+        {
+          "dang": "Giải bài toán bằng cách lập bất phương trình (dạng toán mua sắm, tài chính)",
+          "band": "TH",
+          "lythuyet": 1,
+          "vidu": 1,
+          "onclass": 2,
+          "btvn": 2,
           "source_refs": [
             "gk1-co-nhue-2-2-2"
           ],
           "decompose": "none"
         },
         {
-          "dang": "Giải bài toán thực tế lựa chọn phương án tối ưu",
-          "band": "VD",
-          "lythuyet": 0,
+          "dang": "Giải bài toán bằng cách lập bất phương trình (dạng toán liên quan đến hình học)",
+          "band": "TH",
+          "lythuyet": 1,
           "vidu": 1,
           "onclass": 2,
           "btvn": 2,
+          "source_refs": [],
+          "decompose": "none"
+        },
+        {
+          "dang": "Giải bài toán lập bất phương trình thực tế để lựa chọn phương án tối ưu",
+          "band": "VD",
+          "lythuyet": 0,
+          "vidu": 1,
+          "onclass": 1,
+          "btvn": 1,
           "source_refs": [
             "ck1-cau-dien-5"
           ],
-          "decompose": "vd"
+          "decompose": "none"
+        },
+        {
+          "dang": "Giải bài toán lập bất phương trình thực tế có kết quả cần làm tròn số",
+          "band": "VD",
+          "lythuyet": 0,
+          "vidu": 0,
+          "onclass": 1,
+          "btvn": 1,
+          "source_refs": [],
+          "decompose": "none"
         }
       ]
     }
