@@ -125,3 +125,17 @@ Mỗi ô tick gồm: `new-lesson → điền → validate → approve → build`
 ## Việc còn treo (mục c — bạn xử lý sau)
 - ⏭ [dai-so/tuan12-on-tap-bdt-bpt](inputs/seeds/lop-9/dai-so/lop-b/tuan12-on-tap-bdt-bpt) — chưa có nguồn ôn tập chương BĐT/BPT phù hợp.
 - ⏭ [hinh-hoc/tuan07-on-tap-he-thuc-luong-tam-giac-vuong](inputs/seeds/lop-9/hinh-hoc/lop-b/tuan07-on-tap-he-thuc-luong-tam-giac-vuong) — chương 4 không có file ôn tập chương.
+
+---
+
+## Kế hoạch Lớp 8 — Hình học (Tầng B)
+
+### Tuần 4
+- ☐ **Hình** [tuan04-tu-giac-hinh-thang](inputs/seeds/lop-8/hinh-hoc/lop-b/tuan04-tu-giac-hinh-thang) — Tứ giác & Hình thang thường.
+
+### Tuần 5
+- ☐ **Hình** [tuan05-hinh-thang-can](inputs/seeds/lop-8/hinh-hoc/lop-b/tuan05-hinh-thang-can) — Hình thang cân.
+
+### Tuần 6
+- ☐ **Hình** [tuan06-on-tap-tu-giac-hinh-thang-can](inputs/seeds/lop-8/hinh-hoc/lop-b/tuan06-on-tap-tu-giac-hinh-thang-can) — Ôn tập tứ giác & hình thang cân.
+

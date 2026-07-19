@@ -207,6 +207,7 @@ class ChapterSummary(BaseModel):
     title: str
     eyebrow: str = Field("", description="Dòng nhỏ trên tiêu đề, vd 'ĐẠI SỐ — TỔNG KẾT CHƯƠNG'")
     grade_label: str = Field("", description="vd 'Lớp 9 • Ôn vào 10'")
+    grade: str = Field("", description="Mã khối lớp, ví dụ 'lop-9', 'lop-10'")
     intro: str = Field("", description="1–2 câu dẫn; cho phép $...$ và [[br]]")
     lessons: list[str] = Field(default_factory=list, description="slug các phiếu thành viên (tham chiếu)")
     mindmap: MindmapBlock = Field(..., description="Sơ đồ tư duy to gom cả chương (size='large')")

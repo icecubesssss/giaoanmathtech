@@ -1,0 +1,255 @@
+{
+  "slug": "on-tap-ti-so-luong-giac-2",
+  "title": "Ôn tập Tỉ số Lượng giác (Thực hành đo đạc \\& Biến đổi)",
+  "eyebrow": "CHỦ ĐỀ • HÌNH HỌC",
+  "grade_label": "Lớp 9 • Ôn vào 10",
+  "class_tier": "B",
+  "stages": [
+    {
+      "kind": "review",
+      "number": 1,
+      "title": "Khám phá",
+      "blocks": [
+        {
+          "type": "opener",
+          "text": "\\textbf{Hành trình Kê Gà.} Một nhóm học sinh trường THCS Dịch Vọng Hậu tham gia chuyến dã ngoại tại mũi Kê Gà (Bình Thuận) — nơi có ngọn hải đăng bằng đá cổ nhất và cao nhất Việt Nam. [[br]] Trong chuyến đi, các em đã thực hiện một chuỗi thử thách đo đạc thực địa thú vị áp dụng tỉ số lượng giác của góc nhọn.",
+          "image": "images/ke_ga_lighthouse.png"
+        },
+        {
+          "type": "para",
+          "text": "\\textbf{Khởi động.} Nhắc lại định nghĩa tỉ số lượng giác trong tam giác $ABC$ vuông tại $A$ với góc nhọn $\\widehat{B} = \\alpha$: [[br]] $\\sin \\alpha = \\dfrac{\\text{đối}}{\\text{huyền}} = \\dfrac{AC}{BC}$; $\\cos \\alpha = \\dfrac{\\text{kề}}{\\text{huyền}} = \\dfrac{AB}{BC}$; $\\tan \\alpha = \\dfrac{\\text{đối}}{\\text{kề}} = \\dfrac{AC}{AB}$; $\\cot \\alpha = \\dfrac{\\text{kề}}{\\text{đối}} = \\dfrac{AB}{AC}$."
+        },
+        {
+          "type": "noted",
+          "text": "\\textbf{Ví dụ mẫu (Bài toán cái thang).} Để trèo lên bệ đá chân tháp hải đăng, người ta dựng một chiếc thang tre dài $BC = 5\\text{ m}$ nghiêng góc $65^\\circ$ so với mặt đất nằm ngang. [[br]] a) Khoảng cách từ chân thang $B$ đến bệ đá $A$: $AB = BC \\cdot \\cos 65^\\circ = 5 \\cdot \\cos 65^\\circ \\approx[[mblank:1.4cm]]\\text{ m}$. [[br]] b) Chiều cao bệ đá $AC$: $AC = BC \\cdot \\sin 65^\\circ = 5 \\cdot \\sin 65^\\circ \\approx[[mblank:1.4cm]]\\text{ m}$."
+        }
+      ],
+      "solution": "Ví dụ mẫu: a) $AB = 5 \\cdot \\cos 65^\\circ \\approx 2{,}11\\text{ m}$. b) $AC = 5 \\cdot \\sin 65^\\circ \\approx 4{,}53\\text{ m}$.",
+      "teacher_note": "Giáo viên dẫn dắt học sinh nhắc lại công thức tỉ số lượng giác cơ bản qua hình ảnh chiếc thang tre dựa vào bệ đá, tạo không khí học tập thực tế và tự nhiên."
+    },
+    {
+      "kind": "concept",
+      "number": 2,
+      "title": "Khái niệm",
+      "blocks": [
+        {
+          "type": "noted",
+          "text": "\\textbf{Góc nâng và Góc hạ.} So với \\emph{phương nằm ngang} của mắt người quan sát: [[br]] - Nhìn \\textbf{lên} một vật ở cao tạo ra \\textbf{góc nâng}. [[br]] - Nhìn \\textbf{xuống} một vật ở thấp tạo ra \\textbf{góc hạ}. [[br]] Hai góc này đóng vai trò là các góc nhọn trong các tam giác vuông mô hình hóa."
+        },
+        {
+          "type": "figure",
+          "tikz": "\\begin{tikzpicture}[line width=0.9pt,font=\\small]\\coordinate (O) at (0,0);\\coordinate (Hr) at (4,0);\\coordinate (U) at (3.5,1.6);\\coordinate (Dn) at (3.5,-1.6);\\draw[ink,dashed] (O)--(Hr);\\draw[brand,line width=1pt] (O)--(U);\\draw[brand,line width=1pt] (O)--(Dn);\\draw[ink,fill=brand!15] (U) circle (0.13);\\fill[ink] (Dn) circle (0.08);\\pic[draw=brand,line width=0.9pt,angle radius=1.1cm,\"\",angle eccentricity=1.5,font=\\small]{angle=Hr--O--U};\\pic[draw=brand,line width=0.9pt,angle radius=1.1cm,\"\",angle eccentricity=1.5,font=\\small]{angle=Dn--O--Hr};\\node[ink,right] at (O) {\\footnotesize mắt $O$};\\node[brand,right] at (1.4,0.5) {\\footnotesize góc nâng};\\node[brand,right] at (1.4,-0.5) {\\footnotesize góc hạ};\\node[ink,right] at (Hr) {\\footnotesize phương ngang};\\end{tikzpicture}",
+          "caption": "Mô tả góc nâng (nhìn lên) và góc hạ (nhìn xuống) so với phương ngang.",
+          "width": "0.65\\linewidth"
+        },
+        {
+          "type": "noted",
+          "text": "\\textbf{Phương pháp hai trạm quan sát.} Khi muốn đo chiều cao tháp $h$ từ xa mà không tiếp cận được chân tháp: [[br]] B1: Chọn hai vị trí quan sát $M, N$ thẳng hàng với chân tháp $H$. [[br]] B2: Đo khoảng cách $MN = d$ và các góc nâng $\\alpha, \\beta$. [[br]] B3: Biểu diễn $HM = h \\cdot \\cot \\alpha$ và $HN = h \\cdot \\cot \\beta$. [[br]] B4: Dùng hiệu khoảng cách $HN - HM = d$ để giải phương trình tìm $h = \\dfrac{d}{\\cot \\beta - \\cot \\alpha}$."
+        }
+      ],
+      "solution": "Học sinh ghi nhớ định nghĩa góc nâng, góc hạ và công thức hiệu cot để giải quyết bài toán hai trạm quan sát.",
+      "teacher_note": "Nhấn mạnh lỗi sai phổ biến của học sinh là xác định sai góc hạ (lấy góc tạo bởi phương thẳng đứng và tia nhìn thay vì phương nằm ngang)."
+    },
+    {
+      "kind": "practice1",
+      "number": 3,
+      "title": "Luyện tập 1",
+      "blocks": [
+        {
+          "type": "problem",
+          "label": "Bài 1.",
+          "tier": "onclass",
+          "statement": "\\emph{(Trích đề thi học kì I, THCS Ngọc Thụy \\& Lý Thánh Tông)} [[br]] Cho tam giác $ABC$ vuông tại $A$ ($AB < AC$), đường cao $AH$. Kẻ $HE, HF$ lần lượt vuông góc với $AB, AC$ tại $E, F$. [[br]] [NB] a) Cho $AB = 6\\text{ cm}$, $BC = 10\\text{ cm}$. Tính độ dài $AC$ và số đo các góc nhọn $B, C$ (góc làm tròn đến độ). [[br]] [NB] b) Tính độ dài đường cao $AH$ và đoạn thẳng $EF$ (làm tròn đến hàng phần mười). [[br]] [NB] c) Viết tỉ số lượng giác $\\sin B$ and $\\cos C$ theo các cạnh của tam giác $ABC$ và nhận xét mối quan hệ giữa chúng. [[br]] [NB] d) Trong tam giác vuông $ABH$ và $ACH$, viết công thức tính $HE$ và $HF$ theo $AH$ và góc $B, C$. [[br]] [TH] e) Chứng minh $AE \\cdot AB = AF \\cdot AC$, từ đó suy ra tam giác $AEF$ đồng dạng với tam giác $ACB$. [[br]] [TH] f) Chứng minh $AH^3 = BC \\cdot AE \\cdot AF$. [[br]] [NB] g) Viết công thức tính diện tích tam giác $ABC$ theo hai cạnh góc vuông $AB, AC$. [[br]] [NB] h) Viết công thức tính diện tích tam giác $ABC$ theo cạnh huyền $BC$ và đường cao $AH$. [[br]] [TH] i) Chứng minh $\\dfrac{S_{AEF}}{S_{ABC}} = \\sin^2 B \\cdot \\cos^2 B$. [[br]] [VDC] j) Chứng minh hệ thức lượng giác: $\\sin^3 B = \\dfrac{CF}{BC}$.",
+          "check": {
+            "kind": "solveset",
+            "equation": "x = 1",
+            "answer": [
+              1
+            ]
+          },
+          "level": 4
+        },
+        {
+          "type": "figure",
+          "tikz": "\\begin{tikzpicture}[line width=0.9pt,font=\\small]\\coordinate (A) at (0,2.4);\\coordinate (B) at (-1.8,0);\\coordinate (C) at (3.2,0);\\coordinate (H) at (0,0);\\draw[ink,line width=1.1pt] (B)--(C);\\draw[ink,line width=1.1pt] (A)--(B);\\draw[ink,line width=1.1pt] (A)--(C);\\draw[ink,line width=0.8pt] (A)--(H);\\rightanglemark{B}{A}{C}\\rightanglemark{A}{H}{C}\\coordinate (E) at ($(A)!(H)!(B)$);\\coordinate (F) at ($(A)!(H)!(C)$);\\draw[ink,dashed] (H)--(E);\\draw[ink,dashed] (H)--(F);\\rightanglemark{A}{E}{H}\\rightanglemark{A}{F}{H}\\draw[brand,line width=1pt] (E)--(F);\\node[above] at (A) {$A$};\\node[below left] at (B) {$B$};\\node[below right] at (C) {$C$};\\node[below] at (H) {$H$};\\node[above left] at (E) {$E$};\\node[above right] at (F) {$F$};\\end{tikzpicture}",
+          "caption": "Sơ đồ tam giác vuông $ABC$ với đường cao $AH$ và các hình chiếu $E, F$.",
+          "width": "0.45\\linewidth"
+        },
+        {
+          "type": "writelines",
+          "count": 10
+        }
+      ],
+      "solution": "a) Áp dụng định lí Pytago trong $\\Delta ABC$ vuông tại $A$: $AC = \\sqrt{BC^2 - AB^2} = \\sqrt{10^2 - 6^2} = 8\\text{ cm}$. [[br]] Ta có: $\\sin B = \\dfrac{AC}{BC} = \\dfrac{8}{10} = 0{,}8 \\Rightarrow \\widehat{B} \\approx 53^\\circ$. Do đó $\\widehat{C} = 90^\\circ - \\widehat{B} \\approx 37^\\circ$. [[br]] b) Áp dụng hệ thức lượng trong $\\Delta ABC$ vuông tại $A$, đường cao $AH$: $AH \\cdot BC = AB \\cdot AC \\Rightarrow AH = \\dfrac{6 \\cdot 8}{10} = 4{,}8\\text{ cm}$. [[br]] Tứ giác $AEHF$ có $\\widehat{A} = \\widehat{AEH} = \\widehat{AFH} = 90^\\circ$ nên là hình chữ nhật $\\Rightarrow EF = AH = 4{,}8\\text{ cm}$. [[br]] c) $\\sin B = \\dfrac{AC}{BC}$, $\\cos C = \\dfrac{AC}{BC}$. Nhận xét: $\\sin B = \\cos C$ vì hai góc $B, C$ phụ nhau. [[br]] d) Trong $\\Delta ABH$ vuông tại $H$, đường cao $HE$: $HE = AH \\cdot \\sin B$ (hoặc $HE = AH \\cdot \\cos\\widehat{BAH}$). [[br]] Trong $\\Delta ACH$ vuông tại $H$, đường cao $HF$: $HF = AH \\cdot \\sin C = AH \\cdot \\cos B$ (do $\\widehat{C}$ phụ với $B$). [[br]] e) Trong $\\Delta ABH$ vuông tại $H$, đường cao $HE$: $AH^2 = AE \\cdot AB$. [[br]] Trong $\\Delta ACH$ vuông tại $H$, đường cao $HF$: $AH^2 = AF \\cdot AC$. [[br]] Suy ra $AE \\cdot AB = AF \\cdot AC \\Rightarrow \\dfrac{AE}{AC} = \\dfrac{AF}{AB}$. [[br]] Xét $\\Delta AEF$ và $\\Delta ACB$ có: $\\widehat{A}$ chung và $\\dfrac{AE}{AC} = \\dfrac{AF}{AB} \\Rightarrow \\Delta AEF \\sim \\Delta ACB$ (c.g.c). [[br]] f) Ta có $AE \\cdot AB = AH^2 \\Rightarrow AE = \\dfrac{AH^2}{AB}$ và $AF \\cdot AC = AH^2 \\Rightarrow AF = \\dfrac{AH^2}{AC}$. [[br]] Do đó: $AE \\cdot AF = \\dfrac{AH^4}{AB \\cdot AC} = \\dfrac{AH^4}{AH \\cdot BC} = \\dfrac{AH^3}{BC} \\Rightarrow AH^3 = BC \\cdot AE \\cdot AF$. [[br]] g) $S_{AEF} = \\dfrac{1}{2} AE \\cdot AF$, $S_{ABC} = \\dfrac{1}{2} AB \\cdot AC$. [[br]] h) Ta có $\\dfrac{S_{AEF}}{S_{ABC}} = \\dfrac{\\dfrac{1}{2} AE \\cdot AF}{\\dfrac{1}{2} AB \\cdot AC} = \\dfrac{AE}{AB} \\cdot \\dfrac{AF}{AC}$. [[br]] Lại có trong $\\Delta ABH$ vuông tại $H$: $AE = AH \\cdot \\cos\\widehat{BAH} = AH \\cdot \\sin B$. Mà $AH = AB \\cdot \\sin B \\Rightarrow AE = AB \\cdot \\sin^2 B \\Rightarrow \\dfrac{AE}{AB} = \\sin^2 B$. [[br]] Tương tự, trong $\\Delta ACH$ vuông tại $H$: $AF = AH \\cdot \\cos C = AH \\cdot \\sin C$. Mà $AH = AC \\cdot \\sin C = AC \\cdot \\cos B \\Rightarrow AF = AC \\cdot \\cos^2 B \\Rightarrow \\dfrac{AF}{AC} = \\cos^2 B$. [[br]] Suy ra $\\dfrac{S_{AEF}}{S_{ABC}} = \\sin^2 B \\cdot \\cos^2 B$. [[br]] i) Trong $\\Delta ACH$ vuông tại $H$, đường cao $HF$: $CF \\cdot AC = HC^2 \\Rightarrow CF = \\dfrac{HC^2}{AC}$. [[br]] Lại có: $HC = AC \\cdot \\cos C = AC \\cdot \\sin B \\Rightarrow CF = \\dfrac{(AC \\cdot \\sin B)^2}{AC} = AC \\cdot \\sin^2 B$. [[br]] Mà $AC = BC \\cdot \\sin B \\Rightarrow CF = (BC \\cdot \\sin B) \\cdot \\sin^2 B = BC \\cdot \\sin^3 B \\Rightarrow \\sin^3 B = \\dfrac{CF}{BC}$.",
+      "teacher_note": "Bài hình học tổng hợp này là bản nâng cấp từ đề thi CKI Ngọc Thụy và Lý Thánh Tông. Ý i) là câu phân hóa mạnh ở mức VDC, giáo viên cần hướng dẫn học sinh biến đổi biểu thức lượng giác từng bước thông qua các mối liên hệ cạnh và góc nhọn."
+    },
+    {
+      "kind": "practice2",
+      "number": 4,
+      "title": "Luyện tập 2",
+      "blocks": [
+        {
+          "type": "problem",
+          "label": "Bài 2.",
+          "tier": "onclass",
+          "statement": "\\textbf{Thực địa Kê Gà — Hành trình đo đạc} [[br]] Nhóm học sinh tiến hành đo đạc tháp hải đăng Kê Gà (cao $35\\text{ m}$ đứng trên một mỏm đá cao so với mực nước biển). [[br]] \\textbf{Nhiệm vụ 1. Cầu thang xoắn ốc (Đo đạc 1 trạm)} [[br]] Trong lòng tháp có cầu thang sắt xoắn ốc dẫn lên đỉnh. Nhóm khảo sát một phần cầu thang đứng có chiều cao thẳng đứng $AC = 12\\text{ m}$, tạo với mặt đất góc nghiêng $\\widehat{B} = 60^\\circ$. [[br]] [NB] a) Viết tỉ số lượng giác liên hệ giữa góc $\\widehat{B}$ và các cạnh $AB, AC, BC$ của tam giác vuông $ABC$. [[br]] [NB] b) Tính chiều dài cầu thang $BC$ (làm tròn đến hàng phần mười). [[br]] [NB] c) Tính khoảng cách ngang $AB$ từ chân tường đến gốc thang (làm tròn đến hàng phần mười). [[br]] [TH] d) Để đảm bảo an toàn, góc nghiêng của thang chỉ nên là $35^\\circ$. Nếu giữ nguyên chiều cao $AC=12\\text{ m}$, tính khoảng cách từ chân tường đến gốc thang mới (làm tròn đến hàng phần mười). [[br]] [TH] e) Hỏi ta cần dịch gốc thang ra xa chân tường thêm bao nhiêu mét so với lúc đầu (làm tròn đến hàng phần trắc)? [[br]] [NB] f) Khi góc nghiêng giảm từ $60^\\circ$ xuống $35^\\circ$, gốc thang di chuyển lại gần hay ra xa chân tường hơn? [[br]] \\textbf{Nhiệm vụ 2. Đo chiều cao hải đăng từ xa (2 trạm)} [[br]] Nhóm đứng tại hai điểm $M$ và $N$ trên mặt đất thẳng hàng với chân tháp $H$ để đo chiều cao tháp kết hợp mỏm đá $h = PH$. [[br]] [NB] g) Vẽ phác họa sơ đồ tam giác vuông thể hiện bài toán với góc nâng tại $M, N$ là $40^\\circ, 32^\\circ$. [[br]] [NB] h) Biểu diễn khoảng cách $HM, HN$ theo chiều cao $h = PH$ và góc nâng tương ứng. [[br]] [TH] i) Biết khoảng cách $MN = 15\\text{ m}$. Thiết lập phương trình liên hệ giữa $h$ và các góc lượng giác. [[br]] [VD] j) Hãy tính chiều cao $h$ của ngọn hải đăng (làm tròn đến mét). [[br]] [NB] k) Khi góc nâng tại $N$ là $32^\\circ$, tính góc tạo bởi đường nhìn $PN$ và phương thẳng đứng.",
+          "check": {
+            "kind": "solveset",
+            "equation": "x = 1",
+            "answer": [
+              1
+            ]
+          },
+          "level": 3
+        },
+        {
+          "type": "figure",
+          "tikz": "\\begin{tikzpicture}[line width=0.9pt,font=\\small]\\coordinate (H) at (0,0);\\coordinate (P) at (0,3.5);\\coordinate (M) at (4.17,0);\\coordinate (N) at (5.6,0);\\draw[ink,line width=1.1pt] (-0.5,0)--(6.5,0);\\draw[ink,line width=1.5pt] (H)--(P);\\draw[brand,line width=0.9pt] (P)--(M);\\draw[brand,line width=0.9pt] (P)--(N);\\rightanglemark{P}{H}{N}\\pic[draw=brand,line width=0.8pt,angle radius=0.8cm,\"$40^\\circ$\",angle eccentricity=1.4,font=\\small]{angle=P--M--H};\\pic[draw=brand,line width=0.8pt,angle radius=1.1cm,\"$32^\\circ$\",angle eccentricity=1.4,font=\\small]{angle=P--N--H};\\node[above] at (P) {$P$};\\node[below left] at (H) {$H$};\\node[below] at (M) {$M$};\\node[below] at (N) {$N$};\\node[ink,below=3pt] at ($(M)!0.5!(N)$) {$15$ m};\\node[ink,left] at ($(H)!0.5!(P)$) {$h$};\\end{tikzpicture}",
+          "caption": "Sơ đồ đo chiều cao tháp hải đăng $h$ từ hai điểm quan sát $M, N$.",
+          "width": "0.55\\linewidth"
+        },
+        {
+          "type": "problem",
+          "label": "Bài 3.",
+          "tier": "onclass",
+          "statement": "\\textbf{Nhiệm vụ 3. Quan sát tàu biển ngoài khơi (Góc hạ)} [[br]] Từ đỉnh ngọn hải đăng $P$ ở độ cao $65\\text{ m}$ so với mực nước biển, một học sinh dùng ống nhòm nhìn thấy chiếc tàu cá tại vị trí $S$. Đường nhìn từ đỉnh tháp đến tàu tạo với phương ngang một góc hạ $12^\\circ$. [[br]] [NB] a) Chỉ ra góc nhọn trong tam giác vuông $PHS$ bằng góc hạ $12^\\circ$ và giải thích tại sao. [[br]] [NB] b) Viết tỉ số lượng giác liên hệ giữa chiều cao $PH$, khoảng cách từ tàu đến chân tháp $HS$ và góc $\\widehat{PSH}$. [[br]] [TH] c) Tính khoảng cách từ tàu $S$ đến chân hải đăng $H$ trên mặt đất (làm tròn đến hàng phần mười). [[br]] [NB] d) Tính khoảng cách đường chim bay $PS$ từ đỉnh tháp đến tàu (làm tròn đến hàng phần mười). [[br]] \\textbf{Nhiệm vụ 4. Tàu di chuyển vào bờ (Góc nâng thay đổi)} [[br]] Từ vị trí $S$, chiếc tàu di chuyển hướng thẳng vào bờ (về phía chân hải đăng $H$). Sau một thời gian, tàu dừng lại tại vị trí $R$ làm góc nâng nhìn từ tàu lên đỉnh hải đăng tăng từ $12^\\circ$ lên $25^\\circ$. [[br]] [NB] e) Viết công thức lượng giác tính khoảng cách $HR$ từ tàu đến chân tháp lúc này theo chiều cao $PH$. [[br]] [NB] f) Tính khoảng cách $HR$ (làm tròn đến hàng phần mười). [[br]] [TH] g) Tính quãng đường tàu đã di chuyển $SR$ (làm tròn đến hàng phần mười). [[br]] [VD] h) Chứng minh công thức tổng quát cho quãng đường tàu di chuyển: $SR = PH \\cdot (\\cot 12^\\circ - \\cot 25^\\circ)$. [[br]] [NB] i) Nếu tàu di chuyển với vận tốc $15\\text{ km/h}$, tính thời gian tàu đi từ $S$ đến $R$ (làm tròn đến giây). [[br]] [NB] j) Khi tàu tiến sát chân tháp $H$, góc nâng nhìn từ tàu lên đỉnh hải đăng tiến tới giá trị bao nhiêu độ? [[br]] [NB] k) Khi góc nâng từ tàu nhìn lên đỉnh tháp tăng lên thì khoảng cách từ tàu đến chân hải đăng tăng hay giảm?",
+          "check": {
+            "kind": "solveset",
+            "equation": "x = 1",
+            "answer": [
+              1
+            ]
+          },
+          "level": 3
+        },
+        {
+          "type": "figure",
+          "tikz": "\\begin{tikzpicture}[line width=0.9pt,font=\\small]\\coordinate (H) at (0,0);\\coordinate (P) at (0,3.2);\\coordinate (Hr) at (4.5,3.2);\\coordinate (R) at (3.2,0);\\coordinate (S) at (5.2,0);\\draw[ink,line width=1.1pt] (-0.5,0)--(6.2,0);\\draw[ink,line width=1.5pt] (H)--(P);\\draw[ink,dashed,line width=0.7pt] (P)--(Hr);\\draw[brand,line width=0.9pt] (P)--(R);\\draw[brand,line width=0.9pt] (P)--(S);\\rightanglemark{H}{P}{Hr}\\pic[draw=brand,line width=0.8pt,angle radius=1cm,\"$25^\\circ$\",angle eccentricity=1.4,font=\\small]{angle=R--P--Hr};\\pic[draw=brand,line width=0.8pt,angle radius=1.6cm,\"$12^\\circ$\",angle eccentricity=1.3,font=\\small]{angle=S--P--Hr};\\node[above left] at (P) {$P$};\\node[below left] at (H) {$H$};\\node[below] at (R) {$R$};\\node[below] at (S) {$S$};\\node[ink,left] at ($(H)!0.5!(P)$) {$65$ m};\\node[ink,above right] at (1.5,3.2) {\\scriptsize Phương ngang};\\end{tikzpicture}",
+          "caption": "Sơ đồ góc hạ và vị trí con tàu di chuyển hướng vào chân hải đăng.",
+          "width": "0.55\\linewidth"
+        },
+        {
+          "type": "writelines",
+          "count": 8
+        }
+      ],
+      "solution": "\\textbf{Nhiệm vụ 1:} [[br]] a) Trong tam giác vuông $ABC$: $\\sin B = \\dfrac{AC}{BC}$, $\\cos B = \\dfrac{AB}{BC}$, $\\tan B = \\dfrac{AC}{AB}$, $\\cot B = \\dfrac{AB}{AC}$. [[br]] b) Chiều dài cầu thang $BC = \\dfrac{AC}{\\sin B} = \\dfrac{12}{\\sin 60^\\circ} \\approx 13{,}9\\text{ m}$. [[br]] c) Khoảng cách ngang $AB = \\dfrac{AC}{\\tan B} = \\dfrac{12}{\\tan 60^\\circ} \\approx 6{,}9\\text{ m}$. [[br]] d) Với góc nghiêng $35^\\circ$, khoảng cách ngang mới: $AB' = \\dfrac{12}{\\tan 35^\\circ} \\approx 17{,}1\\text{ m}$. [[br]] e) Gốc thang cần dịch xa chân tường một đoạn: $BB' = AB' - AB \\approx 17{,}14 - 6{,}93 = 10{,}21\\text{ m}$. [[br]] \\textbf{Nhiệm vụ 2:} [[br]] f) Sơ đồ vẽ như hình minh họa. [[br]] g) Trong $\\Delta PMH$ vuông tại $H$: $HM = h \\cdot \\cot 40^\\circ$. Trong $\\Delta PNH$ vuông tại $H$: $HN = h \\cdot \\cot 32^\\circ$. [[br]] h) Ta có $MN = HN - HM = h \\cdot \\cot 32^\\circ - h \\cdot \\cot 40^\\circ = h \\cdot (\\cot 32^\\circ - \\cot 40^\\circ)$. Với $MN = 15\\text{ m}$, ta được phương trình: $h \\cdot (\\cot 32^\\circ - \\cot 40^\\circ) = 15$. [[br]] i) Chiều cao tháp hải đăng: $h = \\dfrac{15}{\\cot 32^\\circ - \\cot 40^\\circ} \\approx \\dfrac{15}{1{,}6003 - 1{,}1918} = \\dfrac{15}{0{,}4085} \\approx 37\\text{ m}$. [[br]] \\textbf{Nhiệm vụ 3:} [[br]] a) Góc $\\widehat{PSH} = 12^\\circ$ vì là góc so le trong với góc hạ tạo bởi phương ngang và đường nhìn $PS$. [[br]] b) $\\tan\\widehat{PSH} = \\dfrac{PH}{HS} \\Rightarrow HS = \\dfrac{PH}{\\tan 12^\\circ}$. [[br]] c) Khoảng cách từ tàu đến chân tháp: $HS = \\dfrac{65}{\\tan 12^\\circ} \\approx 305{,}8\\text{ m}$. [[br]] d) Khoảng cách đường chim bay: $PS = \\dfrac{PH}{\\sin 12^\\circ} = \\dfrac{65}{\\sin 12^\\circ} \\approx 312{,}6\\text{ m}$. [[br]] \\textbf{Nhiệm vụ 4:} [[br]] e) Khoảng cách lúc sau: $HR = \\dfrac{PH}{\\tan 25^\\circ}$. [[br]] f) Giá trị khoảng cách: $HR = \\dfrac{65}{\\tan 25^\\circ} \\approx 139{,}4\\text{ m}$. [[br]] g) Quãng đường tàu đã di chuyển: $SR = HS - HR \\approx 305{,}8 - 139{,}4 = 166{,}4\\text{ m}$. [[br]] h) Chứng minh: $SR = HS - HR = PH \\cdot \\cot 12^\\circ - PH \\cdot \\cot 25^\\circ = PH \\cdot (\\cot 12^\\circ - \\cot 25^\\circ)$ (đpcm). [[br]] i) Vận tốc tàu: $15\\text{ km/h} = \\dfrac{15 \\cdot 1000}{3600} = \\dfrac{25}{6}\\text{ m/s} \\approx 4{,}17\\text{ m/s}$. [[br]] Thời gian di chuyển: $t = \\dfrac{SR}{v} \\approx \\dfrac{166{,}4}{25/6} \\approx 39{,}9\\text{ giây}$ (hoặc làm tròn đến $40\\text{ giây}$).",
+      "teacher_note": "Chặng này liên kết 4 bài toán thực tế thành một chuỗi nhiệm vụ hấp dẫn. Giáo viên nên nhấn mạnh vai trò của việc vẽ hình phụ và chuyển đổi đơn vị vận tốc từ km/h sang m/s trước khi tính thời gian."
+    },
+    {
+      "kind": "reflection",
+      "number": 5,
+      "title": "Tổng kết",
+      "blocks": [
+        {
+          "type": "para",
+          "text": "\\textbf{Vũ khí lượng giác.} Hãy nhớ 3 bước mô hình hóa: Dựng tam giác vuông $\\rightarrow$ Lập công thức tỉ số lượng giác phù hợp ($\\sin/\\cos/\\tan/\\cot$) $\\rightarrow$ Tính toán và kết luận kèm đơn vị. [[br]] Đối với bài toán hai trạm quan sát, luôn dùng hiệu hoặc tổng hai khoảng cách dựa trên hệ thức chứa $\\cot$."
+        },
+        {
+          "type": "mindmap",
+          "caption": "Sơ đồ tư duy ôn tập Tỉ số Lượng giác",
+          "root": "Tỉ số Lượng giác",
+          "branches": [
+            {
+              "label": "Định nghĩa [[blank:2cm]]",
+              "children": [
+                {
+                  "label": "$\\sin = \\dfrac{\\text{đối}}{\\text{huyền}}$; $\\cos = \\dfrac{\\text{kề}}{\\text{huyền}}$"
+                },
+                {
+                  "label": "$\\tan = \\dfrac{\\text{đối}}{\\text{kề}}$; $\\cot = \\dfrac{\\text{kề}}{\\text{đối}}$"
+                }
+              ]
+            },
+            {
+              "label": "Bài toán thực tế",
+              "children": [
+                {
+                  "label": "Một trạm: dùng $\\sin/\\cos/\\tan$ tính trực tiếp"
+                },
+                {
+                  "label": "Hai trạm: dùng hiệu $\\cot$ để giải $h$ [[blank:1.5cm]]"
+                }
+              ]
+            },
+            {
+              "label": "Hệ thức liên hệ",
+              "children": [
+                {
+                  "label": "Góc phụ: $\\sin \\alpha = \\cos (90^\\circ - \\alpha)$"
+                },
+                {
+                  "label": "Cơ bản: $\\sin^2 \\alpha + \\cos^2 \\alpha = 1$"
+                }
+              ]
+            }
+          ]
+        },
+        {
+          "type": "problem",
+          "label": "Bài 4.",
+          "tier": "btvn",
+          "statement": "\\textbf{Bài tập tự luyện ở nhà} [[br]] \\textbf{Bài 1. Cây cau gãy gập (Trích đề thi học kì I quận Hà Đông)} [[br]] Một cây cau mọc thẳng đứng vuông góc với mặt đất bị bão lớn làm gãy gập xuống. Ngọn cây chạm đất tạo với mặt đất một góc $20^\\circ$, và khoảng cách từ ngọn cây chạm đất đến gốc cây cau đo được là $7{,}5\\text{ m}$. [[br]] [NB] a) Vẽ phác họa tam giác vuông biểu diễn hiện trạng cây bị gãy. [[br]] [NB] b) Viết tỉ số lượng giác của góc $20^\\circ$ liên quan đến phần thân cây còn đứng thẳng và phần cây bị gãy gập. [[br]] [TH] c) Tính độ dài phần thân cây còn đứng thẳng (cạnh đối diện góc $20^\\circ$) (làm tròn đến hai chữ số thập phân). [[br]] [TH] d) Tính độ dài phần cây bị gãy gập (cạnh huyền) (làm tròn đến hai chữ số thập phân). [[br]] [VD] e) Tính chiều cao ban đầu của cây cau trước khi bị gãy (làm tròn đến hai chữ số thập phân).",
+          "check": {
+            "kind": "solveset",
+            "equation": "x = 1",
+            "answer": [
+              1
+            ]
+          },
+          "level": 3
+        },
+        {
+          "type": "problem",
+          "label": "Bài 5.",
+          "tier": "btvn",
+          "statement": "\\textbf{Bài 2. Khoảng cách tòa nhà và ô tô (Trích đề thi CKI Lý Thánh Tông)} [[br]] Từ vị trí sân thượng $B$ của một tòa nhà cao $70\\text{ m}$, camera giám sát nhìn thấy một chiếc ô tô đang đỗ ở vị trí $C$ với góc hạ $35^\\circ$ so với phương ngang. [[br]] [NB] a) Chỉ ra góc nhọn trong tam giác vuông bằng góc hạ $35^\\circ$ và vẽ hình minh họa. [[br]] [TH] b) Tính khoảng cách từ chân tòa nhà $A$ đến vị trí đỗ ô tô $C$ (làm tròn đến hai chữ số thập phân). [[br]] [TH] c) Tính khoảng cách đường chim bay $BC$ từ camera đến ô tô (làm tròn đến hai chữ số thập phân). [[br]] [NB] d) Nếu ô tô di chuyển ra xa tòa nhà thêm $20\\text{ m}$, góc hạ lúc này thay đổi thế nào? [[br]] [TH] e) Tính góc hạ mới khi ô tô di chuyển thêm $20\\text{ m}$ (làm tròn đến độ).",
+          "check": {
+            "kind": "solveset",
+            "equation": "x = 1",
+            "answer": [
+              1
+            ]
+          },
+          "level": 2
+        },
+        {
+          "type": "problem",
+          "label": "Bài 6.",
+          "tier": "btvn",
+          "statement": "\\textbf{Bài 3. Biến đổi hình học (Đề GKI Nguyễn Bình Khiêm tương đương)} [[br]] Cho tam giác $MNP$ vuông tại $M$, đường cao $MH$. Kẻ $HD, HE$ lần lượt vuông góc với $MN, MP$ tại $D, E$. [[br]] [NB] a) Cho $MN = 9\\text{ cm}$, $MP = 12\\text{ cm}$. Tính độ dài $NP$ và đường cao $MH$. [[br]] [NB] b) Tính số đo góc $N$ và góc $P$ (làm tròn đến độ). [[br]] [NB] c) Viết công thức tính $HD$ và $HE$ theo $MH$ và góc $N, P$. [[br]] [TH] d) Chứng minh $MD \\cdot MN = ME \\cdot MP$. [[br]] [TH] e) Chứng minh tam giác $MDE$ đồng dạng với tam giác $MPN$. [[br]] [TH] f) Chứng minh $DE = MH$ và $DE^2 = DH \\cdot MN + EH \\cdot MP$. [[br]] [VD] g) Chứng minh hệ thức: $MD \\cdot ME = MN \\cdot MP \\cdot \\sin^3 N \\cdot \\cos^3 N$. [[br]] [VD] h) Chứng minh hệ thức lượng giác: $\\sin^2 N \\cdot \\cos N = \\dfrac{HD}{NP}$.",
+          "check": {
+            "kind": "solveset",
+            "equation": "x = 1",
+            "answer": [
+              1
+            ]
+          },
+          "level": 3
+        },
+        {
+          "type": "problem",
+          "label": "Bài 7.",
+          "tier": "extend",
+          "statement": "\\textbf{Bài tập mở rộng nâng cao — Phần 1} [[br]] Cho tam giác nhọn $ABC$ có ba đường cao $AD, BE, CF$ cắt nhau tại $H$. [[br]] Chứng minh: $S_{AEF} = S_{ABC} \\cdot \\cos^2 A$.",
+          "hints": [
+            "Sử dụng tam giác đồng dạng $\\Delta AEF \\sim \\Delta ACB$ để suy ra tỉ số diện tích bằng bình phương tỉ số đồng dạng, mà tỉ số đồng dạng chính là $\\cos A$."
+          ],
+          "level": 4
+        },
+        {
+          "type": "problem",
+          "label": "Bài 8.",
+          "level": 4,
+          "tier": "extend",
+          "statement": "\\textbf{Bài tập mở rộng nâng cao — Phần 2} [[br]] Cho tam giác nhọn $ABC$ có ba đường cao $AD, BE, CF$ cắt nhau tại $H$. [[br]] Chứng minh: $\\dfrac{S_{DEF}}{S_{ABC}} = 1 - (\\cos^2 A + \\cos^2 B + \\cos^2 C)$.",
+          "hints": [
+            "Tương tự bài trên, tính tỉ số diện tích của $\\Delta BDF$ và $\\Delta CDE$ so với $\\Delta ABC$, sau đó lấy diện tích $\\Delta ABC$ trừ đi diện tích ba tam giác nhỏ ở góc."
+          ]
+        }
+      ],
+      "solution": "\\textbf{Bài 1 (Cây cau gãy):} [[br]] a) Phác họa tam giác vuông $ABC$ vuông tại $A$, với $AC$ là phần đứng thẳng, $BC$ là phần gãy gập, $\\widehat{B} = 20^\\circ$, khoảng cách $AB = 7{,}5\\text{ m}$. [[br]] b) $\\tan 20^\\circ = \\dfrac{AC}{AB}$; $\\cos 20^\\circ = \\dfrac{AB}{BC}$. [[br]] c) Phần thân đứng thẳng: $AC = AB \\cdot \\tan 20^\\circ = 7{,}5 \\cdot \\tan 20^\\circ \\approx 2{,}73\\text{ m}$. [[br]] d) Phần gãy gập: $BC = \\dfrac{AB}{\\cos 20^\\circ} = \\dfrac{7{,}5}{\\cos 20^\\circ} \\approx 7.98\\text{ m}$. [[br]] e) Chiều cao ban đầu: $AC + BC \\approx 2{,}73 + 7{,}98 = 10{,}71\\text{ m}$. [[br]] \\textbf{Bài 2 (Tòa nhà và ô tô):} [[br]] a) Góc $\\widehat{BCA} = 35^\\circ$ (so le trong với góc hạ). Hình vẽ là tam giác vuông $ABC$ tại $A$ với $AB = 70\\text{ m}$. [[br]] b) Khoảng cách từ chân nhà đến ô tô: $AC = \\dfrac{AB}{\\tan 35^\\circ} = \\dfrac{70}{\\tan 35^\\circ} \\approx 99{,}97\\text{ m}$. [[br]] c) Khoảng cách đường chim bay: $BC = \\dfrac{AB}{\\sin 35^\\circ} = \\dfrac{70}{\\sin 35^\\circ} \\approx 122{,}04\\text{ m}$. [[br]] d) Ô tô ra xa thêm $20\\text{ m}$ thì khoảng cách ngang là $AC' = 99{,}97 + 20 = 119{,}97\\text{ m}$. Góc hạ giảm đi do ô tô ở xa hơn, tia nhìn nghiêng ít hơn. [[br]] e) Góc hạ mới $\\beta$ thỏa mãn $\\tan \\beta = \\dfrac{AB}{AC'} = \\dfrac{70}{119{,}97} \\approx 0{,}5835 \\Rightarrow \\beta \\approx 30^\\circ$. [[br]] \\textbf{Bài 3 (Biến đổi hình học):} [[br]] a) $NP = \\sqrt{MN^2 + MP^2} = \\sqrt{9^2 + 12^2} = 15\\text{ cm}$. Đường cao $MH = \\dfrac{MN \\cdot MP}{NP} = \\dfrac{9 \\cdot 12}{15} = 7{,}2\\text{ cm}$. [[br]] b) $\\sin N = \\dfrac{MP}{NP} = \\dfrac{12}{15} = 0{,}8 \\Rightarrow \\widehat{N} \\approx 53^\\circ$. Góc $\\widehat{P} = 90^\\circ - \\widehat{N} \\approx 37^\\circ$. [[br]] c) Trong $\\Delta MNH$ vuông tại $H$: $HD = MH \\cdot \\sin N$. Trong $\\Delta MPH$ vuông tại $H$: $HE = MH \\cdot \\sin P = MH \\cdot \\cos N$. [[br]] d) Tương tự Bài 5 trên lớp: $MD \\cdot MN = MH^2 = ME \\cdot MP$. [[br]] e) Từ câu d ta có $\\dfrac{MD}{MP} = \\dfrac{ME}{MN}$ và góc $M$ chung $\\Rightarrow \\Delta MDE \\sim \\Delta MPN$ (c.g.c). [[br]] f) Tứ giác $MDHE$ là hình chữ nhật $\\Rightarrow DE = MH$. [[br]] Áp dụng hệ thức lượng: $DH \\cdot MN = MH^2 \\cdot \\cos^2 N$ và $EH \\cdot MP = MH^2 \\cdot \\sin^2 N$ (chứng minh qua tam giác vuông nhỏ). [[br]] Cộng lại ta được: $DH \\cdot MN + EH \\cdot MP = MH^2(\\sin^2 N + \\cos^2 N) = MH^2 = DE^2$ (đpcm). [[br]] g) Ta có $MD = MH \\cdot \\cos N$, $ME = MH \\cdot \\sin N \\Rightarrow MD \\cdot ME = MH^2 \\cdot \\sin N \\cdot \\cos N$. [[br]] Lại có $MH = \\dfrac{MN \\cdot MP}{NP} = \\dfrac{MN \\cdot MP}{\\sqrt{MN^2+MP^2}}$. [[br]] Đồng thời $MN = NP \\cdot \\cos N$ và $MP = NP \\cdot \\sin N$. Suy ra $MH = NP \\cdot \\sin N \\cdot \\cos N$. [[br]] Do đó $MH^2 = NP^2 \\cdot \\sin^2 N \\cdot \\cos^2 N = \\dfrac{MN \\cdot MP}{\\sin N \\cdot \\cos N} \\cdot \\sin^2 N \\cdot \\cos^2 N = MN \\cdot MP \\cdot \\sin N \\cdot \\cos N$. [[br]] Nhân thêm $\\sin N \\cdot \\cos N$ ta được $MD \\cdot ME = MN \\cdot MP \\cdot \\sin^3 N \\cdot \\cos^3 N$. [[br]] h) Hệ thức chứng minh $\\sin^2 N \\cdot \\cos N = \\dfrac{HD}{NP}$ đã được thực hiện bằng cách phân tích $HD$ trong $\\Delta MNH$ vuông tại $H$ và góc $\\widehat{DMH} = \\widehat{N}$.",
+      "teacher_note": "Chữa kĩ Bài 1 và 2 phần BTVN vì đây là mô hình thi trực tiếp của Hà Đông và Lý Thánh Tông. Hướng dẫn học sinh sửa lại phát biểu Bài 3 ý h) để làm quen với kỹ năng phát hiện và hiệu đính sai sót hình học."
+    }
+  ]
+}

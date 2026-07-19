@@ -85,10 +85,14 @@ def band_counts(lesson: LessonPackage) -> dict[str, dict[str, int]]:
 
 def _grade_subject(lesson: LessonPackage) -> tuple[str, str]:
     """Suy (lớp, môn) để tra tier_spec. Lesson chỉ có grade_label → phân lớp 8/9;
-    môn mặc định 'dai-so' (chỉ dai-so có rate card; giữ đúng hành vi cũ)."""
+    phát hiện môn 'hinh-hoc' nếu eyebrow hoặc title chứa chữ 'hình'/'hinh'."""
     gl = getattr(lesson, "grade_label", "") or ""
     grade = "lop-8" if "Lớp 8" in gl else "lop-9"
-    return grade, "dai-so"
+    eyebrow = getattr(lesson, "eyebrow", "") or ""
+    title = getattr(lesson, "title", "") or ""
+    text_to_search = (eyebrow + " " + title).lower()
+    subject = "hinh-hoc" if "hình" in text_to_search or "hinh" in text_to_search else "dai-so"
+    return grade, subject
 
 
 def check_duration(lesson: LessonPackage) -> list[str]:

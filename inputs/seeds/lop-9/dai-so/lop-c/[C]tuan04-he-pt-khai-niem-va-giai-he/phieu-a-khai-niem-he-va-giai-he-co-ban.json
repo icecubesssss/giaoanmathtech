@@ -1,0 +1,432 @@
+{
+  "slug": "phieu-a-khai-niem-he-va-giai-he-co-ban",
+  "title": "Khái niệm hệ \\& Giải hệ phương trình bậc nhất hai ẩn",
+  "eyebrow": "ĐẠI SỐ — BUỔI 1 (TUẦN 4): SGK BÀI 1 \\& BÀI 2",
+  "grade_label": "Lớp 9 • Ôn vào 10",
+  "class_tier": "C",
+  "stages": [
+    {
+      "kind": "review",
+      "number": 1,
+      "title": "Khám phá",
+      "blocks": [
+        {
+          "type": "noted",
+          "variant": "note",
+          "text": "\\textbf{Ôn bài cũ (Lớp 8).} Giải phương trình bậc nhất \\emph{một} ẩn: [[br]] $3x-12=0$ [[br]] $3x\\ [[mblank:0.8cm]]$ \\;(chuyển vế, đổi dấu) [[br]] $x=[[mblank:0.8cm]]$ \\;(chia hai vế cho $3$) [[br]] \\emph{Nhớ:} phương trình một ẩn cho ta \\textbf{một} giá trị $x$. Hôm nay ta gặp phương trình có \\textbf{hai} ẩn $x$ và $y$ — kết quả sẽ khác hẳn."
+        },
+        {
+          "type": "opener",
+          "text": "\\textbf{Bài toán cổ} (SGK tr.5): [[br]] \\emph{``Quýt, cam mười bảy quả tươi [[br]] Đem chia cho một trăm người cùng vui. [[br]] Chia ba mỗi quả quýt rồi, [[br]] Còn cam, mỗi quả chia mười vừa xinh. [[br]] Trăm người, trăm miếng ngọt lành. [[br]] Quýt, cam mỗi loại tính rành là bao?''} [[br]] Gọi $x$ là số quả cam, $y$ là số quả quýt. [[br]] $\\bullet$ ``Quýt, cam mười bảy quả'' nghĩa là tổng số cam và quýt bằng $17$: [[br]] \\qquad $[[mblank:2.2cm]] = 17$ [[br]] $\\bullet$ Mỗi quả cam chia $10$ miếng, mỗi quả quýt chia $3$ miếng, tất cả $100$ miếng: [[br]] \\qquad $[[mblank:3.2cm]] = 100$ [[br]] \\emph{Ở đây có} \\textbf{hai} \\emph{đại lượng chưa biết} $\\Rightarrow$ cần \\textbf{hai} phương trình, mỗi phương trình \\textbf{hai} ẩn. Đó là \\textbf{hệ hai phương trình bậc nhất hai ẩn}."
+        }
+      ],
+      "solution": "Ôn bài cũ: $3x=12 \\Rightarrow x=4$. [[br]] Mở màn: $x+y=17$; \\;$10x+3y=100$. (Chưa giải vội — cuối buổi HS sẽ tự giải ra $x=7$ cam, $y=10$ quýt.)",
+      "teacher_note": "PHIẾU LỚP C — Buổi 1 (Tuần 4), bám thuyết minh Chương I: SGK Bài 1 + Bài 2, dạy hết CẢ hai phương pháp giải hệ trong 1 ca 3 tiếng (Thầy chốt trong file tiến độ tuần 4). Giờ giảng chặng 1+2 nhắm 20–30 phút, KHÔNG đếm vào quỹ luyện tập. [[br]] $\\bullet$ CHUẨN TRÌNH BÀY BẮT BUỘC (SGV tr.30): \\textbf{KHÔNG dùng kí hiệu} $\\Leftrightarrow$ — nội dung ``hệ phương trình tương đương'' không có trong Chương trình 2018. Viết lời giải bằng lời (``Từ phương trình thứ nhất ta có\\ldots Thế vào\\ldots''), dài dòng hơn SGK cũ nhưng đúng chuẩn. [[br]] $\\bullet$ LỜI DẪN: đọc to bài thơ, hỏi ``bài này có mấy thứ chưa biết?'' $\\to$ HS thấy 2 $\\to$ ``lớp 8 mình chỉ có 1 ẩn, giờ 2 ẩn thì làm sao?'' $\\to$ vào bài. KHÔNG giải bài toán cổ ngay, để dành làm phần thưởng cuối buổi (chặng 5)."
+    },
+    {
+      "kind": "concept",
+      "number": 2,
+      "title": "Khái niệm",
+      "blocks": [
+        {
+          "type": "noted",
+          "variant": "note",
+          "text": "\\textbf{(1) Phương trình bậc nhất hai ẩn} là hệ thức dạng [[br]] \\qquad \\textbf{$ax+by=c$} \\quad trong đó $a,\\ b,\\ c$ là số đã biết, và \\textbf{$a\\neq0$ HOẶC $b\\neq0$}. [[br]] \\emph{Chỉ cần MỘT trong hai hệ số khác $0$ là đủ} — đây là chỗ HS hay nhầm nhất."
+        },
+        {
+          "type": "noted",
+          "variant": "note",
+          "text": "\\textbf{(2) Soi thử.} Điền \\emph{LÀ} hay \\emph{KHÔNG}: [[br]] $4x+3y=5$ $\\to$ [[blank:1.6cm]] [[br]] $0x+y=-1$ $\\to$ [[blank:1.6cm]] \\;(hệ số $a=0$ nhưng $b=1\\neq0$) [[br]] $0x+0y=3$ $\\to$ [[blank:1.6cm]] \\;(cả hai hệ số đều $=0$)"
+        },
+        {
+          "type": "noted",
+          "variant": "note",
+          "text": "\\textbf{(3) Nghiệm của phương trình.} Nếu tại $x=x_0$, $y=y_0$ mà $ax_0+by_0=c$ là khẳng định \\emph{đúng} thì \\textbf{cặp số} $(x_0;\\ y_0)$ là một nghiệm. [[br]] \\emph{Chú ý:} viết giá trị của $x$ \\textbf{trước}, $y$ \\textbf{sau} — $(1;2)$ khác hẳn $(2;1)$."
+        },
+        {
+          "type": "noted",
+          "variant": "note",
+          "text": "\\textbf{(4) Hệ hai phương trình bậc nhất hai ẩn} là một cặp gồm hai phương trình bậc nhất hai ẩn: [[br]] \\qquad $\\begin{cases} ax+by=c \\\\ a'x+b'y=c' \\end{cases}$ [[br]] $(x_0;y_0)$ là \\textbf{nghiệm của hệ} khi nó nghiệm đúng \\textbf{ĐỒNG THỜI CẢ HAI} phương trình — tức là nghiệm \\emph{chung}."
+        },
+        {
+          "type": "noted",
+          "variant": "trap",
+          "text": "\\textbf{Phân biệt cho kĩ.} [[br]] Một \\emph{phương trình} bậc nhất hai ẩn có \\textbf{vô số} nghiệm. [[br]] Một \\emph{hệ} hai phương trình bậc nhất hai ẩn thường chỉ có \\textbf{một} cặp nghiệm. [[br]] $\\Rightarrow$ Hỏi ``nghiệm của phương trình'' và ``nghiệm của hệ'' là hai câu hỏi khác nhau."
+        },
+        {
+          "type": "noted",
+          "variant": "note",
+          "text": "\\textbf{(5) Hai cách giải hệ} — hôm nay học cả hai: [[br]] $\\bullet$ \\textbf{Phương pháp thế:} rút một ẩn theo ẩn kia $\\to$ thế vào phương trình còn lại $\\to$ được phương trình \\emph{một} ẩn $\\to$ giải $\\to$ suy ngược ẩn còn lại. [[br]] $\\bullet$ \\textbf{Phương pháp cộng đại số:} làm cho hệ số của \\emph{một} ẩn \\textbf{bằng nhau} hoặc \\textbf{đối nhau} $\\to$ \\emph{trừ} hoặc \\emph{cộng} vế theo vế $\\to$ được phương trình \\emph{một} ẩn $\\to$ giải."
+        },
+        {
+          "type": "noted",
+          "variant": "tip",
+          "text": "\\textbf{Mẹo chọn cộng hay trừ.} Nhìn hệ số của \\emph{cùng một ẩn} ở hai phương trình: [[br]] $\\bullet$ \\textbf{Đối nhau} (ví dụ $+2y$ và $-2y$) $\\to$ \\textbf{CỘNG} vế theo vế. [[br]] $\\bullet$ \\textbf{Bằng nhau} (ví dụ $4x$ và $4x$) $\\to$ \\textbf{TRỪ} vế theo vế. [[br]] $\\bullet$ Chưa bằng, chưa đối $\\to$ \\emph{nhân} hai vế của một (hoặc cả hai) phương trình cho số thích hợp rồi mới cộng/trừ."
+        }
+      ],
+      "solution": "(2) $4x+3y=5$: \\textbf{LÀ}. \\;$0x+y=-1$: \\textbf{LÀ} ($b=1\\neq0$). \\;$0x+0y=3$: \\textbf{KHÔNG} (cả hai hệ số bằng $0$ — SGK BT 1.1).",
+      "teacher_note": "MẠCH: khái niệm $\\to$ soi thử ngay $\\to$ nghiệm $\\to$ hệ $\\to$ hộp phân biệt $\\to$ hai phương pháp. [[br]] $\\bullet$ SGV tr.32 CẢNH BÁO RIÊNG: ``HS thường lúng túng nhận biết phương trình bậc nhất hai ẩn khi có MỘT trong hai hệ số bằng 0''. Vì vậy ô (2) bắt HS soi đúng 3 ca $0x+y$, $0x+0y$ ngay lúc vừa học xong định nghĩa. Nhấn: \\emph{``$a\\neq0$ HOẶC $b\\neq0$'' — chữ HOẶC, không phải VÀ}. [[br]] $\\bullet$ Hộp phân biệt PT/hệ: đây là lỗi sai số 1 của chương. Nói miệng: ``phương trình 2 ẩn giống cái lưới, vô số điểm lọt qua; hệ là hai cái lưới chồng lên, thường chỉ 1 điểm lọt cả hai''. [[br]] $\\bullet$ KHÔNG dạy biểu diễn hình học tập nghiệm / đường thẳng $ax+by=c$ ở tầng C (SGV tr.30: chỉ nêu qua ví dụ, ``không vượt quá yêu cầu cần đạt'')."
+    },
+    {
+      "kind": "practice1",
+      "number": 3,
+      "title": "Luyện tập 1",
+      "blocks": [
+        {
+          "type": "problem",
+          "label": "Bài 1.",
+          "tier": "onclass",
+          "level": 2,
+          "statement": "Giải hệ $\\begin{cases}x+2y=5 \\\\ 3x-y=1\\end{cases}$ bằng \\textbf{phương pháp thế}."
+        },
+        {
+          "type": "para",
+          "text": "a) \\textbf{[NB]} Từ phương trình thứ nhất, rút $x$ theo $y$. [[br]] b) \\textbf{[NB]} Thế biểu thức vừa tìm vào phương trình thứ hai — chỉ viết ra, chưa tính. [[br]] c) \\textbf{[NB]} Phá ngoặc và thu gọn về dạng $ay=b$. [[br]] d) \\textbf{[NB]} Giải phương trình một ẩn đó, tìm $y$. [[br]] e) \\textbf{[NB]} Thay $y$ vừa tìm vào phương trình thứ nhất để tính $x$. [[br]] f) \\textbf{[TH]} Viết nghiệm của hệ dưới dạng cặp số và \\emph{thử lại vào cả hai} phương trình."
+        },
+        {
+          "type": "writelines",
+          "count": 8
+        },
+        {
+          "type": "problem",
+          "label": "Bài 2.",
+          "tier": "onclass",
+          "level": 2,
+          "statement": "Giải hệ $\\begin{cases}2x+y=7 \\\\ 3x-2y=0\\end{cases}$ bằng phương pháp thế."
+        },
+        {
+          "type": "para",
+          "text": "a) \\textbf{[NB]} Rút $y$ theo $x$ từ phương trình thứ nhất. [[br]] b) \\textbf{[NB]} Thế vào phương trình thứ hai rồi thu gọn. [[br]] c) \\textbf{[NB]} Giải phương trình một ẩn, tìm $x$. [[br]] d) \\textbf{[TH]} Tìm nốt ẩn còn lại và viết nghiệm của hệ."
+        },
+        {
+          "type": "writelines",
+          "count": 6
+        },
+        {
+          "type": "problem",
+          "label": "Bài 3.",
+          "tier": "onclass",
+          "level": 2,
+          "statement": "Giải hệ $\\begin{cases}x+y=17 \\\\ 10x+3y=100\\end{cases}$ bằng phương pháp thế."
+        },
+        {
+          "type": "para",
+          "text": "a) \\textbf{[TH]} Trình bày lời giải đầy đủ bằng lời, \\emph{không dùng} $\\Leftrightarrow$, rồi viết nghiệm."
+        },
+        {
+          "type": "writelines",
+          "count": 6
+        },
+        {
+          "type": "problem",
+          "label": "Bài 4.",
+          "tier": "onclass",
+          "level": 2,
+          "statement": "Giải hệ $\\begin{cases}2x+3y=13 \\\\ 3x-2y=0\\end{cases}$ bằng phương pháp thế."
+        },
+        {
+          "type": "para",
+          "text": "a) \\textbf{[NB]} Từ phương trình thứ hai, rút $x$ theo $y$ (kết quả là một phân số). [[br]] b) \\textbf{[NB]} Thế vào phương trình thứ nhất — chỉ viết ra. [[br]] c) \\textbf{[NB]} Nhân hai vế với $3$ để khử mẫu, rồi thu gọn. [[br]] d) \\textbf{[NB]} Giải phương trình một ẩn, tìm $y$. [[br]] e) \\textbf{[TH]} Tìm nốt $x$ và viết nghiệm của hệ."
+        },
+        {
+          "type": "writelines",
+          "count": 8
+        }
+      ],
+      "solution": "\\textbf{Bài 1.} [[br]] a) $x=5-2y$. [[br]] b) $3(5-2y)-y=1$. [[br]] c) $15-6y-y=1$, thu gọn: $-7y=-14$. [[br]] d) $y=2$. [[br]] e) $x+2\\cdot2=5$, suy ra $x=1$. [[br]] f) Nghiệm $(1;2)$. Thử lại: $1+2\\cdot2=5$ \\emph{đúng}; $3\\cdot1-2=1$ \\emph{đúng}.\\par\\smallskip \\textbf{Bài 2.} [[br]] a) $y=7-2x$. [[br]] b) $3x-2(7-2x)=0$, thu gọn: $7x=14$. [[br]] c) $x=2$. [[br]] d) $y=7-2\\cdot2=3$. Nghiệm $(2;3)$.\\par\\smallskip \\textbf{Bài 3.} [[br]] Từ phương trình thứ nhất ta có $y=17-x$. [[br]] Thế vào phương trình thứ hai: $10x+3(17-x)=100$, hay $7x=49$, suy ra $x=7$; từ đó $y=10$. [[br]] Nghiệm $(7;10)$ — \\textbf{chính là bài toán cổ đầu giờ: 7 quả cam, 10 quả quýt!}\\par\\smallskip \\textbf{Bài 4.} [[br]] a) $3x=2y$, suy ra $x=\\dfrac{2y}{3}$. [[br]] b) $2\\cdot\\dfrac{2y}{3}+3y=13$. [[br]] c) Nhân hai vế với $3$: $4y+9y=39$, thu gọn: $13y=39$. [[br]] d) $y=3$. [[br]] e) $x=\\dfrac{2\\cdot3}{3}=2$. Nghiệm $(2;3)$.",
+      "teacher_note": "LUYỆN TẬP 1 — PHƯƠNG PHÁP THẾ. HS chép đề, làm vào vở; đề tối giản (Thầy chốt). [[br]] $\\bullet$ CƠ CHẾ (AGENTS §9): các ý [NB] KHÔNG phải câu vụn vặt rời — chúng là \\textbf{giàn giáo cắt bước của chính bài TH đó}. Mỗi bài = một hệ thật; HS đi hết a)$\\to$f) là vừa giải xong hệ đó. Thẻ [NB]/[TH] in ở từng ý để đối chiếu bảng thuyết minh. [[br]] $\\bullet$ GIÀN GIÁO THƯA DẦN (Vygotsky ZPD) — đây là trục sư phạm của chặng: Bài 1 sáu bước cầm tay $\\to$ Bài 2 bốn bước (đã gộp thế+thu gọn) $\\to$ Bài 3 \\emph{bỏ hẳn giàn giáo, tự làm} $\\to$ Bài 4 dựng lại giàn giáo vì gặp cái mới (hệ số bất kỳ, ra phân số). ĐỪNG chữa mẫu Bài 3 trước — để HS tự thấy mình làm được, đó là điểm bật của buổi. [[br]] $\\bullet$ THẦY GIẢI MẪU BÀI 1 TRÊN BẢNG theo lược đồ 4 bước Polya (SGV tr.30 gợi ý đúng cho lớp trình độ chưa tốt), viết ĐỦ LỜI: ``Từ phương trình thứ nhất ta có\\ldots''. NHẤN: KHÔNG viết $\\Leftrightarrow$ — nội dung ``hệ tương đương'' không có trong Chương trình 2018. [[br]] $\\bullet$ Bài 3 là bài toán cổ mở đầu — giữ bí mật tới khi HS giải xong mới reveal. Điểm chốt cảm xúc. [[br]] $\\bullet$ Bài 4 là chỗ lớp C nản nhất. Trấn an TRƯỚC: ``ra phân số là bình thường, không phải làm sai''. Ý c) (nhân khử mẫu) là viên gạch cứu cả bài."
+    },
+    {
+      "kind": "practice2",
+      "number": 4,
+      "title": "Luyện tập 2",
+      "blocks": [
+        {
+          "type": "problem",
+          "label": "Bài 5.",
+          "tier": "onclass",
+          "level": 2,
+          "statement": "Giải hệ $\\begin{cases}3x+2y=7 \\\\ 5x-2y=1\\end{cases}$ bằng \\textbf{phương pháp cộng đại số}."
+        },
+        {
+          "type": "para",
+          "text": "a) \\textbf{[NB]} Hệ số của $y$ ở hai phương trình là bao nhiêu? Chúng \\emph{bằng nhau} hay \\emph{đối nhau}? [[br]] b) \\textbf{[NB]} Vậy phải \\textbf{cộng} hay \\textbf{trừ} vế theo vế? [[br]] c) \\textbf{[NB]} Thực hiện phép đó, viết ra phương trình một ẩn thu được. [[br]] d) \\textbf{[NB]} Giải phương trình một ẩn, tìm $x$. [[br]] e) \\textbf{[NB]} Thay $x$ vừa tìm vào phương trình thứ nhất để tính $y$. [[br]] f) \\textbf{[TH]} Viết nghiệm của hệ và \\emph{thử lại vào cả hai} phương trình."
+        },
+        {
+          "type": "writelines",
+          "count": 8
+        },
+        {
+          "type": "problem",
+          "label": "Bài 6.",
+          "tier": "onclass",
+          "level": 2,
+          "statement": "Giải hệ $\\begin{cases}5x+2y=16 \\\\ 5x-3y=1\\end{cases}$ bằng phương pháp cộng đại số."
+        },
+        {
+          "type": "para",
+          "text": "a) \\textbf{[NB]} Hệ số của $x$ bằng nhau hay đối nhau? Chọn phép cộng hay trừ. [[br]] b) \\textbf{[NB]} Thực hiện, viết ra phương trình một ẩn. [[br]] c) \\textbf{[NB]} Giải phương trình đó, tìm $y$. [[br]] d) \\textbf{[TH]} Tìm nốt $x$ và viết nghiệm của hệ."
+        },
+        {
+          "type": "writelines",
+          "count": 6
+        },
+        {
+          "type": "problem",
+          "label": "Bài 7.",
+          "tier": "onclass",
+          "level": 2,
+          "statement": "Giải hệ $\\begin{cases}5x-2y=8 \\\\ 3x+2y=8\\end{cases}$ bằng phương pháp cộng đại số."
+        },
+        {
+          "type": "para",
+          "text": "a) \\textbf{[TH]} Trình bày lời giải đầy đủ và viết nghiệm."
+        },
+        {
+          "type": "writelines",
+          "count": 6
+        },
+        {
+          "type": "problem",
+          "label": "Bài 8.",
+          "tier": "onclass",
+          "level": 2,
+          "statement": "Giải hệ $\\begin{cases}2x+3y=12 \\\\ 4x-y=10\\end{cases}$."
+        },
+        {
+          "type": "para",
+          "text": "a) \\textbf{[NB]} Hệ số của $x$ ở hai phương trình là $2$ và $4$ — bằng nhau hay đối nhau? [[br]] b) \\textbf{[NB]} Nhân hai vế của phương trình thứ nhất với số nào để hệ số của $x$ bằng nhau? Viết phương trình mới. [[br]] c) \\textbf{[NB]} Giờ chọn cộng hay trừ? Thực hiện, viết ra phương trình một ẩn. [[br]] d) \\textbf{[NB]} Giải phương trình đó, tìm $y$. [[br]] e) \\textbf{[TH]} Tìm nốt $x$ và viết nghiệm của hệ."
+        },
+        {
+          "type": "writelines",
+          "count": 8
+        },
+        {
+          "type": "problem",
+          "label": "Bài 9.",
+          "tier": "onclass",
+          "level": 3,
+          "statement": "Hai lớp 9A và 9B quyên góp được tất cả $27$ quyển vở. Lớp 9A quyên góp \\emph{nhiều hơn} lớp 9B là $5$ quyển. Hỏi mỗi lớp quyên góp bao nhiêu quyển?"
+        },
+        {
+          "type": "para",
+          "text": "a) \\textbf{[NB]} Gọi $x$ là số vở lớp 9A, $y$ là số vở lớp 9B. Đặt \\emph{điều kiện} cho $x$ và $y$. [[br]] b) \\textbf{[NB]} ``Tất cả $27$ quyển'' cho ta phương trình nào? [[br]] c) \\textbf{[NB]} ``9A nhiều hơn 9B là $5$ quyển'' cho ta phương trình nào? [[br]] d) \\textbf{[NB]} Viết hệ phương trình hoàn chỉnh. [[br]] e) \\textbf{[VD]} Giải hệ, \\emph{đối chiếu điều kiện} và trả lời câu hỏi của bài toán."
+        },
+        {
+          "type": "writelines",
+          "count": 8
+        },
+        {
+          "type": "problem",
+          "label": "Bài 10.",
+          "tier": "onclass",
+          "level": 3,
+          "statement": "Một mảnh vườn hình chữ nhật có chu vi $36$ m. Chiều dài hơn chiều rộng $4$ m. Tính chiều dài và chiều rộng của mảnh vườn."
+        },
+        {
+          "type": "para",
+          "text": "a) \\textbf{[NB]} Gọi $x$ (m) là chiều dài, $y$ (m) là chiều rộng. Đặt điều kiện cho $x$ và $y$. [[br]] b) \\textbf{[NB]} Chu vi hình chữ nhật tính theo $x$ và $y$ như thế nào? Viết phương trình chu vi. [[br]] c) \\textbf{[NB]} Rút gọn phương trình chu vi vừa lập. [[br]] d) \\textbf{[NB]} ``Chiều dài hơn chiều rộng $4$ m'' cho ta phương trình nào? [[br]] e) \\textbf{[NB]} Viết hệ phương trình hoàn chỉnh. [[br]] f) \\textbf{[VD]} Giải hệ, đối chiếu điều kiện và trả lời bài toán."
+        },
+        {
+          "type": "writelines",
+          "count": 8
+        }
+      ],
+      "solution": "\\textbf{Bài 5.} [[br]] a) Hệ số của $y$ là $2$ và $-2$ — \\emph{đối nhau}. [[br]] b) Phải \\textbf{cộng} vế theo vế. [[br]] c) $8x=8$. [[br]] d) $x=1$. [[br]] e) $3\\cdot1+2y=7$, suy ra $y=2$. [[br]] f) Nghiệm $(1;2)$. Thử lại: $3+4=7$ \\emph{đúng}; $5-4=1$ \\emph{đúng}.\\par\\smallskip \\textbf{Bài 6.} [[br]] a) Hệ số của $x$ đều là $5$ — \\emph{bằng nhau}, phải \\textbf{trừ}. [[br]] b) $5y=15$. [[br]] c) $y=3$. [[br]] d) $5x+2\\cdot3=16$, suy ra $x=2$. Nghiệm $(2;3)$.\\par\\smallskip \\textbf{Bài 7.} Hệ số của $y$ là $-2$ và $2$, đối nhau nên cộng vế theo vế: $8x=16$, suy ra $x=2$. Thay vào phương trình thứ nhất: $5\\cdot2-2y=8$, suy ra $y=1$. Nghiệm $(2;1)$.\\par\\smallskip \\textbf{Bài 8.} [[br]] a) $2$ và $4$ — \\emph{không bằng, cũng không đối}. [[br]] b) Nhân hai vế của phương trình thứ nhất với $2$: $4x+6y=24$. [[br]] c) Giờ hệ số của $x$ bằng nhau nên \\textbf{trừ} vế theo vế: $7y=14$. [[br]] d) $y=2$. [[br]] e) $2x+3\\cdot2=12$, suy ra $x=3$. Nghiệm $(3;2)$.\\par\\smallskip \\textbf{Bài 9.} [[br]] a) $x,\\ y$ nguyên dương và $x>y$. [[br]] b) $x+y=27$. [[br]] c) $x-y=5$. [[br]] d) Hệ: $\\begin{cases}x+y=27 \\\\ x-y=5\\end{cases}$. [[br]] e) Cộng vế theo vế: $2x=32$, suy ra $x=16$; từ đó $y=11$. Cả hai thoả điều kiện. \\textbf{Vậy lớp 9A quyên góp $16$ quyển, lớp 9B quyên góp $11$ quyển.}\\par\\smallskip \\textbf{Bài 10.} [[br]] a) $x>y>0$. [[br]] b) $2(x+y)=36$. [[br]] c) $x+y=18$. [[br]] d) $x-y=4$. [[br]] e) Hệ: $\\begin{cases}x+y=18 \\\\ x-y=4\\end{cases}$. [[br]] f) Cộng vế theo vế: $2x=22$, suy ra $x=11$; từ đó $y=7$. Thoả điều kiện. \\textbf{Vậy chiều dài $11$ m, chiều rộng $7$ m.}",
+      "teacher_note": "LUYỆN TẬP 2 — CỘNG ĐẠI SỐ + LẬP HỆ. [[br]] $\\bullet$ Giàn giáo lặp đúng nhịp chặng 3: Bài 5 dày (6 bước) $\\to$ Bài 6 thưa $\\to$ Bài 7 tự làm $\\to$ Bài 8 dựng lại vì gặp cái mới (phải nhân trước). [[br]] $\\bullet$ BÀI 5 ý a) VÀ b) TÁCH RIÊNG LÀ CÓ CHỦ Ý: lớp C hay lao vào tính rồi mới phát hiện chọn sai phép. Bắt HS \\emph{nhìn hệ số và quyết định} trước khi được tính — rẻ mà chặn được lỗi lớn nhất của phương pháp này. [[br]] $\\bullet$ BÀI 8 LÀ BẢN LỀ: ý b) (nhân với mấy) là chỗ lớp C tắc. Gợi ý miệng: ``muốn $2$ thành $4$ thì nhân mấy?''. [[br]] $\\bullet$ BÀI 9–10 là hai bài VD, \\textbf{khuôn của Câu III.2 đề vào 10 (1,0đ)} + dạng lập hệ thực tế ($10/10$ đề GK1, $\\approx$1,85đ/đề). Giàn giáo bẻ đúng ba bước lập hệ: gọi ẩn + điều kiện $\\to$ mỗi giả thiết thành một phương trình $\\to$ giải và đối chiếu. Ý a) và ý cuối (đối chiếu điều kiện) là hai chỗ lớp C bỏ, mất điểm barem dù ra đúng số. [[br]] $\\bullet$ Bài 10 ý b–c tách riêng vì bẫy kinh điển: HS quên chia đôi chu vi, viết thẳng $x+y=36$. [[br]] $\\bullet$ Nếu cháy giờ: rút ý của Bài 6, TUYỆT ĐỐI không cắt Bài 9–10."
+    },
+    {
+      "kind": "reflection",
+      "number": 5,
+      "title": "Tổng kết",
+      "blocks": [
+        {
+          "type": "mindmap",
+          "caption": "Tự điền để hệ thống lại cả buổi (mang về ôn)",
+          "root": "Hệ hai PT bậc nhất hai ẩn",
+          "branches": [
+            {
+              "label": "Nhận dạng",
+              "children": [
+                {
+                  "label": "$ax+by=c$ với $a\\neq0$ [[blank:1.2cm]] $b\\neq0$"
+                },
+                {
+                  "label": "Loại: cả hai hệ số [[blank:1cm]]; ẩn bậc [[blank:0.8cm]]; ẩn ở [[blank:1cm]]"
+                }
+              ]
+            },
+            {
+              "label": "Nghiệm",
+              "children": [
+                {
+                  "label": "Là một [[blank:1.4cm]] số $(x_0;y_0)$"
+                },
+                {
+                  "label": "Của hệ: đúng [[blank:1.6cm]] cả hai PT"
+                },
+                {
+                  "label": "$x$ viết [[blank:1cm]], $y$ viết [[blank:1cm]]"
+                }
+              ]
+            },
+            {
+              "label": "PP thế",
+              "children": [
+                {
+                  "label": "Rút một ẩn theo ẩn [[blank:1.2cm]]"
+                },
+                {
+                  "label": "Thế vào PT [[blank:1.2cm]] lại"
+                },
+                {
+                  "label": "Giải PT [[blank:1cm]] ẩn"
+                }
+              ]
+            },
+            {
+              "label": "PP cộng đại số",
+              "children": [
+                {
+                  "label": "Hệ số đối nhau $\\to$ [[blank:1.2cm]]"
+                },
+                {
+                  "label": "Hệ số bằng nhau $\\to$ [[blank:1.2cm]]"
+                },
+                {
+                  "label": "Chưa bằng/đối $\\to$ [[blank:1.2cm]] trước"
+                }
+              ]
+            }
+          ]
+        },
+        {
+          "type": "para",
+          "text": "\\textbf{BÀI TẬP VỀ NHÀ}"
+        },
+        {
+          "type": "problem",
+          "label": "Bài 11.",
+          "tier": "btvn",
+          "level": 2,
+          "statement": "Giải hệ $\\begin{cases}x+3y=10 \\\\ 2x-y=6\\end{cases}$ bằng phương pháp thế."
+        },
+        {
+          "type": "para",
+          "text": "a) \\textbf{[NB]} Rút $x$ theo $y$ từ phương trình thứ nhất. [[br]] b) \\textbf{[NB]} Thế vào phương trình thứ hai — chỉ viết ra. [[br]] c) \\textbf{[NB]} Phá ngoặc, thu gọn về dạng $ay=b$. [[br]] d) \\textbf{[NB]} Giải, tìm $y$. [[br]] e) \\textbf{[NB]} Thay $y$ để tính $x$. [[br]] f) \\textbf{[TH]} Viết nghiệm và thử lại vào cả hai phương trình."
+        },
+        {
+          "type": "writelines",
+          "count": 8
+        },
+        {
+          "type": "problem",
+          "label": "Bài 12.",
+          "tier": "btvn",
+          "level": 2,
+          "statement": "Giải hệ $\\begin{cases}2x+y=5 \\\\ x-3y=-1\\end{cases}$ bằng phương pháp thế."
+        },
+        {
+          "type": "para",
+          "text": "a) \\textbf{[NB]} Rút $y$ theo $x$ từ phương trình thứ nhất. [[br]] b) \\textbf{[NB]} Thế vào phương trình thứ hai rồi thu gọn. [[br]] c) \\textbf{[NB]} Giải, tìm $x$. [[br]] d) \\textbf{[NB]} Thay $x$ để tính $y$. [[br]] e) \\textbf{[TH]} Viết nghiệm và thử lại."
+        },
+        {
+          "type": "writelines",
+          "count": 6
+        },
+        {
+          "type": "problem",
+          "label": "Bài 13.",
+          "tier": "btvn",
+          "level": 2,
+          "statement": "Giải hệ $\\begin{cases}2x+5y=19 \\\\ 3x-2y=0\\end{cases}$ bằng phương pháp thế."
+        },
+        {
+          "type": "para",
+          "text": "a) \\textbf{[NB]} Từ phương trình thứ hai, rút $x$ theo $y$. [[br]] b) \\textbf{[NB]} Thế vào phương trình thứ nhất. [[br]] c) \\textbf{[NB]} Nhân hai vế với $3$ để khử mẫu, thu gọn. [[br]] d) \\textbf{[NB]} Giải, tìm $y$. [[br]] e) \\textbf{[TH]} Tìm nốt $x$, viết nghiệm."
+        },
+        {
+          "type": "writelines",
+          "count": 8
+        },
+        {
+          "type": "problem",
+          "label": "Bài 14.",
+          "tier": "btvn",
+          "level": 2,
+          "statement": "Giải hệ $\\begin{cases}2x+5y=19 \\\\ 7x-5y=-1\\end{cases}$ bằng phương pháp cộng đại số."
+        },
+        {
+          "type": "para",
+          "text": "a) \\textbf{[NB]} Hệ số của $y$ bằng nhau hay đối nhau? [[br]] b) \\textbf{[NB]} Chọn cộng hay trừ vế theo vế? [[br]] c) \\textbf{[NB]} Thực hiện, viết ra phương trình một ẩn. [[br]] d) \\textbf{[NB]} Giải, tìm $x$. [[br]] e) \\textbf{[NB]} Thay $x$ để tính $y$. [[br]] f) \\textbf{[TH]} Viết nghiệm và thử lại."
+        },
+        {
+          "type": "writelines",
+          "count": 8
+        },
+        {
+          "type": "problem",
+          "label": "Bài 15.",
+          "tier": "btvn",
+          "level": 2,
+          "statement": "Giải hệ $\\begin{cases}6x+y=8 \\\\ 6x-3y=0\\end{cases}$ bằng phương pháp cộng đại số."
+        },
+        {
+          "type": "para",
+          "text": "a) \\textbf{[NB]} Hệ số của $x$ bằng nhau hay đối nhau? Chọn phép. [[br]] b) \\textbf{[NB]} Thực hiện, viết ra phương trình một ẩn. [[br]] c) \\textbf{[NB]} Giải, tìm $y$. [[br]] d) \\textbf{[NB]} Thay $y$ để tính $x$. [[br]] e) \\textbf{[TH]} Viết nghiệm và thử lại."
+        },
+        {
+          "type": "writelines",
+          "count": 6
+        },
+        {
+          "type": "problem",
+          "label": "Bài 16.",
+          "tier": "btvn",
+          "level": 2,
+          "statement": "Giải hệ $\\begin{cases}3x+2y=12 \\\\ 5x+4y=22\\end{cases}$."
+        },
+        {
+          "type": "para",
+          "text": "a) \\textbf{[NB]} Hệ số của $y$ là $2$ và $4$ — bằng hay đối? [[br]] b) \\textbf{[NB]} Nhân hai vế phương trình thứ nhất với số nào để hệ số $y$ bằng nhau? Viết phương trình mới. [[br]] c) \\textbf{[NB]} Chọn cộng hay trừ? Thực hiện, viết ra phương trình một ẩn. [[br]] d) \\textbf{[NB]} Giải, tìm $x$. [[br]] e) \\textbf{[TH]} Tìm nốt $y$, viết nghiệm."
+        },
+        {
+          "type": "writelines",
+          "count": 8
+        },
+        {
+          "type": "problem",
+          "label": "Bài 17.",
+          "tier": "btvn",
+          "level": 3,
+          "statement": "Hai thùng dầu chứa tất cả $45$ lít. Thùng thứ nhất chứa nhiều hơn thùng thứ hai $7$ lít. Hỏi mỗi thùng chứa bao nhiêu lít?"
+        },
+        {
+          "type": "para",
+          "text": "a) \\textbf{[NB]} Gọi ẩn cho số lít mỗi thùng và đặt điều kiện. [[br]] b) \\textbf{[NB]} ``Tất cả $45$ lít'' cho phương trình nào? [[br]] c) \\textbf{[NB]} ``Thùng thứ nhất nhiều hơn $7$ lít'' cho phương trình nào? [[br]] d) \\textbf{[NB]} Viết hệ hoàn chỉnh. [[br]] e) \\textbf{[VD]} Giải hệ, đối chiếu điều kiện và trả lời."
+        },
+        {
+          "type": "writelines",
+          "count": 8
+        },
+        {
+          "type": "problem",
+          "label": "Bài 18.",
+          "tier": "btvn",
+          "level": 3,
+          "statement": "Một mảnh vườn hình chữ nhật có chu vi $46$ m, chiều dài hơn chiều rộng $5$ m. Tính chiều dài và chiều rộng."
+        },
+        {
+          "type": "para",
+          "text": "a) \\textbf{[NB]} Gọi ẩn và đặt điều kiện. [[br]] b) \\textbf{[NB]} Viết phương trình chu vi rồi rút gọn. [[br]] c) \\textbf{[NB]} ``Chiều dài hơn chiều rộng $5$ m'' cho phương trình nào? Viết hệ hoàn chỉnh. [[br]] d) \\textbf{[VD]} Giải hệ, đối chiếu điều kiện và trả lời."
+        },
+        {
+          "type": "writelines",
+          "count": 8
+        }
+      ],
+      "solution": "\\textbf{Sơ đồ.} [[br]] $\\bullet$ \\emph{Nhận dạng:} $a\\neq0$ \\textbf{HOẶC} $b\\neq0$; loại khi cả hai hệ số \\emph{bằng $0$}, ẩn bậc \\emph{hai}, ẩn ở \\emph{mẫu}. [[br]] $\\bullet$ \\emph{Nghiệm:} là một \\emph{cặp} số; của hệ thì đúng \\emph{đồng thời} cả hai PT; $x$ viết \\emph{trước}, $y$ viết \\emph{sau}. [[br]] $\\bullet$ \\emph{PP thế:} rút một ẩn theo ẩn \\emph{kia}; thế vào PT \\emph{còn} lại; giải PT \\emph{một} ẩn. [[br]] $\\bullet$ \\emph{PP cộng đại số:} đối nhau $\\to$ \\emph{cộng}; bằng nhau $\\to$ \\emph{trừ}; chưa bằng/đối $\\to$ \\emph{nhân} trước.\\par\\medskip \\textbf{BÀI TẬP VỀ NHÀ.}\\par\\smallskip \\textbf{Bài 11.} [[br]] a) $x=10-3y$. [[br]] b) $2(10-3y)-y=6$. [[br]] c) $20-7y=6$, tức $-7y=-14$. [[br]] d) $y=2$. [[br]] e) $x=10-6=4$. [[br]] f) Nghiệm $(4;2)$. Thử: $4+6=10$ đúng; $8-2=6$ đúng.\\par\\smallskip \\textbf{Bài 12.} [[br]] a) $y=5-2x$. [[br]] b) $x-3(5-2x)=-1$, thu gọn: $7x=14$. [[br]] c) $x=2$. [[br]] d) $y=5-4=1$. [[br]] e) Nghiệm $(2;1)$. Thử: $4+1=5$ đúng; $2-3=-1$ đúng.\\par\\smallskip \\textbf{Bài 13.} [[br]] a) $3x=2y$, suy ra $x=\\dfrac{2y}{3}$. [[br]] b) $2\\cdot\\dfrac{2y}{3}+5y=19$. [[br]] c) Nhân hai vế với $3$: $4y+15y=57$, tức $19y=57$. [[br]] d) $y=3$. [[br]] e) $x=2$. Nghiệm $(2;3)$.\\par\\smallskip \\textbf{Bài 14.} [[br]] a) $5$ và $-5$ — đối nhau. [[br]] b) Cộng vế theo vế. [[br]] c) $9x=18$. [[br]] d) $x=2$. [[br]] e) $4+5y=19$, suy ra $y=3$. [[br]] f) Nghiệm $(2;3)$. Thử: $4+15=19$ đúng; $14-15=-1$ đúng.\\par\\smallskip \\textbf{Bài 15.} [[br]] a) $6$ và $6$ — bằng nhau, phải trừ. [[br]] b) $4y=8$. [[br]] c) $y=2$. [[br]] d) $6x+2=8$, suy ra $x=1$. [[br]] e) Nghiệm $(1;2)$. Thử: $6+2=8$ đúng; $6-6=0$ đúng.\\par\\smallskip \\textbf{Bài 16.} [[br]] a) $2$ và $4$ — không bằng, không đối. [[br]] b) Nhân hai vế phương trình thứ nhất với $2$: $6x+4y=24$. [[br]] c) Hệ số $y$ bằng nhau nên trừ vế theo vế: $x=2$. [[br]] d) $x=2$. [[br]] e) $6+2y=12$, suy ra $y=3$. Nghiệm $(2;3)$.\\par\\smallskip \\textbf{Bài 17.} [[br]] a) Gọi $x$, $y$ (lít) là số dầu thùng thứ nhất và thứ hai \\;($x>y>0$). [[br]] b) $x+y=45$. [[br]] c) $x-y=7$. [[br]] d) Hệ: $\\begin{cases}x+y=45 \\\\ x-y=7\\end{cases}$. [[br]] e) Cộng vế theo vế: $2x=52$, suy ra $x=26$; từ đó $y=19$. Thoả điều kiện. \\textbf{Vậy thùng thứ nhất $26$ lít, thùng thứ hai $19$ lít.}\\par\\smallskip \\textbf{Bài 18.} [[br]] a) Gọi $x$ (m) chiều dài, $y$ (m) chiều rộng \\;($x>y>0$). [[br]] b) $2(x+y)=46$, rút gọn: $x+y=23$. [[br]] c) $x-y=5$; hệ: $\\begin{cases}x+y=23 \\\\ x-y=5\\end{cases}$. [[br]] d) Cộng vế theo vế: $2x=28$, suy ra $x=14$; từ đó $y=9$. Thoả điều kiện. \\textbf{Vậy chiều dài $14$ m, chiều rộng $9$ m.}",
+      "teacher_note": "TỔNG KẾT: HS tự điền mindmap 3 phút cuối giờ, GV chữa nhanh bằng Đáp án sơ đồ. [[br]] $\\bullet$ BTVN GIỮ NGUYÊN CƠ CHẾ GIÀN GIÁO của trên lớp, cặp đôi: 11$\\leftrightarrow$1, 12$\\leftrightarrow$2, 13$\\leftrightarrow$4, 14$\\leftrightarrow$5, 15$\\leftrightarrow$6, 16$\\leftrightarrow$8, 17$\\leftrightarrow$9, 18$\\leftrightarrow$10. Lớp C cần lặp CÙNG khuôn, KHÔNG đổi dạng ở nhà. [[br]] $\\bullet$ Số ý khớp cột btvn thuyết minh phiếu A (NB 33 · TH 6 · VD 2 = 41 ý $\\approx$ 95$'$); spec\\_gate tự soi. [[br]] $\\bullet$ Ở nhà KHÔNG có bài ``tự làm trọn vẹn'' (như Bài 3, 7 trên lớp) — không có Thầy đỡ thì lớp C bỏ trắng. Mọi bài BTVN đều còn giàn giáo. [[br]] $\\bullet$ Bài 18 rút bớt một bước so với Bài 17 (gộp lập PT2 + viết hệ) — độ dốc tăng nhẹ ở bài cuối. [[br]] $\\bullet$ RANH GIỚI: KHÔNG đụng tham số $m$, biện luận, hệ vô nghiệm/vô số nghiệm, MTCT, biểu diễn hình học — xem Ranh giới tầng C ở thuyết minh Chương I."
+    }
+  ]
+}
