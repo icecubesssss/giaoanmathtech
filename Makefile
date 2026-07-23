@@ -4,7 +4,7 @@ PY := .venv/bin/python
 .DEFAULT_GOAL := help
 
 help: ## Hiện danh sách việc
-	@grep -E '^[a-zA-Z_-]+:.*?## .*$$' $(MAKEFILE_LIST) | awk 'BEGIN{FS=":.*?## "}{printf "  \033[36m%-14s\033[0m %s\n", $$1, $$2}'
+	@grep -E '^[a-zA-Z0-9_-]+:.*?## .*$$' $(MAKEFILE_LIST) | awk 'BEGIN{FS=":.*?## "}{printf "  \033[36m%-14s\033[0m %s\n", $$1, $$2}'
 
 map: ## Cập nhật PROJECT_MAP.md (bản đồ codebase, đọc trước cho đỡ token)
 	@$(PY) scripts/repomap.py
@@ -51,4 +51,13 @@ exam-weights: ## Sinh file trọng số tần suất dạng (từ bank đã gắ
 deadcode: ## Soi code chết (cần: pip install vulture)
 	@$(PY) -m vulture src/ --min-confidence 80 || echo "  (cài vulture: .venv/bin/pip install vulture)"
 
-.PHONY: help map test progress check new validate build spec thuyetminh check-tm coverage exam-report exam-check exam-weights deadcode
+build-folder: ## Build MỌI phiếu trong 1 folder:  make build-folder FOLDER=path/folder
+	@$(PY) -m src.main build-folder "$(FOLDER)"
+
+c3-c: ## Build nhanh toàn bộ 5 phiếu Lớp 9 [C] Chương 3 (PDF Handout/Guide/Slide)
+	@$(PY) -m src.main build-folder "inputs/seeds/lop-9/dai-so/lop-c/chuong-03-can-bac-hai-can-bac-ba"
+
+tm-c3: ## Render Thuyết Minh PDF Chương 3 Lớp 9 [C]
+	@$(PY) -m src.main build-thuyetminh "inputs/seeds/lop-9/dai-so/lop-c/chuong-03-can-bac-hai-can-bac-ba/thuyet-minh.json"
+
+.PHONY: help map test progress check new validate build spec thuyetminh check-tm coverage exam-report exam-check exam-weights deadcode build-folder c3-c tm-c3

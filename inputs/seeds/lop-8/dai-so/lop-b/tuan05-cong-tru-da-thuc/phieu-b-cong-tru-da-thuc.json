@@ -1,0 +1,381 @@
+{
+  "slug": "phieu-b-cong-tru-da-thuc",
+  "title": "Phép cộng và Phép trừ Đa thức",
+  "eyebrow": "PHIẾU B",
+  "grade_label": "Lớp 8",
+  "class_tier": "B",
+  "stages": [
+    {
+      "kind": "review",
+      "number": 1,
+      "title": "Khám phá",
+      "blocks": [
+        {
+          "type": "opener",
+          "text": "Hai gia đình nhà bác An và bác Bình cùng mua đất làm trang trại sinh thái. [[br]] Mảnh đất của bác An có diện tích là $A = 3x^2 + 2xy + 1$ ($m^2$), mảnh đất của bác Bình có diện tích là $B = 2x^2 - xy + 5$ ($m^2$). [[br]] Hỏi tổng diện tích đất của cả hai gia đình là bao nhiêu?"
+        },
+        {
+          "type": "para",
+          "text": "Để tính tổng diện tích, ta lập tổng $A + B = (3x^2 + 2xy + 1) + (2x^2 - xy + 5)$. [[br]] Bỏ dấu ngoặc và nhóm các đơn thức đồng dạng: [[br]] $A + B = (3x^2 + 2x^2) + (2xy - xy) + (1 + 5) = 5x^2 + xy + 6$ ($m^2$)."
+        },
+        {
+          "type": "noted",
+          "text": "Phép tính trên chính là phép cộng hai đa thức nhiều biến. Bài học hôm nay chúng ta sẽ cùng tìm hiểu chi tiết các dạng toán về cộng và trừ đa thức nhiều biến."
+        }
+      ],
+      "solution": "Tổng diện tích hai mảnh đất là: $5x^2 + xy + 6$ ($m^2$).",
+      "teacher_note": "GV dẫn dắt học sinh lập tổng từ tình huống thực tế diện tích đất, sau đó thực hiện cộng các đơn thức đồng dạng."
+    },
+    {
+      "kind": "concept",
+      "number": 2,
+      "title": "Khái niệm",
+      "blocks": [
+        {
+          "type": "noted",
+          "text": "\\textbf{1. Cộng hai đa thức nhiều biến} [[br]] Để cộng hai đa thức theo hàng ngang, ta làm như sau: [[br]] - Viết tổng hai đa thức theo hàng ngang (mỗi đa thức đặt trong dấu ngoặc). [[br]] - Bỏ dấu ngoặc rồi nhóm các đơn thức đồng dạng với nhau. [[br]] - Thực hiện phép tính trong từng nhóm để thu gọn đa thức nhận được."
+        },
+        {
+          "type": "noted",
+          "text": "\\textbf{2. Trừ hai đa thức nhiều biến} [[br]] Để trừ đa thức $P$ cho đa thức $Q$ theo hàng ngang, ta làm như sau: [[br]] - Viết hiệu $P - Q$ theo hàng ngang (đặt đa thức $Q$ trong ngoặc). [[br]] - Bỏ dấu ngoặc (chú ý đổi dấu tất cả các hạng tử của $Q$) rồi nhóm các đơn thức đồng dạng. [[br]] - Thực hiện phép tính trong từng nhóm để thu gọn."
+        },
+        {
+          "type": "noted",
+          "text": "\\textbf{3. Quy tắc chuyển vế} [[br]] Tìm đa thức chưa biết $M$ trong một đẳng thức: [[br]] - Nếu $M + B = A \\Rightarrow M = A - B$. [[br]] - Nếu $M - B = A \\Rightarrow M = A + B$. [[br]] - Nếu $B - M = A \\Rightarrow M = B - A$."
+        },
+        {
+          "type": "noted",
+          "variant": "example",
+          "text": "\\textbf{Ví dụ mẫu 1.} Tính tổng $A+B$ và hiệu $A-B$ của $A = 5x^2y + 3x - 2$ và $B = 2xy - 4x^2y + 3x - 1$. [[br]] $A + B = (5x^2y + 3x - 2) + (2xy - 4x^2y + 3x - 1) = $ [[mblank:4cm]] [[br]] $A - B = (5x^2y + 3x - 2) - (2xy - 4x^2y + 3x - 1) = $ [[mblank:4cm]]"
+        },
+        {
+          "type": "noted",
+          "variant": "trap",
+          "text": "\\textbf{Cẩn thận!} Khi bỏ ngoặc có dấu trừ đằng trước, phải \\textbf{đổi dấu toàn bộ} các hạng tử bên trong ngoặc: $-(a - b + c) = -a + b - c$. Rất nhiều học sinh chỉ đổi dấu hạng tử đầu tiên!"
+        }
+      ],
+      "solution": "\\textbf{Ví dụ mẫu 1:} [[br]] $A + B = x^2y + 2xy + 6x - 3$. [[br]] $A - B = 9x^2y - 2xy - 1$.",
+      "teacher_note": "GV nhấn mạnh việc đổi dấu mọi hạng tử khi đằng trước ngoặc là dấu trừ."
+    },
+    {
+      "kind": "practice1",
+      "number": 3,
+      "title": "Luyện tập 1",
+      "blocks": [
+        {
+          "type": "para",
+          "text": "\\textbf{Dạng 1: Thực hiện phép cộng hai đa thức nhiều biến}"
+        },
+        {
+          "type": "problem",
+          "label": "Bài 1.",
+          "level": 1,
+          "statement": "Tính tổng $M + N$ của hai đa thức trong các trường hợp sau: [[br]] \\begin{minipage}[t]{0.47\\linewidth} a) $M = x + 2y$ và $N = x - 2y$ [[br]] b) $M = a + 3b + ab^2$ và $N = a^2b - ab^2 - 2b$ \\end{minipage}\\hfill\\begin{minipage}[t]{0.47\\linewidth} c) $M = 1 + 3xy - 2x^2y^2$ và $N = x - xy + 2x^2y^2$ \\end{minipage}",
+          "tier": "onclass",
+          "writelines": 4
+        },
+        {
+          "type": "para",
+          "text": "\\textbf{Dạng 2: Thực hiện phép trừ hai đa thức nhiều biến}"
+        },
+        {
+          "type": "problem",
+          "label": "Bài 2.",
+          "level": 1,
+          "statement": "Tính hiệu $M - N$ của hai đa thức trong các trường hợp sau: [[br]] \\begin{minipage}[t]{0.47\\linewidth} a) $M = x + 2y$ và $N = x - 2y$ [[br]] b) $M = a + 3b + ab^2$ và $N = a^2b - ab^2 - 2b$ \\end{minipage}\\hfill\\begin{minipage}[t]{0.47\\linewidth} c) $M = 1 + 3xy - 2x^2y^2$ và $N = x - xy + 2x^2y^2$ [[br]] d) $M = 2x^2y - x^3 - xy^2 + 1$ và $N = x^3 + 2xy^2 - 2$ \\end{minipage}",
+          "tier": "onclass",
+          "writelines": 4
+        },
+        {
+          "type": "para",
+          "text": "\\textbf{Dạng 3: Phép tính kết hợp cộng và trừ nhiều đa thức}"
+        },
+        {
+          "type": "problem",
+          "label": "Bài 3.",
+          "level": 1,
+          "statement": "Cho các đa thức $A = 3x^3 - x^2y + 2xy + 3$, $B = x^2y - 2xy - 2$ và $C = 3x^3 - 2x^2y - xy + 3$. Tính: [[br]] \\begin{minipage}[t]{0.47\\linewidth} a) $A + B - C$ [[br]] b) $A - B + C$ \\end{minipage}\\hfill\\begin{minipage}[t]{0.47\\linewidth} c) $A - B - C$ [[br]] d) $A + B + C$ \\end{minipage}",
+          "tier": "onclass",
+          "writelines": 4
+        },
+        {
+          "type": "para",
+          "text": "\\textbf{Dạng 4: Thu gọn biểu thức chứa ngoặc tròn và ngoặc vuông}"
+        },
+        {
+          "type": "problem",
+          "label": "Bài 4.",
+          "level": 1,
+          "statement": "Bỏ dấu ngoặc và thu gọn các biểu thức sau: [[br]] \\begin{minipage}[t]{0.47\\linewidth} a) $P = (x^2 + y^2 - 2xy) + (x^2 + 2xy + y^2)$ [[br]] b) $Q = \\left(\\dfrac{1}{2}xy - 3xy^2\\right) + (2xy^2 + 3xy) - \\dfrac{1}{2}xy$ \\end{minipage}\\hfill\\begin{minipage}[t]{0.47\\linewidth} c) $R = 4x^2y - [2xy^2 - (3x^2y + 9xy^2 - 12xy + 6)]$ [[br]] d) $S = (3xy^3 - 7x^2y + 51x^2y^2 - 27) - [3xy^3 + (51x^2y^2 + 23)]$ \\end{minipage}",
+          "tier": "onclass",
+          "writelines": 4
+        },
+        {
+          "type": "para",
+          "text": "\\textbf{Dạng 5: Xác định và so sánh bậc của đa thức tổng, hiệu}"
+        },
+        {
+          "type": "problem",
+          "label": "Bài 5.",
+          "level": 1,
+          "statement": "Cho hai đa thức $A = 3x^2y^2 - 0.8xy^2 + 2y^2 - 1$ và $B = -3x^2y^2 - 0.2xy^2 + 2$. [[br]] a) Tìm đa thức tổng $S = A + B$ và xác định bậc của $S$. [[br]] b) So sánh bậc của đa thức $A$ và bậc của đa thức $S$. [[br]] c) Tìm đa thức hiệu $H = A - B$ và xác định bậc của $H$. [[br]] d) So sánh bậc của đa thức $B$ và bậc của đa thức $H$.",
+          "tier": "onclass",
+          "writelines": 4
+        },
+        {
+          "type": "para",
+          "text": "\\textbf{Dạng 6: Rút gọn rồi tính giá trị của đa thức tại giá trị cho trước}"
+        },
+        {
+          "type": "noted",
+          "variant": "example",
+          "text": "\\textbf{Ví dụ mẫu 2.} Tính giá trị của đa thức $P = 5x^2 - (3xy - 7x^2) + (5xy - 12x^2)$ tại $x = 15; y = -\\dfrac{1}{6}$. [[br]] Thu gọn: $P = $ [[mblank:3cm]] [[br]] Thay số: $P = $ [[mblank:3cm]]"
+        },
+        {
+          "type": "problem",
+          "label": "Bài 6.",
+          "level": 1,
+          "statement": "Rút gọn rồi tính giá trị của các biểu thức sau: [[br]] a) $A = (5x^2 - 2xy + y^2) - (x^2 + y^2) - (4x^2 - 5xy + 1)$ tại $x = 1.2, y = 5$. [[br]] b) $B = 3x^2y - (3xy - 6x^2y) + (5xy - 9x^2y)$ tại $x = \\dfrac{2}{3}, y = -\\dfrac{3}{4}$. [[br]] c) $C = (1.3x^2y + 3.2xy + 1.5y^2) - (2.2xy - 1.2x^2y + 1.5y^2)$ tại $x = -2, y = 5$. [[br]] d) $D = (2xy^2 + 3x^2y - 1) - (x^2y - xy^2 + 4)$ tại $x = 1, y = -2$. [[br]] e) $E = (a^2 - 3ab + 2b^2) - (2a^2 + ab - b^2)$ tại $a = 2, b = 1$.",
+          "tier": "onclass",
+          "writelines": 6
+        },
+        {
+          "type": "para",
+          "text": "\\textbf{Dạng 7: Tính giá trị đa thức khi biết điều kiện liên hệ giữa các biến}"
+        },
+        {
+          "type": "problem",
+          "label": "Bài 7.",
+          "level": 1,
+          "statement": "Rút gọn các biểu thức sau và tính giá trị của chúng: [[br]] a) $A = (5x^2 - 2xy + y^2) - (x^2 + y^2) - (4x^2 - 5xy + 1)$ tại $x = 1.2$ và $x + y = 6.2$. [[br]] b) $B = (x^2 + 3xy - y^2) - (2x^2 - xy + 2y^2) + (x^2 - 4xy + 3y^2)$ tại $x = 10, y = -1$. [[br]] c) $C = (x^2y - 2xy^2 + 3) - (x^2y - 2xy^2 - 5)$ tại $x = 100, y = -99$. [[br]] d) $D = (2x^2 - 3xy + y^2) - (x^2 - 3xy - y^2)$ biết $x^2 + 2y^2 = 12$. [[br]] e) $E = (3xy - x^2y^2) + (x^2y^2 - 3xy + 7)$ với mọi $x, y$.",
+          "tier": "onclass",
+          "writelines": 6
+        }
+      ],
+      "solution": "\\textbf{Bài 1:} [[br]] a) $M+N = 2x$. [[br]] b) $M+N = a^2b + a + b$. [[br]] c) $M+N = 2xy + x + 1$. [[br]] \\textbf{Bài 2:} [[br]] a) $M-N = 4y$. [[br]] b) $M-N = -a^2b + 2ab^2 + a + 5b$. [[br]] c) $M-N = -4x^2y^2 + 4xy - x + 1$. [[br]] d) $M-N = 2x^2y - 2x^3 - 3xy^2 + 3$. [[br]] \\textbf{Bài 3:} [[br]] a) $A+B-C = 3x^2y + xy - 2$. [[br]] b) $A-B+C = 6x^3 - 4x^2y + 3xy + 8$. [[br]] c) $A-B-C = -2x^2y + 5xy + 2$. [[br]] d) $A+B+C = 6x^3 - 2x^2y - xy + 4$. [[br]] \\textbf{Bài 4:} [[br]] a) $P = 2x^2 + 2y^2$. [[br]] b) $Q = 3xy - xy^2$. [[br]] c) $R = 7x^2y + 7xy^2 - 12xy - 6$. [[br]] d) $S = -7x^2y - 50$. [[br]] \\textbf{Bài 5:} [[br]] a) $S = -xy^2 + 2y^2 + 1$. Bậc của $S$ là 3. [[br]] b) Bậc của $A$ là 4, bậc của $S$ là 3 (bậc giảm do $3x^2y^2$ triệt tiêu). [[br]] c) $H = 6x^2y^2 - 0.6xy^2 + 2y^2 - 3$. Bậc của $H$ là 4. [[br]] d) Bậc của $B$ là 4, bằng bậc của $H$. [[br]] \\textbf{Ví dụ mẫu 2:} [[br]] $P = 2xy = 2(15)(-1/6) = -5$. [[br]] \\textbf{Bài 6:} [[br]] a) $A = 3xy - 1 = 17$. [[br]] b) $B = 2xy = -1$. [[br]] c) $C = 2.5x^2y + xy = 40$. [[br]] d) $E = 3xy^2 + 2x^2y - 5 = 3$. [[br]] e) $F = -a^2 - 4ab + 3b^2 = -9$. [[br]] \\textbf{Bài 7:} [[br]] a) Từ $x=1.2, x+y=6.2 \\Rightarrow y=5$. $A = 17$. [[br]] b) $B = 0$. [[br]] c) $C = 8$. [[br]] d) $D = x^2 + 2y^2 = 12$. [[br]] e) $E = 7$.",
+      "teacher_note": "Bài 7d nhấn mạnh kỹ năng nhóm thành biểu thức $x^2 + 2y^2$ để thay giá trị 12."
+    },
+    {
+      "kind": "practice2",
+      "number": 4,
+      "title": "Luyện tập 2",
+      "blocks": [
+        {
+          "type": "para",
+          "text": "\\textbf{Dạng 8: Tìm đa thức chưa biết từ đẳng thức cho trước}"
+        },
+        {
+          "type": "noted",
+          "variant": "example",
+          "text": "\\textbf{Ví dụ mẫu 3.} Tìm đa thức $A$ biết $A + (x^2 - y^2) = x^2 - 2y^2 + 3xy - 2$. [[br]] Chuyển vế: $A = (x^2 - 2y^2 + 3xy - 2) - (x^2 - y^2) = $ [[mblank:4cm]]"
+        },
+        {
+          "type": "problem",
+          "label": "Bài 8.",
+          "level": 2,
+          "statement": "Tìm đa thức $M$ biết: [[br]] a) $M + (5x^2 - 2xy) = 6x^2 + 9xy - y^2$ [[br]] b) $\\left(\\dfrac{1}{2}xy^2 + x^2 - x^2y\\right) - M = -xy^2 + x^2y + 1$ [[br]] c) $M - (2xy - 4y^2) = 5xy + x^2 - 7y^2$ [[br]] d) $M + (x^2 - 2y^2) = x^2 - y^2 + 3xy^2 - 1$",
+          "tier": "onclass",
+          "writelines": 6
+        },
+        {
+          "type": "para",
+          "text": "\\textbf{Dạng 9: Chứng minh giá trị biểu thức không phụ thuộc vào biến}"
+        },
+        {
+          "type": "problem",
+          "label": "Bài 9.",
+          "level": 2,
+          "statement": "Chứng minh rằng giá trị của các biểu thức sau không phụ thuộc vào giá trị của các biến $x, y$: [[br]] a) $P = (2x^2y - xy^2 + 22) + (xy^2 - 2x^2y + 23)$ [[br]] b) $Q = (x^3 + 3x^2y + 3xy^2 + y^3) - (x^3 - y^3) - 3xy(x + y)$ [[br]] c) $R = (3x^2 - 2xy + y^2) - (2x^2 - xy + 2y^2) - (x^2 - xy - y^2 + 15)$",
+          "tier": "onclass",
+          "writelines": 6
+        },
+        {
+          "type": "para",
+          "text": "\\textbf{Dạng 10: Toán thực tế và Bài toán chứa tham số triệt tiêu hạng tử}"
+        },
+        {
+          "type": "problem",
+          "label": "Bài 10.",
+          "level": 3,
+          "statement": "Bác Huỳnh muốn sơn bề mặt của hai khối gỗ có dạng hình hộp chữ nhật. [[br]] Khối gỗ thứ nhất có ba kích thước là $x$ (cm), $2y$ (cm), $z$ (cm). Khối gỗ thứ hai có ba kích thước là $2x$ (cm), $2y$ (cm), $3z$ (cm). [[br]] a) [NB] Viết đa thức $S_1$ biểu thị diện tích toàn phần của khối gỗ thứ nhất. [[br]] b) [TH] Viết đa thức $S_2$ biểu thị diện tích toàn phần của khối gỗ thứ hai. [[br]] c) [VD] Viết đa thức $S = S_1 + S_2$ biểu thị tổng diện tích bề mặt cần sơn của cả hai khối gỗ và tính $S$ khi $x = 10$ cm, $y = 5$ cm, $z = 4$ cm.",
+          "tier": "onclass",
+          "writelines": 6
+        },
+        {
+          "type": "problem",
+          "label": "Bài 11.",
+          "level": 3,
+          "statement": "Cho hai đa thức $A = 3x^2y - 2xy^2 + 5$ và $B = ax^2y + 2xy^2 - 1$ (với $a$ là hằng số). [[br]] a) [TH] Tìm đa thức $C = A + B$. [[br]] b) [VD] Tìm hằng số $a$ sao cho đa thức $C$ không chứa hạng tử $x^2y$.",
+          "tier": "onclass",
+          "writelines": 4,
+          "hints": [
+            "Đa thức $C$ không chứa $x^2y$ khi hệ số của $x^2y$ trong $C$ bằng 0."
+          ]
+        }
+      ],
+      "solution": "\\textbf{Ví dụ mẫu 3:} [[br]] $A = 3xy - y^2 - 2$. [[br]] \\textbf{Bài 8:} [[br]] a) $M = x^2 + 11xy - y^2$. [[br]] b) $M = \\dfrac{3}{2}xy^2 - 2x^2y + x^2 - 1$. [[br]] c) $M = x^2 + 7xy - 3y^2$. [[br]] d) $M = y^2 + 3xy^2 - 1$. [[br]] \\textbf{Bài 9:} [[br]] a) $P = 45$ (hằng số). [[br]] b) $Q = 2y^3 - 2y^3 = 0$ (sau khi khai triển $3xy(x+y) = 3x^2y + 3xy^2$). [[br]] c) $R = -15$ (hằng số). [[br]] \\textbf{Bài 10:} [[br]] a) $S_1 = 4xy + 4yz + 2xz$. [[br]] b) $S_2 = 8xy + 12yz + 12xz$. [[br]] c) $S = 12xy + 16yz + 14xz = 1480$ cm$^2$. [[br]] \\textbf{Bài 11:} [[br]] a) $C = (3+a)x^2y + 4$. [[br]] b) $C$ không chứa $x^2y \\Leftrightarrow 3 + a = 0 \\Leftrightarrow a = -3$.",
+      "teacher_note": "Bài 10 áp dụng công thức $S_{TP} = 2(ab + bc + ca)$ của hình hộp chữ nhật."
+    },
+    {
+      "kind": "reflection",
+      "number": 5,
+      "title": "Tổng kết",
+      "blocks": [
+        {
+          "type": "mindmap",
+          "caption": "Sơ đồ tư duy — Phép cộng và Phép trừ Đa thức",
+          "root": "Phép cộng và trừ đa thức",
+          "branches": [
+            {
+              "label": "Cộng đa thức",
+              "children": [
+                {
+                  "label": "Lập tổng A + B trong ngoặc"
+                },
+                {
+                  "label": "Bỏ ngoặc (giữ nguyên dấu)"
+                },
+                {
+                  "label": "Nhóm và thu gọn đơn thức đồng dạng"
+                }
+              ]
+            },
+            {
+              "label": "Trừ đa thức",
+              "children": [
+                {
+                  "label": "Lập hiệu A - B trong ngoặc"
+                },
+                {
+                  "label": "Bỏ ngoặc (đổi dấu B)"
+                },
+                {
+                  "label": "Nhóm và thu gọn đơn thức đồng dạng"
+                }
+              ]
+            },
+            {
+              "label": "Tìm đa thức chưa biết",
+              "children": [
+                {
+                  "label": "M + B = A => M = A - B"
+                },
+                {
+                  "label": "M - B = A => M = A + B"
+                }
+              ]
+            }
+          ]
+        },
+        {
+          "type": "problem",
+          "label": "Bài 12.",
+          "level": 1,
+          "statement": "Dạng 1. Tính tổng $A + B$ của hai đa thức: [[br]] a) $A = x^2 - 2yz + z^2$ và $B = 3yz + 5x^2 - z^2$ [[br]] b) $A = 3x^2y^2 - 0.8xy^2 + 2y^2 - 1$ và $B = -3x^2y^2 - 0.2xy^2 + 2$",
+          "tier": "btvn",
+          "writelines": 4
+        },
+        {
+          "type": "problem",
+          "label": "Bài 13.",
+          "level": 1,
+          "statement": "Dạng 2. Tính hiệu $A - B$ của hai đa thức: [[br]] \\begin{minipage}[t]{0.47\\linewidth} a) $A = x^2 - 2yz + z^2$ và $B = 3yz + 5x^2 - z^2$ [[br]] b) $A = 3x^2y^2 - 0.8xy^2 + 2y^2 - 1$ và $B = -3x^2y^2 - 0.2xy^2 + 2$ \\end{minipage}\\hfill\\begin{minipage}[t]{0.47\\linewidth} c) $A = 2x^2y + 3xyz - 2x + 5$ và $B = 3xyz - 2x^2y + x - 4$ \\end{minipage}",
+          "tier": "btvn",
+          "writelines": 4
+        },
+        {
+          "type": "problem",
+          "label": "Bài 14.",
+          "level": 1,
+          "statement": "Dạng 3. Thực hiện phép tính cộng, trừ đa thức kết hợp: [[br]] \\begin{minipage}[t]{0.47\\linewidth} a) $(2.5x^3 - 0.1x^2y + y^3) + (4x^2y - 3.5x^3 + 7xy^2 - y^3)$ [[br]] b) $(2.5x^3 - 0.1x^2y + y^3) - (4x^2y - 3.5x^3 + 7xy^2 - y^3)$ \\end{minipage}\\hfill\\begin{minipage}[t]{0.47\\linewidth} c) $(a + 3b + ab^2) + (a^2b - ab^2 - 2b)$ \\end{minipage}",
+          "tier": "btvn",
+          "writelines": 4
+        },
+        {
+          "type": "problem",
+          "label": "Bài 15.",
+          "level": 1,
+          "statement": "Dạng 4. Thu gọn biểu thức có ngoặc tròn và ngoặc vuông: [[br]] \\begin{minipage}[t]{0.47\\linewidth} a) $(a + 3b + ab^2) - (a^2b - ab^2 - 2b)$ [[br]] b) $(1 + 3xy - 2x^2y^2) + (x - xy + 2x^2y^2)$ \\end{minipage}\\hfill\\begin{minipage}[t]{0.47\\linewidth} c) $(1 + 3xy - 2x^2y^2) - (x - xy + 2x^2y^2)$ \\end{minipage}",
+          "tier": "btvn",
+          "writelines": 4
+        },
+        {
+          "type": "problem",
+          "label": "Bài 16.",
+          "level": 1,
+          "statement": "Dạng 6. Rút gọn rồi tính giá trị của biểu thức: [[br]] a) $P = (5x^2 - 2x^2y + 7x^3y^2 - 118) - (-7x^3y^2 + x^3y - 5xy - 4x^2 + y)$ tại $x = 1, y = -2$. [[br]] b) $Q = (3x^2y - 2xy^2 + 1) + (x^2y + 5xy^2 - 4)$ tại $x = -1, y = 2$. [[br]] c) $R = (2x^3 - 3x^2y + y^3) - (x^3 - 3x^2y - 2y^3)$ tại $x = 2, y = 1$.",
+          "tier": "btvn",
+          "writelines": 4
+        },
+        {
+          "type": "problem",
+          "label": "Bài 17.",
+          "level": 1,
+          "statement": "Dạng 7. Rút gọn rồi tính giá trị khi biết điều kiện liên hệ: [[br]] a) $S = (x^2y^2 + 2xy - 3) - (2x^2y^2 - xy + 1)$ tại $x = 1, y = 3$. [[br]] b) $T = (4x^2 - 5xy + 2y^2) - (3x^2 - 2xy + y^2)$ tại $x = 3, y = 2$. [[br]] c) $U = \\left(\\dfrac{1}{2}x^2y + 3xy\\right) - \\left(\\dfrac{3}{2}x^2y - xy\\right)$ tại $x = 4, y = -1$.",
+          "tier": "btvn",
+          "writelines": 4
+        },
+        {
+          "type": "problem",
+          "label": "Bài 18.",
+          "level": 2,
+          "statement": "Dạng 8. Tìm đa thức $M$ biết: [[br]] a) $M + (2x^2y + 3xyz - 2x + 5) = 3xyz - 2x^2y + x - 4$ [[br]] b) $(6x^2 - 3xy^2) + M = x^2 + y^2 - 2xy^2$",
+          "tier": "btvn",
+          "writelines": 4
+        },
+        {
+          "type": "problem",
+          "label": "Bài 19.",
+          "level": 2,
+          "statement": "Dạng 9. Chứng minh giá trị không phụ thuộc vào biến: [[br]] a) Cho $P = 2x^2y - xy^2 + 22$ và $Q = xy^2 - 2x^2y + 23$. Chứng minh rằng $S = P + Q$ luôn bằng hằng số với mọi $x, y$. [[br]] b) Cho $A = 5x^2 - 2xy + 3y^2$ và $B = 5x^2 - 2xy + 3y^2 - 7$. Chứng minh rằng $A - B$ không phụ thuộc vào $x, y$.",
+          "tier": "btvn",
+          "writelines": 4
+        },
+        {
+          "type": "problem",
+          "label": "Bài 20.",
+          "level": 3,
+          "statement": "Dạng 10. Trên một dòng sông, để đi được 10 km, một chiếc xuồng tiêu tốn $a$ lít dầu khi xuôi dòng và $(a + 2)$ lít dầu khi ngược dòng. (Gợi ý mồi: Khi con thuyền trôi tự do theo dòng nước, lực đẩy của nước làm thuyền xuôi dòng đỡ tốn nhiên liệu hơn ngược dòng). [[br]] a) [NB] Viết biểu thức số lít dầu tiêu tốn khi xuồng đi xuôi dòng 1 km và ngược dòng 1 km. [[br]] b) [TH] Viết đa thức $T$ biểu thị tổng số lít dầu mà xuồng tiêu tốn để đi từ bến A ngược dòng đến bến B rồi quay lại bến A, biết khoảng cách giữa hai bến là $b$ km. [[br]] c) [VD] Tính số lít dầu xuồng tiêu tốn khi $a = 1.5$ lít và $b = 30$ km.",
+          "tier": "btvn",
+          "writelines": 6
+        },
+        {
+          "type": "problem",
+          "label": "Bài 21.",
+          "level": 3,
+          "statement": "Dạng 10. Cho hai đa thức $P = 5xy^2 - 3x^2y + 1$ và $Q = kxy^2 + 2x^2y - 4$ (với $k$ là hằng số). [[br]] a) [TH] Tìm đa thức $H = P - Q$. [[br]] b) [VD] Tìm hằng số $k$ sao cho đa thức $H$ không chứa hạng tử $xy^2$.",
+          "tier": "btvn",
+          "writelines": 4
+        },
+        {
+          "type": "para",
+          "text": "\\textbf{Nhịp cầu.} Đa thức có thể chứa các hệ số chưa biết hoặc bảng giá trị có quy luật tổng không đổi."
+        },
+        {
+          "type": "problem",
+          "label": "Bài 22.",
+          "level": 3,
+          "statement": "Cho đa thức $A = 2x^2y - 3xy^2 + 4$ và $B = mx^2y + nxy^2 - 1$ (với $m, n$ là hằng số). Tìm $m$ và $n$ để $A + B$ là một đa thức bậc 0.",
+          "tier": "extend",
+          "writelines": 4,
+          "hints": [
+            "Đa thức bậc 0 khi tất cả các hệ số chứa biến $x, y$ đều bằng 0."
+          ]
+        },
+        {
+          "type": "problem",
+          "label": "Bài 23.",
+          "level": 3,
+          "statement": "Trong buổi sinh hoạt CLB Toán, hai bạn tính giá trị của $P = 2x^2y - xy^2 + 22$ và $Q = xy^2 - 2x^2y + 23$ tại các giá trị của $x, y$. Kết quả ghi lại như sau: [[br]] - Khi $x=1, y=-1$: $P=19, Q=26$. [[br]] - Khi $x=-1, y=1$: $P=25, Q=20$. [[br]] - Khi $x=2, y=1$: $P=38, Q=17$. [[br]] - Khi $x=1, y=2$: $P=22, Q=23$. [[br]] Biết rằng có một cặp $(x,y)$ cho kết quả tính toán bị sai. Làm thế nào để nhanh chóng phát hiện ra cặp sai đó mà không cần tính lại từng giá trị $P$ và $Q$?",
+          "tier": "extend",
+          "writelines": 4,
+          "hints": [
+            "Hãy chú ý đến tổng $P + Q = 45$ ở Bài 19a."
+          ]
+        }
+      ],
+      "solution": "\\textbf{Bài 12:} [[br]] a) $A+B = 6x^2 + yz$. [[br]] b) $A+B = -xy^2 + 2y^2 + 1$. [[br]] \\textbf{Bài 13:} [[br]] a) $A-B = -4x^2 - 5yz + 2z^2$. [[br]] b) $A-B = 6x^2y^2 - 0.6xy^2 + 2y^2 - 3$. [[br]] c) $A-B = 4x^2y - 3x + 9$. [[br]] \\textbf{Bài 14:} [[br]] a) $-x^3 + 3.9x^2y + 7xy^2$. [[br]] b) $6x^3 - 4.1x^2y - 7xy^2 + 2y^3$. [[br]] c) $a^2b + a + b$. [[br]] \\textbf{Bài 15:} [[br]] a) $-a^2b + 2ab^2 + a + 5b$. [[br]] b) $2xy + x + 1$. [[br]] c) $-4x^2y^2 + 4xy - x + 1$. [[br]] \\textbf{Bài 16:} [[br]] a) $P = -59$. [[br]] b) $Q = 5$. [[br]] c) $R = 11$. [[br]] \\textbf{Bài 17:} [[br]] a) $S = -4$. [[br]] b) $T = -5$. [[br]] c) $U = 0$. [[br]] \\textbf{Bài 18:} [[br]] a) $M = -4x^2y + 3x - 9$. [[br]] b) $M = -5x^2 + xy^2 + y^2$. [[br]] \\textbf{Bài 19:} [[br]] a) $S = P + Q = 45$ (hằng số với mọi $x, y$). [[br]] b) $A - B = 7$ (hằng số với mọi $x, y$). [[br]] \\textbf{Bài 20:} [[br]] a) 1 km xuôi dòng tiêu tốn $\\dfrac{a}{10}$ lít; 1 km ngược dòng tiêu tốn $\\dfrac{a+2}{10}$ lít. [[br]] b) $T = \\dfrac{b(a+1)}{5}$ (lít). [[br]] c) $T = 15$ lít. [[br]] \\textbf{Bài 21:} [[br]] a) $H = (5-k)xy^2 - 5x^2y + 5$. [[br]] b) $H$ không chứa $xy^2 \\Leftrightarrow 5 - k = 0 \\Leftrightarrow k = 5$. [[br]] \\textbf{Bài 22:} [[br]] $A+B = (2+m)x^2y + (n-3)xy^2 + 3$. Để $A+B$ là đa thức bậc 0 thì $2+m = 0 \\Rightarrow m = -2$ và $n-3 = 0 \\Rightarrow n = 3$. [[br]] \\textbf{Bài 23:} [[br]] Ta có $P + Q = 45$ với mọi $x, y$. Cặp thứ 3 ($x=2, y=1$) cho $38 + 17 = 55 \\neq 45$ nên bị sai.",
+      "teacher_note": "Bài 23 vận dụng nhận xét ở Bài 19a để phát hiện cặp giá trị bị sai."
+    }
+  ]
+}

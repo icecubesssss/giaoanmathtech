@@ -8,7 +8,7 @@ from src.schema import LessonPackage
 from src.schema.lesson_package import ParaBlock
 from src.validators.difficulty_gate import check_difficulty, load_profile
 
-SEED_JSON = Path("inputs/seeds/lop-9/dai-so/lop-b/tuan09-bat-dang-thuc/phieu-a-bdt-tinh-chat-va-so-sanh.json")
+SEED_JSON = Path("inputs/seeds/lop-9/dai-so/lop-b/tuan09-bat-dang-thuc-va-giai-bpt/phieu-a-bdt-tinh-chat-va-so-sanh.json")
 
 
 @pytest.fixture

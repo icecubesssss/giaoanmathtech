@@ -1,0 +1,518 @@
+{
+  "slug": "thuyet-minh-chuong-03-can-bac-hai-can-bac-ba",
+  "title": "Chương III. Căn bậc hai và căn bậc ba — Ôn thi Vào 10 (Tầng C)",
+  "grade": "lop-9",
+  "subject": "dai-so",
+  "tier": "C",
+  "tuan": "16-20",
+  "lythuyet": [
+    "Khái niệm căn bậc hai số học của $a \\ge 0$: $\\sqrt{a} = x \\Leftrightarrow (x \\ge 0 \\text{ và } x^2 = a)$.",
+    "Điều kiện xác định (ĐKXĐ): $\\sqrt{A}$ có nghĩa khi $A \\ge 0$; phân thức $\\dfrac{A}{\\sqrt{x}-a}$ có nghĩa khi $x \\ge 0, x \\ne a^2$.",
+    "Hằng đẳng thức $\\sqrt{A^2} = |A|$ và quy tắc tính giá trị khi $x = a \\pm 2\\sqrt{b}$.",
+    "Khai phương một tích và một thương: $\\sqrt{A \\cdot B} = \\sqrt{A}\\cdot\\sqrt{B}$ ($A, B \\ge 0$), $\\sqrt{\\dfrac{A}{B}} = \\dfrac{\\sqrt{A}}{\\sqrt{B}}$ ($A \\ge 0, B > 0$).",
+    "Đưa thừa số ra ngoài/vào trong dấu căn: $\\sqrt{A^2 B} = |A|\\sqrt{B}$; phân tích tử/mẫu thành nhân tử $x-a^2 = (\\sqrt{x}-a)(\\sqrt{x}+a)$, $x-a\\sqrt{x} = \\sqrt{x}(\\sqrt{x}-a)$.",
+    "Kỹ thuật rút gọn biểu thức $B(x)$ Bài I Đề thi Vào 10: quy đồng mẫu thức chung $x-a^2$, phá ngoặc thu gọn tử thức.",
+    "Chuyên đề Ăn trọn 2.0 điểm Bài I Đề thi Vào 10: tính giá trị $A(x_0)$, tìm $x$ để $P=k$, $P < k$, tìm $x \\in \\mathbb{Z}$ để $P \\in \\mathbb{Z}$ và chặn miền giá trị $a < P < b$."
+  ],
+  "vidu": [
+    "Tìm ĐKXĐ của căn thức $\\sqrt{2x-6}$ và phân thức $\\dfrac{5}{\\sqrt{x}-3}$.",
+    "Rút gọn biểu thức số chứa hằng đẳng thức: $M = \\sqrt{(\\sqrt{3}-2)^2} + \\sqrt{3}$.",
+    "Rút gọn tổng các căn thức đồng dạng dạng biến: $N = 3\\sqrt{4x} - 2\\sqrt{9x} + \\sqrt{x}$ ($x \\ge 0$).",
+    "Rút gọn phân thức bằng phân tích nhân tử: $P = \\dfrac{x-9}{\\sqrt{x}-3} = \\sqrt{x}+3$ ($x \\ge 0, x \\ne 9$).",
+    "Quy đồng phân thức 2 hạng tử: $Q = \\dfrac{1}{\\sqrt{x}-2} + \\dfrac{1}{\\sqrt{x}+2} = \\dfrac{2\\sqrt{x}}{x-4}$.",
+    "Cho $A = \\dfrac{\\sqrt{x}+2}{\\sqrt{x}-3}$. Tính giá trị của $A$ tại $x = 16$ và $x = 25$.",
+    "Rút gọn biểu thức $B = \\left(\\dfrac{1}{\\sqrt{x}-1} + \\dfrac{\\sqrt{x}}{x-1}\\right) : \\dfrac{2\\sqrt{x}+1}{x-1}$ ($x \\ge 0, x \\ne 1$).",
+    "Cho $P = \\dfrac{\\sqrt{x}-2}{\\sqrt{x}+1}$. Tìm $x$ để $P = \\dfrac{1}{3}$; tìm $x$ để $P < 0$; tìm $x \\in \\mathbb{Z}$ để $P \\in \\mathbb{Z}$."
+  ],
+  "dang_vd": [
+    "Rút gọn biểu thức chứa căn thức biến $x$ dạng phân thức tổng hợp 2-3 hạng tử (Ý 2 Bài I đề thi Vào 10).",
+    "Giải bài toán tổng hợp Bài I đề thi Vào 10: Rút gọn $B(x)$ và giải câu hỏi phụ Ý 3 ($P < k$, $P \\in \\mathbb{Z}$)."
+  ],
+  "loisai": [
+    "Quên ĐKXĐ $A \\ge 0$ khi tìm điều kiện của $\\sqrt{A}$, hoặc quên điều kiện mẫu thức $\\sqrt{x}-a \\ne 0 \\Rightarrow x \\ne a^2$.",
+    "Nhầm lẫn $\\sqrt{A^2} = A$ khi chưa biết dấu của $A$ (phải dùng $\\sqrt{A^2} = |A|$).",
+    "Khai phương một tổng/hiệu sai quy tắc: viết $\\sqrt{a+b} = \\sqrt{a} + \\sqrt{b}$ (rất phổ biến).",
+    "Sai dấu khi rút gọn biểu thức có dấu trừ trước ngoặc hoặc phân thức: $-\\dfrac{A-B}{C} = \\dfrac{-A+B}{C}$.",
+    "Quên thử lại điều kiện xác định ($x \\ge 0, x \\ne 1, x \\ne 9$) sau khi giải tìm $x$.",
+    "Triệt tiêu nhầm $\\sqrt{x}$ ở tử và mẫu khi tử/mẫu là dạng tổng/hiệu: $\\dfrac{\\sqrt{x}+2}{\\sqrt{x}+1} \\ne 2$."
+  ],
+  "kienthuc_nb": [
+    "Tìm điều kiện xác định của căn thức $\\sqrt{ax+b}$ và phân thức $\\dfrac{A}{\\sqrt{x}-a}$.",
+    "Áp dụng $\\sqrt{A^2} = |A|$ và giải phương trình căn thức đơn giản $\\sqrt{x} = a$.",
+    "Đưa thừa số ra ngoài/vào trong dấu căn chứa biến $x$, phân tích tử/mẫu thành nhân tử.",
+    "Trục căn thức ở mẫu dạng $\\dfrac{A}{\\sqrt{x}}$, $\\dfrac{A}{\\sqrt{x}-a}$, $\\dfrac{A}{\\sqrt{x}+a}$.",
+    "Nhận diện mẫu thức chung $x-a^2 = (\\sqrt{x}-a)(\\sqrt{x}+a)$, quy đồng và thu gọn phân thức."
+  ],
+  "phieu": [
+    {
+      "code": "A",
+      "title": "Tuần 16: ĐKXĐ \\& Biến đổi căn thức biến $x$ cơ bản (Bài 7)",
+      "rows": [
+        {
+          "dang": "Tìm ĐKXĐ của căn thức bậc hai dạng đơn giản $\\sqrt{x-a}$ ($a > 0$) (Bài 1 / BTVN 1)",
+          "band": "NB", "lythuyet": 1, "vidu": 1, "onclass": 2, "btvn": 2, "source_refs": [], "decompose": "none"
+        },
+        {
+          "dang": "Tìm ĐKXĐ của căn thức bậc hai dạng $\\sqrt{ax+b}$ ($a \\ne 0$) (Bài 2 / BTVN 2)",
+          "band": "NB", "lythuyet": 1, "vidu": 1, "onclass": 2, "btvn": 2, "source_refs": [], "decompose": "none"
+        },
+        {
+          "dang": "Tìm ĐKXĐ của căn thức bậc hai dạng $\\sqrt{-ax+b}$ ($a > 0$) (Bài 3 / BTVN 3)",
+          "band": "NB", "lythuyet": 1, "vidu": 1, "onclass": 2, "btvn": 2, "source_refs": [], "decompose": "none"
+        },
+        {
+          "dang": "Tìm ĐKXĐ của biểu thức dạng $\\dfrac{1}{\\sqrt{ax+b}}$ ($a > 0$) (Bài 4 / BTVN 4)",
+          "band": "NB", "lythuyet": 1, "vidu": 1, "onclass": 2, "btvn": 2, "source_refs": [], "decompose": "none"
+        },
+        {
+          "dang": "Tìm ĐKXĐ của phân thức $\\dfrac{A}{\\sqrt{x}-a}$ ($a > 0$) (Bài 5 / BTVN 5)",
+          "band": "NB", "lythuyet": 1, "vidu": 1, "onclass": 2, "btvn": 2, "source_refs": [], "decompose": "none"
+        },
+        {
+          "dang": "Tìm ĐKXĐ của phân thức $\\dfrac{A}{x-a^2}$ ($a > 0$) (Bài 6 / BTVN 6)",
+          "band": "NB", "lythuyet": 1, "vidu": 1, "onclass": 2, "btvn": 2, "source_refs": [], "decompose": "none"
+        },
+        {
+          "dang": "Biến đổi biểu thức dạng $\\sqrt{A^2} = |A|$ với $A$ là số âm/dương cụ thể (Bài 7 / BTVN 7)",
+          "band": "NB", "lythuyet": 1, "vidu": 1, "onclass": 2, "btvn": 2, "source_refs": [], "decompose": "none"
+        },
+        {
+          "dang": "Tính căn bậc hai số học $\\sqrt{a}$ của số chính phương (Bài 8 / BTVN 8)",
+          "band": "NB", "lythuyet": 1, "vidu": 1, "onclass": 2, "btvn": 2, "source_refs": [], "decompose": "none"
+        },
+        {
+          "dang": "Phá giá trị tuyệt đối $\\sqrt{(a-\\sqrt{b})^2} = |a-\\sqrt{b}|$ với $a > \\sqrt{b}$ (Bài 9 / BTVN 9)",
+          "band": "NB", "lythuyet": 1, "vidu": 1, "onclass": 2, "btvn": 1, "source_refs": [], "decompose": "none"
+        },
+        {
+          "dang": "Phá giá trị tuyệt đối $\\sqrt{(a-\\sqrt{b})^2} = |a-\\sqrt{b}|$ với $a < \\sqrt{b}$ (Bài 10 / BTVN 10)",
+          "band": "NB", "lythuyet": 1, "vidu": 1, "onclass": 2, "btvn": 1, "source_refs": [], "decompose": "none"
+        },
+        {
+          "dang": "Giải phương trình chứa căn đơn giản $\\sqrt{x} = a$ ($a \\ge 0$) (Bài 11 / BTVN 11)",
+          "band": "NB", "lythuyet": 1, "vidu": 1, "onclass": 2, "btvn": 1, "source_refs": [], "decompose": "none"
+        },
+        {
+          "dang": "Giải phương trình dạng $\\sqrt{ax+b} = c$ ($c \\ge 0$) (Bài 12 / BTVN 12)",
+          "band": "NB", "lythuyet": 1, "vidu": 1, "onclass": 2, "btvn": 1, "source_refs": [], "decompose": "none"
+        },
+        {
+          "dang": "Giải phương trình dạng $\\sqrt{x-a} - b = 0$ ($b > 0$) (Bài 13 / BTVN 13)",
+          "band": "NB", "lythuyet": 1, "vidu": 1, "onclass": 2, "btvn": 1, "source_refs": [], "decompose": "none"
+        },
+        {
+          "dang": "Tính căn bậc hai số học của phân số chính phương $\\sqrt{\\dfrac{a}{b}}$ (Bài 14 / BTVN 14)",
+          "band": "NB", "lythuyet": 1, "vidu": 1, "onclass": 2, "btvn": 1, "source_refs": [], "decompose": "none"
+        },
+        {
+          "dang": "Tính giá trị biểu thức $\\sqrt{a^2}$ với $a$ số nguyên âm (Bài 15 / BTVN 15)",
+          "band": "NB", "lythuyet": 1, "vidu": 1, "onclass": 2, "btvn": 1, "source_refs": [], "decompose": "none"
+        },
+        {
+          "dang": "Kiểm tra điều kiện $x^2+a > 0$ để kết luận biểu thức luôn xác định (Bài 16 / BTVN 16)",
+          "band": "NB", "lythuyet": 1, "vidu": 1, "onclass": 2, "btvn": 1, "source_refs": [], "decompose": "none"
+        },
+        {
+          "dang": "Rút gọn biểu thức số chứa $\\sqrt{A^2} = |A|$ dạng $M = \\sqrt{(a-\\sqrt{b})^2} + c\\sqrt{b}$ (Bài 17 / BTVN 17)",
+          "band": "TH", "lythuyet": 1, "vidu": 1, "onclass": 2, "btvn": 2, "source_refs": [], "decompose": "none"
+        },
+        {
+          "dang": "Rút gọn biểu thức số chứa hằng đẳng thức $N = \\sqrt{(a-\\sqrt{b})^2} - \\sqrt{b}$ (Bài 18 / BTVN 18)",
+          "band": "TH", "lythuyet": 1, "vidu": 1, "onclass": 2, "btvn": 2, "source_refs": [], "decompose": "none"
+        },
+        {
+          "dang": "Tìm ĐKXĐ của biểu thức tổng hợp chứa căn và phân thức $\\dfrac{\\sqrt{x+a}}{x-b}$ (Bài 19 / BTVN 19)",
+          "band": "TH", "lythuyet": 1, "vidu": 1, "onclass": 2, "btvn": 2, "source_refs": [], "decompose": "none"
+        },
+        {
+          "dang": "Giải phương trình căn thức dạng $\\sqrt{ax+b} = c$ kết hợp ĐKXĐ (Bài 20 / BTVN 20)",
+          "band": "TH", "lythuyet": 1, "vidu": 1, "onclass": 2, "btvn": 2, "source_refs": [], "decompose": "none"
+        },
+        {
+          "dang": "Rút gọn biểu thức số chứa căn lồng nhau $\\sqrt{a \\pm 2\\sqrt{b}} = \\sqrt{(\\sqrt{m} \\pm \\sqrt{n})^2}$ (Bài 21 / BTVN 21)",
+          "band": "VD", "lythuyet": 1, "vidu": 1, "onclass": 1, "btvn": 1, "source_refs": [], "decompose": "vd"
+        },
+        {
+          "dang": "Tìm giá trị $x$ thỏa mãn phương trình căn thức $\\sqrt{x-a} = b$ ($a, b > 0$) (Bài 22 / BTVN 22)",
+          "band": "VD", "lythuyet": 1, "vidu": 1, "onclass": 1, "btvn": 1, "source_refs": [], "decompose": "vd"
+        }
+      ]
+    },
+    {
+      "code": "B",
+      "title": "Tuần 17: Biến đổi căn thức chứa biến $x$ \\& Phân tích nhân tử (Bài 8)",
+      "rows": [
+        {
+          "dang": "Khai phương một tích chứa biến $x$ dạng $\\sqrt{a^2 x} = a\\sqrt{x}$ ($a > 0, x \\ge 0$) (Bài 1 / BTVN 1)",
+          "band": "NB", "lythuyet": 1, "vidu": 1, "onclass": 2, "btvn": 2, "source_refs": [], "decompose": "none"
+        },
+        {
+          "dang": "Đưa thừa số ra ngoài dấu căn chứa biến $x$ dạng $\\sqrt{a^2 x^3} = ax\\sqrt{x}$ ($x \\ge 0$) (Bài 2 / BTVN 2)",
+          "band": "NB", "lythuyet": 1, "vidu": 1, "onclass": 2, "btvn": 2, "source_refs": [], "decompose": "none"
+        },
+        {
+          "dang": "Đưa thừa số vào trong dấu căn dạng $a\\sqrt{x} = \\sqrt{a^2 x}$ với $a \\ge 0, x \\ge 0$ (Bài 3 / BTVN 3)",
+          "band": "NB", "lythuyet": 1, "vidu": 1, "onclass": 2, "btvn": 2, "source_refs": [], "decompose": "none"
+        },
+        {
+          "dang": "Thu gọn tổng hiệu hai căn thức đồng dạng chứa biến $x$ dạng $a\\sqrt{x} + b\\sqrt{x}$ (Bài 4 / BTVN 4)",
+          "band": "NB", "lythuyet": 1, "vidu": 1, "onclass": 2, "btvn": 2, "source_refs": [], "decompose": "none"
+        },
+        {
+          "dang": "Phân tích tử thức thành nhân tử $x-a^2 = (\\sqrt{x}-a)(\\sqrt{x}+a)$ để triệt tiêu mẫu (Bài 5 / BTVN 5)",
+          "band": "NB", "lythuyet": 1, "vidu": 1, "onclass": 2, "btvn": 2, "source_refs": [], "decompose": "none"
+        },
+        {
+          "dang": "Phân tích tử thức thành nhân tử $x-a\\sqrt{x} = \\sqrt{x}(\\sqrt{x}-a)$ để triệt tiêu mẫu (Bài 6 / BTVN 6)",
+          "band": "NB", "lythuyet": 1, "vidu": 1, "onclass": 2, "btvn": 2, "source_refs": [], "decompose": "none"
+        },
+        {
+          "dang": "Khai phương một thương chứa biến $x$ dạng $\\sqrt{\\dfrac{x}{a^2}} = \\dfrac{\\sqrt{x}}{a}$ ($a > 0$) (Bài 7 / BTVN 7)",
+          "band": "NB", "lythuyet": 1, "vidu": 1, "onclass": 2, "btvn": 2, "source_refs": [], "decompose": "none"
+        },
+        {
+          "dang": "Chia hai căn bậc hai chứa biến $x$ dạng $\\dfrac{\\sqrt{a^2 x}}{\\sqrt{x}} = a$ ($x > 0$) (Bài 8 / BTVN 8)",
+          "band": "NB", "lythuyet": 1, "vidu": 1, "onclass": 2, "btvn": 2, "source_refs": [], "decompose": "none"
+        },
+        {
+          "dang": "Nhân hai căn bậc hai chứa biến $x$ dạng $\\sqrt{x} \\cdot \\sqrt{x} = x$ ($x \\ge 0$) (Bài 9 / BTVN 9)",
+          "band": "NB", "lythuyet": 1, "vidu": 1, "onclass": 2, "btvn": 1, "source_refs": [], "decompose": "none"
+        },
+        {
+          "dang": "Khai triển hằng đẳng thức chứa căn $(\\sqrt{x}-a)(\\sqrt{x}+a) = x-a^2$ (Bài 10 / BTVN 10)",
+          "band": "NB", "lythuyet": 1, "vidu": 1, "onclass": 2, "btvn": 1, "source_refs": [], "decompose": "none"
+        },
+        {
+          "dang": "Khai triển bình phương của một tổng/hiệu chứa căn $(\\sqrt{x} \\pm a)^2 = x \\pm 2a\\sqrt{x} + a^2$ (Bài 11 / BTVN 11)",
+          "band": "NB", "lythuyet": 1, "vidu": 1, "onclass": 2, "btvn": 1, "source_refs": [], "decompose": "none"
+        },
+        {
+          "dang": "Giải phương trình $\\sqrt{a^2 x} - \\sqrt{b^2 x} = c$ với $x \\ge 0$ dạng đơn giản (Bài 12 / BTVN 12)",
+          "band": "NB", "lythuyet": 1, "vidu": 1, "onclass": 2, "btvn": 1, "source_refs": [], "decompose": "none"
+        },
+        {
+          "dang": "Thu gọn tổng căn thức dạng $a\\sqrt{x} - \\sqrt{b^2 x} + c\\sqrt{x}$ (Bài 13 / BTVN 13)",
+          "band": "NB", "lythuyet": 1, "vidu": 1, "onclass": 2, "btvn": 1, "source_refs": [], "decompose": "none"
+        },
+        {
+          "dang": "Biến đổi biểu thức dạng $\\sqrt{x^3} = x\\sqrt{x}$ với $x \\ge 0$ (Bài 14 / BTVN 14)",
+          "band": "NB", "lythuyet": 1, "vidu": 1, "onclass": 2, "btvn": 1, "source_refs": [], "decompose": "none"
+        },
+        {
+          "dang": "Tìm $x$ không âm biết $\\sqrt{ax} = b$ ($a > 0, b \\ge 0$) (Bài 15 / BTVN 15)",
+          "band": "NB", "lythuyet": 1, "vidu": 1, "onclass": 2, "btvn": 1, "source_refs": [], "decompose": "none"
+        },
+        {
+          "dang": "So sánh $a\\sqrt{x}$ và $b\\sqrt{x}$ dựa trên hệ số $a, b > 0$ (Bài 16 / BTVN 16)",
+          "band": "NB", "lythuyet": 1, "vidu": 1, "onclass": 2, "btvn": 1, "source_refs": [], "decompose": "none"
+        },
+        {
+          "dang": "Rút gọn biểu thức chứa phân thức đơn giản $\\dfrac{x-a^2}{\\sqrt{x}+a} + \\sqrt{x}$ (Bài 17 / BTVN 17)",
+          "band": "TH", "lythuyet": 1, "vidu": 1, "onclass": 2, "btvn": 2, "source_refs": [], "decompose": "none"
+        },
+        {
+          "dang": "Giải phương trình $\\sqrt{a^2(x-1)} - \\sqrt{b^2(x-1)} = c$ với $x \\ge 1$ (Bài 18 / BTVN 18)",
+          "band": "TH", "lythuyet": 1, "vidu": 1, "onclass": 2, "btvn": 2, "source_refs": [], "decompose": "none"
+        },
+        {
+          "dang": "Rút gọn biểu thức chứa phép nhân và khai phương tích $B = \\sqrt{x}(\\sqrt{x} - \\sqrt{a}) + a\\sqrt{x}$ (Bài 19 / BTVN 19)",
+          "band": "TH", "lythuyet": 1, "vidu": 1, "onclass": 2, "btvn": 2, "source_refs": [], "decompose": "none"
+        },
+        {
+          "dang": "Rút gọn phân thức có tử là hằng đẳng thức $\\dfrac{x-2a\\sqrt{x}+a^2}{\\sqrt{x}-a} = \\sqrt{x}-a$ (Bài 20 / BTVN 20)",
+          "band": "TH", "lythuyet": 1, "vidu": 1, "onclass": 2, "btvn": 2, "source_refs": [], "decompose": "none"
+        },
+        {
+          "dang": "Rút gọn biểu thức tổng hợp $\\dfrac{x-a^2}{\\sqrt{x}-a} - \\sqrt{x}$ với $x \\ge 0, x \\ne a^2$ (Bài 21 / BTVN 21)",
+          "band": "VD", "lythuyet": 1, "vidu": 1, "onclass": 1, "btvn": 1, "source_refs": [], "decompose": "vd"
+        },
+        {
+          "dang": "Giải phương trình dạng $\\sqrt{25x-25} - \\sqrt{9x-9} = 4$ với $x \\ge 1$ (Bài 22 / BTVN 22)",
+          "band": "VD", "lythuyet": 1, "vidu": 1, "onclass": 1, "btvn": 1, "source_refs": [], "decompose": "vd"
+        }
+      ]
+    },
+    {
+      "code": "C",
+      "title": "Tuần 18: Trục căn thức \\& Quy đồng phân thức biến $x$ (Bài 9)",
+      "rows": [
+        {
+          "dang": "Trục căn thức ở mẫu dạng đơn giản chứa biến $\\dfrac{A}{\\sqrt{x}} = \\dfrac{A\\sqrt{x}}{x}$ ($x > 0$) (Bài 1 / BTVN 1)",
+          "band": "NB", "lythuyet": 1, "vidu": 1, "onclass": 2, "btvn": 2, "source_refs": [], "decompose": "none"
+        },
+        {
+          "dang": "Trục căn thức ở mẫu dạng liên hợp hiệu $\\dfrac{A}{\\sqrt{x}-a} = \\dfrac{A(\\sqrt{x}+a)}{x-a^2}$ ($x \\ge 0, x \\ne a^2$) (Bài 2 / BTVN 2)",
+          "band": "NB", "lythuyet": 1, "vidu": 1, "onclass": 2, "btvn": 2, "source_refs": [], "decompose": "none"
+        },
+        {
+          "dang": "Trục căn thức ở mẫu dạng liên hợp tổng $\\dfrac{A}{\\sqrt{x}+a} = \\dfrac{A(\\sqrt{x}-a)}{x-a^2}$ ($x \\ge 0, x \\ne a^2$) (Bài 3 / BTVN 3)",
+          "band": "NB", "lythuyet": 1, "vidu": 1, "onclass": 2, "btvn": 2, "source_refs": [], "decompose": "none"
+        },
+        {
+          "dang": "Phân tích tử thức dạng $x-a^2$ thành $(\\sqrt{x}-a)(\\sqrt{x}+a)$ để rút gọn (Bài 4 / BTVN 4)",
+          "band": "NB", "lythuyet": 1, "vidu": 1, "onclass": 2, "btvn": 2, "source_refs": [], "decompose": "none"
+        },
+        {
+          "dang": "Phân tích tử thức dạng $x-a\\sqrt{x}$ thành $\\sqrt{x}(\\sqrt{x}-a)$ để rút gọn (Bài 5 / BTVN 5)",
+          "band": "NB", "lythuyet": 1, "vidu": 1, "onclass": 2, "btvn": 2, "source_refs": [], "decompose": "none"
+        },
+        {
+          "dang": "Phân tích tử thức dạng $x+a\\sqrt{x}$ thành $\\sqrt{x}(\\sqrt{x}+a)$ để rút gọn (Bài 6 / BTVN 6)",
+          "band": "NB", "lythuyet": 1, "vidu": 1, "onclass": 2, "btvn": 2, "source_refs": [], "decompose": "none"
+        },
+        {
+          "dang": "Quy đồng hai phân thức chứa căn đơn giản cùng mẫu thức $\\sqrt{x}$ (Bài 7 / BTVN 7)",
+          "band": "NB", "lythuyet": 1, "vidu": 1, "onclass": 2, "btvn": 2, "source_refs": [], "decompose": "none"
+        },
+        {
+          "dang": "Quy đồng hai phân thức mẫu thức $\\sqrt{x}-a$ và $\\sqrt{x}+a$ về mẫu $x-a^2$ (Bài 8 / BTVN 8)",
+          "band": "NB", "lythuyet": 1, "vidu": 1, "onclass": 2, "btvn": 2, "source_refs": [], "decompose": "none"
+        },
+        {
+          "dang": "Trục căn thức ở mẫu biểu thức số liên hợp $\\dfrac{1}{a+\\sqrt{b}} + \\dfrac{1}{a-\\sqrt{b}}$ (Bài 9 / BTVN 9)",
+          "band": "NB", "lythuyet": 1, "vidu": 1, "onclass": 2, "btvn": 1, "source_refs": [], "decompose": "none"
+        },
+        {
+          "dang": "Trục căn thức ở mẫu biểu thức số hai căn $\\dfrac{1}{\\sqrt{a}-\\sqrt{b}} - \\dfrac{1}{\\sqrt{a}+\\sqrt{b}}$ (Bài 10 / BTVN 10)",
+          "band": "NB", "lythuyet": 1, "vidu": 1, "onclass": 2, "btvn": 1, "source_refs": [], "decompose": "none"
+        },
+        {
+          "dang": "Khử mẫu biểu thức lấy căn dạng $\\sqrt{\\dfrac{A}{B}} = \\dfrac{\\sqrt{AB}}{|B|}$ ($AB \\ge 0, B \\ne 0$) (Bài 11 / BTVN 11)",
+          "band": "NB", "lythuyet": 1, "vidu": 1, "onclass": 2, "btvn": 1, "source_refs": [], "decompose": "none"
+        },
+        {
+          "dang": "Trục căn thức ở mẫu dạng $\\dfrac{A}{a\\sqrt{B}} = \\dfrac{A\\sqrt{B}}{aB}$ ($B > 0$) (Bài 12 / BTVN 12)",
+          "band": "NB", "lythuyet": 1, "vidu": 1, "onclass": 2, "btvn": 1, "source_refs": [], "decompose": "none"
+        },
+        {
+          "dang": "Rút gọn phân thức đơn giản có tử là hằng đẳng thức $(\\sqrt{x}-a)^2$ (Bài 13 / BTVN 13)",
+          "band": "NB", "lythuyet": 1, "vidu": 1, "onclass": 2, "btvn": 1, "source_refs": [], "decompose": "none"
+        },
+        {
+          "dang": "Đổi dấu mẫu thức $a-\\sqrt{x} = -(\\sqrt{x}-a)$ để quy đồng (Bài 14 / BTVN 14)",
+          "band": "NB", "lythuyet": 1, "vidu": 1, "onclass": 2, "btvn": 1, "source_refs": [], "decompose": "none"
+        },
+        {
+          "dang": "Nhận diện mẫu thức chung của hai phân thức $\\sqrt{x}(\\sqrt{x}-a)$ và $\\sqrt{x}-a$ (Bài 15 / BTVN 15)",
+          "band": "NB", "lythuyet": 1, "vidu": 1, "onclass": 2, "btvn": 1, "source_refs": [], "decompose": "none"
+        },
+        {
+          "dang": "Kiểm tra điều kiện $x \\ge 0, x \\ne a^2$ khi quy đồng phân thức (Bài 16 / BTVN 16)",
+          "band": "NB", "lythuyet": 1, "vidu": 1, "onclass": 2, "btvn": 1, "source_refs": [], "decompose": "none"
+        },
+        {
+          "dang": "Rút gọn biểu thức chứa biến $A(x) = \\dfrac{\\sqrt{x}}{\\sqrt{x}-1} - \\dfrac{1}{\\sqrt{x}+1} - \\dfrac{2}{x-1}$ ($x \\ge 0, x \\ne 1$) (Bài 17 / BTVN 17)",
+          "band": "TH", "lythuyet": 1, "vidu": 1, "onclass": 2, "btvn": 2, "source_refs": [], "decompose": "none"
+        },
+        {
+          "dang": "Rút gọn biểu thức chứa biến $B(x) = \\dfrac{x-1}{\\sqrt{x}+1} + \\dfrac{x-4}{\\sqrt{x}-2}$ ($x \\ge 0, x \\ne 4$) (Bài 18 / BTVN 18)",
+          "band": "TH", "lythuyet": 1, "vidu": 1, "onclass": 2, "btvn": 2, "source_refs": [], "decompose": "none"
+        },
+        {
+          "dang": "Rút gọn biểu thức số chứa trục căn thức và hằng đẳng thức $\\sqrt{A^2} = |A|$ (Bài 19 / BTVN 19)",
+          "band": "TH", "lythuyet": 1, "vidu": 1, "onclass": 2, "btvn": 2, "source_refs": [], "decompose": "none"
+        },
+        {
+          "dang": "Rút gọn biểu thức dạng $Q = \\left(\\dfrac{1}{\\sqrt{x}-1} - \\dfrac{1}{\\sqrt{x}}\\right) : \\dfrac{1}{x-\\sqrt{x}}$ với $x > 0, x \\ne 1$ (Bài 20 / BTVN 20)",
+          "band": "TH", "lythuyet": 1, "vidu": 1, "onclass": 2, "btvn": 2, "source_refs": [], "decompose": "none"
+        },
+        {
+          "dang": "Rút gọn biểu thức $M = \\dfrac{x-4}{\\sqrt{x}+2} + \\dfrac{x-2\\sqrt{x}}{\\sqrt{x}}$ với $x > 0, x \\ne 4$ (Bài 21 / BTVN 21)",
+          "band": "VD", "lythuyet": 1, "vidu": 1, "onclass": 1, "btvn": 1, "source_refs": [], "decompose": "vd"
+        },
+        {
+          "dang": "Rút gọn biểu thức $P = \\dfrac{\\sqrt{x}}{\\sqrt{x}-2} - \\dfrac{4}{\\sqrt{x}(\\sqrt{x}-2)}$ với $x > 0, x \\ne 4$ (Bài 22 / BTVN 22)",
+          "band": "VD", "lythuyet": 1, "vidu": 1, "onclass": 1, "btvn": 1, "source_refs": [], "decompose": "vd"
+        }
+      ]
+    },
+    {
+      "code": "D",
+      "title": "Tuần 19: Rút gọn biểu thức chứa biến $B(x)$ (Ý 1 \\& Ý 2 Bài I Vào 10)",
+      "rows": [
+        {
+          "dang": "Tính giá trị biểu thức $A(x) = \\dfrac{\\sqrt{x}+a}{\\sqrt{x}+b}$ tại $x = x_0$ là số chính phương ($x = 4, 9, 16, 25$) (Bài 1 / BTVN 1)",
+          "band": "NB", "lythuyet": 1, "vidu": 1, "onclass": 2, "btvn": 2, "source_refs": [], "decompose": "none"
+        },
+        {
+          "dang": "Tính giá trị biểu thức $A(x)$ tại $x = x_0$ khi $x_0$ cho dưới dạng phân số chính phương $x = \\dfrac{4}{9}, \\dfrac{9}{16}$ (Bài 2 / BTVN 2)",
+          "band": "NB", "lythuyet": 1, "vidu": 1, "onclass": 2, "btvn": 2, "source_refs": [], "decompose": "none"
+        },
+        {
+          "dang": "Tính giá trị $x$ khi biết $\\sqrt{x} = a$ ($a \\ge 0$) để thay vào biểu thức $A(x)$ (Bài 3 / BTVN 3)",
+          "band": "NB", "lythuyet": 1, "vidu": 1, "onclass": 2, "btvn": 2, "source_refs": [], "decompose": "none"
+        },
+        {
+          "dang": "Tính giá trị $x$ từ $x = (a \\pm \\sqrt{b})^2$ để thay vào biểu thức $A(x)$ (Bài 4 / BTVN 4)",
+          "band": "NB", "lythuyet": 1, "vidu": 1, "onclass": 2, "btvn": 2, "source_refs": [], "decompose": "none"
+        },
+        {
+          "dang": "Biến đổi mẫu thức $x-a^2 = (\\sqrt{x}-a)(\\sqrt{x}+a)$ để tìm mẫu thức chung (Bài 5 / BTVN 5)",
+          "band": "NB", "lythuyet": 1, "vidu": 1, "onclass": 2, "btvn": 2, "source_refs": [], "decompose": "none"
+        },
+        {
+          "dang": "Biến đổi mẫu thức $x - a\\sqrt{x} = \\sqrt{x}(\\sqrt{x}-a)$ để tìm mẫu thức chung (Bài 6 / BTVN 6)",
+          "band": "NB", "lythuyet": 1, "vidu": 1, "onclass": 2, "btvn": 2, "source_refs": [], "decompose": "none"
+        },
+        {
+          "dang": "Quy đồng phân thức $B_1 = \\dfrac{1}{\\sqrt{x}-a} + \\dfrac{1}{\\sqrt{x}+a} = \\dfrac{2\\sqrt{x}}{x-a^2}$ (Bài 7 / BTVN 7)",
+          "band": "NB", "lythuyet": 1, "vidu": 1, "onclass": 2, "btvn": 2, "source_refs": [], "decompose": "none"
+        },
+        {
+          "dang": "Quy đồng phân thức $B_2 = \\dfrac{1}{\\sqrt{x}-a} - \\dfrac{1}{\\sqrt{x}+a} = \\dfrac{2a}{x-a^2}$ (Bài 8 / BTVN 8)",
+          "band": "NB", "lythuyet": 1, "vidu": 1, "onclass": 2, "btvn": 2, "source_refs": [], "decompose": "none"
+        },
+        {
+          "dang": "Rút gọn phân thức có tử chứa nhân tử chung $\\dfrac{\\sqrt{x}(\\sqrt{x}-a)}{\\sqrt{x}-a} = \\sqrt{x}$ (Bài 9 / BTVN 9)",
+          "band": "NB", "lythuyet": 1, "vidu": 1, "onclass": 2, "btvn": 1, "source_refs": [], "decompose": "none"
+        },
+        {
+          "dang": "Rút gọn phân thức có hằng đẳng thức $\\dfrac{(\\sqrt{x}-a)^2}{\\sqrt{x}-a} = \\sqrt{x}-a$ (Bài 10 / BTVN 10)",
+          "band": "NB", "lythuyet": 1, "vidu": 1, "onclass": 2, "btvn": 1, "source_refs": [], "decompose": "none"
+        },
+        {
+          "dang": "Thực hiện phép chia hai phân thức chứa căn $\\dfrac{A}{B} : \\dfrac{C}{D} = \\dfrac{A}{B} \\cdot \\dfrac{D}{C}$ (Bài 11 / BTVN 11)",
+          "band": "NB", "lythuyet": 1, "vidu": 1, "onclass": 2, "btvn": 1, "source_refs": [], "decompose": "none"
+        },
+        {
+          "dang": "Rút gọn biểu thức tích $P = A \\cdot B$ khi $A$ và $B$ đã ở dạng tối giản (Bài 12 / BTVN 12)",
+          "band": "NB", "lythuyet": 1, "vidu": 1, "onclass": 2, "btvn": 1, "source_refs": [], "decompose": "none"
+        },
+        {
+          "dang": "Rút gọn biểu thức thương $P = \\dfrac{A}{B}$ khi $A$ và $B$ đã ở dạng tối giản (Bài 13 / BTVN 13)",
+          "band": "NB", "lythuyet": 1, "vidu": 1, "onclass": 2, "btvn": 1, "source_refs": [], "decompose": "none"
+        },
+        {
+          "dang": "Đổi dấu mẫu thức $a-\\sqrt{x} = -(\\sqrt{x}-a)$ để quy đồng mẫu thức chung (Bài 14 / BTVN 14)",
+          "band": "NB", "lythuyet": 1, "vidu": 1, "onclass": 2, "btvn": 1, "source_refs": [], "decompose": "none"
+        },
+        {
+          "dang": "Kiểm tra và kết hợp ĐKXĐ $x \\ge 0, x \\ne a^2$ sau khi rút gọn biểu thức (Bài 15 / BTVN 15)",
+          "band": "NB", "lythuyet": 1, "vidu": 1, "onclass": 2, "btvn": 1, "source_refs": [], "decompose": "none"
+        },
+        {
+          "dang": "Giải phương trình $P(x) = k$ dạng đơn giản sau khi đã rút gọn biểu thức (Bài 16 / BTVN 16)",
+          "band": "NB", "lythuyet": 1, "vidu": 1, "onclass": 2, "btvn": 1, "source_refs": [], "decompose": "none"
+        },
+        {
+          "dang": "Rút gọn biểu thức $B(x) = \\left(\\dfrac{1}{\\sqrt{x}-1} + \\dfrac{\\sqrt{x}}{x-1}\\right) : \\dfrac{2\\sqrt{x}+1}{x-1}$ ($x \\ge 0, x \\ne 1$) (Bài 17 / BTVN 17)",
+          "band": "TH", "lythuyet": 1, "vidu": 1, "onclass": 2, "btvn": 2, "source_refs": [], "decompose": "none"
+        },
+        {
+          "dang": "Rút gọn biểu thức $B(x) = \\left(\\dfrac{\\sqrt{x}}{\\sqrt{x}+2} + \\dfrac{1}{\\sqrt{x}-2}\\right) \\cdot \\dfrac{x-4}{\\sqrt{x}+1}$ ($x \\ge 0, x \\ne 4$) (Bài 18 / BTVN 18)",
+          "band": "TH", "lythuyet": 1, "vidu": 1, "onclass": 2, "btvn": 2, "source_refs": [], "decompose": "none"
+        },
+        {
+          "dang": "Cho $A = \\dfrac{\\sqrt{x}+2}{\\sqrt{x}-3}$ và $B = \\dfrac{\\sqrt{x}-1}{\\sqrt{x}+2} + \\dfrac{5\\sqrt{x}-2}{x-4}$, rút gọn $B$ và tính $P=A \\cdot B$ (Bài 19 / BTVN 19)",
+          "band": "TH", "lythuyet": 1, "vidu": 1, "onclass": 2, "btvn": 2, "source_refs": [], "decompose": "none"
+        },
+        {
+          "dang": "Cho $P = A \\cdot B = \\dfrac{\\sqrt{x}-a}{\\sqrt{x}+b}$, tìm $x$ để $P = k$ ($k \\in \\mathbb{Q}$) (Bài 20 / BTVN 20)",
+          "band": "TH", "lythuyet": 1, "vidu": 1, "onclass": 2, "btvn": 2, "source_refs": [], "decompose": "none"
+        },
+        {
+          "dang": "Rút gọn biểu thức $B(x)$ dạng phân thức 3 hạng tử phức hợp trong đề thi Vào 10 Hà Nội (Bài 21 / BTVN 21)",
+          "band": "VD", "lythuyet": 1, "vidu": 1, "onclass": 1, "btvn": 1, "source_refs": [], "decompose": "vd"
+        },
+        {
+          "dang": "Cho $P = \\dfrac{A}{B}$, tìm $x$ để $P = \\dfrac{1}{2}$ hoặc so sánh $P$ với $1$ (Bài 22 / BTVN 22)",
+          "band": "VD", "lythuyet": 1, "vidu": 1, "onclass": 1, "btvn": 1, "source_refs": [], "decompose": "vd"
+        }
+      ]
+    },
+    {
+      "code": "E",
+      "title": "Tuần 20: Chuyên đề Ăn trọn 2.0 điểm Câu hỏi phụ Bài I Đề thi Vào 10",
+      "rows": [
+        {
+          "dang": "Tách phần nguyên biểu thức $P = \\dfrac{\\sqrt{x}+a}{\\sqrt{x}+b} = 1 + \\dfrac{a-b}{\\sqrt{x}+b}$ ($b > 0$) (Bài 1 / BTVN 1)",
+          "band": "NB", "lythuyet": 1, "vidu": 1, "onclass": 2, "btvn": 2, "source_refs": [], "decompose": "none"
+        },
+        {
+          "dang": "Tách phần nguyên biểu thức $P = \\dfrac{c\\sqrt{x}+d}{\\sqrt{x}+b} = c + \\dfrac{d-bc}{\\sqrt{x}+b}$ ($b > 0$) (Bài 2 / BTVN 2)",
+          "band": "NB", "lythuyet": 1, "vidu": 1, "onclass": 2, "btvn": 2, "source_refs": [], "decompose": "none"
+        },
+        {
+          "dang": "Thay giá trị $x = x_0$ vào biểu thức $P = \\dfrac{A}{B}$ để tính giá trị của $P$ (Bài 3 / BTVN 3)",
+          "band": "NB", "lythuyet": 1, "vidu": 1, "onclass": 2, "btvn": 2, "source_refs": [], "decompose": "none"
+        },
+        {
+          "dang": "Đánh giá miền giá trị $\\sqrt{x}+b \\ge b > 0$ để tìm Max/Min đơn giản của biểu thức $\\dfrac{k}{\\sqrt{x}+b}$ (Bài 4 / BTVN 4)",
+          "band": "NB", "lythuyet": 1, "vidu": 1, "onclass": 2, "btvn": 2, "source_refs": [], "decompose": "none"
+        },
+        {
+          "dang": "Tìm điều kiện của $x$ để $\\sqrt{x}+b > b$ (với $b > 0, x > 0$) (Bài 5 / BTVN 5)",
+          "band": "NB", "lythuyet": 1, "vidu": 1, "onclass": 2, "btvn": 2, "source_refs": [], "decompose": "none"
+        },
+        {
+          "dang": "Tìm miền giá trị của mẫu thức $\\sqrt{x}+b \\ge b$ để đánh giá phân thức (Bài 6 / BTVN 6)",
+          "band": "NB", "lythuyet": 1, "vidu": 1, "onclass": 2, "btvn": 2, "source_refs": [], "decompose": "none"
+        },
+        {
+          "dang": "Lập bất phương trình $P < k \\Leftrightarrow \\dfrac{A}{B} - k < 0$ và quy đồng về một phân thức (Bài 7 / BTVN 7)",
+          "band": "NB", "lythuyet": 1, "vidu": 1, "onclass": 2, "btvn": 2, "source_refs": [], "decompose": "none"
+        },
+        {
+          "dang": "Lập bất phương trình $P > k \\Leftrightarrow \\dfrac{A}{B} - k > 0$ và quy đồng về một phân thức (Bài 8 / BTVN 8)",
+          "band": "NB", "lythuyet": 1, "vidu": 1, "onclass": 2, "btvn": 2, "source_refs": [], "decompose": "none"
+        },
+        {
+          "dang": "Liệt kê các ước nguyên của một số nguyên $m \\in \\mathbb{Z}$ (Bài 9 / BTVN 9)",
+          "band": "NB", "lythuyet": 1, "vidu": 1, "onclass": 2, "btvn": 1, "source_refs": [], "decompose": "none"
+        },
+        {
+          "dang": "Tìm $\\sqrt{x}$ nguyên từ phương trình $\\sqrt{x}+b = d$ (với $d$ là ước nguyên) (Bài 10 / BTVN 10)",
+          "band": "NB", "lythuyet": 1, "vidu": 1, "onclass": 2, "btvn": 1, "source_refs": [], "decompose": "none"
+        },
+        {
+          "dang": "Tính $x = (\\sqrt{x})^2$ và đối chiếu với điều kiện xác định ($x \\ge 0, x \\ne a^2$) (Bài 11 / BTVN 11)",
+          "band": "NB", "lythuyet": 1, "vidu": 1, "onclass": 2, "btvn": 1, "source_refs": [], "decompose": "none"
+        },
+        {
+          "dang": "Đánh giá dấu của tử và mẫu phân thức $\\dfrac{M(x)}{N(x)} < 0$ khi $N(x) > 0$ (Bài 12 / BTVN 12)",
+          "band": "NB", "lythuyet": 1, "vidu": 1, "onclass": 2, "btvn": 1, "source_refs": [], "decompose": "none"
+        },
+        {
+          "dang": "Giải phương trình $P = 0 \\Leftrightarrow$ tử thức bằng 0 (Bài 13 / BTVN 13)",
+          "band": "NB", "lythuyet": 1, "vidu": 1, "onclass": 2, "btvn": 1, "source_refs": [], "decompose": "none"
+        },
+        {
+          "dang": "Tìm $x$ để $|P| = P$ (tương đương $P \\ge 0$) (Bài 14 / BTVN 14)",
+          "band": "NB", "lythuyet": 1, "vidu": 1, "onclass": 2, "btvn": 1, "source_refs": [], "decompose": "none"
+        },
+        {
+          "dang": "So sánh biểu thức $P$ với số $k$ bằng cách xét hiệu $P - k$ (Bài 15 / BTVN 15)",
+          "band": "NB", "lythuyet": 1, "vidu": 1, "onclass": 2, "btvn": 1, "source_refs": [], "decompose": "none"
+        },
+        {
+          "dang": "Đánh giá $P \\ge a$ hoặc $P \\le b$ để tìm giá trị nguyên của $P$ (Bài 16 / BTVN 16)",
+          "band": "NB", "lythuyet": 1, "vidu": 1, "onclass": 2, "btvn": 1, "source_refs": [], "decompose": "none"
+        },
+        {
+          "dang": "Cho $P = \\dfrac{\\sqrt{x}-2}{\\sqrt{x}+1}$, tìm $x$ để $P < \\dfrac{1}{2}$ (giải BPT chứa căn) (Bài 17 / BTVN 17)",
+          "band": "TH", "lythuyet": 1, "vidu": 1, "onclass": 2, "btvn": 2, "source_refs": [], "decompose": "none"
+        },
+        {
+          "dang": "Cho $P = \\dfrac{\\sqrt{x}+3}{\\sqrt{x}+1}$, tìm $x \\in \\mathbb{Z}$ để $P$ nhận giá trị nguyên (Bài 18 / BTVN 18)",
+          "band": "TH", "lythuyet": 1, "vidu": 1, "onclass": 2, "btvn": 2, "source_refs": [], "decompose": "none"
+        },
+        {
+          "dang": "Cho $P = \\dfrac{\\sqrt{x}-1}{\\sqrt{x}+2}$, tìm $x$ để $P > 0$ hoặc $P \\le 0$ (Bài 19 / BTVN 19)",
+          "band": "TH", "lythuyet": 1, "vidu": 1, "onclass": 2, "btvn": 2, "source_refs": [], "decompose": "none"
+        },
+        {
+          "dang": "Giải phương trình phân thức $P = \\dfrac{\\sqrt{x}-3}{\\sqrt{x}+2} = \\dfrac{1}{2}$ (Bài 20 / BTVN 20)",
+          "band": "TH", "lythuyet": 1, "vidu": 1, "onclass": 2, "btvn": 2, "source_refs": [], "decompose": "none"
+        },
+        {
+          "dang": "Bài toán tổng hợp Bài I Đề thi Vào 10: Rút gọn $B(x)$ và tìm $x$ để $P < k$ (Dạng Đề thi Vào 10 Hà Nội) (Bài 21 / BTVN 21)",
+          "band": "VD", "lythuyet": 1, "vidu": 1, "onclass": 1, "btvn": 1, "source_refs": [], "decompose": "vd"
+        },
+        {
+          "dang": "Bài toán tổng hợp Bài I Đề thi Vào 10: Rút gọn $B(x)$ và tìm $x \\in \\mathbb{Z}$ để $P \\in \\mathbb{Z}$ (Dạng Đề thi Vào 10 Hà Nội) (Bài 22 / BTVN 22)",
+          "band": "VD", "lythuyet": 1, "vidu": 1, "onclass": 1, "btvn": 1, "source_refs": [], "decompose": "vd"
+        }
+      ]
+    }
+  ]
+}

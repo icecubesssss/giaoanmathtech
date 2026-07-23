@@ -1,0 +1,285 @@
+{
+  "slug": "phieu-a-duong-tron-quan-he-duong-kinh-day",
+  "title": "Đường tròn, quan hệ đường kính và dây cung",
+  "eyebrow": "CHỦ ĐỀ • HÌNH HỌC",
+  "grade_label": "Lớp 9 • Ôn vào 10",
+  "class_tier": "B",
+  "stages": [
+    {
+      "kind": "review",
+      "number": 1,
+      "title": "Khám phá — KTBC / nhịp cầu vào bài",
+      "blocks": [
+        {
+          "type": "opener",
+          "text": "Mảnh vỡ khảo cổ học: Một chiếc đĩa gốm cổ hình tròn bị vỡ chỉ còn lại một mảnh vòm cong $AB$. Làm thế nào để các nhà khảo cổ học xác định lại tâm và đo chính xác bán kính của chiếc đĩa gốc để phục dựng?"
+        },
+        {
+          "type": "figure",
+          "tikz": "\\begin{tikzpicture}[line width=0.9pt,font=\\small]\\coordinate (O) at (0,0);\\draw[brand,line width=1.5pt] (35:2) arc (35:145:2);\\node[brand,above] at (90:2) {Mảnh đĩa vỡ};\\coordinate (A) at (145:2);\\coordinate (B) at (35:2);\\draw[ink,dashed] (O)--(A) (O)--(B);\\draw[ink,fill=ink!10] (O) circle (0.05);\\node[below] at (O) {$O$ (Tâm cần tìm)};\\node[left] at (A) {$A$};\\node[right] at (B) {$B$};\\end{tikzpicture}",
+          "caption": "Phục dựng tâm đĩa từ cung tròn vỡ.",
+          "width": "0.38\\linewidth"
+        },
+        {
+          "type": "para",
+          "text": "\\textbf{Ôn tập tam giác vuông và đường tròn.} Ta đã biết tam giác vuông ngoại tiếp đường tròn có tâm là trung điểm cạnh huyền: [[br]] Với $\\triangle ABC$ vuông tại $A$, gọi $I$ là trung điểm của cạnh huyền $BC$. Theo tính chất trung tuyến tam giác vuông, ta có $IA = IB = IC = \\dfrac{BC}{2}$. [[br]] Do đó, ba điểm $A, B, C$ cùng nằm trên đường tròn tâm $[[mblank:0.8cm]]$, đường kính $[[mblank:1.2cm]]$."
+        },
+        {
+          "type": "noted",
+          "text": "\\textbf{Bí quyết trực chiến.} Để chứng minh $4$ điểm $A, B, C, D$ cùng thuộc đường tròn đường kính $XY$, ta thường chỉ ra các tam giác vuông $\\triangle XAY$ và $\\triangle XDY$ nhận $XY$ làm cạnh huyền chung."
+        }
+      ],
+      "solution": "Ba điểm $A, B, C$ cùng thuộc đường tròn tâm $I$ (trung điểm $BC$), đường kính $BC$.",
+      "teacher_note": "Đặt tình huống chiếc đĩa vỡ để HS thấy sự cần thiết của việc xác định tâm (giao 3 trung trực). Sau đó ôn lại trung tuyến tam giác vuông — vũ khí chính để làm ý a) bài hình vào 10."
+    },
+    {
+      "kind": "concept",
+      "number": 2,
+      "title": "Khái niệm — Đường tròn và quan hệ đường kính - dây cung",
+      "blocks": [
+        {
+          "type": "noted",
+          "text": "\\textbf{1. Sự xác định đường tròn.} Qua ba điểm không thẳng hàng, ta vẽ được duy nhất một đường tròn. Tâm của đường tròn này là giao điểm các đường trung trực của tam giác tạo bởi ba điểm đó."
+        },
+        {
+          "type": "noted",
+          "text": "\\textbf{2. Quan hệ giữa đường kính và dây.} [[br]] - Định lý 1: Trong các dây của một đường tròn, đường kính là dây có độ dài lớn nhất. [[br]] - Định lý 2 (Vuông góc): Trong một đường tròn, đường kính vuông góc với một dây thì đi qua trung điểm của dây ấy. [[br]] - Định lý 3 (Đi qua trung điểm): Trong một đường tròn, đường kính đi qua trung điểm của một dây \\textbf{không đi qua tâm} thì vuông góc với dây ấy."
+        },
+        {
+          "type": "figure",
+          "tikz": "\\begin{tikzpicture}[line width=0.9pt,font=\\small]\\draw[ink] (0,0) circle (2);\\coordinate (O) at (0,0);\\coordinate (A) at (-2,0);\\coordinate (B) at (2,0);\\coordinate (C) at (-1.2,-1.6);\\coordinate (D) at (1.2,-1.6);\\coordinate (H) at (0,-1.6);\\draw[ink] (A)--(B);\\draw[brand,line width=1.1pt] (C)--(D);\\draw[ink,dashed] (O)--(H);\\rightanglemark{H}{O}{D}\\draw[ink,fill=ink!10] (O) circle (0.05);\\node[below left] at (O) {$O$};\\node[left] at (A) {$A$};\\node[right] at (B) {$B$};\\node[below left] at (C) {$C$};\\node[below right] at (D) {$D$};\\node[below] at (H) {$H$};\\node[ink,above] at (1,0) {Đường kính $AB$};\\node[brand,below] at (0,-1.6) {Dây $CD$};\\end{tikzpicture}",
+          "caption": "Đường kính $AB$ và dây $CD$ vuông góc tại trung điểm $H$.",
+          "width": "0.4\\linewidth"
+        },
+        {
+          "type": "para",
+          "text": "\\textbf{Ví dụ mẫu 1.} Cho hình chữ nhật $ABCD$ có $AB = 6$, $BC = 8$. Chứng minh bốn điểm $A, B, C, D$ cùng thuộc một đường tròn. Tính bán kính đường tròn đó. [[br]] \\textit{Giải:} Gọi $O$ là giao điểm của hai đường chéo $AC$ và $BD$. Vì $ABCD$ là hình chữ nhật nên ta có $OA = OB = OC = OD = \\dfrac{AC}{2}$. [[br]] Áp dụng Pythagore cho $\\triangle ABC$ vuông tại $B$: $AC = \\sqrt{AB^2 + BC^2} = \\sqrt{6^2 + 8^2} = [[mblank:1cm]]$. [[br]] Bán kính đường tròn ngoại tiếp là $R = OA = \\dfrac{AC}{2} = [[mblank:1cm]]$."
+        },
+        {
+          "type": "para",
+          "text": "\\textbf{Ví dụ mẫu 2.} Cho đường tròn $(O; 10\\text{ cm})$. Vẽ dây $AB = 16\\text{ cm}$ không đi qua tâm. Kẻ $OH \\perp AB$ tại $H$. Tính khoảng cách từ tâm $O$ đến dây $AB$. [[br]] \\textit{Giải:} Vì $OH \\perp AB$ nên $H$ là trung điểm của dây $AB \\Rightarrow AH = \\dfrac{AB}{2} = [[mblank:1cm]]\\text{ cm}$. [[br]] Áp dụng Pythagore cho $\\triangle OAH$ vuông tại $H$: $OH = \\sqrt{OA^2 - AH^2} = \\sqrt{10^2 - 8^2} = [[mblank:1cm]]\\text{ cm}$."
+        },
+        {
+          "type": "noted",
+          "variant": "trap",
+          "text": "\\textbf{BẪY ĐIỂM!} Học sinh rất hay ngộ nhận đường kính đi qua trung điểm của một dây thì vuông góc với dây đó mà quên kiểm tra điều kiện \\textbf{dây không đi qua tâm}. Nếu dây là đường kính (đi qua tâm $O$), hai đường kính bất kỳ đi qua trung điểm của nhau (tâm $O$) chưa chắc đã vuông góc với nhau!"
+        },
+        {
+          "type": "noted",
+          "variant": "target",
+          "text": "\\textbf{ĐÍCH THI VÀO 10.} Ý a) bài hình tuyển sinh thường yêu cầu chứng minh 4 điểm cùng thuộc một đường tròn (tương đương chứng minh tứ giác nội tiếp ở HKII). Việc hiểu rõ đường kính - dây cung và tam giác vuông chung cạnh huyền giúp ăn chắc điểm ý này."
+        }
+      ],
+      "solution": "Ví dụ 1: $AC = \\sqrt{36+64}=10$, bán kính $R = 5$. [[br]] Ví dụ 2: $AH = 8\\text{ cm}$, $OH = \\sqrt{100-64} = 6\\text{ cm}$.",
+      "teacher_note": "Yêu cầu HS tự điền đáp số vào ví dụ mẫu dưới sự định hướng của GV. Nhấn mạnh việc giải thích tại sao $H$ là trung điểm dây $AB$ (áp dụng quan hệ vuông góc giữa đường kính và dây)."
+    },
+    {
+      "kind": "practice1",
+      "number": 3,
+      "title": "Luyện tập 1 — BÀI TẬP TRÊN LỚP (nền)",
+      "blocks": [
+        {
+          "type": "problem",
+          "label": "Bài 1.",
+          "level": 1,
+          "tier": "onclass",
+          "statement": "Cho đường tròn $(O; R)$ có bán kính $R = 5\\text{ cm}$. Xác định vị trí của các điểm $A, B, C, D, E, F, G, H$ đối với đường tròn $(O)$, biết khoảng cách từ tâm $O$ đến các điểm này lần lượt là: [[br]] a) $OA = 3\\text{ cm}$ [[br]] b) $OB = 5\\text{ cm}$ [[br]] c) $OC = 7\\text{ cm}$ [[br]] d) $OD = 4{,}5\\text{ cm}$ [[br]] e) $OE = 5\\text{ cm}$ [[br]] f) $OF = 0\\text{ cm}$ [[br]] g) $OG = 5{,}2\\text{ cm}$ [[br]] h) $OH = 2\\text{ cm}$."
+        },
+        {
+          "type": "writelines",
+          "count": 0
+        },
+        {
+          "type": "problem",
+          "label": "Bài 2.",
+          "level": 1,
+          "tier": "onclass",
+          "statement": "Cho tam giác $ABC$ vuông tại $A$ có $AB = 6\\text{ cm}, AC = 8\\text{ cm}$. Gọi $M$ là trung điểm của $BC$. Xác định xem các điểm sau đây có thuộc đường tròn $(M; 5\\text{ cm})$ hay không: [[br]] a) Điểm $A$ [[br]] b) Điểm $B$ [[br]] c) Điểm $C$ [[br]] d) Điểm $M$ [[br]] e) Điểm $P$ có $MP = 4\\text{ cm}$ [[br]] f) Điểm $Q$ có $MQ = 5\\text{ cm}$ [[br]] g) Điểm $R$ có $MR = 6\\text{ cm}$ [[br]] h) Điểm $S$ trùng với trung điểm của $AB$."
+        },
+        {
+          "type": "writelines",
+          "count": 0
+        },
+        {
+          "type": "problem",
+          "label": "Bài 3.",
+          "level": 1,
+          "tier": "onclass",
+          "statement": "Cho đường tròn $(O)$ và dây $AB = 12\\text{ cm}$. Kẻ $OH \\perp AB$ tại $H$. Điền Đúng (Đ) hoặc Sai (S) cho các phát biểu sau: [[br]] a) $H$ là trung điểm của $AB$ [[br]] b) $HA = HB = 6\\text{ cm}$ [[br]] c) $OH$ đi qua trung điểm của $AB$ [[br]] d) Đường kính đi qua $H$ thì vuông góc với $AB$ [[br]] e) Nếu $M$ là trung điểm $AB$ thì $OM \\perp AB$ [[br]] f) Nếu dây $CD$ song song với $AB$ và $OH \\perp CD$ tại $K$ thì $K$ là trung điểm $CD$ [[br]] g) Dây $AB$ lớn hơn đường kính của đường tròn [[br]] h) Khoảng cách từ tâm $O$ đến dây $AB$ luôn nhỏ hơn bán kính $R$."
+        },
+        {
+          "type": "writelines",
+          "count": 0
+        },
+        {
+          "type": "problem",
+          "label": "Bài 4.",
+          "level": 2,
+          "tier": "onclass",
+          "statement": "Cho hình chữ nhật $ABCD$. Gọi $O$ là giao điểm của hai đường chéo. [[br]] a) Chứng minh bốn điểm $A, B, C, D$ cùng thuộc đường tròn tâm $O$. [[br]] b) Gọi $M$ là trung điểm $AB$, chứng minh $M$ nằm trong đường tròn $(O)$. [[br]] c) Gọi $N$ là trung điểm $BC$, chứng minh $N$ nằm trong đường tròn $(O)$. [[br]] d) Cho $AB=12\\text{ cm}, BC=16\\text{ cm}$. Tính bán kính đường tròn $(O)$."
+        },
+        {
+          "type": "writelines",
+          "count": 3
+        },
+        {
+          "type": "problem",
+          "label": "Bài 5.",
+          "level": 2,
+          "tier": "onclass",
+          "statement": "Cho tam giác nhọn $ABC$, kẻ đường cao $AD$. Từ $D$ hạ $DM \\perp AB$ tại $M$, $DN \\perp AC$ tại $N$. [[br]] a) Chứng minh bốn điểm $A, M, D, N$ cùng thuộc một đường tròn. Xác định tâm $I$ của đường tròn này. [[br]] b) Chứng minh $IM = IN = IA = ID$. [[br]] c) Chứng minh $AM \\cdot AB = AN \\cdot AC$. [[br]] d) Chứng minh tam giác $AMN$ đồng dạng với tam giác $ACB$."
+        },
+        {
+          "type": "writelines",
+          "count": 4
+        }
+      ],
+      "solution": "\\textbf{Bài 1.} So sánh khoảng cách với bán kính $R = 5$: [[br]] a) $OA < R \\Rightarrow A$ nằm trong đường tròn. [[br]] b) $OB = R \\Rightarrow B$ nằm trên đường tròn. [[br]] c) $OC > R \\Rightarrow C$ nằm ngoài đường tròn. [[br]] d) $OD < R \\Rightarrow D$ nằm trong đường tròn. [[br]] e) $OE = R \\Rightarrow E$ nằm trên đường tròn. [[br]] f) $OF < R \\Rightarrow F$ nằm trong đường tròn (trùng tâm). [[br]] g) $OG > R \\Rightarrow G$ nằm ngoài đường tròn. [[br]] h) $OH < R \\Rightarrow H$ nằm trong đường tròn.\\par\\smallskip \\textbf{Bài 2.} Cạnh huyền $BC = \\sqrt{AB^2+AC^2} = 10\\text{ cm} \\Rightarrow$ bán kính của $(M; 5\\text{ cm})$ là $R=5\\text{ cm}$. [[br]] Theo tính chất tam giác vuông, trung tuyến $MA = BC/2 = 5\\text{ cm}$. [[br]] a) $MA = 5 \\Rightarrow A$ thuộc $(M)$. [[br]] b) $MB = 5 \\Rightarrow B$ thuộc $(M)$. [[br]] c) $MC = 5 \\Rightarrow C$ thuộc $(M)$. [[br]] d) $MM = 0 < 5 \\Rightarrow M$ không thuộc $(M)$ (nằm trong). [[br]] e) $MP = 4 < 5 \\Rightarrow P$ không thuộc $(M)$. [[br]] f) $MQ = 5 \\Rightarrow Q$ thuộc $(M)$. [[br]] g) $MR = 6 > 5 \\Rightarrow R$ không thuộc $(M)$. [[br]] h) $S$ là trung điểm $AB \\Rightarrow MS = \\sqrt{AM^2 - AS^2}$ với $AS = 3, AM = 5 \\Rightarrow MS = 4 < 5 \\Rightarrow S$ không thuộc $(M)$.\\par\\smallskip \\textbf{Bài 3.} a) Đ; b) Đ; c) Đ; d) Đ (vì $H$ là trung điểm); e) Đ (quan hệ đường kính - dây); f) Đ; g) S (đường kính luôn lớn nhất); h) Đ (dây không qua tâm).\\par\\smallskip \\textbf{Bài 4.} a) Vì $ABCD$ là hình chữ nhật nên $OA=OB=OC=OD=AC/2 \\Rightarrow A, B, C, D$ cùng thuộc đường tròn $(O)$. [[br]] b) Tam giác $OAB$ cân tại $O$, có $OM$ là trung tuyến $\\Rightarrow OM \\perp AB$ tại $M$. Trong $\\triangle OAM$ vuông tại $M$ ta có $OM < OA = R \\Rightarrow M$ nằm trong $(O)$. [[br]] c) Tương tự $ON \\perp BC$ tại $N \\Rightarrow ON < OB = R \\Rightarrow N$ nằm trong $(O)$. [[br]] d) $AC = \\sqrt{12^2+16^2}=20\\text{ cm} \\Rightarrow R = OA = 10\\text{ cm}$.\\par\\smallskip \\textbf{Bài 5.} a) $\\triangle AMD$ vuông tại $M \\Rightarrow M$ thuộc đường tròn đường kính $AD$. $\\triangle AND$ vuông tại $N \\Rightarrow N$ thuộc đường tròn đường kính $AD$. Do đó $A, M, D, N$ cùng thuộc đường tròn đường kính $AD$. [[br]] b) $I$ là trung điểm $AD$, theo tính chất trung tuyến tam giác vuông: $IM = IA = ID = AD/2$ và $IN = IA = ID = AD/2 \\Rightarrow IM = IN = IA = ID$. [[br]] c) Trong $\\triangle ABD$ vuông tại $D$, đường cao $DM$: $AD^2 = AM \\cdot AB$ (hệ thức lượng). [[br]] Trong $\\triangle ACD$ vuông tại $D$, đường cao $DN$: $AD^2 = AN \\cdot AC$ (hệ thức lượng). [[br]] Suy ra $AM \\cdot AB = AN \\cdot AC$. [[br]] d) Từ $AM \\cdot AB = AN \\cdot AC \\Rightarrow \\dfrac{AM}{AC} = \\dfrac{AN}{AB}$. Xét $\\triangle AMN$ và $\\triangle ACB$ có: $\\widehat{A}$ chung và $\\dfrac{AM}{AC} = \\dfrac{AN}{AB} \\Rightarrow \\triangle AMN \\sim \\triangle ACB$ (c-g-c).",
+      "teacher_note": "Chữa nhanh Bài 1, 2, 3 bằng cách hỏi đáp nhanh tại lớp để kiểm tra nhận thức. Tập trung hướng dẫn Bài 4 và Bài 5 cách vẽ hình và trình bày tự luận hình học chuẩn xác."
+    },
+    {
+      "kind": "practice2",
+      "number": 4,
+      "title": "Luyện tập 2 — Vận dụng thực tế và đề thi vào 10",
+      "blocks": [
+        {
+          "type": "problem",
+          "label": "Bài 6.",
+          "level": 3,
+          "tier": "onclass",
+          "statement": "\\textbf{Toán thực tế — Thiết kế cổng vòm:} Một cổng chào hình vòm có dạng một phần của đường tròn (cung tròn) với bề rộng chân cổng $AB = 8\\text{ m}$ và chiều cao đỉnh vòm $CH = 2{,}5\\text{ m}$ ($H$ là trung điểm của $AB$ và $CH \\perp AB$). [[br]] a) Tính bán kính $R$ của đường tròn chứa vòm cổng đó. [[br]] b) Một chiếc xe tải chở hàng có chiều ngang $2.4\\text{ m}$ và chiều cao tổng cộng $2.2\\text{ m}$ muốn đi qua chính giữa cổng. Hỏi xe tải đó có đi qua được không?"
+        },
+        {
+          "type": "figure",
+          "tikz": "\\begin{tikzpicture}[line width=0.9pt,font=\\small]\\coordinate (O) at (0,-1.25);\\draw[brand,line width=1.6pt] (3,-1.25) arc (0:180:3.25);\\coordinate (A) at (-3,0);\\coordinate (B) at (3,0);\\coordinate (H) at (0,0);\\coordinate (C) at (0,2);\\draw[ink] (A)--(B);\\draw[ink,dashed] (H)--(C);\\draw[ink,dashed] (O)--(A) (O)--(C);\\rightanglemark{H}{C}{B}\\draw[ink,fill=ink!10] (O) circle (0.05);\\node[below] at (O) {$O$};\\node[below left] at (A) {$A$};\\node[below right] at (B) {$B$};\\node[below right] at (H) {$H$};\\node[above] at (C) {$C$};\\node[ink,below] at (-1.5,0) {$4$ m};\\node[brand,left] at (-1.5,1.5) {Vòm cổng};\\node[ink,right] at (0,1) {$2{,}5$ m};\\end{tikzpicture}",
+          "caption": "Mô hình thiết kế vòm cổng chào hình tròn.",
+          "width": "0.42\\linewidth"
+        },
+        {
+          "type": "writelines",
+          "count": 3
+        },
+        {
+          "type": "problem",
+          "label": "Bài 7.",
+          "level": 4,
+          "tier": "onclass",
+          "statement": "Cho đường tròn $(O; R)$ có bán kính $R = 5\\text{ cm}$ và một dây $AB = 8\\text{ cm}$ không đi qua tâm. Trên tia đối của tia $AB$, lấy điểm $M$ sao cho $AM = 3\\text{ cm}$. Tính độ dài đoạn thẳng $OM$. \\quad \\textit{(Trích đề thi học kỳ I THCS Cầu Giấy)}"
+        },
+        {
+          "type": "writelines",
+          "count": 3
+        }
+      ],
+      "solution": "\\textbf{Bài 6.} a) Gọi tâm đường tròn chứa cung vòm cổng là $O$, bán kính $R = OA = OC$. [[br]] Vì $H$ là trung điểm $AB \\Rightarrow AH = AB/2 = 4\\text{ m}$. [[br]] Có $CH \\perp AB$ tại $H$ nên $O, H, C$ thẳng hàng $\\Rightarrow OH = OC - CH = R - 2{,}5$ (m). [[br]] Áp dụng Pythagore cho $\\triangle OAH$ vuông tại $H$: $OA^2 = AH^2 + OH^2 \\Rightarrow R^2 = 4^2 + (R - 2{,}5)^2 \\Rightarrow R^2 = 16 + R^2 - 5R + 6{,}25 \\Rightarrow 5R = 22{,}25 \\Rightarrow R = 4{,}45\\text{ m}$. [[br]] b) Xe đi chính giữa cổng $\\Rightarrow$ mỗi bên cách trung tâm $1.2\\text{ m}$. [[br]] Gọi điểm trên vành cổng cách trung tâm $1.2\\text{ m}$ là $K$. Khoảng cách ngang từ $K$ đến trục đối xứng là $x = 1.2\\text{ m}$. [[br]] Độ cao của vòm cổng tại vị trí này là $y = \\sqrt{R^2 - x^2} - OH$ (khoảng cách đứng từ mặt đất đến $K$). [[br]] Ta có khoảng cách từ $O$ đến $K$ hình chiếu xuống đất là $d_K = \\sqrt{R^2 - 1.2^2} = \\sqrt{4.45^2 - 1.44} = \\sqrt{19.8025 - 1.44} = \\sqrt{18.3625} \\approx 4.285\\text{ m}$. [[br]] Chiều cao vòm tại đó là $h_K = d_K - OH = 4.285 - (4.45 - 2.5) = 4.285 - 1.95 = 2.335\\text{ m}$. [[br]] Vì chiều cao xe là $2.2\\text{ m} < 2.335\\text{ m}$ nên xe tải đi qua được.\\par\\smallskip \\textbf{Bài 7.} Kẻ $OH \\perp AB$ tại $H \\Rightarrow H$ là trung điểm của dây $AB \\Rightarrow HA = HB = AB/2 = 4\\text{ cm}$. [[br]] Áp dụng Pythagore cho $\\triangle OAH$ vuông tại $H$: $OH = \\sqrt{OA^2 - AH^2} = \\sqrt{5^2 - 4^2} = 3\\text{ cm}$. [[br]] Vì $M$ thuộc tia đối của $AB$ nên $H$ nằm giữa $M$ và $B$. Ta có $MH = MA + AH = 3 + 4 = 7\\text{ cm}$. [[br]] Áp dụng Pythagore cho $\\triangle OHM$ vuông tại $H$: $OM = \\sqrt{OH^2 + MH^2} = \\sqrt{3^2 + 7^2} = \\sqrt{58}\\text{ cm} \\approx 7{,}62\\text{ cm}$.",
+      "teacher_note": "Bài 6b yêu cầu học sinh thiết lập trục tọa độ hoặc dùng Pythagore để tính khoảng cách đứng từ mặt đất đến vành cổng tại điểm biên xe $x=1.2$. Đây là bài toán thực tế chuẩn form thi vào 10 TP.HCM."
+    },
+    {
+      "kind": "reflection",
+      "number": 5,
+      "title": "Tổng kết",
+      "blocks": [
+        {
+          "type": "para",
+          "text": "Cốt lõi bài học: [[br]] 1. Khoảng cách từ tâm đến dây cung liên hệ mật thiết với độ dài dây qua Pythagore. [[br]] 2. Trình bày bài toán thực tế cần quy đổi chuẩn các kích thước và dựng tam giác vuông phụ trợ."
+        },
+        {
+          "type": "mindmap",
+          "caption": "Sơ đồ tư duy — em điền các ô trống để chốt kiến thức bài học",
+          "root": "Đường tròn \\& Dây cung",
+          "branches": [
+            {
+              "label": "Chứng minh thuộc ĐT",
+              "children": [
+                {
+                  "label": "Tâm \\& Bán kính $R$"
+                },
+                {
+                  "label": "Trung điểm cạnh huyền"
+                }
+              ]
+            },
+            {
+              "label": "Đường kính \\& Dây",
+              "children": [
+                {
+                  "label": "Đường kính là dây lớn nhất"
+                },
+                {
+                  "label": "Đường kính $\\perp$ Dây tại trung điểm"
+                }
+              ]
+            },
+            {
+              "label": "Công cụ tính toán",
+              "children": [
+                {
+                  "label": "Định lý Pythagore"
+                }
+              ]
+            }
+          ]
+        },
+        {
+          "type": "problem",
+          "label": "Bài 8.",
+          "level": 1,
+          "tier": "btvn",
+          "statement": "Cho đường tròn $(O; 10\\text{ cm})$. Điền Đúng (Đ) hoặc Sai (S) cho các phát biểu sau: [[br]] a) Điểm $A$ cách $O$ một khoảng $8\\text{ cm}$ thì nằm trong đường tròn [[br]] b) Điểm $B$ cách $O$ một khoảng $10\\text{ cm}$ thì nằm trên đường tròn [[br]] c) Điểm $C$ cách $O$ một khoảng $12\\text{ cm}$ thì nằm ngoài đường tròn [[br]] d) Dây lớn nhất của đường tròn có độ dài $20\\text{ cm}$ [[br]] e) Dây đi qua tâm có độ dài nhỏ hơn $20\\text{ cm}$ [[br]] f) Mọi dây không qua tâm đều có độ dài nhỏ hơn $20\\text{ cm}$ [[br]] g) Khoảng cách từ tâm đến dây lớn nhất là $0\\text{ cm}$."
+        },
+        {
+          "type": "problem",
+          "label": "Bài 9.",
+          "level": 1,
+          "tier": "btvn",
+          "statement": "Cho đường tròn $(O; R)$ đường kính $AB$. Gọi $C$ là trung điểm của $OA$, $D$ là trung điểm của $OB$. Vẽ dây $EF$ vuông góc với $AB$ tại $C$, dây $GH$ vuông góc với $AB$ tại $D$. [[br]] a) $C$ là trung điểm của $EF$ [[br]] b) $D$ là trung điểm của $GH$ [[br]] c) $EF = GH$ [[br]] d) $EF \\parallel GH$ [[br]] e) Tứ giác $OECF$ là hình chữ nhật [[br]] f) $OE = OF = R$ [[br]] g) Khoảng cách từ $O$ đến dây $EF$ bằng khoảng cách từ $O$ đến dây $GH$."
+        },
+        {
+          "type": "problem",
+          "label": "Bài 10.",
+          "level": 1,
+          "tier": "btvn",
+          "statement": "Cho tam giác $ABC$ vuông cân tại $A$ có $AB = 6\\text{ cm}$. Gọi $M$ là trung điểm của $BC$. [[br]] a) Tính độ dài cạnh $BC$ [[br]] b) Tính khoảng cách từ $A$ đến $M$ [[br]] c) Điểm $A$ nằm trên đường tròn đường kính $BC$ [[br]] d) Bán kính đường tròn ngoại tiếp $\\triangle ABC$ là $3\\sqrt{2}\\text{ cm}$ [[br]] e) Điểm $B$ nằm ngoài đường tròn $(M; 3\\text{ cm})$ [[br]] f) Điểm $C$ nằm ngoài đường tròn $(M; 3\\text{ cm})$ [[br]] g) Điểm $A$ nằm trên đường tròn $(M; 3\\sqrt{2}\\text{ cm})$."
+        },
+        {
+          "type": "problem",
+          "label": "Bài 11.",
+          "level": 2,
+          "tier": "btvn",
+          "statement": "Cho tam giác $ABC$ nhọn. Vẽ đường cao $AD$. [[br]] a) Chứng minh bốn điểm $A, B, D, E$ không cùng thuộc một đường tròn. [[br]] b) Chứng minh bốn điểm $A, D, B, E$ thuộc đường tròn nếu tam giác $ABC$ vuông tại $C$. [[br]] c) Vẽ đường tròn đường kính $AB$ cắt $AC$ tại $E$, cắt $BC$ tại $D$. Chứng minh $AD \\perp BC$ và $BE \\perp AC$. [[br]] d) Tính diện tích tam giác $ABC$ nếu biết $AB = 10\\text{ cm}, AC = 12\\text{ cm}$ và $\\widehat{A}=60^\\circ$."
+        },
+        {
+          "type": "problem",
+          "label": "Bài 12.",
+          "level": 2,
+          "tier": "btvn",
+          "statement": "Cho đường tròn $(O; 13\\text{ cm})$. Kẻ dây $AB = 24\\text{ cm}$. [[br]] a) Tính khoảng cách từ tâm $O$ đến dây $AB$. [[br]] b) Gọi $M$ là trung điểm của $AB$, kẻ đường kính $CD$ đi qua $M$. Chứng minh $CD \\perp AB$. [[br]] c) Tính độ dài các đoạn thẳng $MC$ và $MD$."
+        },
+        {
+          "type": "problem",
+          "label": "Bài 13.",
+          "level": 3,
+          "tier": "btvn",
+          "statement": "Một chiếc đĩa cổ bị vỡ chỉ còn lại một mảnh vòm như hình vẽ chặng Khám phá. Người ta đo được khoảng cách giữa hai đầu mút mảnh vỡ $AB = 16\\text{ cm}$ và chiều cao đỉnh cung $CH = 4\\text{ cm}$ ($H$ là trung điểm $AB$ và $CH \\perp AB$). [[br]] a) Tính bán kính $R$ của chiếc đĩa cổ đó. [[br]] b) Nếu chiếc đĩa gốc có đường kính $20\\text{ cm}$ thì mảnh vỡ này có phải của chiếc đĩa đó không?"
+        },
+        {
+          "type": "para",
+          "text": "\\textbf{Nhịp cầu lên mở rộng.} Với các bài toán có nhiều dây song song hoặc bài toán chứng minh mở rộng, ta thường dựng thêm đường vuông góc từ tâm đến dây để khai thác tính chất trung điểm."
+        },
+        {
+          "type": "problem",
+          "label": "Bài 14.",
+          "level": 4,
+          "tier": "extend",
+          "statement": "Cho đường tròn $(O)$ đường kính $AB$, dây $CD$ song song với $AB$ ($CD$ không đi qua tâm $O$). Kẻ $AE \\perp CD$ tại $E$, $BF \\perp CD$ tại $F$. Chứng minh $EC = DF$.",
+          "hints": [
+            "Kẻ $OH \\perp CD$ tại $H$. Áp dụng định lý đường kính vuông góc với dây cung để chỉ ra $H$ là trung điểm của $CD$.",
+            "Chứng minh tứ giác $AEFB$ là hình thang vuông, có $OH$ là đường trung bình song song với $AE$ và $BF$, từ đó suy ra $H$ là trung điểm của $EF$."
+          ]
+        }
+      ],
+      "solution": "Sơ đồ tư duy: cạnh huyền; lớn nhất; trung điểm; Pythagore.\\par\\smallskip \\textbf{Bài 8.} a) Đ; b) Đ; c) Đ; d) Đ; e) S (bằng); f) Đ; g) Đ.\\par\\smallskip \\textbf{Bài 9.} a) Đ (quan hệ vuông góc); b) Đ; c) Đ (khoảng cách tâm bằng nhau); d) Đ (cùng vuông góc $AB$); e) S; f) Đ; g) Đ.\\par\\smallskip \\textbf{Bài 10.} a) $BC = \\sqrt{6^2+6^2}=6\\sqrt{2}\\text{ cm}$. [[br]] b) $AM = BC/2 = 3\\sqrt{2}\\text{ cm}$. [[br]] c) Đ (trung tuyến ứng cạnh huyền); d) Đ ($R=AM=3\\sqrt{2}$); e) Đ; f) Đ; g) Đ.\\par\\smallskip \\textbf{Bài 11.} a) Góc $\\widehat{AEB}$ không vuông. [[br]] b) Nếu $\\triangle ABC$ vuông tại $C \\Rightarrow E \\equiv C, D \\equiv C$ nên hiển nhiên thuộc đường tròn. [[br]] c) $E \\in (AB) \\Rightarrow \\widehat{AEB}=90^\\circ \\Rightarrow BE \\perp AC$. $D \\in (AB) \\Rightarrow \\widehat{ADB}=90^\\circ \\Rightarrow AD \\perp BC$. [[br]] d) Kẻ đường cao $BH \\Rightarrow BH = AB\\sin60^\\circ = 5\\sqrt{3}\\text{ cm} \\Rightarrow S = \\dfrac{1}{2}AC\\cdot BH = 30\\sqrt{3}\\ \\text{cm}^2$.\\par\\smallskip \\textbf{Bài 12.} a) Kẻ $OM \\perp AB \\Rightarrow M$ là trung điểm $AB \\Rightarrow AM=12\\text{ cm}$. Pythagore $\\triangle OAM$: $OM = \\sqrt{13^2-12^2}=5\\text{ cm}$. [[br]] b) Đường kính $CD$ đi qua trung điểm $M$ của dây $AB$ không qua tâm nên $CD \\perp AB$. [[br]] c) $MC = R - OM = 13 - 5 = 8\\text{ cm}$; $MD = R + OM = 13 + 5 = 18\\text{ cm}$.\\par\\smallskip \\textbf{Bài 13.} a) $R^2 = 8^2 + (R-4)^2 \\Rightarrow R^2 = 64 + R^2 - 8R + 16 \\Rightarrow 8R=80 \\Rightarrow R=10\\text{ cm}$. [[br]] b) Bán kính đĩa cổ là $10\\text{ cm} \\Rightarrow$ đường kính $20\\text{ cm}$, trùng khớp với đường kính của đĩa gốc nên mảnh vỡ này thuộc đĩa đó.\\par\\smallskip \\textbf{Bài 14.} Kẻ $OH \\perp CD$ tại $H \\Rightarrow H$ là trung điểm $CD \\Rightarrow HC = HD$. [[br]] Ta có $AE \\parallel BF \\parallel OH$ (cùng vuông góc $CD$). [[br]] Tứ giác $AEFB$ là hình thang vuông ($AE \\parallel BF$). [[br]] Có $O$ là trung điểm $AB$, $OH$ song song hai đáy nên $OH$ là đường trung bình của hình thang $\\Rightarrow H$ là trung điểm $EF \\Rightarrow HE = HF$. [[br]] Mà $HE = HC + CE$, $HF = HD + DF$, kết hợp $HC = HD$ ta được $CE = DF$.",
+      "teacher_note": "Bài 14 là bài toán chứng minh hình thang trong đường tròn rất đẹp, hướng dẫn HS dùng đường trung bình hình thang."
+    }
+  ]
+}

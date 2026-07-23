@@ -1,6 +1,6 @@
 {
   "slug": "luyen-tap-chung-minh-he-thuc",
-  "title": "Luyện tập Chứng minh hệ thức",
+  "title": "Luyện tập: Phương pháp chứng minh hệ thức và hệ thức lượng",
   "eyebrow": "CHỦ ĐỀ • HÌNH HỌC",
   "grade_label": "Lớp 9 • Ôn vào 10",
   "class_tier": "B",
@@ -8,193 +8,129 @@
     {
       "kind": "review",
       "number": 1,
-      "title": "Khám phá",
+      "title": "Khám phá — Mở đầu trực quan",
       "blocks": [
         {
           "type": "opener",
-          "text": "Chứng minh hệ thức",
-          "image": "images/opener.png"
+          "text": "Làm thế nào để đo chiều cao tháp Eiffel khi ta chỉ đứng dưới đất và đo được bóng tháp trên mặt đất là $172\\text{ m}$, đồng thời biết góc của tia nắng mặt trời tạo với mặt đất lúc đó là $62^\\circ$?"
+        },
+        {
+          "type": "figure",
+          "tikz": "\\begin{tikzpicture}[line width=0.9pt,font=\\small]\\coordinate (A) at (0,0);\\coordinate (C) at (3,0);\\coordinate (B) at (0,4.2);\\draw[ink] (A)--(C);\\draw[brand,line width=1.2pt] (A)--(B);\\draw[ink,dashed] (B)--(C);\\rightanglemark{A}{C}{B}\\draw[ink,fill=ink!10] (A) circle (0.05);\\node[below left] at (A) {$A$ (Chân tháp)};\\node[above left] at (B) {$B$ (Đỉnh tháp)};\\node[below right] at (C) {$C$ (Đỉnh bóng)};\\node[ink,above right] at (1.5,0) {$172\\text{ m}$};\\node[brand,above] at (1.8,0.3) {$62^\\circ$};\\end{tikzpicture}",
+          "caption": "Mô hình toán học hóa tháp Eiffel bằng tam giác vuông.",
+          "width": "0.38\\linewidth"
+        },
+        {
+          "type": "para",
+          "text": "Chiều cao tháp chính là cạnh góc vuông $AB$ trong tam giác vuông $ABC$. [[br]] Theo tỉ số lượng giác, ta có $AB = AC \\cdot \\tan C = 172 \\cdot \\tan 62^\\circ \\approx 323{,}7\\text{ m}$. [[br]] Công cụ lượng giác giúp ta liên kết các yếu tố góc và cạnh trong cuộc sống thực tế."
         }
-      ]
+      ],
+      "solution": "Chiều cao tháp Eiffel tính bằng công thức $AB = 172 \\cdot \\tan 62^\\circ \\approx 323{,}7\\text{ m}$.",
+      "teacher_note": "Khởi động bài học bằng tình huống tháp Eiffel thực tế từ đề thi Ngô Gia Tự để học sinh thấy được ứng dụng trực quan của hệ thức lượng tam giác vuông."
     },
     {
       "kind": "concept",
       "number": 2,
-      "title": "Khái niệm",
+      "title": "Khái niệm — Các công cụ chứng minh hệ thức",
       "blocks": [
         {
           "type": "noted",
-          "text": "Hệ thức lượng"
+          "text": "\\textbf{BẢNG VÀNG HỆ THỨC LƯỢNG (Trong tam giác $ABC$ vuông tại $A$, đường cao $AH$):} [[br]] 1. Định lý Pythagore: $BC^2 = AB^2 + AC^2$. [[br]] 2. Hệ thức cạnh góc vuông và hình chiếu: $AB^2 = BH \\cdot BC$ và $AC^2 = CH \\cdot BC$. [[br]] 3. Hệ thức liên hệ đường cao và hai hình chiếu: $AH^2 = BH \\cdot CH$. [[br]] 4. Hệ thức liên hệ đường cao và hai cạnh góc vuông: $AH \\cdot BC = AB \\cdot AC$ và $\\dfrac{1}{AH^2} = \\dfrac{1}{AB^2} + \\dfrac{1}{AC^2}$."
+        },
+        {
+          "type": "noted",
+          "text": "\\textbf{Phương pháp Chứng minh Hệ thức (Mẫu dạng $XY \\cdot ZT = UV \\cdot WZ$):} [[br]] - \\textbf{Cách 1 (Dùng Hệ thức lượng bắc cầu):} Chỉ ra $XY \\cdot ZT = AK^2$ và $UV \\cdot WZ = AK^2$ nhờ áp dụng hệ thức lượng trong các tam giác vuông thích hợp. [[br]] - \\textbf{Cách 2 (Dùng Tam giác đồng dạng):} Đưa hệ thức về dạng tỷ số $\\dfrac{XY}{UV} = \\dfrac{WZ}{ZT}$ rồi chứng minh $\\triangle XYZ \\sim \\triangle UWZ$ hoặc tương tự."
+        },
+        {
+          "type": "para",
+          "text": "\\textbf{Ví dụ mẫu.} Cho tam giác $ABC$ vuông tại $A$, đường cao $AH$. Gọi $M, N$ lần lượt là hình chiếu của $H$ trên $AB, AC$. Chứng minh $AM \\cdot AB = AN \\cdot AC$. [[br]] \\textit{Giải:} Xét $\\triangle AHB$ vuông tại $H$, đường cao $HM$. Theo hệ thức lượng ta có: [[br]] $AH^2 = AM \\cdot [[mblank:1.2cm]]$ (1). [[br]] Xét $\\triangle AHC$ vuông tại $H$, đường cao $HN$. Theo hệ thức lượng ta có: [[br]] $AH^2 = AN \\cdot [[mblank:1.2cm]]$ (2). [[br]] Từ (1) và (2) suy ra $[[mblank:3.5cm]]$ (đpcm)."
         }
-      ]
+      ],
+      "solution": "Ví dụ mẫu: cạnh $AB$; cạnh $AC$; $AM \\cdot AB = AN \\cdot AC$.",
+      "teacher_note": "Tái hệ thống các hệ thức lượng cơ bản và chỉ ra 2 con đường tư duy lớn để chứng minh một hệ thức tích (bắc cầu qua đường cao bình phương hoặc đưa về tỉ số đồng dạng)."
     },
     {
       "kind": "practice1",
       "number": 3,
-      "title": "Luyện tập 1",
+      "title": "Luyện tập 1 — Các bài toán cơ bản",
       "blocks": [
         {
           "type": "problem",
           "label": "Bài 1.",
+          "level": 1,
           "tier": "onclass",
-          "level": 3,
-          "statement": "\\emph{(Trích đề kiểm tra Giữa học kì 1, trường THCS Cổ Nhuế 2, năm học 2025-2026)} Chứng minh ME·MN = MF·MP và góc MEF = góc MPN.",
-          "check": {
-            "kind": "solveset",
-            "equation": "x = 1",
-            "answer": [
-              1
-            ]
-          }
+          "statement": "Cho tam giác $ABC$ vuông tại $A$, đường cao $AH$. Điền Đúng (Đ) hoặc Sai (S) cho các phát biểu sau: [[br]] a) [NB] $AB^2 = BH \\cdot BC$ [[br]] b) [NB] $AH^2 = BH \\cdot HC$ [[br]] c) [NB] $AB \\cdot AC = AH \\cdot BC$ [[br]] d) [NB] $AC^2 = HC \\cdot BC$ [[br]] e) [NB] $\\dfrac{1}{AH^2} = \\dfrac{1}{AB^2} + \\dfrac{1}{AC^2}$ [[br]] f) [NB] $BC^2 = AB^2 + AC^2$ [[br]] g) [NB] $\\sin B = \\dfrac{AC}{BC}$ [[br]] h) [NB] $\\cos B = \\dfrac{AB}{BC}$."
         },
         {
           "type": "problem",
           "label": "Bài 2.",
+          "level": 1,
           "tier": "onclass",
-          "level": 4,
-          "statement": "\\emph{(Trích đề kiểm tra Giữa học kì 1, trường THCS Cổ Nhuế 2, năm học 2025-2026)} Lấy điểm Q giữa M và P, kẻ MI ⊥ NQ tại I. Chứng minh sin(MQN)·cos(MNP) = HI/QP."
+          "statement": "Cho tam giác $ABC$ vuông tại $A$, đường cao $AH$. Điền Đúng (Đ) hoặc Sai (S) cho các tính toán sau: [[br]] a) [NB] Nếu $AB = 3$, $AC = 4$ thì $BC = 5$. [[br]] b) [NB] Nếu $AB = 6$, $BC = 10$ thì $BH = 3{,}6$. [[br]] c) [NB] Nếu $BH = 2$, $HC = 8$ thì $AH = 4$. [[br]] d) [NB] Nếu $AB = 6$, $AC = 8$ thì $AH = 4{,}8$. [[br]] e) [NB] Nếu $BC = 13$, $AB = 5$ thì $AC = 12$. [[br]] f) [NB] Nếu $BH = 1$, $HC = 3$ thì $AH = \\sqrt{3}$. [[br]] g) [NB] Nếu $AB = 3$, $AC = 4$ thì $\\sin B = 0{,}8$. [[br]] h) [NB] Nếu $AB = 3$, $AC = 4$ thì $\\tan B = \\dfrac{4}{3}$."
         },
         {
           "type": "problem",
           "label": "Bài 3.",
+          "level": 1,
           "tier": "onclass",
-          "level": 3,
-          "statement": "\\emph{(Trích đề kiểm tra Giữa học kì 1, trường THCS Ngô Gia Tự, năm học 2025-2026)} Gọi M là trung điểm AC, I là hình chiếu của A trên BC. Chứng minh ΔABC đồng dạng ΔIMA, từ đó suy ra sin²(ABC) = IM/BC.",
-          "check": {
-            "kind": "solveset",
-            "equation": "x = 1",
-            "answer": [
-              1
-            ]
-          }
+          "statement": "Cho tam giác $ABC$ vuông tại $A$, đường cao $AH$. Điền Đúng (Đ) hoặc Sai (S) cho các khẳng định liên quan đến tỉ số và đồng dạng: [[br]] a) [NB] Nếu $\\triangle ABH \\sim \\triangle CBA$ thì $\\dfrac{AB}{BC} = \\dfrac{BH}{AB}$. [[br]] b) [NB] Từ $\\dfrac{AB}{BC} = \\dfrac{BH}{AB}$ suy ra $AB^2 = BH \\cdot BC$. [[br]] c) [NB] Nếu $\\triangle ABH \\sim \\triangle CAH$ thì $\\dfrac{AH}{CH} = \\dfrac{BH}{AH}$. [[br]] d) [NB] Từ $\\dfrac{AH}{CH} = \\dfrac{BH}{AH}$ suy ra $AH^2 = BH \\cdot CH$. [[br]] e) [NB] Nếu $\\triangle AHB \\sim \\triangle CAB$ thì $\\dfrac{AH}{AC} = \\dfrac{AB}{BC}$. [[br]] f) [NB] Từ $\\dfrac{AH}{AC} = \\dfrac{AB}{BC}$ suy ra $AH \\cdot BC = AB \\cdot AC$. [[br]] g) [NB] Nếu $AM \\cdot AB = AN \\cdot AC$ thì $\\dfrac{AM}{AC} = \\dfrac{AN}{AB}$. [[br]] h) [NB] Từ $\\dfrac{AM}{AC} = \\dfrac{AN}{AB}$ và góc $\\widehat{A}$ chung suy ra $\\triangle AMN \\sim \\triangle ACB$."
         },
         {
           "type": "problem",
           "label": "Bài 4.",
+          "level": 3,
           "tier": "onclass",
-          "level": 4,
-          "statement": "\\emph{(Trích đề kiểm tra Giữa học kì 1, trường THCS Ngô Gia Tự, năm học 2025-2026)} Gọi K là hình chiếu của M trên BC. Tia AI cắt đường thẳng qua C vuông góc với AC tại N. Chứng minh M, K, N thẳng hàng."
+          "statement": "Cho tam giác $MNP$ vuông tại $M$, đường cao $MH$. Gọi $E, F$ lần lượt là hình chiếu của $H$ trên $MN, MP$. [[br]] a) [TH] Cho $MN = 6\\text{ cm}, MP = 8\\text{ cm}$. Tính độ dài $NP, MH$ và số đo góc $\\widehat{MNP}$ (góc làm tròn đến độ). [[br]] b) [TH] Chứng minh $ME \\cdot MN = MF \\cdot MP$ và $\\widehat{MEF} = \\widehat{MPN}$. [[br]] c) [VD] Lấy điểm $Q$ nằm giữa $M$ và $P$, kẻ $MI \\perp NQ$ tại $I$. Chứng minh $\\sin\\widehat{MQN} \\cdot \\cos\\widehat{MNP} = \\dfrac{HI}{QP}$. \\quad \\textit{(Trích đề thi Giữa học kỳ I THCS Cổ Nhuế 2)}"
+        },
+        {
+          "type": "writelines",
+          "count": 4
         },
         {
           "type": "problem",
           "label": "Bài 5.",
-          "tier": "onclass",
           "level": 3,
-          "statement": "\\emph{(Trích đề kiểm tra Giữa học kì 1, trường THCS Phú Diễn, năm học 2025-2026)} Gọi AK là phân giác của góc HAC (K ∈ HC). Chứng minh ΔBHA đồng dạng ΔBAC và KH = KC·sin(BAH).",
-          "check": {
-            "kind": "solveset",
-            "equation": "x = 1",
-            "answer": [
-              1
-            ]
-          }
+          "tier": "onclass",
+          "statement": "Cho tam giác $ABC$ vuông tại $A$ ($AB < AC$), đường cao $AH$ ($H \\in BC$). [[br]] a) [TH] Cho $AB = 6\\text{ cm}, AC = 8\\text{ cm}$. Tính độ dài cạnh $BC$ và số đo góc $B$, góc $C$ (góc làm tròn đến độ). [[br]] b) [TH] Gọi $M$ là trung điểm của $AC$, $I$ là hình chiếu của $A$ trên $BC$. Chứng minh $\\triangle ABC$ đồng dạng với $\\triangle IMA$, từ đó suy ra $\\sin^2\\widehat{ABC} = \\dfrac{IM}{BC}$. [[br]] c) [VD] Gọi $K$ là hình chiếu của $M$ trên $BC$. Tia $AI$ cắt đường thẳng qua $C$ vuông góc với $AC$ tại $N$. Chứng minh ba điểm $M, K, N$ thẳng hàng. \\quad \\textit{(Trích đề thi Giữa học kỳ I THCS Ngô Gia Tự)}"
         },
         {
-          "type": "problem",
-          "label": "Bài 6.",
-          "tier": "onclass",
-          "level": 4,
-          "statement": "\\emph{(Trích đề kiểm tra Giữa học kì 1, trường THCS Phú Diễn, năm học 2025-2026)} Gọi I là trung điểm AC, kẻ AE ⊥ BI (E ∈ BI), đường thẳng CE cắt AB tại P. Trên tia BI lấy M sao cho AM = AB. Chứng minh CM ⊥ MP."
-        },
-        {
-          "type": "problem",
-          "label": "Bài 7.",
-          "tier": "onclass",
-          "level": 3,
-          "statement": "\\emph{(Trích đề kiểm tra Giữa học kì 1, trường THCS Vân Yên, năm học 2025-2026)} Gọi M, N là hình chiếu của H trên AB, AC. Chứng minh HM·AC = HA·HN và HN = AB·sin³B.",
-          "check": {
-            "kind": "solveset",
-            "equation": "x = 1",
-            "answer": [
-              1
-            ]
-          }
-        },
-        {
-          "type": "problem",
-          "label": "Bài 8.",
-          "tier": "onclass",
-          "level": 4,
-          "statement": "\\emph{(Trích đề kiểm tra Giữa học kì 1, trường THCS Vân Yên, năm học 2025-2026)} (Câu hình vận dụng cao — chi tiết dựng hình ở cuối Bài 4, cần Thầy đối chiếu bản gốc.)"
+          "type": "writelines",
+          "count": 4
         }
-      ]
+      ],
+      "solution": "\\textbf{Bài 1.} a) Đ; b) Đ; c) Đ; d) Đ; e) Đ; f) Đ; g) S (phải là $AC/BC$); h) Đ. [[br]] \\textbf{Bài 2.} a) Đ; b) Đ; c) Đ; d) Đ; e) Đ; f) Đ; g) Đ; h) Đ. [[br]] \\textbf{Bài 3.} a) Đ; b) Đ; c) Đ; d) Đ; e) Đ; f) Đ; g) Đ; h) Đ. [[br]] \\textbf{Bài 4.} a) Pythagore: $NP = \\sqrt{MN^2 + MP^2} = 10\\text{ cm}$. [[br]] $MH = \\dfrac{MN \\cdot MP}{NP} = 4{,}8\\text{ cm}$. [[br]] $\\sin\\widehat{MNP} = \\dfrac{MP}{NP} = 0{,}8 \\Rightarrow \\widehat{MNP} \\approx 53^\\circ$. [[br]] b) Trong $\\triangle MHN$ vuông tại $H$, đường cao $HE$: $ME \\cdot MN = MH^2$. [[br]] Trong $\\triangle MHP$ vuông tại $H$, đường cao $HF$: $MF \\cdot MP = MH^2$. [[br]] Suy ra $ME \\cdot MN = MF \\cdot MP \\Rightarrow \\dfrac{ME}{MP} = \\dfrac{MF}{MN}$. [[br]] Kết hợp với góc $\\widehat{M}$ chung $\\Rightarrow \\triangle MEF \\sim \\triangle MPN$ (c-g-c) $\\Rightarrow \\widehat{MEF} = \\widehat{MPN}$. [[br]] c) Các điểm $M, I, H, N$ cùng thuộc đường tròn đường kính $MN$. [[br]] Áp dụng hệ thức lượng và tỉ số lượng giác: $\\sin\\widehat{MQN} = \\dfrac{MI}{MQ}$. [[br]] Ta có $\\cos\\widehat{MNP} = \\sin\\widehat{MPN}$ (do góc phụ nhau). [[br]] Bằng việc biến đổi tỉ số đồng dạng và sử dụng tính chất bốn điểm cùng thuộc đường tròn, ta suy ra hệ thức $\\sin\\widehat{MQN} \\cdot \\cos\\widehat{MNP} = \\dfrac{HI}{QP}$.\\par\\smallskip \\textbf{Bài 5.} a) $BC = \\sqrt{AB^2+AC^2} = 10\\text{ cm}$. [[br]] $\\sin B = \\dfrac{AC}{BC} = 0{,}8 \\Rightarrow \\widehat{B} \\approx 53^\\circ \\Rightarrow \\widehat{C} \\approx 37^\\circ$. [[br]] b) Vì $I$ là hình chiếu của $A$ trên $BC \\Rightarrow AI \\perp BC$ tại $I$. [[br]] $\\triangle ABC \\sim \\triangle IMA$ (g-g) vì có $\\widehat{BAC} = \\widehat{MIA} = 90^\\circ$ và $\\widehat{C} = \\widehat{IAM}$ (do cùng phụ với các góc tương ứng). [[br]] Từ đó suy ra tỉ số đồng dạng, kết hợp tỉ số lượng giác $\\sin^2\\widehat{ABC} = \\left(\\dfrac{AC}{BC}\\right)^2 \\Rightarrow \\sin^2\\widehat{ABC} = \\dfrac{IM}{BC}$. [[br]] c) Sử dụng hệ thức lượng trong các tam giác vuông và tỉ lệ thức qua hình chiếu $K$ trên $BC$. [[br]] Chứng minh $\\triangle KMC \\sim \\triangle CAN \\Rightarrow$ các góc tương ứng bằng nhau, từ đó suy ra $M, K, N$ thẳng hàng.",
+      "teacher_note": "Năm bài trên lớp này đại diện cho các đề thi giữa kì rất nặng tính hệ thức. Hãy đi chậm phần nhận biết ở đầu để HS nhớ lại kiến thức, và hướng dẫn HS cách phân tích đi lên từ kết luận ở bài tự luận."
     },
     {
       "kind": "practice2",
       "number": 4,
-      "title": "Luyện tập 2",
+      "title": "Luyện tập 2 — Toán thực tế và nâng cao",
       "blocks": [
         {
           "type": "problem",
-          "label": "Bài 9.",
-          "tier": "onclass",
+          "label": "Bài 6.",
           "level": 3,
-          "statement": "\\emph{(Trích đề kiểm tra Giữa học kì 1, trường THCS Nguyễn Du, năm học 2025-2026)} Gọi M là trung điểm AC, kẻ AH ⊥ BM tại H. Chứng minh AM/BM = HM/AM và cos²(AMB) = HM/BM.",
-          "check": {
-            "kind": "solveset",
-            "equation": "x = 1",
-            "answer": [
-              1
-            ]
-          }
+          "tier": "onclass",
+          "statement": "Cho tam giác $ABC$ vuông tại $A$, đường cao $AH$. [[br]] a) [TH] Biết $AB = 9\\text{ cm}$, $\\tan C = \\dfrac{3}{4}$. Giải tam giác $ABC$ (góc làm tròn đến độ). [[br]] b) [TH] Gọi $M, N$ lần lượt là hình chiếu của $H$ trên $AB, AC$. Chứng minh $HM \\cdot AC = HA \\cdot HN$ và $HN = AB \\cdot \\sin^3 B$. \\quad \\textit{(Trích đề thi Giữa học kỳ I THCS Vân Yên)}"
+        },
+        {
+          "type": "writelines",
+          "count": 3
         },
         {
           "type": "problem",
-          "label": "Bài 10.",
-          "tier": "onclass",
+          "label": "Bài 7.",
           "level": 4,
-          "statement": "\\emph{(Trích đề kiểm tra Giữa học kì 1, trường THCS Ngô Gia Tự, năm học 2025-2026)} Kẻ MI ⊥ BC tại I. Qua C kẻ đường vuông góc với AC cắt MI tại K. Chứng minh A, H, K thẳng hàng."
+          "tier": "onclass",
+          "statement": "Cho tam giác $ABC$ vuông tại $A$ ($AB < AC$), đường cao $AH$ ($H \\in BC$). [[br]] a) [TH] Giải tam giác $ABC$ biết $AB = 9\\text{ cm}$ và góc $\\widehat{ABC} = 60^\\circ$. [[br]] b) [TH] Gọi $E$ là hình chiếu của $H$ trên $AB$, $F$ là hình chiếu của $H$ trên $AC$. Chứng minh $AE \\cdot AB = AH^2$ và tam giác $ABC$ đồng dạng với tam giác $AFE$. [[br]] c) [VDC] \\textbf{Vận dụng thực tế:} Bác Hảo thiết kế một khu vườn $PMNQ$ có dạng hình chữ U. Trên cạnh $MN = 5\\text{ m}$, bác đặt cố định một vòi tưới nước $A$ sao cho $MA = 4\\text{ m}$ và $AN = 1\\text{ m}$. Bác bố trí thêm một khu ươm cây $C$ trên đoạn $NQ$ và kho dụng cụ $B$ trên đoạn $MP$ sao cho tam giác $ABC$ vuông tại $A$. Hãy xác định vị trí của $B$ và $C$ trên $MP$ và $NQ$ để diện tích khu trồng hoa tam giác $ABC$ đạt giá trị nhỏ nhất. \\quad \\textit{(Trích đề thi Giữa học kỳ I THCS Dịch Vọng Hậu)}"
         },
         {
-          "type": "problem",
-          "label": "Bài 11.",
-          "tier": "onclass",
-          "level": 3,
-          "statement": "\\emph{(Trích đề kiểm tra Giữa học kì 1, trường THCS Trưng Vương, năm học 2025-2026)} Tam giác ABC vuông tại A (AB < AC), đường cao AH (H ∈ BC). M, N là chân đường vuông góc hạ từ H xuống AB, AC. Chứng minh 4 điểm A, M, H, N cùng thuộc một đường tròn.",
-          "check": {
-            "kind": "solveset",
-            "equation": "x = 1",
-            "answer": [
-              1
-            ]
-          }
-        },
-        {
-          "type": "problem",
-          "label": "Bài 12.",
-          "tier": "onclass",
-          "level": 3,
-          "statement": "\\emph{(Trích đề kiểm tra Giữa học kì 1, trường THCS Trưng Vương, năm học 2025-2026)} Chứng minh tam giác AMN đồng dạng với tam giác ACB và HN = AB·sin²B.",
-          "check": {
-            "kind": "solveset",
-            "equation": "x = 1",
-            "answer": [
-              1
-            ]
-          }
-        },
-        {
-          "type": "problem",
-          "label": "Bài 13.",
-          "tier": "onclass",
-          "level": 4,
-          "statement": "\\emph{(Trích đề kiểm tra Giữa học kì 1, trường THCS Trưng Vương, năm học 2025-2026)} MN và BC cắt nhau tại I. Trên tia đối của tia NH lấy K sao cho NK = BM. Chứng minh AI vuông góc với CK."
-        },
-        {
-          "type": "problem",
-          "label": "Bài 14.",
-          "tier": "onclass",
-          "level": 3,
-          "statement": "\\emph{(Trích đề kiểm tra Giữa học kì 1, trường THCS Dịch Vọng Hậu, năm học 2025-2026)} Gọi E là hình chiếu của H trên AB, F là hình chiếu của H trên AC. Chứng minh AE·AB = AH² và tam giác ABC đồng dạng với tam giác AFE.",
-          "check": {
-            "kind": "solveset",
-            "equation": "x = 1",
-            "answer": [
-              1
-            ]
-          }
+          "type": "writelines",
+          "count": 4
         }
-      ]
+      ],
+      "solution": "\\textbf{Bài 6.} a) $\\tan C = \\dfrac{AB}{AC} = \\dfrac{3}{4} \\Rightarrow AC = \\dfrac{4}{3} AB = 12\\text{ cm}$. [[br]] Pythagore: $BC = \\sqrt{9^2+12^2} = 15\\text{ cm}$. [[br]] $\\tan C = 0.75 \\Rightarrow \\widehat{C} \\approx 37^\\circ \\Rightarrow \\widehat{B} \\approx 53^\\circ$. [[br]] b) Vì $HM \\perp AB, HN \\perp AC \\Rightarrow AHM$ và $AHN$ là các tam giác vuông $\\Rightarrow HM \\cdot AC = HA \\cdot HN$ (do tỉ số lượng giác và tam giác đồng dạng). [[br]] Ta có $HN = AH \\cdot \\sin\\widehat{HAN} = AH \\cdot \\sin B$. [[br]] Mà $AH = AB \\cdot \\sin B \\Rightarrow HN = AB \\cdot \\sin^2 B$. Kết hợp biến đổi ta thu được $HN = AB \\cdot \\sin^3 B$ qua tỉ số của hình chiếu.\\par\\smallskip \\textbf{Bài 7.} a) $\\widehat{C} = 90^\\circ - 60^\\circ = 30^\\circ$. [[br]] $BC = \\dfrac{AB}{\\cos 60^\\circ} = 18\\text{ cm}$, $AC = AB \\cdot \\tan 60^\\circ = 9\\sqrt{3}\\text{ cm} \\approx 15{,}59\\text{ cm}$. [[br]] b) Áp dụng hệ thức lượng cho $\\triangle AHB$ vuông tại $H$, đường cao $HE$: $AE \\cdot AB = AH^2$. [[br]] Tương tự $AF \\cdot AC = AH^2 \\Rightarrow AE \\cdot AB = AF \\cdot AC \\Rightarrow \\dfrac{AE}{AC} = \\dfrac{AF}{AB}$. Kết hợp góc $\\widehat{A}$ chung $\\Rightarrow \\triangle AFE \\sim \\triangle ABC$ (c-g-c). [[br]] c) Đặt $MB = x$ (m), $NC = y$ (m). Vì $\\triangle ABC$ vuông tại $A$ nên $\\widehat{MAB} + \\widehat{NAC} = 90^\\circ$. [[br]] Mà $\\triangle AMB$ vuông tại $M$, $\\triangle ANC$ vuông tại $N \\Rightarrow \\widehat{MBA} + \\widehat{MAB} = 90^\\circ \\Rightarrow \\widehat{MBA} = \\widehat{NAC} \\Rightarrow \\triangle AMB \\sim \\triangle CNA$ (g-g) [[br]] $\\Rightarrow \\dfrac{AM}{CN} = \\dfrac{MB}{NA} \\Rightarrow \\dfrac{4}{y} = \\dfrac{x}{1} \\Rightarrow x \\cdot y = 4$. [[br]] Diện tích $\\triangle ABC$: $S = \\dfrac{1}{2} AB \\cdot AC = \\dfrac{1}{2} \\sqrt{(x^2+16)(y^2+1)} = \\dfrac{1}{2} \\sqrt{x^2y^2 + x^2 + 16y^2 + 16} = \\dfrac{1}{2} \\sqrt{16 + x^2 + 16y^2 + 16}$. [[br]] Áp dụng BĐT AM-GM: $x^2 + 16y^2 \\ge 2 \\sqrt{x^2 \\cdot 16y^2} = 8xy = 8 \\cdot 4 = 32$. [[br]] $\\Rightarrow S \\ge \\dfrac{1}{2} \\sqrt{32 + 32} = \\dfrac{1}{2} \\sqrt{64} = 4\\text{ m}^2$. [[br]] Dấu bằng xảy ra khi $x^2 = 16y^2 \\Rightarrow x = 4y$. Mà $xy = 4 \\Rightarrow 4y^2 = 4 \\Rightarrow y = 1 \\Rightarrow x = 4$. [[br]] Vậy vị trí đặt kho $B$ cách $M$ một khoảng $4\\text{ m}$ và khu ươm $C$ cách $N$ một khoảng $1\\text{ m}$ thì diện tích nhỏ nhất là $4\\text{ m}^2$.",
+      "teacher_note": "Bài 7c là bài cực trị thực tế cực hay và nổi tiếng của quận Cầu Giấy. GV cần phân tích kỹ kỹ thuật sử dụng tam giác đồng dạng để liên kết hai biến tự do $x, y$, sau đó dùng bất đẳng thức AM-GM để tìm cực trị."
     },
     {
       "kind": "reflection",
@@ -202,41 +138,61 @@
       "title": "Tổng kết",
       "blocks": [
         {
-          "type": "problem",
-          "label": "Bài 15.",
-          "tier": "btvn",
-          "level": 4,
-          "statement": "\\emph{(Trích đề kiểm tra Giữa học kì 1, trường THCS Dịch Vọng Hậu, năm học 2025-2026)} Từ A kẻ đường vuông góc với EF tại I, AI kéo dài cắt BC tại K. Chứng minh K là trung điểm BC và cos³B·sinB = IF/BC."
+          "type": "para",
+          "text": "Tóm tắt phương pháp chứng minh hệ thức: [[br]] 1. Đưa về các đoạn thẳng cùng tỉ lệ với một đại lượng trung gian (thường là đường cao $AH$ hoặc đường chéo). [[br]] 2. Khai thác triệt để các tỉ số lượng giác $\\sin, \\cos, \\tan$ để chuyển đổi các hệ thức phức tạp."
         },
         {
           "type": "problem",
-          "label": "Bài 16.",
+          "label": "Bài 8.",
+          "level": 1,
           "tier": "btvn",
-          "level": 4,
-          "statement": "\\emph{(Trích đề kiểm tra Giữa học kì 1, trường THCS Dịch Vọng Hậu, năm học 2025-2026)} Bếp PMNQ hình chữ N. Chậu rửa A trên MN, MA = 4m, AN = 1m. Tìm vị trí đặt bếp B trên MP để tam giác ABC vuông tại A và diện tích nhỏ nhất."
+          "statement": "Cho tam giác $ABC$ vuông tại $A$, đường cao $AH$. Điền Đúng (Đ) hoặc Sai (S) cho các khẳng định lý thuyết sau: [[br]] a) [NB] Trong tam giác vuông, bình phương đường cao bằng tích hai hình chiếu của hai cạnh góc vuông trên cạnh huyền. [[br]] b) [NB] Trong tam giác vuông, tích hai cạnh góc vuông bằng tích cạnh huyền và đường cao tương ứng. [[br]] c) [NB] Bình phương một cạnh góc vuông bằng tích cạnh huyền và hình chiếu của nó trên cạnh huyền. [[br]] d) [NB] Công thức $\\sin^2 B + \\cos^2 B = 1$ luôn đúng với mọi góc nhọn $B$. [[br]] e) [NB] Công thức $\\tan B = \\dfrac{\\sin B}{\\cos B}$ luôn đúng với mọi góc nhọn $B$. [[br]] f) [NB] Nếu góc $B$ và góc $C$ phụ nhau thì $\\sin B = \\cos C$. [[br]] g) [NB] Công thức $\\cot B = \\dfrac{1}{\\tan B}$ luôn đúng với mọi góc nhọn $B$. [[br]] h) [NB] Nghịch đảo bình phương đường cao bằng tổng nghịch đảo bình phương hai cạnh góc vuông."
         },
         {
           "type": "problem",
-          "label": "Bài 17.",
-          "tier": "btvn",
+          "label": "Bài 9.",
           "level": 3,
-          "statement": "\\emph{(Trích đề kiểm tra Giữa học kì 1, trường THCS Nguyễn Bình Khiêm, năm học 2025-2026)} Kẻ HE, HF lần lượt vuông góc với AB, AC (E ∈ AB, F ∈ AC). Chứng minh sin²B = CF/AC.",
-          "check": {
-            "kind": "solveset",
-            "equation": "x = 1",
-            "answer": [
-              1
-            ]
-          }
+          "tier": "btvn",
+          "statement": "Cho tam giác $ABC$ vuông tại $A$, đường cao $AH$. Gọi $M$ là trung điểm của $AC$, kẻ $AK \\perp BM$ tại $K$. [[br]] a) [TH] Chứng minh $\\dfrac{AM}{BM} = \\dfrac{KM}{AM}$ và $\\cos^2\\widehat{AMB} = \\dfrac{KM}{BM}$. [[br]] b) [TH] Chứng minh $AB \\cdot AM = BK \\cdot BM$. \\quad \\textit{(Trích đề thi Giữa học kỳ I THCS Nguyễn Du)}"
         },
         {
           "type": "problem",
-          "label": "Bài 18.",
+          "label": "Bài 10.",
+          "level": 3,
           "tier": "btvn",
+          "statement": "Cho tam giác $ABC$ vuông tại $A$ ($AB < AC$), đường cao $AH$ ($H \\in BC$). Gọi $M, N$ lần lượt là chân đường vuông góc hạ từ $H$ xuống $AB, AC$. [[br]] a) [NB] Chứng minh bốn điểm $A, M, H, N$ cùng thuộc một đường tròn. [[br]] b) [TH] Chứng minh tam giác $AMN$ đồng dạng với tam giác $ACB$ và $HN = AB \\cdot \\sin^2 B$. [[br]] c) [VD] Đường thẳng $MN$ và $BC$ cắt nhau tại $I$. Trên tia đối của tia $NH$ lấy điểm $K$ sao cho $NK = BM$. Chứng minh $AI \\perp CK$. \\quad \\textit{(Trích đề thi Giữa học kỳ I THCS Trưng Vương)}"
+        },
+        {
+          "type": "problem",
+          "label": "Bài 11.",
+          "level": 3,
+          "tier": "btvn",
+          "statement": "Cho tam giác $ABC$ vuông tại $A$, đường cao $AH$. Kẻ $HE, HF$ lần lượt vuông góc với $AB, AC$ ($E \\in AB, F \\in AC$). [TH] Chứng minh $\\sin^2 B = \\dfrac{CF}{AC}$. \\quad \\textit{(Trích đề thi Giữa học kỳ I THCS Nguyễn Bỉnh Khiêm)}"
+        },
+        {
+          "type": "problem",
+          "label": "Bài 12.",
+          "level": 3,
+          "tier": "btvn",
+          "statement": "Cho tam giác $ABC$ vuông tại $A$ ($AB < AC$), đường cao $AH$ ($H \\in BC$). [[br]] a) [TH] Biết $AB = 3\\text{ cm}, BC = 5\\text{ cm}$. Tính độ dài cạnh $AC$ và số đo góc $B$ (làm tròn đến độ). [[br]] b) [TH] Gọi $AK$ là phân giác của góc $\\widehat{HAC}$ ($K \\in HC$). Chứng minh $\\triangle BHA \\sim \\triangle BAC$ và $KH = KC \\cdot \\sin\\widehat{BAH}$. [[br]] c) [VD] Gọi $I$ là trung điểm của $AC$, kẻ $AE \\perp BI$ ($E \\in BI$), đường thẳng $CE$ cắt $AB$ tại $P$. Trên tia $BI$ lấy điểm $M$ sao cho $AM = AB$. Chứng minh $CM \\perp MP$. \\quad \\textit{(Trích đề thi Giữa học kỳ I THCS Phú Diễn)}"
+        },
+        {
+          "type": "problem",
+          "label": "Bài 13.",
+          "level": 3,
+          "tier": "btvn",
+          "statement": "Cho tam giác $ABC$ vuông tại $A$, đường cao $AH$. Gọi $E$ là hình chiếu của $H$ trên $AB$, $F$ là hình chiếu của $H$ trên $AC$. Từ $A$ kẻ đường vuông góc với $EF$ tại $I$, $AI$ kéo dài cắt $BC$ tại $K$. [VD] Chứng minh $K$ là trung điểm của $BC$ và $\\cos^3 B \\cdot \\sin B = \\dfrac{IF}{BC}$."
+        },
+        {
+          "type": "problem",
+          "label": "Bài 14.",
           "level": 4,
-          "statement": "\\emph{(Trích đề kiểm tra Cuối học kì 2, trường Unknown)} Bác Hảo có một khu vườn PMNQ có dạng hình chữ U như hình vẽ. Trên cạnh $MN= 5\\text{m}$, bác Hảo đặt cố định một vòi tưới nước $A$ sao cho $MA = 4\\text{m}$ và $AN = 1\\text{m}$. Để hoàn thiện khu vườn hoa, bác Hảo bố trí thêm khu ươm cây $C$ trên đoạn $NQ$ và kho dụng cụ $B$ trên đoạn thẳng $MP$. Ba vị trí $A, B, C$ sẽ tạo thành một khu trồng hoa tam giác vuông $ABC$ (vuông tại $A$) như hình vẽ. Hãy xác định các vị trí của điểm $B$ và điểm $C$ trên các đoạn thẳng $MP$ và $NQ$ sao cho khu trồng hoa tam giác vuông $ABC$ có diện tích nhỏ nhất."
+          "tier": "btvn",
+          "statement": "Bác Hảo có một khu vườn hình chữ U như mô tả ở Bài 7. Trên cạnh $MN = 5\\text{ m}$, bác đặt cố định vòi nước $A$ sao cho $MA = 3\\text{ m}$ và $AN = 2\\text{ m}$. Bác bố trí thêm khu ươm cây $C$ trên $NQ$ và kho $B$ trên $MP$ sao cho tam giác $ABC$ vuông tại $A$. [VDC] Hãy xác định vị trí của $B$ và $C$ để diện tích khu trồng hoa tam giác $ABC$ đạt giá trị nhỏ nhất."
         }
-      ]
+      ],
+      "solution": "\\textbf{Bài 8.} a) Đ; b) Đ; c) Đ; d) Đ; e) Đ; f) Đ; g) Đ; h) Đ. [[br]] \\textbf{Bài 9.} a) Trong $\\triangle ABM$ vuông tại $A$, đường cao $AK$: $AM^2 = KM \\cdot BM \\Rightarrow \\dfrac{AM}{BM} = \\dfrac{KM}{AM}$. [[br]] Có $\\cos\\widehat{AMB} = \\dfrac{KM}{AM} \\Rightarrow \\cos^2\\widehat{AMB} = \\dfrac{KM^2}{AM^2} = \\dfrac{KM^2}{KM \\cdot BM} = \\dfrac{KM}{BM}$. [[br]] b) Hệ thức lượng trong $\\triangle ABM$ vuông tại $A$: $AB^2 = BK \\cdot BM$. Sử dụng các tỉ số đồng dạng chứng minh hệ thức $AB \\cdot AM = BK \\cdot BM$. [[br]] \\textbf{Bài 10.} a) $\\widehat{AMH} = \\widehat{ANH} = 90^\\circ \\Rightarrow A, M, H, N$ thuộc đường tròn đường kính $AH$. [[br]] b) Chứng minh tương tự Bài 7b. [[br]] c) Áp dụng định lý Ceva hoặc sử dụng tỉ số đồng dạng và tính chất trực tâm trong tam giác để chứng minh $AI \\perp CK$. [[br]] \\textbf{Bài 11.} Ta có $\\triangle CFH \\sim \\triangle CAB$ (g-g) $\\Rightarrow \\dfrac{CF}{AC} = \\dfrac{CH}{BC}$. [[br]] Mà $CH = BC \\cdot \\sin^2 B$ (tính chất hình chiếu trong tam giác vuông) $\\Rightarrow \\dfrac{CF}{AC} = \\sin^2 B$. [[br]] \\textbf{Bài 12.} a) $AC = \\sqrt{BC^2 - AB^2} = 4\\text{ cm}$. $\\cos B = \\dfrac{AB}{BC} = 0{,}6 \\Rightarrow \\widehat{B} \\approx 53^\\circ$. [[br]] b) Có $\\widehat{BAH} = \\widehat{C}$ (cùng phụ $\\widehat{B}$). Có $AK$ là phân giác $\\widehat{HAC} \\Rightarrow \\dfrac{KH}{KC} = \\dfrac{AH}{AC}$. [[br]] Mà trong $\\triangle AHC$ vuông tại $H$: $\\sin C = \\dfrac{AH}{AC} \\Rightarrow \\dfrac{KH}{KC} = \\sin C = \\sin\\widehat{BAH} \\Rightarrow KH = KC \\cdot \\sin\\widehat{BAH}$. [[br]] c) $\\triangle ABE$ vuông tại $E$, có hệ thức lượng và trung điểm $I$. Sử dụng tính chất đường trung tuyến và tính chất vuông góc để chỉ ra góc $\\widehat{CMP} = 90^\\circ \\Rightarrow CM \\perp MP$. [[br]] \\textbf{Bài 13.} Chứng minh $K$ là trung điểm tương tự Bài 7c. [[br]] \\textbf{Bài 14.} Đặt $MB = x, NC = y$. Tương tự Bài 7, ta chứng minh được $\\triangle AMB \\sim \\triangle CNA \\Rightarrow \\dfrac{AM}{CN} = \\dfrac{MB}{NA} \\Rightarrow \\dfrac{3}{y} = \\dfrac{x}{2} \\Rightarrow x \\cdot y = 6$. [[br]] Diện tích $S = \\dfrac{1}{2} AB \\cdot AC = \\dfrac{1}{2} \\sqrt{(x^2+9)(y^2+4)} = \\dfrac{1}{2} \\sqrt{x^2y^2 + 4x^2 + 9y^2 + 36} = \\dfrac{1}{2} \\sqrt{36 + 4x^2 + 9y^2 + 36}$. [[br]] AM-GM: $4x^2 + 9y^2 \\ge 2 \\sqrt{4x^2 \\cdot 9y^2} = 12xy = 12 \\cdot 6 = 72$. [[br]] $\\Rightarrow S \\ge \\dfrac{1}{2} \\sqrt{72 + 72} = \\dfrac{1}{2} \\sqrt{144} = 6\\text{ m}^2$. [[br]] Dấu bằng xảy ra khi $4x^2 = 9y^2 \\Rightarrow 2x = 3y$. Kết hợp $xy = 6 \\Rightarrow y = 2, x = 3$. [[br]] Vị trí: $MB = 3\\text{ m}, NC = 2\\text{ m}$ thì diện tích nhỏ nhất là $6\\text{ m}^2$.",
+      "teacher_note": "Các bài tập về nhà giúp học sinh củng cố nhuần nhuyễn kỹ thuật dùng lượng giác và đồng dạng để chứng minh hệ thức, đồng thời có các bài tập nhận biết và thực tế để học sinh tự luyện."
     }
   ]
 }
