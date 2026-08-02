@@ -15,7 +15,7 @@ from config import settings
 
 __all__ = [
     "load_tier_spec", "subject_block", "rates_for", "tier_ratio",
-    "target_counts", "BANDS",
+    "target_counts", "draw_minutes", "BANDS",
 ]
 
 BANDS = ("NB", "TH", "VD", "VDC")
@@ -45,6 +45,22 @@ def rates_for(spec: dict, grade: str, subject: str) -> dict:
     for seg, bands in block.get("rates_override", {}).items():
         merged.setdefault(seg, {}).update(bands)
     return merged
+
+
+def draw_minutes(spec: dict) -> float:
+    """Phút CỘNG THÊM cho mỗi hình HS phải TỰ VẼ (Thầy chốt 2026-07-26: 5′).
+
+    Cộng theo BÀI (một bài chỉ vẽ hình một lần) chứ không theo ý a),b),c…"""
+    return float(spec.get("draw_minutes", 0.0))
+
+
+def quick_minutes(spec: dict) -> float:
+    """Phút/câu cho câu NHẬN BIẾT trắc nghiệm / điền chỗ chấm trên HÌNH VẼ SẴN
+    (Thầy chốt 2026-07-27: 1′ — "với mức độ này thì hs vẫn dùng 1p thôi").
+
+    Thay hẳn rate của band NB, KHÔNG nhân rate hình ×2. Band TH/VD có khai hình
+    vẽ sẵn thì vẫn phải tính toán nên chỉ giảm nửa rate, không dùng hằng số này."""
+    return float(spec.get("quick_minutes", 0.0)) or 1.0
 
 
 def tier_ratio(spec: dict, grade: str, subject: str, tier: str) -> dict | None:

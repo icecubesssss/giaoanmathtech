@@ -8,6 +8,8 @@ Quy ước đếm (Thầy chốt 2026-06-11):
   • "Câu" = ý nhỏ a),b),c)… (mỗi ý 1 câu); bài VD tách thì đếm theo thẻ [NB]/[TH]/
     [VD]/[VDC] đầu mỗi ý. KHÔNG đếm Khám phá/Khái niệm (giờ GV giảng).
   • Phút/câu + ngân sách + tỉ lệ: lấy từ tier_spec theo (lớp, môn, tầng).
+  • Bài HÌNH khai `draw: true` (HS phải tự vẽ hình) cộng thêm `draw_minutes` (5′,
+    Thầy chốt 2026-07-26) — cộng MỘT LẦN cho cả bài, vào band theo `level` của bài.
   • Tỉ lệ áp cho TỪNG PHIẾU theo THỜI GIAN, sai số ±ratio_tol điểm %, CHỈ phần
     TRÊN LỚP (BTVN không thuộc tỉ lệ — chỉ giữ quỹ phút).
 """
@@ -16,12 +18,14 @@ from __future__ import annotations
 import re
 
 from src.schema.lesson_package import LessonPackage
-from src.schema.tier_spec import load_tier_spec, subject_block, rates_for, tier_ratio
+from src.schema.tier_spec import (
+    draw_minutes, load_tier_spec, quick_minutes, subject_block, rates_for, tier_ratio,
+)
 
 _TAG_RE = re.compile(r"\[(NB|TH|VD|VDC)\]")
 # Ý a)…j) ở VỊ TRÍ LIỆT KÊ: chỉ tính khi trước nó là khoảng trắng / `]` (từ [[br]]) /
 # `}` (sau minipage) / `>` / đầu chuỗi. Tránh đếm nhầm "b)" trong "(a+b)", "(a-b)"…
-_ITEM_RE = re.compile(r"(?<![^\s\]>}])([a-j])\)")
+_ITEM_RE = re.compile(r"(?<![^\s\]>}])([a-z])\)")
 _BULLET_RE = re.compile(r"\\bullet")
 
 _LEVEL_TO_BAND = {1: "NB", 2: "TH", 3: "VD", 4: "VDC"}
@@ -43,8 +47,9 @@ def _count_items(text: str) -> int:
 
 
 def _problem_units(lesson: LessonPackage):
-    """Gom mỗi `problem` + các `para` đi liền sau thành 1 đơn vị đếm. CHỈ đếm chặng
-    luyện tập/tổng kết (review/concept = giờ GV giảng, bỏ)."""
+    """Gom mỗi `problem` + các `para` đi liền sau thành 1 đơn vị đếm, trả
+    (đoạn, level, [text…], phải-tự-vẽ-hình, hình-vẽ-sẵn). CHỈ đếm chặng luyện tập/
+    tổng kết (review/concept = giờ GV giảng, bỏ)."""
     for stage in lesson.stages:
         if stage.kind in ("review", "concept"):
             continue
@@ -55,7 +60,9 @@ def _problem_units(lesson: LessonPackage):
                 if current:
                     yield current
                 current = (getattr(b, "tier", "") or "onclass",
-                           getattr(b, "level", 0), [b.statement or ""])
+                           getattr(b, "level", 0), [b.statement or ""],
+                           bool(getattr(b, "draw", False)),
+                           bool(getattr(b, "figure_given", False)))
             elif typ == "para" and current:
                 current[2].append(getattr(b, "text", "") or "")
             elif typ in ("noted", "mindmap"):
@@ -66,12 +73,12 @@ def _problem_units(lesson: LessonPackage):
             yield current
 
 
-def band_counts(lesson: LessonPackage) -> dict[str, dict[str, int]]:
-    """Đếm số câu LUYỆN TẬP theo {onclass|btvn: {band: n}} — đơn vị ý nhỏ/thẻ mức.
-    Dùng chung cho duration_gate (×rate ra phút) và spec_gate (so với spec)."""
+def _count_by_band(lesson: LessonPackage, only_figure_given: bool = False) -> dict[str, dict[str, int]]:
     counts = {"onclass": {b: 0 for b in _BANDS}, "btvn": {b: 0 for b in _BANDS}}
-    for seg, level, texts in _problem_units(lesson):
+    for seg, level, texts, _draw, fig in _problem_units(lesson):
         if seg not in counts:                # extend… không thuộc quỹ giờ
+            continue
+        if only_figure_given and not fig:
             continue
         text = " ".join(texts)
         tags = _TAG_RE.findall(text)
@@ -83,6 +90,34 @@ def band_counts(lesson: LessonPackage) -> dict[str, dict[str, int]]:
     return counts
 
 
+def band_counts(lesson: LessonPackage) -> dict[str, dict[str, int]]:
+    """Đếm số câu LUYỆN TẬP theo {onclass|btvn: {band: n}} — đơn vị ý nhỏ/thẻ mức.
+    Dùng chung cho duration_gate (×rate ra phút) và spec_gate (so với spec)."""
+    return _count_by_band(lesson)
+
+
+def figure_given_counts(lesson: LessonPackage) -> dict[str, dict[str, int]]:
+    """Trong số câu trên, bao nhiêu câu làm trên HÌNH VẼ SẴN (`figure_given`) —
+    những câu này tính NỬA phút/câu (xem ProblemBlock.figure_given)."""
+    return _count_by_band(lesson, only_figure_given=True)
+
+
+def draw_counts(lesson: LessonPackage) -> dict[str, dict[str, int]]:
+    """Đếm số BÀI phải TỰ VẼ HÌNH theo {onclass|btvn: {band: n}} — mỗi bài 1 hình
+    (không nhân theo ý a,b,c). Band lấy theo `level` của bài; bài chưa chấm level
+    thì lấy band CAO NHẤT trong các thẻ của bài (độ khó thật của bài)."""
+    counts = {"onclass": {b: 0 for b in _BANDS}, "btvn": {b: 0 for b in _BANDS}}
+    for seg, level, texts, draw, _fig in _problem_units(lesson):
+        if not draw or seg not in counts:
+            continue
+        band = _LEVEL_TO_BAND.get(level)
+        if band is None:
+            tags = _TAG_RE.findall(" ".join(texts))
+            band = max(tags, key=_BANDS.index) if tags else "TH"
+        counts[seg][band] += 1
+    return counts
+
+
 def _grade_subject(lesson: LessonPackage) -> tuple[str, str]:
     """Suy (lớp, môn) để tra tier_spec. Lesson chỉ có grade_label → phân lớp 8/9;
     phát hiện môn 'hinh-hoc' nếu eyebrow hoặc title chứa chữ 'hình'/'hinh'."""
@@ -90,7 +125,9 @@ def _grade_subject(lesson: LessonPackage) -> tuple[str, str]:
     grade = "lop-8" if "Lớp 8" in gl else "lop-9"
     eyebrow = getattr(lesson, "eyebrow", "") or ""
     title = getattr(lesson, "title", "") or ""
-    text_to_search = (eyebrow + " " + title).lower()
+    # Soi cả `grade_label` (vd "Lớp 9 • Hình học") — trước chỉ soi eyebrow+title nên
+    # phiếu hình đặt tiêu đề không có chữ "hình" bị chấm nhầm sang rate card đại số.
+    text_to_search = (eyebrow + " " + title + " " + gl).lower()
     subject = "hinh-hoc" if "hình" in text_to_search or "hinh" in text_to_search else "dai-so"
     return grade, subject
 
@@ -118,8 +155,19 @@ def check_duration(lesson: LessonPackage) -> list[str]:
     budget_dict = {"onclass": budgets.get("onclass", 0.0), "btvn": budgets.get("btvn", 0.0)}
 
     counts = band_counts(lesson)        # {onclass|btvn: {band: n}}
-    minutes = {seg: {b: counts[seg][b] * seg_rate[seg].get(b, 0.0) for b in _BANDS}
-               for seg in budget_dict}
+    draws = draw_counts(lesson)         # {onclass|btvn: {band: số BÀI phải tự vẽ hình}}
+    figs = figure_given_counts(lesson)  # {onclass|btvn: {band: số câu trên hình VẼ SẴN}}
+    dm = draw_minutes(spec)
+    qm = quick_minutes(spec)
+    # Phút mỗi band = số câu × rate, trong đó câu trên HÌNH VẼ SẴN: band NB tính
+    # quick_minutes (1′/câu), band khác chỉ tính nửa rate; cộng phút tự vẽ hình.
+    def _band_minutes(seg: str, b: str) -> float:
+        rate = seg_rate[seg].get(b, 0.0)
+        n_fig = figs[seg][b]
+        per_fig = qm if b == "NB" else rate * 0.5
+        return (counts[seg][b] - n_fig) * rate + n_fig * per_fig + draws[seg][b] * dm
+
+    minutes = {seg: {b: _band_minutes(seg, b) for b in _BANDS} for seg in budget_dict}
 
     warns: list[str] = []
     label = {"onclass": "Luyện tập trên lớp", "btvn": "BTVN"}
@@ -128,9 +176,11 @@ def check_duration(lesson: LessonPackage) -> list[str]:
         if total == 0:
             continue
         c, m = counts[seg], minutes[seg]
+        n_draw = sum(draws[seg].values())
         detail = (f"NB {c['NB']} câu/{m['NB']:.0f}′ · TH {c['TH']} câu/{m['TH']:.0f}′ "
                   f"· VD {c['VD']} câu/{m['VD']:.0f}′"
                   + (f" · VDC {c['VDC']} câu/{m['VDC']:.0f}′" if c["VDC"] or m["VDC"] else "")
+                  + (f" (gồm {n_draw} bài tự vẽ hình ×{dm:.0f}′)" if n_draw else "")
                   + f" = {total:.0f}′")
         if budget and abs(total - budget) > budget * budget_tol:
             warns.append(

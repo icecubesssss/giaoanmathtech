@@ -1,0 +1,505 @@
+{
+  "slug": "phieu-e-dinh-ly-va-chung-minh-dinh-ly",
+  "title": "Định lý và chứng minh định lý",
+  "eyebrow": "PHIẾU E • HÌNH HỌC 7",
+  "grade_label": "Lớp 7 • Chương III",
+  "class_tier": "B",
+  "stages": [
+    {
+      "kind": "review",
+      "number": 1,
+      "title": "Khám phá",
+      "blocks": [
+        {
+          "type": "para",
+          "text": "\\begin{minipage}[t]{0.58\\linewidth}\\vspace{0pt}\n\\textbf{Khám phá khái niệm định lý:}\n[[br]] Xét khẳng định toán học: \\textit{'Hai góc đối đỉnh thì bằng nhau'} (Hình 1): [[br]]\n1. Điều kiện đã cho (Giả thiết - GT) là gì và điều suy ra (Kết luận - KL) là gì? [[br]]\n2. Quá trình dùng suy luận từ Giả thiết để suy ra Kết luận gọi là gì?\n\\end{minipage}\\hfill\n\\begin{minipage}[t]{0.38\\linewidth}\\vspace{0pt}\n\\centering\n\\adjustbox{max width=\\linewidth, max totalheight=2.8cm}{\n\\begin{tikzpicture}[line width=0.8pt,font=\\small]\n  \\node[draw,rectangle,rounded corners,fill=ink!5,inner sep=5pt] (GT) at (0,0) {Giả thiết (GT)};\n  \\node[draw,rectangle,rounded corners,fill=brand!10,inner sep=5pt] (KL) at (0,-1.3) {Kết luận (KL)};\n  \\draw[brand,line width=1.2pt] (GT) -- node[right,font=\\scriptsize] {Suy luận} (KL);\n\\end{tikzpicture}\n}\n\\par\\vspace{2pt}{\\sffamily\\scriptsize\\itshape\\color{muted}Hình 1}\n\\end{minipage}"
+        }
+      ],
+      "solution": "1. Giả thiết (GT): Hai góc đối đỉnh. Kết luận (KL): Hai góc đó bằng nhau. 2. Quá trình suy luận đó gọi là chứng minh định lý.",
+      "teacher_note": "Cho HS quan sát sơ đồ suy luận từ Giả thiết đến Kết luận qua ví dụ hai góc đối đỉnh."
+    },
+    {
+      "kind": "concept",
+      "number": 2,
+      "title": "Khái niệm",
+      "blocks": [
+        {
+          "type": "noted",
+          "text": "\\begin{minipage}[t]{0.58\\linewidth}\\vspace{0pt}\n\\textbf{1. Cấu trúc của một định lý} [[br]] Định lý là một khẳng định toán học được suy ra từ những khẳng định đúng đắn đã biết. [[br]] - Nằm giữa từ 'Nếu' và từ 'thì' là Giả thiết (GT - điều đã cho). [[br]] - Nằm sau từ 'thì' là Kết luận (KL - điều phải suy ra).\n\\end{minipage}\\hfill\n\\begin{minipage}[t]{0.38\\linewidth}\\vspace{0pt}\n\\centering\n\\adjustbox{max width=\\linewidth, max totalheight=2.5cm}{\n\\begin{tikzpicture}[line width=0.8pt, font=\\small]\n  \\node[draw,rectangle,rounded corners,fill=ink!5,inner sep=5pt] (GT) at (0,0) {Giả thiết (GT)};\n  \\node[draw,rectangle,rounded corners,fill=brand!10,inner sep=5pt] (KL) at (0,-1.3) {Kết luận (KL)};\n  \\draw[brand,line width=1.2pt] (GT) -- node[right,font=\\scriptsize] {Suy luận} (KL);\n\\end{tikzpicture}\n}\n\\par\\vspace{2pt}{\\sffamily\\scriptsize\\itshape\\color{muted}Hình 2}\n\\end{minipage}"
+        },
+        {
+          "type": "noted",
+          "text": "\\begin{minipage}[t]{0.58\\linewidth}\\vspace{0pt}\n\\textbf{2. Quy trình chứng minh định lý} [[br]] Chứng minh định lý là dùng suy luận logic để đi từ Giả thiết (GT) rút ra Kết luận (KL). [[br]] \\textit{Ví dụ}: Dùng tính chất hai góc kề bù để chứng minh định lý 'Hai góc đối đỉnh thì bằng nhau'.\n\\end{minipage}\\hfill\n\\begin{minipage}[t]{0.38\\linewidth}\\vspace{0pt}\n\\centering\n\\adjustbox{max width=\\linewidth, max totalheight=2.5cm}{\n\\begin{tikzpicture}[line width=0.8pt, font=\\small]\n  \\draw[ink] (-1.5,-0.75) -- (1.5,0.75) node[right]{$x'$};\n  \\draw[ink] (-1.5,0.75) -- (1.5,-0.75) node[right]{$y'$};\n  \\fill[ink] (0,0) circle (1.3pt) node[above right=1pt]{$O$};\n  \\node[font=\\scriptsize,brand] at (0,0.4) {$\\widehat{O}_1$};\n  \\node[font=\\scriptsize,brand] at (0,-0.4) {$\\widehat{O}_3$};\n\\end{tikzpicture}\n}\n\\par\\vspace{2pt}{\\sffamily\\scriptsize\\itshape\\color{muted}Hình 3}\n\\end{minipage}"
+        }
+      ],
+      "solution": "Xác định chuẩn xác GT và KL của định lý.",
+      "teacher_note": "Luyện tập diễn đạt định lý bằng lời và bằng ký hiệu."
+    },
+    {
+      "kind": "practice1",
+      "number": 3,
+      "title": "Luyện tập 1",
+      "blocks": [
+        {
+          "type": "problem",
+          "label": "Bài 1.",
+          "level": 1,
+          "tier": "onclass",
+          "statement": "Phần nằm giữa từ 'Nếu' và từ 'thì' trong phát biểu định lý được gọi là:[[br]] \\textbf{A.} Giả thiết (GT) \\hspace{0.8cm} \\textbf{B.} Kết luận (KL) \\hspace{0.8cm} \\textbf{C.} Chứng minh \\hspace{0.8cm} \\textbf{D.} Tiên đề",
+          "solution": "Đáp án \\textbf{A}. Được gọi là Giả thiết (GT)."
+        },
+        {
+          "type": "writelines",
+          "count": 0
+        },
+        {
+          "type": "problem",
+          "label": "Bài 2.",
+          "level": 1,
+          "tier": "onclass",
+          "statement": "Phần nằm sau từ 'thì' trong phát biểu định lý được gọi là:[[br]] \\textbf{A.} Kết luận (KL) \\hspace{0.8cm} \\textbf{B.} Giả thiết (GT) \\hspace{0.8cm} \\textbf{C.} Định nghĩa \\hspace{0.8cm} \\textbf{D.} Tiên đề",
+          "solution": "Đáp án \\textbf{A}. Được gọi là Kết luận (KL)."
+        },
+        {
+          "type": "writelines",
+          "count": 0
+        },
+        {
+          "type": "problem",
+          "label": "Bài 3.",
+          "level": 1,
+          "tier": "onclass",
+          "statement": "Trong định lý: 'Nếu hai góc đối đỉnh thì hai góc đó bằng nhau', Giả thiết (GT) là:[[br]] \\textbf{A.} Hai góc đối đỉnh \\hspace{1.5cm} \\textbf{B.} Hai góc đó bằng nhau [[br]] \\textbf{C.} Tổng số đo bằng $180^\\circ$ \\hspace{1.1cm} \\textbf{D.} Hai góc kề bù",
+          "solution": "Đáp án \\textbf{A}. GT là 'Hai góc đối đỉnh'."
+        },
+        {
+          "type": "writelines",
+          "count": 0
+        },
+        {
+          "type": "problem",
+          "label": "Bài 4.",
+          "level": 1,
+          "tier": "onclass",
+          "statement": "Trong định lý: 'Nếu hai đường thẳng phân biệt cùng vuông góc với đường thẳng thứ ba thì chúng song song với nhau', Kết luận (KL) là:[[br]] \\textbf{A.} Chúng song song với nhau \\hspace{1.0cm} \\textbf{B.} Cùng vuông góc với đường thứ ba [[br]] \\textbf{C.} Chúng cắt nhau \\hspace{2.4cm} \\textbf{D.} Cùng trùng nhau",
+          "solution": "Đáp án \\textbf{A}. KL là 'Chúng song song với nhau'."
+        },
+        {
+          "type": "writelines",
+          "count": 0
+        },
+        {
+          "type": "problem",
+          "label": "Bài 5.",
+          "level": 1,
+          "tier": "onclass",
+          "statement": "Chứng minh định lý là dùng gì để từ Giả thiết rút ra Kết luận?[[br]] \\textbf{A.} Suy luận logic \\hspace{0.8cm} \\textbf{B.} Đo đạc bằng thước \\hspace{0.8cm} \\textbf{C.} Dự đoán cảm tính \\hspace{0.8cm} \\textbf{D.} Gấp giấy",
+          "solution": "Đáp án \\textbf{A}. Dùng suy luận logic."
+        },
+        {
+          "type": "writelines",
+          "count": 0
+        },
+        {
+          "type": "problem",
+          "label": "Bài 6.",
+          "level": 1,
+          "tier": "onclass",
+          "statement": "Viết giả thiết và kết luận của định lý: 'Một đường thẳng vuông góc với một trong hai đường thẳng song song thì nó cũng vuông góc với đường thẳng còn lại'. Giả thiết là:[[br]] \\textbf{A.} $a \\parallel b$ và $c \\perp a$ \\hspace{1.0cm} \\textbf{B.} $c \\perp b$ [[br]] \\textbf{C.} $a \\perp b$ \\hspace{2.4cm} \\textbf{D.} $a \\parallel c$",
+          "solution": "Đáp án \\textbf{A}. GT: $a \\parallel b$ và $c \\perp a$."
+        },
+        {
+          "type": "writelines",
+          "count": 0
+        },
+        {
+          "type": "problem",
+          "label": "Bài 7.",
+          "level": 1,
+          "tier": "onclass",
+          "statement": "Với định lý ở Bài 6 ($a \\parallel b$ và $c \\perp a$), Kết luận (KL) viết bằng ký hiệu là:[[br]] \\textbf{A.} $c \\perp b$ \\hspace{0.8cm} \\textbf{B.} $a \\parallel b$ \\hspace{0.8cm} \\textbf{C.} $c \\perp a$ \\hspace{0.8cm} \\textbf{D.} $a \\perp b$",
+          "solution": "Đáp án \\textbf{A}. KL: $c \\perp b$."
+        },
+        {
+          "type": "writelines",
+          "count": 0
+        },
+        {
+          "type": "problem",
+          "label": "Bài 8.",
+          "level": 1,
+          "tier": "onclass",
+          "statement": "Khẳng định nào sau đây KHÔNG phải là một định lý hình học?[[br]] \\textbf{A.} Hai góc đối đỉnh thì bằng nhau [[br]] \\textbf{B.} Hai góc kề bù có tổng bằng $180^\\circ$ [[br]] \\textbf{C.} Hai góc bất kỳ luôn có số đo bằng nhau [[br]] \\textbf{D.} Qua 1 điểm ngoài đường thẳng chỉ có 1 đường song song",
+          "solution": "Đáp án \\textbf{C}. Khẳng định C là sai."
+        },
+        {
+          "type": "writelines",
+          "count": 0
+        },
+        {
+          "type": "problem",
+          "label": "Bài 9.",
+          "level": 2,
+          "tier": "onclass",
+          "statement": "Điền vào chỗ trống để được định lý đúng: 'Nếu một đường thẳng cắt hai đường thẳng song song thì hai góc so le trong ...'.",
+          "solution": "bằng nhau."
+        },
+        {
+          "type": "writelines",
+          "count": 0
+        },
+        {
+          "type": "problem",
+          "label": "Bài 10.",
+          "level": 2,
+          "tier": "onclass",
+          "statement": "Sắp xếp các bước chứng minh định lý 'Hai góc đối đỉnh thì bằng nhau': (1) $\\widehat{O}_1 + \\widehat{O}_2 = 180^\\circ$ (kề bù); (2) $\\widehat{O}_3 + \\widehat{O}_2 = 180^\\circ$ (kề bù); (3) $\\widehat{O}_1 = \\widehat{O}_3$.",
+          "solution": "Thứ tự suy luận: (1) và (2) suy ra (3)."
+        },
+        {
+          "type": "writelines",
+          "count": 0
+        },
+        {
+          "type": "problem",
+          "label": "Bài 11.",
+          "level": 2,
+          "tier": "onclass",
+          "statement": "Ghi giả thiết (GT) và kết luận (KL) bằng ký hiệu cho định lý: 'Hai đường thẳng cùng song song với đường thẳng thứ ba thì song song với nhau'.",
+          "solution": "GT: $a \\parallel c, b \\parallel c$. KL: $a \\parallel b$."
+        },
+        {
+          "type": "writelines",
+          "count": 0
+        },
+        {
+          "type": "problem",
+          "label": "Bài 12.",
+          "level": 2,
+          "tier": "onclass",
+          "statement": "Vẽ hình và ghi GT, KL theo định lý: 'Nếu hai đường thẳng phân biệt cắt nhau tại một điểm thì tạo thành các cặp góc đối đỉnh'.",
+          "solution": "GT: $xx'$ cắt $yy'$ tại $O$. KL: $\\widehat{xOy} = \\widehat{x'Oy'}, \\widehat{xOy'} = \\widehat{x'Oy}$.",
+          "draw": true
+        },
+        {
+          "type": "writelines",
+          "count": 4,
+          "variant": "draw"
+        },
+        {
+          "type": "problem",
+          "label": "Bài 13.",
+          "level": 2,
+          "tier": "onclass",
+          "statement": "Diễn đạt bằng lời định lý được viết bằng ký hiệu: GT: $a \\parallel b, c \\perp a$. KL: $c \\perp b$.",
+          "solution": "Nếu một đường thẳng vuông góc với một trong hai đường thẳng song song thì nó cũng vuông góc với đường thẳng còn lại."
+        },
+        {
+          "type": "writelines",
+          "count": 0
+        },
+        {
+          "type": "problem",
+          "label": "Bài 14.",
+          "level": 3,
+          "tier": "onclass",
+          "statement": "Vẽ hình, ghi giả thiết (GT), kết luận (KL) và chứng minh định lý: 'Hai tia phân giác của hai góc kề bù thì vuông góc với nhau'.",
+          "solution": "GT: $\\widehat{xOy}$ kề bù $\\widehat{yOz}$; $Om$ pg $\\widehat{xOy}$; $On$ pg $\\widehat{yOz}$. KL: $Om \\perp On$. CM: $\\widehat{mOn} = \\dfrac{1}{2}(\\widehat{xOy} + \\widehat{yOz}) = 90^\\circ \\implies Om \\perp On$.",
+          "draw": true
+        },
+        {
+          "type": "writelines",
+          "count": 4,
+          "variant": "draw"
+        }
+      ]
+    },
+    {
+      "kind": "practice2",
+      "number": 4,
+      "title": "Luyện tập 2",
+      "blocks": [
+        {
+          "type": "para",
+          "text": "\\textbf{Củng cố và ghi nhớ kiến thức.}"
+        }
+      ],
+      "solution": "Thực hiện tính số đo góc và lập luận chặt chẽ theo các bước.",
+      "teacher_note": "Hướng dẫn học sinh trình bày bài toán tổng hợp trên lớp."
+    },
+    {
+      "kind": "reflection",
+      "number": 5,
+      "title": "Sơ đồ tư duy",
+      "blocks": [
+        {
+          "type": "mindmap",
+          "caption": "Sơ đồ tư duy bài học: Định lý và chứng minh định lý",
+          "root": "ĐỊNH LÝ VÀ CHỨNG MINH",
+          "branches": [
+            {
+              "label": "CẤU TRÚC ĐỊNH LÝ",
+              "children": [
+                {
+                  "label": "Giả thiết (GT): Nằm sau 'Nếu'"
+                },
+                {
+                  "label": "Kết luận (KL): Nằm sau 'thì'"
+                }
+              ]
+            },
+            {
+              "label": "CHỨNG MINH ĐỊNH LÝ",
+              "children": [
+                {
+                  "label": "Suy luận logic từ GT"
+                },
+                {
+                  "label": "Suy ra KL bằng tính chất đã biết"
+                }
+              ]
+            }
+          ]
+        },
+        {
+          "type": "para",
+          "text": "\\textbf{BÀI TẬP VỀ NHÀ (Định lý và chứng minh định lý).}"
+        },
+        {
+          "type": "problem",
+          "label": "BTVN 1.",
+          "level": 1,
+          "tier": "btvn",
+          "statement": "Xác định GT và KL của định lý: 'Nếu hai góc so le trong bằng nhau thì hai đường thẳng song song'.",
+          "solution": "GT: Hai góc so le trong bằng nhau. KL: Hai đường thẳng song song."
+        },
+        {
+          "type": "problem",
+          "label": "BTVN 2.",
+          "level": 1,
+          "tier": "btvn",
+          "statement": "Xác định GT và KL của định lý: 'Nếu hai góc đồng vị bằng nhau thì hai đường thẳng song song'.",
+          "solution": "GT: Hai góc đồng vị bằng nhau. KL: Hai đường thẳng song song."
+        },
+        {
+          "type": "problem",
+          "label": "BTVN 3.",
+          "level": 1,
+          "tier": "btvn",
+          "statement": "Xác định GT của định lý: 'Nếu $a \\parallel b$ và $c \\perp a$ thì $c \\perp b$'.",
+          "solution": "GT: $a \\parallel b$ và $c \\perp a$."
+        },
+        {
+          "type": "problem",
+          "label": "BTVN 4.",
+          "level": 1,
+          "tier": "btvn",
+          "statement": "Xác định KL của định lý: 'Nếu $a \\parallel b$ và $c \\perp a$ thì $c \\perp b$'.",
+          "solution": "KL: $c \\perp b$."
+        },
+        {
+          "type": "problem",
+          "label": "BTVN 5.",
+          "level": 1,
+          "tier": "btvn",
+          "statement": "Phát biểu định lý dưới dạng 'Nếu... thì...': Hai đường thẳng cùng song song với đường thẳng thứ ba thì song song với nhau.",
+          "solution": "Nếu hai đường thẳng cùng song song với đường thứ ba thì chúng song song với nhau."
+        },
+        {
+          "type": "problem",
+          "label": "BTVN 6.",
+          "level": 1,
+          "tier": "btvn",
+          "statement": "Phát biểu định lý dưới dạng 'Nếu... thì...': Hai góc kề bù có tổng bằng $180^\\circ$.",
+          "solution": "Nếu hai góc kề bù thì tổng số đo của chúng bằng $180^\\circ$."
+        },
+        {
+          "type": "problem",
+          "label": "BTVN 7.",
+          "level": 1,
+          "tier": "btvn",
+          "statement": "\\begin{minipage}[t]{0.44\\linewidth}\\vspace{0pt}Hình vẽ bên minh họa cho định lý nào?[[br]] \\textbf{A.} Nếu hai đường thẳng song song bị cắt bởi một cát tuyến thì hai góc so le trong bằng nhau [[br]] \\textbf{B.} Hai góc đối đỉnh thì bằng nhau [[br]] \\textbf{C.} Qua một điểm ngoài đường thẳng chỉ kẻ được một đường song song\\end{minipage}\\hfill\\begin{minipage}[t]{0.36\\linewidth}\\vspace{0pt}\n\\centering\n\\adjustbox{max width=\\linewidth, max totalheight=3.0cm}{\n\\begin{tikzpicture}[line width=0.8pt, font=\\small]\n  \\draw[brand,line width=1.1pt] (-2.2,0.85)--(2.2,0.85) node[right]{$a$};\n  \\draw[brand,line width=1.1pt] (-2.2,-0.85)--(2.2,-0.85) node[right]{$b$};\n  \\draw[ink] (-0.95,-1.55)--(0.95,1.55) node[above right]{$c$};\n  \\fill[ink] (0.52,0.85) circle(1.3pt) node[above left]{$A$};\n  \\fill[ink] (-0.52,-0.85) circle(1.3pt) node[below right]{$B$};\n  \\node[font=\\scriptsize] at (1.07,1.25){$2$};\n  \\node[font=\\scriptsize] at (-0.03,1.25){$1$};\n  \\node[font=\\scriptsize] at (1.07,0.45){$3$};\n  \\node[font=\\scriptsize] at (-0.03,0.45){$4$};\n  \\node[font=\\scriptsize] at (0.03,-0.45){$2$};\n  \\node[font=\\scriptsize] at (-1.07,-0.45){$1$};\n  \\node[font=\\scriptsize] at (0.03,-1.25){$3$};\n  \\node[font=\\scriptsize] at (-1.07,-1.25){$4$};\n\\end{tikzpicture}\n}\n\\par\\vspace{2pt}{\\sffamily\\scriptsize\\itshape\\color{muted}Hình 4}\n\\end{minipage}",
+          "solution": "Đáp án \\textbf{A}. Hình cho $a \\parallel b$ bị cắt bởi cát tuyến $c$, minh họa tính chất hai góc so le trong ($\\widehat{A_3} = \\widehat{B_1}$)."
+        },
+        {
+          "type": "problem",
+          "label": "BTVN 8.",
+          "level": 1,
+          "tier": "btvn",
+          "statement": "\\begin{minipage}[t]{0.44\\linewidth}\\vspace{0pt}Hình vẽ bên minh họa cho định lý nào?[[br]] \\textbf{A.} Hai đường thẳng phân biệt cùng vuông góc với một đường thẳng thứ ba thì song song với nhau [[br]] \\textbf{B.} Hai góc kề bù có tổng bằng $180^\\circ$ [[br]] \\textbf{C.} Hai góc đối đỉnh thì bằng nhau\\end{minipage}\\hfill\\begin{minipage}[t]{0.36\\linewidth}\\vspace{0pt}\n\\centering\n\\adjustbox{max width=\\linewidth, max totalheight=3.0cm}{\n\\begin{tikzpicture}[line width=0.8pt, font=\\small]\n  \\draw[brand,line width=1.1pt] (-1.9,0.8)--(1.9,0.8) node[right]{$a$};\n  \\draw[brand,line width=1.1pt] (-1.9,-0.8)--(1.9,-0.8) node[right]{$b$};\n  \\draw[ink] (0,-1.35)--(0,1.35) node[above]{$c$};\n  \\draw[ink] (0.23,0.8)--(0.23,1.03)--(0,1.03);\n  \\draw[ink] (0.23,-0.8)--(0.23,-0.57)--(0,-0.57);\n\\end{tikzpicture}\n}\n\\par\\vspace{2pt}{\\sffamily\\scriptsize\\itshape\\color{muted}Hình 5}\n\\end{minipage}",
+          "solution": "Đáp án \\textbf{A}. Hình cho $a \\perp c$ và $b \\perp c$, từ đó $a \\parallel b$."
+        },
+        {
+          "type": "problem",
+          "label": "BTVN 9.",
+          "level": 1,
+          "tier": "btvn",
+          "statement": "Định lý gồm có mấy phần chính?",
+          "solution": "Gồm 2 phần: Giả thiết (GT) và Kết luận (KL)."
+        },
+        {
+          "type": "problem",
+          "label": "BTVN 10.",
+          "level": 1,
+          "tier": "btvn",
+          "statement": "Giả thiết của định lý là những gì?",
+          "solution": "Là những điều cho biết/cho trước."
+        },
+        {
+          "type": "problem",
+          "label": "BTVN 11.",
+          "level": 1,
+          "tier": "btvn",
+          "statement": "Kết luận của định lý là gì?",
+          "solution": "Là những điều phải suy ra."
+        },
+        {
+          "type": "problem",
+          "label": "BTVN 12.",
+          "level": 1,
+          "tier": "btvn",
+          "statement": "Điền từ: Để chứng minh một định lý, ta dùng ... để đi từ GT đến KL.",
+          "solution": "suy luận logic."
+        },
+        {
+          "type": "problem",
+          "label": "BTVN 13.",
+          "level": 1,
+          "tier": "btvn",
+          "statement": "Viết GT và KL của định lý Tiên đề Euclid.",
+          "solution": "GT: $M \\notin d$. KL: Có duy nhất 1 đường thẳng qua $M$ song song với $d$."
+        },
+        {
+          "type": "problem",
+          "label": "BTVN 14.",
+          "level": 1,
+          "tier": "btvn",
+          "statement": "Viết GT và KL của định lý góc đối đỉnh.",
+          "solution": "GT: Hai góc đối đỉnh. KL: Chúng bằng nhau."
+        },
+        {
+          "type": "problem",
+          "label": "BTVN 15.",
+          "level": 1,
+          "tier": "btvn",
+          "statement": "Cho định lý: 'Nếu $a \\parallel b$ thì hai góc so le trong bằng nhau'. Nêu GT và KL.",
+          "solution": "GT: $a \\parallel b$. KL: Hai góc so le trong bằng nhau."
+        },
+        {
+          "type": "problem",
+          "label": "BTVN 16.",
+          "level": 1,
+          "tier": "btvn",
+          "statement": "Cho định lý: 'Nếu $a \\parallel b$ thì hai góc đồng vị bằng nhau'. Nêu GT và KL.",
+          "solution": "GT: $a \\parallel b$. KL: Hai góc đồng vị bằng nhau."
+        },
+        {
+          "type": "problem",
+          "label": "BTVN 17.",
+          "level": 2,
+          "tier": "btvn",
+          "statement": "Ghi giả thiết và kết luận bằng ký hiệu cho định lý về góc so le trong khi có hai đường thẳng song song.",
+          "solution": "GT: $a \\parallel b$, $c$ cắt $a, b$ tại $A, B$. KL: $\\widehat{A_3} = \\widehat{B_1}$ (hai góc so le trong)."
+        },
+        {
+          "type": "problem",
+          "label": "BTVN 18.",
+          "level": 2,
+          "tier": "btvn",
+          "statement": "Ghi giả thiết và kết luận bằng ký hiệu cho định lý về góc đồng vị khi có hai đường thẳng song song.",
+          "solution": "GT: $a \\parallel b, c$ cắt $a, b$ tại $A, B$. KL: $\\widehat{A_1} = \\widehat{B_1}$ (đồng vị)."
+        },
+        {
+          "type": "problem",
+          "label": "BTVN 19.",
+          "level": 2,
+          "tier": "btvn",
+          "statement": "Ghi GT và KL bằng ký hiệu cho định lý: Hai đường thẳng cùng vuông góc với đường thứ ba thì song song.",
+          "solution": "GT: $a \\perp c, b \\perp c$. KL: $a \\parallel b$."
+        },
+        {
+          "type": "problem",
+          "label": "BTVN 20.",
+          "level": 2,
+          "tier": "btvn",
+          "statement": "Ghi GT và KL bằng ký hiệu cho định lý: Một đường thẳng vuông góc với 1 trong 2 đt song song thì vuông góc với đt còn lại.",
+          "solution": "GT: $a \\parallel b, c \\perp a$. KL: $c \\perp b$."
+        },
+        {
+          "type": "problem",
+          "label": "BTVN 21.",
+          "level": 2,
+          "tier": "btvn",
+          "statement": "Điền chỗ trống để hoàn thành chứng minh định lý kề bù tổng $180^\\circ$.",
+          "solution": "Vì hai góc kề bù tạo thành góc bẹt nên tổng bằng $180^\\circ$."
+        },
+        {
+          "type": "problem",
+          "label": "BTVN 22.",
+          "level": 2,
+          "tier": "btvn",
+          "statement": "Sắp xếp 3 bước chứng minh hai góc đồng vị bằng nhau khi có hai đường thẳng song song.",
+          "solution": "(1) So le trong bằng nhau; (2) Góc đối đỉnh bằng nhau; (3) Góc đồng vị bằng nhau."
+        },
+        {
+          "type": "problem",
+          "label": "BTVN 23.",
+          "level": 2,
+          "tier": "btvn",
+          "statement": "Vẽ hình và ghi GT, KL theo định lý góc trong cùng phía bù nhau.",
+          "solution": "GT: $a \\parallel b, c$ cắt $a, b$. KL: $\\widehat{A_1} + \\widehat{B_2} = 180^\\circ$.",
+          "draw": true
+        },
+        {
+          "type": "writelines",
+          "count": 4,
+          "variant": "draw"
+        },
+        {
+          "type": "problem",
+          "label": "BTVN 24.",
+          "level": 2,
+          "tier": "btvn",
+          "statement": "Diễn đạt bằng lời định lý: GT: $a \\parallel b, b \\parallel c$. KL: $a \\parallel c$.",
+          "solution": "Hai đường thẳng cùng song song với đường thẳng thứ ba thì song song với nhau."
+        },
+        {
+          "type": "problem",
+          "label": "BTVN 25.",
+          "level": 2,
+          "tier": "btvn",
+          "statement": "Diễn đạt bằng lời định lý: GT: $\\widehat{A_1} = \\widehat{B_1}$ (đồng vị). KL: $a \\parallel b$.",
+          "solution": "Nếu hai góc đồng vị bằng nhau thì hai đường thẳng song song."
+        },
+        {
+          "type": "problem",
+          "label": "BTVN 26.",
+          "level": 2,
+          "tier": "btvn",
+          "statement": "Vẽ hình minh họa định lý: Qua 1 điểm ngoài đường thẳng chỉ vẽ được 1 đường thẳng song song.",
+          "solution": "Vẽ đường thẳng $d$, điểm $M \\notin d$, đường thẳng $a$ qua $M$ song song $d$.",
+          "draw": true
+        },
+        {
+          "type": "writelines",
+          "count": 4,
+          "variant": "draw"
+        },
+        {
+          "type": "problem",
+          "label": "BTVN 27.",
+          "level": 3,
+          "tier": "btvn",
+          "statement": "Vẽ hình, ghi GT, KL và chứng minh định lý: 'Nếu hai góc nhọn có các cạnh tương ứng song song thì hai góc đó bằng nhau'.",
+          "solution": "Vẽ $\\widehat{xOy}$ và $\\widehat{x'O'y'}$ có $Ox \\parallel O'x', Oy \\parallel O'y'$. Dùng tính chất đồng vị suy ra $\\widehat{xOy} = \\widehat{x'O'y'}$.",
+          "draw": true
+        },
+        {
+          "type": "writelines",
+          "count": 4,
+          "variant": "draw"
+        }
+      ]
+    }
+  ]
+}

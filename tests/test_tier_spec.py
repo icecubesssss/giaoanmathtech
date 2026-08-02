@@ -1,5 +1,7 @@
 """tier_spec.json — số câu mục tiêu phải reproduce bảng HUONG-DAN-PHAN-TANG-LOP §2."""
-from src.schema.tier_spec import load_tier_spec, target_counts, tier_ratio, rates_for
+from src.schema.tier_spec import (
+    draw_minutes, load_tier_spec, target_counts, tier_ratio, rates_for,
+)
 
 
 def test_tier_c_reproduces_section2_table():
@@ -34,3 +36,17 @@ def test_lop8_rates_override_applied():
     spec = load_tier_spec()
     assert rates_for(spec, "lop-8", "dai-so")["onclass"]["NB"] == 0.5
     assert rates_for(spec, "lop-9", "dai-so")["onclass"]["NB"] == 1.5
+
+
+def test_lop8_hinh_hoc_rates_are_double():
+    """Thầy chốt 2026-07-26: bài HÌNH lớp 8 tốn GẤP ĐÔI thời gian mỗi câu."""
+    spec = load_tier_spec()
+    r = rates_for(spec, "lop-8", "hinh-hoc")
+    assert r["vidu"] == {"NB": 2.0, "TH": 8.0, "VD": 16.0, "VDC": 24.0}
+    assert r["onclass"] == {"NB": 2.5, "TH": 9.0, "VD": 20.0, "VDC": 30.0}
+    assert r["btvn"] == {"NB": 2.0, "TH": 8.0, "VD": 17.0, "VDC": 25.0}
+
+
+def test_draw_minutes_is_five():
+    """Câu phải TỰ VẼ HÌNH cộng thêm 5′ (ngoài phút/câu theo band)."""
+    assert draw_minutes(load_tier_spec()) == 5.0

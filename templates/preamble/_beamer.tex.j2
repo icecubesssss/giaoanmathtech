@@ -76,8 +76,15 @@
     \end{tikzpicture}%
   \fi}
 
-% Chỗ trống cho slide (đơn giản, không tikz): [[blank]] -> \blank, [[mblank]] -> \rule
+% Chỗ trống cho slide (đơn giản, không tikz): [[blank]] -> \blank, [[mblank]] -> \mblank, [[oly]] -> \olybox
 \newcommand{\blank}[1][4cm]{\rule[-0.3ex]{#1}{0.5pt}}
+\newcommand{\mblank}[1][2cm]{\rule[-0.3ex]{#1}{0.5pt}}
+\newcommand{\olybox}[1]{%
+  \begin{tikzpicture}[baseline=-0.5ex]
+    \draw[step=0.25cm,ink!15,line width=0.3pt] (0,0) grid (#1, 0.6);
+    \draw[step=0.6cm,ink!35,line width=0.5pt] (0,0) grid (#1, 0.6);
+  \end{tikzpicture}%
+}
 
 % Footline mảnh: tên bài • số slide
 \setbeamertemplate{footline}{%

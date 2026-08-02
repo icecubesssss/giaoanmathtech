@@ -18,7 +18,7 @@ from __future__ import annotations
 
 from src.schema.thuyetminh_spec import (
     ThuyetMinhSpec,
-    phieu_band_counts,
+    phieu_band_minutes,
     phieu_totals,
     rates_for_spec,
     row_minutes,
@@ -125,9 +125,7 @@ def check_thuyetminh(spec: ThuyetMinhSpec) -> tuple[list[str], list[str]]:
 
         # (W) tỉ lệ NB-TH-VD(-VDC) trên lớp lệch chuẩn tầng
         if ratio_target and on_min > 0:
-            bc = phieu_band_counts(p)["onclass"]
-            on_rate = rates.get("onclass", {})
-            band_min = {b: bc.get(b, 0) * on_rate.get(b, 0.0) for b in BANDS}
+            band_min = phieu_band_minutes(p, rates)["onclass"]   # gồm cả phút vẽ hình
             for band, target in ratio_target.items():
                 share = band_min.get(band, 0.0) / on_min * 100
                 if target == 0 and band_min.get(band, 0.0) == 0:

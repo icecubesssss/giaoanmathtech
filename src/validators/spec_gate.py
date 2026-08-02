@@ -22,7 +22,7 @@ _BANDS = ("NB", "TH", "VD", "VDC")
 def _match_phieu(spec: ThuyetMinhSpec, lesson: LessonPackage):
     """Phiếu trong spec ứng với lesson: theo tiền tố slug phieu-a-/b-…; nếu spec chỉ
     1 phiếu thì khớp luôn."""
-    m = re.match(r"phieu-([a-d])-", lesson.slug or "")
+    m = re.match(r"phieu-([a-z])-", lesson.slug or "")
     if m:
         code = m.group(1).upper()
         for p in spec.phieu:

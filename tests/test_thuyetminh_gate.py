@@ -75,7 +75,7 @@ def test_empty_phieu_blocks():
 def test_unknown_grade_subject_skips():
     # (lớp, môn) chưa có rate card → không gate, không lỗi.
     errors, warns = check_thuyetminh(_spec([SpecRow(dang="x", band="NB", onclass=999)],
-                                           grade="lop-3", subject="dai-so"))
+                                           grade="lop-unknown", subject="dai-so"))
     assert errors == [] and warns == []
 
 

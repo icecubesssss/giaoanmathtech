@@ -10,6 +10,12 @@ from src.compiler.jinja_renderer import _env, load_tokens
 from src.schema.thuyetminh_spec import (
     ThuyetMinhSpec, rates_for_spec, row_minutes, session_info,
 )
+from src.schema.tier_spec import draw_minutes, load_tier_spec
+
+
+def _has_ve_hinh(spec: ThuyetMinhSpec) -> bool:
+    """Spec có dòng nào khai hình HS phải tự vẽ không (để chú thích cột TG)."""
+    return any(sum(r.ve_hinh.values()) for p in spec.phieu for r in p.rows)
 
 # band → (nhãn, màu tint, sao)
 _BAND_HEAD = {
@@ -46,9 +52,12 @@ def _meta_table(rows: list[tuple[str, str]]) -> str:
 
 
 def _phieu_table(phieu, rates):
-    col = (r"|>{\RaggedRight\arraybackslash}p{8.4cm}|"
-           r"*{8}{>{\centering\arraybackslash}p{1.7cm}|}")
-    L = [r"\begingroup\footnotesize\renewcommand{\arraystretch}{1.06}", rf"\begin{{longtable}}{{{col}}}", r"\arrayrulecolor{rule}\hline"]
+    # Cột dạng NỚI RỘNG (10,4cm) + cột số HẸP LẠI (1,45cm) — giữ nguyên bề ngang bảng
+    # nhưng bớt dòng dạng bị xuống 2 dòng, để mỗi buổi gọn TRONG MỘT TRANG (Thầy đọc
+    # 1 buổi = 1 trang, không phải lật sang trang chỉ để xem dòng TỔNG).
+    col = (r"|>{\RaggedRight\arraybackslash}p{10.4cm}|"
+           r"*{8}{>{\centering\arraybackslash}p{1.45cm}|}")
+    L = [r"\begingroup\footnotesize\renewcommand{\arraystretch}{1.0}", rf"\begin{{longtable}}{{{col}}}", r"\arrayrulecolor{rule}\hline"]
     L.append(r"\rowcolor{neutral} "
              r"& \multicolumn{2}{>{\columncolor{neutral}}c|}{\sffamily\bfseries Lý thuyết} "
              r"& \multicolumn{2}{>{\columncolor{neutral}}c|}{\sffamily\bfseries Ví dụ} "
@@ -82,10 +91,10 @@ def _phieu_table(phieu, rates):
                  rf"\color{{{tint}}}{label} ({star})}} \\ \hline")
         sub = [0.0] * 8
         for r in rows:
-            mins = row_minutes(r, rates)
+            mins = row_minutes(r, rates)          # đã gồm phút vẽ hình (ve_hinh)
             lt_m = r.lythuyet * rates.get("vidu", {}).get(band, 0)
-            ex_m = r.vidu * rates.get("vidu", {}).get(band, 0)
-            vals = [(r.lythuyet, lt_m), (r.vidu, ex_m), (r.onclass, mins["onclass"]), (r.btvn, mins["btvn"])]
+            vals = [(r.lythuyet, lt_m), (r.vidu, mins["vidu"]),
+                    (r.onclass, mins["onclass"]), (r.btvn, mins["btvn"])]
             cells = []
             for i, (n, m) in enumerate(vals):
                 cells += [_n(n), _t(m)]
@@ -124,9 +133,11 @@ def render_thuyetminh(spec: ThuyetMinhSpec) -> str:
     info = session_info(spec)
     badge = f" \\textbf{{(LỚP {spec.tier})}}" if spec.tier else ""
     tuan = f" • Tuần {spec.tuan}" if spec.tuan else ""
+    # Nhãn khối theo spec.grade — trước đây cứng "Lớp 9 (Ôn vào 10)" nên spec lớp 8 in sai khối.
+    khoi = "Lớp 9 (Ôn vào 10)" if spec.grade == "lop-9" else spec.grade.replace("lop-", "Lớp ")
 
     parts = [
-        rf"\tmtitle{{PHIẾU THUYẾT MINH}}\quad\tmsub{{{spec.title} • Lớp 9 (Ôn vào 10){badge}{tuan}}}",
+        rf"\tmtitle{{PHIẾU THUYẾT MINH}}\quad\tmsub{{{spec.title} • {khoi}{badge}{tuan}}}",
         r"\par\vspace{4pt}",
         _meta_table([
             ("Tên bài", f"\\textbf{{{spec.title}}}{badge}." +
@@ -136,7 +147,8 @@ def render_thuyetminh(spec: ThuyetMinhSpec) -> str:
                           f"$\\approx${round(info.get('budgets',{}).get('vidu',0))}′ $+$ Luyện tập "
                           f"{round(info.get('budgets',{}).get('onclass',0))}′. "
                           f"BTVN $\\approx${round(info.get('budgets',{}).get('btvn',0))}′ ở nhà."),
-        ]),
+        ] + ([("Thời lượng", " \\quad$\\bullet$\\quad ".join(spec.thoiluong))]
+             if spec.thoiluong else [])),
         r"\tmsec{MỤC TIÊU LÝ THUYẾT \& CHUẨN ĐẦU RA}", _itemize(spec.lythuyet),
         r"\tmsec{BÀI TẬP}",
         r"\begin{minipage}[t]{0.485\linewidth}\tmlbl{Ví dụ GV làm mẫu:}" + _itemize(spec.vidu) +
@@ -146,14 +158,20 @@ def render_thuyetminh(spec: ThuyetMinhSpec) -> str:
         r"\begin{minipage}[t]{0.485\linewidth}\tmlbl{Lỗi sai thường gặp:}" + _itemize(spec.loisai) +
         r"\end{minipage}\hfill\begin{minipage}[t]{0.485\linewidth}\tmlbl{Kiến thức NHẬN BIẾT cần nhớ:}" +
         _itemize(spec.kienthuc_nb) + r"\end{minipage}",
-        r"\par\vspace{8pt}{\footnotesize\color{muted}\itshape Quy ước đếm: "
-        r"``câu'' $=$ ý nhỏ a),b)…; thời gian tự tính theo phút/câu của tier\_spec.json "
-        r"(NB/TH/VD/VDC). duration\_gate chỉ soi Luyện tập trên lớp $+$ BTVN.}"
     ]
     for p in spec.phieu:
         table, grand = _phieu_table(p, rates)
         parts += [r"\newpage", rf"\tmsec{{NỘI DUNG PHIẾU — PHIẾU {p.code}: {p.title}}}", table,
                   _canbuoi(grand, info)]
+    # Chú thích quy ước ĐẶT CUỐI tài liệu: để cuối phần mục tiêu thì nó hay bị đẩy
+    # sang một trang trắng riêng (trang 2 vừa kín) — Thầy nhận được PDF thừa 1 trang.
+    parts.append(
+        r"\par\vspace{8pt}{\footnotesize\color{muted}\itshape Quy ước đếm: "
+        r"``câu'' $=$ ý nhỏ a),b)…; thời gian tự tính theo phút/câu của tier\_spec.json "
+        r"(NB/TH/VD/VDC). duration\_gate chỉ soi Luyện tập trên lớp $+$ BTVN."
+        + (rf" Cột TG đã CỘNG {draw_minutes(load_tier_spec()):.0f}′ cho mỗi hình học sinh "
+           r"phải tự vẽ (cột \texttt{ve\_hinh} của dạng)." if _has_ve_hinh(spec) else "")
+        + r"}")
 
     tokens = load_tokens()
     return _env().get_template("base_thuyetminh.tex.j2").render(body="\n\n".join(parts), **tokens)

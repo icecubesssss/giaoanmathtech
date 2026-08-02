@@ -1,0 +1,866 @@
+{
+  "slug": "phieu-a-ti-so-luong-giac-goc-nhon",
+  "title": "Tỉ số lượng giác của góc nhọn",
+  "eyebrow": "PHIẾU A • HÌNH HỌC 9 · CHƯƠNG IV — BÀI 11",
+  "grade_label": "Lớp 9 • Hình học",
+  "class_tier": "C",
+  "stages": [
+    {
+      "kind": "review",
+      "number": 1,
+      "title": "Khám phá",
+      "blocks": [
+        {
+          "type": "para",
+          "text": "\\textbf{Cạnh huyền em đã biết — còn hai cạnh kia gọi là gì?}"
+        },
+        {
+          "type": "noted",
+          "variant": "example",
+          "text": "\\begin{minipage}[t]{0.58\\linewidth}\\vspace{0pt}\\textbf{Đã biết (Lớp 8):} tam giác $ABC$ vuông tại $A$ thì cạnh $BC$ đối diện góc vuông gọi là \\textbf{cạnh huyền}. [[br]]\\textbf{Mới (Lớp 9):} hai cạnh còn lại được gọi tên theo GÓC NHỌN đang xét. [[br]]$\\bullet$ Xét góc $B$: cạnh $AC$ nằm ĐỐI DIỆN góc $B$ nên là \\textbf{cạnh đối}; cạnh $AB$ nằm SÁT góc $B$ nên là \\textbf{cạnh kề}. [[br]]$\\bullet$ Đổi sang góc $C$: cạnh $AB$ thành cạnh đối, cạnh $AC$ thành cạnh kề. \\textbf{Hai cạnh đổi vai trò cho nhau!}\\end{minipage}\\hfill\\begin{minipage}[t]{0.36\\linewidth}\\vspace{0pt}\n\\centering\n\\adjustbox{max width=\\linewidth, max totalheight=2.4cm}{\n\\begin{tikzpicture}[line width=0.8pt, font=\\small]\n  \\draw[ink] (0,0) -- (0,2.0) -- (3.0,0) -- cycle;\n  \\draw[ink] (0,0.26) -- (0.26,0.26) -- (0.26,0);\n  \\node[below left] at (0,0) {$A$};\n  \\node[above] at (0,2.0) {$B$};\n  \\node[right] at (3.0,0) {$C$};\n  \\draw[brand, line width=0.7pt] (0,1.55) arc (270:305:0.45);\n  \\node[brand] at (0.42,1.45) {\\scriptsize $\\alpha$};\n\\end{tikzpicture}\n}\n\\par\\vspace{2pt}{\\sffamily\\scriptsize\\itshape\\color{muted}Hình 1}\n\\end{minipage}"
+        }
+      ],
+      "teacher_note": "Hỏi trước: 'cạnh huyền là cạnh nào?' — HS đã biết. Rồi mới đưa tên cạnh đối, cạnh kề và nhấn: đổi góc thì hai cạnh đổi vai trò."
+    },
+    {
+      "kind": "concept",
+      "number": 2,
+      "title": "Kiến thức cần nhớ",
+      "blocks": [
+        {
+          "type": "para",
+          "text": "\\textbf{1. Gọi tên ba cạnh theo góc nhọn $\\alpha$}"
+        },
+        {
+          "type": "para",
+          "text": "$\\bullet$ \\textbf{Cạnh huyền}: cạnh đối diện góc vuông (không đổi khi đổi góc). [[br]]$\\bullet$ \\textbf{Cạnh đối}: cạnh đối diện góc $\\alpha$. [[br]]$\\bullet$ \\textbf{Cạnh kề}: cạnh góc vuông còn lại, nằm sát góc $\\alpha$."
+        },
+        {
+          "type": "para",
+          "text": "\\textbf{2. Bốn tỉ số lượng giác của góc nhọn $\\alpha$}"
+        },
+        {
+          "type": "para",
+          "text": "$\\sin\\alpha = \\dfrac{\\text{cạnh đối}}{\\text{cạnh huyền}}$ \\hspace{0.7cm} $\\cos\\alpha = \\dfrac{\\text{cạnh kề}}{\\text{cạnh huyền}}$ \\hspace{0.7cm} $\\tan\\alpha = \\dfrac{\\text{cạnh đối}}{\\text{cạnh kề}}$ \\hspace{0.7cm} $\\cot\\alpha = \\dfrac{\\text{cạnh kề}}{\\text{cạnh đối}}$ [[br]]Mẹo nhớ: \\textbf{sin đi học} (đối $-$ huyền), \\textbf{cos không hư} (kề $-$ huyền), \\textbf{tan đoàn kết} (đối $-$ kề), \\textbf{cot kết đoàn} (kề $-$ đối)."
+        },
+        {
+          "type": "para",
+          "text": "\\textbf{3. Ba góc đặc biệt và hai góc phụ nhau}"
+        },
+        {
+          "type": "para",
+          "text": "$\\sin 30^\\circ = \\cos 60^\\circ = \\dfrac{1}{2}$; \\; $\\sin 45^\\circ = \\cos 45^\\circ = \\dfrac{\\sqrt{2}}{2}$; \\; $\\sin 60^\\circ = \\cos 30^\\circ = \\dfrac{\\sqrt{3}}{2}$; \\; $\\tan 45^\\circ = \\cot 45^\\circ = 1$. [[br]]Hai góc phụ nhau ($\\alpha + \\beta = 90^\\circ$): $\\sin\\alpha = \\cos\\beta$, $\\tan\\alpha = \\cot\\beta$."
+        },
+        {
+          "type": "noted",
+          "variant": "example",
+          "text": "\\begin{minipage}[t]{0.58\\linewidth}\\vspace{0pt}\\textbf{Ví dụ 1.} Viết $\\sin B$ và $\\cos B$ của tam giác $ABC$ vuông tại $A$. [[br]]\\textit{Giải.} Với góc $B$: cạnh đối là $AC$, cạnh kề là $AB$, cạnh huyền là $BC$. [[br]]Vậy $\\sin B = \\dfrac{AC}{BC}$, \\; $\\cos B = \\dfrac{AB}{BC}$.\\end{minipage}\\hfill\\begin{minipage}[t]{0.36\\linewidth}\\vspace{0pt}\n\\centering\n\\adjustbox{max width=\\linewidth, max totalheight=2.4cm}{\n\\begin{tikzpicture}[line width=0.8pt, font=\\small]\n  \\draw[ink] (0,0) -- (0,2.0) -- (3.0,0) -- cycle;\n  \\draw[ink] (0,0.26) -- (0.26,0.26) -- (0.26,0);\n  \\node[below left] at (0,0) {$A$};\n  \\node[above] at (0,2.0) {$B$};\n  \\node[right] at (3.0,0) {$C$};\n\\end{tikzpicture}\n}\n\\par\\vspace{2pt}{\\sffamily\\scriptsize\\itshape\\color{muted}Hình 2}\n\\end{minipage}"
+        },
+        {
+          "type": "noted",
+          "variant": "example",
+          "text": "\\begin{minipage}[t]{0.58\\linewidth}\\vspace{0pt}\\textbf{Ví dụ 2.} Cho tam giác $ABC$ vuông tại $A$, $AB = 6$ cm, $AC = 8$ cm. Viết bốn tỉ số lượng giác của góc $B$. [[br]]\\textit{Giải.} Pythagore: $BC^2 = 6^2 + 8^2 = 100 \\Rightarrow BC = 10$ cm. [[br]]$\\sin B = \\dfrac{AC}{BC} = \\dfrac{8}{10} = \\dfrac{4}{5}$; \\; $\\cos B = \\dfrac{AB}{BC} = \\dfrac{6}{10} = \\dfrac{3}{5}$; [[br]]$\\tan B = \\dfrac{AC}{AB} = \\dfrac{8}{6} = \\dfrac{4}{3}$; \\; $\\cot B = \\dfrac{AB}{AC} = \\dfrac{6}{8} = \\dfrac{3}{4}$.\\end{minipage}\\hfill\\begin{minipage}[t]{0.36\\linewidth}\\vspace{0pt}\n\\centering\n\\adjustbox{max width=\\linewidth, max totalheight=2.4cm}{\n\\begin{tikzpicture}[line width=0.8pt, font=\\small]\n  \\draw[ink] (0,0) -- (0,2.0) -- (3.0,0) -- cycle;\n  \\draw[ink] (0,0.26) -- (0.26,0.26) -- (0.26,0);\n  \\node[below left] at (0,0) {$A$};\n  \\node[above] at (0,2.0) {$B$};\n  \\node[right] at (3.0,0) {$C$};\n  \\node[left] at (0,1.0) {$6$};\n  \\node[below] at (1.5,0) {$8$};\n\\end{tikzpicture}\n}\n\\par\\vspace{2pt}{\\sffamily\\scriptsize\\itshape\\color{muted}Hình 3}\n\\end{minipage}"
+        },
+        {
+          "type": "noted",
+          "variant": "example",
+          "text": "\\textbf{Ví dụ 3.} (hai góc phụ nhau) Viết $\\sin 35^\\circ$ và $\\tan 28^\\circ$ theo tỉ số lượng giác của góc phụ với nó. [[br]]\\textit{Giải.} $35^\\circ + 55^\\circ = 90^\\circ$ nên $\\sin 35^\\circ = \\cos 55^\\circ$. $28^\\circ + 62^\\circ = 90^\\circ$ nên $\\tan 28^\\circ = \\cot 62^\\circ$."
+        },
+        {
+          "type": "noted",
+          "variant": "example",
+          "text": "\\textbf{Ví dụ 4.} Tính $M = \\sin 30^\\circ + \\cos 60^\\circ - \\tan 45^\\circ$. [[br]]\\textit{Giải.} $M = \\dfrac{1}{2} + \\dfrac{1}{2} - 1 = 0$."
+        },
+        {
+          "type": "noted",
+          "variant": "example",
+          "text": "\\textbf{Ví dụ 5.} Cho góc nhọn $\\alpha$ có $\\sin\\alpha = \\dfrac{3}{5}$. Tính $\\cos\\alpha$, $\\tan\\alpha$, $\\cot\\alpha$. [[br]]\\textit{Giải.} Dựng tam giác vuông có cạnh đối $= 3$, cạnh huyền $= 5$. Cạnh kề $= \\sqrt{5^2 - 3^2} = 4$. [[br]]Vậy $\\cos\\alpha = \\dfrac{4}{5}$, \\; $\\tan\\alpha = \\dfrac{3}{4}$, \\; $\\cot\\alpha = \\dfrac{4}{3}$."
+        },
+        {
+          "type": "noted",
+          "variant": "example",
+          "text": "\\begin{minipage}[t]{0.58\\linewidth}\\vspace{0pt}\\textbf{Ví dụ 6.} (bài hình hẳn hoi) Cho tam giác $ABC$ vuông tại $A$, $AB = 9$ cm, $BC = 15$ cm. [[br]] a) Tính $AC$. \\; b) Viết bốn tỉ số lượng giác của góc $C$. [[br]]\\textit{Giải.} a) $AC^2 = 15^2 - 9^2 = 144 \\Rightarrow AC = 12$ cm. [[br]]b) Với góc $C$: cạnh đối là $AB = 9$, cạnh kề là $AC = 12$, cạnh huyền $BC = 15$. [[br]]$\\sin C = \\dfrac{9}{15} = \\dfrac{3}{5}$; \\; $\\cos C = \\dfrac{12}{15} = \\dfrac{4}{5}$; \\; $\\tan C = \\dfrac{9}{12} = \\dfrac{3}{4}$; \\; $\\cot C = \\dfrac{12}{9} = \\dfrac{4}{3}$.\\end{minipage}\\hfill\\begin{minipage}[t]{0.36\\linewidth}\\vspace{0pt}\n\\centering\n\\adjustbox{max width=\\linewidth, max totalheight=2.4cm}{\n\\begin{tikzpicture}[line width=0.8pt, font=\\small]\n  \\draw[ink] (0,0) -- (0,2.0) -- (3.0,0) -- cycle;\n  \\draw[ink] (0,0.26) -- (0.26,0.26) -- (0.26,0);\n  \\node[below left] at (0,0) {$A$};\n  \\node[above] at (0,2.0) {$B$};\n  \\node[right] at (3.0,0) {$C$};\n  \\node[left] at (0,1.0) {$9$};\n  \\node[above right] at (1.5,1.0) {$15$};\n\\end{tikzpicture}\n}\n\\par\\vspace{2pt}{\\sffamily\\scriptsize\\itshape\\color{muted}Hình 4}\n\\end{minipage}"
+        }
+      ],
+      "teacher_note": "Chữa trọn 6 ví dụ mẫu trong 25 phút đầu buổi; ví dụ 2 và ví dụ 6 làm chậm, viết đủ lời giải để HS chép làm mẫu trình bày."
+    },
+    {
+      "kind": "practice1",
+      "number": 3,
+      "title": "Luyện tập 1",
+      "blocks": [
+        {
+          "type": "problem",
+          "label": "Bài 1.",
+          "level": 1,
+          "tier": "onclass",
+          "statement": "[[wrap]]\\makebox[0pt][l]{\\hspace{0.62\\linewidth}\\smash{\\raisebox{-1.75cm}{\\vtop{\\hbox{\\adjustbox{max width=0.32\\linewidth, max totalheight=2.0cm}{\n\\begin{tikzpicture}[line width=0.8pt, font=\\small]\n  \\draw[ink] (0,0) -- (0,2.0) -- (3.0,0) -- cycle;\n  \\draw[ink] (0,0.26) -- (0.26,0.26) -- (0.26,0);\n  \\node[below left] at (0,0) {$A$};\n  \\node[above] at (0,2.0) {$B$};\n  \\node[right] at (3.0,0) {$C$};\n\\end{tikzpicture}\n}}\n\\hbox to 0.32\\linewidth{\\hfil{\\sffamily\\scriptsize\\itshape\\color{muted}Hình 5}\\hfil}}}}}[[/wrap]]Tam giác $ABC$ vuông tại $A$. Cạnh huyền là cạnh nào?\\par\\vspace{4pt}\\parbox[t]{0.30\\linewidth}{\\textbf{A.} $AB$}\\parbox[t]{0.30\\linewidth}{\\textbf{B.} $AC$}\\par\\vspace{6pt}\\parbox[t]{0.30\\linewidth}{\\textbf{C.} $BC$}\\parbox[t]{0.30\\linewidth}{\\textbf{D.} Cả ba}\\par\\vspace{0.67cm}",
+          "figure_given": true,
+          "solution": "Đáp án \\textbf{C}. Cạnh huyền đối diện góc vuông $A$, đó là $BC$."
+        },
+        {
+          "type": "writelines",
+          "count": 0
+        },
+        {
+          "type": "problem",
+          "label": "Bài 2.",
+          "level": 1,
+          "tier": "onclass",
+          "statement": "[[wrap]]\\makebox[0pt][l]{\\hspace{0.62\\linewidth}\\smash{\\raisebox{-1.75cm}{\\vtop{\\hbox{\\adjustbox{max width=0.32\\linewidth, max totalheight=2.0cm}{\n\\begin{tikzpicture}[line width=0.8pt, font=\\small]\n  \\draw[ink] (0,0) -- (0,2.0) -- (3.0,0) -- cycle;\n  \\draw[ink] (0,0.26) -- (0.26,0.26) -- (0.26,0);\n  \\node[below left] at (0,0) {$N$};\n  \\node[above] at (0,2.0) {$M$};\n  \\node[right] at (3.0,0) {$P$};\n\\end{tikzpicture}\n}}\n\\hbox to 0.32\\linewidth{\\hfil{\\sffamily\\scriptsize\\itshape\\color{muted}Hình 6}\\hfil}}}}}[[/wrap]]Tam giác $MNP$ vuông tại $N$. Hai cạnh góc vuông là:\\par\\vspace{4pt}\\parbox[t]{0.30\\linewidth}{\\textbf{A.} $MN$ và $NP$}\\parbox[t]{0.30\\linewidth}{\\textbf{B.} $MN$ và $MP$}\\par\\vspace{6pt}\\parbox[t]{0.30\\linewidth}{\\textbf{C.} $NP$ và $MP$}\\parbox[t]{0.30\\linewidth}{\\textbf{D.} $MP$ và $MP$}\\par\\vspace{0.67cm}",
+          "figure_given": true,
+          "solution": "Đáp án \\textbf{A}. Hai cạnh tạo nên góc vuông $N$ là $MN$ và $NP$; $MP$ là cạnh huyền."
+        },
+        {
+          "type": "writelines",
+          "count": 0
+        },
+        {
+          "type": "problem",
+          "label": "Bài 3.",
+          "level": 1,
+          "tier": "onclass",
+          "statement": "[[wrap]]\\makebox[0pt][l]{\\hspace{0.62\\linewidth}\\smash{\\raisebox{-1.75cm}{\\vtop{\\hbox{\\adjustbox{max width=0.32\\linewidth, max totalheight=2.0cm}{\n\\begin{tikzpicture}[line width=0.8pt, font=\\small]\n  \\draw[ink] (0,0) -- (0,2.0) -- (3.0,0) -- cycle;\n  \\draw[ink] (0,0.26) -- (0.26,0.26) -- (0.26,0);\n  \\node[below left] at (0,0) {$D$};\n  \\node[above] at (0,2.0) {$E$};\n  \\node[right] at (3.0,0) {$F$};\n\\end{tikzpicture}\n}}\n\\hbox to 0.32\\linewidth{\\hfil{\\sffamily\\scriptsize\\itshape\\color{muted}Hình 7}\\hfil}}}}}[[/wrap]]Tam giác $DEF$ vuông tại $D$, cạnh nào DÀI NHẤT?\\par\\vspace{4pt}\\parbox[t]{0.30\\linewidth}{\\textbf{A.} $DE$}\\parbox[t]{0.30\\linewidth}{\\textbf{B.} $DF$}\\par\\vspace{6pt}\\parbox[t]{0.30\\linewidth}{\\textbf{C.} $EF$}\\parbox[t]{0.30\\linewidth}{\\textbf{D.} Không so sánh được}\\par\\vspace{0.67cm}",
+          "figure_given": true,
+          "solution": "Đáp án \\textbf{C}. Cạnh huyền $EF$ luôn dài nhất trong tam giác vuông."
+        },
+        {
+          "type": "writelines",
+          "count": 0
+        },
+        {
+          "type": "problem",
+          "label": "Bài 4.",
+          "level": 1,
+          "tier": "onclass",
+          "statement": "[[wrap]]\\makebox[0pt][l]{\\hspace{0.62\\linewidth}\\smash{\\raisebox{-1.75cm}{\\vtop{\\hbox{\\adjustbox{max width=0.32\\linewidth, max totalheight=2.0cm}{\n\\begin{tikzpicture}[line width=0.8pt, font=\\small]\n  \\draw[ink] (0,0) -- (0,2.0) -- (3.0,0) -- cycle;\n  \\draw[ink] (0,0.26) -- (0.26,0.26) -- (0.26,0);\n  \\node[below left] at (0,0) {$A$};\n  \\node[above] at (0,2.0) {$B$};\n  \\node[right] at (3.0,0) {$C$};\n\\end{tikzpicture}\n}}\n\\hbox to 0.32\\linewidth{\\hfil{\\sffamily\\scriptsize\\itshape\\color{muted}Hình 8}\\hfil}}}}}[[/wrap]]Tam giác $ABC$ vuông tại $A$. Cạnh đối của góc $B$ là:\\par\\vspace{4pt}\\parbox[t]{0.30\\linewidth}{\\textbf{A.} $AB$}\\parbox[t]{0.30\\linewidth}{\\textbf{B.} $AC$}\\par\\vspace{6pt}\\parbox[t]{0.30\\linewidth}{\\textbf{C.} $BC$}\\parbox[t]{0.30\\linewidth}{\\textbf{D.} $AB$ và $AC$}\\par\\vspace{0.67cm}",
+          "figure_given": true,
+          "solution": "Đáp án \\textbf{B}. Cạnh $AC$ nằm đối diện góc $B$ nên là cạnh đối của góc $B$."
+        },
+        {
+          "type": "writelines",
+          "count": 0
+        },
+        {
+          "type": "problem",
+          "label": "Bài 5.",
+          "level": 1,
+          "tier": "onclass",
+          "statement": "[[wrap]]\\makebox[0pt][l]{\\hspace{0.62\\linewidth}\\smash{\\raisebox{-1.75cm}{\\vtop{\\hbox{\\adjustbox{max width=0.32\\linewidth, max totalheight=2.0cm}{\n\\begin{tikzpicture}[line width=0.8pt, font=\\small]\n  \\draw[ink] (0,0) -- (0,2.0) -- (3.0,0) -- cycle;\n  \\draw[ink] (0,0.26) -- (0.26,0.26) -- (0.26,0);\n  \\node[below left] at (0,0) {$A$};\n  \\node[above] at (0,2.0) {$B$};\n  \\node[right] at (3.0,0) {$C$};\n\\end{tikzpicture}\n}}\n\\hbox to 0.32\\linewidth{\\hfil{\\sffamily\\scriptsize\\itshape\\color{muted}Hình 9}\\hfil}}}}}[[/wrap]]Tam giác $ABC$ vuông tại $A$. Cạnh kề của góc $B$ là:\\par\\vspace{4pt}\\parbox[t]{0.30\\linewidth}{\\textbf{A.} $AB$}\\parbox[t]{0.30\\linewidth}{\\textbf{B.} $AC$}\\par\\vspace{6pt}\\parbox[t]{0.30\\linewidth}{\\textbf{C.} $BC$}\\parbox[t]{0.30\\linewidth}{\\textbf{D.} Không có}\\par\\vspace{0.67cm}",
+          "figure_given": true,
+          "solution": "Đáp án \\textbf{A}. Cạnh $AB$ là cạnh góc vuông nằm sát góc $B$ nên là cạnh kề."
+        },
+        {
+          "type": "writelines",
+          "count": 0
+        },
+        {
+          "type": "problem",
+          "label": "Bài 6.",
+          "level": 1,
+          "tier": "onclass",
+          "statement": "[[wrap]]\\makebox[0pt][l]{\\hspace{0.62\\linewidth}\\smash{\\raisebox{-1.75cm}{\\vtop{\\hbox{\\adjustbox{max width=0.32\\linewidth, max totalheight=2.0cm}{\n\\begin{tikzpicture}[line width=0.8pt, font=\\small]\n  \\draw[ink] (0,0) -- (0,2.0) -- (3.0,0) -- cycle;\n  \\draw[ink] (0,0.26) -- (0.26,0.26) -- (0.26,0);\n  \\node[below left] at (0,0) {$A$};\n  \\node[above] at (0,2.0) {$B$};\n  \\node[right] at (3.0,0) {$C$};\n\\end{tikzpicture}\n}}\n\\hbox to 0.32\\linewidth{\\hfil{\\sffamily\\scriptsize\\itshape\\color{muted}Hình 10}\\hfil}}}}}[[/wrap]]Tam giác $ABC$ vuông tại $A$. Với góc $C$, cạnh đối và cạnh kề lần lượt là:\\par\\vspace{4pt}\\parbox[t]{0.30\\linewidth}{\\textbf{A.} $AC$ và $AB$}\\parbox[t]{0.30\\linewidth}{\\textbf{B.} $AB$ và $AC$}\\par\\vspace{6pt}\\parbox[t]{0.30\\linewidth}{\\textbf{C.} $BC$ và $AB$}\\parbox[t]{0.30\\linewidth}{\\textbf{D.} $AB$ và $BC$}\\par\\vspace{0.67cm}",
+          "figure_given": true,
+          "solution": "Đáp án \\textbf{B}. Góc $C$ có cạnh đối là $AB$, cạnh kề là $AC$ — ngược với góc $B$."
+        },
+        {
+          "type": "writelines",
+          "count": 0
+        },
+        {
+          "type": "problem",
+          "label": "Bài 7.",
+          "level": 1,
+          "tier": "onclass",
+          "statement": "[[wrap]]\\makebox[0pt][l]{\\hspace{0.62\\linewidth}\\smash{\\raisebox{-1.75cm}{\\vtop{\\hbox{\\adjustbox{max width=0.32\\linewidth, max totalheight=2.0cm}{\n\\begin{tikzpicture}[line width=0.8pt, font=\\small]\n  \\draw[ink] (0,0) -- (0,2.0) -- (3.0,0) -- cycle;\n  \\draw[ink] (0,0.26) -- (0.26,0.26) -- (0.26,0);\n  \\node[below left] at (0,0) {$A$};\n  \\node[above] at (0,2.0) {$B$};\n  \\node[right] at (3.0,0) {$C$};\n\\end{tikzpicture}\n}}\n\\hbox to 0.32\\linewidth{\\hfil{\\sffamily\\scriptsize\\itshape\\color{muted}Hình 11}\\hfil}}}}}[[/wrap]]Tam giác $ABC$ vuông tại $A$. Cạnh $AB$ là cạnh ĐỐI của góc nào?\\par\\vspace{4pt}\\parbox[t]{0.30\\linewidth}{\\textbf{A.} Góc $A$}\\parbox[t]{0.30\\linewidth}{\\textbf{B.} Góc $B$}\\par\\vspace{6pt}\\parbox[t]{0.30\\linewidth}{\\textbf{C.} Góc $C$}\\parbox[t]{0.30\\linewidth}{\\textbf{D.} Không của góc nào}\\par\\vspace{0.67cm}",
+          "figure_given": true,
+          "solution": "Đáp án \\textbf{C}. $AB$ đối diện góc $C$ nên là cạnh đối của góc $C$."
+        },
+        {
+          "type": "writelines",
+          "count": 0
+        },
+        {
+          "type": "problem",
+          "label": "Bài 8.",
+          "level": 1,
+          "tier": "onclass",
+          "statement": "[[wrap]]\\makebox[0pt][l]{\\hspace{0.62\\linewidth}\\smash{\\raisebox{-1.75cm}{\\vtop{\\hbox{\\adjustbox{max width=0.32\\linewidth, max totalheight=2.0cm}{\n\\begin{tikzpicture}[line width=0.8pt, font=\\small]\n  \\draw[ink] (0,0) -- (0,2.0) -- (3.0,0) -- cycle;\n  \\draw[ink] (0,0.26) -- (0.26,0.26) -- (0.26,0);\n  \\node[below left] at (0,0) {$A$};\n  \\node[above] at (0,2.0) {$B$};\n  \\node[right] at (3.0,0) {$C$};\n\\end{tikzpicture}\n}}\n\\hbox to 0.32\\linewidth{\\hfil{\\sffamily\\scriptsize\\itshape\\color{muted}Hình 12}\\hfil}}}}}[[/wrap]]Tam giác $ABC$ vuông tại $A$. Cạnh $AC$ là cạnh KỀ của góc nào?\\par\\vspace{4pt}\\parbox[t]{0.30\\linewidth}{\\textbf{A.} Góc $B$}\\parbox[t]{0.30\\linewidth}{\\textbf{B.} Góc $C$}\\par\\vspace{6pt}\\parbox[t]{0.30\\linewidth}{\\textbf{C.} Góc $A$}\\parbox[t]{0.30\\linewidth}{\\textbf{D.} Cả $B$ và $C$}\\par\\vspace{0.67cm}",
+          "figure_given": true,
+          "solution": "Đáp án \\textbf{B}. $AC$ nằm sát góc $C$ nên là cạnh kề của góc $C$ (và là cạnh đối của góc $B$)."
+        },
+        {
+          "type": "writelines",
+          "count": 0
+        },
+        {
+          "type": "problem",
+          "label": "Bài 9.",
+          "level": 1,
+          "tier": "onclass",
+          "statement": "[[wrap]]\\makebox[0pt][l]{\\hspace{0.62\\linewidth}\\smash{\\raisebox{-1.75cm}{\\vtop{\\hbox{\\adjustbox{max width=0.32\\linewidth, max totalheight=2.0cm}{\n\\begin{tikzpicture}[line width=0.8pt, font=\\small]\n  \\draw[ink] (0,0) -- (0,2.0) -- (3.0,0) -- cycle;\n  \\draw[ink] (0,0.26) -- (0.26,0.26) -- (0.26,0);\n  \\node[below left] at (0,0) {$N$};\n  \\node[above] at (0,2.0) {$M$};\n  \\node[right] at (3.0,0) {$P$};\n\\end{tikzpicture}\n}}\n\\hbox to 0.32\\linewidth{\\hfil{\\sffamily\\scriptsize\\itshape\\color{muted}Hình 13}\\hfil}}}}}[[/wrap]]Tam giác $MNP$ vuông tại $N$. Cạnh $NP$ là cạnh đối của góc nào và cạnh kề của góc nào?\\par\\vspace{4pt}\\parbox[t]{0.30\\linewidth}{\\textbf{A.} Đối của $M$, kề của $P$}\\parbox[t]{0.30\\linewidth}{\\textbf{B.} Đối của $P$, kề của $M$}\\par\\vspace{6pt}\\parbox[t]{0.30\\linewidth}{\\textbf{C.} Đối của $N$, kề của $M$}\\parbox[t]{0.30\\linewidth}{\\textbf{D.} Kề của cả hai}\\par\\vspace{0.21cm}",
+          "figure_given": true,
+          "solution": "Đáp án \\textbf{A}. $NP$ đối diện góc $M$; $NP$ nằm sát góc $P$ nên là cạnh kề của góc $P$."
+        },
+        {
+          "type": "writelines",
+          "count": 0
+        },
+        {
+          "type": "problem",
+          "label": "Bài 10.",
+          "level": 1,
+          "tier": "onclass",
+          "statement": "Điền vào chỗ chấm cho đúng định nghĩa (với góc nhọn $\\alpha$): [[br]]a) $\\sin\\alpha = \\frac{\\ldots}{\\text{cạnh huyền}}$ \\qquad b) $\\cos\\alpha = \\frac{\\text{cạnh kề}}{\\ldots}$ \\qquad c) $\\tan\\alpha = \\frac{\\ldots}{\\ldots}$",
+          "solution": "a) cạnh đối. [[br]] b) cạnh huyền. [[br]] c) $\\dfrac{\\text{cạnh đối}}{\\text{cạnh kề}}$.",
+          "figure_given": true
+        },
+        {
+          "type": "writelines",
+          "count": 0
+        },
+        {
+          "type": "problem",
+          "label": "Bài 11.",
+          "level": 1,
+          "tier": "onclass",
+          "statement": "[[wrap]]\\makebox[0pt][l]{\\hspace{0.62\\linewidth}\\smash{\\raisebox{-1.75cm}{\\vtop{\\hbox{\\adjustbox{max width=0.32\\linewidth, max totalheight=2.0cm}{\n\\begin{tikzpicture}[line width=0.8pt, font=\\small]\n  \\draw[ink] (0,0) -- (0,2.0) -- (3.0,0) -- cycle;\n  \\draw[ink] (0,0.26) -- (0.26,0.26) -- (0.26,0);\n  \\node[below left] at (0,0) {$A$};\n  \\node[above] at (0,2.0) {$B$};\n  \\node[right] at (3.0,0) {$C$};\n\\end{tikzpicture}\n}}\n\\hbox to 0.32\\linewidth{\\hfil{\\sffamily\\scriptsize\\itshape\\color{muted}Hình 14}\\hfil}}}}}[[/wrap]]Viết bốn tỉ số lượng giác của góc $B$ theo các cạnh của tam giác.\\par\\vspace{1.13cm}",
+          "solution": "$\\sin B = \\dfrac{AC}{BC}$; $\\cos B = \\dfrac{AB}{BC}$; $\\tan B = \\dfrac{AC}{AB}$; $\\cot B = \\dfrac{AB}{AC}$.",
+          "figure_given": true
+        },
+        {
+          "type": "writelines",
+          "count": 0
+        },
+        {
+          "type": "problem",
+          "label": "Bài 12.",
+          "level": 1,
+          "tier": "onclass",
+          "statement": "[[wrap]]\\makebox[0pt][l]{\\hspace{0.62\\linewidth}\\smash{\\raisebox{-1.75cm}{\\vtop{\\hbox{\\adjustbox{max width=0.32\\linewidth, max totalheight=2.0cm}{\n\\begin{tikzpicture}[line width=0.8pt, font=\\small]\n  \\draw[ink] (0,0) -- (0,2.0) -- (3.0,0) -- cycle;\n  \\draw[ink] (0,0.26) -- (0.26,0.26) -- (0.26,0);\n  \\node[below left] at (0,0) {$N$};\n  \\node[above] at (0,2.0) {$M$};\n  \\node[right] at (3.0,0) {$P$};\n\\end{tikzpicture}\n}}\n\\hbox to 0.32\\linewidth{\\hfil{\\sffamily\\scriptsize\\itshape\\color{muted}Hình 15}\\hfil}}}}}[[/wrap]]Viết bốn tỉ số lượng giác của góc $M$ theo các cạnh của tam giác.\\par\\vspace{1.13cm}",
+          "solution": "$\\sin M = \\dfrac{NP}{MP}$; $\\cos M = \\dfrac{MN}{MP}$; $\\tan M = \\dfrac{NP}{MN}$; $\\cot M = \\dfrac{MN}{NP}$.",
+          "figure_given": true
+        },
+        {
+          "type": "writelines",
+          "count": 0
+        },
+        {
+          "type": "problem",
+          "label": "Bài 13.",
+          "level": 1,
+          "tier": "onclass",
+          "statement": "[[wrap]]\\makebox[0pt][l]{\\hspace{0.62\\linewidth}\\smash{\\raisebox{-1.75cm}{\\vtop{\\hbox{\\adjustbox{max width=0.32\\linewidth, max totalheight=2.0cm}{\n\\begin{tikzpicture}[line width=0.8pt, font=\\small]\n  \\draw[ink] (0,0) -- (0,2.0) -- (3.0,0) -- cycle;\n  \\draw[ink] (0,0.26) -- (0.26,0.26) -- (0.26,0);\n  \\node[below left] at (0,0) {$A$};\n  \\node[above] at (0,2.0) {$B$};\n  \\node[right] at (3.0,0) {$C$};\n  \\node[left] at (0,1.0) {$3$};\n  \\node[below] at (1.5,0) {$4$};\n  \\node[above right] at (1.5,1.0) {$5$};\n\\end{tikzpicture}\n}}\n\\hbox to 0.32\\linewidth{\\hfil{\\sffamily\\scriptsize\\itshape\\color{muted}Hình 16}\\hfil}}}}}[[/wrap]]Tam giác $ABC$ vuông tại $A$ có $AB = 3$ cm, $AC = 4$ cm, $BC = 5$ cm. Tính $\\sin B$ và $\\cos B$.\\par\\vspace{1.13cm}",
+          "solution": "$\\sin B = \\dfrac{AC}{BC} = \\dfrac{4}{5}$; \\; $\\cos B = \\dfrac{AB}{BC} = \\dfrac{3}{5}$.",
+          "figure_given": true
+        },
+        {
+          "type": "writelines",
+          "count": 0
+        },
+        {
+          "type": "problem",
+          "label": "Bài 14.",
+          "level": 1,
+          "tier": "onclass",
+          "statement": "[[wrap]]\\makebox[0pt][l]{\\hspace{0.62\\linewidth}\\smash{\\raisebox{-1.75cm}{\\vtop{\\hbox{\\adjustbox{max width=0.32\\linewidth, max totalheight=2.0cm}{\n\\begin{tikzpicture}[line width=0.8pt, font=\\small]\n  \\draw[ink] (0,0) -- (0,2.0) -- (3.0,0) -- cycle;\n  \\draw[ink] (0,0.26) -- (0.26,0.26) -- (0.26,0);\n  \\node[below left] at (0,0) {$A$};\n  \\node[above] at (0,2.0) {$B$};\n  \\node[right] at (3.0,0) {$C$};\n  \\node[left] at (0,1.0) {$3$};\n  \\node[below] at (1.5,0) {$4$};\n  \\node[above right] at (1.5,1.0) {$5$};\n\\end{tikzpicture}\n}}\n\\hbox to 0.32\\linewidth{\\hfil{\\sffamily\\scriptsize\\itshape\\color{muted}Hình 17}\\hfil}}}}}[[/wrap]]Vẫn hình bên (tam giác $ABC$ vuông tại $A$, $AB = 3$, $AC = 4$, $BC = 5$). Tính $\\sin C$ và $\\cos C$.\\par\\vspace{1.13cm}",
+          "solution": "$\\sin C = \\dfrac{AB}{BC} = \\dfrac{3}{5}$; \\; $\\cos C = \\dfrac{AC}{BC} = \\dfrac{4}{5}$. (Đúng bằng $\\cos B$ và $\\sin B$ vì $B$, $C$ phụ nhau.)",
+          "figure_given": true
+        },
+        {
+          "type": "writelines",
+          "count": 0
+        },
+        {
+          "type": "problem",
+          "label": "Bài 15.",
+          "level": 1,
+          "tier": "onclass",
+          "statement": "[[wrap]]\\makebox[0pt][l]{\\hspace{0.62\\linewidth}\\smash{\\raisebox{-1.75cm}{\\vtop{\\hbox{\\adjustbox{max width=0.32\\linewidth, max totalheight=2.0cm}{\n\\begin{tikzpicture}[line width=0.8pt, font=\\small]\n  \\draw[ink] (0,0) -- (0,2.0) -- (3.0,0) -- cycle;\n  \\draw[ink] (0,0.26) -- (0.26,0.26) -- (0.26,0);\n  \\node[below left] at (0,0) {$A$};\n  \\node[above] at (0,2.0) {$B$};\n  \\node[right] at (3.0,0) {$C$};\n\\end{tikzpicture}\n}}\n\\hbox to 0.32\\linewidth{\\hfil{\\sffamily\\scriptsize\\itshape\\color{muted}Hình 18}\\hfil}}}}}[[/wrap]]Tam giác $ABC$ vuông tại $A$. Khẳng định nào ĐÚNG?\\par\\vspace{4pt}\\parbox[t]{0.30\\linewidth}{\\textbf{A.} $\\tan B = \\dfrac{AB}{AC}$}\\parbox[t]{0.30\\linewidth}{\\textbf{B.} $\\tan B = \\dfrac{AC}{AB}$}\\par\\vspace{6pt}\\parbox[t]{0.30\\linewidth}{\\textbf{C.} $\\tan B = \\dfrac{AC}{BC}$}\\parbox[t]{0.30\\linewidth}{\\textbf{D.} $\\tan B = \\dfrac{BC}{AC}$}\\par\\vspace{0.67cm}",
+          "figure_given": true,
+          "solution": "Đáp án \\textbf{B}. $\\tan B = \\dfrac{\\text{đối}}{\\text{kề}} = \\dfrac{AC}{AB}$."
+        },
+        {
+          "type": "writelines",
+          "count": 0
+        },
+        {
+          "type": "problem",
+          "label": "Bài 16.",
+          "level": 1,
+          "tier": "onclass",
+          "statement": "[[wrap]]\\makebox[0pt][l]{\\hspace{0.62\\linewidth}\\smash{\\raisebox{-1.75cm}{\\vtop{\\hbox{\\adjustbox{max width=0.32\\linewidth, max totalheight=2.0cm}{\n\\begin{tikzpicture}[line width=0.8pt, font=\\small]\n  \\draw[ink] (0,0) -- (0,2.0) -- (3.0,0) -- cycle;\n  \\draw[ink] (0,0.26) -- (0.26,0.26) -- (0.26,0);\n  \\node[below left] at (0,0) {$A$};\n  \\node[above] at (0,2.0) {$B$};\n  \\node[right] at (3.0,0) {$C$};\n\\end{tikzpicture}\n}}\n\\hbox to 0.32\\linewidth{\\hfil{\\sffamily\\scriptsize\\itshape\\color{muted}Hình 19}\\hfil}}}}}[[/wrap]]Tam giác $ABC$ vuông tại $A$. Tỉ số $\\dfrac{AB}{AC}$ là tỉ số lượng giác nào?\\par\\vspace{4pt}\\parbox[t]{0.30\\linewidth}{\\textbf{A.} $\\sin B$}\\parbox[t]{0.30\\linewidth}{\\textbf{B.} $\\cos C$}\\par\\vspace{6pt}\\parbox[t]{0.30\\linewidth}{\\textbf{C.} $\\cot B$}\\parbox[t]{0.30\\linewidth}{\\textbf{D.} $\\tan C$}\\par\\vspace{0.67cm}",
+          "figure_given": true,
+          "solution": "Đáp án \\textbf{C}. $\\dfrac{AB}{AC} = \\dfrac{\\text{kề của } B}{\\text{đối của } B} = \\cot B$."
+        },
+        {
+          "type": "writelines",
+          "count": 0
+        },
+        {
+          "type": "problem",
+          "label": "Bài 17.",
+          "level": 1,
+          "tier": "onclass",
+          "statement": "Giá trị của $\\sin 30^\\circ$ bằng:\\par\\vspace{4pt}\\parbox[t]{0.28\\linewidth}{\\textbf{A.} $\\dfrac{1}{2}$}\\parbox[t]{0.28\\linewidth}{\\textbf{B.} $\\dfrac{\\sqrt{2}}{2}$}\\par\\vspace{6pt}\\parbox[t]{0.28\\linewidth}{\\textbf{C.} $\\dfrac{\\sqrt{3}}{2}$}\\parbox[t]{0.28\\linewidth}{\\textbf{D.} $1$}",
+          "figure_given": true,
+          "solution": "Đáp án \\textbf{A}. $\\sin 30^\\circ = \\dfrac{1}{2}$ (bảng góc đặc biệt)."
+        },
+        {
+          "type": "writelines",
+          "count": 0
+        },
+        {
+          "type": "problem",
+          "label": "Bài 18.",
+          "level": 1,
+          "tier": "onclass",
+          "statement": "Tính $N = \\cos 45^\\circ \\cdot \\sqrt{2} + \\tan 45^\\circ$.",
+          "solution": "$N = \\dfrac{\\sqrt{2}}{2}\\cdot\\sqrt{2} + 1 = 1 + 1 = 2$.",
+          "figure_given": true
+        },
+        {
+          "type": "writelines",
+          "count": 0
+        },
+        {
+          "type": "problem",
+          "label": "Bài 19.",
+          "level": 1,
+          "tier": "onclass",
+          "statement": "Dùng máy tính cầm tay, tính $\\sin 40^\\circ$ (làm tròn đến chữ số thập phân thứ tư).",
+          "solution": "$\\sin 40^\\circ \\approx 0{,}6428$ (nhớ để máy ở chế độ DEG).",
+          "figure_given": true
+        },
+        {
+          "type": "writelines",
+          "count": 0
+        }
+      ],
+      "teacher_note": "22 câu nhận biết, hình đã vẽ sẵn nên HS chỉ đọc hình rồi chọn/điền — làm nhanh, chữa theo cụm 5 câu."
+    },
+    {
+      "kind": "practice2",
+      "number": 4,
+      "title": "Luyện tập 2",
+      "blocks": [
+        {
+          "type": "problem",
+          "label": "Bài 20.",
+          "level": 2,
+          "tier": "onclass",
+          "statement": "[[wrap]]\\makebox[0pt][l]{\\hspace{0.62\\linewidth}\\smash{\\raisebox{-1.75cm}{\\vtop{\\hbox{\\adjustbox{max width=0.32\\linewidth, max totalheight=2.0cm}{\n\\begin{tikzpicture}[line width=0.8pt, font=\\small]\n  \\draw[ink] (0,0) -- (0,2.0) -- (3.0,0) -- cycle;\n  \\draw[ink] (0,0.26) -- (0.26,0.26) -- (0.26,0);\n  \\node[below left] at (0,0) {$A$};\n  \\node[above] at (0,2.0) {$B$};\n  \\node[right] at (3.0,0) {$C$};\n  \\node[left] at (0,1.0) {$5$};\n  \\node[below] at (1.5,0) {$12$};\n\\end{tikzpicture}\n}}\n\\hbox to 0.32\\linewidth{\\hfil{\\sffamily\\scriptsize\\itshape\\color{muted}Hình 20}\\hfil}}}}}[[/wrap]]Cho tam giác $ABC$ vuông tại $A$, $AB = 5$ cm, $AC = 12$ cm. Tính $BC$ rồi viết bốn tỉ số lượng giác của góc $B$.\\par\\vspace{1.13cm}",
+          "solution": "$BC = \\sqrt{5^2 + 12^2} = \\sqrt{169} = 13$ cm. [[br]]$\\sin B = \\dfrac{12}{13}$; \\; $\\cos B = \\dfrac{5}{13}$; \\; $\\tan B = \\dfrac{12}{5}$; \\; $\\cot B = \\dfrac{5}{12}$."
+        },
+        {
+          "type": "writelines",
+          "count": 4
+        },
+        {
+          "type": "problem",
+          "label": "Bài 21.",
+          "level": 2,
+          "tier": "onclass",
+          "statement": "Viết $\\sin 65^\\circ$ theo tỉ số lượng giác của góc phụ với nó, rồi giải thích vì sao.",
+          "solution": "$65^\\circ + 25^\\circ = 90^\\circ$ nên $\\sin 65^\\circ = \\cos 25^\\circ$ (hai góc phụ nhau)."
+        },
+        {
+          "type": "writelines",
+          "count": 4
+        },
+        {
+          "type": "problem",
+          "label": "Bài 22.",
+          "level": 2,
+          "tier": "onclass",
+          "statement": "Tính $P = \\sin^2 60^\\circ + \\cos^2 60^\\circ + \\tan 45^\\circ$.",
+          "solution": "$P = \\left(\\dfrac{\\sqrt{3}}{2}\\right)^2 + \\left(\\dfrac{1}{2}\\right)^2 + 1 = \\dfrac{3}{4} + \\dfrac{1}{4} + 1 = 2$."
+        },
+        {
+          "type": "writelines",
+          "count": 4
+        },
+        {
+          "type": "problem",
+          "label": "Bài 23.",
+          "level": 3,
+          "tier": "onclass",
+          "statement": "[[wrap]]\\makebox[0pt][l]{\\hspace{0.62\\linewidth}\\smash{\\raisebox{-1.75cm}{\\vtop{\\hbox{\\adjustbox{max width=0.32\\linewidth, max totalheight=2.0cm}{\n\\begin{tikzpicture}[line width=0.8pt, font=\\small]\n  \\draw[ink] (0,0) -- (0,2.0) -- (3.0,0) -- cycle;\n  \\draw[ink] (0,0.26) -- (0.26,0.26) -- (0.26,0);\n  \\node[below left] at (0,0) {$A$};\n  \\node[above] at (0,2.0) {$B$};\n  \\node[right] at (3.0,0) {$C$};\n  \\node[left] at (0,1.0) {$9$};\n  \\node[below] at (1.5,0) {$12$};\n\\end{tikzpicture}\n}}\n\\hbox to 0.32\\linewidth{\\hfil{\\sffamily\\scriptsize\\itshape\\color{muted}Hình 21}\\hfil}}}}}[[/wrap]]Cho tam giác $ABC$ vuông tại $A$, $AB = 9$ cm, $AC = 12$ cm. [[br]]a) [NB] Tính $BC$. [[br]]b) [TH] Viết bốn tỉ số lượng giác của góc $B$. [[br]]c) [VD] So sánh $\\sin B$ với $\\cos C$ và giải thích.\\par\\vspace{0.67cm}",
+          "hints": [
+            "Ý c: hai góc $B$ và $C$ có tổng bằng bao nhiêu độ?"
+          ],
+          "solution": "a) $BC = \\sqrt{9^2 + 12^2} = \\sqrt{225} = 15$ cm. [[br]]b) $\\sin B = \\dfrac{AC}{BC} = \\dfrac{12}{15} = \\dfrac{4}{5}$; \\; $\\cos B = \\dfrac{AB}{BC} = \\dfrac{9}{15} = \\dfrac{3}{5}$; [[br]]$\\tan B = \\dfrac{AC}{AB} = \\dfrac{12}{9} = \\dfrac{4}{3}$; \\; $\\cot B = \\dfrac{AB}{AC} = \\dfrac{9}{12} = \\dfrac{3}{4}$. [[br]]c) $\\cos C = \\dfrac{AC}{BC} = \\dfrac{4}{5} = \\sin B$. Vì $B + C = 90^\\circ$ (hai góc nhọn của tam giác vuông) nên $\\sin B = \\cos C$."
+        },
+        {
+          "type": "writelines",
+          "count": 4
+        }
+      ],
+      "teacher_note": "Bài 21–24 cho HS làm rồi chữa; riêng Bài 25 là bài hình hẳn hoi duy nhất của buổi, GV chữa kỹ và viết mẫu trình bày lên bảng."
+    },
+    {
+      "kind": "reflection",
+      "number": 5,
+      "title": "Sơ đồ tư duy",
+      "blocks": [
+        {
+          "type": "mindmap",
+          "caption": "Sơ đồ tư duy: Tỉ số lượng giác của góc nhọn",
+          "root": "TỈ SỐ LƯỢNG GIÁC GÓC NHỌN",
+          "branches": [
+            {
+              "label": "GỌI TÊN BA CẠNH",
+              "children": [
+                {
+                  "label": "Cạnh huyền: đối diện góc vuông"
+                },
+                {
+                  "label": "Cạnh đối: đối diện góc $\\alpha$"
+                },
+                {
+                  "label": "Cạnh kề: sát góc $\\alpha$"
+                }
+              ]
+            },
+            {
+              "label": "BỐN TỈ SỐ",
+              "children": [
+                {
+                  "label": "$\\sin = $ đối/huyền"
+                },
+                {
+                  "label": "$\\cos = $ kề/huyền"
+                },
+                {
+                  "label": "$\\tan = $ đối/kề · $\\cot = $ kề/đối"
+                }
+              ]
+            },
+            {
+              "label": "ĐỔI GÓC",
+              "children": [
+                {
+                  "label": "Đối và kề đổi chỗ cho nhau"
+                },
+                {
+                  "label": "$\\sin B = \\cos C$ (phụ nhau)"
+                }
+              ]
+            },
+            {
+              "label": "GÓC ĐẶC BIỆT",
+              "children": [
+                {
+                  "label": "$30^\\circ$, $45^\\circ$, $60^\\circ$"
+                },
+                {
+                  "label": "Góc khác: máy tính (DEG)"
+                }
+              ]
+            }
+          ]
+        },
+        {
+          "type": "writelines",
+          "count": 0
+        },
+        {
+          "type": "para",
+          "text": "\\textbf{BÀI TẬP VỀ NHÀ (Tỉ số lượng giác của góc nhọn).}"
+        },
+        {
+          "type": "writelines",
+          "count": 0
+        },
+        {
+          "type": "problem",
+          "label": "BTVN 1.",
+          "level": 1,
+          "tier": "btvn",
+          "statement": "[[wrap]]\\makebox[0pt][l]{\\hspace{0.62\\linewidth}\\smash{\\raisebox{-1.75cm}{\\vtop{\\hbox{\\adjustbox{max width=0.32\\linewidth, max totalheight=2.0cm}{\n\\begin{tikzpicture}[line width=0.8pt, font=\\small]\n  \\draw[ink] (0,0) -- (0,2.0) -- (3.0,0) -- cycle;\n  \\draw[ink] (0,0.26) -- (0.26,0.26) -- (0.26,0);\n  \\node[below left] at (0,0) {$A$};\n  \\node[above] at (0,2.0) {$B$};\n  \\node[right] at (3.0,0) {$C$};\n\\end{tikzpicture}\n}}\n\\hbox to 0.32\\linewidth{\\hfil{\\sffamily\\scriptsize\\itshape\\color{muted}Hình 22}\\hfil}}}}}[[/wrap]]Tam giác $ABC$ vuông tại $A$, cạnh huyền là:\\par\\vspace{4pt}\\parbox[t]{0.30\\linewidth}{\\textbf{A.} $AB$}\\parbox[t]{0.30\\linewidth}{\\textbf{B.} $BC$}\\par\\vspace{6pt}\\parbox[t]{0.30\\linewidth}{\\textbf{C.} $AC$}\\parbox[t]{0.30\\linewidth}{\\textbf{D.} $AH$}\\par\\vspace{1.13cm}",
+          "figure_given": true,
+          "solution": "Đáp án \\textbf{B}. Cạnh đối diện góc vuông $A$ là $BC$."
+        },
+        {
+          "type": "writelines",
+          "count": 0
+        },
+        {
+          "type": "problem",
+          "label": "BTVN 2.",
+          "level": 1,
+          "tier": "btvn",
+          "statement": "[[wrap]]\\makebox[0pt][l]{\\hspace{0.62\\linewidth}\\smash{\\raisebox{-1.75cm}{\\vtop{\\hbox{\\adjustbox{max width=0.32\\linewidth, max totalheight=2.0cm}{\n\\begin{tikzpicture}[line width=0.8pt, font=\\small]\n  \\draw[ink] (0,0) -- (0,2.0) -- (3.0,0) -- cycle;\n  \\draw[ink] (0,0.26) -- (0.26,0.26) -- (0.26,0);\n  \\node[below left] at (0,0) {$D$};\n  \\node[above] at (0,2.0) {$E$};\n  \\node[right] at (3.0,0) {$F$};\n\\end{tikzpicture}\n}}\n\\hbox to 0.32\\linewidth{\\hfil{\\sffamily\\scriptsize\\itshape\\color{muted}Hình 23}\\hfil}}}}}[[/wrap]]Tam giác $DEF$ vuông tại $D$, hai cạnh góc vuông là:\\par\\vspace{4pt}\\parbox[t]{0.30\\linewidth}{\\textbf{A.} $DE$, $DF$}\\parbox[t]{0.30\\linewidth}{\\textbf{B.} $DE$, $EF$}\\par\\vspace{6pt}\\parbox[t]{0.30\\linewidth}{\\textbf{C.} $DF$, $EF$}\\parbox[t]{0.30\\linewidth}{\\textbf{D.} $EF$, $EF$}\\par\\vspace{0.67cm}",
+          "figure_given": true,
+          "solution": "Đáp án \\textbf{A}. Hai cạnh tạo góc vuông $D$ là $DE$ và $DF$."
+        },
+        {
+          "type": "writelines",
+          "count": 0
+        },
+        {
+          "type": "problem",
+          "label": "BTVN 3.",
+          "level": 1,
+          "tier": "btvn",
+          "statement": "[[wrap]]\\makebox[0pt][l]{\\hspace{0.62\\linewidth}\\smash{\\raisebox{-1.75cm}{\\vtop{\\hbox{\\adjustbox{max width=0.32\\linewidth, max totalheight=2.0cm}{\n\\begin{tikzpicture}[line width=0.8pt, font=\\small]\n  \\draw[ink] (0,0) -- (0,2.0) -- (3.0,0) -- cycle;\n  \\draw[ink] (0,0.26) -- (0.26,0.26) -- (0.26,0);\n  \\node[below left] at (0,0) {$N$};\n  \\node[above] at (0,2.0) {$M$};\n  \\node[right] at (3.0,0) {$P$};\n\\end{tikzpicture}\n}}\n\\hbox to 0.32\\linewidth{\\hfil{\\sffamily\\scriptsize\\itshape\\color{muted}Hình 24}\\hfil}}}}}[[/wrap]]Tam giác $MNP$ vuông tại $N$. Hãy chỉ ra cạnh huyền.\\par\\vspace{1.59cm}",
+          "solution": "Cạnh huyền là $MP$ (đối diện góc vuông $N$).",
+          "figure_given": true
+        },
+        {
+          "type": "writelines",
+          "count": 0
+        },
+        {
+          "type": "problem",
+          "label": "BTVN 4.",
+          "level": 1,
+          "tier": "btvn",
+          "statement": "[[wrap]]\\makebox[0pt][l]{\\hspace{0.62\\linewidth}\\smash{\\raisebox{-1.75cm}{\\vtop{\\hbox{\\adjustbox{max width=0.32\\linewidth, max totalheight=2.0cm}{\n\\begin{tikzpicture}[line width=0.8pt, font=\\small]\n  \\draw[ink] (0,0) -- (0,2.0) -- (3.0,0) -- cycle;\n  \\draw[ink] (0,0.26) -- (0.26,0.26) -- (0.26,0);\n  \\node[below left] at (0,0) {$A$};\n  \\node[above] at (0,2.0) {$B$};\n  \\node[right] at (3.0,0) {$C$};\n\\end{tikzpicture}\n}}\n\\hbox to 0.32\\linewidth{\\hfil{\\sffamily\\scriptsize\\itshape\\color{muted}Hình 25}\\hfil}}}}}[[/wrap]]Tam giác $ABC$ vuông tại $A$. Cạnh đối của góc $C$ là:\\par\\vspace{4pt}\\parbox[t]{0.30\\linewidth}{\\textbf{A.} $AB$}\\parbox[t]{0.30\\linewidth}{\\textbf{B.} $AC$}\\par\\vspace{6pt}\\parbox[t]{0.30\\linewidth}{\\textbf{C.} $BC$}\\parbox[t]{0.30\\linewidth}{\\textbf{D.} Không có}\\par\\vspace{0.67cm}",
+          "figure_given": true,
+          "solution": "Đáp án \\textbf{A}. $AB$ đối diện góc $C$."
+        },
+        {
+          "type": "writelines",
+          "count": 0
+        },
+        {
+          "type": "problem",
+          "label": "BTVN 5.",
+          "level": 1,
+          "tier": "btvn",
+          "statement": "[[wrap]]\\makebox[0pt][l]{\\hspace{0.62\\linewidth}\\smash{\\raisebox{-1.75cm}{\\vtop{\\hbox{\\adjustbox{max width=0.32\\linewidth, max totalheight=2.0cm}{\n\\begin{tikzpicture}[line width=0.8pt, font=\\small]\n  \\draw[ink] (0,0) -- (0,2.0) -- (3.0,0) -- cycle;\n  \\draw[ink] (0,0.26) -- (0.26,0.26) -- (0.26,0);\n  \\node[below left] at (0,0) {$A$};\n  \\node[above] at (0,2.0) {$B$};\n  \\node[right] at (3.0,0) {$C$};\n\\end{tikzpicture}\n}}\n\\hbox to 0.32\\linewidth{\\hfil{\\sffamily\\scriptsize\\itshape\\color{muted}Hình 26}\\hfil}}}}}[[/wrap]]Tam giác $ABC$ vuông tại $A$. Cạnh kề của góc $C$ là:\\par\\vspace{4pt}\\parbox[t]{0.30\\linewidth}{\\textbf{A.} $AB$}\\parbox[t]{0.30\\linewidth}{\\textbf{B.} $AC$}\\par\\vspace{6pt}\\parbox[t]{0.30\\linewidth}{\\textbf{C.} $BC$}\\parbox[t]{0.30\\linewidth}{\\textbf{D.} $AB$ và $BC$}\\par\\vspace{0.67cm}",
+          "figure_given": true,
+          "solution": "Đáp án \\textbf{B}. $AC$ nằm sát góc $C$."
+        },
+        {
+          "type": "writelines",
+          "count": 0
+        },
+        {
+          "type": "problem",
+          "label": "BTVN 6.",
+          "level": 1,
+          "tier": "btvn",
+          "statement": "[[wrap]]\\makebox[0pt][l]{\\hspace{0.62\\linewidth}\\smash{\\raisebox{-1.75cm}{\\vtop{\\hbox{\\adjustbox{max width=0.32\\linewidth, max totalheight=2.0cm}{\n\\begin{tikzpicture}[line width=0.8pt, font=\\small]\n  \\draw[ink] (0,0) -- (0,2.0) -- (3.0,0) -- cycle;\n  \\draw[ink] (0,0.26) -- (0.26,0.26) -- (0.26,0);\n  \\node[below left] at (0,0) {$D$};\n  \\node[above] at (0,2.0) {$E$};\n  \\node[right] at (3.0,0) {$F$};\n\\end{tikzpicture}\n}}\n\\hbox to 0.32\\linewidth{\\hfil{\\sffamily\\scriptsize\\itshape\\color{muted}Hình 27}\\hfil}}}}}[[/wrap]]Tam giác $DEF$ vuông tại $D$. Với góc $E$, hãy chỉ ra cạnh đối, cạnh kề và cạnh huyền.\\par\\vspace{1.13cm}",
+          "solution": "Cạnh đối: $DF$. Cạnh kề: $DE$. Cạnh huyền: $EF$.",
+          "figure_given": true
+        },
+        {
+          "type": "writelines",
+          "count": 0
+        },
+        {
+          "type": "problem",
+          "label": "BTVN 7.",
+          "level": 1,
+          "tier": "btvn",
+          "statement": "[[wrap]]\\makebox[0pt][l]{\\hspace{0.62\\linewidth}\\smash{\\raisebox{-1.75cm}{\\vtop{\\hbox{\\adjustbox{max width=0.32\\linewidth, max totalheight=2.0cm}{\n\\begin{tikzpicture}[line width=0.8pt, font=\\small]\n  \\draw[ink] (0,0) -- (0,2.0) -- (3.0,0) -- cycle;\n  \\draw[ink] (0,0.26) -- (0.26,0.26) -- (0.26,0);\n  \\node[below left] at (0,0) {$A$};\n  \\node[above] at (0,2.0) {$B$};\n  \\node[right] at (3.0,0) {$C$};\n\\end{tikzpicture}\n}}\n\\hbox to 0.32\\linewidth{\\hfil{\\sffamily\\scriptsize\\itshape\\color{muted}Hình 28}\\hfil}}}}}[[/wrap]]Tam giác $ABC$ vuông tại $A$. Cạnh $AC$ là cạnh đối của góc nào?\\par\\vspace{4pt}\\parbox[t]{0.30\\linewidth}{\\textbf{A.} Góc $A$}\\parbox[t]{0.30\\linewidth}{\\textbf{B.} Góc $B$}\\par\\vspace{6pt}\\parbox[t]{0.30\\linewidth}{\\textbf{C.} Góc $C$}\\parbox[t]{0.30\\linewidth}{\\textbf{D.} Cả $B$ và $C$}\\par\\vspace{0.67cm}",
+          "figure_given": true,
+          "solution": "Đáp án \\textbf{B}. $AC$ đối diện góc $B$."
+        },
+        {
+          "type": "writelines",
+          "count": 0
+        },
+        {
+          "type": "problem",
+          "label": "BTVN 8.",
+          "level": 1,
+          "tier": "btvn",
+          "statement": "[[wrap]]\\makebox[0pt][l]{\\hspace{0.62\\linewidth}\\smash{\\raisebox{-1.75cm}{\\vtop{\\hbox{\\adjustbox{max width=0.32\\linewidth, max totalheight=2.0cm}{\n\\begin{tikzpicture}[line width=0.8pt, font=\\small]\n  \\draw[ink] (0,0) -- (0,2.0) -- (3.0,0) -- cycle;\n  \\draw[ink] (0,0.26) -- (0.26,0.26) -- (0.26,0);\n  \\node[below left] at (0,0) {$A$};\n  \\node[above] at (0,2.0) {$B$};\n  \\node[right] at (3.0,0) {$C$};\n\\end{tikzpicture}\n}}\n\\hbox to 0.32\\linewidth{\\hfil{\\sffamily\\scriptsize\\itshape\\color{muted}Hình 29}\\hfil}}}}}[[/wrap]]Tam giác $ABC$ vuông tại $A$. Cạnh $AB$ là cạnh kề của góc nào?\\par\\vspace{4pt}\\parbox[t]{0.30\\linewidth}{\\textbf{A.} Góc $B$}\\parbox[t]{0.30\\linewidth}{\\textbf{B.} Góc $C$}\\par\\vspace{6pt}\\parbox[t]{0.30\\linewidth}{\\textbf{C.} Góc $A$}\\parbox[t]{0.30\\linewidth}{\\textbf{D.} Không của góc nào}\\par\\vspace{0.67cm}",
+          "figure_given": true,
+          "solution": "Đáp án \\textbf{A}. $AB$ nằm sát góc $B$."
+        },
+        {
+          "type": "writelines",
+          "count": 0
+        },
+        {
+          "type": "problem",
+          "label": "BTVN 9.",
+          "level": 1,
+          "tier": "btvn",
+          "statement": "[[wrap]]\\makebox[0pt][l]{\\hspace{0.62\\linewidth}\\smash{\\raisebox{-1.75cm}{\\vtop{\\hbox{\\adjustbox{max width=0.32\\linewidth, max totalheight=2.0cm}{\n\\begin{tikzpicture}[line width=0.8pt, font=\\small]\n  \\draw[ink] (0,0) -- (0,2.0) -- (3.0,0) -- cycle;\n  \\draw[ink] (0,0.26) -- (0.26,0.26) -- (0.26,0);\n  \\node[below left] at (0,0) {$N$};\n  \\node[above] at (0,2.0) {$M$};\n  \\node[right] at (3.0,0) {$P$};\n\\end{tikzpicture}\n}}\n\\hbox to 0.32\\linewidth{\\hfil{\\sffamily\\scriptsize\\itshape\\color{muted}Hình 30}\\hfil}}}}}[[/wrap]]Tam giác $MNP$ vuông tại $N$. Cạnh $MN$ là cạnh đối của góc nào, cạnh kề của góc nào?\\par\\vspace{1.13cm}",
+          "solution": "$MN$ là cạnh đối của góc $P$ và là cạnh kề của góc $M$.",
+          "figure_given": true
+        },
+        {
+          "type": "writelines",
+          "count": 0
+        },
+        {
+          "type": "problem",
+          "label": "BTVN 10.",
+          "level": 1,
+          "tier": "btvn",
+          "statement": "Điền vào chỗ chấm (góc nhọn $\\alpha$): [[br]]a) $\\cos\\alpha = \\frac{\\ldots}{\\text{cạnh huyền}}$ \\qquad b) $\\tan\\alpha = \\frac{\\text{cạnh đối}}{\\ldots}$ \\qquad c) $\\cot\\alpha = \\frac{\\ldots}{\\ldots}$",
+          "solution": "a) cạnh kề. [[br]] b) cạnh kề. [[br]] c) $\\dfrac{\\text{cạnh kề}}{\\text{cạnh đối}}$.",
+          "figure_given": true
+        },
+        {
+          "type": "writelines",
+          "count": 0
+        },
+        {
+          "type": "problem",
+          "label": "BTVN 11.",
+          "level": 1,
+          "tier": "btvn",
+          "statement": "[[wrap]]\\makebox[0pt][l]{\\hspace{0.62\\linewidth}\\smash{\\raisebox{-1.75cm}{\\vtop{\\hbox{\\adjustbox{max width=0.32\\linewidth, max totalheight=2.0cm}{\n\\begin{tikzpicture}[line width=0.8pt, font=\\small]\n  \\draw[ink] (0,0) -- (0,2.0) -- (3.0,0) -- cycle;\n  \\draw[ink] (0,0.26) -- (0.26,0.26) -- (0.26,0);\n  \\node[below left] at (0,0) {$A$};\n  \\node[above] at (0,2.0) {$B$};\n  \\node[right] at (3.0,0) {$C$};\n\\end{tikzpicture}\n}}\n\\hbox to 0.32\\linewidth{\\hfil{\\sffamily\\scriptsize\\itshape\\color{muted}Hình 31}\\hfil}}}}}[[/wrap]]Viết bốn tỉ số lượng giác của góc $C$ theo các cạnh của tam giác.\\par\\vspace{1.13cm}",
+          "solution": "$\\sin C = \\dfrac{AB}{BC}$; $\\cos C = \\dfrac{AC}{BC}$; $\\tan C = \\dfrac{AB}{AC}$; $\\cot C = \\dfrac{AC}{AB}$.",
+          "figure_given": true
+        },
+        {
+          "type": "writelines",
+          "count": 0
+        },
+        {
+          "type": "problem",
+          "label": "BTVN 12.",
+          "level": 1,
+          "tier": "btvn",
+          "statement": "[[wrap]]\\makebox[0pt][l]{\\hspace{0.62\\linewidth}\\smash{\\raisebox{-1.75cm}{\\vtop{\\hbox{\\adjustbox{max width=0.32\\linewidth, max totalheight=2.0cm}{\n\\begin{tikzpicture}[line width=0.8pt, font=\\small]\n  \\draw[ink] (0,0) -- (0,2.0) -- (3.0,0) -- cycle;\n  \\draw[ink] (0,0.26) -- (0.26,0.26) -- (0.26,0);\n  \\node[below left] at (0,0) {$N$};\n  \\node[above] at (0,2.0) {$M$};\n  \\node[right] at (3.0,0) {$P$};\n\\end{tikzpicture}\n}}\n\\hbox to 0.32\\linewidth{\\hfil{\\sffamily\\scriptsize\\itshape\\color{muted}Hình 32}\\hfil}}}}}[[/wrap]]Viết bốn tỉ số lượng giác của góc $P$ theo các cạnh của tam giác.\\par\\vspace{1.13cm}",
+          "solution": "$\\sin P = \\dfrac{MN}{MP}$; $\\cos P = \\dfrac{NP}{MP}$; $\\tan P = \\dfrac{MN}{NP}$; $\\cot P = \\dfrac{NP}{MN}$.",
+          "figure_given": true
+        },
+        {
+          "type": "writelines",
+          "count": 0
+        },
+        {
+          "type": "problem",
+          "label": "BTVN 13.",
+          "level": 1,
+          "tier": "btvn",
+          "statement": "[[wrap]]\\makebox[0pt][l]{\\hspace{0.62\\linewidth}\\smash{\\raisebox{-1.75cm}{\\vtop{\\hbox{\\adjustbox{max width=0.32\\linewidth, max totalheight=2.0cm}{\n\\begin{tikzpicture}[line width=0.8pt, font=\\small]\n  \\draw[ink] (0,0) -- (0,2.0) -- (3.0,0) -- cycle;\n  \\draw[ink] (0,0.26) -- (0.26,0.26) -- (0.26,0);\n  \\node[below left] at (0,0) {$A$};\n  \\node[above] at (0,2.0) {$B$};\n  \\node[right] at (3.0,0) {$C$};\n  \\node[left] at (0,1.0) {$6$};\n  \\node[below] at (1.5,0) {$8$};\n  \\node[above right] at (1.5,1.0) {$10$};\n\\end{tikzpicture}\n}}\n\\hbox to 0.32\\linewidth{\\hfil{\\sffamily\\scriptsize\\itshape\\color{muted}Hình 33}\\hfil}}}}}[[/wrap]]Tam giác $ABC$ vuông tại $A$ có $AB = 6$ cm, $AC = 8$ cm, $BC = 10$ cm. Tính $\\sin B$, $\\cos B$.\\par\\vspace{1.13cm}",
+          "solution": "$\\sin B = \\dfrac{8}{10} = \\dfrac{4}{5}$; \\; $\\cos B = \\dfrac{6}{10} = \\dfrac{3}{5}$.",
+          "figure_given": true
+        },
+        {
+          "type": "writelines",
+          "count": 0
+        },
+        {
+          "type": "problem",
+          "label": "BTVN 14.",
+          "level": 1,
+          "tier": "btvn",
+          "statement": "[[wrap]]\\makebox[0pt][l]{\\hspace{0.62\\linewidth}\\smash{\\raisebox{-1.75cm}{\\vtop{\\hbox{\\adjustbox{max width=0.32\\linewidth, max totalheight=2.0cm}{\n\\begin{tikzpicture}[line width=0.8pt, font=\\small]\n  \\draw[ink] (0,0) -- (0,2.0) -- (3.0,0) -- cycle;\n  \\draw[ink] (0,0.26) -- (0.26,0.26) -- (0.26,0);\n  \\node[below left] at (0,0) {$A$};\n  \\node[above] at (0,2.0) {$B$};\n  \\node[right] at (3.0,0) {$C$};\n  \\node[left] at (0,1.0) {$6$};\n  \\node[below] at (1.5,0) {$8$};\n  \\node[above right] at (1.5,1.0) {$10$};\n\\end{tikzpicture}\n}}\n\\hbox to 0.32\\linewidth{\\hfil{\\sffamily\\scriptsize\\itshape\\color{muted}Hình 34}\\hfil}}}}}[[/wrap]]Với hình bên, tính $\\tan B$ và $\\cot B$.\\par\\vspace{1.59cm}",
+          "solution": "$\\tan B = \\dfrac{AC}{AB} = \\dfrac{8}{6} = \\dfrac{4}{3}$; \\; $\\cot B = \\dfrac{6}{8} = \\dfrac{3}{4}$.",
+          "figure_given": true
+        },
+        {
+          "type": "writelines",
+          "count": 0
+        },
+        {
+          "type": "problem",
+          "label": "BTVN 15.",
+          "level": 1,
+          "tier": "btvn",
+          "statement": "[[wrap]]\\makebox[0pt][l]{\\hspace{0.62\\linewidth}\\smash{\\raisebox{-1.75cm}{\\vtop{\\hbox{\\adjustbox{max width=0.32\\linewidth, max totalheight=2.0cm}{\n\\begin{tikzpicture}[line width=0.8pt, font=\\small]\n  \\draw[ink] (0,0) -- (0,2.0) -- (3.0,0) -- cycle;\n  \\draw[ink] (0,0.26) -- (0.26,0.26) -- (0.26,0);\n  \\node[below left] at (0,0) {$A$};\n  \\node[above] at (0,2.0) {$B$};\n  \\node[right] at (3.0,0) {$C$};\n  \\node[left] at (0,1.0) {$6$};\n  \\node[below] at (1.5,0) {$8$};\n  \\node[above right] at (1.5,1.0) {$10$};\n\\end{tikzpicture}\n}}\n\\hbox to 0.32\\linewidth{\\hfil{\\sffamily\\scriptsize\\itshape\\color{muted}Hình 35}\\hfil}}}}}[[/wrap]]Với hình bên, tính $\\sin C$ và $\\cos C$. So sánh với $\\cos B$, $\\sin B$.\\par\\vspace{1.59cm}",
+          "solution": "$\\sin C = \\dfrac{6}{10} = \\dfrac{3}{5} = \\cos B$; \\; $\\cos C = \\dfrac{8}{10} = \\dfrac{4}{5} = \\sin B$.",
+          "figure_given": true
+        },
+        {
+          "type": "writelines",
+          "count": 0
+        },
+        {
+          "type": "problem",
+          "label": "BTVN 16.",
+          "level": 1,
+          "tier": "btvn",
+          "statement": "[[wrap]]\\makebox[0pt][l]{\\hspace{0.62\\linewidth}\\smash{\\raisebox{-1.75cm}{\\vtop{\\hbox{\\adjustbox{max width=0.32\\linewidth, max totalheight=2.0cm}{\n\\begin{tikzpicture}[line width=0.8pt, font=\\small]\n  \\draw[ink] (0,0) -- (0,2.0) -- (3.0,0) -- cycle;\n  \\draw[ink] (0,0.26) -- (0.26,0.26) -- (0.26,0);\n  \\node[below left] at (0,0) {$A$};\n  \\node[above] at (0,2.0) {$B$};\n  \\node[right] at (3.0,0) {$C$};\n\\end{tikzpicture}\n}}\n\\hbox to 0.32\\linewidth{\\hfil{\\sffamily\\scriptsize\\itshape\\color{muted}Hình 36}\\hfil}}}}}[[/wrap]]Tam giác $ABC$ vuông tại $A$. Tỉ số $\\dfrac{AC}{BC}$ bằng:\\par\\vspace{4pt}\\parbox[t]{0.30\\linewidth}{\\textbf{A.} $\\sin B$}\\parbox[t]{0.30\\linewidth}{\\textbf{B.} $\\cos B$}\\par\\vspace{6pt}\\parbox[t]{0.30\\linewidth}{\\textbf{C.} $\\tan B$}\\parbox[t]{0.30\\linewidth}{\\textbf{D.} $\\cot B$}\\par\\vspace{1.13cm}",
+          "figure_given": true,
+          "solution": "Đáp án \\textbf{A}. $\\dfrac{AC}{BC} = \\dfrac{\\text{đối}}{\\text{huyền}} = \\sin B$."
+        },
+        {
+          "type": "writelines",
+          "count": 0
+        },
+        {
+          "type": "problem",
+          "label": "BTVN 17.",
+          "level": 1,
+          "tier": "btvn",
+          "statement": "[[wrap]]\\makebox[0pt][l]{\\hspace{0.62\\linewidth}\\smash{\\raisebox{-1.75cm}{\\vtop{\\hbox{\\adjustbox{max width=0.32\\linewidth, max totalheight=2.0cm}{\n\\begin{tikzpicture}[line width=0.8pt, font=\\small]\n  \\draw[ink] (0,0) -- (0,2.0) -- (3.0,0) -- cycle;\n  \\draw[ink] (0,0.26) -- (0.26,0.26) -- (0.26,0);\n  \\node[below left] at (0,0) {$A$};\n  \\node[above] at (0,2.0) {$B$};\n  \\node[right] at (3.0,0) {$C$};\n\\end{tikzpicture}\n}}\n\\hbox to 0.32\\linewidth{\\hfil{\\sffamily\\scriptsize\\itshape\\color{muted}Hình 37}\\hfil}}}}}[[/wrap]]Tam giác $ABC$ vuông tại $A$. Khẳng định nào SAI?\\par\\vspace{4pt}\\parbox[t]{0.30\\linewidth}{\\textbf{A.} $\\sin B = \\cos C$}\\parbox[t]{0.30\\linewidth}{\\textbf{B.} $\\tan B = \\cot C$}\\par\\vspace{6pt}\\parbox[t]{0.30\\linewidth}{\\textbf{C.} $\\sin B = \\dfrac{AB}{BC}$}\\parbox[t]{0.30\\linewidth}{\\textbf{D.} $\\cos B = \\dfrac{AB}{BC}$}\\par\\vspace{0.67cm}",
+          "figure_given": true,
+          "solution": "Đáp án \\textbf{C}. $\\sin B = \\dfrac{AC}{BC}$ chứ không phải $\\dfrac{AB}{BC}$."
+        },
+        {
+          "type": "writelines",
+          "count": 0
+        },
+        {
+          "type": "problem",
+          "label": "BTVN 18.",
+          "level": 1,
+          "tier": "btvn",
+          "statement": "[[wrap]]\\makebox[0pt][l]{\\hspace{0.62\\linewidth}\\smash{\\raisebox{-1.75cm}{\\vtop{\\hbox{\\adjustbox{max width=0.32\\linewidth, max totalheight=2.0cm}{\n\\begin{tikzpicture}[line width=0.8pt, font=\\small]\n  \\draw[ink] (0,0) -- (0,2.0) -- (3.0,0) -- cycle;\n  \\draw[ink] (0,0.26) -- (0.26,0.26) -- (0.26,0);\n  \\node[below left] at (0,0) {$D$};\n  \\node[above] at (0,2.0) {$E$};\n  \\node[right] at (3.0,0) {$F$};\n\\end{tikzpicture}\n}}\n\\hbox to 0.32\\linewidth{\\hfil{\\sffamily\\scriptsize\\itshape\\color{muted}Hình 38}\\hfil}}}}}[[/wrap]]Tam giác $DEF$ vuông tại $D$. Viết $\\tan E$ và $\\tan F$ rồi cho biết tích $\\tan E \\cdot \\tan F$ bằng bao nhiêu.\\par\\vspace{1.13cm}",
+          "solution": "$\\tan E = \\dfrac{DF}{DE}$, $\\tan F = \\dfrac{DE}{DF}$ nên $\\tan E \\cdot \\tan F = 1$.",
+          "figure_given": true
+        },
+        {
+          "type": "writelines",
+          "count": 0
+        },
+        {
+          "type": "problem",
+          "label": "BTVN 19.",
+          "level": 1,
+          "tier": "btvn",
+          "statement": "Giá trị của $\\cos 60^\\circ$ bằng:\\par\\vspace{4pt}\\parbox[t]{0.28\\linewidth}{\\textbf{A.} $\\dfrac{1}{2}$}\\parbox[t]{0.28\\linewidth}{\\textbf{B.} $\\dfrac{\\sqrt{2}}{2}$}\\par\\vspace{6pt}\\parbox[t]{0.28\\linewidth}{\\textbf{C.} $\\dfrac{\\sqrt{3}}{2}$}\\parbox[t]{0.28\\linewidth}{\\textbf{D.} $1$}",
+          "figure_given": true,
+          "solution": "Đáp án \\textbf{A}. $\\cos 60^\\circ = \\dfrac{1}{2}$."
+        },
+        {
+          "type": "writelines",
+          "count": 0
+        },
+        {
+          "type": "problem",
+          "label": "BTVN 20.",
+          "level": 1,
+          "tier": "btvn",
+          "statement": "Tính $Q = \\sin 45^\\circ \\cdot \\cos 45^\\circ$.",
+          "solution": "$Q = \\dfrac{\\sqrt{2}}{2}\\cdot\\dfrac{\\sqrt{2}}{2} = \\dfrac{2}{4} = \\dfrac{1}{2}$.",
+          "figure_given": true
+        },
+        {
+          "type": "writelines",
+          "count": 0
+        },
+        {
+          "type": "problem",
+          "label": "BTVN 21.",
+          "level": 1,
+          "tier": "btvn",
+          "statement": "Tính $R = \\tan 60^\\circ \\cdot \\cot 60^\\circ - \\sin 30^\\circ$.",
+          "solution": "$R = 1 - \\dfrac{1}{2} = \\dfrac{1}{2}$ (vì $\\tan\\alpha \\cdot \\cot\\alpha = 1$).",
+          "figure_given": true
+        },
+        {
+          "type": "writelines",
+          "count": 0
+        },
+        {
+          "type": "problem",
+          "label": "BTVN 22.",
+          "level": 1,
+          "tier": "btvn",
+          "statement": "Dùng máy tính cầm tay tính $\\cos 25^\\circ$ (làm tròn đến chữ số thập phân thứ tư).",
+          "solution": "$\\cos 25^\\circ \\approx 0{,}9063$.",
+          "figure_given": true
+        },
+        {
+          "type": "writelines",
+          "count": 0
+        },
+        {
+          "type": "problem",
+          "label": "BTVN 23.",
+          "level": 1,
+          "tier": "btvn",
+          "statement": "Dùng máy tính cầm tay, tìm số đo góc nhọn $x$ (làm tròn đến độ) biết $\\sin x = 0{,}5$.",
+          "solution": "$x = 30^\\circ$.",
+          "figure_given": true
+        },
+        {
+          "type": "writelines",
+          "count": 0
+        },
+        {
+          "type": "problem",
+          "label": "BTVN 24.",
+          "level": 1,
+          "tier": "btvn",
+          "statement": "Dùng máy tính cầm tay, tìm số đo góc nhọn $y$ (làm tròn đến độ) biết $\\cos y = 0{,}8$.",
+          "solution": "$y \\approx 37^\\circ$.",
+          "figure_given": true
+        },
+        {
+          "type": "writelines",
+          "count": 0
+        },
+        {
+          "type": "problem",
+          "label": "BTVN 25.",
+          "level": 1,
+          "tier": "btvn",
+          "statement": "\\textbf{Vẽ hình theo yêu cầu:} Vẽ tam giác $ABC$ vuông tại $A$ có $\\widehat{B} = 40^\\circ$. Ghi rõ trên hình: cạnh huyền, cạnh đối và cạnh kề của góc $B$.",
+          "solution": "Vẽ góc vuông tại $A$, dùng thước đo độ dựng $\\widehat{B} = 40^\\circ$. Cạnh huyền $BC$; với góc $B$: cạnh đối $AC$, cạnh kề $AB$.",
+          "figure_given": true,
+          "draw": true
+        },
+        {
+          "type": "writelines",
+          "count": 0
+        },
+        {
+          "type": "problem",
+          "label": "BTVN 26.",
+          "level": 2,
+          "tier": "btvn",
+          "statement": "[[wrap]]\\makebox[0pt][l]{\\hspace{0.62\\linewidth}\\smash{\\raisebox{-1.75cm}{\\vtop{\\hbox{\\adjustbox{max width=0.32\\linewidth, max totalheight=2.0cm}{\n\\begin{tikzpicture}[line width=0.8pt, font=\\small]\n  \\draw[ink] (0,0) -- (0,2.0) -- (3.0,0) -- cycle;\n  \\draw[ink] (0,0.26) -- (0.26,0.26) -- (0.26,0);\n  \\node[below left] at (0,0) {$A$};\n  \\node[above] at (0,2.0) {$B$};\n  \\node[right] at (3.0,0) {$C$};\n  \\node[left] at (0,1.0) {$8$};\n  \\node[below] at (1.5,0) {$15$};\n\\end{tikzpicture}\n}}\n\\hbox to 0.32\\linewidth{\\hfil{\\sffamily\\scriptsize\\itshape\\color{muted}Hình 39}\\hfil}}}}}[[/wrap]]Cho tam giác $ABC$ vuông tại $A$, $AB = 8$ cm, $AC = 15$ cm. Tính $BC$ rồi viết bốn tỉ số lượng giác của góc $C$.\\par\\vspace{1.13cm}",
+          "solution": "$BC = \\sqrt{8^2 + 15^2} = \\sqrt{289} = 17$ cm. [[br]]$\\sin C = \\dfrac{8}{17}$; \\; $\\cos C = \\dfrac{15}{17}$; \\; $\\tan C = \\dfrac{8}{15}$; \\; $\\cot C = \\dfrac{15}{8}$."
+        },
+        {
+          "type": "writelines",
+          "count": 0
+        },
+        {
+          "type": "problem",
+          "label": "BTVN 27.",
+          "level": 2,
+          "tier": "btvn",
+          "statement": "Viết $\\tan 75^\\circ$ theo tỉ số lượng giác của góc phụ với nó.",
+          "solution": "$75^\\circ + 15^\\circ = 90^\\circ$ nên $\\tan 75^\\circ = \\cot 15^\\circ$."
+        },
+        {
+          "type": "writelines",
+          "count": 0
+        },
+        {
+          "type": "problem",
+          "label": "BTVN 28.",
+          "level": 2,
+          "tier": "btvn",
+          "statement": "Cho góc nhọn $\\alpha$ có $\\cos\\alpha = \\dfrac{12}{13}$. Tính $\\sin\\alpha$, $\\tan\\alpha$, $\\cot\\alpha$.",
+          "solution": "Dựng tam giác vuông có cạnh kề $= 12$, cạnh huyền $= 13$ thì cạnh đối $= \\sqrt{13^2 - 12^2} = 5$. [[br]]$\\sin\\alpha = \\dfrac{5}{13}$; \\; $\\tan\\alpha = \\dfrac{5}{12}$; \\; $\\cot\\alpha = \\dfrac{12}{5}$."
+        },
+        {
+          "type": "writelines",
+          "count": 0
+        },
+        {
+          "type": "problem",
+          "label": "Bài 24.",
+          "level": 1,
+          "tier": "onclass",
+          "statement": "Dùng máy tính cầm tay, tìm số đo góc nhọn $x$ (làm tròn đến độ) biết $\\tan x = 1{,}5$.",
+          "solution": "$x \\approx 56^\\circ$ (bấm $\\tan^{-1} 1{,}5$).",
+          "figure_given": true
+        },
+        {
+          "type": "writelines",
+          "count": 0
+        },
+        {
+          "type": "problem",
+          "label": "BTVN 29.",
+          "level": 2,
+          "tier": "btvn",
+          "statement": "Cho góc nhọn $\\alpha$ có $\\tan\\alpha = \\dfrac{3}{4}$. Tính $\\sin\\alpha$ và $\\cos\\alpha$.",
+          "solution": "Dựng tam giác vuông có cạnh đối $= 3$, cạnh kề $= 4$ thì cạnh huyền $= \\sqrt{3^2+4^2} = 5$. [[br]]$\\sin\\alpha = \\dfrac{3}{5}$; \\; $\\cos\\alpha = \\dfrac{4}{5}$."
+        },
+        {
+          "type": "writelines",
+          "count": 0
+        }
+      ],
+      "teacher_note": "BTVN 25 yêu cầu HS tự vẽ hình — nhắc mang thước đo độ."
+    }
+  ]
+}

@@ -1,7 +1,7 @@
 """duration_gate — đếm "câu" theo ý nhỏ/thẻ mức và soi quỹ phút + tỉ lệ 40-40-20
 từng phiếu tầng C (Thầy chốt 2026-06-11)."""
 from src.schema import LessonPackage
-from src.validators.duration_gate import _count_items, check_duration
+from src.validators.duration_gate import _count_items, check_duration, draw_counts
 
 
 def test_count_items_letters_and_bullets():
@@ -88,3 +88,61 @@ def test_tier_x_not_gated():
     lesson.class_tier = "X"
     lesson.grade_label = "Lớp 9 • Ôn vào 10"
     assert check_duration(lesson) == []
+
+
+# ── Bài HÌNH: rate ×2 + "tự vẽ hình" cộng 5′ (Thầy chốt 2026-07-26) ──────────
+
+def _lesson_hinh8(problems):
+    """Phiếu HÌNH lớp 8 tầng B; mỗi problem là (đoạn, level, đề, phải-tự-vẽ-hình)."""
+    lesson = _lesson([p[:3] for p in problems])
+    lesson.class_tier = "B"
+    lesson.grade_label = "Lớp 8"
+    lesson.title = "Luyện tập hình thang cân"
+    for blk, p in zip(lesson.stages[0].blocks, problems):
+        blk.draw = p[3]
+    return lesson
+
+
+def test_draw_adds_five_minutes_once_per_problem():
+    # 2 ý TH lớp 8 hình = 2 × 9′ = 18′; bài phải tự vẽ hình cộng 5′ MỘT LẦN cho cả
+    # bài (không nhân theo ý) → 23′.
+    base = _lesson_hinh8([("onclass", 2, "a) x b) x", False)])
+    drawn = _lesson_hinh8([("onclass", 2, "a) x b) x", True)])
+    assert draw_counts(base)["onclass"]["TH"] == 0
+    assert draw_counts(drawn)["onclass"]["TH"] == 1
+    assert any("TH 2 câu/18′" in w and "= 18′" in w for w in check_duration(base))
+    assert any("1 bài tự vẽ hình ×5′" in w and "= 23′" in w for w in check_duration(drawn))
+
+
+def test_draw_band_follows_problem_level_not_tags():
+    # Bài giàn giáo level 2 (TH) có ý [NB]: hình vẽ một lần, tính vào band TH của BÀI.
+    lesson = _lesson_hinh8([("onclass", 2, "a) [NB] x b) [NB] x c) [TH] x", True)])
+    assert draw_counts(lesson)["onclass"] == {"NB": 0, "TH": 1, "VD": 0, "VDC": 0}
+
+
+def test_draw_ignored_when_flag_absent():
+    # Không khai `draw` ⇒ không cộng phút nào (tương thích ngược phiếu cũ).
+    lesson = _lesson_hinh8([("btvn", 2, "a) x", False)])
+    assert sum(draw_counts(lesson)["btvn"].values()) == 0
+
+
+def test_figure_given_tinh_nua_phut_moi_cau():
+    """Câu trắc nghiệm/điền khuyết trên HÌNH VẼ SẴN chỉ tính nửa phút/câu
+    (Thầy chốt 2026-07-27) — rate hình ×2 trả cho khâu dựng hình + trình bày."""
+    from src.validators.duration_gate import figure_given_counts
+    base = _lesson_hinh8([("onclass", 2, "a) x b) x", False)])
+    ve_san = _lesson_hinh8([("onclass", 2, "a) x b) x", False)])
+    ve_san.stages[0].blocks[0].figure_given = True
+    assert figure_given_counts(base)["onclass"]["TH"] == 0
+    assert figure_given_counts(ve_san)["onclass"]["TH"] == 2
+    # 2 ý TH hình lớp 8 = 18′ khi phải dựng hình, còn 9′ khi hình đã vẽ sẵn.
+    assert any("= 18′" in w for w in check_duration(base))
+    assert any("= 9′" in w for w in check_duration(ve_san))
+
+
+def test_figure_given_nhan_biet_tinh_1_phut():
+    """Câu NHẬN BIẾT trắc nghiệm trên hình vẽ sẵn: 1′/câu (Thầy chốt 2026-07-27),
+    thay hẳn rate hình ×2 chứ không phải nửa rate."""
+    lesson = _lesson_hinh8([("onclass", 1, "a) x b) x c) x d) x", False)])
+    lesson.stages[0].blocks[0].figure_given = True
+    assert any("NB 4 câu/4′" in w for w in check_duration(lesson))

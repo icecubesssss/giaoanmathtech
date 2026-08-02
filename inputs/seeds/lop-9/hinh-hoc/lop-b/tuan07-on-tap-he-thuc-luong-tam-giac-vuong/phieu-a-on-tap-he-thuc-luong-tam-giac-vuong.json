@@ -1,0 +1,151 @@
+{
+  "slug": "phieu-a-on-tap-he-thuc-luong-tam-giac-vuong",
+  "title": "Ôn tập Hệ thức lượng (Tính toán \\& Thực tế)",
+  "eyebrow": "PHIẾU A • HÌNH HỌC 9",
+  "grade_label": "Lớp 9 • Ôn vào 10",
+  "class_tier": "B",
+  "stages": [
+    {
+      "kind": "review",
+      "number": 1,
+      "title": "Khám phá",
+      "blocks": [
+        {
+          "type": "opener",
+          "text": "\\textbf{Ứng dụng Tỉ số Lượng giác và Hệ thức lượng trong Thực tế.} [[br]] Trong lịch sử, nhà toán học Thales đã dùng bóng của cọc và bóng của kim tự tháp dưới ánh nắng mặt trời để đo chiều cao kim tự tháp. Ngày nay, với sự hỗ trợ của các tỉ số lượng giác góc nhọn và hệ thức lượng trong tam giác vuông, việc đo chiều cao các công trình, độ rộng bờ sông hay độ cao máy bay cất cánh trở nên đơn giản và chính xác.",
+          "image": "images/opener.png"
+        }
+      ],
+      "teacher_note": "Giáo viên dẫn dắt học sinh ôn lại ý nghĩa thực tiễn của Tỉ số Lượng giác và Hệ thức lượng trước khi bước vào luyện tập."
+    },
+    {
+      "kind": "concept",
+      "number": 2,
+      "title": "Khái niệm",
+      "blocks": [
+        {
+          "type": "noted",
+          "text": "\\textbf{Tóm tắt Hệ thức lượng \\& Tỉ số Lượng giác trong Tam giác vuông:}\n\nCho tam giác $ABC$ vuông tại $A$, đường cao $AH$ ($H \\in BC$). Đặt $BC = a$, $AC = b$, $AB = c$, $AH = h$, $BH = c'$, $CH = b'$.\n\n1. \\textbf{Hệ thức về cạnh và đường cao:}\n$b^2 = a \\cdot b'$ và $c^2 = a \\cdot c'$; $h^2 = b' \\cdot c'$ và $a \\cdot h = b \\cdot c$; $\\dfrac{1}{h^2} = \\dfrac{1}{b^2} + \\dfrac{1}{c^2}$; $a^2 = b^2 + c^2$.\n\n2. \\textbf{Tỉ số lượng giác góc nhọn $\\alpha$ ($0^\\circ < \\alpha < 90^\\circ$):}\n$\\sin \\alpha = \\dfrac{\\text{đối}}{\\text{huyền}}$, $\\cos \\alpha = \\dfrac{\\text{kề}}{\\text{huyền}}$, $\\tan \\alpha = \\dfrac{\\text{đối}}{\\text{kề}}$, $\\cot \\alpha = \\dfrac{\\text{kề}}{\\text{đối}}$.\nHai góc phụ nhau ($\\alpha + \\beta = 90^\\circ$): $\\sin \\alpha = \\cos \\beta$, $\\tan \\alpha = \\cot \\beta$."
+        }
+      ],
+      "solution": "Học sinh ghi nhớ và vận dụng linh hoạt 5 hệ thức cơ bản cùng 4 tỉ số lượng giác trong tam giác vuông.",
+      "teacher_note": "Nhấn mạnh cách chọn hệ thức tối ưu phù hợp với yếu tố đã biết của đề bài để tối thiểu hóa các bước tính toán."
+    },
+    {
+      "kind": "practice1",
+      "number": 3,
+      "title": "Luyện tập 1",
+      "blocks": [
+        {
+          "type": "problem",
+          "label": "Bài 1.",
+          "tier": "onclass",
+          "level": 2,
+          "statement": "\\emph{(Trích đề kiểm tra Giữa học kì 1, THCS Cổ Nhuế 2 \\& Bát Tràng)} [[br]] Cho tam giác $MNP$ vuông tại $M$, đường cao $MH$ ($H \\in NP$). Gọi $E, F$ lần lượt là hình chiếu của $H$ trên $MN, MP$. [[br]] [NB] a) Cho $MN = 6\\text{ cm}$, $MP = 8\\text{ cm}$. Tính độ dài cạnh $NP$. [[br]] [NB] b) Tính độ dài đường cao $MH$. [[br]] [NB] c) Tính số đo góc nhọn $\\widehat{MNP}$ (làm tròn đến độ). [[br]] [NB] d) Tính độ dài đoạn thẳng $EF$. [[br]] [TH] e) Chứng minh $ME \\cdot MN = MF \\cdot MP$. [[br]] [TH] f) Chứng minh $\\Delta MEF \\sim \\Delta MPN$.",
+          "check": {
+            "kind": "solveset",
+            "equation": "x = 10",
+            "answer": [
+              10
+            ]
+          }
+        },
+        {
+          "type": "figure",
+          "tikz": "\\begin{tikzpicture}[line width=0.9pt,font=\\small]\\coordinate (M) at (0,2.4);\\coordinate (N) at (-1.8,0);\\coordinate (P) at (3.2,0);\\coordinate (H) at (0,0);\\draw[ink,line width=1.1pt] (N)--(P);\\draw[ink,line width=1.1pt] (M)--(N);\\draw[ink,line width=1.1pt] (M)--(P);\\draw[ink,line width=0.8pt] (M)--(H);\\rightanglemark{N}{M}{P}\\rightanglemark{M}{H}{P}\\coordinate (E) at ($(M)!(H)!(N)$);\\coordinate (F) at ($(M)!(H)!(P)$);\\draw[ink,dashed] (H)--(E);\\draw[ink,dashed] (H)--(F);\\rightanglemark{M}{E}{H}\\rightanglemark{M}{F}{H}\\draw[brand,line width=1pt] (E)--(F);\\node[above] at (M) {$M$};\\node[below left] at (N) {$N$};\\node[below right] at (P) {$P$};\\node[below] at (H) {$H$};\\node[above left] at (E) {$E$};\\node[above right] at (F) {$F$};\\end{tikzpicture}",
+          "caption": "Mô hình tam giác $MNP$ vuông tại $M$ với đường cao $MH$ và các hình chiếu $E, F$.",
+          "width": "0.45\\linewidth"
+        },
+        {
+          "type": "writelines",
+          "count": 6
+        },
+        {
+          "type": "problem",
+          "label": "Bài 2.",
+          "tier": "onclass",
+          "level": 3,
+          "statement": "\\emph{(Trích đề kiểm tra Giữa học kì 1, THCS Bát Tràng)} [[br]] Cho tam giác $ABC$ vuông tại $A$ ($AB < AC$), $AB = 6\\text{ cm}$, $\\widehat{ABC} = 53^\\circ$. [[br]] [NB] e) Tính độ dài cạnh $AC$ (làm tròn đến $0{,}01\\text{ cm}$). [[br]] [NB] f) Tính độ dài cạnh $BC$ (làm tròn đến $0{,}01\\text{ cm}$) và số đo góc $\\widehat{ACB}$. [[br]] [TH] g) Kẻ đường cao $AH$ ($H \\in BC$). Chứng minh $BC = AB \\cdot \\cos B + AC \\cdot \\cos C$. [[br]] [VD] h) Kẻ phân giác $BD$ của góc $\\widehat{ABC}$ ($D \\in AC$). Gọi $K$ là giao điểm của $BD$ và $AH$. Chứng minh $KH = AK \\cdot \\sin C$.",
+          "check": {
+            "kind": "solveset",
+            "equation": "x = 7.96",
+            "answer": [
+              7.96
+            ]
+          }
+        },
+        {
+          "type": "writelines",
+          "count": 6
+        }
+      ],
+      "solution": "Bài 1: a) $NP = \\sqrt{6^2 + 8^2} = 10\\text{ cm}$. b) $MH = \\dfrac{6 \\cdot 8}{10} = 4{,}8\\text{ cm}$. c) $\\sin N = 0{,}8 \\Rightarrow \\widehat{N} \\approx 53^\\circ$. d) $MEHF$ là hình chữ nhật $\\Rightarrow EF = MH = 4{,}8\\text{ cm}$. e) $MH^2 = ME \\cdot MN = MF \\cdot MP$. f) $\\dfrac{ME}{MP} = \\dfrac{MF}{MN} \\Rightarrow \\Delta MEF \\sim \\Delta MPN$. [[br]] Bài 2: e) $AC = 6 \\cdot \\tan 53^\\circ \\approx 7{,}96\\text{ cm}$. f) $BC = \\dfrac{6}{\\cos 53^\\circ} \\approx 9{,}97\\text{ cm}$, $\\widehat{C} = 37^\\circ$. g) $BH = AB \\cdot \\cos B, CH = AC \\cdot \\cos C \\Rightarrow BC = BH + CH = AB \\cdot \\cos B + AC \\cdot \\cos C$. h) Áp dụng tính chất phân giác trong $\\Delta ABH$ và tam giác vuông $ACH$.",
+      "teacher_note": "Giáo viên hướng dẫn học sinh kết hợp biến đổi đại số với các tỉ số lượng giác để chứng minh hệ thức hình học."
+    },
+    {
+      "kind": "practice2",
+      "number": 4,
+      "title": "Luyện tập 2",
+      "blocks": [
+        {
+          "type": "problem",
+          "label": "Bài 3.",
+          "tier": "onclass",
+          "level": 3,
+          "statement": "\\emph{(Trích đề thi GKI, THCS Ngô Gia Tự, Phú Diễn \\& Bát Tràng)} [[br]] \\textbf{Chuỗi bài toán Thực tế Tỉ số Lượng giác:} [[br]] [NB] a) \\emph{(Độ nghiêng con dốc)} Người đi xe đạp lên đoạn đường dốc nghiêng $10^\\circ$ so với phương ngang, đỉnh dốc cao $80\\text{ m}$. Tính chiều dài đoạn dốc (làm tròn đến mét). [[br]] [NB] b) \\emph{(Bóng tòa tháp)} Tia nắng tạo với mặt đất góc $34^\\circ$, bóng tòa tháp trên mặt đất dài $8{,}6\\text{ m}$. Tính chiều cao tòa tháp (làm tròn đến $0{,}1\\text{ m}$). [[br]] [NB] c) \\emph{(Tháp Eiffel)} Góc giữa tia nắng và mặt đất là $62^\\circ$, bóng tháp Eiffel trên mặt đất là $172\\text{ m}$. Tính chiều cao tháp Eiffel (làm tròn đến $0{,}1\\text{ m}$). [[br]] [NB] d) \\emph{(Ngọn hải đăng Đa Lát)} Hải đăng cao $42\\text{ m}$. Người trên đỉnh nhìn tàu với góc hạ $10^\\circ$. Tính khoảng cách từ tàu đến chân hải đăng (làm tròn đến $0{,}1\\text{ m}$). [[br]] [TH] e) \\emph{(Góc hạ máy bay)} Máy bay ở độ cao $10\\,600\\text{ m}$. Giữ nguyên tốc độ cất cánh $320\\text{ km/h}$ và góc bay $28^\\circ$, sau bao nhiêu phút máy bay đạt độ cao đó (làm tròn đến $0{,}1\\text{ phút}$)?",
+          "check": {
+            "kind": "solveset",
+            "equation": "x = 461",
+            "answer": [
+              461
+            ]
+          }
+        },
+        {
+          "type": "problem",
+          "label": "Bài 4.",
+          "tier": "onclass",
+          "level": 4,
+          "figure_given": true,
+          "statement": "\\emph{(Trích đề thi GKI, THCS Bát Tràng - Hai trạm quan sát)} [[br]] [VDC] a) Tại hai điểm $M, N$ cách nhau $1000\\text{ m}$ trên mặt đất thẳng hàng với chân núi $H$, nhìn đỉnh núi với góc nâng $40^\\circ$ và $32^\\circ$. Tính chiều cao ngọn núi (làm tròn đến mét).",
+          "check": {
+            "kind": "solveset",
+            "equation": "x = 2459",
+            "answer": [
+              2459
+            ]
+          }
+        },
+        {
+          "type": "writelines",
+          "count": 6
+        }
+      ],
+      "solution": "a) Chiều dài dốc: $L = \\dfrac{80}{\\sin 10^\\circ} \\approx 461\\text{ m}$. [[br]] b) Chiều cao tháp: $h = 8{,}6 \\cdot \\tan 34^\\circ \\approx 5{,}8\\text{ m}$. [[br]] c) Chiều cao tháp Eiffel: $h = 172 \\cdot \\tan 62^\\circ \\approx 323{,}4\\text{ m}$. [[br]] d) Khoảng cách đến tàu: $d = \\dfrac{42}{\\tan 10^\\circ} \\approx 238{,}2\\text{ m}$. [[br]] e) Quãng đường bay $S = \\dfrac{10{,}6}{\\sin 28^\\circ} \\approx 22{,}58\\text{ km}$. Thời gian $t = \\dfrac{22{,}58}{320} \\cdot 60 \\approx 4{,}2\\text{ phút}$. [[br]] f) Chiều cao ngọn núi $h = \\dfrac{1000}{\\cot 32^\\circ - \\cot 40^\\circ} \\approx 2459\\text{ m}$.",
+      "teacher_note": "Giáo viên rèn luyện cho học sinh kĩ năng chuyển đổi bài toán thực tế thành mô hình tam giác vuông và dùng tỉ số lượng giác phù hợp."
+    },
+    {
+      "kind": "reflection",
+      "number": 5,
+      "title": "Tổng kết",
+      "blocks": [
+        {
+          "type": "problem",
+          "label": "Bài 5.",
+          "tier": "btvn",
+          "level": 2,
+          "statement": "\\emph{(Trích đề kiểm tra Giữa học kì 1, THCS Phú Diễn \\& Nguyễn Du)} [[br]] [NB] a) Cho tam giác $ABC$ vuông tại $A$ ($AB < AC$), $AB = 3\\text{ cm}, BC = 5\\text{ cm}$. Tính $AC$ và số đo góc $B$ (làm tròn đến độ). [[br]] [NB] b) Cho tam giác $ABC$ vuông tại $A$, $AB = 6\\text{ cm}, BC = 10\\text{ cm}$. Tính $AC$ và số đo góc $\\widehat{ACB}$ (làm tròn đến độ). [[br]] [NB] c) Cho tam giác $ABC$ vuông tại $A$, $AB = 9\\text{ cm}, \\tan C = \\dfrac{3}{4}$. Tính $AC, BC, AH$. [[br]] [NB] d) \\emph{(Đường bay máy bay)} Vận tốc máy bay $250\\text{ km/h}$, đường bay tạo với mặt đất góc $30^\\circ$. Hỏi sau bao nhiêu phút kể từ khi cất cánh thì máy bay đạt độ cao $5000\\text{ m}$? [[br]] [NB] e) Máy bay hạ cánh từ độ cao $5\\text{ km}$, đường hạ cánh $AB$ tạo với mặt đất góc $30^\\circ$. Tính độ dài $AB$ (làm tròn đến km). [[br]] [NB] f) Sau khi tiếp đất tại $B$, máy bay chạy với vận tốc $45\\text{ km/h}$. Tổng quãng đường từ lúc bắt đầu hạ cánh đến khu trả khách là $102\\text{ km}$. Tính thời gian di chuyển trên mặt đất (làm tròn đến phút). [[br]] [NB] g) Cho tam giác $ABC$ vuông tại $A$, đường cao $AH$. Kẻ $HE \\perp AB, HF \\perp AC$. Chứng minh $AE \\cdot AB = AF \\cdot AC = AH^2$. [[br]] [NB] h) Cho tam giác $ABC$ vuông tại $A$, chứng minh $BC = AB \\cdot \\cos B + AC \\cdot \\cos C$. [[br]] [TH] i) Chứng minh $\\dfrac{S_{AEF}}{S_{ABC}} = \\sin^2 B \\cdot \\cos^2 B$. [[br]] [TH] j) Cho phân giác $BD$ của $\\widehat{B}$ cắt đường cao $AH$ tại $K$. Chứng minh $KH = AK \\cdot \\sin C$. [[br]] [TH] k) Chứng minh $AH^3 = BC \\cdot AE \\cdot AF$. [[br]] [VD] l) Chứng minh $\\sin^3 B = \\dfrac{CF}{BC}$.",
+          "check": {
+            "kind": "solveset",
+            "equation": "x = 4.8",
+            "answer": [
+              4.8
+            ]
+          }
+        }
+      ],
+      "solution": "Bài 5: a) $AC = 4\\text{ cm}, \\widehat{B} \\approx 53^\\circ$. b) $AC = 8\\text{ cm}, \\widehat{C} \\approx 37^\\circ$. c) $AC = 12\\text{ cm}, BC = 15\\text{ cm}, AH = 7{,}2\\text{ cm}$. d) $t = 2{,}4\\text{ phút}$. e) $AB = 10\\text{ km}$. f) $t \\approx 123\\text{ phút}$. g) Hệ thức lượng. h) Tam giác vuông. i) Tỉ số diện tích. j) Phân giác. k) Hệ thức biến đổi. l) Tỉ số lượng giác nâng cao.",
+      "teacher_note": "Bài tập về nhà giúp học sinh củng cố toàn bộ các dạng toán trong phiếu A."
+    }
+  ]
+}

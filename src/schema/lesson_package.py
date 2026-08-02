@@ -40,7 +40,12 @@ class NotedBlock(BaseModel):
 class WriteLinesBlock(BaseModel):
     type: Literal["writelines"] = "writelines"
     count: int = Field(2, ge=0, le=12, description="Số dòng kẻ trống cho HS viết (0 = chỉ chừa 1 dòng trắng, KHÔNG kẻ — lớp HS trình bày vào vở)")
-    variant: Optional[str] = Field(None, description="Variant của block (ví dụ: 'oly' cho ô ly tiểu học)")
+    variant: Optional[str] = Field(
+        None,
+        description="Variant của block: 'oly' = lưới ô ly tiểu học; "
+                    "'draw' = KHUNG TRỐNG cho HS tự vẽ hình (count = chiều cao cm); "
+                    "None = dòng kẻ chấm để viết",
+    )
 
 
 # ----- Đáp án MÁY-ĐỌC để validate tự soi bằng SymPy (tùy chọn, KHÔNG in ra phiếu) -----
@@ -102,6 +107,20 @@ class ProblemBlock(BaseModel):
     # Đặc sản "QR video lời giải": URL video Thầy giải bài. Có giá trị → in QR nhỏ ở
     # lề phải bài (cầu nối giấy → điện thoại). Rỗng = không in QR (tương thích ngược).
     video: str = Field("", description="URL video lời giải; có → in QR cạnh bài")
+    # Bài HÌNH mà HS phải TỰ VẼ HÌNH (đề không cho sẵn hình) — tốn thêm thời gian.
+    # Thầy chốt 2026-07-26: mỗi bài như vậy cộng `draw_minutes` (5′) vào quỹ giờ,
+    # tính MỘT LẦN cho cả bài (vẽ 1 hình dùng cho mọi ý a,b,c…). Chỉ là dữ liệu
+    # tính giờ cho duration_gate — KHÔNG in gì thêm ra phiếu, nên đề bài vẫn phải
+    # tự nói "Vẽ hình, ghi giả thiết – kết luận".
+    draw: bool = Field(False, description="HS phải tự vẽ hình cho bài này → +draw_minutes vào quỹ giờ")
+    # NGƯỢC LẠI với `draw`: bài HÌNH đã VẼ SẴN hình, HS chỉ đọc hình rồi chọn đáp án /
+    # điền chỗ chấm (trắc nghiệm, điền khuyết). Thầy chốt 2026-07-27: "vẽ luôn hình để
+    # trừ các khâu vẽ hình" — 1,5 tiếng chỉ chữa nổi 1–2 bài hình hẳn hoi, phần còn lại
+    # dồn về trắc nghiệm / điền khuyết có hình sẵn. Rate hình ×2 (đọc đề, dựng hình,
+    # trình bày) KHÔNG áp cho những bài này ⇒ phút/câu về lại mức đại số (×0,5).
+    figure_given: bool = Field(
+        False, description="Đề đã vẽ sẵn hình, HS chỉ đọc hình (trắc nghiệm/điền khuyết) → phút/câu ×0,5"
+    )
     # (TÙY CHỌN) Đáp án MÁY-ĐỌC để `validate` tự soi bằng SymPy. None = bỏ qua (như cũ).
     # KHÔNG in ra phiếu — chỉ phục vụ answer_gate. Phân biệt loại bằng khóa "kind".
     check: Optional[AnswerCheck] = Field(

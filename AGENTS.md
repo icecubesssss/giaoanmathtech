@@ -33,10 +33,37 @@
 >    * **TH (40% - 48 phút)**: Thiết kế đúng **4 dạng thông hiểu cụ thể** (mỗi dạng có `onclass: 2`, `btvn: 2`, `vidu: 1`).
 >    * **VD (20% - 24 phút)**: Thiết kế đúng **2 dạng vận dụng cụ thể** (mỗi dạng có `onclass: 1`, `btvn: 1`, `vidu: 1`).
 >    * **Tổng cộng**: Onclass đạt đúng **120.0 phút**, BTVN đạt đúng **93.6 phút** (nằm trong khoảng ±10% của 90 phút), và Ví dụ đạt **48.0 phút** (nằm trong khoảng ±10% của 45 phút) $\rightarrow$ 0 lỗi, 0 cảnh báo.
+> 5. *(2026-07-27) Khung THAY THẾ, ít dạng vụn hơn — dùng cho thuyết minh CẤP CHƯƠNG*: **11 dạng NB** (10 dạng `onclass: 3` $+$ 1 dạng `onclass: 2` $=$ 32 câu $\Rightarrow$ 48′) · **4 dạng TH** (`onclass: 2` $\Rightarrow$ 48′) · **2 dạng VD** (`onclass: 1` $\Rightarrow$ 24′) $=$ 120′, đúng 40-40-20. Ví dụ: 9 dạng NB $+$ 4 TH $+$ 2 VD mỗi dạng `vidu: 1` $=$ 41′. **`lythuyet` CHỈ gắn cho 4 dạng NB** ($=$ 4′) $\Rightarrow$ GV giảng $41+4=45′$ khớp quỹ. BTVN: NB 26 câu, TH 8, VD 2 $=$ 96′. Thầy phản biện bản 16 dạng NB×2 là "chi tiết quá, luyện tập cần tăng lên".
+>    * ⚠️ **`thuyetminh_gate` KHÔNG cộng giờ cột Lý thuyết vào quỹ, nhưng dòng "Cân buổi" trên PDF thì CÓ.** Gắn `lythuyet: 1` cho MỌI dòng ⇒ PDF in "GV giảng 96′ (quỹ 45′)" mà gate vẫn báo OK — buổi học không thể dạy kịp. Chỉ gắn `lythuyet` cho vài mục lý thuyết thật.
 
->
+> **BẢN MẪU THUYẾT MINH THẦY ĐÃ DUYỆT = `inputs/seeds/lop-7/` (chương 3 Hình 7, xuất từ Google Sheets).** Chương mới bám đúng 4 khối của bản đó: (1) **THỜI LƯỢNG** — mỗi bài mấy *ca* $+$ dòng tổng ĐỐI CHIẾU SGK ("4 ca = 16 tiết, SGK 13 tiết"), khai bằng field `thoiluong` của `ThuyetMinhSpec`; (2) **MỤC TIÊU / yêu cầu cần đạt** kèm **chuẩn đầu ra ĐIỂM SỐ thật** (`lythuyet`) — không hứa "ăn trọn N điểm" khi HS chưa đủ căn cứ; (3) **VẤN ĐỀ HS** (`loisai`); (4) **NỘI DUNG PHIẾU** — bảng dạng bài × (Lý thuyết / Ví dụ / BT trên lớp / BTVN). Tên phiếu **bám tên bài SGK** ("Bài 7 $+$ Bài 8: …"), KHÔNG tự đặt tên khác sách.
 
->
+> **PHIẾU HÌNH — vẽ SẴN hình, dồn về trắc nghiệm / điền khuyết (Thầy chốt 2026-07-27):** _"1,5 tiếng chỉ chữa được 1–2 bài hình hẳn hoi thôi, còn lại hãy vẽ luôn hình và dồn theo dạng trắc nghiệm hoặc tự luận điền khuyết để hs có mẫu trình bày"_. Bản mẫu cách ra đề = **`inputs/seeds/lop-7/hinh-hoc/chuong-03-.../phieu-a-goc-o-vi-tri-dac-biet.json`** (Thầy đã duyệt): (1) trắc nghiệm A/B/C/D, đề trong `minipage 0.44` bên trái $+$ TikZ trong `minipage 0.36` bên phải kèm nhãn "Hình N"; (2) bài **điền chỗ chấm** nhiều ý a)–f) làm mẫu trình bày; (3) vài bài **"vẽ hình theo yêu cầu"**; mỗi `problem` kèm một `writelines`.
+> - **Bố cục bài có hình — chữ CHẠY QUANH HÌNH (Thầy chốt 2026-07-27):** đặt cờ **`[[wrap]]`** ở đầu `statement` ⇒ `_blocks.j2` phát `\leavevmode\hangafter=-5\hangindent=-0.38\linewidth` TRƯỚC nhãn "Bài N. ★" (đặt sau nhãn thì TeX đã mở đoạn văn và xoá tham số — vô tác dụng). Hộp hình treo góc phải bằng `\makebox[0pt][l]{\hspace{0.66\linewidth}\smash{\vtop{\hbox{…}}}}` — **KHÔNG dùng `\parbox`/`minipage` cho hộp hình** vì chúng kết đoạn bên trong, xoá luôn `\hangindent` làm chữ hết chảy quanh hình.
+> - Cờ **`figure_given`** (`ProblemBlock`) / **`hinh_san`** (`SpecRow`): câu **NB** trên hình vẽ sẵn tính **`quick_minutes` $=$ 1′/câu** (Thầy chốt: _"với mức độ này thì hs vẫn dùng 1p thôi"_), câu **TH/VD** điền khuyết chỉ giảm **nửa rate** (vẫn phải tính toán). Ngược với `draw`/`ve_hinh` ($+5$′). Nhờ đó một buổi hình 90′ chứa **~29 câu** thay vì 13.
+> - Dạy TSLG phải bắt đầu từ **nhận diện cạnh đối / cạnh kề theo từng góc** (HS mới chỉ biết cạnh huyền) và có **câu hỏi ngược** "cạnh $AB$ là cạnh đối của góc nào?".
+> - **MỌI dạng TH và VD phải có ví dụ GV làm mẫu** (Thầy: _"TH, vận dụng GV không hướng dẫn thì HS làm thế nào được?"_); **bài hình hẳn hoi chỉ làm TẠI LỚP**, không giao BTVN. Quỹ hình lớp 9: giảng 25′ $+$ luyện 55′ $+$ giải lao 10′ $=$ 90′, BTVN 40′ (soạn dày hơn quỹ để HS đủ lượng mà nhớ).
+> - **Rate hình lớp 9 KHÔNG nhân đôi** (khác lớp 8): giữ NB 1,5 / TH 6 / VD 12 — đối chiếu ngân hàng đề, câu TH chương IV thực tế 6,9′ và VD 9,6′, rate ×2 vống gấp đôi làm phiếu quá mỏng. Với rate cũ, tỉ lệ 40-40-20 khớp tròn: NB 22 câu ×1′ $+$ TH 4 ×6′ $+$ VD 1 bài ×12′ $=$ 58′ ⇒ 38-41-21, 0 cảnh báo.
+
+> **CẤM CHỮ THỪA trong mọi thứ Thầy/HS đọc (Thầy chốt 2026-07-27: _"Luyện tập thôi chứ luyện tập vừa sức Bài I ????"_)** — áp cho cả `dang` của spec lẫn `statement`/`title`/`eyebrow`/`teacher_note`/tiêu đề phần của phiếu:
+> 1. **Cấm nhãn tự khen / tự xếp hạng**: "vừa sức", "vừa sức Tầng C", "trọn bộ", "tổng hợp", "ăn trọn 2 điểm".
+> 2. **Cấm thuật ngữ nội bộ của engine lọt ra bản in**: "16 dạng NB 1 bước", "bóc tách", "cầu nối Lớp 8", "(Dạng NB 1 bước)". Nội dung nối lớp dưới thì viết thẳng "Lớp 8 $\to$ Lớp 9".
+> 3. **Câu lệnh chỉ nói VIỆC PHẢI LÀM**, không nhắc lại công thức vốn là đáp án của chính câu hỏi: "Thu gọn tử thức sau quy đồng $(\sqrt x+a)+(\sqrt x-a)=2\sqrt x$:" $\to$ "Thu gọn tử thức:".
+> 4. **Soi lại trên BẢN IN**, không chỉ trên JSON: `pdftotext <file>.pdf - | grep -iE "vừa sức|ăn trọn|bóc tách|1 bước NB|trọn bộ|16 dạng|cầu nối"`.
+> 5. **Sửa chữ xong phải build lại ĐỦ 3 bản** (`build-folder`, không dùng `--only handout`) — nếu không `guide.pdf` và `slide.pdf` vẫn giữ nguyên chữ cũ. Dọn luôn thư mục `outputs/` mồ côi của phiếu đã xoá, kẻo Thầy mở nhầm bản cũ.
+> 6. **Đổi tên PDF đầu ra theo Ca (`ca-01-handout.pdf`, `ca-02-handout.pdf`...):** Bộ build tự động thêm tiền tố Ca (Ca 1 $\to$ `ca-01-`, Ca 2 $\to$ `ca-02-`...) vào tên file PDF xuất ra để dễ đọc và phân biệt khi gửi tách rời cho HS/GV.
+
+> **QUY TRÌNH & DẠNG BÀI SOẠN PHIẾU TIỂU HỌC (LỚP 3, LỚP 5 — Thầy chốt 2026-07-30):**
+> 1. **Cấu trúc Mạch bài Tiểu học (Khám phá $\to$ Khái niệm $\to$ Luyện tập 1 $\to$ Luyện tập 2 $\to$ BTVN):**
+>    - *Chặng 1 (Khám phá):* Mở màn thực tế bằng tình huống hình ảnh hấp dẫn. KHÔNG cho bài tập giải luôn trong phần Khám phá.
+>    - *Chặng 2 (Khái niệm):* Đi thẳng vào lý thuyết trọng tâm SGK (bản chất khái niệm, so sánh đại lượng gấp/kém bao nhiêu lần, Bảng đơn vị đo chuẩn SGK, 2 quy tắc vàng gấp 100 lần và $\frac{1}{100}$, sơ đồ TikZ mũi tên $\xrightarrow{\times 100}$ xuôi chiều sang phải & $\xleftarrow{: 100}$ ngược chiều sang trái).
+>    - *Chặng 3 (Luyện tập 1):* Bài tập nhận biết, đọc/viết số đo, bài chọn đơn vị đo phù hợp với đối tượng thực tế.
+>    - *Chặng 4 (Luyện tập 2):* Bài tập biến đổi phức hợp, phép tính số đo diện tích, so sánh 2 hình/khu vực có số đo ghi ở giữa, bài toán thực tế có lời văn (tính tiền mua gỗ làm kệ sách, lát sàn, sơn tường, sản lượng).
+>    - *Chặng 5 (Tổng kết & BTVN):* Sơ đồ tư duy $+$ Bài tập về nhà có đủ các bài tương tự 1-1 với bài học trên lớp.
+> 2. **Quy chuẩn Trình bày Dạng bài Nối 2 Cột (Matching table):**
+>    - Trình bày dạng bảng 2 cột `\begin{tabular}{p{5.5cm} @{\hspace{3cm}} p{4.5cm}}` với Cột A (Đối tượng/Giá trị) bên trái, Cột B (Số đo/Kết quả) bên phải và đảo thứ tự đáp án.
+>    - **KHÔNG tạo cột "Nối" đóng khung ở giữa** (để khoảng trắng rộng $3\text{ cm}$ giữa 2 cột cho HS dùng thước kẻ nối).
+>    - **BỎ HOÀN TOÀN `writelines` (dòng ô ly)** bên dưới bài toán dạng nối vì HS làm bài bằng cách nối thẳng trên bảng, không viết xuống dưới.
 
 > **NGÂN HÀNG ĐỀ có band + phút (2026-06-21):** mỗi câu trong `inputs/refs/de-thi/lop-9/exams/*.json` nay gắn `band` (NB/TH/VD/VDC) + `phut` (giờ HS làm, ước) — AI chấm theo Bloom, cờ `_band_auto`/`_phut_auto` để Thầy rà (LƯU Ý: **điểm KHÔNG suy ra giờ** — câu cực trị 0,5đ vẫn ~13′). Công cụ: `make exam-check` (gác Σdiem/band/phut/trùng id), `make exam-report` (phút thực vs rate card), `make exam-weights` (sinh `exam-weights.json` — trọng số tần suất dạng = ty_le_de×diem_tb, để biết dạng nào đáng nhiều giờ). Spec có thể trỏ `source_refs` vào id câu bank → `thuyetminh_gate` cảnh báo nếu câu lệch band ≥2 mức. Tool ngân hàng: `scripts/exam_annotate.py` + `scripts/seed_exam_bands.py` (rubric chấm).
 
@@ -85,7 +112,7 @@ python -m src.main approve <slug>              # Thầy xem PDF rồi DUYỆT (s
 7. **KIỂM SOÁT THỜI LƯỢNG (CHỐNG THIẾU CÂU):** AI rất hay tạo thiếu bài tập, làm hụt quỹ giờ của buổi học (120 phút trên lớp). Bắt buộc xem log `[duration_gate]` sau lệnh `validate`. Nếu bị báo thiếu giờ, **PHẢI tự động sinh thêm bài tương đương hoặc kéo bài từ BTVN lên** sao cho lấp đủ quỹ thời gian (định mức: NB 1.5'/câu, TH 6'/câu, VD 12'/câu). Tuyệt đối không giao phiếu bị hụt thời lượng!
    Sửa xong checklist → build lại → mới trình Thầy.
 8. **Tự động ngắt trang bảng Thuyết minh**: Đối với các thuyết minh có số câu phân mảnh lớn (ví dụ phiếu Tầng C với 22 dòng phân mảnh), bảng tự động ngắt trang nhờ sử dụng môi trường `longtable` kết hợp cấu trúc `\endfirsthead` và `\endhead` để tự động lặp lại dòng tiêu đề bảng ở đầu các trang tiếp theo. Khi thiết kế/chỉnh sửa mã nguồn của renderer, bắt buộc giữ cấu trúc `longtable` này để tránh bảng bị tràn mất khỏi lề dưới của trang A4 ngang.
-   Kế hoạch tuần: [KE-HOACH-SOAN-BAI.md](KE-HOACH-SOAN-BAI.md). Luật soạn chi tiết: [HUONG-DAN-SOAN-BAI.md](HUONG-DAN-SOAN-BAI.md).
+   Kế hoạch tuần: [KE-HOACH-SOAN-BAI.md](KE-HOACH-SOAN-BAI.md). Luật soạn chi tiết: [HUONG-DAN-SOAN-BAI.md](HUONG-DAN-SOAN-BAI.md). **Hướng dẫn thuyết minh Tầng C: [HUONG-DAN-THUYET-MINH-LOP-C.md](HUONG-DAN-THUYET-MINH-LOP-C.md)** (quy trình riêng cho HS nền yếu: 4 khối trang đầu + AI hỏi Thầy 3 câu trước mỗi chương).
 
 ## Nguyên tắc BẮT BUỘC khi soạn (bám HUONG-DAN §0)
 

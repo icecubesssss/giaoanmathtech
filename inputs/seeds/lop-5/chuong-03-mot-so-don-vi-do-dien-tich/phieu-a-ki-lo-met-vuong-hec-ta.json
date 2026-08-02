@@ -1,0 +1,197 @@
+{
+  "slug": "phieu-a-ki-lo-met-vuong-hec-ta",
+  "title": "Ki-lô-mét vuông. Héc-ta. Bảng đơn vị đo diện tích",
+  "eyebrow": "PHIẾU A: ĐƠN VỊ ĐO DIỆN TÍCH",
+  "grade_label": "Lớp 5",
+  "class_tier": "C",
+  "stages": [
+    {
+      "kind": "review",
+      "number": 1,
+      "title": "Khám phá",
+      "blocks": [
+        {
+          "type": "opener",
+          "text": "Robot đang tham quan một khu bảo tồn thiên nhiên rộng lớn. Robot thấy biển ghi diện tích khu rừng là $150\\text{ ha}$, còn hồ nước bên cạnh rộng $2\\text{ km}^2$. Em có biết các đơn vị héc-ta ($\\text{ha}$) và ki-lô-mét vuông ($\\text{km}^2$) lớn hơn mét vuông ($\\text{m}^2$) bao nhiêu lần không?",
+          "image": "/Users/admin/Documents/thaitd/Code/giaoanMathtech/inputs/seeds/Gemini_Generated_Image_8iw8in8iw8in8iw8.png"
+        }
+      ],
+      "solution": "Quan sát tình huống thực tế và dẫn dắt vào bài học đơn vị đo diện tích lớn.",
+      "teacher_note": "- Tạo hứng thú bằng hình ảnh thực tế khu bảo tồn thiên nhiên và Robot."
+    },
+    {
+      "kind": "concept",
+      "number": 2,
+      "title": "Khái niệm",
+      "blocks": [
+        {
+          "type": "noted",
+          "text": "\\textbf{a) Đơn vị Héc-ta ($\\text{ha}$) và Ki-lô-mét vuông ($\\text{km}^2$)}\n[[br]]- \\textbf{Héc-ta} là đơn vị đo diện tích đất đai. Ký hiệu: $\\text{ha}$.\n[[br]]$1\\text{ ha} = 10\\,000\\text{ m}^2$ (lớn hơn mét vuông $10\\,000$ lần).\n[[br]]- \\textbf{Ki-lô-mét vuông} là diện tích hình vuông có cạnh dài $1\\text{ km}$. Ký hiệu: $\\text{km}^2$.\n[[br]]$1\\text{ km}^2 = 100\\text{ ha} = 1\\,000\\,000\\text{ m}^2$ (lớn hơn mét vuông $1\\,000\\,000$ lần)."
+        },
+        {
+          "type": "noted",
+          "text": "\\textbf{b) Bảng đơn vị đo diện tích}\n[[br]]Thứ tự từ lớn đến bé: $\\text{km}^2 \\quad \\text{ha } (\\text{hm}^2) \\quad \\text{dam}^2 \\quad \\text{m}^2 \\quad \\text{dm}^2 \\quad \\text{cm}^2 \\quad \\text{mm}^2$\n[[br]]- \\textbf{Mỗi đơn vị đo diện tích lớn gấp $100$ lần đơn vị bé hơn liền kề.}\n[[br]]- \\textbf{Mỗi đơn vị đo diện tích bé bằng $\\frac{1}{100}$ đơn vị lớn hơn liền kề.}"
+        },
+        {
+          "type": "figure",
+          "tikz": "\\begin{tikzpicture}[scale=0.82, line width=0.8pt]\n\\tikzstyle{unitbox} = [draw=brand, fill=brand!10, rounded corners=3pt, minimum width=1.2cm, minimum height=0.7cm, font=\\bfseries\\small, align=center]\n\\node[unitbox] (km2) at (0,0) {km$^2$};\n\\node[unitbox] (ha) at (1.8,0) {ha\\\\{\\tiny (hm$^2$)}};\n\\node[unitbox] (dam2) at (3.6,0) {dam$^2$};\n\\node[unitbox] (m2) at (5.4,0) {m$^2$};\n\\node[unitbox] (dm2) at (7.2,0) {dm$^2$};\n\\node[unitbox] (cm2) at (9.0,0) {cm$^2$};\n\\node[unitbox] (mm2) at (10.8,0) {mm$^2$};\n\\draw[->, >=stealth, brand, thick] (km2.north east) to[bend left=30] node[above, font=\\tiny] {$\\times 100$} (ha.north west);\n\\draw[->, >=stealth, brand, thick] (ha.north east) to[bend left=30] node[above, font=\\tiny] {$\\times 100$} (dam2.north west);\n\\draw[->, >=stealth, brand, thick] (dam2.north east) to[bend left=30] node[above, font=\\tiny] {$\\times 100$} (m2.north west);\n\\draw[->, >=stealth, brand, thick] (m2.north east) to[bend left=30] node[above, font=\\tiny] {$\\times 100$} (dm2.north west);\n\\draw[->, >=stealth, brand, thick] (dm2.north east) to[bend left=30] node[above, font=\\tiny] {$\\times 100$} (cm2.north west);\n\\draw[->, >=stealth, brand, thick] (cm2.north east) to[bend left=30] node[above, font=\\tiny] {$\\times 100$} (mm2.north west);\n\\draw[->, >=stealth, cyan!80!black, thick] (mm2.south west) to[bend left=30] node[below, font=\\tiny] {$: 100$} (cm2.south east);\n\\draw[->, >=stealth, cyan!80!black, thick] (cm2.south west) to[bend left=30] node[below, font=\\tiny] {$: 100$} (dm2.south east);\n\\draw[->, >=stealth, cyan!80!black, thick] (dm2.south west) to[bend left=30] node[below, font=\\tiny] {$: 100$} (m2.south east);\n\\draw[->, >=stealth, cyan!80!black, thick] (m2.south west) to[bend left=30] node[below, font=\\tiny] {$: 100$} (dam2.south east);\n\\draw[->, >=stealth, cyan!80!black, thick] (dam2.south west) to[bend left=30] node[below, font=\\tiny] {$: 100$} (ha.south east);\n\\draw[->, >=stealth, cyan!80!black, thick] (ha.south west) to[bend left=30] node[below, font=\\tiny] {$: 100$} (km2.south east);\n\\end{tikzpicture}"
+        }
+      ],
+      "solution": "Nắm vững bảng đơn vị đo diện tích và quy tắc nhân chia $100$ khi chuyển đổi.",
+      "teacher_note": "- Khắc sâu 2 câu nhận xét vàng trong SGK về mối quan hệ giữa các đơn vị liền kề."
+    },
+    {
+      "kind": "practice1",
+      "number": 3,
+      "title": "Luyện tập 1",
+      "blocks": [
+        {
+          "type": "problem",
+          "label": "Bài 1.",
+          "level": 1,
+          "statement": "Đọc các số đo diện tích sau:\n[[br]]a) $15\\text{ km}^2$\n[[br]]b) $250\\text{ ha}$\n[[br]]c) $1\\,200\\text{ m}^2$\n[[br]]d) $45\\text{ mm}^2$",
+          "tier": "onclass"
+        },
+        {
+          "type": "writelines",
+          "count": 4,
+          "variant": "oly"
+        },
+        {
+          "type": "problem",
+          "label": "Bài 2.",
+          "level": 1,
+          "statement": "Nối mỗi đối tượng ở Cột A với số đo diện tích phù hợp ở Cột B:\n[[br]]\\begin{center}\n\\renewcommand{\\arraystretch}{1.5}\n\\begin{tabular}{|p{5.5cm}|@{\\hspace{3cm}}|p{4.5cm}|}\n\\cline{1-1} \\cline{2-2}\n\\textbf{Cột A (Đối tượng)} & \\textbf{Cột B (Số đo)} \\\\[2pt] \\cline{1-1} \\cline{2-2}\na) Nhãn vở học sinh & 1) $331\\,212\\text{ km}^2$ \\\\[4pt] \\cline{1-1} \\cline{2-2}\nb) Trang trại chăn nuôi gia súc & 2) $25\\text{ cm}^2$ \\\\[4pt] \\cline{1-1} \\cline{2-2}\nc) Diện tích lãnh thổ Việt Nam & 3) $15\\text{ ha}$ \\\\[4pt] \\cline{1-1} \\cline{2-2}\n\\end{tabular}\n\\end{center}",
+          "tier": "onclass"
+        },
+        {
+          "type": "problem",
+          "label": "Bài 3.",
+          "level": 1,
+          "statement": "Điền số thích hợp vào chỗ chấm:\n[[br]]a) $4\\text{ ha} = [[oly:2.5cm]]\\text{ m}^2$\n[[br]]b) $20\\text{ km}^2 = [[oly:2.5cm]]\\text{ ha}$\n[[br]]c) $7\\text{ km}^2 = [[oly:2.5cm]]\\text{ m}^2$\n[[br]]d) $50\\,000\\text{ m}^2 = [[oly:2.5cm]]\\text{ ha}$",
+          "tier": "onclass"
+        },
+        {
+          "type": "writelines",
+          "count": 4,
+          "variant": "oly"
+        }
+      ],
+      "solution": "Bài 1: a) Mười lăm ki-lô-mét vuông; b) Hai trăm năm mươi héc-ta; c) Một nghìn hai trăm mét vuông; d) Bốn mươi lăm mi-li-mét vuông.\n[[br]]Bài 2: Nối: a — 2 ($25\\text{ cm}^2$);  b — 3 ($15\\text{ ha}$);  c — 1 ($331\\,212\\text{ km}^2$).\n[[br]]Bài 3: a) $40\\,000$, b) $2\\,000$, c) $7\\,000\\,000$, d) $5$.",
+      "teacher_note": "- Rèn luyện kỹ năng cảm nhận đại lượng diện tích thực tế ở Bài 2."
+    },
+    {
+      "kind": "practice2",
+      "number": 4,
+      "title": "Luyện tập 2",
+      "blocks": [
+        {
+          "type": "problem",
+          "label": "Bài 4.",
+          "level": 2,
+          "statement": "Thực hiện phép tính với các số đo diện tích:\n[[br]]a) $150\\,000\\text{ m}^2 + 12\\text{ ha} = [[oly:3cm]]\\text{ ha}$\n[[br]]b) $5\\text{ km}^2 - 300\\text{ ha} = [[oly:3cm]]\\text{ km}^2$",
+          "tier": "onclass"
+        },
+        {
+          "type": "writelines",
+          "count": 3,
+          "variant": "oly"
+        },
+        {
+          "type": "problem",
+          "label": "Bài 5.",
+          "level": 2,
+          "statement": "Cho hai khu bảo tồn thiên nhiên: Khu bảo tồn A có diện tích $187\\text{ ha}$, Khu bảo tồn B có diện tích $2\\text{ km}^2$.\n[[br]]a) Hỏi khu bảo tồn nào có diện tích lớn hơn và lớn hơn bao nhiêu héc-ta?\n[[br]]b) Điền dấu $>$, $<$, $=$ thích hợp vào chỗ chấm: $187\\text{ ha} \\dots 2\\text{ km}^2$.",
+          "tier": "onclass"
+        },
+        {
+          "type": "writelines",
+          "count": 4,
+          "variant": "oly"
+        },
+        {
+          "type": "problem",
+          "label": "Bài 6.",
+          "level": 3,
+          "statement": "Bác thợ mộc mua các tấm gỗ hình chữ nhật có chiều dài $1{,}2\\text{ m}$ và chiều rộng $0{,}25\\text{ m}$ để làm kệ sách.\n[[br]]a) Tính diện tích một tấm gỗ theo đơn vị mét vuông.\n[[br]]b) Biết giá tiền gỗ là $250\\,000\\text{ đ/m}^2$. Tính số tiền bác thợ mộc cần trả để mua $10$ tấm gỗ như thế.",
+          "tier": "onclass"
+        },
+        {
+          "type": "writelines",
+          "count": 5,
+          "variant": "oly"
+        }
+      ],
+      "solution": "Bài 4: a) Đổi $150\\,000\\text{ m}^2 = 15\\text{ ha} \\to 15 + 12 = 27\\text{ (ha)}$.\n[[br]]b) Đổi $300\\text{ ha} = 3\\text{ km}^2 \\to 5 - 3 = 2\\text{ (km}^2\\text{)}$.\n[[br]]Bài 5: a) Đổi $2\\text{ km}^2 = 200\\text{ ha}$. Vì $200\\text{ ha} > 187\\text{ ha}$ nên Khu bảo tồn B lớn hơn và lớn hơn: $200 - 187 = 13\\text{ (ha)}$.\n[[br]]b) $187\\text{ ha} < 2\\text{ km}^2 \\to <$.\n[[br]]Bài 6: a) Diện tích $1$ tấm gỗ: $1{,}2 \\times 0{,}25 = 0{,}3\\text{ (m}^2\\text{)}$.\n[[br]]b) Diện tích $10$ tấm gỗ: $0{,}3 \\times 10 = 3\\text{ (m}^2\\text{)}$. Tổng số tiền mua gỗ: $3 \\times 250\\,000 = 750\\,000\\text{ (đồng)}$.",
+      "teacher_note": "- Bài 4 và 5 nhắc HS đổi về cùng một đơn vị đo trước khi tính toán hoặc so sánh."
+    },
+    {
+      "kind": "reflection",
+      "number": 5,
+      "title": "Tổng kết",
+      "blocks": [
+        {
+          "type": "mindmap",
+          "caption": "Sơ đồ ghi nhớ đơn vị diện tích",
+          "root": "ĐƠN VỊ ĐO DIỆN TÍCH",
+          "branches": [
+            {
+              "label": "Héc-ta (ha)",
+              "children": [
+                {
+                  "label": "$1\\text{ ha} = 10\\,000\\text{ m}^2$"
+                }
+              ]
+            },
+            {
+              "label": "Ki-lô-mét vuông (km²)",
+              "children": [
+                {
+                  "label": "$1\\text{ km}^2 = 100\\text{ ha}$"
+                }
+              ]
+            }
+          ]
+        },
+        {
+          "type": "problem",
+          "label": "Bài 7.",
+          "level": 1,
+          "statement": "a) Đọc các số đo diện tích sau: $35\\text{ ha}$, $800\\text{ km}^2$, $5\\,400\\text{ m}^2$.\n[[br]]b) Chọn đơn vị đo ($\\text{cm}^2, \\text{m}^2, \\text{ha}, \\text{km}^2$) điền vào chỗ chấm:\n[[br]]- Diện tích một tem thư khoảng $6$ [[oly:1.5cm]].\n[[br]]- Diện tích một sân bóng đá khoảng $7\\,140$ [[oly:1.5cm]].\n[[br]]- Diện tích tỉnh Quảng Ninh khoảng $6\\,178$ [[oly:1.5cm]].\n[[br]]c) Điền số thích hợp: $8\\text{ ha} = [[oly:2.5cm]]\\text{ m}^2$; $15\\text{ km}^2 = [[oly:2.5cm]]\\text{ ha}$.",
+          "tier": "btvn"
+        },
+        {
+          "type": "writelines",
+          "count": 4,
+          "variant": "oly"
+        },
+        {
+          "type": "problem",
+          "label": "Bài 8.",
+          "level": 2,
+          "statement": "a) Thực hiện phép tính: $250\\,000\\text{ m}^2 + 15\\text{ ha} = [[oly:3cm]]\\text{ ha}$.\n[[br]]b) Trang trại A rộng $250\\text{ ha}$, Trang trại B rộng $3\\text{ km}^2$. Hỏi trang trại nào rộng hơn và rộng hơn bao nhiêu héc-ta?",
+          "tier": "btvn"
+        },
+        {
+          "type": "writelines",
+          "count": 4,
+          "variant": "oly"
+        },
+        {
+          "type": "problem",
+          "label": "Bài 9.",
+          "level": 3,
+          "statement": "Căn phòng hình chữ nhật có chiều dài $8\\text{ m}$ và chiều rộng $5\\text{ m}$. Người ta lát sàn bằng các tấm gỗ có tổng diện tích đúng bằng diện tích căn phòng. Biết đơn giá gỗ lát sàn là $320\\,000\\text{ đ/m}^2$. Tính tổng số tiền mua gỗ lát sàn căn phòng đó.",
+          "tier": "btvn"
+        },
+        {
+          "type": "writelines",
+          "count": 5,
+          "variant": "oly"
+        }
+      ],
+      "solution": "Sơ đồ: $10\\,000\\text{ m}^2$, $100\\text{ ha}$.\n[[br]]Bài 7: a) Ba mươi lăm héc-ta; Tám trăm ki-lô-mét vuông; Năm nghìn bốn trăm mét vuông.\n[[br]]b) $\\text{cm}^2$; $\\text{m}^2$; $\\text{km}^2$.\n[[br]]c) $80\\,000$; $1\\,500$.\n[[br]]Bài 8: a) $250\\,000\\text{ m}^2 = 25\\text{ ha} \\to 25 + 15 = 40\\text{ (ha)}$.\n[[br]]b) Đổi $3\\text{ km}^2 = 300\\text{ ha}$. Trang trại B rộng hơn và rộng hơn: $300 - 250 = 50\\text{ (ha)}$.\n[[br]]Bài 9: Diện tích căn phòng: $8 \\times 5 = 40\\text{ (m}^2\\text{)}$. Tổng tiền mua gỗ: $40 \\times 320\\,000 = 12\\,800\\,000\\text{ (đồng)}$.",
+      "teacher_note": "- BTVN củng cố đầy đủ 3 dạng bài đã học trên lớp."
+    }
+  ]
+}

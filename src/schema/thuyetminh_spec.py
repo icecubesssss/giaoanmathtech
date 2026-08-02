@@ -13,7 +13,9 @@ from typing import Literal
 
 from pydantic import BaseModel, Field
 
-from src.schema.tier_spec import BANDS, load_tier_spec, rates_for, subject_block
+from src.schema.tier_spec import (
+    BANDS, draw_minutes, load_tier_spec, quick_minutes, rates_for, subject_block,
+)
 
 Band = Literal["NB", "TH", "VD", "VDC"]
 
@@ -29,6 +31,19 @@ class SpecRow(BaseModel):
     source_refs: list[str] = Field(default_factory=list, description="id câu bank để bốc, vd ['gk1-bat-trang-2c']")
     decompose: Literal["none", "vdc", "vd", "th2nb"] = Field(
         "none", description="Mức cắt bước: vdc→NB/TH/VD/VDC, vd→NB/TH, th2nb→2 NB; none=giữ nguyên"
+    )
+    # Bài HÌNH đề không cho sẵn hình ⇒ HS phải tự vẽ, tốn thêm `draw_minutes` (5′).
+    # Đếm theo BÀI (một bài vẽ một hình dùng cho mọi ý), KHÔNG theo ý a),b),c…
+    ve_hinh: dict[str, int] = Field(
+        default_factory=dict,
+        description="Số HÌNH HS phải tự vẽ mỗi đoạn, vd {'onclass': 2, 'btvn': 1}; mỗi hình +draw_minutes",
+    )
+    # Dòng dạng gồm câu TRẮC NGHIỆM / ĐIỀN KHUYẾT trên hình VẼ SẴN (Thầy chốt
+    # 2026-07-27). Rate hình ×2 trả cho khâu dựng hình + trình bày; những câu này
+    # không có hai khâu đó nên phút/câu về lại mức đại số (×0,5). Không áp cho dòng
+    # có `ve_hinh` (mâu thuẫn: vừa vẽ sẵn vừa bắt HS vẽ).
+    hinh_san: bool = Field(
+        False, description="Dạng trắc nghiệm/điền khuyết trên hình vẽ sẵn → phút/câu ×0,5"
     )
 
 
@@ -47,6 +62,11 @@ class ThuyetMinhSpec(BaseModel):
     subject: str = Field("dai-so", description="vd dai-so")
     tier: str = Field("C", description="Tầng lớp A/B/C/X")
     tuan: str = Field("", description="vd '10-11'")
+    thoiluong: list[str] = Field(
+        default_factory=list,
+        description="THỜI LƯỢNG đối chiếu SGK/PPCT, vd 'Buổi 1 — Bài 7 + Bài 8: 1 ca'; "
+                    "bản mẫu Thầy duyệt (lớp 7) luôn có mục này để thấy lệch bao nhiêu tiết",
+    )
     lythuyet: list[str] = Field(default_factory=list, description="Bullet lý thuyết trọng tâm")
     vidu: list[str] = Field(default_factory=list, description="Bullet ví dụ GV làm mẫu")
     dang_vd: list[str] = Field(default_factory=list, description="Các dạng VẬN DỤNG trong đề")
@@ -61,8 +81,23 @@ _SEG_ATTRS = ("vidu", "onclass", "btvn")  # cột có band-rate; lythuyet tính 
 
 
 def row_minutes(row: SpecRow, rates: dict) -> dict[str, float]:
-    """Phút mỗi đoạn của 1 dòng = số câu × phút/câu(đoạn, band)."""
-    return {seg: getattr(row, seg) * rates.get(seg, {}).get(row.band, 0.0) for seg in _SEG_ATTRS}
+    """Phút mỗi đoạn của 1 dòng = số câu × phút/câu(đoạn, band) + số hình HS tự vẽ
+    × `draw_minutes` (bài hình vẽ hình tốn thêm — Thầy chốt 2026-07-26).
+
+    Dòng khai `hinh_san` (trắc nghiệm/điền khuyết trên hình vẽ sẵn): band NB tính
+    `quick_minutes` (1′/câu — Thầy chốt 2026-07-27), band TH/VD chỉ giảm NỬA rate
+    (tự luận điền khuyết vẫn phải tính toán, chỉ đỡ khâu dựng hình)."""
+    ts = load_tier_spec()
+    dm = draw_minutes(ts)
+
+    def per_cau(seg: str) -> float:
+        rate = rates.get(seg, {}).get(row.band, 0.0)
+        if not row.hinh_san:
+            return rate
+        return quick_minutes(ts) if row.band == "NB" else rate * 0.5
+
+    return {seg: getattr(row, seg) * per_cau(seg) + row.ve_hinh.get(seg, 0) * dm
+            for seg in _SEG_ATTRS}
 
 
 def phieu_band_counts(phieu: SpecPhieu) -> dict[str, dict[str, int]]:
@@ -71,6 +106,18 @@ def phieu_band_counts(phieu: SpecPhieu) -> dict[str, dict[str, int]]:
     for r in phieu.rows:
         for seg in _SEG_ATTRS:
             out[seg][r.band] += getattr(r, seg)
+    return out
+
+
+def phieu_band_minutes(phieu: SpecPhieu, rates: dict) -> dict[str, dict[str, float]]:
+    """Phút theo {đoạn: {band: phút}} — ĐÃ gồm phút vẽ hình (`ve_hinh`), cộng vào
+    band của chính dòng dạng. Dùng để soi tỉ lệ NB-TH-VD, cho khớp `duration_gate`
+    (bên đó phút vẽ hình cũng tính vào band của bài)."""
+    out = {seg: {b: 0.0 for b in BANDS} for seg in _SEG_ATTRS}
+    for r in phieu.rows:
+        m = row_minutes(r, rates)
+        for seg in _SEG_ATTRS:
+            out[seg][r.band] += m[seg]
     return out
 
 

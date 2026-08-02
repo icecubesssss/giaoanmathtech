@@ -8,6 +8,7 @@ from .latex_sanitizer import sanitize, find_unsafe, UnsafeLatexError
 from .schema_validator import validate_lesson_structure, SchemaReport
 from .difficulty_gate import check_difficulty, check_ramp, load_profile, DifficultyProfile, DifficultyReject
 from .geometry_gate import check_geometry_problems, is_geometry, GeometryViolation
+from .figure_gate import check_figures, warn_figures, check_figure_symbols, check_clone_problems, check_hinh_thieu, FigureViolation
 from .visual_linter import wrap_long_math, scan_build_log, BuildLogReport, find_presentation_warnings, find_text_escape_issues
 from .answer_gate import check_answers
 from .duration_gate import check_duration, band_counts
@@ -20,6 +21,8 @@ __all__ = [
     "validate_lesson_structure", "SchemaReport",
     "check_difficulty", "check_ramp", "load_profile", "DifficultyProfile", "DifficultyReject",
     "check_geometry_problems", "is_geometry", "GeometryViolation",
+    "check_figures", "warn_figures", "check_figure_symbols", "check_clone_problems",
+    "check_hinh_thieu", "FigureViolation",
     "wrap_long_math", "scan_build_log", "BuildLogReport", "find_presentation_warnings",
     "find_text_escape_issues",
     "check_answers",

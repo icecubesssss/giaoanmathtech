@@ -40,6 +40,8 @@ from src.validators import (
     check_duration,
     check_spec_conformance,
     check_thuyetminh,
+    check_figures,
+    warn_figures,
 )
 from config import settings
 
@@ -205,7 +207,10 @@ def _build_status(json_path: Path) -> dict:
     except ValueError:
         rel = Path()
     out_dir = settings.OUTPUTS_DIR / rel / slug
-    pdfs = {fn: (out_dir / f"{fn}.pdf").exists() for fn in _BUILD_KINDS}
+    pdfs = {}
+    for fn in _BUILD_KINDS:
+        exists = (out_dir / f"{fn}.pdf").exists() or len(list(out_dir.glob(f"ca-*-{fn}.pdf"))) > 0
+        pdfs[fn] = exists
     return {"slug": slug, "ok_json": True, "pdfs": pdfs}
 
 
@@ -289,17 +294,66 @@ def _gate_before_build(lesson: LessonPackage, force: bool, fast: bool = False) -
     return False
 
 
+def get_ca_prefix(lesson: LessonPackage | None = None, json_path: Path | str | None = None) -> str:
+    """Xác định tiền tố Ca ('ca-01-', 'ca-02-'...) cho phiếu học tập.
+
+    1. Ưu tiên slug / filename chứa phieu-[a-z] (phieu-a -> ca-01-, phieu-b -> ca-02-...)
+    2. Soi eyebrow hoặc title chứa PHIẾU [A-Z], Ca N, Buổi N
+    3. Thư mục có nhiều file: vị trí của json_path trong folder
+    4. Mặc định: ca-01-
+    """
+    slug = lesson.slug if lesson else ""
+    eyebrow = getattr(lesson, "eyebrow", "") or ""
+    title = getattr(lesson, "title", "") or ""
+    filename = Path(json_path).name if json_path else ""
+
+    for text in (slug, filename):
+        m = re.search(r"phieu-([a-z])(?:-|$)", text, re.IGNORECASE)
+        if m:
+            ca_num = ord(m.group(1).lower()) - ord("a") + 1
+            return f"ca-{ca_num:02d}-"
+
+    for text in (eyebrow, title):
+        m_p = re.search(r"PHIẾU\s+([A-Z])", text, re.IGNORECASE)
+        if m_p:
+            ca_num = ord(m_p.group(1).upper()) - ord("A") + 1
+            return f"ca-{ca_num:02d}-"
+        m_c = re.search(r"(?:Ca|Buổi)\s*(\d+)", text, re.IGNORECASE)
+        if m_c:
+            ca_num = int(m_c.group(1))
+            return f"ca-{ca_num:02d}-"
+
+    if json_path:
+        p = Path(json_path)
+        if p.parent.exists():
+            siblings = sorted([
+                f for f in p.parent.glob("*.json")
+                if not f.name.startswith("thuyet-minh") and f.name != "curriculum.json"
+            ])
+            if p in siblings:
+                ca_num = siblings.index(p) + 1
+                return f"ca-{ca_num:02d}-"
+
+    return "ca-01-"
+
+
 _RENDERERS = {"handout": render_handout, "guide": render_guide, "slide": render_slide}
 
 
 def _build_kinds(lesson: LessonPackage, kinds, out_root: Path, force: bool = False,
-                 prefix: str = "", quiet: bool = False):
-    """Build các bản (handout/guide/slide) SONG SONG. Tectonic chạy ở subprocess
-    (nhả GIL) nên 3 bản dựng đồng thời thay vì tuần tự → nhanh ~3×. Giữ thứ tự in
-    theo `kinds`; lỗi 1 bản ném ra ngoài (caller xử lý)."""
+                 prefix: str = "", quiet: bool = False, json_path: Path | str | None = None):
+    """Build các bản (handout/guide/slide) SONG SONG với tiền tố Ca (vd 'ca-01-handout.pdf')."""
+    import shutil
+    ca_pre = get_ca_prefix(lesson, json_path)
     def one(fn):
-        return fn, build_pdf(_RENDERERS[fn](lesson), slug=lesson.slug, filename=fn,
-                             out_root=out_root, force=force)
+        ca_fn = f"{ca_pre}{fn}"
+        pdf = build_pdf(_RENDERERS[fn](lesson), slug=lesson.slug, filename=ca_fn,
+                        out_root=out_root, force=force)
+        legacy_pdf = pdf.parent / f"{fn}.pdf"
+        if pdf.exists() and pdf != legacy_pdf:
+            shutil.copy2(pdf, legacy_pdf)
+        return fn, pdf
+
     with ThreadPoolExecutor(max_workers=max(1, len(kinds))) as ex:
         results = list(ex.map(one, kinds))
     if not quiet:
@@ -309,28 +363,43 @@ def _build_kinds(lesson: LessonPackage, kinds, out_root: Path, force: bool = Fal
 
 
 def cmd_build_handout(args: argparse.Namespace) -> int:
+    import shutil
     lesson = _load(args.lesson)
     if not _gate_before_build(lesson, getattr(args, "force", False)):
         return 1
-    pdf = build_pdf(render_handout(lesson), slug=lesson.slug, filename="handout", out_root=_out_root(args.lesson))
+    ca_pre = get_ca_prefix(lesson, args.lesson)
+    pdf = build_pdf(render_handout(lesson), slug=lesson.slug, filename=f"{ca_pre}handout", out_root=_out_root(args.lesson))
+    legacy_pdf = pdf.parent / "handout.pdf"
+    if pdf.exists() and pdf != legacy_pdf:
+        shutil.copy2(pdf, legacy_pdf)
     print(f"OK → {pdf}")
     return 0
 
 
 def cmd_build_guide(args: argparse.Namespace) -> int:
+    import shutil
     lesson = _load(args.lesson)
     if not _gate_before_build(lesson, getattr(args, "force", False)):
         return 1
-    pdf = build_pdf(render_guide(lesson), slug=lesson.slug, filename="guide", out_root=_out_root(args.lesson))
+    ca_pre = get_ca_prefix(lesson, args.lesson)
+    pdf = build_pdf(render_guide(lesson), slug=lesson.slug, filename=f"{ca_pre}guide", out_root=_out_root(args.lesson))
+    legacy_pdf = pdf.parent / "guide.pdf"
+    if pdf.exists() and pdf != legacy_pdf:
+        shutil.copy2(pdf, legacy_pdf)
     print(f"OK → {pdf}")
     return 0
 
 
 def cmd_build_slide(args: argparse.Namespace) -> int:
+    import shutil
     lesson = _load(args.lesson)
     if not _gate_before_build(lesson, getattr(args, "force", False)):
         return 1
-    pdf = build_pdf(render_slide(lesson), slug=lesson.slug, filename="slide", out_root=_out_root(args.lesson))
+    ca_pre = get_ca_prefix(lesson, args.lesson)
+    pdf = build_pdf(render_slide(lesson), slug=lesson.slug, filename=f"{ca_pre}slide", out_root=_out_root(args.lesson))
+    legacy_pdf = pdf.parent / "slide.pdf"
+    if pdf.exists() and pdf != legacy_pdf:
+        shutil.copy2(pdf, legacy_pdf)
     print(f"OK → {pdf}")
     return 0
 
@@ -343,7 +412,7 @@ def cmd_build_all(args: argparse.Namespace) -> int:
         return 1
     only = getattr(args, "only", None)
     kinds = [only] if only else list(_BUILD_KINDS)
-    _build_kinds(lesson, kinds, _out_root(args.lesson), force=getattr(args, "force", False))
+    _build_kinds(lesson, kinds, _out_root(args.lesson), force=getattr(args, "force", False), json_path=args.lesson)
     _set_lesson_status(lesson.slug, "built")
     return 0
 
@@ -376,7 +445,7 @@ def cmd_build_folder(args: argparse.Namespace) -> int:
             continue
         out_root = _out_root(str(j))
         try:
-            _build_kinds(lesson, list(_BUILD_KINDS), out_root, force=force, prefix="  ")
+            _build_kinds(lesson, list(_BUILD_KINDS), out_root, force=force, prefix="  ", json_path=str(j))
             _set_lesson_status(lesson.slug, "built")
             built.append(lesson.slug)
         except Exception as e:  # noqa: BLE001 — báo lỗi build 1 phiếu, vẫn chạy tiếp phiếu khác
@@ -492,6 +561,9 @@ def _run_validation(lesson: LessonPackage, fast: bool = False) -> tuple[list[str
     for r in diff.reasons:
         violations.append(f"[difficulty_gate] {r}")
 
+    # Đề ↔ hình: hình thiếu nhãn mà đề đang hỏi, nhãn tia sai quy ước, bài chép nhân bản.
+    violations.extend(f"[figure_gate] {m}" for m in check_figures(lesson))
+
     warns = find_presentation_warnings(lesson)
     ramp_warns = check_ramp(lesson)
 
@@ -501,6 +573,7 @@ def _run_validation(lesson: LessonPackage, fast: bool = False) -> tuple[list[str
         warns = warns + [f"[answer_gate] (cần kiểm tay) {m}" for m in ans_incon]
 
     # Phiếu phân tầng: kiểm quỹ phút + tỉ lệ 40-40-20 từng phiếu (Thầy chốt 2026-06-11).
+    warns = warns + [f"[figure_gate] {m}" for m in warn_figures(lesson)]
     warns = warns + [f"[duration_gate] {m}" for m in check_duration(lesson)]
     return violations, warns, ramp_warns
 
@@ -516,10 +589,12 @@ def cmd_validate(args: argparse.Namespace) -> int:
     n_schema = sum(1 for v in violations if v.startswith("[schema_validator]"))
     n_diff = sum(1 for v in violations if v.startswith("[difficulty_gate]"))
     n_ans = sum(1 for v in violations if v.startswith("[answer_gate]"))
+    n_fig = sum(1 for v in violations if v.startswith("[figure_gate]"))
     print(f"  • latex_sanitizer:  {'OK' if n_unsafe == 0 else f'{n_unsafe} vi phạm'}")
     print(f"  • schema_validator: {'OK' if n_schema == 0 else f'{n_schema} lỗi'}")
     print(f"  • difficulty_gate:  {'OK' if n_diff == 0 else f'{n_diff} lý do từ chối'}")
     print(f"  • answer_gate:      {'OK' if n_ans == 0 else f'{n_ans} đáp án SAI'}")
+    print(f"  • figure_gate:      {'OK' if n_fig == 0 else f'{n_fig} lệch đề↔hình / bài nhân bản'}")
     print(f"  • visual_linter:    {'OK' if not warns else f'{len(warns)} cảnh báo trình bày'}")
     for w in warns:
         print(f"    ⚠ {w}")

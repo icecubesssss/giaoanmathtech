@@ -1,0 +1,151 @@
+{
+  "slug": "phieu-b-de-gki-cki-ti-so-luong-giac",
+  "title": "Chuyên đề Đề thi GKI \\& CKI — Tỉ số Lượng giác",
+  "eyebrow": "PHIẾU B • HÌNH HỌC 9",
+  "grade_label": "Lớp 9 • Ôn vào 10",
+  "class_tier": "B",
+  "stages": [
+    {
+      "kind": "review",
+      "number": 1,
+      "title": "Khám phá",
+      "blocks": [
+        {
+          "type": "opener",
+          "text": "\\textbf{Bộ đề thi Giữa Kì 1 (GKI) và Cuối Kì 1 (CKI) Lớp 9.} [[br]] Phân môn Hình học trong các đề thi GKI và CKI Hà Nội luôn chiếm $3{,}0$ đến $3{,}5$ điểm, trong đó phần Tỉ số Lượng giác và Hệ thức lượng là câu bắt buộc ở Bài 3 (Toán thực tế) và Bài 4 (Hình học tổng hợp). Phiếu học tập này tổng hợp $100\\%$ bài tập trích từ các đề thi chính thức của các trường THCS tiêu biểu (Cổ Nhuế 2, Bát Tràng, Dịch Vọng Hậu, Trưng Vương, Phú Diễn, Ngô Gia Tự, Nguyễn Du, Nguyễn Bình Khiêm, Phương Hà Đông, Ngọc Thụy...).",
+          "image": "images/ke_ga_lighthouse.png"
+        }
+      ],
+      "teacher_note": "Giáo viên nhấn mạnh cấu trúc điểm và vị trí xuất hiện của bài toán Tỉ số Lượng giác trong các đề thi GKI và CKI chính thức."
+    },
+    {
+      "kind": "concept",
+      "number": 2,
+      "title": "Khái niệm",
+      "blocks": [
+        {
+          "type": "noted",
+          "text": "\\textbf{Tóm tắt Phương pháp giải Bài thi GKI \\& CKI:} [[br]] 1. \\textbf{Đại số hình học (Bài 4a, 4b):} Kết hợp định lí Pytago ($a^2=b^2+c^2$), các hệ thức cạnh - đường cao ($h^2=b'c'$, $ah=bc$, $b^2=ab'$), tỉ số lượng giác góc nhọn ($\\sin, \\cos, \\tan, \\cot$) và chứng minh tam giác đồng dạng. [[br]] 2. \\textbf{Toán thực tế (Bài 3):} Đọc kĩ đề, kẻ mô hình tam giác vuông. Đường vuông góc là chiều cao/khoảng cách; phương nằm ngang tạo với tia nhìn góc nâng (nhìn lên) hoặc góc hạ (nhìn xuống). Bài toán 2 trạm dùng công thức $h = \\dfrac{d}{\\cot \\beta - \\cot \\alpha}$."
+        }
+      ],
+      "solution": "Học sinh rèn kĩ năng nhận diện dạng bài trong đề thi thật và áp dụng quy trình giải chuẩn xác.",
+      "teacher_note": "Nhắc nhở học sinh lưu ý làm tròn số liệu theo đúng yêu cầu đề thi (hàng đơn vị, hàng phần mười, hàng phần trăm hoặc độ)."
+    },
+    {
+      "kind": "practice1",
+      "number": 3,
+      "title": "Luyện tập 1",
+      "blocks": [
+        {
+          "type": "problem",
+          "label": "Bài 1.",
+          "tier": "onclass",
+          "level": 2,
+          "statement": "\\emph{(Trích đề kiểm tra Giữa học kì 1, THCS Cổ Nhuế 2 \\& Trưng Vương)} [[br]] Cho tam giác $ABC$ vuông tại $A$ ($AB < AC$), đường cao $AH$ ($H \\in BC$). Kẻ $HE \\perp AB$ tại $E$, $HF \\perp AC$ tại $F$. [[br]] [NB] a) Cho $AB = 6\\text{ cm}, AC = 8\\text{ cm}$. Tính độ dài $BC$ và đường cao $AH$. [[br]] [NB] b) Tính số đo các góc nhọn $B, C$ (làm tròn đến độ). [[br]] [NB] c) Chứng minh tứ giác $AEHF$ là hình chữ nhật và $EF = AH = 4{,}8\\text{ cm}$. [[br]] [NB] d) Tính độ dài các đoạn thẳng $AE, AF$ (làm tròn đến $0{,}1\\text{ cm}$). [[br]] [TH] e) Chứng minh $AE \\cdot AB = AF \\cdot AC = AH^2$. [[br]] [TH] f) Chứng minh tam giác $AEF$ đồng dạng với tam giác $ACB$.",
+          "check": {
+            "kind": "solveset",
+            "equation": "x = 10",
+            "answer": [
+              10
+            ]
+          }
+        },
+        {
+          "type": "figure",
+          "tikz": "\\begin{tikzpicture}[line width=0.9pt,font=\\small]\\coordinate (A) at (0,2.4);\\coordinate (B) at (-1.8,0);\\coordinate (C) at (3.2,0);\\coordinate (H) at (0,0);\\draw[ink,line width=1.1pt] (B)--(C);\\draw[ink,line width=1.1pt] (A)--(B);\\draw[ink,line width=1.1pt] (A)--(C);\\draw[ink,line width=0.8pt] (A)--(H);\\rightanglemark{B}{A}{C}\\rightanglemark{A}{H}{C}\\coordinate (E) at ($(A)!(H)!(B)$);\\coordinate (F) at ($(A)!(H)!(C)$);\\draw[ink,dashed] (H)--(E);\\draw[ink,dashed] (H)--(F);\\rightanglemark{A}{E}{H}\\rightanglemark{A}{F}{H}\\draw[brand,line width=1pt] (E)--(F);\\node[above] at (A) {$A$};\\node[below left] at (B) {$B$};\\node[below right] at (C) {$C$};\\node[below] at (H) {$H$};\\node[above left] at (E) {$E$};\\node[above right] at (F) {$F$};\\end{tikzpicture}",
+          "caption": "Hình vẽ tam giác vuông $ABC$ với đường cao $AH$ và hình chữ nhật $AEHF$.",
+          "width": "0.45\\linewidth"
+        },
+        {
+          "type": "writelines",
+          "count": 6
+        },
+        {
+          "type": "problem",
+          "label": "Bài 2.",
+          "tier": "onclass",
+          "level": 3,
+          "statement": "\\emph{(Trích đề kiểm tra Giữa học kì 1, THCS Dịch Vọng Hậu \\& CKI Ngọc Thụy)} [[br]] Cho tam giác $ABC$ vuông tại $A$, đường cao $AH$ ($H \\in BC$). Kẻ $HE \\perp AB$ tại $E$, $HF \\perp AC$ tại $F$. [[br]] [NB] g) Biết $AB = 9\\text{ cm}$, $\\widehat{ABC} = 60^\\circ$. Giải tam giác vuông $ABC$. [[br]] [NB] h) Viết công thức tính $HE, HF$ theo $AH$ và góc $B, C$. [[br]] [TH] i) Chứng minh $AH^3 = BC \\cdot AE \\cdot AF$. [[br]] [VD] j) Chứng minh $\\dfrac{S_{AEF}}{S_{ABC}} = \\sin^2 B \\cdot \\cos^2 B$.",
+          "check": {
+            "kind": "solveset",
+            "equation": "x = 18",
+            "answer": [
+              18
+            ]
+          }
+        },
+        {
+          "type": "problem",
+          "label": "Bài 3.",
+          "tier": "onclass",
+          "level": 4,
+          "figure_given": true,
+          "statement": "\\emph{(Trích đề thi GKI, THCS Vân Yên \\& Ngô Gia Tự)} [[br]] [VDC] a) Chứng minh hệ thức lượng giác phân hóa VDC: $\\sin^3 B = \\dfrac{CF}{BC}$ (với $F$ là hình chiếu của $H$ trên $AC$).",
+          "check": {
+            "kind": "solveset",
+            "equation": "x = 1",
+            "answer": [
+              1
+            ]
+          }
+        },
+        {
+          "type": "writelines",
+          "count": 6
+        }
+      ],
+      "solution": "Bài 1: a) $BC = 10\\text{ cm}, AH = 4{,}8\\text{ cm}$. b) $\\widehat{B} \\approx 53^\\circ, \\widehat{C} \\approx 37^\\circ$. c) $AEHF$ có 3 góc vuông nên là hình chữ nhật $\\Rightarrow EF = AH = 4{,}8\\text{ cm}$. d) $AE = \\dfrac{AH^2}{AB} = 3{,}84\\text{ cm}, AF = \\dfrac{AH^2}{AC} = 2{,}88\\text{ cm}$. e) $AH^2 = AE \\cdot AB = AF \\cdot AC$. f) $\\dfrac{AE}{AC} = \\dfrac{AF}{AB} \\Rightarrow \\Delta AEF \\sim \\Delta ACB$. [[br]] Bài 2: g) $AC = 9 \\cdot \\tan 60^\\circ = 9\\sqrt{3}\\text{ cm}, BC = 18\\text{ cm}, \\widehat{C} = 30^\\circ$. h) $HE = AH \\cdot \\sin B, HF = AH \\cdot \\sin C$. i) $AE \\cdot AF = \\dfrac{AH^4}{AB \\cdot AC} = \\dfrac{AH^4}{AH \\cdot BC} = \\dfrac{AH^3}{BC} \\Rightarrow AH^3 = BC \\cdot AE \\cdot AF$. j) $\\dfrac{AE}{AB} = \\sin^2 B, \\dfrac{AF}{AC} = \\cos^2 B \\Rightarrow \\dfrac{S_{AEF}}{S_{ABC}} = \\sin^2 B \\cdot \\cos^2 B$. [[br]] Bài 3: a) $CF = \\dfrac{HC^2}{AC} = \\dfrac{(AC \\cdot \\sin B)^2}{AC} = AC \\cdot \\sin^2 B = (BC \\cdot \\sin B) \\cdot \\sin^2 B = BC \\cdot \\sin^3 B \\Rightarrow \\sin^3 B = \\dfrac{CF}{BC}$.",
+      "teacher_note": "Giáo viên hướng dẫn học sinh trình bày chặt chẽ bài toán hình học tổng hợp trong đề thi GKI và CKI."
+    },
+    {
+      "kind": "practice2",
+      "number": 4,
+      "title": "Luyện tập 2",
+      "blocks": [
+        {
+          "type": "problem",
+          "label": "Bài 4.",
+          "tier": "onclass",
+          "level": 3,
+          "statement": "\\emph{(Trích đề thi GKI \\& CKI, THCS Ngô Gia Tự, Nguyễn Du, Phú Diễn, Phương Hà Đông, Trưng Vương)} [[br]] \\textbf{Bộ bài tập Thực tế Tỉ số Lượng giác Đề thi:} [[br]] [NB] a) \\emph{(GKI Ngô Gia Tự - Tháp Eiffel)} Chiều cao tháp Eiffel: góc giữa tia nắng và mặt đất là $62^\\circ$, bóng tháp trên mặt đất $172\\text{ m}$. Tính chiều cao tháp (làm tròn đến $0{,}1\\text{ m}$). [[br]] [NB] b) \\emph{(GKI Trưng Vương - Máy bay hạ cánh)} Máy bay hạ cánh từ độ cao $5\\text{ km}$, đường hạ cánh $AB$ tạo với mặt đất góc $30^\\circ$. Tính độ dài $AB$ (làm tròn đến km). [[br]] [NB] c) \\emph{(GKI Nguyễn Du - Máy bay cất cánh)} Máy bay cất cánh góc $30^\\circ$ so với phương ngang. Khi bay được đoạn $AB = 12\\text{ km}$ thì máy bay ở độ cao bao nhiêu km? [[br]] [NB] d) \\emph{(GKI Nguyễn Du - Vận tốc máy bay)} Vận tốc máy bay $250\\text{ km/h}$. Sau bao nhiêu phút cất cánh thì máy bay đạt độ cao $5000\\text{ m}$? [[br]] [NB] e) \\emph{(CKI Phương Hà Đông - Cây cau gãy)} Cây cau bị bão làm gãy gập, ngọn chạm đất tạo với mặt đất góc $20^\\circ$. Đoạn từ gốc đến chỗ gãy dài $3\\text{ m}$. Tính chiều cao ban đầu của cây cau (làm tròn đến $0{,}1\\text{ m}$). [[br]] [TH] f) \\emph{(GKI Phú Diễn - Hải đăng Đa Lát)} Hải đăng Đa Lát cao $42\\text{ m}$. Người đứng trên đỉnh nhìn tàu với góc hạ $10^\\circ$. Tính khoảng cách từ tàu đến chân hải đăng (làm tròn đến $0{,}1\\text{ m}$).",
+          "check": {
+            "kind": "solveset",
+            "equation": "x = 323.4",
+            "answer": [
+              323.4
+            ]
+          }
+        },
+        {
+          "type": "writelines",
+          "count": 6
+        }
+      ],
+      "solution": "a) $h = 172 \\cdot \\tan 62^\\circ \\approx 323{,}4\\text{ m}$. [[br]] b) $AB = \\dfrac{5}{\\sin 30^\\circ} = 10\\text{ km}$. [[br]] c) $h = 12 \\cdot \\sin 30^\\circ = 6\\text{ km}$. [[br]] d) Quãng đường $S = \\dfrac{5}{\\sin 30^\\circ} = 10\\text{ km}, t = \\dfrac{10}{250} \\cdot 60 = 2{,}4\\text{ phút}$. [[br]] e) Phần gãy ngọn $L = \\dfrac{3}{\\sin 20^\\circ} \\approx 8{,}77\\text{ m}$. Chiều cao ban đầu $H = 3 + 8{,}77 = 11{,}8\\text{ m}$. [[br]] f) Khoảng cách $d = \\dfrac{42}{\\tan 10^\\circ} \\approx 238{,}2\\text{ m}$.",
+      "teacher_note": "Giáo viên rèn kĩ năng tóm tắt đề bài thực tế và chọn tỉ số lượng giác thích hợp."
+    },
+    {
+      "kind": "reflection",
+      "number": 5,
+      "title": "Tổng kết",
+      "blocks": [
+        {
+          "type": "problem",
+          "label": "Bài 5.",
+          "tier": "btvn",
+          "level": 2,
+          "statement": "\\emph{(Trích đề kiểm tra Giữa học kì 1, THCS Nguyễn Bình Khiêm \\& Bát Tràng)} [[br]] [NB] a) Cho tam giác $ABC$ vuông tại $A$, đường cao $AH$. $AB = 6\\text{ cm}, AC = 8\\text{ cm}$. Tính $BC, \\widehat{B}, \\widehat{C}$ (làm tròn đến độ). [[br]] [NB] b) Cho tam giác $ABC$ vuông tại $A$, $AB = 6\\text{ cm}$, $\\widehat{B} = 53^\\circ$. Giải tam giác $ABC$ (cạnh làm tròn $0{,}01\\text{ cm}$). [[br]] [NB] c) Tia nắng tạo với mặt đất góc $34^\\circ$, bóng tòa tháp dài $8{,}6\\text{ m}$. Tính chiều cao tòa tháp (làm tròn $0{,}1\\text{ m}$). [[br]] [NB] d) Người đi xe đạp lên dốc nghiêng $10^\\circ$, đỉnh dốc cao $80\\text{ m}$. Tính độ dài dốc (làm tròn đến mét). [[br]] [NB] e) Cho tam giác $ABC$ vuông tại $A$, $AB = 3\\text{ cm}, BC = 5\\text{ cm}$. Tính $AC, \\widehat{B}$. [[br]] [NB] f) Máy bay cất cánh vận tốc $320\\text{ km/h}$, bay lên góc $28^\\circ$. Tính độ cao sau khi bay $3\\text{ km}$. [[br]] [NB] g) Tính thời gian để máy bay ở câu f đạt độ cao $10\\,600\\text{ m}$ (làm tròn đến $0{,}1\\text{ phút}$). [[br]] [NB] h) Cho tam giác $ABC$ vuông tại $A$, đường cao $AH$. $AB = 9\\text{ cm}, \\tan C = \\dfrac{3}{4}$. Tính $AC, BC, AH$. [[br]] [TH] i) Kẻ đường cao $AH$ ($H \\in BC$). Chứng minh $BC = AB \\cdot \\cos B + AC \\cdot \\cos C$. [[br]] [TH] j) Kẻ phân giác $BD$ của $\\widehat{B}$ ($D \\in AC$), $BD$ cắt $AH$ tại $K$. Chứng minh $KH = AK \\cdot \\sin C$. [[br]] [TH] k) Kẻ $HE \\perp AB, HF \\perp AC$. Chứng minh $AE \\cdot AB = AF \\cdot AC = AH^2$. [[br]] [VD] l) Chứng minh $\\dfrac{S_{AEF}}{S_{ABC}} = \\sin^2 B \\cdot \\cos^2 B$.",
+          "check": {
+            "kind": "solveset",
+            "equation": "x = 10",
+            "answer": [
+              10
+            ]
+          }
+        }
+      ],
+      "solution": "Bài 5: a) $BC = 10\\text{ cm}, \\widehat{B} \\approx 53^\\circ, \\widehat{C} \\approx 37^\\circ$. b) $AC \\approx 7{,}96\\text{ cm}, BC \\approx 9{,}97\\text{ cm}$. c) $h \\approx 5{,}8\\text{ m}$. d) $L \\approx 461\\text{ m}$. e) $AC = 4\\text{ cm}, \\widehat{B} \\approx 53^\\circ$. f) $h \\approx 1{,}4\\text{ km}$. g) $t \\approx 4{,}2\\text{ phút}$. h) $AC = 12\\text{ cm}, BC = 15\\text{ cm}, AH = 7{,}2\\text{ cm}$. i) Tam giác vuông. j) Tính chất phân giác. k) Hệ thức lượng. l) Tỉ số diện tích.",
+      "teacher_note": "Bài tập về nhà rèn luyện tính độc lập và tự giác làm bài của học sinh."
+    }
+  ]
+}

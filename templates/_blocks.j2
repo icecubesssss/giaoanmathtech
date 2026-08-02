@@ -18,11 +18,11 @@
 \end{openerbox}
 
 ((* elif b.type == "writelines" *))
-((* if b.count == 0 *))\par\vspace{5mm}((* elif b.variant == "oly" *))\olyline[((( b.count )))]((* else *))((* for _ in range(b.count) *))\fillline
+((* if b.count == 0 *))\par\vspace{5mm}((* elif b.variant == "oly" *))\olyline[((( b.count )))]((* elif b.variant == "draw" *))\drawbox[((( b.count )))]((* else *))((* for _ in range(b.count) *))\fillline
 ((* endfor *))((* endif *))
 \par
 ((* elif b.type == "problem" *))
-\textbf{((( b.label | tex )))}((* if b.level *))~\diffstars{((( b.level )))}((* elif b.tier == "onclass" *))~\diffstars{2}((* elif b.tier == "btvn" *))~\diffstars{1}((* elif b.tier == "extend" *))~\diffstars{3}((* endif *)) ((( b.statement | tex )))
+((* set _w = "[[/wrap]]" in b.statement *))((* if _w *))\leavevmode\hangafter=-5\hangindent=-0.38\linewidth\relax((( b.statement.split("[[/wrap]]")[0] | replace("[[wrap]]","") )))((* endif *))\textbf{((( b.label | tex )))}((* if b.level *))~\diffstars{((( b.level )))}((* elif b.tier == "onclass" *))~\diffstars{2}((* elif b.tier == "btvn" *))~\diffstars{1}((* elif b.tier == "extend" *))~\diffstars{3}((* endif *)) ((( (b.statement.split("[[/wrap]]")[1] if _w else b.statement) | tex )))
 ((* if b.video *))\videoqr{((( b.video )))}((* endif *))
 ((* if b.hints *))
 \par\vspace{3pt}

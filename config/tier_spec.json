@@ -1,277 +1,509 @@
 {
-  "_doc": "RATE CARD CỐ ĐỊNH theo tầng lớp — nguồn sự thật máy-đọc cho số câu NB/TH/VD/VDC. Trước đây cứng trong duration_gate.py + văn bản HUONG-DAN-PHAN-TANG-LOP §2; nay gom về đây. Số câu mục tiêu mỗi band = ngân-sách-phút(đoạn) × tỉ-lệ(band) ÷ phút-mỗi-câu(đoạn,band). Đổi file này khi mở tầng/khối mới; soạn từng tuần KHÔNG đụng.",
-  "version": "1.0",
-  "ngay": "2026-06-21",
-  "level_to_band": {
-    "1": "NB",
-    "2": "TH",
-    "3": "VD",
-    "4": "VDC"
+ "_doc": "RATE CARD CỐ ĐỊNH theo tầng lớp — nguồn sự thật máy-đọc cho số câu NB/TH/VD/VDC. Trước đây cứng trong duration_gate.py + văn bản HUONG-DAN-PHAN-TANG-LOP §2; nay gom về đây. Số câu mục tiêu mỗi band = ngân-sách-phút(đoạn) × tỉ-lệ(band) ÷ phút-mỗi-câu(đoạn,band). Đổi file này khi mở tầng/khối mới; soạn từng tuần KHÔNG đụng.",
+ "version": "1.0",
+ "ngay": "2026-06-21",
+ "level_to_band": {
+  "1": "NB",
+  "2": "TH",
+  "3": "VD",
+  "4": "VDC"
+ },
+ "do_kho_to_band": {
+  "_doc": "TẠM THỜI (lossy) để spike/bốc khi câu bank CHƯA gắn thẻ band. do_kho 1 của bank gộp NB+TH → map về TH (mức cao hơn, an toàn). Bước 3 gắn thẻ `band` từng câu sẽ thay map này.",
+  "1": "TH",
+  "2": "VD",
+  "3": "VD",
+  "4": "VDC"
+ },
+ "rates": {
+  "_doc": "Phút/câu mỗi band theo đoạn. vidu = GV giảng (1/4/8); onclass = HS làm trên lớp ×1,5; btvn = ở nhà ×1,3. VDC mới: 12/18/15,6 (đề xuất, scale theo quy luật ×1,5 / ×1,3).",
+  "vidu": {
+   "NB": 1.0,
+   "TH": 4.0,
+   "VD": 8.0,
+   "VDC": 12.0
   },
-  "do_kho_to_band": {
-    "_doc": "TẠM THỜI (lossy) để spike/bốc khi câu bank CHƯA gắn thẻ band. do_kho 1 của bank gộp NB+TH → map về TH (mức cao hơn, an toàn). Bước 3 gắn thẻ `band` từng câu sẽ thay map này.",
-    "1": "TH",
-    "2": "VD",
-    "3": "VD",
-    "4": "VDC"
+  "onclass": {
+   "NB": 1.5,
+   "TH": 6.0,
+   "VD": 12.0,
+   "VDC": 18.0
   },
-  "rates": {
-    "_doc": "Phút/câu mỗi band theo đoạn. vidu = GV giảng (1/4/8); onclass = HS làm trên lớp ×1,5; btvn = ở nhà ×1,3. VDC mới: 12/18/15,6 (đề xuất, scale theo quy luật ×1,5 / ×1,3).",
-    "vidu": {
-      "NB": 1.0,
-      "TH": 4.0,
+  "btvn": {
+   "NB": 1.3,
+   "TH": 5.2,
+   "VD": 10.4,
+   "VDC": 15.6
+  }
+ },
+ "draw_minutes": 5.0,
+ "quick_minutes": 1.0,
+ "_quick_doc": "Thầy chốt 2026-07-27: câu NHẬN BIẾT dạng trắc nghiệm / điền chỗ chấm trên HÌNH VẼ SẴN chỉ tốn 1 phút/câu ('với mức độ này thì hs vẫn dùng 1p thôi') — không dùng rate hình ×2. Khai bằng `hinh_san` trên dòng thuyết minh hoặc `figure_given` trên block phiếu. Band TH/VD khai `hinh_san` (tự luận điền khuyết) vẫn phải tính toán nên chỉ giảm nửa rate.",
+ "_draw_doc": "Thầy chốt 2026-07-26: câu HÌNH mà HS phải TỰ VẼ HÌNH cộng thêm 5′ (ngoài phút/câu theo band). Khai bằng `draw: true` trên block problem của phiếu, hoặc `ve_hinh: {\"onclass\": n, \"btvn\": n}` trên dòng thuyết minh (n = SỐ HÌNH phải vẽ, tính theo BÀI chứ không theo ý a,b,c — một bài chỉ vẽ hình một lần).",
+ "grades": {
+  "lop-9": {
+   "dai-so": {
+    "session_minutes": 180,
+    "break_minutes": 15,
+    "budgets": {
+     "vidu": 45.0,
+     "onclass": 120.0,
+     "btvn": 90.0
+    },
+    "budget_tol": 0.1,
+    "ratio_tol": 5.0,
+    "spec_count_tol": 1,
+    "tiers": {
+     "C": {
+      "ratio": {
+       "NB": 40,
+       "TH": 40,
+       "VD": 20,
+       "VDC": 0
+      },
+      "max_level": 3,
+      "allow_extend": false,
+      "_note": "Thầy chốt — nền yếu, KHÔNG VDC/level4"
+     },
+     "B": {
+      "ratio": {
+       "NB": 30,
+       "TH": 40,
+       "VD": 20,
+       "VDC": 10
+      },
+      "max_level": 4,
+      "allow_extend": true,
+      "_note": "Thầy chốt"
+     },
+     "A": {
+      "ratio": {
+       "NB": 20,
+       "TH": 35,
+       "VD": 30,
+       "VDC": 15
+      },
+      "max_level": 4,
+      "allow_extend": true,
+      "_note": "Thầy xác nhận 2026-06-21"
+     },
+     "X": {
+      "ratio": null,
+      "max_level": 4,
+      "allow_extend": true,
+      "_note": "thi chuyên — CHƯA chốt tỉ lệ; KHÔNG gate cứng cho X"
+     }
+    }
+   },
+   "hinh-hoc": {
+    "_note": "Thầy chốt 2026-07-27: buổi HÌNH lớp 9 = 90′ (bảng tiến độ [C]hinh-hoc-tien-do-kien-thuc.xlsx). ĐƯA VỀ RATE CŨ (không nhân đôi như hình lớp 8) — đối chiếu ngân hàng đề: câu TH chương IV thực tế 6,9′ (rate 6′), VD 9,6′ (rate 12′); rate ×2 vống gấp đôi nên phiếu quá ít bài, HS không đủ lượng để nhớ. Câu NB trắc nghiệm/điền khuyết trên hình VẼ SẴN: 1′/câu (quick_minutes). Câu HS TỰ VẼ HÌNH vẫn cộng draw_minutes 5′. Quỹ: GV giảng 25′ (phải có ví dụ mẫu cho MỌI dạng TH và VD — không hướng dẫn thì HS không làm được) + luyện tập 55′ + giải lao 10′ = 90′; BTVN 40′.",
+    "session_minutes": 90,
+    "break_minutes": 10,
+    "budgets": {
+     "vidu": 25.0,
+     "onclass": 55.0,
+     "btvn": 40.0
+    },
+    "budget_tol": 0.1,
+    "ratio_tol": 5.0,
+    "spec_count_tol": 1,
+    "tiers": {
+     "C": {
+      "ratio": {
+       "NB": 40,
+       "TH": 40,
+       "VD": 20,
+       "VDC": 0
+      },
+      "max_level": 3,
+      "allow_extend": false,
+      "_note": "Thầy chốt 2026-07-27: giữ 40-40-20 như đại số tầng C"
+     },
+     "B": {
+      "ratio": {
+       "NB": 30,
+       "TH": 40,
+       "VD": 20,
+       "VDC": 10
+      },
+      "max_level": 4,
+      "allow_extend": true,
+      "_note": "Thầy chốt"
+     },
+     "A": {
+      "ratio": {
+       "NB": 20,
+       "TH": 35,
+       "VD": 30,
+       "VDC": 15
+      },
+      "max_level": 4,
+      "allow_extend": true,
+      "_note": "Thầy xác nhận 2026-06-21"
+     },
+     "X": {
+      "ratio": null,
+      "max_level": 4,
+      "allow_extend": true,
+      "_note": "thi chuyên — CHƯA chốt tỉ lệ; KHÔNG gate cứng cho X"
+     }
+    }
+   }
+  },
+  "lop-8": {
+   "dai-so": {
+    "_note": "buổi thường ~1h30; rate khác (Thầy chốt cho lớp 8 B/C trước đây)",
+    "session_minutes": 90,
+    "break_minutes": 10,
+    "budgets": {
+     "vidu": 20.0,
+     "onclass": 60.0,
+     "btvn": 35.0
+    },
+    "budget_tol": 0.1,
+    "ratio_tol": 5.0,
+    "spec_count_tol": 1,
+    "rates_override": {
+     "onclass": {
+      "NB": 0.5,
+      "TH": 3.0,
       "VD": 8.0,
       "VDC": 12.0
+     },
+     "btvn": {
+      "NB": 0.5,
+      "TH": 2.5,
+      "VD": 7.0,
+      "VDC": 10.5
+     }
     },
-    "onclass": {
-      "NB": 1.5,
-      "TH": 6.0,
-      "VD": 12.0,
-      "VDC": 18.0
-    },
-    "btvn": {
-      "NB": 1.3,
-      "TH": 5.2,
-      "VD": 10.4,
-      "VDC": 15.6
+    "tiers": {
+     "B": {
+      "ratio": {
+       "NB": 25,
+       "TH": 45,
+       "VD": 30,
+       "VDC": 0
+      },
+      "max_level": 3,
+      "allow_extend": false
+     },
+     "C": {
+      "ratio": {
+       "NB": 25,
+       "TH": 45,
+       "VD": 30,
+       "VDC": 0
+      },
+      "max_level": 3,
+      "allow_extend": false
+     }
     }
+   },
+   "hinh-hoc": {
+    "_note": "ôn hè 7→8 (góc, tam giác) + hình lớp 8; buổi 90'. Tỉ lệ 25-45-30 như đại số lớp 8. THẦY CHỐT 2026-07-26: mọi rate NHÂN ĐÔI so với bản cũ (vidu 1/4/8 → 2/8/16; onclass 1,25/4,5/10 → 2,5/9/20; btvn 1/4/8,5 → 2/8/17) vì bài HÌNH tốn gấp đôi thời gian so với đại số (đọc hình, suy luận, trình bày). Câu HS phải TỰ VẼ HÌNH cộng thêm `draw_minutes` (5′) — xem ProblemBlock.draw / SpecRow.ve_hinh.",
+    "session_minutes": 90,
+    "break_minutes": 10,
+    "budgets": {
+     "vidu": 20.0,
+     "onclass": 60.0,
+     "btvn": 35.0
+    },
+    "budget_tol": 0.1,
+    "ratio_tol": 5.0,
+    "spec_count_tol": 1,
+    "rates_override": {
+     "vidu": {
+      "NB": 2.0,
+      "TH": 8.0,
+      "VD": 16.0,
+      "VDC": 24.0
+     },
+     "onclass": {
+      "NB": 2.5,
+      "TH": 9.0,
+      "VD": 20.0,
+      "VDC": 30.0
+     },
+     "btvn": {
+      "NB": 2.0,
+      "TH": 8.0,
+      "VD": 17.0,
+      "VDC": 25.0
+     }
+    },
+    "tiers": {
+     "B": {
+      "ratio": {
+       "NB": 25,
+       "TH": 45,
+       "VD": 30,
+       "VDC": 0
+      },
+      "max_level": 3,
+      "allow_extend": false
+     },
+     "C": {
+      "ratio": {
+       "NB": 25,
+       "TH": 45,
+       "VD": 30,
+       "VDC": 0
+      },
+      "max_level": 3,
+      "allow_extend": false
+     }
+    }
+   }
   },
-  "grades": {
-    "lop-9": {
-      "dai-so": {
-        "session_minutes": 180,
-        "break_minutes": 15,
-        "budgets": {
-          "vidu": 45.0,
-          "onclass": 120.0,
-          "btvn": 90.0
-        },
-        "budget_tol": 0.1,
-        "ratio_tol": 5.0,
-        "spec_count_tol": 1,
-        "tiers": {
-          "C": {
-            "ratio": {
-              "NB": 40,
-              "TH": 40,
-              "VD": 20,
-              "VDC": 0
-            },
-            "max_level": 3,
-            "allow_extend": false,
-            "_note": "Thầy chốt — nền yếu, KHÔNG VDC/level4"
-          },
-          "B": {
-            "ratio": {
-              "NB": 30,
-              "TH": 40,
-              "VD": 20,
-              "VDC": 10
-            },
-            "max_level": 4,
-            "allow_extend": true,
-            "_note": "Thầy chốt"
-          },
-          "A": {
-            "ratio": {
-              "NB": 20,
-              "TH": 35,
-              "VD": 30,
-              "VDC": 15
-            },
-            "max_level": 4,
-            "allow_extend": true,
-            "_note": "Thầy xác nhận 2026-06-21"
-          },
-          "X": {
-            "ratio": null,
-            "max_level": 4,
-            "allow_extend": true,
-            "_note": "thi chuyên — CHƯA chốt tỉ lệ; KHÔNG gate cứng cho X"
-          }
-        }
+  "lop-5": {
+    "dai-so": {
+     "session_minutes": 90,
+     "break_minutes": 15,
+     "budgets": {
+      "vidu": 30.0,
+      "onclass": 45.0,
+      "btvn": 60.0
+     },
+     "budget_tol": 0.2,
+     "ratio_tol": 15.0,
+     "spec_count_tol": 3,
+     "rates_override": {
+      "vidu": {
+       "NB": 0.5,
+       "TH": 1.5,
+       "VD": 3.0,
+       "VDC": 6.0
       },
-      "hinh-hoc": {
-        "_note": "chưa chuẩn hoá rate card; bổ sung khi soạn phiếu tầng hình học lớp 9",
-        "session_minutes": 180,
-        "break_minutes": 15,
-        "budgets": {
-          "vidu": 45.0,
-          "onclass": 120.0,
-          "btvn": 90.0
-        },
-        "budget_tol": 0.1,
-        "ratio_tol": 5.0,
-        "spec_count_tol": 1,
-        "tiers": {
-          "C": {
-            "ratio": {
-              "NB": 40,
-              "TH": 40,
-              "VD": 20,
-              "VDC": 0
-            },
-            "max_level": 3,
-            "allow_extend": false,
-            "_note": "Thầy chốt — nền yếu, KHÔNG VDC/level4"
-          },
-          "B": {
-            "ratio": {
-              "NB": 30,
-              "TH": 40,
-              "VD": 20,
-              "VDC": 10
-            },
-            "max_level": 4,
-            "allow_extend": true,
-            "_note": "Thầy chốt"
-          },
-          "A": {
-            "ratio": {
-              "NB": 20,
-              "TH": 35,
-              "VD": 30,
-              "VDC": 15
-            },
-            "max_level": 4,
-            "allow_extend": true,
-            "_note": "Thầy xác nhận 2026-06-21"
-          },
-          "X": {
-            "ratio": null,
-            "max_level": 4,
-            "allow_extend": true,
-            "_note": "thi chuyên — CHƯA chốt tỉ lệ; KHÔNG gate cứng cho X"
-          }
-        }
-      }
-    },
-    "lop-8": {
-      "dai-so": {
-        "_note": "buổi thường ~1h30; rate khác (Thầy chốt cho lớp 8 B/C trước đây)",
-        "session_minutes": 90,
-        "break_minutes": 10,
-        "budgets": {
-          "vidu": 20.0,
-          "onclass": 60.0,
-          "btvn": 35.0
-        },
-        "budget_tol": 0.1,
-        "ratio_tol": 5.0,
-        "spec_count_tol": 1,
-        "rates_override": {
-          "onclass": {
-            "NB": 0.5,
-            "TH": 3.0,
-            "VD": 8.0,
-            "VDC": 12.0
-          },
-          "btvn": {
-            "NB": 0.5,
-            "TH": 2.5,
-            "VD": 7.0,
-            "VDC": 10.5
-          }
-        },
-        "tiers": {
-          "B": {
-            "ratio": {
-              "NB": 25,
-              "TH": 45,
-              "VD": 30,
-              "VDC": 0
-            },
-            "max_level": 3,
-            "allow_extend": false
-          },
-          "C": {
-            "ratio": {
-              "NB": 25,
-              "TH": 45,
-              "VD": 30,
-              "VDC": 0
-            },
-            "max_level": 3,
-            "allow_extend": false
-          }
-        }
+      "onclass": {
+       "NB": 0.75,
+       "TH": 2.0,
+       "VD": 4.5,
+       "VDC": 9.0
       },
-      "hinh-hoc": {
-        "_note": "ôn hè 7→8 (góc, tam giác) + hình lớp 8; buổi 90'. Tỉ lệ 25-45-30 như đại số lớp 8.",
-        "session_minutes": 90,
-        "break_minutes": 10,
-        "budgets": {
-          "vidu": 20.0,
-          "onclass": 60.0,
-          "btvn": 35.0
-        },
-        "budget_tol": 0.1,
-        "ratio_tol": 5.0,
-        "spec_count_tol": 1,
-        "rates_override": {
-          "onclass": {
-            "NB": 1.25,
-            "TH": 4.5,
-            "VD": 10.0,
-            "VDC": 15.0
-          },
-          "btvn": {
-            "NB": 1.0,
-            "TH": 4.0,
-            "VD": 8.5,
-            "VDC": 12.5
-          }
-        },
-        "tiers": {
-          "B": {
-            "ratio": {
-              "NB": 25,
-              "TH": 45,
-              "VD": 30,
-              "VDC": 0
-            },
-            "max_level": 3,
-            "allow_extend": false
-          },
-          "C": {
-            "ratio": {
-              "NB": 25,
-              "TH": 45,
-              "VD": 30,
-              "VDC": 0
-            },
-            "max_level": 3,
-            "allow_extend": false
-          }
-        }
+      "btvn": {
+       "NB": 1.0,
+       "TH": 2.0,
+       "VD": 4.0,
+       "VDC": 8.0
       }
+     },
+     "tiers": {
+      "C": {
+       "ratio": {
+        "NB": 40,
+        "TH": 40,
+        "VD": 20,
+        "VDC": 0
+       },
+       "max_level": 3,
+       "allow_extend": false,
+       "_note": "Lớp 5 Tầng C"
+      },
+      "B": {
+       "ratio": {
+        "NB": 30,
+        "TH": 40,
+        "VD": 20,
+        "VDC": 10
+       },
+       "max_level": 4,
+       "allow_extend": true,
+       "_note": "Lớp 5 Tầng B"
+      }
+     }
     },
-    "lop-6": {
-      "dai-so": {
-        "session_minutes": 90,
-        "break_minutes": 15,
-        "budgets": {
-          "vidu": 30.0,
-          "onclass": 45.0,
-          "btvn": 60.0
-        },
-        "budget_tol": 0.1,
-        "ratio_tol": 10.0,
-        "spec_count_tol": 2,
-        "tiers": {
-          "C": {
-            "ratio": {
-              "NB": 40,
-              "TH": 40,
-              "VD": 20,
-              "VDC": 0
-            },
-            "max_level": 3,
-            "allow_extend": false,
-            "_note": "Lớp 6 Tầng C"
-          }
-        }
+    "toan": {
+     "session_minutes": 90,
+     "break_minutes": 15,
+     "budgets": {
+      "vidu": 30.0,
+      "onclass": 45.0,
+      "btvn": 60.0
+     },
+     "budget_tol": 0.2,
+     "ratio_tol": 15.0,
+     "spec_count_tol": 3,
+     "rates_override": {
+      "vidu": {
+       "NB": 0.5,
+       "TH": 1.5,
+       "VD": 3.0,
+       "VDC": 6.0
+      },
+      "onclass": {
+       "NB": 0.75,
+       "TH": 2.0,
+       "VD": 4.5,
+       "VDC": 9.0
+      },
+      "btvn": {
+       "NB": 1.0,
+       "TH": 2.0,
+       "VD": 4.0,
+       "VDC": 8.0
       }
+     },
+     "tiers": {
+      "C": {
+       "ratio": {
+        "NB": 40,
+        "TH": 40,
+        "VD": 20,
+        "VDC": 0
+       },
+       "max_level": 3,
+       "allow_extend": false,
+       "_note": "Lớp 5 Tầng C"
+      }
+     }
     }
+   },
+   "lop-3": {
+    "dai-so": {
+     "session_minutes": 90,
+     "break_minutes": 15,
+     "budgets": {
+      "vidu": 30.0,
+      "onclass": 45.0,
+      "btvn": 60.0
+     },
+     "budget_tol": 0.2,
+     "ratio_tol": 15.0,
+     "spec_count_tol": 3,
+     "rates_override": {
+      "vidu": {
+       "NB": 0.5,
+       "TH": 1.5,
+       "VD": 3.0,
+       "VDC": 6.0
+      },
+      "onclass": {
+       "NB": 0.75,
+       "TH": 2.0,
+       "VD": 4.5,
+       "VDC": 9.0
+      },
+      "btvn": {
+       "NB": 1.0,
+       "TH": 2.0,
+       "VD": 4.0,
+       "VDC": 8.0
+      }
+     },
+     "tiers": {
+      "C": {
+       "ratio": {
+        "NB": 40,
+        "TH": 40,
+        "VD": 20,
+        "VDC": 0
+       },
+       "max_level": 3,
+       "allow_extend": false,
+       "_note": "Lớp 3 Tầng C"
+      }
+     }
+    },
+    "toan": {
+     "session_minutes": 90,
+     "break_minutes": 15,
+     "budgets": {
+      "vidu": 30.0,
+      "onclass": 45.0,
+      "btvn": 60.0
+     },
+     "budget_tol": 0.2,
+     "ratio_tol": 15.0,
+     "spec_count_tol": 3,
+     "rates_override": {
+      "vidu": {
+       "NB": 0.5,
+       "TH": 1.5,
+       "VD": 3.0,
+       "VDC": 6.0
+      },
+      "onclass": {
+       "NB": 0.75,
+       "TH": 2.0,
+       "VD": 4.5,
+       "VDC": 9.0
+      },
+      "btvn": {
+       "NB": 1.0,
+       "TH": 2.0,
+       "VD": 4.0,
+       "VDC": 8.0
+      }
+     },
+     "tiers": {
+      "C": {
+       "ratio": {
+        "NB": 40,
+        "TH": 40,
+        "VD": 20,
+        "VDC": 0
+       },
+       "max_level": 3,
+       "allow_extend": false,
+       "_note": "Lớp 3 Tầng C"
+      }
+     }
+    }
+   },
+  "lop-6": {
+   "dai-so": {
+    "session_minutes": 90,
+    "break_minutes": 15,
+    "budgets": {
+     "vidu": 30.0,
+     "onclass": 45.0,
+     "btvn": 60.0
+    },
+    "budget_tol": 0.1,
+    "ratio_tol": 10.0,
+    "spec_count_tol": 2,
+    "tiers": {
+     "C": {
+      "ratio": {
+       "NB": 40,
+       "TH": 40,
+       "VD": 20,
+       "VDC": 0
+      },
+      "max_level": 3,
+      "allow_extend": false,
+      "_note": "Lớp 6 Tầng C"
+     }
+    }
+   }
+  },
+  "lop-7": {
+   "hinh-hoc": {
+    "session_minutes": 120,
+    "break_minutes": 10,
+    "budgets": {
+     "vidu": 30.0,
+     "onclass": 80.0,
+     "btvn": 60.0
+    },
+    "budget_tol": 0.2,
+    "ratio_tol": 10.0,
+    "spec_count_tol": 2,
+    "tiers": {
+     "B": {
+      "ratio": {
+       "NB": 30,
+       "TH": 40,
+       "VD": 30,
+       "VDC": 0
+      },
+      "max_level": 3,
+      "allow_extend": false,
+      "_note": "Lớp 7 Hình học Tầng B"
+     }
+    }
+   }
   }
+ }
 }
