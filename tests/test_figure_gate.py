@@ -140,3 +140,42 @@ def test_da_co_hinh_san_thi_KHONG_doi_draw():
         "Bài 16.", r"Cho $\widehat{xOy} = 110^\circ$ (hình vẽ). Vẽ tia $Ot$ là tia phân giác.",
         _tikz("x", "y", "t", "O"))])
     assert check_hinh_thieu(lesson) == []
+
+
+# ───────── cổng đường dẫn ảnh (lỗi thật: đổi tên folder → build gãy im lặng) ─────────
+
+def _ghi(tmp_path, duong_dan: str):
+    """Ghi 1 file seed thật rồi trả đường dẫn — cổng này soi JSON nguồn, không soi model."""
+    import json
+    p = tmp_path / "p.json"
+    p.write_text(json.dumps({
+        "slug": "x", "title": "X",
+        "stages": [{"kind": "review", "number": 1, "title": "T",
+                    "blocks": [{"type": "figure", "image": duong_dan}]}],
+    }, ensure_ascii=False), encoding="utf-8")
+    return p
+
+
+def test_image_tuyet_doi_bi_chan(tmp_path):
+    from src.validators import check_image_paths
+    (tmp_path / "a.png").write_bytes(b"x")
+    loi = check_image_paths(_ghi(tmp_path, str(tmp_path / "a.png")))
+    assert len(loi) == 1 and "tuyệt đối" in loi[0].reason
+
+
+def test_image_khong_ton_tai_bi_chan(tmp_path):
+    from src.validators import check_image_paths
+    loi = check_image_paths(_ghi(tmp_path, "thieu.png"))
+    assert len(loi) == 1 and "không tìm thấy" in loi[0].reason
+
+
+def test_image_tuong_doi_co_that_thi_qua(tmp_path):
+    from src.validators import check_image_paths
+    (tmp_path / "images").mkdir()
+    (tmp_path / "images" / "ok.png").write_bytes(b"x")
+    assert check_image_paths(_ghi(tmp_path, "images/ok.png")) == []
+
+
+def test_khong_co_anh_thi_khong_bao_gi(tmp_path):
+    from src.validators import check_image_paths
+    assert check_image_paths(_ghi(tmp_path, "")) == []

@@ -152,6 +152,7 @@ _Cổng gác ĐỀ ↔ HÌNH — chặn hai lỗi đã lọt tới Thầy ở ph
 - `check_figure_symbols(lesson)` — Đề nhắc ký hiệu nào thì hình phải dán đủ ký hiệu đó.
 - `check_clone_problems(lesson, max_clones)` — Cùng một đề chép quá `max_clones` lần → lấp chỗ, phải dệt lại.
 - `check_hinh_thieu(lesson)` — Hai lỗi Thầy đã bắt ở phiếu B, còn sót ở phiếu E:
+- `check_image_paths(lesson_path)` — Ảnh phải trỏ ĐƯỜNG DẪN TƯƠNG ĐỐI theo folder phiếu, và file phải có thật.
 - `check_figures(lesson)` — VI PHẠM CHẶN — hai lỗi đã có bằng chứng Thầy trả phiếu, kho hiện sạch nên
 - `warn_figures(lesson)` — CẢNH BÁO (chưa chặn) — `check_hinh_thieu` bắt đúng nhưng đang dính ~60 chỗ ở
 
@@ -221,6 +222,18 @@ _Gắn `band` (NB/TH/VD/VDC) + `phut` (thời gian HS làm, ước) vào từng 
 - `cmd_report(args)` — Phút/câu THỰC theo band (đối chiếu tier_spec) + độ phủ band/phut.
 - `cmd_check(args)` — Gác cổng ngân hàng đề: Σdiem≠tong_diem, thiếu band/phut, trùng id, band lạ.
 - `cmd_fix_headers(args)` — Backfill thoi_gian_phut/tong_diem còn thiếu; cảnh báo Σdiem ≠ tong_diem.
+- `main(argv)`
+
+### `scripts/prune_outputs.py`
+_prune_outputs — soi thư mục `outputs/` mồ côi (bản in cũ của phiếu đã đổi tên/xoá)._
+- `expected_dirs()` — slug → các thư mục output hợp lệ (mirror cây seeds, xem src/main.py::_out_root).
+- `scan()` — (lạc chỗ — seed còn nhưng đã chuyển folder, mất gốc — không seed nào khớp).
+- `main(argv)`
+
+### `scripts/quick.py`
+_quick — gõ ngắn cho 2 việc làm nhiều nhất: build lại nhanh & đọc phiếu dạng dễ nhìn._
+- `resolve(query)` — Mẩu chữ → đúng 1 file phiếu. Không thấy/nhiều quá thì in gợi ý rồi thoát.
+- `to_markdown(path)`
 - `main(argv)`
 
 ### `scripts/repomap.py`

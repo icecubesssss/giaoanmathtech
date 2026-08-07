@@ -1,0 +1,45 @@
+{
+  // Phím tắt soạn phiếu — mở file phiếu JSON rồi bấm, KHÔNG phải gõ đường dẫn.
+  //   ⌘⇧B          → Build phiếu ĐANG MỞ (validate + 3 PDF)
+  //   ⌘⇧P → "Tasks: Run Task" → chọn 2 việc còn lại
+  // Lưu ý: các task chạy trên TAB ĐANG CHỌN (${file}), không phải mọi tab đang mở.
+  "version": "2.0.0",
+  "tasks": [
+    {
+      "label": "Build phiếu đang mở → 3 PDF",
+      "detail": "validate rồi build handout + guide + slide cho file JSON đang chọn",
+      "type": "shell",
+      "command": "${workspaceFolder}/.venv/bin/python",
+      "args": ["-m", "scripts.quick", "build", "${file}"],
+      "options": { "cwd": "${workspaceFolder}" },
+      "group": { "kind": "build", "isDefault": true },
+      "problemMatcher": [],
+      "presentation": {
+        "reveal": "always",
+        "panel": "dedicated",
+        "clear": true,
+        "focus": false
+      }
+    },
+    {
+      "label": "Xem bản đọc (Markdown) của phiếu đang mở",
+      "detail": "đổi JSON → .md dễ đọc; mở file đó rồi bấm ⌘⇧V để xem, công thức toán render luôn",
+      "type": "shell",
+      "command": "${workspaceFolder}/.venv/bin/python",
+      "args": ["-m", "scripts.quick", "md", "${file}"],
+      "options": { "cwd": "${workspaceFolder}" },
+      "problemMatcher": [],
+      "presentation": { "reveal": "always", "panel": "dedicated", "clear": true }
+    },
+    {
+      "label": "Build CẢ TUẦN (folder của phiếu đang mở)",
+      "detail": "build mọi phiếu trong cùng thư mục — dùng khi sửa nhiều phiếu một tuần",
+      "type": "shell",
+      "command": "${workspaceFolder}/.venv/bin/python",
+      "args": ["-m", "src.main", "build-folder", "${fileDirname}"],
+      "options": { "cwd": "${workspaceFolder}" },
+      "problemMatcher": [],
+      "presentation": { "reveal": "always", "panel": "dedicated", "clear": true }
+    }
+  ]
+}

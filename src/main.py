@@ -41,6 +41,7 @@ from src.validators import (
     check_spec_conformance,
     check_thuyetminh,
     check_figures,
+    check_image_paths,
     warn_figures,
 )
 from config import settings
@@ -87,7 +88,24 @@ def _load(lesson_path: str) -> LessonPackage:
     except (json.JSONDecodeError, OSError) as e:
         print(f"✗ JSON lesson sai cú pháp ({path}): {e}", file=sys.stderr)
         sys.exit(1)
-    return LessonPackage.model_validate(data)
+    lesson = LessonPackage.model_validate(data)
+    _neo_anh(lesson, path)
+    return lesson
+
+
+def _neo_anh(lesson: LessonPackage, lesson_path: Path) -> None:
+    """Neo đường dẫn ảnh TƯƠNG ĐỐI (theo folder phiếu, đúng quy ước schema) thành
+    TUYỆT ĐỐI để Tectonic tìm ra — nó compile trong `outputs/`, không phải folder seed.
+
+    Giữ JSON ở dạng tương đối là để phiếu chạy được trên máy thầy cô khác; việc
+    nối đường dẫn là của lúc build, không phải của người soạn.
+    """
+    thu_muc = lesson_path.resolve().parent
+    for stage in lesson.stages:
+        for b in stage.blocks:
+            duong_dan = getattr(b, "image", "") or ""
+            if duong_dan and not duong_dan.startswith("/"):
+                b.image = str(thu_muc / duong_dan)
 
 
 def _out_root(lesson_path: str) -> Path:
@@ -274,11 +292,12 @@ def cmd_evolve(args: argparse.Namespace) -> int:
 
 # ── S2/S3 commands (giữ nguyên từ trước) ──────────────────────────────────────
 
-def _gate_before_build(lesson: LessonPackage, force: bool, fast: bool = False) -> bool:
+def _gate_before_build(lesson: LessonPackage, force: bool, fast: bool = False,
+                       lesson_path: str | None = None) -> bool:
     """Cổng AGENTS.md: 'bắt buộc validate sạch trước build'. Chạy trọng tài S2;
     có vi phạm thì in lý do và trả False (chặn build) trừ khi `force=True` (build
     nháp). Cảnh báo trình bày/độ dốc chỉ in, không chặn. `fast=True` bỏ SymPy (nháp)."""
-    violations, warns, ramp_warns = _run_validation(lesson, fast=fast)
+    violations, warns, ramp_warns = _run_validation(lesson, fast=fast, lesson_path=lesson_path)
     for w in warns + ramp_warns:
         print(f"  ⚠ {w}")
     if not violations:
@@ -365,7 +384,7 @@ def _build_kinds(lesson: LessonPackage, kinds, out_root: Path, force: bool = Fal
 def cmd_build_handout(args: argparse.Namespace) -> int:
     import shutil
     lesson = _load(args.lesson)
-    if not _gate_before_build(lesson, getattr(args, "force", False)):
+    if not _gate_before_build(lesson, getattr(args, "force", False), lesson_path=args.lesson):
         return 1
     ca_pre = get_ca_prefix(lesson, args.lesson)
     pdf = build_pdf(render_handout(lesson), slug=lesson.slug, filename=f"{ca_pre}handout", out_root=_out_root(args.lesson))
@@ -379,7 +398,7 @@ def cmd_build_handout(args: argparse.Namespace) -> int:
 def cmd_build_guide(args: argparse.Namespace) -> int:
     import shutil
     lesson = _load(args.lesson)
-    if not _gate_before_build(lesson, getattr(args, "force", False)):
+    if not _gate_before_build(lesson, getattr(args, "force", False), lesson_path=args.lesson):
         return 1
     ca_pre = get_ca_prefix(lesson, args.lesson)
     pdf = build_pdf(render_guide(lesson), slug=lesson.slug, filename=f"{ca_pre}guide", out_root=_out_root(args.lesson))
@@ -393,7 +412,7 @@ def cmd_build_guide(args: argparse.Namespace) -> int:
 def cmd_build_slide(args: argparse.Namespace) -> int:
     import shutil
     lesson = _load(args.lesson)
-    if not _gate_before_build(lesson, getattr(args, "force", False)):
+    if not _gate_before_build(lesson, getattr(args, "force", False), lesson_path=args.lesson):
         return 1
     ca_pre = get_ca_prefix(lesson, args.lesson)
     pdf = build_pdf(render_slide(lesson), slug=lesson.slug, filename=f"{ca_pre}slide", out_root=_out_root(args.lesson))
@@ -408,7 +427,8 @@ def cmd_build_all(args: argparse.Namespace) -> int:
     """Sinh cả 3 bản SONG SONG từ cùng một gói bài (validate sạch trước).
     `--only handout|guide|slide` để dựng nhanh 1 bản khi soạn nháp."""
     lesson = _load(args.lesson)
-    if not _gate_before_build(lesson, getattr(args, "force", False), getattr(args, "fast", False)):
+    if not _gate_before_build(lesson, getattr(args, "force", False), getattr(args, "fast", False),
+                              lesson_path=args.lesson):
         return 1
     only = getattr(args, "only", None)
     kinds = [only] if only else list(_BUILD_KINDS)
@@ -440,7 +460,7 @@ def cmd_build_folder(args: argparse.Namespace) -> int:
             failed.append((j.name, "không load được"))
             continue
         print(f"\n▶ {lesson.slug} — {lesson.title}")
-        if not _gate_before_build(lesson, force):
+        if not _gate_before_build(lesson, force, lesson_path=str(j)):
             skipped.append(lesson.slug)
             continue
         out_root = _out_root(str(j))
@@ -562,7 +582,8 @@ def cmd_build_thuyetminh(args: argparse.Namespace) -> int:
     return 0
 
 
-def _run_validation(lesson: LessonPackage, fast: bool = False) -> tuple[list[str], list[str], list[str]]:
+def _run_validation(lesson: LessonPackage, fast: bool = False,
+                    lesson_path: str | None = None) -> tuple[list[str], list[str], list[str]]:
     """Chạy toàn bộ trọng tài S2 trên 1 gói bài. Trả về (vi phạm chặn, cảnh báo
     trình bày, cảnh báo độ dốc). Dùng chung cho `validate` lẫn `validate-all`.
 
@@ -586,6 +607,10 @@ def _run_validation(lesson: LessonPackage, fast: bool = False) -> tuple[list[str
     # Đề ↔ hình: hình thiếu nhãn mà đề đang hỏi, nhãn tia sai quy ước, bài chép nhân bản.
     violations.extend(f"[figure_gate] {m}" for m in check_figures(lesson))
 
+    # Ảnh: đường dẫn tuyệt đối / trỏ vào file không có → Tectonic gãy lúc build.
+    if lesson_path:
+        violations.extend(f"[figure_gate] {v}" for v in check_image_paths(lesson_path))
+
     warns = find_presentation_warnings(lesson)
     ramp_warns = check_ramp(lesson)
 
@@ -605,7 +630,7 @@ def cmd_validate(args: argparse.Namespace) -> int:
     fast = getattr(args, "fast", False)
     note = "  (--fast: BỎ SymPy answer_gate — nhớ chạy full trước approve)" if fast else ""
     print(f"▶ Đang trọng tài '{lesson.slug}' — {lesson.title}{note}")
-    violations, warns, ramp_warns = _run_validation(lesson, fast=fast)
+    violations, warns, ramp_warns = _run_validation(lesson, fast=fast, lesson_path=args.lesson)
 
     n_unsafe = sum(1 for v in violations if v.startswith("[latex_sanitizer]"))
     n_schema = sum(1 for v in violations if v.startswith("[schema_validator]"))
@@ -684,7 +709,7 @@ def cmd_validate_all(args: argparse.Namespace) -> int:
             n_fail += 1
             print(f"  ✗ {j.name:<40} [KHÔNG LOAD ĐƯỢC] {e}")
             continue
-        violations, warns, ramp_warns = _run_validation(lesson)
+        violations, warns, ramp_warns = _run_validation(lesson, lesson_path=str(j))
         nw = len(warns) + len(ramp_warns)
         if violations:
             n_fail += 1

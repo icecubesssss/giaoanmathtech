@@ -1,7 +1,20 @@
 # MathTech Engine — menu việc (gõ `make` hoặc `make help`).
 # Quy trình soạn 1 phiếu:  make new FOLDER=... → (điền) → make check FILE=... → make build FILE=...
+# SỬA NHANH 1-2 CHỖ:      make md Q="hinh binh hanh"  (đọc) → sửa → make b  (build lại)
 PY := .venv/bin/python
 .DEFAULT_GOAL := help
+
+b: ## Sửa xong build lại NGAY: make b Q="hinh binh hanh"  ·  make b (lặp phiếu vừa làm)
+	@$(PY) -m scripts.quick build $(Q)
+
+md: ## Đọc phiếu dạng dễ nhìn (sinh .md, bấm ⌘⇧V): make md Q="hinh binh hanh"
+	@$(PY) -m scripts.quick md $(Q)
+
+f: ## Tìm đường dẫn phiếu theo mẩu tên: make f Q="hbh"
+	@$(PY) -m scripts.quick find $(Q)
+
+prune: ## Liệt kê outputs/ mồ côi (thêm YES=1 để xoá thật)
+	@$(PY) -m scripts.prune_outputs $(if $(YES),--delete,)
 
 help: ## Hiện danh sách việc
 	@grep -E '^[a-zA-Z0-9_-]+:.*?## .*$$' $(MAKEFILE_LIST) | awk 'BEGIN{FS=":.*?## "}{printf "  \033[36m%-14s\033[0m %s\n", $$1, $$2}'
@@ -60,4 +73,4 @@ c3-c: ## Build nhanh toàn bộ 5 phiếu Lớp 9 [C] Chương 3 (PDF Handout/Gu
 tm-c3: ## Render Thuyết Minh PDF Chương 3 Lớp 9 [C]
 	@$(PY) -m src.main build-thuyetminh "inputs/seeds/lop-9/dai-so/lop-c/chuong-03-can-bac-hai-can-bac-ba/thuyet-minh.json"
 
-.PHONY: help map test progress check new validate build spec thuyetminh check-tm coverage exam-report exam-check exam-weights deadcode build-folder c3-c tm-c3
+.PHONY: b md f prune help map test progress check new validate build spec thuyetminh check-tm coverage exam-report exam-check exam-weights deadcode build-folder c3-c tm-c3

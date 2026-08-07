@@ -32,6 +32,7 @@ __all__ = [
     "check_figure_symbols",
     "check_clone_problems",
     "check_figures",
+    "check_image_paths",
 ]
 
 # --- Bóc hình khỏi đề -------------------------------------------------------
@@ -224,6 +225,46 @@ def check_hinh_thieu(lesson: LessonPackage) -> list[FigureViolation]:
                 "đề bắt HS TỰ VẼ HÌNH nhưng chưa bật `draw: true` — thiếu khung trống "
                 "để vẽ vào phiếu và thiếu phút vẽ trong quỹ giờ."))
     return out
+
+
+_IMAGE_FIELD = re.compile(r'"image"\s*:\s*"([^"]+)"')
+
+
+def check_image_paths(lesson_path) -> list[FigureViolation]:
+    """Ảnh phải trỏ ĐƯỜNG DẪN TƯƠNG ĐỐI theo folder phiếu, và file phải có thật.
+
+    Đọc thẳng JSON NGUỒN (không qua model) vì `_load` đã neo đường dẫn thành tuyệt
+    đối cho Tectonic — thứ cần gác là cái người soạn ghi trong file, không phải cái
+    engine dựng lúc build.
+
+    Hai lỗi đã xảy ra thật, đều làm build gãy im lặng:
+      1. đường dẫn tuyệt đối `/Users/<ai đó>/…` → máy người khác build là gãy;
+      2. đổi tên folder tuần nhưng quên sửa đường dẫn trong JSON → Tectonic
+         'Unable to load picture' và bản in cũ nằm lại đánh lừa người đọc.
+    """
+    from pathlib import Path
+
+    p = Path(lesson_path)
+    thu_muc = p.resolve().parent
+    try:
+        raw = p.read_text(encoding="utf-8")
+    except OSError:
+        return []
+
+    loi: list[FigureViolation] = []
+    for m in _IMAGE_FIELD.finditer(raw):
+        duong_dan = m.group(1)
+        if not duong_dan:
+            continue
+        if duong_dan.startswith("/") or re.match(r"^[A-Za-z]:[\\/]", duong_dan):
+            loi.append(FigureViolation(
+                "ảnh:", f"'{duong_dan}' ghi đường dẫn tuyệt đối — máy thầy cô khác "
+                        "build sẽ gãy; ghi tương đối theo folder phiếu (vd 'images/x.png')."))
+        elif not (thu_muc / duong_dan).exists():
+            loi.append(FigureViolation(
+                "ảnh:", f"không tìm thấy '{duong_dan}' trong {thu_muc.name}/ — "
+                        "đổi tên folder mà quên sửa đường dẫn?"))
+    return loi
 
 
 def check_figures(lesson: LessonPackage) -> list[str]:

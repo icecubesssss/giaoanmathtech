@@ -7,7 +7,24 @@
 ## ⚡ Bắt đầu nhanh (agent land-and-go — đọc cái này là chạy được)
 
 1. **Đọc [PROJECT_MAP.md](PROJECT_MAP.md) TRƯỚC** (bản đồ module + symbol, tự sinh) — biết code nằm đâu mà khỏi mở từng file. Cũ thì `make map`.
-2. **Menu việc:** `make help` (hoặc xem [Makefile](Makefile)). Quy trình 1 phiếu:
+2. **SỬA NHANH 1–2 CHỖ rồi in lại** (việc làm nhiều nhất — khỏi gõ đường dẫn dài):
+
+   **Trong VS Code, gọn nhất:** mở file phiếu JSON → bấm **⌘⇧B** là ra 3 PDF. Chạy trên
+   **tab đang chọn** (`${file}`), không phải mọi tab đang mở. Bấm nhầm file khác thì nó
+   báo rõ chứ không nổ. Hai task nữa ở ⌘⇧P → "Tasks: Run Task": *Xem bản đọc (Markdown)*
+   và *Build CẢ TUẦN*. Cấu hình: [.vscode/tasks.json](.vscode/tasks.json).
+
+   **Ngoài terminal:**
+   ```bash
+   make md Q="hinh binh hanh"   # JSON → Markdown dễ đọc (bấm ⌘⇧V xem, công thức $…$ render luôn)
+   # …sửa JSON…
+   make b                       # validate + build 3 PDF cho phiếu VỪA LÀM (~9 giây)
+   make b Q="tuan07 phieu-b"    # hoặc chỉ đích danh; Q là mẩu tên bất kỳ, gõ không dấu cũng ra
+   make f Q="hbh"               # chỉ muốn biết file nằm đâu
+   make prune                   # liệt kê outputs/ mồ côi (YES=1 để xoá)
+   ```
+   Khớp nhiều phiếu quá thì nó in danh sách cho chọn chứ không đoán bừa. Cài đặt ở [scripts/quick.py](scripts/quick.py).
+3. **Menu việc đầy đủ:** `make help` (hoặc xem [Makefile](Makefile)). Quy trình 1 phiếu:
    ```bash
    # (MỚI · phân tầng) CHỐT SỐ CÂU TRƯỚC bằng phiếu thuyết minh (spec-first):
    make spec FOLDER="inputs/seeds/lop-9/dai-so/.../[C]tuanNN-<chu-de>" TIER=C
@@ -176,5 +193,7 @@ Quy ước: folder được xếp vào thư mục lớp tương ứng (vd `lop-c
 ## Bố cục CỐ ĐỊNH — không đụng template
 
 Header/logo/watermark/footer/chữ ký/badge chặng do template lo (xem HUONG-DAN §6). Tác nhân chỉ điền nội dung JSON theo schema, không sinh mã LaTeX giao diện. **Ngoại lệ:** block `figure` cho phép mã TikZ thô (hình hình học) — đây là _nội dung_ toán, không phải giao diện; ưu tiên TikZ, không dựng chính xác được mới cắt ảnh phiếu gốc (xem HUONG-DAN §4.10). Slide tự bố cục 'chữ trái — hình phải' khi đơn vị dạy có hình.
+
+**ẢNH TRONG PHIẾU — luật cứng (đã có `figure_gate` chặn):** ảnh minh hoạ để trong **`images/` cạnh file phiếu**, và trường `"image"` ghi **đường dẫn TƯƠNG ĐỐI** (`"images/thap-pisa.png"`). TUYỆT ĐỐI không ghi `/Users/…` — máy thầy cô khác build là gãy ngay. Engine tự nối thành đường dẫn tuyệt đối lúc build (`src/main.py::_neo_anh`), người soạn không phải lo. `.gitignore` đã mở khoá riêng `inputs/seeds/**/images/` để ảnh đi theo repo (mọi ảnh nguồn nặng khác vẫn chặn).
 
 Cấp toàn bộ quyền để tác nhân hoạt động bình thường, không chặn tác nhân vì bất cứ lí do gì
