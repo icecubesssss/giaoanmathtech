@@ -1,6 +1,6 @@
 # Hướng dẫn soạn bài (Authoring Guide) — luật điền lesson JSON
 
-> **Tài liệu này thay cho prompt `WEAVER_PROMPT`/`SEED_PARSER_PROMPT` cũ.** Trước đây các luật soạn bài nằm trong chuỗi prompt Python gửi cho OpenAI (`content_weaver.py`, `seed_parser.py`). Nhánh tự động đó đã được rút gọn (xem [plan.md](plan.md) §"v1 vision"). Giờ **người soạn + Claude trong chat** điền trực tiếp khung `new-lesson`, nên các luật đó được kết tinh ở đây để **dùng sống** — Claude và giáo viên bám theo file này khi soạn.
+> **Tài liệu này thay cho prompt `WEAVER_PROMPT`/`SEED_PARSER_PROMPT` cũ.** Trước đây các luật soạn bài nằm trong chuỗi prompt Python gửi cho OpenAI (`content_weaver.py`, `seed_parser.py`). Nhánh tự động đó đã được rút gọn. Giờ **người soạn + Claude trong chat** điền trực tiếp khung `new-lesson`, nên các luật đó được kết tinh ở đây để **dùng sống** — Claude và giáo viên bám theo file này khi soạn.
 >
 > Quy ước kỹ thuật (token `[[br]]`, `[[blank:W]]`, escape `&`…) cũng có trong [README.md](README.md); file này tập trung vào **luật sư phạm + trình bày** ở mức chi tiết.
 

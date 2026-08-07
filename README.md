@@ -1,7 +1,7 @@
 # MathTech Worksheet Factory
 
 Hệ thống tự sinh **phiếu học tập + slide + sổ tay GV** cho Toán lớp 9 ôn thi vào 10.
-Kiến trúc đầy đủ: [plan.md](plan.md). Cách dùng nhanh ở dưới.
+Bản đồ codebase (module + symbol, tự sinh bằng `make map`): [PROJECT_MAP.md](PROJECT_MAP.md). Cách dùng nhanh ở dưới.
 
 ## Chuẩn bị (1 lần)
 

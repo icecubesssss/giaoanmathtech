@@ -46,6 +46,7 @@ _Điểm chạy CLI trung tâm — MathTech Engine đầy đủ._
 - `cmd_approve(args)` — Đánh dấu APPROVE để mở khoá compile PDF.
 - `cmd_status(args)` — Xem tình trạng tất cả bài trong run_state.json.
 - `cmd_evolve(args)` — Đọc active_feedback.md và tiến hóa style/prompt có kiểm soát.
+- `get_ca_prefix(lesson, json_path)` — Xác định tiền tố Ca ('ca-01-', 'ca-02-'...) cho phiếu học tập.
 - `cmd_build_handout(args)`
 - `cmd_build_guide(args)`
 - `cmd_build_slide(args)`
@@ -105,8 +106,9 @@ _PHIẾU THUYẾT MINH (spec) — artifact MÁY-ĐỌC, là HỢP ĐỒNG chốt
 - **class SpecRow** — Một DẠNG bài trong phiếu, gắn band + số câu mỗi đoạn. Thời gian tự tính.
 - **class SpecPhieu** — Một phiếu trong buổi (A = kỹ thuật, B = thực tế…).
 - **class ThuyetMinhSpec** — Đặc tả 1 buổi học (≥1 phiếu) — hợp đồng số câu + nội dung khung.
-- `row_minutes(row, rates)` — Phút mỗi đoạn của 1 dòng = số câu × phút/câu(đoạn, band).
+- `row_minutes(row, rates)` — Phút mỗi đoạn của 1 dòng = số câu × phút/câu(đoạn, band) + số hình HS tự vẽ
 - `phieu_band_counts(phieu)` — Tổng số câu theo {đoạn: {band: count}} của 1 phiếu (để so spec_gate sau).
+- `phieu_band_minutes(phieu, rates)` — Phút theo {đoạn: {band: phút}} — ĐÃ gồm phút vẽ hình (`ve_hinh`), cộng vào
 - `phieu_totals(phieu, rates)` — Tổng số câu + phút mỗi đoạn của phiếu.
 - `rates_for_spec(spec)` — Phút/câu áp cho spec này (theo lớp/môn của spec).
 - `session_info(spec)` — Thông tin buổi (phút buổi, giải lao, ngân sách) từ tier_spec.
@@ -116,6 +118,8 @@ _Đọc `config/tier_spec.json` — RATE CARD cố định theo tầng lớp._
 - `load_tier_spec(path)` — Đọc (và cache) tier_spec.json.
 - `subject_block(spec, grade, subject)` — Khối cấu hình của (lớp, môn), vd ('lop-9','dai-so'). KeyError nếu chưa khai báo.
 - `rates_for(spec, grade, subject)` — Phút/câu mỗi đoạn×band cho (lớp, môn): gộp `rates` toàn cục với
+- `draw_minutes(spec)` — Phút CỘNG THÊM cho mỗi hình HS phải TỰ VẼ (Thầy chốt 2026-07-26: 5′).
+- `quick_minutes(spec)` — Phút/câu cho câu NHẬN BIẾT trắc nghiệm / điền chỗ chấm trên HÌNH VẼ SẴN
 - `tier_ratio(spec, grade, subject, tier)` — Tỉ lệ NB-TH-VD-VDC (%) của tầng; None nếu tầng chưa chốt (vd X chuyên).
 - `target_counts(spec, grade, subject, tier)` — Số câu MỤC TIÊU mỗi đoạn×band cho (lớp, môn, tầng). {} nếu tầng chưa có tỉ lệ.
 
@@ -138,7 +142,18 @@ _Cổng gác SÀN độ khó — chống đẻ ra phiếu ngây ngô dưới t�
 ### `src/validators/duration_gate.py`
 _duration_gate — kiểm thời lượng & tỉ lệ NB-TH-VD(-VDC) cho phiếu PHÂN TẦNG._
 - `band_counts(lesson)` — Đếm số câu LUYỆN TẬP theo {onclass|btvn: {band: n}} — đơn vị ý nhỏ/thẻ mức.
+- `figure_given_counts(lesson)` — Trong số câu trên, bao nhiêu câu làm trên HÌNH VẼ SẴN (`figure_given`) —
+- `draw_counts(lesson)` — Đếm số BÀI phải TỰ VẼ HÌNH theo {onclass|btvn: {band: n}} — mỗi bài 1 hình
 - `check_duration(lesson)` — Cảnh báo khi phiếu tầng lệch quỹ phút hoặc tỉ lệ (đọc chuẩn từ tier_spec).
+
+### `src/validators/figure_gate.py`
+_Cổng gác ĐỀ ↔ HÌNH — chặn hai lỗi đã lọt tới Thầy ở phiếu B/C chương III lớp 7._
+- **class FigureViolation**
+- `check_figure_symbols(lesson)` — Đề nhắc ký hiệu nào thì hình phải dán đủ ký hiệu đó.
+- `check_clone_problems(lesson, max_clones)` — Cùng một đề chép quá `max_clones` lần → lấp chỗ, phải dệt lại.
+- `check_hinh_thieu(lesson)` — Hai lỗi Thầy đã bắt ở phiếu B, còn sót ở phiếu E:
+- `check_figures(lesson)` — VI PHẠM CHẶN — hai lỗi đã có bằng chứng Thầy trả phiếu, kho hiện sạch nên
+- `warn_figures(lesson)` — CẢNH BÁO (chưa chặn) — `check_hinh_thieu` bắt đúng nhưng đang dính ~60 chỗ ở
 
 ### `src/validators/geometry_gate.py`
 _Cổng hình học — SymPy YẾU với hình học tổng hợp nên KHÔNG được "duyệt mù"._
@@ -198,13 +213,6 @@ _Sinh file WEIGHT dẫn xuất từ ngân hàng đề (đã gắn band/phut) —
 - `build()`
 - `main()`
 
-### `scripts/build_thuyetminh_tuan10_11.py`
-_Dựng PHIẾU THUYẾT MINH (đặc tả) cho [C]tuần 10-11 — BPT bậc nhất một ẩn._
-- `esc(s)`
-- `itemize(items)`
-- `meta_table(rows)`
-- `phieu_table(groups, total)`
-
 ### `scripts/exam_annotate.py`
 _Gắn `band` (NB/TH/VD/VDC) + `phut` (thời gian HS làm, ước) vào từng câu trong_
 - `cmd_ensure_ids(args)` — Ghi trường `id` (tổng hợp từ bai+y) vào câu nào còn thiếu — chuẩn hoá bank.
@@ -214,11 +222,6 @@ _Gắn `band` (NB/TH/VD/VDC) + `phut` (thời gian HS làm, ước) vào từng 
 - `cmd_check(args)` — Gác cổng ngân hàng đề: Σdiem≠tong_diem, thiếu band/phut, trùng id, band lạ.
 - `cmd_fix_headers(args)` — Backfill thoi_gian_phut/tong_diem còn thiếu; cảnh báo Σdiem ≠ tong_diem.
 - `main(argv)`
-
-### `scripts/organize_lop8_kntt.py`
-- `normalize_text(text)`
-- `determine_target_dir(path_str)`
-- `run()`
 
 ### `scripts/repomap.py`
 _Sinh PROJECT_MAP.md — bản đồ codebase TIẾT KIỆM TOKEN cho agent/người._
@@ -234,5 +237,23 @@ _SPIKE de-risk (Bước 2): bank có đủ câu để 'bốc' cho 1 phiếu tầ
 - `load_bank_cau()`
 - `main()`
 
-### `scripts/update_phieu_b.py`
-- _(không có symbol công khai)_
+### `scripts/tien-do-lop-c/_data.py`
+_Tiến độ tầng C — Lớp 9. Đại số 180′ · Hình học 90′._
+- `t15(what, n)`
+- `kt45(ch)`
+- `sundays(n)`
+
+### `scripts/tien-do-lop-c/audit.py`
+_Soi lỗi logic tiến độ tầng C — CHẠY TRƯỚC KHI XUẤT FILE cho Thầy._
+- `add(k, s)`
+- `muc_day(r)`
+- `ch_of(nd)`
+
+### `scripts/tien-do-lop-c/gen_xlsx.py`
+_Xuất tiến độ tầng C ra .xlsx — định dạng bám file PDF gốc của trung tâm._
+- `muc_day(r)` — Mức dạy — chỉ có nghĩa với dòng có tiết SGK. Mặc định 'Đầy đủ'.
+- `fill(c)`
+- `style_row(ws, r, ncol, bg, bold, color, size)`
+- `banner(ws, r, text, bg, ncol, color)`
+- `row_bg(hm, lkt, nd)`
+- `build(weeks, path, title, buoi_label)`
