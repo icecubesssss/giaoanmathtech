@@ -22,6 +22,14 @@ import re
 import sys
 from concurrent.futures import ThreadPoolExecutor
 from pathlib import Path
+
+# Windows: console mặc định cp1252, in "✓ ⚠ ′ ▶" là nổ UnicodeEncodeError giữa chừng.
+# Ép UTF-8 cho stdout/stderr; máy nào không hỗ trợ thì bỏ qua, không được làm chết chương trình.
+for _luong in (sys.stdout, sys.stderr):
+    try:
+        _luong.reconfigure(encoding="utf-8", errors="replace")
+    except Exception:  # noqa: BLE001 — không có reconfigure (bị bọc lại) thì thôi
+        pass
 from datetime import datetime
 
 from src.schema import LessonPackage, ChapterSummary
@@ -104,7 +112,8 @@ def _neo_anh(lesson: LessonPackage, lesson_path: Path) -> None:
     for stage in lesson.stages:
         for b in stage.blocks:
             duong_dan = getattr(b, "image", "") or ""
-            if duong_dan and not duong_dan.startswith("/"):
+            # is_absolute() thay cho startswith("/") — Windows đường dẫn tuyệt đối là "C:\…"
+            if duong_dan and not Path(duong_dan).is_absolute():
                 b.image = str(thu_muc / duong_dan)
 
 

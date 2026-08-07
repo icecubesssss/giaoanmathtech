@@ -17,6 +17,14 @@ import sys
 import unicodedata
 from pathlib import Path
 
+# Windows: console mặc định cp1252, in "✓ ⚠ ′ ▶" là nổ UnicodeEncodeError giữa chừng.
+# Ép UTF-8 cho stdout/stderr; máy nào không hỗ trợ thì bỏ qua, không được làm chết chương trình.
+for _luong in (sys.stdout, sys.stderr):
+    try:
+        _luong.reconfigure(encoding="utf-8", errors="replace")
+    except Exception:  # noqa: BLE001 — không có reconfigure (bị bọc lại) thì thôi
+        pass
+
 ROOT = Path(__file__).resolve().parent.parent
 SEEDS = ROOT / "inputs" / "seeds"
 LAST = ROOT / "storage" / "last_quick.txt"

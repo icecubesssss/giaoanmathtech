@@ -12,6 +12,7 @@
       "command": "${workspaceFolder}/.venv/bin/python",
       "args": ["-m", "scripts.quick", "build", "${file}"],
       "options": { "cwd": "${workspaceFolder}" },
+      "windows": { "command": "${workspaceFolder}\\.venv\\Scripts\\python.exe" },
       "group": { "kind": "build", "isDefault": true },
       "problemMatcher": [],
       "presentation": {
@@ -28,6 +29,7 @@
       "command": "${workspaceFolder}/.venv/bin/python",
       "args": ["-m", "scripts.quick", "md", "${file}"],
       "options": { "cwd": "${workspaceFolder}" },
+      "windows": { "command": "${workspaceFolder}\\.venv\\Scripts\\python.exe" },
       "problemMatcher": [],
       "presentation": { "reveal": "always", "panel": "dedicated", "clear": true }
     },
@@ -38,6 +40,7 @@
       "command": "${workspaceFolder}/.venv/bin/python",
       "args": ["-m", "src.main", "build-folder", "${fileDirname}"],
       "options": { "cwd": "${workspaceFolder}" },
+      "windows": { "command": "${workspaceFolder}\\.venv\\Scripts\\python.exe" },
       "problemMatcher": [],
       "presentation": { "reveal": "always", "panel": "dedicated", "clear": true }
     }

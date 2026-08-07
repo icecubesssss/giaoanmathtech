@@ -1,13 +1,18 @@
 # MathTech Worksheet Factory
 
 Hệ thống tự sinh **phiếu học tập + slide + sổ tay GV** cho Toán lớp 9 ôn thi vào 10.
-Bản đồ codebase (module + symbol, tự sinh bằng `make map`): [PROJECT_MAP.md](PROJECT_MAP.md). Cách dùng nhanh ở dưới.
+
+> **Người mới nhận repo (kể cả trên Windows) đọc [HUONG-DAN-BAT-DAU.md](HUONG-DAN-BAT-DAU.md) trước** — cài 1 lần, rồi chỉ cần nhớ 1 phím tắt để ra PDF.
+
+Bản đồ codebase (module + symbol, tự sinh bằng `make map`): [PROJECT_MAP.md](PROJECT_MAP.md).
 
 ## Chuẩn bị (1 lần)
 
+Xem [HUONG-DAN-BAT-DAU.md §1](HUONG-DAN-BAT-DAU.md) cho cả macOS lẫn Windows. Tóm tắt trên macOS:
+
 ```bash
-source .venv/bin/activate          # môi trường Python
-# Tectonic ở ~/bin/tectonic, font nhúng trong assets/fonts/
+python3 -m venv .venv && .venv/bin/pip install -r requirements.txt
+brew install tectonic              # bộ dựng PDF; font nhúng sẵn trong assets/fonts/
 ```
 
 ## Vòng lặp soạn cả năm

@@ -1,7 +1,12 @@
 # MathTech Engine — menu việc (gõ `make` hoặc `make help`).
 # Quy trình soạn 1 phiếu:  make new FOLDER=... → (điền) → make check FILE=... → make build FILE=...
 # SỬA NHANH 1-2 CHỖ:      make md Q="hinh binh hanh"  (đọc) → sửa → make b  (build lại)
+# Python trong .venv nằm khác chỗ giữa 2 hệ: macOS/Linux `bin/`, Windows `Scripts/`.
+ifeq ($(OS),Windows_NT)
+PY := .venv/Scripts/python.exe
+else
 PY := .venv/bin/python
+endif
 .DEFAULT_GOAL := help
 
 b: ## Sửa xong build lại NGAY: make b Q="hinh binh hanh"  ·  make b (lặp phiếu vừa làm)

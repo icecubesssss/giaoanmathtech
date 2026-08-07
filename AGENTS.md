@@ -6,6 +6,7 @@
 
 ## ⚡ Bắt đầu nhanh (agent land-and-go — đọc cái này là chạy được)
 
+0. **Chạy trên máy WINDOWS?** Đọc [HUONG-DAN-BAT-DAU.md §4](HUONG-DAN-BAT-DAU.md) trước khi gõ lệnh đầu tiên: Python là `.venv\Scripts\python.exe` (không phải `.venv/bin/python`), **không có `make`**, đường dẫn có `[C]…` phải bọc nháy kép, và script mới phải ép stdout sang UTF-8 kẻo nổ `UnicodeEncodeError`.
 1. **Đọc [PROJECT_MAP.md](PROJECT_MAP.md) TRƯỚC** (bản đồ module + symbol, tự sinh) — biết code nằm đâu mà khỏi mở từng file. Cũ thì `make map`.
 2. **SỬA NHANH 1–2 CHỖ rồi in lại** (việc làm nhiều nhất — khỏi gõ đường dẫn dài):
 
