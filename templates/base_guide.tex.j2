@@ -85,7 +85,11 @@
 \end{tcolorbox}
 
 ((* for stage in lesson.stages *))
+((* if lesson.theme == "de_thi" *))
+((* include "components/plain.tex.j2" *))
+((* else *))
 ((* include "components/" ~ stage.kind ~ ".tex.j2" *))
+((* endif *))
 ((* if stage.solution *))
 \vspace{4pt}\begin{solutionbox}((( stage.solution | tex )))\end{solutionbox}
 ((* endif *))

@@ -26,6 +26,7 @@ _SUBITEM = re.compile(r"(?<![A-Za-zÀ-ỹ])[b-fB-F]\)")
 _RAW_PCT_HASH = re.compile(r"(?<!\\)[%#]")
 _RAW_AMP = re.compile(r"(?<!\\)&")
 _MATH_SPAN = re.compile(r"(?<!\\)\$.*?(?<!\\)\$", re.DOTALL)
+_TABULAR_SPAN = re.compile(r"\\begin\{(?:tabular|array|aligned|cases)\}.*?\\end\{(?:tabular|array|aligned|cases)\}", re.DOTALL)
 
 # Glyph TOÁN nằm NGOÀI $...$ -> dùng font chữ thường (STIX Two Text) vốn THIẾU các
 # ký hiệu này -> in ra "khung ?" (tofu) trên phiếu. Phải bọc trong $...$ để dùng font
@@ -43,10 +44,11 @@ def _check_special(loc: str, s: str, out: list[str], is_math: bool = False) -> N
         return
     if _RAW_PCT_HASH.search(s):
         out.append(f"{loc}: có '%' hoặc '#' chưa escape — phải viết \\% \\# (nếu không sẽ VỠ build).")
-    # '&' hợp lệ trong môi trường toán; chỉ quét phần NGOÀI $...$ (trừ field thuần math).
+    # '&' hợp lệ trong môi trường toán và bảng tabular; chỉ quét phần NGOÀI $...$ và tabular.
     outside = s if is_math is False else ""
     if not is_math:
-        outside = _MATH_SPAN.sub(" ", s)
+        outside = _TABULAR_SPAN.sub(" ", s)
+        outside = _MATH_SPAN.sub(" ", outside)
         if _RAW_AMP.search(outside):
             out.append(f"{loc}: có '&' chưa escape ngoài công thức — phải viết \\& (nếu không sẽ VỠ build).")
         tofu = sorted({c for c in outside if c in _TOFU_GLYPHS})

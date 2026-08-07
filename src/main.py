@@ -534,7 +534,29 @@ def cmd_build_thuyetminh(args: argparse.Namespace) -> int:
     if errors and force:
         print("  (--force: bỏ qua lỗi spec, build nháp)")
 
-    pdf = build_pdf(render_thuyetminh(spec), slug=spec.slug, filename="thuyet-minh",
+    # Đặt tên file PDF đầu ra cho thuyết minh:
+    # Tự động chèn lớp + tầng (ví dụ lop-9c, lop-7b) vào tên file PDF thuyết minh
+    parent_name = Path(args.spec).parent.name.lower()
+    is_chuong = "chuong" in parent_name or "phan-so" in parent_name or "chuong" in spec.slug.lower()
+
+    if is_chuong:
+        pdf_filename = spec.slug
+        grade_tier = f"{spec.grade}{spec.tier.lower()}" if spec.grade and spec.tier else spec.grade
+        if grade_tier and grade_tier not in pdf_filename:
+            if pdf_filename.startswith("thuyet-minh-"):
+                # Thay thuyet-minh-lop-9- bằng thuyet-minh-lop-9c-
+                if f"thuyet-minh-{spec.grade}-" in pdf_filename:
+                    pdf_filename = pdf_filename.replace(f"thuyet-minh-{spec.grade}-", f"thuyet-minh-{grade_tier}-")
+                else:
+                    pdf_filename = f"thuyet-minh-{grade_tier}-" + pdf_filename[12:]
+            elif pdf_filename == "thuyet-minh":
+                pdf_filename = f"thuyet-minh-{grade_tier}"
+            else:
+                pdf_filename = f"thuyet-minh-{grade_tier}-{pdf_filename}"
+    else:
+        pdf_filename = "thuyet-minh"
+
+    pdf = build_pdf(render_thuyetminh(spec), slug=spec.slug, filename=pdf_filename,
                     out_root=_out_root(args.spec), force=force)
     print(f"OK → {pdf}")
     return 0

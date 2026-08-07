@@ -27,13 +27,13 @@
 ```
 Bước 1 ── AI hỏi Thầy 3 câu (§3)
          │
-Bước 2 ── Rà ngân hàng đề thi (§4)
+Bước 2 ── Rà ngân hàng đề thi (§4) & Phân loại 7 loại dạng bài (§4b)
          │
 Bước 3 ── Xác định kiến thức nền HS C thiếu (§5)
          │
 Bước 4 ── So sánh thời lượng SGV vs thực tế (§6)
          │
-Bước 5 ── Điền 4 khối trang đầu (§2) + bảng spec (rows)
+Bước 5 ── Điền 4 khối trang đầu (§2) + bảng spec (rows chia nhỏ 10-12 dạng/phiếu)
          │
 Bước 6 ── Chạy gác cổng: make check-tm SPEC=<…>/thuyet-minh.json
          │
@@ -187,6 +187,26 @@ Mỗi dạng đề thi xuất hiện trong ngân hàng **PHẢI** được phả
 | … | … | … | … | … | … |
 
 Nếu có dạng đề chưa có dòng spec → **thêm dòng spec hoặc hỏi Thầy**.
+
+---
+
+## §4b — Quy chuẩn Phân tách Dạng bài & Phân loại 7 loại Câu hỏi (Thầy chốt 2026-08-05)
+
+Để tránh tình trạng phiếu bị gom thành các khối quá lớn (7–8 câu/dòng), mỗi phiếu thuyết minh **bắt buộc phải chia nhỏ thành 10–12 dạng bài cụ thể** (mỗi dạng 2–3 câu hoặc 1 bài ghép).
+
+### 7 Loại Dạng bài Phân tầng từ Lý thuyết đến Bài thi (Ưu tiên sát Đề Thi):
+
+1. **NB lẻ từ lý thuyết**: Nhận biết 1 bước hỏi trực tiếp định nghĩa / công thức / hình vẽ cơ bản (ví dụ: nhận diện bán kính, dây cung, góc ở tâm, công thức $C = 2\pi R$).
+2. **NB lẻ tách từ TH**: Các câu NB trích làm bước đệm kỹ năng trực tiếp từ câu hỏi TH trong đề thi (ví dụ: tìm ĐKXĐ, tính khoảng cách $OH$ từ Pythagore tam giác vuông, chỉ ra tiếp tuyến).
+3. **NB ghép bài**: Bài tập ghép nhiều ý (câu a, b, c...) trích từ 1 bài TH/VD đề thi, trong đó các ý đầu là bước đệm NB giúp HS hình thành hướng giải.
+4. **TH lẻ từ lý thuyết**: Thông hiểu 1–2 bước áp dụng trực tiếp lý thuyết (ví dụ: giải tam giác vuông, tính diện tích quạt/cung tròn theo công thức).
+5. **TH ghép bài**: Bài tập ghép nhiều ý (ghép tiếp vào NB ghép bài ở trên, dẫn dắt từ bước đệm NB $\to$ ý TH của bài thi).
+6. **TH tách từ VD**: Bài TH là bước đệm trung gian bóc tách từ câu VD của đề thi (ví dụ: chứng minh $MA = MB$ hay $AO \perp BC$ để chuẩn bị cho ý chứng minh tiếp tuyến/hệ thức).
+7. **VD lẻ tương tự bài VD đã tách lẻ bước TH**: Bài Vận dụng hoàn chỉnh sát đề thi Vào 10 (sau khi HS đã được luyện tập qua các bước đệm NB/TH tách lẻ).
+
+> **Nguyên tắc CẤM & ƯU TIÊN:**
+> - **Ưu tiên 100% dạng bài có trong Đề thi Vào 10 và Đề thi học kỳ (CK1/GK1).**
+> - **CẤM gom quá 3 câu cho 1 dạng bài.** Phải tách nhỏ các dòng spec để phiếu có độ dốc mịn.
 
 ---
 

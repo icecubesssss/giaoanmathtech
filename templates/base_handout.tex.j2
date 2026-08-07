@@ -83,11 +83,17 @@
   {Họ và tên:~\blank[6cm]\hfill Lớp:~\blank[3.2cm]}
 \end{tcolorbox}
 \vspace{1pt}
+((* if lesson.theme != "de_thi" *))
 \journeybar{0}
 \vspace{4pt}
+((* endif *))
 
 ((* for stage in lesson.stages *))
+((* if lesson.theme == "de_thi" *))
+((* include "components/plain.tex.j2" *))
+((* else *))
 ((* include "components/" ~ stage.kind ~ ".tex.j2" *))
+((* endif *))
 ((* if not loop.last *))
 \stageseparator
 ((* else *))

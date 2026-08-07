@@ -17,10 +17,6 @@
         {
           "type": "para",
           "text": "Để giải thích điều này, ta sử dụng tính chất của \\textbf{Hình bình hành}: [[br]] - Các cạnh đối song song và bằng nhau: $AB \\parallel CD$, $AD \\parallel BC$ và $AB = CD$, $AD = BC$. [[br]] - Hai góc kề một cạnh bù nhau: $\\widehat{A} + \\widehat{B} = 180^\\circ \\Rightarrow \\widehat{B} = 180^\\circ - 70^\\circ = 110^\\circ$. [[br]] - Các góc đối bằng nhau: $\\widehat{C} = \\widehat{A} = 70^\\circ$ và $\\widehat{D} = \\widehat{B} = 110^\\circ$."
-        },
-        {
-          "type": "noted",
-          "text": "\\textbf{KIẾN THỨC CẦN NHỚ (SGK TOÁN 8):} [[br]] 1. \\textbf{Định nghĩa}: Hình bình hành là tứ giác có các cạnh đối song song. [[br]] 2. \\textbf{Tính chất}: Trong một hình bình hành: [[br]] \\quad - Các cạnh đối bằng nhau. [[br]] \\quad - Các góc đối bằng nhau. [[br]] \\quad - Hai đường chéo cắt nhau tại trung điểm của mỗi đường. [[br]] 3. \\textbf{5 Dấu hiệu nhận biết (SGK Toán 8)}: [[br]] \\quad (1) Tứ giác có các cạnh đối song song là hình bình hành. [[br]] \\quad (2) Tứ giác có các cạnh đối bằng nhau là hình bình hành. [[br]] \\quad (3) Tứ giác có hai cạnh đối song song và bằng nhau là hình bình hành. [[br]] \\quad (4) Tứ giác có các góc đối bằng nhau là hình bình hành. [[br]] \\quad (5) Tứ giác có hai đường chéo cắt nhau tại trung điểm của mỗi đường là hình bình hành."
         }
       ],
       "solution": "Tứ giác $ABCD$ là hình bình hành. Số đo góc $\\widehat{B} = 110^\\circ$, góc $\\widehat{C} = 70^\\circ$.",
@@ -33,25 +29,25 @@
       "blocks": [
         {
           "type": "noted",
-          "text": "\\begin{minipage}[t]{0.56\\linewidth}\\vspace{0pt}\n\\textbf{1. Định nghĩa và Tính chất (SGK Toán 8)} [[br]] Xét hình bình hành $ABCD$ có hai đường chéo $AC$ và $BD$ cắt nhau tại $O$: [[br]] - \\textit{Định nghĩa (Cạnh đối $\\parallel$)}: $AB \\parallel CD$ và $AD \\parallel BC$. [[br]] - \\textit{Tính chất 1 (Cạnh đối $=$)}: $AB = CD$ và $AD = BC$. [[br]] - \\textit{Tính chất 2 (Góc đối $=$)}: $\\widehat{A} = \\widehat{C}$ và $\\widehat{B} = \\widehat{D}$. [[br]] - \\textit{Tính chất 3 (Đường chéo)}: $OA = OC$ và $OB = OD$.\n\\end{minipage}\\hfill\n\\begin{minipage}[t]{0.38\\linewidth}\\vspace{0pt}\n\\centering\n\\adjustbox{max width=\\linewidth, max totalheight=2.5cm}{\n\\begin{tikzpicture}[line width=0.8pt, font=\\small]\n  \\coordinate (A) at (0.6,1.8);\n  \\coordinate (B) at (3.2,1.8);\n  \\coordinate (C) at (2.6,0);\n  \\coordinate (D) at (0,0);\n  \\coordinate (O) at (1.6,0.9);\n  \\draw[ink,fill=brand!8] (A) -- (B) -- (C) -- (D) -- cycle;\n  \\draw[ink,dashed] (A) -- (C);\n  \\draw[ink,dashed] (B) -- (D);\n  \\fill[ink] (O) circle (1.5pt) node[above=2pt]{$O$};\n  \\node[above left] at (A) {$A$};\n  \\node[above right] at (B) {$B$};\n  \\node[below right] at (C) {$C$};\n  \\node[below left] at (D) {$D$};\n\\end{tikzpicture}\n}\n\\par\\vspace{2pt}{\\sffamily\\scriptsize\\itshape\\color{muted}Hình 1: Hình bình hành $ABCD$}\n\\end{minipage}"
+          "text": "\\begin{minipage}[t]{0.56\\linewidth}\\vspace{0pt}\n\\textbf{1. Định nghĩa và Tính chất} [[br]] \\textit{a) Định nghĩa}: Hình bình hành là tứ giác có các cạnh đối song song ($AB \\parallel CD$ và $AD \\parallel BC$). [[br]] \\textit{b) Tính chất}: Trong một hình bình hành: [[br]] - Các cạnh đối bằng nhau ($AB = CD$ và $AD = BC$). [[br]] - Các góc đối bằng nhau ($\\widehat{A} = \\widehat{C}$ và $\\widehat{B} = \\widehat{D}$). [[br]] - Hai đường chéo cắt nhau tại trung điểm của mỗi đường ($OA = OC$ và $OB = OD$).\n\\end{minipage}\\hfill\n\\begin{minipage}[t]{0.38\\linewidth}\\vspace{0pt}\n\\centering\n\\adjustbox{max width=\\linewidth, max totalheight=2.5cm}{\n\\begin{tikzpicture}[line width=0.8pt, font=\\small]\n  \\coordinate (A) at (0.6,1.8);\n  \\coordinate (B) at (3.2,1.8);\n  \\coordinate (C) at (2.6,0);\n  \\coordinate (D) at (0,0);\n  \\coordinate (O) at (1.6,0.9);\n  \\draw[ink,fill=brand!8] (A) -- (B) -- (C) -- (D) -- cycle;\n  \\draw[ink,dashed] (A) -- (C);\n  \\draw[ink,dashed] (B) -- (D);\n  \\fill[ink] (O) circle (1.5pt) node[above=2pt]{$O$};\n  \\node[above left] at (A) {$A$};\n  \\node[above right] at (B) {$B$};\n  \\node[below right] at (C) {$C$};\n  \\node[below left] at (D) {$D$};\n\\end{tikzpicture}\n}\n\\par\\vspace{2pt}{\\sffamily\\scriptsize\\itshape\\color{muted}Hình 1: Hình bình hành $ABCD$}\n\\end{minipage}"
         },
         {
           "type": "noted",
-          "text": "\\textbf{2. 5 Dấu hiệu nhận biết hình bình hành (Chuẩn SGK Toán 8)} [[br]] Tứ giác $ABCD$ là hình bình hành khi thỏa mãn một trong 5 dấu hiệu: [[br]] - \\textbf{Dấu hiệu 1}: Các cạnh đối song song ($AB \\parallel CD$ và $AD \\parallel BC$). [[br]] - \\textbf{Dấu hiệu 2}: Các cạnh đối bằng nhau ($AB = CD$ và $AD = BC$). [[br]] - \\textbf{Dấu hiệu 3}: Hai cạnh đối song song và bằng nhau ($AB \\parallel CD$ và $AB = CD$ - \\textit{Thường dùng nhất}). [[br]] - \\textbf{Dấu hiệu 4}: Các góc đối bằng nhau ($\\widehat{A} = \\widehat{C}$ và $\\widehat{B} = \\widehat{D}$). [[br]] - \\textbf{Dấu hiệu 5}: Hai đường chéo cắt nhau tại trung điểm của mỗi đường ($OA = OC$ và $OB = OD$)."
+          "text": "\\textbf{2. 5 Dấu hiệu nhận biết hình bình hành} [[br]] Tứ giác $ABCD$ là hình bình hành khi thỏa mãn một trong các điều kiện: [[br]] - \\textbf{Dấu hiệu 1}: Tứ giác có các cạnh đối song song là hình bình hành. [[br]] - \\textbf{Dấu hiệu 2}: Tứ giác có các cạnh đối bằng nhau là hình bình hành. [[br]] - \\textbf{Dấu hiệu 3}: Tứ giác có hai cạnh đối song song và bằng nhau là hình bình hành (\\textit{Thường dùng nhất}). [[br]] - \\textbf{Dấu hiệu 4}: Tứ giác có các góc đối bằng nhau là hình bình hành. [[br]] - \\textbf{Dấu hiệu 5}: Tứ giác có hai đường chéo cắt nhau tại trung điểm của mỗi đường là hình bình hành."
         },
         {
           "type": "noted",
           "variant": "example",
-          "text": "\\begin{minipage}[t]{0.58\\linewidth}\\vspace{0pt}\n\\textbf{Ví dụ mẫu 1.} Xét hình bình hành $ABCD$. Gọi $E, F$ lần lượt là trung điểm của $AB$ và $CD$. Chứng minh tứ giác $AECF$ là hình bình hành. [[br]]\n\\textit{Lời giải}: [[br]]\nVì $ABCD$ là HBH nên $AB \\parallel CD$ và $AB = CD$. [[br]]\nVì $E$ là trung điểm $AB \\Rightarrow AE = \\dfrac{1}{2}AB$. [[br]]\nVì $F$ là trung điểm $CD \\Rightarrow CF = \\dfrac{1}{2}CD$. [[br]]\nSuy ra $AE = CF$. Mặt khác $E \\in AB, F \\in CD \\Rightarrow AE \\parallel CF$. [[br]]\nTứ giác $AECF$ có $AE \\parallel CF$ và $AE = CF \\Rightarrow AECF$ là hình bình hành (Dấu hiệu 3 SGK).\n\\end{minipage}\\hfill\n\\begin{minipage}[t]{0.36\\linewidth}\\vspace{0pt}\n\\centering\n\\adjustbox{max width=\\linewidth, max totalheight=2.8cm}{\n\\begin{tikzpicture}[line width=0.8pt, font=\\small]\n  \\coordinate (A) at (0.6,1.8);\n  \\coordinate (B) at (3.2,1.8);\n  \\coordinate (C) at (2.6,0);\n  \\coordinate (D) at (0,0);\n  \\coordinate (E) at (1.9,1.8);\n  \\coordinate (F) at (1.3,0);\n  \\draw[ink] (A) -- (B) -- (C) -- (D) -- cycle;\n  \\draw[brand, line width=1.1pt, fill=brand!10] (A) -- (E) -- (C) -- (F) -- cycle;\n  \\fill[ink] (E) circle (1.3pt) node[above]{$E$};\n  \\fill[ink] (F) circle (1.3pt) node[below]{$F$};\n  \\node[above left] at (A) {$A$};\n  \\node[above right] at (B) {$B$};\n  \\node[below right] at (C) {$C$};\n  \\node[below left] at (D) {$D$};\n\\end{tikzpicture}\n}\n\\par\\vspace{2pt}{\\sffamily\\scriptsize\\itshape\\color{muted}Hình 2: Tứ giác $AECF$}\n\\end{minipage}"
+          "text": "\\begin{minipage}[t]{0.58\\linewidth}\\vspace{0pt}\n\\textbf{Ví dụ mẫu 1.} Xét hình bình hành $ABCD$. Gọi $E, F$ lần lượt là trung điểm của $AB$ và $CD$. Chứng minh tứ giác $AECF$ là hình bình hành. [[br]]\n\\textit{Lời giải}: [[br]]\nVì $ABCD$ là HBH nên $AB \\parallel CD$ và $AB = CD$. [[br]]\nVì $E$ là trung điểm $AB \\Rightarrow AE = \\dfrac{1}{2}AB$. [[br]]\nVì $F$ là trung điểm $CD \\Rightarrow CF = \\dfrac{1}{2}CD$. [[br]]\nSuy ra $AE = CF$. Mặt khác $E \\in AB, F \\in CD \\Rightarrow AE \\parallel CF$. [[br]]\nTứ giác $AECF$ có $AE \\parallel CF$ và $AE = CF \\Rightarrow AECF$ là hình bình hành (Dấu hiệu 3).\n\\end{minipage}\\hfill\n\\begin{minipage}[t]{0.36\\linewidth}\\vspace{0pt}\n\\centering\n\\adjustbox{max width=\\linewidth, max totalheight=2.8cm}{\n\\begin{tikzpicture}[line width=0.8pt, font=\\small]\n  \\coordinate (A) at (0.6,1.8);\n  \\coordinate (B) at (3.2,1.8);\n  \\coordinate (C) at (2.6,0);\n  \\coordinate (D) at (0,0);\n  \\coordinate (E) at (1.9,1.8);\n  \\coordinate (F) at (1.3,0);\n  \\draw[ink] (A) -- (B) -- (C) -- (D) -- cycle;\n  \\draw[brand, line width=1.1pt, fill=brand!10] (A) -- (E) -- (C) -- (F) -- cycle;\n  \\fill[ink] (E) circle (1.3pt) node[above]{$E$};\n  \\fill[ink] (F) circle (1.3pt) node[below]{$F$};\n  \\node[above left] at (A) {$A$};\n  \\node[above right] at (B) {$B$};\n  \\node[below right] at (C) {$C$};\n  \\node[below left] at (D) {$D$};\n\\end{tikzpicture}\n}\n\\par\\vspace{2pt}{\\sffamily\\scriptsize\\itshape\\color{muted}Hình 2: Tứ giác $AECF$}\n\\end{minipage}"
         },
         {
           "type": "noted",
           "variant": "trap",
-          "text": "BẪY ĐIỂM SGK: Tứ giác có một cặp cạnh đối song song và một cặp cạnh đối bằng nhau KHÔNG CHẮC LÀ hình bình hành! [[br]] Ví dụ hình thang cân có $AB \\parallel CD$ và hai cạnh bên $AD = BC$ bằng nhau nhưng KHÔNG PHẢI là hình bình hành. [[br]] Do đó, muốn áp dụng Dấu hiệu 3 bắt buộc hai cạnh đó phải VỪA SONG SONG VỪA BẰNG NHAU (cùng một cặp cạnh)."
+          "text": "BẪY ĐIỂM: Tứ giác có một cặp cạnh đối song song và một cặp cạnh đối bằng nhau KHÔNG CHẮC LÀ hình bình hành! [[br]] Ví dụ hình thang cân có $AB \\parallel CD$ và hai cạnh bên $AD = BC$ bằng nhau nhưng KHÔNG PHẢI là hình bình hành. [[br]] Do đó, muốn áp dụng Dấu hiệu 3 bắt buộc hai cạnh đó phải VỪA SONG SONG VỪA BẰNG NHAU (cùng một cặp cạnh)."
         }
       ],
-      "solution": "Nắm vững định nghĩa, 3 tính chất và 5 dấu hiệu nhận biết chuẩn SGK Toán 8 hình bình hành.",
-      "teacher_note": "Nhấn mạnh Dấu hiệu 3 (1 cặp cạnh đối vừa song song vừa bằng nhau) và Dấu hiệu 5 (hai đường chéo cắt nhau tại trung điểm) là hai công cụ chứng minh xuất hiện nhiều nhất trong các đề thi."
+      "solution": "Nắm vững định nghĩa, 3 tính chất và 5 dấu hiệu nhận biết hình bình hành chuẩn SGK Toán 8.",
+      "teacher_note": "Nhấn mạnh Dấu hiệu 3 (1 cặp cạnh đối vừa song song vừa bằng nhau) và Dấu hiệu 5 (hai đường chéo cắt nhau tại trung điểm) là hai công cụ chứng minh xuất hiện nhiều nhất trong các đề thi giữa kỳ và cuối kỳ."
     },
     {
       "kind": "practice1",
@@ -60,7 +56,7 @@
       "blocks": [
         {
           "type": "para",
-          "text": "\\textbf{Dạng 1: Nhận biết \\& Tính toán trên hình vẽ sẵn}"
+          "text": "\\textbf{Dạng 1: Nhận biết \\& Tính toán trên hình vẽ sẵn (Đề thi GKI/CKI)}"
         },
         {
           "type": "problem",
@@ -138,7 +134,7 @@
           "figure_given": false,
           "tier": "onclass",
           "statement": "Khẳng định nào sau đây \\textbf{KHÔNG ĐÚNG} về dấu hiệu nhận biết hình bình hành? [[br]] \\textbf{A.} Tứ giác có các cạnh đối song song là hình bình hành. [[br]] \\textbf{B.} Tứ giác có các cạnh đối bằng nhau là hình bình hành. [[br]] \\textbf{C.} Tứ giác có 1 cặp cạnh đối song song và 1 cặp cạnh đối bằng nhau là hình bình hành. [[br]] \\textbf{D.} Tứ giác có 2 đường chéo cắt nhau tại trung điểm của mỗi đường là hình bình hành.",
-          "solution": "Đáp án \\textbf{C}. Phát biểu C sai vì theo SGK Toán 8, hai cạnh đối đó phải VỪA SONG SONG VỪA BẰNG NHAU (cùng 1 cặp cạnh đối)."
+          "solution": "Đáp án \\textbf{C}. Phát biểu C sai vì hai cạnh đối đó phải VỪA SONG SONG VỪA BẰNG NHAU (cùng 1 cặp cạnh đối)."
         },
         {
           "type": "writelines",
@@ -146,7 +142,7 @@
         },
         {
           "type": "para",
-          "text": "\\textbf{Dạng 3: Tính toán góc \\& Tự luận chứng minh hình bình hành}"
+          "text": "\\textbf{Dạng 3: Tính toán góc \\& Tự luận chứng minh hình bình hành trọng tâm (Đề thi GKI/CKI)}"
         },
         {
           "type": "problem",
@@ -155,7 +151,7 @@
           "figure_given": false,
           "tier": "onclass",
           "statement": "Xét hình bình hành $ABCD$ có $\\widehat{A} - \\widehat{B} = 40^\\circ$. Tính số đo các góc $\\widehat{A}, \\widehat{B}, \\widehat{C}, \\widehat{D}$ của hình bình hành.",
-          "solution": "Vì $ABCD$ là hình bình hành nên $\\widehat{A} + \\widehat{B} = 180^\\circ$ (hai góc kề một cạnh bù nhau theo tính chất SGK). [[br]] Kết hợp với $\\widehat{A} - \\widehat{B} = 40^\\circ \\Rightarrow 2\\widehat{A} = 220^\\circ \\Rightarrow \\widehat{A} = 110^\\circ$. [[br]] Suy ra $\\widehat{B} = 110^\\circ - 40^\\circ = 70^\\circ$. [[br]] Do các góc đối bằng nhau nên $\\widehat{C} = \\widehat{A} = 110^\\circ$ và $\\widehat{D} = \\widehat{B} = 70^\\circ$."
+          "solution": "Vì $ABCD$ là hình bình hành nên $\\widehat{A} + \\widehat{B} = 180^\\circ$ (hai góc kề một cạnh bù nhau). [[br]] Kết hợp với $\\widehat{A} - \\widehat{B} = 40^\\circ \\Rightarrow 2\\widehat{A} = 220^\\circ \\Rightarrow \\widehat{A} = 110^\\circ$. [[br]] Suy ra $\\widehat{B} = 110^\\circ - 40^\\circ = 70^\\circ$. [[br]] Do các góc đối bằng nhau nên $\\widehat{C} = \\widehat{A} = 110^\\circ$ và $\\widehat{D} = \\widehat{B} = 70^\\circ$."
         },
         {
           "type": "writelines",
@@ -167,7 +163,7 @@
           "level": 2,
           "figure_given": false,
           "tier": "onclass",
-          "statement": "Xét hình bình hành $ABCD$. Gọi $M, N$ lần lượt là trung điểm của $AB$ và $CD$. Điền vào chỗ trống để hoàn thiện lời giải chứng minh tứ giác $MBND$ là hình bình hành: [[br]] \\textit{Lời giải}: [[br]] - Vì $ABCD$ là hình bình hành nên $AB \\parallel CD$ và $AB =$ [[blank:1.8cm]] [[br]] - Vì $M$ là trung điểm $AB$ nên $MB = \\dfrac{1}{2}AB$. [[br]] - Vì $N$ là trung điểm $CD$ nên $ND = \\dfrac{1}{2}$ [[blank:1.5cm]] [[br]] - Suy ra $MB =$ [[blank:1.5cm]] Mặt khác $MB \\subset AB, ND \\subset CD$ nên $MB \\parallel$ [[blank:1.5cm]] [[br]] - Xét tứ giác $MBND$ có $MB \\parallel ND$ và $MB = ND$ $\\Rightarrow MBND$ là hình bình hành (theo Dấu hiệu 3 SGK: [[blank:4.5cm]] ).",
+          "statement": "Xét hình bình hành $ABCD$. Gọi $M, N$ lần lượt là trung điểm của $AB$ và $CD$. Điền vào chỗ trống để hoàn thiện lời giải chứng minh tứ giác $MBND$ là hình bình hành: [[br]] \\textit{Lời giải}: [[br]] - Vì $ABCD$ là hình bình hành nên $AB \\parallel CD$ và $AB =$ [[blank:1.8cm]] [[br]] - Vì $M$ là trung điểm $AB$ nên $MB = \\dfrac{1}{2}AB$. [[br]] - Vì $N$ là trung điểm $CD$ nên $ND = \\dfrac{1}{2}$ [[blank:1.5cm]] [[br]] - Suy ra $MB =$ [[blank:1.5cm]] Mặt khác $MB \\subset AB, ND \\subset CD$ nên $MB \\parallel$ [[blank:1.5cm]] [[br]] - Xét tứ giác $MBND$ có $MB \\parallel ND$ và $MB = ND$ $\\Rightarrow MBND$ là hình bình hành (theo Dấu hiệu 3: [[blank:4.5cm]] ).",
           "solution": "Lần lượt điền: $CD$; $CD$; $ND$; $ND$; hai cạnh đối song song và bằng nhau."
         },
         {
@@ -180,21 +176,8 @@
           "level": 2,
           "figure_given": false,
           "tier": "onclass",
-          "statement": "Xét hình bình hành $ABCD$. Trên đường chéo $BD$ lấy hai điểm $M, N$ sao cho $BM = DN$. Chứng minh rằng tứ giác $AMCN$ là hình bình hành.",
-          "solution": "Gọi $O$ là giao điểm của hai đường chéo $AC$ và $BD$ của hình bình hành $ABCD$. [[br]] $\\Rightarrow OA = OC$ và $OB = OD$ (tính chất hai đường chéo hình bình hành). [[br]] Ta có: $OM = OB - BM$ và $ON = OD - DN$. [[br]] Mà $OB = OD$ và $BM = DN$ (giả thiết) $\\Rightarrow OM = ON$. [[br]] Xét tứ giác $AMCN$ có $OA = OC$ và $OM = ON$ (hai đường chéo $AC, MN$ cắt nhau tại trung điểm $O$ của mỗi đường) $\\Rightarrow AMCN$ là hình bình hành (Dấu hiệu 5 SGK)."
-        },
-        {
-          "type": "writelines",
-          "count": 4
-        },
-        {
-          "type": "problem",
-          "label": "Bài 10.",
-          "level": 2,
-          "figure_given": false,
-          "tier": "onclass",
-          "statement": "Xét hình bình hành $ABCD$. Kẻ $AH \\perp BD$ tại $H$ và $CK \\perp BD$ tại $K$. Chứng minh rằng tứ giác $AHCK$ là hình bình hành.",
-          "solution": "Ta có $AH \\perp BD$ và $CK \\perp BD \\Rightarrow AH \\parallel CK$ (1). [[br]] Xét $\\triangle AHB$ và $\\triangle CKD$ có: [[br]] $\\widehat{AHB} = \\widehat{CKD} = 90^\\circ$; [[br]] $AB = CD$ (hai cạnh đối hình bình hành $ABCD$); [[br]] $\\widehat{ABH} = \\widehat{CDK}$ (hai góc so le trong do $AB \\parallel CD$). [[br]] $\\Rightarrow \\triangle AHB = \\triangle CKD$ (cạnh huyền - góc nhọn) $\\Rightarrow AH = CK$ (2). [[br]] Từ (1) và (2) suy ra tứ giác $AHCK$ có $AH \\parallel CK$ và $AH = CK$ $\\Rightarrow AHCK$ là hình bình hành (Dấu hiệu 3 SGK)."
+          "statement": "Xét hình bình hành $ABCD$ có $O$ là giao điểm hai đường chéo. Trên đường chéo $BD$ lấy hai điểm $M, N$ sao cho $BM = DN$. [[br]] a) Chứng minh $OM = ON$. [[br]] b) Chứng minh rằng tứ giác $AMCN$ là hình bình hành.",
+          "solution": "a) Vì $ABCD$ là hình bình hành có 2 đường chéo cắt nhau tại $O$ nên $OA = OC$ và $OB = OD$. [[br]] Ta có $OM = OB - BM$ và $ON = OD - DN$. Mà $OB = OD$ và $BM = DN$ (gt) $\\Rightarrow OM = ON$. [[br]] b) Xét tứ giác $AMCN$ có hai đường chéo $AC$ và $MN$ cắt nhau tại $O$. [[br]] Vì $OA = OC$ và $OM = ON$ (chứng minh câu a) nên $O$ là trung điểm của $AC$ và $MN$. [[br]] Suy ra tứ giác $AMCN$ là hình bình hành (theo Dấu hiệu 5)."
         },
         {
           "type": "writelines",
@@ -209,12 +192,12 @@
       "blocks": [
         {
           "type": "problem",
-          "label": "Bài 11.",
+          "label": "Bài 10.",
           "level": 3,
           "figure_given": false,
           "tier": "onclass",
-          "statement": "Cho tam giác $ABC$. Gọi $M$ là trung điểm của cạnh $BC$. Trên tia đối của tia $MA$ lấy điểm $D$ sao cho $MD = MA$. Chứng minh tứ giác $ABDC$ là hình bình hành. Kẻ $AH \\perp BC$ tại $H$, trên tia đối của tia $HA$ lấy điểm $E$ sao cho $HE = HA$, chứng minh tứ giác $BCDE$ là hình thang cân.",
-          "solution": "Xét tứ giác $ABDC$ có: $M$ là trung điểm $BC$ (gt) và $M$ là trung điểm $AD$ (vì $MD = MA$). [[br]] Hai đường chéo $AD$ và $BC$ cắt nhau tại trung điểm $M$ của mỗi đường $\\Rightarrow ABDC$ là hình bình hành (Dấu hiệu 5 SGK). [[br]] Vì $ABDC$ là hình bình hành $\\Rightarrow CD \\parallel AB$ và $CD = AB$ (1). [[br]] Xét $\\triangle ABH$ và $\\triangle EBH$ có: $AH = EH$ (gt), $\\widehat{AHB} = \\widehat{EHB} = 90^\\circ$, $BH$ chung. [[br]] $\\Rightarrow \\triangle ABH = \\triangle EBH$ (c.g.c) $\\Rightarrow BE = AB$ (2) và $\\widehat{ABH} = \\widehat{EBH}$. [[br]] Từ (1) và (2) suy ra $CD = BE$. [[br]] Mặt khác $CD \\parallel AB$, mà $E \\in AB$ kéo dài (hoặc $BE$ cùng phương) nên tứ giác $BCDE$ có $ED \\parallel BC$ (do $\\triangle AHE$ đối xứng $\\Rightarrow ED \\parallel BC$). [[br]] Vậy $BCDE$ có $ED \\parallel BC$ và $BE = CD \\Rightarrow BCDE$ là hình thang cân."
+          "statement": "Cho tam giác $ABC$. Gọi $M$ là trung điểm của cạnh $BC$. Trên tia đối của tia $MA$ lấy điểm $D$ sao cho $MD = MA$. Kẻ $AH \\perp BC$ tại $H$, trên tia đối của tia $HA$ lấy điểm $E$ sao cho $HE = HA$. [[br]] a) Chứng minh tứ giác $ABDC$ là hình bình hành. [[br]] b) Chứng minh $BE = CD$ và tứ giác $BCDE$ là hình thang cân.",
+          "solution": "a) Xét tứ giác $ABDC$ có: $M$ là trung điểm $BC$ (gt) và $M$ là trung điểm $AD$ (vì $MD = MA$). [[br]] Hai đường chéo $AD$ và $BC$ cắt nhau tại trung điểm $M$ của mỗi đường $\\Rightarrow ABDC$ là hình bình hành (Dấu hiệu 5). [[br]] b) Vì $ABDC$ là hình bình hành $\\Rightarrow CD \\parallel AB$ và $CD = AB$ (1). [[br]] Xét $\\triangle ABH$ và $\\triangle EBH$ có: $AH = EH$ (gt), $\\widehat{AHB} = \\widehat{EHB} = 90^\\circ$, $BH$ chung. [[br]] $\\Rightarrow \\triangle ABH = \\triangle EBH$ (c.g.c) $\\Rightarrow BE = AB$ (2) và $\\widehat{ABH} = \\widehat{EBH}$. [[br]] Từ (1) và (2) suy ra $CD = BE$. [[br]] Mặt khác $CD \\parallel AB \\Rightarrow BCDE$ có $ED \\parallel BC$ (do $\\triangle AHE$ đối xứng qua $BC$). [[br]] Vậy tứ giác $BCDE$ có $ED \\parallel BC$ và $BE = CD \n\\Rightarrow BCDE$ là hình thang cân."
         },
         {
           "type": "writelines",
@@ -228,8 +211,48 @@
       "title": "Tổng kết \\& BTVN",
       "blocks": [
         {
-          "type": "noted",
-          "text": "\\textbf{SƠ ĐỒ TÓM TẮT KIẾN THỨC BÀI HỌC (SGK TOÁN 8)} \\begin{center} \\textbf{HÌNH BÌNH HÀNH} \\end{center} 1. \\textbf{Định nghĩa}: Tứ giác có các cạnh đối song song ($AB \\parallel CD, AD \\parallel BC$). [[br]] 2. \\textbf{Tính chất}: $AB=CD, AD=BC$; $\\widehat{A}=\\widehat{C}, \\widehat{B}=\\widehat{D}$; $OA=OC, OB=OD$. [[br]] 3. \\textbf{5 Dấu hiệu nhận biết chuẩn SGK}: [[br]] - DH 1: Các cạnh đối song song. [[br]] - DH 2: Các cạnh đối bằng nhau. [[br]] - DH 3: Hai cạnh đối song song và bằng nhau (1 cặp cạnh). [[br]] - DH 4: Các góc đối bằng nhau. [[br]] - DH 5: Hai đường chéo cắt nhau tại trung điểm của mỗi đường."
+          "type": "mindmap",
+          "caption": "Sơ đồ tư duy kiến thức bài học Hình bình hành",
+          "root": "Hình bình hành",
+          "size": "small",
+          "branches": [
+            {
+              "label": "Định nghĩa [[blank:1.5cm]]",
+              "children": [
+                {
+                  "label": "Tứ giác có các cạnh đối song song ($AB \\parallel CD, AD \\parallel BC$)"
+                }
+              ]
+            },
+            {
+              "label": "3 Tính chất [[blank:1.5cm]]",
+              "children": [
+                {
+                  "label": "Cạnh đối bằng nhau: $AB = CD, AD = BC$"
+                },
+                {
+                  "label": "Góc đối bằng nhau: $\\widehat{A} = \\widehat{C}, \\widehat{B} = \\widehat{D}$"
+                },
+                {
+                  "label": "Hai đường chéo cắt nhau tại trung điểm"
+                }
+              ]
+            },
+            {
+              "label": "5 Dấu hiệu [[blank:1.5cm]]",
+              "children": [
+                {
+                  "label": "Các cạnh đối song song / Các cạnh đối bằng nhau"
+                },
+                {
+                  "label": "Hai cạnh đối song song và bằng nhau (DH3 - Trọng tâm)"
+                },
+                {
+                  "label": "Các góc đối bằng nhau / 2 đường chéo cắt nhau tại trung điểm"
+                }
+              ]
+            }
+          ]
         },
         {
           "type": "problem",
@@ -264,7 +287,7 @@
           "figure_given": false,
           "tier": "btvn",
           "statement": "Trong các khẳng định sau, chọn Đúng (Đ) hoặc Sai (S): [[br]] \\begin{minipage}[t]{0.47\\linewidth} a) Tứ giác có hai đường chéo cắt nhau tại trung điểm mỗi đường là hình bình hành. [[blank:0.6cm]] \\end{minipage}\\hfill\\begin{minipage}[t]{0.47\\linewidth} b) Tứ giác có hai cạnh đối song song và hai cạnh đối còn lại bằng nhau là hình bình hành. [[blank:0.6cm]] \\end{minipage}",
-          "solution": "a) Đ (Dấu hiệu 5 SGK). b) S (đó có thể là hình thang cân)."
+          "solution": "a) Đ (Dấu hiệu 5). b) S (đó có thể là hình thang cân)."
         },
         {
           "type": "writelines",
@@ -277,7 +300,7 @@
           "figure_given": false,
           "tier": "btvn",
           "statement": "Xét hình bình hành $ABCD$ có $\\widehat{A} = 2\\widehat{B}$. Tính số đo 4 góc $\\widehat{A}, \\widehat{B}, \\widehat{C}, \\widehat{D}$ của hình bình hành.",
-          "solution": "Vì $ABCD$ là hình bình hành nên $\\widehat{A} + \\widehat{B} = 180^\\circ$ (hai góc kề bù nhau theo tính chất SGK). [[br]] Mà $\\widehat{A} = 2\\widehat{B} \\Rightarrow 3\\widehat{B} = 180^\\circ \\Rightarrow \\widehat{B} = 60^\\circ$. [[br]] Suy ra $\\widehat{A} = 120^\\circ$, $\\widehat{C} = \\widehat{A} = 120^\\circ$, $\\widehat{D} = \\widehat{B} = 60^\\circ$."
+          "solution": "Vì $ABCD$ là hình bình hành nên $\\widehat{A} + \\widehat{B} = 180^\\circ$ (hai góc kề bù nhau). [[br]] Mà $\\widehat{A} = 2\\widehat{B} \\Rightarrow 3\\widehat{B} = 180^\\circ \\Rightarrow \\widehat{B} = 60^\\circ$. [[br]] Suy ra $\\widehat{A} = 120^\\circ$, $\\widehat{C} = \\widehat{A} = 120^\\circ$, $\\widehat{D} = \\widehat{B} = 60^\\circ$."
         },
         {
           "type": "writelines",
@@ -289,8 +312,8 @@
           "level": 2,
           "figure_given": false,
           "tier": "btvn",
-          "statement": "Xét hình bình hành $ABCD$, gọi $O$ là giao điểm của hai đường chéo. Qua $O$ kẻ đường thẳng $d$ cắt $AB$ tại $M$ và cắt $CD$ tại $N$. Chứng minh rằng $O$ là trung điểm của $MN$ và tứ giác $AMCN$ là hình bình hành.",
-          "solution": "Xét $\\triangle AOM$ và $\\triangle CON$ có: [[br]] $\\widehat{MAO} = \\widehat{NCO}$ (so le trong do $AB \\parallel CD$); $OA = OC$ (tính chất HBH); $\\widehat{AOM} = \\widehat{CON}$ (đối đỉnh). [[br]] $\\Rightarrow \\triangle AOM = \\triangle CON$ (g.c.g) $\\Rightarrow OM = ON$ và $AM = CN$. [[br]] Tứ giác $AMCN$ có $AM \\parallel CN$ (vì $M \\in AB, N \\in CD$) và $AM = CN$ $\\Rightarrow AMCN$ là hình bình hành (Dấu hiệu 3 SGK). [[br]] Do $OM = ON$ nên $O$ là trung điểm của $MN$."
+          "statement": "Xét hình bình hành $ABCD$. Kẻ $AH \\perp BD$ tại $H$ và $CK \\perp BD$ tại $K$. [[br]] a) Chứng minh $AH \\parallel CK$ và $\\triangle AHB = \\triangle CKD$. [[br]] b) Chứng minh rằng tứ giác $AHCK$ là hình bình hành.",
+          "solution": "a) Vì $AH \\perp BD$ và $CK \\perp BD$ nên $AH \\parallel CK$. [[br]] Xét $\\triangle AHB$ và $\\triangle CKD$ có: $\\widehat{AHB} = \\widehat{CKD} = 90^\\circ$; $AB = CD$ (cạnh đối HBH $ABCD$); $\\widehat{ABH} = \\widehat{CDK}$ (so le trong do $AB \\parallel CD$). [[br]] $\\Rightarrow \\triangle AHB = \\triangle CKD$ (cạnh huyền - góc nhọn) $\\Rightarrow AH = CK$. [[br]] b) Xét tứ giác $AHCK$ có $AH \\parallel CK$ và $AH = CK$ (chứng minh câu a) $\\Rightarrow AHCK$ là hình bình hành (theo Dấu hiệu 3)."
         },
         {
           "type": "writelines",
@@ -302,8 +325,8 @@
           "level": 3,
           "figure_given": false,
           "tier": "btvn",
-          "statement": "Xét hình bình hành $ABCD$. Gọi $E, F$ lần lượt là hình chiếu vuông góc của $B, D$ trên đường chéo $AC$. Chứng minh tứ giác $BEDF$ là hình bình hành. Gọi $O$ là giao điểm hai đường chéo $AC$ and $BD$, chứng minh ba điểm $E, O, F$ thẳng hàng.",
-          "solution": "a) Ta có $BE \\perp AC$ và $DF \\perp AC \\Rightarrow BE \\parallel DF$ (1). [[br]] Xét $\\triangle BEC$ và $\\triangle DFA$ có: $\\widehat{BEC} = \\widehat{DFA} = 90^\\circ$; $BC = AD$ (cạnh đối HBH); $\\widehat{BCE} = \\widehat{DAF}$ (so le trong do $BC \\parallel AD$). [[br]] $\\Rightarrow \\triangle BEC = \\triangle DFA$ (cạnh huyền - góc nhọn) $\\Rightarrow BE = DF$ (2). [[br]] Từ (1) và (2) suy ra $BEDF$ là hình bình hành (Dấu hiệu 3 SGK). [[br]] b) Vì $BEDF$ là hình bình hành nên hai đường chéo $EF$ và $BD$ cắt nhau tại trung điểm của mỗi đường. [[br]] Mặt khác $O$ là trung điểm của $BD$ (do $ABCD$ là HBH) nên $O$ cũng phải là trung điểm của $EF$. [[br]] Do đó $E, O, F$ thẳng hàng."
+          "statement": "Xét hình bình hành $ABCD$. Gọi $E, F$ lần lượt là hình chiếu vuông góc của $B, D$ trên đường chéo $AC$. Gọi $O$ là giao điểm hai đường chéo $AC$ và $BD$. [[br]] a) Chứng minh tứ giác $BEDF$ là hình bình hành. [[br]] b) Chứng minh ba điểm $E, O, F$ thẳng hàng.",
+          "solution": "a) Ta có $BE \\perp AC$ và $DF \\perp AC \\Rightarrow BE \\parallel DF$ (1). [[br]] Xét $\\triangle BEC$ và $\\triangle DFA$ có: $\\widehat{BEC} = \\widehat{DFA} = 90^\\circ$; $BC = AD$ (cạnh đối HBH); $\\widehat{BCE} = \\widehat{DAF}$ (so le trong do $BC \\parallel AD$). [[br]] $\\Rightarrow \\triangle BEC$ = $\\triangle DFA$ (cạnh huyền - góc nhọn) $\\Rightarrow BE = DF$ (2). [[br]] Từ (1) và (2) suy ra $BEDF$ là hình bình hành (Dấu hiệu 3). [[br]] b) Vì $BEDF$ là hình bình hành nên hai đường chéo $EF$ và $BD$ cắt nhau tại trung điểm của mỗi đường. [[br]] Mặt khác $O$ là trung điểm của $BD$ (do $ABCD$ là HBH) nên $O$ cũng phải là trung điểm của $EF$. [[br]] Do đó $E, O, F$ thẳng hàng."
         },
         {
           "type": "writelines",

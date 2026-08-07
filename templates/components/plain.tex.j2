@@ -1,0 +1,24 @@
+((= Chặng "trần" (theme=="de_thi") — KHÔNG hộp màu, KHÔNG icon/số chặng, chỉ một
+   thanh tiêu đề mảnh (worksheetsection) rồi tới nội dung thẳng. Dùng cho đề kiểm
+   tra: Thầy yêu cầu bỏ hết khung/icon "phiếu học tập" trên đề thi thật. =))
+((* import "_blocks.j2" as B with context *))
+((* if stage.kind == "reflection" *))
+((* set parts = split_reflection(stage.blocks) *))
+\worksheetsection{((( stage.title )))}
+\justifying\setlength{\parindent}{0pt}
+((( B.render_blocks(parts.tong_ket) )))
+((* if parts.btvn *))
+\worksheetsection{BÀI TẬP VỀ NHÀ}
+\justifying\setlength{\parindent}{0pt}
+((( B.render_blocks(parts.btvn) )))
+((* endif *))
+((* if parts.mo_rong *))
+\worksheetsection{BÀI TẬP MỞ RỘNG (tự chọn)}
+\justifying\setlength{\parindent}{0pt}
+((( B.render_blocks(parts.mo_rong) )))
+((* endif *))
+((* else *))
+\worksheetsection{((( stage.title )))}
+\justifying\setlength{\parindent}{0pt}
+((( B.render_blocks(stage.blocks) )))
+((* endif *))
