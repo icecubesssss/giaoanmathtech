@@ -37,6 +37,24 @@
 % Tên bài ngắn giữ nguyên cỡ gốc. Cấu trúc header BẤT BIẾN.
 \newcommand{\titlefit}[1]{\adjustbox{max width=\linewidth}{#1}}
 
+% --- ĐẦU TRANG / CHÂN TRANG chuẩn MathTech (dùng chung cho phiếu · sổ tay GV · tổng kết).
+% Đầu trang: đúng một ảnh banner kéo hết bề ngang cột chữ, KHÔNG kèm chữ nào.
+% Chân trang: dựng lại theo mẫu công ty assets/images/nguon-goc/footer_mau_goc.jpg —
+% thanh đỏ dày, tên công ty đỏ đậm, dòng website; BỎ dòng hotline (Thầy chốt 2026-08-08).
+% Màu footbar/foottitle lấy đúng từ ảnh mẫu, khai báo trong config/design_tokens.json.
+% Banner rộng đúng bằng cột chữ → hai mép thẳng hàng với khối tiêu đề bên dưới,
+% lề trái/phải bằng nhau. Ảnh đã cắt sát nét (assets/header_banner.png) nên mép
+% ảnh chính là mép chữ, không còn khoảng trắng lệch một bên như file gốc.
+\newcommand{\mathtechheader}{%
+  \includegraphics[width=\textwidth]{((( assets_dir )))((( branding.header_file )))}}
+\newcommand{\mathtechfooter}{%
+  \makebox[\linewidth][l]{%
+    \begin{minipage}[b]{\linewidth}
+      \setstretch{1}%
+      {\color{footbar}\rule{\linewidth}{5.5pt}}\par\vspace{4pt}
+      {\bfseries\color{foottitle}\fontsize{13}{15}\selectfont ((( branding.company_fullname )))}\par\vspace{2pt}
+      {\fontsize{12}{14}\selectfont Website:\ \href{http://((( branding.website )))}{\underline{((( branding.website )))}}}
+    \end{minipage}}}
 
 % Dấu QED \square — STIX Two Math (unicode-math) không nạp sẵn ký hiệu này;
 % định nghĩa lại bằng hộp rỗng để lời giải Ground Truth dùng \square không vỡ.
