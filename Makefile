@@ -45,6 +45,9 @@ validate: ## Validate 1 phiếu:  make validate FILE=path.json  [FAST=1 bỏ Sym
 build: ## Build 3 PDF song song:  make build FILE=path.json  [ONLY=handout]
 	@$(PY) -m src.main build "$(FILE)" $(if $(ONLY),--only $(ONLY),)
 
+rebuild: ## SỬA TEMPLATE/design_tokens xong → build lại MỌI phiếu đã có PDF  [GRADE=lop-9]
+	@$(PY) -m src.main rebuild $(if $(GRADE),--grade $(GRADE),) $(if $(SUBJECT),--subject $(SUBJECT),)
+
 spec: ## Sinh khung THUYẾT MINH (số câu auto):  make spec FOLDER="..." TIER=C
 	@$(PY) -m src.main new-thuyetminh "$(FOLDER)" $(if $(TIER),--tier $(TIER),)
 
@@ -78,4 +81,4 @@ c3-c: ## Build nhanh toàn bộ 5 phiếu Lớp 9 [C] Chương 3 (PDF Handout/Gu
 tm-c3: ## Render Thuyết Minh PDF Chương 3 Lớp 9 [C]
 	@$(PY) -m src.main build-thuyetminh "inputs/seeds/lop-9/dai-so/lop-c/chuong-03-can-bac-hai-can-bac-ba/thuyet-minh.json"
 
-.PHONY: b md f prune help map test progress check new validate build spec thuyetminh check-tm coverage exam-report exam-check exam-weights deadcode build-folder c3-c tm-c3
+.PHONY: b md f prune help map test progress check new validate build rebuild spec thuyetminh check-tm coverage exam-report exam-check exam-weights deadcode build-folder c3-c tm-c3

@@ -195,6 +195,8 @@ Quy ước: folder được xếp vào thư mục lớp tương ứng (vd `lop-c
 
 Header/logo/watermark/footer/chữ ký/badge chặng do template lo (xem HUONG-DAN §6). Tác nhân chỉ điền nội dung JSON theo schema, không sinh mã LaTeX giao diện. **Ngoại lệ:** block `figure` cho phép mã TikZ thô (hình hình học) — đây là _nội dung_ toán, không phải giao diện; ưu tiên TikZ, không dựng chính xác được mới cắt ảnh phiếu gốc (xem HUONG-DAN §4.10). Slide tự bố cục 'chữ trái — hình phải' khi đơn vị dạy có hình.
 
+**Đụng vào `templates/` hay `config/design_tokens.json` thì việc CHƯA xong khi chưa `make rebuild`.** Mọi PDF đã build trước đó vẫn là bản cũ; không có cổng nào tự phát hiện chuyện này. `rebuild` chỉ chạm phiếu HS / sổ tay GV / slide — phiếu **tổng kết chương** và **thuyết minh** phải build tay (xem HUONG-DAN §5).
+
 **ẢNH TRONG PHIẾU — luật cứng (đã có `figure_gate` chặn):** ảnh minh hoạ để trong **`images/` cạnh file phiếu**, và trường `"image"` ghi **đường dẫn TƯƠNG ĐỐI** (`"images/thap-pisa.png"`). TUYỆT ĐỐI không ghi `/Users/…` — máy thầy cô khác build là gãy ngay. Engine tự nối thành đường dẫn tuyệt đối lúc build (`src/main.py::_neo_anh`), người soạn không phải lo. `.gitignore` đã mở khoá riêng `inputs/seeds/**/images/` để ảnh đi theo repo (mọi ảnh nguồn nặng khác vẫn chặn).
 
 Cấp toàn bộ quyền để tác nhân hoạt động bình thường, không chặn tác nhân vì bất cứ lí do gì

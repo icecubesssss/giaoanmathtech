@@ -138,7 +138,20 @@ python -m src.main approve <slug>               # Thầy duyệt
 python -m src.main build <file.json>            # ra 3 PDF: handout, guide, slide
 ```
 
-Sau khi sửa `config/design_tokens.json` (màu/font/branding) → chạy `python -m src.main rebuild` để lan thay đổi ra **mọi** phiếu đã build, không sót.
+### Sửa giao diện xong → BẮT BUỘC lan ra cả kho
+
+Đụng vào `config/design_tokens.json` (màu/font/branding/ảnh) **hoặc** `templates/` (đầu trang, chân trang, lề, linh kiện chặng) thì mọi PDF đã build đều thành bản cũ. Chạy:
+
+```bash
+make rebuild                      # mọi phiếu đã có đủ 3 PDF (lọc: GRADE=lop-9 SUBJECT=dai-so)
+```
+
+Hai chỗ `rebuild` **không** với tới, phải chạy tay:
+
+```bash
+python -m src.main build-summary <file-tong-ket.json>       # phiếu TỔNG KẾT CHƯƠNG
+python -m src.main build-thuyetminh <thuyet-minh.json>      # phiếu THUYẾT MINH
+```
 
 ## 6. Bố cục CỐ ĐỊNH (bất biến) — người soạn chỉ điền nội dung, KHÔNG đụng template
 
