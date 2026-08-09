@@ -83,6 +83,7 @@ Cấu hình phím tắt nằm ở [.vscode/tasks.json](.vscode/tasks.json), đã
 | Kiểm cả kho | `make check` | `.venv\Scripts\python -m src.main validate-all` |
 | Chạy test | `make test` | `.venv\Scripts\python -m pytest -q` |
 | Dọn bản in cũ mồ côi | `make prune` | `.venv\Scripts\python -m scripts.prune_outputs` |
+| **Sau khi `git pull`** — in lại mọi phiếu theo template mới | `make rebuild` | `.venv\Scripts\python -m src.main rebuild` |
 
 `Q` là **mẩu tên bất kỳ** trong đường dẫn, **gõ không dấu vẫn ra**: `"hinh binh hanh"`, `"tuan07 phieu-b"`. Khớp nhiều phiếu quá thì nó in danh sách cho chọn chứ không đoán bừa.
 
@@ -125,4 +126,6 @@ Không có file nào tên `.venv/bin/python` trên Windows — gọi vào là "f
 | `Unable to load picture` khi build | Đường dẫn ảnh trong JSON sai (thường do đổi tên thư mục mà quên sửa). Chạy `validate` sẽ chỉ đúng chỗ. |
 | `UnicodeEncodeError` trên Windows | Script mới thiếu đoạn ép UTF-8 — xem mục 4. |
 | Mở PDF thấy nội dung cũ | Đang xem bản in cũ còn sót. Chạy `make prune` (Win: `python -m scripts.prune_outputs`) để soi, thêm `YES=1` / `--delete` để dọn. |
+| `git pull` xong mà PDF vẫn **giao diện cũ** | Bình thường: `outputs/` không theo repo, PDF là bản bạn tự in ra từ template cũ. Chạy `make rebuild` (Win: `.venv\Scripts\python -m src.main rebuild`). |
+| `git pull` báo *"local changes would be overwritten"* | Bạn đã sửa tay file mà bản mới cũng sửa (hay gặp nhất: `config/design_tokens.json`). Muốn giữ bản của mình: `git stash` → `git pull` → `git stash pop`. Muốn bỏ bản của mình: `git checkout -- <file>` rồi pull lại. |
 | `tectonic: command not found` | Chưa cài Tectonic — xem mục 1. |
