@@ -45,6 +45,13 @@ class SpecRow(BaseModel):
     hinh_san: bool = Field(
         False, description="Dạng trắc nghiệm/điền khuyết trên hình vẽ sẵn → phút/câu ×0,5"
     )
+    # Bảy LOẠI câu hỏi của §4b HUONG-DAN-THUYET-MINH-LOP-C (Thầy chốt 2026-08-05) — cho
+    # thấy dòng này là câu LẺ từ lý thuyết, câu TÁCH làm bước đệm, hay một Ý của bài GHÉP.
+    # Để trống ⇒ renderer KHÔNG in cột Loại (spec cũ giữ nguyên bố cục).
+    loai: str = Field(
+        "", description="Loại §4b: 'NB lẻ LT' | 'NB tách TH' | 'NB ghép bài' | "
+                        "'TH lẻ LT' | 'TH ghép bài' | 'TH tách VD' | 'VD lẻ'"
+    )
 
 
 class SpecPhieu(BaseModel):

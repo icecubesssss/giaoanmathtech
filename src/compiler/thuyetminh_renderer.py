@@ -55,31 +55,29 @@ def _phieu_table(phieu, rates):
     # Cột dạng NỚI RỘNG (10,4cm) + cột số HẸP LẠI (1,45cm) — giữ nguyên bề ngang bảng
     # nhưng bớt dòng dạng bị xuống 2 dòng, để mỗi buổi gọn TRONG MỘT TRANG (Thầy đọc
     # 1 buổi = 1 trang, không phải lật sang trang chỉ để xem dòng TỔNG).
-    col = (r"|>{\RaggedRight\arraybackslash}p{10.4cm}|"
-           r"*{8}{>{\centering\arraybackslash}p{1.45cm}|}")
+    # Cột LOẠI (§4b — 'NB tách TH', 'NB lẻ LT'…) chỉ in khi spec có khai `loai`; spec cũ
+    # không khai ⇒ bảng giữ nguyên 9 cột như trước.
+    has_loai = any((r.loai or "").strip() for r in phieu.rows)
+    ncol = 10 if has_loai else 9
+    col = (rf"|>{{\RaggedRight\arraybackslash}}p{{{'8.3cm' if has_loai else '10.4cm'}}}|"
+           + (r">{\centering\arraybackslash}p{2.1cm}|" if has_loai else "")
+           + r"*{8}{>{\centering\arraybackslash}p{1.45cm}|}")
+    lead = r"\rowcolor{neutral} & " if has_loai else r"\rowcolor{neutral} "
+    cline = rf"\cline{{{3 if has_loai else 2}-{ncol}}}"
+    loai_h = r"& \sffamily\footnotesize\bfseries Loại " if has_loai else ""
+    head = [
+        lead + r"& \multicolumn{2}{>{\columncolor{neutral}}c|}{\sffamily\bfseries Lý thuyết} "
+               r"& \multicolumn{2}{>{\columncolor{neutral}}c|}{\sffamily\bfseries Ví dụ} "
+               r"& \multicolumn{2}{>{\columncolor{neutral}}c|}{\sffamily\bfseries Bài tập trên lớp} "
+               r"& \multicolumn{2}{>{\columncolor{neutral}}c|}{\sffamily\bfseries BTVN} \\ " + cline,
+        r"\rowcolor{neutral}\multirow{-2}{*}{\sffamily\bfseries Dạng bài} " + loai_h +
+        r"& \sffamily\footnotesize Số mục & \sffamily\footnotesize TG "
+        r"& \sffamily\footnotesize Số câu & \sffamily\footnotesize TG "
+        r"& \sffamily\footnotesize Số câu & \sffamily\footnotesize TG "
+        r"& \sffamily\footnotesize Số câu & \sffamily\footnotesize TG \\ \hline",
+    ]
     L = [r"\begingroup\footnotesize\renewcommand{\arraystretch}{1.0}", rf"\begin{{longtable}}{{{col}}}", r"\arrayrulecolor{rule}\hline"]
-    L.append(r"\rowcolor{neutral} "
-             r"& \multicolumn{2}{>{\columncolor{neutral}}c|}{\sffamily\bfseries Lý thuyết} "
-             r"& \multicolumn{2}{>{\columncolor{neutral}}c|}{\sffamily\bfseries Ví dụ} "
-             r"& \multicolumn{2}{>{\columncolor{neutral}}c|}{\sffamily\bfseries Bài tập trên lớp} "
-             r"& \multicolumn{2}{>{\columncolor{neutral}}c|}{\sffamily\bfseries BTVN} \\ \cline{2-9}")
-    L.append(r"\rowcolor{neutral}\multirow{-2}{*}{\sffamily\bfseries Dạng bài} "
-             r"& \sffamily\footnotesize Số mục & \sffamily\footnotesize TG "
-             r"& \sffamily\footnotesize Số câu & \sffamily\footnotesize TG "
-             r"& \sffamily\footnotesize Số câu & \sffamily\footnotesize TG "
-             r"& \sffamily\footnotesize Số câu & \sffamily\footnotesize TG \\ \hline")
-    L.append(r"\endfirsthead")
-    L.append(r"\rowcolor{neutral} "
-             r"& \multicolumn{2}{>{\columncolor{neutral}}c|}{\sffamily\bfseries Lý thuyết} "
-             r"& \multicolumn{2}{>{\columncolor{neutral}}c|}{\sffamily\bfseries Ví dụ} "
-             r"& \multicolumn{2}{>{\columncolor{neutral}}c|}{\sffamily\bfseries Bài tập trên lớp} "
-             r"& \multicolumn{2}{>{\columncolor{neutral}}c|}{\sffamily\bfseries BTVN} \\ \cline{2-9}")
-    L.append(r"\rowcolor{neutral}\multirow{-2}{*}{\sffamily\bfseries Dạng bài} "
-             r"& \sffamily\footnotesize Số mục & \sffamily\footnotesize TG "
-             r"& \sffamily\footnotesize Số câu & \sffamily\footnotesize TG "
-             r"& \sffamily\footnotesize Số câu & \sffamily\footnotesize TG "
-             r"& \sffamily\footnotesize Số câu & \sffamily\footnotesize TG \\ \hline")
-    L.append(r"\endhead")
+    L += head + [r"\endfirsthead"] + head + [r"\endhead"]
 
     grand = [0.0] * 8  # xen kẽ (n, phút) ×4 đoạn
     for band in _BAND_ORDER:
@@ -87,10 +85,14 @@ def _phieu_table(phieu, rates):
         if not rows:
             continue
         label, tint, star = _BAND_HEAD[band]
-        L.append(rf"\multicolumn{{9}}{{|l|}}{{\cellcolor{{{tint}!16}}\sffamily\bfseries"
+        L.append(rf"\multicolumn{{{ncol}}}{{|l|}}{{\cellcolor{{{tint}!16}}\sffamily\bfseries"
                  rf"\color{{{tint}}}{label} ({star})}} \\ \hline")
         sub = [0.0] * 8
-        for r in rows:
+        # Đánh số dạng trong nhóm (NB1, NB2…, TH1…, VD1) — Thầy cần một CÁI TÊN để trỏ
+        # khi soi phiếu thật; phiếu in thẻ [NB]/[TH]/[VD] ở từng câu để đối chiếu.
+        for idx, r in enumerate(rows, 1):
+            r = r.model_copy(update={"dang": rf"{{\sffamily\bfseries\color{{{tint}}}"
+                                             rf"{band}{idx}.}}~{r.dang}"})
             mins = row_minutes(r, rates)          # đã gồm phút vẽ hình (ve_hinh)
             lt_m = r.lythuyet * rates.get("vidu", {}).get(band, 0)
             vals = [(r.lythuyet, lt_m), (r.vidu, mins["vidu"]),
@@ -100,7 +102,8 @@ def _phieu_table(phieu, rates):
                 cells += [_n(n), _t(m)]
                 sub[2 * i] += n
                 sub[2 * i + 1] += m
-            L.append(f"{r.dang} & " + " & ".join(cells) + r" \\ \hline")
+            lo = (rf"{{\scriptsize {r.loai}}} & " if has_loai else "")
+            L.append(f"{r.dang} & " + lo + " & ".join(cells) + r" \\ \hline")
         for i in range(8):
             grand[i] += sub[i]
         subcells = " & ".join(
@@ -108,10 +111,10 @@ def _phieu_table(phieu, rates):
             (rf"\itshape {_t(sub[2*i+1])}" if i < 2 else rf"\bfseries {_t(sub[2*i+1])}")
             for i in range(4)
         )
-        L.append(rf"\multicolumn{{1}}{{|r|}}{{\itshape\bfseries Cộng nhóm}} & {subcells} \\ \hline")
+        L.append(rf"\multicolumn{{{ncol - 8}}}{{|r|}}{{\itshape\bfseries Cộng nhóm}} & {subcells} \\ \hline")
 
     gcells = " & ".join(rf"\bfseries {_n(int(grand[2*i]))} & \bfseries {_t(grand[2*i+1])}" for i in range(4))
-    L.append(rf"\rowcolor{{brand!12}}\multicolumn{{1}}{{|r|}}"
+    L.append(rf"\rowcolor{{brand!12}}\multicolumn{{{ncol - 8}}}{{|r|}}"
              rf"{{\sffamily\bfseries\color{{brand}}TỔNG}} & {gcells} \\ \hline")
     L.append(r"\end{longtable}\endgroup")
     return "\n".join(L), grand
@@ -171,7 +174,22 @@ def render_thuyetminh(spec: ThuyetMinhSpec) -> str:
         r"(NB/TH/VD/VDC). duration\_gate chỉ soi Luyện tập trên lớp $+$ BTVN."
         + (rf" Cột TG đã CỘNG {draw_minutes(load_tier_spec()):.0f}′ cho mỗi hình học sinh "
            r"phải tự vẽ (cột \texttt{ve\_hinh} của dạng)." if _has_ve_hinh(spec) else "")
+        + (r" \textbf{Cột Loại} — câu \emph{lẻ LT} hỏi thẳng công thức vừa học; câu "
+           r"\emph{tách TH} là bước đệm cắt ra từ chính bài Thông hiểu bên dưới; câu "
+           r"\emph{ghép bài} là các ý a), b) mở đầu của một bài lớn, học sinh làm liền "
+           r"mạch trong CÙNG một bài chứ không phải bài rời."
+           if any((r.loai or "").strip() for p in spec.phieu for r in p.rows) else "")
         + r"}")
+
+    # Thiếu cột Loại thì phải NHÌN THẤY trên PDF — trước đây cột tự biến mất, Thầy đọc
+    # bảng không có gì báo là đang thiếu (xem thuyetminh_gate.check_loai_4b).
+    _thieu = sum(1 for p in spec.phieu for r in p.rows
+                 if not (r.loai or "").strip() or (r.loai or "").strip().startswith("TODO"))
+    if _thieu:
+        parts.append(rf"\vspace{{2pt}}{{\color{{brand}}\sffamily\bfseries\footnotesize "
+                     rf"CHƯA KHAI LOẠI CÂU HỎI (\S4b) cho {_thieu} dòng — "
+                     rf"bảng còn thiếu cột \emph{{Loại}} (NB lẻ LT / NB tách TH / NB ghép bài / "
+                     rf"TH lẻ LT / TH ghép bài / TH tách VD / VD lẻ).}}")
 
     tokens = load_tokens()
     return _env().get_template("base_thuyetminh.tex.j2").render(body="\n\n".join(parts), **tokens)

@@ -1,0 +1,669 @@
+{
+  "slug": "phieu-a-mo-dau-ve-duong-tron",
+  "title": "Mở đầu về đường tròn",
+  "eyebrow": "PHIẾU A • HÌNH HỌC 9 · CHƯƠNG V — BÀI 13",
+  "grade_label": "Lớp 9 • Hình học",
+  "class_tier": "C",
+  "stages": [
+    {
+      "kind": "review",
+      "number": 1,
+      "title": "Khám phá",
+      "teacher_note": "Chiếu ảnh vòng quay mặt trời, hỏi: 'cabin nào gần trục quay nhất?' HS sẽ tự phát hiện mọi cabin cách trục đúng bằng nhau. Chưa nói chữ 'đường tròn' ở chặng này.",
+      "blocks": [
+        {
+          "type": "para",
+          "text": "\\textbf{Ngồi cabin nào thì gần trục quay nhất?}"
+        },
+        {
+          "type": "noted",
+          "variant": "note",
+          "text": "\\begin{minipage}[t]{0.58\\linewidth}\\vspace{0pt}Vòng quay mặt trời ở công viên có $12$ cabin gắn quanh một trục quay $O$. Bạn An ngồi cabin đỏ, bạn Bình ngồi cabin xanh ở phía đối diện. [[br]]Cả hai đo thử thì thấy: từ chỗ mình ngồi đến trục quay $O$ đều đúng $25$ m. [[br]]\\textbf{a)} Nếu bạn Chi ngồi cabin bất kì khác, khoảng cách từ Chi đến $O$ bằng bao nhiêu? [[br]]\\textbf{b)} Một người đứng dưới đất, cách trục $O$ đúng $40$ m. Người đó ngồi trên cabin hay đứng ngoài vòng quay? [[br]]\\textbf{c)} Đoạn thẳng nối cabin của An và cabin của Bình dài bao nhiêu mét?\\end{minipage}\\hfill\\begin{minipage}[t]{0.36\\linewidth}\\vspace{0pt}\n\\centering\n\\adjustbox{max width=\\linewidth, max totalheight=2.8cm}{\n\\begin{tikzpicture}[line width=0.8pt, font=\\small]\n  \\draw[ink] (0,0) circle (1.6);\n  \\fill[ink] (0,0) circle (1.4pt);\n  \\node[below right] at (0,0) {$O$};\n  \\foreach \\a in {0,30,...,330}{\\fill[ink] (\\a:1.6) circle (2.2pt);}\n  \\draw[ink] (0,0) -- (30:1.6);\n  \\draw[ink] (0,0) -- (210:1.6);\n  \\node[above right] at (30:1.6) {An};\n  \\node[below left] at (210:1.6) {Bình};\n  \\node[above] at (15:0.8) {$25$ m};\n\\end{tikzpicture}\n}\n\\par\\vspace{2pt}{\\sffamily\\scriptsize\\itshape\\color{muted}Hình 1}\n\\end{minipage}"
+        },
+        {
+          "type": "writelines",
+          "count": 3
+        }
+      ]
+    },
+    {
+      "kind": "concept",
+      "number": 2,
+      "title": "Kiến thức cần nhớ",
+      "teacher_note": "Chữa trọn 9 ví dụ mẫu trong 25 phút đầu buổi. Ví dụ 7, 8, 9 là bản mẫu trình bày HS chép lại khi đi thi — bắt HS viết đủ căn cứ và câu 'Vậy'.",
+      "blocks": [
+        {
+          "type": "para",
+          "text": "\\textbf{1. Đường tròn}"
+        },
+        {
+          "type": "para",
+          "text": "Đường tròn tâm $O$ bán kính $R$ (với $R > 0$), kí hiệu $(O; R)$, là hình gồm tất cả các điểm cách $O$ một khoảng bằng $R$."
+        },
+        {
+          "type": "para",
+          "text": "$\\bullet$ \\textbf{Bán kính}: đoạn thẳng nối tâm $O$ với một điểm trên đường tròn. \\quad $\\bullet$ \\textbf{Dây cung}: đoạn thẳng nối hai điểm trên đường tròn."
+        },
+        {
+          "type": "para",
+          "text": "$\\bullet$ \\textbf{Đường kính}: dây cung \\textit{đi qua tâm}, có độ dài $2R$. Đường kính là dây \\textbf{lớn nhất} của đường tròn."
+        },
+        {
+          "type": "para",
+          "text": "\\textbf{2. Vị trí của một điểm đối với đường tròn $(O; R)$}"
+        },
+        {
+          "type": "para",
+          "text": "$OM < R \\Rightarrow M$ nằm \\textbf{trong} đường tròn; \\quad $OM = R \\Rightarrow M$ nằm \\textbf{trên} đường tròn; \\quad $OM > R \\Rightarrow M$ nằm \\textbf{ngoài} đường tròn."
+        },
+        {
+          "type": "para",
+          "text": "\\textbf{3. Đường tròn đi qua ba đỉnh của một tam giác vuông}"
+        },
+        {
+          "type": "para",
+          "text": "Nếu tam giác $ABC$ vuông tại $A$ thì ba đỉnh $A$, $B$, $C$ cùng thuộc đường tròn tâm $O$ là \\textbf{trung điểm cạnh huyền} $BC$, bán kính $R = \\dfrac{BC}{2}$. Khi đó cạnh huyền $BC$ chính là \\textbf{đường kính}."
+        },
+        {
+          "type": "para",
+          "text": "\\textbf{4. Nhiều điểm cùng thuộc một đường tròn}"
+        },
+        {
+          "type": "para",
+          "text": "Nếu nhiều điểm cùng cách một điểm $O$ một khoảng bằng $R$ thì tất cả các điểm đó cùng thuộc $(O; R)$. Đây là cách chứng minh \\textbf{bốn điểm cùng thuộc một đường tròn}."
+        },
+        {
+          "type": "noted",
+          "variant": "example",
+          "text": "\\begin{minipage}[t]{0.58\\linewidth}\\vspace{0pt}\\textbf{Ví dụ 1.} Trên Hình 2, hãy chỉ ra một bán kính, một dây cung và một đường kính của đường tròn $(O)$. [[br]]\\textit{Giải.} Bán kính: $OA$ (nối tâm $O$ với điểm $A$ trên đường tròn). [[br]]Dây cung: $MN$ (nối hai điểm $M$, $N$ trên đường tròn). [[br]]Đường kính: $BC$ (dây cung đi qua tâm $O$). [[br]]Vậy $OA$ là bán kính, $MN$ là dây cung, $BC$ là đường kính.\\end{minipage}\\hfill\\begin{minipage}[t]{0.36\\linewidth}\\vspace{0pt}\n\\centering\n\\adjustbox{max width=\\linewidth, max totalheight=2.6cm}{\n\\begin{tikzpicture}[line width=0.8pt, font=\\small]\n  \\draw[ink] (0,0) circle (1.5);\n  \\fill[ink] (0,0) circle (1.3pt);\n  \\node[below right] at (0,0) {$O$};\n  \\draw[ink] (0,0) -- (55:1.5);\n  \\node[above right] at (55:1.5) {$A$};\n  \\draw[ink] (180:1.5) -- (0:1.5);\n  \\node[left] at (180:1.5) {$B$};\n  \\node[right] at (0:1.5) {$C$};\n  \\draw[ink] (250:1.5) -- (310:1.5);\n  \\node[below left] at (250:1.5) {$M$};\n  \\node[below right] at (310:1.5) {$N$};\n\\end{tikzpicture}\n}\n\\par\\vspace{2pt}{\\sffamily\\scriptsize\\itshape\\color{muted}Hình 2}\n\\end{minipage}"
+        },
+        {
+          "type": "noted",
+          "variant": "example",
+          "text": "\\textbf{Ví dụ 2.} Cho đường tròn $(O; 6\\text{ cm})$. Trong các dây của đường tròn này, dây dài nhất dài bao nhiêu xăngtimét? [[br]]\\textit{Giải.} Dây lớn nhất của một đường tròn là đường kính. [[br]]Đường kính có độ dài $2R = 2 \\cdot 6 = 12$ (cm). [[br]]Vậy dây dài nhất dài $12$ cm."
+        },
+        {
+          "type": "noted",
+          "variant": "example",
+          "text": "\\textbf{Ví dụ 3.} Cho đường tròn $(O; 5\\text{ cm})$ và ba điểm $A$, $B$, $C$ có $OA = 3$ cm, $OB = 5$ cm, $OC = 8$ cm. Mỗi điểm nằm ở đâu so với đường tròn? [[br]]\\textit{Giải.} Vì $OA = 3\\text{ cm} < 5\\text{ cm} = R$ nên $A$ nằm trong đường tròn. [[br]]Vì $OB = 5\\text{ cm} = R$ nên $B$ nằm trên đường tròn. [[br]]Vì $OC = 8\\text{ cm} > 5\\text{ cm} = R$ nên $C$ nằm ngoài đường tròn. [[br]]Vậy $A$ nằm trong, $B$ nằm trên và $C$ nằm ngoài đường tròn $(O; 5\\text{ cm})$."
+        },
+        {
+          "type": "noted",
+          "variant": "example",
+          "text": "\\begin{minipage}[t]{0.58\\linewidth}\\vspace{0pt}\\textbf{Ví dụ 4.} Trên Hình 3, tam giác $ABC$ vuông tại $A$ và có ba đỉnh cùng thuộc đường tròn $(O)$. Chỉ ra cạnh huyền của tam giác và đường kính của đường tròn. [[br]]\\textit{Giải.} Tam giác $ABC$ vuông tại $A$ nên cạnh huyền là cạnh đối diện góc vuông $A$, tức là $BC$. [[br]]Tâm $O$ là trung điểm của cạnh huyền $BC$, nên dây $BC$ đi qua tâm $O$. [[br]]Vậy cạnh huyền là $BC$ và đường kính của $(O)$ cũng là $BC$.\\end{minipage}\\hfill\\begin{minipage}[t]{0.36\\linewidth}\\vspace{0pt}\n\\centering\n\\adjustbox{max width=\\linewidth, max totalheight=2.4cm}{\n\\begin{tikzpicture}[line width=0.8pt, font=\\small]\n  \\draw[ink] (0,0) circle (1.4);\n  \\fill[ink] (0,0) circle (1.3pt);\n  \\node[below] at (0,-0.12) {$O$};\n  \\draw[ink] (180:1.4) -- (0:1.4);\n  \\draw[ink] (180:1.4) -- (70:1.4) -- (0:1.4);\n  \\node[left] at (180:1.4) {$B$};\n  \\node[right] at (0:1.4) {$C$};\n  \\node[above] at (70:1.4) {$A$};\n\\end{tikzpicture}\n}\n\\par\\vspace{2pt}{\\sffamily\\scriptsize\\itshape\\color{muted}Hình 3}\n\\end{minipage}"
+        },
+        {
+          "type": "noted",
+          "variant": "example",
+          "text": "\\textbf{Ví dụ 5.} Cho tam giác $ABC$ vuông tại $A$ có $BC = 10$ cm. Tính bán kính đường tròn đi qua ba điểm $A$, $B$, $C$. [[br]]\\textit{Giải.} Tam giác $ABC$ vuông tại $A$ nên ba đỉnh $A$, $B$, $C$ cùng thuộc đường tròn tâm $O$ là trung điểm cạnh huyền $BC$. [[br]]Bán kính của đường tròn đó là $R = \\dfrac{BC}{2} = \\dfrac{10}{2} = 5$ (cm). [[br]]Vậy bán kính bằng $5$ cm."
+        },
+        {
+          "type": "noted",
+          "variant": "example",
+          "text": "\\textbf{Ví dụ 6.} Cho tam giác $DEF$ vuông tại $D$ có $DE = 6$ cm, $DF = 8$ cm. Tính độ dài cạnh huyền $EF$. [[br]]\\textit{Giải.} Xét tam giác $DEF$ vuông tại $D$, theo định lí Pythagore: [[br]]$EF^2 = DE^2 + DF^2 = 6^2 + 8^2 = 36 + 64 = 100$. [[br]]Suy ra $EF = \\sqrt{100} = 10$ (cm). [[br]]Vậy $EF = 10$ cm."
+        },
+        {
+          "type": "noted",
+          "variant": "example",
+          "text": "\\textbf{Ví dụ 7.} Cho tam giác $ABC$ vuông tại $A$ có $AB = 9$ cm, $AC = 12$ cm. Tính bán kính đường tròn đi qua ba đỉnh $A$, $B$, $C$. [[br]]\\textit{Giải.} Xét tam giác $ABC$ vuông tại $A$, theo định lí Pythagore: [[br]]$BC^2 = AB^2 + AC^2 = 9^2 + 12^2 = 81 + 144 = 225$. [[br]]Suy ra $BC = \\sqrt{225} = 15$ (cm). [[br]]Vì tam giác $ABC$ vuông tại $A$ nên ba đỉnh $A$, $B$, $C$ cùng thuộc đường tròn tâm $O$ là trung điểm cạnh huyền $BC$, bán kính $R = \\dfrac{BC}{2}$. [[br]]Do đó $R = \\dfrac{15}{2} = 7{,}5$ (cm). [[br]]Vậy bán kính đường tròn đi qua ba đỉnh $A$, $B$, $C$ bằng $7{,}5$ cm."
+        },
+        {
+          "type": "noted",
+          "variant": "example",
+          "text": "\\begin{minipage}[t]{0.58\\linewidth}\\vspace{0pt}\\textbf{Ví dụ 8.} Cho Hình 4: tam giác $ABC$ vuông tại $B$ và tam giác $ADC$ vuông tại $D$. Chứng minh bốn điểm $A$, $B$, $C$, $D$ cùng thuộc một đường tròn. [[br]]\\textit{Giải.} Gọi $O$ là trung điểm của đoạn $AC$. [[br]]Xét tam giác $ABC$ vuông tại $B$ có $BO$ là đường trung tuyến ứng với cạnh huyền $AC$, nên $BO = \\dfrac{AC}{2}$. [[br]]Xét tam giác $ADC$ vuông tại $D$ có $DO$ là đường trung tuyến ứng với cạnh huyền $AC$, nên $DO = \\dfrac{AC}{2}$. [[br]]Mặt khác $O$ là trung điểm $AC$ nên $OA = OC = \\dfrac{AC}{2}$. [[br]]Do đó $OA = OB = OC = OD = \\dfrac{AC}{2}$. [[br]]Vậy bốn điểm $A$, $B$, $C$, $D$ cùng thuộc đường tròn tâm $O$ bán kính $\\dfrac{AC}{2}$.\\end{minipage}\\hfill\\begin{minipage}[t]{0.36\\linewidth}\\vspace{0pt}\n\\centering\n\\adjustbox{max width=\\linewidth, max totalheight=2.6cm}{\n\\begin{tikzpicture}[line width=0.8pt, font=\\small]\n  \\draw[ink] (0,0) -- (4.0,0);\n  \\draw[ink] (0,0) -- (1.1,1.5) -- (4.0,0);\n  \\draw[ink] (0,0) -- (2.6,-1.4) -- (4.0,0);\n  \\draw[ink] (1.1,1.5) ++(-0.02,-0.26) -- ++(0.26,-0.05);\n  \\draw[ink] (2.6,-1.4) ++(0.06,0.26) -- ++(0.24,0.06);\n  \\fill[ink] (2.0,0) circle (1.3pt);\n  \\node[above] at (2.0,0.04) {$O$};\n  \\node[left] at (0,0) {$A$};\n  \\node[right] at (4.0,0) {$C$};\n  \\node[above] at (1.1,1.5) {$B$};\n  \\node[below] at (2.6,-1.4) {$D$};\n\\end{tikzpicture}\n}\n\\par\\vspace{2pt}{\\sffamily\\scriptsize\\itshape\\color{muted}Hình 4}\n\\end{minipage}"
+        },
+        {
+          "type": "noted",
+          "variant": "example",
+          "text": "\\begin{minipage}[t]{0.58\\linewidth}\\vspace{0pt}\\textbf{Ví dụ 9.} Cho hình chữ nhật $ABCD$ có $AB = 8$ cm, $BC = 6$ cm. [[br]]\\textbf{a)} Chứng minh bốn đỉnh $A$, $B$, $C$, $D$ cùng thuộc một đường tròn. [[br]]\\textbf{b)} Tính bán kính của đường tròn đó. [[br]]\\textit{Giải.} \\textbf{a)} Gọi $O$ là giao điểm của hai đường chéo $AC$ và $BD$. [[br]]Vì $ABCD$ là hình chữ nhật nên hai đường chéo bằng nhau và cắt nhau tại trung điểm mỗi đường, tức là $AC = BD$ và $OA = OC = \\dfrac{AC}{2}$, $OB = OD = \\dfrac{BD}{2}$. [[br]]Từ $AC = BD$ suy ra $OA = OB = OC = OD = \\dfrac{AC}{2}$. [[br]]Vậy bốn đỉnh $A$, $B$, $C$, $D$ cùng thuộc đường tròn tâm $O$ bán kính $\\dfrac{AC}{2}$. [[br]]\\textbf{b)} Vì $ABCD$ là hình chữ nhật nên tam giác $ABC$ vuông tại $B$. [[br]]Xét tam giác $ABC$ vuông tại $B$, theo định lí Pythagore: [[br]]$AC^2 = AB^2 + BC^2 = 8^2 + 6^2 = 64 + 36 = 100$. [[br]]Suy ra $AC = \\sqrt{100} = 10$ (cm). [[br]]Do đó $R = \\dfrac{AC}{2} = \\dfrac{10}{2} = 5$ (cm). [[br]]Vậy bán kính đường tròn đi qua bốn đỉnh bằng $5$ cm.\\end{minipage}\\hfill\\begin{minipage}[t]{0.36\\linewidth}\\vspace{0pt}\n\\centering\n\\adjustbox{max width=\\linewidth, max totalheight=2.4cm}{\n\\begin{tikzpicture}[line width=0.8pt, font=\\small]\n  \\draw[ink] (0,0) rectangle (3.2,2.4);\n  \\draw[ink] (0,0) -- (3.2,2.4);\n  \\draw[ink] (3.2,0) -- (0,2.4);\n  \\fill[ink] (1.6,1.2) circle (1.3pt);\n  \\node[above right] at (1.6,1.2) {$O$};\n  \\node[below left] at (0,0) {$A$};\n  \\node[below right] at (3.2,0) {$B$};\n  \\node[above right] at (3.2,2.4) {$C$};\n  \\node[above left] at (0,2.4) {$D$};\n\\end{tikzpicture}\n}\n\\par\\vspace{2pt}{\\sffamily\\scriptsize\\itshape\\color{muted}Hình 5}\n\\end{minipage}"
+        }
+      ]
+    },
+    {
+      "kind": "practice1",
+      "number": 3,
+      "title": "Luyện tập 1",
+      "teacher_note": "20 câu nhận biết, hình đã vẽ sẵn nên HS chỉ đọc hình rồi chọn/điền — chạy nhanh, mỗi câu khoảng 1 phút. Bài 11 và Bài 12 là giàn giáo cho Bài 13, 14 ở Luyện tập 2.",
+      "blocks": [
+        {
+          "type": "problem",
+          "label": "Bài 1.",
+          "level": 1,
+          "tier": "onclass",
+          "figure_given": true,
+          "statement": "[[wrap]]\\makebox[0pt][l]{\\hspace{0.62\\linewidth}\\smash{\\raisebox{-1.75cm}{\\vtop{\\hbox{\\adjustbox{max width=0.32\\linewidth, max totalheight=2.2cm}{\n\\begin{tikzpicture}[line width=0.8pt, font=\\small]\n  \\draw[ink] (0,0) circle (1.3);\n  \\fill[ink] (0,0) circle (1.2pt);\n  \\node[below right] at (0,0) {$O$};\n  \\draw[ink] (0,0) -- (60:1.3);\n  \\node[above right] at (60:1.3) {$A$};\n  \\draw[ink] (180:1.3) -- (0:1.3);\n  \\node[left] at (180:1.3) {$B$};\n  \\node[right] at (0:1.3) {$C$};\n  \\draw[ink] (250:1.3) -- (300:1.3);\n  \\node[below left] at (250:1.3) {$M$};\n  \\node[below right] at (300:1.3) {$N$};\n\\end{tikzpicture}\n}}\n\\hbox to 0.32\\linewidth{\\hfil{\\sffamily\\scriptsize\\itshape\\color{muted}Hình 6}\\hfil}}}}}[[/wrap]][NB] Trên Hình 6, đoạn thẳng nào là \\textbf{bán kính} của đường tròn $(O)$?\\par\\vspace{4pt}\\parbox[t]{0.30\\linewidth}{\\textbf{A.} $OA$}\\parbox[t]{0.30\\linewidth}{\\textbf{B.} $MN$}\\par\\vspace{6pt}\\parbox[t]{0.30\\linewidth}{\\textbf{C.} $BC$}\\parbox[t]{0.30\\linewidth}{\\textbf{D.} $AB$}\\par\\vspace{0.67cm}",
+          "solution": "Đáp án \\textbf{A}. Bán kính nối tâm $O$ với một điểm trên đường tròn, đó là $OA$."
+        },
+        {
+          "type": "writelines",
+          "count": 0
+        },
+        {
+          "type": "problem",
+          "label": "Bài 2.",
+          "level": 1,
+          "tier": "onclass",
+          "figure_given": true,
+          "statement": "[NB] Vẫn trên Hình 6, đoạn thẳng nào là \\textbf{đường kính} của đường tròn $(O)$?\\par\\vspace{4pt}\\parbox[t]{0.30\\linewidth}{\\textbf{A.} $OA$}\\parbox[t]{0.30\\linewidth}{\\textbf{B.} $MN$}\\par\\vspace{6pt}\\parbox[t]{0.30\\linewidth}{\\textbf{C.} $BC$}\\parbox[t]{0.30\\linewidth}{\\textbf{D.} $ON$}",
+          "solution": "Đáp án \\textbf{C}. $BC$ là dây cung đi qua tâm $O$ nên là đường kính."
+        },
+        {
+          "type": "writelines",
+          "count": 0
+        },
+        {
+          "type": "problem",
+          "label": "Bài 3.",
+          "level": 1,
+          "tier": "onclass",
+          "figure_given": true,
+          "statement": "[NB] Vẫn trên Hình 6, đoạn thẳng $MN$ được gọi là gì của đường tròn $(O)$?\\par\\vspace{4pt}\\parbox[t]{0.30\\linewidth}{\\textbf{A.} Bán kính}\\parbox[t]{0.30\\linewidth}{\\textbf{B.} Dây cung}\\par\\vspace{6pt}\\parbox[t]{0.30\\linewidth}{\\textbf{C.} Đường kính}\\parbox[t]{0.30\\linewidth}{\\textbf{D.} Tâm}",
+          "solution": "Đáp án \\textbf{B}. $MN$ nối hai điểm trên đường tròn nhưng không đi qua tâm nên là dây cung."
+        },
+        {
+          "type": "writelines",
+          "count": 0
+        },
+        {
+          "type": "problem",
+          "label": "Bài 4.",
+          "level": 1,
+          "tier": "onclass",
+          "figure_given": true,
+          "statement": "[NB] Cho đường tròn $(O; 7\\text{ cm})$. Dây dài nhất của đường tròn này có độ dài bằng:\\par\\vspace{4pt}\\parbox[t]{0.30\\linewidth}{\\textbf{A.} $7$ cm}\\parbox[t]{0.30\\linewidth}{\\textbf{B.} $3{,}5$ cm}\\par\\vspace{6pt}\\parbox[t]{0.30\\linewidth}{\\textbf{C.} $14$ cm}\\parbox[t]{0.30\\linewidth}{\\textbf{D.} $49$ cm}",
+          "solution": "Đáp án \\textbf{C}. Dây lớn nhất là đường kính, dài $2R = 2 \\cdot 7 = 14$ (cm)."
+        },
+        {
+          "type": "writelines",
+          "count": 0
+        },
+        {
+          "type": "problem",
+          "label": "Bài 5.",
+          "level": 1,
+          "tier": "onclass",
+          "figure_given": true,
+          "statement": "[[wrap]]\\makebox[0pt][l]{\\hspace{0.62\\linewidth}\\smash{\\raisebox{-1.75cm}{\\vtop{\\hbox{\\adjustbox{max width=0.32\\linewidth, max totalheight=2.2cm}{\n\\begin{tikzpicture}[line width=0.8pt, font=\\small]\n  \\draw[ink] (0,0) circle (1.3);\n  \\fill[ink] (0,0) circle (1.2pt);\n  \\node[below right] at (0,0) {$O$};\n  \\fill[ink] (0.6,0.35) circle (1.6pt);\n  \\node[above] at (0.6,0.42) {$P$};\n  \\fill[ink] (140:1.3) circle (1.6pt);\n  \\node[above left] at (140:1.3) {$Q$};\n  \\fill[ink] (-0.3,-1.9) circle (1.6pt);\n  \\node[below] at (-0.3,-1.96) {$S$};\n\\end{tikzpicture}\n}}\n\\hbox to 0.32\\linewidth{\\hfil{\\sffamily\\scriptsize\\itshape\\color{muted}Hình 7}\\hfil}}}}}[[/wrap]][NB] Trên Hình 7, điểm nào nằm \\textbf{ngoài} đường tròn $(O)$?\\par\\vspace{4pt}\\parbox[t]{0.30\\linewidth}{\\textbf{A.} Điểm $P$}\\parbox[t]{0.30\\linewidth}{\\textbf{B.} Điểm $Q$}\\par\\vspace{6pt}\\parbox[t]{0.30\\linewidth}{\\textbf{C.} Điểm $S$}\\parbox[t]{0.30\\linewidth}{\\textbf{D.} Điểm $O$}\\par\\vspace{0.67cm}",
+          "solution": "Đáp án \\textbf{C}. $P$ nằm trong, $Q$ nằm trên, còn $S$ nằm ngoài đường tròn."
+        },
+        {
+          "type": "writelines",
+          "count": 0
+        },
+        {
+          "type": "problem",
+          "label": "Bài 6.",
+          "level": 1,
+          "tier": "onclass",
+          "figure_given": true,
+          "statement": "Cho đường tròn $(O; 5\\text{ cm})$. Điền \\textit{nằm trong} / \\textit{nằm trên} / \\textit{nằm ngoài} vào chỗ chấm: [[br]]a) [NB] $OA = 3$ cm. Vì $3 \\ldots 5$ nên điểm $A$ \\ldots\\ldots đường tròn. [[br]]b) [NB] $OB = 5$ cm. Vì $5 \\ldots 5$ nên điểm $B$ \\ldots\\ldots đường tròn. [[br]]c) [NB] $OC = 9$ cm. Vì $9 \\ldots 5$ nên điểm $C$ \\ldots\\ldots đường tròn.",
+          "solution": "a) $3 < 5$ nên $A$ nằm trong đường tròn. [[br]]b) $5 = 5$ nên $B$ nằm trên đường tròn. [[br]]c) $9 > 5$ nên $C$ nằm ngoài đường tròn."
+        },
+        {
+          "type": "writelines",
+          "count": 2
+        },
+        {
+          "type": "problem",
+          "label": "Bài 7.",
+          "level": 1,
+          "tier": "onclass",
+          "figure_given": true,
+          "statement": "[[wrap]]\\makebox[0pt][l]{\\hspace{0.62\\linewidth}\\smash{\\raisebox{-1.75cm}{\\vtop{\\hbox{\\adjustbox{max width=0.32\\linewidth, max totalheight=2.2cm}{\n\\begin{tikzpicture}[line width=0.8pt, font=\\small]\n  \\draw[ink] (0,0) circle (1.3);\n  \\fill[ink] (0,0) circle (1.2pt);\n  \\node[below] at (0,-0.1) {$O$};\n  \\draw[ink] (180:1.3) -- (0:1.3);\n  \\draw[ink] (180:1.3) -- (65:1.3) -- (0:1.3);\n  \\draw[ink] (65:1.3) ++(-0.04,-0.24) -- ++(0.23,-0.07);\n  \\node[left] at (180:1.3) {$B$};\n  \\node[right] at (0:1.3) {$C$};\n  \\node[above] at (65:1.3) {$A$};\n\\end{tikzpicture}\n}}\n\\hbox to 0.32\\linewidth{\\hfil{\\sffamily\\scriptsize\\itshape\\color{muted}Hình 8}\\hfil}}}}}[[/wrap]]Trên Hình 8, tam giác $ABC$ vuông tại $A$ có ba đỉnh cùng thuộc $(O)$. Điền vào chỗ chấm: [[br]]a) [NB] Cạnh huyền của tam giác $ABC$ là cạnh \\ldots\\ldots [[br]]b) [NB] Đường kính của đường tròn $(O)$ là đoạn \\ldots\\ldots [[br]]c) [NB] Tâm $O$ là trung điểm của đoạn \\ldots\\ldots\\par\\vspace{0.67cm}",
+          "solution": "a) Cạnh huyền là $BC$ (cạnh đối diện góc vuông $A$). [[br]]b) Đường kính là $BC$. [[br]]c) $O$ là trung điểm của $BC$."
+        },
+        {
+          "type": "writelines",
+          "count": 2
+        },
+        {
+          "type": "problem",
+          "label": "Bài 8.",
+          "level": 1,
+          "tier": "onclass",
+          "figure_given": true,
+          "statement": "[[wrap]]\\makebox[0pt][l]{\\hspace{0.62\\linewidth}\\smash{\\raisebox{-1.75cm}{\\vtop{\\hbox{\\adjustbox{max width=0.32\\linewidth, max totalheight=2.2cm}{\n\\begin{tikzpicture}[line width=0.8pt, font=\\small]\n  \\draw[ink] (0,0) circle (1.3);\n  \\fill[ink] (0,0) circle (1.2pt);\n  \\node[below right] at (0,0) {$O$};\n  \\draw[ink] (150:1.3) -- (330:1.3);\n  \\draw[ink] (150:1.3) -- (20:1.3) -- (330:1.3);\n  \\draw[ink] (20:1.3) ++(-0.16,-0.20) -- ++(0.10,-0.23);\n  \\node[above left] at (150:1.3) {$N$};\n  \\node[below right] at (330:1.3) {$P$};\n  \\node[right] at (20:1.3) {$M$};\n\\end{tikzpicture}\n}}\n\\hbox to 0.32\\linewidth{\\hfil{\\sffamily\\scriptsize\\itshape\\color{muted}Hình 9}\\hfil}}}}}[[/wrap]][NB] Trên Hình 9, tam giác $MNP$ vuông tại $M$ có ba đỉnh cùng thuộc $(O)$. Đường kính của $(O)$ là:\\par\\vspace{4pt}\\parbox[t]{0.30\\linewidth}{\\textbf{A.} $MN$}\\parbox[t]{0.30\\linewidth}{\\textbf{B.} $MP$}\\par\\vspace{6pt}\\parbox[t]{0.30\\linewidth}{\\textbf{C.} $NP$}\\parbox[t]{0.30\\linewidth}{\\textbf{D.} $OM$}\\par\\vspace{0.67cm}",
+          "solution": "Đáp án \\textbf{C}. Tam giác vuông tại $M$ nên cạnh huyền $NP$ là đường kính."
+        },
+        {
+          "type": "writelines",
+          "count": 0
+        },
+        {
+          "type": "problem",
+          "label": "Bài 9.",
+          "level": 1,
+          "tier": "onclass",
+          "figure_given": true,
+          "statement": "[NB] Cho tam giác $ABC$ vuông tại $A$ có $BC = 12$ cm. Bán kính đường tròn đi qua ba điểm $A$, $B$, $C$ bằng:\\par\\vspace{4pt}\\parbox[t]{0.30\\linewidth}{\\textbf{A.} $12$ cm}\\parbox[t]{0.30\\linewidth}{\\textbf{B.} $6$ cm}\\par\\vspace{6pt}\\parbox[t]{0.30\\linewidth}{\\textbf{C.} $24$ cm}\\parbox[t]{0.30\\linewidth}{\\textbf{D.} $3$ cm}",
+          "solution": "Đáp án \\textbf{B}. $R = \\dfrac{BC}{2} = \\dfrac{12}{2} = 6$ (cm)."
+        },
+        {
+          "type": "writelines",
+          "count": 0
+        },
+        {
+          "type": "problem",
+          "label": "Bài 10.",
+          "level": 1,
+          "tier": "onclass",
+          "figure_given": true,
+          "statement": "[NB] Tâm của đường tròn đi qua ba đỉnh của một tam giác vuông là:\\par\\vspace{4pt}\\parbox[t]{0.46\\linewidth}{\\textbf{A.} Đỉnh góc vuông}\\parbox[t]{0.46\\linewidth}{\\textbf{B.} Trung điểm cạnh huyền}\\par\\vspace{6pt}\\parbox[t]{0.46\\linewidth}{\\textbf{C.} Trung điểm một cạnh góc vuông}\\parbox[t]{0.46\\linewidth}{\\textbf{D.} Giao ba đường phân giác}",
+          "solution": "Đáp án \\textbf{B}. Tâm là trung điểm cạnh huyền, khi đó cạnh huyền là đường kính."
+        },
+        {
+          "type": "writelines",
+          "count": 0
+        },
+        {
+          "type": "problem",
+          "label": "Bài 11.",
+          "level": 1,
+          "tier": "onclass",
+          "figure_given": true,
+          "statement": "Cho tam giác $ABC$ vuông tại $A$ có $AB = 6$ cm, $AC = 8$ cm. Điền số vào chỗ chấm: [[br]]a) [NB] Theo định lí Pythagore: $BC^2 = AB^2 + AC^2 = 6^2 + 8^2 = \\ldots\\ldots$ [[br]]b) [NB] Suy ra $BC = \\ldots\\ldots$ cm. [[br]]c) [NB] Bán kính đường tròn đi qua $A$, $B$, $C$ là $R = \\dfrac{BC}{2} = \\ldots\\ldots$ cm.",
+          "solution": "a) $BC^2 = 36 + 64 = 100$. [[br]]b) $BC = 10$ cm. [[br]]c) $R = \\dfrac{10}{2} = 5$ cm."
+        },
+        {
+          "type": "writelines",
+          "count": 2
+        },
+        {
+          "type": "problem",
+          "label": "Bài 12.",
+          "level": 1,
+          "tier": "onclass",
+          "figure_given": true,
+          "statement": "Cho tam giác $DEF$ vuông tại $D$ có cạnh huyền $EF = 13$ cm và $DE = 5$ cm. Điền số vào chỗ chấm: [[br]]a) [NB] Bán kính đường tròn đi qua $D$, $E$, $F$ là $R = \\dfrac{EF}{2} = \\ldots\\ldots$ cm. [[br]]b) [NB] Theo định lí Pythagore: $DF^2 = EF^2 - DE^2 = 13^2 - 5^2 = \\ldots\\ldots$ [[br]]c) [NB] Suy ra $DF = \\ldots\\ldots$ cm.",
+          "solution": "a) $R = \\dfrac{13}{2} = 6{,}5$ cm. [[br]]b) $DF^2 = 169 - 25 = 144$. [[br]]c) $DF = 12$ cm."
+        },
+        {
+          "type": "writelines",
+          "count": 2
+        }
+      ]
+    },
+    {
+      "kind": "practice2",
+      "number": 4,
+      "title": "Luyện tập 2",
+      "teacher_note": "Bài 13, 14 cho HS làm rồi chữa. Bài 15 là bài ghép: ý a, b là bước đệm để HS tự viết được ý c. Bài 17 là bài hình trọn vẹn, chỉ làm tại lớp, không giao về nhà.",
+      "blocks": [
+        {
+          "type": "problem",
+          "label": "Bài 13.",
+          "level": 2,
+          "tier": "onclass",
+          "statement": "[TH] Cho tam giác $ABC$ vuông tại $A$ có $AB = 5$ cm, $AC = 12$ cm. Tính bán kính đường tròn đi qua ba đỉnh $A$, $B$, $C$.",
+          "solution": "Xét tam giác $ABC$ vuông tại $A$, theo định lí Pythagore: [[br]]$BC^2 = AB^2 + AC^2 = 5^2 + 12^2 = 25 + 144 = 169$. [[br]]Suy ra $BC = \\sqrt{169} = 13$ (cm). [[br]]Vì tam giác $ABC$ vuông tại $A$ nên ba đỉnh cùng thuộc đường tròn tâm $O$ là trung điểm cạnh huyền $BC$, bán kính $R = \\dfrac{BC}{2}$. [[br]]Do đó $R = \\dfrac{13}{2} = 6{,}5$ (cm). [[br]]Vậy bán kính bằng $6{,}5$ cm."
+        },
+        {
+          "type": "writelines",
+          "count": 4
+        },
+        {
+          "type": "problem",
+          "label": "Bài 14.",
+          "level": 2,
+          "tier": "onclass",
+          "statement": "[TH] Đường tròn đi qua ba đỉnh của tam giác $MNP$ vuông tại $M$ có bán kính $R = 8{,}5$ cm. Biết $MN = 8$ cm, tính độ dài $MP$.",
+          "solution": "Vì tam giác $MNP$ vuông tại $M$ nên cạnh huyền $NP$ là đường kính của đường tròn đi qua ba đỉnh. [[br]]Do đó $NP = 2R = 2 \\cdot 8{,}5 = 17$ (cm). [[br]]Xét tam giác $MNP$ vuông tại $M$, theo định lí Pythagore: [[br]]$MP^2 = NP^2 - MN^2 = 17^2 - 8^2 = 289 - 64 = 225$. [[br]]Suy ra $MP = \\sqrt{225} = 15$ (cm). [[br]]Vậy $MP = 15$ cm."
+        },
+        {
+          "type": "writelines",
+          "count": 4
+        },
+        {
+          "type": "problem",
+          "label": "Bài 15.",
+          "level": 2,
+          "tier": "onclass",
+          "statement": "[[wrap]]\\makebox[0pt][l]{\\hspace{0.62\\linewidth}\\smash{\\raisebox{-1.75cm}{\\vtop{\\hbox{\\adjustbox{max width=0.32\\linewidth, max totalheight=2.4cm}{\n\\begin{tikzpicture}[line width=0.8pt, font=\\small]\n  \\draw[ink] (0,0) -- (4.0,0);\n  \\draw[ink] (0,0) -- (1.2,1.5) -- (4.0,0);\n  \\draw[ink] (0,0) -- (2.5,-1.4) -- (4.0,0);\n  \\draw[ink] (1.2,1.5) ++(-0.03,-0.26) -- ++(0.25,-0.06);\n  \\draw[ink] (2.5,-1.4) ++(0.05,0.26) -- ++(0.25,0.06);\n  \\node[left] at (0,0) {$A$};\n  \\node[right] at (4.0,0) {$C$};\n  \\node[above] at (1.2,1.5) {$B$};\n  \\node[below] at (2.5,-1.4) {$D$};\n\\end{tikzpicture}\n}}\n\\hbox to 0.32\\linewidth{\\hfil{\\sffamily\\scriptsize\\itshape\\color{muted}Hình 10}\\hfil}}}}}[[/wrap]]Cho Hình 10: tam giác $ABC$ vuông tại $B$ và tam giác $ADC$ vuông tại $D$. Gọi $O$ là trung điểm của $AC$. [[br]]a) [NB] Cạnh huyền của tam giác $ABC$ là \\ldots\\ldots; cạnh huyền của tam giác $ADC$ là \\ldots\\ldots [[br]]b) [NB] $BO$ là đường trung tuyến ứng với cạnh huyền của tam giác $ABC$ nên $BO = \\ldots\\ldots$; tương tự $DO = \\ldots\\ldots$ [[br]]c) [TH] Từ hai ý trên, hãy kết luận bốn điểm $A$, $B$, $C$, $D$ cùng thuộc một đường tròn và chỉ rõ tâm, bán kính của đường tròn đó.\\par\\vspace{0.67cm}",
+          "solution": "a) Cạnh huyền của tam giác $ABC$ là $AC$; cạnh huyền của tam giác $ADC$ cũng là $AC$. [[br]]b) $BO = \\dfrac{AC}{2}$ và $DO = \\dfrac{AC}{2}$. [[br]]c) Vì $O$ là trung điểm của $AC$ nên $OA = OC = \\dfrac{AC}{2}$. [[br]]Kết hợp với ý b) ta được $OA = OB = OC = OD = \\dfrac{AC}{2}$. [[br]]Vậy bốn điểm $A$, $B$, $C$, $D$ cùng thuộc đường tròn tâm $O$ là trung điểm $AC$, bán kính $R = \\dfrac{AC}{2}$."
+        },
+        {
+          "type": "writelines",
+          "count": 4
+        },
+        {
+          "type": "problem",
+          "label": "Bài 16.",
+          "level": 2,
+          "tier": "onclass",
+          "statement": "[[wrap]]\\makebox[0pt][l]{\\hspace{0.62\\linewidth}\\smash{\\raisebox{-1.75cm}{\\vtop{\\hbox{\\adjustbox{max width=0.32\\linewidth, max totalheight=2.4cm}{\n\\begin{tikzpicture}[line width=0.8pt, font=\\small]\n  \\draw[ink] (0,0) -- (3.6,0) -- (1.5,2.4) -- cycle;\n  \\draw[ink] (0,0) -- (2.52,1.03);\n  \\draw[ink] (3.6,0) -- (0.79,1.26);\n  \\draw[ink] (2.52,1.03) ++(-0.18,-0.16) -- ++(-0.09,0.22);\n  \\draw[ink] (0.79,1.26) ++(0.20,0.13) -- ++(0.08,-0.23);\n  \\node[below left] at (0,0) {$B$};\n  \\node[below right] at (3.6,0) {$C$};\n  \\node[above] at (1.5,2.4) {$A$};\n  \\node[right] at (2.52,1.03) {$E$};\n  \\node[left] at (0.79,1.26) {$F$};\n  \\node[below right] at (1.62,0.66) {$H$};\n\\end{tikzpicture}\n}}\n\\hbox to 0.32\\linewidth{\\hfil{\\sffamily\\scriptsize\\itshape\\color{muted}Hình 11}\\hfil}}}}}[[/wrap]][TH] Cho Hình 11: tam giác $ABC$ nhọn có hai đường cao $BE$ và $CF$ cắt nhau tại $H$. Chứng minh bốn điểm $B$, $C$, $E$, $F$ cùng thuộc một đường tròn.\\par\\vspace{0.67cm}",
+          "solution": "Gọi $O$ là trung điểm của đoạn $BC$. [[br]]Vì $BE$ là đường cao nên $BE \\perp AC$, do đó tam giác $BEC$ vuông tại $E$. [[br]]Xét tam giác $BEC$ vuông tại $E$ có $EO$ là đường trung tuyến ứng với cạnh huyền $BC$, nên $EO = \\dfrac{BC}{2}$. [[br]]Vì $CF$ là đường cao nên $CF \\perp AB$, do đó tam giác $BFC$ vuông tại $F$. [[br]]Xét tam giác $BFC$ vuông tại $F$ có $FO$ là đường trung tuyến ứng với cạnh huyền $BC$, nên $FO = \\dfrac{BC}{2}$. [[br]]Mặt khác $O$ là trung điểm $BC$ nên $OB = OC = \\dfrac{BC}{2}$. [[br]]Do đó $OB = OC = OE = OF = \\dfrac{BC}{2}$. [[br]]Vậy bốn điểm $B$, $C$, $E$, $F$ cùng thuộc đường tròn tâm $O$ là trung điểm $BC$, bán kính $\\dfrac{BC}{2}$."
+        },
+        {
+          "type": "writelines",
+          "count": 6
+        },
+        {
+          "type": "problem",
+          "label": "Bài 17.",
+          "level": 3,
+          "tier": "onclass",
+          "statement": "[[wrap]]\\makebox[0pt][l]{\\hspace{0.62\\linewidth}\\smash{\\raisebox{-1.75cm}{\\vtop{\\hbox{\\adjustbox{max width=0.32\\linewidth, max totalheight=2.2cm}{\n\\begin{tikzpicture}[line width=0.8pt, font=\\small]\n  \\draw[ink] (0,0) rectangle (3.6,1.5);\n  \\draw[ink] (0,0) -- (3.6,1.5);\n  \\draw[ink] (3.6,0) -- (0,1.5);\n  \\fill[ink] (1.8,0.75) circle (1.3pt);\n  \\node[above right] at (1.8,0.75) {$O$};\n  \\node[below left] at (0,0) {$A$};\n  \\node[below right] at (3.6,0) {$B$};\n  \\node[above right] at (3.6,1.5) {$C$};\n  \\node[above left] at (0,1.5) {$D$};\n  \\node[below] at (1.8,0) {$12$};\n  \\node[right] at (3.6,0.75) {$5$};\n\\end{tikzpicture}\n}}\n\\hbox to 0.32\\linewidth{\\hfil{\\sffamily\\scriptsize\\itshape\\color{muted}Hình 12}\\hfil}}}}}[[/wrap]][VD] Cho Hình 12: hình chữ nhật $ABCD$ có $AB = 12$ cm, $BC = 5$ cm. [[br]]a) Chứng minh bốn đỉnh $A$, $B$, $C$, $D$ cùng thuộc một đường tròn. [[br]]b) Tính bán kính của đường tròn đó.\\par\\vspace{0.67cm}",
+          "solution": "a) Gọi $O$ là giao điểm của hai đường chéo $AC$ và $BD$. [[br]]Vì $ABCD$ là hình chữ nhật nên hai đường chéo bằng nhau và cắt nhau tại trung điểm mỗi đường, tức là $AC = BD$, $OA = OC = \\dfrac{AC}{2}$ và $OB = OD = \\dfrac{BD}{2}$. [[br]]Từ $AC = BD$ suy ra $OA = OB = OC = OD = \\dfrac{AC}{2}$. [[br]]Vậy bốn đỉnh $A$, $B$, $C$, $D$ cùng thuộc đường tròn tâm $O$ bán kính $\\dfrac{AC}{2}$. [[br]]b) Vì $ABCD$ là hình chữ nhật nên tam giác $ABC$ vuông tại $B$. [[br]]Xét tam giác $ABC$ vuông tại $B$, theo định lí Pythagore: [[br]]$AC^2 = AB^2 + BC^2 = 12^2 + 5^2 = 144 + 25 = 169$. [[br]]Suy ra $AC = \\sqrt{169} = 13$ (cm). [[br]]Do đó $R = \\dfrac{AC}{2} = \\dfrac{13}{2} = 6{,}5$ (cm). [[br]]Vậy bán kính đường tròn đi qua bốn đỉnh bằng $6{,}5$ cm."
+        },
+        {
+          "type": "writelines",
+          "count": 6
+        }
+      ]
+    },
+    {
+      "kind": "reflection",
+      "number": 5,
+      "title": "Sơ đồ tư duy",
+      "teacher_note": "BTVN 18 yêu cầu HS tự vẽ hình — nhắc mang compa. Giàn giáo giữ nguyên ở mọi bài về nhà vì không có GV đỡ.",
+      "blocks": [
+        {
+          "type": "mindmap",
+          "caption": "Sơ đồ tư duy: Mở đầu về đường tròn",
+          "root": "ĐƯỜNG TRÒN $(O; R)$",
+          "branches": [
+            {
+              "label": "CÁC ĐOẠN THẲNG",
+              "children": [
+                {
+                  "label": "Bán kính: nối tâm $\\to$ đường tròn"
+                },
+                {
+                  "label": "Dây cung: nối 2 điểm trên đường tròn"
+                },
+                {
+                  "label": "Đường kính $=$ dây qua tâm $= 2R$"
+                },
+                {
+                  "label": "Đường kính là dây LỚN NHẤT"
+                }
+              ]
+            },
+            {
+              "label": "VỊ TRÍ ĐIỂM $M$",
+              "children": [
+                {
+                  "label": "$OM < R$: nằm trong"
+                },
+                {
+                  "label": "$OM = R$: nằm trên"
+                },
+                {
+                  "label": "$OM > R$: nằm ngoài"
+                }
+              ]
+            },
+            {
+              "label": "TAM GIÁC VUÔNG",
+              "children": [
+                {
+                  "label": "Tâm $=$ trung điểm cạnh huyền"
+                },
+                {
+                  "label": "Cạnh huyền $=$ đường kính"
+                },
+                {
+                  "label": "$R = \\dfrac{\\text{cạnh huyền}}{2}$"
+                }
+              ]
+            },
+            {
+              "label": "4 ĐIỂM CÙNG ĐƯỜNG TRÒN",
+              "children": [
+                {
+                  "label": "Tìm cạnh huyền CHUNG của 2 tam giác vuông"
+                },
+                {
+                  "label": "Gọi $O$ là trung điểm cạnh huyền chung"
+                },
+                {
+                  "label": "Trung tuyến ứng cạnh huyền $= \\dfrac{1}{2}$ cạnh huyền"
+                },
+                {
+                  "label": "Kết luận $OA = OB = OC = OD$"
+                }
+              ]
+            }
+          ]
+        },
+        {
+          "type": "writelines",
+          "count": 0
+        },
+        {
+          "type": "para",
+          "text": "\\textbf{BÀI TẬP VỀ NHÀ (Mở đầu về đường tròn).}"
+        },
+        {
+          "type": "problem",
+          "label": "BTVN 1.",
+          "level": 1,
+          "tier": "btvn",
+          "figure_given": true,
+          "statement": "[[wrap]]\\makebox[0pt][l]{\\hspace{0.62\\linewidth}\\smash{\\raisebox{-1.75cm}{\\vtop{\\hbox{\\adjustbox{max width=0.32\\linewidth, max totalheight=2.2cm}{\n\\begin{tikzpicture}[line width=0.8pt, font=\\small]\n  \\draw[ink] (0,0) circle (1.3);\n  \\fill[ink] (0,0) circle (1.2pt);\n  \\node[below right] at (0,0) {$I$};\n  \\draw[ink] (0,0) -- (110:1.3);\n  \\node[above left] at (110:1.3) {$E$};\n  \\draw[ink] (200:1.3) -- (20:1.3);\n  \\node[below left] at (200:1.3) {$F$};\n  \\node[above right] at (20:1.3) {$G$};\n  \\draw[ink] (280:1.3) -- (340:1.3);\n  \\node[below] at (280:1.3) {$H$};\n  \\node[right] at (340:1.3) {$K$};\n\\end{tikzpicture}\n}}\n\\hbox to 0.32\\linewidth{\\hfil{\\sffamily\\scriptsize\\itshape\\color{muted}Hình 13}\\hfil}}}}}[[/wrap]][NB] Trên Hình 13, đoạn thẳng nào là \\textbf{đường kính} của đường tròn $(I)$?\\par\\vspace{4pt}\\parbox[t]{0.30\\linewidth}{\\textbf{A.} $IE$}\\parbox[t]{0.30\\linewidth}{\\textbf{B.} $FG$}\\par\\vspace{6pt}\\parbox[t]{0.30\\linewidth}{\\textbf{C.} $HK$}\\parbox[t]{0.30\\linewidth}{\\textbf{D.} $EF$}\\par\\vspace{0.67cm}",
+          "solution": "Đáp án \\textbf{B}. $FG$ là dây đi qua tâm $I$ nên là đường kính."
+        },
+        {
+          "type": "writelines",
+          "count": 0
+        },
+        {
+          "type": "problem",
+          "label": "BTVN 2.",
+          "level": 1,
+          "tier": "btvn",
+          "figure_given": true,
+          "statement": "[NB] Vẫn trên Hình 13, đoạn thẳng $HK$ được gọi là gì của đường tròn $(I)$?\\par\\vspace{4pt}\\parbox[t]{0.30\\linewidth}{\\textbf{A.} Bán kính}\\parbox[t]{0.30\\linewidth}{\\textbf{B.} Dây cung}\\par\\vspace{6pt}\\parbox[t]{0.30\\linewidth}{\\textbf{C.} Đường kính}\\parbox[t]{0.30\\linewidth}{\\textbf{D.} Tâm}",
+          "solution": "Đáp án \\textbf{B}. $HK$ nối hai điểm trên đường tròn và không đi qua tâm nên là dây cung."
+        },
+        {
+          "type": "writelines",
+          "count": 0
+        },
+        {
+          "type": "problem",
+          "label": "BTVN 3.",
+          "level": 1,
+          "tier": "btvn",
+          "figure_given": true,
+          "statement": "[NB] Vẫn trên Hình 13, đoạn thẳng $IE$ được gọi là gì của đường tròn $(I)$?\\par\\vspace{4pt}\\parbox[t]{0.30\\linewidth}{\\textbf{A.} Bán kính}\\parbox[t]{0.30\\linewidth}{\\textbf{B.} Dây cung}\\par\\vspace{6pt}\\parbox[t]{0.30\\linewidth}{\\textbf{C.} Đường kính}\\parbox[t]{0.30\\linewidth}{\\textbf{D.} Cạnh huyền}",
+          "solution": "Đáp án \\textbf{A}. $IE$ nối tâm $I$ với điểm $E$ trên đường tròn nên là bán kính."
+        },
+        {
+          "type": "writelines",
+          "count": 0
+        },
+        {
+          "type": "problem",
+          "label": "BTVN 4.",
+          "level": 1,
+          "tier": "btvn",
+          "figure_given": true,
+          "statement": "[NB] Cho đường tròn $(O; 9\\text{ cm})$. Dây dài nhất của đường tròn này có độ dài bằng:\\par\\vspace{4pt}\\parbox[t]{0.30\\linewidth}{\\textbf{A.} $9$ cm}\\parbox[t]{0.30\\linewidth}{\\textbf{B.} $4{,}5$ cm}\\par\\vspace{6pt}\\parbox[t]{0.30\\linewidth}{\\textbf{C.} $18$ cm}\\parbox[t]{0.30\\linewidth}{\\textbf{D.} $81$ cm}",
+          "solution": "Đáp án \\textbf{C}. Dây lớn nhất là đường kính, dài $2R = 2 \\cdot 9 = 18$ (cm)."
+        },
+        {
+          "type": "writelines",
+          "count": 0
+        },
+        {
+          "type": "problem",
+          "label": "BTVN 5.",
+          "level": 1,
+          "tier": "btvn",
+          "figure_given": true,
+          "statement": "[NB] Đường tròn $(O; R)$ có đường kính bằng $20$ cm. Bán kính $R$ bằng:\\par\\vspace{4pt}\\parbox[t]{0.30\\linewidth}{\\textbf{A.} $20$ cm}\\parbox[t]{0.30\\linewidth}{\\textbf{B.} $40$ cm}\\par\\vspace{6pt}\\parbox[t]{0.30\\linewidth}{\\textbf{C.} $10$ cm}\\parbox[t]{0.30\\linewidth}{\\textbf{D.} $5$ cm}",
+          "solution": "Đáp án \\textbf{C}. Đường kính bằng $2R$ nên $R = \\dfrac{20}{2} = 10$ (cm)."
+        },
+        {
+          "type": "writelines",
+          "count": 0
+        },
+        {
+          "type": "problem",
+          "label": "BTVN 6.",
+          "level": 1,
+          "tier": "btvn",
+          "figure_given": true,
+          "statement": "Cho đường tròn $(O; 8\\text{ cm})$. Điền \\textit{nằm trong} / \\textit{nằm trên} / \\textit{nằm ngoài} vào chỗ chấm: [[br]]a) [NB] $OM = 10$ cm. Vì $10 \\ldots 8$ nên điểm $M$ \\ldots\\ldots đường tròn. [[br]]b) [NB] $ON = 8$ cm. Vì $8 \\ldots 8$ nên điểm $N$ \\ldots\\ldots đường tròn. [[br]]c) [NB] $OP = 2$ cm. Vì $2 \\ldots 8$ nên điểm $P$ \\ldots\\ldots đường tròn.",
+          "solution": "a) $10 > 8$ nên $M$ nằm ngoài đường tròn. [[br]]b) $8 = 8$ nên $N$ nằm trên đường tròn. [[br]]c) $2 < 8$ nên $P$ nằm trong đường tròn."
+        },
+        {
+          "type": "writelines",
+          "count": 2
+        },
+        {
+          "type": "problem",
+          "label": "BTVN 7.",
+          "level": 1,
+          "tier": "btvn",
+          "figure_given": true,
+          "statement": "[[wrap]]\\makebox[0pt][l]{\\hspace{0.62\\linewidth}\\smash{\\raisebox{-1.75cm}{\\vtop{\\hbox{\\adjustbox{max width=0.32\\linewidth, max totalheight=2.2cm}{\n\\begin{tikzpicture}[line width=0.8pt, font=\\small]\n  \\draw[ink] (0,0) circle (1.3);\n  \\fill[ink] (0,0) circle (1.2pt);\n  \\node[below] at (0,-0.1) {$O$};\n  \\draw[ink] (200:1.3) -- (20:1.3);\n  \\draw[ink] (200:1.3) -- (95:1.3) -- (20:1.3);\n  \\draw[ink] (95:1.3) ++(0.02,-0.25) -- ++(0.24,-0.02);\n  \\node[below left] at (200:1.3) {$E$};\n  \\node[right] at (20:1.3) {$F$};\n  \\node[above] at (95:1.3) {$D$};\n\\end{tikzpicture}\n}}\n\\hbox to 0.32\\linewidth{\\hfil{\\sffamily\\scriptsize\\itshape\\color{muted}Hình 14}\\hfil}}}}}[[/wrap]]Trên Hình 14, tam giác $DEF$ vuông tại $D$ có ba đỉnh cùng thuộc $(O)$. Điền vào chỗ chấm: [[br]]a) [NB] Cạnh huyền của tam giác $DEF$ là cạnh \\ldots\\ldots [[br]]b) [NB] Đường kính của đường tròn $(O)$ là đoạn \\ldots\\ldots [[br]]c) [NB] Tâm $O$ là trung điểm của đoạn \\ldots\\ldots\\par\\vspace{0.67cm}",
+          "solution": "a) Cạnh huyền là $EF$. [[br]]b) Đường kính là $EF$. [[br]]c) $O$ là trung điểm của $EF$."
+        },
+        {
+          "type": "writelines",
+          "count": 2
+        },
+        {
+          "type": "problem",
+          "label": "BTVN 8.",
+          "level": 1,
+          "tier": "btvn",
+          "figure_given": true,
+          "statement": "[NB] Cho tam giác $ABC$ vuông tại $A$ có $BC = 18$ cm. Bán kính đường tròn đi qua ba điểm $A$, $B$, $C$ bằng:\\par\\vspace{4pt}\\parbox[t]{0.30\\linewidth}{\\textbf{A.} $18$ cm}\\parbox[t]{0.30\\linewidth}{\\textbf{B.} $9$ cm}\\par\\vspace{6pt}\\parbox[t]{0.30\\linewidth}{\\textbf{C.} $36$ cm}\\parbox[t]{0.30\\linewidth}{\\textbf{D.} $4{,}5$ cm}",
+          "solution": "Đáp án \\textbf{B}. $R = \\dfrac{BC}{2} = \\dfrac{18}{2} = 9$ (cm)."
+        },
+        {
+          "type": "writelines",
+          "count": 0
+        },
+        {
+          "type": "problem",
+          "label": "BTVN 9.",
+          "level": 1,
+          "tier": "btvn",
+          "figure_given": true,
+          "statement": "[NB] Tam giác $ABC$ vuông tại $A$ có ba đỉnh cùng thuộc đường tròn $(O)$. Khi đó cạnh huyền $BC$ là:\\par\\vspace{4pt}\\parbox[t]{0.46\\linewidth}{\\textbf{A.} Một bán kính của $(O)$}\\parbox[t]{0.46\\linewidth}{\\textbf{B.} Đường kính của $(O)$}\\par\\vspace{6pt}\\parbox[t]{0.46\\linewidth}{\\textbf{C.} Một dây không qua tâm}\\parbox[t]{0.46\\linewidth}{\\textbf{D.} Không xác định được}",
+          "solution": "Đáp án \\textbf{B}. Tâm $O$ là trung điểm $BC$ nên $BC$ đi qua tâm, tức là đường kính."
+        },
+        {
+          "type": "writelines",
+          "count": 0
+        },
+        {
+          "type": "problem",
+          "label": "BTVN 10.",
+          "level": 1,
+          "tier": "btvn",
+          "figure_given": true,
+          "statement": "[NB] Cho đường tròn $(O; 6\\text{ cm})$ và điểm $A$ với $OA = 6$ cm. Khẳng định nào đúng?\\par\\vspace{4pt}\\parbox[t]{0.46\\linewidth}{\\textbf{A.} $A$ nằm trong đường tròn}\\parbox[t]{0.46\\linewidth}{\\textbf{B.} $A$ nằm trên đường tròn}\\par\\vspace{6pt}\\parbox[t]{0.46\\linewidth}{\\textbf{C.} $A$ nằm ngoài đường tròn}\\parbox[t]{0.46\\linewidth}{\\textbf{D.} $A$ trùng với tâm $O$}",
+          "solution": "Đáp án \\textbf{B}. Vì $OA = 6\\text{ cm} = R$ nên $A$ nằm trên đường tròn."
+        },
+        {
+          "type": "writelines",
+          "count": 0
+        },
+        {
+          "type": "problem",
+          "label": "BTVN 11.",
+          "level": 1,
+          "tier": "btvn",
+          "figure_given": true,
+          "statement": "Cho tam giác $ABC$ vuông tại $A$ có $AB = 9$ cm, $AC = 12$ cm. Điền số vào chỗ chấm: [[br]]a) [NB] Theo định lí Pythagore: $BC^2 = AB^2 + AC^2 = 9^2 + 12^2 = \\ldots\\ldots$ [[br]]b) [NB] Suy ra $BC = \\ldots\\ldots$ cm. [[br]]c) [NB] Bán kính đường tròn đi qua $A$, $B$, $C$ là $R = \\dfrac{BC}{2} = \\ldots\\ldots$ cm.",
+          "solution": "a) $BC^2 = 81 + 144 = 225$. [[br]]b) $BC = 15$ cm. [[br]]c) $R = \\dfrac{15}{2} = 7{,}5$ cm."
+        },
+        {
+          "type": "writelines",
+          "count": 2
+        },
+        {
+          "type": "problem",
+          "label": "BTVN 12.",
+          "level": 1,
+          "tier": "btvn",
+          "figure_given": true,
+          "statement": "Cho tam giác $PQR$ vuông tại $P$ có cạnh huyền $QR = 25$ cm và $PQ = 7$ cm. Điền số vào chỗ chấm: [[br]]a) [NB] Bán kính đường tròn đi qua $P$, $Q$, $R$ là $R = \\dfrac{QR}{2} = \\ldots\\ldots$ cm. [[br]]b) [NB] Theo định lí Pythagore: $PR^2 = QR^2 - PQ^2 = 25^2 - 7^2 = \\ldots\\ldots$ [[br]]c) [NB] Suy ra $PR = \\ldots\\ldots$ cm.",
+          "solution": "a) $R = \\dfrac{25}{2} = 12{,}5$ cm. [[br]]b) $PR^2 = 625 - 49 = 576$. [[br]]c) $PR = 24$ cm."
+        },
+        {
+          "type": "writelines",
+          "count": 2
+        },
+        {
+          "type": "problem",
+          "label": "BTVN 13.",
+          "level": 1,
+          "tier": "btvn",
+          "figure_given": true,
+          "statement": "[[wrap]]\\makebox[0pt][l]{\\hspace{0.62\\linewidth}\\smash{\\raisebox{-1.75cm}{\\vtop{\\hbox{\\adjustbox{max width=0.32\\linewidth, max totalheight=2.4cm}{\n\\begin{tikzpicture}[line width=0.8pt, font=\\small]\n  \\draw[ink] (0,0) -- (4.0,0);\n  \\draw[ink] (0,0) -- (1.4,1.4) -- (4.0,0);\n  \\draw[ink] (0,0) -- (2.2,-1.5) -- (4.0,0);\n  \\draw[ink] (1.4,1.4) ++(-0.05,-0.25) -- ++(0.24,-0.08);\n  \\draw[ink] (2.2,-1.5) ++(0.04,0.26) -- ++(0.26,0.05);\n  \\node[left] at (0,0) {$M$};\n  \\node[right] at (4.0,0) {$P$};\n  \\node[above] at (1.4,1.4) {$N$};\n  \\node[below] at (2.2,-1.5) {$Q$};\n\\end{tikzpicture}\n}}\n\\hbox to 0.32\\linewidth{\\hfil{\\sffamily\\scriptsize\\itshape\\color{muted}Hình 15}\\hfil}}}}}[[/wrap]]Cho Hình 15: tam giác $MNP$ vuông tại $N$ và tam giác $MQP$ vuông tại $Q$. Gọi $O$ là trung điểm của $MP$. Điền vào chỗ chấm: [[br]]a) [NB] Cạnh huyền chung của hai tam giác đó là \\ldots\\ldots [[br]]b) [NB] $NO$ và $QO$ là đường trung tuyến ứng với cạnh huyền nên $NO = QO = \\ldots\\ldots$\\par\\vspace{0.67cm}",
+          "solution": "a) Cạnh huyền chung là $MP$. [[br]]b) $NO = QO = \\dfrac{MP}{2}$."
+        },
+        {
+          "type": "writelines",
+          "count": 2
+        },
+        {
+          "type": "problem",
+          "label": "BTVN 14.",
+          "level": 2,
+          "tier": "btvn",
+          "statement": "[TH] Cho tam giác $ABC$ vuông tại $A$ có $AB = 8$ cm, $AC = 15$ cm. Tính bán kính đường tròn đi qua ba đỉnh $A$, $B$, $C$.",
+          "solution": "Xét tam giác $ABC$ vuông tại $A$, theo định lí Pythagore: [[br]]$BC^2 = AB^2 + AC^2 = 8^2 + 15^2 = 64 + 225 = 289$. [[br]]Suy ra $BC = \\sqrt{289} = 17$ (cm). [[br]]Vì tam giác $ABC$ vuông tại $A$ nên ba đỉnh cùng thuộc đường tròn tâm $O$ là trung điểm cạnh huyền $BC$, bán kính $R = \\dfrac{BC}{2}$. [[br]]Do đó $R = \\dfrac{17}{2} = 8{,}5$ (cm). [[br]]Vậy bán kính bằng $8{,}5$ cm."
+        },
+        {
+          "type": "writelines",
+          "count": 4
+        },
+        {
+          "type": "problem",
+          "label": "BTVN 15.",
+          "level": 2,
+          "tier": "btvn",
+          "statement": "[TH] Đường tròn đi qua ba đỉnh của tam giác $DEF$ vuông tại $D$ có bán kính $R = 6{,}5$ cm. Biết $DE = 5$ cm, tính độ dài $DF$.",
+          "solution": "Vì tam giác $DEF$ vuông tại $D$ nên cạnh huyền $EF$ là đường kính của đường tròn đi qua ba đỉnh. [[br]]Do đó $EF = 2R = 2 \\cdot 6{,}5 = 13$ (cm). [[br]]Xét tam giác $DEF$ vuông tại $D$, theo định lí Pythagore: [[br]]$DF^2 = EF^2 - DE^2 = 13^2 - 5^2 = 169 - 25 = 144$. [[br]]Suy ra $DF = \\sqrt{144} = 12$ (cm). [[br]]Vậy $DF = 12$ cm."
+        },
+        {
+          "type": "writelines",
+          "count": 4
+        },
+        {
+          "type": "problem",
+          "label": "BTVN 16.",
+          "level": 2,
+          "tier": "btvn",
+          "statement": "Cho tam giác $ABC$ vuông tại $A$ có $AB = 6$ cm, $AC = 8$ cm. Gọi $M$ là trung điểm của $BC$. [[br]]a) [TH] Tính độ dài $BC$ rồi tính $AM$. [[br]]b) [TH] Chứng minh bốn điểm $A$, $B$, $C$ và điểm $D$ đối xứng với $A$ qua $M$ cùng thuộc một đường tròn.",
+          "solution": "a) Xét tam giác $ABC$ vuông tại $A$, theo định lí Pythagore: [[br]]$BC^2 = AB^2 + AC^2 = 6^2 + 8^2 = 36 + 64 = 100$, suy ra $BC = 10$ (cm). [[br]]Vì $AM$ là đường trung tuyến ứng với cạnh huyền $BC$ nên $AM = \\dfrac{BC}{2} = \\dfrac{10}{2} = 5$ (cm). [[br]]Vậy $BC = 10$ cm và $AM = 5$ cm. [[br]]b) Vì $D$ đối xứng với $A$ qua $M$ nên $M$ là trung điểm của $AD$, do đó $MD = MA = 5$ cm. [[br]]Mặt khác $M$ là trung điểm $BC$ nên $MB = MC = \\dfrac{BC}{2} = 5$ cm. [[br]]Do đó $MA = MB = MC = MD = 5$ cm. [[br]]Vậy bốn điểm $A$, $B$, $C$, $D$ cùng thuộc đường tròn tâm $M$ bán kính $5$ cm."
+        },
+        {
+          "type": "writelines",
+          "count": 6
+        },
+        {
+          "type": "problem",
+          "label": "BTVN 17.",
+          "level": 2,
+          "tier": "btvn",
+          "statement": "[[wrap]]\\makebox[0pt][l]{\\hspace{0.62\\linewidth}\\smash{\\raisebox{-1.75cm}{\\vtop{\\hbox{\\adjustbox{max width=0.32\\linewidth, max totalheight=2.4cm}{\n\\begin{tikzpicture}[line width=0.8pt, font=\\small]\n  \\draw[ink] (0,0) rectangle (3.6,1.9);\n  \\draw[ink] (0,0) -- (3.6,1.9);\n  \\draw[ink] (3.6,0) -- (0,1.9);\n  \\fill[ink] (1.8,0.95) circle (1.3pt);\n  \\node[above right] at (1.8,0.95) {$O$};\n  \\node[below left] at (0,0) {$M$};\n  \\node[below right] at (3.6,0) {$N$};\n  \\node[above right] at (3.6,1.9) {$P$};\n  \\node[above left] at (0,1.9) {$Q$};\n  \\node[below] at (1.8,0) {$15$};\n  \\node[right] at (3.6,0.95) {$8$};\n\\end{tikzpicture}\n}}\n\\hbox to 0.32\\linewidth{\\hfil{\\sffamily\\scriptsize\\itshape\\color{muted}Hình 16}\\hfil}}}}}[[/wrap]][TH] Cho Hình 16: hình chữ nhật $MNPQ$ có $MN = 15$ cm, $NP = 8$ cm. Chứng minh bốn đỉnh $M$, $N$, $P$, $Q$ cùng thuộc một đường tròn và tính bán kính của đường tròn đó.\\par\\vspace{0.67cm}",
+          "solution": "Gọi $O$ là giao điểm của hai đường chéo $MP$ và $NQ$. [[br]]Vì $MNPQ$ là hình chữ nhật nên hai đường chéo bằng nhau và cắt nhau tại trung điểm mỗi đường, tức là $MP = NQ$, $OM = OP = \\dfrac{MP}{2}$ và $ON = OQ = \\dfrac{NQ}{2}$. [[br]]Từ $MP = NQ$ suy ra $OM = ON = OP = OQ = \\dfrac{MP}{2}$. [[br]]Vậy bốn đỉnh $M$, $N$, $P$, $Q$ cùng thuộc đường tròn tâm $O$ bán kính $\\dfrac{MP}{2}$. [[br]]Vì $MNPQ$ là hình chữ nhật nên tam giác $MNP$ vuông tại $N$. [[br]]Xét tam giác $MNP$ vuông tại $N$, theo định lí Pythagore: [[br]]$MP^2 = MN^2 + NP^2 = 15^2 + 8^2 = 225 + 64 = 289$. [[br]]Suy ra $MP = \\sqrt{289} = 17$ (cm). [[br]]Do đó $R = \\dfrac{MP}{2} = \\dfrac{17}{2} = 8{,}5$ (cm). [[br]]Vậy bán kính đường tròn đi qua bốn đỉnh bằng $8{,}5$ cm."
+        },
+        {
+          "type": "writelines",
+          "count": 6
+        },
+        {
+          "type": "problem",
+          "label": "BTVN 18.",
+          "level": 3,
+          "tier": "btvn",
+          "statement": "[[wrap]]\\makebox[0pt][l]{\\hspace{0.62\\linewidth}\\smash{\\raisebox{-1.75cm}{\\vtop{\\hbox{\\adjustbox{max width=0.32\\linewidth, max totalheight=2.6cm}{\n\\begin{tikzpicture}[line width=0.8pt, font=\\small]\n  \\draw[ink] (0,0) -- (0,2.4) -- (3.2,0) -- cycle;\n  \\draw[ink] (0,0.26) -- (0.26,0.26) -- (0.26,0);\n  \\fill[ink] (1.6,1.2) circle (1.3pt);\n  \\draw[ink] (1.6,1.2) -- (0,1.2);\n  \\draw[ink] (1.6,1.2) -- (1.6,0);\n  \\draw[ink] (0,1.2) ++(0.24,0) -- ++(0,-0.24) -- ++(-0.24,0);\n  \\draw[ink] (1.6,0) ++(-0.24,0) -- ++(0,0.24) -- ++(0.24,0);\n  \\node[below left] at (0,0) {$A$};\n  \\node[above left] at (0,2.4) {$B$};\n  \\node[right] at (3.2,0) {$C$};\n  \\node[above right] at (1.6,1.2) {$M$};\n  \\node[left] at (0,1.2) {$H$};\n  \\node[below] at (1.6,0) {$K$};\n\\end{tikzpicture}\n}}\n\\hbox to 0.32\\linewidth{\\hfil{\\sffamily\\scriptsize\\itshape\\color{muted}Hình 17}\\hfil}}}}}[[/wrap]][VD] Cho Hình 17: tam giác $ABC$ vuông tại $A$ có $AB = 12$ cm, $AC = 16$ cm, $M$ là trung điểm của $BC$, $MH \\perp AB$ tại $H$ và $MK \\perp AC$ tại $K$. [[br]]a) Tính bán kính đường tròn đi qua ba điểm $A$, $B$, $C$. [[br]]b) Chứng minh bốn điểm $A$, $H$, $M$, $K$ cùng thuộc một đường tròn và tính bán kính của đường tròn đó.\\par\\vspace{0.67cm}",
+          "solution": "a) Xét tam giác $ABC$ vuông tại $A$, theo định lí Pythagore: [[br]]$BC^2 = AB^2 + AC^2 = 12^2 + 16^2 = 144 + 256 = 400$. [[br]]Suy ra $BC = \\sqrt{400} = 20$ (cm). [[br]]Vì tam giác $ABC$ vuông tại $A$ nên ba đỉnh cùng thuộc đường tròn tâm $M$ là trung điểm cạnh huyền $BC$, bán kính $R = \\dfrac{BC}{2} = \\dfrac{20}{2} = 10$ (cm). [[br]]Vậy bán kính bằng $10$ cm. [[br]]b) Gọi $O$ là trung điểm của đoạn $AM$. [[br]]Vì $MH \\perp AB$ tại $H$ nên tam giác $AHM$ vuông tại $H$. [[br]]Xét tam giác $AHM$ vuông tại $H$ có $HO$ là đường trung tuyến ứng với cạnh huyền $AM$, nên $HO = \\dfrac{AM}{2}$. [[br]]Vì $MK \\perp AC$ tại $K$ nên tam giác $AKM$ vuông tại $K$. [[br]]Xét tam giác $AKM$ vuông tại $K$ có $KO$ là đường trung tuyến ứng với cạnh huyền $AM$, nên $KO = \\dfrac{AM}{2}$. [[br]]Mặt khác $O$ là trung điểm $AM$ nên $OA = OM = \\dfrac{AM}{2}$. [[br]]Do đó $OA = OH = OM = OK = \\dfrac{AM}{2}$. [[br]]Vì $AM$ là đường trung tuyến ứng với cạnh huyền $BC$ của tam giác $ABC$ vuông tại $A$ nên $AM = \\dfrac{BC}{2} = \\dfrac{20}{2} = 10$ (cm). [[br]]Do đó bán kính cần tìm là $\\dfrac{AM}{2} = \\dfrac{10}{2} = 5$ (cm). [[br]]Vậy bốn điểm $A$, $H$, $M$, $K$ cùng thuộc đường tròn tâm $O$ là trung điểm $AM$, bán kính $5$ cm."
+        },
+        {
+          "type": "writelines",
+          "count": 6
+        }
+      ]
+    }
+  ]
+}

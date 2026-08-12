@@ -10,6 +10,7 @@
 \usepackage{pifont}         % Zapf Dingbats (sao ★, ✓…) — bundled, không cần font ngoài
 \usepackage{qrcode}         % QR sinh thẳng trong TeX (không cần internet/shell-escape)
 \usepackage{setspace}
+\usepackage{needspace}      % giữ bài + hộp hình [[wrap]] không rơi vào vùng chân trang
 \setstretch{1.15}
 \tcbset{opacityback=0.92, opacitybacktitle=0.92}
 \AtBeginDocument{\color{ink}}
@@ -230,6 +231,13 @@
   coltitle=white, colbacktitle=brand, attach boxed title to top left={xshift=10pt,yshift=-8pt},
   boxed title style={arc=3pt,boxrule=0pt}, fonttitle=\sffamily\bfseries\small,
   title={HƯỚNG DẪN CHI TIẾT}}
+
+% Hộp LỜI GIẢI TỪNG BÀI (guide.pdf) — gọn hơn solutionbox vì mỗi phiếu có hàng trăm cái:
+% viền trái đậm, nền nhạt, không đổ bóng. Nhãn "Lời giải." nằm ngay trong dòng đầu.
+\newtcolorbox{answerbox}{enhanced, breakable, colback=brand!3, colframe=brand!55,
+  boxrule=0pt, leftrule=2pt, arc=0pt, sharp corners,
+  top=3pt,bottom=3pt,left=8pt,right=8pt, fontupper=\small\color{brand!85!black},
+  before=\vspace{3pt}, after=\vspace{2pt}}
 
 % Hộp MẸO chung
 \newtcolorbox{tipbox}{enhanced, breakable, drop shadow=black!8, colback=neutral, colframe=ink!55,

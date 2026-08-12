@@ -1,6 +1,10 @@
 ((= Chặng 5 — Tổng kết (hộp chặng) + 2 MỤC PHỤ tách riêng: BTVN, Mở rộng. =))
 ((* import "_blocks.j2" as B with context *))
 ((* set parts = split_reflection(stage.blocks) *))
+((= Sơ đồ tư duy KHÔNG tự bẻ trang được: thiếu chỗ thì hộp chặng in ra một khung
+    xanh RỖNG ở cuối trang rồi sơ đồ nhảy sang trang sau. Đòi đủ chỗ trước. =))
+((* if parts.tong_ket | selectattr("type", "equalto", "mindmap") | list *))\needspace{0.45\textheight}
+((* endif *))
 \begin{stage}{((( stage.number )))}{((( stage.title )))}{stage5}{\iconreflect}
 \justifying\setlength{\parindent}{0pt}
 ((( B.render_blocks(parts.tong_ket) )))

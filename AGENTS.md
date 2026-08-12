@@ -37,6 +37,7 @@
    make validate FILE=<file.json>        # gác cổng (FAST=1 bỏ SymPy lúc nháp); spec_gate so số câu với thuyết minh
    make build FILE=<file.json>           # 3 PDF song song (ONLY=handout xem nhanh)
    python -m src.main approve <slug>     # Thầy xem PDF rồi DUYỆT
+   make drive FOLDER="<folder-seed>"     # chép PDF sang Google Drive (DRY=1 để thử trước)
    ```
 3. Lệnh đầy đủ: `python -m src.main -h`. Tiến độ: `make progress`. Bank đủ câu không: `make coverage`.
 
@@ -51,6 +52,19 @@
 >    * **TH (40% - 48 phút)**: Thiết kế đúng **4 dạng thông hiểu cụ thể** (mỗi dạng có `onclass: 2`, `btvn: 2`, `vidu: 1`).
 >    * **VD (20% - 24 phút)**: Thiết kế đúng **2 dạng vận dụng cụ thể** (mỗi dạng có `onclass: 1`, `btvn: 1`, `vidu: 1`).
 >    * **Tổng cộng**: Onclass đạt đúng **120.0 phút**, BTVN đạt đúng **93.6 phút** (nằm trong khoảng ±10% của 90 phút), và Ví dụ đạt **48.0 phút** (nằm trong khoảng ±10% của 45 phút) $\rightarrow$ 0 lỗi, 0 cảnh báo.
+> 4b. ***7 LOẠI CÂU HỎI — khai `loai` cho MỌI DÒNG spec (Thầy chốt 2026-08-05, nhắc lại 2026-08-12).*** Luật viết ở [HUONG-DAN-THUYET-MINH-LOP-C.md §4b](HUONG-DAN-THUYET-MINH-LOP-C.md) nhưng **áp cho MỌI TẦNG, MỌI KHỐI** — đừng thấy tên file "LOP-C" mà bỏ qua. Bảy nhãn (gõ ĐÚNG chữ, renderer in ra cột "Loại"):
+>    `NB lẻ LT` · `NB tách TH` · `NB ghép bài` · `TH lẻ LT` · `TH ghép bài` · `TH tách VD` · `VD lẻ`
+>    * Khai kèm `decompose`: dòng **VD** $\to$ `"vd"`, **TH ghép bài / TH tách VD** $\to$ `"th2nb"`, **TH lẻ LT** và mọi dòng **NB** $\to$ `"none"`.
+>    * Nhãn nằm ở **cột riêng**, KHÔNG nhét vào `dang` (luật CẤM CHỮ THỪA).
+>    * ⚠️ **Vì sao luật này từng bị bỏ quên suốt 39/41 spec:** `loai` chỉ được đọc ở renderer để quyết định *có in cột hay không* — không khai thì cột **lặng lẽ biến mất**, gate im, PDF vẫn đẹp. Nay `thuyetminh_gate.check_loai_4b()` cảnh báo dòng thiếu/sai nhãn/lệch band, khung `new-thuyetminh` sinh sẵn ô `"loai": "TODO §4b"`, và PDF in dòng đỏ "CHƯA KHAI LOẠI CÂU HỎI (§4b)" khi còn thiếu. **Thấy dòng đỏ đó là chưa xong việc.**
+>
+> 4c. ***ĐA DẠNG HÌNH THỨC CÂU HỎI — 5 DẠNG BẮT BUỘC KHI SOẠN PHIẾU (Thầy chốt 2026-08-12).*** Khi soạn bất kỳ phiếu học tập nào (cả Đại số và Hình học, mọi tầng A/B/C/X, phiếu đã làm lẫn phiếu mới), **KHÔNG ĐƯỢC chỉ dùng 100% bài tự luận tính toán thuần túy**. Bắt buộc phải đan xen phong phú 5 hình thức câu hỏi để tăng phản xạ và chống nhàm chán cho HS:
+>    1. **Trắc nghiệm 4 lựa chọn (A/B/C/D)**: Kiểm tra nhanh khái niệm, công thức, thương đơn thức/tích đa thức.
+>    2. **Điền khuyết (Điền chỗ chấm `\dots` / ô trống / điền số mũ $n$ / điền hệ số $k$)**: Kiểm tra biến đổi công thức, tìm yếu tố còn thiếu, đổi dấu.
+>    3. **Khẳng định Đúng / Sai (hoặc Trả lời ngắn)**: Đánh bẫy các lỗi sai thường gặp (`loisai` trong spec) như dấu âm, số mũ 0, phân số.
+>    4. **Bảng Nối 2 Cột (Matching table)**: Trình bày dạng `tabular` 2 cột (Cột A phép tính & Cột B kết quả xáo trộn), đặt `writelines: 0`.
+>    5. **Tự luận ngắn & Bài toán thực tế**: Dành cho bài Thông hiểu, Vận dụng (rút gọn tính giá trị, tìm $x$, bài toán thực tế có lời văn).
+>
 > 5. *(2026-07-27) Khung THAY THẾ, ít dạng vụn hơn — dùng cho thuyết minh CẤP CHƯƠNG*: **11 dạng NB** (10 dạng `onclass: 3` $+$ 1 dạng `onclass: 2` $=$ 32 câu $\Rightarrow$ 48′) · **4 dạng TH** (`onclass: 2` $\Rightarrow$ 48′) · **2 dạng VD** (`onclass: 1` $\Rightarrow$ 24′) $=$ 120′, đúng 40-40-20. Ví dụ: 9 dạng NB $+$ 4 TH $+$ 2 VD mỗi dạng `vidu: 1` $=$ 41′. **`lythuyet` CHỈ gắn cho 4 dạng NB** ($=$ 4′) $\Rightarrow$ GV giảng $41+4=45′$ khớp quỹ. BTVN: NB 26 câu, TH 8, VD 2 $=$ 96′. Thầy phản biện bản 16 dạng NB×2 là "chi tiết quá, luyện tập cần tăng lên".
 >    * ⚠️ **`thuyetminh_gate` KHÔNG cộng giờ cột Lý thuyết vào quỹ, nhưng dòng "Cân buổi" trên PDF thì CÓ.** Gắn `lythuyet: 1` cho MỌI dòng ⇒ PDF in "GV giảng 96′ (quỹ 45′)" mà gate vẫn báo OK — buổi học không thể dạy kịp. Chỉ gắn `lythuyet` cho vài mục lý thuyết thật.
 
@@ -115,7 +129,8 @@ python -m src.main approve <slug>              # Thầy xem PDF rồi DUYỆT (s
    - `4` = **Vận dụng cao** ★★★★ **MÀU KIM CƯƠNG** (`diamond`): đa tầng, không rập khuôn (chứng minh BĐT, tìm cực trị…).
      Mỗi `problem` PHẢI gắn `level` 1..4 (sao phản ánh độ khó THẬT, không phải `onclass/btvn`). `visual_linter` cảnh báo bài chưa chấm; bài `level:0` cũ thì renderer tự suy sao theo `tier` (tương thích ngược). Sao đầy `\ding{72}` + sao rỗng `\ding{73}`.
 4. **Đặt tên đúng thứ tự bài học:** khi folder tuần có ≥2 phiếu, **tên file + `slug` PHẢI mang tiền tố `phieu-a-/phieu-b-/phieu-c-/phieu-d-`** và `eyebrow` "PHIẾU A/B/C/D" khớp vị trí (xem HUONG-DAN §7). Mở folder phải thấy sort đúng A→B→C→D — KHÔNG đặt slug thuần theo nội dung (phiếu tạo sau sẽ lên trước). Đổi/tách lại số phiếu thì sửa cả ba: file, slug, eyebrow (và `lessons` của phiếu tổng kết nếu có).
-5. **Đáp án**: mọi PT/BPT/hệ phải **đối chiếu độc lập bằng SymPy** (`solve_univariate_inequality`/`solveset`) — chạy script kiểm TRƯỚC khi viết `solution`; hình học SymPy yếu thì tự kiểm tay + soi lại số trên hình.
+5. **Đáp án**: mọi PT/BPT/hệ phải **đối chiếu độc lập bằng SymPy** (`solve_univariate_inequality`/`solveset`) — chạy script kiểm TRƯỚC khi viết `solution`; hình học SymPy yếu thì tự kiểm tay + soi lại số trên hình. **Trắc nghiệm: soi cả 4 phương án, KHÔNG được có hai phương án cùng đúng** (vd "$AB/AC$ là tỉ số nào?" thì `cot B` và `tan C` đều đúng), không có phương án nhiễu trùng nhau ("$MP$ và $MP$"), không nhắc điểm/đoạn không có trên hình.
+   **Ví dụ mẫu:** đọc lại từng hộp VÍ DỤ MẪU trên `guide.pdf` theo Nguyên tắc §10 — phải trình bày như bài thi (có căn cứ, đủ đơn vị, có "Vậy", làm tròn một lần ở bước cuối).
 6. **Soi bố cục SLIDE bằng ảnh (BẮT BUỘC cho `slide.pdf`).** Đọc PDF thẳng dễ bỏ sót lỗi bố cục — phải **render slide ra PNG rồi xem từng trang**:
    ```bash
    pdftoppm -png -r 80 "outputs/.../slide.pdf" /tmp/slidecheck/s   # → s-01.png, s-02.png…
@@ -146,6 +161,16 @@ python -m src.main approve <slug>              # Thầy xem PDF rồi DUYỆT (s
 7. **Escape `\%` `\&` `\#`** trong MỌI field (kể cả `solution`/`teacher_note`). `visual_linter` nay có cảnh báo; `%`/`#` thô sai mọi nơi, `&` thô chỉ sai ngoài `$...$`.
 8. **Quy chuẩn thiết kế "Mở màn thực tế":** Tình huống mồi phải (1) liên quan đến cái HS đã biết, (2) liên quan đến những gì HS thích (vé concert idol, phim C16, trend giới trẻ...). (3) Tuyệt đối **chưa nhắc đến khái niệm mới** nhưng phải diễn tả đúng bản chất khái niệm đó. Cần sử dụng công cụ AI sinh ảnh (như Gemini Banana) để tạo hình ảnh bắt mắt và chèn vào thông qua trường `"image"`.
 9. **Không dùng câu Nhận biết (NB) rời rạc, trắc nghiệm đơn lẻ hay Đúng/Sai vụn vặt.** Các câu NB phải được chẻ ra từ giàn giáo (scaffolding) các bước giải của bài toán lớn mức độ Thông hiểu (TH), Vận dụng (VD) hoặc Vận dụng cao (VDC). Giúp học sinh học cách lập luận qua từng bước thay vì làm các câu hỏi vụn vặt.
+10. **VÍ DỤ MẪU PHẢI TRÌNH BÀY NHƯ BÀI LÀM ĐI THI (Thầy chốt 2026-08-12).** Ví dụ mẫu không phải chỗ ghi đáp số — nó là **bản mẫu trình bày HS chép lại y hệt khi vào phòng thi**, nên phải viết đủ như một bài thi được chấm trọn điểm. Áp cho MỌI `noted.variant == "example"` và mọi `solution` của bài GV chữa mẫu:
+    - **Có căn cứ trước, kết quả sau.** Mỗi bước mở bằng cái cho phép làm bước đó: "Xét $\triangle ABC$ vuông tại $A$, theo định lí Pythagore:", "Vì $AC$ là cạnh đối của góc $B$ nên…". Cấm nhảy thẳng ra số như "Pythagore: $BC^2 = 6^2 + 8^2 = 100$".
+    - **Mỗi bước một dòng** (`[[br]]`), không dồn 3 phép tính vào một câu.
+    - **Ghi đủ đơn vị ở mọi số đo** và **kết luận "Vậy …"** ở cuối mỗi ý — thiếu "Vậy" là mất điểm trình bày.
+    - **Làm tròn ĐÚNG MỘT LẦN ở bước cuối**, bước trung gian giữ nguyên biểu thức; dùng $\approx$ (không dùng $=$) từ chỗ bắt đầu xấp xỉ.
+    - **Đủ ý theo yêu cầu đề**: đề có a) b) c) thì lời giải mẫu phải có a) b) c) tách rời, không gộp.
+    - **Bài hình:** nêu rõ xét tam giác nào, vuông tại đâu, dùng hệ thức/định lí tên gì; đúng ký hiệu chuẩn ($\widehat{B}$, $\triangle ABC$, $\backsim$). Bài chứng minh phải viết trọn chuỗi suy luận, không được viết tắt kiểu "suy ra".
+    - **Không dùng công thức chưa dạy trong chương** để rút gọn lời giải mẫu (kiểm lại phạm vi đã cắt trước khi viết).
+    - **Công thức phải CHỨNG MINH thì không được cho HS dùng thẳng** (Thầy chốt 2026-08-12: _"Hệ thức lượng HS k thuộc để dùng thẳng đâu nhé. HS phải chứng minh nha"_). Cấm viết "học thuộc để dùng thẳng" / "áp dụng hệ thức" suông lên bản in; mỗi lần dùng phải chứng minh tại chỗ hoặc dẫn lại đúng chỗ đã chứng minh ("Theo Ví dụ 2 đã chứng minh …").
+    - Soi ở bước kiểm duyệt sau build: đọc từng hộp **VÍ DỤ MẪU** trên `guide.pdf`, hộp nào thiếu căn cứ / thiếu đơn vị / thiếu "Vậy" là **phải sửa rồi build lại**, không trình Thầy.
 
 
 ## Nền tảng sư phạm — Thang Bloom \& Vygotsky (đọc để hiểu "vì sao")
@@ -196,6 +221,8 @@ Quy ước: folder được xếp vào thư mục lớp tương ứng (vd `lop-c
 Header/logo/watermark/footer/chữ ký/badge chặng do template lo (xem HUONG-DAN §6). Tác nhân chỉ điền nội dung JSON theo schema, không sinh mã LaTeX giao diện. **Ngoại lệ:** block `figure` cho phép mã TikZ thô (hình hình học) — đây là _nội dung_ toán, không phải giao diện; ưu tiên TikZ, không dựng chính xác được mới cắt ảnh phiếu gốc (xem HUONG-DAN §4.10). Slide tự bố cục 'chữ trái — hình phải' khi đơn vị dạy có hình.
 
 **Đụng vào `templates/` hay `config/design_tokens.json` thì việc CHƯA xong khi chưa `make rebuild`.** Mọi PDF đã build trước đó vẫn là bản cũ; không có cổng nào tự phát hiện chuyện này. `rebuild` chỉ chạm phiếu HS / sổ tay GV / slide — phiếu **tổng kết chương** và **thuyết minh** phải build tay (xem HUONG-DAN §5).
+
+**ĐỔ PDF SANG GOOGLE DRIVE — `make drive FOLDER="<folder-seed>"`** (lệnh `sync-drive`, code ở [src/exporters/drive_sync.py](src/exporters/drive_sync.py), 8 test). Dịch cây `outputs/<lop>/<mon>/<tầng>/<chương>/<slug>/` sang cây Thầy dựng trên Drive `giaoanmathtech/lop9/C/Chuong N/` — **khối → TẦNG LỚP → chương**, không theo `hinh-hoc`/`dai-so`. Phiếu vào folder `Ca-NN - <tên không dấu>`, thuyết minh vào `Thuyet-minh-chuong-<số La Mã>`. Thư mục thiếu thì tạo; thư mục đã có mà chỉ khác hoa/thường hay khoảng trắng (`Chuong5` vs `Chuong 5`) thì **DÙNG LẠI**, không đẻ folder song sinh. Chỉ chép bộ tên có tiền tố `ca-NN-` (bộ build ghi song song cả `handout.pdf` lẫn `ca-01-handout.pdf`). Drive ở máy khác thì đặt biến môi trường `MATHTECH_DRIVE_ROOT`. **Chép lên Drive là đẩy file ra ngoài — chỉ chạy khi Thầy bảo**; thử trước bằng `DRY=1`.
 
 **ẢNH TRONG PHIẾU — luật cứng (đã có `figure_gate` chặn):** ảnh minh hoạ để trong **`images/` cạnh file phiếu**, và trường `"image"` ghi **đường dẫn TƯƠNG ĐỐI** (`"images/thap-pisa.png"`). TUYỆT ĐỐI không ghi `/Users/…` — máy thầy cô khác build là gãy ngay. Engine tự nối thành đường dẫn tuyệt đối lúc build (`src/main.py::_neo_anh`), người soạn không phải lo. `.gitignore` đã mở khoá riêng `inputs/seeds/**/images/` để ảnh đi theo repo (mọi ảnh nguồn nặng khác vẫn chặn).
 

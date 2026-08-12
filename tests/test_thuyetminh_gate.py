@@ -98,3 +98,48 @@ def test_source_ref_matching_band_no_warn():
     rows = [SpecRow(dang="x", band="NB", onclass=10, source_refs=["gk1-bat-trang-1a"])]
     _, warns = check_thuyetminh(_spec(rows, tier="B"))
     assert not any("source_refs" in w for w in warns)
+
+
+# ── §4b: 7 loại câu hỏi (Thầy chốt 2026-08-05) ────────────────────────────────
+# Trước 2026-08-12 `loai` chỉ được renderer đọc để quyết định có in cột hay không:
+# không khai thì cột biến mất, gate im, PDF vẫn đẹp ⇒ 39/41 spec trong repo bỏ trống.
+# Bốn test dưới đây kéo luật §4b vào code để nó không im lặng trôi qua lần nữa.
+
+def test_loai_4b_missing_warns():
+    rows = [SpecRow(dang="NB", band="NB", onclass=32),
+            SpecRow(dang="TH", band="TH", onclass=8),
+            SpecRow(dang="VD", band="VD", onclass=2)]
+    _, warns = check_thuyetminh(_spec(rows))
+    assert any("CHƯA khai" in w and "loai" in w for w in warns), warns
+
+
+def test_loai_4b_todo_placeholder_still_warns():
+    # Khung `new-thuyetminh` sinh sẵn "TODO §4b" — chưa điền vẫn phải kêu.
+    rows = [SpecRow(dang="NB", band="NB", onclass=32, loai="TODO §4b")]
+    _, warns = check_thuyetminh(_spec(rows))
+    assert any("CHƯA khai" in w for w in warns), warns
+
+
+def test_loai_4b_complete_is_silent():
+    rows = [SpecRow(dang="NB", band="NB", onclass=32, loai="NB lẻ LT"),
+            SpecRow(dang="TH", band="TH", onclass=8, loai="TH tách VD", decompose="th2nb"),
+            SpecRow(dang="VD", band="VD", onclass=2, loai="VD lẻ", decompose="vd")]
+    _, warns = check_thuyetminh(_spec(rows))
+    assert not any("loai" in w for w in warns), warns
+
+
+def test_loai_4b_wrong_label_and_band_mismatch_warn():
+    rows = [SpecRow(dang="NB", band="NB", onclass=32, loai="NB bóc tách"),   # ngoài 7 loại
+            SpecRow(dang="TH", band="TH", onclass=8, loai="NB tách TH"),     # lệch band
+            SpecRow(dang="VD", band="VD", onclass=2, loai="VD lẻ")]
+    _, warns = check_thuyetminh(_spec(rows))
+    assert any("không thuộc 7 loại" in w for w in warns), warns
+    assert any("lệch band" in w for w in warns), warns
+
+
+def test_new_spec_scaffold_carries_loai_field():
+    """Khung sinh ra phải CÓ ô `loai` để người soạn thấy mà điền."""
+    from src.main import _thuyetminh_skeleton
+    khung = _thuyetminh_skeleton("tm", "T", "lop-9", "dai-so", "C", "x")
+    rows = [r for p in khung["phieu"] for r in p["rows"]] if "phieu" in khung else khung["rows"]
+    assert rows and all("loai" in r for r in rows), rows[:1]

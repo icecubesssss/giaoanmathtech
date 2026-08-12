@@ -104,6 +104,13 @@ class ProblemBlock(BaseModel):
     hints: list[str] = Field(
         default_factory=list, description="Gợi ý mở dần, mỗi phần tử một gợi ý; cho phép $...$ và [[blank]]"
     )
+    # LỜI GIẢI của RIÊNG bài này — CHỈ in ở Sổ tay GV (`show_solution=True` trong
+    # `_blocks.j2`), tuyệt đối không lọt sang phiếu HS / slide. Trước 2026-08-12 field
+    # này KHÔNG tồn tại: seed viết `solution` cho từng bài thì pydantic lặng lẽ vứt đi
+    # và guide.pdf ra trắng đáp án. Dùng [[br]] tách từng bước cho dễ đọc.
+    solution: str = Field(
+        "", description="Lời giải đầy đủ của bài (chỉ hiện ở Sổ tay GV); dùng [[br]] xuống dòng"
+    )
     # Đặc sản "QR video lời giải": URL video Thầy giải bài. Có giá trị → in QR nhỏ ở
     # lề phải bài (cầu nối giấy → điện thoại). Rỗng = không in QR (tương thích ngược).
     video: str = Field("", description="URL video lời giải; có → in QR cạnh bài")

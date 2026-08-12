@@ -151,4 +151,41 @@ def check_thuyetminh(spec: ThuyetMinhSpec) -> tuple[list[str], list[str]]:
                 f"thuyetminh: {tag} BTVN {btvn_min:.0f}′ HỤT quỹ {btvn_budget:.0f}′ "
                 f"(>{budget_tol*100:.0f}%) — BTVN nên thừa hơn thiếu.")
 
+    warnings += check_loai_4b(spec)
     return errors, warnings
+
+
+# Bảy loại câu hỏi §4b (HUONG-DAN-THUYET-MINH-LOP-C §4b, Thầy chốt 2026-08-05).
+# Tên file có chữ "LOP-C" nhưng luật áp cho MỌI tầng, MỌI khối.
+LOAI_4B = ("NB lẻ LT", "NB tách TH", "NB ghép bài",
+           "TH lẻ LT", "TH ghép bài", "TH tách VD", "VD lẻ")
+
+
+def check_loai_4b(spec: ThuyetMinhSpec) -> list[str]:
+    """Cảnh báo dòng spec chưa khai `loai`, hoặc khai nhãn không thuộc 7 loại §4b,
+    hoặc nhãn lệch band của chính dòng đó ('TH lẻ LT' nằm ở dòng band NB).
+
+    VÌ SAO CÓ HÀM NÀY: trước 2026-08-12 `loai` chỉ được ĐỌC ở renderer để quyết định
+    có in cột hay không — không khai thì cột lặng lẽ biến mất, gate im, PDF vẫn đẹp.
+    Luật nằm ngoài code nên không thành quy trình; 39/41 spec trong repo bỏ trống."""
+    out: list[str] = []
+    for phieu in spec.phieu:
+        thieu, sai, lech = [], [], []
+        for i, r in enumerate(phieu.rows, 1):
+            lab = (r.loai or "").strip()
+            if not lab or lab.startswith("TODO"):
+                thieu.append(f"{r.band}{i}")
+            elif lab not in LOAI_4B:
+                sai.append(f"{r.band}{i}='{lab}'")
+            elif lab.split()[0] != r.band:
+                lech.append(f"{r.band}{i}='{lab}'")
+        tag = f"phiếu {phieu.code}"
+        if thieu:
+            out.append(f"thuyetminh: {tag} — {len(thieu)}/{len(phieu.rows)} dòng CHƯA khai "
+                       f"`loai` (§4b: {' | '.join(LOAI_4B)}): {', '.join(thieu[:8])}"
+                       + (" …" if len(thieu) > 8 else ""))
+        if sai:
+            out.append(f"thuyetminh: {tag} — nhãn `loai` không thuộc 7 loại §4b: {', '.join(sai)}")
+        if lech:
+            out.append(f"thuyetminh: {tag} — nhãn `loai` lệch band của dòng: {', '.join(lech)}")
+    return out

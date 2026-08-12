@@ -1127,6 +1127,10 @@ def _thuyetminh_skeleton(slug, title, grade, subject, tier, tuan) -> dict:
         "onclass": tc.get("onclass", {}).get(b, 0),
         "btvn": tc.get("btvn", {}).get(b, 0),
         "source_refs": [],
+        # §4b — 7 loại câu hỏi. Sinh sẵn ô TODO để người soạn THẤY mà điền: trước đây
+        # khung không có field này nên mọi spec mới đẻ ra đã thiếu, cột Loại lặng lẽ
+        # biến mất khỏi PDF và không ai biết là đang thiếu.
+        "loai": "TODO §4b",
         "decompose": ("vdc" if b == "VDC" else "vd" if b == "VD" else "none"),
     } for b in bands]
     return {
@@ -1138,6 +1142,62 @@ def _thuyetminh_skeleton(slug, title, grade, subject, tier, tuan) -> dict:
         "kienthuc_nb": ["TODO: kiến thức NHẬN BIẾT cần nhớ."],
         "phieu": [{"code": "A", "title": "TODO tên phiếu", "rows": rows}],
     }
+
+
+def _tieu_de_output(out_dir: Path) -> str | None:
+    """Tiêu đề phiếu (để đặt tên folder Ca trên Drive) — đọc ngược từ JSON seed cùng tên slug."""
+    for j in SEEDS_DIR.rglob(f"{out_dir.name}.json"):
+        try:
+            return json.loads(j.read_text(encoding="utf-8")).get("title")
+        except Exception:                     # noqa: BLE001 — không đọc được thì để renderer tự suy tên
+            return None
+    return None
+
+
+def cmd_sync_drive(args: argparse.Namespace) -> int:
+    """Chép PDF từ outputs/ sang Google Drive, tạo thư mục còn thiếu."""
+    from src.exporters.drive_sync import drive_root, sync_dir
+
+    out_root = settings.OUTPUTS_DIR
+    if not out_root.exists():
+        print(f"✗ chưa có {out_root} — build trước đã."); return 1
+
+    if args.target:
+        tgt = Path(args.target)
+        # `_out_root` nhận đường dẫn FILE và soi thư mục cha ⇒ folder thì mượn một tên file giả.
+        base = _out_root(str(tgt if tgt.is_file() else tgt / "x.json"))
+        cands = [d for d in sorted(base.rglob("*")) if d.is_dir() and any(d.glob("*.pdf"))]
+        if tgt.is_file():
+            slug = json.loads(tgt.read_text(encoding="utf-8")).get("slug", tgt.stem)
+            cands = [d for d in cands if d.name == slug] or cands
+    else:
+        cands = [d for d in sorted(out_root.rglob("*")) if d.is_dir() and any(d.glob("*.pdf"))]
+
+    if not cands:
+        print("✗ không tìm thấy thư mục output nào có PDF — build trước đã."); return 1
+
+    root = drive_root()
+    if not args.dry_run and not root.exists():
+        print(f"✗ không thấy Google Drive ở {root}\n"
+              f"  (đặt biến môi trường MATHTECH_DRIVE_ROOT nếu Drive nằm chỗ khác)"); return 1
+
+    n_dir = n_file = 0
+    for d in cands:
+        dest, files = sync_dir(d, out_root, _tieu_de_output(d), dry_run=args.dry_run)
+        if dest is None:
+            print(f"  – bỏ qua {d.relative_to(out_root)} (không suy được lớp/tầng/chương)")
+            continue
+        n_dir += 1
+        n_file += len(files)
+        try:
+            hien = dest.relative_to(root)
+        except ValueError:
+            hien = dest
+        print(f"  {'→ (thử)' if args.dry_run else '✓'} {hien}  [{', '.join(files)}]")
+
+    verb = "sẽ chép" if args.dry_run else "đã chép"
+    print(f"\n{verb} {n_file} PDF vào {n_dir} thư mục trên Drive: {root}")
+    return 0
 
 
 def cmd_new_thuyetminh(args: argparse.Namespace) -> int:
@@ -1294,6 +1354,11 @@ def main(argv: list[str] | None = None) -> int:
     ntm.add_argument("--title", help="Tiêu đề bài")
     ntm.add_argument("--force", action="store_true", help="Ghi đè nếu đã tồn tại")
     ntm.set_defaults(func=cmd_new_thuyetminh)
+
+    sd = sub.add_parser("sync-drive", help="Chép PDF đã build sang Google Drive đúng cây lop/tầng/chương")
+    sd.add_argument("target", nargs="?", help="File JSON phiếu/spec, hoặc folder seed; bỏ trống = MỌI thứ đã build")
+    sd.add_argument("--dry-run", action="store_true", help="Chỉ in chỗ sẽ chép, không đụng Drive")
+    sd.set_defaults(func=cmd_sync_drive)
 
     args = p.parse_args(argv)
     return args.func(args)

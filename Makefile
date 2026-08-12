@@ -57,6 +57,9 @@ thuyetminh: ## Render thuyết minh ra PDF:  make thuyetminh SPEC=path/thuyet-mi
 check-tm: ## Soi giờ vô lý trong spec:  make check-tm SPEC=path/thuyet-minh.json
 	@$(PY) -m src.main validate-thuyetminh "$(SPEC)"
 
+drive: ## Chép PDF đã build sang Google Drive:  make drive FOLDER=path/ (thêm DRY=1 để thử)
+	@$(PY) -m src.main sync-drive "$(FOLDER)" $(if $(DRY),--dry-run,)
+
 coverage: ## Spike: bank đủ câu để bốc không (BPT lớp C)
 	@$(PY) scripts/spike_coverage.py
 

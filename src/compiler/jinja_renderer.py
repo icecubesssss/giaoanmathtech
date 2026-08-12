@@ -31,8 +31,17 @@ _BR = re.compile(r"\s*\[\[br\]\]\s*")
 
 _OLY_W = re.compile(r"\[\[oly:([^\]]+)\]\]")
 
+# Cờ [[wrap]]…[[/wrap]] (hộp hình treo góc phải, chữ chảy quanh) chỉ có nghĩa ở bản A4:
+# `_blocks.j2` tự tách trước khi gọi filter. Mọi nơi khác (slide, tổng kết) mà token còn
+# sót lại thì XOÁ — trước 2026-08-12 slide in sống ra chữ "[[wrap]][[/wrap]]" trên màn chiếu.
+_WRAP_BOX = re.compile(r"\[\[wrap\]\].*?\[\[/wrap\]\]", re.DOTALL)
+_WRAP_TAG = re.compile(r"\[\[/?wrap\]\]")
+_TIKZ = re.compile(r"\\begin\{tikzpicture\}.*?\\end\{tikzpicture\}", re.DOTALL)
+
+
 def _texify(s: str) -> str:
     """Dịch token chỗ trống / xuống dòng sang lệnh LaTeX. (Khử mã độc là việc của S2.)"""
+    s = _WRAP_TAG.sub("", s)
     s = _BLANK_W.sub(r"\\blank[\1]", s)
     s = _BLANK.sub(r"\\blank[5cm]", s)
     s = _MBLANK.sub(r"\\rule{\1}{0.4pt}", s)
@@ -73,6 +82,33 @@ def split_reflection(blocks):
             continue
         out[seg].append(b)
     return out
+
+
+class _WrapFigure:
+    """Hình bóc ra từ cờ `[[wrap]]` của `statement`, đủ giống FigureBlock để
+    `_slide_blocks.j2` dựng được ở cột phải."""
+    type = "figure"
+    image = ""
+    width = ""
+    caption = ""
+
+    def __init__(self, tikz: str):
+        self.tikz = tikz
+
+
+def split_wrap(statement: str):
+    """Tách hộp hình `[[wrap]]…[[/wrap]]` khỏi đề → (figure|None, đề còn lại).
+
+    Hộp wrap là mã LaTeX định vị cho khổ A4 (`\\makebox` + `\\hspace{0.62\\linewidth}`),
+    đem nguyên sang slide 16:9 thì hình văng khỏi khung. Bóc lấy `tikzpicture` bên trong
+    rồi trả về để slide xếp 'chữ trái — hình phải'; không tìm thấy tikz thì bỏ hẳn hộp
+    (vẫn hơn in sống token ra màn chiếu)."""
+    m = _WRAP_BOX.search(statement or "")
+    if not m:
+        return None, statement
+    rest = (statement[:m.start()] + statement[m.end():]).lstrip()
+    tikz = _TIKZ.search(m.group(0))
+    return (_WrapFigure(tikz.group(0)) if tikz else None), rest
 
 
 def _seg_mode(seg) -> str:
@@ -133,10 +169,54 @@ def group_slide_segments(blocks):
             continue
         if typ in HEADERS or not segs:
             segs.append({"text": [], "figures": []})
+        if typ == "problem":
+            # Đề có hộp hình [[wrap]]: bóc hình ra cột phải (mode "cols") thay vì để
+            # mã định vị khổ A4 chạy trên slide.
+            fig, rest = split_wrap(getattr(b, "statement", "") or "")
+            if rest != getattr(b, "statement", ""):
+                b = b.model_copy(update={"statement": rest})
+                if fig is not None:
+                    segs[-1]["figures"].append(fig)
         segs[-1]["text"].append(b)
+    segs = _tidy_segments(segs)
     for seg in segs:
         seg["mode"] = _seg_mode(seg)
     return segs
+
+
+def _plain(b) -> str:
+    """Chữ trần của một block (bỏ lệnh LaTeX + token) để đo độ dài thật."""
+    raw = getattr(b, "text", "") or getattr(b, "statement", "") or ""
+    return _STRIP_TEX.sub("", raw).strip()
+
+
+def _tidy_segments(segs: list[dict]) -> list[dict]:
+    """Dọn segment trước khi chia slide — hai lỗi từng lọt ra bản chiếu:
+
+    1. Segment CHỈ có `writelines` (dòng kẻ viết tay, slide không in) ⇒ frame trắng.
+       Hay gặp ở đầu mục BTVN: block tiêu đề bị `split_reflection` bỏ, còn trơ dòng kẻ.
+    2. Đoạn tiêu đề mục NGẮN ("1. Gọi tên ba cạnh theo góc nhọn α") đứng riêng một
+       segment ⇒ slide chỉ có tiêu đề, nội dung rơi sang slide sau. Gộp nó xuống
+       segment kế tiếp (adjustbox tự co nếu cụm dài)."""
+    def renderable(seg) -> bool:
+        return bool(seg["figures"]) or any(
+            getattr(b, "type", "") != "writelines" for b in seg["text"])
+
+    def lone_heading(seg) -> bool:
+        txt = [b for b in seg["text"] if getattr(b, "type", "") != "writelines"]
+        return (not seg["figures"] and len(txt) == 1
+                and getattr(txt[0], "type", "") == "para" and len(_plain(txt[0])) < 60)
+
+    out: list[dict] = []
+    for seg in segs:
+        if not renderable(seg):
+            continue
+        if out and lone_heading(out[-1]):
+            prev = out.pop()
+            seg = {"text": prev["text"] + seg["text"],
+                   "figures": prev["figures"] + seg["figures"]}
+        out.append(seg)
+    return out
 
 
 def _env() -> Environment:
@@ -166,32 +246,35 @@ def load_tokens() -> dict:
     return tokens
 
 
-def _render(template_name: str, lesson: LessonPackage, tokens: dict | None) -> str:
+def _render(template_name: str, lesson: LessonPackage, tokens: dict | None,
+            show_solution: bool = False) -> str:
+    """`show_solution` đi vào context để `_blocks.j2` in `problem.solution` — CHỈ bật ở
+    Sổ tay GV. Phải truyền cho CẢ BA bản (StrictUndefined nổ nếu biến thiếu)."""
     tokens = tokens or load_tokens()
     env = _env()
     tpl = env.get_template(template_name)
-    return tpl.render(lesson=lesson, **tokens)
+    return tpl.render(lesson=lesson, show_solution=show_solution, **tokens)
 
 
 def render_handout(lesson: LessonPackage, tokens: dict | None = None) -> str:
     """Mã LaTeX phiếu HS (A4 dọc, ẩn lời giải)."""
     theme = getattr(lesson, "theme", "")
     template = "base_handout_thay_thai.tex.j2" if theme == "thay_thai" else "base_handout.tex.j2"
-    return _render(template, lesson, tokens)
+    return _render(template, lesson, tokens, show_solution=False)
 
 
 def render_guide(lesson: LessonPackage, tokens: dict | None = None) -> str:
     """Mã LaTeX Sổ tay GV (A4 dọc, hiện lời giải đỏ trầm + mẹo sư phạm)."""
     theme = getattr(lesson, "theme", "")
     template = "base_guide_thay_thai.tex.j2" if theme == "thay_thai" else "base_guide.tex.j2"
-    return _render(template, lesson, tokens)
+    return _render(template, lesson, tokens, show_solution=True)
 
 
 def render_slide(lesson: LessonPackage, tokens: dict | None = None) -> str:
     """Mã LaTeX Slide TV (Beamer 16:9, font sans to, ẩn lời giải)."""
     theme = getattr(lesson, "theme", "")
     template = "base_slide_thay_thai.tex.j2" if theme == "thay_thai" else "base_slide.tex.j2"
-    return _render(template, lesson, tokens)
+    return _render(template, lesson, tokens, show_solution=False)
 
 
 def render_summary(summary, tokens: dict | None = None, show_solution: bool = False) -> str:
