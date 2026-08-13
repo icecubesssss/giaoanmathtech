@@ -1,0 +1,556 @@
+{
+  "slug": "phieu-c-do-dai-cung-dien-tich-quat-vanh-khuyen",
+  "title": "Độ dài cung tròn. Diện tích hình quạt tròn và hình vành khuyên",
+  "eyebrow": "PHIẾU C • HÌNH HỌC 9 · CHƯƠNG V — BÀI 15",
+  "grade_label": "Lớp 9 • Hình học",
+  "class_tier": "C",
+  "stages": [
+    {
+      "kind": "review",
+      "number": 1,
+      "title": "Khám phá",
+      "teacher_note": "Cho HS trả lời bằng phân số trước ($\\frac{1}{8}$ cái bánh), rồi mới đổi ra độ. Đây là chỗ HS tự nhận ra 'phần của hình tròn' đo bằng góc ở tâm — nền cho cả hai công thức chia 180 và chia 360.",
+      "blocks": [
+        {
+          "type": "para",
+          "text": "\\textbf{Một miếng pizza là mấy phần của cả cái bánh?}"
+        },
+        {
+          "type": "noted",
+          "variant": "note",
+          "text": "\\begin{minipage}[t]{0.58\\linewidth}\\vspace{0pt}Một chiếc pizza tròn được cắt thành $8$ miếng bằng nhau, các nhát cắt đều đi qua tâm $O$. [[br]]\\textbf{a)} Mỗi miếng chiếm mấy phần của cả cái bánh? [[br]]\\textbf{b)} Cả cái bánh ứng với góc ở tâm $360^\\circ$. Vậy góc ở tâm của một miếng bằng bao nhiêu độ? [[br]]\\textbf{c)} Nếu An ăn $3$ miếng thì phần An ăn ứng với góc ở tâm bao nhiêu độ?\\end{minipage}\\hfill\\begin{minipage}[t]{0.36\\linewidth}\\vspace{0pt}\n\\centering\n\\adjustbox{max width=\\linewidth, max totalheight=2.6cm}{\n\\begin{tikzpicture}[line width=0.8pt, font=\\small]\n  \\draw[ink] (0,0) circle (1.6);\n  \\foreach \\a in {0,45,...,315}{\\draw[ink] (0,0) -- (\\a:1.6);}\n  \\fill[ink] (0,0) circle (1.3pt);\n  \\node[below right] at (0.06,-0.06) {$O$};\n\\end{tikzpicture}\n}\n\\par\\vspace{2pt}{\\sffamily\\scriptsize\\itshape\\color{muted}Hình 1}\n\\end{minipage}"
+        },
+        {
+          "type": "writelines",
+          "count": 3
+        }
+      ]
+    },
+    {
+      "kind": "concept",
+      "number": 2,
+      "title": "Kiến thức cần nhớ",
+      "teacher_note": "Chữa 7 ví dụ mẫu trong 23 phút. Nhấn mẹo phân biệt CHIA 180 (độ dài cung) với CHIA 360 (diện tích quạt) ở mục 4 — đây là lỗi sai số một của bài này.",
+      "blocks": [
+        {
+          "type": "para",
+          "text": "\\textbf{1. Độ dài đường tròn và diện tích hình tròn}"
+        },
+        {
+          "type": "para",
+          "text": "Đường tròn bán kính $R$ (đường kính $d = 2R$) có độ dài $C = 2\\pi R = \\pi d$ và hình tròn tương ứng có diện tích $S = \\pi R^2$."
+        },
+        {
+          "type": "para",
+          "text": "\\textbf{2. Độ dài cung tròn}"
+        },
+        {
+          "type": "para",
+          "text": "Cung $n^\\circ$ của đường tròn bán kính $R$ có độ dài $l = \\dfrac{\\pi R n}{180}$."
+        },
+        {
+          "type": "para",
+          "text": "\\textbf{3. Diện tích hình quạt tròn và hình vành khuyên}"
+        },
+        {
+          "type": "para",
+          "text": "Hình quạt tròn bán kính $R$, góc ở tâm $n^\\circ$ có diện tích $S_q = \\dfrac{\\pi R^2 n}{360}$."
+        },
+        {
+          "type": "para",
+          "text": "Hình vành khuyên giới hạn bởi hai đường tròn đồng tâm bán kính $R$ và $r$ (với $R > r$) có diện tích $S = \\pi (R^2 - r^2)$."
+        },
+        {
+          "type": "para",
+          "text": "\\textbf{4. Mẹo nhớ: CHIA $180$ hay CHIA $360$?}"
+        },
+        {
+          "type": "para",
+          "text": "Cung là \\textit{độ dài} nên so với cả đường tròn $C = 2\\pi R$: $l = 2\\pi R \\cdot \\dfrac{n}{360} = \\dfrac{\\pi R n}{180}$ — rút gọn $2$ với $360$ nên \\textbf{chia $180$}."
+        },
+        {
+          "type": "para",
+          "text": "Quạt là \\textit{diện tích} nên so với cả hình tròn $S = \\pi R^2$: $S_q = \\pi R^2 \\cdot \\dfrac{n}{360} = \\dfrac{\\pi R^2 n}{360}$ — không rút gọn được nên \\textbf{chia $360$}."
+        },
+        {
+          "type": "noted",
+          "variant": "example",
+          "text": "\\textbf{Ví dụ 1.} Tính độ dài đường tròn bán kính $R = 5$ cm (lấy $\\pi \\approx 3{,}14$, làm tròn đến chữ số thập phân thứ nhất). [[br]]\\textit{Giải.} Độ dài đường tròn là $C = 2\\pi R = 2\\pi \\cdot 5 = 10\\pi$ (cm). [[br]]Với $\\pi \\approx 3{,}14$ ta được $C \\approx 10 \\cdot 3{,}14 = 31{,}4$ (cm). [[br]]Vậy độ dài đường tròn khoảng $31{,}4$ cm."
+        },
+        {
+          "type": "noted",
+          "variant": "example",
+          "text": "\\textbf{Ví dụ 2.} Tính diện tích hình tròn có đường kính $d = 6$ cm (lấy $\\pi \\approx 3{,}14$, làm tròn đến chữ số thập phân thứ hai). [[br]]\\textit{Giải.} Bán kính của hình tròn là $R = \\dfrac{d}{2} = \\dfrac{6}{2} = 3$ (cm). [[br]]Diện tích hình tròn là $S = \\pi R^2 = \\pi \\cdot 3^2 = 9\\pi$ (cm$^2$). [[br]]Với $\\pi \\approx 3{,}14$ ta được $S \\approx 9 \\cdot 3{,}14 = 28{,}26$ (cm$^2$). [[br]]Vậy diện tích hình tròn khoảng $28{,}26$ cm$^2$."
+        },
+        {
+          "type": "noted",
+          "variant": "example",
+          "text": "\\begin{minipage}[t]{0.58\\linewidth}\\vspace{0pt}\\textbf{Ví dụ 3.} Trên Hình 2, hãy chỉ ra bán kính và số đo góc ở tâm của hình quạt tròn được tô đậm, rồi cho biết hình quạt đó chiếm mấy phần của cả hình tròn. [[br]]\\textit{Giải.} Bán kính của hình quạt là $R = OA = 4$ cm. [[br]]Góc ở tâm của hình quạt là $\\widehat{AOB} = 90^\\circ$. [[br]]Cả hình tròn ứng với góc ở tâm $360^\\circ$ nên hình quạt chiếm $\\dfrac{90}{360} = \\dfrac{1}{4}$ hình tròn. [[br]]Vậy $R = 4$ cm, $n = 90^\\circ$ và hình quạt chiếm $\\dfrac{1}{4}$ hình tròn.\\end{minipage}\\hfill\\begin{minipage}[t]{0.36\\linewidth}\\vspace{0pt}\n\\centering\n\\adjustbox{max width=\\linewidth, max totalheight=2.4cm}{\n\\begin{tikzpicture}[line width=0.8pt, font=\\small]\n  \\draw[ink] (0,0) circle (1.5);\n  \\fill[ink!18] (0,0) -- (1.5,0) arc (0:90:1.5) -- cycle;\n  \\draw[ink] (0,0) -- (1.5,0);\n  \\draw[ink] (0,0) -- (0,1.5);\n  \\fill[ink] (0,0) circle (1.2pt);\n  \\node[below left] at (0,0) {$O$};\n  \\node[right] at (1.5,0) {$A$};\n  \\node[above] at (0,1.5) {$B$};\n  \\node[below right] at (0.75,0) {$4$};\n\\end{tikzpicture}\n}\n\\par\\vspace{2pt}{\\sffamily\\scriptsize\\itshape\\color{muted}Hình 2}\n\\end{minipage}"
+        },
+        {
+          "type": "noted",
+          "variant": "example",
+          "text": "\\textbf{Ví dụ 4.} Cho đường tròn bán kính $R = 6$ cm. Tính độ dài cung $60^\\circ$ và diện tích hình quạt tròn tương ứng (lấy $\\pi \\approx 3{,}14$, làm tròn đến chữ số thập phân thứ hai). [[br]]\\textit{Giải.} Độ dài cung $60^\\circ$ là $l = \\dfrac{\\pi R n}{180} = \\dfrac{\\pi \\cdot 6 \\cdot 60}{180} = 2\\pi$ (cm). [[br]]Với $\\pi \\approx 3{,}14$ ta được $l \\approx 2 \\cdot 3{,}14 = 6{,}28$ (cm). [[br]]Diện tích hình quạt tròn là $S_q = \\dfrac{\\pi R^2 n}{360} = \\dfrac{\\pi \\cdot 6^2 \\cdot 60}{360} = 6\\pi$ (cm$^2$). [[br]]Với $\\pi \\approx 3{,}14$ ta được $S_q \\approx 6 \\cdot 3{,}14 = 18{,}84$ (cm$^2$). [[br]]Vậy độ dài cung khoảng $6{,}28$ cm và diện tích hình quạt khoảng $18{,}84$ cm$^2$."
+        },
+        {
+          "type": "noted",
+          "variant": "example",
+          "text": "\\begin{minipage}[t]{0.58\\linewidth}\\vspace{0pt}\\textbf{Ví dụ 5.} Hình vành khuyên trên Hình 3 giới hạn bởi hai đường tròn đồng tâm $O$ có đường kính lần lượt là $12$ cm và $8$ cm. Tính diện tích hình vành khuyên đó (lấy $\\pi \\approx 3{,}14$). [[br]]\\textit{Giải.} Bán kính đường tròn lớn là $R = \\dfrac{12}{2} = 6$ (cm). [[br]]Bán kính đường tròn nhỏ là $r = \\dfrac{8}{2} = 4$ (cm). [[br]]Diện tích hình vành khuyên là $S = \\pi (R^2 - r^2) = \\pi (6^2 - 4^2) = \\pi (36 - 16) = 20\\pi$ (cm$^2$). [[br]]Với $\\pi \\approx 3{,}14$ ta được $S \\approx 20 \\cdot 3{,}14 = 62{,}8$ (cm$^2$). [[br]]Vậy diện tích hình vành khuyên khoảng $62{,}8$ cm$^2$.\\end{minipage}\\hfill\\begin{minipage}[t]{0.36\\linewidth}\\vspace{0pt}\n\\centering\n\\adjustbox{max width=\\linewidth, max totalheight=2.4cm}{\n\\begin{tikzpicture}[line width=0.8pt, font=\\small]\n  \\fill[ink!18] (0,0) circle (1.5);\n  \\fill[white] (0,0) circle (1.0);\n  \\draw[ink] (0,0) circle (1.5);\n  \\draw[ink] (0,0) circle (1.0);\n  \\fill[ink] (0,0) circle (1.2pt);\n  \\node[below left] at (0,0) {$O$};\n  \\draw[ink] (0,0) -- (1.5,0);\n  \\node[above] at (0.75,0) {$R$};\n  \\draw[ink] (0,0) -- (200:1.0);\n  \\node[below left] at (200:0.55) {$r$};\n\\end{tikzpicture}\n}\n\\par\\vspace{2pt}{\\sffamily\\scriptsize\\itshape\\color{muted}Hình 3}\n\\end{minipage}"
+        },
+        {
+          "type": "noted",
+          "variant": "example",
+          "text": "\\textbf{Ví dụ 6.} Một cung của đường tròn bán kính $R = 9$ cm có độ dài $l \\approx 18{,}84$ cm. Tính số đo $n^\\circ$ của cung đó (lấy $\\pi \\approx 3{,}14$). [[br]]\\textit{Giải.} Từ công thức $l = \\dfrac{\\pi R n}{180}$ ta suy ra $n = \\dfrac{180 \\cdot l}{\\pi R}$. [[br]]Thay số: $n \\approx \\dfrac{180 \\cdot 18{,}84}{3{,}14 \\cdot 9} = \\dfrac{3391{,}2}{28{,}26} = 120$. [[br]]Vậy cung đó có số đo $120^\\circ$."
+        },
+        {
+          "type": "noted",
+          "variant": "example",
+          "text": "\\begin{minipage}[t]{0.58\\linewidth}\\vspace{0pt}\\textbf{Ví dụ 7.} Một con bò được buộc vào cọc ở \\textbf{góc} một mảnh vườn cỏ hình vuông cạnh $5$ m bằng sợi dây dài $2$ m. Tính diện tích phần cỏ con bò ăn được (lấy $\\pi \\approx 3{,}14$). [[br]]\\textit{Giải.} Cọc ở góc vườn nên hai cạnh vườn tạo với nhau góc $90^\\circ$. [[br]]Con bò đi được tối đa một khoảng bằng chiều dài dây, tức là $2$ m tính từ cọc. [[br]]Do đó phần cỏ con bò ăn được là hình quạt tròn bán kính $R = 2$ m, góc ở tâm $n = 90^\\circ$. [[br]]Diện tích phần cỏ đó là $S_q = \\dfrac{\\pi R^2 n}{360} = \\dfrac{\\pi \\cdot 2^2 \\cdot 90}{360} = \\pi$ (m$^2$). [[br]]Với $\\pi \\approx 3{,}14$ ta được $S_q \\approx 3{,}14$ (m$^2$). [[br]]Vậy con bò ăn được khoảng $3{,}14$ m$^2$ cỏ.\\end{minipage}\\hfill\\begin{minipage}[t]{0.36\\linewidth}\\vspace{0pt}\n\\centering\n\\adjustbox{max width=\\linewidth, max totalheight=2.4cm}{\n\\begin{tikzpicture}[line width=0.8pt, font=\\small]\n  \\draw[ink] (0,0) rectangle (2.5,2.5);\n  \\fill[ink!18] (0,0) -- (1.0,0) arc (0:90:1.0) -- cycle;\n  \\draw[ink] (1.0,0) arc (0:90:1.0);\n  \\fill[ink] (0,0) circle (1.3pt);\n  \\node[below left] at (0,0) {cọc};\n  \\node[below] at (0.5,0) {$2$ m};\n  \\node[below] at (2.5,0) {$5$ m};\n\\end{tikzpicture}\n}\n\\par\\vspace{2pt}{\\sffamily\\scriptsize\\itshape\\color{muted}Hình 4}\n\\end{minipage}"
+        }
+      ]
+    },
+    {
+      "kind": "practice1",
+      "number": 3,
+      "title": "Luyện tập 1",
+      "teacher_note": "20 câu nhận biết, chạy khoảng 20 phút. Bài 7 và Bài 8 là hai ý đầu của bài vành khuyên — Bài 11 ở Luyện tập 2 chỉ việc nối tiếp, đừng dạy tách rời.",
+      "blocks": [
+        {
+          "type": "problem",
+          "label": "Bài 1.",
+          "level": 1,
+          "tier": "onclass",
+          "figure_given": true,
+          "statement": "Điền công thức vào chỗ chấm (đường tròn bán kính $R$, đường kính $d$): [[br]]a) [NB] Độ dài đường tròn: $C = \\ldots\\ldots \\pi R$. [[br]]b) [NB] Tính theo đường kính: $C = \\pi \\cdot \\ldots\\ldots$",
+          "solution": "a) $C = 2\\pi R$. [[br]]b) $C = \\pi d$."
+        },
+        {
+          "type": "writelines",
+          "count": 2
+        },
+        {
+          "type": "problem",
+          "label": "Bài 2.",
+          "level": 1,
+          "tier": "onclass",
+          "figure_given": true,
+          "statement": "Điền vào chỗ chấm: [[br]]a) [NB] Độ dài cung $n^\\circ$ của đường tròn bán kính $R$ là $l = \\dfrac{\\pi R n}{\\ldots\\ldots}$ [[br]]b) [NB] Cung $180^\\circ$ của đường tròn bán kính $R$ có độ dài bằng $\\ldots\\ldots$ (theo $\\pi$ và $R$).",
+          "solution": "a) $l = \\dfrac{\\pi R n}{180}$. [[br]]b) $l = \\dfrac{\\pi R \\cdot 180}{180} = \\pi R$ (đúng bằng nửa đường tròn)."
+        },
+        {
+          "type": "writelines",
+          "count": 2
+        },
+        {
+          "type": "problem",
+          "label": "Bài 3.",
+          "level": 1,
+          "tier": "onclass",
+          "figure_given": true,
+          "statement": "Điền vào chỗ chấm: [[br]]a) [NB] Diện tích hình tròn bán kính $R$ là $S = \\pi \\cdot \\ldots\\ldots$ [[br]]b) [NB] Diện tích hình quạt tròn bán kính $R$, góc ở tâm $n^\\circ$ là $S_q = \\dfrac{\\pi R^2 n}{\\ldots\\ldots}$ [[br]]c) [NB] Diện tích hình vành khuyên giữa hai đường tròn bán kính $R$ và $r$ là $S = \\pi (\\ldots\\ldots)$",
+          "solution": "a) $S = \\pi R^2$. [[br]]b) $S_q = \\dfrac{\\pi R^2 n}{360}$. [[br]]c) $S = \\pi (R^2 - r^2)$."
+        },
+        {
+          "type": "writelines",
+          "count": 2
+        },
+        {
+          "type": "problem",
+          "label": "Bài 4.",
+          "level": 1,
+          "tier": "onclass",
+          "figure_given": true,
+          "statement": "Tính độ dài đường tròn, lấy $\\pi \\approx 3{,}14$: [[br]]a) [NB] Bán kính $R = 5$ cm: $C = 2\\pi \\cdot 5 = \\ldots\\ldots$ cm. [[br]]b) [NB] Đường kính $d = 8$ cm: $C = \\pi \\cdot 8 = \\ldots\\ldots$ cm. [[br]]c) [NB] Bán kính $R = 3$ cm: $C = \\ldots\\ldots$ cm.",
+          "solution": "a) $C = 10\\pi \\approx 31{,}4$ cm. [[br]]b) $C = 8\\pi \\approx 25{,}12$ cm. [[br]]c) $C = 6\\pi \\approx 18{,}84$ cm."
+        },
+        {
+          "type": "writelines",
+          "count": 2
+        },
+        {
+          "type": "problem",
+          "label": "Bài 5.",
+          "level": 1,
+          "tier": "onclass",
+          "figure_given": true,
+          "statement": "Tính diện tích hình tròn, lấy $\\pi \\approx 3{,}14$: [[br]]a) [NB] Bán kính $R = 4$ cm: $S = \\pi \\cdot 4^2 = \\ldots\\ldots$ cm$^2$. [[br]]b) [NB] Bán kính $R = 10$ cm: $S = \\ldots\\ldots$ cm$^2$. [[br]]c) [NB] Đường kính $d = 6$ cm, suy ra $R = \\ldots$ cm và $S = \\ldots\\ldots$ cm$^2$.",
+          "solution": "a) $S = 16\\pi \\approx 50{,}24$ cm$^2$. [[br]]b) $S = 100\\pi = 314$ cm$^2$. [[br]]c) $R = 3$ cm và $S = 9\\pi \\approx 28{,}26$ cm$^2$."
+        },
+        {
+          "type": "writelines",
+          "count": 2
+        },
+        {
+          "type": "problem",
+          "label": "Bài 6.",
+          "level": 1,
+          "tier": "onclass",
+          "figure_given": true,
+          "statement": "[[wrap]]\\makebox[0pt][l]{\\hspace{0.62\\linewidth}\\smash{\\raisebox{-1.75cm}{\\vtop{\\hbox{\\adjustbox{max width=0.32\\linewidth, max totalheight=2.2cm}{\n\\begin{tikzpicture}[line width=0.8pt, font=\\small]\n  \\draw[ink] (0,0) circle (1.4);\n  \\fill[ink!18] (0,0) -- (1.4,0) arc (0:120:1.4) -- cycle;\n  \\draw[ink] (0,0) -- (1.4,0);\n  \\draw[ink] (0,0) -- (120:1.4);\n  \\fill[ink] (0,0) circle (1.2pt);\n  \\node[below left] at (0,0) {$O$};\n  \\node[right] at (1.4,0) {$A$};\n  \\node[above left] at (120:1.4) {$B$};\n  \\node[below] at (0.7,0) {$6$};\n  \\node[above right] at (60:0.5) {$120^\\circ$};\n\\end{tikzpicture}\n}}\n\\hbox to 0.32\\linewidth{\\hfil{\\sffamily\\scriptsize\\itshape\\color{muted}Hình 5}\\hfil}}}}}[[/wrap]]Đọc Hình 5 rồi điền vào chỗ chấm: [[br]]a) [NB] Bán kính của hình quạt tô đậm là $R = \\ldots\\ldots$ cm. [[br]]b) [NB] Góc ở tâm của hình quạt đó là $n = \\ldots\\ldots$ độ. [[br]]c) [NB] Hình quạt đó chiếm $\\dfrac{\\ldots}{360} = \\dfrac{1}{\\ldots}$ hình tròn.\\par\\vspace{0.67cm}",
+          "solution": "a) $R = 6$ cm. [[br]]b) $n = 120^\\circ$. [[br]]c) $\\dfrac{120}{360} = \\dfrac{1}{3}$ hình tròn."
+        },
+        {
+          "type": "writelines",
+          "count": 2
+        },
+        {
+          "type": "problem",
+          "label": "Bài 7.",
+          "level": 1,
+          "tier": "onclass",
+          "figure_given": true,
+          "statement": "[[wrap]]\\makebox[0pt][l]{\\hspace{0.62\\linewidth}\\smash{\\raisebox{-1.75cm}{\\vtop{\\hbox{\\adjustbox{max width=0.32\\linewidth, max totalheight=2.2cm}{\n\\begin{tikzpicture}[line width=0.8pt, font=\\small]\n  \\fill[ink!18] (0,0) circle (1.4);\n  \\fill[white] (0,0) circle (0.93);\n  \\draw[ink] (0,0) circle (1.4);\n  \\draw[ink] (0,0) circle (0.93);\n  \\fill[ink] (0,0) circle (1.2pt);\n  \\node[below left] at (0,0) {$O$};\n  \\draw[ink] (-1.4,-1.75) -- (1.4,-1.75);\n  \\node[below] at (0,-1.75) {$12$};\n\\end{tikzpicture}\n}}\n\\hbox to 0.32\\linewidth{\\hfil{\\sffamily\\scriptsize\\itshape\\color{muted}Hình 6}\\hfil}}}}}[[/wrap]]Hình 6 là hình vành khuyên giới hạn bởi hai đường tròn đồng tâm $O$ có đường kính $12$ cm và $8$ cm. Điền vào chỗ chấm: [[br]]a) [NB] Bán kính đường tròn lớn $R = \\dfrac{12}{2} = \\ldots\\ldots$ cm. [[br]]b) [NB] Bán kính đường tròn nhỏ $r = \\dfrac{8}{2} = \\ldots\\ldots$ cm.\\par\\vspace{0.67cm}",
+          "solution": "a) $R = 6$ cm. [[br]]b) $r = 4$ cm."
+        },
+        {
+          "type": "writelines",
+          "count": 2
+        },
+        {
+          "type": "problem",
+          "label": "Bài 8.",
+          "level": 1,
+          "tier": "onclass",
+          "figure_given": true,
+          "statement": "Vẫn với hình vành khuyên ở Hình 6 ($R = 6$ cm, $r = 4$ cm), lấy $\\pi \\approx 3{,}14$. Điền vào chỗ chấm: [[br]]a) [NB] Diện tích hình tròn lớn: $S_1 = \\pi R^2 = \\pi \\cdot 6^2 = \\ldots\\ldots$ cm$^2$. [[br]]b) [NB] Diện tích hình tròn nhỏ: $S_2 = \\pi r^2 = \\pi \\cdot 4^2 = \\ldots\\ldots$ cm$^2$.",
+          "solution": "a) $S_1 = 36\\pi \\approx 113{,}04$ cm$^2$. [[br]]b) $S_2 = 16\\pi \\approx 50{,}24$ cm$^2$."
+        },
+        {
+          "type": "writelines",
+          "count": 2
+        }
+      ]
+    },
+    {
+      "kind": "practice2",
+      "number": 4,
+      "title": "Luyện tập 2",
+      "teacher_note": "Bài 11 nối thẳng từ Bài 7, 8: HS đã có $S_1$, $S_2$ rồi chỉ việc trừ. Bài 13 là bài thực tế trọng tâm — bắt HS vẽ hình quạt ra nháp trước khi thay số.",
+      "blocks": [
+        {
+          "type": "problem",
+          "label": "Bài 9.",
+          "level": 2,
+          "tier": "onclass",
+          "statement": "[TH] Cho đường tròn bán kính $R = 9$ cm. Tính độ dài cung $120^\\circ$ và diện tích hình quạt tròn tương ứng (lấy $\\pi \\approx 3{,}14$, làm tròn đến chữ số thập phân thứ hai).",
+          "solution": "Độ dài cung $120^\\circ$ là $l = \\dfrac{\\pi R n}{180} = \\dfrac{\\pi \\cdot 9 \\cdot 120}{180} = 6\\pi$ (cm). [[br]]Với $\\pi \\approx 3{,}14$ ta được $l \\approx 6 \\cdot 3{,}14 = 18{,}84$ (cm). [[br]]Diện tích hình quạt tròn là $S_q = \\dfrac{\\pi R^2 n}{360} = \\dfrac{\\pi \\cdot 9^2 \\cdot 120}{360} = 27\\pi$ (cm$^2$). [[br]]Với $\\pi \\approx 3{,}14$ ta được $S_q \\approx 27 \\cdot 3{,}14 = 84{,}78$ (cm$^2$). [[br]]Vậy độ dài cung khoảng $18{,}84$ cm và diện tích hình quạt khoảng $84{,}78$ cm$^2$."
+        },
+        {
+          "type": "writelines",
+          "count": 4
+        },
+        {
+          "type": "problem",
+          "label": "Bài 10.",
+          "level": 2,
+          "tier": "onclass",
+          "statement": "[TH] Cho đường tròn bán kính $R = 12$ cm. Tính độ dài cung $30^\\circ$ và diện tích hình quạt tròn tương ứng (lấy $\\pi \\approx 3{,}14$, làm tròn đến chữ số thập phân thứ hai).",
+          "solution": "Độ dài cung $30^\\circ$ là $l = \\dfrac{\\pi R n}{180} = \\dfrac{\\pi \\cdot 12 \\cdot 30}{180} = 2\\pi$ (cm). [[br]]Với $\\pi \\approx 3{,}14$ ta được $l \\approx 2 \\cdot 3{,}14 = 6{,}28$ (cm). [[br]]Diện tích hình quạt tròn là $S_q = \\dfrac{\\pi R^2 n}{360} = \\dfrac{\\pi \\cdot 12^2 \\cdot 30}{360} = 12\\pi$ (cm$^2$). [[br]]Với $\\pi \\approx 3{,}14$ ta được $S_q \\approx 12 \\cdot 3{,}14 = 37{,}68$ (cm$^2$). [[br]]Vậy độ dài cung khoảng $6{,}28$ cm và diện tích hình quạt khoảng $37{,}68$ cm$^2$."
+        },
+        {
+          "type": "writelines",
+          "count": 4
+        },
+        {
+          "type": "problem",
+          "label": "Bài 11.",
+          "level": 2,
+          "tier": "onclass",
+          "statement": "[TH] Tính diện tích hình vành khuyên ở Hình 6, biết hai đường tròn đồng tâm có đường kính $12$ cm và $8$ cm (lấy $\\pi \\approx 3{,}14$).",
+          "solution": "Bán kính đường tròn lớn là $R = \\dfrac{12}{2} = 6$ (cm). [[br]]Bán kính đường tròn nhỏ là $r = \\dfrac{8}{2} = 4$ (cm). [[br]]Diện tích hình vành khuyên là $S = \\pi (R^2 - r^2) = \\pi (6^2 - 4^2) = \\pi (36 - 16) = 20\\pi$ (cm$^2$). [[br]]Với $\\pi \\approx 3{,}14$ ta được $S \\approx 20 \\cdot 3{,}14 = 62{,}8$ (cm$^2$). [[br]]Vậy diện tích hình vành khuyên khoảng $62{,}8$ cm$^2$."
+        },
+        {
+          "type": "writelines",
+          "count": 4
+        },
+        {
+          "type": "problem",
+          "label": "Bài 12.",
+          "level": 2,
+          "tier": "onclass",
+          "statement": "[TH] Một cung của đường tròn bán kính $R = 12$ cm có độ dài $l \\approx 12{,}56$ cm. Tính số đo $n^\\circ$ của cung đó (lấy $\\pi \\approx 3{,}14$).",
+          "solution": "Từ công thức $l = \\dfrac{\\pi R n}{180}$ ta suy ra $n = \\dfrac{180 \\cdot l}{\\pi R}$. [[br]]Thay số: $n \\approx \\dfrac{180 \\cdot 12{,}56}{3{,}14 \\cdot 12} = \\dfrac{2260{,}8}{37{,}68} = 60$. [[br]]Vậy cung đó có số đo $60^\\circ$."
+        },
+        {
+          "type": "writelines",
+          "count": 4
+        },
+        {
+          "type": "problem",
+          "label": "Bài 13.",
+          "level": 3,
+          "tier": "onclass",
+          "statement": "[VD] Một con dê được buộc vào cọc đóng ở \\textbf{góc} một mảnh sân cỏ hình vuông cạnh $6$ m bằng sợi dây dài $3$ m. Tính diện tích phần cỏ con dê ăn được (lấy $\\pi \\approx 3{,}14$, làm tròn đến chữ số thập phân thứ hai).",
+          "solution": "Cọc đóng ở góc sân nên hai cạnh sân tạo với nhau góc $90^\\circ$. [[br]]Con dê đi được tối đa một khoảng bằng chiều dài dây, tức là $3$ m tính từ cọc. [[br]]Do đó phần cỏ con dê ăn được là hình quạt tròn bán kính $R = 3$ m, góc ở tâm $n = 90^\\circ$. [[br]]Diện tích phần cỏ đó là $S_q = \\dfrac{\\pi R^2 n}{360} = \\dfrac{\\pi \\cdot 3^2 \\cdot 90}{360} = \\dfrac{9\\pi}{4}$ (m$^2$). [[br]]Với $\\pi \\approx 3{,}14$ ta được $S_q \\approx \\dfrac{9 \\cdot 3{,}14}{4} = \\dfrac{28{,}26}{4} = 7{,}065 \\approx 7{,}07$ (m$^2$). [[br]]Vậy con dê ăn được khoảng $7{,}07$ m$^2$ cỏ."
+        },
+        {
+          "type": "writelines",
+          "count": 6
+        }
+      ]
+    },
+    {
+      "kind": "reflection",
+      "number": 5,
+      "title": "Sơ đồ tư duy",
+      "teacher_note": "BTVN soạn dày hơn quỹ, giao thì Thầy tự cắt. Nhắc HS mang máy tính cầm tay và luôn ghi đơn vị cm$^2$ / m$^2$ cho diện tích.",
+      "blocks": [
+        {
+          "type": "mindmap",
+          "caption": "Sơ đồ tư duy: Độ dài cung, diện tích quạt và vành khuyên",
+          "root": "ĐƯỜNG TRÒN BÁN KÍNH $R$",
+          "branches": [
+            {
+              "label": "CẢ ĐƯỜNG TRÒN / HÌNH TRÒN",
+              "children": [
+                {
+                  "label": "Độ dài $C = 2\\pi R = \\pi d$"
+                },
+                {
+                  "label": "Diện tích $S = \\pi R^2$"
+                }
+              ]
+            },
+            {
+              "label": "MỘT PHẦN — GÓC $n^\\circ$",
+              "children": [
+                {
+                  "label": "Độ dài cung $l = \\dfrac{\\pi R n}{180}$"
+                },
+                {
+                  "label": "Diện tích quạt $S_q = \\dfrac{\\pi R^2 n}{360}$"
+                },
+                {
+                  "label": "Phần chiếm $= \\dfrac{n}{360}$ hình tròn"
+                }
+              ]
+            },
+            {
+              "label": "MẸO 180 HAY 360",
+              "children": [
+                {
+                  "label": "Cung là ĐỘ DÀI $\\Rightarrow$ chia $180$"
+                },
+                {
+                  "label": "Quạt là DIỆN TÍCH $\\Rightarrow$ chia $360$"
+                }
+              ]
+            },
+            {
+              "label": "VÀNH KHUYÊN",
+              "children": [
+                {
+                  "label": "Hai đường tròn ĐỒNG TÂM, $R > r$"
+                },
+                {
+                  "label": "$S = \\pi (R^2 - r^2)$"
+                },
+                {
+                  "label": "Đề cho đường kính thì chia $2$ trước"
+                }
+              ]
+            },
+            {
+              "label": "BÀI THỰC TẾ",
+              "children": [
+                {
+                  "label": "Buộc ở GÓC vuông $\\Rightarrow$ quạt $90^\\circ$"
+                },
+                {
+                  "label": "Dây buộc chính là bán kính $R$"
+                },
+                {
+                  "label": "Làm tròn MỘT LẦN ở bước cuối"
+                }
+              ]
+            }
+          ]
+        },
+        {
+          "type": "writelines",
+          "count": 0
+        },
+        {
+          "type": "para",
+          "text": "\\textbf{BÀI TẬP VỀ NHÀ (Độ dài cung tròn. Diện tích hình quạt tròn và hình vành khuyên).}"
+        },
+        {
+          "type": "problem",
+          "label": "BTVN 1.",
+          "level": 1,
+          "tier": "btvn",
+          "figure_given": true,
+          "statement": "Điền công thức vào chỗ chấm: [[br]]a) [NB] Độ dài đường tròn bán kính $R$: $C = \\ldots\\ldots$ [[br]]b) [NB] Diện tích hình tròn bán kính $R$: $S = \\ldots\\ldots$ [[br]]c) [NB] Quan hệ đường kính và bán kính: $d = \\ldots\\ldots$",
+          "solution": "a) $C = 2\\pi R$ (hay $\\pi d$). [[br]]b) $S = \\pi R^2$. [[br]]c) $d = 2R$."
+        },
+        {
+          "type": "writelines",
+          "count": 2
+        },
+        {
+          "type": "problem",
+          "label": "BTVN 2.",
+          "level": 1,
+          "tier": "btvn",
+          "figure_given": true,
+          "statement": "Điền vào chỗ chấm: [[br]]a) [NB] Độ dài cung $n^\\circ$: $l = \\dfrac{\\pi R n}{\\ldots\\ldots}$ [[br]]b) [NB] Diện tích hình quạt góc $n^\\circ$: $S_q = \\dfrac{\\pi R^2 n}{\\ldots\\ldots}$ [[br]]c) [NB] Diện tích hình vành khuyên: $S = \\pi (\\ldots\\ldots)$",
+          "solution": "a) chia $180$. [[br]]b) chia $360$. [[br]]c) $S = \\pi (R^2 - r^2)$."
+        },
+        {
+          "type": "writelines",
+          "count": 2
+        },
+        {
+          "type": "problem",
+          "label": "BTVN 3.",
+          "level": 1,
+          "tier": "btvn",
+          "figure_given": true,
+          "statement": "Điền vào chỗ chấm: [[br]]a) [NB] Cung $90^\\circ$ chiếm $\\dfrac{90}{360} = \\dfrac{1}{\\ldots}$ đường tròn. [[br]]b) [NB] Cung $180^\\circ$ chiếm $\\dfrac{1}{\\ldots}$ đường tròn. [[br]]c) [NB] Cung $60^\\circ$ chiếm $\\dfrac{1}{\\ldots}$ đường tròn.",
+          "solution": "a) $\\dfrac{1}{4}$. [[br]]b) $\\dfrac{1}{2}$. [[br]]c) $\\dfrac{1}{6}$."
+        },
+        {
+          "type": "writelines",
+          "count": 2
+        },
+        {
+          "type": "problem",
+          "label": "BTVN 4.",
+          "level": 1,
+          "tier": "btvn",
+          "figure_given": true,
+          "statement": "Tính độ dài đường tròn, lấy $\\pi \\approx 3{,}14$: [[br]]a) [NB] $R = 7$ cm: $C = \\ldots\\ldots$ cm. [[br]]b) [NB] $d = 10$ cm: $C = \\ldots\\ldots$ cm. [[br]]c) [NB] $R = 2{,}5$ cm: $C = \\ldots\\ldots$ cm.",
+          "solution": "a) $C = 14\\pi \\approx 43{,}96$ cm. [[br]]b) $C = 10\\pi = 31{,}4$ cm. [[br]]c) $C = 5\\pi = 15{,}7$ cm."
+        },
+        {
+          "type": "writelines",
+          "count": 2
+        },
+        {
+          "type": "problem",
+          "label": "BTVN 5.",
+          "level": 1,
+          "tier": "btvn",
+          "figure_given": true,
+          "statement": "Tính diện tích hình tròn, lấy $\\pi \\approx 3{,}14$: [[br]]a) [NB] $R = 6$ cm: $S = \\ldots\\ldots$ cm$^2$. [[br]]b) [NB] $R = 8$ cm: $S = \\ldots\\ldots$ cm$^2$. [[br]]c) [NB] $d = 4$ cm, suy ra $R = \\ldots$ cm và $S = \\ldots\\ldots$ cm$^2$.",
+          "solution": "a) $S = 36\\pi \\approx 113{,}04$ cm$^2$. [[br]]b) $S = 64\\pi \\approx 200{,}96$ cm$^2$. [[br]]c) $R = 2$ cm và $S = 4\\pi \\approx 12{,}56$ cm$^2$."
+        },
+        {
+          "type": "writelines",
+          "count": 2
+        },
+        {
+          "type": "problem",
+          "label": "BTVN 6.",
+          "level": 1,
+          "tier": "btvn",
+          "figure_given": true,
+          "statement": "[[wrap]]\\makebox[0pt][l]{\\hspace{0.62\\linewidth}\\smash{\\raisebox{-1.75cm}{\\vtop{\\hbox{\\adjustbox{max width=0.32\\linewidth, max totalheight=2.2cm}{\n\\begin{tikzpicture}[line width=0.8pt, font=\\small]\n  \\draw[ink] (0,0) circle (1.4);\n  \\fill[ink!18] (0,0) -- (1.4,0) arc (0:60:1.4) -- cycle;\n  \\draw[ink] (0,0) -- (1.4,0);\n  \\draw[ink] (0,0) -- (60:1.4);\n  \\fill[ink] (0,0) circle (1.2pt);\n  \\node[below left] at (0,0) {$O$};\n  \\node[right] at (1.4,0) {$M$};\n  \\node[above right] at (60:1.4) {$N$};\n  \\node[below] at (0.7,0) {$10$};\n  \\node[right] at (30:0.55) {$60^\\circ$};\n\\end{tikzpicture}\n}}\n\\hbox to 0.32\\linewidth{\\hfil{\\sffamily\\scriptsize\\itshape\\color{muted}Hình 7}\\hfil}}}}}[[/wrap]]Đọc Hình 7 rồi điền vào chỗ chấm: [[br]]a) [NB] Bán kính của hình quạt tô đậm là $R = \\ldots\\ldots$ cm. [[br]]b) [NB] Góc ở tâm của hình quạt đó là $n = \\ldots\\ldots$ độ. [[br]]c) [NB] Hình quạt đó chiếm $\\dfrac{1}{\\ldots}$ hình tròn.\\par\\vspace{0.67cm}",
+          "solution": "a) $R = 10$ cm. [[br]]b) $n = 60^\\circ$. [[br]]c) $\\dfrac{60}{360} = \\dfrac{1}{6}$ hình tròn."
+        },
+        {
+          "type": "writelines",
+          "count": 2
+        },
+        {
+          "type": "problem",
+          "label": "BTVN 7.",
+          "level": 1,
+          "tier": "btvn",
+          "figure_given": true,
+          "statement": "Một hình vành khuyên giới hạn bởi hai đường tròn đồng tâm $O$ có đường kính $20$ cm và $16$ cm. Điền vào chỗ chấm: [[br]]a) [NB] Bán kính đường tròn lớn $R = \\ldots\\ldots$ cm. [[br]]b) [NB] Bán kính đường tròn nhỏ $r = \\ldots\\ldots$ cm.",
+          "solution": "a) $R = \\dfrac{20}{2} = 10$ cm. [[br]]b) $r = \\dfrac{16}{2} = 8$ cm."
+        },
+        {
+          "type": "writelines",
+          "count": 2
+        },
+        {
+          "type": "problem",
+          "label": "BTVN 8.",
+          "level": 1,
+          "tier": "btvn",
+          "figure_given": true,
+          "statement": "Vẫn với hình vành khuyên ở BTVN 7 ($R = 10$ cm, $r = 8$ cm), lấy $\\pi \\approx 3{,}14$. Điền vào chỗ chấm: [[br]]a) [NB] Diện tích hình tròn lớn: $S_1 = \\ldots\\ldots$ cm$^2$. [[br]]b) [NB] Diện tích hình tròn nhỏ: $S_2 = \\ldots\\ldots$ cm$^2$.",
+          "solution": "a) $S_1 = 100\\pi = 314$ cm$^2$. [[br]]b) $S_2 = 64\\pi \\approx 200{,}96$ cm$^2$."
+        },
+        {
+          "type": "writelines",
+          "count": 2
+        },
+        {
+          "type": "problem",
+          "label": "BTVN 9.",
+          "level": 2,
+          "tier": "btvn",
+          "statement": "[TH] Cho đường tròn bán kính $R = 6$ cm. Tính độ dài cung $150^\\circ$ và diện tích hình quạt tròn tương ứng (lấy $\\pi \\approx 3{,}14$, làm tròn đến chữ số thập phân thứ hai).",
+          "solution": "Độ dài cung $150^\\circ$ là $l = \\dfrac{\\pi R n}{180} = \\dfrac{\\pi \\cdot 6 \\cdot 150}{180} = 5\\pi$ (cm). [[br]]Với $\\pi \\approx 3{,}14$ ta được $l \\approx 5 \\cdot 3{,}14 = 15{,}7$ (cm). [[br]]Diện tích hình quạt tròn là $S_q = \\dfrac{\\pi R^2 n}{360} = \\dfrac{\\pi \\cdot 6^2 \\cdot 150}{360} = 15\\pi$ (cm$^2$). [[br]]Với $\\pi \\approx 3{,}14$ ta được $S_q \\approx 15 \\cdot 3{,}14 = 47{,}1$ (cm$^2$). [[br]]Vậy độ dài cung khoảng $15{,}7$ cm và diện tích hình quạt khoảng $47{,}1$ cm$^2$."
+        },
+        {
+          "type": "writelines",
+          "count": 4
+        },
+        {
+          "type": "problem",
+          "label": "BTVN 10.",
+          "level": 2,
+          "tier": "btvn",
+          "statement": "[TH] Cho đường tròn bán kính $R = 10$ cm. Tính độ dài cung $72^\\circ$ và diện tích hình quạt tròn tương ứng (lấy $\\pi \\approx 3{,}14$, làm tròn đến chữ số thập phân thứ hai).",
+          "solution": "Độ dài cung $72^\\circ$ là $l = \\dfrac{\\pi R n}{180} = \\dfrac{\\pi \\cdot 10 \\cdot 72}{180} = 4\\pi$ (cm). [[br]]Với $\\pi \\approx 3{,}14$ ta được $l \\approx 4 \\cdot 3{,}14 = 12{,}56$ (cm). [[br]]Diện tích hình quạt tròn là $S_q = \\dfrac{\\pi R^2 n}{360} = \\dfrac{\\pi \\cdot 10^2 \\cdot 72}{360} = 20\\pi$ (cm$^2$). [[br]]Với $\\pi \\approx 3{,}14$ ta được $S_q \\approx 20 \\cdot 3{,}14 = 62{,}8$ (cm$^2$). [[br]]Vậy độ dài cung khoảng $12{,}56$ cm và diện tích hình quạt khoảng $62{,}8$ cm$^2$."
+        },
+        {
+          "type": "writelines",
+          "count": 4
+        },
+        {
+          "type": "problem",
+          "label": "BTVN 11.",
+          "level": 2,
+          "tier": "btvn",
+          "statement": "[TH] Tính diện tích hình vành khuyên giới hạn bởi hai đường tròn đồng tâm có đường kính $20$ cm và $16$ cm (lấy $\\pi \\approx 3{,}14$).",
+          "solution": "Bán kính đường tròn lớn là $R = \\dfrac{20}{2} = 10$ (cm). [[br]]Bán kính đường tròn nhỏ là $r = \\dfrac{16}{2} = 8$ (cm). [[br]]Diện tích hình vành khuyên là $S = \\pi (R^2 - r^2) = \\pi (10^2 - 8^2) = \\pi (100 - 64) = 36\\pi$ (cm$^2$). [[br]]Với $\\pi \\approx 3{,}14$ ta được $S \\approx 36 \\cdot 3{,}14 = 113{,}04$ (cm$^2$). [[br]]Vậy diện tích hình vành khuyên khoảng $113{,}04$ cm$^2$."
+        },
+        {
+          "type": "writelines",
+          "count": 4
+        },
+        {
+          "type": "problem",
+          "label": "BTVN 12.",
+          "level": 2,
+          "tier": "btvn",
+          "statement": "[TH] Một cung của đường tròn bán kính $R = 6$ cm có độ dài $l \\approx 9{,}42$ cm. Tính số đo $n^\\circ$ của cung đó (lấy $\\pi \\approx 3{,}14$).",
+          "solution": "Từ công thức $l = \\dfrac{\\pi R n}{180}$ ta suy ra $n = \\dfrac{180 \\cdot l}{\\pi R}$. [[br]]Thay số: $n \\approx \\dfrac{180 \\cdot 9{,}42}{3{,}14 \\cdot 6} = \\dfrac{1695{,}6}{18{,}84} = 90$. [[br]]Vậy cung đó có số đo $90^\\circ$."
+        },
+        {
+          "type": "writelines",
+          "count": 4
+        },
+        {
+          "type": "problem",
+          "label": "BTVN 13.",
+          "level": 2,
+          "tier": "btvn",
+          "statement": "Mặt một chiếc đồng hồ tròn có bán kính $10$ cm. Kim phút dài đúng bằng bán kính đó. Lấy $\\pi \\approx 3{,}14$. [[br]]a) [TH] Trong $15$ phút, đầu kim phút vạch nên một cung. Tính độ dài cung đó. [[br]]b) [TH] Tính diện tích hình quạt tròn mà kim phút quét được trong $15$ phút đó.",
+          "solution": "a) Kim phút quay hết một vòng $360^\\circ$ trong $60$ phút. [[br]]Trong $15$ phút kim phút quay được $\\dfrac{15}{60} \\cdot 360^\\circ = 90^\\circ$. [[br]]Độ dài cung đầu kim phút vạch nên là $l = \\dfrac{\\pi R n}{180} = \\dfrac{\\pi \\cdot 10 \\cdot 90}{180} = 5\\pi$ (cm). [[br]]Với $\\pi \\approx 3{,}14$ ta được $l \\approx 5 \\cdot 3{,}14 = 15{,}7$ (cm). [[br]]Vậy độ dài cung khoảng $15{,}7$ cm. [[br]]b) Diện tích hình quạt kim phút quét được là $S_q = \\dfrac{\\pi R^2 n}{360} = \\dfrac{\\pi \\cdot 10^2 \\cdot 90}{360} = 25\\pi$ (cm$^2$). [[br]]Với $\\pi \\approx 3{,}14$ ta được $S_q \\approx 25 \\cdot 3{,}14 = 78{,}5$ (cm$^2$). [[br]]Vậy diện tích hình quạt khoảng $78{,}5$ cm$^2$."
+        },
+        {
+          "type": "writelines",
+          "count": 6
+        },
+        {
+          "type": "problem",
+          "label": "BTVN 14.",
+          "level": 3,
+          "tier": "btvn",
+          "statement": "[VD] Một con dê được buộc vào cọc đóng ở \\textbf{góc} một mảnh sân cỏ hình vuông cạnh $8$ m bằng sợi dây dài $4$ m. Tính diện tích phần cỏ con dê ăn được (lấy $\\pi \\approx 3{,}14$).",
+          "solution": "Cọc đóng ở góc sân nên hai cạnh sân tạo với nhau góc $90^\\circ$. [[br]]Con dê đi được tối đa một khoảng bằng chiều dài dây, tức là $4$ m tính từ cọc. [[br]]Do đó phần cỏ con dê ăn được là hình quạt tròn bán kính $R = 4$ m, góc ở tâm $n = 90^\\circ$. [[br]]Diện tích phần cỏ đó là $S_q = \\dfrac{\\pi R^2 n}{360} = \\dfrac{\\pi \\cdot 4^2 \\cdot 90}{360} = 4\\pi$ (m$^2$). [[br]]Với $\\pi \\approx 3{,}14$ ta được $S_q \\approx 4 \\cdot 3{,}14 = 12{,}56$ (m$^2$). [[br]]Vậy con dê ăn được khoảng $12{,}56$ m$^2$ cỏ."
+        },
+        {
+          "type": "writelines",
+          "count": 6
+        }
+      ]
+    }
+  ]
+}

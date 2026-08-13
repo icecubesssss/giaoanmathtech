@@ -1,0 +1,630 @@
+{
+  "slug": "phieu-f-vi-tri-hai-duong-tron-va-luyen-tap-chung",
+  "title": "Vị trí tương đối của hai đường tròn. Luyện tập chung",
+  "eyebrow": "PHIẾU F • HÌNH HỌC 9 · CHƯƠNG V — BÀI 17",
+  "grade_label": "Lớp 9 • Hình học",
+  "class_tier": "C",
+  "stages": [
+    {
+      "kind": "review",
+      "number": 1,
+      "title": "Khám phá",
+      "teacher_note": "Bài 17 chỉ chạy 30 phút: xem sơ đồ, làm Bài 1–5 rồi Bài 11 là đủ. Bốn mươi lăm phút còn lại dành cho phần tiếp tuyến (Bài 6–10, 12–15) vì đó mới là phần vào đề thi.",
+      "blocks": [
+        {
+          "type": "para",
+          "text": "\\textbf{Hai vòng xích đu chạm nhau kiểu nào?}"
+        },
+        {
+          "type": "noted",
+          "variant": "note",
+          "text": "\\begin{minipage}[t]{0.52\\linewidth}\\vspace{0pt}Hai bánh xe tròn tâm $O_1$, $O_2$ có bán kính $R_1 = 5$ cm và $R_2 = 3$ cm. Gọi $d = O_1O_2$ là khoảng cách giữa hai tâm. [[br]]\\textbf{a)} Khi $d = 10$ cm, hai bánh xe có chạm nhau không? [[br]]\\textbf{b)} Đẩy lại gần đến $d = 8$ cm thì hai đường tròn chạm nhau ở mấy điểm? Hãy so sánh $8$ với $5 + 3$. [[br]]\\textbf{c)} Đẩy tiếp đến $d = 6$ cm thì hai đường tròn cắt nhau ở mấy điểm?\\end{minipage}\\hfill\\begin{minipage}[t]{0.42\\linewidth}\\vspace{0pt}\n\\centering\n\\adjustbox{max width=\\linewidth, max totalheight=2.2cm}{\n\\begin{tikzpicture}[line width=0.8pt, font=\\small]\n  \\draw[ink] (0,0) circle (1.0);\n  \\draw[ink] (2.0,0) circle (0.6);\n  \\fill[ink] (0,0) circle (1.1pt);\n  \\fill[ink] (2.0,0) circle (1.1pt);\n  \\draw[ink] (0,0) -- (2.0,0);\n  \\node[below left] at (0,0) {$O_1$};\n  \\node[below right] at (2.0,0) {$O_2$};\n  \\node[above] at (1.0,0.04) {$d$};\n\\end{tikzpicture}\n}\n\\par\\vspace{2pt}{\\sffamily\\scriptsize\\itshape\\color{muted}Hình 1}\n\\end{minipage}"
+        },
+        {
+          "type": "writelines",
+          "count": 3
+        }
+      ]
+    },
+    {
+      "kind": "concept",
+      "number": 2,
+      "title": "Kiến thức cần nhớ",
+      "teacher_note": "Mục 1 chỉ cần HS NHÌN sơ đồ mà nhận ra, không bắt học thuộc năm dòng. Mục 2 mới là trọng tâm: hệ thức $AB^2 = AH \\cdot AO$ phải CHỨNG MINH bằng hai tam giác đồng dạng mỗi lần dùng, tuyệt đối không cho HS dùng thẳng.",
+      "blocks": [
+        {
+          "type": "para",
+          "text": "\\textbf{1. Năm vị trí tương đối của hai đường tròn}"
+        },
+        {
+          "type": "para",
+          "text": "Cho $(O_1; R_1)$ và $(O_2; R_2)$ với $R_1 > R_2$, đặt $d = O_1O_2$. Chỉ cần so $d$ với hai số $R_1 + R_2$ và $R_1 - R_2$:"
+        },
+        {
+          "type": "para",
+          "text": "$\\bullet$ $d > R_1 + R_2$: \\textbf{ở ngoài nhau} (không có điểm chung). \\quad $\\bullet$ $d = R_1 + R_2$: \\textbf{tiếp xúc ngoài} (một điểm chung)."
+        },
+        {
+          "type": "para",
+          "text": "$\\bullet$ $R_1 - R_2 < d < R_1 + R_2$: \\textbf{cắt nhau} (hai điểm chung). \\quad $\\bullet$ $d = R_1 - R_2$: \\textbf{tiếp xúc trong} (một điểm chung)."
+        },
+        {
+          "type": "para",
+          "text": "$\\bullet$ $d < R_1 - R_2$: đường tròn nhỏ \\textbf{nằm trong} đường tròn lớn (không có điểm chung)."
+        },
+        {
+          "type": "para",
+          "text": "\\textbf{2. Hệ thức trong bài hai tiếp tuyến}"
+        },
+        {
+          "type": "para",
+          "text": "Từ $A$ ngoài $(O; R)$ kẻ hai tiếp tuyến $AB$, $AC$; $AO$ cắt $BC$ tại $H$. Khi đó $AO \\perp BC$ tại $H$, nên trong tam giác $ABO$ vuông tại $B$, đoạn $BH$ chính là \\textbf{đường cao ứng với cạnh huyền} $AO$."
+        },
+        {
+          "type": "para",
+          "text": "Từ đó có hệ thức $AB^2 = AH \\cdot AO$. \\textbf{Mỗi lần dùng đều phải chứng minh lại} bằng hai tam giác đồng dạng — xem Ví dụ 5."
+        },
+        {
+          "type": "noted",
+          "variant": "example",
+          "text": "\\begin{minipage}[t]{0.56\\linewidth}\\vspace{0pt}\\textbf{Ví dụ 1.} Cho $(O_1; 5\\text{ cm})$ và $(O_2; 3\\text{ cm})$. Xác định vị trí tương đối của hai đường tròn khi $d = O_1O_2$ lần lượt bằng $9$ cm, $8$ cm, $6$ cm, $2$ cm. [[br]]\\textit{Giải.} Ta có $R_1 + R_2 = 5 + 3 = 8$ (cm) và $R_1 - R_2 = 5 - 3 = 2$ (cm). [[br]]Với $d = 9$ cm: vì $9 > 8$ nên hai đường tròn ở ngoài nhau. [[br]]Với $d = 8$ cm: vì $8 = 8$ nên hai đường tròn tiếp xúc ngoài. [[br]]Với $d = 6$ cm: vì $2 < 6 < 8$ nên hai đường tròn cắt nhau. [[br]]Với $d = 2$ cm: vì $2 = 2$ nên hai đường tròn tiếp xúc trong. [[br]]Vậy bốn trường hợp lần lượt là: ở ngoài nhau, tiếp xúc ngoài, cắt nhau, tiếp xúc trong.\\end{minipage}\\hfill\\begin{minipage}[t]{0.38\\linewidth}\\vspace{0pt}\n\\centering\n\\adjustbox{max width=\\linewidth, max totalheight=3.0cm}{\n\\begin{tikzpicture}[line width=0.8pt, font=\\small]\n  \\draw[ink] (0,0) circle (0.7);\n  \\draw[ink] (1.9,0) circle (0.45);\n  \\node[below] at (0.95,-0.75) {ngoài nhau};\n  \\draw[ink] (0,-2.1) circle (0.7);\n  \\draw[ink] (1.15,-2.1) circle (0.45);\n  \\node[below] at (0.6,-2.85) {tiếp xúc ngoài};\n  \\draw[ink] (0,-4.2) circle (0.7);\n  \\draw[ink] (0.85,-4.2) circle (0.45);\n  \\node[below] at (0.45,-4.95) {cắt nhau};\n  \\draw[ink] (0,-6.3) circle (0.7);\n  \\draw[ink] (0.25,-6.3) circle (0.45);\n  \\node[below] at (0.15,-7.05) {tiếp xúc trong};\n\\end{tikzpicture}\n}\n\\par\\vspace{2pt}{\\sffamily\\scriptsize\\itshape\\color{muted}Hình 2}\n\\end{minipage}"
+        },
+        {
+          "type": "noted",
+          "variant": "example",
+          "text": "\\textbf{Ví dụ 2.} Hai đường tròn $(O_1; 7\\text{ cm})$ và $(O_2; 4\\text{ cm})$ tiếp xúc ngoài tại $A$. Tính khoảng cách $O_1O_2$. [[br]]\\textit{Giải.} Hai đường tròn tiếp xúc ngoài nên khoảng cách hai tâm bằng tổng hai bán kính. [[br]]Do đó $O_1O_2 = R_1 + R_2 = 7 + 4 = 11$ (cm). [[br]]Vậy $O_1O_2 = 11$ cm."
+        },
+        {
+          "type": "noted",
+          "variant": "example",
+          "text": "\\textbf{Ví dụ 3.} Cho $(O; R)$ và điểm $A$ ngoài $(O)$, kẻ hai tiếp tuyến $AB$, $AC$ ($B$, $C$ là tiếp điểm). Chứng minh tam giác $ABC$ cân tại $A$. [[br]]\\textit{Giải.} Vì $AB$, $AC$ là hai tiếp tuyến của $(O)$ cắt nhau tại $A$ nên $AB = AC$. [[br]]Tam giác $ABC$ có hai cạnh $AB$ và $AC$ bằng nhau. [[br]]Vậy tam giác $ABC$ cân tại $A$."
+        },
+        {
+          "type": "noted",
+          "variant": "example",
+          "text": "\\begin{minipage}[t]{0.58\\linewidth}\\vspace{0pt}\\textbf{Ví dụ 4.} Trên Hình 3, $AB$, $AC$ là hai tiếp tuyến của $(O)$, $AO$ cắt $BC$ tại $H$. Chỉ ra đường cao ứng với cạnh huyền của tam giác $ABO$ vuông tại $B$. [[br]]\\textit{Giải.} Vì $AB$ là tiếp tuyến của $(O)$ tại $B$ nên $AB \\perp OB$, do đó tam giác $ABO$ vuông tại $B$ với cạnh huyền $AO$. [[br]]Vì $AB = AC$ và $OB = OC = R$ nên $AO$ là đường trung trực của $BC$, suy ra $AO \\perp BC$ tại $H$. [[br]]Do $H$ thuộc cạnh huyền $AO$ và $BH \\perp AO$ nên $BH$ là đường cao ứng với cạnh huyền $AO$. [[br]]Vậy đường cao cần tìm là $BH$.\\end{minipage}\\hfill\\begin{minipage}[t]{0.36\\linewidth}\\vspace{0pt}\n\\centering\n\\adjustbox{max width=\\linewidth, max totalheight=2.6cm}{\n\\begin{tikzpicture}[line width=0.8pt, font=\\small]\n  \\draw[ink] (0,0) circle (1.2);\n  \\fill[ink] (0,0) circle (1.2pt);\n  \\node[below left] at (0,0) {$O$};\n  \\draw[ink] (0,0) -- (0.6,1.039);\n  \\draw[ink] (0,0) -- (0.6,-1.039);\n  \\draw[ink] (0.6,1.039) -- (2.4,0) -- (0.6,-1.039);\n  \\draw[ink] (0,0) -- (2.4,0);\n  \\draw[ink] (0.6,1.039) -- (0.6,-1.039);\n  \\draw[ink] (0.4900,0.8485) -- (0.6805,0.7385) -- (0.7905,0.9290);\n  \\draw[ink] (0.8200,0.0000) -- (0.8200,0.2200) -- (0.6000,0.2200);\n  \\fill[ink] (0.6,0) circle (1.2pt);\n  \\node[below right] at (0.6,0) {$H$};\n  \\node[above left] at (0.6,1.039) {$B$};\n  \\node[below left] at (0.6,-1.039) {$C$};\n  \\node[right] at (2.4,0) {$A$};\n\\end{tikzpicture}\n}\n\\par\\vspace{2pt}{\\sffamily\\scriptsize\\itshape\\color{muted}Hình 3}\n\\end{minipage}"
+        },
+        {
+          "type": "noted",
+          "variant": "example",
+          "text": "\\textbf{Ví dụ 5 (mẫu chứng minh hệ thức — chép đúng cách này khi đi thi).} Với giả thiết như Ví dụ 4, chứng minh $AB^2 = AH \\cdot AO$. [[br]]\\textit{Giải.} Vì $AB$ là tiếp tuyến của $(O)$ tại $B$ nên $AB \\perp OB$, suy ra $\\widehat{ABO} = 90^\\circ$. [[br]]Vì $AO \\perp BC$ tại $H$ nên $\\widehat{AHB} = 90^\\circ$. [[br]]Xét hai tam giác $AHB$ và $ABO$ có: [[br]]$\\widehat{BAH}$ chung; $\\widehat{AHB} = \\widehat{ABO} = 90^\\circ$. [[br]]Do đó $\\triangle AHB \\backsim \\triangle ABO$ (g.g). [[br]]Suy ra $\\dfrac{AH}{AB} = \\dfrac{AB}{AO}$ (tỉ số các cạnh tương ứng). [[br]]Nhân chéo hai vế ta được $AB^2 = AH \\cdot AO$. [[br]]Vậy $AB^2 = AH \\cdot AO$."
+        },
+        {
+          "type": "noted",
+          "variant": "example",
+          "text": "\\textbf{Ví dụ 6.} Cho $(O; 6\\text{ cm})$ và điểm $A$ với $OA = 10$ cm. Kẻ hai tiếp tuyến $AB$, $AC$, $AO$ cắt $BC$ tại $H$. Tính $AB$, $AH$ và $OH$. [[br]]\\textit{Giải.} Vì $AB$ là tiếp tuyến của $(O)$ tại $B$ nên tam giác $ABO$ vuông tại $B$. [[br]]Xét tam giác $ABO$ vuông tại $B$, theo định lí Pythagore: [[br]]$AB^2 = OA^2 - OB^2 = 10^2 - 6^2 = 100 - 36 = 64$, suy ra $AB = 8$ (cm). [[br]]Chứng minh như Ví dụ 5 ta có $AB^2 = AH \\cdot AO$. [[br]]Do đó $AH = \\dfrac{AB^2}{AO} = \\dfrac{64}{10} = 6{,}4$ (cm). [[br]]Vì $H$ nằm giữa $A$ và $O$ nên $OH = AO - AH = 10 - 6{,}4 = 3{,}6$ (cm). [[br]]Vậy $AB = 8$ cm, $AH = 6{,}4$ cm và $OH = 3{,}6$ cm."
+        },
+        {
+          "type": "noted",
+          "variant": "example",
+          "text": "\\textbf{Ví dụ 7.} Cho $(O; 5\\text{ cm})$ và điểm $A$ với $OA = 10$ cm. Kẻ hai tiếp tuyến $AB$, $AC$. Tính diện tích phần mặt phẳng giới hạn bởi hai đoạn $AB$, $AC$ và cung nhỏ $BC$ (làm tròn đến chữ số thập phân thứ hai). [[br]]\\textit{Giải.} Vì $AB$ là tiếp tuyến của $(O)$ tại $B$ nên tam giác $ABO$ vuông tại $B$. [[br]]Xét tam giác $ABO$ vuông tại $B$, theo định lí Pythagore: [[br]]$AB^2 = OA^2 - OB^2 = 10^2 - 5^2 = 75$, suy ra $AB = 5\\sqrt{3}$ (cm). [[br]]Với góc $\\widehat{AOB}$: $\\cos \\widehat{AOB} = \\dfrac{OB}{OA} = \\dfrac{5}{10} = \\dfrac{1}{2}$ nên $\\widehat{AOB} = 60^\\circ$. [[br]]Vì $OA$ là tia phân giác của $\\widehat{BOC}$ nên $\\widehat{BOC} = 2 \\cdot 60^\\circ = 120^\\circ$. [[br]]Diện tích tam giác $ABO$ là $\\dfrac{1}{2} \\cdot AB \\cdot OB = \\dfrac{1}{2} \\cdot 5\\sqrt{3} \\cdot 5 = \\dfrac{25\\sqrt{3}}{2}$ (cm$^2$). [[br]]Vì $\\triangle ABO = \\triangle ACO$ nên diện tích tứ giác $ABOC$ bằng $2 \\cdot \\dfrac{25\\sqrt{3}}{2} = 25\\sqrt{3}$ (cm$^2$). [[br]]Diện tích hình quạt tròn $OBC$ là $\\dfrac{\\pi R^2 n}{360} = \\dfrac{\\pi \\cdot 5^2 \\cdot 120}{360} = \\dfrac{25\\pi}{3}$ (cm$^2$). [[br]]Phần cần tính là tứ giác $ABOC$ bỏ đi hình quạt $OBC$, nên có diện tích $S = 25\\sqrt{3} - \\dfrac{25\\pi}{3}$ (cm$^2$). [[br]]Dùng máy tính cầm tay (chỉ làm tròn ở bước cuối này): $S \\approx 17{,}12$ (cm$^2$). [[br]]Vậy diện tích phần đó khoảng $17{,}12$ cm$^2$."
+        }
+      ]
+    },
+    {
+      "kind": "practice1",
+      "number": 3,
+      "title": "Luyện tập 1",
+      "teacher_note": "Bài 1–5 là phần Bài 17, chạy nhanh 10 phút rồi thôi. Bài 6–10 là giàn giáo cho khuôn tiếp tuyến, chữa kĩ hơn vì Bài 12–15 dùng lại y hệt.",
+      "blocks": [
+        {
+          "type": "problem",
+          "label": "Bài 1.",
+          "level": 1,
+          "tier": "onclass",
+          "figure_given": true,
+          "statement": "[NB] Hai đường tròn $(O_1; R_1)$ và $(O_2; R_2)$ có $d = O_1O_2$. Hai đường tròn \\textbf{cắt nhau} khi:\\par\\vspace{4pt}\\parbox[t]{0.46\\linewidth}{\\textbf{A.} $d > R_1 + R_2$}\\parbox[t]{0.46\\linewidth}{\\textbf{B.} $R_1 - R_2 < d < R_1 + R_2$}\\par\\vspace{6pt}\\parbox[t]{0.46\\linewidth}{\\textbf{C.} $d = R_1 + R_2$}\\parbox[t]{0.46\\linewidth}{\\textbf{D.} $d < R_1 - R_2$}",
+          "solution": "Đáp án \\textbf{B}. Khoảng cách hai tâm nằm giữa hiệu và tổng hai bán kính thì hai đường tròn cắt nhau tại hai điểm."
+        },
+        {
+          "type": "writelines",
+          "count": 0
+        },
+        {
+          "type": "problem",
+          "label": "Bài 2.",
+          "level": 1,
+          "tier": "onclass",
+          "figure_given": true,
+          "statement": "[NB] Hai đường tròn ở \\textbf{ngoài nhau} thì số điểm chung là:\\par\\vspace{4pt}\\parbox[t]{0.30\\linewidth}{\\textbf{A.} $0$}\\parbox[t]{0.30\\linewidth}{\\textbf{B.} $1$}\\par\\vspace{6pt}\\parbox[t]{0.30\\linewidth}{\\textbf{C.} $2$}\\parbox[t]{0.30\\linewidth}{\\textbf{D.} Vô số}",
+          "solution": "Đáp án \\textbf{A}. Ở ngoài nhau nghĩa là không có điểm chung nào."
+        },
+        {
+          "type": "writelines",
+          "count": 0
+        },
+        {
+          "type": "problem",
+          "label": "Bài 3.",
+          "level": 1,
+          "tier": "onclass",
+          "figure_given": true,
+          "statement": "[NB] Hai đường tròn \\textbf{tiếp xúc ngoài} khi khoảng cách hai tâm bằng:\\par\\vspace{4pt}\\parbox[t]{0.46\\linewidth}{\\textbf{A.} $R_1 + R_2$}\\parbox[t]{0.46\\linewidth}{\\textbf{B.} $R_1 - R_2$}\\par\\vspace{6pt}\\parbox[t]{0.46\\linewidth}{\\textbf{C.} $R_1 \\cdot R_2$}\\parbox[t]{0.46\\linewidth}{\\textbf{D.} $0$}",
+          "solution": "Đáp án \\textbf{A}. Tiếp xúc ngoài thì $d = R_1 + R_2$."
+        },
+        {
+          "type": "writelines",
+          "count": 0
+        },
+        {
+          "type": "problem",
+          "label": "Bài 4.",
+          "level": 1,
+          "tier": "onclass",
+          "figure_given": true,
+          "statement": "[NB] Hai đường tròn \\textbf{tiếp xúc trong} khi khoảng cách hai tâm bằng (với $R_1 > R_2$):\\par\\vspace{4pt}\\parbox[t]{0.46\\linewidth}{\\textbf{A.} $R_1 + R_2$}\\parbox[t]{0.46\\linewidth}{\\textbf{B.} $R_1 - R_2$}\\par\\vspace{6pt}\\parbox[t]{0.46\\linewidth}{\\textbf{C.} $2R_1$}\\parbox[t]{0.46\\linewidth}{\\textbf{D.} $2R_2$}",
+          "solution": "Đáp án \\textbf{B}. Tiếp xúc trong thì $d = R_1 - R_2$ (hiệu hai bán kính)."
+        },
+        {
+          "type": "writelines",
+          "count": 0
+        },
+        {
+          "type": "problem",
+          "label": "Bài 5.",
+          "level": 1,
+          "tier": "onclass",
+          "figure_given": true,
+          "statement": "Cho $(O_1; 6\\text{ cm})$ và $(O_2; 4\\text{ cm})$, đặt $d = O_1O_2$. Biết $R_1 + R_2 = 10$ cm và $R_1 - R_2 = 2$ cm. Điền vị trí tương đối vào chỗ chấm: [[br]]a) [NB] $d = 12$ cm: vì $12 \\ldots 10$ nên hai đường tròn \\ldots\\ldots [[br]]b) [NB] $d = 10$ cm: vì $10 \\ldots 10$ nên hai đường tròn \\ldots\\ldots [[br]]c) [NB] $d = 7$ cm: vì $2 \\ldots 7 \\ldots 10$ nên hai đường tròn \\ldots\\ldots",
+          "solution": "a) $12 > 10$ nên hai đường tròn ở ngoài nhau. [[br]]b) $10 = 10$ nên hai đường tròn tiếp xúc ngoài. [[br]]c) $2 < 7 < 10$ nên hai đường tròn cắt nhau."
+        },
+        {
+          "type": "writelines",
+          "count": 2
+        },
+        {
+          "type": "problem",
+          "label": "Bài 6.",
+          "level": 1,
+          "tier": "onclass",
+          "figure_given": true,
+          "statement": "[[wrap]]\\makebox[0pt][l]{\\hspace{0.62\\linewidth}\\smash{\\raisebox{-1.75cm}{\\vtop{\\hbox{\\adjustbox{max width=0.32\\linewidth, max totalheight=2.6cm}{\n\\begin{tikzpicture}[line width=0.8pt, font=\\small]\n  \\draw[ink] (0,0) circle (1.2);\n  \\fill[ink] (0,0) circle (1.2pt);\n  \\node[below left] at (0,0) {$O$};\n  \\draw[ink] (0,0) -- (0.6,1.039);\n  \\draw[ink] (0,0) -- (0.6,-1.039);\n  \\draw[ink] (0.6,1.039) -- (2.4,0) -- (0.6,-1.039);\n  \\draw[ink] (0,0) -- (2.4,0);\n  \\draw[ink] (0.6,1.039) -- (0.6,-1.039);\n  \\draw[ink] (0.4900,0.8485) -- (0.6805,0.7385) -- (0.7905,0.9290);\n  \\draw[ink] (0.8200,0.0000) -- (0.8200,0.2200) -- (0.6000,0.2200);\n  \\fill[ink] (0.6,0) circle (1.2pt);\n  \\node[below right] at (0.6,0) {$H$};\n  \\node[above left] at (0.6,1.039) {$B$};\n  \\node[below left] at (0.6,-1.039) {$C$};\n  \\node[right] at (2.4,0) {$A$};\n\\end{tikzpicture}\n}}\n\\hbox to 0.32\\linewidth{\\hfil{\\sffamily\\scriptsize\\itshape\\color{muted}Hình 4}\\hfil}}}}}[[/wrap]]Trên Hình 4, $AB$, $AC$ là hai tiếp tuyến của $(O)$. Điền vào chỗ chấm: [[br]]a) [NB] Vì $AB$ là tiếp tuyến tại $B$ nên $\\widehat{ABO} = \\ldots\\ldots$ độ. [[br]]b) [NB] Tam giác $ABO$ vuông tại \\ldots\\ldots [[br]]c) [NB] Cạnh huyền của tam giác $ABO$ là \\ldots\\ldots\\par\\vspace{0.67cm}",
+          "solution": "a) $\\widehat{ABO} = 90^\\circ$. [[br]]b) Vuông tại $B$. [[br]]c) Cạnh huyền là $AO$."
+        },
+        {
+          "type": "writelines",
+          "count": 2
+        },
+        {
+          "type": "problem",
+          "label": "Bài 7.",
+          "level": 1,
+          "tier": "onclass",
+          "figure_given": true,
+          "statement": "Cho $(O; R)$, điểm $A$ ngoài $(O)$ và tiếp tuyến $AB$ ($B$ là tiếp điểm). Tính $AB$: [[br]]a) [NB] $R = 8$ cm, $OA = 17$ cm: $AB^2 = 17^2 - 8^2 = \\ldots\\ldots$, suy ra $AB = \\ldots\\ldots$ cm. [[br]]b) [NB] $R = 12$ cm, $OA = 20$ cm: $AB = \\ldots\\ldots$ cm. [[br]]c) [NB] $R = 7$ cm, $OA = 25$ cm: $AB = \\ldots\\ldots$ cm.",
+          "solution": "a) $AB^2 = 289 - 64 = 225$, suy ra $AB = 15$ cm. [[br]]b) $AB^2 = 400 - 144 = 256$, suy ra $AB = 16$ cm. [[br]]c) $AB^2 = 625 - 49 = 576$, suy ra $AB = 24$ cm."
+        },
+        {
+          "type": "writelines",
+          "count": 2
+        },
+        {
+          "type": "problem",
+          "label": "Bài 8.",
+          "level": 1,
+          "tier": "onclass",
+          "figure_given": true,
+          "statement": "Vẫn trên Hình 4. Điền vào chỗ chấm: [[br]]a) [NB] Hai tiếp tuyến cắt nhau tại $A$ nên $AB = \\ldots\\ldots$ [[br]]b) [NB] Tia $AO$ là tia phân giác của góc \\ldots\\ldots [[br]]c) [NB] Tam giác $ABC$ có $AB = AC$ nên cân tại \\ldots\\ldots",
+          "solution": "a) $AB = AC$. [[br]]b) Tia $AO$ là tia phân giác của $\\widehat{BAC}$. [[br]]c) Cân tại $A$."
+        },
+        {
+          "type": "writelines",
+          "count": 2
+        },
+        {
+          "type": "problem",
+          "label": "Bài 9.",
+          "level": 1,
+          "tier": "onclass",
+          "figure_given": true,
+          "statement": "Vẫn trên Hình 4. Điền vào chỗ chấm: [[br]]a) [NB] Vì $AB = AC$ và $OB = OC = R$ nên $AO$ là đường \\ldots\\ldots của đoạn $BC$. [[br]]b) [NB] Do đó $AO \\perp BC$ tại $H$ và $H$ là \\ldots\\ldots của $BC$.",
+          "solution": "a) $AO$ là đường trung trực của đoạn $BC$. [[br]]b) $H$ là trung điểm của $BC$."
+        },
+        {
+          "type": "writelines",
+          "count": 2
+        },
+        {
+          "type": "problem",
+          "label": "Bài 10.",
+          "level": 1,
+          "tier": "onclass",
+          "figure_given": true,
+          "statement": "Vẫn trên Hình 4. Điền vào chỗ chấm: [[br]]a) [NB] Điểm $H$ nằm trên cạnh huyền \\ldots\\ldots của tam giác $ABO$ vuông tại $B$. [[br]]b) [NB] Vì $BH \\perp AO$ tại $H$ nên $BH$ là đường \\ldots\\ldots ứng với cạnh huyền của tam giác $ABO$.",
+          "solution": "a) Cạnh huyền $AO$. [[br]]b) $BH$ là đường cao ứng với cạnh huyền $AO$."
+        },
+        {
+          "type": "writelines",
+          "count": 2
+        }
+      ]
+    },
+    {
+      "kind": "practice2",
+      "number": 4,
+      "title": "Luyện tập 2",
+      "teacher_note": "Bài 12, 13 bắt HS viết TRỌN chứng minh hai tam giác đồng dạng rồi mới nhân chéo — cấm nhảy thẳng vào hệ thức. Bài 15 là bài hình trọn vẹn, chỉ làm tại lớp.",
+      "blocks": [
+        {
+          "type": "problem",
+          "label": "Bài 11.",
+          "level": 2,
+          "tier": "onclass",
+          "statement": "[TH] Hai đường tròn $(O_1; 9\\text{ cm})$ và $(O_2; 5\\text{ cm})$. Tính khoảng cách $O_1O_2$ khi hai đường tròn tiếp xúc ngoài, và khi hai đường tròn tiếp xúc trong.",
+          "solution": "Khi hai đường tròn tiếp xúc ngoài, khoảng cách hai tâm bằng tổng hai bán kính. [[br]]Do đó $O_1O_2 = R_1 + R_2 = 9 + 5 = 14$ (cm). [[br]]Khi hai đường tròn tiếp xúc trong, khoảng cách hai tâm bằng hiệu hai bán kính. [[br]]Do đó $O_1O_2 = R_1 - R_2 = 9 - 5 = 4$ (cm). [[br]]Vậy $O_1O_2 = 14$ cm khi tiếp xúc ngoài và $O_1O_2 = 4$ cm khi tiếp xúc trong."
+        },
+        {
+          "type": "writelines",
+          "count": 4
+        },
+        {
+          "type": "problem",
+          "label": "Bài 12.",
+          "level": 2,
+          "tier": "onclass",
+          "statement": "[TH] Cho $(O; R)$ và điểm $A$ ngoài $(O)$. Kẻ hai tiếp tuyến $AB$, $AC$ ($B$, $C$ là tiếp điểm), $AO$ cắt $BC$ tại $H$. Chứng minh $AB^2 = AH \\cdot AO$.",
+          "solution": "Vì $AB$ là tiếp tuyến của $(O)$ tại $B$ nên $AB \\perp OB$, suy ra $\\widehat{ABO} = 90^\\circ$. [[br]]Vì $AB = AC$ và $OB = OC = R$ nên $AO$ là đường trung trực của $BC$, do đó $AO \\perp BC$ tại $H$, suy ra $\\widehat{AHB} = 90^\\circ$. [[br]]Xét hai tam giác $AHB$ và $ABO$ có: [[br]]$\\widehat{BAH}$ chung; $\\widehat{AHB} = \\widehat{ABO} = 90^\\circ$. [[br]]Do đó $\\triangle AHB \\backsim \\triangle ABO$ (g.g). [[br]]Suy ra $\\dfrac{AH}{AB} = \\dfrac{AB}{AO}$ (tỉ số các cạnh tương ứng). [[br]]Nhân chéo hai vế ta được $AB^2 = AH \\cdot AO$. [[br]]Vậy $AB^2 = AH \\cdot AO$."
+        },
+        {
+          "type": "writelines",
+          "count": 6
+        },
+        {
+          "type": "problem",
+          "label": "Bài 13.",
+          "level": 2,
+          "tier": "onclass",
+          "statement": "[TH] Cho $(O; 9\\text{ cm})$ và điểm $A$ với $OA = 15$ cm. Kẻ hai tiếp tuyến $AB$, $AC$, $AO$ cắt $BC$ tại $H$. Tính $AB$, $AH$ và $OH$.",
+          "solution": "Vì $AB$ là tiếp tuyến của $(O)$ tại $B$ nên tam giác $ABO$ vuông tại $B$. [[br]]Xét tam giác $ABO$ vuông tại $B$, theo định lí Pythagore: [[br]]$AB^2 = OA^2 - OB^2 = 15^2 - 9^2 = 225 - 81 = 144$, suy ra $AB = 12$ (cm). [[br]]Chứng minh như Bài 12 ta có $AB^2 = AH \\cdot AO$. [[br]]Do đó $AH = \\dfrac{AB^2}{AO} = \\dfrac{144}{15} = 9{,}6$ (cm). [[br]]Vì $H$ nằm giữa $A$ và $O$ nên $OH = AO - AH = 15 - 9{,}6 = 5{,}4$ (cm). [[br]]Vậy $AB = 12$ cm, $AH = 9{,}6$ cm và $OH = 5{,}4$ cm."
+        },
+        {
+          "type": "writelines",
+          "count": 6
+        },
+        {
+          "type": "problem",
+          "label": "Bài 14.",
+          "level": 2,
+          "tier": "onclass",
+          "statement": "[TH] Cho $(O; R)$ và điểm $A$ với $OA = 2R$. Kẻ hai tiếp tuyến $AB$, $AC$, $AO$ cắt $BC$ tại $H$. Tính $AH$ và $OH$ theo $R$.",
+          "solution": "Vì $AB$ là tiếp tuyến của $(O)$ tại $B$ nên tam giác $ABO$ vuông tại $B$. [[br]]Xét tam giác $ABO$ vuông tại $B$, theo định lí Pythagore: [[br]]$AB^2 = OA^2 - OB^2 = (2R)^2 - R^2 = 4R^2 - R^2 = 3R^2$. [[br]]Chứng minh như Bài 12 ta có $AB^2 = AH \\cdot AO$. [[br]]Do đó $AH = \\dfrac{AB^2}{AO} = \\dfrac{3R^2}{2R} = \\dfrac{3R}{2}$. [[br]]Vì $H$ nằm giữa $A$ và $O$ nên $OH = AO - AH = 2R - \\dfrac{3R}{2} = \\dfrac{R}{2}$. [[br]]Vậy $AH = \\dfrac{3R}{2}$ và $OH = \\dfrac{R}{2}$."
+        },
+        {
+          "type": "writelines",
+          "count": 6
+        },
+        {
+          "type": "problem",
+          "label": "Bài 15.",
+          "level": 3,
+          "tier": "onclass",
+          "statement": "[VD] Cho $(O; 6\\text{ cm})$ và điểm $A$ với $OA = 12$ cm. Kẻ hai tiếp tuyến $AB$, $AC$ của $(O)$ ($B$, $C$ là tiếp điểm). Tính diện tích phần mặt phẳng giới hạn bởi hai đoạn $AB$, $AC$ và cung nhỏ $BC$ (làm tròn đến chữ số thập phân thứ hai).",
+          "solution": "Vì $AB$ là tiếp tuyến của $(O)$ tại $B$ nên tam giác $ABO$ vuông tại $B$. [[br]]Xét tam giác $ABO$ vuông tại $B$, theo định lí Pythagore: [[br]]$AB^2 = OA^2 - OB^2 = 12^2 - 6^2 = 144 - 36 = 108$, suy ra $AB = 6\\sqrt{3}$ (cm). [[br]]Với góc $\\widehat{AOB}$ thì $OB$ là cạnh kề và $OA$ là cạnh huyền, nên $\\cos \\widehat{AOB} = \\dfrac{OB}{OA} = \\dfrac{6}{12} = \\dfrac{1}{2}$. [[br]]Suy ra $\\widehat{AOB} = 60^\\circ$. [[br]]Vì tia $OA$ là tia phân giác của $\\widehat{BOC}$ nên $\\widehat{BOC} = 2 \\cdot 60^\\circ = 120^\\circ$. [[br]]Diện tích tam giác $ABO$ là $\\dfrac{1}{2} \\cdot AB \\cdot OB = \\dfrac{1}{2} \\cdot 6\\sqrt{3} \\cdot 6 = 18\\sqrt{3}$ (cm$^2$). [[br]]Vì $\\triangle ABO = \\triangle ACO$ nên diện tích tứ giác $ABOC$ bằng $2 \\cdot 18\\sqrt{3} = 36\\sqrt{3}$ (cm$^2$). [[br]]Diện tích hình quạt tròn $OBC$ là $\\dfrac{\\pi R^2 n}{360} = \\dfrac{\\pi \\cdot 6^2 \\cdot 120}{360} = 12\\pi$ (cm$^2$). [[br]]Phần cần tính là tứ giác $ABOC$ bỏ đi hình quạt $OBC$, nên $S = 36\\sqrt{3} - 12\\pi$ (cm$^2$). [[br]]Dùng máy tính cầm tay (chỉ làm tròn ở bước cuối này): $S \\approx 24{,}65$ (cm$^2$). [[br]]Vậy diện tích phần đó khoảng $24{,}65$ cm$^2$."
+        },
+        {
+          "type": "writelines",
+          "count": 6
+        }
+      ]
+    },
+    {
+      "kind": "reflection",
+      "number": 5,
+      "title": "Sơ đồ tư duy",
+      "teacher_note": "BTVN soạn dày hơn quỹ, giao thì Thầy tự cắt. Nhắc HS: bài nào dùng $AB^2 = AH \\cdot AO$ đều phải chứng minh lại, không được viết thẳng ra kết quả.",
+      "blocks": [
+        {
+          "type": "mindmap",
+          "caption": "Sơ đồ tư duy: Hai đường tròn và hệ thức trong bài tiếp tuyến",
+          "root": "BUỔI 6",
+          "branches": [
+            {
+              "label": "HAI ĐƯỜNG TRÒN — so $d$ với $R_1 \\pm R_2$",
+              "children": [
+                {
+                  "label": "$d > R_1 + R_2$: ngoài nhau"
+                },
+                {
+                  "label": "$d = R_1 + R_2$: tiếp xúc ngoài"
+                },
+                {
+                  "label": "$R_1 - R_2 < d < R_1 + R_2$: cắt nhau"
+                },
+                {
+                  "label": "$d = R_1 - R_2$: tiếp xúc trong"
+                },
+                {
+                  "label": "$d < R_1 - R_2$: đựng nhau"
+                }
+              ]
+            },
+            {
+              "label": "HÌNH CHUẨN HAI TIẾP TUYẾN",
+              "children": [
+                {
+                  "label": "$\\widehat{ABO} = 90^\\circ$, huyền $AO$"
+                },
+                {
+                  "label": "$AB = AC$, $AO$ phân giác $\\widehat{BAC}$"
+                },
+                {
+                  "label": "$AO$ trung trực $BC \\Rightarrow AO \\perp BC$ tại $H$"
+                },
+                {
+                  "label": "$BH$ là ĐƯỜNG CAO ứng cạnh huyền $AO$"
+                }
+              ]
+            },
+            {
+              "label": "HỆ THỨC $AB^2 = AH \\cdot AO$",
+              "children": [
+                {
+                  "label": "PHẢI chứng minh lại mỗi lần dùng"
+                },
+                {
+                  "label": "$\\widehat{A}$ chung $+$ hai góc $90^\\circ$"
+                },
+                {
+                  "label": "$\\triangle AHB \\backsim \\triangle ABO$ (g.g)"
+                },
+                {
+                  "label": "$\\dfrac{AH}{AB} = \\dfrac{AB}{AO}$ rồi nhân chéo"
+                }
+              ]
+            },
+            {
+              "label": "TÍNH DIỆN TÍCH PHẦN NGOÀI",
+              "children": [
+                {
+                  "label": "$S = S_{ABOC} - S_{\\text{quạt } OBC}$"
+                },
+                {
+                  "label": "$S_{ABOC} = AB \\cdot OB$ (hai tam giác vuông bằng nhau)"
+                },
+                {
+                  "label": "$OA = 2R \\Rightarrow \\widehat{AOB} = 60^\\circ$, $\\widehat{BOC} = 120^\\circ$"
+                }
+              ]
+            }
+          ]
+        },
+        {
+          "type": "writelines",
+          "count": 0
+        },
+        {
+          "type": "para",
+          "text": "\\textbf{BÀI TẬP VỀ NHÀ (Vị trí tương đối của hai đường tròn. Luyện tập chung).}"
+        },
+        {
+          "type": "problem",
+          "label": "BTVN 1.",
+          "level": 1,
+          "tier": "btvn",
+          "figure_given": true,
+          "statement": "[NB] Hai đường tròn \\textbf{tiếp xúc ngoài} có bao nhiêu điểm chung?\\par\\vspace{4pt}\\parbox[t]{0.30\\linewidth}{\\textbf{A.} $0$}\\parbox[t]{0.30\\linewidth}{\\textbf{B.} $1$}\\par\\vspace{6pt}\\parbox[t]{0.30\\linewidth}{\\textbf{C.} $2$}\\parbox[t]{0.30\\linewidth}{\\textbf{D.} $3$}",
+          "solution": "Đáp án \\textbf{B}. Tiếp xúc (ngoài hay trong) đều chỉ có đúng một điểm chung."
+        },
+        {
+          "type": "writelines",
+          "count": 0
+        },
+        {
+          "type": "problem",
+          "label": "BTVN 2.",
+          "level": 1,
+          "tier": "btvn",
+          "figure_given": true,
+          "statement": "[NB] Cho $(O_1; 8\\text{ cm})$ và $(O_2; 3\\text{ cm})$ với $O_1O_2 = 11$ cm. Hai đường tròn:\\par\\vspace{4pt}\\parbox[t]{0.46\\linewidth}{\\textbf{A.} Ở ngoài nhau}\\parbox[t]{0.46\\linewidth}{\\textbf{B.} Tiếp xúc ngoài}\\par\\vspace{6pt}\\parbox[t]{0.46\\linewidth}{\\textbf{C.} Cắt nhau}\\parbox[t]{0.46\\linewidth}{\\textbf{D.} Tiếp xúc trong}",
+          "solution": "Đáp án \\textbf{B}. Vì $11 = 8 + 3$ nên $d = R_1 + R_2$, hai đường tròn tiếp xúc ngoài."
+        },
+        {
+          "type": "writelines",
+          "count": 0
+        },
+        {
+          "type": "problem",
+          "label": "BTVN 3.",
+          "level": 1,
+          "tier": "btvn",
+          "figure_given": true,
+          "statement": "[NB] Cho $(O_1; 10\\text{ cm})$ và $(O_2; 4\\text{ cm})$ với $O_1O_2 = 6$ cm. Hai đường tròn:\\par\\vspace{4pt}\\parbox[t]{0.46\\linewidth}{\\textbf{A.} Ở ngoài nhau}\\parbox[t]{0.46\\linewidth}{\\textbf{B.} Tiếp xúc ngoài}\\par\\vspace{6pt}\\parbox[t]{0.46\\linewidth}{\\textbf{C.} Cắt nhau}\\parbox[t]{0.46\\linewidth}{\\textbf{D.} Tiếp xúc trong}",
+          "solution": "Đáp án \\textbf{D}. Vì $6 = 10 - 4$ nên $d = R_1 - R_2$, hai đường tròn tiếp xúc trong."
+        },
+        {
+          "type": "writelines",
+          "count": 0
+        },
+        {
+          "type": "problem",
+          "label": "BTVN 4.",
+          "level": 1,
+          "tier": "btvn",
+          "figure_given": true,
+          "statement": "[NB] Cho hai tiếp tuyến $AB$, $AC$ của $(O)$ tại $B$, $C$, $AO$ cắt $BC$ tại $H$. Khẳng định nào SAI?\\par\\vspace{4pt}\\parbox[t]{0.46\\linewidth}{\\textbf{A.} $AB = AC$}\\parbox[t]{0.46\\linewidth}{\\textbf{B.} $AO \\perp BC$ tại $H$}\\par\\vspace{6pt}\\parbox[t]{0.46\\linewidth}{\\textbf{C.} $H$ là trung điểm $BC$}\\parbox[t]{0.46\\linewidth}{\\textbf{D.} $H$ là trung điểm $AO$}",
+          "solution": "Đáp án \\textbf{D}. $H$ là trung điểm của $BC$, không phải của $AO$."
+        },
+        {
+          "type": "writelines",
+          "count": 0
+        },
+        {
+          "type": "problem",
+          "label": "BTVN 5.",
+          "level": 1,
+          "tier": "btvn",
+          "figure_given": true,
+          "statement": "[NB] Trong tam giác $ABO$ vuông tại $B$ có đường cao $BH$ ứng với cạnh huyền $AO$, hệ thức nào đúng?\\par\\vspace{4pt}\\parbox[t]{0.46\\linewidth}{\\textbf{A.} $AB^2 = AH \\cdot AO$}\\parbox[t]{0.46\\linewidth}{\\textbf{B.} $AB^2 = OH \\cdot AO$}\\par\\vspace{6pt}\\parbox[t]{0.46\\linewidth}{\\textbf{C.} $AB^2 = AH \\cdot OH$}\\parbox[t]{0.46\\linewidth}{\\textbf{D.} $AB^2 = AH + AO$}",
+          "solution": "Đáp án \\textbf{A}. Hình chiếu của cạnh $AB$ trên cạnh huyền là $AH$, nên $AB^2 = AH \\cdot AO$."
+        },
+        {
+          "type": "writelines",
+          "count": 0
+        },
+        {
+          "type": "problem",
+          "label": "BTVN 6.",
+          "level": 1,
+          "tier": "btvn",
+          "figure_given": true,
+          "statement": "[NB] Cho $(O; R)$, $A$ ngoài $(O)$ với $OA = 2R$, hai tiếp tuyến $AB$, $AC$. Số đo $\\widehat{AOB}$ bằng:\\par\\vspace{4pt}\\parbox[t]{0.30\\linewidth}{\\textbf{A.} $30^\\circ$}\\parbox[t]{0.30\\linewidth}{\\textbf{B.} $45^\\circ$}\\par\\vspace{6pt}\\parbox[t]{0.30\\linewidth}{\\textbf{C.} $60^\\circ$}\\parbox[t]{0.30\\linewidth}{\\textbf{D.} $90^\\circ$}",
+          "solution": "Đáp án \\textbf{C}. $\\cos \\widehat{AOB} = \\dfrac{OB}{OA} = \\dfrac{R}{2R} = \\dfrac{1}{2}$ nên $\\widehat{AOB} = 60^\\circ$."
+        },
+        {
+          "type": "writelines",
+          "count": 0
+        },
+        {
+          "type": "problem",
+          "label": "BTVN 7.",
+          "level": 1,
+          "tier": "btvn",
+          "figure_given": true,
+          "statement": "Cho $(O_1; 7\\text{ cm})$ và $(O_2; 2\\text{ cm})$, đặt $d = O_1O_2$. Điền vị trí tương đối vào chỗ chấm: [[br]]a) [NB] $d = 9$ cm: vì $9 \\ldots 7 + 2$ nên hai đường tròn \\ldots\\ldots [[br]]b) [NB] $d = 5$ cm: vì $5 \\ldots 7 - 2$ nên hai đường tròn \\ldots\\ldots [[br]]c) [NB] $d = 6$ cm: vì $5 \\ldots 6 \\ldots 9$ nên hai đường tròn \\ldots\\ldots",
+          "solution": "a) $9 = 9$ nên hai đường tròn tiếp xúc ngoài. [[br]]b) $5 = 5$ nên hai đường tròn tiếp xúc trong. [[br]]c) $5 < 6 < 9$ nên hai đường tròn cắt nhau."
+        },
+        {
+          "type": "writelines",
+          "count": 2
+        },
+        {
+          "type": "problem",
+          "label": "BTVN 8.",
+          "level": 1,
+          "tier": "btvn",
+          "figure_given": true,
+          "statement": "Cho $(O; R)$, điểm $A$ ngoài $(O)$ và tiếp tuyến $AB$ ($B$ là tiếp điểm). Tính $AB$: [[br]]a) [NB] $R = 5$ cm, $OA = 13$ cm: $AB = \\ldots\\ldots$ cm. [[br]]b) [NB] $R = 15$ cm, $OA = 17$ cm: $AB = \\ldots\\ldots$ cm. [[br]]c) [NB] $R = 20$ cm, $OA = 29$ cm: $AB = \\ldots\\ldots$ cm.",
+          "solution": "a) $AB^2 = 169 - 25 = 144$, suy ra $AB = 12$ cm. [[br]]b) $AB^2 = 289 - 225 = 64$, suy ra $AB = 8$ cm. [[br]]c) $AB^2 = 841 - 400 = 441$, suy ra $AB = 21$ cm."
+        },
+        {
+          "type": "writelines",
+          "count": 2
+        },
+        {
+          "type": "problem",
+          "label": "BTVN 9.",
+          "level": 1,
+          "tier": "btvn",
+          "figure_given": true,
+          "statement": "Cho hai tiếp tuyến $AB$, $AC$ của $(O)$, $AO$ cắt $BC$ tại $H$. Điền vào chỗ chấm: [[br]]a) [NB] $\\widehat{ABO} = \\widehat{ACO} = \\ldots\\ldots$ độ. [[br]]b) [NB] $AO$ là đường \\ldots\\ldots của đoạn $BC$. [[br]]c) [NB] $BH$ là đường \\ldots\\ldots ứng với cạnh huyền $AO$ của tam giác $ABO$.",
+          "solution": "a) $90^\\circ$. [[br]]b) Đường trung trực. [[br]]c) Đường cao."
+        },
+        {
+          "type": "writelines",
+          "count": 2
+        },
+        {
+          "type": "problem",
+          "label": "BTVN 10.",
+          "level": 1,
+          "tier": "btvn",
+          "figure_given": true,
+          "statement": "Cho $(O; 8\\text{ cm})$, điểm $A$ với $OA = 10$ cm, hai tiếp tuyến $AB$, $AC$, $AO$ cắt $BC$ tại $H$. Điền số vào chỗ chấm: [[br]]a) [NB] $AB^2 = 10^2 - 8^2 = \\ldots\\ldots$, suy ra $AB = \\ldots\\ldots$ cm. [[br]]b) [NB] Từ $AB^2 = AH \\cdot AO$ ta có $AH = \\dfrac{36}{10} = \\ldots\\ldots$ cm.",
+          "solution": "a) $AB^2 = 100 - 64 = 36$, suy ra $AB = 6$ cm. [[br]]b) $AH = 3{,}6$ cm."
+        },
+        {
+          "type": "writelines",
+          "count": 2
+        },
+        {
+          "type": "problem",
+          "label": "BTVN 11.",
+          "level": 1,
+          "tier": "btvn",
+          "figure_given": true,
+          "statement": "Vẫn với đề BTVN 10 ($R = 8$ cm, $OA = 10$ cm, $AH = 3{,}6$ cm). Điền số vào chỗ chấm: [[br]]a) [NB] $OH = AO - AH = 10 - 3{,}6 = \\ldots\\ldots$ cm. [[br]]b) [NB] Kiểm lại bằng hệ thức $OB^2 = OH \\cdot OA$: $\\ldots\\ldots \\cdot 10 = 64$.",
+          "solution": "a) $OH = 6{,}4$ cm. [[br]]b) $6{,}4 \\cdot 10 = 64 = 8^2$ — đúng."
+        },
+        {
+          "type": "writelines",
+          "count": 2
+        },
+        {
+          "type": "problem",
+          "label": "BTVN 12.",
+          "level": 1,
+          "tier": "btvn",
+          "figure_given": true,
+          "statement": "Cho $(O; R)$, $A$ ngoài $(O)$ với $OA = 2R$, hai tiếp tuyến $AB$, $AC$. Điền vào chỗ chấm: [[br]]a) [NB] $\\widehat{AOB} = 60^\\circ$ nên $\\widehat{BOC} = 2 \\cdot 60^\\circ = \\ldots\\ldots$ độ. [[br]]b) [NB] Hình quạt $OBC$ chiếm $\\dfrac{\\ldots}{360} = \\dfrac{1}{3}$ hình tròn.",
+          "solution": "a) $\\widehat{BOC} = 120^\\circ$. [[br]]b) $\\dfrac{120}{360} = \\dfrac{1}{3}$ hình tròn."
+        },
+        {
+          "type": "writelines",
+          "count": 2
+        },
+        {
+          "type": "problem",
+          "label": "BTVN 13.",
+          "level": 2,
+          "tier": "btvn",
+          "statement": "[TH] Hai đường tròn $(O_1; 12\\text{ cm})$ và $(O_2; 5\\text{ cm})$. Tính $O_1O_2$ khi hai đường tròn tiếp xúc ngoài, và khi hai đường tròn tiếp xúc trong.",
+          "solution": "Khi tiếp xúc ngoài, khoảng cách hai tâm bằng tổng hai bán kính. [[br]]Do đó $O_1O_2 = 12 + 5 = 17$ (cm). [[br]]Khi tiếp xúc trong, khoảng cách hai tâm bằng hiệu hai bán kính. [[br]]Do đó $O_1O_2 = 12 - 5 = 7$ (cm). [[br]]Vậy $O_1O_2 = 17$ cm khi tiếp xúc ngoài và $O_1O_2 = 7$ cm khi tiếp xúc trong."
+        },
+        {
+          "type": "writelines",
+          "count": 4
+        },
+        {
+          "type": "problem",
+          "label": "BTVN 14.",
+          "level": 2,
+          "tier": "btvn",
+          "statement": "[TH] Cho $(O_1; R_1)$ và $(O_2; 6\\text{ cm})$ tiếp xúc ngoài, biết $O_1O_2 = 15$ cm. Tính $R_1$, rồi cho biết nếu giữ nguyên hai bán kính mà đẩy hai tâm về cách nhau $3$ cm thì hai đường tròn ở vị trí nào.",
+          "solution": "Vì hai đường tròn tiếp xúc ngoài nên $O_1O_2 = R_1 + R_2$. [[br]]Do đó $R_1 = O_1O_2 - R_2 = 15 - 6 = 9$ (cm). [[br]]Khi $O_1O_2 = 3$ cm, ta có $R_1 - R_2 = 9 - 6 = 3$ (cm). [[br]]Vì $3 = 3$ nên $d = R_1 - R_2$, hai đường tròn tiếp xúc trong. [[br]]Vậy $R_1 = 9$ cm và khi $O_1O_2 = 3$ cm thì hai đường tròn tiếp xúc trong."
+        },
+        {
+          "type": "writelines",
+          "count": 4
+        },
+        {
+          "type": "problem",
+          "label": "BTVN 15.",
+          "level": 2,
+          "tier": "btvn",
+          "statement": "[TH] Cho $(O; 12\\text{ cm})$ và điểm $A$ với $OA = 20$ cm. Kẻ hai tiếp tuyến $AB$, $AC$, $AO$ cắt $BC$ tại $H$. Tính $AB$, $AH$ và $OH$.",
+          "solution": "Vì $AB$ là tiếp tuyến của $(O)$ tại $B$ nên tam giác $ABO$ vuông tại $B$. [[br]]Xét tam giác $ABO$ vuông tại $B$, theo định lí Pythagore: [[br]]$AB^2 = OA^2 - OB^2 = 20^2 - 12^2 = 400 - 144 = 256$, suy ra $AB = 16$ (cm). [[br]]Chứng minh như Bài 12 ta có $AB^2 = AH \\cdot AO$. [[br]]Do đó $AH = \\dfrac{AB^2}{AO} = \\dfrac{256}{20} = 12{,}8$ (cm). [[br]]Vì $H$ nằm giữa $A$ và $O$ nên $OH = AO - AH = 20 - 12{,}8 = 7{,}2$ (cm). [[br]]Vậy $AB = 16$ cm, $AH = 12{,}8$ cm và $OH = 7{,}2$ cm."
+        },
+        {
+          "type": "writelines",
+          "count": 4
+        },
+        {
+          "type": "problem",
+          "label": "BTVN 16.",
+          "level": 2,
+          "tier": "btvn",
+          "statement": "[TH] Cho $(O; 16\\text{ cm})$ và điểm $A$ với $OA = 20$ cm. Kẻ hai tiếp tuyến $AB$, $AC$, $AO$ cắt $BC$ tại $H$. Tính $AB$ và $AH$.",
+          "solution": "Vì $AB$ là tiếp tuyến của $(O)$ tại $B$ nên tam giác $ABO$ vuông tại $B$. [[br]]Xét tam giác $ABO$ vuông tại $B$, theo định lí Pythagore: [[br]]$AB^2 = OA^2 - OB^2 = 20^2 - 16^2 = 400 - 256 = 144$, suy ra $AB = 12$ (cm). [[br]]Chứng minh như Bài 12 ta có $AB^2 = AH \\cdot AO$. [[br]]Do đó $AH = \\dfrac{AB^2}{AO} = \\dfrac{144}{20} = 7{,}2$ (cm). [[br]]Vậy $AB = 12$ cm và $AH = 7{,}2$ cm."
+        },
+        {
+          "type": "writelines",
+          "count": 4
+        },
+        {
+          "type": "problem",
+          "label": "BTVN 17.",
+          "level": 2,
+          "tier": "btvn",
+          "statement": "Cho $(O; R)$ và điểm $A$ ngoài $(O)$. Kẻ hai tiếp tuyến $AB$, $AC$ ($B$, $C$ là tiếp điểm), $AO$ cắt $BC$ tại $H$. [[br]]a) [TH] Chứng minh $AB^2 = AH \\cdot AO$. [[br]]b) [TH] Chứng minh $OB^2 = OH \\cdot OA$.",
+          "solution": "a) Vì $AB$ là tiếp tuyến của $(O)$ tại $B$ nên $AB \\perp OB$, suy ra $\\widehat{ABO} = 90^\\circ$. [[br]]Vì $AB = AC$ và $OB = OC = R$ nên $AO$ là đường trung trực của $BC$, do đó $AO \\perp BC$ tại $H$, suy ra $\\widehat{AHB} = 90^\\circ$. [[br]]Xét hai tam giác $AHB$ và $ABO$ có: $\\widehat{BAH}$ chung; $\\widehat{AHB} = \\widehat{ABO} = 90^\\circ$. [[br]]Do đó $\\triangle AHB \\backsim \\triangle ABO$ (g.g). [[br]]Suy ra $\\dfrac{AH}{AB} = \\dfrac{AB}{AO}$, nhân chéo được $AB^2 = AH \\cdot AO$. [[br]]b) Xét hai tam giác $OHB$ và $OBA$ có: $\\widehat{BOH}$ chung; $\\widehat{OHB} = \\widehat{OBA} = 90^\\circ$. [[br]]Do đó $\\triangle OHB \\backsim \\triangle OBA$ (g.g). [[br]]Suy ra $\\dfrac{OH}{OB} = \\dfrac{OB}{OA}$, nhân chéo được $OB^2 = OH \\cdot OA$. [[br]]Vậy $AB^2 = AH \\cdot AO$ và $OB^2 = OH \\cdot OA$."
+        },
+        {
+          "type": "writelines",
+          "count": 6
+        },
+        {
+          "type": "problem",
+          "label": "BTVN 18.",
+          "level": 3,
+          "tier": "btvn",
+          "statement": "[VD] Cho $(O; 4\\text{ cm})$ và điểm $A$ với $OA = 8$ cm. Kẻ hai tiếp tuyến $AB$, $AC$ của $(O)$ ($B$, $C$ là tiếp điểm). Tính diện tích phần mặt phẳng giới hạn bởi hai đoạn $AB$, $AC$ và cung nhỏ $BC$ (làm tròn đến chữ số thập phân thứ hai).",
+          "solution": "Vì $AB$ là tiếp tuyến của $(O)$ tại $B$ nên tam giác $ABO$ vuông tại $B$. [[br]]Xét tam giác $ABO$ vuông tại $B$, theo định lí Pythagore: [[br]]$AB^2 = OA^2 - OB^2 = 8^2 - 4^2 = 64 - 16 = 48$, suy ra $AB = 4\\sqrt{3}$ (cm). [[br]]Với góc $\\widehat{AOB}$ thì $OB$ là cạnh kề và $OA$ là cạnh huyền, nên $\\cos \\widehat{AOB} = \\dfrac{OB}{OA} = \\dfrac{4}{8} = \\dfrac{1}{2}$. [[br]]Suy ra $\\widehat{AOB} = 60^\\circ$. [[br]]Vì tia $OA$ là tia phân giác của $\\widehat{BOC}$ nên $\\widehat{BOC} = 2 \\cdot 60^\\circ = 120^\\circ$. [[br]]Diện tích tam giác $ABO$ là $\\dfrac{1}{2} \\cdot AB \\cdot OB = \\dfrac{1}{2} \\cdot 4\\sqrt{3} \\cdot 4 = 8\\sqrt{3}$ (cm$^2$). [[br]]Vì $\\triangle ABO = \\triangle ACO$ nên diện tích tứ giác $ABOC$ bằng $2 \\cdot 8\\sqrt{3} = 16\\sqrt{3}$ (cm$^2$). [[br]]Diện tích hình quạt tròn $OBC$ là $\\dfrac{\\pi R^2 n}{360} = \\dfrac{\\pi \\cdot 4^2 \\cdot 120}{360} = \\dfrac{16\\pi}{3}$ (cm$^2$). [[br]]Phần cần tính là tứ giác $ABOC$ bỏ đi hình quạt $OBC$, nên $S = 16\\sqrt{3} - \\dfrac{16\\pi}{3}$ (cm$^2$). [[br]]Dùng máy tính cầm tay (chỉ làm tròn ở bước cuối này): $S \\approx 10{,}96$ (cm$^2$). [[br]]Vậy diện tích phần đó khoảng $10{,}96$ cm$^2$."
+        },
+        {
+          "type": "writelines",
+          "count": 6
+        }
+      ]
+    }
+  ]
+}
