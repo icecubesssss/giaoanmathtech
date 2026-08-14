@@ -34,8 +34,12 @@ from datetime import datetime
 
 from src.schema import LessonPackage, ChapterSummary
 from src.schema.thuyetminh_spec import ThuyetMinhSpec
+from src.schema.de_spec import DeSpec
 from src.schema.tier_spec import load_tier_spec, target_counts
-from src.compiler import render_handout, render_guide, render_slide, render_summary, build_pdf, render_thuyetminh
+from src.compiler import (
+    render_handout, render_guide, render_slide, render_summary, build_pdf,
+    render_thuyetminh, render_de,
+)
 from src.validators import (
     sanitize,
     UnsafeLatexError,
@@ -48,6 +52,8 @@ from src.validators import (
     check_duration,
     check_spec_conformance,
     check_thuyetminh,
+    check_meta_wrap,
+    check_de,
     check_figures,
     check_image_paths,
     warn_figures,
@@ -523,11 +529,17 @@ def _print_thuyetminh_report(spec: ThuyetMinhSpec) -> tuple[list[str], list[str]
     errors = escape + timing-error (CHẶN build); warnings chỉ cảnh báo."""
     escape = _thuyetminh_escape_issues(spec)
     timing_err, timing_warn = check_thuyetminh(spec)
-    errors = [f"[escape] {m}" for m in escape] + [f"[thuyetminh_gate] {m}" for m in timing_err]
+    # Xuống dòng bảng đầu: soi LaTeX ĐÃ RENDER (lỗi nằm ở khâu render, không ở spec).
+    wrap_err = check_meta_wrap(render_thuyetminh(spec))
+    errors = ([f"[escape] {m}" for m in escape]
+              + [f"[thuyetminh_gate] {m}" for m in timing_err + wrap_err])
 
     print(f"  • escape:          {'OK' if not escape else f'{len(escape)} ký tự chưa escape'}")
     print(f"  • thuyetminh_gate: {'OK' if not timing_err else f'{len(timing_err)} giờ VÔ LÝ'}")
     for m in timing_err:
+        print(f"    ✗ {m}")
+    print(f"  • bảng đầu xuống dòng: {'OK' if not wrap_err else f'{len(wrap_err)} ô ríu rít'}")
+    for m in wrap_err:
         print(f"    ✗ {m}")
     print(f"  • cân giờ (cảnh báo): {'OK' if not timing_warn else f'{len(timing_warn)} lệch chuẩn'}")
     for m in timing_warn:
@@ -586,6 +598,54 @@ def cmd_build_thuyetminh(args: argparse.Namespace) -> int:
         pdf_filename = "thuyet-minh"
 
     pdf = build_pdf(render_thuyetminh(spec), slug=spec.slug, filename=pdf_filename,
+                    out_root=_out_root(args.spec), force=force)
+    print(f"OK → {pdf}")
+    return 0
+
+
+def _print_de_report(spec: DeSpec) -> tuple[list[str], list[str]]:
+    """In kết quả gác cổng thuyết minh đề. Trả (errors, warnings)."""
+    errors, warns = check_de(spec)
+    print(f"  • de_gate: {'OK' if not errors else f'{len(errors)} chỗ VÔ LÝ'}")
+    for m in errors:
+        print(f"    ✗ {m}")
+    print(f"  • cân đề (cảnh báo): {'OK' if not warns else f'{len(warns)} lệch chuẩn'}")
+    for m in warns:
+        print(f"    ⚠ {m}")
+    return [f"[de_gate] {m}" for m in errors], warns
+
+
+def cmd_validate_de(args: argparse.Namespace) -> int:
+    """Gác cổng THUYẾT MINH ĐỀ — soi điểm/giờ vô lý TRƯỚC khi Thầy chốt cấu trúc đề."""
+    spec = DeSpec.model_validate(json.loads(Path(args.spec).read_text(encoding="utf-8")))
+    print(f"▶ Soi thuyết minh đề '{spec.slug}' — {spec.title} "
+          f"(tầng {spec.tier}, {spec.grade}/{spec.subject}, {len(spec.de)} đề)")
+    errors, _ = _print_de_report(spec)
+    if errors:
+        print("\n✗ TỪ CHỐI — thuyết minh đề có vấn đề cần sửa:")
+        for m in errors:
+            print(f"  {m}")
+        return 1
+    print("\n✓ Qua cổng. Bước kế: build-de → Thầy chốt cấu trúc đề.")
+    return 0
+
+
+def cmd_build_de(args: argparse.Namespace) -> int:
+    """Render THUYẾT MINH ĐỀ (DeSpec) → PDF cho Thầy xem & chốt trước khi ra đề thật."""
+    spec = DeSpec.model_validate(json.loads(Path(args.spec).read_text(encoding="utf-8")))
+    force = getattr(args, "force", False)
+
+    errors, _ = _print_de_report(spec)
+    if errors and not force:
+        print("\n✗ TỪ CHỐI BUILD — thuyết minh đề có vấn đề (thêm --force để build nháp):",
+              file=sys.stderr)
+        for m in errors:
+            print(f"  {m}", file=sys.stderr)
+        return 1
+    if errors and force:
+        print("  (--force: bỏ qua lỗi, build nháp)")
+
+    pdf = build_pdf(render_de(spec), slug=spec.slug, filename=spec.slug,
                     out_root=_out_root(args.spec), force=force)
     print(f"OK → {pdf}")
     return 0
@@ -1304,6 +1364,15 @@ def main(argv: list[str] | None = None) -> int:
     vtm = sub.add_parser("validate-thuyetminh", help="Soi GIỜ VÔ LÝ trong spec trước khi chốt số câu")
     vtm.add_argument("spec", help="Đường dẫn file ThuyetMinhSpec .json")
     vtm.set_defaults(func=cmd_validate_thuyetminh)
+
+    bd = sub.add_parser("build-de", help="Render THUYẾT MINH ĐỀ KIỂM TRA (ma trận đề) ra PDF A4 ngang")
+    bd.add_argument("spec", help="Đường dẫn file DeSpec .json")
+    bd.add_argument("--force", action="store_true", help="Bỏ qua lỗi de_gate + build lại dù .tex không đổi")
+    bd.set_defaults(func=cmd_build_de)
+
+    vd = sub.add_parser("validate-de", help="Soi ĐIỂM/GIỜ VÔ LÝ trong thuyết minh đề")
+    vd.add_argument("spec", help="Đường dẫn file DeSpec .json")
+    vd.set_defaults(func=cmd_validate_de)
 
     # S2 command
     v = sub.add_parser("validate", help="Chạy trọng tài S2: sanitizer + schema + difficulty_gate")

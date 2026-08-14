@@ -19,6 +19,12 @@ from src.schema.tier_spec import (
 
 Band = Literal["NB", "TH", "VD", "VDC"]
 
+# HỢP ĐỒNG giữa renderer và gate: renderer bọc BẢNG ĐẦU (Tên bài / Thời gian / Thời
+# lượng) giữa hai mốc này để `thuyetminh_gate.check_meta_wrap` soi được ô nào bị dồn
+# thành một đoạn không ngắt dòng. Đổi chuỗi ở đây thì đổi cả hai bên.
+META_MARK_BEGIN = "% <<THUYETMINH-META-BEGIN>>"
+META_MARK_END = "% <<THUYETMINH-META-END>>"
+
 
 class SpecRow(BaseModel):
     """Một DẠNG bài trong phiếu, gắn band + số câu mỗi đoạn. Thời gian tự tính."""

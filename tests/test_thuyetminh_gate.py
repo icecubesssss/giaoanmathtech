@@ -73,10 +73,17 @@ def test_empty_phieu_blocks():
 
 
 def test_unknown_grade_subject_skips():
-    # (lớp, môn) chưa có rate card → không gate, không lỗi.
+    # (lớp, môn) chưa có rate card → KHÔNG chặn build, và bỏ qua mọi cổng GIỜ.
+    # Từ 14/08/2026 phần NỘI DUNG (§4b / giàn giáo / nguồn câu) vẫn chạy, kèm một
+    # cảnh báo nói rõ là đã bỏ qua cổng giờ — trước đây im hoàn toàn nên bản mẫu
+    # chương IV lớp 7 tầng C lọt lưới không ai biết.
     errors, warns = check_thuyetminh(_spec([SpecRow(dang="x", band="NB", onclass=999)],
                                            grade="lop-unknown", subject="dai-so"))
-    assert errors == [] and warns == []
+    assert errors == []
+    assert any("CHƯA có chuẩn giờ" in w for w in warns)
+    # Không có cảnh báo GIỜ thật nào (bỏ qua chính dòng báo "đã bỏ qua cổng giờ").
+    gio = [w for w in warns if "CHƯA có chuẩn giờ" not in w]
+    assert not any("quỹ" in w or "tỉ lệ" in w for w in gio)
 
 
 def test_x_tier_no_ratio_skips_ratio_warn():

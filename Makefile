@@ -57,6 +57,12 @@ thuyetminh: ## Render thuyết minh ra PDF:  make thuyetminh SPEC=path/thuyet-mi
 check-tm: ## Soi giờ vô lý trong spec:  make check-tm SPEC=path/thuyet-minh.json
 	@$(PY) -m src.main validate-thuyetminh "$(SPEC)"
 
+de: ## Render thuyết minh ĐỀ KIỂM TRA ra PDF:  make de SPEC=path/de-kiem-tra.json
+	@$(PY) -m src.main build-de "$(SPEC)"
+
+check-de: ## Soi điểm/giờ vô lý trong thuyết minh đề:  make check-de SPEC=path/de-kiem-tra.json
+	@$(PY) -m src.main validate-de "$(SPEC)"
+
 drive: ## Chép PDF đã build sang Google Drive:  make drive FOLDER=path/ (thêm DRY=1 để thử)
 	@$(PY) -m src.main sync-drive "$(FOLDER)" $(if $(DRY),--dry-run,)
 

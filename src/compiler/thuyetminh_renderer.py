@@ -8,6 +8,7 @@ from __future__ import annotations
 
 from src.compiler.jinja_renderer import _env, load_tokens
 from src.schema.thuyetminh_spec import (
+    META_MARK_BEGIN, META_MARK_END,
     ThuyetMinhSpec, rates_for_spec, row_minutes, session_info,
 )
 from src.schema.tier_spec import draw_minutes, load_tier_spec
@@ -42,12 +43,28 @@ def _itemize(items: list[str]) -> str:
     return "\\begin{itemize}\n" + body + "\n\\end{itemize}"
 
 
+def _cell_lines(items: list[str], plain_first: bool = False) -> str:
+    """Mỗi mục MỘT DÒNG trong ô bảng đầu (có chấm đầu dòng, trừ dòng đầu nếu plain_first).
+
+    VÌ SAO: trước 14/08/2026 sáu phiếu bị nối bằng dấu ';' và `thoiluong` nối bằng
+    ' \\quad$\\bullet$\\quad ' nên cả ô dồn thành MỘT ĐOẠN VĂN dài không ngắt dòng —
+    Thầy đọc bảng đầu thuyết minh thấy 'có dấu bullet mà lại không xuống dòng, RẤT KHÓ
+    ĐỌC'. `thuyetminh_gate.check_meta_wrap` gác để lỗi này không quay lại.
+    """
+    if not items:
+        return ""
+    lines = [x if (plain_first and i == 0) else rf"$\bullet$~{x}"
+             for i, x in enumerate(items)]
+    return r" \newline ".join(lines)
+
+
 def _meta_table(rows: list[tuple[str, str]]) -> str:
-    out = [r"\begin{tabular}{|>{\sffamily\bfseries\color{ink}}p{3.4cm}|"
+    out = [META_MARK_BEGIN,
+           r"\begin{tabular}{|>{\sffamily\bfseries\color{ink}}p{3.4cm}|"
            r">{\RaggedRight\arraybackslash}p{22.4cm}|}", r"\arrayrulecolor{rule}\hline"]
     for lbl, val in rows:
         out.append(f"{lbl} & {val} \\\\ \\hline")
-    out.append(r"\end{tabular}")
+    out += [r"\end{tabular}", META_MARK_END]
     return "\n".join(out)
 
 
@@ -143,15 +160,17 @@ def render_thuyetminh(spec: ThuyetMinhSpec) -> str:
         rf"\tmtitle{{PHIẾU THUYẾT MINH}}\quad\tmsub{{{spec.title} • {khoi}{badge}{tuan}}}",
         r"\par\vspace{4pt}",
         _meta_table([
-            ("Tên bài", f"\\textbf{{{spec.title}}}{badge}." +
-             ("".join(f" \\textbf{{Phiếu {p.code}}} — {p.title};" for p in spec.phieu)).rstrip(";")),
+            # Mỗi phiếu MỘT DÒNG (xem _cell_lines) — 6 phiếu nối bằng ';' đọc không ra.
+            ("Tên bài", _cell_lines(
+                [f"\\textbf{{{spec.title}}}{badge}."]
+                + [f"\\textbf{{Phiếu {p.code}}} — {p.title}" for p in spec.phieu],
+                plain_first=True)),
             ("Thời gian", f"\\textbf{{1 ca $=$ {info.get('session_minutes')} phút}} "
                           f"(trừ giải lao {info.get('break_minutes')}′): GV giảng "
                           f"$\\approx${round(info.get('budgets',{}).get('vidu',0))}′ $+$ Luyện tập "
                           f"{round(info.get('budgets',{}).get('onclass',0))}′. "
                           f"BTVN $\\approx${round(info.get('budgets',{}).get('btvn',0))}′ ở nhà."),
-        ] + ([("Thời lượng", " \\quad$\\bullet$\\quad ".join(spec.thoiluong))]
-             if spec.thoiluong else [])),
+        ] + ([("Thời lượng", _cell_lines(spec.thoiluong))] if spec.thoiluong else [])),
         r"\tmsec{MỤC TIÊU LÝ THUYẾT \& CHUẨN ĐẦU RA}", _itemize(spec.lythuyet),
         r"\tmsec{BÀI TẬP}",
         r"\begin{minipage}[t]{0.485\linewidth}\tmlbl{Ví dụ GV làm mẫu:}" + _itemize(spec.vidu) +

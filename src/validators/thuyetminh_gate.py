@@ -16,7 +16,11 @@ Tầng chưa chốt tỉ lệ (X chuyên) hoặc (lớp, môn) chưa có rate ca
 """
 from __future__ import annotations
 
+import re
+
 from src.schema.thuyetminh_spec import (
+    META_MARK_BEGIN,
+    META_MARK_END,
     ThuyetMinhSpec,
     phieu_band_minutes,
     phieu_totals,
@@ -54,14 +58,24 @@ def _source_ref_band_warnings(spec_rows, tag: str) -> list[str]:
 def check_thuyetminh(spec: ThuyetMinhSpec) -> tuple[list[str], list[str]]:
     """Trả (errors, warnings). errors CHẶN build; warnings chỉ cảnh báo.
 
-    [] / [] khi không gate được (tầng/lớp chưa có chuẩn) — không phải lỗi."""
+    Tầng/lớp chưa có chuẩn giờ ⇒ bỏ phần soi GIỜ, nhưng vẫn soi phần NỘI DUNG
+    (§4b, giàn giáo, nguồn câu) — xem _noi_dung_warnings."""
+    # Soi NỘI DUNG trước và LUÔN LUÔN chạy. Trước 14/08/2026 mấy cổng này nằm sau
+    # `return [], []` ở dưới nên hễ (lớp, môn, tầng) chưa có trong tier_spec là im
+    # hoàn toàn — chính vì vậy bản mẫu chương IV lớp 7 tầng C (tier_spec chỉ có tầng B)
+    # đi qua mà KHÔNG một cổng nào lên tiếng.
+    noi_dung = _noi_dung_warnings(spec)
+
     try:
         ts = load_tier_spec()
         block = subject_block(ts, spec.grade, spec.subject)
         rates = rates_for_spec(spec)
         ratio_target = tier_ratio(ts, spec.grade, spec.subject, spec.tier)
     except KeyError:
-        return [], []  # chưa có rate card cho (lớp, môn) hoặc tầng này
+        return [], noi_dung + [
+            f"thuyetminh: CHƯA có chuẩn giờ cho {spec.grade}/{spec.subject} tầng "
+            f"{spec.tier} trong tier_spec.json — ĐÃ BỎ QUA toàn bộ cổng giờ/tỉ lệ "
+            f"(quỹ buổi, tỉ lệ NB-TH-VD). Thêm tầng vào tier_spec để được soi."]
 
     info = session_info(spec)
     session = info.get("session_minutes") or 0
@@ -151,8 +165,124 @@ def check_thuyetminh(spec: ThuyetMinhSpec) -> tuple[list[str], list[str]]:
                 f"thuyetminh: {tag} BTVN {btvn_min:.0f}′ HỤT quỹ {btvn_budget:.0f}′ "
                 f"(>{budget_tol*100:.0f}%) — BTVN nên thừa hơn thiếu.")
 
-    warnings += check_loai_4b(spec)
+    warnings += noi_dung
     return errors, warnings
+
+
+# ── Giàn giáo NB bắt buộc + nguồn câu (Thầy chốt 14/08/2026) ────────────────
+# Rút từ BẢN MẪU ĐÃ DUYỆT: thuyết minh chương IV lớp 7 tầng C (6 phiếu).
+#   • "Vẽ hình từ giả thiết + đánh dấu dữ kiện": có ở 6/6 phiếu — dạng NB này không
+#     dạy thêm kiến thức, nó gác khâu HS hay mất điểm nhất là dựng hình.
+#   • "Điền khuyết bài giải/chứng minh mẫu": bản mẫu mới có ở 3/6 phiếu, nhưng Thầy
+#     chốt BẮT BUỘC cả hai ⇒ 3 phiếu kia coi như còn sót.
+# Nhận dạng theo TỪ KHOÁ trong `dang` vì đó đúng là ngôn ngữ bản mẫu đang dùng.
+_RAIL_VE_HINH = ("vẽ hình",)
+_RAIL_DIEN_KHUYET = ("điền khuyết",)
+# Giàn giáo "vẽ hình" chỉ bắt buộc với môn HÌNH — phiếu đại số không có hình để vẽ.
+_SUBJ_CAN_HINH = ("hinh-hoc",)
+
+
+def _has_rail(rows, keys: tuple[str, ...]) -> bool:
+    return any(any(k in (r.dang or "").lower() for k in keys) for r in rows)
+
+
+def check_scaffold_rails(spec: ThuyetMinhSpec) -> list[str]:
+    """Mỗi phiếu phải có dạng NB 'vẽ hình + đánh dấu' (môn hình) và 'điền khuyết
+    bài giải mẫu'. Thiếu ⇒ cảnh báo (chưa CHẶN: 0/43 spec trong repo có 'điền khuyết',
+    bật chặn ngay là chết cả kho — xem báo cáo 14/08/2026)."""
+    out: list[str] = []
+    can_hinh = spec.subject in _SUBJ_CAN_HINH
+    for p in spec.phieu:
+        nb = [r for r in p.rows if r.band == "NB"]
+        thieu = []
+        if can_hinh and not _has_rail(nb, _RAIL_VE_HINH):
+            thieu.append("'vẽ hình từ giả thiết + đánh dấu dữ kiện'")
+        if not _has_rail(nb, _RAIL_DIEN_KHUYET):
+            thieu.append("'điền khuyết bài giải/chứng minh mẫu'")
+        if thieu:
+            out.append(
+                f"thuyetminh: phiếu {p.code} THIẾU giàn giáo NB bắt buộc: "
+                f"{' và '.join(thieu)} — bản mẫu lớp 7 chương IV luôn có.")
+    return out
+
+
+def check_source_refs(spec: ThuyetMinhSpec) -> list[str]:
+    """Thầy chốt: MỌI dòng dạng phải trỏ nguồn (`source_refs` → SGK/SBT/đề).
+    Cảnh báo chứ chưa chặn — toàn repo mới 10% số dòng có nguồn."""
+    out: list[str] = []
+    for p in spec.phieu:
+        thieu = [f"{r.band}{i}" for i, r in enumerate(p.rows, 1) if not r.source_refs]
+        if thieu:
+            out.append(
+                f"thuyetminh: phiếu {p.code} — {len(thieu)}/{len(p.rows)} dòng CHƯA "
+                f"trỏ nguồn (`source_refs`): {', '.join(thieu[:8])}"
+                + (" …" if len(thieu) > 8 else ""))
+    return out
+
+
+def _noi_dung_warnings(spec: ThuyetMinhSpec) -> list[str]:
+    """Các cổng NỘI DUNG — không phụ thuộc chuẩn giờ nên LUÔN chạy được."""
+    return check_loai_4b(spec) + check_scaffold_rails(spec) + check_source_refs(spec)
+
+
+# ── Cổng XUỐNG DÒNG cho BẢNG ĐẦU (Tên bài / Thời gian / Thời lượng) ─────────
+# Thầy phản hồi 14/08/2026: "bảng đầu để khá ríu rít… có dấu bullet mà lại không
+# xuống dòng, thành ra RẤT KHÓ ĐỌC". Nguyên nhân: renderer nối 6 phiếu bằng ';' và
+# nối `thoiluong` bằng '$\bullet$' NẰM NGANG trong ô p{22,4cm} → cả ô là một đoạn văn.
+# Cổng này soi LaTeX ĐÃ RENDER (không soi spec) vì lỗi nằm ở khâu render.
+
+# Số ký tự NHÌN THẤY tối đa của một đoạn không ngắt dòng trong ô bảng đầu.
+# Một dòng phiếu dài nhất hiện nay ~80 ký tự; dòng "Thời gian" ~90 → 220 vẫn rộng cửa,
+# mà đoạn dồn 6 phiếu (~500) thì trượt.
+_MAX_RUN_CHARS = 220
+_META_ROW = re.compile(r"^(?P<lbl>[^&]+?)\s*&\s*(?P<val>.*?)\s*\\\\\s*\\hline\s*$")
+_TEX_CMD = re.compile(r"\\[A-Za-z@]+\s*|\\[^A-Za-z]")
+# Mọi cách ngắt dòng hợp lệ bên trong một ô p{}
+_BREAKS = (r"\newline", r"\par", r"\item", r"\\")
+
+
+def _visible_len(tex: str) -> int:
+    """Số ký tự Thầy THỰC SỰ nhìn thấy (bỏ lệnh LaTeX, ngoặc, $, ~)."""
+    s = _TEX_CMD.sub(" ", tex)
+    s = re.sub(r"[{}$~^_&]", "", s)
+    return len(re.sub(r"\s+", " ", s).strip())
+
+
+def check_meta_wrap(tex: str) -> list[str]:
+    """Soi BẢNG ĐẦU của thuyết minh ĐÃ RENDER: ô nào nhiều mục mà không xuống dòng,
+    hoặc có đoạn liền quá dài → RẤT KHÓ ĐỌC. Trả danh sách lỗi (CHẶN build).
+
+    Không thấy mốc META (bản render cũ / template khác) ⇒ trả [] chứ không báo lỗi."""
+    i, j = tex.find(META_MARK_BEGIN), tex.find(META_MARK_END)
+    if i < 0 or j < 0 or j < i:
+        return []
+
+    out: list[str] = []
+    for line in tex[i:j].splitlines():
+        m = _META_ROW.match(line.strip())
+        if not m:
+            continue
+        label = re.sub(r"\s+", " ", _TEX_CMD.sub("", m.group("lbl"))).strip() or "(không tên)"
+        val = m.group("val")
+
+        n_items = val.count(r"$\bullet$")
+        n_breaks = sum(val.count(b) for b in _BREAKS)
+        if n_items >= 2 and n_breaks == 0:
+            out.append(
+                f"thuyetminh: bảng đầu — ô '{label}' có {n_items} mục (chấm đầu dòng) "
+                f"nhưng KHÔNG xuống dòng: cả ô dồn thành một đoạn, Thầy đọc rất khó. "
+                f"Dùng _cell_lines() để mỗi mục một dòng.")
+            continue
+
+        # Đoạn liền dài nhất giữa hai chỗ ngắt dòng
+        chunks = re.split(r"\\newline|\\par\b|\\item|\\\\", val)
+        worst = max((_visible_len(c) for c in chunks), default=0)
+        if worst > _MAX_RUN_CHARS:
+            out.append(
+                f"thuyetminh: bảng đầu — ô '{label}' có đoạn liền {worst} ký tự "
+                f"(quá {_MAX_RUN_CHARS}) không xuống dòng — RẤT KHÓ ĐỌC. "
+                f"Tách thành nhiều mục, mỗi mục một dòng.")
+    return out
 
 
 # Bảy loại câu hỏi §4b (HUONG-DAN-THUYET-MINH-LOP-C §4b, Thầy chốt 2026-08-05).
