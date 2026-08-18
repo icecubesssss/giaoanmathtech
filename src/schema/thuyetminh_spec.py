@@ -58,12 +58,24 @@ class SpecRow(BaseModel):
         "", description="Loại §4b: 'NB lẻ LT' | 'NB tách TH' | 'NB ghép bài' | "
                         "'TH lẻ LT' | 'TH ghép bài' | 'TH tách VD' | 'VD lẻ'"
     )
+    # GIÀN GIÁO bắt buộc mỗi phiếu (Thầy chốt 14/08/2026, rút từ bản mẫu lớp 7 chương IV).
+    # Khai TƯỜNG MINH thay vì dò từ khoá trong `dang`: bản mẫu viết "Vẽ tam giác vuông…",
+    # "Vẽ hình từ giả thiết…" — dò chữ kiểu gì cũng sót.
+    gian_giao: Literal["", "ve-hinh", "dien-khuyet"] = Field(
+        "", description="Vai trò giàn giáo: 've-hinh' = vẽ hình từ giả thiết + đánh dấu "
+                        "dữ kiện; 'dien-khuyet' = điền khuyết bài giải/chứng minh mẫu"
+    )
 
 
 class SpecPhieu(BaseModel):
     """Một phiếu trong buổi (A = kỹ thuật, B = thực tế…)."""
     code: str = Field(..., description="Mã phiếu: A/B/C/D")
     title: str = Field(..., description="Tên phiếu")
+    # SỐ CA (buổi) mà phiếu này trải ra. Mặc định 1 = một phiếu dạy trong một buổi,
+    # đúng mô hình cũ. Thầy chốt 16/08/2026: có phiếu cố ý gộp nhiều buổi vào MỘT
+    # file (vd chương III lớp 9 tầng B gộp tuần 16+17 thành 1 phiếu 2 ca) — khai
+    # `so_ca` để gate nhân quỹ giờ lên, thay vì báo oan "vượt quỹ MỘT BUỔI".
+    so_ca: int = Field(1, ge=1, le=6, description="Số ca (buổi) phiếu này trải ra; quỹ giờ ×so_ca")
     rows: list[SpecRow] = Field(default_factory=list)
 
 
@@ -79,6 +91,14 @@ class ThuyetMinhSpec(BaseModel):
         default_factory=list,
         description="THỜI LƯỢNG đối chiếu SGK/PPCT, vd 'Buổi 1 — Bài 7 + Bài 8: 1 ca'; "
                     "bản mẫu Thầy duyệt (lớp 7) luôn có mục này để thấy lệch bao nhiêu tiết",
+    )
+    # KIẾN THỨC NỀN — kiến thức lớp dưới phải dùng lại để học nổi chương này (Thầy chốt
+    # 14/08/2026). Tách thành KHỐI RIÊNG có tiêu đề chứ không để lẫn trong `kienthuc_nb`:
+    # ở chương IV lớp 9 nó là Pythagore + tam giác đồng dạng, trước đây nằm lẫn giữa ~15
+    # gạch đầu dòng nên Thầy đọc dễ trôi mất.
+    kien_thuc_nen: list[str] = Field(
+        default_factory=list,
+        description="Kiến thức lớp dưới phải dùng lại, vd 'Định lí Pythagore', 'Tam giác đồng dạng (g.g)'",
     )
     lythuyet: list[str] = Field(default_factory=list, description="Bullet lý thuyết trọng tâm")
     vidu: list[str] = Field(default_factory=list, description="Bullet ví dụ GV làm mẫu")

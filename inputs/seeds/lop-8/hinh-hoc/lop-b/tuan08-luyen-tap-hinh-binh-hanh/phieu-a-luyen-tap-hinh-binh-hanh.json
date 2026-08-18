@@ -1,0 +1,309 @@
+{
+  "slug": "phieu-a-luyen-tap-hinh-binh-hanh",
+  "title": "Luyện tập hình bình hành",
+  "eyebrow": "HÌNH HỌC 8 — PHIẾU A: LUYỆN TẬP HÌNH BÌNH HÀNH",
+  "grade_label": "Lớp 8 • Chương III. Tứ giác",
+  "class_tier": "B",
+  "stages": [
+    {
+      "kind": "review",
+      "number": 1,
+      "title": "Khám phá",
+      "blocks": [
+        {
+          "type": "opener",
+          "text": "Chiếc thang nâng cắt kéo ở công trường được ghép từ nhiều thanh sắt bằng nhau, nối với nhau bằng chốt xoay tại trung điểm mỗi thanh. [[br]] Khi thợ bấm nút, cả giàn co lên hay hạ xuống, các thanh sắt xoay đủ kiểu — nhưng mặt sàn phía trên \\textbf{luôn nằm ngang}, không bao giờ bị nghiêng. [[br]] Vì sao chỉ cần chốt xoay đặt đúng \\textit{trung điểm} mỗi thanh là mặt sàn giữ được phương nằm ngang?",
+          "tikz": "\\begin{tikzpicture}[line width=0.9pt, font=\\small]\n  \\draw[ink,fill=brand!6] (0,0) rectangle (4.2,0.28);\n  \\foreach \\x in {0.35,1.75,3.15}{\n    \\draw[brand,line width=1.2pt] (\\x,0.28) -- ++(0.9,1.5);\n    \\draw[brand,line width=1.2pt] (\\x+0.9,0.28) -- ++(-0.9,1.5);\n  }\n  \\foreach \\x in {0.35,1.25,1.75,2.65,3.15,4.05}{\n    \\fill[ink] (\\x,0.28) circle (1.5pt);\n    \\fill[ink] (\\x,1.78) circle (1.5pt);\n  }\n  \\draw[ink,fill=brand!6] (0,1.78) rectangle (4.2,2.06);\n  \\node[font=\\scriptsize,ink] at (2.1,-0.35) {thanh ray dưới};\n  \\node[font=\\scriptsize,ink] at (2.1,2.4) {thanh ray trên};\n\\end{tikzpicture}"
+        },
+        {
+          "type": "para",
+          "text": "Hai thanh sắt cắt nhau tại trung điểm của mỗi thanh tạo thành một tứ giác có \\textbf{hai đường chéo cắt nhau tại trung điểm của mỗi đường} — đó chính là \\textbf{dấu hiệu 5} của hình bình hành. [[br]] Vì tứ giác đó là hình bình hành nên cạnh trên và cạnh dưới luôn song song: sàn trên song song với ray dưới, tức là luôn nằm ngang. [[br]] Buổi hôm nay ta luyện đúng con đường đó: \\textbf{chỉ ra một hình bình hành} rồi dùng nó để suy ra hai đường song song, hai đoạn bằng nhau, trung điểm và ba điểm thẳng hàng."
+        }
+      ],
+      "solution": "Vì chốt đặt tại trung điểm nên hai đường chéo của tứ giác tạo bởi hai thanh sắt cắt nhau tại trung điểm của mỗi đường. [[br]] Theo dấu hiệu 5, tứ giác đó là hình bình hành. [[br]] Vậy cạnh trên song song với cạnh dưới, mặt sàn luôn nằm ngang.",
+      "teacher_note": "GV cho HS chỉ ngay trên hình: hai thanh sắt = hai đường chéo, chốt xoay = giao điểm. Nhấn: dữ kiện 'trung điểm của MỖI đường' mới đủ, chỉ trung điểm của một đường thì chưa kết luận được gì."
+    },
+    {
+      "kind": "concept",
+      "number": 2,
+      "title": "Khái niệm",
+      "blocks": [
+        {
+          "type": "noted",
+          "text": "\\par\\nopagebreak\n\\begin{minipage}[t]{0.62\\linewidth}\\vspace{0pt}\n\\textbf{1. Đọc hình bình hành theo HAI CHIỀU} [[br]] \\textit{Chiều xuôi} --- đã biết $ABCD$ là hình bình hành thì được dùng ngay ba tính chất dưới đây.\n\\end{minipage}\\hfill\n\\begin{minipage}[t]{0.33\\linewidth}\\vspace{0pt}\n\\centering\n\\adjustbox{max width=\\linewidth, max totalheight=2.4cm}{\n\\begin{tikzpicture}[line width=0.8pt, font=\\small]\n  \\coordinate (A) at (0.6,1.7);\n  \\coordinate (B) at (3.4,1.7);\n  \\coordinate (C) at (2.8,0);\n  \\coordinate (D) at (0,0);\n  \\draw[ink,fill=brand!8] (A) -- (B) -- (C) -- (D) -- cycle;\n  \\node[above left] at (A) {$A$};\n  \\node[above right] at (B) {$B$};\n  \\node[below right] at (C) {$C$};\n  \\node[below left] at (D) {$D$};\n  \\draw[ink,dashed] (A) -- (C);\n  \\draw[ink,dashed] (B) -- (D);\n  \\fill[ink] (1.7,0.85) circle (1.4pt) node[below left=1pt]{$O$};\n  \\node[brand,font=\\scriptsize] at (2.0,1.95) {$>$};\n  \\node[brand,font=\\scriptsize] at (1.4,-0.28) {$>$};\n  \\node[brand,font=\\scriptsize] at (0.15,0.95) {$>>$};\n  \\node[brand,font=\\scriptsize] at (3.25,0.95) {$>>$};\n\\end{tikzpicture}\n}\n\\par\\vspace{2pt}{\\sffamily\\scriptsize\\itshape\\color{muted}Hình bình hành $ABCD$}\n\\end{minipage}\n\\par\\vspace{3pt}\n- $AB \\parallel CD$, $AD \\parallel BC$ và $AB = CD$, $AD = BC$. [[br]] - $\\widehat{A} = \\widehat{C}$, $\\widehat{B} = \\widehat{D}$; hai góc kề một cạnh bù nhau ($\\widehat{A} + \\widehat{B} = 180^\\circ$). [[br]] - Hai đường chéo cắt nhau tại trung điểm mỗi đường: $OA = OC$, $OB = OD$. [[br]] \\textit{Chiều ngược} --- muốn KẾT LUẬN một tứ giác là hình bình hành thì phải chỉ ra đủ hai điều kiện của một trong 5 dấu hiệu."
+        },
+        {
+          "type": "noted",
+          "text": "\\textbf{2. Hai dấu hiệu dùng nhiều nhất trong bài chứng minh} [[br]] - \\textbf{Dấu hiệu 3}: tứ giác có hai cạnh đối \\textit{song song và bằng nhau}. Dùng khi đề cho trung điểm cạnh, hoặc cho hai đoạn bằng nhau nằm trên hai cạnh đối. [[br]] - \\textbf{Dấu hiệu 5}: tứ giác có hai đường chéo \\textit{cắt nhau tại trung điểm mỗi đường}. Dùng khi đề cho một điểm là trung điểm của cả hai đoạn. [[br]] \\textbf{Ba bước trình bày} bài chứng minh tứ giác là hình bình hành: [[br]] \\textbf{B1.} Nêu tứ giác cần xét (viết đúng thứ tự đỉnh để hai cạnh đang xét là hai cạnh \\textit{đối}). [[br]] \\textbf{B2.} Nêu đủ \\textit{hai} điều kiện của dấu hiệu, mỗi điều kiện kèm căn cứ. [[br]] \\textbf{B3.} Kết luận, gọi \\textbf{đúng tên dấu hiệu} đã dùng."
+        },
+        {
+          "type": "noted",
+          "variant": "example",
+          "text": "\\textbf{Ví dụ mẫu 1.} Cho hình bình hành $ABCD$. Gọi $E$, $F$ lần lượt là trung điểm của $AB$ và $CD$. Điền vào chỗ trống để hoàn thành bài chứng minh tứ giác $DEBF$ là hình bình hành. [[br]] \\textit{Bài giải}: [[br]] Vì $ABCD$ là hình bình hành nên $AB \\parallel CD$ và $AB = CD$ (tính chất). [[br]] Mà $E \\in AB$, $F \\in CD$ nên $EB \\parallel$ [[mblank:1.6cm]] . [[br]] Vì $E$ là trung điểm của $AB$ nên $EB = \\dfrac{1}{2}AB$; vì $F$ là trung điểm của $CD$ nên $DF = \\dfrac{1}{2}$ [[mblank:1.2cm]] . [[br]] Mà $AB = CD$ nên $EB = $ [[mblank:1.2cm]] . [[br]] Xét tứ giác $DEBF$ có $EB \\parallel DF$ và $EB = DF$. [[br]] Vậy tứ giác $DEBF$ là hình bình hành (dấu hiệu [[mblank:1.0cm]] )."
+        },
+        {
+          "type": "noted",
+          "variant": "example",
+          "text": "\\par\\nopagebreak\n\\begin{minipage}[t]{0.62\\linewidth}\\vspace{0pt}\n\\textbf{Ví dụ mẫu 2.} Cho hình bình hành $ABCD$ có $O$ là giao điểm của hai đường chéo. Trên đoạn $OA$ lấy điểm $M$, trên đoạn $OC$ lấy điểm $N$ sao cho $OM = ON$. Chứng minh tứ giác $BMDN$ là hình bình hành.\n\\end{minipage}\\hfill\n\\begin{minipage}[t]{0.33\\linewidth}\\vspace{0pt}\n\\centering\n\\adjustbox{max width=\\linewidth, max totalheight=2.6cm}{\n\\begin{tikzpicture}[line width=0.8pt, font=\\small]\n  \\coordinate (A) at (0.6,1.7);\n  \\coordinate (B) at (3.4,1.7);\n  \\coordinate (C) at (2.8,0);\n  \\coordinate (D) at (0,0);\n  \\draw[ink,fill=brand!8] (A) -- (B) -- (C) -- (D) -- cycle;\n  \\node[above left] at (A) {$A$};\n  \\node[above right] at (B) {$B$};\n  \\node[below right] at (C) {$C$};\n  \\node[below left] at (D) {$D$};\n  \\draw[ink,dashed] (A) -- (C);\n  \\draw[ink,dashed] (B) -- (D);\n  \\coordinate (O) at (1.7,0.85);\n  \\coordinate (M) at (1.15,1.28);\n  \\coordinate (N) at (2.25,0.42);\n  \\fill[ink] (O) circle (1.3pt) node[below left=1pt]{$O$};\n  \\fill[brand] (M) circle (1.3pt) node[above right=0pt]{$M$};\n  \\fill[brand] (N) circle (1.3pt) node[below left=0pt]{$N$};\n  \\draw[brand, line width=1.0pt] (B) -- (M) -- (D) -- (N) -- cycle;\n\\end{tikzpicture}\n}\n\\par\\vspace{2pt}{\\sffamily\\scriptsize\\itshape\\color{muted}Tứ giác $BMDN$}\n\\end{minipage}\n\\par\\vspace{3pt}\n\\textit{Bài giải}: [[br]] Vì $ABCD$ là hình bình hành có hai đường chéo cắt nhau tại $O$ nên $O$ là trung điểm của $BD$ (tính chất hai đường chéo). [[br]] Theo giả thiết $M \\in OA$, $N \\in OC$ mà $A$, $O$, $C$ thẳng hàng nên $M$, $O$, $N$ thẳng hàng; lại có $OM = ON$ nên $O$ là trung điểm của $MN$. [[br]] Xét tứ giác $BMDN$ có hai đường chéo là $BD$ và $MN$ cắt nhau tại $O$, mà $O$ là trung điểm của $BD$ và cũng là trung điểm của $MN$. [[br]] Vậy tứ giác $BMDN$ là hình bình hành (dấu hiệu 5: hai đường chéo cắt nhau tại trung điểm của mỗi đường)."
+        },
+        {
+          "type": "noted",
+          "variant": "example",
+          "text": "\\par\\nopagebreak\n\\begin{minipage}[t]{0.62\\linewidth}\\vspace{0pt}\n\\textbf{Ví dụ mẫu 3.} Cho hình bình hành $ABCD$ có $O$ là giao điểm của hai đường chéo. Một đường thẳng đi qua $O$ cắt cạnh $AD$ tại $E$ và cắt cạnh $BC$ tại $F$. Chứng minh $OE = OF$.\n\\end{minipage}\\hfill\n\\begin{minipage}[t]{0.33\\linewidth}\\vspace{0pt}\n\\centering\n\\adjustbox{max width=\\linewidth, max totalheight=2.6cm}{\n\\begin{tikzpicture}[line width=0.8pt, font=\\small]\n  \\coordinate (A) at (0.6,1.7);\n  \\coordinate (B) at (3.4,1.7);\n  \\coordinate (C) at (2.8,0);\n  \\coordinate (D) at (0,0);\n  \\draw[ink,fill=brand!8] (A) -- (B) -- (C) -- (D) -- cycle;\n  \\node[above left] at (A) {$A$};\n  \\node[above right] at (B) {$B$};\n  \\node[below right] at (C) {$C$};\n  \\node[below left] at (D) {$D$};\n  \\draw[ink,dashed] (A) -- (C);\n  \\draw[ink,dashed] (B) -- (D);\n  \\coordinate (O) at (1.7,0.85);\n  \\fill[ink] (O) circle (1.3pt) node[below right=1pt]{$O$};\n  \\coordinate (E) at (0.3,0.85);\n  \\coordinate (F) at (3.1,0.85);\n  \\draw[brand, line width=1.0pt] (E) -- (F);\n  \\fill[brand] (E) circle (1.3pt) node[left]{$E$};\n  \\fill[brand] (F) circle (1.3pt) node[right]{$F$};\n\\end{tikzpicture}\n}\n\\par\\vspace{2pt}{\\sffamily\\scriptsize\\itshape\\color{muted}Đường thẳng $EF$ qua $O$}\n\\end{minipage}\n\\par\\vspace{3pt}\n\\textit{Bài giải}: [[br]] Vì $ABCD$ là hình bình hành nên $AD \\parallel BC$ và hai đường chéo cắt nhau tại trung điểm mỗi đường, do đó $OA = OC$. [[br]] Xét $\\triangle OAE$ và $\\triangle OCF$ có: $\\widehat{OAE} = \\widehat{OCF}$ (hai góc so le trong, $AD \\parallel BC$); $OA = OC$ (chứng minh trên); $\\widehat{AOE} = \\widehat{COF}$ (hai góc đối đỉnh). [[br]] Do đó $\\triangle OAE = \\triangle OCF$ (g.c.g), suy ra $OE = OF$ (hai cạnh tương ứng). [[br]] Vậy $OE = OF$."
+        },
+        {
+          "type": "noted",
+          "variant": "trap",
+          "text": "BẪY ĐIỂM: một cặp cạnh đối \\textit{song song} cộng với một cặp cạnh đối \\textit{kia} \\textit{bằng nhau} thì CHƯA đủ để kết luận hình bình hành --- hình thang cân cũng có đúng hai dữ kiện đó. [[br]] Hai dữ kiện phải rơi vào \\textbf{CÙNG một cặp cạnh đối} thì mới là dấu hiệu 3. [[br]] Bẫy thứ hai: viết sai thứ tự đỉnh. Muốn dùng $AE$ và $CF$ làm hai cạnh đối thì phải gọi tứ giác là $AECF$, không phải $ACEF$."
+        }
+      ],
+      "solution": "Ví dụ mẫu 1 --- các ô trống lần lượt: $DF$ ; $CD$ ; $DF$ ; 3 (hai cạnh đối song song và bằng nhau).",
+      "teacher_note": "Ví dụ mẫu 1 chữa chậm, bắt HS đọc to từng căn cứ để lấy khuôn ba bước. Ví dụ 2 chốt dấu hiệu 5, Ví dụ 3 chốt kỹ thuật 'g.c.g quanh điểm O' — hai kỹ thuật này lặp lại ở Bài 8, Bài 9 và BTVN 7."
+    },
+    {
+      "kind": "practice1",
+      "number": 3,
+      "title": "Luyện tập 1",
+      "blocks": [
+        {
+          "type": "problem",
+          "label": "Bài 1.",
+          "statement": "\\par\\nopagebreak\n\\begin{minipage}[t]{0.64\\linewidth}\\vspace{0pt}\nTrên Hình 1, tứ giác $ABCD$ có $AB \\parallel CD$ và $AB = CD$. Căn cứ nào cho phép kết luận $ABCD$ là hình bình hành?[[br]]\\par\\vspace{3pt}\\parbox[t]{0.46\\linewidth}{\\textbf{A.} Hai cạnh đối song song và bằng nhau}\\hspace{0.04\\linewidth}\\parbox[t]{0.46\\linewidth}{\\textbf{B.} Hai đường chéo cắt nhau tại trung điểm}\\par\\vspace{4pt}\\parbox[t]{0.46\\linewidth}{\\textbf{C.} Các góc đối bằng nhau}\\hspace{0.04\\linewidth}\\parbox[t]{0.46\\linewidth}{\\textbf{D.} Hai cạnh bên bằng nhau}\n\\end{minipage}\\hfill\n\\begin{minipage}[t]{0.31\\linewidth}\\vspace{0pt}\n\\centering\n\\adjustbox{max width=\\linewidth, max totalheight=2.4cm}{\n\\begin{tikzpicture}[line width=0.8pt, font=\\small]\n  \\coordinate (A) at (0.6,1.7);\n  \\coordinate (B) at (3.4,1.7);\n  \\coordinate (C) at (2.8,0);\n  \\coordinate (D) at (0,0);\n  \\draw[ink,fill=brand!8] (A) -- (B) -- (C) -- (D) -- cycle;\n  \\node[above left] at (A) {$A$};\n  \\node[above right] at (B) {$B$};\n  \\node[below right] at (C) {$C$};\n  \\node[below left] at (D) {$D$};\n  \\draw[brand, line width=1.1pt] (A) -- (B);\n  \\draw[brand, line width=1.1pt] (D) -- (C);\n  \\node[brand,font=\\scriptsize] at (1.8,1.92) {$>$};\n  \\node[brand,font=\\scriptsize] at (1.2,-0.26) {$>$};\n  \\node[ink,font=\\scriptsize] at (2.3,1.92) {$||$};\n  \\node[ink,font=\\scriptsize] at (1.7,-0.26) {$||$};\n\\end{tikzpicture}\n}\n\\par\\vspace{2pt}{\\sffamily\\scriptsize\\itshape\\color{muted}Hình 1}\n\\end{minipage}",
+          "tier": "onclass",
+          "level": 1,
+          "dang_id": "NB1",
+          "solution": "Đáp án \\textbf{A}. Hai dữ kiện $AB \\parallel CD$ và $AB = CD$ rơi vào cùng một cặp cạnh đối, đúng dấu hiệu 3. Phương án B, C sai vì hình vẽ không cho dữ kiện về đường chéo hay góc; phương án D không phải dấu hiệu của hình bình hành.",
+          "figure_given": true
+        },
+        {
+          "type": "problem",
+          "label": "Bài 2.",
+          "statement": "\\par\\nopagebreak\n\\begin{minipage}[t]{0.64\\linewidth}\\vspace{0pt}\nHình bình hành $ABCD$ ở Hình 2 có hai đường chéo cắt nhau tại $O$, $OA = 4\\text{ cm}$ và $OB = 3\\text{ cm}$. Độ dài $AC$ và $BD$ lần lượt là:[[br]]\\par\\vspace{3pt}\\parbox[t]{0.46\\linewidth}{\\textbf{A.} $4\\text{ cm}$ và $3\\text{ cm}$}\\hspace{0.04\\linewidth}\\parbox[t]{0.46\\linewidth}{\\textbf{B.} $8\\text{ cm}$ và $6\\text{ cm}$}\\par\\vspace{4pt}\\parbox[t]{0.46\\linewidth}{\\textbf{C.} $8\\text{ cm}$ và $3\\text{ cm}$}\\hspace{0.04\\linewidth}\\parbox[t]{0.46\\linewidth}{\\textbf{D.} $4\\text{ cm}$ và $6\\text{ cm}$}\n\\end{minipage}\\hfill\n\\begin{minipage}[t]{0.31\\linewidth}\\vspace{0pt}\n\\centering\n\\adjustbox{max width=\\linewidth, max totalheight=2.4cm}{\n\\begin{tikzpicture}[line width=0.8pt, font=\\small]\n  \\coordinate (A) at (0.6,1.7);\n  \\coordinate (B) at (3.4,1.7);\n  \\coordinate (C) at (2.8,0);\n  \\coordinate (D) at (0,0);\n  \\draw[ink,fill=brand!8] (A) -- (B) -- (C) -- (D) -- cycle;\n  \\node[above left] at (A) {$A$};\n  \\node[above right] at (B) {$B$};\n  \\node[below right] at (C) {$C$};\n  \\node[below left] at (D) {$D$};\n  \\draw[ink,dashed] (A) -- (C);\n  \\draw[ink,dashed] (B) -- (D);\n  \\coordinate (O) at (1.7,0.85);\n  \\fill[ink] (O) circle (1.4pt) node[below left=1pt]{$O$};\n  \\node[brand,font=\\scriptsize] at (2.7,1.4) {$3$};\n  \\node[brand,font=\\scriptsize] at (1.0,1.4) {$4$};\n\\end{tikzpicture}\n}\n\\par\\vspace{2pt}{\\sffamily\\scriptsize\\itshape\\color{muted}Hình 2}\n\\end{minipage}",
+          "tier": "onclass",
+          "level": 1,
+          "dang_id": "NB1",
+          "solution": "Đáp án \\textbf{B}. Hai đường chéo của hình bình hành cắt nhau tại trung điểm mỗi đường nên $AC = 2 \\cdot OA = 8\\text{ cm}$ và $BD = 2 \\cdot OB = 6\\text{ cm}$.",
+          "figure_given": true
+        },
+        {
+          "type": "problem",
+          "label": "Bài 3.",
+          "statement": "\\par\\nopagebreak\n\\begin{minipage}[t]{0.64\\linewidth}\\vspace{0pt}\nĐiền Đ (đúng) hoặc S (sai) vào ô trống, biết tứ giác $ABCD$ ở Hình 3 chỉ được cho hai dữ kiện $AB \\parallel CD$ và $AD = BC$. [[br]] a) [[blank:1.2cm]] Tứ giác $ABCD$ ở Hình 3 chắc chắn là hình bình hành. [[br]] b) [[blank:1.2cm]] Nếu thêm dữ kiện $AB = CD$ thì $ABCD$ là hình bình hành.\n\\end{minipage}\\hfill\n\\begin{minipage}[t]{0.31\\linewidth}\\vspace{0pt}\n\\centering\n\\adjustbox{max width=\\linewidth, max totalheight=2.4cm}{\n\\begin{tikzpicture}[line width=0.8pt, font=\\small]\n  \\coordinate (A) at (0.9,1.7);\n  \\coordinate (B) at (2.7,1.7);\n  \\coordinate (C) at (3.6,0);\n  \\coordinate (D) at (0,0);\n  \\draw[ink,fill=brand!8] (A) -- (B) -- (C) -- (D) -- cycle;\n  \\node[above left] at (A) {$A$};\n  \\node[above right] at (B) {$B$};\n  \\node[below right] at (C) {$C$};\n  \\node[below left] at (D) {$D$};\n  \\node[brand,font=\\scriptsize] at (1.8,1.95) {$>$};\n  \\node[brand,font=\\scriptsize] at (1.8,-0.28) {$>$};\n  \\node[ink,font=\\scriptsize] at (0.35,0.95) {$|$};\n  \\node[ink,font=\\scriptsize] at (3.25,0.95) {$|$};\n\\end{tikzpicture}\n}\n\\par\\vspace{2pt}{\\sffamily\\scriptsize\\itshape\\color{muted}Hình 3}\n\\end{minipage}",
+          "tier": "onclass",
+          "level": 1,
+          "dang_id": "NB1",
+          "solution": "a) \\textbf{S}. Hai dữ kiện rơi vào hai cặp cạnh đối KHÁC nhau, đây đúng là mô tả của một hình thang cân ($AB \\parallel CD$, hai cạnh bên $AD = BC$). [[br]] b) \\textbf{Đ}. Khi đó $AB \\parallel CD$ và $AB = CD$ rơi vào cùng một cặp cạnh đối, tứ giác $ABCD$ là hình bình hành theo dấu hiệu 3.",
+          "figure_given": true
+        },
+        {
+          "type": "problem",
+          "label": "Bài 4.",
+          "statement": "\\par\\nopagebreak\n\\begin{minipage}[t]{0.64\\linewidth}\\vspace{0pt}\nHình bình hành $ABCD$ ở Hình 4 có $\\widehat{D} = 65^\\circ$. Điền số đo còn thiếu: [[br]] $\\widehat{B} = $ [[mblank:1.4cm]] (vì [[mblank:2.6cm]] ), $\\widehat{A} = $ [[mblank:1.4cm]] và $\\widehat{C} = $ [[mblank:1.4cm]].\n\\end{minipage}\\hfill\n\\begin{minipage}[t]{0.31\\linewidth}\\vspace{0pt}\n\\centering\n\\adjustbox{max width=\\linewidth, max totalheight=2.4cm}{\n\\begin{tikzpicture}[line width=0.8pt, font=\\small]\n  \\coordinate (A) at (0.6,1.7);\n  \\coordinate (B) at (3.4,1.7);\n  \\coordinate (C) at (2.8,0);\n  \\coordinate (D) at (0,0);\n  \\draw[ink,fill=brand!8] (A) -- (B) -- (C) -- (D) -- cycle;\n  \\node[above left] at (A) {$A$};\n  \\node[above right] at (B) {$B$};\n  \\node[below right] at (C) {$C$};\n  \\node[below left] at (D) {$D$};\n  \\node[font=\\scriptsize,brand] at (0.35,0.28) {$65^\\circ$};\n\\end{tikzpicture}\n}\n\\par\\vspace{2pt}{\\sffamily\\scriptsize\\itshape\\color{muted}Hình 4}\n\\end{minipage}",
+          "tier": "onclass",
+          "level": 1,
+          "dang_id": "NB1",
+          "solution": "$\\widehat{B} = \\widehat{D} = 65^\\circ$ (hai góc đối của hình bình hành bằng nhau). [[br]] $\\widehat{A}$ và $\\widehat{D}$ là hai góc kề một cạnh nên bù nhau: $\\widehat{A} = 180^\\circ - 65^\\circ = 115^\\circ$. [[br]] $\\widehat{C} = \\widehat{A} = 115^\\circ$ (hai góc đối).",
+          "figure_given": true
+        },
+        {
+          "type": "problem",
+          "label": "Bài 5.",
+          "statement": "Xét hình bình hành $ABCD$ có hai đường chéo cắt nhau tại $O$. Trên đoạn $OB$ lấy điểm $M$, trên đoạn $OD$ lấy điểm $N$ sao cho $OM = ON$. [[br]] a) Vẽ hình vào vở và ghi giả thiết -- kết luận cho bài toán \\textit{``Chứng minh tứ giác $AMCN$ là hình bình hành''}. [[br]] b) Trên hình vừa vẽ, dùng ký hiệu đánh dấu tất cả các cặp đoạn thẳng bằng nhau mà em suy ra được từ giả thiết.",
+          "tier": "onclass",
+          "level": 1,
+          "dang_id": "NB2",
+          "solution": "a) Hình vẽ: hình bình hành $ABCD$, hai đường chéo $AC$, $BD$ cắt nhau tại $O$; $M \\in OB$, $N \\in OD$. [[br]] \\textbf{GT}: $ABCD$ là hình bình hành; $AC \\cap BD = \\{O\\}$; $M \\in OB$, $N \\in OD$, $OM = ON$. [[br]] \\textbf{KL}: $AMCN$ là hình bình hành. [[br]] b) Các cặp đoạn bằng nhau đánh dấu được: $OA = OC$ và $OB = OD$ (hai đường chéo hình bình hành cắt nhau tại trung điểm mỗi đường); $OM = ON$ (giả thiết). [[br]] Vậy trên hình có ba cặp đoạn thẳng bằng nhau, trong đó cặp $OA = OC$ và $OM = ON$ chính là hai dữ kiện sẽ dùng ở dấu hiệu 5.",
+          "draw": true
+        },
+        {
+          "type": "problem",
+          "label": "Bài 6.",
+          "statement": "\\par\\nopagebreak\n\\begin{minipage}[t]{0.62\\linewidth}\\vspace{0pt}\nCho hình bình hành $ABCD$. Gọi $E$, $F$ lần lượt là trung điểm của $AD$ và $BC$ (Hình 5). Điền vào chỗ trống để hoàn thành bài giải.\n\\end{minipage}\\hfill\n\\begin{minipage}[t]{0.33\\linewidth}\\vspace{0pt}\n\\centering\n\\adjustbox{max width=\\linewidth, max totalheight=2.6cm}{\n\\begin{tikzpicture}[line width=0.8pt, font=\\small]\n  \\coordinate (A) at (0.6,1.7);\n  \\coordinate (B) at (3.4,1.7);\n  \\coordinate (C) at (2.8,0);\n  \\coordinate (D) at (0,0);\n  \\draw[ink,fill=brand!8] (A) -- (B) -- (C) -- (D) -- cycle;\n  \\node[above left] at (A) {$A$};\n  \\node[above right] at (B) {$B$};\n  \\node[below right] at (C) {$C$};\n  \\node[below left] at (D) {$D$};\n  \\coordinate (E) at (0.3,0.85);\n  \\coordinate (F) at (3.1,0.85);\n  \\draw[brand, line width=1.1pt] (A) -- (E) -- (C) -- (F) -- cycle;\n  \\fill[ink] (E) circle (1.3pt) node[left]{$E$};\n  \\fill[ink] (F) circle (1.3pt) node[right]{$F$};\n\\end{tikzpicture}\n}\n\\par\\vspace{2pt}{\\sffamily\\scriptsize\\itshape\\color{muted}Hình 5}\n\\end{minipage}\n\\par\\vspace{3pt}\na) Chứng minh $AE \\parallel CF$ và $AE = CF$. [[br]] \\textit{Bài giải}: Vì $ABCD$ là hình bình hành nên $AD \\parallel BC$ và $AD = $ [[mblank:1.2cm]] (tính chất). Mà $E \\in AD$, $F \\in BC$ nên $AE \\parallel$ [[mblank:1.2cm]] . [[br]] Vì $E$ là trung điểm $AD$ nên $AE = \\dfrac{1}{2}AD$; vì $F$ là trung điểm $BC$ nên $CF = \\dfrac{1}{2}$ [[mblank:1.2cm]] . Mà $AD = BC$ nên $AE = CF$. [[br]] b) Chứng minh tứ giác $AECF$ là hình bình hành. [[br]] \\textit{Bài giải}: Xét tứ giác $AECF$ có $AE \\parallel CF$ và $AE = $ [[mblank:1.2cm]] (chứng minh trên). [[br]] Vậy tứ giác $AECF$ là hình bình hành (dấu hiệu [[mblank:0.9cm]] ).",
+          "tier": "onclass",
+          "level": 1,
+          "dang_id": "NB3",
+          "solution": "a) Các ô trống lần lượt: $BC$ ; $CF$ ; $BC$. [[br]] Trình bày đủ: Vì $ABCD$ là hình bình hành nên $AD \\parallel BC$ và $AD = BC$. Mà $E \\in AD$, $F \\in BC$ nên $AE \\parallel CF$. Vì $E$ là trung điểm $AD$ nên $AE = \\dfrac{1}{2}AD$; vì $F$ là trung điểm $BC$ nên $CF = \\dfrac{1}{2}BC$. Mà $AD = BC$ nên $AE = CF$. [[br]] Vậy $AE \\parallel CF$ và $AE = CF$. [[br]] b) Các ô trống lần lượt: $CF$ ; 3. [[br]] Xét tứ giác $AECF$ có $AE \\parallel CF$ và $AE = CF$ (theo ý a). Vậy tứ giác $AECF$ là hình bình hành (dấu hiệu 3: hai cạnh đối song song và bằng nhau).",
+          "figure_given": true
+        }
+      ],
+      "solution": "Bài 1: A. [[br]] Bài 2: B. [[br]] Bài 3: ý thứ nhất S, ý thứ hai Đ. [[br]] Bài 4: $\\widehat{B} = 65^\\circ$, $\\widehat{A} = \\widehat{C} = 115^\\circ$. [[br]] Bài 5: xem lời giải chi tiết ở từng bài. [[br]] Bài 6: các ô trống lần lượt $BC$ ; $CF$ ; $BC$ ; $CF$ ; dấu hiệu 3.",
+      "teacher_note": "Bài 3 là bẫy trung tâm của buổi: cho HS vẽ thêm một hình thang cân lên bảng để thấy hai dữ kiện đó chưa đủ. Bài 5 chấm tay từng em phần ký hiệu trên hình --- em nào không đánh dấu được $OA = OC$ là chưa nắm tính chất đường chéo."
+    },
+    {
+      "kind": "practice2",
+      "number": 4,
+      "title": "Luyện tập 2",
+      "blocks": [
+        {
+          "type": "problem",
+          "label": "Bài 7.",
+          "statement": "\\par\\nopagebreak\n\\begin{minipage}[t]{0.64\\linewidth}\\vspace{0pt}\nCho hình bình hành $ABCD$. Gọi $E$, $F$ lần lượt là trung điểm của $AD$ và $BC$. [[br]] a) Chứng minh $\\triangle ABE = \\triangle CDF$. [[br]] b) Chứng minh $BE \\parallel DF$.\n\\end{minipage}\\hfill\n\\begin{minipage}[t]{0.31\\linewidth}\\vspace{0pt}\n\\centering\n\\adjustbox{max width=\\linewidth, max totalheight=2.4cm}{\n\\begin{tikzpicture}[line width=0.8pt, font=\\small]\n  \\coordinate (A) at (0.6,1.7);\n  \\coordinate (B) at (3.4,1.7);\n  \\coordinate (C) at (2.8,0);\n  \\coordinate (D) at (0,0);\n  \\draw[ink,fill=brand!8] (A) -- (B) -- (C) -- (D) -- cycle;\n  \\node[above left] at (A) {$A$};\n  \\node[above right] at (B) {$B$};\n  \\node[below right] at (C) {$C$};\n  \\node[below left] at (D) {$D$};\n  \\coordinate (E) at (0.3,0.85);\n  \\coordinate (F) at (3.1,0.85);\n  \\draw[brand, line width=1.0pt] (B) -- (E);\n  \\draw[brand, line width=1.0pt] (D) -- (F);\n  \\fill[ink] (E) circle (1.3pt) node[left]{$E$};\n  \\fill[ink] (F) circle (1.3pt) node[right]{$F$};\n\\end{tikzpicture}\n}\n\\par\\vspace{2pt}{\\sffamily\\scriptsize\\itshape\\color{muted}Hình 6}\n\\end{minipage}",
+          "tier": "onclass",
+          "level": 2,
+          "dang_id": "TH1",
+          "solution": "a) Vì $ABCD$ là hình bình hành nên $AB = CD$, $AD = BC$ và $\\widehat{A} = \\widehat{C}$ (tính chất cạnh đối, góc đối). [[br]] Vì $E$ là trung điểm của $AD$ nên $AE = \\dfrac{1}{2}AD$; vì $F$ là trung điểm của $BC$ nên $CF = \\dfrac{1}{2}BC$. [[br]] Mà $AD = BC$ nên $AE = CF$. [[br]] Xét $\\triangle ABE$ và $\\triangle CDF$ có: $AB = CD$ (chứng minh trên); $\\widehat{BAE} = \\widehat{DCF}$ (vì $E \\in AD$, $F \\in BC$ nên hai góc này chính là $\\widehat{A}$ và $\\widehat{C}$); $AE = CF$ (chứng minh trên). [[br]] Do đó $\\triangle ABE = \\triangle CDF$ (c.g.c). [[br]] Vậy $\\triangle ABE = \\triangle CDF$. [[br]] b) Vì $ABCD$ là hình bình hành nên $AD \\parallel BC$, mà $E \\in AD$ và $F \\in BC$ nên $ED \\parallel BF$. [[br]] Lại có $ED = \\dfrac{1}{2}AD$, $BF = \\dfrac{1}{2}BC$ và $AD = BC$ nên $ED = BF$. [[br]] Xét tứ giác $BFDE$ có $ED \\parallel BF$ và $ED = BF$. [[br]] Do đó $BFDE$ là hình bình hành (dấu hiệu 3: hai cạnh đối song song và bằng nhau). [[br]] Suy ra $EB \\parallel FD$ (hai cạnh đối của hình bình hành). [[br]] Vậy $BE \\parallel DF$.",
+          "hints": [
+            "Ý thứ nhất: hai tam giác đã có sẵn cặp cạnh $AB = CD$ và cặp góc $\\widehat{A} = \\widehat{C}$ --- chỉ cần thêm cặp cạnh nào nữa là đủ c.g.c?",
+            "Ý thứ hai: muốn có $BE \\parallel DF$ thì xét tứ giác $BFDE$; hai cạnh đối của nó là $ED$ và $BF$."
+          ]
+        },
+        {
+          "type": "problem",
+          "label": "Bài 8.",
+          "statement": "\\par\\nopagebreak\n\\begin{minipage}[t]{0.64\\linewidth}\\vspace{0pt}\nCho hình bình hành $ABCD$ có $O$ là giao điểm của hai đường chéo. Một đường thẳng đi qua $O$ cắt cạnh $AB$ tại $M$ và cắt cạnh $CD$ tại $N$. [[br]] Chứng minh $O$ là trung điểm của đoạn thẳng $MN$.\n\\end{minipage}\\hfill\n\\begin{minipage}[t]{0.31\\linewidth}\\vspace{0pt}\n\\centering\n\\adjustbox{max width=\\linewidth, max totalheight=2.4cm}{\n\\begin{tikzpicture}[line width=0.8pt, font=\\small]\n  \\coordinate (A) at (0.6,1.7);\n  \\coordinate (B) at (3.4,1.7);\n  \\coordinate (C) at (2.8,0);\n  \\coordinate (D) at (0,0);\n  \\draw[ink,fill=brand!8] (A) -- (B) -- (C) -- (D) -- cycle;\n  \\node[above left] at (A) {$A$};\n  \\node[above right] at (B) {$B$};\n  \\node[below right] at (C) {$C$};\n  \\node[below left] at (D) {$D$};\n  \\draw[ink,dashed] (A) -- (C);\n  \\draw[ink,dashed] (B) -- (D);\n  \\coordinate (O) at (1.7,0.85);\n  \\coordinate (M) at (2.2,1.7);\n  \\coordinate (N) at (1.2,0);\n  \\draw[brand, line width=1.0pt] (M) -- (N);\n  \\fill[ink] (O) circle (1.3pt) node[right=1pt]{$O$};\n  \\fill[brand] (M) circle (1.3pt) node[above]{$M$};\n  \\fill[brand] (N) circle (1.3pt) node[below]{$N$};\n\\end{tikzpicture}\n}\n\\par\\vspace{2pt}{\\sffamily\\scriptsize\\itshape\\color{muted}Hình 7}\n\\end{minipage}",
+          "tier": "onclass",
+          "level": 2,
+          "dang_id": "TH2",
+          "solution": "Vì $ABCD$ là hình bình hành nên $AB \\parallel CD$ và hai đường chéo cắt nhau tại trung điểm của mỗi đường, do đó $OA = OC$. [[br]] Xét $\\triangle OAM$ và $\\triangle OCN$ có: [[br]] $\\widehat{OAM} = \\widehat{OCN}$ (hai góc so le trong, $AB \\parallel CD$); [[br]] $OA = OC$ (chứng minh trên); [[br]] $\\widehat{AOM} = \\widehat{CON}$ (hai góc đối đỉnh). [[br]] Do đó $\\triangle OAM = \\triangle OCN$ (g.c.g). [[br]] Suy ra $OM = ON$ (hai cạnh tương ứng). [[br]] Mà $M$, $O$, $N$ thẳng hàng (cùng thuộc đường thẳng đã cho). [[br]] Vậy $O$ là trung điểm của đoạn thẳng $MN$.",
+          "hints": [
+            "Bài này làm y hệt Ví dụ mẫu 3, chỉ đổi cặp cạnh $AD$, $BC$ thành cặp cạnh $AB$, $CD$.",
+            "Muốn $O$ là trung điểm $MN$ thì phải có $OM = ON$: ghép $OM$, $ON$ vào hai tam giác bằng nhau nhận $O$ làm đỉnh chung."
+          ]
+        },
+        {
+          "type": "problem",
+          "label": "Bài 9.",
+          "statement": "\\par\\nopagebreak\n\\begin{minipage}[t]{0.64\\linewidth}\\vspace{0pt}\nCho hình bình hành $ABCD$ có $O$ là giao điểm của hai đường chéo. Gọi $K$, $I$ lần lượt là trung điểm của $AB$ và $CD$ (Hình 8). [[br]] Chứng minh ba điểm $K$, $O$, $I$ thẳng hàng.\n\\end{minipage}\\hfill\n\\begin{minipage}[t]{0.31\\linewidth}\\vspace{0pt}\n\\centering\n\\adjustbox{max width=\\linewidth, max totalheight=2.4cm}{\n\\begin{tikzpicture}[line width=0.8pt, font=\\small]\n  \\coordinate (A) at (0.6,1.7);\n  \\coordinate (B) at (3.4,1.7);\n  \\coordinate (C) at (2.8,0);\n  \\coordinate (D) at (0,0);\n  \\draw[ink,fill=brand!8] (A) -- (B) -- (C) -- (D) -- cycle;\n  \\node[above left] at (A) {$A$};\n  \\node[above right] at (B) {$B$};\n  \\node[below right] at (C) {$C$};\n  \\node[below left] at (D) {$D$};\n  \\draw[ink,dashed] (A) -- (C);\n  \\draw[ink,dashed] (B) -- (D);\n  \\coordinate (O) at (1.7,0.85);\n  \\coordinate (K) at (2.0,1.7);\n  \\coordinate (I) at (1.4,0);\n  \\draw[brand, line width=1.0pt] (K) -- (I);\n  \\fill[ink] (O) circle (1.3pt) node[below right=1pt]{$O$};\n  \\fill[brand] (K) circle (1.3pt) node[above]{$K$};\n  \\fill[brand] (I) circle (1.3pt) node[below]{$I$};\n\\end{tikzpicture}\n}\n\\par\\vspace{2pt}{\\sffamily\\scriptsize\\itshape\\color{muted}Hình 8}\n\\end{minipage}",
+          "tier": "onclass",
+          "level": 3,
+          "dang_id": "VD1",
+          "solution": "Vì $ABCD$ là hình bình hành nên $AB \\parallel CD$ và $AB = CD$ (tính chất cạnh đối). [[br]] Mà $K \\in AB$, $I \\in CD$ nên $AK \\parallel IC$. [[br]] Vì $K$ là trung điểm của $AB$ nên $AK = \\dfrac{1}{2}AB$; vì $I$ là trung điểm của $CD$ nên $IC = \\dfrac{1}{2}CD$. [[br]] Mà $AB = CD$ nên $AK = IC$. [[br]] Xét tứ giác $AKCI$ có $AK \\parallel IC$ và $AK = IC$. [[br]] Do đó $AKCI$ là hình bình hành (dấu hiệu 3: hai cạnh đối song song và bằng nhau). [[br]] Suy ra hai đường chéo $AC$ và $KI$ của hình bình hành $AKCI$ cắt nhau tại trung điểm của mỗi đường; gọi giao điểm đó là $O'$ thì $O'$ là trung điểm của $AC$. [[br]] Mặt khác, $O$ là giao điểm hai đường chéo của hình bình hành $ABCD$ nên $O$ cũng là trung điểm của $AC$. [[br]] Một đoạn thẳng chỉ có một trung điểm nên $O' \\equiv O$, tức là $O \\in KI$. [[br]] Vậy ba điểm $K$, $O$, $I$ thẳng hàng.",
+          "hints": [
+            "Muốn ba điểm thẳng hàng, hãy tìm một hình bình hành nhận $KI$ làm ĐƯỜNG CHÉO.",
+            "Xét tứ giác $AKCI$: so sánh $AK$ với $IC$ về cả phương và độ dài.",
+            "$AKCI$ là hình bình hành thì hai đường chéo $AC$ và $KI$ cắt nhau ở đâu? Điểm đó có liên hệ gì với $O$?"
+          ]
+        }
+      ],
+      "solution": "Bài 7: c.g.c với $AB = CD$, $\\widehat{A} = \\widehat{C}$, $AE = CF$; sau đó $BFDE$ là hình bình hành (dấu hiệu 3) nên $BE \\parallel DF$. [[br]] Bài 8: $\\triangle OAM = \\triangle OCN$ (g.c.g) nên $OM = ON$. [[br]] Bài 9: $AKCI$ là hình bình hành nên $KI$ và $AC$ cắt nhau tại trung điểm $O$ của $AC$, suy ra $K$, $O$, $I$ thẳng hàng.",
+      "teacher_note": "Bài 9 là bài trọng tâm --- GV chỉ phát gợi ý 1 rồi cho HS thảo luận 3 phút. Chốt kỹ thuật chung của cả buổi: muốn chứng minh THẲNG HÀNG thì dựng một hình bình hành nhận đoạn thẳng đó làm đường chéo. Kỹ thuật này còn dùng lại ở BTVN 7 và ở bài hình chữ nhật tuần sau."
+    },
+    {
+      "kind": "reflection",
+      "number": 5,
+      "title": "Tổng kết \\& BTVN",
+      "blocks": [
+        {
+          "type": "mindmap",
+          "size": "small",
+          "caption": "Điền các ô trống để hoàn thiện bản đồ kỹ thuật của buổi luyện tập",
+          "root": "Hình bình hành",
+          "branches": [
+            {
+              "label": "Chiều XUÔI: đã có HBH [[blank:1.2cm]]",
+              "children": [
+                {
+                  "label": "Cạnh đối: $AB = CD$, $AD = $ [[blank:1.0cm]]"
+                },
+                {
+                  "label": "Góc đối bằng nhau, hai góc kề một cạnh [[blank:1.2cm]] nhau"
+                },
+                {
+                  "label": "Hai đường chéo cắt nhau tại [[blank:1.6cm]] của mỗi đường"
+                }
+              ]
+            },
+            {
+              "label": "Chiều NGƯỢC: muốn kết luận HBH",
+              "children": [
+                {
+                  "label": "DH3: hai cạnh đối [[blank:1.4cm]] và [[blank:1.2cm]] nhau"
+                },
+                {
+                  "label": "DH5: hai đường chéo cắt nhau tại trung điểm mỗi đường"
+                }
+              ]
+            },
+            {
+              "label": "Dùng HBH để chứng minh tiếp",
+              "children": [
+                {
+                  "label": "Hai đoạn bằng nhau / hai đường [[blank:1.4cm]]"
+                },
+                {
+                  "label": "Một điểm là trung điểm; ba điểm [[blank:1.5cm]]"
+                }
+              ]
+            }
+          ]
+        },
+        {
+          "type": "problem",
+          "label": "BTVN~1.",
+          "statement": "\\par\\nopagebreak\n\\begin{minipage}[t]{0.64\\linewidth}\\vspace{0pt}\nHình bình hành $ABCD$ ở Hình BTVN 1 có $\\widehat{A} = 130^\\circ$. Số đo góc $\\widehat{B}$ bằng:[[br]]\\par\\vspace{3pt}\\parbox[t]{0.46\\linewidth}{\\textbf{A.} $130^\\circ$}\\hspace{0.04\\linewidth}\\parbox[t]{0.46\\linewidth}{\\textbf{B.} $50^\\circ$}\\par\\vspace{4pt}\\parbox[t]{0.46\\linewidth}{\\textbf{C.} $65^\\circ$}\\hspace{0.04\\linewidth}\\parbox[t]{0.46\\linewidth}{\\textbf{D.} $30^\\circ$}\n\\end{minipage}\\hfill\n\\begin{minipage}[t]{0.31\\linewidth}\\vspace{0pt}\n\\centering\n\\adjustbox{max width=\\linewidth, max totalheight=2.4cm}{\n\\begin{tikzpicture}[line width=0.8pt, font=\\small]\n  \\coordinate (A) at (0.6,1.7);\n  \\coordinate (B) at (3.4,1.7);\n  \\coordinate (C) at (2.8,0);\n  \\coordinate (D) at (0,0);\n  \\draw[ink,fill=brand!8] (A) -- (B) -- (C) -- (D) -- cycle;\n  \\node[above left] at (A) {$A$};\n  \\node[above right] at (B) {$B$};\n  \\node[below right] at (C) {$C$};\n  \\node[below left] at (D) {$D$};\n  \\node[font=\\scriptsize,brand] at (0.95,1.42) {$130^\\circ$};\n\\end{tikzpicture}\n}\n\\par\\vspace{2pt}{\\sffamily\\scriptsize\\itshape\\color{muted}Hình BTVN 1}\n\\end{minipage}",
+          "tier": "btvn",
+          "level": 1,
+          "dang_id": "NB1",
+          "solution": "Đáp án \\textbf{B}. $\\widehat{A}$ và $\\widehat{B}$ là hai góc kề một cạnh của hình bình hành nên bù nhau: $\\widehat{B} = 180^\\circ - 130^\\circ = 50^\\circ$.",
+          "figure_given": true
+        },
+        {
+          "type": "problem",
+          "label": "BTVN~2.",
+          "statement": "\\par\\nopagebreak\n\\begin{minipage}[t]{0.64\\linewidth}\\vspace{0pt}\nCho hình bình hành $MNPQ$ có hai đường chéo cắt nhau tại $I$ (Hình BTVN 2). Khẳng định nào sau đây \\textbf{đúng}?[[br]]\\par\\vspace{3pt}\\parbox[t]{0.46\\linewidth}{\\textbf{A.} $IM = IN$}\\hspace{0.04\\linewidth}\\parbox[t]{0.46\\linewidth}{\\textbf{B.} $IM = IP$}\\par\\vspace{4pt}\\parbox[t]{0.46\\linewidth}{\\textbf{C.} $IM = IQ$}\\hspace{0.04\\linewidth}\\parbox[t]{0.46\\linewidth}{\\textbf{D.} $IM = MP$}\n\\end{minipage}\\hfill\n\\begin{minipage}[t]{0.31\\linewidth}\\vspace{0pt}\n\\centering\n\\adjustbox{max width=\\linewidth, max totalheight=2.4cm}{\n\\begin{tikzpicture}[line width=0.8pt, font=\\small]\n  \\coordinate (M) at (0.6,1.7);\n  \\coordinate (N) at (3.4,1.7);\n  \\coordinate (P) at (2.8,0);\n  \\coordinate (Q) at (0,0);\n  \\draw[ink,fill=brand!8] (M) -- (N) -- (P) -- (Q) -- cycle;\n  \\draw[ink,dashed] (M) -- (P);\n  \\draw[ink,dashed] (N) -- (Q);\n  \\fill[ink] (1.7,0.85) circle (1.4pt) node[below left=1pt]{$I$};\n  \\node[above left] at (M) {$M$};\n  \\node[above right] at (N) {$N$};\n  \\node[below right] at (P) {$P$};\n  \\node[below left] at (Q) {$Q$};\n\\end{tikzpicture}\n}\n\\par\\vspace{2pt}{\\sffamily\\scriptsize\\itshape\\color{muted}Hình BTVN 2}\n\\end{minipage}",
+          "tier": "btvn",
+          "level": 1,
+          "dang_id": "NB1",
+          "solution": "Đáp án \\textbf{B}. Hai đường chéo $MP$ và $NQ$ cắt nhau tại trung điểm của mỗi đường nên $I$ là trung điểm của $MP$, do đó $IM = IP$. Các phương án còn lại so sánh hai đoạn nằm trên hai đường chéo khác nhau nên không có căn cứ.",
+          "figure_given": true
+        },
+        {
+          "type": "problem",
+          "label": "BTVN~3.",
+          "statement": "\\par\\nopagebreak\n\\begin{minipage}[t]{0.64\\linewidth}\\vspace{0pt}\nĐiền Đ (đúng) hoặc S (sai), biết $ABCD$ là hình bình hành có hai đường chéo cắt nhau tại $O$ (Hình BTVN 3). [[br]] a) [[blank:1.2cm]] Trong hình bình hành, hai đường chéo bằng nhau. [[br]] b) [[blank:1.2cm]] $O$ là trung điểm của cả $AC$ và $BD$.\n\\end{minipage}\\hfill\n\\begin{minipage}[t]{0.31\\linewidth}\\vspace{0pt}\n\\centering\n\\adjustbox{max width=\\linewidth, max totalheight=2.4cm}{\n\\begin{tikzpicture}[line width=0.8pt, font=\\small]\n  \\coordinate (A) at (0.6,1.7);\n  \\coordinate (B) at (3.4,1.7);\n  \\coordinate (C) at (2.8,0);\n  \\coordinate (D) at (0,0);\n  \\draw[ink,fill=brand!8] (A) -- (B) -- (C) -- (D) -- cycle;\n  \\node[above left] at (A) {$A$};\n  \\node[above right] at (B) {$B$};\n  \\node[below right] at (C) {$C$};\n  \\node[below left] at (D) {$D$};\n  \\draw[ink,dashed] (A) -- (C);\n  \\draw[ink,dashed] (B) -- (D);\n  \\fill[ink] (1.7,0.85) circle (1.4pt) node[below left=1pt]{$O$};\n\\end{tikzpicture}\n}\n\\par\\vspace{2pt}{\\sffamily\\scriptsize\\itshape\\color{muted}Hình BTVN 3}\n\\end{minipage}",
+          "tier": "btvn",
+          "level": 1,
+          "dang_id": "NB1",
+          "solution": "a) \\textbf{S}. Hai đường chéo bằng nhau là tính chất của hình thang cân, không phải của hình bình hành nói chung. [[br]] b) \\textbf{Đ}. Hai đường chéo của hình bình hành cắt nhau tại trung điểm của mỗi đường.",
+          "figure_given": true
+        },
+        {
+          "type": "problem",
+          "label": "BTVN~4.",
+          "statement": "Xét hình bình hành $ABCD$. Gọi $E$, $F$ lần lượt là trung điểm của $AB$ và $CD$. Vẽ hình vào vở và ghi giả thiết -- kết luận cho bài toán \\textit{``Chứng minh tứ giác $DEBF$ là hình bình hành''}, đồng thời đánh dấu lên hình các cặp đoạn thẳng bằng nhau suy ra được từ giả thiết.",
+          "tier": "btvn",
+          "level": 1,
+          "dang_id": "NB2",
+          "solution": "Hình vẽ: hình bình hành $ABCD$; $E$ là trung điểm $AB$, $F$ là trung điểm $CD$; nối $DE$, $EB$, $BF$, $FD$. [[br]] \\textbf{GT}: $ABCD$ là hình bình hành; $E$ là trung điểm của $AB$; $F$ là trung điểm của $CD$. [[br]] \\textbf{KL}: $DEBF$ là hình bình hành. [[br]] Các cặp đoạn bằng nhau đánh dấu trên hình: $AE = EB$, $DF = FC$ (giả thiết trung điểm) và $AB = CD$ (cạnh đối hình bình hành), từ đó $EB = DF$.",
+          "draw": true
+        },
+        {
+          "type": "problem",
+          "label": "BTVN~5.",
+          "statement": "\\par\\nopagebreak\n\\begin{minipage}[t]{0.62\\linewidth}\\vspace{0pt}\nĐiền vào chỗ trống để hoàn thành bài giải của BTVN 4.\n\\end{minipage}\\hfill\n\\begin{minipage}[t]{0.33\\linewidth}\\vspace{0pt}\n\\centering\n\\adjustbox{max width=\\linewidth, max totalheight=2.6cm}{\n\\begin{tikzpicture}[line width=0.8pt, font=\\small]\n  \\coordinate (A) at (0.6,1.7);\n  \\coordinate (B) at (3.4,1.7);\n  \\coordinate (C) at (2.8,0);\n  \\coordinate (D) at (0,0);\n  \\draw[ink,fill=brand!8] (A) -- (B) -- (C) -- (D) -- cycle;\n  \\node[above left] at (A) {$A$};\n  \\node[above right] at (B) {$B$};\n  \\node[below right] at (C) {$C$};\n  \\node[below left] at (D) {$D$};\n  \\coordinate (E) at (2.0,1.7);\n  \\coordinate (F) at (1.4,0);\n  \\draw[brand, line width=1.1pt] (D) -- (E) -- (B) -- (F) -- cycle;\n  \\fill[ink] (E) circle (1.3pt) node[above]{$E$};\n  \\fill[ink] (F) circle (1.3pt) node[below]{$F$};\n\\end{tikzpicture}\n}\n\\par\\vspace{2pt}{\\sffamily\\scriptsize\\itshape\\color{muted}Hình BTVN 4}\n\\end{minipage}\n\\par\\vspace{3pt}\nVì $ABCD$ là hình bình hành nên $AB \\parallel CD$ và $AB = $ [[mblank:1.2cm]] (tính chất). Mà $E \\in AB$, $F \\in CD$ nên $EB \\parallel$ [[mblank:1.2cm]] . [[br]] Vì $E$ là trung điểm của $AB$ nên $EB = \\dfrac{1}{2}AB$; vì $F$ là trung điểm của $CD$ nên $DF = \\dfrac{1}{2}$ [[mblank:1.2cm]] . Mà $AB = CD$ nên $EB = $ [[mblank:1.2cm]] . [[br]] Xét tứ giác $DEBF$ có $EB \\parallel DF$ và $EB = DF$. [[br]] Vậy tứ giác $DEBF$ là hình bình hành (dấu hiệu [[mblank:0.9cm]] ).",
+          "tier": "btvn",
+          "level": 1,
+          "dang_id": "NB3",
+          "solution": "Các ô trống lần lượt: $CD$ ; $DF$ ; $CD$ ; $DF$ ; 3. [[br]] Kết luận: tứ giác $DEBF$ là hình bình hành (dấu hiệu 3: hai cạnh đối song song và bằng nhau).",
+          "figure_given": true
+        },
+        {
+          "type": "problem",
+          "label": "BTVN~6.",
+          "statement": "\\par\\nopagebreak\n\\begin{minipage}[t]{0.64\\linewidth}\\vspace{0pt}\nCho hình bình hành $ABCD$ có $AB > AD$. Tia phân giác của góc $A$ cắt cạnh $CD$ tại $M$, tia phân giác của góc $C$ cắt cạnh $AB$ tại $N$. [[br]] Chứng minh $AN \\parallel MC$ và $AN = MC$.\n\\end{minipage}\\hfill\n\\begin{minipage}[t]{0.31\\linewidth}\\vspace{0pt}\n\\centering\n\\adjustbox{max width=\\linewidth, max totalheight=2.4cm}{\n\\begin{tikzpicture}[line width=0.8pt, font=\\small]\n  \\coordinate (A) at (0.6,1.7);\n  \\coordinate (B) at (3.4,1.7);\n  \\coordinate (C) at (2.8,0);\n  \\coordinate (D) at (0,0);\n  \\draw[ink,fill=brand!8] (A) -- (B) -- (C) -- (D) -- cycle;\n  \\node[above left] at (A) {$A$};\n  \\node[above right] at (B) {$B$};\n  \\node[below right] at (C) {$C$};\n  \\node[below left] at (D) {$D$};\n  \\coordinate (M) at (1.8,0);\n  \\coordinate (N) at (1.6,1.7);\n  \\draw[brand, line width=1.0pt] (A) -- (M);\n  \\draw[brand, line width=1.0pt] (C) -- (N);\n  \\fill[brand] (M) circle (1.3pt) node[below]{$M$};\n  \\fill[brand] (N) circle (1.3pt) node[above]{$N$};\n\\end{tikzpicture}\n}\n\\par\\vspace{2pt}{\\sffamily\\scriptsize\\itshape\\color{muted}Hình BTVN 5}\n\\end{minipage}",
+          "tier": "btvn",
+          "level": 2,
+          "dang_id": "TH1",
+          "solution": "Vì $ABCD$ là hình bình hành nên $AB \\parallel CD$, $AB = CD$ và $AD = BC$ (tính chất cạnh đối). [[br]] Do $M \\in CD$ nên $\\widehat{AMD} = \\widehat{MAB}$ (hai góc so le trong, $AB \\parallel CD$). [[br]] Vì $AM$ là tia phân giác của góc $A$ nên $\\widehat{MAB} = \\widehat{DAM}$. [[br]] Suy ra $\\widehat{AMD} = \\widehat{DAM}$, do đó $\\triangle ADM$ cân tại $D$ (tam giác có hai góc bằng nhau). [[br]] Suy ra $DM = DA$ (hai cạnh bên của tam giác cân). [[br]] Chứng minh tương tự với tia phân giác của góc $C$: $\\widehat{CNB} = \\widehat{NCD}$ (so le trong, $AB \\parallel CD$) và $\\widehat{NCD} = \\widehat{BCN}$ (phân giác), nên $\\triangle BCN$ cân tại $B$, suy ra $BN = BC$. [[br]] Ta có $AN = AB - BN = AB - BC$ và $MC = CD - DM = CD - DA = AB - BC$. [[br]] Suy ra $AN = MC$. [[br]] Lại có $N \\in AB$, $M \\in CD$ mà $AB \\parallel CD$ nên $AN \\parallel MC$. [[br]] Vậy $AN \\parallel MC$ và $AN = MC$.",
+          "hints": [
+            "Ghép cặp góc so le trong ($AB \\parallel CD$) với cặp góc của tia phân giác để chỉ ra $\\triangle ADM$ cân tại $D$ ($DM = DA$); làm y hệt cho góc $C$ được $BN = BC$, rồi tính $AN$, $MC$ theo $AB$ và $BC$."
+          ]
+        },
+        {
+          "type": "problem",
+          "label": "BTVN~7.",
+          "statement": "\\par\\nopagebreak\n\\begin{minipage}[t]{0.64\\linewidth}\\vspace{0pt}\nCho hình bình hành $ABCD$ có $O$ là giao điểm của hai đường chéo. Lấy điểm $M$ thuộc cạnh $CD$ và điểm $N$ thuộc cạnh $AB$ sao cho $DM = BN$. [[br]] Chứng minh tứ giác $ANCM$ là hình bình hành. [[br]] Từ đó chứng minh ba điểm $M$, $O$, $N$ thẳng hàng.\n\\end{minipage}\\hfill\n\\begin{minipage}[t]{0.31\\linewidth}\\vspace{0pt}\n\\centering\n\\adjustbox{max width=\\linewidth, max totalheight=2.4cm}{\n\\begin{tikzpicture}[line width=0.8pt, font=\\small]\n  \\coordinate (A) at (0.6,1.7);\n  \\coordinate (B) at (3.4,1.7);\n  \\coordinate (C) at (2.8,0);\n  \\coordinate (D) at (0,0);\n  \\draw[ink,fill=brand!8] (A) -- (B) -- (C) -- (D) -- cycle;\n  \\node[above left] at (A) {$A$};\n  \\node[above right] at (B) {$B$};\n  \\node[below right] at (C) {$C$};\n  \\node[below left] at (D) {$D$};\n  \\draw[ink,dashed] (A) -- (C);\n  \\draw[ink,dashed] (B) -- (D);\n  \\coordinate (O) at (1.7,0.85);\n  \\coordinate (M) at (0.9,0);\n  \\coordinate (N) at (2.5,1.7);\n  \\draw[brand, line width=1.0pt] (M) -- (N);\n  \\fill[ink] (O) circle (1.3pt) node[right=1pt]{$O$};\n  \\fill[brand] (M) circle (1.3pt) node[below]{$M$};\n  \\fill[brand] (N) circle (1.3pt) node[above]{$N$};\n\\end{tikzpicture}\n}\n\\par\\vspace{2pt}{\\sffamily\\scriptsize\\itshape\\color{muted}Hình BTVN 6}\n\\end{minipage}",
+          "tier": "btvn",
+          "level": 3,
+          "dang_id": "VD1",
+          "solution": "Vì $ABCD$ là hình bình hành nên $AB \\parallel CD$ và $AB = CD$ (tính chất cạnh đối). [[br]] Ta có $AN = AB - BN$ và $MC = CD - DM$. [[br]] Mà $AB = CD$ và $BN = DM$ (giả thiết) nên $AN = MC$. [[br]] Lại có $N \\in AB$, $M \\in CD$ mà $AB \\parallel CD$ nên $AN \\parallel MC$. [[br]] Xét tứ giác $ANCM$ có $AN \\parallel MC$ và $AN = MC$. [[br]] Do đó $ANCM$ là hình bình hành (dấu hiệu 3: hai cạnh đối song song và bằng nhau). [[br]] Suy ra hai đường chéo $AC$ và $NM$ của hình bình hành $ANCM$ cắt nhau tại trung điểm của mỗi đường, nên đường thẳng $NM$ đi qua trung điểm của $AC$. [[br]] Mặt khác $O$ là giao điểm hai đường chéo của hình bình hành $ABCD$ nên $O$ là trung điểm của $AC$. [[br]] Vì một đoạn thẳng chỉ có một trung điểm nên $O \\in NM$. [[br]] Vậy tứ giác $ANCM$ là hình bình hành và ba điểm $M$, $O$, $N$ thẳng hàng.",
+          "hints": [
+            "Đi đúng con đường Bài 9: tính $AN$, $MC$ theo $AB$, $CD$, $BN$, $DM$ rồi so sánh, sau đó dùng đường chéo của hình bình hành vừa chỉ ra."
+          ]
+        }
+      ],
+      "solution": "Sơ đồ tư duy: song song / $BC$ / bù / trung điểm ; song song, bằng ; song song ; thẳng hàng. [[br]] BTVN 1: B. [[br]] BTVN 2: B. [[br]] BTVN 3: ý thứ nhất S, ý thứ hai Đ. [[br]] BTVN 5: các ô trống lần lượt $CD$ ; $DF$ ; $CD$ ; $DF$ ; dấu hiệu 3. [[br]] BTVN 6 và BTVN 7: xem lời giải chi tiết ở từng bài.",
+      "teacher_note": "Buổi sau chữa BTVN 7 trước tiên vì nó là bản sao của Bài 9 --- em nào làm được BTVN 7 coi như đã nắm kỹ thuật chứng minh thẳng hàng. BTVN 6 chỉ chữa ý a) trên bảng, ý b) cho HS tự đối chiếu."
+    }
+  ]
+}

@@ -128,10 +128,26 @@ class ProblemBlock(BaseModel):
     figure_given: bool = Field(
         False, description="Đề đã vẽ sẵn hình, HS chỉ đọc hình (trắc nghiệm/điền khuyết) → phút/câu ×0,5"
     )
+    # MÃ DẠNG trỏ về đúng dòng của thuyet-minh.json cạnh bên: 'NB5', 'TH2', 'VD1'…
+    # (đánh số theo THỨ TỰ TRONG NHÓM BAND của phiếu tương ứng, y như bảng thuyết minh in ra).
+    # Thầy chốt 14/08/2026: "phiếu thật PHẢI TƯƠNG ỨNG THẬT RÕ phiếu thuyết minh" —
+    # trước đây spec_gate chỉ so TỔNG số câu theo band nên phiếu lệch hẳn dạng mà cổng vẫn im.
+    dang_id: str = Field(
+        "", description="Mã dạng trong thuyet-minh.json, vd 'NB5' / 'TH2' / 'VD1'"
+    )
     # (TÙY CHỌN) Đáp án MÁY-ĐỌC để `validate` tự soi bằng SymPy. None = bỏ qua (như cũ).
     # KHÔNG in ra phiếu — chỉ phục vụ answer_gate. Phân biệt loại bằng khóa "kind".
     check: Optional[AnswerCheck] = Field(
         None, description="Đáp án máy-đọc cho answer_gate; KHÔNG hiển thị trên phiếu"
+    )
+    # CHỖ VIẾT ngay dưới đề — tương đương một WriteLinesBlock đặt sau bài, nhưng khai
+    # thẳng trên bài cho gọn. 0 = không chừa gì (bài trắc nghiệm, hoặc đề đã tự chừa
+    # bằng \vspace ở cuối statement).
+    # ⚠️ Trước 15/08/2026 field này KHÔNG tồn tại: 666 bài ở 30 phiếu khai "writelines": N
+    # thì pydantic ÂM THẦM vứt đi ⇒ phiếu in ra HS KHÔNG có dòng nào để viết, bài nọ
+    # dính vào bài kia. Y hệt vụ `solution` bị vứt làm guide.pdf trắng đáp án.
+    writelines: int = Field(
+        0, ge=0, le=12, description="Số dòng kẻ trống chừa ngay dưới đề (0 = không chừa)"
     )
 
 
@@ -221,6 +237,11 @@ class LessonPackage(BaseModel):
     eyebrow: str = Field("", description="Dòng nhỏ trên tiêu đề, vd 'ĐẠI SỐ — KỸ THUẬT XÉT HIỆU'")
     grade_label: str = Field("", description="vd 'Lớp 9 • Ôn vào 10'")
     class_tier: str = Field("", description="Tầng lớp phân hoá: ''=chuẩn | 'A' | 'B' | 'C' | 'X' (HS chuyên)")
+    # SỐ CA (buổi) mà phiếu này trải ra — mặc định 1 = một phiếu dạy gọn trong một
+    # buổi. Thầy chốt 16/08/2026: có phiếu cố ý gộp nhiều buổi vào MỘT file (chương III
+    # lớp 9 tầng B gộp tuần 16+17). Khai `so_ca` để `duration_gate` nhân quỹ phút lên,
+    # thay vì kêu oan "lệch quỹ 120′" ở mọi phiếu nhiều ca. Khớp `SpecPhieu.so_ca`.
+    so_ca: int = Field(1, ge=1, le=6, description="Số ca (buổi) phiếu này trải ra; quỹ giờ ×so_ca")
     theme: str = Field("", description="Giao diện (vd: 'thay_thai' cho giao diện mới, để trống cho mặc định)")
     stages: list[Stage] = Field(default_factory=list)
 

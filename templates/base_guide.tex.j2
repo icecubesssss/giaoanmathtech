@@ -1,7 +1,10 @@
 % SỔ TAY GIÁO VIÊN (A4 dọc) — sinh tự động, không sửa tay.
 % = phiếu HS + lời giải đỏ trầm + hộp "MẸO SƯ PHẠM" sau mỗi chặng.
 \documentclass[((( type.body_pt )))pt]{article}
-\usepackage[((( page.paper ))),top=1.13in,bottom=1.49in,left=0.75in,right=0.75in,headsep=43pt,footskip=32pt]{geometry}
+% Lề IN — giống phiếu HS: chân trang 1,49in quá rộng so với chân trang cao ~40pt.
+((= Lề dưới 1.49in — xem chú thích ở base_handout.tex.j2: lề 1.15in làm dòng
+   "Website … số trang" của chân trang tràn ra ngoài khung viền. =))
+\usepackage[((( page.paper ))),top=1.13in,bottom=1.49in,left=0.75in,right=0.75in,headsep=24pt,footskip=30pt]{geometry}
 \setlength{\headheight}{38pt}   % vừa đúng ảnh banner đầu trang kéo hết bề ngang cột chữ
 
 ((* include "preamble/_fonts.tex.j2" *))
@@ -17,7 +20,8 @@
 \usepackage{eso-pic}
 \AddToShipoutPictureBG{%
   \begin{tikzpicture}[remember picture,overlay]
-        \node[rotate=60,opacity=1.0] at (current page.center) {\includegraphics[scale=1.2]{((( assets_dir )))((( branding.watermark_file )))}};
+        % Watermark nhạt + nhỏ lại cho dễ đọc khi in (xem base_handout).
+        \node[rotate=60,opacity=0.45] at (current page.center) {\includegraphics[scale=0.8]{((( assets_dir )))((( branding.watermark_file )))}};
         \draw[line width=0.5pt,color=rule] 
           ([xshift=8mm,yshift=-8mm]current page.north west) rectangle ([xshift=-8mm,yshift=8mm]current page.south east);
         \draw[line width=1.5pt,color=brand] 

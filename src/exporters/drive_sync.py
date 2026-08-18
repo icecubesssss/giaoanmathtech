@@ -38,8 +38,16 @@ def drive_root() -> Path:
     return Path(os.environ.get("MATHTECH_DRIVE_ROOT", _DEFAULT_DRIVE)).expanduser()
 
 
+_TEX = re.compile(r"\\[A-Za-z]+\s*|[$\\{}]")
+
+
 def bo_dau(s: str) -> str:
-    """'Mở đầu về đường tròn' → 'Mo dau ve duong tron' (Drive/Finder dễ đọc, khỏi lệch NFC/NFD)."""
+    """'Mở đầu về đường tròn' → 'Mo dau ve duong tron' (Drive/Finder dễ đọc, khỏi lệch NFC/NFD).
+
+    Bóc luôn LaTeX: tiêu đề phiếu có thể chứa `$AH$`, `\\textbf{…}` — không bóc thì tên
+    thư mục Drive lòi ra 'Ca-03 - He thuc luong (duong cao $AH$)'.
+    """
+    s = _TEX.sub("", s)
     s = s.replace("Đ", "D").replace("đ", "d")
     s = unicodedata.normalize("NFD", s)
     s = "".join(c for c in s if unicodedata.category(c) != "Mn")
@@ -51,17 +59,55 @@ def _norm(name: str) -> str:
     return re.sub(r"[\s_-]+", "", bo_dau(name)).lower()
 
 
-def ensure_dir(parent: Path, name: str) -> Path:
+def ensure_khoi(root: Path, name: str, tao: bool = True) -> Path:
+    """Thư mục KHỐI ('lop9') — khớp RỘNG TAY hơn `ensure_dir`: nhận cả tên có đuôi.
+
+    Thầy đặt tên khối kèm năm học ("Lop 9 2026-2027"). `ensure_dir` so khớp CHÍNH XÁC
+    nên không nhận ra, đẻ ra 'lop9' nằm cạnh — hai cây song sinh, mỗi cây một nửa bài
+    (Thầy phát hiện 15/08/2026). Nay khớp theo TIỀN TỐ: 'lop920262027' bắt đầu bằng
+    'lop9' ⇒ dùng lại. Nhiều thư mục cùng khớp thì lấy cái ĐANG CHỨA NHIỀU PDF NHẤT
+    (cây Thầy thật sự dùng). Đặt MATHTECH_DRIVE_KHOI để chỉ định thẳng, khỏi đoán.
+    """
+    chi_dinh = os.environ.get("MATHTECH_DRIVE_KHOI")
+    if chi_dinh:
+        return ensure_dir(root, chi_dinh, tao)
+    if root.is_dir():
+        want = _norm(name)
+        hop = [d for d in sorted(root.iterdir())
+               if d.is_dir() and _norm(d.name).startswith(want)]
+        if hop:
+            return max(hop, key=lambda d: len(list(d.rglob("*.pdf"))))
+    out = root / name
+    if tao:
+        out.mkdir(parents=True, exist_ok=True)
+    return out
+
+
+def ensure_dir(parent: Path, name: str, tao: bool = True) -> Path:
     """Trả thư mục con `name` dưới `parent`, dùng lại thư mục đã có nếu chỉ khác
-    hoa/thường hay khoảng trắng; không có thì tạo mới."""
+    hoa/thường hay khoảng trắng; không có thì tạo mới (`tao=False` = chỉ tra đường)."""
     if parent.is_dir():
         want = _norm(name)
         for child in sorted(parent.iterdir()):
             if child.is_dir() and _norm(child.name) == want:
                 return child
     out = parent / name
-    out.mkdir(parents=True, exist_ok=True)
+    if tao:
+        out.mkdir(parents=True, exist_ok=True)
     return out
+
+
+def di_toi(root: Path, parts: list[str], tao: bool = True) -> Path:
+    """Lần theo `parts` từ gốc Drive. Khúc ĐẦU (khối) khớp rộng tay, các khúc sau khớp chặt.
+
+    `tao=False` dùng cho --dry-run: chỉ TRA đường, không tạo thư mục rỗng — và quan
+    trọng hơn là in ra ĐÚNG chỗ sẽ chép (bản cũ ghép chuỗi thô nên --dry-run báo
+    'lop9/…' còn bản chép thật lại vào chỗ khác).
+    """
+    dest = root
+    for i, seg in enumerate(parts):
+        dest = ensure_khoi(dest, seg, tao) if i == 0 else ensure_dir(dest, seg, tao)
+    return dest
 
 
 @dataclass
@@ -126,15 +172,12 @@ def sync_dir(out_dir: Path, outputs_root: Path, tieu_de: str | None = None,
     if not pdfs:
         return None, []
 
-    dest = root if root is not None else drive_root()
+    goc = root if root is not None else drive_root()
     if dry_run:
-        for seg in target.parts:
-            dest = dest / seg
-        return dest, [p.name for p in pdfs]
+        return di_toi(goc, target.parts, tao=False), [p.name for p in pdfs]
 
-    dest.mkdir(parents=True, exist_ok=True)
-    for seg in target.parts:
-        dest = ensure_dir(dest, seg)
+    goc.mkdir(parents=True, exist_ok=True)
+    dest = di_toi(goc, target.parts)
     for p in pdfs:
         shutil.copy2(p, dest / p.name)      # ghi đè bản cũ, không sinh bản trùng
     return dest, [p.name for p in pdfs]

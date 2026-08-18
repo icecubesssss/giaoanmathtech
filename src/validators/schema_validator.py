@@ -42,10 +42,16 @@ def validate_lesson_structure(lesson: LessonPackage) -> SchemaReport:
     if sorted(numbers) != list(range(1, len(lesson.stages) + 1)):
         errors.append(f"Số chặng phải 1..{len(lesson.stages)} không trùng, nhận {numbers}.")
 
+    # Đề kiểm tra (theme "de_thi") KHÔNG chia chặng: nó chỉ mượn 5 chặng làm chỗ chứa
+    # các bài. In ra 5 thanh tiêu đề thì sai bộ mặt đề thi và ngốn ~1,3cm mỗi thanh,
+    # nên `title` rỗng là hợp lệ — `components/plain.tex.j2` bỏ luôn thanh tiêu đề.
+    # Phiếu học tập thường vẫn phải có tiêu đề chặng (HS cần biết đang ở chặng nào).
+    bat_buoc_tieu_de = lesson.theme != "de_thi"
+
     for s in lesson.stages:
         if not s.blocks:
             errors.append(f"Chặng '{s.kind}' rỗng — không có block nội dung nào.")
-        if not s.title.strip():
+        if bat_buoc_tieu_de and not s.title.strip():
             errors.append(f"Chặng '{s.kind}' thiếu tiêu đề.")
 
     return SchemaReport(errors=errors)

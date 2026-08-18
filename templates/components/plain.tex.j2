@@ -1,10 +1,15 @@
 ((= Chặng "trần" (theme=="de_thi") — KHÔNG hộp màu, KHÔNG icon/số chặng, chỉ một
    thanh tiêu đề mảnh (worksheetsection) rồi tới nội dung thẳng. Dùng cho đề kiểm
-   tra: Thầy yêu cầu bỏ hết khung/icon "phiếu học tập" trên đề thi thật. =))
+   tra: Thầy yêu cầu bỏ hết khung/icon "phiếu học tập" trên đề thi thật.
+
+   TIÊU ĐỀ RỖNG ⇒ BỎ LUÔN THANH TIÊU ĐỀ. Schema bắt đủ 5 chặng review→…→reflection,
+   nhưng một đề kiểm tra thật không chia "chặng": in ra 5 thanh tiêu đề thì vừa sai
+   bộ mặt đề thi vừa ngốn ~1,3cm mỗi thanh (Thầy chốt 16/08/2026: "mỗi đề gọn trong
+   2 trang thôi"). Để `title: ""` là chặng chảy thẳng vào nội dung, không thanh. =))
 ((* import "_blocks.j2" as B with context *))
 ((* if stage.kind == "reflection" *))
 ((* set parts = split_reflection(stage.blocks) *))
-\worksheetsection{((( stage.title )))}
+((* if stage.title *))\worksheetsection{((( stage.title )))}((* endif *))
 \justifying\setlength{\parindent}{0pt}
 ((( B.render_blocks(parts.tong_ket) )))
 ((* if parts.btvn *))
@@ -18,7 +23,7 @@
 ((( B.render_blocks(parts.mo_rong) )))
 ((* endif *))
 ((* else *))
-\worksheetsection{((( stage.title )))}
+((* if stage.title *))\worksheetsection{((( stage.title )))}((* endif *))
 \justifying\setlength{\parindent}{0pt}
 ((( B.render_blocks(stage.blocks) )))
 ((* endif *))

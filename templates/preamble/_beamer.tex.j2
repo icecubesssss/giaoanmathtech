@@ -11,6 +11,12 @@
   UprightFont=*-Regular, BoldFont=*-Bold, ItalicFont=*-Italic ]
 \setmathfont{((( fonts.math_file )))}[Path=\FONTDIR]
 
+% `\stageneedspace` là linh kiện CHỐNG TIÊU ĐỀ MỒ CÔI của bản in (định nghĩa thật ở
+% _macros.tex.j2). Slide chia sẵn theo frame nên không có "đáy trang" để đo — nhưng
+% phiếu JSON dùng chung một chuỗi text cho cả 3 bản, thiếu định nghĩa ở đây là slide
+% nổ "Undefined control sequence" (chương III lớp 9, 16/08/2026). Ở slide cho nó rỗng.
+\providecommand{\stageneedspace}[1]{}
+
 \usepackage{tikz}
 \usetikzlibrary{calc,angles,quotes,positioning,arrows.meta,shapes.geometric}
 % Sơ đồ bước giải (đặc sản) — style khối + mũi tên, dùng trong block figure.

@@ -22,11 +22,31 @@
 ((* endfor *))((* endif *))
 \par
 ((* elif b.type == "problem" *))
+((= MỖI BÀI LÀ MỘT ĐOẠN RIÊNG. Không có \par này thì bài nào không được seed chèn sẵn
+    block writelines phía sau sẽ CHẢY TIẾP vào dòng bài trước ("… cạnh nào? Bài 8. …"
+    — Thầy bắt 15/08/2026, dính 69 phiếu). \addvspace chứ không \vspace: seed cũ đã có
+    writelines count=0 (=\vspace{5mm}) đứng giữa hai bài thì cộng thêm 0, khỏi dãn đôi. =))
+\par\addvspace{5mm}
 ((= Hộp hình [[wrap]] treo bằng \smash (cao 0pt) nên TeX KHÔNG biết nó chiếm chỗ:
-    bài rơi sát đáy trang thì hình vẽ đè lên chân trang. \needspace ép cả cụm sang
-    trang mới khi không còn đủ chỗ. Số 4.4cm = raisebox 1.75cm + hình ~2.0cm + nhãn. =))
-((* set _w = "[[/wrap]]" in b.statement *))((* if _w *))\needspace{4.4cm}\leavevmode\hangafter=-5\hangindent=-0.38\linewidth\relax((( b.statement.split("[[/wrap]]")[0] | replace("[[wrap]]","") )))((* endif *))\textbf{((( b.label | tex )))}((* if b.level *))~\diffstars{((( b.level )))}((* elif b.tier == "onclass" *))~\diffstars{2}((* elif b.tier == "btvn" *))~\diffstars{1}((* elif b.tier == "extend" *))~\diffstars{3}((* endif *)) ((( (b.statement.split("[[/wrap]]")[1] if _w else b.statement) | tex )))
+    bài rơi sát đáy trang thì hình vẽ đè lên chân trang. Môi trường `wrapclump`
+    (xem preamble/_macros) gói đề + hình thành MỘT hộp không cắt được, nên hết chỗ
+    thì cả cụm nhảy sang trang sau. TUYỆT ĐỐI không dùng \needspace ở đây: nó nằm
+    trong tcolorbox breakable nên ép ngắt trang ở MỌI bài có hình. =))
+((= ĐỀ KHÔNG ĐƯỢC BỎ LẠI MỘT DÒNG LẺ ở đầu/cuối trang (bọc trong {} cho khỏi rò sang
+    đoạn sau). Đề 2-3 dòng thì thành ra không cắt được ⇒ cả bài nhảy sang trang mới,
+    đúng ý "đề với chỗ viết phải đi cùng nhau".
+    KHÔNG dùng \interlinepenalty=10000 (cấm cắt HẲN): đề nhiều ý a), b), c) nối bằng
+    [[br]] là MỘT đoạn dài chục dòng, cấm cắt thì cả cụm nhảy trang, để lại 10-11cm
+    trắng (phiếu A trang 4, phiếu B trang 7 & 13). =))
+{\clubpenalty=10000 \widowpenalty=10000 \relax
+((* set _w = "[[/wrap]]" in b.statement *))((* if _w *))\begin{wrapclump}\leavevmode\hangafter=-5\hangindent=-0.38\linewidth\relax((( b.statement.split("[[/wrap]]")[0] | replace("[[wrap]]","") )))((* endif *))\textbf{((( b.label | tex )))}((* if b.level *))~\diffstars{((( b.level )))}((* elif b.tier == "onclass" *))~\diffstars{2}((* elif b.tier == "btvn" *))~\diffstars{1}((* elif b.tier == "extend" *))~\diffstars{3}((* endif *)) ((( (b.statement.split("[[/wrap]]")[1] if _w else b.statement) | tex )))((* if _w *))\end{wrapclump}((* endif *))
+\par}
 ((* if b.video *))\videoqr{((( b.video )))}((* endif *))
+((= Chỗ viết khai thẳng trên bài (`"writelines": N`) — bằng một WriteLinesBlock đặt sau. =))
+((* if b.writelines *))\par
+((* for _ in range(b.writelines) *))\fillline
+((* endfor *))\par
+((* endif *))
 ((* if b.hints *))
 \par\vspace{3pt}
 \begin{hintbox}{\itshape\color{brand}Gợi ý:}\par
@@ -86,6 +106,13 @@
 ]
 ((* endmacro *))
 
+((= Bỏ các writelines RỖNG (count=0) đứng ĐẦU danh sách: chúng chỉ đẻ khoảng trắng
+    chết ngay dưới đầu mục chặng / banner BTVN, đọc như thể chặng bị bỏ trống.
+    Và \nopagebreak giữa BÀI với chỗ viết của nó: chỗ viết (nhất là khung vẽ hình,
+    một hộp không cắt được) mà rơi sang trang sau thì HS đọc đề một trang, vẽ ở
+    trang khác. Cấm ngắt ở đó ⇒ TeX đẩy cả cụm sang trang mới. =))
 ((* macro render_blocks(blocks) *))
-((* for b in blocks *))((( render_block(b) )))((* endfor *))
+((* set ns = namespace(batdau=false, truoc="") *))
+((* for b in blocks *))((* if ns.batdau or not (b.type == "writelines" and not b.count) *))((* set ns.batdau = true *))((* if b.type == "writelines" and b.count and ns.truoc == "problem" *))\nopagebreak
+((* endif *))((( render_block(b) )))((* set ns.truoc = b.type *))((* endif *))((* endfor *))
 ((* endmacro *))

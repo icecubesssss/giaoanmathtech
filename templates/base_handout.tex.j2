@@ -1,6 +1,14 @@
 % PHIẾU HỌC SINH (A4 dọc) — sinh tự động, không sửa tay.
 \documentclass[((( type.body_pt )))pt]{article}
-\usepackage[((( page.paper ))),top=1.13in,bottom=1.49in,left=0.75in,right=0.75in,headsep=43pt,footskip=32pt]{geometry}
+% Lề IN: chân trang cũ 1,49in (3,8cm) là quá rộng — chân trang chỉ cao ~40pt nên
+% 1,15in đã dư chỗ; headsep 43pt hạ còn 24pt. Hai chỗ này trả lại ~1,6cm chiều cao
+% mỗi trang, tức thêm được 1 bài mỗi trang và bớt vài trang giấy cho cả tập.
+((= LỀ DƯỚI 1.49in (không phải 1.15in): chân trang cao ~44pt (thanh đỏ + tên công ty +
+   dòng website/số trang). Với lề 1.15in, dòng "Website … số trang" rơi xuống y≈832pt
+   trong khi KHUNG viền dưới nằm ở y≈819pt ⇒ chữ tràn hẳn ra NGOÀI khung (Thầy bắt
+   15/08/2026). Không chữa được bằng cách giảm footskip: chân trang sẽ đè lên bài cuối
+   trang. Trị số 1.49in lấy đúng theo base_summary.tex.j2 — template đó vốn đã đặt đúng. =))
+\usepackage[((( page.paper ))),top=1.13in,bottom=1.49in,left=0.75in,right=0.75in,headsep=24pt,footskip=30pt]{geometry}
 \setlength{\headheight}{38pt}   % vừa đúng ảnh banner đầu trang kéo hết bề ngang cột chữ
 
 ((* include "preamble/_fonts.tex.j2" *))
@@ -16,7 +24,10 @@
 \usepackage{eso-pic}
 \AddToShipoutPictureBG{%
   \begin{tikzpicture}[remember picture,overlay]
-        \node[rotate=60,opacity=1.0] at (current page.center) {\includegraphics[scale=1.2]{((( assets_dir )))((( branding.watermark_file )))}};
+        % Watermark IN: ảnh vốn đã 20% mực, nhưng phóng 1.2 + opacity 1.0 thì nó choán
+        % gần hết vùng trống và in ra (nhất là máy in đen trắng) thành một vệt xám lớn
+        % đè lên chỗ học sinh viết. Thu nhỏ và làm nhạt thêm cho dễ đọc, đỡ tốn mực.
+        \node[rotate=60,opacity=0.45] at (current page.center) {\includegraphics[scale=0.8]{((( assets_dir )))((( branding.watermark_file )))}};
         \draw[line width=0.5pt,color=rule] 
           ([xshift=8mm,yshift=-8mm]current page.north west) rectangle ([xshift=-8mm,yshift=8mm]current page.south east);
         \draw[line width=1.5pt,color=brand] 

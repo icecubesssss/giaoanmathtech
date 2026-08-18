@@ -1,0 +1,687 @@
+{
+  "slug": "phieu-d-luyen-tap-chung-chuong-iv",
+  "title": "Luyện tập chung và Bài tập cuối chương IV",
+  "eyebrow": "PHIẾU C • HÌNH HỌC 9 · CHƯƠNG IV — LUYỆN TẬP CHUNG",
+  "grade_label": "Lớp 9 • Hình học",
+  "class_tier": "C",
+  "stages": [
+    {
+      "kind": "review",
+      "number": 1,
+      "title": "Khám phá",
+      "blocks": [
+        {
+          "type": "para",
+          "text": "\\textbf{Một hình duy nhất — nhưng gần như đề kiểm tra nào cũng vẽ nó}"
+        },
+        {
+          "type": "noted",
+          "variant": "example",
+          "text": "\\begin{minipage}[t]{0.58\\linewidth}\\vspace{0pt}Trong ngân hàng đề của thầy, bài hình chương IV hầu như luôn bắt đầu bằng: \\emph{“Cho tam giác $ABC$ vuông tại $A$, đường cao $AH$…”} [[br]]Đường cao $AH$ chia tam giác lớn thành \\textbf{hai tam giác vuông nhỏ} — cộng cả tam giác lớn là \\textbf{ba tam giác vuông}. [[br]]Ba tam giác này \\textbf{đồng dạng với nhau} — kiến thức Lớp 8 mà lâu rồi ta chưa dùng đến. Buổi này ôn lại, rồi \\textbf{tự chứng minh} ra bốn hệ thức tính $HB$, $HC$, $AH$ — không học thuộc công thức nào cả.\\end{minipage}\\hfill\\begin{minipage}[t]{0.36\\linewidth}\\vspace{0pt}\n\\centering\n\\adjustbox{max width=\\linewidth, max totalheight=2.4cm}{\n\\begin{tikzpicture}[line width=0.8pt, font=\\small]\n  \\coordinate (p) at (0,0);\n  \\draw[ink] (0,0) -- (4.2,0) -- (1.2,1.8) -- cycle;\n  \\draw[ink] (1.2,1.8) -- (1.2,0);\n  \\draw[ink] (1.2,0.24) -- (1.44,0.24) -- (1.44,0);\n  \\draw[ink] (1.2,1.8) ++(-0.02,-0.30) -- ++(0.28,-0.06);\n  \\node[below left] at (0,0) {$B$};\n  \\node[below right] at (4.2,0) {$C$};\n  \\node[above] at (1.2,1.8) {$A$};\n  \\node[below] at (1.2,0) {$H$};\n\\end{tikzpicture}\n}\n\\par\\vspace{2pt}{\\sffamily\\scriptsize\\itshape\\color{muted}Hình 1}\n\\end{minipage}"
+        }
+      ],
+      "teacher_note": "Mở đầu bằng chính hình mà đề kiểm tra hay vẽ — cho HS thấy học buổi này là để làm đúng bài đó."
+    },
+    {
+      "kind": "concept",
+      "number": 2,
+      "title": "Kiến thức cần nhớ",
+      "blocks": [
+        {
+          "type": "para",
+          "text": "\\textbf{1. Nhắc lại cả chương}"
+        },
+        {
+          "type": "para",
+          "text": "$\\bullet$ Tỉ số lượng giác: $\\sin\\alpha = \\dfrac{\\text{đối}}{\\text{huyền}}$, $\\cos\\alpha = \\dfrac{\\text{kề}}{\\text{huyền}}$, $\\tan\\alpha = \\dfrac{\\text{đối}}{\\text{kề}}$, $\\cot\\alpha = \\dfrac{\\text{kề}}{\\text{đối}}$. [[br]]$\\bullet$ Hệ thức cạnh $-$ góc: cạnh góc vuông $=$ cạnh huyền $\\times \\sin$ góc đối $=$ cạnh góc vuông kia $\\times \\tan$ góc đối. [[br]]$\\bullet$ Hai góc nhọn phụ nhau: $\\widehat{C} = 90^\\circ - \\widehat{B}$, $\\sin B = \\cos C$."
+        },
+        {
+          "type": "para",
+          "text": "$\\bullet$ \\textbf{Khuôn trình bày} (bài thi trừ điểm nếu thiếu): mở bằng \\emph{“Xét tam giác $ABC$ \\textbf{vuông tại} $A$”} $\\to$ viết hệ thức $\\to$ thay số $\\to$ đóng bằng \\emph{“Vậy \\ldots”} kèm đơn vị. [[br]]$\\bullet$ \\textbf{Làm tròn đúng yêu cầu}: $1^\\circ = 60'$; đề hỏi \\emph{đến phút} thì phải bấm phím $^\\circ\\,{}'\\,{}''$ đọc ra độ $-$ phút, đừng làm tròn đến độ."
+        },
+        {
+          "type": "para",
+          "text": "\\textbf{2. Hình chuẩn: tam giác $ABC$ vuông tại $A$, đường cao $AH$}"
+        },
+        {
+          "type": "para",
+          "text": "Ba tam giác vuông trong hình: $\\triangle ABC$, $\\triangle HBA$, $\\triangle HAC$; cạnh huyền của chúng lần lượt là $BC$, $AB$, $AC$. [[br]]\\textbf{Ôn lại Lớp 8:} hai tam giác có \\textbf{hai góc bằng nhau từng đôi một} thì đồng dạng (trường hợp góc $-$ góc, viết tắt \\textbf{g.g}). [[br]]Ba cặp đồng dạng dùng được: $\\triangle HBA \\backsim \\triangle ABC$ (chung góc $B$), $\\triangle HAC \\backsim \\triangle ABC$ (chung góc $C$) và $\\triangle HBA \\backsim \\triangle HAC$ (cùng vuông tại $H$)."
+        },
+        {
+          "type": "para",
+          "text": "\\textbf{3. Bốn hệ thức — mỗi hệ thức sinh ra từ MỘT cặp tam giác đồng dạng}"
+        },
+        {
+          "type": "para",
+          "text": "$\\bullet$ $\\triangle HBA \\backsim \\triangle ABC \\Rightarrow AB^2 = HB \\cdot BC$ \\; và \\; $AH \\cdot BC = AB \\cdot AC$ [[br]]$\\bullet$ $\\triangle HAC \\backsim \\triangle ABC \\Rightarrow AC^2 = HC \\cdot BC$ [[br]]$\\bullet$ $\\triangle HBA \\backsim \\triangle HAC \\Rightarrow AH^2 = HB \\cdot HC$ [[br]]\\textbf{Không được viết thẳng hệ thức ra rồi thay số: phải chứng minh trước, rồi mới dùng.} Ba bước (Ví dụ 2 và 3): \\textbf{Bước 1} chỉ ra hai tam giác đồng dạng $\\to$ \\textbf{Bước 2} lập tỉ số các cạnh tương ứng $\\to$ \\textbf{Bước 3} nhân chéo. Có hệ thức rồi mới sang \\textbf{Bước 4}: thay số tính cạnh."
+        },
+        {
+          "type": "noted",
+          "variant": "example",
+          "text": "\\begin{minipage}[t]{0.58\\linewidth}\\vspace{0pt}\\textbf{Ví dụ 1.} Cho tam giác $ABC$ vuông tại $A$, đường cao $AH$, $AB = 6$ cm, $AC = 8$ cm. Tính $BC$ và số đo góc $B$ (góc làm tròn đến phút). [[br]]\\textit{Giải.} Xét tam giác $ABC$ vuông tại $A$, theo định lí Pythagore: [[br]]$BC^2 = AB^2 + AC^2 = 6^2 + 8^2 = 100$, suy ra $BC = 10$ (cm). [[br]]Với góc $B$: cạnh đối là $AC$, cạnh kề là $AB$ nên $\\tan B = \\dfrac{AC}{AB} = \\dfrac{8}{6}$. [[br]]Bấm máy được $\\widehat{B} \\approx 53{,}13^\\circ$; bấm tiếp phím $^\\circ\\,{}'\\,{}''$ đọc ra $53^\\circ 7' 48''$, làm tròn đến phút là $53^\\circ 8'$. [[br]]Vậy $BC = 10$ cm và $\\widehat{B} \\approx 53^\\circ 8'$.\\end{minipage}\\hfill\\begin{minipage}[t]{0.36\\linewidth}\\vspace{0pt}\n\\centering\n\\adjustbox{max width=\\linewidth, max totalheight=2.4cm}{\n\\begin{tikzpicture}[line width=0.8pt, font=\\small]\n  \\coordinate (p) at (0,0);\n  \\draw[ink] (0,0) -- (4.2,0) -- (1.2,1.8) -- cycle;\n  \\draw[ink] (1.2,1.8) -- (1.2,0);\n  \\draw[ink] (1.2,0.24) -- (1.44,0.24) -- (1.44,0);\n  \\draw[ink] (1.2,1.8) ++(-0.02,-0.30) -- ++(0.28,-0.06);\n  \\node[below left] at (0,0) {$B$};\n  \\node[below right] at (4.2,0) {$C$};\n  \\node[above] at (1.2,1.8) {$A$};\n  \\node[below] at (1.2,0) {$H$};\n  \\node[above left] at (0.6,0.9) {$6$};\n  \\node[above right] at (2.7,0.9) {$8$};\n\\end{tikzpicture}\n}\n\\par\\vspace{2pt}{\\sffamily\\scriptsize\\itshape\\color{muted}Hình 2}\n\\end{minipage}"
+        },
+        {
+          "type": "noted",
+          "variant": "example",
+          "text": "\\begin{minipage}[t]{0.58\\linewidth}\\vspace{0pt}\\textbf{Ví dụ 2.} Với hình trên, chứng minh $\\triangle HBA \\backsim \\triangle ABC$, từ đó suy ra $AB^2 = HB \\cdot BC$. [[br]]\\textit{Giải.} Xét $\\triangle HBA$ và $\\triangle ABC$ có: [[br]]$\\widehat{BHA} = \\widehat{BAC} = 90^\\circ$ (vì $AH \\perp BC$ và tam giác $ABC$ vuông tại $A$); [[br]]$\\widehat{B}$ là góc chung. [[br]]Do đó $\\triangle HBA \\backsim \\triangle ABC$ (g.g). [[br]]Suy ra $\\dfrac{HB}{AB} = \\dfrac{AB}{BC}$ (tỉ số các cạnh tương ứng). [[br]]Nhân chéo hai vế được $AB^2 = HB \\cdot BC$. [[br]]Vậy $\\triangle HBA \\backsim \\triangle ABC$ và $AB^2 = HB \\cdot BC$.\\end{minipage}\\hfill\\begin{minipage}[t]{0.36\\linewidth}\\vspace{0pt}\n\\centering\n\\adjustbox{max width=\\linewidth, max totalheight=2.4cm}{\n\\begin{tikzpicture}[line width=0.8pt, font=\\small]\n  \\coordinate (p) at (0,0);\n  \\draw[ink] (0,0) -- (4.2,0) -- (1.2,1.8) -- cycle;\n  \\draw[ink] (1.2,1.8) -- (1.2,0);\n  \\draw[ink] (1.2,0.24) -- (1.44,0.24) -- (1.44,0);\n  \\draw[ink] (1.2,1.8) ++(-0.02,-0.30) -- ++(0.28,-0.06);\n  \\node[below left] at (0,0) {$B$};\n  \\node[below right] at (4.2,0) {$C$};\n  \\node[above] at (1.2,1.8) {$A$};\n  \\node[below] at (1.2,0) {$H$};\n  \\node[above left] at (0.6,0.9) {$6$};\n  \\node[above right] at (2.7,0.9) {$8$};\n\\end{tikzpicture}\n}\n\\par\\vspace{2pt}{\\sffamily\\scriptsize\\itshape\\color{muted}Hình 3}\n\\end{minipage}"
+        },
+        {
+          "type": "noted",
+          "variant": "example",
+          "text": "\\textbf{Ví dụ 3.} Chứng minh ba hệ thức còn lại. [[br]]\\textit{Giải.} Vẫn đúng ba bước như Ví dụ 2, chỉ thay bằng cặp tam giác khác. [[br]]$\\bullet$ \\textbf{Xét $\\triangle HAC$ và $\\triangle ABC$} có $\\widehat{AHC} = \\widehat{BAC} = 90^\\circ$ và $\\widehat{C}$ chung nên $\\triangle HAC \\backsim \\triangle ABC$ (g.g). Suy ra $\\dfrac{HC}{AC} = \\dfrac{AC}{BC}$, nhân chéo được $AC^2 = HC \\cdot BC$. [[br]]$\\bullet$ \\textbf{Xét $\\triangle HBA$ và $\\triangle HAC$} có $\\widehat{BHA} = \\widehat{AHC} = 90^\\circ$ và $\\widehat{HBA} = \\widehat{HAC}$ (cùng phụ với $\\widehat{HAB}$) nên $\\triangle HBA \\backsim \\triangle HAC$ (g.g). Suy ra $\\dfrac{HB}{HA} = \\dfrac{HA}{HC}$, nhân chéo được $AH^2 = HB \\cdot HC$. [[br]]$\\bullet$ \\textbf{Vẫn từ $\\triangle HBA \\backsim \\triangle ABC$} (Ví dụ 2) còn có $\\dfrac{HA}{AC} = \\dfrac{AB}{BC}$, nhân chéo được $AH \\cdot BC = AB \\cdot AC$. [[br]]Vậy cả bốn hệ thức đều \\textbf{suy ra từ tam giác đồng dạng} — không có công thức nào phải học thuộc."
+        },
+        {
+          "type": "noted",
+          "variant": "example",
+          "text": "\\textbf{Ví dụ 4.} Cho tam giác $ABC$ vuông tại $A$, đường cao $AH$, $AB = 6$ cm, $AC = 8$ cm, $BC = 10$ cm. Tính $HB$ và $AH$. [[br]]\\textit{Giải.} Theo Ví dụ 2 ta đã chứng minh được $AB^2 = HB \\cdot BC$. [[br]]Suy ra $HB = \\dfrac{AB^2}{BC} = \\dfrac{6^2}{10} = 3{,}6$ (cm). [[br]]Xét tam giác $ABH$ vuông tại $H$, theo định lí Pythagore: [[br]]$AH^2 = AB^2 - HB^2 = 6^2 - 3{,}6^2 = 36 - 12{,}96 = 23{,}04$, suy ra $AH = 4{,}8$ (cm). [[br]]Vậy $HB = 3{,}6$ cm và $AH = 4{,}8$ cm."
+        },
+        {
+          "type": "noted",
+          "variant": "example",
+          "text": "\\textbf{Ví dụ 5.} Tính diện tích tam giác $ABC$ vuông tại $A$, biết $BC = 12$ cm, $\\widehat{B} = 30^\\circ$ (làm tròn đến chữ số thập phân thứ hai). [[br]]\\textit{Giải.} Xét tam giác $ABC$ vuông tại $A$. [[br]]$AC$ là cạnh đối của góc $B$ nên $AC = BC \\cdot \\sin B = 12 \\cdot \\sin 30^\\circ = 6$ (cm). [[br]]$AB$ là cạnh kề của góc $B$ nên $AB = BC \\cdot \\cos B = 12 \\cdot \\cos 30^\\circ = 6\\sqrt{3}$ (cm). [[br]]Diện tích tam giác vuông bằng nửa tích hai cạnh góc vuông: [[br]]$S = \\dfrac{1}{2} \\cdot AB \\cdot AC = \\dfrac{1}{2} \\cdot 6\\sqrt{3} \\cdot 6 = 18\\sqrt{3} \\approx 31{,}18$ (cm$^2$). [[br]]Vậy diện tích tam giác $ABC$ khoảng $31{,}18$ cm$^2$."
+        },
+        {
+          "type": "noted",
+          "variant": "example",
+          "text": "\\begin{minipage}[t]{0.58\\linewidth}\\vspace{0pt}\\textbf{Ví dụ 6.} Một người đứng trên đỉnh hải đăng cao $42$ m nhìn thấy một con tàu, tia nhìn tạo với phương ngang góc $10^\\circ$. Tính khoảng cách từ tàu đến chân hải đăng (làm tròn đến chữ số thập phân thứ nhất). [[br]]\\textit{Giải.} Hải đăng dựng thẳng đứng nên hải đăng, mặt biển và tia nhìn tạo thành một tam giác vuông. Gọi khoảng cách từ tàu đến chân hải đăng là $d$ (m), $d > 0$. [[br]]Trong tam giác vuông đó, chiều cao $42$ m là cạnh đối của góc $10^\\circ$, còn $d$ là cạnh kề. [[br]]Do đó $\\tan 10^\\circ = \\dfrac{42}{d}$, suy ra $d = \\dfrac{42}{\\tan 10^\\circ} \\approx 238{,}2$ (m). [[br]]Vậy tàu cách chân hải đăng khoảng $238{,}2$ m.\\end{minipage}\\hfill\\begin{minipage}[t]{0.36\\linewidth}\\vspace{0pt}\n\\centering\n\\adjustbox{max width=\\linewidth, max totalheight=2.4cm}{\n\\begin{tikzpicture}[line width=0.8pt, font=\\small]\n  \\draw[ink] (0,0) -- (3.2,0) -- (0,2.0) -- cycle;\n  \\draw[ink] (0,0.24) -- (0.24,0.24) -- (0.24,0);\n  \\draw[brand, line width=0.7pt] (2.7,0) arc (180:150:0.5);\n  \\node[brand] at (2.45,0.24) {\\scriptsize $10^\\circ$};\n  \\node[left] at (0,1.0) {$42\\,\\text{m}$};\n  \\node[above] at (0,2.0) {\\scriptsize hải đăng};\n\\end{tikzpicture}\n}\n\\par\\vspace{2pt}{\\sffamily\\scriptsize\\itshape\\color{muted}Hình 4}\n\\end{minipage}"
+        }
+      ],
+      "teacher_note": "Ví dụ 2 là mẫu trình bày chuẩn — bắt HS chép đủ ba bước. Ví dụ 3 chạy nốt ba hệ thức còn lại để không hệ thức nào bị dùng mà chưa chứng minh; đọc chậm chỗ $\\widehat{HBA} = \\widehat{HAC}$ (cùng phụ $\\widehat{HAB}$). Nhấn: KHÔNG viết thẳng hệ thức ra rồi thay số."
+    },
+    {
+      "kind": "practice1",
+      "number": 3,
+      "title": "Luyện tập 1",
+      "blocks": [
+        {
+          "type": "problem",
+          "label": "Bài 1.",
+          "level": 1,
+          "tier": "onclass",
+          "statement": "[[wrap]]\\makebox[0pt][l]{\\hspace{0.62\\linewidth}\\smash{\\raisebox{-2.35cm}{\\vtop{\\hbox to 0.38\\linewidth{\\hfil\\adjustbox{max width=0.38\\linewidth, max totalheight=2.6cm}{\n\\begin{tikzpicture}[line width=0.8pt, font=\\small]\n  \\draw[ink] (0,0) -- (0,2.0) -- (3.0,0) -- cycle;\n  \\draw[ink] (0,0.26) -- (0.26,0.26) -- (0.26,0);\n  \\node[below left] at (0,0) {$A$};\n  \\node[above] at (0,2.0) {$B$};\n  \\node[right] at (3.0,0) {$C$};\n\\end{tikzpicture}\n}\\hfil}\n\\hbox to 0.38\\linewidth{\\hfil{\\sffamily\\scriptsize\\itshape\\color{muted}Hình 5}\\hfil}}}}}[[/wrap]][NB] Tam giác $ABC$ vuông tại $A$. Cạnh đối của góc $C$ là:\\par\\vspace{4pt}\\parbox[t]{0.30\\linewidth}{\\textbf{A.} $AB$}\\parbox[t]{0.30\\linewidth}{\\textbf{B.} $AC$}\\par\\vspace{6pt}\\parbox[t]{0.30\\linewidth}{\\textbf{C.} $BC$}\\parbox[t]{0.30\\linewidth}{\\textbf{D.} $AB$ và $BC$}\\par\\vspace{0.71cm}",
+          "solution": "Đáp án \\textbf{A}. Cạnh $AB$ đối diện góc $C$.",
+          "figure_given": true,
+          "dang_id": "NB1"
+        },
+        {
+          "type": "writelines",
+          "count": 0
+        },
+        {
+          "type": "problem",
+          "label": "Bài 2.",
+          "level": 1,
+          "tier": "onclass",
+          "statement": "[[wrap]]\\makebox[0pt][l]{\\hspace{0.62\\linewidth}\\smash{\\raisebox{-2.35cm}{\\vtop{\\hbox to 0.38\\linewidth{\\hfil\\adjustbox{max width=0.38\\linewidth, max totalheight=2.6cm}{\n\\begin{tikzpicture}[line width=0.8pt, font=\\small]\n  \\draw[ink] (0,0) -- (0,2.0) -- (3.0,0) -- cycle;\n  \\draw[ink] (0,0.26) -- (0.26,0.26) -- (0.26,0);\n  \\node[below left] at (0,0) {$A$};\n  \\node[above] at (0,2.0) {$B$};\n  \\node[right] at (3.0,0) {$C$};\n\\end{tikzpicture}\n}\\hfil}\n\\hbox to 0.38\\linewidth{\\hfil{\\sffamily\\scriptsize\\itshape\\color{muted}Hình 6}\\hfil}}}}}[[/wrap]][NB] Điền vào chỗ chấm: cạnh $AB$ là cạnh $\\ldots$ của góc $B$ và là cạnh $\\ldots$ của góc $C$; cạnh huyền của tam giác là $\\ldots$\\par\\vspace{1.90cm}",
+          "solution": "Cạnh $AB$ là cạnh \\textbf{kề} của góc $B$, cạnh \\textbf{đối} của góc $C$; cạnh huyền là $BC$.",
+          "figure_given": true,
+          "dang_id": "NB1"
+        },
+        {
+          "type": "writelines",
+          "count": 0
+        },
+        {
+          "type": "problem",
+          "label": "Bài 3.",
+          "level": 1,
+          "tier": "onclass",
+          "statement": "[[wrap]]\\makebox[0pt][l]{\\hspace{0.62\\linewidth}\\smash{\\raisebox{-2.35cm}{\\vtop{\\hbox to 0.38\\linewidth{\\hfil\\adjustbox{max width=0.38\\linewidth, max totalheight=2.6cm}{\n\\begin{tikzpicture}[line width=0.8pt, font=\\small]\n  \\draw[ink] (0,0) -- (0,2.0) -- (3.0,0) -- cycle;\n  \\draw[ink] (0,0.26) -- (0.26,0.26) -- (0.26,0);\n  \\node[below left] at (0,0) {$A$};\n  \\node[above] at (0,2.0) {$B$};\n  \\node[right] at (3.0,0) {$C$};\n  \\node[left] at (0,1.0) {$6$};\n  \\node[below] at (1.5,0) {$8$};\n  \\node[above right] at (1.5,1.0) {$10$};\n\\end{tikzpicture}\n}\\hfil}\n\\hbox to 0.38\\linewidth{\\hfil{\\sffamily\\scriptsize\\itshape\\color{muted}Hình 7}\\hfil}}}}}[[/wrap]][NB] Cho $AB = 6$ cm, $AC = 8$ cm, $BC = 10$ cm. Tính $\\cos B$ và $\\cot C$.\\par\\vspace{1.90cm}",
+          "solution": "$\\cos B = \\dfrac{AB}{BC} = \\dfrac{6}{10} = \\dfrac{3}{5}$; \\; $\\cot C = \\dfrac{AC}{AB} = \\dfrac{8}{6} = \\dfrac{4}{3}$.",
+          "figure_given": true,
+          "dang_id": "NB2"
+        },
+        {
+          "type": "writelines",
+          "count": 0
+        },
+        {
+          "type": "problem",
+          "label": "Bài 4.",
+          "level": 1,
+          "tier": "onclass",
+          "statement": "[[wrap]]\\makebox[0pt][l]{\\hspace{0.62\\linewidth}\\smash{\\raisebox{-2.35cm}{\\vtop{\\hbox to 0.38\\linewidth{\\hfil\\adjustbox{max width=0.38\\linewidth, max totalheight=2.6cm}{\n\\begin{tikzpicture}[line width=0.8pt, font=\\small]\n  \\draw[ink] (0,0) -- (0,2.0) -- (3.0,0) -- cycle;\n  \\draw[ink] (0,0.26) -- (0.26,0.26) -- (0.26,0);\n  \\node[below left] at (0,0) {$A$};\n  \\node[above] at (0,2.0) {$B$};\n  \\node[right] at (3.0,0) {$C$};\n\\end{tikzpicture}\n}\\hfil}\n\\hbox to 0.38\\linewidth{\\hfil{\\sffamily\\scriptsize\\itshape\\color{muted}Hình 8}\\hfil}}}}}[[/wrap]][NB] Muốn tính cạnh $AC$ khi đã biết cạnh huyền $BC$ và góc $B$, dùng hệ thức nào?\\par\\vspace{4pt}\\parbox[t]{0.30\\linewidth}{\\textbf{A.} $AC = BC \\cdot \\cos B$}\\parbox[t]{0.30\\linewidth}{\\textbf{B.} $AC = BC \\cdot \\sin B$}\\par\\vspace{6pt}\\parbox[t]{0.30\\linewidth}{\\textbf{C.} $AC = BC \\cdot \\tan B$}\\parbox[t]{0.30\\linewidth}{\\textbf{D.} $AC = \\dfrac{BC}{\\sin B}$}\\par\\vspace{0.71cm}",
+          "solution": "Đáp án \\textbf{B}. $AC$ là cạnh đối của góc $B$ nên $AC = BC \\cdot \\sin B$.",
+          "figure_given": true,
+          "dang_id": "NB2"
+        },
+        {
+          "type": "writelines",
+          "count": 0
+        },
+        {
+          "type": "writelines",
+          "count": 0
+        },
+        {
+          "type": "writelines",
+          "count": 0
+        },
+        {
+          "type": "writelines",
+          "count": 0
+        },
+        {
+          "type": "writelines",
+          "count": 0
+        },
+        {
+          "type": "problem",
+          "label": "Bài 5.",
+          "level": 1,
+          "tier": "onclass",
+          "statement": "[NB] Dùng máy tính cầm tay, tìm số đo góc nhọn $x$ biết $\\cos x = 0{,}6$; ghi kết quả làm tròn \\textbf{đến độ} rồi làm tròn \\textbf{đến phút}.\\par\\vspace{1.63cm}",
+          "solution": "Bấm $\\texttt{SHIFT}\\ \\cos^{-1}(0{,}6)$ được $x \\approx 53{,}13^\\circ$; bấm tiếp phím $^\\circ\\,{}'\\,{}''$ được $53^\\circ 7' 48''$. [[br]]Vậy $x \\approx 53^\\circ$ (đến độ) và $x \\approx 53^\\circ 8'$ (đến phút).",
+          "dang_id": "NB3"
+        },
+        {
+          "type": "writelines",
+          "count": 0
+        },
+        {
+          "type": "problem",
+          "label": "Bài 6.",
+          "level": 1,
+          "tier": "onclass",
+          "statement": "[[wrap]]\\makebox[0pt][l]{\\hspace{0.62\\linewidth}\\smash{\\raisebox{-2.35cm}{\\vtop{\\hbox to 0.38\\linewidth{\\hfil\\adjustbox{max width=0.38\\linewidth, max totalheight=2.6cm}{\n\\begin{tikzpicture}[line width=0.8pt, font=\\small]\n  \\draw[ink] (0,0) -- (0,2.0) -- (3.0,0) -- cycle;\n  \\draw[ink] (0,0.26) -- (0.26,0.26) -- (0.26,0);\n  \\node[below left] at (0,0) {$A$};\n  \\node[above] at (0,2.0) {$B$};\n  \\node[right] at (3.0,0) {$C$};\n  \\node[above right] at (1.5,1.0) {$30$};\n\\end{tikzpicture}\n}\\hfil}\n\\hbox to 0.38\\linewidth{\\hfil{\\sffamily\\scriptsize\\itshape\\color{muted}Hình 13}\\hfil}}}}}[[/wrap]][NB] Cho $BC = 30$ cm, $\\widehat{B} = 45^\\circ$. Tính $AB$ (làm tròn đến chữ số thập phân thứ hai).\\par\\vspace{1.90cm}",
+          "solution": "Xét tam giác $ABC$ vuông tại $A$. [[br]]$AB$ là cạnh kề của góc $B$ nên $AB = BC \\cdot \\cos B = 30 \\cdot \\cos 45^\\circ \\approx 21{,}21$ (cm). [[br]]Vậy $AB \\approx 21{,}21$ cm.",
+          "figure_given": true,
+          "dang_id": "NB2"
+        },
+        {
+          "type": "writelines",
+          "count": 0
+        },
+        {
+          "type": "writelines",
+          "count": 0
+        },
+        {
+          "type": "writelines",
+          "count": 0
+        },
+        {
+          "type": "writelines",
+          "count": 0
+        },
+        {
+          "type": "problem",
+          "label": "Bài 7.",
+          "tier": "onclass",
+          "level": 1,
+          "dang_id": "NB1",
+          "figure_given": false,
+          "statement": "[NB] Cho $\\triangle ABC$ vuông tại $A$. Với góc $B$, cạnh huyền là cạnh nào?",
+          "solution": "Cạnh huyền là $BC$ $-$ cạnh đối diện góc vuông $A$ (không phụ thuộc vào việc xét góc nào).",
+          "writelines": 2
+        },
+        {
+          "type": "problem",
+          "label": "Bài 8.",
+          "tier": "onclass",
+          "level": 1,
+          "dang_id": "NB1",
+          "figure_given": false,
+          "statement": "[NB] Điền: trong $\\triangle MNP$ vuông tại $M$, với góc $P$ thì cạnh đối là $\\ldots$, cạnh kề là $\\ldots$",
+          "solution": "Với góc $P$: cạnh đối là $MN$, cạnh kề là $MP$.",
+          "writelines": 2
+        },
+        {
+          "type": "problem",
+          "label": "Bài 9.",
+          "tier": "onclass",
+          "level": 1,
+          "dang_id": "NB2",
+          "figure_given": false,
+          "statement": "[NB] Cho $\\triangle ABC$ vuông tại $A$, $AB = 5$ cm, $BC = 13$ cm. Tính $AC$ rồi viết $\\sin B$.",
+          "solution": "Theo định lí Pythagore, $AC = \\sqrt{13^2 - 5^2} = 12$ (cm).[[br]]Do đó $\\sin B = \\dfrac{AC}{BC} = \\dfrac{12}{13}$.[[br]]Vậy $AC = 12$ cm và $\\sin B = \\dfrac{12}{13}$.",
+          "writelines": 3
+        },
+        {
+          "type": "problem",
+          "label": "Bài 10.",
+          "tier": "onclass",
+          "level": 1,
+          "dang_id": "NB3",
+          "figure_given": false,
+          "statement": "[NB] Dùng máy tính cầm tay, tìm góc nhọn $x$ biết $\\tan x = 1{,}5$; ghi kết quả làm tròn \\textbf{đến phút}.",
+          "solution": "Ta có $x \\approx 56^\\circ 19'$.[[br]]Vậy $x \\approx 56^\\circ 19'$.",
+          "writelines": 3
+        },
+        {
+          "type": "problem",
+          "label": "Bài 11.",
+          "tier": "onclass",
+          "level": 1,
+          "dang_id": "NB4",
+          "figure_given": false,
+          "statement": "[NB] Cho $\\triangle ABC$ vuông tại $A$, đường cao $AH$. Điền bốn hệ thức: $AB^2 = \\ldots$; \\; $AC^2 = \\ldots$; \\; $AH^2 = \\ldots$; \\; $AH \\cdot BC = \\ldots$",
+          "solution": "$AB^2 = HB \\cdot BC$; $AC^2 = HC \\cdot BC$; $AH^2 = HB \\cdot HC$; $AH \\cdot BC = AB \\cdot AC$.",
+          "writelines": 2
+        },
+        {
+          "type": "problem",
+          "label": "Bài 12.",
+          "tier": "onclass",
+          "level": 1,
+          "dang_id": "NB4",
+          "figure_given": false,
+          "statement": "[NB] Hệ thức $AC^2 = HC \\cdot BC$ sinh ra từ cặp tam giác đồng dạng nào?",
+          "solution": "Từ $\\triangle HAC \\backsim \\triangle ABC$ (g.g: chung góc $C$, cùng có góc vuông).",
+          "writelines": 2
+        },
+        {
+          "type": "problem",
+          "label": "Bài 13.",
+          "tier": "onclass",
+          "level": 1,
+          "dang_id": "NB4",
+          "figure_given": false,
+          "statement": "[NB] Khẳng định nào SAI? Vì sao? (1) $AH^2 = HB \\cdot HC$ \\quad (2) $AB^2 = HC \\cdot BC$",
+          "solution": "(2) SAI. Đúng phải là $AB^2 = HB \\cdot BC$ $-$ hình chiếu của $AB$ trên $BC$ là $HB$, không phải $HC$.",
+          "writelines": 2
+        },
+        {
+          "type": "problem",
+          "label": "Bài 14.",
+          "tier": "onclass",
+          "level": 1,
+          "dang_id": "NB6",
+          "figure_given": false,
+          "statement": "[NB] \\textbf{Điền vào chỗ trống} để hoàn thành bài giải thực tế. Một cái thang dài $5$ m dựa vào tường, tạo với mặt đất góc $70^\\circ$ (làm tròn đến chữ số thập phân thứ nhất).[[br]]Thang, tường và mặt đất tạo thành tam giác vuông, thang là cạnh $\\ldots$[[br]]Chiều cao đầu thang $h = 5 \\cdot \\ldots 70^\\circ \\approx \\ldots$ (m).[[br]]Vậy $\\ldots$",
+          "solution": "Thang, tường và mặt đất tạo thành tam giác vuông, thang là cạnh huyền.[[br]]Chiều cao đầu thang $h = 5 \\cdot \\sin 70^\\circ \\approx 4,7$ (m).[[br]]Vậy đầu thang cao khoảng $4,7$ m so với mặt đất.",
+          "writelines": 1
+        },
+        {
+          "type": "problem",
+          "label": "Bài 15.",
+          "tier": "onclass",
+          "level": 1,
+          "dang_id": "NB7",
+          "figure_given": false,
+          "statement": "Cho $\\triangle ABC$ vuông tại $A$, $AB = 12$ cm, $\\widehat{B} = 50^\\circ$ (cạnh làm tròn đến chữ số thập phân thứ nhất, góc làm tròn đến độ).[[br]]a) [NB] Tính $\\widehat{C}$.[[br]]b) [NB] Tính $BC$.[[br]]c) [NB] Tính $AC$.",
+          "solution": "Xét $\\triangle ABC$ vuông tại $A$.[[br]]a) $\\widehat{C} = 90^\\circ - 50^\\circ = 40^\\circ$.[[br]]b) $BC = \\dfrac{AB}{\\cos B} = \\dfrac{12}{\\cos 50^\\circ} \\approx 18,7$ (cm).[[br]]c) $AC = AB \\cdot \\tan B = 12 \\cdot \\tan 50^\\circ \\approx 14,3$ (cm).[[br]]Vậy $\\widehat{C} = 40^\\circ$, $BC \\approx 18,7$ cm, $AC \\approx 14,3$ cm.",
+          "writelines": 4
+        }
+      ],
+      "teacher_note": "Bài 11–13 là khuôn Thầy chốt: đề y như đề thi, HS điền vào khung bài giải in sẵn — điền xong là cầm nguyên một bài mẫu đúng cách trình bày. Chữa bằng cách đọc to từng dòng đã điền, nhấn hai chỗ hay mất điểm: chữ \"vuông tại\" ở câu mở và câu \"Vậy…\" ở cuối mỗi ý."
+    },
+    {
+      "kind": "practice2",
+      "number": 4,
+      "title": "Luyện tập 2",
+      "blocks": [
+        {
+          "type": "problem",
+          "label": "Bài 16.",
+          "level": 2,
+          "tier": "onclass",
+          "statement": "[[wrap]]\\makebox[0pt][l]{\\hspace{0.62\\linewidth}\\smash{\\raisebox{-2.35cm}{\\vtop{\\hbox to 0.38\\linewidth{\\hfil\\adjustbox{max width=0.38\\linewidth, max totalheight=2.6cm}{\n\\begin{tikzpicture}[line width=0.8pt, font=\\small]\n  \\draw[ink] (0,0) -- (3.0,0);\n  \\draw[ink] (0,0) -- (0,1.3);\n  \\draw[ink] (0,1.3) -- (3.0,0);\n  \\draw[ink] (0,0.24) -- (0.24,0.24) -- (0.24,0);\n  \\draw[brand, line width=0.7pt] (2.5,0) arc (180:157:0.5);\n  \\node[brand] at (2.25,0.2) {\\scriptsize $20^\\circ$};\n  \\node[left] at (0,0.65) {\\scriptsize gốc};\n  \\node[below] at (1.5,0) {\\scriptsize $7{,}5$ m};\n\\end{tikzpicture}\n}\\hfil}\n\\hbox to 0.38\\linewidth{\\hfil{\\sffamily\\scriptsize\\itshape\\color{muted}Hình 20}\\hfil}}}}}[[/wrap]][TH] Một cây cau bị giông bão thổi gãy gập xuống, ngọn cây chạm đất và tạo với mặt đất một góc $20^\\circ$. Người ta đo được khoảng cách từ gốc cây đến chỗ ngọn chạm đất là $7{,}5$ m. Tính chiều cao phần thân còn đứng (làm tròn đến chữ số thập phân thứ hai).\\par\\vspace{1.90cm}",
+          "solution": "Thân cây đứng thẳng nên gốc cây, mặt đất và phần ngọn gãy tạo thành một tam giác vuông. [[br]]Xét tam giác vuông đó, gọi $h$ (m) là chiều cao phần thân còn đứng, $h > 0$. [[br]]$h$ là cạnh đối của góc $20^\\circ$, còn $7{,}5$ m là cạnh kề nên $\\tan 20^\\circ = \\dfrac{h}{7{,}5}$. [[br]]Suy ra $h = 7{,}5 \\cdot \\tan 20^\\circ \\approx 2{,}73$ (m). [[br]]Vậy phần thân còn đứng cao khoảng $2{,}73$ m.",
+          "hints": [
+            "Vẽ lại thành tam giác vuông: thân đứng là cạnh đối của góc $20^\\circ$."
+          ],
+          "dang_id": "TH2"
+        },
+        {
+          "type": "writelines",
+          "count": 0
+        },
+        {
+          "type": "writelines",
+          "count": 0
+        },
+        {
+          "type": "problem",
+          "label": "Bài 17.",
+          "tier": "onclass",
+          "level": 2,
+          "dang_id": "TH1",
+          "figure_given": false,
+          "statement": "[TH] Giải $\\triangle ABC$ vuông tại $A$, biết $AB = 7$ cm, $AC = 24$ cm (góc làm tròn đến độ).",
+          "solution": "Xét $\\triangle ABC$ vuông tại $A$. Theo định lí Pythagore, $BC = \\sqrt{7^2 + 24^2} = 25$ (cm).[[br]]Ta có $\\tan B = \\dfrac{AC}{AB} = \\dfrac{24}{7}$ nên $\\widehat{B} \\approx 74^\\circ$, suy ra $\\widehat{C} \\approx 16^\\circ$.[[br]]Vậy $BC = 25$ cm, $\\widehat{B} \\approx 74^\\circ$, $\\widehat{C} \\approx 16^\\circ$.",
+          "writelines": 4
+        },
+        {
+          "type": "problem",
+          "label": "Bài 18.",
+          "tier": "onclass",
+          "level": 2,
+          "dang_id": "TH3",
+          "figure_given": false,
+          "statement": "[TH] Cho $\\triangle ABC$ vuông tại $A$, đường cao $AH$, $AB = 6$ cm, $AC = 8$ cm. Tính $BC$, $AH$ rồi chứng minh $AB^2 = HB \\cdot BC$.",
+          "solution": "Xét $\\triangle ABC$ vuông tại $A$. Theo định lí Pythagore, $BC = \\sqrt{6^2 + 8^2} = 10$ (cm).[[br]]Xét $\\triangle HBA$ và $\\triangle ABC$ có $\\widehat{BHA} = \\widehat{BAC} = 90^\\circ$, $\\widehat{B}$ chung nên $\\triangle HBA \\backsim \\triangle ABC$ (g.g), suy ra $\\dfrac{HB}{AB} = \\dfrac{AB}{BC}$, tức là $AB^2 = HB \\cdot BC$.[[br]]Lại có $AH \\cdot BC = AB \\cdot AC$ nên $AH = \\dfrac{6 \\cdot 8}{10} = 4,8$ (cm).[[br]]Vậy $BC = 10$ cm, $AH = 4,8$ cm và $AB^2 = HB \\cdot BC$.",
+          "writelines": 4
+        },
+        {
+          "type": "problem",
+          "label": "Bài 19.",
+          "tier": "onclass",
+          "level": 3,
+          "dang_id": "VD1",
+          "figure_given": false,
+          "statement": "[VD] Một người đứng cách chân toà nhà $30$ m, nhìn lên đỉnh toà nhà với góc nâng $38^\\circ$; mắt người đó cao $1{,}6$ m so với mặt đất. Tính chiều cao toà nhà (làm tròn đến mét), rồi cho biết nếu lùi thêm $10$ m thì góc nâng khi đó bằng bao nhiêu (làm tròn đến độ).",
+          "solution": "Gọi $h$ là chiều cao từ tầm mắt lên đỉnh toà nhà. Xét tam giác vuông tạo bởi tầm mắt, chân đường thẳng đứng và đỉnh toà nhà, ta có $h = 30 \\cdot \\tan 38^\\circ \\approx 23,4$ (m).[[br]]Chiều cao toà nhà là $23,4 + 1,6 \\approx 25$ (m).[[br]]Khi lùi thêm $10$ m, khoảng cách là $40$ m nên $\\tan \\alpha = \\dfrac{23,4}{40} \\approx 0,585$, suy ra $\\alpha \\approx 30^\\circ$.[[br]]Vậy toà nhà cao khoảng $25$ m và góc nâng khi đó khoảng $30^\\circ$.",
+          "writelines": 5
+        }
+      ],
+      "teacher_note": "Bài 25 và 27 là khuôn bài thi: bắt HS chép đủ bốn bước, chấm chặt chỗ thiếu bước lập tỉ số. Bài 23 dùng để nhắc lại yêu cầu làm tròn ĐẾN PHÚT; Bài 26 phải có câu kết luận có đơn vị."
+    },
+    {
+      "kind": "reflection",
+      "number": 5,
+      "title": "Sơ đồ tư duy",
+      "blocks": [
+        {
+          "type": "mindmap",
+          "caption": "Sơ đồ tư duy: Ôn tập chương IV",
+          "root": "HỆ THỨC LƯỢNG TRONG TAM GIÁC VUÔNG",
+          "branches": [
+            {
+              "label": "TỈ SỐ LƯỢNG GIÁC",
+              "children": [
+                {
+                  "label": "Đối / kề / huyền theo TỪNG góc"
+                },
+                {
+                  "label": "$\\sin B = \\cos C$ (phụ nhau)"
+                }
+              ]
+            },
+            {
+              "label": "HỆ THỨC CẠNH — GÓC",
+              "children": [
+                {
+                  "label": "$b = a\\sin B = a\\cos C$"
+                },
+                {
+                  "label": "$b = c\\tan B = c\\cot C$"
+                }
+              ]
+            },
+            {
+              "label": "HÌNH CHUẨN CÓ ĐƯỜNG CAO $AH$",
+              "children": [
+                {
+                  "label": "Ba tam giác vuông đồng dạng"
+                },
+                {
+                  "label": "$AB^2 = HB\\cdot BC$; $AC^2 = HC\\cdot BC$"
+                },
+                {
+                  "label": "$AH^2 = HB\\cdot HC$; $AH\\cdot BC = AB\\cdot AC$"
+                }
+              ]
+            },
+            {
+              "label": "SUY RA MỘT HỆ THỨC",
+              "children": [
+                {
+                  "label": "Chỉ ra đồng dạng (g.g)"
+                },
+                {
+                  "label": "Lập tỉ số rồi nhân chéo"
+                }
+              ]
+            }
+          ]
+        },
+        {
+          "type": "writelines",
+          "count": 0
+        },
+        {
+          "type": "para",
+          "text": "\\textbf{BÀI TẬP VỀ NHÀ (Ôn tập chương IV).}"
+        },
+        {
+          "type": "writelines",
+          "count": 0
+        },
+        {
+          "type": "problem",
+          "label": "BTVN 1.",
+          "level": 1,
+          "tier": "btvn",
+          "statement": "[[wrap]]\\makebox[0pt][l]{\\hspace{0.62\\linewidth}\\smash{\\raisebox{-2.35cm}{\\vtop{\\hbox to 0.38\\linewidth{\\hfil\\adjustbox{max width=0.38\\linewidth, max totalheight=2.6cm}{\n\\begin{tikzpicture}[line width=0.8pt, font=\\small]\n  \\draw[ink] (0,0) -- (0,2.0) -- (3.0,0) -- cycle;\n  \\draw[ink] (0,0.26) -- (0.26,0.26) -- (0.26,0);\n  \\node[below left] at (0,0) {$A$};\n  \\node[above] at (0,2.0) {$B$};\n  \\node[right] at (3.0,0) {$C$};\n\\end{tikzpicture}\n}\\hfil}\n\\hbox to 0.38\\linewidth{\\hfil{\\sffamily\\scriptsize\\itshape\\color{muted}Hình 22}\\hfil}}}}}[[/wrap]][NB] Tam giác $ABC$ vuông tại $A$. Cạnh kề của góc $B$ là cạnh nào?\\par\\vspace{1.90cm}",
+          "solution": "Cạnh kề của góc $B$ là $AB$.",
+          "figure_given": true,
+          "dang_id": "NB1"
+        },
+        {
+          "type": "writelines",
+          "count": 0
+        },
+        {
+          "type": "problem",
+          "label": "BTVN 2.",
+          "level": 1,
+          "tier": "btvn",
+          "statement": "[[wrap]]\\makebox[0pt][l]{\\hspace{0.62\\linewidth}\\smash{\\raisebox{-2.35cm}{\\vtop{\\hbox to 0.38\\linewidth{\\hfil\\adjustbox{max width=0.38\\linewidth, max totalheight=2.6cm}{\n\\begin{tikzpicture}[line width=0.8pt, font=\\small]\n  \\draw[ink] (0,0) -- (0,2.0) -- (3.0,0) -- cycle;\n  \\draw[ink] (0,0.26) -- (0.26,0.26) -- (0.26,0);\n  \\node[below left] at (0,0) {$A$};\n  \\node[above] at (0,2.0) {$B$};\n  \\node[right] at (3.0,0) {$C$};\n\\end{tikzpicture}\n}\\hfil}\n\\hbox to 0.38\\linewidth{\\hfil{\\sffamily\\scriptsize\\itshape\\color{muted}Hình 23}\\hfil}}}}}[[/wrap]][NB] Điền: cạnh $AC$ là cạnh $\\ldots$ của góc $B$, cạnh $\\ldots$ của góc $C$.\\par\\vspace{1.90cm}",
+          "solution": "Cạnh $AC$ là cạnh \\textbf{đối} của góc $B$, cạnh \\textbf{kề} của góc $C$.",
+          "figure_given": true,
+          "dang_id": "NB1"
+        },
+        {
+          "type": "writelines",
+          "count": 0
+        },
+        {
+          "type": "problem",
+          "label": "BTVN 3.",
+          "level": 1,
+          "tier": "btvn",
+          "statement": "[[wrap]]\\makebox[0pt][l]{\\hspace{0.62\\linewidth}\\smash{\\raisebox{-2.35cm}{\\vtop{\\hbox to 0.38\\linewidth{\\hfil\\adjustbox{max width=0.38\\linewidth, max totalheight=2.6cm}{\n\\begin{tikzpicture}[line width=0.8pt, font=\\small]\n  \\draw[ink] (0,0) -- (0,2.0) -- (3.0,0) -- cycle;\n  \\draw[ink] (0,0.26) -- (0.26,0.26) -- (0.26,0);\n  \\node[below left] at (0,0) {$A$};\n  \\node[above] at (0,2.0) {$B$};\n  \\node[right] at (3.0,0) {$C$};\n  \\node[left] at (0,1.0) {$3$};\n  \\node[below] at (1.5,0) {$4$};\n  \\node[above right] at (1.5,1.0) {$5$};\n\\end{tikzpicture}\n}\\hfil}\n\\hbox to 0.38\\linewidth{\\hfil{\\sffamily\\scriptsize\\itshape\\color{muted}Hình 24}\\hfil}}}}}[[/wrap]][NB] Cho $AB = 3$ cm, $AC = 4$ cm, $BC = 5$ cm. Tính $\\sin B$ và $\\tan C$.\\par\\vspace{1.90cm}",
+          "solution": "$\\sin B = \\dfrac{AC}{BC} = \\dfrac{4}{5}$; \\; $\\tan C = \\dfrac{AB}{AC} = \\dfrac{3}{4}$.",
+          "figure_given": true,
+          "dang_id": "NB2"
+        },
+        {
+          "type": "writelines",
+          "count": 0
+        },
+        {
+          "type": "problem",
+          "label": "BTVN 4.",
+          "level": 1,
+          "tier": "btvn",
+          "statement": "[[wrap]]\\makebox[0pt][l]{\\hspace{0.62\\linewidth}\\smash{\\raisebox{-2.35cm}{\\vtop{\\hbox to 0.38\\linewidth{\\hfil\\adjustbox{max width=0.38\\linewidth, max totalheight=2.6cm}{\n\\begin{tikzpicture}[line width=0.8pt, font=\\small]\n  \\draw[ink] (0,0) -- (0,2.0) -- (3.0,0) -- cycle;\n  \\draw[ink] (0,0.26) -- (0.26,0.26) -- (0.26,0);\n  \\node[below left] at (0,0) {$A$};\n  \\node[above] at (0,2.0) {$B$};\n  \\node[right] at (3.0,0) {$C$};\n\\end{tikzpicture}\n}\\hfil}\n\\hbox to 0.38\\linewidth{\\hfil{\\sffamily\\scriptsize\\itshape\\color{muted}Hình 25}\\hfil}}}}}[[/wrap]][NB] Muốn tính $AB$ khi biết $AC$ và góc $C$, dùng hệ thức nào?\\par\\vspace{4pt}\\parbox[t]{0.30\\linewidth}{\\textbf{A.} $AB = AC \\cdot \\sin C$}\\parbox[t]{0.30\\linewidth}{\\textbf{B.} $AB = AC \\cdot \\tan C$}\\par\\vspace{6pt}\\parbox[t]{0.30\\linewidth}{\\textbf{C.} $AB = AC \\cdot \\cos C$}\\parbox[t]{0.30\\linewidth}{\\textbf{D.} $AB = \\dfrac{AC}{\\tan C}$}\\par\\vspace{0.71cm}",
+          "solution": "Đáp án \\textbf{B}. $AB$ là cạnh đối của góc $C$, $AC$ là cạnh kề nên $AB = AC \\cdot \\tan C$.",
+          "figure_given": true,
+          "dang_id": "NB2"
+        },
+        {
+          "type": "writelines",
+          "count": 0
+        },
+        {
+          "type": "writelines",
+          "count": 0
+        },
+        {
+          "type": "writelines",
+          "count": 0
+        },
+        {
+          "type": "writelines",
+          "count": 0
+        },
+        {
+          "type": "writelines",
+          "count": 0
+        },
+        {
+          "type": "writelines",
+          "count": 0
+        },
+        {
+          "type": "writelines",
+          "count": 0
+        },
+        {
+          "type": "writelines",
+          "count": 0
+        },
+        {
+          "type": "problem",
+          "label": "BTVN 5.",
+          "level": 1,
+          "tier": "btvn",
+          "statement": "[NB] Dùng máy tính cầm tay, tìm góc nhọn $x$ biết $\\tan x = 2$; ghi kết quả làm tròn \\textbf{đến độ} rồi \\textbf{đến phút}.\\par\\vspace{1.63cm}",
+          "solution": "$x \\approx 63{,}43^\\circ = 63^\\circ 26' 6''$. [[br]]Vậy $x \\approx 63^\\circ$ (đến độ) và $x \\approx 63^\\circ 26'$ (đến phút).",
+          "dang_id": "NB3"
+        },
+        {
+          "type": "writelines",
+          "count": 0
+        },
+        {
+          "type": "problem",
+          "label": "BTVN 6.",
+          "level": 1,
+          "tier": "btvn",
+          "statement": "[NB] Tìm góc nhọn $y$ biết $\\sin y = 0{,}75$ (làm tròn \\textbf{đến phút}).\\par\\vspace{1.17cm}",
+          "solution": "$y \\approx 48{,}59^\\circ = 48^\\circ 35' 25''$. [[br]]Vậy $y \\approx 48^\\circ 35'$.",
+          "dang_id": "NB3"
+        },
+        {
+          "type": "writelines",
+          "count": 0
+        },
+        {
+          "type": "writelines",
+          "count": 0
+        },
+        {
+          "type": "writelines",
+          "count": 0
+        },
+        {
+          "type": "writelines",
+          "count": 0
+        },
+        {
+          "type": "writelines",
+          "count": 0
+        },
+        {
+          "type": "writelines",
+          "count": 0
+        },
+        {
+          "type": "writelines",
+          "count": 0
+        },
+        {
+          "type": "writelines",
+          "count": 0
+        },
+        {
+          "type": "problem",
+          "label": "BTVN 7.",
+          "tier": "btvn",
+          "level": 1,
+          "dang_id": "NB4",
+          "figure_given": false,
+          "statement": "[NB] Điền: trong hình có đường cao $AH$, $AH^2 = \\ldots \\cdot \\ldots$",
+          "solution": "$AH^2 = HB \\cdot HC$.",
+          "writelines": 2
+        },
+        {
+          "type": "problem",
+          "label": "BTVN 8.",
+          "tier": "btvn",
+          "level": 1,
+          "dang_id": "NB4",
+          "figure_given": false,
+          "statement": "[NB] Hệ thức $AB^2 = HB \\cdot BC$ sinh ra từ cặp tam giác đồng dạng nào?",
+          "solution": "Từ $\\triangle HBA \\backsim \\triangle ABC$ (g.g).",
+          "writelines": 2
+        },
+        {
+          "type": "problem",
+          "label": "BTVN 9.",
+          "tier": "btvn",
+          "level": 1,
+          "dang_id": "NB5",
+          "figure_given": false,
+          "statement": "[NB] \\textbf{Vẽ hình theo yêu cầu:} Vẽ $\\triangle ABC$ vuông tại $A$, đường cao $AH$; ghi lên hình cạnh huyền và hai hình chiếu $HB$, $HC$.",
+          "solution": "Vẽ $\\triangle ABC$ vuông tại $A$, kẻ $AH \\perp BC$ tại $H$. Cạnh huyền là $BC$; $HB$ là hình chiếu của $AB$, $HC$ là hình chiếu của $AC$ trên $BC$.",
+          "draw": true
+        },
+        {
+          "type": "writelines",
+          "count": 5,
+          "variant": "draw"
+        },
+        {
+          "type": "problem",
+          "label": "BTVN 10.",
+          "tier": "btvn",
+          "level": 1,
+          "dang_id": "NB6",
+          "figure_given": false,
+          "statement": "[NB] \\textbf{Điền vào chỗ trống}: Một cột đèn cao $8$ m, tia nắng tạo với mặt đất góc $40^\\circ$.[[br]]Bóng cột đèn $d = 8 \\cdot \\ldots 40^\\circ \\approx \\ldots$ (m).[[br]]Vậy $\\ldots$",
+          "solution": "Bóng cột đèn $d = 8 \\cdot \\cot 40^\\circ \\approx 9,5$ (m).[[br]]Vậy bóng cột đèn dài khoảng $9,5$ m.",
+          "writelines": 4
+        },
+        {
+          "type": "problem",
+          "label": "BTVN 11.",
+          "tier": "btvn",
+          "level": 1,
+          "dang_id": "NB7",
+          "figure_given": false,
+          "statement": "Cho $\\triangle ABC$ vuông tại $A$, $BC = 20$ cm, $\\widehat{C} = 35^\\circ$ (cạnh làm tròn đến chữ số thập phân thứ nhất).[[br]]a) [NB] Tính $\\widehat{B}$.[[br]]b) [NB] Tính $AB$.",
+          "solution": "Xét $\\triangle ABC$ vuông tại $A$.[[br]]a) $\\widehat{B} = 90^\\circ - 35^\\circ = 55^\\circ$.[[br]]b) $AB = BC \\cdot \\sin C = 20 \\cdot \\sin 35^\\circ \\approx 11,5$ (cm).[[br]]Vậy $\\widehat{B} = 55^\\circ$ và $AB \\approx 11,5$ cm.",
+          "writelines": 4
+        },
+        {
+          "type": "problem",
+          "label": "BTVN 12.",
+          "tier": "btvn",
+          "level": 2,
+          "dang_id": "TH1",
+          "figure_given": false,
+          "statement": "[TH] Giải $\\triangle ABC$ vuông tại $A$, biết $BC = 26$ cm, $AB = 10$ cm (góc làm tròn đến độ).",
+          "solution": "Xét $\\triangle ABC$ vuông tại $A$. Theo định lí Pythagore, $AC = \\sqrt{26^2 - 10^2} = 24$ (cm).[[br]]Ta có $\\cos B = \\dfrac{AB}{BC} = \\dfrac{10}{26}$ nên $\\widehat{B} \\approx 67^\\circ$, suy ra $\\widehat{C} \\approx 23^\\circ$.[[br]]Vậy $AC = 24$ cm, $\\widehat{B} \\approx 67^\\circ$, $\\widehat{C} \\approx 23^\\circ$.",
+          "writelines": 4
+        },
+        {
+          "type": "problem",
+          "label": "BTVN 13.",
+          "tier": "btvn",
+          "level": 2,
+          "dang_id": "TH2",
+          "figure_given": false,
+          "statement": "[TH] Một máy bay hạ cánh từ độ cao $3$ km, đường bay tạo với mặt đất góc $15^\\circ$. Hỏi máy bay phải bay bao nhiêu ki-lô-mét nữa mới tiếp đất (làm tròn đến chữ số thập phân thứ nhất)?",
+          "solution": "Xét tam giác vuông có cạnh góc vuông là độ cao $3$ km và góc nhọn $15^\\circ$.[[br]]Quãng đường cần bay là cạnh huyền: $d = \\dfrac{3}{\\sin 15^\\circ} \\approx 11,6$ (km).[[br]]Vậy máy bay phải bay thêm khoảng $11,6$ km.",
+          "writelines": 4
+        },
+        {
+          "type": "problem",
+          "label": "BTVN 14.",
+          "tier": "btvn",
+          "level": 2,
+          "dang_id": "TH3",
+          "figure_given": false,
+          "statement": "[TH] Cho $\\triangle ABC$ vuông tại $A$, đường cao $AH$, $HB = 9$ cm, $HC = 16$ cm. Tính $AH$, $AB$, $AC$.",
+          "solution": "Xét $\\triangle ABC$ vuông tại $A$ có đường cao $AH$, $BC = HB + HC = 25$ (cm).[[br]]Ta có $AH^2 = HB \\cdot HC = 9 \\cdot 16 = 144$ nên $AH = 12$ (cm).[[br]]$AB^2 = HB \\cdot BC = 9 \\cdot 25 = 225$ nên $AB = 15$ (cm); $AC^2 = HC \\cdot BC = 16 \\cdot 25 = 400$ nên $AC = 20$ (cm).[[br]]Vậy $AH = 12$ cm, $AB = 15$ cm, $AC = 20$ cm.",
+          "writelines": 4
+        },
+        {
+          "type": "problem",
+          "label": "BTVN 15.",
+          "tier": "btvn",
+          "level": 3,
+          "dang_id": "VD1",
+          "figure_given": false,
+          "statement": "[VD] Từ đỉnh một ngọn hải đăng cao $50$ m so với mặt biển, người ta nhìn thấy một con thuyền với góc hạ $12^\\circ$. Tính khoảng cách từ thuyền đến chân hải đăng (làm tròn đến mét), rồi cho biết thuyền phải đi thêm bao xa để góc hạ tăng lên $20^\\circ$.",
+          "solution": "Xét tam giác vuông tạo bởi hải đăng, mặt biển và tia nhìn. Góc hạ $12^\\circ$ bằng góc nâng từ thuyền lên đỉnh hải đăng (hai góc so le trong).[[br]]Khoảng cách ban đầu $d_1 = \\dfrac{50}{\\tan 12^\\circ} \\approx 235$ (m).[[br]]Khi góc hạ là $20^\\circ$: $d_2 = \\dfrac{50}{\\tan 20^\\circ} \\approx 137$ (m).[[br]]Thuyền phải đi thêm $235 - 137 = 98$ (m).[[br]]Vậy thuyền cách chân hải đăng khoảng $235$ m và phải đi thêm khoảng $98$ m.",
+          "writelines": 5
+        }
+      ],
+      "teacher_note": "BTVN 15–17 lặp lại đúng khuôn bài trình bày đã làm trên lớp, chỉ đổi số liệu — HS về nhà viết lại lần nữa cho quen tay. BTVN 14 bắt tự vẽ hình, nhắc dùng ê ke."
+    }
+  ]
+}

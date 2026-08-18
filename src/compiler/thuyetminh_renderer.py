@@ -68,7 +68,7 @@ def _meta_table(rows: list[tuple[str, str]]) -> str:
     return "\n".join(out)
 
 
-def _phieu_table(phieu, rates):
+def _phieu_table(phieu, rates, info):
     # Cột dạng NỚI RỘNG (10,4cm) + cột số HẸP LẠI (1,45cm) — giữ nguyên bề ngang bảng
     # nhưng bớt dòng dạng bị xuống 2 dòng, để mỗi buổi gọn TRONG MỘT TRANG (Thầy đọc
     # 1 buổi = 1 trang, không phải lật sang trang chỉ để xem dòng TỔNG).
@@ -93,7 +93,7 @@ def _phieu_table(phieu, rates):
         r"& \sffamily\footnotesize Số câu & \sffamily\footnotesize TG "
         r"& \sffamily\footnotesize Số câu & \sffamily\footnotesize TG \\ \hline",
     ]
-    L = [r"\begingroup\footnotesize\renewcommand{\arraystretch}{1.0}", rf"\begin{{longtable}}{{{col}}}", r"\arrayrulecolor{rule}\hline"]
+    L = [r"\begingroup\footnotesize\renewcommand{\arraystretch}{0.94}", rf"\begin{{longtable}}{{{col}}}", r"\arrayrulecolor{rule}\hline"]
     L += head + [r"\endfirsthead"] + head + [r"\endhead"]
 
     grand = [0.0] * 8  # xen kẽ (n, phút) ×4 đoạn
@@ -108,8 +108,24 @@ def _phieu_table(phieu, rates):
         # Đánh số dạng trong nhóm (NB1, NB2…, TH1…, VD1) — Thầy cần một CÁI TÊN để trỏ
         # khi soi phiếu thật; phiếu in thẻ [NB]/[TH]/[VD] ở từng câu để đối chiếu.
         for idx, r in enumerate(rows, 1):
+            # Nhãn giàn giáo + TRÍCH DẪN in ngay dưới tên dạng — Thầy chốt 14/08/2026:
+            # "KHÔNG BỊA ĐỀ… phải trích dẫn NGAY TRONG phiếu thuyết minh". Trước đây
+            # source_refs chỉ nằm trong JSON, Thầy đọc PDF không thấy nguồn đâu cả.
+            tag = {"ve-hinh": r"~{\scriptsize\color{stage2}[giàn giáo: vẽ hình]}",
+                   "dien-khuyet": r"~{\scriptsize\color{stage2}[giàn giáo: điền khuyết]}",
+                   }.get(r.gian_giao, "")
+            # Ghi chú nguồn CHẢY TIẾP ngay sau tên dạng (không \newline): mỗi dòng trích
+            # dẫn chiếm trọn một dòng thì bảng 12-13 dạng bị tràn trang, dòng TỔNG rơi
+            # sang trang sau — hỏng chủ đích "một buổi gọn một trang" của bảng này.
+            if r.source_refs:
+                src = ", ".join(x.replace("_", r"\_") for x in r.source_refs)
+                note = rf"~{{\scriptsize\color{{muted}}[Nguồn: {src}]}}"
+            elif (r.loai or "").strip() == "NB lẻ LT":
+                note = r"~{\scriptsize\color{muted}[tự soạn theo lý thuyết]}"
+            else:
+                note = r"~{\scriptsize\color{brand}\bfseries [CHƯA TRÍCH DẪN NGUỒN]}"
             r = r.model_copy(update={"dang": rf"{{\sffamily\bfseries\color{{{tint}}}"
-                                             rf"{band}{idx}.}}~{r.dang}"})
+                                             rf"{band}{idx}.}}~{r.dang}{tag}{note}"})
             mins = row_minutes(r, rates)          # đã gồm phút vẽ hình (ve_hinh)
             lt_m = r.lythuyet * rates.get("vidu", {}).get(band, 0)
             vals = [(r.lythuyet, lt_m), (r.vidu, mins["vidu"]),
@@ -133,19 +149,30 @@ def _phieu_table(phieu, rates):
     gcells = " & ".join(rf"\bfseries {_n(int(grand[2*i]))} & \bfseries {_t(grand[2*i+1])}" for i in range(4))
     L.append(rf"\rowcolor{{brand!12}}\multicolumn{{{ncol - 8}}}{{|r|}}"
              rf"{{\sffamily\bfseries\color{{brand}}TỔNG}} & {gcells} \\ \hline")
+    # Cân buổi là DÒNG CUỐI CỦA CHÍNH BẢNG, không phải đoạn văn rời phía dưới: để rời
+    # thì gặp bảng vừa kín trang, mỗi dòng này bị đẩy sang một trang trắng riêng
+    # (chương IV lớp 9 từng thừa 2 trang chỉ vì vậy).
+    L.append(rf"\multicolumn{{{ncol}}}{{|l|}}"
+             rf"{{{_canbuoi(grand, info, getattr(phieu, 'so_ca', 1))}}} \\ \hline")
     L.append(r"\end{longtable}\endgroup")
     return "\n".join(L), grand
 
 
-def _canbuoi(grand, info) -> str:
-    """Dòng cân buổi: GV giảng (lý thuyết+ví dụ) + luyện tập + BTVN."""
+def _canbuoi(grand, info, so_ca: int = 1) -> str:
+    """Dòng cân buổi: GV giảng (lý thuyết+ví dụ) + luyện tập + BTVN.
+
+    Phiếu trải nhiều ca (`SpecPhieu.so_ca`) thì quỹ in ra phải nhân lên bấy nhiêu,
+    nếu không Thầy đọc thấy "Luyện tập 252′ (quỹ 120′)" mà tưởng phiếu vống gấp đôi.
+    """
+    ca = max(1, so_ca or 1)
     gv = grand[1] + grand[3]
     onclass, btvn = grand[5], grand[7]
     b = info.get("budgets", {})
-    return (rf"\par\vspace{{3pt}}{{\small\textbf{{\color{{brand}}Cân buổi:}} "
-            rf"Ví dụ/lý thuyết (GV giảng) $\approx${round(gv)}′ (quỹ {round(b.get('vidu',0))}′) "
-            rf"$+$ Luyện tập {round(onclass)}′ (quỹ {round(b.get('onclass',0))}′) tại lớp. "
-            rf"BTVN $\approx${round(btvn)}′ (quỹ {round(b.get('btvn',0))}′) ở nhà.}}")
+    nhan = f" cho {ca} ca" if ca > 1 else ""
+    return (rf"{{\small\textbf{{\color{{brand}}Cân buổi{nhan}:}} "
+            rf"Ví dụ/lý thuyết (GV giảng) $\approx${round(gv)}′ (quỹ {round(b.get('vidu',0)*ca)}′) "
+            rf"$+$ Luyện tập {round(onclass)}′ (quỹ {round(b.get('onclass',0)*ca)}′) tại lớp. "
+            rf"BTVN $\approx${round(btvn)}′ (quỹ {round(b.get('btvn',0)*ca)}′) ở nhà.}}")
 
 
 def render_thuyetminh(spec: ThuyetMinhSpec) -> str:
@@ -171,6 +198,11 @@ def render_thuyetminh(spec: ThuyetMinhSpec) -> str:
                           f"{round(info.get('budgets',{}).get('onclass',0))}′. "
                           f"BTVN $\\approx${round(info.get('budgets',{}).get('btvn',0))}′ ở nhà."),
         ] + ([("Thời lượng", _cell_lines(spec.thoiluong))] if spec.thoiluong else [])),
+    ]
+    # KIẾN THỨC NỀN đứng TRƯỚC mục tiêu: đây là thứ HS phải có sẵn mới học nổi chương.
+    if spec.kien_thuc_nen:
+        parts += [r"\tmsec{KIẾN THỨC NỀN (lớp dưới dùng lại)}", _itemize(spec.kien_thuc_nen)]
+    parts += [
         r"\tmsec{MỤC TIÊU LÝ THUYẾT \& CHUẨN ĐẦU RA}", _itemize(spec.lythuyet),
         r"\tmsec{BÀI TẬP}",
         r"\begin{minipage}[t]{0.485\linewidth}\tmlbl{Ví dụ GV làm mẫu:}" + _itemize(spec.vidu) +
@@ -182,9 +214,8 @@ def render_thuyetminh(spec: ThuyetMinhSpec) -> str:
         _itemize(spec.kienthuc_nb) + r"\end{minipage}",
     ]
     for p in spec.phieu:
-        table, grand = _phieu_table(p, rates)
-        parts += [r"\newpage", rf"\tmsec{{NỘI DUNG PHIẾU — PHIẾU {p.code}: {p.title}}}", table,
-                  _canbuoi(grand, info)]
+        table, _ = _phieu_table(p, rates, info)
+        parts += [r"\newpage", rf"\tmsec{{NỘI DUNG PHIẾU — PHIẾU {p.code}: {p.title}}}", table]
     # Chú thích quy ước ĐẶT CUỐI tài liệu: để cuối phần mục tiêu thì nó hay bị đẩy
     # sang một trang trắng riêng (trang 2 vừa kín) — Thầy nhận được PDF thừa 1 trang.
     parts.append(

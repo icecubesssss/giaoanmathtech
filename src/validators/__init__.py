@@ -12,6 +12,8 @@ from .figure_gate import check_figures, check_image_paths, warn_figures, check_f
 from .visual_linter import wrap_long_math, scan_build_log, BuildLogReport, find_presentation_warnings, find_text_escape_issues
 from .answer_gate import check_answers
 from .duration_gate import check_duration, band_counts
+from .print_gate import check_print_layout
+from .sgk_style_gate import check_sgk_style
 from .spec_gate import check_spec_conformance
 from .thuyetminh_gate import check_meta_wrap, check_thuyetminh
 from .de_gate import check_de
@@ -29,6 +31,8 @@ __all__ = [
     "check_answers",
     "check_duration", "band_counts",
     "check_spec_conformance",
+    "check_sgk_style",
+    "check_print_layout",
     "check_thuyetminh",
     "check_meta_wrap",
     "check_de",

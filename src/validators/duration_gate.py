@@ -152,7 +152,11 @@ def check_duration(lesson: LessonPackage) -> list[str]:
     budget_tol = block.get("budget_tol", 0.10)
     ratio_tol = block.get("ratio_tol", 5.0)
     seg_rate = {"onclass": rates.get("onclass", {}), "btvn": rates.get("btvn", {})}
-    budget_dict = {"onclass": budgets.get("onclass", 0.0), "btvn": budgets.get("btvn", 0.0)}
+    # Phiếu cố ý trải nhiều CA thì quỹ nhân lên bấy nhiêu (xem LessonPackage.so_ca),
+    # không thì phiếu 2 ca nào cũng kêu "lệch quỹ" dù soạn đúng.
+    ca = max(1, getattr(lesson, "so_ca", 1) or 1)
+    budget_dict = {"onclass": budgets.get("onclass", 0.0) * ca,
+                   "btvn": budgets.get("btvn", 0.0) * ca}
 
     counts = band_counts(lesson)        # {onclass|btvn: {band: n}}
     draws = draw_counts(lesson)         # {onclass|btvn: {band: số BÀI phải tự vẽ hình}}

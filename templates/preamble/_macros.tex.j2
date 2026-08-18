@@ -10,7 +10,7 @@
 \usepackage{pifont}         % Zapf Dingbats (sao ★, ✓…) — bundled, không cần font ngoài
 \usepackage{qrcode}         % QR sinh thẳng trong TeX (không cần internet/shell-escape)
 \usepackage{setspace}
-\usepackage{needspace}      % giữ bài + hộp hình [[wrap]] không rơi vào vùng chân trang
+% (KHÔNG nạp gói needspace — xem \stageneedspace bên dưới, gói này gây ngắt trang bậy)
 \setstretch{1.15}
 \tcbset{opacityback=0.92, opacitybacktitle=0.92}
 \AtBeginDocument{\color{ink}}
@@ -90,10 +90,22 @@
 % Dòng "eyebrow" nhận diện chặng (sắc độ brand, chữ sans nhỏ)
 \newcommand{\stageeyebrow}[1]{{\sffamily\footnotesize\color{brand}\textbf{#1}}\par\vspace{2pt}}
 
+% Chỗ còn lại trên trang không đủ #1 thì SANG TRANG MỚI — dùng ngay trước
+% \begin{stage} để đầu mục chặng không nằm trơ cuối trang.
+% KHÔNG dùng \needspace của gói cùng tên: nó chừa chỗ bằng mẹo "glue co giãn +
+% \penalty-100", biến vị trí đó thành điểm ngắt trang RẺ NHẤT nên TeX ngắt cả khi
+% trang còn trống 2/3 (Thầy 15/08/2026: trang loãng, bài nhảy lung tung).
+% Ở đây chỉ hỏi thẳng \pagegoal-\pagetotal rồi \newpage — không cài điểm ngắt nào.
+% \pagegoal = \maxdimen nghĩa là trang còn trắng, khỏi xét.
+\newcommand{\stageneedspace}[1]{\par
+  \ifdim\pagegoal=\maxdimen\else
+    \ifdim\dimexpr\pagegoal-\pagetotal\relax<\dimexpr#1\relax\newpage\fi
+  \fi}
+
 % Khối CHẶNG — thanh nhấn trái + nền tô NHẠT theo màu chặng (zoning thị giác).
 % #1=số chặng, #2=tiêu đề, #3=màu chặng, #4=icon nét vẽ.
 \newtcolorbox{stage}[4]{
-  enhanced, breakable, colback=#3!3, colframe=#3,
+  enhanced, breakable, colback=white, colframe=#3,
   boxrule=0pt, arc=6pt, outer arc=6pt,
   top=10pt,bottom=10pt,left=14pt,right=14pt, boxsep=0pt,
   borderline west={3pt}{0pt}{#3},
@@ -122,29 +134,29 @@
   \end{tikzpicture}\end{center}}
 
 % --- Thẻ CALLOUT (nhãn màu, icon) cho block noted có 'variant'. ---
-\newtcolorbox{calloutexample}{enhanced, breakable, drop shadow=black!8, colback=info!2, colframe=info!50,
+\newtcolorbox{calloutexample}{enhanced, breakable, drop shadow=black!8, colback=white, colframe=info!50,
   boxrule=0.6pt, arc=6pt, top=6pt,bottom=6pt,left=10pt,right=10pt, before=\vspace{2pt},
   coltitle=white, colbacktitle=info, fonttitle=\sffamily\bfseries\small,
   attach boxed title to top left={xshift=10pt,yshift=-8pt}, boxed title style={arc=3pt,boxrule=0pt},
   title={\ding{46}\ \ VÍ DỤ MẪU}}
-\newtcolorbox{callouttrap}{enhanced, breakable, drop shadow=black!8, colback=trap!2, colframe=trap!55,
+\newtcolorbox{callouttrap}{enhanced, breakable, drop shadow=black!8, colback=white, colframe=trap!55,
   boxrule=0.6pt, arc=6pt, top=6pt,bottom=6pt,left=10pt,right=10pt, before=\vspace{2pt},
   coltitle=white, colbacktitle=trap, fonttitle=\sffamily\bfseries\small,
   attach boxed title to top left={xshift=10pt,yshift=-8pt}, boxed title style={arc=3pt,boxrule=0pt},
   title={\ding{43}\ \ BẪY ĐIỂM}}
-\newtcolorbox{callouttarget}{enhanced, breakable, drop shadow=black!8, colback=gold!4, colframe=gold!75,
+\newtcolorbox{callouttarget}{enhanced, breakable, drop shadow=black!8, colback=white, colframe=gold!75,
   boxrule=0.6pt, arc=6pt, top=6pt,bottom=6pt,left=10pt,right=10pt, before=\vspace{2pt},
   coltitle=ink, colbacktitle=gold, fonttitle=\sffamily\bfseries\small,
   attach boxed title to top left={xshift=10pt,yshift=-8pt}, boxed title style={arc=3pt,boxrule=0pt},
   title={\ding{72}\ \ ĐÍCH THI VÀO 10}}
-\newtcolorbox{callouttip}{enhanced, breakable, drop shadow=black!8, colback=stage2!3, colframe=stage2!45,
+\newtcolorbox{callouttip}{enhanced, breakable, drop shadow=black!8, colback=white, colframe=stage2!45,
   boxrule=0.6pt, arc=6pt, top=6pt,bottom=6pt,left=10pt,right=10pt, before=\vspace{2pt},
   coltitle=white, colbacktitle=stage2, fonttitle=\sffamily\bfseries\small,
   attach boxed title to top left={xshift=10pt,yshift=-8pt}, boxed title style={arc=3pt,boxrule=0pt},
   title={\ding{42}\ \ MẸO}}
 
 % --- Thẻ MỞ MÀN THỰC TẾ (đặc sản: hook đời thực mở đầu phiếu) ---
-\newtcolorbox{openerbox}{enhanced, breakable, drop shadow=black!10, colback=stage1!3, colframe=stage1!55,
+\newtcolorbox{openerbox}{enhanced, breakable, drop shadow=black!10, colback=white, colframe=stage1!55,
   boxrule=0.6pt, arc=6pt, top=7pt,bottom=8pt,left=12pt,right=2.8cm, before=\vspace{2pt},
   coltitle=white, colbacktitle=stage1, fonttitle=\sffamily\bfseries\small,
   attach boxed title to top left={xshift=10pt,yshift=-8pt}, boxed title style={arc=3pt,boxrule=0pt},
@@ -154,7 +166,7 @@
 % --- "Thầy mách nhỏ" (chỗ dành cho linh vật; nay dùng icon GV, sau thay ảnh mascot) ---
 \newcommand{\mascottip}[1]{%
   \par\vspace{3pt}\noindent
-  \begin{tcolorbox}[enhanced,breakable,colback=stage5!5,colframe=stage5!40,
+  \begin{tcolorbox}[enhanced,breakable,colback=white,colframe=stage5!40,
     boxrule=0.5pt,arc=8pt,left=42pt,top=6pt,bottom=6pt,right=10pt,before=\vspace{2pt},
     overlay={\node[anchor=west,font=\LARGE,text=stage5] at ([xshift=10pt]frame.west) {\ding{43}};}]
     {\sffamily\footnotesize\bfseries\color{stage5}THẦY MÁCH NHỎ:}\; #1
@@ -176,12 +188,16 @@
   {\tiny\sffamily\color{muted}\ding{42}\,video lời giải}\end{tabular}\par\vspace{-2pt}}
 
 % Hộp "kiến thức điền khuyết"
-\newtcolorbox{noted}{enhanced, drop shadow=black!8, colback=neutral, colframe=rule, boxrule=0.4pt, arc=6pt,
+\newtcolorbox{noted}{enhanced, drop shadow=black!8, colback=white, colframe=rule, boxrule=0.4pt, arc=6pt,
   left=12pt, right=12pt, top=8pt, bottom=8pt, before=\vspace{4pt}}
 
 % Banner MỤC PHỤ (BTVN / Bài tập mở rộng) — tách hẳn khỏi hộp chặng đánh số.
 % Một thanh nền brand, chữ trắng, full width; đứng riêng ngoài hộp \begin{stage}.
+% Banner cũng mồ côi y như đầu mục chặng (4 phiếu dính, print_gate 15/08/2026): thanh
+% đỏ "BÀI TẬP VỀ NHÀ" nằm chốt cuối trang, BTVN 1 nhảy sang trang sau. Đòi đủ chỗ cho
+% banner + ít nhất một bài có hình (\wrapclumpmin 3,1cm) trước khi in.
 \newcommand{\worksheetsection}[1]{%
+  \stageneedspace{5cm}%
   \par\addvspace{13pt}\noindent
   \colorbox{brand}{\makebox[\dimexpr\linewidth-2\fboxsep\relax][l]{%
     \sffamily\bfseries\color{white}\strut #1}}%
@@ -204,8 +220,46 @@
   \end{tikzpicture}\par\vspace{4pt}%
 }
 
+% --- Cụm "đề bài + hộp hình treo bên phải" ([[wrap]]) ------------------------
+% Hộp hình dựng bằng \smash nên cao 0pt: TeX KHÔNG biết nó chiếm chỗ, bài rơi sát
+% đáy trang thì hình đè lên chân trang. Trước đây chừa chỗ bằng \needspace — SAI,
+% vì cụm này nằm TRONG hộp \begin{stage} (tcolorbox breakable): tcolorbox cắt hộp
+% bằng \vsplit, mà \needspace cài sẵn \penalty-100 kèm glue co giãn nên điểm đó
+% luôn là điểm cắt RẺ NHẤT ⇒ ngắt trang tại MỌI bài có [[wrap]], kể cả khi trang
+% còn trống 2/3 (đầu mục chặng mồ côi cuối trang, trang loãng — Thầy 15/08/2026).
+% Cách đúng: gói cả cụm vào MỘT hộp. \vsplit không cắt được vào trong hộp nên khi
+% hết chỗ cụm tự nhảy nguyên khối sang trang sau.
+% Đề ngắn hơn hình thì phải chừa thêm chỗ cho phần hình thò xuống — nhưng chừa bằng
+% \vspace* SAU hộp cũng hỏng nốt (\vspace* cài \hrule+\nobreak, lại đẻ ra điểm ngắt
+% xấu: banner "BÀI TẬP VỀ NHÀ" trơ cuối trang). Nên NHÉT phần bù vào ĐỘ SÂU của hộp
+% (\raisebox{0pt}[ht][dp+bù]): TeX thấy hộp cao đúng thật, không thêm glue/penalty nào.
+%
+% ⛔ ĐỪNG "tối ưu" bằng \vsplit ... to \wrapclumpmin để chỉ giữ liền khối 3,1cm đầu
+% rồi \unvbox phần đuôi. Đã thử 15/08/2026 và HỎNG NẶNG: \vsplit ép hộp cao ĐÚNG
+% 3,1cm, nhưng nó chỉ cắt được tại điểm ngắt HỢP LỆ — đề ngắn vài dòng thì điểm ngắt
+% đầu tiên nằm quá 3,1cm ⇒ hộp chứa 6cm nội dung mà khai 3,1cm, phần thừa TRÀN RA ĐÈ
+% lên bài kế tiếp (chữ chồng chữ, hình chồng hình ở cả 4 phiếu chương IV).
+% Giá phải trả của bản an toàn: bài có hình dài (tới 11,5cm) gặp trang gần đầy thì
+% nhảy nguyên khối, bỏ trắng đáy trang. Chấp nhận — thà phí giấy còn hơn chữ đè chữ.
+\newsavebox{\wrapclumpbox}
+\newlength{\wrapclumph}
+\newlength{\wrapclumpmin}\setlength{\wrapclumpmin}{3.1cm}
+\newenvironment{wrapclump}
+  {\par\begin{lrbox}{\wrapclumpbox}%
+   \begin{minipage}[t]{\linewidth}\setlength{\parindent}{0pt}}
+  {\end{minipage}\end{lrbox}%
+   \setlength{\wrapclumph}{\dimexpr\ht\wrapclumpbox+\dp\wrapclumpbox\relax}%
+   \par\noindent
+   \ifdim\wrapclumph<\wrapclumpmin
+     \raisebox{0pt}[\ht\wrapclumpbox][\dimexpr\dp\wrapclumpbox+\wrapclumpmin-\wrapclumph\relax]%
+       {\usebox{\wrapclumpbox}}%
+   \else
+     \usebox{\wrapclumpbox}%
+   \fi
+   \par}
+
 % Hộp "gợi ý mở khi bí" cho bài khó — hạ ngưỡng nhập, KHÔNG phải lời giải.
-\newtcolorbox{hintbox}{enhanced, breakable, colback=brand!3, colframe=brand!35,
+\newtcolorbox{hintbox}{enhanced, breakable, colback=white, colframe=brand!35,
   boxrule=0.4pt, arc=2pt, top=4pt,bottom=4pt,left=10pt,right=10pt,
   fontupper=\small, before=\vspace{3pt}}
 
@@ -226,7 +280,7 @@
 
 % --- Linh kiện riêng cho Sổ tay GV (guide.pdf) ---
 % Hộp LỜI GIẢI: viền + nhãn đỏ trầm (brand), chữ giải cũng đỏ trầm để tách khỏi đề.
-\newtcolorbox{solutionbox}{enhanced, breakable, drop shadow=black!8, colback=brand!2, colframe=brand,
+\newtcolorbox{solutionbox}{enhanced, breakable, drop shadow=black!8, colback=white, colframe=brand,
   boxrule=0.6pt, arc=6pt, top=6pt,bottom=6pt,left=10pt,right=10pt, before=\vspace{2pt},
   coltitle=white, colbacktitle=brand, attach boxed title to top left={xshift=10pt,yshift=-8pt},
   boxed title style={arc=3pt,boxrule=0pt}, fonttitle=\sffamily\bfseries\small,
@@ -234,13 +288,13 @@
 
 % Hộp LỜI GIẢI TỪNG BÀI (guide.pdf) — gọn hơn solutionbox vì mỗi phiếu có hàng trăm cái:
 % viền trái đậm, nền nhạt, không đổ bóng. Nhãn "Lời giải." nằm ngay trong dòng đầu.
-\newtcolorbox{answerbox}{enhanced, breakable, colback=brand!3, colframe=brand!55,
+\newtcolorbox{answerbox}{enhanced, breakable, colback=white, colframe=brand!55,
   boxrule=0pt, leftrule=2pt, arc=0pt, sharp corners,
   top=3pt,bottom=3pt,left=8pt,right=8pt, fontupper=\small\color{brand!85!black},
   before=\vspace{3pt}, after=\vspace{2pt}}
 
 % Hộp MẸO chung
-\newtcolorbox{tipbox}{enhanced, breakable, drop shadow=black!8, colback=neutral, colframe=ink!55,
+\newtcolorbox{tipbox}{enhanced, breakable, drop shadow=black!8, colback=white, colframe=ink!55,
   boxrule=0.6pt, arc=6pt, top=6pt,bottom=6pt,left=10pt,right=10pt, before=\vspace{2pt},
   coltitle=white, colbacktitle=ink, attach boxed title to top left={xshift=10pt,yshift=-8pt},
   boxed title style={arc=3pt,boxrule=0pt}, fonttitle=\sffamily\bfseries\small,

@@ -44,6 +44,12 @@ def _source_ref_band_warnings(spec_rows, tag: str) -> list[str]:
         refs = getattr(r, "source_refs", None) or []
         if not refs:
             continue
+        # Dòng loại "… tách …" / "… ghép bài" CỐ Ý trỏ về bài GỐC khó hơn: 'NB tách TH'
+        # là bước đệm cắt ra từ chính bài TH/VD đó, nên lệch band là ĐÚNG chứ không sai.
+        # Không bỏ qua thì mỗi phiếu dựng theo §4b đều kêu oan hàng loạt.
+        lab = (getattr(r, "loai", "") or "").strip()
+        if "tách" in lab or "ghép" in lab:
+            continue
         for cid, rec in bank_lookup(refs):
             cb = rec.get("band")
             if cb not in _BAND_RANK:
@@ -64,7 +70,7 @@ def check_thuyetminh(spec: ThuyetMinhSpec) -> tuple[list[str], list[str]]:
     # `return [], []` ở dưới nên hễ (lớp, môn, tầng) chưa có trong tier_spec là im
     # hoàn toàn — chính vì vậy bản mẫu chương IV lớp 7 tầng C (tier_spec chỉ có tầng B)
     # đi qua mà KHÔNG một cổng nào lên tiếng.
-    noi_dung = _noi_dung_warnings(spec)
+    noi_dung = _noi_dung_errors(spec)
 
     try:
         ts = load_tier_spec()
@@ -72,7 +78,7 @@ def check_thuyetminh(spec: ThuyetMinhSpec) -> tuple[list[str], list[str]]:
         rates = rates_for_spec(spec)
         ratio_target = tier_ratio(ts, spec.grade, spec.subject, spec.tier)
     except KeyError:
-        return [], noi_dung + [
+        return noi_dung, [
             f"thuyetminh: CHƯA có chuẩn giờ cho {spec.grade}/{spec.subject} tầng "
             f"{spec.tier} trong tier_spec.json — ĐÃ BỎ QUA toàn bộ cổng giờ/tỉ lệ "
             f"(quỹ buổi, tỉ lệ NB-TH-VD). Thêm tầng vào tier_spec để được soi."]
@@ -84,11 +90,7 @@ def check_thuyetminh(spec: ThuyetMinhSpec) -> tuple[list[str], list[str]]:
     budget_tol = block.get("budget_tol", 0.10)
     ratio_tol = block.get("ratio_tol", 5.0)
 
-    onclass_budget = budgets.get("onclass", 0.0)
-    vidu_budget = budgets.get("vidu", 0.0)
-    btvn_budget = budgets.get("btvn", 0.0)
-    usable = (session - brk) if session else 0  # quỹ phút THỰC trên lớp cả buổi
-
+    # Quỹ giờ được nhân theo `so_ca` của TỪNG phiếu ngay trong vòng lặp dưới.
     tier_block = block.get("tiers", {}).get(spec.tier, {})
     vdc_allowed = bool(ratio_target and ratio_target.get("VDC", 0) > 0) and \
         tier_block.get("max_level", 4) >= 4
@@ -105,11 +107,23 @@ def check_thuyetminh(spec: ThuyetMinhSpec) -> tuple[list[str], list[str]]:
                 f"quá ±{budget_tol*100:.0f}%.")
 
     for p in spec.phieu:
-        tag = f"phiếu {p.code}"
+        # Phiếu cố ý trải nhiều CA (vd 1 phiếu dày dạy trong 2 buổi) thì quỹ giờ nhân
+        # lên bấy nhiêu — không thì mọi phiếu ≥2 ca đều bị chặn oan "vượt quỹ MỘT BUỔI".
+        ca = max(1, getattr(p, "so_ca", 1) or 1)
+        onclass_budget = budgets.get("onclass", 0.0) * ca
+        vidu_budget = budgets.get("vidu", 0.0) * ca
+        btvn_budget = budgets.get("btvn", 0.0) * ca
+        usable = ((session - brk) * ca) if session else 0
+
+        tag = f"phiếu {p.code}" + (f" ({ca} ca)" if ca > 1 else "")
         m = phieu_totals(p, rates)["minutes"]
         on_min = m.get("onclass", 0.0)
-        vidu_min = m.get("vidu", 0.0)
         btvn_min = m.get("btvn", 0.0)
+        # GV giảng = LÝ THUYẾT + ví dụ, đúng như dòng "Cân buổi" in trên PDF. Trước
+        # 14/08/2026 chỉ so phần ví dụ nên phiếu chất 21′ lý thuyết vẫn qua cổng êm,
+        # còn PDF thì hiện "GV giảng ≈46′ (quỹ 25′)" — Thầy đọc thấy vô lý mà gate im.
+        lt_min = sum(r.lythuyet * rates.get("vidu", {}).get(r.band, 0.0) for r in p.rows)
+        vidu_min = m.get("vidu", 0.0) + lt_min
 
         # (E) phiếu rỗng giờ — không có gì để dạy/làm
         if on_min == 0 and vidu_min == 0:
@@ -154,8 +168,9 @@ def check_thuyetminh(spec: ThuyetMinhSpec) -> tuple[list[str], list[str]]:
         if usable and on_class > usable * (1 + budget_tol):
             errors.append(
                 f"thuyetminh: {tag} giờ TRÊN LỚP {on_class:.0f}′ (ví dụ {vidu_min:.0f}′ + "
-                f"luyện tập {on_min:.0f}′) VƯỢT quỹ MỘT BUỔI {usable:.0f}′ "
-                f"({session}′ − giải lao {brk}′) quá ±{budget_tol*100:.0f}% — không dạy kịp.")
+                f"luyện tập {on_min:.0f}′) VƯỢT quỹ {'MỘT BUỔI' if ca == 1 else f'{ca} BUỔI'} "
+                f"{usable:.0f}′ ({ca}×({session}′ − giải lao {brk}′)) quá "
+                f"±{budget_tol*100:.0f}% — không dạy kịp.")
 
         # (W) lệch quỹ phiếu (vidu / onclass / btvn-hụt)
         _budget_warn(tag, "ví dụ GV giảng", vidu_min, vidu_budget)
@@ -165,7 +180,7 @@ def check_thuyetminh(spec: ThuyetMinhSpec) -> tuple[list[str], list[str]]:
                 f"thuyetminh: {tag} BTVN {btvn_min:.0f}′ HỤT quỹ {btvn_budget:.0f}′ "
                 f"(>{budget_tol*100:.0f}%) — BTVN nên thừa hơn thiếu.")
 
-    warnings += noi_dung
+    errors += noi_dung
     return errors, warnings
 
 
@@ -176,53 +191,68 @@ def check_thuyetminh(spec: ThuyetMinhSpec) -> tuple[list[str], list[str]]:
 #   • "Điền khuyết bài giải/chứng minh mẫu": bản mẫu mới có ở 3/6 phiếu, nhưng Thầy
 #     chốt BẮT BUỘC cả hai ⇒ 3 phiếu kia coi như còn sót.
 # Nhận dạng theo TỪ KHOÁ trong `dang` vì đó đúng là ngôn ngữ bản mẫu đang dùng.
-_RAIL_VE_HINH = ("vẽ hình",)
-_RAIL_DIEN_KHUYET = ("điền khuyết",)
 # Giàn giáo "vẽ hình" chỉ bắt buộc với môn HÌNH — phiếu đại số không có hình để vẽ.
 _SUBJ_CAN_HINH = ("hinh-hoc",)
-
-
-def _has_rail(rows, keys: tuple[str, ...]) -> bool:
-    return any(any(k in (r.dang or "").lower() for k in keys) for r in rows)
+# Loại §4b DUY NHẤT được phép tự soạn (Thầy chốt: "NB lẻ dạng lý thuyết thì được,
+# còn lại thì nghiêm cấm bịa, phải trích dẫn ngay trong phiếu thuyết minh").
+LOAI_MIEN_TRICH_DAN = "NB lẻ LT"
 
 
 def check_scaffold_rails(spec: ThuyetMinhSpec) -> list[str]:
-    """Mỗi phiếu phải có dạng NB 'vẽ hình + đánh dấu' (môn hình) và 'điền khuyết
-    bài giải mẫu'. Thiếu ⇒ cảnh báo (chưa CHẶN: 0/43 spec trong repo có 'điền khuyết',
-    bật chặn ngay là chết cả kho — xem báo cáo 14/08/2026)."""
+    """Mỗi phiếu phải có ĐỦ hai giàn giáo NB: 've-hinh' (môn hình) và 'dien-khuyet'.
+    Khai bằng trường `gian_giao` của dòng, không dò từ khoá."""
     out: list[str] = []
     can_hinh = spec.subject in _SUBJ_CAN_HINH
     for p in spec.phieu:
-        nb = [r for r in p.rows if r.band == "NB"]
+        co = {r.gian_giao for r in p.rows if r.band == "NB"}
         thieu = []
-        if can_hinh and not _has_rail(nb, _RAIL_VE_HINH):
-            thieu.append("'vẽ hình từ giả thiết + đánh dấu dữ kiện'")
-        if not _has_rail(nb, _RAIL_DIEN_KHUYET):
-            thieu.append("'điền khuyết bài giải/chứng minh mẫu'")
+        if can_hinh and "ve-hinh" not in co:
+            thieu.append("'ve-hinh' (vẽ hình từ giả thiết + đánh dấu dữ kiện)")
+        if "dien-khuyet" not in co:
+            thieu.append("'dien-khuyet' (điền khuyết bài giải/chứng minh mẫu)")
         if thieu:
             out.append(
                 f"thuyetminh: phiếu {p.code} THIẾU giàn giáo NB bắt buộc: "
-                f"{' và '.join(thieu)} — bản mẫu lớp 7 chương IV luôn có.")
+                f"{' và '.join(thieu)} — mỗi phiếu phải có đủ (bản mẫu lớp 7 chương IV). "
+                f"Khai bằng trường `gian_giao` ở dòng NB tương ứng.")
     return out
 
 
 def check_source_refs(spec: ThuyetMinhSpec) -> list[str]:
-    """Thầy chốt: MỌI dòng dạng phải trỏ nguồn (`source_refs` → SGK/SBT/đề).
-    Cảnh báo chứ chưa chặn — toàn repo mới 10% số dòng có nguồn."""
+    """KHÔNG BỊA ĐỀ: mọi dòng phải trỏ nguồn, TRỪ dòng loại 'NB lẻ LT' (câu hỏi thẳng
+    lý thuyết vừa học — được tự soạn).
+
+    Dòng 'NB tách TH' / 'TH tách VD' / '… ghép bài' thì trỏ chính BÀI GỐC mà nó cắt
+    bước ra hoặc là một ý của nó."""
     out: list[str] = []
     for p in spec.phieu:
-        thieu = [f"{r.band}{i}" for i, r in enumerate(p.rows, 1) if not r.source_refs]
+        thieu = [f"{r.band}{i}" for i, r in enumerate(p.rows, 1)
+                 if not r.source_refs and (r.loai or "").strip() != LOAI_MIEN_TRICH_DAN]
         if thieu:
             out.append(
-                f"thuyetminh: phiếu {p.code} — {len(thieu)}/{len(p.rows)} dòng CHƯA "
-                f"trỏ nguồn (`source_refs`): {', '.join(thieu[:8])}"
+                f"thuyetminh: phiếu {p.code} — {len(thieu)}/{len(p.rows)} dòng BỊA ĐỀ "
+                f"(chưa trỏ nguồn `source_refs`, mà loại không phải "
+                f"'{LOAI_MIEN_TRICH_DAN}'): {', '.join(thieu[:8])}"
                 + (" …" if len(thieu) > 8 else ""))
     return out
 
 
-def _noi_dung_warnings(spec: ThuyetMinhSpec) -> list[str]:
-    """Các cổng NỘI DUNG — không phụ thuộc chuẩn giờ nên LUÔN chạy được."""
-    return check_loai_4b(spec) + check_scaffold_rails(spec) + check_source_refs(spec)
+def check_chuong_level(spec: ThuyetMinhSpec) -> list[str]:
+    """Thầy chốt 14/08/2026: TỪ GIỜ CHỈ LÀM THUYẾT MINH CẤP CHƯƠNG, mọi khối.
+    Nhận biết qua slug/tiêu đề có chữ 'chuong'/'chương' (spec theo tuần thì không)."""
+    dau = f"{spec.slug} {spec.title}".lower()
+    if "chuong" in dau or "chương" in dau:
+        return []
+    return [f"thuyetminh: spec '{spec.slug}' KHÔNG phải cấp CHƯƠNG — từ 14/08/2026 chỉ "
+            f"làm thuyết minh cấp chương (mọi khối). Gộp các buổi của cả chương vào "
+            f"MỘT spec, mỗi buổi là một phiếu."]
+
+
+def _noi_dung_errors(spec: ThuyetMinhSpec) -> list[str]:
+    """Cổng NỘI DUNG — CHẶN build (Thầy yêu cầu 'codebase NGHIÊM NGẶT' 14/08/2026).
+    Không phụ thuộc chuẩn giờ nên luôn chạy được. `--force` vẫn qua để build nháp."""
+    return (check_chuong_level(spec) + check_loai_4b(spec)
+            + check_scaffold_rails(spec) + check_source_refs(spec))
 
 
 # ── Cổng XUỐNG DÒNG cho BẢNG ĐẦU (Tên bài / Thời gian / Thời lượng) ─────────
@@ -307,7 +337,10 @@ def check_loai_4b(spec: ThuyetMinhSpec) -> list[str]:
                 thieu.append(f"{r.band}{i}")
             elif lab not in LOAI_4B:
                 sai.append(f"{r.band}{i}='{lab}'")
-            elif lab.split()[0] != r.band:
+            # §4b chỉ có nhãn cho NB/TH/VD — không có nhãn nào cho VDC. Dòng band VDC
+            # (hợp lệ ở tầng B lớp 9, ratio VDC=10%) coi 'VD lẻ' là đúng, nếu không mọi
+            # dòng VDC đều bị chặn oan khi §4b thành lỗi chặn (14/08/2026).
+            elif lab.split()[0] != ("VD" if r.band == "VDC" else r.band):
                 lech.append(f"{r.band}{i}='{lab}'")
         tag = f"phiếu {phieu.code}"
         if thieu:

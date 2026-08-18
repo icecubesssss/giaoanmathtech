@@ -51,6 +51,8 @@ from src.validators import (
     check_answers,
     check_duration,
     check_spec_conformance,
+    check_sgk_style,
+    check_print_layout,
     check_thuyetminh,
     check_meta_wrap,
     check_de,
@@ -242,7 +244,7 @@ def _build_status(json_path: Path) -> dict:
     out_dir = settings.OUTPUTS_DIR / rel / slug
     pdfs = {}
     for fn in _BUILD_KINDS:
-        exists = (out_dir / f"{fn}.pdf").exists() or len(list(out_dir.glob(f"ca-*-{fn}.pdf"))) > 0
+        exists = len(list(out_dir.glob(f"ca-*-{fn}.pdf"))) > 0
         pdfs[fn] = exists
     return {"slug": slug, "ok_json": True, "pdfs": pdfs}
 
@@ -380,12 +382,11 @@ def _build_kinds(lesson: LessonPackage, kinds, out_root: Path, force: bool = Fal
     import shutil
     ca_pre = get_ca_prefix(lesson, json_path)
     def one(fn):
-        ca_fn = f"{ca_pre}{fn}"
-        pdf = build_pdf(_RENDERERS[fn](lesson), slug=lesson.slug, filename=ca_fn,
+        # CHỈ ghi một bản 'ca-NN-<loại>.pdf'. Trước 14/08/2026 còn copy thêm bản tên trơn
+        # ('handout.pdf') gọi là "legacy" ⇒ mỗi lần build ra HAI file y hệt nhau, Thầy mở
+        # thư mục thấy trùng. Không chỗ nào cần tên trơn: drive_sync chỉ quét 'ca-*-*.pdf'.
+        pdf = build_pdf(_RENDERERS[fn](lesson), slug=lesson.slug, filename=f"{ca_pre}{fn}",
                         out_root=out_root, force=force)
-        legacy_pdf = pdf.parent / f"{fn}.pdf"
-        if pdf.exists() and pdf != legacy_pdf:
-            shutil.copy2(pdf, legacy_pdf)
         return fn, pdf
 
     with ThreadPoolExecutor(max_workers=max(1, len(kinds))) as ex:
@@ -393,47 +394,43 @@ def _build_kinds(lesson: LessonPackage, kinds, out_root: Path, force: bool = Fal
     if not quiet:
         for _fn, pdf in results:
             print(f"{prefix}OK → {pdf}")
+        # Bố cục bản IN chỉ lộ ra trên PDF (đầu mục mồ côi, trang loãng) — soi ngay
+        # sau khi build, cảnh báo chứ không chặn. Đưa luôn tiêu đề chặng THẬT xuống
+        # để cổng khỏi đoán mò (mẫu "số. chữ" ăn nhầm cả mục đánh số trong hộp lý thuyết).
+        dau_muc = [f"{s.number}. {s.title}" for s in lesson.stages]
+        for fn, pdf in results:
+            if fn == "handout":
+                for m in check_print_layout(pdf, dau_muc):
+                    print(f"{prefix}  ⚠ {m}")
     return results
 
 
 def cmd_build_handout(args: argparse.Namespace) -> int:
-    import shutil
     lesson = _load(args.lesson)
     if not _gate_before_build(lesson, getattr(args, "force", False), lesson_path=args.lesson):
         return 1
     ca_pre = get_ca_prefix(lesson, args.lesson)
     pdf = build_pdf(render_handout(lesson), slug=lesson.slug, filename=f"{ca_pre}handout", out_root=_out_root(args.lesson))
-    legacy_pdf = pdf.parent / "handout.pdf"
-    if pdf.exists() and pdf != legacy_pdf:
-        shutil.copy2(pdf, legacy_pdf)
     print(f"OK → {pdf}")
     return 0
 
 
 def cmd_build_guide(args: argparse.Namespace) -> int:
-    import shutil
     lesson = _load(args.lesson)
     if not _gate_before_build(lesson, getattr(args, "force", False), lesson_path=args.lesson):
         return 1
     ca_pre = get_ca_prefix(lesson, args.lesson)
     pdf = build_pdf(render_guide(lesson), slug=lesson.slug, filename=f"{ca_pre}guide", out_root=_out_root(args.lesson))
-    legacy_pdf = pdf.parent / "guide.pdf"
-    if pdf.exists() and pdf != legacy_pdf:
-        shutil.copy2(pdf, legacy_pdf)
     print(f"OK → {pdf}")
     return 0
 
 
 def cmd_build_slide(args: argparse.Namespace) -> int:
-    import shutil
     lesson = _load(args.lesson)
     if not _gate_before_build(lesson, getattr(args, "force", False), lesson_path=args.lesson):
         return 1
     ca_pre = get_ca_prefix(lesson, args.lesson)
     pdf = build_pdf(render_slide(lesson), slug=lesson.slug, filename=f"{ca_pre}slide", out_root=_out_root(args.lesson))
-    legacy_pdf = pdf.parent / "slide.pdf"
-    if pdf.exists() and pdf != legacy_pdf:
-        shutil.copy2(pdf, legacy_pdf)
     print(f"OK → {pdf}")
     return 0
 
@@ -719,6 +716,7 @@ def cmd_validate(args: argparse.Namespace) -> int:
         print(f"    ⚠ {w}")
 
     spec_warns = check_spec_conformance(lesson, args.lesson)
+    spec_warns += [f"[sgk_style] {m}" for m in check_sgk_style(lesson)]
     print(f"  • spec_gate:        {'OK (hoặc không có spec)' if not spec_warns else f'{len(spec_warns)} lệch hợp đồng'}")
     for w in spec_warns:
         print(f"    ⚠ {w}")
