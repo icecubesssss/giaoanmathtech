@@ -1,0 +1,434 @@
+{
+  "slug": "phieu-a-hieu-hai-binh-phuong-binh-phuong-mot-tong-mot-hieu",
+  "title": "Bài 6: Hiệu hai bình phương. Bình phương của một tổng hay một hiệu",
+  "eyebrow": "PHIẾU A",
+  "grade_label": "Lớp 8",
+  "class_tier": "B",
+  "so_ca": 1,
+  "stages": [
+    {
+      "number": 1,
+      "kind": "review",
+      "title": "Khám phá",
+      "blocks": [
+        {
+          "type": "opener",
+          "text": "Bạn Minh được giao tính nhẩm tích $198 \\cdot 202$ mà không dùng máy tính. [[br]] Minh viết $198 = 200 - 2$ và $202 = 200 + 2$, rồi chỉ mất vài giây là ra đáp số. [[br]] Em có đoán được Minh đã dùng cách gì không?"
+        },
+        {
+          "type": "para",
+          "text": "Ta có: $198 \\cdot 202 = (200 - 2)(200 + 2) = 200^2 - 2^2 = 40\\,000 - 4 = 39\\,996$. [[br]] Phép nhân hai số có ba chữ số đã trở thành một phép trừ nhẩm được."
+        },
+        {
+          "type": "noted",
+          "text": "Cái Minh dùng là \\textbf{hiệu hai bình phương}: $A^2 - B^2 = (A-B)(A+B)$. [[br]] Đó là một trong bảy hằng đẳng thức đáng nhớ. Buổi hôm nay ta học ba hằng đẳng thức bậc hai đầu tiên và dùng chúng theo cả hai chiều: khai triển thành đa thức, và viết ngược một đa thức về dạng tích."
+        }
+      ]
+    },
+    {
+      "number": 2,
+      "kind": "concept",
+      "title": "Khái niệm",
+      "blocks": [
+        {
+          "type": "noted",
+          "text": "\\textbf{1. Hằng đẳng thức là gì?} [[br]] Hai biểu thức $A$ và $B$ gọi là một \\textbf{hằng đẳng thức} nếu $A = B$ đúng với \\textbf{MỌI} giá trị của các biến. [[br]] Muốn bác bỏ một đẳng thức, chỉ cần chỉ ra \\textbf{MỘT} giá trị của biến làm hai vế khác nhau."
+        },
+        {
+          "type": "noted",
+          "text": "\\textbf{2. Ba hằng đẳng thức bậc hai} [[br]] $\\bullet$ Hiệu hai bình phương: $A^2 - B^2 = (A - B)(A + B)$ [[br]] $\\bullet$ Bình phương của một tổng: $(A + B)^2 = A^2 + 2AB + B^2$ [[br]] $\\bullet$ Bình phương của một hiệu: $(A - B)^2 = A^2 - 2AB + B^2$"
+        },
+        {
+          "type": "noted",
+          "variant": "trap",
+          "text": "\\textbf{Ba chỗ mất điểm nhiều nhất:} [[br]] $\\bullet$ Viết $(A+B)^2 = A^2 + B^2$, đánh rơi hẳn hạng tử $2AB$. [[br]] $\\bullet$ Quên bình phương hệ số: viết $(2x)^2 = 2x^2$ thay vì $4x^2$. [[br]] $\\bullet$ Nhìn nhầm dấu hạng tử giữa nên chọn nhầm tổng thành hiệu."
+        },
+        {
+          "type": "noted",
+          "variant": "example",
+          "text": "\\textbf{Ví dụ 1.} Viết đa thức $x^2 + 10x + 25$ về dạng bình phương của một tổng. [[br]] {\\sffamily\\bfseries\\color{brand}Lời giải} [[br]] \\hspace*{1.4em}$x^2 + 10x + 25 = x^2 + 2\\cdot x\\cdot 5 + 5^2$ [[br]] \\hspace*{1.4em}$= (x + 5)^2$ [[br]] Vậy $x^2 + 10x + 25 = (x + 5)^2$."
+        },
+        {
+          "type": "noted",
+          "variant": "example",
+          "text": "\\textbf{Ví dụ 2.} Khai triển $(2x - 3y)^2$. [[br]] {\\sffamily\\bfseries\\color{brand}Lời giải} [[br]] \\hspace*{1.4em}$(2x - 3y)^2 = (2x)^2 - 2\\cdot 2x\\cdot 3y + (3y)^2$ [[br]] \\hspace*{1.4em}$= 4x^2 - 12xy + 9y^2$ [[br]] Vậy $(2x - 3y)^2 = 4x^2 - 12xy + 9y^2$."
+        },
+        {
+          "type": "noted",
+          "variant": "example",
+          "text": "\\textbf{Ví dụ 3.} Tính nhanh giá trị của $101^2 - 99^2$. [[br]] {\\sffamily\\bfseries\\color{brand}Lời giải} [[br]] \\hspace*{1.4em}$101^2 - 99^2 = (101 - 99)(101 + 99)$ [[br]] \\hspace*{1.4em}$= 2\\cdot 200$ [[br]] \\hspace*{1.4em}$= 400$ [[br]] Vậy $101^2 - 99^2 = 400$."
+        },
+        {
+          "type": "noted",
+          "variant": "example",
+          "text": "\\textbf{Ví dụ 4.} Rút gọn $A = (x + 2)^2 - (x - 2)^2$ rồi tính giá trị của $A$ tại $x = 5$. [[br]] {\\sffamily\\bfseries\\color{brand}Lời giải} [[br]] \\hspace*{1.4em}$A = (x^2 + 4x + 4) - (x^2 - 4x + 4)$ [[br]] \\hspace*{1.4em}$= x^2 + 4x + 4 - x^2 + 4x - 4$ [[br]] \\hspace*{1.4em}$= 8x$ [[br]] \\hspace*{1.4em}Thay $x = 5$: $A = 8\\cdot 5 = 40$. [[br]] Vậy $A = 8x$ và $A = 40$ tại $x = 5$."
+        }
+      ]
+    },
+    {
+      "number": 3,
+      "kind": "practice1",
+      "title": "Luyện tập 1",
+      "blocks": [
+        {
+          "type": "para",
+          "text": "\\textbf{Dạng NB1: Bình phương của một đơn thức}"
+        },
+        {
+          "type": "problem",
+          "label": "Bài 1.",
+          "dang_id": "NB1",
+          "level": 1,
+          "tier": "onclass",
+          "statement": "Chọn đáp án đúng: [[br]] a) $(2x)^2$ bằng: \\quad A. $2x^2$ \\quad B. $4x^2$ \\quad C. $4x$ \\quad D. $2x^4$ [[br]] b) $(3y)^2$ bằng: \\quad A. $3y^2$ \\quad B. $6y^2$ \\quad C. $9y^2$ \\quad D. $9y$ [[br]] c) $\\left(\\dfrac{3}{4}x\\right)^2$ bằng: \\quad A. $\\dfrac{3}{4}x^2$ \\quad B. $\\dfrac{9}{16}x^2$ \\quad C. $\\dfrac{6}{8}x^2$ \\quad D. $\\dfrac{9}{4}x^2$",
+          "solution": "a) B. $(2x)^2 = 2^2x^2 = 4x^2$. [[br]] b) C. $(3y)^2 = 9y^2$. [[br]] c) B. $\\left(\\dfrac{3}{4}x\\right)^2 = \\dfrac{9}{16}x^2$.",
+          "writelines": 0
+        },
+        {
+          "type": "para",
+          "text": "\\textbf{Dạng NB2: Viết bình phương của một tổng, một hiệu và hiệu hai bình phương khi cho sẵn $A$ và $B$}"
+        },
+        {
+          "type": "problem",
+          "label": "Bài 2.",
+          "dang_id": "NB2",
+          "level": 1,
+          "tier": "onclass",
+          "statement": "Điền biểu thức thích hợp vào chỗ chấm: [[br]] a) Với $A = x$, $B = 3$: \\quad $(A + B)^2 = (x + 3)^2 = x^2 + \\dots + 9$ [[br]] b) Với $A = 2x$, $B = y$: \\quad $(A - B)^2 = (2x-y)^2 = 4x^2 - \\dots + y^2$ [[br]] c) Với $A = 5$, $B = x$: \\quad $A^2 - B^2 = \\dots = (5-x)(5+x)$",
+          "solution": "a) $6x$. [[br]] b) $4xy$. [[br]] c) $25 - x^2$.",
+          "writelines": 0
+        },
+        {
+          "type": "para",
+          "text": "\\textbf{Dạng NB3: Thử một giá trị của biến để bác bỏ một đẳng thức}"
+        },
+        {
+          "type": "problem",
+          "label": "Bài 3.",
+          "dang_id": "NB3",
+          "level": 1,
+          "tier": "onclass",
+          "statement": "Mỗi khẳng định sau đúng hay sai? Với khẳng định sai, hãy thay $x = 2$, $y = 1$ để chỉ ra hai vế khác nhau: [[br]] a) $(x+y)^2 = x^2 + y^2$ [[br]] b) $(x-y)^2 = x^2 - 2xy + y^2$ [[br]] c) $x^2 - y^2 = (x-y)^2$",
+          "solution": "a) Sai. Thay $x = 2$, $y = 1$: vế trái $= 9$, vế phải $= 5$. [[br]] b) Đúng, đây là hằng đẳng thức bình phương của một hiệu. [[br]] c) Sai. Thay $x = 2$, $y = 1$: vế trái $= 3$, vế phải $= 1$.",
+          "writelines": 0
+        },
+        {
+          "type": "para",
+          "text": "\\textbf{Dạng NB4: Chỉ ra $A$ và $B$ trong biểu thức cho trước}"
+        },
+        {
+          "type": "problem",
+          "label": "Bài 4.",
+          "dang_id": "NB4",
+          "level": 1,
+          "tier": "onclass",
+          "statement": "Mỗi đa thức sau viết được theo một hằng đẳng thức bậc hai. Hãy chỉ ra $A$ và $B$: [[br]] a) $x^2 + 8x + 16$ [[br]] b) $9x^2 - 12xy + 4y^2$ [[br]] c) $25a^2 - b^2$",
+          "solution": "a) $A = x$, $B = 4$. [[br]] b) $A = 3x$, $B = 2y$. [[br]] c) $A = 5a$, $B = b$.",
+          "writelines": 0
+        },
+        {
+          "type": "para",
+          "text": "\\textbf{Dạng NB5: Viết hạng tử giữa $2AB$ khi đã biết $A$ và $B$}"
+        },
+        {
+          "type": "problem",
+          "label": "Bài 5.",
+          "dang_id": "NB5",
+          "level": 1,
+          "tier": "onclass",
+          "statement": "Điền hạng tử còn thiếu vào chỗ chấm: [[br]] a) $(x + 5)^2 = x^2 + \\dots + 25$ [[br]] b) $(3x - 2)^2 = 9x^2 - \\dots + 4$ [[br]] c) $(2a + 7b)^2 = 4a^2 + \\dots + 49b^2$",
+          "solution": "a) $10x$. [[br]] b) $12x$. [[br]] c) $28ab$.",
+          "writelines": 0
+        },
+        {
+          "type": "para",
+          "text": "\\textbf{Dạng NB6: Nhìn dấu của hạng tử giữa để chọn hằng đẳng thức tổng hay hiệu}"
+        },
+        {
+          "type": "problem",
+          "label": "Bài 6.",
+          "dang_id": "NB6",
+          "level": 1,
+          "tier": "onclass",
+          "statement": "Chọn dạng tích đúng của mỗi đa thức: [[br]] a) $x^2 - 6x + 9$: \\quad A. $(x + 3)^2$ \\quad B. $(x - 3)^2$ \\quad C. $(x - 9)^2$ \\quad D. $(x - 3)(x + 3)$ [[br]] b) $4x^2 + 20x + 25$: \\quad A. $(2x - 5)^2$ \\quad B. $(4x + 5)^2$ \\quad C. $(2x + 5)^2$ \\quad D. $(2x + 25)^2$ [[br]] c) $y^2 - 14y + 49$: \\quad A. $(y + 7)^2$ \\quad B. $(y - 7)^2$ \\quad C. $(y - 49)^2$ \\quad D. $(y - 7)(y + 7)$",
+          "solution": "a) B. Hạng tử giữa mang dấu trừ nên là bình phương của một hiệu. [[br]] b) C. $4x^2 = (2x)^2$, $25 = 5^2$ và $2\\cdot 2x\\cdot 5 = 20x$. [[br]] c) B.",
+          "writelines": 0
+        },
+        {
+          "type": "para",
+          "text": "\\textbf{Dạng NB7: Đưa một số hoặc một đơn thức về dạng bình phương}"
+        },
+        {
+          "type": "problem",
+          "label": "Bài 7.",
+          "dang_id": "NB7",
+          "level": 1,
+          "tier": "onclass",
+          "statement": "Nối mỗi biểu thức ở Cột A với dạng bình phương của nó ở Cột B: [[br]] {\\centering \\renewcommand{\\arraystretch}{1.3} \\begin{tabular}{p{4.2cm} @{\\hspace{3cm}} p{4.2cm}} \\textbf{Cột A (Biểu thức)} & \\textbf{Cột B (Dạng bình phương)} \\\\[3pt] a) $4$ & 1) $\\left(\\dfrac{1}{5}x\\right)^2$ \\\\[6pt] b) $9y^2$ & 2) $2^2$ \\\\[6pt] c) $\\dfrac{1}{25}x^2$ & 3) $(3y)^2$ \\end{tabular} \\par}",
+          "solution": "a) nối 2). [[br]] b) nối 3). [[br]] c) nối 1).",
+          "writelines": 0
+        },
+        {
+          "type": "para",
+          "text": "\\textbf{Dạng NB8: Viết hiệu hai bình phương thành tích}"
+        },
+        {
+          "type": "problem",
+          "label": "Bài 8.",
+          "dang_id": "NB8",
+          "level": 1,
+          "tier": "onclass",
+          "statement": "Viết mỗi đa thức sau thành tích: [[br]] a) $x^2 - 49$ [[br]] b) $9a^2 - b^2$ [[br]] c) $16x^2 - 25y^2$",
+          "solution": "a) $x^2 - 49 = (x - 7)(x + 7)$. [[br]] b) $9a^2 - b^2 = (3a-b)(3a+b)$. [[br]] c) $16x^2 - 25y^2 = (4x - 5y)(4x + 5y)$.",
+          "writelines": 0
+        },
+        {
+          "type": "para",
+          "text": "\\textbf{Dạng NB9: Khai triển từng cụm trước khi thu gọn cả biểu thức}"
+        },
+        {
+          "type": "problem",
+          "label": "Bài 9.",
+          "dang_id": "NB9",
+          "level": 1,
+          "tier": "onclass",
+          "statement": "Điền vào chỗ chấm để hoàn thành bài giải rút gọn $M = (x + 3)^2 - (x - 3)^2$: [[br]] a) $(x + 3)^2 = x^2 + \\dots + 9$ [[br]] b) $(x - 3)^2 = x^2 - \\dots + 9$ [[br]] c) $M = (x^2 + 6x + 9) - (x^2 - 6x + 9) = \\dots$",
+          "solution": "a) $6x$. [[br]] b) $6x$. [[br]] c) $M = 12x$.",
+          "writelines": 0
+        },
+        {
+          "type": "para",
+          "text": "\\textbf{Dạng NB10: Tách số về tròn chục, tròn trăm}"
+        },
+        {
+          "type": "problem",
+          "label": "Bài 10.",
+          "dang_id": "NB10",
+          "level": 1,
+          "tier": "onclass",
+          "statement": "Điền số thích hợp vào chỗ chấm để chuẩn bị cho bước tính nhanh: [[br]] a) $99 = 100 - \\dots$ [[br]] b) $198 = 200 - \\dots$ [[br]] c) $51 = 50 + \\dots$",
+          "solution": "a) $1$. [[br]] b) $2$. [[br]] c) $1$.",
+          "writelines": 0
+        }
+      ]
+    },
+    {
+      "number": 4,
+      "kind": "practice2",
+      "title": "Luyện tập 2",
+      "blocks": [
+        {
+          "type": "para",
+          "text": "\\textbf{Dạng TH1: Khai triển bình phương của một tổng, một hiệu có hệ số và hai biến}"
+        },
+        {
+          "type": "problem",
+          "label": "Bài 11.",
+          "dang_id": "TH1",
+          "level": 2,
+          "tier": "onclass",
+          "statement": "Khai triển các biểu thức sau: [[br]] a) $(2x - 3y)^2$ [[br]] b) $\\left(\\dfrac{3}{4}x - 4y\\right)^2$ [[br]] c) $(5a + 2b)(5a - 2b)$",
+          "solution": "Áp dụng hằng đẳng thức bình phương của một hiệu và hiệu hai bình phương, ta có: [[br]] a) $(2x - 3y)^2 = 4x^2 - 12xy + 9y^2$. [[br]] b) $\\left(\\dfrac{3}{4}x - 4y\\right)^2 = \\dfrac{9}{16}x^2 - 6xy + 16y^2$. [[br]] c) $(5a + 2b)(5a - 2b) = 25a^2 - 4b^2$. [[br]] Vậy ba kết quả lần lượt là $4x^2 - 12xy + 9y^2$, $\\dfrac{9}{16}x^2 - 6xy + 16y^2$ và $25a^2 - 4b^2$.",
+          "writelines": 0
+        },
+        {
+          "type": "para",
+          "text": "\\textbf{Dạng TH2: Viết đa thức về dạng bình phương; viết hiệu hai bình phương thành tích}"
+        },
+        {
+          "type": "problem",
+          "label": "Bài 12.",
+          "dang_id": "TH2",
+          "level": 2,
+          "tier": "onclass",
+          "statement": "Viết mỗi đa thức sau thành tích: [[br]] a) $x^2 + 10x + 25$ [[br]] b) $4x^2 - 12xy + 9y^2$ [[br]] c) $36a^2 - 25b^2$",
+          "solution": "Ta có $25 = 5^2$, $4x^2 = (2x)^2$, $9y^2 = (3y)^2$, $36a^2 = (6a)^2$ và $25b^2 = (5b)^2$ nên: [[br]] a) $x^2 + 10x + 25 = (x + 5)^2$. [[br]] b) $4x^2 - 12xy + 9y^2 = (2x - 3y)^2$. [[br]] c) $36a^2 - 25b^2 = (6a - 5b)(6a + 5b)$. [[br]] Vậy ba đa thức lần lượt bằng $(x + 5)^2$, $(2x - 3y)^2$ và $(6a - 5b)(6a + 5b)$.",
+          "writelines": 0
+        },
+        {
+          "type": "para",
+          "text": "\\textbf{Dạng TH3: Rút gọn biểu thức ghép nhiều hằng đẳng thức rồi tính giá trị}"
+        },
+        {
+          "type": "problem",
+          "label": "Bài 13.",
+          "dang_id": "TH3",
+          "level": 2,
+          "tier": "onclass",
+          "statement": "Rút gọn rồi tính giá trị của mỗi biểu thức: [[br]] a) $A = (x + 2)^2 - (x - 2)^2$ tại $x = 5$ [[br]] b) $B = (2x - 1)^2 + 2(2x - 1)(x + 1) + (x + 1)^2$ tại $x = 3$ [[br]] c) $C = (x - 3)(x + 3) - (x - 1)^2$ tại $x = 4$",
+          "solution": "Ta khai triển từng cụm rồi thu gọn, sau đó mới thay số: [[br]] a) $A = (x^2 + 4x + 4) - (x^2 - 4x + 4) = 8x$; tại $x = 5$ thì $A = 40$. [[br]] b) Vế phải có dạng bình phương của một tổng nên $B = \\big[(2x - 1) + (x + 1)\\big]^2 = (3x)^2 = 9x^2$; tại $x = 3$ thì $B = 81$. [[br]] c) $C = (x^2 - 9) - (x^2 - 2x + 1) = 2x - 10$; tại $x = 4$ thì $C = -2$. [[br]] Vậy $A = 40$, $B = 81$ và $C = -2$.",
+          "writelines": 0
+        },
+        {
+          "type": "para",
+          "text": "\\textbf{Dạng VD1: Tính nhanh giá trị số và bài toán diện tích thực tế}"
+        },
+        {
+          "type": "problem",
+          "label": "Bài 14.",
+          "dang_id": "VD1",
+          "level": 3,
+          "tier": "onclass",
+          "statement": "a) Tính nhanh giá trị của $101^2 - 99^2$ mà không dùng máy tính. [[br]] b) Một mảnh vườn hình vuông có cạnh $x$ (m). Người ta kéo dài một cạnh thêm $3$ m và rút ngắn cạnh kề nó đi $3$ m để được một mảnh vườn hình chữ nhật. Hỏi diện tích mảnh vườn tăng lên hay giảm đi, và thay đổi bao nhiêu mét vuông?",
+          "solution": "a) Áp dụng hiệu hai bình phương, ta có $101^2 - 99^2 = (101 - 99)(101 + 99) = 2\\cdot 200 = 400$. [[br]] b) Diện tích mảnh vườn hình vuông là $x^2$ ($m^2$). Mảnh vườn mới có hai kích thước $x + 3$ (m) và $x - 3$ (m) nên diện tích là $(x + 3)(x - 3) = x^2 - 9$ ($m^2$). Vì $x^2 - 9 < x^2$ nên diện tích giảm đi $9$ $m^2$. [[br]] Vậy $101^2 - 99^2 = 400$ và diện tích mảnh vườn giảm $9$ $m^2$, không phụ thuộc $x$.",
+          "writelines": 0
+        }
+      ]
+    },
+    {
+      "number": 5,
+      "kind": "reflection",
+      "title": "Tổng kết \\& BTVN",
+      "blocks": [
+        {
+          "type": "noted",
+          "text": "\\textbf{Ghi nhớ bài học:} [[br]] $\\bullet$ $A^2 - B^2 = (A - B)(A + B)$ [[br]] $\\bullet$ $(A + B)^2 = A^2 + 2AB + B^2$ [[br]] $\\bullet$ $(A - B)^2 = A^2 - 2AB + B^2$ [[br]] Dùng theo chiều xuôi để khai triển, theo chiều ngược để viết thành tích và tính nhanh."
+        },
+        {
+          "type": "para",
+          "text": "\\textbf{Bài tập về nhà}"
+        },
+        {
+          "type": "problem",
+          "label": "Bài 15.",
+          "dang_id": "NB1",
+          "level": 1,
+          "tier": "btvn",
+          "statement": "Tính: [[br]] a) $(5x)^2$ [[br]] b) $\\left(\\dfrac{2}{3}y\\right)^2$",
+          "solution": "a) $25x^2$. [[br]] b) $\\dfrac{4}{9}y^2$.",
+          "writelines": 0
+        },
+        {
+          "type": "problem",
+          "label": "Bài 16.",
+          "dang_id": "NB2",
+          "level": 1,
+          "tier": "btvn",
+          "statement": "Viết biểu thức theo $A$ và $B$ đã cho: [[br]] a) $A = x$, $B = 4$: viết $(A + B)^2$ dưới dạng đa thức. [[br]] b) $A = 3x$, $B = 2$: viết $A^2 - B^2$ dưới dạng tích.",
+          "solution": "a) $(x + 4)^2 = x^2 + 8x + 16$. [[br]] b) $9x^2 - 4 = (3x - 2)(3x + 2)$.",
+          "writelines": 0
+        },
+        {
+          "type": "problem",
+          "label": "Bài 17.",
+          "dang_id": "NB3",
+          "level": 1,
+          "tier": "btvn",
+          "statement": "Khẳng định sau đúng hay sai? Nếu sai hãy thay $a = 2$, $b = 1$ để chỉ ra chỗ sai: [[br]] a) $(a-b)^2 = (b-a)^2$ [[br]] b) $a^2 - b^2 = (a+b)^2$",
+          "solution": "a) Đúng, vì $(b - a)^2 = \\big[-(a - b)\\big]^2 = (a - b)^2$. [[br]] b) Sai. Thay $a = 2$, $b = 1$: vế trái $= 3$, vế phải $= 9$.",
+          "writelines": 0
+        },
+        {
+          "type": "problem",
+          "label": "Bài 18.",
+          "dang_id": "NB4",
+          "level": 1,
+          "tier": "btvn",
+          "statement": "Chỉ ra $A$ và $B$ trong mỗi đa thức: [[br]] a) $x^2 - 16$ [[br]] b) $49x^2 + 14x + 1$",
+          "solution": "a) $A = x$, $B = 4$. [[br]] b) $A = 7x$, $B = 1$.",
+          "writelines": 0
+        },
+        {
+          "type": "problem",
+          "label": "Bài 19.",
+          "dang_id": "NB5",
+          "level": 1,
+          "tier": "btvn",
+          "statement": "Điền hạng tử còn thiếu: [[br]] a) $(x + 7)^2 = x^2 + \\dots + 49$ [[br]] b) $(4a - 3b)^2 = 16a^2 - \\dots + 9b^2$",
+          "solution": "a) $14x$. [[br]] b) $24ab$.",
+          "writelines": 0
+        },
+        {
+          "type": "problem",
+          "label": "Bài 20.",
+          "dang_id": "NB6",
+          "level": 1,
+          "tier": "btvn",
+          "statement": "Chọn dạng tích đúng: [[br]] a) $x^2 + 2x + 1$: \\quad A. $(x - 1)^2$ \\quad B. $(x + 1)^2$ \\quad C. $(x + 2)^2$ \\quad D. $(x - 1)(x + 1)$ [[br]] b) $9 - 6y + y^2$: \\quad A. $(3+y)^2$ \\quad B. $(9-y)^2$ \\quad C. $(3-y)^2$ \\quad D. $(3-y)(3+y)$",
+          "solution": "a) B. [[br]] b) C.",
+          "writelines": 0
+        },
+        {
+          "type": "problem",
+          "label": "Bài 21.",
+          "dang_id": "NB7",
+          "level": 1,
+          "tier": "btvn",
+          "statement": "Viết mỗi số hoặc đơn thức sau thành một bình phương: [[br]] a) $\\dfrac{1}{9}$ [[br]] b) $0{,}25x^2$",
+          "solution": "a) $\\dfrac{1}{9} = \\left(\\dfrac{1}{3}\\right)^2$. [[br]] b) $0{,}25x^2 = (0{,}5x)^2$.",
+          "writelines": 0
+        },
+        {
+          "type": "problem",
+          "label": "Bài 22.",
+          "dang_id": "NB8",
+          "level": 1,
+          "tier": "btvn",
+          "statement": "Viết thành tích: [[br]] a) $x^2 - 81$ [[br]] b) $4a^2 - 9b^2$",
+          "solution": "a) $(x - 9)(x + 9)$. [[br]] b) $(2a - 3b)(2a + 3b)$.",
+          "writelines": 0
+        },
+        {
+          "type": "problem",
+          "label": "Bài 23.",
+          "dang_id": "NB9",
+          "level": 1,
+          "tier": "btvn",
+          "statement": "Điền vào chỗ chấm để hoàn thành bài giải rút gọn $N = (2x + 1)^2 - (2x - 1)^2$: [[br]] a) $(2x + 1)^2 = 4x^2 + \\dots + 1$ [[br]] b) $N = \\dots$",
+          "solution": "a) $4x$. [[br]] b) $N = (4x^2 + 4x + 1) - (4x^2 - 4x + 1) = 8x$.",
+          "writelines": 0
+        },
+        {
+          "type": "problem",
+          "label": "Bài 24.",
+          "dang_id": "NB10",
+          "level": 1,
+          "tier": "btvn",
+          "statement": "Điền số thích hợp: [[br]] a) $199 = 200 - \\dots$ [[br]] b) $102 = 100 + \\dots$",
+          "solution": "a) $1$. [[br]] b) $2$.",
+          "writelines": 0
+        },
+        {
+          "type": "problem",
+          "label": "Bài 25.",
+          "dang_id": "TH1",
+          "level": 2,
+          "tier": "btvn",
+          "statement": "Khai triển: [[br]] a) $(3x + 4y)^2$ [[br]] b) $\\left(x - \\dfrac{1}{2}\\right)^2$ [[br]] c) $(7a - 2b)(7a + 2b)$",
+          "solution": "Áp dụng hằng đẳng thức bậc hai, ta có: [[br]] a) $9x^2 + 24xy + 16y^2$. [[br]] b) $x^2 - x + \\dfrac{1}{4}$. [[br]] c) $49a^2 - 4b^2$. [[br]] Vậy ba kết quả lần lượt là $9x^2 + 24xy + 16y^2$, $x^2 - x + \\dfrac{1}{4}$ và $49a^2 - 4b^2$.",
+          "writelines": 0
+        },
+        {
+          "type": "problem",
+          "label": "Bài 26.",
+          "dang_id": "TH2",
+          "level": 2,
+          "tier": "btvn",
+          "statement": "Viết thành tích: [[br]] a) $x^2 - 14x + 49$ [[br]] b) $9x^2 + 24xy + 16y^2$ [[br]] c) $100 - 49y^2$",
+          "solution": "Ta có $49 = 7^2$, $9x^2 = (3x)^2$, $16y^2 = (4y)^2$, $100 = 10^2$ và $49y^2 = (7y)^2$ nên: [[br]] a) $(x - 7)^2$. [[br]] b) $(3x + 4y)^2$. [[br]] c) $(10 - 7y)(10 + 7y)$. [[br]] Vậy ba đa thức lần lượt bằng $(x - 7)^2$, $(3x + 4y)^2$ và $(10 - 7y)(10 + 7y)$.",
+          "writelines": 0
+        },
+        {
+          "type": "problem",
+          "label": "Bài 27.",
+          "dang_id": "TH3",
+          "level": 2,
+          "tier": "btvn",
+          "statement": "Rút gọn rồi tính giá trị: [[br]] a) $D = (x + 1)^2 - (x - 1)^2$ tại $x = 2024$ [[br]] b) $E = (3x - 2)(3x + 2) - (3x - 2)^2$ tại $x = 2$",
+          "solution": "Ta có, sau khi khai triển rồi thu gọn: [[br]] a) $D = (x^2 + 2x + 1) - (x^2 - 2x + 1) = 4x$; tại $x = 2024$ thì $D = 8096$. [[br]] b) $E = (9x^2 - 4) - (9x^2 - 12x + 4) = 12x - 8$; tại $x = 2$ thì $E = 16$. [[br]] Vậy $D = 8096$ và $E = 16$.",
+          "writelines": 0
+        },
+        {
+          "type": "problem",
+          "label": "Bài 28.",
+          "dang_id": "VD1",
+          "level": 3,
+          "tier": "btvn",
+          "statement": "Tính nhanh giá trị của $2024^2 - 2023^2$ mà không dùng máy tính.",
+          "solution": "Áp dụng hiệu hai bình phương, ta có [[br]] $2024^2 - 2023^2 = (2024 - 2023)(2024 + 2023) = 1\\cdot 4047 = 4047$. [[br]] Vậy $2024^2 - 2023^2 = 4047$.",
+          "writelines": 0
+        }
+      ]
+    }
+  ]
+}

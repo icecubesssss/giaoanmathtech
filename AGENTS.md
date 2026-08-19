@@ -37,6 +37,7 @@
    make validate FILE=<file.json>        # gác cổng (FAST=1 bỏ SymPy lúc nháp); spec_gate so số câu với thuyết minh
    make build FILE=<file.json>           # 3 PDF song song (ONLY=handout xem nhanh)
    python -m src.main approve <slug>     # Thầy xem PDF rồi DUYỆT
+   make audit                            # SOI CẢ KHO trước khi giao (xem dưới)
    make drive FOLDER="<folder-seed>"     # chép PDF sang Google Drive (DRY=1 để thử trước)
    ```
 3. Lệnh đầy đủ: `python -m src.main -h`. Tiến độ: `make progress`. Bank đủ câu không: `make coverage`.
@@ -76,6 +77,24 @@
 > - Dạy TSLG phải bắt đầu từ **nhận diện cạnh đối / cạnh kề theo từng góc** (HS mới chỉ biết cạnh huyền) và có **câu hỏi ngược** "cạnh $AB$ là cạnh đối của góc nào?".
 > - **MỌI dạng TH và VD phải có ví dụ GV làm mẫu** (Thầy: _"TH, vận dụng GV không hướng dẫn thì HS làm thế nào được?"_); **bài hình hẳn hoi chỉ làm TẠI LỚP**, không giao BTVN. Quỹ hình lớp 9: giảng 25′ $+$ luyện 55′ $+$ giải lao 10′ $=$ 90′, BTVN 40′ (soạn dày hơn quỹ để HS đủ lượng mà nhớ).
 > - **Rate hình lớp 9 KHÔNG nhân đôi** (khác lớp 8): giữ NB 1,5 / TH 6 / VD 12 — đối chiếu ngân hàng đề, câu TH chương IV thực tế 6,9′ và VD 9,6′, rate ×2 vống gấp đôi làm phiếu quá mỏng. Với rate cũ, tỉ lệ 40-40-20 khớp tròn: NB 22 câu ×1′ $+$ TH 4 ×6′ $+$ VD 1 bài ×12′ $=$ 58′ ⇒ 38-41-21, 0 cảnh báo.
+
+> **HAI KHỐI BẮT BUỘC của phiếu thuyết minh: `kien_thuc_nen` + `thoiluong` (Thầy chốt 19/08/2026).** Thầy hỏi *"sang chat mới soạn lại chương 6 thì có ra đúng output như chương 4, 5 không?"* — trước đó là KHÔNG, vì hai khối này **không cổng nào soi** và khung `new-thuyetminh` cũng không sinh ra ⇒ **70/75 spec lớp 8+9 thiếu**. Nay:
+> 1. **`kien_thuc_nen`** — kiến thức LỚP DƯỚI dùng lại (bản mẫu: chương IV có Pythagore $+$ tam giác đồng dạng; chương V có Pythagore $+$ trung tuyến ứng cạnh huyền $+$ đường trung trực). Spec có dòng mà bỏ trống ⇒ **CHẶN**. `goi_y_kien_thuc_nen()` **tự dò trên chính chữ của spec** và in ra nền đang dùng chùa — chạy `make check-tm SPEC=…` là biết phải thêm gì; thứ vốn là nội dung chính của chương (dò trong `title`) thì không gợi ý.
+> 2. **`thoiluong`** — mỗi buổi mấy ca $+$ dòng TỔNG đối chiếu số tiết SGK. **CẤM giả định "kiểm tra 15′ đầu buổi"** (Thầy bỏ 19/08/2026: mọi buổi là 1 ca ĐỦ GIỜ) và **dòng TỔNG phải khớp phép cộng** — bản chương V cũ ghi 90+55+75×5 $=$ 520′ mà dòng tổng vẫn để 630′.
+> 3. Khung `new-thuyetminh` nay sinh sẵn hai khối kèm TODO, `tests/test_thuyetminh_nen_thoiluong.py` gác 11 test.
+
+> **`make audit` — SOI CẢ KHO, chạy trước mỗi lần giao Thầy (Thầy bắt 2026-08-19).** Thầy hỏi *"sao thuyết minh chương V khác chương IV vậy? chưa tuân thủ quy trình hay là quy trình có vấn đề?"* — hoá ra **quy trình có lỗ thật**: `validate` chỉ soi PHIẾU ĐANG SỬA, nên hai loại hỏng dưới đây không ai thấy, và `sync-drive` thì chép mù lên Drive.
+> 1. **BẢN IN LỖI THỜI** — `src/validators/staleness_gate.py` dựng lại `.tex` từ seed bằng template HIỆN TẠI rồi so hash với sidecar `<file>.tex.sha256`. Ba lý do: `noi-dung` (seed/template đã đổi mà chưa build lại → `make rebuild`), `thieu-dau` (build từ thời chưa ghi hash), `mat-nguon` (output mồ côi → `make prune`). **`sync-drive` nay TỪ CHỐI đẩy bản lỗi thời** (`FORCE=1` để vượt). Ca gốc: thuyết minh chương V nằm trên Drive 6 ngày ở bản build 12/08 trong khi renderer sửa 16/08 ⇒ ô "Tên bài"/"Thời lượng" in ra chảy liền một khối thay vì xuống dòng từng gạch đầu dòng.
+> 2. ⚠️ **ĐO BẰNG HASH, KHÔNG ĐO `mtime`** — `git stash`/`checkout` sờ vào file là đổi mtime dù nội dung y nguyên; bản đầu đo mtime báo oan ngay 4 phiếu vừa build xong.
+> 3. **Thêm luật mới vào cổng thì PHẢI quét lại cả kho ngay** (`make audit`), đừng chỉ sửa phiếu đang làm. Luật "ví dụ = bài giải mẫu" thêm ngày 18/08 mà hôm sau vẫn còn **156 cảnh báo ở 38 phiếu** chưa ai đụng; luật giàn giáo NB làm **38/79 phiếu thuyết minh** trượt cổng mà PDF cũ vẫn nằm trên Drive.
+
+> **VÍ DỤ LÀ BÀI GIẢI MẪU, KHÔNG PHẢI LỜI HƯỚNG DẪN (Thầy chốt 2026-08-18, chấm "Không đạt" cả 4 phiếu chương IV Hình 9C):** _"Phiếu đang cho là ví dụ là cách giải, cách hướng dẫn => Phiếu cần: Ví dụ là bài giải, trình bày chuẩn, làm mẫu"_. Mỗi khối `noted` `variant: "example"` phải viết đúng khuôn HS chép được vào vở:
+> 1. **Đề** (`\textbf{Ví dụ N.} …`) $\to$ **tiêu đề `{\sffamily\bfseries\color{brand}Lời giải}` trên DÒNG RIÊNG** $\to$ **mỗi phép tính một dòng thụt lề** `\hspace*{1.4em}` $\to$ **câu "Vậy …" kèm đơn vị**.
+> 2. **Bỏ lời bình giảng xen giữa bài giải** ("$AC$ là cạnh góc vuông đối với góc $B$, $BC$ là cạnh huyền nên…"). Phần dạy *cách nghĩ* để ở khối Kiến thức cần nhớ hoặc `teacher_note`, không trộn vào lời giải.
+> 3. **Cấm ví dụ trỏ sang ví dụ khác thay cho lời giải** ("vẫn đúng ba bước như Ví dụ 2, chỉ thay bằng cặp tam giác khác") — phải trình bày trọn vẹn từng ý a), b), c).
+> 4. Cổng `check_vi_du_style()` (trong `sgk_style_gate`) gác ba luật trên. **Cổng cũ chỉ soi block `problem`** nên ví dụ trôi tự do suốt nhiều tháng — sửa ví dụ xong nhớ chạy `validate`.
+> 5. **KHÔNG gọi tên cạnh đối / cạnh kề / cạnh huyền trước khi viết tỉ số** (Thầy chốt 2026-08-18): *"trong bài thi chỉ cần xét tam giác vuông là nói được tỉ số lượng giác luôn"*. Viết `Xét tam giác $ABC$ vuông tại $A$, ta có: $AC = BC\cdot\sin B = \ldots$`, KHÔNG viết *"$AC$ là cạnh đối của góc $B$ nên…"*. Cũng không ghi $\dfrac{\text{cạnh đối}}{\text{cạnh huyền}}$ trong một phép TÍNH — cách viết đó chỉ dùng khi nêu định nghĩa. **Luật này áp cho cả LỜI GIẢI từng bài trong Sổ tay GV**, không riêng ví dụ; cổng `check_goi_ten_canh()` gác. Ngoại lệ: câu NB mà chính ĐỀ hỏi *"cạnh đối của góc $B$ là cạnh nào?"* thì đáp án đương nhiên phải gọi tên. Chuẩn để đối chiếu là **đáp án ngân hàng đề** (`inputs/refs/de-thi/`): `$\tan\alpha = \frac{325}{600} \implies \alpha \approx 28^\circ$`.
+> 5. **Bẫy bố cục:** ví dụ CÓ HÌNH nằm trong `minipage` nên KHÔNG cắt trang được; ví dụ dài đứng sau ví dụ ngắn sẽ bỏ trắng nửa trang. Xếp ví dụ NGẮN trước, và trong cột hẹp `0.58` thì tách "suy ra …" ra dòng riêng cho khỏi ngắt dòng xấu.
 
 > **CẤM CHỮ THỪA trong mọi thứ Thầy/HS đọc (Thầy chốt 2026-07-27: _"Luyện tập thôi chứ luyện tập vừa sức Bài I ????"_)** — áp cho cả `dang` của spec lẫn `statement`/`title`/`eyebrow`/`teacher_note`/tiêu đề phần của phiếu:
 > 1. **Cấm nhãn tự khen / tự xếp hạng**: "vừa sức", "vừa sức Tầng C", "trọn bộ", "tổng hợp", "ăn trọn 2 điểm".

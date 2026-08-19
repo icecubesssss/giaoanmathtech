@@ -251,7 +251,8 @@ def check_chuong_level(spec: ThuyetMinhSpec) -> list[str]:
 def _noi_dung_errors(spec: ThuyetMinhSpec) -> list[str]:
     """Cổng NỘI DUNG — CHẶN build (Thầy yêu cầu 'codebase NGHIÊM NGẶT' 14/08/2026).
     Không phụ thuộc chuẩn giờ nên luôn chạy được. `--force` vẫn qua để build nháp."""
-    return (check_chuong_level(spec) + check_loai_4b(spec)
+    return (check_kien_thuc_nen(spec) + check_thoiluong(spec)
+            + check_chuong_level(spec) + check_loai_4b(spec)
             + check_scaffold_rails(spec) + check_source_refs(spec))
 
 
@@ -352,3 +353,105 @@ def check_loai_4b(spec: ThuyetMinhSpec) -> list[str]:
         if lech:
             out.append(f"thuyetminh: {tag} — nhãn `loai` lệch band của dòng: {', '.join(lech)}")
     return out
+
+# ── KIẾN THỨC NỀN + THỜI LƯỢNG — hai khối chương IV/V có mà 70/75 spec khác thiếu ──
+# Thầy hỏi 19/08/2026: "sang chat mới soạn lại chương 6 thì có ra đúng output như
+# chương 4, 5 không?". Trước đó câu trả lời là KHÔNG: `kien_thuc_nen` và `thoiluong`
+# không cổng nào soi, khung `new-thuyetminh` cũng không sinh ra hai trường đó, nên
+# phiên mới chỉ đạt chuẩn nếu tình cờ đọc hết AGENTS.md. Nay cổng CHẶN.
+
+# Nền lớp dưới hay bị dùng chùa. Dò trên chính chữ của spec rồi GỢI Ý mục còn thiếu —
+# trả lời câu "bạn có tự xác định được kiến thức nền không?".
+_NEN = [
+    (r"Pythagore", r"Định lí Pythagore (Lớp 8)"),
+    (r"đồng dạng|\bg\.g\b", r"Tam giác đồng dạng — trường hợp góc-góc (Lớp 8)"),
+    (r"trung tuyến[^.]{0,40}cạnh huyền|cạnh huyền[^.]{0,40}trung tuyến",
+     r"Đường trung tuyến ứng với cạnh huyền của tam giác vuông (Lớp 8)"),
+    (r"trung trực", r"Đường trung trực của một đoạn thẳng (Lớp 7)"),
+    (r"tam giác cân", r"Tam giác cân — phân giác từ đỉnh cũng là đường cao (Lớp 8)"),
+    (r"hằng đẳng thức", r"Bảy hằng đẳng thức đáng nhớ (Lớp 8)"),
+    (r"phân tích[^.]{0,30}nhân tử", r"Phân tích đa thức thành nhân tử (Lớp 8)"),
+    (r"Thal[eè]s", r"Định lí Thalès (Lớp 8)"),
+    (r"quy đồng|mẫu thức|ĐKXĐ|điều kiện xác định",
+     r"Quy đồng mẫu thức và điều kiện xác định của phân thức (Lớp 8)"),
+    (r"tỉ số lượng giác|\\sin|\\cos|\\tan\b", r"Tỉ số lượng giác của góc nhọn (Chương IV)"),
+    (r"hệ số góc|hàm số bậc nhất", r"Hàm số bậc nhất $y = ax + b$ và đồ thị (Lớp 8)"),
+    (r"diện tích tam giác|diện tích hình chữ nhật",
+     r"Công thức diện tích tam giác, hình chữ nhật (Lớp 8)"),
+    (r"tỉ lệ thức", r"Tỉ lệ thức và dãy tỉ số bằng nhau (Lớp 7)"),
+]
+
+
+def _chu_cua_spec(spec: ThuyetMinhSpec) -> str:
+    """Gộp mọi chữ HỌC SINH/THẦY đọc trong spec, để dò xem nó DÙNG những nền nào."""
+    phan = list(spec.lythuyet) + list(spec.kienthuc_nb) + list(spec.vidu) + list(spec.dang_vd)
+    phan += [r.dang for p in spec.phieu for r in p.rows]
+    return " ".join(phan)
+
+
+def goi_y_kien_thuc_nen(spec: ThuyetMinhSpec) -> list[str]:
+    """Nền mà spec CÓ DÙNG nhưng CHƯA KHAI. Bỏ qua thứ chính là nội dung của chương
+    (dò trong `title`) — chương III nói về căn bậc hai thì căn bậc hai không phải nền."""
+    dung = _chu_cua_spec(spec)
+    da_khai = " ".join(spec.kien_thuc_nen)
+    ra = []
+    for mau, ten in _NEN:
+        if not re.search(mau, dung, re.I):
+            continue
+        if re.search(mau, spec.title, re.I):          # là nội dung chính, không phải nền
+            continue
+        khoa = re.split(r"[ —(]", ten)[0]
+        if re.search(re.escape(khoa), da_khai, re.I):
+            continue
+        ra.append(ten)
+    return ra
+
+
+def check_kien_thuc_nen(spec: ThuyetMinhSpec) -> list[str]:
+    """Spec CÓ nội dung thì bắt buộc có khối KIẾN THỨC NỀN (bản mẫu chương IV/V)."""
+    if not any(p.rows for p in spec.phieu):
+        return []                                     # khung rỗng, chưa soạn — bỏ qua
+    if not spec.kien_thuc_nen:
+        thieu = goi_y_kien_thuc_nen(spec)
+        goi_y = (" Dò trên chính chữ của spec, các nền đang dùng chùa: "
+                 + "; ".join(thieu) + ".") if thieu else ""
+        return [f"thuyetminh: THIẾU khối KIẾN THỨC NỀN (`kien_thuc_nen`) — mọi phiếu thuyết "
+                f"minh phải nêu kiến thức lớp dưới dùng lại (bản mẫu chương IV, chương V)."
+                + goi_y]
+    return []
+
+
+_BUOI = re.compile(r"^\s*(?:Buổi|Ca)\b")
+_TONG = re.compile(r"Tổng|Cộng|ĐỐI CHIẾU")
+# Chấp cả "90 phút" lẫn "90′" — chương VI viết bằng dấu phút nên bản đầu đọc ra 0.
+_PHUT = re.compile(r"(\d+)\s*(?:phút|[\u2032'])")
+# "sau kiểm tra 15′" lẫn "15′ KIỂM TRA đầu buổi" — hai chiều, bản đầu chỉ bắt một.
+_KT15 = re.compile(r"(?:kiểm\s*tra)[^.]{0,40}?\$?15|15\s*[\u2032']?[^.]{0,30}?kiểm\s*tra", re.I)
+
+
+def check_thoiluong(spec: ThuyetMinhSpec) -> list[str]:
+    """Khối THỜI LƯỢNG phải có, không giả định kiểm tra 15′, và TỔNG phải khớp phép cộng.
+
+    Bản chương V cũ ghi 90+55+75×5 (=520′) nhưng dòng tổng lại ghi 630′ — Thầy bắt
+    19/08/2026: bỏ giả định kiểm tra 15′, mọi buổi là 1 ca đủ 90 phút.
+    """
+    if not any(p.rows for p in spec.phieu):
+        return []
+    if not spec.thoiluong:
+        return ["thuyetminh: THIẾU khối THỜI LƯỢNG (`thoiluong`) — phải ghi mỗi buổi mấy ca "
+                "và dòng TỔNG đối chiếu số tiết SGK (bản mẫu chương IV, chương V)."]
+    out: list[str] = []
+    for d in spec.thoiluong:
+        if _KT15.search(d):
+            out.append(f"thuyetminh: thời lượng còn giả định KIỂM TRA 15′ đầu buổi "
+                       f"(Thầy đã bỏ 19/08/2026 — mọi buổi là 1 ca ĐỦ GIỜ, không trừ 15′): {d[:70]}…")
+    buoi = [d for d in spec.thoiluong if _BUOI.match(d)]
+    tong = [d for d in spec.thoiluong if _TONG.search(d) and not _BUOI.match(d)]
+    if buoi and tong:
+        cong = sum(int(_PHUT.search(d).group(1)) for d in buoi if _PHUT.search(d))
+        khai = _PHUT.search(tong[0])
+        if khai and cong and int(khai.group(1)) != cong:
+            out.append(f"thuyetminh: dòng TỔNG ghi {khai.group(1)}′ nhưng cộng {len(buoi)} buổi "
+                       f"chỉ ra {cong}′ — sai phép cộng, sửa cho khớp.")
+    return out
+

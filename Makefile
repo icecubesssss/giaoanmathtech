@@ -63,8 +63,11 @@ de: ## Render thuyết minh ĐỀ KIỂM TRA ra PDF:  make de SPEC=path/de-kiem-
 check-de: ## Soi điểm/giờ vô lý trong thuyết minh đề:  make check-de SPEC=path/de-kiem-tra.json
 	@$(PY) -m src.main validate-de "$(SPEC)"
 
-drive: ## Chép PDF đã build sang Google Drive:  make drive FOLDER=path/ (thêm DRY=1 để thử)
-	@$(PY) -m src.main sync-drive "$(FOLDER)" $(if $(DRY),--dry-run,)
+drive: ## Chép PDF đã build sang Google Drive:  make drive FOLDER=path/ (DRY=1 thử, FORCE=1 kệ bản cũ)
+	@$(PY) -m src.main sync-drive "$(FOLDER)" $(if $(DRY),--dry-run,) $(if $(FORCE),--force,)
+
+audit: ## SOI CẢ KHO trước khi giao: PDF lỗi thời + ví dụ sai khuôn + spec trượt cổng  [GRADE= SUBJECT=]
+	@$(PY) -m src.main audit $(if $(GRADE),--grade $(GRADE),) $(if $(SUBJECT),--subject $(SUBJECT),)
 
 coverage: ## Spike: bank đủ câu để bốc không (BPT lớp C)
 	@$(PY) scripts/spike_coverage.py

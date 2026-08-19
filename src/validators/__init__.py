@@ -13,7 +13,8 @@ from .visual_linter import wrap_long_math, scan_build_log, BuildLogReport, find_
 from .answer_gate import check_answers
 from .duration_gate import check_duration, band_counts
 from .print_gate import check_print_layout
-from .sgk_style_gate import check_sgk_style
+from .staleness_gate import check_stale, tom_tat as tom_tat_stale
+from .sgk_style_gate import check_sgk_style, check_vi_du_style, check_goi_ten_canh
 from .spec_gate import check_spec_conformance
 from .thuyetminh_gate import check_meta_wrap, check_thuyetminh
 from .de_gate import check_de
@@ -32,6 +33,10 @@ __all__ = [
     "check_duration", "band_counts",
     "check_spec_conformance",
     "check_sgk_style",
+    "check_vi_du_style",
+    "check_goi_ten_canh",
+    "check_stale",
+    "tom_tat_stale",
     "check_print_layout",
     "check_thuyetminh",
     "check_meta_wrap",

@@ -131,11 +131,11 @@ Mỗi ô tick gồm: `new-lesson → điền → validate → approve → build`
 ## Kế hoạch Lớp 8 — Hình học (Tầng B)
 
 ### Tuần 4
-- ☐ **Hình** [tuan04-tu-giac-hinh-thang](inputs/seeds/lop-8/hinh-hoc/lop-b/tuan04-tu-giac-hinh-thang) — Tứ giác & Hình thang thường.
+- ☐ **Hình** [tuan04-tu-giac-hinh-thang](inputs/seeds/lop-8/hinh-hoc/lop-b/chuong-03-tu-giac/tuan04-tu-giac-hinh-thang) — Tứ giác & Hình thang thường.
 
 ### Tuần 5
-- ☐ **Hình** [tuan05-hinh-thang-can](inputs/seeds/lop-8/hinh-hoc/lop-b/tuan05-hinh-thang-can) — Hình thang cân.
+- ☐ **Hình** [tuan05-hinh-thang-can](inputs/seeds/lop-8/hinh-hoc/lop-b/chuong-03-tu-giac/tuan05-hinh-thang-can) — Hình thang cân.
 
 ### Tuần 6
-- ☐ **Hình** [tuan06-on-tap-tu-giac-hinh-thang-can](inputs/seeds/lop-8/hinh-hoc/lop-b/tuan06-on-tap-tu-giac-hinh-thang-can) — Ôn tập tứ giác & hình thang cân.
+- ☐ **Hình** [tuan06-on-tap-tu-giac-hinh-thang-can](inputs/seeds/lop-8/hinh-hoc/lop-b/chuong-03-tu-giac/tuan06-on-tap-tu-giac-hinh-thang-can) — Ôn tập tứ giác & hình thang cân.
 

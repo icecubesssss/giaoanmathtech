@@ -143,7 +143,7 @@ def test_prune_xoa_duoc_khi_ca_cha_lan_con_deu_mo_coi(tmp_path, monkeypatch):
 
 def test_resolve_nhan_duong_dan_tuong_doi():
     """VS Code / make đều có thể đưa đường dẫn thẳng; phải ra tuyệt đối để in log không nổ."""
-    p = quick.resolve("inputs/seeds/lop-8/hinh-hoc/lop-b/tuan07-hinh-binh-hanh/phieu-a-hinh-binh-hanh.json")
+    p = quick.resolve("inputs/seeds/lop-8/hinh-hoc/lop-b/chuong-03-tu-giac/tuan07-hinh-binh-hanh/phieu-a-hinh-binh-hanh.json")
     assert p.is_absolute() and p.exists()
     p.relative_to(quick.ROOT)          # trước đây nổ ValueError ở đây
 
@@ -157,7 +157,7 @@ def test_resolve_bam_nham_file_khong_phai_json():
 def test_bam_phim_tat_tren_thuyet_minh_thi_nhan_ra_la_spec():
     """Thầy bấm ⌘⇧B khi đang mở thuyet-minh.json → phải TỰ dựng PDF thuyết minh,
     KHÔNG được đá ra bắt gõ lệnh khác (lỗi thiết kế đã sửa 2026-08-07)."""
-    p = quick.resolve("inputs/seeds/lop-8/hinh-hoc/lop-b/tuan07-hinh-binh-hanh/thuyet-minh.json")
+    p = quick.resolve("inputs/seeds/lop-8/hinh-hoc/lop-b/chuong-03-tu-giac/tuan07-hinh-binh-hanh/thuyet-minh.json")
     assert quick.loai_file(p) == "spec"
 
 

@@ -52,6 +52,8 @@ from src.validators import (
     check_duration,
     check_spec_conformance,
     check_sgk_style,
+    check_vi_du_style,
+    check_goi_ten_canh,
     check_print_layout,
     check_thuyetminh,
     check_meta_wrap,
@@ -211,8 +213,15 @@ def _week_folders(subject_dir: Path) -> list[Path]:
             continue
         if d.name.startswith("lop-"):
             for wd in d.iterdir():
-                if wd.is_dir() and "tuan" in wd.name:
+                if not wd.is_dir():
+                    continue
+                if "tuan" in wd.name:
                     folders.append(wd)
+                    continue
+                # Cây chia theo CHƯƠNG: <tầng>/chuong-NN-…/tuanNN-… (lớp 8 trở đi)
+                folders.extend(
+                    cd for cd in wd.iterdir() if cd.is_dir() and "tuan" in cd.name
+                )
         elif "tuan" in d.name:
             folders.append(d)
     return sorted(
@@ -717,6 +726,8 @@ def cmd_validate(args: argparse.Namespace) -> int:
 
     spec_warns = check_spec_conformance(lesson, args.lesson)
     spec_warns += [f"[sgk_style] {m}" for m in check_sgk_style(lesson)]
+    spec_warns += [f"[sgk_style] {m}" for m in check_vi_du_style(lesson)]
+    spec_warns += [f"[sgk_style] {m}" for m in check_goi_ten_canh(lesson)]
     print(f"  • spec_gate:        {'OK (hoặc không có spec)' if not spec_warns else f'{len(spec_warns)} lệch hợp đồng'}")
     for w in spec_warns:
         print(f"    ⚠ {w}")
@@ -792,6 +803,88 @@ def cmd_validate_all(args: argparse.Namespace) -> int:
     print(f"\n{'─'*60}")
     print(f"Tổng: {len(files)} bài | {len(files) - n_fail} qua | {n_fail} TỪ CHỐI | {n_warn} có cảnh báo")
     return 1 if n_fail else 0
+
+
+def cmd_audit(args: argparse.Namespace) -> int:
+    """SOI CẢ KHO — ba thứ mà `validate` từng phiếu KHÔNG bao giờ thấy.
+
+    Sinh ra sau ngày 19/08/2026: Thầy hỏi "sao thuyết minh chương V khác chương IV?" —
+    hoá ra PDF trên Drive là bản build cũ hơn renderer 4 ngày, và luật ví dụ mới thêm
+    hôm trước chưa hề áp cho 38 phiếu còn lại. Cả hai đều là thứ chỉ lộ khi nhìn TOÀN KHO.
+    """
+    from src.validators.staleness_gate import check_stale, tom_tat as _tom_tat
+    from src.validators import check_vi_du_style, check_goi_ten_canh
+    from src.schema.thuyetminh_spec import ThuyetMinhSpec
+    from src.validators.thuyetminh_gate import check_thuyetminh
+
+    loi = 0
+    # Bộ lọc dùng chung cho cả ba mục, để `make audit GRADE=lop-9` nhất quán.
+    def _khop(path: Path) -> bool:
+        parts = path.parts
+        return ((not args.grade or args.grade in parts)
+                and (not args.subject or args.subject in parts))
+
+    # ── 1. PDF lỗi thời ──────────────────────────────────────────────────
+    outs = [d for d in sorted(settings.OUTPUTS_DIR.rglob("*"))
+            if d.is_dir() and any(d.glob("*.pdf")) and _khop(d)]
+    stale = check_stale(outs)
+    print(f"1. BẢN IN LỖI THỜI — {_tom_tat(stale) if stale else 'không có'}")
+    if stale:
+        loi += 1
+        thu_muc = sorted({s.pdf.parent for s in stale})
+        for d in thu_muc[:12]:
+            n = sum(1 for s in stale if s.pdf.parent == d)
+            print(f"     {d.relative_to(settings.ROOT)}  ({n} PDF)")
+        if len(thu_muc) > 12:
+            print(f"     … và {len(thu_muc) - 12} thư mục nữa")
+        print("     → `make rebuild` (đổi template) hoặc `make b Q=…` (sửa lẻ một phiếu)")
+
+    # ── 2. Ví dụ chưa đúng khuôn bài giải mẫu ────────────────────────────
+    print()
+    xau = []
+    for j in _iter_lesson_files(args.grade, args.subject):
+        try:
+            les = LessonPackage.model_validate(json.loads(j.read_text(encoding="utf-8")))
+        except Exception:
+            continue
+        w = check_vi_du_style(les) + check_goi_ten_canh(les)
+        if w:
+            xau.append((j, w))
+    tong = sum(len(w) for _, w in xau)
+    print(f"2. VÍ DỤ / LỜI GIẢI SAI KHUÔN — {tong} cảnh báo ở {len(xau)} phiếu"
+          if xau else "2. VÍ DỤ / LỜI GIẢI SAI KHUÔN — không có")
+    if xau:
+        loi += 1
+        for j, w in xau[:15]:
+            print(f"     {len(w):3}  {j.relative_to(settings.ROOT)}")
+        if len(xau) > 15:
+            print(f"     … và {len(xau) - 15} phiếu nữa")
+
+    # ── 3. Phiếu thuyết minh trượt cổng ──────────────────────────────────
+    print()
+    specs = [f for f in sorted((settings.ROOT / "inputs" / "seeds").rglob("thuyet-minh*.json"))
+             if _khop(f)]
+    hong = []
+    for f in specs:
+        try:
+            spec = ThuyetMinhSpec.model_validate(json.loads(f.read_text(encoding="utf-8")))
+        except Exception as e:  # noqa: BLE001
+            hong.append((f, [f"KHÔNG LOAD ĐƯỢC: {e}"]))
+            continue
+        v, _warn = check_thuyetminh(spec)          # (lỗi CHẶN, cảnh báo) — chỉ lấy lỗi
+        v = v + _thuyetminh_escape_issues(spec)
+        if v:
+            hong.append((f, v))
+    print(f"3. PHIẾU THUYẾT MINH TRƯỢT CỔNG — {len(hong)}/{len(specs)} spec"
+          if hong else f"3. PHIẾU THUYẾT MINH — {len(specs)} spec đều sạch")
+    if hong:
+        loi += 1
+        for f, v in hong:
+            print(f"     {len(v):3}  {f.relative_to(settings.ROOT)}")
+
+    print(f"\n{'─' * 60}")
+    print("✓ Cả kho sạch." if not loi else f"✗ {loi}/3 mục cần xử lý trước khi giao Thầy.")
+    return 1 if loi else 0
 
 
 def cmd_rebuild(args: argparse.Namespace) -> int:
@@ -1193,6 +1286,12 @@ def _thuyetminh_skeleton(slug, title, grade, subject, tier, tuan) -> dict:
     } for b in bands]
     return {
         "slug": slug, "title": title, "grade": grade, "subject": subject, "tier": tier, "tuan": tuan,
+        # Hai khối này TRƯỚC 19/08/2026 không có trong khung ⇒ phiên làm việc mới không
+        # biết mà điền, 70/75 spec trong kho thiếu chúng. Nay khung sinh sẵn + cổng CHẶN.
+        "thoiluong": ["TODO: Buổi 1 (Bài …): 1 ca $=$ 90 phút (SGK n tiết)",
+                      "TODO: \\textbf{Tổng N ca $=$ … phút $\\approx$ … tiết} (SGK chương …: … tiết)"],
+        "kien_thuc_nen": ["TODO: kiến thức LỚP DƯỚI dùng lại (vd Định lí Pythagore — Lớp 8). "
+                          "Chạy `make check-tm` để cổng tự dò xem spec đang dùng chùa nền nào."],
         "lythuyet": ["TODO: lý thuyết trọng tâm."],
         "vidu": ["TODO: ví dụ GV làm mẫu."],
         "dang_vd": ["TODO: dạng VẬN DỤNG trong đề (bám GKI)."],
@@ -1233,6 +1332,21 @@ def cmd_sync_drive(args: argparse.Namespace) -> int:
 
     if not cands:
         print("✗ không tìm thấy thư mục output nào có PDF — build trước đã."); return 1
+
+    # Không được đẩy bản LỖI THỜI lên Drive: thuyết minh chương V từng nằm trên Drive
+    # 6 ngày ở bản build cũ hơn renderer, Thầy mở ra thấy bố cục khác hẳn chương IV.
+    from src.validators.staleness_gate import check_stale, tom_tat as _tom_tat_stale
+    stale = check_stale(cands)
+    if stale and not args.force:
+        print(f"✗ TỪ CHỐI đẩy Drive — {_tom_tat_stale(stale)}:")
+        for s in stale[:10]:
+            print(f"    {s}")
+        if len(stale) > 10:
+            print(f"    … và {len(stale) - 10} PDF nữa (xem `make audit`)")
+        print("  Build lại rồi đẩy; thật sự cần đẩy bản cũ thì thêm FORCE=1.")
+        return 1
+    if stale:
+        print(f"⚠ FORCE: vẫn đẩy dù {_tom_tat_stale(stale)}")
 
     root = drive_root()
     if not args.dry_run and not root.exists():
@@ -1422,9 +1536,16 @@ def main(argv: list[str] | None = None) -> int:
     ntm.add_argument("--force", action="store_true", help="Ghi đè nếu đã tồn tại")
     ntm.set_defaults(func=cmd_new_thuyetminh)
 
+    au = sub.add_parser("audit", help="Soi CẢ KHO: PDF lỗi thời + ví dụ sai khuôn + spec trượt cổng")
+    au.add_argument("--grade", default="", help="Lọc theo lớp (vd lop-9)")
+    au.add_argument("--subject", default="", help="Lọc theo môn (vd hinh-hoc)")
+    au.set_defaults(func=cmd_audit)
+
     sd = sub.add_parser("sync-drive", help="Chép PDF đã build sang Google Drive đúng cây lop/tầng/chương")
     sd.add_argument("target", nargs="?", help="File JSON phiếu/spec, hoặc folder seed; bỏ trống = MỌI thứ đã build")
     sd.add_argument("--dry-run", action="store_true", help="Chỉ in chỗ sẽ chép, không đụng Drive")
+    sd.add_argument("--force", action="store_true",
+                    help="Đẩy cả khi PDF cũ hơn seed/template (mặc định: từ chối)")
     sd.set_defaults(func=cmd_sync_drive)
 
     args = p.parse_args(argv)

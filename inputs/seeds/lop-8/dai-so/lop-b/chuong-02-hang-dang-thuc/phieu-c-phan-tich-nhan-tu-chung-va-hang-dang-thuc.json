@@ -1,0 +1,434 @@
+{
+  "slug": "phieu-c-phan-tich-nhan-tu-chung-va-hang-dang-thuc",
+  "title": "Bài 9: Phân tích đa thức thành nhân tử bằng nhân tử chung và hằng đẳng thức",
+  "eyebrow": "PHIẾU C",
+  "grade_label": "Lớp 8",
+  "class_tier": "B",
+  "so_ca": 1,
+  "stages": [
+    {
+      "number": 1,
+      "kind": "review",
+      "title": "Khám phá",
+      "blocks": [
+        {
+          "type": "opener",
+          "text": "Một tấm bìa hình chữ nhật có diện tích $6x^2 + 9x$ ($cm^2$). [[br]] Bạn Hà muốn biết hai kích thước của tấm bìa nhưng chỉ có đúng biểu thức diện tích. [[br]] Em có giúp được bạn Hà không?"
+        },
+        {
+          "type": "para",
+          "text": "Cả hai hạng tử đều chia hết cho $3x$ nên ta viết được: [[br]] $6x^2 + 9x = 3x\\cdot 2x + 3x\\cdot 3 = 3x(2x+3)$. [[br]] Vậy tấm bìa có hai kích thước là $3x$ (cm) và $2x+3$ (cm)."
+        },
+        {
+          "type": "noted",
+          "text": "Việc biến một đa thức thành TÍCH của những đa thức khác gọi là \\textbf{phân tích đa thức thành nhân tử}. [[br]] Buổi hôm nay học hai cách đầu tiên: đặt nhân tử chung và dùng hằng đẳng thức."
+        }
+      ]
+    },
+    {
+      "number": 2,
+      "kind": "concept",
+      "title": "Khái niệm",
+      "blocks": [
+        {
+          "type": "noted",
+          "text": "\\textbf{1. Đặt nhân tử chung} [[br]] Bước 1: hệ số của nhân tử chung là ƯCLN của các hệ số. [[br]] Bước 2: phần biến lấy các biến có mặt ở MỌI hạng tử, mỗi biến lấy số mũ NHỎ NHẤT. [[br]] Bước 3: chia từng hạng tử cho nhân tử chung để được thừa số trong ngoặc."
+        },
+        {
+          "type": "noted",
+          "text": "\\textbf{2. Dùng hằng đẳng thức} [[br]] Nhận ra đa thức có dạng một vế của hằng đẳng thức rồi viết sang vế kia: [[br]] $A^2 \\pm 2AB + B^2 = (A \\pm B)^2$ \\quad $A^2 - B^2 = (A-B)(A+B)$ [[br]] $A^3 \\pm B^3 = (A \\pm B)(A^2 \\mp AB + B^2)$"
+        },
+        {
+          "type": "noted",
+          "variant": "tip",
+          "text": "\\textbf{Quy tắc đổi dấu:} $y - x = -(x-y)$. [[br]] Gặp hai ngoặc ngược nhau như $(x-3)$ và $(3-x)$ thì đổi dấu một cái để lộ nhân tử chung."
+        },
+        {
+          "type": "noted",
+          "variant": "example",
+          "text": "\\textbf{Ví dụ 1.} Phân tích $12a^3 - 18a^2$ thành nhân tử. [[br]] {\\sffamily\\bfseries\\color{brand}Lời giải} [[br]] \\hspace*{1.4em}Hệ số: $\\text{ƯCLN}(12; 18) = 6$; phần biến chung là $a^2$. [[br]] \\hspace*{1.4em}$12a^3 - 18a^2 = 6a^2\\cdot 2a - 6a^2\\cdot 3$ [[br]] \\hspace*{1.4em}$= 6a^2(2a - 3)$ [[br]] Vậy $12a^3 - 18a^2 = 6a^2(2a-3)$."
+        },
+        {
+          "type": "noted",
+          "variant": "example",
+          "text": "\\textbf{Ví dụ 2.} Phân tích $x^2 - 14x + 49$ thành nhân tử. [[br]] {\\sffamily\\bfseries\\color{brand}Lời giải} [[br]] \\hspace*{1.4em}Ta có $49 = 7^2$ và $14x = 2\\cdot x\\cdot 7$ nên đa thức có dạng $A^2 - 2AB + B^2$. [[br]] \\hspace*{1.4em}$x^2 - 14x + 49 = x^2 - 2\\cdot x\\cdot 7 + 7^2$ [[br]] \\hspace*{1.4em}$= (x-7)^2$ [[br]] Vậy $x^2 - 14x + 49 = (x-7)^2$."
+        },
+        {
+          "type": "noted",
+          "variant": "example",
+          "text": "\\textbf{Ví dụ 3.} Phân tích $5x(x-3) - 2(3-x)$ thành nhân tử. [[br]] {\\sffamily\\bfseries\\color{brand}Lời giải} [[br]] \\hspace*{1.4em}Đổi dấu ngoặc thứ hai: $3 - x = -(x-3)$. [[br]] \\hspace*{1.4em}$5x(x-3) - 2(3-x) = 5x(x-3) + 2(x-3)$ [[br]] \\hspace*{1.4em}$= (x-3)(5x+2)$ [[br]] Vậy $5x(x-3) - 2(3-x) = (x-3)(5x+2)$."
+        },
+        {
+          "type": "noted",
+          "variant": "example",
+          "text": "\\textbf{Ví dụ 4.} Tính nhanh giá trị của $M = 87^2 + 26\\cdot 87 + 13^2$. [[br]] {\\sffamily\\bfseries\\color{brand}Lời giải} [[br]] \\hspace*{1.4em}Ta có $26\\cdot 87 = 2\\cdot 87\\cdot 13$ nên $M$ có dạng $A^2 + 2AB + B^2$. [[br]] \\hspace*{1.4em}$M = 87^2 + 2\\cdot 87\\cdot 13 + 13^2$ [[br]] \\hspace*{1.4em}$= (87 + 13)^2$ [[br]] \\hspace*{1.4em}$= 100^2 = 10\\,000$ [[br]] Vậy $M = 10\\,000$."
+        }
+      ]
+    },
+    {
+      "number": 3,
+      "kind": "practice1",
+      "title": "Luyện tập 1",
+      "blocks": [
+        {
+          "type": "para",
+          "text": "\\textbf{Dạng NB1: Tìm ước chung lớn nhất của các hệ số trong một đa thức}"
+        },
+        {
+          "type": "problem",
+          "label": "Bài 1.",
+          "dang_id": "NB1",
+          "level": 1,
+          "tier": "onclass",
+          "statement": "Tìm ƯCLN của các hệ số trong mỗi đa thức: [[br]] a) $6x^2 + 9x$ [[br]] b) $12a^3 - 18a^2 + 30a$ [[br]] c) $5xy - 15x$",
+          "solution": "a) $\\text{ƯCLN}(6; 9) = 3$. [[br]] b) $\\text{ƯCLN}(12; 18; 30) = 6$. [[br]] c) $\\text{ƯCLN}(5; 15) = 5$.",
+          "writelines": 0
+        },
+        {
+          "type": "para",
+          "text": "\\textbf{Dạng NB2: Tìm luỹ thừa chung của biến}"
+        },
+        {
+          "type": "problem",
+          "label": "Bài 2.",
+          "dang_id": "NB2",
+          "level": 1,
+          "tier": "onclass",
+          "statement": "Tìm phần biến chung, mỗi biến lấy số mũ nhỏ nhất: [[br]] a) $x^3$ và $x^5$ [[br]] b) $x^2y^3$ và $x^4y$ [[br]] c) $a^2b^2$, $a^3b$ và $ab^4$",
+          "solution": "a) $x^3$. [[br]] b) $x^2y$. [[br]] c) $ab$.",
+          "writelines": 0
+        },
+        {
+          "type": "para",
+          "text": "\\textbf{Dạng NB3: Quy tắc đổi dấu}"
+        },
+        {
+          "type": "problem",
+          "label": "Bài 3.",
+          "dang_id": "NB3",
+          "level": 1,
+          "tier": "onclass",
+          "statement": "Điền biểu thức thích hợp vào chỗ chấm: [[br]] a) $y - x = -(\\dots)$ [[br]] b) $5 - x = -(\\dots)$ [[br]] c) $(a-b)^2 = (\\dots)^2$",
+          "solution": "a) $x-y$. [[br]] b) $x-5$. [[br]] c) $b-a$.",
+          "writelines": 0
+        },
+        {
+          "type": "para",
+          "text": "\\textbf{Dạng NB4: Viết nhân tử chung của một đa thức hai hạng tử}"
+        },
+        {
+          "type": "problem",
+          "label": "Bài 4.",
+          "dang_id": "NB4",
+          "level": 1,
+          "tier": "onclass",
+          "statement": "Viết nhân tử chung của mỗi đa thức: [[br]] a) $6x^2 + 9x$ [[br]] b) $12a^3 - 18a^2$ [[br]] c) $5xy - 15x$",
+          "solution": "a) $3x$. [[br]] b) $6a^2$. [[br]] c) $5x$.",
+          "writelines": 0
+        },
+        {
+          "type": "para",
+          "text": "\\textbf{Dạng NB5: Chia từng hạng tử cho nhân tử chung để tìm thừa số còn lại}"
+        },
+        {
+          "type": "problem",
+          "label": "Bài 5.",
+          "dang_id": "NB5",
+          "level": 1,
+          "tier": "onclass",
+          "statement": "Điền vào chỗ chấm để hoàn thành bài giải phân tích $6x^2 + 9x$: [[br]] a) Nhân tử chung là $\\dots$ [[br]] b) $6x^2 : 3x = \\dots$ [[br]] c) $6x^2 + 9x = 3x(\\dots)$",
+          "solution": "a) $3x$. [[br]] b) $2x$. [[br]] c) $2x+3$.",
+          "writelines": 0
+        },
+        {
+          "type": "para",
+          "text": "\\textbf{Dạng NB6: Nhân tử chung là cả một biểu thức trong ngoặc}"
+        },
+        {
+          "type": "problem",
+          "label": "Bài 6.",
+          "dang_id": "NB6",
+          "level": 1,
+          "tier": "onclass",
+          "statement": "Chọn nhân tử chung đúng của mỗi đa thức: [[br]] a) $3(x+y) - a(x+y)$: \\quad A. $3$ \\quad B. $a$ \\quad C. $x+y$ \\quad D. $3-a$ [[br]] b) $x(a-b) + 2(a-b)$: \\quad A. $x$ \\quad B. $a-b$ \\quad C. $2$ \\quad D. $x+2$ [[br]] c) $5(m-n) - m(n-m)$: \\quad A. $m-n$ \\quad B. $5$ \\quad C. $m$ \\quad D. $n-m$",
+          "solution": "a) C. [[br]] b) B. [[br]] c) A, vì $n-m = -(m-n)$ nên hai ngoặc đưa được về $m-n$.",
+          "writelines": 0
+        },
+        {
+          "type": "para",
+          "text": "\\textbf{Dạng NB7: Nhận diện đa thức ba hạng tử có dạng bình phương của một tổng, một hiệu}"
+        },
+        {
+          "type": "problem",
+          "label": "Bài 7.",
+          "dang_id": "NB7",
+          "level": 1,
+          "tier": "onclass",
+          "statement": "Nối mỗi đa thức ở Cột A với dạng bình phương của nó ở Cột B: [[br]] {\\centering \\begin{tabular}{p{5.0cm} @{\\hspace{2.5cm}} p{4.8cm}} \\textbf{Cột A} & \\textbf{Cột B} \\\\[3pt] a) $x^2+6x+9$ & 1) $(2x-1)^2$ \\\\[6pt]  b) $4x^2-4x+1$ & 2) $(3a+2b)^2$ \\\\[6pt]  c) $9a^2+12ab+4b^2$ & 3) $(x+3)^2$ \\end{tabular} \\par}",
+          "solution": "a) nối 3). [[br]] b) nối 1). [[br]] c) nối 2).",
+          "writelines": 0
+        },
+        {
+          "type": "para",
+          "text": "\\textbf{Dạng NB8: Nhận diện đa thức hai hạng tử có dạng hiệu hai bình phương}"
+        },
+        {
+          "type": "problem",
+          "label": "Bài 8.",
+          "dang_id": "NB8",
+          "level": 1,
+          "tier": "onclass",
+          "statement": "Viết mỗi đa thức sau thành tích: [[br]] a) $x^2-25$ [[br]] b) $4a^2-9$ [[br]] c) $16x^2-y^2$",
+          "solution": "a) $(x-5)(x+5)$. [[br]] b) $(2a-3)(2a+3)$. [[br]] c) $(4x-y)(4x+y)$.",
+          "writelines": 0
+        },
+        {
+          "type": "para",
+          "text": "\\textbf{Dạng NB9: Nhận diện đa thức hai hạng tử có dạng tổng, hiệu hai lập phương}"
+        },
+        {
+          "type": "problem",
+          "label": "Bài 9.",
+          "dang_id": "NB9",
+          "level": 1,
+          "tier": "onclass",
+          "statement": "Viết mỗi đa thức sau thành tích: [[br]] a) $x^3+27$ [[br]] b) $8-y^3$ [[br]] c) $27a^3+b^3$",
+          "solution": "a) $(x+3)(x^2-3x+9)$. [[br]] b) $(2-y)(4+2y+y^2)$. [[br]] c) $(3a+b)(9a^2-3ab+b^2)$.",
+          "writelines": 0
+        },
+        {
+          "type": "para",
+          "text": "\\textbf{Dạng NB10: Thay giá trị của biến vào dạng tích vừa phân tích để tính nhanh}"
+        },
+        {
+          "type": "problem",
+          "label": "Bài 10.",
+          "dang_id": "NB10",
+          "level": 1,
+          "tier": "onclass",
+          "statement": "Dùng dạng tích để tính nhanh: [[br]] a) $x^2-1 = (x-1)(x+1)$; tại $x = 101$ giá trị bằng $\\dots$ [[br]] b) $x^2+2x+1 = (x+1)^2$; tại $x = 99$ giá trị bằng $\\dots$ [[br]] c) $x^2-y^2 = (x-y)(x+y)$; tại $x = 53$, $y = 47$ giá trị bằng $\\dots$",
+          "solution": "a) $100\\cdot 102 = 10\\,200$. [[br]] b) $100^2 = 10\\,000$. [[br]] c) $6\\cdot 100 = 600$.",
+          "writelines": 0
+        }
+      ]
+    },
+    {
+      "number": 4,
+      "kind": "practice2",
+      "title": "Luyện tập 2",
+      "blocks": [
+        {
+          "type": "para",
+          "text": "\\textbf{Dạng TH1: Phân tích thành nhân tử bằng cách đặt nhân tử chung, có bước đổi dấu}"
+        },
+        {
+          "type": "problem",
+          "label": "Bài 11.",
+          "dang_id": "TH1",
+          "level": 2,
+          "tier": "onclass",
+          "statement": "Phân tích các đa thức sau thành nhân tử: [[br]] a) $5x(x-3) - 2(3-x)$ [[br]] b) $a(m-n) + b(n-m)$ [[br]] c) $12x^2y - 18xy^2$",
+          "solution": "Ta có, sau khi đổi dấu để lộ nhân tử chung rồi đặt nhân tử chung: [[br]] a) $5x(x-3) + 2(x-3) = (x-3)(5x+2)$. [[br]] b) $a(m-n) - b(m-n) = (m-n)(a-b)$. [[br]] c) $12x^2y - 18xy^2 = 6xy(2x-3y)$. [[br]] Vậy ba kết quả lần lượt là $(x-3)(5x+2)$, $(m-n)(a-b)$ và $6xy(2x-3y)$.",
+          "writelines": 0
+        },
+        {
+          "type": "para",
+          "text": "\\textbf{Dạng TH2: Phân tích thành nhân tử bằng hằng đẳng thức bậc hai}"
+        },
+        {
+          "type": "problem",
+          "label": "Bài 12.",
+          "dang_id": "TH2",
+          "level": 2,
+          "tier": "onclass",
+          "statement": "Phân tích các đa thức sau thành nhân tử: [[br]] a) $x^2-14x+49$ [[br]] b) $9x^2-4y^2$ [[br]] c) $1-12x+36x^2$",
+          "solution": "Ta có $49 = 7^2$, $9x^2 = (3x)^2$, $4y^2 = (2y)^2$ và $36x^2 = (6x)^2$ nên: [[br]] a) $x^2-14x+49 = (x-7)^2$. [[br]] b) $9x^2-4y^2 = (3x-2y)(3x+2y)$. [[br]] c) $1-12x+36x^2 = (1-6x)^2$. [[br]] Vậy ba đa thức lần lượt bằng $(x-7)^2$, $(3x-2y)(3x+2y)$ và $(1-6x)^2$.",
+          "writelines": 0
+        },
+        {
+          "type": "para",
+          "text": "\\textbf{Dạng TH3: Phân tích thành nhân tử bằng hằng đẳng thức bậc ba}"
+        },
+        {
+          "type": "problem",
+          "label": "Bài 13.",
+          "dang_id": "TH3",
+          "level": 2,
+          "tier": "onclass",
+          "statement": "Phân tích các đa thức sau thành nhân tử: [[br]] a) $8z^3-27$ [[br]] b) $1-9x+27x^2-27x^3$ [[br]] c) $x^3+64y^3$",
+          "solution": "Ta có $8z^3 = (2z)^3$, $27 = 3^3$, $27x^3 = (3x)^3$ và $64y^3 = (4y)^3$ nên: [[br]] a) $8z^3-27 = (2z-3)(4z^2+6z+9)$. [[br]] b) $1-9x+27x^2-27x^3 = (1-3x)^3$. [[br]] c) $x^3+64y^3 = (x+4y)(x^2-4xy+16y^2)$. [[br]] Vậy ba đa thức lần lượt bằng $(2z-3)(4z^2+6z+9)$, $(1-3x)^3$ và $(x+4y)(x^2-4xy+16y^2)$.",
+          "writelines": 0
+        },
+        {
+          "type": "para",
+          "text": "\\textbf{Dạng VD1: Tính nhanh giá trị của biểu thức bằng cách phân tích thành nhân tử}"
+        },
+        {
+          "type": "problem",
+          "label": "Bài 14.",
+          "dang_id": "VD1",
+          "level": 3,
+          "tier": "onclass",
+          "statement": "Tính nhanh giá trị của các biểu thức sau mà không dùng máy tính: [[br]] a) $M = 87^2 + 26\\cdot 87 + 13^2$ [[br]] b) $N = \\dfrac{63^2 - 37^2}{26}$",
+          "solution": "a) Vì $26\\cdot 87 = 2\\cdot 87\\cdot 13$ nên $M = (87+13)^2 = 100^2 = 10\\,000$. [[br]] b) Áp dụng hiệu hai bình phương cho tử thức: $N = \\dfrac{(63-37)(63+37)}{26} = \\dfrac{26\\cdot 100}{26} = 100$. [[br]] Vậy $M = 10\\,000$ và $N = 100$.",
+          "writelines": 0
+        }
+      ]
+    },
+    {
+      "number": 5,
+      "kind": "reflection",
+      "title": "Tổng kết \\& BTVN",
+      "blocks": [
+        {
+          "type": "noted",
+          "text": "\\textbf{Ghi nhớ bài học:} [[br]] $\\bullet$ Đặt nhân tử chung: hệ số lấy ƯCLN, mỗi biến lấy số mũ nhỏ nhất. [[br]] $\\bullet$ Đổi dấu $y-x = -(x-y)$ để lộ nhân tử chung. [[br]] $\\bullet$ Dùng hằng đẳng thức theo chiều ngược: từ đa thức về dạng tích."
+        },
+        {
+          "type": "para",
+          "text": "\\textbf{Bài tập về nhà}"
+        },
+        {
+          "type": "problem",
+          "label": "Bài 15.",
+          "dang_id": "NB1",
+          "level": 1,
+          "tier": "btvn",
+          "statement": "Tìm ƯCLN của các hệ số: [[br]] a) $8x^3 + 20x$ [[br]] b) $15a^2 - 25a + 35$",
+          "solution": "a) $\\text{ƯCLN}(8; 20) = 4$. [[br]] b) $\\text{ƯCLN}(15; 25; 35) = 5$.",
+          "writelines": 0
+        },
+        {
+          "type": "problem",
+          "label": "Bài 16.",
+          "dang_id": "NB2",
+          "level": 1,
+          "tier": "btvn",
+          "statement": "Tìm phần biến chung: [[br]] a) $x^4$ và $x^2$ [[br]] b) $a^3b^2$ và $a^2b^5$",
+          "solution": "a) $x^2$. [[br]] b) $a^2b^2$.",
+          "writelines": 0
+        },
+        {
+          "type": "problem",
+          "label": "Bài 17.",
+          "dang_id": "NB3",
+          "level": 1,
+          "tier": "btvn",
+          "statement": "Điền vào chỗ chấm: [[br]] a) $2 - a = -(\\dots)$ [[br]] b) $-(m-n) = \\dots$",
+          "solution": "a) $a-2$. [[br]] b) $n-m$.",
+          "writelines": 0
+        },
+        {
+          "type": "problem",
+          "label": "Bài 18.",
+          "dang_id": "NB4",
+          "level": 1,
+          "tier": "btvn",
+          "statement": "Viết nhân tử chung: [[br]] a) $8x^3 + 20x$ [[br]] b) $9a^2b - 12ab^2$",
+          "solution": "a) $4x$. [[br]] b) $3ab$.",
+          "writelines": 0
+        },
+        {
+          "type": "problem",
+          "label": "Bài 19.",
+          "dang_id": "NB5",
+          "level": 1,
+          "tier": "btvn",
+          "statement": "Điền vào chỗ chấm: [[br]] a) $8x^3 + 20x = 4x(\\dots)$ [[br]] b) $9a^2b - 12ab^2 = 3ab(\\dots)$",
+          "solution": "a) $2x^2+5$. [[br]] b) $3a-4b$.",
+          "writelines": 0
+        },
+        {
+          "type": "problem",
+          "label": "Bài 20.",
+          "dang_id": "NB6",
+          "level": 1,
+          "tier": "btvn",
+          "statement": "Chọn nhân tử chung đúng: [[br]] a) $7(a+2) - b(a+2)$: \\quad A. $7$ \\quad B. $b$ \\quad C. $a+2$ \\quad D. $7-b$ [[br]] b) $x(y-1) + 3(1-y)$: \\quad A. $x$ \\quad B. $y-1$ \\quad C. $3$ \\quad D. $1-y$",
+          "solution": "a) C. [[br]] b) B, vì $1-y = -(y-1)$.",
+          "writelines": 0
+        },
+        {
+          "type": "problem",
+          "label": "Bài 21.",
+          "dang_id": "NB7",
+          "level": 1,
+          "tier": "btvn",
+          "statement": "Viết thành bình phương: [[br]] a) $x^2+10x+25$ [[br]] b) $16a^2-8ab+b^2$",
+          "solution": "a) $(x+5)^2$. [[br]] b) $(4a-b)^2$.",
+          "writelines": 0
+        },
+        {
+          "type": "problem",
+          "label": "Bài 22.",
+          "dang_id": "NB8",
+          "level": 1,
+          "tier": "btvn",
+          "statement": "Viết thành tích: [[br]] a) $x^2-100$ [[br]] b) $25a^2-16b^2$",
+          "solution": "a) $(x-10)(x+10)$. [[br]] b) $(5a-4b)(5a+4b)$.",
+          "writelines": 0
+        },
+        {
+          "type": "problem",
+          "label": "Bài 23.",
+          "dang_id": "NB9",
+          "level": 1,
+          "tier": "btvn",
+          "statement": "Viết thành tích: [[br]] a) $x^3-8$ [[br]] b) $125+y^3$",
+          "solution": "a) $(x-2)(x^2+2x+4)$. [[br]] b) $(5+y)(25-5y+y^2)$.",
+          "writelines": 0
+        },
+        {
+          "type": "problem",
+          "label": "Bài 24.",
+          "dang_id": "NB10",
+          "level": 1,
+          "tier": "btvn",
+          "statement": "Dùng dạng tích để tính nhanh: [[br]] a) $x^2-4$ tại $x = 102$ [[br]] b) $x^2-6x+9$ tại $x = 103$",
+          "solution": "a) $(102-2)(102+2) = 100\\cdot 104 = 10\\,400$. [[br]] b) $(103-3)^2 = 100^2 = 10\\,000$.",
+          "writelines": 0
+        },
+        {
+          "type": "problem",
+          "label": "Bài 25.",
+          "dang_id": "TH1",
+          "level": 2,
+          "tier": "btvn",
+          "statement": "Phân tích thành nhân tử: [[br]] a) $3a(b-2) + 5(2-b)$ [[br]] b) $x(x-y) - y(y-x)$ [[br]] c) $10x^3y^2 - 15x^2y^3$",
+          "solution": "Ta có, sau khi đổi dấu để lộ nhân tử chung rồi đặt nhân tử chung: [[br]] a) $3a(b-2) - 5(b-2) = (b-2)(3a-5)$. [[br]] b) $x(x-y) + y(x-y) = (x-y)(x+y)$. [[br]] c) $10x^3y^2 - 15x^2y^3 = 5x^2y^2(2x-3y)$. [[br]] Vậy ba kết quả lần lượt là $(b-2)(3a-5)$, $(x-y)(x+y)$ và $5x^2y^2(2x-3y)$.",
+          "writelines": 0
+        },
+        {
+          "type": "problem",
+          "label": "Bài 26.",
+          "dang_id": "TH2",
+          "level": 2,
+          "tier": "btvn",
+          "statement": "Phân tích thành nhân tử: [[br]] a) $4x^2+20x+25$ [[br]] b) $49-a^2b^2$ [[br]] c) $x^2-2xy+y^2$",
+          "solution": "Ta có $4x^2 = (2x)^2$, $25 = 5^2$, $49 = 7^2$ và $a^2b^2 = (ab)^2$ nên: [[br]] a) $(2x+5)^2$. [[br]] b) $(7-ab)(7+ab)$. [[br]] c) $(x-y)^2$. [[br]] Vậy ba đa thức lần lượt bằng $(2x+5)^2$, $(7-ab)(7+ab)$ và $(x-y)^2$.",
+          "writelines": 0
+        },
+        {
+          "type": "problem",
+          "label": "Bài 27.",
+          "dang_id": "TH3",
+          "level": 2,
+          "tier": "btvn",
+          "statement": "Phân tích thành nhân tử: [[br]] a) $27x^3-1$ [[br]] b) $x^3+9x^2+27x+27$",
+          "solution": "Ta có $27x^3 = (3x)^3$ và $27 = 3^3$ nên: [[br]] a) $27x^3-1 = (3x-1)(9x^2+3x+1)$. [[br]] b) $x^3+9x^2+27x+27 = (x+3)^3$. [[br]] Vậy hai đa thức lần lượt bằng $(3x-1)(9x^2+3x+1)$ và $(x+3)^3$.",
+          "writelines": 0
+        },
+        {
+          "type": "problem",
+          "label": "Bài 28.",
+          "dang_id": "VD1",
+          "level": 3,
+          "tier": "btvn",
+          "statement": "Tính nhanh giá trị của $P = 54^2 + 92\\cdot 54 + 46^2$ mà không dùng máy tính.",
+          "solution": "Vì $92\\cdot 54 = 2\\cdot 54\\cdot 46$ nên $P$ có dạng $A^2+2AB+B^2$, suy ra $P = (54+46)^2 = 100^2 = 10\\,000$. [[br]] Vậy $P = 10\\,000$.",
+          "writelines": 0
+        }
+      ]
+    }
+  ]
+}

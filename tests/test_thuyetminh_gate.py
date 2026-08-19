@@ -12,7 +12,9 @@ def _spec(rows, grade="lop-9", subject="dai-so", tier="C", auto=True):
     `auto=True` tự làm cho spec ĐẠT các cổng NỘI DUNG (cấp chương, khai `loai`, trỏ
     nguồn, đủ hai giàn giáo) để test giờ không bị lẫn lỗi nội dung. Hai dòng giàn giáo
     thêm vào đều 0 câu nên KHÔNG đụng vào phép tính phút của test.
-    `auto=False` giữ nguyên rows — dùng cho chính các test soi cổng nội dung."""
+    `auto=False` giữ nguyên rows — dùng cho chính các test soi cổng nội dung.
+    Từ 19/08/2026 spec ĐẠT còn phải có `kien_thuc_nen` + `thoiluong` (hai khối chương
+    IV/V có mà 70/75 spec trong kho thiếu), nên fixture khai luôn ở dưới."""
     if auto:
         fixed = []
         for r in rows:
@@ -29,6 +31,8 @@ def _spec(rows, grade="lop-9", subject="dai-so", tier="C", auto=True):
     return ThuyetMinhSpec(
         slug="tm-test-chuong-01", title="Test chương 1", grade=grade, subject=subject,
         tier=tier, tuan="x", phieu=[SpecPhieu(code="A", title="P", rows=rows)],
+        kien_thuc_nen=["Định lí Pythagore (Lớp 8)"],
+        thoiluong=["Buổi 1: 1 ca $=$ 90 phút", "Tổng 1 ca $=$ 90 phút"],
     )
 
 
