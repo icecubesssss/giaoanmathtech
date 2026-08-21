@@ -1,0 +1,629 @@
+{
+  "slug": "phieu-a-phuong-trinh-bac-hai-mot-an",
+  "title": "Bài 19. Phương trình bậc hai một ẩn",
+  "eyebrow": "ĐẠI SỐ — CHƯƠNG VI · PHIẾU A",
+  "grade_label": "Lớp 9 • Ôn vào 10",
+  "class_tier": "C",
+  "so_ca": 1,
+  "stages": [
+    {
+      "kind": "review",
+      "number": 1,
+      "title": "Khám phá",
+      "blocks": [
+        {
+          "type": "opener",
+          "tikz": "\\begin{tikzpicture}[line width=0.8pt, font=\\small]\n  \\draw[ink] (0,0) rectangle (3.6,2.0);\n  \\node[below] at (1.8,0) {$x+11$ (m)};\n  \\node[left] at (0,1.0) {$x$ (m)};\n  \\node at (1.8,1.0) {$180$ m$^2$};\n\\end{tikzpicture}",
+          "text": "Nhà bạn Minh vừa mua một mảnh đất hình chữ nhật để xây quán trà sữa. Mảnh đất có \\textbf{chiều rộng ngắn hơn chiều dài 11 m} và \\textbf{diện tích 180 m}$^2$. Minh muốn biết hai kích thước của mảnh đất.[[br]]Gọi chiều rộng là $x$ (m, $x>0$) thì chiều dài là $x+11$ (m), nên[[br]]\\quad $x(x+11)=180$, tức là $x^2+11x-180=0$.[[br]]Bấm máy thử vài số: $x=8$ cho $152$; $x=9$ cho $180$ — vừa khít! Nhưng nếu diện tích là $200$ m$^2$ thì thử tới bao giờ mới ra?"
+        },
+        {
+          "type": "para",
+          "text": "\\textbf{Nhắc lại hai kĩ năng Lớp 8 dùng suốt buổi hôm nay.}"
+        },
+        {
+          "type": "noted",
+          "text": "\\textbf{(1) Khai triển để thu gọn.}[[br]]\\quad $(x-3)(x+2)=x^2+2x-3x-6=x^2-x-6$;[[br]]\\quad $(x+5)^2=x^2+2\\cdot x\\cdot 5+5^2=x^2+10x+25$.[[br]]\\textbf{(2) Đặt nhân tử chung để đưa về tích.}[[br]]\\quad $2x(x+6)-5(x+6)=(x+6)(2x-5)$;[[br]]\\quad $x^2-25=x^2-5^2=(x-5)(x+5)$.[[br]]Tích bằng $0$ thì một trong hai thừa số bằng $0$ — đó là cách giải phương trình nhanh nhất khi đề cho sẵn dạng tích.",
+          "variant": "note"
+        }
+      ],
+      "teacher_note": "Mở màn 8 phút. Cho HS bấm máy thử $x=8$, $x=9$, $x=10$ để thấy \\emph{mò nghiệm} chỉ ăn may; chốt: cần một công thức giải cho mọi phương trình có $x^2$. Phần nhắc Lớp 8 làm nhanh trên bảng, HS đọc theo."
+    },
+    {
+      "kind": "concept",
+      "number": 2,
+      "title": "Kiến thức cần nhớ",
+      "blocks": [
+        {
+          "type": "para",
+          "text": "\\textbf{1. Phương trình bậc hai một ẩn}"
+        },
+        {
+          "type": "para",
+          "text": "Phương trình bậc hai một ẩn là phương trình có dạng $ax^2+bx+c=0$, trong đó $x$ là ẩn; $a$, $b$, $c$ là các số đã cho và $a \\ne 0$.[[br]]$a$ là hệ số của $x^2$, $b$ là hệ số của $x$, $c$ là hệ số tự do.[[br]]Trước khi đọc hệ số, phải \\textbf{chuyển hết sang một vế và thu gọn} về đúng dạng trên."
+        },
+        {
+          "type": "para",
+          "text": "\\textbf{2. Hai dạng khuyết giải được ngay, không cần công thức}"
+        },
+        {
+          "type": "para",
+          "text": "$\\bullet$\\; Khuyết $c$: $ax^2+bx=0 \\Leftrightarrow x(ax+b)=0 \\Leftrightarrow x=0$ hoặc $x=-\\dfrac{b}{a}$.[[br]]$\\bullet$\\; Khuyết $b$: $ax^2+c=0 \\Leftrightarrow x^2=-\\dfrac{c}{a}$. Vế phải dương thì có hai nghiệm đối nhau; vế phải âm thì phương trình vô nghiệm."
+        },
+        {
+          "type": "para",
+          "text": "\\textbf{3. Công thức nghiệm}"
+        },
+        {
+          "type": "para",
+          "text": "Xét $ax^2+bx+c=0$ ($a \\ne 0$), đặt $\\Delta=b^2-4ac$.[[br]]$\\bullet$\\; $\\Delta>0$: hai nghiệm phân biệt $x_1=\\dfrac{-b+\\sqrt{\\Delta}}{2a}$; $x_2=\\dfrac{-b-\\sqrt{\\Delta}}{2a}$.[[br]]$\\bullet$\\; $\\Delta=0$: nghiệm kép $x_1=x_2=-\\dfrac{b}{2a}$.[[br]]$\\bullet$\\; $\\Delta<0$: phương trình vô nghiệm."
+        },
+        {
+          "type": "para",
+          "text": "\\textbf{4. Công thức nghiệm thu gọn (chỉ dùng khi $b$ chẵn)}"
+        },
+        {
+          "type": "para",
+          "text": "Nếu $b=2b'$ thì đặt $\\Delta'=b'^2-ac$.[[br]]$\\Delta'>0$: $x_1=\\dfrac{-b'+\\sqrt{\\Delta'}}{a}$; $x_2=\\dfrac{-b'-\\sqrt{\\Delta'}}{a}$ — mẫu là $a$, \\textbf{không phải} $2a$.[[br]]$\\Delta'=0$: nghiệm kép $x_1=x_2=-\\dfrac{b'}{a}$. $\\Delta'<0$: vô nghiệm."
+        },
+        {
+          "type": "noted",
+          "text": "\\textbf{Ví dụ 1.} Mỗi phương trình sau có là phương trình bậc hai một ẩn không? Nếu có, chỉ ra $a$, $b$, $c$: a) $2x^2-4x+1=0$; b) $5x-7=0$.[[br]]{\\sffamily\\bfseries\\color{brand}Lời giải}[[br]]\\hspace*{1.4em}a) $2x^2-4x+1=0$ có $a=2 \\ne 0$ nên là phương trình bậc hai một ẩn,[[br]]\\hspace*{1.4em}với $a=2$; $b=-4$; $c=1$.[[br]]\\hspace*{1.4em}b) $5x-7=0$ không chứa $x^2$ nên không là phương trình bậc hai một ẩn.[[br]]\\hspace*{1.4em}Vậy chỉ câu a) là phương trình bậc hai một ẩn, với $a=2$; $b=-4$; $c=1$.",
+          "variant": "example"
+        },
+        {
+          "type": "noted",
+          "text": "\\textbf{Ví dụ 2.} Giải phương trình $2x^2+5x=0$.[[br]]{\\sffamily\\bfseries\\color{brand}Lời giải}[[br]]\\hspace*{1.4em}$2x^2+5x=0$[[br]]\\hspace*{1.4em}$x(2x+5)=0$[[br]]\\hspace*{1.4em}$x=0$ hoặc $2x+5=0$, tức là $x=0$ hoặc $x=-\\dfrac{5}{2}$.[[br]]\\hspace*{1.4em}Vậy phương trình có hai nghiệm $x_1=0$ và $x_2=-\\dfrac{5}{2}$.",
+          "variant": "example"
+        },
+        {
+          "type": "noted",
+          "text": "\\textbf{Ví dụ 3.} Giải phương trình $3x^2-12=0$.[[br]]{\\sffamily\\bfseries\\color{brand}Lời giải}[[br]]\\hspace*{1.4em}$3x^2-12=0$[[br]]\\hspace*{1.4em}$3x^2=12$[[br]]\\hspace*{1.4em}$x^2=4$, suy ra $x=2$ hoặc $x=-2$.[[br]]\\hspace*{1.4em}Vậy phương trình có hai nghiệm $x_1=2$ và $x_2=-2$.",
+          "variant": "example"
+        },
+        {
+          "type": "noted",
+          "text": "\\textbf{Ví dụ 4.} Tính $\\Delta$ rồi cho biết số nghiệm của phương trình $x^2-8x-5=0$ (trích đề thi thử Vào 10, cụm THCS công lập Hà Nội).[[br]]{\\sffamily\\bfseries\\color{brand}Lời giải}[[br]]\\hspace*{1.4em}Phương trình có $a=1$; $b=-8$; $c=-5$.[[br]]\\hspace*{1.4em}$\\Delta=(-8)^2-4\\cdot 1\\cdot(-5)=64+20=84$.[[br]]\\hspace*{1.4em}Vì $\\Delta=84>0$ nên phương trình có hai nghiệm phân biệt.[[br]]\\hspace*{1.4em}Vậy $\\Delta=84$ và phương trình có hai nghiệm phân biệt.",
+          "variant": "example"
+        },
+        {
+          "type": "noted",
+          "text": "\\textbf{Ví dụ 5.} Giải phương trình $x^2-5x+6=0$.[[br]]{\\sffamily\\bfseries\\color{brand}Lời giải}[[br]]\\hspace*{1.4em}Phương trình có $a=1$; $b=-5$; $c=6$.[[br]]\\hspace*{1.4em}$\\Delta=(-5)^2-4\\cdot 1\\cdot 6=25-24=1>0$.[[br]]\\hspace*{1.4em}Phương trình có hai nghiệm phân biệt:[[br]]\\hspace*{1.4em}$x_1=\\dfrac{5+\\sqrt{1}}{2\\cdot 1}=\\dfrac{5+1}{2}=3$;\\quad $x_2=\\dfrac{5-\\sqrt{1}}{2\\cdot 1}=\\dfrac{5-1}{2}=2$.[[br]]\\hspace*{1.4em}Vậy phương trình có hai nghiệm $x_1=3$ và $x_2=2$.",
+          "variant": "example"
+        },
+        {
+          "type": "noted",
+          "text": "\\textbf{Ví dụ 6.} Giải phương trình $x^2-3x-5=0$ (trích bộ đề Vào 10, Phòng GD\\&ĐT Đống Đa).[[br]]{\\sffamily\\bfseries\\color{brand}Lời giải}[[br]]\\hspace*{1.4em}Phương trình có $a=1$; $b=-3$; $c=-5$.[[br]]\\hspace*{1.4em}$\\Delta=(-3)^2-4\\cdot 1\\cdot(-5)=9+20=29>0$.[[br]]\\hspace*{1.4em}Phương trình có hai nghiệm phân biệt:[[br]]\\hspace*{1.4em}$x_1=\\dfrac{3+\\sqrt{29}}{2}$;\\quad $x_2=\\dfrac{3-\\sqrt{29}}{2}$.[[br]]\\hspace*{1.4em}Vậy phương trình có hai nghiệm $x_1=\\dfrac{3+\\sqrt{29}}{2}$ và $x_2=\\dfrac{3-\\sqrt{29}}{2}$.",
+          "variant": "example"
+        },
+        {
+          "type": "noted",
+          "text": "\\textbf{Ví dụ 7.} Giải phương trình $(x+2)^2=3x+10$.[[br]]{\\sffamily\\bfseries\\color{brand}Lời giải}[[br]]\\hspace*{1.4em}$(x+2)^2=3x+10$[[br]]\\hspace*{1.4em}$x^2+4x+4=3x+10$[[br]]\\hspace*{1.4em}$x^2+x-6=0$[[br]]\\hspace*{1.4em}$\\Delta=1^2-4\\cdot 1\\cdot(-6)=1+24=25>0$, suy ra $\\sqrt{\\Delta}=5$.[[br]]\\hspace*{1.4em}$x_1=\\dfrac{-1+5}{2}=2$;\\quad $x_2=\\dfrac{-1-5}{2}=-3$.[[br]]\\hspace*{1.4em}Vậy phương trình có hai nghiệm $x_1=2$ và $x_2=-3$.",
+          "variant": "example"
+        },
+        {
+          "type": "noted",
+          "text": "\\textbf{Ví dụ 8.} Dùng công thức nghiệm thu gọn để giải phương trình $x^2-4x-12=0$.[[br]]{\\sffamily\\bfseries\\color{brand}Lời giải}[[br]]\\hspace*{1.4em}Phương trình có $a=1$; $b=-4$ nên $b'=-2$; $c=-12$.[[br]]\\hspace*{1.4em}$\\Delta'=(-2)^2-1\\cdot(-12)=4+12=16>0$, suy ra $\\sqrt{\\Delta'}=4$.[[br]]\\hspace*{1.4em}$x_1=\\dfrac{2+4}{1}=6$;\\quad $x_2=\\dfrac{2-4}{1}=-2$.[[br]]\\hspace*{1.4em}Vậy phương trình có hai nghiệm $x_1=6$ và $x_2=-2$.",
+          "variant": "example"
+        },
+        {
+          "type": "noted",
+          "text": "\\textbf{Ví dụ 9.} Giải các phương trình sau: a) $(x-3)(2x+8)=0$; b) $3x^2-12x=0$.[[br]]{\\sffamily\\bfseries\\color{brand}Lời giải}[[br]]\\hspace*{1.4em}a) $(x-3)(2x+8)=0$ khi $x-3=0$ hoặc $2x+8=0$,[[br]]\\hspace*{1.4em}suy ra $x=3$ hoặc $x=-4$.[[br]]\\hspace*{1.4em}b) $3x^2-12x=0$[[br]]\\hspace*{1.4em}$3x(x-4)=0$, suy ra $x=0$ hoặc $x=4$.[[br]]\\hspace*{1.4em}Vậy câu a) có hai nghiệm $x_1=3$; $x_2=-4$ và câu b) có hai nghiệm $x_1=0$; $x_2=4$.",
+          "variant": "example"
+        },
+        {
+          "type": "noted",
+          "text": "\\textbf{Ví dụ 10.} Hằng ngày bạn Nam đi học trên quãng đường $12$ km bằng xe máy điện. Gọi vận tốc thường ngày là $x$ (km/h, $x>0$), từ dữ kiện của đề lập được phương trình $x^2+6x-1080=0$. Giải phương trình rồi cho biết vận tốc khi Nam tăng tốc thêm $6$ km/h, và với vận tốc đó Nam có vượt giới hạn $40$ km/h không? (trích đề thi thử Vào 10, THCS Tự Lập).[[br]]{\\sffamily\\bfseries\\color{brand}Lời giải}[[br]]\\hspace*{1.4em}Phương trình có $a=1$; $b=6$ nên $b'=3$; $c=-1080$.[[br]]\\hspace*{1.4em}$\\Delta'=3^2-1\\cdot(-1080)=9+1080=1089>0$, suy ra $\\sqrt{\\Delta'}=33$.[[br]]\\hspace*{1.4em}$x_1=\\dfrac{-3+33}{1}=30$;\\quad $x_2=\\dfrac{-3-33}{1}=-36$.[[br]]\\hspace*{1.4em}Vì $x>0$ nên loại $x_2=-36$, nhận $x=30$.[[br]]\\hspace*{1.4em}Vận tốc khi tăng tốc là $30+6=36$ (km/h), mà $36<40$ nên Nam không vượt giới hạn.[[br]]\\hspace*{1.4em}Vậy vận tốc khi tăng tốc là $36$ km/h và Nam không vi phạm giới hạn tốc độ.",
+          "variant": "example"
+        },
+        {
+          "type": "noted",
+          "text": "\\textbf{Ba lỗi mất điểm oan của buổi này.}[[br]]$\\bullet$\\; Chưa thu gọn về $ax^2+bx+c=0$ đã tính $\\Delta$.[[br]]$\\bullet$\\; Sai dấu khi $c$ âm: với $c=-6$ thì $-4ac=+24$, hay bị viết thành $-24$.[[br]]$\\bullet$\\; Dùng $\\Delta'$ khi $b$ lẻ, hoặc dùng đúng $\\Delta'$ nhưng vẫn chia $2a$ thay vì chia $a$.",
+          "variant": "trap"
+        },
+        {
+          "type": "noted",
+          "text": "Trong đề Vào 10 của Sở Hà Nội, \\textbf{Câu III.3} luôn mở đầu bằng \\emph{\\textquotedblleft Biết phương trình bậc hai \\dots{} có hai nghiệm $x_1$, $x_2$\\textquotedblright}.[[br]]Muốn ăn được câu $0{,}5$ điểm đó thì trước hết phải giải và kiểm nghiệm được phương trình bậc hai như hôm nay.[[br]]\\textbf{Câu III.1} ($1{,}0$ điểm) cũng kết thúc bằng đúng một phương trình bậc hai.",
+          "variant": "target"
+        }
+      ],
+      "teacher_note": "Giảng 45 phút. Thứ tự: định nghĩa $\\to$ hai dạng khuyết (Ví dụ 2, 3) $\\to$ công thức nghiệm (Ví dụ 4, 5, 6) $\\to$ thu gọn (Ví dụ 8). Ví dụ 6 cố ý cho nghiệm chứa căn để HS quen \\textbf{không bấm máy làm tròn}. Ví dụ 10 làm cuối, chỉ nói \\emph{giải phương trình rồi loại nghiệm} — khâu lập phương trình để dành buổi 5."
+    },
+    {
+      "kind": "practice1",
+      "number": 3,
+      "title": "Luyện tập 1 — Nhận biết",
+      "blocks": [
+        {
+          "type": "problem",
+          "label": "Bài 1.",
+          "statement": "Mỗi phương trình sau có là phương trình bậc hai một ẩn không? Nếu có, điền $a$, $b$, $c$ vào chỗ chấm.[[br]]a) [NB] $x^2+x-6=0$: $a=\\ldots\\ldots$; $b=\\ldots\\ldots$; $c=\\ldots\\ldots$[[br]]b) [NB] $2x^2-4x+1=0$: $a=\\ldots\\ldots$; $b=\\ldots\\ldots$; $c=\\ldots\\ldots$[[br]]c) [NB] $5x-7=0$: \\ldots\\ldots\\ldots\\ldots",
+          "tier": "onclass",
+          "level": 1,
+          "solution": "a) $a=1$; $b=1$; $c=-6$.[[br]]b) $a=2$; $b=-4$; $c=1$.[[br]]c) Không là phương trình bậc hai một ẩn vì không có số hạng chứa $x^2$.",
+          "dang_id": "NB1",
+          "writelines": 0
+        },
+        {
+          "type": "problem",
+          "label": "Bài 2.",
+          "statement": "Chuyển vế, thu gọn để đưa về dạng $ax^2+bx+c=0$ rồi chỉ ra $a$, $b$, $c$.[[br]]a) [NB] $x^2-1=5(x+1)$ \\;(Giữa kì I, THCS Nguyễn Du)[[br]]b) [NB] $2x^2-(x+1)=x-3$ \\;(Cuối kì II, Hà Nội)[[br]]c) [NB] $x(x+10)=3000$ \\;(đề minh họa Vào 10, Sở GD\\&ĐT Hà Nội)",
+          "tier": "onclass",
+          "level": 1,
+          "solution": "a) $x^2-1=5x+5 \\Rightarrow x^2-5x-6=0$; $a=1$; $b=-5$; $c=-6$.[[br]]b) $2x^2-x-1=x-3 \\Rightarrow 2x^2-2x+2=0$; $a=2$; $b=-2$; $c=2$.[[br]]c) $x^2+10x=3000 \\Rightarrow x^2+10x-3000=0$; $a=1$; $b=10$; $c=-3000$.",
+          "dang_id": "NB2",
+          "writelines": 0
+        },
+        {
+          "type": "problem",
+          "label": "Bài 3.",
+          "statement": "Điền vào chỗ chấm để khai triển và thu gọn (kĩ năng Lớp 8).[[br]]a) [NB] $(x-3)(x+2)=x^2\\ldots\\ldots x\\ldots\\ldots$[[br]]b) [NB] $(x+5)^2=x^2+\\ldots\\ldots x+\\ldots\\ldots$[[br]]c) [NB] $2x(x+6)-5(x+6)=\\ldots\\ldots x^2+\\ldots\\ldots x\\ldots\\ldots$",
+          "tier": "onclass",
+          "level": 1,
+          "solution": "a) $(x-3)(x+2)=x^2-x-6$.[[br]]b) $(x+5)^2=x^2+10x+25$.[[br]]c) $2x^2+12x-5x-30=2x^2+7x-30$.",
+          "dang_id": "NB3",
+          "writelines": 0
+        },
+        {
+          "type": "problem",
+          "label": "Bài 4.",
+          "statement": "Đưa về phương trình tích rồi giải.[[br]]a) [NB] $2x(x+6)-5(x+6)=0$ \\;(Cuối kì I, THCS Lý Thánh Tông)[[br]]b) [NB] $x(x-2)-3x+6=0$ \\;(Giữa kì I, THCS Vân Yên)[[br]]c) [NB] $(2x+1)(5-x)=0$ \\;(Giữa kì I, THCS Bát Tràng)",
+          "tier": "onclass",
+          "level": 1,
+          "solution": "a) $(x+6)(2x-5)=0 \\Rightarrow x=-6$ hoặc $x=\\dfrac{5}{2}$.[[br]]b) $x(x-2)-3(x-2)=0 \\Rightarrow (x-2)(x-3)=0 \\Rightarrow x=2$ hoặc $x=3$.[[br]]c) $2x+1=0$ hoặc $5-x=0 \\Rightarrow x=-\\dfrac{1}{2}$ hoặc $x=5$.",
+          "dang_id": "NB4",
+          "writelines": 0
+        },
+        {
+          "type": "problem",
+          "label": "Bài 5.",
+          "statement": "Giải các phương trình khuyết $c$ sau.[[br]]a) [NB] $2x^2+5x=0$[[br]]b) [NB] $x^2-7x=0$[[br]]c) [NB] $3x^2-12x=0$",
+          "tier": "onclass",
+          "level": 1,
+          "solution": "a) $x(2x+5)=0 \\Rightarrow x=0$ hoặc $x=-\\dfrac{5}{2}$.[[br]]b) $x(x-7)=0 \\Rightarrow x=0$ hoặc $x=7$.[[br]]c) $3x(x-4)=0 \\Rightarrow x=0$ hoặc $x=4$.",
+          "dang_id": "NB5",
+          "writelines": 0,
+          "check": {
+            "kind": "solveset",
+            "equation": "3*x**2 - 12*x = 0",
+            "answer": [
+              0,
+              4
+            ],
+            "symbol": "x"
+          }
+        },
+        {
+          "type": "problem",
+          "label": "Bài 6.",
+          "statement": "Giải các phương trình khuyết $b$ sau; câu nào vô nghiệm thì nói rõ vì sao.[[br]]a) [NB] $3x^2-12=0$[[br]]b) [NB] $x^2-25=0$[[br]]c) [NB] $2x^2+8=0$",
+          "tier": "onclass",
+          "level": 1,
+          "solution": "a) $x^2=4 \\Rightarrow x=2$ hoặc $x=-2$.[[br]]b) $x^2=25 \\Rightarrow x=5$ hoặc $x=-5$.[[br]]c) $2x^2=-8 \\Rightarrow x^2=-4$. Vì $x^2 \\ge 0$ với mọi $x$ nên phương trình vô nghiệm.",
+          "dang_id": "NB6",
+          "writelines": 0,
+          "check": {
+            "kind": "solveset",
+            "equation": "x**2 - 25 = 0",
+            "answer": [
+              5,
+              -5
+            ],
+            "symbol": "x"
+          }
+        },
+        {
+          "type": "problem",
+          "label": "Bài 7.",
+          "statement": "Tính $\\Delta=b^2-4ac$ cho mỗi phương trình (chú ý dấu khi $b$ hoặc $c$ âm).[[br]]a) [NB] $x^2-3x-5=0$: $\\Delta=(-3)^2-4\\cdot 1\\cdot(\\ldots\\ldots)=\\ldots\\ldots$[[br]]b) [NB] $x^2-8x-5=0$: $\\Delta=\\ldots\\ldots$[[br]]c) [NB] $x^2-3x-1=0$: $\\Delta=\\ldots\\ldots$",
+          "tier": "onclass",
+          "level": 1,
+          "solution": "a) $\\Delta=9-4\\cdot 1\\cdot(-5)=9+20=29$.[[br]]b) $\\Delta=(-8)^2-4\\cdot 1\\cdot(-5)=64+20=84$.[[br]]c) $\\Delta=(-3)^2-4\\cdot 1\\cdot(-1)=9+4=13$.",
+          "dang_id": "NB7",
+          "writelines": 0
+        },
+        {
+          "type": "problem",
+          "label": "Bài 8.",
+          "statement": "Khoanh vào kết luận đúng về số nghiệm của phương trình.[[br]]a) [NB] $x^2-3x-5=0$ có $\\Delta=29$.\\quad\\textbf{A.} Hai nghiệm phân biệt \\quad\\textbf{B.} Nghiệm kép \\quad\\textbf{C.} Vô nghiệm[[br]]b) [NB] $x^2-6x+9=0$ có $\\Delta=0$.\\quad\\textbf{A.} Hai nghiệm phân biệt \\quad\\textbf{B.} Nghiệm kép \\quad\\textbf{C.} Vô nghiệm[[br]]c) [NB] $x^2-x+1=0$ có $\\Delta=-3$.\\quad\\textbf{A.} Hai nghiệm phân biệt \\quad\\textbf{B.} Nghiệm kép \\quad\\textbf{C.} Vô nghiệm",
+          "tier": "onclass",
+          "level": 1,
+          "solution": "a) A ($\\Delta>0$).[[br]]b) B ($\\Delta=0$, nghiệm kép $x_1=x_2=3$).[[br]]c) C ($\\Delta<0$).",
+          "dang_id": "NB8",
+          "writelines": 0
+        },
+        {
+          "type": "problem",
+          "label": "Bài 9.",
+          "statement": "Mỗi phương trình sau có $b$ chẵn. Viết $b'=\\dfrac{b}{2}$ rồi tính $\\Delta'=b'^2-ac$.[[br]]a) [NB] $2x^2-4x+1=0$: $b'=\\ldots\\ldots$; $\\Delta'=\\ldots\\ldots$[[br]]b) [NB] $x^2+10x+4=0$: $b'=\\ldots\\ldots$; $\\Delta'=\\ldots\\ldots$[[br]]c) [NB] $x^2-6x-14=0$: $b'=\\ldots\\ldots$; $\\Delta'=\\ldots\\ldots$",
+          "tier": "onclass",
+          "level": 1,
+          "solution": "a) $b'=-2$; $\\Delta'=(-2)^2-2\\cdot 1=4-2=2$.[[br]]b) $b'=5$; $\\Delta'=5^2-1\\cdot 4=25-4=21$.[[br]]c) $b'=-3$; $\\Delta'=(-3)^2-1\\cdot(-14)=9+14=23$.",
+          "dang_id": "NB9",
+          "writelines": 0
+        },
+        {
+          "type": "problem",
+          "label": "Bài 10.",
+          "statement": "Điền vào chỗ chấm để hoàn thành bài giải phương trình $x^2-5x+6=0$.[[br]]a) [NB] $\\Delta=(-5)^2-4\\cdot 1\\cdot 6=\\ldots\\ldots$, suy ra $\\sqrt{\\Delta}=\\ldots\\ldots$[[br]]b) [NB] Vì $\\Delta\\ldots\\ldots 0$ nên phương trình có \\ldots\\ldots\\ldots\\ldots\\ldots\\ldots[[br]]c) [NB] $x_1=\\dfrac{5+\\ldots\\ldots}{2}=\\ldots\\ldots$;\\quad $x_2=\\dfrac{5-\\ldots\\ldots}{2}=\\ldots\\ldots$",
+          "tier": "onclass",
+          "level": 1,
+          "solution": "a) $\\Delta=25-24=1$; $\\sqrt{\\Delta}=1$.[[br]]b) $\\Delta>0$ nên phương trình có hai nghiệm phân biệt.[[br]]c) $x_1=\\dfrac{5+1}{2}=3$; $x_2=\\dfrac{5-1}{2}=2$.",
+          "dang_id": "NB10",
+          "writelines": 0
+        },
+        {
+          "type": "problem",
+          "label": "Bài 11.",
+          "statement": "Thu gọn rồi trả lời \\textbf{Đúng} hay \\textbf{Sai} cho khẳng định \\emph{\\textquotedblleft phương trình đã cho là phương trình bậc hai một ẩn\\textquotedblright}; câu nào Sai thì nói rõ vì sao.[[br]]a) [NB] $(x-3)(x+2)-x^2+9=0$ \\;(Giữa kì I, THCS Dịch Vọng Hậu)[[br]]b) [NB] $(x+5)^2=25$",
+          "tier": "onclass",
+          "level": 1,
+          "solution": "a) SAI. Thu gọn: $x^2-x-6-x^2+9=-x+3=0$, hệ số của $x^2$ bằng $0$ nên đây là phương trình bậc nhất ($x=3$).[[br]]b) ĐÚNG. Thu gọn: $x^2+10x+25=25 \\Rightarrow x^2+10x=0$, có $a=1 \\ne 0$ nên là phương trình bậc hai (khuyết $c$).",
+          "dang_id": "NB11",
+          "writelines": 0
+        }
+      ],
+      "teacher_note": "Luyện 48 phút. Bài 1–4 chữa miệng thật nhanh. Bài 7 bắt HS đọc to \\emph{trừ bốn nhân a nhân c} rồi mới thay số — đây là chỗ sai dấu nhiều nhất. Bài 10 cho HS làm một mình 3 phút rồi gọi lên bảng điền."
+    },
+    {
+      "kind": "practice2",
+      "number": 4,
+      "title": "Luyện tập 2 — Thông hiểu \\& Vận dụng",
+      "blocks": [
+        {
+          "type": "problem",
+          "label": "Bài 12.",
+          "statement": "Giải các phương trình sau bằng công thức nghiệm.[[br]]a) [TH] $x^2-3x+2=0$[[br]]b) [TH] $x^2-2x-120=0$ \\;(thi thử Vào 10 lần 4, Phòng GD\\&ĐT Chương Mỹ)",
+          "tier": "onclass",
+          "level": 2,
+          "solution": "a) Ta có $a=1$; $b=-3$; $c=2$ nên $\\Delta=9-8=1>0$, suy ra $\\sqrt{\\Delta}=1$.[[br]]$x_1=\\dfrac{3+1}{2}=2$; $x_2=\\dfrac{3-1}{2}=1$.[[br]]Vậy phương trình có hai nghiệm $x_1=2$ và $x_2=1$.[[br]]b) Ta có $\\Delta=(-2)^2-4\\cdot 1\\cdot(-120)=4+480=484>0$, suy ra $\\sqrt{\\Delta}=22$.[[br]]$x_1=\\dfrac{2+22}{2}=12$; $x_2=\\dfrac{2-22}{2}=-10$.[[br]]Vậy phương trình có hai nghiệm $x_1=12$ và $x_2=-10$.",
+          "dang_id": "TH1",
+          "writelines": 0,
+          "check": {
+            "kind": "solveset",
+            "equation": "x**2 - 2*x - 120 = 0",
+            "answer": [
+              12,
+              -10
+            ],
+            "symbol": "x"
+          }
+        },
+        {
+          "type": "problem",
+          "label": "Bài 13.",
+          "statement": "Giải các phương trình sau; giữ nguyên căn thức, \\textbf{không thay bằng số gần đúng}.[[br]]a) [TH] $x^2-3x+1=0$ \\;(Câu III.3 đề chính thức Vào 10 Hà Nội 2026)[[br]]b) [TH] $x^2-3x-1=0$ \\;(thi thử Vào 10 lần 3, Phòng GD\\&ĐT Ứng Hòa)",
+          "tier": "onclass",
+          "level": 2,
+          "solution": "a) Ta có $\\Delta=(-3)^2-4\\cdot 1\\cdot 1=9-4=5>0$.[[br]]$x_1=\\dfrac{3+\\sqrt{5}}{2}$; $x_2=\\dfrac{3-\\sqrt{5}}{2}$.[[br]]Vậy phương trình có hai nghiệm $x_1=\\dfrac{3+\\sqrt5}{2}$ và $x_2=\\dfrac{3-\\sqrt5}{2}$.[[br]]b) Ta có $\\Delta=(-3)^2-4\\cdot 1\\cdot(-1)=9+4=13>0$.[[br]]$x_1=\\dfrac{3+\\sqrt{13}}{2}$; $x_2=\\dfrac{3-\\sqrt{13}}{2}$.[[br]]Vậy phương trình có hai nghiệm $x_1=\\dfrac{3+\\sqrt{13}}{2}$ và $x_2=\\dfrac{3-\\sqrt{13}}{2}$.",
+          "dang_id": "TH2",
+          "writelines": 0
+        },
+        {
+          "type": "problem",
+          "label": "Bài 14.",
+          "statement": "Khai triển, chuyển vế đưa về dạng $ax^2+bx+c=0$ rồi giải.[[br]]a) [TH] $x^2-1=5(x+1)$ \\;(Giữa kì I, THCS Nguyễn Du)[[br]]b) [TH] $x(x+10)=3000$ \\;(đề minh họa Vào 10, Sở GD\\&ĐT Hà Nội)",
+          "tier": "onclass",
+          "level": 2,
+          "solution": "a) Ta có $x^2-1=5x+5$, suy ra $x^2-5x-6=0$.[[br]]$\\Delta=(-5)^2-4\\cdot 1\\cdot(-6)=25+24=49>0$, suy ra $\\sqrt{\\Delta}=7$.[[br]]$x_1=\\dfrac{5+7}{2}=6$; $x_2=\\dfrac{5-7}{2}=-1$.[[br]]Vậy phương trình có hai nghiệm $x_1=6$ và $x_2=-1$.[[br]]b) Ta có $x^2+10x-3000=0$.[[br]]$\\Delta'=5^2-1\\cdot(-3000)=25+3000=3025>0$, suy ra $\\sqrt{\\Delta'}=55$.[[br]]$x_1=\\dfrac{-5+55}{1}=50$; $x_2=\\dfrac{-5-55}{1}=-60$.[[br]]Vậy phương trình có hai nghiệm $x_1=50$ và $x_2=-60$.",
+          "dang_id": "TH3",
+          "writelines": 0,
+          "check": {
+            "kind": "solveset",
+            "equation": "x**2 - 1 = 5*(x + 1)",
+            "answer": [
+              6,
+              -1
+            ],
+            "symbol": "x"
+          }
+        },
+        {
+          "type": "problem",
+          "label": "Bài 15.",
+          "statement": "Dùng công thức nghiệm \\textbf{thu gọn} để giải (nhớ mẫu là $a$, không phải $2a$).[[br]]a) [TH] $2x^2-4x+1=0$ \\;(thi thử Vào 10 lần 1, THCS Cầu Giấy)[[br]]b) [TH] $x^2-6x-14=0$ \\;(Cuối kì II, Phòng GD\\&ĐT Ba Đình)",
+          "tier": "onclass",
+          "level": 2,
+          "solution": "a) Ta có $a=2$; $b=-4$ nên $b'=-2$; $c=1$.[[br]]$\\Delta'=(-2)^2-2\\cdot 1=4-2=2>0$.[[br]]$x_1=\\dfrac{2+\\sqrt2}{2}$; $x_2=\\dfrac{2-\\sqrt2}{2}$.[[br]]Vậy phương trình có hai nghiệm $x_1=\\dfrac{2+\\sqrt2}{2}$ và $x_2=\\dfrac{2-\\sqrt2}{2}$.[[br]]b) Ta có $b'=-3$ nên $\\Delta'=(-3)^2-1\\cdot(-14)=9+14=23>0$.[[br]]$x_1=3+\\sqrt{23}$; $x_2=3-\\sqrt{23}$.[[br]]Vậy phương trình có hai nghiệm $x_1=3+\\sqrt{23}$ và $x_2=3-\\sqrt{23}$.",
+          "dang_id": "TH4",
+          "writelines": 0
+        },
+        {
+          "type": "problem",
+          "label": "Bài 16.",
+          "statement": "[VD] Giải các phương trình sau, mỗi câu chọn cách nhanh nhất (phương trình tích, khuyết $b$, khuyết $c$ hay công thức nghiệm) và viết câu kết luận đủ nghiệm.[[br]]a) $(x-2)(2x+6)=0$ \\;(Giữa kì I, THCS Ngô Gia Tự)[[br]]b) $4x^2-12x=0$[[br]]c) $2x^2-50=0$",
+          "tier": "onclass",
+          "level": 3,
+          "solution": "a) Vì tích bằng $0$ nên $x-2=0$ hoặc $2x+6=0$, suy ra $x=2$ hoặc $x=-3$.[[br]]Vậy phương trình có hai nghiệm $x_1=2$ và $x_2=-3$.[[br]]b) Ta có $4x(x-3)=0$, suy ra $x=0$ hoặc $x=3$.[[br]]Vậy phương trình có hai nghiệm $x_1=0$ và $x_2=3$.[[br]]c) Ta có $2x^2=50$ nên $x^2=25$, suy ra $x=5$ hoặc $x=-5$.[[br]]Vậy phương trình có hai nghiệm $x_1=5$ và $x_2=-5$.",
+          "dang_id": "VD1",
+          "writelines": 0,
+          "hints": [
+            "Câu nào đã có sẵn dạng tích thì đừng khai triển ra rồi mới tính $\\Delta$ — mất thời gian gấp ba."
+          ]
+        },
+        {
+          "type": "problem",
+          "label": "Bài 17.",
+          "statement": "[VD] Một mảnh đất hình chữ nhật có chiều rộng ngắn hơn chiều dài $11$ m và diện tích $180$ m$^2$ (bộ đề Vào 10, Phòng GD\\&ĐT Đống Đa). Gọi chiều rộng là $x$ (m, $x>0$) thì lập được phương trình $x^2+11x-180=0$.[[br]]Giải phương trình, đối chiếu điều kiện để loại nghiệm rồi cho biết chiều rộng và chiều dài mảnh đất.",
+          "tier": "onclass",
+          "level": 3,
+          "solution": "Ta có $\\Delta=11^2-4\\cdot 1\\cdot(-180)=121+720=841>0$, suy ra $\\sqrt{\\Delta}=29$.[[br]]$x_1=\\dfrac{-11+29}{2}=9$; $x_2=\\dfrac{-11-29}{2}=-20$.[[br]]Vì $x>0$ nên loại $x_2=-20$, nhận $x=9$.[[br]]Chiều dài mảnh đất là $9+11=20$ (m).[[br]]Vậy mảnh đất có chiều rộng $9$ m và chiều dài $20$ m.",
+          "dang_id": "VD2",
+          "writelines": 0,
+          "hints": [
+            "Điều kiện $x>0$ là chiều rộng — nghiệm âm phải loại, không được ghi vào câu trả lời."
+          ],
+          "check": {
+            "kind": "solveset",
+            "equation": "x**2 + 11*x - 180 = 0",
+            "answer": [
+              9,
+              -20
+            ],
+            "symbol": "x"
+          }
+        }
+      ],
+      "teacher_note": "Luyện 48 phút, gọi HS lên bảng theo cặp. Bài 13 nhấn: đề Vào 10 để nghiệm dạng căn, ai bấm máy ra $2{,}618$ là mất điểm. Bài 17 quay lại đúng bài mở màn đầu buổi — chốt cảm xúc \\emph{đầu buổi mò không ra, cuối buổi giải trong một phút}."
+    },
+    {
+      "kind": "reflection",
+      "number": 5,
+      "title": "Tổng kết",
+      "blocks": [
+        {
+          "type": "mindmap",
+          "caption": "Điền các ô trống để tự tóm tắt cả buổi",
+          "root": "Phương trình bậc hai $ax^2+bx+c=0$",
+          "branches": [
+            {
+              "label": "Điều kiện",
+              "children": [
+                {
+                  "label": "$a[[blank:1cm]]0$"
+                },
+                {
+                  "label": "Thu gọn về dạng chuẩn rồi mới đọc hệ số"
+                }
+              ]
+            },
+            {
+              "label": "Hai dạng khuyết",
+              "children": [
+                {
+                  "label": "Khuyết $c$: đặt [[blank:1.6cm]] chung"
+                },
+                {
+                  "label": "Khuyết $b$: chuyển vế rồi [[blank:1.4cm]] căn"
+                }
+              ]
+            },
+            {
+              "label": "Công thức nghiệm",
+              "children": [
+                {
+                  "label": "$\\Delta=[[blank:1.8cm]]$"
+                },
+                {
+                  "label": "$\\Delta>0$: [[blank:1.6cm]] nghiệm"
+                },
+                {
+                  "label": "$\\Delta=0$: nghiệm [[blank:1.2cm]]"
+                },
+                {
+                  "label": "$\\Delta<0$: [[blank:1.6cm]]"
+                }
+              ]
+            },
+            {
+              "label": "Thu gọn khi $b$ chẵn",
+              "children": [
+                {
+                  "label": "$b'=[[blank:1cm]]$, $\\Delta'=[[blank:1.6cm]]$"
+                },
+                {
+                  "label": "Mẫu là [[blank:0.8cm]], không phải $2a$"
+                }
+              ]
+            }
+          ]
+        },
+        {
+          "type": "para",
+          "text": "\\textbf{Bài tập về nhà} — làm vào vở, buổi sau nộp."
+        },
+        {
+          "type": "problem",
+          "label": "Bài 18.",
+          "statement": "Mỗi phương trình sau có là phương trình bậc hai một ẩn không? Nếu có, chỉ ra $a$, $b$, $c$.[[br]]a) [NB] $5x^2-21x-54=0$ \\;(thi thử Vào 10 lần 3, Phòng GD\\&ĐT Ứng Hòa)[[br]]b) [NB] $6x^2-4x-1=0$ \\;(Giữa kì II, xã Đông Anh)[[br]]c) [NB] $3x+8=0$",
+          "tier": "btvn",
+          "level": 1,
+          "solution": "a) Là phương trình bậc hai; $a=5$; $b=-21$; $c=-54$.[[br]]b) Là phương trình bậc hai; $a=6$; $b=-4$; $c=-1$.[[br]]c) Không là phương trình bậc hai vì không có số hạng chứa $x^2$.",
+          "dang_id": "NB1",
+          "writelines": 0
+        },
+        {
+          "type": "problem",
+          "label": "Bài 19.",
+          "statement": "Thu gọn về dạng $ax^2+bx+c=0$ rồi chỉ ra $a$, $b$, $c$.[[br]]a) [NB] $(2x-5)(x-3)=0$ \\;(Giữa kì I, THCS Cổ Nhuế 2)[[br]]b) [NB] $x(x+20)=2400$ \\;(thi thử Vào 10 lần 5, Phòng GD\\&ĐT Chương Mỹ)[[br]]c) [NB] $x(x+8)=240$ \\;(thi thử Vào 10 lần 2, Phòng GD\\&ĐT Thanh Oai)",
+          "tier": "btvn",
+          "level": 1,
+          "solution": "a) $2x^2-11x+15=0$; $a=2$; $b=-11$; $c=15$.[[br]]b) $x^2+20x-2400=0$; $a=1$; $b=20$; $c=-2400$.[[br]]c) $x^2+8x-240=0$; $a=1$; $b=8$; $c=-240$.",
+          "dang_id": "NB2",
+          "writelines": 0
+        },
+        {
+          "type": "problem",
+          "label": "Bài 20.",
+          "statement": "Khai triển và thu gọn.[[br]]a) [NB] $(x-4)(x+3)=\\ldots\\ldots$[[br]]b) [NB] $(x-6)^2=\\ldots\\ldots$",
+          "tier": "btvn",
+          "level": 1,
+          "solution": "a) $(x-4)(x+3)=x^2-x-12$.[[br]]b) $(x-6)^2=x^2-12x+36$.",
+          "dang_id": "NB3",
+          "writelines": 0
+        },
+        {
+          "type": "problem",
+          "label": "Bài 21.",
+          "statement": "Giải các phương trình tích sau.[[br]]a) [NB] $(2x+1)(6-3x)=0$ \\;(Giữa kì I, THCS Thái Thịnh)[[br]]b) [NB] $(-x+5)(x-7)=0$ \\;(Cuối kì I, THCS Ái Mộ)",
+          "tier": "btvn",
+          "level": 1,
+          "solution": "a) $x=-\\dfrac{1}{2}$ hoặc $x=2$.[[br]]b) $x=5$ hoặc $x=7$.",
+          "dang_id": "NB4",
+          "writelines": 0
+        },
+        {
+          "type": "problem",
+          "label": "Bài 22.",
+          "statement": "Giải các phương trình khuyết $c$ sau.[[br]]a) [NB] $3x^2-9x=0$[[br]]b) [NB] $2x^2+7x=0$",
+          "tier": "btvn",
+          "level": 1,
+          "solution": "a) $3x(x-3)=0 \\Rightarrow x=0$ hoặc $x=3$.[[br]]b) $x(2x+7)=0 \\Rightarrow x=0$ hoặc $x=-\\dfrac{7}{2}$.",
+          "dang_id": "NB5",
+          "writelines": 0
+        },
+        {
+          "type": "problem",
+          "label": "Bài 23.",
+          "statement": "Giải các phương trình khuyết $b$ sau.[[br]]a) [NB] $x^2-49=0$[[br]]b) [NB] $3x^2+27=0$",
+          "tier": "btvn",
+          "level": 1,
+          "solution": "a) $x^2=49 \\Rightarrow x=7$ hoặc $x=-7$.[[br]]b) $x^2=-9$, mà $x^2 \\ge 0$ với mọi $x$ nên phương trình vô nghiệm.",
+          "dang_id": "NB6",
+          "writelines": 0
+        },
+        {
+          "type": "problem",
+          "label": "Bài 24.",
+          "statement": "Tính $\\Delta$ cho mỗi phương trình.[[br]]a) [NB] $x^2+x-6=0$[[br]]b) [NB] $x^2+10x+4=0$ \\;(thi thử Vào 10, THCS Tự Lập)[[br]]c) [NB] $2x^2-x-5=0$ \\;(Cuối kì II, Phòng GD\\&ĐT Ba Đình)",
+          "tier": "btvn",
+          "level": 1,
+          "solution": "a) $\\Delta=1^2-4\\cdot 1\\cdot(-6)=1+24=25$.[[br]]b) $\\Delta=10^2-4\\cdot 1\\cdot 4=100-16=84$.[[br]]c) $\\Delta=(-1)^2-4\\cdot 2\\cdot(-5)=1+40=41$.",
+          "dang_id": "NB7",
+          "writelines": 0
+        },
+        {
+          "type": "problem",
+          "label": "Bài 25.",
+          "statement": "Nối mỗi phương trình ở cột trái với kết luận đúng ở cột phải (viết đáp án dạng \\emph{a $-$ 2}).[[br]]a) [NB] $x^2-4x+4=0$ \\;($\\Delta=0$)[[br]]b) [NB] $x^2+x+1=0$ \\;($\\Delta=-3$)[[br]]\\quad\\textbf{1.} Hai nghiệm phân biệt \\quad\\textbf{2.} Nghiệm kép \\quad\\textbf{3.} Vô nghiệm",
+          "tier": "btvn",
+          "level": 1,
+          "solution": "a $-$ 2 (nghiệm kép $x_1=x_2=2$); b $-$ 3 (vô nghiệm vì $\\Delta<0$).",
+          "dang_id": "NB8",
+          "writelines": 0
+        },
+        {
+          "type": "problem",
+          "label": "Bài 26.",
+          "statement": "Viết $b'$ rồi tính $\\Delta'=b'^2-ac$.[[br]]a) [NB] $x^2-6x+5=0$[[br]]b) [NB] $x^2+20x-2400=0$ \\;(thi thử Vào 10 lần 5, Phòng GD\\&ĐT Chương Mỹ)[[br]]c) [NB] $6x^2-4x-1=0$ \\;(Giữa kì II, xã Đông Anh)",
+          "tier": "btvn",
+          "level": 1,
+          "solution": "a) $b'=-3$; $\\Delta'=9-5=4$.[[br]]b) $b'=10$; $\\Delta'=100+2400=2500$.[[br]]c) $b'=-2$; $\\Delta'=(-2)^2-6\\cdot(-1)=4+6=10$.",
+          "dang_id": "NB9",
+          "writelines": 0
+        },
+        {
+          "type": "problem",
+          "label": "Bài 27.",
+          "statement": "Điền vào chỗ chấm để hoàn thành bài giải phương trình $x^2-6x+5=0$.[[br]]a) [NB] $\\Delta'=(-3)^2-1\\cdot 5=\\ldots\\ldots$, suy ra $\\sqrt{\\Delta'}=\\ldots\\ldots$[[br]]b) [NB] $x_1=\\dfrac{3+\\ldots\\ldots}{1}=\\ldots\\ldots$;\\quad $x_2=\\dfrac{3-\\ldots\\ldots}{1}=\\ldots\\ldots$",
+          "tier": "btvn",
+          "level": 1,
+          "solution": "a) $\\Delta'=9-5=4$; $\\sqrt{\\Delta'}=2$.[[br]]b) $x_1=\\dfrac{3+2}{1}=5$; $x_2=\\dfrac{3-2}{1}=1$.",
+          "dang_id": "NB10",
+          "writelines": 0
+        },
+        {
+          "type": "problem",
+          "label": "Bài 28.",
+          "statement": "Thu gọn rồi trả lời \\textbf{Đúng} hay \\textbf{Sai} cho khẳng định \\emph{\\textquotedblleft đây là phương trình bậc hai một ẩn\\textquotedblright}.[[br]]a) [NB] $(x-1)(x+3)-x^2=5$[[br]]b) [NB] $(x-2)^2=4$",
+          "tier": "btvn",
+          "level": 1,
+          "solution": "a) SAI. Thu gọn: $x^2+2x-3-x^2-5=2x-8=0$, hệ số của $x^2$ bằng $0$ nên là phương trình bậc nhất ($x=4$).[[br]]b) ĐÚNG. Thu gọn: $x^2-4x+4=4 \\Rightarrow x^2-4x=0$, có $a=1 \\ne 0$.",
+          "dang_id": "NB11",
+          "writelines": 0
+        },
+        {
+          "type": "problem",
+          "label": "Bài 29.",
+          "statement": "Giải các phương trình sau bằng công thức nghiệm.[[br]]a) [TH] $x^2+x-6=0$ \\;(bộ đề Vào 10, Phòng GD\\&ĐT Đống Đa)[[br]]b) [TH] $x^2+8x-240=0$ \\;(thi thử Vào 10 lần 2, Phòng GD\\&ĐT Thanh Oai)",
+          "tier": "btvn",
+          "level": 2,
+          "solution": "a) Ta có $\\Delta=1+24=25>0$, suy ra $\\sqrt{\\Delta}=5$.[[br]]$x_1=\\dfrac{-1+5}{2}=2$; $x_2=\\dfrac{-1-5}{2}=-3$.[[br]]Vậy phương trình có hai nghiệm $x_1=2$ và $x_2=-3$.[[br]]b) Ta có $\\Delta'=4^2-1\\cdot(-240)=16+240=256>0$, suy ra $\\sqrt{\\Delta'}=16$.[[br]]$x_1=\\dfrac{-4+16}{1}=12$; $x_2=\\dfrac{-4-16}{1}=-20$.[[br]]Vậy phương trình có hai nghiệm $x_1=12$ và $x_2=-20$.",
+          "dang_id": "TH1",
+          "writelines": 0,
+          "check": {
+            "kind": "solveset",
+            "equation": "x**2 + 8*x - 240 = 0",
+            "answer": [
+              12,
+              -20
+            ],
+            "symbol": "x"
+          }
+        },
+        {
+          "type": "problem",
+          "label": "Bài 30.",
+          "statement": "Giải các phương trình sau, giữ nguyên căn thức.[[br]]a) [TH] $x^2-8x-5=0$ \\;(thi thử Vào 10, cụm THCS công lập Hà Nội)[[br]]b) [TH] $2x^2-x-5=0$ \\;(Cuối kì II, Phòng GD\\&ĐT Ba Đình)",
+          "tier": "btvn",
+          "level": 2,
+          "solution": "a) Ta có $\\Delta'=(-4)^2-1\\cdot(-5)=16+5=21>0$.[[br]]$x_1=4+\\sqrt{21}$; $x_2=4-\\sqrt{21}$.[[br]]Vậy phương trình có hai nghiệm $x_1=4+\\sqrt{21}$ và $x_2=4-\\sqrt{21}$.[[br]]b) Ta có $\\Delta=(-1)^2-4\\cdot 2\\cdot(-5)=1+40=41>0$.[[br]]$x_1=\\dfrac{1+\\sqrt{41}}{4}$; $x_2=\\dfrac{1-\\sqrt{41}}{4}$.[[br]]Vậy phương trình có hai nghiệm $x_1=\\dfrac{1+\\sqrt{41}}{4}$ và $x_2=\\dfrac{1-\\sqrt{41}}{4}$.",
+          "dang_id": "TH2",
+          "writelines": 0
+        },
+        {
+          "type": "problem",
+          "label": "Bài 31.",
+          "statement": "Khai triển, chuyển vế rồi giải.[[br]]a) [TH] $x(x+20)=2400$ \\;(thi thử Vào 10 lần 5, Phòng GD\\&ĐT Chương Mỹ)[[br]]b) [TH] $(x-1)^2=x+5$",
+          "tier": "btvn",
+          "level": 2,
+          "solution": "a) Ta có $x^2+20x-2400=0$.[[br]]$\\Delta'=10^2-1\\cdot(-2400)=100+2400=2500>0$, suy ra $\\sqrt{\\Delta'}=50$.[[br]]$x_1=\\dfrac{-10+50}{1}=40$; $x_2=\\dfrac{-10-50}{1}=-60$.[[br]]Vậy phương trình có hai nghiệm $x_1=40$ và $x_2=-60$.[[br]]b) Ta có $x^2-2x+1=x+5$, suy ra $x^2-3x-4=0$.[[br]]$\\Delta=(-3)^2-4\\cdot 1\\cdot(-4)=9+16=25>0$, suy ra $\\sqrt{\\Delta}=5$.[[br]]$x_1=\\dfrac{3+5}{2}=4$; $x_2=\\dfrac{3-5}{2}=-1$.[[br]]Vậy phương trình có hai nghiệm $x_1=4$ và $x_2=-1$.",
+          "dang_id": "TH3",
+          "writelines": 0,
+          "check": {
+            "kind": "solveset",
+            "equation": "(x - 1)**2 = x + 5",
+            "answer": [
+              4,
+              -1
+            ],
+            "symbol": "x"
+          }
+        },
+        {
+          "type": "problem",
+          "label": "Bài 32.",
+          "statement": "Dùng công thức nghiệm thu gọn để giải.[[br]]a) [TH] $6x^2-4x-1=0$ \\;(Giữa kì II, xã Đông Anh)[[br]]b) [TH] $x^2+10x+4=0$ \\;(thi thử Vào 10, THCS Tự Lập)",
+          "tier": "btvn",
+          "level": 2,
+          "solution": "a) Ta có $a=6$; $b'=-2$; $c=-1$ nên $\\Delta'=4+6=10>0$.[[br]]$x_1=\\dfrac{2+\\sqrt{10}}{6}$; $x_2=\\dfrac{2-\\sqrt{10}}{6}$.[[br]]Vậy phương trình có hai nghiệm $x_1=\\dfrac{2+\\sqrt{10}}{6}$ và $x_2=\\dfrac{2-\\sqrt{10}}{6}$.[[br]]b) Ta có $b'=5$ nên $\\Delta'=25-4=21>0$.[[br]]$x_1=-5+\\sqrt{21}$; $x_2=-5-\\sqrt{21}$.[[br]]Vậy phương trình có hai nghiệm $x_1=-5+\\sqrt{21}$ và $x_2=-5-\\sqrt{21}$.",
+          "dang_id": "TH4",
+          "writelines": 0
+        },
+        {
+          "type": "problem",
+          "label": "Bài 33.",
+          "statement": "[VD] Giải các phương trình sau, mỗi câu chọn cách nhanh nhất và viết câu kết luận đủ nghiệm.[[br]]a) $(x-10)(24+5x)=0$ \\;(Giữa kì I, THCS Nguyễn Bỉnh Khiêm)[[br]]b) $5x^2-20x=0$[[br]]c) $3x^2-27=0$",
+          "tier": "btvn",
+          "level": 3,
+          "solution": "a) Vì tích bằng $0$ nên $x=10$ hoặc $x=-\\dfrac{24}{5}$.[[br]]Vậy phương trình có hai nghiệm $x_1=10$ và $x_2=-\\dfrac{24}{5}$.[[br]]b) Ta có $5x(x-4)=0$, suy ra $x=0$ hoặc $x=4$.[[br]]Vậy phương trình có hai nghiệm $x_1=0$ và $x_2=4$.[[br]]c) Ta có $x^2=9$, suy ra $x=3$ hoặc $x=-3$.[[br]]Vậy phương trình có hai nghiệm $x_1=3$ và $x_2=-3$.",
+          "dang_id": "VD1",
+          "writelines": 0
+        },
+        {
+          "type": "problem",
+          "label": "Bài 34.",
+          "statement": "[VD] Để chở hết $60$ tấn hàng, một đội xe dự định dùng một số xe cùng loại. Trước khi khởi hành có hai xe được điều đi việc khác nên mỗi xe còn lại phải chở nhiều hơn dự định $1$ tấn (thi thử Vào 10 lần 4, Phòng GD\\&ĐT Chương Mỹ). Gọi số xe dự định là $x$ (xe, $x$ nguyên và $x>2$) thì lập được phương trình $x^2-2x-120=0$.[[br]]Giải phương trình, đối chiếu điều kiện rồi cho biết lúc đầu đội dự định dùng bao nhiêu xe.",
+          "tier": "btvn",
+          "level": 3,
+          "solution": "Ta có $\\Delta'=(-1)^2-1\\cdot(-120)=1+120=121>0$, suy ra $\\sqrt{\\Delta'}=11$.[[br]]$x_1=\\dfrac{1+11}{1}=12$; $x_2=\\dfrac{1-11}{1}=-10$.[[br]]Vì $x$ nguyên và $x>2$ nên loại $x_2=-10$, nhận $x=12$.[[br]]Vậy lúc đầu đội dự định dùng $12$ xe.",
+          "dang_id": "VD2",
+          "writelines": 0,
+          "hints": [
+            "Số xe phải là số nguyên dương và lớn hơn $2$ (vì có hai xe bị điều đi)."
+          ]
+        }
+      ],
+      "teacher_note": "Sơ đồ tư duy cho HS điền 5 phút cuối buổi, thu lại chấm nhanh. BTVN 17 bài $\\approx$ 96 phút. Buổi sau chữa Bài 27 (điền khuyết) và Bài 34 trước, đó là hai bài sát khuôn đề nhất."
+    }
+  ]
+}

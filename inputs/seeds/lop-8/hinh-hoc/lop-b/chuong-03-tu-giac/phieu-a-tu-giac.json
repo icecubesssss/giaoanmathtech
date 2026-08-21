@@ -1,0 +1,407 @@
+{
+  "slug": "phieu-a-tu-giac",
+  "title": "Tứ giác",
+  "eyebrow": "HÌNH HỌC 8 — PHIẾU A: TỨ GIÁC",
+  "grade_label": "Lớp 8 • Chương III. Tứ giác",
+  "class_tier": "B",
+  "stages": [
+    {
+      "kind": "review",
+      "number": 1,
+      "title": "Khám phá",
+      "blocks": [
+        {
+          "type": "opener",
+          "text": "Chiếc diều giấy trong hình có bốn cạnh: hai cạnh phía trên bằng nhau, hai cạnh phía dưới bằng nhau. [[br]] Người làm diều chỉ cần hai thanh nẹp: một thanh dọc, một thanh ngang. Lạ ở chỗ, cứ đóng đúng bốn cạnh như vậy thì thanh dọc \\textbf{luôn cắt chính giữa} thanh ngang và \\textbf{vuông góc} với nó, nhờ vậy diều bay cân, không chao sang bên nào. [[br]] Vì sao chỉ cần hai cặp cạnh bằng nhau mà đã chắc chắn được điều đó?",
+          "tikz": "\\begin{tikzpicture}[line width=0.9pt, font=\\small]\n  \\draw[ink,fill=brand!10] (2.0,3.0) -- (3.3,1.6) -- (2.0,0.2) -- (0.7,1.6) -- cycle;\n  \\draw[brand,line width=1.1pt] (2.0,3.0) -- (2.0,0.2);\n  \\draw[brand,line width=1.1pt] (0.7,1.6) -- (3.3,1.6);\n  \\draw[ink] (2.0,0.2) .. controls (2.5,-0.4) and (1.5,-0.7) .. (2.0,-1.2);\n  \\node[ink,font=\\scriptsize] at (2.62,2.45) {$|$};\n  \\node[ink,font=\\scriptsize] at (1.38,2.45) {$|$};\n  \\node[ink,font=\\scriptsize] at (2.62,0.75) {$||$};\n  \\node[ink,font=\\scriptsize] at (1.38,0.75) {$||$};\n  \\node[font=\\scriptsize,ink] at (2.0,-1.55) {dây thả};\n\\end{tikzpicture}"
+        },
+        {
+          "type": "para",
+          "text": "Bốn cạnh của chiếc diều khép kín tạo thành một hình mà hôm nay ta gọi tên: \\textbf{tứ giác}. [[br]] Cả buổi học xoay quanh hai việc: \\textbf{đọc đúng} các yếu tố của tứ giác (đỉnh, cạnh đối, góc đối, đường chéo) và dùng \\textbf{tổng bốn góc bằng $360^\\circ$} để tính góc. [[br]] Câu hỏi về chiếc diều sẽ được trả lời trọn vẹn ở Bài 14 cuối buổi."
+        }
+      ],
+      "teacher_note": "Cho HS chỉ ngay trên hình: hai cạnh trên bằng nhau, hai cạnh dưới bằng nhau, thanh nẹp dọc là một đường chéo. Chưa giải thích vội — hẹn trả lời ở Bài 14. Mục đích của mở màn là để HS thấy tứ giác là hình có thật, không phải hình vẽ suông."
+    },
+    {
+      "kind": "concept",
+      "number": 2,
+      "title": "Khái niệm",
+      "blocks": [
+        {
+          "type": "noted",
+          "text": "\\par\\nopagebreak\n\\begin{minipage}[t]{0.62\\linewidth}\\vspace{0pt}\n\\textbf{1. Tứ giác $ABCD$} [[br]] Tứ giác $ABCD$ có bốn đỉnh $A$, $B$, $C$, $D$ và bốn cạnh $AB$, $BC$, $CD$, $DA$; không có hai cạnh nào cùng nằm trên một đường thẳng. [[br]] - Hai cạnh \\textbf{đối}: $AB$ và $CD$; $AD$ và $BC$. [[br]] - Hai góc \\textbf{đối}: $\\widehat{A}$ và $\\widehat{C}$; $\\widehat{B}$ và $\\widehat{D}$. [[br]] - Hai \\textbf{đường chéo}: $AC$ và $BD$ (nét đứt).\n\\end{minipage}\\hfill\n\\begin{minipage}[t]{0.33\\linewidth}\\vspace{0pt}\n\\centering\n\\adjustbox{max width=\\linewidth, max totalheight=2.4cm}{\n\\begin{tikzpicture}[line width=0.8pt, font=\\small]\n  \\coordinate (vA) at (0.5,1.9);\n  \\coordinate (vB) at (3.3,2.3);\n  \\coordinate (vC) at (4.0,0.5);\n  \\coordinate (vD) at (0.0,0.0);\n  \\draw[ink,fill=brand!8] (vA) -- (vB) -- (vC) -- (vD) -- cycle;\n  \\node[above left] at (vA) {$A$};\n  \\node[above right] at (vB) {$B$};\n  \\node[below right] at (vC) {$C$};\n  \\node[below left] at (vD) {$D$};\n  \\draw[ink,dashed] (vA) -- (vC);\n  \\draw[ink,dashed] (vB) -- (vD);\n\\end{tikzpicture}\n}\n\\par\\vspace{2pt}{\\sffamily\\scriptsize\\itshape\\color{muted}Tứ giác lồi $ABCD$}\n\\end{minipage}"
+        },
+        {
+          "type": "para",
+          "text": "\\textbf{Tứ giác lồi} là tứ giác luôn nằm về một phía của đường thẳng chứa bất kì cạnh nào của nó. Từ nay, nói \\emph{tứ giác} thì hiểu là tứ giác lồi."
+        },
+        {
+          "type": "noted",
+          "text": "\\par\\nopagebreak\n\\begin{minipage}[t]{0.62\\linewidth}\\vspace{0pt}\n\\textbf{2. Tổng bốn góc của một tứ giác} [[br]] Kẻ đường chéo $AC$, tứ giác $ABCD$ được chia thành hai tam giác $ABC$ và $ACD$. [[br]] Mỗi tam giác có tổng ba góc bằng $180^\\circ$ nên [[br]] \\hspace*{1.4em}$\\widehat{A}+\\widehat{B}+\\widehat{C}+\\widehat{D} = 180^\\circ + 180^\\circ = 360^\\circ$. [[br]] \\textbf{Góc ngoài} tại một đỉnh là góc kề bù với góc trong tại đỉnh đó: góc ngoài tại $D$ bằng $180^\\circ - \\widehat{D}$.\n\\end{minipage}\\hfill\n\\begin{minipage}[t]{0.33\\linewidth}\\vspace{0pt}\n\\centering\n\\adjustbox{max width=\\linewidth, max totalheight=2.4cm}{\n\\begin{tikzpicture}[line width=0.8pt, font=\\small]\n  \\coordinate (vA) at (0.5,1.9);\n  \\coordinate (vB) at (3.3,2.3);\n  \\coordinate (vC) at (4.0,0.5);\n  \\coordinate (vD) at (0.0,0.0);\n  \\draw[ink,fill=brand!8] (vA) -- (vB) -- (vC) -- (vD) -- cycle;\n  \\node[above left] at (vA) {$A$};\n  \\node[above right] at (vB) {$B$};\n  \\node[below right] at (vC) {$C$};\n  \\node[below left] at (vD) {$D$};\n  \\draw[brand,line width=1.2pt] (vA) -- (vC);\n  \\node[brand,font=\\scriptsize] at (1.55,1.35) {$1$};\n  \\node[brand,font=\\scriptsize] at (1.95,0.75) {$2$};\n\\end{tikzpicture}\n}\n\\par\\vspace{2pt}{\\sffamily\\scriptsize\\itshape\\color{muted}Đường chéo $AC$ chia tứ giác thành hai tam giác}\n\\end{minipage}"
+        },
+        {
+          "type": "noted",
+          "variant": "example",
+          "text": "\\par\\nopagebreak\n\\begin{minipage}[t]{0.62\\linewidth}\\vspace{0pt}\n\\textbf{Ví dụ 1.} Tứ giác $ABCD$ có $\\widehat{C}=100^\\circ$, $\\widehat{D}=80^\\circ$ và $\\widehat{A}-\\widehat{B}=20^\\circ$. Tính $\\widehat{A}$ và $\\widehat{B}$.[[br]]{\\sffamily\\bfseries\\color{brand}Lời giải}[[br]]\\hspace*{1.4em}Vì tổng bốn góc của một tứ giác bằng $360^\\circ$ nên[[br]]\\hspace*{1.4em}$\\widehat{A}+\\widehat{B} = 360^\\circ - \\widehat{C} - \\widehat{D} = 360^\\circ - 100^\\circ - 80^\\circ = 180^\\circ$.[[br]]\\hspace*{1.4em}Mà $\\widehat{A}-\\widehat{B} = 20^\\circ$ nên $\\widehat{A} = (180^\\circ + 20^\\circ) : 2 = 100^\\circ$.[[br]]\\hspace*{1.4em}Suy ra $\\widehat{B} = 180^\\circ - 100^\\circ = 80^\\circ$.[[br]]\\hspace*{1.4em}Vậy $\\widehat{A} = 100^\\circ$ và $\\widehat{B} = 80^\\circ$.\n\\end{minipage}\\hfill\n\\begin{minipage}[t]{0.33\\linewidth}\\vspace{0pt}\n\\centering\n\\adjustbox{max width=\\linewidth, max totalheight=2.4cm}{\n\\begin{tikzpicture}[line width=0.8pt, font=\\small]\n  \\coordinate (vA) at (0.5,1.9);\n  \\coordinate (vB) at (3.3,2.3);\n  \\coordinate (vC) at (4.0,0.5);\n  \\coordinate (vD) at (0.0,0.0);\n  \\draw[ink,fill=brand!8] (vA) -- (vB) -- (vC) -- (vD) -- cycle;\n  \\node[above left] at (vA) {$A$};\n  \\node[above right] at (vB) {$B$};\n  \\node[below right] at (vC) {$C$};\n  \\node[below left] at (vD) {$D$};\n  \\node[brand,font=\\scriptsize] at (3.48,0.72) {$100^\\circ$};\n  \\node[brand,font=\\scriptsize] at (0.44,0.3) {$80^\\circ$};\n\\end{tikzpicture}\n}\n\\par\\vspace{2pt}{\\sffamily\\scriptsize\\itshape\\color{muted}Ví dụ 1}\n\\end{minipage}"
+        },
+        {
+          "type": "noted",
+          "variant": "example",
+          "text": "\\par\\nopagebreak\n\\begin{minipage}[t]{0.62\\linewidth}\\vspace{0pt}\n\\textbf{Ví dụ 2.} Tứ giác $ABCD$ có $\\widehat{C}=80^\\circ$, $\\widehat{D}=70^\\circ$. Hai tia phân giác của góc $A$ và góc $B$ cắt nhau tại $I$. Tính $\\widehat{AIB}$.[[br]]{\\sffamily\\bfseries\\color{brand}Lời giải}[[br]]\\hspace*{1.4em}Vì tổng bốn góc của một tứ giác bằng $360^\\circ$ nên[[br]]\\hspace*{1.4em}$\\widehat{A}+\\widehat{B} = 360^\\circ - 80^\\circ - 70^\\circ = 210^\\circ$.[[br]]\\hspace*{1.4em}Vì $AI$ là tia phân giác của góc $A$ và $BI$ là tia phân giác của góc $B$ nên[[br]]\\hspace*{1.4em}$\\widehat{IAB}+\\widehat{IBA} = \\dfrac{\\widehat{A}}{2} + \\dfrac{\\widehat{B}}{2} = \\dfrac{210^\\circ}{2} = 105^\\circ$.[[br]]\\hspace*{1.4em}Xét tam giác $IAB$, tổng ba góc bằng $180^\\circ$ nên[[br]]\\hspace*{1.4em}$\\widehat{AIB} = 180^\\circ - 105^\\circ = 75^\\circ$.[[br]]\\hspace*{1.4em}Vậy $\\widehat{AIB} = 75^\\circ$.\n\\end{minipage}\\hfill\n\\begin{minipage}[t]{0.33\\linewidth}\\vspace{0pt}\n\\centering\n\\adjustbox{max width=\\linewidth, max totalheight=2.4cm}{\n\\begin{tikzpicture}[line width=0.8pt, font=\\small]\n  \\coordinate (vA) at (0.5,1.9);\n  \\coordinate (vB) at (3.3,2.3);\n  \\coordinate (vC) at (4.0,0.5);\n  \\coordinate (vD) at (0.0,0.0);\n  \\draw[ink,fill=brand!8] (vA) -- (vB) -- (vC) -- (vD) -- cycle;\n  \\node[above left] at (vA) {$A$};\n  \\node[above right] at (vB) {$B$};\n  \\node[below right] at (vC) {$C$};\n  \\node[below left] at (vD) {$D$};\n  \\node[brand,font=\\scriptsize] at (3.48,0.72) {$80^\\circ$};\n  \\node[brand,font=\\scriptsize] at (0.44,0.3) {$70^\\circ$};\n  \\draw[brand,line width=1.0pt] (vA) -- (1.72,1.06);\n  \\draw[brand,line width=1.0pt] (vB) -- (1.72,1.06);\n  \\fill[brand] (1.72,1.06) circle (1.3pt) node[below=1pt,ink]{$I$};\n\\end{tikzpicture}\n}\n\\par\\vspace{2pt}{\\sffamily\\scriptsize\\itshape\\color{muted}Ví dụ 2}\n\\end{minipage}"
+        },
+        {
+          "type": "noted",
+          "variant": "example",
+          "text": "\\par\\nopagebreak\n\\begin{minipage}[t]{0.62\\linewidth}\\vspace{0pt}\n\\textbf{Ví dụ 3.} Cho tứ giác $ABCD$ có $AB=AD$, $CB=CD$. [[br]] a) Chứng minh $AC$ là đường trung trực của đoạn thẳng $BD$. [[br]] b) Biết $\\widehat{C}=60^\\circ$, $\\widehat{A}=100^\\circ$. Tính $\\widehat{B}$ và $\\widehat{D}$.[[br]]{\\sffamily\\bfseries\\color{brand}Lời giải}[[br]]\\textbf{a)} Vì $AB=AD$ nên điểm $A$ cách đều hai đầu mút của đoạn thẳng $BD$,[[br]]\\hspace*{1.4em}do đó $A$ nằm trên đường trung trực của $BD$.[[br]]\\hspace*{1.4em}Vì $CB=CD$ nên điểm $C$ cũng nằm trên đường trung trực của $BD$.[[br]]\\hspace*{1.4em}Đường trung trực của $BD$ đi qua hai điểm phân biệt $A$ và $C$ nên nó chính là đường thẳng $AC$.[[br]]\\hspace*{1.4em}Vậy $AC$ là đường trung trực của đoạn thẳng $BD$.[[br]]\\textbf{b)} Xét $\\triangle ABC$ và $\\triangle ADC$ có: $AB=AD$ (giả thiết), $CB=CD$ (giả thiết), $AC$ là cạnh chung.[[br]]\\hspace*{1.4em}Do đó $\\triangle ABC = \\triangle ADC$ (c.c.c), suy ra $\\widehat{B} = \\widehat{D}$.[[br]]\\hspace*{1.4em}Vì tổng bốn góc của tứ giác bằng $360^\\circ$ nên $\\widehat{B}+\\widehat{D} = 360^\\circ - 100^\\circ - 60^\\circ = 200^\\circ$.[[br]]\\hspace*{1.4em}Mà $\\widehat{B} = \\widehat{D}$ nên $\\widehat{B} = \\widehat{D} = 200^\\circ : 2 = 100^\\circ$.[[br]]\\hspace*{1.4em}Vậy $\\widehat{B} = \\widehat{D} = 100^\\circ$.\n\\end{minipage}\\hfill\n\\begin{minipage}[t]{0.33\\linewidth}\\vspace{0pt}\n\\centering\n\\adjustbox{max width=\\linewidth, max totalheight=2.4cm}{\n\\begin{tikzpicture}[line width=0.8pt, font=\\small]\n  \\coordinate (vA) at (1.9,2.8);\n  \\coordinate (vB) at (3.4,1.5);\n  \\coordinate (vC) at (1.9,0.0);\n  \\coordinate (vD) at (0.4,1.5);\n  \\draw[ink,fill=brand!8] (vA) -- (vB) -- (vC) -- (vD) -- cycle;\n  \\node[above] at (vA) {$A$};\n  \\node[right] at (vB) {$B$};\n  \\node[below] at (vC) {$C$};\n  \\node[left] at (vD) {$D$};\n  \\node[ink,font=\\scriptsize] at (2.65,2.15) {$|$};\n  \\node[ink,font=\\scriptsize] at (2.65,0.75) {$||$};\n  \\node[ink,font=\\scriptsize] at (1.15,0.75) {$||$};\n  \\node[ink,font=\\scriptsize] at (1.15,2.15) {$|$};\n  \\draw[ink,dashed] (vA) -- (vC);\n  \\draw[ink,dashed] (vB) -- (vD);\n  \\fill[ink] (1.9,1.5) circle (1.3pt);\n  \\node[brand,font=\\scriptsize] at (1.9,2.33) {$100^\\circ$};\n  \\node[brand,font=\\scriptsize] at (1.9,0.45) {$60^\\circ$};\n\\end{tikzpicture}\n}\n\\par\\vspace{2pt}{\\sffamily\\scriptsize\\itshape\\color{muted}Ví dụ 3}\n\\end{minipage}"
+        }
+      ],
+      "teacher_note": "Ví dụ 1 và 2 chữa nhanh, bắt HS đọc to căn cứ 'tổng bốn góc bằng 360 độ' trước mỗi phép tính. Ví dụ 3 chữa chậm: đây là bài kiểm tra giữa chương của trung tâm (Bài 1, 3,0 điểm) — chốt hai bước mà HS hay mất điểm: nêu ĐỦ hai điểm cách đều rồi mới kết luận đường trung trực; viết đúng thứ tự đỉnh khi ghi hai tam giác bằng nhau."
+    },
+    {
+      "kind": "practice1",
+      "number": 3,
+      "title": "Luyện tập 1",
+      "blocks": [
+        {
+          "type": "problem",
+          "label": "Bài 1.",
+          "statement": "\\par\\nopagebreak\n\\begin{minipage}[t]{0.64\\linewidth}\\vspace{0pt}\n[NB] Trên Hình 1, cặp đoạn thẳng nào là hai cạnh \\textbf{đối} của tứ giác $ABCD$?[[br]]\\par\\vspace{3pt}\\parbox[t]{0.46\\linewidth}{\\textbf{A.} $AB$ và $BC$}\\hspace{0.04\\linewidth}\\parbox[t]{0.46\\linewidth}{\\textbf{B.} $AB$ và $CD$}\\par\\vspace{4pt}\\parbox[t]{0.46\\linewidth}{\\textbf{C.} $AC$ và $BD$}\\hspace{0.04\\linewidth}\\parbox[t]{0.46\\linewidth}{\\textbf{D.} $AD$ và $DC$}\n\\end{minipage}\\hfill\n\\begin{minipage}[t]{0.31\\linewidth}\\vspace{0pt}\n\\centering\n\\adjustbox{max width=\\linewidth, max totalheight=2.4cm}{\n\\begin{tikzpicture}[line width=0.8pt, font=\\small]\n  \\coordinate (vA) at (0.5,1.9);\n  \\coordinate (vB) at (3.3,2.3);\n  \\coordinate (vC) at (4.0,0.5);\n  \\coordinate (vD) at (0.0,0.0);\n  \\draw[ink,fill=brand!8] (vA) -- (vB) -- (vC) -- (vD) -- cycle;\n  \\node[above left] at (vA) {$A$};\n  \\node[above right] at (vB) {$B$};\n  \\node[below right] at (vC) {$C$};\n  \\node[below left] at (vD) {$D$};\n  \\draw[ink,dashed] (vA) -- (vC);\n  \\draw[ink,dashed] (vB) -- (vD);\n\\end{tikzpicture}\n}\n\\par\\vspace{2pt}{\\sffamily\\scriptsize\\itshape\\color{muted}Hình 1}\n\\end{minipage}",
+          "tier": "onclass",
+          "level": 1,
+          "dang_id": "NB1",
+          "solution": "Đáp án \\textbf{B}. Hai cạnh đối là hai cạnh không có đỉnh chung: $AB$ và $CD$. Còn $AC$, $BD$ là hai đường chéo.",
+          "figure_given": true
+        },
+        {
+          "type": "problem",
+          "label": "Bài 2.",
+          "statement": "\\par\\nopagebreak\n\\begin{minipage}[t]{0.64\\linewidth}\\vspace{0pt}\n[NB] Trên Hình 2, hai \\textbf{đường chéo} của tứ giác $MNPQ$ là:[[br]]\\par\\vspace{3pt}\\parbox[t]{0.46\\linewidth}{\\textbf{A.} $MN$ và $PQ$}\\hspace{0.04\\linewidth}\\parbox[t]{0.46\\linewidth}{\\textbf{B.} $MP$ và $NQ$}\\par\\vspace{4pt}\\parbox[t]{0.46\\linewidth}{\\textbf{C.} $MQ$ và $NP$}\\hspace{0.04\\linewidth}\\parbox[t]{0.46\\linewidth}{\\textbf{D.} $MP$ và $PQ$}\n\\end{minipage}\\hfill\n\\begin{minipage}[t]{0.31\\linewidth}\\vspace{0pt}\n\\centering\n\\adjustbox{max width=\\linewidth, max totalheight=2.4cm}{\n\\begin{tikzpicture}[line width=0.8pt, font=\\small]\n  \\coordinate (vM) at (0.5,1.9);\n  \\coordinate (vN) at (3.3,2.3);\n  \\coordinate (vP) at (4.0,0.5);\n  \\coordinate (vQ) at (0.0,0.0);\n  \\draw[ink,fill=brand!8] (vM) -- (vN) -- (vP) -- (vQ) -- cycle;\n  \\node[above left] at (vM) {$M$};\n  \\node[above right] at (vN) {$N$};\n  \\node[below right] at (vP) {$P$};\n  \\node[below left] at (vQ) {$Q$};\n  \\draw[ink,dashed] (vM) -- (vP);\n  \\draw[ink,dashed] (vN) -- (vQ);\n\\end{tikzpicture}\n}\n\\par\\vspace{2pt}{\\sffamily\\scriptsize\\itshape\\color{muted}Hình 2}\n\\end{minipage}",
+          "tier": "onclass",
+          "level": 1,
+          "dang_id": "NB1",
+          "solution": "Đáp án \\textbf{B}. Đường chéo nối hai đỉnh đối nhau: $MP$ và $NQ$.",
+          "figure_given": true
+        },
+        {
+          "type": "problem",
+          "label": "Bài 3.",
+          "statement": "\\par\\nopagebreak\n\\begin{minipage}[t]{0.64\\linewidth}\\vspace{0pt}\n[NB] Quan sát Hình 3 rồi điền vào chỗ trống: [[br]] Góc đối của $\\widehat{B}$ là góc [[blank:1.4cm]]; cạnh đối của cạnh $AD$ là cạnh [[blank:1.4cm]]; hai đường chéo là [[blank:1.4cm]] và [[blank:1.4cm]].\n\\end{minipage}\\hfill\n\\begin{minipage}[t]{0.31\\linewidth}\\vspace{0pt}\n\\centering\n\\adjustbox{max width=\\linewidth, max totalheight=2.4cm}{\n\\begin{tikzpicture}[line width=0.8pt, font=\\small]\n  \\coordinate (vA) at (0.5,1.9);\n  \\coordinate (vB) at (3.3,2.3);\n  \\coordinate (vC) at (4.0,0.5);\n  \\coordinate (vD) at (0.0,0.0);\n  \\draw[ink,fill=brand!8] (vA) -- (vB) -- (vC) -- (vD) -- cycle;\n  \\node[above left] at (vA) {$A$};\n  \\node[above right] at (vB) {$B$};\n  \\node[below right] at (vC) {$C$};\n  \\node[below left] at (vD) {$D$};\n  \\draw[ink,dashed] (vA) -- (vC);\n  \\draw[ink,dashed] (vB) -- (vD);\n\\end{tikzpicture}\n}\n\\par\\vspace{2pt}{\\sffamily\\scriptsize\\itshape\\color{muted}Hình 3}\n\\end{minipage}",
+          "tier": "onclass",
+          "level": 1,
+          "dang_id": "NB1",
+          "solution": "Góc đối của $\\widehat{B}$ là $\\widehat{D}$; cạnh đối của $AD$ là $BC$; hai đường chéo là $AC$ và $BD$.",
+          "figure_given": true
+        },
+        {
+          "type": "problem",
+          "label": "Bài 4.",
+          "statement": "\\par\\nopagebreak\n\\begin{minipage}[t]{0.64\\linewidth}\\vspace{0pt}\n[NB] Trong bốn hình dưới đây, hình nào là \\textbf{tứ giác lồi}?[[br]]\\par\\vspace{3pt}\\parbox[t]{0.46\\linewidth}{\\textbf{A.} Hình 4a}\\hspace{0.04\\linewidth}\\parbox[t]{0.46\\linewidth}{\\textbf{B.} Hình 4b}\\par\\vspace{4pt}\\parbox[t]{0.46\\linewidth}{\\textbf{C.} Hình 4c}\\hspace{0.04\\linewidth}\\parbox[t]{0.46\\linewidth}{\\textbf{D.} Hình 4d}\n\\end{minipage}\\hfill\n\\begin{minipage}[t]{0.31\\linewidth}\\vspace{0pt}\n\\centering\n\\adjustbox{max width=\\linewidth, max totalheight=2.4cm}{\n\\begin{tikzpicture}[line width=0.8pt, font=\\small]\n  \\begin{scope}[shift={(0,0)}]\n    \\draw[ink,fill=brand!8] (0,0) -- (1.5,0.2) -- (1.7,1.3) -- (0.2,1.1) -- cycle;\n    \\node[font=\\scriptsize,ink] at (0.9,-0.4) {Hình 4a};\n  \\end{scope}\n  \\begin{scope}[shift={(2.3,0)}]\n    \\draw[ink,fill=brand!8] (0,0) -- (1.6,0) -- (0.8,0.7) -- (1.2,1.4) -- cycle;\n    \\node[font=\\scriptsize,ink] at (0.9,-0.4) {Hình 4b};\n  \\end{scope}\n  \\begin{scope}[shift={(4.6,0)}]\n    \\draw[ink] (0,0) -- (1.6,1.3) -- (1.6,0) -- (0,1.3) -- cycle;\n    \\node[font=\\scriptsize,ink] at (0.9,-0.4) {Hình 4c};\n  \\end{scope}\n  \\begin{scope}[shift={(6.9,0)}]\n    \\draw[ink,fill=brand!8] (0,0) -- (1.6,0.3) -- (0.7,0.8) -- (1.3,1.4) -- cycle;\n    \\node[font=\\scriptsize,ink] at (0.9,-0.4) {Hình 4d};\n  \\end{scope}\n\\end{tikzpicture}\n}\n\\par\\vspace{2pt}{\\sffamily\\scriptsize\\itshape\\color{muted}Hình 4}\n\\end{minipage}",
+          "tier": "onclass",
+          "level": 1,
+          "dang_id": "NB2",
+          "solution": "Đáp án \\textbf{A}. Hình 4b và Hình 4d có một đỉnh thụt vào nên hình nằm về hai phía của đường thẳng chứa một cạnh; Hình 4c có hai cạnh cắt nhau nên không phải tứ giác.",
+          "figure_given": true
+        },
+        {
+          "type": "problem",
+          "label": "Bài 5.",
+          "statement": "\\par\\nopagebreak\n\\begin{minipage}[t]{0.64\\linewidth}\\vspace{0pt}\n[NB] Bạn Nam nói: tứ giác $MNPQ$ ở Hình 5 là tứ giác lồi. Theo em bạn Nam nói đúng hay sai? Vì sao?\n\\end{minipage}\\hfill\n\\begin{minipage}[t]{0.31\\linewidth}\\vspace{0pt}\n\\centering\n\\adjustbox{max width=\\linewidth, max totalheight=2.4cm}{\n\\begin{tikzpicture}[line width=0.8pt, font=\\small]\n  \\coordinate (vM) at (0,0);\n  \\coordinate (vN) at (2.6,0.1);\n  \\coordinate (vP) at (1.4,0.95);\n  \\coordinate (vQ) at (1.9,2.2);\n  \\draw[ink,fill=brand!8] (vM) -- (vN) -- (vP) -- (vQ) -- cycle;\n  \\node[below left] at (vM) {$M$};\n  \\node[below right] at (vN) {$N$};\n  \\node[left] at (vP) {$P$};\n  \\node[above] at (vQ) {$Q$};\n  \\draw[brand,dashed,line width=0.9pt] (3.32,-0.41) -- (0.80,1.38);\n\\end{tikzpicture}\n}\n\\par\\vspace{2pt}{\\sffamily\\scriptsize\\itshape\\color{muted}Hình 5}\n\\end{minipage}",
+          "tier": "onclass",
+          "level": 1,
+          "dang_id": "NB2",
+          "solution": "Bạn Nam nói \\textbf{sai}. Vì kẻ đường thẳng chứa cạnh $NP$ (nét đứt trên hình) thì đỉnh $M$ nằm ở một phía, đỉnh $Q$ nằm ở phía kia, tứ giác không nằm về một phía của đường thẳng đó nên $MNPQ$ không phải tứ giác lồi.",
+          "figure_given": true
+        },
+        {
+          "type": "problem",
+          "label": "Bài 6.",
+          "statement": "\\par\\nopagebreak\n\\begin{minipage}[t]{0.64\\linewidth}\\vspace{0pt}\n[NB] Tứ giác $ABCD$ ở Hình 6 có $\\widehat{A}=65^\\circ$, $\\widehat{B}=117^\\circ$, $\\widehat{C}=71^\\circ$. Số đo $\\widehat{D}$ bằng:[[br]]\\par\\vspace{3pt}\\parbox[t]{0.46\\linewidth}{\\textbf{A.} $119^\\circ$}\\hspace{0.04\\linewidth}\\parbox[t]{0.46\\linewidth}{\\textbf{B.} $107^\\circ$}\\par\\vspace{4pt}\\parbox[t]{0.46\\linewidth}{\\textbf{C.} $63^\\circ$}\\hspace{0.04\\linewidth}\\parbox[t]{0.46\\linewidth}{\\textbf{D.} $126^\\circ$}\n\\end{minipage}\\hfill\n\\begin{minipage}[t]{0.31\\linewidth}\\vspace{0pt}\n\\centering\n\\adjustbox{max width=\\linewidth, max totalheight=2.4cm}{\n\\begin{tikzpicture}[line width=0.8pt, font=\\small]\n  \\coordinate (vA) at (0.5,1.9);\n  \\coordinate (vB) at (3.3,2.3);\n  \\coordinate (vC) at (4.0,0.5);\n  \\coordinate (vD) at (0.0,0.0);\n  \\draw[ink,fill=brand!8] (vA) -- (vB) -- (vC) -- (vD) -- cycle;\n  \\node[above left] at (vA) {$A$};\n  \\node[above right] at (vB) {$B$};\n  \\node[below right] at (vC) {$C$};\n  \\node[below left] at (vD) {$D$};\n  \\node[brand,font=\\scriptsize] at (0.85,1.52) {$65^\\circ$};\n  \\node[brand,font=\\scriptsize] at (2.92,1.95) {$117^\\circ$};\n  \\node[brand,font=\\scriptsize] at (3.48,0.72) {$71^\\circ$};\n  \\node[brand,font=\\scriptsize] at (0.44,0.3) {$?$};\n\\end{tikzpicture}\n}\n\\par\\vspace{2pt}{\\sffamily\\scriptsize\\itshape\\color{muted}Hình 6}\n\\end{minipage}",
+          "tier": "onclass",
+          "level": 1,
+          "dang_id": "NB3",
+          "solution": "Đáp án \\textbf{B}. Ta có $\\widehat{D} = 360^\\circ - 65^\\circ - 117^\\circ - 71^\\circ = 107^\\circ$.",
+          "figure_given": true
+        },
+        {
+          "type": "problem",
+          "label": "Bài 7.",
+          "statement": "\\par\\nopagebreak\n\\begin{minipage}[t]{0.64\\linewidth}\\vspace{0pt}\n[NB] Tìm số đo $x$ trên Hình 7.\n\\end{minipage}\\hfill\n\\begin{minipage}[t]{0.31\\linewidth}\\vspace{0pt}\n\\centering\n\\adjustbox{max width=\\linewidth, max totalheight=2.4cm}{\n\\begin{tikzpicture}[line width=0.8pt, font=\\small]\n  \\coordinate (vA) at (0.5,1.9);\n  \\coordinate (vB) at (3.3,2.3);\n  \\coordinate (vC) at (4.0,0.5);\n  \\coordinate (vD) at (0.0,0.0);\n  \\draw[ink,fill=brand!8] (vA) -- (vB) -- (vC) -- (vD) -- cycle;\n  \\node[above left] at (vA) {$A$};\n  \\node[above right] at (vB) {$B$};\n  \\node[below right] at (vC) {$C$};\n  \\node[below left] at (vD) {$D$};\n  \\node[brand,font=\\scriptsize] at (0.85,1.52) {$90^\\circ$};\n  \\node[brand,font=\\scriptsize] at (2.92,1.95) {$120^\\circ$};\n  \\node[brand,font=\\scriptsize] at (3.48,0.72) {$x$};\n  \\node[brand,font=\\scriptsize] at (0.44,0.3) {$90^\\circ$};\n\\end{tikzpicture}\n}\n\\par\\vspace{2pt}{\\sffamily\\scriptsize\\itshape\\color{muted}Hình 7}\n\\end{minipage}",
+          "tier": "onclass",
+          "level": 1,
+          "dang_id": "NB3",
+          "solution": "Ta có $x = 360^\\circ - 90^\\circ - 90^\\circ - 120^\\circ = 60^\\circ$.",
+          "figure_given": true
+        },
+        {
+          "type": "problem",
+          "label": "Bài 8.",
+          "statement": "[NB] Vẽ vào vở tứ giác $ABCD$ có $AB=AD$ và $CB=CD$. Đánh dấu một gạch cho hai cạnh $AB$, $AD$; hai gạch cho hai cạnh $CB$, $CD$; rồi kẻ hai đường chéo $AC$ và $BD$.",
+          "tier": "onclass",
+          "level": 1,
+          "dang_id": "NB4",
+          "solution": "Hình vẽ phải có: tứ giác $ABCD$ với $AB=AD$ (một gạch), $CB=CD$ (hai gạch) và hai đường chéo $AC$, $BD$ cắt nhau. Đây chính là hình dùng cho Bài 9 và Bài 14.",
+          "draw": true
+        },
+        {
+          "type": "problem",
+          "label": "Bài 9.",
+          "statement": "\\par\\nopagebreak\n\\begin{minipage}[t]{0.64\\linewidth}\\vspace{0pt}\nQuan sát Hình 8 ($AB=AD$, $CB=CD$) rồi điền vào chỗ trống để hoàn thành lập luận:[[br]] a) [NB] Vì $AB=AD$ nên điểm $A$ cách đều hai đầu mút của đoạn thẳng [[blank:1.4cm]], do đó $A$ nằm trên đường [[blank:2.4cm]] của đoạn thẳng đó.[[br]] b) [NB] Vì $CB=CD$ nên điểm [[blank:1cm]] cũng nằm trên đường trung trực của $BD$. Đường thẳng đi qua hai điểm $A$ và $C$ chính là đường thẳng [[blank:1.4cm]].\n\\end{minipage}\\hfill\n\\begin{minipage}[t]{0.31\\linewidth}\\vspace{0pt}\n\\centering\n\\adjustbox{max width=\\linewidth, max totalheight=2.4cm}{\n\\begin{tikzpicture}[line width=0.8pt, font=\\small]\n  \\coordinate (vA) at (1.9,2.8);\n  \\coordinate (vB) at (3.4,1.5);\n  \\coordinate (vC) at (1.9,0.0);\n  \\coordinate (vD) at (0.4,1.5);\n  \\draw[ink,fill=brand!8] (vA) -- (vB) -- (vC) -- (vD) -- cycle;\n  \\node[above] at (vA) {$A$};\n  \\node[right] at (vB) {$B$};\n  \\node[below] at (vC) {$C$};\n  \\node[left] at (vD) {$D$};\n  \\node[ink,font=\\scriptsize] at (2.65,2.15) {$|$};\n  \\node[ink,font=\\scriptsize] at (2.65,0.75) {$||$};\n  \\node[ink,font=\\scriptsize] at (1.15,0.75) {$||$};\n  \\node[ink,font=\\scriptsize] at (1.15,2.15) {$|$};\n  \\draw[ink,dashed] (vA) -- (vC);\n  \\draw[ink,dashed] (vB) -- (vD);\n  \\fill[ink] (1.9,1.5) circle (1.3pt);\n\\end{tikzpicture}\n}\n\\par\\vspace{2pt}{\\sffamily\\scriptsize\\itshape\\color{muted}Hình 8}\n\\end{minipage}",
+          "tier": "onclass",
+          "level": 1,
+          "dang_id": "NB5",
+          "solution": "a) $BD$; đường trung trực. [[br]] b) $C$; đường thẳng $AC$.",
+          "figure_given": true
+        },
+        {
+          "type": "problem",
+          "label": "Bài 10.",
+          "statement": "\\par\\nopagebreak\n\\begin{minipage}[t]{0.64\\linewidth}\\vspace{0pt}\nQuan sát Hình 9.[[br]] a) [NB] Viết hệ thức về tổng bốn góc của tứ giác $ABCD$, rồi thay các số đo đã biết vào hệ thức đó.[[br]] b) [NB] Tính số đo $\\widehat{D}$ và số đo góc ngoài của tứ giác tại đỉnh $D$.\n\\end{minipage}\\hfill\n\\begin{minipage}[t]{0.31\\linewidth}\\vspace{0pt}\n\\centering\n\\adjustbox{max width=\\linewidth, max totalheight=2.4cm}{\n\\begin{tikzpicture}[line width=0.8pt, font=\\small]\n  \\coordinate (vA) at (0.5,1.9);\n  \\coordinate (vB) at (3.3,2.3);\n  \\coordinate (vC) at (4.0,0.5);\n  \\coordinate (vD) at (0.0,0.0);\n  \\draw[ink,fill=brand!8] (vA) -- (vB) -- (vC) -- (vD) -- cycle;\n  \\node[above left] at (vA) {$A$};\n  \\node[above right] at (vB) {$B$};\n  \\node[below right] at (vC) {$C$};\n  \\node[below left] at (vD) {$D$};\n  \\node[brand,font=\\scriptsize] at (0.85,1.52) {$100^\\circ$};\n  \\node[brand,font=\\scriptsize] at (2.92,1.95) {$80^\\circ$};\n  \\node[brand,font=\\scriptsize] at (3.48,0.72) {$60^\\circ$};\n\\end{tikzpicture}\n}\n\\par\\vspace{2pt}{\\sffamily\\scriptsize\\itshape\\color{muted}Hình 9}\n\\end{minipage}",
+          "tier": "onclass",
+          "level": 1,
+          "dang_id": "NB6",
+          "solution": "a) $\\widehat{A}+\\widehat{B}+\\widehat{C}+\\widehat{D} = 360^\\circ$, tức là $100^\\circ + 80^\\circ + 60^\\circ + \\widehat{D} = 360^\\circ$.[[br]] b) $\\widehat{D} = 360^\\circ - 240^\\circ = 120^\\circ$; góc ngoài tại $D$ kề bù với $\\widehat{D}$ nên bằng $180^\\circ - 120^\\circ = 60^\\circ$.",
+          "figure_given": true
+        }
+      ],
+      "teacher_note": "Bài 1 đến Bài 7 làm nhanh, mỗi bài khoảng một phút, chấm miệng tại chỗ. Bài 8 chấm tay từng em phần ký hiệu gạch trên cạnh — HS hay quên đánh dấu, đến bài chứng minh thì không nhìn ra dữ kiện. Bài 9 và Bài 10 là giàn giáo cho Bài 14: chữa xong hai bài này HS có sẵn khuôn lập luận."
+    },
+    {
+      "kind": "practice2",
+      "number": 4,
+      "title": "Luyện tập 2",
+      "blocks": [
+        {
+          "type": "problem",
+          "label": "Bài 11.",
+          "statement": "\\par\\nopagebreak\n\\begin{minipage}[t]{0.64\\linewidth}\\vspace{0pt}\na) [TH] Bốn góc của tứ giác $ABCD$ tỉ lệ với $5$; $8$; $13$; $10$. Tính số đo mỗi góc.[[br]] b) [TH] Tứ giác $EFGH$ ở Hình 10 có $\\widehat{E}=70^\\circ$, $\\widehat{F}=80^\\circ$ và $\\widehat{G}-\\widehat{H}=20^\\circ$. Tính $\\widehat{G}$ và $\\widehat{H}$.\n\\end{minipage}\\hfill\n\\begin{minipage}[t]{0.31\\linewidth}\\vspace{0pt}\n\\centering\n\\adjustbox{max width=\\linewidth, max totalheight=2.4cm}{\n\\begin{tikzpicture}[line width=0.8pt, font=\\small]\n  \\coordinate (vE) at (0.5,1.9);\n  \\coordinate (vF) at (3.3,2.3);\n  \\coordinate (vG) at (4.0,0.5);\n  \\coordinate (vH) at (0.0,0.0);\n  \\draw[ink,fill=brand!8] (vE) -- (vF) -- (vG) -- (vH) -- cycle;\n  \\node[above left] at (vE) {$E$};\n  \\node[above right] at (vF) {$F$};\n  \\node[below right] at (vG) {$G$};\n  \\node[below left] at (vH) {$H$};\n  \\node[brand,font=\\scriptsize] at (0.85,1.52) {$70^\\circ$};\n  \\node[brand,font=\\scriptsize] at (2.92,1.95) {$80^\\circ$};\n\\end{tikzpicture}\n}\n\\par\\vspace{2pt}{\\sffamily\\scriptsize\\itshape\\color{muted}Hình 10}\n\\end{minipage}",
+          "tier": "onclass",
+          "level": 2,
+          "dang_id": "TH1",
+          "solution": "a) Vì bốn góc tỉ lệ với $5$; $8$; $13$; $10$ nên đặt $\\widehat{A}=5k$, $\\widehat{B}=8k$, $\\widehat{C}=13k$, $\\widehat{D}=10k$.[[br]] Ta có $5k+8k+13k+10k = 360^\\circ$ nên $36k = 360^\\circ$, suy ra $k = 10^\\circ$.[[br]] Vậy $\\widehat{A}=50^\\circ$, $\\widehat{B}=80^\\circ$, $\\widehat{C}=130^\\circ$, $\\widehat{D}=100^\\circ$.[[br]] b) Vì tổng bốn góc của tứ giác bằng $360^\\circ$ nên $\\widehat{G}+\\widehat{H} = 360^\\circ - 70^\\circ - 80^\\circ = 210^\\circ$.[[br]] Mà $\\widehat{G}-\\widehat{H} = 20^\\circ$ nên $\\widehat{G} = (210^\\circ + 20^\\circ):2 = 115^\\circ$ và $\\widehat{H} = 210^\\circ - 115^\\circ = 95^\\circ$.[[br]] Vậy $\\widehat{G} = 115^\\circ$, $\\widehat{H} = 95^\\circ$.",
+          "figure_given": true,
+          "hints": [
+            "Ý thứ nhất: đặt mỗi phần bằng $k$ thì tổng $36k = 360^\\circ$.",
+            "Ý thứ hai: tính $\\widehat{G}+\\widehat{H}$ trước, rồi dùng thêm hiệu $20^\\circ$."
+          ]
+        },
+        {
+          "type": "problem",
+          "label": "Bài 12.",
+          "statement": "\\par\\nopagebreak\n\\begin{minipage}[t]{0.64\\linewidth}\\vspace{0pt}\nTứ giác $ABCD$ có hai tia phân giác của góc $A$ và góc $B$ cắt nhau tại $I$ (Hình 11).[[br]] a) [TH] Biết $\\widehat{C}=76^\\circ$, $\\widehat{D}=64^\\circ$. Tính $\\widehat{AIB}$.[[br]] b) [TH] Chứng minh rằng với mọi tứ giác $ABCD$ ta luôn có $\\widehat{AIB} = \\dfrac{\\widehat{C}+\\widehat{D}}{2}$.\n\\end{minipage}\\hfill\n\\begin{minipage}[t]{0.31\\linewidth}\\vspace{0pt}\n\\centering\n\\adjustbox{max width=\\linewidth, max totalheight=2.4cm}{\n\\begin{tikzpicture}[line width=0.8pt, font=\\small]\n  \\coordinate (vA) at (0.5,1.9);\n  \\coordinate (vB) at (3.3,2.3);\n  \\coordinate (vC) at (4.0,0.5);\n  \\coordinate (vD) at (0.0,0.0);\n  \\draw[ink,fill=brand!8] (vA) -- (vB) -- (vC) -- (vD) -- cycle;\n  \\node[above left] at (vA) {$A$};\n  \\node[above right] at (vB) {$B$};\n  \\node[below right] at (vC) {$C$};\n  \\node[below left] at (vD) {$D$};\n  \\node[brand,font=\\scriptsize] at (3.48,0.72) {$76^\\circ$};\n  \\node[brand,font=\\scriptsize] at (0.44,0.3) {$64^\\circ$};\n  \\draw[brand,line width=1.0pt] (vA) -- (1.72,1.06);\n  \\draw[brand,line width=1.0pt] (vB) -- (1.72,1.06);\n  \\fill[brand] (1.72,1.06) circle (1.3pt) node[below=1pt,ink]{$I$};\n\\end{tikzpicture}\n}\n\\par\\vspace{2pt}{\\sffamily\\scriptsize\\itshape\\color{muted}Hình 11}\n\\end{minipage}",
+          "tier": "onclass",
+          "level": 2,
+          "dang_id": "TH2",
+          "solution": "a) Vì tổng bốn góc của tứ giác bằng $360^\\circ$ nên $\\widehat{A}+\\widehat{B} = 360^\\circ - 76^\\circ - 64^\\circ = 220^\\circ$.[[br]] Vì $AI$, $BI$ là hai tia phân giác nên $\\widehat{IAB}+\\widehat{IBA} = \\dfrac{\\widehat{A}+\\widehat{B}}{2} = 110^\\circ$.[[br]] Xét tam giác $IAB$ có $\\widehat{AIB} = 180^\\circ - 110^\\circ = 70^\\circ$.[[br]] Vậy $\\widehat{AIB} = 70^\\circ$.[[br]] b) Ta có $\\widehat{A}+\\widehat{B} = 360^\\circ - (\\widehat{C}+\\widehat{D})$.[[br]] Vì $AI$, $BI$ là hai tia phân giác nên $\\widehat{IAB}+\\widehat{IBA} = \\dfrac{\\widehat{A}+\\widehat{B}}{2} = 180^\\circ - \\dfrac{\\widehat{C}+\\widehat{D}}{2}$.[[br]] Xét tam giác $IAB$, suy ra $\\widehat{AIB} = 180^\\circ - \\left(180^\\circ - \\dfrac{\\widehat{C}+\\widehat{D}}{2}\\right) = \\dfrac{\\widehat{C}+\\widehat{D}}{2}$.[[br]] Vậy $\\widehat{AIB} = \\dfrac{\\widehat{C}+\\widehat{D}}{2}$.",
+          "figure_given": true,
+          "hints": [
+            "Tổng ba góc của tam giác $IAB$ bằng $180^\\circ$."
+          ]
+        },
+        {
+          "type": "problem",
+          "label": "Bài 13.",
+          "statement": "\\par\\nopagebreak\n\\begin{minipage}[t]{0.64\\linewidth}\\vspace{0pt}\nTứ giác $ABCD$ ở Hình 12 có $AB=CB$ và $AD=CD$.[[br]] a) [TH] Chứng minh $\\triangle ABD = \\triangle CBD$.[[br]] b) [TH] Chứng minh $\\widehat{A} = \\widehat{C}$ và $BD$ là tia phân giác của góc $ABC$.\n\\end{minipage}\\hfill\n\\begin{minipage}[t]{0.31\\linewidth}\\vspace{0pt}\n\\centering\n\\adjustbox{max width=\\linewidth, max totalheight=2.4cm}{\n\\begin{tikzpicture}[line width=0.8pt, font=\\small]\n  \\coordinate (vB) at (1.9,2.8);\n  \\coordinate (vC) at (3.4,1.5);\n  \\coordinate (vD) at (1.9,0.0);\n  \\coordinate (vA) at (0.4,1.5);\n  \\draw[ink,fill=brand!8] (vB) -- (vC) -- (vD) -- (vA) -- cycle;\n  \\node[above] at (vB) {$B$};\n  \\node[right] at (vC) {$C$};\n  \\node[below] at (vD) {$D$};\n  \\node[left] at (vA) {$A$};\n  \\node[ink,font=\\scriptsize] at (2.65,2.15) {$|$};\n  \\node[ink,font=\\scriptsize] at (2.65,0.75) {$||$};\n  \\node[ink,font=\\scriptsize] at (1.15,0.75) {$||$};\n  \\node[ink,font=\\scriptsize] at (1.15,2.15) {$|$};\n  \\draw[ink,dashed] (vB) -- (vD);\n  \\draw[ink,dashed] (vC) -- (vA);\n  \\fill[ink] (1.9,1.5) circle (1.3pt);\n\\end{tikzpicture}\n}\n\\par\\vspace{2pt}{\\sffamily\\scriptsize\\itshape\\color{muted}Hình 12}\n\\end{minipage}",
+          "tier": "onclass",
+          "level": 2,
+          "dang_id": "TH3",
+          "solution": "a) Xét $\\triangle ABD$ và $\\triangle CBD$ có: $AB = CB$ (giả thiết), $AD = CD$ (giả thiết), $BD$ là cạnh chung.[[br]] Do đó $\\triangle ABD = \\triangle CBD$ (c.c.c).[[br]] Vậy hai tam giác đó bằng nhau.[[br]] b) Vì $\\triangle ABD = \\triangle CBD$ nên $\\widehat{A} = \\widehat{C}$ (hai góc tương ứng).[[br]] Cũng từ hai tam giác bằng nhau, ta có $\\widehat{ABD} = \\widehat{CBD}$ (hai góc tương ứng), mà tia $BD$ nằm giữa hai tia $BA$ và $BC$.[[br]] Vậy $\\widehat{A} = \\widehat{C}$ và $BD$ là tia phân giác của góc $ABC$.",
+          "figure_given": true,
+          "hints": [
+            "Hai tam giác đã có ba cặp cạnh, xét trường hợp cạnh $-$ cạnh $-$ cạnh."
+          ]
+        },
+        {
+          "type": "problem",
+          "label": "Bài 14.",
+          "statement": "\\par\\nopagebreak\n\\begin{minipage}[t]{0.64\\linewidth}\\vspace{0pt}\n[VD] Cho tứ giác $MNPQ$ có $MN=MQ$ và $PN=PQ$ (Hình 13). Chứng minh $MP$ là đường trung trực của đoạn thẳng $NQ$; sau đó, biết $\\widehat{M}=90^\\circ$ và $\\widehat{P}=50^\\circ$, tính $\\widehat{N}$ và $\\widehat{Q}$.\n\\end{minipage}\\hfill\n\\begin{minipage}[t]{0.31\\linewidth}\\vspace{0pt}\n\\centering\n\\adjustbox{max width=\\linewidth, max totalheight=2.4cm}{\n\\begin{tikzpicture}[line width=0.8pt, font=\\small]\n  \\coordinate (vM) at (1.9,2.8);\n  \\coordinate (vN) at (3.4,1.5);\n  \\coordinate (vP) at (1.9,0.0);\n  \\coordinate (vQ) at (0.4,1.5);\n  \\draw[ink,fill=brand!8] (vM) -- (vN) -- (vP) -- (vQ) -- cycle;\n  \\node[above] at (vM) {$M$};\n  \\node[right] at (vN) {$N$};\n  \\node[below] at (vP) {$P$};\n  \\node[left] at (vQ) {$Q$};\n  \\node[ink,font=\\scriptsize] at (2.65,2.15) {$|$};\n  \\node[ink,font=\\scriptsize] at (2.65,0.75) {$||$};\n  \\node[ink,font=\\scriptsize] at (1.15,0.75) {$||$};\n  \\node[ink,font=\\scriptsize] at (1.15,2.15) {$|$};\n  \\draw[ink,dashed] (vM) -- (vP);\n  \\draw[ink,dashed] (vN) -- (vQ);\n  \\fill[ink] (1.9,1.5) circle (1.3pt);\n  \\node[brand,font=\\scriptsize] at (1.9,2.33) {$90^\\circ$};\n  \\node[brand,font=\\scriptsize] at (1.9,0.45) {$50^\\circ$};\n\\end{tikzpicture}\n}\n\\par\\vspace{2pt}{\\sffamily\\scriptsize\\itshape\\color{muted}Hình 13}\n\\end{minipage}",
+          "tier": "onclass",
+          "level": 3,
+          "dang_id": "VD1",
+          "solution": "Vì $MN = MQ$ nên $M$ cách đều hai đầu mút của đoạn thẳng $NQ$, do đó $M$ nằm trên đường trung trực của $NQ$.[[br]] Vì $PN = PQ$ nên $P$ cũng nằm trên đường trung trực của $NQ$.[[br]] Đường trung trực của $NQ$ đi qua hai điểm phân biệt $M$ và $P$ nên nó chính là đường thẳng $MP$.[[br]] Xét $\\triangle MNP$ và $\\triangle MQP$ có: $MN = MQ$, $PN = PQ$, $MP$ là cạnh chung, do đó $\\triangle MNP = \\triangle MQP$ (c.c.c).[[br]] Suy ra $\\widehat{N} = \\widehat{Q}$ (hai góc tương ứng).[[br]] Vì tổng bốn góc của tứ giác bằng $360^\\circ$ nên $\\widehat{N}+\\widehat{Q} = 360^\\circ - 90^\\circ - 50^\\circ = 220^\\circ$.[[br]] Vậy $MP$ là đường trung trực của $NQ$ và $\\widehat{N} = \\widehat{Q} = 220^\\circ : 2 = 110^\\circ$.",
+          "figure_given": true,
+          "hints": [
+            "Điểm cách đều hai đầu mút của một đoạn thẳng thì nằm trên đường trung trực của đoạn thẳng ấy.",
+            "Muốn có $\\widehat{N} = \\widehat{Q}$, hãy chỉ ra hai tam giác bằng nhau nhận $MP$ làm cạnh chung."
+          ]
+        },
+        {
+          "type": "problem",
+          "label": "Bài 15.",
+          "statement": "\\par\\nopagebreak\n\\begin{minipage}[t]{0.64\\linewidth}\\vspace{0pt}\n[VD] Cho tứ giác $ABCD$ có $\\widehat{B}+\\widehat{D}=180^\\circ$ và $CB=CD$. Trên tia đối của tia $DA$ lấy điểm $E$ sao cho $DE=AB$ (Hình 14). Chứng minh $\\triangle ABC = \\triangle EDC$, từ đó chứng minh $AC$ là tia phân giác của góc $A$.\n\\end{minipage}\\hfill\n\\begin{minipage}[t]{0.31\\linewidth}\\vspace{0pt}\n\\centering\n\\adjustbox{max width=\\linewidth, max totalheight=2.4cm}{\n\\begin{tikzpicture}[line width=0.8pt, font=\\small]\n  \\coordinate (vA) at (0.0,0.0);\n  \\coordinate (vB) at (1.0,2.1);\n  \\coordinate (vC) at (3.3,1.5);\n  \\coordinate (vD) at (2.2,0.15);\n  \\coordinate (vE) at (3.52,0.24);\n  \\draw[ink,fill=brand!8] (vA) -- (vB) -- (vC) -- (vD) -- cycle;\n  \\draw[ink,dashed] (vD) -- (vE);\n  \\draw[brand,line width=1.0pt] (vC) -- (vE);\n  \\draw[brand,line width=1.0pt] (vA) -- (vC);\n  \\node[below left] at (vA) {$A$};\n  \\node[above left] at (vB) {$B$};\n  \\node[above right] at (vC) {$C$};\n  \\node[below left=1pt] at (vD) {$D$};\n  \\node[below right] at (vE) {$E$};\n  \\node[ink,font=\\scriptsize] at (0.42,1.14) {$|$};\n  \\node[ink,font=\\scriptsize] at (2.90,0.28) {$|$};\n  \\node[ink,font=\\scriptsize] at (2.83,1.90) {$||$};\n  \\node[ink,font=\\scriptsize] at (2.83,0.75) {$||$};\n\\end{tikzpicture}\n}\n\\par\\vspace{2pt}{\\sffamily\\scriptsize\\itshape\\color{muted}Hình 14}\n\\end{minipage}",
+          "tier": "onclass",
+          "level": 3,
+          "dang_id": "VD1",
+          "solution": "Vì $E$ thuộc tia đối của tia $DA$ nên $\\widehat{CDE}$ kề bù với $\\widehat{ADC}$, do đó $\\widehat{CDE} = 180^\\circ - \\widehat{D}$.[[br]] Mà $\\widehat{B}+\\widehat{D} = 180^\\circ$ nên $\\widehat{B} = 180^\\circ - \\widehat{D}$, suy ra $\\widehat{CDE} = \\widehat{B}$.[[br]] Xét $\\triangle ABC$ và $\\triangle EDC$ có: $AB = ED$ (giả thiết), $\\widehat{ABC} = \\widehat{EDC}$ (chứng minh trên), $CB = CD$ (giả thiết).[[br]] Do đó $\\triangle ABC = \\triangle EDC$ (c.g.c), suy ra $CA = CE$ và $\\widehat{BAC} = \\widehat{DEC}$.[[br]] Vì $CA = CE$ nên $\\triangle ACE$ cân tại $C$, suy ra $\\widehat{CAE} = \\widehat{CEA}$.[[br]] Mà $\\widehat{BAC} = \\widehat{DEC} = \\widehat{CEA}$ nên $\\widehat{BAC} = \\widehat{CAE}$, tức tia $AC$ chia góc $BAD$ thành hai góc bằng nhau.[[br]] Vậy $\\triangle ABC = \\triangle EDC$ và $AC$ là tia phân giác của góc $A$.",
+          "figure_given": true,
+          "hints": [
+            "Góc $CDE$ kề bù với $\\widehat{ADC}$, hãy tính nó theo $\\widehat{B}$.",
+            "Sau khi có $CA = CE$, hãy nghĩ tới tam giác cân."
+          ]
+        }
+      ],
+      "teacher_note": "Bài 12 ý thứ hai là bài chứng minh công thức, cho HS làm theo nhóm đôi rồi một em lên bảng. Bài 14 là bài hình trọn vẹn của buổi: yêu cầu trình bày đủ ba phần — chỉ ra hai điểm cách đều, kết luận đường trung trực, rồi mới tính góc. Bài 15 chỉ chữa nếu còn thời gian, phát gợi ý thứ nhất trước khi cho HS thảo luận."
+    },
+    {
+      "kind": "reflection",
+      "number": 5,
+      "title": "Tổng kết \\& BTVN",
+      "blocks": [
+        {
+          "type": "mindmap",
+          "size": "small",
+          "caption": "Điền các ô trống để hoàn thiện bản đồ kiến thức của buổi",
+          "root": "TỨ GIÁC $ABCD$",
+          "branches": [
+            {
+              "label": "Đọc tên các yếu tố",
+              "children": [
+                {
+                  "label": "Hai cạnh đối: $AB$ và [[blank:1.2cm]]"
+                },
+                {
+                  "label": "Hai góc đối: $\\widehat{A}$ và [[blank:1.2cm]]"
+                },
+                {
+                  "label": "Hai đường chéo: $AC$ và [[blank:1.2cm]]"
+                }
+              ]
+            },
+            {
+              "label": "Tổng bốn góc",
+              "children": [
+                {
+                  "label": "$\\widehat{A}+\\widehat{B}+\\widehat{C}+\\widehat{D} = $ [[blank:1.4cm]]"
+                },
+                {
+                  "label": "Góc ngoài tại $D$ $=$ [[blank:1.6cm]] $- \\widehat{D}$"
+                }
+              ]
+            },
+            {
+              "label": "Hai cặp cạnh kề bằng nhau",
+              "children": [
+                {
+                  "label": "$AB=AD$, $CB=CD$ thì $AC$ là đường [[blank:2.0cm]] của $BD$"
+                },
+                {
+                  "label": "$\\triangle ABC = \\triangle ADC$ theo trường hợp [[blank:1.2cm]]"
+                }
+              ]
+            }
+          ]
+        },
+        {
+          "type": "problem",
+          "label": "BTVN~1.",
+          "statement": "\\par\\nopagebreak\n\\begin{minipage}[t]{0.64\\linewidth}\\vspace{0pt}\n[NB] Trên Hình BTVN 1, cặp góc nào là hai góc \\textbf{đối} của tứ giác $ABCD$?[[br]]\\par\\vspace{3pt}\\parbox[t]{0.46\\linewidth}{\\textbf{A.} $\\widehat{A}$ và $\\widehat{B}$}\\hspace{0.04\\linewidth}\\parbox[t]{0.46\\linewidth}{\\textbf{B.} $\\widehat{A}$ và $\\widehat{C}$}\\par\\vspace{4pt}\\parbox[t]{0.46\\linewidth}{\\textbf{C.} $\\widehat{B}$ và $\\widehat{C}$}\\hspace{0.04\\linewidth}\\parbox[t]{0.46\\linewidth}{\\textbf{D.} $\\widehat{C}$ và $\\widehat{D}$}\n\\end{minipage}\\hfill\n\\begin{minipage}[t]{0.31\\linewidth}\\vspace{0pt}\n\\centering\n\\adjustbox{max width=\\linewidth, max totalheight=2.4cm}{\n\\begin{tikzpicture}[line width=0.8pt, font=\\small]\n  \\coordinate (vA) at (0.5,1.9);\n  \\coordinate (vB) at (3.3,2.3);\n  \\coordinate (vC) at (4.0,0.5);\n  \\coordinate (vD) at (0.0,0.0);\n  \\draw[ink,fill=brand!8] (vA) -- (vB) -- (vC) -- (vD) -- cycle;\n  \\node[above left] at (vA) {$A$};\n  \\node[above right] at (vB) {$B$};\n  \\node[below right] at (vC) {$C$};\n  \\node[below left] at (vD) {$D$};\n\\end{tikzpicture}\n}\n\\par\\vspace{2pt}{\\sffamily\\scriptsize\\itshape\\color{muted}Hình BTVN 1}\n\\end{minipage}",
+          "tier": "btvn",
+          "level": 1,
+          "dang_id": "NB1",
+          "solution": "Đáp án \\textbf{B}. Hai góc đối là hai góc tại hai đỉnh không kề nhau: $\\widehat{A}$ và $\\widehat{C}$.",
+          "figure_given": true
+        },
+        {
+          "type": "problem",
+          "label": "BTVN~2.",
+          "statement": "\\par\\nopagebreak\n\\begin{minipage}[t]{0.64\\linewidth}\\vspace{0pt}\n[NB] Quan sát Hình BTVN 2 rồi điền vào chỗ trống: hai cạnh đối của $EF$ là [[blank:1.4cm]]; hai đường chéo của tứ giác là [[blank:1.4cm]] và [[blank:1.4cm]].\n\\end{minipage}\\hfill\n\\begin{minipage}[t]{0.31\\linewidth}\\vspace{0pt}\n\\centering\n\\adjustbox{max width=\\linewidth, max totalheight=2.4cm}{\n\\begin{tikzpicture}[line width=0.8pt, font=\\small]\n  \\coordinate (vE) at (0.5,1.9);\n  \\coordinate (vF) at (3.3,2.3);\n  \\coordinate (vG) at (4.0,0.5);\n  \\coordinate (vH) at (0.0,0.0);\n  \\draw[ink,fill=brand!8] (vE) -- (vF) -- (vG) -- (vH) -- cycle;\n  \\node[above left] at (vE) {$E$};\n  \\node[above right] at (vF) {$F$};\n  \\node[below right] at (vG) {$G$};\n  \\node[below left] at (vH) {$H$};\n  \\draw[ink,dashed] (vE) -- (vG);\n  \\draw[ink,dashed] (vF) -- (vH);\n\\end{tikzpicture}\n}\n\\par\\vspace{2pt}{\\sffamily\\scriptsize\\itshape\\color{muted}Hình BTVN 2}\n\\end{minipage}",
+          "tier": "btvn",
+          "level": 1,
+          "dang_id": "NB1",
+          "solution": "Cạnh đối của $EF$ là $GH$; hai đường chéo là $EG$ và $FH$.",
+          "figure_given": true
+        },
+        {
+          "type": "problem",
+          "label": "BTVN~3.",
+          "statement": "\\par\\nopagebreak\n\\begin{minipage}[t]{0.64\\linewidth}\\vspace{0pt}\n[NB] Trong bốn hình dưới đây, hình nào \\textbf{không phải} là tứ giác lồi?[[br]]\\par\\vspace{3pt}\\parbox[t]{0.46\\linewidth}{\\textbf{A.} Hình 4a}\\hspace{0.04\\linewidth}\\parbox[t]{0.46\\linewidth}{\\textbf{B.} Hình 4b}\\par\\vspace{4pt}\\parbox[t]{0.46\\linewidth}{\\textbf{C.} Cả Hình 4b và Hình 4d}\\hspace{0.04\\linewidth}\\parbox[t]{0.46\\linewidth}{\\textbf{D.} Không có hình nào}\n\\end{minipage}\\hfill\n\\begin{minipage}[t]{0.31\\linewidth}\\vspace{0pt}\n\\centering\n\\adjustbox{max width=\\linewidth, max totalheight=2.4cm}{\n\\begin{tikzpicture}[line width=0.8pt, font=\\small]\n  \\begin{scope}[shift={(0,0)}]\n    \\draw[ink,fill=brand!8] (0,0) -- (1.5,0.2) -- (1.7,1.3) -- (0.2,1.1) -- cycle;\n    \\node[font=\\scriptsize,ink] at (0.9,-0.4) {Hình 4a};\n  \\end{scope}\n  \\begin{scope}[shift={(2.3,0)}]\n    \\draw[ink,fill=brand!8] (0,0) -- (1.6,0) -- (0.8,0.7) -- (1.2,1.4) -- cycle;\n    \\node[font=\\scriptsize,ink] at (0.9,-0.4) {Hình 4b};\n  \\end{scope}\n  \\begin{scope}[shift={(4.6,0)}]\n    \\draw[ink] (0,0) -- (1.6,1.3) -- (1.6,0) -- (0,1.3) -- cycle;\n    \\node[font=\\scriptsize,ink] at (0.9,-0.4) {Hình 4c};\n  \\end{scope}\n  \\begin{scope}[shift={(6.9,0)}]\n    \\draw[ink,fill=brand!8] (0,0) -- (1.6,0.3) -- (0.7,0.8) -- (1.3,1.4) -- cycle;\n    \\node[font=\\scriptsize,ink] at (0.9,-0.4) {Hình 4d};\n  \\end{scope}\n\\end{tikzpicture}\n}\n\\par\\vspace{2pt}{\\sffamily\\scriptsize\\itshape\\color{muted}Hình BTVN 3 (dùng lại Hình 4)}\n\\end{minipage}",
+          "tier": "btvn",
+          "level": 1,
+          "dang_id": "NB2",
+          "solution": "Đáp án \\textbf{C}. Hình 4b và Hình 4d đều có một đỉnh thụt vào nên không phải tứ giác lồi (Hình 4c thì không phải tứ giác).",
+          "figure_given": true
+        },
+        {
+          "type": "problem",
+          "label": "BTVN~4.",
+          "statement": "\\par\\nopagebreak\n\\begin{minipage}[t]{0.64\\linewidth}\\vspace{0pt}\n[NB] Tứ giác $MNPQ$ ở Hình BTVN 4 có phải tứ giác lồi không? Hãy chỉ ra một cạnh mà tứ giác nằm về hai phía của đường thẳng chứa cạnh đó.\n\\end{minipage}\\hfill\n\\begin{minipage}[t]{0.31\\linewidth}\\vspace{0pt}\n\\centering\n\\adjustbox{max width=\\linewidth, max totalheight=2.4cm}{\n\\begin{tikzpicture}[line width=0.8pt, font=\\small]\n  \\coordinate (vM) at (0,0);\n  \\coordinate (vN) at (2.6,0.1);\n  \\coordinate (vP) at (1.4,0.95);\n  \\coordinate (vQ) at (1.9,2.2);\n  \\draw[ink,fill=brand!8] (vM) -- (vN) -- (vP) -- (vQ) -- cycle;\n  \\node[below left] at (vM) {$M$};\n  \\node[below right] at (vN) {$N$};\n  \\node[left] at (vP) {$P$};\n  \\node[above] at (vQ) {$Q$};\n  \\draw[brand,dashed,line width=0.9pt] (3.32,-0.41) -- (0.80,1.38);\n\\end{tikzpicture}\n}\n\\par\\vspace{2pt}{\\sffamily\\scriptsize\\itshape\\color{muted}Hình BTVN 4}\n\\end{minipage}",
+          "tier": "btvn",
+          "level": 1,
+          "dang_id": "NB2",
+          "solution": "Không phải tứ giác lồi. Đường thẳng chứa cạnh $NP$ có đỉnh $M$ ở một phía và đỉnh $Q$ ở phía kia.",
+          "figure_given": true
+        },
+        {
+          "type": "problem",
+          "label": "BTVN~5.",
+          "statement": "\\par\\nopagebreak\n\\begin{minipage}[t]{0.64\\linewidth}\\vspace{0pt}\na) [NB] Tứ giác $ABCD$ có $\\widehat{A}=80^\\circ$, $\\widehat{B}=110^\\circ$, $\\widehat{C}=95^\\circ$. Tính $\\widehat{D}$.[[br]] b) [NB] Tìm số đo $x$ trên Hình BTVN 5.\n\\end{minipage}\\hfill\n\\begin{minipage}[t]{0.31\\linewidth}\\vspace{0pt}\n\\centering\n\\adjustbox{max width=\\linewidth, max totalheight=2.4cm}{\n\\begin{tikzpicture}[line width=0.8pt, font=\\small]\n  \\coordinate (vA) at (0.5,1.9);\n  \\coordinate (vB) at (3.3,2.3);\n  \\coordinate (vC) at (4.0,0.5);\n  \\coordinate (vD) at (0.0,0.0);\n  \\draw[ink,fill=brand!8] (vA) -- (vB) -- (vC) -- (vD) -- cycle;\n  \\node[above left] at (vA) {$A$};\n  \\node[above right] at (vB) {$B$};\n  \\node[below right] at (vC) {$C$};\n  \\node[below left] at (vD) {$D$};\n  \\node[brand,font=\\scriptsize] at (0.85,1.52) {$90^\\circ$};\n  \\node[brand,font=\\scriptsize] at (2.92,1.95) {$135^\\circ$};\n  \\node[brand,font=\\scriptsize] at (3.48,0.72) {$x$};\n  \\node[brand,font=\\scriptsize] at (0.44,0.3) {$75^\\circ$};\n\\end{tikzpicture}\n}\n\\par\\vspace{2pt}{\\sffamily\\scriptsize\\itshape\\color{muted}Hình BTVN 5}\n\\end{minipage}",
+          "tier": "btvn",
+          "level": 1,
+          "dang_id": "NB3",
+          "solution": "a) $\\widehat{D} = 360^\\circ - 80^\\circ - 110^\\circ - 95^\\circ = 75^\\circ$.[[br]] b) $x = 360^\\circ - 90^\\circ - 135^\\circ - 75^\\circ = 60^\\circ$.",
+          "figure_given": true
+        },
+        {
+          "type": "problem",
+          "label": "BTVN~6.",
+          "statement": "[NB] Vẽ vào vở tứ giác $MNPQ$ có $MN=MQ$ và $PN=PQ$; đánh dấu các cạnh bằng nhau rồi kẻ hai đường chéo $MP$, $NQ$.",
+          "tier": "btvn",
+          "level": 1,
+          "dang_id": "NB4",
+          "solution": "Hình vẽ phải có $MN=MQ$ (một gạch), $PN=PQ$ (hai gạch) và hai đường chéo $MP$, $NQ$ cắt nhau; $MP$ chia đôi và vuông góc với $NQ$.",
+          "draw": true
+        },
+        {
+          "type": "problem",
+          "label": "BTVN~7.",
+          "statement": "\\par\\nopagebreak\n\\begin{minipage}[t]{0.64\\linewidth}\\vspace{0pt}\nQuan sát Hình BTVN 7 ($MN=MQ$, $PN=PQ$) rồi điền vào chỗ trống:[[br]] a) [NB] Vì $MN=MQ$ nên $M$ nằm trên đường trung trực của đoạn thẳng [[blank:1.4cm]].[[br]] b) [NB] Vì $PN=PQ$ nên $P$ nằm trên đường [[blank:2.4cm]] của $NQ$; do đó đường thẳng $MP$ là đường trung trực của [[blank:1.4cm]].\n\\end{minipage}\\hfill\n\\begin{minipage}[t]{0.31\\linewidth}\\vspace{0pt}\n\\centering\n\\adjustbox{max width=\\linewidth, max totalheight=2.4cm}{\n\\begin{tikzpicture}[line width=0.8pt, font=\\small]\n  \\coordinate (vM) at (1.9,2.8);\n  \\coordinate (vN) at (3.4,1.5);\n  \\coordinate (vP) at (1.9,0.0);\n  \\coordinate (vQ) at (0.4,1.5);\n  \\draw[ink,fill=brand!8] (vM) -- (vN) -- (vP) -- (vQ) -- cycle;\n  \\node[above] at (vM) {$M$};\n  \\node[right] at (vN) {$N$};\n  \\node[below] at (vP) {$P$};\n  \\node[left] at (vQ) {$Q$};\n  \\node[ink,font=\\scriptsize] at (2.65,2.15) {$|$};\n  \\node[ink,font=\\scriptsize] at (2.65,0.75) {$||$};\n  \\node[ink,font=\\scriptsize] at (1.15,0.75) {$||$};\n  \\node[ink,font=\\scriptsize] at (1.15,2.15) {$|$};\n  \\draw[ink,dashed] (vM) -- (vP);\n  \\draw[ink,dashed] (vN) -- (vQ);\n  \\fill[ink] (1.9,1.5) circle (1.3pt);\n\\end{tikzpicture}\n}\n\\par\\vspace{2pt}{\\sffamily\\scriptsize\\itshape\\color{muted}Hình BTVN 7}\n\\end{minipage}",
+          "tier": "btvn",
+          "level": 1,
+          "dang_id": "NB5",
+          "solution": "a) $NQ$. [[br]] b) trung trực; đoạn thẳng $NQ$.",
+          "figure_given": true
+        },
+        {
+          "type": "problem",
+          "label": "BTVN~8.",
+          "statement": "\\par\\nopagebreak\n\\begin{minipage}[t]{0.64\\linewidth}\\vspace{0pt}\nQuan sát Hình BTVN 8.[[br]] a) [NB] Viết hệ thức tổng bốn góc của tứ giác $ABCD$ rồi thay số đã biết vào.[[br]] b) [NB] Tính $\\widehat{B}$ và góc ngoài của tứ giác tại đỉnh $B$.\n\\end{minipage}\\hfill\n\\begin{minipage}[t]{0.31\\linewidth}\\vspace{0pt}\n\\centering\n\\adjustbox{max width=\\linewidth, max totalheight=2.4cm}{\n\\begin{tikzpicture}[line width=0.8pt, font=\\small]\n  \\coordinate (vA) at (0.5,1.9);\n  \\coordinate (vB) at (3.3,2.3);\n  \\coordinate (vC) at (4.0,0.5);\n  \\coordinate (vD) at (0.0,0.0);\n  \\draw[ink,fill=brand!8] (vA) -- (vB) -- (vC) -- (vD) -- cycle;\n  \\node[above left] at (vA) {$A$};\n  \\node[above right] at (vB) {$B$};\n  \\node[below right] at (vC) {$C$};\n  \\node[below left] at (vD) {$D$};\n  \\node[brand,font=\\scriptsize] at (0.85,1.52) {$70^\\circ$};\n  \\node[brand,font=\\scriptsize] at (3.48,0.72) {$110^\\circ$};\n  \\node[brand,font=\\scriptsize] at (0.44,0.3) {$85^\\circ$};\n\\end{tikzpicture}\n}\n\\par\\vspace{2pt}{\\sffamily\\scriptsize\\itshape\\color{muted}Hình BTVN 8}\n\\end{minipage}",
+          "tier": "btvn",
+          "level": 1,
+          "dang_id": "NB6",
+          "solution": "a) $70^\\circ + \\widehat{B} + 110^\\circ + 85^\\circ = 360^\\circ$.[[br]] b) $\\widehat{B} = 360^\\circ - 265^\\circ = 95^\\circ$; góc ngoài tại $B$ bằng $180^\\circ - 95^\\circ = 85^\\circ$.",
+          "figure_given": true
+        },
+        {
+          "type": "problem",
+          "label": "BTVN~9.",
+          "statement": "\\par\\nopagebreak\n\\begin{minipage}[t]{0.64\\linewidth}\\vspace{0pt}\na) [TH] Bốn góc của tứ giác $ABCD$ tỉ lệ với $1$; $2$; $3$; $4$. Tính số đo mỗi góc.[[br]] b) [TH] Tứ giác $ABCD$ có $\\widehat{B}=\\widehat{A}+20^\\circ$, $\\widehat{C}=\\widehat{B}+20^\\circ$, $\\widehat{D}=\\widehat{C}+20^\\circ$. Tính số đo bốn góc.\n\\end{minipage}\\hfill\n\\begin{minipage}[t]{0.31\\linewidth}\\vspace{0pt}\n\\centering\n\\adjustbox{max width=\\linewidth, max totalheight=2.4cm}{\n\\begin{tikzpicture}[line width=0.8pt, font=\\small]\n  \\coordinate (vA) at (0.5,1.9);\n  \\coordinate (vB) at (3.3,2.3);\n  \\coordinate (vC) at (4.0,0.5);\n  \\coordinate (vD) at (0.0,0.0);\n  \\draw[ink,fill=brand!8] (vA) -- (vB) -- (vC) -- (vD) -- cycle;\n  \\node[above left] at (vA) {$A$};\n  \\node[above right] at (vB) {$B$};\n  \\node[below right] at (vC) {$C$};\n  \\node[below left] at (vD) {$D$};\n\\end{tikzpicture}\n}\n\\par\\vspace{2pt}{\\sffamily\\scriptsize\\itshape\\color{muted}Hình BTVN 9}\n\\end{minipage}",
+          "tier": "btvn",
+          "level": 2,
+          "dang_id": "TH1",
+          "solution": "a) Đặt bốn góc là $k$, $2k$, $3k$, $4k$. Vì tổng bốn góc bằng $360^\\circ$ nên $10k = 360^\\circ$, suy ra $k = 36^\\circ$.[[br]] Vậy bốn góc lần lượt là $36^\\circ$, $72^\\circ$, $108^\\circ$, $144^\\circ$.[[br]] b) Ta có $\\widehat{B} = \\widehat{A}+20^\\circ$, $\\widehat{C} = \\widehat{A}+40^\\circ$, $\\widehat{D} = \\widehat{A}+60^\\circ$.[[br]] Vì tổng bốn góc bằng $360^\\circ$ nên $4\\widehat{A} + 120^\\circ = 360^\\circ$, suy ra $\\widehat{A} = 60^\\circ$.[[br]] Vậy $\\widehat{A}=60^\\circ$, $\\widehat{B}=80^\\circ$, $\\widehat{C}=100^\\circ$, $\\widehat{D}=120^\\circ$.",
+          "figure_given": true
+        },
+        {
+          "type": "problem",
+          "label": "BTVN~10.",
+          "statement": "\\par\\nopagebreak\n\\begin{minipage}[t]{0.64\\linewidth}\\vspace{0pt}\n[TH] Tứ giác $ABCD$ có $\\widehat{C}=70^\\circ$, $\\widehat{D}=90^\\circ$. Hai tia phân giác của góc $A$ và góc $B$ cắt nhau tại $I$ (Hình BTVN 10). Tính $\\widehat{AIB}$.\n\\end{minipage}\\hfill\n\\begin{minipage}[t]{0.31\\linewidth}\\vspace{0pt}\n\\centering\n\\adjustbox{max width=\\linewidth, max totalheight=2.4cm}{\n\\begin{tikzpicture}[line width=0.8pt, font=\\small]\n  \\coordinate (vA) at (0.5,1.9);\n  \\coordinate (vB) at (3.3,2.3);\n  \\coordinate (vC) at (4.0,0.5);\n  \\coordinate (vD) at (0.0,0.0);\n  \\draw[ink,fill=brand!8] (vA) -- (vB) -- (vC) -- (vD) -- cycle;\n  \\node[above left] at (vA) {$A$};\n  \\node[above right] at (vB) {$B$};\n  \\node[below right] at (vC) {$C$};\n  \\node[below left] at (vD) {$D$};\n  \\node[brand,font=\\scriptsize] at (3.48,0.72) {$70^\\circ$};\n  \\node[brand,font=\\scriptsize] at (0.44,0.3) {$90^\\circ$};\n  \\draw[brand,line width=1.0pt] (vA) -- (1.72,1.06);\n  \\draw[brand,line width=1.0pt] (vB) -- (1.72,1.06);\n  \\fill[brand] (1.72,1.06) circle (1.3pt) node[below=1pt,ink]{$I$};\n\\end{tikzpicture}\n}\n\\par\\vspace{2pt}{\\sffamily\\scriptsize\\itshape\\color{muted}Hình BTVN 10}\n\\end{minipage}",
+          "tier": "btvn",
+          "level": 2,
+          "dang_id": "TH2",
+          "solution": "Vì tổng bốn góc của tứ giác bằng $360^\\circ$ nên $\\widehat{A}+\\widehat{B} = 360^\\circ - 70^\\circ - 90^\\circ = 200^\\circ$.[[br]] Vì $AI$, $BI$ là hai tia phân giác nên $\\widehat{IAB}+\\widehat{IBA} = 200^\\circ : 2 = 100^\\circ$.[[br]] Xét tam giác $IAB$ có $\\widehat{AIB} = 180^\\circ - 100^\\circ = 80^\\circ$.[[br]] Vậy $\\widehat{AIB} = 80^\\circ$.",
+          "figure_given": true
+        },
+        {
+          "type": "problem",
+          "label": "BTVN~11.",
+          "statement": "\\par\\nopagebreak\n\\begin{minipage}[t]{0.64\\linewidth}\\vspace{0pt}\n[TH] Tứ giác $ABCD$ ở Hình BTVN 11 có $AB=AD$ và $CB=CD$. Chứng minh $\\triangle ABC = \\triangle ADC$, từ đó suy ra $AC$ là tia phân giác của góc $A$.\n\\end{minipage}\\hfill\n\\begin{minipage}[t]{0.31\\linewidth}\\vspace{0pt}\n\\centering\n\\adjustbox{max width=\\linewidth, max totalheight=2.4cm}{\n\\begin{tikzpicture}[line width=0.8pt, font=\\small]\n  \\coordinate (vA) at (1.9,2.8);\n  \\coordinate (vB) at (3.4,1.5);\n  \\coordinate (vC) at (1.9,0.0);\n  \\coordinate (vD) at (0.4,1.5);\n  \\draw[ink,fill=brand!8] (vA) -- (vB) -- (vC) -- (vD) -- cycle;\n  \\node[above] at (vA) {$A$};\n  \\node[right] at (vB) {$B$};\n  \\node[below] at (vC) {$C$};\n  \\node[left] at (vD) {$D$};\n  \\node[ink,font=\\scriptsize] at (2.65,2.15) {$|$};\n  \\node[ink,font=\\scriptsize] at (2.65,0.75) {$||$};\n  \\node[ink,font=\\scriptsize] at (1.15,0.75) {$||$};\n  \\node[ink,font=\\scriptsize] at (1.15,2.15) {$|$};\n  \\draw[ink,dashed] (vA) -- (vC);\n  \\draw[ink,dashed] (vB) -- (vD);\n  \\fill[ink] (1.9,1.5) circle (1.3pt);\n\\end{tikzpicture}\n}\n\\par\\vspace{2pt}{\\sffamily\\scriptsize\\itshape\\color{muted}Hình BTVN 11}\n\\end{minipage}",
+          "tier": "btvn",
+          "level": 2,
+          "dang_id": "TH3",
+          "solution": "Xét $\\triangle ABC$ và $\\triangle ADC$ có: $AB = AD$ (giả thiết), $CB = CD$ (giả thiết), $AC$ là cạnh chung.[[br]] Do đó $\\triangle ABC = \\triangle ADC$ (c.c.c), suy ra $\\widehat{BAC} = \\widehat{DAC}$ (hai góc tương ứng).[[br]] Mà tia $AC$ nằm giữa hai tia $AB$ và $AD$.[[br]] Vậy $AC$ là tia phân giác của góc $A$.",
+          "figure_given": true
+        }
+      ],
+      "teacher_note": "Buổi sau chữa BTVN 11 đầu tiên vì nó là bản rút gọn của Bài 14 — em nào làm được coi như đã nắm khuôn lập luận. BTVN 9 chỉ chữa ý thứ hai nếu nhiều em sai."
+    }
+  ]
+}

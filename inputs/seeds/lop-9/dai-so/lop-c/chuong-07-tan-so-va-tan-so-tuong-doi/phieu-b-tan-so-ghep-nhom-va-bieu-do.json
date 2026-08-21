@@ -1,0 +1,540 @@
+{
+ "slug": "phieu-b-tan-so-ghep-nhom-va-bieu-do",
+ "title": "Bài 24. Bảng tần số, tần số tương đối ghép nhóm và biểu đồ",
+ "eyebrow": "ĐẠI SỐ — CHƯƠNG VII · PHIẾU B",
+ "grade_label": "Lớp 9 • Ôn vào 10",
+ "class_tier": "C",
+ "so_ca": 1,
+ "stages": [
+  {
+   "kind": "review",
+   "number": 1,
+   "title": "Khám phá",
+   "teacher_note": "Mở màn 8 phút. Mở thẳng ba đề THẬT của Sở cho HS xem: ba năm hỏi y hệt một khuôn, chỉ đổi bối cảnh. Nói rõ đây là $1{,}0$ điểm — ý nhận biết ĐẮT NHẤT cả đề mà chỉ có một phép đọc bảng và một phép chia.",
+   "blocks": [
+    {
+     "type": "opener",
+     "tikz": "\\begin{tikzpicture}[font=\\small,line width=0.7pt]\\draw[->,ink] (-0.25,0) -- (4.55,0) node[below,font=\\scriptsize,anchor=north west]{Số học sinh};\\draw[->,ink] (-0.25,0) -- (-0.25,3.15) node[above,font=\\scriptsize]{Tần số};\\fill[stage3!20] (0.15,0) rectangle (1.15,2.40);\\draw[stage3] (0.15,0) rectangle (1.15,2.40);\\node[above,font=\\scriptsize] at (0.65,2.40) {15};\\node[below,font=\\scriptsize,align=center] at (0.65,0) {$[34;36)$};\\fill[stage3!20] (1.15,0) rectangle (2.15,1.60);\\draw[stage3] (1.15,0) rectangle (2.15,1.60);\\node[above,font=\\scriptsize] at (1.65,1.60) {10};\\node[below,font=\\scriptsize,align=center] at (1.65,0) {$[36;38)$};\\fill[stage3!20] (2.15,0) rectangle (3.15,1.60);\\draw[stage3] (2.15,0) rectangle (3.15,1.60);\\node[above,font=\\scriptsize] at (2.65,1.60) {10};\\node[below,font=\\scriptsize,align=center] at (2.65,0) {$[38;40)$};\\fill[stage3!20] (3.15,0) rectangle (4.15,0.80);\\draw[stage3] (3.15,0) rectangle (4.15,0.80);\\node[above,font=\\scriptsize] at (3.65,0.80) {5};\\node[below,font=\\scriptsize,align=center] at (3.65,0) {$[40;42)$};\\end{tikzpicture}",
+     "text": "Buổi trước ta đếm cỡ giày, mỗi cỡ một cột. Nhưng nếu đo \\textbf{chiều cao} thì gần như bạn nào cũng một số riêng — 50 bạn ra 40 giá trị khác nhau, bảng dài vô ích.[[br]]Cách làm: \\textbf{gộp các giá trị gần nhau thành một nhóm} $[a;b)$ rồi đếm theo nhóm. Đó là \\emph{tần số ghép nhóm}.[[br]]\\textbf{Đây chính là Câu I.1 của đề Vào 10} — $1{,}0$ điểm, có ở cả ba đề của Sở (minh họa, 2025, 2026), và lần nào cũng chỉ hỏi đúng hai việc: \\emph{tần số} và \\emph{tần số tương đối} của một nhóm."
+    },
+    {
+     "type": "noted",
+     "variant": "target",
+     "text": "\\textbf{Ba đề THẬT, một khuôn duy nhất.}[[br]]$\\bullet$\\; Đề minh họa: 40 lớp học, nhóm $[40;42)$ có tần số $5$ nên $f=12{,}5\\%$.[[br]]$\\bullet$\\; Đề chính thức 2025: 300 học sinh, nhóm $[12;16)$ có tần số $75$ nên $f=25\\%$.[[br]]$\\bullet$\\; Đề chính thức 2026: 50 học sinh, nhóm $[150;155)$ có tần số $14$ nên $f=28\\%$.[[br]]Khác nhau mỗi bối cảnh và chỗ lấy số (bảng hay biểu đồ); phần tính toán y nguyên."
+    }
+   ]
+  },
+  {
+   "kind": "concept",
+   "number": 2,
+   "title": "Kiến thức cần nhớ",
+   "teacher_note": "Giảng 45 phút. Nhấn hai chỗ HS mất điểm nhiều nhất: đầu mút (giá trị $b$ thuộc nhóm SAU) và cỡ mẫu (tổng tần số, không phải số nhóm). Ví dụ 3 là khuôn Câu I.1 viết như bài thi — bắt HS chép nguyên vào vở, buổi luyện đề sẽ dùng lại đúng ba dòng đó.",
+   "blocks": [
+    {
+     "type": "para",
+     "text": "\\textbf{1. Nhóm số liệu}"
+    },
+    {
+     "type": "para",
+     "text": "Nhóm số liệu viết dạng $[a;b)$, gồm các giá trị \\textbf{từ $a$ đến nhỏ hơn $b$}; riêng nhóm cuối cùng có thể viết $[a;b]$.[[br]]\\textbf{Độ dài} của nhóm $[a;b)$ bằng $b-a$. Các nhóm trong một bảng thường có độ dài bằng nhau.[[br]]\\textbf{Tần số ghép nhóm} của một nhóm là số giá trị của mẫu rơi vào nhóm đó."
+    },
+    {
+     "type": "noted",
+     "variant": "trap",
+     "text": "\\textbf{Bẫy đầu mút.} Giá trị đúng bằng $b$ KHÔNG thuộc nhóm $[a;b)$ mà thuộc nhóm sau.[[br]]Bạn cao đúng $150$ cm thuộc nhóm $[150;155)$, không thuộc nhóm $[145;150)$."
+    },
+    {
+     "type": "noted",
+     "variant": "example",
+     "text": "\\textbf{Ví dụ 1.} Cho các nhóm $[140;145)$, $[145;150)$, $[150;155)$. Tìm độ dài mỗi nhóm và cho biết giá trị $145$ thuộc nhóm nào.[[br]]\\textbf{Lời giải.}[[br]]\\quad Độ dài mỗi nhóm bằng $145-140=150-145=155-150=5$.[[br]]\\quad Vì nhóm $[140;145)$ chỉ gồm các giá trị nhỏ hơn $145$ nên giá trị $145$ thuộc nhóm $[145;150)$.[[br]]Vậy ba nhóm cùng độ dài $5$ và giá trị $145$ thuộc nhóm $[145;150)$."
+    },
+    {
+     "type": "para",
+     "text": "\\textbf{2. Khuôn Câu I.1 của đề Vào 10 — hai bước}"
+    },
+    {
+     "type": "para",
+     "text": "\\textbf{Bước 1.} Đọc \\textbf{tần số} $m$ của nhóm mà đề hỏi (đọc thẳng trên bảng, hoặc đọc chiều cao cột nếu đề cho biểu đồ).[[br]]\\textbf{Bước 2.} Cộng TOÀN BỘ tần số ra \\textbf{cỡ mẫu} $N$ rồi tính[[br]]\\quad $f=\\dfrac{m}{N}\\cdot 100\\%$.[[br]]Cuối bài phải viết đủ câu: \\emph{Vậy tần số của nhóm \\ldots{} là \\ldots, tần số tương đối của nhóm đó là \\ldots\\%}."
+    },
+    {
+     "type": "noted",
+     "variant": "example",
+     "text": "\\textbf{Ví dụ 2.} (đề chính thức Vào 10 Hà Nội 2025) Thời gian tự học một tuần của $300$ học sinh: $[0;4)$ có $17$; $[4;8)$ có $72$; $[8;12)$ có $94$; $[12;16)$ có $75$; $[16;20)$ có $42$. Xác định tần số và tần số tương đối của nhóm $[12;16)$.[[br]]\\textbf{Lời giải.}[[br]]\\quad Tần số của nhóm $[12;16)$ là $m=75$.[[br]]\\quad Cỡ mẫu $N=17+72+94+75+42=300$.[[br]]\\quad $f=\\dfrac{75}{300}\\cdot 100\\% = 25\\%$.[[br]]Vậy tần số của nhóm $[12;16)$ là $75$, tần số tương đối của nhóm đó là $25\\%$."
+    },
+    {
+     "type": "noted",
+     "variant": "example",
+     "text": "\\textbf{Ví dụ 3.} (đề chính thức Vào 10 Hà Nội 2026) Chiều cao của $50$ học sinh: $[140;145)$ có $10$; $[145;150)$ có $18$; $[150;155)$ có $14$; $[155;160)$ có $6$; $[160;165)$ có $2$. Xác định tần số và tần số tương đối của nhóm $[150;155)$.[[br]]\\textbf{Lời giải.}[[br]]\\quad Tần số của nhóm $[150;155)$ là $m=14$.[[br]]\\quad Cỡ mẫu $N=10+18+14+6+2=50$.[[br]]\\quad $f=\\dfrac{14}{50}\\cdot 100\\% = 28\\%$.[[br]]Vậy tần số của nhóm $[150;155)$ là $14$, tần số tương đối của nhóm đó là $28\\%$."
+    },
+    {
+     "type": "noted",
+     "variant": "trap",
+     "text": "\\textbf{Bẫy cỡ mẫu.} Bảng ở Ví dụ 3 có $5$ nhóm nhưng cỡ mẫu là $50$. Lấy SỐ NHÓM ($5$) làm cỡ mẫu là mất trọn $1{,}0$ điểm — lỗi phổ biến nhất của cả chương."
+    },
+    {
+     "type": "para",
+     "text": "\\textbf{3. Đọc số liệu trên biểu đồ ghép nhóm}"
+    },
+    {
+     "type": "para",
+     "text": "Trong \\textbf{biểu đồ tần số ghép nhóm dạng cột}, diện tích mỗi cột tỉ lệ thuận với tần số của nhóm.[[br]]Khi các nhóm có độ dài BẰNG NHAU thì chiều cao cột tỉ lệ với tần số, và các cột vẽ \\textbf{SÁT NHAU} (khác biểu đồ tần số ở Bài 22 — cột rời nhau)."
+    },
+    {
+     "type": "noted",
+     "variant": "example",
+     "text": "\\textbf{Ví dụ 4.} (đề minh họa Vào 10, Sở GD\\&ĐT Hà Nội) Từ biểu đồ tần số ghép nhóm về số học sinh của $40$ lớp học, tìm tần số và tần số tương đối ghép nhóm của nhóm $[40;42)$.\\par\\nopagebreak\\smallskip\\begin{center}\\adjustbox{max width=0.86\\linewidth}{\\begin{tikzpicture}[font=\\small,line width=0.7pt]\\draw[->,ink] (-0.25,0) -- (5.15,0) node[below,font=\\scriptsize,anchor=north west]{Số học sinh};\\draw[->,ink] (-0.25,0) -- (-0.25,3.15) node[above,font=\\scriptsize]{Tần số};\\fill[stage3!20] (0.15,0) rectangle (1.30,2.40);\\draw[stage3] (0.15,0) rectangle (1.30,2.40);\\node[above,font=\\scriptsize] at (0.72,2.40) {15};\\node[below,font=\\scriptsize,align=center] at (0.72,0) {$[34;36)$};\\fill[stage3!20] (1.30,0) rectangle (2.45,1.60);\\draw[stage3] (1.30,0) rectangle (2.45,1.60);\\node[above,font=\\scriptsize] at (1.87,1.60) {10};\\node[below,font=\\scriptsize,align=center] at (1.87,0) {$[36;38)$};\\fill[stage3!20] (2.45,0) rectangle (3.60,1.60);\\draw[stage3] (2.45,0) rectangle (3.60,1.60);\\node[above,font=\\scriptsize] at (3.02,1.60) {10};\\node[below,font=\\scriptsize,align=center] at (3.02,0) {$[38;40)$};\\fill[stage3!20] (3.60,0) rectangle (4.75,0.80);\\draw[stage3] (3.60,0) rectangle (4.75,0.80);\\node[above,font=\\scriptsize] at (4.17,0.80) {5};\\node[below,font=\\scriptsize,align=center] at (4.17,0) {$[40;42)$};\\end{tikzpicture}}\\end{center}\\smallskip \\textbf{Lời giải.}[[br]]\\quad Cột $[40;42)$ cao tới vạch $5$ nên tần số ghép nhóm của nhóm đó là $5$.[[br]]\\quad Cỡ mẫu $N=15+10+10+5=40$.[[br]]\\quad $f=\\dfrac{5}{40}\\cdot 100\\% = 12{,}5\\%$.[[br]]Vậy tần số ghép nhóm của nhóm $[40;42)$ là $5$ và tần số tương đối ghép nhóm của nhóm đó là $12{,}5\\%$."
+    },
+    {
+     "type": "para",
+     "text": "\\textbf{4. Lập bảng ghép nhóm từ dãy số liệu thô}"
+    },
+    {
+     "type": "para",
+     "text": "Đề cho một dãy số rời rạc và các nhóm đã định sẵn thì làm ba việc:[[br]]\\quad (1) đọc lần lượt từng số, gạch bỏ số đã đếm để khỏi sót;[[br]]\\quad (2) ghi tần số của từng nhóm;[[br]]\\quad (3) cộng lại, tổng phải đúng bằng cỡ mẫu đề cho."
+    },
+    {
+     "type": "noted",
+     "variant": "example",
+     "text": "\\textbf{Ví dụ 5.} Lập bảng tần số ghép nhóm cho $10$ số liệu $12;\\;18;\\;25;\\;31;\\;27;\\;15;\\;22;\\;35;\\;19;\\;28$ theo các nhóm $[10;20)$, $[20;30)$, $[30;40)$.[[br]]\\textbf{Lời giải.}[[br]]\\quad Nhóm $[10;20)$ gồm $12;18;15;19$ nên tần số là $4$.[[br]]\\quad Nhóm $[20;30)$ gồm $25;27;22;28$ nên tần số là $4$.[[br]]\\quad Nhóm $[30;40)$ gồm $31;35$ nên tần số là $2$.[[br]]\\quad Kiểm: $4+4+2=10$, đúng bằng số liệu đề cho.[[br]]Vậy bảng tần số ghép nhóm có ba tần số lần lượt là $4$; $4$; $2$."
+    },
+    {
+     "type": "noted",
+     "variant": "example",
+     "text": "\\textbf{Ví dụ 6.} Lập trọn bảng tần số tương đối ghép nhóm cho bảng thời gian làm bài của $20$ học sinh: $[0;5)$ có $1$; $[5;10)$ có $5$; $[10;15)$ có $9$; $[15;20)$ có $5$.[[br]]\\textbf{Lời giải.} Áp dụng $f=\\dfrac{m}{N}\\cdot 100\\%$ với $N=1+5+9+5=20$, ta có[[br]]\\quad $\\dfrac{1}{20}\\cdot 100\\%=5\\%$;\\quad $\\dfrac{5}{20}\\cdot 100\\%=25\\%$;\\quad $\\dfrac{9}{20}\\cdot 100\\%=45\\%$;\\quad $\\dfrac{5}{20}\\cdot 100\\%=25\\%$.[[br]]\\quad Kiểm: $5\\%+25\\%+45\\%+25\\%=100\\%$.[[br]]Vậy bảng tần số tương đối ghép nhóm lần lượt là $5\\%$; $25\\%$; $45\\%$; $25\\%$."
+    },
+    {
+     "type": "noted",
+     "variant": "example",
+     "text": "\\textbf{Ví dụ 7.} \\emph{Gộp nhóm.} Với bảng tốc độ $44$ ô tô ($[40;45)$ có $4$; $[45;50)$ có $14$; $[50;55)$ có $8$; $[55;60)$ có $10$; $[60;65)$ có $6$; $[65;70)$ có $2$), hỏi có bao nhiêu xe đi với tốc độ thấp hơn $50$ km/h.[[br]]\\textbf{Lời giải.}[[br]]\\quad Vì hai nhóm $[40;45)$ và $[45;50)$ đều có tốc độ dưới $50$ km/h nên ta cộng hai tần số: $4+14=18$.[[br]]Vậy có $18$ ô tô đi với tốc độ thấp hơn $50$ km/h."
+    },
+    {
+     "type": "noted",
+     "variant": "target",
+     "text": "\\textbf{Ba câu bắt buộc khi trình bày Câu I.1.}[[br]]\\quad (1) \\emph{Tần số của nhóm \\ldots{} là \\ldots}[[br]]\\quad (2) \\emph{Cỡ mẫu} $N=\\ldots+\\ldots+\\ldots=\\ldots$[[br]]\\quad (3) $f=\\dfrac{m}{N}\\cdot 100\\%=\\ldots\\%$, rồi câu \\emph{Vậy \\ldots} chốt lại cả hai kết quả.[[br]]Thiếu câu (2) là mất điểm thành phần dù đáp số cuối vẫn đúng."
+    }
+   ]
+  },
+  {
+   "kind": "practice1",
+   "number": 3,
+   "title": "Luyện tập 1 — Nhận biết",
+   "teacher_note": "Luyện 48 phút. Bài 1--3 chữa miệng, mỗi bài 2 phút. Bài 4 là bài TRỌNG TÂM cả buổi — bắt ba HS lên bảng làm ba ý theo đúng ba dòng của khuôn, ai bỏ dòng cỡ mẫu thì làm lại. Bài 10 ý a) là đề CÓ THẬT ghi sai nhãn: cho HS tự phát hiện bằng phép kiểm tổng $100\\%$, đây là bài dạy HS tự soát.",
+   "blocks": [
+    {
+     "type": "problem",
+     "label": "Bài 1.",
+     "statement": "Cho các nhóm số liệu $[140;145)$, $[145;150)$, $[150;155)$, $[155;160)$.[[br]]a) [NB] Chỉ ra hai đầu mút và độ dài của nhóm $[145;150)$.[[br]]b) [NB] Giá trị $150$ thuộc nhóm nào trong hai nhóm $[145;150)$ và $[150;155)$?[[br]]c) [NB] Bốn nhóm trên có cùng độ dài không? Vì sao?",
+     "tier": "onclass",
+     "level": 1,
+     "solution": "a) Hai đầu mút là $145$ và $150$; độ dài nhóm $=150-145=5$.[[br]]b) Nhóm $[145;150)$ gồm các giá trị từ $145$ đến \\emph{nhỏ hơn} $150$, nên $150$ thuộc nhóm SAU, tức nhóm $[150;155)$.[[br]]c) Có. Độ dài bốn nhóm đều bằng $5$ ($145-140=150-145=155-150=160-155=5$).",
+     "dang_id": "NB1",
+     "writelines": 0
+    },
+    {
+     "type": "problem",
+     "label": "Bài 2.",
+     "statement": "Kết quả đo chiều cao của 50 học sinh lớp 6 (đơn vị: cm) cho trong bảng tần số ghép nhóm sau \\;(đề chính thức Vào 10 Hà Nội 2026).\\par\\nopagebreak\\smallskip\\begin{center}\\footnotesize\\renewcommand\\arraystretch{1.25}\\begin{tabular}{|l|c|c|c|c|c|}\\hline \\textbf{Chiều cao (cm)} & \\textbf{$[140;145)$} & \\textbf{$[145;150)$} & \\textbf{$[150;155)$} & \\textbf{$[155;160)$} & \\textbf{$[160;165)$} \\\\ \\hline Số học sinh & 10 & 18 & 14 & 6 & 2 \\\\ \\hline \\end{tabular}\\end{center}\\smallskip a) [NB] Tần số của nhóm $[150;155)$ là bao nhiêu?[[br]]b) [NB] Tần số của nhóm $[145;150)$ là bao nhiêu?[[br]]c) [NB] Nhóm nào có tần số nhỏ nhất?",
+     "tier": "onclass",
+     "level": 1,
+     "solution": "a) Tần số của nhóm $[150;155)$ là $14$.[[br]]b) Tần số của nhóm $[145;150)$ là $18$.[[br]]c) Nhóm $[160;165)$ có tần số nhỏ nhất ($2$ học sinh).",
+     "dang_id": "NB2",
+     "writelines": 0
+    },
+    {
+     "type": "problem",
+     "label": "Bài 3.",
+     "statement": "Cộng các tần số để tìm cỡ mẫu rồi đối chiếu với số liệu đề cho.[[br]]a) [NB] Bảng chiều cao 50 học sinh ở Bài 2 có các tần số $10;\\;18;\\;14;\\;6;\\;2$.[[br]]b) [NB] Khảo sát độ tuổi 500 người có các tần số $114;\\;86;\\;97;\\;61;\\;73;\\;69$ \\;(thi thử Vào 10, THCS Tự Lập).[[br]]c) [NB] Bảng điểm thi của khối 9 có các tần số $33;\\;60;\\;189;\\;168$ \\;(thi thử Vào 10 lần 1, THCS Cầu Giấy).",
+     "tier": "onclass",
+     "level": 1,
+     "solution": "a) $N=10+18+14+6+2=50$, đúng bằng $50$ học sinh đề cho.[[br]]b) $N=114+86+97+61+73+69=500$, đúng bằng $500$ người đề cho.[[br]]c) $N=33+60+189+168=450$ (học sinh).",
+     "dang_id": "NB3",
+     "writelines": 0
+    },
+    {
+     "type": "problem",
+     "label": "Bài 4.",
+     "statement": "\\textbf{KHUÔN CÂU I.1 — hai bước:} \\emph{Bước 1} đọc tần số $m$ của nhóm đề hỏi; \\emph{Bước 2} cộng cả bảng ra cỡ mẫu $N$ rồi tính $f=\\dfrac{m}{N}\\cdot 100\\%$.[[br]]Xác định tần số và tần số tương đối của nhóm được yêu cầu trong mỗi bảng sau.[[br]]a) [NB] Thời gian tự học một tuần của 300 học sinh lớp 9 (đơn vị: giờ), hỏi nhóm $[12;16)$ \\;(đề chính thức Vào 10 Hà Nội 2025).\\par\\nopagebreak\\smallskip\\begin{center}\\footnotesize\\renewcommand\\arraystretch{1.25}\\begin{tabular}{|l|c|c|c|c|c|}\\hline \\textbf{Thời gian (giờ)} & \\textbf{$[0;4)$} & \\textbf{$[4;8)$} & \\textbf{$[8;12)$} & \\textbf{$[12;16)$} & \\textbf{$[16;20)$} \\\\ \\hline Số học sinh & 17 & 72 & 94 & 75 & 42 \\\\ \\hline \\end{tabular}\\end{center}\\smallskip b) [NB] Bảng chiều cao 50 học sinh ở Bài 2, hỏi nhóm $[150;155)$.[[br]]c) [NB] Bảng độ tuổi 500 người ở Bài 3 ý b), hỏi nhóm $[20;22)$.",
+     "tier": "onclass",
+     "level": 1,
+     "solution": "a) Tần số của nhóm $[12;16)$ là $75$. Cỡ mẫu $N=17+72+94+75+42=300$.[[br]]$f=\\dfrac{75}{300}\\cdot 100\\% = 25\\%$.[[br]]b) Tần số là $14$; $N=50$ nên $f=\\dfrac{14}{50}\\cdot 100\\% = 28\\%$.[[br]]c) Tần số là $86$; $N=500$ nên $f=\\dfrac{86}{500}\\cdot 100\\% = 17{,}2\\%$.",
+     "dang_id": "NB4",
+     "writelines": 0
+    },
+    {
+     "type": "problem",
+     "label": "Bài 5.",
+     "statement": "Cùng khuôn Câu I.1 nhưng số liệu nằm trên BIỂU ĐỒ cột ghép nhóm — phải đọc chiều cao cột trước rồi mới tính. Biểu đồ dưới đây cho biết số học sinh của 40 lớp học \\;(đề minh họa Vào 10, Sở GD\\&ĐT Hà Nội).\\par\\nopagebreak\\smallskip\\begin{center}\\adjustbox{max width=0.86\\linewidth}{\\begin{tikzpicture}[font=\\small,line width=0.7pt]\\draw[->,ink] (-0.25,0) -- (5.75,0) node[below,font=\\scriptsize,anchor=north west]{Số học sinh};\\draw[->,ink] (-0.25,0) -- (-0.25,3.95) node[above,font=\\scriptsize]{Tần số};\\fill[stage3!20] (0.15,0) rectangle (1.45,3.20);\\draw[stage3] (0.15,0) rectangle (1.45,3.20);\\node[above,font=\\scriptsize] at (0.80,3.20) {15};\\node[below,font=\\scriptsize,align=center] at (0.80,0) {$[34;36)$};\\fill[stage3!20] (1.45,0) rectangle (2.75,2.13);\\draw[stage3] (1.45,0) rectangle (2.75,2.13);\\node[above,font=\\scriptsize] at (2.10,2.13) {10};\\node[below,font=\\scriptsize,align=center] at (2.10,0) {$[36;38)$};\\fill[stage3!20] (2.75,0) rectangle (4.05,2.13);\\draw[stage3] (2.75,0) rectangle (4.05,2.13);\\node[above,font=\\scriptsize] at (3.40,2.13) {10};\\node[below,font=\\scriptsize,align=center] at (3.40,0) {$[38;40)$};\\fill[stage3!20] (4.05,0) rectangle (5.35,1.07);\\draw[stage3] (4.05,0) rectangle (5.35,1.07);\\node[above,font=\\scriptsize] at (4.70,1.07) {5};\\node[below,font=\\scriptsize,align=center] at (4.70,0) {$[40;42)$};\\end{tikzpicture}}\\end{center}\\smallskip a) [NB] Tần số ghép nhóm của nhóm $[40;42)$ là bao nhiêu?[[br]]b) [NB] Cộng bốn cột để tìm cỡ mẫu $N$.[[br]]c) [NB] Tính tần số tương đối ghép nhóm của nhóm $[40;42)$.",
+     "tier": "onclass",
+     "level": 1,
+     "solution": "a) Cột $[40;42)$ cao tới vạch $5$ nên tần số ghép nhóm của nhóm đó là $5$.[[br]]b) $N=15+10+10+5=40$ (lớp), đúng bằng số lớp đề cho.[[br]]c) $f=\\dfrac{5}{40}\\cdot 100\\% = 12{,}5\\%$.",
+     "dang_id": "NB5",
+     "writelines": 0
+    },
+    {
+     "type": "problem",
+     "label": "Bài 6.",
+     "statement": "Điền vào chỗ trống để hoàn thành bài giải Câu I.1 theo đúng cách trình bày khi đi thi. Đề: \\emph{với bảng chiều cao 50 học sinh ở Bài 2, xác định tần số và tần số tương đối của nhóm} $[150;155)$.[[br]]a) [NB] Tần số của nhóm $[150;155)$ là $m=$ [[blank:18mm]][[br]]b) [NB] Cỡ mẫu $N=10+18+\\ldots+6+2=$ [[blank:18mm]][[br]]c) [NB] $f=\\frac{\\ldots}{\\ldots}\\cdot 100\\% =$ [[blank:22mm]][[br]]\\quad Câu trả lời: \\emph{Vậy tần số của nhóm} $[150;155)$ \\emph{là} \\ldots, \\emph{tần số tương đối của nhóm đó là} \\ldots\\%.",
+     "tier": "onclass",
+     "level": 1,
+     "solution": "a) $m=14$.[[br]]b) $N=10+18+14+6+2=50$.[[br]]c) $f=\\dfrac{14}{50}\\cdot 100\\% = 28\\%$.[[br]]Vậy tần số của nhóm $[150;155)$ là $14$, tần số tương đối của nhóm đó là $28\\%$.",
+     "dang_id": "NB6",
+     "writelines": 0
+    },
+    {
+     "type": "problem",
+     "label": "Bài 7.",
+     "statement": "\\textbf{Gộp nhóm} — cộng tần số của các nhóm thoả điều kiện.[[br]]a) [NB] Bảng tốc độ của 44 ô tô: $[40;45)$ có $4$; $[45;50)$ có $14$; $[50;55)$ có $8$; $[55;60)$ có $10$; $[60;65)$ có $6$; $[65;70)$ có $2$. Có bao nhiêu xe đi với tốc độ \\emph{thấp hơn} $50$ km/h? \\;(bộ đề Vào 10, Phòng GD\\&ĐT Đống Đa)[[br]]b) [NB] Bảng thời gian tự học của 50 học sinh: $[0;2)$ có $7$; $[2;4)$ có $14$; $[4;6)$ có $18$; $[6;8)$ có $6$; $[8;10)$ có $5$. Có bao nhiêu bạn tự học \\emph{từ $6$ giờ trở lên}? \\;(Cuối kì I, THCS Dịch Vọng)[[br]]c) [NB] Với bảng ở ý b), có bao nhiêu bạn tự học \\emph{dưới $4$ giờ}?",
+     "tier": "onclass",
+     "level": 1,
+     "solution": "a) Hai nhóm $[40;45)$ và $[45;50)$ đều có tốc độ dưới $50$ km/h nên số xe là $4+14=18$ (xe).[[br]]b) Hai nhóm $[6;8)$ và $[8;10)$ đều từ $6$ giờ trở lên nên số bạn là $6+5=11$ (bạn).[[br]]c) Hai nhóm $[0;2)$ và $[2;4)$ đều dưới $4$ giờ nên số bạn là $7+14=21$ (bạn).",
+     "dang_id": "NB7",
+     "writelines": 0
+    },
+    {
+     "type": "problem",
+     "label": "Bài 8.",
+     "statement": "Tìm tần số của nhóm còn thiếu khi đã biết cỡ mẫu và tần số các nhóm khác.[[br]]a) [NB] $N=40$; các tần số $4;\\;6;\\;8;\\;\\ldots;\\;12$.[[br]]b) [NB] $N=50$; các tần số $5;\\;15;\\;\\ldots;\\;10$.[[br]]c) [NB] $N=20$; các tần số $1;\\;5;\\;\\ldots;\\;5$.",
+     "tier": "onclass",
+     "level": 1,
+     "solution": "a) $40-(4+6+8+12)=40-30=10$.[[br]]b) $50-(5+15+10)=50-30=20$.[[br]]c) $20-(1+5+5)=20-11=9$.",
+     "dang_id": "NB8",
+     "writelines": 0
+    },
+    {
+     "type": "problem",
+     "label": "Bài 9.",
+     "statement": "Chiều ngược lại: biết cỡ mẫu và tần số tương đối ghép nhóm, tìm lại tần số của nhóm.[[br]]a) [NB] Khảo sát $40$ nhóm người, nhóm $[50;60]$ có tần số tương đối $7{,}5\\%$. Tìm tần số của nhóm đó \\;(bộ đề Vào 10, Phòng GD\\&ĐT Đống Đa).[[br]]b) [NB] Cỡ mẫu $N=40$, nhóm $[145;150)$ có tần số tương đối $37{,}5\\%$. Tìm tần số của nhóm đó \\;(thi thử Vào 10 lần 3, Phòng GD\\&ĐT Ứng Hòa).",
+     "tier": "onclass",
+     "level": 1,
+     "solution": "a) $m=N\\cdot f=40\\cdot 7{,}5\\% = 40\\cdot 0{,}075 = 3$.[[br]]b) $m=40\\cdot 37{,}5\\% = 40\\cdot 0{,}375 = 15$.",
+     "dang_id": "NB9",
+     "writelines": 0
+    },
+    {
+     "type": "problem",
+     "label": "Bài 10.",
+     "statement": "\\textbf{Hai phép kiểm bắt buộc:} tổng các tần số $=$ cỡ mẫu; tổng các tần số tương đối $=100\\%$. Dùng hai phép kiểm đó để soi ba bảng sau.[[br]]a) [NB] Một biểu đồ được ghi nhãn \\emph{\\textquotedblleft biểu đồ tần số TƯƠNG ĐỐI ghép nhóm\\textquotedblright} nhưng số ghi trên bốn cột là $7;\\;13;\\;21;\\;9$. Nhãn đó đúng hay sai? \\;(bộ đề Vào 10, Phòng GD\\&ĐT Đống Đa)[[br]]b) [NB] Với bốn số ở ý a), cỡ mẫu bằng bao nhiêu và tần số tương đối của nhóm có tần số $21$ bằng bao nhiêu?[[br]]c) [NB] Một bảng tần số tương đối ghi $5\\%;\\;25\\%;\\;45\\%;\\;20\\%$. Bảng này đã đúng chưa?",
+     "tier": "onclass",
+     "level": 1,
+     "solution": "a) SAI. Cộng lại $7+13+21+9=50 \\ne 100$, mà tổng các tần số tương đối phải bằng $100\\%$. Vậy các số trên cột là TẦN SỐ chứ không phải tần số tương đối.[[br]]b) Cỡ mẫu $N=50$; $f=\\dfrac{21}{50}\\cdot 100\\% = 42\\%$.[[br]]c) CHƯA đúng: $5\\%+25\\%+45\\%+20\\%=95\\% \\ne 100\\%$, còn thiếu $5\\%$ — bảng bị sót một nhóm hoặc tính nhầm.",
+     "dang_id": "NB10",
+     "writelines": 0
+    },
+    {
+     "type": "problem",
+     "label": "Bài 11.",
+     "statement": "Làm tròn tần số tương đối đúng yêu cầu của đề.[[br]]a) [NB] $m=10$, $N=120$; làm tròn đến hàng phần trăm \\;(bộ đề Vào 10, Phòng GD\\&ĐT Đống Đa).[[br]]b) [NB] $m=97$, $N=500$; kết quả có phải làm tròn không? \\;(thi thử Vào 10, THCS Tự Lập)[[br]]c) [NB] $m=19$, $N=50$; viết kết quả ở dạng phần trăm.",
+     "tier": "onclass",
+     "level": 1,
+     "solution": "a) $f=\\dfrac{10}{120}\\cdot 100\\% = 8{,}333\\ldots\\% \\approx 8{,}33\\%$ (hàng phần trăm là hai chữ số thập phân).[[br]]b) $f=\\dfrac{97}{500}\\cdot 100\\% = 19{,}4\\%$ — phép chia hết nên KHÔNG phải làm tròn, viết dấu $=$ chứ không viết $\\approx$.[[br]]c) $f=\\dfrac{19}{50}\\cdot 100\\% = 38\\%$.",
+     "dang_id": "NB11",
+     "writelines": 0
+    }
+   ]
+  },
+  {
+   "kind": "practice2",
+   "number": 4,
+   "title": "Luyện tập 2 — Thông hiểu \\& Vận dụng",
+   "teacher_note": "Luyện 48 phút. Bài 13 và Bài 30 (BTVN) là dạng NẶNG nhất chương — đếm từ dãy thô; bắt HS gạch bỏ từng số đã đếm rồi cộng kiểm, không cho đếm nhẩm. Bài 15 nhấn CỘT SÁT NHAU (khác buổi trước). Bài 17 là bài ráp cuối: nhóm trội $+$ tỉ lệ khoảng gộp $+$ kết luận đúng/sai.",
+   "blocks": [
+    {
+     "type": "problem",
+     "label": "Bài 12.",
+     "statement": "Biểu đồ tần số ghép nhóm dưới đây cho biết tốc độ của 44 ô tô khi đi qua một trạm đo \\;(bộ đề Vào 10, Phòng GD\\&ĐT Đống Đa).\\par\\nopagebreak\\smallskip\\begin{center}\\adjustbox{max width=0.86\\linewidth}{\\begin{tikzpicture}[font=\\small,line width=0.7pt]\\draw[->,ink] (-0.25,0) -- (7.45,0) node[below,font=\\scriptsize,anchor=north west]{Tốc độ (km/h)};\\draw[->,ink] (-0.25,0) -- (-0.25,3.95) node[above,font=\\scriptsize]{Số xe};\\fill[stage3!20] (0.15,0) rectangle (1.30,0.91);\\draw[stage3] (0.15,0) rectangle (1.30,0.91);\\node[above,font=\\scriptsize] at (0.72,0.91) {4};\\node[below,font=\\scriptsize,align=center] at (0.72,0) {$[40;45)$};\\fill[stage3!20] (1.30,0) rectangle (2.45,3.20);\\draw[stage3] (1.30,0) rectangle (2.45,3.20);\\node[above,font=\\scriptsize] at (1.87,3.20) {14};\\node[below,font=\\scriptsize,align=center] at (1.87,0) {$[45;50)$};\\fill[stage3!20] (2.45,0) rectangle (3.60,1.83);\\draw[stage3] (2.45,0) rectangle (3.60,1.83);\\node[above,font=\\scriptsize] at (3.02,1.83) {8};\\node[below,font=\\scriptsize,align=center] at (3.02,0) {$[50;55)$};\\fill[stage3!20] (3.60,0) rectangle (4.75,2.29);\\draw[stage3] (3.60,0) rectangle (4.75,2.29);\\node[above,font=\\scriptsize] at (4.17,2.29) {10};\\node[below,font=\\scriptsize,align=center] at (4.17,0) {$[55;60)$};\\fill[stage3!20] (4.75,0) rectangle (5.90,1.37);\\draw[stage3] (4.75,0) rectangle (5.90,1.37);\\node[above,font=\\scriptsize] at (5.33,1.37) {6};\\node[below,font=\\scriptsize,align=center] at (5.33,0) {$[60;65)$};\\fill[stage3!20] (5.90,0) rectangle (7.05,0.46);\\draw[stage3] (5.90,0) rectangle (7.05,0.46);\\node[above,font=\\scriptsize] at (6.48,0.46) {2};\\node[below,font=\\scriptsize,align=center] at (6.48,0) {$[65;70)$};\\end{tikzpicture}}\\end{center}\\smallskip a) [TH] Lập bảng tần số ghép nhóm tương ứng với biểu đồ.[[br]]b) [TH] Tính tần số tương đối ghép nhóm của nhóm $[45;50)$.",
+     "tier": "onclass",
+     "level": 2,
+     "solution": "a) Đọc chiều cao từng cột, ta có bảng tần số ghép nhóm với các tần số lần lượt là $4;\\;14;\\;8;\\;10;\\;6;\\;2$.[[br]]Kiểm: $4+14+8+10+6+2=44$, đúng bằng số xe đề cho.[[br]]b) Áp dụng $f=\\dfrac{m}{N}\\cdot 100\\%$ với $m=14$ và $N=44$, ta có $f=\\dfrac{14}{44}\\cdot 100\\% \\approx 31{,}82\\%$.[[br]]Vậy bảng có sáu nhóm với tần số $4;14;8;10;6;2$ và nhóm $[45;50)$ chiếm khoảng $31{,}82\\%$.",
+     "dang_id": "TH1",
+     "writelines": 0
+    },
+    {
+     "type": "problem",
+     "label": "Bài 13.",
+     "statement": "Công ty điện lực thống kê lượng điện tiêu thụ (kWh) trong tháng 3 của một số hộ gia đình \\;(thi thử Vào 10 lần 2, Phòng GD\\&ĐT Thanh Oai):[[br]]\\quad $150;\\;120;\\;180;\\;200;\\;130;\\;100;\\;160;\\;190;\\;219;\\;210;$[[br]]\\quad $170;\\;140;\\;110;\\;130;\\;160;\\;180;\\;150;\\;200;\\;210;\\;190$[[br]]a) [TH] Lập bảng tần số ghép nhóm theo các nhóm $[100;130)$, $[130;160)$, $[160;190)$, $[190;220)$.[[br]]b) [TH] Nhóm lượng điện nào có nhiều gia đình tiêu thụ nhất?",
+     "tier": "onclass",
+     "level": 2,
+     "solution": "a) Đếm lần lượt từng nhóm (gạch bỏ số đã đếm để khỏi sót), ta có tần số $3;\\;5;\\;5;\\;7$.[[br]]Kiểm: $3+5+5+7=20$, đúng bằng số hộ đã khảo sát.[[br]]b) So sánh bốn tần số, nhóm $[190;220)$ lớn nhất với $7$ hộ.[[br]]Vậy nhóm $[190;220)$ kWh có nhiều gia đình tiêu thụ nhất.",
+     "dang_id": "TH2",
+     "writelines": 0
+    },
+    {
+     "type": "problem",
+     "label": "Bài 14.",
+     "statement": "Điều tra thời gian một nhóm học sinh làm bài kiểm tra trắc nghiệm (đơn vị: phút), kết quả ghi trong bảng \\;(bộ đề Vào 10, Phòng GD\\&ĐT Đống Đa).\\par\\nopagebreak\\smallskip\\begin{center}\\footnotesize\\renewcommand\\arraystretch{1.25}\\begin{tabular}{|l|c|c|c|c|}\\hline \\textbf{Thời gian (phút)} & \\textbf{$[0;5)$} & \\textbf{$[5;10)$} & \\textbf{$[10;15)$} & \\textbf{$[15;20)$} \\\\ \\hline Số học sinh & 1 & 5 & 9 & 5 \\\\ \\hline \\end{tabular}\\end{center}\\smallskip a) [TH] Có bao nhiêu học sinh tham gia điều tra?[[br]]b) [TH] Lập TRỌN bảng tần số tương đối ghép nhóm rồi kiểm tổng bằng $100\\%$.",
+     "tier": "onclass",
+     "level": 2,
+     "solution": "a) Cỡ mẫu bằng tổng các tần số, ta có $N=1+5+9+5=20$ (học sinh).[[br]]b) Áp dụng $f=\\dfrac{m}{N}\\cdot 100\\%$ cho từng nhóm: $\\dfrac{1}{20}\\cdot 100\\%=5\\%$; $\\dfrac{5}{20}\\cdot 100\\%=25\\%$; $\\dfrac{9}{20}\\cdot 100\\%=45\\%$; $\\dfrac{5}{20}\\cdot 100\\%=25\\%$.[[br]]Kiểm: $5\\%+25\\%+45\\%+25\\%=100\\%$.[[br]]Vậy có $20$ học sinh và bảng tần số tương đối lần lượt là $5\\%$; $25\\%$; $45\\%$; $25\\%$.",
+     "dang_id": "TH3",
+     "writelines": 0
+    },
+    {
+     "type": "problem",
+     "label": "Bài 15.",
+     "statement": "Một lớp gồm 40 học sinh được khảo sát về chiều cao, kết quả cho trong bảng tần số ghép nhóm \\;(thi thử Vào 10 lần 3, Phòng GD\\&ĐT Ứng Hòa).\\par\\nopagebreak\\smallskip\\begin{center}\\footnotesize\\renewcommand\\arraystretch{1.25}\\begin{tabular}{|l|c|c|c|c|}\\hline \\textbf{Chiều cao (cm)} & \\textbf{$[140;145)$} & \\textbf{$[145;150)$} & \\textbf{$[150;155)$} & \\textbf{$[155;160)$} \\\\ \\hline Số học sinh & 5 & 15 & 12 & 8 \\\\ \\hline \\end{tabular}\\end{center}\\smallskip a) [TH] Vẽ biểu đồ tần số ghép nhóm dạng cột cho bảng trên (các cột SÁT nhau, ghi đủ tên hai trục).[[br]]b) [TH] Tính tần số tương đối ghép nhóm của nhóm $[145;150)$.",
+     "tier": "onclass",
+     "level": 2,
+     "solution": "a) Vì bốn nhóm có cùng độ dài $5$ nên chiều cao cột tỉ lệ với tần số. Ta có trục ngang ghi bốn nhóm $[140;145)$, $[145;150)$, $[150;155)$, $[155;160)$; trục đứng ghi \\emph{Số học sinh}; bốn cột vẽ SÁT nhau, cao lần lượt $5;\\;15;\\;12;\\;8$.[[br]]b) $N=5+15+12+8=40$ nên $f=\\dfrac{15}{40}\\cdot 100\\% = 37{,}5\\%$.[[br]]Vậy biểu đồ có bốn cột sát nhau cao $5;15;12;8$ và nhóm $[145;150)$ chiếm $37{,}5\\%$.",
+     "dang_id": "TH4",
+     "writelines": 0
+    },
+    {
+     "type": "problem",
+     "label": "Bài 16.",
+     "statement": "[VD] Kết quả đo chiều cao của 50 học sinh lớp 6 trường A cho trong bảng ở Bài 2, trong đó nhóm $[150;155)$ chiếm $28\\%$. Toàn trường A có $400$ học sinh lớp 6 và tỉ lệ chiều cao được coi là giống với mẫu đã đo (khuôn ước lượng của bộ đề Vào 10, Phòng GD\\&ĐT Đống Đa).[[br]]a) Ước lượng số học sinh lớp 6 toàn trường có chiều cao thuộc nhóm $[150;155)$.[[br]]b) Ước lượng số học sinh lớp 6 toàn trường cao \\emph{từ $150$ cm trở lên}.",
+     "tier": "onclass",
+     "level": 3,
+     "solution": "a) Vì tỉ lệ được coi là không đổi nên áp dụng $m=N\\cdot f$ với $N=400$ và $f=28\\%$, ta có $400\\cdot 28\\% = 400\\cdot 0{,}28 = 112$.[[br]]b) Từ $150$ cm trở lên gồm ba nhóm $[150;155)$, $[155;160)$, $[160;165)$ với tần số $14+6+2=22$, nên tần số tương đối là $\\dfrac{22}{50}\\cdot 100\\% = 44\\%$.[[br]]Số học sinh ước lượng $=400\\cdot 44\\% = 176$.[[br]]Vậy ước lượng có khoảng $112$ học sinh thuộc nhóm $[150;155)$ và khoảng $176$ học sinh cao từ $150$ cm trở lên.",
+     "dang_id": "VD1",
+     "writelines": 0
+    },
+    {
+     "type": "problem",
+     "label": "Bài 17.",
+     "statement": "[VD] Điều tra chiều cao (đơn vị: cm) của 50 học sinh một trường, sau khi ghép nhóm được bảng sau \\;(bộ đề Vào 10, Phòng GD\\&ĐT Đống Đa).\\par\\nopagebreak\\smallskip\\begin{center}\\footnotesize\\renewcommand\\arraystretch{1.25}\\begin{tabular}{|l|c|c|c|c|}\\hline \\textbf{Chiều cao (cm)} & \\textbf{$[140;150)$} & \\textbf{$[150;160)$} & \\textbf{$[160;170)$} & \\textbf{$[170;180)$} \\\\ \\hline Số học sinh & 6 & 15 & 19 & 10 \\\\ \\hline \\end{tabular}\\end{center}\\smallskip a) Nhóm nào có nhiều học sinh nhất?[[br]]b) Tính tần số tương đối ghép nhóm của nhóm $[150;160)$.[[br]]c) Bạn Minh nói \\textquotedblleft quá nửa số học sinh của trường cao từ $160$ cm trở lên\\textquotedblright. Nhận định của bạn Minh đúng hay sai?",
+     "tier": "onclass",
+     "level": 3,
+     "solution": "a) So sánh bốn tần số, ta có nhóm $[160;170)$ nhiều nhất với $19$ học sinh.[[br]]b) Cỡ mẫu $N=6+15+19+10=50$ nên $f=\\dfrac{15}{50}\\cdot 100\\% = 30\\%$.[[br]]c) Từ $160$ cm trở lên gồm hai nhóm $[160;170)$ và $[170;180)$ với $19+10=29$ học sinh, chiếm $\\dfrac{29}{50}\\cdot 100\\% = 58\\%$.[[br]]Vì $58\\% > 50\\%$ nên nhận định của bạn Minh ĐÚNG.[[br]]Vậy nhóm trội là $[160;170)$, nhóm $[150;160)$ chiếm $30\\%$ và nhận định của bạn Minh là đúng.",
+     "dang_id": "VD2",
+     "writelines": 0
+    }
+   ]
+  },
+  {
+   "kind": "reflection",
+   "number": 5,
+   "title": "Tổng kết",
+   "teacher_note": "Sơ đồ tư duy điền 5 phút cuối buổi. BTVN 17 bài $\\approx$ 96 phút. Hết chương VII — buổi sau sang chương VIII (xác suất), hai chương cộng lại là trọn Câu I $=1{,}5$ điểm của đề Vào 10.",
+   "blocks": [
+    {
+     "type": "mindmap",
+     "caption": "Điền các ô trống để tự tóm tắt cả buổi",
+     "root": "Tần số ghép nhóm — Câu I.1",
+     "branches": [
+      {
+       "label": "Nhóm $[a;b)$",
+       "children": [
+        {
+         "label": "Độ dài $=$ [[blank:1.4cm]]"
+        },
+        {
+         "label": "Giá trị $b$ thuộc nhóm [[blank:1.6cm]]"
+        }
+       ]
+      },
+      {
+       "label": "Khuôn hai bước",
+       "children": [
+        {
+         "label": "B1: đọc [[blank:1.6cm]] của nhóm"
+        },
+        {
+         "label": "B2: $N=$ tổng [[blank:2cm]]"
+        },
+        {
+         "label": "$f=\\dfrac{\\ldots}{\\ldots}\\cdot$ [[blank:1.2cm]]"
+        }
+       ]
+      },
+      {
+       "label": "Biểu đồ ghép nhóm",
+       "children": [
+        {
+         "label": "Các cột vẽ [[blank:1.6cm]] nhau"
+        },
+        {
+         "label": "Chiều cao tỉ lệ với [[blank:1.6cm]]"
+        }
+       ]
+      },
+      {
+       "label": "Hai phép kiểm",
+       "children": [
+        {
+         "label": "Tổng tần số $=$ [[blank:1.6cm]]"
+        },
+        {
+         "label": "Tổng tần số tương đối $=$ [[blank:1.4cm]]"
+        }
+       ]
+      }
+     ]
+    },
+    {
+     "type": "para",
+     "text": "\\textbf{Bài tập về nhà} — làm vào vở, buổi sau nộp."
+    },
+    {
+     "type": "problem",
+     "label": "Bài 18.",
+     "statement": "Cho các nhóm số liệu $[0;10)$, $[10;20)$, $[20;30)$.[[br]]a) [NB] Độ dài mỗi nhóm bằng bao nhiêu?[[br]]b) [NB] Giá trị $20$ thuộc nhóm nào?[[br]]c) [NB] Giá trị $19{,}5$ thuộc nhóm nào?",
+     "tier": "btvn",
+     "level": 1,
+     "solution": "a) Độ dài mỗi nhóm bằng $10$.[[br]]b) $20$ thuộc nhóm $[20;30)$ (vì nhóm $[10;20)$ chỉ gồm các giá trị nhỏ hơn $20$).[[br]]c) $19{,}5$ thuộc nhóm $[10;20)$.",
+     "dang_id": "NB1",
+     "writelines": 0
+    },
+    {
+     "type": "problem",
+     "label": "Bài 19.",
+     "statement": "Thống kê độ dài (đơn vị: cm) của 50 lá dương xỉ trưởng thành \\;(bộ đề Vào 10, Phòng GD\\&ĐT Đống Đa).\\par\\nopagebreak\\smallskip\\begin{center}\\footnotesize\\renewcommand\\arraystretch{1.25}\\begin{tabular}{|l|c|c|c|c|}\\hline \\textbf{Độ dài (cm)} & \\textbf{$[10;20)$} & \\textbf{$[20;30)$} & \\textbf{$[30;40)$} & \\textbf{$[40;50)$} \\\\ \\hline Số lá & 5 & 15 & 20 & 10 \\\\ \\hline \\end{tabular}\\end{center}\\smallskip a) [NB] Tần số của nhóm $[30;40)$ là bao nhiêu?[[br]]b) [NB] Nhóm nào có tần số nhỏ nhất?",
+     "tier": "btvn",
+     "level": 1,
+     "solution": "a) Tần số của nhóm $[30;40)$ là $20$.[[br]]b) Nhóm $[10;20)$ có tần số nhỏ nhất ($5$ lá).",
+     "dang_id": "NB2",
+     "writelines": 0
+    },
+    {
+     "type": "problem",
+     "label": "Bài 20.",
+     "statement": "Cộng các tần số để tìm cỡ mẫu.[[br]]a) [NB] $5;\\;15;\\;20;\\;10$ (bảng lá dương xỉ ở Bài 19).[[br]]b) [NB] $4;\\;6;\\;8;\\;10;\\;12$ (số lần truy cập Internet của một nhóm người, bộ đề Vào 10 Phòng GD\\&ĐT Đống Đa).[[br]]c) [NB] $1;\\;5;\\;9;\\;5$ (thời gian làm bài của một nhóm học sinh).",
+     "tier": "btvn",
+     "level": 1,
+     "solution": "a) $N=5+15+20+10=50$.[[br]]b) $N=4+6+8+10+12=40$.[[br]]c) $N=1+5+9+5=20$.",
+     "dang_id": "NB3",
+     "writelines": 0
+    },
+    {
+     "type": "problem",
+     "label": "Bài 21.",
+     "statement": "Xác định tần số và tần số tương đối của nhóm được yêu cầu.[[br]]a) [NB] Bảng lá dương xỉ ở Bài 19, hỏi nhóm $[30;40)$.[[br]]b) [NB] Số lần truy cập Internet của $40$ người: $[30;40)$ có $4$; $[40;50)$ có $6$; $[50;60)$ có $8$; $[60;70)$ có $10$; $[70;80)$ có $12$; hỏi nhóm $[60;70)$ \\;(bộ đề Vào 10, Phòng GD\\&ĐT Đống Đa).[[br]]c) [NB] Bảng thời gian tự học của $300$ học sinh ở Bài 4 ý a), hỏi nhóm $[8;12)$.",
+     "tier": "btvn",
+     "level": 1,
+     "solution": "a) Tần số $20$; $N=50$ nên $f=\\dfrac{20}{50}\\cdot 100\\% = 40\\%$.[[br]]b) Tần số $10$; $N=40$ nên $f=\\dfrac{10}{40}\\cdot 100\\% = 25\\%$.[[br]]c) Tần số $94$; $N=300$ nên $f=\\dfrac{94}{300}\\cdot 100\\% \\approx 31{,}33\\%$.",
+     "dang_id": "NB4",
+     "writelines": 0
+    },
+    {
+     "type": "problem",
+     "label": "Bài 22.",
+     "statement": "Biểu đồ tần số ghép nhóm dưới đây cho biết số lần truy cập Internet trong một tuần của 40 người \\;(bộ đề Vào 10, Phòng GD\\&ĐT Đống Đa).\\par\\nopagebreak\\smallskip\\begin{center}\\adjustbox{max width=0.86\\linewidth}{\\begin{tikzpicture}[font=\\small,line width=0.7pt]\\draw[->,ink] (-0.25,0) -- (6.55,0) node[below,font=\\scriptsize,anchor=north west]{Số lần truy cập};\\draw[->,ink] (-0.25,0) -- (-0.25,3.95) node[above,font=\\scriptsize]{Số người};\\fill[stage3!20] (0.15,0) rectangle (1.35,1.07);\\draw[stage3] (0.15,0) rectangle (1.35,1.07);\\node[above,font=\\scriptsize] at (0.75,1.07) {4};\\node[below,font=\\scriptsize,align=center] at (0.75,0) {$[30;40)$};\\fill[stage3!20] (1.35,0) rectangle (2.55,1.60);\\draw[stage3] (1.35,0) rectangle (2.55,1.60);\\node[above,font=\\scriptsize] at (1.95,1.60) {6};\\node[below,font=\\scriptsize,align=center] at (1.95,0) {$[40;50)$};\\fill[stage3!20] (2.55,0) rectangle (3.75,2.13);\\draw[stage3] (2.55,0) rectangle (3.75,2.13);\\node[above,font=\\scriptsize] at (3.15,2.13) {8};\\node[below,font=\\scriptsize,align=center] at (3.15,0) {$[50;60)$};\\fill[stage3!20] (3.75,0) rectangle (4.95,2.67);\\draw[stage3] (3.75,0) rectangle (4.95,2.67);\\node[above,font=\\scriptsize] at (4.35,2.67) {10};\\node[below,font=\\scriptsize,align=center] at (4.35,0) {$[60;70)$};\\fill[stage3!20] (4.95,0) rectangle (6.15,3.20);\\draw[stage3] (4.95,0) rectangle (6.15,3.20);\\node[above,font=\\scriptsize] at (5.55,3.20) {12};\\node[below,font=\\scriptsize,align=center] at (5.55,0) {$[70;80)$};\\end{tikzpicture}}\\end{center}\\smallskip a) [NB] Tần số ghép nhóm của nhóm $[70;80)$ là bao nhiêu?[[br]]b) [NB] Tính tần số tương đối ghép nhóm của nhóm $[70;80)$.",
+     "tier": "btvn",
+     "level": 1,
+     "solution": "a) Cột $[70;80)$ cao tới vạch $12$ nên tần số ghép nhóm là $12$.[[br]]b) $N=4+6+8+10+12=40$ nên $f=\\dfrac{12}{40}\\cdot 100\\% = 30\\%$.",
+     "dang_id": "NB5",
+     "writelines": 0
+    },
+    {
+     "type": "problem",
+     "label": "Bài 23.",
+     "statement": "Điền vào chỗ trống để hoàn thành bài giải Câu I.1 cho bảng lá dương xỉ ở Bài 19, hỏi nhóm $[20;30)$.[[br]]a) [NB] Tần số của nhóm $[20;30)$ là $m=$ [[blank:18mm]] , cỡ mẫu $N=$ [[blank:18mm]][[br]]b) [NB] $f=\\frac{\\ldots}{\\ldots}\\cdot 100\\% =$ [[blank:22mm]][[br]]\\quad Viết câu trả lời đủ hai ý \\emph{tần số} và \\emph{tần số tương đối}.",
+     "tier": "btvn",
+     "level": 1,
+     "solution": "a) $m=15$; $N=5+15+20+10=50$.[[br]]b) $f=\\dfrac{15}{50}\\cdot 100\\% = 30\\%$.[[br]]Vậy tần số của nhóm $[20;30)$ là $15$, tần số tương đối của nhóm đó là $30\\%$.",
+     "dang_id": "NB6",
+     "writelines": 0
+    },
+    {
+     "type": "problem",
+     "label": "Bài 24.",
+     "statement": "Gộp nhóm.[[br]]a) [NB] Với bảng lá dương xỉ ở Bài 19, có bao nhiêu lá dài \\emph{từ $30$ cm trở lên}?[[br]]b) [NB] Với bảng số lần truy cập ở Bài 22, có bao nhiêu người truy cập \\emph{dưới $50$ lần}?",
+     "tier": "btvn",
+     "level": 1,
+     "solution": "a) Hai nhóm $[30;40)$ và $[40;50)$ đều từ $30$ cm trở lên: $20+10=30$ (lá).[[br]]b) Hai nhóm $[30;40)$ và $[40;50)$ đều dưới $50$ lần: $4+6=10$ (người).",
+     "dang_id": "NB7",
+     "writelines": 0
+    },
+    {
+     "type": "problem",
+     "label": "Bài 25.",
+     "statement": "Tìm tần số của nhóm còn thiếu.[[br]]a) [NB] $N=50$; các tần số $6;\\;15;\\;\\ldots;\\;10$.[[br]]b) [NB] $N=44$; các tần số $4;\\;14;\\;8;\\;10;\\;\\ldots;\\;2$.",
+     "tier": "btvn",
+     "level": 1,
+     "solution": "a) $50-(6+15+10)=50-31=19$.[[br]]b) $44-(4+14+8+10+2)=44-38=6$.",
+     "dang_id": "NB8",
+     "writelines": 0
+    },
+    {
+     "type": "problem",
+     "label": "Bài 26.",
+     "statement": "Biết cỡ mẫu và tần số tương đối ghép nhóm, tìm lại tần số của nhóm.[[br]]a) [NB] $N=50$, $f=40\\%$.[[br]]b) [NB] $N=300$, $f=25\\%$ \\;(đề chính thức Vào 10 Hà Nội 2025).",
+     "tier": "btvn",
+     "level": 1,
+     "solution": "a) $m=50\\cdot 40\\% = 20$.[[br]]b) $m=300\\cdot 25\\% = 75$.",
+     "dang_id": "NB9",
+     "writelines": 0
+    },
+    {
+     "type": "problem",
+     "label": "Bài 27.",
+     "statement": "Dùng hai phép kiểm (tổng tần số $=$ cỡ mẫu; tổng tần số tương đối $=100\\%$) để soi các bảng sau.[[br]]a) [NB] Bảng ghi cỡ mẫu $N=40$ nhưng các tần số là $4;\\;6;\\;8;\\;10;\\;10$. Bảng có nhất quán không?[[br]]b) [NB] Bảng tần số tương đối ghi $12{,}5\\%;\\;25\\%;\\;25\\%;\\;37{,}5\\%$. Đã đúng chưa?[[br]]c) [NB] Bảng tần số tương đối ghi $10\\%;\\;20\\%;\\;30\\%;\\;35\\%$. Đã đúng chưa?",
+     "tier": "btvn",
+     "level": 1,
+     "solution": "a) KHÔNG. $4+6+8+10+10=38 \\ne 40$, còn thiếu $2$ — bảng ghi sai hoặc sót số liệu.[[br]]b) ĐÚNG: $12{,}5\\%+25\\%+25\\%+37{,}5\\%=100\\%$.[[br]]c) CHƯA đúng: $10\\%+20\\%+30\\%+35\\%=95\\% \\ne 100\\%$.",
+     "dang_id": "NB10",
+     "writelines": 0
+    },
+    {
+     "type": "problem",
+     "label": "Bài 28.",
+     "statement": "Tính tần số tương đối và làm tròn đúng yêu cầu.[[br]]a) [NB] $m=14$, $N=44$; làm tròn đến hàng phần trăm.[[br]]b) [NB] $m=73$, $N=500$; kết quả có phải làm tròn không?",
+     "tier": "btvn",
+     "level": 1,
+     "solution": "a) $f=\\dfrac{14}{44}\\cdot 100\\% = 31{,}818\\ldots\\% \\approx 31{,}82\\%$.[[br]]b) $f=\\dfrac{73}{500}\\cdot 100\\% = 14{,}6\\%$ — phép chia hết nên viết dấu $=$, không phải làm tròn.",
+     "dang_id": "NB11",
+     "writelines": 0
+    },
+    {
+     "type": "problem",
+     "label": "Bài 29.",
+     "statement": "Biểu đồ tần số ghép nhóm dưới đây cho biết độ dài của 50 lá dương xỉ trưởng thành.\\par\\nopagebreak\\smallskip\\begin{center}\\adjustbox{max width=0.86\\linewidth}{\\begin{tikzpicture}[font=\\small,line width=0.7pt]\\draw[->,ink] (-0.25,0) -- (5.75,0) node[below,font=\\scriptsize,anchor=north west]{Độ dài (cm)};\\draw[->,ink] (-0.25,0) -- (-0.25,3.95) node[above,font=\\scriptsize]{Số lá};\\fill[stage3!20] (0.15,0) rectangle (1.45,0.80);\\draw[stage3] (0.15,0) rectangle (1.45,0.80);\\node[above,font=\\scriptsize] at (0.80,0.80) {5};\\node[below,font=\\scriptsize,align=center] at (0.80,0) {$[10;20)$};\\fill[stage3!20] (1.45,0) rectangle (2.75,2.40);\\draw[stage3] (1.45,0) rectangle (2.75,2.40);\\node[above,font=\\scriptsize] at (2.10,2.40) {15};\\node[below,font=\\scriptsize,align=center] at (2.10,0) {$[20;30)$};\\fill[stage3!20] (2.75,0) rectangle (4.05,3.20);\\draw[stage3] (2.75,0) rectangle (4.05,3.20);\\node[above,font=\\scriptsize] at (3.40,3.20) {20};\\node[below,font=\\scriptsize,align=center] at (3.40,0) {$[30;40)$};\\fill[stage3!20] (4.05,0) rectangle (5.35,1.60);\\draw[stage3] (4.05,0) rectangle (5.35,1.60);\\node[above,font=\\scriptsize] at (4.70,1.60) {10};\\node[below,font=\\scriptsize,align=center] at (4.70,0) {$[40;50)$};\\end{tikzpicture}}\\end{center}\\smallskip a) [TH] Lập bảng tần số ghép nhóm tương ứng với biểu đồ.[[br]]b) [TH] Tính tần số tương đối ghép nhóm của nhóm $[20;30)$.",
+     "tier": "btvn",
+     "level": 2,
+     "solution": "a) Đọc chiều cao từng cột, ta có các tần số $5;\\;15;\\;20;\\;10$; kiểm lại $5+15+20+10=50$ đúng bằng số lá đề cho.[[br]]b) Áp dụng $f=\\dfrac{m}{N}\\cdot 100\\%$ với $m=15$, $N=50$: $f=\\dfrac{15}{50}\\cdot 100\\% = 30\\%$.[[br]]Vậy bảng có bốn nhóm với tần số $5;15;20;10$ và nhóm $[20;30)$ chiếm $30\\%$.",
+     "dang_id": "TH1",
+     "writelines": 0
+    },
+    {
+     "type": "problem",
+     "label": "Bài 30.",
+     "statement": "Điều tra chiều cao (đơn vị: cm) của một nhóm học sinh, số liệu ghi lại như sau \\;(bộ đề Vào 10, Phòng GD\\&ĐT Đống Đa):[[br]]\\quad $152;\\;148;\\;161;\\;157;\\;145;\\;166;\\;158;\\;172;\\;149;\\;163$[[br]]\\quad $155;\\;171;\\;147;\\;159;\\;168;\\;154;\\;175;\\;162;\\;150;\\;169$[[br]]a) [TH] Lập bảng tần số ghép nhóm theo các nhóm $[140;150)$, $[150;160)$, $[160;170)$, $[170;180)$.[[br]]b) [TH] Nhóm nào có nhiều học sinh nhất?",
+     "tier": "btvn",
+     "level": 2,
+     "solution": "a) Đếm lần lượt từng nhóm (gạch bỏ số đã đếm), ta có tần số $4;\\;7;\\;6;\\;3$.[[br]]Kiểm: $4+7+6+3=20$, đúng bằng số học sinh đã điều tra.[[br]]b) So sánh bốn tần số, nhóm $[150;160)$ lớn nhất với $7$ học sinh.[[br]]Vậy nhóm $[150;160)$ cm có nhiều học sinh nhất.",
+     "dang_id": "TH2",
+     "writelines": 0
+    },
+    {
+     "type": "problem",
+     "label": "Bài 31.",
+     "statement": "Khảo sát độ tuổi của 500 người tham gia một sự kiện, kết quả ghi trong bảng \\;(thi thử Vào 10, THCS Tự Lập).\\par\\nopagebreak\\smallskip\\begin{center}\\footnotesize\\renewcommand\\arraystretch{1.25}\\begin{tabular}{|l|c|c|c|c|c|c|}\\hline \\textbf{Độ tuổi} & \\textbf{$[18;20)$} & \\textbf{$[20;22)$} & \\textbf{$[22;24)$} & \\textbf{$[24;26)$} & \\textbf{$[26;28)$} & \\textbf{$[28;30)$} \\\\ \\hline Số người & 114 & 86 & 97 & 61 & 73 & 69 \\\\ \\hline \\end{tabular}\\end{center}\\smallskip a) [TH] Kiểm lại cỡ mẫu bằng cách cộng các tần số.[[br]]b) [TH] Lập TRỌN bảng tần số tương đối ghép nhóm rồi kiểm tổng bằng $100\\%$.",
+     "tier": "btvn",
+     "level": 2,
+     "solution": "a) Ta có $N=114+86+97+61+73+69=500$, đúng bằng số người đề cho.[[br]]b) Áp dụng $f=\\dfrac{m}{N}\\cdot 100\\%$ với $N=500$: $22{,}8\\%$; $17{,}2\\%$; $19{,}4\\%$; $12{,}2\\%$; $14{,}6\\%$; $13{,}8\\%$.[[br]]Kiểm: $22{,}8+17{,}2+19{,}4+12{,}2+14{,}6+13{,}8 = 100$.[[br]]Vậy bảng tần số tương đối ghép nhóm lần lượt là $22{,}8\\%$; $17{,}2\\%$; $19{,}4\\%$; $12{,}2\\%$; $14{,}6\\%$; $13{,}8\\%$.",
+     "dang_id": "TH3",
+     "writelines": 0
+    },
+    {
+     "type": "problem",
+     "label": "Bài 32.",
+     "statement": "Cho bảng tần số ghép nhóm thời gian làm bài của 20 học sinh.\\par\\nopagebreak\\smallskip\\begin{center}\\footnotesize\\renewcommand\\arraystretch{1.25}\\begin{tabular}{|l|c|c|c|c|}\\hline \\textbf{Thời gian (phút)} & \\textbf{$[0;5)$} & \\textbf{$[5;10)$} & \\textbf{$[10;15)$} & \\textbf{$[15;20)$} \\\\ \\hline Số học sinh & 1 & 5 & 9 & 5 \\\\ \\hline \\end{tabular}\\end{center}\\smallskip a) [TH] Vẽ biểu đồ tần số ghép nhóm dạng cột cho bảng trên (các cột SÁT nhau).[[br]]b) [TH] Tính tần số tương đối ghép nhóm của nhóm $[10;15)$.",
+     "tier": "btvn",
+     "level": 2,
+     "solution": "a) Vì bốn nhóm có cùng độ dài $5$ nên chiều cao cột tỉ lệ với tần số. Ta có trục ngang ghi bốn nhóm, trục đứng ghi \\emph{Số học sinh}, bốn cột vẽ SÁT nhau cao $1;\\;5;\\;9;\\;5$.[[br]]b) $N=1+5+9+5=20$ nên $f=\\dfrac{9}{20}\\cdot 100\\% = 45\\%$.[[br]]Vậy biểu đồ có bốn cột sát nhau cao $1;5;9;5$ và nhóm $[10;15)$ chiếm $45\\%$.",
+     "dang_id": "TH4",
+     "writelines": 0
+    },
+    {
+     "type": "problem",
+     "label": "Bài 33.",
+     "statement": "[VD] Khảo sát 40 người về số lần truy cập Internet trong một tuần được bảng ở Bài 22, trong đó nhóm $[70;80)$ chiếm $30\\%$. Một khu dân cư có $600$ người và tỉ lệ được coi là giống với mẫu đã khảo sát.[[br]]a) Ước lượng số người trong khu dân cư truy cập Internet thuộc nhóm $[70;80)$.[[br]]b) Ước lượng số người truy cập \\emph{từ 60 lần trở lên} trong một tuần.",
+     "tier": "btvn",
+     "level": 3,
+     "solution": "a) Vì tỉ lệ được coi là không đổi nên áp dụng $m=N\\cdot f$ với $N=600$ và $f=30\\%$, ta có $600\\cdot 30\\% = 180$ (người).[[br]]b) Từ $60$ lần trở lên gồm hai nhóm $[60;70)$ và $[70;80)$ với tần số $10+12=22$, tần số tương đối $\\dfrac{22}{40}\\cdot 100\\% = 55\\%$.[[br]]Số người ước lượng $=600\\cdot 55\\% = 330$ (người).[[br]]Vậy ước lượng khoảng $180$ người thuộc nhóm $[70;80)$ và khoảng $330$ người truy cập từ $60$ lần trở lên.",
+     "dang_id": "VD1",
+     "writelines": 0
+    },
+    {
+     "type": "problem",
+     "label": "Bài 34.",
+     "statement": "[VD] Bảng tần số ghép nhóm dưới đây ghi lượng điện tiêu thụ (kWh) tháng 3 của 20 hộ gia đình \\;(thi thử Vào 10 lần 2, Phòng GD\\&ĐT Thanh Oai).\\par\\nopagebreak\\smallskip\\begin{center}\\footnotesize\\renewcommand\\arraystretch{1.25}\\begin{tabular}{|l|c|c|c|c|}\\hline \\textbf{Lượng điện (kWh)} & \\textbf{$[100;130)$} & \\textbf{$[130;160)$} & \\textbf{$[160;190)$} & \\textbf{$[190;220)$} \\\\ \\hline Số hộ & 3 & 5 & 5 & 7 \\\\ \\hline \\end{tabular}\\end{center}\\smallskip a) Nhóm nào có nhiều hộ gia đình nhất?[[br]]b) Tính tần số tương đối ghép nhóm của nhóm $[190;220)$.[[br]]c) Công ty điện lực nói \\textquotedblleft quá nửa số hộ dùng từ $160$ kWh trở lên\\textquotedblright. Nhận định đó đúng hay sai?",
+     "tier": "btvn",
+     "level": 3,
+     "solution": "a) So sánh bốn tần số, ta có nhóm $[190;220)$ nhiều nhất với $7$ hộ.[[br]]b) Cỡ mẫu $N=3+5+5+7=20$ nên $f=\\dfrac{7}{20}\\cdot 100\\% = 35\\%$.[[br]]c) Từ $160$ kWh trở lên gồm hai nhóm $[160;190)$ và $[190;220)$ với $5+7=12$ hộ, chiếm $\\dfrac{12}{20}\\cdot 100\\% = 60\\%$.[[br]]Vì $60\\% > 50\\%$ nên nhận định của công ty điện lực ĐÚNG.[[br]]Vậy nhóm trội là $[190;220)$ chiếm $35\\%$ và nhận định của công ty điện lực là đúng.",
+     "dang_id": "VD2",
+     "writelines": 0
+    }
+   ]
+  }
+ ]
+}

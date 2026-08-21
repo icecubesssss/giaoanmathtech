@@ -1,0 +1,407 @@
+{
+  "slug": "phieu-b-hinh-vuong",
+  "title": "Bài 14: Hình vuông",
+  "eyebrow": "HÌNH HỌC 8 — PHIẾU B: BÀI 14. HÌNH VUÔNG",
+  "grade_label": "Lớp 8 • Chương III. Tứ giác",
+  "class_tier": "B",
+  "stages": [
+    {
+      "kind": "review",
+      "number": 1,
+      "title": "Khám phá",
+      "blocks": [
+        {
+          "type": "opener",
+          "text": "Bàn cờ vua hoặc các viên gạch lát sàn Ceramic cao cấp luôn được tạo hình \\textbf{hình vuông} hoàn hảo. [[br]] Khi cắt và lắp ghép, người thợ kiểm tra cả hai điều kiện: bốn cạnh bằng nhau (tính chất hình thoi) và bốn góc vuông (tính chất hình chữ nhật). [[br]] Khi đó hai đường chéo $AC$ và $BD$ vừa bằng nhau, vừa vuông góc và cắt nhau tại trung điểm của mỗi đường — hội tụ đầy đủ tất cả vẻ đẹp đối xứng của hình học phẳng!",
+          "tikz": "\\begin{tikzpicture}[line width=0.9pt, font=\\small]\n  \\coordinate (A) at (0.0, 2.4);\n  \\coordinate (B) at (2.4, 2.4);\n  \\coordinate (C) at (2.4, 0.0);\n  \\coordinate (D) at (0.0, 0.0);\n  \\coordinate (O) at (1.2, 1.2);\n  \\draw[ink,fill=brand!10] (A) -- (B) -- (C) -- (D) -- cycle;\n  \\draw[brand,line width=1.1pt] (A) -- (C);\n  \\draw[brand,line width=1.1pt] (B) -- (D);\n  \\fill[brand] (1.2, 1.2) circle (1.3pt) node[below right=1pt]{$O$};\n  \\node[above left] at (A) {$A$};\n  \\node[above right] at (B) {$B$};\n  \\node[below right] at (C) {$C$};\n  \\node[below left] at (D) {$D$};\n  \\draw[ink] (0, 2.15) -| (0.25, 2.4);\n  \\draw[ink] (1.2, 1.4) -| (1.4, 1.2);\n\\end{tikzpicture}"
+        },
+        {
+          "type": "para",
+          "text": "Buổi học này ta khám phá hình học đặc biệt và hoàn hảo nhất của Tứ giác — \\textbf{Hình vuông}: [[br]] - Định nghĩa hình vuông: vừa là hình chữ nhật, vừa là hình thoi. [[br]] - Toàn bộ tính chất cạnh, góc, đường chéo và tính đối xứng hoàn hảo. [[br]] - Năm dấu hiệu nhận biết hình vuông từ hình chữ nhật và hình thoi."
+        }
+      ],
+      "solution": "Hình vuông là tứ giác có 4 góc vuông và 4 cạnh bằng nhau. Hai đường chéo bằng nhau, vuông góc và cắt nhau tại trung điểm mỗi đường.",
+      "teacher_note": "Cho HS thấy hình vuông là giao của tập hợp các Hình chữ nhật và tập hợp các Hình thoi."
+    },
+    {
+      "kind": "concept",
+      "number": 2,
+      "title": "Khái niệm",
+      "blocks": [
+        {
+          "type": "noted",
+          "text": "\\par\\nopagebreak\n\\begin{minipage}[t]{0.62\\linewidth}\\vspace{0pt}\n\\textbf{1. Định nghĩa \\& Tính chất} [[br]] - \\textbf{Định nghĩa}: Hình vuông là tứ giác có bốn góc vuông và bốn cạnh bằng nhau. [[br]] - \\textbf{Tính chất}: Hình vuông có tất cả tính chất của hình chữ nhật và hình thoi: [[br]] \\hspace*{1.4em}+ Bốn cạnh bằng nhau ($AB=BC=CD=DA$). [[br]] \\hspace*{1.4em}+ Bốn góc bằng nhau và bằng $90^\\circ$. [[br]] \\hspace*{1.4em}+ Hai đường chéo \\textbf{bằng nhau}, \\textbf{vuông góc} với nhau tại trung điểm của mỗi đường và là các \\textbf{đường phân giác} của các góc ở đỉnh ($AC = BD$, $AC \\perp BD$, $OA=OB=OC=OD$).\n\\end{minipage}\\hfill\n\\begin{minipage}[t]{0.33\\linewidth}\\vspace{0pt}\n\\centering\n\\adjustbox{max width=\\linewidth, max totalheight=2.4cm}{\n\\begin{tikzpicture}[line width=0.8pt, font=\\small]\n  \\coordinate (vA) at (0.0,2.2);\n  \\coordinate (vB) at (2.2,2.2);\n  \\coordinate (vC) at (2.2,0.0);\n  \\coordinate (vD) at (0.0,0.0);\n  \\coordinate (vO) at (1.1,1.1);\n  \\draw[ink,fill=brand!8] (vA) -- (vB) -- (vC) -- (vD) -- cycle;\n  \\draw[brand,line width=1.0pt] (vA) -- (vC);\n  \\draw[brand,line width=1.0pt] (vB) -- (vD);\n  \\fill[brand] (1.1,1.1) circle (1.3pt) node[below right=1pt]{$O$};\n  \\node[above left] at (vA) {$A$};\n  \\node[above right] at (vB) {$B$};\n  \\node[below right] at (vC) {$C$};\n  \\node[below left] at (vD) {$D$};\n  \\draw[ink] (0, 1.95) -| (0.25, 2.2);\n  \\draw[ink] (1.1, 1.3) -| (1.3, 1.1);\n\\end{tikzpicture}\n}\n\\par\\vspace{2pt}{\\sffamily\\scriptsize\\itshape\\color{muted}Hình vuông $ABCD$}\n\\end{minipage}"
+        },
+        {
+          "type": "noted",
+          "text": "\\textbf{2. Năm Dấu hiệu nhận biết hình vuông} [[br]] (1) Hình chữ nhật có hai cạnh kề bằng nhau là hình vuông. [[br]] (2) Hình chữ nhật có hai đường chéo vuông góc với nhau là hình vuông. [[br]] (3) Hình chữ nhật có một đường chéo là đường phân giác của một góc là hình vuông. [[br]] (4) Hình thoi có một góc vuông là hình vuông. [[br]] (5) Hình thoi có hai đường chéo bằng nhau là hình vuông."
+        },
+        {
+          "type": "noted",
+          "variant": "example",
+          "text": "\\par\\nopagebreak\n\\begin{minipage}[t]{0.62\\linewidth}\\vspace{0pt}\n\\textbf{Ví dụ 1.} Cho hình vuông $ABCD$ có độ dài cạnh $AB = 6\\text{ cm}$. Hai đường chéo cắt nhau tại $O$. Tính độ dài đường chéo $AC$ và đoạn thẳng $OA$.[[br]]{\\sffamily\\bfseries\\color{brand}Lời giải}[[br]]\\hspace*{1.4em}Xét tam giác $ABC$ vuông tại $B$.[[br]]\\hspace*{1.4em}Theo định lí Pythagore, ta có:[[br]]\\hspace*{1.4em}$AC^2 = AB^2 + BC^2 = 6^2 + 6^2 = 72$.[[br]]\\hspace*{1.4em}Suy ra $AC = \\sqrt{72} = 6\\sqrt{2}\\text{ cm}$.[[br]]\\hspace*{1.4em}Vì hai đường chéo của hình vuông cắt nhau tại trung điểm mỗi đường nên:[[br]]\\hspace*{1.4em}$OA = \\dfrac{1}{2}AC = \\dfrac{1}{2} \\cdot 6\\sqrt{2} = 3\\sqrt{2}\\text{ cm}$.[[br]]\\hspace*{1.4em}Vậy $AC = 6\\sqrt{2}\\text{ cm}$ và $OA = 3\\sqrt{2}\\text{ cm}$.\n\\end{minipage}\\hfill\n\\begin{minipage}[t]{0.33\\linewidth}\\vspace{0pt}\n\\centering\n\\adjustbox{max width=\\linewidth, max totalheight=2.4cm}{\n\\begin{tikzpicture}[line width=0.8pt, font=\\small]\n  \\coordinate (vA) at (0.0,2.2);\n  \\coordinate (vB) at (2.2,2.2);\n  \\coordinate (vC) at (2.2,0.0);\n  \\coordinate (vD) at (0.0,0.0);\n  \\coordinate (vO) at (1.1,1.1);\n  \\draw[ink,fill=brand!8] (vA) -- (vB) -- (vC) -- (vD) -- cycle;\n  \\draw[brand,line width=1.0pt] (vA) -- (vC);\n  \\draw[brand,line width=1.0pt] (vB) -- (vD);\n  \\fill[brand] (1.1,1.1) circle (1.3pt) node[below right=1pt]{$O$};\n  \\node[above left] at (vA) {$A$};\n  \\node[above right] at (vB) {$B$};\n  \\node[below right] at (vC) {$C$};\n  \\node[below left] at (vD) {$D$};\n  \\draw[ink] (0, 1.95) -| (0.25, 2.2);\n\\end{tikzpicture}\n}\n\\par\\vspace{2pt}{\\sffamily\\scriptsize\\itshape\\color{muted}Ví dụ 1}\n\\end{minipage}"
+        },
+        {
+          "type": "noted",
+          "variant": "example",
+          "text": "\\par\\nopagebreak\n\\begin{minipage}[t]{0.62\\linewidth}\\vspace{0pt}\n\\textbf{Ví dụ 2.} Cho tam giác $ABC$ vuông tại $A$, có tia phân giác $AD$. Kẻ $DH \\perp AB$ tại $H$ và $DK \\perp AC$ tại $K$. Chứng minh tứ giác $AHDK$ là hình vuông.[[br]]{\\sffamily\\bfseries\\color{brand}Lời giải}[[br]]\\hspace*{1.4em}Xét tứ giác $AHDK$, ta có:[[br]]\\hspace*{1.4em}$\\widehat{HAK} = 90^\\circ$ (do $\\triangle ABC$ vuông tại $A$),[[br]]\\hspace*{1.4em}$\\widehat{AHD} = 90^\\circ$ (do $DH \\perp AB$),[[br]]\\hspace*{1.4em}$\\widehat{AKD} = 90^\\circ$ (do $DK \\perp AC$).[[br]]\\hspace*{1.4em}Tứ giác $AHDK$ có ba góc vuông nên là hình chữ nhật.[[br]]\\hspace*{1.4em}Hình chữ nhật $AHDK$ có đường chéo $AD$ là tia phân giác của góc $\\widehat{A}$ nên là hình vuông.[[br]]\\hspace*{1.4em}Vậy $AHDK$ là hình vuông.\n\\end{minipage}\\hfill\n\\begin{minipage}[t]{0.33\\linewidth}\\vspace{0pt}\n\\centering\n\\adjustbox{max width=\\linewidth, max totalheight=2.4cm}{\n\\begin{tikzpicture}[line width=0.8pt, font=\\small]\n  \\coordinate (vA) at (0.0,0.0);\n  \\coordinate (vB) at (0.0,2.4);\n  \\coordinate (vC) at (2.8,0.0);\n  \\coordinate (vD) at (1.2,1.2);\n  \\coordinate (vH) at (0.0,1.2);\n  \\coordinate (vK) at (1.2,0.0);\n  \\draw[ink] (vB) -- (vA) -- (vC) -- cycle;\n  \\draw[brand,line width=1.1pt,fill=brand!8] (vA) -- (vH) -- (vD) -- (vK) -- cycle;\n  \\draw[brand,dashed] (vA) -- (vD);\n  \\node[below left] at (vA) {$A$};\n  \\node[above left] at (vB) {$B$};\n  \\node[below right] at (vC) {$C$};\n  \\node[above right] at (vD) {$D$};\n  \\node[left] at (vH) {$H$};\n  \\node[below] at (vK) {$K$};\n  \\draw[ink] (0, 0.2) -| (0.2, 0);\n  \\draw[ink] (0, 1.0) -| (0.2, 1.2);\n  \\draw[ink] (1.0, 0) |- (1.2, 0.2);\n\\end{tikzpicture}\n}\n\\par\\vspace{2pt}{\\sffamily\\scriptsize\\itshape\\color{muted}Ví dụ 2}\n\\end{minipage}"
+        },
+        {
+          "type": "noted",
+          "variant": "trap",
+          "text": "BẪY ĐIỂM: Tứ giác có hai đường chéo bằng nhau và vuông góc CHƯA ĐỦ để là hình vuông! [[br]] Cần phải chứng minh tứ giác đó là hình bình hành (hoặc hình chữ nhật / hình thoi) trước khi kết luận hình vuông."
+        }
+      ],
+      "solution": "Nắm vững định nghĩa, toàn bộ tính chất cạnh, góc, đường chéo và 5 dấu hiệu nhận biết hình vuông.",
+      "teacher_note": "Nhấn mạnh Ví dụ 2 là mô hình chứng minh hình vuông kinh điển trong tam giác vuông có tia phân giác."
+    },
+    {
+      "kind": "practice1",
+      "number": 3,
+      "title": "Luyện tập 1",
+      "blocks": [
+        {
+          "type": "problem",
+          "label": "Bài 1.",
+          "statement": "[NB] Nối mỗi hình ở Cột A với điều kiện để trở thành hình vuông ở Cột B:[[br]]\\par\\vspace{3pt}\n\\begin{tabular}{p{5.5cm} @{\\hspace{2.5cm}} p{6.5cm}}\n\\textbf{Cột A (Hình)} & \\textbf{Cột B (Điều kiện thành hình vuông)} \\\\[4pt]\n(1) Hình chữ nhật & (a) Có hai đường chéo vuông góc với nhau. \\\\[4pt]\n(2) Hình thoi & (b) Có một góc vuông. \\\\[4pt]\n(3) Hình chữ nhật & (c) Có hai cạnh kề bằng nhau.\n\\end{tabular}",
+          "tier": "onclass",
+          "level": 1,
+          "dang_id": "NB1",
+          "solution": "Nối đúng: (1) nối với (a); (2) nối với (b); (3) nối với (c). Vậy các cặp nối là: 1--a, 2--b, 3--c.",
+          "figure_given": true,
+          "writelines": 0
+        },
+        {
+          "type": "problem",
+          "label": "Bài 2.",
+          "statement": "\\par\\nopagebreak\n\\begin{minipage}[t]{0.64\\linewidth}\\vspace{0pt}\n[NB] Cho hình vuông $ABCD$ ở Hình 1. Kể tên bốn cạnh bằng nhau, bốn góc vuông và nêu mối quan hệ giữa hai đường chéo $AC, BD$.\n\\end{minipage}\\hfill\n\\begin{minipage}[t]{0.31\\linewidth}\\vspace{0pt}\n\\centering\n\\adjustbox{max width=\\linewidth, max totalheight=2.4cm}{\n\\begin{tikzpicture}[line width=0.8pt, font=\\small]\n  \\coordinate (vA) at (0.0,2.2);\n  \\coordinate (vB) at (2.2,2.2);\n  \\coordinate (vC) at (2.2,0.0);\n  \\coordinate (vD) at (0.0,0.0);\n  \\coordinate (vO) at (1.1,1.1);\n  \\draw[ink,fill=brand!8] (vA) -- (vB) -- (vC) -- (vD) -- cycle;\n  \\draw[brand,line width=1.0pt] (vA) -- (vC);\n  \\draw[brand,line width=1.0pt] (vB) -- (vD);\n  \\fill[brand] (1.1,1.1) circle (1.3pt) node[below right=1pt]{$O$};\n  \\node[above left] at (vA) {$A$};\n  \\node[above right] at (vB) {$B$};\n  \\node[below right] at (vC) {$C$};\n  \\node[below left] at (vD) {$D$};\n  \\draw[ink] (0, 1.95) -| (0.25, 2.2);\n  \\draw[ink] (1.1, 1.3) -| (1.3, 1.1);\n\\end{tikzpicture}\n}\n\\par\\vspace{2pt}{\\sffamily\\scriptsize\\itshape\\color{muted}Hình 1}\n\\end{minipage}",
+          "tier": "onclass",
+          "level": 1,
+          "dang_id": "NB1",
+          "solution": "Bốn cạnh bằng nhau: $AB=BC=CD=DA$. Bốn góc vuông: $\\widehat{A}=\\widehat{B}=\\widehat{C}=\\widehat{D}=90^\\circ$. Hai đường chéo vừa bằng nhau ($AC=BD$), vừa vuông góc với nhau ($AC \\perp BD$) tại trung điểm $O$. Vậy hoàn thành chỉ ra các yếu tố của hình vuông.",
+          "figure_given": true
+        },
+        {
+          "type": "problem",
+          "label": "Bài 3.",
+          "statement": "\\par\\nopagebreak\n\\begin{minipage}[t]{0.64\\linewidth}\\vspace{0pt}\n[NB] Quan sát Hình 2 rồi điền vào chỗ trống:[[br]] Hình vuông $ABCD$ có hai đường chéo cắt nhau tại $O$. Tam giác $OAB$ là tam giác [[blank:2.2cm]] tại $O$; số đo góc $\\widehat{OAB} = $ [[blank:1.2cm]].\n\\end{minipage}\\hfill\n\\begin{minipage}[t]{0.31\\linewidth}\\vspace{0pt}\n\\centering\n\\adjustbox{max width=\\linewidth, max totalheight=2.4cm}{\n\\begin{tikzpicture}[line width=0.8pt, font=\\small]\n  \\coordinate (vA) at (0.0,2.2);\n  \\coordinate (vB) at (2.2,2.2);\n  \\coordinate (vC) at (2.2,0.0);\n  \\coordinate (vD) at (0.0,0.0);\n  \\coordinate (vO) at (1.1,1.1);\n  \\draw[ink,fill=brand!8] (vA) -- (vB) -- (vC) -- (vD) -- cycle;\n  \\draw[brand,line width=1.0pt] (vA) -- (vC);\n  \\draw[brand,line width=1.0pt] (vB) -- (vD);\n  \\fill[brand] (1.1,1.1) circle (1.3pt) node[below right=1pt]{$O$};\n  \\node[above left] at (vA) {$A$};\n  \\node[above right] at (vB) {$B$};\n  \\node[below right] at (vC) {$C$};\n  \\node[below left] at (vD) {$D$};\n  \\draw[ink] (1.1, 1.3) -| (1.3, 1.1);\n\\end{tikzpicture}\n}\n\\par\\vspace{2pt}{\\sffamily\\scriptsize\\itshape\\color{muted}Hình 2}\n\\end{minipage}",
+          "tier": "onclass",
+          "level": 1,
+          "dang_id": "NB1",
+          "solution": "Các chỗ trống cần điền lần lượt là: vuông cân; $45^\\circ$. Vậy kết quả điền là vuông cân và $45^\\circ$.",
+          "figure_given": true
+        },
+        {
+          "type": "problem",
+          "label": "Bài 4.",
+          "statement": "\\par\\nopagebreak\n\\begin{minipage}[t]{0.64\\linewidth}\\vspace{0pt}\n[NB] Trong các hình ở Hình 3, hình nào là \\textbf{hình vuông}?[[br]]\\par\\vspace{3pt}\\parbox[t]{0.46\\linewidth}{\\textbf{A.} Hình 3a}\\hspace{0.04\\linewidth}\\parbox[t]{0.46\\linewidth}{\\textbf{B.} Hình 3b}\\par\\vspace{4pt}\\parbox[t]{0.46\\linewidth}{\\textbf{C.} Hình 3c}\\hspace{0.04\\linewidth}\\parbox[t]{0.46\\linewidth}{\\textbf{D.} Hình 3d}\n\\end{minipage}\\hfill\n\\begin{minipage}[t]{0.31\\linewidth}\\vspace{0pt}\n\\centering\n\\adjustbox{max width=\\linewidth, max totalheight=2.4cm}{\n\\begin{tikzpicture}[line width=0.8pt, font=\\small]\n  \\begin{scope}[shift={(0,0)}]\n    \\draw[ink,fill=brand!8] (0,0) rectangle (1.2,1.2);\n    \\node[font=\\scriptsize,ink] at (0.6,-0.35) {Hình 3a};\n  \\end{scope}\n  \\begin{scope}[shift={(1.8,0)}]\n    \\draw[ink,fill=brand!8] (0,0) rectangle (1.5,0.9);\n    \\node[font=\\scriptsize,ink] at (0.75,-0.35) {Hình 3b};\n  \\end{scope}\n  \\begin{scope}[shift={(3.8,0)}]\n    \\draw[ink,fill=brand!8] (0.6,1.2) -- (1.2,0.6) -- (0.6,0) -- (0,0.6) -- cycle;\n    \\node[font=\\scriptsize,ink] at (0.6,-0.35) {Hình 3c};\n  \\end{scope}\n  \\begin{scope}[shift={(5.6,0)}]\n    \\draw[ink,fill=brand!8] (0,0) -- (1.2,0) -- (1.5,1.2) -- (0.3,1.2) -- cycle;\n    \\node[font=\\scriptsize,ink] at (0.75,-0.35) {Hình 3d};\n  \\end{scope}\n\\end{tikzpicture}\n}\n\\par\\vspace{2pt}{\\sffamily\\scriptsize\\itshape\\color{muted}Hình 3}\n\\end{minipage}",
+          "tier": "onclass",
+          "level": 1,
+          "dang_id": "NB2",
+          "solution": "Đáp án \\textbf{A}. Hình 3a có 4 góc vuông và 4 cạnh bằng nhau nên là hình vuông. Hình 3b là hình chữ nhật, Hình 3c là hình thoi, Hình 3d là hình bình hành. Vậy hình vuông là Hình 3a.",
+          "figure_given": true
+        },
+        {
+          "type": "problem",
+          "label": "Bài 5.",
+          "statement": "\\par\\nopagebreak\n\\begin{minipage}[t]{0.64\\linewidth}\\vspace{0pt}\n[NB] Cho hình chữ nhật $ABCD$ có $AB = AD$ (Hình 4). Khẳng định nào sau đây là đúng nhất?[[br]]\\par\\vspace{3pt}\\parbox[t]{0.46\\linewidth}{\\textbf{A.} $ABCD$ là hình thang}\\hspace{0.04\\linewidth}\\parbox[t]{0.46\\linewidth}{\\textbf{B.} $ABCD$ là hình thoi}\\par\\vspace{4pt}\\parbox[t]{0.46\\linewidth}{\\textbf{C.} $ABCD$ là hình vuông}\\hspace{0.04\\linewidth}\\parbox[t]{0.46\\linewidth}{\\textbf{D.} $ABCD$ là hình bình hành}\n\\end{minipage}\\hfill\n\\begin{minipage}[t]{0.31\\linewidth}\\vspace{0pt}\n\\centering\n\\adjustbox{max width=\\linewidth, max totalheight=2.4cm}{\n\\begin{tikzpicture}[line width=0.8pt, font=\\small]\n  \\coordinate (vA) at (0.0,2.0);\n  \\coordinate (vB) at (2.0,2.0);\n  \\coordinate (vC) at (2.0,0.0);\n  \\coordinate (vD) at (0.0,0.0);\n  \\draw[ink,fill=brand!8] (vA) -- (vB) -- (vC) -- (vD) -- cycle;\n  \\node[above left] at (vA) {$A$};\n  \\node[above right] at (vB) {$B$};\n  \\node[below right] at (vC) {$C$};\n  \\node[below left] at (vD) {$D$};\n  \\node[ink,font=\\scriptsize] at (1.0,2.15) {$|$};\n  \\node[ink,font=\\scriptsize] at (-0.15,1.0) {$|$};\n  \\draw[ink] (0, 1.8) -| (0.2, 2.0);\n\\end{tikzpicture}\n}\n\\par\\vspace{2pt}{\\sffamily\\scriptsize\\itshape\\color{muted}Hình 4}\n\\end{minipage}",
+          "tier": "onclass",
+          "level": 1,
+          "dang_id": "NB2",
+          "solution": "Đáp án \\textbf{C}. Hình chữ nhật có hai cạnh kề bằng nhau là hình vuông (Dấu hiệu 1). Vậy $ABCD$ là hình vuông.",
+          "figure_given": true
+        },
+        {
+          "type": "problem",
+          "label": "Bài 6.",
+          "statement": "[NB] Trong các khẳng định sau về hình vuông, khẳng định nào \\textbf{SAI}?[[br]]\\par\\vspace{3pt}\\parbox[t]{0.46\\linewidth}{\\textbf{A.} Hình vuông vừa là hình chữ nhật vừa là hình thoi}\\hspace{0.04\\linewidth}\\parbox[t]{0.46\\linewidth}{\\textbf{B.} Hình thoi có một góc vuông là hình vuông}\\par\\vspace{4pt}\\parbox[t]{0.46\\linewidth}{\\textbf{C.} Tứ giác có hai đường chéo bằng nhau và vuông góc là hình vuông}\\hspace{0.04\\linewidth}\\parbox[t]{0.46\\linewidth}{\\textbf{D.} Hình chữ nhật có hai đường chéo vuông góc là hình vuông}",
+          "tier": "onclass",
+          "level": 1,
+          "dang_id": "NB3",
+          "solution": "Đáp án \\textbf{C}. Khẳng định C sai vì tứ giác có hai đường chéo bằng nhau và vuông góc chưa chắc là hình vuông (cần là hình bình hành/hình chữ nhật/hình thoi trước). Vậy khẳng định sai là C.",
+          "figure_given": true
+        },
+        {
+          "type": "problem",
+          "label": "Bài 7.",
+          "statement": "[NB] Chọn Đúng (Đ) hoặc Sai (S) cho mỗi khẳng định sau:[[br]] a) Hình thoi có hai đường chéo bằng nhau là hình vuông. [[blank:1cm]][[br]] b) Hình chữ nhật có một đường chéo là phân giác một góc là hình vuông. [[blank:1cm]]",
+          "tier": "onclass",
+          "level": 1,
+          "dang_id": "NB3",
+          "solution": "a) \\textbf{Đ} (Dấu hiệu nhận biết 5 của hình vuông).[[br]] b) \\textbf{Đ} (Dấu hiệu nhận biết 3 của hình vuông).[[br]] Vậy kết quả là: a) Đ; b) Đ.",
+          "figure_given": true
+        },
+        {
+          "type": "problem",
+          "label": "Bài 8.",
+          "statement": "[NB] Hãy vẽ hình vuông $ABCD$ có hai đường chéo $AC$ và $BD$ cắt nhau tại điểm $O$. Đánh dấu góc vuông tại $O$, góc vuông tại $A$ và bốn đoạn thẳng bằng nhau $OA=OB=OC=OD$ trên hình.",
+          "tier": "onclass",
+          "level": 1,
+          "dang_id": "NB4",
+          "solution": "Hình vẽ phải thể hiện: Hình vuông $ABCD$ có 4 cạnh bằng nhau, 4 góc vuông, hai đường chéo $AC, BD$ vuông góc tại $O$ và $OA=OB=OC=OD$. Vậy đã hoàn thành hình vẽ và GT--KL.",
+          "draw": true
+        },
+        {
+          "type": "problem",
+          "label": "Bài 9.",
+          "statement": "\\par\\nopagebreak\n\\begin{minipage}[t]{0.64\\linewidth}\\vspace{0pt}\nQuan sát Hình 5 (hình vuông $ABCD$).[[br]] Điền vào chỗ trống để hoàn thành chứng minh:[[br]] a) [NB] Hai đường chéo $AC$ và $BD$ cắt nhau tại trung điểm $O$ của mỗi đường và [[blank:1.2cm]] với nhau tại $O$.[[br]] b) [NB] Độ dài đường chéo $AC = $ [[blank:1.2cm]].\n\\end{minipage}\\hfill\n\\begin{minipage}[t]{0.31\\linewidth}\\vspace{0pt}\n\\centering\n\\adjustbox{max width=\\linewidth, max totalheight=2.4cm}{\n\\begin{tikzpicture}[line width=0.8pt, font=\\small]\n  \\coordinate (vA) at (0.0,2.0);\n  \\coordinate (vB) at (2.0,2.0);\n  \\coordinate (vC) at (2.0,0.0);\n  \\coordinate (vD) at (0.0,0.0);\n  \\coordinate (vO) at (1.0,1.0);\n  \\draw[ink,fill=brand!8] (vA) -- (vB) -- (vC) -- (vD) -- cycle;\n  \\draw[brand,line width=1.0pt] (vA) -- (vC);\n  \\draw[brand,line width=1.0pt] (vB) -- (vD);\n  \\fill[brand] (1.0,1.0) circle (1.3pt) node[below right=1pt]{$O$};\n  \\node[above left] at (vA) {$A$};\n  \\node[above right] at (vB) {$B$};\n  \\node[below right] at (vC) {$C$};\n  \\node[below left] at (vD) {$D$};\n  \\draw[ink] (1.0, 1.2) -| (1.2, 1.0);\n\\end{tikzpicture}\n}\n\\par\\vspace{2pt}{\\sffamily\\scriptsize\\itshape\\color{muted}Hình 5}\n\\end{minipage}",
+          "tier": "onclass",
+          "level": 1,
+          "dang_id": "NB5",
+          "solution": "a) vuông góc.[[br]] b) $BD$.[[br]] Vậy chỗ trống a là vuông góc và chỗ trống b là $BD$.",
+          "figure_given": true
+        },
+        {
+          "type": "problem",
+          "label": "Bài 10.",
+          "statement": "\\par\\nopagebreak\n\\begin{minipage}[t]{0.64\\linewidth}\\vspace{0pt}\nCho hình vuông $ABCD$ có hai đường chéo cắt nhau tại $O$ (Hình 6).[[br]] a) [NB] Tam giác $OAB$ là tam giác gì?[[br]] b) [NB] Tính số đo góc $\\widehat{AOB}$ và $\\widehat{OAB}$.\n\\end{minipage}\\hfill\n\\begin{minipage}[t]{0.31\\linewidth}\\vspace{0pt}\n\\centering\n\\adjustbox{max width=\\linewidth, max totalheight=2.4cm}{\n\\begin{tikzpicture}[line width=0.8pt, font=\\small]\n  \\coordinate (vA) at (0.0,2.0);\n  \\coordinate (vB) at (2.0,2.0);\n  \\coordinate (vC) at (2.0,0.0);\n  \\coordinate (vD) at (0.0,0.0);\n  \\coordinate (vO) at (1.0,1.0);\n  \\draw[ink,fill=brand!8] (vA) -- (vB) -- (vC) -- (vD) -- cycle;\n  \\draw[brand,line width=1.0pt] (vA) -- (vC);\n  \\draw[brand,line width=1.0pt] (vB) -- (vD);\n  \\fill[brand] (1.0,1.0) circle (1.3pt) node[below right=1pt]{$O$};\n  \\node[above left] at (vA) {$A$};\n  \\node[above right] at (vB) {$B$};\n  \\node[below right] at (vC) {$C$};\n  \\node[below left] at (vD) {$D$};\n  \\draw[ink] (1.0, 1.2) -| (1.2, 1.0);\n\\end{tikzpicture}\n}\n\\par\\vspace{2pt}{\\sffamily\\scriptsize\\itshape\\color{muted}Hình 6}\n\\end{minipage}",
+          "tier": "onclass",
+          "level": 1,
+          "dang_id": "NB6",
+          "solution": "a) Vì $OA = OB$ và $OA \\perp OB$ nên tam giác $OAB$ vuông cân tại $O$.[[br]] b) Ta có $\\widehat{AOB} = 90^\\circ$ và $\\widehat{OAB} = 45^\\circ$.[[br]] Vậy $\\triangle OAB$ vuông cân tại $O$ và $\\widehat{AOB} = 90^\\circ, \\widehat{OAB} = 45^\\circ$.",
+          "figure_given": true
+        }
+      ],
+      "teacher_note": "Bài 1 đến 7 làm nhanh 10 phút. Bài 8, 9, 10 củng cố tính chất tam giác vuông cân tạo bởi hai đường chéo hình vuông."
+    },
+    {
+      "kind": "practice2",
+      "number": 4,
+      "title": "Luyện tập 2",
+      "blocks": [
+        {
+          "type": "problem",
+          "label": "Bài 11.",
+          "statement": "\\par\\nopagebreak\n\\begin{minipage}[t]{0.64\\linewidth}\\vspace{0pt}\nCho hình vuông $ABCD$. Trên cạnh $BC$ lấy điểm $E$ sao cho $\\widehat{BAE} = 30^\\circ$ (Hình 7).[[br]] a) [TH] Tính số đo góc $\\widehat{DAE}$.[[br]] b) [TH] Kẻ $AH \\perp AE$ ($H \\in CD$). Chứng minh tam giác $AEH$ là tam giác vuông cân.\n\\end{minipage}\\hfill\n\\begin{minipage}[t]{0.31\\linewidth}\\vspace{0pt}\n\\centering\n\\adjustbox{max width=\\linewidth, max totalheight=2.4cm}{\n\\begin{tikzpicture}[line width=0.8pt, font=\\small]\n  \\coordinate (vA) at (0.0,2.2);\n  \\coordinate (vB) at (2.2,2.2);\n  \\coordinate (vC) at (2.2,0.0);\n  \\coordinate (vD) at (0.0,0.0);\n  \\coordinate (vE) at (2.2,0.9);\n  \\coordinate (vH) at (1.3,0.0);\n  \\draw[ink] (vA) -- (vB) -- (vC) -- (vD) -- cycle;\n  \\draw[brand,line width=1.1pt] (vA) -- (vE);\n  \\draw[brand,line width=1.1pt] (vA) -- (vH);\n  \\draw[ink,dashed] (vE) -- (vH);\n  \\node[above left] at (vA) {$A$};\n  \\node[above right] at (vB) {$B$};\n  \\node[below right] at (vC) {$C$};\n  \\node[below left] at (vD) {$D$};\n  \\node[right] at (vE) {$E$};\n  \\node[below] at (vH) {$H$};\n  \\draw[ink] (0, 1.95) -| (0.25, 2.2);\n\\end{tikzpicture}\n}\n\\par\\vspace{2pt}{\\sffamily\\scriptsize\\itshape\\color{muted}Hình 7}\n\\end{minipage}",
+          "tier": "onclass",
+          "level": 2,
+          "dang_id": "TH1",
+          "solution": "a) Vì $ABCD$ là hình vuông nên $\\widehat{BAD} = 90^\\circ$.[[br]]\\hspace*{1.4em}Ta có $\\widehat{DAE} = \\widehat{BAD} - \\widehat{BAE} = 90^\\circ - 30^\\circ = 60^\\circ$.[[br]]\\hspace*{1.4em}Vậy $\\widehat{DAE} = 60^\\circ$.[[br]] b) Xét tam giác vuông $\\triangle ABE$ và $\\triangle ADH$, ta có $AB = AD$ (cạnh hình vuông) và $\\widehat{BAE} = \\widehat{DAH}$ (cùng phụ với $\\widehat{DAE}$).[[br]]\\hspace*{1.4em}Do đó $\\triangle ABE = \\triangle ADH$ (cạnh góc vuông $-$ góc nhọn kề).[[br]]\\hspace*{1.4em}Suy ra $AE = AH$ (hai cạnh tương ứng).[[br]]\\hspace*{1.4em}Tam giác $AEH$ có $AE = AH$ và $\\widehat{EAH} = 90^\\circ$ nên là tam giác vuông cân tại $A$.[[br]]\\hspace*{1.4em}Vậy tam giác $AEH$ vuông cân tại $A$.",
+          "figure_given": true,
+          "hints": [
+            "Chứng minh $\\triangle ABE = \\triangle ADH$ để suy ra $AE=AH$."
+          ]
+        },
+        {
+          "type": "problem",
+          "label": "Bài 12.",
+          "statement": "\\par\\nopagebreak\n\\begin{minipage}[t]{0.64\\linewidth}\\vspace{0pt}\nCho hình chữ nhật $ABCD$ có hai đường chéo $AC$ và $BD$ vuông góc với nhau tại $O$ (Hình 8).[[br]] a) [TH] Chứng minh tam giác $OAB$ là tam giác vuông cân tại $O$.[[br]] b) [TH] Chứng minh tứ giác $ABCD$ là hình vuông.\n\\end{minipage}\\hfill\n\\begin{minipage}[t]{0.31\\linewidth}\\vspace{0pt}\n\\centering\n\\adjustbox{max width=\\linewidth, max totalheight=2.4cm}{\n\\begin{tikzpicture}[line width=0.8pt, font=\\small]\n  \\coordinate (vA) at (0.0,2.0);\n  \\coordinate (vB) at (2.0,2.0);\n  \\coordinate (vC) at (2.0,0.0);\n  \\coordinate (vD) at (0.0,0.0);\n  \\coordinate (vO) at (1.0,1.0);\n  \\draw[ink,fill=brand!8] (vA) -- (vB) -- (vC) -- (vD) -- cycle;\n  \\draw[brand,line width=1.0pt] (vA) -- (vC);\n  \\draw[brand,line width=1.0pt] (vB) -- (vD);\n  \\fill[brand] (1.0,1.0) circle (1.3pt) node[below right=1pt]{$O$};\n  \\node[above left] at (vA) {$A$};\n  \\node[above right] at (vB) {$B$};\n  \\node[below right] at (vC) {$C$};\n  \\node[below left] at (vD) {$D$};\n  \\draw[ink] (1.0, 1.2) -| (1.2, 1.0);\n\\end{tikzpicture}\n}\n\\par\\vspace{2pt}{\\sffamily\\scriptsize\\itshape\\color{muted}Hình 8}\n\\end{minipage}",
+          "tier": "onclass",
+          "level": 2,
+          "dang_id": "TH2",
+          "solution": "a) Vì $ABCD$ là hình chữ nhật nên hai đường chéo cắt nhau tại trung điểm mỗi đường và bằng nhau, do đó $OA = OB$.[[br]]\\hspace*{1.4em}Mặt khác, $AC \\perp BD$ tại $O$ nên $\\widehat{AOB} = 90^\\circ$.[[br]]\\hspace*{1.4em}Do đó tam giác $OAB$ vuông cân tại $O$.[[br]]\\hspace*{1.4em}Vậy $\\triangle OAB$ vuông cân tại $O$.[[br]] b) Hình chữ nhật $ABCD$ có hai đường chéo vuông góc với nhau ($AC \\perp BD$) nên là hình vuông (Dấu hiệu 2).[[br]]\\hspace*{1.4em}Vậy $ABCD$ là hình vuông.",
+          "figure_given": true,
+          "hints": [
+            "Hình chữ nhật có hai đường chéo vuông góc là hình vuông."
+          ]
+        },
+        {
+          "type": "problem",
+          "label": "Bài 13.",
+          "statement": "\\par\\nopagebreak\n\\begin{minipage}[t]{0.64\\linewidth}\\vspace{0pt}\nCho hình thoi $ABCD$ có hai đường chéo bằng nhau: $AC = BD$ (Hình 9).[[br]] a) [TH] Chứng minh tứ giác $ABCD$ là hình chữ nhật.[[br]] b) [TH] Chứng minh tứ giác $ABCD$ là hình vuông.\n\\end{minipage}\\hfill\n\\begin{minipage}[t]{0.31\\linewidth}\\vspace{0pt}\n\\centering\n\\adjustbox{max width=\\linewidth, max totalheight=2.4cm}{\n\\begin{tikzpicture}[line width=0.8pt, font=\\small]\n  \\coordinate (vA) at (0.0,2.0);\n  \\coordinate (vB) at (2.0,2.0);\n  \\coordinate (vC) at (2.0,0.0);\n  \\coordinate (vD) at (0.0,0.0);\n  \\draw[ink,fill=brand!8] (vA) -- (vB) -- (vC) -- (vD) -- cycle;\n  \\draw[brand,line width=1.0pt] (vA) -- (vC);\n  \\draw[brand,line width=1.0pt] (vB) -- (vD);\n  \\node[above left] at (vA) {$A$};\n  \\node[above right] at (vB) {$B$};\n  \\node[below right] at (vC) {$C$};\n  \\node[below left] at (vD) {$D$};\n\\end{tikzpicture}\n}\n\\par\\vspace{2pt}{\\sffamily\\scriptsize\\itshape\\color{muted}Hình 9}\n\\end{minipage}",
+          "tier": "onclass",
+          "level": 2,
+          "dang_id": "TH3",
+          "solution": "a) Vì $ABCD$ là hình thoi nên $ABCD$ là hình bình hành.[[br]]\\hspace*{1.4em}Hình bình hành $ABCD$ có hai đường chéo bằng nhau $AC = BD$ nên là hình chữ nhật.[[br]]\\hspace*{1.4em}Vậy $ABCD$ là hình chữ nhật.[[br]] b) Tứ giác $ABCD$ vừa là hình thoi vừa là hình chữ nhật nên $ABCD$ là hình vuông.[[br]]\\hspace*{1.4em}Vậy $ABCD$ là hình vuông.",
+          "figure_given": true,
+          "hints": [
+            "Hình thoi có hai đường chéo bằng nhau là hình vuông."
+          ]
+        },
+        {
+          "type": "problem",
+          "label": "Bài 14.",
+          "statement": "\\par\\nopagebreak\n\\begin{minipage}[t]{0.64\\linewidth}\\vspace{0pt}\n[VD] (Đề kiểm tra học kì) Cho tam giác $ABC$ vuông tại $A$ ($AB < AC$), có tia phân giác $AD$. Kẻ $DH \\perp AB$ tại $H$ và $DK \\perp AC$ tại $K$ (Hình 10).[[br]] Chứng minh tứ giác $AHDK$ là hình vuông.\n\\end{minipage}\\hfill\n\\begin{minipage}[t]{0.31\\linewidth}\\vspace{0pt}\n\\centering\n\\adjustbox{max width=\\linewidth, max totalheight=2.4cm}{\n\\begin{tikzpicture}[line width=0.8pt, font=\\small]\n  \\coordinate (vA) at (0.0,0.0);\n  \\coordinate (vB) at (0.0,2.4);\n  \\coordinate (vC) at (2.8,0.0);\n  \\coordinate (vD) at (1.2,1.2);\n  \\coordinate (vH) at (0.0,1.2);\n  \\coordinate (vK) at (1.2,0.0);\n  \\draw[ink] (vB) -- (vA) -- (vC) -- cycle;\n  \\draw[brand,line width=1.1pt,fill=brand!8] (vA) -- (vH) -- (vD) -- (vK) -- cycle;\n  \\draw[brand,dashed] (vA) -- (vD);\n  \\node[below left] at (vA) {$A$};\n  \\node[above left] at (vB) {$B$};\n  \\node[below right] at (vC) {$C$};\n  \\node[above right] at (vD) {$D$};\n  \\node[left] at (vH) {$H$};\n  \\node[below] at (vK) {$K$};\n  \\draw[ink] (0, 0.2) -| (0.2, 0);\n  \\draw[ink] (0, 1.0) -| (0.2, 1.2);\n  \\draw[ink] (1.0, 0) |- (1.2, 0.2);\n\\end{tikzpicture}\n}\n\\par\\vspace{2pt}{\\sffamily\\scriptsize\\itshape\\color{muted}Hình 10}\n\\end{minipage}",
+          "tier": "onclass",
+          "level": 3,
+          "dang_id": "VD1",
+          "solution": "Xét tứ giác $AHDK$, ta có:[[br]]\\hspace*{1.4em}$\\widehat{HAK} = 90^\\circ$ (do $\\triangle ABC$ vuông tại $A$),[[br]]\\hspace*{1.4em}$\\widehat{AHD} = 90^\\circ$ (do $DH \\perp AB$),[[br]]\\hspace*{1.4em}$\\widehat{AKD} = 90^\\circ$ (do $DK \\perp AC$).[[br]]\\hspace*{1.4em}Tứ giác $AHDK$ có ba góc vuông nên là hình chữ nhật.[[br]]\\hspace*{1.4em}Mặt khác, đường chéo $AD$ là tia phân giác của góc $\\widehat{HAK}$ (theo giả thiết).[[br]]\\hspace*{1.4em}Hình chữ nhật $AHDK$ có một đường chéo là tia phân giác của một góc nên là hình vuông.[[br]]\\hspace*{1.4em}Vậy tứ giác $AHDK$ là hình vuông.",
+          "figure_given": true,
+          "hints": [
+            "Chứng minh $AHDK$ là hình chữ nhật có đường chéo là phân giác."
+          ]
+        },
+        {
+          "type": "problem",
+          "label": "Bài 15.",
+          "statement": "\\par\\nopagebreak\n\\begin{minipage}[t]{0.64\\linewidth}\\vspace{0pt}\n[VD] Cho hình vuông $ABCD$. Lấy điểm $E$ trên cạnh $BC$, lấy điểm $F$ trên cạnh $CD$ sao cho $BE = DF$ (Hình 11). Kẻ $AH \\perp EF$ tại $H$. Chứng minh $AE = AF$ và tam giác $AEF$ là tam giác vuông cân.\n\\end{minipage}\\hfill\n\\begin{minipage}[t]{0.31\\linewidth}\\vspace{0pt}\n\\centering\n\\adjustbox{max width=\\linewidth, max totalheight=2.4cm}{\n\\begin{tikzpicture}[line width=0.8pt, font=\\small]\n  \\coordinate (vA) at (0.0,2.2);\n  \\coordinate (vB) at (2.2,2.2);\n  \\coordinate (vC) at (2.2,0.0);\n  \\coordinate (vD) at (0.0,0.0);\n  \\coordinate (vE) at (2.2,1.4);\n  \\coordinate (vF) at (0.8,0.0);\n  \\draw[ink] (vA) -- (vB) -- (vC) -- (vD) -- cycle;\n  \\draw[brand,line width=1.1pt] (vA) -- (vE);\n  \\draw[brand,line width=1.1pt] (vA) -- (vF);\n  \\draw[brand,dashed] (vE) -- (vF);\n  \\node[above left] at (vA) {$A$};\n  \\node[above right] at (vB) {$B$};\n  \\node[below right] at (vC) {$C$};\n  \\node[below left] at (vD) {$D$};\n  \\node[right] at (vE) {$E$};\n  \\node[below] at (vF) {$F$};\n  \\draw[ink] (0, 1.95) -| (0.25, 2.2);\n\\end{tikzpicture}\n}\n\\par\\vspace{2pt}{\\sffamily\\scriptsize\\itshape\\color{muted}Hình 11}\n\\end{minipage}",
+          "tier": "onclass",
+          "level": 3,
+          "dang_id": "VD1",
+          "solution": "Xét $\\triangle ABE$ và $\\triangle ADF$, ta có:[[br]]\\hspace*{1.4em}$AB = AD$ (cạnh hình vuông),[[br]]\\hspace*{1.4em}$\\widehat{B} = \\widehat{D} = 90^\\circ$ (góc hình vuông),[[br]]\\hspace*{1.4em}$BE = DF$ (giả thiết).[[br]]\\hspace*{1.4em}Do đó $\\triangle ABE = \\triangle ADF$ (c.g.c).[[br]]\\hspace*{1.4em}Suy ra $AE = AF$ và $\\widehat{BAE} = \\widehat{DAF}$.[[br]]\\hspace*{1.4em}Ta có $\\widehat{EAF} = 90^\\circ - \\widehat{BAE} + \\widehat{DAF} = 90^\\circ$.[[br]]\\hspace*{1.4em}Tam giác $AEF$ có $AE = AF$ và $\\widehat{EAF} = 90^\\circ$ nên là tam giác vuông cân tại $A$.[[br]]\\hspace*{1.4em}Vậy $AE = AF$ và tam giác $AEF$ vuông cân tại $A$.",
+          "figure_given": true,
+          "hints": [
+            "Chứng minh $\\triangle ABE = \\triangle ADF$ (c.g.c) để suy ra $AE=AF$ và $\\widehat{EAF}=90^\\circ$."
+          ]
+        }
+      ],
+      "teacher_note": "Bài 11, 12, 13 củng cố 5 dấu hiệu nhận biết hình vuông. Bài 14, 15 là bài hình 10 điểm trong các đề thi định kì."
+    },
+    {
+      "kind": "reflection",
+      "number": 5,
+      "title": "Tổng kết \\& BTVN",
+      "blocks": [
+        {
+          "type": "mindmap",
+          "size": "small",
+          "caption": "Điền các ô trống để hoàn thiện sơ đồ kiến thức của buổi",
+          "root": "HÌNH VUÔNG",
+          "branches": [
+            {
+              "label": "Định nghĩa \\& Tính chất",
+              "children": [
+                {
+                  "label": "4 góc vuông: $\\widehat{A}=\\widehat{B}=\\widehat{C}=\\widehat{D} = 90^\\circ$"
+                },
+                {
+                  "label": "4 cạnh bằng nhau: $AB=BC=CD=DA$"
+                },
+                {
+                  "label": "2 đ/chéo: bằng nhau, vuông góc, cắt tại trung điểm"
+                }
+              ]
+            },
+            {
+              "label": "Dấu hiệu từ HCN",
+              "children": [
+                {
+                  "label": "HCN $+$ 2 cạnh kề bằng nhau"
+                },
+                {
+                  "label": "HCN $+$ 2 đ/chéo vuông góc"
+                },
+                {
+                  "label": "HCN $+$ 1 đ/chéo là phân giác"
+                }
+              ]
+            },
+            {
+              "label": "Dấu hiệu từ Hình thoi",
+              "children": [
+                {
+                  "label": "Hình thoi $+$ 1 góc vuông"
+                },
+                {
+                  "label": "Hình thoi $+$ 2 đ/chéo bằng nhau"
+                }
+              ]
+            }
+          ]
+        },
+        {
+          "type": "problem",
+          "label": "BTVN 1.",
+          "statement": "[NB] Nối mỗi hình ở Cột A với điều kiện để trở thành hình vuông ở Cột B:[[br]]\\par\\vspace{3pt}\n\\begin{tabular}{p{5.5cm} @{\\hspace{2.5cm}} p{6.5cm}}\n\\textbf{Cột A (Hình)} & \\textbf{Cột B (Điều kiện thành hình vuông)} \\\\[4pt]\n(1) Hình thoi & (a) Có hai đường chéo bằng nhau. \\\\[4pt]\n(2) Hình chữ nhật & (b) Có một đường chéo là phân giác một góc. \\\\[4pt]\n(3) Hình thoi & (c) Có một góc vuông.\n\\end{tabular}",
+          "tier": "btvn",
+          "level": 1,
+          "dang_id": "NB1",
+          "solution": "Nối: (1) nối với (a); (2) nối với (b); (3) nối với (c). Vậy các cặp nối là: 1--a, 2--b, 3--c.",
+          "figure_given": true,
+          "writelines": 0
+        },
+        {
+          "type": "problem",
+          "label": "BTVN 2.",
+          "statement": "\\par\\nopagebreak\n\\begin{minipage}[t]{0.64\\linewidth}\\vspace{0pt}\n[NB] Cho hình vuông $ABCD$ có chu vi bằng $20\\text{ cm}$ (Hình 12). Tính độ dài mỗi cạnh và số đo góc $\\widehat{ABC}$.\n\\end{minipage}\\hfill\n\\begin{minipage}[t]{0.31\\linewidth}\\vspace{0pt}\n\\centering\n\\adjustbox{max width=\\linewidth, max totalheight=2.4cm}{\n\\begin{tikzpicture}[line width=0.8pt, font=\\small]\n  \\coordinate (vA) at (0.0,2.0);\n  \\coordinate (vB) at (2.0,2.0);\n  \\coordinate (vC) at (2.0,0.0);\n  \\coordinate (vD) at (0.0,0.0);\n  \\draw[ink,fill=brand!8] (vA) -- (vB) -- (vC) -- (vD) -- cycle;\n  \\node[above left] at (vA) {$A$};\n  \\node[above right] at (vB) {$B$};\n  \\node[below right] at (vC) {$C$};\n  \\node[below left] at (vD) {$D$};\n  \\draw[ink] (0, 1.8) -| (0.2, 2.0);\n\\end{tikzpicture}\n}\n\\par\\vspace{2pt}{\\sffamily\\scriptsize\\itshape\\color{muted}Hình 12}\n\\end{minipage}",
+          "tier": "btvn",
+          "level": 1,
+          "dang_id": "NB1",
+          "solution": "Độ dài mỗi cạnh của hình vuông là $20 : 4 = 5\\text{ cm}$.[[br]] Số đo góc $\\widehat{ABC} = 90^\\circ$.[[br]] Vậy mỗi cạnh dài $5\\text{ cm}$ và $\\widehat{ABC} = 90^\\circ$.",
+          "figure_given": true
+        },
+        {
+          "type": "problem",
+          "label": "BTVN 3.",
+          "statement": "\\par\\nopagebreak\n\\begin{minipage}[t]{0.64\\linewidth}\\vspace{0pt}\n[NB] Cho hình chữ nhật $ABCD$ có $AB=BC$ (Hình 13). Hình chữ nhật $ABCD$ là hình gì?[[br]]\\par\\vspace{3pt}\\parbox[t]{0.46\\linewidth}{\\textbf{A.} Hình thoi}\\hspace{0.04\\linewidth}\\parbox[t]{0.46\\linewidth}{\\textbf{B.} Hình vuông}\\par\\vspace{4pt}\\parbox[t]{0.46\\linewidth}{\\textbf{C.} Hình thang cân}\\hspace{0.04\\linewidth}\\parbox[t]{0.46\\linewidth}{\\textbf{D.} Tứ giác thường}\n\\end{minipage}\\hfill\n\\begin{minipage}[t]{0.31\\linewidth}\\vspace{0pt}\n\\centering\n\\adjustbox{max width=\\linewidth, max totalheight=2.4cm}{\n\\begin{tikzpicture}[line width=0.8pt, font=\\small]\n  \\coordinate (vA) at (0.0,2.0);\n  \\coordinate (vB) at (2.0,2.0);\n  \\coordinate (vC) at (2.0,0.0);\n  \\coordinate (vD) at (0.0,0.0);\n  \\draw[ink,fill=brand!8] (vA) -- (vB) -- (vC) -- (vD) -- cycle;\n  \\node[above left] at (vA) {$A$};\n  \\node[above right] at (vB) {$B$};\n  \\node[below right] at (vC) {$C$};\n  \\node[below left] at (vD) {$D$};\n  \\node[ink,font=\\scriptsize] at (1.0,2.15) {$|$};\n  \\node[ink,font=\\scriptsize] at (2.15,1.0) {$|$};\n  \\draw[ink] (0, 1.8) -| (0.2, 2.0);\n\\end{tikzpicture}\n}\n\\par\\vspace{2pt}{\\sffamily\\scriptsize\\itshape\\color{muted}Hình 13}\n\\end{minipage}",
+          "tier": "btvn",
+          "level": 1,
+          "dang_id": "NB2",
+          "solution": "Đáp án \\textbf{B}. Hình chữ nhật có hai cạnh kề bằng nhau là hình vuông. Vậy $ABCD$ là hình vuông.",
+          "figure_given": true
+        },
+        {
+          "type": "problem",
+          "label": "BTVN 4.",
+          "statement": "[NB] Điền vào chỗ trống:[[br]] a) Hình thoi có một góc vuông là [[blank:2.2cm]].[[br]] b) Hình chữ nhật có hai đường chéo vuông góc là [[blank:2.2cm]].",
+          "tier": "btvn",
+          "level": 1,
+          "dang_id": "NB2",
+          "solution": "a) hình vuông.[[br]] b) hình vuông.[[br]] Vậy các chỗ trống đều điền là hình vuông.",
+          "figure_given": true
+        },
+        {
+          "type": "problem",
+          "label": "BTVN 5.",
+          "statement": "Chọn Đúng (Đ) hoặc Sai (S) cho các khẳng định sau:[[br]] a) [NB] Tứ giác có bốn góc vuông và bốn cạnh bằng nhau là hình vuông. [[blank:1cm]][[br]] b) [NB] Tứ giác có hai đường chéo bằng nhau và vuông góc là hình vuông. [[blank:1cm]]",
+          "tier": "btvn",
+          "level": 1,
+          "dang_id": "NB3",
+          "solution": "a) \\textbf{Đ} (Định nghĩa hình vuông).[[br]] b) \\textbf{S} (Cần là hình bình hành/hình chữ nhật/hình thoi trước).[[br]] Vậy kết quả là: a) Đ; b) S.",
+          "figure_given": true
+        },
+        {
+          "type": "problem",
+          "label": "BTVN 6.",
+          "statement": "[NB] Hãy vẽ hình vuông $ABCD$ có cạnh bằng $4\\text{ cm}$. Kẻ hai đường chéo $AC$ và $BD$ cắt nhau tại điểm $O$. Đánh dấu góc vuông tại $O$ trên hình.",
+          "tier": "btvn",
+          "level": 1,
+          "dang_id": "NB4",
+          "solution": "Hình vẽ phải thể hiện: Hình vuông $ABCD$ cạnh $4\\text{ cm}$, hai đường chéo $AC, BD$ vuông góc tại $O$. Vậy hoàn thành hình vẽ yêu cầu.",
+          "draw": true
+        },
+        {
+          "type": "problem",
+          "label": "BTVN 7.",
+          "statement": "\\par\\nopagebreak\n\\begin{minipage}[t]{0.64\\linewidth}\\vspace{0pt}\nQuan sát Hình 14 (hình vuông $ABCD$ có hai đường chéo cắt nhau tại $O$).[[br]] Điền vào chỗ trống:[[br]] a) [NB] Hai đường chéo $AC$ và $BD$ có độ dài [[blank:1.2cm]] nhau.[[br]] b) [NB] Góc $\\widehat{BOC}$ có số đo bằng [[blank:1.2cm]].\n\\end{minipage}\\hfill\n\\begin{minipage}[t]{0.31\\linewidth}\\vspace{0pt}\n\\centering\n\\adjustbox{max width=\\linewidth, max totalheight=2.4cm}{\n\\begin{tikzpicture}[line width=0.8pt, font=\\small]\n  \\coordinate (vA) at (0.0,2.0);\n  \\coordinate (vB) at (2.0,2.0);\n  \\coordinate (vC) at (2.0,0.0);\n  \\coordinate (vD) at (0.0,0.0);\n  \\coordinate (vO) at (1.0,1.0);\n  \\draw[ink,fill=brand!8] (vA) -- (vB) -- (vC) -- (vD) -- cycle;\n  \\draw[brand,line width=1.0pt] (vA) -- (vC);\n  \\draw[brand,line width=1.0pt] (vB) -- (vD);\n  \\fill[brand] (1.0,1.0) circle (1.3pt) node[below right=1pt]{$O$};\n  \\node[above left] at (vA) {$A$};\n  \\node[above right] at (vB) {$B$};\n  \\node[below right] at (vC) {$C$};\n  \\node[below left] at (vD) {$D$};\n  \\draw[ink] (1.0, 1.2) -| (1.2, 1.0);\n\\end{tikzpicture}\n}\n\\par\\vspace{2pt}{\\sffamily\\scriptsize\\itshape\\color{muted}Hình 14}\n\\end{minipage}",
+          "tier": "btvn",
+          "level": 1,
+          "dang_id": "NB5",
+          "solution": "a) bằng.[[br]] b) $90^\\circ$.[[br]] Vậy chỗ trống a là bằng và chỗ trống b là $90^\\circ$.",
+          "figure_given": true
+        },
+        {
+          "type": "problem",
+          "label": "BTVN 8.",
+          "statement": "\\par\\nopagebreak\n\\begin{minipage}[t]{0.64\\linewidth}\\vspace{0pt}\nCho hình vuông $ABCD$ có đường chéo $AC = 8\\text{ cm}$ (Hình 15).[[br]] a) [NB] Tính độ dài đường chéo $BD$.[[br]] b) [NB] Tính độ dài đoạn thẳng $OA$ và $OB$.\n\\end{minipage}\\hfill\n\\begin{minipage}[t]{0.31\\linewidth}\\vspace{0pt}\n\\centering\n\\adjustbox{max width=\\linewidth, max totalheight=2.4cm}{\n\\begin{tikzpicture}[line width=0.8pt, font=\\small]\n  \\coordinate (vA) at (0.0,2.0);\n  \\coordinate (vB) at (2.0,2.0);\n  \\coordinate (vC) at (2.0,0.0);\n  \\coordinate (vD) at (0.0,0.0);\n  \\coordinate (vO) at (1.0,1.0);\n  \\draw[ink,fill=brand!8] (vA) -- (vB) -- (vC) -- (vD) -- cycle;\n  \\draw[brand,line width=1.0pt] (vA) -- (vC);\n  \\draw[brand,line width=1.0pt] (vB) -- (vD);\n  \\fill[brand] (1.0,1.0) circle (1.3pt) node[below right=1pt]{$O$};\n  \\node[above left] at (vA) {$A$};\n  \\node[above right] at (vB) {$B$};\n  \\node[below right] at (vC) {$C$};\n  \\node[below left] at (vD) {$D$};\n\\end{tikzpicture}\n}\n\\par\\vspace{2pt}{\\sffamily\\scriptsize\\itshape\\color{muted}Hình 15}\n\\end{minipage}",
+          "tier": "btvn",
+          "level": 1,
+          "dang_id": "NB6",
+          "solution": "a) Vì $ABCD$ là hình vuông nên $BD = AC = 8\\text{ cm}$.[[br]] b) Vì hai đường chéo cắt nhau tại trung điểm mỗi đường nên $OA = OB = \\dfrac{AC}{2} = 4\\text{ cm}$.[[br]] Vậy $BD = 8\\text{ cm}$ và $OA = OB = 4\\text{ cm}$.",
+          "figure_given": true
+        },
+        {
+          "type": "problem",
+          "label": "BTVN 9.",
+          "statement": "\\par\\nopagebreak\n\\begin{minipage}[t]{0.64\\linewidth}\\vspace{0pt}\na) [TH] Cho hình vuông $ABCD$. Trên cạnh $CD$ lấy điểm $M$ sao cho $\\widehat{DAM} = 20^\\circ$ (Hình 16). Tính số đo góc $\\widehat{BAM}$ và $\\widehat{MAC}$.[[br]] b) [TH] Cho hình vuông có độ dài cạnh bằng $5\\text{ cm}$. Tính độ dài đường chéo của hình vuông đó.\n\\end{minipage}\\hfill\n\\begin{minipage}[t]{0.31\\linewidth}\\vspace{0pt}\n\\centering\n\\adjustbox{max width=\\linewidth, max totalheight=2.4cm}{\n\\begin{tikzpicture}[line width=0.8pt, font=\\small]\n  \\coordinate (vA) at (0.0,2.0);\n  \\coordinate (vB) at (2.0,2.0);\n  \\coordinate (vC) at (2.0,0.0);\n  \\coordinate (vD) at (0.0,0.0);\n  \\coordinate (vM) at (0.7,0.0);\n  \\draw[ink] (vA) -- (vB) -- (vC) -- (vD) -- cycle;\n  \\draw[brand,line width=1.1pt] (vA) -- (vM);\n  \\draw[ink,dashed] (vA) -- (vC);\n  \\node[above left] at (vA) {$A$};\n  \\node[above right] at (vB) {$B$};\n  \\node[below right] at (vC) {$C$};\n  \\node[below left] at (vD) {$D$};\n  \\node[below] at (vM) {$M$};\n  \\draw[ink] (0, 1.8) -| (0.2, 2.0);\n\\end{tikzpicture}\n}\n\\par\\vspace{2pt}{\\sffamily\\scriptsize\\itshape\\color{muted}Hình 16}\n\\end{minipage}",
+          "tier": "btvn",
+          "level": 2,
+          "dang_id": "TH1",
+          "solution": "a) Vì $ABCD$ là hình vuông nên $\\widehat{DAB} = 90^\\circ$ và $\\widehat{DAC} = 45^\\circ$.[[br]]\\hspace*{1.4em}Ta có $\\widehat{BAM} = 90^\\circ - \\widehat{DAM} = 90^\\circ - 20^\\circ = 70^\\circ$.[[br]]\\hspace*{1.4em}Và $\\widehat{MAC} = \\widehat{DAC} - \\widehat{DAM} = 45^\\circ - 20^\\circ = 25^\\circ$.[[br]]\\hspace*{1.4em}Vậy $\\widehat{BAM} = 70^\\circ$ và $\\widehat{MAC} = 25^\\circ$.[[br]] b) Xét tam giác vuông có hai cạnh góc vuông bằng $5\\text{ cm}$, theo định lí Pythagore độ dài đường chéo bằng $\\sqrt{5^2+5^2} = 5\\sqrt{2}\\text{ cm}$.[[br]]\\hspace*{1.4em}Vậy độ dài đường chéo bằng $5\\sqrt{2}\\text{ cm}$.",
+          "figure_given": true
+        },
+        {
+          "type": "problem",
+          "label": "BTVN 10.",
+          "statement": "\\par\\nopagebreak\n\\begin{minipage}[t]{0.64\\linewidth}\\vspace{0pt}\n[TH] Cho tam giác $ABC$ vuông cân tại $A$. Gọi $M$ là trung điểm của $BC$. Kẻ $MD \\perp AB$ tại $D, ME \\perp AC$ tại $E$ (Hình 17). Chứng minh tứ giác $ADME$ là hình vuông.\n\\end{minipage}\\hfill\n\\begin{minipage}[t]{0.31\\linewidth}\\vspace{0pt}\n\\centering\n\\adjustbox{max width=\\linewidth, max totalheight=2.4cm}{\n\\begin{tikzpicture}[line width=0.8pt, font=\\small]\n  \\coordinate (vA) at (0.0,0.0);\n  \\coordinate (vB) at (0.0,2.2);\n  \\coordinate (vC) at (2.2,0.0);\n  \\coordinate (vM) at (1.1,1.1);\n  \\coordinate (vD) at (0.0,1.1);\n  \\coordinate (vE) at (1.1,0.0);\n  \\draw[ink] (vB) -- (vA) -- (vC) -- cycle;\n  \\draw[brand,line width=1.1pt,fill=brand!8] (vA) -- (vD) -- (vM) -- (vE) -- cycle;\n  \\node[below left] at (vA) {$A$};\n  \\node[above left] at (vB) {$B$};\n  \\node[below right] at (vC) {$C$};\n  \\node[above right] at (vM) {$M$};\n  \\node[left] at (vD) {$D$};\n  \\node[below] at (vE) {$E$};\n  \\draw[ink] (0, 0.2) -| (0.2, 0);\n\\end{tikzpicture}\n}\n\\par\\vspace{2pt}{\\sffamily\\scriptsize\\itshape\\color{muted}Hình 17}\n\\end{minipage}",
+          "tier": "btvn",
+          "level": 2,
+          "dang_id": "TH2",
+          "solution": "Xét tứ giác $ADME$, ta có $\\widehat{A} = 90^\\circ, \\widehat{ADM} = 90^\\circ, \\widehat{AEM} = 90^\\circ$ nên $ADME$ là hình chữ nhật.[[br]]\\hspace*{1.4em}Vì tam giác $ABC$ vuông cân tại $A$ nên đường trung tuyến $AM$ đồng thời là tia phân giác của góc $\\widehat{A}$.[[br]]\\hspace*{1.4em}Hình chữ nhật $ADME$ có đường chéo $AM$ là tia phân giác của $\\widehat{A}$ nên là hình vuông.[[br]]\\hspace*{1.4em}Vậy $ADME$ là hình vuông.",
+          "figure_given": true
+        },
+        {
+          "type": "problem",
+          "label": "BTVN 11.",
+          "statement": "\\par\\nopagebreak\n\\begin{minipage}[t]{0.64\\linewidth}\\vspace{0pt}\n[TH] Cho hình thoi $ABCD$ có $\\widehat{A} = 90^\\circ$ (Hình 18). Chứng minh tứ giác $ABCD$ là hình vuông.\n\\end{minipage}\\hfill\n\\begin{minipage}[t]{0.31\\linewidth}\\vspace{0pt}\n\\centering\n\\adjustbox{max width=\\linewidth, max totalheight=2.4cm}{\n\\begin{tikzpicture}[line width=0.8pt, font=\\small]\n  \\coordinate (vA) at (0.0,2.0);\n  \\coordinate (vB) at (2.0,2.0);\n  \\coordinate (vC) at (2.0,0.0);\n  \\coordinate (vD) at (0.0,0.0);\n  \\draw[ink,fill=brand!8] (vA) -- (vB) -- (vC) -- (vD) -- cycle;\n  \\node[above left] at (vA) {$A$};\n  \\node[above right] at (vB) {$B$};\n  \\node[below right] at (vC) {$C$};\n  \\node[below left] at (vD) {$D$};\n  \\draw[ink] (0, 1.8) -| (0.2, 2.0);\n\\end{tikzpicture}\n}\n\\par\\vspace{2pt}{\\sffamily\\scriptsize\\itshape\\color{muted}Hình 18}\n\\end{minipage}",
+          "tier": "btvn",
+          "level": 2,
+          "dang_id": "TH3",
+          "solution": "Xét hình thoi $ABCD$, ta có góc $\\widehat{A} = 90^\\circ$.[[br]]\\hspace*{1.4em}Theo dấu hiệu nhận biết, hình thoi có một góc vuông là hình vuông.[[br]]\\hspace*{1.4em}Vậy tứ giác $ABCD$ là hình vuông.",
+          "figure_given": true
+        }
+      ],
+      "teacher_note": "Giao 11 bài BTVN để HS rèn luyện và củng cố toàn bộ kiến thức về hình vuông."
+    }
+  ]
+}

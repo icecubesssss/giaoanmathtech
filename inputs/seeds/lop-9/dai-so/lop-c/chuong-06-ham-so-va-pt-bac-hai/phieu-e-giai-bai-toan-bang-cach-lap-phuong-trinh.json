@@ -1,0 +1,730 @@
+{
+  "slug": "phieu-e-giai-bai-toan-bang-cach-lap-phuong-trinh",
+  "title": "Bài 21. Giải bài toán bằng cách lập phương trình",
+  "eyebrow": "ĐẠI SỐ — CHƯƠNG VI · PHIẾU E",
+  "grade_label": "Lớp 9 • Ôn vào 10",
+  "class_tier": "C",
+  "so_ca": 1,
+  "stages": [
+    {
+      "kind": "review",
+      "number": 1,
+      "title": "Khám phá",
+      "blocks": [
+        {
+          "type": "opener",
+          "tikz": "\\begin{tikzpicture}[line width=0.8pt, font=\\small]\n  \\draw[ink] (0,0) -- (6,0);\n  \\fill[ink] (0,0) circle (1.6pt) node[below] {Trường};\n  \\fill[ink] (6,0) circle (1.6pt) node[below] {Khu du lịch};\n  \\draw[ink,->] (0,0.45) -- (6,0.45) node[midway,above] {\\small xe máy $x$ km/h};\n  \\draw[ink,->] (0,1.25) -- (6,1.25) node[midway,above] {\\small ô tô $x+20$ km/h};\n  \\node[below] at (3,-0.45) {\\small $50$ km};\n\\end{tikzpicture}",
+          "text": "Bố chở Nam từ trường đến khu du lịch bằng xe máy, các bạn đi ô tô nhanh hơn $20$ km/h. Quãng đường dài $50$ km, và để đến nơi cùng lúc thì bố Nam phải xuất phát trước $25$ phút.[[br]]Bốn buổi vừa rồi đề luôn \\textbf{cho sẵn} phương trình. Hôm nay đề chỉ cho một đoạn văn như trên — việc của ta là dịch nó thành phương trình.[[br]]Thử đọc lại và trả lời hai câu: \\emph{đại lượng nào chưa biết}, và \\emph{hai bên chênh nhau bao nhiêu}?"
+        },
+        {
+          "type": "para",
+          "text": "\\textbf{Nhắc lại hai thứ dùng suốt buổi hôm nay.}"
+        },
+        {
+          "type": "noted",
+          "text": "$\\bullet$\\; Ba công thức quen: $s=v \\cdot t$; $t=\\dfrac{s}{v}$; $v=\\dfrac{s}{t}$. Với bài năng suất thì thay $s$ bằng \\emph{tổng sản phẩm}, $v$ bằng \\emph{năng suất}, $t$ bằng \\emph{thời gian}.[[br]]$\\bullet$\\; Bốn bước giải phương trình chứa ẩn ở mẫu của buổi 2: điều kiện xác định $\\to$ khử mẫu $\\to$ giải $\\to$ đối chiếu.",
+          "variant": "note"
+        }
+      ],
+      "teacher_note": "Mở màn 8 phút. Chỉ hỏi \\emph{ẩn là gì} và \\emph{chênh nhau bao nhiêu}, chưa lập phương trình. Bài này quay lại làm Bài 13a nên đừng chữa vội."
+    },
+    {
+      "kind": "concept",
+      "number": 2,
+      "title": "Kiến thức cần nhớ",
+      "blocks": [
+        {
+          "type": "para",
+          "text": "\\textbf{1. Bốn bước giải bài toán bằng cách lập phương trình}"
+        },
+        {
+          "type": "para",
+          "text": "\\textbf{Bước 1.} Đặt ẩn và nêu điều kiện của ẩn (kèm đơn vị).[[br]]\\textbf{Bước 2.} Biểu diễn các đại lượng còn lại theo ẩn — nên kẻ bảng.[[br]]\\textbf{Bước 3.} Lập phương trình từ dữ kiện \\emph{chênh lệch} của đề.[[br]]\\textbf{Bước 4.} Giải phương trình, đối chiếu điều kiện, kết luận kèm đơn vị và trả lời đúng câu hỏi của đề."
+        },
+        {
+          "type": "para",
+          "text": "\\textbf{2. Bảng đại lượng — công cụ chính}"
+        },
+        {
+          "type": "para",
+          "text": "Bài \\textbf{năng suất}: ba cột \\emph{tổng sản phẩm} — \\emph{năng suất} (mỗi ngày, mỗi giờ) — \\emph{thời gian}, liên hệ bởi thời gian $=\\dfrac{\\text{tổng sản phẩm}}{\\text{năng suất}}$.[[br]]Bài \\textbf{chuyển động}: ba cột \\emph{quãng đường} — \\emph{vận tốc} — \\emph{thời gian}, liên hệ bởi $t=\\dfrac{s}{v}$.[[br]]Mỗi bài luôn có hai hàng: \\emph{dự định} và \\emph{thực tế} (hoặc \\emph{xe thứ nhất} và \\emph{xe thứ hai})."
+        },
+        {
+          "type": "para",
+          "text": "\\textbf{3. Dịch lời văn thành dấu}"
+        },
+        {
+          "type": "para",
+          "text": "$\\bullet$\\; \\textquotedblleft nhiều hơn $a$\\textquotedblright{} $\\to$ $+a$; \\textquotedblleft ít hơn $a$\\textquotedblright{} $\\to$ $-a$.[[br]]$\\bullet$\\; \\textquotedblleft xong sớm hơn $a$\\textquotedblright{} $\\to$ thời gian dự định $-$ thời gian thực tế $=a$.[[br]]$\\bullet$\\; \\textquotedblleft chậm hơn $a$\\textquotedblright{} $\\to$ thời gian sau $-$ thời gian trước $=a$.[[br]]$\\bullet$\\; Đổi phút sang giờ trước khi lập: $25$ phút $=\\dfrac{25}{60}=\\dfrac{5}{12}$ giờ; $30$ phút $=\\dfrac{1}{2}$ giờ."
+        },
+        {
+          "type": "para",
+          "text": "\\textbf{4. Điều kiện của ẩn — nơi mất điểm nhiều nhất}"
+        },
+        {
+          "type": "para",
+          "text": "Số sản phẩm, số xe, số ngày: \\textbf{nguyên dương}. Vận tốc, độ dài, diện tích: \\textbf{dương}.[[br]]Nếu ẩn nằm ở mẫu thì thêm điều kiện mẫu khác $0$.[[br]]Theo thang điểm của Sở, thiếu câu đặt ẩn kèm điều kiện, giữ lại nghiệm âm, hoặc kết luận không có đơn vị — mỗi chỗ mất $0{,}25$ điểm, mà cả bài chỉ có $1{,}0$ điểm."
+        },
+        {
+          "type": "noted",
+          "text": "\\textbf{Ví dụ 1.} Một tổ sản xuất phải làm $300$ sản phẩm. Hãy đặt ẩn và nêu điều kiện cho câu hỏi \\emph{mỗi ngày theo kế hoạch tổ làm bao nhiêu sản phẩm} (đề minh họa Vào 10, Sở GD\\&ĐT Hà Nội).[[br]]{\\sffamily\\bfseries\\color{brand}Lời giải}[[br]]\\hspace*{1.4em}Gọi số sản phẩm mỗi ngày theo kế hoạch là $x$ (sản phẩm).[[br]]\\hspace*{1.4em}Vì số sản phẩm mỗi ngày là số nguyên dương nên điều kiện là $x$ nguyên và $x>0$.[[br]]\\hspace*{1.4em}Vậy ẩn là $x$ (sản phẩm mỗi ngày) với điều kiện $x$ nguyên dương.",
+          "variant": "example"
+        },
+        {
+          "type": "noted",
+          "text": "\\textbf{Ví dụ 2.} Vẫn bài toán trên: thực tế mỗi ngày tổ làm nhiều hơn kế hoạch $10$ sản phẩm. Hãy biểu diễn các đại lượng còn lại theo $x$.[[br]]{\\sffamily\\bfseries\\color{brand}Lời giải}[[br]]\\hspace*{1.4em}Số ngày theo kế hoạch là $\\dfrac{300}{x}$ (ngày).[[br]]\\hspace*{1.4em}Số sản phẩm mỗi ngày thực tế là $x+10$ (sản phẩm).[[br]]\\hspace*{1.4em}Số ngày thực tế là $\\dfrac{300}{x+10}$ (ngày).[[br]]\\hspace*{1.4em}Vậy bảng đại lượng gồm $\\dfrac{300}{x}$; $x+10$ và $\\dfrac{300}{x+10}$.",
+          "variant": "example"
+        },
+        {
+          "type": "noted",
+          "text": "\\textbf{Ví dụ 3.} Một xe máy đi $50$ km với vận tốc $x$ km/h, một ô tô đi cùng quãng đường với vận tốc lớn hơn $20$ km/h. Biểu diễn thời gian đi của mỗi xe theo $x$ (thi thử Vào 10 lần 5, Phòng GD\\&ĐT Chương Mỹ).[[br]]{\\sffamily\\bfseries\\color{brand}Lời giải}[[br]]\\hspace*{1.4em}Vận tốc ô tô là $x+20$ (km/h).[[br]]\\hspace*{1.4em}Thời gian xe máy đi là $\\dfrac{50}{x}$ (giờ).[[br]]\\hspace*{1.4em}Thời gian ô tô đi là $\\dfrac{50}{x+20}$ (giờ).[[br]]\\hspace*{1.4em}Vậy hai thời gian cần tìm là $\\dfrac{50}{x}$ giờ và $\\dfrac{50}{x+20}$ giờ.",
+          "variant": "example"
+        },
+        {
+          "type": "noted",
+          "text": "\\textbf{Ví dụ 4.} Đổi $25$ phút và $30$ phút sang giờ, rồi viết hệ thức cho câu \\emph{\\textquotedblleft xe máy phải xuất phát trước ô tô $25$ phút\\textquotedblright}.[[br]]{\\sffamily\\bfseries\\color{brand}Lời giải}[[br]]\\hspace*{1.4em}$25$ phút $=\\dfrac{25}{60}=\\dfrac{5}{12}$ (giờ); $30$ phút $=\\dfrac{30}{60}=\\dfrac{1}{2}$ (giờ).[[br]]\\hspace*{1.4em}Xuất phát trước $25$ phút nghĩa là thời gian xe máy đi nhiều hơn thời gian ô tô đi $\\dfrac{5}{12}$ giờ.[[br]]\\hspace*{1.4em}Do đó $\\dfrac{50}{x}-\\dfrac{50}{x+20}=\\dfrac{5}{12}$.[[br]]\\hspace*{1.4em}Vậy hệ thức cần viết là $\\dfrac{50}{x}-\\dfrac{50}{x+20}=\\dfrac{5}{12}$.",
+          "variant": "example"
+        },
+        {
+          "type": "noted",
+          "text": "\\textbf{Ví dụ 5.} Để chở hết $60$ tấn hàng, một đội xe dự định dùng một số xe cùng loại. Trước khi khởi hành có hai xe được điều đi việc khác nên mỗi xe còn lại phải chở nhiều hơn dự định $1$ tấn. Lập phương trình cho bài toán (thi thử Vào 10 lần 4, Phòng GD\\&ĐT Chương Mỹ).[[br]]{\\sffamily\\bfseries\\color{brand}Lời giải}[[br]]\\hspace*{1.4em}Gọi số xe dự định là $x$ (xe), điều kiện $x$ nguyên và $x>2$.[[br]]\\hspace*{1.4em}Mỗi xe dự định chở $\\dfrac{60}{x}$ (tấn); số xe thực tế là $x-2$ nên mỗi xe thực tế chở $\\dfrac{60}{x-2}$ (tấn).[[br]]\\hspace*{1.4em}Vì mỗi xe thực tế chở nhiều hơn dự định $1$ tấn nên $\\dfrac{60}{x-2}-\\dfrac{60}{x}=1$.[[br]]\\hspace*{1.4em}Vậy phương trình cần lập là $\\dfrac{60}{x-2}-\\dfrac{60}{x}=1$.",
+          "variant": "example"
+        },
+        {
+          "type": "noted",
+          "text": "\\textbf{Ví dụ 6.} Một ô tô đi từ Hà Nội đến Hải Phòng với vận tốc $60$ km/h, khi về đi với vận tốc $40$ km/h nên thời gian đi ít hơn thời gian về $1$ giờ. Lập phương trình cho bài toán (Câu III.1 đề chính thức Vào 10 Hà Nội 2025).[[br]]{\\sffamily\\bfseries\\color{brand}Lời giải}[[br]]\\hspace*{1.4em}Gọi độ dài quãng đường Hà Nội $-$ Hải Phòng là $s$ (km), điều kiện $s>0$.[[br]]\\hspace*{1.4em}Thời gian đi là $\\dfrac{s}{60}$ (giờ); thời gian về là $\\dfrac{s}{40}$ (giờ).[[br]]\\hspace*{1.4em}Vì thời gian đi ít hơn thời gian về $1$ giờ nên $\\dfrac{s}{40}-\\dfrac{s}{60}=1$.[[br]]\\hspace*{1.4em}Vậy phương trình cần lập là $\\dfrac{s}{40}-\\dfrac{s}{60}=1$.",
+          "variant": "example"
+        },
+        {
+          "type": "noted",
+          "text": "\\textbf{Ví dụ 7.} Một mảnh vườn hình chữ nhật có chiều dài hơn chiều rộng $7$ m và diện tích $120$ m$^2$. Lập phương trình rồi tìm hai kích thước của mảnh vườn.[[br]]{\\sffamily\\bfseries\\color{brand}Lời giải}[[br]]\\hspace*{1.4em}Gọi chiều rộng mảnh vườn là $x$ (m), điều kiện $x>0$.[[br]]\\hspace*{1.4em}Chiều dài mảnh vườn là $x+7$ (m).[[br]]\\hspace*{1.4em}Vì diện tích bằng $120$ m$^2$ nên $x(x+7)=120$, tức là $x^2+7x-120=0$.[[br]]\\hspace*{1.4em}$\\Delta=7^2-4\\cdot 1\\cdot(-120)=49+480=529>0$, suy ra $\\sqrt{\\Delta}=23$.[[br]]\\hspace*{1.4em}$x_1=\\dfrac{-7+23}{2}=8$;\\quad $x_2=\\dfrac{-7-23}{2}=-15$ (loại vì $x>0$).[[br]]\\hspace*{1.4em}Vậy mảnh vườn có chiều rộng $8$ m và chiều dài $15$ m.",
+          "variant": "example"
+        },
+        {
+          "type": "noted",
+          "text": "\\textbf{Ví dụ mồi cho bài làm chung — làm riêng.} Một chiếc pizza chia đều $8$ miếng. Ăn hết cả chiếc trong $8$ phút nghĩa là mỗi phút ăn được $\\dfrac{1}{8}$ chiếc.[[br]]Tương tự, làm xong một công việc trong $x$ giờ nghĩa là mỗi giờ làm được $\\dfrac{1}{x}$ công việc.[[br]]Hai người cùng làm thì mỗi giờ được $\\dfrac{1}{x}+\\dfrac{1}{y}$ công việc — đó là chỗ để lập phương trình.",
+          "variant": "tip"
+        },
+        {
+          "type": "noted",
+          "text": "\\textbf{Ví dụ 8.} Hai người cùng làm chung một công việc thì sau $3$ giờ $36$ phút xong. Nếu làm một mình thì người thứ nhất xong sớm hơn người thứ hai $3$ giờ. Hỏi làm một mình thì mỗi người mất bao lâu (thi thử Vào 10 lần 3, Phòng GD\\&ĐT Ứng Hòa)?[[br]]{\\sffamily\\bfseries\\color{brand}Lời giải}[[br]]\\hspace*{1.4em}Gọi thời gian người thứ nhất làm một mình xong việc là $x$ (giờ), điều kiện $x>0$.[[br]]\\hspace*{1.4em}Thời gian người thứ hai làm một mình là $x+3$ (giờ).[[br]]\\hspace*{1.4em}Mỗi giờ người thứ nhất làm được $\\dfrac{1}{x}$ công việc, người thứ hai làm được $\\dfrac{1}{x+3}$ công việc.[[br]]\\hspace*{1.4em}$3$ giờ $36$ phút $=\\dfrac{18}{5}$ giờ nên mỗi giờ cả hai làm được $\\dfrac{5}{18}$ công việc, do đó $\\dfrac{1}{x}+\\dfrac{1}{x+3}=\\dfrac{5}{18}$.[[br]]\\hspace*{1.4em}Khử mẫu: $18(x+3)+18x=5x(x+3)$, suy ra $5x^2-21x-54=0$.[[br]]\\hspace*{1.4em}$\\Delta=(-21)^2-4\\cdot 5\\cdot(-54)=1521>0$, suy ra $\\sqrt{\\Delta}=39$.[[br]]\\hspace*{1.4em}$x_1=\\dfrac{21+39}{10}=6$;\\quad $x_2=\\dfrac{21-39}{10}=-\\dfrac{9}{5}$ (loại).[[br]]\\hspace*{1.4em}Vậy người thứ nhất làm một mình mất $6$ giờ, người thứ hai mất $9$ giờ.",
+          "variant": "example"
+        },
+        {
+          "type": "noted",
+          "text": "\\textbf{Ví dụ 9.} Theo kế hoạch, một tổ sản xuất phải làm $300$ sản phẩm trong một số ngày. Thực tế mỗi ngày tổ làm nhiều hơn kế hoạch $10$ sản phẩm nên hoàn thành sớm hơn $1$ ngày. Hỏi theo kế hoạch mỗi ngày tổ phải làm bao nhiêu sản phẩm (Câu III đề minh họa Vào 10, Sở GD\\&ĐT Hà Nội)?[[br]]{\\sffamily\\bfseries\\color{brand}Lời giải}[[br]]\\hspace*{1.4em}Gọi số sản phẩm mỗi ngày theo kế hoạch là $x$ (sản phẩm), điều kiện $x$ nguyên và $x>0$.[[br]]\\hspace*{1.4em}Số ngày theo kế hoạch là $\\dfrac{300}{x}$; số ngày thực tế là $\\dfrac{300}{x+10}$.[[br]]\\hspace*{1.4em}Vì hoàn thành sớm hơn $1$ ngày nên $\\dfrac{300}{x}-\\dfrac{300}{x+10}=1$.[[br]]\\hspace*{1.4em}Khử mẫu: $300(x+10)-300x=x(x+10)$, suy ra $x^2+10x-3000=0$.[[br]]\\hspace*{1.4em}$\\Delta'=5^2-1\\cdot(-3000)=3025>0$, suy ra $\\sqrt{\\Delta'}=55$.[[br]]\\hspace*{1.4em}$x_1=\\dfrac{-5+55}{1}=50$;\\quad $x_2=\\dfrac{-5-55}{1}=-60$ (loại vì $x>0$).[[br]]\\hspace*{1.4em}Vậy theo kế hoạch mỗi ngày tổ phải làm $50$ sản phẩm.",
+          "variant": "example"
+        },
+        {
+          "type": "noted",
+          "text": "\\textbf{Ví dụ 10.} Một xe máy đi $50$ km với vận tốc $x$ km/h, một ô tô đi cùng quãng đường với vận tốc lớn hơn $20$ km/h; xe máy phải xuất phát trước $25$ phút thì hai xe đến nơi cùng lúc. Tính vận tốc mỗi xe (thi thử Vào 10 lần 5, Phòng GD\\&ĐT Chương Mỹ).[[br]]{\\sffamily\\bfseries\\color{brand}Lời giải}[[br]]\\hspace*{1.4em}Gọi vận tốc xe máy là $x$ (km/h), điều kiện $x>0$.[[br]]\\hspace*{1.4em}Vận tốc ô tô là $x+20$ (km/h).[[br]]\\hspace*{1.4em}Thời gian xe máy đi là $\\dfrac{50}{x}$ giờ, thời gian ô tô đi là $\\dfrac{50}{x+20}$ giờ.[[br]]\\hspace*{1.4em}Vì $25$ phút $=\\dfrac{5}{12}$ giờ nên $\\dfrac{50}{x}-\\dfrac{50}{x+20}=\\dfrac{5}{12}$.[[br]]\\hspace*{1.4em}Khử mẫu: $600(x+20)-600x=5x(x+20)$, suy ra $x^2+20x-2400=0$.[[br]]\\hspace*{1.4em}$\\Delta'=10^2-1\\cdot(-2400)=2500>0$, suy ra $\\sqrt{\\Delta'}=50$.[[br]]\\hspace*{1.4em}$x_1=\\dfrac{-10+50}{1}=40$;\\quad $x_2=\\dfrac{-10-50}{1}=-60$ (loại vì $x>0$).[[br]]\\hspace*{1.4em}Vậy xe máy đi với vận tốc $40$ km/h và ô tô đi với vận tốc $60$ km/h.",
+          "variant": "example"
+        },
+        {
+          "type": "noted",
+          "text": "\\textbf{Ba lỗi mất điểm oan của buổi này.}[[br]]$\\bullet$\\; Thiếu câu đặt ẩn kèm điều kiện ở đầu bài.[[br]]$\\bullet$\\; Giải xong giữ luôn nghiệm âm, hoặc quên đối chiếu điều kiện.[[br]]$\\bullet$\\; Kết luận không có đơn vị, hoặc trả lời lệch câu hỏi của đề (đề hỏi vận tốc ô tô mà chỉ ghi vận tốc xe máy).",
+          "variant": "trap"
+        },
+        {
+          "type": "noted",
+          "text": "\\textbf{Câu III.1} của đề Vào 10 ($1{,}0$ điểm) chính là bài của buổi hôm nay — đây là câu tầng C \\textbf{lấy chắc}.[[br]]Đếm bối cảnh trong 12 đề Hà Nội gần đây: mua bán và giảm giá nhiều nhất, rồi đến chuyển động, năng suất hai tổ, gửi tiết kiệm, diện tích hình chữ nhật.[[br]]Đáng chú ý: hai trong ba đề chính thức gần nhất chỉ ra phương trình \\emph{bậc nhất} — điểm ăn nằm ở khâu \\textbf{lập}, không phải khâu giải.",
+          "variant": "target"
+        }
+      ],
+      "teacher_note": "Giảng 45 phút. Bảng đại lượng kẻ lên bảng và giữ suốt buổi. Ví dụ 5 và 6 chỉ dừng ở khâu LẬP — cố ý tách khỏi khâu giải để HS yếu không bị ngợp. Ví dụ mồi pizza làm trước Ví dụ 8, đừng bỏ."
+    },
+    {
+      "kind": "practice1",
+      "number": 3,
+      "title": "Luyện tập 1 — Nhận biết",
+      "blocks": [
+        {
+          "type": "problem",
+          "label": "Bài 1.",
+          "statement": "Điền tên bốn bước giải bài toán bằng cách lập phương trình.[[br]]a) [NB] Bước 1: \\ldots\\ldots\\ldots\\ldots\\ (nhớ kèm điều kiện)[[br]]b) [NB] Bước 2: \\ldots\\ldots\\ldots\\ldots[[br]]c) [NB] Bước 4: giải phương trình, \\ldots\\ldots\\ldots\\ldots\\ và kết luận",
+          "tier": "onclass",
+          "level": 1,
+          "solution": "a) Đặt ẩn và nêu điều kiện của ẩn (kèm đơn vị).[[br]]b) Biểu diễn các đại lượng còn lại theo ẩn.[[br]]c) Đối chiếu điều kiện, loại nghiệm không thỏa mãn, kết luận kèm đơn vị.",
+          "dang_id": "NB1",
+          "writelines": 0
+        },
+        {
+          "type": "problem",
+          "label": "Bài 2.",
+          "statement": "Đặt ẩn và nêu điều kiện cho mỗi bài toán.[[br]]a) [NB] Tìm số sản phẩm mỗi ngày một tổ làm được \\;(đề minh họa Vào 10, Sở GD\\&ĐT Hà Nội)[[br]]b) [NB] Tìm số xe của một đội chở hàng \\;(thi thử Vào 10 lần 4, Phòng GD\\&ĐT Chương Mỹ)[[br]]c) [NB] Tìm vận tốc của một xe máy \\;(thi thử Vào 10 lần 5, Phòng GD\\&ĐT Chương Mỹ)",
+          "tier": "onclass",
+          "level": 1,
+          "solution": "a) Gọi số sản phẩm mỗi ngày là $x$ (sản phẩm), $x$ nguyên và $x>0$.[[br]]b) Gọi số xe dự định là $x$ (xe), $x$ nguyên và $x>2$ (vì có hai xe bị điều đi).[[br]]c) Gọi vận tốc xe máy là $x$ (km/h), $x>0$.",
+          "dang_id": "NB2",
+          "writelines": 0
+        },
+        {
+          "type": "problem",
+          "label": "Bài 3.",
+          "statement": "Một tổ phải làm $300$ sản phẩm; thực tế mỗi ngày làm nhiều hơn kế hoạch $10$ sản phẩm. Gọi số sản phẩm mỗi ngày theo kế hoạch là $x$. Điền vào bảng dưới.[[br]]a) [NB] Số ngày theo kế hoạch[[br]]b) [NB] Số sản phẩm mỗi ngày thực tế[[br]]c) [NB] Số ngày thực tế",
+          "tier": "onclass",
+          "level": 1,
+          "solution": "a) $\\dfrac{300}{x}$ (ngày).[[br]]b) $x+10$ (sản phẩm).[[br]]c) $\\dfrac{300}{x+10}$ (ngày).",
+          "dang_id": "NB3",
+          "writelines": 0
+        },
+        {
+          "type": "table",
+          "caption": "Bảng năng suất — em điền ba ô còn trống",
+          "headers": [
+            "",
+            "Tổng sản phẩm",
+            "Mỗi ngày",
+            "Số ngày"
+          ],
+          "rows": [
+            [
+              "Kế hoạch",
+              "$300$",
+              "$x$",
+              "[[blank:2.2cm]]"
+            ],
+            [
+              "Thực tế",
+              "$300$",
+              "[[blank:2.2cm]]",
+              "[[blank:2.2cm]]"
+            ]
+          ]
+        },
+        {
+          "type": "problem",
+          "label": "Bài 4.",
+          "statement": "Xe máy đi $50$ km với vận tốc $x$ km/h, ô tô đi cùng quãng đường với vận tốc lớn hơn $20$ km/h. Điền vào bảng dưới.[[br]]a) [NB] Vận tốc ô tô[[br]]b) [NB] Thời gian xe máy đi[[br]]c) [NB] Thời gian ô tô đi",
+          "tier": "onclass",
+          "level": 1,
+          "solution": "a) $x+20$ (km/h).[[br]]b) $\\dfrac{50}{x}$ (giờ).[[br]]c) $\\dfrac{50}{x+20}$ (giờ).",
+          "dang_id": "NB4",
+          "writelines": 0
+        },
+        {
+          "type": "table",
+          "caption": "Bảng chuyển động — em điền ba ô còn trống",
+          "headers": [
+            "",
+            "Quãng đường",
+            "Vận tốc",
+            "Thời gian"
+          ],
+          "rows": [
+            [
+              "Xe máy",
+              "$50$",
+              "$x$",
+              "[[blank:2.2cm]]"
+            ],
+            [
+              "Ô tô",
+              "$50$",
+              "[[blank:2.2cm]]",
+              "[[blank:2.2cm]]"
+            ]
+          ]
+        },
+        {
+          "type": "problem",
+          "label": "Bài 5.",
+          "statement": "Viết thời gian bằng quãng đường chia vận tốc.[[br]]a) [NB] Đi $120$ km với vận tốc $x$ km/h: thời gian $=\\ldots\\ldots$ giờ[[br]]b) [NB] Đi $60$ km với vận tốc $x+10$ km/h: thời gian $=\\ldots\\ldots$ giờ[[br]]c) [NB] Đi $3$ km với vận tốc $x$ km/h: thời gian $=\\ldots\\ldots$ giờ",
+          "tier": "onclass",
+          "level": 1,
+          "solution": "a) $\\dfrac{120}{x}$.[[br]]b) $\\dfrac{60}{x+10}$.[[br]]c) $\\dfrac{3}{x}$.",
+          "dang_id": "NB5",
+          "writelines": 0
+        },
+        {
+          "type": "problem",
+          "label": "Bài 6.",
+          "statement": "Đổi sang giờ (viết dạng phân số tối giản).[[br]]a) [NB] $25$ phút $=\\ldots\\ldots$ giờ[[br]]b) [NB] $30$ phút $=\\ldots\\ldots$ giờ[[br]]c) [NB] $3$ phút $=\\ldots\\ldots$ giờ",
+          "tier": "onclass",
+          "level": 1,
+          "solution": "a) $\\dfrac{25}{60}=\\dfrac{5}{12}$.[[br]]b) $\\dfrac{1}{2}$.[[br]]c) $\\dfrac{3}{60}=\\dfrac{1}{20}$.",
+          "dang_id": "NB6",
+          "writelines": 0
+        },
+        {
+          "type": "problem",
+          "label": "Bài 7.",
+          "statement": "Dịch mỗi cụm sau thành một hệ thức (dùng kí hiệu đã đặt ở cột trái).[[br]]a) [NB] \\emph{Xong sớm hơn kế hoạch $1$ ngày}, biết số ngày kế hoạch là $\\dfrac{300}{x}$ và số ngày thực tế là $\\dfrac{300}{x+10}$: \\ldots\\ldots[[br]]b) [NB] \\emph{Thời gian đi ít hơn thời gian về $1$ giờ}, biết thời gian đi là $\\dfrac{s}{60}$ và thời gian về là $\\dfrac{s}{40}$: \\ldots\\ldots[[br]]c) [NB] \\emph{Mỗi ngày làm nhiều hơn kế hoạch $10$ sản phẩm}, biết kế hoạch là $x$ sản phẩm: thực tế $=\\ldots\\ldots$",
+          "tier": "onclass",
+          "level": 1,
+          "solution": "a) $\\dfrac{300}{x}-\\dfrac{300}{x+10}=1$.[[br]]b) $\\dfrac{s}{40}-\\dfrac{s}{60}=1$.[[br]]c) $x+10$ (sản phẩm).",
+          "dang_id": "NB7",
+          "writelines": 0
+        },
+        {
+          "type": "problem",
+          "label": "Bài 8.",
+          "statement": "Quy đồng rồi khử mẫu để đưa phương trình về dạng $ax^2+bx+c=0$ (chưa cần giải).[[br]]a) [NB] $\\dfrac{300}{x}-\\dfrac{300}{x+10}=1$[[br]]b) [NB] $\\dfrac{60}{x-2}-\\dfrac{60}{x}=1$[[br]]c) [NB] $\\dfrac{50}{x}-\\dfrac{50}{x+20}=\\dfrac{5}{12}$",
+          "tier": "onclass",
+          "level": 1,
+          "solution": "a) $300(x+10)-300x=x(x+10) \\Rightarrow x^2+10x-3000=0$.[[br]]b) $60x-60(x-2)=x(x-2) \\Rightarrow x^2-2x-120=0$.[[br]]c) $600(x+20)-600x=5x(x+20) \\Rightarrow x^2+20x-2400=0$.",
+          "dang_id": "NB8",
+          "writelines": 0
+        },
+        {
+          "type": "problem",
+          "label": "Bài 9.",
+          "statement": "Đối chiếu hai nghiệm với điều kiện của ẩn rồi cho biết nhận nghiệm nào.[[br]]a) [NB] $x$ là số sản phẩm mỗi ngày ($x$ nguyên dương), giải ra $50$ và $-60$: \\ldots\\ldots[[br]]b) [NB] $x$ là số xe ($x$ nguyên, $x>2$), giải ra $12$ và $-10$: \\ldots\\ldots[[br]]c) [NB] $x$ là vận tốc ($x>0$), giải ra $40$ và $-60$: \\ldots\\ldots",
+          "tier": "onclass",
+          "level": 1,
+          "solution": "a) Loại $-60$, nhận $x=50$.[[br]]b) Loại $-10$, nhận $x=12$.[[br]]c) Loại $-60$, nhận $x=40$.",
+          "dang_id": "NB9",
+          "writelines": 0
+        },
+        {
+          "type": "problem",
+          "label": "Bài 10.",
+          "statement": "Điền vào chỗ chấm để hoàn thành bài giải Câu III.1: \\emph{theo kế hoạch một tổ phải làm $300$ sản phẩm; thực tế mỗi ngày làm nhiều hơn $10$ sản phẩm nên xong sớm $1$ ngày. Hỏi theo kế hoạch mỗi ngày tổ làm bao nhiêu sản phẩm?}[[br]]a) [NB] Gọi số sản phẩm mỗi ngày theo kế hoạch là $x$, điều kiện \\ldots\\ldots\\ldots\\ldots[[br]]b) [NB] Số ngày kế hoạch là \\ldots\\ldots, số ngày thực tế là \\ldots\\ldots, nên phương trình là \\ldots\\ldots\\ldots\\ldots[[br]]c) [NB] Khử mẫu được \\ldots\\ldots\\ldots\\ldots$=0$; giải ra $x=\\ldots$ và $x=\\ldots$; loại \\ldots\\ldots; kết luận \\ldots\\ldots\\ldots\\ldots",
+          "tier": "onclass",
+          "level": 1,
+          "solution": "a) $x$ nguyên và $x>0$ (sản phẩm).[[br]]b) $\\dfrac{300}{x}$; $\\dfrac{300}{x+10}$; $\\dfrac{300}{x}-\\dfrac{300}{x+10}=1$.[[br]]c) $x^2+10x-3000=0$; $x=50$ và $x=-60$; loại $x=-60$; vậy theo kế hoạch mỗi ngày tổ làm $50$ sản phẩm.",
+          "dang_id": "NB10",
+          "writelines": 0
+        },
+        {
+          "type": "problem",
+          "label": "Bài 11.",
+          "statement": "Viết câu kết luận kèm đơn vị và trả lời đúng câu hỏi của đề.[[br]]a) [NB] Đề hỏi \\emph{mỗi ngày theo kế hoạch làm bao nhiêu sản phẩm}, tính ra $x=50$. Kết luận: \\ldots\\ldots\\ldots\\ldots[[br]]b) [NB] Đề hỏi \\emph{vận tốc mỗi xe}, tính ra $x=40$ là vận tốc xe máy. Kết luận: \\ldots\\ldots\\ldots\\ldots",
+          "tier": "onclass",
+          "level": 1,
+          "solution": "a) Vậy theo kế hoạch mỗi ngày tổ phải làm $50$ sản phẩm.[[br]]b) Vậy vận tốc xe máy là $40$ km/h và vận tốc ô tô là $60$ km/h — đề hỏi cả hai xe nên phải trả lời đủ hai số.",
+          "dang_id": "NB11",
+          "writelines": 0
+        }
+      ],
+      "teacher_note": "Luyện 48 phút. Bài 3 và Bài 4 điền bảng trước, chữa xong mới sang Bài 7 — thứ tự này là giàn giáo, đừng đảo. Bài 11b nhấn: đề hỏi \\emph{mỗi xe} mà chỉ ghi một số là mất $0{,}25$ điểm."
+    },
+    {
+      "kind": "practice2",
+      "number": 4,
+      "title": "Luyện tập 2 — Thông hiểu \\& Vận dụng",
+      "blocks": [
+        {
+          "type": "problem",
+          "label": "Bài 12.",
+          "statement": "Đặt ẩn, biểu diễn các đại lượng và \\textbf{lập phương trình} (chưa cần giải).[[br]]a) [TH] Để chở hết $60$ tấn hàng, một đội xe dự định dùng một số xe cùng loại; trước khi khởi hành có hai xe được điều đi việc khác nên mỗi xe còn lại phải chở nhiều hơn dự định $1$ tấn \\;(thi thử Vào 10 lần 4, Phòng GD\\&ĐT Chương Mỹ)[[br]]b) [TH] Theo kế hoạch một công nhân phải làm $60$ sản phẩm; nhờ cải tiến, mỗi giờ làm thêm $2$ sản phẩm nên xong sớm $30$ phút và vượt mức $3$ sản phẩm \\;(thi thử Vào 10 lần 2, Phòng GD\\&ĐT Thanh Oai)",
+          "tier": "onclass",
+          "level": 2,
+          "solution": "a) Gọi số xe dự định là $x$ (xe), điều kiện $x$ nguyên và $x>2$.[[br]]Mỗi xe dự định chở $\\dfrac{60}{x}$ tấn; thực tế còn $x-2$ xe nên mỗi xe chở $\\dfrac{60}{x-2}$ tấn.[[br]]Vì mỗi xe thực tế chở nhiều hơn $1$ tấn nên $\\dfrac{60}{x-2}-\\dfrac{60}{x}=1$.[[br]]Vậy phương trình cần lập là $\\dfrac{60}{x-2}-\\dfrac{60}{x}=1$.[[br]]b) Gọi số sản phẩm mỗi giờ theo kế hoạch là $x$, điều kiện $x$ nguyên và $x>0$.[[br]]Thời gian dự định là $\\dfrac{60}{x}$ giờ; thực tế làm $63$ sản phẩm với năng suất $x+2$ nên hết $\\dfrac{63}{x+2}$ giờ.[[br]]Vì xong sớm $30$ phút $=\\dfrac{1}{2}$ giờ nên $\\dfrac{60}{x}-\\dfrac{63}{x+2}=\\dfrac{1}{2}$.[[br]]Vậy phương trình cần lập là $\\dfrac{60}{x}-\\dfrac{63}{x+2}=\\dfrac{1}{2}$.",
+          "dang_id": "TH1",
+          "writelines": 0
+        },
+        {
+          "type": "problem",
+          "label": "Bài 13.",
+          "statement": "Đặt ẩn, biểu diễn các đại lượng và \\textbf{lập phương trình} (chưa cần giải).[[br]]a) [TH] Xe máy và ô tô cùng đi $50$ km, ô tô nhanh hơn $20$ km/h nên xe máy phải xuất phát trước $25$ phút để đến nơi cùng lúc \\;(thi thử Vào 10 lần 5, Phòng GD\\&ĐT Chương Mỹ)[[br]]b) [TH] Một ô tô đi với vận tốc $60$ km/h, lúc về đi $40$ km/h trên cùng quãng đường nên thời gian đi ít hơn thời gian về $1$ giờ \\;(Câu III.1 đề chính thức Vào 10 Hà Nội 2025)",
+          "tier": "onclass",
+          "level": 2,
+          "solution": "a) Gọi vận tốc xe máy là $x$ (km/h), điều kiện $x>0$; vận tốc ô tô là $x+20$.[[br]]Thời gian hai xe đi lần lượt là $\\dfrac{50}{x}$ và $\\dfrac{50}{x+20}$ giờ.[[br]]Vì $25$ phút $=\\dfrac{5}{12}$ giờ nên $\\dfrac{50}{x}-\\dfrac{50}{x+20}=\\dfrac{5}{12}$.[[br]]Vậy phương trình cần lập là $\\dfrac{50}{x}-\\dfrac{50}{x+20}=\\dfrac{5}{12}$.[[br]]b) Gọi độ dài quãng đường là $s$ (km), điều kiện $s>0$.[[br]]Thời gian đi là $\\dfrac{s}{60}$ giờ, thời gian về là $\\dfrac{s}{40}$ giờ.[[br]]Vì thời gian đi ít hơn thời gian về $1$ giờ nên $\\dfrac{s}{40}-\\dfrac{s}{60}=1$.[[br]]Vậy phương trình cần lập là $\\dfrac{s}{40}-\\dfrac{s}{60}=1$.",
+          "dang_id": "TH2",
+          "writelines": 0
+        },
+        {
+          "type": "problem",
+          "label": "Bài 14.",
+          "statement": "Lập phương trình rồi giải để tìm hai kích thước.[[br]]a) [TH] Mảnh đất hình chữ nhật có chiều rộng ngắn hơn chiều dài $11$ m và diện tích $180$ m$^2$ \\;(bộ đề Vào 10, Phòng GD\\&ĐT Đống Đa)[[br]]b) [TH] Mảnh vườn hình chữ nhật có chiều dài hơn chiều rộng $5$ m và diện tích $84$ m$^2$",
+          "tier": "onclass",
+          "level": 2,
+          "solution": "a) Gọi chiều rộng là $x$ (m), điều kiện $x>0$; chiều dài là $x+11$ (m).[[br]]Vì diện tích bằng $180$ m$^2$ nên $x(x+11)=180$, tức là $x^2+11x-180=0$.[[br]]$\\Delta=121+720=841>0$, suy ra $\\sqrt{\\Delta}=29$; $x_1=9$; $x_2=-20$ (loại).[[br]]Vậy mảnh đất có chiều rộng $9$ m và chiều dài $20$ m.[[br]]b) Gọi chiều rộng là $x$ (m), điều kiện $x>0$; chiều dài là $x+5$ (m).[[br]]Ta có $x(x+5)=84$, tức là $x^2+5x-84=0$.[[br]]$\\Delta=25+336=361>0$, suy ra $\\sqrt{\\Delta}=19$; $x_1=7$; $x_2=-12$ (loại).[[br]]Vậy mảnh vườn có chiều rộng $7$ m và chiều dài $12$ m.",
+          "dang_id": "TH3",
+          "writelines": 0,
+          "check": {
+            "kind": "solveset",
+            "equation": "x**2 + 5*x - 84 = 0",
+            "answer": [
+              7,
+              -12
+            ],
+            "symbol": "x"
+          }
+        },
+        {
+          "type": "problem",
+          "label": "Bài 15.",
+          "statement": "Lập phương trình bằng phần công việc làm được trong một giờ rồi giải.[[br]]a) [TH] Hai người cùng làm chung một công việc thì sau $3$ giờ $36$ phút xong; làm một mình thì người thứ nhất xong sớm hơn người thứ hai $3$ giờ \\;(thi thử Vào 10 lần 3, Phòng GD\\&ĐT Ứng Hòa)[[br]]b) [TH] Hai vòi cùng chảy vào một bể cạn thì $6$ giờ đầy; chảy riêng thì vòi thứ nhất đầy bể sớm hơn vòi thứ hai $5$ giờ",
+          "tier": "onclass",
+          "level": 2,
+          "solution": "a) Gọi thời gian người thứ nhất làm một mình là $x$ (giờ), điều kiện $x>0$; người thứ hai là $x+3$ (giờ).[[br]]Mỗi giờ hai người làm được $\\dfrac{1}{x}$ và $\\dfrac{1}{x+3}$ công việc; $3$ giờ $36$ phút $=\\dfrac{18}{5}$ giờ nên $\\dfrac{1}{x}+\\dfrac{1}{x+3}=\\dfrac{5}{18}$.[[br]]Khử mẫu: $18(x+3)+18x=5x(x+3)$, suy ra $5x^2-21x-54=0$.[[br]]$\\Delta=441+1080=1521>0$, suy ra $\\sqrt{\\Delta}=39$; $x_1=6$; $x_2=-\\dfrac{9}{5}$ (loại).[[br]]Vậy người thứ nhất làm một mình mất $6$ giờ, người thứ hai mất $9$ giờ.[[br]]b) Gọi thời gian vòi thứ nhất chảy đầy bể là $x$ (giờ), điều kiện $x>0$; vòi thứ hai là $x+5$ (giờ).[[br]]Ta có $\\dfrac{1}{x}+\\dfrac{1}{x+5}=\\dfrac{1}{6}$.[[br]]Khử mẫu: $6(x+5)+6x=x(x+5)$, suy ra $x^2-7x-30=0$.[[br]]$\\Delta=49+120=169>0$, suy ra $\\sqrt{\\Delta}=13$; $x_1=10$; $x_2=-3$ (loại).[[br]]Vậy vòi thứ nhất chảy riêng mất $10$ giờ, vòi thứ hai mất $15$ giờ.",
+          "dang_id": "TH4",
+          "writelines": 0,
+          "check": {
+            "kind": "solveset",
+            "equation": "x**2 - 7*x - 30 = 0",
+            "answer": [
+              10,
+              -3
+            ],
+            "symbol": "x"
+          }
+        },
+        {
+          "type": "problem",
+          "label": "Bài 16.",
+          "statement": "[VD] Một đội xe theo kế hoạch chở hết $140$ tấn hàng trong một số ngày quy định. Do mỗi ngày đội chở vượt mức $5$ tấn nên đã hoàn thành sớm hơn thời gian quy định $1$ ngày và còn chở thêm được $10$ tấn. Hỏi theo kế hoạch đội xe chở hàng hết bao nhiêu ngày (Giữa kì II, xã Đông Anh)?",
+          "tier": "onclass",
+          "level": 3,
+          "solution": "Gọi số ngày theo kế hoạch là $x$ (ngày), điều kiện $x$ nguyên và $x>1$.[[br]]Mỗi ngày theo kế hoạch đội chở $\\dfrac{140}{x}$ (tấn).[[br]]Thực tế đội làm trong $x-1$ ngày và chở được $140+10=150$ (tấn) nên mỗi ngày chở $\\dfrac{150}{x-1}$ (tấn).[[br]]Vì mỗi ngày vượt mức $5$ tấn nên $\\dfrac{150}{x-1}-\\dfrac{140}{x}=5$.[[br]]Khử mẫu: $150x-140(x-1)=5x(x-1)$[[br]]$10x+140=5x^2-5x$, suy ra $5x^2-15x-140=0$, tức $x^2-3x-28=0$.[[br]]$\\Delta=9+112=121>0$, suy ra $\\sqrt{\\Delta}=11$; $x_1=7$; $x_2=-4$ (loại vì $x>1$).[[br]]Vậy theo kế hoạch đội xe chở hàng hết $7$ ngày.",
+          "dang_id": "VD1",
+          "writelines": 0,
+          "hints": [
+            "Ẩn ở đây là SỐ NGÀY, không phải năng suất — đọc kĩ câu hỏi của đề.",
+            "Thực tế chở thêm $10$ tấn nên tổng thực tế là $150$ tấn, không phải $140$."
+          ],
+          "check": {
+            "kind": "solveset",
+            "equation": "x**2 - 3*x - 28 = 0",
+            "answer": [
+              7,
+              -4
+            ],
+            "symbol": "x"
+          }
+        },
+        {
+          "type": "problem",
+          "label": "Bài 17.",
+          "statement": "[VD] Hằng ngày bạn Nam đi học từ nhà đến trường trên quãng đường $12$ km bằng xe máy điện với vận tốc không đổi. Hôm nay $3$ km đầu Nam đi với vận tốc như thường ngày, sau đó dừng lại $3$ phút để bơm xe; để đến trường đúng giờ, Nam phải tăng vận tốc thêm $6$ km/h trên quãng đường còn lại. Tính vận tốc xe của Nam khi tăng tốc, và với vận tốc đó Nam có vi phạm luật giao thông không, biết đoạn đường giới hạn tốc độ tối đa $40$ km/h (thi thử Vào 10, THCS Tự Lập)?",
+          "tier": "onclass",
+          "level": 3,
+          "solution": "Gọi vận tốc thường ngày của Nam là $x$ (km/h), điều kiện $x>0$.[[br]]Thời gian đi thường ngày là $\\dfrac{12}{x}$ (giờ).[[br]]Hôm nay: $3$ km đầu hết $\\dfrac{3}{x}$ giờ, nghỉ $3$ phút $=\\dfrac{1}{20}$ giờ, $9$ km còn lại hết $\\dfrac{9}{x+6}$ giờ.[[br]]Vì đến trường đúng giờ nên $\\dfrac{12}{x}=\\dfrac{3}{x}+\\dfrac{1}{20}+\\dfrac{9}{x+6}$, tức là $\\dfrac{9}{x}-\\dfrac{9}{x+6}=\\dfrac{1}{20}$.[[br]]Khử mẫu: $180(x+6)-180x=x(x+6)$, suy ra $x^2+6x-1080=0$.[[br]]$\\Delta'=3^2-1\\cdot(-1080)=1089>0$, suy ra $\\sqrt{\\Delta'}=33$.[[br]]$x_1=\\dfrac{-3+33}{1}=30$; $x_2=\\dfrac{-3-33}{1}=-36$ (loại vì $x>0$).[[br]]Vận tốc khi tăng tốc là $30+6=36$ (km/h), mà $36<40$ nên Nam không vi phạm.[[br]]Vậy vận tốc khi tăng tốc là $36$ km/h và Nam không vi phạm luật giao thông.",
+          "dang_id": "VD2",
+          "writelines": 0,
+          "hints": [
+            "Tổng thời gian hôm nay bằng thời gian thường ngày — đó là chỗ lập phương trình.",
+            "Đề hỏi vận tốc \\emph{khi tăng tốc}, tức là $x+6$ chứ không phải $x$."
+          ],
+          "check": {
+            "kind": "solveset",
+            "equation": "x**2 + 6*x - 1080 = 0",
+            "answer": [
+              30,
+              -36
+            ],
+            "symbol": "x"
+          }
+        }
+      ],
+      "teacher_note": "Luyện 48 phút. Bài 12 và 13 chỉ LẬP phương trình — chấm riêng khâu này, đó mới là chỗ ăn điểm. Bài 17 có hai bẫy: đề hỏi $x+6$ chứ không phải $x$, và còn câu hỏi phụ về luật giao thông; thiếu một trong hai là mất $0{,}25$ điểm."
+    },
+    {
+      "kind": "reflection",
+      "number": 5,
+      "title": "Tổng kết",
+      "blocks": [
+        {
+          "type": "mindmap",
+          "caption": "Điền các ô trống để tự tóm tắt khuôn Câu III.1",
+          "root": "Giải bài toán bằng cách lập phương trình",
+          "branches": [
+            {
+              "label": "Bước 1",
+              "children": [
+                {
+                  "label": "Đặt ẩn $+$ [[blank:1.6cm]] $+$ đơn vị"
+                }
+              ]
+            },
+            {
+              "label": "Bước 2 — kẻ bảng",
+              "children": [
+                {
+                  "label": "Năng suất: tổng $-$ [[blank:1.4cm]] $-$ thời gian"
+                },
+                {
+                  "label": "Chuyển động: $t=[[blank:1cm]]$"
+                },
+                {
+                  "label": "Làm chung: mỗi giờ được $[[blank:1cm]]$ công việc"
+                }
+              ]
+            },
+            {
+              "label": "Bước 3 — lập",
+              "children": [
+                {
+                  "label": "\\textquotedblleft sớm hơn\\textquotedblright{} $\\to$ dấu [[blank:1cm]]"
+                },
+                {
+                  "label": "Đổi phút sang [[blank:1cm]] trước"
+                }
+              ]
+            },
+            {
+              "label": "Bước 4 — chốt",
+              "children": [
+                {
+                  "label": "Đối chiếu điều kiện, [[blank:1.2cm]] nghiệm"
+                },
+                {
+                  "label": "Kết luận kèm [[blank:1.2cm]]"
+                }
+              ]
+            }
+          ]
+        },
+        {
+          "type": "para",
+          "text": "\\textbf{Bài tập về nhà} — làm vào vở, buổi sau nộp."
+        },
+        {
+          "type": "problem",
+          "label": "Bài 18.",
+          "statement": "Sắp lại cho đúng thứ tự bốn bước và điền chỗ chấm.[[br]]a) [NB] Bước nào phải làm đầu tiên: \\emph{lập phương trình} hay \\emph{đặt ẩn}? \\ldots\\ldots[[br]]b) [NB] Bước 3 là \\ldots\\ldots\\ldots\\ldots[[br]]c) [NB] Trước khi viết câu kết luận phải làm gì? \\ldots\\ldots",
+          "tier": "btvn",
+          "level": 1,
+          "solution": "a) Đặt ẩn (kèm điều kiện).[[br]]b) Lập phương trình từ dữ kiện chênh lệch của đề.[[br]]c) Đối chiếu nghiệm với điều kiện của ẩn và loại nghiệm không thỏa mãn.",
+          "dang_id": "NB1",
+          "writelines": 0
+        },
+        {
+          "type": "problem",
+          "label": "Bài 19.",
+          "statement": "Đặt ẩn và nêu điều kiện.[[br]]a) [NB] Tìm số chiếc áo mỗi ngày một tổ may theo kế hoạch \\;(Câu III.1 đề chính thức Vào 10 Hà Nội 2026)[[br]]b) [NB] Tìm vận tốc ban đầu của một xe máy \\;(Giữa kì II, THCS Chương Dương)[[br]]c) [NB] Tìm độ dài quãng đường $AB$ \\;(Cuối kì I, THCS Ái Mộ)",
+          "tier": "btvn",
+          "level": 1,
+          "solution": "a) Gọi số áo mỗi ngày theo kế hoạch là $x$ (chiếc), $x$ nguyên và $x>0$.[[br]]b) Gọi vận tốc ban đầu là $x$ (km/h), $x>0$.[[br]]c) Gọi độ dài quãng đường $AB$ là $s$ (km), $s>0$.",
+          "dang_id": "NB2",
+          "writelines": 0
+        },
+        {
+          "type": "problem",
+          "label": "Bài 20.",
+          "statement": "Để chở hết $60$ tấn hàng, đội xe dự định dùng $x$ xe; thực tế bớt hai xe. Điền vào bảng dưới.[[br]]a) [NB] Mỗi xe dự định chở[[br]]b) [NB] Mỗi xe thực tế chở",
+          "tier": "btvn",
+          "level": 1,
+          "solution": "a) $\\dfrac{60}{x}$ (tấn).[[br]]b) $\\dfrac{60}{x-2}$ (tấn).",
+          "dang_id": "NB3",
+          "writelines": 0
+        },
+        {
+          "type": "table",
+          "caption": "Bảng đại lượng — em điền hai ô còn trống",
+          "headers": [
+            "",
+            "Tổng khối lượng",
+            "Số xe",
+            "Mỗi xe chở"
+          ],
+          "rows": [
+            [
+              "Dự định",
+              "$60$",
+              "$x$",
+              "[[blank:2.2cm]]"
+            ],
+            [
+              "Thực tế",
+              "$60$",
+              "$x-2$",
+              "[[blank:2.2cm]]"
+            ]
+          ]
+        },
+        {
+          "type": "problem",
+          "label": "Bài 21.",
+          "statement": "Một người đi $AB$ với vận tốc $40$ km/h, lúc về đi $30$ km/h. Gọi độ dài $AB$ là $s$ (km). Điền vào bảng dưới.[[br]]a) [NB] Thời gian đi[[br]]b) [NB] Thời gian về",
+          "tier": "btvn",
+          "level": 1,
+          "solution": "a) $\\dfrac{s}{40}$ (giờ).[[br]]b) $\\dfrac{s}{30}$ (giờ).",
+          "dang_id": "NB4",
+          "writelines": 0
+        },
+        {
+          "type": "table",
+          "caption": "Bảng chuyển động — em điền hai ô còn trống",
+          "headers": [
+            "",
+            "Quãng đường",
+            "Vận tốc",
+            "Thời gian"
+          ],
+          "rows": [
+            [
+              "Lượt đi",
+              "$s$",
+              "$40$",
+              "[[blank:2.2cm]]"
+            ],
+            [
+              "Lượt về",
+              "$s$",
+              "$30$",
+              "[[blank:2.2cm]]"
+            ]
+          ]
+        },
+        {
+          "type": "problem",
+          "label": "Bài 22.",
+          "statement": "Viết thời gian bằng quãng đường chia vận tốc.[[br]]a) [NB] Đi $9$ km với vận tốc $x+6$ km/h: \\ldots\\ldots giờ[[br]]b) [NB] Đi $60$ km với vận tốc $x$ km/h: \\ldots\\ldots giờ",
+          "tier": "btvn",
+          "level": 1,
+          "solution": "a) $\\dfrac{9}{x+6}$.[[br]]b) $\\dfrac{60}{x}$.",
+          "dang_id": "NB5",
+          "writelines": 0
+        },
+        {
+          "type": "problem",
+          "label": "Bài 23.",
+          "statement": "Đổi sang giờ (phân số tối giản).[[br]]a) [NB] $45$ phút $=\\ldots\\ldots$ giờ[[br]]b) [NB] $20$ phút $=\\ldots\\ldots$ giờ",
+          "tier": "btvn",
+          "level": 1,
+          "solution": "a) $\\dfrac{45}{60}=\\dfrac{3}{4}$.[[br]]b) $\\dfrac{20}{60}=\\dfrac{1}{3}$.",
+          "dang_id": "NB6",
+          "writelines": 0
+        },
+        {
+          "type": "problem",
+          "label": "Bài 24.",
+          "statement": "Dịch mỗi cụm sau thành một hệ thức.[[br]]a) [NB] \\emph{Thời gian về nhiều hơn thời gian đi $45$ phút}, biết thời gian đi là $\\dfrac{s}{40}$ và thời gian về là $\\dfrac{s}{30}$: \\ldots\\ldots[[br]]b) [NB] \\emph{Mỗi ngày chở vượt mức $5$ tấn}, biết kế hoạch là $\\dfrac{140}{x}$ tấn mỗi ngày: thực tế $=\\ldots\\ldots$",
+          "tier": "btvn",
+          "level": 1,
+          "solution": "a) $\\dfrac{s}{30}-\\dfrac{s}{40}=\\dfrac{3}{4}$.[[br]]b) $\\dfrac{140}{x}+5$ (tấn mỗi ngày).",
+          "dang_id": "NB7",
+          "writelines": 0
+        },
+        {
+          "type": "problem",
+          "label": "Bài 25.",
+          "statement": "Khử mẫu để đưa về dạng $ax^2+bx+c=0$ (chưa cần giải).[[br]]a) [NB] $\\dfrac{60}{x}-\\dfrac{63}{x+2}=\\dfrac{1}{2}$[[br]]b) [NB] $\\dfrac{60}{x}-\\dfrac{60}{x+10}=\\dfrac{1}{2}$[[br]]c) [NB] $\\dfrac{1}{x}+\\dfrac{1}{x+5}=\\dfrac{1}{6}$",
+          "tier": "btvn",
+          "level": 1,
+          "solution": "a) $120(x+2)-126x=x(x+2) \\Rightarrow x^2+8x-240=0$.[[br]]b) $120(x+10)-120x=x(x+10) \\Rightarrow x^2+10x-1200=0$.[[br]]c) $6(x+5)+6x=x(x+5) \\Rightarrow x^2-7x-30=0$.",
+          "dang_id": "NB8",
+          "writelines": 0
+        },
+        {
+          "type": "problem",
+          "label": "Bài 26.",
+          "statement": "Đối chiếu nghiệm với điều kiện rồi cho biết nhận nghiệm nào.[[br]]a) [NB] $x$ là số ngày ($x$ nguyên, $x>1$), giải ra $7$ và $-4$: \\ldots\\ldots[[br]]b) [NB] $x$ là vận tốc ($x>0$), giải ra $30$ và $-40$: \\ldots\\ldots[[br]]c) [NB] $x$ là số giờ ($x>0$), giải ra $10$ và $-3$: \\ldots\\ldots",
+          "tier": "btvn",
+          "level": 1,
+          "solution": "a) Loại $-4$, nhận $x=7$.[[br]]b) Loại $-40$, nhận $x=30$.[[br]]c) Loại $-3$, nhận $x=10$.",
+          "dang_id": "NB9",
+          "writelines": 0
+        },
+        {
+          "type": "problem",
+          "label": "Bài 27.",
+          "statement": "Điền vào chỗ chấm để hoàn thành bài giải: \\emph{mảnh đất hình chữ nhật có chiều rộng ngắn hơn chiều dài $11$ m và diện tích $180$ m$^2$; tính hai kích thước} (bộ đề Vào 10, Phòng GD\\&ĐT Đống Đa).[[br]]a) [NB] Gọi chiều rộng là $x$ (m), điều kiện \\ldots\\ldots; chiều dài là \\ldots\\ldots (m); phương trình: \\ldots\\ldots\\ldots\\ldots[[br]]b) [NB] Giải ra $x=\\ldots$ và $x=\\ldots$; loại \\ldots\\ldots; kết luận \\ldots\\ldots\\ldots\\ldots",
+          "tier": "btvn",
+          "level": 1,
+          "solution": "a) $x>0$; chiều dài $x+11$; $x(x+11)=180$, tức $x^2+11x-180=0$.[[br]]b) $x=9$ và $x=-20$; loại $x=-20$; vậy mảnh đất rộng $9$ m và dài $20$ m.",
+          "dang_id": "NB10",
+          "writelines": 0
+        },
+        {
+          "type": "problem",
+          "label": "Bài 28.",
+          "statement": "Viết câu kết luận kèm đơn vị.[[br]]a) [NB] Đề hỏi \\emph{theo kế hoạch đội chở hàng hết bao nhiêu ngày}, tính ra $x=7$. Kết luận: \\ldots\\ldots\\ldots\\ldots[[br]]b) [NB] Đề hỏi \\emph{vận tốc khi tăng tốc}, tính ra $x=30$ là vận tốc thường ngày và đề cho biết tăng thêm $6$ km/h. Kết luận: \\ldots\\ldots\\ldots\\ldots",
+          "tier": "btvn",
+          "level": 1,
+          "solution": "a) Vậy theo kế hoạch đội xe chở hàng hết $7$ ngày.[[br]]b) Vậy vận tốc khi tăng tốc là $30+6=36$ km/h — phải cộng thêm $6$ rồi mới trả lời.",
+          "dang_id": "NB11",
+          "writelines": 0
+        },
+        {
+          "type": "problem",
+          "label": "Bài 29.",
+          "statement": "Đặt ẩn, biểu diễn các đại lượng và lập phương trình (chưa cần giải).[[br]]a) [TH] Một đội xe theo kế hoạch chở hết $140$ tấn hàng trong một số ngày; mỗi ngày chở vượt mức $5$ tấn nên xong sớm $1$ ngày và chở thêm được $10$ tấn \\;(Giữa kì II, xã Đông Anh)[[br]]b) [TH] Một tổ may áo theo kế hoạch mỗi ngày may như nhau; $3$ ngày đầu may đúng kế hoạch, $7$ ngày sau mỗi ngày may nhiều hơn kế hoạch $5$ chiếc nên sau $10$ ngày may được $335$ chiếc \\;(Câu III.1 đề chính thức Vào 10 Hà Nội 2026)",
+          "tier": "btvn",
+          "level": 2,
+          "solution": "a) Gọi số ngày theo kế hoạch là $x$ (ngày), điều kiện $x$ nguyên và $x>1$.[[br]]Mỗi ngày kế hoạch chở $\\dfrac{140}{x}$ tấn; thực tế chở $150$ tấn trong $x-1$ ngày nên mỗi ngày chở $\\dfrac{150}{x-1}$ tấn.[[br]]Vì vượt mức $5$ tấn mỗi ngày nên $\\dfrac{150}{x-1}-\\dfrac{140}{x}=5$.[[br]]Vậy phương trình cần lập là $\\dfrac{150}{x-1}-\\dfrac{140}{x}=5$.[[br]]b) Gọi số áo mỗi ngày theo kế hoạch là $x$ (chiếc), điều kiện $x$ nguyên và $x>0$.[[br]]$3$ ngày đầu may $3x$ chiếc; $7$ ngày sau may $7(x+5)$ chiếc.[[br]]Vì tổng là $335$ chiếc nên $3x+7(x+5)=335$.[[br]]Vậy phương trình cần lập là $3x+7(x+5)=335$.",
+          "dang_id": "TH1",
+          "writelines": 0
+        },
+        {
+          "type": "problem",
+          "label": "Bài 30.",
+          "statement": "Đặt ẩn, biểu diễn các đại lượng và lập phương trình (chưa cần giải).[[br]]a) [TH] Một người dự định đi $120$ km với vận tốc không đổi; sau khi đi nửa quãng đường thì nghỉ $30$ phút, để đến nơi đúng giờ dự định người đó phải tăng vận tốc thêm $10$ km/h trên nửa quãng đường còn lại \\;(Giữa kì II, THCS Chương Dương)[[br]]b) [TH] Một người đi từ $A$ đến $B$ với vận tốc $40$ km/h, lúc về đi $30$ km/h nên thời gian về nhiều hơn thời gian đi $45$ phút \\;(Cuối kì I, THCS Ái Mộ)",
+          "tier": "btvn",
+          "level": 2,
+          "solution": "a) Gọi vận tốc ban đầu là $x$ (km/h), điều kiện $x>0$.[[br]]Thời gian dự định là $\\dfrac{120}{x}$ giờ.[[br]]Thực tế: $60$ km đầu hết $\\dfrac{60}{x}$ giờ, nghỉ $\\dfrac{1}{2}$ giờ, $60$ km sau hết $\\dfrac{60}{x+10}$ giờ.[[br]]Vì đến nơi đúng giờ dự định nên $\\dfrac{60}{x}-\\dfrac{60}{x+10}=\\dfrac{1}{2}$.[[br]]Vậy phương trình cần lập là $\\dfrac{60}{x}-\\dfrac{60}{x+10}=\\dfrac{1}{2}$.[[br]]b) Gọi độ dài $AB$ là $s$ (km), điều kiện $s>0$.[[br]]Thời gian đi là $\\dfrac{s}{40}$ giờ, thời gian về là $\\dfrac{s}{30}$ giờ.[[br]]Vì $45$ phút $=\\dfrac{3}{4}$ giờ nên $\\dfrac{s}{30}-\\dfrac{s}{40}=\\dfrac{3}{4}$.[[br]]Vậy phương trình cần lập là $\\dfrac{s}{30}-\\dfrac{s}{40}=\\dfrac{3}{4}$.",
+          "dang_id": "TH2",
+          "writelines": 0
+        },
+        {
+          "type": "problem",
+          "label": "Bài 31.",
+          "statement": "Lập phương trình rồi giải để tìm hai kích thước.[[br]]a) [TH] Mảnh vườn hình chữ nhật có chiều dài hơn chiều rộng $6$ m và diện tích $135$ m$^2$[[br]]b) [TH] Thửa ruộng hình chữ nhật có chiều dài hơn chiều rộng $9$ m và diện tích $112$ m$^2$",
+          "tier": "btvn",
+          "level": 2,
+          "solution": "a) Gọi chiều rộng là $x$ (m), điều kiện $x>0$; chiều dài là $x+6$ (m).[[br]]Ta có $x(x+6)=135$, tức là $x^2+6x-135=0$.[[br]]$\\Delta'=3^2-1\\cdot(-135)=144>0$, suy ra $\\sqrt{\\Delta'}=12$; $x_1=9$; $x_2=-15$ (loại).[[br]]Vậy mảnh vườn rộng $9$ m và dài $15$ m.[[br]]b) Gọi chiều rộng là $x$ (m), điều kiện $x>0$; chiều dài là $x+9$ (m).[[br]]Ta có $x(x+9)=112$, tức là $x^2+9x-112=0$.[[br]]$\\Delta=81+448=529>0$, suy ra $\\sqrt{\\Delta}=23$; $x_1=7$; $x_2=-16$ (loại).[[br]]Vậy thửa ruộng rộng $7$ m và dài $16$ m.",
+          "dang_id": "TH3",
+          "writelines": 0,
+          "check": {
+            "kind": "solveset",
+            "equation": "x**2 + 9*x - 112 = 0",
+            "answer": [
+              7,
+              -16
+            ],
+            "symbol": "x"
+          }
+        },
+        {
+          "type": "problem",
+          "label": "Bài 32.",
+          "statement": "Lập phương trình bằng phần công việc làm được trong một giờ rồi giải.[[br]]a) [TH] Hai vòi cùng chảy vào bể cạn thì $4$ giờ đầy; chảy riêng thì vòi thứ nhất đầy bể sớm hơn vòi thứ hai $6$ giờ[[br]]b) [TH] Hai máy cùng in một số tờ rơi thì $6$ giờ xong; làm riêng thì máy thứ nhất xong sớm hơn máy thứ hai $9$ giờ",
+          "tier": "btvn",
+          "level": 2,
+          "solution": "a) Gọi thời gian vòi thứ nhất chảy đầy bể là $x$ (giờ), điều kiện $x>0$; vòi thứ hai là $x+6$ (giờ).[[br]]Ta có $\\dfrac{1}{x}+\\dfrac{1}{x+6}=\\dfrac{1}{4}$.[[br]]Khử mẫu: $4(x+6)+4x=x(x+6)$, suy ra $x^2-2x-24=0$.[[br]]$\\Delta'=1+24=25>0$, suy ra $\\sqrt{\\Delta'}=5$; $x_1=6$; $x_2=-4$ (loại).[[br]]Vậy vòi thứ nhất chảy riêng mất $6$ giờ, vòi thứ hai mất $12$ giờ.[[br]]b) Gọi thời gian máy thứ nhất làm riêng là $x$ (giờ), điều kiện $x>0$; máy thứ hai là $x+9$ (giờ).[[br]]Ta có $\\dfrac{1}{x}+\\dfrac{1}{x+9}=\\dfrac{1}{6}$.[[br]]Khử mẫu: $6(x+9)+6x=x(x+9)$, suy ra $x^2-3x-54=0$.[[br]]$\\Delta=9+216=225>0$, suy ra $\\sqrt{\\Delta}=15$; $x_1=9$; $x_2=-6$ (loại).[[br]]Vậy máy thứ nhất làm riêng mất $9$ giờ, máy thứ hai mất $18$ giờ.",
+          "dang_id": "TH4",
+          "writelines": 0,
+          "check": {
+            "kind": "solveset",
+            "equation": "x**2 - 2*x - 24 = 0",
+            "answer": [
+              6,
+              -4
+            ],
+            "symbol": "x"
+          }
+        },
+        {
+          "type": "problem",
+          "label": "Bài 33.",
+          "statement": "[VD] Theo kế hoạch, một công nhân phải hoàn thành $60$ sản phẩm trong một thời gian nhất định. Do cải tiến kĩ thuật nên mỗi giờ người đó làm thêm được $2$ sản phẩm, vì vậy vừa hoàn thành sớm hơn dự định $30$ phút vừa vượt mức $3$ sản phẩm. Hỏi theo kế hoạch mỗi giờ người đó phải làm bao nhiêu sản phẩm (thi thử Vào 10 lần 2, Phòng GD\\&ĐT Thanh Oai)?",
+          "tier": "btvn",
+          "level": 3,
+          "solution": "Gọi số sản phẩm mỗi giờ theo kế hoạch là $x$ (sản phẩm), điều kiện $x$ nguyên và $x>0$.[[br]]Thời gian dự định là $\\dfrac{60}{x}$ (giờ).[[br]]Thực tế mỗi giờ làm $x+2$ sản phẩm và làm được $60+3=63$ sản phẩm nên hết $\\dfrac{63}{x+2}$ (giờ).[[br]]Vì xong sớm hơn $30$ phút $=\\dfrac{1}{2}$ giờ nên $\\dfrac{60}{x}-\\dfrac{63}{x+2}=\\dfrac{1}{2}$.[[br]]Khử mẫu: $120(x+2)-126x=x(x+2)$, suy ra $x^2+8x-240=0$.[[br]]$\\Delta'=4^2-1\\cdot(-240)=256>0$, suy ra $\\sqrt{\\Delta'}=16$.[[br]]$x_1=12$; $x_2=-20$ (loại vì $x>0$).[[br]]Vậy theo kế hoạch mỗi giờ người đó phải làm $12$ sản phẩm.",
+          "dang_id": "VD1",
+          "writelines": 0,
+          "hints": [
+            "Thực tế làm được $63$ sản phẩm chứ không phải $60$ — vượt mức $3$."
+          ]
+        },
+        {
+          "type": "problem",
+          "label": "Bài 34.",
+          "statement": "[VD] Một người dự định lái xe máy từ Hà Nội đến Hải Phòng dài $120$ km với vận tốc không đổi. Sau khi đi được nửa quãng đường với vận tốc ban đầu, người đó nghỉ $30$ phút; để đến nơi đúng thời gian dự định, người đó phải tăng vận tốc thêm $10$ km/h trên nửa quãng đường còn lại. Tính vận tốc ban đầu của xe máy, và cho biết vận tốc lúc sau là bao nhiêu (Giữa kì II, THCS Chương Dương).",
+          "tier": "btvn",
+          "level": 3,
+          "solution": "Gọi vận tốc ban đầu là $x$ (km/h), điều kiện $x>0$.[[br]]Thời gian dự định đi hết quãng đường là $\\dfrac{120}{x}$ (giờ).[[br]]Thực tế: $60$ km đầu hết $\\dfrac{60}{x}$ giờ, nghỉ $\\dfrac{1}{2}$ giờ, $60$ km còn lại hết $\\dfrac{60}{x+10}$ giờ.[[br]]Vì đến nơi đúng giờ dự định nên $\\dfrac{120}{x}=\\dfrac{60}{x}+\\dfrac{1}{2}+\\dfrac{60}{x+10}$, tức là $\\dfrac{60}{x}-\\dfrac{60}{x+10}=\\dfrac{1}{2}$.[[br]]Khử mẫu: $120(x+10)-120x=x(x+10)$, suy ra $x^2+10x-1200=0$.[[br]]$\\Delta'=5^2-1\\cdot(-1200)=1225>0$, suy ra $\\sqrt{\\Delta'}=35$.[[br]]$x_1=30$; $x_2=-40$ (loại vì $x>0$).[[br]]Vậy vận tốc ban đầu là $30$ km/h và vận tốc lúc sau là $40$ km/h.",
+          "dang_id": "VD2",
+          "writelines": 0,
+          "hints": [
+            "Nửa quãng đường là $60$ km; tổng thời gian thực tế bằng thời gian dự định.",
+            "Đề hỏi cả hai vận tốc — nhớ cộng thêm $10$ để trả lời vận tốc lúc sau."
+          ],
+          "check": {
+            "kind": "solveset",
+            "equation": "x**2 + 10*x - 1200 = 0",
+            "answer": [
+              30,
+              -40
+            ],
+            "symbol": "x"
+          }
+        }
+      ],
+      "teacher_note": "Sơ đồ tư duy điền 5 phút cuối buổi. BTVN 17 bài $\\approx$ 96 phút; buổi sau chữa Bài 27, Bài 33 và Bài 34 trước — ba bài sát khuôn Câu III.1 nhất."
+    }
+  ]
+}

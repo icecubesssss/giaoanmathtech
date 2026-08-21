@@ -1,0 +1,546 @@
+{
+  "slug": "thuyet-minh-lop-9c-chuong-08-xac-suat",
+  "title": "Chương VIII. Xác suất của biến cố trong một số mô hình xác suất đơn giản (Bài 25 – Bài 26 SGK)",
+  "grade": "lop-9",
+  "subject": "dai-so",
+  "tier": "C",
+  "tuan": "30-31",
+  "thoiluong": [
+    "Buổi 1 (tuần 30 — Bài 25. Phép thử ngẫu nhiên và không gian mẫu $+$ Bài 26 phần mô hình MỘT hành động): 1 ca $=$ 180 phút (PPCT SGV 5 tiết — Bài 25 hai tiết, Bài 26 ba tiết)",
+    "Buổi 2 (tuần 31 — mô hình HAI hành động, Luyện tập chung và Bài tập cuối chương VIII): 1 ca $=$ 180 phút (PPCT SGV 3 tiết — Luyện tập chung hai tiết, Bài tập cuối chương một tiết)",
+    "\\textbf{Tổng 2 ca $=$ 360 phút $=$ đúng 8 tiết} (PPCT SGV chương VIII: 8 tiết) — KHÔNG dôi, KHÔNG hụt: lớp 8 đã dạy công thức xác suất rồi nên chương này chỉ thêm thuật ngữ và mô hình hai hành động.",
+    "Mỗi ca 180 phút gồm 165 phút học $+$ 15 phút giải lao; nhịp tầng C là mỗi tuần một buổi.",
+    "Bản tiến độ [C] đại số cũ xếp cả chương vào MỘT buổi tuần 30; Thầy chốt 20/08/2026 tách làm hai buổi.",
+    "Phiếu B chiếm chỗ buổi ôn Câu I của tuần 31, nên chương trình SGK hết ở tuần 31 thay vì tuần 30. Phiếu B chỉ ôn lại Câu I.2 (dòng TH4); phần ôn Câu I.1 — thống kê chương VII — cần Thầy xếp lại chỗ khác.",
+    "Chương VIII là chương SGK CUỐI CÙNG của tiến độ tầng C — hết chương trình ở tuần 31. Phần luyện lại Câu I.2 sau đó nằm trong 18 buổi luyện đề Vào 10, KHÔNG tính vào quỹ giờ hai buổi trên đây."
+  ],
+  "kien_thuc_nen": [
+    "\\textbf{Kết quả có thể và kết quả thuận lợi} (Lớp 8, chương VIII, Bài 30) — lớp 8 đã dạy đúng khái niệm này, lớp 9 chỉ đặt thêm tên gọi \\emph{không gian mẫu} và kí hiệu $\\Omega$.",
+    "\\textbf{Công thức xác suất bằng tỉ số} (Lớp 8, Bài 31): $P=\\dfrac{\\text{số kết quả thuận lợi}}{\\text{tổng số kết quả có thể}}$ — chính là $\\dfrac{n(E)}{n(\\Omega)}$ của lớp 9. Đây là nền TRỰC TIẾP, không phải nền xa.",
+    "\\textbf{Dấu hiệu chia hết cho 2, 3, 5, 9 và phép chia có dư} (Lớp 6): mọi biến cố của Câu I.2 đều phát biểu theo tính chất số — chia hết cho 3, chia 6 dư 2, số chẵn, bội của 5.",
+    "\\textbf{Số nguyên tố, ước và bội} (Lớp 6): biến cố \\textquotedblleft số nguyên tố\\textquotedblright{} và \\textquotedblleft bội của $k$\\textquotedblright{} có trong đề trường; học sinh hay tính nhầm 1 là số nguyên tố.",
+    "\\textbf{Rút gọn phân số về tối giản, đổi phân số sang số thập phân và phần trăm} (Lớp 6): kết quả xác suất luôn phải rút gọn, mất bước này là mất điểm trình bày.",
+    "\\textbf{Liệt kê phần tử của một tập hợp, kí hiệu ngoặc nhọn, đếm số phần tử} (Lớp 6): viết $\\Omega=\\{1;2;\\dots;20\\}$ và đếm cho đúng.",
+    "\\textbf{Đọc bảng hai chiều} (Lớp 7 – Lớp 8, phần thống kê): điều kiện để lập được bảng kết quả của phép thử hai hành động ở buổi 2."
+  ],
+  "lythuyet": [
+    "\\textbf{Mục tiêu chương}: học sinh tầng C lấy CHẮC Câu I.2 của đề Vào 10 — $0{,}5$ điểm, mức nhận biết và thông hiểu, không có ý vận dụng nào.",
+    "\\textbf{Trọng số đề}: 3/3 đề của Sở GD\\&ĐT Hà Nội theo chương trình 2018 (minh họa 8/2024, chính thức 2025, chính thức 2026) đều có Câu I.2 xác suất, đều là mô hình MỘT hành động: đĩa quay 12 phần \\emph{chia hết cho 4}; hộp 8 thẻ \\emph{chia hết cho 3}; hộp 6 quả bóng \\emph{số chẵn}.",
+    "\\textbf{Ma trận CHÍNH THỨC của Sở}: mạch Thống kê và Xác suất $1{,}5$ điểm, chia $1{,}0$ nhận biết $+$ $0{,}5$ thông hiểu và \\textbf{$0$ điểm vận dụng} — cả mạch không có một câu vận dụng nào. Đây là $1{,}5$ điểm dễ ăn nhất đề với tầng C.",
+    "\\textbf{Phép thử ngẫu nhiên}: một hoặc một số hành động tiến hành liên tiếp hay đồng thời mà kết quả không biết trước nhưng liệt kê được hết. \\textbf{Không gian mẫu} $\\Omega$ là tập tất cả kết quả có thể của phép thử.",
+    "\\textbf{Kết quả thuận lợi} cho biến cố $E$ là kết quả của phép thử làm cho $E$ xảy ra.",
+    "\\textbf{Công thức}: khi các kết quả của phép thử là đồng khả năng thì $P(E)=\\dfrac{n(E)}{n(\\Omega)}$.",
+    "\\textbf{Bốn bước tính xác suất} (SGK trang 62): mô tả $\\Omega$ và tìm $n(\\Omega)$; chứng tỏ các kết quả đồng khả năng; mô tả các kết quả thuận lợi và tìm $n(E)$; lập tỉ số.",
+    "\\textbf{Hai mô hình phải phân biệt}: một hành động thì đếm thẳng trên dãy số; hai hành động thì lập bảng hai chiều, mỗi ô là một kết quả, $n(\\Omega)$ bằng số ô.",
+    "KHÔNG dạy dạng \\emph{lấy lần lượt không trả lại} (Ví dụ 2 Bài 25 — phải gạch bỏ các ô trên đường chéo). Thầy chốt cắt: 3/3 đề Vào 10 và gần hết đề học kì của trường đều không hỏi, mà tầng C rất dễ đếm sai.",
+    "\\textbf{Chuẩn đầu ra Tầng C}: Câu I.2 đề Vào 10 $=$ \\textbf{0,5 điểm}, lấy CHẮC. Cộng với Câu I.1 của chương VII ($1{,}0$ điểm) thì cả Câu I là \\textbf{1,5 điểm} trên thang 10, toàn nhận biết và thông hiểu."
+  ],
+  "vidu": [
+    "Buổi 1: Hộp 6 quả bóng ghi $1$ đến $6$, lấy ngẫu nhiên một quả. $n(\\Omega)=6$; biến cố $A$ \\textquotedblleft số chẵn\\textquotedblright{} có 3 kết quả thuận lợi là $2;4;6$; vậy $P(A)=\\dfrac{3}{6}=\\dfrac{1}{2}$ (đề chính thức Vào 10 năm 2026).",
+    "Buổi 1: Đĩa tròn 8 phần ghi $1$ đến $8$, quay một lần. Biến cố $A$ \\textquotedblleft số lớn hơn 3\\textquotedblright{} có 5 kết quả thuận lợi, $P(A)=\\dfrac{5}{8}$ (cuối kì II Phòng GD\\&ĐT Thạch Thất).",
+    "Buổi 1: Hộp 20 viên bi ghi $1$ đến $20$. Biến cố \\textquotedblleft số chia 6 dư 2\\textquotedblright{} có các kết quả $2;8;14;20$ nên $P=\\dfrac{4}{20}=\\dfrac{1}{5}$ — nhớ lấy cả số 2 (cuối kì II THCS Chu Văn An).",
+    "Buổi 1: Viết ngẫu nhiên một số tự nhiên lẻ có hai chữ số và nhỏ hơn 40 — không gian mẫu KHÔNG cho sẵn, phải tự liệt kê $\\Omega=\\{11;13;\\dots;39\\}$ gồm 15 số; biến cố \\textquotedblleft bội của 3\\textquotedblright{} cho $P=\\dfrac{5}{15}=\\dfrac{1}{3}$ (cuối kì II THCS Trưng Vương).",
+    "Buổi 2: Quay một đĩa 4 phần hai lần — lập bảng $4 \\times 4$ được $n(\\Omega)=16$; biến cố \\textquotedblleft tổng hai số bằng 5\\textquotedblright{} có 4 ô là $(1;4),(2;3),(3;2),(4;1)$ nên $P=\\dfrac{4}{16}=\\dfrac{1}{4}$ (Ví dụ 1 Bài 26 SGK).",
+    "Buổi 2: Gieo đồng thời hai xúc xắc — bảng $6 \\times 6$ cho $n(\\Omega)=36$; biến cố \\textquotedblleft có ít nhất một mặt 6 chấm\\textquotedblright{} đếm bằng phần bù: $36-25=11$ nên $P=\\dfrac{11}{36}$ (bài 8.6 SGK)."
+  ],
+  "dang_vd": [
+    "Câu I.2 — đĩa quay chia $n$ phần bằng nhau, biến cố theo tính chất số — $0{,}5$ điểm (đề minh họa của Sở: chia hết cho 4, kết quả $\\dfrac{1}{4}$).",
+    "Câu I.2 — hộp thẻ, bi hoặc bóng đánh số $1$ đến $n$, biến cố một điều kiện — $0{,}5$ điểm (chính thức 2025: chia hết cho 3, $\\dfrac{1}{4}$; chính thức 2026: số chẵn, $\\dfrac{1}{2}$).",
+    "Câu I.2 dạng trường — biến cố \\textquotedblleft chia $k$ dư $r$\\textquotedblright{} hoặc đĩa ghi số không liên tiếp (Chu Văn An $\\dfrac{1}{5}$; Phúc Lợi $\\dfrac{3}{8}$).",
+    "Câu I.2 dạng trường — không gian mẫu không cho sẵn, học sinh tự liệt kê tập nền (Trưng Vương $\\dfrac{1}{3}$).",
+    "Câu I.2 dạng trường — vật không đánh số, đếm theo nhóm đối tượng (Ba Đình: 3 sách Toán trong 8 quyển, $\\dfrac{3}{8}$).",
+    "Một phép thử hỏi HAI biến cố liên tiếp, dùng chung $n(\\Omega)$ (giữa kì II Nghĩa Tân: 52 thẻ; Ban Mai: 60 thẻ).",
+    "Hai hành động lập bảng hai chiều — tổng hoặc tích hai số, ghép thành số hai chữ số (SGK 8.6, 8.8, 8.15, 8.16; đề trường).",
+    "Lấy ĐỒNG THỜI hai vật (cuối kì II Nguyễn Du: 3 bi xanh 1 bi đỏ, $\\dfrac{1}{2}$) — Thầy chốt chỉ GIỚI THIỆU ở dòng VD cuối phiếu B, không luyện sâu; câu vẫn lưu trong ngân hàng để thống kê."
+  ],
+  "loisai": [
+    "\\textbf{Buổi 1} — Đếm $n(\\Omega)$ sai khi dãy số không bắt đầu từ 1 hoặc không liên tiếp (đĩa ghi $1;12;18;22;27;69;96;99$).",
+    "\\textbf{Buổi 1} — Biến cố \\textquotedblleft chia $k$ dư $r$\\textquotedblright: bỏ sót chính số $r$ (chia 6 dư 2 thì số 2 vẫn được tính).",
+    "\\textbf{Buổi 1} — Tự liệt kê không gian mẫu bị sót đầu hoặc sót cuối: \\textquotedblleft số lẻ hai chữ số nhỏ hơn 40\\textquotedblright{} mà quên 11 hoặc quên 39.",
+    "\\textbf{Buổi 1} — Coi 1 là số nguyên tố khi đếm biến cố \\textquotedblleft số nguyên tố\\textquotedblright.",
+    "\\textbf{Buổi 1} — Viết $P(A)=n(A)$, tức trả lời bằng SỐ KẾT QUẢ chứ không lập tỉ số.",
+    "\\textbf{Buổi 1} — Không rút gọn phân số cuối cùng, hoặc rút gọn sai.",
+    "\\textbf{Buổi 1} — Thiếu câu khẳng định các kết quả là đồng khả năng: barem của đề trường cho riêng câu này $0{,}25$ điểm trên tổng $0{,}5$.",
+    "\\textbf{Buổi 1} — Đếm theo nhóm đối tượng mà quên cộng tổng: hộp có 3 Toán, 3 Văn, 2 Anh thì $n(\\Omega)=8$ chứ không phải 3.",
+    "\\textbf{Buổi 2} — Đếm $n(\\Omega)$ của hai hành động bằng phép CỘNG thay vì phép NHÂN ($6+2=8$ thay vì $6 \\times 2=12$).",
+    "\\textbf{Buổi 2} — Lập bảng thiếu dòng hoặc thiếu cột, nên $n(\\Omega)$ hụt.",
+    "\\textbf{Buổi 2} — Coi $(1;2)$ và $(2;1)$ là một kết quả, đếm thiếu một nửa số ô.",
+    "\\textbf{Buổi 2} — Biến cố \\textquotedblleft có ít nhất một\\textquotedblright{} đếm trực tiếp nên sót; phải đếm phần bù rồi trừ.",
+    "\\textbf{Buổi 2} — Lẫn hai mô hình: đề chỉ một hành động mà vẫn lập bảng hai chiều, hoặc đề hai hành động lại đếm thẳng.",
+    "\\textbf{Cả hai buổi} — Ra kết quả lớn hơn 1 hoặc âm mà không nhận ra là vô lý; luôn tự kiểm $0 \\le P(E) \\le 1$."
+  ],
+  "kienthuc_nb": [
+    "Phép thử ngẫu nhiên: hành động mà kết quả không biết trước nhưng liệt kê được hết mọi kết quả có thể.",
+    "Không gian mẫu $\\Omega$ là tập hợp tất cả kết quả có thể của phép thử; $n(\\Omega)$ là số phần tử của $\\Omega$.",
+    "Kết quả thuận lợi cho biến cố $E$ là kết quả làm cho $E$ xảy ra; $n(E)$ là số kết quả thuận lợi.",
+    "Khi các kết quả đồng khả năng: $P(E)=\\dfrac{n(E)}{n(\\Omega)}$ — luôn viết ở dạng phân số tối giản.",
+    "Bốn bước tính xác suất: mô tả $\\Omega$ và đếm $n(\\Omega)$; khẳng định đồng khả năng; mô tả và đếm kết quả thuận lợi; lập tỉ số.",
+    "Với phép thử một hành động, $n(\\Omega)$ là số vật (số thẻ, số bi, số hình quạt của đĩa).",
+    "Với phép thử hai hành động, mỗi kết quả là một cặp $(a;b)$; $n(\\Omega)$ bằng số ô của bảng hai chiều, cũng bằng tích số kết quả của hai hành động.",
+    "Mọi xác suất thoả $0 \\le P(E) \\le 1$; biến cố chắc chắn có xác suất 1, biến cố không thể có xác suất 0."
+  ],
+  "phieu": [
+    {
+      "code": "A",
+      "title": "Buổi 1 — Bài 25 và Bài 26: phép thử, không gian mẫu và xác suất trong mô hình MỘT hành động",
+      "so_ca": 1,
+      "rows": [
+        {
+          "dang": "Nhận ra một hoạt động có phải \\textbf{phép thử ngẫu nhiên} hay không: kết quả không biết trước nhưng liệt kê được hết",
+          "band": "NB",
+          "loai": "NB lẻ LT",
+          "lythuyet": 1,
+          "vidu": 1,
+          "onclass": 3,
+          "btvn": 3,
+          "source_refs": [],
+          "decompose": "none"
+        },
+        {
+          "dang": "Chỉ ra \\emph{phép thử là gì} và \\emph{kết quả của phép thử là gì} trong một tình huống cho sẵn (rút thẻ, quay đĩa, gieo xúc xắc, chọn một quyển sách)",
+          "band": "NB",
+          "loai": "NB lẻ LT",
+          "lythuyet": 1,
+          "vidu": 1,
+          "onclass": 3,
+          "btvn": 3,
+          "source_refs": [],
+          "decompose": "none"
+        },
+        {
+          "dang": "Viết không gian mẫu $\\Omega$ bằng ngoặc nhọn và đếm $n(\\Omega)$ cho phép thử một hành động",
+          "band": "NB",
+          "loai": "NB tách TH",
+          "lythuyet": 1,
+          "vidu": 1,
+          "onclass": 3,
+          "btvn": 2,
+          "source_refs": [
+            "gk2-phuc-loi-3-1",
+            "ck2-chu-van-an-I2"
+          ],
+          "decompose": "none"
+        },
+        {
+          "dang": "Lớp 6 $\\to$ Lớp 9: dấu hiệu chia hết cho 2, 3, 5, 9 và phép chia có dư — liệt kê các số thoả điều kiện trong dãy $1;2;\\dots;n$",
+          "band": "NB",
+          "loai": "NB lẻ LT",
+          "lythuyet": 1,
+          "vidu": 1,
+          "onclass": 3,
+          "btvn": 2,
+          "source_refs": [],
+          "decompose": "none"
+        },
+        {
+          "dang": "Lớp 6 $\\to$ Lớp 9: số nguyên tố, ước và bội của một số trong dãy $1;2;\\dots;n$ (chú ý 1 không phải số nguyên tố)",
+          "band": "NB",
+          "loai": "NB lẻ LT",
+          "lythuyet": 0,
+          "vidu": 1,
+          "onclass": 3,
+          "btvn": 2,
+          "source_refs": [],
+          "decompose": "none"
+        },
+        {
+          "dang": "Lớp 6 $\\to$ Lớp 9: rút gọn phân số về tối giản và đổi sang số thập phân, phần trăm — bước cuối bắt buộc của mọi bài xác suất",
+          "band": "NB",
+          "loai": "NB lẻ LT",
+          "lythuyet": 0,
+          "vidu": 1,
+          "onclass": 3,
+          "btvn": 2,
+          "source_refs": [],
+          "decompose": "none"
+        },
+        {
+          "dang": "\\textbf{Kết quả thuận lợi} cho một biến cố: đọc lời phát biểu của biến cố rồi liệt kê những kết quả làm biến cố xảy ra",
+          "band": "NB",
+          "loai": "NB lẻ LT",
+          "lythuyet": 1,
+          "vidu": 1,
+          "onclass": 3,
+          "btvn": 3,
+          "source_refs": [],
+          "decompose": "none"
+        },
+        {
+          "dang": "Đếm $n(E)$ khi biến cố phát biểu bằng \\emph{một} điều kiện: số chẵn, số lẻ, số lớn hơn $k$, số nhỏ hơn $k$",
+          "band": "NB",
+          "loai": "NB tách TH",
+          "lythuyet": 0,
+          "vidu": 1,
+          "onclass": 3,
+          "btvn": 3,
+          "source_refs": [
+            "v10-so-2026-I2",
+            "ck2-hai-ba-trung-I2",
+            "ck2-thach-that-I2"
+          ],
+          "decompose": "none"
+        },
+        {
+          "dang": "Đếm $n(E)$ khi biến cố ghép \\emph{hai} điều kiện bằng chữ \\textquotedblleft và\\textquotedblright{} (chia hết cho 3 \\emph{và} không vượt quá 10)",
+          "band": "NB",
+          "loai": "NB tách TH",
+          "lythuyet": 0,
+          "vidu": 1,
+          "onclass": 3,
+          "btvn": 2,
+          "source_refs": [
+            "ck2-ngoc-thuy-I2"
+          ],
+          "decompose": "none"
+        },
+        {
+          "dang": "Điền khuyết bài giải mẫu Câu I.2 đủ ba dòng: viết $\\Omega$ và $n(\\Omega)$; khẳng định các kết quả đồng khả năng; liệt kê kết quả thuận lợi rồi lập tỉ số",
+          "band": "NB",
+          "loai": "NB ghép bài",
+          "lythuyet": 0,
+          "vidu": 0,
+          "onclass": 3,
+          "btvn": 2,
+          "source_refs": [
+            "ck2-chu-van-an-I2",
+            "ck2-hai-ba-trung-I2"
+          ],
+          "decompose": "none",
+          "gian_giao": "dien-khuyet"
+        },
+        {
+          "dang": "Viết câu kết luận \\textquotedblleft Vậy $P(A)=\\dots$\\textquotedblright{} ở dạng phân số tối giản và tự kiểm $0 \\le P(A) \\le 1$",
+          "band": "NB",
+          "loai": "NB ghép bài",
+          "lythuyet": 0,
+          "vidu": 0,
+          "onclass": 2,
+          "btvn": 2,
+          "source_refs": [
+            "v10-so-2025-I2"
+          ],
+          "decompose": "none"
+        },
+        {
+          "dang": "Tính xác suất mô hình một hành động, thẻ hoặc bi đánh số liên tiếp $1;2;\\dots;n$, biến cố một điều kiện",
+          "band": "TH",
+          "loai": "TH lẻ LT",
+          "lythuyet": 0,
+          "vidu": 1,
+          "onclass": 2,
+          "btvn": 2,
+          "source_refs": [
+            "ck2-thach-that-I2",
+            "v10-so-2026-I2"
+          ],
+          "decompose": "none"
+        },
+        {
+          "dang": "Tính xác suất khi không gian mẫu KHÔNG cho sẵn: tự liệt kê tập nền (số lẻ có hai chữ số nhỏ hơn 40) rồi mới đếm",
+          "band": "TH",
+          "loai": "TH ghép bài",
+          "lythuyet": 0,
+          "vidu": 1,
+          "onclass": 2,
+          "btvn": 2,
+          "source_refs": [
+            "ck2-trung-vuong-I2"
+          ],
+          "decompose": "none"
+        },
+        {
+          "dang": "Tính xác suất khi các vật KHÔNG đánh số — đếm theo nhóm đối tượng (3 sách Toán, 3 sách Văn, 2 sách Tiếng Anh)",
+          "band": "TH",
+          "loai": "TH ghép bài",
+          "lythuyet": 0,
+          "vidu": 1,
+          "onclass": 2,
+          "btvn": 2,
+          "source_refs": [
+            "ck2-ba-dinh-I2"
+          ],
+          "decompose": "none"
+        },
+        {
+          "dang": "Một phép thử, HAI biến cố hỏi liên tiếp — dùng chung $n(\\Omega)$, chỉ đổi $n(E)$",
+          "band": "TH",
+          "loai": "TH tách VD",
+          "lythuyet": 0,
+          "vidu": 1,
+          "onclass": 2,
+          "btvn": 2,
+          "source_refs": [
+            "gk2-nghia-tan-I2a",
+            "gk2-nghia-tan-I2b",
+            "gk2-ban-mai-7a"
+          ],
+          "decompose": "none"
+        },
+        {
+          "dang": "Khuôn Câu I.2 trọn vẹn của đề Vào 10: đĩa quay chia $n$ phần bằng nhau, biến cố theo tính chất số, trình bày đủ ba dòng",
+          "band": "VD",
+          "loai": "VD lẻ",
+          "lythuyet": 0,
+          "vidu": 1,
+          "onclass": 1,
+          "btvn": 1,
+          "source_refs": [
+            "v10-so-minh-hoa-I2",
+            "v10-so-2025-I2"
+          ],
+          "decompose": "none"
+        },
+        {
+          "dang": "Biến cố \\textquotedblleft chia $k$ dư $r$\\textquotedblright{} hoặc đĩa ghi số KHÔNG liên tiếp — phải soi từng số, không đếm được bằng công thức",
+          "band": "VD",
+          "loai": "VD lẻ",
+          "lythuyet": 0,
+          "vidu": 1,
+          "onclass": 1,
+          "btvn": 1,
+          "source_refs": [
+            "ck2-chu-van-an-I2",
+            "ck2-phuc-loi-I2"
+          ],
+          "decompose": "none"
+        }
+      ]
+    },
+    {
+      "code": "B",
+      "title": "Buổi 2 — Mô hình HAI hành động (bảng hai chiều), Luyện tập chung và Bài tập cuối chương VIII",
+      "so_ca": 1,
+      "rows": [
+        {
+          "dang": "Kết quả của phép thử gồm hai hành động là một \\textbf{cặp} $(a;b)$ — quy ước $a$ là kết quả hành động thứ nhất, $b$ là hành động thứ hai",
+          "band": "NB",
+          "loai": "NB lẻ LT",
+          "lythuyet": 1,
+          "vidu": 1,
+          "onclass": 3,
+          "btvn": 3,
+          "source_refs": [],
+          "decompose": "none"
+        },
+        {
+          "dang": "Lập bảng hai chiều cho \\emph{gieo một xúc xắc và tung một đồng xu}: 6 cột, 2 dòng, đếm $n(\\Omega)=12$",
+          "band": "NB",
+          "loai": "NB tách TH",
+          "lythuyet": 1,
+          "vidu": 1,
+          "onclass": 3,
+          "btvn": 3,
+          "source_refs": [
+            "sgk9t2-b25-vd1",
+            "sgk9t2-8.7"
+          ],
+          "decompose": "none"
+        },
+        {
+          "dang": "Lập bảng hai chiều cho \\emph{quay một đĩa 4 phần hai lần}: 4 cột, 4 dòng, đếm $n(\\Omega)=16$",
+          "band": "NB",
+          "loai": "NB tách TH",
+          "lythuyet": 1,
+          "vidu": 1,
+          "onclass": 3,
+          "btvn": 2,
+          "source_refs": [
+            "sgk9t2-b26-vd1",
+            "sgk9t2-8.4"
+          ],
+          "decompose": "none"
+        },
+        {
+          "dang": "Lập bảng hai chiều cho \\emph{rút một thẻ từ mỗi túi}: số dòng và số cột là số thẻ của từng túi",
+          "band": "NB",
+          "loai": "NB tách TH",
+          "lythuyet": 0,
+          "vidu": 1,
+          "onclass": 3,
+          "btvn": 2,
+          "source_refs": [
+            "sgk9t2-8.8",
+            "sgk9t2-8.15"
+          ],
+          "decompose": "none"
+        },
+        {
+          "dang": "Đếm nhanh $n(\\Omega) =$ (số kết quả hành động 1) $\\times$ (số kết quả hành động 2), rồi đối chiếu lại với số ô của bảng",
+          "band": "NB",
+          "loai": "NB lẻ LT",
+          "lythuyet": 1,
+          "vidu": 1,
+          "onclass": 3,
+          "btvn": 2,
+          "source_refs": [],
+          "decompose": "none"
+        },
+        {
+          "dang": "Điền TỔNG hoặc TÍCH hai số vào từng ô của bảng hai chiều trước khi xét biến cố (ôn bảng nhân, phép cộng nhanh)",
+          "band": "NB",
+          "loai": "NB lẻ LT",
+          "lythuyet": 0,
+          "vidu": 1,
+          "onclass": 3,
+          "btvn": 2,
+          "source_refs": [],
+          "decompose": "none"
+        },
+        {
+          "dang": "Đánh dấu các ô thoả biến cố trên bảng rồi đếm $n(E)$: \\textquotedblleft tổng bằng 5\\textquotedblright, \\textquotedblleft tích bằng 4\\textquotedblright",
+          "band": "NB",
+          "loai": "NB tách TH",
+          "lythuyet": 0,
+          "vidu": 1,
+          "onclass": 3,
+          "btvn": 3,
+          "source_refs": [
+            "sgk9t2-b26-vd1",
+            "sgk9t2-8.16"
+          ],
+          "decompose": "none"
+        },
+        {
+          "dang": "Biến cố phát biểu bằng \\textquotedblleft có ít nhất một\\textquotedblright{} — đếm phần bù trên bảng rồi lấy $n(\\Omega)$ trừ đi",
+          "band": "NB",
+          "loai": "NB tách TH",
+          "lythuyet": 0,
+          "vidu": 1,
+          "onclass": 3,
+          "btvn": 3,
+          "source_refs": [
+            "sgk9t2-8.6",
+            "gk2-ban-mai-7b"
+          ],
+          "decompose": "none"
+        },
+        {
+          "dang": "Ba câu bắt buộc khi trình bày bài xác suất, dùng chung cho cả hai mô hình: nêu $\\Omega$ và $n(\\Omega)$; khẳng định đồng khả năng; lập tỉ số",
+          "band": "NB",
+          "loai": "NB lẻ LT",
+          "lythuyet": 0,
+          "vidu": 1,
+          "onclass": 3,
+          "btvn": 2,
+          "source_refs": [],
+          "decompose": "none"
+        },
+        {
+          "dang": "Điền khuyết bài giải mẫu bài hai hành động: bảng còn trống vài ô $\\to$ điền nốt, khoanh ô thuận lợi, viết $P(E)$",
+          "band": "NB",
+          "loai": "NB ghép bài",
+          "lythuyet": 0,
+          "vidu": 0,
+          "onclass": 3,
+          "btvn": 2,
+          "source_refs": [
+            "sgk9t2-8.15",
+            "ck2-nguyen-du-III2"
+          ],
+          "decompose": "none",
+          "gian_giao": "dien-khuyet"
+        },
+        {
+          "dang": "Đọc đề rồi CHỌN mô hình: đề một hành động thì đếm thẳng, đề hai hành động mới lập bảng — không lập bảng cho bài một hành động",
+          "band": "NB",
+          "loai": "NB ghép bài",
+          "lythuyet": 0,
+          "vidu": 0,
+          "onclass": 2,
+          "btvn": 2,
+          "source_refs": [
+            "v10-so-2026-I2",
+            "sgk9t2-8.8"
+          ],
+          "decompose": "none"
+        },
+        {
+          "dang": "Gieo đồng thời hai xúc xắc: tính xác suất của biến cố về TỔNG số chấm (bằng $k$, nhỏ hơn $k$, lớn hơn hoặc bằng $k$)",
+          "band": "TH",
+          "loai": "TH lẻ LT",
+          "lythuyet": 0,
+          "vidu": 1,
+          "onclass": 2,
+          "btvn": 2,
+          "source_refs": [
+            "sgk9t2-8.16",
+            "sgk9t2-8.12"
+          ],
+          "decompose": "none"
+        },
+        {
+          "dang": "Rút một thẻ từ mỗi túi rồi nhân hai số: xác suất \\textquotedblleft tích là số chẵn\\textquotedblright, \\textquotedblleft tích chia hết cho $k$\\textquotedblright",
+          "band": "TH",
+          "loai": "TH ghép bài",
+          "lythuyet": 0,
+          "vidu": 1,
+          "onclass": 2,
+          "btvn": 2,
+          "source_refs": [
+            "sgk9t2-8.8",
+            "gk2-ban-mai-7b"
+          ],
+          "decompose": "none"
+        },
+        {
+          "dang": "Ghép hai số rút được thành số có hai chữ số rồi xét tính chất của số tạo thành",
+          "band": "TH",
+          "loai": "TH ghép bài",
+          "lythuyet": 0,
+          "vidu": 1,
+          "onclass": 2,
+          "btvn": 2,
+          "source_refs": [
+            "sgk9t2-b26-lt2",
+            "sgk9t2-8.15"
+          ],
+          "decompose": "none"
+        },
+        {
+          "dang": "Luyện lại mô hình MỘT hành động của Câu I.2 sau ba tuần (lặp ngắt quãng, đổi bối cảnh: thẻ $\\to$ bóng $\\to$ đĩa quay)",
+          "band": "TH",
+          "loai": "TH tách VD",
+          "lythuyet": 0,
+          "vidu": 1,
+          "onclass": 2,
+          "btvn": 2,
+          "source_refs": [
+            "v10-so-2025-I2",
+            "ck2-trung-vuong-I2",
+            "ck2-ba-dinh-I2"
+          ],
+          "decompose": "none"
+        },
+        {
+          "dang": "Khuôn Câu I.2 trọn vẹn trong một đề tổng hợp: đọc đề, chọn mô hình, trình bày đủ ba dòng và rút gọn kết quả",
+          "band": "VD",
+          "loai": "VD lẻ",
+          "lythuyet": 0,
+          "vidu": 1,
+          "onclass": 1,
+          "btvn": 1,
+          "source_refs": [
+            "v10-so-minh-hoa-I2",
+            "v10-so-2026-I2"
+          ],
+          "decompose": "none"
+        },
+        {
+          "dang": "Bài hai hành động trọn vẹn theo đề trường: lấy đồng thời hai vật hoặc biến cố \\textquotedblleft có ít nhất một\\textquotedblright",
+          "band": "VD",
+          "loai": "VD lẻ",
+          "lythuyet": 0,
+          "vidu": 1,
+          "onclass": 1,
+          "btvn": 1,
+          "source_refs": [
+            "ck2-nguyen-du-III2",
+            "gk2-ban-mai-7b",
+            "sgk9t2-8.14"
+          ],
+          "decompose": "none"
+        }
+      ]
+    }
+  ]
+}

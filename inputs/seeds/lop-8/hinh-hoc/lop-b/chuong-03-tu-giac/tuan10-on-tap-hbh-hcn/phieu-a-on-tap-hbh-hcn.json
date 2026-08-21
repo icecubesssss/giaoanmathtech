@@ -1,0 +1,401 @@
+{
+  "slug": "phieu-a-on-tap-hbh-hcn",
+  "title": "Ôn tập hình bình hành, hình chữ nhật",
+  "eyebrow": "HÌNH HỌC 8 — PHIẾU A: ÔN TẬP HÌNH BÌNH HÀNH, HÌNH CHỮ NHẬT",
+  "grade_label": "Lớp 8 • Chương III. Tứ giác",
+  "class_tier": "B",
+  "stages": [
+    {
+      "kind": "review",
+      "number": 1,
+      "title": "Khám phá",
+      "blocks": [
+        {
+          "type": "opener",
+          "text": "Càng nâng của xe nâng hàng hoặc bàn nâng thủy lực thường sử dụng hệ khung thanh giằng liên kết dạng \\textbf{hình bình hành}. [[br]] Khi nâng lên một độ cao nhất định, nếu các góc của khung được khóa vuông góc $90^\\circ$ thì hệ khung chuyển thành \\textbf{hình chữ nhật}, tạo mặt sàn phẳng và cân bằng vững chắc nhất. [[br]] Mối liên hệ hình học nào cho phép chuyển một hình bình hành thành một hình chữ nhật?",
+          "tikz": "\\begin{tikzpicture}[line width=0.9pt, font=\\small]\n  \\coordinate (A) at (0.6, 2.0);\n  \\coordinate (B) at (3.4, 2.0);\n  \\coordinate (C) at (2.8, 0.0);\n  \\coordinate (D) at (0.0, 0.0);\n  \\draw[ink,fill=brand!10] (A) -- (B) -- (C) -- (D) -- cycle;\n  \\draw[brand,line width=1.1pt] (A) -- (C);\n  \\draw[brand,line width=1.1pt] (B) -- (D);\n  \\node[above left] at (A) {$A$};\n  \\node[above right] at (B) {$B$};\n  \\node[below right] at (C) {$C$};\n  \\node[below left] at (D) {$D$};\n  \\draw[ink,dashed] (0.6, 0.0) -- (0.6, 2.0);\n  \\draw[ink,dashed] (3.4, 0.0) -- (3.4, 2.0);\n\\end{tikzpicture}"
+        },
+        {
+          "type": "para",
+          "text": "Buổi học này ta hệ thống lại toàn bộ kiến thức và kĩ năng của \\textbf{Hình bình hành} và \\textbf{Hình chữ nhật}: [[br]] - So sánh 5 dấu hiệu nhận biết hình bình hành và 4 dấu hiệu nhận biết hình chữ nhật. [[br]] - Hai con đường chuyển hoá trực tiếp: Hình bình hành có 1 góc vuông hoặc có 2 đường chéo bằng nhau $\\implies$ Hình chữ nhật. [[br]] - Ứng dụng định lí trung tuyến tam giác vuông và phương pháp chứng minh hình tổng hợp."
+        }
+      ],
+      "solution": "Hình bình hành có thêm 1 góc vuông (hoặc có thêm hai đường chéo bằng nhau) thì trở thành hình chữ nhật.",
+      "teacher_note": "Cho HS hệ thống lại bảng sơ đồ cây phân loại tứ giác từ tứ giác lồi đến hình bình hành và hình chữ nhật."
+    },
+    {
+      "kind": "concept",
+      "number": 2,
+      "title": "Khái niệm",
+      "blocks": [
+        {
+          "type": "noted",
+          "text": "\\par\\nopagebreak\n\\begin{minipage}[t]{0.62\\linewidth}\\vspace{0pt}\n\\textbf{1. Bảng chuyển hoá Hình bình hành $\\to$ Hình chữ nhật} [[br]] - \\textbf{Hình bình hành} có 5 dấu hiệu nhận biết: [[br]] \\hspace*{1.4em}(1) Tứ giác có các cạnh đối song song. [[br]] \\hspace*{1.4em}(2) Tứ giác có các cạnh đối bằng nhau. [[br]] \\hspace*{1.4em}(3) Tứ giác có hai cạnh đối song song và bằng nhau. [[br]] \\hspace*{1.4em}(4) Tứ giác có các góc đối bằng nhau. [[br]] \\hspace*{1.4em}(5) Tứ giác có hai đường chéo cắt nhau tại trung điểm. [[br]] - \\textbf{Hình bình hành $\\to$ Hình chữ nhật} khi có thêm: [[br]] \\hspace*{1.4em}+ Có 1 góc vuông, HOẶC [[br]] \\hspace*{1.4em}+ Có 2 đường chéo bằng nhau ($AC = BD$).\n\\end{minipage}\\hfill\n\\begin{minipage}[t]{0.33\\linewidth}\\vspace{0pt}\n\\centering\n\\adjustbox{max width=\\linewidth, max totalheight=2.6cm}{\n\\begin{tikzpicture}[line width=0.8pt, font=\\small]\n  \\coordinate (vA) at (0.0,1.8);\n  \\coordinate (vB) at (3.0,1.8);\n  \\coordinate (vC) at (3.0,0.0);\n  \\coordinate (vD) at (0.0,0.0);\n  \\coordinate (vO) at (1.5,0.9);\n  \\draw[ink,fill=brand!8] (vA) -- (vB) -- (vC) -- (vD) -- cycle;\n  \\draw[brand,line width=1.0pt] (vA) -- (vC);\n  \\draw[brand,line width=1.0pt] (vB) -- (vD);\n  \\fill[brand] (1.5,0.9) circle (1.3pt) node[above=1pt]{$O$};\n  \\node[above left] at (vA) {$A$};\n  \\node[above right] at (vB) {$B$};\n  \\node[below right] at (vC) {$C$};\n  \\node[below left] at (vD) {$D$};\n  \\draw[ink] (0, 1.6) -| (0.2, 1.8);\n\\end{tikzpicture}\n}\n\\par\\vspace{2pt}{\\sffamily\\scriptsize\\itshape\\color{muted}HBH có 1 góc vuông}\n\\end{minipage}"
+        },
+        {
+          "type": "noted",
+          "text": "\\textbf{2. Định lí đường trung tuyến trong tam giác vuông} [[br]] - \\textbf{Định lí thuận}: Trong một tam giác vuông, đường trung tuyến ứng với cạnh huyền bằng nửa cạnh huyền ($AM = \\dfrac{1}{2}BC$). [[br]] - \\textbf{Định lí đảo}: Nếu một tam giác có một đường trung tuyến bằng nửa cạnh tương ứng thì tam giác đó là tam giác vuông."
+        },
+        {
+          "type": "noted",
+          "variant": "example",
+          "text": "\\par\\nopagebreak\n\\begin{minipage}[t]{0.62\\linewidth}\\vspace{0pt}\n\\textbf{Ví dụ 1.} Cho tam giác $ABC$ vuông tại $A$. Gọi $M$ là trung điểm của $BC$. Lấy điểm $D$ đối xứng với $A$ qua $M$. Chứng minh tứ giác $ABDC$ là hình chữ nhật.[[br]]{\\sffamily\\bfseries\\color{brand}Lời giải}[[br]]\\hspace*{1.4em}Xét tứ giác $ABDC$, ta có:[[br]]\\hspace*{1.4em}$M$ là trung điểm của đường chéo $BC$ (giả thiết),[[br]]\\hspace*{1.4em}$M$ là trung điểm của đường chéo $AD$ (do $D$ đối xứng với $A$ qua $M$).[[br]]\\hspace*{1.4em}Do đó tứ giác $ABDC$ là hình bình hành.[[br]]\\hspace*{1.4em}Hình bình hành $ABDC$ có $\\widehat{BAC} = 90^\\circ$ (do $\\triangle ABC$ vuông tại $A$) nên $ABDC$ là hình chữ nhật.[[br]]\\hspace*{1.4em}Vì $ABDC$ là hình chữ nhật nên $AD = BC$, suy ra $AM = \\dfrac{1}{2}AD = \\dfrac{1}{2}BC$.[[br]]\\hspace*{1.4em}Vậy $ABDC$ là hình chữ nhật và $AM = \\dfrac{1}{2}BC$.\n\\end{minipage}\\hfill\n\\begin{minipage}[t]{0.33\\linewidth}\\vspace{0pt}\n\\centering\n\\adjustbox{max width=\\linewidth, max totalheight=2.4cm}{\n\\begin{tikzpicture}[line width=0.8pt, font=\\small]\n  \\coordinate (vA) at (0.0,1.8);\n  \\coordinate (vB) at (3.0,1.8);\n  \\coordinate (vC) at (0.0,0.0);\n  \\coordinate (vD) at (3.0,0.0);\n  \\coordinate (vM) at (1.5,0.9);\n  \\draw[ink,fill=brand!8] (vA) -- (vB) -- (vD) -- (vC) -- cycle;\n  \\draw[brand,line width=1.0pt] (vA) -- (vD);\n  \\draw[brand,line width=1.0pt] (vB) -- (vC);\n  \\fill[brand] (1.5,0.9) circle (1.3pt) node[above=1pt]{$M$};\n  \\node[above left] at (vA) {$A$};\n  \\node[above right] at (vB) {$B$};\n  \\node[below left] at (vC) {$C$};\n  \\node[below right] at (vD) {$D$};\n  \\draw[ink] (0, 1.6) -| (0.2, 1.8);\n\\end{tikzpicture}\n}\n\\par\\vspace{2pt}{\\sffamily\\scriptsize\\itshape\\color{muted}Ví dụ 1}\n\\end{minipage}"
+        },
+        {
+          "type": "noted",
+          "variant": "example",
+          "text": "\\par\\nopagebreak\n\\begin{minipage}[t]{0.62\\linewidth}\\vspace{0pt}\n\\textbf{Ví dụ 2.} Cho tam giác $ABC$ cân tại $A$, đường cao $AH$. Gọi $M$ là trung điểm của cạnh $AB$. Lấy điểm $D$ đối xứng với $H$ qua điểm $M$. Chứng minh tứ giác $AHBD$ là hình chữ nhật.[[br]]{\\sffamily\\bfseries\\color{brand}Lời giải}[[br]]\\hspace*{1.4em}Xét tứ giác $AHBD$, ta có:[[br]]\\hspace*{1.4em}$M$ là trung điểm của đường chéo $AB$ (giả thiết),[[br]]\\hspace*{1.4em}$M$ là trung điểm của đường chéo $HD$ (do $D$ đối xứng với $H$ qua $M$).[[br]]\\hspace*{1.4em}Do đó tứ giác $AHBD$ là hình bình hành.[[br]]\\hspace*{1.4em}Mặt khác, vì $AH$ là đường cao của $\\triangle ABC$ nên $\\widehat{AHB} = 90^\\circ$.[[br]]\\hspace*{1.4em}Hình bình hành $AHBD$ có một góc vuông $\\widehat{AHB} = 90^\\circ$ nên là hình chữ nhật.[[br]]\\hspace*{1.4em}Vậy $AHBD$ là hình chữ nhật.\n\\end{minipage}\\hfill\n\\begin{minipage}[t]{0.33\\linewidth}\\vspace{0pt}\n\\centering\n\\adjustbox{max width=\\linewidth, max totalheight=2.4cm}{\n\\begin{tikzpicture}[line width=0.8pt, font=\\small]\n  \\coordinate (vA) at (0.0,2.0);\n  \\coordinate (vH) at (0.0,0.0);\n  \\coordinate (vB) at (-2.4,0.0);\n  \\coordinate (vD) at (-2.4,2.0);\n  \\coordinate (vM) at (-1.2,1.0);\n  \\draw[ink] (vB) -- (vA) -- (2.4,0) -- cycle;\n  \\draw[brand,line width=1.1pt,fill=brand!8] (vA) -- (vD) -- (vB) -- (vH) -- cycle;\n  \\draw[ink,dashed] (vA) -- (vB);\n  \\draw[ink,dashed] (vH) -- (vD);\n  \\fill[brand] (-1.2,1.0) circle (1.3pt) node[left=1pt]{$M$};\n  \\node[above] at (vA) {$A$};\n  \\node[below] at (vH) {$H$};\n  \\node[below left] at (vB) {$B$};\n  \\node[above left] at (vD) {$D$};\n  \\draw[ink] (0, 0.25) -| (-0.25, 0);\n\\end{tikzpicture}\n}\n\\par\\vspace{2pt}{\\sffamily\\scriptsize\\itshape\\color{muted}Ví dụ 2}\n\\end{minipage}"
+        },
+        {
+          "type": "noted",
+          "variant": "trap",
+          "text": "BẪY ĐIỂM: Trong bài toán lấy điểm đối xứng qua trung điểm, HS thường quên chứng minh tứ giác là HÌNH BÌNH HÀNH mà vội vàng dùng góc vuông để kết luận hình chữ nhật. Quy trình 2 bước chuẩn mực: [[br]] Bước 1: Chứng minh hai đường chéo cắt nhau tại trung điểm $\\implies$ Hình bình hành. [[br]] Bước 2: Chỉ ra 1 góc vuông $\\implies$ Hình chữ nhật."
+        }
+      ],
+      "solution": "Nắm vững phương pháp chứng minh hình chữ nhật thông qua hình bình hành và kĩ thuật dựng điểm đối xứng qua trung điểm.",
+      "teacher_note": "Mô hình tam giác cân có đường cao $AH$ và lấy điểm đối xứng qua trung điểm cạnh bên là dạng toán hay gặp nhất trong đề thi định kì."
+    },
+    {
+      "kind": "practice1",
+      "number": 3,
+      "title": "Luyện tập 1",
+      "blocks": [
+        {
+          "type": "problem",
+          "label": "Bài 1.",
+          "statement": "[NB] Nối mỗi mệnh đề ở Cột A với kết luận phù hợp ở Cột B:[[br]]\\par\\vspace{3pt}\n\\begin{tabular}{p{5.5cm} @{\\hspace{2.5cm}} p{6.5cm}}\n\\textbf{Cột A (Mệnh đề)} & \\textbf{Cột B (Kết luận)} \\\\[4pt]\n(1) Tứ giác có các cạnh đối song song & (a) là hình chữ nhật. \\\\[4pt]\n(2) Hình bình hành có 1 góc vuông & (b) là hình bình hành. \\\\[4pt]\n(3) Hình bình hành có 2 đường chéo bằng nhau & (c) là hình chữ nhật.\n\\end{tabular}",
+          "tier": "onclass",
+          "level": 1,
+          "dang_id": "NB1",
+          "solution": "Nối đúng: (1) nối với (b); (2) nối với (a); (3) nối với (c). Vậy các cặp nối là: 1--b, 2--a, 3--c.",
+          "figure_given": true,
+          "writelines": 0
+        },
+        {
+          "type": "problem",
+          "label": "Bài 2.",
+          "statement": "\\par\\nopagebreak\n\\begin{minipage}[t]{0.64\\linewidth}\\vspace{0pt}\n[NB] Cho hình chữ nhật $ABCD$ ở Hình 1. Hãy so sánh độ dài hai đường chéo $AC$ và $BD$, và nêu mối quan hệ giữa bốn đoạn thẳng $OA, OB, OC, OD$.\n\\end{minipage}\\hfill\n\\begin{minipage}[t]{0.31\\linewidth}\\vspace{0pt}\n\\centering\n\\adjustbox{max width=\\linewidth, max totalheight=2.4cm}{\n\\begin{tikzpicture}[line width=0.8pt, font=\\small]\n  \\coordinate (vA) at (0.0,1.8);\n  \\coordinate (vB) at (3.0,1.8);\n  \\coordinate (vC) at (3.0,0.0);\n  \\coordinate (vD) at (0.0,0.0);\n  \\coordinate (vO) at (1.5,0.9);\n  \\draw[ink,fill=brand!8] (vA) -- (vB) -- (vC) -- (vD) -- cycle;\n  \\draw[brand,line width=1.0pt] (vA) -- (vC);\n  \\draw[brand,line width=1.0pt] (vB) -- (vD);\n  \\fill[brand] (1.5,0.9) circle (1.3pt) node[above=1pt]{$O$};\n  \\node[above left] at (vA) {$A$};\n  \\node[above right] at (vB) {$B$};\n  \\node[below right] at (vC) {$C$};\n  \\node[below left] at (vD) {$D$};\n\\end{tikzpicture}\n}\n\\par\\vspace{2pt}{\\sffamily\\scriptsize\\itshape\\color{muted}Hình 1}\n\\end{minipage}",
+          "tier": "onclass",
+          "level": 1,
+          "dang_id": "NB1",
+          "solution": "Ta có $AC = BD$ (hai đường chéo bằng nhau) và $OA = OB = OC = OD = \\dfrac{AC}{2}$. Vậy $AC = BD$ và $OA = OB = OC = OD$.",
+          "figure_given": true
+        },
+        {
+          "type": "problem",
+          "label": "Bài 3.",
+          "statement": "\\par\\nopagebreak\n\\begin{minipage}[t]{0.64\\linewidth}\\vspace{0pt}\n[NB] Quan sát Hình 2 rồi điền vào chỗ trống:[[br]] Tứ giác $ABCD$ có hai đường chéo $AC$ và $BD$ cắt nhau tại trung điểm $O$ của mỗi đường là [[blank:2.2cm]]; nếu có thêm $\\widehat{A}=90^\\circ$ thì $ABCD$ là [[blank:2.2cm]].\n\\end{minipage}\\hfill\n\\begin{minipage}[t]{0.31\\linewidth}\\vspace{0pt}\n\\centering\n\\adjustbox{max width=\\linewidth, max totalheight=2.4cm}{\n\\begin{tikzpicture}[line width=0.8pt, font=\\small]\n  \\coordinate (vA) at (0.6,1.8);\n  \\coordinate (vB) at (3.2,1.8);\n  \\coordinate (vC) at (2.6,0.0);\n  \\coordinate (vD) at (0.0,0.0);\n  \\coordinate (vO) at (1.6,0.9);\n  \\draw[ink,fill=brand!8] (vA) -- (vB) -- (vC) -- (vD) -- cycle;\n  \\draw[brand,line width=1.0pt] (vA) -- (vC);\n  \\draw[brand,line width=1.0pt] (vB) -- (vD);\n  \\fill[brand] (1.6,0.9) circle (1.3pt) node[above=1pt]{$O$};\n  \\node[above left] at (vA) {$A$};\n  \\node[above right] at (vB) {$B$};\n  \\node[below right] at (vC) {$C$};\n  \\node[below left] at (vD) {$D$};\n\\end{tikzpicture}\n}\n\\par\\vspace{2pt}{\\sffamily\\scriptsize\\itshape\\color{muted}Hình 2}\n\\end{minipage}",
+          "tier": "onclass",
+          "level": 1,
+          "dang_id": "NB1",
+          "solution": "Các chỗ trống cần điền lần lượt là: hình bình hành; hình chữ nhật. Vậy kết quả điền là hình bình hành và hình chữ nhật.",
+          "figure_given": true
+        },
+        {
+          "type": "problem",
+          "label": "Bài 4.",
+          "statement": "\\par\\nopagebreak\n\\begin{minipage}[t]{0.64\\linewidth}\\vspace{0pt}\n[NB] Cho hình bình hành $ABCD$ có $\\widehat{A} = 90^\\circ$ (Hình 3). Khẳng định nào sau đây là đúng nhất?[[br]]\\par\\vspace{3pt}\\parbox[t]{0.46\\linewidth}{\\textbf{A.} $ABCD$ là hình thang}\\hspace{0.04\\linewidth}\\parbox[t]{0.46\\linewidth}{\\textbf{B.} $ABCD$ là hình chữ nhật}\\par\\vspace{4pt}\\parbox[t]{0.46\\linewidth}{\\textbf{C.} $ABCD$ là hình thoi}\\hspace{0.04\\linewidth}\\parbox[t]{0.46\\linewidth}{\\textbf{D.} $ABCD$ là hình vuông}\n\\end{minipage}\\hfill\n\\begin{minipage}[t]{0.31\\linewidth}\\vspace{0pt}\n\\centering\n\\adjustbox{max width=\\linewidth, max totalheight=2.4cm}{\n\\begin{tikzpicture}[line width=0.8pt, font=\\small]\n  \\coordinate (vA) at (0.0,1.8);\n  \\coordinate (vB) at (3.0,1.8);\n  \\coordinate (vC) at (3.0,0.0);\n  \\coordinate (vD) at (0.0,0.0);\n  \\draw[ink,fill=brand!8] (vA) -- (vB) -- (vC) -- (vD) -- cycle;\n  \\node[above left] at (vA) {$A$};\n  \\node[above right] at (vB) {$B$};\n  \\node[below right] at (vC) {$C$};\n  \\node[below left] at (vD) {$D$};\n  \\draw[ink] (0, 1.6) -| (0.2, 1.8);\n\\end{tikzpicture}\n}\n\\par\\vspace{2pt}{\\sffamily\\scriptsize\\itshape\\color{muted}Hình 3}\n\\end{minipage}",
+          "tier": "onclass",
+          "level": 1,
+          "dang_id": "NB2",
+          "solution": "Đáp án \\textbf{B}. Hình bình hành có 1 góc vuông là hình chữ nhật. Vậy khẳng định đúng là B.",
+          "figure_given": true
+        },
+        {
+          "type": "problem",
+          "label": "Bài 5.",
+          "statement": "\\par\\nopagebreak\n\\begin{minipage}[t]{0.64\\linewidth}\\vspace{0pt}\n[NB] Cho hình bình hành $ABCD$ có hai đường chéo $AC = BD$ (Hình 4). $ABCD$ là hình gì?[[br]]\\par\\vspace{3pt}\\parbox[t]{0.46\\linewidth}{\\textbf{A.} Hình chữ nhật}\\hspace{0.04\\linewidth}\\parbox[t]{0.46\\linewidth}{\\textbf{B.} Hình thang vuông}\\par\\vspace{4pt}\\parbox[t]{0.46\\linewidth}{\\textbf{C.} Hình thoi}\\hspace{0.04\\linewidth}\\parbox[t]{0.46\\linewidth}{\\textbf{D.} Tứ giác thường}\n\\end{minipage}\\hfill\n\\begin{minipage}[t]{0.31\\linewidth}\\vspace{0pt}\n\\centering\n\\adjustbox{max width=\\linewidth, max totalheight=2.4cm}{\n\\begin{tikzpicture}[line width=0.8pt, font=\\small]\n  \\coordinate (vA) at (0.0,1.8);\n  \\coordinate (vB) at (3.0,1.8);\n  \\coordinate (vC) at (3.0,0.0);\n  \\coordinate (vD) at (0.0,0.0);\n  \\draw[ink,fill=brand!8] (vA) -- (vB) -- (vC) -- (vD) -- cycle;\n  \\draw[brand,line width=1.0pt] (vA) -- (vC);\n  \\draw[brand,line width=1.0pt] (vB) -- (vD);\n  \\node[above left] at (vA) {$A$};\n  \\node[above right] at (vB) {$B$};\n  \\node[below right] at (vC) {$C$};\n  \\node[below left] at (vD) {$D$};\n\\end{tikzpicture}\n}\n\\par\\vspace{2pt}{\\sffamily\\scriptsize\\itshape\\color{muted}Hình 4}\n\\end{minipage}",
+          "tier": "onclass",
+          "level": 1,
+          "dang_id": "NB2",
+          "solution": "Đáp án \\textbf{A}. Hình bình hành có hai đường chéo bằng nhau là hình chữ nhật. Vậy tứ giác $ABCD$ là hình chữ nhật.",
+          "figure_given": true
+        },
+        {
+          "type": "problem",
+          "label": "Bài 6.",
+          "statement": "[NB] Chọn Đúng (Đ) hoặc Sai (S) cho mỗi khẳng định sau:[[br]] a) Hình thang cân có một góc vuông là hình chữ nhật. [[blank:1cm]][[br]] b) Tứ giác có hai đường chéo bằng nhau là hình chữ nhật. [[blank:1cm]]",
+          "tier": "onclass",
+          "level": 1,
+          "dang_id": "NB3",
+          "solution": "a) \\textbf{Đ} (Dấu hiệu nhận biết 2 của hình chữ nhật).[[br]] b) \\textbf{S} (Tứ giác có 2 đường chéo bằng nhau có thể là hình thang cân, chưa chắc là hình chữ nhật).[[br]] Vậy kết quả là: a) Đ; b) S.",
+          "figure_given": true
+        },
+        {
+          "type": "problem",
+          "label": "Bài 7.",
+          "statement": "[NB] Trong các khẳng định sau, khẳng định nào \\textbf{SAI}?[[br]]\\par\\vspace{3pt}\\parbox[t]{0.46\\linewidth}{\\textbf{A.} Hình chữ nhật là hình bình hành}\\hspace{0.04\\linewidth}\\parbox[t]{0.46\\linewidth}{\\textbf{B.} Hình chữ nhật là hình thang cân}\\par\\vspace{4pt}\\parbox[t]{0.46\\linewidth}{\\textbf{C.} Hình bình hành là hình chữ nhật}\\hspace{0.04\\linewidth}\\parbox[t]{0.46\\linewidth}{\\textbf{D.} Hình bình hành có 1 góc vuông là hình chữ nhật}",
+          "tier": "onclass",
+          "level": 1,
+          "dang_id": "NB3",
+          "solution": "Đáp án \\textbf{C}. Khẳng định C sai vì hình bình hành chưa chắc có góc vuông nên không thể khẳng định mọi hình bình hành là hình chữ nhật. Vậy khẳng định sai là C.",
+          "figure_given": true
+        },
+        {
+          "type": "problem",
+          "label": "Bài 8.",
+          "statement": "[NB] Hãy vẽ tam giác $ABC$ cân tại $A$, đường cao $AH$. Lấy điểm $D$ đối xứng với $H$ qua trung điểm $M$ của $AB$ và ghi giả thiết $-$ kết luận cho bài toán chứng minh $AHBD$ là hình chữ nhật.",
+          "tier": "onclass",
+          "level": 1,
+          "dang_id": "NB4",
+          "solution": "Giả thiết: $\\triangle ABC$ cân tại $A$, $AH \\perp BC$, $M$ là trung điểm $AB$, $D$ đối xứng với $H$ qua $M$.[[br]] Kết luận: $AHBD$ là hình chữ nhật.[[br]] Hình vẽ: Tam giác cân $ABC$, đường cao $AH$, trung điểm $M$ của $AB$, điểm $D$ sao cho $M$ là trung điểm $HD$, nối $AHBD$. Vậy đã hoàn thành hình vẽ và GT--KL.",
+          "draw": true
+        },
+        {
+          "type": "problem",
+          "label": "Bài 9.",
+          "statement": "\\par\\nopagebreak\n\\begin{minipage}[t]{0.64\\linewidth}\\vspace{0pt}\nQuan sát Hình 5 (tứ giác $AHBD$ có $M$ là trung điểm của $AB$ và $HD$).[[br]] Điền vào chỗ trống để hoàn thành chứng minh:[[br]] a) [NB] Tứ giác $AHBD$ có hai đường chéo $AB$ và $HD$ cắt nhau tại trung điểm $M$ của mỗi đường nên $AHBD$ là [[blank:2.2cm]].[[br]] b) [NB] Vì $AH \\perp BC$ nên $\\widehat{AHB} = $ [[blank:1.2cm]], do đó hình bình hành $AHBD$ là hình chữ nhật.\n\\end{minipage}\\hfill\n\\begin{minipage}[t]{0.31\\linewidth}\\vspace{0pt}\n\\centering\n\\adjustbox{max width=\\linewidth, max totalheight=2.4cm}{\n\\begin{tikzpicture}[line width=0.8pt, font=\\small]\n  \\coordinate (vA) at (0.0,2.0);\n  \\coordinate (vH) at (0.0,0.0);\n  \\coordinate (vB) at (-2.4,0.0);\n  \\coordinate (vD) at (-2.4,2.0);\n  \\coordinate (vM) at (-1.2,1.0);\n  \\draw[ink,fill=brand!8] (vA) -- (vD) -- (vB) -- (vH) -- cycle;\n  \\draw[ink,dashed] (vA) -- (vB);\n  \\draw[ink,dashed] (vH) -- (vD);\n  \\fill[brand] (-1.2,1.0) circle (1.3pt) node[left=1pt]{$M$};\n  \\node[above] at (vA) {$A$};\n  \\node[below] at (vH) {$H$};\n  \\node[below left] at (vB) {$B$};\n  \\node[above left] at (vD) {$D$};\n  \\draw[ink] (0, 0.25) -| (-0.25, 0);\n\\end{tikzpicture}\n}\n\\par\\vspace{2pt}{\\sffamily\\scriptsize\\itshape\\color{muted}Hình 5}\n\\end{minipage}",
+          "tier": "onclass",
+          "level": 1,
+          "dang_id": "NB5",
+          "solution": "a) hình bình hành.[[br]] b) $90^\\circ$.[[br]] Vậy chỗ trống a là hình bình hành và chỗ trống b là $90^\\circ$.",
+          "figure_given": true
+        },
+        {
+          "type": "problem",
+          "label": "Bài 10.",
+          "statement": "\\par\\nopagebreak\n\\begin{minipage}[t]{0.64\\linewidth}\\vspace{0pt}\nCho hình chữ nhật $AHBD$ có hai đường chéo $AB$ và $HD$ cắt nhau tại điểm $M$ (Hình 6).[[br]] a) [NB] Điểm $M$ có phải là trung điểm của đoạn thẳng $HD$ và $AB$ không?[[br]] b) [NB] So sánh độ dài hai đoạn thẳng $AD$ và $BH$.\n\\end{minipage}\\hfill\n\\begin{minipage}[t]{0.31\\linewidth}\\vspace{0pt}\n\\centering\n\\adjustbox{max width=\\linewidth, max totalheight=2.4cm}{\n\\begin{tikzpicture}[line width=0.8pt, font=\\small]\n  \\coordinate (vA) at (0.0,2.0);\n  \\coordinate (vH) at (0.0,0.0);\n  \\coordinate (vB) at (-2.4,0.0);\n  \\coordinate (vD) at (-2.4,2.0);\n  \\coordinate (vM) at (-1.2,1.0);\n  \\draw[ink,fill=brand!8] (vA) -- (vD) -- (vB) -- (vH) -- cycle;\n  \\draw[brand,line width=1.0pt] (vA) -- (vB);\n  \\draw[brand,line width=1.0pt] (vH) -- (vD);\n  \\fill[brand] (-1.2,1.0) circle (1.3pt) node[left=1pt]{$M$};\n  \\node[above] at (vA) {$A$};\n  \\node[below] at (vH) {$H$};\n  \\node[below left] at (vB) {$B$};\n  \\node[above left] at (vD) {$D$};\n\\end{tikzpicture}\n}\n\\par\\vspace{2pt}{\\sffamily\\scriptsize\\itshape\\color{muted}Hình 6}\n\\end{minipage}",
+          "tier": "onclass",
+          "level": 1,
+          "dang_id": "NB6",
+          "solution": "a) Có, vì hai đường chéo của hình chữ nhật cắt nhau tại trung điểm mỗi đường nên $M$ là trung điểm của cả $HD$ và $AB$.[[br]] b) Vì $AHBD$ là hình chữ nhật nên hai cạnh đối $AD = BH$.[[br]] Vậy $M$ là trung điểm của $HD, AB$ và $AD = BH$.",
+          "figure_given": true
+        }
+      ],
+      "teacher_note": "Bài 1 đến 7 cho HS làm nhanh 10 phút. Bài 8, 9, 10 làm nền tảng trực tiếp để HS giải quyết bài toán lớn ở Luyện tập 2."
+    },
+    {
+      "kind": "practice2",
+      "number": 4,
+      "title": "Luyện tập 2",
+      "blocks": [
+        {
+          "type": "problem",
+          "label": "Bài 11.",
+          "statement": "\\par\\nopagebreak\n\\begin{minipage}[t]{0.64\\linewidth}\\vspace{0pt}\nCho hình bình hành $ABCD$. Các tia phân giác của các góc $\\widehat{A}, \\widehat{B}, \\widehat{C}, \\widehat{D}$ cắt nhau tạo thành tứ giác $EFGH$ (Hình 7).[[br]] a) [TH] Chứng minh $\\widehat{HEF} = 90^\\circ$.[[br]] b) [TH] Chứng minh tứ giác $EFGH$ là hình chữ nhật.\n\\end{minipage}\\hfill\n\\begin{minipage}[t]{0.31\\linewidth}\\vspace{0pt}\n\\centering\n\\adjustbox{max width=\\linewidth, max totalheight=2.4cm}{\n\\begin{tikzpicture}[line width=0.8pt, font=\\small]\n  \\coordinate (vA) at (0.6,2.0);\n  \\coordinate (vB) at (3.4,2.0);\n  \\coordinate (vC) at (2.8,0.0);\n  \\coordinate (vD) at (0.0,0.0);\n  \\coordinate (vE) at (1.5,1.4);\n  \\coordinate (vF) at (2.2,1.1);\n  \\coordinate (vG) at (1.9,0.6);\n  \\coordinate (vH) at (1.2,0.9);\n  \\draw[ink] (vA) -- (vB) -- (vC) -- (vD) -- cycle;\n  \\draw[brand,line width=1.1pt,fill=brand!8] (vE) -- (vF) -- (vG) -- (vH) -- cycle;\n  \\draw[ink,dashed] (vA) -- (vG);\n  \\draw[ink,dashed] (vB) -- (vH);\n  \\draw[ink,dashed] (vC) -- (vE);\n  \\draw[ink,dashed] (vD) -- (vF);\n  \\node[above left] at (vA) {$A$};\n  \\node[above right] at (vB) {$B$};\n  \\node[below right] at (vC) {$C$};\n  \\node[below left] at (vD) {$D$};\n  \\node[above] at (vE) {$E$};\n  \\node[right] at (vF) {$F$};\n  \\node[below] at (vG) {$G$};\n  \\node[left] at (vH) {$H$};\n\\end{tikzpicture}\n}\n\\par\\vspace{2pt}{\\sffamily\\scriptsize\\itshape\\color{muted}Hình 7}\n\\end{minipage}",
+          "tier": "onclass",
+          "level": 2,
+          "dang_id": "TH1",
+          "solution": "a) Vì $ABCD$ là hình bình hành nên $AD \\parallel BC \\implies \\widehat{DAB} + \\widehat{ABC} = 180^\\circ$.[[br]]\\hspace*{1.4em}Vì $AE, BE$ là các tia phân giác nên:[[br]]\\hspace*{1.4em}$\\widehat{EAB} + \\widehat{EBA} = \\dfrac{\\widehat{DAB} + \\widehat{ABC}}{2} = \\dfrac{180^\\circ}{2} = 90^\\circ$.[[br]]\\hspace*{1.4em}Xét tam giác $EAB$, ta có $\\widehat{AEB} = 180^\\circ - (\\widehat{EAB} + \\widehat{EBA}) = 180^\\circ - 90^\\circ = 90^\\circ$.[[br]]\\hspace*{1.4em}Suy ra $\\widehat{HEF} = \\widehat{AEB} = 90^\\circ$ (hai góc đối đỉnh).[[br]]\\hspace*{1.4em}Vậy $\\widehat{HEF} = 90^\\circ$.[[br]] b) Chứng minh tương tự, ta có $\\widehat{EFG} = 90^\\circ$ và $\\widehat{EHG} = 90^\\circ$.[[br]]\\hspace*{1.4em}Tứ giác $EFGH$ có ba góc vuông $\\widehat{HEF} = \\widehat{EFG} = \\widehat{EHG} = 90^\\circ$ nên là hình chữ nhật.[[br]]\\hspace*{1.4em}Vậy $EFGH$ là hình chữ nhật.",
+          "figure_given": true,
+          "hints": [
+            "Hai góc kề một cạnh của hình bình hành bù nhau, do đó tổng hai nửa góc bằng $90^\\circ$."
+          ]
+        },
+        {
+          "type": "problem",
+          "label": "Bài 12.",
+          "statement": "\\par\\nopagebreak\n\\begin{minipage}[t]{0.64\\linewidth}\\vspace{0pt}\na) [TH] Cho tam giác $ABC$ vuông tại $A$ có $AB = 5\\text{ cm}, AC = 12\\text{ cm}$. Gọi $M$ là trung điểm của cạnh huyền $BC$ (Hình 8). Tính độ dài đoạn thẳng $AM$.[[br]] b) [TH] Chứng minh định lí: trong tam giác vuông, đường trung tuyến ứng với cạnh huyền bằng nửa cạnh huyền.\n\\end{minipage}\\hfill\n\\begin{minipage}[t]{0.31\\linewidth}\\vspace{0pt}\n\\centering\n\\adjustbox{max width=\\linewidth, max totalheight=2.4cm}{\n\\begin{tikzpicture}[line width=0.8pt, font=\\small]\n  \\coordinate (vA) at (0.0,0.0);\n  \\coordinate (vB) at (0.0,2.2);\n  \\coordinate (vC) at (3.0,0.0);\n  \\coordinate (vM) at (1.5,1.1);\n  \\draw[ink,fill=brand!8] (vA) -- (vB) -- (vC) -- cycle;\n  \\draw[brand,line width=1.1pt] (vA) -- (vM);\n  \\node[below left] at (vA) {$A$};\n  \\node[above left] at (vB) {$B$};\n  \\node[below right] at (vC) {$C$};\n  \\node[above right] at (vM) {$M$};\n  \\draw[ink] (0, 0.25) -| (0.25, 0);\n\\end{tikzpicture}\n}\n\\par\\vspace{2pt}{\\sffamily\\scriptsize\\itshape\\color{muted}Hình 8}\n\\end{minipage}",
+          "tier": "onclass",
+          "level": 2,
+          "dang_id": "TH2",
+          "solution": "a) Xét tam giác $ABC$ vuông tại $A$, theo định lí Pythagore ta có:[[br]]\\hspace*{1.4em}$BC^2 = AB^2 + AC^2 = 5^2 + 12^2 = 25 + 144 = 169 \\implies BC = 13\\text{ cm}$.[[br]]\\hspace*{1.4em}Vì $AM$ là đường trung tuyến ứng với cạnh huyền nên $AM = \\dfrac{1}{2}BC = \\dfrac{1}{2} \\cdot 13 = 6{,}5\\text{ cm}$.[[br]]\\hspace*{1.4em}Vậy $AM = 6{,}5\\text{ cm}$.[[br]] b) Lấy điểm $D$ đối xứng với $A$ qua $M$. Khi đó tứ giác $ABDC$ có hai đường chéo cắt nhau tại trung điểm $M$ của mỗi đường và có $\\widehat{A}=90^\\circ$ nên là hình chữ nhật.[[br]]\\hspace*{1.4em}Suy ra $AD = BC \\implies AM = \\dfrac{1}{2}AD = \\dfrac{1}{2}BC$.[[br]]\\hspace*{1.4em}Vậy trong tam giác vuông, đường trung tuyến ứng với cạnh huyền bằng nửa cạnh huyền.",
+          "figure_given": true,
+          "hints": [
+            "Dựng điểm đối xứng với $A$ qua $M$ để tạo thành hình chữ nhật."
+          ]
+        },
+        {
+          "type": "problem",
+          "label": "Bài 13.",
+          "statement": "\\par\\nopagebreak\n\\begin{minipage}[t]{0.64\\linewidth}\\vspace{0pt}\nCho tam giác $ABC$ có đường trung tuyến $AM$. Lấy điểm $D$ đối xứng với điểm $A$ qua điểm $M$ (Hình 9).[[br]] a) [TH] Chứng minh tứ giác $ABDC$ là hình bình hành.[[br]] b) [TH] Biết rằng $AM = \\dfrac{1}{2}BC$, chứng minh tứ giác $ABDC$ là hình chữ nhật và suy ra $\\triangle ABC$ vuông tại $A$.\n\\end{minipage}\\hfill\n\\begin{minipage}[t]{0.31\\linewidth}\\vspace{0pt}\n\\centering\n\\adjustbox{max width=\\linewidth, max totalheight=2.4cm}{\n\\begin{tikzpicture}[line width=0.8pt, font=\\small]\n  \\coordinate (vA) at (0.0,1.8);\n  \\coordinate (vB) at (3.0,1.8);\n  \\coordinate (vC) at (0.0,0.0);\n  \\coordinate (vD) at (3.0,0.0);\n  \\coordinate (vM) at (1.5,0.9);\n  \\draw[ink,fill=brand!8] (vA) -- (vB) -- (vD) -- (vC) -- cycle;\n  \\draw[brand,line width=1.0pt] (vA) -- (vD);\n  \\draw[brand,line width=1.0pt] (vB) -- (vC);\n  \\fill[brand] (1.5,0.9) circle (1.3pt) node[above=1pt]{$M$};\n  \\node[above left] at (vA) {$A$};\n  \\node[above right] at (vB) {$B$};\n  \\node[below left] at (vC) {$C$};\n  \\node[below right] at (vD) {$D$};\n\\end{tikzpicture}\n}\n\\par\\vspace{2pt}{\\sffamily\\scriptsize\\itshape\\color{muted}Hình 9}\n\\end{minipage}",
+          "tier": "onclass",
+          "level": 2,
+          "dang_id": "TH3",
+          "solution": "a) Tứ giác $ABDC$ có hai đường chéo $AD$ và $BC$ cắt nhau tại trung điểm $M$ của mỗi đường nên là hình bình hành.[[br]]\\hspace*{1.4em}Vậy $ABDC$ là hình bình hành.[[br]] b) Ta có $AD = 2AM$. Vì $AM = \\dfrac{1}{2}BC$ nên $AD = BC$.[[br]]\\hspace*{1.4em}Hình bình hành $ABDC$ có hai đường chéo bằng nhau $AD = BC$ nên là hình chữ nhật.[[br]]\\hspace*{1.4em}Vì $ABDC$ là hình chữ nhật nên $\\widehat{BAC} = 90^\\circ$, suy ra tam giác $ABC$ vuông tại $A$.[[br]]\\hspace*{1.4em}Vậy $ABDC$ là hình chữ nhật và $\\triangle ABC$ vuông tại $A$.",
+          "figure_given": true,
+          "hints": [
+            "Hình bình hành có hai đường chéo bằng nhau là hình chữ nhật."
+          ]
+        },
+        {
+          "type": "problem",
+          "label": "Bài 14.",
+          "statement": "\\par\\nopagebreak\n\\begin{minipage}[t]{0.64\\linewidth}\\vspace{0pt}\n[VD] (Đề kiểm tra định kì) Cho tam giác $ABC$ cân tại $A$, đường cao $AH$. Gọi $M$ là trung điểm của cạnh $AB$. Lấy điểm $D$ đối xứng với $H$ qua điểm $M$ (Hình 10).[[br]] Chứng minh tứ giác $AHBD$ là hình chữ nhật và suy ra $DH = AC$.\n\\end{minipage}\\hfill\n\\begin{minipage}[t]{0.31\\linewidth}\\vspace{0pt}\n\\centering\n\\adjustbox{max width=\\linewidth, max totalheight=2.4cm}{\n\\begin{tikzpicture}[line width=0.8pt, font=\\small]\n  \\coordinate (vA) at (0.0,2.0);\n  \\coordinate (vH) at (0.0,0.0);\n  \\coordinate (vB) at (-2.4,0.0);\n  \\coordinate (vC) at (2.4,0.0);\n  \\coordinate (vD) at (-2.4,2.0);\n  \\coordinate (vM) at (-1.2,1.0);\n  \\draw[ink] (vB) -- (vA) -- (vC) -- cycle;\n  \\draw[brand,line width=1.1pt,fill=brand!8] (vA) -- (vD) -- (vB) -- (vH) -- cycle;\n  \\draw[ink,dashed] (vA) -- (vB);\n  \\draw[ink,dashed] (vH) -- (vD);\n  \\fill[brand] (-1.2,1.0) circle (1.3pt) node[left=1pt]{$M$};\n  \\node[above] at (vA) {$A$};\n  \\node[below] at (vH) {$H$};\n  \\node[below left] at (vB) {$B$};\n  \\node[below right] at (vC) {$C$};\n  \\node[above left] at (vD) {$D$};\n  \\draw[ink] (0, 0.25) -| (-0.25, 0);\n\\end{tikzpicture}\n}\n\\par\\vspace{2pt}{\\sffamily\\scriptsize\\itshape\\color{muted}Hình 10}\n\\end{minipage}",
+          "tier": "onclass",
+          "level": 3,
+          "dang_id": "VD1",
+          "solution": "Xét tứ giác $AHBD$, ta có $M$ là trung điểm của $AB$ (giả thiết) và $M$ là trung điểm của $HD$ (do $D$ đối xứng với $H$ qua $M$).[[br]]\\hspace*{1.4em}Do đó $AHBD$ là hình bình hành.[[br]]\\hspace*{1.4em}Vì $AH \\perp BC$ nên $\\widehat{AHB} = 90^\\circ$.[[br]]\\hspace*{1.4em}Hình bình hành $AHBD$ có $\\widehat{AHB} = 90^\\circ$ nên là hình chữ nhật.[[br]]\\hspace*{1.4em}Vì $AHBD$ là hình chữ nhật nên hai đường chéo bằng nhau: $DH = AB$.[[br]]\\hspace*{1.4em}Mặt khác, vì tam giác $ABC$ cân tại $A$ nên $AB = AC$. Suy ra $DH = AC$.[[br]]\\hspace*{1.4em}Vậy $AHBD$ là hình chữ nhật và $DH = AC$.",
+          "figure_given": true,
+          "hints": [
+            "Chứng minh $AHBD$ là hình bình hành có một góc vuông, rồi dùng $AB=AC$."
+          ]
+        },
+        {
+          "type": "problem",
+          "label": "Bài 15.",
+          "statement": "\\par\\nopagebreak\n\\begin{minipage}[t]{0.64\\linewidth}\\vspace{0pt}\n[VD] Cho tam giác $ABC$ cân tại $A$, đường cao $AH$. Lấy điểm $D$ đối xứng với $H$ qua trung điểm $M$ của $AB$, lấy điểm $E$ đối xứng với $H$ qua trung điểm $N$ của $AC$ (Hình 11). Chứng minh tứ giác $BCED$ là hình chữ nhật.\n\\end{minipage}\\hfill\n\\begin{minipage}[t]{0.31\\linewidth}\\vspace{0pt}\n\\centering\n\\adjustbox{max width=\\linewidth, max totalheight=2.4cm}{\n\\begin{tikzpicture}[line width=0.8pt, font=\\small]\n  \\coordinate (vA) at (0.0,2.0);\n  \\coordinate (vH) at (0.0,0.0);\n  \\coordinate (vB) at (-2.4,0.0);\n  \\coordinate (vC) at (2.4,0.0);\n  \\coordinate (vD) at (-2.4,2.0);\n  \\coordinate (vE) at (2.4,2.0);\n  \\coordinate (vM) at (-1.2,1.0);\n  \\coordinate (vN) at (1.2,1.0);\n  \\draw[ink] (vB) -- (vA) -- (vC) -- cycle;\n  \\draw[brand,line width=1.1pt,fill=brand!8] (vD) -- (vE) -- (vC) -- (vB) -- cycle;\n  \\draw[ink,dashed] (vA) -- (vH);\n  \\draw[ink,dashed] (vD) -- (vH) -- (vE);\n  \\node[above] at (vA) {$A$};\n  \\node[below] at (vH) {$H$};\n  \\node[below left] at (vB) {$B$};\n  \\node[below right] at (vC) {$C$};\n  \\node[above left] at (vD) {$D$};\n  \\node[above right] at (vE) {$E$};\n\\end{tikzpicture}\n}\n\\par\\vspace{2pt}{\\sffamily\\scriptsize\\itshape\\color{muted}Hình 11}\n\\end{minipage}",
+          "tier": "onclass",
+          "level": 3,
+          "dang_id": "VD1",
+          "solution": "Theo Bài 14, $AHBD$ là hình chữ nhật nên $AD \\parallel BH$ và $AD = BH$. Đồng thời $\\widehat{DBH} = 90^\\circ$.[[br]]\\hspace*{1.4em}Tương tự, $AHCE$ là hình chữ nhật nên $AE \\parallel CH$ và $AE = CH$. Đồng thời $\\widehat{ECH} = 90^\\circ$.[[br]]\\hspace*{1.4em}Vì $B, H, C$ thẳng hàng nên $D, A, E$ thẳng hàng và $DE = AD + AE = BH + CH = BC$.[[br]]\\hspace*{1.4em}Tứ giác $BCED$ có $DE \\parallel BC$ và $DE = BC$ nên là hình bình hành.[[br]]\\hspace*{1.4em}Hình bình hành $BCED$ có $\\widehat{DBC} = 90^\\circ$ nên là hình chữ nhật.[[br]]\\hspace*{1.4em}Vậy $BCED$ là hình chữ nhật.",
+          "figure_given": true,
+          "hints": [
+            "Chứng minh $AD \\parallel BC, AE \\parallel BC$ để suy ra $D, A, E$ thẳng hàng và $DE=BC$."
+          ]
+        }
+      ],
+      "teacher_note": "Bài 14 và 15 là cặp bài toán kinh điển trong các đề thi tuyển sinh và đề kiểm tra học kì. Hướng dẫn HS cách lập luận chặt chẽ khi chứng minh thẳng hàng."
+    },
+    {
+      "kind": "reflection",
+      "number": 5,
+      "title": "Tổng kết \\& BTVN",
+      "blocks": [
+        {
+          "type": "mindmap",
+          "size": "small",
+          "caption": "Điền các ô trống để hoàn thiện sơ đồ kiến thức của buổi",
+          "root": "HBH \\& HCN",
+          "branches": [
+            {
+              "label": "Hình bình hành",
+              "children": [
+                {
+                  "label": "Cạnh đối song song và bằng nhau"
+                },
+                {
+                  "label": "2 đường chéo cắt nhau tại trung điểm"
+                }
+              ]
+            },
+            {
+              "label": "Chuyển thành Hình chữ nhật",
+              "children": [
+                {
+                  "label": "HBH $+$ 1 góc vuông $\\implies$ [[blank:1.4cm]]"
+                },
+                {
+                  "label": "HBH $+$ 2 đ/chéo bằng nhau $\\implies$ [[blank:1.4cm]]"
+                }
+              ]
+            },
+            {
+              "label": "Tam giác vuông",
+              "children": [
+                {
+                  "label": "Trung tuyến ứng cạnh huyền $= \\dfrac{1}{2}$ cạnh huyền"
+                },
+                {
+                  "label": "Đảo: trung tuyến $= \\dfrac{1}{2}$ cạnh đối $\\implies$ tam giác vuông"
+                }
+              ]
+            }
+          ]
+        },
+        {
+          "type": "problem",
+          "label": "BTVN 1.",
+          "statement": "[NB] Nối mỗi hình ở Cột A với điều kiện để trở thành hình chữ nhật ở Cột B:[[br]]\\par\\vspace{3pt}\n\\begin{tabular}{p{5.5cm} @{\\hspace{2.5cm}} p{6.5cm}}\n\\textbf{Cột A (Hình)} & \\textbf{Cột B (Điều kiện thành hình chữ nhật)} \\\\[4pt]\n(1) Hình thang cân & (a) Có một góc vuông. \\\\[4pt]\n(2) Hình bình hành & (b) Có hai đường chéo bằng nhau. \\\\[4pt]\n(3) Tứ giác lồi & (c) Có ba góc vuông.\n\\end{tabular}",
+          "tier": "btvn",
+          "level": 1,
+          "dang_id": "NB1",
+          "solution": "Nối: (1) nối với (a); (2) nối với (b); (3) nối với (c). Vậy các cặp nối là: 1--a, 2--b, 3--c.",
+          "figure_given": true,
+          "writelines": 0
+        },
+        {
+          "type": "problem",
+          "label": "BTVN 2.",
+          "statement": "\\par\\nopagebreak\n\\begin{minipage}[t]{0.64\\linewidth}\\vspace{0pt}\n[NB] Cho hình chữ nhật $ABCD$ có hai đường chéo cắt nhau tại $O$ (Hình 12). Biết $OA = 4\\text{ cm}$. Tính độ dài đường chéo $BD$ và các đoạn thẳng $OB, OC, OD$.\n\\end{minipage}\\hfill\n\\begin{minipage}[t]{0.31\\linewidth}\\vspace{0pt}\n\\centering\n\\adjustbox{max width=\\linewidth, max totalheight=2.4cm}{\n\\begin{tikzpicture}[line width=0.8pt, font=\\small]\n  \\coordinate (vA) at (0.0,1.8);\n  \\coordinate (vB) at (3.0,1.8);\n  \\coordinate (vC) at (3.0,0.0);\n  \\coordinate (vD) at (0.0,0.0);\n  \\coordinate (vO) at (1.5,0.9);\n  \\draw[ink,fill=brand!8] (vA) -- (vB) -- (vC) -- (vD) -- cycle;\n  \\draw[brand,line width=1.0pt] (vA) -- (vC);\n  \\draw[brand,line width=1.0pt] (vB) -- (vD);\n  \\fill[brand] (1.5,0.9) circle (1.3pt) node[above=1pt]{$O$};\n  \\node[above left] at (vA) {$A$};\n  \\node[above right] at (vB) {$B$};\n  \\node[below right] at (vC) {$C$};\n  \\node[below left] at (vD) {$D$};\n\\end{tikzpicture}\n}\n\\par\\vspace{2pt}{\\sffamily\\scriptsize\\itshape\\color{muted}Hình 12}\n\\end{minipage}",
+          "tier": "btvn",
+          "level": 1,
+          "dang_id": "NB1",
+          "solution": "Vì $ABCD$ là hình chữ nhật nên $OA = OB = OC = OD = 4\\text{ cm}$.[[br]] Độ dài đường chéo $BD = 2 \\cdot OB = 8\\text{ cm}$.[[br]] Vậy $BD = 8\\text{ cm}$ và $OB = OC = OD = 4\\text{ cm}$.",
+          "figure_given": true
+        },
+        {
+          "type": "problem",
+          "label": "BTVN 3.",
+          "statement": "\\par\\nopagebreak\n\\begin{minipage}[t]{0.64\\linewidth}\\vspace{0pt}\n[NB] Cho hình bình hành $MNPQ$ có $\\widehat{M}=90^\\circ$ (Hình 13). Hình bình hành $MNPQ$ là hình gì?[[br]]\\par\\vspace{3pt}\\parbox[t]{0.46\\linewidth}{\\textbf{A.} Hình thang}\\hspace{0.04\\linewidth}\\parbox[t]{0.46\\linewidth}{\\textbf{B.} Hình thoi}\\par\\vspace{4pt}\\parbox[t]{0.46\\linewidth}{\\textbf{C.} Hình chữ nhật}\\hspace{0.04\\linewidth}\\parbox[t]{0.46\\linewidth}{\\textbf{D.} Tứ giác thường}\n\\end{minipage}\\hfill\n\\begin{minipage}[t]{0.31\\linewidth}\\vspace{0pt}\n\\centering\n\\adjustbox{max width=\\linewidth, max totalheight=2.4cm}{\n\\begin{tikzpicture}[line width=0.8pt, font=\\small]\n  \\coordinate (vM) at (0.0,1.8);\n  \\coordinate (vN) at (3.0,1.8);\n  \\coordinate (vP) at (3.0,0.0);\n  \\coordinate (vQ) at (0.0,0.0);\n  \\draw[ink,fill=brand!8] (vM) -- (vN) -- (vP) -- (vQ) -- cycle;\n  \\node[above left] at (vM) {$M$};\n  \\node[above right] at (vN) {$N$};\n  \\node[below right] at (vP) {$P$};\n  \\node[below left] at (vQ) {$Q$};\n  \\draw[ink] (0, 1.6) -| (0.2, 1.8);\n\\end{tikzpicture}\n}\n\\par\\vspace{2pt}{\\sffamily\\scriptsize\\itshape\\color{muted}Hình 13}\n\\end{minipage}",
+          "tier": "btvn",
+          "level": 1,
+          "dang_id": "NB2",
+          "solution": "Đáp án \\textbf{C}. Hình bình hành có một góc vuông là hình chữ nhật. Vậy $MNPQ$ là hình chữ nhật.",
+          "figure_given": true
+        },
+        {
+          "type": "problem",
+          "label": "BTVN 4.",
+          "statement": "[NB] Điền vào chỗ trống:[[br]] a) Hình bình hành có hai đường chéo bằng nhau là [[blank:2.2cm]].[[br]] b) Hình thang cân có một góc vuông là [[blank:2.2cm]].",
+          "tier": "btvn",
+          "level": 1,
+          "dang_id": "NB2",
+          "solution": "a) hình chữ nhật.[[br]] b) hình chữ nhật.[[br]] Vậy các chỗ trống đều điền là hình chữ nhật.",
+          "figure_given": true
+        },
+        {
+          "type": "problem",
+          "label": "BTVN 5.",
+          "statement": "Chọn Đúng (Đ) hoặc Sai (S) cho các khẳng định sau:[[br]] a) [NB] Hình bình hành có một góc vuông là hình chữ nhật. [[blank:1cm]][[br]] b) [NB] Tứ giác có hai đường chéo cắt nhau tại trung điểm mỗi đường là hình chữ nhật. [[blank:1cm]]",
+          "tier": "btvn",
+          "level": 1,
+          "dang_id": "NB3",
+          "solution": "a) \\textbf{Đ} (Dấu hiệu nhận biết 3 của hình chữ nhật).[[br]] b) \\textbf{S} (Tứ giác có 2 đường chéo cắt nhau tại trung điểm mỗi đường chỉ là hình bình hành, chưa đủ để là hình chữ nhật).[[br]] Vậy kết quả là: a) Đ; b) S.",
+          "figure_given": true
+        },
+        {
+          "type": "problem",
+          "label": "BTVN 6.",
+          "statement": "[NB] Hãy vẽ tam giác $ABC$ vuông tại $A$. Gọi $M$ là trung điểm của cạnh $BC$. Lấy điểm $D$ đối xứng với $A$ qua $M$. Đánh dấu các đoạn thẳng bằng nhau $MA=MD$ và $MB=MC$ trên hình.",
+          "tier": "btvn",
+          "level": 1,
+          "dang_id": "NB4",
+          "solution": "Hình vẽ phải thể hiện: Tam giác vuông $ABC$ tại $A$, trung điểm $M$ của $BC$, điểm $D$ sao cho $M$ là trung điểm $AD$, hình chữ nhật $ABDC$. Vậy hoàn thành hình vẽ yêu cầu.",
+          "draw": true
+        },
+        {
+          "type": "problem",
+          "label": "BTVN 7.",
+          "statement": "\\par\\nopagebreak\n\\begin{minipage}[t]{0.64\\linewidth}\\vspace{0pt}\nQuan sát Hình 14 (tứ giác $AHCE$ có $N$ là trung điểm của $AC$ và $HE$).[[br]] Điền vào chỗ trống:[[br]] a) [NB] Tứ giác $AHCE$ có hai đường chéo $AC$ và $HE$ cắt nhau tại trung điểm $N$ của mỗi đường nên là [[blank:2.2cm]].[[br]] b) [NB] Vì $\\widehat{AHC} = 90^\\circ$ nên hình bình hành $AHCE$ là [[blank:2.2cm]].\n\\end{minipage}\\hfill\n\\begin{minipage}[t]{0.31\\linewidth}\\vspace{0pt}\n\\centering\n\\adjustbox{max width=\\linewidth, max totalheight=2.4cm}{\n\\begin{tikzpicture}[line width=0.8pt, font=\\small]\n  \\coordinate (vA) at (0.0,2.0);\n  \\coordinate (vH) at (0.0,0.0);\n  \\coordinate (vC) at (2.4,0.0);\n  \\coordinate (vE) at (2.4,2.0);\n  \\coordinate (vN) at (1.2,1.0);\n  \\draw[ink,fill=brand!8] (vA) -- (vE) -- (vC) -- (vH) -- cycle;\n  \\draw[ink,dashed] (vA) -- (vC);\n  \\draw[ink,dashed] (vH) -- (vE);\n  \\fill[brand] (1.2,1.0) circle (1.3pt) node[right=1pt]{$N$};\n  \\node[above] at (vA) {$A$};\n  \\node[below] at (vH) {$H$};\n  \\node[below right] at (vC) {$C$};\n  \\node[above right] at (vE) {$E$};\n  \\draw[ink] (0, 0.25) -| (0.25, 0);\n\\end{tikzpicture}\n}\n\\par\\vspace{2pt}{\\sffamily\\scriptsize\\itshape\\color{muted}Hình 14}\n\\end{minipage}",
+          "tier": "btvn",
+          "level": 1,
+          "dang_id": "NB5",
+          "solution": "a) hình bình hành.[[br]] b) hình chữ nhật.[[br]] Vậy chỗ trống a là hình bình hành và chỗ trống b là hình chữ nhật.",
+          "figure_given": true
+        },
+        {
+          "type": "problem",
+          "label": "BTVN 8.",
+          "statement": "\\par\\nopagebreak\n\\begin{minipage}[t]{0.64\\linewidth}\\vspace{0pt}\nCho hình chữ nhật $AHCE$ có hai đường chéo $AC$ và $HE$ cắt nhau tại $N$ (Hình 15).[[br]] a) [NB] Chỉ ra rằng $N$ là trung điểm của đoạn thẳng $HE$.[[br]] b) [NB] So sánh độ dài của hai đoạn thẳng $AE$ và $HC$.\n\\end{minipage}\\hfill\n\\begin{minipage}[t]{0.31\\linewidth}\\vspace{0pt}\n\\centering\n\\adjustbox{max width=\\linewidth, max totalheight=2.4cm}{\n\\begin{tikzpicture}[line width=0.8pt, font=\\small]\n  \\coordinate (vA) at (0.0,2.0);\n  \\coordinate (vH) at (0.0,0.0);\n  \\coordinate (vC) at (2.4,0.0);\n  \\coordinate (vE) at (2.4,2.0);\n  \\coordinate (vN) at (1.2,1.0);\n  \\draw[ink,fill=brand!8] (vA) -- (vE) -- (vC) -- (vH) -- cycle;\n  \\draw[brand,line width=1.0pt] (vA) -- (vC);\n  \\draw[brand,line width=1.0pt] (vH) -- (vE);\n  \\fill[brand] (1.2,1.0) circle (1.3pt) node[right=1pt]{$N$};\n  \\node[above] at (vA) {$A$};\n  \\node[below] at (vH) {$H$};\n  \\node[below right] at (vC) {$C$};\n  \\node[above right] at (vE) {$E$};\n\\end{tikzpicture}\n}\n\\par\\vspace{2pt}{\\sffamily\\scriptsize\\itshape\\color{muted}Hình 15}\n\\end{minipage}",
+          "tier": "btvn",
+          "level": 1,
+          "dang_id": "NB6",
+          "solution": "a) Vì $AHCE$ là hình chữ nhật nên hai đường chéo cắt nhau tại trung điểm mỗi đường, do đó $N$ là trung điểm của $HE$.[[br]] b) Vì $AHCE$ là hình chữ nhật nên $AE = HC$.[[br]] Vậy $N$ là trung điểm của $HE$ và $AE = HC$.",
+          "figure_given": true
+        },
+        {
+          "type": "problem",
+          "label": "BTVN 9.",
+          "statement": "\\par\\nopagebreak\n\\begin{minipage}[t]{0.64\\linewidth}\\vspace{0pt}\na) [TH] Cho tam giác $ABC$ vuông tại $A$ có $AB = 8\\text{ cm}, AC = 15\\text{ cm}$. Gọi $M$ là trung điểm của cạnh huyền $BC$ (Hình 16). Tính độ dài đoạn thẳng $AM$.[[br]] b) [TH] Cho tam giác $MNP$ có trung tuyến $MI = 8\\text{ cm}$ và cạnh $NP = 16\\text{ cm}$. Chứng minh $\\triangle MNP$ vuông tại $M$.\n\\end{minipage}\\hfill\n\\begin{minipage}[t]{0.31\\linewidth}\\vspace{0pt}\n\\centering\n\\adjustbox{max width=\\linewidth, max totalheight=2.4cm}{\n\\begin{tikzpicture}[line width=0.8pt, font=\\small]\n  \\coordinate (vA) at (0.0,0.0);\n  \\coordinate (vB) at (0.0,2.2);\n  \\coordinate (vC) at (3.0,0.0);\n  \\coordinate (vM) at (1.5,1.1);\n  \\draw[ink,fill=brand!8] (vA) -- (vB) -- (vC) -- cycle;\n  \\draw[brand,line width=1.1pt] (vA) -- (vM);\n  \\node[below left] at (vA) {$A$};\n  \\node[above left] at (vB) {$B$};\n  \\node[below right] at (vC) {$C$};\n  \\node[above right] at (vM) {$M$};\n  \\draw[ink] (0, 0.25) -| (0.25, 0);\n\\end{tikzpicture}\n}\n\\par\\vspace{2pt}{\\sffamily\\scriptsize\\itshape\\color{muted}Hình 16}\n\\end{minipage}",
+          "tier": "btvn",
+          "level": 2,
+          "dang_id": "TH1",
+          "solution": "a) Xét tam giác $ABC$ vuông tại $A$, theo định lí Pythagore ta có $BC^2 = AB^2 + AC^2 = 8^2 + 15^2 = 289 \\implies BC = 17\\text{ cm}$.[[br]]\\hspace*{1.4em}Vì $AM$ là trung tuyến ứng với cạnh huyền nên $AM = \\dfrac{1}{2}BC = 8{,}5\\text{ cm}$.[[br]]\\hspace*{1.4em}Vậy $AM = 8{,}5\\text{ cm}$.[[br]] b) Vì trung tuyến $MI = 8\\text{ cm} = \\dfrac{1}{2}NP$ nên theo định lí đảo về đường trung tuyến, tam giác $MNP$ vuông tại $M$.[[br]]\\hspace*{1.4em}Vậy $\\triangle MNP$ vuông tại $M$.",
+          "figure_given": true
+        },
+        {
+          "type": "problem",
+          "label": "BTVN 10.",
+          "statement": "\\par\\nopagebreak\n\\begin{minipage}[t]{0.64\\linewidth}\\vspace{0pt}\n[TH] Cho tam giác $ABC$ vuông tại $A$. Gọi $D, E$ lần lượt là trung điểm của $AB, AC$ (Hình 17). Lấy điểm $F$ đối xứng với $D$ qua $E$. Chứng minh tứ giác $AFCD$ là hình chữ nhật.\n\\end{minipage}\\hfill\n\\begin{minipage}[t]{0.31\\linewidth}\\vspace{0pt}\n\\centering\n\\adjustbox{max width=\\linewidth, max totalheight=2.4cm}{\n\\begin{tikzpicture}[line width=0.8pt, font=\\small]\n  \\coordinate (vA) at (0.0,2.0);\n  \\coordinate (vB) at (0.0,0.0);\n  \\coordinate (vC) at (3.0,0.0);\n  \\coordinate (vD) at (0.0,1.0);\n  \\coordinate (vE) at (1.5,1.0);\n  \\coordinate (vF) at (3.0,1.0);\n  \\draw[ink] (vB) -- (vA) -- (vC) -- cycle;\n  \\draw[brand,line width=1.1pt,fill=brand!8] (vA) -- (vF) -- (vC) -- (vD) -- cycle;\n  \\draw[ink,dashed] (vA) -- (vC);\n  \\draw[ink,dashed] (vD) -- (vF);\n  \\fill[brand] (1.5,1.0) circle (1.3pt) node[below=1pt]{$E$};\n  \\node[above left] at (vA) {$A$};\n  \\node[below left] at (vB) {$B$};\n  \\node[below right] at (vC) {$C$};\n  \\node[left] at (vD) {$D$};\n  \\node[right] at (vF) {$F$};\n  \\draw[ink] (0, 1.8) -| (0.2, 2.0);\n\\end{tikzpicture}\n}\n\\par\\vspace{2pt}{\\sffamily\\scriptsize\\itshape\\color{muted}Hình 17}\n\\end{minipage}",
+          "tier": "btvn",
+          "level": 2,
+          "dang_id": "TH2",
+          "solution": "Xét tứ giác $ADCF$, ta có $E$ là trung điểm của $AC$ và $E$ là trung điểm của $DF$ (do $F$ đối xứng với $D$ qua $E$).[[br]]\\hspace*{1.4em}Do đó tứ giác $ADCF$ là hình bình hành.[[br]]\\hspace*{1.4em}Mặt khác, $\\widehat{DAC} = 90^\\circ$ (do $\\triangle ABC$ vuông tại $A$).[[br]]\\hspace*{1.4em}Hình bình hành $ADCF$ có một góc vuông $\\widehat{DAC} = 90^\\circ$ nên là hình chữ nhật.[[br]]\\hspace*{1.4em}Vậy $ADCF$ là hình chữ nhật.",
+          "figure_given": true
+        },
+        {
+          "type": "problem",
+          "label": "BTVN 11.",
+          "statement": "\\par\\nopagebreak\n\\begin{minipage}[t]{0.64\\linewidth}\\vspace{0pt}\n[TH] Cho hình bình hành $ABCD$. Gọi $O$ là giao điểm của hai đường chéo $AC$ và $BD$ (Hình 18). Biết rằng $OA = OB = 5\\text{ cm}$. Chứng minh tứ giác $ABCD$ là hình chữ nhật.\n\\end{minipage}\\hfill\n\\begin{minipage}[t]{0.31\\linewidth}\\vspace{0pt}\n\\centering\n\\adjustbox{max width=\\linewidth, max totalheight=2.4cm}{\n\\begin{tikzpicture}[line width=0.8pt, font=\\small]\n  \\coordinate (vA) at (0.0,1.8);\n  \\coordinate (vB) at (3.0,1.8);\n  \\coordinate (vC) at (3.0,0.0);\n  \\coordinate (vD) at (0.0,0.0);\n  \\coordinate (vO) at (1.5,0.9);\n  \\draw[ink,fill=brand!8] (vA) -- (vB) -- (vC) -- (vD) -- cycle;\n  \\draw[brand,line width=1.0pt] (vA) -- (vC);\n  \\draw[brand,line width=1.0pt] (vB) -- (vD);\n  \\fill[brand] (1.5,0.9) circle (1.3pt) node[above=1pt]{$O$};\n  \\node[above left] at (vA) {$A$};\n  \\node[above right] at (vB) {$B$};\n  \\node[below right] at (vC) {$C$};\n  \\node[below left] at (vD) {$D$};\n\\end{tikzpicture}\n}\n\\par\\vspace{2pt}{\\sffamily\\scriptsize\\itshape\\color{muted}Hình 18}\n\\end{minipage}",
+          "tier": "btvn",
+          "level": 2,
+          "dang_id": "TH3",
+          "solution": "Vì $ABCD$ là hình bình hành nên hai đường chéo cắt nhau tại trung điểm mỗi đường, do đó $AC = 2OA = 10\\text{ cm}$ và $BD = 2OB = 10\\text{ cm}$.[[br]]\\hspace*{1.4em}Suy ra $AC = BD = 10\\text{ cm}$.[[br]]\\hspace*{1.4em}Hình bình hành $ABCD$ có hai đường chéo bằng nhau $AC = BD$ nên là hình chữ nhật.[[br]]\\hspace*{1.4em}Vậy $ABCD$ là hình chữ nhật.",
+          "figure_given": true
+        }
+      ],
+      "teacher_note": "Giao 11 bài BTVN cho HS rèn luyện kĩ năng chứng minh hình chữ nhật và củng cố định lí trung tuyến tam giác vuông."
+    }
+  ]
+}

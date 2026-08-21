@@ -1,0 +1,405 @@
+{
+  "slug": "phieu-a-on-tap-tu-giac-hinh-thang-can",
+  "title": "Ôn tập tứ giác, hình thang cân",
+  "eyebrow": "HÌNH HỌC 8 — PHIẾU A: ÔN TẬP TỨ GIÁC, HÌNH THANG CÂN",
+  "grade_label": "Lớp 8 • Chương III. Tứ giác",
+  "class_tier": "B",
+  "stages": [
+    {
+      "kind": "review",
+      "number": 1,
+      "title": "Khám phá",
+      "blocks": [
+        {
+          "type": "opener",
+          "text": "Khung kèo mái nhà bằng thép thường được ghép bởi một tam giác cân $SCD$ ở đỉnh và một thanh xà ngang $AB$ song song với đáy $CD$. [[br]] Khi đó, phần khung phía dưới $ABCD$ tạo thành một \\textbf{hình thang cân}. Hai thanh giằng chéo $AC$ và $BD$ bắt buộc phải có độ dài bằng nhau để giàn mái không bị nghiêng lệch. [[br]] Dựa vào đâu ta khẳng định được hai thanh chéo $AC$ và $BD$ luôn bằng nhau khi $AB \\parallel CD$ và $AD = BC$?",
+          "tikz": "\\begin{tikzpicture}[line width=0.9pt, font=\\small]\n  \\coordinate (S) at (2.0, 2.8);\n  \\coordinate (D) at (0.0, 0.0);\n  \\coordinate (C) at (4.0, 0.0);\n  \\coordinate (A) at (0.8, 1.68);\n  \\coordinate (B) at (3.2, 1.68);\n  \\draw[ink,fill=brand!10] (A) -- (B) -- (C) -- (D) -- cycle;\n  \\draw[ink] (S) -- (D);\n  \\draw[ink] (S) -- (C);\n  \\draw[brand,line width=1.1pt] (A) -- (C);\n  \\draw[brand,line width=1.1pt] (B) -- (D);\n  \\node[above] at (S) {$S$};\n  \\node[above left] at (A) {$A$};\n  \\node[above right] at (B) {$B$};\n  \\node[below right] at (C) {$C$};\n  \\node[below left] at (D) {$D$};\n  \\node[ink,font=\\scriptsize] at (0.35,0.84) {$|$};\n  \\node[ink,font=\\scriptsize] at (3.65,0.84) {$|$};\n\\end{tikzpicture}"
+        },
+        {
+          "type": "para",
+          "text": "Buổi học này ta hệ thống lại toàn bộ kiến thức trọng tâm của \\textbf{Tứ giác} và \\textbf{Hình thang cân}: [[br]] - Định lí tổng bốn góc của tứ giác bằng $360^\\circ$ và mối quan hệ góc ngoài. [[br]] - Tính chất hai góc trong cùng phía bù nhau của hình thang. [[br]] - Hai con đường chứng minh hình thang cân và kĩ năng giải bài toán hình tổng hợp."
+        }
+      ],
+      "solution": "Vì $ABCD$ là hình thang cân ($AB \\parallel CD$ và $\\widehat{D} = \\widehat{C}$) nên hai đường chéo $AC = BD$ luôn bằng nhau.",
+      "teacher_note": "Cho HS nhắc lại nhanh 2 tính chất và 2 dấu hiệu nhận biết của hình thang cân trước khi vào phần ôn tập lý thuyết."
+    },
+    {
+      "kind": "concept",
+      "number": 2,
+      "title": "Khái niệm",
+      "blocks": [
+        {
+          "type": "noted",
+          "text": "\\par\\nopagebreak\n\\begin{minipage}[t]{0.62\\linewidth}\\vspace{0pt}\n\\textbf{1. Tứ giác và Hình thang} [[br]] - \\textbf{Tổng bốn góc của tứ giác}: $\\widehat{A}+\\widehat{B}+\\widehat{C}+\\widehat{D} = 360^\\circ$. [[br]] - \\textbf{Hình thang}: tứ giác có hai cạnh đối song song ($AB \\parallel CD$). [[br]] \\hspace*{1.4em}Hai góc kề một cạnh bên bù nhau: $\\widehat{A}+\\widehat{D} = 180^\\circ$, $\\widehat{B}+\\widehat{C} = 180^\\circ$. [[br]] - \\textbf{Hình thang vuông}: hình thang có một góc vuông.\n\\end{minipage}\\hfill\n\\begin{minipage}[t]{0.33\\linewidth}\\vspace{0pt}\n\\centering\n\\adjustbox{max width=\\linewidth, max totalheight=2.4cm}{\n\\begin{tikzpicture}[line width=0.8pt, font=\\small]\n  \\coordinate (vA) at (0.6,1.8);\n  \\coordinate (vB) at (2.6,1.8);\n  \\coordinate (vC) at (3.4,0.0);\n  \\coordinate (vD) at (0.0,0.0);\n  \\draw[ink,fill=brand!8] (vA) -- (vB) -- (vC) -- (vD) -- cycle;\n  \\node[above left] at (vA) {$A$};\n  \\node[above right] at (vB) {$B$};\n  \\node[below right] at (vC) {$C$};\n  \\node[below left] at (vD) {$D$};\n  \\draw[ink,dashed] (vA) -- (vC);\n  \\draw[ink,dashed] (vB) -- (vD);\n\\end{tikzpicture}\n}\n\\par\\vspace{2pt}{\\sffamily\\scriptsize\\itshape\\color{muted}Hình thang $ABCD$}\n\\end{minipage}"
+        },
+        {
+          "type": "noted",
+          "text": "\\par\\nopagebreak\n\\begin{minipage}[t]{0.62\\linewidth}\\vspace{0pt}\n\\textbf{2. Hình thang cân} [[br]] - \\textbf{Định nghĩa}: Hình thang có hai góc kề một đáy bằng nhau. [[br]] - \\textbf{Tính chất}: [[br]] \\hspace*{1.4em}+ Hai cạnh bên bằng nhau ($AD = BC$). [[br]] \\hspace*{1.4em}+ Hai đường chéo bằng nhau ($AC = BD$). [[br]] - \\textbf{2 Dấu hiệu nhận biết}: [[br]] \\hspace*{1.4em}(1) Hình thang có hai góc kề một đáy bằng nhau. [[br]] \\hspace*{1.4em}(2) Hình thang có hai đường chéo bằng nhau.\n\\end{minipage}\\hfill\n\\begin{minipage}[t]{0.33\\linewidth}\\vspace{0pt}\n\\centering\n\\adjustbox{max width=\\linewidth, max totalheight=2.4cm}{\n\\begin{tikzpicture}[line width=0.8pt, font=\\small]\n  \\coordinate (vA) at (0.8,1.8);\n  \\coordinate (vB) at (2.4,1.8);\n  \\coordinate (vC) at (3.2,0.0);\n  \\coordinate (vD) at (0.0,0.0);\n  \\draw[ink,fill=brand!8] (vA) -- (vB) -- (vC) -- (vD) -- cycle;\n  \\draw[brand,line width=1.1pt] (vA) -- (vC);\n  \\draw[brand,line width=1.1pt] (vB) -- (vD);\n  \\node[above left] at (vA) {$A$};\n  \\node[above right] at (vB) {$B$};\n  \\node[below right] at (vC) {$C$};\n  \\node[below left] at (vD) {$D$};\n  \\node[ink,font=\\scriptsize] at (0.35,0.9) {$|$};\n  \\node[ink,font=\\scriptsize] at (2.85,0.9) {$|$};\n\\end{tikzpicture}\n}\n\\par\\vspace{2pt}{\\sffamily\\scriptsize\\itshape\\color{muted}Hình thang cân $ABCD$}\n\\end{minipage}"
+        },
+        {
+          "type": "noted",
+          "variant": "example",
+          "text": "\\par\\nopagebreak\n\\begin{minipage}[t]{0.62\\linewidth}\\vspace{0pt}\n\\textbf{Ví dụ 1.} Hình thang cân $ABCD$ ($AB \\parallel CD$) có $\\widehat{A} = 115^\\circ$. Tính các góc còn lại của hình thang cân.[[br]]{\\sffamily\\bfseries\\color{brand}Lời giải}[[br]]\\hspace*{1.4em}Vì $ABCD$ là hình thang cân ($AB \\parallel CD$) nên hai góc kề đáy $AB$ bằng nhau:[[br]]\\hspace*{1.4em}$\\widehat{B} = \\widehat{A} = 115^\\circ$.[[br]]\\hspace*{1.4em}Vì $AB \\parallel CD$ nên hai góc trong cùng phía bù nhau:[[br]]\\hspace*{1.4em}$\\widehat{D} = 180^\\circ - \\widehat{A} = 180^\\circ - 115^\\circ = 65^\\circ$.[[br]]\\hspace*{1.4em}Tương tự, $\\widehat{C} = \\widehat{D} = 65^\\circ$.[[br]]\\hspace*{1.4em}Vậy $\\widehat{B} = 115^\\circ$, $\\widehat{C} = 65^\\circ$, $\\widehat{D} = 65^\\circ$.\n\\end{minipage}\\hfill\n\\begin{minipage}[t]{0.33\\linewidth}\\vspace{0pt}\n\\centering\n\\adjustbox{max width=\\linewidth, max totalheight=2.4cm}{\n\\begin{tikzpicture}[line width=0.8pt, font=\\small]\n  \\coordinate (vA) at (0.8,1.8);\n  \\coordinate (vB) at (2.4,1.8);\n  \\coordinate (vC) at (3.2,0.0);\n  \\coordinate (vD) at (0.0,0.0);\n  \\draw[ink,fill=brand!8] (vA) -- (vB) -- (vC) -- (vD) -- cycle;\n  \\node[above left] at (vA) {$A$};\n  \\node[above right] at (vB) {$B$};\n  \\node[below right] at (vC) {$C$};\n  \\node[below left] at (vD) {$D$};\n  \\node[brand,font=\\scriptsize] at (1.05,1.55) {$115^\\circ$};\n\\end{tikzpicture}\n}\n\\par\\vspace{2pt}{\\sffamily\\scriptsize\\itshape\\color{muted}Ví dụ 1}\n\\end{minipage}"
+        },
+        {
+          "type": "noted",
+          "variant": "example",
+          "text": "\\par\\nopagebreak\n\\begin{minipage}[t]{0.62\\linewidth}\\vspace{0pt}\n\\textbf{Ví dụ 2.} Cho tam giác $ABC$ cân tại $A$. Trên các cạnh $AB, AC$ lần lượt lấy các điểm $D, E$ sao cho $AD = AE$. Chứng minh tứ giác $BDEC$ là hình thang cân.[[br]]{\\sffamily\\bfseries\\color{brand}Lời giải}[[br]]\\hspace*{1.4em}Vì $\\triangle ABC$ cân tại $A$ nên $\\widehat{B} = \\dfrac{180^\\circ - \\widehat{A}}{2}$.[[br]]\\hspace*{1.4em}Vì $AD = AE$ nên $\\triangle ADE$ cân tại $A$, suy ra $\\widehat{ADE} = \\dfrac{180^\\circ - \\widehat{A}}{2}$.[[br]]\\hspace*{1.4em}Do đó $\\widehat{ADE} = \\widehat{B}$. Mà hai góc này ở vị trí đồng vị nên $DE \\parallel BC$.[[br]]\\hspace*{1.4em}Tứ giác $BDEC$ có $DE \\parallel BC$ nên là hình thang.[[br]]\\hspace*{1.4em}Hình thang $BDEC$ có hai góc kề đáy $\\widehat{B} = \\widehat{C}$ (do $\\triangle ABC$ cân tại $A$) nên $BDEC$ là hình thang cân.[[br]]\\hspace*{1.4em}Vậy $BDEC$ là hình thang cân.\n\\end{minipage}\\hfill\n\\begin{minipage}[t]{0.33\\linewidth}\\vspace{0pt}\n\\centering\n\\adjustbox{max width=\\linewidth, max totalheight=2.4cm}{\n\\begin{tikzpicture}[line width=0.8pt, font=\\small]\n  \\coordinate (vA) at (1.6,2.4);\n  \\coordinate (vB) at (0.0,0.0);\n  \\coordinate (vC) at (3.2,0.0);\n  \\coordinate (vD) at (0.6,0.9);\n  \\coordinate (vE) at (2.6,0.9);\n  \\draw[ink] (vA) -- (vB) -- (vC) -- cycle;\n  \\draw[brand,line width=1.1pt,fill=brand!8] (vD) -- (vE) -- (vC) -- (vB) -- cycle;\n  \\node[above] at (vA) {$A$};\n  \\node[below left] at (vB) {$B$};\n  \\node[below right] at (vC) {$C$};\n  \\node[left] at (vD) {$D$};\n  \\node[right] at (vE) {$E$};\n  \\node[ink,font=\\scriptsize] at (1.0,1.75) {$|$};\n  \\node[ink,font=\\scriptsize] at (2.2,1.75) {$|$};\n\\end{tikzpicture}\n}\n\\par\\vspace{2pt}{\\sffamily\\scriptsize\\itshape\\color{muted}Ví dụ 2}\n\\end{minipage}"
+        },
+        {
+          "type": "noted",
+          "variant": "trap",
+          "text": "BẪY ĐIỂM: Tứ giác có hai cạnh bên bằng nhau KHÔNG ĐƯỢC coi là hình thang cân! [[br]] Ví dụ hình thang có hai cạnh bên song song và bằng nhau thì là hình bình hành, không phải hình thang cân. Muốn chứng minh hình thang cân, bắt buộc phải chứng minh: [[br]] (1) Tứ giác đó là hình thang ($AB \\parallel CD$). [[br]] (2) Hình thang đó có HAI GÓC KỀ MỘT ĐÁY BẰNG NHAU hoặc HAI ĐƯỜNG CHÉO BẰNG NHAU."
+        }
+      ],
+      "solution": "Nắm vững định nghĩa, 2 tính chất và 2 dấu hiệu nhận biết hình thang cân; phân biệt rõ tính chất và dấu hiệu.",
+      "teacher_note": "Nhấn mạnh Ví dụ 2 là mô hình chứng minh hình thang cân kinh điển xuất hiện trong hầu hết các đề kiểm tra định kỳ."
+    },
+    {
+      "kind": "practice1",
+      "number": 3,
+      "title": "Luyện tập 1",
+      "blocks": [
+        {
+          "type": "problem",
+          "label": "Bài 1.",
+          "statement": "[NB] Nối mỗi tên hình ở Cột A với dấu hiệu nhận biết tương ứng ở Cột B:[[br]]\\par\\vspace{3pt}\n\\begin{tabular}{p{5.5cm} @{\\hspace{2.5cm}} p{6.5cm}}\n\\textbf{Cột A (Hình)} & \\textbf{Cột B (Dấu hiệu nhận biết)} \\\\[4pt]\n(1) Hình thang & (a) Tứ giác có hai cạnh đối song song và hai đường chéo bằng nhau. \\\\[4pt]\n(2) Hình thang vuông & (b) Tứ giác có hai cạnh đối song song. \\\\[4pt]\n(3) Hình thang cân & (c) Hình thang có một góc vuông. \\\\[4pt]\n& (d) Tứ giác có hai góc kề một cạnh bù nhau.\n\\end{tabular}",
+          "tier": "onclass",
+          "level": 1,
+          "dang_id": "NB1",
+          "solution": "Nối đúng: (1) nối với (b); (2) nối với (c); (3) nối với (a). Vậy các cặp nối là: 1--b, 2--c, 3--a.",
+          "figure_given": true,
+          "writelines": 0
+        },
+        {
+          "type": "problem",
+          "label": "Bài 2.",
+          "statement": "\\par\\nopagebreak\n\\begin{minipage}[t]{0.64\\linewidth}\\vspace{0pt}\n[NB] Trong các hình ở Hình 1, hình nào là \\textbf{hình thang cân}?[[br]]\\par\\vspace{3pt}\\parbox[t]{0.46\\linewidth}{\\textbf{A.} Hình 1a}\\hspace{0.04\\linewidth}\\parbox[t]{0.46\\linewidth}{\\textbf{B.} Hình 1b}\\par\\vspace{4pt}\\parbox[t]{0.46\\linewidth}{\\textbf{C.} Hình 1c}\\hspace{0.04\\linewidth}\\parbox[t]{0.46\\linewidth}{\\textbf{D.} Hình 1d}\n\\end{minipage}\\hfill\n\\begin{minipage}[t]{0.31\\linewidth}\\vspace{0pt}\n\\centering\n\\adjustbox{max width=\\linewidth, max totalheight=2.4cm}{\n\\begin{tikzpicture}[line width=0.8pt, font=\\small]\n  \\begin{scope}[shift={(0,0)}]\n    \\draw[ink,fill=brand!8] (0,0) -- (1.6,0) -- (1.2,1.2) -- (0.4,1.2) -- cycle;\n    \\node[font=\\scriptsize,ink] at (0.8,-0.35) {Hình 1a};\n  \\end{scope}\n  \\begin{scope}[shift={(2.1,0)}]\n    \\draw[ink,fill=brand!8] (0,0) -- (1.5,0) -- (1.8,1.2) -- (0.3,1.2) -- cycle;\n    \\node[font=\\scriptsize,ink] at (0.9,-0.35) {Hình 1b};\n  \\end{scope}\n  \\begin{scope}[shift={(4.2,0)}]\n    \\draw[ink,fill=brand!8] (0,0) -- (1.6,0) -- (1.6,1.2) -- (0.3,1.2) -- cycle;\n    \\node[font=\\scriptsize,ink] at (0.8,-0.35) {Hình 1c};\n  \\end{scope}\n  \\begin{scope}[shift={(6.3,0)}]\n    \\draw[ink,fill=brand!8] (0,0) -- (1.5,0) -- (1.2,1.2) -- (0,0.8) -- cycle;\n    \\node[font=\\scriptsize,ink] at (0.75,-0.35) {Hình 1d};\n  \\end{scope}\n\\end{tikzpicture}\n}\n\\par\\vspace{2pt}{\\sffamily\\scriptsize\\itshape\\color{muted}Hình 1}\n\\end{minipage}",
+          "tier": "onclass",
+          "level": 1,
+          "dang_id": "NB1",
+          "solution": "Đáp án \\textbf{A}. Hình 1a là hình thang có hai góc kề đáy bằng nhau nên là hình thang cân. Hình 1b là hình bình hành, Hình 1c là hình thang vuông, Hình 1d là tứ giác thường. Vậy hình thang cân là Hình 1a.",
+          "figure_given": true
+        },
+        {
+          "type": "problem",
+          "label": "Bài 3.",
+          "statement": "\\par\\nopagebreak\n\\begin{minipage}[t]{0.64\\linewidth}\\vspace{0pt}\n[NB] Quan sát Hình 2 rồi điền vào chỗ trống:[[br]] Hình thang cân $ABCD$ ($AB \\parallel CD$) có hai góc kề đáy $CD$ là $\\widehat{D}$ và [[blank:1.2cm]]; hai cạnh bên bằng nhau là $AD$ và [[blank:1.2cm]]; hai đường chéo bằng nhau là $AC$ và [[blank:1.2cm]].\n\\end{minipage}\\hfill\n\\begin{minipage}[t]{0.31\\linewidth}\\vspace{0pt}\n\\centering\n\\adjustbox{max width=\\linewidth, max totalheight=2.4cm}{\n\\begin{tikzpicture}[line width=0.8pt, font=\\small]\n  \\coordinate (vA) at (0.8,1.8);\n  \\coordinate (vB) at (2.4,1.8);\n  \\coordinate (vC) at (3.2,0.0);\n  \\coordinate (vD) at (0.0,0.0);\n  \\draw[ink,fill=brand!8] (vA) -- (vB) -- (vC) -- (vD) -- cycle;\n  \\draw[ink,dashed] (vA) -- (vC);\n  \\draw[ink,dashed] (vB) -- (vD);\n  \\node[above left] at (vA) {$A$};\n  \\node[above right] at (vB) {$B$};\n  \\node[below right] at (vC) {$C$};\n  \\node[below left] at (vD) {$D$};\n\\end{tikzpicture}\n}\n\\par\\vspace{2pt}{\\sffamily\\scriptsize\\itshape\\color{muted}Hình 2}\n\\end{minipage}",
+          "tier": "onclass",
+          "level": 1,
+          "dang_id": "NB1",
+          "solution": "Các chỗ trống cần điền lần lượt là: $\\widehat{C}$; $BC$; $BD$. Vậy kết quả điền là $\\widehat{C}, BC, BD$.",
+          "figure_given": true
+        },
+        {
+          "type": "problem",
+          "label": "Bài 4.",
+          "statement": "\\par\\nopagebreak\n\\begin{minipage}[t]{0.64\\linewidth}\\vspace{0pt}\n[NB] Cho tứ giác $ABCD$ ở Hình 3 có $\\widehat{A}=105^\\circ, \\widehat{B}=75^\\circ, \\widehat{D}=80^\\circ$. Số đo $\\widehat{C}$ bằng:[[br]]\\par\\vspace{3pt}\\parbox[t]{0.46\\linewidth}{\\textbf{A.} $100^\\circ$}\\hspace{0.04\\linewidth}\\parbox[t]{0.46\\linewidth}{\\textbf{B.} $110^\\circ$}\\par\\vspace{4pt}\\parbox[t]{0.46\\linewidth}{\\textbf{C.} $95^\\circ$}\\hspace{0.04\\linewidth}\\parbox[t]{0.46\\linewidth}{\\textbf{D.} $105^\\circ$}\n\\end{minipage}\\hfill\n\\begin{minipage}[t]{0.31\\linewidth}\\vspace{0pt}\n\\centering\n\\adjustbox{max width=\\linewidth, max totalheight=2.4cm}{\n\\begin{tikzpicture}[line width=0.8pt, font=\\small]\n  \\coordinate (vA) at (0.5,1.9);\n  \\coordinate (vB) at (3.3,2.3);\n  \\coordinate (vC) at (4.0,0.5);\n  \\coordinate (vD) at (0.0,0.0);\n  \\draw[ink,fill=brand!8] (vA) -- (vB) -- (vC) -- (vD) -- cycle;\n  \\node[above left] at (vA) {$A$};\n  \\node[above right] at (vB) {$B$};\n  \\node[below right] at (vC) {$C$};\n  \\node[below left] at (vD) {$D$};\n  \\node[brand,font=\\scriptsize] at (0.9,1.55) {$105^\\circ$};\n  \\node[brand,font=\\scriptsize] at (2.9,1.95) {$75^\\circ$};\n  \\node[brand,font=\\scriptsize] at (0.5,0.3) {$80^\\circ$};\n  \\node[brand,font=\\scriptsize] at (3.5,0.7) {$?$};\n\\end{tikzpicture}\n}\n\\par\\vspace{2pt}{\\sffamily\\scriptsize\\itshape\\color{muted}Hình 3}\n\\end{minipage}",
+          "tier": "onclass",
+          "level": 1,
+          "dang_id": "NB2",
+          "solution": "Đáp án \\textbf{A}. Vì tổng bốn góc của tứ giác bằng $360^\\circ$ nên $\\widehat{C} = 360^\\circ - 105^\\circ - 75^\\circ - 80^\\circ = 100^\\circ$. Vậy $\\widehat{C} = 100^\\circ$.",
+          "figure_given": true
+        },
+        {
+          "type": "problem",
+          "label": "Bài 5.",
+          "statement": "\\par\\nopagebreak\n\\begin{minipage}[t]{0.64\\linewidth}\\vspace{0pt}\n[NB] Tứ giác $ABCD$ ở Hình 4 có $\\widehat{C} = 70^\\circ$. Số đo \\textbf{góc ngoài} tại đỉnh $C$ bằng:[[br]]\\par\\vspace{3pt}\\parbox[t]{0.46\\linewidth}{\\textbf{A.} $70^\\circ$}\\hspace{0.04\\linewidth}\\parbox[t]{0.46\\linewidth}{\\textbf{B.} $110^\\circ$}\\par\\vspace{4pt}\\parbox[t]{0.46\\linewidth}{\\textbf{C.} $140^\\circ$}\\hspace{0.04\\linewidth}\\parbox[t]{0.46\\linewidth}{\\textbf{D.} $290^\\circ$}\n\\end{minipage}\\hfill\n\\begin{minipage}[t]{0.31\\linewidth}\\vspace{0pt}\n\\centering\n\\adjustbox{max width=\\linewidth, max totalheight=2.4cm}{\n\\begin{tikzpicture}[line width=0.8pt, font=\\small]\n  \\coordinate (vA) at (0.5,1.9);\n  \\coordinate (vB) at (3.0,2.1);\n  \\coordinate (vC) at (3.6,0.0);\n  \\coordinate (vD) at (0.0,0.0);\n  \\coordinate (vCx) at (4.8,0.0);\n  \\draw[ink,fill=brand!8] (vA) -- (vB) -- (vC) -- (vD) -- cycle;\n  \\draw[ink,dashed] (vC) -- (vCx);\n  \\node[above left] at (vA) {$A$};\n  \\node[above right] at (vB) {$B$};\n  \\node[below] at (vC) {$C$};\n  \\node[below left] at (vD) {$D$};\n  \\node[below] at (vCx) {$x$};\n  \\node[brand,font=\\scriptsize] at (3.2,0.4) {$70^\\circ$};\n  \\draw[brand,line width=0.9pt] (4.1,0) arc (0:75:0.5);\n\\end{tikzpicture}\n}\n\\par\\vspace{2pt}{\\sffamily\\scriptsize\\itshape\\color{muted}Hình 4}\n\\end{minipage}",
+          "tier": "onclass",
+          "level": 1,
+          "dang_id": "NB2",
+          "solution": "Đáp án \\textbf{B}. Góc ngoài tại đỉnh $C$ kề bù với góc trong $\\widehat{C}$ nên có số đo bằng $180^\\circ - 70^\\circ = 110^\\circ$. Vậy góc ngoài tại đỉnh $C$ bằng $110^\\circ$.",
+          "figure_given": true
+        },
+        {
+          "type": "problem",
+          "label": "Bài 6.",
+          "statement": "[NB] Trong các khẳng định sau về hình thang cân, khẳng định nào \\textbf{SAI}?[[br]]\\par\\vspace{3pt}\\parbox[t]{0.46\\linewidth}{\\textbf{A.} Hình thang cân có hai góc kề một đáy bằng nhau}\\hspace{0.04\\linewidth}\\parbox[t]{0.46\\linewidth}{\\textbf{B.} Hình thang cân có hai đường chéo bằng nhau}\\par\\vspace{4pt}\\parbox[t]{0.46\\linewidth}{\\textbf{C.} Hình thang cân có hai cạnh bên bằng nhau}\\hspace{0.04\\linewidth}\\parbox[t]{0.46\\linewidth}{\\textbf{D.} Tứ giác có hai cạnh bên bằng nhau là hình thang cân}",
+          "tier": "onclass",
+          "level": 1,
+          "dang_id": "NB3",
+          "solution": "Đáp án \\textbf{D}. Khẳng định D sai vì tứ giác có hai cạnh bên bằng nhau có thể là hình bình hành hoặc tứ giác không có cạnh đáy song song, chưa đủ để là hình thang cân. Vậy khẳng định sai là D.",
+          "figure_given": true
+        },
+        {
+          "type": "problem",
+          "label": "Bài 7.",
+          "statement": "[NB] Đánh dấu Đúng (Đ) hoặc Sai (S) cho mỗi khẳng định sau:[[br]] a) Hình thang có hai đường chéo bằng nhau là hình thang cân. [[blank:1cm]][[br]] b) Hình thang có hai cạnh bên bằng nhau luôn là hình thang cân. [[blank:1cm]]",
+          "tier": "onclass",
+          "level": 1,
+          "dang_id": "NB3",
+          "solution": "a) \\textbf{Đ} (Dấu hiệu nhận biết 2 của hình thang cân).[[br]] b) \\textbf{S} (Hình thang có hai cạnh bên song song và bằng nhau là hình bình hành, không phải hình thang cân).[[br]] Vậy kết quả là: a) Đ; b) S.",
+          "figure_given": true
+        },
+        {
+          "type": "problem",
+          "label": "Bài 8.",
+          "statement": "[NB] Hãy vẽ hình và ghi giả thiết $-$ kết luận cho bài toán sau: [[br]] Tam giác $ABC$ cân tại $A$. Trên các cạnh $AB, AC$ lần lượt lấy các điểm $D, E$ sao cho $AD = AE$. Đánh dấu các đoạn thẳng và các góc bằng nhau trên hình.",
+          "tier": "onclass",
+          "level": 1,
+          "dang_id": "NB4",
+          "solution": "Giả thiết: $\\triangle ABC$ cân tại $A$, $D \\in AB, E \\in AC, AD = AE$.[[br]] Kết luận: $BDEC$ là hình thang cân.[[br]] Hình vẽ: Tam giác $ABC$ cân tại $A$ với $AB=AC$, đoạn thẳng $DE$ song song với $BC$, đánh dấu $AD=AE$ và $\\widehat{B}=\\widehat{C}$. Vậy đã hoàn thành hình vẽ và GT--KL.",
+          "draw": true
+        },
+        {
+          "type": "problem",
+          "label": "Bài 9.",
+          "statement": "\\par\\nopagebreak\n\\begin{minipage}[t]{0.64\\linewidth}\\vspace{0pt}\nQuan sát Hình 5 (hình thang cân $ABCD$ có $AB \\parallel CD$).[[br]] Điền vào chỗ trống để hoàn thành chứng minh hai đường chéo $AC = BD$:[[br]] a) [NB] Xét $\\triangle ADC$ và $\\triangle BCD$ có: $AD = BC$ (tính chất hình thang cân); $\\widehat{ADC} = \\widehat{BCD}$ (hai góc kề đáy); cạnh [[blank:1.2cm]] là cạnh chung.[[br]] b) [NB] Do đó $\\triangle ADC = \\triangle BCD$ theo trường hợp [[blank:1.4cm]], suy ra $AC = BD$ (hai cạnh tương ứng).\n\\end{minipage}\\hfill\n\\begin{minipage}[t]{0.31\\linewidth}\\vspace{0pt}\n\\centering\n\\adjustbox{max width=\\linewidth, max totalheight=2.4cm}{\n\\begin{tikzpicture}[line width=0.8pt, font=\\small]\n  \\coordinate (vA) at (0.8,1.8);\n  \\coordinate (vB) at (2.4,1.8);\n  \\coordinate (vC) at (3.2,0.0);\n  \\coordinate (vD) at (0.0,0.0);\n  \\draw[ink,fill=brand!8] (vA) -- (vB) -- (vC) -- (vD) -- cycle;\n  \\draw[brand,line width=1.0pt] (vA) -- (vC);\n  \\draw[brand,line width=1.0pt] (vB) -- (vD);\n  \\node[above left] at (vA) {$A$};\n  \\node[above right] at (vB) {$B$};\n  \\node[below right] at (vC) {$C$};\n  \\node[below left] at (vD) {$D$};\n\\end{tikzpicture}\n}\n\\par\\vspace{2pt}{\\sffamily\\scriptsize\\itshape\\color{muted}Hình 5}\n\\end{minipage}",
+          "tier": "onclass",
+          "level": 1,
+          "dang_id": "NB5",
+          "solution": "a) $CD$.[[br]] b) c.g.c (cạnh -- góc -- cạnh).[[br]] Vậy chỗ trống a là $CD$ và chỗ trống b là c.g.c.",
+          "figure_given": true
+        },
+        {
+          "type": "problem",
+          "label": "Bài 10.",
+          "statement": "\\par\\nopagebreak\n\\begin{minipage}[t]{0.64\\linewidth}\\vspace{0pt}\nCho tam giác $ADE$ có $AD = AE$ (Hình 6).[[br]] a) [NB] Tam giác $ADE$ là tam giác gì?[[br]] b) [NB] Viết công thức tính số đo góc đáy $\\widehat{ADE}$ theo số đo góc ở đỉnh $\\widehat{A}$.\n\\end{minipage}\\hfill\n\\begin{minipage}[t]{0.31\\linewidth}\\vspace{0pt}\n\\centering\n\\adjustbox{max width=\\linewidth, max totalheight=2.4cm}{\n\\begin{tikzpicture}[line width=0.8pt, font=\\small]\n  \\coordinate (vA) at (1.6,2.2);\n  \\coordinate (vD) at (0.4,0.0);\n  \\coordinate (vE) at (2.8,0.0);\n  \\draw[ink,fill=brand!8] (vA) -- (vD) -- (vE) -- cycle;\n  \\node[above] at (vA) {$A$};\n  \\node[below left] at (vD) {$D$};\n  \\node[below right] at (vE) {$E$};\n  \\node[ink,font=\\scriptsize] at (0.85,1.15) {$|$};\n  \\node[ink,font=\\scriptsize] at (2.35,1.15) {$|$};\n\\end{tikzpicture}\n}\n\\par\\vspace{2pt}{\\sffamily\\scriptsize\\itshape\\color{muted}Hình 6}\n\\end{minipage}",
+          "tier": "onclass",
+          "level": 1,
+          "dang_id": "NB6",
+          "solution": "a) Vì $AD = AE$ nên $\\triangle ADE$ cân tại $A$.[[br]] b) Trong tam giác cân $ADE$, tổng ba góc bằng $180^\\circ$ và $\\widehat{ADE} = \\widehat{AED}$ nên $\\widehat{ADE} = \\dfrac{180^\\circ - \\widehat{A}}{2}$.[[br]] Vậy $\\triangle ADE$ cân tại $A$ và $\\widehat{ADE} = \\dfrac{180^\\circ - \\widehat{A}}{2}$.",
+          "figure_given": true
+        }
+      ],
+      "teacher_note": "Bài 1 đến Bài 7 cho HS làm nhanh trong 10 phút đầu. Bài 8 kiểm tra kĩ năng vẽ hình và ghi GT--KL. Bài 9, 10 là giàn giáo để HS tự tin làm Bài 12 và Bài 13 ở Luyện tập 2."
+    },
+    {
+      "kind": "practice2",
+      "number": 4,
+      "title": "Luyện tập 2",
+      "blocks": [
+        {
+          "type": "problem",
+          "label": "Bài 11.",
+          "statement": "\\par\\nopagebreak\n\\begin{minipage}[t]{0.64\\linewidth}\\vspace{0pt}\na) [TH] Cho tứ giác $ABCD$ có $\\widehat{A}=70^\\circ, \\widehat{B}=110^\\circ$ và $\\widehat{C}=2\\widehat{D}$. Tính số đo $\\widehat{C}$ và $\\widehat{D}$.[[br]] b) [TH] Hình thang cân $ABCD$ ($AB \\parallel CD$) ở Hình 7 có $\\widehat{A} = 3\\widehat{D}$. Tính các góc của hình thang cân đó.\n\\end{minipage}\\hfill\n\\begin{minipage}[t]{0.31\\linewidth}\\vspace{0pt}\n\\centering\n\\adjustbox{max width=\\linewidth, max totalheight=2.4cm}{\n\\begin{tikzpicture}[line width=0.8pt, font=\\small]\n  \\coordinate (vA) at (0.8,1.8);\n  \\coordinate (vB) at (2.4,1.8);\n  \\coordinate (vC) at (3.2,0.0);\n  \\coordinate (vD) at (0.0,0.0);\n  \\draw[ink,fill=brand!8] (vA) -- (vB) -- (vC) -- (vD) -- cycle;\n  \\node[above left] at (vA) {$A$};\n  \\node[above right] at (vB) {$B$};\n  \\node[below right] at (vC) {$C$};\n  \\node[below left] at (vD) {$D$};\n\\end{tikzpicture}\n}\n\\par\\vspace{2pt}{\\sffamily\\scriptsize\\itshape\\color{muted}Hình 7}\n\\end{minipage}",
+          "tier": "onclass",
+          "level": 2,
+          "dang_id": "TH1",
+          "solution": "a) Vì tổng bốn góc của tứ giác bằng $360^\\circ$ nên:[[br]]\\hspace*{1.4em}$\\widehat{C}+\\widehat{D} = 360^\\circ - 70^\\circ - 110^\\circ = 180^\\circ$.[[br]]\\hspace*{1.4em}Mà $\\widehat{C} = 2\\widehat{D}$ nên $2\\widehat{D}+\\widehat{D} = 180^\\circ \\implies 3\\widehat{D} = 180^\\circ \\implies \\widehat{D} = 60^\\circ$.[[br]]\\hspace*{1.4em}Suy ra $\\widehat{C} = 2 \\cdot 60^\\circ = 120^\\circ$.[[br]]\\hspace*{1.4em}Vậy $\\widehat{C} = 120^\\circ, \\widehat{D} = 60^\\circ$.[[br]] b) Vì $AB \\parallel CD$ nên hai góc trong cùng phía bù nhau: $\\widehat{A}+\\widehat{D} = 180^\\circ$.[[br]]\\hspace*{1.4em}Mà $\\widehat{A} = 3\\widehat{D}$ nên $3\\widehat{D}+\\widehat{D} = 180^\\circ \\implies 4\\widehat{D} = 180^\\circ \\implies \\widehat{D} = 45^\\circ$.[[br]]\\hspace*{1.4em}Suy ra $\\widehat{A} = 3 \\cdot 45^\\circ = 135^\\circ$.[[br]]\\hspace*{1.4em}Vì $ABCD$ là hình thang cân nên $\\widehat{B} = \\widehat{A} = 135^\\circ$ và $\\widehat{C} = \\widehat{D} = 45^\\circ$.[[br]]\\hspace*{1.4em}Vậy $\\widehat{A} = \\widehat{B} = 135^\\circ$ và $\\widehat{C} = \\widehat{D} = 45^\\circ$.",
+          "figure_given": true,
+          "hints": [
+            "Hai góc trong cùng phía của hình thang có tổng bằng $180^\\circ$."
+          ]
+        },
+        {
+          "type": "problem",
+          "label": "Bài 12.",
+          "statement": "\\par\\nopagebreak\n\\begin{minipage}[t]{0.64\\linewidth}\\vspace{0pt}\nCho tam giác $ABC$ cân tại $A$. Trên các cạnh $AB, AC$ lần lượt lấy các điểm $D, E$ sao cho $AD = AE$ (Hình 8).[[br]] a) [TH] Chứng minh tứ giác $BDEC$ là hình thang cân.[[br]] b) [TH] Biết $\\widehat{A} = 50^\\circ$, hãy tính các góc của hình thang cân $BDEC$.\n\\end{minipage}\\hfill\n\\begin{minipage}[t]{0.31\\linewidth}\\vspace{0pt}\n\\centering\n\\adjustbox{max width=\\linewidth, max totalheight=2.4cm}{\n\\begin{tikzpicture}[line width=0.8pt, font=\\small]\n  \\coordinate (vA) at (1.6,2.4);\n  \\coordinate (vB) at (0.0,0.0);\n  \\coordinate (vC) at (3.2,0.0);\n  \\coordinate (vD) at (0.6,0.9);\n  \\coordinate (vE) at (2.6,0.9);\n  \\draw[ink] (vA) -- (vB) -- (vC) -- cycle;\n  \\draw[brand,line width=1.1pt,fill=brand!8] (vD) -- (vE) -- (vC) -- (vB) -- cycle;\n  \\node[above] at (vA) {$A$};\n  \\node[below left] at (vB) {$B$};\n  \\node[below right] at (vC) {$C$};\n  \\node[left] at (vD) {$D$};\n  \\node[right] at (vE) {$E$};\n  \\node[ink,font=\\scriptsize] at (1.0,1.75) {$|$};\n  \\node[ink,font=\\scriptsize] at (2.2,1.75) {$|$};\n\\end{tikzpicture}\n}\n\\par\\vspace{2pt}{\\sffamily\\scriptsize\\itshape\\color{muted}Hình 8}\n\\end{minipage}",
+          "tier": "onclass",
+          "level": 2,
+          "dang_id": "TH2",
+          "solution": "a) Xét $\\triangle ABC$ cân tại $A$, ta có $\\widehat{B} = \\dfrac{180^\\circ - \\widehat{A}}{2}$.[[br]]\\hspace*{1.4em}Xét $\\triangle ADE$ có $AD = AE$ nên $\\triangle ADE$ cân tại $A$, suy ra $\\widehat{ADE} = \\dfrac{180^\\circ - \\widehat{A}}{2}$.[[br]]\\hspace*{1.4em}Do đó $\\widehat{ADE} = \\widehat{B}$, mà hai góc này ở vị trí đồng vị nên $DE \\parallel BC$.[[br]]\\hspace*{1.4em}Tứ giác $BDEC$ có $DE \\parallel BC$ nên là hình thang.[[br]]\\hspace*{1.4em}Hình thang $BDEC$ có hai góc kề đáy $\\widehat{B} = \\widehat{C}$ (do $\\triangle ABC$ cân tại $A$) nên $BDEC$ là hình thang cân.[[br]]\\hspace*{1.4em}Vậy $BDEC$ là hình thang cân.[[br]] b) Với $\\widehat{A} = 50^\\circ$, ta có $\\widehat{B} = \\widehat{C} = (180^\\circ - 50^\\circ) : 2 = 65^\\circ$.[[br]]\\hspace*{1.4em}Vì $BDEC$ là hình thang ($DE \\parallel BC$) nên $\\widehat{BDE} = 180^\\circ - \\widehat{B} = 180^\\circ - 65^\\circ = 115^\\circ$.[[br]]\\hspace*{1.4em}Vì $BDEC$ là hình thang cân nên $\\widehat{DEC} = \\widehat{BDE} = 115^\\circ$.[[br]]\\hspace*{1.4em}Vậy các góc của hình thang cân là $\\widehat{B} = \\widehat{C} = 65^\\circ$ và $\\widehat{BDE} = \\widehat{DEC} = 115^\\circ$.",
+          "figure_given": true,
+          "hints": [
+            "Tính $\\widehat{ADE}$ và $\\widehat{B}$ theo $\\widehat{A}$ để chỉ ra $DE \\parallel BC$."
+          ]
+        },
+        {
+          "type": "problem",
+          "label": "Bài 13.",
+          "statement": "\\par\\nopagebreak\n\\begin{minipage}[t]{0.64\\linewidth}\\vspace{0pt}\nCho hình thang cân $ABCD$ ($AB \\parallel CD$). Gọi $O$ là giao điểm của hai đường chéo $AC$ và $BD$ (Hình 9).[[br]] a) [TH] Chứng minh $\\triangle ADC = \\triangle BCD$, từ đó suy ra $\\widehat{ACD} = \\widehat{BDC}$.[[br]] b) [TH] Chứng minh $\\triangle OCD$ cân tại $O$ và $OA = OB$.\n\\end{minipage}\\hfill\n\\begin{minipage}[t]{0.31\\linewidth}\\vspace{0pt}\n\\centering\n\\adjustbox{max width=\\linewidth, max totalheight=2.4cm}{\n\\begin{tikzpicture}[line width=0.8pt, font=\\small]\n  \\coordinate (vA) at (0.8,1.8);\n  \\coordinate (vB) at (2.4,1.8);\n  \\coordinate (vC) at (3.2,0.0);\n  \\coordinate (vD) at (0.0,0.0);\n  \\draw[ink,fill=brand!8] (vA) -- (vB) -- (vC) -- (vD) -- cycle;\n  \\draw[brand,line width=1.0pt] (vA) -- (vC);\n  \\draw[brand,line width=1.0pt] (vB) -- (vD);\n  \\fill[brand] (1.6,0.9) circle (1.3pt) node[above=1pt]{$O$};\n  \\node[above left] at (vA) {$A$};\n  \\node[above right] at (vB) {$B$};\n  \\node[below right] at (vC) {$C$};\n  \\node[below left] at (vD) {$D$};\n\\end{tikzpicture}\n}\n\\par\\vspace{2pt}{\\sffamily\\scriptsize\\itshape\\color{muted}Hình 9}\n\\end{minipage}",
+          "tier": "onclass",
+          "level": 2,
+          "dang_id": "TH3",
+          "solution": "a) Xét $\\triangle ADC$ và $\\triangle BCD$ có: $AD = BC$ (tính chất hình thang cân), $\\widehat{ADC} = \\widehat{BCD}$ (hai góc kề đáy), $CD$ là cạnh chung.[[br]]\\hspace*{1.4em}Do đó $\\triangle ADC = \\triangle BCD$ (c.g.c).[[br]]\\hspace*{1.4em}Suy ra $\\widehat{ACD} = \\widehat{BDC}$ (hai góc tương ứng).[[br]]\\hspace*{1.4em}Vậy $\\triangle ADC = \\triangle BCD$ và $\\widehat{ACD} = \\widehat{BDC}$.[[br]] b) Xét $\\triangle OCD$ có $\\widehat{OCD} = \\widehat{ODC}$ (do $\\widehat{ACD} = \\widehat{BDC}$) nên $\\triangle OCD$ cân tại $O$, suy ra $OC = OD$.[[br]]\\hspace*{1.4em}Mặt khác, hình thang cân $ABCD$ có hai đường chéo bằng nhau: $AC = BD$.[[br]]\\hspace*{1.4em}Ta có $OA = AC - OC$ và $OB = BD - OD$. Vì $AC = BD$ và $OC = OD$ nên $OA = OB$.[[br]]\\hspace*{1.4em}Vậy $\\triangle OCD$ cân tại $O$ và $OA = OB$.",
+          "figure_given": true,
+          "hints": [
+            "Dùng hai tam giác bằng nhau chứa cạnh đáy chung $CD$."
+          ]
+        },
+        {
+          "type": "problem",
+          "label": "Bài 14.",
+          "statement": "\\par\\nopagebreak\n\\begin{minipage}[t]{0.64\\linewidth}\\vspace{0pt}\n[VD] (Đề kiểm tra giữa chương) Cho tứ giác $ABCD$ có $AB = AD$ và $CB = CD$ (Hình 10). Kẻ hai đường chéo $AC$ và $BD$.[[br]] Chứng minh $AC$ là đường trung trực của đoạn thẳng $BD$. Biết $\\widehat{A}=100^\\circ$ và $\\widehat{C}=60^\\circ$, tính số đo $\\widehat{B}$ và $\\widehat{D}$.\n\\end{minipage}\\hfill\n\\begin{minipage}[t]{0.31\\linewidth}\\vspace{0pt}\n\\centering\n\\adjustbox{max width=\\linewidth, max totalheight=2.4cm}{\n\\begin{tikzpicture}[line width=0.8pt, font=\\small]\n  \\coordinate (vA) at (1.9,2.8);\n  \\coordinate (vB) at (3.4,1.5);\n  \\coordinate (vC) at (1.9,0.0);\n  \\coordinate (vD) at (0.4,1.5);\n  \\draw[ink,fill=brand!8] (vA) -- (vB) -- (vC) -- (vD) -- cycle;\n  \\node[above] at (vA) {$A$};\n  \\node[right] at (vB) {$B$};\n  \\node[below] at (vC) {$C$};\n  \\node[left] at (vD) {$D$};\n  \\node[ink,font=\\scriptsize] at (2.65,2.15) {$|$};\n  \\node[ink,font=\\scriptsize] at (2.65,0.75) {$||$};\n  \\node[ink,font=\\scriptsize] at (1.15,0.75) {$||$};\n  \\node[ink,font=\\scriptsize] at (1.15,2.15) {$|$};\n  \\draw[brand,line width=1.0pt] (vA) -- (vC);\n  \\draw[ink,dashed] (vB) -- (vD);\n\\end{tikzpicture}\n}\n\\par\\vspace{2pt}{\\sffamily\\scriptsize\\itshape\\color{muted}Hình 10}\n\\end{minipage}",
+          "tier": "onclass",
+          "level": 3,
+          "dang_id": "VD1",
+          "solution": "Vì $AB = AD$ nên điểm $A$ cách đều hai đầu mút của đoạn thẳng $BD$, do đó $A$ nằm trên đường trung trực của $BD$.[[br]]\\hspace*{1.4em}Vì $CB = CD$ nên điểm $C$ cũng nằm trên đường trung trực của $BD$.[[br]]\\hspace*{1.4em}Đường trung trực của $BD$ đi qua hai điểm phân biệt $A$ và $C$ nên nó chính là đường thẳng $AC$.[[br]]\\hspace*{1.4em}Xét $\\triangle ABC$ và $\\triangle ADC$ có: $AB = AD$ (giả thiết), $CB = CD$ (giả thiết), $AC$ là cạnh chung, do đó $\\triangle ABC = \\triangle ADC$ (c.c.c).[[br]]\\hspace*{1.4em}Suy ra $\\widehat{B} = \\widehat{D}$ (hai góc tương ứng).[[br]]\\hspace*{1.4em}Vì tổng bốn góc của tứ giác bằng $360^\\circ$ nên $\\widehat{B}+\\widehat{D} = 360^\\circ - 100^\\circ - 60^\\circ = 200^\\circ$.[[br]]\\hspace*{1.4em}Do đó $\\widehat{B} = \\widehat{D} = 200^\\circ : 2 = 100^\\circ$.[[br]]\\hspace*{1.4em}Vậy $AC$ là đường trung trực của đoạn thẳng $BD$ và $\\widehat{B} = \\widehat{D} = 100^\\circ$.",
+          "figure_given": true,
+          "hints": [
+            "Điểm cách đều hai đầu mút của một đoạn thẳng thì nằm trên đường trung trực của đoạn thẳng đó."
+          ]
+        },
+        {
+          "type": "problem",
+          "label": "Bài 15.",
+          "statement": "\\par\\nopagebreak\n\\begin{minipage}[t]{0.64\\linewidth}\\vspace{0pt}\n[VD] Cho hình thang cân $ABCD$ ($AB \\parallel CD, AB < CD$). Hai cạnh bên $AD$ và $BC$ kéo dài cắt nhau tại điểm $S$ (Hình 11). Gọi $O$ là giao điểm của $AC$ và $BD$. Chứng minh đường thẳng $SO$ là đường trung trực của cả hai đoạn thẳng $AB$ và $CD$.\n\\end{minipage}\\hfill\n\\begin{minipage}[t]{0.31\\linewidth}\\vspace{0pt}\n\\centering\n\\adjustbox{max width=\\linewidth, max totalheight=2.6cm}{\n\\begin{tikzpicture}[line width=0.8pt, font=\\small]\n  \\coordinate (vS) at (1.6,2.7);\n  \\coordinate (vA) at (0.8,1.35);\n  \\coordinate (vB) at (2.4,1.35);\n  \\coordinate (vC) at (3.2,0.0);\n  \\coordinate (vD) at (0.0,0.0);\n  \\coordinate (1.6,0.9) at (1.6,0.675);\n  \\draw[ink,fill=brand!8] (vA) -- (vB) -- (vC) -- (vD) -- cycle;\n  \\draw[ink,dashed] (vA) -- (vS) -- (vB);\n  \\draw[ink,dashed] (vA) -- (vC);\n  \\draw[ink,dashed] (vB) -- (vD);\n  \\draw[brand,line width=1.0pt] (vS) -- (1.6,0.0);\n  \\fill[brand] (1.6,0.9) circle (1.3pt) node[right=1pt]{$O$};\n  \\node[above] at (vS) {$S$};\n  \\node[left] at (vA) {$A$};\n  \\node[right] at (vB) {$B$};\n  \\node[below right] at (vC) {$C$};\n  \\node[below left] at (vD) {$D$};\n\\end{tikzpicture}\n}\n\\par\\vspace{2pt}{\\sffamily\\scriptsize\\itshape\\color{muted}Hình 11}\n\\end{minipage}",
+          "tier": "onclass",
+          "level": 3,
+          "dang_id": "VD1",
+          "solution": "Vì $ABCD$ là hình thang cân ($AB \\parallel CD$) nên $\\widehat{SDC} = \\widehat{SCD}$, suy ra $\\triangle SCD$ cân tại $S$, do đó $SD = SC$.[[br]]\\hspace*{1.4em}Vì $AB \\parallel CD$ nên $\\widehat{SAB} = \\widehat{SDC}$ và $\\widehat{SBA} = \\widehat{SCD}$ (các cặp góc đồng vị).[[br]]\\hspace*{1.4em}Mà $\\widehat{SDC} = \\widehat{SCD}$ nên $\\widehat{SAB} = \\widehat{SBA}$, suy ra $\\triangle SAB$ cân tại $S$, do đó $SA = SB$.[[br]]\\hspace*{1.4em}Vì $SA = SB$ nên $S$ nằm trên đường trung trực của $AB$; vì $SD = SC$ nên $S$ nằm trên đường trung trực của $CD$.[[br]]\\hspace*{1.4em}Mặt khác, từ Bài 13, ta có $OA = OB$ và $OC = OD$ nên điểm $O$ cũng nằm trên đường trung trực của cả hai đoạn thẳng $AB$ và $CD$.[[br]]\\hspace*{1.4em}Đường thẳng $SO$ đi qua hai điểm phân biệt cùng cách đều hai đầu mút của $AB$ và cùng cách đều hai đầu mút của $CD$.[[br]]\\hspace*{1.4em}Vậy đường thẳng $SO$ là đường trung trực của cả hai đoạn thẳng $AB$ và $CD$.",
+          "figure_given": true,
+          "hints": [
+            "Dùng các cặp góc đồng vị khi $AB \\parallel CD$ để chứng minh tam giác cân tại $S$.",
+            "Chỉ ra $S$ và $O$ đều cách đều hai đầu mút của mỗi đoạn thẳng."
+          ]
+        }
+      ],
+      "teacher_note": "Bài 12 và 13 là hai bài cốt lõi: yêu cầu HS trình bày trọn vẹn, lập luận chặt chẽ. Bài 14 và 15 là bài hình 10 điểm của đề thi giữa chương — nhấn mạnh phương pháp chứng minh đường trung trực bằng 2 điểm cách đều."
+    },
+    {
+      "kind": "reflection",
+      "number": 5,
+      "title": "Tổng kết \\& BTVN",
+      "blocks": [
+        {
+          "type": "mindmap",
+          "size": "small",
+          "caption": "Điền các ô trống để hoàn thiện sơ đồ kiến thức của buổi",
+          "root": "TỨ GIÁC \\& HÌNH THANG CÂN",
+          "branches": [
+            {
+              "label": "Tứ giác lồi",
+              "children": [
+                {
+                  "label": "Tổng 4 góc: $\\widehat{A}+\\widehat{B}+\\widehat{C}+\\widehat{D} = $ [[blank:1.4cm]]"
+                },
+                {
+                  "label": "Góc ngoài: $180^\\circ - $ [[blank:1.4cm]]"
+                }
+              ]
+            },
+            {
+              "label": "Hình thang ($AB \\parallel CD$)",
+              "children": [
+                {
+                  "label": "Góc trong cùng phía: $\\widehat{A}+\\widehat{D} = $ [[blank:1.4cm]]"
+                },
+                {
+                  "label": "Hình thang vuông: có 1 góc bằng $90^\\circ$"
+                }
+              ]
+            },
+            {
+              "label": "Hình thang cân",
+              "children": [
+                {
+                  "label": "2 góc kề 1 đáy bằng nhau: $\\widehat{D} = $ [[blank:1.2cm]]"
+                },
+                {
+                  "label": "2 đường chéo bằng nhau: $AC = $ [[blank:1.2cm]]"
+                },
+                {
+                  "label": "2 cạnh bên bằng nhau: $AD = $ [[blank:1.2cm]]"
+                }
+              ]
+            }
+          ]
+        },
+        {
+          "type": "problem",
+          "label": "BTVN 1.",
+          "statement": "[NB] Nối mỗi khẳng định ở Cột A với kết luận phù hợp ở Cột B:[[br]]\\par\\vspace{3pt}\n\\begin{tabular}{p{5.5cm} @{\\hspace{2.5cm}} p{6.5cm}}\n\\textbf{Cột A (Khẳng định)} & \\textbf{Cột B (Kết luận)} \\\\[4pt]\n(1) Tứ giác có hai cạnh đối song song & (a) là hình thang cân. \\\\[4pt]\n(2) Hình thang có hai góc kề một đáy bằng nhau & (b) là hình thang. \\\\[4pt]\n(3) Tứ giác có $\\widehat{A}+\\widehat{B}+\\widehat{C}+\\widehat{D}=360^\\circ$ & (c) là tính chất của mọi tứ giác lồi.\n\\end{tabular}",
+          "tier": "btvn",
+          "level": 1,
+          "dang_id": "NB1",
+          "solution": "Nối: (1) nối với (b); (2) nối với (a); (3) nối với (c). Vậy các cặp nối là: 1--b, 2--a, 3--c.",
+          "figure_given": true,
+          "writelines": 0
+        },
+        {
+          "type": "problem",
+          "label": "BTVN 2.",
+          "statement": "\\par\\nopagebreak\n\\begin{minipage}[t]{0.64\\linewidth}\\vspace{0pt}\n[NB] Cho hình thang cân $MNPQ$ ($MN \\parallel PQ$) ở Hình 12 có $\\widehat{M}=120^\\circ$. Tính số đo ba góc còn lại của hình thang cân.\n\\end{minipage}\\hfill\n\\begin{minipage}[t]{0.31\\linewidth}\\vspace{0pt}\n\\centering\n\\adjustbox{max width=\\linewidth, max totalheight=2.4cm}{\n\\begin{tikzpicture}[line width=0.8pt, font=\\small]\n  \\coordinate (vM) at (0.8,1.8);\n  \\coordinate (vN) at (2.4,1.8);\n  \\coordinate (vP) at (3.2,0.0);\n  \\coordinate (vQ) at (0.0,0.0);\n  \\draw[ink,fill=brand!8] (vM) -- (vN) -- (vP) -- (vQ) -- cycle;\n  \\node[above left] at (vM) {$M$};\n  \\node[above right] at (vN) {$N$};\n  \\node[below right] at (vP) {$P$};\n  \\node[below left] at (vQ) {$Q$};\n  \\node[brand,font=\\scriptsize] at (1.05,1.55) {$120^\\circ$};\n\\end{tikzpicture}\n}\n\\par\\vspace{2pt}{\\sffamily\\scriptsize\\itshape\\color{muted}Hình 12}\n\\end{minipage}",
+          "tier": "btvn",
+          "level": 1,
+          "dang_id": "NB1",
+          "solution": "Vì $MNPQ$ là hình thang cân ($MN \\parallel PQ$) nên $\\widehat{N} = \\widehat{M} = 120^\\circ$.[[br]] Vì $MN \\parallel PQ$ nên $\\widehat{Q} = 180^\\circ - \\widehat{M} = 180^\\circ - 120^\\circ = 60^\\circ$.[[br]] Suy ra $\\widehat{P} = \\widehat{Q} = 60^\\circ$.[[br]] Vậy $\\widehat{N} = 120^\\circ, \\widehat{P} = 60^\\circ, \\widehat{Q} = 60^\\circ$.",
+          "figure_given": true
+        },
+        {
+          "type": "problem",
+          "label": "BTVN 3.",
+          "statement": "\\par\\nopagebreak\n\\begin{minipage}[t]{0.64\\linewidth}\\vspace{0pt}\n[NB] Tứ giác $EFGH$ ở Hình 13 có $\\widehat{E}=90^\\circ, \\widehat{F}=85^\\circ, \\widehat{G}=65^\\circ$. Số đo góc trong $\\widehat{H}$ và góc ngoài tại đỉnh $H$ lần lượt bằng:[[br]]\\par\\vspace{3pt}\\parbox[t]{0.46\\linewidth}{\\textbf{A.} $120^\\circ$ và $60^\\circ$}\\hspace{0.04\\linewidth}\\parbox[t]{0.46\\linewidth}{\\textbf{B.} $110^\\circ$ và $70^\\circ$}\\par\\vspace{4pt}\\parbox[t]{0.46\\linewidth}{\\textbf{C.} $120^\\circ$ và $70^\\circ$}\\hspace{0.04\\linewidth}\\parbox[t]{0.46\\linewidth}{\\textbf{D.} $100^\\circ$ và $80^\\circ$}\n\\end{minipage}\\hfill\n\\begin{minipage}[t]{0.31\\linewidth}\\vspace{0pt}\n\\centering\n\\adjustbox{max width=\\linewidth, max totalheight=2.4cm}{\n\\begin{tikzpicture}[line width=0.8pt, font=\\small]\n  \\coordinate (vE) at (0.5,1.9);\n  \\coordinate (vF) at (3.3,2.3);\n  \\coordinate (vG) at (4.0,0.5);\n  \\coordinate (vH) at (0.0,0.0);\n  \\draw[ink,fill=brand!8] (vE) -- (vF) -- (vG) -- (vH) -- cycle;\n  \\node[above left] at (vE) {$E$};\n  \\node[above right] at (vF) {$F$};\n  \\node[below right] at (vG) {$G$};\n  \\node[below left] at (vH) {$H$};\n  \\node[brand,font=\\scriptsize] at (0.85,1.55) {$90^\\circ$};\n  \\node[brand,font=\\scriptsize] at (2.9,1.95) {$85^\\circ$};\n  \\node[brand,font=\\scriptsize] at (3.5,0.7) {$65^\\circ$};\n\\end{tikzpicture}\n}\n\\par\\vspace{2pt}{\\sffamily\\scriptsize\\itshape\\color{muted}Hình 13}\n\\end{minipage}",
+          "tier": "btvn",
+          "level": 1,
+          "dang_id": "NB2",
+          "solution": "Đáp án \\textbf{A}. Ta có $\\widehat{H} = 360^\\circ - 90^\\circ - 85^\\circ - 65^\\circ = 120^\\circ$. Góc ngoài tại đỉnh $H$ bằng $180^\\circ - 120^\\circ = 60^\\circ$. Vậy số đo góc trong là $120^\\circ$ và góc ngoài là $60^\\circ$.",
+          "figure_given": true
+        },
+        {
+          "type": "problem",
+          "label": "BTVN 4.",
+          "statement": "[NB] Cho tứ giác $ABCD$ có $\\widehat{A}=80^\\circ, \\widehat{B}=70^\\circ, \\widehat{C}=110^\\circ$. Tính số đo $\\widehat{D}$ và góc ngoài tại đỉnh $D$.",
+          "tier": "btvn",
+          "level": 1,
+          "dang_id": "NB2",
+          "solution": "Vì tổng bốn góc của tứ giác bằng $360^\\circ$ nên $\\widehat{D} = 360^\\circ - 80^\\circ - 70^\\circ - 110^\\circ = 100^\\circ$.[[br]] Góc ngoài tại đỉnh $D$ bằng $180^\\circ - 100^\\circ = 80^\\circ$.[[br]] Vậy $\\widehat{D} = 100^\\circ$ và góc ngoài tại đỉnh $D$ bằng $80^\\circ$.",
+          "figure_given": true
+        },
+        {
+          "type": "problem",
+          "label": "BTVN 5.",
+          "statement": "Chọn Đúng (Đ) hoặc Sai (S) cho các khẳng định sau:[[br]] a) [NB] Trong hình thang cân, hai đường chéo cắt nhau tại trung điểm mỗi đường. [[blank:1cm]][[br]] b) [NB] Trong hình thang cân, hai góc đối diện bù nhau. [[blank:1cm]]",
+          "tier": "btvn",
+          "level": 1,
+          "dang_id": "NB3",
+          "solution": "a) \\textbf{S} (Hai đường chéo bằng nhau nhưng không cắt nhau tại trung điểm mỗi đường; chỉ có hình bình hành mới có tính chất này).[[br]] b) \\textbf{Đ} (Vì hai góc kề đáy bằng nhau và hai góc trong cùng phía bù nhau nên hai góc đối diện bù nhau).[[br]] Vậy kết quả là: a) S; b) Đ.",
+          "figure_given": true
+        },
+        {
+          "type": "problem",
+          "label": "BTVN 6.",
+          "statement": "[NB] Hãy vẽ hình thang cân $ABCD$ ($AB \\parallel CD, AB < CD$) có hai đường chéo $AC$ và $BD$ cắt nhau tại $O$. Đánh dấu các cặp đoạn thẳng bằng nhau $AD=BC$, $OA=OB$, $OC=OD$ trên hình.",
+          "tier": "btvn",
+          "level": 1,
+          "dang_id": "NB4",
+          "solution": "Hình vẽ phải thể hiện: Hình thang cân $ABCD$ ($AB \\parallel CD$), hai đường chéo $AC, BD$ cắt nhau tại $O$; đánh dấu $AD=BC$ (1 gạch), $OA=OB$ (2 gạch), $OC=OD$ (3 gạch). Vậy hoàn thành hình vẽ yêu cầu.",
+          "draw": true
+        },
+        {
+          "type": "problem",
+          "label": "BTVN 7.",
+          "statement": "\\par\\nopagebreak\n\\begin{minipage}[t]{0.64\\linewidth}\\vspace{0pt}\nQuan sát Hình 14 (hình thang cân $MNPQ$ có $MN \\parallel PQ$).[[br]] Điền vào chỗ trống để hoàn thành chứng minh $\\triangle MPQ = \\triangle NQP$:[[br]] a) [NB] Ta có $MQ = NP$ (tính chất hình thang cân), $\\widehat{MQP} = \\widehat{NPQ}$ (hai góc kề đáy), cạnh [[blank:1.2cm]] là cạnh chung.[[br]] b) [NB] Do đó $\\triangle MPQ = \\triangle NQP$ theo trường hợp [[blank:1.4cm]], suy ra $MP = NQ$.\n\\end{minipage}\\hfill\n\\begin{minipage}[t]{0.31\\linewidth}\\vspace{0pt}\n\\centering\n\\adjustbox{max width=\\linewidth, max totalheight=2.4cm}{\n\\begin{tikzpicture}[line width=0.8pt, font=\\small]\n  \\coordinate (vM) at (0.8,1.8);\n  \\coordinate (vN) at (2.4,1.8);\n  \\coordinate (vP) at (3.2,0.0);\n  \\coordinate (vQ) at (0.0,0.0);\n  \\draw[ink,fill=brand!8] (vM) -- (vN) -- (vP) -- (vQ) -- cycle;\n  \\draw[brand,line width=1.0pt] (vM) -- (vP);\n  \\draw[brand,line width=1.0pt] (vN) -- (vQ);\n  \\node[above left] at (vM) {$M$};\n  \\node[above right] at (vN) {$N$};\n  \\node[below right] at (vP) {$P$};\n  \\node[below left] at (vQ) {$Q$};\n\\end{tikzpicture}\n}\n\\par\\vspace{2pt}{\\sffamily\\scriptsize\\itshape\\color{muted}Hình 14}\n\\end{minipage}",
+          "tier": "btvn",
+          "level": 1,
+          "dang_id": "NB5",
+          "solution": "a) $PQ$.[[br]] b) c.g.c.[[br]] Vậy chỗ trống a là $PQ$ và chỗ trống b là c.g.c.",
+          "figure_given": true
+        },
+        {
+          "type": "problem",
+          "label": "BTVN 8.",
+          "statement": "\\par\\nopagebreak\n\\begin{minipage}[t]{0.64\\linewidth}\\vspace{0pt}\nCho tam giác $ABC$ cân tại $A$. Gọi $M, N$ lần lượt là trung điểm của $AB$ và $AC$ (Hình 15).[[br]] a) [NB] Chứng minh $AM = AN$, từ đó suy ra $\\triangle AMN$ cân tại $A$.[[br]] b) [NB] Viết biểu thức tính $\\widehat{AMN}$ và $\\widehat{B}$ theo $\\widehat{A}$, từ đó suy ra $MN \\parallel BC$.\n\\end{minipage}\\hfill\n\\begin{minipage}[t]{0.31\\linewidth}\\vspace{0pt}\n\\centering\n\\adjustbox{max width=\\linewidth, max totalheight=2.4cm}{\n\\begin{tikzpicture}[line width=0.8pt, font=\\small]\n  \\coordinate (vA) at (1.6,2.4);\n  \\coordinate (vB) at (0.0,0.0);\n  \\coordinate (vC) at (3.2,0.0);\n  \\coordinate (vM) at (0.8,1.2);\n  \\coordinate (vN) at (2.4,1.2);\n  \\draw[ink] (vA) -- (vB) -- (vC) -- cycle;\n  \\draw[brand,line width=1.1pt] (vM) -- (vN);\n  \\node[above] at (vA) {$A$};\n  \\node[below left] at (vB) {$B$};\n  \\node[below right] at (vC) {$C$};\n  \\node[left] at (vM) {$M$};\n  \\node[right] at (vN) {$N$};\n  \\node[ink,font=\\scriptsize] at (1.2,1.8) {$|$};\n  \\node[ink,font=\\scriptsize] at (0.4,0.6) {$|$};\n  \\node[ink,font=\\scriptsize] at (2.0,1.8) {$|$};\n  \\node[ink,font=\\scriptsize] at (2.8,0.6) {$|$};\n\\end{tikzpicture}\n}\n\\par\\vspace{2pt}{\\sffamily\\scriptsize\\itshape\\color{muted}Hình 15}\n\\end{minipage}",
+          "tier": "btvn",
+          "level": 1,
+          "dang_id": "NB6",
+          "solution": "a) Vì $\\triangle ABC$ cân tại $A$ nên $AB = AC$. Do $M, N$ là trung điểm nên $AM = \\dfrac{AB}{2} = \\dfrac{AC}{2} = AN$. Suy ra $\\triangle AMN$ cân tại $A$.[[br]] b) Ta có $\\widehat{AMN} = \\dfrac{180^\\circ - \\widehat{A}}{2}$ và $\\widehat{B} = \\dfrac{180^\\circ - \\widehat{A}}{2}$. Do đó $\\widehat{AMN} = \\widehat{B}$, mà hai góc ở vị trí đồng vị nên $MN \\parallel BC$.[[br]] Vậy $\\triangle AMN$ cân tại $A$ và $MN \\parallel BC$.",
+          "figure_given": true
+        },
+        {
+          "type": "problem",
+          "label": "BTVN 9.",
+          "statement": "a) [TH] Một tứ giác $ABCD$ có các góc tỉ lệ với $1:2:3:4$. Tính số đo các góc của tứ giác đó.[[br]] b) [TH] Một hình thang cân $ABCD$ ($AB \\parallel CD$) có $\\widehat{A} = 2\\widehat{D}$. Tính các góc của hình thang cân đó.",
+          "tier": "btvn",
+          "level": 2,
+          "dang_id": "TH1",
+          "solution": "a) Đặt $\\widehat{A}=x, \\widehat{B}=2x, \\widehat{C}=3x, \\widehat{D}=4x$. Ta có $x+2x+3x+4x = 360^\\circ \\implies 10x = 360^\\circ \\implies x = 36^\\circ$.[[br]] Do đó $\\widehat{A}=36^\\circ, \\widehat{B}=72^\\circ, \\widehat{C}=108^\\circ, \\widehat{D}=144^\\circ$.[[br]] b) Vì $AB \\parallel CD$ nên $\\widehat{A}+\\widehat{D} = 180^\\circ \\implies 2\\widehat{D}+\\widehat{D} = 180^\\circ \\implies 3\\widehat{D} = 180^\\circ \\implies \\widehat{D} = 60^\\circ$.[[br]] Suy ra $\\widehat{A} = 120^\\circ$. Do $ABCD$ là hình thang cân nên $\\widehat{B} = \\widehat{A} = 120^\\circ$ và $\\widehat{C} = \\widehat{D} = 60^\\circ$.[[br]] Vậy $\\widehat{A}=\\widehat{B}=120^\\circ$ và $\\widehat{C}=\\widehat{D}=60^\\circ$.",
+          "figure_given": true
+        },
+        {
+          "type": "problem",
+          "label": "BTVN 10.",
+          "statement": "\\par\\nopagebreak\n\\begin{minipage}[t]{0.64\\linewidth}\\vspace{0pt}\n[TH] Cho tam giác $ABC$ cân tại $A$ có $\\widehat{A}=40^\\circ$. Trên $AB, AC$ lấy $D, E$ sao cho $AD=AE$ (Hình 16). Chứng minh tứ giác $BDEC$ là hình thang cân và tính số đo các góc của nó.\n\\end{minipage}\\hfill\n\\begin{minipage}[t]{0.31\\linewidth}\\vspace{0pt}\n\\centering\n\\adjustbox{max width=\\linewidth, max totalheight=2.4cm}{\n\\begin{tikzpicture}[line width=0.8pt, font=\\small]\n  \\coordinate (vA) at (1.6,2.4);\n  \\coordinate (vB) at (0.0,0.0);\n  \\coordinate (vC) at (3.2,0.0);\n  \\coordinate (vD) at (0.6,0.9);\n  \\coordinate (vE) at (2.6,0.9);\n  \\draw[ink] (vA) -- (vB) -- (vC) -- cycle;\n  \\draw[brand,line width=1.1pt,fill=brand!8] (vD) -- (vE) -- (vC) -- (vB) -- cycle;\n  \\node[above] at (vA) {$A$};\n  \\node[below left] at (vB) {$B$};\n  \\node[below right] at (vC) {$C$};\n  \\node[left] at (vD) {$D$};\n  \\node[right] at (vE) {$E$};\n\\end{tikzpicture}\n}\n\\par\\vspace{2pt}{\\sffamily\\scriptsize\\itshape\\color{muted}Hình 16}\n\\end{minipage}",
+          "tier": "btvn",
+          "level": 2,
+          "dang_id": "TH2",
+          "solution": "Xét $\\triangle ABC$ cân tại $A$ và $\\triangle ADE$ cân tại $A$, ta có $\\widehat{ADE} = \\widehat{B} = \\dfrac{180^\\circ - 40^\\circ}{2} = 70^\\circ$.[[br]] Suy ra $DE \\parallel BC$ (hai góc đồng vị bằng nhau), do đó $BDEC$ là hình thang.[[br]] Hình thang $BDEC$ có hai góc kề đáy $\\widehat{B} = \\widehat{C} = 70^\\circ$ nên là hình thang cân.[[br]] Vì $DE \\parallel BC$ nên $\\widehat{BDE} = 180^\\circ - 70^\\circ = 110^\\circ$, suy ra $\\widehat{DEC} = 110^\\circ$.[[br]] Vậy $BDEC$ là hình thang cân với $\\widehat{B} = \\widehat{C} = 70^\\circ$ và $\\widehat{BDE} = \\widehat{DEC} = 110^\\circ$.",
+          "figure_given": true
+        },
+        {
+          "type": "problem",
+          "label": "BTVN 11.",
+          "statement": "\\par\\nopagebreak\n\\begin{minipage}[t]{0.64\\linewidth}\\vspace{0pt}\n[TH] Cho hình thang cân $ABCD$ ($AB \\parallel CD$). Gọi $E$ là giao điểm của hai cạnh bên kéo dài $AD$ và $BC$ (Hình 17). Chứng minh tam giác $EAB$ là tam giác cân tại $E$.\n\\end{minipage}\\hfill\n\\begin{minipage}[t]{0.31\\linewidth}\\vspace{0pt}\n\\centering\n\\adjustbox{max width=\\linewidth, max totalheight=2.4cm}{\n\\begin{tikzpicture}[line width=0.8pt, font=\\small]\n  \\coordinate (vE) at (1.6,2.4);\n  \\coordinate (vA) at (0.8,1.2);\n  \\coordinate (vB) at (2.4,1.2);\n  \\coordinate (vC) at (3.2,0.0);\n  \\coordinate (vD) at (0.0,0.0);\n  \\draw[ink,fill=brand!8] (vA) -- (vB) -- (vC) -- (vD) -- cycle;\n  \\draw[ink,dashed] (vA) -- (vE) -- (vB);\n  \\node[above] at (vE) {$E$};\n  \\node[left] at (vA) {$A$};\n  \\node[right] at (vB) {$B$};\n  \\node[below right] at (vC) {$C$};\n  \\node[below left] at (vD) {$D$};\n\\end{tikzpicture}\n}\n\\par\\vspace{2pt}{\\sffamily\\scriptsize\\itshape\\color{muted}Hình 17}\n\\end{minipage}",
+          "tier": "btvn",
+          "level": 2,
+          "dang_id": "TH3",
+          "solution": "Vì $ABCD$ là hình thang cân ($AB \\parallel CD$) nên $\\widehat{D} = \\widehat{C}$.[[br]]\\hspace*{1.4em}Vì $AB \\parallel CD$ nên $\\widehat{EAB} = \\widehat{D}$ và $\\widehat{EBA} = \\widehat{C}$ (hai góc đồng vị).[[br]]\\hspace*{1.4em}Suy ra $\\widehat{EAB} = \\widehat{EBA}$.[[br]]\\hspace*{1.4em}Do đó tam giác $EAB$ có hai góc đáy bằng nhau nên cân tại $E$.[[br]]\\hspace*{1.4em}Vậy $\\triangle EAB$ cân tại $E$.",
+          "figure_given": true
+        }
+      ],
+      "teacher_note": "Giao 11 bài BTVN tương ứng 1-1 với các dạng trên lớp. HS yếu làm từ BTVN 1 đến BTVN 8; HS khá làm thêm BTVN 9, 10 và 11."
+    }
+  ]
+}

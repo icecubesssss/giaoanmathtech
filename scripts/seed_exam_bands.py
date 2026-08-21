@@ -38,6 +38,11 @@ DANG_FLOOR = {
     "DS-BDT-CM": "NB", "DS-CUCTRI": "VDC", "DS-BĐT-COSI": "VDC",
     "DS-THONGKE": "NB", "DS-XACSUAT": "TH",
     "TK-TANSO-BIEUDO": "NB", "TK-XACSUAT-TINH": "TH",
+    # Chương VII (tần số) — Sở xếp cả Câu I.1 vào cột NHẬN BIẾT của ma trận.
+    "TK-TANSO-DOC": "NB", "TK-TANSO-LAP": "TH", "TK-TANSO-VE": "TH",
+    "TK-TANSO-SUYLUAN": "NB",
+    # Chương VIII (xác suất) — Câu I.2 của Sở là NB/TH, KHÔNG có ý vận dụng.
+    "TK-KHONGGIANMAU": "NB", "TK-XACSUAT-2HD": "VD",
     "HH-TSLG-THUCTE": "TH", "HH-TSLG-TINH": "TH", "HH-TSLG-CM": "VD",
     "HH-HTL-THUCTE": "TH", "HH-TRON-THUCTE": "NB", "HH-TRON-CM": "TH",
     "HH-TRON-CUNG": "VD",
@@ -46,6 +51,9 @@ DANG_FLOOR = {
 DANG_CAP = {
     "DS-CAN-TINH-RUTGON": "TH", "HH-TRON-THUCTE": "TH",
     "DS-THONGKE": "TH", "TK-TANSO-BIEUDO": "TH", "DS-DT-THUCTE": "VD",
+    "TK-TANSO-DOC": "TH", "TK-TANSO-LAP": "TH", "TK-TANSO-VE": "TH",
+    "TK-TANSO-SUYLUAN": "VD",
+    "TK-XACSUAT-TINH": "TH", "TK-KHONGGIANMAU": "NB",
 }
 
 _PHUT_BAND = {"NB": 4, "TH": 8, "VD": 12, "VDC": 14}
@@ -63,6 +71,16 @@ _PHUT_DANG = {
     ("HH-TSLG-TINH", "TH"): 8, ("HH-TSLG-TINH", "VD"): 10,
     ("DS-CAN-CAUPHU", "VD"): 8,
     ("DS-HEPT-GIAI", "NB"): 5,
+    # Đọc bảng/biểu đồ tần số: NB là một phép chia, TH là lập cả bảng.
+    ("TK-TANSO-DOC", "NB"): 4, ("TK-TANSO-DOC", "TH"): 6,
+    ("TK-TANSO-LAP", "TH"): 8, ("TK-TANSO-VE", "TH"): 8,
+    ("TK-TANSO-SUYLUAN", "NB"): 4, ("TK-TANSO-SUYLUAN", "TH"): 8,
+    ("TK-TANSO-SUYLUAN", "VD"): 10,
+    # Xác suất: NB là đếm thẳng một điều kiện; TH phải tự liệt kê tập nền;
+    # hai hành động phải lập cả bảng nên lâu hơn.
+    ("TK-KHONGGIANMAU", "NB"): 3,
+    ("TK-XACSUAT-TINH", "NB"): 4, ("TK-XACSUAT-TINH", "TH"): 6,
+    ("TK-XACSUAT-2HD", "TH"): 8, ("TK-XACSUAT-2HD", "VD"): 10,
 }
 # Override band/phut theo từng câu (đọc đề thấy đặc biệt so với dạng/do_kho).
 ID_OVERRIDE: dict[str, dict] = {

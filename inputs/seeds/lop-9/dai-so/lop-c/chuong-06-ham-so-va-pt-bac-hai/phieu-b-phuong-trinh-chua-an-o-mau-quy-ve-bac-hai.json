@@ -1,0 +1,626 @@
+{
+  "slug": "phieu-b-phuong-trinh-chua-an-o-mau-quy-ve-bac-hai",
+  "title": "Luyện tập chung — phương trình chứa ẩn ở mẫu",
+  "eyebrow": "ĐẠI SỐ — CHƯƠNG VI · PHIẾU B",
+  "grade_label": "Lớp 9 • Ôn vào 10",
+  "class_tier": "C",
+  "so_ca": 1,
+  "stages": [
+    {
+      "kind": "review",
+      "number": 1,
+      "title": "Khám phá",
+      "blocks": [
+        {
+          "type": "opener",
+          "tikz": "\\begin{tikzpicture}[line width=0.8pt, font=\\small]\n  \\draw[ink] (0,0) rectangle (2.2,1.3);\n  \\node at (1.1,0.65) {\\small Tổ A};\n  \\draw[ink] (3.0,0) rectangle (5.2,1.3);\n  \\node at (4.1,0.65) {\\small Tổ B};\n  \\draw[ink,->] (1.1,1.5) -- (1.1,2.1) node[above] {\\small $x$ sp/ngày};\n  \\draw[ink,->] (4.1,1.5) -- (4.1,2.1) node[above] {\\small $x+10$ sp/ngày};\n  \\node[below] at (2.6,-0.2) {\\small cùng $300$ sản phẩm};\n\\end{tikzpicture}",
+          "text": "Hai tổ cùng nhận $300$ sản phẩm. Tổ A làm mỗi ngày $x$ sản phẩm, tổ B làm mỗi ngày nhiều hơn $10$ sản phẩm nên xong sớm hơn tổ A đúng $1$ ngày.[[br]]Số ngày tổ A làm là $\\dfrac{300}{x}$, số ngày tổ B làm là $\\dfrac{300}{x+10}$, nên[[br]]\\quad $\\dfrac{300}{x}-\\dfrac{300}{x+10}=1$.[[br]]Ẩn nằm ở \\textbf{dưới mẫu} — chưa dùng công thức nghiệm được ngay. Hôm nay ta học cách gỡ mẫu để đưa về đúng dạng đã quen."
+        },
+        {
+          "type": "para",
+          "text": "\\textbf{Nhắc lại ba việc đã làm ở buổi trước.}"
+        },
+        {
+          "type": "noted",
+          "text": "$\\bullet$\\; Đưa phương trình về dạng $ax^2+bx+c=0$ rồi mới đọc $a$, $b$, $c$.[[br]]$\\bullet$\\; $\\Delta=b^2-4ac$; $\\Delta>0$ hai nghiệm phân biệt, $\\Delta=0$ nghiệm kép, $\\Delta<0$ vô nghiệm.[[br]]$\\bullet$\\; $b$ chẵn thì dùng $\\Delta'=b'^2-ac$ với $b'=\\dfrac{b}{2}$, mẫu là $a$.[[br]]Và một kĩ năng Lớp 8 dùng suốt buổi nay: \\textbf{phân tích mẫu thức thành nhân tử} để tìm mẫu chung, ví dụ $x^2-25=(x-5)(x+5)$.",
+          "variant": "note"
+        }
+      ],
+      "teacher_note": "Mở màn 8 phút. Chỉ cần HS \\emph{đọc ra} được hai phân thức $\\dfrac{300}{x}$ và $\\dfrac{300}{x+10}$, chưa giải. Nhấn: mẫu có chữ $x$ thì phải hỏi ngay \\emph{$x$ được phép bằng bao nhiêu}."
+    },
+    {
+      "kind": "concept",
+      "number": 2,
+      "title": "Kiến thức cần nhớ",
+      "blocks": [
+        {
+          "type": "para",
+          "text": "\\textbf{1. Bốn bước giải phương trình chứa ẩn ở mẫu}"
+        },
+        {
+          "type": "para",
+          "text": "\\textbf{Bước 1.} Phân tích các mẫu thành nhân tử rồi tìm điều kiện xác định (mẫu khác $0$).[[br]]\\textbf{Bước 2.} Quy đồng hai vế và khử mẫu.[[br]]\\textbf{Bước 3.} Giải phương trình vừa nhận được.[[br]]\\textbf{Bước 4.} Đối chiếu với điều kiện xác định, loại nghiệm không thỏa mãn rồi kết luận."
+        },
+        {
+          "type": "para",
+          "text": "\\textbf{2. Nhẩm nghiệm — tiết kiệm nửa thời gian}"
+        },
+        {
+          "type": "para",
+          "text": "Cho $ax^2+bx+c=0$ ($a \\ne 0$):[[br]]$\\bullet$\\; Nếu $a+b+c=0$ thì $x_1=1$ và $x_2=\\dfrac{c}{a}$.[[br]]$\\bullet$\\; Nếu $a-b+c=0$ thì $x_1=-1$ và $x_2=-\\dfrac{c}{a}$.[[br]]$\\bullet$\\; Nếu $ac<0$ thì phương trình luôn có hai nghiệm phân biệt (khỏi cần tính $\\Delta$)."
+        },
+        {
+          "type": "para",
+          "text": "\\textbf{3. Rút gọn nghiệm chứa căn}"
+        },
+        {
+          "type": "para",
+          "text": "Đưa căn về dạng đơn giản nhất rồi rút gọn cả phân thức: $\\sqrt{8}=2\\sqrt2$; $\\sqrt{12}=2\\sqrt3$; $\\sqrt{84}=2\\sqrt{21}$.[[br]]Ví dụ $x=\\dfrac{4\\pm\\sqrt8}{4}=\\dfrac{4\\pm 2\\sqrt2}{4}=\\dfrac{2\\pm\\sqrt2}{2}$."
+        },
+        {
+          "type": "noted",
+          "text": "\\textbf{Ví dụ 1.} Tìm điều kiện xác định của phương trình $\\dfrac{x-1}{x-5}-\\dfrac{x}{x+5}=\\dfrac{10x-12}{x^2-25}$ (trích đề Giữa kì I, THCS Bát Tràng).[[br]]{\\sffamily\\bfseries\\color{brand}Lời giải}[[br]]\\hspace*{1.4em}Ta có $x^2-25=(x-5)(x+5)$.[[br]]\\hspace*{1.4em}Các mẫu khác $0$ khi $x-5 \\ne 0$ và $x+5 \\ne 0$, tức là $x \\ne 5$ và $x \\ne -5$.[[br]]\\hspace*{1.4em}Vậy điều kiện xác định của phương trình là $x \\ne 5$ và $x \\ne -5$.",
+          "variant": "example"
+        },
+        {
+          "type": "noted",
+          "text": "\\textbf{Ví dụ 2.} Phân tích các mẫu thức sau thành nhân tử: a) $x^2-4$; b) $x^2-2x-3$; c) $x^2-3x$.[[br]]{\\sffamily\\bfseries\\color{brand}Lời giải}[[br]]\\hspace*{1.4em}a) $x^2-4=x^2-2^2=(x-2)(x+2)$.[[br]]\\hspace*{1.4em}b) $x^2-2x-3=x^2-3x+x-3=x(x-3)+(x-3)=(x-3)(x+1)$.[[br]]\\hspace*{1.4em}c) $x^2-3x=x(x-3)$.[[br]]\\hspace*{1.4em}Vậy $x^2-4=(x-2)(x+2)$; $x^2-2x-3=(x-3)(x+1)$; $x^2-3x=x(x-3)$.",
+          "variant": "example"
+        },
+        {
+          "type": "noted",
+          "text": "\\textbf{Ví dụ 3.} Nhẩm nghiệm của các phương trình sau: a) $x^2-9x+8=0$; b) $x^2+5x+4=0$.[[br]]{\\sffamily\\bfseries\\color{brand}Lời giải}[[br]]\\hspace*{1.4em}a) Ta có $a=1$; $b=-9$; $c=8$ nên $a+b+c=1-9+8=0$.[[br]]\\hspace*{1.4em}Do đó $x_1=1$ và $x_2=\\dfrac{c}{a}=8$.[[br]]\\hspace*{1.4em}b) Ta có $a=1$; $b=5$; $c=4$ nên $a-b+c=1-5+4=0$.[[br]]\\hspace*{1.4em}Do đó $x_1=-1$ và $x_2=-\\dfrac{c}{a}=-4$.[[br]]\\hspace*{1.4em}Vậy câu a) có hai nghiệm $x_1=1$; $x_2=8$ và câu b) có hai nghiệm $x_1=-1$; $x_2=-4$.",
+          "variant": "example"
+        },
+        {
+          "type": "noted",
+          "text": "\\textbf{Ví dụ 4.} Không tính $\\Delta$, hãy giải thích vì sao phương trình $x^2-8x-5=0$ có hai nghiệm phân biệt (trích đề thi thử Vào 10, cụm THCS công lập Hà Nội).[[br]]{\\sffamily\\bfseries\\color{brand}Lời giải}[[br]]\\hspace*{1.4em}Phương trình có $a=1$ và $c=-5$ nên $ac=1\\cdot(-5)=-5<0$.[[br]]\\hspace*{1.4em}Vì $ac<0$ nên phương trình luôn có hai nghiệm phân biệt trái dấu.[[br]]\\hspace*{1.4em}Vậy phương trình đã cho có hai nghiệm phân biệt.",
+          "variant": "example"
+        },
+        {
+          "type": "noted",
+          "text": "\\textbf{Ví dụ 5.} Rút gọn hai nghiệm $x=\\dfrac{6\\pm\\sqrt{12}}{2}$.[[br]]{\\sffamily\\bfseries\\color{brand}Lời giải}[[br]]\\hspace*{1.4em}Ta có $\\sqrt{12}=\\sqrt{4\\cdot 3}=2\\sqrt3$.[[br]]\\hspace*{1.4em}Do đó $x=\\dfrac{6\\pm 2\\sqrt3}{2}=\\dfrac{2(3\\pm\\sqrt3)}{2}=3\\pm\\sqrt3$.[[br]]\\hspace*{1.4em}Vậy hai nghiệm là $x_1=3+\\sqrt3$ và $x_2=3-\\sqrt3$.",
+          "variant": "example"
+        },
+        {
+          "type": "noted",
+          "text": "\\textbf{Ví dụ 6.} Giải phương trình $\\dfrac{x-1}{x-4}-\\dfrac{x}{x+4}=\\dfrac{8x-12}{x^2-16}$.[[br]]{\\sffamily\\bfseries\\color{brand}Lời giải}[[br]]\\hspace*{1.4em}Điều kiện xác định: $x \\ne 4$ và $x \\ne -4$.[[br]]\\hspace*{1.4em}Quy đồng và khử mẫu: $(x-1)(x+4)-x(x-4)=8x-12$[[br]]\\hspace*{1.4em}$x^2+3x-4-x^2+4x=8x-12$[[br]]\\hspace*{1.4em}$7x-4=8x-12$[[br]]\\hspace*{1.4em}$x=8$ (thỏa mãn điều kiện xác định).[[br]]\\hspace*{1.4em}Vậy phương trình có nghiệm $x=8$.",
+          "variant": "example"
+        },
+        {
+          "type": "noted",
+          "text": "\\textbf{Ví dụ 7.} Giải phương trình $\\dfrac{x}{x-2}-\\dfrac{3}{x+1}=\\dfrac{6-x}{x^2-x-2}$.[[br]]{\\sffamily\\bfseries\\color{brand}Lời giải}[[br]]\\hspace*{1.4em}Ta có $x^2-x-2=(x-2)(x+1)$ nên điều kiện xác định là $x \\ne 2$ và $x \\ne -1$.[[br]]\\hspace*{1.4em}Khử mẫu: $x(x+1)-3(x-2)=6-x$[[br]]\\hspace*{1.4em}$x^2+x-3x+6=6-x$[[br]]\\hspace*{1.4em}$x^2-x=0$, suy ra $x(x-1)=0$.[[br]]\\hspace*{1.4em}Do đó $x=0$ hoặc $x=1$, cả hai đều thỏa mãn điều kiện xác định.[[br]]\\hspace*{1.4em}Vậy phương trình có hai nghiệm $x_1=0$ và $x_2=1$.",
+          "variant": "example"
+        },
+        {
+          "type": "noted",
+          "text": "\\textbf{Ví dụ 8.} Nhẩm nghiệm của phương trình $2x^2-5x+3=0$ rồi kiểm lại bằng công thức nghiệm.[[br]]{\\sffamily\\bfseries\\color{brand}Lời giải}[[br]]\\hspace*{1.4em}Nhẩm: $a+b+c=2-5+3=0$ nên $x_1=1$; $x_2=\\dfrac{c}{a}=\\dfrac{3}{2}$.[[br]]\\hspace*{1.4em}Kiểm lại: $\\Delta=(-5)^2-4\\cdot 2\\cdot 3=25-24=1>0$, suy ra $\\sqrt{\\Delta}=1$.[[br]]\\hspace*{1.4em}$x_1=\\dfrac{5+1}{4}=\\dfrac{3}{2}$;\\quad $x_2=\\dfrac{5-1}{4}=1$.[[br]]\\hspace*{1.4em}Hai cách cho cùng một tập nghiệm.[[br]]\\hspace*{1.4em}Vậy phương trình có hai nghiệm $x_1=1$ và $x_2=\\dfrac{3}{2}$.",
+          "variant": "example"
+        },
+        {
+          "type": "noted",
+          "text": "\\textbf{Ví dụ 9.} Giải phương trình $x^2+11x-180=0$ rồi chỉ ra nghiệm dương của nó (bộ đề Vào 10, Phòng GD\\&ĐT Đống Đa).[[br]]{\\sffamily\\bfseries\\color{brand}Lời giải}[[br]]\\hspace*{1.4em}Ta có $\\Delta=11^2-4\\cdot 1\\cdot(-180)=121+720=841>0$, suy ra $\\sqrt{\\Delta}=29$.[[br]]\\hspace*{1.4em}$x_1=\\dfrac{-11+29}{2}=9$;\\quad $x_2=\\dfrac{-11-29}{2}=-20$.[[br]]\\hspace*{1.4em}Trong hai nghiệm chỉ có $9>0$.[[br]]\\hspace*{1.4em}Vậy phương trình có hai nghiệm $x_1=9$; $x_2=-20$ và nghiệm dương là $x=9$.",
+          "variant": "example"
+        },
+        {
+          "type": "noted",
+          "text": "\\textbf{Ví dụ 10.} Một tổ sản xuất phải làm $300$ sản phẩm. Thực tế mỗi ngày tổ làm nhiều hơn kế hoạch $10$ sản phẩm nên xong sớm $1$ ngày; gọi số sản phẩm mỗi ngày theo kế hoạch là $x$ ($x$ nguyên dương) thì được phương trình $\\dfrac{300}{x}-\\dfrac{300}{x+10}=1$. Giải phương trình rồi trả lời câu hỏi của đề (đề minh họa Vào 10, Sở GD\\&ĐT Hà Nội).[[br]]{\\sffamily\\bfseries\\color{brand}Lời giải}[[br]]\\hspace*{1.4em}Điều kiện xác định: $x \\ne 0$ và $x \\ne -10$.[[br]]\\hspace*{1.4em}Khử mẫu: $300(x+10)-300x=x(x+10)$[[br]]\\hspace*{1.4em}$3000=x^2+10x$[[br]]\\hspace*{1.4em}$x^2+10x-3000=0$[[br]]\\hspace*{1.4em}$\\Delta'=5^2-1\\cdot(-3000)=3025>0$, suy ra $\\sqrt{\\Delta'}=55$.[[br]]\\hspace*{1.4em}$x_1=\\dfrac{-5+55}{1}=50$;\\quad $x_2=\\dfrac{-5-55}{1}=-60$.[[br]]\\hspace*{1.4em}Vì $x$ nguyên dương nên loại $x_2=-60$, nhận $x=50$.[[br]]\\hspace*{1.4em}Vậy theo kế hoạch mỗi ngày tổ phải làm $50$ sản phẩm.",
+          "variant": "example"
+        },
+        {
+          "type": "noted",
+          "text": "\\textbf{Ba lỗi mất điểm oan của buổi này.}[[br]]$\\bullet$\\; Quên viết điều kiện xác định ở đầu bài — mất $0{,}25$ điểm dù giải đúng.[[br]]$\\bullet$\\; Giải ra nghiệm rồi quên đối chiếu, giữ lại nghiệm đáng lẽ phải loại.[[br]]$\\bullet$\\; Dùng nhẩm nghiệm khi $a+b+c \\ne 0$, hoặc nhớ nhầm $x_2=\\dfrac{c}{a}$ thành $\\dfrac{a}{c}$.",
+          "variant": "trap"
+        },
+        {
+          "type": "noted",
+          "text": "Phương trình chứa ẩn ở mẫu chính là \\textbf{chặng cuối của Câu III.1} ($1{,}0$ điểm) trong đề Vào 10: bài toán năng suất hay chuyển động lập ra đúng một phương trình như thế.[[br]]Buổi 5 sẽ học khâu \\emph{lập} phương trình; hôm nay lo cho chắc khâu \\emph{giải}.",
+          "variant": "target"
+        }
+      ],
+      "teacher_note": "Giảng 45 phút. Bám bốn bước, viết to lên bảng và giữ nguyên suốt buổi. Ví dụ 6 và 7 làm chậm, bắt HS đọc điều kiện xác định TRƯỚC khi động bút. Ví dụ 10 chỉ giải phương trình đã cho sẵn — không bàn khâu lập."
+    },
+    {
+      "kind": "practice1",
+      "number": 3,
+      "title": "Luyện tập 1 — Nhận biết",
+      "blocks": [
+        {
+          "type": "problem",
+          "label": "Bài 1.",
+          "statement": "Điền vào chỗ chấm để đi đủ ba bước giải phương trình $3x^2=12x-9$.[[br]]a) [NB] Bước 1 — đưa về dạng chuẩn: \\ldots\\ldots\\ldots\\ldots$=0$; $a=\\ldots$; $b=\\ldots$; $c=\\ldots$[[br]]b) [NB] Bước 2 — tính $\\Delta=\\ldots\\ldots$[[br]]c) [NB] Bước 3 — viết nghiệm: $x_1=\\ldots\\ldots$; $x_2=\\ldots\\ldots$",
+          "tier": "onclass",
+          "level": 1,
+          "solution": "a) $3x^2-12x+9=0$; $a=3$; $b=-12$; $c=9$.[[br]]b) $\\Delta=(-12)^2-4\\cdot 3\\cdot 9=144-108=36$.[[br]]c) $\\sqrt{\\Delta}=6$; $x_1=\\dfrac{12+6}{6}=3$; $x_2=\\dfrac{12-6}{6}=1$.",
+          "dang_id": "NB1",
+          "writelines": 0
+        },
+        {
+          "type": "problem",
+          "label": "Bài 2.",
+          "statement": "Tìm điều kiện xác định của mỗi phương trình.[[br]]a) [NB] $\\dfrac{x-1}{x-5}-\\dfrac{x}{x+5}=\\dfrac{10x-12}{x^2-25}$ \\;(Giữa kì I, THCS Bát Tràng)[[br]]b) [NB] $\\dfrac{2}{x+2}-\\dfrac{5}{x-2}=\\dfrac{x+6}{x^2-4}$ \\;(Giữa kì I, THCS Cổ Nhuế 2)[[br]]c) [NB] $\\dfrac{x}{x-3}+\\dfrac{1}{x^2-3x}=\\dfrac{x-1}{x}$ \\;(Giữa kì I, THCS Trưng Vương)",
+          "tier": "onclass",
+          "level": 1,
+          "solution": "a) $x \\ne 5$ và $x \\ne -5$.[[br]]b) $x \\ne 2$ và $x \\ne -2$.[[br]]c) $x^2-3x=x(x-3)$ nên $x \\ne 0$ và $x \\ne 3$.",
+          "dang_id": "NB2",
+          "writelines": 0
+        },
+        {
+          "type": "problem",
+          "label": "Bài 3.",
+          "statement": "Phân tích các mẫu thức sau thành nhân tử.[[br]]a) [NB] $x^2-25=\\ldots\\ldots$[[br]]b) [NB] $x^2-9=\\ldots\\ldots$[[br]]c) [NB] $x^2-2x-3=\\ldots\\ldots$",
+          "tier": "onclass",
+          "level": 1,
+          "solution": "a) $x^2-25=(x-5)(x+5)$.[[br]]b) $x^2-9=(x-3)(x+3)$.[[br]]c) $x^2-2x-3=(x-3)(x+1)$.",
+          "dang_id": "NB3",
+          "writelines": 0
+        },
+        {
+          "type": "problem",
+          "label": "Bài 4.",
+          "statement": "Quy đồng hai vế rồi khử mẫu, viết lại phương trình nhận được (chưa cần giải).[[br]]a) [NB] $\\dfrac{x}{x+2}+\\dfrac{17}{x^2-4}=\\dfrac{4}{x-2}$ \\;(Giữa kì I, THCS Nguyễn Du)[[br]]b) [NB] $\\dfrac{x}{x-3}-\\dfrac{2}{x+1}=\\dfrac{15-x}{x^2-2x-3}$ \\;(Giữa kì I, THCS Dịch Vọng Hậu)[[br]]c) [NB] $\\dfrac{150}{x-1}-\\dfrac{140}{x}=5$ \\;(Giữa kì II, xã Đông Anh)",
+          "tier": "onclass",
+          "level": 1,
+          "solution": "a) $x(x-2)+17=4(x+2) \\Rightarrow x^2-6x+9=0$.[[br]]b) $x(x+1)-2(x-3)=15-x \\Rightarrow x^2-9=0$.[[br]]c) $150x-140(x-1)=5x(x-1) \\Rightarrow 5x^2-15x-140=0$, tức $x^2-3x-28=0$.",
+          "dang_id": "NB4",
+          "writelines": 0
+        },
+        {
+          "type": "problem",
+          "label": "Bài 5.",
+          "statement": "Đối chiếu nghiệm tìm được với điều kiện xác định rồi kết luận.[[br]]a) [NB] Điều kiện $x \\ne 3$; $x \\ne -1$, giải ra $x=3$ và $x=-3$. Nhận nghiệm nào? \\ldots\\ldots[[br]]b) [NB] Điều kiện $x \\ne 3$; $x \\ne -3$, giải ra $x=3$. Kết luận: \\ldots\\ldots[[br]]c) [NB] Điều kiện $x \\ne 0$; $x \\ne 1$, giải ra $x=7$ và $x=-4$. Nhận nghiệm nào? \\ldots\\ldots",
+          "tier": "onclass",
+          "level": 1,
+          "solution": "a) Loại $x=3$ (vi phạm điều kiện), nhận $x=-3$.[[br]]b) Nghiệm duy nhất tìm được bị loại nên phương trình vô nghiệm.[[br]]c) Cả hai nghiệm đều thỏa mãn nên nhận cả $x=7$ và $x=-4$.",
+          "dang_id": "NB5",
+          "writelines": 0
+        },
+        {
+          "type": "problem",
+          "label": "Bài 6.",
+          "statement": "Nhẩm nghiệm bằng dấu hiệu $a+b+c=0$.[[br]]a) [NB] $x^2-3x+2=0$[[br]]b) [NB] $x^2-7x+6=0$[[br]]c) [NB] $2x^2-5x+3=0$",
+          "tier": "onclass",
+          "level": 1,
+          "solution": "a) $1-3+2=0$ nên $x_1=1$; $x_2=\\dfrac{2}{1}=2$.[[br]]b) $1-7+6=0$ nên $x_1=1$; $x_2=6$.[[br]]c) $2-5+3=0$ nên $x_1=1$; $x_2=\\dfrac{3}{2}$.",
+          "dang_id": "NB6",
+          "writelines": 0,
+          "check": {
+            "kind": "solveset",
+            "equation": "x**2 - 7*x + 6 = 0",
+            "answer": [
+              1,
+              6
+            ],
+            "symbol": "x"
+          }
+        },
+        {
+          "type": "problem",
+          "label": "Bài 7.",
+          "statement": "Nhẩm nghiệm bằng dấu hiệu $a-b+c=0$.[[br]]a) [NB] $x^2+3x+2=0$[[br]]b) [NB] $x^2+5x+4=0$[[br]]c) [NB] $3x^2+7x+4=0$",
+          "tier": "onclass",
+          "level": 1,
+          "solution": "a) $1-3+2=0$ nên $x_1=-1$; $x_2=-\\dfrac{2}{1}=-2$.[[br]]b) $1-5+4=0$ nên $x_1=-1$; $x_2=-4$.[[br]]c) $3-7+4=0$ nên $x_1=-1$; $x_2=-\\dfrac{4}{3}$.",
+          "dang_id": "NB7",
+          "writelines": 0,
+          "check": {
+            "kind": "solveset",
+            "equation": "x**2 + 5*x + 4 = 0",
+            "answer": [
+              -1,
+              -4
+            ],
+            "symbol": "x"
+          }
+        },
+        {
+          "type": "problem",
+          "label": "Bài 8.",
+          "statement": "Tính $ac$ rồi cho biết vì sao phương trình chắc chắn có hai nghiệm phân biệt (không cần tính $\\Delta$).[[br]]a) [NB] $x^2-8x-5=0$: $ac=\\ldots\\ldots$[[br]]b) [NB] $x^2-3x-5=0$: $ac=\\ldots\\ldots$[[br]]c) [NB] $2x^2-x-5=0$: $ac=\\ldots\\ldots$",
+          "tier": "onclass",
+          "level": 1,
+          "solution": "a) $ac=1\\cdot(-5)=-5<0$ nên có hai nghiệm phân biệt trái dấu.[[br]]b) $ac=1\\cdot(-5)=-5<0$.[[br]]c) $ac=2\\cdot(-5)=-10<0$.",
+          "dang_id": "NB8",
+          "writelines": 0
+        },
+        {
+          "type": "problem",
+          "label": "Bài 9.",
+          "statement": "Rút gọn hai nghiệm sau.[[br]]a) [NB] $x=\\dfrac{4\\pm\\sqrt{8}}{4}=\\ldots\\ldots$[[br]]b) [NB] $x=\\dfrac{6\\pm\\sqrt{12}}{2}=\\ldots\\ldots$[[br]]c) [NB] $x=\\dfrac{-10\\pm\\sqrt{84}}{2}=\\ldots\\ldots$",
+          "tier": "onclass",
+          "level": 1,
+          "solution": "a) $\\sqrt8=2\\sqrt2$ nên $x=\\dfrac{4\\pm 2\\sqrt2}{4}=\\dfrac{2\\pm\\sqrt2}{2}$.[[br]]b) $\\sqrt{12}=2\\sqrt3$ nên $x=3\\pm\\sqrt3$.[[br]]c) $\\sqrt{84}=2\\sqrt{21}$ nên $x=-5\\pm\\sqrt{21}$.",
+          "dang_id": "NB9",
+          "writelines": 0
+        },
+        {
+          "type": "problem",
+          "label": "Bài 10.",
+          "statement": "Điền vào chỗ chấm để hoàn thành bài giải phương trình $\\dfrac{2}{x+2}-\\dfrac{5}{x-2}=\\dfrac{x+6}{x^2-4}$ (Giữa kì I, THCS Cổ Nhuế 2).[[br]]a) [NB] Vì $x^2-4=\\ldots\\ldots$ nên điều kiện xác định là $x \\ne \\ldots$ và $x \\ne \\ldots$[[br]]b) [NB] Khử mẫu: $2(x-2)-5(x+2)=\\ldots\\ldots$, thu gọn được $\\ldots\\ldots x=\\ldots\\ldots$[[br]]c) [NB] Nghiệm tìm được là $x=\\ldots\\ldots$, đối chiếu điều kiện thì \\ldots\\ldots\\ldots\\ldots",
+          "tier": "onclass",
+          "level": 1,
+          "solution": "a) $x^2-4=(x-2)(x+2)$; điều kiện $x \\ne 2$ và $x \\ne -2$.[[br]]b) $2(x-2)-5(x+2)=x+6 \\Rightarrow -3x-14=x+6 \\Rightarrow -4x=20$.[[br]]c) $x=-5$, thỏa mãn điều kiện xác định nên nhận.",
+          "dang_id": "NB10",
+          "writelines": 0
+        },
+        {
+          "type": "problem",
+          "label": "Bài 11.",
+          "statement": "Viết câu kết luận đủ ý cho mỗi trường hợp.[[br]]a) [NB] $x^2-6x+9=0$ có $\\Delta=0$ và $-\\dfrac{b}{2a}=3$. Kết luận: \\ldots\\ldots\\ldots\\ldots[[br]]b) [NB] $x^2-x+1=0$ có $\\Delta=-3$. Kết luận: \\ldots\\ldots\\ldots\\ldots",
+          "tier": "onclass",
+          "level": 1,
+          "solution": "a) Vậy phương trình có nghiệm kép $x_1=x_2=3$.[[br]]b) Vì $\\Delta<0$ nên phương trình vô nghiệm.",
+          "dang_id": "NB11",
+          "writelines": 0
+        }
+      ],
+      "teacher_note": "Luyện 48 phút. Bài 2 và Bài 3 làm liền nhau, chữa chung một lượt vì chúng là hai nửa của Bước 1. Bài 5 không cần giải gì — chỉ luyện phản xạ đối chiếu, chữa miệng trong 3 phút."
+    },
+    {
+      "kind": "practice2",
+      "number": 4,
+      "title": "Luyện tập 2 — Thông hiểu \\& Vận dụng",
+      "blocks": [
+        {
+          "type": "problem",
+          "label": "Bài 12.",
+          "statement": "Giải các phương trình sau (mẫu là hiệu hai bình phương).[[br]]a) [TH] $\\dfrac{x}{x+2}+\\dfrac{17}{x^2-4}=\\dfrac{4}{x-2}$ \\;(Giữa kì I, THCS Nguyễn Du)[[br]]b) [TH] $\\dfrac{4}{x+3}+\\dfrac{x-1}{x-3}=\\dfrac{x^2+x}{x^2-9}$ \\;(Giữa kì I, THCS Ngô Gia Tự)",
+          "tier": "onclass",
+          "level": 2,
+          "solution": "a) Điều kiện xác định: $x \\ne 2$ và $x \\ne -2$.[[br]]Khử mẫu: $x(x-2)+17=4(x+2)$, suy ra $x^2-6x+9=0$.[[br]]Ta có $\\Delta'=(-3)^2-1\\cdot 9=0$ nên $x_1=x_2=3$ (thỏa mãn điều kiện).[[br]]Vậy phương trình có nghiệm kép $x=3$.[[br]]b) Điều kiện xác định: $x \\ne 3$ và $x \\ne -3$.[[br]]Khử mẫu: $4(x-3)+(x-1)(x+3)=x^2+x$[[br]]$4x-12+x^2+2x-3=x^2+x$, suy ra $5x=15$ nên $x=3$.[[br]]Vì $x=3$ vi phạm điều kiện xác định nên bị loại.[[br]]Vậy phương trình vô nghiệm.",
+          "dang_id": "TH1",
+          "writelines": 0,
+          "check": {
+            "kind": "solveset",
+            "equation": "x**2 - 6*x + 9 = 0",
+            "answer": [
+              3
+            ],
+            "symbol": "x"
+          }
+        },
+        {
+          "type": "problem",
+          "label": "Bài 13.",
+          "statement": "Giải các phương trình sau (mẫu tách thành hai nhân tử khác nhau).[[br]]a) [TH] $\\dfrac{x}{x-3}-\\dfrac{2}{x+1}=\\dfrac{15-x}{x^2-2x-3}$ \\;(Giữa kì I, THCS Dịch Vọng Hậu)[[br]]b) [TH] $\\dfrac{x}{x-3}+\\dfrac{1}{x^2-3x}=\\dfrac{x-1}{x}$ \\;(Giữa kì I, THCS Trưng Vương)",
+          "tier": "onclass",
+          "level": 2,
+          "solution": "a) Vì $x^2-2x-3=(x-3)(x+1)$ nên điều kiện xác định là $x \\ne 3$ và $x \\ne -1$.[[br]]Khử mẫu: $x(x+1)-2(x-3)=15-x$[[br]]$x^2+x-2x+6=15-x$, suy ra $x^2-9=0$ nên $x=3$ hoặc $x=-3$.[[br]]Loại $x=3$, nhận $x=-3$.[[br]]Vậy phương trình có nghiệm $x=-3$.[[br]]b) Vì $x^2-3x=x(x-3)$ nên điều kiện xác định là $x \\ne 0$ và $x \\ne 3$.[[br]]Khử mẫu: $x\\cdot x+1=(x-1)(x-3)$[[br]]$x^2+1=x^2-4x+3$, suy ra $4x=2$ nên $x=\\dfrac{1}{2}$ (thỏa mãn).[[br]]Vậy phương trình có nghiệm $x=\\dfrac{1}{2}$.",
+          "dang_id": "TH2",
+          "writelines": 0
+        },
+        {
+          "type": "problem",
+          "label": "Bài 14.",
+          "statement": "Nhẩm nghiệm rồi kiểm lại bằng công thức nghiệm.[[br]]a) [TH] $x^2+x-6=0$ \\;(bộ đề Vào 10, Phòng GD\\&ĐT Đống Đa) — thử cả hai dấu hiệu nhẩm; nếu không nhẩm được thì dùng công thức nghiệm.[[br]]b) [TH] $5x^2-3x-2=0$",
+          "tier": "onclass",
+          "level": 2,
+          "solution": "a) Ta có $a+b+c=1+1-6=-4 \\ne 0$ và $a-b+c=1-1-6=-6 \\ne 0$ nên không nhẩm được.[[br]]Dùng công thức nghiệm: $\\Delta=1+24=25>0$, suy ra $\\sqrt{\\Delta}=5$.[[br]]$x_1=\\dfrac{-1+5}{2}=2$; $x_2=\\dfrac{-1-5}{2}=-3$.[[br]]Vậy phương trình có hai nghiệm $x_1=2$ và $x_2=-3$.[[br]]b) Ta có $a+b+c=5-3-2=0$ nên nhẩm được $x_1=1$; $x_2=\\dfrac{-2}{5}$.[[br]]Kiểm lại: $\\Delta=(-3)^2-4\\cdot 5\\cdot(-2)=9+40=49$, suy ra $\\sqrt{\\Delta}=7$.[[br]]$x_1=\\dfrac{3+7}{10}=1$; $x_2=\\dfrac{3-7}{10}=-\\dfrac{2}{5}$ — trùng kết quả nhẩm.[[br]]Vậy phương trình có hai nghiệm $x_1=1$ và $x_2=-\\dfrac{2}{5}$.",
+          "dang_id": "TH3",
+          "writelines": 0
+        },
+        {
+          "type": "problem",
+          "label": "Bài 15.",
+          "statement": "Giải phương trình rồi trả lời yêu cầu phụ.[[br]]a) [TH] Giải $x^2+10x-3000=0$ rồi chỉ ra nghiệm dương \\;(đề minh họa Vào 10, Sở GD\\&ĐT Hà Nội)[[br]]b) [TH] Giải $5x^2-21x-54=0$ rồi chỉ ra nghiệm nguyên dương \\;(thi thử Vào 10 lần 3, Phòng GD\\&ĐT Ứng Hòa)",
+          "tier": "onclass",
+          "level": 2,
+          "solution": "a) Ta có $\\Delta'=5^2-1\\cdot(-3000)=3025>0$, suy ra $\\sqrt{\\Delta'}=55$.[[br]]$x_1=\\dfrac{-5+55}{1}=50$; $x_2=\\dfrac{-5-55}{1}=-60$.[[br]]Vậy phương trình có hai nghiệm $x_1=50$; $x_2=-60$ và nghiệm dương là $x=50$.[[br]]b) Ta có $\\Delta=(-21)^2-4\\cdot 5\\cdot(-54)=441+1080=1521>0$, suy ra $\\sqrt{\\Delta}=39$.[[br]]$x_1=\\dfrac{21+39}{10}=6$; $x_2=\\dfrac{21-39}{10}=-\\dfrac{9}{5}$.[[br]]Vậy phương trình có hai nghiệm $x_1=6$; $x_2=-\\dfrac{9}{5}$ và nghiệm nguyên dương là $x=6$.",
+          "dang_id": "TH4",
+          "writelines": 0,
+          "check": {
+            "kind": "solveset",
+            "equation": "5*x**2 - 21*x - 54 = 0",
+            "answer": [
+              6,
+              "-9/5"
+            ],
+            "symbol": "x"
+          }
+        },
+        {
+          "type": "problem",
+          "label": "Bài 16.",
+          "statement": "[VD] Giải trọn vẹn phương trình sau: nêu điều kiện xác định, quy đồng, khử mẫu, giải, đối chiếu điều kiện và kết luận.[[br]]\\quad $\\dfrac{150}{x-1}-\\dfrac{140}{x}=5$ \\;(Giữa kì II, xã Đông Anh)",
+          "tier": "onclass",
+          "level": 3,
+          "solution": "Điều kiện xác định: $x \\ne 0$ và $x \\ne 1$.[[br]]Khử mẫu: $150x-140(x-1)=5x(x-1)$[[br]]$150x-140x+140=5x^2-5x$[[br]]$5x^2-15x-140=0$, chia hai vế cho $5$ được $x^2-3x-28=0$.[[br]]$\\Delta=(-3)^2-4\\cdot 1\\cdot(-28)=9+112=121>0$, suy ra $\\sqrt{\\Delta}=11$.[[br]]$x_1=\\dfrac{3+11}{2}=7$; $x_2=\\dfrac{3-11}{2}=-4$; cả hai đều thỏa mãn điều kiện xác định.[[br]]Vậy phương trình có hai nghiệm $x_1=7$ và $x_2=-4$.",
+          "dang_id": "VD1",
+          "writelines": 0,
+          "hints": [
+            "Khử mẫu xong nhớ chuyển hết về một vế; hai vế còn $x^2$ thì trừ đi cho hết."
+          ],
+          "check": {
+            "kind": "solveset",
+            "equation": "x**2 - 3*x - 28 = 0",
+            "answer": [
+              7,
+              -4
+            ],
+            "symbol": "x"
+          }
+        },
+        {
+          "type": "problem",
+          "label": "Bài 17.",
+          "statement": "[VD] Bố chở Nam từ trường đến khu du lịch bằng xe máy trên quãng đường $50$ km, các bạn đi ô tô nhanh hơn $20$ km/h nên bố Nam phải xuất phát trước $25$ phút (thi thử Vào 10 lần 5, Phòng GD\\&ĐT Chương Mỹ). Gọi vận tốc xe máy là $x$ (km/h, $x>0$) thì lập được phương trình $\\dfrac{50}{x}-\\dfrac{50}{x+20}=\\dfrac{5}{12}$.[[br]]Giải phương trình rồi cho biết vận tốc mỗi xe.",
+          "tier": "onclass",
+          "level": 3,
+          "solution": "Điều kiện xác định: $x \\ne 0$ và $x \\ne -20$.[[br]]Khử mẫu: $600(x+20)-600x=5x(x+20)$[[br]]$12000=5x^2+100x$, suy ra $x^2+20x-2400=0$.[[br]]$\\Delta'=10^2-1\\cdot(-2400)=2500>0$, suy ra $\\sqrt{\\Delta'}=50$.[[br]]$x_1=\\dfrac{-10+50}{1}=40$; $x_2=\\dfrac{-10-50}{1}=-60$.[[br]]Vì $x>0$ nên loại $x_2=-60$, nhận $x=40$.[[br]]Vậy xe máy đi với vận tốc $40$ km/h và ô tô đi với vận tốc $60$ km/h.",
+          "dang_id": "VD2",
+          "writelines": 0,
+          "hints": [
+            "$25$ phút $=\\dfrac{25}{60}=\\dfrac{5}{12}$ giờ — đề đã đổi sẵn cho em."
+          ],
+          "check": {
+            "kind": "solveset",
+            "equation": "x**2 + 20*x - 2400 = 0",
+            "answer": [
+              40,
+              -60
+            ],
+            "symbol": "x"
+          }
+        }
+      ],
+      "teacher_note": "Luyện 48 phút. Bài 12b là bài \\emph{vô nghiệm} — chữa kĩ, đây là câu HS hay ghi $x=3$ rồi mất trọn điểm. Bài 16 và 17 cùng một khuôn, chỉ khác chỗ 17 có ngữ cảnh; chữa 16 xong cho HS tự làm 17."
+    },
+    {
+      "kind": "reflection",
+      "number": 5,
+      "title": "Tổng kết",
+      "blocks": [
+        {
+          "type": "mindmap",
+          "caption": "Điền các ô trống để tự tóm tắt cả buổi",
+          "root": "Phương trình chứa ẩn ở mẫu",
+          "branches": [
+            {
+              "label": "Bước 1",
+              "children": [
+                {
+                  "label": "Phân tích mẫu thành [[blank:1.6cm]]"
+                },
+                {
+                  "label": "Điều kiện: mẫu [[blank:1.2cm]] $0$"
+                }
+              ]
+            },
+            {
+              "label": "Bước 2",
+              "children": [
+                {
+                  "label": "Quy đồng rồi [[blank:1.2cm]] mẫu"
+                }
+              ]
+            },
+            {
+              "label": "Bước 3",
+              "children": [
+                {
+                  "label": "Nhẩm: $a+b+c=0 \\Rightarrow x_1=[[blank:0.8cm]]$"
+                },
+                {
+                  "label": "Nhẩm: $a-b+c=0 \\Rightarrow x_1=[[blank:0.8cm]]$"
+                },
+                {
+                  "label": "$ac<0 \\Rightarrow$ có [[blank:1.6cm]] nghiệm"
+                }
+              ]
+            },
+            {
+              "label": "Bước 4",
+              "children": [
+                {
+                  "label": "Đối chiếu điều kiện, [[blank:1.2cm]] nghiệm"
+                },
+                {
+                  "label": "Viết câu \\textquotedblleft Vậy \\dots\\textquotedblright"
+                }
+              ]
+            }
+          ]
+        },
+        {
+          "type": "para",
+          "text": "\\textbf{Bài tập về nhà} — làm vào vở, buổi sau nộp."
+        },
+        {
+          "type": "problem",
+          "label": "Bài 18.",
+          "statement": "Điền vào chỗ chấm để đi đủ ba bước giải phương trình $2x^2=8x-6$.[[br]]a) [NB] Dạng chuẩn: \\ldots\\ldots\\ldots\\ldots$=0$; $a=\\ldots$; $b=\\ldots$; $c=\\ldots$[[br]]b) [NB] $\\Delta=\\ldots\\ldots$[[br]]c) [NB] $x_1=\\ldots\\ldots$; $x_2=\\ldots\\ldots$",
+          "tier": "btvn",
+          "level": 1,
+          "solution": "a) $2x^2-8x+6=0$; $a=2$; $b=-8$; $c=6$.[[br]]b) $\\Delta=64-48=16$.[[br]]c) $\\sqrt{\\Delta}=4$; $x_1=\\dfrac{8+4}{4}=3$; $x_2=\\dfrac{8-4}{4}=1$.",
+          "dang_id": "NB1",
+          "writelines": 0
+        },
+        {
+          "type": "problem",
+          "label": "Bài 19.",
+          "statement": "Tìm điều kiện xác định của mỗi phương trình.[[br]]a) [NB] $\\dfrac{5}{x+1}+\\dfrac{1}{x-2}=\\dfrac{3x}{(x+1)(x-2)}$ \\;(Giữa kì I, THCS Nguyễn Bỉnh Khiêm)[[br]]b) [NB] $\\dfrac{2}{x-2}-\\dfrac{3}{x}=\\dfrac{5}{x(x-2)}$ \\;(Giữa kì I, THCS Phú Diễn)[[br]]c) [NB] $\\dfrac{4}{x+3}+\\dfrac{x-1}{x-3}=\\dfrac{x^2+x}{x^2-9}$ \\;(Giữa kì I, THCS Ngô Gia Tự)",
+          "tier": "btvn",
+          "level": 1,
+          "solution": "a) $x \\ne -1$ và $x \\ne 2$.[[br]]b) $x \\ne 0$ và $x \\ne 2$.[[br]]c) $x \\ne 3$ và $x \\ne -3$.",
+          "dang_id": "NB2",
+          "writelines": 0
+        },
+        {
+          "type": "problem",
+          "label": "Bài 20.",
+          "statement": "Phân tích các mẫu thức sau thành nhân tử.[[br]]a) [NB] $x^2-16=\\ldots\\ldots$[[br]]b) [NB] $x^2-x-2=\\ldots\\ldots$",
+          "tier": "btvn",
+          "level": 1,
+          "solution": "a) $x^2-16=(x-4)(x+4)$.[[br]]b) $x^2-x-2=(x-2)(x+1)$.",
+          "dang_id": "NB3",
+          "writelines": 0
+        },
+        {
+          "type": "problem",
+          "label": "Bài 21.",
+          "statement": "Khử mẫu rồi viết lại phương trình nhận được (chưa cần giải).[[br]]a) [NB] $\\dfrac{2}{x-2}-\\dfrac{3}{x}=\\dfrac{5}{x(x-2)}$ \\;(Giữa kì I, THCS Phú Diễn)[[br]]b) [NB] $\\dfrac{60}{x}=\\dfrac{90}{x+20}$ \\;(Cuối kì I, THCS Ái Mộ)",
+          "tier": "btvn",
+          "level": 1,
+          "solution": "a) $2x-3(x-2)=5 \\Rightarrow -x+6=5$.[[br]]b) $60(x+20)=90x \\Rightarrow 60x+1200=90x \\Rightarrow 30x=1200$.",
+          "dang_id": "NB4",
+          "writelines": 0
+        },
+        {
+          "type": "problem",
+          "label": "Bài 22.",
+          "statement": "Đối chiếu nghiệm với điều kiện xác định rồi kết luận.[[br]]a) [NB] Điều kiện $x \\ne 0$; $x \\ne 2$, giải ra $x=2$. Kết luận: \\ldots\\ldots[[br]]b) [NB] Điều kiện $x \\ne \\pm 4$, giải ra $x=8$ và $x=-4$. Nhận nghiệm nào? \\ldots\\ldots",
+          "tier": "btvn",
+          "level": 1,
+          "solution": "a) Nghiệm duy nhất bị loại nên phương trình vô nghiệm.[[br]]b) Loại $x=-4$, nhận $x=8$.",
+          "dang_id": "NB5",
+          "writelines": 0
+        },
+        {
+          "type": "problem",
+          "label": "Bài 23.",
+          "statement": "Nhẩm nghiệm bằng dấu hiệu $a+b+c=0$.[[br]]a) [NB] $x^2-9x+8=0$[[br]]b) [NB] $4x^2-9x+5=0$",
+          "tier": "btvn",
+          "level": 1,
+          "solution": "a) $1-9+8=0$ nên $x_1=1$; $x_2=8$.[[br]]b) $4-9+5=0$ nên $x_1=1$; $x_2=\\dfrac{5}{4}$.",
+          "dang_id": "NB6",
+          "writelines": 0
+        },
+        {
+          "type": "problem",
+          "label": "Bài 24.",
+          "statement": "Nhẩm nghiệm bằng dấu hiệu $a-b+c=0$.[[br]]a) [NB] $x^2+7x+6=0$[[br]]b) [NB] $2x^2+5x+3=0$[[br]]c) [NB] $x^2+4x+3=0$",
+          "tier": "btvn",
+          "level": 1,
+          "solution": "a) $1-7+6=0$ nên $x_1=-1$; $x_2=-6$.[[br]]b) $2-5+3=0$ nên $x_1=-1$; $x_2=-\\dfrac{3}{2}$.[[br]]c) $1-4+3=0$ nên $x_1=-1$; $x_2=-3$.",
+          "dang_id": "NB7",
+          "writelines": 0
+        },
+        {
+          "type": "problem",
+          "label": "Bài 25.",
+          "statement": "Tính $ac$ rồi kết luận về số nghiệm.[[br]]a) [NB] $x^2+x-6=0$[[br]]b) [NB] $x^2+10x-3000=0$",
+          "tier": "btvn",
+          "level": 1,
+          "solution": "a) $ac=1\\cdot(-6)=-6<0$ nên có hai nghiệm phân biệt trái dấu.[[br]]b) $ac=1\\cdot(-3000)<0$ nên có hai nghiệm phân biệt trái dấu.",
+          "dang_id": "NB8",
+          "writelines": 0
+        },
+        {
+          "type": "problem",
+          "label": "Bài 26.",
+          "statement": "Rút gọn hai nghiệm sau.[[br]]a) [NB] $x=\\dfrac{2\\pm\\sqrt{20}}{2}=\\ldots\\ldots$[[br]]b) [NB] $x=\\dfrac{-6\\pm\\sqrt{72}}{6}=\\ldots\\ldots$[[br]]c) [NB] $x=\\dfrac{8\\pm\\sqrt{48}}{4}=\\ldots\\ldots$",
+          "tier": "btvn",
+          "level": 1,
+          "solution": "a) $\\sqrt{20}=2\\sqrt5$ nên $x=1\\pm\\sqrt5$.[[br]]b) $\\sqrt{72}=6\\sqrt2$ nên $x=\\dfrac{-6\\pm 6\\sqrt2}{6}=-1\\pm\\sqrt2$.[[br]]c) $\\sqrt{48}=4\\sqrt3$ nên $x=\\dfrac{8\\pm 4\\sqrt3}{4}=2\\pm\\sqrt3$.",
+          "dang_id": "NB9",
+          "writelines": 0
+        },
+        {
+          "type": "problem",
+          "label": "Bài 27.",
+          "statement": "Điền vào chỗ chấm để hoàn thành bài giải phương trình $\\dfrac{5}{x+1}+\\dfrac{1}{x-2}=\\dfrac{3x}{(x+1)(x-2)}$ (Giữa kì I, THCS Nguyễn Bỉnh Khiêm).[[br]]a) [NB] Điều kiện xác định: $x \\ne \\ldots$ và $x \\ne \\ldots$; khử mẫu được $5(x-2)+(x+1)=\\ldots\\ldots$[[br]]b) [NB] Thu gọn: $\\ldots\\ldots x=\\ldots\\ldots$, suy ra $x=\\ldots\\ldots$; đối chiếu điều kiện thì \\ldots\\ldots",
+          "tier": "btvn",
+          "level": 1,
+          "solution": "a) $x \\ne -1$ và $x \\ne 2$; khử mẫu được $5(x-2)+(x+1)=3x$.[[br]]b) $6x-9=3x \\Rightarrow 3x=9 \\Rightarrow x=3$, thỏa mãn điều kiện nên nhận.",
+          "dang_id": "NB10",
+          "writelines": 0
+        },
+        {
+          "type": "problem",
+          "label": "Bài 28.",
+          "statement": "Viết câu kết luận đủ ý.[[br]]a) [NB] $x^2-4x+4=0$ có $\\Delta=0$ và $-\\dfrac{b}{2a}=2$. Kết luận: \\ldots\\ldots\\ldots\\ldots[[br]]b) [NB] Phương trình có điều kiện $x \\ne 2$ mà nghiệm duy nhất tìm được là $x=2$. Kết luận: \\ldots\\ldots\\ldots\\ldots",
+          "tier": "btvn",
+          "level": 1,
+          "solution": "a) Vậy phương trình có nghiệm kép $x_1=x_2=2$.[[br]]b) Vì $x=2$ không thỏa mãn điều kiện xác định nên phương trình vô nghiệm.",
+          "dang_id": "NB11",
+          "writelines": 0
+        },
+        {
+          "type": "problem",
+          "label": "Bài 29.",
+          "statement": "Giải các phương trình sau.[[br]]a) [TH] $\\dfrac{2}{x+2}-\\dfrac{5}{x-2}=\\dfrac{x+6}{x^2-4}$ \\;(Giữa kì I, THCS Cổ Nhuế 2)[[br]]b) [TH] $\\dfrac{x-1}{x-5}-\\dfrac{x}{x+5}=\\dfrac{10x-12}{x^2-25}$ \\;(Giữa kì I, THCS Bát Tràng)",
+          "tier": "btvn",
+          "level": 2,
+          "solution": "a) Điều kiện xác định: $x \\ne 2$ và $x \\ne -2$.[[br]]Khử mẫu: $2(x-2)-5(x+2)=x+6$[[br]]$-3x-14=x+6$, suy ra $-4x=20$ nên $x=-5$ (thỏa mãn).[[br]]Vậy phương trình có nghiệm $x=-5$.[[br]]b) Điều kiện xác định: $x \\ne 5$ và $x \\ne -5$.[[br]]Khử mẫu: $(x-1)(x+5)-x(x-5)=10x-12$[[br]]$x^2+4x-5-x^2+5x=10x-12$, suy ra $9x-5=10x-12$ nên $x=7$ (thỏa mãn).[[br]]Vậy phương trình có nghiệm $x=7$.",
+          "dang_id": "TH1",
+          "writelines": 0
+        },
+        {
+          "type": "problem",
+          "label": "Bài 30.",
+          "statement": "Giải các phương trình sau.[[br]]a) [TH] $\\dfrac{2}{x-2}-\\dfrac{3}{x}=\\dfrac{5}{x(x-2)}$ \\;(Giữa kì I, THCS Phú Diễn)[[br]]b) [TH] $\\dfrac{6}{x-2}+\\dfrac{2}{x}=\\dfrac{5}{x-2}$ \\;(Giữa kì I, THCS Thái Thịnh)",
+          "tier": "btvn",
+          "level": 2,
+          "solution": "a) Điều kiện xác định: $x \\ne 0$ và $x \\ne 2$.[[br]]Khử mẫu: $2x-3(x-2)=5$, suy ra $-x+6=5$ nên $x=1$ (thỏa mãn).[[br]]Vậy phương trình có nghiệm $x=1$.[[br]]b) Điều kiện xác định: $x \\ne 0$ và $x \\ne 2$.[[br]]Khử mẫu: $6x+2(x-2)=5x$[[br]]$8x-4=5x$, suy ra $3x=4$ nên $x=\\dfrac{4}{3}$ (thỏa mãn).[[br]]Vậy phương trình có nghiệm $x=\\dfrac{4}{3}$.",
+          "dang_id": "TH2",
+          "writelines": 0
+        },
+        {
+          "type": "problem",
+          "label": "Bài 31.",
+          "statement": "Nhẩm nghiệm rồi kiểm lại bằng công thức nghiệm.[[br]]a) [TH] $3x^2-8x+5=0$[[br]]b) [TH] $2x^2+9x+7=0$",
+          "tier": "btvn",
+          "level": 2,
+          "solution": "a) Ta có $a+b+c=3-8+5=0$ nên nhẩm được $x_1=1$; $x_2=\\dfrac{5}{3}$.[[br]]Kiểm lại: $\\Delta=64-60=4$, suy ra $\\sqrt{\\Delta}=2$; $x_1=\\dfrac{8+2}{6}=\\dfrac{5}{3}$; $x_2=\\dfrac{8-2}{6}=1$ — trùng kết quả nhẩm.[[br]]Vậy phương trình có hai nghiệm $x_1=1$ và $x_2=\\dfrac{5}{3}$.[[br]]b) Ta có $a-b+c=2-9+7=0$ nên nhẩm được $x_1=-1$; $x_2=-\\dfrac{7}{2}$.[[br]]Kiểm lại: $\\Delta=81-56=25$, suy ra $\\sqrt{\\Delta}=5$; $x_1=\\dfrac{-9+5}{4}=-1$; $x_2=\\dfrac{-9-5}{4}=-\\dfrac{7}{2}$.[[br]]Vậy phương trình có hai nghiệm $x_1=-1$ và $x_2=-\\dfrac{7}{2}$.",
+          "dang_id": "TH3",
+          "writelines": 0,
+          "check": {
+            "kind": "solveset",
+            "equation": "3*x**2 - 8*x + 5 = 0",
+            "answer": [
+              1,
+              "5/3"
+            ],
+            "symbol": "x"
+          }
+        },
+        {
+          "type": "problem",
+          "label": "Bài 32.",
+          "statement": "Giải phương trình rồi trả lời yêu cầu phụ.[[br]]a) [TH] Giải $x^2+6x-1080=0$ rồi chỉ ra nghiệm dương \\;(thi thử Vào 10, THCS Tự Lập)[[br]]b) [TH] Giải $x^2-2x-120=0$ rồi chỉ ra nghiệm nguyên dương \\;(thi thử Vào 10 lần 4, Phòng GD\\&ĐT Chương Mỹ)",
+          "tier": "btvn",
+          "level": 2,
+          "solution": "a) Ta có $\\Delta'=3^2-1\\cdot(-1080)=1089>0$, suy ra $\\sqrt{\\Delta'}=33$.[[br]]$x_1=\\dfrac{-3+33}{1}=30$; $x_2=\\dfrac{-3-33}{1}=-36$.[[br]]Vậy hai nghiệm là $x_1=30$; $x_2=-36$ và nghiệm dương là $x=30$.[[br]]b) Ta có $\\Delta'=1+120=121>0$, suy ra $\\sqrt{\\Delta'}=11$.[[br]]$x_1=\\dfrac{1+11}{1}=12$; $x_2=\\dfrac{1-11}{1}=-10$.[[br]]Vậy hai nghiệm là $x_1=12$; $x_2=-10$ và nghiệm nguyên dương là $x=12$.",
+          "dang_id": "TH4",
+          "writelines": 0
+        },
+        {
+          "type": "problem",
+          "label": "Bài 33.",
+          "statement": "[VD] Giải trọn vẹn phương trình sau: nêu điều kiện xác định, khử mẫu, giải, đối chiếu điều kiện và kết luận.[[br]]\\quad $\\dfrac{x+1}{x-2}-\\dfrac{4}{x+2}=\\dfrac{x^2+3}{x^2-4}$",
+          "tier": "btvn",
+          "level": 3,
+          "solution": "Điều kiện xác định: $x \\ne 2$ và $x \\ne -2$.[[br]]Khử mẫu: $(x+1)(x+2)-4(x-2)=x^2+3$[[br]]$x^2+3x+2-4x+8=x^2+3$[[br]]$-x+10=3$, suy ra $x=7$ (thỏa mãn điều kiện xác định).[[br]]Vậy phương trình có nghiệm $x=7$.",
+          "dang_id": "VD1",
+          "writelines": 0,
+          "hints": [
+            "Mẫu chung là $x^2-4=(x-2)(x+2)$; nhân chéo từng phân thức cho đúng mẫu chung."
+          ]
+        },
+        {
+          "type": "problem",
+          "label": "Bài 34.",
+          "statement": "[VD] Theo kế hoạch, một công nhân phải hoàn thành $60$ sản phẩm. Nhờ cải tiến kĩ thuật, mỗi giờ người đó làm thêm $2$ sản phẩm nên vừa xong sớm $30$ phút vừa vượt mức $3$ sản phẩm (thi thử Vào 10 lần 2, Phòng GD\\&ĐT Thanh Oai). Gọi số sản phẩm mỗi giờ theo kế hoạch là $x$ ($x$ nguyên dương) thì lập được phương trình $\\dfrac{60}{x}-\\dfrac{63}{x+2}=\\dfrac{1}{2}$.[[br]]Giải phương trình rồi trả lời câu hỏi của đề.",
+          "tier": "btvn",
+          "level": 3,
+          "solution": "Điều kiện xác định: $x \\ne 0$ và $x \\ne -2$.[[br]]Khử mẫu: $120(x+2)-126x=x(x+2)$[[br]]$120x+240-126x=x^2+2x$[[br]]$x^2+8x-240=0$.[[br]]$\\Delta'=4^2-1\\cdot(-240)=256>0$, suy ra $\\sqrt{\\Delta'}=16$.[[br]]$x_1=\\dfrac{-4+16}{1}=12$; $x_2=\\dfrac{-4-16}{1}=-20$.[[br]]Vì $x$ nguyên dương nên loại $x_2=-20$, nhận $x=12$.[[br]]Vậy theo kế hoạch mỗi giờ người đó phải làm $12$ sản phẩm.",
+          "dang_id": "VD2",
+          "writelines": 0,
+          "hints": [
+            "$30$ phút $=\\dfrac{1}{2}$ giờ; vượt mức $3$ sản phẩm nên tử số vế sau là $60+3=63$."
+          ],
+          "check": {
+            "kind": "solveset",
+            "equation": "x**2 + 8*x - 240 = 0",
+            "answer": [
+              12,
+              -20
+            ],
+            "symbol": "x"
+          }
+        }
+      ],
+      "teacher_note": "Sơ đồ tư duy điền 5 phút cuối buổi. BTVN 17 bài $\\approx$ 96 phút; buổi sau chữa trước Bài 27 (điền khuyết) và Bài 34 (khuôn Câu III.1)."
+    }
+  ]
+}

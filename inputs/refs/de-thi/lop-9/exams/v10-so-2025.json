@@ -9,13 +9,29 @@
     "nguon": "inputs/seeds/lop-9/de-thi-vao-10/de-chinh-thuc-vao-10-toan-ha-noi-2025-2026.pdf",
     "loai_pdf": "scan",
     "co_bieu_diem": true,
-    "_diem_lech": "TRÍCH XUẤT — file này CHỈ chứa câu chương VI (phương trình bậc hai) của đề, không phải cả đề 10 điểm. Σdiem < tong_diem là ĐÚNG Ý ĐỒ."
+    "_diem_lech": "TRÍCH XUẤT — file này CHỈ chứa câu chương VI (phương trình bậc hai) và Câu I.2 chương VIII (xác suất) của đề, không phải cả đề 10 điểm. Σdiem < tong_diem là ĐÚNG Ý ĐỒ."
   },
   "da_duyet": false,
   "ghi_chu_can_Thay_xem": [
-    "PDF không có text layer — đọc bằng pdftoppm 150 DPI trang 1. Đối chiếu SymPy: s=120, m=1."
+    "PDF không có text layer — đọc bằng pdftoppm 150 DPI trang 1. Đối chiếu SymPy: s=120, m=1.",
+    "Đã bổ sung câu CHƯƠNG VII (tần số, tần số tương đối — khuôn Câu I.1, 1,0đ). Số liệu chép từ đề gốc, đã cộng lại đối chiếu cỡ mẫu.",
+    "Câu I.2 (xác suất) đọc từ ảnh trang 1 PDF ở 150 DPI — đối chiếu đáp số bằng tay."
   ],
   "cau": [
+    {
+      "id": "v10-so-2025-I2",
+      "vi_tri": "Câu I.2",
+      "dang": [
+        "TK-XACSUAT-TINH"
+      ],
+      "chuong": "C8-XACSUAT",
+      "diem": 0.5,
+      "phut": 6.0,
+      "band": "TH",
+      "de": "Một hộp có 8 chiếc thẻ cùng loại, mỗi thẻ được ghi một trong các số $1,2,3,4,5,6,7,8$; hai thẻ khác nhau được ghi hai số khác nhau. Rút ngẫu nhiên một thẻ trong hộp. Tính xác suất của biến cố $A$: “Số ghi trên thẻ rút được là một số chia hết cho 3”.",
+      "dap_an": "$n(\\Omega)=8$. Các số chia hết cho 3 trong $\\{1;\\dots;8\\}$ là $3;6$ nên $n(A)=2$. Vậy $P(A)=\\dfrac{2}{8}=\\dfrac{1}{4}$.",
+      "ghi_chu": "Câu I.2 — rút một thẻ. Thang điểm CHÍNH THỨC của Sở: 0,5đ."
+    },
     {
       "id": "v10-so-2025-III1",
       "vi_tri": "Câu III.1",
@@ -43,6 +59,21 @@
       "de": "Biết phương trình bậc hai $x^2+8x-6=0$ có hai nghiệm $x_1$ và $x_2$, tìm tất cả giá trị của $m$ thỏa mãn $\\frac{70-mx_1^2}{x_2}=x_1+mx_2$.",
       "dap_an": "Quy đồng và hạ bậc đưa về $70-x_1x_2=m\\big((x_1+x_2)^2-2x_1x_2\\big)$, tức $76=76m \\Rightarrow m=1$.",
       "ghi_chu": "CÓ THAM SỐ m — Thầy chốt 13/08/2026 CẮT dạng này khỏi chương trình tầng C. Giữ trong bank để làm chứng cứ thống kê, KHÔNG trỏ source_refs vào."
+    },
+    {
+      "id": "v10-so-2025-I1",
+      "vi_tri": "Câu I.1",
+      "dang": [
+        "TK-TANSO-DOC"
+      ],
+      "chuong": "C7-TANSO",
+      "do_kho": 1,
+      "diem": 1.0,
+      "phut": 4.0,
+      "band": "NB",
+      "de": "Kết quả khảo sát 300 học sinh lớp 9 về thời gian tự học của mỗi bạn trong một tuần (đơn vị: giờ) được cho trong bảng tần số ghép nhóm: $[0;4)$: 17; $[4;8)$: 72; $[8;12)$: 94; $[12;16)$: 75; $[16;20)$: 42. Xác định tần số và tần số tương đối của nhóm $[12;16)$.",
+      "dap_an": "Tần số của nhóm $[12;16)$ là 75. Cỡ mẫu $17+72+94+75+42=300$. Tần số tương đối $=\\frac{75}{300}\\cdot 100\\% = 25\\%$.",
+      "ghi_chu": "Thang điểm CHÍNH THỨC của Sở: 1,0đ — ý NB đắt nhất cả đề."
     }
   ]
 }

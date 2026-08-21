@@ -9,13 +9,29 @@
     "nguon": "inputs/seeds/lop-9/de-thi-vao-10/de-chinh-thuc-vao-10-toan-ha-noi-2026-2027.pdf",
     "loai_pdf": "scan",
     "co_bieu_diem": true,
-    "_diem_lech": "TRÍCH XUẤT — file này CHỈ chứa câu chương VI (phương trình bậc hai) của đề, không phải cả đề 10 điểm. Σdiem < tong_diem là ĐÚNG Ý ĐỒ."
+    "_diem_lech": "TRÍCH XUẤT — file này CHỈ chứa câu chương VI (phương trình bậc hai) và Câu I.2 chương VIII (xác suất) của đề, không phải cả đề 10 điểm. Σdiem < tong_diem là ĐÚNG Ý ĐỒ."
   },
   "da_duyet": false,
   "ghi_chu_can_Thay_xem": [
-    "PDF không có text layer — đọc bằng pdftoppm 150 DPI trang 1. Đối chiếu SymPy: x=30, Q=18."
+    "PDF không có text layer — đọc bằng pdftoppm 150 DPI trang 1. Đối chiếu SymPy: x=30, Q=18.",
+    "Đã bổ sung câu CHƯƠNG VII (tần số, tần số tương đối — khuôn Câu I.1, 1,0đ). Số liệu chép từ đề gốc, đã cộng lại đối chiếu cỡ mẫu.",
+    "Câu I.2 (xác suất) đọc từ ảnh trang 1 PDF ở 150 DPI — đối chiếu đáp số bằng tay."
   ],
   "cau": [
+    {
+      "id": "v10-so-2026-I2",
+      "vi_tri": "Câu I.2",
+      "dang": [
+        "TK-XACSUAT-TINH"
+      ],
+      "chuong": "C8-XACSUAT",
+      "diem": 0.5,
+      "phut": 6.0,
+      "band": "TH",
+      "de": "Một hộp đựng 6 quả bóng cùng loại, mỗi quả bóng ghi một trong các số $1,2,3,4,5,6$; hai quả bóng khác nhau được ghi hai số khác nhau. Lấy ngẫu nhiên một quả bóng trong hộp. Tính xác suất của biến cố $A$: “Số ghi trên quả bóng lấy được là số chẵn”.",
+      "dap_an": "$n(\\Omega)=6$. Các số chẵn là $2;4;6$ nên $n(A)=3$. Vậy $P(A)=\\dfrac{3}{6}=\\dfrac{1}{2}$.",
+      "ghi_chu": "Câu I.2 — lấy một quả bóng. Biến cố “số chẵn”, dễ nhất trong ba đề."
+    },
     {
       "id": "v10-so-2026-III1",
       "vi_tri": "Câu III.1",
@@ -43,6 +59,20 @@
       "de": "Biết phương trình bậc hai $x^2-3x+1=0$ có hai nghiệm phân biệt $x_1$ và $x_2$, tính giá trị của biểu thức $Q=\\frac{3x_2-1}{x_1}+\\frac{3x_1}{x_2}-x_1$.",
       "dap_an": "Hạ bậc $x_2^2=3x_2-1$ và $x_1^2=3x_1-1$; dùng $x_1x_2=1$ đưa $Q$ về $x_1^3+x_2^3=(x_1+x_2)^3-3x_1x_2(x_1+x_2)=27-9=18$. Vậy $Q=18$.",
       "ghi_chu": "Biểu thức trông LỆCH nhưng hạ bậc xong ra ĐỐI XỨNG — khuôn cần luyện."
+    },
+    {
+      "id": "v10-so-2026-I1",
+      "vi_tri": "Câu I.1",
+      "dang": [
+        "TK-TANSO-DOC"
+      ],
+      "chuong": "C7-TANSO",
+      "do_kho": 1,
+      "diem": 1.0,
+      "phut": 4.0,
+      "band": "NB",
+      "de": "Kết quả đo chiều cao của 50 học sinh lớp 6 (đơn vị: cm) được thống kê trong bảng tần số ghép nhóm: $[140;145)$: 10; $[145;150)$: 18; $[150;155)$: 14; $[155;160)$: 6; $[160;165)$: 2. Xác định tần số và tần số tương đối của nhóm $[150;155)$.",
+      "dap_an": "Tần số của nhóm $[150;155)$ là 14. Cỡ mẫu $10+18+14+6+2=50$. Tần số tương đối $=\\frac{14}{50}\\cdot 100\\% = 28\\%$."
     }
   ]
 }
