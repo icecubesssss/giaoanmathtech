@@ -59,17 +59,46 @@ class Stale:
 
 
 @lru_cache(maxsize=1)
-def _seed_theo_slug() -> dict[str, Path]:
-    """slug phiếu/spec → file JSON nguồn (thư mục output đặt tên theo slug)."""
-    out: dict[str, Path] = {}
+def _quet_seed() -> tuple[dict[tuple[str, str], Path], dict[str, Path], frozenset[str]]:
+    """Quét một lượt inputs/seeds, trả ba thứ:
+
+    • theo_vi_tri — (đường dẫn thư mục tương đối, slug) → seed. Khoá CHÍNH.
+    • theo_slug   — slug → seed, CHỈ giữ slug duy nhất toàn kho.
+    • nhap_nhang  — các slug bị trùng ở nhiều tầng/lớp.
+
+    Vì sao cần khoá theo vị trí (bắt 2026-08-22): chương V lớp 9 có **cùng bộ slug**
+    ở cả `lop-b` lẫn `lop-c` (`phieu-a-mo-dau-ve-duong-tron`…). Bản đầu chỉ khoá theo
+    slug nên bản đồ ghi đè lẫn nhau, PDF tầng C bị đem so với seed tầng B ⇒ 21 PDF vừa
+    build xong đã bị báo "lỗi thời" và `sync-drive` từ chối đẩy Drive.
+    """
+    theo_vi_tri: dict[tuple[str, str], Path] = {}
+    theo_slug: dict[str, Path] = {}
+    trung: set[str] = set()
     for f in _SEEDS_DIR.rglob("*.json"):
         try:
             slug = json.loads(f.read_text(encoding="utf-8")).get("slug")
         except Exception:  # noqa: BLE001 — seed hỏng là việc của schema_validator
             continue
-        if slug:
-            out[slug] = f
-    return out
+        if not slug:
+            continue
+        theo_vi_tri[(f.parent.relative_to(_SEEDS_DIR).as_posix(), slug)] = f
+        if slug in theo_slug:
+            trung.add(slug)
+        theo_slug[slug] = f
+    return theo_vi_tri, {k: v for k, v in theo_slug.items() if k not in trung}, frozenset(trung)
+
+
+def _seed_theo_slug() -> dict[str, Path]:
+    """slug phiếu/spec → file JSON nguồn (chỉ slug DUY NHẤT; trùng thì tra theo vị trí)."""
+    return _quet_seed()[1]
+
+
+def _vi_tri(d: Path) -> tuple[str, str] | None:
+    """Thư mục output → (đường dẫn thư mục tương đối như bên seeds, slug)."""
+    try:
+        return d.parent.resolve().relative_to(settings.OUTPUTS_DIR).as_posix(), d.name
+    except ValueError:
+        return None
 
 
 def _tex_hien_tai(seed: Path) -> dict[str, str] | None:
@@ -111,14 +140,18 @@ def _bien_the(pdf: Path) -> str:
 
 def check_stale(out_dirs) -> list[Stale]:
     """Soi mọi PDF trong các thư mục output đã cho. [] = mọi bản in còn khớp nguồn."""
+    theo_vi_tri, _, nhap_nhang = _quet_seed()
     seeds = _seed_theo_slug()
     ra: list[Stale] = []
     for d in map(Path, out_dirs):
         pdfs = sorted(d.glob("*.pdf"))
         if not pdfs:
             continue
-        seed = seeds.get(d.name)
+        vt = _vi_tri(d)
+        seed = (theo_vi_tri.get(vt) if vt else None) or seeds.get(d.name)
         if seed is None:
+            if d.name in nhap_nhang:
+                continue                          # slug trùng, không truy được → đừng báo oan
             ra += [Stale(p, "mat-nguon") for p in pdfs]
             continue
         hien = _tex_hien_tai(seed)

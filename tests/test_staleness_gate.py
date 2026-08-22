@@ -113,3 +113,35 @@ def test_tom_tat_dem_theo_ly_do(tmp_path):
     s = sg.tom_tat(st)
     assert "3 PDF lỗi thời" in s and "2 noi-dung" in s and "1 mat-nguon" in s
     assert sg.tom_tat([]) == "không có"
+
+
+# ── Slug trùng ở hai tầng lớp (bắt 2026-08-22) ──────────────────────────────
+
+def test_slug_trung_hai_tang_thi_tra_theo_vi_tri(tmp_path, monkeypatch):
+    """Chương V lớp 9 có cùng bộ slug ở lop-b và lop-c.
+
+    Bản đầu chỉ khoá theo slug ⇒ bản đồ ghi đè, PDF tầng C bị so với seed tầng B nên
+    21 PDF vừa build xong đã bị báo 'lỗi thời' và sync-drive từ chối đẩy Drive.
+    """
+    seeds = tmp_path / "seeds"
+    outs = tmp_path / "outputs"
+    for tang, tex in (("lop-b", "TEX CUA TANG B"), ("lop-c", "TEX CUA TANG C")):
+        sd = seeds / "lop-9" / "hinh-hoc" / tang / "chuong-05"
+        sd.mkdir(parents=True)
+        (sd / "phieu-a.json").write_text(json.dumps({"slug": "phieu-a-chung-slug"}),
+                                         encoding="utf-8")
+        od = outs / "lop-9" / "hinh-hoc" / tang / "chuong-05" / "phieu-a-chung-slug"
+        od.mkdir(parents=True)
+        (od / "ca-01-handout.pdf").write_bytes(b"%PDF-1.7 gia lap")
+        (od / "ca-01-handout.tex.sha256").write_text(_hash(tex), encoding="utf-8")
+
+    monkeypatch.setattr(sg, "_SEEDS_DIR", seeds)
+    monkeypatch.setattr(sg.settings, "OUTPUTS_DIR", outs)
+    sg._quet_seed.cache_clear()
+    monkeypatch.setattr(sg, "_tex_hien_tai",
+                        lambda s: {"handout": _hash("TEX CUA TANG B" if "lop-b" in str(s)
+                                                    else "TEX CUA TANG C")})
+    dirs = [outs / "lop-9" / "hinh-hoc" / t / "chuong-05" / "phieu-a-chung-slug"
+            for t in ("lop-b", "lop-c")]
+    assert sg.check_stale(dirs) == []
+    sg._quet_seed.cache_clear()
