@@ -1,0 +1,582 @@
+{
+ "slug": "phieu-b-phep-thu-hai-hanh-dong-va-luyen-tap-chung",
+ "title": "Phép thử gồm hai hành động, Luyện tập chung và Bài tập cuối chương VIII",
+ "eyebrow": "ĐẠI SỐ — CHƯƠNG VIII · PHIẾU B",
+ "grade_label": "Lớp 9 • Ôn vào 10",
+ "class_tier": "C",
+ "so_ca": 1,
+ "stages": [
+  {
+   "kind": "review",
+   "number": 1,
+   "title": "Khám phá",
+   "teacher_note": "Mở màn 8 phút. Gieo THẬT hai con xúc xắc trước lớp vài lần, ghi kết quả lên bảng thành cặp $(a;b)$ — HS thấy ngay một kết quả nay gồm HAI số. Chốt luôn câu quan trọng nhất buổi: \\emph{công thức không đổi, chỉ có cách đếm $n(\\Omega)$ là đổi}. Phần nhắc buổi trước làm nhanh 5 phút, đừng giảng lại từ đầu.",
+   "blocks": [
+    {
+     "type": "opener",
+     "tikz": "\\begin{tikzpicture}[font=\\small,line width=0.7pt]\\draw[stage3,fill=stage3!12,rounded corners=3pt,line width=0.9pt] (-0.62,-0.62) rectangle (0.62,0.62);\\fill[ink] (-0.32,0.32) circle (1.5pt);\\fill[ink] (0.32,0.32) circle (1.5pt);\\fill[ink] (-0.32,-0.32) circle (1.5pt);\\fill[ink] (0.32,-0.32) circle (1.5pt);\\draw[stage3,fill=stage3!12,rounded corners=3pt,line width=0.9pt] (1.13,-0.62) rectangle (2.37,0.62);\\fill[ink] (1.43,0.32) circle (1.5pt);\\fill[ink] (1.75,0.00) circle (1.5pt);\\fill[ink] (2.07,-0.32) circle (1.5pt);\\end{tikzpicture}",
+     "text": "Trò chơi cá ngựa: mỗi lượt tung \\textbf{hai} con xúc xắc rồi đi số ô bằng TỔNG số chấm. Bạn Nam bảo \\textquotedblleft tao thích tổng bằng 7 nhất\\textquotedblright, bạn Hải cãi \\textquotedblleft tổng 12 mới oách\\textquotedblright.[[br]]Ai có lí hơn? Muốn trả lời thì phải đếm xem \\emph{tổng bằng 7} có bao nhiêu cách ra, \\emph{tổng bằng 12} có bao nhiêu cách.[[br]]Rắc rối ở chỗ: một lượt tung nay không cho một số nữa mà cho một \\textbf{cặp số} $(a;b)$. Kể miệng thì sót ngay. Cách chắc ăn là \\textbf{kẻ một cái bảng} 6 dòng 6 cột — mỗi ô một cặp, đếm ô là ra.[[br]]Đó chính là việc cả buổi hôm nay: gặp phép thử \\textbf{hai hành động} thì \\emph{lập bảng rồi đếm ô}."
+    },
+    {
+     "type": "para",
+     "text": "\\textbf{Nhắc lại buổi trước — ba dòng trình bày KHÔNG đổi.}"
+    },
+    {
+     "type": "noted",
+     "variant": "note",
+     "text": "Buổi trước phép thử chỉ có MỘT hành động, $\\Omega$ viết thẳng ra:[[br]]\\quad $\\Omega=\\{1;2;\\dots;8\\}$, $n(\\Omega)=8$; $P(E)=\\dfrac{n(E)}{n(\\Omega)}$.[[br]]Buổi này phép thử có HAI hành động, mỗi kết quả là một \\textbf{cặp} $(a;b)$; muốn kể cho đủ thì lập bảng.[[br]]\\textbf{Công thức vẫn y nguyên} $P(E)=\\dfrac{n(E)}{n(\\Omega)}$ và ba dòng trình bày cũng y nguyên — chỉ khác ở chỗ $n(\\Omega)$ nay là \\emph{số ô của bảng} chứ không phải số phần tử của một dãy."
+    },
+    {
+     "type": "noted",
+     "variant": "target",
+     "text": "\\textbf{Đích của buổi học.} Câu I.2 đề Vào 10 của Sở ba năm liền đều là mô hình MỘT hành động, nên phần bảng hai chiều là để \\emph{chắc kiến thức và ăn điểm đề trường} (đề học kì của trường có hỏi), còn Câu I.2 thì buổi này vẫn luyện lại ở Bài 15 và Bài 16.[[br]]Hết buổi này là hết chương trình SGK lớp 9 — từ tuần sau chuyển sang luyện đề."
+    }
+   ]
+  },
+  {
+   "kind": "concept",
+   "number": 2,
+   "title": "Kiến thức cần nhớ",
+   "teacher_note": "Giảng 45 phút. Vào thẳng bảng hai chiều, đừng giảng lại lí thuyết buổi trước. Ví dụ 1 kẻ bảng lên bảng lớn, gọi HS lên điền vài ô. Ví dụ 4 là hạt nhân — bắt HS đọc to \\emph{n của ô-mê-ga bằng số ô của bảng}. Ví dụ 6 (\\textquotedblleft ít nhất một\\textquotedblright) là chỗ khó nhất buổi: vẽ hẳn bảng $6\\cdot 6$, tô kín khối $5\\cdot 5$ cho HS nhìn thấy phần bù bằng mắt. Ví dụ 8 chỉ giới thiệu, không bắt thuộc.",
+   "blocks": [
+    {
+     "type": "para",
+     "text": "\\textbf{1. Kết quả của phép thử hai hành động là một CẶP}"
+    },
+    {
+     "type": "para",
+     "text": "Khi phép thử gồm \\textbf{hai hành động} (tiến hành liên tiếp hoặc đồng thời) thì mỗi kết quả là một \\textbf{cặp} $(a;b)$, trong đó $a$ là kết quả của hành động thứ nhất, $b$ là kết quả của hành động thứ hai.[[br]]Thứ tự trong cặp là bắt buộc: $(2;3)$ và $(3;2)$ là hai kết quả KHÁC nhau, nằm ở hai ô khác nhau của bảng."
+    },
+    {
+     "type": "para",
+     "text": "\\textbf{2. Lập bảng hai chiều để liệt kê không gian mẫu}"
+    },
+    {
+     "type": "para",
+     "text": "Cách làm: hành động thứ nhất cho các DÒNG, hành động thứ hai cho các CỘT; mỗi ô của bảng ghi một kết quả.[[br]]Khi đó $n(\\Omega)$ chính là \\textbf{số ô} của bảng, và[[br]]\\quad $n(\\Omega) = $ (số kết quả của hành động 1) $\\cdot$ (số kết quả của hành động 2).[[br]]Nhân xong thì đối chiếu lại với số ô đếm được — hai con số phải khớp nhau."
+    },
+    {
+     "type": "noted",
+     "variant": "example",
+     "text": "\\textbf{Ví dụ 1.} Bạn Lan gieo một con xúc xắc, bạn Hoà tung một đồng xu. Lập bảng liệt kê mọi kết quả và tìm $n(\\Omega)$ \\;(Ví dụ 1, Bài 25 SGK).[[br]]\\textbf{Lời giải.}[[br]]\\quad Kết quả của phép thử là một cặp gồm số chấm của xúc xắc và mặt của đồng xu ($S$ hoặc $N$).\\par\\nopagebreak\\smallskip\\begin{center}\\footnotesize\\renewcommand\\arraystretch{1.3}\\begin{tabular}{|c|c|c|c|c|c|c|}\\hline \\textbf{Đồng xu $\\backslash$ Xúc xắc} & \\textbf{1} & \\textbf{2} & \\textbf{3} & \\textbf{4} & \\textbf{5} & \\textbf{6} \\\\ \\hline \\textbf{S} & $(1;S)$ & $(2;S)$ & $(3;S)$ & $(4;S)$ & $(5;S)$ & $(6;S)$ \\\\ \\hline \\textbf{N} & $(1;N)$ & $(2;N)$ & $(3;N)$ & $(4;N)$ & $(5;N)$ & $(6;N)$ \\\\ \\hline \\end{tabular}\\end{center}\\smallskip \\quad Bảng có 2 dòng và 6 cột nên có $2\\cdot 6=12$ ô.[[br]]Vậy $n(\\Omega)=12$."
+    },
+    {
+     "type": "noted",
+     "variant": "example",
+     "text": "\\textbf{Ví dụ 2.} Bạn Tuấn quay một tấm bìa tròn chia 4 hình quạt bằng nhau ghi $1;2;3;4$ hai lần. Lập bảng và tìm $n(\\Omega)$ \\;(Ví dụ 1, Bài 26 SGK).[[br]]\\textbf{Lời giải.}[[br]]\\quad Kết quả của phép thử là cặp $(a;b)$ với $a$, $b$ là số của lần quay thứ nhất và thứ hai.\\par\\nopagebreak\\smallskip\\begin{center}\\footnotesize\\renewcommand\\arraystretch{1.3}\\begin{tabular}{|c|c|c|c|c|}\\hline \\textbf{Lần 1 $\\backslash$ Lần 2} & \\textbf{1} & \\textbf{2} & \\textbf{3} & \\textbf{4} \\\\ \\hline \\textbf{1} & $(1;1)$ & $(1;2)$ & $(1;3)$ & $(1;4)$ \\\\ \\hline \\textbf{2} & $(2;1)$ & $(2;2)$ & $(2;3)$ & $(2;4)$ \\\\ \\hline \\textbf{3} & $(3;1)$ & $(3;2)$ & $(3;3)$ & $(3;4)$ \\\\ \\hline \\textbf{4} & $(4;1)$ & $(4;2)$ & $(4;3)$ & $(4;4)$ \\\\ \\hline \\end{tabular}\\end{center}\\smallskip \\quad Bảng có 4 dòng và 4 cột nên có $4\\cdot 4=16$ ô.[[br]]Vậy $n(\\Omega)=16$."
+    },
+    {
+     "type": "noted",
+     "variant": "trap",
+     "text": "\\textbf{Bẫy số 1 — cộng thay vì nhân.} Đề \\textquotedblleft túi I có 4 thẻ, túi II có 5 thẻ\\textquotedblright{} thì $n(\\Omega)=4\\cdot 5=20$, KHÔNG phải $4+5=9$.[[br]]Nhớ mẹo: mỗi thẻ của túi I ghép được với CẢ 5 thẻ của túi II, nên phải nhân."
+    },
+    {
+     "type": "para",
+     "text": "\\textbf{3. Đếm số kết quả thuận lợi trên bảng}"
+    },
+    {
+     "type": "para",
+     "text": "Nhiều đề không hỏi thẳng cặp $(a;b)$ mà hỏi về TỔNG hay TÍCH hai số.[[br]]Khi đó điền luôn tổng hoặc tích vào từng ô, rồi khoanh những ô thoả biến cố.[[br]]Số ô khoanh được chính là $n(E)$."
+    },
+    {
+     "type": "noted",
+     "variant": "example",
+     "text": "\\textbf{Ví dụ 3.} Vẫn phép thử quay tấm bìa 4 phần hai lần. Mô tả các kết quả thuận lợi cho $E$: \\textquotedblleft Tổng hai số bằng 5\\textquotedblright{} và $F$: \\textquotedblleft Tích hai số bằng 4\\textquotedblright.[[br]]\\textbf{Lời giải.}[[br]]\\quad Soi từng ô của bảng ở Ví dụ 2, các ô có tổng bằng 5 là $(1;4);(2;3);(3;2);(4;1)$ nên $n(E)=4$.[[br]]\\quad Các ô có tích bằng 4 là $(1;4);(2;2);(4;1)$ nên $n(F)=3$.[[br]]Vậy $E$ có 4 kết quả thuận lợi và $F$ có 3 kết quả thuận lợi."
+    },
+    {
+     "type": "noted",
+     "variant": "example",
+     "text": "\\textbf{Ví dụ 4 (BÀI MẪU MÔ HÌNH HAI HÀNH ĐỘNG).} Vẫn phép thử quay tấm bìa 4 phần hai lần. Tính xác suất của biến cố $E$: \\textquotedblleft Tổng hai số bằng 5\\textquotedblright.[[br]]\\textbf{Lời giải.}[[br]]\\quad \\emph{Dòng 1.} Lập bảng hai chiều 4 dòng 4 cột, mỗi ô là một cặp $(a;b)$. Bảng có $4\\cdot 4=16$ ô nên $n(\\Omega)=16$.[[br]]\\quad \\emph{Dòng 2.} Vì tấm bìa được chia thành 4 hình quạt bằng nhau nên 16 kết quả trên là đồng khả năng. Các kết quả thuận lợi cho $E$ là $(1;4);(2;3);(3;2);(4;1)$, do đó $n(E)=4$.[[br]]\\quad \\emph{Dòng 3.} $P(E)=\\dfrac{n(E)}{n(\\Omega)}=\\dfrac{4}{16}=\\dfrac{1}{4}$.[[br]]Vậy $P(E)=\\dfrac{1}{4}$."
+    },
+    {
+     "type": "noted",
+     "variant": "tip",
+     "text": "\\textbf{So sánh hai mô hình — đọc đề là biết ngay dùng cái nào.}[[br]]\\quad $\\bullet$\\; \\emph{Một} hành động (lấy MỘT vật, quay MỘT lần): viết thẳng $\\Omega=\\{\\ldots\\}$ rồi đếm. KHÔNG lập bảng cho mất giờ.[[br]]\\quad $\\bullet$\\; \\emph{Hai} hành động (mỗi túi một thẻ, quay hai lần, hai xúc xắc): lập bảng, $n(\\Omega)$ là số ô.[[br]]Ba dòng trình bày và công thức thì giống hệt nhau."
+    },
+    {
+     "type": "noted",
+     "variant": "example",
+     "text": "\\textbf{Ví dụ 5.} Có hai túi I và II, mỗi túi chứa 4 tấm thẻ ghi $1;2;3;4$. Rút mỗi túi một thẻ rồi nhân hai số. Tính xác suất của biến cố $A$: \\textquotedblleft Kết quả là một số lẻ\\textquotedblright{} \\;(Bài 8{.}8 SGK).[[br]]\\textbf{Lời giải.}[[br]]\\quad Lập bảng 4 dòng 4 cột, mỗi ô ghi tích hai số; bảng có 16 ô nên $n(\\Omega)=16$, các kết quả đồng khả năng.[[br]]\\quad Tích $a\\cdot b$ là số lẻ khi và chỉ khi cả $a$ và $b$ đều lẻ. Mỗi túi có 2 thẻ lẻ là $1;3$ nên có $2\\cdot 2=4$ ô thoả, tức $n(A)=4$.[[br]]\\quad $P(A)=\\dfrac{4}{16}=\\dfrac{1}{4}$.[[br]]Vậy $P(A)=\\dfrac{1}{4}$."
+    },
+    {
+     "type": "para",
+     "text": "\\textbf{4. Biến cố \\textquotedblleft có ít nhất một\\textquotedblright{} — đếm phần bù}"
+    },
+    {
+     "type": "para",
+     "text": "Biến cố \\textquotedblleft có ít nhất một\\ldots\\textquotedblright{} thường có rất nhiều ô, đếm trực tiếp dễ sót. Cách nhanh: đếm các ô \\textquotedblleft KHÔNG có cái nào\\textquotedblright{} (gọi là \\emph{phần bù}) rồi lấy $n(\\Omega)$ trừ đi."
+    },
+    {
+     "type": "noted",
+     "variant": "example",
+     "text": "\\textbf{Ví dụ 6.} Gieo đồng thời hai con xúc xắc. Tính xác suất của biến cố $F$: \\textquotedblleft Có ít nhất một con xúc xắc xuất hiện mặt 6 chấm\\textquotedblright{} \\;(Bài 8{.}6 SGK).[[br]]\\textbf{Lời giải.}[[br]]\\quad Lập bảng $6\\cdot 6$; bảng có 36 ô nên $n(\\Omega)=36$, các kết quả đồng khả năng.[[br]]\\quad Xét các ô KHÔNG có mặt 6 chấm nào: mỗi con chỉ được nhận một trong 5 giá trị $1;2;3;4;5$, nên có $5\\cdot 5=25$ ô như vậy.[[br]]\\quad Do đó số ô có ít nhất một mặt 6 chấm là $36-25=11$, tức $n(F)=11$.[[br]]\\quad $P(F)=\\dfrac{11}{36}$.[[br]]Vậy $P(F)=\\dfrac{11}{36}$."
+    },
+    {
+     "type": "noted",
+     "variant": "example",
+     "text": "\\textbf{Ví dụ 7.} Gieo đồng thời hai con xúc xắc. Tính xác suất của biến cố $G$: \\textquotedblleft Tổng số chấm trên hai con bằng 11\\textquotedblright{} \\;(Bài 8{.}16 SGK).[[br]]\\textbf{Lời giải.}[[br]]\\quad Bảng có 36 ô nên $n(\\Omega)=36$; hai xúc xắc cân đối, đồng chất nên các kết quả đồng khả năng.[[br]]\\quad Tổng bằng 11 chỉ xảy ra ở hai ô là $(5;6)$ và $(6;5)$ nên $n(G)=2$.[[br]]\\quad $P(G)=\\dfrac{2}{36}=\\dfrac{1}{18}$.[[br]]Vậy $P(G)=\\dfrac{1}{18}$."
+    },
+    {
+     "type": "noted",
+     "variant": "example",
+     "text": "\\textbf{Ví dụ 8 (giới thiệu — lấy ĐỒNG THỜI hai vật).} Một hộp có ba viên bi xanh và một viên bi đỏ. Lấy ngẫu nhiên đồng thời hai viên bi. Tính xác suất của biến cố $A$: \\textquotedblleft Lấy được một bi xanh và một bi đỏ\\textquotedblright{} \\;(cuối kì II, THCS Nguyễn Du).[[br]]\\textbf{Lời giải.}[[br]]\\quad Kí hiệu ba bi xanh là $X_1$, $X_2$, $X_3$ và bi đỏ là $Đ$. Lấy đồng thời nên mỗi kết quả là một cặp hai viên khác nhau, KHÔNG kể thứ tự.[[br]]\\quad Liệt kê: $(X_1;X_2)$, $(X_1;X_3)$, $(X_2;X_3)$, $(X_1;Đ)$, $(X_2;Đ)$, $(X_3;Đ)$; do đó $n(\\Omega)=6$ và các kết quả đồng khả năng.[[br]]\\quad Các kết quả thuận lợi cho $A$ là $(X_1;Đ)$, $(X_2;Đ)$, $(X_3;Đ)$ nên $n(A)=3$.[[br]]\\quad $P(A)=\\dfrac{3}{6}=\\dfrac{1}{2}$.[[br]]Vậy $P(A)=\\dfrac{1}{2}$."
+    },
+    {
+     "type": "noted",
+     "variant": "trap",
+     "text": "\\textbf{Bẫy số 2 — đồng thời thì không kể thứ tự.} Lấy \\emph{đồng thời} hai viên bi thì $(X_1;X_2)$ và $(X_2;X_1)$ chỉ là MỘT kết quả, và không có kết quả nào kiểu $(X_1;X_1)$.[[br]]Cứ đánh số từng vật rồi liệt kê thành từng cặp cho chắc, đừng nhân $4\\cdot 4$."
+    },
+    {
+     "type": "noted",
+     "variant": "target",
+     "text": "\\textbf{Ba phép kiểm bắt buộc trước khi nộp bài.}[[br]]\\quad (1) Số ô của bảng phải khớp với tích hai số kết quả.[[br]]\\quad (2) $n(E)$ không được lớn hơn $n(\\Omega)$, và $0 \\le P(E) \\le 1$.[[br]]\\quad (3) Rút gọn phân số về tối giản và viết câu \\textquotedblleft Vậy $P(E)=\\ldots$\\textquotedblright."
+    }
+   ]
+  },
+  {
+   "kind": "practice1",
+   "number": 3,
+   "title": "Luyện tập 1 — Nhận biết",
+   "teacher_note": "Luyện 48 phút. Bài 1--3 làm ngay tại chỗ, gọi HS lên bảng điền ô trống — kẻ bảng đúng là nửa số điểm của bài. Bài 5 nhấn phép NHÂN (bẫy cộng). Bài 8 vẽ bảng $6\\cdot 6$ lên bảng lớn, tô kín khối $5\\cdot 5$ để HS thấy phần bù bằng mắt. Bài 10 cho làm một mình 4 phút rồi chữa từng ý.",
+   "blocks": [
+    {
+     "type": "problem",
+     "label": "Bài 1.",
+     "statement": "Bạn Hiền quay một đĩa tròn chia 3 phần bằng nhau ghi các số $1;2;3$ liên tiếp \\textbf{hai lần}. Quy ước viết kết quả thành cặp $(a;b)$ với $a$ là số của lần quay thứ nhất, $b$ là số của lần quay thứ hai.\\par\\nopagebreak\\smallskip\\begin{center}\\adjustbox{max width=0.86\\linewidth}{\\begin{tikzpicture}[font=\\small,line width=0.7pt]\\filldraw[stage2!22,draw=stage2,line width=0.8pt] (0,0) -- (90.00:1.5) arc (90.00:-30.00:1.5) -- cycle;\\node[font=\\small] at (30.00:0.99) {1};\\filldraw[stage3!22,draw=stage3,line width=0.8pt] (0,0) -- (-30.00:1.5) arc (-30.00:-150.00:1.5) -- cycle;\\node[font=\\small] at (-90.00:0.99) {2};\\filldraw[stage1!22,draw=stage1,line width=0.8pt] (0,0) -- (-150.00:1.5) arc (-150.00:-270.00:1.5) -- cycle;\\node[font=\\small] at (-210.00:0.99) {3};\\draw[->,ink,line width=1.1pt] (0,0) -- (-90:1.23);\\fill[ink] (0,0) circle (1.7pt);\\end{tikzpicture}}\\par\\vspace{2pt}{\\scriptsize\\itshape\\color{muted}Đĩa tròn 3 phần — quay hai lần liên tiếp}\\end{center}\\smallskip a) [NB] Lần đầu kim chỉ số 2, lần sau kim chỉ số 3. Viết kết quả đó thành cặp.[[br]]b) [NB] Cặp $(3;2)$ mô tả kết quả nào?[[br]]c) [NB] Hai cặp $(2;3)$ và $(3;2)$ có phải là cùng một kết quả không? Vì sao?",
+     "tier": "onclass",
+     "level": 1,
+     "solution": "a) Kết quả đó là cặp $(2;3)$.[[br]]b) Cặp $(3;2)$ nghĩa là lần quay thứ nhất kim chỉ số 3, lần quay thứ hai kim chỉ số 2.[[br]]c) KHÔNG phải cùng một kết quả. Vì thứ tự trong cặp đã được quy ước: số đứng trước là của lần thứ nhất. Hai cặp đó là hai ô KHÁC NHAU của bảng.",
+     "dang_id": "NB1",
+     "writelines": 0
+    },
+    {
+     "type": "problem",
+     "label": "Bài 2.",
+     "statement": "Bạn Lan gieo một con xúc xắc, bạn Hoà tung một đồng xu (mặt sấp $S$, mặt ngửa $N$). Bảng dưới đây liệt kê mọi kết quả có thể \\;(Ví dụ 1, Bài 25 SGK).\\par\\nopagebreak\\smallskip\\begin{center}\\adjustbox{max width=0.86\\linewidth}{\\begin{tikzpicture}[font=\\small,line width=0.7pt]\\draw[stage3,fill=stage3!12,rounded corners=3pt,line width=0.9pt] (-0.62,-0.62) rectangle (0.62,0.62);\\fill[ink] (-0.32,0.32) circle (1.5pt);\\fill[ink] (0.00,0.00) circle (1.5pt);\\fill[ink] (0.32,-0.32) circle (1.5pt);\\draw[gold,fill=gold!22,line width=0.9pt] (1.80,0.00) circle (0.6);\\node[font=\\small\\bfseries] at (1.80,0.00) {N};\\end{tikzpicture}}\\par\\vspace{2pt}{\\scriptsize\\itshape\\color{muted}Hai hành động tiến hành ĐỒNG THỜI}\\end{center}\\smallskip \\par\\nopagebreak\\smallskip\\begin{center}\\footnotesize\\renewcommand\\arraystretch{1.3}\\begin{tabular}{|c|c|c|c|c|c|c|}\\hline \\textbf{Đồng xu $\\backslash$ Xúc xắc} & \\textbf{1} & \\textbf{2} & \\textbf{3} & \\textbf{4} & \\textbf{5} & \\textbf{6} \\\\ \\hline \\textbf{S} & $(1;S)$ & $(2;S)$ & $\\cdots$ & $\\cdots$ & $\\cdots$ & $\\cdots$ \\\\ \\hline \\textbf{N} & $(1;N)$ & $(2;N)$ & $\\cdots$ & $\\cdots$ & $\\cdots$ & $\\cdots$ \\\\ \\hline \\end{tabular}\\end{center}\\smallskip a) [NB] Bảng có bao nhiêu cột số liệu (ứng với con xúc xắc)?[[br]]b) [NB] Bảng có bao nhiêu dòng số liệu (ứng với đồng xu)?[[br]]c) [NB] Điền nốt các ô còn trống rồi đếm số ô của bảng để tìm $n(\\Omega)$.",
+     "tier": "onclass",
+     "level": 1,
+     "solution": "a) Bảng có 6 cột số liệu, ứng với 6 mặt của con xúc xắc.[[br]]b) Bảng có 2 dòng số liệu, ứng với hai mặt $S$ và $N$ của đồng xu.[[br]]c) Các ô còn trống lần lượt là $(3;S),(4;S),(5;S),(6;S)$ ở dòng $S$ và $(3;N),(4;N),(5;N),(6;N)$ ở dòng $N$.[[br]]Bảng có $6\\cdot 2=12$ ô nên $n(\\Omega)=12$.",
+     "dang_id": "NB2",
+     "writelines": 0
+    },
+    {
+     "type": "problem",
+     "label": "Bài 3.",
+     "statement": "Bạn Tuấn quay một tấm bìa tròn chia 4 hình quạt bằng nhau ghi các số $1;2;3;4$ \\textbf{hai lần} \\;(Ví dụ 1, Bài 26 SGK).\\par\\nopagebreak\\smallskip\\begin{center}\\footnotesize\\renewcommand\\arraystretch{1.3}\\begin{tabular}{|c|c|c|c|c|}\\hline \\textbf{Lần 1 $\\backslash$ Lần 2} & \\textbf{1} & \\textbf{2} & \\textbf{3} & \\textbf{4} \\\\ \\hline \\textbf{1} & $(1;1)$ & $(1;2)$ & $(1;3)$ & $(1;4)$ \\\\ \\hline \\textbf{2} & $(2;1)$ & $(2;2)$ & $(2;3)$ & $(2;4)$ \\\\ \\hline \\textbf{3} & $\\cdots$ & $\\cdots$ & $\\cdots$ & $\\cdots$ \\\\ \\hline \\textbf{4} & $\\cdots$ & $\\cdots$ & $\\cdots$ & $\\cdots$ \\\\ \\hline \\end{tabular}\\end{center}\\smallskip a) [NB] Điền nốt các ô còn trống của bảng.[[br]]b) [NB] Đếm số ô của bảng để tìm $n(\\Omega)$.[[br]]c) [NB] Kết quả $(3;2)$ nằm ở dòng nào, cột nào của bảng?",
+     "tier": "onclass",
+     "level": 1,
+     "solution": "a) Dòng 3 điền $(3;1),(3;2),(3;3),(3;4)$; dòng 4 điền $(4;1),(4;2),(4;3),(4;4)$.[[br]]b) Bảng có 4 dòng và 4 cột nên có $4\\cdot 4=16$ ô, do đó $n(\\Omega)=16$.[[br]]c) Kết quả $(3;2)$ nằm ở dòng \\textquotedblleft Lần 1 $=3$\\textquotedblright{} và cột \\textquotedblleft Lần 2 $=2$\\textquotedblright.",
+     "dang_id": "NB3",
+     "writelines": 0
+    },
+    {
+     "type": "problem",
+     "label": "Bài 4.",
+     "statement": "Có hai túi I và II. Túi I chứa 3 tấm thẻ ghi các số $2;3;4$; túi II chứa 2 tấm thẻ ghi các số $5;6$. Từ mỗi túi rút ngẫu nhiên một tấm thẻ \\;(Bài 8{.}15 SGK).[[br]]a) [NB] Bảng hai chiều của phép thử này có mấy dòng, mấy cột?[[br]]b) [NB] Tìm $n(\\Omega)$.[[br]]c) [NB] Viết đủ các phần tử của $\\Omega$ (quy ước số của túi I đứng trước).",
+     "tier": "onclass",
+     "level": 1,
+     "solution": "a) Bảng có 3 dòng (ứng với 3 thẻ của túi I) và 2 cột (ứng với 2 thẻ của túi II).[[br]]b) Bảng có $3\\cdot 2=6$ ô nên $n(\\Omega)=6$.[[br]]c) $\\Omega=\\{(2;5);(2;6);(3;5);(3;6);(4;5);(4;6)\\}$.",
+     "dang_id": "NB4",
+     "writelines": 0
+    },
+    {
+     "type": "problem",
+     "label": "Bài 5.",
+     "statement": "Đếm nhanh $n(\\Omega)$ bằng phép nhân: $n(\\Omega) = $ (số kết quả của hành động thứ nhất) $\\cdot$ (số kết quả của hành động thứ hai). Sau khi nhân, đối chiếu lại với số ô của bảng.[[br]]a) [NB] Gieo đồng thời hai con xúc xắc.[[br]]b) [NB] Túi I có 4 tấm thẻ, túi II có 5 tấm thẻ; rút ngẫu nhiên một thẻ từ mỗi túi \\;(Bài 8{.}13 SGK).[[br]]c) [NB] Bạn An tung một đồng xu, bạn Bình rút một trong 5 tấm thẻ ghi $1;2;3;4;5$ \\;(Bài 8{.}7 SGK).",
+     "tier": "onclass",
+     "level": 1,
+     "solution": "a) $n(\\Omega)=6\\cdot 6=36$.[[br]]b) $n(\\Omega)=4\\cdot 5=20$.[[br]]c) $n(\\Omega)=2\\cdot 5=10$.",
+     "dang_id": "NB5",
+     "writelines": 0
+    },
+    {
+     "type": "problem",
+     "label": "Bài 6.",
+     "statement": "Nhiều đề không hỏi thẳng cặp $(a;b)$ mà hỏi TỔNG hoặc TÍCH hai số. Khi đó điền luôn tổng (hoặc tích) vào từng ô cho gọn. Xét phép thử \\textquotedblleft Quay đĩa 3 phần ghi $1;2;3$ hai lần\\textquotedblright.\\par\\nopagebreak\\smallskip\\begin{center}\\footnotesize\\renewcommand\\arraystretch{1.3}\\begin{tabular}{|c|c|c|c|}\\hline \\textbf{Lần 1 $\\backslash$ Lần 2} & \\textbf{1} & \\textbf{2} & \\textbf{3} \\\\ \\hline \\textbf{1} & 2 & 3 & 4 \\\\ \\hline \\textbf{2} & $\\cdots$ & $\\cdots$ & $\\cdots$ \\\\ \\hline \\textbf{3} & $\\cdots$ & $\\cdots$ & $\\cdots$ \\\\ \\hline \\end{tabular}\\end{center}\\smallskip a) [NB] Điền nốt các ô còn trống của bảng TỔNG ở trên.[[br]]b) [NB] Ô nào của bảng có tổng lớn nhất? Tổng đó bằng bao nhiêu?[[br]]c) [NB] Nếu đổi sang bảng TÍCH thì ô $(2;3)$ ghi số mấy?",
+     "tier": "onclass",
+     "level": 1,
+     "solution": "a) Dòng 2 điền $3;4;5$; dòng 3 điền $4;5;6$.[[br]]b) Ô $(3;3)$ có tổng lớn nhất, bằng $3+3=6$.[[br]]c) Ô $(2;3)$ của bảng TÍCH ghi số $2\\cdot 3=6$.",
+     "dang_id": "NB6",
+     "writelines": 0
+    },
+    {
+     "type": "problem",
+     "label": "Bài 7.",
+     "statement": "Vẫn phép thử \\textquotedblleft Quay tấm bìa 4 phần ghi $1;2;3;4$ hai lần\\textquotedblright{} của Bài 3, với $n(\\Omega)=16$. Đánh dấu các ô thoả biến cố trên bảng rồi đếm \\;(Ví dụ 1, Bài 26 SGK).[[br]]a) [NB] Kể ra các ô có \\emph{tổng hai số bằng 5}.[[br]]b) [NB] Kể ra các ô có \\emph{tích hai số bằng 4}.[[br]]c) [NB] Từ hai ý trên, cho biết $n(E)$ và $n(F)$ với $E$: \\textquotedblleft Tổng hai số bằng 5\\textquotedblright{} và $F$: \\textquotedblleft Tích hai số bằng 4\\textquotedblright.",
+     "tier": "onclass",
+     "level": 1,
+     "solution": "a) Các ô có tổng bằng 5 là $(1;4);(2;3);(3;2);(4;1)$.[[br]]b) Các ô có tích bằng 4 là $(1;4);(2;2);(4;1)$.[[br]]c) $n(E)=4$ và $n(F)=3$.",
+     "dang_id": "NB7",
+     "writelines": 0
+    },
+    {
+     "type": "problem",
+     "label": "Bài 8.",
+     "statement": "Gieo đồng thời hai con xúc xắc I và II, bảng có $n(\\Omega)=6\\cdot 6=36$ ô. Biến cố phát biểu bằng \\textquotedblleft có ít nhất một\\ldots\\textquotedblright{} thì đếm PHẦN BÙ trước cho nhanh \\;(Bài 8{.}6 SGK).\\par\\nopagebreak\\smallskip\\begin{center}\\adjustbox{max width=0.86\\linewidth}{\\begin{tikzpicture}[font=\\small,line width=0.7pt]\\draw[stage3,fill=stage3!12,rounded corners=3pt,line width=0.9pt] (-0.62,-0.62) rectangle (0.62,0.62);\\fill[ink] (-0.32,0.32) circle (1.5pt);\\fill[ink] (0.32,-0.32) circle (1.5pt);\\draw[stage3,fill=stage3!12,rounded corners=3pt,line width=0.9pt] (1.13,-0.62) rectangle (2.37,0.62);\\fill[ink] (1.43,0.32) circle (1.5pt);\\fill[ink] (2.07,0.32) circle (1.5pt);\\fill[ink] (1.75,0.00) circle (1.5pt);\\fill[ink] (1.43,-0.32) circle (1.5pt);\\fill[ink] (2.07,-0.32) circle (1.5pt);\\end{tikzpicture}}\\par\\vspace{2pt}{\\scriptsize\\itshape\\color{muted}Hai con xúc xắc gieo đồng thời}\\end{center}\\smallskip a) [NB] Đếm số ô mà \\emph{không con nào} xuất hiện mặt 6 chấm.[[br]]b) [NB] Suy ra số ô có \\emph{ít nhất một} con xuất hiện mặt 6 chấm.[[br]]c) [NB] Tính $P(F)$ với $F$: \\textquotedblleft Có ít nhất một con xúc xắc xuất hiện mặt 6 chấm\\textquotedblright.",
+     "tier": "onclass",
+     "level": 1,
+     "solution": "a) Muốn không con nào ra mặt 6 thì mỗi con chỉ được nhận một trong 5 giá trị $1;2;3;4;5$, nên có $5\\cdot 5=25$ ô.[[br]]b) Số ô có ít nhất một mặt 6 chấm là $36-25=11$, do đó $n(F)=11$.[[br]]c) $P(F)=\\dfrac{11}{36}$. Vậy $P(F)=\\dfrac{11}{36}$.",
+     "dang_id": "NB8",
+     "writelines": 0,
+     "hints": [
+      "\\textquotedblleft Ít nhất một\\textquotedblright{} là phần còn lại của \\textquotedblleft không có cái nào\\textquotedblright{} — đếm cái dễ trước rồi lấy $n(\\Omega)$ trừ đi."
+     ]
+    },
+    {
+     "type": "problem",
+     "label": "Bài 9.",
+     "statement": "Ba câu bắt buộc khi trình bày một bài xác suất — dùng chung cho CẢ HAI mô hình một hành động và hai hành động.[[br]]a) [NB] Câu thứ nhất phải viết những gì?[[br]]b) [NB] Câu thứ hai phải khẳng định điều gì? Vì sao bắt buộc phải có câu này?[[br]]c) [NB] Câu thứ ba gồm mấy việc? Kể ra.",
+     "tier": "onclass",
+     "level": 1,
+     "solution": "a) Mô tả không gian mẫu $\\Omega$ (lập bảng nếu phép thử có hai hành động) và ghi $n(\\Omega)$.[[br]]b) Khẳng định các kết quả có thể là \\emph{đồng khả năng}. Bắt buộc vì công thức $P(E)=\\dfrac{n(E)}{n(\\Omega)}$ chỉ đúng khi các kết quả đồng khả năng — thiếu câu này là mất điểm trình bày.[[br]]c) Gồm ba việc: liệt kê các kết quả thuận lợi cho $E$; ghi $n(E)$; lập tỉ số $P(E)=\\dfrac{n(E)}{n(\\Omega)}$, rút gọn rồi viết câu \\textquotedblleft Vậy $P(E)=\\ldots$\\textquotedblright.",
+     "dang_id": "NB9",
+     "writelines": 0
+    },
+    {
+     "type": "problem",
+     "label": "Bài 10.",
+     "statement": "\\textbf{Điền khuyết bài giải mẫu — mô hình hai hành động.} Túi I chứa 3 tấm thẻ ghi $2;3;4$, túi II chứa 2 tấm thẻ ghi $5;6$. Từ mỗi túi rút ngẫu nhiên một thẻ. Tính xác suất của biến cố $A$: \\textquotedblleft Hai số ghi trên hai thẻ chênh nhau 2 đơn vị\\textquotedblright{} \\;(Bài 8{.}15 SGK).\\par\\nopagebreak\\smallskip\\begin{center}\\footnotesize\\renewcommand\\arraystretch{1.3}\\begin{tabular}{|c|c|c|}\\hline \\textbf{Túi I $\\backslash$ Túi II} & \\textbf{5} & \\textbf{6} \\\\ \\hline \\textbf{2} & $(2;5)$ & $(2;6)$ \\\\ \\hline \\textbf{3} & $\\cdots$ & $\\cdots$ \\\\ \\hline \\textbf{4} & $\\cdots$ & $\\cdots$ \\\\ \\hline \\end{tabular}\\end{center}\\smallskip a) [NB] Điền nốt các ô còn trống của bảng.[[br]]b) [NB] Ghi $n(\\Omega)=$ [[blank:1.2cm]] rồi khoanh tròn các ô có hai số chênh nhau 2 đơn vị.[[br]]c) [NB] Ghi $n(A)=$ [[blank:1.2cm]] và $P(A)=$ [[blank:1.6cm]] $=$ [[blank:1.6cm]].",
+     "tier": "onclass",
+     "level": 1,
+     "solution": "a) Dòng 3 điền $(3;5),(3;6)$; dòng 4 điền $(4;5),(4;6)$.[[br]]b) Bảng có $3\\cdot 2=6$ ô nên $n(\\Omega)=6$. Xét hiệu hai số ở từng ô: $(2;5)$ chênh 3; $(2;6)$ chênh 4; $(3;5)$ chênh 2; $(3;6)$ chênh 3; $(4;5)$ chênh 1; $(4;6)$ chênh 2. Vậy khoanh hai ô $(3;5)$ và $(4;6)$.[[br]]c) $n(A)=2$ và $P(A)=\\dfrac{2}{6}=\\dfrac{1}{3}$.",
+     "dang_id": "NB10",
+     "writelines": 0
+    },
+    {
+     "type": "problem",
+     "label": "Bài 11.",
+     "statement": "Đọc đề rồi CHỌN mô hình trước khi làm — đề một hành động thì đếm thẳng, đề hai hành động mới lập bảng.[[br]]a) [NB] \\textquotedblleft Một hộp có 6 quả bóng ghi $1;2;\\dots;6$, lấy ngẫu nhiên MỘT quả\\textquotedblright{} — phép thử này có mấy hành động? Có cần lập bảng không?[[br]]b) [NB] \\textquotedblleft Túi I có 4 thẻ, túi II có 4 thẻ; rút mỗi túi một thẻ rồi nhân hai số\\textquotedblright{} — có mấy hành động? $n(\\Omega)$ bằng bao nhiêu?",
+     "tier": "onclass",
+     "level": 1,
+     "solution": "a) Chỉ có MỘT hành động (lấy một quả bóng). KHÔNG cần lập bảng, chỉ viết $\\Omega=\\{1;2;\\dots;6\\}$ rồi đếm thẳng.[[br]]b) Có HAI hành động (rút thẻ túi I, rút thẻ túi II) nên phải lập bảng; $n(\\Omega)=4\\cdot 4=16$.",
+     "dang_id": "NB11",
+     "writelines": 0
+    }
+   ]
+  },
+  {
+   "kind": "practice2",
+   "number": 4,
+   "title": "Luyện tập 2 — Thông hiểu \\& Vận dụng",
+   "teacher_note": "Luyện 48 phút. Bài 12 ý b) bắt HS đếm theo TỪNG giá trị của tổng ($2;3;4;5$) rồi cộng lại, đừng đếm loạn cả bảng. Bài 14 ý b) nhắc chỉ cần chia thử cho $2;3;5;7$. Bài 16 chấm như bài thi: thiếu câu \\emph{đồng khả năng} hoặc thiếu \\textquotedblleft Vậy\\textquotedblright{} là trừ điểm ngay tại lớp. Bài 17 chỉ làm nếu còn giờ — dạng lấy đồng thời chưa vào đề Vào 10, đừng để HS hoảng.",
+   "blocks": [
+    {
+     "type": "problem",
+     "label": "Bài 12.",
+     "statement": "Gieo đồng thời hai con xúc xắc cân đối, đồng chất I và II \\;(Bài 8{.}16 SGK). Lập bảng $6\\cdot 6$ rồi tính xác suất.[[br]]a) [TH] $E$: \\textquotedblleft Tổng số chấm xuất hiện trên hai con xúc xắc bằng 11\\textquotedblright.[[br]]b) [TH] $G$: \\textquotedblleft Tổng số chấm xuất hiện trên hai con xúc xắc nhỏ hơn 6\\textquotedblright.",
+     "tier": "onclass",
+     "level": 2,
+     "solution": "Lập bảng hai chiều $6\\cdot 6$, mỗi ô là một cặp $(a;b)$ với $a$, $b$ là số chấm của con I và con II. Bảng có 36 ô nên $n(\\Omega)=36$; vì hai xúc xắc cân đối, đồng chất nên các kết quả là đồng khả năng.[[br]]a) Các ô có tổng bằng 11 là $(5;6);(6;5)$ nên $n(E)=2$.[[br]]$P(E)=\\dfrac{2}{36}=\\dfrac{1}{18}$. Vậy $P(E)=\\dfrac{1}{18}$.[[br]]b) Tổng nhỏ hơn 6 tức là tổng bằng $2;3;4$ hoặc $5$. Tổng bằng 2 có 1 ô; tổng bằng 3 có 2 ô; tổng bằng 4 có 3 ô; tổng bằng 5 có 4 ô.[[br]]Do đó $n(G)=1+2+3+4=10$.[[br]]$P(G)=\\dfrac{10}{36}=\\dfrac{5}{18}$. Vậy $P(G)=\\dfrac{5}{18}$.",
+     "dang_id": "TH1",
+     "writelines": 0
+    },
+    {
+     "type": "problem",
+     "label": "Bài 13.",
+     "statement": "Có hai túi I và II, mỗi túi chứa 4 tấm thẻ ghi các số $1;2;3;4$. Rút ngẫu nhiên từ mỗi túi một tấm thẻ rồi nhân hai số ghi trên hai thẻ với nhau \\;(Bài 8{.}8 SGK).[[br]]a) [TH] Tính xác suất của biến cố $A$: \\textquotedblleft Kết quả là một số lẻ\\textquotedblright.[[br]]b) [TH] Tính xác suất của biến cố $B$: \\textquotedblleft Kết quả chia hết cho 4\\textquotedblright.",
+     "tier": "onclass",
+     "level": 2,
+     "solution": "Lập bảng hai chiều 4 dòng 4 cột, ô $(a;b)$ ghi tích $a\\cdot b$. Bảng có $4\\cdot 4=16$ ô nên $n(\\Omega)=16$; các kết quả là đồng khả năng.[[br]]a) Tích $a\\cdot b$ lẻ khi và chỉ khi CẢ HAI số $a$, $b$ đều lẻ. Mỗi túi có 2 thẻ lẻ là $1;3$ nên có $2\\cdot 2=4$ ô thoả, tức $n(A)=4$.[[br]]$P(A)=\\dfrac{4}{16}=\\dfrac{1}{4}$. Vậy $P(A)=\\dfrac{1}{4}$.[[br]]b) Đọc bảng tích, các ô có tích chia hết cho 4 là $(1;4);(2;2);(2;4);(3;4);(4;1);(4;2);(4;3);(4;4)$ nên $n(B)=8$.[[br]]$P(B)=\\dfrac{8}{16}=\\dfrac{1}{2}$. Vậy $P(B)=\\dfrac{1}{2}$.",
+     "dang_id": "TH2",
+     "writelines": 0
+    },
+    {
+     "type": "problem",
+     "label": "Bài 14.",
+     "statement": "Cho hai túi I và II, mỗi túi chứa 3 tấm thẻ ghi các số $1;4;5$. Rút ngẫu nhiên từ mỗi túi ra một tấm thẻ rồi ghép thành số có hai chữ số, trong đó chữ số trên thẻ rút từ túi I là chữ số hàng chục.[[br]]a) [TH] Tính xác suất của biến cố $A$: \\textquotedblleft Số tạo thành chia hết cho 5\\textquotedblright.[[br]]b) [TH] Tính xác suất của biến cố $B$: \\textquotedblleft Số tạo thành là số nguyên tố\\textquotedblright.",
+     "tier": "onclass",
+     "level": 2,
+     "solution": "Lập bảng 3 dòng (túi I) và 3 cột (túi II), mỗi ô ghi số hai chữ số tạo thành. Chín số đó là $11;14;15;41;44;45;51;54;55$, do đó $n(\\Omega)=9$; các kết quả đồng khả năng.[[br]]a) Số chia hết cho 5 là số có chữ số tận cùng bằng 0 hoặc 5; trong chín số trên có $15;45;55$ nên $n(A)=3$.[[br]]$P(A)=\\dfrac{3}{9}=\\dfrac{1}{3}$. Vậy $P(A)=\\dfrac{1}{3}$.[[br]]b) Xét từng số: $11$ nguyên tố; $14=2\\cdot 7$; $15=3\\cdot 5$; $41$ nguyên tố; $44=4\\cdot 11$; $45=5\\cdot 9$; $51=3\\cdot 17$; $54=2\\cdot 27$; $55=5\\cdot 11$.[[br]]Vậy chỉ có $11$ và $41$ là số nguyên tố nên $n(B)=2$.[[br]]$P(B)=\\dfrac{2}{9}$. Vậy $P(B)=\\dfrac{2}{9}$.",
+     "dang_id": "TH3",
+     "writelines": 0,
+     "hints": [
+      "Ý b) đừng đoán: chia thử lần lượt cho $2;3;5;7$ là đủ, vì $11^2>55$."
+     ]
+    },
+    {
+     "type": "problem",
+     "label": "Bài 15.",
+     "statement": "Ôn lại mô hình MỘT hành động của Câu I.2 (đã học buổi trước, nay đổi bối cảnh).[[br]]a) [TH] Một đĩa tròn chia 10 phần bằng nhau ghi các số $1;2;\\dots;10$, kim gắn ở tâm. Quay đĩa một lần. Tính xác suất của biến cố $A$: \\textquotedblleft Kim chỉ vào hình quạt ghi số nguyên tố\\textquotedblright.[[br]]b) [TH] Một hộp có 30 tấm thẻ ghi các số $1;2;\\dots;30$. Rút ngẫu nhiên một thẻ. Tính xác suất của biến cố $B$: \\textquotedblleft Số ghi trên thẻ chia hết cho 5\\textquotedblright.",
+     "tier": "onclass",
+     "level": 2,
+     "solution": "a) Không gian mẫu $\\Omega=\\{1;2;\\dots;10\\}$ nên $n(\\Omega)=10$; vì đĩa chia 10 phần bằng nhau nên các kết quả đồng khả năng.[[br]]Các số nguyên tố trong $\\Omega$ là $2;3;5;7$ nên $n(A)=4$ (số $1$ không phải số nguyên tố).[[br]]$P(A)=\\dfrac{4}{10}=\\dfrac{2}{5}$. Vậy $P(A)=\\dfrac{2}{5}$.[[br]]b) $\\Omega=\\{1;2;\\dots;30\\}$ nên $n(\\Omega)=30$; các kết quả đồng khả năng.[[br]]Các số chia hết cho 5 là $5;10;15;20;25;30$ nên $n(B)=6$.[[br]]$P(B)=\\dfrac{6}{30}=\\dfrac{1}{5}$. Vậy $P(B)=\\dfrac{1}{5}$.",
+     "dang_id": "TH4",
+     "writelines": 0
+    },
+    {
+     "type": "problem",
+     "label": "Bài 16.",
+     "statement": "[VD] Một hộp có 20 viên bi với kích thước và khối lượng như nhau. Bạn Nga viết lên các viên bi đó các số $1;2;3;\\dots;20$; hai viên bi khác nhau thì viết hai số khác nhau. Xét phép thử \\textquotedblleft Lấy ngẫu nhiên một viên bi trong hộp\\textquotedblright. Tính xác suất của biến cố $A$: \\textquotedblleft Số xuất hiện trên viên bi được lấy ra chia 6 dư 2\\textquotedblright. Trình bày như một bài thi \\;(cuối kì II, THCS Chu Văn An).",
+     "tier": "onclass",
+     "level": 3,
+     "solution": "Phép thử là lấy ngẫu nhiên một viên bi trong hộp; kết quả của phép thử là số ghi trên viên bi lấy được.[[br]]Không gian mẫu $\\Omega=\\{1;2;3;\\dots;20\\}$, do đó $n(\\Omega)=20$.[[br]]Vì 20 viên bi có cùng kích thước và khối lượng, lại lấy ngẫu nhiên, nên 20 kết quả trên là đồng khả năng.[[br]]Số chia 6 dư 2 có dạng $6k+2$; cho $k=0;1;2;3$ được $2;\\;8;\\;14;\\;20$, đều thuộc $\\Omega$. Vậy các kết quả thuận lợi cho $A$ là $2;8;14;20$, do đó $n(A)=4$.[[br]]$P(A)=\\dfrac{n(A)}{n(\\Omega)}=\\dfrac{4}{20}=\\dfrac{1}{5}$.[[br]]Vậy $P(A)=\\dfrac{1}{5}$.",
+     "dang_id": "VD1",
+     "writelines": 0
+    },
+    {
+     "type": "problem",
+     "label": "Bài 17.",
+     "statement": "[VD] Một hộp đựng ba viên bi màu xanh và một viên bi màu đỏ (các viên bi có cùng kích thước và khối lượng). Lấy ngẫu nhiên \\textbf{đồng thời} trong hộp ra hai viên bi. Tính xác suất của biến cố $A$: \\textquotedblleft Lấy được một viên bi màu xanh và một viên bi màu đỏ\\textquotedblright{} \\;(cuối kì II, THCS Nguyễn Du).",
+     "tier": "onclass",
+     "level": 3,
+     "solution": "Kí hiệu ba viên bi xanh lần lượt là $X_1$, $X_2$, $X_3$ và viên bi đỏ là $Đ$.[[br]]Lấy đồng thời hai viên nên mỗi kết quả là một CẶP hai viên khác nhau, không kể thứ tự. Liệt kê: $(X_1;X_2)$, $(X_1;X_3)$, $(X_2;X_3)$, $(X_1;Đ)$, $(X_2;Đ)$, $(X_3;Đ)$.[[br]]Do đó $n(\\Omega)=6$; vì các viên bi cùng kích thước, khối lượng và lấy ngẫu nhiên nên 6 kết quả trên là đồng khả năng.[[br]]Các kết quả thuận lợi cho $A$ là $(X_1;Đ)$, $(X_2;Đ)$, $(X_3;Đ)$, do đó $n(A)=3$.[[br]]$P(A)=\\dfrac{3}{6}=\\dfrac{1}{2}$.[[br]]Vậy $P(A)=\\dfrac{1}{2}$.",
+     "dang_id": "VD2",
+     "writelines": 0,
+     "hints": [
+      "Lấy ĐỒNG THỜI hai viên thì $(X_1;X_2)$ và $(X_2;X_1)$ chỉ là MỘT kết quả — đánh số ba viên xanh rồi liệt kê từng cặp cho khỏi sót."
+     ]
+    }
+   ]
+  },
+  {
+   "kind": "reflection",
+   "number": 5,
+   "title": "Tổng kết",
+   "teacher_note": "Sơ đồ tư duy điền 5 phút cuối buổi. BTVN 17 bài $\\approx$ 96 phút. Đây là buổi CUỐI của chương trình SGK lớp 9 — dặn HS giữ lại cả hai phiếu chương VIII, từ tuần sau vào luyện đề Vào 10 sẽ dùng lại Câu I.2.",
+   "blocks": [
+    {
+     "type": "mindmap",
+     "caption": "Điền các ô trống để tự tóm tắt cả buổi",
+     "root": "Phép thử HAI hành động",
+     "branches": [
+      {
+       "label": "Mỗi kết quả là một",
+       "children": [
+        {
+         "label": "[[blank:1.6cm]] $(a;b)$"
+        },
+        {
+         "label": "$(2;3)$ và $(3;2)$ [[blank:1.6cm]] nhau"
+        }
+       ]
+      },
+      {
+       "label": "Lập bảng hai chiều",
+       "children": [
+        {
+         "label": "Hành động 1 $\\to$ các [[blank:1.4cm]]"
+        },
+        {
+         "label": "Hành động 2 $\\to$ các [[blank:1.4cm]]"
+        },
+        {
+         "label": "$n(\\Omega)=$ số [[blank:1.2cm]] của bảng"
+        }
+       ]
+      },
+      {
+       "label": "Đếm nhanh $n(\\Omega)$",
+       "children": [
+        {
+         "label": "Lấy hai số kết quả [[blank:1.4cm]] nhau"
+        },
+        {
+         "label": "Đối chiếu lại với số ô"
+        }
+       ]
+      },
+      {
+       "label": "Đếm $n(E)$",
+       "children": [
+        {
+         "label": "Điền tổng / tích rồi [[blank:1.6cm]] ô thoả"
+        },
+        {
+         "label": "\\textquotedblleft Ít nhất một\\textquotedblright{} $\\to$ đếm [[blank:1.8cm]] rồi trừ"
+        }
+       ]
+      },
+      {
+       "label": "Công thức KHÔNG đổi",
+       "children": [
+        {
+         "label": "$P(E)=\\dfrac{\\ldots}{\\ldots}$"
+        },
+        {
+         "label": "Vẫn ba dòng trình bày"
+        }
+       ]
+      }
+     ]
+    },
+    {
+     "type": "para",
+     "text": "\\textbf{Bài tập về nhà} — làm vào vở, buổi sau nộp."
+    },
+    {
+     "type": "problem",
+     "label": "Bài 18.",
+     "statement": "Bạn An gieo một con xúc xắc, bạn Bình tung một đồng xu (mặt sấp $S$, mặt ngửa $N$). Quy ước viết kết quả thành cặp, số chấm của xúc xắc đứng trước.[[br]]a) [NB] Viết kết quả \\textquotedblleft xúc xắc ra 5 chấm, đồng xu ra mặt ngửa\\textquotedblright{} thành cặp.[[br]]b) [NB] Cặp $(2;S)$ mô tả kết quả nào?[[br]]c) [NB] Trong bảng có cặp nào viết là $(S;2)$ không? Vì sao?",
+     "tier": "btvn",
+     "level": 1,
+     "solution": "a) Kết quả đó là cặp $(5;N)$.[[br]]b) Cặp $(2;S)$ nghĩa là xúc xắc ra mặt 2 chấm và đồng xu ra mặt sấp.[[br]]c) KHÔNG. Vì đã quy ước số chấm của xúc xắc viết trước, mặt đồng xu viết sau; viết $(S;2)$ là sai quy ước.",
+     "dang_id": "NB1",
+     "writelines": 0
+    },
+    {
+     "type": "problem",
+     "label": "Bài 19.",
+     "statement": "Có hai nhóm học sinh: nhóm I có ba bạn nam là Huy, Sơn, Tùng; nhóm II có ba bạn nữ là Hồng, Phương, Linh. Cô giáo chọn ngẫu nhiên một học sinh từ mỗi nhóm \\;(Bài 8{.}3 SGK).[[br]]a) [NB] Bảng hai chiều của phép thử có mấy dòng, mấy cột?[[br]]b) [NB] Tìm $n(\\Omega)$.[[br]]c) [NB] Viết ra các kết quả có bạn Huy được chọn.",
+     "tier": "btvn",
+     "level": 1,
+     "solution": "a) Bảng có 3 dòng (nhóm I) và 3 cột (nhóm II).[[br]]b) $n(\\Omega)=3\\cdot 3=9$.[[br]]c) Các kết quả đó là (Huy; Hồng), (Huy; Phương), (Huy; Linh) — có 3 kết quả.",
+     "dang_id": "NB2",
+     "writelines": 0
+    },
+    {
+     "type": "problem",
+     "label": "Bài 20.",
+     "statement": "Bạn Hiền quay một tấm bìa tròn chia 3 hình quạt bằng nhau ghi các số $1;2;3$ liên tiếp hai lần \\;(Luyện tập 1, Bài 25 SGK).\\par\\nopagebreak\\smallskip\\begin{center}\\footnotesize\\renewcommand\\arraystretch{1.3}\\begin{tabular}{|c|c|c|c|}\\hline \\textbf{Lần 1 $\\backslash$ Lần 2} & \\textbf{1} & \\textbf{2} & \\textbf{3} \\\\ \\hline \\textbf{1} & $(1;1)$ & $\\cdots$ & $\\cdots$ \\\\ \\hline \\textbf{2} & $\\cdots$ & $\\cdots$ & $\\cdots$ \\\\ \\hline \\textbf{3} & $\\cdots$ & $\\cdots$ & $(3;3)$ \\\\ \\hline \\end{tabular}\\end{center}\\smallskip a) [NB] Điền nốt các ô còn trống của bảng.[[br]]b) [NB] Tìm $n(\\Omega)$.",
+     "tier": "btvn",
+     "level": 1,
+     "solution": "a) Bảng đầy đủ gồm $(1;1),(1;2),(1;3)$; $(2;1),(2;2),(2;3)$; $(3;1),(3;2),(3;3)$.[[br]]b) Bảng có $3\\cdot 3=9$ ô nên $n(\\Omega)=9$.",
+     "dang_id": "NB3",
+     "writelines": 0
+    },
+    {
+     "type": "problem",
+     "label": "Bài 21.",
+     "statement": "Có hai túi I và II. Túi I chứa 4 tấm thẻ đánh số $1;2;3;4$; túi II chứa 5 tấm thẻ đánh số $1;2;3;4;5$. Rút ngẫu nhiên một tấm thẻ từ mỗi túi \\;(Bài 8{.}13 SGK).[[br]]a) [NB] Bảng hai chiều có mấy dòng, mấy cột?[[br]]b) [NB] Tìm $n(\\Omega)$.",
+     "tier": "btvn",
+     "level": 1,
+     "solution": "a) Bảng có 4 dòng (túi I) và 5 cột (túi II).[[br]]b) $n(\\Omega)=4\\cdot 5=20$.",
+     "dang_id": "NB4",
+     "writelines": 0
+    },
+    {
+     "type": "problem",
+     "label": "Bài 22.",
+     "statement": "Đếm nhanh $n(\\Omega)$ bằng phép nhân.[[br]]a) [NB] Bạn An gieo một đồng xu, bạn Bình rút ngẫu nhiên một trong 5 tấm thẻ ghi $1;2;3;4;5$ \\;(Bài 8{.}7 SGK).[[br]]b) [NB] Trên một dãy phố có ba quán ăn A, B, C. Hai bạn Văn và Hải mỗi người chọn ngẫu nhiên một quán để ăn trưa \\;(Bài 8{.}11 SGK).",
+     "tier": "btvn",
+     "level": 1,
+     "solution": "a) $n(\\Omega)=2\\cdot 5=10$.[[br]]b) $n(\\Omega)=3\\cdot 3=9$.",
+     "dang_id": "NB5",
+     "writelines": 0
+    },
+    {
+     "type": "problem",
+     "label": "Bài 23.",
+     "statement": "Xét phép thử \\textquotedblleft Quay tấm bìa 4 phần ghi $1;2;3;4$ hai lần\\textquotedblright.[[br]]a) [NB] Nếu lập bảng TỔNG hai số thì ô $(3;4)$ ghi số mấy?[[br]]b) [NB] Nếu lập bảng TÍCH hai số thì ô $(3;4)$ ghi số mấy?",
+     "tier": "btvn",
+     "level": 1,
+     "solution": "a) Ô $(3;4)$ của bảng TỔNG ghi $3+4=7$.[[br]]b) Ô $(3;4)$ của bảng TÍCH ghi $3\\cdot 4=12$.",
+     "dang_id": "NB6",
+     "writelines": 0
+    },
+    {
+     "type": "problem",
+     "label": "Bài 24.",
+     "statement": "Gieo đồng thời hai con xúc xắc I và II, bảng có 36 ô. Đánh dấu rồi đếm.[[br]]a) [NB] Kể ra các ô có tổng số chấm bằng 4.[[br]]b) [NB] Kể ra các ô có tổng số chấm bằng 10.[[br]]c) [NB] Đếm số ô có tổng số chấm lớn hơn hoặc bằng 10 \\;(Bài 8{.}12 SGK).",
+     "tier": "btvn",
+     "level": 1,
+     "solution": "a) Các ô có tổng bằng 4 là $(1;3);(2;2);(3;1)$ — có 3 ô.[[br]]b) Các ô có tổng bằng 10 là $(4;6);(5;5);(6;4)$ — có 3 ô.[[br]]c) Tổng bằng 10 có 3 ô, tổng bằng 11 có 2 ô là $(5;6);(6;5)$, tổng bằng 12 có 1 ô là $(6;6)$. Vậy có $3+2+1=6$ ô.",
+     "dang_id": "NB7",
+     "writelines": 0
+    },
+    {
+     "type": "problem",
+     "label": "Bài 25.",
+     "statement": "Vẫn phép thử gieo đồng thời hai con xúc xắc, $n(\\Omega)=36$ \\;(Bài 8{.}10 SGK).[[br]]a) [NB] Đếm số ô mà số chấm trên CẢ HAI con đều lớn hơn 2.[[br]]b) [NB] Đếm số ô mà KHÔNG con nào xuất hiện mặt 6 chấm.[[br]]c) [NB] Suy ra số ô có ít nhất một con xuất hiện mặt 6 chấm.",
+     "tier": "btvn",
+     "level": 1,
+     "solution": "a) Mỗi con chỉ được nhận một trong 4 giá trị $3;4;5;6$ nên có $4\\cdot 4=16$ ô.[[br]]b) Mỗi con chỉ được nhận một trong 5 giá trị $1;2;3;4;5$ nên có $5\\cdot 5=25$ ô.[[br]]c) Số ô còn lại là $36-25=11$ ô.",
+     "dang_id": "NB8",
+     "writelines": 0
+    },
+    {
+     "type": "problem",
+     "label": "Bài 26.",
+     "statement": "Soát lại cách trình bày.[[br]]a) [NB] Một bạn giải bài \\textquotedblleft quay đĩa 4 phần hai lần, $E$: tổng bằng 5\\textquotedblright{} và viết ngay $P(E)=\\dfrac{4}{16}$ rồi hết. Bài đó thiếu những gì?[[br]]b) [NB] Viết lại đủ ba câu cho bài ở ý a).",
+     "tier": "btvn",
+     "level": 1,
+     "solution": "a) Thiếu hai chỗ: chưa mô tả không gian mẫu (chưa lập bảng, chưa ghi $n(\\Omega)=16$) và chưa khẳng định các kết quả là đồng khả năng; ngoài ra kết quả chưa rút gọn và chưa có câu \\textquotedblleft Vậy\\textquotedblright.[[br]]b) \\emph{Lập bảng $4\\cdot 4$, mỗi ô là một cặp $(a;b)$. Bảng có 16 ô nên $n(\\Omega)=16$.} \\emph{Vì tấm bìa chia 4 phần bằng nhau nên các kết quả là đồng khả năng; các kết quả thuận lợi cho $E$ là $(1;4);(2;3);(3;2);(4;1)$ nên $n(E)=4$.} \\emph{$P(E)=\\dfrac{4}{16}=\\dfrac{1}{4}$. Vậy $P(E)=\\dfrac{1}{4}$.}",
+     "dang_id": "NB9",
+     "writelines": 0
+    },
+    {
+     "type": "problem",
+     "label": "Bài 27.",
+     "statement": "\\textbf{Điền khuyết bài giải mẫu.} Hai túi I và II, mỗi túi chứa 3 tấm thẻ ghi các số $1;2;5$. Rút ngẫu nhiên từ mỗi túi một tấm thẻ rồi ghép thành số có hai chữ số, chữ số trên thẻ rút từ túi I là chữ số hàng chục. Tính xác suất của biến cố $A$: \\textquotedblleft Số tạo thành chia hết cho 5\\textquotedblright.\\par\\nopagebreak\\smallskip\\begin{center}\\footnotesize\\renewcommand\\arraystretch{1.3}\\begin{tabular}{|c|c|c|c|}\\hline \\textbf{Túi I $\\backslash$ Túi II} & \\textbf{1} & \\textbf{2} & \\textbf{5} \\\\ \\hline \\textbf{1} & 11 & 12 & 15 \\\\ \\hline \\textbf{2} & $\\cdots$ & $\\cdots$ & $\\cdots$ \\\\ \\hline \\textbf{5} & $\\cdots$ & $\\cdots$ & $\\cdots$ \\\\ \\hline \\end{tabular}\\end{center}\\smallskip a) [NB] Điền nốt các ô còn trống của bảng.[[br]]b) [NB] Ghi $n(\\Omega)=$ [[blank:1.2cm]], $n(A)=$ [[blank:1.2cm]] và $P(A)=$ [[blank:1.6cm]] $=$ [[blank:1.6cm]].",
+     "tier": "btvn",
+     "level": 1,
+     "solution": "a) Dòng 2 điền $21;22;25$; dòng 5 điền $51;52;55$.[[br]]b) Bảng có $3\\cdot 3=9$ ô nên $n(\\Omega)=9$. Các số chia hết cho 5 (tận cùng bằng 0 hoặc 5) là $15;25;55$ nên $n(A)=3$; do đó $P(A)=\\dfrac{3}{9}=\\dfrac{1}{3}$.",
+     "dang_id": "NB10",
+     "writelines": 0
+    },
+    {
+     "type": "problem",
+     "label": "Bài 28.",
+     "statement": "Chọn mô hình trước khi làm.[[br]]a) [NB] \\textquotedblleft Viết ngẫu nhiên một số tự nhiên có hai chữ số nhỏ hơn 20\\textquotedblright{} — mấy hành động? Có cần lập bảng không?[[br]]b) [NB] \\textquotedblleft Gieo một con xúc xắc rồi tung một đồng xu\\textquotedblright{} — mấy hành động? $n(\\Omega)$ bằng bao nhiêu?",
+     "tier": "btvn",
+     "level": 1,
+     "solution": "a) Chỉ MỘT hành động. Không cần lập bảng, chỉ liệt kê $\\Omega=\\{10;11;\\dots;19\\}$ rồi đếm.[[br]]b) HAI hành động nên phải lập bảng; $n(\\Omega)=6\\cdot 2=12$.",
+     "dang_id": "NB11",
+     "writelines": 0
+    },
+    {
+     "type": "problem",
+     "label": "Bài 29.",
+     "statement": "Gieo đồng thời hai con xúc xắc cân đối, đồng chất I và II. Lập bảng $6\\cdot 6$ rồi tính xác suất \\;(Bài 8{.}16 và Bài 8{.}12 SGK).[[br]]a) [TH] $F$: \\textquotedblleft Tổng số chấm xuất hiện trên hai con xúc xắc bằng 8 hoặc 9\\textquotedblright.[[br]]b) [TH] $H$: \\textquotedblleft Tổng số chấm xuất hiện trên hai con xúc xắc lớn hơn hoặc bằng 10\\textquotedblright.",
+     "tier": "btvn",
+     "level": 2,
+     "solution": "Bảng có 36 ô nên $n(\\Omega)=36$; hai xúc xắc cân đối, đồng chất nên các kết quả đồng khả năng.[[br]]a) Tổng bằng 8 có 5 ô là $(2;6);(3;5);(4;4);(5;3);(6;2)$; tổng bằng 9 có 4 ô là $(3;6);(4;5);(5;4);(6;3)$.[[br]]Do đó $n(F)=5+4=9$ và $P(F)=\\dfrac{9}{36}=\\dfrac{1}{4}$. Vậy $P(F)=\\dfrac{1}{4}$.[[br]]b) Tổng bằng 10 có 3 ô, tổng bằng 11 có 2 ô, tổng bằng 12 có 1 ô nên $n(H)=3+2+1=6$.[[br]]$P(H)=\\dfrac{6}{36}=\\dfrac{1}{6}$. Vậy $P(H)=\\dfrac{1}{6}$.",
+     "dang_id": "TH1",
+     "writelines": 0
+    },
+    {
+     "type": "problem",
+     "label": "Bài 30.",
+     "statement": "Có hai túi I và II. Túi I chứa 4 tấm thẻ đánh số $1;2;3;4$; túi II chứa 5 tấm thẻ đánh số $1;2;3;4;5$. Rút ngẫu nhiên một tấm thẻ từ mỗi túi \\;(Bài 8{.}13 SGK).[[br]]a) [TH] Tính xác suất của biến cố $A$: \\textquotedblleft Cả hai tấm thẻ rút ra đều ghi số chẵn\\textquotedblright.[[br]]b) [TH] Tính xác suất của biến cố $B$: \\textquotedblleft Tích hai số ghi trên hai tấm thẻ là số lẻ\\textquotedblright.",
+     "tier": "btvn",
+     "level": 2,
+     "solution": "Lập bảng 4 dòng, 5 cột; bảng có $4\\cdot 5=20$ ô nên $n(\\Omega)=20$; các kết quả đồng khả năng.[[br]]a) Túi I có 2 thẻ chẵn là $2;4$; túi II có 2 thẻ chẵn là $2;4$. Do đó số ô mà cả hai thẻ đều chẵn là $2\\cdot 2=4$, tức $n(A)=4$.[[br]]$P(A)=\\dfrac{4}{20}=\\dfrac{1}{5}$. Vậy $P(A)=\\dfrac{1}{5}$.[[br]]b) Tích lẻ khi và chỉ khi cả hai số đều lẻ. Túi I có 2 thẻ lẻ là $1;3$; túi II có 3 thẻ lẻ là $1;3;5$. Do đó $n(B)=2\\cdot 3=6$.[[br]]$P(B)=\\dfrac{6}{20}=\\dfrac{3}{10}$. Vậy $P(B)=\\dfrac{3}{10}$.",
+     "dang_id": "TH2",
+     "writelines": 0
+    },
+    {
+     "type": "problem",
+     "label": "Bài 31.",
+     "statement": "Cho hai túi I và II, mỗi túi chứa 3 tấm thẻ ghi các số $2;3;7$. Rút ngẫu nhiên từ mỗi túi ra một tấm thẻ rồi ghép thành số có hai chữ số, chữ số trên thẻ rút từ túi I là chữ số hàng chục \\;(Luyện tập 2, Bài 26 SGK).[[br]]a) [TH] Tính xác suất của biến cố $A$: \\textquotedblleft Số tạo thành chia hết cho 4\\textquotedblright.[[br]]b) [TH] Tính xác suất của biến cố $B$: \\textquotedblleft Số tạo thành là số nguyên tố\\textquotedblright.",
+     "tier": "btvn",
+     "level": 2,
+     "solution": "Lập bảng 3 dòng, 3 cột; chín số tạo thành là $22;23;27;32;33;37;72;73;77$, do đó $n(\\Omega)=9$; các kết quả đồng khả năng.[[br]]a) Chia thử từng số cho 4: chỉ $32=4\\cdot 8$ và $72=4\\cdot 18$ chia hết cho 4 nên $n(A)=2$.[[br]]$P(A)=\\dfrac{2}{9}$. Vậy $P(A)=\\dfrac{2}{9}$.[[br]]b) Xét từng số: $22=2\\cdot 11$; $23$ nguyên tố; $27=3\\cdot 9$; $32=2\\cdot 16$; $33=3\\cdot 11$; $37$ nguyên tố; $72=2\\cdot 36$; $73$ nguyên tố; $77=7\\cdot 11$.[[br]]Vậy có ba số nguyên tố là $23;37;73$ nên $n(B)=3$ và $P(B)=\\dfrac{3}{9}=\\dfrac{1}{3}$. Vậy $P(B)=\\dfrac{1}{3}$.",
+     "dang_id": "TH3",
+     "writelines": 0
+    },
+    {
+     "type": "problem",
+     "label": "Bài 32.",
+     "statement": "Ôn lại mô hình MỘT hành động.[[br]]a) [TH] Trong một hộp đựng 15 tấm thẻ đánh số từ 1 đến 15, không có hai thẻ nào trùng số. An rút ngẫu nhiên một tấm thẻ. Tính xác suất của biến cố $A$: \\textquotedblleft An rút được tấm thẻ đánh số chia hết cho 3 và không vượt quá 10\\textquotedblright{} \\;(cuối kì II, THCS Ngọc Thuỵ).[[br]]b) [TH] Viết ngẫu nhiên một số tự nhiên lẻ có hai chữ số và nhỏ hơn 40. Tính xác suất của biến cố $M$: \\textquotedblleft Số viết ra là bội của 3\\textquotedblright{} \\;(cuối kì II, THCS Trưng Vương).",
+     "tier": "btvn",
+     "level": 2,
+     "solution": "a) $\\Omega=\\{1;2;\\dots;15\\}$ nên $n(\\Omega)=15$; các kết quả đồng khả năng.[[br]]Số chia hết cho 3 là $3;6;9;12;15$, trong đó không vượt quá 10 chỉ còn $3;6;9$ nên $n(A)=3$.[[br]]$P(A)=\\dfrac{3}{15}=\\dfrac{1}{5}$. Vậy $P(A)=\\dfrac{1}{5}$.[[br]]b) Các số lẻ có hai chữ số và nhỏ hơn 40 là $11;13;\\dots;39$, gồm 15 số nên $n(\\Omega)=15$.[[br]]Các bội của 3 trong dãy đó là $15;21;27;33;39$ nên $n(M)=5$.[[br]]$P(M)=\\dfrac{5}{15}=\\dfrac{1}{3}$. Vậy $P(M)=\\dfrac{1}{3}$.",
+     "dang_id": "TH4",
+     "writelines": 0
+    },
+    {
+     "type": "problem",
+     "label": "Bài 33.",
+     "statement": "[VD] Một đĩa tròn bằng bìa cứng được chia làm 9 phần bằng nhau và ghi các số $1;2;3;\\dots;9$; chiếc kim được gắn cố định vào trục quay ở tâm. Quay đĩa tròn một lần. Tính xác suất của biến cố $M$: \\textquotedblleft Chiếc kim chỉ vào hình quạt ghi số nguyên tố\\textquotedblright. Trình bày như một bài thi.",
+     "tier": "btvn",
+     "level": 3,
+     "solution": "Phép thử là quay đĩa tròn một lần; kết quả là số ghi trên hình quạt mà kim chỉ vào.[[br]]Không gian mẫu $\\Omega=\\{1;2;3;\\dots;9\\}$, do đó $n(\\Omega)=9$.[[br]]Vì đĩa được chia thành 9 phần bằng nhau nên các kết quả là đồng khả năng.[[br]]Các số nguyên tố trong $\\Omega$ là $2;3;5;7$ (số $1$ không phải số nguyên tố) nên $n(M)=4$.[[br]]$P(M)=\\dfrac{n(M)}{n(\\Omega)}=\\dfrac{4}{9}$.[[br]]Vậy $P(M)=\\dfrac{4}{9}$.",
+     "dang_id": "VD1",
+     "writelines": 0
+    },
+    {
+     "type": "problem",
+     "label": "Bài 34.",
+     "statement": "[VD] Một chiếc hộp chứa 5 tấm thẻ cùng loại, đánh số lần lượt là $3;5;6;7;9$. Lấy ngẫu nhiên \\textbf{đồng thời} 2 tấm thẻ từ hộp. Tính xác suất của biến cố $A$: \\textquotedblleft Tích các số ghi trên 2 tấm thẻ chia hết cho 3\\textquotedblright{} \\;(giữa kì II, THCS Ban Mai).",
+     "tier": "btvn",
+     "level": 3,
+     "solution": "Lấy đồng thời 2 thẻ nên mỗi kết quả là một cặp hai thẻ khác nhau, không kể thứ tự. Liệt kê: $(3;5);(3;6);(3;7);(3;9);(5;6);(5;7);(5;9);(6;7);(6;9);(7;9)$.[[br]]Do đó $n(\\Omega)=10$; vì 5 tấm thẻ cùng loại và lấy ngẫu nhiên nên các kết quả là đồng khả năng.[[br]]Tích hai số chia hết cho 3 khi trong cặp có ít nhất một thẻ thuộc $\\{3;6;9\\}$. Cặp duy nhất KHÔNG thoả là $(5;7)$.[[br]]Do đó $n(A)=10-1=9$.[[br]]$P(A)=\\dfrac{9}{10}$.[[br]]Vậy $P(A)=\\dfrac{9}{10}$.",
+     "dang_id": "VD2",
+     "writelines": 0,
+     "hints": [
+      "Đếm cặp KHÔNG thoả trước rồi lấy $n(\\Omega)$ trừ đi — nhanh hơn đếm cặp thoả."
+     ]
+    }
+   ]
+  }
+ ]
+}

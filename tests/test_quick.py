@@ -23,7 +23,7 @@ def test_resolve_khop_dung_mot_phieu():
 
 def test_resolve_khong_dau_van_tim_ra():
     """Thầy gõ không dấu / gõ thiếu — vẫn phải ra đúng phiếu."""
-    assert quick.resolve("hinh binh hanh phieu-a").name == "phieu-a-hinh-binh-hanh.json"
+    assert quick.resolve("tuan07 hinh binh hanh").name == "phieu-a-hinh-binh-hanh.json"
 
 
 def test_resolve_mo_ho_thi_dung_lai_chu_khong_doan_bua():

@@ -1,0 +1,577 @@
+{
+ "slug": "phieu-a-phep-thu-khong-gian-mau-va-xac-suat",
+ "title": "Bài 25 + Bài 26. Phép thử, không gian mẫu và xác suất của biến cố",
+ "eyebrow": "ĐẠI SỐ — CHƯƠNG VIII · PHIẾU A",
+ "grade_label": "Lớp 9 • Ôn vào 10",
+ "class_tier": "C",
+ "so_ca": 1,
+ "stages": [
+  {
+   "kind": "review",
+   "number": 1,
+   "title": "Khám phá",
+   "teacher_note": "Mở màn 8 phút. Quay thử vòng quay trên bảng (hoặc gieo xúc xắc thật) cho HS đoán trước — đoán trật thì chốt ngay \\emph{không biết trước kết quả}. Phần nhắc Lớp 8 chỉ mất 5 phút: cả lớp đã có công thức rồi, buổi nay chỉ đổi TÊN GỌI và KÍ HIỆU. Nói thẳng câu này để HS đỡ sợ.",
+   "blocks": [
+    {
+     "type": "opener",
+     "tikz": "\\begin{tikzpicture}[font=\\small,line width=0.7pt]\\filldraw[stage2!22,draw=stage2,line width=0.8pt] (0,0) -- (90.00:1.85) arc (90.00:45.00:1.85) -- cycle;\\node[font=\\small,align=center] at (67.50:1.22) {100k};\\filldraw[stage3!22,draw=stage3,line width=0.8pt] (0,0) -- (45.00:1.85) arc (45.00:0.00:1.85) -- cycle;\\node[font=\\small,align=center] at (22.50:1.22) {Mất\\\\lượt};\\filldraw[stage1!22,draw=stage1,line width=0.8pt] (0,0) -- (0.00:1.85) arc (0.00:-45.00:1.85) -- cycle;\\node[font=\\small,align=center] at (-22.50:1.22) {50k};\\filldraw[brand!22,draw=brand,line width=0.8pt] (0,0) -- (-45.00:1.85) arc (-45.00:-90.00:1.85) -- cycle;\\node[font=\\small,align=center] at (-67.50:1.22) {Quay\\\\lại};\\filldraw[stage5!22,draw=stage5,line width=0.8pt] (0,0) -- (-90.00:1.85) arc (-90.00:-135.00:1.85) -- cycle;\\node[font=\\small,align=center] at (-112.50:1.22) {200k};\\filldraw[info!22,draw=info,line width=0.8pt] (0,0) -- (-135.00:1.85) arc (-135.00:-180.00:1.85) -- cycle;\\node[font=\\small,align=center] at (-157.50:1.22) {Kẹo};\\filldraw[gold!22,draw=gold,line width=0.8pt] (0,0) -- (-180.00:1.85) arc (-180.00:-225.00:1.85) -- cycle;\\node[font=\\small,align=center] at (-202.50:1.22) {500k};\\filldraw[stage4!22,draw=stage4,line width=0.8pt] (0,0) -- (-225.00:1.85) arc (-225.00:-270.00:1.85) -- cycle;\\node[font=\\small,align=center] at (-247.50:1.22) {Vở};\\draw[->,ink,line width=1.1pt] (0,0) -- (-90:1.52);\\fill[ink] (0,0) circle (1.7pt);\\end{tikzpicture}",
+     "text": "Hội chợ Tết của trường có gian \\textbf{Vòng quay may mắn}: đĩa tròn chia 8 phần bằng nhau, quay một lần trúng phần nào nhận phần đó.[[br]]Bạn Minh đứng ngoài hỏi: \\textquotedblleft Quay phát này có trúng $500$ nghìn không?\\textquotedblright{} — \\textbf{không ai trả lời được}. Nhưng cả lớp đều kể ra được đủ 8 thứ có thể trúng.[[br]]Đúng hai điều đó — \\emph{không biết trước kết quả} nhưng \\emph{liệt kê được hết} — là dấu hiệu của một \\textbf{phép thử ngẫu nhiên}. Tập 8 kết quả kể ra được gọi là \\textbf{không gian mẫu}.[[br]]Còn câu \\textquotedblleft khả năng trúng $500$ nghìn là bao nhiêu?\\textquotedblright{} thì trả lời được: $\\dfrac{1}{8}$. Đó chính là \\textbf{xác suất} — và là đúng câu $0{,}5$ điểm của đề thi vào 10."
+    },
+    {
+     "type": "para",
+     "text": "\\textbf{Tin vui: công thức xác suất các em ĐÃ HỌC từ Lớp 8.} Buổi nay chỉ thêm tên gọi và kí hiệu mới."
+    },
+    {
+     "type": "noted",
+     "variant": "note",
+     "text": "\\textbf{Lớp 8 đã dạy} (chương VIII, Bài 30 -- Bài 31):[[br]]\\quad $P=\\dfrac{\\text{số kết quả thuận lợi}}{\\text{tổng số kết quả có thể}}$.[[br]]\\textbf{Lớp 9 viết lại đúng công thức đó} bằng kí hiệu gọn hơn:[[br]]\\quad $P(E)=\\dfrac{n(E)}{n(\\Omega)}$, trong đó $n(E)$ là số kết quả thuận lợi, $n(\\Omega)$ là tổng số kết quả có thể.[[br]]Chỉ có vậy. Cái mới thật sự chỉ là ba thuật ngữ: \\emph{phép thử ngẫu nhiên}, \\emph{không gian mẫu} $\\Omega$, \\emph{kết quả thuận lợi}."
+    },
+    {
+     "type": "noted",
+     "variant": "target",
+     "text": "\\textbf{Đích của buổi học.} Câu I.2 đề Vào 10 của Sở Hà Nội $=$ \\textbf{0,5 điểm}, ba năm liền cùng một khuôn: cho một hộp thẻ / hộp bóng / đĩa quay đánh số, hỏi xác suất của một biến cố về tính chất số.[[br]]Ma trận của Sở ghi rõ mạch Thống kê -- Xác suất \\textbf{không có câu vận dụng nào}. Đây là $0{,}5$ điểm dễ ăn nhất đề — chỉ cần trình bày đủ ba dòng."
+    }
+   ]
+  },
+  {
+   "kind": "concept",
+   "number": 2,
+   "title": "Kiến thức cần nhớ",
+   "teacher_note": "Giảng 45 phút. Thứ tự: phép thử $\\to$ không gian mẫu $\\to$ kết quả thuận lợi $\\to$ công thức $\\to$ bốn bước trình bày. Ví dụ 5 là hạt nhân — bắt cả lớp đọc to ba dòng của bài mẫu rồi mới cho chép. Ví dụ 7 và Ví dụ 8 là hai chỗ HS tầng C sai nhiều nhất (đếm sót số đầu dãy, quên tự liệt kê tập nền). Ví dụ 9 chỉ cần chỉ ra chỗ sai, không giảng dài.",
+   "blocks": [
+    {
+     "type": "para",
+     "text": "\\textbf{1. Phép thử ngẫu nhiên và không gian mẫu}"
+    },
+    {
+     "type": "para",
+     "text": "Một hoặc một số hành động, thực nghiệm được tiến hành liên tiếp hay đồng thời mà \\textbf{kết quả không thể biết trước} khi thực hiện nhưng \\textbf{liệt kê được tất cả các kết quả có thể xảy ra} thì gọi là một \\textbf{phép thử ngẫu nhiên}, gọi tắt là \\emph{phép thử}.[[br]]Tập hợp tất cả các kết quả có thể của phép thử gọi là \\textbf{không gian mẫu}, kí hiệu là $\\Omega$. Số phần tử của $\\Omega$ kí hiệu là $n(\\Omega)$."
+    },
+    {
+     "type": "noted",
+     "variant": "example",
+     "text": "\\textbf{Ví dụ 1.} Xét phép thử \\textquotedblleft Gieo một con xúc xắc một lần\\textquotedblright. Viết không gian mẫu và tìm $n(\\Omega)$.[[br]]\\textbf{Lời giải.}[[br]]\\quad Con xúc xắc có 6 mặt ghi từ 1 chấm đến 6 chấm nên kết quả của phép thử là số chấm xuất hiện, nhận một trong các giá trị $1;2;3;4;5;6$.[[br]]\\quad Do đó $\\Omega=\\{1;2;3;4;5;6\\}$ và $n(\\Omega)=6$.[[br]]Vậy không gian mẫu có 6 phần tử."
+    },
+    {
+     "type": "noted",
+     "variant": "example",
+     "text": "\\textbf{Ví dụ 2.} Một hộp có 20 viên bi ghi các số $1;2;\\dots;20$. Lấy ngẫu nhiên một viên bi. Viết không gian mẫu và tìm $n(\\Omega)$.[[br]]\\textbf{Lời giải.}[[br]]\\quad Kết quả của phép thử là số ghi trên viên bi lấy được, nhận một trong các giá trị từ 1 đến 20.[[br]]\\quad Do đó $\\Omega=\\{1;2;3;\\dots;20\\}$ và $n(\\Omega)=20$.[[br]]Vậy không gian mẫu có 20 phần tử."
+    },
+    {
+     "type": "noted",
+     "variant": "trap",
+     "text": "\\textbf{Bẫy số 1.} Đề nói \\textquotedblleft hộp có 20 viên bi\\textquotedblright{} thì $n(\\Omega)=20$, KHÔNG phải bằng số điều kiện trong biến cố.[[br]]$n(\\Omega)$ luôn là \\emph{tổng số kết quả có thể} của phép thử — đếm ở ĐỀ BÀI, không đếm ở câu hỏi."
+    },
+    {
+     "type": "para",
+     "text": "\\textbf{2. Kết quả thuận lợi cho một biến cố}"
+    },
+    {
+     "type": "para",
+     "text": "Cho phép thử $T$ và biến cố $E$. Mỗi kết quả của phép thử $T$ làm cho biến cố $E$ \\textbf{xảy ra} được gọi là một \\textbf{kết quả thuận lợi} cho $E$. Số kết quả thuận lợi cho $E$ kí hiệu là $n(E)$.[[br]]Muốn tìm $n(E)$: đọc kĩ lời phát biểu của $E$, soi từng phần tử của $\\Omega$ xem có thoả không, gạch ra rồi đếm."
+    },
+    {
+     "type": "noted",
+     "variant": "example",
+     "text": "\\textbf{Ví dụ 3.} Rút ngẫu nhiên một thẻ trong hộp 10 thẻ ghi $1;2;\\dots;10$. Mô tả các kết quả thuận lợi cho biến cố $A$: \\textquotedblleft Số ghi trên thẻ là số chẵn\\textquotedblright{} và tìm $n(A)$.[[br]]\\textbf{Lời giải.}[[br]]\\quad Không gian mẫu là $\\Omega=\\{1;2;3;\\dots;10\\}$.[[br]]\\quad Soi từng số của $\\Omega$, các số chẵn là $2;4;6;8;10$.[[br]]\\quad Đó chính là các kết quả làm biến cố $A$ xảy ra nên $n(A)=5$.[[br]]Vậy $A$ có 5 kết quả thuận lợi là $2;4;6;8;10$."
+    },
+    {
+     "type": "noted",
+     "variant": "example",
+     "text": "\\textbf{Ví dụ 4.} Vẫn hộp 10 thẻ như Ví dụ 3. Tìm $n(B)$ với $B$: \\textquotedblleft Số ghi trên thẻ chia hết cho 3 \\emph{và} lớn hơn 4\\textquotedblright.[[br]]\\textbf{Lời giải.}[[br]]\\quad Các số chia hết cho 3 trong $\\Omega$ là $3;6;9$.[[br]]\\quad Vì biến cố còn đòi \\emph{lớn hơn 4} nên loại số $3$, chỉ còn $6;9$.[[br]]\\quad Do đó $n(B)=2$.[[br]]Vậy $B$ có 2 kết quả thuận lợi là $6$ và $9$."
+    },
+    {
+     "type": "para",
+     "text": "\\textbf{3. Công thức tính xác suất và bốn bước trình bày}"
+    },
+    {
+     "type": "para",
+     "text": "Giả sử các kết quả có thể của phép thử $T$ là \\textbf{đồng khả năng} (khả năng xảy ra như nhau). Khi đó xác suất của biến cố $E$ là[[br]]\\quad $P(E)=\\dfrac{n(E)}{n(\\Omega)}$.[[br]]\\textbf{Bốn bước} (SGK trang 62): \\emph{B1.} Mô tả $\\Omega$, tìm $n(\\Omega)$. \\emph{B2.} Chứng tỏ các kết quả đồng khả năng. \\emph{B3.} Mô tả các kết quả thuận lợi cho $E$, tìm $n(E)$. \\emph{B4.} Lập tỉ số $\\dfrac{n(E)}{n(\\Omega)}$ rồi rút gọn.[[br]]Trên bài thi, bốn bước đó gói lại thành \\textbf{ba dòng viết}."
+    },
+    {
+     "type": "noted",
+     "variant": "example",
+     "text": "\\textbf{Ví dụ 5 (BÀI MẪU CỦA CẢ CHƯƠNG).} Một hộp có 8 chiếc thẻ ghi các số $1;2;\\dots;8$. Rút ngẫu nhiên một thẻ. Tính xác suất của biến cố $A$: \\textquotedblleft Số ghi trên thẻ chia hết cho 3\\textquotedblright.[[br]]\\textbf{Lời giải.}[[br]]\\quad \\emph{Dòng 1.} Không gian mẫu $\\Omega=\\{1;2;3;\\dots;8\\}$, do đó $n(\\Omega)=8$.[[br]]\\quad \\emph{Dòng 2.} Vì rút ngẫu nhiên một thẻ trong 8 thẻ cùng loại nên 8 kết quả trên là đồng khả năng. Các số chia hết cho 3 trong $\\Omega$ là $3;6$ nên các kết quả thuận lợi cho $A$ là $3;6$, do đó $n(A)=2$.[[br]]\\quad \\emph{Dòng 3.} $P(A)=\\dfrac{n(A)}{n(\\Omega)}=\\dfrac{2}{8}=\\dfrac{1}{4}$.[[br]]Vậy $P(A)=\\dfrac{1}{4}$."
+    },
+    {
+     "type": "noted",
+     "variant": "tip",
+     "text": "\\textbf{Ba dòng chép thuộc.} Vào phòng thi cứ viết đúng ba dòng này rồi thay số:[[br]]\\quad (1) \\emph{Không gian mẫu $\\Omega=\\{\\ldots\\}$, do đó $n(\\Omega)=\\ldots$}[[br]]\\quad (2) \\emph{Các kết quả trên là đồng khả năng. Các kết quả thuận lợi cho $A$ là $\\ldots$, do đó $n(A)=\\ldots$}[[br]]\\quad (3) \\emph{$P(A)=\\dfrac{n(A)}{n(\\Omega)}=\\ldots$. Vậy $P(A)=\\ldots$}"
+    },
+    {
+     "type": "noted",
+     "variant": "example",
+     "text": "\\textbf{Ví dụ 6.} Một đĩa tròn chia 12 phần bằng nhau ghi các số $1;2;\\dots;12$, kim gắn ở tâm. Quay đĩa một lần. Tính xác suất của biến cố $M$: \\textquotedblleft Kim chỉ vào hình quạt ghi số chia hết cho 4\\textquotedblright.[[br]]\\textbf{Lời giải.}[[br]]\\quad Không gian mẫu $\\Omega=\\{1;2;3;\\dots;12\\}$, do đó $n(\\Omega)=12$.[[br]]\\quad Vì đĩa được chia thành 12 phần \\emph{bằng nhau} nên các kết quả là đồng khả năng. Các số chia hết cho 4 là $4;8;12$ nên $n(M)=3$.[[br]]\\quad $P(M)=\\dfrac{3}{12}=\\dfrac{1}{4}$.[[br]]Vậy $P(M)=\\dfrac{1}{4}$."
+    },
+    {
+     "type": "noted",
+     "variant": "example",
+     "text": "\\textbf{Ví dụ 7.} Một hộp có 20 viên bi ghi các số $1;2;\\dots;20$. Lấy ngẫu nhiên một viên. Tính xác suất của biến cố $A$: \\textquotedblleft Số ghi trên viên bi chia 6 dư 2\\textquotedblright{} \\;(cuối kì II, THCS Chu Văn An).[[br]]\\textbf{Lời giải.}[[br]]\\quad Không gian mẫu $\\Omega=\\{1;2;3;\\dots;20\\}$, do đó $n(\\Omega)=20$; các kết quả là đồng khả năng.[[br]]\\quad Số chia 6 dư 2 có dạng $6k+2$; lần lượt cho $k=0;1;2;3$ được $2;\\;8;\\;14;\\;20$ (đều không vượt quá 20).[[br]]\\quad Do đó $n(A)=4$ và $P(A)=\\dfrac{4}{20}=\\dfrac{1}{5}$.[[br]]Vậy $P(A)=\\dfrac{1}{5}$."
+    },
+    {
+     "type": "noted",
+     "variant": "trap",
+     "text": "\\textbf{Bẫy số 2 — quên số đầu dãy.} Với \\textquotedblleft chia 6 dư 2\\textquotedblright{} rất nhiều bạn bắt đầu đếm từ $8$ mà bỏ mất số $2$, vì tưởng \\textquotedblleft chia 6\\textquotedblright{} thì phải lớn hơn 6.[[br]]Nhưng $2=6\\cdot 0+2$ nên $2$ vẫn thoả.[[br]]Cùng lỗi đó với \\textquotedblleft chia 4 dư 1\\textquotedblright{} (quên số $1$)."
+    },
+    {
+     "type": "noted",
+     "variant": "example",
+     "text": "\\textbf{Ví dụ 8.} Viết ngẫu nhiên một số tự nhiên lẻ có hai chữ số và nhỏ hơn 40. Tính xác suất của biến cố $M$: \\textquotedblleft Số viết ra là bội của 3\\textquotedblright{} \\;(cuối kì II, THCS Trưng Vương).[[br]]\\textbf{Lời giải.}[[br]]\\quad Đề KHÔNG cho sẵn không gian mẫu nên phải tự liệt kê: các số tự nhiên lẻ có hai chữ số và nhỏ hơn 40 là $11;13;15;\\dots;39$.[[br]]\\quad Dãy này gồm 15 số nên $\\Omega$ có $n(\\Omega)=15$ phần tử; vì viết ngẫu nhiên nên các kết quả đồng khả năng.[[br]]\\quad Các bội của 3 trong dãy đó là $15;\\;21;\\;27;\\;33;\\;39$ nên $n(M)=5$.[[br]]\\quad $P(M)=\\dfrac{5}{15}=\\dfrac{1}{3}$.[[br]]Vậy $P(M)=\\dfrac{1}{3}$."
+    },
+    {
+     "type": "noted",
+     "variant": "example",
+     "text": "\\textbf{Ví dụ 9.} Trên bàn có 3 quyển sách Toán, 3 quyển sách Văn và 2 quyển sách Tiếng Anh. Chọn ngẫu nhiên một quyển. Tính xác suất chọn được sách Toán \\;(cuối kì II, Phòng GD\\&ĐT Ba Đình).[[br]]\\textbf{Lời giải.}[[br]]\\quad Các quyển sách không đánh số, nhưng mỗi quyển vẫn là một kết quả có thể nên $n(\\Omega)=3+3+2=8$.[[br]]\\quad Vì chọn ngẫu nhiên nên 8 kết quả là đồng khả năng. Số kết quả thuận lợi là số quyển sách Toán, tức $n(E)=3$.[[br]]\\quad $P(E)=\\dfrac{3}{8}$.[[br]]Vậy $P(E)=\\dfrac{3}{8}$."
+    },
+    {
+     "type": "noted",
+     "variant": "target",
+     "text": "\\textbf{Ba phép kiểm bắt buộc trước khi nộp bài.}[[br]]\\quad (1) $n(E)$ phải \\emph{không lớn hơn} $n(\\Omega)$.[[br]]\\quad (2) Kết quả phải thoả $0 \\le P(E) \\le 1$ — ra số lớn hơn 1 là chắc chắn sai.[[br]]\\quad (3) Phân số phải \\emph{rút gọn về tối giản} và có câu \\textquotedblleft Vậy $P(E)=\\ldots$\\textquotedblright{} ở cuối."
+    }
+   ]
+  },
+  {
+   "kind": "practice1",
+   "number": 3,
+   "title": "Luyện tập 1 — Nhận biết",
+   "teacher_note": "Luyện 48 phút. Bài 1--6 chữa miệng thật nhanh (mỗi bài 2 phút) — đây là phần ôn Lớp 6, đừng sa đà. Bài 7--9 cho HS gạch thẳng vào đề rồi đếm; bài 9 bắt đọc to chữ \\emph{và} trước khi làm. Bài 10 là bài quan trọng nhất buổi: cho làm một mình 4 phút rồi gọi ba em lên bảng, mỗi em một dòng.",
+   "blocks": [
+    {
+     "type": "problem",
+     "label": "Bài 1.",
+     "statement": "Mỗi hoạt động dưới đây có phải là một \\textbf{phép thử ngẫu nhiên} không? Giải thích bằng đúng hai điều kiện: \\emph{không biết trước kết quả} và \\emph{liệt kê được hết các kết quả có thể}.[[br]]a) [NB] Gieo một con xúc xắc rồi quan sát số chấm xuất hiện.[[br]]b) [NB] Dùng thước đo chiều dài mặt bàn học của em.[[br]]c) [NB] Rút một tấm thẻ từ hộp có 10 tấm thẻ ghi các số $1;2;\\dots;10$.",
+     "tier": "onclass",
+     "level": 1,
+     "solution": "a) CÓ. Trước khi gieo không biết ra mặt nào, nhưng liệt kê được hết 6 kết quả là $1;2;3;4;5;6$.[[br]]b) KHÔNG. Mặt bàn có một chiều dài xác định, đo lần nào cũng ra chừng ấy — kết quả đã biết trước, không ngẫu nhiên.[[br]]c) CÓ. Không biết trước rút được thẻ nào, nhưng liệt kê được hết 10 kết quả.",
+     "dang_id": "NB1",
+     "writelines": 0
+    },
+    {
+     "type": "problem",
+     "label": "Bài 2.",
+     "statement": "Chỉ ra \\emph{phép thử} và \\emph{kết quả của phép thử} trong mỗi tình huống sau.[[br]]a) [NB] Bạn Hiền quay một đĩa tròn chia 6 phần bằng nhau ghi các số $1;2;\\dots;6$ một lần. Phép thử ở đây là gì?[[br]]b) [NB] Vẫn tình huống ý a), kết quả của phép thử là gì?[[br]]c) [NB] Bạn An chọn ngẫu nhiên một quyển sách trong 8 quyển xếp trên giá. Kết quả của phép thử là gì?",
+     "tier": "onclass",
+     "level": 1,
+     "solution": "a) Phép thử là \\textquotedblleft quay đĩa tròn một lần\\textquotedblright.[[br]]b) Kết quả của phép thử là số ghi trên hình quạt mà chiếc kim chỉ vào.[[br]]c) Kết quả của phép thử là quyển sách được chọn.",
+     "dang_id": "NB2",
+     "writelines": 0
+    },
+    {
+     "type": "problem",
+     "label": "Bài 3.",
+     "statement": "Viết không gian mẫu $\\Omega$ bằng ngoặc nhọn rồi đếm số phần tử $n(\\Omega)$.[[br]]a) [NB] Gieo một con xúc xắc một lần.[[br]]b) [NB] Lấy ngẫu nhiên một viên bi từ hộp có 20 viên bi ghi các số $1;2;\\dots;20$.[[br]]c) [NB] Quay một lần chiếc đĩa tròn chia 12 phần bằng nhau ghi các số $1;2;\\dots;12$.\\par\\nopagebreak\\smallskip\\begin{center}\\adjustbox{max width=0.86\\linewidth}{\\begin{tikzpicture}[font=\\small,line width=0.7pt]\\filldraw[stage2!22,draw=stage2,line width=0.8pt] (0,0) -- (90.00:1.6) arc (90.00:60.00:1.6) -- cycle;\\node[font=\\small,align=center] at (75.00:1.06) {1};\\filldraw[stage3!22,draw=stage3,line width=0.8pt] (0,0) -- (60.00:1.6) arc (60.00:30.00:1.6) -- cycle;\\node[font=\\small,align=center] at (45.00:1.06) {2};\\filldraw[stage1!22,draw=stage1,line width=0.8pt] (0,0) -- (30.00:1.6) arc (30.00:0.00:1.6) -- cycle;\\node[font=\\small,align=center] at (15.00:1.06) {3};\\filldraw[brand!22,draw=brand,line width=0.8pt] (0,0) -- (0.00:1.6) arc (0.00:-30.00:1.6) -- cycle;\\node[font=\\small,align=center] at (-15.00:1.06) {4};\\filldraw[stage5!22,draw=stage5,line width=0.8pt] (0,0) -- (-30.00:1.6) arc (-30.00:-60.00:1.6) -- cycle;\\node[font=\\small,align=center] at (-45.00:1.06) {5};\\filldraw[info!22,draw=info,line width=0.8pt] (0,0) -- (-60.00:1.6) arc (-60.00:-90.00:1.6) -- cycle;\\node[font=\\small,align=center] at (-75.00:1.06) {6};\\filldraw[gold!22,draw=gold,line width=0.8pt] (0,0) -- (-90.00:1.6) arc (-90.00:-120.00:1.6) -- cycle;\\node[font=\\small,align=center] at (-105.00:1.06) {7};\\filldraw[stage4!22,draw=stage4,line width=0.8pt] (0,0) -- (-120.00:1.6) arc (-120.00:-150.00:1.6) -- cycle;\\node[font=\\small,align=center] at (-135.00:1.06) {8};\\filldraw[stage2!22,draw=stage2,line width=0.8pt] (0,0) -- (-150.00:1.6) arc (-150.00:-180.00:1.6) -- cycle;\\node[font=\\small,align=center] at (-165.00:1.06) {9};\\filldraw[stage3!22,draw=stage3,line width=0.8pt] (0,0) -- (-180.00:1.6) arc (-180.00:-210.00:1.6) -- cycle;\\node[font=\\small,align=center] at (-195.00:1.06) {10};\\filldraw[stage1!22,draw=stage1,line width=0.8pt] (0,0) -- (-210.00:1.6) arc (-210.00:-240.00:1.6) -- cycle;\\node[font=\\small,align=center] at (-225.00:1.06) {11};\\filldraw[brand!22,draw=brand,line width=0.8pt] (0,0) -- (-240.00:1.6) arc (-240.00:-270.00:1.6) -- cycle;\\node[font=\\small,align=center] at (-255.00:1.06) {12};\\draw[->,ink,line width=1.1pt] (0,0) -- (-90:1.31);\\fill[ink] (0,0) circle (1.7pt);\\end{tikzpicture}}\\par\\vspace{2pt}{\\scriptsize\\itshape\\color{muted}Đĩa tròn 12 phần bằng nhau — mô hình Câu I.2 đề minh họa của Sở}\\end{center}\\smallskip ",
+     "tier": "onclass",
+     "level": 1,
+     "solution": "a) $\\Omega=\\{1;2;3;4;5;6\\}$, do đó $n(\\Omega)=6$.[[br]]b) $\\Omega=\\{1;2;3;\\dots;20\\}$, do đó $n(\\Omega)=20$.[[br]]c) $\\Omega=\\{1;2;3;\\dots;12\\}$, do đó $n(\\Omega)=12$.",
+     "dang_id": "NB3",
+     "writelines": 0
+    },
+    {
+     "type": "problem",
+     "label": "Bài 4.",
+     "statement": "Ôn Lớp 6 — liệt kê các số thoả điều kiện (viết đủ, đừng đếm nhẩm).[[br]]a) [NB] Các số chia hết cho 3 trong dãy $1;2;\\dots;20$.[[br]]b) [NB] Các số chia hết cho 4 trong dãy $1;2;\\dots;12$.[[br]]c) [NB] Các số chia 6 dư 2 trong dãy $1;2;\\dots;20$.",
+     "tier": "onclass",
+     "level": 1,
+     "solution": "a) $3;6;9;12;15;18$ — có 6 số.[[br]]b) $4;8;12$ — có 3 số.[[br]]c) $2;8;14;20$ — có 4 số. Nhớ lấy CẢ số $2$ vì $2=6\\cdot 0+2$.",
+     "dang_id": "NB4",
+     "writelines": 0
+    },
+    {
+     "type": "problem",
+     "label": "Bài 5.",
+     "statement": "Ôn Lớp 6 — số nguyên tố, ước và bội.[[br]]a) [NB] Liệt kê các số nguyên tố trong dãy $1;2;\\dots;10$.[[br]]b) [NB] Liệt kê các bội của 5 không vượt quá 52.[[br]]c) [NB] Liệt kê các ước của 12 trong dãy $1;2;\\dots;12$.",
+     "tier": "onclass",
+     "level": 1,
+     "solution": "a) $2;3;5;7$ — có 4 số. Số $1$ KHÔNG phải số nguyên tố.[[br]]b) $5;10;15;20;25;30;35;40;45;50$ — có 10 số.[[br]]c) $1;2;3;4;6;12$ — có 6 số.",
+     "dang_id": "NB5",
+     "writelines": 0
+    },
+    {
+     "type": "problem",
+     "label": "Bài 6.",
+     "statement": "Ôn Lớp 6 — bước cuối bắt buộc của mọi bài xác suất.[[br]]a) [NB] Rút gọn $\\dfrac{4}{20}$ về phân số tối giản.[[br]]b) [NB] Rút gọn $\\dfrac{3}{12}$ về phân số tối giản.[[br]]c) [NB] Viết $\\dfrac{5}{8}$ dưới dạng số thập phân.",
+     "tier": "onclass",
+     "level": 1,
+     "solution": "a) $\\dfrac{4}{20}=\\dfrac{4:4}{20:4}=\\dfrac{1}{5}$.[[br]]b) $\\dfrac{3}{12}=\\dfrac{3:3}{12:3}=\\dfrac{1}{4}$.[[br]]c) $\\dfrac{5}{8}=5:8=0{,}625$.",
+     "dang_id": "NB6",
+     "writelines": 0
+    },
+    {
+     "type": "problem",
+     "label": "Bài 7.",
+     "statement": "Một hộp có 10 tấm thẻ ghi các số $1;2;\\dots;10$. Rút ngẫu nhiên một tấm thẻ. Hãy \\textbf{liệt kê các kết quả thuận lợi} cho mỗi biến cố sau.\\par\\nopagebreak\\smallskip\\begin{center}\\adjustbox{max width=0.86\\linewidth}{\\begin{tikzpicture}[font=\\small,line width=0.7pt]\\draw[stage2,fill=stage2!14,rounded corners=2pt,line width=0.8pt] (-0.52,-0.74) rectangle (0.52,0.74);\\node[font=\\small] at (0.00,0.00) {1};\\draw[stage2,fill=stage2!14,rounded corners=2pt,line width=0.8pt] (0.66,-0.74) rectangle (1.70,0.74);\\node[font=\\small] at (1.18,0.00) {2};\\draw[stage2,fill=stage2!14,rounded corners=2pt,line width=0.8pt] (1.84,-0.74) rectangle (2.88,0.74);\\node[font=\\small] at (2.36,0.00) {3};\\draw[stage2,fill=stage2!14,rounded corners=2pt,line width=0.8pt] (3.02,-0.74) rectangle (4.06,0.74);\\node[font=\\small] at (3.54,0.00) {4};\\draw[stage2,fill=stage2!14,rounded corners=2pt,line width=0.8pt] (4.20,-0.74) rectangle (5.24,0.74);\\node[font=\\small] at (4.72,0.00) {5};\\draw[stage2,fill=stage2!14,rounded corners=2pt,line width=0.8pt] (5.38,-0.74) rectangle (6.42,0.74);\\node[font=\\small] at (5.90,0.00) {6};\\draw[stage2,fill=stage2!14,rounded corners=2pt,line width=0.8pt] (6.56,-0.74) rectangle (7.60,0.74);\\node[font=\\small] at (7.08,0.00) {7};\\draw[stage2,fill=stage2!14,rounded corners=2pt,line width=0.8pt] (7.74,-0.74) rectangle (8.78,0.74);\\node[font=\\small] at (8.26,0.00) {8};\\draw[stage2,fill=stage2!14,rounded corners=2pt,line width=0.8pt] (8.92,-0.74) rectangle (9.96,0.74);\\node[font=\\small] at (9.44,0.00) {9};\\draw[stage2,fill=stage2!14,rounded corners=2pt,line width=0.8pt] (10.10,-0.74) rectangle (11.14,0.74);\\node[font=\\small] at (10.62,0.00) {10};\\end{tikzpicture}}\\par\\vspace{2pt}{\\scriptsize\\itshape\\color{muted}Mười tấm thẻ cùng loại trong hộp}\\end{center}\\smallskip a) [NB] $A$: \\textquotedblleft Số ghi trên thẻ là số chẵn\\textquotedblright.[[br]]b) [NB] $B$: \\textquotedblleft Số ghi trên thẻ chia hết cho 3\\textquotedblright.[[br]]c) [NB] $C$: \\textquotedblleft Số ghi trên thẻ lớn hơn 7\\textquotedblright.",
+     "tier": "onclass",
+     "level": 1,
+     "solution": "a) Các kết quả thuận lợi cho $A$ là $2;4;6;8;10$.[[br]]b) Các kết quả thuận lợi cho $B$ là $3;6;9$.[[br]]c) Các kết quả thuận lợi cho $C$ là $8;9;10$.",
+     "dang_id": "NB7",
+     "writelines": 0
+    },
+    {
+     "type": "problem",
+     "label": "Bài 8.",
+     "statement": "Một hộp có 20 tấm thẻ ghi các số $1;2;\\dots;20$. Rút ngẫu nhiên một tấm thẻ. Đếm số kết quả thuận lợi $n(E)$ của mỗi biến cố (chỉ đếm, chưa cần tính xác suất).[[br]]a) [NB] $E$: \\textquotedblleft Số ghi trên thẻ lớn hơn 15\\textquotedblright.[[br]]b) [NB] $E$: \\textquotedblleft Số ghi trên thẻ là số chẵn\\textquotedblright.[[br]]c) [NB] $E$: \\textquotedblleft Số ghi trên thẻ nhỏ hơn 8\\textquotedblright.",
+     "tier": "onclass",
+     "level": 1,
+     "solution": "a) Các số lớn hơn 15 là $16;17;18;19;20$ nên $n(E)=5$.[[br]]b) Các số chẵn là $2;4;6;\\dots;20$ nên $n(E)=10$.[[br]]c) Các số nhỏ hơn 8 là $1;2;\\dots;7$ nên $n(E)=7$ (KHÔNG lấy số 8).",
+     "dang_id": "NB8",
+     "writelines": 0
+    },
+    {
+     "type": "problem",
+     "label": "Bài 9.",
+     "statement": "Một hộp có 15 tấm thẻ ghi các số $1;2;\\dots;15$. Rút ngẫu nhiên một tấm thẻ. Biến cố dưới đây ghép \\textbf{hai} điều kiện bằng chữ \\textquotedblleft và\\textquotedblright{} — phải thoả CẢ HAI mới được lấy.[[br]]a) [NB] $A$: \\textquotedblleft Số ghi trên thẻ chia hết cho 3 \\emph{và} không vượt quá 10\\textquotedblright. Tìm $n(A)$.[[br]]b) [NB] $B$: \\textquotedblleft Số ghi trên thẻ là số chẵn \\emph{và} lớn hơn 8\\textquotedblright. Tìm $n(B)$.[[br]]c) [NB] $C$: \\textquotedblleft Số ghi trên thẻ là số lẻ \\emph{và} chia hết cho 5\\textquotedblright. Tìm $n(C)$.",
+     "tier": "onclass",
+     "level": 1,
+     "solution": "a) Số chia hết cho 3 trong $\\{1;\\dots;15\\}$ là $3;6;9;12;15$; trong đó không vượt quá 10 chỉ còn $3;6;9$. Vậy $n(A)=3$.[[br]]b) Số chẵn lớn hơn 8 là $10;12;14$. Vậy $n(B)=3$.[[br]]c) Số chia hết cho 5 là $5;10;15$; trong đó số lẻ là $5;15$. Vậy $n(C)=2$.",
+     "dang_id": "NB9",
+     "writelines": 0
+    },
+    {
+     "type": "problem",
+     "label": "Bài 10.",
+     "statement": "\\textbf{Điền khuyết bài giải mẫu Câu I.2.} Một hộp có 8 chiếc thẻ cùng loại ghi các số $1;2;\\dots;8$. Rút ngẫu nhiên một thẻ. Tính xác suất của biến cố $A$: \\textquotedblleft Số ghi trên thẻ rút được chia hết cho 3\\textquotedblright{} \\;(đề chính thức Vào 10, Sở GD\\&ĐT Hà Nội 2025).[[br]]a) [NB] \\emph{Dòng 1.} Không gian mẫu $\\Omega=\\{$ [[blank:4.2cm]] $\\}$ nên $n(\\Omega)=$ [[blank:1.2cm]].[[br]]b) [NB] \\emph{Dòng 2.} Vì rút ngẫu nhiên nên các kết quả là [[blank:3.2cm]]. Các kết quả thuận lợi cho $A$ là [[blank:2.4cm]], do đó $n(A)=$ [[blank:1.2cm]].[[br]]c) [NB] \\emph{Dòng 3.} $P(A)=\\dfrac{n(A)}{n(\\Omega)}=$ [[blank:1.6cm]] $=$ [[blank:1.6cm]].",
+     "tier": "onclass",
+     "level": 1,
+     "solution": "a) $\\Omega=\\{1;2;3;4;5;6;7;8\\}$ nên $n(\\Omega)=8$.[[br]]b) Các kết quả là \\emph{đồng khả năng}. Các kết quả thuận lợi cho $A$ là $3;6$, do đó $n(A)=2$.[[br]]c) $P(A)=\\dfrac{n(A)}{n(\\Omega)}=\\dfrac{2}{8}=\\dfrac{1}{4}$.",
+     "dang_id": "NB10",
+     "writelines": 0
+    },
+    {
+     "type": "problem",
+     "label": "Bài 11.",
+     "statement": "Hai phép kiểm bắt buộc trước khi nộp bài.[[br]]a) [NB] Một bạn tính ra $P(A)=\\dfrac{7}{5}$. Kết quả đó có thể đúng không? Vì sao?[[br]]b) [NB] Viết câu kết luận đầy đủ cho Bài 10, nhớ rút gọn phân số về tối giản.",
+     "tier": "onclass",
+     "level": 1,
+     "solution": "a) KHÔNG thể đúng. Số kết quả thuận lợi không bao giờ vượt quá tổng số kết quả có thể nên luôn có $0 \\le P(A) \\le 1$; mà $\\dfrac{7}{5}>1$.[[br]]b) \\textquotedblleft Vậy $P(A)=\\dfrac{1}{4}$\\textquotedblright{} — viết $\\dfrac{2}{8}$ mà không rút gọn là mất điểm trình bày.",
+     "dang_id": "NB11",
+     "writelines": 0
+    }
+   ]
+  },
+  {
+   "kind": "practice2",
+   "number": 4,
+   "title": "Luyện tập 2 — Thông hiểu \\& Vận dụng",
+   "teacher_note": "Luyện 48 phút, gọi HS lên bảng theo cặp. Bài 13 là chỗ tầng C sai nhiều nhất — bắt viết hẳn dãy số ra nháp trước khi đếm, cấm đếm nhẩm. Bài 15 nhấn: hai ý dùng chung $n(\\Omega)$, chỉ viết dòng 1 một lần. Bài 16 và Bài 17 chấm điểm như bài thi: thiếu câu \\textquotedblleft đồng khả năng\\textquotedblright{} hay thiếu \\textquotedblleft Vậy\\textquotedblright{} là trừ điểm ngay tại lớp cho HS nhớ.",
+   "blocks": [
+    {
+     "type": "problem",
+     "label": "Bài 12.",
+     "statement": "Tính xác suất của biến cố trong mỗi phép thử sau. Trình bày đủ ba dòng như Bài 10.[[br]]a) [TH] Một đĩa tròn bằng bìa cứng chia 8 phần bằng nhau ghi các số $1;2;\\dots;8$, kim gắn cố định ở tâm. Quay đĩa một lần. Tính xác suất của biến cố $A$: \\textquotedblleft Kim chỉ vào hình quạt ghi số lớn hơn 3\\textquotedblright{} \\;(cuối kì II, Phòng GD\\&ĐT Thạch Thất).[[br]]b) [TH] Một hộp đựng 6 quả bóng cùng loại ghi các số $1;2;\\dots;6$. Lấy ngẫu nhiên một quả bóng. Tính xác suất của biến cố $B$: \\textquotedblleft Số ghi trên quả bóng lấy được là số chẵn\\textquotedblright{} \\;(đề chính thức Vào 10 năm 2026).\\par\\nopagebreak\\smallskip\\begin{center}\\adjustbox{max width=0.86\\linewidth}{\\begin{tikzpicture}[font=\\small,line width=0.7pt]\\filldraw[stage2!22,draw=stage2,line width=0.8pt] (0,0) -- (90.00:1.5) arc (90.00:45.00:1.5) -- cycle;\\node[font=\\small,align=center] at (67.50:0.99) {1};\\filldraw[stage3!22,draw=stage3,line width=0.8pt] (0,0) -- (45.00:1.5) arc (45.00:0.00:1.5) -- cycle;\\node[font=\\small,align=center] at (22.50:0.99) {2};\\filldraw[stage1!22,draw=stage1,line width=0.8pt] (0,0) -- (0.00:1.5) arc (0.00:-45.00:1.5) -- cycle;\\node[font=\\small,align=center] at (-22.50:0.99) {3};\\filldraw[brand!22,draw=brand,line width=0.8pt] (0,0) -- (-45.00:1.5) arc (-45.00:-90.00:1.5) -- cycle;\\node[font=\\small,align=center] at (-67.50:0.99) {4};\\filldraw[stage5!22,draw=stage5,line width=0.8pt] (0,0) -- (-90.00:1.5) arc (-90.00:-135.00:1.5) -- cycle;\\node[font=\\small,align=center] at (-112.50:0.99) {5};\\filldraw[info!22,draw=info,line width=0.8pt] (0,0) -- (-135.00:1.5) arc (-135.00:-180.00:1.5) -- cycle;\\node[font=\\small,align=center] at (-157.50:0.99) {6};\\filldraw[gold!22,draw=gold,line width=0.8pt] (0,0) -- (-180.00:1.5) arc (-180.00:-225.00:1.5) -- cycle;\\node[font=\\small,align=center] at (-202.50:0.99) {7};\\filldraw[stage4!22,draw=stage4,line width=0.8pt] (0,0) -- (-225.00:1.5) arc (-225.00:-270.00:1.5) -- cycle;\\node[font=\\small,align=center] at (-247.50:0.99) {8};\\draw[->,ink,line width=1.1pt] (0,0) -- (-90:1.23);\\fill[ink] (0,0) circle (1.7pt);\\end{tikzpicture}}\\par\\vspace{2pt}{\\scriptsize\\itshape\\color{muted}Đĩa tròn 8 phần của ý a)}\\end{center}\\smallskip ",
+     "tier": "onclass",
+     "level": 2,
+     "solution": "a) Không gian mẫu $\\Omega=\\{1;2;\\dots;8\\}$ nên $n(\\Omega)=8$.[[br]]Vì đĩa chia 8 phần bằng nhau nên các kết quả là đồng khả năng.[[br]]Các kết quả thuận lợi cho $A$ là $4;5;6;7;8$, do đó $n(A)=5$.[[br]]$P(A)=\\dfrac{5}{8}$. Vậy $P(A)=\\dfrac{5}{8}$.[[br]]b) $\\Omega=\\{1;2;3;4;5;6\\}$ nên $n(\\Omega)=6$; các kết quả đồng khả năng.[[br]]Các kết quả thuận lợi cho $B$ là $2;4;6$, do đó $n(B)=3$.[[br]]$P(B)=\\dfrac{3}{6}=\\dfrac{1}{2}$. Vậy $P(B)=\\dfrac{1}{2}$.",
+     "dang_id": "TH1",
+     "writelines": 0
+    },
+    {
+     "type": "problem",
+     "label": "Bài 13.",
+     "statement": "Hai bài dưới đây KHÔNG cho sẵn không gian mẫu — phải tự liệt kê tập nền rồi mới đếm.[[br]]a) [TH] Viết ngẫu nhiên một số tự nhiên lẻ có hai chữ số và nhỏ hơn 40. Tính xác suất của biến cố $M$: \\textquotedblleft Số viết ra là bội của 3\\textquotedblright{} \\;(cuối kì II, THCS Trưng Vương).[[br]]b) [TH] Viết ngẫu nhiên một số tự nhiên có hai chữ số và nhỏ hơn 20. Tính xác suất của biến cố $N$: \\textquotedblleft Số viết ra chia hết cho 4\\textquotedblright.",
+     "tier": "onclass",
+     "level": 2,
+     "solution": "a) Các số tự nhiên lẻ có hai chữ số và nhỏ hơn 40 là $11;13;15;\\dots;39$.[[br]]Đếm được $\\Omega$ gồm 15 số nên $n(\\Omega)=15$; các kết quả đồng khả năng.[[br]]Các bội của 3 trong dãy đó là $15;21;27;33;39$, do đó $n(M)=5$.[[br]]$P(M)=\\dfrac{5}{15}=\\dfrac{1}{3}$. Vậy $P(M)=\\dfrac{1}{3}$.[[br]]b) Các số tự nhiên có hai chữ số và nhỏ hơn 20 là $10;11;\\dots;19$ nên $n(\\Omega)=10$.[[br]]Các số chia hết cho 4 trong dãy đó là $12;16$, do đó $n(N)=2$.[[br]]$P(N)=\\dfrac{2}{10}=\\dfrac{1}{5}$. Vậy $P(N)=\\dfrac{1}{5}$.",
+     "dang_id": "TH2",
+     "writelines": 0,
+     "hints": [
+      "Ý a): số lẻ có hai chữ số bắt đầu từ $11$, cách nhau 2 đơn vị.",
+      "Ý b): \\textquotedblleft có hai chữ số\\textquotedblright{} nên nhỏ nhất là $10$, không lấy các số $0;1;\\dots;9$."
+     ]
+    },
+    {
+     "type": "problem",
+     "label": "Bài 14.",
+     "statement": "Hai bài dưới đây các vật KHÔNG đánh số — đếm theo NHÓM đối tượng.[[br]]a) [TH] Trên bàn học của An có 3 quyển sách Toán, 3 quyển sách Văn và 2 quyển sách Tiếng Anh. An chọn ngẫu nhiên một quyển để đọc. Tính xác suất của biến cố \\textquotedblleft An chọn được sách Toán\\textquotedblright{} \\;(cuối kì II, Phòng GD\\&ĐT Ba Đình).[[br]]b) [TH] Một hộp bút có 5 bút xanh, 3 bút đỏ và 2 bút đen. Lấy ngẫu nhiên một chiếc bút. Tính xác suất của biến cố \\textquotedblleft Lấy được chiếc bút không phải màu xanh\\textquotedblright.",
+     "tier": "onclass",
+     "level": 2,
+     "solution": "a) Mỗi quyển sách là một kết quả có thể nên $n(\\Omega)=3+3+2=8$; vì chọn ngẫu nhiên nên các kết quả đồng khả năng.[[br]]Số kết quả thuận lợi là số sách Toán, tức $n(E)=3$.[[br]]$P(E)=\\dfrac{3}{8}$. Vậy $P(E)=\\dfrac{3}{8}$.[[br]]b) $n(\\Omega)=5+3+2=10$.[[br]]Bút không phải màu xanh gồm 3 bút đỏ và 2 bút đen nên $n(F)=3+2=5$.[[br]]$P(F)=\\dfrac{5}{10}=\\dfrac{1}{2}$. Vậy $P(F)=\\dfrac{1}{2}$.",
+     "dang_id": "TH3",
+     "writelines": 0
+    },
+    {
+     "type": "problem",
+     "label": "Bài 15.",
+     "statement": "Một hộp có 60 tấm thẻ cùng loại ghi các số $1;2;\\dots;60$. Rút ngẫu nhiên một tấm thẻ. Hai ý dưới đây dùng CHUNG một không gian mẫu, chỉ đổi số kết quả thuận lợi.[[br]]a) [TH] Tính xác suất của biến cố \\textquotedblleft Số ghi trên thẻ nhỏ hơn 31\\textquotedblright.[[br]]b) [TH] Tính xác suất của biến cố \\textquotedblleft Số ghi trên thẻ chia cho 8 dư 5\\textquotedblright.",
+     "tier": "onclass",
+     "level": 2,
+     "solution": "Không gian mẫu $\\Omega=\\{1;2;\\dots;60\\}$ nên $n(\\Omega)=60$; các kết quả đồng khả năng. Cả hai ý dùng chung $n(\\Omega)=60$ này.[[br]]a) Các số nhỏ hơn 31 là $1;2;\\dots;30$, có 30 số nên $n(A)=30$.[[br]]$P(A)=\\dfrac{30}{60}=\\dfrac{1}{2}$. Vậy $P(A)=\\dfrac{1}{2}$.[[br]]b) Các số chia 8 dư 5 là $5;13;21;29;37;45;53$, có 7 số nên $n(B)=7$.[[br]]$P(B)=\\dfrac{7}{60}$. Vậy $P(B)=\\dfrac{7}{60}$ (phân số này đã tối giản).",
+     "dang_id": "TH4",
+     "writelines": 0
+    },
+    {
+     "type": "problem",
+     "label": "Bài 16.",
+     "statement": "[VD] Một đĩa tròn bằng bìa cứng được chia làm 12 phần bằng nhau và ghi các số $1;2;3;\\dots;12$; chiếc kim được gắn cố định vào trục quay ở tâm của đĩa. Xét phép thử \\textquotedblleft Quay đĩa tròn một lần\\textquotedblright{} và biến cố $M$: \\textquotedblleft Chiếc kim chỉ vào hình quạt ghi số chia hết cho 4\\textquotedblright. Tính xác suất của biến cố $M$, trình bày đủ ba dòng như một bài thi \\;(Câu I.2 đề minh họa Vào 10 của Sở GD\\&ĐT Hà Nội).",
+     "tier": "onclass",
+     "level": 3,
+     "solution": "Phép thử là quay đĩa tròn một lần; kết quả của phép thử là số ghi trên hình quạt mà chiếc kim chỉ vào.[[br]]Không gian mẫu $\\Omega=\\{1;2;3;\\dots;12\\}$, do đó $n(\\Omega)=12$.[[br]]Vì đĩa được chia thành 12 phần bằng nhau nên 12 kết quả trên là đồng khả năng.[[br]]Các số chia hết cho 4 trong $\\Omega$ là $4;8;12$ nên các kết quả thuận lợi cho $M$ là $4;8;12$, do đó $n(M)=3$.[[br]]$P(M)=\\dfrac{n(M)}{n(\\Omega)}=\\dfrac{3}{12}=\\dfrac{1}{4}$.[[br]]Vậy $P(M)=\\dfrac{1}{4}$.",
+     "dang_id": "VD1",
+     "writelines": 0
+    },
+    {
+     "type": "problem",
+     "label": "Bài 17.",
+     "statement": "[VD] Một đĩa tròn bằng bìa cứng được chia làm 8 phần bằng nhau và ghi các số $1;\\;12;\\;18;\\;22;\\;27;\\;69;\\;96;\\;99$; chiếc kim được gắn cố định vào trục quay ở tâm. Quay đĩa tròn một lần. Tính xác suất của biến cố $M$: \\textquotedblleft Chiếc kim chỉ vào hình quạt ghi số chia cho 5 dư 2\\textquotedblright{} \\;(cuối kì II, THCS Phúc Lợi). Chú ý: các số trên đĩa KHÔNG liên tiếp nên phải soi từng số một.",
+     "tier": "onclass",
+     "level": 3,
+     "solution": "Không gian mẫu $\\Omega=\\{1;12;18;22;27;69;96;99\\}$, do đó $n(\\Omega)=8$.[[br]]Vì đĩa được chia thành 8 phần bằng nhau nên các kết quả là đồng khả năng.[[br]]Xét lần lượt từng số: $1=5\\cdot 0+1$; $12=5\\cdot 2+2$; $18=5\\cdot 3+3$; $22=5\\cdot 4+2$; $27=5\\cdot 5+2$; $69=5\\cdot 13+4$; $96=5\\cdot 19+1$; $99=5\\cdot 19+4$.[[br]]Các kết quả thuận lợi cho $M$ là $12;\\;22;\\;27$, do đó $n(M)=3$.[[br]]$P(M)=\\dfrac{3}{8}$.[[br]]Vậy $P(M)=\\dfrac{3}{8}$.",
+     "dang_id": "VD2",
+     "writelines": 0,
+     "hints": [
+      "Dãy số không liên tiếp thì KHÔNG có công thức đếm nhanh — kẻ một cột phụ, chia từng số cho 5 rồi ghi số dư bên cạnh."
+     ]
+    }
+   ]
+  },
+  {
+   "kind": "reflection",
+   "number": 5,
+   "title": "Tổng kết",
+   "teacher_note": "Sơ đồ tư duy cho HS điền 5 phút cuối buổi, thu lại chấm nhanh. BTVN 17 bài $\\approx$ 96 phút. Buổi sau sang mô hình HAI hành động (bảng hai chiều) — dặn HS mang thước kẻ để kẻ bảng.",
+   "blocks": [
+    {
+     "type": "mindmap",
+     "caption": "Điền các ô trống để tự tóm tắt cả buổi",
+     "root": "Xác suất của biến cố",
+     "branches": [
+      {
+       "label": "Phép thử ngẫu nhiên",
+       "children": [
+        {
+         "label": "Không biết trước [[blank:2.2cm]]"
+        },
+        {
+         "label": "Nhưng [[blank:2.4cm]] được hết"
+        }
+       ]
+      },
+      {
+       "label": "Không gian mẫu $\\Omega$",
+       "children": [
+        {
+         "label": "Tập MỌI kết quả [[blank:1.8cm]]"
+        },
+        {
+         "label": "Số phần tử: $n($ [[blank:0.9cm]] $)$"
+        }
+       ]
+      },
+      {
+       "label": "Kết quả thuận lợi",
+       "children": [
+        {
+         "label": "Làm biến cố $E$ [[blank:1.6cm]]"
+        },
+        {
+         "label": "Đếm được: $n($ [[blank:0.9cm]] $)$"
+        }
+       ]
+      },
+      {
+       "label": "Công thức",
+       "children": [
+        {
+         "label": "$P(E)=\\dfrac{\\ldots}{\\ldots}$"
+        },
+        {
+         "label": "Điều kiện: [[blank:2.4cm]]"
+        },
+        {
+         "label": "Luôn có $0 \\le P(E) \\le$ [[blank:0.9cm]]"
+        }
+       ]
+      },
+      {
+       "label": "Ba dòng trình bày",
+       "children": [
+        {
+         "label": "1) Viết $\\Omega$, $n(\\Omega)$"
+        },
+        {
+         "label": "2) Đồng khả năng $+$ $n(E)$"
+        },
+        {
+         "label": "3) Lập tỉ số, rút gọn, \\textquotedblleft [[blank:1.2cm]] \\ldots\\textquotedblright"
+        }
+       ]
+      }
+     ]
+    },
+    {
+     "type": "para",
+     "text": "\\textbf{Bài tập về nhà} — làm vào vở, buổi sau nộp."
+    },
+    {
+     "type": "problem",
+     "label": "Bài 18.",
+     "statement": "Mỗi hoạt động sau có phải phép thử ngẫu nhiên không? Vì sao?[[br]]a) [NB] Tung một đồng xu và quan sát mặt xuất hiện.[[br]]b) [NB] Tính tổng $15+27$.[[br]]c) [NB] Chọn ngẫu nhiên một bạn trong tổ có 4 bạn để trực nhật.",
+     "tier": "btvn",
+     "level": 1,
+     "solution": "a) CÓ — không biết trước ra mặt sấp hay ngửa, nhưng chỉ có đúng hai kết quả.[[br]]b) KHÔNG — kết quả luôn bằng $42$, biết trước rồi.[[br]]c) CÓ — không biết trước bạn nào, nhưng liệt kê được hết 4 kết quả.",
+     "dang_id": "NB1",
+     "writelines": 0
+    },
+    {
+     "type": "problem",
+     "label": "Bài 19.",
+     "statement": "Chỉ ra phép thử và kết quả của phép thử.[[br]]a) [NB] Bạn Nam rút một tấm thẻ từ hộp có 15 tấm thẻ ghi các số $1;2;\\dots;15$. Phép thử là gì?[[br]]b) [NB] Vẫn tình huống ý a), kết quả của phép thử là gì?[[br]]c) [NB] Một hộp có 4 viên bi xanh và 6 viên bi đỏ; lấy ngẫu nhiên một viên. Kết quả của phép thử là gì?",
+     "tier": "btvn",
+     "level": 1,
+     "solution": "a) Phép thử là \\textquotedblleft rút ngẫu nhiên một tấm thẻ từ hộp\\textquotedblright.[[br]]b) Kết quả của phép thử là số ghi trên tấm thẻ rút được.[[br]]c) Kết quả của phép thử là viên bi lấy được (xanh hay đỏ).",
+     "dang_id": "NB2",
+     "writelines": 0
+    },
+    {
+     "type": "problem",
+     "label": "Bài 20.",
+     "statement": "Viết không gian mẫu $\\Omega$ rồi đếm $n(\\Omega)$.[[br]]a) [NB] Tung một đồng xu một lần (kí hiệu mặt sấp là $S$, mặt ngửa là $N$).[[br]]b) [NB] Quay một lần chiếc đĩa tròn chia 10 phần bằng nhau ghi các số $1;2;\\dots;10$.",
+     "tier": "btvn",
+     "level": 1,
+     "solution": "a) $\\Omega=\\{S;N\\}$, do đó $n(\\Omega)=2$.[[br]]b) $\\Omega=\\{1;2;\\dots;10\\}$, do đó $n(\\Omega)=10$.",
+     "dang_id": "NB3",
+     "writelines": 0
+    },
+    {
+     "type": "problem",
+     "label": "Bài 21.",
+     "statement": "Ôn Lớp 6 — liệt kê đủ, không đếm nhẩm.[[br]]a) [NB] Các số chia hết cho 5 trong dãy $1;2;\\dots;30$.[[br]]b) [NB] Các số chia 4 dư 1 trong dãy $1;2;\\dots;20$.",
+     "tier": "btvn",
+     "level": 1,
+     "solution": "a) $5;10;15;20;25;30$ — có 6 số.[[br]]b) $1;5;9;13;17$ — có 5 số. Nhớ lấy CẢ số $1$ vì $1=4\\cdot 0+1$.",
+     "dang_id": "NB4",
+     "writelines": 0
+    },
+    {
+     "type": "problem",
+     "label": "Bài 22.",
+     "statement": "Ôn Lớp 6 — số nguyên tố và bội.[[br]]a) [NB] Liệt kê các số nguyên tố trong dãy $1;2;\\dots;20$.[[br]]b) [NB] Liệt kê các bội của 3 trong dãy $1;2;\\dots;30$.",
+     "tier": "btvn",
+     "level": 1,
+     "solution": "a) $2;3;5;7;11;13;17;19$ — có 8 số (số $1$ không phải số nguyên tố).[[br]]b) $3;6;9;12;15;18;21;24;27;30$ — có 10 số.",
+     "dang_id": "NB5",
+     "writelines": 0
+    },
+    {
+     "type": "problem",
+     "label": "Bài 23.",
+     "statement": "Ôn Lớp 6 — rút gọn và đổi dạng.[[br]]a) [NB] Rút gọn $\\dfrac{6}{30}$ về phân số tối giản.[[br]]b) [NB] Rút gọn $\\dfrac{8}{20}$ rồi viết kết quả dưới dạng số thập phân.",
+     "tier": "btvn",
+     "level": 1,
+     "solution": "a) $\\dfrac{6}{30}=\\dfrac{6:6}{30:6}=\\dfrac{1}{5}$.[[br]]b) $\\dfrac{8}{20}=\\dfrac{8:4}{20:4}=\\dfrac{2}{5}=0{,}4$.",
+     "dang_id": "NB6",
+     "writelines": 0
+    },
+    {
+     "type": "problem",
+     "label": "Bài 24.",
+     "statement": "Một hộp có 12 tấm thẻ ghi các số $1;2;\\dots;12$. Rút ngẫu nhiên một tấm thẻ. Liệt kê các kết quả thuận lợi cho mỗi biến cố.[[br]]a) [NB] $A$: \\textquotedblleft Số ghi trên thẻ là số lẻ\\textquotedblright.[[br]]b) [NB] $B$: \\textquotedblleft Số ghi trên thẻ chia hết cho 4\\textquotedblright.[[br]]c) [NB] $C$: \\textquotedblleft Số ghi trên thẻ là số nguyên tố\\textquotedblright.",
+     "tier": "btvn",
+     "level": 1,
+     "solution": "a) $1;3;5;7;9;11$.[[br]]b) $4;8;12$.[[br]]c) $2;3;5;7;11$ — số $1$ không phải số nguyên tố.",
+     "dang_id": "NB7",
+     "writelines": 0
+    },
+    {
+     "type": "problem",
+     "label": "Bài 25.",
+     "statement": "Một hộp có 30 tấm thẻ ghi các số $1;2;\\dots;30$. Rút ngẫu nhiên một tấm thẻ. Đếm $n(E)$ của mỗi biến cố.[[br]]a) [NB] $E$: \\textquotedblleft Số ghi trên thẻ nhỏ hơn 12\\textquotedblright.[[br]]b) [NB] $E$: \\textquotedblleft Số ghi trên thẻ là số lẻ\\textquotedblright.[[br]]c) [NB] $E$: \\textquotedblleft Số ghi trên thẻ lớn hơn 25\\textquotedblright.",
+     "tier": "btvn",
+     "level": 1,
+     "solution": "a) Các số nhỏ hơn 12 là $1;2;\\dots;11$ nên $n(E)=11$.[[br]]b) Các số lẻ là $1;3;5;\\dots;29$ nên $n(E)=15$.[[br]]c) Các số lớn hơn 25 là $26;27;28;29;30$ nên $n(E)=5$.",
+     "dang_id": "NB8",
+     "writelines": 0
+    },
+    {
+     "type": "problem",
+     "label": "Bài 26.",
+     "statement": "Một hộp có 20 tấm thẻ ghi các số $1;2;\\dots;20$. Rút ngẫu nhiên một tấm thẻ. Biến cố ghép hai điều kiện — phải thoả CẢ HAI.[[br]]a) [NB] $A$: \\textquotedblleft Số chia hết cho 2 \\emph{và} lớn hơn 12\\textquotedblright. Tìm $n(A)$.[[br]]b) [NB] $B$: \\textquotedblleft Số là số nguyên tố \\emph{và} nhỏ hơn 10\\textquotedblright. Tìm $n(B)$.",
+     "tier": "btvn",
+     "level": 1,
+     "solution": "a) Số chẵn lớn hơn 12 là $14;16;18;20$. Vậy $n(A)=4$.[[br]]b) Số nguyên tố nhỏ hơn 10 là $2;3;5;7$. Vậy $n(B)=4$.",
+     "dang_id": "NB9",
+     "writelines": 0
+    },
+    {
+     "type": "problem",
+     "label": "Bài 27.",
+     "statement": "\\textbf{Điền khuyết bài giải mẫu.} Một đĩa tròn chia 10 phần bằng nhau ghi các số $1;2;\\dots;10$, kim gắn cố định ở tâm. Quay đĩa một lần. Tính xác suất của biến cố $A$: \\textquotedblleft Kim chỉ vào hình quạt ghi số chia hết cho 3\\textquotedblright.[[br]]a) [NB] $\\Omega=\\{$ [[blank:4.2cm]] $\\}$ nên $n(\\Omega)=$ [[blank:1.2cm]]; các kết quả là [[blank:3.2cm]].[[br]]b) [NB] Các kết quả thuận lợi cho $A$ là [[blank:2.4cm]] nên $n(A)=$ [[blank:1.2cm]]; do đó $P(A)=$ [[blank:1.6cm]].",
+     "tier": "btvn",
+     "level": 1,
+     "solution": "a) $\\Omega=\\{1;2;3;\\dots;10\\}$ nên $n(\\Omega)=10$; các kết quả là đồng khả năng (đĩa chia 10 phần bằng nhau).[[br]]b) Các kết quả thuận lợi cho $A$ là $3;6;9$ nên $n(A)=3$; do đó $P(A)=\\dfrac{3}{10}$.",
+     "dang_id": "NB10",
+     "writelines": 0
+    },
+    {
+     "type": "problem",
+     "label": "Bài 28.",
+     "statement": "Kiểm lại kết quả trước khi nộp bài.[[br]]a) [NB] Một bạn tính ra $P(A)=\\dfrac{12}{8}$. Kết quả đó có thể đúng không? Vì sao?[[br]]b) [NB] Rút gọn $P(A)=\\dfrac{15}{60}$ rồi viết câu kết luận đầy đủ.",
+     "tier": "btvn",
+     "level": 1,
+     "solution": "a) KHÔNG. Vì $\\dfrac{12}{8}>1$ mà xác suất luôn thoả $0 \\le P(A) \\le 1$; chắc chắn bạn đó đã đếm nhầm $n(A)$ hoặc $n(\\Omega)$.[[br]]b) $\\dfrac{15}{60}=\\dfrac{15:15}{60:15}=\\dfrac{1}{4}$. Vậy $P(A)=\\dfrac{1}{4}$.",
+     "dang_id": "NB11",
+     "writelines": 0
+    },
+    {
+     "type": "problem",
+     "label": "Bài 29.",
+     "statement": "Tính xác suất, trình bày đủ ba dòng.[[br]]a) [TH] Trong một hộp có 20 chiếc thẻ cùng loại ghi số từ 1 đến 20. Bạn Hà rút ngẫu nhiên một thẻ. Tính xác suất của biến cố $A$: \\textquotedblleft Số ghi trên thẻ là số lớn hơn 15\\textquotedblright{} \\;(cuối kì II, quận Hai Bà Trưng).[[br]]b) [TH] Một hộp có 52 chiếc thẻ ghi các số $1;2;\\dots;52$. Rút ngẫu nhiên một thẻ. Tính xác suất của biến cố $B$: \\textquotedblleft Số ghi trên thẻ nhỏ hơn 27\\textquotedblright{} \\;(giữa kì II, THCS Nghĩa Tân).",
+     "tier": "btvn",
+     "level": 2,
+     "solution": "a) $\\Omega=\\{1;2;\\dots;20\\}$ nên $n(\\Omega)=20$; các kết quả đồng khả năng.[[br]]Các kết quả thuận lợi cho $A$ là $16;17;18;19;20$ nên $n(A)=5$.[[br]]$P(A)=\\dfrac{5}{20}=\\dfrac{1}{4}$. Vậy $P(A)=\\dfrac{1}{4}$.[[br]]b) $n(\\Omega)=52$; các kết quả đồng khả năng.[[br]]Các số nhỏ hơn 27 là $1;2;\\dots;26$ nên $n(B)=26$.[[br]]$P(B)=\\dfrac{26}{52}=\\dfrac{1}{2}$. Vậy $P(B)=\\dfrac{1}{2}$.",
+     "dang_id": "TH1",
+     "writelines": 0
+    },
+    {
+     "type": "problem",
+     "label": "Bài 30.",
+     "statement": "Không gian mẫu KHÔNG cho sẵn — tự liệt kê tập nền trước.[[br]]a) [TH] Viết ngẫu nhiên một số tự nhiên chẵn có hai chữ số và nhỏ hơn 30. Tính xác suất của biến cố $M$: \\textquotedblleft Số viết ra chia hết cho 6\\textquotedblright.[[br]]b) [TH] Viết ngẫu nhiên một số tự nhiên có hai chữ số và không vượt quá 25. Tính xác suất của biến cố $N$: \\textquotedblleft Số viết ra là số nguyên tố\\textquotedblright.",
+     "tier": "btvn",
+     "level": 2,
+     "solution": "a) Các số tự nhiên chẵn có hai chữ số và nhỏ hơn 30 là $10;12;14;\\dots;28$, gồm 10 số nên $n(\\Omega)=10$.[[br]]Trong đó chia hết cho 6 là $12;18;24$ nên $n(M)=3$.[[br]]$P(M)=\\dfrac{3}{10}$. Vậy $P(M)=\\dfrac{3}{10}$.[[br]]b) Các số tự nhiên có hai chữ số và không vượt quá 25 là $10;11;\\dots;25$, gồm 16 số nên $n(\\Omega)=16$.[[br]]Trong đó số nguyên tố là $11;13;17;19;23$ nên $n(N)=5$.[[br]]$P(N)=\\dfrac{5}{16}$. Vậy $P(N)=\\dfrac{5}{16}$.",
+     "dang_id": "TH2",
+     "writelines": 0
+    },
+    {
+     "type": "problem",
+     "label": "Bài 31.",
+     "statement": "Các vật không đánh số — đếm theo nhóm.[[br]]a) [TH] Một giỏ trái cây có 4 quả cam, 5 quả táo và 3 quả lê. Lấy ngẫu nhiên một quả. Tính xác suất của biến cố \\textquotedblleft Lấy được quả táo\\textquotedblright.[[br]]b) [TH] Lớp 9C có 20 bạn nam và 25 bạn nữ. Cô giáo chọn ngẫu nhiên một bạn lên bảng. Tính xác suất của biến cố \\textquotedblleft Chọn được bạn nữ\\textquotedblright.",
+     "tier": "btvn",
+     "level": 2,
+     "solution": "a) $n(\\Omega)=4+5+3=12$; vì lấy ngẫu nhiên nên các kết quả đồng khả năng.[[br]]Số kết quả thuận lợi là số quả táo, tức $n(E)=5$.[[br]]$P(E)=\\dfrac{5}{12}$. Vậy $P(E)=\\dfrac{5}{12}$.[[br]]b) $n(\\Omega)=20+25=45$.[[br]]Số kết quả thuận lợi là số bạn nữ, tức $n(F)=25$.[[br]]$P(F)=\\dfrac{25}{45}=\\dfrac{5}{9}$. Vậy $P(F)=\\dfrac{5}{9}$.",
+     "dang_id": "TH3",
+     "writelines": 0
+    },
+    {
+     "type": "problem",
+     "label": "Bài 32.",
+     "statement": "Một hộp có 24 tấm thẻ ghi các số $1;2;\\dots;24$. Rút ngẫu nhiên một tấm thẻ. Hai ý dùng chung một không gian mẫu.[[br]]a) [TH] Tính xác suất của biến cố \\textquotedblleft Số ghi trên thẻ chia hết cho 6\\textquotedblright.[[br]]b) [TH] Tính xác suất của biến cố \\textquotedblleft Số ghi trên thẻ chia cho 5 dư 3\\textquotedblright.",
+     "tier": "btvn",
+     "level": 2,
+     "solution": "$\\Omega=\\{1;2;\\dots;24\\}$ nên $n(\\Omega)=24$; các kết quả đồng khả năng.[[br]]a) Các số chia hết cho 6 là $6;12;18;24$ nên $n(A)=4$.[[br]]$P(A)=\\dfrac{4}{24}=\\dfrac{1}{6}$. Vậy $P(A)=\\dfrac{1}{6}$.[[br]]b) Các số chia 5 dư 3 là $3;8;13;18;23$ nên $n(B)=5$.[[br]]$P(B)=\\dfrac{5}{24}$. Vậy $P(B)=\\dfrac{5}{24}$.",
+     "dang_id": "TH4",
+     "writelines": 0
+    },
+    {
+     "type": "problem",
+     "label": "Bài 33.",
+     "statement": "[VD] Một đĩa tròn bằng bìa cứng được chia làm 20 phần bằng nhau và ghi các số $1;2;3;\\dots;20$; chiếc kim được gắn cố định vào trục quay ở tâm. Quay đĩa tròn một lần. Tính xác suất của biến cố $M$: \\textquotedblleft Chiếc kim chỉ vào hình quạt ghi số chia hết cho 4\\textquotedblright. Trình bày như một bài thi.",
+     "tier": "btvn",
+     "level": 3,
+     "solution": "Phép thử là quay đĩa tròn một lần; kết quả là số ghi trên hình quạt mà kim chỉ vào.[[br]]Không gian mẫu $\\Omega=\\{1;2;3;\\dots;20\\}$, do đó $n(\\Omega)=20$.[[br]]Vì đĩa chia thành 20 phần bằng nhau nên các kết quả là đồng khả năng.[[br]]Các số chia hết cho 4 trong $\\Omega$ là $4;8;12;16;20$ nên $n(M)=5$.[[br]]$P(M)=\\dfrac{n(M)}{n(\\Omega)}=\\dfrac{5}{20}=\\dfrac{1}{4}$.[[br]]Vậy $P(M)=\\dfrac{1}{4}$.",
+     "dang_id": "VD1",
+     "writelines": 0
+    },
+    {
+     "type": "problem",
+     "label": "Bài 34.",
+     "statement": "[VD] Một đĩa tròn bằng bìa cứng được chia làm 8 phần bằng nhau và ghi các số $5;\\;9;\\;14;\\;18;\\;21;\\;33;\\;40;\\;57$; chiếc kim được gắn cố định vào trục quay ở tâm. Quay đĩa tròn một lần. Tính xác suất của biến cố $M$: \\textquotedblleft Chiếc kim chỉ vào hình quạt ghi số chia cho 4 dư 1\\textquotedblright.",
+     "tier": "btvn",
+     "level": 3,
+     "solution": "Không gian mẫu $\\Omega=\\{5;9;14;18;21;33;40;57\\}$, do đó $n(\\Omega)=8$.[[br]]Vì đĩa chia 8 phần bằng nhau nên các kết quả là đồng khả năng.[[br]]Chia từng số cho 4: $5=4\\cdot 1+1$; $9=4\\cdot 2+1$; $14=4\\cdot 3+2$; $18=4\\cdot 4+2$; $21=4\\cdot 5+1$; $33=4\\cdot 8+1$; $40=4\\cdot 10+0$; $57=4\\cdot 14+1$.[[br]]Các kết quả thuận lợi cho $M$ là $5;\\;9;\\;21;\\;33;\\;57$, do đó $n(M)=5$.[[br]]$P(M)=\\dfrac{5}{8}$.[[br]]Vậy $P(M)=\\dfrac{5}{8}$.",
+     "dang_id": "VD2",
+     "writelines": 0
+    }
+   ]
+  }
+ ]
+}

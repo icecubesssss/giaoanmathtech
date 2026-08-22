@@ -1,0 +1,1265 @@
+{
+  "slug": "thuyet-minh-lop-9b-chuong-05-duong-tron",
+  "title": "Chương V. Đường tròn (Bài 13 – Bài 17 SGK Toán 9 KNTT)",
+  "grade": "lop-9",
+  "subject": "hinh-hoc",
+  "tier": "B",
+  "tuan": "09-23",
+  "thoiluong": [
+    "Buổi 1 (Bài 13): 1 ca $=$ 90 phút (SGK 2 tiết)",
+    "Buổi 2 (Bài 14): 1 ca $=$ 90 phút (SGK 2 tiết)",
+    "Buổi 3 (Bài 15): 1 ca $=$ 90 phút (SGK 2 tiết)",
+    "Buổi 4 (Luyện tập chung Bài 13, 14, 15): 1 ca $=$ 90 phút (SGK 2 tiết)",
+    "Buổi 5 (Bài 16): 1 ca $=$ 90 phút (SGK 2 tiết)",
+    "Buổi 6 (Bài 17 $+$ Luyện tập chung): 1 ca $=$ 90 phút $-$ 30 phút Bài 17 $+$ 45 phút luyện tập tiếp tuyến (SGK 2 tiết)",
+    "Buổi 7 (Bài tập cuối chương V $+$ luyện dạng Câu IV.2): 1 ca $=$ 90 phút (SGK 1 tiết)",
+    "\\textbf{Tổng 7 ca $=$ 630 phút $\\approx$ 14 tiết} (SGK Chương V: 15 tiết) — dồn giờ cho phần tiếp tuyến, phục vụ trực tiếp Câu IV.2 của đề Vào 10"
+  ],
+  "lythuyet": [
+    "Nhận biết đường tròn, bán kính, đường kính, dây cung; đường kính là dây lớn nhất.",
+    "Đường kính vuông góc với một dây thì đi qua trung điểm của dây; hai dây bằng nhau thì cách đều tâm.",
+    "Tính độ dài đường tròn $C = 2\\pi R = \\pi d$ và độ dài cung $n^\\circ$: $l = \\frac{\\pi R n}{180}$.",
+    "Tính diện tích hình tròn $S = \\pi R^2$, hình quạt tròn $S_q = \\frac{\\pi R^2 n}{360}$ và hình vành khuyên $S = \\pi (R^2 - r^2)$.",
+    "Ba vị trí tương đối của đường thẳng và đường tròn theo $d$ và $R$; tiếp tuyến vuông góc với bán kính tại tiếp điểm.",
+    "Tính chất hai tiếp tuyến cắt nhau tại $A$: $AB = AC$; $AO$ là phân giác $\\widehat{BAC}$; $OA$ là phân giác $\\widehat{BOC}$.",
+    "\\textbf{Chứng minh thành thạo $AO \\perp BC$} — đường nối tâm với giao điểm hai tiếp tuyến thì vuông góc với dây nối hai tiếp điểm, tại trung điểm $H$ của $BC$. Đây là \\textbf{hệ quả phải chứng minh} ($AB = AC$ nên $A$ cách đều $B$, $C$; $OB = OC = R$ nên $O$ cũng cách đều $B$, $C$; hai điểm phân biệt cùng cách đều hai đầu mút $\\Rightarrow$ $AO$ là đường trung trực của $BC$), \\textbf{không phải} tính chất hai tiếp tuyến cắt nhau — viết thẳng ra là mất điểm.",
+    "Ba vị trí tương đối của hai đường tròn theo $d = O_1O_2$ với $R_1$, $R_2$.",
+    "\\textbf{Trọng số đề}: ngân hàng 11 đề CK1 có \\textbf{48 câu} đường tròn — nhiều nhất trong toàn bộ ngân hàng; riêng band NB $+$ TH đạt \\textbf{29,5 điểm}, trung bình $\\approx 2{,}7$ điểm mỗi đề.",
+    "\\textbf{Chuẩn đầu ra Tầng C}: trọn Câu IV.1 (độ dài cung, diện tích quạt, vành khuyên — $1{,}0$ điểm) $+$ trọn ý a Câu IV.2 (chứng minh bốn điểm cùng thuộc một đường tròn, chứng minh tiếp tuyến — $1{,}0$ điểm) $=$ \\textbf{2,0 điểm} theo thang điểm Sở GD\\&ĐT Hà Nội."
+  ],
+  "vidu": [
+    "Buổi 1: Bốn cây trồng ở bốn góc mảnh vườn hình chữ nhật $ABCD$ dài $8$ m, rộng $6$ m. Chứng minh bốn gốc cây cùng thuộc một đường tròn và tính bán kính vòng rào.",
+    "Buổi 2: Cho $(O; 5\\text{ cm})$ và dây $AB = 8\\text{ cm}$. Tính khoảng cách từ tâm $O$ đến dây $AB$.",
+    "Buổi 3: Tính độ dài cung $60^\\circ$ và diện tích hình quạt tròn tương ứng của đường tròn bán kính $R = 6\\text{ cm}$.",
+    "Buổi 4: Cho $(O; 10\\text{ cm})$ và dây $AB$ cách tâm $6\\text{ cm}$. Tính $AB$, rồi tính diện tích hình viên phân giới hạn bởi dây $AB$ và cung nhỏ $AB$.",
+    "Buổi 5: Cho $A$ nằm ngoài $(O; R)$ với $OA = 2R$. Vẽ tiếp tuyến $AB$ ($B$ là tiếp điểm). Tính $AB$ và số đo $\\widehat{AOB}$.",
+    "Buổi 6: Cho hai tiếp tuyến $AB$, $AC$ của $(O; R)$ cắt nhau tại $A$, $AO$ cắt $BC$ tại $H$. Chứng minh $AO \\perp BC$ tại $H$ bằng đường trung trực, rồi tính $AB$ và $BC$.",
+    "Buổi 7: Cho $(O; R)$ và $A$ ngoài $(O)$. Kẻ hai tiếp tuyến $AB$, $AC$. Chứng minh bốn điểm $A$, $B$, $O$, $C$ cùng thuộc một đường tròn, rồi chứng minh $AO \\perp BC$ và suy ra $H$ là trung điểm $BC$."
+  ],
+  "dang_vd": [
+    "Chứng minh bốn điểm cùng thuộc một đường tròn (hai tam giác vuông chung cạnh huyền) — Câu IV.2 ý a, $1{,}0$ điểm.",
+    "Chứng minh một đường thẳng là tiếp tuyến của đường tròn — Câu IV.2 ý a.",
+    "Tính độ dài cung, diện tích hình quạt tròn, diện tích hình vành khuyên trong bài toán thực tế — Câu IV.1, $1{,}0$ điểm.",
+    "Chứng minh $AO \\perp BC$ (đường nối tâm với giao điểm hai tiếp tuyến vuông góc với dây nối hai tiếp điểm) — Câu IV.2 ý b, $1{,}0$ điểm.",
+    "Chứng minh hệ thức $AB^2 = AH \\cdot AO$ bằng hệ thức đường cao trong $\\triangle ABO$ vuông tại $B$ — Câu IV.2 ý b."
+  ],
+  "loisai": [
+    "Buổi 1 (Bài 13): nhầm bán kính với đường kính; quên rằng tâm đường tròn ngoại tiếp tam giác vuông là \\textbf{trung điểm cạnh huyền}.",
+    "Buổi 2 (Bài 14): áp dụng \\textquotedblleft đường kính đi qua trung điểm của dây\\textquotedblright{} cho cả dây đi qua tâm; quên điều kiện vuông góc.",
+    "Buổi 3 (Bài 15): nhầm $l = \\frac{\\pi R n}{180}$ (chia $180$) với $S_q = \\frac{\\pi R^2 n}{360}$ (chia $360$); thay đường kính vào chỗ bán kính.",
+    "Buổi 4 (Luyện tập chung): quên làm tròn theo yêu cầu đề hoặc làm tròn ở bước trung gian; thiếu đơn vị $\\text{cm}^2$ cho diện tích.",
+    "Buổi 5 (Bài 16): chứng minh tiếp tuyến nhưng quên nêu rõ vuông góc với bán kính \\textbf{tại tiếp điểm}.",
+    "Buổi 6 (Bài 17 $+$ luyện tập): nhầm $d = R_1 + R_2$ với $d = |R_1 - R_2|$; dùng hệ thức $AB^2 = AH \\cdot AO$ mà không chứng minh.",
+    "Buổi 7 (Bài tập cuối chương): vẽ hình sai vị trí điểm $A$ ngoài đường tròn; kết luận thiếu \\textquotedblleft Vậy\\textquotedblright{} ở cuối mỗi ý.",
+    "\\textbf{Trình bày chứng minh bốn điểm cùng thuộc một đường tròn}: chỉ viết \\textquotedblleft bốn điểm cùng thuộc một đường tròn\\textquotedblright{} mà bỏ ba nhịp bắt buộc — chỉ ra \\textbf{hai tam giác vuông chung cạnh huyền} $AO$ $\\to$ trung điểm $I$ của $AO$ \\textbf{cách đều} bốn điểm $\\to$ kết luận kèm \\textbf{tâm $I$ và bán kính $\\frac{AO}{2}$}. Thiếu câu xác định tâm, bán kính là mất $0{,}25$ điểm.",
+    "\\textbf{Trình bày tính chất tiếp tuyến}: viết \\textquotedblleft $AB$ là tiếp tuyến nên $AB \\perp OB$\\textquotedblright{} mà quên cụm \\textbf{tại tiếp điểm $B$}; chiều ngược lại (chứng minh một đường thẳng là tiếp tuyến) thì quên nêu đủ hai ý: đi qua một điểm của đường tròn \\textbf{và} vuông góc với bán kính tại chính điểm đó.",
+    "\\textbf{Trình bày tính chất hai tiếp tuyến cắt nhau}: gộp cả $AO \\perp BC$ vào tính chất rồi dùng thẳng. Phải tách: $AB = AC$, $AO$ phân giác $\\widehat{BAC}$, $OA$ phân giác $\\widehat{BOC}$ là \\textbf{tính chất} (dùng ngay được); còn $AO \\perp BC$ là \\textbf{hệ quả}, mỗi lần dùng phải chứng minh lại bằng đường trung trực của $BC$."
+  ],
+  "kienthuc_nb": [
+    "Hệ thức lượng trong tam giác vuông và hệ thức đường cao $AB^2 = AH \\cdot AO$ (Chương IV) — mỗi lần dùng phải chứng minh lại, không dùng thẳng.",
+    "Diện tích tam giác, diện tích hình chữ nhật (Lớp 8) — dùng cho bài tính diện tích hình viên phân.",
+    "Đường tròn tâm $O$ bán kính $R$, kí hiệu $(O; R)$, gồm các điểm cách $O$ một khoảng bằng $R$.",
+    "Đường kính là dây đi qua tâm, có độ dài $2R$ và là dây lớn nhất.",
+    "Tam giác vuông nội tiếp đường tròn có cạnh huyền là đường kính; trung điểm cạnh huyền là tâm.",
+    "Tiếp tuyến vuông góc với bán kính tại tiếp điểm: $AB \\perp OB$ tại $B \\Rightarrow AB$ là tiếp tuyến của $(O; OB)$.",
+    "Hai tiếp tuyến cắt nhau tại $A$: $AB = AC$, $AO$ là phân giác $\\widehat{BAC}$, $OA$ là phân giác $\\widehat{BOC}$.",
+    "$AO \\perp BC$ tại trung điểm $H$ của $BC$ — \\textbf{hệ quả}, phải chứng minh qua tam giác $ABC$ cân tại $A$ trước khi dùng."
+  ],
+  "phieu": [
+    {
+      "code": "A",
+      "title": "Buổi 1 — Bài 13: Mở đầu về đường tròn",
+      "rows": [
+        {
+          "band": "NB",
+          "dang": "Nhận biết tâm $O$, bán kính $R$, đường kính và dây cung trên hình vẽ",
+          "onclass": 3,
+          "btvn": 3,
+          "vidu": 1,
+          "loai": "NB lẻ LT",
+          "decompose": "none",
+          "source_refs": [],
+          "lythuyet": 1,
+          "hinh_san": true
+        },
+        {
+          "band": "NB",
+          "dang": "So sánh một dây bất kì với đường kính, chỉ ra dây lớn nhất của $(O; R)$",
+          "onclass": 3,
+          "btvn": 3,
+          "vidu": 1,
+          "loai": "NB lẻ LT",
+          "decompose": "none",
+          "source_refs": [],
+          "hinh_san": true,
+          "lythuyet": 1
+        },
+        {
+          "band": "NB",
+          "dang": "Xác định vị trí của điểm $M$ so với $(O; R)$ theo khoảng cách $OM$",
+          "onclass": 3,
+          "btvn": 3,
+          "vidu": 1,
+          "loai": "NB lẻ LT",
+          "decompose": "none",
+          "source_refs": [],
+          "hinh_san": true,
+          "lythuyet": 1
+        },
+        {
+          "band": "NB",
+          "dang": "Vẽ hình theo giả thiết và đánh dấu các góc vuông của bài bốn điểm cùng thuộc một đường tròn",
+          "onclass": 3,
+          "btvn": 3,
+          "vidu": 1,
+          "loai": "NB tách TH",
+          "decompose": "none",
+          "source_refs": [
+            "ck1-phuc-dong-IV2.a",
+            "ck1-phuong-ha-dong-42.a"
+          ],
+          "gian_giao": "ve-hinh",
+          "hinh_san": true,
+          "lythuyet": 0
+        },
+        {
+          "band": "NB",
+          "dang": "Chỉ ra trung điểm cạnh huyền là tâm đường tròn đi qua ba đỉnh tam giác vuông",
+          "onclass": 3,
+          "btvn": 3,
+          "vidu": 1,
+          "loai": "NB tách TH",
+          "decompose": "none",
+          "source_refs": [
+            "ck1-phuong-ha-dong-42.a",
+            "ck1-trung-vuong-IV1"
+          ],
+          "hinh_san": true,
+          "lythuyet": 0
+        },
+        {
+          "band": "NB",
+          "dang": "Tính bán kính $R = \\frac{BC}{2}$ khi biết hai cạnh góc vuông (định lí Pythagore)",
+          "onclass": 3,
+          "btvn": 3,
+          "vidu": 0,
+          "loai": "NB tách TH",
+          "decompose": "none",
+          "source_refs": [
+            "ck1-phuong-ha-dong-42.a"
+          ],
+          "hinh_san": true,
+          "lythuyet": 0
+        },
+        {
+          "band": "NB",
+          "dang": "Chỉ ra hai tam giác vuông $ABC$ và $ADC$ có chung cạnh huyền $AC$",
+          "onclass": 2,
+          "btvn": 2,
+          "vidu": 0,
+          "loai": "NB ghép bài",
+          "decompose": "none",
+          "source_refs": [
+            "ck1-phuc-dong-IV2.a",
+            "ck1-ngoc-thuy-III2.a"
+          ],
+          "hinh_san": true,
+          "lythuyet": 0
+        },
+        {
+          "band": "NB",
+          "dang": "Điền khuyết bài giải mẫu: trung điểm $O$ của $AC$ cách đều bốn điểm $A$, $B$, $C$, $D$",
+          "onclass": 2,
+          "btvn": 2,
+          "vidu": 0,
+          "loai": "NB ghép bài",
+          "decompose": "none",
+          "source_refs": [
+            "ck1-phuc-dong-IV2.a",
+            "ck1-tan-trieu-42.a"
+          ],
+          "gian_giao": "dien-khuyet",
+          "hinh_san": true,
+          "lythuyet": 0
+        },
+        {
+          "band": "TH",
+          "dang": "Tính bán kính đường tròn ngoại tiếp tam giác vuông khi biết hai cạnh góc vuông",
+          "onclass": 2,
+          "btvn": 2,
+          "vidu": 1,
+          "loai": "TH lẻ LT",
+          "decompose": "none",
+          "source_refs": [
+            "ck1-phuong-ha-dong-42.a"
+          ],
+          "hinh_san": false,
+          "lythuyet": 0
+        },
+        {
+          "band": "TH",
+          "dang": "Kết luận bốn điểm cùng thuộc một đường tròn, chỉ rõ tâm và bán kính",
+          "onclass": 1,
+          "btvn": 2,
+          "vidu": 1,
+          "loai": "TH ghép bài",
+          "decompose": "th2nb",
+          "source_refs": [
+            "ck1-phuc-dong-IV2.a",
+            "ck1-tan-trieu-42.a"
+          ],
+          "hinh_san": false,
+          "lythuyet": 0
+        },
+        {
+          "band": "TH",
+          "dang": "Chứng minh bốn điểm cùng thuộc một đường tròn từ hai tam giác vuông chung cạnh huyền",
+          "onclass": 1,
+          "btvn": 2,
+          "vidu": 1,
+          "loai": "TH tách VD",
+          "decompose": "th2nb",
+          "source_refs": [
+            "ck1-chu-van-an-IV2.a",
+            "ck1-ngoc-thuy-III2.a",
+            "ck1-trung-vuong-IV1"
+          ],
+          "hinh_san": false,
+          "lythuyet": 0
+        },
+        {
+          "band": "VD",
+          "dang": "Bài toán thực tế: bốn cây trồng ở bốn góc mảnh vườn hình chữ nhật — chứng minh bốn gốc cây cùng thuộc một đường tròn và tính bán kính vòng rào",
+          "onclass": 1,
+          "btvn": 1,
+          "vidu": 1,
+          "loai": "VD lẻ",
+          "decompose": "vd",
+          "source_refs": [
+            "ck1-phuc-dong-IV2.a"
+          ],
+          "hinh_san": false,
+          "lythuyet": 0
+        }
+      ]
+    },
+    {
+      "code": "B",
+      "title": "Buổi 2 — Bài 14: Cung và dây của một đường tròn",
+      "rows": [
+        {
+          "dang": "Nhận biết cung lớn, cung nhỏ và dây căng cung trên hình vẽ",
+          "band": "NB",
+          "loai": "NB lẻ LT",
+          "lythuyet": 1,
+          "vidu": 1,
+          "onclass": 3,
+          "btvn": 3,
+          "source_refs": [],
+          "decompose": "none",
+          "hinh_san": true
+        },
+        {
+          "dang": "Phát biểu: đường kính vuông góc với một dây thì đi qua trung điểm của dây",
+          "band": "NB",
+          "loai": "NB lẻ LT",
+          "lythuyet": 1,
+          "vidu": 1,
+          "onclass": 3,
+          "btvn": 3,
+          "source_refs": [],
+          "decompose": "none",
+          "hinh_san": true
+        },
+        {
+          "dang": "Nhận biết hai dây bằng nhau thì cách đều tâm và ngược lại",
+          "band": "NB",
+          "loai": "NB lẻ LT",
+          "lythuyet": 1,
+          "vidu": 0,
+          "onclass": 3,
+          "btvn": 3,
+          "source_refs": [],
+          "decompose": "none",
+          "hinh_san": true
+        },
+        {
+          "band": "NB",
+          "dang": "Vẽ hình: dây $AB$ của $(O; R)$ và $OH \\perp AB$ tại $H$, đánh dấu góc vuông và hai đoạn $HA = HB$",
+          "onclass": 3,
+          "btvn": 3,
+          "vidu": 0,
+          "loai": "NB tách TH",
+          "decompose": "none",
+          "source_refs": [
+            "ck1-ly-thanh-tong-7a",
+            "ck1-ai-mo-4-2a"
+          ],
+          "gian_giao": "ve-hinh"
+        },
+        {
+          "band": "NB",
+          "dang": "Tính nửa dây $AH$ khi biết độ dài dây $AB$",
+          "onclass": 3,
+          "btvn": 3,
+          "vidu": 0,
+          "loai": "NB tách TH",
+          "decompose": "none",
+          "source_refs": [
+            "ck1-ly-thanh-tong-7a"
+          ]
+        },
+        {
+          "band": "NB",
+          "dang": "Điền khuyết: viết hệ thức Pythagore cho $\\triangle OAH$ vuông tại $H$ — $OA^2 = OH^2 + AH^2$",
+          "onclass": 3,
+          "btvn": 3,
+          "vidu": 0,
+          "loai": "NB ghép bài",
+          "decompose": "none",
+          "source_refs": [
+            "ck1-ly-thanh-tong-7a"
+          ],
+          "gian_giao": "dien-khuyet"
+        },
+        {
+          "dang": "Tính khoảng cách $OH$ từ tâm đến dây khi biết bán kính $R$ và độ dài dây $AB$",
+          "band": "TH",
+          "loai": "TH lẻ LT",
+          "lythuyet": 0,
+          "vidu": 1,
+          "onclass": 2,
+          "btvn": 2,
+          "source_refs": [
+            "ck1-ly-thanh-tong-7a"
+          ],
+          "decompose": "none",
+          "hinh_san": false
+        },
+        {
+          "dang": "Tính độ dài dây $AB$ khi biết bán kính $R$ và khoảng cách $OH$",
+          "band": "TH",
+          "loai": "TH ghép bài",
+          "lythuyet": 0,
+          "vidu": 1,
+          "onclass": 1,
+          "btvn": 2,
+          "source_refs": [
+            "ck1-ai-mo-4-2a"
+          ],
+          "decompose": "th2nb",
+          "hinh_san": false
+        },
+        {
+          "dang": "So sánh độ dài hai dây của $(O; R)$ qua khoảng cách từ tâm đến mỗi dây",
+          "band": "TH",
+          "loai": "TH tách VD",
+          "lythuyet": 0,
+          "vidu": 1,
+          "onclass": 1,
+          "btvn": 2,
+          "source_refs": [
+            "ck1-ly-thanh-tong-7a"
+          ],
+          "decompose": "th2nb",
+          "hinh_san": false
+        },
+        {
+          "band": "VD",
+          "dang": "Cho $(O; R)$ đường kính $AB$, dây $CD \\perp AB$ tại $H$: chứng minh $H$ là trung điểm $CD$ rồi tính $CD$ theo $R$ và $OH$",
+          "onclass": 1,
+          "btvn": 2,
+          "vidu": 1,
+          "loai": "VD lẻ",
+          "decompose": "vd",
+          "source_refs": [
+            "ck1-ai-mo-4-2a"
+          ]
+        }
+      ]
+    },
+    {
+      "code": "C",
+      "title": "Buổi 3 — Bài 15: Độ dài cung tròn. Diện tích hình quạt tròn và hình vành khuyên",
+      "rows": [
+        {
+          "dang": "Điền công thức tính độ dài đường tròn $C = 2\\pi R = \\pi d$",
+          "band": "NB",
+          "loai": "NB lẻ LT",
+          "lythuyet": 1,
+          "vidu": 1,
+          "onclass": 2,
+          "btvn": 3,
+          "source_refs": [],
+          "decompose": "none",
+          "hinh_san": true
+        },
+        {
+          "dang": "Điền công thức tính độ dài cung $n^\\circ$: $l = \\frac{\\pi R n}{180}$",
+          "band": "NB",
+          "loai": "NB lẻ LT",
+          "lythuyet": 1,
+          "vidu": 1,
+          "onclass": 2,
+          "btvn": 3,
+          "source_refs": [],
+          "decompose": "none",
+          "hinh_san": true
+        },
+        {
+          "dang": "Điền công thức $S = \\pi R^2$ và $S_q = \\frac{\\pi R^2 n}{360}$",
+          "band": "NB",
+          "loai": "NB lẻ LT",
+          "lythuyet": 1,
+          "vidu": 1,
+          "onclass": 3,
+          "btvn": 3,
+          "source_refs": [],
+          "decompose": "none",
+          "hinh_san": true
+        },
+        {
+          "dang": "Tính độ dài đường tròn khi biết bán kính $R$ hoặc đường kính $d$",
+          "band": "NB",
+          "loai": "NB tách TH",
+          "lythuyet": 0,
+          "vidu": 0,
+          "onclass": 3,
+          "btvn": 3,
+          "source_refs": [
+            "ck1-ly-thanh-tong-5b"
+          ],
+          "decompose": "none",
+          "hinh_san": true,
+          "gian_giao": "ve-hinh"
+        },
+        {
+          "dang": "Tính diện tích hình tròn khi biết bán kính, lấy $\\pi \\approx 3{,}14$",
+          "band": "NB",
+          "loai": "NB tách TH",
+          "lythuyet": 0,
+          "vidu": 0,
+          "onclass": 3,
+          "btvn": 3,
+          "source_refs": [
+            "ck1-ly-thanh-tong-5a"
+          ],
+          "decompose": "none",
+          "hinh_san": true
+        },
+        {
+          "dang": "Đọc bán kính $R$ và số đo góc ở tâm $n^\\circ$ của hình quạt cho sẵn",
+          "band": "NB",
+          "loai": "NB tách TH",
+          "lythuyet": 0,
+          "vidu": 0,
+          "onclass": 3,
+          "btvn": 3,
+          "source_refs": [
+            "ck1-chu-van-an-IV1.a"
+          ],
+          "decompose": "none",
+          "hinh_san": true,
+          "gian_giao": "dien-khuyet"
+        },
+        {
+          "dang": "Tính bán kính hai đường tròn của hình vành khuyên khi đề cho đường kính",
+          "band": "NB",
+          "loai": "NB ghép bài",
+          "lythuyet": 0,
+          "vidu": 0,
+          "onclass": 2,
+          "btvn": 2,
+          "source_refs": [
+            "ck1-phuc-dong-IV1"
+          ],
+          "decompose": "none",
+          "hinh_san": true
+        },
+        {
+          "dang": "Tính diện tích hình tròn lớn và hình tròn nhỏ của hình vành khuyên",
+          "band": "NB",
+          "loai": "NB ghép bài",
+          "lythuyet": 0,
+          "vidu": 0,
+          "onclass": 2,
+          "btvn": 2,
+          "source_refs": [
+            "ck1-tan-trieu-41"
+          ],
+          "decompose": "none",
+          "hinh_san": true
+        },
+        {
+          "dang": "Tính độ dài cung $n^\\circ$ và diện tích hình quạt tròn tương ứng",
+          "band": "TH",
+          "loai": "TH lẻ LT",
+          "lythuyet": 0,
+          "vidu": 1,
+          "onclass": 2,
+          "btvn": 2,
+          "source_refs": [
+            "ck1-chu-van-an-IV1.b",
+            "ck1-dich-vong-IV4.1.b"
+          ],
+          "decompose": "none",
+          "hinh_san": false
+        },
+        {
+          "dang": "Tính diện tích hình vành khuyên $S = \\pi (R^2 - r^2)$",
+          "band": "TH",
+          "loai": "TH ghép bài",
+          "lythuyet": 0,
+          "vidu": 1,
+          "onclass": 1,
+          "btvn": 2,
+          "source_refs": [
+            "ck1-ngoc-lam-IV1.b",
+            "ck1-cau-dien-41.b"
+          ],
+          "decompose": "th2nb",
+          "hinh_san": false
+        },
+        {
+          "dang": "Tìm số đo cung khi biết độ dài cung và bán kính",
+          "band": "TH",
+          "loai": "TH tách VD",
+          "lythuyet": 0,
+          "vidu": 1,
+          "onclass": 1,
+          "btvn": 2,
+          "source_refs": [
+            "ck1-trung-vuong-III2"
+          ],
+          "decompose": "th2nb",
+          "hinh_san": false
+        },
+        {
+          "dang": "Bài toán thực tế: tính diện tích phần cỏ con bò ăn được giới hạn bởi hình quạt tròn",
+          "band": "VD",
+          "loai": "VD lẻ",
+          "lythuyet": 0,
+          "vidu": 1,
+          "onclass": 1,
+          "btvn": 1,
+          "source_refs": [
+            "ck1-ai-mo-4-1"
+          ],
+          "decompose": "vd",
+          "hinh_san": false
+        }
+      ]
+    },
+    {
+      "code": "D",
+      "title": "Buổi 4 — Luyện tập chung Chương V (Bài 13, 14, 15)",
+      "rows": [
+        {
+          "dang": "Trắc nghiệm nhận biết đường tròn, dây cung, bán kính và đường kính",
+          "band": "NB",
+          "loai": "NB lẻ LT",
+          "lythuyet": 1,
+          "vidu": 1,
+          "onclass": 2,
+          "btvn": 3,
+          "source_refs": [],
+          "decompose": "none",
+          "hinh_san": true
+        },
+        {
+          "dang": "Trắc nghiệm nhận biết công thức độ dài cung và diện tích hình quạt tròn",
+          "band": "NB",
+          "loai": "NB lẻ LT",
+          "lythuyet": 1,
+          "vidu": 1,
+          "onclass": 2,
+          "btvn": 3,
+          "source_refs": [],
+          "decompose": "none",
+          "hinh_san": true
+        },
+        {
+          "dang": "Cho $\\triangle ABC$ vuông tại $A$: chỉ ra tâm và bán kính đường tròn ngoại tiếp",
+          "band": "NB",
+          "loai": "NB tách TH",
+          "lythuyet": 0,
+          "vidu": 1,
+          "onclass": 3,
+          "btvn": 3,
+          "source_refs": [
+            "ck1-phuong-ha-dong-42.a",
+            "ck1-trung-vuong-IV1"
+          ],
+          "decompose": "none",
+          "hinh_san": true,
+          "gian_giao": "ve-hinh"
+        },
+        {
+          "dang": "Tính nửa dây $AH$ rồi tính khoảng cách $OH$ bằng định lí Pythagore",
+          "band": "NB",
+          "loai": "NB tách TH",
+          "lythuyet": 0,
+          "vidu": 0,
+          "onclass": 3,
+          "btvn": 3,
+          "source_refs": [
+            "ck1-ly-thanh-tong-7a"
+          ],
+          "decompose": "none",
+          "hinh_san": true
+        },
+        {
+          "dang": "Tính diện tích hình quạt tròn $90^\\circ$ của đường tròn bán kính $R$",
+          "band": "NB",
+          "loai": "NB tách TH",
+          "lythuyet": 0,
+          "vidu": 0,
+          "onclass": 3,
+          "btvn": 3,
+          "source_refs": [
+            "ck1-ly-thanh-tong-5a",
+            "ck1-chu-van-an-IV1.a"
+          ],
+          "decompose": "none",
+          "hinh_san": true
+        },
+        {
+          "dang": "Chỉ ra $OH \\perp AB$ tại trung điểm $H$ và tính $AH$",
+          "band": "NB",
+          "loai": "NB ghép bài",
+          "lythuyet": 0,
+          "vidu": 0,
+          "onclass": 3,
+          "btvn": 2,
+          "source_refs": [
+            "ck1-ly-thanh-tong-7a",
+            "ck1-ai-mo-4-2a"
+          ],
+          "decompose": "none",
+          "hinh_san": true,
+          "gian_giao": "dien-khuyet"
+        },
+        {
+          "dang": "Đọc bán kính và số đo góc ở tâm của mặt đồng hồ tròn",
+          "band": "NB",
+          "loai": "NB ghép bài",
+          "lythuyet": 0,
+          "vidu": 0,
+          "onclass": 2,
+          "btvn": 2,
+          "source_refs": [
+            "ck1-trung-vuong-III1"
+          ],
+          "decompose": "none",
+          "hinh_san": true
+        },
+        {
+          "dang": "Tính chu vi và diện tích mặt đồng hồ tròn",
+          "band": "NB",
+          "loai": "NB ghép bài",
+          "lythuyet": 0,
+          "vidu": 0,
+          "onclass": 2,
+          "btvn": 2,
+          "source_refs": [
+            "ck1-trung-vuong-III1"
+          ],
+          "decompose": "none",
+          "hinh_san": true
+        },
+        {
+          "dang": "Tính độ dài dây $AB$ khi biết bán kính $R$ và khoảng cách $OH$ từ tâm đến dây",
+          "band": "TH",
+          "loai": "TH lẻ LT",
+          "lythuyet": 0,
+          "vidu": 1,
+          "onclass": 2,
+          "btvn": 2,
+          "source_refs": [
+            "ck1-ai-mo-4-2a"
+          ],
+          "decompose": "none",
+          "hinh_san": false
+        },
+        {
+          "dang": "Tính diện tích phần vành khuyên giữa hai đường tròn đồng tâm",
+          "band": "TH",
+          "loai": "TH ghép bài",
+          "lythuyet": 0,
+          "vidu": 1,
+          "onclass": 1,
+          "btvn": 2,
+          "source_refs": [
+            "ck1-cau-dien-41.b"
+          ],
+          "decompose": "th2nb",
+          "hinh_san": false
+        },
+        {
+          "dang": "Tính diện tích hình viên phân: diện tích hình quạt trừ diện tích $\\triangle OAB$",
+          "band": "TH",
+          "loai": "TH tách VD",
+          "lythuyet": 0,
+          "vidu": 1,
+          "onclass": 1,
+          "btvn": 2,
+          "source_refs": [
+            "ck1-phuc-dong-IV2.c",
+            "ck1-ly-thanh-tong-7c"
+          ],
+          "decompose": "th2nb",
+          "hinh_san": false
+        },
+        {
+          "dang": "Cho $\\triangle ABC$ đều nội tiếp $(O; R)$: tính diện tích hình quạt giới hạn bởi $OB$, $OC$ và cung nhỏ $BC$",
+          "band": "VD",
+          "loai": "VD lẻ",
+          "lythuyet": 0,
+          "vidu": 1,
+          "onclass": 1,
+          "btvn": 1,
+          "source_refs": [
+            "ck1-phuc-dong-IV2.c"
+          ],
+          "decompose": "vd",
+          "hinh_san": false
+        }
+      ]
+    },
+    {
+      "code": "E",
+      "title": "Buổi 5 — Bài 16: Vị trí tương đối của đường thẳng và đường tròn. Tiếp tuyến",
+      "rows": [
+        {
+          "dang": "Nhận biết ba vị trí tương đối của đường thẳng và đường tròn theo $d$ và $R$",
+          "band": "NB",
+          "loai": "NB lẻ LT",
+          "lythuyet": 1,
+          "vidu": 1,
+          "onclass": 2,
+          "btvn": 3,
+          "source_refs": [],
+          "decompose": "none",
+          "hinh_san": true
+        },
+        {
+          "dang": "Nhận biết tiếp tuyến: $d = R$ và tiếp tuyến vuông góc với bán kính tại tiếp điểm",
+          "band": "NB",
+          "loai": "NB lẻ LT",
+          "lythuyet": 1,
+          "vidu": 1,
+          "onclass": 2,
+          "btvn": 3,
+          "source_refs": [],
+          "decompose": "none",
+          "hinh_san": true
+        },
+        {
+          "dang": "Nêu đủ ba ý của tính chất hai tiếp tuyến cắt nhau: $AB = AC$, $AO$ là phân giác $\\widehat{BAC}$, $OA$ là phân giác $\\widehat{BOC}$",
+          "band": "NB",
+          "loai": "NB lẻ LT",
+          "lythuyet": 1,
+          "vidu": 1,
+          "onclass": 3,
+          "btvn": 3,
+          "source_refs": [],
+          "decompose": "none",
+          "hinh_san": true
+        },
+        {
+          "dang": "Chỉ ra $\\widehat{ABO} = \\widehat{ACO} = 90^\\circ$ từ hai tiếp tuyến $AB$, $AC$",
+          "band": "NB",
+          "loai": "NB tách TH",
+          "lythuyet": 0,
+          "vidu": 0,
+          "onclass": 3,
+          "btvn": 3,
+          "source_refs": [
+            "ck1-ngoc-thuy-III2.a"
+          ],
+          "decompose": "none",
+          "hinh_san": true,
+          "gian_giao": "ve-hinh"
+        },
+        {
+          "dang": "Chỉ ra $\\triangle ABO$ vuông tại $B$ và nêu cạnh huyền là $AO$",
+          "band": "NB",
+          "loai": "NB tách TH",
+          "lythuyet": 0,
+          "vidu": 0,
+          "onclass": 3,
+          "btvn": 3,
+          "source_refs": [
+            "ck1-phuc-dong-IV2.a"
+          ],
+          "decompose": "none",
+          "hinh_san": true
+        },
+        {
+          "dang": "Tính độ dài tiếp tuyến $AB$ bằng định lí Pythagore khi biết $OA$ và $R$",
+          "band": "NB",
+          "loai": "NB tách TH",
+          "lythuyet": 0,
+          "vidu": 0,
+          "onclass": 3,
+          "btvn": 3,
+          "source_refs": [
+            "ck1-ly-thanh-tong-7a"
+          ],
+          "decompose": "none",
+          "hinh_san": true
+        },
+        {
+          "dang": "Chỉ ra hai điểm $B$, $C$ cùng nhìn đoạn $AO$ dưới một góc vuông",
+          "band": "NB",
+          "loai": "NB ghép bài",
+          "lythuyet": 0,
+          "vidu": 0,
+          "onclass": 2,
+          "btvn": 2,
+          "source_refs": [
+            "ck1-phuc-dong-IV2.a"
+          ],
+          "decompose": "none",
+          "hinh_san": true
+        },
+        {
+          "dang": "Chỉ ra trung điểm $I$ của $AO$ cách đều bốn điểm $A$, $B$, $O$, $C$",
+          "band": "NB",
+          "loai": "NB ghép bài",
+          "lythuyet": 0,
+          "vidu": 0,
+          "onclass": 2,
+          "btvn": 2,
+          "source_refs": [
+            "ck1-ngoc-lam-IV2.a"
+          ],
+          "decompose": "none",
+          "hinh_san": true,
+          "gian_giao": "dien-khuyet"
+        },
+        {
+          "dang": "Cho $OA = 2R$: tính độ dài tiếp tuyến $AB$ và số đo $\\widehat{AOB}$",
+          "band": "TH",
+          "loai": "TH lẻ LT",
+          "lythuyet": 0,
+          "vidu": 1,
+          "onclass": 2,
+          "btvn": 2,
+          "source_refs": [
+            "ck1-ly-thanh-tong-7a"
+          ],
+          "decompose": "none",
+          "hinh_san": false
+        },
+        {
+          "dang": "Chứng minh bốn điểm $A$, $B$, $O$, $C$ cùng thuộc đường tròn đường kính $AO$",
+          "band": "TH",
+          "loai": "TH ghép bài",
+          "lythuyet": 0,
+          "vidu": 1,
+          "onclass": 1,
+          "btvn": 2,
+          "source_refs": [
+            "ck1-phuc-dong-IV2.a",
+            "ck1-tan-trieu-42.a"
+          ],
+          "decompose": "th2nb",
+          "hinh_san": false
+        },
+        {
+          "dang": "Chứng minh $AO \\perp BC$ tại $H$",
+          "band": "TH",
+          "loai": "TH tách VD",
+          "lythuyet": 0,
+          "vidu": 1,
+          "onclass": 1,
+          "btvn": 2,
+          "source_refs": [
+            "ck1-ngoc-thuy-III2.b",
+            "ck1-phuc-dong-IV2.b",
+            "ck1-ngoc-lam-IV2.b"
+          ],
+          "decompose": "th2nb",
+          "hinh_san": false
+        },
+        {
+          "dang": "Chứng minh $AC$ là tiếp tuyến của $(O)$ khi biết dây $BC \\perp OA$ tại $H$",
+          "band": "VD",
+          "loai": "VD lẻ",
+          "lythuyet": 0,
+          "vidu": 1,
+          "onclass": 1,
+          "btvn": 1,
+          "source_refs": [
+            "ck1-ly-thanh-tong-7b",
+            "ck1-ai-mo-4-2b"
+          ],
+          "decompose": "vd",
+          "hinh_san": false
+        }
+      ]
+    },
+    {
+      "code": "F",
+      "title": "Buổi 6 — Bài 17: Vị trí tương đối của hai đường tròn \\& Luyện tập chung",
+      "rows": [
+        {
+          "band": "NB",
+          "dang": "Nhận biết vị trí tương đối của hai đường tròn theo $d = O_1O_2$ và $R_1$, $R_2$",
+          "onclass": 2,
+          "btvn": 3,
+          "vidu": 1,
+          "loai": "NB lẻ LT",
+          "decompose": "none",
+          "source_refs": [],
+          "lythuyet": 1,
+          "hinh_san": true
+        },
+        {
+          "band": "NB",
+          "dang": "Nhận biết tiếp xúc ngoài $d = R_1 + R_2$ và tiếp xúc trong $d = |R_1 - R_2|$",
+          "onclass": 2,
+          "btvn": 3,
+          "vidu": 1,
+          "loai": "NB lẻ LT",
+          "decompose": "none",
+          "source_refs": [],
+          "hinh_san": true,
+          "lythuyet": 1
+        },
+        {
+          "band": "NB",
+          "dang": "Vẽ hình hai tiếp tuyến $AB$, $AC$ của $(O; R)$, kẻ $AO$ cắt $BC$ tại $H$, đánh dấu $AB = AC$",
+          "onclass": 3,
+          "btvn": 3,
+          "vidu": 1,
+          "loai": "NB tách TH",
+          "decompose": "none",
+          "source_refs": [
+            "ck1-phuc-dong-IV2.b",
+            "ck1-ngoc-thuy-III2.b"
+          ],
+          "gian_giao": "ve-hinh",
+          "hinh_san": true,
+          "lythuyet": 0
+        },
+        {
+          "band": "NB",
+          "dang": "Chỉ ra $\\widehat{ABO} = \\widehat{ACO} = 90^\\circ$ từ hai tiếp tuyến",
+          "onclass": 3,
+          "btvn": 3,
+          "vidu": 0,
+          "loai": "NB tách TH",
+          "decompose": "none",
+          "source_refs": [
+            "ck1-ngoc-thuy-III2.a",
+            "ck1-phuc-dong-IV2.a"
+          ],
+          "hinh_san": true,
+          "lythuyet": 0
+        },
+        {
+          "band": "NB",
+          "dang": "\\textbf{Bước 1} — chỉ ra $AB = AC$, suy ra $A$ cách đều hai đầu mút của đoạn $BC$",
+          "onclass": 3,
+          "btvn": 3,
+          "vidu": 0,
+          "loai": "NB tách TH",
+          "decompose": "none",
+          "source_refs": [
+            "ck1-ngoc-lam-IV2.b",
+            "ck1-phuc-dong-IV2.b"
+          ],
+          "hinh_san": true,
+          "lythuyet": 0
+        },
+        {
+          "band": "NB",
+          "dang": "\\textbf{Bước 2} — chỉ ra $OB = OC = R$, suy ra $O$ cũng cách đều $B$ và $C$",
+          "onclass": 3,
+          "btvn": 2,
+          "vidu": 0,
+          "loai": "NB ghép bài",
+          "decompose": "none",
+          "source_refs": [
+            "ck1-ngoc-lam-IV2.b",
+            "ck1-ngoc-thuy-III2.b"
+          ],
+          "hinh_san": true,
+          "lythuyet": 0
+        },
+        {
+          "band": "NB",
+          "dang": "\\textbf{Bước 3} — điền khuyết: hai điểm phân biệt $A$, $O$ cùng cách đều $B$, $C$ nên $AO$ là đường trung trực của $BC$, do đó $AO \\perp BC$",
+          "onclass": 2,
+          "btvn": 2,
+          "vidu": 0,
+          "loai": "NB ghép bài",
+          "decompose": "none",
+          "source_refs": [
+            "ck1-phuc-dong-IV2.b",
+            "ck1-ngoc-lam-IV2.b"
+          ],
+          "gian_giao": "dien-khuyet",
+          "hinh_san": true,
+          "lythuyet": 0
+        },
+        {
+          "band": "NB",
+          "dang": "\\textbf{Bước 4} — chỉ ra $H$ là trung điểm $BC$, tính $BH = \\frac{BC}{2}$",
+          "onclass": 2,
+          "btvn": 2,
+          "vidu": 0,
+          "loai": "NB ghép bài",
+          "decompose": "none",
+          "source_refs": [
+            "ck1-ngoc-thuy-III2.b",
+            "ck1-ly-thanh-tong-7a"
+          ],
+          "hinh_san": true,
+          "lythuyet": 0
+        },
+        {
+          "band": "TH",
+          "dang": "Tính $OH$ và $AH$ theo $R$ khi $OA = 2R$, chuẩn bị cho bước chứng minh $AO \\perp BC$",
+          "onclass": 1,
+          "btvn": 2,
+          "vidu": 1,
+          "loai": "TH lẻ LT",
+          "decompose": "none",
+          "source_refs": [
+            "ck1-ly-thanh-tong-7a"
+          ],
+          "hinh_san": false,
+          "lythuyet": 0
+        },
+        {
+          "band": "TH",
+          "dang": "Tính $AB$ và $AH$ theo $R$ khi $OA = 2R$, dùng $AO \\perp BC$ vừa chứng minh",
+          "onclass": 2,
+          "btvn": 2,
+          "vidu": 1,
+          "loai": "TH ghép bài",
+          "decompose": "th2nb",
+          "source_refs": [
+            "ck1-ly-thanh-tong-7a"
+          ],
+          "hinh_san": false,
+          "lythuyet": 0
+        },
+        {
+          "band": "TH",
+          "dang": "Chứng minh hệ thức $AB^2 = AH \\cdot AO$ trong $\\triangle ABO$ vuông tại $B$, đường cao $BH$",
+          "onclass": 1,
+          "btvn": 2,
+          "vidu": 1,
+          "loai": "TH tách VD",
+          "decompose": "th2nb",
+          "source_refs": [
+            "ck1-ngoc-thuy-III2.b",
+            "ck1-ly-thanh-tong-7a"
+          ],
+          "hinh_san": false,
+          "lythuyet": 0
+        },
+        {
+          "band": "VD",
+          "dang": "Chứng minh $AO \\perp BC$ tại $H$ bằng đường trung trực rồi tính $AB$, $BC$ (bốn bước: $AB = AC \\to OB = OC \\to AO$ là trung trực $\\to AO \\perp BC$ tại trung điểm $H$)",
+          "onclass": 1,
+          "btvn": 1,
+          "vidu": 1,
+          "loai": "VD lẻ",
+          "decompose": "vd",
+          "source_refs": [
+            "ck1-phuc-dong-IV2.b",
+            "ck1-ngoc-thuy-III2.b",
+            "ck1-ngoc-lam-IV2.b"
+          ],
+          "hinh_san": false,
+          "lythuyet": 0
+        }
+      ]
+    },
+    {
+      "code": "G",
+      "title": "Buổi 7 — Bài tập cuối chương V \\& luyện dạng Câu IV.2",
+      "rows": [
+        {
+          "dang": "Ôn tập trắc nghiệm: đường tròn, dây cung và tiếp tuyến",
+          "band": "NB",
+          "loai": "NB lẻ LT",
+          "lythuyet": 1,
+          "vidu": 1,
+          "onclass": 2,
+          "btvn": 3,
+          "source_refs": [],
+          "decompose": "none",
+          "hinh_san": true
+        },
+        {
+          "dang": "Ôn tập trắc nghiệm: độ dài cung tròn, diện tích hình quạt và hình vành khuyên",
+          "band": "NB",
+          "loai": "NB lẻ LT",
+          "lythuyet": 1,
+          "vidu": 1,
+          "onclass": 2,
+          "btvn": 3,
+          "source_refs": [],
+          "decompose": "none",
+          "hinh_san": true
+        },
+        {
+          "dang": "Chỉ ra hai góc vuông $\\widehat{ABO}$ và $\\widehat{ACO}$ trên hình bài hai tiếp tuyến",
+          "band": "NB",
+          "loai": "NB tách TH",
+          "lythuyet": 0,
+          "vidu": 1,
+          "onclass": 3,
+          "btvn": 3,
+          "source_refs": [
+            "ck1-ngoc-thuy-III2.a",
+            "ck1-cau-dien-42.a"
+          ],
+          "decompose": "none",
+          "hinh_san": true,
+          "gian_giao": "ve-hinh"
+        },
+        {
+          "dang": "Chỉ ra trung điểm $I$ của $AO$ là tâm đường tròn đi qua $A$, $B$, $O$, $C$",
+          "band": "NB",
+          "loai": "NB tách TH",
+          "lythuyet": 0,
+          "vidu": 0,
+          "onclass": 3,
+          "btvn": 3,
+          "source_refs": [
+            "ck1-ngoc-lam-IV2.a"
+          ],
+          "decompose": "none",
+          "hinh_san": true
+        },
+        {
+          "dang": "Chỉ ra $BH$ là đường cao của $\\triangle ABO$ và viết hệ thức cần chứng minh",
+          "band": "NB",
+          "loai": "NB tách TH",
+          "lythuyet": 0,
+          "vidu": 0,
+          "onclass": 3,
+          "btvn": 3,
+          "source_refs": [
+            "ck1-ngoc-thuy-III2.b"
+          ],
+          "decompose": "none",
+          "hinh_san": true
+        },
+        {
+          "dang": "Chứng minh bốn điểm $A$, $B$, $O$, $C$ cùng thuộc một đường tròn",
+          "band": "NB",
+          "loai": "NB ghép bài",
+          "lythuyet": 0,
+          "vidu": 0,
+          "onclass": 2,
+          "btvn": 2,
+          "source_refs": [
+            "ck1-phuc-dong-IV2.a",
+            "ck1-tan-trieu-42.a"
+          ],
+          "decompose": "none",
+          "hinh_san": true
+        },
+        {
+          "band": "NB",
+          "dang": "\\textbf{Bước 3} — điền khuyết bài giải mẫu chứng minh $AO \\perp BC$ tại $H$",
+          "onclass": 2,
+          "btvn": 2,
+          "vidu": 0,
+          "loai": "NB ghép bài",
+          "decompose": "none",
+          "source_refs": [
+            "ck1-phuc-dong-IV2.b",
+            "ck1-ngoc-lam-IV2.b"
+          ],
+          "gian_giao": "dien-khuyet"
+        },
+        {
+          "dang": "Tính $AB$ và $AH$ theo $R$ khi biết $OA = 2R$",
+          "band": "NB",
+          "loai": "NB ghép bài",
+          "lythuyet": 0,
+          "vidu": 0,
+          "onclass": 3,
+          "btvn": 2,
+          "source_refs": [
+            "ck1-ly-thanh-tong-7a"
+          ],
+          "decompose": "none",
+          "hinh_san": true
+        },
+        {
+          "dang": "Chứng minh một đường thẳng là tiếp tuyến của $(O)$",
+          "band": "TH",
+          "loai": "TH lẻ LT",
+          "lythuyet": 0,
+          "vidu": 1,
+          "onclass": 2,
+          "btvn": 2,
+          "source_refs": [
+            "ck1-ly-thanh-tong-7b",
+            "ck1-ai-mo-4-2b"
+          ],
+          "decompose": "none",
+          "hinh_san": false
+        },
+        {
+          "dang": "Chứng minh hệ thức $AB^2 = AH \\cdot AO$",
+          "band": "TH",
+          "loai": "TH ghép bài",
+          "lythuyet": 0,
+          "vidu": 1,
+          "onclass": 1,
+          "btvn": 2,
+          "source_refs": [
+            "ck1-ngoc-thuy-III2.b"
+          ],
+          "decompose": "th2nb",
+          "hinh_san": false
+        },
+        {
+          "band": "TH",
+          "dang": "Dùng $AO \\perp BC$ đã chứng minh: tính $BH$, $BC$ và $AH$ theo $R$ khi $OA = 2R$",
+          "onclass": 1,
+          "btvn": 2,
+          "vidu": 1,
+          "loai": "TH tách VD",
+          "decompose": "th2nb",
+          "source_refs": [
+            "ck1-ly-thanh-tong-7a",
+            "ck1-ngoc-thuy-III2.b"
+          ]
+        },
+        {
+          "band": "VD",
+          "dang": "Chứng minh $AO \\perp BC$ tại $H$ bằng đường trung trực, suy ra $H$ là trung điểm $BC$ rồi tính $BC$ theo $R$ — khuôn Câu IV.2 ý b",
+          "onclass": 1,
+          "btvn": 1,
+          "vidu": 1,
+          "loai": "VD lẻ",
+          "decompose": "vd",
+          "source_refs": [
+            "ck1-ngoc-thuy-III2.b",
+            "ck1-phuc-dong-IV2.b",
+            "ck1-ngoc-lam-IV2.b"
+          ]
+        }
+      ]
+    }
+  ],
+  "kien_thuc_nen": [
+    "\\textbf{Định lí Pythagore} (Lớp 8): tam giác vuông có $a^2 = b^2 + c^2$ — dùng ở hầu hết bài đường tròn: tính nửa dây $AH$, khoảng cách $OH$ từ tâm đến dây, độ dài tiếp tuyến $AB$ khi biết $OA$ và $R$.",
+    "\\textbf{Đường trung tuyến ứng với cạnh huyền} (Lớp 8): trong tam giác vuông, trung tuyến ứng với cạnh huyền bằng nửa cạnh huyền $\\Rightarrow$ trung điểm cạnh huyền \\textbf{cách đều ba đỉnh}. Đây là công cụ NỀN TẢNG để chứng minh bốn điểm hoặc năm điểm cùng thuộc một đường tròn ở Câu IV.2 ý a.",
+    "\\textbf{Đường trung trực của một đoạn thẳng} (Lớp 7): điểm cách đều hai đầu mút của đoạn thẳng thì nằm trên đường trung trực của đoạn thẳng đó — công cụ để chứng minh $AO \\perp BC$ tại trung điểm $H$ của $BC$.",
+    "\\textbf{Tam giác đồng dạng} (Lớp 8): hai tam giác đồng dạng (g.g) suy ra tỉ số đồng dạng — công cụ để chứng minh hệ thức tích trong bài toán tiếp tuyến và cát tuyến.",
+    "\\textbf{Hai tam giác bằng nhau} (Lớp 7): c.c.c, c.g.c, g.c.g — dùng trong các bài toán chứng minh góc bằng nhau và đoạn thẳng bằng nhau."
+  ]
+}

@@ -46,6 +46,13 @@ DANG_FLOOR = {
     "HH-TSLG-THUCTE": "TH", "HH-TSLG-TINH": "TH", "HH-TSLG-CM": "VD",
     "HH-HTL-THUCTE": "TH", "HH-TRON-THUCTE": "NB", "HH-TRON-CM": "TH",
     "HH-TRON-CUNG": "VD",
+    # Chương IX — ma trận Sở: Câu IV.2a mức TH (1,0đ), ý b mức VD (1,5đ).
+    "HH-GOCNOITIEP": "NB", "HH-TRON-NGOAINOI": "NB",
+    "HH-TUGIACNOITIEP": "TH", "HH-HETHUC-DONGDANG": "VD",
+    # Chương X — ma trận Sở xếp CẢ HAI ý của Câu IV.1 vào cột NHẬN BIẾT
+    # ("chỉ áp công thức"); bài thực tế ghép nhiều bước mới lên TH/VD.
+    "HH-KHOI-TRU": "NB", "HH-KHOI-NON": "NB", "HH-KHOI-CAU": "NB",
+    "HH-KHOI-THUCTE": "TH",
 }
 # Trần band cho dạng "nhẹ" (do_kho cao cũng không vượt) — rút gọn/tính/đọc số liệu.
 DANG_CAP = {
@@ -54,6 +61,10 @@ DANG_CAP = {
     "TK-TANSO-DOC": "TH", "TK-TANSO-LAP": "TH", "TK-TANSO-VE": "TH",
     "TK-TANSO-SUYLUAN": "VD",
     "TK-XACSUAT-TINH": "TH", "TK-KHONGGIANMAU": "NB",
+    # Áp công thức khối tròn xoay: do_kho cao mấy cũng không quá thông hiểu.
+    "HH-KHOI-TRU": "TH", "HH-KHOI-NON": "TH", "HH-KHOI-CAU": "TH",
+    "HH-KHOI-THUCTE": "VD",
+    "HH-GOCNOITIEP": "TH", "HH-TRON-NGOAINOI": "TH", "HH-TUGIACNOITIEP": "VD",
 }
 
 _PHUT_BAND = {"NB": 4, "TH": 8, "VD": 12, "VDC": 14}
@@ -81,6 +92,16 @@ _PHUT_DANG = {
     ("TK-KHONGGIANMAU", "NB"): 3,
     ("TK-XACSUAT-TINH", "NB"): 4, ("TK-XACSUAT-TINH", "TH"): 6,
     ("TK-XACSUAT-2HD", "TH"): 8, ("TK-XACSUAT-2HD", "VD"): 10,
+    # Chương X: ý a chỉ thay số vào công thức; ý b ghép 2-3 bước + đổi đơn vị.
+    ("HH-KHOI-TRU", "NB"): 4, ("HH-KHOI-TRU", "TH"): 6,
+    ("HH-KHOI-NON", "NB"): 4, ("HH-KHOI-NON", "TH"): 6,
+    ("HH-KHOI-CAU", "NB"): 4, ("HH-KHOI-CAU", "TH"): 6,
+    ("HH-KHOI-THUCTE", "TH"): 7, ("HH-KHOI-THUCTE", "VD"): 9,
+    # Chương IX: ý a là khuôn 4 dòng; ý b phải dựng cặp tam giác đồng dạng.
+    ("HH-GOCNOITIEP", "NB"): 4, ("HH-GOCNOITIEP", "TH"): 6,
+    ("HH-TRON-NGOAINOI", "NB"): 4, ("HH-TRON-NGOAINOI", "TH"): 6,
+    ("HH-TUGIACNOITIEP", "TH"): 8, ("HH-TUGIACNOITIEP", "VD"): 10,
+    ("HH-HETHUC-DONGDANG", "VD"): 12, ("HH-HETHUC-DONGDANG", "VDC"): 14,
 }
 # Override band/phut theo từng câu (đọc đề thấy đặc biệt so với dạng/do_kho).
 ID_OVERRIDE: dict[str, dict] = {

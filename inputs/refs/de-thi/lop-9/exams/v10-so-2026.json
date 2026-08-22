@@ -1,78 +1,143 @@
 {
-  "xuat_xu": {
-    "truong": "Sở GD&ĐT Hà Nội",
-    "ky": "Vào 10 — ĐỀ CHÍNH THỨC",
-    "nam": "2026-2027",
-    "ma_de": "",
-    "thoi_gian_phut": 120,
-    "tong_diem": 10.0,
-    "nguon": "inputs/seeds/lop-9/de-thi-vao-10/de-chinh-thuc-vao-10-toan-ha-noi-2026-2027.pdf",
-    "loai_pdf": "scan",
-    "co_bieu_diem": true,
-    "_diem_lech": "TRÍCH XUẤT — file này CHỈ chứa câu chương VI (phương trình bậc hai) và Câu I.2 chương VIII (xác suất) của đề, không phải cả đề 10 điểm. Σdiem < tong_diem là ĐÚNG Ý ĐỒ."
+ "xuat_xu": {
+  "truong": "Sở GD&ĐT Hà Nội",
+  "ky": "Vào 10 — ĐỀ CHÍNH THỨC",
+  "nam": "2026-2027",
+  "ma_de": "",
+  "thoi_gian_phut": 120,
+  "tong_diem": 10.0,
+  "nguon": "inputs/seeds/lop-9/de-thi-vao-10/de-chinh-thuc-vao-10-toan-ha-noi-2026-2027.pdf",
+  "loai_pdf": "scan",
+  "co_bieu_diem": true,
+  "_diem_lech": "TRÍCH XUẤT — file này CHỈ chứa câu chương VI (phương trình bậc hai) và Câu I.2 chương VIII (xác suất) của đề, không phải cả đề 10 điểm. Σdiem < tong_diem là ĐÚNG Ý ĐỒ."
+ },
+ "da_duyet": false,
+ "ghi_chu_can_Thay_xem": [
+  "PDF không có text layer — đọc bằng pdftoppm 150 DPI trang 1. Đối chiếu SymPy: x=30, Q=18.",
+  "Đã bổ sung câu CHƯƠNG VII (tần số, tần số tương đối — khuôn Câu I.1, 1,0đ). Số liệu chép từ đề gốc, đã cộng lại đối chiếu cỡ mẫu.",
+  "Câu I.2 (xác suất) đọc từ ảnh trang 1 PDF ở 150 DPI — đối chiếu đáp số bằng tay."
+ ],
+ "cau": [
+  {
+   "id": "v10-so-2026-I2",
+   "vi_tri": "Câu I.2",
+   "dang": [
+    "TK-XACSUAT-TINH"
+   ],
+   "chuong": "C8-XACSUAT",
+   "diem": 0.5,
+   "phut": 6.0,
+   "band": "TH",
+   "de": "Một hộp đựng 6 quả bóng cùng loại, mỗi quả bóng ghi một trong các số $1,2,3,4,5,6$; hai quả bóng khác nhau được ghi hai số khác nhau. Lấy ngẫu nhiên một quả bóng trong hộp. Tính xác suất của biến cố $A$: “Số ghi trên quả bóng lấy được là số chẵn”.",
+   "dap_an": "$n(\\Omega)=6$. Các số chẵn là $2;4;6$ nên $n(A)=3$. Vậy $P(A)=\\dfrac{3}{6}=\\dfrac{1}{2}$.",
+   "ghi_chu": "Câu I.2 — lấy một quả bóng. Biến cố “số chẵn”, dễ nhất trong ba đề."
   },
-  "da_duyet": false,
-  "ghi_chu_can_Thay_xem": [
-    "PDF không có text layer — đọc bằng pdftoppm 150 DPI trang 1. Đối chiếu SymPy: x=30, Q=18.",
-    "Đã bổ sung câu CHƯƠNG VII (tần số, tần số tương đối — khuôn Câu I.1, 1,0đ). Số liệu chép từ đề gốc, đã cộng lại đối chiếu cỡ mẫu.",
-    "Câu I.2 (xác suất) đọc từ ảnh trang 1 PDF ở 150 DPI — đối chiếu đáp số bằng tay."
-  ],
-  "cau": [
-    {
-      "id": "v10-so-2026-I2",
-      "vi_tri": "Câu I.2",
-      "dang": [
-        "TK-XACSUAT-TINH"
-      ],
-      "chuong": "C8-XACSUAT",
-      "diem": 0.5,
-      "phut": 6.0,
-      "band": "TH",
-      "de": "Một hộp đựng 6 quả bóng cùng loại, mỗi quả bóng ghi một trong các số $1,2,3,4,5,6$; hai quả bóng khác nhau được ghi hai số khác nhau. Lấy ngẫu nhiên một quả bóng trong hộp. Tính xác suất của biến cố $A$: “Số ghi trên quả bóng lấy được là số chẵn”.",
-      "dap_an": "$n(\\Omega)=6$. Các số chẵn là $2;4;6$ nên $n(A)=3$. Vậy $P(A)=\\dfrac{3}{6}=\\dfrac{1}{2}$.",
-      "ghi_chu": "Câu I.2 — lấy một quả bóng. Biến cố “số chẵn”, dễ nhất trong ba đề."
-    },
-    {
-      "id": "v10-so-2026-III1",
-      "vi_tri": "Câu III.1",
-      "dang": [
-        "DS-THUCTE-LAPPT-BAC2"
-      ],
-      "chuong": "C6-PTBH",
-      "diem": 1.0,
-      "phut": 13.0,
-      "band": "VD",
-      "de": "Một tổ sản xuất lập kế hoạch may áo với số lượng áo mỗi ngày may được là như nhau. Trong 3 ngày đầu, mỗi ngày tổ đã may theo đúng kế hoạch. Trong 7 ngày tiếp theo, nhờ cải tiến kĩ thuật nên mỗi ngày tổ đã may được nhiều hơn 5 chiếc áo so với kế hoạch. Vì vậy sau 10 ngày, tổ đã may được tổng số 335 chiếc áo. Hỏi theo kế hoạch, mỗi ngày tổ sản xuất may bao nhiêu chiếc áo?",
-      "dap_an": "$3x+7(x+5)=335 \\Rightarrow 10x=300 \\Rightarrow x=30$ chiếc áo.",
-      "ghi_chu": "Lập PT ra BẬC NHẤT."
-    },
-    {
-      "id": "v10-so-2026-III3",
-      "vi_tri": "Câu III.3",
-      "dang": [
-        "DS-VIETE"
-      ],
-      "chuong": "C6-PTBH",
-      "diem": 0.5,
-      "phut": 10.0,
-      "band": "VD",
-      "de": "Biết phương trình bậc hai $x^2-3x+1=0$ có hai nghiệm phân biệt $x_1$ và $x_2$, tính giá trị của biểu thức $Q=\\frac{3x_2-1}{x_1}+\\frac{3x_1}{x_2}-x_1$.",
-      "dap_an": "Hạ bậc $x_2^2=3x_2-1$ và $x_1^2=3x_1-1$; dùng $x_1x_2=1$ đưa $Q$ về $x_1^3+x_2^3=(x_1+x_2)^3-3x_1x_2(x_1+x_2)=27-9=18$. Vậy $Q=18$.",
-      "ghi_chu": "Biểu thức trông LỆCH nhưng hạ bậc xong ra ĐỐI XỨNG — khuôn cần luyện."
-    },
-    {
-      "id": "v10-so-2026-I1",
-      "vi_tri": "Câu I.1",
-      "dang": [
-        "TK-TANSO-DOC"
-      ],
-      "chuong": "C7-TANSO",
-      "do_kho": 1,
-      "diem": 1.0,
-      "phut": 4.0,
-      "band": "NB",
-      "de": "Kết quả đo chiều cao của 50 học sinh lớp 6 (đơn vị: cm) được thống kê trong bảng tần số ghép nhóm: $[140;145)$: 10; $[145;150)$: 18; $[150;155)$: 14; $[155;160)$: 6; $[160;165)$: 2. Xác định tần số và tần số tương đối của nhóm $[150;155)$.",
-      "dap_an": "Tần số của nhóm $[150;155)$ là 14. Cỡ mẫu $10+18+14+6+2=50$. Tần số tương đối $=\\frac{14}{50}\\cdot 100\\% = 28\\%$."
-    }
-  ]
+  {
+   "id": "v10-so-2026-III1",
+   "vi_tri": "Câu III.1",
+   "dang": [
+    "DS-THUCTE-LAPPT-BAC2"
+   ],
+   "chuong": "C6-PTBH",
+   "diem": 1.0,
+   "phut": 13.0,
+   "band": "VD",
+   "de": "Một tổ sản xuất lập kế hoạch may áo với số lượng áo mỗi ngày may được là như nhau. Trong 3 ngày đầu, mỗi ngày tổ đã may theo đúng kế hoạch. Trong 7 ngày tiếp theo, nhờ cải tiến kĩ thuật nên mỗi ngày tổ đã may được nhiều hơn 5 chiếc áo so với kế hoạch. Vì vậy sau 10 ngày, tổ đã may được tổng số 335 chiếc áo. Hỏi theo kế hoạch, mỗi ngày tổ sản xuất may bao nhiêu chiếc áo?",
+   "dap_an": "$3x+7(x+5)=335 \\Rightarrow 10x=300 \\Rightarrow x=30$ chiếc áo.",
+   "ghi_chu": "Lập PT ra BẬC NHẤT."
+  },
+  {
+   "id": "v10-so-2026-III3",
+   "vi_tri": "Câu III.3",
+   "dang": [
+    "DS-VIETE"
+   ],
+   "chuong": "C6-PTBH",
+   "diem": 0.5,
+   "phut": 10.0,
+   "band": "VD",
+   "de": "Biết phương trình bậc hai $x^2-3x+1=0$ có hai nghiệm phân biệt $x_1$ và $x_2$, tính giá trị của biểu thức $Q=\\frac{3x_2-1}{x_1}+\\frac{3x_1}{x_2}-x_1$.",
+   "dap_an": "Hạ bậc $x_2^2=3x_2-1$ và $x_1^2=3x_1-1$; dùng $x_1x_2=1$ đưa $Q$ về $x_1^3+x_2^3=(x_1+x_2)^3-3x_1x_2(x_1+x_2)=27-9=18$. Vậy $Q=18$.",
+   "ghi_chu": "Biểu thức trông LỆCH nhưng hạ bậc xong ra ĐỐI XỨNG — khuôn cần luyện."
+  },
+  {
+   "id": "v10-so-2026-I1",
+   "vi_tri": "Câu I.1",
+   "dang": [
+    "TK-TANSO-DOC"
+   ],
+   "chuong": "C7-TANSO",
+   "do_kho": 1,
+   "diem": 1.0,
+   "phut": 4.0,
+   "band": "NB",
+   "de": "Kết quả đo chiều cao của 50 học sinh lớp 6 (đơn vị: cm) được thống kê trong bảng tần số ghép nhóm: $[140;145)$: 10; $[145;150)$: 18; $[150;155)$: 14; $[155;160)$: 6; $[160;165)$: 2. Xác định tần số và tần số tương đối của nhóm $[150;155)$.",
+   "dap_an": "Tần số của nhóm $[150;155)$ là 14. Cỡ mẫu $10+18+14+6+2=50$. Tần số tương đối $=\\frac{14}{50}\\cdot 100\\% = 28\\%$."
+  },
+  {
+   "id": "v10-so-2026-IV1a",
+   "vi_tri": "Câu IV.1 ý a",
+   "dang": [
+    "HH-KHOI-TRU"
+   ],
+   "chuong": "C10-HINHKHOI",
+   "do_kho": 1,
+   "diem": 0.5,
+   "barem_nguon": "de_goc",
+   "de": "Một xô đựng nước dạng hình trụ có chiều cao bằng 25 cm và bán kính đáy bằng 12 cm. Tính diện tích xung quanh của xô đựng nước đó. (Lấy $\\pi \\approx 3{,}14$ và coi độ dày của xô đựng nước không đáng kể.)",
+   "dap_an": "$S_{xq}=2\\pi Rh \\approx 2\\cdot 3{,}14\\cdot 12\\cdot 25 = 1\\,884$ (cm$^2$).",
+   "ghi_chu": "Câu IV.1a năm 2026 — vẫn đúng khuôn $S_{xq}=2\\pi Rh$, không đổi so với 2025.",
+   "band": "NB",
+   "phut": 4.0
+  },
+  {
+   "id": "v10-so-2026-IV1b",
+   "vi_tri": "Câu IV.1 ý b",
+   "dang": [
+    "HH-KHOI-TRU",
+    "HH-KHOI-THUCTE"
+   ],
+   "chuong": "C10-HINHKHOI",
+   "do_kho": 3,
+   "diem": 0.5,
+   "barem_nguon": "de_goc",
+   "de": "Người ta dùng xô đựng nước ở ý a) để múc nước đổ vào một bể có thể tích 150 lít. Mỗi lần người ta chỉ múc lượng nước bằng $80\\%$ thể tích của xô. Lúc đầu bể không có nước, hỏi cần múc ít nhất bao nhiêu xô để đổ đầy bể? (Biết 1 lít $=1000$ cm$^3$.)",
+   "dap_an": "Thể tích xô là $V=\\pi R^2h \\approx 3{,}14\\cdot 12^2\\cdot 25 = 11\\,304$ (cm$^3$). Mỗi lần múc được $80\\%\\cdot 11\\,304 = 9\\,043{,}2$ (cm$^3$) $=9{,}0432$ (lít). Ta có $150 : 9{,}0432 \\approx 16{,}59$, mà số xô là số nguyên nên cần múc ít nhất $17$ xô.",
+   "ghi_chu": "Ba bước: thể tích xô $\\to$ lấy $80\\%$ $\\to$ đổi lít rồi CHIA và LÀM TRÒN LÊN. Chỗ tầng C sai nhiều nhất là làm tròn xuống 16.",
+   "band": "VD",
+   "phut": 9.0
+  },
+  {
+   "id": "v10-so-2026-IV2a",
+   "vi_tri": "Câu IV.2 ý a",
+   "dang": [
+    "HH-TUGIACNOITIEP"
+   ],
+   "chuong": "C9-TRONTIEP",
+   "do_kho": 2,
+   "diem": 1.0,
+   "barem_nguon": "de_goc",
+   "de": "Cho tam giác $ABC$ vuông tại $A$ $(AB<AC)$ nội tiếp đường tròn tâm $O$, đường kính $BC$. Lấy điểm $H$ thuộc đoạn thẳng $AB$ sao cho $HB>HA$ ($H$ khác $A$). Kẻ đường thẳng qua $H$ vuông góc với đường thẳng $BC$ tại điểm $D$ và cắt đường thẳng $AC$ tại điểm $E$. Chứng minh bốn điểm $A$, $H$, $D$, $C$ cùng thuộc một đường tròn.",
+   "dap_an": "Tam giác $ABC$ vuông tại $A$ nên $\\widehat{HAC}=90^\\circ$, suy ra $A$ thuộc đường tròn đường kính $HC$. Vì $HD\\perp BC$ nên $\\widehat{HDC}=90^\\circ$, suy ra $D$ thuộc đường tròn đường kính $HC$. Vậy bốn điểm $A$, $H$, $D$, $C$ cùng thuộc đường tròn đường kính $HC$.",
+   "ghi_chu": "KHUÔN VÀNG lần thứ ba: hai góc vuông cùng nhìn đoạn $HC$. Điểm khác 2025: một góc vuông LẤY TỪ GIẢ THIẾT tam giác vuông chứ không từ đường vuông góc kẻ thêm.",
+   "band": "TH",
+   "phut": 8.0
+  },
+  {
+   "id": "v10-so-2026-IV2b",
+   "vi_tri": "Câu IV.2 ý b",
+   "dang": [
+    "HH-HETHUC-DONGDANG"
+   ],
+   "chuong": "C9-TRONTIEP",
+   "do_kho": 3,
+   "diem": 1.5,
+   "barem_nguon": "de_goc",
+   "de": "Với giả thiết ở ý a), đường thẳng $CH$ cắt đường tròn $(O)$ tại điểm thứ hai $F$. Đường thẳng qua $A$ vuông góc với đường thẳng $ED$ cắt đường thẳng $DF$ tại điểm $M$. Chứng minh $AE\\cdot BC=EH\\cdot AB$ và $\\widehat{EMH}=90^\\circ$.",
+   "dap_an": "Vế hệ thức: $AE\\cdot BC=EH\\cdot AB \\Leftrightarrow \\dfrac{AE}{EH}=\\dfrac{AB}{BC}$, chứng minh hai tam giác vuông tương ứng đồng dạng (g.g) rồi nhân chéo.",
+   "ghi_chu": "Vế hệ thức của 3/3 đề — cùng một khuôn: đưa tích về tỉ số rồi tìm hai tam giác đồng dạng.",
+   "band": "VD",
+   "phut": 12.0
+  }
+ ]
 }

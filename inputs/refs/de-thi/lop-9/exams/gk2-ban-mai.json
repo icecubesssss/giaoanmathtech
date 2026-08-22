@@ -1,55 +1,88 @@
 {
-  "xuat_xu": {
-    "truong": "Trường Ban Mai School, Hà Nội",
-    "ky": "Giữa học kì II",
-    "nam": "2025-2026",
-    "ma_de": "",
-    "thoi_gian_phut": 90,
-    "tong_diem": 10.0,
-    "nguon": "inputs/refs/de-thi/lop-9/giua-ki-2/de-giua-hoc-ki-2-toan-9-nam-2025-2026-truong-ban-mai-school-ha-noi.pdf",
-    "loai_pdf": "text",
-    "co_bieu_diem": false,
-    "_diem_lech": "TRÍCH XUẤT — file này CHỈ chứa câu chương VIII (xác suất) của đề, không phải cả đề 10 điểm. Σdiem < tong_diem là ĐÚNG Ý ĐỒ."
+ "xuat_xu": {
+  "truong": "Trường Ban Mai School, Hà Nội",
+  "ky": "Giữa học kì II",
+  "nam": "2025-2026",
+  "ma_de": "",
+  "thoi_gian_phut": 90,
+  "tong_diem": 10.0,
+  "nguon": "inputs/refs/de-thi/lop-9/giua-ki-2/de-giua-hoc-ki-2-toan-9-nam-2025-2026-truong-ban-mai-school-ha-noi.pdf",
+  "loai_pdf": "text",
+  "co_bieu_diem": false,
+  "_diem_lech": "TRÍCH XUẤT — file này CHỈ chứa câu chương VIII (xác suất) của đề, không phải cả đề 10 điểm. Σdiem < tong_diem là ĐÚNG Ý ĐỒ."
+ },
+ "da_duyet": false,
+ "ghi_chu_can_Thay_xem": [
+  "Trích từ đề gốc bằng lớp text của PDF (pdftotext -layout); mỗi câu đã đối chiếu đáp số.",
+  "File CHỈ giữ câu chương VIII — phần còn lại của đề chưa nhập."
+ ],
+ "cau": [
+  {
+   "id": "gk2-ban-mai-7a",
+   "vi_tri": "Bài 7a (hệ chuẩn)",
+   "dang": [
+    "TK-XACSUAT-TINH"
+   ],
+   "chuong": "C8-XACSUAT",
+   "do_kho": 2,
+   "diem": 1.0,
+   "diem_uoc_luong": true,
+   "band": "TH",
+   "phut": 8.0,
+   "barem_nguon": "tu_dung",
+   "de": "Một hộp có 60 chiếc thẻ cùng loại, mỗi thẻ được ghi một trong các số $1,2,3,\\dots,60$; hai thẻ khác nhau thì ghi hai số khác nhau. Rút ngẫu nhiên một thẻ trong hộp. Tính xác suất của mỗi biến cố sau: a) “Số xuất hiện trên thẻ được rút ra là số nhỏ hơn 31”; b) “Số xuất hiện trên thẻ được rút ra là số chia cho 8 dư 5”.",
+   "dap_an": "$n(\\Omega)=60$. a) Có 30 số nhỏ hơn 31 nên $P=\\dfrac{30}{60}=\\dfrac{1}{2}$. b) Các số chia 8 dư 5 là $5;13;21;29;37;45;53$, có 7 số nên $P=\\dfrac{7}{60}$.",
+   "ghi_chu": "Hai ý cùng một không gian mẫu — khuôn tách bước NB→TH rất tiện cho tầng C."
   },
-  "da_duyet": false,
-  "ghi_chu_can_Thay_xem": [
-    "Trích từ đề gốc bằng lớp text của PDF (pdftotext -layout); mỗi câu đã đối chiếu đáp số.",
-    "File CHỈ giữ câu chương VIII — phần còn lại của đề chưa nhập."
-  ],
-  "cau": [
-    {
-      "id": "gk2-ban-mai-7a",
-      "vi_tri": "Bài 7a (hệ chuẩn)",
-      "dang": [
-        "TK-XACSUAT-TINH"
-      ],
-      "chuong": "C8-XACSUAT",
-      "do_kho": 2,
-      "diem": 1.0,
-      "diem_uoc_luong": true,
-      "band": "TH",
-      "phut": 8.0,
-      "barem_nguon": "tu_dung",
-      "de": "Một hộp có 60 chiếc thẻ cùng loại, mỗi thẻ được ghi một trong các số $1,2,3,\\dots,60$; hai thẻ khác nhau thì ghi hai số khác nhau. Rút ngẫu nhiên một thẻ trong hộp. Tính xác suất của mỗi biến cố sau: a) “Số xuất hiện trên thẻ được rút ra là số nhỏ hơn 31”; b) “Số xuất hiện trên thẻ được rút ra là số chia cho 8 dư 5”.",
-      "dap_an": "$n(\\Omega)=60$. a) Có 30 số nhỏ hơn 31 nên $P=\\dfrac{30}{60}=\\dfrac{1}{2}$. b) Các số chia 8 dư 5 là $5;13;21;29;37;45;53$, có 7 số nên $P=\\dfrac{7}{60}$.",
-      "ghi_chu": "Hai ý cùng một không gian mẫu — khuôn tách bước NB→TH rất tiện cho tầng C."
-    },
-    {
-      "id": "gk2-ban-mai-7b",
-      "vi_tri": "Bài 7b (hệ T)",
-      "dang": [
-        "TK-XACSUAT-2HD"
-      ],
-      "chuong": "C8-XACSUAT",
-      "do_kho": 3,
-      "diem": 1.0,
-      "diem_uoc_luong": true,
-      "band": "VD",
-      "phut": 10.0,
-      "barem_nguon": "tu_dung",
-      "de": "Một chiếc hộp có chứa 5 tấm thẻ cùng loại, được đánh số lần lượt là $3;5;6;7;9$. Lấy ngẫu nhiên đồng thời 2 tấm thẻ từ hộp. a) Xác định không gian mẫu và tìm số kết quả có thể xảy ra của phép thử. b) Tính xác suất của biến cố: “Tích các số ghi trên 2 tấm thẻ chia hết cho 3”.",
-      "dap_an": "a) $\\Omega$ gồm 10 cặp thẻ, $n(\\Omega)=10$. b) Tích chia hết cho 3 khi cặp có ít nhất một thẻ trong $\\{3;6;9\\}$; cặp duy nhất KHÔNG thoả là $(5;7)$. Vậy $n=10-1=9$ và $P=\\dfrac{9}{10}$.",
-      "ghi_chu": "Lấy đồng thời 2 thẻ + đếm phần bù. Ngoài tầm tầng C, giữ trong bank để đối chiếu."
-    }
-  ]
+  {
+   "id": "gk2-ban-mai-7b",
+   "vi_tri": "Bài 7b (hệ T)",
+   "dang": [
+    "TK-XACSUAT-2HD"
+   ],
+   "chuong": "C8-XACSUAT",
+   "do_kho": 3,
+   "diem": 1.0,
+   "diem_uoc_luong": true,
+   "band": "VD",
+   "phut": 10.0,
+   "barem_nguon": "tu_dung",
+   "de": "Một chiếc hộp có chứa 5 tấm thẻ cùng loại, được đánh số lần lượt là $3;5;6;7;9$. Lấy ngẫu nhiên đồng thời 2 tấm thẻ từ hộp. a) Xác định không gian mẫu và tìm số kết quả có thể xảy ra của phép thử. b) Tính xác suất của biến cố: “Tích các số ghi trên 2 tấm thẻ chia hết cho 3”.",
+   "dap_an": "a) $\\Omega$ gồm 10 cặp thẻ, $n(\\Omega)=10$. b) Tích chia hết cho 3 khi cặp có ít nhất một thẻ trong $\\{3;6;9\\}$; cặp duy nhất KHÔNG thoả là $(5;7)$. Vậy $n=10-1=9$ và $P=\\dfrac{9}{10}$.",
+   "ghi_chu": "Lấy đồng thời 2 thẻ + đếm phần bù. Ngoài tầm tầng C, giữ trong bank để đối chiếu."
+  },
+  {
+   "id": "gk2-ban-mai-4-1a",
+   "vi_tri": "Bài 4.1 ý a",
+   "dang": [
+    "HH-KHOI-TRU"
+   ],
+   "chuong": "C10-HINHKHOI",
+   "do_kho": 1,
+   "diem": 0.5,
+   "barem_nguon": "de_goc",
+   "de": "Một doanh nghiệp sản xuất thùng tôn có dạng hình trụ. Hình trụ đó có bán kính đáy $0{,}4$ m và chiều cao 1 m (lấy $\\pi\\approx 3{,}14$). Tính thể tích của một thùng tôn.",
+   "dap_an": "$V=\\pi R^2h \\approx 3{,}14\\cdot 0{,}4^2\\cdot 1 = 0{,}5024$ (m$^3$).",
+   "ghi_chu": "Câu dễ nhất của cả chương X — đề cho sẵn bán kính, chỉ thay số. Barem gốc 0,5đ.",
+   "band": "NB",
+   "phut": 4.0
+  },
+  {
+   "id": "gk2-ban-mai-4-1b",
+   "vi_tri": "Bài 4.1 ý b",
+   "dang": [
+    "HH-KHOI-TRU",
+    "HH-KHOI-THUCTE"
+   ],
+   "chuong": "C10-HINHKHOI",
+   "do_kho": 2,
+   "diem": 0.5,
+   "barem_nguon": "de_goc",
+   "de": "Chi phí để sản xuất mỗi thùng tôn ở ý a) (không tính nắp và đáy) là 100 nghìn đồng/m$^2$. Tính số tiền mà doanh nghiệp cần chi để sản xuất 400 thùng tôn đó.",
+   "dap_an": "Vì không tính nắp và đáy nên diện tích tôn của mỗi thùng là $S_{xq}=2\\pi Rh \\approx 2\\cdot 3{,}14\\cdot 0{,}4\\cdot 1 = 2{,}512$ (m$^2$). Chi phí mỗi thùng là $2{,}512\\cdot 100\\,000 = 251\\,200$ (đồng). Chi phí 400 thùng là $251\\,200\\cdot 400 = 100\\,480\\,000$ (đồng).",
+   "ghi_chu": "Dạng 'chi phí vật liệu': chọn đúng $S_{xq}$ (không nắp, không đáy) rồi nhân hai lần.",
+   "band": "TH",
+   "phut": 6.0
+  }
+ ]
 }

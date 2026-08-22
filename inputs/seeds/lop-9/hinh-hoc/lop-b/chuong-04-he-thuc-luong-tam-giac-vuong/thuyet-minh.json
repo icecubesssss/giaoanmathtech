@@ -1,0 +1,819 @@
+{
+  "slug": "thuyet-minh-lop-9b-chuong-04-he-thuc-luong-tam-giac-vuong",
+  "title": "Chương IV. Hệ thức lượng trong tam giác vuông (Bài 11 – Bài 12 SGK Toán 9 KNTT + Hệ thức đường cao)",
+  "grade": "lop-9",
+  "subject": "hinh-hoc",
+  "tier": "B",
+  "tuan": "04-08",
+  "thoiluong": [
+    "Buổi 1 (Bài 11): 1 ca $=$ 90 phút (SGK 4 tiết)",
+    "Buổi 2 (Bài 12): 1 ca $=$ 90 phút (SGK 3 tiết)",
+    "Buổi 3 (Hệ thức lượng $-$ đường cao $AH$): 1 ca $=$ 90 phút ($-$ phần bị cắt khỏi SGK nhưng đề Hà Nội vẫn hỏi: 15/44 câu kho đề chương IV)",
+    "Buổi 4 (Luyện tập chung $+$ Bài tập cuối chương IV): 1 ca $=$ 90 phút (SGK 4 tiết)",
+    "\\textbf{Tổng 4 ca $=$ 360 phút $\\approx$ 8 tiết} (SGK chương IV: 11 tiết)"
+  ],
+  "lythuyet": [
+    "Xác định cạnh huyền, cạnh đối, cạnh kề ứng với từng góc nhọn (kể cả khi hỏi ngược).",
+    "Viết đúng bốn tỉ số lượng giác: $\\sin\\alpha = \\frac{\\text{đối}}{\\text{huyền}}$, $\\cos\\alpha = \\frac{\\text{kề}}{\\text{huyền}}$, $\\tan\\alpha = \\frac{\\text{đối}}{\\text{kề}}$, $\\cot\\alpha = \\frac{\\text{kề}}{\\text{đối}}$.",
+    "Nhớ tỉ số lượng giác của $30^\\circ$, $45^\\circ$, $60^\\circ$; dùng máy tính cầm tay cả hai chiều; biết $\\sin\\alpha = \\cos(90^\\circ - \\alpha)$.",
+    "Dùng thành thạo hệ thức giữa cạnh và góc: cạnh góc vuông $=$ cạnh huyền $\\cdot \\sin$ góc đối $=$ cạnh huyền $\\cdot \\cos$ góc kề $=$ cạnh góc vuông kia $\\cdot \\tan$ góc đối $=\\cdot \\cot$ góc kề.",
+    "Giải tam giác vuông trong ba trường hợp: biết cạnh huyền và một góc; biết hai cạnh góc vuông; biết một cạnh và $\\tan$ của một góc.",
+    "Dùng tỉ số lượng giác tính chiều cao, khoảng cách trong thực tế.",
+    "Đọc được hình có đường cao $AH$: chỉ ra ba tam giác vuông $ABH$, $ACH$, $ABC$ và giải từng tam giác con bằng hệ thức cạnh $-$ góc.",
+    "Chứng minh được bốn hệ thức trong hình có đường cao $AH$ theo đúng ba bước: chỉ ra hai tam giác đồng dạng (g.g) $\\to$ lập tỉ số các cạnh tương ứng $\\to$ nhân chéo.",
+    "\\textbf{Trình bày đúng khuôn}: mở bằng ``Xét tam giác $ABC$ vuông tại $A$'' (đủ chữ \\emph{vuông tại}), nêu hệ thức, thay số, đóng bằng ``Vậy \\ldots'' kèm đơn vị và đúng yêu cầu làm tròn.",
+    "\\textbf{Trọng số đề}: bài hình chương IV có ở 9/10 đề GK1, trung bình $3{,}61$ điểm mỗi đề, trong đó phần Thông hiểu (ý a $+$ câu thực tế) là $1{,}56$ điểm.",
+    "\\textbf{Chuẩn đầu ra}: làm trọn ý a (giải tam giác vuông, kể cả hình có đường cao $AH$) $+$ câu thực tế $=$ khoảng $1{,}5$–$1{,}75$ điểm."
+  ],
+  "vidu": [
+    "Buổi 1: Chỉ ra cạnh đối, cạnh kề của góc $B$ trong tam giác $ABC$ vuông tại $A$.",
+    "Buổi 1: Tam giác $ABC$ vuông tại $A$, $AB = 6$ cm, $AC = 8$ cm. Tính $BC$ rồi viết bốn tỉ số lượng giác của góc $B$.",
+    "Buổi 1: Biết $\\tan\\alpha = 1{,}2$, tìm $\\alpha$ $-$ làm tròn \\textbf{đến độ} rồi \\textbf{đến phút} (thao tác bấm phím $^\\circ\\,{}'\\,{}''$).",
+    "Buổi 1: Thang dài $5$ m dựa tường, chân thang cách tường $3$ m: dùng Pythagore tính chiều cao rồi tính góc giữa thang và mặt đất (đến phút).",
+    "Buổi 2: Tam giác $ABC$ vuông tại $A$, $BC = 10$ cm, $\\widehat{B} = 35^\\circ$. Tính $AB$, $AC$, $\\widehat{C}$.",
+    "Buổi 2: Giải tam giác vuông biết $AB = 6$ cm, $AC = 8$ cm (góc làm tròn \\textbf{đến phút}).",
+    "Buổi 2: Tia nắng tạo với mặt đất góc $34^\\circ$, bóng tòa tháp dài $8{,}6$ m. Tính chiều cao tòa tháp $-$ nhấn câu kết luận kèm đơn vị.",
+    "Buổi 3: Chứng minh \\textbf{đủ bốn hệ thức} của hình có $AH$ từ ba cặp tam giác đồng dạng (g.g $\\to$ tỉ số $\\to$ nhân chéo).",
+    "Buổi 3: Tam giác $ABC$ vuông tại $A$, đường cao $AH$, $AB = 6$ cm, $AC = 8$ cm. Tính $BC$, $\\widehat{B}$ rồi tính $AH$, $BH$."
+  ],
+  "dang_vd": [
+    "Giải tam giác vuông: tính cạnh còn lại và số đo hai góc nhọn (đề có thể hỏi làm tròn đến độ HOẶC đến phút).",
+    "Bài thực tế: bóng tháp, máy bay cất cánh, dốc nghiêng, hải đăng, cây cau gãy, thang dựa tường.",
+    "Bài thực tế dùng Pythagore tính cạnh rồi tính góc $-$ phải kết luận kèm đơn vị.",
+    "Hình có đường cao $AH$: giải từng tam giác con, và chứng minh hệ thức theo ba bước đồng dạng $\\to$ tỉ số $\\to$ nhân chéo."
+  ],
+  "loisai": [
+    "\\textbf{Trình bày thiếu}: mở bài chỉ viết ``xét tam giác $ABC$'' mà bỏ chữ \\emph{vuông tại $A$}; bài toán thực tế tính xong bỏ luôn câu kết luận.",
+    "\\textbf{Làm tròn sai yêu cầu của đề}: đề bắt làm tròn đến phút thì học sinh lại làm tròn đến độ (và ngược lại); làm tròn quá sớm ở bước trung gian; quên ghi đơn vị.",
+    "Nhầm cạnh đối với cạnh kề khi chuyển sang góc nhọn còn lại.",
+    "Quên xác định cạnh huyền trước khi lập tỉ số, nhất là khi hình vẽ xoay.",
+    "Lẫn lộn cách bấm máy: quên bấm \\texttt{SHIFT} khi tìm góc từ tỉ số lượng giác, hoặc bấm thừa \\texttt{SHIFT} khi tính $\\sin$, $\\cos$, $\\tan$ của góc đã biết.",
+    "Dùng hệ thức cạnh $-$ góc cho tam giác không vuông mà chưa kẻ đường cao.",
+    "Nhầm cạnh huyền của tam giác con: cạnh huyền của $\\triangle ABH$ là $AB$, không phải $BC$.",
+    "Viết thẳng hệ thức $AB^2 = HB \\cdot BC$ ra rồi thay số mà chưa chứng minh; hoặc chứng minh nhảy cóc từ cặp tam giác đồng dạng sang ngay hệ thức tích, bỏ mất bước lập tỉ số."
+  ],
+  "kienthuc_nb": [
+    "Cạnh huyền là cạnh đối diện góc vuông; hai cạnh còn lại là cạnh góc vuông.",
+    "Với góc $B$: cạnh đối là $AC$, cạnh kề là $AB$; đổi sang góc $C$ thì hai cạnh đổi vai trò.",
+    "$\\sin\\alpha = \\frac{\\text{đối}}{\\text{huyền}}$; $\\cos\\alpha = \\frac{\\text{kề}}{\\text{huyền}}$.",
+    "$\\tan\\alpha = \\frac{\\text{đối}}{\\text{kề}}$; $\\cot\\alpha = \\frac{\\text{kề}}{\\text{đối}}$; $\\tan\\alpha \\cdot \\cot\\alpha = 1$.",
+    "Góc đặc biệt: $\\sin 30^\\circ = \\frac{1}{2}$, $\\sin 45^\\circ = \\frac{\\sqrt{2}}{2}$, $\\sin 60^\\circ = \\frac{\\sqrt{3}}{2}$.",
+    "Hai góc phụ nhau: $\\sin\\alpha = \\cos(90^\\circ - \\alpha)$, $\\tan\\alpha = \\cot(90^\\circ - \\alpha)$.",
+    "Cạnh góc vuông $=$ cạnh huyền $\\cdot \\sin$ góc đối $=$ cạnh huyền $\\cdot \\cos$ góc kề.",
+    "Cạnh góc vuông $=$ cạnh góc vuông kia $\\cdot \\tan$ góc đối $=$ cạnh góc vuông kia $\\cdot \\cot$ góc kề.",
+    "Hình có đường cao $AH$ gồm ba tam giác vuông $ABH$, $ACH$, $ABC$; cạnh huyền của $\\triangle ABH$ là $AB$, của $\\triangle ACH$ là $AC$.",
+    "Bốn hệ thức của hình có $AH$: $AB^2 = HB \\cdot BC$; $AC^2 = HC \\cdot BC$; $AH^2 = HB \\cdot HC$; $AH \\cdot BC = AB \\cdot AC$ $-$ chứng minh theo ba bước (đồng dạng $\\to$ tỉ số $\\to$ nhân chéo) rồi mới được dùng.",
+    "Khuôn trình bày: ``Xét tam giác $ABC$ \\textbf{vuông tại} $A$'' $\\to$ hệ thức $\\to$ thay số $\\to$ ``Vậy \\ldots'' kèm đơn vị.",
+    "Đơn vị góc: $1^\\circ = 60'$. Tìm góc xong, bấm phím $^\\circ\\,{}'\\,{}''$ trên máy tính để đọc kết quả ra độ và phút."
+  ],
+  "phieu": [
+    {
+      "code": "A",
+      "title": "Buổi 1 — Bài 11: Tỉ số lượng giác của góc nhọn",
+      "rows": [
+        {
+          "dang": "Gọi tên cạnh huyền và hai cạnh góc vuông",
+          "band": "NB",
+          "lythuyet": 1,
+          "vidu": 0,
+          "onclass": 2,
+          "btvn": 2,
+          "source_refs": [],
+          "decompose": "none",
+          "hinh_san": true,
+          "loai": "NB lẻ LT"
+        },
+        {
+          "dang": "Cạnh đối, cạnh kề ứng với từng góc nhọn (kể cả khi hỏi ngược)",
+          "band": "NB",
+          "lythuyet": 0,
+          "vidu": 0,
+          "onclass": 2,
+          "btvn": 3,
+          "source_refs": [],
+          "decompose": "none",
+          "hinh_san": true,
+          "loai": "NB lẻ LT"
+        },
+        {
+          "dang": "Điền bốn công thức $\\sin\\alpha$, $\\cos\\alpha$, $\\tan\\alpha$, $\\cot\\alpha$",
+          "band": "NB",
+          "lythuyet": 0,
+          "vidu": 0,
+          "onclass": 2,
+          "btvn": 2,
+          "source_refs": [],
+          "decompose": "none",
+          "loai": "NB lẻ LT"
+        },
+        {
+          "dang": "Tỉ số lượng giác của góc $30^\\circ$, $45^\\circ$, $60^\\circ$",
+          "band": "NB",
+          "lythuyet": 0,
+          "vidu": 0,
+          "onclass": 2,
+          "btvn": 2,
+          "source_refs": [],
+          "decompose": "none",
+          "loai": "NB lẻ LT"
+        },
+        {
+          "dang": "Máy tính cầm tay: tính tỉ số của góc đã biết; tìm góc từ tỉ số, làm tròn \\textbf{đến độ} hoặc \\textbf{đến phút} (có câu bắt sửa lại đáp số làm tròn sai)",
+          "band": "NB",
+          "lythuyet": 0,
+          "vidu": 0,
+          "onclass": 2,
+          "btvn": 3,
+          "source_refs": [
+            "sgk9t1-b11-vd4",
+            "sgk9t1-b11-lt4",
+            "sgk9t1-b11-vd5",
+            "sgk9t1-b11-lt5",
+            "sgk9t1-b11-bt4.6",
+            "sgk9t1-b11-bt4.7"
+          ],
+          "decompose": "none",
+          "loai": "NB tách TH"
+        },
+        {
+          "dang": "\\textbf{Điền khuyết bài giải mẫu}: hoàn thành bài tính tỉ số lượng giác theo khuôn — câu mở đầu ``Xét $\\triangle$… vuông tại …'' $+$ hệ thức $+$ kết luận",
+          "band": "NB",
+          "lythuyet": 0,
+          "vidu": 0,
+          "onclass": 1,
+          "btvn": 2,
+          "source_refs": [
+            "sgk9t1-b11-bt4.1"
+          ],
+          "decompose": "none",
+          "loai": "NB ghép bài",
+          "gian_giao": "dien-khuyet"
+        },
+        {
+          "dang": "Vẽ tam giác vuông, chỉ rõ cạnh đối và cạnh kề",
+          "band": "NB",
+          "lythuyet": 0,
+          "vidu": 0,
+          "onclass": 0,
+          "btvn": 1,
+          "source_refs": [],
+          "decompose": "none",
+          "ve_hinh": {
+            "btvn": 1
+          },
+          "loai": "NB lẻ LT",
+          "gian_giao": "ve-hinh"
+        },
+        {
+          "dang": "\\textbf{Bài trình bày hoàn chỉnh như đề thi} $-$ đề chia ý a), b), c) kèm khung bài giải in sẵn có chỗ trống: tính cạnh bằng Pythagore rồi viết bốn tỉ số lượng giác; biết một tỉ số, tính các tỉ số còn lại. Điền xong học sinh có nguyên một bài mẫu đúng khuôn.",
+          "band": "NB",
+          "lythuyet": 0,
+          "vidu": 1,
+          "onclass": 7,
+          "btvn": 7,
+          "source_refs": [
+            "sgk9t1-b11-bt4.1",
+            "sgk9t1-b11-bt4.2",
+            "sgk9t1-b11-bt4.3"
+          ],
+          "decompose": "th2nb",
+          "loai": "NB ghép bài"
+        },
+        {
+          "dang": "Dùng Pythagore tìm cạnh rồi viết bốn tỉ số lượng giác",
+          "band": "TH",
+          "lythuyet": 0,
+          "vidu": 1,
+          "onclass": 1,
+          "btvn": 1,
+          "source_refs": [
+            "sgk9t1-b11-bt4.1"
+          ],
+          "decompose": "th2nb",
+          "loai": "TH tách VD"
+        },
+        {
+          "dang": "Tỉ số lượng giác của hai góc phụ nhau",
+          "band": "TH",
+          "lythuyet": 0,
+          "vidu": 1,
+          "onclass": 1,
+          "btvn": 1,
+          "source_refs": [
+            "sgk9t1-b11-bt4.5a"
+          ],
+          "decompose": "none",
+          "loai": "TH lẻ LT"
+        },
+        {
+          "dang": "Tính giá trị biểu thức chứa góc đặc biệt",
+          "band": "TH",
+          "lythuyet": 0,
+          "vidu": 1,
+          "onclass": 1,
+          "btvn": 1,
+          "source_refs": [
+            "sgk9t1-b11-bt4.5b"
+          ],
+          "decompose": "none",
+          "loai": "TH lẻ LT"
+        },
+        {
+          "dang": "Biết một tỉ số lượng giác, tính các tỉ số còn lại",
+          "band": "TH",
+          "lythuyet": 0,
+          "vidu": 1,
+          "onclass": 1,
+          "btvn": 0,
+          "source_refs": [
+            "sgk9t1-b11-bt4.1"
+          ],
+          "decompose": "th2nb",
+          "loai": "TH tách VD"
+        },
+        {
+          "dang": "Bài thực tế: dùng Pythagore tính cạnh rồi tính số đo góc (làm tròn đến phút)",
+          "band": "VD",
+          "lythuyet": 0,
+          "vidu": 1,
+          "onclass": 1,
+          "btvn": 0,
+          "source_refs": [
+            "sgk9t1-b11-vandung",
+            "sgk9t1-b11-tranhluan"
+          ],
+          "decompose": "vd",
+          "loai": "VD lẻ"
+        }
+      ]
+    },
+    {
+      "code": "B",
+      "title": "Buổi 2 — Bài 12: Hệ thức giữa cạnh và góc trong tam giác vuông",
+      "rows": [
+        {
+          "dang": "Điền hệ thức giữa cạnh và góc ($\\sin$/$\\cos$ với cạnh huyền, $\\tan$/$\\cot$ với cạnh góc vuông kia)",
+          "band": "NB",
+          "lythuyet": 1,
+          "vidu": 0,
+          "onclass": 4,
+          "btvn": 4,
+          "source_refs": [],
+          "decompose": "none",
+          "hinh_san": true,
+          "loai": "NB lẻ LT"
+        },
+        {
+          "dang": "Chọn hệ thức đúng với hình vẽ để tính một cạnh cho trước",
+          "band": "NB",
+          "lythuyet": 0,
+          "vidu": 0,
+          "onclass": 2,
+          "btvn": 2,
+          "source_refs": [
+            "gk1-bat-trang-4-2a"
+          ],
+          "decompose": "none",
+          "hinh_san": true,
+          "loai": "NB tách TH"
+        },
+        {
+          "dang": "Hai góc nhọn phụ nhau: tính góc còn lại $\\widehat{C} = 90^\\circ - \\widehat{B}$",
+          "band": "NB",
+          "lythuyet": 0,
+          "vidu": 0,
+          "onclass": 2,
+          "btvn": 2,
+          "source_refs": [],
+          "decompose": "none",
+          "hinh_san": true,
+          "loai": "NB lẻ LT"
+        },
+        {
+          "dang": "Ôn khái niệm: cạnh huyền tính thế nào, giải tam giác vuông là tìm gì",
+          "band": "NB",
+          "lythuyet": 0,
+          "vidu": 0,
+          "onclass": 0,
+          "btvn": 2,
+          "source_refs": [],
+          "decompose": "none",
+          "hinh_san": true,
+          "loai": "NB lẻ LT"
+        },
+        {
+          "dang": "Máy tính cầm tay: tìm số đo góc, làm tròn \\textbf{đến độ} hoặc \\textbf{đến phút} theo yêu cầu của đề (có câu bắt sửa lại đáp số làm tròn sai)",
+          "band": "NB",
+          "lythuyet": 0,
+          "vidu": 0,
+          "onclass": 2,
+          "btvn": 2,
+          "source_refs": [
+            "gk1-ngo-gia-tu-5a"
+          ],
+          "decompose": "none",
+          "loai": "NB tách TH"
+        },
+        {
+          "dang": "\\textbf{Điền khuyết bài giải mẫu}: hoàn thành bài giải tam giác vuông theo khuôn — nêu rõ ``vuông tại'' $+$ chọn hệ thức $+$ làm tròn đúng yêu cầu",
+          "band": "NB",
+          "lythuyet": 0,
+          "vidu": 0,
+          "onclass": 1,
+          "btvn": 2,
+          "source_refs": [
+            "gk1-ngo-gia-tu-5a"
+          ],
+          "decompose": "none",
+          "hinh_san": true,
+          "loai": "NB ghép bài",
+          "gian_giao": "dien-khuyet"
+        },
+        {
+          "dang": "Vẽ tam giác vuông biết cạnh huyền và một góc nhọn",
+          "band": "NB",
+          "lythuyet": 0,
+          "vidu": 0,
+          "onclass": 0,
+          "btvn": 1,
+          "source_refs": [],
+          "decompose": "none",
+          "ve_hinh": {
+            "btvn": 1
+          },
+          "loai": "NB lẻ LT",
+          "gian_giao": "ve-hinh"
+        },
+        {
+          "dang": "\\textbf{Bài trình bày hoàn chỉnh như đề thi} $-$ đề chia ý a), b), c) kèm khung bài giải in sẵn có chỗ trống: giải tam giác vuông và bài toán thực tế, có ý riêng dành cho \\textbf{câu kết luận}. Điền xong học sinh có nguyên một bài mẫu đúng khuôn.",
+          "band": "NB",
+          "lythuyet": 0,
+          "vidu": 1,
+          "onclass": 9,
+          "btvn": 8,
+          "source_refs": [
+            "gk1-ngo-gia-tu-5a",
+            "gk1-nguyen-du-4a"
+          ],
+          "decompose": "th2nb",
+          "loai": "NB ghép bài"
+        },
+        {
+          "dang": "Giải tam giác vuông biết cạnh huyền và một góc nhọn",
+          "band": "TH",
+          "lythuyet": 0,
+          "vidu": 1,
+          "onclass": 1,
+          "btvn": 1,
+          "source_refs": [
+            "gk1-bat-trang-4-2a"
+          ],
+          "decompose": "none",
+          "loai": "TH lẻ LT"
+        },
+        {
+          "dang": "Giải tam giác vuông biết hai cạnh góc vuông",
+          "band": "TH",
+          "lythuyet": 0,
+          "vidu": 1,
+          "onclass": 1,
+          "btvn": 1,
+          "source_refs": [
+            "gk1-ngo-gia-tu-5a",
+            "gk1-nguyen-du-4a"
+          ],
+          "decompose": "none",
+          "loai": "TH lẻ LT"
+        },
+        {
+          "dang": "Giải tam giác vuông biết một cạnh và $\\tan$ một góc nhọn",
+          "band": "TH",
+          "lythuyet": 0,
+          "vidu": 1,
+          "onclass": 1,
+          "btvn": 0,
+          "source_refs": [
+            "gk1-van-yen-4a"
+          ],
+          "decompose": "none",
+          "loai": "TH lẻ LT"
+        },
+        {
+          "dang": "Bài thực tế: bóng tháp, máy bay cất cánh, dốc nghiêng, thang dựa tường",
+          "band": "TH",
+          "lythuyet": 0,
+          "vidu": 1,
+          "onclass": 1,
+          "btvn": 1,
+          "source_refs": [
+            "gk1-bat-trang-4-1",
+            "gk1-ngo-gia-tu-4-eiffel",
+            "gk1-co-nhue-2-3-1"
+          ],
+          "decompose": "th2nb",
+          "loai": "TH tách VD"
+        },
+        {
+          "dang": "Bài thực tế nhiều bước: tính chiều cao rồi tính khoảng cách",
+          "band": "VD",
+          "lythuyet": 0,
+          "vidu": 1,
+          "onclass": 1,
+          "btvn": 0,
+          "source_refs": [
+            "gk1-phu-dien-4-1",
+            "gk1-van-yen-3b",
+            "gk1-trung-vuong-3-2"
+          ],
+          "decompose": "vd",
+          "loai": "VD lẻ"
+        }
+      ]
+    },
+    {
+      "code": "C",
+      "title": "Buổi 3 $-$ Hệ thức lượng trong tam giác vuông (đường cao $AH$)",
+      "rows": [
+        {
+          "dang": "Hình có đường cao $AH$: chỉ ra ba tam giác vuông $ABH$, $ACH$, $ABC$ và cạnh huyền của mỗi tam giác",
+          "band": "NB",
+          "loai": "NB lẻ LT",
+          "lythuyet": 1,
+          "vidu": 0,
+          "onclass": 3,
+          "btvn": 2,
+          "source_refs": [],
+          "decompose": "none",
+          "ve_hinh": {},
+          "hinh_san": true,
+          "gian_giao": ""
+        },
+        {
+          "dang": "\\textbf{Bước 1} $-$ chỉ ra hai tam giác đồng dạng (g.g) trong hình có $AH$ (chung góc nhọn, cùng có góc vuông)",
+          "band": "NB",
+          "loai": "NB tách TH",
+          "lythuyet": 0,
+          "vidu": 0,
+          "onclass": 3,
+          "btvn": 2,
+          "source_refs": [
+            "gk1-phu-dien-4-2b"
+          ],
+          "decompose": "none",
+          "ve_hinh": {},
+          "hinh_san": true,
+          "gian_giao": ""
+        },
+        {
+          "dang": "\\textbf{Bước 2} $-$ từ cặp tam giác đồng dạng viết đúng tỉ lệ ba cạnh tương ứng",
+          "band": "NB",
+          "loai": "NB tách TH",
+          "lythuyet": 0,
+          "vidu": 0,
+          "onclass": 3,
+          "btvn": 2,
+          "source_refs": [
+            "gk1-phu-dien-4-2b"
+          ],
+          "decompose": "none",
+          "ve_hinh": {},
+          "hinh_san": true,
+          "gian_giao": ""
+        },
+        {
+          "dang": "\\textbf{Bước 3} $-$ nhân chéo tỉ lệ để ra hệ thức tích ($AB^2 = HB \\cdot BC$)",
+          "band": "NB",
+          "loai": "NB tách TH",
+          "lythuyet": 0,
+          "vidu": 0,
+          "onclass": 3,
+          "btvn": 2,
+          "source_refs": [
+            "gk1-bat-trang-4-2b"
+          ],
+          "decompose": "none",
+          "ve_hinh": {},
+          "hinh_san": true,
+          "gian_giao": ""
+        },
+        {
+          "dang": "\\textbf{Bước 4} $-$ thay số vào hệ thức tích để tính cạnh còn thiếu",
+          "band": "NB",
+          "loai": "NB tách TH",
+          "lythuyet": 0,
+          "vidu": 0,
+          "onclass": 3,
+          "btvn": 2,
+          "source_refs": [
+            "gk1-nbk-5a"
+          ],
+          "decompose": "none",
+          "ve_hinh": {},
+          "hinh_san": true,
+          "gian_giao": ""
+        },
+        {
+          "dang": "Vẽ $\\triangle ABC$ vuông tại $A$, đường cao $AH$; đánh dấu ba tam giác vuông và các hình chiếu $HB$, $HC$",
+          "band": "NB",
+          "loai": "NB lẻ LT",
+          "lythuyet": 0,
+          "vidu": 0,
+          "onclass": 0,
+          "btvn": 1,
+          "source_refs": [],
+          "decompose": "none",
+          "ve_hinh": {
+            "btvn": 1
+          },
+          "hinh_san": false,
+          "gian_giao": "ve-hinh"
+        },
+        {
+          "dang": "\\textbf{Điền khuyết bài chứng minh mẫu}: hoàn thành chứng minh $AB^2 = HB \\cdot BC$ theo đủ ba bước (đồng dạng $\\to$ tỉ lệ $\\to$ nhân chéo)",
+          "band": "NB",
+          "loai": "NB ghép bài",
+          "lythuyet": 0,
+          "vidu": 0,
+          "onclass": 2,
+          "btvn": 1,
+          "source_refs": [
+            "gk1-nbk-5b"
+          ],
+          "decompose": "none",
+          "ve_hinh": {},
+          "hinh_san": false,
+          "gian_giao": "dien-khuyet"
+        },
+        {
+          "dang": "\\textbf{Bài trình bày hoàn chỉnh như đề thi} $-$ đề chia ý a), b) kèm khung bài giải: tính cạnh bằng hệ thức rồi chứng minh một hệ thức khác",
+          "band": "NB",
+          "loai": "NB ghép bài",
+          "lythuyet": 0,
+          "vidu": 1,
+          "onclass": 4,
+          "btvn": 3,
+          "source_refs": [
+            "gk1-nbk-5a",
+            "gk1-nbk-5b"
+          ],
+          "decompose": "none",
+          "ve_hinh": {},
+          "hinh_san": false,
+          "gian_giao": ""
+        },
+        {
+          "dang": "Chứng minh $AB^2 = HB \\cdot BC$ và $AC^2 = HC \\cdot BC$ theo đúng ba bước",
+          "band": "TH",
+          "loai": "TH lẻ LT",
+          "lythuyet": 0,
+          "vidu": 2,
+          "onclass": 2,
+          "btvn": 1,
+          "source_refs": [
+            "gk1-phu-dien-4-2b",
+            "gk1-co-nhue-2-3-2b"
+          ],
+          "decompose": "none",
+          "ve_hinh": {},
+          "hinh_san": false,
+          "gian_giao": ""
+        },
+        {
+          "dang": "Chứng minh $AH^2 = HB \\cdot HC$ (hai tam giác con đồng dạng với nhau)",
+          "band": "TH",
+          "loai": "TH lẻ LT",
+          "lythuyet": 0,
+          "vidu": 1,
+          "onclass": 1,
+          "btvn": 1,
+          "source_refs": [
+            "gk1-co-nhue-2-3-2b"
+          ],
+          "decompose": "none",
+          "ve_hinh": {},
+          "hinh_san": false,
+          "gian_giao": ""
+        },
+        {
+          "dang": "Giải tam giác vuông có đường cao $AH$ biết hai cạnh góc vuông $-$ tính $BC$, $AH$, $HB$, $HC$",
+          "band": "TH",
+          "loai": "TH tách VD",
+          "lythuyet": 0,
+          "vidu": 1,
+          "onclass": 1,
+          "btvn": 1,
+          "source_refs": [
+            "gk1-nbk-5a",
+            "gk1-phu-dien-4-2a"
+          ],
+          "decompose": "none",
+          "ve_hinh": {},
+          "hinh_san": false,
+          "gian_giao": ""
+        },
+        {
+          "dang": "Chứng minh $AH \\cdot BC = AB \\cdot AC$ rồi dùng chính hệ thức đó tính $AH$ (bài nhiều bước như câu hình trong đề)",
+          "band": "VD",
+          "loai": "VD lẻ",
+          "lythuyet": 0,
+          "vidu": 1,
+          "onclass": 1,
+          "btvn": 1,
+          "source_refs": [
+            "gk1-dvhau-3-2b",
+            "gk1-bat-trang-4-2b"
+          ],
+          "decompose": "none",
+          "ve_hinh": {},
+          "hinh_san": false,
+          "gian_giao": ""
+        }
+      ]
+    },
+    {
+      "code": "D",
+      "title": "Buổi 4 $-$ Luyện tập chung và Bài tập cuối chương IV",
+      "rows": [
+        {
+          "dang": "Ôn: gọi tên cạnh đối, cạnh kề, cạnh huyền theo một góc nhọn cho trước",
+          "band": "NB",
+          "loai": "NB lẻ LT",
+          "lythuyet": 1,
+          "vidu": 0,
+          "onclass": 4,
+          "btvn": 2,
+          "source_refs": [],
+          "decompose": "none",
+          "ve_hinh": {},
+          "hinh_san": true,
+          "gian_giao": ""
+        },
+        {
+          "dang": "Ôn: viết tỉ số lượng giác và chọn đúng hệ thức cạnh $-$ góc để tính một cạnh",
+          "band": "NB",
+          "loai": "NB lẻ LT",
+          "lythuyet": 0,
+          "vidu": 0,
+          "onclass": 4,
+          "btvn": 2,
+          "source_refs": [],
+          "decompose": "none",
+          "ve_hinh": {},
+          "hinh_san": true,
+          "gian_giao": ""
+        },
+        {
+          "dang": "Ôn: dùng máy tính cầm tay tìm góc và cạnh, làm tròn \\textbf{đúng yêu cầu của đề} (đến độ hay đến phút)",
+          "band": "NB",
+          "loai": "NB lẻ LT",
+          "lythuyet": 0,
+          "vidu": 0,
+          "onclass": 2,
+          "btvn": 2,
+          "source_refs": [],
+          "decompose": "none",
+          "ve_hinh": {},
+          "hinh_san": false,
+          "gian_giao": ""
+        },
+        {
+          "dang": "Ôn: bốn hệ thức của hình có đường cao $AH$ $-$ ghép mỗi hệ thức với cặp tam giác đồng dạng sinh ra nó",
+          "band": "NB",
+          "loai": "NB lẻ LT",
+          "lythuyet": 0,
+          "vidu": 0,
+          "onclass": 3,
+          "btvn": 2,
+          "source_refs": [],
+          "decompose": "none",
+          "ve_hinh": {},
+          "hinh_san": true,
+          "gian_giao": ""
+        },
+        {
+          "dang": "Vẽ hình tổng hợp từ giả thiết (tam giác vuông, đường cao, hình chiếu) và đánh dấu đầy đủ dữ kiện",
+          "band": "NB",
+          "loai": "NB lẻ LT",
+          "lythuyet": 0,
+          "vidu": 0,
+          "onclass": 0,
+          "btvn": 1,
+          "source_refs": [],
+          "decompose": "none",
+          "ve_hinh": {
+            "btvn": 1
+          },
+          "hinh_san": false,
+          "gian_giao": "ve-hinh"
+        },
+        {
+          "dang": "\\textbf{Điền khuyết bài giải mẫu}: bài thực tế $-$ điền câu mở, hệ thức, thay số, làm tròn và \\textbf{câu kết luận}",
+          "band": "NB",
+          "loai": "NB ghép bài",
+          "lythuyet": 0,
+          "vidu": 0,
+          "onclass": 1,
+          "btvn": 1,
+          "source_refs": [
+            "gk1-trung-vuong-3-1"
+          ],
+          "decompose": "none",
+          "ve_hinh": {},
+          "hinh_san": false,
+          "gian_giao": "dien-khuyet"
+        },
+        {
+          "dang": "\\textbf{Bài trình bày hoàn chỉnh như đề thi} $-$ đề chia ý a), b) kèm khung bài giải, ôn cả chương",
+          "band": "NB",
+          "loai": "NB ghép bài",
+          "lythuyet": 0,
+          "vidu": 1,
+          "onclass": 3,
+          "btvn": 2,
+          "source_refs": [
+            "gk1-ngo-gia-tu-5a"
+          ],
+          "decompose": "none",
+          "ve_hinh": {},
+          "hinh_san": false,
+          "gian_giao": ""
+        },
+        {
+          "dang": "Giải tam giác vuông tổng hợp (biết hai cạnh, hoặc một cạnh và một góc)",
+          "band": "TH",
+          "loai": "TH lẻ LT",
+          "lythuyet": 0,
+          "vidu": 2,
+          "onclass": 1,
+          "btvn": 1,
+          "source_refs": [
+            "gk1-bat-trang-4-2a",
+            "gk1-nguyen-du-4a"
+          ],
+          "decompose": "none",
+          "ve_hinh": {},
+          "hinh_san": false,
+          "gian_giao": ""
+        },
+        {
+          "dang": "Bài thực tế: bóng tháp, máy bay cất cánh, dốc nghiêng $-$ tính chiều cao hoặc khoảng cách, \\textbf{có câu kết luận}",
+          "band": "TH",
+          "loai": "TH ghép bài",
+          "lythuyet": 0,
+          "vidu": 1,
+          "onclass": 1,
+          "btvn": 1,
+          "source_refs": [
+            "gk1-nbk-4",
+            "gk1-dvhau-3-1",
+            "gk1-co-nhue-2-3-1"
+          ],
+          "decompose": "none",
+          "ve_hinh": {},
+          "hinh_san": false,
+          "gian_giao": ""
+        },
+        {
+          "dang": "Hình có đường cao $AH$: tính cạnh rồi chứng minh một hệ thức",
+          "band": "TH",
+          "loai": "TH tách VD",
+          "lythuyet": 0,
+          "vidu": 1,
+          "onclass": 1,
+          "btvn": 1,
+          "source_refs": [
+            "gk1-co-nhue-2-3-2a",
+            "gk1-dvhau-3-2a"
+          ],
+          "decompose": "none",
+          "ve_hinh": {},
+          "hinh_san": false,
+          "gian_giao": ""
+        },
+        {
+          "dang": "Bài thực tế nhiều bước: tính chiều cao rồi tính tiếp khoảng cách/thời gian (dạng câu thực tế trong đề)",
+          "band": "VD",
+          "loai": "VD lẻ",
+          "lythuyet": 0,
+          "vidu": 1,
+          "onclass": 1,
+          "btvn": 1,
+          "source_refs": [
+            "gk1-phu-dien-4-1",
+            "gk1-trung-vuong-3-2",
+            "gk1-van-yen-3b"
+          ],
+          "decompose": "none",
+          "ve_hinh": {},
+          "hinh_san": false,
+          "gian_giao": ""
+        }
+      ]
+    }
+  ],
+  "kien_thuc_nen": [
+    "\\textbf{Định lí Pythagore} (Lớp 8): tam giác vuông có $a^2 = b^2 + c^2$ — dùng để tìm cạnh thứ ba trước khi lập tỉ số lượng giác và tính các đoạn thẳng trong tam giác vuông.",
+    "\\textbf{Tam giác đồng dạng} (Lớp 8): hai tam giác có hai góc bằng nhau từng đôi một thì đồng dạng (trường hợp góc $-$ góc, viết tắt \\textbf{g.g}); từ đồng dạng suy ra tỉ lệ cạnh tương ứng — đây là công cụ DUY NHẤT để chứng minh các hệ thức đường cao.",
+    "\\textbf{Tổng hai góc nhọn} của tam giác vuông bằng $90^\\circ$ (hai góc phụ nhau)."
+  ]
+}
