@@ -1,5 +1,6 @@
 """tier_spec.json — số câu mục tiêu phải reproduce bảng HUONG-DAN-PHAN-TANG-LOP §2."""
 from src.schema.tier_spec import (
+    phan_bo_vdc, muc_tieu_vdc,
     chuong_co_vd, draw_minutes, load_tier_spec, so_ca_yeu_cau, target_counts, tier_ratio,
     rates_for,
 )
@@ -24,11 +25,16 @@ _CH4 = "chuong-04-he-thuc-luong-tam-giac-vuong"   # lớp 9: CÓ bài VD/VDC tro
 
 
 def test_tier_b_ratio_theo_chuong_co_vd():
-    """Chương có VD/VDC trong đề → 15-30-55 (VD đã gộp cả VDC)."""
+    """Chương có VD/VDC trong đề → NB 15 · TH 30 · (VD+VDC) 55.
+
+    Từ 04/09/2026 khối 55% được CHIA theo tần suất VDC của chương: chương IV có VDC ở
+    ý cuối bài hình trong 9/9 đề GK1 (p = 1,00, nhóm 'cao') nên VD 35 · VDC 20 —
+    tổng vẫn 55."""
     spec = load_tier_spec()
     assert chuong_co_vd("lop-9", _CH4) is True
-    assert tier_ratio(spec, "lop-9", "hinh-hoc", "B", _CH4) == {
-        "NB": 15, "TH": 30, "VD": 55, "VDC": 0}
+    r = tier_ratio(spec, "lop-9", "hinh-hoc", "B", _CH4)
+    assert r == {"NB": 15, "TH": 30, "VD": 35, "VDC": 20}
+    assert r["VD"] + r["VDC"] == 55
 
 
 _CH8 = "chuong-08-xac-suat-cua-bien-co"       # lớp 9: KHÔNG có bài VD/VDC trong đề
@@ -93,3 +99,45 @@ def test_lop8_hinh_hoc_rates_are_double():
 def test_draw_minutes_is_five():
     """Câu phải TỰ VẼ HÌNH cộng thêm 5′ (ngoài phút/câu theo band)."""
     assert draw_minutes(load_tier_spec()) == 5.0
+
+
+# ── Ưu tiên VDC theo TẦN SUẤT (Thầy chốt 04/09/2026) ─────────────────────────
+
+_CH2 = "chuong-02-bat-dang-thuc-bat-phuong-trinh"   # cực trị = câu cuối 15/21 đề
+_CH3 = "chuong-03-can-bac-hai-can-bac-ba"          # chỉ 1/21 đề → nhóm "thấp"
+_CH1 = "chuong-01-phuong-trinh-va-he-hai-phuong-trinh-bac-nhat-hai-an"
+_CH9 = "chuong-09-duong-tron-ngoai-tiep-va-noi-tiep"
+
+
+def test_phan_bo_55_theo_tan_suat():
+    """Chương VDC hay ra được nhiều phút VDC hơn; chương hiếm thì gần như chỉ VD."""
+    assert phan_bo_vdc("lop-9", _CH2) == {"VD": 35, "VDC": 20}   # p = 0,71 → cao
+    assert phan_bo_vdc("lop-9", _CH3) == {"VD": 50, "VDC": 5}    # p = 0,05 → thấp
+    # Chương I có bài VD (lập hệ PT) nhưng KHÔNG có VDC: hai câu "tăng/giảm giá" từng
+    # bị gán cho nó nay về chương II vì giải bằng hằng đẳng thức (Thầy chốt 04/09/2026).
+    assert phan_bo_vdc("lop-9", _CH1) == {"VD": 55, "VDC": 0}
+    for ch in (_CH1, _CH2, _CH3, _CH9):
+        pb = phan_bo_vdc("lop-9", ch)
+        assert pb["VD"] + pb["VDC"] == 55, "tổng khối VD+VDC luôn là 55%"
+
+
+def test_tier_ratio_nhan_phan_bo_cua_chuong():
+    spec = load_tier_spec()
+    assert tier_ratio(spec, "lop-9", "dai-so", "B", _CH3) == {
+        "NB": 15, "TH": 30, "VD": 50, "VDC": 5}
+
+
+def test_muc_tieu_vdc_va_tran_diem():
+    """Kỳ I dạy để ăn trọn 10,0; kỳ II nhường 0,5đ ở ý cuối bài hình → trần 9,5."""
+    assert muc_tieu_vdc("lop-9", _CH2) == ("an-tron", 10.0)
+    assert muc_tieu_vdc("lop-9", _CH9) == ("cham-diem-tung-phan", 9.5)
+
+
+def test_chuong_khoi_khac_chua_do_thi_giu_ti_le_mac_dinh():
+    """Khối 6/7/8 chưa đo tần suất ⇒ phan_bo_vdc = None, tỉ lệ giữ nguyên 15-30-55."""
+    spec = load_tier_spec()
+    ch = "chuong-02-hang-dang-thuc-dang-nho-va-ung-dung"
+    assert phan_bo_vdc("lop-8", ch) is None
+    r = tier_ratio(spec, "lop-8", "dai-so", "B", ch)
+    if r:                      # lớp 8 đã khai rate card thì phải rơi về biến thể gốc
+        assert (r["VD"], r["VDC"]) == (55, 0)

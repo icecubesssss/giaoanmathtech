@@ -35,7 +35,12 @@ KY_DIR = {"giua-ki-1": "gk1", "cuoi-ki-1": "ck1", "giua-ki-2": "gk2",
 # Mọi thứ từ đây trở đi KHÔNG còn là đề nữa
 _HET_DE = re.compile(r"HƯỚNG\s*DẪN\s*CHẤM|ĐÁP\s*ÁN|BIỂU\s*ĐIỂM|MA\s*TRẬN|ĐẶC\s*TẢ|"
                      r"BẢNG\s*NĂNG\s*LỰC|Xem\s*thêm\s*:", re.I)
-_MOC = re.compile(r"^[ \t]*(Bài|Câu)[ \t]*([0-9]{1,2}|[IVX]{1,5})[ \t]*[\.:\)]", re.M)
+# Mốc bài. KHÔNG bắt buộc đứng đầu dòng: pdftotext hay dán "II. PHẦN TỰ LUẬN: (7,0
+# điểm) Bài 1 (1,5 điểm):" thành MỘT dòng, khiến mốc "Bài" của phần tự luận không khớp
+# và script vớ phải câu trắc nghiệm cuối phần I. Cho phép mốc đứng sau dấu câu hoặc sau
+# hai dấu cách, và cho phép số bài theo ngay bởi "(" (dạng "Bài 5 (0,5 điểm)").
+_MOC = re.compile(r"(?:^|(?<=[.:;\)\]]\s)|(?<=\s{2}))(Bài|Câu)[ \t]*([0-9]{1,2}|[IVX]{1,5})"
+                  r"[ \t]*[\.:\)\(]", re.M)
 # Bài cuối của đề Hà Nội gần như luôn là câu phân loại 0,5-1,0đ
 _DIEM = re.compile(r"\(\s*([\d,\.]+)\s*(?:điểm|đ)\s*\)")
 

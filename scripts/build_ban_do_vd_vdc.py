@@ -29,9 +29,21 @@ _ESC = {"\\": " ", "&": r"\&", "%": r"\%", "$": " ", "#": r"\#",
         "^": r"\textasciicircum{}"}
 
 
+# Đề trích từ PDF hay lẫn kí tự lạ — font của template không có glyph nên in ra Ô VUÔNG
+# trên PDF Thầy đọc. Đổi sang chữ thường dùng, và XOÁ hẳn vùng dùng-riêng (U+F000–U+F8FF)
+# mà pdftotext sinh ra khi PDF gốc nhúng font symbol.
+_THAY_GLYPH = {"\u2206": "tam giác ", "\u2212": "-", "\u22c5": ".", "\u2264": " <= ",
+               "\u2265": " >= ", "\u2260": " != ", "\u221a": "căn ", "\u00b0": " độ"}
+_PUA = re.compile(r"[\uE000-\uF8FF]")
+
+
 def tex(s: str, n: int | None = None) -> str:
     """Escape sang LaTeX; `n` cắt bớt độ dài (trích dẫn đề bài in trong ô bảng)."""
-    s = re.sub(r"\\[a-zA-Z]+\s*", " ", str(s))     # bỏ lệnh LaTeX trong đề gốc (\widehat, \dfrac…)
+    s = str(s)
+    for a, b in _THAY_GLYPH.items():
+        s = s.replace(a, b)
+    s = _PUA.sub("", s)
+    s = re.sub(r"\\[a-zA-Z]+\s*", " ", s)     # bỏ lệnh LaTeX trong đề gốc (\widehat, \dfrac…)
     s = re.sub(r"\s+", " ", s)
     if n:
         s = s[:n]
@@ -57,13 +69,28 @@ def bang_khoi(ma_khoi: str, khoi: dict, so_mt: dict) -> str:
     rows = []
     for c in khoi["chuong"]:
         nhan, mau, tyle, dong_phieu = _KL[c.get("muc_do", "chi-TH")]
-        n = c.get("so_cau_vdc", 0)
+        n = c.get("so_de_co_vdc", c.get("so_cau_vdc_tho_ban_0_3", 0))
+        # Bản 0.4: cột tỉ lệ in ĐÚNG phân bổ của chương (khối 55% chia theo tần suất VDC).
+        v = c.get("vdc") or {}
+        pb = v.get("phan_bo_55")
+        if pb and c.get("muc_do") != "chi-TH":
+            tyle = (f"NB 15\\% · TH 30\\% · \\textbf{{VD {pb['VD']}\\% · VDC {pb['VDC']}\\%}}")
+        if v.get("p") is not None:
+            t = v["tan_suat"]
+            # `\\` trong ô p{} sẽ NGẮT DÒNG BẢNG — phải dùng \newline.
+            nhan += (f"\\newline{{\\scriptsize $p=\\mathbf{{{v['p']:.2f}}}$".replace(".", "{,}")
+                     + f" ({tex(v['nhom_uu_tien'])})\\newline "
+                     f"cuối đề {t['cau_cuoi_de']['so_de']}/{t['cau_cuoi_de']['tong_de']} · "
+                     f"ý cuối hình {t['y_cuoi_bai_hinh']['so_de']}/"
+                     f"{t['y_cuoi_bai_hinh']['tong_de']}\\newline "
+                     f"trần \\textbf{{{str(v['tran_diem']).replace('.', '{,}')}}} · "
+                     f"{tex(v['muc_tieu_vdc'])}}}")
         # Bằng chứng nay là ĐỀ BÀI THẬT ở vị trí VDC, không phải cột 'Vận dụng' của ma trận.
         if c.get("ghi_chu_can_chot"):
             bc = "\\bfseries " + tex(c["ghi_chu_can_chot"])
         elif n:
             vd = " \\quad ".join("``" + tex(x, 150) + "''" for x in c.get("vdc_vi_du", []))
-            bc = (f"\\textbf{{{n} câu ở vị trí VDC}} (nguồn: "
+            bc = (f"\\textbf{{{n} đề có câu VDC ở vị trí này}} (nguồn: "
                   + tex(", ".join(c.get("vdc_nguon", [])), 90) + "). " + vd)
         else:
             bc = tex(c["bang_chung"])
@@ -79,7 +106,7 @@ def bang_khoi(ma_khoi: str, khoi: dict, so_mt: dict) -> str:
            f"{dem.get('can-Thay-chot',0)} cần Thầy chốt")
     return (
         f"\\tmsec{{{_TEN_KHOI[ma_khoi]} — {tex(khoi['bo_sach'])} · {tom}}}\n"
-        "\\begin{longtable}{@{}p{0.9cm}p{4.6cm}p{2.3cm}p{3.4cm}p{2.5cm}p{9.6cm}@{}}\n"
+        "\\begin{longtable}{@{}p{0.9cm}p{4.0cm}p{3.2cm}p{3.3cm}p{2.3cm}p{9.0cm}@{}}\n"
         "\\toprule\n"
         "\\tmlbl{Ch.} & \\tmlbl{Tên chương} & \\tmlbl{Kết luận} & "
         "\\tmlbl{Tỉ lệ phiếu tầng B} & \\tmlbl{Đóng phiếu} & "
@@ -118,6 +145,35 @@ def main() -> int:
         "\\tmlbl{quy trình giải bài} ngay ở từng bài."
         "\\item Phiếu \\tmlbl{ôn tập chương}: thêm bài tập cho HS \\tmlbl{tự viết lại và "
         "giải thích quy trình} làm bài."
+        "\\end{itemize}",
+
+        "\\tmsec{BẢN 0.4 --- Thầy chốt 04/09/2026: chỉ CÂU CUỐI mới tính VDC, "
+        "và ưu tiên theo TẦN SUẤT}",
+        "\\begin{itemize}"
+        "\\item \\tmlbl{Chỉ ý cuối mới là VDC:} một BÀI nhiều ý (bài hình a,b,c) chỉ có "
+        "\\tmlbl{ĐÚNG MỘT} ý mức VDC --- ý cuối; các ý trước là TH hoặc VD. Áp cho cả cách "
+        "đếm kho đề ở bảng này lẫn cách gắn thẻ trong phiếu (cổng "
+        "\\texttt{check\\_vdc\\_cuoi\\_bai})."
+        "\\item \\tmlbl{Đếm bằng TẦN SUẤT, không đếm số câu thô:} $p$ = số ĐỀ mà chương chiếm "
+        "một trong hai vị trí VDC, chia cho số đề của các kỳ kiểm tra chương đó. Mẫu lớp 9: "
+        "\\tmlbl{21 đề GK1/CK1 đủ 9--10,5 điểm} $+$ \\tmlbl{14 đề GK2/CK2} phân loại bằng mắt "
+        "(\\texttt{vdc-phan-loai-hk2.json}, \\tmlbl{chờ Thầy duyệt}). Đo lại: "
+        "\\texttt{scripts/tan\\_suat\\_vdc.py}."
+        "\\item \\tmlbl{Chương VDC hay ra thì được nhiều phút VDC hơn:} $p\\ge0{,}50$ $\\to$ "
+        "VD 35\\% · VDC 20\\%; $0{,}20\\le p<0{,}50$ $\\to$ 43/12; $0<p<0{,}20$ $\\to$ 50/5 "
+        "(5\\% của 120$'$ là 6$'$, chưa đủ một câu VDC 18$'$ $\\Rightarrow$ dồn VDC vào phiếu ôn tập chương); "
+        "$p=0$ $\\to$ 55/0. \\tmlbl{Tổng luôn là 55\\%.}"
+        "\\item \\tmlbl{Trần điểm là đích của phiếu:} GK1/CK1 $\\to$ \\tmlbl{10,0} (dạy HẾT, kể cả "
+        "câu nâng cao 0,5đ cuối đề); GK2/CK2 $\\to$ \\tmlbl{9,5} --- nhường 0,5đ ở \\tmlbl{ý cuối "
+        "bài hình}, vẫn dạy tới đó nhưng đích là \\tmlbl{ăn điểm từng phần}."
+        "\\item \\tmlbl{Phát hiện chính (lớp 9):} \\tmlbl{27/33 đề (82\\%)} kết thúc bằng bài "
+        "\\tmlbl{CỰC TRỊ/TỐI ƯU 0,5đ} --- một khuôn lặp (gọi ẩn $\\to$ lập biểu thức $\\to$ đưa về "
+        "$(x-a)^2+b$ hoặc Cô-si $\\to$ kết luận), \\tmlbl{dạy được}. Và \\tmlbl{34/34} ý cuối bài "
+        "hình là câu CHỨNG MINH nhiều bước: thẳng hàng 8 · vuông góc 5 · song song--đồng dạng 4 "
+        "· hệ thức 4."
+        "\\item \\tmlbl{Khối 6, 7, 8 CHƯA ĐO ĐƯỢC} tần suất (kho đề chưa có bank chấm band; "
+        "69/161 bản ghi câu cuối đề còn để chương ``?'' và toàn bộ 80 bản ghi ý cuối bài hình "
+        "chưa gán chương) $\\Rightarrow$ giữ 15--30--55 mặc định, \\tmlbl{không bịa số}."
         "\\end{itemize}",
 
         "\\tmsec{Quy ước chấm mức độ — anh An chốt 30/08/2026 (ĐÈ LÊN mức trường ghi)}",

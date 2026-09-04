@@ -119,6 +119,51 @@ def draw_counts(lesson: LessonPackage) -> dict[str, dict[str, int]]:
     return counts
 
 
+def check_vdc_cuoi_bai(lesson: LessonPackage) -> list[str]:
+    """VDC chỉ được nằm ở Ý CUỐI của bài — mỗi bài tối đa MỘT thẻ [VDC].
+
+    Thầy chốt 04/09/2026: "bài VDC thì chỉ câu cuối mới tính thôi". Kho đề xác nhận:
+    bài hình a),b),c) thì chỉ ý c) là câu phân loại, hai ý trước là TH/VD. Gắn [VDC]
+    cho nhiều ý trong một bài vừa thổi phồng quỹ phút (VDC 18′/câu so với TH 6′) vừa
+    làm phiếu khó sai mức so với đề thật.
+    """
+    warns: list[str] = []
+    for stage in lesson.stages:
+        if stage.kind in ("review", "concept"):
+            continue
+        nhan, texts = None, []
+
+        def _soi(nhan: str | None, texts: list[str]) -> None:
+            if not nhan:
+                return
+            tags = _TAG_RE.findall(" ".join(texts))
+            if "VDC" not in tags:
+                return
+            ten = nhan or "(không nhãn)"
+            if tags.count("VDC") > 1:
+                warns.append(
+                    f"duration: bài '{ten}' gắn {tags.count('VDC')} thẻ [VDC] — mỗi bài chỉ "
+                    f"được MỘT ý mức VDC (Thầy chốt 04/09/2026). Hạ các ý trước xuống [TH]/[VD].")
+            elif tags[-1] != "VDC":
+                sau = ", ".join(f"[{t}]" for t in tags[tags.index("VDC") + 1:])
+                warns.append(
+                    f"duration: bài '{ten}' có thẻ [VDC] nhưng SAU nó còn {sau} — VDC phải là "
+                    f"Ý CUỐI của bài (Thầy chốt 04/09/2026). Đổi thứ tự ý hoặc hạ mức.")
+
+        for b in stage.blocks:
+            typ = getattr(b, "type", "")
+            if typ == "problem":
+                _soi(nhan, texts)
+                nhan, texts = getattr(b, "label", "") or "", [b.statement or ""]
+            elif typ == "para" and nhan is not None:
+                texts.append(getattr(b, "text", "") or "")
+            elif typ in ("noted", "mindmap"):
+                _soi(nhan, texts)
+                nhan, texts = None, []
+        _soi(nhan, texts)
+    return warns
+
+
 def _grade_subject(lesson: LessonPackage) -> tuple[str, str]:
     """Suy (lớp, môn) để tra tier_spec. Lesson chỉ có grade_label → phân lớp 8/9;
     phát hiện môn 'hinh-hoc' nếu eyebrow hoặc title chứa chữ 'hình'/'hinh'."""
@@ -181,9 +226,10 @@ def _luat_tang_b(lesson: LessonPackage, spec: dict, grade: str, subject: str,
 
 def check_duration(lesson: LessonPackage) -> list[str]:
     """Cảnh báo khi phiếu tầng lệch quỹ phút hoặc tỉ lệ (đọc chuẩn từ tier_spec)."""
+    vdc_warns = check_vdc_cuoi_bai(lesson)
     tier = lesson.class_tier
     if not tier:
-        return []
+        return vdc_warns
     grade, subject = _grade_subject(lesson)
     try:
         spec = load_tier_spec()
@@ -191,11 +237,11 @@ def check_duration(lesson: LessonPackage) -> list[str]:
         block = subject_block(spec, grade, subject)
         rates = rates_for(spec, grade, subject)
     except KeyError:
-        return []                       # chưa có rate card cho (lớp, môn, tầng)
+        return vdc_warns                # chưa có rate card cho (lớp, môn, tầng)
     tier_block = block.get("tiers", {}).get(tier, {})
     warns_b = _luat_tang_b(lesson, spec, grade, subject, tier, tier_block)
     if not ratio_target:                # tầng chưa chốt tỉ lệ (X chuyên, hoặc tầng B
-        return warns_b                  # chọn tỉ lệ theo chương mà phiếu chưa khai `chuong`)
+        return vdc_warns + warns_b      # chọn tỉ lệ theo chương mà phiếu chưa khai `chuong`)
     gop = gop_vd_vdc(spec, grade, subject, tier)
 
     budgets = block.get("budgets", {})
@@ -223,7 +269,7 @@ def check_duration(lesson: LessonPackage) -> list[str]:
 
     minutes = {seg: {b: _band_minutes(seg, b) for b in _BANDS} for seg in budget_dict}
 
-    warns: list[str] = list(warns_b)
+    warns: list[str] = vdc_warns + list(warns_b)
     label = {"onclass": "Luyện tập trên lớp", "btvn": "BTVN"}
     for seg, budget in budget_dict.items():
         total = sum(minutes[seg].values())

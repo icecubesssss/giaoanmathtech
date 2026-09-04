@@ -1,7 +1,8 @@
 """duration_gate — đếm "câu" theo ý nhỏ/thẻ mức và soi quỹ phút + tỉ lệ 40-40-20
 từng phiếu tầng C (Thầy chốt 2026-06-11)."""
 from src.schema import LessonPackage
-from src.validators.duration_gate import _count_items, check_duration, draw_counts
+from src.validators.duration_gate import (
+    _count_items, check_duration, check_vdc_cuoi_bai, draw_counts)
 
 
 def test_count_items_letters_and_bullets():
@@ -180,3 +181,42 @@ def test_figure_given_nhan_biet_tinh_1_phut():
     lesson = _lesson_hinh8([("onclass", 1, "a) x b) x c) x d) x", False)])
     lesson.stages[0].blocks[0].figure_given = True
     assert any("NB 4 câu/4′" in w for w in check_duration(lesson))
+
+
+# ── VDC chỉ ở Ý CUỐI của bài (Thầy chốt 04/09/2026) ──────────────────────────
+
+def test_vdc_o_y_cuoi_thi_khong_canh_bao():
+    """Khuôn đúng của bài hình đề thi: a) TH → b) VD → c) VDC."""
+    lesson = _lesson([("onclass", 4, "a) [TH] x b) [VD] y c) [VDC] z")])
+    assert check_vdc_cuoi_bai(lesson) == []
+
+
+def test_hai_the_vdc_trong_mot_bai_bi_bat():
+    """Gắn [VDC] cho hai ý = thổi phồng quỹ phút (18′/câu) và sai mức so với đề."""
+    lesson = _lesson([("onclass", 4, "a) [TH] x b) [VDC] y c) [VDC] z")])
+    warns = check_vdc_cuoi_bai(lesson)
+    assert len(warns) == 1 and "2 thẻ [VDC]" in warns[0]
+
+
+def test_vdc_khong_o_y_cuoi_bi_bat():
+    lesson = _lesson([("onclass", 4, "a) [TH] x b) [VDC] y c) [VD] z")])
+    warns = check_vdc_cuoi_bai(lesson)
+    assert len(warns) == 1 and "Ý CUỐI" in warns[0]
+
+
+def test_vdc_tinh_ca_para_di_kem_bai():
+    """`para` đứng sau bài là phần tiếp của bài đó — thẻ trong para vẫn phải soi."""
+    lesson = LessonPackage(slug="t", title="t", class_tier="C", stages=[{
+        "kind": "practice1", "number": 3, "title": "LT", "blocks": [
+            {"type": "problem", "label": "Bài 1.", "tier": "onclass", "level": 4,
+             "statement": "a) [VDC] x"},
+            {"type": "para", "text": "b) [TH] y"},
+        ]}])
+    warns = check_vdc_cuoi_bai(lesson)
+    assert len(warns) == 1 and "Ý CUỐI" in warns[0]
+
+
+def test_hai_bai_khac_nhau_moi_bai_mot_vdc_thi_sach():
+    lesson = _lesson([("onclass", 4, "a) [TH] x b) [VDC] y"),
+                      ("btvn", 4, "a) [VD] x b) [VDC] y")])
+    assert check_vdc_cuoi_bai(lesson) == []

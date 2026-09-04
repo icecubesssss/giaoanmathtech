@@ -17,6 +17,7 @@ __all__ = [
     "load_tier_spec", "subject_block", "rates_for", "tier_ratio",
     "target_counts", "draw_minutes", "BANDS",
     "load_ban_do", "chuong_co_vd", "gop_vd_vdc", "so_ca_yeu_cau",
+    "phan_bo_vdc", "muc_tieu_vdc",
 ]
 
 BANDS = ("NB", "TH", "VD", "VDC")
@@ -72,6 +73,44 @@ def load_ban_do(path: Path | None = None) -> dict:
     if key not in _CACHE:
         _CACHE[key] = json.loads(p.read_text(encoding="utf-8")) if p.exists() else {"khoi": {}}
     return _CACHE[key]
+
+
+def _chuong_entry(grade: str, chuong: str) -> dict | None:
+    """Bản ghi chương trong `config/ban_do_vd_vdc.json`; None nếu không tra ra.
+
+    `chuong` khớp `slug`, `ma` (I, II, …) hoặc một trong `slug_khac` — cây seeds có
+    nhiều biến thể tên folder cho cùng một chương."""
+    if not chuong:
+        return None
+    khoi = load_ban_do().get("khoi", {}).get(grade)
+    if not khoi:
+        return None
+    for c in khoi.get("chuong", []):
+        if chuong in (c.get("slug"), c.get("ma"), *(c.get("slug_khac") or [])):
+            return c
+    return None
+
+
+def phan_bo_vdc(grade: str, chuong: str) -> dict | None:
+    """Chia khối 55% VD+VDC theo TẦN SUẤT VDC của chương (Thầy chốt 04/09/2026).
+
+    Trả {"VD": .., "VDC": ..} lấy từ `vdc.phan_bo_55` của bản đồ; None khi chương chưa
+    đo được tần suất (khối 6/7/8) ⇒ người gọi giữ nguyên tỉ lệ mặc định của tầng."""
+    c = _chuong_entry(grade, chuong)
+    if not c:
+        return None
+    pb = (c.get("vdc") or {}).get("phan_bo_55")
+    if not pb or "VD" not in pb or "VDC" not in pb:
+        return None
+    return {"VD": int(pb["VD"]), "VDC": int(pb["VDC"])}
+
+
+def muc_tieu_vdc(grade: str, chuong: str) -> tuple[str | None, float | None]:
+    """(mục tiêu VDC, trần điểm) của chương — "an-tron" cho kỳ I (trần 10,0),
+    "cham-diem-tung-phan" cho ý cuối bài hình kỳ II (trần 9,5). (None, None) nếu chưa đo."""
+    c = _chuong_entry(grade, chuong)
+    v = (c or {}).get("vdc") or {}
+    return v.get("muc_tieu_vdc"), v.get("tran_diem")
 
 
 def chuong_co_vd(grade: str, chuong: str) -> bool | str | None:
@@ -135,7 +174,14 @@ def tier_ratio(spec: dict, grade: str, subject: str, tier: str,
         return tier_block.get("ratio")
     co_vd = chuong_co_vd(grade, chuong or "")
     if co_vd is True:
-        return variants.get("co_vd")
+        ratio = variants.get("co_vd")
+        # Thầy chốt 04/09/2026: khối 55% VD+VDC chia theo TẦN SUẤT VDC của chương —
+        # chương nào VDC hay ra thì VDC được nhiều phút hơn. Chương chưa đo được tần
+        # suất (khối 6/7/8) giữ nguyên biến thể mặc định.
+        pb = phan_bo_vdc(grade, chuong or "")
+        if ratio and pb:
+            ratio = {**ratio, "VD": pb["VD"], "VDC": pb["VDC"]}
+        return ratio
     if co_vd is False:
         return variants.get("khong_vd")
     return None

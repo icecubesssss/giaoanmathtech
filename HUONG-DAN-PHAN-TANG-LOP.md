@@ -7,7 +7,7 @@ Trung tâm chia HS theo năng lực thành các **tầng lớp**. Mỗi tầng n
 | Tầng | Đối tượng | Yêu cầu cốt lõi | Tỉ lệ NB-TH-VD |
 |---|---|---|---|
 | **A** | Khá – giỏi | *(chuẩn hoá sau)* | *(sau)* |
-| **B** | Trung bình – khá | Nắm chắc NB, TH, rèn luyện tư duy VD và cọ xát 1 phần VDC | **theo CHƯƠNG** (xem §2): chương có VD **15 – 30 – 55 (VD+VDC)**; chương không VD **30 – 70**, gộp 2 phiếu |
+| **B** | Trung bình – khá | Nắm chắc NB, TH, rèn luyện tư duy VD và cọ xát 1 phần VDC. **Đích: trần 10,0 kỳ I · 9,5 kỳ II** | **theo CHƯƠNG** (xem §2): chương có VD **15 – 30 – 55 (VD+VDC)**, khối 55 chia lại theo **tần suất VDC**; chương không VD **30 – 70**, gộp 2 phiếu. Quy trình: [HUONG-DAN-SOAN-PHIEU-B.md](HUONG-DAN-SOAN-PHIEU-B.md) |
 | **C** | Nền (yếu – trung bình) | Thạo **100% Nhận biết + Thông hiểu**, làm được **1 phần Vận dụng** | **40 – 40 – 20** |
 | **X** | HS chuyên | *(chuẩn hoá sau)* | *(sau)* |
 
@@ -34,6 +34,10 @@ Trung tâm chia HS theo năng lực thành các **tầng lớp**. Mỗi tầng n
 > **TẦNG B ĐỔI LUẬT (Thầy chốt 2026-08-30) — tỉ lệ chọn THEO CHƯƠNG, không còn 30-40-20-10:**
 > - Chương **KHÔNG** có bài VD/VDC trong đề thi → **NB 30% · TH 70%**; phần NB gồm **~5 dạng, mỗi dạng 2 câu** (≈10 câu — đây là ràng buộc **cứng**, 30% chỉ để tham chiếu). **GỘP 2 PHIẾU THÀNH 1** (`so_ca: 2`) — buổi 1 gánh 15% NB + 35% TH, buổi 2 gánh 15% NB + 35% TH (anh An chốt 30/08).
 > - Chương **CÓ** VD/VDC trong đề thi → **NB 15% · TH 30% · VD+VDC 55%** (VD và VDC **gộp chung**, cổng soi tổng).
+> - **CẬP NHẬT 04/09/2026 — khối 55% CHIA THEO TẦN SUẤT VDC của chương** (Thầy: *"câu VDC có tần suất nhiều trong đề thi thì ưu tiên cho nhiều hơn"*): `p ≥ 0,50` → **VD 35 · VDC 20**; `0,20 ≤ p < 0,50` → **43 · 12**; `0 < p < 0,20` → **50 · 5** (5% của 120′ là 6′, chưa đủ một câu VDC 18′ ⇒ dồn VDC vào **phiếu ôn tập chương**); `p = 0` → **55 · 0**. Tổng vẫn luôn là 55. Số ở `vdc.phan_bo_55` trong bản đồ, đo bằng `scripts/tan_suat_vdc.py`.
+> - **CHỈ Ý CUỐI MỚI LÀ VDC:** một bài nhiều ý chỉ được MỘT thẻ `[VDC]`, ở ý cuối (cổng `duration_gate.check_vdc_cuoi_bai`, áp mọi tầng).
+> - **TRẦN ĐIỂM là đích của phiếu:** GK1/CK1 → **10,0** (dạy hết, kể cả 0,5đ cuối đề); GK2/CK2 → **9,5** (nhường 0,5đ ở ý cuối bài hình, đích là **ăn điểm từng phần**).
+> - 👉 Quy trình soạn đầy đủ (Polya, chọn dạng theo kho đề, khác tầng C ở đâu): **[HUONG-DAN-SOAN-PHIEU-B.md](HUONG-DAN-SOAN-PHIEU-B.md)**.
 > - Tra chương nào thuộc nhóm nào ở **[config/ban_do_vd_vdc.json](config/ban_do_vd_vdc.json)** (dựng từ ma trận trường công bố kèm đề GK1/CK1/GK2/CK2 Hà Nội, khối 6–9; xem PDF `outputs/ban-do-vd-vdc/`). Chương còn ghi `"bien"` = **Thầy chưa chốt → chưa soạn phiếu**; cổng sẽ không soi tỉ lệ và cảnh báo.
 > - Spec/phiếu tầng B **phải khai `chuong`** (slug chương) thì cổng mới soi được tỉ lệ và số ca.
 > - **Quy ước chấm mức độ (anh An chốt 30/08, ĐÈ LÊN mức trường ghi trong ma trận):** dạng toán **thực tế chỉ 2–3 bước** (thay số vào một công thức rồi kết luận: bóng tháp, máy bay cất cánh, thang dựa tường, Sxq/thể tích hình chóp, tần số tương đối, xác suất một biến cố) là **THÔNG HIỂU**, không phải Vận dụng. **VDC chỉ ở hai chỗ**: câu cuối của bài hình và câu nâng cao cuối đề — **riêng lớp 6 chỉ có câu cuối đề**.

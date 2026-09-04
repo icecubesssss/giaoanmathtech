@@ -11,7 +11,7 @@ from .geometry_gate import check_geometry_problems, is_geometry, GeometryViolati
 from .figure_gate import check_figures, check_image_paths, warn_figures, check_figure_symbols, check_clone_problems, check_hinh_thieu, FigureViolation
 from .visual_linter import wrap_long_math, scan_build_log, BuildLogReport, find_presentation_warnings, find_text_escape_issues
 from .answer_gate import check_answers
-from .duration_gate import check_duration, band_counts
+from .duration_gate import check_duration, band_counts, check_vdc_cuoi_bai
 from .print_gate import check_print_layout
 from .staleness_gate import check_stale, tom_tat as tom_tat_stale
 from .sgk_style_gate import check_sgk_style, check_vi_du_style, check_goi_ten_canh
@@ -30,7 +30,7 @@ __all__ = [
     "wrap_long_math", "scan_build_log", "BuildLogReport", "find_presentation_warnings",
     "find_text_escape_issues",
     "check_answers",
-    "check_duration", "band_counts",
+    "check_duration", "band_counts", "check_vdc_cuoi_bai",
     "check_spec_conformance",
     "check_sgk_style",
     "check_vi_du_style",
