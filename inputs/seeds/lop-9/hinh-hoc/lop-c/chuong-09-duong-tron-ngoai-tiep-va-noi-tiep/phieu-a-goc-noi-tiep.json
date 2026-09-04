@@ -1,0 +1,448 @@
+{
+ "slug": "phieu-a-goc-noi-tiep",
+ "title": "Bài 27. Góc nội tiếp",
+ "eyebrow": "HÌNH HỌC 9 — CHƯƠNG IX · PHIẾU A",
+ "grade_label": "Lớp 9 • Ôn vào 10",
+ "class_tier": "C",
+ "so_ca": 1,
+ "stages": [
+  {
+   "kind": "review",
+   "number": 1,
+   "title": "Khám phá",
+   "teacher_note": "Cho HS đo thật ba góc ở hình mở màn bằng thước đo góc — ba góc bằng nhau chính là nhận xét \\textquotedblleft cùng chắn một cung\\textquotedblright{} sẽ chốt ở cuối chặng 2. Chưa gọi tên khái niệm ở bước này.",
+   "blocks": [
+    {
+     "type": "opener",
+     "text": "Đêm nhạc hội của trường dựng sân khấu là đoạn thẳng $BC$, còn khán đài xếp thành một cung tròn phía trước. Ba bạn Mai, Nam, Linh mua ba vé ở ba chỗ khác nhau trên cung tròn đó. Mai ngồi gần sân khấu nhất nên chắc chắn nhìn sân khấu \\textquotedblleft rộng\\textquotedblright{} hơn hai bạn kia? [[br]]Hãy dùng thước đo góc đo thử ba góc mở ra sân khấu ở Hình bên. Kết quả có làm em bất ngờ không?",
+     "tikz": "\\begin{tikzpicture}[line width=0.8pt, font=\\small]\n  \\draw[ink] (0,0) circle (2);\n  \\draw[brand, line width=2.2pt] (-1.6383,-1.1472) -- (1.6383,-1.1472);\n  \\node[below, font=\\scriptsize] at (-0,-1.4472) {Sân khấu};\n  \\draw[ink] (0.684,1.8794) -- (-1.6383,-1.1472);\n  \\draw[ink] (0.684,1.8794) -- (1.6383,-1.1472);\n  \\fill[brand] (0.684,1.8794) circle (2.0pt);\n  \\draw[ink] (-0.684,1.8794) -- (-1.6383,-1.1472);\n  \\draw[ink] (-0.684,1.8794) -- (1.6383,-1.1472);\n  \\fill[brand] (-0.684,1.8794) circle (2.0pt);\n  \\draw[ink] (-1.7321,1) -- (-1.6383,-1.1472);\n  \\draw[ink] (-1.7321,1) -- (1.6383,-1.1472);\n  \\fill[brand] (-1.7321,1) circle (2.0pt);\n\\end{tikzpicture}"
+    },
+    {
+     "type": "noted",
+     "variant": "note",
+     "text": "\\textbf{Nhắc lại chương V — hai thứ sẽ dùng suốt buổi hôm nay.}[[br]]$\\bullet$ \\textbf{Góc ở tâm} là góc có đỉnh trùng với TÂM đường tròn. Số đo cung nhỏ bằng số đo góc ở tâm chắn cung đó.[[br]]$\\bullet$ Cả đường tròn là $360^\\circ$, nửa đường tròn là $180^\\circ$.[[br]]$\\bullet$ Hai bán kính bằng nhau nên tam giác tạo bởi hai bán kính luôn \\textbf{cân}; tam giác cân có hai góc ở đáy bằng nhau (Lớp 7)."
+    },
+    {
+     "type": "noted",
+     "variant": "target",
+     "text": "\\textbf{Đích của buổi học.} Chương IX cùng chương V gánh trọn Câu IV.2 của đề Vào 10 $=$ 3,0 điểm.[[br]]Bài 27 hôm nay chưa được hỏi thẳng bao giờ, nhưng hai câu \\textquotedblleft các góc nội tiếp cùng chắn một cung thì bằng nhau\\textquotedblright{} và \\textquotedblleft góc nội tiếp chắn nửa đường tròn là góc vuông\\textquotedblright{} là toàn bộ công cụ để làm Câu IV.2 ở hai buổi cuối chương."
+    }
+   ]
+  },
+  {
+   "kind": "concept",
+   "number": 2,
+   "title": "Kiến thức cần nhớ",
+   "teacher_note": "Chốt lý thuyết gọn trong 3 phút rồi chữa 6 ví dụ mẫu (22 phút). Ví dụ 1, 2 làm chậm cho HS quen cách soi đỉnh và cách chia đôi; Ví dụ 6 bắt HS chép nguyên khuôn trình bày vào vở.",
+   "blocks": [
+    {
+     "type": "para",
+     "text": "\\textbf{1. Góc nội tiếp là gì}"
+    },
+    {
+     "type": "para",
+     "text": "Góc nội tiếp của một đường tròn là góc có \\textbf{đỉnh nằm TRÊN đường tròn} và \\textbf{hai cạnh chứa hai dây cung} của đường tròn đó."
+    },
+    {
+     "type": "para",
+     "text": "Cung nằm \\textbf{bên trong} góc gọi là \\emph{cung bị chắn}. Soi một góc có phải góc nội tiếp không thì soi đúng hai điều: (1) đỉnh có nằm trên đường tròn không; (2) mỗi cạnh có cắt đường tròn thêm một điểm nữa không."
+    },
+    {
+     "type": "noted",
+     "variant": "example",
+     "text": "\\textbf{Ví dụ 1.} Trong bốn góc ở Hình 1, góc nào là góc nội tiếp của đường tròn $(O)$?\\par\\nopagebreak\\smallskip\\begin{center}\\adjustbox{max width=0.94\\linewidth, max totalheight=3.2cm}{\n\\begin{tikzpicture}[line width=0.8pt, font=\\small]\n  \\draw[ink] (0,0) circle (0.95);\n  \\node[above] at (-0.165,0.9356) {$A$};\n  \\node[left] at (-0.8927,-0.3249) {$B$};\n  \\node[right] at (0.8927,-0.3249) {$C$};\n  \\draw[ink] (-0.165,0.9356) -- (-0.8927,-0.3249);\n  \\draw[ink] (-0.165,0.9356) -- (0.8927,-0.3249);\n  \\fill[ink] (0,0) circle (1.3pt);\n  \\node[below] at (0,0) {$O$};\n  \\node[below, font=\\small] at (0,-1.57) {a)};\n  \\draw[ink] (3.2,0) circle (0.95);\n  \\node[left] at (2.3073,-0.3249) {$M$};\n  \\node[right] at (4.0927,-0.3249) {$N$};\n  \\fill[ink] (3.2,0) circle (1.3pt);\n  \\node[above] at (3.2,0) {$O$};\n  \\draw[ink] (3.2,0) -- (2.3073,-0.3249);\n  \\draw[ink] (3.2,0) -- (4.0927,-0.3249);\n  \\node[below, font=\\small] at (3.2,-1.57) {b)};\n  \\draw[ink] (6.4,0) circle (0.95);\n  \\node[above] at (6.4,1.85) {$E$};\n  \\node[below left] at (5.539,-0.4015) {$P$};\n  \\node[below right] at (7.261,-0.4015) {$Q$};\n  \\draw[ink] (6.4,1.85) -- (5.539,-0.4015);\n  \\draw[ink] (6.4,1.85) -- (7.261,-0.4015);\n  \\node[below, font=\\small] at (6.4,-1.57) {c)};\n  \\draw[ink] (9.6,0) circle (0.95);\n  \\node[above left] at (8.9894,0.7277) {$S$};\n  \\node[below right] at (10.3277,-0.6106) {$T$};\n  \\node[above right] at (10.2106,0.7277) {$U$};\n  \\node[below left] at (8.9894,-0.7277) {$V$};\n  \\draw[ink] (8.9894,0.7277) -- (10.3277,-0.6106);\n  \\draw[ink] (10.2106,0.7277) -- (8.9894,-0.7277);\n  \\node[below right, fill=white, inner sep=1pt] at (9.6,0) {$I$};\n  \\node[below, font=\\small] at (9.6,-1.57) {d)};\n\\end{tikzpicture}\n}\\par\\vspace{2pt}{\\sffamily\\scriptsize\\itshape\\color{muted}Hình 1}\\end{center}\\smallskip {\\sffamily\\bfseries\\color{brand}Lời giải}[[br]]Hình a): góc $\\widehat{BAC}$ có đỉnh $A$ nằm trên đường tròn, hai cạnh chứa hai dây $AB$ và $AC$ nên đây là góc nội tiếp.[[br]]Hình b): góc $\\widehat{MON}$ có đỉnh $O$ là tâm nên là góc ở tâm, không phải góc nội tiếp.[[br]]Hình c): góc $\\widehat{PEQ}$ có đỉnh $E$ nằm ngoài đường tròn nên không phải góc nội tiếp.[[br]]Hình d): góc $\\widehat{SIU}$ có đỉnh $I$ nằm trong đường tròn nên không phải góc nội tiếp.[[br]]Vậy chỉ có góc $\\widehat{BAC}$ ở hình a) là góc nội tiếp."
+    },
+    {
+     "type": "para",
+     "text": "\\textbf{2. Định lí (SGK trang 69)}"
+    },
+    {
+     "type": "para",
+     "text": "Trong một đường tròn, số đo của góc nội tiếp bằng \\textbf{NỬA} số đo của cung bị chắn: $\\widehat{BAC} = \\dfrac{1}{2}\\,\\text{sđ}\\,\\overset{\\frown}{BC}$."
+    },
+    {
+     "type": "para",
+     "text": "$\\bullet$ Chiều ngược lại: $\\text{sđ}\\,\\overset{\\frown}{BC} = 2\\,\\widehat{BAC}$ (nhân đôi, KHÔNG chia đôi thêm lần nữa).[[br]]$\\bullet$ Vì góc ở tâm chắn cung nào thì có số đo bằng cung đó nên \\textbf{góc ở tâm gấp ĐÔI góc nội tiếp cùng chắn một cung}: $\\widehat{BOC} = 2\\,\\widehat{BAC}$."
+    },
+    {
+     "type": "noted",
+     "variant": "example",
+     "text": "\\begin{minipage}[t]{0.58\\linewidth}\\vspace{0pt}\\textbf{Ví dụ 2.} Cho đường tròn $(O)$ có góc ở tâm $\\widehat{BOC} = 120^\\circ$. Lấy điểm $A$ trên cung lớn $BC$. Tính $\\widehat{BAC}$. [[br]]{\\sffamily\\bfseries\\color{brand}Lời giải}[[br]]Vì $\\widehat{BOC}$ là góc ở tâm chắn cung nhỏ $BC$ nên $\\text{sđ}\\,\\overset{\\frown}{BC} = 120^\\circ$.[[br]]$\\widehat{BAC}$ là góc nội tiếp chắn cung nhỏ $BC$.[[br]]Do đó $\\widehat{BAC} = \\dfrac{1}{2}\\,\\text{sđ}\\,\\overset{\\frown}{BC} = \\dfrac{1}{2}\\cdot 120^\\circ = 60^\\circ$.[[br]]Vậy $\\widehat{BAC} = 60^\\circ$.\\end{minipage}\\hfill\\begin{minipage}[t]{0.36\\linewidth}\\vspace{0pt}\n\\centering\n\\adjustbox{max width=\\linewidth, max totalheight=3.4cm}{\n\\begin{tikzpicture}[line width=0.8pt, font=\\small]\n  \\draw[ink] (0,0) circle (1.5);\n  \\node[below left] at (-1.299,-0.75) {$B$};\n  \\node[below right] at (1.299,-0.75) {$C$};\n  \\node[above] at (0,1.5) {$A$};\n  \\fill[ink] (0,0) circle (1.3pt);\n  \\node[above] at (0,0) {$O$};\n  \\draw[ink] (0,0) -- (-1.299,-0.75);\n  \\draw[ink] (0,0) -- (1.299,-0.75);\n  \\draw[ink] (0,1.5) -- (-1.299,-0.75);\n  \\draw[ink] (0,1.5) -- (1.299,-0.75);\n  \\draw[brand, line width=1.6pt] (-1.299,-0.75) arc (210:330:1.5);\n  \\draw[ink] (-0.3464,-0.2) arc (210:330:0.4);\n  \\node[font=\\scriptsize] at (-0,-0.6) {$120^\\circ$};\n\\end{tikzpicture}\n}\n\\par\\vspace{2pt}{\\sffamily\\scriptsize\\itshape\\color{muted}Hình 2}\n\\end{minipage}"
+    },
+    {
+     "type": "para",
+     "text": "\\textbf{3. Hai nhận xét phải thuộc lòng}"
+    },
+    {
+     "type": "para",
+     "text": "$\\bullet$ Các góc nội tiếp \\textbf{cùng chắn một cung} thì \\textbf{bằng nhau}.[[br]]$\\bullet$ \\textbf{Góc nội tiếp chắn nửa đường tròn là góc vuông.} Đề chỉ cần nói \\textquotedblleft $BC$ là đường kính\\textquotedblright{} là em có ngay $\\widehat{BAC} = 90^\\circ$ với mọi điểm $A$ trên đường tròn."
+    },
+    {
+     "type": "noted",
+     "variant": "trap",
+     "text": "\\textbf{Bốn lỗi mất điểm quen thuộc.}[[br]]$\\bullet$ Thấy góc nào có hai cạnh cắt đường tròn là gọi luôn góc nội tiếp — quên soi ĐỈNH.[[br]]$\\bullet$ Quên chia đôi: viết $\\widehat{BAC} = \\text{sđ}\\,\\overset{\\frown}{BC}$.[[br]]$\\bullet$ Biết góc nội tiếp rồi lại chia đôi thêm một lần nữa khi tìm số đo cung.[[br]]$\\bullet$ Lấy nhầm cung LỚN làm cung bị chắn — cung bị chắn là cung nằm BÊN TRONG góc."
+    },
+    {
+     "type": "noted",
+     "variant": "example",
+     "text": "\\begin{minipage}[t]{0.58\\linewidth}\\vspace{0pt}\\textbf{Ví dụ 3.} Cho tam giác $ABC$ nội tiếp đường tròn $(O)$, biết $\\widehat{OAB} = 30^\\circ$ và $\\widehat{OAC} = 40^\\circ$. Tính $\\widehat{BAC}$ và $\\widehat{ACB}$. [[br]]{\\sffamily\\bfseries\\color{brand}Lời giải}[[br]]Vì tia $AO$ nằm giữa hai tia $AB$ và $AC$ nên $\\widehat{BAC} = \\widehat{OAB} + \\widehat{OAC} = 30^\\circ + 40^\\circ = 70^\\circ$.[[br]]Xét tam giác $OAB$ có $OA = OB = R$ nên tam giác $OAB$ cân tại $O$.[[br]]Suy ra $\\widehat{OBA} = \\widehat{OAB} = 30^\\circ$.[[br]]Trong tam giác $OAB$: $\\widehat{AOB} = 180^\\circ - 30^\\circ - 30^\\circ = 120^\\circ$.[[br]]Vì $\\widehat{AOB}$ là góc ở tâm chắn cung nhỏ $AB$ nên $\\text{sđ}\\,\\overset{\\frown}{AB} = 120^\\circ$.[[br]]$\\widehat{ACB}$ là góc nội tiếp chắn cung nhỏ $AB$ nên $\\widehat{ACB} = \\dfrac{1}{2}\\cdot 120^\\circ = 60^\\circ$.[[br]]Vậy $\\widehat{BAC} = 70^\\circ$ và $\\widehat{ACB} = 60^\\circ$.\\end{minipage}\\hfill\\begin{minipage}[t]{0.36\\linewidth}\\vspace{0pt}\n\\centering\n\\adjustbox{max width=\\linewidth, max totalheight=3.4cm}{\n\\begin{tikzpicture}[line width=0.8pt, font=\\small]\n  \\draw[ink] (0,0) circle (1.5);\n  \\node[above] at (-0.2605,1.4772) {$A$};\n  \\node[left] at (-1.4095,-0.513) {$B$};\n  \\node[right] at (1.4489,-0.3882) {$C$};\n  \\fill[ink] (0,0) circle (1.3pt);\n  \\node[below] at (0,0) {$O$};\n  \\draw[ink] (-0.2605,1.4772) -- (-1.4095,-0.513) -- (1.4489,-0.3882) -- (-0.2605,1.4772);\n  \\draw[ink, dashed] (0,0) -- (-0.2605,1.4772);\n  \\draw[ink, dashed] (0,0) -- (-1.4095,-0.513);\n  \\draw[ink, dashed] (0,0) -- (1.4489,-0.3882);\n\\end{tikzpicture}\n}\n\\par\\vspace{2pt}{\\sffamily\\scriptsize\\itshape\\color{muted}Hình 3}\n\\end{minipage}"
+    },
+    {
+     "type": "noted",
+     "variant": "example",
+     "text": "\\begin{minipage}[t]{0.58\\linewidth}\\vspace{0pt}\\textbf{Ví dụ 4.} Cho đường tròn $(O)$ đường kính $BC = 10$ cm. Lấy điểm $A$ thuộc $(O)$ sao cho $AB = 6$ cm. Tính $AC$. [[br]]{\\sffamily\\bfseries\\color{brand}Lời giải}[[br]]$\\widehat{BAC}$ là góc nội tiếp chắn nửa đường tròn đường kính $BC$ nên $\\widehat{BAC} = 90^\\circ$.[[br]]Xét tam giác $ABC$ vuông tại $A$, theo định lí Pythagore:[[br]]$AC^2 = BC^2 - AB^2 = 10^2 - 6^2 = 100 - 36 = 64$.[[br]]Suy ra $AC = \\sqrt{64} = 8$ (cm).[[br]]Vậy $AC = 8$ cm.\\end{minipage}\\hfill\\begin{minipage}[t]{0.36\\linewidth}\\vspace{0pt}\n\\centering\n\\adjustbox{max width=\\linewidth, max totalheight=3.4cm}{\n\\begin{tikzpicture}[line width=0.8pt, font=\\small]\n  \\draw[ink] (0,0) circle (1.5);\n  \\node[left] at (-1.5,0) {$B$};\n  \\node[right] at (1.5,0) {$C$};\n  \\node[above left] at (-0.7042,1.3244) {$A$};\n  \\fill[ink] (0,0) circle (1.3pt);\n  \\node[below] at (0,0) {$O$};\n  \\draw[ink] (-1.5,0) -- (1.5,0);\n  \\draw[ink] (-1.5,0) -- (-0.7042,1.3244) -- (1.5,0);\n  \\draw[ink] (-0.8175,1.1358) -- (-0.6289,1.0225) -- (-0.5156,1.2111);\n  \\node[font=\\scriptsize, fill=white, inner sep=1pt] at (-1.325,0.7961) {$6$};\n  \\node[font=\\scriptsize, fill=white, inner sep=1pt] at (0,0.26) {$10$};\n\\end{tikzpicture}\n}\n\\par\\vspace{2pt}{\\sffamily\\scriptsize\\itshape\\color{muted}Hình 4}\n\\end{minipage}"
+    },
+    {
+     "type": "noted",
+     "variant": "example",
+     "text": "\\begin{minipage}[t]{0.58\\linewidth}\\vspace{0pt}\\textbf{Ví dụ 5.} Cho đường tròn $(O)$, hai dây $AB$ và $CD$ cắt nhau tại $I$ nằm trong đường tròn. Chứng minh $\\widehat{CAB} = \\widehat{CDB}$. [[br]]{\\sffamily\\bfseries\\color{brand}Lời giải}[[br]]Xét đường tròn $(O)$: $\\widehat{CAB}$ là góc nội tiếp chắn cung nhỏ $CB$.[[br]]$\\widehat{CDB}$ cũng là góc nội tiếp chắn cung nhỏ $CB$.[[br]]Hai góc nội tiếp cùng chắn một cung thì bằng nhau.[[br]]Vậy $\\widehat{CAB} = \\widehat{CDB}$.\\end{minipage}\\hfill\\begin{minipage}[t]{0.36\\linewidth}\\vspace{0pt}\n\\centering\n\\adjustbox{max width=\\linewidth, max totalheight=3.4cm}{\n\\begin{tikzpicture}[line width=0.8pt, font=\\small]\n  \\draw[ink] (0,0) circle (1.5);\n  \\node[above left] at (-1.1491,0.9642) {$A$};\n  \\node[below right] at (0.9642,-1.1491) {$B$};\n  \\node[above right] at (1.1491,0.9642) {$C$};\n  \\node[below left] at (-1.2287,-0.8604) {$D$};\n  \\fill[ink] (0,0) circle (1.3pt);\n  \\node[right] at (0,0) {$O$};\n  \\draw[ink] (-1.1491,0.9642) -- (0.9642,-1.1491);\n  \\draw[ink] (1.1491,0.9642) -- (-1.2287,-0.8604);\n  \\node[below right, fill=white, inner sep=1pt] at (-0.1513,-0.0336) {$I$};\n  \\draw[ink] (-1.1491,0.9642) -- (1.1491,0.9642);\n  \\draw[ink] (0.9642,-1.1491) -- (-1.2287,-0.8604);\n\\end{tikzpicture}\n}\n\\par\\vspace{2pt}{\\sffamily\\scriptsize\\itshape\\color{muted}Hình 5}\n\\end{minipage}"
+    },
+    {
+     "type": "noted",
+     "variant": "example",
+     "text": "\\begin{minipage}[t]{0.58\\linewidth}\\vspace{0pt}\\textbf{Ví dụ 6.} Cho đường tròn $(O)$ đường kính $AB$. Lấy điểm $C$ thuộc $(O)$ sao cho $\\widehat{ABC} = 40^\\circ$. Kẻ $CH$ vuông góc với $AB$ tại $H$. \\textbf{a)} Tính $\\widehat{ACB}$ và $\\widehat{BAC}$. \\textbf{b)} Chứng minh $\\widehat{BCH} = \\widehat{BAC}$. [[br]]{\\sffamily\\bfseries\\color{brand}Lời giải}[[br]]\\textbf{a)} $\\widehat{ACB}$ là góc nội tiếp chắn nửa đường tròn đường kính $AB$ nên $\\widehat{ACB} = 90^\\circ$.[[br]]Xét tam giác $ABC$ vuông tại $C$, hai góc nhọn phụ nhau:[[br]]$\\widehat{BAC} = 90^\\circ - \\widehat{ABC} = 90^\\circ - 40^\\circ = 50^\\circ$.[[br]]Vậy $\\widehat{ACB} = 90^\\circ$ và $\\widehat{BAC} = 50^\\circ$.[[br]]\\textbf{b)} Xét tam giác $BCH$ vuông tại $H$, hai góc nhọn phụ nhau:[[br]]$\\widehat{BCH} = 90^\\circ - \\widehat{CBH} = 90^\\circ - 40^\\circ = 50^\\circ$.[[br]]Mà $\\widehat{BAC} = 50^\\circ$ (chứng minh trên).[[br]]Vậy $\\widehat{BCH} = \\widehat{BAC}$.\\end{minipage}\\hfill\\begin{minipage}[t]{0.36\\linewidth}\\vspace{0pt}\n\\centering\n\\adjustbox{max width=\\linewidth, max totalheight=3.4cm}{\n\\begin{tikzpicture}[line width=0.8pt, font=\\small]\n  \\draw[ink] (0,0) circle (1.5);\n  \\node[left] at (-1.5,0) {$A$};\n  \\node[right] at (1.5,0) {$B$};\n  \\node[above left] at (-0.75,1.299) {$C$};\n  \\fill[ink] (0,0) circle (1.3pt);\n  \\node[below] at (0,0) {$O$};\n  \\draw[ink] (-1.5,0) -- (1.5,0);\n  \\draw[ink] (-1.5,0) -- (-0.75,1.299) -- (1.5,0);\n  \\draw[ink] (-0.86,1.1085) -- (-0.6695,0.9985) -- (-0.5595,1.189);\n  \\node[below] at (-0.75,0) {$H$};\n  \\draw[ink] (-0.75,1.299) -- (-0.75,0);\n  \\draw[ink] (-0.75,0.2) -- (-0.55,0.2) -- (-0.55,0);\n\\end{tikzpicture}\n}\n\\par\\vspace{2pt}{\\sffamily\\scriptsize\\itshape\\color{muted}Hình 6}\n\\end{minipage}"
+    },
+    {
+     "type": "noted",
+     "variant": "tip",
+     "text": "\\textbf{Ba câu chép thuộc để vào phòng thi viết ngay.}[[br]]\\quad 1. \\emph{Vì $\\widehat{BAC}$ là góc nội tiếp chắn cung nhỏ $BC$ nên $\\widehat{BAC} = \\dfrac{1}{2}\\,\\text{sđ}\\,\\overset{\\frown}{BC}$.}[[br]]\\quad 2. \\emph{Vì $BC$ là đường kính nên $\\widehat{BAC} = 90^\\circ$ (góc nội tiếp chắn nửa đường tròn).}[[br]]\\quad 3. \\emph{Hai góc $\\widehat{CAB}$ và $\\widehat{CDB}$ là hai góc nội tiếp cùng chắn cung $CB$ nên bằng nhau.}"
+    }
+   ]
+  },
+  {
+   "kind": "practice1",
+   "number": 3,
+   "title": "Luyện tập 1 — Nhận biết",
+   "teacher_note": "Tám bài nhận biết chạy nhanh (mỗi câu ~1 phút vì hình đã vẽ sẵn). Bài 4 và Bài 7 là hai chỗ hay mất điểm nhất: lỗi chia đôi hai lần và lỗi không nêu căn cứ. Bài 8 HS vẽ vào vở, GV đi soi hình.",
+   "blocks": [
+    {
+     "type": "problem",
+     "label": "Bài 1.",
+     "statement": "Quan sát Hình 7. Mỗi góc dưới đây có phải là góc nội tiếp của đường tròn $(O)$ không? Nếu không, chỉ rõ vi phạm điều kiện nào.\\par\\nopagebreak\\smallskip\\begin{center}\\adjustbox{max width=0.80\\linewidth, max totalheight=3.2cm}{\n\\begin{tikzpicture}[line width=0.8pt, font=\\small]\n  \\draw[ink] (0,0) circle (0.95);\n  \\node[above] at (-0.0828,0.9464) {$A$};\n  \\node[left] at (-0.9176,-0.2459) {$B$};\n  \\node[right] at (0.9176,-0.2459) {$C$};\n  \\draw[ink] (-0.0828,0.9464) -- (-0.9176,-0.2459);\n  \\draw[ink] (-0.0828,0.9464) -- (0.9176,-0.2459);\n  \\fill[ink] (0,0) circle (1.3pt);\n  \\node[below] at (0,0) {$O$};\n  \\node[below, font=\\small] at (0,-1.57) {a)};\n  \\draw[ink] (3.2,0) circle (0.95);\n  \\node[left] at (2.2824,-0.2459) {$M$};\n  \\node[right] at (4.1176,-0.2459) {$N$};\n  \\fill[ink] (3.2,0) circle (1.3pt);\n  \\node[above] at (3.2,0) {$O$};\n  \\draw[ink] (3.2,0) -- (2.2824,-0.2459);\n  \\draw[ink] (3.2,0) -- (4.1176,-0.2459);\n  \\node[below, font=\\small] at (3.2,-1.57) {b)};\n  \\draw[ink] (6.4,0) circle (0.95);\n  \\node[above left] at (5.8551,0.7782) {$E$};\n  \\node[below right] at (6.9449,-0.7782) {$F$};\n  \\node[above right] at (7.0718,0.6718) {$G$};\n  \\node[below left] at (5.7282,-0.6718) {$H$};\n  \\draw[ink] (5.8551,0.7782) -- (6.9449,-0.7782);\n  \\draw[ink] (7.0718,0.6718) -- (5.7282,-0.6718);\n  \\node[below right, fill=white, inner sep=1pt] at (6.4,0) {$I$};\n  \\node[below, font=\\small] at (6.4,-1.57) {c)};\n\\end{tikzpicture}\n}\\par\\vspace{2pt}{\\sffamily\\scriptsize\\itshape\\color{muted}Hình 7}\\end{center}\\smallskip a) [NB] Góc $\\widehat{BAC}$ ở hình a).[[br]]b) [NB] Góc $\\widehat{MON}$ ở hình b).[[br]]c) [NB] Góc $\\widehat{EIG}$ ở hình c).",
+     "tier": "onclass",
+     "level": 1,
+     "solution": "a) CÓ. Đỉnh $A$ nằm trên đường tròn, hai cạnh chứa hai dây $AB$, $AC$.[[br]]b) KHÔNG. Đỉnh $O$ là tâm đường tròn nên $\\widehat{MON}$ là góc ở tâm.[[br]]c) KHÔNG. Đỉnh $I$ nằm bên trong đường tròn, không nằm trên đường tròn.",
+     "dang_id": "NB1",
+     "writelines": 0,
+     "figure_given": true
+    },
+    {
+     "type": "problem",
+     "label": "Bài 2.",
+     "statement": "\\par\\nopagebreak\n\\begin{minipage}[t]{0.60\\linewidth}\\vspace{0pt}\nTrên Hình 8, tam giác $ABC$ nội tiếp đường tròn $(O)$. Điền vào chỗ chấm.[[br]]a) [NB] $\\widehat{BAC}$ là góc nội tiếp chắn cung \\ldots\\ldots[[br]]b) [NB] $\\widehat{ABC}$ là góc nội tiếp chắn cung \\ldots\\ldots\n\\end{minipage}\\hfill\n\\begin{minipage}[t]{0.34\\linewidth}\\vspace{0pt}\n\\centering\n\\adjustbox{max width=\\linewidth, max totalheight=2.9cm}{\n\\begin{tikzpicture}[line width=0.8pt, font=\\small]\n  \\draw[ink] (0,0) circle (1.5);\n  \\node[above] at (-0.2605,1.4772) {$A$};\n  \\node[left] at (-1.4095,-0.513) {$B$};\n  \\node[right] at (1.4489,-0.3882) {$C$};\n  \\fill[ink] (0,0) circle (1.3pt);\n  \\node[below] at (0,0) {$O$};\n  \\draw[ink] (-0.2605,1.4772) -- (-1.4095,-0.513) -- (1.4489,-0.3882) -- (-0.2605,1.4772);\n\\end{tikzpicture}\n}\n\\par\\vspace{2pt}{\\sffamily\\scriptsize\\itshape\\color{muted}Hình 8}\n\\end{minipage}",
+     "tier": "onclass",
+     "level": 1,
+     "solution": "a) Cung nhỏ $BC$ (cung nằm bên trong góc $\\widehat{BAC}$).[[br]]b) Cung nhỏ $AC$.",
+     "dang_id": "NB2",
+     "writelines": 0,
+     "figure_given": true
+    },
+    {
+     "type": "problem",
+     "label": "Bài 3.",
+     "statement": "\\par\\nopagebreak\n\\begin{minipage}[t]{0.60\\linewidth}\\vspace{0pt}\nTrên Hình 9, $\\widehat{BAC}$ là góc nội tiếp chắn cung nhỏ $BC$ của đường tròn $(O)$. Tính $\\widehat{BAC}$ trong mỗi trường hợp.[[br]]a) [NB] $\\text{sđ}\\,\\overset{\\frown}{BC} = 80^\\circ$.[[br]]b) [NB] $\\text{sđ}\\,\\overset{\\frown}{BC} = 140^\\circ$.[[br]]c) [NB] $\\text{sđ}\\,\\overset{\\frown}{BC} = 180^\\circ$.\n\\end{minipage}\\hfill\n\\begin{minipage}[t]{0.34\\linewidth}\\vspace{0pt}\n\\centering\n\\adjustbox{max width=\\linewidth, max totalheight=2.9cm}{\n\\begin{tikzpicture}[line width=0.8pt, font=\\small]\n  \\draw[ink] (0,0) circle (1.5);\n  \\node[below left] at (-1.299,-0.75) {$B$};\n  \\node[below right] at (1.299,-0.75) {$C$};\n  \\node[above] at (0,1.5) {$A$};\n  \\fill[ink] (0,0) circle (1.3pt);\n  \\node[above] at (0,0) {$O$};\n  \\draw[ink] (0,0) -- (-1.299,-0.75);\n  \\draw[ink] (0,0) -- (1.299,-0.75);\n  \\draw[ink] (0,1.5) -- (-1.299,-0.75);\n  \\draw[ink] (0,1.5) -- (1.299,-0.75);\n  \\draw[brand, line width=1.6pt] (-1.299,-0.75) arc (210:330:1.5);\n\\end{tikzpicture}\n}\n\\par\\vspace{2pt}{\\sffamily\\scriptsize\\itshape\\color{muted}Hình 9}\n\\end{minipage}",
+     "tier": "onclass",
+     "level": 1,
+     "solution": "a) $\\widehat{BAC} = \\dfrac{1}{2}\\cdot 80^\\circ = 40^\\circ$.[[br]]b) $\\widehat{BAC} = \\dfrac{1}{2}\\cdot 140^\\circ = 70^\\circ$.[[br]]c) $\\widehat{BAC} = \\dfrac{1}{2}\\cdot 180^\\circ = 90^\\circ$ (lúc này $BC$ là đường kính).",
+     "dang_id": "NB3",
+     "writelines": 0,
+     "figure_given": true
+    },
+    {
+     "type": "problem",
+     "label": "Bài 4.",
+     "statement": "Vẫn với góc nội tiếp $\\widehat{BAC}$ chắn cung nhỏ $BC$. Mỗi khẳng định sau đúng hay sai? Sai thì sửa lại cho đúng.[[br]]a) [NB] Nếu $\\widehat{BAC} = 25^\\circ$ thì $\\text{sđ}\\,\\overset{\\frown}{BC} = 12{,}5^\\circ$.[[br]]b) [NB] Nếu $\\widehat{BAC} = 90^\\circ$ thì $BC$ là đường kính của $(O)$.",
+     "tier": "onclass",
+     "level": 1,
+     "solution": "a) SAI. Phải NHÂN ĐÔI: $\\text{sđ}\\,\\overset{\\frown}{BC} = 2\\cdot 25^\\circ = 50^\\circ$. Đây là lỗi chia đôi thêm một lần nữa.[[br]]b) ĐÚNG. Vì $\\text{sđ}\\,\\overset{\\frown}{BC} = 2\\cdot 90^\\circ = 180^\\circ$, tức $BC$ là nửa đường tròn nên $BC$ là đường kính.",
+     "dang_id": "NB4",
+     "writelines": 0,
+     "figure_given": true
+    },
+    {
+     "type": "problem",
+     "label": "Bài 5.",
+     "statement": "Trên Hình 10, $\\widehat{BOC}$ là góc ở tâm và $\\widehat{BAC}$ là góc nội tiếp cùng chắn cung nhỏ $BC$. Dùng thước kẻ nối mỗi dữ kiện ở cột A với kết quả đúng ở cột B.\\par\\nopagebreak\\smallskip\\begin{center}\\adjustbox{max width=0.26\\linewidth, max totalheight=3.2cm}{\n\\begin{tikzpicture}[line width=0.8pt, font=\\small]\n  \\draw[ink] (0,0) circle (1.5);\n  \\node[below left] at (-1.299,-0.75) {$B$};\n  \\node[below right] at (1.299,-0.75) {$C$};\n  \\node[above] at (0,1.5) {$A$};\n  \\fill[ink] (0,0) circle (1.3pt);\n  \\node[above] at (0,0) {$O$};\n  \\draw[ink] (0,0) -- (-1.299,-0.75);\n  \\draw[ink] (0,0) -- (1.299,-0.75);\n  \\draw[ink] (0,1.5) -- (-1.299,-0.75);\n  \\draw[ink] (0,1.5) -- (1.299,-0.75);\n\\end{tikzpicture}\n}\\par\\vspace{2pt}{\\sffamily\\scriptsize\\itshape\\color{muted}Hình 10}\\end{center}\\smallskip \\par\\vspace{2pt}\\begin{tabular}{@{}p{0.40\\linewidth} @{\\hspace{0.14\\linewidth}} p{0.34\\linewidth}@{}}\\textsc{Cột A} & \\textsc{Cột B} \\\\[4pt][NB] $\\widehat{BOC} = 100^\\circ$ & $\\widehat{BAC} = 90^\\circ$ \\\\[6pt][NB] $\\widehat{BAC} = 35^\\circ$ & $\\widehat{BOC} = 70^\\circ$ \\\\[6pt][NB] $\\widehat{BOC} = 180^\\circ$ & $\\widehat{BAC} = 50^\\circ$ \\\\\\end{tabular}",
+     "tier": "onclass",
+     "level": 1,
+     "solution": "$\\widehat{BOC} = 100^\\circ \\to \\widehat{BAC} = 50^\\circ$ (góc nội tiếp bằng nửa góc ở tâm).[[br]]$\\widehat{BAC} = 35^\\circ \\to \\widehat{BOC} = 70^\\circ$.[[br]]$\\widehat{BOC} = 180^\\circ \\to \\widehat{BAC} = 90^\\circ$.",
+     "dang_id": "NB5",
+     "writelines": 0,
+     "figure_given": true
+    },
+    {
+     "type": "problem",
+     "label": "Bài 6.",
+     "statement": "\\par\\nopagebreak\n\\begin{minipage}[t]{0.62\\linewidth}\\vspace{0pt}\nTrên Hình 11, $MN$ là đường kính của đường tròn $(O)$ và $P$ là một điểm thuộc $(O)$ ($P$ khác $M$, $N$).[[br]]a) [NB] Số đo góc $\\widehat{MPN}$ bằng:\\par\\vspace{3pt}\\parbox[t]{0.30\\linewidth}{\\textbf{A.} $45^\\circ$}\\hspace{0.03\\linewidth}\\parbox[t]{0.30\\linewidth}{\\textbf{B.} $60^\\circ$}\\par\\vspace{4pt}\\parbox[t]{0.30\\linewidth}{\\textbf{C.} $90^\\circ$}\\hspace{0.03\\linewidth}\\parbox[t]{0.30\\linewidth}{\\textbf{D.} $180^\\circ$}[[br]]b) [NB] Điền vào chỗ chấm: tam giác $MPN$ vuông tại \\ldots\\ldots, cạnh huyền của nó là \\ldots\\ldots\n\\end{minipage}\\hfill\n\\begin{minipage}[t]{0.32\\linewidth}\\vspace{0pt}\n\\centering\n\\adjustbox{max width=\\linewidth, max totalheight=2.6cm}{\n\\begin{tikzpicture}[line width=0.8pt, font=\\small]\n  \\draw[ink] (0,0) circle (1.5);\n  \\node[left] at (-1.5,0) {$M$};\n  \\node[right] at (1.5,0) {$N$};\n  \\node[above left] at (-0.6339,1.3595) {$P$};\n  \\fill[ink] (0,0) circle (1.3pt);\n  \\node[below] at (0,0) {$O$};\n  \\draw[ink] (-1.5,0) -- (1.5,0);\n  \\draw[ink] (-1.5,0) -- (-0.6339,1.3595) -- (1.5,0);\n  \\draw[ink] (-0.7521,1.1739) -- (-0.5666,1.0557) -- (-0.4484,1.2413);\n\\end{tikzpicture}\n}\n\\par\\vspace{2pt}{\\sffamily\\scriptsize\\itshape\\color{muted}Hình 11}\n\\end{minipage}",
+     "tier": "onclass",
+     "level": 1,
+     "solution": "a) Đáp án \\textbf{C}. $\\widehat{MPN}$ là góc nội tiếp chắn nửa đường tròn đường kính $MN$ nên $\\widehat{MPN} = 90^\\circ$.[[br]]b) Tam giác $MPN$ vuông tại $P$, cạnh huyền là $MN$.",
+     "dang_id": "NB6",
+     "writelines": 0,
+     "figure_given": true
+    },
+    {
+     "type": "problem",
+     "label": "Bài 7.",
+     "statement": "\\par\\nopagebreak\n\\begin{minipage}[t]{0.60\\linewidth}\\vspace{0pt}\nCho đường tròn $(O)$ có $\\widehat{BOC} = 110^\\circ$; điểm $A$ thuộc cung lớn $BC$ (Hình 12). Điền vào chỗ trống để hoàn thành bài giải tính $\\widehat{BAC}$.[[br]]a) [NB] Vì $\\widehat{BOC}$ là góc \\ldots\\ldots chắn cung nhỏ $BC$ nên $\\text{sđ}\\,\\overset{\\frown}{BC} = \\ldots\\ldots$[[br]]b) [NB] Vì $\\widehat{BAC}$ là góc \\ldots\\ldots chắn cung nhỏ $BC$ nên $\\widehat{BAC} = \\dfrac{1}{2}\\cdot \\ldots\\ldots = \\ldots\\ldots$[[br]]Vậy $\\widehat{BAC} = \\ldots\\ldots$\n\\end{minipage}\\hfill\n\\begin{minipage}[t]{0.34\\linewidth}\\vspace{0pt}\n\\centering\n\\adjustbox{max width=\\linewidth, max totalheight=2.9cm}{\n\\begin{tikzpicture}[line width=0.8pt, font=\\small]\n  \\draw[ink] (0,0) circle (1.5);\n  \\node[below left] at (-1.299,-0.75) {$B$};\n  \\node[below right] at (1.299,-0.75) {$C$};\n  \\node[above] at (0,1.5) {$A$};\n  \\fill[ink] (0,0) circle (1.3pt);\n  \\node[above] at (0,0) {$O$};\n  \\draw[ink] (0,0) -- (-1.299,-0.75);\n  \\draw[ink] (0,0) -- (1.299,-0.75);\n  \\draw[ink] (0,1.5) -- (-1.299,-0.75);\n  \\draw[ink] (0,1.5) -- (1.299,-0.75);\n  \\draw[brand, line width=1.6pt] (-1.299,-0.75) arc (210:330:1.5);\n  \\draw[ink] (-0.3464,-0.2) arc (210:330:0.4);\n  \\node[font=\\scriptsize] at (-0,-0.6) {$110^\\circ$};\n\\end{tikzpicture}\n}\n\\par\\vspace{2pt}{\\sffamily\\scriptsize\\itshape\\color{muted}Hình 12}\n\\end{minipage}",
+     "tier": "onclass",
+     "level": 1,
+     "solution": "a) Vì $\\widehat{BOC}$ là góc \\textbf{ở tâm} chắn cung nhỏ $BC$ nên $\\text{sđ}\\,\\overset{\\frown}{BC} = 110^\\circ$.[[br]]b) Vì $\\widehat{BAC}$ là góc \\textbf{nội tiếp} chắn cung nhỏ $BC$ nên $\\widehat{BAC} = \\dfrac{1}{2}\\cdot 110^\\circ = 55^\\circ$.[[br]]Vậy $\\widehat{BAC} = 55^\\circ$.",
+     "dang_id": "NB7",
+     "writelines": 0,
+     "figure_given": true
+    },
+    {
+     "type": "problem",
+     "label": "Bài 8.",
+     "statement": "[NB] Vẽ hình vào vở theo giả thiết sau rồi đánh dấu mọi góc vuông đọc được từ giả thiết: cho đường tròn $(O)$ đường kính $BC$; lấy điểm $A$ thuộc $(O)$ ($A$ khác $B$ và $C$); kẻ $AH$ vuông góc với $BC$ tại $H$.",
+     "tier": "onclass",
+     "level": 1,
+     "solution": "Trên hình có hai góc vuông: $\\widehat{BAC} = 90^\\circ$ (góc nội tiếp chắn nửa đường tròn đường kính $BC$) và $\\widehat{AHB} = \\widehat{AHC} = 90^\\circ$ (do $AH \\perp BC$).",
+     "dang_id": "NB8",
+     "writelines": 0,
+     "draw": true
+    }
+   ]
+  },
+  {
+   "kind": "practice2",
+   "number": 4,
+   "title": "Luyện tập 2 — Thông hiểu \\& Vận dụng",
+   "teacher_note": "Bài 9 bám đúng Ví dụ 1 phần Luyện tập chung SGK trang 78. Bài 12 yêu cầu trình bày như bài thi — chấm chéo tại lớp, trừ điểm chỗ thiếu căn cứ hoặc thiếu câu \\textquotedblleft Vậy\\textquotedblright.",
+   "blocks": [
+    {
+     "type": "problem",
+     "label": "Bài 9.",
+     "statement": "\\par\\nopagebreak\n\\begin{minipage}[t]{0.60\\linewidth}\\vspace{0pt}\nCho tam giác $ABC$ nội tiếp đường tròn $(O)$ (Hình 14), biết $\\widehat{OAB} = 25^\\circ$ và $\\widehat{OAC} = 35^\\circ$.[[br]]a) [TH] Tính $\\widehat{BAC}$.[[br]]b) [TH] Tính $\\widehat{ACB}$.\n\\end{minipage}\\hfill\n\\begin{minipage}[t]{0.34\\linewidth}\\vspace{0pt}\n\\centering\n\\adjustbox{max width=\\linewidth, max totalheight=2.9cm}{\n\\begin{tikzpicture}[line width=0.8pt, font=\\small]\n  \\draw[ink] (0,0) circle (1.5);\n  \\node[above] at (-0.2605,1.4772) {$A$};\n  \\node[left] at (-1.4095,-0.513) {$B$};\n  \\node[right] at (1.4489,-0.3882) {$C$};\n  \\fill[ink] (0,0) circle (1.3pt);\n  \\node[below] at (0,0) {$O$};\n  \\draw[ink] (-0.2605,1.4772) -- (-1.4095,-0.513) -- (1.4489,-0.3882) -- (-0.2605,1.4772);\n  \\draw[ink, dashed] (0,0) -- (-0.2605,1.4772);\n  \\draw[ink, dashed] (0,0) -- (-1.4095,-0.513);\n  \\draw[ink, dashed] (0,0) -- (1.4489,-0.3882);\n\\end{tikzpicture}\n}\n\\par\\vspace{2pt}{\\sffamily\\scriptsize\\itshape\\color{muted}Hình 14}\n\\end{minipage}",
+     "tier": "onclass",
+     "level": 2,
+     "solution": "a) Vì tia $AO$ nằm giữa hai tia $AB$ và $AC$ nên $\\widehat{BAC} = \\widehat{OAB} + \\widehat{OAC} = 25^\\circ + 35^\\circ = 60^\\circ$.[[br]]Vậy $\\widehat{BAC} = 60^\\circ$.[[br]]b) Xét tam giác $OAB$ có $OA = OB = R$ nên tam giác $OAB$ cân tại $O$, suy ra $\\widehat{OBA} = \\widehat{OAB} = 25^\\circ$.[[br]]Trong tam giác $OAB$: $\\widehat{AOB} = 180^\\circ - 25^\\circ - 25^\\circ = 130^\\circ$.[[br]]Vì $\\widehat{AOB}$ là góc ở tâm chắn cung nhỏ $AB$ nên $\\text{sđ}\\,\\overset{\\frown}{AB} = 130^\\circ$.[[br]]$\\widehat{ACB}$ là góc nội tiếp chắn cung nhỏ $AB$ nên $\\widehat{ACB} = \\dfrac{1}{2}\\cdot 130^\\circ = 65^\\circ$.[[br]]Vậy $\\widehat{ACB} = 65^\\circ$.",
+     "dang_id": "TH1",
+     "writelines": 0
+    },
+    {
+     "type": "problem",
+     "label": "Bài 10.",
+     "statement": "\\par\\nopagebreak\n\\begin{minipage}[t]{0.60\\linewidth}\\vspace{0pt}\n[TH] Cho đường tròn $(O)$ đường kính $MN = 13$ cm. Lấy điểm $P$ thuộc $(O)$ sao cho $MP = 5$ cm (Hình 15). Tính $NP$.\n\\end{minipage}\\hfill\n\\begin{minipage}[t]{0.34\\linewidth}\\vspace{0pt}\n\\centering\n\\adjustbox{max width=\\linewidth, max totalheight=2.9cm}{\n\\begin{tikzpicture}[line width=0.8pt, font=\\small]\n  \\draw[ink] (0,0) circle (1.5);\n  \\node[left] at (-1.5,0) {$M$};\n  \\node[right] at (1.5,0) {$N$};\n  \\node[above] at (-0.5619,1.3908) {$P$};\n  \\fill[ink] (0,0) circle (1.3pt);\n  \\node[below] at (0,0) {$O$};\n  \\draw[ink] (-1.5,0) -- (1.5,0);\n  \\draw[ink] (-1.5,0) -- (-0.5619,1.3908) -- (1.5,0);\n  \\draw[ink] (-0.6849,1.2084) -- (-0.5025,1.0854) -- (-0.3795,1.2678);\n  \\node[font=\\scriptsize, fill=white, inner sep=1pt] at (-1.2465,0.8408) {$5$};\n  \\node[font=\\scriptsize, fill=white, inner sep=1pt] at (0,0.26) {$13$};\n\\end{tikzpicture}\n}\n\\par\\vspace{2pt}{\\sffamily\\scriptsize\\itshape\\color{muted}Hình 15}\n\\end{minipage}",
+     "tier": "onclass",
+     "level": 2,
+     "solution": "$\\widehat{MPN}$ là góc nội tiếp chắn nửa đường tròn đường kính $MN$ nên $\\widehat{MPN} = 90^\\circ$.[[br]]Xét tam giác $MPN$ vuông tại $P$, theo định lí Pythagore:[[br]]$NP^2 = MN^2 - MP^2 = 13^2 - 5^2 = 169 - 25 = 144$.[[br]]Suy ra $NP = \\sqrt{144} = 12$ (cm).[[br]]Vậy $NP = 12$ cm.",
+     "dang_id": "TH2",
+     "writelines": 0
+    },
+    {
+     "type": "problem",
+     "label": "Bài 11.",
+     "statement": "\\par\\nopagebreak\n\\begin{minipage}[t]{0.60\\linewidth}\\vspace{0pt}\n[TH] Cho đường tròn $(O)$, hai dây $AB$ và $CD$ cắt nhau tại điểm $I$ nằm trong đường tròn (Hình 16). Chứng minh $\\widehat{DAB} = \\widehat{DCB}$.\n\\end{minipage}\\hfill\n\\begin{minipage}[t]{0.34\\linewidth}\\vspace{0pt}\n\\centering\n\\adjustbox{max width=\\linewidth, max totalheight=2.9cm}{\n\\begin{tikzpicture}[line width=0.8pt, font=\\small]\n  \\draw[ink] (0,0) circle (1.5);\n  \\node[above left] at (-1.1491,0.9642) {$A$};\n  \\node[below right] at (0.9642,-1.1491) {$B$};\n  \\node[above right] at (1.1491,0.9642) {$C$};\n  \\node[below left] at (-1.2287,-0.8604) {$D$};\n  \\fill[ink] (0,0) circle (1.3pt);\n  \\node[right] at (0,0) {$O$};\n  \\draw[ink] (-1.1491,0.9642) -- (0.9642,-1.1491);\n  \\draw[ink] (1.1491,0.9642) -- (-1.2287,-0.8604);\n  \\node[below right, fill=white, inner sep=1pt] at (-0.1513,-0.0336) {$I$};\n  \\draw[ink] (-1.1491,0.9642) -- (1.1491,0.9642);\n  \\draw[ink] (0.9642,-1.1491) -- (-1.2287,-0.8604);\n\\end{tikzpicture}\n}\n\\par\\vspace{2pt}{\\sffamily\\scriptsize\\itshape\\color{muted}Hình 16}\n\\end{minipage}",
+     "tier": "onclass",
+     "level": 2,
+     "solution": "Theo định lí về góc nội tiếp, trong đường tròn $(O)$ ta có:[[br]]$\\widehat{DAB}$ là góc nội tiếp chắn cung nhỏ $DB$.[[br]]$\\widehat{DCB}$ cũng là góc nội tiếp chắn cung nhỏ $DB$.[[br]]Hai góc nội tiếp cùng chắn một cung thì bằng nhau.[[br]]Vậy $\\widehat{DAB} = \\widehat{DCB}$.",
+     "dang_id": "TH3",
+     "writelines": 0
+    },
+    {
+     "type": "problem",
+     "label": "Bài 12.",
+     "statement": "\\par\\nopagebreak\n\\begin{minipage}[t]{0.60\\linewidth}\\vspace{0pt}\n[VD] Cho đường tròn $(O)$ đường kính $AB$. Lấy điểm $C$ thuộc $(O)$ sao cho $\\widehat{ABC} = 35^\\circ$. Kẻ $CH$ vuông góc với $AB$ tại $H$ (Hình 17).[[br]]a) Tính $\\widehat{ACB}$ và $\\widehat{BAC}$.[[br]]b) Tính $\\text{sđ}\\,\\overset{\\frown}{BC}$ (cung nhỏ).[[br]]c) Chứng minh $\\widehat{ACH} = \\widehat{ABC}$.[[br]]Trình bày trọn vẹn như một bài thi: mỗi bước nêu căn cứ trước, kết quả sau, cuối mỗi ý có câu \\textquotedblleft Vậy\\ldots\\textquotedblright\n\\end{minipage}\\hfill\n\\begin{minipage}[t]{0.34\\linewidth}\\vspace{0pt}\n\\centering\n\\adjustbox{max width=\\linewidth, max totalheight=2.9cm}{\n\\begin{tikzpicture}[line width=0.8pt, font=\\small]\n  \\draw[ink] (0,0) circle (1.5);\n  \\node[left] at (-1.5,0) {$A$};\n  \\node[right] at (1.5,0) {$B$};\n  \\node[above left] at (-0.7949,1.2721) {$C$};\n  \\fill[ink] (0,0) circle (1.3pt);\n  \\node[below] at (0,0) {$O$};\n  \\draw[ink] (-1.5,0) -- (1.5,0);\n  \\draw[ink] (-1.5,0) -- (-0.7949,1.2721) -- (1.5,0);\n  \\draw[ink] (-0.9015,1.0797) -- (-0.7091,0.973) -- (-0.6025,1.1654);\n  \\node[below] at (-0.7949,0) {$H$};\n  \\draw[ink] (-0.7949,1.2721) -- (-0.7949,0);\n  \\draw[ink] (-0.7949,0.2) -- (-0.5949,0.2) -- (-0.5949,0);\n\\end{tikzpicture}\n}\n\\par\\vspace{2pt}{\\sffamily\\scriptsize\\itshape\\color{muted}Hình 17}\n\\end{minipage}",
+     "tier": "onclass",
+     "level": 3,
+     "solution": "a) $\\widehat{ACB}$ là góc nội tiếp chắn nửa đường tròn đường kính $AB$ nên $\\widehat{ACB} = 90^\\circ$.[[br]]Xét tam giác $ABC$ vuông tại $C$, hai góc nhọn phụ nhau nên $\\widehat{BAC} = 90^\\circ - 35^\\circ = 55^\\circ$.[[br]]Vậy $\\widehat{ACB} = 90^\\circ$ và $\\widehat{BAC} = 55^\\circ$.[[br]]b) $\\widehat{BAC}$ là góc nội tiếp chắn cung nhỏ $BC$ nên $\\text{sđ}\\,\\overset{\\frown}{BC} = 2\\,\\widehat{BAC} = 2\\cdot 55^\\circ = 110^\\circ$.[[br]]Vậy $\\text{sđ}\\,\\overset{\\frown}{BC} = 110^\\circ$.[[br]]c) Xét tam giác $ACH$ vuông tại $H$, hai góc nhọn phụ nhau nên $\\widehat{ACH} = 90^\\circ - \\widehat{CAH} = 90^\\circ - 55^\\circ = 35^\\circ$.[[br]]Mà $\\widehat{ABC} = 35^\\circ$ theo giả thiết.[[br]]Vậy $\\widehat{ACH} = \\widehat{ABC}$.",
+     "dang_id": "VD1",
+     "writelines": 0,
+     "hints": [
+      "Ý thứ nhất: nhìn thấy \\emph{đường kính} là viết ngay góc vuông.",
+      "Ý cuối: hai tam giác $ACH$ và $ABC$ đều vuông và có chung góc $A$."
+     ]
+    }
+   ]
+  },
+  {
+   "kind": "reflection",
+   "number": 5,
+   "title": "Tổng kết",
+   "teacher_note": "BTVN soạn dôi hơn quỹ 40 phút — GV cắt bớt tuỳ sức lớp, nhưng giữ lại BTVN 7, 11, 12 vì đó là ba khuôn trình bày sẽ dùng lại ở buổi 5 và 6.",
+   "blocks": [
+    {
+     "type": "mindmap",
+     "root": "Góc nội tiếp",
+     "caption": "Điền các ô trống rồi học thuộc",
+     "branches": [
+      {
+       "label": "Nhận dạng",
+       "children": [
+        {
+         "label": "Đỉnh nằm [[blank:2.0cm]] đường tròn",
+         "children": []
+        },
+        {
+         "label": "Hai cạnh chứa hai [[blank:1.6cm]]",
+         "children": []
+        }
+       ]
+      },
+      {
+       "label": "Định lí",
+       "children": [
+        {
+         "label": "$\\widehat{BAC} = \\dfrac{1}{2}\\,$sđ$\\,\\overset{\\frown}{BC}$",
+         "children": []
+        },
+        {
+         "label": "sđ cung $= [[blank:1.2cm]] \\cdot$ góc nội tiếp",
+         "children": []
+        }
+       ]
+      },
+      {
+       "label": "Hai nhận xét",
+       "children": [
+        {
+         "label": "Cùng chắn một cung thì [[blank:2.0cm]]",
+         "children": []
+        },
+        {
+         "label": "Chắn nửa đường tròn thì bằng [[blank:1.4cm]]",
+         "children": []
+        }
+       ]
+      }
+     ],
+     "size": "small"
+    },
+    {
+     "type": "para",
+     "text": "\\textbf{Bài tập về nhà} — làm vào vở, buổi sau nộp."
+    },
+    {
+     "type": "problem",
+     "label": "BTVN~1.",
+     "statement": "Quan sát Hình 18 rồi trả lời: mỗi góc sau có phải là góc nội tiếp của $(O)$ không? Vì sao?\\par\\nopagebreak\\smallskip\\begin{center}\\adjustbox{max width=0.80\\linewidth, max totalheight=3.2cm}{\n\\begin{tikzpicture}[line width=0.8pt, font=\\small]\n  \\draw[ink] (0,0) circle (0.95);\n  \\node[above] at (-0.0828,0.9464) {$A$};\n  \\node[left] at (-0.9176,-0.2459) {$B$};\n  \\node[right] at (0.9176,-0.2459) {$C$};\n  \\draw[ink] (-0.0828,0.9464) -- (-0.9176,-0.2459);\n  \\draw[ink] (-0.0828,0.9464) -- (0.9176,-0.2459);\n  \\fill[ink] (0,0) circle (1.3pt);\n  \\node[below] at (0,0) {$O$};\n  \\node[below, font=\\small] at (0,-1.57) {a)};\n  \\draw[ink] (3.2,0) circle (0.95);\n  \\node[left] at (2.2824,-0.2459) {$M$};\n  \\node[right] at (4.1176,-0.2459) {$N$};\n  \\fill[ink] (3.2,0) circle (1.3pt);\n  \\node[above] at (3.2,0) {$O$};\n  \\draw[ink] (3.2,0) -- (2.2824,-0.2459);\n  \\draw[ink] (3.2,0) -- (4.1176,-0.2459);\n  \\node[below, font=\\small] at (3.2,-1.57) {b)};\n  \\draw[ink] (6.4,0) circle (0.95);\n  \\node[above] at (6.4,1.9) {$E$};\n  \\node[below left] at (5.539,-0.4015) {$P$};\n  \\node[below right] at (7.261,-0.4015) {$Q$};\n  \\draw[ink] (6.4,1.9) -- (5.539,-0.4015);\n  \\draw[ink] (6.4,1.9) -- (7.261,-0.4015);\n  \\node[below, font=\\small] at (6.4,-1.57) {c)};\n\\end{tikzpicture}\n}\\par\\vspace{2pt}{\\sffamily\\scriptsize\\itshape\\color{muted}Hình 18}\\end{center}\\smallskip a) [NB] Góc $\\widehat{BAC}$ ở hình a).[[br]]b) [NB] Góc $\\widehat{MON}$ ở hình b).[[br]]c) [NB] Góc $\\widehat{PEQ}$ ở hình c).",
+     "tier": "btvn",
+     "level": 1,
+     "solution": "a) CÓ — đỉnh $A$ trên đường tròn, hai cạnh chứa hai dây.[[br]]b) KHÔNG — đỉnh $O$ là tâm, đây là góc ở tâm.[[br]]c) KHÔNG — đỉnh $E$ nằm ngoài đường tròn.",
+     "dang_id": "NB1",
+     "writelines": 0,
+     "figure_given": true
+    },
+    {
+     "type": "problem",
+     "label": "BTVN~2.",
+     "statement": "\\par\\nopagebreak\n\\begin{minipage}[t]{0.60\\linewidth}\\vspace{0pt}\nTrên Hình 19, tam giác $ABC$ nội tiếp $(O)$. Điền vào chỗ chấm.[[br]]a) [NB] $\\widehat{ACB}$ là góc nội tiếp chắn cung \\ldots\\ldots[[br]]b) [NB] Góc nội tiếp chắn cung nhỏ $AB$ là góc \\ldots\\ldots[[br]]c) [NB] Góc ở tâm chắn cung nhỏ $AB$ là góc \\ldots\\ldots\n\\end{minipage}\\hfill\n\\begin{minipage}[t]{0.34\\linewidth}\\vspace{0pt}\n\\centering\n\\adjustbox{max width=\\linewidth, max totalheight=2.9cm}{\n\\begin{tikzpicture}[line width=0.8pt, font=\\small]\n  \\draw[ink] (0,0) circle (1.5);\n  \\node[above] at (-0.3882,1.4489) {$A$};\n  \\node[below left] at (-1.299,-0.75) {$B$};\n  \\node[right] at (1.4095,-0.513) {$C$};\n  \\fill[ink] (0,0) circle (1.3pt);\n  \\node[below] at (0,0) {$O$};\n  \\draw[ink] (-0.3882,1.4489) -- (-1.299,-0.75) -- (1.4095,-0.513) -- (-0.3882,1.4489);\n  \\draw[ink, dashed] (0,0) -- (-0.3882,1.4489);\n  \\draw[ink, dashed] (0,0) -- (-1.299,-0.75);\n  \\draw[ink, dashed] (0,0) -- (1.4095,-0.513);\n\\end{tikzpicture}\n}\n\\par\\vspace{2pt}{\\sffamily\\scriptsize\\itshape\\color{muted}Hình 19}\n\\end{minipage}",
+     "tier": "btvn",
+     "level": 1,
+     "solution": "a) Cung nhỏ $AB$.[[br]]b) Góc $\\widehat{ACB}$.[[br]]c) Góc $\\widehat{AOB}$.",
+     "dang_id": "NB2",
+     "writelines": 0,
+     "figure_given": true
+    },
+    {
+     "type": "problem",
+     "label": "BTVN~3.",
+     "statement": "\\par\\nopagebreak\n\\begin{minipage}[t]{0.60\\linewidth}\\vspace{0pt}\nTrên Hình 20, $\\widehat{BAC}$ là góc nội tiếp chắn cung nhỏ $BC$. Tính $\\widehat{BAC}$.[[br]]a) [NB] $\\text{sđ}\\,\\overset{\\frown}{BC} = 60^\\circ$.[[br]]b) [NB] $\\text{sđ}\\,\\overset{\\frown}{BC} = 130^\\circ$.\n\\end{minipage}\\hfill\n\\begin{minipage}[t]{0.34\\linewidth}\\vspace{0pt}\n\\centering\n\\adjustbox{max width=\\linewidth, max totalheight=2.9cm}{\n\\begin{tikzpicture}[line width=0.8pt, font=\\small]\n  \\draw[ink] (0,0) circle (1.5);\n  \\node[below left] at (-1.299,-0.75) {$B$};\n  \\node[below right] at (1.299,-0.75) {$C$};\n  \\node[above] at (0,1.5) {$A$};\n  \\fill[ink] (0,0) circle (1.3pt);\n  \\node[above] at (0,0) {$O$};\n  \\draw[ink] (0,0) -- (-1.299,-0.75);\n  \\draw[ink] (0,0) -- (1.299,-0.75);\n  \\draw[ink] (0,1.5) -- (-1.299,-0.75);\n  \\draw[ink] (0,1.5) -- (1.299,-0.75);\n  \\draw[brand, line width=1.6pt] (-1.299,-0.75) arc (210:330:1.5);\n\\end{tikzpicture}\n}\n\\par\\vspace{2pt}{\\sffamily\\scriptsize\\itshape\\color{muted}Hình 20}\n\\end{minipage}",
+     "tier": "btvn",
+     "level": 1,
+     "solution": "a) $\\widehat{BAC} = 30^\\circ$.[[br]]b) $\\widehat{BAC} = 65^\\circ$.",
+     "dang_id": "NB3",
+     "writelines": 0,
+     "figure_given": true
+    },
+    {
+     "type": "problem",
+     "label": "BTVN~4.",
+     "statement": "Mỗi khẳng định sau đúng hay sai?[[br]]a) [NB] Góc nội tiếp $\\widehat{BAC} = 40^\\circ$ thì $\\text{sđ}\\,\\overset{\\frown}{BC} = 80^\\circ$.[[br]]b) [NB] Góc nội tiếp $\\widehat{BAC} = 60^\\circ$ thì $\\text{sđ}\\,\\overset{\\frown}{BC} = 30^\\circ$.",
+     "tier": "btvn",
+     "level": 1,
+     "solution": "a) ĐÚNG (nhân đôi).[[br]]b) SAI — phải nhân đôi: $\\text{sđ}\\,\\overset{\\frown}{BC} = 120^\\circ$.",
+     "dang_id": "NB4",
+     "writelines": 0,
+     "figure_given": true
+    },
+    {
+     "type": "problem",
+     "label": "BTVN~5.",
+     "statement": "\\par\\nopagebreak\n\\begin{minipage}[t]{0.60\\linewidth}\\vspace{0pt}\nTrên Hình 21, $\\widehat{BOC}$ là góc ở tâm, $\\widehat{BAC}$ là góc nội tiếp cùng chắn cung nhỏ $BC$.[[br]]a) [NB] $\\widehat{BOC} = 140^\\circ$, tính $\\widehat{BAC}$.[[br]]b) [NB] $\\widehat{BAC} = 48^\\circ$, tính $\\widehat{BOC}$.\n\\end{minipage}\\hfill\n\\begin{minipage}[t]{0.34\\linewidth}\\vspace{0pt}\n\\centering\n\\adjustbox{max width=\\linewidth, max totalheight=2.9cm}{\n\\begin{tikzpicture}[line width=0.8pt, font=\\small]\n  \\draw[ink] (0,0) circle (1.5);\n  \\node[below left] at (-1.299,-0.75) {$B$};\n  \\node[below right] at (1.299,-0.75) {$C$};\n  \\node[above] at (0,1.5) {$A$};\n  \\fill[ink] (0,0) circle (1.3pt);\n  \\node[above] at (0,0) {$O$};\n  \\draw[ink] (0,0) -- (-1.299,-0.75);\n  \\draw[ink] (0,0) -- (1.299,-0.75);\n  \\draw[ink] (0,1.5) -- (-1.299,-0.75);\n  \\draw[ink] (0,1.5) -- (1.299,-0.75);\n\\end{tikzpicture}\n}\n\\par\\vspace{2pt}{\\sffamily\\scriptsize\\itshape\\color{muted}Hình 21}\n\\end{minipage}",
+     "tier": "btvn",
+     "level": 1,
+     "solution": "a) $\\widehat{BAC} = 70^\\circ$.[[br]]b) $\\widehat{BOC} = 96^\\circ$.",
+     "dang_id": "NB5",
+     "writelines": 0,
+     "figure_given": true
+    },
+    {
+     "type": "problem",
+     "label": "BTVN~6.",
+     "statement": "\\par\\nopagebreak\n\\begin{minipage}[t]{0.60\\linewidth}\\vspace{0pt}\nTrên Hình 22, $AB$ là đường kính của $(O)$, điểm $C$ thuộc $(O)$.[[br]]a) [NB] Góc $\\widehat{ACB}$ bằng bao nhiêu độ? Vì sao?[[br]]b) [NB] Tam giác $ABC$ vuông tại đỉnh nào?[[br]]c) [NB] Nếu $\\widehat{ABC} = 55^\\circ$ thì $\\widehat{BAC}$ bằng bao nhiêu?\n\\end{minipage}\\hfill\n\\begin{minipage}[t]{0.34\\linewidth}\\vspace{0pt}\n\\centering\n\\adjustbox{max width=\\linewidth, max totalheight=2.9cm}{\n\\begin{tikzpicture}[line width=0.8pt, font=\\small]\n  \\draw[ink] (0,0) circle (1.5);\n  \\node[left] at (-1.5,0) {$A$};\n  \\node[right] at (1.5,0) {$B$};\n  \\node[above left] at (-0.7042,1.3244) {$C$};\n  \\fill[ink] (0,0) circle (1.3pt);\n  \\node[below] at (0,0) {$O$};\n  \\draw[ink] (-1.5,0) -- (1.5,0);\n  \\draw[ink] (-1.5,0) -- (-0.7042,1.3244) -- (1.5,0);\n  \\draw[ink] (-0.8175,1.1358) -- (-0.6289,1.0225) -- (-0.5156,1.2111);\n\\end{tikzpicture}\n}\n\\par\\vspace{2pt}{\\sffamily\\scriptsize\\itshape\\color{muted}Hình 22}\n\\end{minipage}",
+     "tier": "btvn",
+     "level": 1,
+     "solution": "a) $\\widehat{ACB} = 90^\\circ$ vì là góc nội tiếp chắn nửa đường tròn đường kính $AB$.[[br]]b) Vuông tại $C$.[[br]]c) $\\widehat{BAC} = 90^\\circ - 55^\\circ = 35^\\circ$.",
+     "dang_id": "NB6",
+     "writelines": 0,
+     "figure_given": true
+    },
+    {
+     "type": "problem",
+     "label": "BTVN~7.",
+     "statement": "\\par\\nopagebreak\n\\begin{minipage}[t]{0.60\\linewidth}\\vspace{0pt}\nCho đường tròn $(O)$ có $\\widehat{BOC} = 130^\\circ$, điểm $A$ thuộc cung lớn $BC$ (Hình 23). Điền vào chỗ trống để hoàn thành bài giải.[[br]]a) [NB] Vì $\\widehat{BOC}$ là góc ở tâm chắn cung nhỏ $BC$ nên $\\text{sđ}\\,\\overset{\\frown}{BC} = \\ldots\\ldots$[[br]]b) [NB] Vì $\\widehat{BAC}$ là góc nội tiếp chắn cung nhỏ $BC$ nên $\\widehat{BAC} = \\dfrac{1}{2}\\cdot \\ldots\\ldots = \\ldots\\ldots$[[br]]Vậy $\\widehat{BAC} = \\ldots\\ldots$\n\\end{minipage}\\hfill\n\\begin{minipage}[t]{0.34\\linewidth}\\vspace{0pt}\n\\centering\n\\adjustbox{max width=\\linewidth, max totalheight=2.9cm}{\n\\begin{tikzpicture}[line width=0.8pt, font=\\small]\n  \\draw[ink] (0,0) circle (1.5);\n  \\node[below left] at (-1.299,-0.75) {$B$};\n  \\node[below right] at (1.299,-0.75) {$C$};\n  \\node[above] at (0,1.5) {$A$};\n  \\fill[ink] (0,0) circle (1.3pt);\n  \\node[above] at (0,0) {$O$};\n  \\draw[ink] (0,0) -- (-1.299,-0.75);\n  \\draw[ink] (0,0) -- (1.299,-0.75);\n  \\draw[ink] (0,1.5) -- (-1.299,-0.75);\n  \\draw[ink] (0,1.5) -- (1.299,-0.75);\n  \\draw[brand, line width=1.6pt] (-1.299,-0.75) arc (210:330:1.5);\n  \\draw[ink] (-0.3464,-0.2) arc (210:330:0.4);\n  \\node[font=\\scriptsize] at (-0,-0.6) {$130^\\circ$};\n\\end{tikzpicture}\n}\n\\par\\vspace{2pt}{\\sffamily\\scriptsize\\itshape\\color{muted}Hình 23}\n\\end{minipage}",
+     "tier": "btvn",
+     "level": 1,
+     "solution": "a) $\\text{sđ}\\,\\overset{\\frown}{BC} = 130^\\circ$.[[br]]b) $\\widehat{BAC} = \\dfrac{1}{2}\\cdot 130^\\circ = 65^\\circ$.[[br]]Vậy $\\widehat{BAC} = 65^\\circ$.",
+     "dang_id": "NB7",
+     "writelines": 0,
+     "figure_given": true
+    },
+    {
+     "type": "problem",
+     "label": "BTVN~8.",
+     "statement": "[NB] Vẽ hình vào vở theo giả thiết sau rồi ghi giả thiết $-$ kết luận: cho đường tròn $(O)$ đường kính $MN$; lấy điểm $P$ thuộc $(O)$; kẻ $PK$ vuông góc với $MN$ tại $K$. Đánh dấu hai góc vuông trên hình.",
+     "tier": "btvn",
+     "level": 1,
+     "solution": "Hai góc vuông: $\\widehat{MPN} = 90^\\circ$ (góc nội tiếp chắn nửa đường tròn đường kính $MN$) và $\\widehat{PKM} = 90^\\circ$ (do $PK \\perp MN$).",
+     "dang_id": "NB8",
+     "writelines": 0,
+     "draw": true
+    },
+    {
+     "type": "problem",
+     "label": "BTVN~9.",
+     "statement": "\\par\\nopagebreak\n\\begin{minipage}[t]{0.60\\linewidth}\\vspace{0pt}\nCho tam giác $ABC$ nội tiếp $(O)$ (Hình 24), biết $\\widehat{OAB} = 20^\\circ$ và $\\widehat{OAC} = 40^\\circ$.[[br]]a) [TH] Tính $\\widehat{BAC}$.[[br]]b) [TH] Tính $\\widehat{ACB}$.\n\\end{minipage}\\hfill\n\\begin{minipage}[t]{0.34\\linewidth}\\vspace{0pt}\n\\centering\n\\adjustbox{max width=\\linewidth, max totalheight=2.9cm}{\n\\begin{tikzpicture}[line width=0.8pt, font=\\small]\n  \\draw[ink] (0,0) circle (1.5);\n  \\node[above] at (-0.2605,1.4772) {$A$};\n  \\node[below left] at (-1.3595,-0.6339) {$B$};\n  \\node[right] at (1.4095,-0.513) {$C$};\n  \\fill[ink] (0,0) circle (1.3pt);\n  \\node[below] at (0,0) {$O$};\n  \\draw[ink] (-0.2605,1.4772) -- (-1.3595,-0.6339) -- (1.4095,-0.513) -- (-0.2605,1.4772);\n  \\draw[ink, dashed] (0,0) -- (-0.2605,1.4772);\n  \\draw[ink, dashed] (0,0) -- (-1.3595,-0.6339);\n  \\draw[ink, dashed] (0,0) -- (1.4095,-0.513);\n\\end{tikzpicture}\n}\n\\par\\vspace{2pt}{\\sffamily\\scriptsize\\itshape\\color{muted}Hình 24}\n\\end{minipage}",
+     "tier": "btvn",
+     "level": 2,
+     "solution": "a) Vì tia $AO$ nằm giữa hai tia $AB$ và $AC$ nên $\\widehat{BAC} = 20^\\circ + 40^\\circ = 60^\\circ$.[[br]]Vậy $\\widehat{BAC} = 60^\\circ$.[[br]]b) Xét tam giác $OAB$ có $OA = OB = R$ nên cân tại $O$, suy ra $\\widehat{OBA} = 20^\\circ$ và $\\widehat{AOB} = 180^\\circ - 2\\cdot 20^\\circ = 140^\\circ$.[[br]]Vì $\\widehat{AOB}$ là góc ở tâm chắn cung nhỏ $AB$ nên $\\text{sđ}\\,\\overset{\\frown}{AB} = 140^\\circ$.[[br]]$\\widehat{ACB}$ là góc nội tiếp chắn cung nhỏ $AB$ nên $\\widehat{ACB} = \\dfrac{1}{2}\\cdot 140^\\circ = 70^\\circ$.[[br]]Vậy $\\widehat{ACB} = 70^\\circ$.",
+     "dang_id": "TH1",
+     "writelines": 0
+    },
+    {
+     "type": "problem",
+     "label": "BTVN~10.",
+     "statement": "\\par\\nopagebreak\n\\begin{minipage}[t]{0.60\\linewidth}\\vspace{0pt}\n[TH] Cho đường tròn $(O)$ đường kính $BC = 20$ cm. Lấy điểm $A$ thuộc $(O)$ sao cho $AC = 16$ cm (Hình 25). Tính $AB$.\n\\end{minipage}\\hfill\n\\begin{minipage}[t]{0.34\\linewidth}\\vspace{0pt}\n\\centering\n\\adjustbox{max width=\\linewidth, max totalheight=2.9cm}{\n\\begin{tikzpicture}[line width=0.8pt, font=\\small]\n  \\draw[ink] (0,0) circle (1.5);\n  \\node[left] at (-1.5,0) {$B$};\n  \\node[right] at (1.5,0) {$C$};\n  \\node[above left] at (-0.7042,1.3244) {$A$};\n  \\fill[ink] (0,0) circle (1.3pt);\n  \\node[below] at (0,0) {$O$};\n  \\draw[ink] (-1.5,0) -- (1.5,0);\n  \\draw[ink] (-1.5,0) -- (-0.7042,1.3244) -- (1.5,0);\n  \\draw[ink] (-0.8175,1.1358) -- (-0.6289,1.0225) -- (-0.5156,1.2111);\n  \\node[font=\\scriptsize, fill=white, inner sep=1pt] at (0.5318,0.8851) {$16$};\n  \\node[font=\\scriptsize, fill=white, inner sep=1pt] at (0,0.26) {$20$};\n\\end{tikzpicture}\n}\n\\par\\vspace{2pt}{\\sffamily\\scriptsize\\itshape\\color{muted}Hình 25}\n\\end{minipage}",
+     "tier": "btvn",
+     "level": 2,
+     "solution": "$\\widehat{BAC}$ là góc nội tiếp chắn nửa đường tròn đường kính $BC$ nên $\\widehat{BAC} = 90^\\circ$.[[br]]Xét tam giác $ABC$ vuông tại $A$, theo định lí Pythagore:[[br]]$AB^2 = BC^2 - AC^2 = 20^2 - 16^2 = 400 - 256 = 144$.[[br]]Suy ra $AB = \\sqrt{144} = 12$ (cm).[[br]]Vậy $AB = 12$ cm.",
+     "dang_id": "TH2",
+     "writelines": 0
+    },
+    {
+     "type": "problem",
+     "label": "BTVN~11.",
+     "statement": "\\par\\nopagebreak\n\\begin{minipage}[t]{0.60\\linewidth}\\vspace{0pt}\n[TH] Cho đường tròn $(O)$, hai dây $AB$ và $CD$ cắt nhau tại $I$ (Hình 26). Chứng minh $\\widehat{CAB} = \\widehat{CDB}$.\n\\end{minipage}\\hfill\n\\begin{minipage}[t]{0.34\\linewidth}\\vspace{0pt}\n\\centering\n\\adjustbox{max width=\\linewidth, max totalheight=2.9cm}{\n\\begin{tikzpicture}[line width=0.8pt, font=\\small]\n  \\draw[ink] (0,0) circle (1.5);\n  \\node[above left] at (-1.2287,0.8604) {$A$};\n  \\node[below right] at (0.8604,-1.2287) {$B$};\n  \\node[above right] at (1.0607,1.0607) {$C$};\n  \\node[below left] at (-1.1491,-0.9642) {$D$};\n  \\fill[ink] (0,0) circle (1.3pt);\n  \\node[right] at (0,0) {$O$};\n  \\draw[ink] (-1.2287,0.8604) -- (0.8604,-1.2287);\n  \\draw[ink] (1.0607,1.0607) -- (-1.1491,-0.9642);\n  \\node[below right, fill=white, inner sep=1pt] at (-0.2385,-0.1298) {$I$};\n  \\draw[ink] (-1.2287,0.8604) -- (1.0607,1.0607);\n  \\draw[ink] (0.8604,-1.2287) -- (-1.1491,-0.9642);\n\\end{tikzpicture}\n}\n\\par\\vspace{2pt}{\\sffamily\\scriptsize\\itshape\\color{muted}Hình 26}\n\\end{minipage}",
+     "tier": "btvn",
+     "level": 2,
+     "solution": "Theo định lí về góc nội tiếp, trong đường tròn $(O)$ ta có:[[br]]$\\widehat{CAB}$ là góc nội tiếp chắn cung nhỏ $CB$.[[br]]$\\widehat{CDB}$ cũng là góc nội tiếp chắn cung nhỏ $CB$.[[br]]Hai góc nội tiếp cùng chắn một cung thì bằng nhau.[[br]]Vậy $\\widehat{CAB} = \\widehat{CDB}$.",
+     "dang_id": "TH3",
+     "writelines": 0
+    },
+    {
+     "type": "problem",
+     "label": "BTVN~12.",
+     "statement": "\\par\\nopagebreak\n\\begin{minipage}[t]{0.60\\linewidth}\\vspace{0pt}\n[VD] Cho đường tròn $(O)$ đường kính $MN$. Lấy điểm $P$ thuộc $(O)$ sao cho $\\widehat{PMN} = 60^\\circ$. Kẻ $PK$ vuông góc với $MN$ tại $K$ (Hình 27).[[br]]a) Tính $\\widehat{MPN}$ và $\\widehat{PNM}$.[[br]]b) Tính $\\text{sđ}\\,\\overset{\\frown}{PN}$ (cung nhỏ).[[br]]c) Chứng minh $\\widehat{NPK} = \\widehat{PMN}$.\n\\end{minipage}\\hfill\n\\begin{minipage}[t]{0.34\\linewidth}\\vspace{0pt}\n\\centering\n\\adjustbox{max width=\\linewidth, max totalheight=2.9cm}{\n\\begin{tikzpicture}[line width=0.8pt, font=\\small]\n  \\draw[ink] (0,0) circle (1.5);\n  \\node[left] at (-1.5,0) {$M$};\n  \\node[right] at (1.5,0) {$N$};\n  \\node[above right] at (0.7949,1.2721) {$P$};\n  \\fill[ink] (0,0) circle (1.3pt);\n  \\node[below] at (0,0) {$O$};\n  \\draw[ink] (-1.5,0) -- (1.5,0);\n  \\draw[ink] (-1.5,0) -- (0.7949,1.2721) -- (1.5,0);\n  \\draw[ink] (0.6025,1.1654) -- (0.7091,0.973) -- (0.9015,1.0797);\n  \\node[below] at (0.7949,0) {$K$};\n  \\draw[ink] (0.7949,1.2721) -- (0.7949,0);\n  \\draw[ink] (0.7949,0.2) -- (0.9949,0.2) -- (0.9949,0);\n\\end{tikzpicture}\n}\n\\par\\vspace{2pt}{\\sffamily\\scriptsize\\itshape\\color{muted}Hình 27}\n\\end{minipage}",
+     "tier": "btvn",
+     "level": 3,
+     "solution": "a) $\\widehat{MPN}$ là góc nội tiếp chắn nửa đường tròn đường kính $MN$ nên $\\widehat{MPN} = 90^\\circ$.[[br]]Xét tam giác $MPN$ vuông tại $P$, hai góc nhọn phụ nhau nên $\\widehat{PNM} = 90^\\circ - 60^\\circ = 30^\\circ$.[[br]]Vậy $\\widehat{MPN} = 90^\\circ$ và $\\widehat{PNM} = 30^\\circ$.[[br]]b) $\\widehat{PMN}$ là góc nội tiếp chắn cung nhỏ $PN$ nên $\\text{sđ}\\,\\overset{\\frown}{PN} = 2\\cdot 60^\\circ = 120^\\circ$.[[br]]Vậy $\\text{sđ}\\,\\overset{\\frown}{PN} = 120^\\circ$.[[br]]c) Xét tam giác $PKN$ vuông tại $K$, hai góc nhọn phụ nhau nên $\\widehat{NPK} = 90^\\circ - \\widehat{PNK} = 90^\\circ - 30^\\circ = 60^\\circ$.[[br]]Mà $\\widehat{PMN} = 60^\\circ$ theo giả thiết.[[br]]Vậy $\\widehat{NPK} = \\widehat{PMN}$.",
+     "dang_id": "VD1",
+     "writelines": 0
+    }
+   ]
+  }
+ ]
+}

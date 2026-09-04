@@ -65,6 +65,19 @@ class SpecRow(BaseModel):
         "", description="Vai trò giàn giáo: 've-hinh' = vẽ hình từ giả thiết + đánh dấu "
                         "dữ kiện; 'dien-khuyet' = điền khuyết bài giải/chứng minh mẫu"
     )
+    # QUY TRÌNH GIẢI BÀI (Thầy chốt 30/08/2026): mọi dạng VẬN DỤNG — không phải VDC —
+    # phải in sẵn quy trình giải NGAY Ở TỪNG BÀI trong phiếu, chứ không để HS mò.
+    # Khai các bước ở đây; thuyetminh_gate CHẶN dòng band VD của tầng B mà bỏ trống.
+    quy_trinh: list[str] = Field(
+        default_factory=list,
+        description="Các BƯỚC của quy trình giải dạng này, vd ['Bước 1 — đọc giả thiết…', "
+                    "'Bước 2 — chọn hệ thức…']; BẮT BUỘC với dòng band VD (tầng B)",
+    )
+    # Dòng bài tập bắt HS TỰ VIẾT LẠI + GIẢI THÍCH quy trình làm bài (Thầy chốt
+    # 30/08/2026) — bắt buộc có ít nhất một dòng như vậy ở phiếu ÔN TẬP CHƯƠNG.
+    viet_quy_trinh: bool = Field(
+        False, description="Dòng này là bài tập cho HS tự viết lại & giải thích quy trình làm bài"
+    )
 
 
 class SpecPhieu(BaseModel):
@@ -87,6 +100,12 @@ class ThuyetMinhSpec(BaseModel):
     subject: str = Field("dai-so", description="vd dai-so")
     tier: str = Field("C", description="Tầng lớp A/B/C/X")
     tuan: str = Field("", description="vd '10-11'")
+    # CHƯƠNG — bắt buộc với tầng B (Thầy chốt 30/08/2026): tỉ lệ NB-TH-VD của tầng B
+    # KHÔNG còn cố định mà chọn theo chương (chương có bài VD/VDC trong đề thi hay
+    # không). Khai đúng `slug` hoặc `ma` trong config/ban_do_vd_vdc.json; thiếu thì
+    # thuyetminh_gate KHÔNG soi được tỉ lệ và sẽ cảnh báo.
+    chuong: str = Field(
+        "", description="Chương trong ban_do_vd_vdc.json, vd 'chuong-04-he-thuc-luong-tam-giac-vuong' hoặc 'IV'")
     thoiluong: list[str] = Field(
         default_factory=list,
         description="THỜI LƯỢNG đối chiếu SGK/PPCT, vd 'Buổi 1 — Bài 7 + Bài 8: 1 ca'; "

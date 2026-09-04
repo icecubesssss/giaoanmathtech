@@ -1074,7 +1074,8 @@ def cmd_progress(args: argparse.Namespace) -> int:
     return 0
 
 
-def _skeleton(slug: str, title: str, eyebrow: str, grade: str, class_tier: str = "") -> dict:
+def _skeleton(slug: str, title: str, eyebrow: str, grade: str, class_tier: str = "",
+              chuong: str = "") -> dict:
     """Khung 5 chặng map 4 tầng: concept=Ví dụ mẫu, practice1/2=BT trên lớp,
     reflection=BTVN + Bài tập mở rộng. Đánh số bài LIỀN MẠCH cả phiếu khi điền."""
     def stage(kind, number, title, blocks, solution="", note=""):
@@ -1087,6 +1088,9 @@ def _skeleton(slug: str, title: str, eyebrow: str, grade: str, class_tier: str =
         "eyebrow": eyebrow,
         "grade_label": grade,
         "class_tier": class_tier,
+        # Tầng B chọn tỉ lệ NB-TH-VD THEO CHƯƠNG (config/ban_do_vd_vdc.json) — thiếu
+        # trường này thì duration_gate không soi được tỉ lệ lẫn luật gộp phiếu.
+        "chuong": chuong,
         "stages": [
             stage("review", 1, "Khám phá — KTBC / nhịp cầu vào bài", [
                 # MỞ MÀN THỰC TẾ (đặc sản): hook đời thực kéo HS vào bài. Xoá nếu bài
@@ -1173,7 +1177,10 @@ def cmd_new_lesson(args: argparse.Namespace) -> int:
     tier = (getattr(args, "tier", "") or _class_tier(folder.name) or tier_from_path).upper()
     eyebrow = f"CHỦ ĐỀ • {subj_label}".rstrip(" •") if subj_label else "CHỦ ĐỀ"
 
-    skeleton = _skeleton(slug, title, eyebrow, _grade_label(grade), tier)
+    # CHƯƠNG lấy từ đường dẫn seeds (…/chuong-04-…), cho phép --chuong đè.
+    chuong = getattr(args, "chuong", "") or next(
+        (part for part in folder.resolve().parts if part.startswith("chuong-")), "")
+    skeleton = _skeleton(slug, title, eyebrow, _grade_label(grade), tier, chuong)
     out_path.write_text(
         json.dumps(skeleton, ensure_ascii=False, indent=2), encoding="utf-8"
     )
@@ -1267,10 +1274,12 @@ def cmd_new_summary(args: argparse.Namespace) -> int:
     return 0
 
 
-def _thuyetminh_skeleton(slug, title, grade, subject, tier, tuan) -> dict:
+def _thuyetminh_skeleton(slug, title, grade, subject, tier, tuan, chuong="") -> dict:
     """Khung spec: mỗi band 1 dòng TODO, onclass/btvn = SỐ CÂU MỤC TIÊU (tier_spec).
-    Build ngay là ra PDF khung đúng quỹ giờ để Thầy thấy hợp đồng, rồi tách dạng."""
-    tc = target_counts(load_tier_spec(), grade, subject, tier)  # {} nếu tầng chưa có tỉ lệ (X)
+    Build ngay là ra PDF khung đúng quỹ giờ để Thầy thấy hợp đồng, rồi tách dạng.
+
+    `chuong` cần cho tầng B: tỉ lệ NB-TH-VD chọn theo chương (ban_do_vd_vdc.json)."""
+    tc = target_counts(load_tier_spec(), grade, subject, tier, chuong)  # {} nếu chưa có tỉ lệ
     bands = [b for b in ("NB", "TH", "VD", "VDC") if any(tc.get(seg, {}).get(b) for seg in tc)]
     rows = [{
         "dang": f"TODO ({b}) — mô tả dạng + nguồn (Bài … / BTVN …)",
@@ -1286,6 +1295,8 @@ def _thuyetminh_skeleton(slug, title, grade, subject, tier, tuan) -> dict:
     } for b in bands]
     return {
         "slug": slug, "title": title, "grade": grade, "subject": subject, "tier": tier, "tuan": tuan,
+        # CHƯƠNG — tầng B chọn tỉ lệ NB-TH-VD theo chương (config/ban_do_vd_vdc.json).
+        "chuong": chuong,
         # Hai khối này TRƯỚC 19/08/2026 không có trong khung ⇒ phiên làm việc mới không
         # biết mà điền, 70/75 spec trong kho thiếu chúng. Nay khung sinh sẵn + cổng CHẶN.
         "thoiluong": ["TODO: Buổi 1 (Bài …): 1 ca $=$ 90 phút (SGK n tiết)",
@@ -1390,6 +1401,10 @@ def cmd_new_thuyetminh(args: argparse.Namespace) -> int:
         print("✗ Cần --tier A/B/C/X (hoặc folder tiền tố [X]).", file=sys.stderr)
         return 1
     tuan = "-".join(str(n) for n in _week_nums(folder.name))
+    # CHƯƠNG: tầng B chọn tỉ lệ theo chương ⇒ lấy từ đường dẫn seeds (…/chuong-04-…),
+    # cho phép --chuong đè khi cây thư mục không đặt theo chương.
+    chuong = getattr(args, "chuong", "") or next(
+        (part for part in folder.resolve().parts if part.startswith("chuong-")), "")
     topic = _topic_slug(folder.name)
     slug = args.slug or f"thuyet-minh-{topic or folder.name}"
     title = args.title or topic.replace("-", " ").strip().capitalize() or slug
@@ -1398,19 +1413,20 @@ def cmd_new_thuyetminh(args: argparse.Namespace) -> int:
         print(f"✗ Đã tồn tại {out_path} — dùng --force để ghi đè.", file=sys.stderr)
         return 1
     try:
-        skel = _thuyetminh_skeleton(slug, title, grade, subject, tier, tuan)
+        skel = _thuyetminh_skeleton(slug, title, grade, subject, tier, tuan, chuong)
     except KeyError:
         print(f"✗ tier_spec.json chưa có rate card cho {grade}/{subject}/tầng {tier}.", file=sys.stderr)
         return 1
 
     out_path.write_text(json.dumps(skel, ensure_ascii=False, indent=2), encoding="utf-8")
-    tc = target_counts(load_tier_spec(), grade, subject, tier)
+    tc = target_counts(load_tier_spec(), grade, subject, tier, chuong)
     print(f"✓ Khung thuyết minh → {out_path}")
     if tc:
         print("  Mục tiêu số câu (tầng " + tier + "): " + " | ".join(
             f"{seg}: " + " ".join(f"{b}{n}" for b, n in bands.items()) for seg, bands in tc.items()))
     else:
-        print(f"  ⚠ Tầng {tier} chưa chốt tỉ lệ trong tier_spec → khung rỗng (điền tay).")
+        print(f"  ⚠ Tầng {tier} chưa chốt tỉ lệ (tầng B: chương '{chuong or '?'}' chưa có "
+              f"trong config/ban_do_vd_vdc.json hoặc còn để 'bien') → khung rỗng (điền tay).")
     print(f"  Điền dạng/nguồn rồi: build-thuyetminh {out_path}")
     return 0
 
@@ -1518,6 +1534,8 @@ def main(argv: list[str] | None = None) -> int:
     nl.add_argument("--slug", help="Mã bài (mặc định = chủ đề trong tên folder)")
     nl.add_argument("--title", help="Tiêu đề bài (mặc định suy từ chủ đề)")
     nl.add_argument("--tier", choices=["A", "B", "C", "X"], help="Tầng lớp (mặc định suy từ tiền tố [X] của folder)")
+    nl.add_argument("--chuong", default="", help="Slug chương trong config/ban_do_vd_vdc.json "
+                                                "(mặc định lấy từ đường dẫn …/chuong-NN-…); TẦNG B bắt buộc")
     nl.add_argument("--force", action="store_true", help="Ghi đè nếu file đã tồn tại")
     nl.set_defaults(func=cmd_new_lesson)
 
@@ -1533,6 +1551,9 @@ def main(argv: list[str] | None = None) -> int:
     ntm.add_argument("--tier", choices=["A", "B", "C", "X"], help="Tầng lớp (mặc định suy từ tiền tố [X] của folder)")
     ntm.add_argument("--slug", help="Mã spec (mặc định thuyet-minh-<chủ đề>)")
     ntm.add_argument("--title", help="Tiêu đề bài")
+    ntm.add_argument("--chuong", default="", help="Slug chương trong config/ban_do_vd_vdc.json "
+                                                 "(mặc định lấy từ đường dẫn …/chuong-NN-…); "
+                                                 "TẦNG B bắt buộc có để chọn đúng tỉ lệ")
     ntm.add_argument("--force", action="store_true", help="Ghi đè nếu đã tồn tại")
     ntm.set_defaults(func=cmd_new_thuyetminh)
 

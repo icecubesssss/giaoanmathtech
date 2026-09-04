@@ -263,6 +263,13 @@
   boxrule=0.4pt, arc=2pt, top=4pt,bottom=4pt,left=10pt,right=10pt,
   fontupper=\small, before=\vspace{3pt}}
 
+% Hộp QUY TRÌNH GIẢI BÀI — in trên phiếu HS ngay dưới đề bài VẬN DỤNG (Thầy chốt
+% 30/08/2026: "các dạng vận dụng có phần quy trình giải bài trong phiếu từng bài").
+% Khác `hintbox` (gợi ý mở khi bí): đây là CÁC BƯỚC CHUẨN, luôn hiện, để HS bám mà làm.
+\newtcolorbox{quytrinhbox}{enhanced, breakable, colback=stage3!6, colframe=stage3!45,
+  boxrule=0.5pt, arc=3pt, top=4pt,bottom=4pt,left=10pt,right=10pt,
+  fontupper=\small, before=\vspace{3pt}}
+
 % Sơ đồ tư duy điền khuyết — style chung cho forest (nút bo, viền brand, nút gốc nổi).
 \forestset{
   mindmap/.style={

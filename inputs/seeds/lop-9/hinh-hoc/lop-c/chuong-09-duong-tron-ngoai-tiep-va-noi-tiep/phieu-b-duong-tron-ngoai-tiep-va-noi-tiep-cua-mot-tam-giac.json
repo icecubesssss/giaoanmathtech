@@ -1,0 +1,428 @@
+{
+ "slug": "phieu-b-duong-tron-ngoai-tiep-va-noi-tiep-cua-mot-tam-giac",
+ "title": "Bài 28. Đường tròn ngoại tiếp và đường tròn nội tiếp của một tam giác",
+ "eyebrow": "HÌNH HỌC 9 — CHƯƠNG IX · PHIẾU B",
+ "grade_label": "Lớp 9 • Ôn vào 10",
+ "class_tier": "C",
+ "so_ca": 1,
+ "stages": [
+  {
+   "kind": "review",
+   "number": 1,
+   "title": "Khám phá",
+   "teacher_note": "Cho HS thử tự tìm chỗ khoan giếng bằng thước — đa số sẽ lấy \"chính giữa\" theo cảm tính. Đây là cầu nối sang ba đường trung trực đã học ở Lớp 7.",
+   "blocks": [
+    {
+     "type": "opener",
+     "text": "Ba anh em nhà bạn Khoa dựng nhà ở ba vị trí $A$, $B$, $C$ trên một khu đất. Cả ba muốn góp tiền khoan CHUNG một cái giếng sao cho quãng đường từ mỗi nhà ra giếng \\textbf{dài bằng nhau} — không ai phải đi xa hơn ai. [[br]]Chỉ có đúng một chỗ đặt giếng như thế. Em có đoán được nó nằm ở đâu không?",
+     "tikz": "\\begin{tikzpicture}[line width=0.8pt, font=\\small]\n  \\draw[ink] (1.4791,0.7131) circle (1.6421);\n  \\fill[brand] (0.6,2.1) circle (2.2pt);\n  \\fill[brand] (0,0) circle (2.2pt);\n  \\fill[brand] (3.1,0.45) circle (2.2pt);\n  \\node[above, font=\\scriptsize] at (0.6,2.22) {$A$};\n  \\node[below left, font=\\scriptsize] at (-0.1,-0.06) {$B$};\n  \\node[right, font=\\scriptsize] at (3.2,0.45) {$C$};\n  \\fill[ink] (1.4791,0.7131) circle (1.3pt);\n  \\node[below] at (1.4791,0.7131) {$O$};\n  \\draw[ink, dashed] (1.4791,0.7131) -- (0.6,2.1);\n  \\draw[ink, dashed] (1.4791,0.7131) -- (0,0);\n  \\draw[ink, dashed] (1.4791,0.7131) -- (3.1,0.45);\n\\end{tikzpicture}"
+    },
+    {
+     "type": "noted",
+     "variant": "note",
+     "text": "\\textbf{Nhắc lại Lớp 7 — hai loại đường sẽ dùng cả buổi.}[[br]]$\\bullet$ Ba \\textbf{đường trung trực} của tam giác cùng đi qua một điểm; điểm đó \\textbf{cách đều ba ĐỈNH}.[[br]]$\\bullet$ Ba \\textbf{đường phân giác} của tam giác cùng đi qua một điểm; điểm đó \\textbf{cách đều ba CẠNH}.[[br]]$\\bullet$ Định lí Pythagore (Lớp 8): tam giác vuông có $(\\text{cạnh huyền})^2 = (\\text{cạnh góc vuông})^2 + (\\text{cạnh góc vuông})^2$."
+    },
+    {
+     "type": "noted",
+     "variant": "target",
+     "text": "\\textbf{Đích của buổi học.}[[br]]Bài 28 không bao giờ được hỏi thẳng trong đề Vào 10, nhưng \\emph{đường tròn ngoại tiếp tam giác vuông có tâm là trung điểm cạnh huyền} là mắt xích BẮT BUỘC của Câu IV.2 ý a. Buổi 5 sẽ dùng lại câu này liên tục, nên hôm nay phải thuộc đến mức viết ra không cần nghĩ."
+    }
+   ]
+  },
+  {
+   "kind": "concept",
+   "number": 2,
+   "title": "Kiến thức cần nhớ",
+   "teacher_note": "Chốt lý thuyết 3 phút, chữa 6 ví dụ mẫu 20 phút. Ví dụ 3 là khuôn quan trọng nhất cả buổi (tam giác vuông); bắt HS chép nguyên vào vở.",
+   "blocks": [
+    {
+     "type": "para",
+     "text": "\\textbf{1. Đường tròn ngoại tiếp tam giác}"
+    },
+    {
+     "type": "para",
+     "text": "Đường tròn \\textbf{đi qua ba đỉnh} của tam giác gọi là đường tròn \\emph{ngoại tiếp} tam giác đó. Tâm của nó là giao điểm \\textbf{ba đường trung trực} (vì tâm phải cách đều ba đỉnh). Mỗi tam giác có đúng MỘT đường tròn ngoại tiếp."
+    },
+    {
+     "type": "para",
+     "text": "\\textbf{2. Đường tròn nội tiếp tam giác}"
+    },
+    {
+     "type": "para",
+     "text": "Đường tròn \\textbf{tiếp xúc với ba cạnh} của tam giác gọi là đường tròn \\emph{nội tiếp} tam giác đó. Tâm của nó là giao điểm \\textbf{ba đường phân giác} (vì tâm phải cách đều ba cạnh)."
+    },
+    {
+     "type": "noted",
+     "variant": "example",
+     "text": "\\textbf{Ví dụ 1.} Trong Hình 1, cho biết đường tròn nào ngoại tiếp, đường tròn nào nội tiếp tam giác được vẽ cùng nó.\\par\\nopagebreak\\smallskip\\begin{center}\\adjustbox{max width=0.80\\linewidth, max totalheight=3.2cm}{\n\\begin{tikzpicture}[line width=0.8pt, font=\\small]\n  \\draw[ink] (1.5,0.5061) circle (1.5831);\n  \\node[above] at (1.15,2.05) {$A$};\n  \\node[below left] at (0,0) {$B$};\n  \\node[below right] at (3,0) {$C$};\n  \\draw[ink] (1.15,2.05) -- (0,0) -- (3,0) -- (1.15,2.05);\n  \\fill[ink] (1.5,0.5061) circle (1.3pt);\n  \\node[below right] at (1.5,0.5061) {$O$};\n  \\node[below, font=\\small] at (1.5,-1.25) {a)};\n  \\draw[ink] (5.8946,0.7581) circle (0.7581);\n  \\node[above] at (5.75,2.05) {$M$};\n  \\node[below left] at (4.6,0) {$N$};\n  \\node[below right] at (7.6,0) {$P$};\n  \\draw[ink] (5.75,2.05) -- (4.6,0) -- (7.6,0) -- (5.75,2.05);\n  \\fill[ink] (5.8946,0.7581) circle (1.3pt);\n  \\node[below] at (5.8946,0.7581) {$I$};\n  \\node[below, font=\\small] at (6.1,-1.25) {b)};\n\\end{tikzpicture}\n}\\par\\vspace{2pt}{\\sffamily\\scriptsize\\itshape\\color{muted}Hình 1}\\end{center}\\smallskip {\\sffamily\\bfseries\\color{brand}Lời giải}[[br]]Hình a): đường tròn $(O)$ đi qua ba đỉnh $A$, $B$, $C$ nên $(O)$ là đường tròn ngoại tiếp tam giác $ABC$; tâm $O$ cách đều ba đỉnh.[[br]]Hình b): đường tròn $(I)$ tiếp xúc với ba cạnh $MN$, $NP$, $PM$ nên $(I)$ là đường tròn nội tiếp tam giác $MNP$; tâm $I$ cách đều ba cạnh.[[br]]Vậy $(O)$ ngoại tiếp tam giác $ABC$ còn $(I)$ nội tiếp tam giác $MNP$."
+    },
+    {
+     "type": "para",
+     "text": "\\textbf{3. Hai trường hợp đặc biệt phải thuộc lòng}"
+    },
+    {
+     "type": "para",
+     "text": "$\\bullet$ \\textbf{Tam giác vuông}: tâm đường tròn ngoại tiếp là \\textbf{TRUNG ĐIỂM CẠNH HUYỀN}, bán kính $R = \\dfrac{1}{2}$ cạnh huyền. (Đúng theo Bài 27: cạnh huyền là đường kính thì góc nội tiếp chắn nó bằng $90^\\circ$.)[[br]]$\\bullet$ \\textbf{Tam giác đều cạnh $a$}: cả hai đường tròn có chung tâm là trọng tâm, $R = \\dfrac{\\sqrt3}{3}a$ và $r = \\dfrac{\\sqrt3}{6}a$; do đó $r = \\dfrac{R}{2}$."
+    },
+    {
+     "type": "noted",
+     "variant": "example",
+     "text": "\\textbf{Ví dụ 2.} Cho tam giác $ABC$ và tam giác $MNP$ ở Hình 2. Điểm $O$ là giao của ba đường nào? Điểm $I$ là giao của ba đường nào?\\par\\nopagebreak\\smallskip\\begin{center}\\adjustbox{max width=0.80\\linewidth, max totalheight=3.2cm}{\n\\begin{tikzpicture}[line width=0.8pt, font=\\small]\n  \\draw[ink] (1.5,0.5061) circle (1.5831);\n  \\node[above] at (1.15,2.05) {$A$};\n  \\node[below left] at (0,0) {$B$};\n  \\node[below right] at (3,0) {$C$};\n  \\draw[ink] (1.15,2.05) -- (0,0) -- (3,0) -- (1.15,2.05);\n  \\fill[ink] (1.5,0.5061) circle (1.3pt);\n  \\node[below right] at (1.5,0.5061) {$O$};\n  \\node[below, font=\\small] at (1.5,-1.25) {a)};\n  \\draw[ink] (5.8946,0.7581) circle (0.7581);\n  \\node[above] at (5.75,2.05) {$M$};\n  \\node[below left] at (4.6,0) {$N$};\n  \\node[below right] at (7.6,0) {$P$};\n  \\draw[ink] (5.75,2.05) -- (4.6,0) -- (7.6,0) -- (5.75,2.05);\n  \\fill[ink] (5.8946,0.7581) circle (1.3pt);\n  \\node[below] at (5.8946,0.7581) {$I$};\n  \\node[below, font=\\small] at (6.1,-1.25) {b)};\n\\end{tikzpicture}\n}\\par\\vspace{2pt}{\\sffamily\\scriptsize\\itshape\\color{muted}Hình 2}\\end{center}\\smallskip {\\sffamily\\bfseries\\color{brand}Lời giải}[[br]]Hình a): $(O)$ ngoại tiếp tam giác $ABC$ nên $O$ cách đều ba đỉnh $A$, $B$, $C$.[[br]]Điểm cách đều hai đầu mút một đoạn thẳng thì nằm trên đường trung trực của đoạn đó, nên $O$ là giao điểm của ba đường trung trực.[[br]]Hình b): $(I)$ nội tiếp tam giác $MNP$ nên $I$ cách đều ba cạnh.[[br]]Điểm cách đều hai cạnh của một góc thì nằm trên tia phân giác của góc đó, nên $I$ là giao điểm của ba đường phân giác.[[br]]Vậy $O$ là giao ba đường trung trực, $I$ là giao ba đường phân giác."
+    },
+    {
+     "type": "noted",
+     "variant": "trap",
+     "text": "\\textbf{Ba lỗi mất điểm quen thuộc.}[[br]]$\\bullet$ Nhầm tâm NGOẠI tiếp (giao ba \\emph{trung trực}) với tâm NỘI tiếp (giao ba \\emph{phân giác}); hoặc nói bừa là trọng tâm.[[br]]$\\bullet$ Với tam giác vuông thì lấy $R$ bằng CẢ cạnh huyền chứ không phải NỬA cạnh huyền; hoặc quên tính cạnh huyền bằng Pythagore trước.[[br]]$\\bullet$ Đem hai công thức $R = \\dfrac{\\sqrt3}{3}a$, $r = \\dfrac{\\sqrt3}{6}a$ áp cho tam giác THƯỜNG — hai công thức đó chỉ đúng cho tam giác ĐỀU."
+    },
+    {
+     "type": "noted",
+     "variant": "example",
+     "text": "\\begin{minipage}[t]{0.58\\linewidth}\\vspace{0pt}\\textbf{Ví dụ 3.} Cho tam giác $ABC$ vuông tại $A$ có $AB = 6$ cm, $AC = 8$ cm (Hình 3). Xác định tâm và tính bán kính đường tròn ngoại tiếp tam giác $ABC$. [[br]]{\\sffamily\\bfseries\\color{brand}Lời giải}[[br]]Xét tam giác $ABC$ vuông tại $A$, theo định lí Pythagore:[[br]]$BC^2 = AB^2 + AC^2 = 6^2 + 8^2 = 36 + 64 = 100$.[[br]]Suy ra $BC = \\sqrt{100} = 10$ (cm).[[br]]Vì tam giác $ABC$ vuông tại $A$ nên tâm đường tròn ngoại tiếp là trung điểm $O$ của cạnh huyền $BC$.[[br]]Bán kính $R = \\dfrac{BC}{2} = \\dfrac{10}{2} = 5$ (cm).[[br]]Vậy tâm là trung điểm $BC$ và $R = 5$ cm.\\end{minipage}\\hfill\\begin{minipage}[t]{0.36\\linewidth}\\vspace{0pt}\n\\centering\n\\adjustbox{max width=\\linewidth, max totalheight=3.4cm}{\n\\begin{tikzpicture}[line width=0.8pt, font=\\small]\n  \\draw[ink] (1.65,1.2375) circle (2.0625);\n  \\node[below left] at (0,0) {$A$};\n  \\node[above left] at (0,2.475) {$B$};\n  \\node[below right] at (3.3,0) {$C$};\n  \\draw[ink] (0,0) -- (0,2.475) -- (3.3,0) -- (0,0);\n  \\fill[ink] (1.65,1.2375) circle (1.3pt);\n  \\node[above right] at (1.65,1.2375) {$O$};\n  \\draw[ink] (0,0.22) -- (0.22,0.22) -- (0.22,0);\n  \\draw[ink, dashed] (1.65,1.2375) -- (0,0);\n  \\node[font=\\scriptsize, fill=white, inner sep=1pt] at (-0.26,1.2375) {$6$};\n  \\node[font=\\scriptsize, fill=white, inner sep=1pt] at (1.65,-0.26) {$8$};\n\\end{tikzpicture}\n}\n\\par\\vspace{2pt}{\\sffamily\\scriptsize\\itshape\\color{muted}Hình 3}\n\\end{minipage}"
+    },
+    {
+     "type": "noted",
+     "variant": "example",
+     "text": "\\begin{minipage}[t]{0.58\\linewidth}\\vspace{0pt}\\textbf{Ví dụ 4.} Cho tam giác đều $ABC$ cạnh $a = 3$ cm (Hình 4). \\textbf{a)} Tính bán kính $R$ của đường tròn ngoại tiếp và bán kính $r$ của đường tròn nội tiếp tam giác đó. \\textbf{b)} Một tam giác đều khác có đường tròn ngoại tiếp bán kính $R = 2\\sqrt3$ cm. Tính cạnh của tam giác đó. [[br]]{\\sffamily\\bfseries\\color{brand}Lời giải}[[br]]\\textbf{a)} Vì tam giác $ABC$ đều cạnh $a = 3$ cm nên:[[br]]$R = \\dfrac{\\sqrt3}{3}a = \\dfrac{\\sqrt3}{3}\\cdot 3 = \\sqrt3$ (cm).[[br]]$r = \\dfrac{\\sqrt3}{6}a = \\dfrac{\\sqrt3}{6}\\cdot 3 = \\dfrac{\\sqrt3}{2}$ (cm).[[br]]Vậy $R = \\sqrt3$ cm và $r = \\dfrac{\\sqrt3}{2}$ cm.[[br]]\\textbf{b)} Áp dụng công thức $R = \\dfrac{\\sqrt3}{3}a$ cho tam giác đều cạnh $a$, ta có $a = \\dfrac{3R}{\\sqrt3} = R\\sqrt3$.[[br]]Do đó $a = 2\\sqrt3 \\cdot \\sqrt3 = 2\\cdot 3 = 6$ (cm).[[br]]Vậy cạnh của tam giác đều đó bằng $6$ cm.\\end{minipage}\\hfill\\begin{minipage}[t]{0.36\\linewidth}\\vspace{0pt}\n\\centering\n\\adjustbox{max width=\\linewidth, max totalheight=3.4cm}{\n\\begin{tikzpicture}[line width=0.8pt, font=\\small]\n  \\draw[ink] (1.3,0.7506) circle (1.5011);\n  \\node[above] at (1.3,2.2517) {$A$};\n  \\node[below left] at (0,0) {$B$};\n  \\node[below right] at (2.6,0) {$C$};\n  \\draw[ink] (1.3,2.2517) -- (0,0) -- (2.6,0) -- (1.3,2.2517);\n  \\fill[ink] (1.3,0.7506) circle (1.3pt);\n  \\node[right] at (1.3,0.7506) {$O$};\n  \\draw[ink] (1.3,0.7506) circle (0.7506);\n  \\draw[ink, dashed] (1.3,0.7506) -- (1.3,0);\n  \\node[right, font=\\scriptsize] at (1.46,0.3753) {$r$};\n  \\draw[ink, dashed] (1.3,0.7506) -- (1.3,2.2517);\n  \\node[left, font=\\scriptsize] at (1.14,1.5011) {$R$};\n\\end{tikzpicture}\n}\n\\par\\vspace{2pt}{\\sffamily\\scriptsize\\itshape\\color{muted}Hình 4}\n\\end{minipage}"
+    },
+    {
+     "type": "noted",
+     "variant": "example",
+     "text": "\\begin{minipage}[t]{0.58\\linewidth}\\vspace{0pt}\\textbf{Ví dụ 5.} Ba ngôi nhà $A$, $B$, $C$ không thẳng hàng. Người ta muốn khoan một giếng nước cách đều cả ba ngôi nhà (Hình 5). Hãy chỉ ra vị trí khoan giếng. [[br]]{\\sffamily\\bfseries\\color{brand}Lời giải}[[br]]Gọi $O$ là vị trí khoan giếng, khi đó $OA = OB = OC$.[[br]]Vì $OA = OB$ nên $O$ nằm trên đường trung trực của đoạn $AB$.[[br]]Vì $OB = OC$ nên $O$ nằm trên đường trung trực của đoạn $BC$.[[br]]Do đó $O$ là giao điểm hai đường trung trực của $AB$ và $BC$, tức là tâm đường tròn ngoại tiếp tam giác $ABC$.[[br]]Vậy phải khoan giếng tại tâm đường tròn ngoại tiếp tam giác $ABC$.\\end{minipage}\\hfill\\begin{minipage}[t]{0.36\\linewidth}\\vspace{0pt}\n\\centering\n\\adjustbox{max width=\\linewidth, max totalheight=3.4cm}{\n\\begin{tikzpicture}[line width=0.8pt, font=\\small]\n  \\draw[ink] (1.4791,0.7131) circle (1.6421);\n  \\fill[brand] (0.6,2.1) circle (2.2pt);\n  \\fill[brand] (0,0) circle (2.2pt);\n  \\fill[brand] (3.1,0.45) circle (2.2pt);\n  \\node[above, font=\\scriptsize] at (0.6,2.22) {$A$};\n  \\node[below left, font=\\scriptsize] at (-0.1,-0.06) {$B$};\n  \\node[right, font=\\scriptsize] at (3.2,0.45) {$C$};\n  \\fill[ink] (1.4791,0.7131) circle (1.3pt);\n  \\node[below] at (1.4791,0.7131) {$O$};\n  \\draw[ink, dashed] (1.4791,0.7131) -- (0.6,2.1);\n  \\draw[ink, dashed] (1.4791,0.7131) -- (0,0);\n  \\draw[ink, dashed] (1.4791,0.7131) -- (3.1,0.45);\n\\end{tikzpicture}\n}\n\\par\\vspace{2pt}{\\sffamily\\scriptsize\\itshape\\color{muted}Hình 5}\n\\end{minipage}"
+    },
+    {
+     "type": "noted",
+     "variant": "example",
+     "text": "\\begin{minipage}[t]{0.58\\linewidth}\\vspace{0pt}\\textbf{Ví dụ 6.} Cho tam giác $ABC$ vuông tại $A$ có $AB = 9$ cm, $AC = 12$ cm (Hình 6). \\textbf{a)} Tính $BC$ và bán kính $R$ của đường tròn ngoại tiếp tam giác $ABC$. \\textbf{b)} Gọi $M$ là trung điểm của $AC$. Điểm $M$ nằm trong hay nằm ngoài đường tròn ngoại tiếp tam giác $ABC$? [[br]]{\\sffamily\\bfseries\\color{brand}Lời giải}[[br]]\\textbf{a)} Xét tam giác $ABC$ vuông tại $A$, theo định lí Pythagore:[[br]]$BC^2 = AB^2 + AC^2 = 9^2 + 12^2 = 81 + 144 = 225$.[[br]]Suy ra $BC = \\sqrt{225} = 15$ (cm).[[br]]Vì tam giác $ABC$ vuông tại $A$ nên tâm đường tròn ngoại tiếp là trung điểm $O$ của $BC$ và $R = \\dfrac{BC}{2} = \\dfrac{15}{2} = 7{,}5$ (cm).[[br]]Vậy $BC = 15$ cm và $R = 7{,}5$ cm.[[br]]\\textbf{b)} Xét tam giác $ABC$ có $O$ là trung điểm $BC$, $M$ là trung điểm $AC$ nên $OM$ là đường trung bình của tam giác $ABC$.[[br]]Do đó $OM = \\dfrac{AB}{2} = \\dfrac{9}{2} = 4{,}5$ (cm).[[br]]Vì $OM = 4{,}5 < R = 7{,}5$ nên điểm $M$ nằm trong đường tròn $(O)$.[[br]]Vậy $M$ nằm trong đường tròn ngoại tiếp tam giác $ABC$.\\end{minipage}\\hfill\\begin{minipage}[t]{0.36\\linewidth}\\vspace{0pt}\n\\centering\n\\adjustbox{max width=\\linewidth, max totalheight=3.4cm}{\n\\begin{tikzpicture}[line width=0.8pt, font=\\small]\n  \\draw[ink] (1.65,1.2375) circle (2.0625);\n  \\node[below left] at (0,0) {$A$};\n  \\node[above left] at (0,2.475) {$B$};\n  \\node[below right] at (3.3,0) {$C$};\n  \\draw[ink] (0,0) -- (0,2.475) -- (3.3,0) -- (0,0);\n  \\fill[ink] (1.65,1.2375) circle (1.3pt);\n  \\node[above right] at (1.65,1.2375) {$O$};\n  \\draw[ink] (0,0.22) -- (0.22,0.22) -- (0.22,0);\n  \\draw[ink, dashed] (1.65,1.2375) -- (0,0);\n  \\node[font=\\scriptsize, fill=white, inner sep=1pt] at (-0.26,1.2375) {$9$};\n  \\node[font=\\scriptsize, fill=white, inner sep=1pt] at (1.65,-0.26) {$12$};\n\\end{tikzpicture}\n}\n\\par\\vspace{2pt}{\\sffamily\\scriptsize\\itshape\\color{muted}Hình 6}\n\\end{minipage}"
+    }
+   ]
+  },
+  {
+   "kind": "practice1",
+   "number": 3,
+   "title": "Luyện tập 1 — Nhận biết",
+   "teacher_note": "Bảy bài nhận biết chạy nhanh vì hình đã vẽ sẵn. Bài 2 ý c) là chỗ HS hay sai nhất: tâm ngoại tiếp KHÔNG phải lúc nào cũng nằm trong tam giác.",
+   "blocks": [
+    {
+     "type": "problem",
+     "label": "Bài 1.",
+     "statement": "Quan sát Hình 7 rồi trả lời.\\par\\nopagebreak\\smallskip\\begin{center}\\adjustbox{max width=0.76\\linewidth, max totalheight=3.2cm}{\n\\begin{tikzpicture}[line width=0.8pt, font=\\small]\n  \\draw[ink] (1.5,0.5061) circle (1.5831);\n  \\node[above] at (1.15,2.05) {$A$};\n  \\node[below left] at (0,0) {$B$};\n  \\node[below right] at (3,0) {$C$};\n  \\draw[ink] (1.15,2.05) -- (0,0) -- (3,0) -- (1.15,2.05);\n  \\fill[ink] (1.5,0.5061) circle (1.3pt);\n  \\node[below right] at (1.5,0.5061) {$O$};\n  \\node[below, font=\\small] at (1.5,-1.25) {a)};\n  \\draw[ink] (5.8946,0.7581) circle (0.7581);\n  \\node[above] at (5.75,2.05) {$M$};\n  \\node[below left] at (4.6,0) {$N$};\n  \\node[below right] at (7.6,0) {$P$};\n  \\draw[ink] (5.75,2.05) -- (4.6,0) -- (7.6,0) -- (5.75,2.05);\n  \\fill[ink] (5.8946,0.7581) circle (1.3pt);\n  \\node[below] at (5.8946,0.7581) {$I$};\n  \\node[below, font=\\small] at (6.1,-1.25) {b)};\n\\end{tikzpicture}\n}\\par\\vspace{2pt}{\\sffamily\\scriptsize\\itshape\\color{muted}Hình 7}\\end{center}\\smallskip a) [NB] Đường tròn $(O)$ ở hình a) là đường tròn ngoại tiếp hay nội tiếp tam giác $ABC$? Vì sao?[[br]]b) [NB] Đường tròn $(I)$ ở hình b) là đường tròn ngoại tiếp hay nội tiếp tam giác $MNP$? Vì sao?[[br]]c) [NB] Điền vào chỗ chấm: điểm $O$ cách đều ba \\ldots\\ldots của tam giác $ABC$, còn điểm $I$ cách đều ba \\ldots\\ldots của tam giác $MNP$.",
+     "tier": "onclass",
+     "level": 1,
+     "solution": "a) $(O)$ là đường tròn NGOẠI tiếp vì nó đi qua ba đỉnh $A$, $B$, $C$.[[br]]b) $(I)$ là đường tròn NỘI tiếp vì nó tiếp xúc với ba cạnh của tam giác $MNP$.[[br]]c) $O$ cách đều ba ĐỈNH; $I$ cách đều ba CẠNH.",
+     "dang_id": "NB1",
+     "writelines": 0,
+     "figure_given": true
+    },
+    {
+     "type": "problem",
+     "label": "Bài 2.",
+     "statement": "Gọi đúng tên ba đường đồng quy.[[br]]a) [NB] Tâm đường tròn ngoại tiếp một tam giác là giao điểm của:\\par\\vspace{3pt}\\parbox[t]{0.44\\linewidth}{\\textbf{A.} ba đường cao}\\hspace{0.03\\linewidth}\\parbox[t]{0.44\\linewidth}{\\textbf{B.} ba đường trung tuyến}\\par\\vspace{4pt}\\parbox[t]{0.44\\linewidth}{\\textbf{C.} ba đường trung trực}\\hspace{0.03\\linewidth}\\parbox[t]{0.44\\linewidth}{\\textbf{D.} ba đường phân giác}[[br]]b) [NB] Điền vào chỗ chấm: tâm đường tròn nội tiếp một tam giác là giao điểm của ba đường \\ldots\\ldots của tam giác đó.[[br]]c) [NB] Đúng hay sai: \\emph{tâm đường tròn ngoại tiếp một tam giác luôn nằm bên trong tam giác đó}.",
+     "tier": "onclass",
+     "level": 1,
+     "solution": "a) Đáp án \\textbf{C}. Tâm cách đều ba đỉnh nên nằm trên cả ba đường trung trực.[[br]]b) Ba đường PHÂN GIÁC.[[br]]c) SAI. Với tam giác tù, tâm đường tròn ngoại tiếp nằm ngoài tam giác; với tam giác vuông, tâm nằm trên cạnh huyền.",
+     "dang_id": "NB2",
+     "writelines": 0,
+     "figure_given": true
+    },
+    {
+     "type": "problem",
+     "label": "Bài 3.",
+     "statement": "\\par\\nopagebreak\n\\begin{minipage}[t]{0.60\\linewidth}\\vspace{0pt}\nCho tam giác $ABC$ vuông tại $A$ (Hình 8). Điền vào chỗ chấm.[[br]]a) [NB] Cạnh huyền của tam giác $ABC$ là \\ldots\\ldots[[br]]b) [NB] Tâm đường tròn ngoại tiếp tam giác $ABC$ là \\ldots\\ldots của cạnh $BC$.[[br]]c) [NB] Nếu $BC = 26$ cm thì $R = \\ldots\\ldots$ cm.\n\\end{minipage}\\hfill\n\\begin{minipage}[t]{0.34\\linewidth}\\vspace{0pt}\n\\centering\n\\adjustbox{max width=\\linewidth, max totalheight=2.9cm}{\n\\begin{tikzpicture}[line width=0.8pt, font=\\small]\n  \\draw[ink] (1.65,1.2375) circle (2.0625);\n  \\node[below left] at (0,0) {$A$};\n  \\node[above left] at (0,2.475) {$B$};\n  \\node[below right] at (3.3,0) {$C$};\n  \\draw[ink] (0,0) -- (0,2.475) -- (3.3,0) -- (0,0);\n  \\fill[ink] (1.65,1.2375) circle (1.3pt);\n  \\node[above right] at (1.65,1.2375) {$O$};\n  \\draw[ink] (0,0.22) -- (0.22,0.22) -- (0.22,0);\n  \\draw[ink, dashed] (1.65,1.2375) -- (0,0);\n\\end{tikzpicture}\n}\n\\par\\vspace{2pt}{\\sffamily\\scriptsize\\itshape\\color{muted}Hình 8}\n\\end{minipage}",
+     "tier": "onclass",
+     "level": 1,
+     "solution": "a) Cạnh huyền là $BC$ (cạnh đối diện góc vuông $A$).[[br]]b) Tâm là TRUNG ĐIỂM của cạnh $BC$.[[br]]c) $R = \\dfrac{26}{2} = 13$ cm.",
+     "dang_id": "NB3",
+     "writelines": 0,
+     "figure_given": true
+    },
+    {
+     "type": "problem",
+     "label": "Bài 4.",
+     "statement": "\\par\\nopagebreak\n\\begin{minipage}[t]{0.60\\linewidth}\\vspace{0pt}\nTính cạnh huyền $BC$ của tam giác $ABC$ vuông tại $A$ (Hình 9).[[br]]a) [NB] $AB = 5$ cm, $AC = 12$ cm.[[br]]b) [NB] $AB = 8$ cm, $AC = 15$ cm.\n\\end{minipage}\\hfill\n\\begin{minipage}[t]{0.34\\linewidth}\\vspace{0pt}\n\\centering\n\\adjustbox{max width=\\linewidth, max totalheight=2.9cm}{\n\\begin{tikzpicture}[line width=0.8pt, font=\\small]\n  \\draw[ink] (1.65,1.2375) circle (2.0625);\n  \\node[below left] at (0,0) {$A$};\n  \\node[above left] at (0,2.475) {$B$};\n  \\node[below right] at (3.3,0) {$C$};\n  \\draw[ink] (0,0) -- (0,2.475) -- (3.3,0) -- (0,0);\n  \\fill[ink] (1.65,1.2375) circle (1.3pt);\n  \\node[above right] at (1.65,1.2375) {$O$};\n  \\draw[ink] (0,0.22) -- (0.22,0.22) -- (0.22,0);\n  \\draw[ink, dashed] (1.65,1.2375) -- (0,0);\n  \\node[font=\\scriptsize, fill=white, inner sep=1pt] at (-0.26,1.2375) {$AB$};\n  \\node[font=\\scriptsize, fill=white, inner sep=1pt] at (1.65,-0.26) {$AC$};\n\\end{tikzpicture}\n}\n\\par\\vspace{2pt}{\\sffamily\\scriptsize\\itshape\\color{muted}Hình 9}\n\\end{minipage}",
+     "tier": "onclass",
+     "level": 1,
+     "solution": "a) $BC^2 = 5^2 + 12^2 = 25 + 144 = 169$, suy ra $BC = 13$ cm.[[br]]b) $BC^2 = 8^2 + 15^2 = 64 + 225 = 289$, suy ra $BC = 17$ cm.",
+     "dang_id": "NB4",
+     "writelines": 0,
+     "figure_given": true
+    },
+    {
+     "type": "problem",
+     "label": "Bài 5.",
+     "statement": "\\par\\nopagebreak\n\\begin{minipage}[t]{0.60\\linewidth}\\vspace{0pt}\nCho tam giác đều cạnh $a$ (Hình 10). Thay số vào công thức.[[br]]a) [NB] $a = 6$ cm thì $R = \\dfrac{\\sqrt3}{3}\\cdot \\ldots\\ldots = \\ldots\\ldots$ cm.[[br]]b) [NB] $a = 6$ cm thì $r = \\dfrac{\\sqrt3}{6}\\cdot \\ldots\\ldots = \\ldots\\ldots$ cm.[[br]]c) [NB] $a = 12$ cm thì $R = \\ldots\\ldots$ cm và $r = \\ldots\\ldots$ cm.\n\\end{minipage}\\hfill\n\\begin{minipage}[t]{0.34\\linewidth}\\vspace{0pt}\n\\centering\n\\adjustbox{max width=\\linewidth, max totalheight=2.9cm}{\n\\begin{tikzpicture}[line width=0.8pt, font=\\small]\n  \\draw[ink] (1.3,0.7506) circle (1.5011);\n  \\node[above] at (1.3,2.2517) {$A$};\n  \\node[below left] at (0,0) {$B$};\n  \\node[below right] at (2.6,0) {$C$};\n  \\draw[ink] (1.3,2.2517) -- (0,0) -- (2.6,0) -- (1.3,2.2517);\n  \\fill[ink] (1.3,0.7506) circle (1.3pt);\n  \\node[right] at (1.3,0.7506) {$O$};\n  \\draw[ink] (1.3,0.7506) circle (0.7506);\n  \\draw[ink, dashed] (1.3,0.7506) -- (1.3,0);\n  \\node[right, font=\\scriptsize] at (1.46,0.3753) {$r$};\n  \\draw[ink, dashed] (1.3,0.7506) -- (1.3,2.2517);\n  \\node[left, font=\\scriptsize] at (1.14,1.5011) {$R$};\n\\end{tikzpicture}\n}\n\\par\\vspace{2pt}{\\sffamily\\scriptsize\\itshape\\color{muted}Hình 10}\n\\end{minipage}",
+     "tier": "onclass",
+     "level": 1,
+     "solution": "a) $R = \\dfrac{\\sqrt3}{3}\\cdot 6 = 2\\sqrt3$ cm.[[br]]b) $r = \\dfrac{\\sqrt3}{6}\\cdot 6 = \\sqrt3$ cm.[[br]]c) $R = \\dfrac{\\sqrt3}{3}\\cdot 12 = 4\\sqrt3$ cm và $r = \\dfrac{\\sqrt3}{6}\\cdot 12 = 2\\sqrt3$ cm.",
+     "dang_id": "NB5",
+     "writelines": 0,
+     "figure_given": true
+    },
+    {
+     "type": "problem",
+     "label": "Bài 6.",
+     "statement": "\\par\\nopagebreak\n\\begin{minipage}[t]{0.60\\linewidth}\\vspace{0pt}\nCho tam giác $ABC$ vuông tại $A$ có $AB = 12$ cm, $AC = 16$ cm (Hình 11). Điền vào chỗ trống để hoàn thành bài giải tính bán kính đường tròn ngoại tiếp tam giác $ABC$.[[br]]a) [NB] Xét tam giác $ABC$ vuông tại \\ldots\\ldots, theo định lí Pythagore: $BC^2 = 12^2 + 16^2 = \\ldots\\ldots$, suy ra $BC = \\ldots\\ldots$ cm.[[br]]b) [NB] Tâm đường tròn ngoại tiếp là \\ldots\\ldots của cạnh huyền $BC$, bán kính $R = \\dfrac{BC}{2} = \\ldots\\ldots$ cm.[[br]]Vậy $R = \\ldots\\ldots$ cm.\n\\end{minipage}\\hfill\n\\begin{minipage}[t]{0.34\\linewidth}\\vspace{0pt}\n\\centering\n\\adjustbox{max width=\\linewidth, max totalheight=2.9cm}{\n\\begin{tikzpicture}[line width=0.8pt, font=\\small]\n  \\draw[ink] (1.65,1.2375) circle (2.0625);\n  \\node[below left] at (0,0) {$A$};\n  \\node[above left] at (0,2.475) {$B$};\n  \\node[below right] at (3.3,0) {$C$};\n  \\draw[ink] (0,0) -- (0,2.475) -- (3.3,0) -- (0,0);\n  \\fill[ink] (1.65,1.2375) circle (1.3pt);\n  \\node[above right] at (1.65,1.2375) {$O$};\n  \\draw[ink] (0,0.22) -- (0.22,0.22) -- (0.22,0);\n  \\draw[ink, dashed] (1.65,1.2375) -- (0,0);\n  \\node[font=\\scriptsize, fill=white, inner sep=1pt] at (-0.26,1.2375) {$12$};\n  \\node[font=\\scriptsize, fill=white, inner sep=1pt] at (1.65,-0.26) {$16$};\n\\end{tikzpicture}\n}\n\\par\\vspace{2pt}{\\sffamily\\scriptsize\\itshape\\color{muted}Hình 11}\n\\end{minipage}",
+     "tier": "onclass",
+     "level": 1,
+     "solution": "a) Vuông tại $A$; $BC^2 = 144 + 256 = 400$, suy ra $BC = 20$ cm.[[br]]b) Tâm là TRUNG ĐIỂM của $BC$, $R = \\dfrac{20}{2} = 10$ cm.[[br]]Vậy $R = 10$ cm.",
+     "dang_id": "NB6",
+     "writelines": 0,
+     "figure_given": true
+    },
+    {
+     "type": "problem",
+     "label": "Bài 7.",
+     "statement": "[NB] Vẽ hình vào vở theo yêu cầu sau: vẽ tam giác $DEF$ vuông tại $D$ có $DE = 3$ cm, $DF = 4$ cm; vẽ đường tròn ngoại tiếp tam giác $DEF$; đánh dấu tâm $O$ là trung điểm cạnh huyền và vẽ một bán kính của đường tròn đó.",
+     "tier": "onclass",
+     "level": 1,
+     "solution": "Cạnh huyền $EF$ có $EF^2 = 3^2 + 4^2 = 25$ nên $EF = 5$ cm. Tâm $O$ là trung điểm $EF$, bán kính $R = 2{,}5$ cm. Hình vẽ phải thấy rõ đường tròn đi qua cả ba đỉnh $D$, $E$, $F$.",
+     "dang_id": "NB7",
+     "writelines": 0,
+     "draw": true
+    }
+   ]
+  },
+  {
+   "kind": "practice2",
+   "number": 4,
+   "title": "Luyện tập 2 — Thông hiểu \\& Vận dụng",
+   "teacher_note": "Bài 11 dùng lại đường trung bình của Lớp 8 — nếu lớp quên thì nhắc nhanh bằng hình rồi mới cho làm. Chấm chéo ý a) theo thang 0,25 cho mỗi bước.",
+   "blocks": [
+    {
+     "type": "problem",
+     "label": "Bài 8.",
+     "statement": "\\par\\nopagebreak\n\\begin{minipage}[t]{0.60\\linewidth}\\vspace{0pt}\nCho tam giác $ABC$ vuông tại $A$ (Hình 12). Tính bán kính $R$ của đường tròn ngoại tiếp tam giác $ABC$.[[br]]a) [TH] $AB = 9$ cm, $AC = 12$ cm.[[br]]b) [TH] $AB = 7$ cm, $AC = 24$ cm.\n\\end{minipage}\\hfill\n\\begin{minipage}[t]{0.34\\linewidth}\\vspace{0pt}\n\\centering\n\\adjustbox{max width=\\linewidth, max totalheight=2.9cm}{\n\\begin{tikzpicture}[line width=0.8pt, font=\\small]\n  \\draw[ink] (1.65,1.2375) circle (2.0625);\n  \\node[below left] at (0,0) {$A$};\n  \\node[above left] at (0,2.475) {$B$};\n  \\node[below right] at (3.3,0) {$C$};\n  \\draw[ink] (0,0) -- (0,2.475) -- (3.3,0) -- (0,0);\n  \\fill[ink] (1.65,1.2375) circle (1.3pt);\n  \\node[above right] at (1.65,1.2375) {$O$};\n  \\draw[ink] (0,0.22) -- (0.22,0.22) -- (0.22,0);\n  \\draw[ink, dashed] (1.65,1.2375) -- (0,0);\n  \\node[font=\\scriptsize, fill=white, inner sep=1pt] at (-0.26,1.2375) {$AB$};\n  \\node[font=\\scriptsize, fill=white, inner sep=1pt] at (1.65,-0.26) {$AC$};\n\\end{tikzpicture}\n}\n\\par\\vspace{2pt}{\\sffamily\\scriptsize\\itshape\\color{muted}Hình 12}\n\\end{minipage}",
+     "tier": "onclass",
+     "level": 2,
+     "solution": "a) Xét tam giác $ABC$ vuông tại $A$, theo định lí Pythagore:[[br]]$BC^2 = 9^2 + 12^2 = 81 + 144 = 225$, suy ra $BC = 15$ (cm).[[br]]Vì tam giác vuông tại $A$ nên $R = \\dfrac{BC}{2} = \\dfrac{15}{2} = 7{,}5$ (cm).[[br]]Vậy $R = 7{,}5$ cm.[[br]]b) Theo định lí Pythagore: $BC^2 = 7^2 + 24^2 = 49 + 576 = 625$, suy ra $BC = 25$ (cm).[[br]]Do đó $R = \\dfrac{25}{2} = 12{,}5$ (cm).[[br]]Vậy $R = 12{,}5$ cm.",
+     "dang_id": "TH1",
+     "writelines": 0
+    },
+    {
+     "type": "problem",
+     "label": "Bài 9.",
+     "statement": "\\par\\nopagebreak\n\\begin{minipage}[t]{0.60\\linewidth}\\vspace{0pt}\n[TH] Một tam giác đều có đường tròn NỘI tiếp bán kính $r = 2\\sqrt3$ cm (Hình 13). Tính độ dài cạnh của tam giác đều đó và bán kính đường tròn ngoại tiếp nó.\n\\end{minipage}\\hfill\n\\begin{minipage}[t]{0.34\\linewidth}\\vspace{0pt}\n\\centering\n\\adjustbox{max width=\\linewidth, max totalheight=2.9cm}{\n\\begin{tikzpicture}[line width=0.8pt, font=\\small]\n  \\draw[ink] (1.3,0.7506) circle (1.5011);\n  \\node[above] at (1.3,2.2517) {$A$};\n  \\node[below left] at (0,0) {$B$};\n  \\node[below right] at (2.6,0) {$C$};\n  \\draw[ink] (1.3,2.2517) -- (0,0) -- (2.6,0) -- (1.3,2.2517);\n  \\fill[ink] (1.3,0.7506) circle (1.3pt);\n  \\node[right] at (1.3,0.7506) {$O$};\n  \\draw[ink] (1.3,0.7506) circle (0.7506);\n  \\draw[ink, dashed] (1.3,0.7506) -- (1.3,0);\n  \\node[right, font=\\scriptsize] at (1.46,0.3753) {$r$};\n  \\draw[ink, dashed] (1.3,0.7506) -- (1.3,2.2517);\n  \\node[left, font=\\scriptsize] at (1.14,1.5011) {$R$};\n\\end{tikzpicture}\n}\n\\par\\vspace{2pt}{\\sffamily\\scriptsize\\itshape\\color{muted}Hình 13}\n\\end{minipage}",
+     "tier": "onclass",
+     "level": 2,
+     "solution": "Áp dụng công thức bán kính đường tròn nội tiếp tam giác đều cạnh $a$: $r = \\dfrac{\\sqrt3}{6}a$.[[br]]Suy ra $a = \\dfrac{6r}{\\sqrt3} = 2\\sqrt3\\, r$.[[br]]Thay $r = 2\\sqrt3$ cm: $a = 2\\sqrt3 \\cdot 2\\sqrt3 = 4\\cdot 3 = 12$ (cm).[[br]]Vì $r = \\dfrac{R}{2}$ nên $R = 2r = 2\\cdot 2\\sqrt3 = 4\\sqrt3$ (cm).[[br]]Vậy cạnh tam giác bằng $12$ cm và $R = 4\\sqrt3$ cm.",
+     "dang_id": "TH2",
+     "writelines": 0,
+     "figure_given": true
+    },
+    {
+     "type": "problem",
+     "label": "Bài 10.",
+     "statement": "\\par\\nopagebreak\n\\begin{minipage}[t]{0.60\\linewidth}\\vspace{0pt}\n[TH] Ba cột đèn $A$, $B$, $C$ của một công viên không thẳng hàng (Hình 14). Người ta muốn đặt một vòi phun nước ở vị trí cách đều cả ba cột đèn. Hãy chỉ rõ cách xác định vị trí đó và giải thích.\n\\end{minipage}\\hfill\n\\begin{minipage}[t]{0.34\\linewidth}\\vspace{0pt}\n\\centering\n\\adjustbox{max width=\\linewidth, max totalheight=2.9cm}{\n\\begin{tikzpicture}[line width=0.8pt, font=\\small]\n  \\draw[ink] (1.4791,0.7131) circle (1.6421);\n  \\fill[brand] (0.6,2.1) circle (2.2pt);\n  \\fill[brand] (0,0) circle (2.2pt);\n  \\fill[brand] (3.1,0.45) circle (2.2pt);\n  \\node[above, font=\\scriptsize] at (0.6,2.22) {$A$};\n  \\node[below left, font=\\scriptsize] at (-0.1,-0.06) {$B$};\n  \\node[right, font=\\scriptsize] at (3.2,0.45) {$C$};\n  \\fill[ink] (1.4791,0.7131) circle (1.3pt);\n  \\node[below] at (1.4791,0.7131) {$O$};\n  \\draw[ink, dashed] (1.4791,0.7131) -- (0.6,2.1);\n  \\draw[ink, dashed] (1.4791,0.7131) -- (0,0);\n  \\draw[ink, dashed] (1.4791,0.7131) -- (3.1,0.45);\n\\end{tikzpicture}\n}\n\\par\\vspace{2pt}{\\sffamily\\scriptsize\\itshape\\color{muted}Hình 14}\n\\end{minipage}",
+     "tier": "onclass",
+     "level": 2,
+     "solution": "Gọi $O$ là vị trí đặt vòi phun, khi đó $OA = OB = OC$.[[br]]Vì $OA = OB$ nên $O$ nằm trên đường trung trực của đoạn $AB$.[[br]]Vì $OB = OC$ nên $O$ nằm trên đường trung trực của đoạn $BC$.[[br]]Do đó $O$ là giao điểm của hai đường trung trực ấy, tức tâm đường tròn ngoại tiếp tam giác $ABC$.[[br]]Vậy đặt vòi phun tại tâm đường tròn ngoại tiếp tam giác $ABC$: dựng hai đường trung trực của $AB$ và $BC$ rồi lấy giao điểm.",
+     "dang_id": "TH3",
+     "writelines": 0
+    },
+    {
+     "type": "problem",
+     "label": "Bài 11.",
+     "statement": "\\par\\nopagebreak\n\\begin{minipage}[t]{0.60\\linewidth}\\vspace{0pt}\n[VD] Cho tam giác $ABC$ vuông tại $A$ có $AB = 12$ cm, $AC = 16$ cm (Hình 15).[[br]]a) Tính $BC$ và bán kính $R$ của đường tròn ngoại tiếp tam giác $ABC$.[[br]]b) Gọi $M$ là trung điểm của $AB$. Điểm $M$ nằm trong hay ngoài đường tròn ngoại tiếp tam giác $ABC$?[[br]]c) Tính khoảng cách từ tâm $O$ đến cạnh $AB$.[[br]]Trình bày trọn vẹn như bài thi, mỗi ý kết bằng câu \\textquotedblleft Vậy\\ldots\\textquotedblright\n\\end{minipage}\\hfill\n\\begin{minipage}[t]{0.34\\linewidth}\\vspace{0pt}\n\\centering\n\\adjustbox{max width=\\linewidth, max totalheight=2.9cm}{\n\\begin{tikzpicture}[line width=0.8pt, font=\\small]\n  \\draw[ink] (1.65,1.2375) circle (2.0625);\n  \\node[below left] at (0,0) {$A$};\n  \\node[above left] at (0,2.475) {$B$};\n  \\node[below right] at (3.3,0) {$C$};\n  \\draw[ink] (0,0) -- (0,2.475) -- (3.3,0) -- (0,0);\n  \\fill[ink] (1.65,1.2375) circle (1.3pt);\n  \\node[above right] at (1.65,1.2375) {$O$};\n  \\draw[ink] (0,0.22) -- (0.22,0.22) -- (0.22,0);\n  \\draw[ink, dashed] (1.65,1.2375) -- (0,0);\n  \\node[font=\\scriptsize, fill=white, inner sep=1pt] at (-0.26,1.2375) {$12$};\n  \\node[font=\\scriptsize, fill=white, inner sep=1pt] at (1.65,-0.26) {$16$};\n\\end{tikzpicture}\n}\n\\par\\vspace{2pt}{\\sffamily\\scriptsize\\itshape\\color{muted}Hình 15}\n\\end{minipage}",
+     "tier": "onclass",
+     "level": 3,
+     "solution": "a) Xét tam giác $ABC$ vuông tại $A$, theo định lí Pythagore:[[br]]$BC^2 = 12^2 + 16^2 = 144 + 256 = 400$, suy ra $BC = 20$ (cm).[[br]]Vì tam giác $ABC$ vuông tại $A$ nên tâm đường tròn ngoại tiếp là trung điểm $O$ của $BC$ và $R = \\dfrac{BC}{2} = 10$ (cm).[[br]]Vậy $BC = 20$ cm và $R = 10$ cm.[[br]]b) Xét tam giác $ABC$ có $O$ là trung điểm $BC$ và $M$ là trung điểm $AB$ nên $OM$ là đường trung bình của tam giác $ABC$.[[br]]Do đó $OM = \\dfrac{AC}{2} = \\dfrac{16}{2} = 8$ (cm).[[br]]Vì $OM = 8 < R = 10$ nên $M$ nằm trong đường tròn $(O)$.[[br]]Vậy $M$ nằm trong đường tròn ngoại tiếp tam giác $ABC$.[[br]]c) Vì $OM$ là đường trung bình ứng với cạnh $AC$ nên $OM \\parallel AC$; mà $AC \\perp AB$ nên $OM \\perp AB$ tại $M$.[[br]]Do đó khoảng cách từ $O$ đến $AB$ chính là $OM = 8$ cm.[[br]]Vậy khoảng cách từ $O$ đến cạnh $AB$ bằng $8$ cm.",
+     "dang_id": "VD1",
+     "writelines": 0,
+     "hints": [
+      "Ý thứ hai: nối $O$ với $M$ rồi soi xem $OM$ có phải đường trung bình của tam giác $ABC$ không.",
+      "Ý cuối: khoảng cách từ một điểm đến đường thẳng là độ dài đoạn vuông góc hạ từ điểm đó xuống đường thẳng."
+     ]
+    }
+   ]
+  },
+  {
+   "kind": "reflection",
+   "number": 5,
+   "title": "Tổng kết",
+   "teacher_note": "BTVN soạn dôi hơn quỹ 40 phút. Nếu phải cắt thì giữ BTVN 6, 8, 11 — ba bài này là khuôn tam giác vuông sẽ dùng lại suốt hai buổi cuối chương.",
+   "blocks": [
+    {
+     "type": "mindmap",
+     "root": "Đường tròn ngoại tiếp \\& nội tiếp tam giác",
+     "caption": "Điền các ô trống rồi học thuộc",
+     "branches": [
+      {
+       "label": "Ngoại tiếp",
+       "children": [
+        {
+         "label": "Đi qua ba [[blank:1.4cm]]",
+         "children": []
+        },
+        {
+         "label": "Tâm $=$ giao ba đường [[blank:2.0cm]]",
+         "children": []
+        }
+       ]
+      },
+      {
+       "label": "Nội tiếp",
+       "children": [
+        {
+         "label": "Tiếp xúc ba [[blank:1.4cm]]",
+         "children": []
+        },
+        {
+         "label": "Tâm $=$ giao ba đường [[blank:2.0cm]]",
+         "children": []
+        }
+       ]
+      },
+      {
+       "label": "Tam giác vuông",
+       "children": [
+        {
+         "label": "Tâm $=$ [[blank:2.2cm]] cạnh huyền",
+         "children": []
+        },
+        {
+         "label": "$R = \\dfrac{1}{2}$ cạnh [[blank:1.4cm]]",
+         "children": []
+        }
+       ]
+      },
+      {
+       "label": "Tam giác đều cạnh $a$",
+       "children": [
+        {
+         "label": "$R = \\dfrac{\\sqrt3}{3}a$",
+         "children": []
+        },
+        {
+         "label": "$r = \\dfrac{\\sqrt3}{6}a = \\dfrac{R}{[[blank:0.7cm]]}$",
+         "children": []
+        }
+       ]
+      }
+     ],
+     "size": "small"
+    },
+    {
+     "type": "para",
+     "text": "\\textbf{Bài tập về nhà} — làm vào vở, buổi sau nộp."
+    },
+    {
+     "type": "problem",
+     "label": "BTVN~1.",
+     "statement": "Quan sát Hình 16 rồi trả lời.\\par\\nopagebreak\\smallskip\\begin{center}\\adjustbox{max width=0.76\\linewidth, max totalheight=3.2cm}{\n\\begin{tikzpicture}[line width=0.8pt, font=\\small]\n  \\draw[ink] (1.5,0.5061) circle (1.5831);\n  \\node[above] at (1.15,2.05) {$A$};\n  \\node[below left] at (0,0) {$B$};\n  \\node[below right] at (3,0) {$C$};\n  \\draw[ink] (1.15,2.05) -- (0,0) -- (3,0) -- (1.15,2.05);\n  \\fill[ink] (1.5,0.5061) circle (1.3pt);\n  \\node[below right] at (1.5,0.5061) {$O$};\n  \\node[below, font=\\small] at (1.5,-1.25) {a)};\n  \\draw[ink] (5.8946,0.7581) circle (0.7581);\n  \\node[above] at (5.75,2.05) {$M$};\n  \\node[below left] at (4.6,0) {$N$};\n  \\node[below right] at (7.6,0) {$P$};\n  \\draw[ink] (5.75,2.05) -- (4.6,0) -- (7.6,0) -- (5.75,2.05);\n  \\fill[ink] (5.8946,0.7581) circle (1.3pt);\n  \\node[below] at (5.8946,0.7581) {$I$};\n  \\node[below, font=\\small] at (6.1,-1.25) {b)};\n\\end{tikzpicture}\n}\\par\\vspace{2pt}{\\sffamily\\scriptsize\\itshape\\color{muted}Hình 16}\\end{center}\\smallskip a) [NB] Đường tròn nào đi qua ba đỉnh của tam giác? Nó gọi là đường tròn gì?[[br]]b) [NB] Đường tròn nào tiếp xúc với ba cạnh của tam giác? Nó gọi là đường tròn gì?[[br]]c) [NB] Mỗi tam giác có bao nhiêu đường tròn ngoại tiếp?",
+     "tier": "btvn",
+     "level": 1,
+     "solution": "a) Đường tròn $(O)$ ở hình a) — gọi là đường tròn ngoại tiếp tam giác $ABC$.[[br]]b) Đường tròn $(I)$ ở hình b) — gọi là đường tròn nội tiếp tam giác $MNP$.[[br]]c) Đúng MỘT đường tròn ngoại tiếp.",
+     "dang_id": "NB1",
+     "writelines": 0,
+     "figure_given": true
+    },
+    {
+     "type": "problem",
+     "label": "BTVN~2.",
+     "statement": "Chọn hoặc điền cho đúng.[[br]]a) [NB] Tâm đường tròn nội tiếp một tam giác là giao điểm của:\\par\\vspace{3pt}\\parbox[t]{0.44\\linewidth}{\\textbf{A.} ba đường trung trực}\\hspace{0.03\\linewidth}\\parbox[t]{0.44\\linewidth}{\\textbf{B.} ba đường phân giác}\\par\\vspace{4pt}\\parbox[t]{0.44\\linewidth}{\\textbf{C.} ba đường cao}\\hspace{0.03\\linewidth}\\parbox[t]{0.44\\linewidth}{\\textbf{D.} ba đường trung tuyến}[[br]]b) [NB] Điền vào chỗ chấm: tâm đường tròn ngoại tiếp cách đều ba \\ldots\\ldots, còn tâm đường tròn nội tiếp cách đều ba \\ldots\\ldots[[br]]c) [NB] Đúng hay sai: \\emph{tâm đường tròn nội tiếp một tam giác luôn nằm bên trong tam giác đó}.",
+     "tier": "btvn",
+     "level": 1,
+     "solution": "a) Đáp án \\textbf{B}.[[br]]b) Cách đều ba ĐỈNH; cách đều ba CẠNH.[[br]]c) ĐÚNG — tâm đường tròn nội tiếp luôn nằm trong tam giác.",
+     "dang_id": "NB2",
+     "writelines": 0,
+     "figure_given": true
+    },
+    {
+     "type": "problem",
+     "label": "BTVN~3.",
+     "statement": "\\par\\nopagebreak\n\\begin{minipage}[t]{0.60\\linewidth}\\vspace{0pt}\nCho tam giác $MNP$ vuông tại $M$ (Hình 17). Điền vào chỗ chấm.[[br]]a) [NB] Tâm đường tròn ngoại tiếp tam giác $MNP$ là \\ldots\\ldots của cạnh \\ldots\\ldots[[br]]b) [NB] Nếu $NP = 18$ cm thì $R = \\ldots\\ldots$ cm.\n\\end{minipage}\\hfill\n\\begin{minipage}[t]{0.34\\linewidth}\\vspace{0pt}\n\\centering\n\\adjustbox{max width=\\linewidth, max totalheight=2.9cm}{\n\\begin{tikzpicture}[line width=0.8pt, font=\\small]\n  \\draw[ink] (1.65,1.2375) circle (2.0625);\n  \\node[below left] at (0,0) {$M$};\n  \\node[above left] at (0,2.475) {$N$};\n  \\node[below right] at (3.3,0) {$P$};\n  \\draw[ink] (0,0) -- (0,2.475) -- (3.3,0) -- (0,0);\n  \\fill[ink] (1.65,1.2375) circle (1.3pt);\n  \\node[above right] at (1.65,1.2375) {$O$};\n  \\draw[ink] (0,0.22) -- (0.22,0.22) -- (0.22,0);\n  \\draw[ink, dashed] (1.65,1.2375) -- (0,0);\n\\end{tikzpicture}\n}\n\\par\\vspace{2pt}{\\sffamily\\scriptsize\\itshape\\color{muted}Hình 17}\n\\end{minipage}",
+     "tier": "btvn",
+     "level": 1,
+     "solution": "a) Tâm là TRUNG ĐIỂM của cạnh huyền $NP$.[[br]]b) $R = \\dfrac{18}{2} = 9$ cm.",
+     "dang_id": "NB3",
+     "writelines": 0,
+     "figure_given": true
+    },
+    {
+     "type": "problem",
+     "label": "BTVN~4.",
+     "statement": "\\par\\nopagebreak\n\\begin{minipage}[t]{0.60\\linewidth}\\vspace{0pt}\nTính cạnh huyền $BC$ của tam giác $ABC$ vuông tại $A$ (Hình 18).[[br]]a) [NB] $AB = 20$ cm, $AC = 21$ cm.[[br]]b) [NB] $AB = 9$ cm, $AC = 40$ cm.\n\\end{minipage}\\hfill\n\\begin{minipage}[t]{0.34\\linewidth}\\vspace{0pt}\n\\centering\n\\adjustbox{max width=\\linewidth, max totalheight=2.9cm}{\n\\begin{tikzpicture}[line width=0.8pt, font=\\small]\n  \\draw[ink] (1.65,1.2375) circle (2.0625);\n  \\node[below left] at (0,0) {$A$};\n  \\node[above left] at (0,2.475) {$B$};\n  \\node[below right] at (3.3,0) {$C$};\n  \\draw[ink] (0,0) -- (0,2.475) -- (3.3,0) -- (0,0);\n  \\fill[ink] (1.65,1.2375) circle (1.3pt);\n  \\node[above right] at (1.65,1.2375) {$O$};\n  \\draw[ink] (0,0.22) -- (0.22,0.22) -- (0.22,0);\n  \\draw[ink, dashed] (1.65,1.2375) -- (0,0);\n  \\node[font=\\scriptsize, fill=white, inner sep=1pt] at (-0.26,1.2375) {$AB$};\n  \\node[font=\\scriptsize, fill=white, inner sep=1pt] at (1.65,-0.26) {$AC$};\n\\end{tikzpicture}\n}\n\\par\\vspace{2pt}{\\sffamily\\scriptsize\\itshape\\color{muted}Hình 18}\n\\end{minipage}",
+     "tier": "btvn",
+     "level": 1,
+     "solution": "a) $BC^2 = 400 + 441 = 841$, suy ra $BC = 29$ cm.[[br]]b) $BC^2 = 81 + 1600 = 1681$, suy ra $BC = 41$ cm.",
+     "dang_id": "NB4",
+     "writelines": 0,
+     "figure_given": true
+    },
+    {
+     "type": "problem",
+     "label": "BTVN~5.",
+     "statement": "\\par\\nopagebreak\n\\begin{minipage}[t]{0.60\\linewidth}\\vspace{0pt}\nCho tam giác đều cạnh $a$ (Hình 19). Thay số vào công thức.[[br]]a) [NB] $a = 9$ cm thì $R = \\ldots\\ldots$ cm.[[br]]b) [NB] $a = 9$ cm thì $r = \\ldots\\ldots$ cm.\n\\end{minipage}\\hfill\n\\begin{minipage}[t]{0.34\\linewidth}\\vspace{0pt}\n\\centering\n\\adjustbox{max width=\\linewidth, max totalheight=2.9cm}{\n\\begin{tikzpicture}[line width=0.8pt, font=\\small]\n  \\draw[ink] (1.3,0.7506) circle (1.5011);\n  \\node[above] at (1.3,2.2517) {$A$};\n  \\node[below left] at (0,0) {$B$};\n  \\node[below right] at (2.6,0) {$C$};\n  \\draw[ink] (1.3,2.2517) -- (0,0) -- (2.6,0) -- (1.3,2.2517);\n  \\fill[ink] (1.3,0.7506) circle (1.3pt);\n  \\node[right] at (1.3,0.7506) {$O$};\n  \\draw[ink] (1.3,0.7506) circle (0.7506);\n  \\draw[ink, dashed] (1.3,0.7506) -- (1.3,0);\n  \\node[right, font=\\scriptsize] at (1.46,0.3753) {$r$};\n  \\draw[ink, dashed] (1.3,0.7506) -- (1.3,2.2517);\n  \\node[left, font=\\scriptsize] at (1.14,1.5011) {$R$};\n\\end{tikzpicture}\n}\n\\par\\vspace{2pt}{\\sffamily\\scriptsize\\itshape\\color{muted}Hình 19}\n\\end{minipage}",
+     "tier": "btvn",
+     "level": 1,
+     "solution": "a) $R = \\dfrac{\\sqrt3}{3}\\cdot 9 = 3\\sqrt3$ cm.[[br]]b) $r = \\dfrac{\\sqrt3}{6}\\cdot 9 = \\dfrac{3\\sqrt3}{2}$ cm.",
+     "dang_id": "NB5",
+     "writelines": 0,
+     "figure_given": true
+    },
+    {
+     "type": "problem",
+     "label": "BTVN~6.",
+     "statement": "\\par\\nopagebreak\n\\begin{minipage}[t]{0.60\\linewidth}\\vspace{0pt}\nCho tam giác $ABC$ vuông tại $A$ có $AB = 15$ cm, $AC = 20$ cm (Hình 20). Điền vào chỗ trống để hoàn thành bài giải.[[br]]a) [NB] Theo định lí Pythagore: $BC^2 = 15^2 + 20^2 = \\ldots\\ldots$, suy ra $BC = \\ldots\\ldots$ cm.[[br]]b) [NB] Tâm đường tròn ngoại tiếp là \\ldots\\ldots của $BC$ và $R = \\ldots\\ldots$ cm.[[br]]Vậy $R = \\ldots\\ldots$ cm.\n\\end{minipage}\\hfill\n\\begin{minipage}[t]{0.34\\linewidth}\\vspace{0pt}\n\\centering\n\\adjustbox{max width=\\linewidth, max totalheight=2.9cm}{\n\\begin{tikzpicture}[line width=0.8pt, font=\\small]\n  \\draw[ink] (1.65,1.2375) circle (2.0625);\n  \\node[below left] at (0,0) {$A$};\n  \\node[above left] at (0,2.475) {$B$};\n  \\node[below right] at (3.3,0) {$C$};\n  \\draw[ink] (0,0) -- (0,2.475) -- (3.3,0) -- (0,0);\n  \\fill[ink] (1.65,1.2375) circle (1.3pt);\n  \\node[above right] at (1.65,1.2375) {$O$};\n  \\draw[ink] (0,0.22) -- (0.22,0.22) -- (0.22,0);\n  \\draw[ink, dashed] (1.65,1.2375) -- (0,0);\n  \\node[font=\\scriptsize, fill=white, inner sep=1pt] at (-0.26,1.2375) {$15$};\n  \\node[font=\\scriptsize, fill=white, inner sep=1pt] at (1.65,-0.26) {$20$};\n\\end{tikzpicture}\n}\n\\par\\vspace{2pt}{\\sffamily\\scriptsize\\itshape\\color{muted}Hình 20}\n\\end{minipage}",
+     "tier": "btvn",
+     "level": 1,
+     "solution": "a) $BC^2 = 225 + 400 = 625$, suy ra $BC = 25$ cm.[[br]]b) Tâm là trung điểm của $BC$, $R = \\dfrac{25}{2} = 12{,}5$ cm.[[br]]Vậy $R = 12{,}5$ cm.",
+     "dang_id": "NB6",
+     "writelines": 0,
+     "figure_given": true
+    },
+    {
+     "type": "problem",
+     "label": "BTVN~7.",
+     "statement": "[NB] Vẽ hình vào vở theo yêu cầu: vẽ tam giác $ABC$ vuông tại $A$ có $AB = 6$ cm, $AC = 8$ cm; vẽ đường tròn ngoại tiếp tam giác đó; ghi rõ tâm $O$ và bán kính $R$ lên hình.",
+     "tier": "btvn",
+     "level": 1,
+     "solution": "$BC^2 = 36 + 64 = 100$ nên $BC = 10$ cm; $O$ là trung điểm $BC$, $R = 5$ cm.",
+     "dang_id": "NB7",
+     "writelines": 0,
+     "draw": true
+    },
+    {
+     "type": "problem",
+     "label": "BTVN~8.",
+     "statement": "\\par\\nopagebreak\n\\begin{minipage}[t]{0.60\\linewidth}\\vspace{0pt}\nCho tam giác $ABC$ vuông tại $A$ (Hình 21). Tính bán kính $R$ của đường tròn ngoại tiếp tam giác $ABC$.[[br]]a) [TH] $AB = 5$ cm, $AC = 12$ cm.[[br]]b) [TH] $AB = 18$ cm, $AC = 24$ cm.\n\\end{minipage}\\hfill\n\\begin{minipage}[t]{0.34\\linewidth}\\vspace{0pt}\n\\centering\n\\adjustbox{max width=\\linewidth, max totalheight=2.9cm}{\n\\begin{tikzpicture}[line width=0.8pt, font=\\small]\n  \\draw[ink] (1.65,1.2375) circle (2.0625);\n  \\node[below left] at (0,0) {$A$};\n  \\node[above left] at (0,2.475) {$B$};\n  \\node[below right] at (3.3,0) {$C$};\n  \\draw[ink] (0,0) -- (0,2.475) -- (3.3,0) -- (0,0);\n  \\fill[ink] (1.65,1.2375) circle (1.3pt);\n  \\node[above right] at (1.65,1.2375) {$O$};\n  \\draw[ink] (0,0.22) -- (0.22,0.22) -- (0.22,0);\n  \\draw[ink, dashed] (1.65,1.2375) -- (0,0);\n  \\node[font=\\scriptsize, fill=white, inner sep=1pt] at (-0.26,1.2375) {$AB$};\n  \\node[font=\\scriptsize, fill=white, inner sep=1pt] at (1.65,-0.26) {$AC$};\n\\end{tikzpicture}\n}\n\\par\\vspace{2pt}{\\sffamily\\scriptsize\\itshape\\color{muted}Hình 21}\n\\end{minipage}",
+     "tier": "btvn",
+     "level": 2,
+     "solution": "a) Xét tam giác $ABC$ vuông tại $A$, theo định lí Pythagore: $BC^2 = 25 + 144 = 169$, suy ra $BC = 13$ (cm).[[br]]Do đó $R = \\dfrac{13}{2} = 6{,}5$ (cm).[[br]]Vậy $R = 6{,}5$ cm.[[br]]b) Theo định lí Pythagore: $BC^2 = 324 + 576 = 900$, suy ra $BC = 30$ (cm).[[br]]Do đó $R = \\dfrac{30}{2} = 15$ (cm).[[br]]Vậy $R = 15$ cm.",
+     "dang_id": "TH1",
+     "writelines": 0
+    },
+    {
+     "type": "problem",
+     "label": "BTVN~9.",
+     "statement": "\\par\\nopagebreak\n\\begin{minipage}[t]{0.60\\linewidth}\\vspace{0pt}\n[TH] Một tam giác đều có đường tròn ngoại tiếp bán kính $R = 5\\sqrt3$ cm (Hình 22). Tính cạnh của tam giác đó và bán kính đường tròn nội tiếp nó.\n\\end{minipage}\\hfill\n\\begin{minipage}[t]{0.34\\linewidth}\\vspace{0pt}\n\\centering\n\\adjustbox{max width=\\linewidth, max totalheight=2.9cm}{\n\\begin{tikzpicture}[line width=0.8pt, font=\\small]\n  \\draw[ink] (1.3,0.7506) circle (1.5011);\n  \\node[above] at (1.3,2.2517) {$A$};\n  \\node[below left] at (0,0) {$B$};\n  \\node[below right] at (2.6,0) {$C$};\n  \\draw[ink] (1.3,2.2517) -- (0,0) -- (2.6,0) -- (1.3,2.2517);\n  \\fill[ink] (1.3,0.7506) circle (1.3pt);\n  \\node[right] at (1.3,0.7506) {$O$};\n  \\draw[ink] (1.3,0.7506) circle (0.7506);\n  \\draw[ink, dashed] (1.3,0.7506) -- (1.3,0);\n  \\node[right, font=\\scriptsize] at (1.46,0.3753) {$r$};\n  \\draw[ink, dashed] (1.3,0.7506) -- (1.3,2.2517);\n  \\node[left, font=\\scriptsize] at (1.14,1.5011) {$R$};\n\\end{tikzpicture}\n}\n\\par\\vspace{2pt}{\\sffamily\\scriptsize\\itshape\\color{muted}Hình 22}\n\\end{minipage}",
+     "tier": "btvn",
+     "level": 2,
+     "solution": "Áp dụng công thức bán kính đường tròn ngoại tiếp tam giác đều cạnh $a$: $R = \\dfrac{\\sqrt3}{3}a$, suy ra $a = R\\sqrt3$.[[br]]Do đó $a = 5\\sqrt3 \\cdot \\sqrt3 = 5\\cdot 3 = 15$ (cm).[[br]]Vì $r = \\dfrac{R}{2}$ nên $r = \\dfrac{5\\sqrt3}{2}$ (cm).[[br]]Vậy cạnh tam giác bằng $15$ cm và $r = \\dfrac{5\\sqrt3}{2}$ cm.",
+     "dang_id": "TH2",
+     "writelines": 0,
+     "figure_given": true
+    },
+    {
+     "type": "problem",
+     "label": "BTVN~10.",
+     "statement": "[TH] Ba xã $A$, $B$, $C$ nằm ở ba vị trí không thẳng hàng. Huyện muốn xây một trạm y tế cách đều cả ba xã. Hãy nêu cách xác định vị trí trạm y tế và giải thích vì sao cách đó đúng.",
+     "tier": "btvn",
+     "level": 2,
+     "solution": "Gọi $O$ là vị trí trạm y tế, khi đó $OA = OB = OC$.[[br]]Vì $OA = OB$ nên $O$ nằm trên đường trung trực của $AB$.[[br]]Vì $OB = OC$ nên $O$ nằm trên đường trung trực của $BC$.[[br]]Do đó $O$ là giao điểm hai đường trung trực đó, tức tâm đường tròn ngoại tiếp tam giác $ABC$.[[br]]Vậy dựng hai đường trung trực của $AB$ và $BC$, giao điểm của chúng là vị trí xây trạm y tế.",
+     "dang_id": "TH3",
+     "writelines": 0
+    },
+    {
+     "type": "problem",
+     "label": "BTVN~11.",
+     "statement": "\\par\\nopagebreak\n\\begin{minipage}[t]{0.60\\linewidth}\\vspace{0pt}\n[VD] Cho tam giác $ABC$ vuông tại $A$ có $AB = 6$ cm, $AC = 8$ cm (Hình 23).[[br]]a) Tính $BC$ và bán kính $R$ của đường tròn ngoại tiếp tam giác $ABC$.[[br]]b) Gọi $N$ là trung điểm của $AC$. Điểm $N$ nằm trong hay ngoài đường tròn ngoại tiếp tam giác $ABC$?[[br]]c) Tính khoảng cách từ tâm $O$ đến cạnh $AC$.\n\\end{minipage}\\hfill\n\\begin{minipage}[t]{0.34\\linewidth}\\vspace{0pt}\n\\centering\n\\adjustbox{max width=\\linewidth, max totalheight=2.9cm}{\n\\begin{tikzpicture}[line width=0.8pt, font=\\small]\n  \\draw[ink] (1.65,1.2375) circle (2.0625);\n  \\node[below left] at (0,0) {$A$};\n  \\node[above left] at (0,2.475) {$B$};\n  \\node[below right] at (3.3,0) {$C$};\n  \\draw[ink] (0,0) -- (0,2.475) -- (3.3,0) -- (0,0);\n  \\fill[ink] (1.65,1.2375) circle (1.3pt);\n  \\node[above right] at (1.65,1.2375) {$O$};\n  \\draw[ink] (0,0.22) -- (0.22,0.22) -- (0.22,0);\n  \\draw[ink, dashed] (1.65,1.2375) -- (0,0);\n  \\node[font=\\scriptsize, fill=white, inner sep=1pt] at (-0.26,1.2375) {$6$};\n  \\node[font=\\scriptsize, fill=white, inner sep=1pt] at (1.65,-0.26) {$8$};\n\\end{tikzpicture}\n}\n\\par\\vspace{2pt}{\\sffamily\\scriptsize\\itshape\\color{muted}Hình 23}\n\\end{minipage}",
+     "tier": "btvn",
+     "level": 3,
+     "solution": "a) Xét tam giác $ABC$ vuông tại $A$, theo định lí Pythagore: $BC^2 = 36 + 64 = 100$, suy ra $BC = 10$ (cm).[[br]]Vì tam giác vuông tại $A$ nên $O$ là trung điểm $BC$ và $R = \\dfrac{10}{2} = 5$ (cm).[[br]]Vậy $BC = 10$ cm và $R = 5$ cm.[[br]]b) Xét tam giác $ABC$ có $O$ là trung điểm $BC$, $N$ là trung điểm $AC$ nên $ON$ là đường trung bình của tam giác $ABC$.[[br]]Do đó $ON = \\dfrac{AB}{2} = 3$ (cm).[[br]]Vì $ON = 3 < R = 5$ nên $N$ nằm trong đường tròn $(O)$.[[br]]Vậy $N$ nằm trong đường tròn ngoại tiếp tam giác $ABC$.[[br]]c) Vì $ON$ là đường trung bình ứng với cạnh $AB$ nên $ON \\parallel AB$; mà $AB \\perp AC$ nên $ON \\perp AC$ tại $N$.[[br]]Do đó khoảng cách từ $O$ đến $AC$ bằng $ON = 3$ cm.[[br]]Vậy khoảng cách cần tìm bằng $3$ cm.",
+     "dang_id": "VD1",
+     "writelines": 0
+    }
+   ]
+  }
+ ]
+}

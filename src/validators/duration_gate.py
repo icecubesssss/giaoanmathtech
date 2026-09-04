@@ -19,7 +19,8 @@ import re
 
 from src.schema.lesson_package import LessonPackage
 from src.schema.tier_spec import (
-    draw_minutes, load_tier_spec, quick_minutes, subject_block, rates_for, tier_ratio,
+    chuong_co_vd, draw_minutes, gop_vd_vdc, load_tier_spec, quick_minutes, subject_block,
+    rates_for, so_ca_yeu_cau, tier_ratio,
 )
 
 _TAG_RE = re.compile(r"\[(NB|TH|VD|VDC)\]")
@@ -132,6 +133,52 @@ def _grade_subject(lesson: LessonPackage) -> tuple[str, str]:
     return grade, subject
 
 
+def _luat_tang_b(lesson: LessonPackage, spec: dict, grade: str, subject: str,
+                 tier: str, tier_block: dict) -> list[str]:
+    """Luật riêng của tầng B (Thầy + anh An chốt 30/08/2026), soi trên PHIẾU THẬT:
+    phải khai `chuong`; chương không có VD-VDC thì gộp 2 phiếu; bài VẬN DỤNG phải in
+    sẵn quy trình giải."""
+    if not tier_block.get("ratio_variants"):
+        return []
+    warns: list[str] = []
+    chuong = getattr(lesson, "chuong", "") or ""
+    co_vd = chuong_co_vd(grade, chuong)
+
+    if not chuong:
+        warns.append(
+            f"duration: phiếu tầng {tier} chưa khai `chuong` — ĐÃ BỎ cổng tỉ lệ NB-TH-VD "
+            f"và cổng gộp phiếu. Thêm \"chuong\": \"<slug>\" (xem config/ban_do_vd_vdc.json).")
+    elif co_vd is None:
+        warns.append(
+            f"duration: không tìm thấy chương '{chuong}' của {grade} trong "
+            f"config/ban_do_vd_vdc.json — ĐÃ BỎ cổng tỉ lệ NB-TH-VD.")
+    elif co_vd == "bien":
+        warns.append(
+            f"duration: chương '{chuong}' ({grade}) còn để 'bien' trong ban_do_vd_vdc.json — "
+            f"THẦY CHƯA CHỐT có bài VD/VDC hay không, chưa nên soạn phiếu chương này.")
+
+    # (W) GỘP PHIẾU: chương không có VD-VDC thì hai buổi dùng chung một phiếu.
+    ca_yc = so_ca_yeu_cau(spec, grade, subject, tier, chuong)
+    ca = max(1, getattr(lesson, "so_ca", 1) or 1)
+    if ca_yc and ca != ca_yc:
+        warns.append(
+            f"duration: phiếu khai `so_ca` = {ca} nhưng chương '{chuong}' "
+            + ("KHÔNG có bài VD-VDC nên phải GỘP 2 PHIẾU THÀNH 1 (`so_ca: 2`)"
+               if ca_yc == 2 else "CÓ bài VD-VDC nên mỗi phiếu chỉ một buổi (`so_ca: 1`)")
+            + " — anh An chốt 30/08/2026.")
+
+    # (W) QUY TRÌNH GIẢI BÀI in ngay tại từng bài VẬN DỤNG (level 3).
+    thieu = [b.label for st in lesson.stages for b in st.blocks
+             if getattr(b, "type", "") == "problem"
+             and getattr(b, "level", 0) == 3 and not getattr(b, "quy_trinh", None)]
+    if thieu:
+        warns.append(
+            f"duration: {len(thieu)} bài VẬN DỤNG chưa có `quy_trinh` ({', '.join(thieu[:6])}"
+            + ("…" if len(thieu) > 6 else "")
+            + ") — Thầy chốt 30/08/2026: dạng VD phải in QUY TRÌNH GIẢI BÀI ngay tại bài.")
+    return warns
+
+
 def check_duration(lesson: LessonPackage) -> list[str]:
     """Cảnh báo khi phiếu tầng lệch quỹ phút hoặc tỉ lệ (đọc chuẩn từ tier_spec)."""
     tier = lesson.class_tier
@@ -140,13 +187,16 @@ def check_duration(lesson: LessonPackage) -> list[str]:
     grade, subject = _grade_subject(lesson)
     try:
         spec = load_tier_spec()
-        ratio_target = tier_ratio(spec, grade, subject, tier)
+        ratio_target = tier_ratio(spec, grade, subject, tier, getattr(lesson, "chuong", ""))
         block = subject_block(spec, grade, subject)
         rates = rates_for(spec, grade, subject)
     except KeyError:
         return []                       # chưa có rate card cho (lớp, môn, tầng)
-    if not ratio_target:                # tầng chưa chốt tỉ lệ (vd X chuyên)
-        return []
+    tier_block = block.get("tiers", {}).get(tier, {})
+    warns_b = _luat_tang_b(lesson, spec, grade, subject, tier, tier_block)
+    if not ratio_target:                # tầng chưa chốt tỉ lệ (X chuyên, hoặc tầng B
+        return warns_b                  # chọn tỉ lệ theo chương mà phiếu chưa khai `chuong`)
+    gop = gop_vd_vdc(spec, grade, subject, tier)
 
     budgets = block.get("budgets", {})
     budget_tol = block.get("budget_tol", 0.10)
@@ -173,7 +223,7 @@ def check_duration(lesson: LessonPackage) -> list[str]:
 
     minutes = {seg: {b: _band_minutes(seg, b) for b in _BANDS} for seg in budget_dict}
 
-    warns: list[str] = []
+    warns: list[str] = list(warns_b)
     label = {"onclass": "Luyện tập trên lớp", "btvn": "BTVN"}
     for seg, budget in budget_dict.items():
         total = sum(minutes[seg].values())
@@ -192,12 +242,16 @@ def check_duration(lesson: LessonPackage) -> list[str]:
                 f"quá ±{budget_tol*100:.0f}% — {detail}.")
         if seg != "onclass":            # 40-40-20 là tỉ lệ giờ TRÊN LỚP
             continue
+        seg_min = dict(minutes[seg])
+        if gop:      # Thầy chốt 30/08/2026: tầng B soi VD và VDC như MỘT khối
+            seg_min["VD"] = seg_min.get("VD", 0.0) + seg_min.pop("VDC", 0.0)
         for band, target in ratio_target.items():
-            if target == 0 and minutes[seg].get(band, 0) == 0:
+            if target == 0 and seg_min.get(band, 0) == 0:
                 continue                # band không dùng ở tầng này & không xuất hiện
-            share = minutes[seg][band] / total * 100
+            share = seg_min.get(band, 0.0) / total * 100
             if abs(share - target) > ratio_tol:
+                ten = "VD+VDC" if (gop and band == "VD") else band
                 warns.append(
-                    f"duration: {label[seg]} tỉ lệ {band} = {share:.0f}% lệch chuẩn "
+                    f"duration: {label[seg]} tỉ lệ {ten} = {share:.0f}% lệch chuẩn "
                     f"{target:.0f}% quá ±{ratio_tol:.0f} điểm (tier_spec {tier}) — {detail}.")
     return warns

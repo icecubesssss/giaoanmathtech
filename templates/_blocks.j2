@@ -47,6 +47,13 @@
 ((* for _ in range(b.writelines) *))\fillline
 ((* endfor *))\par
 ((* endif *))
+((= QUY TRÌNH GIẢI BÀI — luôn in trên phiếu HS (khác hộp Gợi ý). Thầy chốt 30/08/2026. =))
+((* if b.quy_trinh *))
+\par\vspace{3pt}
+\begin{quytrinhbox}{\sffamily\bfseries\color{stage3}Quy trình giải:}\par
+((* for s in b.quy_trinh *))((( s | tex )))((* if not loop.last *))\par((* endif *))
+((* endfor *))\end{quytrinhbox}
+((* endif *))
 ((* if b.hints *))
 \par\vspace{3pt}
 \begin{hintbox}{\itshape\color{brand}Gợi ý:}\par

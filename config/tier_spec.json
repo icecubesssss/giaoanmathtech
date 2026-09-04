@@ -54,28 +54,6 @@
     "ratio_tol": 5.0,
     "spec_count_tol": 1,
     "tiers": {
-     "C": {
-      "ratio": {
-       "NB": 40,
-       "TH": 40,
-       "VD": 20,
-       "VDC": 0
-      },
-      "max_level": 3,
-      "allow_extend": false,
-      "_note": "Thầy chốt — nền yếu, KHÔNG VDC/level4"
-     },
-     "B": {
-      "ratio": {
-       "NB": 30,
-       "TH": 40,
-       "VD": 20,
-       "VDC": 10
-      },
-      "max_level": 4,
-      "allow_extend": true,
-      "_note": "Thầy chốt"
-     },
      "A": {
       "ratio": {
        "NB": 20,
@@ -86,6 +64,43 @@
       "max_level": 4,
       "allow_extend": true,
       "_note": "Thầy xác nhận 2026-06-21"
+     },
+     "B": {
+      "max_level": 4,
+      "allow_extend": true,
+      "_note": "Tỉ lệ theo CHƯƠNG (ban_do_vd_vdc.json) — Thầy chốt 30/08/2026. VD và VDC GỘP chung khi soi tỉ lệ.",
+      "ratio_variants": {
+       "_doc": "Thầy chốt 30/08/2026: tầng B KHÔNG còn một tỉ lệ chung. Tỉ lệ chọn theo CHƯƠNG, tra config/ban_do_vd_vdc.json: chương có bài VD/VDC trong đề kiểm tra định kì thì dùng 'co_vd', chương không có thì dùng 'khong_vd'. Chương ghi 'bien' (chưa chốt) thì KHÔNG gate tỉ lệ, cổng chỉ cảnh báo.",
+       "co_vd": {
+        "NB": 15,
+        "TH": 30,
+        "VD": 55,
+        "VDC": 0
+       },
+       "khong_vd": {
+        "NB": 30,
+        "TH": 70,
+        "VD": 0,
+        "VDC": 0
+       }
+      },
+      "gop_vd_vdc": true,
+      "so_ca_variants": {
+       "_doc": "Anh An chốt 30/08/2026: chương KHÔNG có VD-VDC thì GỘP 2 PHIẾU THÀNH 1 (một phiếu dạy trong 2 buổi) — tỉ lệ tổng 30% NB + 70% TH chia đều: mỗi buổi 15% NB + 35% TH. Chương CÓ VD-VDC vẫn 1 phiếu 1 buổi.",
+       "co_vd": 1,
+       "khong_vd": 2
+      }
+     },
+     "C": {
+      "ratio": {
+       "NB": 40,
+       "TH": 40,
+       "VD": 20,
+       "VDC": 0
+      },
+      "max_level": 3,
+      "allow_extend": false,
+      "_note": "Thầy chốt — nền yếu, KHÔNG VDC/level4"
      },
      "X": {
       "ratio": null,
@@ -108,28 +123,6 @@
     "ratio_tol": 5.0,
     "spec_count_tol": 1,
     "tiers": {
-     "C": {
-      "ratio": {
-       "NB": 40,
-       "TH": 40,
-       "VD": 20,
-       "VDC": 0
-      },
-      "max_level": 3,
-      "allow_extend": false,
-      "_note": "Thầy chốt 2026-07-27: giữ 40-40-20 như đại số tầng C"
-     },
-     "B": {
-      "ratio": {
-       "NB": 30,
-       "TH": 40,
-       "VD": 20,
-       "VDC": 10
-      },
-      "max_level": 4,
-      "allow_extend": true,
-      "_note": "Thầy chốt"
-     },
      "A": {
       "ratio": {
        "NB": 20,
@@ -140,6 +133,43 @@
       "max_level": 4,
       "allow_extend": true,
       "_note": "Thầy xác nhận 2026-06-21"
+     },
+     "B": {
+      "max_level": 4,
+      "allow_extend": true,
+      "_note": "Tỉ lệ theo CHƯƠNG (ban_do_vd_vdc.json) — Thầy chốt 30/08/2026. VD và VDC GỘP chung khi soi tỉ lệ.",
+      "ratio_variants": {
+       "_doc": "Thầy chốt 30/08/2026: tầng B KHÔNG còn một tỉ lệ chung. Tỉ lệ chọn theo CHƯƠNG, tra config/ban_do_vd_vdc.json: chương có bài VD/VDC trong đề kiểm tra định kì thì dùng 'co_vd', chương không có thì dùng 'khong_vd'. Chương ghi 'bien' (chưa chốt) thì KHÔNG gate tỉ lệ, cổng chỉ cảnh báo.",
+       "co_vd": {
+        "NB": 15,
+        "TH": 30,
+        "VD": 55,
+        "VDC": 0
+       },
+       "khong_vd": {
+        "NB": 30,
+        "TH": 70,
+        "VD": 0,
+        "VDC": 0
+       }
+      },
+      "gop_vd_vdc": true,
+      "so_ca_variants": {
+       "_doc": "Anh An chốt 30/08/2026: chương KHÔNG có VD-VDC thì GỘP 2 PHIẾU THÀNH 1 (một phiếu dạy trong 2 buổi) — tỉ lệ tổng 30% NB + 70% TH chia đều: mỗi buổi 15% NB + 35% TH. Chương CÓ VD-VDC vẫn 1 phiếu 1 buổi.",
+       "co_vd": 1,
+       "khong_vd": 2
+      }
+     },
+     "C": {
+      "ratio": {
+       "NB": 40,
+       "TH": 40,
+       "VD": 20,
+       "VDC": 0
+      },
+      "max_level": 3,
+      "allow_extend": false,
+      "_note": "Thầy chốt 2026-07-27: giữ 40-40-20 như đại số tầng C"
      },
      "X": {
       "ratio": null,
@@ -179,14 +209,30 @@
     },
     "tiers": {
      "B": {
-      "ratio": {
-       "NB": 25,
-       "TH": 45,
-       "VD": 30,
-       "VDC": 0
+      "max_level": 4,
+      "allow_extend": true,
+      "ratio_variants": {
+       "_doc": "Thầy chốt 30/08/2026: tầng B KHÔNG còn một tỉ lệ chung. Tỉ lệ chọn theo CHƯƠNG, tra config/ban_do_vd_vdc.json: chương có bài VD/VDC trong đề kiểm tra định kì thì dùng 'co_vd', chương không có thì dùng 'khong_vd'. Chương ghi 'bien' (chưa chốt) thì KHÔNG gate tỉ lệ, cổng chỉ cảnh báo.",
+       "co_vd": {
+        "NB": 15,
+        "TH": 30,
+        "VD": 55,
+        "VDC": 0
+       },
+       "khong_vd": {
+        "NB": 30,
+        "TH": 70,
+        "VD": 0,
+        "VDC": 0
+       }
       },
-      "max_level": 3,
-      "allow_extend": false
+      "gop_vd_vdc": true,
+      "_note": "Tỉ lệ theo CHƯƠNG (ban_do_vd_vdc.json) — Thầy chốt 30/08/2026. VD và VDC GỘP chung khi soi tỉ lệ.",
+      "so_ca_variants": {
+       "_doc": "Anh An chốt 30/08/2026: chương KHÔNG có VD-VDC thì GỘP 2 PHIẾU THÀNH 1 (một phiếu dạy trong 2 buổi) — tỉ lệ tổng 30% NB + 70% TH chia đều: mỗi buổi 15% NB + 35% TH. Chương CÓ VD-VDC vẫn 1 phiếu 1 buổi.",
+       "co_vd": 1,
+       "khong_vd": 2
+      }
      },
      "C": {
       "ratio": {
@@ -234,14 +280,30 @@
     },
     "tiers": {
      "B": {
-      "ratio": {
-       "NB": 25,
-       "TH": 45,
-       "VD": 30,
-       "VDC": 0
+      "max_level": 4,
+      "allow_extend": true,
+      "ratio_variants": {
+       "_doc": "Thầy chốt 30/08/2026: tầng B KHÔNG còn một tỉ lệ chung. Tỉ lệ chọn theo CHƯƠNG, tra config/ban_do_vd_vdc.json: chương có bài VD/VDC trong đề kiểm tra định kì thì dùng 'co_vd', chương không có thì dùng 'khong_vd'. Chương ghi 'bien' (chưa chốt) thì KHÔNG gate tỉ lệ, cổng chỉ cảnh báo.",
+       "co_vd": {
+        "NB": 15,
+        "TH": 30,
+        "VD": 55,
+        "VDC": 0
+       },
+       "khong_vd": {
+        "NB": 30,
+        "TH": 70,
+        "VD": 0,
+        "VDC": 0
+       }
       },
-      "max_level": 3,
-      "allow_extend": false
+      "gop_vd_vdc": true,
+      "_note": "Tỉ lệ theo CHƯƠNG (ban_do_vd_vdc.json) — Thầy chốt 30/08/2026. VD và VDC GỘP chung khi soi tỉ lệ.",
+      "so_ca_variants": {
+       "_doc": "Anh An chốt 30/08/2026: chương KHÔNG có VD-VDC thì GỘP 2 PHIẾU THÀNH 1 (một phiếu dạy trong 2 buổi) — tỉ lệ tổng 30% NB + 70% TH chia đều: mỗi buổi 15% NB + 35% TH. Chương CÓ VD-VDC vẫn 1 phiếu 1 buổi.",
+       "co_vd": 1,
+       "khong_vd": 2
+      }
      },
      "C": {
       "ratio": {
@@ -257,200 +319,200 @@
    }
   },
   "lop-5": {
-    "dai-so": {
-     "session_minutes": 90,
-     "break_minutes": 15,
-     "budgets": {
-      "vidu": 30.0,
-      "onclass": 45.0,
-      "btvn": 60.0
+   "dai-so": {
+    "session_minutes": 90,
+    "break_minutes": 15,
+    "budgets": {
+     "vidu": 30.0,
+     "onclass": 45.0,
+     "btvn": 60.0
+    },
+    "budget_tol": 0.2,
+    "ratio_tol": 15.0,
+    "spec_count_tol": 3,
+    "rates_override": {
+     "vidu": {
+      "NB": 0.5,
+      "TH": 1.5,
+      "VD": 3.0,
+      "VDC": 6.0
      },
-     "budget_tol": 0.2,
-     "ratio_tol": 15.0,
-     "spec_count_tol": 3,
-     "rates_override": {
-      "vidu": {
-       "NB": 0.5,
-       "TH": 1.5,
-       "VD": 3.0,
-       "VDC": 6.0
-      },
-      "onclass": {
-       "NB": 0.75,
-       "TH": 2.0,
-       "VD": 4.5,
-       "VDC": 9.0
-      },
-      "btvn": {
-       "NB": 1.0,
-       "TH": 2.0,
-       "VD": 4.0,
-       "VDC": 8.0
-      }
+     "onclass": {
+      "NB": 0.75,
+      "TH": 2.0,
+      "VD": 4.5,
+      "VDC": 9.0
      },
-     "tiers": {
-      "C": {
-       "ratio": {
-        "NB": 40,
-        "TH": 40,
-        "VD": 20,
-        "VDC": 0
-       },
-       "max_level": 3,
-       "allow_extend": false,
-       "_note": "Lớp 5 Tầng C"
-      },
-      "B": {
-       "ratio": {
-        "NB": 30,
-        "TH": 40,
-        "VD": 20,
-        "VDC": 10
-       },
-       "max_level": 4,
-       "allow_extend": true,
-       "_note": "Lớp 5 Tầng B"
-      }
+     "btvn": {
+      "NB": 1.0,
+      "TH": 2.0,
+      "VD": 4.0,
+      "VDC": 8.0
      }
     },
-    "toan": {
-     "session_minutes": 90,
-     "break_minutes": 15,
-     "budgets": {
-      "vidu": 30.0,
-      "onclass": 45.0,
-      "btvn": 60.0
-     },
-     "budget_tol": 0.2,
-     "ratio_tol": 15.0,
-     "spec_count_tol": 3,
-     "rates_override": {
-      "vidu": {
-       "NB": 0.5,
-       "TH": 1.5,
-       "VD": 3.0,
-       "VDC": 6.0
+    "tiers": {
+     "C": {
+      "ratio": {
+       "NB": 40,
+       "TH": 40,
+       "VD": 20,
+       "VDC": 0
       },
-      "onclass": {
-       "NB": 0.75,
-       "TH": 2.0,
-       "VD": 4.5,
-       "VDC": 9.0
-      },
-      "btvn": {
-       "NB": 1.0,
-       "TH": 2.0,
-       "VD": 4.0,
-       "VDC": 8.0
-      }
+      "max_level": 3,
+      "allow_extend": false,
+      "_note": "Lớp 5 Tầng C"
      },
-     "tiers": {
-      "C": {
-       "ratio": {
-        "NB": 40,
-        "TH": 40,
-        "VD": 20,
-        "VDC": 0
-       },
-       "max_level": 3,
-       "allow_extend": false,
-       "_note": "Lớp 5 Tầng C"
-      }
+     "B": {
+      "ratio": {
+       "NB": 30,
+       "TH": 40,
+       "VD": 20,
+       "VDC": 10
+      },
+      "max_level": 4,
+      "allow_extend": true,
+      "_note": "Lớp 5 Tầng B"
      }
     }
    },
-   "lop-3": {
-    "dai-so": {
-     "session_minutes": 90,
-     "break_minutes": 15,
-     "budgets": {
-      "vidu": 30.0,
-      "onclass": 45.0,
-      "btvn": 60.0
+   "toan": {
+    "session_minutes": 90,
+    "break_minutes": 15,
+    "budgets": {
+     "vidu": 30.0,
+     "onclass": 45.0,
+     "btvn": 60.0
+    },
+    "budget_tol": 0.2,
+    "ratio_tol": 15.0,
+    "spec_count_tol": 3,
+    "rates_override": {
+     "vidu": {
+      "NB": 0.5,
+      "TH": 1.5,
+      "VD": 3.0,
+      "VDC": 6.0
      },
-     "budget_tol": 0.2,
-     "ratio_tol": 15.0,
-     "spec_count_tol": 3,
-     "rates_override": {
-      "vidu": {
-       "NB": 0.5,
-       "TH": 1.5,
-       "VD": 3.0,
-       "VDC": 6.0
-      },
-      "onclass": {
-       "NB": 0.75,
-       "TH": 2.0,
-       "VD": 4.5,
-       "VDC": 9.0
-      },
-      "btvn": {
-       "NB": 1.0,
-       "TH": 2.0,
-       "VD": 4.0,
-       "VDC": 8.0
-      }
+     "onclass": {
+      "NB": 0.75,
+      "TH": 2.0,
+      "VD": 4.5,
+      "VDC": 9.0
      },
-     "tiers": {
-      "C": {
-       "ratio": {
-        "NB": 40,
-        "TH": 40,
-        "VD": 20,
-        "VDC": 0
-       },
-       "max_level": 3,
-       "allow_extend": false,
-       "_note": "Lớp 3 Tầng C"
-      }
+     "btvn": {
+      "NB": 1.0,
+      "TH": 2.0,
+      "VD": 4.0,
+      "VDC": 8.0
      }
     },
-    "toan": {
-     "session_minutes": 90,
-     "break_minutes": 15,
-     "budgets": {
-      "vidu": 30.0,
-      "onclass": 45.0,
-      "btvn": 60.0
-     },
-     "budget_tol": 0.2,
-     "ratio_tol": 15.0,
-     "spec_count_tol": 3,
-     "rates_override": {
-      "vidu": {
-       "NB": 0.5,
-       "TH": 1.5,
-       "VD": 3.0,
-       "VDC": 6.0
+    "tiers": {
+     "C": {
+      "ratio": {
+       "NB": 40,
+       "TH": 40,
+       "VD": 20,
+       "VDC": 0
       },
-      "onclass": {
-       "NB": 0.75,
-       "TH": 2.0,
-       "VD": 4.5,
-       "VDC": 9.0
-      },
-      "btvn": {
-       "NB": 1.0,
-       "TH": 2.0,
-       "VD": 4.0,
-       "VDC": 8.0
-      }
+      "max_level": 3,
+      "allow_extend": false,
+      "_note": "Lớp 5 Tầng C"
+     }
+    }
+   }
+  },
+  "lop-3": {
+   "dai-so": {
+    "session_minutes": 90,
+    "break_minutes": 15,
+    "budgets": {
+     "vidu": 30.0,
+     "onclass": 45.0,
+     "btvn": 60.0
+    },
+    "budget_tol": 0.2,
+    "ratio_tol": 15.0,
+    "spec_count_tol": 3,
+    "rates_override": {
+     "vidu": {
+      "NB": 0.5,
+      "TH": 1.5,
+      "VD": 3.0,
+      "VDC": 6.0
      },
-     "tiers": {
-      "C": {
-       "ratio": {
-        "NB": 40,
-        "TH": 40,
-        "VD": 20,
-        "VDC": 0
-       },
-       "max_level": 3,
-       "allow_extend": false,
-       "_note": "Lớp 3 Tầng C"
-      }
+     "onclass": {
+      "NB": 0.75,
+      "TH": 2.0,
+      "VD": 4.5,
+      "VDC": 9.0
+     },
+     "btvn": {
+      "NB": 1.0,
+      "TH": 2.0,
+      "VD": 4.0,
+      "VDC": 8.0
+     }
+    },
+    "tiers": {
+     "C": {
+      "ratio": {
+       "NB": 40,
+       "TH": 40,
+       "VD": 20,
+       "VDC": 0
+      },
+      "max_level": 3,
+      "allow_extend": false,
+      "_note": "Lớp 3 Tầng C"
      }
     }
    },
+   "toan": {
+    "session_minutes": 90,
+    "break_minutes": 15,
+    "budgets": {
+     "vidu": 30.0,
+     "onclass": 45.0,
+     "btvn": 60.0
+    },
+    "budget_tol": 0.2,
+    "ratio_tol": 15.0,
+    "spec_count_tol": 3,
+    "rates_override": {
+     "vidu": {
+      "NB": 0.5,
+      "TH": 1.5,
+      "VD": 3.0,
+      "VDC": 6.0
+     },
+     "onclass": {
+      "NB": 0.75,
+      "TH": 2.0,
+      "VD": 4.5,
+      "VDC": 9.0
+     },
+     "btvn": {
+      "NB": 1.0,
+      "TH": 2.0,
+      "VD": 4.0,
+      "VDC": 8.0
+     }
+    },
+    "tiers": {
+     "C": {
+      "ratio": {
+       "NB": 40,
+       "TH": 40,
+       "VD": 20,
+       "VDC": 0
+      },
+      "max_level": 3,
+      "allow_extend": false,
+      "_note": "Lớp 3 Tầng C"
+     }
+    }
+   }
+  },
   "lop-6": {
    "dai-so": {
     "session_minutes": 90,
@@ -464,6 +526,32 @@
     "ratio_tol": 10.0,
     "spec_count_tol": 2,
     "tiers": {
+     "B": {
+      "max_level": 4,
+      "allow_extend": true,
+      "ratio_variants": {
+       "_doc": "Thầy chốt 30/08/2026: tầng B KHÔNG còn một tỉ lệ chung. Tỉ lệ chọn theo CHƯƠNG, tra config/ban_do_vd_vdc.json: chương có bài VD/VDC trong đề kiểm tra định kì thì dùng 'co_vd', chương không có thì dùng 'khong_vd'. Chương ghi 'bien' (chưa chốt) thì KHÔNG gate tỉ lệ, cổng chỉ cảnh báo.",
+       "co_vd": {
+        "NB": 15,
+        "TH": 30,
+        "VD": 55,
+        "VDC": 0
+       },
+       "khong_vd": {
+        "NB": 30,
+        "TH": 70,
+        "VD": 0,
+        "VDC": 0
+       }
+      },
+      "gop_vd_vdc": true,
+      "_note": "Tỉ lệ theo CHƯƠNG (ban_do_vd_vdc.json) — Thầy chốt 30/08/2026. VD và VDC GỘP chung khi soi tỉ lệ.",
+      "so_ca_variants": {
+       "_doc": "Anh An chốt 30/08/2026: chương KHÔNG có VD-VDC thì GỘP 2 PHIẾU THÀNH 1 (một phiếu dạy trong 2 buổi) — tỉ lệ tổng 30% NB + 70% TH chia đều: mỗi buổi 15% NB + 35% TH. Chương CÓ VD-VDC vẫn 1 phiếu 1 buổi.",
+       "co_vd": 1,
+       "khong_vd": 2
+      }
+     },
      "C": {
       "ratio": {
        "NB": 40,
@@ -492,15 +580,30 @@
     "spec_count_tol": 2,
     "tiers": {
      "B": {
-      "ratio": {
-       "NB": 30,
-       "TH": 40,
-       "VD": 30,
-       "VDC": 0
+      "max_level": 4,
+      "allow_extend": true,
+      "_note": "Tỉ lệ theo CHƯƠNG (ban_do_vd_vdc.json) — Thầy chốt 30/08/2026. VD và VDC GỘP chung khi soi tỉ lệ.",
+      "ratio_variants": {
+       "_doc": "Thầy chốt 30/08/2026: tầng B KHÔNG còn một tỉ lệ chung. Tỉ lệ chọn theo CHƯƠNG, tra config/ban_do_vd_vdc.json: chương có bài VD/VDC trong đề kiểm tra định kì thì dùng 'co_vd', chương không có thì dùng 'khong_vd'. Chương ghi 'bien' (chưa chốt) thì KHÔNG gate tỉ lệ, cổng chỉ cảnh báo.",
+       "co_vd": {
+        "NB": 15,
+        "TH": 30,
+        "VD": 55,
+        "VDC": 0
+       },
+       "khong_vd": {
+        "NB": 30,
+        "TH": 70,
+        "VD": 0,
+        "VDC": 0
+       }
       },
-      "max_level": 3,
-      "allow_extend": false,
-      "_note": "Lớp 7 Hình học Tầng B"
+      "gop_vd_vdc": true,
+      "so_ca_variants": {
+       "_doc": "Anh An chốt 30/08/2026: chương KHÔNG có VD-VDC thì GỘP 2 PHIẾU THÀNH 1 (một phiếu dạy trong 2 buổi) — tỉ lệ tổng 30% NB + 70% TH chia đều: mỗi buổi 15% NB + 35% TH. Chương CÓ VD-VDC vẫn 1 phiếu 1 buổi.",
+       "co_vd": 1,
+       "khong_vd": 2
+      }
      },
      "C": {
       "ratio": {

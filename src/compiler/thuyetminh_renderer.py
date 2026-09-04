@@ -120,6 +120,10 @@ def _phieu_table(phieu, rates, info):
             if r.source_refs:
                 src = ", ".join(x.replace("_", r"\_") for x in r.source_refs)
                 note = rf"~{{\scriptsize\color{{muted}}[Nguồn: {src}]}}"
+            elif r.viet_quy_trinh:
+                # Bài bắt HS tự viết lại quy trình không bốc từ đề nào cả (Thầy chốt
+                # 30/08/2026) — dán nhãn đúng bản chất thay vì kêu "chưa trích dẫn".
+                note = r"~{\scriptsize\color{muted}[HS tự viết quy trình — không bốc từ đề]}"
             elif (r.loai or "").strip() == "NB lẻ LT":
                 note = r"~{\scriptsize\color{muted}[tự soạn theo lý thuyết]}"
             else:
@@ -216,6 +220,18 @@ def render_thuyetminh(spec: ThuyetMinhSpec) -> str:
     for p in spec.phieu:
         table, _ = _phieu_table(p, rates, info)
         parts += [r"\newpage", rf"\tmsec{{NỘI DUNG PHIẾU — PHIẾU {p.code}: {p.title}}}", table]
+        # QUY TRÌNH GIẢI BÀI của từng dạng VẬN DỤNG (Thầy chốt 30/08/2026) — in ngay
+        # dưới bảng để Thầy đọc được cái mà học sinh sẽ thấy in trong phiếu.
+        qt = [r for r in p.rows if r.quy_trinh]
+        if qt:
+            khoi_qt = [rf"\tmlbl{{{r.band} — {r.dang}}}" + _itemize(r.quy_trinh) for r in qt]
+            parts += [rf"\tmsec{{QUY TRÌNH GIẢI BÀI — in ngay tại từng bài VẬN DỤNG của phiếu {p.code}}}",
+                      r"\par\vspace{2pt}".join(khoi_qt)]
+        vqt = [r for r in p.rows if r.viet_quy_trinh]
+        if vqt:
+            parts.append(
+                r"\par\vspace{3pt}\tmlbl{Bài tự viết lại quy trình (ôn tập chương):}"
+                + _itemize([r.dang for r in vqt]))
     # Chú thích quy ước ĐẶT CUỐI tài liệu: để cuối phần mục tiêu thì nó hay bị đẩy
     # sang một trang trắng riêng (trang 2 vừa kín) — Thầy nhận được PDF thừa 1 trang.
     parts.append(

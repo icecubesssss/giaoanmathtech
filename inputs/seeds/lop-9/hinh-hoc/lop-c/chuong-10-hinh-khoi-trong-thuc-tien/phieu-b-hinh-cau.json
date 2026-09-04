@@ -1,0 +1,463 @@
+{
+ "slug": "phieu-b-hinh-cau",
+ "title": "Bài 32. Hình cầu",
+ "eyebrow": "HÌNH HỌC 9 — CHƯƠNG X · PHIẾU B",
+ "grade_label": "Lớp 9 • Ôn vào 10",
+ "class_tier": "C",
+ "so_ca": 1,
+ "stages": [
+  {
+   "kind": "review",
+   "number": 1,
+   "title": "Khám phá",
+   "teacher_note": "Mang một quả bóng vào lớp, cho HS đo đường kính bằng thước rồi hỏi ngay \"muốn tính da thì dùng số nào?\" — đó chính là bước chia đôi.",
+   "blocks": [
+    {
+     "type": "opener",
+     "text": "Quả bóng đá thi đấu chuyên nghiệp có đường kính $22$ cm. Nhà sản xuất phải biết \\emph{cần bao nhiêu da} để may một quả, còn trọng tài lại quan tâm \\emph{bơm bao nhiêu hơi} thì bóng căng. [[br]]Hai câu hỏi ấy ứng với hai công thức cuối cùng của chương X. Và cả hai đều bắt đầu bằng một việc quen thuộc: đổi đường kính $22$ cm ra bán kính.",
+     "tikz": "\\begin{tikzpicture}[line width=0.8pt, font=\\small]\n  \\draw[ink] (0,0) circle (1.15);\n  \\draw[ink] (-1.15,0) arc (180:360:1.15 and 0.345);\n  \\draw[ink, dashed] (-1.15,0) arc (180:0:1.15 and 0.345);\n  \\fill[ink] (0,0) circle (1.2pt);\n  \\node[below left, font=\\scriptsize] at (-0.06,-0.06) {$O$};\n  \\draw[ink, ->] (0,0) -- (42:1.15);\n  \\node[above left, font=\\scriptsize] at (0.483,0.483) {$R$};\n\\end{tikzpicture}"
+    },
+    {
+     "type": "noted",
+     "variant": "note",
+     "text": "\\textbf{Nhắc lại buổi trước và các lớp dưới.}[[br]]$\\bullet$ Hình trụ: $S_{xq} = 2\\pi r h$ và $V = \\pi r^2 h$.[[br]]$\\bullet$ Hình nón: $S_{xq} = \\pi r l$ và $V = \\dfrac{1}{3}\\pi r^2 h$.[[br]]$\\bullet$ Bán kính bằng NỬA đường kính: $r = d : 2$.[[br]]$\\bullet$ Đổi đơn vị: $1$ lít $= 1000$ cm$^3$; $1$ m$^3 = 1000$ lít."
+    },
+    {
+     "type": "noted",
+     "variant": "target",
+     "text": "\\textbf{Đích của buổi học.}[[br]]Hình cầu chưa vào đề chính thức của Sở nhưng CÓ ở đề minh hoạ (bài năm viên bi) và ở nhiều đề của trường. Quan trọng hơn, buổi này dạy \\textbf{ý tưởng duy nhất của cả chương ngoài công thức}: \\emph{thể tích vật thả chìm bằng thể tích nước DÂNG THÊM (hoặc nước TRÀN RA)}."
+    }
+   ]
+  },
+  {
+   "kind": "concept",
+   "number": 2,
+   "title": "Kiến thức cần nhớ",
+   "teacher_note": "Hai công thức mới rất ngắn; phần đáng dạy kĩ là Ví dụ 4 và Ví dụ 5 (khuôn mực nước). Nhấn mạnh: không cần biết bán kính viên bi vẫn tính được thể tích của nó.",
+   "blocks": [
+    {
+     "type": "para",
+     "text": "\\textbf{1. Hình cầu và mặt cầu}"
+    },
+    {
+     "type": "para",
+     "text": "Khi quay nửa hình tròn tâm $O$ bán kính $R$ một vòng quanh đường kính của nó ta được một \\emph{hình cầu} tâm $O$ bán kính $R$; phần vỏ ngoài gọi là \\emph{mặt cầu}.[[br]]$\\bullet$ Diện tích mặt cầu: $S = 4\\pi R^2$.[[br]]$\\bullet$ Thể tích hình cầu: $V = \\dfrac{4}{3}\\pi R^3$ (nhớ mũ BA).[[br]]$\\bullet$ Cắt hình cầu bởi một mặt phẳng thì mặt cắt luôn là một hình tròn."
+    },
+    {
+     "type": "noted",
+     "variant": "example",
+     "text": "\\begin{minipage}[t]{0.58\\linewidth}\\vspace{0pt}\\textbf{Ví dụ 1.} Trên Hình 1, hãy chỉ ra tâm, bán kính và đường kính của hình cầu; cho biết mặt cắt của hình cầu bởi một mặt phẳng là hình gì. [[br]]{\\sffamily\\bfseries\\color{brand}Lời giải}[[br]]Tâm của hình cầu là điểm $O$; bán kính là đoạn nối $O$ với một điểm bất kì trên mặt cầu, kí hiệu $R$.[[br]]Đường kính là đoạn thẳng đi qua $O$ và nối hai điểm trên mặt cầu, dài gấp đôi bán kính.[[br]]Cắt hình cầu bởi một mặt phẳng thì mặt cắt luôn là một hình tròn.[[br]]Vậy hình cầu chỉ cần MỘT số đo là bán kính $R$, và mọi mặt cắt của nó đều là hình tròn.\\end{minipage}\\hfill\\begin{minipage}[t]{0.36\\linewidth}\\vspace{0pt}\n\\centering\n\\adjustbox{max width=\\linewidth, max totalheight=3.4cm}{\n\\begin{tikzpicture}[line width=0.8pt, font=\\small]\n  \\draw[ink] (0,0) circle (1.15);\n  \\draw[ink] (-1.15,0) arc (180:360:1.15 and 0.345);\n  \\draw[ink, dashed] (-1.15,0) arc (180:0:1.15 and 0.345);\n  \\fill[ink] (0,0) circle (1.2pt);\n  \\node[below left, font=\\scriptsize] at (-0.06,-0.06) {$O$};\n  \\draw[ink, ->] (0,0) -- (42:1.15);\n  \\node[above left, font=\\scriptsize] at (0.483,0.483) {$R$};\n\\end{tikzpicture}\n}\n\\par\\vspace{2pt}{\\sffamily\\scriptsize\\itshape\\color{muted}Hình 1}\n\\end{minipage}"
+    },
+    {
+     "type": "para",
+     "text": "\\textbf{2. Ý tưởng duy nhất ngoài công thức: bài mực nước}"
+    },
+    {
+     "type": "para",
+     "text": "Thả một vật chìm hẳn vào bình nước thì \\textbf{thể tích của vật bằng thể tích phần nước DÂNG THÊM}. Nếu bình đang đầy thì thể tích vật bằng thể tích nước TRÀN RA.[[br]]Phần nước dâng thêm trong một bình hình trụ lại là một hình trụ có cùng bán kính đáy, chiều cao bằng \\emph{độ dâng của mực nước}. Nhờ đó tính được thể tích vật mà không cần biết bán kính của nó."
+    },
+    {
+     "type": "noted",
+     "variant": "example",
+     "text": "\\begin{minipage}[t]{0.58\\linewidth}\\vspace{0pt}\\textbf{Ví dụ 2.} \\textbf{(CK2 THCS Trưng Vương và THCS Chu Văn An — bẫy đường kính.)} Tìm bán kính của mỗi vật hình cầu sau. \\textbf{a)} Quả bóng đá có đường kính $22$ cm (Hình 2). \\textbf{b)} Quả nặng có đường kính $4$ cm. [[br]]{\\sffamily\\bfseries\\color{brand}Lời giải}[[br]]\\textbf{a)} Bán kính bằng nửa đường kính nên $R = 22 : 2 = 11$ (cm).[[br]]Vậy phải thay $R = 11$ cm vào công thức, không được thay $22$ cm.[[br]]\\textbf{b)} Tương tự, $R = 4 : 2 = 2$ (cm).[[br]]Vậy phải thay $R = 2$ cm vào công thức.\\end{minipage}\\hfill\\begin{minipage}[t]{0.36\\linewidth}\\vspace{0pt}\n\\centering\n\\adjustbox{max width=\\linewidth, max totalheight=3.4cm}{\n\\begin{tikzpicture}[line width=0.8pt, font=\\small]\n  \\draw[ink] (0,0) circle (1.15);\n  \\draw[ink] (-1.15,0) arc (180:360:1.15 and 0.345);\n  \\draw[ink, dashed] (-1.15,0) arc (180:0:1.15 and 0.345);\n  \\fill[ink] (0,0) circle (1.2pt);\n  \\node[below left, font=\\scriptsize] at (-0.06,-0.06) {$O$};\n  \\draw[ink, <->] (-1.15,0) -- (1.15,0);\n  \\node[anchor=center, font=\\scriptsize, fill=white, inner sep=1pt] at (0,0) {$22$};\n\\end{tikzpicture}\n}\n\\par\\vspace{2pt}{\\sffamily\\scriptsize\\itshape\\color{muted}Hình 2}\n\\end{minipage}"
+    },
+    {
+     "type": "noted",
+     "variant": "trap",
+     "text": "\\textbf{Bốn lỗi mất điểm quen thuộc.}[[br]]$\\bullet$ Lẫn $S = 4\\pi R^2$ với $V = \\dfrac{4}{3}\\pi R^3$; hoặc viết $V = \\dfrac{4}{3}\\pi R^2$ (mũ HAI thay vì mũ BA).[[br]]$\\bullet$ Vẫn bẫy đường kính: bóng đá \\emph{đường kính $22$ cm} mà thay $R = 22$.[[br]]$\\bullet$ Không đổi đơn vị: ra cm$^3$ rồi trả lời \\textquotedblleft bao nhiêu lít\\textquotedblright.[[br]]$\\bullet$ Bài mực nước: không nhận ra thể tích vật bằng thể tích nước dâng thêm, ngồi tìm bán kính viên bi mà đề không cho."
+    },
+    {
+     "type": "noted",
+     "variant": "example",
+     "text": "\\begin{minipage}[t]{0.58\\linewidth}\\vspace{0pt}\\textbf{Ví dụ 3.} \\textbf{(CK2 THCS Trưng Vương.)} Bóng đá thi đấu chuyên nghiệp có dạng hình cầu đường kính $22$ cm (Hình 3). Lấy $\\pi \\approx 3{,}14$. \\textbf{a)} Tính diện tích da để làm một quả bóng đó. \\textbf{b)} Tính thể tích quả bóng rồi đổi ra lít. [[br]]{\\sffamily\\bfseries\\color{brand}Lời giải}[[br]]\\textbf{a)} Bán kính của quả bóng là $R = 22 : 2 = 11$ (cm).[[br]]Áp dụng công thức diện tích mặt cầu, ta có[[br]]$S = 4\\pi R^2 \\approx 4\\cdot 3{,}14\\cdot 11^2 = 1519{,}76$ (cm$^2$).[[br]]Vậy cần khoảng $1519{,}76$ cm$^2$ da.[[br]]\\textbf{b)} Áp dụng công thức thể tích hình cầu, ta có[[br]]$V = \\dfrac{4}{3}\\pi R^3 \\approx \\dfrac{4}{3}\\cdot 3{,}14\\cdot 11^3 \\approx 5572{,}45$ (cm$^3$).[[br]]Đổi đơn vị: $5572{,}45$ cm$^3$ $\\approx 5{,}57$ lít (vì $1$ lít $= 1000$ cm$^3$).[[br]]Vậy thể tích quả bóng khoảng $5572{,}45$ cm$^3$, tức khoảng $5{,}57$ lít.\\end{minipage}\\hfill\\begin{minipage}[t]{0.36\\linewidth}\\vspace{0pt}\n\\centering\n\\adjustbox{max width=\\linewidth, max totalheight=3.4cm}{\n\\begin{tikzpicture}[line width=0.8pt, font=\\small]\n  \\draw[ink] (0,0) circle (1.15);\n  \\draw[ink] (-1.15,0) arc (180:360:1.15 and 0.345);\n  \\draw[ink, dashed] (-1.15,0) arc (180:0:1.15 and 0.345);\n  \\fill[ink] (0,0) circle (1.2pt);\n  \\node[below left, font=\\scriptsize] at (-0.06,-0.06) {$O$};\n  \\draw[ink, <->] (-1.15,0) -- (1.15,0);\n  \\node[anchor=center, font=\\scriptsize, fill=white, inner sep=1pt] at (0,0) {$22$};\n\\end{tikzpicture}\n}\n\\par\\vspace{2pt}{\\sffamily\\scriptsize\\itshape\\color{muted}Hình 3}\n\\end{minipage}"
+    },
+    {
+     "type": "noted",
+     "variant": "example",
+     "text": "\\begin{minipage}[t]{0.58\\linewidth}\\vspace{0pt}\\textbf{Ví dụ 4.} \\textbf{(Câu IV.1b đề minh hoạ của Sở — khuôn MỰC NƯỚC DÂNG.)} Một ly nước hình trụ cao $15$ cm, bán kính đáy $2{,}5$ cm, lượng nước trong ly cao $10$ cm. Thả vào ly $5$ viên bi hình cầu giống hệt nhau, ngập hoàn toàn trong nước, làm nước dâng lên đúng bằng miệng ly và không tràn ra ngoài (Hình 4). Tính thể tích mỗi viên bi. Lấy $\\pi \\approx 3{,}14$. [[br]]{\\sffamily\\bfseries\\color{brand}Lời giải}[[br]]Mực nước dâng thêm một đoạn bằng $15 - 10 = 5$ (cm).[[br]]Vì các viên bi ngập hoàn toàn nên tổng thể tích $5$ viên bi bằng thể tích phần nước dâng thêm.[[br]]Phần nước dâng thêm là một hình trụ bán kính đáy $2{,}5$ cm, chiều cao $5$ cm nên có thể tích[[br]]$V_5 = \\pi r^2 h = \\pi\\cdot 2{,}5^2\\cdot 5 = 31{,}25\\pi$ (cm$^3$).[[br]]Thể tích mỗi viên bi là $V = 31{,}25\\pi : 5 = 6{,}25\\pi \\approx 6{,}25\\cdot 3{,}14 \\approx 19{,}6$ (cm$^3$).[[br]]Vậy mỗi viên bi có thể tích khoảng $19{,}6$ cm$^3$.\\end{minipage}\\hfill\\begin{minipage}[t]{0.36\\linewidth}\\vspace{0pt}\n\\centering\n\\adjustbox{max width=\\linewidth, max totalheight=3.4cm}{\n\\begin{tikzpicture}[line width=0.8pt, font=\\small]\n  \\fill[info!25] (-1,1.35) -- (-1,0) arc (180:360:1 and 0.32) -- (1,1.35) arc (0:180:1 and 0.32);\n  \\draw[ink] (0,1.35) ellipse (1 and 0.32);\n  \\draw[ink] (0,2) ellipse (1 and 0.32);\n  \\draw[ink] (-1,0) arc (180:360:1 and 0.32);\n  \\draw[ink, dashed] (-1,0) arc (180:0:1 and 0.32);\n  \\draw[ink] (-1,0) -- (-1,2);\n  \\draw[ink] (1,0) -- (1,2);\n  \\draw[ink, fill=gold!40] (-0.5,0.26) circle (0.17);\n  \\draw[ink, fill=gold!40] (0,0.26) circle (0.17);\n  \\draw[ink, fill=gold!40] (0.5,0.26) circle (0.17);\n  \\draw[ink, <->] (-1.42,0) -- (-1.42,1.35);\n  \\node[left, font=\\scriptsize] at (-1.5,0.675) {$h_1$};\n  \\draw[ink, <->] (1.42,0) -- (1.42,2);\n  \\node[right, font=\\scriptsize] at (1.5,1) {$h$};\n  \\draw[ink, ->] (0,2) -- (1,2);\n  \\node[above, font=\\scriptsize] at (0.5,2.06) {$r$};\n\\end{tikzpicture}\n}\n\\par\\vspace{2pt}{\\sffamily\\scriptsize\\itshape\\color{muted}Hình 4}\n\\end{minipage}"
+    },
+    {
+     "type": "noted",
+     "variant": "example",
+     "text": "\\begin{minipage}[t]{0.58\\linewidth}\\vspace{0pt}\\textbf{Ví dụ 5.} \\textbf{(CK2 THCS Chu Văn An — khuôn NƯỚC TRÀN.)} Một cốc thuỷ tinh hình trụ bán kính đáy $3$ cm, chiều cao $10$ cm, đang chứa ĐẦY nước (Hình 5). Thả vào cốc một quả nặng hình cầu đường kính $4$ cm thì nước tràn ra ngoài. Tính thể tích nước còn lại trong cốc. Lấy $\\pi \\approx 3{,}14$. [[br]]{\\sffamily\\bfseries\\color{brand}Lời giải}[[br]]Thể tích của cốc là $V_{\\text{cốc}} = \\pi r^2 h \\approx 3{,}14\\cdot 3^2 \\cdot 10 = 282{,}6$ (cm$^3$).[[br]]Bán kính quả nặng là $R = 4 : 2 = 2$ (cm), nên thể tích quả nặng là[[br]]$V_{\\text{nặng}} = \\dfrac{4}{3}\\pi R^3 \\approx \\dfrac{4}{3}\\cdot 3{,}14\\cdot 2^3 \\approx 33{,}49$ (cm$^3$).[[br]]Vì cốc đang đầy nước nên lượng nước tràn ra đúng bằng thể tích quả nặng.[[br]]Do đó thể tích nước còn lại là $282{,}6 - 33{,}49 = 249{,}11$ (cm$^3$).[[br]]Vậy trong cốc còn khoảng $249{,}11$ cm$^3$ nước.\\end{minipage}\\hfill\\begin{minipage}[t]{0.36\\linewidth}\\vspace{0pt}\n\\centering\n\\adjustbox{max width=\\linewidth, max totalheight=3.4cm}{\n\\begin{tikzpicture}[line width=0.8pt, font=\\small]\n  \\fill[info!25] (-1,2) -- (-1,0) arc (180:360:1 and 0.32) -- (1,2) arc (0:180:1 and 0.32);\n  \\draw[ink] (0,2) ellipse (1 and 0.32);\n  \\draw[ink] (0,2) ellipse (1 and 0.32);\n  \\draw[ink] (-1,0) arc (180:360:1 and 0.32);\n  \\draw[ink, dashed] (-1,0) arc (180:0:1 and 0.32);\n  \\draw[ink] (-1,0) -- (-1,2);\n  \\draw[ink] (1,0) -- (1,2);\n  \\draw[ink, dashed] (0,0) -- (0,2);\n  \\fill[ink] (0,2) circle (1.2pt);\n  \\node[right, font=\\scriptsize] at (0.12,1) {$10$};\n  \\draw[ink, ->] (0,2) -- (1,2);\n  \\node[above, font=\\scriptsize] at (0.5,2.06) {$3$};\n  \\draw[ink, fill=gold!35] (-0.45,0.24) circle (0.16);\n\\end{tikzpicture}\n}\n\\par\\vspace{2pt}{\\sffamily\\scriptsize\\itshape\\color{muted}Hình 5}\n\\end{minipage}"
+    },
+    {
+     "type": "noted",
+     "variant": "example",
+     "text": "\\textbf{Ví dụ 6.} \\textbf{(CK2 THCS Trưng Vương — ghép hai bước.)} Dùng máy bơm mỗi giây đưa được $0{,}5$ lít không khí vào bóng. Hỏi sau bao nhiêu giây thì bơm căng quả bóng ở Ví dụ 3 (thể tích khoảng $5{,}57$ lít)? Làm tròn kết quả đến chữ số thập phân thứ nhất. [[br]]{\\sffamily\\bfseries\\color{brand}Lời giải}[[br]]Thể tích quả bóng khoảng $5{,}57$ lít (đã tính ở Ví dụ 3).[[br]]Mỗi giây máy bơm đưa được $0{,}5$ lít không khí vào bóng.[[br]]Do đó thời gian cần bơm là $5{,}57 : 0{,}5 \\approx 11{,}1$ (giây).[[br]]Vậy sau khoảng $11{,}1$ giây thì quả bóng căng đầy hơi."
+    },
+    {
+     "type": "noted",
+     "variant": "tip",
+     "text": "\\textbf{Sáu công thức của cả chương — chép thuộc.}[[br]]\\quad Trụ: $S_{xq} = 2\\pi r h$ · $V = \\pi r^2 h$[[br]]\\quad Nón: $S_{xq} = \\pi r l$ · $V = \\dfrac{1}{3}\\pi r^2 h$[[br]]\\quad Cầu: $S = 4\\pi R^2$ · $V = \\dfrac{4}{3}\\pi R^3$[[br]]Mẹo nhớ: hễ là THỂ TÍCH thì số mũ cao hơn một bậc so với DIỆN TÍCH."
+    }
+   ]
+  },
+  {
+   "kind": "practice1",
+   "number": 3,
+   "title": "Luyện tập 1 — Nhận biết",
+   "teacher_note": "Chín bài chạy nhanh vì hình đã vẽ sẵn. Bài 5 và Bài 6 là hai chỗ tầng C hay sai nhất: bấm máy luỹ thừa và đổi đơn vị.",
+   "blocks": [
+    {
+     "type": "problem",
+     "label": "Bài 1.",
+     "statement": "\\par\\nopagebreak\n\\begin{minipage}[t]{0.62\\linewidth}\\vspace{0pt}\nQuan sát Hình 7 rồi trả lời.[[br]]a) [NB] Chỉ ra tâm và bán kính của hình cầu trên hình.[[br]]b) [NB] Cắt hình cầu bởi một mặt phẳng thì mặt cắt là hình gì?\n\\end{minipage}\\hfill\n\\begin{minipage}[t]{0.32\\linewidth}\\vspace{0pt}\n\\centering\n\\adjustbox{max width=\\linewidth, max totalheight=3.0cm}{\n\\begin{tikzpicture}[line width=0.8pt, font=\\small]\n  \\draw[ink] (0,0) circle (1.15);\n  \\draw[ink] (-1.15,0) arc (180:360:1.15 and 0.345);\n  \\draw[ink, dashed] (-1.15,0) arc (180:0:1.15 and 0.345);\n  \\fill[ink] (0,0) circle (1.2pt);\n  \\node[below left, font=\\scriptsize] at (-0.06,-0.06) {$O$};\n  \\draw[ink, ->] (0,0) -- (42:1.15);\n  \\node[above left, font=\\scriptsize] at (0.483,0.483) {$R$};\n\\end{tikzpicture}\n}\n\\par\\vspace{2pt}{\\sffamily\\scriptsize\\itshape\\color{muted}Hình 7}\n\\end{minipage}",
+     "tier": "onclass",
+     "level": 1,
+     "solution": "a) Tâm là điểm $O$; bán kính là $R$ — đoạn nối $O$ với một điểm trên mặt cầu.[[br]]b) Mặt cắt luôn là một HÌNH TRÒN.",
+     "dang_id": "NB1",
+     "writelines": 0,
+     "figure_given": true
+    },
+    {
+     "type": "problem",
+     "label": "Bài 2.",
+     "statement": "\\par\\nopagebreak\n\\begin{minipage}[t]{0.62\\linewidth}\\vspace{0pt}\nĐổi đường kính sang bán kính trước khi thay số (Hình 8).[[br]]a) [NB] Quả bóng rổ có đường kính $24$ cm $\\Rightarrow R = \\ldots\\ldots$ cm.[[br]]b) [NB] Viên bi có đường kính $1{,}8$ cm $\\Rightarrow R = \\ldots\\ldots$ cm.\n\\end{minipage}\\hfill\n\\begin{minipage}[t]{0.32\\linewidth}\\vspace{0pt}\n\\centering\n\\adjustbox{max width=\\linewidth, max totalheight=3.0cm}{\n\\begin{tikzpicture}[line width=0.8pt, font=\\small]\n  \\draw[ink] (0,0) circle (1.15);\n  \\draw[ink] (-1.15,0) arc (180:360:1.15 and 0.345);\n  \\draw[ink, dashed] (-1.15,0) arc (180:0:1.15 and 0.345);\n  \\fill[ink] (0,0) circle (1.2pt);\n  \\node[below left, font=\\scriptsize] at (-0.06,-0.06) {$O$};\n  \\draw[ink, <->] (-1.15,0) -- (1.15,0);\n  \\node[anchor=center, font=\\scriptsize, fill=white, inner sep=1pt] at (0,0) {$d$};\n\\end{tikzpicture}\n}\n\\par\\vspace{2pt}{\\sffamily\\scriptsize\\itshape\\color{muted}Hình 8}\n\\end{minipage}",
+     "tier": "onclass",
+     "level": 1,
+     "solution": "a) $R = 24 : 2 = 12$ cm.[[br]]b) $R = 1{,}8 : 2 = 0{,}9$ cm.",
+     "dang_id": "NB2",
+     "writelines": 0,
+     "figure_given": true
+    },
+    {
+     "type": "problem",
+     "label": "Bài 3.",
+     "statement": "\\par\\nopagebreak\n\\begin{minipage}[t]{0.62\\linewidth}\\vspace{0pt}\nThay số vào công thức diện tích mặt cầu $S = 4\\pi R^2$, lấy $\\pi \\approx 3{,}14$ (Hình 9).[[br]]a) [NB] $R = 5$ cm.[[br]]b) [NB] $R = 10$ cm.\n\\end{minipage}\\hfill\n\\begin{minipage}[t]{0.32\\linewidth}\\vspace{0pt}\n\\centering\n\\adjustbox{max width=\\linewidth, max totalheight=3.0cm}{\n\\begin{tikzpicture}[line width=0.8pt, font=\\small]\n  \\draw[ink] (0,0) circle (1.15);\n  \\draw[ink] (-1.15,0) arc (180:360:1.15 and 0.345);\n  \\draw[ink, dashed] (-1.15,0) arc (180:0:1.15 and 0.345);\n  \\fill[ink] (0,0) circle (1.2pt);\n  \\node[below left, font=\\scriptsize] at (-0.06,-0.06) {$O$};\n  \\draw[ink, ->] (0,0) -- (42:1.15);\n  \\node[above left, font=\\scriptsize] at (0.483,0.483) {$R$};\n\\end{tikzpicture}\n}\n\\par\\vspace{2pt}{\\sffamily\\scriptsize\\itshape\\color{muted}Hình 9}\n\\end{minipage}",
+     "tier": "onclass",
+     "level": 1,
+     "solution": "a) $S \\approx 4\\cdot 3{,}14\\cdot 5^2 = 314$ (cm$^2$).[[br]]b) $S \\approx 4\\cdot 3{,}14\\cdot 10^2 = 1256$ (cm$^2$).",
+     "dang_id": "NB3",
+     "writelines": 0,
+     "figure_given": true
+    },
+    {
+     "type": "problem",
+     "label": "Bài 4.",
+     "statement": "\\par\\nopagebreak\n\\begin{minipage}[t]{0.62\\linewidth}\\vspace{0pt}\nThay số vào công thức thể tích hình cầu $V = \\dfrac{4}{3}\\pi R^3$, lấy $\\pi \\approx 3{,}14$; nhớ mũ BA (Hình 10).[[br]]a) [NB] $R = 3$ cm.[[br]]b) [NB] $R = 2$ cm (làm tròn đến hàng phần trăm).\n\\end{minipage}\\hfill\n\\begin{minipage}[t]{0.32\\linewidth}\\vspace{0pt}\n\\centering\n\\adjustbox{max width=\\linewidth, max totalheight=3.0cm}{\n\\begin{tikzpicture}[line width=0.8pt, font=\\small]\n  \\draw[ink] (0,0) circle (1.15);\n  \\draw[ink] (-1.15,0) arc (180:360:1.15 and 0.345);\n  \\draw[ink, dashed] (-1.15,0) arc (180:0:1.15 and 0.345);\n  \\fill[ink] (0,0) circle (1.2pt);\n  \\node[below left, font=\\scriptsize] at (-0.06,-0.06) {$O$};\n  \\draw[ink, ->] (0,0) -- (42:1.15);\n  \\node[above left, font=\\scriptsize] at (0.483,0.483) {$R$};\n\\end{tikzpicture}\n}\n\\par\\vspace{2pt}{\\sffamily\\scriptsize\\itshape\\color{muted}Hình 10}\n\\end{minipage}",
+     "tier": "onclass",
+     "level": 1,
+     "solution": "a) $V \\approx \\dfrac{4}{3}\\cdot 3{,}14\\cdot 3^3 = 113{,}04$ (cm$^3$).[[br]]b) $V \\approx \\dfrac{4}{3}\\cdot 3{,}14\\cdot 2^3 \\approx 33{,}49$ (cm$^3$).",
+     "dang_id": "NB4",
+     "writelines": 0,
+     "figure_given": true
+    },
+    {
+     "type": "problem",
+     "label": "Bài 5.",
+     "statement": "\\par\\nopagebreak\n\\begin{minipage}[t]{0.62\\linewidth}\\vspace{0pt}\nBấm máy cho đúng, giữ ĐỦ chữ số ở mọi bước trung gian (Hình 11).[[br]]a) [NB] $2{,}5^2 = \\ldots\\ldots$ và $2{,}5^3 = \\ldots\\ldots$[[br]]b) [NB] $11^3 = \\ldots\\ldots$ và $0{,}4^2 = \\ldots\\ldots$\n\\end{minipage}\\hfill\n\\begin{minipage}[t]{0.32\\linewidth}\\vspace{0pt}\n\\centering\n\\adjustbox{max width=\\linewidth, max totalheight=3.0cm}{\n\\begin{tikzpicture}[line width=0.8pt, font=\\small]\n  \\draw[ink] (0,0) circle (1.15);\n  \\draw[ink] (-1.15,0) arc (180:360:1.15 and 0.345);\n  \\draw[ink, dashed] (-1.15,0) arc (180:0:1.15 and 0.345);\n  \\fill[ink] (0,0) circle (1.2pt);\n  \\node[below left, font=\\scriptsize] at (-0.06,-0.06) {$O$};\n  \\draw[ink, ->] (0,0) -- (42:1.15);\n  \\node[above left, font=\\scriptsize] at (0.483,0.483) {$R$};\n\\end{tikzpicture}\n}\n\\par\\vspace{2pt}{\\sffamily\\scriptsize\\itshape\\color{muted}Hình 11}\n\\end{minipage}",
+     "tier": "onclass",
+     "level": 1,
+     "solution": "a) $2{,}5^2 = 6{,}25$ và $2{,}5^3 = 15{,}625$.[[br]]b) $11^3 = 1331$ và $0{,}4^2 = 0{,}16$.",
+     "dang_id": "NB5",
+     "writelines": 0,
+     "figure_given": true
+    },
+    {
+     "type": "problem",
+     "label": "Bài 6.",
+     "statement": "\\par\\nopagebreak\n\\begin{minipage}[t]{0.62\\linewidth}\\vspace{0pt}\nĐổi đơn vị (Hình 12).[[br]]a) [NB] $5572$ cm$^3 = \\ldots\\ldots$ lít.[[br]]b) [NB] $4{,}867$ m$^3 = \\ldots\\ldots$ lít.\n\\end{minipage}\\hfill\n\\begin{minipage}[t]{0.32\\linewidth}\\vspace{0pt}\n\\centering\n\\adjustbox{max width=\\linewidth, max totalheight=3.0cm}{\n\\begin{tikzpicture}[line width=0.8pt, font=\\small]\n  \\draw[ink] (0,0) circle (1.15);\n  \\draw[ink] (-1.15,0) arc (180:360:1.15 and 0.345);\n  \\draw[ink, dashed] (-1.15,0) arc (180:0:1.15 and 0.345);\n  \\fill[ink] (0,0) circle (1.2pt);\n  \\node[below left, font=\\scriptsize] at (-0.06,-0.06) {$O$};\n  \\draw[ink, ->] (0,0) -- (42:1.15);\n  \\node[above left, font=\\scriptsize] at (0.483,0.483) {$R$};\n\\end{tikzpicture}\n}\n\\par\\vspace{2pt}{\\sffamily\\scriptsize\\itshape\\color{muted}Hình 12}\n\\end{minipage}",
+     "tier": "onclass",
+     "level": 1,
+     "solution": "a) $5572$ cm$^3 = 5572 : 1000 = 5{,}572$ lít.[[br]]b) $4{,}867$ m$^3 = 4{,}867\\cdot 1000 = 4867$ lít.",
+     "dang_id": "NB6",
+     "writelines": 0,
+     "figure_given": true
+    },
+    {
+     "type": "problem",
+     "label": "Bài 7.",
+     "statement": "\\par\\nopagebreak\n\\begin{minipage}[t]{0.62\\linewidth}\\vspace{0pt}\nNhận ra khuôn MỰC NƯỚC trên Hình 13.[[br]]a) [NB] Ly cao $h$, nước ban đầu cao $h_1$. Sau khi thả bi, nước dâng đúng miệng ly. Phần nước dâng thêm cao \\ldots\\ldots[[br]]b) [NB] Tổng thể tích các viên bi bằng thể tích của \\ldots\\ldots\n\\end{minipage}\\hfill\n\\begin{minipage}[t]{0.32\\linewidth}\\vspace{0pt}\n\\centering\n\\adjustbox{max width=\\linewidth, max totalheight=3.2cm}{\n\\begin{tikzpicture}[line width=0.8pt, font=\\small]\n  \\fill[info!25] (-1,1.35) -- (-1,0) arc (180:360:1 and 0.32) -- (1,1.35) arc (0:180:1 and 0.32);\n  \\draw[ink] (0,1.35) ellipse (1 and 0.32);\n  \\draw[ink] (0,2) ellipse (1 and 0.32);\n  \\draw[ink] (-1,0) arc (180:360:1 and 0.32);\n  \\draw[ink, dashed] (-1,0) arc (180:0:1 and 0.32);\n  \\draw[ink] (-1,0) -- (-1,2);\n  \\draw[ink] (1,0) -- (1,2);\n  \\draw[ink, fill=gold!40] (-0.5,0.26) circle (0.17);\n  \\draw[ink, fill=gold!40] (0,0.26) circle (0.17);\n  \\draw[ink, fill=gold!40] (0.5,0.26) circle (0.17);\n  \\draw[ink, <->] (-1.42,0) -- (-1.42,1.35);\n  \\node[left, font=\\scriptsize] at (-1.5,0.675) {$h_1$};\n  \\draw[ink, <->] (1.42,0) -- (1.42,2);\n  \\node[right, font=\\scriptsize] at (1.5,1) {$h$};\n  \\draw[ink, ->] (0,2) -- (1,2);\n  \\node[above, font=\\scriptsize] at (0.5,2.06) {$r$};\n\\end{tikzpicture}\n}\n\\par\\vspace{2pt}{\\sffamily\\scriptsize\\itshape\\color{muted}Hình 13}\n\\end{minipage}",
+     "tier": "onclass",
+     "level": 1,
+     "solution": "a) Phần nước dâng thêm cao $h - h_1$ (chiều cao ly trừ mực nước ban đầu).[[br]]b) Bằng thể tích PHẦN NƯỚC DÂNG THÊM — một hình trụ cùng bán kính đáy, chiều cao $h - h_1$.",
+     "dang_id": "NB7",
+     "writelines": 0,
+     "figure_given": true
+    },
+    {
+     "type": "problem",
+     "label": "Bài 8.",
+     "statement": "\\par\\nopagebreak\n\\begin{minipage}[t]{0.62\\linewidth}\\vspace{0pt}\nMột quả bóng hình cầu có đường kính $22$ cm (Hình 14). Điền vào chỗ trống để hoàn thành bài giải, lấy $\\pi \\approx 3{,}14$.[[br]]a) [NB] Bán kính quả bóng là $R = \\ldots\\ldots : 2 = \\ldots\\ldots$ (cm).[[br]]b) [NB] Diện tích mặt cầu là $S = 4\\pi \\cdot \\ldots\\ldots^2 \\approx \\ldots\\ldots$ (\\ldots\\ldots).[[br]]c) [NB] Vậy diện tích da cần dùng khoảng \\ldots\\ldots cm$^2$.\n\\end{minipage}\\hfill\n\\begin{minipage}[t]{0.32\\linewidth}\\vspace{0pt}\n\\centering\n\\adjustbox{max width=\\linewidth, max totalheight=3.0cm}{\n\\begin{tikzpicture}[line width=0.8pt, font=\\small]\n  \\draw[ink] (0,0) circle (1.15);\n  \\draw[ink] (-1.15,0) arc (180:360:1.15 and 0.345);\n  \\draw[ink, dashed] (-1.15,0) arc (180:0:1.15 and 0.345);\n  \\fill[ink] (0,0) circle (1.2pt);\n  \\node[below left, font=\\scriptsize] at (-0.06,-0.06) {$O$};\n  \\draw[ink, <->] (-1.15,0) -- (1.15,0);\n  \\node[anchor=center, font=\\scriptsize, fill=white, inner sep=1pt] at (0,0) {$22$};\n\\end{tikzpicture}\n}\n\\par\\vspace{2pt}{\\sffamily\\scriptsize\\itshape\\color{muted}Hình 14}\n\\end{minipage}",
+     "tier": "onclass",
+     "level": 1,
+     "solution": "a) $R = 22 : 2 = 11$ (cm).[[br]]b) $S = 4\\pi\\cdot 11^2 \\approx 1519{,}76$ (cm$^2$).[[br]]c) Vậy diện tích da cần dùng khoảng $1519{,}76$ cm$^2$.",
+     "dang_id": "NB8",
+     "writelines": 0,
+     "figure_given": true
+    },
+    {
+     "type": "problem",
+     "label": "Bài 9.",
+     "statement": "[NB] Vẽ phác vào vở một hình cầu bán kính $R = 4$ cm và một ly nước hình trụ cao $12$ cm, bán kính đáy $3$ cm đang chứa nước cao $8$ cm; ghi rõ $R$, $h$ và mực nước lên hình trước khi tính.",
+     "tier": "onclass",
+     "level": 1,
+     "solution": "Hình cầu: vẽ đường tròn kèm đường xích đạo nét đứt, ghi tâm $O$ và bán kính $R = 4$ cm. Ly nước: hình trụ ghi $r = 3$ cm, $h = 12$ cm, mực nước $8$ cm — phần nước là một hình trụ cao $8$ cm.",
+     "dang_id": "NB9",
+     "writelines": 0,
+     "draw": true
+    }
+   ]
+  },
+  {
+   "kind": "practice2",
+   "number": 4,
+   "title": "Luyện tập 2 — Thông hiểu \\& Vận dụng",
+   "teacher_note": "Bài 13 là Câu IV.1 đề minh hoạ của Sở, đề CK2 THCS Đại Áng chép lại nguyên bài này. Chấm chéo tại lớp theo thang 0,5 mỗi ý.",
+   "blocks": [
+    {
+     "type": "problem",
+     "label": "Bài 10.",
+     "statement": "\\par\\nopagebreak\n\\begin{minipage}[t]{0.62\\linewidth}\\vspace{0pt}\nMột quả bóng chuyền hình cầu có đường kính $20$ cm (Hình 15). Lấy $\\pi \\approx 3{,}14$.[[br]]a) [TH] Tính diện tích da để làm quả bóng đó.[[br]]b) [TH] Tính thể tích quả bóng rồi đổi ra lít (làm tròn đến chữ số thập phân thứ hai).\n\\end{minipage}\\hfill\n\\begin{minipage}[t]{0.32\\linewidth}\\vspace{0pt}\n\\centering\n\\adjustbox{max width=\\linewidth, max totalheight=3.0cm}{\n\\begin{tikzpicture}[line width=0.8pt, font=\\small]\n  \\draw[ink] (0,0) circle (1.15);\n  \\draw[ink] (-1.15,0) arc (180:360:1.15 and 0.345);\n  \\draw[ink, dashed] (-1.15,0) arc (180:0:1.15 and 0.345);\n  \\fill[ink] (0,0) circle (1.2pt);\n  \\node[below left, font=\\scriptsize] at (-0.06,-0.06) {$O$};\n  \\draw[ink, <->] (-1.15,0) -- (1.15,0);\n  \\node[anchor=center, font=\\scriptsize, fill=white, inner sep=1pt] at (0,0) {$20$};\n\\end{tikzpicture}\n}\n\\par\\vspace{2pt}{\\sffamily\\scriptsize\\itshape\\color{muted}Hình 15}\n\\end{minipage}",
+     "tier": "onclass",
+     "level": 2,
+     "solution": "a) Bán kính quả bóng là $R = 20 : 2 = 10$ (cm).[[br]]Áp dụng công thức diện tích mặt cầu, ta có[[br]]$S = 4\\pi R^2 \\approx 4\\cdot 3{,}14\\cdot 10^2 = 1256$ (cm$^2$).[[br]]Vậy cần khoảng $1256$ cm$^2$ da.[[br]]b) Áp dụng công thức thể tích hình cầu, ta có[[br]]$V = \\dfrac{4}{3}\\pi R^3 \\approx \\dfrac{4}{3}\\cdot 3{,}14\\cdot 10^3 \\approx 4186{,}67$ (cm$^3$).[[br]]Đổi đơn vị: $4186{,}67$ cm$^3$ $\\approx 4{,}19$ lít.[[br]]Vậy thể tích quả bóng khoảng $4186{,}67$ cm$^3$, tức khoảng $4{,}19$ lít.",
+     "dang_id": "TH1",
+     "writelines": 0
+    },
+    {
+     "type": "problem",
+     "label": "Bài 11.",
+     "statement": "\\par\\nopagebreak\n\\begin{minipage}[t]{0.62\\linewidth}\\vspace{0pt}\n[TH] Một ly nước hình trụ cao $12$ cm, bán kính đáy $3$ cm, lượng nước trong ly cao $8$ cm. Thả vào ly $4$ viên bi hình cầu giống hệt nhau, ngập hoàn toàn trong nước, làm nước dâng lên đúng miệng ly và không tràn ra ngoài (Hình 16). Tính thể tích mỗi viên bi. Lấy $\\pi \\approx 3{,}14$.\n\\end{minipage}\\hfill\n\\begin{minipage}[t]{0.32\\linewidth}\\vspace{0pt}\n\\centering\n\\adjustbox{max width=\\linewidth, max totalheight=3.2cm}{\n\\begin{tikzpicture}[line width=0.8pt, font=\\small]\n  \\fill[info!25] (-1,1.3) -- (-1,0) arc (180:360:1 and 0.32) -- (1,1.3) arc (0:180:1 and 0.32);\n  \\draw[ink] (0,1.3) ellipse (1 and 0.32);\n  \\draw[ink] (0,2) ellipse (1 and 0.32);\n  \\draw[ink] (-1,0) arc (180:360:1 and 0.32);\n  \\draw[ink, dashed] (-1,0) arc (180:0:1 and 0.32);\n  \\draw[ink] (-1,0) -- (-1,2);\n  \\draw[ink] (1,0) -- (1,2);\n  \\draw[ink, fill=gold!40] (-0.5,0.26) circle (0.17);\n  \\draw[ink, fill=gold!40] (0,0.26) circle (0.17);\n  \\draw[ink, fill=gold!40] (0.5,0.26) circle (0.17);\n  \\draw[ink, fill=gold!40] (1,0.26) circle (0.17);\n  \\draw[ink, <->] (-1.42,0) -- (-1.42,1.3);\n  \\node[left, font=\\scriptsize] at (-1.5,0.65) {$h_1$};\n  \\draw[ink, <->] (1.42,0) -- (1.42,2);\n  \\node[right, font=\\scriptsize] at (1.5,1) {$h$};\n  \\draw[ink, ->] (0,2) -- (1,2);\n  \\node[above, font=\\scriptsize] at (0.5,2.06) {$r$};\n\\end{tikzpicture}\n}\n\\par\\vspace{2pt}{\\sffamily\\scriptsize\\itshape\\color{muted}Hình 16}\n\\end{minipage}",
+     "tier": "onclass",
+     "level": 2,
+     "solution": "Mực nước dâng thêm một đoạn bằng $12 - 8 = 4$ (cm).[[br]]Vì các viên bi ngập hoàn toàn nên tổng thể tích $4$ viên bi bằng thể tích phần nước dâng thêm.[[br]]Phần nước dâng thêm là một hình trụ bán kính đáy $3$ cm, chiều cao $4$ cm nên có thể tích[[br]]$V_4 = \\pi r^2 h \\approx 3{,}14\\cdot 3^2\\cdot 4 = 113{,}04$ (cm$^3$).[[br]]Thể tích mỗi viên bi là $113{,}04 : 4 = 28{,}26$ (cm$^3$).[[br]]Vậy mỗi viên bi có thể tích khoảng $28{,}26$ cm$^3$.",
+     "dang_id": "TH2",
+     "writelines": 0
+    },
+    {
+     "type": "problem",
+     "label": "Bài 12.",
+     "statement": "\\par\\nopagebreak\n\\begin{minipage}[t]{0.62\\linewidth}\\vspace{0pt}\n[TH] Một cốc thuỷ tinh hình trụ bán kính đáy $4$ cm, chiều cao $10$ cm, đang chứa ĐẦY nước (Hình 17). Thả vào cốc một quả cầu kim loại đường kính $6$ cm thì nước tràn ra ngoài. Tính thể tích nước còn lại trong cốc. Lấy $\\pi \\approx 3{,}14$.\n\\end{minipage}\\hfill\n\\begin{minipage}[t]{0.32\\linewidth}\\vspace{0pt}\n\\centering\n\\adjustbox{max width=\\linewidth, max totalheight=3.2cm}{\n\\begin{tikzpicture}[line width=0.8pt, font=\\small]\n  \\fill[info!25] (-1,2) -- (-1,0) arc (180:360:1 and 0.32) -- (1,2) arc (0:180:1 and 0.32);\n  \\draw[ink] (0,2) ellipse (1 and 0.32);\n  \\draw[ink] (0,2) ellipse (1 and 0.32);\n  \\draw[ink] (-1,0) arc (180:360:1 and 0.32);\n  \\draw[ink, dashed] (-1,0) arc (180:0:1 and 0.32);\n  \\draw[ink] (-1,0) -- (-1,2);\n  \\draw[ink] (1,0) -- (1,2);\n  \\draw[ink, dashed] (0,0) -- (0,2);\n  \\fill[ink] (0,2) circle (1.2pt);\n  \\node[right, font=\\scriptsize] at (0.12,1) {$10$};\n  \\draw[ink, ->] (0,2) -- (1,2);\n  \\node[above, font=\\scriptsize] at (0.5,2.06) {$4$};\n  \\draw[ink, fill=gold!35] (-0.45,0.24) circle (0.16);\n\\end{tikzpicture}\n}\n\\par\\vspace{2pt}{\\sffamily\\scriptsize\\itshape\\color{muted}Hình 17}\n\\end{minipage}",
+     "tier": "onclass",
+     "level": 2,
+     "solution": "Thể tích của cốc là $V_{\\text{cốc}} = \\pi r^2 h \\approx 3{,}14\\cdot 4^2\\cdot 10 = 502{,}4$ (cm$^3$).[[br]]Bán kính quả cầu là $R = 6 : 2 = 3$ (cm), nên thể tích quả cầu là[[br]]$V_{\\text{cầu}} = \\dfrac{4}{3}\\pi R^3 \\approx \\dfrac{4}{3}\\cdot 3{,}14\\cdot 3^3 = 113{,}04$ (cm$^3$).[[br]]Vì cốc đang đầy nước nên lượng nước tràn ra đúng bằng thể tích quả cầu.[[br]]Do đó thể tích nước còn lại là $502{,}4 - 113{,}04 = 389{,}36$ (cm$^3$).[[br]]Vậy trong cốc còn khoảng $389{,}36$ cm$^3$ nước.",
+     "dang_id": "TH3",
+     "writelines": 0
+    },
+    {
+     "type": "problem",
+     "label": "Bài 13.",
+     "statement": "\\par\\nopagebreak\n\\begin{minipage}[t]{0.62\\linewidth}\\vspace{0pt}\n[VD] \\textbf{(Câu IV.1 đề minh hoạ của Sở.)} Một ly nước dạng hình trụ có chiều cao $15$ cm, đường kính đáy $5$ cm; lượng nước tinh khiết trong ly cao $10$ cm. Ly được đặt cố định trên mặt bàn phẳng (Hình 18). Lấy $\\pi \\approx 3{,}14$.[[br]]a) Tính thể tích lượng nước tinh khiết chứa trong ly.[[br]]b) Thả vào ly $5$ viên bi hình cầu giống hệt nhau, ngập hoàn toàn trong nước, làm nước dâng lên đúng bằng miệng ly và không tràn ra ngoài. Tính thể tích mỗi viên bi.[[br]]\\emph{Trình bày như bài thi, mỗi ý kết bằng câu \\textquotedblleft Vậy\\ldots\\textquotedblright}\n\\end{minipage}\\hfill\n\\begin{minipage}[t]{0.32\\linewidth}\\vspace{0pt}\n\\centering\n\\adjustbox{max width=\\linewidth, max totalheight=3.2cm}{\n\\begin{tikzpicture}[line width=0.8pt, font=\\small]\n  \\fill[info!25] (-1,1.35) -- (-1,0) arc (180:360:1 and 0.32) -- (1,1.35) arc (0:180:1 and 0.32);\n  \\draw[ink] (0,1.35) ellipse (1 and 0.32);\n  \\draw[ink] (0,2) ellipse (1 and 0.32);\n  \\draw[ink] (-1,0) arc (180:360:1 and 0.32);\n  \\draw[ink, dashed] (-1,0) arc (180:0:1 and 0.32);\n  \\draw[ink] (-1,0) -- (-1,2);\n  \\draw[ink] (1,0) -- (1,2);\n  \\draw[ink, fill=gold!40] (-0.5,0.26) circle (0.17);\n  \\draw[ink, fill=gold!40] (0,0.26) circle (0.17);\n  \\draw[ink, fill=gold!40] (0.5,0.26) circle (0.17);\n  \\draw[ink, fill=gold!40] (1,0.26) circle (0.17);\n  \\draw[ink, fill=gold!40] (1.5,0.26) circle (0.17);\n  \\draw[ink, <->] (-1.42,0) -- (-1.42,1.35);\n  \\node[left, font=\\scriptsize] at (-1.5,0.675) {$h_1$};\n  \\draw[ink, <->] (1.42,0) -- (1.42,2);\n  \\node[right, font=\\scriptsize] at (1.5,1) {$h$};\n  \\draw[ink, ->] (0,2) -- (1,2);\n  \\node[above, font=\\scriptsize] at (0.5,2.06) {$r$};\n\\end{tikzpicture}\n}\n\\par\\vspace{2pt}{\\sffamily\\scriptsize\\itshape\\color{muted}Hình 18}\n\\end{minipage}",
+     "tier": "onclass",
+     "level": 3,
+     "solution": "a) Bán kính đáy của ly là $r = 5 : 2 = 2{,}5$ (cm).[[br]]Phần nước trong ly là một hình trụ bán kính đáy $2{,}5$ cm và chiều cao $10$ cm (lấy theo MỰC NƯỚC).[[br]]$V = \\pi r^2 h \\approx 3{,}14\\cdot 2{,}5^2\\cdot 10 = 196{,}25$ (cm$^3$).[[br]]Vậy thể tích nước trong ly khoảng $196{,}25$ cm$^3$.[[br]]b) Mực nước dâng thêm một đoạn bằng $15 - 10 = 5$ (cm).[[br]]Vì các viên bi ngập hoàn toàn nên tổng thể tích $5$ viên bi bằng thể tích phần nước dâng thêm, tức thể tích hình trụ bán kính $2{,}5$ cm và chiều cao $5$ cm:[[br]]$V_5 = \\pi\\cdot 2{,}5^2\\cdot 5 = 31{,}25\\pi$ (cm$^3$).[[br]]Thể tích mỗi viên bi là $31{,}25\\pi : 5 = 6{,}25\\pi \\approx 19{,}6$ (cm$^3$).[[br]]Vậy mỗi viên bi có thể tích khoảng $19{,}6$ cm$^3$.",
+     "dang_id": "VD1",
+     "writelines": 0,
+     "hints": [
+      "Ý đầu: chiều cao thay vào công thức là $10$ cm (mực nước), không phải $15$ cm.",
+      "Ý sau: không cần công thức hình cầu — thể tích bi bằng thể tích nước dâng thêm."
+     ]
+    }
+   ]
+  },
+  {
+   "kind": "reflection",
+   "number": 5,
+   "title": "Tổng kết",
+   "teacher_note": "BTVN dôi hơn quỹ 40 phút. Nếu cắt thì giữ BTVN 8, 11, 13 — ba bài phủ đủ bẫy đường kính, khuôn mực nước và bước đổi đơn vị.",
+   "blocks": [
+    {
+     "type": "mindmap",
+     "root": "Hình cầu",
+     "caption": "Điền các ô trống rồi học thuộc",
+     "branches": [
+      {
+       "label": "Công thức",
+       "children": [
+        {
+         "label": "$S = [[blank:0.6cm]]\\pi R^2$",
+         "children": []
+        },
+        {
+         "label": "$V = \\dfrac{4}{3}\\pi R^{[[blank:0.5cm]]}$",
+         "children": []
+        }
+       ]
+      },
+      {
+       "label": "Mặt cắt",
+       "children": [
+        {
+         "label": "Cắt hình cầu luôn được một [[blank:1.4cm]]",
+         "children": []
+        }
+       ]
+      },
+      {
+       "label": "Khuôn mực nước",
+       "children": [
+        {
+         "label": "Thể tích vật chìm $=$ thể tích nước [[blank:1.8cm]]",
+         "children": []
+        },
+        {
+         "label": "Bình đang đầy $\\Rightarrow$ bằng nước [[blank:1.4cm]]",
+         "children": []
+        }
+       ]
+      },
+      {
+       "label": "Bẫy",
+       "children": [
+        {
+         "label": "Đề cho [[blank:1.6cm]] thì chia đôi",
+         "children": []
+        },
+        {
+         "label": "$1$ lít $= [[blank:1.0cm]]$ cm$^3$",
+         "children": []
+        }
+       ]
+      }
+     ],
+     "size": "small"
+    },
+    {
+     "type": "para",
+     "text": "\\textbf{Bài tập về nhà} — làm vào vở, buổi sau nộp."
+    },
+    {
+     "type": "problem",
+     "label": "BTVN~1.",
+     "statement": "\\par\\nopagebreak\n\\begin{minipage}[t]{0.62\\linewidth}\\vspace{0pt}\nQuan sát Hình 19 rồi trả lời.[[br]]a) [NB] Hình cầu được xác định bởi mấy số đo? Đó là số đo nào?[[br]]b) [NB] Đường kính của hình cầu dài gấp mấy lần bán kính?\n\\end{minipage}\\hfill\n\\begin{minipage}[t]{0.32\\linewidth}\\vspace{0pt}\n\\centering\n\\adjustbox{max width=\\linewidth, max totalheight=3.0cm}{\n\\begin{tikzpicture}[line width=0.8pt, font=\\small]\n  \\draw[ink] (0,0) circle (1.15);\n  \\draw[ink] (-1.15,0) arc (180:360:1.15 and 0.345);\n  \\draw[ink, dashed] (-1.15,0) arc (180:0:1.15 and 0.345);\n  \\fill[ink] (0,0) circle (1.2pt);\n  \\node[below left, font=\\scriptsize] at (-0.06,-0.06) {$O$};\n  \\draw[ink, ->] (0,0) -- (42:1.15);\n  \\node[above left, font=\\scriptsize] at (0.483,0.483) {$R$};\n\\end{tikzpicture}\n}\n\\par\\vspace{2pt}{\\sffamily\\scriptsize\\itshape\\color{muted}Hình 19}\n\\end{minipage}",
+     "tier": "btvn",
+     "level": 1,
+     "solution": "a) Chỉ MỘT số đo: bán kính $R$.[[br]]b) Gấp HAI lần bán kính.",
+     "dang_id": "NB1",
+     "writelines": 0,
+     "figure_given": true
+    },
+    {
+     "type": "problem",
+     "label": "BTVN~2.",
+     "statement": "\\par\\nopagebreak\n\\begin{minipage}[t]{0.62\\linewidth}\\vspace{0pt}\nĐổi đường kính sang bán kính (Hình 20).[[br]]a) [NB] $d = 22$ cm $\\Rightarrow R = \\ldots\\ldots$ cm.[[br]]b) [NB] $d = 4$ cm $\\Rightarrow R = \\ldots\\ldots$ cm.\n\\end{minipage}\\hfill\n\\begin{minipage}[t]{0.32\\linewidth}\\vspace{0pt}\n\\centering\n\\adjustbox{max width=\\linewidth, max totalheight=3.0cm}{\n\\begin{tikzpicture}[line width=0.8pt, font=\\small]\n  \\draw[ink] (0,0) circle (1.15);\n  \\draw[ink] (-1.15,0) arc (180:360:1.15 and 0.345);\n  \\draw[ink, dashed] (-1.15,0) arc (180:0:1.15 and 0.345);\n  \\fill[ink] (0,0) circle (1.2pt);\n  \\node[below left, font=\\scriptsize] at (-0.06,-0.06) {$O$};\n  \\draw[ink, <->] (-1.15,0) -- (1.15,0);\n  \\node[anchor=center, font=\\scriptsize, fill=white, inner sep=1pt] at (0,0) {$d$};\n\\end{tikzpicture}\n}\n\\par\\vspace{2pt}{\\sffamily\\scriptsize\\itshape\\color{muted}Hình 20}\n\\end{minipage}",
+     "tier": "btvn",
+     "level": 1,
+     "solution": "a) $R = 11$ cm.[[br]]b) $R = 2$ cm.",
+     "dang_id": "NB2",
+     "writelines": 0,
+     "figure_given": true
+    },
+    {
+     "type": "problem",
+     "label": "BTVN~3.",
+     "statement": "\\par\\nopagebreak\n\\begin{minipage}[t]{0.62\\linewidth}\\vspace{0pt}\nTính $S = 4\\pi R^2$, lấy $\\pi \\approx 3{,}14$ (Hình 21).[[br]]a) [NB] $R = 11$ cm.[[br]]b) [NB] $R = 6$ cm.\n\\end{minipage}\\hfill\n\\begin{minipage}[t]{0.32\\linewidth}\\vspace{0pt}\n\\centering\n\\adjustbox{max width=\\linewidth, max totalheight=3.0cm}{\n\\begin{tikzpicture}[line width=0.8pt, font=\\small]\n  \\draw[ink] (0,0) circle (1.15);\n  \\draw[ink] (-1.15,0) arc (180:360:1.15 and 0.345);\n  \\draw[ink, dashed] (-1.15,0) arc (180:0:1.15 and 0.345);\n  \\fill[ink] (0,0) circle (1.2pt);\n  \\node[below left, font=\\scriptsize] at (-0.06,-0.06) {$O$};\n  \\draw[ink, ->] (0,0) -- (42:1.15);\n  \\node[above left, font=\\scriptsize] at (0.483,0.483) {$R$};\n\\end{tikzpicture}\n}\n\\par\\vspace{2pt}{\\sffamily\\scriptsize\\itshape\\color{muted}Hình 21}\n\\end{minipage}",
+     "tier": "btvn",
+     "level": 1,
+     "solution": "a) $S \\approx 4\\cdot 3{,}14\\cdot 11^2 = 1519{,}76$ (cm$^2$).[[br]]b) $S \\approx 4\\cdot 3{,}14\\cdot 6^2 = 452{,}16$ (cm$^2$).",
+     "dang_id": "NB3",
+     "writelines": 0,
+     "figure_given": true
+    },
+    {
+     "type": "problem",
+     "label": "BTVN~4.",
+     "statement": "\\par\\nopagebreak\n\\begin{minipage}[t]{0.62\\linewidth}\\vspace{0pt}\nTính $V = \\dfrac{4}{3}\\pi R^3$, lấy $\\pi \\approx 3{,}14$ (Hình 22).[[br]]a) [NB] $R = 6$ cm.[[br]]b) [NB] $R = 1{,}5$ cm.\n\\end{minipage}\\hfill\n\\begin{minipage}[t]{0.32\\linewidth}\\vspace{0pt}\n\\centering\n\\adjustbox{max width=\\linewidth, max totalheight=3.0cm}{\n\\begin{tikzpicture}[line width=0.8pt, font=\\small]\n  \\draw[ink] (0,0) circle (1.15);\n  \\draw[ink] (-1.15,0) arc (180:360:1.15 and 0.345);\n  \\draw[ink, dashed] (-1.15,0) arc (180:0:1.15 and 0.345);\n  \\fill[ink] (0,0) circle (1.2pt);\n  \\node[below left, font=\\scriptsize] at (-0.06,-0.06) {$O$};\n  \\draw[ink, ->] (0,0) -- (42:1.15);\n  \\node[above left, font=\\scriptsize] at (0.483,0.483) {$R$};\n\\end{tikzpicture}\n}\n\\par\\vspace{2pt}{\\sffamily\\scriptsize\\itshape\\color{muted}Hình 22}\n\\end{minipage}",
+     "tier": "btvn",
+     "level": 1,
+     "solution": "a) $V \\approx \\dfrac{4}{3}\\cdot 3{,}14\\cdot 6^3 = 904{,}32$ (cm$^3$).[[br]]b) $V \\approx \\dfrac{4}{3}\\cdot 3{,}14\\cdot 1{,}5^3 = 14{,}13$ (cm$^3$).",
+     "dang_id": "NB4",
+     "writelines": 0,
+     "figure_given": true
+    },
+    {
+     "type": "problem",
+     "label": "BTVN~5.",
+     "statement": "\\par\\nopagebreak\n\\begin{minipage}[t]{0.62\\linewidth}\\vspace{0pt}\nBấm máy cho đúng (Hình 23).[[br]]a) [NB] $1{,}5^3 = \\ldots\\ldots$ và $0{,}9^2 = \\ldots\\ldots$[[br]]b) [NB] $12^3 = \\ldots\\ldots$ và $2{,}5^2 = \\ldots\\ldots$\n\\end{minipage}\\hfill\n\\begin{minipage}[t]{0.32\\linewidth}\\vspace{0pt}\n\\centering\n\\adjustbox{max width=\\linewidth, max totalheight=3.0cm}{\n\\begin{tikzpicture}[line width=0.8pt, font=\\small]\n  \\draw[ink] (0,0) circle (1.15);\n  \\draw[ink] (-1.15,0) arc (180:360:1.15 and 0.345);\n  \\draw[ink, dashed] (-1.15,0) arc (180:0:1.15 and 0.345);\n  \\fill[ink] (0,0) circle (1.2pt);\n  \\node[below left, font=\\scriptsize] at (-0.06,-0.06) {$O$};\n  \\draw[ink, ->] (0,0) -- (42:1.15);\n  \\node[above left, font=\\scriptsize] at (0.483,0.483) {$R$};\n\\end{tikzpicture}\n}\n\\par\\vspace{2pt}{\\sffamily\\scriptsize\\itshape\\color{muted}Hình 23}\n\\end{minipage}",
+     "tier": "btvn",
+     "level": 1,
+     "solution": "a) $1{,}5^3 = 3{,}375$ và $0{,}9^2 = 0{,}81$.[[br]]b) $12^3 = 1728$ và $2{,}5^2 = 6{,}25$.",
+     "dang_id": "NB5",
+     "writelines": 0,
+     "figure_given": true
+    },
+    {
+     "type": "problem",
+     "label": "BTVN~6.",
+     "statement": "\\par\\nopagebreak\n\\begin{minipage}[t]{0.62\\linewidth}\\vspace{0pt}\nĐổi đơn vị (Hình 24).[[br]]a) [NB] $4186{,}67$ cm$^3 \\approx \\ldots\\ldots$ lít.[[br]]b) [NB] $0{,}5024$ m$^3 = \\ldots\\ldots$ lít.\n\\end{minipage}\\hfill\n\\begin{minipage}[t]{0.32\\linewidth}\\vspace{0pt}\n\\centering\n\\adjustbox{max width=\\linewidth, max totalheight=3.0cm}{\n\\begin{tikzpicture}[line width=0.8pt, font=\\small]\n  \\draw[ink] (0,0) circle (1.15);\n  \\draw[ink] (-1.15,0) arc (180:360:1.15 and 0.345);\n  \\draw[ink, dashed] (-1.15,0) arc (180:0:1.15 and 0.345);\n  \\fill[ink] (0,0) circle (1.2pt);\n  \\node[below left, font=\\scriptsize] at (-0.06,-0.06) {$O$};\n  \\draw[ink, ->] (0,0) -- (42:1.15);\n  \\node[above left, font=\\scriptsize] at (0.483,0.483) {$R$};\n\\end{tikzpicture}\n}\n\\par\\vspace{2pt}{\\sffamily\\scriptsize\\itshape\\color{muted}Hình 24}\n\\end{minipage}",
+     "tier": "btvn",
+     "level": 1,
+     "solution": "a) $4186{,}67$ cm$^3 \\approx 4{,}19$ lít.[[br]]b) $0{,}5024$ m$^3 = 502{,}4$ lít.",
+     "dang_id": "NB6",
+     "writelines": 0,
+     "figure_given": true
+    },
+    {
+     "type": "problem",
+     "label": "BTVN~7.",
+     "statement": "\\par\\nopagebreak\n\\begin{minipage}[t]{0.62\\linewidth}\\vspace{0pt}\nNhận ra khuôn mực nước (Hình 25).[[br]]a) [NB] Ly cao $14$ cm, nước ban đầu cao $9$ cm, sau khi thả bi nước dâng đúng miệng ly. Phần nước dâng thêm cao \\ldots\\ldots cm.[[br]]b) [NB] Muốn tính thể tích các viên bi, ta tính thể tích của \\ldots\\ldots\n\\end{minipage}\\hfill\n\\begin{minipage}[t]{0.32\\linewidth}\\vspace{0pt}\n\\centering\n\\adjustbox{max width=\\linewidth, max totalheight=3.2cm}{\n\\begin{tikzpicture}[line width=0.8pt, font=\\small]\n  \\fill[info!25] (-1,1.3) -- (-1,0) arc (180:360:1 and 0.32) -- (1,1.3) arc (0:180:1 and 0.32);\n  \\draw[ink] (0,1.3) ellipse (1 and 0.32);\n  \\draw[ink] (0,2) ellipse (1 and 0.32);\n  \\draw[ink] (-1,0) arc (180:360:1 and 0.32);\n  \\draw[ink, dashed] (-1,0) arc (180:0:1 and 0.32);\n  \\draw[ink] (-1,0) -- (-1,2);\n  \\draw[ink] (1,0) -- (1,2);\n  \\draw[ink, fill=gold!40] (-0.5,0.26) circle (0.17);\n  \\draw[ink, fill=gold!40] (0,0.26) circle (0.17);\n  \\draw[ink, fill=gold!40] (0.5,0.26) circle (0.17);\n  \\draw[ink, <->] (-1.42,0) -- (-1.42,1.3);\n  \\node[left, font=\\scriptsize] at (-1.5,0.65) {$h_1$};\n  \\draw[ink, <->] (1.42,0) -- (1.42,2);\n  \\node[right, font=\\scriptsize] at (1.5,1) {$h$};\n  \\draw[ink, ->] (0,2) -- (1,2);\n  \\node[above, font=\\scriptsize] at (0.5,2.06) {$r$};\n\\end{tikzpicture}\n}\n\\par\\vspace{2pt}{\\sffamily\\scriptsize\\itshape\\color{muted}Hình 25}\n\\end{minipage}",
+     "tier": "btvn",
+     "level": 1,
+     "solution": "a) $14 - 9 = 5$ cm.[[br]]b) Của phần nước dâng thêm — một hình trụ cùng bán kính đáy, chiều cao $5$ cm.",
+     "dang_id": "NB7",
+     "writelines": 0,
+     "figure_given": true
+    },
+    {
+     "type": "problem",
+     "label": "BTVN~8.",
+     "statement": "\\par\\nopagebreak\n\\begin{minipage}[t]{0.62\\linewidth}\\vspace{0pt}\nMột quả nặng hình cầu có đường kính $4$ cm (Hình 26). Điền vào chỗ trống để hoàn thành bài giải, lấy $\\pi \\approx 3{,}14$ và làm tròn đến hàng phần trăm.[[br]]a) [NB] Bán kính quả nặng là $R = \\ldots\\ldots$ (cm).[[br]]b) [NB] Thể tích quả nặng là $V = \\dfrac{4}{3}\\pi \\cdot \\ldots\\ldots^3 \\approx \\ldots\\ldots$ (\\ldots\\ldots).[[br]]Vậy thể tích quả nặng khoảng \\ldots\\ldots cm$^3$.\n\\end{minipage}\\hfill\n\\begin{minipage}[t]{0.32\\linewidth}\\vspace{0pt}\n\\centering\n\\adjustbox{max width=\\linewidth, max totalheight=3.0cm}{\n\\begin{tikzpicture}[line width=0.8pt, font=\\small]\n  \\draw[ink] (0,0) circle (1.15);\n  \\draw[ink] (-1.15,0) arc (180:360:1.15 and 0.345);\n  \\draw[ink, dashed] (-1.15,0) arc (180:0:1.15 and 0.345);\n  \\fill[ink] (0,0) circle (1.2pt);\n  \\node[below left, font=\\scriptsize] at (-0.06,-0.06) {$O$};\n  \\draw[ink, <->] (-1.15,0) -- (1.15,0);\n  \\node[anchor=center, font=\\scriptsize, fill=white, inner sep=1pt] at (0,0) {$4$};\n\\end{tikzpicture}\n}\n\\par\\vspace{2pt}{\\sffamily\\scriptsize\\itshape\\color{muted}Hình 26}\n\\end{minipage}",
+     "tier": "btvn",
+     "level": 1,
+     "solution": "a) $R = 4 : 2 = 2$ (cm).[[br]]b) $V = \\dfrac{4}{3}\\pi\\cdot 2^3 \\approx 33{,}49$ (cm$^3$).[[br]]Vậy thể tích quả nặng khoảng $33{,}49$ cm$^3$.",
+     "dang_id": "NB8",
+     "writelines": 0,
+     "figure_given": true
+    },
+    {
+     "type": "problem",
+     "label": "BTVN~9.",
+     "statement": "[NB] Vẽ phác vào vở một cốc hình trụ cao $10$ cm, bán kính đáy $4$ cm đang chứa đầy nước và một quả cầu bán kính $3$ cm sắp thả vào; ghi rõ các số đo lên hình.",
+     "tier": "btvn",
+     "level": 1,
+     "solution": "Cốc: hình trụ ghi $r = 4$ cm, $h = 10$ cm, tô kín phần nước (đầy cốc). Quả cầu: đường tròn ghi tâm $O$ và $R = 3$ cm.",
+     "dang_id": "NB9",
+     "writelines": 0,
+     "draw": true
+    },
+    {
+     "type": "problem",
+     "label": "BTVN~10.",
+     "statement": "\\par\\nopagebreak\n\\begin{minipage}[t]{0.62\\linewidth}\\vspace{0pt}\nMột quả bóng tennis hình cầu có đường kính $6{,}8$ cm (Hình 27). Lấy $\\pi \\approx 3{,}14$, làm tròn đến hàng phần trăm.[[br]]a) [TH] Tính diện tích mặt ngoài của quả bóng.[[br]]b) [TH] Tính thể tích quả bóng.\n\\end{minipage}\\hfill\n\\begin{minipage}[t]{0.32\\linewidth}\\vspace{0pt}\n\\centering\n\\adjustbox{max width=\\linewidth, max totalheight=3.0cm}{\n\\begin{tikzpicture}[line width=0.8pt, font=\\small]\n  \\draw[ink] (0,0) circle (1.15);\n  \\draw[ink] (-1.15,0) arc (180:360:1.15 and 0.345);\n  \\draw[ink, dashed] (-1.15,0) arc (180:0:1.15 and 0.345);\n  \\fill[ink] (0,0) circle (1.2pt);\n  \\node[below left, font=\\scriptsize] at (-0.06,-0.06) {$O$};\n  \\draw[ink, <->] (-1.15,0) -- (1.15,0);\n  \\node[anchor=center, font=\\scriptsize, fill=white, inner sep=1pt] at (0,0) {$6{,}8$};\n\\end{tikzpicture}\n}\n\\par\\vspace{2pt}{\\sffamily\\scriptsize\\itshape\\color{muted}Hình 27}\n\\end{minipage}",
+     "tier": "btvn",
+     "level": 2,
+     "solution": "a) Bán kính quả bóng là $R = 6{,}8 : 2 = 3{,}4$ (cm).[[br]]Áp dụng công thức diện tích mặt cầu, ta có[[br]]$S = 4\\pi R^2 \\approx 4\\cdot 3{,}14\\cdot 3{,}4^2 \\approx 145{,}19$ (cm$^2$).[[br]]Vậy diện tích mặt ngoài khoảng $145{,}19$ cm$^2$.[[br]]b) Áp dụng công thức thể tích hình cầu, ta có[[br]]$V = \\dfrac{4}{3}\\pi R^3 \\approx \\dfrac{4}{3}\\cdot 3{,}14\\cdot 3{,}4^3 \\approx 164{,}55$ (cm$^3$).[[br]]Vậy thể tích quả bóng khoảng $164{,}55$ cm$^3$.",
+     "dang_id": "TH1",
+     "writelines": 0
+    },
+    {
+     "type": "problem",
+     "label": "BTVN~11.",
+     "statement": "Một ly nước hình trụ cao $16$ cm, bán kính đáy $2$ cm, lượng nước trong ly cao $12$ cm. Thả vào ly $8$ viên bi hình cầu giống hệt nhau, ngập hoàn toàn trong nước, làm nước dâng lên đúng miệng ly và không tràn ra ngoài. Lấy $\\pi \\approx 3{,}14$.[[br]]a) [TH] Tính thể tích lượng nước có trong ly lúc đầu.[[br]]b) [TH] Tính thể tích mỗi viên bi.",
+     "tier": "btvn",
+     "level": 2,
+     "solution": "a) Phần nước lúc đầu là hình trụ bán kính $2$ cm, chiều cao $12$ cm nên có thể tích $V = \\pi\\cdot 2^2\\cdot 12 \\approx 3{,}14\\cdot 48 = 150{,}72$ (cm$^3$).[[br]]Vậy lúc đầu trong ly có khoảng $150{,}72$ cm$^3$ nước.[[br]]b) Mực nước dâng thêm một đoạn bằng $16 - 12 = 4$ (cm).[[br]]Vì các viên bi ngập hoàn toàn nên tổng thể tích $8$ viên bi bằng thể tích phần nước dâng thêm.[[br]]Phần nước dâng thêm là hình trụ bán kính $2$ cm, chiều cao $4$ cm nên có thể tích $V_8 = \\pi\\cdot 2^2\\cdot 4 \\approx 3{,}14\\cdot 16 = 50{,}24$ (cm$^3$).[[br]]Thể tích mỗi viên bi là $50{,}24 : 8 = 6{,}28$ (cm$^3$).[[br]]Vậy mỗi viên bi có thể tích khoảng $6{,}28$ cm$^3$.",
+     "dang_id": "TH2",
+     "writelines": 0
+    },
+    {
+     "type": "problem",
+     "label": "BTVN~12.",
+     "statement": "\\par\\nopagebreak\n\\begin{minipage}[t]{0.62\\linewidth}\\vspace{0pt}\n[TH] Một cốc hình trụ bán kính đáy $5$ cm, chiều cao $12$ cm đang chứa đầy nước (Hình 28). Thả vào cốc một quả cầu đường kính $8$ cm thì nước tràn ra ngoài. Tính thể tích nước còn lại trong cốc. Lấy $\\pi \\approx 3{,}14$.\n\\end{minipage}\\hfill\n\\begin{minipage}[t]{0.32\\linewidth}\\vspace{0pt}\n\\centering\n\\adjustbox{max width=\\linewidth, max totalheight=3.2cm}{\n\\begin{tikzpicture}[line width=0.8pt, font=\\small]\n  \\fill[info!25] (-1,2) -- (-1,0) arc (180:360:1 and 0.32) -- (1,2) arc (0:180:1 and 0.32);\n  \\draw[ink] (0,2) ellipse (1 and 0.32);\n  \\draw[ink] (0,2) ellipse (1 and 0.32);\n  \\draw[ink] (-1,0) arc (180:360:1 and 0.32);\n  \\draw[ink, dashed] (-1,0) arc (180:0:1 and 0.32);\n  \\draw[ink] (-1,0) -- (-1,2);\n  \\draw[ink] (1,0) -- (1,2);\n  \\draw[ink, dashed] (0,0) -- (0,2);\n  \\fill[ink] (0,2) circle (1.2pt);\n  \\node[right, font=\\scriptsize] at (0.12,1) {$12$};\n  \\draw[ink, ->] (0,2) -- (1,2);\n  \\node[above, font=\\scriptsize] at (0.5,2.06) {$5$};\n  \\draw[ink, fill=gold!35] (-0.45,0.24) circle (0.16);\n\\end{tikzpicture}\n}\n\\par\\vspace{2pt}{\\sffamily\\scriptsize\\itshape\\color{muted}Hình 28}\n\\end{minipage}",
+     "tier": "btvn",
+     "level": 2,
+     "solution": "Thể tích của cốc là $V_{\\text{cốc}} = \\pi r^2 h \\approx 3{,}14\\cdot 5^2\\cdot 12 = 942$ (cm$^3$).[[br]]Bán kính quả cầu là $R = 8 : 2 = 4$ (cm), nên thể tích quả cầu là[[br]]$V_{\\text{cầu}} = \\dfrac{4}{3}\\pi R^3 \\approx \\dfrac{4}{3}\\cdot 3{,}14\\cdot 4^3 \\approx 267{,}95$ (cm$^3$).[[br]]Vì cốc đang đầy nước nên lượng nước tràn ra đúng bằng thể tích quả cầu.[[br]]Do đó thể tích nước còn lại là $942 - 267{,}95 = 674{,}05$ (cm$^3$).[[br]]Vậy trong cốc còn khoảng $674{,}05$ cm$^3$ nước.",
+     "dang_id": "TH3",
+     "writelines": 0
+    },
+    {
+     "type": "problem",
+     "label": "BTVN~13.",
+     "statement": "[VD] Một ly nước hình trụ cao $18$ cm, đường kính đáy $6$ cm; lượng nước trong ly cao $12$ cm. Lấy $\\pi \\approx 3{,}14$.[[br]]a) Tính thể tích lượng nước trong ly.[[br]]b) Thả vào ly $6$ viên bi hình cầu giống hệt nhau, ngập hoàn toàn trong nước, làm nước dâng lên đúng miệng ly và không tràn ra ngoài. Tính thể tích mỗi viên bi.[[br]]c) Tính bán kính của mỗi viên bi, biết $\\sqrt[3]{6{,}75} \\approx 1{,}89$.",
+     "tier": "btvn",
+     "level": 3,
+     "solution": "a) Bán kính đáy của ly là $r = 6 : 2 = 3$ (cm).[[br]]Phần nước trong ly là hình trụ bán kính $3$ cm, chiều cao $12$ cm (theo MỰC NƯỚC).[[br]]$V = \\pi r^2 h \\approx 3{,}14\\cdot 3^2\\cdot 12 = 339{,}12$ (cm$^3$).[[br]]Vậy thể tích nước trong ly khoảng $339{,}12$ cm$^3$.[[br]]b) Mực nước dâng thêm $18 - 12 = 6$ (cm).[[br]]Tổng thể tích $6$ viên bi bằng thể tích phần nước dâng thêm, tức thể tích hình trụ bán kính $3$ cm, chiều cao $6$ cm:[[br]]$V_6 = \\pi\\cdot 3^2\\cdot 6 = 54\\pi$ (cm$^3$).[[br]]Thể tích mỗi viên bi là $54\\pi : 6 = 9\\pi \\approx 28{,}26$ (cm$^3$).[[br]]Vậy mỗi viên bi có thể tích khoảng $28{,}26$ cm$^3$.[[br]]c) Gọi $R$ là bán kính mỗi viên bi, ta có $\\dfrac{4}{3}\\pi R^3 = 9\\pi$.[[br]]Suy ra $R^3 = 9 : \\dfrac{4}{3} = 6{,}75$, do đó $R = \\sqrt[3]{6{,}75} \\approx 1{,}89$ (cm).[[br]]Vậy bán kính mỗi viên bi khoảng $1{,}89$ cm.",
+     "dang_id": "VD1",
+     "writelines": 0
+    }
+   ]
+  }
+ ]
+}

@@ -29,7 +29,10 @@ from src.schema.thuyetminh_spec import (
     session_info,
 )
 from src.schema.exam_bank import lookup as bank_lookup
-from src.schema.tier_spec import BANDS, load_tier_spec, subject_block, tier_ratio
+from src.schema.tier_spec import (
+    BANDS, chuong_co_vd, gop_vd_vdc, load_tier_spec, so_ca_yeu_cau, subject_block,
+    tier_ratio,
+)
 
 # Một dạng (row) chiếm quá tỉ lệ này của quỹ onclass cả buổi ⇒ nghi gõ nhầm số câu.
 _ROW_HOG_FRAC = 0.60
@@ -76,7 +79,7 @@ def check_thuyetminh(spec: ThuyetMinhSpec) -> tuple[list[str], list[str]]:
         ts = load_tier_spec()
         block = subject_block(ts, spec.grade, spec.subject)
         rates = rates_for_spec(spec)
-        ratio_target = tier_ratio(ts, spec.grade, spec.subject, spec.tier)
+        ratio_target = tier_ratio(ts, spec.grade, spec.subject, spec.tier, spec.chuong)
     except KeyError:
         return noi_dung, [
             f"thuyetminh: CHƯA có chuẩn giờ cho {spec.grade}/{spec.subject} tầng "
@@ -92,11 +95,34 @@ def check_thuyetminh(spec: ThuyetMinhSpec) -> tuple[list[str], list[str]]:
 
     # Quỹ giờ được nhân theo `so_ca` của TỪNG phiếu ngay trong vòng lặp dưới.
     tier_block = block.get("tiers", {}).get(spec.tier, {})
-    vdc_allowed = bool(ratio_target and ratio_target.get("VDC", 0) > 0) and \
-        tier_block.get("max_level", 4) >= 4
+    # Tầng GỘP VD+VDC (tầng B từ 30/08/2026) có ratio VDC = 0 vì VDC nằm chung khối
+    # 55% với VD — KHÔNG phải là "cấm VDC". Cấm hay không đọc ở `max_level`.
+    gop = gop_vd_vdc(ts, spec.grade, spec.subject, spec.tier)
+    ca_yeu_cau = so_ca_yeu_cau(ts, spec.grade, spec.subject, spec.tier, spec.chuong)
+    vdc_allowed = tier_block.get("max_level", 4) >= 4 and (
+        gop or bool(ratio_target and ratio_target.get("VDC", 0) > 0))
 
     errors: list[str] = []
     warnings: list[str] = []
+
+    # Tầng chọn tỉ lệ THEO CHƯƠNG (tầng B từ 30/08/2026): không tra ra tỉ lệ thì nói rõ
+    # vì sao, thay vì im lặng bỏ cổng tỉ lệ như trước.
+    if tier_block.get("ratio_variants") and ratio_target is None:
+        co_vd = chuong_co_vd(spec.grade, spec.chuong)
+        if not spec.chuong:
+            warnings.append(
+                f"thuyetminh: tầng {spec.tier} chọn tỉ lệ THEO CHƯƠNG nhưng spec chưa khai "
+                f"`chuong` — ĐÃ BỎ cổng tỉ lệ NB-TH-VD. Thêm `\"chuong\": \"<slug>\"` "
+                f"(xem config/ban_do_vd_vdc.json).")
+        elif co_vd is None:
+            warnings.append(
+                f"thuyetminh: không tìm thấy chương '{spec.chuong}' của {spec.grade} trong "
+                f"config/ban_do_vd_vdc.json — ĐÃ BỎ cổng tỉ lệ NB-TH-VD.")
+        else:
+            warnings.append(
+                f"thuyetminh: chương '{spec.chuong}' ({spec.grade}) trong ban_do_vd_vdc.json "
+                f"còn để 'bien' — THẦY CHƯA CHỐT có bài VD/VDC trong đề hay không, nên chưa "
+                f"soi được tỉ lệ. Chốt xong hãy soạn phiếu chương này.")
 
     # Budget + tỉ lệ áp cho TỪNG PHIẾU — mỗi phiếu = 1 BUỔI (khớp duration_gate;
     # unit nhiều tuần như tuần 6-7 hay [C]tuần 10-11 có ≥2 phiếu = ≥2 buổi, KHÔNG cộng dồn).
@@ -116,6 +142,17 @@ def check_thuyetminh(spec: ThuyetMinhSpec) -> tuple[list[str], list[str]]:
         usable = ((session - brk) * ca) if session else 0
 
         tag = f"phiếu {p.code}" + (f" ({ca} ca)" if ca > 1 else "")
+
+        # (E) GỘP PHIẾU (anh An chốt 30/08/2026): chương KHÔNG có VD-VDC thì hai buổi
+        # dùng CHUNG một phiếu (so_ca = 2); chương có VD-VDC thì một phiếu một buổi.
+        if ca_yeu_cau and ca != ca_yeu_cau:
+            errors.append(
+                f"thuyetminh: {tag} khai `so_ca` = {ca} nhưng chương '{spec.chuong}' "
+                + ("KHÔNG có bài VD-VDC trong đề nên phải GỘP 2 PHIẾU THÀNH 1 "
+                   "(`so_ca: 2`, mỗi buổi gánh 15% NB + 35% TH)"
+                   if ca_yeu_cau == 2 else
+                   "CÓ bài VD-VDC nên mỗi phiếu chỉ một buổi (`so_ca: 1`)")
+                + " — anh An chốt 30/08/2026.")
         m = phieu_totals(p, rates)["minutes"]
         on_min = m.get("onclass", 0.0)
         btvn_min = m.get("btvn", 0.0)
@@ -129,6 +166,42 @@ def check_thuyetminh(spec: ThuyetMinhSpec) -> tuple[list[str], list[str]]:
         if on_min == 0 and vidu_min == 0:
             errors.append(f"thuyetminh: {tag} RỖNG GIỜ — không có ví dụ lẫn bài luyện tập trên lớp.")
             continue
+
+        # (W) CHƯƠNG KHÔNG CÓ VD-VDC: phần NB phải là ~5 DẠNG, MỖI DẠNG 2 CÂU (Thầy
+        # chốt 30/08/2026 — đây là ràng buộc CỨNG, tỉ lệ 30% chỉ để tham chiếu).
+        if gop and ratio_target and not ratio_target.get("VD"):
+            nb = [r for r in p.rows if r.band == "NB" and r.onclass]
+            so_cau = sum(r.onclass for r in nb)
+            if not (4 <= len(nb) <= 6):
+                warnings.append(
+                    f"thuyetminh: {tag} phần NHẬN BIẾT có {len(nb)} dạng — chương không có "
+                    f"VD-VDC thì phải khoảng 5 DẠNG (Thầy chốt 30/08/2026).")
+            if not (8 <= so_cau <= 12):
+                warnings.append(
+                    f"thuyetminh: {tag} phần NHẬN BIẾT có {so_cau} câu trên lớp — chuẩn là "
+                    f"~5 dạng x 2 câu = 10 câu (Thầy chốt 30/08/2026: số câu là ràng buộc CỨNG).")
+
+        # QUY TRÌNH GIẢI BÀI (Thầy chốt 30/08/2026). CHẶN CỨNG với spec đã chuyển sang
+        # luật mới (khai `chuong` và tra ra tỉ lệ); spec CŨ chưa khai chương thì chỉ
+        # CẢNH BÁO — không tự ý đánh trượt hàng chục phiếu Thầy đã duyệt trước đó.
+        if gop:
+            theo_luat_moi = ratio_target is not None
+            ghi = errors.append if theo_luat_moi else warnings.append
+            duoi = "" if theo_luat_moi else " (spec chưa chuyển sang luật mới nên chỉ cảnh báo)"
+            thieu = [i for i, r in enumerate(p.rows)
+                     if r.band == "VD" and not r.quy_trinh]
+            if thieu:
+                ghi(f"thuyetminh: {tag} dạng VẬN DỤNG ở dòng {thieu} chưa khai `quy_trinh` — "
+                    f"Thầy chốt 30/08/2026: mọi dạng VD (không phải VDC) phải in QUY TRÌNH "
+                    f"GIẢI BÀI ngay tại từng bài trong phiếu.{duoi}")
+            # Phiếu ÔN TẬP CHƯƠNG phải có bài bắt HS tự viết lại & giải thích quy trình.
+            ten = (p.title or "").lower()
+            la_on_tap = any(k in ten for k in ("ôn tập", "on tap", "cuối chương",
+                                               "cuoi chuong", "luyện tập chung"))
+            if la_on_tap and not any(r.viet_quy_trinh for r in p.rows):
+                ghi(f"thuyetminh: {tag} là phiếu ÔN TẬP CHƯƠNG nhưng chưa có dòng nào khai "
+                    f"`viet_quy_trinh: true` — Thầy chốt 30/08/2026: phần ôn tập chương phải "
+                    f"có bài cho HS tự VIẾT LẠI và GIẢI THÍCH quy trình làm bài.{duoi}")
 
         # (E) một DẠNG nuốt quá nửa quỹ onclass ⇒ gần như chắc gõ nhầm số câu
         if onclass_budget:
@@ -153,14 +226,17 @@ def check_thuyetminh(spec: ThuyetMinhSpec) -> tuple[list[str], list[str]]:
 
         # (W) tỉ lệ NB-TH-VD(-VDC) trên lớp lệch chuẩn tầng
         if ratio_target and on_min > 0:
-            band_min = phieu_band_minutes(p, rates)["onclass"]   # gồm cả phút vẽ hình
+            band_min = dict(phieu_band_minutes(p, rates)["onclass"])   # gồm cả phút vẽ hình
+            if gop:      # Thầy chốt 30/08/2026: VD và VDC là MỘT khối, soi tổng
+                band_min["VD"] = band_min.get("VD", 0.0) + band_min.pop("VDC", 0.0)
             for band, target in ratio_target.items():
                 share = band_min.get(band, 0.0) / on_min * 100
                 if target == 0 and band_min.get(band, 0.0) == 0:
                     continue
                 if abs(share - target) > ratio_tol:
+                    ten = "VD+VDC" if (gop and band == "VD") else band
                     warnings.append(
-                        f"thuyetminh: {tag} tỉ lệ {band} = {share:.0f}% lệch chuẩn {target:.0f}% "
+                        f"thuyetminh: {tag} tỉ lệ {ten} = {share:.0f}% lệch chuẩn {target:.0f}% "
                         f"quá ±{ratio_tol:.0f} điểm (tier_spec {spec.tier}).")
 
         # (E) phiếu (1 buổi) vượt quỹ giờ trên lớp
@@ -226,8 +302,11 @@ def check_source_refs(spec: ThuyetMinhSpec) -> list[str]:
     bước ra hoặc là một ý của nó."""
     out: list[str] = []
     for p in spec.phieu:
+        # Dòng `viet_quy_trinh` (HS tự viết lại & giải thích quy trình — Thầy chốt
+        # 30/08/2026) KHÔNG phải bài toán bốc từ đề nên không có nguồn để trỏ.
         thieu = [f"{r.band}{i}" for i, r in enumerate(p.rows, 1)
-                 if not r.source_refs and (r.loai or "").strip() != LOAI_MIEN_TRICH_DAN]
+                 if not r.source_refs and not r.viet_quy_trinh
+                 and (r.loai or "").strip() != LOAI_MIEN_TRICH_DAN]
         if thieu:
             out.append(
                 f"thuyetminh: phiếu {p.code} — {len(thieu)}/{len(p.rows)} dòng BỊA ĐỀ "

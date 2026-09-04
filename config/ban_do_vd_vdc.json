@@ -1,0 +1,657 @@
+{
+ "_doc": "BẢN ĐỒ VD/VDC THEO CHƯƠNG — chương nào CÓ bài Vận dụng / Vận dụng cao trong đề kiểm tra định kì (GK1, CK1, GK2, CK2). Đây là NGUỒN SỰ THẬT để chọn tỉ lệ thời lượng cho phiếu học liệu TẦNG B: chương KHÔNG có VD-VDC thì GỘP 2 PHIẾU THÀNH 1 với NB 30% / TH 70%; chương CÓ VD-VDC thì NB 15% / TH 30% / VD+VDC 55%. Đọc bởi src/schema/tier_spec.py (tier_ratio) rồi tới duration_gate, thuyetminh_gate, spec_gate.",
+ "phien_ban": "0.3-trich-tu-de-bai-that",
+ "ngay": "2026-08-30",
+ "trang_thai": "CHỜ DUYỆT - mức độ nay chấm từ ĐỀ BÀI THẬT ở hai vị trí VDC, không dùng cột 'Vận dụng' của ma trận trường",
+ "quy_uoc_phan_muc": {
+  "_doc": "Anh An (AnDV) chốt 30/08/2026 — quy ước ĐÈ LÊN mức độ mà trường ghi trong ma trận. Trường xếp một câu vào cột 'Vận dụng' nhưng câu đó chỉ là bài thực tế 2-3 bước thì bản đồ này vẫn tính là THÔNG HIỂU.",
+  "thuc_te_2_3_buoc_la_TH": "Dạng toán THỰC TẾ chỉ dùng 2-3 bước làm đơn giản (đọc đề, thay vào một công thức, tính, kết luận) được coi là mức THÔNG HIỂU — không phải Vận dụng. Ví dụ: bóng tháp theo tia nắng, máy bay cất cánh, thang dựa tường, hải đăng nhìn tàu, tính Sxq/thể tích hình chóp, tính tần số tương đối, tính xác suất của một biến cố.",
+  "VDC_chi_o_hai_cho": "Chỉ CÂU CUỐI CỦA BÀI HÌNH và CÂU NÂNG CAO CUỐI ĐỀ mới được gọi là VDC.",
+  "VDC_lop_6": "Riêng LỚP 6: chỉ CÂU CUỐI CỦA ĐỀ mới được gọi là VDC (lớp 6 chưa có bài hình chứng minh nhiều ý).",
+  "he_qua": "Quy ước này kéo hàng loạt câu 'thực tế' từ cột Vận dụng của trường về mức Thông hiểu, nhờ đó chốt được dứt điểm các chương trước đây còn để 'bien': thống kê, xác suất, hình khối, Thalès, dữ liệu và biểu đồ.",
+  "cach_kiem": "Mỗi chương ghi rõ NHÓM (chỉ TH / TH+VD / TH+VD+VDC), SỐ CÂU VDC trích được và TRÍCH DẪN đề bài. Nguồn: 21 đề lớp 9 ĐẦY ĐỦ 10 điểm trong ngân hàng câu + câu cuối đề / ý cuối bài hình trích từ text PDF của cả 4 khối (scripts/trich_cau_cuoi_de.py). Xem đầy đủ ở outputs/trich-vdc/.",
+  "loi_da_sua": "Bản 0.2 lấy 'câu cuối' theo THỨ TỰ TRONG FILE ngân hàng, trong khi 24/45 file chỉ là TRÍCH MỘT PHẦN đề và 1 file GỘP nhiều đề - nên có câu mức Thông hiểu bị gán nhầm VDC (chương VII lớp 9: 'lập bảng tần số, tìm tần số tương đối'). Bản 0.3 chỉ dùng đề có tổng 9-10,5 điểm."
+ },
+ "nguon": {
+  "kho_de": "inputs/refs/de-thi/lop-{6,7,8,9}/{giua-ki-1,cuoi-ki-1,giua-ki-2,cuoi-ki-2} — đề Hà Nội tải từ thcs.toanmath.com, chỉ lấy từ năm học mà khối đó bắt đầu chương trình 2018 (lớp 6: 2021, lớp 7: 2022, lớp 8: 2023, lớp 9: 2024). Tải bằng scripts/fetch_de_thi_khoi.py, tối thiểu 26 đề mỗi (khối, kỳ).",
+  "bang_chung_chinh": "MA TRẬN / BẢN ĐẶC TẢ mà chính trường công bố kèm đề — bảng ghi rõ mỗi đơn vị kiến thức có bao nhiêu câu ở mức Nhận biết / Thông hiểu / Vận dụng / Vận dụng cao. Bản đồ lấy VỊ TRÍ và NỘI DUNG câu từ ma trận, còn MỨC ĐỘ thì chấm lại theo quy ước của anh An ở trên.",
+  "so_ma_tran_doc_duoc": {
+   "lop-6": 22,
+   "lop-7": 13,
+   "lop-8": 39,
+   "lop-9": 13
+  },
+  "doi_chung_lop_9": "45 đề trong inputs/refs/de-thi/lop-9/exams (đã gắn band từng câu) + ma trận Sở cho đề Vào 10 (inputs/seeds/lop-9/de-thi-vao-10/MA-TRAN-VAO-10-HA-NOI.md).",
+  "luu_y_CV7991": "Đề từ năm học 2025-2026 theo Công văn 7991/BGDĐT-GDTrH (17/12/2024) chỉ còn 3 mức Biết / Hiểu / Vận dụng — không còn cột 'Vận dụng cao'. Vì vậy VD và VDC gộp chung một khối (đúng như Thầy chốt 55%)."
+ },
+ "quy_uoc": {
+  "co_vd": "true = chương CÓ bài VD/VDC (sau khi chấm lại theo quy ước anh An) nên dùng tỉ lệ 15-30-55, MỘT phiếu một buổi; false = chương chỉ có NB/TH nên GỘP 2 PHIẾU THÀNH 1 theo 30-70; 'bien' = còn mâu thuẫn, phải CHỜ THẦY CHỐT, chưa được soạn phiếu.",
+  "ty_le_co_vd": {
+   "NB": 15,
+   "TH": 30,
+   "VD": 55,
+   "VDC": 0
+  },
+  "ty_le_khong_vd": {
+   "NB": 30,
+   "TH": 70,
+   "VD": 0,
+   "VDC": 0
+  },
+  "gop_phieu_khi_khong_vd": "Anh An chốt 30/08/2026: chương không có VD-VDC thì GỘP 2 PHIẾU THÀNH 1 (so_ca = 2). Tỉ lệ tổng 30% NB + 70% TH chia đều hai buổi: buổi 1 gánh 15% NB + 35% TH, buổi 2 gánh 15% NB + 35% TH.",
+  "_note_VDC": "Ô 'VD' đã GỘP cả VD lẫn VDC (Thầy chốt: không tách). Cổng soi tổng VD+VDC.",
+  "muc_do": "chi-TH = chỉ Nhận biết + Thông hiểu (gộp 2 phiếu, 30-70); TH-VD = có bài Vận dụng nhưng KHÔNG có câu ở vị trí VDC; TH-VD-VDC = có cả câu cuối đề / ý cuối bài hình. TH-VD và TH-VD-VDC dùng chung tỉ lệ 15-30-55 vì Thầy chốt gộp VD với VDC."
+ },
+ "khoi": {
+  "lop-6": {
+   "bo_sach": "KNTT",
+   "_note_vdc": "Lớp 6: VDC chỉ là CÂU CUỐI CỦA ĐỀ (quy ước anh An).",
+   "chuong": [
+    {
+     "ma": "I",
+     "slug": "chuong-01-tap-hop-cac-so-tu-nhien",
+     "ten": "Tập hợp các số tự nhiên",
+     "co_vd": true,
+     "bang_chung": "GK1 THCS Mỹ Đình: câu CUỐI ĐỀ ở cột 'Vận dụng cấp độ cao' 0,5đ ('giải quyết vấn đề thực tiễn phức hợp, không quen thuộc') nên đúng là VDC theo quy ước. THCS Bá Trạch B5 (1đ) + B6 (0,5đ) và THCS Đỗ Ngọc Du B2c là bài tính nhanh / tìm x nhiều bước, không phải thực tế 2-3 bước.",
+     "muc_do": "TH-VD-VDC",
+     "so_cau_vdc": 1,
+     "vdc_vi_du": [
+      "Bài 5. (0,5 điểm) Thu gọn tổng sau: A =+ 1 + + 4 + 6 + ... + 98 + 100 2 2 2 2 2 2 2 -----HẾT----- UBND PHƯỜNG TỪ LIÊM ĐỀ KIỂM TRA GIỮA HỌC KÌ II TRƯỜNG THCS MAI DỊCH Năm học 2025 –"
+     ],
+     "vdc_nguon": [
+      "de-giua-hoc-ki-2-toan-6-nam-2025-2026-truong-thcs-mai-dich-ha-noi"
+     ]
+    },
+    {
+     "ma": "II",
+     "slug": "chuong-02-tinh-chia-het",
+     "ten": "Tính chia hết trong tập hợp các số tự nhiên",
+     "co_vd": true,
+     "bang_chung": "GK1 THCS Đỗ Ngọc Du: B5 (0,5đ) là CÂU CUỐI ĐỀ ở cột Vận dụng cao nên giữ VDC; B3 (2đ) bài ƯCLN-BCNN nhiều bước (phân tích ra thừa số nguyên tố, chọn ƯC/BC, đối chiếu điều kiện). THCS Bá Trạch B3 (1đ) tương tự.",
+     "muc_do": "TH-VD-VDC",
+     "so_cau_vdc": 11,
+     "vdc_vi_du": [
+      "Bài 5. (0,5 điểm). 1. Tìm các số nguyên tố p, q sao cho: 8  2 p  1  3q3  2  3 p  q3  25  . 2. Tấm thảm Sierpinski là công trình khoa học nổi tiếng của nhà toán học Waclaw ",
+      "Bài 5. (0,5 điểm) Chứng tỏ rằng với n là số tự nhiên thì 7 n + 10 và 5n + 7 là hai số nguyên tố cùng nhau. -------------------------Hết------------------------ Chúc các em làm bài "
+     ],
+     "vdc_nguon": [
+      "de-cuoi-hoc-ki-1-toan-6-nam-2025-2026-truong-thcs-ngo-si-lien-ha-noi",
+      "de-cuoi-ki-1-toan-6-nam-2024-2025-phong-gddt-chuong-my-ha-noi",
+      "de-hoc-ki-1-toan-6-nam-2023-2024-truong-thcs-thanh-quan-ha-noi"
+     ]
+    },
+    {
+     "ma": "III",
+     "slug": "chuong-03-so-nguyen",
+     "ten": "Số nguyên",
+     "co_vd": false,
+     "bang_chung": "GK2 THCS Việt Hưng xếp câu số nguyên vào cột Vận dụng, nhưng đó là phép tính có quy tắc dấu ngoặc / tìm x hai bước nên theo quy ước anh An là THÔNG HIỂU. Không ma trận nào đặt câu cuối đề vào chương này. HẠ so với bản 0.1.",
+     "muc_do": "chi-TH",
+     "so_cau_vdc": 0,
+     "vdc_vi_du": [],
+     "vdc_nguon": []
+    },
+    {
+     "ma": "IV",
+     "slug": "chuong-04-mot-so-hinh-phang-trong-thuc-tien",
+     "ten": "Một số hình phẳng trong thực tiễn",
+     "co_vd": false,
+     "bang_chung": "GK1 THCS Bá Trạch: tam giác đều / hình vuông / lục giác đều chỉ ở cột Nhận biết (C9, C10); THCS Đỗ Ngọc Du B4a ở Thông hiểu. Bài tính chu vi - diện tích là áp một công thức (2-3 bước) nên là Thông hiểu. CHỐT ĐƯỢC nhờ quy ước mới.",
+     "muc_do": "chi-TH",
+     "so_cau_vdc": 0,
+     "vdc_vi_du": [],
+     "vdc_nguon": []
+    },
+    {
+     "ma": "V",
+     "slug": "chuong-05-tinh-doi-xung-cua-hinh-phang",
+     "ten": "Tính đối xứng của hình phẳng trong tự nhiên",
+     "co_vd": false,
+     "bang_chung": "Không ma trận nào trong 22 bảng soi được đặt chương này vào cột Vận dụng; nội dung chỉ là nhận ra trục / tâm đối xứng. CHỐT ĐƯỢC nhờ quy ước mới.",
+     "muc_do": "chi-TH",
+     "so_cau_vdc": 0,
+     "vdc_vi_du": [],
+     "vdc_nguon": []
+    },
+    {
+     "ma": "VI",
+     "slug": "chuong-06-phan-so",
+     "ten": "Phân số",
+     "co_vd": true,
+     "bang_chung": "CK2 THCS Vạn Phúc: câu CUỐI ĐỀ 0,5đ 'vận dụng kiến thức để chứng minh dãy phân số' - đúng khuôn VDC của lớp 6. THCS Tam Hưng: Vận dụng cao 0,5đ ở cuối đề. GK2 THCS Chương Dương Bài 6 (0,5đ) cũng là câu cuối.",
+     "muc_do": "TH-VD-VDC",
+     "so_cau_vdc": 5,
+     "vdc_vi_du": [
+      "Bài 5. (0,5 điểm) Cho A = + + ... + . Chứng minh: A < 1.2.3 2.3.4 3.4.5 27.28.29 4 ..............................................Hết........................................... TỔ T",
+      "Bài 6. (0,5 điểm) Cho A = 2 + 4 + 6 + ... + 100 . Chứng minh A < ⋅ 3 3 3 3 32 ----- Hết ----- Lưu ý: Học sinh không được sử dụng máy tính cầm tay PHÒNG GD – ĐT CẦU GIẤY"
+     ],
+     "vdc_nguon": [
+      "de-cuoi-hoc-ky-2-toan-6-nam-2023-2024-truong-thcs-da-ton-ha-noi",
+      "de-hoc-ky-2-toan-6-nam-2023-2024-truong-thcs-le-quy-don-ha-noi",
+      "de-giua-hoc-ki-2-toan-6-nam-2025-2026-truong-ban-mai-school-ha-noi"
+     ]
+    },
+    {
+     "ma": "VII",
+     "slug": "chuong-07-so-thap-phan",
+     "ten": "Số thập phân",
+     "co_vd": false,
+     "bang_chung": "CK2 THCS Vạn Phúc và THCS Tam Hưng xếp 'tìm một số khi biết giá trị một phân số / tỉ số phần trăm của nó' vào cột Vận dụng, nhưng đó là bài thực tế 2-3 bước (đọc đề, lập một phép tính, kết luận) nên là THÔNG HIỂU theo quy ước anh An. HẠ so với bản 0.1.",
+     "muc_do": "chi-TH",
+     "so_cau_vdc": 0,
+     "vdc_vi_du": [],
+     "vdc_nguon": []
+    },
+    {
+     "ma": "VIII",
+     "slug": "chuong-08-nhung-hinh-hinh-hoc-co-ban",
+     "ten": "Những hình hình học cơ bản",
+     "co_vd": false,
+     "bang_chung": "Không gặp dòng Vận dụng cho chương này; nội dung là điểm - đường thẳng - đoạn thẳng - góc, đo và vẽ. CHỐT ĐƯỢC nhờ quy ước mới.",
+     "muc_do": "chi-TH",
+     "so_cau_vdc": 0,
+     "vdc_vi_du": [],
+     "vdc_nguon": []
+    },
+    {
+     "ma": "IX",
+     "slug": "chuong-09-du-lieu-va-xac-suat-thuc-nghiem",
+     "ten": "Dữ liệu và xác suất thực nghiệm",
+     "co_vd": false,
+     "bang_chung": "GK2 THCS Thanh (biểu đồ cột kép Bài 3a,b,c), THCS Việt Hưng (xác suất 0,5đ) và CK2 THCS Đa (TL3 ý 2b) đều được trường xếp Vận dụng, nhưng là đọc biểu đồ / đếm kết quả thuận lợi rồi lập tỉ số - 2-3 bước nên là THÔNG HIỂU. HẠ so với bản 0.1.",
+     "muc_do": "chi-TH",
+     "so_cau_vdc": 0,
+     "vdc_vi_du": [],
+     "vdc_nguon": []
+    }
+   ]
+  },
+  "lop-7": {
+   "bo_sach": "KNTT",
+   "chuong": [
+    {
+     "ma": "I",
+     "slug": "chuong-01-so-huu-ti",
+     "ten": "Số hữu tỉ",
+     "co_vd": true,
+     "bang_chung": "GK1 THCS Đỗ Ngọc Du: Bài 5 (0,5đ) là CÂU NÂNG CAO CUỐI ĐỀ ở cột Vận dụng cao nên là VDC; Bài 3 (1đ) tính hợp lí nhiều bước. THCS Chúc Sơn: Bài 5 'so sánh hai biểu thức chứa luỹ thừa phức tạp' - không phải thực tế 2-3 bước.",
+     "muc_do": "TH-VD-VDC",
+     "so_cau_vdc": 2,
+     "vdc_vi_du": [
+      "Bài 5. (0,5 điểm) Tìm x nguyên để số hữu tỷ sau là số nguyên 6x + 5 A= 2x − 1 --- HẾT ---",
+      "Bài 5:(0,5 điểm) Tìm giá trị nhỏ nhất của biểu thức: 2010 M= (7 x  5 y )  (2 z  3 x) 2020  ( xy  yz  zx  2000) 2030  2025 TRƯỜNG THCS ĐỨC GIANG ĐỀ KIỂM TRA CUỐI HỌC KÌ I MÔ"
+     ],
+     "vdc_nguon": [
+      "de-cuoi-ki-1-toan-7-nam-2025-2026-truong-thcs-ngo-gia-tu-ha-noi",
+      "de-hoc-ki-1-toan-7-nam-2025-2026-truong-thcs-duc-giang-ha-noi"
+     ]
+    },
+    {
+     "ma": "II",
+     "slug": "chuong-02-so-thuc",
+     "ten": "Số thực",
+     "co_vd": false,
+     "bang_chung": "CK1 THCS Hát Môn có 1 câu tự luận ở cột VD cho 'căn bậc hai số học, số vô tỉ, số thực', nhưng thao tác là khai căn rồi tính - 2-3 bước nên là THÔNG HIỂU. Chương không đứng ở câu cuối hình lẫn câu cuối đề. HẠ so với bản 0.1.",
+     "muc_do": "chi-TH",
+     "so_cau_vdc": 0,
+     "vdc_vi_du": [],
+     "vdc_nguon": []
+    },
+    {
+     "ma": "III",
+     "slug": "chuong-03-goc-va-duong-thang-song-song",
+     "ten": "Góc và đường thẳng song song",
+     "co_vd": "bien",
+     "bang_chung": "CK1 THCS Hát Môn: 'Góc ở vị trí đặc biệt. Tia phân giác' chỉ ở cột Nhận biết. Không ma trận nào đặt chương này ở câu cuối bài hình. CHỐT ĐƯỢC nhờ quy ước mới.",
+     "muc_do": "can-Thay-chot",
+     "ghi_chu_can_chot": "Con gán 'bài hình GK1 lớp 7 = chương III', nhưng ý cuối bài hình GK1 lớp 7 thường chỉ là TÍNH SỐ ĐO GÓC - nhiều khả năng chỉ Thông hiểu. CẦN THẦY XÁC NHẬN.",
+     "so_cau_vdc": 2,
+     "vdc_vi_du": [
+      "c) Tính chi phí tiền công sơn hết căn phòng đó, biết giá công sơn là 25 000 đồng một mét vuông. 5 x2 3 x 5 11 3 9 Bài 5 (0,5 điểm): Tìm x, biết: .8  .8  .8  .8 3 5 3 5 Chúc các",
+      "c) Vẽ tia phân giác Cz của ACD b B D y Bài 5 (0,5 điểm): So sánh 5165 và 7110. Hết"
+     ],
+     "vdc_nguon": [
+      "de-giua-hoc-ki-1-toan-7-nam-2025-2026-truong-thcs-ai-mo-ha-noi",
+      "de-giua-hoc-ky-1-toan-7-nam-2025-2026-truong-thcs-tam-hiep-ha-noi"
+     ],
+     "slug_khac": [
+      "chuong-03-goc-va-hai-duong-thang-song-song"
+     ]
+    },
+    {
+     "ma": "IV",
+     "slug": "chuong-04-tam-giac-bang-nhau",
+     "ten": "Tam giác bằng nhau",
+     "co_vd": true,
+     "bang_chung": "GK2 THCS Phúc: 'Hai tam giác bằng nhau. Ba trường hợp bằng nhau' có 2 câu tự luận cột Vận dụng (2,0đ, 37,5% điểm đề) - đây là BÀI HÌNH chứng minh, ý cuối của bài đúng khuôn VDC.",
+     "muc_do": "TH-VD-VDC",
+     "so_cau_vdc": 3,
+     "vdc_vi_du": [
+      "c) Biết góc K4 = 30o . Tính góc I1 . Bài 6 (0,5 điểm): Cho ( x − y) : ( x + y) : xy = 1: 9 : 30 . Với x, y  0 hãy tính xy ? Chúc các con làm bài tốt! Trang 02 /0 2 - Môn thi Toán ",
+      "d) Gọi I là trung điểm của AC, vẽ điểm E sao cho I là trung điểm của BE. Chứng minh ba điểm E, C, D thẳng hàng."
+     ],
+     "vdc_nguon": [
+      "de-cuoi-ki-1-toan-7-nam-2025-2026-truong-thcs-ly-son-ha-noi",
+      "de-hoc-ki-1-toan-7-nam-2025-2026-xa-dong-anh-ha-noi",
+      "de-hoc-ky-1-toan-7-nam-2025-2026-truong-thcs-le-ngoc-han-ha-noi"
+     ]
+    },
+    {
+     "ma": "V",
+     "slug": "chuong-05-thu-thap-va-bieu-dien-du-lieu",
+     "ten": "Thu thập và biểu diễn dữ liệu",
+     "co_vd": false,
+     "bang_chung": "GK2 THCS Phúc có 1 câu VD (0,5đ) nhưng là đọc biểu đồ rồi tính tỉ lệ phần trăm - 2-3 bước nên là Thông hiểu; THCS Chương Dương cùng kỳ chỉ có NB + TH. CHỐT ĐƯỢC nhờ quy ước mới.",
+     "muc_do": "chi-TH",
+     "so_cau_vdc": 0,
+     "vdc_vi_du": [],
+     "vdc_nguon": []
+    },
+    {
+     "ma": "VI",
+     "slug": "chuong-06-ti-le-thuc-va-dai-luong-ti-le",
+     "ten": "Tỉ lệ thức và đại lượng tỉ lệ",
+     "co_vd": true,
+     "bang_chung": "GK2 THCS Uy Nỗ: 'Dãy tỉ số bằng nhau' có C15 cột Vận dụng và C17 cột VẬN DỤNG CAO (câu cuối đề) - 20% điểm. Bài chia phần theo tỉ lệ phải gọi ẩn, lập dãy tỉ số, đối chiếu điều kiện: nhiều hơn 3 bước.",
+     "muc_do": "TH-VD-VDC",
+     "so_cau_vdc": 2,
+     "vdc_vi_du": [
+      "Bài 5 : (0,5 điểm): Tìm tất cả các số nguyên dương x, y, z thỏa mãn: 2 z − 4 x 3x − 2 y 4 y − 3z = = và 200 < y 2 + z 2 < 450 . 3 4 2 - HẾT - PHÒNG GD & ĐT GIA LÂM TRƯỜNG THCS ĐA T",
+      "Bài 5: (0,5 điểm) Tìm các cặp số nguyên ( x, y ) thỏa mãn: x − 2 xy + y =4. ---------HẾT----------"
+     ],
+     "vdc_nguon": [
+      "de-cuoi-hoc-ky-2-toan-7-nam-2023-2024-truong-thcs-da-ton-ha-noi",
+      "de-cuoi-ki-2-toan-7-nam-2025-2026-truong-thcs-ngo-gia-tu-ha-noi"
+     ]
+    },
+    {
+     "ma": "VII",
+     "slug": "chuong-07-bieu-thuc-dai-so-va-da-thuc-mot-bien",
+     "ten": "Biểu thức đại số và đa thức một biến",
+     "co_vd": true,
+     "bang_chung": "CK2 THCS Tam Hưng: 'Phép nhân đa thức một biến' có 1 câu VẬN DỤNG CAO ở cuối đề; THCS Vạn Phúc: 'Đa thức một biến' 30% điểm trải cả VD lẫn VDC. GK2 THCS Uy Nỗ C14b,c cột Vận dụng.",
+     "muc_do": "TH-VD-VDC",
+     "so_cau_vdc": 6,
+     "vdc_vi_du": [
+      "Câu 5: (0,5 điểm) Hãy xác định hệ số a và b để đa thức f (x) = x2 + ax + b + 1 nhận các số 0 và -2 làm nghiệm. Chúc các con làm bài tốt! Trang 02 /0 2 - Môn thi Toán 7 - Mã đề thi:",
+      "Bài 5. (0,5 điểm) : Cho đa thức 7 f(x)= x  101x  101x  101x  ......  101x  101x  125. Tính f(100) 8 6 5 2 -----------------<> Chúc các em làm bài tốt <>-----------------"
+     ],
+     "vdc_nguon": [
+      "de-cuoi-hoc-ki-2-toan-7-nam-2024-2025-truong-thcs-ly-son-ha-noi",
+      "de-cuoi-hoc-ki-2-toan-7-nam-2024-2025-truong-thcs-phuc-loi-ha-noi",
+      "de-cuoi-hoc-ki-2-toan-7-nam-2025-2026-truong-thcs-chuc-son-ha-noi"
+     ]
+    },
+    {
+     "ma": "VIII",
+     "slug": "chuong-08-lam-quen-voi-bien-co-va-xac-suat",
+     "ten": "Làm quen với biến cố và xác suất của biến cố",
+     "co_vd": false,
+     "bang_chung": "GK2 THCS Phúc có 1 câu VD (0,5đ) nhưng là đếm kết quả thuận lợi rồi lập tỉ số - 2-3 bước nên là Thông hiểu. CHỐT ĐƯỢC nhờ quy ước mới.",
+     "muc_do": "chi-TH",
+     "so_cau_vdc": 0,
+     "vdc_vi_du": [],
+     "vdc_nguon": []
+    },
+    {
+     "ma": "IX",
+     "slug": "chuong-09-quan-he-giua-cac-yeu-to-trong-tam-giac",
+     "ten": "Quan hệ giữa các yếu tố trong một tam giác",
+     "co_vd": true,
+     "bang_chung": "GK2 THCS Chương Dương: 'Đường vuông góc và đường xiên, bất đẳng thức tam giác' Bài 4 (0,5đ) và 'Tam giác cân, đường trung trực' Bài 3c (0,75đ) đều ở cột Vận dụng - Bài 3c là Ý CUỐI của bài hình nên là VDC.",
+     "muc_do": "TH-VD-VDC",
+     "so_cau_vdc": 23,
+     "vdc_vi_du": [
+      "c) Nối BE cắt AD tại G. Chứng minh: G là trọng tâm tam giác ABC. Bài 6 (0,5 điểm) Cho hàm số y = f ( x) xác thực với mọi số thực x khác 0. Biết rằng 1 với mọi giá trị x khác 0 ta đ",
+      "c) Gọi I là giao điểm của BD và CE. Lấy H là trung điểm của BC. Chứng minh A, H, I thẳng hàng."
+     ],
+     "vdc_nguon": [
+      "de-cuoi-hoc-ki-2-toan-7-nam-2023-2024-truong-thcs-van-phuc-ha-noi",
+      "de-cuoi-hoc-ki-2-toan-7-nam-2024-2025-truong-thcs-ly-son-ha-noi",
+      "de-cuoi-hoc-ki-2-toan-7-nam-2024-2025-truong-thcs-phuc-loi-ha-noi"
+     ]
+    },
+    {
+     "ma": "X",
+     "slug": "chuong-10-mot-so-hinh-khoi-trong-thuc-tien",
+     "ten": "Một số hình khối trong thực tiễn",
+     "co_vd": false,
+     "bang_chung": "Bài hình khối là thay số vào công thức diện tích xung quanh / thể tích - 2-3 bước nên là Thông hiểu; ma trận không tách cột Vận dụng cho chương này. CHỐT ĐƯỢC nhờ quy ước mới.",
+     "muc_do": "chi-TH",
+     "so_cau_vdc": 0,
+     "vdc_vi_du": [],
+     "vdc_nguon": []
+    }
+   ]
+  },
+  "lop-8": {
+   "bo_sach": "KNTT",
+   "chuong": [
+    {
+     "ma": "I",
+     "slug": "chuong-01-da-thuc",
+     "ten": "Đa thức",
+     "co_vd": true,
+     "bang_chung": "GK1 THCS Tam Hiệp: 7 câu cột Vận dụng (4,0đ) và 1 câu VẬN DỤNG CAO 0,5đ ở CUỐI ĐỀ. THCS Bát Tràng: 1 câu Vận dụng 3,0đ (thu gọn, nhân - chia đa thức nhiều biến, nhiều bước). THCS Chúc Sơn TL3a,b.",
+     "muc_do": "TH-VD",
+     "so_cau_vdc": 0,
+     "vdc_vi_du": [],
+     "vdc_nguon": [],
+     "slug_khac": [
+      "chuong-1-da-thuc"
+     ]
+    },
+    {
+     "ma": "II",
+     "slug": "chuong-02-hang-dang-thuc",
+     "ten": "Hằng đẳng thức đáng nhớ và ứng dụng",
+     "co_vd": true,
+     "bang_chung": "GK1 THCS Chúc Sơn: 'Tính giá trị của biểu thức đại số' TL5 ở cột Vận dụng. Câu nâng cao CUỐI ĐỀ của đề CK1 lớp 8 hầu hết rơi vào chương này (phân tích nhân tử để tìm GTNN/GTLN, chứng minh chia hết, tìm số nguyên tố) nên là VDC.",
+     "muc_do": "TH-VD-VDC",
+     "so_cau_vdc": 4,
+     "vdc_vi_du": [
+      "Bài 6. (0,5 điểm) m+n Cho 0 < m < n và 3 ( m 2 + n 2 ) = 10mn. Tính giá trị của biểu thức A = . m−n ----------------Hết----------------",
+      "Bài 5. (0,5 điểm) Tìm giá trị lớn nhất của biểu thức A   x 2  2 xy  4 y 2  2 x  10 y  3. ----------Hết---------- Trang 2/2 Môn thi Toán 8 - Mã đề thi TO801 UBND PHƯỜNG BỒ ĐỀ"
+     ],
+     "vdc_nguon": [
+      "de-hoc-ki-1-toan-8-nam-2023-2024-truong-thcs-thanh-quan-ha-noi",
+      "de-giua-hoc-ki-1-toan-8-nam-2025-2026-truong-thcs-ai-mo-ha-noi",
+      "de-giua-hoc-ki-1-toan-8-nam-2025-2026-truong-thcs-chuc-son-ha-noi"
+     ],
+     "slug_khac": [
+      "chuong-2-hang-dang-thuc"
+     ]
+    },
+    {
+     "ma": "III",
+     "slug": "chuong-03-tu-giac",
+     "ten": "Tứ giác",
+     "co_vd": true,
+     "bang_chung": "GK1 THCS Tam Hiệp: 'Tính chất và dấu hiệu nhận biết các tứ giác đặc biệt' Bài 4b,c cột Vận dụng (1,5đ) và Bài 4d cột Vận dụng cao (0,5đ) - Bài 4d là Ý CUỐI của bài hình, đúng khuôn VDC.",
+     "muc_do": "TH-VD-VDC",
+     "so_cau_vdc": 8,
+     "vdc_vi_du": [
+      "c) Cho biết độ dài AM = 5cm, AC = 8cm. Tính diện tích tam giác vuông ABC? Bài 5 (0,5 điểm) 1 Cho các số x,y thoả mãn đẳng thức x 2 + 2 y 2 − x + 2 y + 1 = 0 . Tính giá trị của biểu",
+      "c) Gọi I, K lần lượt là giao điểm của BM, BF với AE. Tính ? FC"
+     ],
+     "vdc_nguon": [
+      "de-cuoi-ki-1-toan-8-nam-2023-2024-phong-gddt-quoc-oai-ha-noi",
+      "de-hoc-ki-1-toan-8-nam-2023-2024-truong-thcs-thanh-quan-ha-noi",
+      "de-giua-hoc-ki-1-toan-8-nam-2025-2026-truong-da-tri-tue-ha-noi"
+     ],
+     "slug_khac": [
+      "chuong-3-tu-giac"
+     ]
+    },
+    {
+     "ma": "IV",
+     "slug": "chuong-04-dinh-li-thales",
+     "ten": "Định lí Thalès",
+     "co_vd": false,
+     "bang_chung": "GK2: các ma trận soi được xếp Thalès / đường trung bình / tính chất đường phân giác ở NB và TH (trắc nghiệm 0,25đ, hoặc bài 0,5đ tính một đoạn thẳng). Không đứng ở ý cuối bài hình. CHỐT ĐƯỢC nhờ quy ước mới.",
+     "muc_do": "chi-TH",
+     "so_cau_vdc": 0,
+     "vdc_vi_du": [],
+     "vdc_nguon": [],
+     "slug_khac": [
+      "chuong-4-dinh-li-thales"
+     ]
+    },
+    {
+     "ma": "V",
+     "slug": "chuong-05-du-lieu-va-bieu-do",
+     "ten": "Dữ liệu và biểu đồ",
+     "co_vd": false,
+     "bang_chung": "GK2/CK2: bài thống kê 1,5đ ở mức Thông hiểu (lập bảng, đọc biểu đồ, tính phần trăm - 2-3 bước). CHỐT ĐƯỢC nhờ quy ước mới.",
+     "muc_do": "chi-TH",
+     "so_cau_vdc": 0,
+     "vdc_vi_du": [],
+     "vdc_nguon": [],
+     "slug_khac": [
+      "chuong-5-du-lieu-va-bieu-do"
+     ]
+    },
+    {
+     "ma": "VI",
+     "slug": "chuong-06-phan-thuc-dai-so",
+     "ten": "Phân thức đại số",
+     "co_vd": true,
+     "bang_chung": "GK2 THCS Bát Tràng: 'Các phép toán cộng, trừ, nhân, chia phân thức' B2 (1,0đ) cột Vận dụng, chương chiếm 37,5% điểm đề. Rút gọn biểu thức phân thức phải tìm ĐKXĐ, quy đồng, phân tích nhân tử, rút gọn: nhiều hơn 3 bước.",
+     "muc_do": "TH-VD",
+     "so_cau_vdc": 0,
+     "vdc_vi_du": [],
+     "vdc_nguon": [],
+     "slug_khac": [
+      "chuong-6-phan-thuc-dai-so"
+     ]
+    },
+    {
+     "ma": "VII",
+     "slug": "chuong-07-phuong-trinh-va-ham-so-bac-nhat",
+     "ten": "Phương trình bậc nhất và hàm số bậc nhất",
+     "co_vd": true,
+     "bang_chung": "CK2 THCS Đống Đa: TL1.1, TL1.2 cột Vận dụng (1,5đ) và TL5 cột VẬN DỤNG CAO 0,5đ - TL5 là CÂU CUỐI ĐỀ. Giải bài toán bằng cách lập phương trình có gọi ẩn, đặt điều kiện, lập, giải, đối chiếu, kết luận.",
+     "muc_do": "TH-VD",
+     "so_cau_vdc": 0,
+     "vdc_vi_du": [],
+     "vdc_nguon": [],
+     "slug_khac": [
+      "chuong-7-phuong-trinh-bac-nhat"
+     ]
+    },
+    {
+     "ma": "VIII",
+     "slug": "chuong-08-xac-suat",
+     "ten": "Mở đầu về tính xác suất của biến cố",
+     "co_vd": "bien",
+     "bang_chung": "GK2/CK2: xác suất ở NB/TH; câu 0,5đ mà một số trường ghi Vận dụng là đếm kết quả thuận lợi rồi lập tỉ số - 2-3 bước nên là Thông hiểu. CHỐT ĐƯỢC nhờ quy ước mới.",
+     "muc_do": "can-Thay-chot",
+     "ghi_chu_can_chot": "Câu 'bốc ít nhất bao nhiêu viên bi để chắc chắn...' là toán tư duy (nguyên lí Dirichlet), không phải xác suất. CẦN THẦY XÁC NHẬN có tính cho chương VIII không.",
+     "so_cau_vdc": 1,
+     "vdc_vi_du": [
+      "Bài 5.(0,5 điểm): “ Trong hộp có 20 viên bi vàng, 18 viên bi xanh, 26 viên bi đỏ có kích thước giống hệt nhau. Không nhìn vào hộp, cần bốc ra ít nhất bao nhiêu viên để chắc chắn tr"
+     ],
+     "vdc_nguon": [
+      "de-giua-hoc-ki-2-toan-8-nam-2023-2024-truong-thcs-chuong-duong-ha-noi"
+     ],
+     "slug_khac": [
+      "chuong-8-tinh-xac-suat"
+     ]
+    },
+    {
+     "ma": "IX",
+     "slug": "chuong-09-tam-giac-dong-dang",
+     "ten": "Tam giác đồng dạng",
+     "co_vd": true,
+     "bang_chung": "GK2 THCS Bát Tràng: B4 (1,0đ) cột Vận dụng và B5c (0,5đ) cột Vận dụng cao - B5c là Ý CUỐI của bài hình, đúng khuôn VDC. Chương chiếm 37,5% điểm đề.",
+     "muc_do": "TH-VD-VDC",
+     "so_cau_vdc": 2,
+     "vdc_vi_du": [
+      "c) BE cắt AF tại K. Tính IK biết AB = 6cm. AC = 8cm.",
+      "c) Vẽ hình bình hành BICK , đoạn thẳng AK cắt đoạn thẳng BC tại điểm N . Gọi M là FI CK giao điểm của các đoạn thẳng AI và EF . Chứng minh  và MN // IK . FA CA Bài 4 (0,5 điểm) x2"
+     ],
+     "vdc_nguon": [
+      "de-giua-hoc-ki-2-toan-8-nam-2023-2024-truong-thcs-chuong-duong-ha-noi",
+      "de-giua-hoc-ki-2-toan-8-nam-2023-2024-truong-thcs-giang-vo-ha-noi"
+     ],
+     "slug_khac": [
+      "chuong-9-tam-giac-dong-dang"
+     ]
+    },
+    {
+     "ma": "X",
+     "slug": "chuong-10-hinh-khoi",
+     "ten": "Một số hình khối trong thực tiễn",
+     "co_vd": false,
+     "bang_chung": "CK2: bài hình chóp tam giác / tứ giác đều là thay số vào công thức Sxq, V - 2-3 bước nên là Thông hiểu. CHỐT ĐƯỢC nhờ quy ước mới.",
+     "muc_do": "chi-TH",
+     "so_cau_vdc": 0,
+     "vdc_vi_du": [],
+     "vdc_nguon": []
+    }
+   ]
+  },
+  "lop-9": {
+   "bo_sach": "KNTT",
+   "chuong": [
+    {
+     "ma": "I",
+     "slug": "chuong-01-phuong-trinh-va-he-hai-phuong-trinh-bac-nhat-hai-an",
+     "ten": "Phương trình và hệ hai phương trình bậc nhất hai ẩn",
+     "co_vd": true,
+     "bang_chung": "GK1: 3/5 ma trận có cột Vận dụng (Bát Tràng 1,5đ; Chúc Sơn; Đền Lư 2,0đ). CK1 Ái Mộ: 'giải bài toán bằng cách lập pt, hệ pt' chiếm 40% điểm và có cột Vận dụng. Bài lập hệ phải gọi ẩn, đặt điều kiện, lập 2 phương trình, giải, đối chiếu, kết luận - nhiều hơn 3 bước nên KHÔNG rơi vào quy ước 'thực tế 2-3 bước'.",
+     "muc_do": "TH-VD-VDC",
+     "so_cau_vdc": 2,
+     "vdc_vi_du": [
+      "Tại cửa hàng $A$ kinh doanh điện thoại, một loại điện thoại có giá nhập vào một chiếc là $14\\,000\\,000$ đồng và bán ra với giá $16\\,000\\,000$ đồng. Với giá bán như trên thì số lượn",
+      "Một rạp chiếu phim có 120 ghế, giá vé hiện tại là $100\\text{ nghìn đồng}$ mỗi vé. Với giá vé này, tất cả các ghế đều được bán hết cho mỗi suất chiếu. Ban quản lý rạp phim đang xem "
+     ],
+     "vdc_nguon": [
+      "ck1-chu-van-an",
+      "ck1-tan-trieu"
+     ],
+     "slug_khac": [
+      "chuong-1-he-pt"
+     ]
+    },
+    {
+     "ma": "II",
+     "slug": "chuong-02-bat-dang-thuc-bat-phuong-trinh",
+     "ten": "Bất đẳng thức. Bất phương trình bậc nhất một ẩn",
+     "co_vd": true,
+     "bang_chung": "CK1 Hát Môn: BĐT 0,5đ ở cột VẬN DỤNG CAO. Ở đề Vào 10, Câu V (0,5đ, bài tối ưu/cực trị) là CÂU NÂNG CAO CUỐI ĐỀ và thuộc chương này - đúng khuôn VDC. Bank: VDC 13 câu, 7,0đ.",
+     "muc_do": "TH-VD-VDC",
+     "so_cau_vdc": 22,
+     "vdc_vi_du": [
+      "Một gia đình cần ít nhất 900 đơn vị protein và 400 đơn vị lipit trong thức ăn mỗi ngày. Mỗi kilôgam thịt bò chứa 800 đơn vị protein và 200 đơn vị lipit. Mỗi kilôgam thịt lợn chứa 6",
+      "Bác Ba có một tấm tôn phẳng dài, bề ngang (chiều rộng) của tấm tôn là $60\\text{ cm}$. Bác muốn uốn tấm tôn này thành một cái máng dẫn nước hình chữ nhật (như hình vẽ) bằng cách bẻ "
+     ],
+     "vdc_nguon": [
+      "ck1-cau-dien",
+      "ck1-dich-vong",
+      "ck1-ngoc-lam"
+     ],
+     "slug_khac": [
+      "chuong-2-bdt-bpt"
+     ]
+    },
+    {
+     "ma": "III",
+     "slug": "chuong-03-can-bac-hai-can-bac-ba",
+     "ten": "Căn bậc hai và căn bậc ba",
+     "co_vd": true,
+     "bang_chung": "CK1 Ngô Gia Tự: 'phép biến đổi căn thức bậc hai của biểu thức đại số' 1,5đ cột Vận dụng. GK2 Chương Dương: 'tìm x để P nguyên' 0,75đ Vận dụng - phải rút gọn, tách phần nguyên, chặn khoảng, thử ước: nhiều bước, không phải bài thực tế.",
+     "muc_do": "TH-VD-VDC",
+     "so_cau_vdc": 1,
+     "vdc_vi_du": [
+      "Giải phương trình: $x^2 + x + 2 - 2\\sqrt{x+1} = 0$."
+     ],
+     "vdc_nguon": [
+      "ck1-ngoc-thuy"
+     ]
+    },
+    {
+     "ma": "IV",
+     "slug": "chuong-04-he-thuc-luong-tam-giac-vuong",
+     "ten": "Hệ thức lượng trong tam giác vuông",
+     "co_vd": true,
+     "bang_chung": "GK1: 5/5 ma trận có cột Vận dụng; Hoàng Hoa Thám và Phù Châu tách riêng Vận dụng cao 1,0đ. Phần đúng là VD/VDC là các Ý CHỨNG MINH HỆ THỨC ở cuối bài hình (bank: HH-TSLG-CM 17 câu). LƯU Ý: các bài thực tế bóng tháp / máy bay / thang dựa tường (bank: HH-TSLG-THUCTE) chỉ 2-3 bước nên theo quy ước anh An là THÔNG HIỂU.",
+     "muc_do": "TH-VD-VDC",
+     "so_cau_vdc": 11,
+     "vdc_vi_du": [
+      "Gọi M là hình chiếu của C trên đường thẳng BD. Qua M kẻ đường vuông góc với AC, cắt BC tại I. Chứng minh I là trung điểm của BC.",
+      "Tính chiều cao ngọn núi: tại hai điểm cách nhau 1000m trên mặt đất nhìn đỉnh núi với góc nâng 40° và 32° (làm tròn đến hàng đơn vị)."
+     ],
+     "vdc_nguon": [
+      "gk1-bat-trang",
+      "gk1-bat-trang",
+      "gk1-dich-vong-hau"
+     ]
+    },
+    {
+     "ma": "V",
+     "slug": "chuong-05-duong-tron",
+     "ten": "Đường tròn",
+     "co_vd": true,
+     "bang_chung": "CK1: Ái Mộ (chứng minh 4 điểm thuộc đường tròn / tiếp tuyến / hệ thức đều có cột Vận dụng), Hát Môn 1,0đ VD + 0,5đ VDC, Ngô Gia Tự 1,5đ VD - đều là ý sau của BÀI HÌNH, ý cuối đúng khuôn VDC.",
+     "muc_do": "TH-VD-VDC",
+     "so_cau_vdc": 11,
+     "vdc_vi_du": [
+      "Chứng minh BC = 2·IO và AF·BH = BF·AH.",
+      "c) Chứng minh: $HM$ là tia phân giác của $\\widehat{CHD}$."
+     ],
+     "vdc_nguon": [
+      "ck1-ai-mo",
+      "ck1-cau-dien",
+      "ck1-chu-van-an"
+     ]
+    },
+    {
+     "ma": "VI",
+     "slug": "chuong-06-ham-so-va-phuong-trinh-bac-hai",
+     "ten": "Hàm số y = ax bình phương và phương trình bậc hai một ẩn",
+     "co_vd": true,
+     "bang_chung": "CK2 Hát Môn: 'Phương trình bậc hai một ẩn, giải bài toán bằng cách lập pt' 2,0đ cột Vận dụng - bài lập phương trình nhiều bước. Bank (khoá C6-PTBH): VD 16/22 câu, 13,0đ.",
+     "muc_do": "TH-VD",
+     "so_cau_vdc": 0,
+     "vdc_vi_du": [],
+     "vdc_nguon": [],
+     "slug_khac": [
+      "chuong-06-ham-so-va-pt-bac-hai"
+     ]
+    },
+    {
+     "ma": "VII",
+     "slug": "chuong-07-tan-so-va-tan-so-tuong-doi",
+     "ten": "Tần số và tần số tương đối",
+     "co_vd": false,
+     "bang_chung": "GK2 Chương Dương: thống kê CHỈ có NB 0,5đ + TH 0,5đ. CK2 Hát Môn ghi 0,5đ Vận dụng cho bảng tần số tương đối, nhưng đó là đọc bảng rồi lập tỉ số - 2-3 bước nên là Thông hiểu. Ma trận Sở (Vào 10): mạch Thống kê-Xác suất có Vận dụng = 0 điểm. CHỐT ĐƯỢC nhờ quy ước mới.",
+     "muc_do": "chi-TH",
+     "so_cau_vdc": 0,
+     "vdc_vi_du": [],
+     "vdc_nguon": []
+    },
+    {
+     "ma": "VIII",
+     "slug": "chuong-08-xac-suat-cua-bien-co",
+     "ten": "Xác suất của biến cố",
+     "co_vd": false,
+     "bang_chung": "GK2 Chương Dương: xác suất chỉ NB 0,25đ + TH 0,25đ. Ma trận Sở (Vào 10): Thống kê-Xác suất Vận dụng = 0 điểm. Câu xác suất là liệt kê kết quả thuận lợi rồi lập tỉ số - 2-3 bước nên là Thông hiểu. CHỐT ĐƯỢC nhờ quy ước mới.",
+     "muc_do": "chi-TH",
+     "so_cau_vdc": 0,
+     "vdc_vi_du": [],
+     "vdc_nguon": []
+    },
+    {
+     "ma": "IX",
+     "slug": "chuong-09-duong-tron-ngoai-tiep-va-noi-tiep",
+     "ten": "Đường tròn ngoại tiếp và đường tròn nội tiếp",
+     "co_vd": true,
+     "bang_chung": "GK2 Chương Dương: 'CM các góc bằng nhau' 0,5đ, 'chứng minh thẳng hàng' 0,5đ và bài nâng cao 0,5đ đều ở cột Vận dụng - ý cuối bài hình đúng khuôn VDC. CK2 Hát Môn: tứ giác nội tiếp 0,5đ VD. Bank: VD 7/15 câu (47%), 9,5đ.",
+     "muc_do": "TH-VD-VDC",
+     "so_cau_vdc": 14,
+     "vdc_vi_du": [
+      "c) Vẽ tiếp tuyến của (O) tại D, cắt EH tại I. Chứng minh I là trung điểm của EH. Bài 5 (0,5 điểm). Từ một miếng tôn hình bán nguyệt có bán kính R = 6m, một người thợ muốn cắt một h",
+      "c) Gọi P là giao điểm của AH và EF. Chứng minh ∆AEP đồng dạng với ∆ABI và PI song song với HQ."
+     ],
+     "vdc_nguon": [
+      "de-cuoi-ki-2-toan-9-nam-2025-2026-truong-thcs-ngo-gia-tu-ha-noi",
+      "de-hoc-ki-2-toan-9-nam-2024-2025-phong-gddt-thach-that-ha-noi",
+      "de-hoc-ki-2-toan-9-nam-2024-2025-truong-thcs-ngoc-thuy-ha-noi"
+     ]
+    },
+    {
+     "ma": "X",
+     "slug": "chuong-10-hinh-khoi-trong-thuc-tien",
+     "ten": "Một số hình khối trong thực tiễn",
+     "co_vd": false,
+     "bang_chung": "CK2 Hát Môn ghi 0,5đ Vận dụng cho hình trụ/nón/cầu, nhưng là thay số vào công thức Sxq, V - 2-3 bước nên là Thông hiểu. Ma trận Sở (Câu IV.1 đề Vào 10) cũng chỉ ở mức áp công thức. CHỐT ĐƯỢC nhờ quy ước mới.",
+     "muc_do": "chi-TH",
+     "so_cau_vdc": 0,
+     "vdc_vi_du": [],
+     "vdc_nguon": []
+    }
+   ]
+  }
+ }
+}

@@ -178,3 +178,50 @@ def test_new_spec_scaffold_carries_loai_field():
     khung = _thuyetminh_skeleton("tm", "T", "lop-9", "dai-so", "C", "x")
     rows = [r for p in khung["phieu"] for r in p["rows"]] if "phieu" in khung else khung["rows"]
     assert rows and all("loai" in r for r in rows), rows[:1]
+
+
+# ── Luật tầng B theo chương (anh An chốt 30/08/2026) ─────────────────────────
+
+_CH4 = "chuong-04-he-thuc-luong-tam-giac-vuong"    # lớp 9: CÓ bài VD/VDC
+_CH8 = "chuong-08-xac-suat-cua-bien-co"            # lớp 9: KHÔNG có bài VD/VDC
+
+
+def _spec_b(rows, chuong, so_ca=1, subject="hinh-hoc"):
+    s = _spec(rows, subject=subject, tier="B")
+    s.chuong = chuong
+    for p in s.phieu:
+        p.so_ca = so_ca
+    return s
+
+
+def test_chuong_khong_co_vd_phai_gop_2_phieu():
+    """Chương không có VD-VDC: một phiếu phải trải 2 buổi (so_ca 2)."""
+    rows = [SpecRow(dang="tính xác suất", band="TH", onclass=4)]
+    e, _ = check_thuyetminh(_spec_b(rows, _CH8, so_ca=1, subject="dai-so"))
+    assert any("GỘP 2 PHIẾU THÀNH 1" in x for x in e)
+    e2, _ = check_thuyetminh(_spec_b(rows, _CH8, so_ca=2, subject="dai-so"))
+    assert not any("GỘP 2 PHIẾU" in x for x in e2)
+
+
+def test_chuong_co_vd_thi_moi_phieu_mot_buoi():
+    """Chương có VD-VDC: gộp 2 buổi vào 1 phiếu là SAI luật."""
+    rows = [SpecRow(dang="chứng minh hệ thức", band="VD", onclass=2,
+                    quy_trinh=["Bước 1", "Bước 2"])]
+    e, _ = check_thuyetminh(_spec_b(rows, _CH4, so_ca=2))
+    assert any("mỗi phiếu chỉ một buổi" in x for x in e)
+
+
+def test_dang_vd_thieu_quy_trinh_bi_chan():
+    """Dạng VẬN DỤNG không khai `quy_trinh` thì chặn build (spec đã theo luật mới)."""
+    rows = [SpecRow(dang="chứng minh hệ thức", band="VD", onclass=2)]
+    e, _ = check_thuyetminh(_spec_b(rows, _CH4))
+    assert any("quy_trinh" in x for x in e)
+
+
+def test_phieu_on_tap_chuong_phai_co_bai_viet_lai_quy_trinh():
+    rows = [SpecRow(dang="chứng minh hệ thức", band="VD", onclass=2,
+                    quy_trinh=["Bước 1"])]
+    s = _spec_b(rows, _CH4)
+    s.phieu[0].title = "Luyện tập chung và Bài tập cuối chương IV"
+    e, _ = check_thuyetminh(s)
+    assert any("viet_quy_trinh" in x for x in e)

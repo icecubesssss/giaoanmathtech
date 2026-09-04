@@ -16,10 +16,12 @@ from config import settings
 __all__ = [
     "load_tier_spec", "subject_block", "rates_for", "tier_ratio",
     "target_counts", "draw_minutes", "BANDS",
+    "load_ban_do", "chuong_co_vd", "gop_vd_vdc", "so_ca_yeu_cau",
 ]
 
 BANDS = ("NB", "TH", "VD", "VDC")
 _DEFAULT_PATH = settings.CONFIG_DIR / "tier_spec.json"
+_BAN_DO_PATH = settings.CONFIG_DIR / "ban_do_vd_vdc.json"
 _CACHE: dict[str, dict] = {}
 
 
@@ -63,18 +65,90 @@ def quick_minutes(spec: dict) -> float:
     return float(spec.get("quick_minutes", 0.0)) or 1.0
 
 
-def tier_ratio(spec: dict, grade: str, subject: str, tier: str) -> dict | None:
-    """Tỉ lệ NB-TH-VD-VDC (%) của tầng; None nếu tầng chưa chốt (vd X chuyên)."""
-    return subject_block(spec, grade, subject)["tiers"][tier].get("ratio")
+def load_ban_do(path: Path | None = None) -> dict:
+    """Đọc (và cache) `config/ban_do_vd_vdc.json` — chương nào CÓ bài VD/VDC trong đề."""
+    p = path or _BAN_DO_PATH
+    key = "bando:" + str(p)
+    if key not in _CACHE:
+        _CACHE[key] = json.loads(p.read_text(encoding="utf-8")) if p.exists() else {"khoi": {}}
+    return _CACHE[key]
 
 
-def target_counts(spec: dict, grade: str, subject: str, tier: str) -> dict:
+def chuong_co_vd(grade: str, chuong: str) -> bool | str | None:
+    """Chương này có bài VD/VDC trong đề kiểm tra định kì không?
+
+    True / False = đã chốt · "bien" = Thầy CHƯA chốt · None = không tìm thấy chương.
+    `chuong` khớp `slug` hoặc `ma` (I, II, …) trong config/ban_do_vd_vdc.json."""
+    if not chuong:
+        return None
+    khoi = load_ban_do().get("khoi", {}).get(grade)
+    if not khoi:
+        return None
+    for c in khoi.get("chuong", []):
+        # `slug_khac`: cây seeds có nhiều biến thể tên folder cho cùng một chương
+        # (chuong-1-he-pt / chuong-01-phuong-trinh-va-he-…), tra được cả hai.
+        if chuong in (c.get("slug"), c.get("ma"), *(c.get("slug_khac") or [])):
+            return c.get("co_vd")
+    return None
+
+
+def so_ca_yeu_cau(spec: dict, grade: str, subject: str, tier: str,
+                  chuong: str | None = None) -> int | None:
+    """Số CA (buổi) mà một phiếu của tầng này phải trải, theo chương.
+
+    Anh An chốt 30/08/2026: chương KHÔNG có bài VD/VDC thì GỘP 2 PHIẾU THÀNH 1
+    (so_ca = 2, mỗi buổi gánh 15% NB $+$ 35% TH); chương CÓ VD/VDC vẫn 1 phiếu 1 buổi.
+    None = tầng không ràng buộc, hoặc chưa tra ra chương."""
+    try:
+        variants = subject_block(spec, grade, subject)["tiers"][tier].get("so_ca_variants")
+    except KeyError:
+        return None
+    if not variants:
+        return None
+    co_vd = chuong_co_vd(grade, chuong or "")
+    if co_vd is True:
+        return variants.get("co_vd")
+    if co_vd is False:
+        return variants.get("khong_vd")
+    return None
+
+
+def gop_vd_vdc(spec: dict, grade: str, subject: str, tier: str) -> bool:
+    """Tầng này soi tỉ lệ với VD và VDC GỘP làm một khối (Thầy chốt 30/08/2026)?"""
+    try:
+        return bool(subject_block(spec, grade, subject)["tiers"][tier].get("gop_vd_vdc"))
+    except KeyError:
+        return False
+
+
+def tier_ratio(spec: dict, grade: str, subject: str, tier: str,
+               chuong: str | None = None) -> dict | None:
+    """Tỉ lệ NB-TH-VD-VDC (%) của tầng; None nếu tầng chưa chốt (vd X chuyên).
+
+    Tầng khai `ratio_variants` (tầng B từ 30/08/2026) thì tỉ lệ phụ thuộc CHƯƠNG:
+    tra `config/ban_do_vd_vdc.json` xem chương có bài VD/VDC trong đề hay không.
+    Chưa biết chương, hoặc chương còn 'bien' (Thầy chưa chốt) ⇒ None để cổng KHÔNG
+    gate bừa — thà không soi còn hơn soi theo tỉ lệ sai."""
+    tier_block = subject_block(spec, grade, subject)["tiers"][tier]
+    variants = tier_block.get("ratio_variants")
+    if not variants:
+        return tier_block.get("ratio")
+    co_vd = chuong_co_vd(grade, chuong or "")
+    if co_vd is True:
+        return variants.get("co_vd")
+    if co_vd is False:
+        return variants.get("khong_vd")
+    return None
+
+
+def target_counts(spec: dict, grade: str, subject: str, tier: str,
+                  chuong: str | None = None) -> dict:
     """Số câu MỤC TIÊU mỗi đoạn×band cho (lớp, môn, tầng). {} nếu tầng chưa có tỉ lệ.
 
     Trả {seg: {band: int}} chỉ gồm band/đoạn > 0 — đây là 'hợp đồng' số câu mà
-    phiếu phải khớp (±spec_count_tol)."""
+    phiếu phải khớp (±spec_count_tol). `chuong` cần cho tầng khai `ratio_variants`."""
     block = subject_block(spec, grade, subject)
-    ratio = tier_ratio(spec, grade, subject, tier)
+    ratio = tier_ratio(spec, grade, subject, tier, chuong)
     if not ratio:
         return {}
     rates = rates_for(spec, grade, subject)

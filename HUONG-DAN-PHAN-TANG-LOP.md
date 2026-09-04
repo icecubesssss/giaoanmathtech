@@ -7,7 +7,7 @@ Trung tâm chia HS theo năng lực thành các **tầng lớp**. Mỗi tầng n
 | Tầng | Đối tượng | Yêu cầu cốt lõi | Tỉ lệ NB-TH-VD |
 |---|---|---|---|
 | **A** | Khá – giỏi | *(chuẩn hoá sau)* | *(sau)* |
-| **B** | Trung bình – khá | Nắm chắc NB, TH, rèn luyện tư duy VD và cọ xát 1 phần VDC | **30 – 40 – 20 – 10 (VDC)** |
+| **B** | Trung bình – khá | Nắm chắc NB, TH, rèn luyện tư duy VD và cọ xát 1 phần VDC | **theo CHƯƠNG** (xem §2): chương có VD **15 – 30 – 55 (VD+VDC)**; chương không VD **30 – 70**, gộp 2 phiếu |
 | **C** | Nền (yếu – trung bình) | Thạo **100% Nhận biết + Thông hiểu**, làm được **1 phần Vận dụng** | **40 – 40 – 20** |
 | **X** | HS chuyên | *(chuẩn hoá sau)* | *(sau)* |
 
@@ -29,7 +29,17 @@ Trung tâm chia HS theo năng lực thành các **tầng lớp**. Mỗi tầng n
 
 ## 2. Chuẩn SPEC giờ — **Lớp 9 · Đại số · tầng C**
 
-> **MÁY-ĐỌC (2026-06-21):** mọi con số dưới đây nay nằm trong **[config/tier_spec.json](config/tier_spec.json)** (phút/câu, ngân sách, tỉ lệ theo tầng). `duration_gate` + `new-thuyetminh` + `spec_gate` đọc chung từ đó — sửa số ở 1 chỗ. Đã chốt: **C 40-40-20-0 · B 30-40-20-10 · A 20-35-30-15**; **X** (chuyên) chưa chốt tỉ lệ. **VDC = band 4** (phút/câu 12/18/15,6). Bài giàu (VD/VDC) **cắt bước scaffold-decompose** → sinh câu NB/TH *từ chính bài* (vì bank đề hầu như không có câu NB rời — xem `make coverage`).
+> **MÁY-ĐỌC (2026-06-21):** mọi con số dưới đây nay nằm trong **[config/tier_spec.json](config/tier_spec.json)** (phút/câu, ngân sách, tỉ lệ theo tầng). `duration_gate` + `new-thuyetminh` + `spec_gate` đọc chung từ đó — sửa số ở 1 chỗ. Đã chốt: **C 40-40-20-0 · A 20-35-30-15**; **B theo chương** (xem khung dưới); **X** (chuyên) chưa chốt tỉ lệ. **VDC = band 4** (phút/câu 12/18/15,6). Bài giàu (VD/VDC) **cắt bước scaffold-decompose** → sinh câu NB/TH *từ chính bài* (vì bank đề hầu như không có câu NB rời — xem `make coverage`).
+
+> **TẦNG B ĐỔI LUẬT (Thầy chốt 2026-08-30) — tỉ lệ chọn THEO CHƯƠNG, không còn 30-40-20-10:**
+> - Chương **KHÔNG** có bài VD/VDC trong đề thi → **NB 30% · TH 70%**; phần NB gồm **~5 dạng, mỗi dạng 2 câu** (≈10 câu — đây là ràng buộc **cứng**, 30% chỉ để tham chiếu). **GỘP 2 PHIẾU THÀNH 1** (`so_ca: 2`) — buổi 1 gánh 15% NB + 35% TH, buổi 2 gánh 15% NB + 35% TH (anh An chốt 30/08).
+> - Chương **CÓ** VD/VDC trong đề thi → **NB 15% · TH 30% · VD+VDC 55%** (VD và VDC **gộp chung**, cổng soi tổng).
+> - Tra chương nào thuộc nhóm nào ở **[config/ban_do_vd_vdc.json](config/ban_do_vd_vdc.json)** (dựng từ ma trận trường công bố kèm đề GK1/CK1/GK2/CK2 Hà Nội, khối 6–9; xem PDF `outputs/ban-do-vd-vdc/`). Chương còn ghi `"bien"` = **Thầy chưa chốt → chưa soạn phiếu**; cổng sẽ không soi tỉ lệ và cảnh báo.
+> - Spec/phiếu tầng B **phải khai `chuong`** (slug chương) thì cổng mới soi được tỉ lệ và số ca.
+> - **Quy ước chấm mức độ (anh An chốt 30/08, ĐÈ LÊN mức trường ghi trong ma trận):** dạng toán **thực tế chỉ 2–3 bước** (thay số vào một công thức rồi kết luận: bóng tháp, máy bay cất cánh, thang dựa tường, Sxq/thể tích hình chóp, tần số tương đối, xác suất một biến cố) là **THÔNG HIỂU**, không phải Vận dụng. **VDC chỉ ở hai chỗ**: câu cuối của bài hình và câu nâng cao cuối đề — **riêng lớp 6 chỉ có câu cuối đề**.
+> - Mỗi dạng **VẬN DỤNG** phải khai `quy_trinh` ở **cả hai nơi**: dòng spec (`SpecRow.quy_trinh`) và **bài trong phiếu** (`ProblemBlock.quy_trinh`, level 3) — phiếu HS in hộp *Quy trình giải* ngay dưới đề, khác hộp *Gợi ý*.
+> - Phiếu tầng B **phải khai `chuong`** ở cả `thuyet-minh.json` lẫn file phiếu; `new-thuyetminh`/`new-lesson` tự lấy từ đường dẫn `…/chuong-NN-…`, hoặc truyền `--chuong`.
+> - Phiếu **ôn tập chương** phải có ít nhất một dòng `viet_quy_trinh: true` — bài cho HS **tự viết lại và giải thích** quy trình làm bài.
 
 **Buổi học Lớp 9 Đại số = 3 tiếng = 180′.** Trừ **15′ giải lao** → **165′ học trên lớp** = *Ví dụ GV giảng* + *Luyện tập trên lớp*. **BTVN** làm ở nhà, tính riêng. **Mỗi buổi = 1 phiếu.**
 

@@ -104,6 +104,13 @@ class ProblemBlock(BaseModel):
     hints: list[str] = Field(
         default_factory=list, description="Gợi ý mở dần, mỗi phần tử một gợi ý; cho phép $...$ và [[blank]]"
     )
+    # QUY TRÌNH GIẢI BÀI — Thầy chốt 30/08/2026: mọi bài VẬN DỤNG (level 3) của phiếu
+    # tầng B phải in sẵn các bước giải NGAY TẠI BÀI, không để HS mò. Khác `hints`
+    # (gợi ý mở khi bí): quy trình LUÔN hiện trên phiếu HS và là khuôn để HS bám.
+    quy_trinh: list[str] = Field(
+        default_factory=list,
+        description="Các BƯỚC của quy trình giải, vd ['Bước 1 — vẽ hình…', 'Bước 2 — …']",
+    )
     # LỜI GIẢI của RIÊNG bài này — CHỈ in ở Sổ tay GV (`show_solution=True` trong
     # `_blocks.j2`), tuyệt đối không lọt sang phiếu HS / slide. Trước 2026-08-12 field
     # này KHÔNG tồn tại: seed viết `solution` cho từng bài thì pydantic lặng lẽ vứt đi
@@ -237,6 +244,10 @@ class LessonPackage(BaseModel):
     eyebrow: str = Field("", description="Dòng nhỏ trên tiêu đề, vd 'ĐẠI SỐ — KỸ THUẬT XÉT HIỆU'")
     grade_label: str = Field("", description="vd 'Lớp 9 • Ôn vào 10'")
     class_tier: str = Field("", description="Tầng lớp phân hoá: ''=chuẩn | 'A' | 'B' | 'C' | 'X' (HS chuyên)")
+    # CHƯƠNG — cần cho tầng B (Thầy chốt 30/08/2026): tỉ lệ NB-TH-VD của tầng B chọn
+    # theo chương (chương có bài VD/VDC trong đề thi hay không — config/ban_do_vd_vdc.json).
+    # Để trống thì `duration_gate` không soi được tỉ lệ của phiếu tầng B.
+    chuong: str = Field("", description="Chương trong ban_do_vd_vdc.json, vd 'chuong-04-he-thuc-luong-tam-giac-vuong'")
     # SỐ CA (buổi) mà phiếu này trải ra — mặc định 1 = một phiếu dạy gọn trong một
     # buổi. Thầy chốt 16/08/2026: có phiếu cố ý gộp nhiều buổi vào MỘT file (chương III
     # lớp 9 tầng B gộp tuần 16+17). Khai `so_ca` để `duration_gate` nhân quỹ phút lên,

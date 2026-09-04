@@ -1,0 +1,424 @@
+{
+ "slug": "phieu-d-tu-giac-noi-tiep",
+ "title": "Bài 29. Tứ giác nội tiếp",
+ "eyebrow": "HÌNH HỌC 9 — CHƯƠNG IX · PHIẾU D",
+ "grade_label": "Lớp 9 • Ôn vào 10",
+ "class_tier": "C",
+ "so_ca": 1,
+ "stages": [
+  {
+   "kind": "review",
+   "number": 1,
+   "title": "Khám phá",
+   "teacher_note": "Cho HS đo thử bốn khoảng cách từ giao hai đường chéo tới bốn đỉnh tấm bạt. Đây là cầu nối sang đường tròn ngoại tiếp hình chữ nhật ở mục 3.",
+   "blocks": [
+    {
+     "type": "opener",
+     "text": "Bốn bạn Mai, Nam, Linh, Huy đứng ở bốn góc một tấm bạt hình chữ nhật trải giữa sân trường. Thầy giám thị bảo: \\textquotedblleft Cả bốn em đang đứng cách cái cột cờ đúng bằng nhau đấy\\textquotedblright. [[br]]Vì sao chỉ cần tấm bạt là hình chữ nhật thì luôn tìm được một điểm cách đều cả bốn góc của nó? Điểm ấy nằm ở đâu?",
+     "tikz": "\\begin{tikzpicture}[line width=0.8pt, font=\\small]\n  \\draw[ink] (1.5,0.95) circle (1.7755);\n  \\node[above left] at (0,1.9) {$A$};\n  \\node[above right] at (3,1.9) {$B$};\n  \\node[below right] at (3,0) {$C$};\n  \\node[below left] at (0,0) {$D$};\n  \\draw[ink] (0,1.9) -- (3,1.9) -- (3,0) -- (0,0) -- (0,1.9);\n  \\draw[ink] (0,1.9) -- (3,0);\n  \\draw[ink] (3,1.9) -- (0,0);\n  \\fill[ink] (1.5,0.95) circle (1.3pt);\n  \\node[above right] at (1.5,0.95) {$O$};\n  \\draw[ink] (0,0.2) -- (0.2,0.2) -- (0.2,0);\n\\end{tikzpicture}"
+    },
+    {
+     "type": "noted",
+     "variant": "note",
+     "text": "\\textbf{Nhắc lại ba thứ sẽ dùng cả buổi.}[[br]]$\\bullet$ (Bài 27) Góc nội tiếp $= \\dfrac{1}{2}$ số đo cung bị chắn; góc nội tiếp chắn nửa đường tròn là góc vuông.[[br]]$\\bullet$ (Bài 28) Tam giác vuông có tâm đường tròn ngoại tiếp là TRUNG ĐIỂM cạnh huyền.[[br]]$\\bullet$ (Lớp 8) Hình chữ nhật và hình vuông có hai đường chéo bằng nhau và cắt nhau tại trung điểm mỗi đường."
+    },
+    {
+     "type": "noted",
+     "variant": "target",
+     "text": "\\textbf{Đích của buổi học.}[[br]]Bài 29 là bài GẦN đề thi nhất của cả chương: Câu IV.2 ý a của 3/3 đề Vào 10 đều hỏi \\emph{chứng minh bốn điểm cùng thuộc một đường tròn} — chính là tứ giác nội tiếp. Hôm nay học cách nhận ra nó; buổi 5 luyện riêng cách trình bày để lấy trọn 1,0 điểm."
+    }
+   ]
+  },
+  {
+   "kind": "concept",
+   "number": 2,
+   "title": "Kiến thức cần nhớ",
+   "teacher_note": "Ví dụ 4 và Ví dụ 6 là KHUÔN VÀNG của Câu IV.2 ý a — bắt HS chép nguyên vào vở, buổi 5 sẽ luyện lại đúng khuôn này. Nhấn mạnh: tầng C chỉ chứng minh tứ giác nội tiếp bằng hai góc vuông, không dùng chiều đảo.",
+   "blocks": [
+    {
+     "type": "para",
+     "text": "\\textbf{1. Tứ giác nội tiếp là gì}"
+    },
+    {
+     "type": "para",
+     "text": "Tứ giác có \\textbf{BỐN đỉnh cùng nằm trên một đường tròn} gọi là tứ giác \\emph{nội tiếp} đường tròn đó. Thiếu một đỉnh cũng không được: hình chỉ có ba đỉnh nằm trên đường tròn thì KHÔNG phải tứ giác nội tiếp."
+    },
+    {
+     "type": "noted",
+     "variant": "example",
+     "text": "\\textbf{Ví dụ 1.} Trong Hình 1, tứ giác nào là tứ giác nội tiếp? Vì sao?\\par\\nopagebreak\\smallskip\\begin{center}\\adjustbox{max width=0.72\\linewidth, max totalheight=3.2cm}{\n\\begin{tikzpicture}[line width=0.8pt, font=\\small]\n  \\draw[ink] (0,0) circle (1.35);\n  \\node[above left] at (-0.5705,1.2235) {$A$};\n  \\node[left] at (-1.2686,-0.4617) {$B$};\n  \\node[below right] at (1.0342,-0.8678) {$C$};\n  \\node[above right] at (1.0342,0.8678) {$D$};\n  \\draw[ink] (-0.5705,1.2235) -- (-1.2686,-0.4617) -- (1.0342,-0.8678) -- (1.0342,0.8678) -- (-0.5705,1.2235);\n  \\fill[ink] (0,0) circle (1.3pt);\n  \\node[below] at (0,0) {$O$};\n  \\node[below, font=\\small] at (0,-2.1) {a)};\n  \\draw[ink] (4.4,0) circle (1.35);\n  \\node[above left] at (3.8295,1.2235) {$M$};\n  \\node[left] at (3.1314,-0.4617) {$N$};\n  \\node[below right] at (5.4342,-0.8678) {$P$};\n  \\node[right] at (6.2225,0.81) {$Q$};\n  \\draw[ink] (3.8295,1.2235) -- (3.1314,-0.4617) -- (5.4342,-0.8678) -- (6.2225,0.81) -- (3.8295,1.2235);\n  \\fill[ink] (4.4,0) circle (1.3pt);\n  \\node[below] at (4.4,0) {$O$};\n  \\node[below, font=\\small] at (4.4,-2.1) {b)};\n\\end{tikzpicture}\n}\\par\\vspace{2pt}{\\sffamily\\scriptsize\\itshape\\color{muted}Hình 1}\\end{center}\\smallskip {\\sffamily\\bfseries\\color{brand}Lời giải}[[br]]Hình a): bốn đỉnh $A$, $B$, $C$, $D$ đều nằm trên đường tròn $(O)$ nên tứ giác $ABCD$ là tứ giác nội tiếp đường tròn $(O)$.[[br]]Hình b): ba đỉnh $M$, $N$, $P$ nằm trên đường tròn nhưng đỉnh $Q$ nằm ngoài đường tròn nên tứ giác $MNPQ$ không phải tứ giác nội tiếp.[[br]]Vậy chỉ có tứ giác $ABCD$ ở hình a) là tứ giác nội tiếp."
+    },
+    {
+     "type": "para",
+     "text": "\\textbf{2. Định lí (SGK trang 80)}"
+    },
+    {
+     "type": "para",
+     "text": "Trong một tứ giác nội tiếp, \\textbf{tổng số đo hai góc ĐỐI NHAU bằng $180^\\circ$}. Với tứ giác $ABCD$ nội tiếp: $\\widehat{A} + \\widehat{C} = 180^\\circ$ và $\\widehat{B} + \\widehat{D} = 180^\\circ$.[[br]]Hai góc \\emph{đối nhau} là hai góc KHÔNG kề một cạnh nào: trong $ABCD$ thì $\\widehat{A}$ đối $\\widehat{C}$, $\\widehat{B}$ đối $\\widehat{D}$. Đừng cộng nhầm hai góc KỀ như $\\widehat{A}$ với $\\widehat{B}$."
+    },
+    {
+     "type": "noted",
+     "variant": "example",
+     "text": "\\begin{minipage}[t]{0.58\\linewidth}\\vspace{0pt}\\textbf{Ví dụ 2.} Cho tứ giác $ABCD$ nội tiếp đường tròn $(O)$ (Hình 2). Chỉ ra hai cặp góc đối nhau và cho biết tổng mỗi cặp bằng bao nhiêu. [[br]]{\\sffamily\\bfseries\\color{brand}Lời giải}[[br]]Trong tứ giác $ABCD$, hai góc $\\widehat{DAB}$ và $\\widehat{BCD}$ không kề cạnh nào nên là hai góc đối nhau.[[br]]Tương tự, $\\widehat{ABC}$ và $\\widehat{CDA}$ cũng là hai góc đối nhau.[[br]]Vì $ABCD$ nội tiếp nên tổng hai góc đối bằng $180^\\circ$:[[br]]$\\widehat{DAB} + \\widehat{BCD} = 180^\\circ$ và $\\widehat{ABC} + \\widehat{CDA} = 180^\\circ$.[[br]]Vậy hai cặp góc đối là $(\\widehat{DAB}, \\widehat{BCD})$ và $(\\widehat{ABC}, \\widehat{CDA})$, mỗi cặp có tổng $180^\\circ$.\\end{minipage}\\hfill\\begin{minipage}[t]{0.36\\linewidth}\\vspace{0pt}\n\\centering\n\\adjustbox{max width=\\linewidth, max totalheight=3.4cm}{\n\\begin{tikzpicture}[line width=0.8pt, font=\\small]\n  \\draw[ink] (0,0) circle (1.6);\n  \\node[above left] at (-0.6762,1.4501) {$A$};\n  \\node[left] at (-1.5035,-0.5472) {$B$};\n  \\node[below right] at (1.2257,-1.0285) {$C$};\n  \\node[above right] at (1.2257,1.0285) {$D$};\n  \\fill[ink] (0,0) circle (1.3pt);\n  \\node[below] at (0,0) {$O$};\n  \\draw[ink] (-0.6762,1.4501) -- (-1.5035,-0.5472) -- (1.2257,-1.0285) -- (1.2257,1.0285) -- (-0.6762,1.4501);\n\\end{tikzpicture}\n}\n\\par\\vspace{2pt}{\\sffamily\\scriptsize\\itshape\\color{muted}Hình 2}\n\\end{minipage}"
+    },
+    {
+     "type": "para",
+     "text": "\\textbf{3. Hai điều nữa phải nhớ}"
+    },
+    {
+     "type": "para",
+     "text": "$\\bullet$ \\textbf{Đường tròn ngoại tiếp hình chữ nhật và hình vuông} có tâm là giao hai đường chéo, bán kính bằng NỬA đường chéo.[[br]]$\\bullet$ \\textbf{★ Cách DUY NHẤT tầng C dùng để chứng minh một tứ giác nội tiếp}: \\emph{hai góc vuông cùng nhìn một đoạn thẳng thì bốn điểm cùng thuộc đường tròn có đường kính là đoạn thẳng đó.} Lí do: góc vuông nội tiếp thì chắn nửa đường tròn (Bài 27)."
+    },
+    {
+     "type": "noted",
+     "variant": "trap",
+     "text": "\\textbf{Ba lỗi mất điểm quen thuộc.}[[br]]$\\bullet$ Cộng nhầm hai góc KỀ nhau thay vì hai góc ĐỐI nhau: viết $\\widehat{A} + \\widehat{B} = 180^\\circ$.[[br]]$\\bullet$ Dùng chiều ĐẢO của định lí (\\emph{tổng hai góc đối bằng $180^\\circ$ nên tứ giác nội tiếp}) — sách chưa dạy chiều này. Muốn chứng minh tứ giác nội tiếp thì chỉ dùng khuôn hai góc vuông.[[br]]$\\bullet$ Viết được hai góc vuông nhưng quên nói chúng CÙNG NHÌN đoạn nào nên không kết luận được đường kính."
+    },
+    {
+     "type": "noted",
+     "variant": "example",
+     "text": "\\begin{minipage}[t]{0.58\\linewidth}\\vspace{0pt}\\textbf{Ví dụ 3.} Cho tứ giác $ABCD$ nội tiếp đường tròn $(O)$, hai tia $AB$ và $DC$ cắt nhau tại $X$ (Hình 3). Biết $\\widehat{DAB} = 80^\\circ$ và $\\widehat{ADC} = 70^\\circ$. Tính $\\widehat{BCD}$, $\\widehat{ABC}$ và $\\widehat{BXC}$. [[br]]{\\sffamily\\bfseries\\color{brand}Lời giải}[[br]]Vì $ABCD$ là tứ giác nội tiếp nên hai góc đối có tổng $180^\\circ$:[[br]]$\\widehat{BCD} = 180^\\circ - \\widehat{DAB} = 180^\\circ - 80^\\circ = 100^\\circ$.[[br]]$\\widehat{ABC} = 180^\\circ - \\widehat{ADC} = 180^\\circ - 70^\\circ = 110^\\circ$.[[br]]Vì $B$ nằm giữa $A$ và $X$ nên $\\widehat{XBC}$ kề bù với $\\widehat{ABC}$, do đó $\\widehat{XBC} = 180^\\circ - 110^\\circ = 70^\\circ$.[[br]]Vì $C$ nằm giữa $D$ và $X$ nên $\\widehat{XCB}$ kề bù với $\\widehat{BCD}$, do đó $\\widehat{XCB} = 180^\\circ - 100^\\circ = 80^\\circ$.[[br]]Trong tam giác $XBC$: $\\widehat{BXC} = 180^\\circ - 70^\\circ - 80^\\circ = 30^\\circ$.[[br]]Vậy $\\widehat{BCD} = 100^\\circ$, $\\widehat{ABC} = 110^\\circ$ và $\\widehat{BXC} = 30^\\circ$.\\end{minipage}\\hfill\\begin{minipage}[t]{0.36\\linewidth}\\vspace{0pt}\n\\centering\n\\adjustbox{max width=\\linewidth, max totalheight=3.4cm}{\n\\begin{tikzpicture}[line width=0.8pt, font=\\small]\n  \\draw[ink] (0,0) circle (1.5);\n  \\node[above left] at (-0.75,1.299) {$A$};\n  \\node[below left] at (-1.3595,-0.6339) {$B$};\n  \\node[below right] at (1.1491,-0.9642) {$C$};\n  \\node[above right] at (1.299,0.75) {$D$};\n  \\fill[ink] (0,0) circle (1.3pt);\n  \\node[left] at (0,0) {$O$};\n  \\draw[ink] (-0.75,1.299) -- (-1.3595,-0.6339) -- (1.1491,-0.9642) -- (1.299,0.75) -- (-0.75,1.299);\n  \\node[below] at (2.1524,10.5044) {$X$};\n  \\draw[ink] (-1.3595,-0.6339) -- (2.1524,10.5044);\n  \\draw[ink] (1.1491,-0.9642) -- (2.1524,10.5044);\n\\end{tikzpicture}\n}\n\\par\\vspace{2pt}{\\sffamily\\scriptsize\\itshape\\color{muted}Hình 3}\n\\end{minipage}"
+    },
+    {
+     "type": "noted",
+     "variant": "example",
+     "text": "\\begin{minipage}[t]{0.58\\linewidth}\\vspace{0pt}\\textbf{Ví dụ 4.} Cho tam giác $ABC$ nhọn có hai đường cao $BE$ và $CF$ (Hình 4). Chứng minh bốn điểm $B$, $C$, $E$, $F$ cùng thuộc một đường tròn và chỉ rõ tâm của đường tròn đó. [[br]]{\\sffamily\\bfseries\\color{brand}Lời giải}[[br]]Vì $BE$ là đường cao của tam giác $ABC$ nên $BE \\perp AC$, do đó $\\widehat{BEC} = 90^\\circ$.[[br]]Vì $CF$ là đường cao của tam giác $ABC$ nên $CF \\perp AB$, do đó $\\widehat{BFC} = 90^\\circ$.[[br]]Hai góc vuông $\\widehat{BEC}$ và $\\widehat{BFC}$ cùng nhìn đoạn $BC$, nên $E$ thuộc đường tròn đường kính $BC$ và $F$ cũng thuộc đường tròn đường kính $BC$.[[br]]Vậy bốn điểm $B$, $C$, $E$, $F$ cùng thuộc đường tròn đường kính $BC$; tâm của đường tròn đó là trung điểm của $BC$.\\end{minipage}\\hfill\\begin{minipage}[t]{0.36\\linewidth}\\vspace{0pt}\n\\centering\n\\adjustbox{max width=\\linewidth, max totalheight=3.4cm}{\n\\begin{tikzpicture}[line width=0.8pt, font=\\small]\n  \\node[above] at (-0.2952,1.6742) {$A$};\n  \\node[left] at (-1.5975,-0.5814) {$B$};\n  \\node[right] at (1.6421,-0.44) {$C$};\n  \\draw[ink] (-0.2952,1.6742) -- (-1.5975,-0.5814) -- (1.6421,-0.44) -- (-0.2952,1.6742);\n  \\node[right] at (0.2339,1.0967) {$E$};\n  \\node[left] at (-0.7263,0.9274) {$F$};\n  \\draw[ink] (-1.5975,-0.5814) -- (0.2339,1.0967);\n  \\draw[ink] (1.6421,-0.44) -- (-0.7263,0.9274);\n  \\draw[ink] (0.1012,0.9751) -- (0.2228,0.8424) -- (0.3555,0.964);\n  \\draw[ink] (-0.5705,0.8374) -- (-0.6605,0.6815) -- (-0.8163,0.7715);\n  \\node[below, fill=white, inner sep=1pt] at (-0.2506,0.6527) {$H$};\n  \\draw[brand, line width=1.2pt] (-1.5975,-0.5814) -- (1.6421,-0.44) -- (0.2339,1.0967) -- (-0.7263,0.9274) -- cycle;\n\\end{tikzpicture}\n}\n\\par\\vspace{2pt}{\\sffamily\\scriptsize\\itshape\\color{muted}Hình 4}\n\\end{minipage}"
+    },
+    {
+     "type": "noted",
+     "variant": "example",
+     "text": "\\begin{minipage}[t]{0.58\\linewidth}\\vspace{0pt}\\textbf{Ví dụ 5.} Cho hình chữ nhật $ABCD$ có $AB = 8$ cm và $BC = 6$ cm (Hình 5). Tính bán kính đường tròn ngoại tiếp hình chữ nhật đó. [[br]]{\\sffamily\\bfseries\\color{brand}Lời giải}[[br]]Xét tam giác $ABC$ vuông tại $B$, theo định lí Pythagore:[[br]]$AC^2 = AB^2 + BC^2 = 8^2 + 6^2 = 64 + 36 = 100$.[[br]]Suy ra $AC = \\sqrt{100} = 10$ (cm).[[br]]Hình chữ nhật có hai đường chéo bằng nhau và cắt nhau tại trung điểm $O$ của mỗi đường nên $OA = OB = OC = OD = \\dfrac{AC}{2} = 5$ (cm).[[br]]Do đó bốn đỉnh cùng thuộc đường tròn tâm $O$ bán kính $5$ cm.[[br]]Vậy bán kính đường tròn ngoại tiếp hình chữ nhật bằng $5$ cm.\\end{minipage}\\hfill\\begin{minipage}[t]{0.36\\linewidth}\\vspace{0pt}\n\\centering\n\\adjustbox{max width=\\linewidth, max totalheight=3.4cm}{\n\\begin{tikzpicture}[line width=0.8pt, font=\\small]\n  \\draw[ink] (1.5,0.95) circle (1.7755);\n  \\node[above left] at (0,1.9) {$A$};\n  \\node[above right] at (3,1.9) {$B$};\n  \\node[below right] at (3,0) {$C$};\n  \\node[below left] at (0,0) {$D$};\n  \\draw[ink] (0,1.9) -- (3,1.9) -- (3,0) -- (0,0) -- (0,1.9);\n  \\draw[ink] (0,1.9) -- (3,0);\n  \\draw[ink] (3,1.9) -- (0,0);\n  \\fill[ink] (1.5,0.95) circle (1.3pt);\n  \\node[above right] at (1.5,0.95) {$O$};\n  \\draw[ink] (0,0.2) -- (0.2,0.2) -- (0.2,0);\n  \\node[font=\\scriptsize, fill=white, inner sep=1pt] at (1.5,2.16) {$8$};\n  \\node[font=\\scriptsize, fill=white, inner sep=1pt] at (3.26,0.95) {$6$};\n\\end{tikzpicture}\n}\n\\par\\vspace{2pt}{\\sffamily\\scriptsize\\itshape\\color{muted}Hình 5}\n\\end{minipage}"
+    },
+    {
+     "type": "noted",
+     "variant": "example",
+     "text": "\\begin{minipage}[t]{0.58\\linewidth}\\vspace{0pt}\\textbf{Ví dụ 6.} Cho tam giác $ABC$ nhọn có hai đường cao $BE$ và $CF$ cắt nhau tại $H$ (Hình 6), biết $\\widehat{BAC} = 60^\\circ$. \\textbf{a)} Chứng minh tứ giác $AEHF$ nội tiếp. \\textbf{b)} Tính $\\widehat{EHF}$. [[br]]{\\sffamily\\bfseries\\color{brand}Lời giải}[[br]]\\textbf{a)} Vì $BE \\perp AC$ nên $\\widehat{AEH} = 90^\\circ$.[[br]]Vì $CF \\perp AB$ nên $\\widehat{AFH} = 90^\\circ$.[[br]]Hai góc vuông $\\widehat{AEH}$ và $\\widehat{AFH}$ cùng nhìn đoạn $AH$, nên $E$ và $F$ cùng thuộc đường tròn đường kính $AH$.[[br]]Vậy bốn điểm $A$, $E$, $H$, $F$ cùng thuộc đường tròn đường kính $AH$, tức tứ giác $AEHF$ nội tiếp.[[br]]\\textbf{b)} Vì tứ giác $AEHF$ nội tiếp nên hai góc đối $\\widehat{EAF}$ và $\\widehat{EHF}$ có tổng bằng $180^\\circ$.[[br]]Mà $\\widehat{EAF} = \\widehat{BAC} = 60^\\circ$.[[br]]Do đó $\\widehat{EHF} = 180^\\circ - 60^\\circ = 120^\\circ$.[[br]]Vậy $\\widehat{EHF} = 120^\\circ$.\\end{minipage}\\hfill\\begin{minipage}[t]{0.36\\linewidth}\\vspace{0pt}\n\\centering\n\\adjustbox{max width=\\linewidth, max totalheight=3.4cm}{\n\\begin{tikzpicture}[line width=0.8pt, font=\\small]\n  \\node[above] at (-0.2952,1.6742) {$A$};\n  \\node[left] at (-1.5975,-0.5814) {$B$};\n  \\node[right] at (1.6421,-0.44) {$C$};\n  \\draw[ink] (-0.2952,1.6742) -- (-1.5975,-0.5814) -- (1.6421,-0.44) -- (-0.2952,1.6742);\n  \\node[right] at (0.2339,1.0967) {$E$};\n  \\node[left] at (-0.7263,0.9274) {$F$};\n  \\draw[ink] (-1.5975,-0.5814) -- (0.2339,1.0967);\n  \\draw[ink] (1.6421,-0.44) -- (-0.7263,0.9274);\n  \\draw[ink] (0.1012,0.9751) -- (0.2228,0.8424) -- (0.3555,0.964);\n  \\draw[ink] (-0.5705,0.8374) -- (-0.6605,0.6815) -- (-0.8163,0.7715);\n  \\node[below, fill=white, inner sep=1pt] at (-0.2506,0.6527) {$H$};\n  \\draw[brand, line width=1.2pt] (-0.2952,1.6742) -- (0.2339,1.0967) -- (-0.2506,0.6527) -- (-0.7263,0.9274) -- cycle;\n\\end{tikzpicture}\n}\n\\par\\vspace{2pt}{\\sffamily\\scriptsize\\itshape\\color{muted}Hình 6}\n\\end{minipage}"
+    }
+   ]
+  },
+  {
+   "kind": "practice1",
+   "number": 3,
+   "title": "Luyện tập 1 — Nhận biết",
+   "teacher_note": "Bài 2 chốt lại thế nào là hai góc ĐỐI — chỗ HS sai nhiều nhất. Bài 6 bắt viết đủ căn cứ từng dòng, đúng khuôn barem.",
+   "blocks": [
+    {
+     "type": "problem",
+     "label": "Bài 1.",
+     "statement": "Quan sát Hình 7 rồi trả lời.\\par\\nopagebreak\\smallskip\\begin{center}\\adjustbox{max width=0.70\\linewidth, max totalheight=3.2cm}{\n\\begin{tikzpicture}[line width=0.8pt, font=\\small]\n  \\draw[ink] (0,0) circle (1.35);\n  \\node[above left] at (-0.5705,1.2235) {$A$};\n  \\node[left] at (-1.2686,-0.4617) {$B$};\n  \\node[below right] at (1.0342,-0.8678) {$C$};\n  \\node[above right] at (1.0342,0.8678) {$D$};\n  \\draw[ink] (-0.5705,1.2235) -- (-1.2686,-0.4617) -- (1.0342,-0.8678) -- (1.0342,0.8678) -- (-0.5705,1.2235);\n  \\fill[ink] (0,0) circle (1.3pt);\n  \\node[below] at (0,0) {$O$};\n  \\node[below, font=\\small] at (0,-2.1) {a)};\n  \\draw[ink] (4.4,0) circle (1.35);\n  \\node[above left] at (3.8295,1.2235) {$M$};\n  \\node[left] at (3.1314,-0.4617) {$N$};\n  \\node[below right] at (5.4342,-0.8678) {$P$};\n  \\node[right] at (6.2225,0.81) {$Q$};\n  \\draw[ink] (3.8295,1.2235) -- (3.1314,-0.4617) -- (5.4342,-0.8678) -- (6.2225,0.81) -- (3.8295,1.2235);\n  \\fill[ink] (4.4,0) circle (1.3pt);\n  \\node[below] at (4.4,0) {$O$};\n  \\node[below, font=\\small] at (4.4,-2.1) {b)};\n\\end{tikzpicture}\n}\\par\\vspace{2pt}{\\sffamily\\scriptsize\\itshape\\color{muted}Hình 7}\\end{center}\\smallskip a) [NB] Tứ giác $ABCD$ ở hình a) có phải tứ giác nội tiếp không? Vì sao?[[br]]b) [NB] Tứ giác $MNPQ$ ở hình b) có phải tứ giác nội tiếp không? Vì sao?[[br]]c) [NB] Điền vào chỗ chấm: tứ giác nội tiếp là tứ giác có \\ldots\\ldots đỉnh cùng nằm trên một đường tròn.",
+     "tier": "onclass",
+     "level": 1,
+     "solution": "a) CÓ — cả bốn đỉnh $A$, $B$, $C$, $D$ đều nằm trên đường tròn $(O)$.[[br]]b) KHÔNG — đỉnh $Q$ nằm ngoài đường tròn, mới chỉ có ba đỉnh nằm trên đường tròn.[[br]]c) Có BỐN đỉnh cùng nằm trên một đường tròn.",
+     "dang_id": "NB1",
+     "writelines": 0,
+     "figure_given": true
+    },
+    {
+     "type": "problem",
+     "label": "Bài 2.",
+     "statement": "\\par\\nopagebreak\n\\begin{minipage}[t]{0.60\\linewidth}\\vspace{0pt}\nCho tứ giác $ABCD$ nội tiếp đường tròn $(O)$ (Hình 8).[[br]]a) [NB] Góc đối của $\\widehat{DAB}$ là góc nào?[[br]]b) [NB] Cặp góc $\\widehat{ABC}$ và $\\widehat{BCD}$ là hai góc đối nhau hay hai góc kề nhau?[[br]]c) [NB] Viết hai đẳng thức về tổng hai góc đối của tứ giác $ABCD$.\n\\end{minipage}\\hfill\n\\begin{minipage}[t]{0.34\\linewidth}\\vspace{0pt}\n\\centering\n\\adjustbox{max width=\\linewidth, max totalheight=2.9cm}{\n\\begin{tikzpicture}[line width=0.8pt, font=\\small]\n  \\draw[ink] (0,0) circle (1.6);\n  \\node[above left] at (-0.6762,1.4501) {$A$};\n  \\node[left] at (-1.5035,-0.5472) {$B$};\n  \\node[below right] at (1.2257,-1.0285) {$C$};\n  \\node[above right] at (1.2257,1.0285) {$D$};\n  \\fill[ink] (0,0) circle (1.3pt);\n  \\node[below] at (0,0) {$O$};\n  \\draw[ink] (-0.6762,1.4501) -- (-1.5035,-0.5472) -- (1.2257,-1.0285) -- (1.2257,1.0285) -- (-0.6762,1.4501);\n\\end{tikzpicture}\n}\n\\par\\vspace{2pt}{\\sffamily\\scriptsize\\itshape\\color{muted}Hình 8}\n\\end{minipage}",
+     "tier": "onclass",
+     "level": 1,
+     "solution": "a) Góc đối của $\\widehat{DAB}$ là $\\widehat{BCD}$.[[br]]b) Hai góc KỀ nhau (cùng kề cạnh $BC$), không phải hai góc đối.[[br]]c) $\\widehat{DAB} + \\widehat{BCD} = 180^\\circ$ và $\\widehat{ABC} + \\widehat{CDA} = 180^\\circ$.",
+     "dang_id": "NB2",
+     "writelines": 0,
+     "figure_given": true
+    },
+    {
+     "type": "problem",
+     "label": "Bài 3.",
+     "statement": "\\par\\nopagebreak\n\\begin{minipage}[t]{0.60\\linewidth}\\vspace{0pt}\nCho tứ giác $ABCD$ nội tiếp đường tròn $(O)$ (Hình 9). Tính góc đối của góc đã cho.[[br]]a) [NB] $\\widehat{DAB} = 70^\\circ$, tính $\\widehat{BCD}$.[[br]]b) [NB] $\\widehat{ABC} = 105^\\circ$, tính $\\widehat{CDA}$.[[br]]c) [NB] $\\widehat{BCD} = 90^\\circ$, tính $\\widehat{DAB}$.\n\\end{minipage}\\hfill\n\\begin{minipage}[t]{0.34\\linewidth}\\vspace{0pt}\n\\centering\n\\adjustbox{max width=\\linewidth, max totalheight=2.9cm}{\n\\begin{tikzpicture}[line width=0.8pt, font=\\small]\n  \\draw[ink] (0,0) circle (1.6);\n  \\node[above left] at (-0.6762,1.4501) {$A$};\n  \\node[left] at (-1.5035,-0.5472) {$B$};\n  \\node[below right] at (1.2257,-1.0285) {$C$};\n  \\node[above right] at (1.2257,1.0285) {$D$};\n  \\fill[ink] (0,0) circle (1.3pt);\n  \\node[below] at (0,0) {$O$};\n  \\draw[ink] (-0.6762,1.4501) -- (-1.5035,-0.5472) -- (1.2257,-1.0285) -- (1.2257,1.0285) -- (-0.6762,1.4501);\n\\end{tikzpicture}\n}\n\\par\\vspace{2pt}{\\sffamily\\scriptsize\\itshape\\color{muted}Hình 9}\n\\end{minipage}",
+     "tier": "onclass",
+     "level": 1,
+     "solution": "a) $\\widehat{BCD} = 180^\\circ - 70^\\circ = 110^\\circ$.[[br]]b) $\\widehat{CDA} = 180^\\circ - 105^\\circ = 75^\\circ$.[[br]]c) $\\widehat{DAB} = 180^\\circ - 90^\\circ = 90^\\circ$.",
+     "dang_id": "NB3",
+     "writelines": 0,
+     "figure_given": true
+    },
+    {
+     "type": "problem",
+     "label": "Bài 4.",
+     "statement": "\\par\\nopagebreak\n\\begin{minipage}[t]{0.60\\linewidth}\\vspace{0pt}\nCho tứ giác $ABCD$ nội tiếp $(O)$ có $\\widehat{DAB} = 85^\\circ$ và $\\widehat{ABC} = 95^\\circ$ (Hình 10).[[br]]a) [NB] Tính $\\widehat{BCD}$ và $\\widehat{CDA}$.[[br]]b) [NB] Kiểm tra lại bằng tổng bốn góc của tứ giác: tổng đó phải bằng \\ldots\\ldots\n\\end{minipage}\\hfill\n\\begin{minipage}[t]{0.34\\linewidth}\\vspace{0pt}\n\\centering\n\\adjustbox{max width=\\linewidth, max totalheight=2.9cm}{\n\\begin{tikzpicture}[line width=0.8pt, font=\\small]\n  \\draw[ink] (0,0) circle (1.6);\n  \\node[above left] at (-0.6762,1.4501) {$A$};\n  \\node[left] at (-1.5035,-0.5472) {$B$};\n  \\node[below right] at (1.2257,-1.0285) {$C$};\n  \\node[above right] at (1.2257,1.0285) {$D$};\n  \\fill[ink] (0,0) circle (1.3pt);\n  \\node[below] at (0,0) {$O$};\n  \\draw[ink] (-0.6762,1.4501) -- (-1.5035,-0.5472) -- (1.2257,-1.0285) -- (1.2257,1.0285) -- (-0.6762,1.4501);\n\\end{tikzpicture}\n}\n\\par\\vspace{2pt}{\\sffamily\\scriptsize\\itshape\\color{muted}Hình 10}\n\\end{minipage}",
+     "tier": "onclass",
+     "level": 1,
+     "solution": "a) $\\widehat{BCD} = 180^\\circ - 85^\\circ = 95^\\circ$; $\\widehat{CDA} = 180^\\circ - 95^\\circ = 85^\\circ$.[[br]]b) Tổng bốn góc $= 85^\\circ + 95^\\circ + 95^\\circ + 85^\\circ = 360^\\circ$ — đúng bằng tổng bốn góc của một tứ giác.",
+     "dang_id": "NB4",
+     "writelines": 0,
+     "figure_given": true
+    },
+    {
+     "type": "problem",
+     "label": "Bài 5.",
+     "statement": "\\par\\nopagebreak\n\\begin{minipage}[t]{0.60\\linewidth}\\vspace{0pt}\nCho hình chữ nhật $ABCD$ (Hình 11). Điền vào chỗ chấm.[[br]]a) [NB] Tâm đường tròn ngoại tiếp hình chữ nhật $ABCD$ là \\ldots\\ldots của hai đường chéo.[[br]]b) [NB] Bán kính của đường tròn đó bằng \\ldots\\ldots đường chéo.[[br]]c) [NB] Nếu $AC = 26$ cm thì $R = \\ldots\\ldots$ cm.\n\\end{minipage}\\hfill\n\\begin{minipage}[t]{0.34\\linewidth}\\vspace{0pt}\n\\centering\n\\adjustbox{max width=\\linewidth, max totalheight=2.9cm}{\n\\begin{tikzpicture}[line width=0.8pt, font=\\small]\n  \\draw[ink] (1.5,0.95) circle (1.7755);\n  \\node[above left] at (0,1.9) {$A$};\n  \\node[above right] at (3,1.9) {$B$};\n  \\node[below right] at (3,0) {$C$};\n  \\node[below left] at (0,0) {$D$};\n  \\draw[ink] (0,1.9) -- (3,1.9) -- (3,0) -- (0,0) -- (0,1.9);\n  \\draw[ink] (0,1.9) -- (3,0);\n  \\draw[ink] (3,1.9) -- (0,0);\n  \\fill[ink] (1.5,0.95) circle (1.3pt);\n  \\node[above right] at (1.5,0.95) {$O$};\n  \\draw[ink] (0,0.2) -- (0.2,0.2) -- (0.2,0);\n\\end{tikzpicture}\n}\n\\par\\vspace{2pt}{\\sffamily\\scriptsize\\itshape\\color{muted}Hình 11}\n\\end{minipage}",
+     "tier": "onclass",
+     "level": 1,
+     "solution": "a) Tâm là GIAO ĐIỂM của hai đường chéo.[[br]]b) Bán kính bằng NỬA đường chéo.[[br]]c) $R = \\dfrac{26}{2} = 13$ cm.",
+     "dang_id": "NB5",
+     "writelines": 0,
+     "figure_given": true
+    },
+    {
+     "type": "problem",
+     "label": "Bài 6.",
+     "statement": "\\par\\nopagebreak\n\\begin{minipage}[t]{0.60\\linewidth}\\vspace{0pt}\nCho tứ giác $ABCD$ nội tiếp $(O)$ có $\\widehat{DAB} = 75^\\circ$ và $\\widehat{ADC} = 100^\\circ$ (Hình 12). Điền vào chỗ trống để hoàn thành bài giải.[[br]]a) [NB] Vì $ABCD$ là tứ giác \\ldots\\ldots nên $\\widehat{DAB} + \\widehat{BCD} = \\ldots\\ldots$, suy ra $\\widehat{BCD} = \\ldots\\ldots$[[br]]b) [NB] Tương tự, $\\widehat{ADC} + \\widehat{ABC} = \\ldots\\ldots$, suy ra $\\widehat{ABC} = \\ldots\\ldots$[[br]]Vậy $\\widehat{BCD} = \\ldots\\ldots$ và $\\widehat{ABC} = \\ldots\\ldots$\n\\end{minipage}\\hfill\n\\begin{minipage}[t]{0.34\\linewidth}\\vspace{0pt}\n\\centering\n\\adjustbox{max width=\\linewidth, max totalheight=2.9cm}{\n\\begin{tikzpicture}[line width=0.8pt, font=\\small]\n  \\draw[ink] (0,0) circle (1.6);\n  \\node[above left] at (-0.6762,1.4501) {$A$};\n  \\node[left] at (-1.5035,-0.5472) {$B$};\n  \\node[below right] at (1.2257,-1.0285) {$C$};\n  \\node[above right] at (1.2257,1.0285) {$D$};\n  \\fill[ink] (0,0) circle (1.3pt);\n  \\node[below] at (0,0) {$O$};\n  \\draw[ink] (-0.6762,1.4501) -- (-1.5035,-0.5472) -- (1.2257,-1.0285) -- (1.2257,1.0285) -- (-0.6762,1.4501);\n\\end{tikzpicture}\n}\n\\par\\vspace{2pt}{\\sffamily\\scriptsize\\itshape\\color{muted}Hình 12}\n\\end{minipage}",
+     "tier": "onclass",
+     "level": 1,
+     "solution": "a) Vì $ABCD$ là tứ giác NỘI TIẾP nên $\\widehat{DAB} + \\widehat{BCD} = 180^\\circ$, suy ra $\\widehat{BCD} = 180^\\circ - 75^\\circ = 105^\\circ$.[[br]]b) $\\widehat{ADC} + \\widehat{ABC} = 180^\\circ$, suy ra $\\widehat{ABC} = 180^\\circ - 100^\\circ = 80^\\circ$.[[br]]Vậy $\\widehat{BCD} = 105^\\circ$ và $\\widehat{ABC} = 80^\\circ$.",
+     "dang_id": "NB6",
+     "writelines": 0,
+     "figure_given": true
+    },
+    {
+     "type": "problem",
+     "label": "Bài 7.",
+     "statement": "[NB] Vẽ hình vào vở theo giả thiết sau rồi đánh dấu HAI góc vuông của tứ giác $BCEF$: cho tam giác $ABC$ nhọn; kẻ đường cao $BE$ ($E$ thuộc $AC$) và đường cao $CF$ ($F$ thuộc $AB$).",
+     "tier": "onclass",
+     "level": 1,
+     "solution": "Hai góc vuông cần đánh dấu là $\\widehat{BEC} = 90^\\circ$ (do $BE \\perp AC$) và $\\widehat{BFC} = 90^\\circ$ (do $CF \\perp AB$); cả hai cùng nhìn đoạn $BC$.",
+     "dang_id": "NB7",
+     "writelines": 0,
+     "draw": true
+    }
+   ]
+  },
+  {
+   "kind": "practice2",
+   "number": 4,
+   "title": "Luyện tập 2 — Thông hiểu \\& Vận dụng",
+   "teacher_note": "Bài 9 và Bài 11 chính là dạng Câu IV.2 ý a thu nhỏ. Chấm chéo Bài 11 theo thang 0,25 cho mỗi bước: góc vuông thứ nhất, góc vuông thứ hai, kết luận đường kính, kết luận bốn điểm.",
+   "blocks": [
+    {
+     "type": "problem",
+     "label": "Bài 8.",
+     "statement": "\\par\\nopagebreak\n\\begin{minipage}[t]{0.60\\linewidth}\\vspace{0pt}\nCho tứ giác $ABCD$ nội tiếp $(O)$, hai tia $AB$ và $DC$ cắt nhau tại $X$ (Hình 13).[[br]]a) [TH] Biết $\\widehat{DAB} = 75^\\circ$ và $\\widehat{ADC} = 65^\\circ$, tính $\\widehat{BCD}$ và $\\widehat{ABC}$.[[br]]b) [TH] Tính $\\widehat{BXC}$.\n\\end{minipage}\\hfill\n\\begin{minipage}[t]{0.34\\linewidth}\\vspace{0pt}\n\\centering\n\\adjustbox{max width=\\linewidth, max totalheight=2.9cm}{\n\\begin{tikzpicture}[line width=0.8pt, font=\\small]\n  \\draw[ink] (0,0) circle (1.5);\n  \\node[above left] at (-0.75,1.299) {$A$};\n  \\node[below left] at (-1.3595,-0.6339) {$B$};\n  \\node[below right] at (1.1491,-0.9642) {$C$};\n  \\node[above right] at (1.299,0.75) {$D$};\n  \\fill[ink] (0,0) circle (1.3pt);\n  \\node[left] at (0,0) {$O$};\n  \\draw[ink] (-0.75,1.299) -- (-1.3595,-0.6339) -- (1.1491,-0.9642) -- (1.299,0.75) -- (-0.75,1.299);\n  \\node[below] at (2.1524,10.5044) {$X$};\n  \\draw[ink] (-1.3595,-0.6339) -- (2.1524,10.5044);\n  \\draw[ink] (1.1491,-0.9642) -- (2.1524,10.5044);\n\\end{tikzpicture}\n}\n\\par\\vspace{2pt}{\\sffamily\\scriptsize\\itshape\\color{muted}Hình 13}\n\\end{minipage}",
+     "tier": "onclass",
+     "level": 2,
+     "solution": "a) Vì $ABCD$ là tứ giác nội tiếp nên tổng hai góc đối bằng $180^\\circ$:[[br]]$\\widehat{BCD} = 180^\\circ - 75^\\circ = 105^\\circ$.[[br]]$\\widehat{ABC} = 180^\\circ - 65^\\circ = 115^\\circ$.[[br]]Vậy $\\widehat{BCD} = 105^\\circ$ và $\\widehat{ABC} = 115^\\circ$.[[br]]b) Vì $B$ nằm giữa $A$ và $X$ nên $\\widehat{XBC}$ kề bù với $\\widehat{ABC}$, do đó $\\widehat{XBC} = 180^\\circ - 115^\\circ = 65^\\circ$.[[br]]Vì $C$ nằm giữa $D$ và $X$ nên $\\widehat{XCB}$ kề bù với $\\widehat{BCD}$, do đó $\\widehat{XCB} = 180^\\circ - 105^\\circ = 75^\\circ$.[[br]]Trong tam giác $XBC$: $\\widehat{BXC} = 180^\\circ - 65^\\circ - 75^\\circ = 40^\\circ$.[[br]]Vậy $\\widehat{BXC} = 40^\\circ$.",
+     "dang_id": "TH1",
+     "writelines": 0
+    },
+    {
+     "type": "problem",
+     "label": "Bài 9.",
+     "statement": "\\par\\nopagebreak\n\\begin{minipage}[t]{0.60\\linewidth}\\vspace{0pt}\n[TH] Cho tam giác $ABC$ nhọn có hai đường cao $BE$ và $CF$ (Hình 14). Chứng minh tứ giác $BCEF$ nội tiếp và chỉ rõ tâm đường tròn ngoại tiếp tứ giác đó.\n\\end{minipage}\\hfill\n\\begin{minipage}[t]{0.34\\linewidth}\\vspace{0pt}\n\\centering\n\\adjustbox{max width=\\linewidth, max totalheight=2.9cm}{\n\\begin{tikzpicture}[line width=0.8pt, font=\\small]\n  \\node[above] at (-0.2952,1.6742) {$A$};\n  \\node[left] at (-1.5975,-0.5814) {$B$};\n  \\node[right] at (1.6421,-0.44) {$C$};\n  \\draw[ink] (-0.2952,1.6742) -- (-1.5975,-0.5814) -- (1.6421,-0.44) -- (-0.2952,1.6742);\n  \\node[right] at (0.2339,1.0967) {$E$};\n  \\node[left] at (-0.7263,0.9274) {$F$};\n  \\draw[ink] (-1.5975,-0.5814) -- (0.2339,1.0967);\n  \\draw[ink] (1.6421,-0.44) -- (-0.7263,0.9274);\n  \\draw[ink] (0.1012,0.9751) -- (0.2228,0.8424) -- (0.3555,0.964);\n  \\draw[ink] (-0.5705,0.8374) -- (-0.6605,0.6815) -- (-0.8163,0.7715);\n  \\node[below, fill=white, inner sep=1pt] at (-0.2506,0.6527) {$H$};\n  \\draw[brand, line width=1.2pt] (-1.5975,-0.5814) -- (1.6421,-0.44) -- (0.2339,1.0967) -- (-0.7263,0.9274) -- cycle;\n\\end{tikzpicture}\n}\n\\par\\vspace{2pt}{\\sffamily\\scriptsize\\itshape\\color{muted}Hình 14}\n\\end{minipage}",
+     "tier": "onclass",
+     "level": 2,
+     "solution": "Vì $BE$ là đường cao nên $BE \\perp AC$, do đó $\\widehat{BEC} = 90^\\circ$.[[br]]Vì $CF$ là đường cao nên $CF \\perp AB$, do đó $\\widehat{BFC} = 90^\\circ$.[[br]]Xét đoạn $BC$: hai góc vuông $\\widehat{BEC}$ và $\\widehat{BFC}$ cùng nhìn đoạn $BC$.[[br]]Suy ra $E$ thuộc đường tròn đường kính $BC$ và $F$ thuộc đường tròn đường kính $BC$.[[br]]Vậy bốn điểm $B$, $C$, $E$, $F$ cùng thuộc đường tròn đường kính $BC$, tức tứ giác $BCEF$ nội tiếp; tâm đường tròn đó là trung điểm của $BC$.",
+     "dang_id": "TH2",
+     "writelines": 0
+    },
+    {
+     "type": "problem",
+     "label": "Bài 10.",
+     "statement": "\\par\\nopagebreak\n\\begin{minipage}[t]{0.60\\linewidth}\\vspace{0pt}\n[TH] Cho hình chữ nhật $ABCD$ có $AB = 12$ cm và $BC = 9$ cm (Hình 15). Tính bán kính đường tròn ngoại tiếp hình chữ nhật đó.\n\\end{minipage}\\hfill\n\\begin{minipage}[t]{0.34\\linewidth}\\vspace{0pt}\n\\centering\n\\adjustbox{max width=\\linewidth, max totalheight=2.9cm}{\n\\begin{tikzpicture}[line width=0.8pt, font=\\small]\n  \\draw[ink] (1.5,0.95) circle (1.7755);\n  \\node[above left] at (0,1.9) {$A$};\n  \\node[above right] at (3,1.9) {$B$};\n  \\node[below right] at (3,0) {$C$};\n  \\node[below left] at (0,0) {$D$};\n  \\draw[ink] (0,1.9) -- (3,1.9) -- (3,0) -- (0,0) -- (0,1.9);\n  \\draw[ink] (0,1.9) -- (3,0);\n  \\draw[ink] (3,1.9) -- (0,0);\n  \\fill[ink] (1.5,0.95) circle (1.3pt);\n  \\node[above right] at (1.5,0.95) {$O$};\n  \\draw[ink] (0,0.2) -- (0.2,0.2) -- (0.2,0);\n  \\node[font=\\scriptsize, fill=white, inner sep=1pt] at (1.5,2.16) {$12$};\n  \\node[font=\\scriptsize, fill=white, inner sep=1pt] at (3.26,0.95) {$9$};\n\\end{tikzpicture}\n}\n\\par\\vspace{2pt}{\\sffamily\\scriptsize\\itshape\\color{muted}Hình 15}\n\\end{minipage}",
+     "tier": "onclass",
+     "level": 2,
+     "solution": "Xét tam giác $ABC$ vuông tại $B$, theo định lí Pythagore:[[br]]$AC^2 = AB^2 + BC^2 = 12^2 + 9^2 = 144 + 81 = 225$.[[br]]Suy ra $AC = \\sqrt{225} = 15$ (cm).[[br]]Hình chữ nhật có hai đường chéo bằng nhau và cắt nhau tại trung điểm $O$ của mỗi đường nên $OA = OB = OC = OD = \\dfrac{15}{2} = 7{,}5$ (cm).[[br]]Vậy bán kính đường tròn ngoại tiếp hình chữ nhật bằng $7{,}5$ cm.",
+     "dang_id": "TH3",
+     "writelines": 0,
+     "figure_given": true
+    },
+    {
+     "type": "problem",
+     "label": "Bài 11.",
+     "statement": "\\par\\nopagebreak\n\\begin{minipage}[t]{0.60\\linewidth}\\vspace{0pt}\n[VD] Cho tam giác $ABC$ nhọn có hai đường cao $BE$ và $CF$ cắt nhau tại $H$, biết $\\widehat{BAC} = 55^\\circ$ (Hình 16).[[br]]a) Chứng minh bốn điểm $B$, $C$, $E$, $F$ cùng thuộc một đường tròn.[[br]]b) Chứng minh tứ giác $AEHF$ nội tiếp.[[br]]c) Tính $\\widehat{EHF}$ và $\\widehat{BHC}$.[[br]]Trình bày trọn vẹn như bài thi, mỗi ý kết bằng câu \\textquotedblleft Vậy\\ldots\\textquotedblright\n\\end{minipage}\\hfill\n\\begin{minipage}[t]{0.34\\linewidth}\\vspace{0pt}\n\\centering\n\\adjustbox{max width=\\linewidth, max totalheight=2.9cm}{\n\\begin{tikzpicture}[line width=0.8pt, font=\\small]\n  \\node[above] at (-0.2952,1.6742) {$A$};\n  \\node[left] at (-1.5975,-0.5814) {$B$};\n  \\node[right] at (1.6421,-0.44) {$C$};\n  \\draw[ink] (-0.2952,1.6742) -- (-1.5975,-0.5814) -- (1.6421,-0.44) -- (-0.2952,1.6742);\n  \\node[right] at (0.2339,1.0967) {$E$};\n  \\node[left] at (-0.7263,0.9274) {$F$};\n  \\draw[ink] (-1.5975,-0.5814) -- (0.2339,1.0967);\n  \\draw[ink] (1.6421,-0.44) -- (-0.7263,0.9274);\n  \\draw[ink] (0.1012,0.9751) -- (0.2228,0.8424) -- (0.3555,0.964);\n  \\draw[ink] (-0.5705,0.8374) -- (-0.6605,0.6815) -- (-0.8163,0.7715);\n  \\node[below, fill=white, inner sep=1pt] at (-0.2506,0.6527) {$H$};\n\\end{tikzpicture}\n}\n\\par\\vspace{2pt}{\\sffamily\\scriptsize\\itshape\\color{muted}Hình 16}\n\\end{minipage}",
+     "tier": "onclass",
+     "level": 3,
+     "solution": "a) Vì $BE \\perp AC$ nên $\\widehat{BEC} = 90^\\circ$.[[br]]Vì $CF \\perp AB$ nên $\\widehat{BFC} = 90^\\circ$.[[br]]Hai góc vuông này cùng nhìn đoạn $BC$ nên $E$ và $F$ cùng thuộc đường tròn đường kính $BC$.[[br]]Vậy bốn điểm $B$, $C$, $E$, $F$ cùng thuộc đường tròn đường kính $BC$.[[br]]b) Vì $BE \\perp AC$ nên $\\widehat{AEH} = 90^\\circ$; vì $CF \\perp AB$ nên $\\widehat{AFH} = 90^\\circ$.[[br]]Hai góc vuông này cùng nhìn đoạn $AH$ nên $E$ và $F$ cùng thuộc đường tròn đường kính $AH$.[[br]]Vậy bốn điểm $A$, $E$, $H$, $F$ cùng thuộc đường tròn đường kính $AH$, tức tứ giác $AEHF$ nội tiếp.[[br]]c) Vì tứ giác $AEHF$ nội tiếp nên $\\widehat{EAF} + \\widehat{EHF} = 180^\\circ$.[[br]]Mà $\\widehat{EAF} = \\widehat{BAC} = 55^\\circ$ nên $\\widehat{EHF} = 180^\\circ - 55^\\circ = 125^\\circ$.[[br]]Hai góc $\\widehat{BHC}$ và $\\widehat{EHF}$ là hai góc đối đỉnh nên bằng nhau, do đó $\\widehat{BHC} = 125^\\circ$.[[br]]Vậy $\\widehat{EHF} = \\widehat{BHC} = 125^\\circ$.",
+     "dang_id": "VD1",
+     "writelines": 0,
+     "hints": [
+      "Hai ý đầu dùng CHUNG một khuôn: viết hai góc vuông, chỉ ra chúng cùng nhìn đoạn nào, kết luận đường tròn đường kính đoạn đó.",
+      "Ý cuối: $\\widehat{EAF}$ chính là $\\widehat{BAC}$ vì $E$ thuộc $AC$ và $F$ thuộc $AB$."
+     ]
+    }
+   ]
+  },
+  {
+   "kind": "reflection",
+   "number": 5,
+   "title": "Tổng kết",
+   "teacher_note": "BTVN dôi hơn quỹ 40 phút. Nếu cắt thì giữ BTVN 6, 9, 11 — đây là ba bài bám sát khuôn trình bày của đề thi.",
+   "blocks": [
+    {
+     "type": "mindmap",
+     "root": "Tứ giác nội tiếp",
+     "caption": "Điền các ô trống rồi học thuộc",
+     "branches": [
+      {
+       "label": "Định nghĩa",
+       "children": [
+        {
+         "label": "[[blank:1.0cm]] đỉnh cùng thuộc một đường tròn",
+         "children": []
+        }
+       ]
+      },
+      {
+       "label": "Định lí",
+       "children": [
+        {
+         "label": "Tổng hai góc [[blank:1.2cm]] bằng $180^\\circ$",
+         "children": []
+        },
+        {
+         "label": "$\\widehat{A} + \\widehat{C} = \\widehat{B} + \\widehat{D} = 180^\\circ$",
+         "children": []
+        }
+       ]
+      },
+      {
+       "label": "Hình chữ nhật",
+       "children": [
+        {
+         "label": "Tâm $=$ giao hai [[blank:1.8cm]]",
+         "children": []
+        },
+        {
+         "label": "$R = \\dfrac{1}{2}$ đường [[blank:1.2cm]]",
+         "children": []
+        }
+       ]
+      },
+      {
+       "label": "Khuôn chứng minh",
+       "children": [
+        {
+         "label": "Hai góc [[blank:1.2cm]] cùng nhìn một đoạn",
+         "children": []
+        },
+        {
+         "label": "$\\Rightarrow$ bốn điểm thuộc đường tròn đường kính đoạn đó",
+         "children": []
+        }
+       ]
+      }
+     ],
+     "size": "small"
+    },
+    {
+     "type": "para",
+     "text": "\\textbf{Bài tập về nhà} — làm vào vở, buổi sau nộp."
+    },
+    {
+     "type": "problem",
+     "label": "BTVN~1.",
+     "statement": "Quan sát Hình 17 rồi trả lời.\\par\\nopagebreak\\smallskip\\begin{center}\\adjustbox{max width=0.70\\linewidth, max totalheight=3.2cm}{\n\\begin{tikzpicture}[line width=0.8pt, font=\\small]\n  \\draw[ink] (0,0) circle (1.35);\n  \\node[above left] at (-0.5705,1.2235) {$A$};\n  \\node[left] at (-1.2686,-0.4617) {$B$};\n  \\node[below right] at (1.0342,-0.8678) {$C$};\n  \\node[above right] at (1.0342,0.8678) {$D$};\n  \\draw[ink] (-0.5705,1.2235) -- (-1.2686,-0.4617) -- (1.0342,-0.8678) -- (1.0342,0.8678) -- (-0.5705,1.2235);\n  \\fill[ink] (0,0) circle (1.3pt);\n  \\node[below] at (0,0) {$O$};\n  \\node[below, font=\\small] at (0,-2.1) {a)};\n  \\draw[ink] (4.4,0) circle (1.35);\n  \\node[above left] at (3.8295,1.2235) {$M$};\n  \\node[left] at (3.1314,-0.4617) {$N$};\n  \\node[below right] at (5.4342,-0.8678) {$P$};\n  \\node[right] at (6.2225,0.81) {$Q$};\n  \\draw[ink] (3.8295,1.2235) -- (3.1314,-0.4617) -- (5.4342,-0.8678) -- (6.2225,0.81) -- (3.8295,1.2235);\n  \\fill[ink] (4.4,0) circle (1.3pt);\n  \\node[below] at (4.4,0) {$O$};\n  \\node[below, font=\\small] at (4.4,-2.1) {b)};\n\\end{tikzpicture}\n}\\par\\vspace{2pt}{\\sffamily\\scriptsize\\itshape\\color{muted}Hình 17}\\end{center}\\smallskip a) [NB] Hình nào có tứ giác nội tiếp?[[br]]b) [NB] Ở hình b), đỉnh nào không nằm trên đường tròn?[[br]]c) [NB] Một tứ giác có ba đỉnh nằm trên đường tròn thì đã gọi là tứ giác nội tiếp chưa?",
+     "tier": "btvn",
+     "level": 1,
+     "solution": "a) Hình a) — tứ giác $ABCD$.[[br]]b) Đỉnh $Q$.[[br]]c) CHƯA — phải đủ cả bốn đỉnh nằm trên đường tròn.",
+     "dang_id": "NB1",
+     "writelines": 0,
+     "figure_given": true
+    },
+    {
+     "type": "problem",
+     "label": "BTVN~2.",
+     "statement": "\\par\\nopagebreak\n\\begin{minipage}[t]{0.60\\linewidth}\\vspace{0pt}\nCho tứ giác $ABCD$ nội tiếp $(O)$ (Hình 18).[[br]]a) [NB] Góc đối của $\\widehat{ABC}$ là góc nào?[[br]]b) [NB] $\\widehat{DAB}$ và $\\widehat{ADC}$ là hai góc đối hay hai góc kề nhau?[[br]]c) [NB] Viết đẳng thức về tổng của $\\widehat{ABC}$ và góc đối của nó.\n\\end{minipage}\\hfill\n\\begin{minipage}[t]{0.34\\linewidth}\\vspace{0pt}\n\\centering\n\\adjustbox{max width=\\linewidth, max totalheight=2.9cm}{\n\\begin{tikzpicture}[line width=0.8pt, font=\\small]\n  \\draw[ink] (0,0) circle (1.6);\n  \\node[above left] at (-0.6762,1.4501) {$A$};\n  \\node[left] at (-1.5035,-0.5472) {$B$};\n  \\node[below right] at (1.2257,-1.0285) {$C$};\n  \\node[above right] at (1.2257,1.0285) {$D$};\n  \\fill[ink] (0,0) circle (1.3pt);\n  \\node[below] at (0,0) {$O$};\n  \\draw[ink] (-0.6762,1.4501) -- (-1.5035,-0.5472) -- (1.2257,-1.0285) -- (1.2257,1.0285) -- (-0.6762,1.4501);\n\\end{tikzpicture}\n}\n\\par\\vspace{2pt}{\\sffamily\\scriptsize\\itshape\\color{muted}Hình 18}\n\\end{minipage}",
+     "tier": "btvn",
+     "level": 1,
+     "solution": "a) Góc $\\widehat{CDA}$.[[br]]b) Hai góc KỀ nhau (cùng kề cạnh $AD$).[[br]]c) $\\widehat{ABC} + \\widehat{CDA} = 180^\\circ$.",
+     "dang_id": "NB2",
+     "writelines": 0,
+     "figure_given": true
+    },
+    {
+     "type": "problem",
+     "label": "BTVN~3.",
+     "statement": "\\par\\nopagebreak\n\\begin{minipage}[t]{0.60\\linewidth}\\vspace{0pt}\nCho tứ giác $ABCD$ nội tiếp $(O)$ (Hình 19). Tính góc đối.[[br]]a) [NB] $\\widehat{DAB} = 110^\\circ$, tính $\\widehat{BCD}$.[[br]]b) [NB] $\\widehat{CDA} = 88^\\circ$, tính $\\widehat{ABC}$.\n\\end{minipage}\\hfill\n\\begin{minipage}[t]{0.34\\linewidth}\\vspace{0pt}\n\\centering\n\\adjustbox{max width=\\linewidth, max totalheight=2.9cm}{\n\\begin{tikzpicture}[line width=0.8pt, font=\\small]\n  \\draw[ink] (0,0) circle (1.6);\n  \\node[above left] at (-0.6762,1.4501) {$A$};\n  \\node[left] at (-1.5035,-0.5472) {$B$};\n  \\node[below right] at (1.2257,-1.0285) {$C$};\n  \\node[above right] at (1.2257,1.0285) {$D$};\n  \\fill[ink] (0,0) circle (1.3pt);\n  \\node[below] at (0,0) {$O$};\n  \\draw[ink] (-0.6762,1.4501) -- (-1.5035,-0.5472) -- (1.2257,-1.0285) -- (1.2257,1.0285) -- (-0.6762,1.4501);\n\\end{tikzpicture}\n}\n\\par\\vspace{2pt}{\\sffamily\\scriptsize\\itshape\\color{muted}Hình 19}\n\\end{minipage}",
+     "tier": "btvn",
+     "level": 1,
+     "solution": "a) $\\widehat{BCD} = 70^\\circ$.[[br]]b) $\\widehat{ABC} = 92^\\circ$.",
+     "dang_id": "NB3",
+     "writelines": 0,
+     "figure_given": true
+    },
+    {
+     "type": "problem",
+     "label": "BTVN~4.",
+     "statement": "\\par\\nopagebreak\n\\begin{minipage}[t]{0.60\\linewidth}\\vspace{0pt}\nCho tứ giác $ABCD$ nội tiếp $(O)$ có $\\widehat{DAB} = 100^\\circ$ và $\\widehat{ABC} = 70^\\circ$ (Hình 20).[[br]]a) [NB] Tính $\\widehat{BCD}$ và $\\widehat{CDA}$.[[br]]b) [NB] Cộng bốn góc lại để kiểm tra kết quả.\n\\end{minipage}\\hfill\n\\begin{minipage}[t]{0.34\\linewidth}\\vspace{0pt}\n\\centering\n\\adjustbox{max width=\\linewidth, max totalheight=2.9cm}{\n\\begin{tikzpicture}[line width=0.8pt, font=\\small]\n  \\draw[ink] (0,0) circle (1.6);\n  \\node[above left] at (-0.6762,1.4501) {$A$};\n  \\node[left] at (-1.5035,-0.5472) {$B$};\n  \\node[below right] at (1.2257,-1.0285) {$C$};\n  \\node[above right] at (1.2257,1.0285) {$D$};\n  \\fill[ink] (0,0) circle (1.3pt);\n  \\node[below] at (0,0) {$O$};\n  \\draw[ink] (-0.6762,1.4501) -- (-1.5035,-0.5472) -- (1.2257,-1.0285) -- (1.2257,1.0285) -- (-0.6762,1.4501);\n\\end{tikzpicture}\n}\n\\par\\vspace{2pt}{\\sffamily\\scriptsize\\itshape\\color{muted}Hình 20}\n\\end{minipage}",
+     "tier": "btvn",
+     "level": 1,
+     "solution": "a) $\\widehat{BCD} = 80^\\circ$; $\\widehat{CDA} = 110^\\circ$.[[br]]b) $100^\\circ + 70^\\circ + 80^\\circ + 110^\\circ = 360^\\circ$ — đúng.",
+     "dang_id": "NB4",
+     "writelines": 0,
+     "figure_given": true
+    },
+    {
+     "type": "problem",
+     "label": "BTVN~5.",
+     "statement": "\\par\\nopagebreak\n\\begin{minipage}[t]{0.60\\linewidth}\\vspace{0pt}\nCho hình chữ nhật $ABCD$ (Hình 21). Điền vào chỗ chấm.[[br]]a) [NB] Bốn đỉnh $A$, $B$, $C$, $D$ cùng thuộc đường tròn tâm \\ldots\\ldots[[br]]b) [NB] Nếu $BD = 34$ cm thì $R = \\ldots\\ldots$ cm.\n\\end{minipage}\\hfill\n\\begin{minipage}[t]{0.34\\linewidth}\\vspace{0pt}\n\\centering\n\\adjustbox{max width=\\linewidth, max totalheight=2.9cm}{\n\\begin{tikzpicture}[line width=0.8pt, font=\\small]\n  \\draw[ink] (1.5,0.95) circle (1.7755);\n  \\node[above left] at (0,1.9) {$A$};\n  \\node[above right] at (3,1.9) {$B$};\n  \\node[below right] at (3,0) {$C$};\n  \\node[below left] at (0,0) {$D$};\n  \\draw[ink] (0,1.9) -- (3,1.9) -- (3,0) -- (0,0) -- (0,1.9);\n  \\draw[ink] (0,1.9) -- (3,0);\n  \\draw[ink] (3,1.9) -- (0,0);\n  \\fill[ink] (1.5,0.95) circle (1.3pt);\n  \\node[above right] at (1.5,0.95) {$O$};\n  \\draw[ink] (0,0.2) -- (0.2,0.2) -- (0.2,0);\n\\end{tikzpicture}\n}\n\\par\\vspace{2pt}{\\sffamily\\scriptsize\\itshape\\color{muted}Hình 21}\n\\end{minipage}",
+     "tier": "btvn",
+     "level": 1,
+     "solution": "a) Tâm là giao điểm $O$ của hai đường chéo.[[br]]b) $R = \\dfrac{34}{2} = 17$ cm.",
+     "dang_id": "NB5",
+     "writelines": 0,
+     "figure_given": true
+    },
+    {
+     "type": "problem",
+     "label": "BTVN~6.",
+     "statement": "\\par\\nopagebreak\n\\begin{minipage}[t]{0.60\\linewidth}\\vspace{0pt}\nCho tứ giác $ABCD$ nội tiếp $(O)$ có $\\widehat{DAB} = 95^\\circ$ và $\\widehat{ADC} = 60^\\circ$ (Hình 22). Điền vào chỗ trống để hoàn thành bài giải.[[br]]a) [NB] Vì $ABCD$ nội tiếp nên $\\widehat{DAB} + \\widehat{BCD} = \\ldots\\ldots$, suy ra $\\widehat{BCD} = \\ldots\\ldots$[[br]]b) [NB] Tương tự $\\widehat{ABC} = \\ldots\\ldots$[[br]]Vậy $\\widehat{BCD} = \\ldots\\ldots$ và $\\widehat{ABC} = \\ldots\\ldots$\n\\end{minipage}\\hfill\n\\begin{minipage}[t]{0.34\\linewidth}\\vspace{0pt}\n\\centering\n\\adjustbox{max width=\\linewidth, max totalheight=2.9cm}{\n\\begin{tikzpicture}[line width=0.8pt, font=\\small]\n  \\draw[ink] (0,0) circle (1.6);\n  \\node[above left] at (-0.6762,1.4501) {$A$};\n  \\node[left] at (-1.5035,-0.5472) {$B$};\n  \\node[below right] at (1.2257,-1.0285) {$C$};\n  \\node[above right] at (1.2257,1.0285) {$D$};\n  \\fill[ink] (0,0) circle (1.3pt);\n  \\node[below] at (0,0) {$O$};\n  \\draw[ink] (-0.6762,1.4501) -- (-1.5035,-0.5472) -- (1.2257,-1.0285) -- (1.2257,1.0285) -- (-0.6762,1.4501);\n\\end{tikzpicture}\n}\n\\par\\vspace{2pt}{\\sffamily\\scriptsize\\itshape\\color{muted}Hình 22}\n\\end{minipage}",
+     "tier": "btvn",
+     "level": 1,
+     "solution": "a) Tổng bằng $180^\\circ$, suy ra $\\widehat{BCD} = 85^\\circ$.[[br]]b) $\\widehat{ABC} = 180^\\circ - 60^\\circ = 120^\\circ$.[[br]]Vậy $\\widehat{BCD} = 85^\\circ$ và $\\widehat{ABC} = 120^\\circ$.",
+     "dang_id": "NB6",
+     "writelines": 0,
+     "figure_given": true
+    },
+    {
+     "type": "problem",
+     "label": "BTVN~7.",
+     "statement": "[NB] Vẽ hình vào vở theo giả thiết sau rồi đánh dấu hai góc vuông cùng nhìn đoạn $AH$: cho tam giác $ABC$ nhọn, hai đường cao $BE$ và $CF$ cắt nhau tại $H$.",
+     "tier": "btvn",
+     "level": 1,
+     "solution": "Hai góc vuông cần đánh dấu: $\\widehat{AEH} = 90^\\circ$ (do $BE \\perp AC$) và $\\widehat{AFH} = 90^\\circ$ (do $CF \\perp AB$).",
+     "dang_id": "NB7",
+     "writelines": 0,
+     "draw": true
+    },
+    {
+     "type": "problem",
+     "label": "BTVN~8.",
+     "statement": "\\par\\nopagebreak\n\\begin{minipage}[t]{0.60\\linewidth}\\vspace{0pt}\nCho tứ giác $ABCD$ nội tiếp $(O)$, hai tia $AB$ và $DC$ cắt nhau tại $X$ (Hình 23).[[br]]a) [TH] Biết $\\widehat{DAB} = 70^\\circ$ và $\\widehat{ADC} = 60^\\circ$, tính $\\widehat{BCD}$ và $\\widehat{ABC}$.[[br]]b) [TH] Tính $\\widehat{BXC}$.\n\\end{minipage}\\hfill\n\\begin{minipage}[t]{0.34\\linewidth}\\vspace{0pt}\n\\centering\n\\adjustbox{max width=\\linewidth, max totalheight=2.9cm}{\n\\begin{tikzpicture}[line width=0.8pt, font=\\small]\n  \\draw[ink] (0,0) circle (1.5);\n  \\node[above left] at (-0.75,1.299) {$A$};\n  \\node[below left] at (-1.3595,-0.6339) {$B$};\n  \\node[below right] at (1.1491,-0.9642) {$C$};\n  \\node[above right] at (1.299,0.75) {$D$};\n  \\fill[ink] (0,0) circle (1.3pt);\n  \\node[left] at (0,0) {$O$};\n  \\draw[ink] (-0.75,1.299) -- (-1.3595,-0.6339) -- (1.1491,-0.9642) -- (1.299,0.75) -- (-0.75,1.299);\n  \\node[below] at (2.1524,10.5044) {$X$};\n  \\draw[ink] (-1.3595,-0.6339) -- (2.1524,10.5044);\n  \\draw[ink] (1.1491,-0.9642) -- (2.1524,10.5044);\n\\end{tikzpicture}\n}\n\\par\\vspace{2pt}{\\sffamily\\scriptsize\\itshape\\color{muted}Hình 23}\n\\end{minipage}",
+     "tier": "btvn",
+     "level": 2,
+     "solution": "a) Vì $ABCD$ nội tiếp nên tổng hai góc đối bằng $180^\\circ$:[[br]]$\\widehat{BCD} = 180^\\circ - 70^\\circ = 110^\\circ$ và $\\widehat{ABC} = 180^\\circ - 60^\\circ = 120^\\circ$.[[br]]Vậy $\\widehat{BCD} = 110^\\circ$, $\\widehat{ABC} = 120^\\circ$.[[br]]b) Vì $\\widehat{XBC}$ kề bù với $\\widehat{ABC}$ nên $\\widehat{XBC} = 60^\\circ$; vì $\\widehat{XCB}$ kề bù với $\\widehat{BCD}$ nên $\\widehat{XCB} = 70^\\circ$.[[br]]Trong tam giác $XBC$: $\\widehat{BXC} = 180^\\circ - 60^\\circ - 70^\\circ = 50^\\circ$.[[br]]Vậy $\\widehat{BXC} = 50^\\circ$.",
+     "dang_id": "TH1",
+     "writelines": 0
+    },
+    {
+     "type": "problem",
+     "label": "BTVN~9.",
+     "statement": "\\par\\nopagebreak\n\\begin{minipage}[t]{0.60\\linewidth}\\vspace{0pt}\n[TH] Cho tam giác $ABC$ nhọn có hai đường cao $BE$ và $CF$ cắt nhau tại $H$ (Hình 24). Chứng minh tứ giác $AEHF$ nội tiếp và chỉ rõ tâm đường tròn ngoại tiếp tứ giác đó.\n\\end{minipage}\\hfill\n\\begin{minipage}[t]{0.34\\linewidth}\\vspace{0pt}\n\\centering\n\\adjustbox{max width=\\linewidth, max totalheight=2.9cm}{\n\\begin{tikzpicture}[line width=0.8pt, font=\\small]\n  \\node[above] at (-0.2952,1.6742) {$A$};\n  \\node[left] at (-1.5975,-0.5814) {$B$};\n  \\node[right] at (1.6421,-0.44) {$C$};\n  \\draw[ink] (-0.2952,1.6742) -- (-1.5975,-0.5814) -- (1.6421,-0.44) -- (-0.2952,1.6742);\n  \\node[right] at (0.2339,1.0967) {$E$};\n  \\node[left] at (-0.7263,0.9274) {$F$};\n  \\draw[ink] (-1.5975,-0.5814) -- (0.2339,1.0967);\n  \\draw[ink] (1.6421,-0.44) -- (-0.7263,0.9274);\n  \\draw[ink] (0.1012,0.9751) -- (0.2228,0.8424) -- (0.3555,0.964);\n  \\draw[ink] (-0.5705,0.8374) -- (-0.6605,0.6815) -- (-0.8163,0.7715);\n  \\node[below, fill=white, inner sep=1pt] at (-0.2506,0.6527) {$H$};\n  \\draw[brand, line width=1.2pt] (-0.2952,1.6742) -- (0.2339,1.0967) -- (-0.2506,0.6527) -- (-0.7263,0.9274) -- cycle;\n\\end{tikzpicture}\n}\n\\par\\vspace{2pt}{\\sffamily\\scriptsize\\itshape\\color{muted}Hình 24}\n\\end{minipage}",
+     "tier": "btvn",
+     "level": 2,
+     "solution": "Vì $BE \\perp AC$ nên $\\widehat{AEH} = 90^\\circ$.[[br]]Vì $CF \\perp AB$ nên $\\widehat{AFH} = 90^\\circ$.[[br]]Xét đoạn $AH$: hai góc vuông $\\widehat{AEH}$ và $\\widehat{AFH}$ cùng nhìn đoạn $AH$.[[br]]Suy ra $E$ và $F$ cùng thuộc đường tròn đường kính $AH$.[[br]]Vậy bốn điểm $A$, $E$, $H$, $F$ cùng thuộc đường tròn đường kính $AH$, tức tứ giác $AEHF$ nội tiếp; tâm đường tròn đó là trung điểm của $AH$.",
+     "dang_id": "TH2",
+     "writelines": 0
+    },
+    {
+     "type": "problem",
+     "label": "BTVN~10.",
+     "statement": "[TH] Một tấm bạt hình chữ nhật có hai cạnh $16$ dm và $12$ dm. Người ta muốn vẽ một đường tròn đi qua cả bốn góc tấm bạt. Tính bán kính đường tròn đó.",
+     "tier": "btvn",
+     "level": 2,
+     "solution": "Gọi tấm bạt là hình chữ nhật $ABCD$ với $AB = 16$ dm và $BC = 12$ dm.[[br]]Xét tam giác $ABC$ vuông tại $B$, theo định lí Pythagore:[[br]]$AC^2 = 16^2 + 12^2 = 256 + 144 = 400$, suy ra $AC = 20$ (dm).[[br]]Hình chữ nhật có hai đường chéo bằng nhau và cắt nhau tại trung điểm $O$ của mỗi đường nên $OA = OB = OC = OD = 10$ (dm).[[br]]Vậy đường tròn cần vẽ có tâm $O$ và bán kính $10$ dm.",
+     "dang_id": "TH3",
+     "writelines": 0,
+     "figure_given": true
+    },
+    {
+     "type": "problem",
+     "label": "BTVN~11.",
+     "statement": "[VD] Cho tam giác $ABC$ nhọn có hai đường cao $BE$ và $CF$ cắt nhau tại $H$, biết $\\widehat{BAC} = 70^\\circ$.[[br]]a) Chứng minh tứ giác $BCEF$ nội tiếp.[[br]]b) Chứng minh tứ giác $AEHF$ nội tiếp.[[br]]c) Tính $\\widehat{EHF}$ và $\\widehat{BHC}$.",
+     "tier": "btvn",
+     "level": 3,
+     "solution": "a) Vì $BE \\perp AC$ nên $\\widehat{BEC} = 90^\\circ$; vì $CF \\perp AB$ nên $\\widehat{BFC} = 90^\\circ$.[[br]]Hai góc vuông này cùng nhìn đoạn $BC$ nên $E$, $F$ cùng thuộc đường tròn đường kính $BC$.[[br]]Vậy tứ giác $BCEF$ nội tiếp đường tròn đường kính $BC$.[[br]]b) Vì $BE \\perp AC$ nên $\\widehat{AEH} = 90^\\circ$; vì $CF \\perp AB$ nên $\\widehat{AFH} = 90^\\circ$.[[br]]Hai góc vuông này cùng nhìn đoạn $AH$ nên $E$, $F$ cùng thuộc đường tròn đường kính $AH$.[[br]]Vậy tứ giác $AEHF$ nội tiếp đường tròn đường kính $AH$.[[br]]c) Vì $AEHF$ nội tiếp nên $\\widehat{EAF} + \\widehat{EHF} = 180^\\circ$; mà $\\widehat{EAF} = \\widehat{BAC} = 70^\\circ$ nên $\\widehat{EHF} = 110^\\circ$.[[br]]Hai góc $\\widehat{BHC}$ và $\\widehat{EHF}$ đối đỉnh nên bằng nhau.[[br]]Vậy $\\widehat{EHF} = \\widehat{BHC} = 110^\\circ$.",
+     "dang_id": "VD1",
+     "writelines": 0
+    }
+   ]
+  }
+ ]
+}

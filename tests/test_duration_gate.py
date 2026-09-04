@@ -73,13 +73,46 @@ def test_non_tier_c_skipped():
 
 
 def test_tier_b_now_checked_with_vdc_band():
-    # Sau refactor đọc tier_spec: tầng B lớp 9 (trước bị bỏ) NAY được soi;
-    # level 4 → band VDC (trước gộp vào VD).
+    # Tầng B lớp 9 được soi khi phiếu khai `chuong` (Thầy chốt 30/08/2026: tỉ lệ tầng B
+    # chọn theo chương). VD và VDC GỘP một khối nên cảnh báo ghi "VD+VDC".
+    lesson = _lesson([("onclass", 4, "a) x")])
+    lesson.class_tier = "B"
+    lesson.chuong = "chuong-04-he-thuc-luong-tam-giac-vuong"
+    lesson.grade_label = "Lớp 9 • Ôn vào 10"
+    warns = check_duration(lesson)
+    assert warns and any("VD+VDC" in w for w in warns)
+
+
+def test_tier_b_khong_khai_chuong_thi_nhac():
+    # Thiếu `chuong` ⇒ không tra được tỉ lệ ⇒ KHÔNG soi tỉ lệ, nhưng phải NÓI RA
+    # (trước 30/08/2026 cổng im lặng, phiếu tầng B trôi qua mà không ai biết).
     lesson = _lesson([("onclass", 4, "a) x")])
     lesson.class_tier = "B"
     lesson.grade_label = "Lớp 9 • Ôn vào 10"
-    warns = check_duration(lesson)
-    assert warns and any("VDC" in w for w in warns)
+    w = check_duration(lesson)
+    assert any("chưa khai `chuong`" in x for x in w)
+    assert not any("tỉ lệ" in x and "lệch chuẩn" in x for x in w)
+
+
+def test_bai_van_dung_thieu_quy_trinh_bi_nhac():
+    # Thầy chốt 30/08/2026: bài VẬN DỤNG (level 3) phải in sẵn quy trình giải.
+    lesson = _lesson([("onclass", 3, "a) x")])
+    lesson.class_tier = "B"
+    lesson.chuong = "chuong-04-he-thuc-luong-tam-giac-vuong"
+    lesson.grade_label = "Lớp 9 • Hình học"
+    assert any("quy_trinh" in x for x in check_duration(lesson))
+    lesson.stages[0].blocks[0].quy_trinh = ["Bước 1 — vẽ hình"]
+    assert not any("quy_trinh" in x for x in check_duration(lesson))
+
+
+def test_chuong_khong_co_vd_phai_gop_2_phieu_o_phieu_that():
+    lesson = _lesson([("onclass", 2, "a) x")])
+    lesson.class_tier = "B"
+    lesson.chuong = "chuong-08-xac-suat-cua-bien-co"      # lớp 9: KHÔNG có VD/VDC
+    lesson.grade_label = "Lớp 9 • Ôn vào 10"
+    assert any("GỘP 2 PHIẾU" in x for x in check_duration(lesson))
+    lesson.so_ca = 2
+    assert not any("GỘP 2 PHIẾU" in x for x in check_duration(lesson))
 
 
 def test_tier_x_not_gated():
@@ -96,6 +129,7 @@ def _lesson_hinh8(problems):
     """Phiếu HÌNH lớp 8 tầng B; mỗi problem là (đoạn, level, đề, phải-tự-vẽ-hình)."""
     lesson = _lesson([p[:3] for p in problems])
     lesson.class_tier = "B"
+    lesson.chuong = "chuong-03-tu-giac"      # lớp 8: chương CÓ bài VD/VDC trong đề
     lesson.grade_label = "Lớp 8"
     lesson.title = "Luyện tập hình thang cân"
     for blk, p in zip(lesson.stages[0].blocks, problems):
