@@ -2,15 +2,21 @@
   "_doc": "PHÂN LOẠI CÂU VDC LỚP 9 THEO **CÁCH GIẢI Ở MỨC LỚP 9** (Thầy chốt 04/09/2026: 'HS có học tam thức bậc 2 để xét min max hả? KHÔNG ĐƯỢC GIẢI THEO CÁCH XÉT ĐẠO HÀM'). Bản trước gán bừa cả cụm 'câu cuối đề' cho chương II với lí do 'quy về tam thức bậc hai' — đó là khung LỚP 10. Bản này xét TỪNG CÂU xem HS lớp 9 giải bằng công cụ nào, rồi mới gán chương. Đọc bởi scripts/tan_suat_vdc.py. Thay thế vdc-phan-loai-hk2.json.",
   "da_duyet": false,
   "ngay": "2026-09-04",
-
   "bang_chung_sgk": {
     "nguon": "inputs/refs/sgk/lop-9/sgk-toan-9-tap-1-kntt.pdf — BẢNG TRA CỨU TỪ NGỮ, trang 118 (đọc bằng mắt, PDF ảnh).",
-    "chuong_II_co_gi": ["Bất đẳng thức (tr.32)", "Hai bất đẳng thức cùng chiều (tr.32)", "Hai bất đẳng thức ngược chiều (tr.32)", "Tính chất bắc cầu (tr.33)", "Bất phương trình bậc nhất một ẩn (tr.38)", "Nghiệm của bất phương trình (tr.39)"],
+    "chuong_II_co_gi": [
+      "Bất đẳng thức (tr.32)",
+      "Hai bất đẳng thức cùng chiều (tr.32)",
+      "Hai bất đẳng thức ngược chiều (tr.32)",
+      "Tính chất bắc cầu (tr.33)",
+      "Bất phương trình bậc nhất một ẩn (tr.38)",
+      "Nghiệm của bất phương trình (tr.39)"
+    ],
     "KHONG_CO": "Bảng tra cứu KHÔNG có mục 'bất đẳng thức Cô-si' / 'AM-GM' / 'trung bình cộng - trung bình nhân'. Cô-si NGOÀI SGK lớp 9 KNTT.",
     "he_qua": "Cô-si HAI SỐ vẫn hợp lệ vì quy được về hằng đẳng thức lớp 8: ab <= ((a+b)/2)^2 tương đương (a-b)^2 >= 0, kết hợp tính chất BĐT chương II. Cô-si BA SỐ thì KHÔNG quy về được — đó là kiến thức ngoài chương trình, phiếu tầng B phải dạy thêm như một công cụ có kèm chứng minh, hoặc chấp nhận mất câu đó.",
-    "khong_dung_dao_ham": "Đáp án gốc của ck1-tan-trieu ghi 'Đạt max khi x = -200/-40 = 5' — đó là công thức đỉnh parabol x = -b/(2a) của LỚP 10, không phải cách lớp 9. Khi bê câu này vào phiếu phải VIẾT LẠI lời giải theo đường hằng đẳng thức."
+    "khong_dung_dao_ham": "Đáp án gốc của ck1-tan-trieu ghi 'Đạt max khi x = -200/-40 = 5' — đó là công thức đỉnh parabol x = -b/(2a) của LỚP 10, không phải cách lớp 9. Khi bê câu này vào phiếu phải VIẾT LẠI lời giải theo đường hằng đẳng thức.",
+    "CAP_NHAT_05_09_2026": "Thầy giao soi ĐÁP ÁN GỐC của các câu con đánh dấu \"ngoài SGK\". Kết quả: CẢ BỐN CÂU đều có đường giải mức lớp 9 ngay trong barem của chính đề — không câu nào cần Cô-si ba số, Minkowski hay đạo hàm. Cụ thể: ① bể lọc nước tách thành (x−5)² + Cô-si HAI số, không phải Cô-si ba số; ② BĐT ba biến dùng bổ đề a²−ab+b² = [(a+b)²+3(a−b)²]/4 ≥ (a+b)²/4 — thuần hằng đẳng thức; ③ bài đi xe đạp đưa về bình phương của hiệu hai căn. ⇒ SỐ CÂU NGOÀI SGK: 4 → 0. Bài học: \"ngoài chương trình\" là do CON viết lời giải theo lối lớp 10, không phải do đề. Khi thấy một câu có vẻ vượt cấp, ĐỌC BAREM GỐC TRƯỚC."
   },
-
   "quy_uoc_gan_chuong": {
     "hang-dang-thuc": "Đưa biểu thức về (x-a)^2 + b rồi đánh giá >= b. Công cụ: HĐT lớp 8 + tính chất BĐT chương II → CHƯƠNG II.",
     "cosi-2-so": "ab <= ((a+b)/2)^2 hoặc a+b >= 2*căn(ab). Quy về (a-b)^2 >= 0 → CHƯƠNG II (dạy đường HĐT, không gọi tên Cô-si với HS tầng B).",
@@ -20,63 +26,379 @@
     "pt-bac-hai": "Phải lập và giải phương trình bậc hai (biệt thức, Vi-ét) hoặc dùng hàm số y = ax^2 → CHƯƠNG VI.",
     "KET_QUA": "Sau khi soi 27 câu: CHƯƠNG VI được 0 câu ở vị trí VDC. Không câu nào cần giải phương trình bậc hai hay hàm số y = ax^2 — tất cả đều là đánh giá bất đẳng thức. Một câu (Chương Dương GK2) bị gán nhầm là cực trị, thực ra là bài ĐƯỜNG TRÒN NỘI TIẾP → chuyển sang chương IX."
   },
-
   "cau_cuoi_de_hk1": [
-    {"nguon": "ck1-cau-dien",          "chuong": "II", "cach_giai": "bpt-rang-buoc",  "ngoai_sgk": false, "trich": "Mua thịt bò/lợn đủ protein-lipit, chi phí ít nhất — lập BPT ràng buộc rồi đánh giá."},
-    {"nguon": "ck1-chu-van-an",        "chuong": "II", "cach_giai": "hang-dang-thuc", "ngoai_sgk": false, "trich": "Cửa hàng điện thoại giảm giá, lợi nhuận cao nhất — (2000000-100000x)(50+5x) đưa về -(x-a)^2+b."},
-    {"nguon": "ck1-dich-vong",         "chuong": "II", "cach_giai": "cosi-2-so",      "ngoai_sgk": false, "trich": "Máng tôn: S = x(60-2x) = 2x(30-x) <= 2*((x+30-x)/2)^2 = 450, dấu = khi x = 15."},
-    {"nguon": "ck1-ngoc-lam",          "chuong": "II", "cach_giai": "cosi-3-so",      "ngoai_sgk": true,  "trich": "Bể lọc 400m3: S = 4x^2 + 500/x + 500/x >= 3*căn bậc ba(10^6) = 300 — CÔ-SI BA SỐ, ngoài SGK."},
-    {"nguon": "ck1-phuc-dong",         "chuong": "II", "cach_giai": "cosi-2-so",      "ngoai_sgk": false, "trich": "Trang tạp chí 384cm2, diện tích trang nhỏ nhất — khai triển rồi Cô-si hai số."},
-    {"nguon": "ck1-phuong-ha-dong",    "chuong": "II", "cach_giai": "cosi-2-so",      "ngoai_sgk": false, "chuong_phu": "IV", "trich": "Vườn chữ U, tam giác vuông ABC diện tích nhỏ nhất — tam giác đồng dạng để liên hệ rồi Cô-si."},
-    {"nguon": "ck1-tan-trieu",         "chuong": "II", "cach_giai": "hang-dang-thuc", "ngoai_sgk": false, "canh_bao": "đáp án gốc dùng công thức đỉnh parabol lớp 10 — phải viết lại", "trich": "Rạp chiếu phim 120 ghế: R = (100+5x)(120-4x) = -20(x-5)^2 + 12500."},
-    {"nguon": "ck1-trung-vuong",       "chuong": "II", "cach_giai": "bpt-rang-buoc",  "ngoai_sgk": false, "trich": "Hai khu vuông tổng S = 5, mỗi khu >= 1 — chặn khoảng rồi tính chi phí min/max."},
-    {"nguon": "gk1-co-nhue-2",         "chuong": "II", "cach_giai": "cosi-2-so",      "ngoai_sgk": false, "trich": "Khung ảnh 384cm2 — diện tích bìa nhỏ nhất."},
-    {"nguon": "gk1-ngo-gia-tu",        "chuong": "II", "cach_giai": "cosi-2-so",      "ngoai_sgk": false, "trich": "Chu vi 60m: x(30-x) <= ((x+30-x)/2)^2 = 225, dấu = khi x = 15."},
-    {"nguon": "gk1-nguyen-du",         "chuong": "II", "cach_giai": "hang-dang-thuc", "ngoai_sgk": false, "trich": "40 căn hộ: A = (5+0,5x)(40-2x) = -(x-5)^2 + 225."},
-    {"nguon": "gk1-phu-dien",          "chuong": "II", "cach_giai": "cosi-2-so",      "ngoai_sgk": false, "trich": "Trang giấy 384cm2 — giống gk1-co-nhue-2."},
-    {"nguon": "gk1-thai-thinh",        "chuong": "II", "cach_giai": "hang-dang-thuc", "ngoai_sgk": false, "trich": "Nhà hát 150 ghế: R = -15x^2+390x+18000 = -15(x-13)^2 + 20535."},
-    {"nguon": "gk1-trung-vuong",       "chuong": "II", "cach_giai": "bpt-rang-buoc",  "ngoai_sgk": false, "trich": "Trồng đậu-cà: T = 3(x+y) + 2(2x+3y) <= 3*8 + 2*18 = 60."},
-    {"nguon": "gk1-van-yen",           "chuong": "II", "cach_giai": "bpt-rang-buoc",  "ngoai_sgk": false, "trich": "Thuê xe 35/50 chỗ cho 645 người — chặn dưới chi phí rồi duyệt nghiệm nguyên."},
-    {"nguon": "gk1-bat-trang",         "chuong": "IV", "cach_giai": "hinh-thuan",     "ngoai_sgk": false, "trich": "Chiều cao ngọn núi qua hai góc nâng 40 độ và 32 độ — hệ thức lượng, KHÔNG phải cực trị."},
-    {"nguon": "gk1-dich-vong-hau",     "chuong": "IV", "cach_giai": "cosi-2-so",      "ngoai_sgk": false, "chuong_phu": "II", "trich": "Bếp chữ N, tam giác ABC vuông tại A diện tích nhỏ nhất — hệ thức lượng rồi Cô-si."},
-    {"nguon": "gk1-nguyen-binh-khiem", "chuong": "IV", "cach_giai": "hinh-thuan",     "ngoai_sgk": false, "trich": "Chứng minh sin^2(B) = CF/AC — hệ thức lượng thuần."},
-    {"nguon": "ck1-ai-mo",             "chuong": "V",  "cach_giai": "hinh-thuan",     "ngoai_sgk": false, "trich": "Chứng minh BC = 2.IO và AF.BH = BF.AH — đường tròn thuần."},
-    {"nguon": "ck1-ly-thanh-tong",     "chuong": "V",  "cach_giai": "hinh-thuan",     "ngoai_sgk": false, "trich": "Tính diện tích giới hạn bởi AB, AC và cung nhỏ BC — hình quạt."},
-    {"nguon": "ck1-ngoc-thuy",         "chuong": "III","cach_giai": "hang-dang-thuc", "ngoai_sgk": false, "trich": "Giải x^2+x+2-2*căn(x+1) = 0 — đưa về tổng hai bình phương bằng 0."}
+    {
+      "nguon": "ck1-cau-dien",
+      "chuong": "II",
+      "cach_giai": "bpt-rang-buoc",
+      "ngoai_sgk": false,
+      "trich": "Mua thịt bò/lợn đủ protein-lipit, chi phí ít nhất — lập BPT ràng buộc rồi đánh giá."
+    },
+    {
+      "nguon": "ck1-chu-van-an",
+      "chuong": "II",
+      "cach_giai": "hang-dang-thuc",
+      "ngoai_sgk": false,
+      "trich": "Cửa hàng điện thoại giảm giá, lợi nhuận cao nhất — (2000000-100000x)(50+5x) đưa về -(x-a)^2+b."
+    },
+    {
+      "nguon": "ck1-dich-vong",
+      "chuong": "II",
+      "cach_giai": "cosi-2-so",
+      "ngoai_sgk": false,
+      "trich": "Máng tôn: S = x(60-2x) = 2x(30-x) <= 2*((x+30-x)/2)^2 = 450, dấu = khi x = 15."
+    },
+    {
+      "nguon": "ck1-ngoc-lam",
+      "chuong": "II",
+      "cach_giai": "hang-dang-thuc+cosi-2-so",
+      "ngoai_sgk": false,
+      "trich": "Bể lọc 400m3: S = 4x^2 + 500/x + 500/x >= 3*căn bậc ba(10^6) = 300 — CÔ-SI BA SỐ, ngoài SGK.",
+      "duong_giai_lop_9": "Barem đề Đức Giang (cùng bài bể lọc 400m³) tách: S = 4(x² + 250/x) = 4[(x−5)² + 10x + 250/x − 25] ≥ 4[2·căn(10x·250/x) − 25] = 300. Tức là (x−5)² ≥ 0 CỘNG Cô-si HAI số — không cần Cô-si ba số. Dấu = khi x = 5."
+    },
+    {
+      "nguon": "ck1-phuc-dong",
+      "chuong": "II",
+      "cach_giai": "cosi-2-so",
+      "ngoai_sgk": false,
+      "trich": "Trang tạp chí 384cm2, diện tích trang nhỏ nhất — khai triển rồi Cô-si hai số."
+    },
+    {
+      "nguon": "ck1-phuong-ha-dong",
+      "chuong": "II",
+      "cach_giai": "cosi-2-so",
+      "ngoai_sgk": false,
+      "chuong_phu": "IV",
+      "trich": "Vườn chữ U, tam giác vuông ABC diện tích nhỏ nhất — tam giác đồng dạng để liên hệ rồi Cô-si."
+    },
+    {
+      "nguon": "ck1-tan-trieu",
+      "chuong": "II",
+      "cach_giai": "hang-dang-thuc",
+      "ngoai_sgk": false,
+      "canh_bao": "đáp án gốc dùng công thức đỉnh parabol lớp 10 — phải viết lại",
+      "trich": "Rạp chiếu phim 120 ghế: R = (100+5x)(120-4x) = -20(x-5)^2 + 12500."
+    },
+    {
+      "nguon": "ck1-trung-vuong",
+      "chuong": "II",
+      "cach_giai": "bpt-rang-buoc",
+      "ngoai_sgk": false,
+      "trich": "Hai khu vuông tổng S = 5, mỗi khu >= 1 — chặn khoảng rồi tính chi phí min/max."
+    },
+    {
+      "nguon": "gk1-co-nhue-2",
+      "chuong": "II",
+      "cach_giai": "cosi-2-so",
+      "ngoai_sgk": false,
+      "trich": "Khung ảnh 384cm2 — diện tích bìa nhỏ nhất."
+    },
+    {
+      "nguon": "gk1-ngo-gia-tu",
+      "chuong": "II",
+      "cach_giai": "cosi-2-so",
+      "ngoai_sgk": false,
+      "trich": "Chu vi 60m: x(30-x) <= ((x+30-x)/2)^2 = 225, dấu = khi x = 15."
+    },
+    {
+      "nguon": "gk1-nguyen-du",
+      "chuong": "II",
+      "cach_giai": "hang-dang-thuc",
+      "ngoai_sgk": false,
+      "trich": "40 căn hộ: A = (5+0,5x)(40-2x) = -(x-5)^2 + 225."
+    },
+    {
+      "nguon": "gk1-phu-dien",
+      "chuong": "II",
+      "cach_giai": "cosi-2-so",
+      "ngoai_sgk": false,
+      "trich": "Trang giấy 384cm2 — giống gk1-co-nhue-2."
+    },
+    {
+      "nguon": "gk1-thai-thinh",
+      "chuong": "II",
+      "cach_giai": "hang-dang-thuc",
+      "ngoai_sgk": false,
+      "trich": "Nhà hát 150 ghế: R = -15x^2+390x+18000 = -15(x-13)^2 + 20535."
+    },
+    {
+      "nguon": "gk1-trung-vuong",
+      "chuong": "II",
+      "cach_giai": "bpt-rang-buoc",
+      "ngoai_sgk": false,
+      "trich": "Trồng đậu-cà: T = 3(x+y) + 2(2x+3y) <= 3*8 + 2*18 = 60."
+    },
+    {
+      "nguon": "gk1-van-yen",
+      "chuong": "II",
+      "cach_giai": "bpt-rang-buoc",
+      "ngoai_sgk": false,
+      "trich": "Thuê xe 35/50 chỗ cho 645 người — chặn dưới chi phí rồi duyệt nghiệm nguyên."
+    },
+    {
+      "nguon": "gk1-bat-trang",
+      "chuong": "IV",
+      "cach_giai": "hinh-thuan",
+      "ngoai_sgk": false,
+      "trich": "Chiều cao ngọn núi qua hai góc nâng 40 độ và 32 độ — hệ thức lượng, KHÔNG phải cực trị."
+    },
+    {
+      "nguon": "gk1-dich-vong-hau",
+      "chuong": "IV",
+      "cach_giai": "cosi-2-so",
+      "ngoai_sgk": false,
+      "chuong_phu": "II",
+      "trich": "Bếp chữ N, tam giác ABC vuông tại A diện tích nhỏ nhất — hệ thức lượng rồi Cô-si."
+    },
+    {
+      "nguon": "gk1-nguyen-binh-khiem",
+      "chuong": "IV",
+      "cach_giai": "hinh-thuan",
+      "ngoai_sgk": false,
+      "trich": "Chứng minh sin^2(B) = CF/AC — hệ thức lượng thuần."
+    },
+    {
+      "nguon": "ck1-ai-mo",
+      "chuong": "V",
+      "cach_giai": "hinh-thuan",
+      "ngoai_sgk": false,
+      "trich": "Chứng minh BC = 2.IO và AF.BH = BF.AH — đường tròn thuần."
+    },
+    {
+      "nguon": "ck1-ly-thanh-tong",
+      "chuong": "V",
+      "cach_giai": "hinh-thuan",
+      "ngoai_sgk": false,
+      "trich": "Tính diện tích giới hạn bởi AB, AC và cung nhỏ BC — hình quạt."
+    },
+    {
+      "nguon": "ck1-ngoc-thuy",
+      "chuong": "III",
+      "cach_giai": "hang-dang-thuc",
+      "ngoai_sgk": false,
+      "trich": "Giải x^2+x+2-2*căn(x+1) = 0 — đưa về tổng hai bình phương bằng 0."
+    }
   ],
-
   "cau_cuoi_de_hk2": [
-    {"ky": "ck2", "truong": "Hát Môn",      "hop_le": true, "chuong": "II", "cach_giai": "hang-dang-thuc", "ngoai_sgk": false, "chuong_phu": "IV", "trich": "Sân vuông cạnh 8m, hình vuông MNPQ nội tiếp, S nhỏ nhất — đặt AM = x, Pythagore cho S = 2(x-4)^2 + 32."},
-    {"ky": "ck2", "truong": "Ngô Gia Tự",   "hop_le": false, "ly_do": "trích sai — script bắt nhầm bài xác suất giữa đề"},
-    {"ky": "ck2", "truong": "Thạch Thất",   "hop_le": true, "chuong": "II", "cach_giai": "hang-dang-thuc", "ngoai_sgk": false, "chuong_phu": "IV", "trich": "Giống Hát Môn — sân vuông ABCD cạnh 8m, MNPQ nội tiếp, S nhỏ nhất."},
-    {"ky": "ck2", "truong": "Ngọc Thuỵ",    "hop_le": true, "chuong": "II", "cach_giai": "cosi-2-so",      "ngoai_sgk": false, "chuong_phu": "IX", "trich": "Ao cá, lưới MN qua cọc E cách hai bờ 5m và 12m, S(AMN) nhỏ nhất — tam giác đồng dạng rồi Cô-si."},
-    {"ky": "ck2", "truong": "Trưng Vương",  "hop_le": true, "chuong": "II", "cach_giai": "bpt-rang-buoc",  "ngoai_sgk": false, "trich": "Xưởng may áo A/B, tổng >= 300, A <= 500, B <= 400, mỗi loại >= nửa loại kia — chi phí nhỏ nhất."},
-    {"ky": "ck2", "truong": "Ba Đình",      "hop_le": true, "chuong": "II", "cach_giai": "cosi-2-so",      "ngoai_sgk": false, "trich": "Đất vuông 64m2, tam giác CMN có S = 2 không đổi nên xy = 4; S trồng rau = 64 - 4(x+y), max khi x+y min = 2*căn(xy) = 4."},
-    {"ky": "ck2", "truong": "Chu Văn An",   "hop_le": true, "chuong": "II", "cach_giai": "hang-dang-thuc", "ngoai_sgk": false, "trich": "Khách sạn 50 phòng, tăng 20 nghìn thì trống 2 phòng — doanh thu (400+20x)(50-2x) đưa về -(x-a)^2 + b."},
-    {"ky": "ck2", "truong": "Đại Áng",      "hop_le": true, "chuong": "II", "cach_giai": "bdt-co-can",     "ngoai_sgk": true,  "chuong_phu": "III", "trich": "AB = 5, BC = 26, góc B vuông; đi A->M (12km/h) rồi M->C (13km/h), tổng thời gian ít nhất — cần BĐT phụ căn(25+x^2) >= (25+12x)/13, NGOÀI SGK."},
-    {"ky": "gk2", "truong": "Ban Mai 24-25","hop_le": true, "chuong": "II", "cach_giai": "cosi-2-so",      "ngoai_sgk": false, "trich": "Tấm tôn 20x60 làm mặt xung quanh hộp: chu vi đáy 30 nên V = 20ab <= 20*((a+b)/2)^2 = 4500."},
-    {"ky": "gk2", "truong": "Mai Dịch",     "hop_le": false, "ly_do": "trích sai — bắt nhầm bài rút gọn biểu thức đầu đề, văn bản còn lẫn đáp án"},
-    {"ky": "gk2", "truong": "Ban Mai 25-26","hop_le": true, "chuong": "II", "cach_giai": "hang-dang-thuc", "ngoai_sgk": false, "trich": "Cửa hàng máy tính giảm giá, lợi nhuận cao nhất — giống ck1-chu-van-an."},
-    {"ky": "gk2", "truong": "Chương Dương", "hop_le": true, "chuong": "IX", "cach_giai": "hinh-thuan",     "ngoai_sgk": false, "sua_tu_ban_truoc": "Bản trước con xếp nhầm vào 'cực trị/tối ưu'. ĐỌC KĨ thì KHÔNG PHẢI bài cực trị: tam giác 1800-2400-3000 là tam giác vuông (3-4-5), 'cách đều ba con đường' = TÂM ĐƯỜNG TRÒN NỘI TIẾP, r = (a+b-c)/2 = 600m. Đây là chương IX.", "trich": "Khu dân cư tam giác 1800m, 2400m, 3000m; trung tâm thương mại cách đều ba con đường — tìm khoảng cách."},
-    {"ky": "gk2", "truong": "Đông Anh",     "hop_le": true, "chuong": "II", "cach_giai": "bdt-nang-cao",   "ngoai_sgk": true,  "trich": "x,y,z > 0, x+y+z = 1, GTNN của tổng ba căn(x^2-xy+y^2) — BĐT Minkowski / dựng hình, VƯỢT XA chương trình lớp 9."},
-    {"ky": "gk2", "truong": "Phúc Đồng",    "hop_le": false, "ly_do": "trích sai — bắt nhầm bài hình 3,5đ"},
-    {"ky": "gk2", "truong": "Đức Giang",    "hop_le": true, "chuong": "II", "cach_giai": "cosi-3-so",      "ngoai_sgk": true,  "trich": "Bể lọc 400m3, chi phí thấp nhất — giống ck1-ngoc-lam, CÔ-SI BA SỐ."}
+    {
+      "ky": "ck2",
+      "truong": "Hát Môn",
+      "hop_le": true,
+      "chuong": "II",
+      "cach_giai": "hang-dang-thuc",
+      "ngoai_sgk": false,
+      "chuong_phu": "IV",
+      "trich": "Sân vuông cạnh 8m, hình vuông MNPQ nội tiếp, S nhỏ nhất — đặt AM = x, Pythagore cho S = 2(x-4)^2 + 32."
+    },
+    {
+      "ky": "ck2",
+      "truong": "Ngô Gia Tự",
+      "hop_le": false,
+      "ly_do": "trích sai — script bắt nhầm bài xác suất giữa đề"
+    },
+    {
+      "ky": "ck2",
+      "truong": "Thạch Thất",
+      "hop_le": true,
+      "chuong": "II",
+      "cach_giai": "hang-dang-thuc",
+      "ngoai_sgk": false,
+      "chuong_phu": "IV",
+      "trich": "Giống Hát Môn — sân vuông ABCD cạnh 8m, MNPQ nội tiếp, S nhỏ nhất."
+    },
+    {
+      "ky": "ck2",
+      "truong": "Ngọc Thuỵ",
+      "hop_le": true,
+      "chuong": "II",
+      "cach_giai": "cosi-2-so",
+      "ngoai_sgk": false,
+      "chuong_phu": "IX",
+      "trich": "Ao cá, lưới MN qua cọc E cách hai bờ 5m và 12m, S(AMN) nhỏ nhất — tam giác đồng dạng rồi Cô-si."
+    },
+    {
+      "ky": "ck2",
+      "truong": "Trưng Vương",
+      "hop_le": true,
+      "chuong": "II",
+      "cach_giai": "bpt-rang-buoc",
+      "ngoai_sgk": false,
+      "trich": "Xưởng may áo A/B, tổng >= 300, A <= 500, B <= 400, mỗi loại >= nửa loại kia — chi phí nhỏ nhất."
+    },
+    {
+      "ky": "ck2",
+      "truong": "Ba Đình",
+      "hop_le": true,
+      "chuong": "II",
+      "cach_giai": "cosi-2-so",
+      "ngoai_sgk": false,
+      "trich": "Đất vuông 64m2, tam giác CMN có S = 2 không đổi nên xy = 4; S trồng rau = 64 - 4(x+y), max khi x+y min = 2*căn(xy) = 4."
+    },
+    {
+      "ky": "ck2",
+      "truong": "Chu Văn An",
+      "hop_le": true,
+      "chuong": "II",
+      "cach_giai": "hang-dang-thuc",
+      "ngoai_sgk": false,
+      "trich": "Khách sạn 50 phòng, tăng 20 nghìn thì trống 2 phòng — doanh thu (400+20x)(50-2x) đưa về -(x-a)^2 + b."
+    },
+    {
+      "ky": "ck2",
+      "truong": "Đại Áng",
+      "hop_le": true,
+      "chuong": "II",
+      "cach_giai": "hang-dang-thuc",
+      "ngoai_sgk": false,
+      "chuong_phu": "III",
+      "trich": "AB = 5, BC = 26, góc B vuông; đi A->M (12km/h) rồi M->C (13km/h), tổng thời gian ít nhất — cần BĐT phụ căn(25+x^2) >= (25+12x)/13, NGOÀI SGK.",
+      "duong_giai_lop_9": "Barem gốc: T = [13x + 312 − 12·căn((x−5)(x+5))]/156 = [(3·căn(x−5) − 2·căn(x+5))² + 317]/156 ≥ 317/156. Bình phương của một hiệu có căn — hằng đẳng thức + căn bậc hai chương III."
+    },
+    {
+      "ky": "gk2",
+      "truong": "Ban Mai 24-25",
+      "hop_le": true,
+      "chuong": "II",
+      "cach_giai": "cosi-2-so",
+      "ngoai_sgk": false,
+      "trich": "Tấm tôn 20x60 làm mặt xung quanh hộp: chu vi đáy 30 nên V = 20ab <= 20*((a+b)/2)^2 = 4500."
+    },
+    {
+      "ky": "gk2",
+      "truong": "Mai Dịch",
+      "hop_le": false,
+      "ly_do": "trích sai — bắt nhầm bài rút gọn biểu thức đầu đề, văn bản còn lẫn đáp án"
+    },
+    {
+      "ky": "gk2",
+      "truong": "Ban Mai 25-26",
+      "hop_le": true,
+      "chuong": "II",
+      "cach_giai": "hang-dang-thuc",
+      "ngoai_sgk": false,
+      "trich": "Cửa hàng máy tính giảm giá, lợi nhuận cao nhất — giống ck1-chu-van-an."
+    },
+    {
+      "ky": "gk2",
+      "truong": "Chương Dương",
+      "hop_le": true,
+      "chuong": "IX",
+      "cach_giai": "hinh-thuan",
+      "ngoai_sgk": false,
+      "sua_tu_ban_truoc": "Bản trước con xếp nhầm vào 'cực trị/tối ưu'. ĐỌC KĨ thì KHÔNG PHẢI bài cực trị: tam giác 1800-2400-3000 là tam giác vuông (3-4-5), 'cách đều ba con đường' = TÂM ĐƯỜNG TRÒN NỘI TIẾP, r = (a+b-c)/2 = 600m. Đây là chương IX.",
+      "trich": "Khu dân cư tam giác 1800m, 2400m, 3000m; trung tâm thương mại cách đều ba con đường — tìm khoảng cách."
+    },
+    {
+      "ky": "gk2",
+      "truong": "Đông Anh",
+      "hop_le": true,
+      "chuong": "II",
+      "cach_giai": "hang-dang-thuc",
+      "ngoai_sgk": false,
+      "trich": "x,y,z > 0, x+y+z = 1, GTNN của tổng ba căn(x^2-xy+y^2) — BĐT Minkowski / dựng hình, VƯỢT XA chương trình lớp 9.",
+      "duong_giai_lop_9": "Barem gốc dùng BĐT PHỤ chứng minh bằng hằng đẳng thức: a² − ab + b² = [(a+b)² + 3(a−b)²]/4 ≥ (a+b)²/4, nên căn(a²−ab+b²) ≥ (a+b)/2. Cộng ba vế: T ≥ (x+y) /2 + (y+z)/2 + (z+x)/2 = x+y+z = 1. KHÔNG cần Minkowski — chỉ cần hằng đẳng thức lớp 8."
+    },
+    {
+      "ky": "gk2",
+      "truong": "Phúc Đồng",
+      "hop_le": false,
+      "ly_do": "trích sai — bắt nhầm bài hình 3,5đ"
+    },
+    {
+      "ky": "gk2",
+      "truong": "Đức Giang",
+      "hop_le": true,
+      "chuong": "II",
+      "cach_giai": "hang-dang-thuc+cosi-2-so",
+      "ngoai_sgk": false,
+      "trich": "Bể lọc 400m3, chi phí thấp nhất — giống ck1-ngoc-lam, CÔ-SI BA SỐ.",
+      "duong_giai_lop_9": "Barem gốc: S = 4(x² + 250/x) = 4[(x−5)² + 10x + 250/x − 25] ≥ 4[2·căn(2500) − 25] = 300. Hằng đẳng thức + Cô-si hai số, đều quy về (a−b)² ≥ 0."
+    }
   ],
-
   "y_cuoi_bai_hinh_hk2": [
-    {"ky": "ck2", "chuong": "IX", "dang": "trung-diem",         "trich": "Vẽ tiếp tuyến của (O) tại D cắt EH tại I. Chứng minh I là trung điểm của EH."},
-    {"ky": "ck2", "chuong": "IX", "dang": "song-song-dong-dang","trich": "Chứng minh tam giác AEP đồng dạng tam giác ABI và PI song song với HQ."},
-    {"ky": "ck2", "chuong": "IX", "dang": "thang-hang",         "trich": "Cho AH = R*căn2. Chứng minh M, O, N thẳng hàng."},
-    {"ky": "ck2", "chuong": "IX", "dang": "vuong-goc",          "trich": "T là trung điểm AD. Chứng minh CT vuông góc với QK."},
-    {"ky": "ck2", "chuong": "IX", "dang": "tam-giac-can",       "trich": "I là trung điểm BC. Chứng minh tam giác IDE cân."},
-    {"ky": "ck2", "chuong": "IX", "dang": "vuong-goc",          "trich": "I, K là trung điểm AH và HB, P là giao của MK và IN. Chứng minh HP vuông góc MN."},
-    {"ky": "ck2", "chuong": "IX", "dang": "thang-hang",         "trich": "Kẻ CI vuông góc AT tại I, M là trung điểm BC. Chứng minh F, I, M thẳng hàng."},
-    {"ky": "gk2", "chuong": "IX", "dang": "thuoc-duong-tron",   "trich": "E là giao của ID và CK. Chứng minh E thuộc đường tròn (O)."},
-    {"ky": "gk2", "chuong": "IX", "dang": "song-song-dong-dang","trich": "Tia CK cắt HD tại P. Chứng minh IP song song CD."},
-    {"ky": "gk2", "chuong": "IX", "dang": "goc-bang-nhau",      "trich": "Chứng minh góc ABO = góc DAC."},
-    {"ky": "gk2", "chuong": "IX", "dang": "thang-hang",         "trich": "Chứng minh A, I, C thẳng hàng."},
-    {"ky": "gk2", "chuong": "IX", "dang": "song-song-dong-dang","trich": "Chứng minh tam giác BEP đồng dạng tam giác BAQ và PQ song song HK."},
-    {"ky": "gk2", "chuong": "IX", "dang": "he-thuc",            "trich": "Chứng minh ID . IK = IM . IE."},
-    {"ky": "gk2", "chuong": "IX", "dang": "dong-quy",           "trich": "DN vuông góc CB tại N, DM vuông góc AC tại M. Chứng minh MN, AB, CD đồng quy."}
+    {
+      "ky": "ck2",
+      "chuong": "IX",
+      "dang": "trung-diem",
+      "trich": "Vẽ tiếp tuyến của (O) tại D cắt EH tại I. Chứng minh I là trung điểm của EH."
+    },
+    {
+      "ky": "ck2",
+      "chuong": "IX",
+      "dang": "song-song-dong-dang",
+      "trich": "Chứng minh tam giác AEP đồng dạng tam giác ABI và PI song song với HQ."
+    },
+    {
+      "ky": "ck2",
+      "chuong": "IX",
+      "dang": "thang-hang",
+      "trich": "Cho AH = R*căn2. Chứng minh M, O, N thẳng hàng."
+    },
+    {
+      "ky": "ck2",
+      "chuong": "IX",
+      "dang": "vuong-goc",
+      "trich": "T là trung điểm AD. Chứng minh CT vuông góc với QK."
+    },
+    {
+      "ky": "ck2",
+      "chuong": "IX",
+      "dang": "tam-giac-can",
+      "trich": "I là trung điểm BC. Chứng minh tam giác IDE cân."
+    },
+    {
+      "ky": "ck2",
+      "chuong": "IX",
+      "dang": "vuong-goc",
+      "trich": "I, K là trung điểm AH và HB, P là giao của MK và IN. Chứng minh HP vuông góc MN."
+    },
+    {
+      "ky": "ck2",
+      "chuong": "IX",
+      "dang": "thang-hang",
+      "trich": "Kẻ CI vuông góc AT tại I, M là trung điểm BC. Chứng minh F, I, M thẳng hàng."
+    },
+    {
+      "ky": "gk2",
+      "chuong": "IX",
+      "dang": "thuoc-duong-tron",
+      "trich": "E là giao của ID và CK. Chứng minh E thuộc đường tròn (O)."
+    },
+    {
+      "ky": "gk2",
+      "chuong": "IX",
+      "dang": "song-song-dong-dang",
+      "trich": "Tia CK cắt HD tại P. Chứng minh IP song song CD."
+    },
+    {
+      "ky": "gk2",
+      "chuong": "IX",
+      "dang": "goc-bang-nhau",
+      "trich": "Chứng minh góc ABO = góc DAC."
+    },
+    {
+      "ky": "gk2",
+      "chuong": "IX",
+      "dang": "thang-hang",
+      "trich": "Chứng minh A, I, C thẳng hàng."
+    },
+    {
+      "ky": "gk2",
+      "chuong": "IX",
+      "dang": "song-song-dong-dang",
+      "trich": "Chứng minh tam giác BEP đồng dạng tam giác BAQ và PQ song song HK."
+    },
+    {
+      "ky": "gk2",
+      "chuong": "IX",
+      "dang": "he-thuc",
+      "trich": "Chứng minh ID . IK = IM . IE."
+    },
+    {
+      "ky": "gk2",
+      "chuong": "IX",
+      "dang": "dong-quy",
+      "trich": "DN vuông góc CB tại N, DM vuông góc AC tại M. Chứng minh MN, AB, CD đồng quy."
+    }
   ]
 }

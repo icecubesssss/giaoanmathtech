@@ -43,6 +43,13 @@ NAM_2018 = {"6": 2021, "7": 2022, "8": 2023, "9": 2024}
 THU_MUC = {"gk1": "giua-ki-1", "ck1": "cuoi-ki-1", "gk2": "giua-ki-2", "ck2": "cuoi-ki-2"}
 THU_MUC_RIENG = {("9", "ck2"): "de-cuoi-ki-2"}
 
+# ĐỀ THI THỬ vào 10 (chỉ lớp 9) — Thầy chốt 04/09/2026 lấy thêm để dựng file ôn tập.
+# Không phải kiểm tra định kì nên để THƯ MỤC RIÊNG, không trộn vào gk/ck.
+THU_MUC_THI_THU = "thi-thu-vao-10"
+_THI_THU = re.compile(r"de-thi-thu.*(?:vao-lop-10|vao-10)|thi-thu-vao-lop-10")
+# Tuyển tập nhiều đề gộp một file thì KHÔNG lấy (không tách được câu cuối của từng đề).
+_GOP = re.compile(r"tuyen-tap|bo-de|\d{2,}-de")
+
 # Đề KHÔNG lấy: không phải kiểm tra định kì của trường
 _LOAI_TRU = re.compile(
     r"hoc-sinh-gioi|hsg|khao-sat|tuyen-sinh|vao-lop-10|vao-10|chuyen|olympic|"
@@ -107,6 +114,22 @@ def phan_loai(url: str) -> tuple[str, str, int] | None:
     return lop, ky, int(mn.group(1))
 
 
+def phan_loai_thi_thu(url: str) -> int | None:
+    """Năm học của một URL ĐỀ THI THỬ VÀO 10 Hà Nội, hoặc None nếu không phải.
+
+    Đề thi thử không có 'toan-9' trong slug (đề vào 10 thường ghi 'mon-toan'), và nhiều
+    đề KHÔNG ghi năm — trả 0 cho nhóm đó để người gọi tự quyết có lấy hay không."""
+    if not url.endswith("-ha-noi.html"):
+        return None
+    slug = url.rsplit("/", 1)[-1][: -len(".html")]
+    if not _THI_THU.search(slug) or _GOP.search(slug):
+        return None
+    if "chuyen" in slug or "mon-toan" not in slug and "toan" not in slug:
+        return None
+    mn = _NAM.search(slug)
+    return int(mn.group(1)) if mn else 0
+
+
 def dem_hien_co(lop: str, ky: str) -> int:
     thu_muc = OUT / f"lop-{lop}" / THU_MUC_RIENG.get((lop, ky), THU_MUC[ky])
     if not thu_muc.exists():
@@ -139,6 +162,11 @@ def tai(urls: list[str], thu_muc: Path, so: int) -> list[str]:
 def main(argv: list[str]) -> int:
     ap = argparse.ArgumentParser()
     ap.add_argument("--so", type=int, default=20, help="số đề MỖI (khối, kỳ) cần có (mặc định 20)")
+    ap.add_argument("--tu-nam", type=int, default=0,
+                    help="chỉ lấy đề có năm học >= giá trị này (Thầy chốt 04/09/2026: "
+                         "2 năm gần nhất ⇒ --tu-nam 2024)")
+    ap.add_argument("--thi-thu", action="store_true",
+                    help="lấy thêm ĐỀ THI THỬ VÀO 10 (chỉ lớp 9) vào thư mục riêng")
     ap.add_argument("--lop", default="6,7,8,9")
     ap.add_argument("--ky", default="gk1,ck1,gk2,ck2")
     ap.add_argument("--moi", action="store_true", help="quét lại sitemap, bỏ cache")
@@ -167,18 +195,38 @@ def main(argv: list[str]) -> int:
     for lop in lops:
         for ky in kys:
             co = dem_hien_co(lop, ky)
-            thieu = max(0, args.so - co)
             thu_muc = OUT / f"lop-{lop}" / THU_MUC_RIENG.get((lop, ky), THU_MUC[ky])
+            ds = [u for nam, u in sorted(kho.get((lop, ky), []), reverse=True)
+                  if nam >= args.tu_nam]
+            if args.tu_nam:
+                # Chế độ "lấy đủ N năm gần nhất": tải MỌI đề trong khoảng năm mà kho
+                # chưa có, không phải "bù cho đủ --so" (kho đã đủ số nhưng toàn đề cũ).
+                thieu = min(args.so, sum(
+                    1 for u in ds
+                    if not (thu_muc / (u.rsplit("/", 1)[-1][:-5] + ".pdf")).exists()))
+            else:
+                thieu = max(0, args.so - co)
             print(f"\n▶ lớp {lop} · {ky.upper()} — đang có {co}, cần thêm {thieu} "
                   f"→ {thu_muc.relative_to(ROOT)}", flush=True)
             if not thieu:
                 continue
-            ds = [u for _, u in sorted(kho.get((lop, ky), []), reverse=True)]
             if not ds:
                 print("  (sitemap không có đề nào khớp bộ lọc)", flush=True)
                 continue
             for dong in tai(ds, thu_muc, thieu):
                 print(dong, flush=True)
+
+    if args.thi_thu:
+        thu_muc = OUT / "lop-9" / THU_MUC_THI_THU
+        ds = sorted(((n, u) for u in urls
+                     for n in [phan_loai_thi_thu(u)] if n is not None),
+                    reverse=True)
+        ds = [u for n, u in ds if n >= args.tu_nam]
+        co = len(list(thu_muc.rglob("*.pdf"))) if thu_muc.exists() else 0
+        print(f"\n▶ lớp 9 · ĐỀ THI THỬ VÀO 10 — đang có {co}, "
+              f"{len(ds)} đề khớp bộ lọc → {thu_muc.relative_to(ROOT)}", flush=True)
+        for dong in tai(ds, thu_muc, args.so):
+            print(dong, flush=True)
     return 0
 
 

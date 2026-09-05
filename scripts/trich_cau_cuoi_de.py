@@ -105,6 +105,21 @@ def y_cuoi_bai_hinh(t: str) -> dict | None:
     return None
 
 
+# Tên file KHÔNG phải đề thi định kì (đề cương ôn tập, đáp án rời, ma trận…)
+_KHONG_PHAI_DE = re.compile(r"de-cuong|đề\s*cương|ôn\s*tập|on-tap|đáp\s*án|dap-an|"
+                            r"ma\s*trận|ma-tran|hướng\s*dẫn\s*chấm", re.I)
+_DE_GOM_TAY = re.compile(r"đề\s*(?:thi|kiểm\s*tra)", re.I)
+
+
+def hop_le_de_thi(pdf: Path) -> bool:
+    """File này có phải ĐỀ THI định kì dùng để chấm mức độ được không?"""
+    if _KHONG_PHAI_DE.search(pdf.stem):
+        return False
+    if pdf.name.startswith("de-") and pdf.stem.endswith("-ha-noi"):
+        return True                        # slug tải từ toanmath
+    return bool(_DE_GOM_TAY.search(pdf.stem))   # file gom tay, tên tiếng Việt
+
+
 def quet(lop: str | None, ky: str | None, so: int) -> list[dict]:
     ra: list[dict] = []
     dem: dict[tuple[str, str], int] = {}
@@ -115,12 +130,14 @@ def quet(lop: str | None, ky: str | None, so: int) -> list[dict]:
             continue
         if (lop and g != lop) or (ky and k != ky):
             continue
-        # CHỈ đề thi thật tải từ toanmath (slug 'de-…-ha-noi.pdf'). Kho còn lẫn ĐỀ CƯƠNG
-        # ôn tập và đề bộ Cánh Diều — hai thứ đó không dùng để chấm mức độ được.
-        if not (pdf.name.startswith("de-") and pdf.stem.endswith("-ha-noi")):
+        # CHỈ đề thi thật. Hai nguồn hợp lệ:
+        #  ① slug tải từ toanmath: 'de-…-ha-noi.pdf'
+        #  ② file GOM TAY trong thư mục kntt/, tên tiếng Việt kiểu
+        #     '(2023-2024) Đề thi HK2 - THCS X.pdf'
+        # Trước đây chỉ nhận ①, nên 124/151 PDF lớp 8 bị loại oan — trong đó TOÀN BỘ 40
+        # file kỳ II. Cả hai nguồn đều phải loại ĐỀ CƯƠNG ôn tập và đề bộ Cánh Diều.
+        if not hop_le_de_thi(pdf):
             continue
-        if pdf.name.startswith(("de-cuong", "de-cuong-on")):
-            continue                       # ĐỀ CƯƠNG ôn tập, không phải đề thi
         if dem.get((g, k), 0) >= so:
             continue
         t = _txt(pdf)

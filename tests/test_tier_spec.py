@@ -133,11 +133,31 @@ def test_muc_tieu_vdc_va_tran_diem():
     assert muc_tieu_vdc("lop-9", _CH9) == ("cham-diem-tung-phan", 9.5)
 
 
-def test_chuong_khoi_khac_chua_do_thi_giu_ti_le_mac_dinh():
-    """Khối 6/7/8 chưa đo tần suất ⇒ phan_bo_vdc = None, tỉ lệ giữ nguyên 15-30-55."""
-    spec = load_tier_spec()
-    ch = "chuong-02-hang-dang-thuc-dang-nho-va-ung-dung"
-    assert phan_bo_vdc("lop-8", ch) is None
-    r = tier_ratio(spec, "lop-8", "dai-so", "B", ch)
-    if r:                      # lớp 8 đã khai rate card thì phải rơi về biến thể gốc
-        assert (r["VD"], r["VDC"]) == (55, 0)
+def test_tan_suat_do_duoc_cho_ca_bon_khoi():
+    """Khối 6/7/8 nay cũng đo được tần suất (bản 0.6) — chương hay ra VDC được 35/20."""
+    assert phan_bo_vdc("lop-8", "chuong-02-hang-dang-thuc") == {"VD": 35, "VDC": 20}
+    assert phan_bo_vdc("lop-6", "II") == {"VD": 35, "VDC": 20}   # tính chia hết
+    assert phan_bo_vdc("lop-6", "VI") == {"VD": 35, "VDC": 20}   # phân số
+    assert phan_bo_vdc("lop-7", "VII") == {"VD": 43, "VDC": 12}  # đa thức: p = 0,36 → vừa
+
+
+def test_mau_qua_nho_thi_khong_ap_ti_le():
+    """Chương có dưới 6 đề trong mẫu KHÔNG được áp phân bổ — thà không soi còn hơn soi
+    theo 2 đề. Luật soi trên CHÍNH bản đồ, không cắm cứng tên chương: kho đề lớn dần thì
+    chương nào thoát diện "mẫu quá nhỏ" cũng được, test vẫn đúng."""
+    import json
+
+    from config import settings
+    ban_do = json.loads((settings.CONFIG_DIR / "ban_do_vd_vdc.json").read_text("utf-8"))
+    nho = [(k, c) for k, khoi in ban_do["khoi"].items() for c in khoi["chuong"]
+           if (c.get("vdc") or {}).get("nhom_uu_tien") == "mau-qua-nho"]
+    for grade, c in nho:
+        assert (c["vdc"]["phan_bo_55"]) is None, f"{grade} {c['ma']} còn phân bổ"
+        assert phan_bo_vdc(grade, c["slug"]) is None
+
+
+def test_lop_8_da_thoat_dien_mau_qua_nho():
+    """Sau khi tải thêm đề 2 năm gần nhất + mở bộ lọc tên file (04/09/2026), lớp 8 đo
+    được cả bốn kỳ: chương II giữ câu cuối đề 0,85 và chương IX giữ ý cuối bài hình 1,00."""
+    assert phan_bo_vdc("lop-8", "chuong-02-hang-dang-thuc") == {"VD": 35, "VDC": 20}
+    assert phan_bo_vdc("lop-8", "chuong-09-tam-giac-dong-dang") == {"VD": 35, "VDC": 20}

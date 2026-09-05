@@ -1,0 +1,25 @@
+% ÔN TẬP THEO PHẦN — A4 DỌC, thân bài là ẢNH cắt từ đề gốc. Sinh từ
+% scripts/build_on_tap_thi_thu.py, không sửa tay.
+% Khác base_thuyetminh: khổ DỌC (đề thi in dọc) và có graphicx để chèn ảnh cắt.
+\documentclass[11pt]{article}
+\usepackage[a4paper,top=1.1cm,bottom=1.3cm,left=1.5cm,right=1.5cm]{geometry}
+
+((* include "preamble/_fonts.tex.j2" *))
+((* include "preamble/_colors.tex.j2" *))
+
+\usepackage{graphicx}
+\usepackage{enumitem}
+\usepackage[colorlinks=true,linkcolor=brand,urlcolor=brand]{hyperref}
+
+\setlength{\parindent}{0pt}
+\setlength{\parskip}{3pt}
+\setlist[itemize]{leftmargin=1.4em,topsep=1pt,itemsep=1pt,parsep=0pt}
+
+\newcommand{\tmtitle}[1]{{\sffamily\bfseries\fontsize{19pt}{22pt}\selectfont\color{brand}#1}}
+\newcommand{\tmsub}[1]{{\sffamily\color{muted}#1}}
+\newcommand{\tmsec}[1]{\par\vspace{7pt}{\setlength{\fboxsep}{4pt}\colorbox{brand}{\color{white}\sffamily\bfseries\small\strut\,#1\,}}\par\vspace{3pt}}
+\newcommand{\tmlbl}[1]{{\sffamily\bfseries\color{ink}#1}}
+
+\begin{document}
+((( body )))
+\end{document}

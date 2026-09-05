@@ -90,8 +90,9 @@ def bang_khoi(ma_khoi: str, khoi: dict, so_mt: dict) -> str:
             bc = "\\bfseries " + tex(c["ghi_chu_can_chot"])
         elif n:
             vd = " \\quad ".join("``" + tex(x, 150) + "''" for x in c.get("vdc_vi_du", []))
-            bc = (f"\\textbf{{{n} đề có câu VDC ở vị trí này}} (nguồn: "
-                  + tex(", ".join(c.get("vdc_nguon", [])), 90) + "). " + vd)
+            ng = tex(", ".join(c.get("vdc_nguon", [])), 90)
+            bc = (f"\\textbf{{{n} đề có câu VDC ở vị trí này}}"
+                  + (f" (nguồn: {ng})" if ng.strip() else "") + ". " + vd)
         else:
             bc = tex(c["bang_chung"])
         rows.append(

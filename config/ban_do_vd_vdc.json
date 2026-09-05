@@ -1,8 +1,8 @@
 {
   "_doc": "BẢN ĐỒ VD/VDC THEO CHƯƠNG — chương nào CÓ bài Vận dụng / Vận dụng cao trong đề kiểm tra định kì (GK1, CK1, GK2, CK2). Đây là NGUỒN SỰ THẬT để chọn tỉ lệ thời lượng cho phiếu học liệu TẦNG B: chương KHÔNG có VD-VDC thì GỘP 2 PHIẾU THÀNH 1 với NB 30% / TH 70%; chương CÓ VD-VDC thì NB 15% / TH 30% / VD+VDC 55%. Đọc bởi src/schema/tier_spec.py (tier_ratio) rồi tới duration_gate, thuyetminh_gate, spec_gate.",
-  "phien_ban": "0.6-tan-suat-ca-4-khoi",
-  "ngay": "2026-09-04",
-  "trang_thai": "CHỜ DUYỆT — bản 0.6 đo được tần suất VDC cho CẢ BỐN KHỐI. Lớp 9 gán chương theo CÁCH GIẢI mức lớp 9; khối 6/7/8 phân loại bằng mắt 123 câu cuối đề + lấy chương bài hình theo tiến độ SGK. Chương nào mẫu < 6 đề thì KHÔNG áp tỉ lệ (giữ 15-30-55).",
+  "phien_ban": "0.7-kho-de-2-nam-gan-nhat",
+  "ngay": "2026-09-05",
+  "trang_thai": "CHỜ DUYỆT — bản 0.7 đo trên kho đề ĐÃ MỞ RỘNG (tải thêm đề 2 năm gần nhất + mở bộ lọc tên file cho đề gom tay): 265 → 423 bản ghi hai vị trí VDC. Lớp 8 từ 13 lên 66 câu cuối đề nên KHÔNG còn ô nào \"mẫu quá nhỏ\".",
   "quy_uoc_phan_muc": {
     "_doc": "Anh An (AnDV) chốt 30/08/2026 — quy ước ĐÈ LÊN mức độ mà trường ghi trong ma trận. Trường xếp một câu vào cột 'Vận dụng' nhưng câu đó chỉ là bài thực tế 2-3 bước thì bản đồ này vẫn tính là THÔNG HIỂU.",
     "thuc_te_2_3_buoc_la_TH": "Dạng toán THỰC TẾ chỉ dùng 2-3 bước làm đơn giản (đọc đề, thay vào một công thức, tính, kết luận) được coi là mức THÔNG HIỂU — không phải Vận dụng. Ví dụ: bóng tháp theo tia nắng, máy bay cất cánh, thang dựa tường, hải đăng nhìn tàu, tính Sxq/thể tích hình chóp, tính tần số tương đối, tính xác suất của một biến cố.",
@@ -22,7 +22,9 @@
       "lop-9": 13
     },
     "doi_chung_lop_9": "45 đề trong inputs/refs/de-thi/lop-9/exams (đã gắn band từng câu) + ma trận Sở cho đề Vào 10 (inputs/seeds/lop-9/de-thi-vao-10/MA-TRAN-VAO-10-HA-NOI.md).",
-    "luu_y_CV7991": "Đề từ năm học 2025-2026 theo Công văn 7991/BGDĐT-GDTrH (17/12/2024) chỉ còn 3 mức Biết / Hiểu / Vận dụng — không còn cột 'Vận dụng cao'. Vì vậy VD và VDC gộp chung một khối (đúng như Thầy chốt 55%)."
+    "luu_y_CV7991": "Đề từ năm học 2025-2026 theo Công văn 7991/BGDĐT-GDTrH (17/12/2024) chỉ còn 3 mức Biết / Hiểu / Vận dụng — không còn cột 'Vận dụng cao'. Vì vậy VD và VDC gộp chung một khối (đúng như Thầy chốt 55%).",
+    "mo_rong_04_09_2026": "Tải thêm đề Hà Nội 2 NĂM GẦN NHẤT (năm học 2024-2025 và 2025-2026) bằng `scripts/fetch_de_thi_khoi.py --tu-nam 2024`, cộng 17 ĐỀ THI THỬ VÀO 10 (`--thi-thu`, thư mục inputs/refs/de-thi/lop-9/thi-thu-vao-10/). Đồng thời MỞ BỘ LỌC tên file trong scripts/trich_cau_cuoi_de.py: trước chỉ nhận slug toanmath \"de-…-ha-noi.pdf\" nên loại oan 124/151 PDF lớp 8 gom tay trong thư mục kntt/ (tên tiếng Việt \"(2023-2024) Đề thi HK2 - …\"), trong đó TOÀN BỘ 40 file kỳ II. Kết quả: 265 → 423 bản ghi.",
+    "de_thi_thu_vao_10": "17 đề thi thử vào 10 Hà Nội (2 năm gần nhất) ở inputs/refs/de-thi/lop-9/thi-thu-vao-10/, tải bằng `fetch_de_thi_khoi.py --thi-thu --tu-nam 2024`. Chỉ 6/17 có lớp text ở TRANG ĐỀ nên tách bài tự động được; 11 đề còn lại là PDF ảnh. Dùng bởi scripts/build_on_tap_thi_thu.py để dựng 5 file ôn tập theo phần (CẮT ẢNH vùng đề, không in lại bằng chữ vì pdftotext phá nát công thức)."
   },
   "quy_uoc": {
     "co_vd": "true = chương CÓ bài VD/VDC (sau khi chấm lại theo quy ước anh An) nên dùng tỉ lệ 15-30-55, MỘT phiếu một buổi; false = chương chỉ có NB/TH nên GỘP 2 PHIẾU THÀNH 1 theo 30-70; 'bien' = còn mâu thuẫn, phải CHỜ THẦY CHỐT, chưa được soạn phiếu.",
@@ -70,28 +72,23 @@
       "SUA_SO_VOI_BAN_0_4": "① ck1-chu-van-an và ck1-tan-trieu (bài tăng/giảm giá) trước gán chương I vì bối cảnh \"lập phương trình\", nay về CHƯƠNG II vì giải bằng hằng đẳng thức ⇒ chương I tụt từ p = 0,10 xuống p = 0. ② Chương Dương GK2 trước xếp \"cực trị\", đọc kĩ thì là bài TÂM ĐƯỜNG TRÒN NỘI TIẾP tam giác vuông 1800-2400-3000 (r = (a+b−c)/2 = 600m) ⇒ chuyển sang CHƯƠNG IX."
     },
     "cong_cu_ngoai_sgk": {
-      "_doc": "Bằng chứng: BẢNG TRA CỨU TỪ NGỮ của SGK Toán 9 tập 1 KNTT, trang 118 (đọc bằng mắt, PDF ảnh) — chương II chỉ có: bất đẳng thức (tr.32) · hai BĐT cùng/ngược chiều (tr.32) · tính chất bắc cầu (tr.33) · bất phương trình bậc nhất một ẩn (tr.38) · nghiệm của BPT (tr.39). KHÔNG có mục \"bất đẳng thức Cô-si\".",
-      "he_qua": "Cô-si HAI SỐ vẫn dạy được vì quy về (a−b)² ≥ 0 (HĐT lớp 8) — 10/33 câu dùng nó, phiếu B phải dạy đường HĐT chứ đừng gọi tên Cô-si với HS tầng B. Cô-si BA SỐ và BĐT có căn thì KHÔNG quy về được.",
-      "so_cau_ngoai_sgk": 4,
-      "danh_sach": [
-        {
-          "nguon": "ck1-ngoc-lam",
-          "cach_giai": "cosi-3-so"
-        },
-        {
-          "nguon": "Đại Áng",
-          "cach_giai": "bdt-co-can"
-        },
-        {
-          "nguon": "Đông Anh",
-          "cach_giai": "bdt-nang-cao"
-        },
-        {
-          "nguon": "Đức Giang",
-          "cach_giai": "cosi-3-so"
-        }
+      "_doc": "Bằng chứng: BẢNG TRA CỨU TỪ NGỮ, SGK Toán 9 tập 1 KNTT trang 118 — chương II chỉ có: bất đẳng thức (tr.32) · hai BĐT cùng/ngược chiều (tr.32) · tính chất bắc cầu (tr.33) · bất phương trình bậc nhất một ẩn (tr.38) · nghiệm của BPT (tr.39). KHÔNG có mục \"Cô-si\".",
+      "KET_QUA_SAU_KHI_SOI_BAREM": "Thầy giao 05/09/2026 soi ĐÁP ÁN GỐC của 4 câu con từng đánh dấu \"ngoài SGK\". CẢ BỐN đều có đường giải mức lớp 9 ngay trong barem của chính đề ⇒ SỐ CÂU NGOÀI SGK: 4 → 0.",
+      "duong_giai_lop_9_lay_tu_barem": [
+        "Bể lọc nước 400m³ (Đức Giang, Ngọc Lâm): S = 4(x² + 250/x) = 4[(x−5)² + 10x + 250/x − 25] ≥ 4[2·căn(10x · 250/x) − 25] = 300. Tức (x−5)² ≥ 0 CỘNG Cô-si HAI số — KHÔNG cần Cô-si ba số.",
+        "BĐT ba biến (Đông Anh): bổ đề a² − ab + b² = [(a+b)² + 3(a−b)²]/4 ≥ (a+b)²/4 nên căn(a²−ab+b²) ≥ (a+b)/2; cộng ba vế ra T ≥ x+y+z = 1. Thuần hằng đẳng thức, không cần Minkowski.",
+        "Đi xe đạp A→M→C (Đại Áng): T = [(3·căn(x−5) − 2·căn(x+5))² + 317]/156 ≥ 317/156. Bình phương của một hiệu có căn."
       ],
-      "canh_bao_dao_ham": "Đáp án gốc của ck1-tan-trieu ghi \"Đạt max khi x = −200/−40 = 5\" — đó là công thức đỉnh parabol x = −b/(2a) của LỚP 10. Bê câu này vào phiếu thì PHẢI VIẾT LẠI lời giải theo đường hằng đẳng thức."
+      "so_cau_ngoai_sgk": 0,
+      "xep_hang_cach_giai": {
+        "hang-dang-thuc": 11,
+        "cosi-2-so": 10,
+        "bpt-rang-buoc": 5,
+        "hinh-thuan": 5,
+        "hang-dang-thuc+cosi-2-so": 2
+      },
+      "BAI_HOC": "\"Ngoài chương trình\" hoá ra là do CON viết lời giải theo lối lớp 10, không phải do đề. Thấy một câu có vẻ vượt cấp thì ĐỌC BAREM GỐC TRƯỚC khi kết luận.",
+      "canh_bao_dao_ham": "Đáp án gốc ck1-tan-trieu ghi \"Đạt max khi x = −200/−40 = 5\" — công thức đỉnh parabol LỚP 10. Bê câu này vào phiếu PHẢI VIẾT LẠI theo đường hằng đẳng thức."
     }
   },
   "khoi": {
@@ -446,7 +443,8 @@
         "HK1": "Chương II (Tính chia hết) giữ câu cuối đề 27/32 đề = 0,84 — khuôn lặp: chứng minh tổng luỹ thừa chia hết (A = 3 + 3² + … + 3ⁿ ⋮ 13), hai số nguyên tố cùng nhau, phân số tối giản, số nguyên tố/hợp số.",
         "HK2": "Chương VI (Phân số) giữ 24/31 đề = 0,77 — gần như chỉ MỘT dạng: TÍNH TỔNG DÃY PHÂN SỐ bằng sai phân (1/(n(n+2))), cùng vài bài so sánh/đánh giá tổng.",
         "luu_y": "7/63 câu là bài ĐẾM / SUY LUẬN LOGIC (chia bánh, bèo phủ ao, thi đấu vòng tròn) không thuộc chương nào — vẫn tính vào mẫu số nhưng không dạy theo chương."
-      }
+      },
+      "_con_no_phan_loai": "1/66 bản ghi câu cuối đề chưa phân loại bằng mắt — KHÔNG tính vào mẫu số (tính vào sẽ pha loãng mọi chương)."
     },
     "lop-7": {
       "bo_sach": "KNTT",
@@ -479,7 +477,7 @@
               },
               "y_cuoi_bai_hinh": {
                 "so_de": 0,
-                "tong_de": 2,
+                "tong_de": 6,
                 "ty_le": 0.0
               }
             },
@@ -514,7 +512,7 @@
               },
               "y_cuoi_bai_hinh": {
                 "so_de": 0,
-                "tong_de": 2,
+                "tong_de": 3,
                 "ty_le": 0.0
               }
             },
@@ -550,7 +548,9 @@
           ],
           "so_cau_vdc_tho_ban_0_3": 2,
           "vdc": {
-            "vi_tri": [],
+            "vi_tri": [
+              "y-cuoi-bai-hinh"
+            ],
             "tan_suat": {
               "cau_cuoi_de": {
                 "so_de": 0,
@@ -558,21 +558,21 @@
                 "ty_le": 0.0
               },
               "y_cuoi_bai_hinh": {
-                "so_de": 0,
-                "tong_de": 2,
-                "ty_le": 0.0
+                "so_de": 3,
+                "tong_de": 6,
+                "ty_le": 0.5
               }
             },
-            "p": 0.0,
-            "nhom_uu_tien": "khong",
+            "p": 0.5,
+            "nhom_uu_tien": "cao",
             "phan_bo_55": {
-              "VD": 55,
-              "VDC": 0
+              "VD": 35,
+              "VDC": 20
             },
-            "muc_tieu_vdc": "khong-co",
+            "muc_tieu_vdc": "an-tron",
             "tran_diem": 10.0
           },
-          "so_de_co_vdc": 0
+          "so_de_co_vdc": 3
         },
         {
           "ma": "IV",
@@ -602,8 +602,8 @@
                 "ty_le": 0.0
               },
               "y_cuoi_bai_hinh": {
-                "so_de": 2,
-                "tong_de": 2,
+                "so_de": 3,
+                "tong_de": 3,
                 "ty_le": 1.0
               }
             },
@@ -616,7 +616,7 @@
             "muc_tieu_vdc": "an-tron",
             "tran_diem": 10.0
           },
-          "so_de_co_vdc": 2
+          "so_de_co_vdc": 3
         },
         {
           "ma": "V",
@@ -640,7 +640,7 @@
               },
               "y_cuoi_bai_hinh": {
                 "so_de": 0,
-                "tong_de": 8,
+                "tong_de": 9,
                 "ty_le": 0.0
               }
             },
@@ -865,7 +865,8 @@
         "HK1": "Chương I (Số hữu tỉ) giữ 14/18 đề = 0,78 — luỹ thừa, so sánh luỹ thừa, giá trị tuyệt đối, tổng luỹ thừa chẵn ≥ 0.",
         "HK2": "Hai chương chia nhau: chương VII (Đa thức một biến) 11/31 nhưng chiếm 11/15 riêng CK2 = 0,73 (nghiệm đa thức, dấu của tích P(a)·P(b), tách hệ số); chương IX giữ TOÀN BỘ ý cuối bài hình 16/16 = 1,00 (bất đẳng thức tam giác, trung tuyến, phân giác).",
         "luu_y": "Chương IV (Tam giác bằng nhau) p = 1,00 nhưng chỉ từ 2 bản ghi ý cuối bài hình CK1 — mẫu mỏng, nên đọc là \"có VDC\" chứ đừng tin con số."
-      }
+      },
+      "_con_no_phan_loai": "9/62 bản ghi câu cuối đề chưa phân loại bằng mắt — KHÔNG tính vào mẫu số (tính vào sẽ pha loãng mọi chương)."
     },
     "lop-8": {
       "bo_sach": "KNTT",
@@ -890,20 +891,20 @@
             "tan_suat": {
               "cau_cuoi_de": {
                 "so_de": 2,
-                "tong_de": 9,
-                "ty_le": 0.222
+                "tong_de": 34,
+                "ty_le": 0.059
               },
               "y_cuoi_bai_hinh": {
                 "so_de": 0,
-                "tong_de": 7,
+                "tong_de": 29,
                 "ty_le": 0.0
               }
             },
-            "p": 0.222,
-            "nhom_uu_tien": "vua",
+            "p": 0.059,
+            "nhom_uu_tien": "thap",
             "phan_bo_55": {
-              "VD": 43,
-              "VDC": 12
+              "VD": 50,
+              "VDC": 5
             },
             "muc_tieu_vdc": "an-tron",
             "tran_diem": 10.0
@@ -936,17 +937,17 @@
             ],
             "tan_suat": {
               "cau_cuoi_de": {
-                "so_de": 6,
-                "tong_de": 9,
-                "ty_le": 0.667
+                "so_de": 29,
+                "tong_de": 34,
+                "ty_le": 0.853
               },
               "y_cuoi_bai_hinh": {
                 "so_de": 0,
-                "tong_de": 7,
+                "tong_de": 29,
                 "ty_le": 0.0
               }
             },
-            "p": 0.667,
+            "p": 0.853,
             "nhom_uu_tien": "cao",
             "phan_bo_55": {
               "VD": 35,
@@ -955,7 +956,7 @@
             "muc_tieu_vdc": "an-tron",
             "tran_diem": 10.0
           },
-          "so_de_co_vdc": 6
+          "so_de_co_vdc": 29
         },
         {
           "ma": "III",
@@ -984,12 +985,12 @@
             "tan_suat": {
               "cau_cuoi_de": {
                 "so_de": 0,
-                "tong_de": 9,
+                "tong_de": 34,
                 "ty_le": 0.0
               },
               "y_cuoi_bai_hinh": {
-                "so_de": 7,
-                "tong_de": 7,
+                "so_de": 29,
+                "tong_de": 29,
                 "ty_le": 1.0
               }
             },
@@ -1002,7 +1003,7 @@
             "muc_tieu_vdc": "an-tron",
             "tran_diem": 10.0
           },
-          "so_de_co_vdc": 7
+          "so_de_co_vdc": 29
         },
         {
           "ma": "IV",
@@ -1022,21 +1023,23 @@
             "tan_suat": {
               "cau_cuoi_de": {
                 "so_de": 0,
-                "tong_de": 2,
+                "tong_de": 19,
                 "ty_le": 0.0
               },
               "y_cuoi_bai_hinh": {
                 "so_de": 0,
-                "tong_de": 2,
+                "tong_de": 18,
                 "ty_le": 0.0
               }
             },
             "p": 0.0,
-            "nhom_uu_tien": "mau-qua-nho",
-            "phan_bo_55": null,
-            "muc_tieu_vdc": "chua-do",
-            "tran_diem": 10.0,
-            "ghi_chu": "Mẫu dưới 6 đề nên KHÔNG áp phân bổ — giữ 15-30-55 mặc định. Cần tải thêm đề có lớp text cho kỳ này."
+            "nhom_uu_tien": "khong",
+            "phan_bo_55": {
+              "VD": 55,
+              "VDC": 0
+            },
+            "muc_tieu_vdc": "khong-co",
+            "tran_diem": 10.0
           },
           "so_de_co_vdc": 0
         },
@@ -1058,21 +1061,23 @@
             "tan_suat": {
               "cau_cuoi_de": {
                 "so_de": 0,
-                "tong_de": 2,
+                "tong_de": 19,
                 "ty_le": 0.0
               },
               "y_cuoi_bai_hinh": {
                 "so_de": 0,
-                "tong_de": 2,
+                "tong_de": 18,
                 "ty_le": 0.0
               }
             },
             "p": 0.0,
-            "nhom_uu_tien": "mau-qua-nho",
-            "phan_bo_55": null,
-            "muc_tieu_vdc": "chua-do",
-            "tran_diem": 10.0,
-            "ghi_chu": "Mẫu dưới 6 đề nên KHÔNG áp phân bổ — giữ 15-30-55 mặc định. Cần tải thêm đề có lớp text cho kỳ này."
+            "nhom_uu_tien": "khong",
+            "phan_bo_55": {
+              "VD": 55,
+              "VDC": 0
+            },
+            "muc_tieu_vdc": "khong-co",
+            "tran_diem": 10.0
           },
           "so_de_co_vdc": 0
         },
@@ -1095,24 +1100,26 @@
             ],
             "tan_suat": {
               "cau_cuoi_de": {
-                "so_de": 1,
-                "tong_de": 2,
-                "ty_le": 0.5
+                "so_de": 5,
+                "tong_de": 22,
+                "ty_le": 0.227
               },
               "y_cuoi_bai_hinh": {
                 "so_de": 0,
-                "tong_de": 2,
+                "tong_de": 23,
                 "ty_le": 0.0
               }
             },
-            "p": 0.5,
-            "nhom_uu_tien": "mau-qua-nho",
-            "phan_bo_55": null,
-            "muc_tieu_vdc": "chua-do",
-            "tran_diem": 9.5,
-            "ghi_chu": "Mẫu dưới 6 đề nên KHÔNG áp phân bổ — giữ 15-30-55 mặc định. Cần tải thêm đề có lớp text cho kỳ này."
+            "p": 0.227,
+            "nhom_uu_tien": "vua",
+            "phan_bo_55": {
+              "VD": 43,
+              "VDC": 12
+            },
+            "muc_tieu_vdc": "an-tron",
+            "tran_diem": 9.5
           },
-          "so_de_co_vdc": 1
+          "so_de_co_vdc": 5
         },
         {
           "ma": "VII",
@@ -1128,27 +1135,31 @@
           ],
           "so_cau_vdc_tho_ban_0_3": 0,
           "vdc": {
-            "vi_tri": [],
+            "vi_tri": [
+              "cau-cuoi-de"
+            ],
             "tan_suat": {
               "cau_cuoi_de": {
-                "so_de": 0,
-                "tong_de": 2,
-                "ty_le": 0.0
+                "so_de": 2,
+                "tong_de": 22,
+                "ty_le": 0.091
               },
               "y_cuoi_bai_hinh": {
                 "so_de": 0,
-                "tong_de": 2,
+                "tong_de": 23,
                 "ty_le": 0.0
               }
             },
-            "p": 0.0,
-            "nhom_uu_tien": "mau-qua-nho",
-            "phan_bo_55": null,
-            "muc_tieu_vdc": "chua-do",
-            "tran_diem": 9.5,
-            "ghi_chu": "Mẫu dưới 6 đề nên KHÔNG áp phân bổ — giữ 15-30-55 mặc định. Cần tải thêm đề có lớp text cho kỳ này."
+            "p": 0.091,
+            "nhom_uu_tien": "thap",
+            "phan_bo_55": {
+              "VD": 50,
+              "VDC": 5
+            },
+            "muc_tieu_vdc": "an-tron",
+            "tran_diem": 9.5
           },
-          "so_de_co_vdc": 0
+          "so_de_co_vdc": 2
         },
         {
           "ma": "VIII",
@@ -1173,21 +1184,23 @@
             "tan_suat": {
               "cau_cuoi_de": {
                 "so_de": 0,
-                "tong_de": 2,
+                "tong_de": 22,
                 "ty_le": 0.0
               },
               "y_cuoi_bai_hinh": {
                 "so_de": 0,
-                "tong_de": 2,
+                "tong_de": 23,
                 "ty_le": 0.0
               }
             },
             "p": 0.0,
-            "nhom_uu_tien": "mau-qua-nho",
-            "phan_bo_55": null,
-            "muc_tieu_vdc": "chua-do",
-            "tran_diem": 9.5,
-            "ghi_chu": "Mẫu dưới 6 đề nên KHÔNG áp phân bổ — giữ 15-30-55 mặc định. Cần tải thêm đề có lớp text cho kỳ này."
+            "nhom_uu_tien": "khong",
+            "phan_bo_55": {
+              "VD": 55,
+              "VDC": 0
+            },
+            "muc_tieu_vdc": "khong-co",
+            "tran_diem": 9.5
           },
           "so_de_co_vdc": 0
         },
@@ -1212,28 +1225,31 @@
           "so_cau_vdc_tho_ban_0_3": 2,
           "vdc": {
             "vi_tri": [
+              "cau-cuoi-de",
               "y-cuoi-bai-hinh"
             ],
             "tan_suat": {
               "cau_cuoi_de": {
-                "so_de": 0,
-                "tong_de": 2,
-                "ty_le": 0.0
+                "so_de": 2,
+                "tong_de": 22,
+                "ty_le": 0.091
               },
               "y_cuoi_bai_hinh": {
-                "so_de": 2,
-                "tong_de": 2,
+                "so_de": 23,
+                "tong_de": 23,
                 "ty_le": 1.0
               }
             },
             "p": 1.0,
-            "nhom_uu_tien": "mau-qua-nho",
-            "phan_bo_55": null,
-            "muc_tieu_vdc": "chua-do",
-            "tran_diem": 9.5,
-            "ghi_chu": "Mẫu dưới 6 đề nên KHÔNG áp phân bổ — giữ 15-30-55 mặc định. Cần tải thêm đề có lớp text cho kỳ này."
+            "nhom_uu_tien": "cao",
+            "phan_bo_55": {
+              "VD": 35,
+              "VDC": 20
+            },
+            "muc_tieu_vdc": "cham-diem-tung-phan",
+            "tran_diem": 9.5
           },
-          "so_de_co_vdc": 2
+          "so_de_co_vdc": 23
         },
         {
           "ma": "X",
@@ -1250,31 +1266,35 @@
             "tan_suat": {
               "cau_cuoi_de": {
                 "so_de": 0,
-                "tong_de": 0,
+                "tong_de": 10,
                 "ty_le": 0.0
               },
               "y_cuoi_bai_hinh": {
                 "so_de": 0,
-                "tong_de": 0,
+                "tong_de": 8,
                 "ty_le": 0.0
               }
             },
             "p": 0.0,
-            "nhom_uu_tien": "mau-qua-nho",
-            "phan_bo_55": null,
-            "muc_tieu_vdc": "chua-do",
-            "tran_diem": 9.5,
-            "ghi_chu": "Mẫu dưới 6 đề nên KHÔNG áp phân bổ — giữ 15-30-55 mặc định. Cần tải thêm đề có lớp text cho kỳ này."
+            "nhom_uu_tien": "khong",
+            "phan_bo_55": {
+              "VD": 55,
+              "VDC": 0
+            },
+            "muc_tieu_vdc": "khong-co",
+            "tran_diem": 9.5
           },
           "so_de_co_vdc": 0
         }
       ],
       "_nguon_tan_suat": "scripts/tan_suat_vdc.py::tan_suat_678 — câu cuối đề lấy chương từ inputs/refs/de-thi/vdc-phan-loai-khoi-678.json (phân loại BẰNG MẮT, CHỜ THẦY DUYỆT); ý cuối bài hình lấy chương theo tiến độ SGK (bảng HINH_THEO_KY). ",
       "_phat_hien_chinh": {
-        "HK1": "Chương II (Hằng đẳng thức) giữ câu cuối đề 6/9 = 0,67 — khuôn lặp: nhóm về TỔNG BÌNH PHƯƠNG bằng 0 rồi thay số, và tìm GTNN/GTLN bằng hằng đẳng thức. Chương III giữ toàn bộ ý cuối bài hình 7/7 (chứng minh thẳng hàng, đồng quy).",
-        "HK2": "MẪU QUÁ NHỎ — chỉ 2 đề GK2/CK2 lớp 8 đọc được lớp text trong kho. Chưa kết luận được, các chương IV–X để nguyên 15-30-55.",
-        "GIAI_DUOC_MOT_CAU_HOI_TREO": "Câu cuối đề GK2 \"trong hộp có 20 bi vàng, 18 bi xanh, 26 bi đỏ — cần bốc ít nhất bao nhiêu viên để CHẮC CHẮN có 13 vàng, 10 xanh, 9 đỏ\" là bài NGUYÊN LÍ DIRICHLET / trường hợp xấu nhất, KHÔNG phải xác suất. Đây đúng là lí do chương VIII lớp 8 còn để \"bien\" — bằng chứng nay ủng hộ hạ chương VIII xuống chi-TH. CẦN THẦY CHỐT."
-      }
+        "CHOT": "Câu cuối đề lớp 8 là HẰNG ĐẲNG THỨC ở CẢ BỐN KỲ — chương II giữ 29/34 đề = 0,85. Kể cả GK2/CK2 (khi đang học phân thức, phương trình, đồng dạng) thì câu nâng cao 0,5đ vẫn quay về hằng đẳng thức: đưa về tổng bình phương bằng 0 rồi thay số, hoặc tìm GTNN/GTLN, hoặc bài tối ưu hàng rào/giá bán.",
+        "y_cuoi_bai_hinh": "Chương III (Tứ giác) giữ TOÀN BỘ 29/29 ý cuối bài hình kỳ I; chương IX (Tam giác đồng dạng) giữ TOÀN BỘ 23/23 kỳ II. Dạng: chứng minh thẳng hàng, đồng quy, vuông góc.",
+        "chuong_VI": "Phân thức đại số p = 0,23 (nhóm vừa) — dạng chứng minh đẳng thức phân thức có điều kiện.",
+        "GIAI_DUOC_MOT_CAU_HOI_TREO": "Câu \"bốc ít nhất bao nhiêu viên bi để CHẮC CHẮN…\" là NGUYÊN LÍ DIRICHLET, không phải xác suất. Thầy chốt 05/09/2026: BỎ QUA câu này, không tính cho chương nào. ⇒ chương VIII lớp 8 nên hạ từ \"bien\" xuống chi-TH. CẦN THẦY XÁC NHẬN."
+      },
+      "_con_no_phan_loai": "Đã phân loại hết."
     },
     "lop-9": {
       "bo_sach": "KNTT",

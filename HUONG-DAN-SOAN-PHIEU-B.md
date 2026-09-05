@@ -69,8 +69,8 @@ Xếp hạng dạng (gộp cả 4 kỳ) — **soạn theo đúng thứ tự này
 
 | Ch | Kỳ | Câu cuối đề | Ý cuối bài hình | `p` | Nhóm | VD/VDC | Trần |
 |---|---|---|---|---|---|---|---|
-| I | GK1+CK1 | 2/21 | – | 0,10 | thấp | 50 / 5 | 10,0 |
-| **II** | GK1+CK1 | **13/21** | – | **0,62** | **cao** | 35 / 20 | 10,0 |
+| I | GK1+CK1 | 0/21 | – | 0 | không | 55 / 0 | 10,0 |
+| **II** | GK1+CK1 | **15/21** | – | **0,71** | **cao** | 35 / 20 | 10,0 |
 | III | GK1+CK1 | 1/21 | – | 0,05 | thấp | 50 / 5 | 10,0 |
 | **IV** | GK1 | 3/10 | **9/9** | **1,00** | **cao** | 35 / 20 | 10,0 |
 | **V** | CK1 | 2/11 | **11/11** | **1,00** | **cao** | 35 / 20 | 10,0 |
@@ -81,10 +81,33 @@ Xếp hạng dạng (gộp cả 4 kỳ) — **soạn theo đúng thứ tự này
 ⚠ Chương IX là chương duy nhất **tần suất cao NHƯNG mục tiêu là ăn điểm từng phần** —
 đây chính là 0,5đ Thầy nhường ở kỳ II.
 
-**Khối 6, 7, 8 CHƯA ĐO ĐƯỢC** tần suất: kho đề chưa có bank chấm band từng câu, và trong
-`cau-cuoi-de.json` còn 69/161 bản ghi "câu cuối đề" để chương `"?"` cùng toàn bộ 80 bản ghi
-"ý cuối bài hình" chưa gán chương. Các chương này giữ **tỉ lệ 15-30-55 mặc định** (`phan_bo_vdc`
-trả `None`) cho tới khi có file phân loại như của lớp 9. **Không được bịa số.**
+### 2.4. Khối 6, 7, 8 — đã đo (bản 0.6)
+
+Cùng luật, cùng hai vị trí. Câu cuối đề phân loại **bằng mắt** 123 bản ghi
+([vdc-phan-loai-khoi-678.json](inputs/refs/de-thi/vdc-phan-loai-khoi-678.json)); ý cuối bài hình
+lấy chương theo **tiến độ SGK** (bảng `HINH_THEO_KY`). Lớp 6 **không có** vị trí "ý cuối bài
+hình" (quy ước anh An).
+
+| Khối | Chương giữ VDC | `p` | Khuôn lặp của câu cuối đề |
+|---|---|---|---|
+| **6** | **II** Tính chia hết | 0,84 | Chứng minh tổng luỹ thừa chia hết ($A=3+3^2+\dots+3^n \vdots 13$), hai số nguyên tố cùng nhau, phân số tối giản |
+| **6** | **VI** Phân số | 0,77 | Gần như MỘT dạng: **tính tổng dãy phân số bằng sai phân** $\frac{1}{n(n+2)}$ |
+| **7** | **I** Số hữu tỉ | 0,78 | Luỹ thừa, so sánh luỹ thừa, giá trị tuyệt đối, tổng luỹ thừa chẵn $\ge 0$ |
+| **7** | **IX** Quan hệ trong tam giác | 1,00 | Giữ **toàn bộ** ý cuối bài hình HK2 (bất đẳng thức tam giác, trung tuyến, phân giác) |
+| **7** | **VII** Đa thức một biến | 0,36 (vừa) | Nghiệm đa thức, dấu của tích $P(a)\cdot P(b)$, tách hệ số — riêng CK2 là 11/15 |
+| **8** | **II** Hằng đẳng thức | 0,67 | Nhóm về **tổng bình phương bằng 0** rồi thay số; tìm GTNN/GTLN bằng HĐT |
+| **8** | **III** Tứ giác | 1,00 | Giữ toàn bộ ý cuối bài hình HK1 (thẳng hàng, đồng quy) |
+
+⚠️ **Lớp 8 kỳ II: MẪU QUÁ NHỎ** — kho chỉ có **2 đề** GK2/CK2 lớp 8 đọc được lớp text. Các
+chương IV–X lớp 8 để `nhom_uu_tien: "mau-qua-nho"`, `phan_bo_55: null` ⇒ **giữ 15-30-55 mặc
+định**, cổng không soi. Muốn dùng thì phải tải thêm đề. Luật chung: **mẫu dưới 6 đề thì không
+áp tỉ lệ** — thà không soi còn hơn soi theo 2 đề.
+
+**Chú ý khi soạn khối 6, 7:** câu cuối đề của hai khối này **KHÔNG phải bài thực tế** như lớp 9
+mà là bài số học/đại số thuần. Nhưng nó **có khuôn lặp còn chặt hơn lớp 9** — riêng lớp 6 thì
+27/63 câu là "tổng luỹ thừa chia hết" và 24/63 là "tổng dãy sai phân". Dạy trúng hai khuôn đó
+là gần như phủ hết vị trí VDC. Ngoài ra 7/63 câu lớp 6 là **bài đếm / suy luận logic** (chia
+bánh, bèo phủ ao, thi đấu vòng tròn) không thuộc chương nào — đừng cố nhét vào chương.
 
 ---
 
@@ -282,7 +305,10 @@ mkdir "inputs/seeds/lop-9/dai-so/lop-b/chuong-02-bat-dang-thuc-bat-phuong-trinh/
 2. **Bài tối ưu quy về tam thức bậc hai tính cho chương nào?** Con xếp cả 12 câu cuối đề HK2
    vào **chương II** (kĩ thuật là "đưa về $(x-a)^2+b$"), nhưng 5 bài trong đó cũng có thể tính
    cho **chương VI**. Ghi ở `chuong_khac`. **Cần Thầy chốt** — nó đổi tỉ lệ của cả hai chương.
-3. **Khối 6, 7, 8 chưa đo được tần suất** (§2.3). Muốn dùng luật này thì phải phân loại bằng
-   mắt như lớp 9. Trong lúc chờ, các chương đó giữ 15-30-55 mặc định.
-4. **Nợ cũ chưa trả:** 25 spec tầng B bị chặn vì 64 dòng VD thiếu `quy_trinh`; 12 phiếu ôn tập
+3. **Lớp 8 kỳ II chỉ có 2 đề đọc được** (§2.4) — chưa kết luận được cho chương IV–X. Cần tải
+   thêm đề GK2/CK2 lớp 8 có lớp text.
+4. **Lớp 8 chương VIII (Xác suất) đang để `"bien"`** — bằng chứng mới ủng hộ hạ xuống `chi-TH`:
+   câu cuối đề GK2 *"cần bốc ít nhất bao nhiêu viên bi để CHẮC CHẮN có 13 vàng, 10 xanh, 9 đỏ"*
+   là bài **nguyên lí Dirichlet**, không phải xác suất. **Cần Thầy chốt.**
+5. **Nợ cũ chưa trả:** 25 spec tầng B bị chặn vì 64 dòng VD thiếu `quy_trinh`; 12 phiếu ôn tập
    chương thiếu `viet_quy_trinh`; 199 bài VD trong 63 phiếu thật chưa có quy trình.

@@ -67,6 +67,8 @@ def tan_suat_678(lop: str) -> dict:
     cls = json.loads(K678.read_text(encoding="utf-8"))["khoi"][lop]
     rows = [r for r in cls["cau_cuoi_de"] if r.get("hop_le") is not False]
     mau_cuoi = Counter(r["ky"] for r in rows)
+    # Bản ghi trong kho mà CHƯA phân loại thì KHÔNG vào mẫu số — nếu tính, mọi chương
+    # đều bị pha loãng và tụt nhóm một cách giả tạo. Số nợ báo riêng ở `con_no`.
     cuoi: dict[str, Counter] = defaultdict(Counter)
     for r in rows:
         cuoi[r["ky"]][r["chuong"]] += 1
@@ -102,6 +104,11 @@ def tan_suat_678(lop: str) -> dict:
             "phan_bo_55": {"VD": vd, "VDC": vdc},
             "mau_qua_nho": (m_c + m_h) < 6,
         }
+    da = {r.get("file") for r in cls["cau_cuoi_de"]}
+    kho = {x["file"][:52] for x in json.loads(CAU_CUOI.read_text(encoding="utf-8"))
+           if x["lop"] == lop and x["vitri"] == "câu cuối đề"}
+    ket["_con_no"] = {"da_phan_loai": len(da), "trong_kho": len(kho),
+                      "chua_phan_loai": len(kho - da)}
     return ket
 
 CHUONG_HINH = {"C4", "C5", "C9", "C10"}
