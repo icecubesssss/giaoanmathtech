@@ -1,12 +1,14 @@
 {
   "_nguon": "Tiến độ nội bộ T8 — TUẦN 10: Ôn tập hình bình hành, hình chữ nhật",
   "_gio": "Thầy chốt 2026-07-26: rate lớp 8 hình học Tầng B (vidu 20m, onclass 60m, btvn 35m).",
-  "slug": "thuyet-minh-tuan10-on-tap-hbh-hcn",
+  "_luat": "Soạn lại 06/09/2026 theo HUONG-DAN-SOAN-PHIEU-B.md. Chương III lớp 8 có p = 1,00 (29/29 đề GK1/CK1 có VDC ở Ý CUỐI BÀI HÌNH) ⇒ nhóm CAO: NB 15 / TH 30 / VD 35 / VDC 20, trần điểm 10,0, mục tiêu `an-tron` (kỳ I dạy HẾT, không nhường ý nào). Dạng VDC lấy đúng đầu bảng xếp hạng §2.2: CHỨNG MINH BA ĐIỂM THẲNG HÀNG.",
+  "slug": "thuyet-minh-tuan10-on-tap-hinh-binh-hanh-hinh-chu-nhat",
   "title": "Chương 3. Tứ giác — Ôn tập hình bình hành, hình chữ nhật",
   "grade": "lop-8",
   "subject": "hinh-hoc",
   "tier": "B",
   "tuan": "10",
+  "chuong": "chuong-03-tu-giac",
   "thoiluong": [
     "Buổi 8 (Ôn tập hình bình hành, hình chữ nhật, tuần 10): 1 ca = 90 phút (SGV Luyện tập chung 1 tiết)",
     "TỔNG 1 ca = 90 phút = 2 tiết"
@@ -29,14 +31,16 @@
     "Bài toán tổng hợp đề kiểm tra tháng 8: Cho tam giác $ABC$ cân tại $A$, đường cao $AH$. Lấy điểm $D$ đối xứng với $H$ qua trung điểm $M$ của $AB$. Chứng minh tứ giác $AHBD$ là hình chữ nhật."
   ],
   "dang_vd": [
-    "Chứng minh tứ giác là hình bình hành, hình chữ nhật.",
-    "Tìm điều kiện của hình ban đầu để tứ giác tạo thành là hình chữ nhật.",
-    "Vận dụng tính chất hình chữ nhật và trung tuyến tam giác vuông để giải toán hình học tổng hợp."
+    "Chứng minh tứ giác là hình chữ nhật rồi suy ra hệ thức giữa hai đoạn thẳng.",
+    "Chứng minh tứ giác là hình bình hành từ hai cạnh đối cùng vuông góc với một đường thẳng.",
+    "Chứng minh ba điểm thẳng hàng bằng cách dựng một hình bình hành nhận đoạn nối ba điểm đó làm đường chéo (dạng VDC — đứng đầu bảng xếp hạng ý cuối bài hình, 8/34 đề)."
   ],
   "loisai": [
     "Nhầm lẫn dấu hiệu hình bình hành và hình chữ nhật.",
     "Chưa chứng minh hình bình hành đã vội kết luận hình chữ nhật khi chỉ biết hai đường chéo bằng nhau.",
-    "Nhầm điểm đối xứng qua điểm thành điểm đối xứng qua đường thẳng."
+    "Nhầm điểm đối xứng qua điểm thành điểm đối xứng qua đường thẳng.",
+    "Chứng minh thẳng hàng bằng cách đo hình hoặc nói \\emph{nhìn hình thấy thẳng} — phải chỉ ra ba điểm cùng nằm trên một đường thẳng bằng lập luận (chung một trung điểm, hoặc hai tia trùng nhau).",
+    "Dùng định lí Pythagore để tính cạnh $-$ tuần 10 HS CHƯA học (định lí Pythagore ở tuần 30). Muốn có cạnh huyền thì đề phải cho sẵn."
   ],
   "kienthuc_nb": [
     "Các dấu hiệu nhận biết hình bình hành và hình chữ nhật.",
@@ -54,67 +58,32 @@
           "loai": "NB lẻ LT",
           "lythuyet": 1,
           "vidu": 0,
-          "onclass": 3,
+          "onclass": 2,
           "btvn": 2,
           "source_refs": [],
           "decompose": "none",
           "hinh_san": true
         },
         {
-          "dang": "Chọn phương án đúng: hình bình hành có một góc vuông là hình gì",
+          "dang": "Chọn phương án đúng / khẳng định đúng–sai về dấu hiệu nhận biết hình chữ nhật",
           "band": "NB",
           "loai": "NB lẻ LT",
           "lythuyet": 1,
           "vidu": 0,
-          "onclass": 2,
+          "onclass": 1,
           "btvn": 2,
-          "source_refs": [
-            "KT chương III TN C5",
-            "KT chương III TN C2"
-          ],
+          "source_refs": [],
           "decompose": "none",
           "hinh_san": true
         },
         {
-          "dang": "Đúng hay sai: hình thang cân có một góc vuông là hình chữ nhật",
-          "band": "NB",
-          "loai": "NB lẻ LT",
-          "lythuyet": 0,
-          "vidu": 0,
-          "onclass": 2,
-          "btvn": 2,
-          "source_refs": [
-            "KT chương III TN C2"
-          ],
-          "decompose": "none",
-          "hinh_san": true
-        },
-        {
-          "dang": "Vẽ tam giác cân $ABC$ có đường cao $AH$ cùng trung điểm hai cạnh bên và đánh dấu dữ kiện",
+          "dang": "Điền khuyết chứng minh tứ giác là hình chữ nhật từ hình bình hành có một góc vuông",
           "band": "NB",
           "loai": "NB tách TH",
           "lythuyet": 0,
           "vidu": 0,
           "onclass": 1,
           "btvn": 1,
-          "source_refs": [
-            "KT tháng 8 Hình B2"
-          ],
-          "decompose": "none",
-          "gian_giao": "ve-hinh",
-          "ve_hinh": {
-            "onclass": 1,
-            "btvn": 1
-          }
-        },
-        {
-          "dang": "Điền khuyết chứng minh $AHBD$ là hình chữ nhật từ hai đường chéo cắt nhau tại trung điểm và bằng nhau",
-          "band": "NB",
-          "loai": "NB tách TH",
-          "lythuyet": 0,
-          "vidu": 0,
-          "onclass": 2,
-          "btvn": 2,
           "source_refs": [
             "KT tháng 8 Hình B2a"
           ],
@@ -123,18 +92,33 @@
           "gian_giao": "dien-khuyet"
         },
         {
-          "dang": "Chỉ ra giao điểm hai đường chéo của hình chữ nhật là trung điểm của $AH$",
+          "dang": "Vẽ hình từ giả thiết tam giác vuông + hai chân đường vuông góc hạ từ trung điểm cạnh huyền, ghi giả thiết – kết luận",
           "band": "NB",
-          "loai": "NB ghép bài",
+          "loai": "NB tách TH",
           "lythuyet": 0,
           "vidu": 0,
-          "onclass": 2,
-          "btvn": 2,
+          "onclass": 1,
+          "btvn": 0,
           "source_refs": [
-            "KT tháng 8 Hình B2b"
+            "GK1 Bát Tràng 25-26 B5"
           ],
           "decompose": "none",
-          "hinh_san": true
+          "gian_giao": "ve-hinh",
+          "ve_hinh": {
+            "onclass": 1
+          }
+        },
+        {
+          "dang": "Tự viết lại và giải thích quy trình chứng minh một tứ giác là hình chữ nhật",
+          "band": "NB",
+          "loai": "NB lẻ LT",
+          "lythuyet": 0,
+          "vidu": 0,
+          "onclass": 0,
+          "btvn": 1,
+          "source_refs": [],
+          "decompose": "none",
+          "viet_quy_trinh": true
         },
         {
           "dang": "Chứng minh tứ giác là hình bình hành rồi bổ sung điều kiện để trở thành hình chữ nhật",
@@ -143,16 +127,15 @@
           "lythuyet": 0,
           "vidu": 1,
           "onclass": 2,
-          "btvn": 2,
+          "btvn": 1,
           "source_refs": [
-            "HCN D4.B1",
-            "HCN D4.B2"
+            "HCN D4.B1"
           ],
           "decompose": "none",
           "hinh_san": true
         },
         {
-          "dang": "Chứng minh trong tam giác vuông, đường trung tuyến ứng với cạnh huyền bằng nửa cạnh huyền",
+          "dang": "Định lí đường trung tuyến ứng với cạnh huyền: chiều thuận (tính độ dài) và chiều đảo (suy ra tam giác vuông)",
           "band": "TH",
           "loai": "TH ghép bài",
           "lythuyet": 0,
@@ -167,36 +150,76 @@
           "hinh_san": true
         },
         {
-          "dang": "Chứng minh tam giác có đường trung tuyến bằng nửa cạnh đối diện thì vuông",
-          "band": "TH",
-          "loai": "TH tách VD",
-          "lythuyet": 0,
-          "vidu": 0,
-          "onclass": 2,
-          "btvn": 1,
-          "source_refs": [
-            "KT tháng 8 Hình B3b",
-            "HCN D2.B3"
-          ],
-          "decompose": "th2nb",
-          "hinh_san": true
-        },
-        {
-          "dang": "Tam giác cân $ABC$, đường cao $AH$, $M$, $N$ là trung điểm $AB$, $AC$: chứng minh $AHBD$, $AHCE$, $BCED$ là hình chữ nhật",
+          "dang": "Chứng minh tứ giác là hình chữ nhật rồi suy ra hệ thức giữa hai đoạn thẳng",
           "band": "VD",
           "loai": "VD lẻ",
           "lythuyet": 0,
           "vidu": 1,
-          "onclass": 2,
+          "onclass": 1,
           "btvn": 0,
           "source_refs": [
             "KT tháng 8 Hình B2"
           ],
           "decompose": "vd",
-          "hinh_san": true
+          "hinh_san": true,
+          "quy_trinh": [
+            "Bước 1 — Cái phải tìm là gì? Gạch chân tên tứ giác phải xét và hệ thức phải chứng minh.",
+            "Bước 2 — Vẽ hình theo đúng thứ tự giả thiết cho, đánh dấu lên hình mọi dữ kiện đã có (góc vuông, đoạn bằng nhau, trung điểm).",
+            "Bước 3 — Tứ giác ấy đã có sẵn quan hệ gì giữa hai đường chéo, hoặc giữa hai cạnh đối? Kết luận nó là hình gì trước đã.",
+            "Bước 4 — Hình vừa nhận ra cho ta hai đoạn thẳng nào bằng nhau?",
+            "Bước 5 — Đã dùng hết giả thiết chưa? Giả thiết còn thừa thường là mắt xích nối sang đoạn thẳng thứ hai của hệ thức.",
+            "Bước 6 — Viết câu \\emph{Vậy…} trả lời đúng hệ thức mà đề hỏi."
+          ]
+        },
+        {
+          "dang": "Chứng minh tứ giác là hình bình hành theo dấu hiệu MỘT CẶP CẠNH ĐỐI song song và bằng nhau",
+          "band": "VD",
+          "loai": "VD lẻ",
+          "lythuyet": 0,
+          "vidu": 0,
+          "onclass": 1,
+          "btvn": 1,
+          "source_refs": [
+            "GK1 Bát Tràng 25-26 B5b",
+            "GK1 Phú Châu 25-26 C16a"
+          ],
+          "decompose": "vd",
+          "hinh_san": true,
+          "quy_trinh": [
+            "Bước 1 — Cái phải tìm là gì? Tứ giác nào, và phải kết luận nó là hình gì.",
+            "Bước 2 — Vẽ hình, đánh dấu các góc vuông và các đoạn bằng nhau mà giả thiết cho.",
+            "Bước 3 — Trong tứ giác ấy, cặp cạnh đối nào có nhiều dữ kiện nhất? Chọn đúng cặp đó để làm việc.",
+            "Bước 4 — Cặp cạnh ấy đã song song chưa? Hai đường cùng vuông góc với một đường thứ ba, hoặc cùng song song với một đường thứ ba, thì thế nào với nhau?",
+            "Bước 5 — Còn phải chỉ ra chúng BẰNG NHAU. Muốn vậy cần hai tam giác nào bằng nhau, hoặc đoạn nào đã bằng nhau sẵn từ một hình đã chứng minh ở ý trước?",
+            "Bước 6 — Đã dùng hết giả thiết chưa? Giả thiết chưa dùng chính là yếu tố còn thiếu ấy.",
+            "Bước 7 — Viết câu \\emph{Vậy…} gọi đúng tên hình vừa chứng minh."
+          ]
+        },
+        {
+          "dang": "Chứng minh ba điểm thẳng hàng bằng cách dựng hình bình hành nhận đoạn nối ba điểm làm đường chéo",
+          "band": "VDC",
+          "loai": "VD lẻ",
+          "lythuyet": 0,
+          "vidu": 0,
+          "onclass": 1,
+          "btvn": 1,
+          "source_refs": [
+            "GK1 Bát Tràng 25-26 B5c",
+            "GK1 Phú Châu 25-26 C16b"
+          ],
+          "decompose": "vdc",
+          "hinh_san": true,
+          "quy_trinh": [
+            "Bước 1 — Cái phải tìm là gì? Ba điểm nào phải thẳng hàng? Nối thử ba điểm ấy trên hình.",
+            "Bước 2 — Ba điểm thẳng hàng khi nào thì ta chứng minh được bằng lập luận? Khi điểm ở giữa là TRUNG ĐIỂM của đoạn nối hai điểm kia.",
+            "Bước 3 — Điểm ở giữa đang là trung điểm của đoạn nào rồi? Kết quả đã chứng minh ở ý trước cho ta điều đó.",
+            "Bước 4 — Muốn nó đồng thời là trung điểm của đoạn thứ hai thì hai đoạn ấy phải là gì của một hình? Cần thêm đoạn nào nữa để có hình đó?",
+            "Bước 5 — Đã dùng hết giả thiết chưa? Giả thiết cuối cùng chưa dùng chính là thứ cho ta cặp cạnh song song và bằng nhau.",
+            "Bước 6 — Viết câu \\emph{Vậy…} nêu đúng ba điểm thẳng hàng."
+          ]
         }
       ]
     }
   ],
-  "chuong": "chuong-03-tu-giac"
+  "_pham_vi": "Tuần 10 CHƯA có: định lí Pythagore (tuần 30), đường trung bình của tam giác (tuần 20), hình thoi – hình vuông (tuần 12-13). Mọi lời giải chỉ được dùng tới hết tuần 9. Riêng `HCN D4.B2` (Ví dụ 2 của tài liệu Hình chữ nhật) giải bằng ĐƯỜNG TRUNG BÌNH nên đã loại khỏi nguồn của phiếu này."
 }

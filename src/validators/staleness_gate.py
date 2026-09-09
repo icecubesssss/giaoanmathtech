@@ -31,6 +31,7 @@ from functools import lru_cache
 from pathlib import Path
 
 from config import settings
+from src.exporters.ten_file import BAN_IN
 
 _SEEDS_DIR = settings.ROOT / "inputs" / "seeds"
 _CHUA = {
@@ -133,7 +134,13 @@ def _tex_hien_tai(seed: Path) -> dict[str, str] | None:
 
 
 def _bien_the(pdf: Path) -> str:
-    """'ca-01-handout.pdf' → 'handout'; PDF thuyết minh (tên = slug) → 'thuyetminh'."""
+    """'ca-01-handout.pdf' → 'handout'; PDF thuyết minh (tên = slug) → 'thuyetminh'.
+
+    Từ 06/09/2026 bản in mang tên tự mô tả ('…-Phieu-HS.pdf'), nên soi cả đuôi
+    tiếng Việt của `ten_file.BAN_IN`; PDF cũ trong kho vẫn đọc được như trước."""
+    for kind, hau_to in BAN_IN.items():
+        if pdf.stem.endswith("-" + hau_to):
+            return kind
     duoi = pdf.stem.rsplit("-", 1)[-1]
     return duoi if duoi in ("handout", "guide", "slide") else "thuyetminh"
 

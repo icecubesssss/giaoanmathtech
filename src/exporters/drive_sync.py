@@ -21,9 +21,10 @@ from __future__ import annotations
 import os
 import re
 import shutil
-import unicodedata
 from dataclasses import dataclass
 from pathlib import Path
+
+from src.exporters.ten_file import BAN_IN, bo_dau
 
 # Drive đồng bộ trên máy Thầy; đổi bằng biến môi trường MATHTECH_DRIVE_ROOT nếu máy khác.
 _DEFAULT_DRIVE = (
@@ -38,20 +39,8 @@ def drive_root() -> Path:
     return Path(os.environ.get("MATHTECH_DRIVE_ROOT", _DEFAULT_DRIVE)).expanduser()
 
 
-_TEX = re.compile(r"\\[A-Za-z]+\s*|[$\\{}]")
-
-
-def bo_dau(s: str) -> str:
-    """'Mở đầu về đường tròn' → 'Mo dau ve duong tron' (Drive/Finder dễ đọc, khỏi lệch NFC/NFD).
-
-    Bóc luôn LaTeX: tiêu đề phiếu có thể chứa `$AH$`, `\\textbf{…}` — không bóc thì tên
-    thư mục Drive lòi ra 'Ca-03 - He thuc luong (duong cao $AH$)'.
-    """
-    s = _TEX.sub("", s)
-    s = s.replace("Đ", "D").replace("đ", "d")
-    s = unicodedata.normalize("NFD", s)
-    s = "".join(c for c in s if unicodedata.category(c) != "Mn")
-    return re.sub(r"\s+", " ", s).strip()
+# `bo_dau` ở chung một chỗ với bộ đặt tên PDF (exporters/ten_file) để tên thư mục
+# Drive và tên file bên trong không bao giờ bỏ dấu theo hai kiểu khác nhau.
 
 
 def _norm(name: str) -> str:
@@ -150,7 +139,7 @@ def plan_target(out_dir: Path, outputs_root: Path, tieu_de: str | None = None) -
 
     # Phiếu học tập: lấy số Ca từ tiền tố file ca-NN-, tên lấy từ title của phiếu.
     ca = ""
-    for pdf in sorted(out_dir.glob("ca-*-handout.pdf")):
+    for pdf in sorted(out_dir.glob("*.pdf")):
         m = re.match(r"(ca-\d+)-", pdf.name)
         if m:
             ca = m.group(1).capitalize()      # 'ca-01' → 'Ca-01'
@@ -166,9 +155,10 @@ def sync_dir(out_dir: Path, outputs_root: Path, tieu_de: str | None = None,
     target = plan_target(out_dir, outputs_root, tieu_de)
     if target is None:
         return None, []
-    # Bộ build ghi SONG SONG hai tên cho cùng một bản ('handout.pdf' và 'ca-01-handout.pdf').
-    # Drive chỉ nhận bộ có tiền tố Ca — đúng quy ước Thầy đã chép tay ở chương IV.
-    pdfs = sorted(out_dir.glob("ca-*.pdf")) or sorted(out_dir.glob("*.pdf"))
+    # Chép MỌI bản in trong thư mục. Trước 06/09/2026 chỉ nhận bộ có tiền tố 'ca-';
+    # từ khi tên file tự mô tả ('Toan8B-Tuan10-…-Phieu-HS.pdf') thì lọc theo tiền tố
+    # là bỏ sót sạch — Drive nhận nguyên thư mục, tên nào cũng là thành phẩm.
+    pdfs = sorted(out_dir.glob("*.pdf"))
     if not pdfs:
         return None, []
 

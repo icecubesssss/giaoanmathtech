@@ -131,6 +131,15 @@ Số câu mục tiêu máy tự tính (`tier_spec.target_counts`), lớp 9 đạ
 | **thấp** (50/5) | 7 NB · 3 TH · 3 VD | 12 NB · 6 TH · 5 VD | 10 NB · 5 TH · 4 VD |
 | **không VD** (30/70) | 14 NB · 8 TH | 24 NB · 14 TH | 21 NB · 12 TH |
 
+**Phiếu GỘP 2 CA thì nhân đôi bảng trên** (Thầy chốt 07/09/2026, khi dựng chương VII
+lớp 9): quỹ onclass thành 240′ nên phần NB là **48 câu** chứ không phải 10. Con số
+"5 dạng × 2 câu = 10 câu" Thầy chốt 30/08 là cho buổi có quỹ onclass **60′** (lớp 8
+hình học): $30\% \times 60' \div 1{,}5' \approx 10$ câu. Cổng
+`thuyetminh_gate` nay tính ĐÍCH theo chính quỹ của phiếu (±25%), còn số DẠNG suy ra từ
+luật **2–3 câu mỗi dạng** (AGENTS §9) — 12 câu ⇒ 4–6 dạng (đúng như luật cũ), 48 câu ⇒
+16–24 dạng. Giữ số 10 cho phiếu 2 ca thì NB chỉ chiếm 6% quỹ và cổng tỉ lệ bên cạnh
+lại kêu lệch 24 điểm %.
+
 ---
 
 ## 4. LUẬT "CHỈ Ý CUỐI MỚI LÀ VDC" (Thầy chốt 04/09/2026)
@@ -244,6 +253,11 @@ NB **không phải bài rời** — nó là *bước* cắt ra từ chính bài 
 **E. Trình bày — bê nguyên từ tầng C** (HUONG-DAN-PHAN-TANG-LOP §5E), các mục hay bị bắt lỗi:
 - HS làm vào **VỞ** → `writelines count 0`, không kẻ dòng, không chừa khung ([[khong-chua-cho-trong]]).
 - Công thức toán **xuống dòng riêng**; mỗi bước biến đổi một dòng, giữ dấu trung gian.
+
+**F. Bố cục Ví dụ mẫu — song song với Luyện tập (Thầy chốt 08/09/2026):**
+- **Không dồn các hộp Ví dụ mẫu (`variant: "example"`) ở Chặng 2 (Lý thuyết).**
+- **Đưa các khung Ví dụ mẫu xuống Chặng 3 (Luyện tập 1) hoặc Chặng 4 (Luyện tập 2)**, đứng ngay trước nhóm bài tập của dạng đó.
+- Luồng trên lớp: GV giảng và phân tích bài giải mẫu $\to$ HS áp dụng làm ngay bài tập tương ứng của dạng.
 - **KHÔNG** dùng `⇒` trong phần HS đọc; **KHÔNG** dùng ①②③; **CẤM** `\needspace`.
 - Ví dụ mẫu viết theo khuôn **đề → "Lời giải" → dòng thụt lề → "Vậy…"**, không viết như lời
   hướng dẫn (cổng `check_vi_du_style`).
@@ -282,6 +296,24 @@ mkdir "inputs/seeds/lop-9/dai-so/lop-b/chuong-02-bat-dang-thuc-bat-phuong-trinh/
 .venv/bin/python -m src.main build-folder "<folder>"  # 3 PDF: handout / guide / slide
 # → soi PDF bằng mắt (pdftoppm) rồi mới trình Thầy
 ```
+
+**Tên ba PDF ra lò** (Thầy chốt 06/09/2026 — gửi Zalo phải đọc tên là biết bài gì):
+
+```
+Toan8B-Tuan10-On-tap-hinh-binh-hanh-hinh-chu-nhat-Phieu-HS.pdf      ← HS làm
+Toan8B-Tuan10-On-tap-hinh-binh-hanh-hinh-chu-nhat-Dap-an-GV.pdf     ← có lời giải
+Toan8B-Tuan10-On-tap-hinh-binh-hanh-hinh-chu-nhat-Slide.pdf         ← chiếu trên lớp
+```
+
+Máy tự ghép `<khối><tầng>-Tuan<NN>-<slug phiếu>-<bản in>` từ đường dẫn seed, nên **đặt tên
+thư mục seed và slug phiếu cho người ngoài đọc hiểu** — viết tắt kiểu `hbh-hcn` thì phụ huynh
+chịu. Code + test: [src/exporters/ten_file.py](src/exporters/ten_file.py).
+
+**PHẠM VI KIẾN THỨC — soi TRƯỚC khi soạn lời giải.** Tra `config/curriculum.json` xem công cụ
+mình định dùng dạy ở tuần mấy; phiếu tuần $N$ chỉ được dùng tới hết tuần $N-1$. Bẫy đã vấp ở
+tuần 10 lớp 8: định lí **Pythagore là tuần 30**, **đường trung bình tam giác là tuần 20** —
+cả hai đều lọt vào lời giải vì "bài hình lớp 8 thì đương nhiên có Pythagore". Không cổng nào
+soi được chuyện này, phải tự tra. Xem [[pham-vi-kien-thuc-theo-tuan]].
 
 **Kiểm trước khi trình Thầy:**
 

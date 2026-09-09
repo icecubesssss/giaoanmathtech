@@ -47,14 +47,20 @@ def test_dung_lai_folder_da_co_du_lech_khoang_trang(tmp_path):
     assert sorted(p.name for p in drive.iterdir()) == ["Chuong5"]
 
 
-def test_chi_chep_bo_ten_co_tien_to_ca(tmp_path):
-    """Build ghi cả 'handout.pdf' lẫn 'ca-01-handout.pdf' — Drive chỉ nhận bộ Ca."""
+def test_chep_ca_ban_ten_tu_mo_ta(tmp_path):
+    """Từ 06/09/2026 bản in mang tên tự mô tả, KHÔNG còn tiền tố 'ca-' — vẫn phải chép.
+
+    Cổng cũ lọc `ca-*.pdf` (thời build ghi song song 'handout.pdf' và 'ca-01-handout.pdf');
+    giữ nguyên bộ lọc đó thì đồng bộ Drive bỏ sót sạch bản in tên mới.
+    """
     root, d = _mk(tmp_path, "lop-9/hinh-hoc/lop-c/chuong-05-duong-tron/phieu-a-mo-dau",
-                  files=("handout.pdf", "ca-01-handout.pdf", "guide.pdf", "ca-01-guide.pdf"))
+                  files=("Toan9C-Tuan05-Mo-dau-Phieu-HS.pdf",
+                         "Toan9C-Tuan05-Mo-dau-Dap-an-GV.pdf"))
     drive = tmp_path / "drive"
     dest, files = sync_dir(d, root, "Mở đầu về đường tròn", root=drive)
-    assert files == ["ca-01-guide.pdf", "ca-01-handout.pdf"]
-    assert sorted(p.name for p in dest.iterdir()) == ["ca-01-guide.pdf", "ca-01-handout.pdf"]
+    assert files == ["Toan9C-Tuan05-Mo-dau-Dap-an-GV.pdf",
+                     "Toan9C-Tuan05-Mo-dau-Phieu-HS.pdf"]
+    assert sorted(p.name for p in dest.iterdir()) == files
 
 
 def test_sync_tao_du_cay_thu_muc_va_ghi_de(tmp_path):

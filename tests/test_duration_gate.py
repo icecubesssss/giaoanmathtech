@@ -220,3 +220,30 @@ def test_hai_bai_khac_nhau_moi_bai_mot_vdc_thi_sach():
     lesson = _lesson([("onclass", 4, "a) [TH] x b) [VDC] y"),
                       ("btvn", 4, "a) [VD] x b) [VDC] y")])
     assert check_vdc_cuoi_bai(lesson) == []
+
+
+def test_gop_vd_vdc_thi_dich_cung_phai_gop():
+    """Gộp PHÚT VD+VDC thì phải gộp cả ĐÍCH (Thầy chốt 04/09/2026).
+
+    Từ 04/09/2026 `tier_ratio` tách khối 55% thành VD 35 + VDC 20 theo tần suất VDC
+    của chương. Cổng gộp phút lại mà vẫn so với đích VD 35 chưa gộp thì chương nhóm
+    'cao' nào soạn ĐÚNG luật cũng ăn hai cảnh báo oan: 'VD+VDC 56% lệch 35%' và
+    'VDC 0% lệch 20%'. Dựng đúng phiếu chuẩn 15-30-55 rồi đòi cổng im.
+    """
+    # Lớp 8 hình học tầng B, chương III (p = 1,00 → nhóm cao, VD 35 / VDC 20).
+    # Bài trên hình VẼ SẴN nên rate ×0,5: NB 1′ · TH 4,5′ · VD 10′ · VDC 15′; quỹ 60′.
+    # 9 NB (9′) + 4 TH (18′) + 2 VD (20′) + 1 VDC (15′) = 62′ ≈ 15-30-55.
+    lesson = _lesson(
+        [("onclass", 1, " ".join(f"{c}) [NB] x" for c in "abcde"))]      # 5 NB
+        + [("onclass", 1, " ".join(f"{c}) [NB] x" for c in "abcd"))]     # 4 NB
+        + [("onclass", 2, "a) [TH] x b) [TH] x")] * 2                    # 4 TH
+        + [("onclass", 3, "a) [VD] x")]                                  # 1 VD
+        + [("onclass", 4, "a) [VD] x b) [VDC] x")]                       # 1 VD + 1 VDC
+    )
+    lesson.class_tier = "B"
+    lesson.chuong = "chuong-03-tu-giac"
+    lesson.grade_label = "Lớp 8 • Hình học"
+    for b in lesson.stages[0].blocks:
+        b.figure_given = True
+        b.quy_trinh = ["Bước 1 — vẽ hình, ghi giả thiết"]
+    assert not any("tỉ lệ" in w for w in check_duration(lesson)), check_duration(lesson)

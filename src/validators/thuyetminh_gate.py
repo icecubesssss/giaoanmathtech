@@ -169,17 +169,32 @@ def check_thuyetminh(spec: ThuyetMinhSpec) -> tuple[list[str], list[str]]:
 
         # (W) CHƯƠNG KHÔNG CÓ VD-VDC: phần NB phải là ~5 DẠNG, MỖI DẠNG 2 CÂU (Thầy
         # chốt 30/08/2026 — đây là ràng buộc CỨNG, tỉ lệ 30% chỉ để tham chiếu).
+        #
+        # 07/09/2026 — số câu ĐÍCH nay CO GIÃN THEO QUỸ của chính phiếu, không còn
+        # đóng cứng ở 10. Con số "5 dạng × 2 câu = 10 câu" Thầy chốt là cho buổi có
+        # quỹ onclass 60′ (lớp 8 hình học): 30% × 60′ ÷ 1,5′ = 12 câu ≈ 10. Phiếu
+        # lớp 9 đại số GỘP 2 CA có quỹ 240′ nên cùng tỉ lệ 30% ra 48 câu — giữ số 10
+        # thì phần NB chỉ còn 6% quỹ và cổng tỉ lệ bên cạnh lại kêu lệch 24 điểm %.
+        # Ràng buộc "2–3 câu mỗi dạng" (AGENTS §9: tối đa 3 câu NB một dạng) được
+        # giữ nguyên và chính là cái sinh ra khoảng 4–6 dạng khi đích là 12 câu.
         if gop and ratio_target and not ratio_target.get("VD"):
             nb = [r for r in p.rows if r.band == "NB" and r.onclass]
             so_cau = sum(r.onclass for r in nb)
-            if not (4 <= len(nb) <= 6):
-                warnings.append(
-                    f"thuyetminh: {tag} phần NHẬN BIẾT có {len(nb)} dạng — chương không có "
-                    f"VD-VDC thì phải khoảng 5 DẠNG (Thầy chốt 30/08/2026).")
-            if not (8 <= so_cau <= 12):
-                warnings.append(
-                    f"thuyetminh: {tag} phần NHẬN BIẾT có {so_cau} câu trên lớp — chuẩn là "
-                    f"~5 dạng x 2 câu = 10 câu (Thầy chốt 30/08/2026: số câu là ràng buộc CỨNG).")
+            rate_nb = rates.get("onclass", {}).get("NB", 0.0)
+            dich = round(onclass_budget * ratio_target["NB"] / 100 / rate_nb) if rate_nb else 0
+            if dich:
+                lo_dang, hi_dang = -(-dich // 3), -(-dich // 2)   # 2–3 câu mỗi dạng
+                if not (lo_dang <= len(nb) <= hi_dang):
+                    warnings.append(
+                        f"thuyetminh: {tag} phần NHẬN BIẾT có {len(nb)} dạng — chương không "
+                        f"có VD-VDC thì mỗi dạng 2–3 câu, tức {lo_dang}–{hi_dang} dạng cho "
+                        f"{dich} câu (Thầy chốt 30/08/2026: buổi 60′ là ~5 dạng).")
+                if abs(so_cau - dich) > dich * 0.25:
+                    warnings.append(
+                        f"thuyetminh: {tag} phần NHẬN BIẾT có {so_cau} câu trên lớp — đích "
+                        f"là {dich} câu ({ratio_target['NB']}% × quỹ {onclass_budget:.0f}′ "
+                        f"÷ {rate_nb:g}′/câu), lệch quá ±25% (Thầy chốt 30/08/2026: số câu "
+                        f"NB là ràng buộc CỨNG).")
 
         # QUY TRÌNH GIẢI BÀI (Thầy chốt 30/08/2026). CHẶN CỨNG với spec đã chuyển sang
         # luật mới (khai `chuong` và tra ra tỉ lệ); spec CŨ chưa khai chương thì chỉ
@@ -227,9 +242,14 @@ def check_thuyetminh(spec: ThuyetMinhSpec) -> tuple[list[str], list[str]]:
         # (W) tỉ lệ NB-TH-VD(-VDC) trên lớp lệch chuẩn tầng
         if ratio_target and on_min > 0:
             band_min = dict(phieu_band_minutes(p, rates)["onclass"])   # gồm cả phút vẽ hình
+            muc = dict(ratio_target)
             if gop:      # Thầy chốt 30/08/2026: VD và VDC là MỘT khối, soi tổng
                 band_min["VD"] = band_min.get("VD", 0.0) + band_min.pop("VDC", 0.0)
-            for band, target in ratio_target.items():
+                # Gộp PHÚT thì phải gộp cả ĐÍCH: từ 04/09/2026 `tier_ratio` tách khối
+                # 55% thành VD 35 + VDC 20 theo tần suất chương, nên đích chưa gộp là
+                # sai mốc — chương nhóm cao nào cũng bị kêu oan.
+                muc["VD"] = muc.get("VD", 0) + muc.pop("VDC", 0)
+            for band, target in muc.items():
                 share = band_min.get(band, 0.0) / on_min * 100
                 if target == 0 and band_min.get(band, 0.0) == 0:
                     continue

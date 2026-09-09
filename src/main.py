@@ -382,6 +382,8 @@ def get_ca_prefix(lesson: LessonPackage | None = None, json_path: Path | str | N
     return "ca-01-"
 
 
+from src.exporters.ten_file import ten_ban_in
+
 _RENDERERS = {"handout": render_handout, "guide": render_guide, "slide": render_slide}
 
 
@@ -391,10 +393,11 @@ def _build_kinds(lesson: LessonPackage, kinds, out_root: Path, force: bool = Fal
     import shutil
     ca_pre = get_ca_prefix(lesson, json_path)
     def one(fn):
-        # CHỈ ghi một bản 'ca-NN-<loại>.pdf'. Trước 14/08/2026 còn copy thêm bản tên trơn
-        # ('handout.pdf') gọi là "legacy" ⇒ mỗi lần build ra HAI file y hệt nhau, Thầy mở
-        # thư mục thấy trùng. Không chỗ nào cần tên trơn: drive_sync chỉ quét 'ca-*-*.pdf'.
-        pdf = build_pdf(_RENDERERS[fn](lesson), slug=lesson.slug, filename=f"{ca_pre}{fn}",
+        # CHỈ ghi một bản. Trước 14/08/2026 còn copy thêm bản tên trơn ('handout.pdf')
+        # gọi là "legacy" ⇒ mỗi lần build ra HAI file y hệt nhau, Thầy mở thư mục thấy trùng.
+        # Tên file NÓI RA MÌNH LÀ BÀI GÌ (Thầy chốt 06/09/2026) — xem exporters/ten_file.
+        pdf = build_pdf(_RENDERERS[fn](lesson), slug=lesson.slug,
+                        filename=ten_ban_in(lesson, json_path, fn, ca_pre),
                         out_root=out_root, force=force)
         return fn, pdf
 
@@ -419,7 +422,9 @@ def cmd_build_handout(args: argparse.Namespace) -> int:
     if not _gate_before_build(lesson, getattr(args, "force", False), lesson_path=args.lesson):
         return 1
     ca_pre = get_ca_prefix(lesson, args.lesson)
-    pdf = build_pdf(render_handout(lesson), slug=lesson.slug, filename=f"{ca_pre}handout", out_root=_out_root(args.lesson))
+    pdf = build_pdf(render_handout(lesson), slug=lesson.slug,
+                    filename=ten_ban_in(lesson, args.lesson, "handout", ca_pre),
+                    out_root=_out_root(args.lesson))
     print(f"OK → {pdf}")
     return 0
 
@@ -429,7 +434,9 @@ def cmd_build_guide(args: argparse.Namespace) -> int:
     if not _gate_before_build(lesson, getattr(args, "force", False), lesson_path=args.lesson):
         return 1
     ca_pre = get_ca_prefix(lesson, args.lesson)
-    pdf = build_pdf(render_guide(lesson), slug=lesson.slug, filename=f"{ca_pre}guide", out_root=_out_root(args.lesson))
+    pdf = build_pdf(render_guide(lesson), slug=lesson.slug,
+                    filename=ten_ban_in(lesson, args.lesson, "guide", ca_pre),
+                    out_root=_out_root(args.lesson))
     print(f"OK → {pdf}")
     return 0
 
@@ -439,7 +446,9 @@ def cmd_build_slide(args: argparse.Namespace) -> int:
     if not _gate_before_build(lesson, getattr(args, "force", False), lesson_path=args.lesson):
         return 1
     ca_pre = get_ca_prefix(lesson, args.lesson)
-    pdf = build_pdf(render_slide(lesson), slug=lesson.slug, filename=f"{ca_pre}slide", out_root=_out_root(args.lesson))
+    pdf = build_pdf(render_slide(lesson), slug=lesson.slug,
+                    filename=ten_ban_in(lesson, args.lesson, "slide", ca_pre),
+                    out_root=_out_root(args.lesson))
     print(f"OK → {pdf}")
     return 0
 

@@ -44,16 +44,6 @@
     },
     {
      "type": "noted",
-     "variant": "example",
-     "text": "\\textbf{Ví dụ 1.} Điểm kiểm tra của 10 bạn: $7;8;9;8;7;8;10;9;8;7$. Lập bảng tần số.[[br]]\\textbf{Lời giải.}[[br]]\\quad Đếm số lần xuất hiện của từng điểm: điểm 7 có $3$ bạn, điểm 8 có $4$ bạn, điểm 9 có $2$ bạn, điểm 10 có $1$ bạn.[[br]]\\quad Bảng tần số gồm hai dòng: dòng \\emph{Điểm} ghi $7;8;9;10$; dòng \\emph{Số bạn} ghi $3;4;2;1$.[[br]]Vậy bảng tần số có các tần số lần lượt là $3;4;2;1$ (bạn)."
-    },
-    {
-     "type": "noted",
-     "variant": "example",
-     "text": "\\textbf{Ví dụ 2.} Tìm cỡ mẫu của bảng tần số ở Ví dụ 1.[[br]]\\textbf{Lời giải.}[[br]]\\quad Cỡ mẫu bằng tổng các tần số, ta có $N=3+4+2+1=10$.[[br]]\\quad Kết quả này đúng bằng số bạn đã khảo sát. Bảng có 4 cột nhưng cỡ mẫu là $10$, không phải $4$.[[br]]Vậy cỡ mẫu của bảng là $N=10$ (bạn)."
-    },
-    {
-     "type": "noted",
      "variant": "trap",
      "text": "\\textbf{Bẫy số 1 của cả chương.} Lấy SỐ CỘT của bảng làm cỡ mẫu. Bảng năm 2026 của Sở có 5 nhóm nhưng cỡ mẫu là $50$ — chia nhầm cho $5$ là mất trọn $1{,}0$ điểm."
     },
@@ -66,16 +56,6 @@
      "text": "Biểu đồ tần số có hai dạng: \\textbf{dạng cột} và \\textbf{dạng đoạn thẳng}.[[br]]$\\bullet$\\; Dạng cột: mỗi giá trị một cột, chiều cao cột bằng tần số, các cột RỜI nhau.[[br]]$\\bullet$\\; Dạng đoạn thẳng: đánh dấu điểm ở độ cao bằng tần số rồi nối liên tiếp — dạng này cho thấy XU HƯỚNG tăng hay giảm.[[br]]Cả hai dạng đều phải ghi đủ tên hai trục và đơn vị."
     },
     {
-     "type": "noted",
-     "variant": "example",
-     "text": "\\textbf{Ví dụ 3.} Đọc biểu đồ tần số dạng cột về số ô tô bán được năm 2023, chỉ ra tần số của xe 16 chỗ và tìm cỡ mẫu.\\par\\nopagebreak\\smallskip\\begin{center}\\adjustbox{max width=0.86\\linewidth}{\\begin{tikzpicture}[font=\\small,line width=0.7pt]\\draw[->,ink] (-0.25,0) -- (4.85,0) node[below,font=\\scriptsize,anchor=north west]{Loại xe};\\draw[->,ink] (-0.25,0) -- (-0.25,3.15) node[above,font=\\scriptsize]{Số xe};\\fill[stage2!20] (0.35,0) rectangle (0.97,2.40);\\draw[stage2] (0.35,0) rectangle (0.97,2.40);\\node[above,font=\\scriptsize] at (0.66,2.40) {35};\\node[below,font=\\scriptsize,align=center] at (0.66,0) {4 chỗ};\\fill[stage2!20] (1.45,0) rectangle (2.07,1.37);\\draw[stage2] (1.45,0) rectangle (2.07,1.37);\\node[above,font=\\scriptsize] at (1.76,1.37) {20};\\node[below,font=\\scriptsize,align=center] at (1.76,0) {7 chỗ};\\fill[stage2!20] (2.55,0) rectangle (3.17,1.03);\\draw[stage2] (2.55,0) rectangle (3.17,1.03);\\node[above,font=\\scriptsize] at (2.86,1.03) {15};\\node[below,font=\\scriptsize,align=center] at (2.86,0) {16 chỗ};\\fill[stage2!20] (3.65,0) rectangle (4.27,0.69);\\draw[stage2] (3.65,0) rectangle (4.27,0.69);\\node[above,font=\\scriptsize] at (3.96,0.69) {10};\\node[below,font=\\scriptsize,align=center] at (3.96,0) {trên\\\\16 chỗ};\\end{tikzpicture}}\\end{center}\\smallskip \\textbf{Lời giải.}[[br]]\\quad Cột \\emph{16 chỗ} cao tới vạch $15$ nên tần số của xe 16 chỗ là $15$.[[br]]\\quad Cột cao nhất là cột \\emph{4 chỗ}, ứng với tần số $35$.[[br]]\\quad Cỡ mẫu bằng tổng các tần số, ta có $N=35+20+15+10=80$.[[br]]Vậy xe 16 chỗ có tần số $15$ và cả năm cửa hàng bán $80$ ô tô."
-    },
-    {
-     "type": "noted",
-     "variant": "example",
-     "text": "\\textbf{Ví dụ 4.} Đọc biểu đồ tần số dạng đoạn thẳng dưới đây, cho biết số học sinh trung bình một lớp năm học 2017--2018 và xu hướng qua 5 năm.\\par\\nopagebreak\\smallskip\\begin{center}\\adjustbox{max width=0.86\\linewidth}{\\begin{tikzpicture}[font=\\small,line width=0.7pt]\\draw[->,ink] (-0.25,0) -- (7.20,0) node[below,font=\\scriptsize,anchor=north west]{Năm học};\\draw[->,ink] (-0.25,0) -- (-0.25,3.05) node[above,font=\\scriptsize]{Số học sinh};\\draw[stage1,line width=1pt] (0.50,0.75) -- (1.85,1.25) -- (3.20,1.50) -- (4.55,1.95) -- (5.90,2.30);\\fill[stage1] (0.50,0.75) circle (2pt);\\node[above,font=\\scriptsize] at (0.50,0.75) {33{,}5};\\node[below,font=\\scriptsize,align=center] at (0.50,0) {2015--\\\\2016};\\draw[ink!25,dashed] (0.50,0) -- (0.50,0.75);\\fill[stage1] (1.85,1.25) circle (2pt);\\node[above,font=\\scriptsize] at (1.85,1.25) {34{,}5};\\node[below,font=\\scriptsize,align=center] at (1.85,0) {2016--\\\\2017};\\draw[ink!25,dashed] (1.85,0) -- (1.85,1.25);\\fill[stage1] (3.20,1.50) circle (2pt);\\node[above,font=\\scriptsize] at (3.20,1.50) {35};\\node[below,font=\\scriptsize,align=center] at (3.20,0) {2017--\\\\2018};\\draw[ink!25,dashed] (3.20,0) -- (3.20,1.50);\\fill[stage1] (4.55,1.95) circle (2pt);\\node[above,font=\\scriptsize] at (4.55,1.95) {35{,}9};\\node[below,font=\\scriptsize,align=center] at (4.55,0) {2018--\\\\2019};\\draw[ink!25,dashed] (4.55,0) -- (4.55,1.95);\\fill[stage1] (5.90,2.30) circle (2pt);\\node[above,font=\\scriptsize] at (5.90,2.30) {36{,}6};\\node[below,font=\\scriptsize,align=center] at (5.90,0) {2019--\\\\2020};\\draw[ink!25,dashed] (5.90,0) -- (5.90,2.30);\\end{tikzpicture}}\\end{center}\\smallskip \\textbf{Lời giải.}[[br]]\\quad Điểm ứng với năm học 2017--2018 nằm ở độ cao $35$ nên số học sinh trung bình năm đó là $35$.[[br]]\\quad Đường gấp khúc đi lên từ $33{,}5$ đến $36{,}6$ nên số học sinh trung bình có xu hướng tăng.[[br]]Vậy năm học 2017--2018 có $35$ học sinh và xu hướng qua 5 năm là TĂNG."
-    },
-    {
      "type": "para",
      "text": "\\textbf{3. Tần số tương đối}"
     },
@@ -84,42 +64,12 @@
      "text": "\\textbf{Tần số tương đối} của một giá trị có tần số $m$ trong mẫu cỡ $N$ là[[br]]\\quad $f=\\dfrac{m}{N}\\cdot 100\\%$.[[br]]\\textbf{Bảng tần số tương đối} thay dòng tần số bằng dòng tần số tương đối.[[br]]\\textbf{Tổng các tần số tương đối của một bảng luôn bằng} $100\\%$."
     },
     {
-     "type": "noted",
-     "variant": "example",
-     "text": "\\textbf{Ví dụ 5.} Trong $80$ ô tô bán năm 2023 có $20$ xe 7 chỗ. Tính tần số tương đối của xe 7 chỗ.[[br]]\\textbf{Lời giải.}[[br]]\\quad Áp dụng công thức $f=\\dfrac{m}{N}\\cdot 100\\%$ với $m=20$ và $N=80$, ta có[[br]]\\quad $f=\\dfrac{20}{80}\\cdot 100\\% = 0{,}25\\cdot 100\\% = 25\\%$.[[br]]Vậy xe 7 chỗ chiếm $25\\%$ số ô tô bán được."
-    },
-    {
-     "type": "noted",
-     "variant": "example",
-     "text": "\\textbf{Ví dụ 6.} Lập trọn bảng tần số tương đối cho $80$ ô tô ($N=80$).[[br]]\\textbf{Lời giải.} Áp dụng $f=\\dfrac{m}{N}\\cdot 100\\%$ cho từng loại xe, ta có[[br]]\\quad xe 4 chỗ $\\dfrac{35}{80}\\cdot 100\\% = 43{,}75\\%$;\\quad xe 7 chỗ $25\\%$;[[br]]\\quad xe 16 chỗ $\\dfrac{15}{80}\\cdot 100\\% = 18{,}75\\%$;\\quad xe trên 16 chỗ $12{,}5\\%$.[[br]]\\textbf{Kiểm}: $43{,}75\\%+25\\%+18{,}75\\%+12{,}5\\% = 100\\%$.[[br]]Vậy bảng tần số tương đối lần lượt là $43{,}75\\%$; $25\\%$; $18{,}75\\%$; $12{,}5\\%$."
-    },
-    {
-     "type": "noted",
-     "variant": "example",
-     "text": "\\textbf{Ví dụ 7.} Chiều ngược lại: năm 2024 bán $240$ xe, xe 4 chỗ vẫn chiếm $43{,}75\\%$. Tính số xe 4 chỗ.[[br]]\\textbf{Lời giải.}[[br]]\\quad Từ $f=\\dfrac{m}{N}\\cdot 100\\%$ suy ra $m=N\\cdot f$, ta có[[br]]\\quad $m=240\\cdot 43{,}75\\% = 240\\cdot 0{,}4375 = 105$.[[br]]Vậy năm 2024 cửa hàng bán được $105$ xe 4 chỗ."
-    },
-    {
-     "type": "noted",
-     "variant": "example",
-     "text": "\\textbf{Ví dụ 8.} Một bảng tần số có $N=120$ và các tần số $28;\\;37;\\;30;\\;\\ldots;\\;15$. Tìm tần số còn thiếu.[[br]]\\textbf{Lời giải.}[[br]]\\quad Vì cỡ mẫu bằng tổng các tần số nên tần số còn thiếu bằng $N$ trừ đi tổng bốn tần số đã biết, ta có[[br]]\\quad $120-(28+37+30+15)=120-110=10$.[[br]]Vậy tần số còn thiếu là $10$."
-    },
-    {
      "type": "para",
      "text": "\\textbf{4. Biểu đồ tần số tương đối}"
     },
     {
      "type": "para",
      "text": "Biểu đồ tần số tương đối có hai dạng: \\textbf{dạng cột} và \\textbf{dạng quạt tròn}.[[br]]Trong biểu đồ quạt tròn, hình quạt ứng với tần số tương đối $f$ có \\textbf{góc ở tâm} bằng $f\\cdot 360^\\circ$.[[br]]Tổng bốn góc ở tâm phải bằng $360^\\circ$ — đó là phép kiểm khi vẽ."
-    },
-    {
-     "type": "noted",
-     "variant": "example",
-     "text": "\\textbf{Ví dụ 9.} Tính góc ở tâm của hình quạt ứng với $f=25\\%$ và $f=12{,}5\\%$.[[br]]\\textbf{Lời giải.}[[br]]\\quad Áp dụng công thức góc ở tâm $=f\\cdot 360^\\circ$, ta có[[br]]\\quad $25\\%\\cdot 360^\\circ = 0{,}25\\cdot 360^\\circ = 90^\\circ$;\\quad $12{,}5\\%\\cdot 360^\\circ = 0{,}125\\cdot 360^\\circ = 45^\\circ$.[[br]]Vậy hai góc ở tâm cần tìm là $90^\\circ$ và $45^\\circ$."
-    },
-    {
-     "type": "noted",
-     "variant": "example",
-     "text": "\\textbf{Ví dụ 10.} Vẽ biểu đồ tần số tương đối dạng quạt tròn cho bảng ô tô ở Ví dụ 6.[[br]]\\textbf{Lời giải.} Áp dụng góc ở tâm $=f\\cdot 360^\\circ$, ta có $157{,}5^\\circ$; $90^\\circ$; $67{,}5^\\circ$; $45^\\circ$, cộng lại đúng $360^\\circ$ nên chia hình tròn theo bốn góc đó.\\par\\nopagebreak\\smallskip\\begin{center}\\adjustbox{max width=0.86\\linewidth}{\\begin{tikzpicture}[font=\\small,line width=0.7pt]\\filldraw[stage2!25,draw=stage2] (0,0) -- (90.00:1.5) arc (90.00:-67.50:1.5) -- cycle;\\node[font=\\scriptsize] at (11.25:0.93) {43{,}75\\%};\\node[font=\\scriptsize,align=center] at (11.25:2.25) {4 chỗ};\\filldraw[stage3!25,draw=stage3] (0,0) -- (-67.50:1.5) arc (-67.50:-157.50:1.5) -- cycle;\\node[font=\\scriptsize] at (-112.50:0.93) {25\\%};\\node[font=\\scriptsize,align=center] at (-112.50:2.25) {7 chỗ};\\filldraw[stage1!25,draw=stage1] (0,0) -- (-157.50:1.5) arc (-157.50:-225.00:1.5) -- cycle;\\node[font=\\scriptsize] at (-191.25:0.93) {18{,}75\\%};\\node[font=\\scriptsize,align=center] at (-191.25:2.25) {16 chỗ};\\filldraw[brand!25,draw=brand] (0,0) -- (-225.00:1.5) arc (-225.00:-270.00:1.5) -- cycle;\\node[font=\\scriptsize] at (-247.50:0.93) {12{,}5\\%};\\node[font=\\scriptsize,align=center] at (-247.50:2.25) {trên 16 chỗ};\\end{tikzpicture}}\\end{center}\\smallskip Vậy biểu đồ quạt tròn gồm bốn hình quạt có góc ở tâm $157{,}5^\\circ$; $90^\\circ$; $67{,}5^\\circ$ và $45^\\circ$."
     },
     {
      "type": "noted",
@@ -135,6 +85,11 @@
    "teacher_note": "Luyện 48 phút. Bài 1--5 chữa miệng thật nhanh, mỗi bài 2 phút. Bài 3 ý b) bắt HS nói thành lời \\emph{cỡ mẫu là tổng tần số} — đây là lỗi mất điểm số một. Bài 7 cho HS làm một mình 3 phút rồi gọi lên bảng điền; ý c) phải cộng ra đúng $100\\%$ mới cho ngồi xuống.",
    "blocks": [
     {
+     "type": "noted",
+     "variant": "example",
+     "text": "\\textbf{Ví dụ 1.} Điểm kiểm tra của 10 bạn: $7;8;9;8;7;8;10;9;8;7$. Lập bảng tần số.[[br]]\\textbf{Lời giải.}[[br]]\\quad Đếm số lần xuất hiện của từng điểm: điểm 7 có $3$ bạn, điểm 8 có $4$ bạn, điểm 9 có $2$ bạn, điểm 10 có $1$ bạn.[[br]]\\quad Bảng tần số gồm hai dòng: dòng \\emph{Điểm} ghi $7;8;9;10$; dòng \\emph{Số bạn} ghi $3;4;2;1$.[[br]]Vậy bảng tần số có các tần số lần lượt là $3;4;2;1$ (bạn)."
+    },
+    {
      "type": "problem",
      "label": "Bài 1.",
      "statement": "Bảng tần số sau cho biết cỡ giày của các bạn nam khối 9 một trường \\;(bộ đề Vào 10, Phòng GD\\&ĐT Đống Đa).\\par\\nopagebreak\\smallskip\\begin{center}\\footnotesize\\renewcommand\\arraystretch{1.25}\\begin{tabular}{|l|c|c|c|c|c|}\\hline \\textbf{Cỡ giày} & \\textbf{36} & \\textbf{37} & \\textbf{38} & \\textbf{39} & \\textbf{40} \\\\ \\hline Số bạn & 28 & 37 & 30 & 10 & 15 \\\\ \\hline \\end{tabular}\\end{center}\\smallskip a) [NB] Tần số của cỡ giày 38 là bao nhiêu?[[br]]b) [NB] Cỡ giày nào có tần số lớn nhất?[[br]]c) [NB] Cộng cả bảng để tìm cỡ mẫu $N$.",
@@ -143,6 +98,11 @@
      "solution": "a) Tần số của cỡ giày 38 là $30$.[[br]]b) Cỡ giày 37 có tần số lớn nhất ($37$ bạn).[[br]]c) $N=28+37+30+10+15=120$ (bạn).",
      "dang_id": "NB1",
      "writelines": 0
+    },
+    {
+     "type": "noted",
+     "variant": "example",
+     "text": "\\textbf{Ví dụ 2.} Tìm cỡ mẫu của bảng tần số ở Ví dụ 1.[[br]]\\textbf{Lời giải.}[[br]]\\quad Cỡ mẫu bằng tổng các tần số, ta có $N=3+4+2+1=10$.[[br]]\\quad Kết quả này đúng bằng số bạn đã khảo sát. Bảng có 4 cột nhưng cỡ mẫu là $10$, không phải $4$.[[br]]Vậy cỡ mẫu của bảng là $N=10$ (bạn)."
     },
     {
      "type": "problem",
@@ -165,6 +125,11 @@
      "writelines": 0
     },
     {
+     "type": "noted",
+     "variant": "example",
+     "text": "\\textbf{Ví dụ 3.} Đọc biểu đồ tần số dạng cột về số ô tô bán được năm 2023, chỉ ra tần số của xe 16 chỗ và tìm cỡ mẫu.\\par\\nopagebreak\\smallskip\\begin{center}\\adjustbox{max width=0.86\\linewidth}{\\begin{tikzpicture}[font=\\small,line width=0.7pt]\\draw[->,ink] (-0.25,0) -- (4.85,0) node[below,font=\\scriptsize,anchor=north west]{Loại xe};\\draw[->,ink] (-0.25,0) -- (-0.25,3.15) node[above,font=\\scriptsize]{Số xe};\\fill[stage2!20] (0.35,0) rectangle (0.97,2.40);\\draw[stage2] (0.35,0) rectangle (0.97,2.40);\\node[above,font=\\scriptsize] at (0.66,2.40) {35};\\node[below,font=\\scriptsize,align=center] at (0.66,0) {4 chỗ};\\fill[stage2!20] (1.45,0) rectangle (2.07,1.37);\\draw[stage2] (1.45,0) rectangle (2.07,1.37);\\node[above,font=\\scriptsize] at (1.76,1.37) {20};\\node[below,font=\\scriptsize,align=center] at (1.76,0) {7 chỗ};\\fill[stage2!20] (2.55,0) rectangle (3.17,1.03);\\draw[stage2] (2.55,0) rectangle (3.17,1.03);\\node[above,font=\\scriptsize] at (2.86,1.03) {15};\\node[below,font=\\scriptsize,align=center] at (2.86,0) {16 chỗ};\\fill[stage2!20] (3.65,0) rectangle (4.27,0.69);\\draw[stage2] (3.65,0) rectangle (4.27,0.69);\\node[above,font=\\scriptsize] at (3.96,0.69) {10};\\node[below,font=\\scriptsize,align=center] at (3.96,0) {trên\\\\16 chỗ};\\end{tikzpicture}}\\end{center}\\smallskip \\textbf{Lời giải.}[[br]]\\quad Cột \\emph{16 chỗ} cao tới vạch $15$ nên tần số của xe 16 chỗ là $15$.[[br]]\\quad Cột cao nhất là cột \\emph{4 chỗ}, ứng với tần số $35$.[[br]]\\quad Cỡ mẫu bằng tổng các tần số, ta có $N=35+20+15+10=80$.[[br]]Vậy xe 16 chỗ có tần số $15$ và cả năm cửa hàng bán $80$ ô tô."
+    },
+    {
      "type": "problem",
      "label": "Bài 4.",
      "statement": "Biểu đồ tần số dạng cột dưới đây cho biết số lượng từng loại ô tô một cửa hàng bán được trong năm 2023 \\;(bộ đề Vào 10, Phòng GD\\&ĐT Đống Đa).\\par\\nopagebreak\\smallskip\\begin{center}\\adjustbox{max width=0.86\\linewidth}{\\begin{tikzpicture}[font=\\small,line width=0.7pt]\\draw[->,ink] (-0.25,0) -- (5.65,0) node[below,font=\\scriptsize,anchor=north west]{Loại xe};\\draw[->,ink] (-0.25,0) -- (-0.25,3.95) node[above,font=\\scriptsize]{Số xe};\\fill[stage2!20] (0.35,0) rectangle (0.97,3.20);\\draw[stage2] (0.35,0) rectangle (0.97,3.20);\\node[above,font=\\scriptsize] at (0.66,3.20) {35};\\node[below,font=\\scriptsize,align=center] at (0.66,0) {4 chỗ};\\fill[stage2!20] (1.65,0) rectangle (2.27,1.83);\\draw[stage2] (1.65,0) rectangle (2.27,1.83);\\node[above,font=\\scriptsize] at (1.96,1.83) {20};\\node[below,font=\\scriptsize,align=center] at (1.96,0) {7 chỗ};\\fill[stage2!20] (2.95,0) rectangle (3.57,1.37);\\draw[stage2] (2.95,0) rectangle (3.57,1.37);\\node[above,font=\\scriptsize] at (3.26,1.37) {15};\\node[below,font=\\scriptsize,align=center] at (3.26,0) {16 chỗ};\\fill[stage2!20] (4.25,0) rectangle (4.87,0.91);\\draw[stage2] (4.25,0) rectangle (4.87,0.91);\\node[above,font=\\scriptsize] at (4.56,0.91) {10};\\node[below,font=\\scriptsize,align=center] at (4.56,0) {trên\\\\16 chỗ};\\end{tikzpicture}}\\end{center}\\smallskip a) [NB] Tần số của loại xe 7 chỗ là bao nhiêu?[[br]]b) [NB] Loại xe nào có tần số lớn nhất, loại nào có tần số nhỏ nhất?[[br]]c) [NB] Cả năm 2023 cửa hàng bán được tất cả bao nhiêu ô tô?",
@@ -173,6 +138,11 @@
      "solution": "a) Tần số của loại xe 7 chỗ là $20$.[[br]]b) Lớn nhất là xe 4 chỗ ($35$ xe); nhỏ nhất là xe trên 16 chỗ ($10$ xe).[[br]]c) $N=35+20+15+10=80$ (xe).",
      "dang_id": "NB4",
      "writelines": 0
+    },
+    {
+     "type": "noted",
+     "variant": "example",
+     "text": "\\textbf{Ví dụ 4.} Đọc biểu đồ tần số dạng đoạn thẳng dưới đây, cho biết số học sinh trung bình một lớp năm học 2017--2018 và xu hướng qua 5 năm.\\par\\nopagebreak\\smallskip\\begin{center}\\adjustbox{max width=0.86\\linewidth}{\\begin{tikzpicture}[font=\\small,line width=0.7pt]\\draw[->,ink] (-0.25,0) -- (7.20,0) node[below,font=\\scriptsize,anchor=north west]{Năm học};\\draw[->,ink] (-0.25,0) -- (-0.25,3.05) node[above,font=\\scriptsize]{Số học sinh};\\draw[stage1,line width=1pt] (0.50,0.75) -- (1.85,1.25) -- (3.20,1.50) -- (4.55,1.95) -- (5.90,2.30);\\fill[stage1] (0.50,0.75) circle (2pt);\\node[above,font=\\scriptsize] at (0.50,0.75) {33{,}5};\\node[below,font=\\scriptsize,align=center] at (0.50,0) {2015--\\\\2016};\\draw[ink!25,dashed] (0.50,0) -- (0.50,0.75);\\fill[stage1] (1.85,1.25) circle (2pt);\\node[above,font=\\scriptsize] at (1.85,1.25) {34{,}5};\\node[below,font=\\scriptsize,align=center] at (1.85,0) {2016--\\\\2017};\\draw[ink!25,dashed] (1.85,0) -- (1.85,1.25);\\fill[stage1] (3.20,1.50) circle (2pt);\\node[above,font=\\scriptsize] at (3.20,1.50) {35};\\node[below,font=\\scriptsize,align=center] at (3.20,0) {2017--\\\\2018};\\draw[ink!25,dashed] (3.20,0) -- (3.20,1.50);\\fill[stage1] (4.55,1.95) circle (2pt);\\node[above,font=\\scriptsize] at (4.55,1.95) {35{,}9};\\node[below,font=\\scriptsize,align=center] at (4.55,0) {2018--\\\\2019};\\draw[ink!25,dashed] (4.55,0) -- (4.55,1.95);\\fill[stage1] (5.90,2.30) circle (2pt);\\node[above,font=\\scriptsize] at (5.90,2.30) {36{,}6};\\node[below,font=\\scriptsize,align=center] at (5.90,0) {2019--\\\\2020};\\draw[ink!25,dashed] (5.90,0) -- (5.90,2.30);\\end{tikzpicture}}\\end{center}\\smallskip \\textbf{Lời giải.}[[br]]\\quad Điểm ứng với năm học 2017--2018 nằm ở độ cao $35$ nên số học sinh trung bình năm đó là $35$.[[br]]\\quad Đường gấp khúc đi lên từ $33{,}5$ đến $36{,}6$ nên số học sinh trung bình có xu hướng tăng.[[br]]Vậy năm học 2017--2018 có $35$ học sinh và xu hướng qua 5 năm là TĂNG."
     },
     {
      "type": "problem",
@@ -253,6 +223,11 @@
    "teacher_note": "Luyện 48 phút, gọi HS lên bảng theo cặp. Bài 12 ý b) cố ý cho tổng ra $99{,}99\\%$ để HS thấy chênh do LÀM TRÒN chứ không phải sai — nói rõ chỗ này kẻo buổi sau HS tưởng mình tính hỏng. Bài 14 cho vẽ vào vở, Thầy đi từng bàn soi tên trục. Bài 17 là khuôn ước lượng, dạng vận dụng duy nhất của chương.",
    "blocks": [
     {
+     "type": "noted",
+     "variant": "example",
+     "text": "\\textbf{Ví dụ 5.} Trong $80$ ô tô bán năm 2023 có $20$ xe 7 chỗ. Tính tần số tương đối của xe 7 chỗ.[[br]]\\textbf{Lời giải.}[[br]]\\quad Áp dụng công thức $f=\\dfrac{m}{N}\\cdot 100\\%$ với $m=20$ và $N=80$, ta có[[br]]\\quad $f=\\dfrac{20}{80}\\cdot 100\\% = 0{,}25\\cdot 100\\% = 25\\%$.[[br]]Vậy xe 7 chỗ chiếm $25\\%$ số ô tô bán được."
+    },
+    {
      "type": "problem",
      "label": "Bài 12.",
      "statement": "Cho biểu đồ tần số dạng cột về cỡ giày của các bạn nam khối 9 \\;(bộ đề Vào 10, Phòng GD\\&ĐT Đống Đa).\\par\\nopagebreak\\smallskip\\begin{center}\\adjustbox{max width=0.86\\linewidth}{\\begin{tikzpicture}[font=\\small,line width=0.7pt]\\draw[->,ink] (-0.25,0) -- (6.95,0) node[below,font=\\scriptsize,anchor=north west]{Cỡ giày};\\draw[->,ink] (-0.25,0) -- (-0.25,3.95) node[above,font=\\scriptsize]{Số bạn};\\fill[stage2!20] (0.35,0) rectangle (0.97,2.42);\\draw[stage2] (0.35,0) rectangle (0.97,2.42);\\node[above,font=\\scriptsize] at (0.66,2.42) {28};\\node[below,font=\\scriptsize,align=center] at (0.66,0) {36};\\fill[stage2!20] (1.65,0) rectangle (2.27,3.20);\\draw[stage2] (1.65,0) rectangle (2.27,3.20);\\node[above,font=\\scriptsize] at (1.96,3.20) {37};\\node[below,font=\\scriptsize,align=center] at (1.96,0) {37};\\fill[stage2!20] (2.95,0) rectangle (3.57,2.59);\\draw[stage2] (2.95,0) rectangle (3.57,2.59);\\node[above,font=\\scriptsize] at (3.26,2.59) {30};\\node[below,font=\\scriptsize,align=center] at (3.26,0) {38};\\fill[stage2!20] (4.25,0) rectangle (4.87,0.86);\\draw[stage2] (4.25,0) rectangle (4.87,0.86);\\node[above,font=\\scriptsize] at (4.56,0.86) {10};\\node[below,font=\\scriptsize,align=center] at (4.56,0) {39};\\fill[stage2!20] (5.55,0) rectangle (6.17,1.30);\\draw[stage2] (5.55,0) rectangle (6.17,1.30);\\node[above,font=\\scriptsize] at (5.86,1.30) {15};\\node[below,font=\\scriptsize,align=center] at (5.86,0) {40};\\end{tikzpicture}}\\end{center}\\smallskip a) [TH] Lập bảng tần số cho dữ liệu được biểu diễn trên biểu đồ.[[br]]b) [TH] Lập bảng tần số tương đối (làm tròn đến hàng phần trăm).",
@@ -261,6 +236,11 @@
      "solution": "a) Đọc chiều cao từng cột, ta có bảng tần số: cỡ 36 -- $28$; cỡ 37 -- $37$; cỡ 38 -- $30$; cỡ 39 -- $10$; cỡ 40 -- $15$.[[br]]Cỡ mẫu bằng tổng các tần số: $N=28+37+30+10+15=120$ (bạn).[[br]]b) $f_{36}=\\dfrac{28}{120}\\cdot 100\\% \\approx 23{,}33\\%$; $f_{37}=\\dfrac{37}{120}\\cdot 100\\% \\approx 30{,}83\\%$; $f_{38}=\\dfrac{30}{120}\\cdot 100\\% = 25\\%$;[[br]]$f_{39}=\\dfrac{10}{120}\\cdot 100\\% \\approx 8{,}33\\%$; $f_{40}=\\dfrac{15}{120}\\cdot 100\\% = 12{,}5\\%$.[[br]]Cộng lại được $99{,}99\\% \\approx 100\\%$ — chênh $0{,}01\\%$ là do làm tròn, không phải do tính sai.[[br]]Vậy cỡ mẫu là $120$ bạn và bảng tần số tương đối lần lượt là $23{,}33\\%$; $30{,}83\\%$; $25\\%$; $8{,}33\\%$; $12{,}5\\%$.",
      "dang_id": "TH1",
      "writelines": 0
+    },
+    {
+     "type": "noted",
+     "variant": "example",
+     "text": "\\textbf{Ví dụ 6.} Lập trọn bảng tần số tương đối cho $80$ ô tô ($N=80$).[[br]]\\textbf{Lời giải.} Áp dụng $f=\\dfrac{m}{N}\\cdot 100\\%$ cho từng loại xe, ta có[[br]]\\quad xe 4 chỗ $\\dfrac{35}{80}\\cdot 100\\% = 43{,}75\\%$;\\quad xe 7 chỗ $25\\%$;[[br]]\\quad xe 16 chỗ $\\dfrac{15}{80}\\cdot 100\\% = 18{,}75\\%$;\\quad xe trên 16 chỗ $12{,}5\\%$.[[br]]\\textbf{Kiểm}: $43{,}75\\%+25\\%+18{,}75\\%+12{,}5\\% = 100\\%$.[[br]]Vậy bảng tần số tương đối lần lượt là $43{,}75\\%$; $25\\%$; $18{,}75\\%$; $12{,}5\\%$."
     },
     {
      "type": "problem",
@@ -273,6 +253,11 @@
      "writelines": 0
     },
     {
+     "type": "noted",
+     "variant": "example",
+     "text": "\\textbf{Ví dụ 7.} Chiều ngược lại: năm 2024 bán $240$ xe, xe 4 chỗ vẫn chiếm $43{,}75\\%$. Tính số xe 4 chỗ.[[br]]\\textbf{Lời giải.}[[br]]\\quad Từ $f=\\dfrac{m}{N}\\cdot 100\\%$ suy ra $m=N\\cdot f$, ta có[[br]]\\quad $m=240\\cdot 43{,}75\\% = 240\\cdot 0{,}4375 = 105$.[[br]]Vậy năm 2024 cửa hàng bán được $105$ xe 4 chỗ."
+    },
+    {
      "type": "problem",
      "label": "Bài 14.",
      "statement": "Cho bảng tần số điểm kiểm tra của 20 bạn ở Bài 2.\\par\\nopagebreak\\smallskip\\begin{center}\\footnotesize\\renewcommand\\arraystretch{1.25}\\begin{tabular}{|l|c|c|c|c|}\\hline \\textbf{Điểm} & \\textbf{7} & \\textbf{8} & \\textbf{9} & \\textbf{10} \\\\ \\hline Số bạn & 5 & 7 & 5 & 3 \\\\ \\hline \\end{tabular}\\end{center}\\smallskip a) [TH] Vẽ biểu đồ tần số dạng cột cho bảng trên (ghi đủ tên hai trục và đơn vị).[[br]]b) [TH] Vẽ biểu đồ tần số dạng đoạn thẳng cho cùng bảng đó.",
@@ -281,6 +266,11 @@
      "solution": "a) Vì chiều cao mỗi cột bằng tần số nên trục ngang ghi các điểm $7;8;9;10$, trục đứng ghi \\emph{Số bạn}.[[br]]Bốn cột RỜI nhau, chiều cao lần lượt $5;7;5;3$; ghi số ngay trên mỗi cột.[[br]]b) Giữ nguyên hai trục, ta có bốn điểm ở độ cao $5;7;5;3$; nối liên tiếp bằng các đoạn thẳng được biểu đồ dạng đoạn thẳng.[[br]]Vậy hai biểu đồ đều có bốn giá trị với tần số $5;7;5;3$ (bạn).",
      "dang_id": "TH3",
      "writelines": 0
+    },
+    {
+     "type": "noted",
+     "variant": "example",
+     "text": "\\textbf{Ví dụ 8.} Một bảng tần số có $N=120$ và các tần số $28;\\;37;\\;30;\\;\\ldots;\\;15$. Tìm tần số còn thiếu.[[br]]\\textbf{Lời giải.}[[br]]\\quad Vì cỡ mẫu bằng tổng các tần số nên tần số còn thiếu bằng $N$ trừ đi tổng bốn tần số đã biết, ta có[[br]]\\quad $120-(28+37+30+15)=120-110=10$.[[br]]Vậy tần số còn thiếu là $10$."
     },
     {
      "type": "problem",
@@ -293,6 +283,11 @@
      "writelines": 0
     },
     {
+     "type": "noted",
+     "variant": "example",
+     "text": "\\textbf{Ví dụ 9.} Tính góc ở tâm của hình quạt ứng với $f=25\\%$ và $f=12{,}5\\%$.[[br]]\\textbf{Lời giải.}[[br]]\\quad Áp dụng công thức góc ở tâm $=f\\cdot 360^\\circ$, ta có[[br]]\\quad $25\\%\\cdot 360^\\circ = 0{,}25\\cdot 360^\\circ = 90^\\circ$;\\quad $12{,}5\\%\\cdot 360^\\circ = 0{,}125\\cdot 360^\\circ = 45^\\circ$.[[br]]Vậy hai góc ở tâm cần tìm là $90^\\circ$ và $45^\\circ$."
+    },
+    {
      "type": "problem",
      "label": "Bài 16.",
      "statement": "[VD] Điểm kiểm tra giữa học kì môn Toán của 25 học sinh lớp 9B được ghi lại như sau:[[br]]\\quad $6;\\;7;\\;8;\\;7;\\;9;\\;8;\\;7;\\;6;\\;8;\\;9;\\;10;\\;8;\\;7;\\;8;\\;9;\\;7;\\;8;\\;6;\\;9;\\;8;\\;10;\\;7;\\;8;\\;9;\\;8$[[br]]a) Lập bảng tần số và bảng tần số tương đối cho mẫu số liệu trên.[[br]]b) Kiểm lại hai điều kiện: tổng các tần số bằng cỡ mẫu và tổng các tần số tương đối bằng $100\\%$.[[br]]c) Lớp 9B có bao nhiêu phần trăm học sinh đạt từ $8$ điểm trở lên?",
@@ -301,6 +296,11 @@
      "solution": "a) Đếm số lần xuất hiện của từng điểm, ta có tần số: điểm 6 -- $3$; điểm 7 -- $6$; điểm 8 -- $9$; điểm 9 -- $5$; điểm 10 -- $2$.[[br]]Cỡ mẫu $N=3+6+9+5+2=25$ (học sinh).[[br]]Tần số tương đối: $\\dfrac{3}{25}\\cdot 100\\%=12\\%$; $\\dfrac{6}{25}\\cdot 100\\%=24\\%$; $\\dfrac{9}{25}\\cdot 100\\%=36\\%$; $\\dfrac{5}{25}\\cdot 100\\%=20\\%$; $\\dfrac{2}{25}\\cdot 100\\%=8\\%$.[[br]]b) $3+6+9+5+2=25$ đúng bằng cỡ mẫu; $12\\%+24\\%+36\\%+20\\%+8\\%=100\\%$.[[br]]c) Từ $8$ điểm trở lên gồm ba nhóm điểm $8$, $9$, $10$: $36\\%+20\\%+8\\%=64\\%$.[[br]]Vậy có $64\\%$ học sinh lớp 9B đạt từ $8$ điểm trở lên.",
      "dang_id": "VD1",
      "writelines": 0
+    },
+    {
+     "type": "noted",
+     "variant": "example",
+     "text": "\\textbf{Ví dụ 10.} Vẽ biểu đồ tần số tương đối dạng quạt tròn cho bảng ô tô ở Ví dụ 6.[[br]]\\textbf{Lời giải.} Áp dụng góc ở tâm $=f\\cdot 360^\\circ$, ta có $157{,}5^\\circ$; $90^\\circ$; $67{,}5^\\circ$; $45^\\circ$, cộng lại đúng $360^\\circ$ nên chia hình tròn theo bốn góc đó.\\par\\nopagebreak\\smallskip\\begin{center}\\adjustbox{max width=0.86\\linewidth}{\\begin{tikzpicture}[font=\\small,line width=0.7pt]\\filldraw[stage2!25,draw=stage2] (0,0) -- (90.00:1.5) arc (90.00:-67.50:1.5) -- cycle;\\node[font=\\scriptsize] at (11.25:0.93) {43{,}75\\%};\\node[font=\\scriptsize,align=center] at (11.25:2.25) {4 chỗ};\\filldraw[stage3!25,draw=stage3] (0,0) -- (-67.50:1.5) arc (-67.50:-157.50:1.5) -- cycle;\\node[font=\\scriptsize] at (-112.50:0.93) {25\\%};\\node[font=\\scriptsize,align=center] at (-112.50:2.25) {7 chỗ};\\filldraw[stage1!25,draw=stage1] (0,0) -- (-157.50:1.5) arc (-157.50:-225.00:1.5) -- cycle;\\node[font=\\scriptsize] at (-191.25:0.93) {18{,}75\\%};\\node[font=\\scriptsize,align=center] at (-191.25:2.25) {16 chỗ};\\filldraw[brand!25,draw=brand] (0,0) -- (-225.00:1.5) arc (-225.00:-270.00:1.5) -- cycle;\\node[font=\\scriptsize] at (-247.50:0.93) {12{,}5\\%};\\node[font=\\scriptsize,align=center] at (-247.50:2.25) {trên 16 chỗ};\\end{tikzpicture}}\\end{center}\\smallskip Vậy biểu đồ quạt tròn gồm bốn hình quạt có góc ở tâm $157{,}5^\\circ$; $90^\\circ$; $67{,}5^\\circ$ và $45^\\circ$."
     },
     {
      "type": "problem",

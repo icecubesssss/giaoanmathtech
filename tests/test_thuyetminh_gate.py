@@ -225,3 +225,25 @@ def test_phieu_on_tap_chuong_phai_co_bai_viet_lai_quy_trinh():
     s.phieu[0].title = "Luyện tập chung và Bài tập cuối chương IV"
     e, _ = check_thuyetminh(s)
     assert any("viet_quy_trinh" in x for x in e)
+
+
+def test_so_cau_nb_co_gian_theo_quy_khi_phieu_gop_2_ca():
+    """Chương không có VD-VDC: đích số câu NB tính theo QUỸ chứ không đóng cứng ở 10.
+
+    Thầy chốt "5 dạng × 2 câu = 10 câu" cho buổi quỹ onclass 60′. Phiếu lớp 9 đại số
+    GỘP 2 CA có quỹ 240′ nên đích là 30% × 240′ ÷ 1,5′ = 48 câu, chia 16–24 dạng
+    (2–3 câu mỗi dạng). Giữ 10 câu ở phiếu 2 ca là NB chỉ còn 6% quỹ."""
+    dung = [SpecRow(dang=f"NB dạng {i}", band="NB", loai="NB lẻ LT", onclass=3)
+            for i in range(16)]
+    dung.append(SpecRow(dang="lập bảng tần số", band="TH", loai="TH lẻ LT",
+                        source_refs=["nguon-test"], onclass=28))
+    _, w = check_thuyetminh(_spec_b(dung, _CH8, so_ca=2, subject="dai-so"))
+    assert not [m for m in w if "NHẬN BIẾT" in m], w
+
+    thieu = [SpecRow(dang=f"NB dạng {i}", band="NB", loai="NB lẻ LT", onclass=2)
+             for i in range(5)]
+    thieu.append(SpecRow(dang="lập bảng tần số", band="TH", loai="TH lẻ LT",
+                         source_refs=["nguon-test"], onclass=28))
+    _, w2 = check_thuyetminh(_spec_b(thieu, _CH8, so_ca=2, subject="dai-so"))
+    assert any("đích là 48 câu" in m for m in w2), w2
+    assert any("16–24 dạng" in m for m in w2), w2

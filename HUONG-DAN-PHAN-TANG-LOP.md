@@ -83,7 +83,7 @@ Chỉ lấy từ ngân hàng đề **không đủ dạng** để dẫn dắt sca
 **Trình bày (rút từ góp ý của Thầy):**
 - Bài có **nhiều ý nhỏ a),b),c)…** dàn **2 cột** cho gọn — dùng `\begin{minipage}[t]{0.47\linewidth} … [[br]] … \end{minipage}\hfill\begin{minipage}[t]{0.47\linewidth} … \end{minipage}` trong block `para` (minipage qua được sanitizer; [[br]] vẫn xuống dòng trong minipage).
 - **Hình minh hoạ KHÔNG được lộ đáp án** ô điền (vd opener thang máy chỉ ghi `630 kg`, không ghi `≤630`).
-- Hộp **"VÍ DỤ MẪU"** (`variant:"example"`) chỉ dán lên **ví dụ thật**; định nghĩa/quy tắc để hộp thường (`variant:""`).
+- Hộp **"VÍ DỤ MẪU"** (`variant:"example"`) chỉ dán lên **ví dụ thật**; định nghĩa/quy tắc để hộp thường (`variant:""`). **Vị trí (Thầy chốt 08/09/2026):** Không dồn ở Chặng 2 (Lý thuyết) mà đưa xuống Chặng 3 & 4 (Luyện tập 1, 2) đặt song song ngay trước nhóm bài tập của dạng đó để GV giảng mẫu $\to$ HS áp dụng làm ngay.
 - Ví dụ giải: bước biến đổi nói **"chuyển vế đổi dấu"** (đừng máy móc "cộng … vào hai vế"); câu **"Vậy nghiệm …"** xuống dòng riêng (`[[br]]`).
 - Chấm sao theo **mức nhận thức TỪNG CÂU** (giải BPT 1 bước là TH ★★☆, không phải NB).
 

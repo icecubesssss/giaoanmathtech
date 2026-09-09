@@ -1,0 +1,651 @@
+{
+ "_nguon": "Tiến độ trung tâm lớp 9 đại số: tuần 9 (Bất đẳng thức), tuần 10 và 11 (Bất phương trình bậc nhất một ẩn), tuần 12 (Ôn tập chương bất đẳng thức và bất phương trình). Tài liệu gốc: nguon-pdf của chương.",
+ "_luat": "Soạn theo HUONG-DAN-SOAN-PHIEU-B.md. Chương II lớp 9 có $p = 0{,}71$ (15/21 đề GK1-CK1 kết thúc bằng bài cực trị) $\\Rightarrow$ nhóm CAO: NB 15 / TH 30 / VD 35 / VDC 20, trần điểm \\textbf{10,0}, mục tiêu \\texttt{an-tron} (kì I dạy HẾT, kể cả câu 0,5 điểm cuối đề), mỗi phiếu một buổi.",
+ "_cam": "CẤM dùng căn bậc hai (học ở tuần 16, SAU chương này) và CẤM Cô-si ba số. Mọi bài cực trị giải bằng hằng đẳng thức $(x-a)^2 \\ge 0$; nếu phải dùng Cô-si hai số thì viết dưới dạng xét hiệu ra bình phương, KHÔNG gọi tên Cô-si vì không có trong SGK lớp 9.",
+ "slug": "thuyet-minh-lop-9b-chuong-02-bat-dang-thuc-bat-phuong-trinh",
+ "title": "Chương II. Bất đẳng thức và bất phương trình bậc nhất một ẩn (tuần 9 $-$ 12)",
+ "grade": "lop-9",
+ "subject": "dai-so",
+ "tier": "B",
+ "tuan": "9-12",
+ "chuong": "chuong-02-bat-dang-thuc-bat-phuong-trinh",
+ "thoiluong": [
+  "Buổi 1 (tuần 9 — Bài 3. Bất đẳng thức và tính chất): 1 ca $=$ 180 phút.",
+  "Buổi 2 (tuần 10 — Bài 4. Bất phương trình bậc nhất một ẩn): 1 ca $=$ 180 phút.",
+  "Buổi 3 (tuần 11 — Bất phương trình quy về bậc nhất và bài toán thực tế): 1 ca $=$ 180 phút.",
+  "Buổi 4 (tuần 12 — Luyện tập chung và Bài tập cuối chương II): 1 ca $=$ 180 phút.",
+  "\\textbf{Tổng 4 ca $=$ 720 phút.} Chương này trung tâm dạy DÀY hơn sách vì đây là chương giữ câu 0,5 điểm cuối đề: 15/21 đề giữa kì I và cuối kì I đã rà đều kết thúc bằng một bài cực trị thuộc chương này.",
+  "Bốn buổi là bốn phiếu riêng (chương CÓ bài vận dụng nên không gộp phiếu)."
+ ],
+ "kien_thuc_nen": [
+  "\\textbf{Bảy hằng đẳng thức đáng nhớ} (Lớp 8): $(x-a)^2 = x^2-2ax+a^2$ là công cụ DUY NHẤT để làm bài cực trị của chương này — thêm bớt để tách một tam thức thành $\\pm(x-a)^2+b$.",
+  "\\textbf{Phân tích đa thức thành nhân tử} (Lớp 8): đặt nhân tử chung và nhóm hạng tử, dùng khi xét hiệu hai vế của một bất đẳng thức.",
+  "\\textbf{Quy đồng mẫu thức} (Lớp 8): nhân hai vế của bất phương trình với mẫu chung DƯƠNG thì giữ nguyên chiều.",
+  "\\textbf{Thứ tự trên trục số, số dương và số âm} (Lớp 6): điểm biểu diễn số bé hơn nằm bên trái; tích hai số cùng dấu thì dương, trái dấu thì âm.",
+  "\\textbf{Giải bài toán bằng cách lập phương trình} (Lớp 8 và chương I): cách gọi ẩn, đặt điều kiện và trả lời — bài lập bất phương trình dùng lại y hệt, chỉ đổi dấu $=$ thành dấu $\\ge$ hoặc $\\le$."
+ ],
+ "lythuyet": [
+  "\\textbf{Mục tiêu của chương}: giữ trọn \\textbf{trần 10,0 của kì I} — chương này chiếm cả phần bài tập giải bất phương trình (0,5 $-$ 1,0 điểm, đề nào cũng có) LẪN \\textbf{câu 0,5 điểm cuối đề}, là câu phân loại đắt nhất.",
+  "\\textbf{Bất đẳng thức}: hệ thức dạng $a<b$ (hay $a>b$, $a\\le b$, $a\\ge b$); tính chất bắc cầu; cộng cùng một số vào hai vế thì giữ chiều; nhân hai vế với số dương giữ chiều, với số âm thì ĐỔI CHIỀU.",
+  "\\textbf{Bất phương trình bậc nhất một ẩn}: dạng $ax+b>0$ (hoặc $<$, $\\le$, $\\ge$) với $a\\neq 0$; giải bằng hai bước chuyển vế rồi chia, nhớ đổi chiều khi chia cho số âm; tập nghiệm biểu diễn trên trục số.",
+  "\\textbf{Bài toán thực tế}: dịch \\emph{ít nhất} $\\to \\ge$, \\emph{nhiều nhất} $/$ \\emph{không quá} $/$ \\emph{tối đa} $\\to \\le$; gọi ẩn kèm điều kiện, giải xong phải đối chiếu điều kiện rồi mới trả lời.",
+  "\\textbf{KHUÔN câu cuối đề (27/33 đề)}: gọi ẩn $x$ kèm điều kiện $\\to$ lập biểu thức theo $x$ $\\to$ đưa về $\\pm(x-a)^2+b$ $\\to$ chỉ ra dấu bằng xảy ra khi $x=a$ $\\to$ kết luận. Bối cảnh đổi (máng tôn, khu đất, vé nhà hát, căn hộ cho thuê, khung ảnh) nhưng quy trình chỉ có một."
+ ],
+ "vidu": [
+  "Viết bất đẳng thức từ một biển báo giao thông và từ câu \\emph{xe chở tối đa 45 người}.",
+  "So sánh hai biểu thức khi biết $a<b$: một ví dụ nhân với số dương, một ví dụ nhân với số âm để thấy chỗ đổi chiều.",
+  "Chứng minh một bất đẳng thức bằng cách xét hiệu, trình bày đủ ba dòng: viết hiệu $-$ rút gọn $-$ kết luận dấu.",
+  "Tìm giá trị nhỏ nhất của $A = x^2-6x+10$ và giá trị lớn nhất của $B = -x^2+5x-4$ theo đúng khuôn $\\pm(x-a)^2+b$.",
+  "Giải một bất phương trình có hệ số âm và một bất phương trình có mẫu số, biểu diễn tập nghiệm trên trục số.",
+  "Lập bất phương trình cho bài toán mua bút: gọi ẩn, đặt điều kiện nguyên, giải rồi trả lời \\emph{nhiều nhất bao nhiêu chiếc}.",
+  "\\textbf{Ví dụ trục của chương}: bài máng tôn 60 cm (đề cuối kì I THCS Dịch Vọng) $-$ giải trọn vẹn theo sáu bước, viết như khi đi thi."
+ ],
+ "dang_vd": [
+  "\\textbf{Cực trị / tối ưu bằng $(x-a)^2+b$} — dạng VDC đứng đầu bảng câu cuối đề: 27/33 đề đã rà kết thúc bằng dạng này, trong đó chương II giữ 15/21 đề của kì I. Bốn bối cảnh hay gặp nhất: uốn máng tôn, khu đất $-$ hàng rào, tăng giá vé $-$ giảm lượng khách, khung ảnh $-$ lề giấy.",
+  "\\textbf{Tối ưu chi phí có ràng buộc nguyên}: thuê hai loại xe, mua hai loại thực phẩm, trồng hai loại cây $-$ lập bất phương trình ràng buộc rồi duyệt các giá trị nguyên (đề THCS Vân Yên, THCS Trưng Vương, THCS Cầu Diễn).",
+  "\\textbf{Giải bất phương trình quy về bậc nhất}: có mẫu số hoặc phải khai triển hằng đẳng thức trước; xuất hiện ở hầu hết các đề dưới dạng ý 0,5 điểm.",
+  "\\textbf{Bài toán thực tế lập bất phương trình}: mua hàng, thang máy, lãi suất, trả góp $-$ theo quy ước của anh An thì loại chỉ 2 $-$ 3 bước là THÔNG HIỂU, chỉ bài nhiều ràng buộc mới xếp VẬN DỤNG."
+ ],
+ "loisai": [
+  "\\textbf{Quên đổi chiều} khi nhân hoặc chia hai vế với số ÂM — lỗi mất điểm số một của cả chương.",
+  "\\textbf{Nhân chéo khi chưa biết dấu của mẫu}: từ $\\dfrac{1}{a}<\\dfrac{1}{b}$ vội suy ra $b<a$ mà không xét dấu $a$, $b$.",
+  "\\textbf{Kết luận nghiệm thiếu dấu bằng}: đề cho \\emph{không quá} mà viết $x<5$ thay vì $x\\le 5$.",
+  "\\textbf{Quên điều kiện nguyên}: giải ra $x\\le 6{,}875$ rồi trả lời 6,875 chiếc bút thay vì 6 chiếc.",
+  "\\textbf{Bài cực trị: tìm được giá trị chặn nhưng quên chỉ ra dấu bằng xảy ra khi nào} — barem chấm riêng bước này.",
+  "\\textbf{Dùng công cụ chưa học}: đưa bài cực trị về đỉnh parabol hay dùng đạo hàm; lớp 9 chỉ được đưa về $(x-a)^2+b$.",
+  "\\textbf{Nhầm giá trị nhỏ nhất của biểu thức với giá trị của ẩn}: trả lời $x=3$ trong khi đề hỏi giá trị nhỏ nhất là 1."
+ ],
+ "kienthuc_nb": [
+  "Bất đẳng thức là hệ thức dạng $a<b$, $a>b$, $a\\le b$ hoặc $a\\ge b$; $a$ là vế trái, $b$ là vế phải.",
+  "Tính chất bắc cầu: nếu $a<b$ và $b<c$ thì $a<c$.",
+  "Cộng (trừ) cùng một số vào hai vế thì được bất đẳng thức mới CÙNG CHIỀU.",
+  "Nhân (chia) hai vế với số DƯƠNG thì giữ chiều; với số ÂM thì ĐỔI CHIỀU.",
+  "Với mọi số thực $x$ ta luôn có $x^2\\ge 0$, dấu bằng xảy ra khi $x=0$ — đây là chìa khoá của mọi bài cực trị trong chương.",
+  "Bất phương trình bậc nhất một ẩn có dạng $ax+b>0$ (hoặc $<$, $\\le$, $\\ge$) với $a\\neq 0$.",
+  "Số $x_0$ là nghiệm của một bất phương trình nếu thay vào ta được khẳng định đúng.",
+  "Giải $ax+b>0$: chuyển $b$ sang vế phải rồi chia hai vế cho $a$, nhớ đổi chiều nếu $a<0$.",
+  "\\emph{Ít nhất} ứng với dấu $\\ge$; \\emph{nhiều nhất}, \\emph{không quá}, \\emph{tối đa} ứng với dấu $\\le$."
+ ],
+ "phieu": [
+  {
+   "code": "A",
+   "title": "Bất đẳng thức và tính chất",
+   "so_ca": 1,
+   "rows": [
+    {
+     "dang": "Viết bất đẳng thức diễn tả một khẳng định bằng lời hoặc một biển báo giao thông (\\emph{ít nhất}, \\emph{tối đa}, \\emph{không quá})",
+     "band": "NB",
+     "loai": "NB lẻ LT",
+     "lythuyet": 1,
+     "vidu": 2,
+     "onclass": 3,
+     "btvn": 3,
+     "source_refs": [],
+     "decompose": "none"
+    },
+    {
+     "dang": "Chỉ ra vế trái $-$ vế phải; hai bất đẳng thức cùng chiều hay ngược chiều",
+     "band": "NB",
+     "loai": "NB lẻ LT",
+     "lythuyet": 1,
+     "vidu": 1,
+     "onclass": 3,
+     "btvn": 3,
+     "source_refs": [],
+     "decompose": "none"
+    },
+    {
+     "dang": "Cộng (trừ) cùng một số vào hai vế: từ $a<b$ suy ra $a+c<b+c$",
+     "band": "NB",
+     "loai": "NB tách TH",
+     "lythuyet": 0,
+     "vidu": 1,
+     "onclass": 3,
+     "btvn": 2,
+     "source_refs": [
+      "Mathtech — Bất đẳng thức — Dạng 3, Ví dụ 8a",
+      "gk1-nbk-3-1"
+     ],
+     "decompose": "none"
+    },
+    {
+     "dang": "Nhân (chia) hai vế với một số: số DƯƠNG giữ chiều, số ÂM ĐỔI CHIỀU",
+     "band": "NB",
+     "loai": "NB tách TH",
+     "lythuyet": 1,
+     "vidu": 1,
+     "onclass": 3,
+     "btvn": 2,
+     "source_refs": [
+      "gk1-nbk-3-1",
+      "Mathtech — Bất đẳng thức — Dạng 3, Ví dụ 8b"
+     ],
+     "decompose": "none",
+     "gian_giao": "dien-khuyet"
+    },
+    {
+     "dang": "So sánh hai biểu thức xuất phát từ giả thiết $a<b$, dùng liên tiếp hai tính chất (nhân rồi cộng)",
+     "band": "TH",
+     "loai": "TH ghép bài",
+     "lythuyet": 0,
+     "vidu": 2,
+     "onclass": 3,
+     "btvn": 3,
+     "source_refs": [
+      "gk1-nbk-3-1",
+      "Mathtech — Bất đẳng thức — Dạng 3, Bài 2 và Bài 4"
+     ],
+     "decompose": "none"
+    },
+    {
+     "dang": "Chứng minh bất đẳng thức bằng cách XÉT HIỆU hai vế rồi nhận xét dấu",
+     "band": "TH",
+     "loai": "TH tách VD",
+     "lythuyet": 0,
+     "vidu": 1,
+     "onclass": 3,
+     "btvn": 2,
+     "source_refs": [
+      "Mathtech — Bất đẳng thức — Dạng 2, Ví dụ 3a",
+      "Mathtech — Bất đẳng thức — Dạng 2, Bài 2"
+     ],
+     "decompose": "none"
+    },
+    {
+     "dang": "Chứng minh bất đẳng thức bằng tính chất bắc cầu hoặc cộng hai bất đẳng thức cùng chiều",
+     "band": "VD",
+     "loai": "VD lẻ",
+     "lythuyet": 0,
+     "vidu": 1,
+     "onclass": 2,
+     "btvn": 2,
+     "source_refs": [
+      "Mathtech — Bất đẳng thức — Dạng 2, Ví dụ 3b",
+      "Mathtech — Bất đẳng thức — Dạng 2, Bài 4 và Bài 5"
+     ],
+     "decompose": "none",
+     "quy_trinh": [
+      "Bước 1 — Cái phải chứng minh là gì? Viết rõ vế trái, vế phải.",
+      "Bước 2 — Đã gặp bài nào gần giống chưa? Muốn so hai biểu thức thì xét HIỆU của chúng.",
+      "Bước 3 — Rút gọn hiệu đó; nhóm lại xem có thành hằng đẳng thức hay tích của những thừa số đã biết dấu không.",
+      "Bước 4 — Dùng giả thiết để kết luận dấu của hiệu.",
+      "Bước 5 — Nhìn lại: hiệu mang dấu đó nghĩa là bất đẳng thức nào? Viết câu kết luận."
+     ]
+    },
+    {
+     "dang": "Tìm giá trị nhỏ nhất (lớn nhất) của một biểu thức bậc hai bằng cách đưa về $(x-a)^2+b$",
+     "band": "VD",
+     "loai": "VD lẻ",
+     "lythuyet": 0,
+     "vidu": 1,
+     "onclass": 2,
+     "btvn": 1,
+     "source_refs": [
+      "Mathtech — Bất đẳng thức — Dạng 4, Ví dụ 9 và Ví dụ 10",
+      "Mathtech — Bất đẳng thức — Dạng 4, Bài 1 và Bài 2"
+     ],
+     "decompose": "none",
+     "quy_trinh": [
+      "Bước 1 — Cái phải tìm là gì? Gạch chân đại lượng đề bắt lớn nhất (hay nhỏ nhất) và đại lượng nào được tự chọn.",
+      "Bước 2 — Gọi ẩn cho đại lượng tự chọn đó, kèm ĐIỀU KIỆN lấy từ chính bối cảnh (độ dài dương, số người nguyên, không vượt quá…).",
+      "Bước 3 — Đã dùng hết dữ kiện chưa? Viết đại lượng phải tìm thành một biểu thức theo ẩn vừa gọi.",
+      "Bước 4 — Biểu thức ấy có dạng quen nào? Tách nó thành $\\pm(x-a)^2 + b$ bằng cách thêm bớt để có hằng đẳng thức.",
+      "Bước 5 — Vì $(x-a)^2 \\ge 0$ nên biểu thức bị chặn bởi $b$. Dấu bằng xảy ra khi nào?",
+      "Bước 6 — Nhìn lại: giá trị vừa tìm có thoả điều kiện ở Bước 2 không? Trả lời đúng câu hỏi của đề kèm đơn vị."
+     ]
+    },
+    {
+     "dang": "Bài toán thực tế TỐI ƯU: gọi ẩn, lập biểu thức rồi đưa về $(x-a)^2+b$ để tìm giá trị lớn nhất (dạng đứng đầu bảng câu cuối đề, 27/33 đề)",
+     "band": "VDC",
+     "loai": "VD lẻ",
+     "lythuyet": 0,
+     "vidu": 1,
+     "onclass": 1,
+     "btvn": 1,
+     "source_refs": [
+      "ck1-dich-vong-V",
+      "gk1-ngo-gia-tu-6"
+     ],
+     "decompose": "vdc"
+    }
+   ]
+  },
+  {
+   "code": "B",
+   "title": "Bất phương trình bậc nhất một ẩn",
+   "so_ca": 1,
+   "rows": [
+    {
+     "dang": "Nhận biết bất phương trình bậc nhất một ẩn và chỉ ra hệ số $a$, $b$",
+     "band": "NB",
+     "loai": "NB lẻ LT",
+     "lythuyet": 1,
+     "vidu": 2,
+     "onclass": 3,
+     "btvn": 3,
+     "source_refs": [],
+     "decompose": "none"
+    },
+    {
+     "dang": "Kiểm tra một số có phải là nghiệm của bất phương trình hay không",
+     "band": "NB",
+     "loai": "NB lẻ LT",
+     "lythuyet": 1,
+     "vidu": 1,
+     "onclass": 3,
+     "btvn": 3,
+     "source_refs": [],
+     "decompose": "none"
+    },
+    {
+     "dang": "Giải bất phương trình dạng $ax+b>0$ với hệ số $a$ DƯƠNG",
+     "band": "NB",
+     "loai": "NB tách TH",
+     "lythuyet": 0,
+     "vidu": 1,
+     "onclass": 3,
+     "btvn": 2,
+     "source_refs": [
+      "gk1-bat-trang-2c",
+      "ck1-ai-mo-2-2"
+     ],
+     "decompose": "none"
+    },
+    {
+     "dang": "Giải bất phương trình có hệ số $a$ ÂM $-$ điền khuyết bước đổi chiều",
+     "band": "NB",
+     "loai": "NB tách TH",
+     "lythuyet": 1,
+     "vidu": 1,
+     "onclass": 3,
+     "btvn": 2,
+     "source_refs": [
+      "gk1-ngo-gia-tu-1c",
+      "Mathtech — Bất phương trình bậc nhất một ẩn — Dạng 2, Ví dụ 3"
+     ],
+     "decompose": "none",
+     "gian_giao": "dien-khuyet"
+    },
+    {
+     "dang": "Giải bất phương trình sau khi bỏ ngoặc và thu gọn hai vế",
+     "band": "TH",
+     "loai": "TH ghép bài",
+     "lythuyet": 0,
+     "vidu": 2,
+     "onclass": 3,
+     "btvn": 3,
+     "source_refs": [
+      "gk1-bat-trang-2d",
+      "gk1-nguyen-du-1-4",
+      "ck1-tan-trieu-12"
+     ],
+     "decompose": "none"
+    },
+    {
+     "dang": "Biểu diễn tập nghiệm trên trục số; tìm nghiệm nguyên lớn nhất (nhỏ nhất) của bất phương trình",
+     "band": "TH",
+     "loai": "TH tách VD",
+     "lythuyet": 0,
+     "vidu": 1,
+     "onclass": 3,
+     "btvn": 2,
+     "source_refs": [
+      "Mathtech — Bất phương trình bậc nhất một ẩn — Dạng 2, Bài 1",
+      "gk1-co-nhue-2-1c"
+     ],
+     "decompose": "none"
+    },
+    {
+     "dang": "Giải bất phương trình quy về bậc nhất có MẪU SỐ (nhân hai vế với mẫu chung dương)",
+     "band": "VD",
+     "loai": "VD lẻ",
+     "lythuyet": 0,
+     "vidu": 1,
+     "onclass": 2,
+     "btvn": 2,
+     "source_refs": [
+      "gk1-dvhau-1-2",
+      "gk1-phu-dien-2d",
+      "ck1-ly-thanh-tong-2b"
+     ],
+     "decompose": "none",
+     "quy_trinh": [
+      "Bước 1 — Cái phải tìm là gì? Bất phương trình có mấy mẫu số, mẫu chung là số nào?",
+      "Bước 2 — Nhân hai vế với mẫu chung. Mẫu chung DƯƠNG nên chiều của bất phương trình giữ nguyên.",
+      "Bước 3 — Bỏ ngoặc, chuyển các hạng tử chứa ẩn về một vế, hằng số về vế kia.",
+      "Bước 4 — Chia hai vế cho hệ số của ẩn. Hệ số ÂM thì đổi chiều.",
+      "Bước 5 — Nhìn lại: thử một giá trị trong tập nghiệm vào đề gốc xem có đúng không, rồi viết câu kết luận."
+     ]
+    },
+    {
+     "dang": "Bài toán thực tế lập bất phương trình một ẩn rồi trả lời câu hỏi \\emph{nhiều nhất} hay \\emph{ít nhất} bao nhiêu",
+     "band": "VD",
+     "loai": "VD lẻ",
+     "lythuyet": 0,
+     "vidu": 1,
+     "onclass": 2,
+     "btvn": 1,
+     "source_refs": [
+      "gk1-thai-thinh-4-2",
+      "gk1-phu-dien-3-2",
+      "gk1-dvhau-2-2"
+     ],
+     "decompose": "none",
+     "quy_trinh": [
+      "Bước 1 — Cái phải tìm là gì? Đại lượng đề hỏi là số nào, đơn vị gì?",
+      "Bước 2 — Gọi ẩn cho đại lượng đó kèm điều kiện (nguyên, dương, không vượt quá…).",
+      "Bước 3 — Đã dùng hết dữ kiện chưa? Dịch các cụm \\emph{ít nhất}, \\emph{nhiều nhất}, \\emph{không quá}, \\emph{tối đa} thành dấu $\\ge$, $\\le$.",
+      "Bước 4 — Giải bất phương trình vừa lập.",
+      "Bước 5 — Nhìn lại: đối chiếu điều kiện ở Bước 2, chọn giá trị đề hỏi rồi trả lời thành câu kèm đơn vị."
+     ]
+    },
+    {
+     "dang": "Bài toán thực tế TĂNG GIÁ $-$ GIẢM LƯỢNG (vé, phòng, căn hộ): lập biểu thức doanh thu theo số lần tăng giá rồi đưa về $-(x-a)^2+b$",
+     "band": "VDC",
+     "loai": "VD lẻ",
+     "lythuyet": 0,
+     "vidu": 1,
+     "onclass": 1,
+     "btvn": 1,
+     "source_refs": [
+      "gk1-thai-thinh-5",
+      "gk1-nguyen-du-5"
+     ],
+     "decompose": "vdc"
+    }
+   ]
+  },
+  {
+   "code": "C",
+   "title": "Bất phương trình quy về bậc nhất và bài toán thực tế",
+   "so_ca": 1,
+   "rows": [
+    {
+     "dang": "Quy đồng và khử mẫu một bất phương trình: chỉ ra mẫu chung và nhân hai vế",
+     "band": "NB",
+     "loai": "NB tách TH",
+     "lythuyet": 1,
+     "vidu": 2,
+     "onclass": 3,
+     "btvn": 3,
+     "source_refs": [
+      "gk1-dvhau-1-2",
+      "Mathtech — Bất phương trình bậc nhất một ẩn — Dạng 3, Bài 1"
+     ],
+     "decompose": "none"
+    },
+    {
+     "dang": "Khai triển hằng đẳng thức và tích hai đa thức để đưa bất phương trình về dạng bậc nhất",
+     "band": "NB",
+     "loai": "NB tách TH",
+     "lythuyet": 1,
+     "vidu": 1,
+     "onclass": 3,
+     "btvn": 2,
+     "source_refs": [
+      "gk1-bat-trang-2d",
+      "gk1-nguyen-du-1-4"
+     ],
+     "decompose": "none"
+    },
+    {
+     "dang": "Dịch cụm từ \\emph{ít nhất}, \\emph{nhiều nhất}, \\emph{không quá}, \\emph{tối đa} thành dấu $\\ge$ hoặc $\\le$",
+     "band": "NB",
+     "loai": "NB lẻ LT",
+     "lythuyet": 1,
+     "vidu": 1,
+     "onclass": 3,
+     "btvn": 3,
+     "source_refs": [],
+     "decompose": "none"
+    },
+    {
+     "dang": "Điền khuyết lời giải mẫu của một bài toán thực tế: gọi ẩn $-$ điều kiện $-$ lập bất phương trình",
+     "band": "NB",
+     "loai": "NB tách TH",
+     "lythuyet": 0,
+     "vidu": 1,
+     "onclass": 3,
+     "btvn": 2,
+     "source_refs": [
+      "gk1-thai-thinh-4-2",
+      "gk1-co-nhue-2-2-2"
+     ],
+     "decompose": "none",
+     "gian_giao": "dien-khuyet"
+    },
+    {
+     "dang": "Giải bất phương trình có mẫu số ở cả hai vế",
+     "band": "TH",
+     "loai": "TH ghép bài",
+     "lythuyet": 0,
+     "vidu": 2,
+     "onclass": 3,
+     "btvn": 3,
+     "source_refs": [
+      "ck1-chu-van-an-II2",
+      "ck1-ngoc-lam-I2",
+      "ck1-ngoc-thuy-I2.c"
+     ],
+     "decompose": "none"
+    },
+    {
+     "dang": "Bài toán thực tế hai bước: lập bất phương trình từ một công thức có sẵn rồi giải (lãi suất, thang máy, mua hàng)",
+     "band": "TH",
+     "loai": "TH tách VD",
+     "lythuyet": 0,
+     "vidu": 1,
+     "onclass": 3,
+     "btvn": 2,
+     "source_refs": [
+      "gk1-bat-trang-3-2",
+      "gk1-dvhau-2-2",
+      "gk1-nguyen-du-2-2"
+     ],
+     "decompose": "none"
+    },
+    {
+     "dang": "Bài toán thực tế nhiều bước: hai loại đối tượng, một ràng buộc tổng, hỏi số lượng lớn nhất của một loại",
+     "band": "VD",
+     "loai": "VD lẻ",
+     "lythuyet": 0,
+     "vidu": 1,
+     "onclass": 2,
+     "btvn": 2,
+     "source_refs": [
+      "gk1-trung-vuong-2-1",
+      "ck1-tan-trieu-32"
+     ],
+     "decompose": "none",
+     "quy_trinh": [
+      "Bước 1 — Cái phải tìm là gì? Đại lượng đề hỏi là số nào, đơn vị gì?",
+      "Bước 2 — Gọi ẩn cho đại lượng đó kèm điều kiện (nguyên, dương, không vượt quá…).",
+      "Bước 3 — Đã dùng hết dữ kiện chưa? Dịch các cụm \\emph{ít nhất}, \\emph{nhiều nhất}, \\emph{không quá}, \\emph{tối đa} thành dấu $\\ge$, $\\le$.",
+      "Bước 4 — Giải bất phương trình vừa lập.",
+      "Bước 5 — Nhìn lại: đối chiếu điều kiện ở Bước 2, chọn giá trị đề hỏi rồi trả lời thành câu kèm đơn vị."
+     ]
+    },
+    {
+     "dang": "Bài toán thực tế có ĐIỀU KIỆN NGUYÊN: giải bất phương trình rồi chọn giá trị nguyên thoả mãn",
+     "band": "VD",
+     "loai": "VD lẻ",
+     "lythuyet": 0,
+     "vidu": 1,
+     "onclass": 2,
+     "btvn": 1,
+     "source_refs": [
+      "ck1-trung-vuong-II1",
+      "gk1-phu-dien-3-2"
+     ],
+     "decompose": "none",
+     "quy_trinh": [
+      "Bước 1 — Cái phải tìm là gì? Đại lượng đề hỏi là số nào, đơn vị gì?",
+      "Bước 2 — Gọi ẩn cho đại lượng đó kèm điều kiện (nguyên, dương, không vượt quá…).",
+      "Bước 3 — Đã dùng hết dữ kiện chưa? Dịch các cụm \\emph{ít nhất}, \\emph{nhiều nhất}, \\emph{không quá}, \\emph{tối đa} thành dấu $\\ge$, $\\le$.",
+      "Bước 4 — Giải bất phương trình vừa lập.",
+      "Bước 5 — Nhìn lại: đối chiếu điều kiện ở Bước 2, chọn giá trị đề hỏi rồi trả lời thành câu kèm đơn vị."
+     ]
+    },
+    {
+     "dang": "Bài toán thực tế TỐI ƯU CHI PHÍ $-$ LỢI NHUẬN có ràng buộc nguyên: lập bất phương trình ràng buộc rồi duyệt các trường hợp",
+     "band": "VDC",
+     "loai": "VD lẻ",
+     "lythuyet": 0,
+     "vidu": 1,
+     "onclass": 1,
+     "btvn": 1,
+     "source_refs": [
+      "gk1-van-yen-5",
+      "gk1-trung-vuong-5"
+     ],
+     "decompose": "vdc"
+    }
+   ]
+  },
+  {
+   "code": "D",
+   "title": "Ôn tập chương II",
+   "so_ca": 1,
+   "rows": [
+    {
+     "dang": "Ôn tính chất: từ $a<b$ suy ra bất đẳng thức mới sau khi cộng, nhân với số dương hoặc số âm",
+     "band": "NB",
+     "loai": "NB tách TH",
+     "lythuyet": 1,
+     "vidu": 1,
+     "onclass": 3,
+     "btvn": 3,
+     "source_refs": [
+      "gk1-nbk-3-1",
+      "Mathtech — Bất đẳng thức — Dạng 3, Bài 2"
+     ],
+     "decompose": "none"
+    },
+    {
+     "dang": "Ôn giải bất phương trình bậc nhất một ẩn và biểu diễn tập nghiệm trên trục số",
+     "band": "NB",
+     "loai": "NB tách TH",
+     "lythuyet": 0,
+     "vidu": 1,
+     "onclass": 3,
+     "btvn": 2,
+     "source_refs": [
+      "ck1-ai-mo-2-2",
+      "gk1-co-nhue-2-1c"
+     ],
+     "decompose": "none"
+    },
+    {
+     "dang": "Điền khuyết lời giải mẫu rồi chỉ ra bước SAI trong một lời giải cho sẵn (quên đổi chiều, chia cho số âm, nhân chéo khi chưa biết dấu)",
+     "band": "NB",
+     "loai": "NB lẻ LT",
+     "lythuyet": 1,
+     "vidu": 1,
+     "onclass": 3,
+     "btvn": 2,
+     "source_refs": [],
+     "decompose": "none",
+     "gian_giao": "dien-khuyet"
+    },
+    {
+     "dang": "Tự VIẾT LẠI và giải thích quy trình 6 bước của bài toán thực tế tối ưu, rồi chỉ ra bước nào hay mất điểm nhất",
+     "band": "NB",
+     "loai": "NB lẻ LT",
+     "lythuyet": 1,
+     "vidu": 1,
+     "onclass": 3,
+     "btvn": 3,
+     "source_refs": [],
+     "decompose": "none",
+     "viet_quy_trinh": true
+    },
+    {
+     "dang": "Giải bất phương trình quy về bậc nhất (có mẫu, có ngoặc) $-$ đề tổng hợp cả chương",
+     "band": "TH",
+     "loai": "TH ghép bài",
+     "lythuyet": 0,
+     "vidu": 2,
+     "onclass": 3,
+     "btvn": 3,
+     "source_refs": [
+      "ck1-cau-dien-2b",
+      "gk1-trung-vuong-1-2a",
+      "gk1-trung-vuong-1-2b"
+     ],
+     "decompose": "none"
+    },
+    {
+     "dang": "Chứng minh bất đẳng thức bằng xét hiệu và đưa về bình phương $(a-b)^2 \\ge 0$",
+     "band": "TH",
+     "loai": "TH tách VD",
+     "lythuyet": 0,
+     "vidu": 1,
+     "onclass": 3,
+     "btvn": 2,
+     "source_refs": [
+      "Mathtech — Bất đẳng thức — Dạng 2, Bài 7c",
+      "Mathtech — Bất đẳng thức — Dạng 2, Ví dụ 3c"
+     ],
+     "decompose": "none"
+    },
+    {
+     "dang": "Tìm giá trị nhỏ nhất (lớn nhất) của biểu thức bậc hai, kể cả khi phải đặt nhân tử chung trước",
+     "band": "VD",
+     "loai": "VD lẻ",
+     "lythuyet": 0,
+     "vidu": 1,
+     "onclass": 2,
+     "btvn": 2,
+     "source_refs": [
+      "Mathtech — Bất đẳng thức — Dạng 4, Bài 1a",
+      "Mathtech — Bất đẳng thức — Dạng 4, Bài 2a"
+     ],
+     "decompose": "none",
+     "quy_trinh": [
+      "Bước 1 — Cái phải tìm là gì? Gạch chân đại lượng đề bắt lớn nhất (hay nhỏ nhất) và đại lượng nào được tự chọn.",
+      "Bước 2 — Gọi ẩn cho đại lượng tự chọn đó, kèm ĐIỀU KIỆN lấy từ chính bối cảnh (độ dài dương, số người nguyên, không vượt quá…).",
+      "Bước 3 — Đã dùng hết dữ kiện chưa? Viết đại lượng phải tìm thành một biểu thức theo ẩn vừa gọi.",
+      "Bước 4 — Biểu thức ấy có dạng quen nào? Tách nó thành $\\pm(x-a)^2 + b$ bằng cách thêm bớt để có hằng đẳng thức.",
+      "Bước 5 — Vì $(x-a)^2 \\ge 0$ nên biểu thức bị chặn bởi $b$. Dấu bằng xảy ra khi nào?",
+      "Bước 6 — Nhìn lại: giá trị vừa tìm có thoả điều kiện ở Bước 2 không? Trả lời đúng câu hỏi của đề kèm đơn vị."
+     ]
+    },
+    {
+     "dang": "Bài toán thực tế lập bất phương trình có điều kiện nguyên $-$ đề tổng hợp",
+     "band": "VD",
+     "loai": "VD lẻ",
+     "lythuyet": 0,
+     "vidu": 1,
+     "onclass": 2,
+     "btvn": 1,
+     "source_refs": [
+      "gk1-nguyen-du-2-2",
+      "gk1-trung-vuong-2-1"
+     ],
+     "decompose": "none",
+     "quy_trinh": [
+      "Bước 1 — Cái phải tìm là gì? Đại lượng đề hỏi là số nào, đơn vị gì?",
+      "Bước 2 — Gọi ẩn cho đại lượng đó kèm điều kiện (nguyên, dương, không vượt quá…).",
+      "Bước 3 — Đã dùng hết dữ kiện chưa? Dịch các cụm \\emph{ít nhất}, \\emph{nhiều nhất}, \\emph{không quá}, \\emph{tối đa} thành dấu $\\ge$, $\\le$.",
+      "Bước 4 — Giải bất phương trình vừa lập.",
+      "Bước 5 — Nhìn lại: đối chiếu điều kiện ở Bước 2, chọn giá trị đề hỏi rồi trả lời thành câu kèm đơn vị."
+     ]
+    },
+    {
+     "dang": "KHUÔN CÂU CUỐI ĐỀ: bài toán DIỆN TÍCH NHỎ NHẤT (lề giấy, hàng rào) $-$ xét hiệu đưa về $(x-a)^2 \\ge 0$ rồi chỉ dấu bằng",
+     "band": "VDC",
+     "loai": "VD lẻ",
+     "lythuyet": 0,
+     "vidu": 1,
+     "onclass": 1,
+     "btvn": 1,
+     "source_refs": [
+      "gk1-phu-dien-5",
+      "gk1-nbk-3-2"
+     ],
+     "decompose": "vdc"
+    }
+   ]
+  }
+ ]
+}

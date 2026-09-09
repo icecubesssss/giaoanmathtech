@@ -1,0 +1,409 @@
+{
+ "slug": "phieu-c-bat-phuong-trinh-quy-ve-bac-nhat-va-toan-thuc-te",
+ "title": "Bất phương trình quy về bậc nhất và bài toán thực tế",
+ "eyebrow": "ĐẠI SỐ 9 — PHIẾU C • CHƯƠNG II",
+ "grade_label": "Lớp 9 • Chương II",
+ "class_tier": "B",
+ "chuong": "chuong-02-bat-dang-thuc-bat-phuong-trinh",
+ "so_ca": 1,
+ "stages": [
+  {
+   "kind": "review",
+   "number": 1,
+   "title": "Khám phá",
+   "teacher_note": "Đọc đề Rung Chuông Vàng, hỏi cả lớp đoán số câu rồi mới giải $-$ HS thấy ngay vì sao cần bất phương trình. [[br]] Nhắc lại hai bước giải của buổi trước.",
+   "blocks": [
+    {
+     "type": "opener",
+     "text": "Một thí sinh Rung Chuông Vàng trả lời 20 câu: đúng được $+5$ điểm, sai bị $-2$ điểm, muốn vào vòng trường phải đạt \\textbf{ít nhất 74 điểm}. [[br]] Đề không hỏi \\emph{được bao nhiêu điểm} mà hỏi \\emph{phải đúng ít nhất mấy câu} — muốn trả lời thì phải \\textbf{lập bất phương trình}, giải, rồi chọn số nguyên. [[br]] Đó đúng là ba việc của buổi hôm nay."
+    },
+    {
+     "type": "para",
+     "text": "Hai việc của buổi này: [[br]] - \\textbf{Kĩ thuật} — bất phương trình có MẪU SỐ hoặc phải khai triển trước; [[br]] - \\textbf{Thực tế} — dịch đề thành bất phương trình, giải, rồi đối chiếu điều kiện nguyên."
+    }
+   ]
+  },
+  {
+   "kind": "concept",
+   "number": 2,
+   "title": "Kiến thức cần nhớ",
+   "teacher_note": "Ví dụ 1, 2 chỉ là bước KHỬ MẪU và KHAI TRIỂN, chưa giải hết $-$ cố ý tách để HS quen từng khâu. [[br]] Ví dụ 4, 5, 6 là ba bài thực tế lấy nguyên từ đề thi: bắt HS đọc to bước gọi ẩn và điều kiện. [[br]] Ví dụ 7 là câu cuối đề, dạy cách DUYỆT trường hợp khi ẩn phải nguyên.",
+   "blocks": [
+    {
+     "type": "noted",
+     "text": "\\textbf{1. Bất phương trình có mẫu số} [[br]] \\textbf{Bước 1.} Tìm mẫu chung (là số DƯƠNG). [[br]] \\textbf{Bước 2.} Nhân hai vế với mẫu chung $-$ vì mẫu chung dương nên GIỮ nguyên chiều. [[br]] \\textbf{Bước 3.} Bỏ ngoặc, chuyển vế, thu gọn về dạng $ax>b$. [[br]] \\textbf{Bước 4.} Chia cho $a$, nhớ ĐỔI CHIỀU nếu $a<0$."
+    },
+    {
+     "type": "noted",
+     "text": "\\textbf{2. Bất phương trình phải khai triển trước} [[br]] Khi hai vế có tích hoặc hằng đẳng thức, hãy khai triển rồi rút gọn; các hạng tử bậc hai thường TRIỆT TIÊU và bất phương trình trở về bậc nhất. [[br]] Nếu sau khi rút gọn mà ẩn mất hết thì: khẳng định còn lại ĐÚNG $\\Rightarrow$ mọi số thực đều là nghiệm; khẳng định SAI $\\Rightarrow$ bất phương trình vô nghiệm."
+    },
+    {
+     "type": "noted",
+     "variant": "example",
+     "text": "\\textbf{Ví dụ 1.} Chỉ ra mẫu chung rồi khử mẫu bất phương trình $\\dfrac{x-1}{3}+\\dfrac{3-x}{5} \\ge 2$. [[br]] \\textbf{Lời giải.} Mẫu chung của $3$ và $5$ là $15$. [[br]] Nhân hai vế với $15$ (số dương nên giữ chiều): $5(x-1)+3(3-x) \\ge 30$. [[br]] Vậy sau khi khử mẫu ta được bất phương trình $5(x-1)+3(3-x) \\ge 30$."
+    },
+    {
+     "type": "noted",
+     "variant": "example",
+     "text": "\\textbf{Ví dụ 2.} Rút gọn vế trái của bất phương trình $(x+2)^2-x^2 \\le 12$. [[br]] \\textbf{Lời giải.} Ta có $(x+2)^2-x^2=x^2+4x+4-x^2=4x+4$. [[br]] Do đó bất phương trình trở thành $4x+4 \\le 12$. [[br]] Vậy sau khi khai triển, bất phương trình đã cho là bất phương trình bậc nhất $4x+4 \\le 12$."
+    },
+    {
+     "type": "noted",
+     "variant": "example",
+     "text": "\\textbf{Ví dụ 3.} (Cuối kì I $-$ THCS Ngọc Thuỵ) Giải bất phương trình $\\dfrac{x-1}{3}+\\dfrac{3-x}{5} \\ge 2$. [[br]] \\textbf{Lời giải.} Mẫu chung là $15$. Nhân hai vế với $15>0$: $5(x-1)+3(3-x) \\ge 30$. [[br]] Bỏ ngoặc: $5x-5+9-3x \\ge 30$, tức là $2x+4 \\ge 30$. [[br]] Suy ra $2x \\ge 26$, do đó $x \\ge 13$. [[br]] Vậy nghiệm của bất phương trình là $x \\ge 13$."
+    },
+    {
+     "type": "noted",
+     "text": "\\textbf{3. Năm bước làm bài toán thực tế} [[br]] 1. Gọi ẩn cho đại lượng đề hỏi, kèm ĐIỀU KIỆN (nguyên, dương, chặn trên). [[br]] 2. Viết các đại lượng còn lại theo ẩn. [[br]] 3. Dịch điều kiện của đề thành bất phương trình: \\emph{ít nhất} $\\to \\ge$; \\emph{nhiều nhất}, \\emph{không quá}, \\emph{tối đa} $\\to \\le$. [[br]] 4. Giải bất phương trình. [[br]] 5. Đối chiếu điều kiện rồi trả lời thành câu kèm đơn vị."
+    },
+    {
+     "type": "noted",
+     "variant": "example",
+     "text": "\\textbf{Ví dụ 4.} (Giữa kì I $-$ THCS Bát Tràng) Lãi suất tiết kiệm kì hạn 12 tháng của một ngân hàng là $4{,}5\\%$ một năm. Bác Hoàng muốn nhận được tiền lãi ít nhất $1{,}8$ triệu đồng sau 12 tháng thì phải gửi ít nhất bao nhiêu tiền? [[br]] \\textbf{Lời giải.} Gọi số tiền bác Hoàng gửi là $x$ (triệu đồng), điều kiện $x>0$. [[br]] Tiền lãi sau 12 tháng là $4{,}5\\% \\cdot x = 0{,}045x$ (triệu đồng). [[br]] Vì tiền lãi ít nhất $1{,}8$ triệu đồng nên $0{,}045x \\ge 1{,}8$. [[br]] Suy ra $x \\ge 40$ (thoả mãn điều kiện). [[br]] Vậy bác Hoàng phải gửi ít nhất $40$ triệu đồng."
+    },
+    {
+     "type": "noted",
+     "variant": "example",
+     "text": "\\textbf{Ví dụ 5.} (Cuối kì I $-$ THCS Trưng Vương) Mỗi thí sinh trả lời 20 câu hỏi; mỗi câu đúng được cộng 5 điểm, mỗi câu sai hoặc không trả lời bị trừ 2 điểm. Thí sinh được chọn vào vòng thi cấp trường nếu đạt ít nhất 74 điểm. Hỏi thí sinh phải trả lời đúng tối thiểu bao nhiêu câu? [[br]] \\textbf{Lời giải.} Gọi số câu trả lời đúng là $x$ (câu), điều kiện $x$ nguyên và $0 \\le x \\le 20$. [[br]] Số câu sai hoặc không trả lời là $20-x$ (câu). [[br]] Số điểm thí sinh đạt được là $5x-2(20-x)=7x-40$ (điểm). [[br]] Vì phải đạt ít nhất 74 điểm nên $7x-40 \\ge 74$. [[br]] Suy ra $7x \\ge 114$, do đó $x \\ge \\dfrac{114}{7} \\approx 16{,}29$. [[br]] Vì $x$ nguyên và $x \\le 20$ nên $x$ nhỏ nhất bằng $17$. [[br]] Vậy thí sinh phải trả lời đúng tối thiểu $17$ câu."
+    },
+    {
+     "type": "noted",
+     "variant": "example",
+     "text": "\\textbf{Ví dụ 6.} (Giữa kì I $-$ THCS Trưng Vương) Bạn Quân có $600\\,000$ đồng để mua hai loại vở: vở Tiểu học giá $8\\,000$ đồng một quyển, vở Trung học giá $12\\,000$ đồng một quyển. Nếu Quân mua 40 quyển vở Tiểu học thì mua được nhiều nhất bao nhiêu quyển vở Trung học? [[br]] \\textbf{Lời giải.} Gọi số vở Trung học Quân mua được là $x$ (quyển), điều kiện $x$ nguyên dương. [[br]] Tiền mua 40 quyển vở Tiểu học là $40 \\cdot 8\\,000=320\\,000$ (đồng). [[br]] Tổng số tiền phải trả là $320\\,000+12\\,000x$ (đồng). [[br]] Vì Quân chỉ có $600\\,000$ đồng nên $320\\,000+12\\,000x \\le 600\\,000$. [[br]] Suy ra $12\\,000x \\le 280\\,000$, do đó $x \\le \\dfrac{70}{3} \\approx 23{,}33$. [[br]] Vì $x$ nguyên dương nên $x$ lớn nhất bằng $23$. [[br]] Vậy Quân mua được nhiều nhất $23$ quyển vở Trung học."
+    },
+    {
+     "type": "noted",
+     "variant": "example",
+     "text": "\\textbf{Ví dụ 7.} (Thi thử Vào 10 $-$ THCS Vân Yên) Một trường THCS tổ chức cho $645$ người đi trải nghiệm, thuê hai loại xe: loại 35 chỗ giá $3{,}5$ triệu đồng một xe và loại 50 chỗ giá $5{,}2$ triệu đồng một xe (không kể lái xe). Hỏi trường cần thuê mỗi loại bao nhiêu xe để vừa đủ chỗ cho $645$ người và chi phí thuê xe ít nhất? [[br]] \\textbf{Lời giải.} Gọi $x$ là số xe 35 chỗ và $y$ là số xe 50 chỗ, điều kiện $x$, $y$ là số tự nhiên. [[br]] Số chỗ ngồi phải đủ cho 645 người nên $35x+50y \\ge 645$. [[br]] Chi phí thuê xe là $T=3{,}5x+5{,}2y$ (triệu đồng). [[br]] Mỗi chỗ ngồi của xe 35 chỗ tốn $3\\,500\\,000:35=100\\,000$ đồng, của xe 50 chỗ tốn $5\\,200\\,000:50=104\\,000$ đồng, nên nên ưu tiên thuê xe 35 chỗ. [[br]] Thử lần lượt: với $y=0$ thì $35x \\ge 645$ nên $x \\ge 18{,}43$, lấy $x=19$, $T=66{,}5$; với $y=1$ thì $35x \\ge 595$ nên $x=17$, $T=59{,}5+5{,}2=64{,}7$; với $y=2$ thì $35x \\ge 545$ nên $x=16$, $T=56+10{,}4=66{,}4$; với $y=3$ thì $x=15$, $T=52{,}5+15{,}6=68{,}1$. [[br]] Từ $y=2$ trở đi chi phí tăng dần nên giá trị nhỏ nhất là $T=64{,}7$ triệu đồng khi $x=17$, $y=1$ (khi đó $17 \\cdot 35+50=645$ chỗ, vừa đủ). [[br]] Vậy trường thuê $17$ xe loại 35 chỗ và $1$ xe loại 50 chỗ, chi phí ít nhất là $64\\,700\\,000$ đồng."
+    },
+    {
+     "type": "noted",
+     "variant": "trap",
+     "text": "- Bạn Minh khử mẫu $\\dfrac{x-1}{3} \\ge 2$ bằng cách chỉ nhân vế trái với 3 và giữ nguyên vế phải. SAI: phải nhân CẢ HAI VẾ. [[br]] - Bạn Lan giải bài mua vở ra $x \\le 23{,}33$ rồi trả lời $23{,}33$ quyển. SAI: số quyển vở phải nguyên, đáp số là 23 quyển. [[br]] - Bạn Nam làm bài Rung Chuông Vàng ra $x \\ge 16{,}29$ rồi trả lời 16 câu. SAI: đề hỏi \\emph{tối thiểu}, mà $x$ phải LỚN HƠN $16{,}29$ nên số nguyên nhỏ nhất là 17."
+    }
+   ]
+  },
+  {
+   "kind": "practice1",
+   "number": 3,
+   "title": "Luyện tập 1 — kĩ thuật khử mẫu",
+   "teacher_note": "Bài 1–3 làm miệng. [[br]] Bài 4 là bài điền khuyết: cho HS làm cá nhân 3 phút rồi chữa chung, nhấn vào bước ĐIỀU KIỆN của ẩn. [[br]] Bài 5, 6 làm vào vở.",
+   "blocks": [
+    {
+     "type": "problem",
+     "label": "Bài 1.",
+     "statement": "Chỉ ra mẫu chung rồi viết bất phương trình thu được sau khi nhân hai vế với mẫu chung đó (chưa cần giải).[[br]]a) [NB] $\\dfrac{x+1}{3}-\\dfrac{x+2}{4} \\le \\dfrac{x-2}{6}$.[[br]]b) [NB] $\\dfrac{x-1}{6}-\\dfrac{x+1}{2} \\le \\dfrac{3x-5}{4}+\\dfrac{1}{2}$.[[br]]c) [NB] $\\dfrac{x}{2}+1>\\dfrac{x}{3}$.",
+     "tier": "onclass",
+     "level": 1,
+     "solution": "a) Mẫu chung là $12$; nhân hai vế với $12$ được $4(x+1)-3(x+2) \\le 2(x-2)$.[[br]]b) Mẫu chung là $12$; nhân hai vế với $12$ được $2(x-1)-6(x+1) \\le 3(3x-5)+6$.[[br]]c) Mẫu chung là $6$; nhân hai vế với $6$ được $3x+6>2x$.",
+     "dang_id": "NB1",
+     "writelines": 0
+    },
+    {
+     "type": "problem",
+     "label": "Bài 2.",
+     "statement": "Khai triển và rút gọn vế trái của mỗi bất phương trình sau.[[br]]a) [NB] $(x+2)^2-x^2 \\le 12$.[[br]]b) [NB] $(x-1)(x+1)-x^2>-3$.[[br]]c) [NB] $2x(x+3)-2x^2 \\ge 18$.",
+     "tier": "onclass",
+     "level": 1,
+     "solution": "a) $(x+2)^2-x^2=x^2+4x+4-x^2=4x+4$ nên bất phương trình là $4x+4 \\le 12$.[[br]]b) $(x-1)(x+1)-x^2=x^2-1-x^2=-1$ nên bất phương trình là $-1>-3$.[[br]]c) $2x(x+3)-2x^2=2x^2+6x-2x^2=6x$ nên bất phương trình là $6x \\ge 18$.",
+     "dang_id": "NB2",
+     "writelines": 0
+    },
+    {
+     "type": "problem",
+     "label": "Bài 3.",
+     "statement": "Dùng dấu $\\ge$ hoặc $\\le$ để viết điều kiện của đề thành bất phương trình.[[br]]a) [NB] Xe buýt chở không quá 45 người; gọi $n$ là số người trên xe.[[br]]b) [NB] Thí sinh phải đạt ít nhất 74 điểm; gọi $T$ là số điểm đạt được.[[br]]c) [NB] Số tiền phải trả không vượt quá $600\\,000$ đồng; gọi $C$ là số tiền phải trả.",
+     "tier": "onclass",
+     "level": 1,
+     "solution": "a) $n \\le 45$.[[br]]b) $T \\ge 74$.[[br]]c) $C \\le 600\\,000$.",
+     "dang_id": "NB3",
+     "writelines": 0
+    },
+    {
+     "type": "problem",
+     "label": "Bài 4.",
+     "statement": "Điền vào chỗ trống để hoàn thành lời giải bài toán sau: \\emph{Lãi suất tiết kiệm kì hạn 12 tháng là $4{,}5\\%$ một năm. Bác Hoàng muốn nhận tiền lãi ít nhất $1{,}8$ triệu đồng sau 12 tháng thì phải gửi ít nhất bao nhiêu tiền?}[[br]]a) [NB] Gọi số tiền bác Hoàng gửi là $x$ (triệu đồng), điều kiện [[blank:2.4cm]].[[br]]b) [NB] Tiền lãi sau 12 tháng là [[blank:3cm]] (triệu đồng).[[br]]c) [NB] Vì tiền lãi ít nhất $1{,}8$ triệu đồng nên ta có bất phương trình [[blank:3.4cm]], giải ra $x \\ge$ [[blank:1.4cm]].",
+     "tier": "onclass",
+     "level": 1,
+     "solution": "a) Điều kiện $x>0$.[[br]]b) Tiền lãi là $4{,}5\\% \\cdot x=0{,}045x$ (triệu đồng).[[br]]c) Bất phương trình là $0{,}045x \\ge 1{,}8$, giải ra $x \\ge 40$.[[br]]Vậy bác Hoàng phải gửi ít nhất $40$ triệu đồng.",
+     "dang_id": "NB4",
+     "writelines": 0
+    },
+    {
+     "type": "problem",
+     "label": "Bài 5.",
+     "statement": "Giải các bất phương trình sau.[[br]]a) [TH] (Cuối kì I $-$ THCS Chu Văn An) $\\dfrac{x-1}{6}-\\dfrac{x+1}{2} \\le \\dfrac{3x-5}{4}+\\dfrac{1}{2}$.[[br]]b) [TH] (Cuối kì I $-$ THCS Ngọc Lâm) $\\dfrac{x-2}{3}-x+5 \\le \\dfrac{x+4}{4}+\\dfrac{2x-5}{3}$.[[br]]c) [TH] (Cuối kì I $-$ THCS Ngọc Thuỵ) $\\dfrac{x-1}{3}+\\dfrac{3-x}{5} \\ge 2$.",
+     "tier": "onclass",
+     "level": 2,
+     "solution": "a) Mẫu chung là $12$. Nhân hai vế với $12>0$: $2(x-1)-6(x+1) \\le 3(3x-5)+6$.[[br]]Bỏ ngoặc: $2x-2-6x-6 \\le 9x-15+6$, tức là $-4x-8 \\le 9x-9$.[[br]]Chuyển vế: $-13x \\le -1$; chia hai vế cho $-13<0$ và đổi chiều được $x \\ge \\dfrac{1}{13}$.[[br]]b) Mẫu chung là $12$. Nhân hai vế với $12>0$: $4(x-2)-12x+60 \\le 3(x+4)+4(2x-5)$.[[br]]Bỏ ngoặc: $4x-8-12x+60 \\le 3x+12+8x-20$, tức là $-8x+52 \\le 11x-8$.[[br]]Chuyển vế: $-19x \\le -60$, suy ra $x \\ge \\dfrac{60}{19}$.[[br]]c) Mẫu chung là $15$. Nhân hai vế với $15>0$: $5(x-1)+3(3-x) \\ge 30$.[[br]]Bỏ ngoặc: $5x-5+9-3x \\ge 30$, tức là $2x+4 \\ge 30$, suy ra $x \\ge 13$.[[br]]Vậy ba tập nghiệm là $x \\ge \\dfrac{1}{13}$; $x \\ge \\dfrac{60}{19}$ và $x \\ge 13$.",
+     "dang_id": "TH1",
+     "writelines": 0
+    },
+    {
+     "type": "problem",
+     "label": "Bài 6.",
+     "statement": "a) [TH] (Giữa kì I $-$ THCS Bát Tràng) Lãi suất tiết kiệm kì hạn 12 tháng là $4{,}5\\%$ một năm. Bác Hoàng muốn nhận tiền lãi ít nhất $1{,}8$ triệu đồng sau 12 tháng thì phải gửi ít nhất bao nhiêu tiền?[[br]]b) [TH] (Giữa kì I $-$ THCS Nguyễn Du) Anh Nam mua một căn hộ giá $790$ triệu đồng, trả góp không lãi.  Anh đã có $300$ triệu đồng và mỗi tháng trả thêm $20$ triệu đồng. Hỏi sau ít nhất bao nhiêu tháng anh Nam trả hết tiền căn hộ?[[br]]c) [TH] (Cuối kì I $-$ THCS Tân Triều) Một công ty muốn thu hút ít nhất $50\\,000$ lượt tương tác cho chiến dịch quảng cáo. Tuần đầu tiên công ty đạt $12\\,500$ lượt; từ tuần thứ hai, trung bình mỗi tuần thu hút thêm $4\\,500$ lượt. Hỏi công ty cần duy trì ít nhất bao nhiêu tuần nữa?",
+     "tier": "onclass",
+     "level": 2,
+     "solution": "a) Gọi số tiền gửi là $x$ (triệu đồng), điều kiện $x>0$.[[br]]Tiền lãi sau 12 tháng là $0{,}045x$ (triệu đồng) nên $0{,}045x \\ge 1{,}8$, suy ra $x \\ge 40$.[[br]]Vậy bác Hoàng phải gửi ít nhất $40$ triệu đồng.[[br]]b) Gọi số tháng phải trả là $x$ (tháng), điều kiện $x$ nguyên dương.[[br]]Số tiền anh Nam có sau $x$ tháng là $300+20x$ (triệu đồng) nên $300+20x \\ge 790$, suy ra $20x \\ge 490$, do đó $x \\ge 24{,}5$.[[br]]Vì $x$ nguyên dương nên $x$ nhỏ nhất bằng $25$.[[br]]Vậy sau ít nhất $25$ tháng anh Nam trả hết.[[br]]c) Gọi số tuần cần duy trì thêm là $n$ (tuần), điều kiện $n$ nguyên dương.[[br]]Tổng lượt tương tác là $12\\,500+4\\,500n$ nên $12\\,500+4\\,500n \\ge 50\\,000$, suy ra $4\\,500n \\ge 37\\,500$, do đó $n \\ge \\dfrac{25}{3} \\approx 8{,}33$.[[br]]Vì $n$ nguyên dương nên $n$ nhỏ nhất bằng $9$.[[br]]Vậy công ty cần duy trì ít nhất $9$ tuần nữa.",
+     "dang_id": "TH2",
+     "writelines": 0
+    }
+   ]
+  },
+  {
+   "kind": "practice2",
+   "number": 4,
+   "title": "Luyện tập 2 — bài toán thực tế",
+   "teacher_note": "Bài 7, 8 có hộp QUY TRÌNH in sẵn. Nhấn mạnh bước cuối: đối chiếu điều kiện NGUYÊN rồi mới trả lời. [[br]] Bài 9 là câu cuối đề: HS hay bí ở chỗ hai ẩn $-$ gợi ý bằng cách so giá MỖI CHỖ NGỒI của hai loại xe.",
+   "blocks": [
+    {
+     "type": "problem",
+     "label": "Bài 7.",
+     "statement": "a) [VD] (Giữa kì I $-$ THCS Trưng Vương) Bạn Quân có $600\\,000$ đồng để mua hai loại vở: vở Tiểu học giá $8\\,000$ đồng một quyển và vở Trung học giá $12\\,000$ đồng một quyển. Nếu Quân mua 40 quyển vở Tiểu học thì mua được nhiều nhất bao nhiêu quyển vở Trung học?[[br]]b) [VD] Một đoàn khách gồm người lớn và trẻ em đi tham quan. Vé người lớn giá $120\\,000$ đồng, vé trẻ em giá $60\\,000$ đồng. Đoàn có 8 người lớn và tổng số tiền mua vé không vượt quá $1\\,800\\,000$ đồng. Hỏi đoàn có nhiều nhất bao nhiêu trẻ em?",
+     "tier": "onclass",
+     "level": 3,
+     "solution": "a) Gọi số vở Trung học mua được là $x$ (quyển), điều kiện $x$ nguyên dương.[[br]]Tiền mua 40 quyển vở Tiểu học là $40 \\cdot 8\\,000=320\\,000$ (đồng).[[br]]Tổng tiền phải trả là $320\\,000+12\\,000x$ (đồng) nên $320\\,000+12\\,000x \\le 600\\,000$.[[br]]Suy ra $12\\,000x \\le 280\\,000$, do đó $x \\le \\dfrac{70}{3} \\approx 23{,}33$.[[br]]Vì $x$ nguyên dương nên $x$ lớn nhất bằng $23$.[[br]]Vậy Quân mua được nhiều nhất $23$ quyển vở Trung học.[[br]]b) Gọi số trẻ em trong đoàn là $y$ (em), điều kiện $y$ nguyên dương.[[br]]Tiền vé của 8 người lớn là $8 \\cdot 120\\,000=960\\,000$ (đồng).[[br]]Tổng tiền vé là $960\\,000+60\\,000y$ (đồng) nên $960\\,000+60\\,000y \\le 1\\,800\\,000$.[[br]]Suy ra $60\\,000y \\le 840\\,000$, do đó $y \\le 14$.[[br]]Vậy đoàn có nhiều nhất $14$ trẻ em.",
+     "dang_id": "VD1",
+     "writelines": 0,
+     "hints": [
+      "Trong bài có hai loại đối tượng, nhưng đề đã cho biết số lượng của một loại. Vậy ẩn nên gọi cho loại nào?",
+      "Tổng số tiền gồm mấy phần? Phần nào là số đã biết, phần nào chứa ẩn?"
+     ],
+     "quy_trinh": [
+      "Bước 1 — Cái phải tìm là gì? Đại lượng đề hỏi là số nào, đơn vị gì?",
+      "Bước 2 — Gọi ẩn cho đại lượng đó kèm điều kiện (nguyên, dương, không vượt quá…).",
+      "Bước 3 — Đã dùng hết dữ kiện chưa? Dịch các cụm \\emph{ít nhất}, \\emph{nhiều nhất}, \\emph{không quá}, \\emph{tối đa} thành dấu $\\ge$, $\\le$.",
+      "Bước 4 — Giải bất phương trình vừa lập.",
+      "Bước 5 — Nhìn lại: đối chiếu điều kiện ở Bước 2, chọn giá trị đề hỏi rồi trả lời thành câu kèm đơn vị."
+     ]
+    },
+    {
+     "type": "problem",
+     "label": "Bài 8.",
+     "statement": "a) [VD] (Cuối kì I $-$ THCS Trưng Vương) Mỗi thí sinh trả lời 20 câu hỏi: mỗi câu đúng được cộng 5 điểm, mỗi câu sai hoặc không trả lời bị trừ 2 điểm. Thí sinh được chọn vào vòng thi cấp trường nếu đạt ít nhất 74 điểm. Hỏi thí sinh phải trả lời đúng tối thiểu bao nhiêu câu?[[br]]b) [VD] Một xưởng may cần may ít nhất $500$ chiếc áo trong tháng. Trong 10 ngày đầu xưởng đã may được $180$ chiếc; những ngày sau, mỗi ngày xưởng may được $25$ chiếc. Hỏi xưởng cần thêm ít nhất bao nhiêu ngày nữa để hoàn thành?",
+     "tier": "onclass",
+     "level": 3,
+     "solution": "a) Gọi số câu trả lời đúng là $x$ (câu), điều kiện $x$ nguyên và $0 \\le x \\le 20$.[[br]]Số câu sai hoặc không trả lời là $20-x$ (câu).[[br]]Số điểm đạt được là $5x-2(20-x)=7x-40$ (điểm) nên $7x-40 \\ge 74$.[[br]]Suy ra $7x \\ge 114$, do đó $x \\ge \\dfrac{114}{7} \\approx 16{,}29$.[[br]]Vì $x$ nguyên và $x \\le 20$ nên $x$ nhỏ nhất bằng $17$.[[br]]Vậy thí sinh phải trả lời đúng tối thiểu $17$ câu.[[br]]b) Gọi số ngày cần thêm là $n$ (ngày), điều kiện $n$ nguyên dương.[[br]]Tổng số áo may được là $180+25n$ (chiếc) nên $180+25n \\ge 500$.[[br]]Suy ra $25n \\ge 320$, do đó $n \\ge 12{,}8$.[[br]]Vì $n$ nguyên dương nên $n$ nhỏ nhất bằng $13$.[[br]]Vậy xưởng cần thêm ít nhất $13$ ngày nữa.",
+     "dang_id": "VD2",
+     "writelines": 0,
+     "hints": [
+      "Đề hỏi \\emph{tối thiểu} — nghĩa là ta phải tìm số NHỎ NHẤT thoả mãn bất phương trình. Số đó có nhất thiết là số vừa giải ra không?",
+      "Giải ra một số thập phân rồi thì chọn số nguyên nào? Thử thay lại vào đề để kiểm."
+     ],
+     "quy_trinh": [
+      "Bước 1 — Cái phải tìm là gì? Đại lượng đề hỏi là số nào, đơn vị gì?",
+      "Bước 2 — Gọi ẩn cho đại lượng đó kèm điều kiện (nguyên, dương, không vượt quá…).",
+      "Bước 3 — Đã dùng hết dữ kiện chưa? Dịch các cụm \\emph{ít nhất}, \\emph{nhiều nhất}, \\emph{không quá}, \\emph{tối đa} thành dấu $\\ge$, $\\le$.",
+      "Bước 4 — Giải bất phương trình vừa lập.",
+      "Bước 5 — Nhìn lại: đối chiếu điều kiện ở Bước 2, chọn giá trị đề hỏi rồi trả lời thành câu kèm đơn vị."
+     ]
+    },
+    {
+     "type": "problem",
+     "label": "Bài 9.",
+     "statement": "[VDC] (Thi thử Vào 10 $-$ THCS Vân Yên) Một trường THCS dự định tổ chức cho $645$ người gồm thầy cô và học sinh hai khối 8, 9 đi trải nghiệm. Nhà trường thuê hai loại xe: loại 35 chỗ ngồi giá $3\\,500\\,000$ đồng một xe và loại 50 chỗ ngồi giá $5\\,200\\,000$ đồng một xe (không kể lái xe). Hỏi nhà trường cần thuê mỗi loại bao nhiêu xe để vừa đủ chỗ ngồi cho $645$ người và chi phí thuê xe là ít nhất?",
+     "tier": "onclass",
+     "level": 4,
+     "solution": "Gọi $x$ là số xe loại 35 chỗ và $y$ là số xe loại 50 chỗ, điều kiện $x$, $y$ là số tự nhiên.[[br]]Số chỗ ngồi phải đủ cho 645 người nên $35x+50y \\ge 645$.[[br]]Chi phí thuê xe là $T=3{,}5x+5{,}2y$ (triệu đồng).[[br]]Mỗi chỗ ngồi của xe 35 chỗ tốn $3\\,500\\,000:35=100\\,000$ đồng, của xe 50 chỗ tốn $5\\,200\\,000:50=104\\,000$ đồng nên xe 35 chỗ rẻ hơn tính theo mỗi chỗ; do đó $T \\ge 0{,}1 \\cdot 645=64{,}5$ (triệu đồng).[[br]]Thử lần lượt các giá trị của $y$:[[br]]\\hspace*{1.4em}$y=0$: $35x \\ge 645$ nên $x=19$, $T=66{,}5$;[[br]]\\hspace*{1.4em}$y=1$: $35x \\ge 595$ nên $x=17$, $T=59{,}5+5{,}2=64{,}7$;[[br]]\\hspace*{1.4em}$y=2$: $35x \\ge 545$ nên $x=16$, $T=56+10{,}4=66{,}4$;[[br]]\\hspace*{1.4em}$y=3$: $35x \\ge 495$ nên $x=15$, $T=52{,}5+15{,}6=68{,}1$.[[br]]Từ $y=2$ trở đi chi phí tăng dần nên chi phí nhỏ nhất là $64{,}7$ triệu đồng, đạt khi $x=17$ và $y=1$; khi đó số chỗ là $17 \\cdot 35+50=645$, vừa đủ.[[br]]Vậy nhà trường thuê $17$ xe loại 35 chỗ và $1$ xe loại 50 chỗ, chi phí ít nhất là $64\\,700\\,000$ đồng.",
+     "dang_id": "VDC1",
+     "writelines": 0,
+     "hints": [
+      "Hai loại xe khác nhau ở chỗ nào? Thử tính xem mỗi CHỖ NGỒI của từng loại tốn bao nhiêu tiền.",
+      "Số xe phải là số tự nhiên nên không giải trực tiếp được. Hãy cho loại xe đắt hơn nhận lần lượt các giá trị $0$, $1$, $2$, $3$ rồi so chi phí."
+     ],
+     "quy_trinh": [
+      "Bước 1 — Cái phải tìm là gì? Đại lượng đề hỏi là số nào, đơn vị gì?",
+      "Bước 2 — Gọi ẩn cho đại lượng đó kèm điều kiện (nguyên, dương, không vượt quá…).",
+      "Bước 3 — Đã dùng hết dữ kiện chưa? Dịch các cụm \\emph{ít nhất}, \\emph{nhiều nhất}, \\emph{không quá}, \\emph{tối đa} thành dấu $\\ge$, $\\le$.",
+      "Bước 4 — Giải bất phương trình vừa lập.",
+      "Bước 5 — Nhìn lại: đối chiếu điều kiện ở Bước 2, chọn giá trị đề hỏi rồi trả lời thành câu kèm đơn vị."
+     ]
+    }
+   ]
+  },
+  {
+   "kind": "reflection",
+   "number": 5,
+   "title": "Tổng kết \\& bài tập về nhà",
+   "teacher_note": "BTVN 9 là bài tối ưu lợi nhuận có ràng buộc công lao động $-$ cùng kiểu \\emph{ràng buộc rồi tối ưu} với Bài 9 trên lớp nhưng giải gọn hơn vì chỉ một ẩn.",
+   "blocks": [
+    {
+     "type": "mindmap",
+     "size": "small",
+     "root": "BPT quy về bậc nhất",
+     "caption": "Điền các ô trống để hoàn thiện sơ đồ kiến thức của buổi",
+     "branches": [
+      {
+       "label": "Có mẫu số",
+       "children": [
+        {
+         "label": "Nhân hai vế với [[blank:2cm]]"
+        },
+        {
+         "label": "Mẫu chung dương nên [[blank:2cm]] chiều"
+        }
+       ]
+      },
+      {
+       "label": "Có ngoặc",
+       "children": [
+        {
+         "label": "Khai triển rồi rút gọn"
+        },
+        {
+         "label": "Mất ẩn: đúng $\\to$ mọi $x$; sai $\\to$ [[blank:1.8cm]]"
+        }
+       ]
+      },
+      {
+       "label": "Bài thực tế",
+       "children": [
+        {
+         "label": "Gọi ẩn $+$ [[blank:1.8cm]]"
+        },
+        {
+         "label": "\\emph{ít nhất} $\\to$ [[blank:1cm]]"
+        }
+       ]
+      },
+      {
+       "label": "Kết luận",
+       "children": [
+        {
+         "label": "Đối chiếu điều kiện nguyên"
+        },
+        {
+         "label": "Trả lời kèm đơn vị"
+        }
+       ]
+      }
+     ]
+    },
+    {
+     "type": "problem",
+     "label": "BTVN 1.",
+     "statement": "Chỉ ra mẫu chung rồi viết bất phương trình sau khi nhân hai vế với mẫu chung.[[br]]a) [NB] $\\dfrac{x+3}{4}-\\dfrac{5}{6}<\\dfrac{x-2}{3}$.[[br]]b) [NB] $\\dfrac{2-x}{2} \\le \\dfrac{5x+4}{11}$.[[br]]c) [NB] $\\dfrac{x}{2}+\\dfrac{x}{3}>5$.",
+     "tier": "btvn",
+     "level": 1,
+     "solution": "a) Mẫu chung là $12$; nhân hai vế với $12$ được $3(x+3)-10<4(x-2)$.[[br]]b) Mẫu chung là $22$; nhân hai vế với $22$ được $11(2-x) \\le 2(5x+4)$.[[br]]c) Mẫu chung là $6$; nhân hai vế với $6$ được $3x+2x>30$.",
+     "dang_id": "NB1",
+     "writelines": 0
+    },
+    {
+     "type": "problem",
+     "label": "BTVN 2.",
+     "statement": "Khai triển và rút gọn vế trái của mỗi bất phương trình.[[br]]a) [NB] $(2x+1)^2-4x^2 \\le 9$.[[br]]b) [NB] $3x(x-1)-3x^2>-6$.",
+     "tier": "btvn",
+     "level": 1,
+     "solution": "a) $(2x+1)^2-4x^2=4x^2+4x+1-4x^2=4x+1$ nên bất phương trình là $4x+1 \\le 9$.[[br]]b) $3x(x-1)-3x^2=3x^2-3x-3x^2=-3x$ nên bất phương trình là $-3x>-6$.",
+     "dang_id": "NB2",
+     "writelines": 0
+    },
+    {
+     "type": "problem",
+     "label": "BTVN 3.",
+     "statement": "Viết điều kiện của đề thành bất phương trình.[[br]]a) [NB] Thang máy có tải trọng tối đa $800$ kg; gọi $M$ là tổng khối lượng trong thang máy.[[br]]b) [NB] Cần thu hút ít nhất $50\\,000$ lượt tương tác; gọi $L$ là số lượt tương tác.[[br]]c) [NB] Số học sinh của lớp không ít hơn 35 bạn; gọi $s$ là số học sinh.",
+     "tier": "btvn",
+     "level": 1,
+     "solution": "a) $M \\le 800$.[[br]]b) $L \\ge 50\\,000$.[[br]]c) $s \\ge 35$.",
+     "dang_id": "NB3",
+     "writelines": 0
+    },
+    {
+     "type": "problem",
+     "label": "BTVN 4.",
+     "statement": "Điền vào chỗ trống để hoàn thành lời giải bài toán: \\emph{Chị Mai có thu nhập $600\\,000$ đồng mỗi ngày, chi phí sinh hoạt hết $200\\,000$ đồng mỗi ngày. Chị muốn mua một chiếc điện thoại giá $7{,}5$ triệu đồng thì cần đi làm ít nhất bao nhiêu ngày?}[[br]]a) [NB] Gọi số ngày chị Mai đi làm là $x$, điều kiện [[blank:3cm]].[[br]]b) [NB] Mỗi ngày chị để dành được [[blank:2.6cm]] đồng, nên sau $x$ ngày chị có [[blank:2.6cm]] đồng; ta có bất phương trình [[blank:3.4cm]].",
+     "tier": "btvn",
+     "level": 1,
+     "solution": "a) Điều kiện: $x$ là số nguyên dương.[[br]]b) Mỗi ngày để dành được $600\\,000-200\\,000=400\\,000$ (đồng); sau $x$ ngày có $400\\,000x$ (đồng); bất phương trình là $400\\,000x \\ge 7\\,500\\,000$.[[br]]Giải ra $x \\ge 18{,}75$ nên chị Mai cần đi làm ít nhất 19 ngày.",
+     "dang_id": "NB4",
+     "writelines": 0
+    },
+    {
+     "type": "problem",
+     "label": "BTVN 5.",
+     "statement": "Giải các bất phương trình sau.[[br]]a) [TH] $\\dfrac{2x-1}{3}-\\dfrac{x+2}{2}>1$.[[br]]b) [TH] $\\dfrac{x+1}{2}+\\dfrac{x-2}{3} \\le \\dfrac{x}{6}$.[[br]]c) [TH] $\\dfrac{3x-1}{4} \\ge \\dfrac{x+5}{2}$.",
+     "tier": "btvn",
+     "level": 2,
+     "solution": "a) Mẫu chung là $6$. Nhân hai vế với $6>0$: $2(2x-1)-3(x+2)>6$.[[br]]Bỏ ngoặc: $4x-2-3x-6>6$, tức là $x-8>6$, suy ra $x>14$.[[br]]b) Mẫu chung là $6$. Nhân hai vế với $6>0$: $3(x+1)+2(x-2) \\le x$.[[br]]Bỏ ngoặc: $3x+3+2x-4 \\le x$, tức là $5x-1 \\le x$, suy ra $4x \\le 1$, do đó $x \\le \\dfrac{1}{4}$.[[br]]c) Mẫu chung là $4$. Nhân hai vế với $4>0$: $3x-1 \\ge 2(x+5)$.[[br]]Bỏ ngoặc: $3x-1 \\ge 2x+10$, suy ra $x \\ge 11$.[[br]]Vậy ba tập nghiệm là $x>14$; $x \\le \\dfrac{1}{4}$ và $x \\ge 11$.",
+     "dang_id": "TH1",
+     "writelines": 0
+    },
+    {
+     "type": "problem",
+     "label": "BTVN 6.",
+     "statement": "a) [TH] Một cửa hàng nhập $60$ chiếc điện thoại với giá $20$ triệu đồng một chiếc; thuế và phí vận chuyển của cả lô lần lượt là $36$ triệu đồng và $20$ triệu đồng. Cửa hàng bán mỗi chiếc bằng $125\\%$ giá nhập. Nhận định \\emph{sau khi bán hết 60 chiếc, cửa hàng lãi hơn 250 triệu đồng} là đúng hay sai?[[br]]b) [TH] Một hộp bút giá $45\\,000$ đồng, mỗi chiếc bút lẻ giá $8\\,000$ đồng. Bạn An có $150\\,000$ đồng, mua một hộp bút rồi mua thêm bút lẻ. Hỏi An mua được nhiều nhất bao nhiêu chiếc bút lẻ?",
+     "tier": "btvn",
+     "level": 2,
+     "solution": "a) Tổng chi phí là $60 \\cdot 20+36+20=1256$ (triệu đồng).[[br]]Giá bán mỗi chiếc là $125\\% \\cdot 20=25$ (triệu đồng) nên doanh thu là $60 \\cdot 25=1500$ (triệu đồng).[[br]]Tiền lãi là $1500-1256=244$ (triệu đồng). Vì $244<250$ nên nhận định đã cho là SAI.[[br]]b) Gọi số bút lẻ mua được là $x$ (chiếc), điều kiện $x$ nguyên dương.[[br]]Số tiền phải trả là $45\\,000+8\\,000x$ (đồng) nên $45\\,000+8\\,000x \\le 150\\,000$.[[br]]Suy ra $8\\,000x \\le 105\\,000$, do đó $x \\le 13{,}125$.[[br]]Vì $x$ nguyên dương nên $x$ lớn nhất bằng $13$.[[br]]Vậy An mua được nhiều nhất $13$ chiếc bút lẻ.",
+     "dang_id": "TH2",
+     "writelines": 0
+    },
+    {
+     "type": "problem",
+     "label": "BTVN 7.",
+     "statement": "a) [VD] Một nhóm học sinh có $300\\,000$ đồng để mua nước: nước suối giá $6\\,000$ đồng một chai, nước ép giá $15\\,000$ đồng một chai. Nếu nhóm mua 20 chai nước suối thì mua được nhiều nhất bao nhiêu chai nước ép?[[br]]b) [VD] Một cửa hàng bán hai loại bánh: bánh ngọt giá $25\\,000$ đồng một chiếc, bánh mặn giá $18\\,000$ đồng một chiếc. Cô Lan mua 6 chiếc bánh ngọt và một số chiếc bánh mặn, tổng tiền không quá $420\\,000$ đồng. Hỏi cô Lan mua được nhiều nhất bao nhiêu chiếc bánh mặn?",
+     "tier": "btvn",
+     "level": 3,
+     "solution": "a) Gọi số chai nước ép mua được là $x$ (chai), điều kiện $x$ nguyên dương.[[br]]Tiền mua 20 chai nước suối là $20 \\cdot 6\\,000=120\\,000$ (đồng).[[br]]Tổng tiền là $120\\,000+15\\,000x$ (đồng) nên $120\\,000+15\\,000x \\le 300\\,000$.[[br]]Suy ra $15\\,000x \\le 180\\,000$, do đó $x \\le 12$.[[br]]Vậy nhóm mua được nhiều nhất $12$ chai nước ép.[[br]]b) Gọi số bánh mặn cô Lan mua là $y$ (chiếc), điều kiện $y$ nguyên dương.[[br]]Tiền mua 6 chiếc bánh ngọt là $6 \\cdot 25\\,000=150\\,000$ (đồng).[[br]]Tổng tiền là $150\\,000+18\\,000y$ (đồng) nên $150\\,000+18\\,000y \\le 420\\,000$.[[br]]Suy ra $18\\,000y \\le 270\\,000$, do đó $y \\le 15$.[[br]]Vậy cô Lan mua được nhiều nhất $15$ chiếc bánh mặn.",
+     "dang_id": "VD1",
+     "writelines": 0,
+     "hints": [
+      "Số lượng của một loại đã biết — phần tiền ấy là số cố định. Ẩn chỉ nằm ở loại còn lại.",
+      "Viết tổng tiền theo ẩn rồi so với số tiền có được bằng dấu nào?"
+     ],
+     "quy_trinh": [
+      "Bước 1 — Cái phải tìm là gì? Đại lượng đề hỏi là số nào, đơn vị gì?",
+      "Bước 2 — Gọi ẩn cho đại lượng đó kèm điều kiện (nguyên, dương, không vượt quá…).",
+      "Bước 3 — Đã dùng hết dữ kiện chưa? Dịch các cụm \\emph{ít nhất}, \\emph{nhiều nhất}, \\emph{không quá}, \\emph{tối đa} thành dấu $\\ge$, $\\le$.",
+      "Bước 4 — Giải bất phương trình vừa lập.",
+      "Bước 5 — Nhìn lại: đối chiếu điều kiện ở Bước 2, chọn giá trị đề hỏi rồi trả lời thành câu kèm đơn vị."
+     ]
+    },
+    {
+     "type": "problem",
+     "label": "BTVN 8.",
+     "statement": "[VD] Một cuộc thi có 25 câu hỏi: mỗi câu trả lời đúng được cộng 4 điểm, mỗi câu sai bị trừ 1 điểm. Thí sinh muốn đạt ít nhất 70 điểm thì phải trả lời đúng tối thiểu bao nhiêu câu?",
+     "tier": "btvn",
+     "level": 3,
+     "solution": "Gọi số câu trả lời đúng là $x$ (câu), điều kiện $x$ nguyên và $0 \\le x \\le 25$.[[br]]Số câu trả lời sai là $25-x$ (câu).[[br]]Số điểm đạt được là $4x-(25-x)=5x-25$ (điểm) nên $5x-25 \\ge 70$.[[br]]Suy ra $5x \\ge 95$, do đó $x \\ge 19$.[[br]]Vì $x$ nguyên và $x \\le 25$ nên $x$ nhỏ nhất bằng $19$.[[br]]Vậy thí sinh phải trả lời đúng tối thiểu $19$ câu.",
+     "dang_id": "VD2",
+     "writelines": 0,
+     "hints": [
+      "Số câu sai viết theo số câu đúng thế nào?",
+      "Điểm bị trừ cũng phải đưa vào biểu thức tổng điểm."
+     ],
+     "quy_trinh": [
+      "Bước 1 — Cái phải tìm là gì? Đại lượng đề hỏi là số nào, đơn vị gì?",
+      "Bước 2 — Gọi ẩn cho đại lượng đó kèm điều kiện (nguyên, dương, không vượt quá…).",
+      "Bước 3 — Đã dùng hết dữ kiện chưa? Dịch các cụm \\emph{ít nhất}, \\emph{nhiều nhất}, \\emph{không quá}, \\emph{tối đa} thành dấu $\\ge$, $\\le$.",
+      "Bước 4 — Giải bất phương trình vừa lập.",
+      "Bước 5 — Nhìn lại: đối chiếu điều kiện ở Bước 2, chọn giá trị đề hỏi rồi trả lời thành câu kèm đơn vị."
+     ]
+    },
+    {
+     "type": "problem",
+     "label": "BTVN 9.",
+     "statement": "[VDC] (Giữa kì I $-$ THCS Trưng Vương) Một hộ nông dân trồng đậu và cà trên diện tích $800$ m$^2$. Cứ $100$ m$^2$ trồng đậu thì cần $10$ công và thu lãi $7$ triệu đồng; cứ $100$ m$^2$ trồng cà thì cần $15$ công và thu lãi $9$ triệu đồng. Hỏi cần trồng mỗi loại trên diện tích bao nhiêu để thu lãi cao nhất, biết rằng tổng số công không quá $90$?",
+     "tier": "btvn",
+     "level": 4,
+     "solution": "Gọi diện tích trồng đậu là $x$ (trăm mét vuông), điều kiện $0 \\le x \\le 8$.[[br]]Khi đó diện tích trồng cà là $8-x$ (trăm mét vuông).[[br]]Tổng số công là $10x+15(8-x)=120-5x$ (công).[[br]]Vì tổng số công không quá $90$ nên $120-5x \\le 90$, suy ra $-5x \\le -30$, do đó $x \\ge 6$.[[br]]Tiền lãi thu được là $T=7x+9(8-x)=72-2x$ (triệu đồng).[[br]]Vì $x \\ge 6$ nên $-2x \\le -12$, do đó $T \\le 60$.[[br]]Dấu bằng xảy ra khi $x=6$ (thoả mãn $0 \\le x \\le 8$).[[br]]Vậy trồng đậu trên $600$ m$^2$ và cà trên $200$ m$^2$ thì lãi cao nhất, bằng $60$ triệu đồng.",
+     "dang_id": "VDC1",
+     "writelines": 0,
+     "hints": [
+      "Hai loại cây chia nhau $800$ m$^2$ — nếu gọi diện tích một loại là $x$ thì loại kia bằng bao nhiêu?",
+      "Ràng buộc \\emph{tổng số công không quá 90} cho ta điều gì về $x$? Còn tiền lãi viết theo $x$ thì tăng hay giảm khi $x$ tăng?"
+     ],
+     "quy_trinh": [
+      "Bước 1 — Cái phải tìm là gì? Đại lượng đề hỏi là số nào, đơn vị gì?",
+      "Bước 2 — Gọi ẩn cho đại lượng đó kèm điều kiện (nguyên, dương, không vượt quá…).",
+      "Bước 3 — Đã dùng hết dữ kiện chưa? Dịch các cụm \\emph{ít nhất}, \\emph{nhiều nhất}, \\emph{không quá}, \\emph{tối đa} thành dấu $\\ge$, $\\le$.",
+      "Bước 4 — Giải bất phương trình vừa lập.",
+      "Bước 5 — Nhìn lại: đối chiếu điều kiện ở Bước 2, chọn giá trị đề hỏi rồi trả lời thành câu kèm đơn vị."
+     ]
+    }
+   ]
+  }
+ ]
+}

@@ -33,10 +33,12 @@ Mỗi bài đúng **5 chặng** (kind cố định), mỗi chặng mang các blo
 | # | `kind` | Vai trò | Ghi chú |
 |---|--------|---------|---------|
 | 1 | `review` | Khám phá / KTBC | Ôn nhanh kiến thức nền + 1 worked example trọn vẹn. Có nhịp cầu, **không nhảy gấp** sang lý thuyết mới. |
-| 2 | `concept` | Khái niệm + Ví dụ mẫu | Phát biểu khái niệm/định lí cốt lõi; **≥1 "Ví dụ mẫu"** làm theo từng bước. Kèm ghi chú *"Đích đến thi vào 10"* (kỹ năng này tái xuất ở câu nào của đề vào 10). |
-| 3 | `practice1` | Luyện tập 1 — BT trên lớp (nền) | Bài đại diện, làm cùng GV. `tier="onclass"`. |
-| 4 | `practice2` | Luyện tập 2 — BT trên lớp (vận dụng) | Ưu tiên dạng **có trong đề vào 10**; bài khó dần, **chạm trần** `ceiling.level`. `tier="onclass"`. |
+| 2 | `concept` | Khái niệm cốt lõi | Phát biểu khái niệm/định lí cốt lõi. Kèm ghi chú *"Đích đến thi vào 10"* (`callouttarget`) và *"Bẫy điểm"* (`callouttrap`). *(Phiếu B+C: không dồn ví dụ ở đây)*. |
+| 3 | `practice1` | Luyện tập 1 — BT trên lớp (nền) | Khung **Ví dụ mẫu** (`variant: "example"`) đi kèm ngay trước nhóm bài tập của từng dạng $\to$ HS áp dụng làm ngay. `tier="onclass"`. |
+| 4 | `practice2` | Luyện tập 2 — BT trên lớp (vận dụng) | Khung **Ví dụ mẫu** đặt trước bài tập dạng TH/VD; ưu tiên dạng **có trong đề vào 10**; bài khó dần, **chạm trần** `ceiling.level`. `tier="onclass"`. |
 | 5 | `reflection` | Tổng kết | Trên phiếu **chỉ** là "Tổng kết": 1–2 câu chốt + **sơ đồ tư duy điền khuyết** (`mindmap`) đặt **ở đầu** blocks. BTVN/Mở rộng gắn tier ở **sau** (xem §3). |
+
+> **CẤU TRÚC VÍ DỤ MẪU CHO PHIẾU B+C (Thầy chốt 08/09/2026):** Toàn bộ khung "Ví dụ mẫu" được đưa xuống nằm song song trong phần Luyện tập 1 và 2 (ngay trước bài tập của từng dạng). GV giảng xong ví dụ nào thì HS thực hành làm bài tập của dạng đó luôn.
 
 **Đánh số bài LIỀN MẠCH** cả phiếu (Bài 1, 2, 3, …), không đánh lại theo từng dạng. **Không bỏ bài nào của nguồn** — chỉ phân tầng lại.
 

@@ -51,7 +51,10 @@
 ((* if b.quy_trinh *))
 \par\vspace{3pt}
 \begin{quytrinhbox}{\sffamily\bfseries\color{stage3}Quy trình giải:}\par
-((* for s in b.quy_trinh *))((( s | tex )))((* if not loop.last *))\par((* endif *))
+((= `\par{}` chứ KHÔNG phải `\par`: trim_blocks nuốt dấu xuống dòng sau ((* endif *)),
+     nên `\par` dính liền chữ đầu bước sau thành `\parBước` — lệnh không tồn tại, Tectonic
+     chết ngay. Hộp Gợi ý thoát nạn chỉ vì mỗi ý mở đầu bằng `\textbullet`. =))
+((* for s in b.quy_trinh *))((( s | tex )))((* if not loop.last *))\par{}((* endif *))
 ((* endfor *))\end{quytrinhbox}
 ((* endif *))
 ((* if b.hints *))

@@ -289,9 +289,15 @@ def check_duration(lesson: LessonPackage) -> list[str]:
         if seg != "onclass":            # 40-40-20 là tỉ lệ giờ TRÊN LỚP
             continue
         seg_min = dict(minutes[seg])
+        muc = dict(ratio_target)
         if gop:      # Thầy chốt 30/08/2026: tầng B soi VD và VDC như MỘT khối
             seg_min["VD"] = seg_min.get("VD", 0.0) + seg_min.pop("VDC", 0.0)
-        for band, target in ratio_target.items():
+            # …thì ĐÍCH cũng phải gộp. Từ 04/09/2026 `tier_ratio` tách khối 55% thành
+            # VD 35 + VDC 20 (nhóm tần suất cao), nên so phút-đã-gộp với đích CHƯA gộp
+            # là chương nhóm cao nào cũng ăn hai cảnh báo oan: "VD+VDC 56% lệch 35%"
+            # và "VDC 0% lệch 20%".
+            muc["VD"] = muc.get("VD", 0) + muc.pop("VDC", 0)
+        for band, target in muc.items():
             if target == 0 and seg_min.get(band, 0) == 0:
                 continue                # band không dùng ở tầng này & không xuất hiện
             share = seg_min.get(band, 0.0) / total * 100
