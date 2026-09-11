@@ -92,18 +92,19 @@
   \end{tikzpicture}%
 }
 
-% Footline mảnh: tên bài • số slide
+% Footline mảnh: thanh kẻ ngang mảnh + logo compact + thông tin bài + số slide
 \setbeamertemplate{footline}{%
-  \vskip3pt%
+  \leavevmode%
+  \hspace*{0.6cm}{\color{rule}\rule{\dimexpr\paperwidth-1.2cm\relax}{0.4pt}}\par\vspace{3pt}%
   \hbox to \paperwidth{%
     \hspace*{0.6cm}%
-    \raisebox{-1pt}{\includegraphics[height=12pt]{((( assets_dir )))((( branding.logo_file )))}}%
-    \hspace*{4pt}{\scriptsize\color{muted}((* if lesson.grade_label *))((( lesson.grade_label ))) • ((* endif *))Biên soạn: ((( branding.author_name )))}%
+    \raisebox{-1pt}{\includegraphics[height=9.5pt]{((( assets_dir )))((( branding.logo_compact_file or "logo_mathtech_compact.png" )))}}%
+    \hspace*{6pt}{\scriptsize\color{muted}((* if lesson.grade_label *))((( lesson.grade_label ))) • ((* endif *))Biên soạn: ((( branding.author_name )))}%
     \hfill%
     {\scriptsize\color{muted}Slide \insertframenumber}%
     \hspace*{0.6cm}%
   }%
-  \vskip3pt}
+  \vskip4pt}
 \setbeamertemplate{frametitle}{%
   \vspace*{10pt}\hspace*{0.2cm}{\usebeamerfont{frametitle}\usebeamercolor[fg]{frametitle}\insertframetitle}\par
   \vspace{2pt}\hspace*{0.2cm}{\color{brand}\rule{42pt}{3pt}}\par\vspace{4pt}}

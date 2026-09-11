@@ -37,3 +37,39 @@ def test_no_shell_escape_in_build():
     """Chốt bảo mật: latex_builder TUYỆT ĐỐI không được bật -shell-escape."""
     src = (ROOT / "src" / "compiler" / "latex_builder.py").read_text(encoding="utf-8")
     assert "-shell-escape" not in src, "Phát hiện -shell-escape: nguy cơ thực thi mã!"
+
+
+def test_strip_example_solution():
+    """Slide TV: ví dụ mẫu tự động cắt bỏ Lời giải, chỉ giữ đề bài."""
+    from src.compiler.jinja_renderer import strip_example_solution
+
+    text_with_solution = (
+        r"\begin{minipage}{0.6\linewidth}" "\n"
+        r"\textbf{Ví dụ 1.} Rút gọn biểu thức $A$.[[br]]" "\n"
+        r"{\sffamily\bfseries\color{brand}Lời giải}[[br]]" "\n"
+        r"\hspace*{1.4em}Ta có $A = \sqrt{x} + 1$." "\n"
+        r"\end{minipage}\hfill\begin{minipage}{0.3\linewidth}tikz\end{minipage}"
+    )
+    cleaned = strip_example_solution(text_with_solution)
+    assert "Lời giải" not in cleaned
+    assert "Ta có" not in cleaned
+    assert "Rút gọn biểu thức $A$." in cleaned
+    assert "tikz" in cleaned
+
+
+def test_statement_slide_and_text_slide_schema():
+    """ProblemBlock và NotedBlock hỗ trợ field slide riêng."""
+    from src.schema.lesson_package import ProblemBlock, NotedBlock
+
+    p = ProblemBlock(
+        label="Bài 1.",
+        statement="Đề bài điền khuyết dài",
+        statement_slide="Đề bài rút gọn chiếu TV",
+    )
+    assert p.statement_slide == "Đề bài rút gọn chiếu TV"
+
+    n = NotedBlock(
+        text="Nội dung ví dụ đầy đủ",
+        text_slide="Nội dung ví dụ trên slide",
+    )
+    assert n.text_slide == "Nội dung ví dụ trên slide"

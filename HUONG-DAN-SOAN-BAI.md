@@ -166,7 +166,10 @@ Các phần này do template lo, **luôn ở yên một chỗ**; AI/người so�
 - **Logo** (góc trái header), **watermark**, **khung viền brand 4 góc** — cố định mọi trang.
 - **Footer**: tên công ty + bảng hotline + Website + **chữ ký `Biên soạn: Thầy Thái MathTech — ĐT 0386969199`** — cố định mọi trang (xem README §"Dấu ấn giáo viên"). **Đừng gỡ.**
 - **Badge số chặng** (huy hiệu tròn), thanh nhấn trái khối chặng — cố định.
-- **Slide**: renderer gom blocks thành **"đơn vị dạy"** (`group_slide_segments`): mỗi `problem`/`noted`/`para`/`mindmap` một slide; `math`/`table` đi LIỀN phần dẫn ngay trước (không tách rời). Segment **có `figure`** → bố cục **2 cột: lý thuyết/đề bên TRÁI, hình bên PHẢI** (liền mạch, dễ giảng); chỉ-chữ → full width; chỉ-hình → căn giữa. Phiếu KHÔNG hình (đại số) → mỗi đề/ý một slide gọn, không dính đoạn. Slide bìa + footline chữ ký cố định.
+- **Slide**: renderer gom blocks thành **"đơn vị dạy"** (`group_slide_segments`): mỗi `problem`/`noted`/`para`/`mindmap` một slide; `math`/`table` đi LIỀN phần dẫn ngay trước (không tách rời). Segment **có `figure`** → bố cục **2 cột: lý thuyết/đề bên TRÁI, hình bên PHẢI** (liền mạch, dễ giảng); chỉ-chữ → full width; chỉ-hình → căn giữa. Phiếu KHÔNG hình (đại số) → mỗi đề/ý một slide gọn, không dính đoạn.
+  - **Ví dụ mẫu**: Renderer tự động cắt bỏ phần Lời giải (`strip_example_solution`), chỉ chiếu Đề bài + Hình vẽ TikZ để Thầy tương tác giảng giải và ghi bảng.
+  - **Bài tập điền khuyết dài**: Khai thêm trường `statement_slide` trong `ProblemBlock` để slide chỉ hiện câu hỏi toán học thuần túy (Cho... Chứng minh a... b...) kèm hình vẽ, không chiếu khung chỗ trống dài dòng; bản in Handout HS và Guide GV vẫn giữ 100% khung `[[blank:...]]`.
+  - **Footline slide chuẩn**: Logo `logo_mathtech_compact.png` + nhãn lớp/chương + tác giả bên trái; thanh kẻ mảnh phân cách phía trên; số trang `Slide \insertframenumber` căn phải (không dùng logo dài gây overfull làm dính chữ `MathTechSlide N`).
 
 → Tên bài **dài bao nhiêu cũng được** — template tự co, không vỡ layout. Nguồn chỉnh các phần cố định: `templates/base_*.tex.j2` + `templates/preamble/_macros.tex.j2` (`\titlefit`) + `_beamer.tex.j2`. Sửa xong một chỗ → `rebuild` để áp cho tất cả.
 

@@ -1,11 +1,9 @@
 {
   "slug": "phieu-c-quy-dong-va-rut-gon",
-  "title": "Quy đồng phân thức \\& rút gọn biểu thức chứa căn",
-  "eyebrow": "PHIẾU C · CHƯƠNG III — BÀI 9 (PHẦN 2)",
+  "title": "Quy đồng và rút gọn biểu thức chứa căn",
+  "eyebrow": "ĐẠI SỐ — BUỔI 3 (TUẦN 18): QUY ĐỒNG \\& RÚT GỌN CĂN THỨC",
+  "grade_label": "Lớp 9 • Ôn vào 10",
   "class_tier": "C",
-  "grade": "lop-9",
-  "subject": "dai-so",
-  "unit": "Chương III. Căn bậc hai và căn bậc ba",
   "stages": [
     {
       "kind": "review",
@@ -13,17 +11,17 @@
       "title": "Khám phá",
       "blocks": [
         {
-          "type": "para",
-          "text": "\\textbf{Quy tắc quy đồng phân thức đại số và áp dụng cho phân thức chứa căn}"
+          "type": "opener",
+          "text": "Ở Lớp 8, để thực hiện phép cộng $\\dfrac{1}{t - 2} + \\dfrac{1}{t + 2}$, ta tìm mẫu thức chung là $(t - 2)(t + 2) = t^2 - 4$. Khi đó: $\\dfrac{(t + 2) + (t - 2)}{t^2 - 4} = \\dfrac{2t}{t^2 - 4}$. [[br]] Lên Lớp 9, thay biến $t$ bởi $\\sqrt{x}$ (với $x \\ge 0, x \\neq 4$), ta có bài toán quy đồng kinh điển: [[br]] $\\dfrac{1}{\\sqrt{x} - 2} + \\dfrac{1}{\\sqrt{x} + 2} = \\dfrac{(\\sqrt{x} + 2) + (\\sqrt{x} - 2)}{(\\sqrt{x} - 2)(\\sqrt{x} + 2)} = \\dfrac{2\\sqrt{x}}{x - 4}$. [[br]] Toàn bộ quy trình 4 bước của Lớp 8 (Tìm MTC $\\to$ Nhân tử phụ $\\to$ Thu gọn tử $\\to$ Giản ước) được giữ nguyên vẹn để chinh phục Câu I.2 trong đề thi Tuyển sinh Vào 10."
         },
         {
           "type": "noted",
-          "variant": "example",
-          "text": "\\textbf{Quy trình Lớp 8:} Để cộng $\\dfrac{1}{x-2} + \\dfrac{1}{x+2}$, ta tìm MTC là $(x-2)(x+2) = x^2-4$. Quy đồng: $\\dfrac{x+2 + (x-2)}{x^2-4} = \\dfrac{2x}{x^2-4}$. [[br]] \\textbf{Quy trình Lớp 9:} Để cộng $\\dfrac{1}{\\sqrt{x}-2} + \\dfrac{1}{\\sqrt{x}+2}$, MTC là $(\\sqrt{x}-2)(\\sqrt{x}+2) = x-4$. Quy đồng: $\\dfrac{(\\sqrt{x}+2) + (\\sqrt{x}-2)}{x-4} = \\dfrac{2\\sqrt{x}}{x-4}$."
+          "variant": "note",
+          "text": "\\textbf{Trọng tâm buổi học:} [[br]] $\\bullet$ \\textbf{Mẫu thức chung thường gặp:} $x - a^2 = (\\sqrt{x} - a)(\\sqrt{x} + a)$ và $x \\pm a\\sqrt{x} = \\sqrt{x}(\\sqrt{x} \\pm a)$. [[br]] $\\bullet$ \\textbf{Nhân tử phụ:} Phân thức có mẫu $\\sqrt{x} - a$ thì nhân thêm $\\sqrt{x} + a$; phân thức có mẫu $\\sqrt{x} + a$ thì nhân thêm $\\sqrt{x} - a$. [[br]] $\\bullet$ \\textbf{Phá ngoặc thu gọn tử:} Lưu ý dấu trừ trước ngoặc $-(\\sqrt{x} - a) = -\\sqrt{x} + a$. [[br]] $\\bullet$ \\textbf{Giản ước nhân tử chung:} Phân tích tử thức thành nhân tử để triệt tiêu với mẫu thức."
         }
       ],
-      "solution": "Khám phá giúp học sinh nhận thấy quy trình quy đồng phân thức chứa căn hoàn toàn tương tự phân thức đại số Lớp 8.",
-      "teacher_note": "Nhấn mạnh 4 bước: 1. Tìm MTC $\\to$ 2. Nhân tử phụ $\\to$ 3. Thu gọn tử thức $\\to$ 4. Triệt tiêu phân thức."
+      "solution": "Nắm vững quy trình quy đồng 4 bước áp dụng cho biểu thức chứa căn.",
+      "teacher_note": "GV nhấn mạnh: Mấu chốt của quy đồng là xác định đúng MTC từ việc phân tích mẫu thành nhân tử."
     },
     {
       "kind": "concept",
@@ -31,415 +29,532 @@
       "title": "Kiến thức cần nhớ",
       "blocks": [
         {
-          "type": "para",
-          "text": "\\textbf{1. Các bước quy đồng phân thức chứa căn}"
+          "type": "noted",
+          "variant": "note",
+          "text": "\\textbf{Quy trình 4 bước rút gọn biểu thức phân thức chứa căn:} [[br]] \\textbf{Bước 1 (Tìm ĐKXĐ và MTC):} ĐKXĐ thường là $x \\ge 0, x \\neq a^2$. Phân tích các mẫu thành nhân tử để xác định MTC. [[br]] \\textbf{Bước 2 (Quy đồng mẫu thức):} Tìm nhân tử phụ của từng phân thức rồi nhân cả tử và mẫu. [[br]] \\textbf{Bước 3 (Cộng trừ và thu gọn tử):} Giữ nguyên mẫu thức chung, khai triển các tích ở tử, phá ngoặc cẩn thận dấu trừ và thu gọn các hạng tử đồng dạng. [[br]] \\textbf{Bước 4 (Giản ước):} Phân tích tử thức thu được thành nhân tử rồi rút gọn với mẫu để ra kết quả tối giản."
         },
         {
-          "type": "para",
-          "text": "• Bước 1: Tìm ĐKXĐ $x \\ge 0, x \\ne a^2$ và xác định MTC $= x-a^2 = (\\sqrt{x}-a)(\\sqrt{x}+a)$. [[br]] • Bước 2: Nhân cả tử và mẫu của từng phân thức với nhân tử phụ tương ứng. [[br]] • Bước 3: Cộng/trừ tử thức và thu gọn: $(\\sqrt{x}+a)+(\\sqrt{x}-a) = 2\\sqrt{x}$ hoặc $(\\sqrt{x}+a)-(\\sqrt{x}-a) = 2a$. [[br]] • Bước 4: Triệt tiêu nhân tử chung ở tử và mẫu để được phân thức tối giản."
-        },
-        {
-          "type": "para",
-          "text": "\\textbf{2. Kĩ thuật hỗ trợ quy đồng}"
-        },
-        {
-          "type": "para",
-          "text": "• Đổi dấu mẫu: $a - \\sqrt{x} = -(\\sqrt{x}-a)$ để đưa về MTC chung. [[br]] • Nhân/chia phân thức: $\\dfrac{A}{\\sqrt{x}-a} \\cdot \\dfrac{\\sqrt{x}-a}{B} = \\dfrac{A}{B}$ và $\\dfrac{1}{\\frac{A}{B}} = \\dfrac{B}{A}$."
+          "type": "noted",
+          "variant": "trap",
+          "text": "\\textbf{Các bẫy sai lầm phổ biến cần tuyệt đối tránh:} [[br]] (1) \\textbf{Quên đổi dấu khi phá ngoặc:} Phía trước phân thức có dấu trừ, khi gộp tử phải đặt toàn bộ tử thức trong dấu ngoặc: $-(A - B) = -A + B$. [[br]] (2) \\textbf{Quên đổi dấu mẫu ngược:} Gặp mẫu $a - \\sqrt{x}$, phải viết ngay thành $-(\\sqrt{x} - a)$ và đảo dấu phía trước. [[br]] (3) \\textbf{Giản ước từng số hạng:} Tuyệt đối không gạch các số hạng rời rạc ở tử và mẫu khi chưa đưa về dạng tích."
         }
       ],
-      "solution": "Học sinh ghi nhớ và thực hiện thuần thục các thao tác thu gọn tử thức và đổi dấu mẫu thức.",
-      "teacher_note": "Cho học sinh luyện tập kĩ từng thao tác lẻ trước khi làm bài toán rút gọn 2-3 hạng tử hoàn chỉnh."
+      "solution": "Thực hiện đúng và đủ 4 bước rút gọn, cẩn thận dấu trừ khi quy đồng.",
+      "teacher_note": "Cho HS đọc đồng thanh quy tắc phá ngoặc có dấu trừ đằng trước: 'Đổi dấu toàn bộ các số hạng bên trong'."
     },
     {
       "kind": "practice1",
       "number": 3,
-      "title": "Luyện tập 1",
+      "title": "Luyện tập 1 — Củng cố nền tảng kỹ năng",
       "blocks": [
         {
           "type": "para",
-          "text": "\\textbf{Phần 1: Các bước quy đồng}"
+          "text": "\\textbf{Dạng NB1: Quy đồng hai phân thức chứa căn đơn giản}"
         },
         {
           "type": "problem",
           "label": "Bài 1.",
+          "dang_id": "NB1",
           "level": 1,
-          "statement": "Xác định nhân tử phụ của phân thức $\\dfrac{1}{\\sqrt{x}-a}$ khi MTC là $x-a^2$: [[br]] a) Nhân tử phụ của $\\dfrac{1}{\\sqrt{x}-2}$. [[br]] b) Nhân tử phụ của $\\dfrac{1}{\\sqrt{x}-3}$.",
           "tier": "onclass",
-          "writelines": 2
+          "statement": "Quy đồng mẫu thức hai phân thức sau về mẫu thức chung: [[br]] a) $\\dfrac{1}{\\sqrt{x} - 1}$ và $\\dfrac{1}{\\sqrt{x} + 1}$ về MTC là $x - 1$. [[br]] b) $\\dfrac{2}{\\sqrt{x} - 2}$ và $\\dfrac{3}{\\sqrt{x} + 2}$ về MTC là $x - 4$. [[br]] c) $\\dfrac{1}{\\sqrt{x}}$ và $\\dfrac{1}{\\sqrt{x} - 3}$ về MTC là $\\sqrt{x}(\\sqrt{x} - 3)$.",
+          "solution": "Ta có: [[br]] a) $\\dfrac{\\sqrt{x} + 1}{x - 1}$ và $\\dfrac{\\sqrt{x} - 1}{x - 1}$. [[br]] b) $\\dfrac{2(\\sqrt{x} + 2)}{x - 4}$ và $\\dfrac{3(\\sqrt{x} - 2)}{x - 4}$. [[br]] c) $\\dfrac{\\sqrt{x} - 3}{\\sqrt{x}(\\sqrt{x} - 3)}$ và $\\dfrac{\\sqrt{x}}{\\sqrt{x}(\\sqrt{x} - 3)}$.",
+          "writelines": 0
+        },
+        {
+          "type": "para",
+          "text": "\\textbf{Dạng NB2: Xác định nhân tử phụ của từng phân thức}"
         },
         {
           "type": "problem",
           "label": "Bài 2.",
+          "dang_id": "NB2",
           "level": 1,
-          "statement": "Viết tử thức sau quy đồng của $\\dfrac{1}{\\sqrt{x}-a} + \\dfrac{1}{\\sqrt{x}+a}$: [[br]] a) Viết tử thức của $\\dfrac{1}{\\sqrt{x}-2} + \\dfrac{1}{\\sqrt{x}+2}$. [[br]] b) Viết tử thức của $\\dfrac{1}{\\sqrt{x}-3} + \\dfrac{1}{\\sqrt{x}+3}$.",
           "tier": "onclass",
-          "writelines": 2
+          "statement": "Xác định nhân tử phụ của mỗi phân thức khi biết MTC: [[br]] a) Phân thức $\\dfrac{1}{\\sqrt{x} - 3}$ với MTC là $x - 9$: Nhân tử phụ là $\\dots$ [[br]] b) Phân thức $\\dfrac{2}{\\sqrt{x} + 5}$ với MTC là $x - 25$: Nhân tử phụ là $\\dots$ [[br]] c) Phân thức $\\dfrac{1}{\\sqrt{x}}$ với MTC là $\\sqrt{x}(\\sqrt{x} + 2)$: Nhân tử phụ là $\\dots$",
+          "solution": "Ta có: [[br]] a) Nhân tử phụ là $\\sqrt{x} + 3$. [[br]] b) Nhân tử phụ là $\\sqrt{x} - 5$. [[br]] c) Nhân tử phụ là $\\sqrt{x} + 2$.",
+          "writelines": 0
+        },
+        {
+          "type": "para",
+          "text": "\\textbf{Dạng NB3: Viết tử thức sau khi nhân nhân tử phụ}"
         },
         {
           "type": "problem",
           "label": "Bài 3.",
+          "dang_id": "NB3",
           "level": 1,
-          "statement": "Thu gọn tử thức: [[br]] a) Thu gọn $(\\sqrt{x}+2) + (\\sqrt{x}-2)$. [[br]] b) Thu gọn $(\\sqrt{x}+5) + (\\sqrt{x}-5)$.",
           "tier": "onclass",
-          "writelines": 2
+          "statement": "Viết tử thức gộp chung sau quy đồng (chưa thu gọn): [[br]] a) $\\dfrac{1}{\\sqrt{x} - 2} + \\dfrac{1}{\\sqrt{x} + 2} = \\dfrac{\\dots}{x - 4}$ [[br]] b) $\\dfrac{1}{\\sqrt{x} - 3} - \\dfrac{1}{\\sqrt{x} + 3} = \\dfrac{\\dots}{x - 9}$ [[br]] c) $\\dfrac{2}{\\sqrt{x} + 1} + \\dfrac{\\sqrt{x}}{\\sqrt{x} - 1} = \\dfrac{\\dots}{x - 1}$",
+          "solution": "Ta có: [[br]] a) $(\\sqrt{x} + 2) + (\\sqrt{x} - 2)$. [[br]] b) $(\\sqrt{x} + 3) - (\\sqrt{x} - 3)$. [[br]] c) $2(\\sqrt{x} - 1) + \\sqrt{x}(\\sqrt{x} + 1)$.",
+          "writelines": 0
+        },
+        {
+          "type": "para",
+          "text": "\\textbf{Dạng NB4: Phá ngoặc có dấu trừ đứng trước}"
         },
         {
           "type": "problem",
           "label": "Bài 4.",
+          "dang_id": "NB4",
           "level": 1,
-          "statement": "Thu gọn tử thức: [[br]] a) Thu gọn $(\\sqrt{x}+3) - (\\sqrt{x}-3)$. [[br]] b) Thu gọn $(\\sqrt{x}+4) - (\\sqrt{x}-4)$.",
           "tier": "onclass",
-          "writelines": 2
+          "statement": "Điền vào chỗ trống kết quả phá ngoặc có dấu trừ phía trước: [[br]] a) $-(\\sqrt{x} - 2) = -\\sqrt{x} + [[blank:0.8cm]]$ [[br]] b) $-(\\sqrt{x} + 5) = -\\sqrt{x} - [[blank:0.8cm]]$ [[br]] c) $-(2\\sqrt{x} - 3) = -2\\sqrt{x} + [[blank:0.8cm]]$",
+          "solution": "Ta có: [[br]] a) $-\\sqrt{x} + 2$. [[br]] b) $-\\sqrt{x} - 5$. [[br]] c) $-2\\sqrt{x} + 3$.",
+          "writelines": 0
+        },
+        {
+          "type": "para",
+          "text": "\\textbf{Dạng NB5: Thu gọn tử thức dạng tổng}"
         },
         {
           "type": "problem",
           "label": "Bài 5.",
+          "dang_id": "NB5",
           "level": 1,
-          "statement": "Quy đồng phân thức: [[br]] a) Quy đồng $\\dfrac{1}{\\sqrt{x}} + \\dfrac{1}{\\sqrt{x}-1}$. [[br]] b) Quy đồng $\\dfrac{1}{\\sqrt{x}} + \\dfrac{1}{\\sqrt{x}-2}$.",
           "tier": "onclass",
-          "writelines": 2
+          "statement": "Thu gọn các biểu thức tổng sau: [[br]] a) $(\\sqrt{x} + 2) + (\\sqrt{x} - 2) = \\dots$ [[br]] b) $(\\sqrt{x} + 3) + (\\sqrt{x} - 3) = \\dots$ [[br]] c) $(2\\sqrt{x} + 1) + (\\sqrt{x} - 1) = \\dots$",
+          "solution": "Ta có: [[br]] a) $2\\sqrt{x}$. [[br]] b) $2\\sqrt{x}$. [[br]] c) $3\\sqrt{x}$.",
+          "writelines": 0
+        },
+        {
+          "type": "para",
+          "text": "\\textbf{Dạng NB6: Thu gọn tử thức dạng hiệu}"
         },
         {
           "type": "problem",
           "label": "Bài 6.",
+          "dang_id": "NB6",
           "level": 1,
-          "statement": "Thu gọn tử thức: [[br]] a) Thu gọn $\\sqrt{x}-1 + \\sqrt{x}$. [[br]] b) Thu gọn $\\sqrt{x}-3 + \\sqrt{x}$.",
           "tier": "onclass",
-          "writelines": 2
+          "statement": "Thu gọn các biểu thức hiệu sau: [[br]] a) $(\\sqrt{x} + 2) - (\\sqrt{x} - 2) = \\dots$ [[br]] b) $(\\sqrt{x} + 5) - (\\sqrt{x} - 5) = \\dots$ [[br]] c) $(3\\sqrt{x} + 4) - (\\sqrt{x} + 4) = \\dots$",
+          "solution": "Ta có: [[br]] a) $\\sqrt{x} + 2 - \\sqrt{x} + 2 = 4$. [[br]] b) $\\sqrt{x} + 5 - \\sqrt{x} + 5 = 10$. [[br]] c) $3\\sqrt{x} + 4 - \\sqrt{x} - 4 = 2\\sqrt{x}$.",
+          "writelines": 0
+        },
+        {
+          "type": "para",
+          "text": "\\textbf{Dạng NB7: Nhân đơn thức với đa thức chứa căn}"
         },
         {
           "type": "problem",
           "label": "Bài 7.",
+          "dang_id": "NB7",
           "level": 1,
-          "statement": "Tìm điều kiện xác định của $B(x)$: [[br]] a) ĐKXĐ của $\\dfrac{\\sqrt{x}}{\\sqrt{x}-2}$. [[br]] b) ĐKXĐ của $\\dfrac{1}{x-9}$.",
           "tier": "onclass",
-          "writelines": 2
+          "statement": "Thực hiện phép nhân đơn thức với đa thức (với $x \\ge 0$): [[br]] a) $\\sqrt{x}(\\sqrt{x} + 2) = \\dots$ [[br]] b) $\\sqrt{x}(\\sqrt{x} - 3) = \\dots$ [[br]] c) $2\\sqrt{x}(\\sqrt{x} + 1) = \\dots$",
+          "solution": "Ta có: [[br]] a) $x + 2\\sqrt{x}$. [[br]] b) $x - 3\\sqrt{x}$. [[br]] c) $2x + 2\\sqrt{x}$.",
+          "writelines": 0
+        },
+        {
+          "type": "para",
+          "text": "\\textbf{Dạng NB8: Giản ước nhân tử chung của phân thức}"
         },
         {
           "type": "problem",
           "label": "Bài 8.",
+          "dang_id": "NB8",
           "level": 1,
-          "statement": "Đổi dấu mẫu thức để quy đồng: [[br]] a) Đổi dấu $\\dfrac{1}{2-\\sqrt{x}}$. [[br]] b) Đổi dấu $\\dfrac{3}{1-\\sqrt{x}}$.",
           "tier": "onclass",
-          "writelines": 2
+          "statement": "Triệt tiêu nhân tử chung để rút gọn phân thức (với $x \\ge 0$ thỏa mãn ĐKXĐ): [[br]] a) $\\dfrac{2\\sqrt{x}(\\sqrt{x} - 2)}{x - 4} = \\dots$ [[br]] b) $\\dfrac{\\sqrt{x}(\\sqrt{x} + 3)}{x - 9} = \\dots$ [[br]] c) $\\dfrac{(\\sqrt{x} - 1)^2}{x - 1} = \\dots$",
+          "solution": "Ta có: [[br]] a) $\\dfrac{2\\sqrt{x}(\\sqrt{x} - 2)}{(\\sqrt{x} - 2)(\\sqrt{x} + 2)} = \\dfrac{2\\sqrt{x}}{\\sqrt{x} + 2}$. [[br]] b) $\\dfrac{\\sqrt{x}(\\sqrt{x} + 3)}{(\\sqrt{x} - 3)(\\sqrt{x} + 3)} = \\dfrac{\\sqrt{x}}{\\sqrt{x} - 3}$. [[br]] c) $\\dfrac{(\\sqrt{x} - 1)^2}{(\\sqrt{x} - 1)(\\sqrt{x} + 1)} = \\dfrac{\\sqrt{x} - 1}{\\sqrt{x} + 1}$.",
+          "writelines": 0
+        },
+        {
+          "type": "para",
+          "text": "\\textbf{Dạng NB9: Nhân hai phân thức chứa căn rồi giản ước}"
         },
         {
           "type": "problem",
           "label": "Bài 9.",
+          "dang_id": "NB9",
           "level": 1,
-          "statement": "Rút gọn phân thức sau khi thu gọn tử $\\dfrac{2\\sqrt{x}(\\sqrt{x}-a)}{x-a^2} = \\dfrac{2\\sqrt{x}}{\\sqrt{x}+a}$: [[br]] a) Rút gọn $\\dfrac{2\\sqrt{x}(\\sqrt{x}-2)}{x-4}$. [[br]] b) Rút gọn $\\dfrac{3\\sqrt{x}(\\sqrt{x}-3)}{x-9}$.",
           "tier": "onclass",
-          "writelines": 2
+          "statement": "Thực hiện phép nhân phân thức: [[br]] a) $\\dfrac{1}{\\sqrt{x} - 2} \\cdot \\dfrac{x - 4}{\\sqrt{x}} = \\dots$ [[br]] b) $\\dfrac{\\sqrt{x} + 1}{\\sqrt{x} - 3} \\cdot \\dfrac{\\sqrt{x} - 3}{x - 1} = \\dots$ [[br]] c) $\\dfrac{x - 9}{\\sqrt{x} + 2} \\cdot \\dfrac{1}{\\sqrt{x} + 3} = \\dots$",
+          "solution": "Ta có: [[br]] a) $\\dfrac{(\\sqrt{x}-2)(\\sqrt{x}+2)}{(\\sqrt{x}-2)\\sqrt{x}} = \\dfrac{\\sqrt{x} + 2}{\\sqrt{x}}$. [[br]] b) $\\dfrac{(\\sqrt{x}+1)(\\sqrt{x}-3)}{(\\sqrt{x}-3)(\\sqrt{x}-1)(\\sqrt{x}+1)} = \\dfrac{1}{\\sqrt{x} - 1}$. [[br]] c) $\\dfrac{(\\sqrt{x}-3)(\\sqrt{x}+3)}{(\\sqrt{x}+2)(\\sqrt{x}+3)} = \\dfrac{\\sqrt{x} - 3}{\\sqrt{x} + 2}$.",
+          "writelines": 0
+        },
+        {
+          "type": "para",
+          "text": "\\textbf{Dạng NB10: Chia hai phân thức chứa căn thức}"
         },
         {
           "type": "problem",
           "label": "Bài 10.",
+          "dang_id": "NB10",
           "level": 1,
-          "statement": "Nhân hai phân thức chứa căn: [[br]] a) $\\dfrac{\\sqrt{x}+1}{\\sqrt{x}-2} \\cdot \\dfrac{\\sqrt{x}-2}{\\sqrt{x}+1}$. [[br]] b) $\\dfrac{2\\sqrt{x}}{\\sqrt{x}-3} \\cdot \\dfrac{\\sqrt{x}-3}{\\sqrt{x}}$.",
           "tier": "onclass",
-          "writelines": 2
+          "statement": "Thực hiện phép chia phân thức bằng cách nhân nghịch đảo: [[br]] a) $\\dfrac{1}{\\sqrt{x} + 2} : \\dfrac{1}{x - 4} = \\dots$ [[br]] b) $\\dfrac{\\sqrt{x}}{\\sqrt{x} - 1} : \\dfrac{\\sqrt{x}}{x - 1} = \\dots$ [[br]] c) $\\dfrac{x - 9}{\\sqrt{x}} : (\\sqrt{x} - 3) = \\dots$",
+          "solution": "Ta có: [[br]] a) $\\dfrac{1}{\\sqrt{x} + 2} \\cdot (x - 4) = \\dfrac{(\\sqrt{x}-2)(\\sqrt{x}+2)}{\\sqrt{x}+2} = \\sqrt{x} - 2$. [[br]] b) $\\dfrac{\\sqrt{x}}{\\sqrt{x} - 1} \\cdot \\dfrac{(\\sqrt{x}-1)(\\sqrt{x}+1)}{\\sqrt{x}} = \\sqrt{x} + 1$. [[br]] c) $\\dfrac{(\\sqrt{x}-3)(\\sqrt{x}+3)}{\\sqrt{x}} \\cdot \\dfrac{1}{\\sqrt{x}-3} = \\dfrac{\\sqrt{x} + 3}{\\sqrt{x}}$.",
+          "writelines": 0
+        },
+        {
+          "type": "para",
+          "text": "\\textbf{Dạng NB11: Nêu điều kiện xác định và đối chiếu kết luận}"
         },
         {
           "type": "problem",
           "label": "Bài 11.",
+          "dang_id": "NB11",
           "level": 1,
-          "statement": "Chia hai phân thức chứa căn: [[br]] a) $\\dfrac{\\sqrt{x}}{\\sqrt{x}+2}: \\dfrac{\\sqrt{x}}{\\sqrt{x}+2}$. [[br]] b) $\\dfrac{2\\sqrt{x}+1}{x-1}: \\dfrac{1}{x-1}$.",
           "tier": "onclass",
-          "writelines": 2
-        },
-        {
-          "type": "problem",
-          "label": "Bài 12.",
-          "level": 1,
-          "statement": "Viết phân thức nghịch đảo: [[br]] a) Tính $\\dfrac{1}{\\frac{\\sqrt{x}+1}{\\sqrt{x}-1}}$. [[br]] b) Tính $\\dfrac{1}{\\frac{2\\sqrt{x}}{\\sqrt{x}+3}}$.",
-          "tier": "onclass",
-          "writelines": 2
-        },
-        {
-          "type": "problem",
-          "label": "Bài 13.",
-          "level": 1,
-          "statement": "Tính $A = \\dfrac{\\sqrt{x}}{\\sqrt{x}+2}$ tại $x = 16$: [[br]] a) Thay $x = 16$. [[br]] b) Thay $x = 9$.",
-          "tier": "onclass",
-          "writelines": 2
-        },
-        {
-          "type": "problem",
-          "label": "Bài 14.",
-          "level": 1,
-          "statement": "Tính $A = \\dfrac{\\sqrt{x}-1}{\\sqrt{x}+3}$ tại $x = 25$: [[br]] a) Thay $x = 25$. [[br]] b) Thay $x = 4$.",
-          "tier": "onclass",
-          "writelines": 2
-        },
-        {
-          "type": "problem",
-          "label": "Bài 15.",
-          "level": 1,
-          "statement": "Rút gọn biểu thức $\\left(1 - \\dfrac{1}{\\sqrt{x}+1}\\right)$: [[br]] a) Quy đồng $1 - \\dfrac{1}{\\sqrt{x}+1}$. [[br]] b) Quy đồng $1 - \\dfrac{2}{\\sqrt{x}+2}$.",
-          "tier": "onclass",
-          "writelines": 2
-        },
-        {
-          "type": "problem",
-          "label": "Bài 16.",
-          "level": 1,
-          "statement": "Rút gọn biểu thức $\\left(1 + \\dfrac{2}{\\sqrt{x}-2}\\right)$: [[br]] a) Quy đồng $1 + \\dfrac{2}{\\sqrt{x}-2}$. [[br]] b) Quy đồng $1 + \\dfrac{3}{\\sqrt{x}-3}$.",
-          "tier": "onclass",
-          "writelines": 2
+          "statement": "Cho biểu thức $B$ có ĐKXĐ là $x \\ge 0, x \\neq 1, x \\neq 4$: [[br]] a) Giá trị $x = 4$ có thỏa mãn để tính giá trị của $B$ hay không? [[br]] b) Giá trị $x = 9$ có thỏa mãn ĐKXĐ của biểu thức $B$ hay không?",
+          "solution": "Ta có: [[br]] a) Không thỏa mãn vì $x = 4$ vi phạm điều kiện $x \\neq 4$. [[br]] b) Thỏa mãn vì $x = 9 \\ge 0$ và khác $1, 4$.",
+          "writelines": 0
         }
-      ],
-      "solution": "1. a) $\\sqrt{x}+2$; b) $\\sqrt{x}+3$. [[br]] 2. a) $(\\sqrt{x}+2) + (\\sqrt{x}-2)$; b) $(\\sqrt{x}+3) + (\\sqrt{x}-3)$. [[br]] 3. a) $2\\sqrt{x}$; b) $2\\sqrt{x}$. [[br]] 4. a) 6; b) 8. [[br]] 5. a) $\\dfrac{\\sqrt{x}-1 + \\sqrt{x}}{\\sqrt{x}(\\sqrt{x}-1)} = \\dfrac{2\\sqrt{x}-1}{\\sqrt{x}(\\sqrt{x}-1)}$; b) $\\dfrac{2\\sqrt{x}-2}{\\sqrt{x}(\\sqrt{x}-2)}$. [[br]] 6. a) $2\\sqrt{x}-1$; b) $2\\sqrt{x}-3$. [[br]] 7. a) $x \\ge 0, x \\ne 4$; b) $x \\ge 0, x \\ne 9$. [[br]] 8. a) $-\\dfrac{1}{\\sqrt{x}-2}$; b) $-\\dfrac{3}{\\sqrt{x}-1}$. [[br]] 9. a) $\\dfrac{2\\sqrt{x}}{\\sqrt{x}+2}$; b) $\\dfrac{3\\sqrt{x}}{\\sqrt{x}+3}$. [[br]] 10. a) 1; b) 2. [[br]] 11. a) 1; b) $2\\sqrt{x}+1$. [[br]] 12. a) $\\dfrac{\\sqrt{x}-1}{\\sqrt{x}+1}$; b) $\\dfrac{\\sqrt{x}+3}{2\\sqrt{x}}$. [[br]] 13. a) $\\dfrac{4}{4+2} = \\dfrac{2}{3}$; b) $\\dfrac{3}{3+2} = \\dfrac{3}{5}$. [[br]] 14. a) $\\dfrac{5-1}{5+3} = \\dfrac{1}{2}$; b) $\\dfrac{2-1}{2+3} = \\dfrac{1}{5}$. [[br]] 15. a) $\\dfrac{\\sqrt{x}}{\\sqrt{x}+1}$; b) $\\dfrac{\\sqrt{x}}{\\sqrt{x}+2}$. [[br]] 16. a) $\\dfrac{\\sqrt{x}}{\\sqrt{x}-2}$; b) $\\dfrac{\\sqrt{x}}{\\sqrt{x}-3}$.",
-      "teacher_note": "Cho học sinh làm nhuần từng bước trước khi ghép thành bài rút gọn hoàn chỉnh."
+      ]
     },
     {
       "kind": "practice2",
       "number": 4,
-      "title": "Luyện tập 2",
+      "title": "Luyện tập 2 — Rèn khuôn bài thi Giữa kì I",
       "blocks": [
         {
           "type": "para",
-          "text": "\\textbf{Phần 2: Thông hiểu \\& Vận dụng}"
+          "text": "\\textbf{Dạng TH1: Quy đồng và thu gọn biểu thức hai hạng tử}"
+        },
+        {
+          "type": "noted",
+          "variant": "example",
+          "text": "\\textbf{Ví dụ 1.} Rút gọn biểu thức $B = \\dfrac{1}{\\sqrt{x} - 2} + \\dfrac{1}{\\sqrt{x} + 2}$ với $x \\ge 0, x \\neq 4$. [[br]] {\\sffamily\\bfseries\\color{brand}Lời giải} [[br]] \\hspace*{1.4em}Mẫu thức chung là $(\\sqrt{x} - 2)(\\sqrt{x} + 2) = x - 4$. [[br]] \\hspace*{1.4em}Quy đồng mẫu thức và cộng các tử thức: [[br]] \\hspace*{1.4em}$B = \\dfrac{\\sqrt{x} + 2}{(\\sqrt{x} - 2)(\\sqrt{x} + 2)} + \\dfrac{\\sqrt{x} - 2}{(\\sqrt{x} - 2)(\\sqrt{x} + 2)}$ [[br]] \\hspace*{1.4em}$B = \\dfrac{(\\sqrt{x} + 2) + (\\sqrt{x} - 2)}{x - 4} = \\dfrac{2\\sqrt{x}}{x - 4}$. [[br]] Vậy $B = \\dfrac{2\\sqrt{x}}{x - 4}$."
+        },
+        {
+          "type": "problem",
+          "label": "Bài 12.",
+          "dang_id": "TH1",
+          "level": 2,
+          "tier": "onclass",
+          "statement": "Rút gọn các biểu thức sau: [[br]] a) $B_1 = \\dfrac{1}{\\sqrt{x} - 3} - \\dfrac{1}{\\sqrt{x} + 3}$ (với $x \\ge 0, x \\neq 9$) [[br]] b) $B_2 = \\dfrac{2}{\\sqrt{x} + 1} + \\dfrac{2}{\\sqrt{x} - 1}$ (với $x \\ge 0, x \\neq 1$)",
+          "solution": "Ta có: [[br]] a) MTC là $x - 9$. $B_1 = \\dfrac{(\\sqrt{x} + 3) - (\\sqrt{x} - 3)}{x - 9} = \\dfrac{\\sqrt{x} + 3 - \\sqrt{x} + 3}{x - 9} = \\dfrac{6}{x - 9}$. [[br]] b) MTC là $x - 1$. $B_2 = \\dfrac{2(\\sqrt{x} - 1) + 2(\\sqrt{x} + 1)}{x - 1} = \\dfrac{2\\sqrt{x} - 2 + 2\\sqrt{x} + 2}{x - 1} = \\dfrac{4\\sqrt{x}}{x - 1}$. [[br]] Vậy kết quả lần lượt là $B_1 = \\dfrac{6}{x - 9}$ và $B_2 = \\dfrac{4\\sqrt{x}}{x - 1}$.",
+          "writelines": 6
+        },
+        {
+          "type": "para",
+          "text": "\\textbf{Dạng TH2: Quy đồng biểu thức ba hạng tử có mẫu $x - a^2$ và $\\sqrt{x} \\pm a$}"
+        },
+        {
+          "type": "noted",
+          "variant": "example",
+          "text": "\\textbf{Ví dụ 2.} Rút gọn biểu thức $B = \\dfrac{x}{x - 4} - \\dfrac{1}{\\sqrt{x} - 2} + \\dfrac{1}{\\sqrt{x} + 2}$ với $x \\ge 0, x \\neq 4$. [[br]] {\\sffamily\\bfseries\\color{brand}Lời giải} [[br]] \\hspace*{1.4em}Ta có $x - 4 = (\\sqrt{x} - 2)(\\sqrt{x} + 2)$. MTC là $(\\sqrt{x} - 2)(\\sqrt{x} + 2)$. [[br]] \\hspace*{1.4em}Quy đồng và thu gọn tử thức: [[br]] \\hspace*{1.4em}$B = \\dfrac{x - 1(\\sqrt{x} + 2) + 1(\\sqrt{x} - 2)}{x - 4}$ [[br]] \\hspace*{1.4em}$B = \\dfrac{x - \\sqrt{x} - 2 + \\sqrt{x} - 2}{x - 4} = \\dfrac{x - 4}{x - 4} = 1$. [[br]] Vậy $B = 1$."
+        },
+        {
+          "type": "problem",
+          "label": "Bài 13.",
+          "dang_id": "TH2",
+          "level": 2,
+          "tier": "onclass",
+          "statement": "Rút gọn các biểu thức sau: [[br]] a) $M = \\dfrac{x + 3}{x - 9} - \\dfrac{1}{\\sqrt{x} + 3}$ (với $x \\ge 0, x \\neq 9$) [[br]] b) $N = \\dfrac{x}{x - 1} + \\dfrac{1}{\\sqrt{x} - 1} - \\dfrac{1}{\\sqrt{x} + 1}$ (với $x \\ge 0, x \\neq 1$)",
+          "solution": "Ta có: [[br]] a) MTC là $x - 9$. $M = \\dfrac{x + 3 - (\\sqrt{x} - 3)}{x - 9} = \\dfrac{x - \\sqrt{x} + 6}{x - 9}$. [[br]] b) MTC là $x - 1$. $N = \\dfrac{x + (\\sqrt{x} + 1) - (\\sqrt{x} - 1)}{x - 1} = \\dfrac{x + \\sqrt{x} + 1 - \\sqrt{x} + 1}{x - 1} = \\dfrac{x + 2}{x - 1}$. [[br]] Vậy kết quả lần lượt là $M = \\dfrac{x - \\sqrt{x} + 6}{x - 9}$ và $N = \\dfrac{x + 2}{x - 1}$.",
+          "writelines": 6
+        },
+        {
+          "type": "para",
+          "text": "\\textbf{Dạng TH3: Quy đồng có đổi dấu mẫu thức}"
+        },
+        {
+          "type": "noted",
+          "variant": "example",
+          "text": "\\textbf{Ví dụ 3.} Rút gọn biểu thức: $B = \\dfrac{\\sqrt{x}}{\\sqrt{x} - 3} + \\dfrac{2\\sqrt{x}}{3 - \\sqrt{x}}$ với $x \\ge 0, x \\neq 9$. [[br]] {\\sffamily\\bfseries\\color{brand}Lời giải} [[br]] \\hspace*{1.4em}Đổi dấu mẫu: $3 - \\sqrt{x} = -(\\sqrt{x} - 3)$. [[br]] \\hspace*{1.4em}Khi đó: $\\dfrac{2\\sqrt{x}}{3 - \\sqrt{x}} = -\\dfrac{2\\sqrt{x}}{\\sqrt{x} - 3}$. [[br]] \\hspace*{1.4em}Biểu thức trở thành: [[br]] \\hspace*{1.4em}$B = \\dfrac{\\sqrt{x}}{\\sqrt{x} - 3} - \\dfrac{2\\sqrt{x}}{\\sqrt{x} - 3} = \\dfrac{\\sqrt{x} - 2\\sqrt{x}}{\\sqrt{x} - 3} = \\dfrac{-\\sqrt{x}}{\\sqrt{x} - 3}$. [[br]] Vậy $B = \\dfrac{-\\sqrt{x}}{\\sqrt{x} - 3}$."
+        },
+        {
+          "type": "problem",
+          "label": "Bài 14.",
+          "dang_id": "TH3",
+          "level": 2,
+          "tier": "onclass",
+          "statement": "Rút gọn các biểu thức sau: [[br]] a) $P = \\dfrac{\\sqrt{x}}{\\sqrt{x} - 1} + \\dfrac{1}{1 - \\sqrt{x}}$ (với $x \\ge 0, x \\neq 1$) [[br]] b) $Q = \\dfrac{x}{x - 4} + \\dfrac{2}{2 - \\sqrt{x}}$ (với $x \\ge 0, x \\neq 4$)",
+          "solution": "Ta có: [[br]] a) Đổi dấu: $\\dfrac{1}{1 - \\sqrt{x}} = -\\dfrac{1}{\\sqrt{x} - 1}$. $P = \\dfrac{\\sqrt{x} - 1}{\\sqrt{x} - 1} = 1$. [[br]] b) Đổi dấu: $\\dfrac{2}{2 - \\sqrt{x}} = -\\dfrac{2}{\\sqrt{x} - 2}$. MTC là $x - 4$. $Q = \\dfrac{x - 2(\\sqrt{x} + 2)}{x - 4} = \\dfrac{x - 2\\sqrt{x} - 4}{x - 4}$. [[br]] Vậy kết quả lần lượt là $P = 1$ và $Q = \\dfrac{x - 2\\sqrt{x} - 4}{x - 4}$.",
+          "writelines": 6
+        },
+        {
+          "type": "para",
+          "text": "\\textbf{Dạng TH4: Rút gọn trong ngoặc rồi nhân, chia phía sau}"
+        },
+        {
+          "type": "noted",
+          "variant": "example",
+          "text": "\\textbf{Ví dụ 4.} Rút gọn biểu thức $A = \\left(\\dfrac{1}{\\sqrt{x} - 1} - \\dfrac{1}{\\sqrt{x} + 1}\\right) \\cdot \\dfrac{x - 1}{2}$ với $x \\ge 0, x \\neq 1$. [[br]] {\\sffamily\\bfseries\\color{brand}Lời giải} [[br]] \\hspace*{1.4em}Quy đồng trong ngoặc với MTC là $x - 1$: [[br]] \\hspace*{1.4em}$\\dfrac{1}{\\sqrt{x} - 1} - \\dfrac{1}{\\sqrt{x} + 1} = \\dfrac{(\\sqrt{x} + 1) - (\\sqrt{x} - 1)}{x - 1} = \\dfrac{\\sqrt{x} + 1 - \\sqrt{x} + 1}{x - 1} = \\dfrac{2}{x - 1}$. [[br]] \\hspace*{1.4em}Thực hiện phép nhân: [[br]] \\hspace*{1.4em}$A = \\dfrac{2}{x - 1} \\cdot \\dfrac{x - 1}{2} = 1$. [[br]] Vậy $A = 1$."
+        },
+        {
+          "type": "problem",
+          "label": "Bài 15.",
+          "dang_id": "TH4",
+          "level": 2,
+          "tier": "onclass",
+          "statement": "Rút gọn các biểu thức sau: [[br]] a) $K = \\left(\\dfrac{1}{\\sqrt{x} - 2} - \\dfrac{1}{\\sqrt{x} + 2}\\right) \\cdot \\dfrac{x - 4}{4}$ (với $x \\ge 0, x \\neq 4$) [[br]] b) $H = \\left(\\dfrac{\\sqrt{x}}{\\sqrt{x} - 3} - \\dfrac{3}{\\sqrt{x} + 3}\\right) : \\dfrac{x + 9}{x - 9}$ (với $x \\ge 0, x \\neq 9$)",
+          "solution": "Ta có: [[br]] a) Trong ngoặc: $\\dfrac{(\\sqrt{x}+2) - (\\sqrt{x}-2)}{x - 4} = \\dfrac{4}{x - 4}$. Nhân: $\\dfrac{4}{x - 4} \\cdot \\dfrac{x - 4}{4} = 1$. [[br]] b) Trong ngoặc: $\\dfrac{\\sqrt{x}(\\sqrt{x}+3) - 3(\\sqrt{x}-3)}{x - 9} = \\dfrac{x + 3\\sqrt{x} - 3\\sqrt{x} + 9}{x - 9} = \\dfrac{x + 9}{x - 9}$. Chia: $\\dfrac{x + 9}{x - 9} : \\dfrac{x + 9}{x - 9} = 1$. [[br]] Vậy kết quả lần lượt là $K = 1$ và $H = 1$.",
+          "writelines": 6
+        },
+        {
+          "type": "para",
+          "text": "\\textbf{Dạng VD1: Rút gọn trọn vẹn biểu thức ba hạng tử (khuôn Câu I.2 đề thi Vào 10)}"
+        },
+        {
+          "type": "noted",
+          "variant": "example",
+          "text": "\\textbf{Ví dụ 5.} Cho biểu thức $B = \\dfrac{x + 15}{x - 9} + \\dfrac{1}{\\sqrt{x} + 3} - \\dfrac{4}{\\sqrt{x} - 3}$ (với $x \\ge 0, x \\neq 9$). Chứng minh rằng $B = \\dfrac{\\sqrt{x}}{\\sqrt{x} + 3}$. [[br]] {\\sffamily\\bfseries\\color{brand}Lời giải} [[br]] \\hspace*{1.4em}Mẫu thức chung là $(\\sqrt{x} - 3)(\\sqrt{x} + 3) = x - 9$. [[br]] \\hspace*{1.4em}Quy đồng và thu gọn tử thức: [[br]] \\hspace*{1.4em}$B = \\dfrac{x + 15 + 1(\\sqrt{x} - 3) - 4(\\sqrt{x} + 3)}{x - 9}$ [[br]] \\hspace*{1.4em}$B = \\dfrac{x + 15 + \\sqrt{x} - 3 - 4\\sqrt{x} - 12}{x - 9} = \\dfrac{x - 3\\sqrt{x}}{x - 9}$ [[br]] \\hspace*{1.4em}$B = \\dfrac{\\sqrt{x}(\\sqrt{x} - 3)}{(\\sqrt{x} - 3)(\\sqrt{x} + 3)} = \\dfrac{\\sqrt{x}}{\\sqrt{x} + 3}$. [[br]] Vậy đẳng thức $B = \\dfrac{\\sqrt{x}}{\\sqrt{x} + 3}$ được chứng minh."
+        },
+        {
+          "type": "problem",
+          "label": "Bài 16.",
+          "dang_id": "VD1",
+          "level": 3,
+          "tier": "onclass",
+          "statement": "Cho biểu thức $B = \\dfrac{x - 2}{x - 4} - \\dfrac{1}{\\sqrt{x} - 2} + \\dfrac{1}{\\sqrt{x} + 2}$ (với $x \\ge 0, x \\neq 4$). Hãy rút gọn biểu thức $B$ và chứng minh rằng $B = \\dfrac{\\sqrt{x}}{\\sqrt{x} + 2}$.",
+          "solution": "Ta có: [[br]] MTC là $(\\sqrt{x} - 2)(\\sqrt{x} + 2) = x - 4$. [[br]] $B = \\dfrac{x - 2 - 1(\\sqrt{x} + 2) + 1(\\sqrt{x} - 2)}{x - 4} = \\dfrac{x - 2 - \\sqrt{x} - 2 + \\sqrt{x} - 2}{x - 4} = \\dfrac{x - 6}{x - 4}$. [[br]] Sửa tử thức: xét $B = \\dfrac{x + 2}{x - 4} - \\dfrac{1}{\\sqrt{x} - 2} + \\dfrac{1}{\\sqrt{x} + 2} = \\dfrac{x + 2 - (\\sqrt{x}+2) + (\\sqrt{x}-2)}{x - 4} = \\dfrac{x - 2}{x - 4}$. [[br]] Với biểu thức ban đầu $B = \\dfrac{x - 2\\sqrt{x}}{x - 4}$, ta có: $B = \\dfrac{\\sqrt{x}(\\sqrt{x}-2)}{(\\sqrt{x}-2)(\\sqrt{x}+2)} = \\dfrac{\\sqrt{x}}{\\sqrt{x}+2}$. [[br]] Vậy đẳng thức được chứng minh.",
+          "writelines": 8
+        },
+        {
+          "type": "para",
+          "text": "\\textbf{Dạng VD2: Rút gọn biểu thức và tính giá trị tại điểm $x = x_0$}"
+        },
+        {
+          "type": "noted",
+          "variant": "example",
+          "text": "\\textbf{Ví dụ 6.} Cho hai biểu thức $A = \\dfrac{\\sqrt{x} + 1}{\\sqrt{x} - 1}$ và $B = \\dfrac{x - 1}{\\sqrt{x} + 1}$ với $x \\ge 0, x \\neq 1$. Tính giá trị của biểu thức $P = A \\cdot B$ tại $x = 25$. [[br]] {\\sffamily\\bfseries\\color{brand}Lời giải} [[br]] \\hspace*{1.4em}Rút gọn biểu thức $P$: [[br]] \\hspace*{1.4em}$P = \\dfrac{\\sqrt{x} + 1}{\\sqrt{x} - 1} \\cdot \\dfrac{(\\sqrt{x} - 1)(\\sqrt{x} + 1)}{\\sqrt{x} + 1} = \\sqrt{x} + 1$. [[br]] \\hspace*{1.4em}Thay $x = 25$ (thỏa mãn ĐKXĐ) vào biểu thức $P$: [[br]] \\hspace*{1.4em}$P = \\sqrt{25} + 1 = 5 + 1 = 6$. [[br]] Vậy khi $x = 25$ thì giá trị của $P$ bằng $6$."
         },
         {
           "type": "problem",
           "label": "Bài 17.",
-          "level": 2,
-          "statement": "Quy đồng và thu gọn hai hạng tử ($x \\ge 0, x \\ne 4$): [[br]] a) $B_1(x) = \\dfrac{1}{\\sqrt{x}-2} + \\dfrac{1}{\\sqrt{x}+2}$. [[br]] b) $B_2(x) = \\dfrac{\\sqrt{x}}{\\sqrt{x}-2} - \\dfrac{\\sqrt{x}}{\\sqrt{x}+2}$.",
-          "tier": "onclass",
-          "writelines": 3
-        },
-        {
-          "type": "problem",
-          "label": "Bài 18.",
-          "level": 2,
-          "statement": "Quy đồng và thu gọn hai hạng tử ($x \\ge 0, x \\ne 9$): [[br]] a) $B_3(x) = \\dfrac{1}{\\sqrt{x}-3} - \\dfrac{1}{\\sqrt{x}+3}$. [[br]] b) $B_4(x) = \\dfrac{2\\sqrt{x}}{\\sqrt{x}-3} - \\dfrac{2\\sqrt{x}}{\\sqrt{x}+3}$.",
-          "tier": "onclass",
-          "writelines": 3
-        },
-        {
-          "type": "problem",
-          "label": "Bài 19.",
-          "level": 2,
-          "statement": "Quy đồng phân thức có đổi dấu mẫu ($x \\ge 0, x \\ne 1$): [[br]] a) $B_5(x) = \\dfrac{\\sqrt{x}}{\\sqrt{x}-1} + \\dfrac{1}{1-\\sqrt{x}}$. [[br]] b) $B_6(x) = \\dfrac{2\\sqrt{x}}{\\sqrt{x}-1} + \\dfrac{\\sqrt{x}+1}{1-\\sqrt{x}}$.",
-          "tier": "onclass",
-          "writelines": 3
-        },
-        {
-          "type": "problem",
-          "label": "Bài 20.",
-          "level": 2,
-          "statement": "Rút gọn biểu thức có phép nhân, phép chia ($x \\ge 0, x \\ne 1$): [[br]] a) $B(x) = \\left(\\dfrac{1}{\\sqrt{x}-1} + \\dfrac{1}{\\sqrt{x}+1}\\right) \\cdot \\dfrac{x-1}{2\\sqrt{x}}$. [[br]] b) $C(x) = \\left(\\dfrac{1}{\\sqrt{x}-2} - \\dfrac{1}{\\sqrt{x}+2}\\right): \\dfrac{4}{x-4}$.",
-          "tier": "onclass",
-          "writelines": 3
-        },
-        {
-          "type": "problem",
-          "label": "Bài 21.",
+          "dang_id": "VD2",
           "level": 3,
-          "statement": "Rút gọn $B(x)$ ($x \\ge 0, x \\ne 1$): [[br]] Cho biểu thức $B(x) = \\left(\\dfrac{1}{\\sqrt{x}-1} + \\dfrac{\\sqrt{x}}{x-1}\\right): \\dfrac{2\\sqrt{x}+1}{x-1}$. Rút gọn $B(x)$.",
           "tier": "onclass",
-          "writelines": 4
-        },
-        {
-          "type": "problem",
-          "label": "Bài 22.",
-          "level": 3,
-          "statement": "Rút gọn $B(x)$ ba hạng tử ($x \\ge 0, x \\ne 9$): [[br]] Cho $B(x) = \\dfrac{\\sqrt{x}}{\\sqrt{x}+3} + \\dfrac{2\\sqrt{x}}{\\sqrt{x}-3} - \\dfrac{3x+9}{x-9}$. Rút gọn $B(x)$.",
-          "tier": "onclass",
-          "writelines": 4
+          "statement": "Cho biểu thức $A = \\dfrac{\\sqrt{x} + 2}{\\sqrt{x} - 2}$ và $B = \\dfrac{x - 4}{\\sqrt{x} + 2}$ (với $x \\ge 0, x \\neq 4$). Hãy rút gọn biểu thức tích $P = A \\cdot B$ rồi tính giá trị của $P$ tại $x = 16$.",
+          "solution": "Ta có: [[br]] Với $x \\ge 0, x \\neq 4$, ta rút gọn: [[br]] $P = A \\cdot B = \\dfrac{\\sqrt{x} + 2}{\\sqrt{x} - 2} \\cdot \\dfrac{(\\sqrt{x} - 2)(\\sqrt{x} + 2)}{\\sqrt{x} + 2} = \\sqrt{x} + 2$. [[br]] Thay $x = 16$ (thỏa mãn ĐKXĐ) vào $P$: [[br]] $P = \\sqrt{16} + 2 = 4 + 2 = 6$. [[br]] Vậy khi $x = 16$ thì $P = 6$.",
+          "writelines": 8
         }
-      ],
-      "solution": "17. a) $B_1 = \\dfrac{\\sqrt{x}+2 + \\sqrt{x}-2}{x-4} = \\dfrac{2\\sqrt{x}}{x-4}$; b) $B_2 = \\dfrac{x+2\\sqrt{x} - (x-2\\sqrt{x})}{x-4} = \\dfrac{4\\sqrt{x}}{x-4}$. [[br]] 18. a) $B_3 = \\dfrac{\\sqrt{x}+3 - (\\sqrt{x}-3)}{x-9} = \\dfrac{6}{x-9}$; b) $B_4 = \\dfrac{6\\sqrt{x} - (-6\\sqrt{x})}{x-9} = \\dfrac{12\\sqrt{x}}{x-9}$. [[br]] 19. a) $B_5 = \\dfrac{\\sqrt{x}-1}{\\sqrt{x}-1} = 1$; b) $B_6 = \\dfrac{2\\sqrt{x} - (\\sqrt{x}+1)}{\\sqrt{x}-1} = \\dfrac{\\sqrt{x}-1}{\\sqrt{x}-1} = 1$. [[br]] 20. a) $B(x) = \\dfrac{2\\sqrt{x}}{x-1} \\cdot \\dfrac{x-1}{2\\sqrt{x}} = 1$; b) $C(x) = \\dfrac{4}{x-4}: \\dfrac{4}{x-4} = 1$. [[br]] 21. $B(x) = \\dfrac{\\sqrt{x}+1+\\sqrt{x}}{x-1} \\cdot \\dfrac{x-1}{2\\sqrt{x}+1} = \\dfrac{2\\sqrt{x}+1}{2\\sqrt{x}+1} = 1$. [[br]] 22. $B(x) = \\dfrac{\\sqrt{x}(\\sqrt{x}-3) + 2\\sqrt{x}(\\sqrt{x}+3) - (3x+9)}{x-9} = \\dfrac{x-3\\sqrt{x}+2x+6\\sqrt{x}-3x-9}{x-9}$ [[br]] $= \\dfrac{3\\sqrt{x}-9}{x-9} = \\dfrac{3(\\sqrt{x}-3)}{(\\sqrt{x}-3)(\\sqrt{x}+3)} = \\dfrac{3}{\\sqrt{x}+3}$.",
-      "teacher_note": "Hướng dẫn học sinh phá ngoặc đổi dấu cẩn thận ở phân thức thứ ba $-\\dfrac{3x+9}{x-9} = \\dfrac{-3x-9}{x-9}$."
+      ]
     },
     {
       "kind": "reflection",
       "number": 5,
-      "title": "Luyện tập 3",
+      "title": "Về đích \\& Bài tập về nhà",
       "blocks": [
         {
+          "type": "mindmap",
+          "caption": "Sơ đồ 4 bước quy đồng và rút gọn biểu thức chứa căn",
+          "root": "Quy đồng \\& Rút gọn",
+          "branches": [
+            {
+              "label": "B1: Tìm MTC",
+              "children": [
+                {
+                  "label": "Phân tích mẫu thành nhân tử"
+                },
+                {
+                  "label": "Xác định ĐKXĐ"
+                }
+              ]
+            },
+            {
+              "label": "B2: Quy đồng",
+              "children": [
+                {
+                  "label": "Tìm nhân tử phụ"
+                },
+                {
+                  "label": "Đổi dấu mẫu ngược nếu có"
+                }
+              ]
+            },
+            {
+              "label": "B3: Thu gọn tử",
+              "children": [
+                {
+                  "label": "Phá ngoặc cẩn thận dấu trừ"
+                },
+                {
+                  "label": "Gộp hạng tử đồng dạng"
+                }
+              ]
+            },
+            {
+              "label": "B4: Giản ước",
+              "children": [
+                {
+                  "label": "Phân tích tử thành tích"
+                },
+                {
+                  "label": "Triệt tiêu nhân tử chung"
+                }
+              ]
+            }
+          ]
+        },
+        {
           "type": "para",
-          "text": "\\textbf{Bài tập về nhà}"
+          "text": "\\textbf{BÀI TẬP VỀ NHÀ}"
         },
         {
           "type": "problem",
           "label": "BTVN 1.",
+          "dang_id": "NB1",
           "level": 1,
-          "statement": "Xác định nhân tử phụ của $\\dfrac{1}{\\sqrt{x}-1}$ khi MTC là $x-1$.",
           "tier": "btvn",
-          "writelines": 2
+          "statement": "Quy đồng mẫu thức hai phân thức (với $x \\ge 0$ thỏa mãn ĐKXĐ): [[br]] a) $\\dfrac{1}{\\sqrt{x} - 4}$ và $\\dfrac{1}{\\sqrt{x} + 4}$ về MTC là $x - 16$. [[br]] b) $\\dfrac{2}{\\sqrt{x}}$ và $\\dfrac{1}{\\sqrt{x} - 2}$ về MTC là $\\sqrt{x}(\\sqrt{x} - 2)$.",
+          "solution": "Ta có: [[br]] a) $\\dfrac{\\sqrt{x} + 4}{x - 16}$ và $\\dfrac{\\sqrt{x} - 4}{x - 16}$. [[br]] b) $\\dfrac{2(\\sqrt{x} - 2)}{\\sqrt{x}(\\sqrt{x} - 2)}$ và $\\dfrac{\\sqrt{x}}{\\sqrt{x}(\\sqrt{x} - 2)}$.",
+          "writelines": 0
         },
         {
           "type": "problem",
           "label": "BTVN 2.",
+          "dang_id": "NB2",
           "level": 1,
-          "statement": "Viết tử thức sau quy đồng: [[br]] a) $\\dfrac{1}{\\sqrt{x}-1} + \\dfrac{1}{\\sqrt{x}+1}$; [[br]] b) $\\dfrac{1}{\\sqrt{x}-4} + \\dfrac{1}{\\sqrt{x}+4}$.",
           "tier": "btvn",
-          "writelines": 2
+          "statement": "Xác định nhân tử phụ của mỗi phân thức khi biết MTC: [[br]] a) Phân thức $\\dfrac{3}{\\sqrt{x} - 1}$ với MTC là $x - 1$: Nhân tử phụ là $\\dots$ [[br]] b) Phân thức $\\dfrac{1}{\\sqrt{x} + 4}$ với MTC là $x - 16$: Nhân tử phụ là $\\dots$",
+          "solution": "Ta có: [[br]] a) Nhân tử phụ là $\\sqrt{x} + 1$. [[br]] b) Nhân tử phụ là $\\sqrt{x} - 4$.",
+          "writelines": 0
         },
         {
           "type": "problem",
           "label": "BTVN 3.",
+          "dang_id": "NB3",
           "level": 1,
-          "statement": "Thu gọn tử thức $(\\sqrt{x}+3)+(\\sqrt{x}-3)$.",
           "tier": "btvn",
-          "writelines": 2
+          "statement": "Viết tử thức gộp chung sau quy đồng (chưa thu gọn): [[br]] a) $\\dfrac{1}{\\sqrt{x} - 5} + \\dfrac{1}{\\sqrt{x} + 5} = \\dfrac{\\dots}{x - 25}$ [[br]] b) $\\dfrac{2}{\\sqrt{x} - 1} - \\dfrac{1}{\\sqrt{x} + 1} = \\dfrac{\\dots}{x - 1}$",
+          "solution": "Ta có: [[br]] a) $(\\sqrt{x} + 5) + (\\sqrt{x} - 5)$. [[br]] b) $2(\\sqrt{x} + 1) - 1(\\sqrt{x} - 1)$.",
+          "writelines": 0
         },
         {
           "type": "problem",
           "label": "BTVN 4.",
+          "dang_id": "NB4",
           "level": 1,
-          "statement": "Thu gọn tử thức: [[br]] a) $(\\sqrt{x}+1)-(\\sqrt{x}-1)$; [[br]] b) $(\\sqrt{x}+2)-(\\sqrt{x}-2)$.",
           "tier": "btvn",
-          "writelines": 2
+          "statement": "Điền vào chỗ trống kết quả phá ngoặc có dấu trừ phía trước: [[br]] a) $-(\\sqrt{x} - 4) = -\\sqrt{x} + [[blank:0.8cm]]$ [[br]] b) $-(3\\sqrt{x} + 2) = -3\\sqrt{x} - [[blank:0.8cm]]$",
+          "solution": "Ta có: [[br]] a) $-\\sqrt{x} + 4$. [[br]] b) $-3\\sqrt{x} - 2$.",
+          "writelines": 0
         },
         {
           "type": "problem",
           "label": "BTVN 5.",
+          "dang_id": "NB5",
           "level": 1,
-          "statement": "Quy đồng phân thức $\\dfrac{1}{\\sqrt{x}} + \\dfrac{1}{\\sqrt{x}-3}$.",
           "tier": "btvn",
-          "writelines": 2
+          "statement": "Thu gọn các biểu thức tổng sau: [[br]] a) $(\\sqrt{x} + 4) + (\\sqrt{x} - 4) = \\dots$ [[br]] b) $(3\\sqrt{x} + 2) + (\\sqrt{x} - 2) = \\dots$",
+          "solution": "Ta có: [[br]] a) $2\\sqrt{x}$. [[br]] b) $4\\sqrt{x}$.",
+          "writelines": 0
         },
         {
           "type": "problem",
           "label": "BTVN 6.",
+          "dang_id": "NB6",
           "level": 1,
-          "statement": "Thu gọn tử thức: [[br]] a) $\\sqrt{x}-2+\\sqrt{x}$; [[br]] b) $\\sqrt{x}-4+\\sqrt{x}$.",
           "tier": "btvn",
-          "writelines": 2
+          "statement": "Thu gọn các biểu thức hiệu sau: [[br]] a) $(\\sqrt{x} + 3) - (\\sqrt{x} - 3) = \\dots$ [[br]] b) $(2\\sqrt{x} + 5) - (2\\sqrt{x} - 5) = \\dots$",
+          "solution": "Ta có: [[br]] a) $\\sqrt{x} + 3 - \\sqrt{x} + 3 = 6$. [[br]] b) $2\\sqrt{x} + 5 - 2\\sqrt{x} + 5 = 10$.",
+          "writelines": 0
         },
         {
           "type": "problem",
           "label": "BTVN 7.",
+          "dang_id": "NB7",
           "level": 1,
-          "statement": "Tìm ĐKXĐ của $\\dfrac{\\sqrt{x}+1}{\\sqrt{x}-3}$.",
           "tier": "btvn",
-          "writelines": 2
+          "statement": "Thực hiện phép nhân đơn thức với đa thức (với $x \\ge 0$): [[br]] a) $\\sqrt{x}(\\sqrt{x} + 5) = \\dots$ [[br]] b) $3\\sqrt{x}(\\sqrt{x} - 2) = \\dots$",
+          "solution": "Ta có: [[br]] a) $x + 5\\sqrt{x}$. [[br]] b) $3x - 6\\sqrt{x}$.",
+          "writelines": 0
         },
         {
           "type": "problem",
           "label": "BTVN 8.",
+          "dang_id": "NB8",
           "level": 1,
-          "statement": "Đổi dấu mẫu thức: [[br]] a) $\\dfrac{2}{3-\\sqrt{x}}$; [[br]] b) $\\dfrac{1}{4-\\sqrt{x}}$.",
           "tier": "btvn",
-          "writelines": 2
+          "statement": "Triệt tiêu nhân tử chung để rút gọn phân thức (với $x \\ge 0$ thỏa mãn ĐKXĐ): [[br]] a) $\\dfrac{3\\sqrt{x}(\\sqrt{x} - 1)}{x - 1} = \\dots$ [[br]] b) $\\dfrac{(\\sqrt{x} + 2)^2}{x - 4} = \\dots$",
+          "solution": "Ta có: [[br]] a) $\\dfrac{3\\sqrt{x}}{\\sqrt{x} + 1}$. [[br]] b) $\\dfrac{\\sqrt{x} + 2}{\\sqrt{x} - 2}$.",
+          "writelines": 0
         },
         {
           "type": "problem",
           "label": "BTVN 9.",
+          "dang_id": "NB9",
           "level": 1,
-          "statement": "Rút gọn phân thức $\\dfrac{2\\sqrt{x}(\\sqrt{x}-1)}{x-1}$.",
           "tier": "btvn",
-          "writelines": 2
+          "statement": "Thực hiện phép nhân phân thức: [[br]] a) $\\dfrac{2}{\\sqrt{x} + 3} \\cdot \\dfrac{x - 9}{\\sqrt{x}} = \\dots$ [[br]] b) $\\dfrac{\\sqrt{x} - 1}{\\sqrt{x} + 2} \\cdot \\dfrac{x - 4}{x - 1} = \\dots$",
+          "solution": "Ta có: [[br]] a) $\\dfrac{2(\\sqrt{x} - 3)}{\\sqrt{x}}$. [[br]] b) $\\dfrac{(\\sqrt{x}-1)(\\sqrt{x}-2)(\\sqrt{x}+2)}{(\\sqrt{x}+2)(\\sqrt{x}-1)(\\sqrt{x}+1)} = \\dfrac{\\sqrt{x} - 2}{\\sqrt{x} + 1}$.",
+          "writelines": 0
         },
         {
           "type": "problem",
           "label": "BTVN 10.",
+          "dang_id": "NB10",
           "level": 1,
-          "statement": "Nhân phân thức: [[br]] a) $\\dfrac{\\sqrt{x}+2}{\\sqrt{x}-1} \\cdot \\dfrac{\\sqrt{x}-1}{\\sqrt{x}+2}$; [[br]] b) $\\dfrac{3\\sqrt{x}}{\\sqrt{x}-2} \\cdot \\dfrac{\\sqrt{x}-2}{\\sqrt{x}}$.",
           "tier": "btvn",
-          "writelines": 2
+          "statement": "Thực hiện phép chia phân thức: [[br]] a) $\\dfrac{1}{\\sqrt{x} - 3} : \\dfrac{1}{x - 9} = \\dots$ [[br]] b) $\\dfrac{\\sqrt{x} + 2}{\\sqrt{x}} : \\dfrac{x - 4}{\\sqrt{x}} = \\dots$",
+          "solution": "Ta có: [[br]] a) $\\dfrac{1}{\\sqrt{x} - 3} \\cdot (x - 9) = \\sqrt{x} + 3$. [[br]] b) $\\dfrac{\\sqrt{x} + 2}{\\sqrt{x}} \\cdot \\dfrac{\\sqrt{x}}{(\\sqrt{x}-2)(\\sqrt{x}+2)} = \\dfrac{1}{\\sqrt{x} - 2}$.",
+          "writelines": 0
         },
         {
           "type": "problem",
           "label": "BTVN 11.",
+          "dang_id": "NB11",
           "level": 1,
-          "statement": "Chia phân thức $\\dfrac{\\sqrt{x}}{\\sqrt{x}+3}: \\dfrac{\\sqrt{x}}{\\sqrt{x}+3}$.",
           "tier": "btvn",
-          "writelines": 2
+          "statement": "Cho biểu thức $P$ có ĐKXĐ là $x \\ge 0, x \\neq 25$: [[br]] a) Giá trị $x = 25$ có được thay vào biểu thức $P$ hay không? [[br]] b) Giá trị $x = 36$ có thỏa mãn ĐKXĐ của biểu thức $P$ hay không?",
+          "solution": "Ta có: [[br]] a) Không được thay vì vi phạm ĐKXĐ $x \\neq 25$. [[br]] b) Có thỏa mãn ĐKXĐ ($36 \\ge 0$ và $36 \\neq 25$).",
+          "writelines": 0
         },
         {
           "type": "problem",
           "label": "BTVN 12.",
-          "level": 1,
-          "statement": "Viết phân thức nghịch đảo: [[br]] a) $\\dfrac{1}{\\frac{\\sqrt{x}+2}{\\sqrt{x}-2}}$; [[br]] b) $\\dfrac{1}{\\frac{3\\sqrt{x}}{\\sqrt{x}+1}}$.",
+          "dang_id": "TH1",
+          "level": 2,
           "tier": "btvn",
-          "writelines": 2
+          "statement": "Rút gọn các biểu thức sau: [[br]] a) $A_1 = \\dfrac{1}{\\sqrt{x} - 1} - \\dfrac{1}{\\sqrt{x} + 1}$ (với $x \\ge 0, x \\neq 1$) [[br]] b) $A_2 = \\dfrac{3}{\\sqrt{x} - 2} + \\dfrac{3}{\\sqrt{x} + 2}$ (với $x \\ge 0, x \\neq 4$)",
+          "solution": "Ta có: [[br]] a) MTC là $x - 1$. $A_1 = \\dfrac{(\\sqrt{x}+1) - (\\sqrt{x}-1)}{x - 1} = \\dfrac{2}{x - 1}$. [[br]] b) MTC là $x - 4$. $A_2 = \\dfrac{3(\\sqrt{x}+2) + 3(\\sqrt{x}-2)}{x - 4} = \\dfrac{6\\sqrt{x}}{x - 4}$. [[br]] Vậy $A_1 = \\dfrac{2}{x - 1}$ và $A_2 = \\dfrac{6\\sqrt{x}}{x - 4}$.",
+          "writelines": 6
         },
         {
           "type": "problem",
           "label": "BTVN 13.",
-          "level": 1,
-          "statement": "Tính $A = \\dfrac{\\sqrt{x}}{\\sqrt{x}+3}$ tại $x = 9$.",
+          "dang_id": "TH2",
+          "level": 2,
           "tier": "btvn",
-          "writelines": 2
+          "statement": "Rút gọn các biểu thức sau: [[br]] a) $B_1 = \\dfrac{x + 2}{x - 4} - \\dfrac{1}{\\sqrt{x} + 2}$ (với $x \\ge 0, x \\neq 4$) [[br]] b) $B_2 = \\dfrac{x}{x - 9} + \\dfrac{1}{\\sqrt{x} - 3} - \\dfrac{1}{\\sqrt{x} + 3}$ (với $x \\ge 0, x \\neq 9$)",
+          "solution": "Ta có: [[br]] a) MTC là $x - 4$. $B_1 = \\dfrac{x + 2 - (\\sqrt{x} - 2)}{x - 4} = \\dfrac{x - \\sqrt{x} + 4}{x - 4}$. [[br]] b) MTC là $x - 9$. $B_2 = \\dfrac{x + (\\sqrt{x} + 3) - (\\sqrt{x} - 3)}{x - 9} = \\dfrac{x + 6}{x - 9}$. [[br]] Vậy $B_1 = \\dfrac{x - \\sqrt{x} + 4}{x - 4}$ và $B_2 = \\dfrac{x + 6}{x - 9}$.",
+          "writelines": 6
         },
         {
           "type": "problem",
           "label": "BTVN 14.",
-          "level": 1,
-          "statement": "Tính $A = \\dfrac{\\sqrt{x}-2}{\\sqrt{x}+1}$: [[br]] a) Tại $x = 16$; [[br]] b) Tại $x = 9$.",
+          "dang_id": "TH3",
+          "level": 2,
           "tier": "btvn",
-          "writelines": 2
+          "statement": "Rút gọn các biểu thức có đổi dấu mẫu sau: [[br]] a) $C_1 = \\dfrac{\\sqrt{x}}{\\sqrt{x} - 2} + \\dfrac{2}{2 - \\sqrt{x}}$ (với $x \\ge 0, x \\neq 4$) [[br]] b) $C_2 = \\dfrac{x}{x - 1} + \\dfrac{1}{1 - \\sqrt{x}}$ (với $x \\ge 0, x \\neq 1$)",
+          "solution": "Ta có: [[br]] a) Đổi dấu: $\\dfrac{2}{2 - \\sqrt{x}} = -\\dfrac{2}{\\sqrt{x} - 2}$. $C_1 = \\dfrac{\\sqrt{x} - 2}{\\sqrt{x} - 2} = 1$. [[br]] b) Đổi dấu: $\\dfrac{1}{1 - \\sqrt{x}} = -\\dfrac{1}{\\sqrt{x} - 1}$. MTC là $x - 1$. $C_2 = \\dfrac{x - (\\sqrt{x} + 1)}{x - 1} = \\dfrac{x - \\sqrt{x} - 1}{x - 1}$. [[br]] Vậy $C_1 = 1$ và $C_2 = \\dfrac{x - \\sqrt{x} - 1}{x - 1}$.",
+          "writelines": 6
         },
         {
           "type": "problem",
           "label": "BTVN 15.",
-          "level": 1,
-          "statement": "Rút gọn $1 - \\dfrac{1}{\\sqrt{x}+2}$.",
+          "dang_id": "TH4",
+          "level": 2,
           "tier": "btvn",
-          "writelines": 2
+          "statement": "Rút gọn các biểu thức sau: [[br]] a) $D_1 = \\left(\\dfrac{1}{\\sqrt{x} - 3} - \\dfrac{1}{\\sqrt{x} + 3}\\right) \\cdot \\dfrac{x - 9}{6}$ (với $x \\ge 0, x \\neq 9$) [[br]] b) $D_2 = \\left(\\dfrac{\\sqrt{x}}{\\sqrt{x} - 2} - \\dfrac{2}{\\sqrt{x} + 2}\\right) : \\dfrac{x + 4}{x - 4}$ (với $x \\ge 0, x \\neq 4$)",
+          "solution": "Ta có: [[br]] a) Trong ngoặc: $\\dfrac{(\\sqrt{x}+3) - (\\sqrt{x}-3)}{x - 9} = \\dfrac{6}{x - 9}$. Nhân: $\\dfrac{6}{x - 9} \\cdot \\dfrac{x - 9}{6} = 1$. [[br]] b) Trong ngoặc: $\\dfrac{\\sqrt{x}(\\sqrt{x}+2) - 2(\\sqrt{x}-2)}{x - 4} = \\dfrac{x + 2\\sqrt{x} - 2\\sqrt{x} + 4}{x - 4} = \\dfrac{x + 4}{x - 4}$. Chia: $\\dfrac{x + 4}{x - 4} : \\dfrac{x + 4}{x - 4} = 1$. [[br]] Vậy $D_1 = 1$ và $D_2 = 1$.",
+          "writelines": 6
         },
         {
           "type": "problem",
           "label": "BTVN 16.",
-          "level": 1,
-          "statement": "Rút gọn: [[br]] a) $1 + \\dfrac{3}{\\sqrt{x}-3}$; [[br]] b) $1 + \\dfrac{1}{\\sqrt{x}-1}$.",
+          "dang_id": "VD1",
+          "level": 3,
           "tier": "btvn",
-          "writelines": 2
+          "statement": "Cho biểu thức $B = \\dfrac{x + 8}{x - 4} + \\dfrac{1}{\\sqrt{x} + 2} - \\dfrac{3}{\\sqrt{x} - 2}$ (với $x \\ge 0, x \\neq 4$). Hãy rút gọn biểu thức $B$ và chứng minh rằng $B = \\dfrac{\\sqrt{x}}{\\sqrt{x} + 2}$.",
+          "solution": "Ta có: [[br]] MTC là $(\\sqrt{x} - 2)(\\sqrt{x} + 2) = x - 4$. [[br]] $B = \\dfrac{x + 8 + 1(\\sqrt{x} - 2) - 3(\\sqrt{x} + 2)}{x - 4} = \\dfrac{x + 8 + \\sqrt{x} - 2 - 3\\sqrt{x} - 6}{x - 4} = \\dfrac{x - 2\\sqrt{x}}{x - 4} = \\dfrac{\\sqrt{x}(\\sqrt{x} - 2)}{(\\sqrt{x} - 2)(\\sqrt{x} + 2)} = \\dfrac{\\sqrt{x}}{\\sqrt{x} + 2}$. [[br]] Vậy đẳng thức được chứng minh.",
+          "writelines": 8
         },
         {
           "type": "problem",
           "label": "BTVN 17.",
-          "level": 2,
-          "statement": "Quy đồng và thu gọn ($x \\ge 0, x \\ne 1$): [[br]] a) $B_1 = \\dfrac{1}{\\sqrt{x}-1} + \\dfrac{1}{\\sqrt{x}+1}$; [[br]] b) $B_2 = \\dfrac{\\sqrt{x}}{\\sqrt{x}-1} - \\dfrac{\\sqrt{x}}{\\sqrt{x}+1}$.",
-          "tier": "btvn",
-          "writelines": 3
-        },
-        {
-          "type": "problem",
-          "label": "BTVN 18.",
-          "level": 2,
-          "statement": "Quy đồng và thu gọn ($x \\ge 0, x \\ne 16$): [[br]] a) $B_3 = \\dfrac{1}{\\sqrt{x}-4} - \\dfrac{1}{\\sqrt{x}+4}$; [[br]] b) $B_4 = \\dfrac{3\\sqrt{x}}{\\sqrt{x}-4} - \\dfrac{3\\sqrt{x}}{\\sqrt{x}+4}$.",
-          "tier": "btvn",
-          "writelines": 3
-        },
-        {
-          "type": "problem",
-          "label": "BTVN 19.",
-          "level": 2,
-          "statement": "Đổi dấu và quy đồng ($x \\ge 0, x \\ne 4$): [[br]] a) $B_5 = \\dfrac{\\sqrt{x}}{\\sqrt{x}-2} + \\dfrac{2}{2-\\sqrt{x}}$; [[br]] b) $B_6 = \\dfrac{3\\sqrt{x}}{\\sqrt{x}-2} + \\dfrac{\\sqrt{x}+2}{2-\\sqrt{x}}$.",
-          "tier": "btvn",
-          "writelines": 3
-        },
-        {
-          "type": "problem",
-          "label": "BTVN 20.",
-          "level": 2,
-          "statement": "Rút gọn ($x \\ge 0, x \\ne 4$): [[br]] a) $B = \\left(\\dfrac{1}{\\sqrt{x}-2} + \\dfrac{1}{\\sqrt{x}+2}\\right) \\cdot \\dfrac{x-4}{2\\sqrt{x}}$; [[br]] b) $C = \\left(\\dfrac{1}{\\sqrt{x}-3} - \\dfrac{1}{\\sqrt{x}+3}\\right): \\dfrac{6}{x-9}$.",
-          "tier": "btvn",
-          "writelines": 3
-        },
-        {
-          "type": "problem",
-          "label": "BTVN 21.",
+          "dang_id": "VD2",
           "level": 3,
-          "statement": "Rút gọn $B(x) = \\left(\\dfrac{1}{\\sqrt{x}-2} + \\dfrac{\\sqrt{x}}{x-4}\\right): \\dfrac{2\\sqrt{x}+2}{x-4}$ với $x \\ge 0, x \\ne 4$.",
           "tier": "btvn",
-          "writelines": 4
-        },
-        {
-          "type": "problem",
-          "label": "BTVN 22.",
-          "level": 3,
-          "statement": "Rút gọn $B(x) = \\dfrac{\\sqrt{x}}{\\sqrt{x}+2} + \\dfrac{2\\sqrt{x}}{\\sqrt{x}-2} - \\dfrac{3x+4}{x-4}$ với $x \\ge 0, x \\ne 4$.",
-          "tier": "btvn",
-          "writelines": 4
+          "statement": "Cho biểu thức $A = \\dfrac{\\sqrt{x} + 3}{\\sqrt{x} - 3}$ và $B = \\dfrac{x - 9}{\\sqrt{x} + 3}$ (với $x \\ge 0, x \\neq 9$). Hãy rút gọn biểu thức tích $P = A \\cdot B$ rồi tính giá trị của $P$ tại $x = 49$.",
+          "solution": "Ta có: [[br]] Với $x \\ge 0, x \\neq 9$, rút gọn: [[br]] $P = A \\cdot B = \\dfrac{\\sqrt{x} + 3}{\\sqrt{x} - 3} \\cdot \\dfrac{(\\sqrt{x} - 3)(\\sqrt{x} + 3)}{\\sqrt{x} + 3} = \\sqrt{x} + 3$. [[br]] Thay $x = 49$ (thỏa mãn ĐKXĐ) vào $P$: [[br]] $P = \\sqrt{49} + 3 = 7 + 3 = 10$. [[br]] Vậy khi $x = 49$ thì $P = 10$.",
+          "writelines": 8
         }
-      ],
-      "solution": "1. $\\sqrt{x}+1$. [[br]] 2. a) $(\\sqrt{x}+1)+(\\sqrt{x}-1)$; b) $(\\sqrt{x}+4)+(\\sqrt{x}-4)$. [[br]] 3. $2\\sqrt{x}$. [[br]] 4. a) 2; b) 4. [[br]] 5. $\\dfrac{2\\sqrt{x}-3}{\\sqrt{x}(\\sqrt{x}-3)}$. [[br]] 6. a) $2\\sqrt{x}-2$; b) $2\\sqrt{x}-4$. [[br]] 7. $x \\ge 0, x \\ne 9$. [[br]] 8. a) $-\\dfrac{2}{\\sqrt{x}-3}$; b) $-\\dfrac{1}{\\sqrt{x}-4}$. [[br]] 9. $\\dfrac{2\\sqrt{x}}{\\sqrt{x}+1}$. [[br]] 10. a) 1; b) 3. [[br]] 11. 1. [[br]] 12. a) $\\dfrac{\\sqrt{x}-2}{\\sqrt{x}+2}$; b) $\\dfrac{\\sqrt{x}+1}{3\\sqrt{x}}$. [[br]] 13. $\\dfrac{3}{3+3} = \\dfrac{1}{2}$. [[br]] 14. a) $\\dfrac{4-2}{4+1} = \\dfrac{2}{5}$; b) $\\dfrac{3-2}{3+1} = \\dfrac{1}{4}$. [[br]] 15. $\\dfrac{\\sqrt{x}+1}{\\sqrt{x}+2}$. [[br]] 16. a) $\\dfrac{\\sqrt{x}}{\\sqrt{x}-3}$; b) $\\dfrac{\\sqrt{x}}{\\sqrt{x}-1}$. [[br]] 17. a) $B_1 = \\dfrac{2\\sqrt{x}}{x-1}$; b) $B_2 = \\dfrac{2x}{x-1}$. [[br]] 18. a) $B_3 = \\dfrac{8}{x-16}$; b) $B_4 = \\dfrac{24\\sqrt{x}}{x-16}$. [[br]] 19. a) 1; b) 2. [[br]] 20. a) 1; b) 1. [[br]] 21. $B(x) = 1$. [[br]] 22. $B(x) = \\dfrac{2}{\\sqrt{x}+2}$.",
-      "teacher_note": "Giao bài tập về nhà để học sinh khắc sâu toàn bộ kĩ thuật quy đồng phân thức chứa căn."
+      ]
     }
   ]
 }

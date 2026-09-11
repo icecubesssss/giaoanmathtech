@@ -144,7 +144,9 @@ def plan_target(out_dir: Path, outputs_root: Path, tieu_de: str | None = None) -
         if m:
             ca = m.group(1).capitalize()      # 'ca-01' → 'Ca-01'
             break
-    ten = bo_dau(tieu_de) if tieu_de else bo_dau(re.sub(r"^phieu-[a-z]-", "", slug).replace("-", " ")).capitalize()
+    raw_ten = bo_dau(tieu_de) if tieu_de else bo_dau(re.sub(r"^phieu-[a-z]-", "", slug).replace("-", " ")).capitalize()
+    ten = re.sub(r"[/\\:*?\"<>|]+", " ", raw_ten).strip()
+    ten = re.sub(r"\s+", " ", ten)
     parts.append(f"{ca} - {ten}" if ca else ten)
     return DriveTarget(parts, "phiếu học tập")
 

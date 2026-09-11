@@ -27,6 +27,7 @@ class MathBlock(BaseModel):
 class NotedBlock(BaseModel):
     type: Literal["noted"] = "noted"
     text: str = Field(..., description="Nội dung trong hộp nền xám (vd ô điền khuyết)")
+    text_slide: str = Field("", description="Nội dung riêng cho Slide (nếu khác text bản in)")
     # Thẻ callout có nhãn màu + icon. "" = hộp xám trung tính như cũ (tương thích ngược).
     #   trap   = "BẪY ĐIỂM" (đỏ, cảnh báo lỗi hay mất điểm)
     #   target = "ĐÍCH THI VÀO 10" (vàng, chốt mục tiêu thi)
@@ -80,6 +81,9 @@ class ProblemBlock(BaseModel):
     type: Literal["problem"] = "problem"
     label: str = Field(..., description="Nhãn, vd 'Bài 1.' / 'Bài toán.'")
     statement: str = Field(..., description="Đề bài (LaTeX inline cho phép)")
+    statement_slide: str = Field(
+        "", description="Đề bài riêng cho Slide (nếu khác statement bản in, vd bài điền khuyết rút gọn còn đề)"
+    )
     # Tầng bài = NƠI LÀM (đặt mục + gradient gate): "" | onclass | btvn | extend.
     tier: Literal["", "onclass", "btvn", "extend"] = Field(
         "", description="onclass=trên lớp, btvn=về nhà, extend=mở rộng/nâng cao"

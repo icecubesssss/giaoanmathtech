@@ -1,0 +1,371 @@
+{
+  "slug": "phieu-b-duong-tron-ngoai-tiep-va-noi-tiep-cua-mot-tam-giac",
+  "title": "Bài 28. Đường tròn ngoại tiếp và đường tròn nội tiếp của một tam giác",
+  "eyebrow": "HÌNH HỌC 9 — CHƯƠNG IX · PHIẾU B",
+  "grade_label": "Lớp 9 • Ôn vào 10",
+  "class_tier": "B",
+  "chuong": "chuong-09-duong-tron-ngoai-tiep-va-noi-tiep",
+  "so_ca": 1,
+  "stages": [
+    {
+      "kind": "review",
+      "number": 1,
+      "title": "Khám phá",
+      "teacher_note": "Cho HS thử tự tìm chỗ khoan giếng bằng thước — đa số sẽ lấy \"chính giữa\" theo cảm tính. Đây là cầu nối sang ba đường trung trực đã học ở Lớp 7.",
+      "blocks": [
+        {
+          "type": "opener",
+          "text": "Ba anh em nhà bạn Khoa dựng nhà ở ba vị trí $A$, $B$, $C$ trên một khu đất. Cả ba muốn góp tiền khoan CHUNG một cái giếng sao cho quãng đường từ mỗi nhà ra giếng \\textbf{dài bằng nhau} — không ai phải đi xa hơn ai. [[br]]Chỉ có đúng một chỗ đặt giếng như thế. Em có đoán được nó nằm ở đâu không?",
+          "tikz": "\\begin{tikzpicture}[line width=0.8pt, font=\\small]\n  \\draw[ink] (1.4791,0.7131) circle (1.6421);\n  \\fill[brand] (0.6,2.1) circle (2.2pt);\n  \\fill[brand] (0,0) circle (2.2pt);\n  \\fill[brand] (3.1,0.45) circle (2.2pt);\n  \\node[above, font=\\scriptsize] at (0.6,2.22) {$A$};\n  \\node[below left, font=\\scriptsize] at (-0.1,-0.06) {$B$};\n  \\node[right, font=\\scriptsize] at (3.2,0.45) {$C$};\n  \\fill[ink] (1.4791,0.7131) circle (1.3pt);\n  \\node[below] at (1.4791,0.7131) {$O$};\n  \\draw[ink, dashed] (1.4791,0.7131) -- (0.6,2.1);\n  \\draw[ink, dashed] (1.4791,0.7131) -- (0,0);\n  \\draw[ink, dashed] (1.4791,0.7131) -- (3.1,0.45);\n\\end{tikzpicture}"
+        },
+        {
+          "type": "noted",
+          "variant": "note",
+          "text": "\\textbf{Nhắc lại Lớp 7 — hai loại đường sẽ dùng cả buổi.}[[br]]$\\bullet$ Ba \\textbf{đường trung trực} của tam giác cùng đi qua một điểm; điểm đó \\textbf{cách đều ba ĐỈNH}.[[br]]$\\bullet$ Ba \\textbf{đường phân giác} của tam giác cùng đi qua một điểm; điểm đó \\textbf{cách đều ba CẠNH}.[[br]]$\\bullet$ Định lí Pythagore (Lớp 8): tam giác vuông có $(\\text{cạnh huyền})^2 = (\\text{cạnh góc vuông})^2 + (\\text{cạnh góc vuông})^2$."
+        },
+        {
+          "type": "noted",
+          "variant": "target",
+          "text": "\\textbf{Đích của buổi học.}[[br]]Bài 28 không bao giờ được hỏi thẳng trong đề Vào 10, nhưng \\emph{đường tròn ngoại tiếp tam giác vuông có tâm là trung điểm cạnh huyền} là mắt xích BẮT BUỘC của Câu IV.2 ý a. Buổi 5 sẽ dùng lại câu này liên tục, nên hôm nay phải thuộc đến mức viết ra không cần nghĩ."
+        }
+      ]
+    },
+    {
+      "kind": "concept",
+      "number": 2,
+      "title": "Kiến thức cần nhớ",
+      "teacher_note": "Chốt lý thuyết 3 phút, chữa 6 ví dụ mẫu 20 phút. Ví dụ 3 là khuôn quan trọng nhất cả buổi (tam giác vuông); bắt HS chép nguyên vào vở.",
+      "blocks": [
+        {
+          "type": "para",
+          "text": "\\textbf{1. Đường tròn ngoại tiếp tam giác}"
+        },
+        {
+          "type": "para",
+          "text": "Đường tròn \\textbf{đi qua ba đỉnh} của tam giác gọi là đường tròn \\emph{ngoại tiếp} tam giác đó. Tâm của nó là giao điểm \\textbf{ba đường trung trực} (vì tâm phải cách đều ba đỉnh). Mỗi tam giác có đúng MỘT đường tròn ngoại tiếp."
+        },
+        {
+          "type": "para",
+          "text": "\\textbf{2. Đường tròn nội tiếp tam giác}"
+        },
+        {
+          "type": "para",
+          "text": "Đường tròn \\textbf{tiếp xúc với ba cạnh} của tam giác gọi là đường tròn \\emph{nội tiếp} tam giác đó. Tâm của nó là giao điểm \\textbf{ba đường phân giác} (vì tâm phải cách đều ba cạnh)."
+        },
+        {
+          "type": "para",
+          "text": "\\textbf{3. Hai trường hợp đặc biệt phải thuộc lòng}"
+        },
+        {
+          "type": "para",
+          "text": "$\\bullet$ \\textbf{Tam giác vuông}: tâm đường tròn ngoại tiếp là \\textbf{TRUNG ĐIỂM CẠNH HUYỀN}, bán kính $R = \\dfrac{1}{2}$ cạnh huyền. (Đúng theo Bài 27: cạnh huyền là đường kính thì góc nội tiếp chắn nó bằng $90^\\circ$.)[[br]]$\\bullet$ \\textbf{Tam giác đều cạnh $a$}: cả hai đường tròn có chung tâm là trọng tâm, $R = \\dfrac{\\sqrt3}{3}a$ và $r = \\dfrac{\\sqrt3}{6}a$; do đó $r = \\dfrac{R}{2}$."
+        },
+        {
+          "type": "noted",
+          "variant": "trap",
+          "text": "\\textbf{Ba lỗi mất điểm quen thuộc.}[[br]]$\\bullet$ Nhầm tâm NGOẠI tiếp (giao ba \\emph{trung trực}) với tâm NỘI tiếp (giao ba \\emph{phân giác}); hoặc nói bừa là trọng tâm.[[br]]$\\bullet$ Với tam giác vuông thì lấy $R$ bằng CẢ cạnh huyền chứ không phải NỬA cạnh huyền; hoặc quên tính cạnh huyền bằng Pythagore trước.[[br]]$\\bullet$ Đem hai công thức $R = \\dfrac{\\sqrt3}{3}a$, $r = \\dfrac{\\sqrt3}{6}a$ áp cho tam giác THƯỜNG — hai công thức đó chỉ đúng cho tam giác ĐỀU."
+        }
+      ]
+    },
+    {
+      "kind": "practice1",
+      "number": 3,
+      "title": "Luyện tập 1 — Nhận biết",
+      "teacher_note": "GV hướng dẫn các ví dụ mẫu rồi cho HS hoàn thành 4 bài tập nhận biết. Khắc sâu vị trí tâm ngoại tiếp tam giác vuông (trung điểm cạnh huyền) và tâm ngoại tiếp tam giác đều (trọng tâm).",
+      "blocks": [
+        {
+          "type": "noted",
+          "variant": "example",
+          "text": "\\textbf{Ví dụ 1.} Trong Hình 1, cho biết đường tròn nào ngoại tiếp, đường tròn nào nội tiếp tam giác $ABC$?\\par\\nopagebreak\\smallskip\\begin{center}\\adjustbox{max width=0.75\\linewidth, max totalheight=2.8cm}{\n\\begin{tikzpicture}[line width=0.8pt, font=\\small]\n  \\coordinate (ptA) at (0,1.8);\n  \\coordinate (ptB) at (-1.6,-0.6);\n  \\coordinate (ptC) at (1.8,-0.6);\n  \\draw[ink] (ptA) -- (ptB) -- (ptC) -- cycle;\n  \\draw[ink] (0.07,0.37) circle (1.78);\n  \\fill[ink] (0.07,0.37) circle (1.3pt) node[above=2pt]{$O$};\n  \\node[above left] at (ptA) {$A$};\n  \\node[below left] at (ptB) {$B$};\n  \\node[below right] at (ptC) {$C$};\n  \\node[below, font=\\small] at (0,-1.5) {a) $(O)$ đi qua $A, B, C$};\n  \\begin{scope}[xshift=4.5cm]\n    \\coordinate (qA) at (0,1.8);\n    \\coordinate (qB) at (-1.4,-0.6);\n    \\coordinate (qC) at (1.6,-0.6);\n    \\draw[ink] (qA) -- (qB) -- (qC) -- cycle;\n    \\draw[ink] (0.05,0.18) circle (0.78);\n    \\fill[ink] (0.05,0.18) circle (1.3pt) node[below=2pt]{$I$};\n    \\node[above left] at (qA) {$A$};\n    \\node[below left] at (qB) {$B$};\n    \\node[below right] at (qC) {$C$};\n    \\node[below, font=\\small] at (0,-1.5) {b) $(I)$ tiếp xúc $AB, BC, CA$};\n  \\end{scope}\n\\end{tikzpicture}\n}\\par\\vspace{2pt}{\\sffamily\\scriptsize\\itshape\\color{muted}Hình 1}\\end{center}\\smallskip {\\sffamily\\bfseries\\color{brand}Lời giải}[[br]]Hình a): Đường tròn $(O)$ đi qua ba đỉnh $A, B, C$ của tam giác $ABC$ nên $(O)$ là đường tròn ngoại tiếp $\\triangle ABC$.[[br]]Hình b): Đường tròn $(I)$ tiếp xúc với ba cạnh $AB, BC, CA$ của tam giác $ABC$ nên $(I)$ là đường tròn nội tiếp $\\triangle ABC$.[[br]]Vậy đường tròn ở hình a) là đường tròn ngoại tiếp, đường tròn ở hình b) là đường tròn nội tiếp tam giác $ABC$."
+        },
+        {
+          "type": "problem",
+          "label": "Bài 1.",
+          "statement": "Quan sát Hình 2 rồi trả lời.\\par\\nopagebreak\\smallskip\\begin{center}\\adjustbox{max width=0.75\\linewidth, max totalheight=2.8cm}{\n\\begin{tikzpicture}[line width=0.8pt, font=\\small]\n  \\coordinate (ptM) at (0,1.7);\n  \\coordinate (ptN) at (-1.5,-0.5);\n  \\coordinate (ptP) at (1.5,-0.5);\n  \\draw[ink] (ptM) -- (ptN) -- (ptP) -- cycle;\n  \\draw[ink] (0,0.35) circle (1.35);\n  \\fill[ink] (0,0.35) circle (1.3pt) node[below=2pt]{$O$};\n  \\node[above] at (ptM) {$M$};\n  \\node[below left] at (ptN) {$N$};\n  \\node[below right] at (ptP) {$P$};\n  \\node[below, font=\\small] at (0,-1.3) {a)};\n  \\begin{scope}[xshift=4.2cm]\n    \\coordinate (sD) at (0,1.7);\n    \\coordinate (sE) at (-1.3,-0.5);\n    \\coordinate (sF) at (1.5,-0.5);\n    \\draw[ink] (sD) -- (sE) -- (sF) -- cycle;\n    \\draw[ink] (0.05,0.22) circle (0.72);\n    \\fill[ink] (0.05,0.22) circle (1.3pt) node[below=2pt]{$I$};\n    \\node[above] at (sD) {$D$};\n    \\node[below left] at (sE) {$E$};\n    \\node[below right] at (sF) {$F$};\n    \\node[below, font=\\small] at (0,-1.3) {b)};\n  \\end{scope}\n\\end{tikzpicture}\n}\\par\\vspace{2pt}{\\sffamily\\scriptsize\\itshape\\color{muted}Hình 2}\\end{center}\\smallskip a) [NB] Đường tròn $(O)$ ở hình a) là đường tròn ngoại tiếp hay nội tiếp tam giác $MNP$? Tâm $O$ là giao điểm của ba đường gì?[[br]]b) [NB] Đường tròn $(I)$ ở hình b) là đường tròn ngoại tiếp hay nội tiếp tam giác $DEF$? Tâm $I$ là giao điểm của ba đường gì?",
+          "tier": "onclass",
+          "level": 1,
+          "figure_given": true,
+          "solution": "a) Đường tròn $(O)$ đi qua ba đỉnh $M, N, P$ nên là đường tròn ngoại tiếp tam giác $MNP$. Tâm $O$ là giao điểm ba đường trung trực của tam giác $MNP$.[[br]]b) Đường tròn $(I)$ tiếp xúc ba cạnh $DE, EF, FD$ nên là đường tròn nội tiếp tam giác $DEF$. Tâm $I$ là giao điểm ba đường phân giác của tam giác $DEF$.",
+          "dang_id": "NB1",
+          "source": "SGK Toán 9 KNTT trang 74"
+        },
+        {
+          "type": "noted",
+          "variant": "example",
+          "text": "\\textbf{Ví dụ 2.} Cho tam giác $ABC$ vuông tại $A$ có cạnh huyền $BC = 12\\,\\text{cm}$. Xác định tâm và tính bán kính đường tròn ngoại tiếp tam giác $ABC$.\\par\\nopagebreak\\smallskip {\\sffamily\\bfseries\\color{brand}Lời giải}[[br]]Xét tam giác $ABC$ vuông tại $A$, theo định lí về tam giác vuông nội tiếp nửa đường tròn:[[br]]Tâm của đường tròn ngoại tiếp tam giác $ABC$ là trung điểm $M$ của cạnh huyền $BC$.[[br]]Bán kính đường tròn ngoại tiếp là:[[br]]\\hspace*{1.4em}$R = \\dfrac{BC}{2} = \\dfrac{12}{2} = 6\\,(\\text{cm})$.[[br]]Vậy tâm đường tròn ngoại tiếp là trung điểm cạnh huyền $BC$ và bán kính $R = 6\\,\\text{cm}$."
+        },
+        {
+          "type": "problem",
+          "label": "Bài 2.",
+          "statement": "[NB] Cho tam giác $MNP$ vuông tại $M$ có cạnh huyền $NP = 16\\,\\text{cm}$. Tính bán kính $R$ của đường tròn ngoại tiếp tam giác $MNP$.",
+          "tier": "onclass",
+          "level": 1,
+          "solution": "Tam giác $MNP$ vuông tại $M$ nên tâm đường tròn ngoại tiếp là trung điểm cạnh huyền $NP$.[[br]]Bán kính đường tròn ngoại tiếp là:[[br]]\\hspace*{1.4em}$R = \\dfrac{NP}{2} = \\dfrac{16}{2} = 8\\,(\\text{cm})$.[[br]]Vậy bán kính $R = 8\\,\\text{cm}$.",
+          "dang_id": "NB2",
+          "source": "SGK Toán 9 KNTT trang 75"
+        },
+        {
+          "type": "noted",
+          "variant": "example",
+          "text": "\\textbf{Ví dụ 3.} Cho tam giác đều $ABC$ cạnh $a = 6\\,\\text{cm}$. Tính bán kính $R$ của đường tròn ngoại tiếp và bán kính $r$ của đường tròn nội tiếp tam giác $ABC$.\\par\\nopagebreak\\smallskip {\\sffamily\\bfseries\\color{brand}Lời giải}[[br]]Tam giác $ABC$ đều cạnh $a = 6\\,\\text{cm}$ nên tâm đường tròn ngoại tiếp trùng với tâm đường tròn nội tiếp và là trọng tâm tam giác.[[br]]Độ dài đường cao của tam giác đều là:[[br]]\\hspace*{1.4em}$h = \\dfrac{a\\sqrt{3}}{2} = \\dfrac{6\\sqrt{3}}{2} = 3\\sqrt{3}\\,(\\text{cm})$.[[br]]Bán kính đường tròn ngoại tiếp là $R = \\dfrac{2}{3}h = \\dfrac{a\\sqrt{3}}{3} = 2\\sqrt{3}\\,(\\text{cm})$.[[br]]Bán kính đường tròn nội tiếp là $r = \\dfrac{1}{3}h = \\dfrac{a\\sqrt{3}}{6} = \\sqrt{3}\\,(\\text{cm})$.[[br]]Vậy $R = 2\\sqrt{3}\\,\\text{cm}$ và $r = \\sqrt{3}\\,\\text{cm}$."
+        },
+        {
+          "type": "problem",
+          "label": "Bài 3.",
+          "statement": "[NB] Điền vào chỗ trống để hoàn thành công thức tính bán kính đường tròn nội tiếp tam giác đều cạnh $a$:[[br]]Trong tam giác đều cạnh $a$, đường cao có độ dài bằng $h = [[blank:1.6cm]]$.[[br]]Tâm đường tròn nội tiếp trùng với [[blank:2.0cm]] của tam giác.[[br]]Do đó bán kính đường tròn nội tiếp bằng $r = \\dfrac{1}{3}h = [[blank:1.8cm]]$.[[br]]Vậy khi $a = 12\\,\\text{cm}$ thì $r = [[blank:1.4cm]]\\,\\text{cm}$.",
+          "statement_slide": "Nêu công thức tính đường cao $h$ và bán kính đường tròn nội tiếp $r$ của tam giác đều cạnh $a$. Áp dụng tính $r$ khi $a = 12\\,\\text{cm}$.",
+          "tier": "onclass",
+          "level": 1,
+          "solution": "Các từ và số cần điền theo thứ tự: $\\dfrac{a\\sqrt{3}}{2}$, trọng tâm, $\\dfrac{a\\sqrt{3}}{6}$, $2\\sqrt{3}$.[[br]]Vậy khi $a = 12\\,\\text{cm}$ thì $r = 2\\sqrt{3}\\,\\text{cm}$.",
+          "dang_id": "NB3",
+          "source": "SGK Toán 9 KNTT trang 76"
+        },
+        {
+          "type": "noted",
+          "variant": "example",
+          "text": "\\textbf{Ví dụ 4.} Cho tam giác vuông $ABC$ có hai cạnh góc vuông $AB = 3\\,\\text{cm}, AC = 4\\,\\text{cm}$. Nêu các bước vẽ đường tròn ngoại tiếp tam giác $ABC$.\\par\\nopagebreak\\smallskip {\\sffamily\\bfseries\\color{brand}Lời giải}[[br]]Bước 1: Vẽ góc vuông $\\widehat{A} = 90^\\circ$, lấy $AB = 3\\,\\text{cm}, AC = 4\\,\\text{cm}$, nối $BC$ được $\\triangle ABC$.[[br]]Bước 2: Xác định trung điểm $O$ của cạnh huyền $BC$.[[br]]Bước 3: Vẽ đường tròn $(O; OB)$ nhận $BC$ làm đường kính.[[br]]Vậy đường tròn $(O)$ chính là đường tròn ngoại tiếp tam giác $ABC$."
+        },
+        {
+          "type": "problem",
+          "label": "Bài 4.",
+          "statement": "[NB] Cho tam giác vuông $ABC$ vuông tại $A$ như Hình 3. Hãy chỉ rõ vị trí tâm $O$ và bán kính $R$ của đường tròn ngoại tiếp tam giác $ABC$ theo cạnh huyền $BC$.\\par\\nopagebreak\\smallskip\\begin{center}\\adjustbox{max width=0.45\\linewidth, max totalheight=2.8cm}{\n\\begin{tikzpicture}[line width=0.8pt, font=\\small]\n  \\coordinate (ptA) at (0,0);\n  \\coordinate (ptB) at (0,2);\n  \\coordinate (ptC) at (3,0);\n  \\coordinate (ptO) at (1.5,1);\n  \\draw[ink] (ptA) -- (ptB) -- (ptC) -- cycle;\n  \\draw[ink] (ptO) circle (1.803);\n  \\fill[ink] (ptO) circle (1.3pt) node[below right]{$O$};\n  \\node[below left] at (ptA) {$A$};\n  \\node[above left] at (ptB) {$B$};\n  \\node[below right] at (ptC) {$C$};\n  \\draw[ink] (0,0.2) -| (0.2,0);\n\\end{tikzpicture}\n}\\par\\vspace{2pt}{\\sffamily\\scriptsize\\itshape\\color{muted}Hình 3}\\end{center}",
+          "tier": "onclass",
+          "level": 1,
+          "solution": "Tâm $O$ của đường tròn ngoại tiếp tam giác $ABC$ vuông tại $A$ là trung điểm của cạnh huyền $BC$.[[br]]Bán kính $R = \\dfrac{BC}{2}$.[[br]]Vậy tâm $O$ là trung điểm cạnh huyền $BC$ và bán kính $R = \\dfrac{BC}{2}$.",
+          "dang_id": "NB4",
+          "source": "SGK Toán 9 KNTT trang 76"
+        }
+      ]
+    },
+    {
+      "kind": "practice2",
+      "number": 4,
+      "title": "Luyện tập 2 — Thông hiểu, Vận dụng \\& VDC",
+      "teacher_note": "Hướng dẫn HS vận dụng định lí Pythagore tính bán kính ngoại tiếp và công thức diện tích/nửa chu vi tính bán kính nội tiếp. Bài 8 rèn kĩ năng tìm cực trị hình học dùng BĐT đại số.",
+      "blocks": [
+        {
+          "type": "noted",
+          "variant": "example",
+          "text": "\\textbf{Ví dụ 5.} Cho tam giác vuông $ABC$ vuông tại $A$ có $AB = 5\\,\\text{cm}$ và $AC = 12\\,\\text{cm}$. Tính bán kính $R$ của đường tròn ngoại tiếp tam giác $ABC$.\\par\\nopagebreak\\smallskip {\\sffamily\\bfseries\\color{brand}Lời giải}[[br]]Xét tam giác $ABC$ vuông tại $A$. Theo định lí Pythagore, ta có:[[br]]\\hspace*{1.4em}$BC^2 = AB^2 + AC^2 = 5^2 + 12^2 = 25 + 144 = 169 \\implies BC = 13\\,(\\text{cm})$.[[br]]Vì tam giác $ABC$ vuông tại $A$ nên tâm đường tròn ngoại tiếp là trung điểm cạnh huyền $BC$.[[br]]Bán kính đường tròn ngoại tiếp là:[[br]]\\hspace*{1.4em}$R = \\dfrac{BC}{2} = \\dfrac{13}{2} = 6{,}5\\,(\\text{cm})$.[[br]]Vậy bán kính đường tròn ngoại tiếp tam giác $ABC$ là $R = 6{,}5\\,\\text{cm}$."
+        },
+        {
+          "type": "problem",
+          "label": "Bài 5.",
+          "statement": "Cho tam giác $ABC$ vuông tại $A$ có hai cạnh góc vuông $AB = 9\\,\\text{cm}, AC = 12\\,\\text{cm}$.[[br]]a) [TH] Tính độ dài cạnh huyền $BC$.[[br]]b) [TH] Tính bán kính $R$ của đường tròn ngoại tiếp tam giác $ABC$.",
+          "tier": "onclass",
+          "level": 2,
+          "solution": "a) Xét tam giác $ABC$ vuông tại $A$, theo định lí Pythagore ta có:[[br]]\\hspace*{1.4em}$BC = \\sqrt{AB^2 + AC^2} = \\sqrt{9^2 + 12^2} = \\sqrt{81 + 144} = \\sqrt{225} = 15\\,(\\text{cm})$.[[br]]Vậy $BC = 15\\,\\text{cm}$.[[br]]b) Vì tam giác $ABC$ vuông tại $A$ nên bán kính đường tròn ngoại tiếp là:[[br]]\\hspace*{1.4em}$R = \\dfrac{BC}{2} = \\dfrac{15}{2} = 7{,}5\\,(\\text{cm})$.[[br]]Vậy bán kính đường tròn ngoại tiếp tam giác $ABC$ là $R = 7{,}5\\,\\text{cm}$.",
+          "dang_id": "TH1",
+          "source": "Đề thi HK2 Thanh Xuân 2024"
+        },
+        {
+          "type": "noted",
+          "variant": "example",
+          "text": "\\textbf{Ví dụ 6.} Cho tam giác $ABC$ vuông tại $A$ có $AB = 6\\,\\text{cm}, AC = 8\\,\\text{cm}$ và $BC = 10\\,\\text{cm}$. Tính bán kính $r$ của đường tròn nội tiếp tam giác $ABC$.\\par\\nopagebreak\\smallskip {\\sffamily\\bfseries\\color{brand}Lời giải}[[br]]Diện tích tam giác $ABC$ là:[[br]]\\hspace*{1.4em}$S = \\dfrac{1}{2}\\,AB \\cdot AC = \\dfrac{1}{2} \\cdot 6 \\cdot 8 = 24\\,(\\text{cm}^2)$.[[br]]Nửa chu vi tam giác $ABC$ là:[[br]]\\hspace*{1.4em}$p = \\dfrac{AB + AC + BC}{2} = \\dfrac{6 + 8 + 10}{2} = 12\\,(\\text{cm})$.[[br]]Bán kính đường tròn nội tiếp tam giác $ABC$ là:[[br]]\\hspace*{1.4em}$r = \\dfrac{S}{p} = \\dfrac{24}{12} = 2\\,(\\text{cm})$.[[br]]Vậy bán kính đường tròn nội tiếp tam giác $ABC$ là $r = 2\\,\\text{cm}$."
+        },
+        {
+          "type": "problem",
+          "label": "Bài 6.",
+          "statement": "[TH] Cho tam giác $ABC$ vuông tại $A$ có $AB = 3\\,\\text{cm}, AC = 4\\,\\text{cm}$. Áp dụng công thức $r = \\dfrac{AB + AC - BC}{2}$ để tính bán kính đường tròn nội tiếp tam giác $ABC$.",
+          "tier": "onclass",
+          "level": 2,
+          "solution": "Xét tam giác $ABC$ vuông tại $A$, theo định lí Pythagore ta có:[[br]]\\hspace*{1.4em}$BC = \\sqrt{AB^2 + AC^2} = \\sqrt{3^2 + 4^2} = \\sqrt{25} = 5\\,(\\text{cm})$.[[br]]Bán kính đường tròn nội tiếp tam giác vuông $ABC$ là:[[br]]\\hspace*{1.4em}$r = \\dfrac{AB + AC - BC}{2} = \\dfrac{3 + 4 - 5}{2} = 1\\,(\\text{cm})$.[[br]]Vậy bán kính đường tròn nội tiếp là $r = 1\\,\\text{cm}$.",
+          "dang_id": "TH2",
+          "source": "Đề thi HK2 Cầu Giấy 2024"
+        },
+        {
+          "type": "noted",
+          "variant": "example",
+          "text": "\\textbf{Ví dụ 7.} Cho tam giác vuông $ABC$ vuông tại $A$ có $AB = 6\\,\\text{cm}, AC = 8\\,\\text{cm}$. Gọi $O$ là tâm đường tròn ngoại tiếp và $I$ là tâm đường tròn nội tiếp tam giác $ABC$. Tính khoảng cách $OI$.\\par\\nopagebreak\\smallskip {\\sffamily\\bfseries\\color{brand}Lời giải}[[br]]Theo định lí Pythagore, cạnh huyền $BC = \\sqrt{6^2 + 8^2} = 10\\,(\\text{cm})$.[[br]]Bán kính đường tròn ngoại tiếp là $R = \\dfrac{BC}{2} = 5\\,(\\text{cm})$.[[br]]Bán kính đường tròn nội tiếp là $r = \\dfrac{6 + 8 - 10}{2} = 2\\,(\\text{cm})$.[[br]]Theo hệ thức Euler về khoảng cách giữa tâm ngoại tiếp và tâm nội tiếp:[[br]]\\hspace*{1.4em}$OI^2 = R^2 - 2Rr = 5^2 - 2 \\cdot 5 \\cdot 2 = 25 - 20 = 5 \\implies OI = \\sqrt{5}\\,(\\text{cm})$.[[br]]Vậy khoảng cách $OI = \\sqrt{5}\\,\\text{cm}$."
+        },
+        {
+          "type": "problem",
+          "label": "Bài 7.",
+          "statement": "Cho tam giác $ABC$ vuông tại $A$ có $AB = 8\\,\\text{cm}, AC = 6\\,\\text{cm}$. Gọi $O$ là trung điểm của $BC$ và $I$ là tâm đường tròn nội tiếp tam giác $ABC$. Kẻ $ID \\perp AC$ ($D \\in AC$) và $IE \\perp AB$ ($E \\in AB$).[[br]]a) [VD] Chứng minh tứ giác $ADIE$ là hình vuông và tính bán kính $r = ID$.[[br]]b) [VD] Tính độ dài đoạn thẳng $OI$.",
+          "tier": "onclass",
+          "level": 3,
+          "quy_trinh": [
+            "\\textbf{Bước 1} $-$ chứng minh tứ giác $ADIE$ có ba góc vuông nên là hình chữ nhật, lại có hai cạnh kề $ID = IE = r$ nên là hình vuông.",
+            "\\textbf{Bước 2} $-$ tính độ dài cạnh huyền $BC$ bằng định lí Pythagore: $BC = \\sqrt{AB^2 + AC^2}$.",
+            "\\textbf{Bước 3} $-$ tính bán kính $r = \\dfrac{AB + AC - BC}{2}$ suy ra cạnh hình vuông $AD = AE = r$.",
+            "\\textbf{Bước 4} $-$ gắn vào hệ tọa độ hoặc dùng định lí Pythagore tính khoảng cách $OI = \\sqrt{R(R - 2r)}$."
+          ],
+          "solution": "a) Xét tứ giác $ADIE$ có $\\widehat{DAE} = 90^\\circ, \\widehat{IDA} = 90^\\circ, \\widehat{IEA} = 90^\\circ$ nên $ADIE$ là hình chữ nhật.[[br]]Mặt khác $ID = IE = r$ (bán kính đường tròn nội tiếp) nên $ADIE$ là hình vuông.[[br]]Xét tam giác $ABC$ vuông tại $A$, ta có:[[br]]\\hspace*{1.4em}$BC = \\sqrt{AB^2 + AC^2} = \\sqrt{8^2 + 6^2} = 10\\,(\\text{cm})$.[[br]]Bán kính đường tròn nội tiếp là:[[br]]\\hspace*{1.4em}$r = \\dfrac{AB + AC - BC}{2} = \\dfrac{8 + 6 - 10}{2} = 2\\,(\\text{cm})$.[[br]]Vậy $ADIE$ là hình vuông và $r = 2\\,\\text{cm}$.[[br]]b) Ta có bán kính đường tròn ngoại tiếp $R = \\dfrac{BC}{2} = 5\\,(\\text{cm})$.[[br]]Theo hệ thức Euler:[[br]]\\hspace*{1.4em}$OI = \\sqrt{R^2 - 2Rr} = \\sqrt{5^2 - 2 \\cdot 5 \\cdot 2} = \\sqrt{5}\\,(\\text{cm})$.[[br]]Vậy khoảng cách $OI = \\sqrt{5}\\,\\text{cm}$.",
+          "dang_id": "VD1",
+          "source": "Đề thi Học sinh giỏi Toán 9 Hà Nội"
+        },
+        {
+          "type": "problem",
+          "label": "Bài 8.",
+          "statement": "[VDC] (Ý cuối bài hình thi Vào 10) Cho tam giác vuông $ABC$ vuông tại $A$ thay đổi có cạnh huyền $BC = 2a$ cố định. Gọi $r$ là bán kính đường tròn nội tiếp tam giác $ABC$. Tìm giá trị lớn nhất của $r$ và xác định hình dạng của tam giác $ABC$ khi đó.[[br]]\\begin{center}\\adjustbox{max width=0.48\\linewidth, max totalheight=2.8cm}{\n\\begin{tikzpicture}[line width=0.8pt, font=\\small]\n  \\coordinate (ptB) at (-2,0);\n  \\coordinate (ptC) at (2,0);\n  \\coordinate (ptA) at (0.6,1.908);\n  \\draw[ink] (ptB) -- (ptC);\n  \\draw[ink] (ptA) -- (ptB) -- (ptC) -- cycle;\n  \\draw[ink, dashed] (0,0) circle (2);\n  \\fill[ink] (0,0) circle (1.3pt) node[below]{$O$};\n  \\node[left] at (ptB) {$B$};\n  \\node[right] at (ptC) {$C$};\n  \\node[above] at (ptA) {$A$};\n  \\draw[ink] (ptA) circle (0.586);\n  \\fill[ink] (0.42,1.38) circle (1.2pt) node[below left]{$I$};\n\\end{tikzpicture}\n}\\par\\vspace{2pt}{\\sffamily\\scriptsize\\itshape\\color{muted}Hình 4}\\end{center}",
+          "statement_slide": "Cho $\\triangle ABC$ vuông tại $A$ có cạnh huyền $BC = 2a$ cố định. Tìm giá trị lớn nhất của bán kính đường tròn nội tiếp $r$.",
+          "tier": "onclass",
+          "level": 4,
+          "figure_given": true,
+          "solution": "Trong tam giác $ABC$ vuông tại $A$, bán kính đường tròn nội tiếp được tính bởi:[[br]]\\hspace*{1.4em}$r = \\dfrac{AB + AC - BC}{2} = \\dfrac{AB + AC - 2a}{2}$.[[br]]Áp dụng bất đẳng thức Cauchy-Schwarz:[[br]]\\hspace*{1.4em}$(AB + AC)^2 \\le 2\\,(AB^2 + AC^2) = 2\\,BC^2 = 2 \\cdot (2a)^2 = 8a^2 \\implies AB + AC \\le 2a\\sqrt{2}$.[[br]]Do đó:[[br]]\\hspace*{1.4em}$r \\le \\dfrac{2a\\sqrt{2} - 2a}{2} = a(\\sqrt{2} - 1)$.[[br]]Dấu đẳng thức xảy ra khi và chỉ khi $AB = AC$, tức tam giác $ABC$ vuông cân tại $A$.[[br]]Vậy giá trị lớn nhất của $r$ là $a(\\sqrt{2} - 1)$, đạt được khi tam giác $ABC$ vuông cân tại $A$.",
+          "dang_id": "VDC1",
+          "source": "Đề thi Tuyển sinh Vào 10 Chuyên Hà Nội"
+        }
+      ]
+    },
+    {
+      "kind": "reflection",
+      "number": 5,
+      "title": "Tổng kết \\& Bài tập về nhà",
+      "blocks": [
+        {
+          "type": "mindmap",
+          "root": "Đường tròn ngoại tiếp \\& nội tiếp tam giác",
+          "caption": "Điền các ô trống rồi học thuộc",
+          "branches": [
+            {
+              "label": "Ngoại tiếp",
+              "children": [
+                {
+                  "label": "Đi qua ba [[blank:1.4cm]]",
+                  "children": []
+                },
+                {
+                  "label": "Tâm $=$ giao ba đường [[blank:2.0cm]]",
+                  "children": []
+                }
+              ]
+            },
+            {
+              "label": "Nội tiếp",
+              "children": [
+                {
+                  "label": "Tiếp xúc ba [[blank:1.4cm]]",
+                  "children": []
+                },
+                {
+                  "label": "Tâm $=$ giao ba đường [[blank:2.0cm]]",
+                  "children": []
+                }
+              ]
+            },
+            {
+              "label": "Tam giác vuông",
+              "children": [
+                {
+                  "label": "Tâm $=$ [[blank:2.2cm]] cạnh huyền",
+                  "children": []
+                },
+                {
+                  "label": "$R = \\dfrac{1}{2}$ cạnh [[blank:1.4cm]]",
+                  "children": []
+                }
+              ]
+            },
+            {
+              "label": "Tam giác đều cạnh $a$",
+              "children": [
+                {
+                  "label": "$R = \\dfrac{\\sqrt3}{3}a$",
+                  "children": []
+                },
+                {
+                  "label": "$r = \\dfrac{\\sqrt3}{6}a = \\dfrac{R}{[[blank:0.7cm]]}$",
+                  "children": []
+                }
+              ]
+            }
+          ],
+          "size": "small"
+        },
+        {
+          "type": "para",
+          "text": "\\textbf{BÀI TẬP VỀ NHÀ (BTVN)}"
+        },
+        {
+          "type": "problem",
+          "label": "BTVN~1.",
+          "statement": "Quan sát Hình 5 rồi trả lời.\\par\\nopagebreak\\smallskip\\begin{center}\\adjustbox{max width=0.75\\linewidth, max totalheight=2.8cm}{\n\\begin{tikzpicture}[line width=0.8pt, font=\\small]\n  \\coordinate (ptP) at (0,1.6);\n  \\coordinate (ptQ) at (-1.4,-0.5);\n  \\coordinate (ptR) at (1.4,-0.5);\n  \\draw[ink] (ptP) -- (ptQ) -- (ptR) -- cycle;\n  \\draw[ink] (0,0.3) circle (1.3);\n  \\fill[ink] (0,0.3) circle (1.3pt) node[below=2pt]{$O$};\n  \\node[above] at (ptP) {$P$};\n  \\node[below left] at (ptQ) {$Q$};\n  \\node[below right] at (ptR) {$R$};\n  \\node[below, font=\\small] at (0,-1.3) {a)};\n  \\begin{scope}[xshift=4.2cm]\n    \\coordinate (sX) at (0,1.6);\n    \\coordinate (sY) at (-1.3,-0.5);\n    \\coordinate (sZ) at (1.5,-0.5);\n    \\draw[ink] (sX) -- (sY) -- (sZ) -- cycle;\n    \\draw[ink] (0.05,0.2) circle (0.7);\n    \\fill[ink] (0.05,0.2) circle (1.3pt) node[below=2pt]{$K$};\n    \\node[above] at (sX) {$X$};\n    \\node[below left] at (sY) {$Y$};\n    \\node[below right] at (sZ) {$Z$};\n    \\node[below, font=\\small] at (0,-1.3) {b)};\n  \\end{scope}\n\\end{tikzpicture}\n}\\par\\vspace{2pt}{\\sffamily\\scriptsize\\itshape\\color{muted}Hình 5}\\end{center}\\smallskip a) [NB] Đường tròn $(O)$ ở hình a) là đường tròn ngoại tiếp tam giác $PQR$. Đúng hay Sai?[[br]]b) [NB] Đường tròn $(K)$ ở hình b) là đường tròn nội tiếp tam giác $XYZ$. Đúng hay Sai?",
+          "tier": "btvn",
+          "level": 1,
+          "figure_given": true,
+          "solution": "a) ĐÚNG. Đường tròn $(O)$ đi qua ba đỉnh $P, Q, R$.[[br]]b) ĐÚNG. Đường tròn $(K)$ tiếp xúc với ba cạnh của tam giác $XYZ$.",
+          "dang_id": "NB1",
+          "source": "SGK Toán 9 KNTT trang 75"
+        },
+        {
+          "type": "problem",
+          "label": "BTVN~2.",
+          "statement": "[NB] Cho tam giác $ABC$ vuông tại $B$ có $AC = 18\\,\\text{cm}$. Tính bán kính đường tròn ngoại tiếp tam giác $ABC$.",
+          "tier": "btvn",
+          "level": 1,
+          "solution": "Tam giác $ABC$ vuông tại $B$ nên cạnh huyền là $AC$.[[br]]Bán kính đường tròn ngoại tiếp là:[[br]]\\hspace*{1.4em}$R = \\dfrac{AC}{2} = \\dfrac{18}{2} = 9\\,(\\text{cm})$.[[br]]Vậy bán kính đường tròn ngoại tiếp tam giác $ABC$ là $R = 9\\,\\text{cm}$.",
+          "dang_id": "NB2",
+          "source": "SGK Toán 9 KNTT trang 76"
+        },
+        {
+          "type": "problem",
+          "label": "BTVN~3.",
+          "statement": "[NB] Cho tam giác đều $DEF$ có cạnh $a = 9\\,\\text{cm}$. Tính bán kính $r$ của đường tròn nội tiếp tam giác $DEF$.",
+          "tier": "btvn",
+          "level": 1,
+          "solution": "Bán kính đường tròn nội tiếp tam giác đều cạnh $a = 9\\,\\text{cm}$ là:[[br]]\\hspace*{1.4em}$r = \\dfrac{a\\sqrt{3}}{6} = \\dfrac{9\\sqrt{3}}{6} = \\dfrac{3\\sqrt{3}}{2}\\,(\\text{cm})$.[[br]]Vậy $r = \\dfrac{3\\sqrt{3}}{2}\\,\\text{cm}$.",
+          "dang_id": "NB3",
+          "source": "SGK Toán 9 KNTT trang 77"
+        },
+        {
+          "type": "problem",
+          "label": "BTVN~4.",
+          "statement": "[NB] Cho tam giác vuông $ABC$ vuông tại $A$ như Hình 6 với trung điểm cạnh huyền $BC$ là $M$. Giải thích vì sao $M$ là tâm đường tròn ngoại tiếp tam giác $ABC$.\\par\\nopagebreak\\smallskip\\begin{center}\\adjustbox{max width=0.45\\linewidth, max totalheight=2.8cm}{\n\\begin{tikzpicture}[line width=0.8pt, font=\\small]\n  \\coordinate (ptA) at (0,0);\n  \\coordinate (ptB) at (0,2);\n  \\coordinate (ptC) at (2.5,0);\n  \\coordinate (ptM) at (1.25,1);\n  \\draw[ink] (ptA) -- (ptB) -- (ptC) -- cycle;\n  \\draw[ink] (ptM) circle (1.601);\n  \\fill[ink] (ptM) circle (1.3pt) node[above right]{$M$};\n  \\node[below left] at (ptA) {$A$};\n  \\node[above left] at (ptB) {$B$};\n  \\node[below right] at (ptC) {$C$};\n  \\draw[ink] (0,0.2) -| (0.2,0);\n\\end{tikzpicture}\n}\\par\\vspace{2pt}{\\sffamily\\scriptsize\\itshape\\color{muted}Hình 6}\\end{center}",
+          "tier": "btvn",
+          "level": 1,
+          "solution": "Trong tam giác vuông $ABC$ vuông tại $A$, trung tuyến $AM$ ứng với cạnh huyền $BC$ có độ dài bằng nửa cạnh huyền: $AM = MB = MC = \\dfrac{BC}{2}$.[[br]]Do đó ba điểm $A, B, C$ cách đều điểm $M$, suy ra $M$ là tâm đường tròn ngoại tiếp tam giác $ABC$.[[br]]Vậy $M$ là tâm đường tròn ngoại tiếp tam giác $ABC$.",
+          "dang_id": "NB4",
+          "source": "SGK Toán 9 KNTT trang 77"
+        },
+        {
+          "type": "problem",
+          "label": "BTVN~5.",
+          "statement": "Cho tam giác $ABC$ vuông tại $A$ có $AB = 10\\,\\text{cm}, AC = 24\\,\\text{cm}$.[[br]]a) [TH] Tính độ dài cạnh huyền $BC$.[[br]]b) [TH] Tính bán kính $R$ của đường tròn ngoại tiếp tam giác $ABC$.",
+          "tier": "btvn",
+          "level": 2,
+          "solution": "a) Theo định lí Pythagore trong tam giác $ABC$ vuông tại $A$:[[br]]\\hspace*{1.4em}$BC = \\sqrt{AB^2 + AC^2} = \\sqrt{10^2 + 24^2} = \\sqrt{100 + 576} = \\sqrt{676} = 26\\,(\\text{cm})$.[[br]]Vậy $BC = 26\\,\\text{cm}$.[[br]]b) Bán kính đường tròn ngoại tiếp là:[[br]]\\hspace*{1.4em}$R = \\dfrac{BC}{2} = \\dfrac{26}{2} = 13\\,(\\text{cm})$.[[br]]Vậy bán kính đường tròn ngoại tiếp là $R = 13\\,\\text{cm}$.",
+          "dang_id": "TH1",
+          "source": "Đề thi HK2 Ba Đình 2024"
+        },
+        {
+          "type": "problem",
+          "label": "BTVN~6.",
+          "statement": "[TH] Cho tam giác $ABC$ vuông tại $A$ có các cạnh $AB = 5\\,\\text{cm}, AC = 12\\,\\text{cm}, BC = 13\\,\\text{cm}$. Tính diện tích $S$ và bán kính $r$ của đường tròn nội tiếp tam giác $ABC$.",
+          "tier": "btvn",
+          "level": 2,
+          "solution": "Xét tam giác $ABC$ vuông tại $A$, diện tích tam giác là:[[br]]\\hspace*{1.4em}$S = \\dfrac{1}{2}\\,AB \\cdot AC = \\dfrac{1}{2} \\cdot 5 \\cdot 12 = 30\\,(\\text{cm}^2)$.[[br]]Theo công thức tính bán kính đường tròn nội tiếp tam giác vuông, ta có:[[br]]\\hspace*{1.4em}$r = \\dfrac{AB + AC - BC}{2} = \\dfrac{5 + 12 - 13}{2} = 2\\,(\\text{cm})$.[[br]]Vậy $S = 30\\,\\text{cm}^2$ và $r = 2\\,\\text{cm}$.",
+          "dang_id": "TH2",
+          "source": "Đề thi HK2 Hai Bà Trưng 2024"
+        },
+        {
+          "type": "problem",
+          "label": "BTVN~7.",
+          "statement": "[VD] Cho tam giác vuông $ABC$ vuông tại $A$ có $AB = c, AC = b$ và cạnh huyền $BC = a$. Gọi $r$ là bán kính đường tròn nội tiếp tam giác $ABC$.[[br]]Chứng minh hệ thức $a + 2r = b + c$.",
+          "tier": "btvn",
+          "level": 3,
+          "quy_trinh": [
+            "\\textbf{Bước 1} $-$ viết công thức tính bán kính đường tròn nội tiếp tam giác vuông $r = \\dfrac{b + c - a}{2}$.",
+            "\\textbf{Bước 2} $-$ nhân cả hai vế với 2 được $2r = b + c - a$.",
+            "\\textbf{Bước 3} $-$ chuyển vế hạng tử $-a$ sang vế trái.",
+            "\\textbf{Bước 4} $-$ kết luận đẳng thức cần chứng minh $a + 2r = b + c$."
+          ],
+          "solution": "Gọi $D, E, F$ lần lượt là tiếp điểm của đường tròn nội tiếp $(I; r)$ với các cạnh $BC, CA, AB$.[[br]]Theo tính chất hai tiếp tuyến cắt nhau:[[br]]\\hspace*{1.4em}$AF = AE = r$; $BF = BD = c - r$; $CD = CE = b - r$.[[br]]Do đó cạnh huyền là:[[br]]\\hspace*{1.4em}$a = BC = BD + CD = (c - r) + (b - r) = b + c - 2r$.[[br]]Chuyển vế $-2r$ sang vế trái, ta được:[[br]]\\hspace*{1.4em}$a + 2r = b + c$.[[br]]Vậy $a + 2r = b + c$.",
+          "dang_id": "VD1",
+          "source": "Đề thi Tuyển sinh Vào 10 Hoàn Kiếm"
+        },
+        {
+          "type": "problem",
+          "label": "BTVN~8.",
+          "statement": "[VDC] (Ý cuối bài hình thi Vào 10) Cho tam giác đều $ABC$ cạnh $a$. Điểm $M$ nằm bên trong tam giác $ABC$. Gọi $x, y, z$ lần lượt là khoảng cách từ điểm $M$ đến ba cạnh $BC, CA, AB$. Chứng minh rằng tổng $x + y + z$ có giá trị không đổi khi $M$ thay đổi vị trí bên trong tam giác.[[br]]\\begin{center}\\adjustbox{max width=0.45\\linewidth, max totalheight=2.8cm}{\n\\begin{tikzpicture}[line width=0.8pt, font=\\small]\n  \\coordinate (ptA) at (0,2);\n  \\coordinate (ptB) at (-1.732,-1);\n  \\coordinate (ptC) at (1.732,-1);\n  \\coordinate (ptM) at (0.3,0.2);\n  \\draw[ink] (ptA) -- (ptB) -- (ptC) -- cycle;\n  \\fill[ink] (ptM) circle (1.3pt) node[above right]{$M$};\n  \\draw[ink, dashed] (ptM) -- (ptA);\n  \\draw[ink, dashed] (ptM) -- (ptB);\n  \\draw[ink, dashed] (ptM) -- (ptC);\n  \\node[above] at (ptA) {$A$};\n  \\node[below left] at (ptB) {$B$};\n  \\node[below right] at (ptC) {$C$};\n\\end{tikzpicture}\n}\\par\\vspace{2pt}{\\sffamily\\scriptsize\\itshape\\color{muted}Hình 7}\\end{center}",
+          "tier": "btvn",
+          "level": 4,
+          "figure_given": true,
+          "solution": "Nối $M$ với ba đỉnh $A, B, C$. Diện tích tam giác $ABC$ bằng tổng diện tích ba tam giác nhỏ:[[br]]\\hspace*{1.4em}$S_{ABC} = S_{MBC} + S_{MCA} + S_{MAB}$.[[br]]Mặt khác:[[br]]\\hspace*{1.4em}$S_{MBC} = \\dfrac{1}{2}\\,a \\cdot x$,\\quad $S_{MCA} = \\dfrac{1}{2}\\,a \\cdot y$,\\quad $S_{MAB} = \\dfrac{1}{2}\\,a \\cdot z$.[[br]]Do đó:[[br]]\\hspace*{1.4em}$S_{ABC} = \\dfrac{1}{2}\\,a \\cdot (x + y + z) \\implies x + y + z = \\dfrac{2\\,S_{ABC}}{a}$.[[br]]Vì tam giác $ABC$ đều cạnh $a$ cố định nên đường cao $h = \\dfrac{a\\sqrt{3}}{2}$ và diện tích $S_{ABC} = \\dfrac{a^2\\sqrt{3}}{4}$ không đổi.[[br]]Suy ra:[[br]]\\hspace*{1.4em}$x + y + z = \\dfrac{2}{a} \\cdot \\dfrac{a^2\\sqrt{3}}{4} = \\dfrac{a\\sqrt{3}}{2} = h$.[[br]]Vậy tổng khoảng cách $x + y + z$ luôn không đổi và bằng độ dài đường cao $h = \\dfrac{a\\sqrt{3}}{2}$ của tam giác đều.",
+          "dang_id": "VDC1",
+          "source": "Đề thi Tuyển sinh Vào 10 Chuyên Sư Phạm"
+        }
+      ]
+    }
+  ]
+}

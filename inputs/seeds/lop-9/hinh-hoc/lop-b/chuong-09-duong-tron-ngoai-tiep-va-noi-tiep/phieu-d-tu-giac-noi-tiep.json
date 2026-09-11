@@ -1,0 +1,368 @@
+{
+  "slug": "phieu-d-tu-giac-noi-tiep",
+  "title": "Bài 29. Tứ giác nội tiếp",
+  "eyebrow": "HÌNH HỌC 9 — CHƯƠNG IX · PHIẾU D",
+  "grade_label": "Lớp 9 • Ôn vào 10",
+  "class_tier": "B",
+  "chuong": "chuong-09-duong-tron-ngoai-tiep-va-noi-tiep",
+  "so_ca": 1,
+  "stages": [
+    {
+      "kind": "review",
+      "number": 1,
+      "title": "Khám phá",
+      "teacher_note": "Cho HS đo thử bốn khoảng cách từ giao hai đường chéo tới bốn đỉnh tấm bạt. Đây là cầu nối sang đường tròn ngoại tiếp hình chữ nhật ở mục 3.",
+      "blocks": [
+        {
+          "type": "opener",
+          "text": "Bốn bạn Mai, Nam, Linh, Huy đứng ở bốn góc một tấm bạt hình chữ nhật trải giữa sân trường. Thầy giám thị bảo: \\textquotedblleft Cả bốn em đang đứng cách cái cột cờ đúng bằng nhau đấy\\textquotedblright. [[br]]Vì sao chỉ cần tấm bạt là hình chữ nhật thì luôn tìm được một điểm cách đều cả bốn góc của nó? Điểm ấy nằm ở đâu?",
+          "tikz": "\\begin{tikzpicture}[line width=0.8pt, font=\\small]\n  \\draw[ink] (1.5,0.95) circle (1.7755);\n  \\node[above left] at (0,1.9) {$A$};\n  \\node[above right] at (3,1.9) {$B$};\n  \\node[below right] at (3,0) {$C$};\n  \\node[below left] at (0,0) {$D$};\n  \\draw[ink] (0,1.9) -- (3,1.9) -- (3,0) -- (0,0) -- (0,1.9);\n  \\draw[ink] (0,1.9) -- (3,0);\n  \\draw[ink] (3,1.9) -- (0,0);\n  \\fill[ink] (1.5,0.95) circle (1.3pt);\n  \\node[above right] at (1.5,0.95) {$O$};\n  \\draw[ink] (0,0.2) -- (0.2,0.2) -- (0.2,0);\n\\end{tikzpicture}"
+        },
+        {
+          "type": "noted",
+          "variant": "note",
+          "text": "\\textbf{Nhắc lại ba thứ sẽ dùng cả buổi.}[[br]]$\\bullet$ (Bài 27) Góc nội tiếp $= \\dfrac{1}{2}$ số đo cung bị chắn; góc nội tiếp chắn nửa đường tròn là góc vuông.[[br]]$\\bullet$ (Bài 28) Tam giác vuông có tâm đường tròn ngoại tiếp là TRUNG ĐIỂM cạnh huyền.[[br]]$\\bullet$ (Lớp 8) Hình chữ nhật và hình vuông có hai đường chéo bằng nhau và cắt nhau tại trung điểm mỗi đường."
+        },
+        {
+          "type": "noted",
+          "variant": "target",
+          "text": "\\textbf{Đích của buổi học.}[[br]]Bài 29 là bài GẦN đề thi nhất của cả chương: Câu IV.2 ý a của 3/3 đề Vào 10 đều hỏi \\emph{chứng minh bốn điểm cùng thuộc một đường tròn} — chính là tứ giác nội tiếp. Hôm nay học cách nhận ra nó; buổi 5 luyện riêng cách trình bày để lấy trọn 1,0 điểm."
+        }
+      ]
+    },
+    {
+      "kind": "concept",
+      "number": 2,
+      "title": "Kiến thức cần nhớ",
+      "teacher_note": "Ví dụ 4 và Ví dụ 6 là KHUÔN VÀNG của Câu IV.2 ý a — bắt HS chép nguyên vào vở, buổi 5 sẽ luyện lại đúng khuôn này. Nhấn mạnh: tầng C chỉ chứng minh tứ giác nội tiếp bằng hai góc vuông, không dùng chiều đảo.",
+      "blocks": [
+        {
+          "type": "para",
+          "text": "\\textbf{1. Tứ giác nội tiếp là gì}"
+        },
+        {
+          "type": "para",
+          "text": "Tứ giác có \\textbf{BỐN đỉnh cùng nằm trên một đường tròn} gọi là tứ giác \\emph{nội tiếp} đường tròn đó. Thiếu một đỉnh cũng không được: hình chỉ có ba đỉnh nằm trên đường tròn thì KHÔNG phải tứ giác nội tiếp."
+        },
+        {
+          "type": "para",
+          "text": "\\textbf{2. Định lí (SGK trang 80)}"
+        },
+        {
+          "type": "para",
+          "text": "Trong một tứ giác nội tiếp, \\textbf{tổng số đo hai góc ĐỐI NHAU bằng $180^\\circ$}. Với tứ giác $ABCD$ nội tiếp: $\\widehat{A} + \\widehat{C} = 180^\\circ$ và $\\widehat{B} + \\widehat{D} = 180^\\circ$.[[br]]Hai góc \\emph{đối nhau} là hai góc KHÔNG kề một cạnh nào: trong $ABCD$ thì $\\widehat{A}$ đối $\\widehat{C}$, $\\widehat{B}$ đối $\\widehat{D}$. Đừng cộng nhầm hai góc KỀ như $\\widehat{A}$ với $\\widehat{B}$."
+        },
+        {
+          "type": "para",
+          "text": "\\textbf{3. Hai điều nữa phải nhớ}"
+        },
+        {
+          "type": "para",
+          "text": "$\\bullet$ \\textbf{Đường tròn ngoại tiếp hình chữ nhật và hình vuông} có tâm là giao hai đường chéo, bán kính bằng NỬA đường chéo.[[br]]$\\bullet$ \\textbf{★ Cách DUY NHẤT tầng C dùng để chứng minh một tứ giác nội tiếp}: \\emph{hai góc vuông cùng nhìn một đoạn thẳng thì bốn điểm cùng thuộc đường tròn có đường kính là đoạn thẳng đó.} Lí do: góc vuông nội tiếp thì chắn nửa đường tròn (Bài 27)."
+        },
+        {
+          "type": "noted",
+          "variant": "trap",
+          "text": "\\textbf{Ba lỗi mất điểm quen thuộc.}[[br]]$\\bullet$ Cộng nhầm hai góc KỀ nhau thay vì hai góc ĐỐI nhau: viết $\\widehat{A} + \\widehat{B} = 180^\\circ$.[[br]]$\\bullet$ Dùng chiều ĐẢO của định lí (\\emph{tổng hai góc đối bằng $180^\\circ$ nên tứ giác nội tiếp}) — sách chưa dạy chiều này. Muốn chứng minh tứ giác nội tiếp thì chỉ dùng khuôn hai góc vuông.[[br]]$\\bullet$ Viết được hai góc vuông nhưng quên nói chúng CÙNG NHÌN đoạn nào nên không kết luận được đường kính."
+        }
+      ]
+    },
+    {
+      "kind": "practice1",
+      "number": 3,
+      "title": "Luyện tập 1 — Nhận biết",
+      "teacher_note": "Củng cố định nghĩa và định lí tổng hai góc đối bằng 180 độ. Nhấn mạnh mọi hình thang cân, hình chữ nhật, hình vuông đều là tứ giác nội tiếp.",
+      "blocks": [
+        {
+          "type": "noted",
+          "variant": "example",
+          "text": "\\textbf{Ví dụ 1.} Trong Hình 1, tứ giác nào là tứ giác nội tiếp đường tròn?\\par\\nopagebreak\\smallskip\\begin{center}\\adjustbox{max width=0.75\\linewidth, max totalheight=2.8cm}{\n\\begin{tikzpicture}[line width=0.8pt, font=\\small]\n  \\draw[ink] (0,0) circle (1.2);\n  \\coordinate (ptA) at (-0.8,0.894);\n  \\coordinate (ptB) at (0.8,0.894);\n  \\coordinate (ptC) at (1.1,-0.48);\n  \\coordinate (ptD) at (-0.6,-1.04);\n  \\draw[ink] (ptA) -- (ptB) -- (ptC) -- (ptD) -- cycle;\n  \\fill[ink] (0,0) circle (1.3pt) node[below=2pt]{$O$};\n  \\node[above left] at (ptA) {$A$};\n  \\node[above right] at (ptB) {$B$};\n  \\node[below right] at (ptC) {$C$};\n  \\node[below left] at (ptD) {$D$};\n  \\node[below, font=\\small] at (0,-1.5) {a)};\n  \\begin{scope}[xshift=4.2cm]\n    \\draw[ink] (0,0) circle (1.2);\n    \\coordinate (qM) at (-0.8,0.894);\n    \\coordinate (qN) at (0.8,0.894);\n    \\coordinate (qP) at (0.5,-0.2);\n    \\coordinate (qQ) at (-0.6,-1.04);\n    \\draw[ink] (qM) -- (qN) -- (qP) -- (qQ) -- cycle;\n    \\fill[ink] (0,0) circle (1.3pt) node[below=2pt]{$O$};\n    \\node[above left] at (qM) {$M$};\n    \\node[above right] at (qN) {$N$};\n    \\node[above right] at (qP) {$P$};\n    \\node[below left] at (qQ) {$Q$};\n    \\node[below, font=\\small] at (0,-1.5) {b)};\n  \\end{scope}\n\\end{tikzpicture}\n}\\par\\vspace{2pt}{\\sffamily\\scriptsize\\itshape\\color{muted}Hình 1}\\end{center}\\smallskip {\\sffamily\\bfseries\\color{brand}Lời giải}[[br]]Hình a): Bốn đỉnh $A, B, C, D$ đều nằm trên đường tròn $(O)$ nên tứ giác $ABCD$ là tứ giác nội tiếp.[[br]]Hình b): Đỉnh $P$ nằm bên trong đường tròn $(O)$, không thuộc $(O)$ nên tứ giác $MNPQ$ không phải là tứ giác nội tiếp.[[br]]Vậy tứ giác ở hình a) là tứ giác nội tiếp."
+        },
+        {
+          "type": "problem",
+          "label": "Bài 1.",
+          "statement": "Quan sát Hình 2 rồi trả lời.\\par\\nopagebreak\\smallskip\\begin{center}\\adjustbox{max width=0.75\\linewidth, max totalheight=2.8cm}{\n\\begin{tikzpicture}[line width=0.8pt, font=\\small]\n  \\draw[ink] (0,0) circle (1.2);\n  \\coordinate (ptA) at (-1.1,0.48);\n  \\coordinate (ptB) at (0,1.2);\n  \\coordinate (ptC) at (1.1,0.48);\n  \\coordinate (ptD) at (0,-1.2);\n  \\draw[ink] (ptA) -- (ptB) -- (ptC) -- (ptD) -- cycle;\n  \\node[left] at (ptA) {$A$};\n  \\node[above] at (ptB) {$B$};\n  \\node[right] at (ptC) {$C$};\n  \\node[below] at (ptD) {$D$};\n  \\node[below, font=\\small] at (0,-1.5) {a)};\n  \\begin{scope}[xshift=4.2cm]\n    \\draw[ink] (0,0) circle (1.2);\n    \\coordinate (sE) at (-1,0.66);\n    \\coordinate (sF) at (0.8,0.89);\n    \\coordinate (sG) at (1.5,-0.2);\n    \\coordinate (sH) at (-0.5,-1.09);\n    \\draw[ink] (sE) -- (sF) -- (sG) -- (sH) -- cycle;\n    \\node[left] at (sE) {$E$};\n    \\node[above] at (sF) {$F$};\n    \\node[right] at (sG) {$G$};\n    \\node[below] at (sH) {$H$};\n    \\node[below, font=\\small] at (0,-1.5) {b)};\n  \\end{scope}\n\\end{tikzpicture}\n}\\par\\vspace{2pt}{\\sffamily\\scriptsize\\itshape\\color{muted}Hình 2}\\end{center}\\smallskip a) [NB] Tứ giác $ABCD$ ở hình a) có phải là tứ giác nội tiếp không? Chỉ ra hai cặp góc đối diện của tứ giác này.[[br]]b) [NB] Tứ giác $EFGH$ ở hình b) có phải là tứ giác nội tiếp không? Giải thích vì sao.",
+          "tier": "onclass",
+          "level": 1,
+          "figure_given": true,
+          "solution": "a) CÓ. Cả 4 đỉnh $A, B, C, D$ đều nằm trên đường tròn. Hai cặp góc đối là $\\widehat{A}$ đối $\\widehat{C}$, và $\\widehat{B}$ đối $\\widehat{D}$.[[br]]b) KHÔNG. Đỉnh $G$ nằm ngoài đường tròn nên tứ giác $EFGH$ không nội tiếp.",
+          "dang_id": "NB1",
+          "source": "SGK Toán 9 KNTT trang 82"
+        },
+        {
+          "type": "noted",
+          "variant": "example",
+          "text": "\\textbf{Ví dụ 2.} Cho tứ giác $ABCD$ nội tiếp đường tròn. Biết $\\widehat{A} = 75^\\circ$ và $\\widehat{B} = 110^\\circ$. Tính số đo các góc $\\widehat{C}$ và $\\widehat{D}$ của tứ giác.\\par\\nopagebreak\\smallskip {\\sffamily\\bfseries\\color{brand}Lời giải}[[br]]Vì tứ giác $ABCD$ nội tiếp đường tròn nên tổng hai góc đối diện bằng $180^\\circ$:[[br]]\\hspace*{1.4em}$\\widehat{C} = 180^\\circ - \\widehat{A} = 180^\\circ - 75^\\circ = 105^\\circ$;[[br]]\\hspace*{1.4em}$\\widehat{D} = 180^\\circ - \\widehat{B} = 180^\\circ - 110^\\circ = 70^\\circ$.[[br]]Vậy $\\widehat{C} = 105^\\circ$ và $\\widehat{D} = 70^\\circ$."
+        },
+        {
+          "type": "problem",
+          "label": "Bài 2.",
+          "statement": "[NB] Cho tứ giác $MNPQ$ nội tiếp đường tròn. Biết $\\widehat{M} = 82^\\circ$ và $\\widehat{N} = 95^\\circ$. Tính số đo góc đối $\\widehat{P}$ và góc đối $\\widehat{Q}$.",
+          "tier": "onclass",
+          "level": 1,
+          "solution": "Tứ giác $MNPQ$ nội tiếp đường tròn nên tổng hai góc đối bằng $180^\\circ$:[[br]]\\hspace*{1.4em}$\\widehat{P} = 180^\\circ - \\widehat{M} = 180^\\circ - 82^\\circ = 98^\\circ$;[[br]]\\hspace*{1.4em}$\\widehat{Q} = 180^\\circ - \\widehat{N} = 180^\\circ - 95^\\circ = 85^\\circ$.[[br]]Vậy $\\widehat{P} = 98^\\circ$ và $\\widehat{Q} = 85^\\circ$.",
+          "dang_id": "NB2",
+          "source": "SGK Toán 9 KNTT trang 83"
+        },
+        {
+          "type": "noted",
+          "variant": "example",
+          "text": "\\textbf{Ví dụ 3.} Cho tứ giác $ABCD$ nội tiếp đường tròn $(O)$. Gọi $\\widehat{C_x}$ là góc ngoài tại đỉnh $C$. Chứng minh $\\widehat{C_x} = \\widehat{A}$.\\par\\nopagebreak\\smallskip {\\sffamily\\bfseries\\color{brand}Lời giải}[[br]]Vì tứ giác $ABCD$ nội tiếp nên tổng hai góc đối $\\widehat{A} + \\widehat{BCD} = 180^\\circ \\implies \\widehat{A} = 180^\\circ - \\widehat{BCD}$.[[br]]Lại có góc ngoài $\\widehat{C_x}$ kề bù với góc trong $\\widehat{BCD}$ nên $\\widehat{C_x} + \\widehat{BCD} = 180^\\circ \\implies \\widehat{C_x} = 180^\\circ - \\widehat{BCD}$.[[br]]Do đó $\\widehat{C_x} = \\widehat{A}$.[[br]]Vậy góc ngoài tại một đỉnh của tứ giác nội tiếp bằng góc trong tại đỉnh đối diện."
+        },
+        {
+          "type": "problem",
+          "label": "Bài 3.",
+          "statement": "[NB] Điền vào chỗ trống để hoàn thành chứng minh: \\textquotedblleft Trong tứ giác nội tiếp, góc ngoài tại một đỉnh bằng góc trong tại đỉnh đối diện\\textquotedblright:[[br]]Cho tứ giác $ABCD$ nội tiếp $(O)$. Tia đối của tia $CD$ là tia $Cx$.[[br]]Vì $ABCD$ là tứ giác nội tiếp nên $\\widehat{A} + \\widehat{BCD} = [[blank:1.2cm]]$.[[br]]Mặt khác hai góc $\\widehat{BCx}$ và $\\widehat{BCD}$ kề bù nên $\\widehat{BCx} + \\widehat{BCD} = [[blank:1.2cm]]$.[[br]]Suy ra góc ngoài $\\widehat{BCx} = [[blank:1.0cm]]$.",
+          "statement_slide": "Chứng minh định lí: Trong tứ giác nội tiếp $ABCD$, góc ngoài tại đỉnh $C$ bằng góc trong tại đỉnh $A$.",
+          "tier": "onclass",
+          "level": 1,
+          "solution": "Các từ và số cần điền theo thứ tự: $180^\\circ$, $180^\\circ$, $\\widehat{A}$.[[br]]Vậy $\\widehat{BCx} = \\widehat{A}$.",
+          "dang_id": "NB3",
+          "source": "SGK Toán 9 KNTT trang 84"
+        },
+        {
+          "type": "noted",
+          "variant": "example",
+          "text": "\\textbf{Ví dụ 4.} Cho hình thang cân $ABCD$ ($AB \\parallel CD$). Chứng minh tứ giác $ABCD$ là tứ giác nội tiếp.\\par\\nopagebreak\\smallskip {\\sffamily\\bfseries\\color{brand}Lời giải}[[br]]Vì $ABCD$ là hình thang cân ($AB \\parallel CD$) nên $\\widehat{C} = \\widehat{D}$ và hai góc trong cùng phía bù nhau:[[br]]\\hspace*{1.4em}$\\widehat{A} + \\widehat{D} = 180^\\circ$.[[br]]Thay $\\widehat{D} = \\widehat{C}$, ta được:[[br]]\\hspace*{1.4em}$\\widehat{A} + \\widehat{C} = 180^\\circ$.[[br]]Tứ giác $ABCD$ có tổng hai góc đối diện bằng $180^\\circ$ nên $ABCD$ là tứ giác nội tiếp.[[br]]Vậy mọi hình thang cân đều là tứ giác nội tiếp."
+        },
+        {
+          "type": "problem",
+          "label": "Bài 4.",
+          "statement": "[NB] Cho hình thang cân $ABCD$ ($AB \\parallel CD$) như Hình 3 có $\\widehat{D} = 65^\\circ$. Tính số đo các góc còn lại của hình thang và giải thích vì sao $ABCD$ nội tiếp được đường tròn.\\par\\nopagebreak\\smallskip\\begin{center}\\adjustbox{max width=0.45\\linewidth, max totalheight=2.8cm}{\n\\begin{tikzpicture}[line width=0.8pt, font=\\small]\n  \\coordinate (ptA) at (-1.2,1.2);\n  \\coordinate (ptB) at (1.2,1.2);\n  \\coordinate (ptC) at (2.0,-0.8);\n  \\coordinate (ptD) at (-2.0,-0.8);\n  \\draw[ink] (ptA) -- (ptB) -- (ptC) -- (ptD) -- cycle;\n  \\node[above left] at (ptA) {$A$};\n  \\node[above right] at (ptB) {$B$};\n  \\node[below right] at (ptC) {$C$};\n  \\node[below left] at (ptD) {$D$};\n\\end{tikzpicture}\n}\\par\\vspace{2pt}{\\sffamily\\scriptsize\\itshape\\color{muted}Hình 3}\\end{center}",
+          "tier": "onclass",
+          "level": 1,
+          "solution": "Vì $ABCD$ là hình thang cân ($AB \\parallel CD$) nên $\\widehat{C} = \\widehat{D} = 65^\\circ$.[[br]]Vì $AB \\parallel CD$ nên $\\widehat{A} = 180^\\circ - \\widehat{D} = 180^\\circ - 65^\\circ = 115^\\circ$ và $\\widehat{B} = 115^\\circ$.[[br]]Ta có $\\widehat{A} + \\widehat{C} = 115^\\circ + 65^\\circ = 180^\\circ$.[[br]]Tứ giác $ABCD$ có tổng hai góc đối bằng $180^\\circ$ nên là tứ giác nội tiếp.[[br]]Vậy $\\widehat{C} = 65^\\circ, \\widehat{A} = \\widehat{B} = 115^\\circ$ và $ABCD$ là tứ giác nội tiếp.",
+          "dang_id": "NB4",
+          "source": "SGK Toán 9 KNTT trang 84"
+        }
+      ]
+    },
+    {
+      "kind": "practice2",
+      "number": 4,
+      "title": "Luyện tập 2 — Thông hiểu, Vận dụng \\& VDC",
+      "teacher_note": "Bài 7 và 8 là hai dạng toán kinh điển về tứ giác nội tiếp trong cấu trúc Câu IV đề thi Vào 10.",
+      "blocks": [
+        {
+          "type": "noted",
+          "variant": "example",
+          "text": "\\textbf{Ví dụ 5.} Cho tứ giác $ABCD$ nội tiếp đường tròn. Hai cạnh đối $AB$ và $CD$ kéo dài cắt nhau tại điểm $E$. Biết $\\widehat{BCE} = 70^\\circ$ và $\\widehat{E} = 30^\\circ$. Tính các góc của tứ giác $ABCD$.\\par\\nopagebreak\\smallskip {\\sffamily\\bfseries\\color{brand}Lời giải}[[br]]Trong tam giác $EBC$, ta có $\\widehat{EBC} = 180^\\circ - \\widehat{E} - \\widehat{BCE} = 180^\\circ - 30^\\circ - 70^\\circ = 80^\\circ$.[[br]]Góc trong $\\widehat{ABC}$ kề bù với $\\widehat{EBC}$ nên $\\widehat{ABC} = 180^\\circ - 80^\\circ = 100^\\circ$.[[br]]Vì tứ giác $ABCD$ nội tiếp nên góc ngoài tại một đỉnh bằng góc trong tại đỉnh đối diện:[[br]]\\hspace*{1.4em}$\\widehat{A} = \\widehat{BCE} = 70^\\circ$;[[br]]\\hspace*{1.4em}$\\widehat{D} = \\widehat{EBC} = 80^\\circ$.[[br]]Góc $\\widehat{BCD} = 180^\\circ - \\widehat{A} = 180^\\circ - 70^\\circ = 110^\\circ$.[[br]]Vậy các góc của tứ giác $ABCD$ là $\\widehat{A} = 70^\\circ, \\widehat{B} = 100^\\circ, \\widehat{C} = 110^\\circ, \\widehat{D} = 80^\\circ$."
+        },
+        {
+          "type": "problem",
+          "label": "Bài 5.",
+          "statement": "Cho tứ giác $ABCD$ nội tiếp đường tròn $(O)$. Hai cạnh đối $AB$ và $DC$ kéo dài cắt nhau tại điểm $M$. Biết $\\widehat{M} = 40^\\circ$ và $\\widehat{MBC} = 65^\\circ$.[[br]]a) [TH] Tính số đo góc $\\widehat{MCB}$.[[br]]b) [TH] Tính các góc của tứ giác $ABCD$.",
+          "tier": "onclass",
+          "level": 2,
+          "solution": "a) Xét tam giác $MBC$, ta có:[[br]]\\hspace*{1.4em}$\\widehat{MCB} = 180^\\circ - \\widehat{M} - \\widehat{MBC} = 180^\\circ - 40^\\circ - 65^\\circ = 75^\\circ$.[[br]]Vậy $\\widehat{MCB} = 75^\\circ$.[[br]]b) Vì tứ giác $ABCD$ nội tiếp đường tròn nên:[[br]]\\hspace*{1.4em}$\\widehat{ADC} = \\widehat{MBC} = 65^\\circ$ (góc trong bằng góc ngoài đối diện);[[br]]\\hspace*{1.4em}$\\widehat{DAB} = \\widehat{MCB} = 75^\\circ$ (góc trong bằng góc ngoài đối diện).[[br]]Ta có $\\widehat{ABC} = 180^\\circ - \\widehat{ADC} = 180^\\circ - 65^\\circ = 115^\\circ$.[[br]]Ta có $\\widehat{BCD} = 180^\\circ - \\widehat{DAB} = 180^\\circ - 75^\\circ = 105^\\circ$.[[br]]Vậy các góc của tứ giác $ABCD$ là $\\widehat{A} = 75^\\circ, \\widehat{B} = 115^\\circ, \\widehat{C} = 105^\\circ, \\widehat{D} = 65^\\circ$.",
+          "dang_id": "TH1",
+          "source": "Đề thi HK2 Đống Đa 2024"
+        },
+        {
+          "type": "noted",
+          "variant": "example",
+          "text": "\\textbf{Ví dụ 6.} Cho tam giác nhọn $ABC$ có hai đường cao $BE, CF$. Chứng minh tứ giác $BCEF$ nội tiếp được đường tròn.\\par\\nopagebreak\\smallskip {\\sffamily\\bfseries\\color{brand}Lời giải}[[br]]Xét tam giác $BCE$ có $\\widehat{BEC} = 90^\\circ$ ($BE \\perp AC$).[[br]]Xét tam giác $BCF$ có $\\widehat{BFC} = 90^\\circ$ ($CF \\perp AB$).[[br]]Hai đỉnh kề nhau $E$ và $F$ cùng nhìn đoạn thẳng $BC$ dưới một góc vuông $90^\\circ$.[[br]]Do đó bốn điểm $B, C, E, F$ cùng thuộc đường tròn đường kính $BC$.[[br]]Vậy tứ giác $BCEF$ là tứ giác nội tiếp."
+        },
+        {
+          "type": "problem",
+          "label": "Bài 6.",
+          "statement": "[TH] Cho tam giác nhọn $ABC$. Kẻ đường cao $AH$ ($H \\in BC$). Từ $H$ kẻ $HM \\perp AB$ tại $M$ và $HN \\perp AC$ tại $N$. Chứng minh tứ giác $AMHN$ là tứ giác nội tiếp.",
+          "tier": "onclass",
+          "level": 2,
+          "solution": "Xét tứ giác $AMHN$, ta có:[[br]]\\hspace*{1.4em}$\\widehat{AMH} = 90^\\circ$ (do $HM \\perp AB$);[[br]]\\hspace*{1.4em}$\\widehat{ANH} = 90^\\circ$ (do $HN \\perp AC$).[[br]]Suy ra $\\widehat{AMH} + \\widehat{ANH} = 90^\\circ + 90^\\circ = 180^\\circ$.[[br]]Tứ giác $AMHN$ có tổng hai góc đối bằng $180^\\circ$ nên $AMHN$ là tứ giác nội tiếp đường tròn đường kính $AH$.[[br]]Vậy tứ giác $AMHN$ là tứ giác nội tiếp.",
+          "dang_id": "TH2",
+          "source": "Đề thi HK2 Cầu Giấy 2024"
+        },
+        {
+          "type": "noted",
+          "variant": "example",
+          "text": "\\textbf{Ví dụ 7.} Cho hai đường tròn $(O_1)$ và $(O_2)$ cắt nhau tại hai điểm $A, B$. Qua $A$ kẻ cát tuyến cắt $(O_1)$ tại $C$ và $(O_2)$ tại $D$. Qua $B$ kẻ cát tuyến cắt $(O_1)$ tại $E$ và $(O_2)$ tại $F$. Chứng minh $CE \\parallel DF$.\\par\\nopagebreak\\smallskip {\\sffamily\\bfseries\\color{brand}Lời giải}[[br]]Nối $AB$. Xét tứ giác $ABEC$ nội tiếp đường tròn $(O_1)$:[[br]]Góc ngoài tại đỉnh $B$ bằng góc trong tại đỉnh đối diện nên $\\widehat{ABF} = \\widehat{ACE}$.[[br]]Xét tứ giác $ABFD$ nội tiếp đường tròn $(O_2)$:[[br]]Góc ngoài tại đỉnh $B$ bằng góc trong tại đỉnh đối diện nên $\\widehat{ABF} = \\widehat{ADF}$... Mặt khác $\\widehat{ABF} + \\widehat{ADF} = 180^\\circ$ (tổng hai góc đối).[[br]]Suy ra $\\widehat{ACE} + \\widehat{ADF} = 180^\\circ$, hay $\\widehat{ECD} + \\widehat{CDF} = 180^\\circ$.[[br]]Hai góc $\\widehat{ECD}$ và $\\widehat{CDF}$ ở vị trí trong cùng phía có tổng bằng $180^\\circ$ nên $CE \\parallel DF$.[[br]]Vậy $CE \\parallel DF$."
+        },
+        {
+          "type": "problem",
+          "label": "Bài 7.",
+          "statement": "Cho tam giác nhọn $ABC$ nội tiếp đường tròn $(O)$. Các đường cao $AD, BE, CF$ cắt nhau tại trực tâm $H$.[[br]]a) [VD] Chứng minh tứ giác $CDHE$ nội tiếp và $\\widehat{HDE} = \\widehat{HCE}$.[[br]]b) [VD] Chứng minh $DH$ là tia phân giác của góc $\\widehat{EDF}$.",
+          "tier": "onclass",
+          "level": 3,
+          "quy_trinh": [
+            "\\textbf{Bước 1} $-$ chứng minh tứ giác $CDHE$ có $\\widehat{CDH} + \\widehat{CEH} = 90^\\circ + 90^\\circ = 180^\\circ$ nên nội tiếp.",
+            "\\textbf{Bước 2} $-$ suy ra $\\widehat{HDE} = \\widehat{HCE}$ (hai góc nội tiếp cùng chắn cung $HE$).",
+            "\\textbf{Bước 3} $-$ chứng minh tương tự tứ giác $BDHF$ nội tiếp suy ra $\\widehat{HDF} = \\widehat{HBF}$.",
+            "\\textbf{Bước 4} $-$ chỉ ra $\\widehat{HCE} = \\widehat{HBF}$ (cùng phụ với $\\widehat{BAC}$) suy ra $\\widehat{HDE} = \\widehat{HDF}$ và kết luận $DH$ là phân giác."
+          ],
+          "solution": "a) Xét tứ giác $CDHE$, ta có $\\widehat{CDH} = 90^\\circ$ ($AD \\perp BC$) và $\\widehat{CEH} = 90^\\circ$ ($BE \\perp AC$).[[br]]Suy ra $\\widehat{CDH} + \\widehat{CEH} = 90^\\circ + 90^\\circ = 180^\\circ$.[[br]]Do đó tứ giác $CDHE$ nội tiếp đường tròn đường kính $CH$.[[br]]Trong đường tròn đó, $\\widehat{HDE} = \\widehat{HCE}$ (hai góc nội tiếp cùng chắn cung $HE$).[[br]]Vậy tứ giác $CDHE$ nội tiếp và $\\widehat{HDE} = \\widehat{HCE}$.[[br]]b) Tương tự, tứ giác $BDHF$ có $\\widehat{BDH} + \\widehat{BFH} = 180^\\circ$ nên $BDHF$ là tứ giác nội tiếp.[[br]]Suy ra $\\widehat{HDF} = \\widehat{HBF}$ (hai góc nội tiếp cùng chắn cung $HF$).[[br]]Mặt khác, $\\widehat{HCE} = 90^\\circ - \\widehat{BAC}$ (trong tam giác vuông $ACF$) và $\\widehat{HBF} = 90^\\circ - \\widehat{BAC}$ (trong tam giác vuông $ABE$).[[br]]Do đó $\\widehat{HCE} = \\widehat{HBF}$, suy ra $\\widehat{HDE} = \\widehat{HDF}$.[[br]]Vậy $DH$ là tia phân giác của góc $\\widehat{EDF}$.",
+          "dang_id": "VD1",
+          "source": "Đề thi Tuyển sinh Vào 10 Hà Nội"
+        },
+        {
+          "type": "problem",
+          "label": "Bài 8.",
+          "statement": "[VDC] (Ý cuối bài hình thi Vào 10) Cho tứ giác $ABCD$ nội tiếp đường tròn $(O)$ có hai đường chéo $AC \\perp BD$ tại $I$. Gọi $M$ là trung điểm của cạnh $AB$. Đường thẳng $IM$ kéo dài cắt cạnh đối diện $CD$ tại điểm $H$. Chứng minh rằng $IH \\perp CD$ (Định lí Brahmagupta).[[br]]\\begin{center}\\adjustbox{max width=0.48\\linewidth, max totalheight=3.0cm}{\n\\begin{tikzpicture}[line width=0.8pt, font=\\small]\n  \\draw[ink] (0,0) circle (1.8);\n  \\coordinate (ptA) at (-1.4,1.131);\n  \\coordinate (ptB) at (1.4,1.131);\n  \\coordinate (ptC) at (1.1,-1.425);\n  \\coordinate (ptD) at (-1.7,-0.59);\n  \\draw[ink] (ptA) -- (ptB) -- (ptC) -- (ptD) -- cycle;\n  \\draw[ink] (ptA) -- (ptC);\n  \\draw[ink] (ptB) -- (ptD);\n  \\coordinate (ptI) at (-0.05,0.08);\n  \\fill[ink] (ptI) circle (1.2pt) node[below=3pt]{$I$};\n  \\coordinate (ptM) at (0,1.131);\n  \\fill[ink] (ptM) circle (1.2pt) node[above]{$M$};\n  \\draw[brand, line width=1.0pt] (ptM) -- (ptI);\n\\end{tikzpicture}\n}\\par\\vspace{2pt}{\\sffamily\\scriptsize\\itshape\\color{muted}Hình 4}\\end{center}",
+          "statement_slide": "Cho tứ giác $ABCD$ nội tiếp $(O)$ có $AC \\perp BD$ tại $I$. Gọi $M$ là trung điểm $AB$. Chứng minh đường thẳng $MI$ vuông góc với cạnh $CD$.",
+          "tier": "onclass",
+          "level": 4,
+          "figure_given": true,
+          "solution": "Trong tam giác vuông $AIB$ vuông tại $I$, $M$ là trung điểm cạnh huyền $AB$ nên $MI = MA = \\dfrac{1}{2}AB$.[[br]]Do đó tam giác $MAI$ cân tại $M$, suy ra $\\widehat{MIA} = \\widehat{MAI} = \\widehat{BAC}$.[[br]]Mặt khác, hai góc $\\widehat{DIH}$ và $\\widehat{MIA}$ là hai góc đối đỉnh nên $\\widehat{DIH} = \\widehat{MIA} = \\widehat{BAC}$.[[br]]Vì tứ giác $ABCD$ nội tiếp đường tròn $(O)$ nên $\\widehat{BAC} = \\widehat{BDC}$ (hai góc nội tiếp cùng chắn cung $BC$), hay $\\widehat{BAC} = \\widehat{HDI}$.[[br]]Suy ra $\\widehat{DIH} = \\widehat{HDI}$.[[br]]Trong tam giác vuông $ICD$ vuông tại $I$ ($AC \\perp BD$), ta có $\\widehat{HCD} + \\widehat{HDI} = 90^\\circ$.[[br]]Thay $\\widehat{HDI} = \\widehat{DIH}$, ta được $\\widehat{HCD} + \\widehat{DIH} = 90^\\circ$.[[br]]Xét tam giác $CDH$, tổng ba góc bằng $180^\\circ$ nên:[[br]]\\hspace*{1.4em}$\\widehat{CHD} = 180^\\circ - (\\widehat{HCD} + \\widehat{DIH}) = 180^\\circ - 90^\\circ = 90^\\circ$.[[br]]Vậy $IH \\perp CD$.",
+          "dang_id": "VDC1",
+          "source": "Đề thi Tuyển sinh Vào 10 Chuyên Hà Nội"
+        }
+      ]
+    },
+    {
+      "kind": "reflection",
+      "number": 5,
+      "title": "Tổng kết \\& Bài tập về nhà",
+      "blocks": [
+        {
+          "type": "mindmap",
+          "root": "Tứ giác nội tiếp",
+          "caption": "Điền các ô trống rồi học thuộc",
+          "branches": [
+            {
+              "label": "Định nghĩa",
+              "children": [
+                {
+                  "label": "[[blank:1.0cm]] đỉnh cùng thuộc một đường tròn",
+                  "children": []
+                }
+              ]
+            },
+            {
+              "label": "Định lí",
+              "children": [
+                {
+                  "label": "Tổng hai góc [[blank:1.2cm]] bằng $180^\\circ$",
+                  "children": []
+                },
+                {
+                  "label": "$\\widehat{A} + \\widehat{C} = \\widehat{B} + \\widehat{D} = 180^\\circ$",
+                  "children": []
+                }
+              ]
+            },
+            {
+              "label": "Hình chữ nhật",
+              "children": [
+                {
+                  "label": "Tâm $=$ giao hai [[blank:1.8cm]]",
+                  "children": []
+                },
+                {
+                  "label": "$R = \\dfrac{1}{2}$ đường [[blank:1.2cm]]",
+                  "children": []
+                }
+              ]
+            },
+            {
+              "label": "Khuôn chứng minh",
+              "children": [
+                {
+                  "label": "Hai góc [[blank:1.2cm]] cùng nhìn một đoạn",
+                  "children": []
+                },
+                {
+                  "label": "$\\Rightarrow$ bốn điểm thuộc đường tròn đường kính đoạn đó",
+                  "children": []
+                }
+              ]
+            }
+          ],
+          "size": "small"
+        },
+        {
+          "type": "para",
+          "text": "\\textbf{BÀI TẬP VỀ NHÀ (BTVN)}"
+        },
+        {
+          "type": "problem",
+          "label": "BTVN~1.",
+          "statement": "Quan sát Hình 5 rồi trả lời.\\par\\nopagebreak\\smallskip\\begin{center}\\adjustbox{max width=0.75\\linewidth, max totalheight=2.8cm}{\n\\begin{tikzpicture}[line width=0.8pt, font=\\small]\n  \\draw[ink] (0,0) circle (1.2);\n  \\coordinate (ptM) at (-0.9,0.79);\n  \\coordinate (ptN) at (0.9,0.79);\n  \\coordinate (ptP) at (1.1,-0.48);\n  \\coordinate (ptQ) at (-0.8,-0.89);\n  \\draw[ink] (ptM) -- (ptN) -- (ptP) -- (ptQ) -- cycle;\n  \\node[above left] at (ptM) {$M$};\n  \\node[above right] at (ptN) {$N$};\n  \\node[below right] at (ptP) {$P$};\n  \\node[below left] at (ptQ) {$Q$};\n  \\node[below, font=\\small] at (0,-1.4) {a)};\n  \\begin{scope}[xshift=4.2cm]\n    \\draw[ink] (0,0) circle (1.2);\n    \\coordinate (sA) at (-1.1,0.48);\n    \\coordinate (sB) at (0.5,1.09);\n    \\coordinate (sC) at (1.1,0.48);\n    \\coordinate (sD) at (-0.3,-0.5);\n    \\draw[ink] (sA) -- (sB) -- (sC) -- (sD) -- cycle;\n    \\node[left] at (sA) {$A$};\n    \\node[above] at (sB) {$B$};\n    \\node[right] at (sC) {$C$};\n    \\node[below] at (sD) {$D$};\n    \\node[below, font=\\small] at (0,-1.4) {b)};\n  \\end{scope}\n\\end{tikzpicture}\n}\\par\\vspace{2pt}{\\sffamily\\scriptsize\\itshape\\color{muted}Hình 5}\\end{center}\\smallskip a) [NB] Tứ giác $MNPQ$ ở hình a) là tứ giác nội tiếp. Đúng hay Sai?[[br]]b) [NB] Tứ giác $ABCD$ ở hình b) có đỉnh $D$ nằm trong đường tròn nên không phải là tứ giác nội tiếp. Đúng hay Sai?",
+          "tier": "btvn",
+          "level": 1,
+          "figure_given": true,
+          "solution": "a) ĐÚNG. Cả 4 đỉnh $M, N, P, Q$ đều thuộc đường tròn.[[br]]b) ĐÚNG. Đỉnh $D$ không thuộc đường tròn nên $ABCD$ không nội tiếp.",
+          "dang_id": "NB1",
+          "source": "SGK Toán 9 KNTT trang 85"
+        },
+        {
+          "type": "problem",
+          "label": "BTVN~2.",
+          "statement": "[NB] Cho tứ giác $ABCD$ nội tiếp đường tròn. Biết $\\widehat{B} = 68^\\circ$. Tính số đo góc đối diện $\\widehat{D}$.",
+          "tier": "btvn",
+          "level": 1,
+          "solution": "Vì tứ giác $ABCD$ nội tiếp đường tròn nên tổng hai góc đối bằng $180^\\circ$:[[br]]\\hspace*{1.4em}$\\widehat{D} = 180^\\circ - \\widehat{B} = 180^\\circ - 68^\\circ = 112^\\circ$.[[br]]Vậy $\\widehat{D} = 112^\\circ$.",
+          "dang_id": "NB2",
+          "source": "SGK Toán 9 KNTT trang 85"
+        },
+        {
+          "type": "problem",
+          "label": "BTVN~3.",
+          "statement": "[NB] Cho tứ giác $ABCD$ nội tiếp có góc ngoài tại đỉnh $B$ bằng $85^\\circ$. Tính số đo góc trong tại đỉnh đối diện $\\widehat{D}$.",
+          "tier": "btvn",
+          "level": 1,
+          "solution": "Theo định lí về góc ngoài của tứ giác nội tiếp, góc ngoài tại đỉnh $B$ bằng góc trong tại đỉnh đối diện $\\widehat{D}$.[[br]]Do đó $\\widehat{D} = 85^\\circ$.[[br]]Vậy $\\widehat{D} = 85^\\circ$.",
+          "dang_id": "NB3",
+          "source": "SGK Toán 9 KNTT trang 85"
+        },
+        {
+          "type": "problem",
+          "label": "BTVN~4.",
+          "statement": "[NB] Cho hình chữ nhật $ABCD$ như Hình 6. Giải thích vì sao hình chữ nhật luôn là tứ giác nội tiếp đường tròn.\\par\\nopagebreak\\smallskip\\begin{center}\\adjustbox{max width=0.45\\linewidth, max totalheight=2.8cm}{\n\\begin{tikzpicture}[line width=0.8pt, font=\\small]\n  \\coordinate (ptA) at (0,1.8);\n  \\coordinate (ptB) at (2.4,1.8);\n  \\coordinate (ptC) at (2.4,0);\n  \\coordinate (ptD) at (0,0);\n  \\draw[ink] (ptA) -- (ptB) -- (ptC) -- (ptD) -- cycle;\n  \\node[above left] at (ptA) {$A$};\n  \\node[above right] at (ptB) {$B$};\n  \\node[below right] at (ptC) {$C$};\n  \\node[below left] at (ptD) {$D$};\n  \\draw[ink] (0,1.6) -| (0.2,1.8);\n  \\draw[ink] (2.2,1.8) |- (2.4,1.6);\n  \\draw[ink] (2.4,0.2) -| (2.2,0);\n  \\draw[ink] (0.2,0) |- (0,0.2);\n\\end{tikzpicture}\n}\\par\\vspace{2pt}{\\sffamily\\scriptsize\\itshape\\color{muted}Hình 6}\\end{center}",
+          "tier": "btvn",
+          "level": 1,
+          "solution": "Hình chữ nhật $ABCD$ có bốn góc vuông nên $\\widehat{A} = \\widehat{B} = \\widehat{C} = \\widehat{D} = 90^\\circ$.[[br]]Tổng hai góc đối diện là $\\widehat{A} + \\widehat{C} = 90^\\circ + 90^\\circ = 180^\\circ$.[[br]]Do đó hình chữ nhật luôn là tứ giác nội tiếp đường tròn (có tâm là giao điểm hai đường chéo).[[br]]Vậy hình chữ nhật luôn là tứ giác nội tiếp.",
+          "dang_id": "NB4",
+          "source": "SGK Toán 9 KNTT trang 86"
+        },
+        {
+          "type": "problem",
+          "label": "BTVN~5.",
+          "statement": "Cho tứ giác $ABCD$ nội tiếp đường tròn. Hai cạnh đối $AD$ và $BC$ cắt nhau tại $P$. Biết $\\widehat{P} = 30^\\circ$ và $\\widehat{PCD} = 80^\\circ$.[[br]]a) [TH] Tính số đo góc $\\widehat{PDC}$.[[br]]b) [TH] Tính các góc của tứ giác $ABCD$.",
+          "tier": "btvn",
+          "level": 2,
+          "solution": "a) Xét tam giác $PCD$, ta có:[[br]]\\hspace*{1.4em}$\\widehat{PDC} = 180^\\circ - \\widehat{P} - \\widehat{PCD} = 180^\\circ - 30^\\circ - 80^\\circ = 70^\\circ$.[[br]]Vậy $\\widehat{PDC} = 70^\\circ$.[[br]]b) Vì tứ giác $ABCD$ nội tiếp nên góc ngoài tại một đỉnh bằng góc trong tại đỉnh đối diện:[[br]]\\hspace*{1.4em}$\\widehat{ABC} = \\widehat{PDC} = 70^\\circ$;[[br]]\\hspace*{1.4em}$\\widehat{BAD} = \\widehat{PCD} = 80^\\circ$.[[br]]Góc $\\widehat{BCD} = 180^\\circ - \\widehat{BAD} = 180^\\circ - 80^\\circ = 100^\\circ$.[[br]]Góc $\\widehat{ADC} = 180^\\circ - \\widehat{ABC} = 180^\\circ - 70^\\circ = 110^\\circ$.[[br]]Vậy các góc của tứ giác $ABCD$ là $\\widehat{A} = 80^\\circ, \\widehat{B} = 70^\\circ, \\widehat{C} = 100^\\circ, \\widehat{D} = 110^\\circ$.",
+          "dang_id": "TH1",
+          "source": "Đề thi HK2 Ba Đình 2024"
+        },
+        {
+          "type": "problem",
+          "label": "BTVN~6.",
+          "statement": "[TH] Xét hình vuông $ABCD$. Trên cạnh $BC$ lấy điểm $M$, trên cạnh $CD$ lấy điểm $N$ sao cho $\\widehat{MAN} = 45^\\circ$. Kẻ $AH \\perp MN$ tại $H$. Chứng minh tứ giác $ABMH$ nội tiếp được đường tròn.",
+          "tier": "btvn",
+          "level": 2,
+          "solution": "Xét tứ giác $ABMH$, ta có:[[br]]\\hspace*{1.4em}$\\widehat{ABM} = 90^\\circ$ (do $ABCD$ là hình vuông);[[br]]\\hspace*{1.4em}$\\widehat{AHM} = 90^\\circ$ (do $AH \\perp MN$).[[br]]Suy ra $\\widehat{ABM} + \\widehat{AHM} = 90^\\circ + 90^\\circ = 180^\\circ$.[[br]]Tứ giác $ABMH$ có tổng hai góc đối bằng $180^\\circ$ nên $ABMH$ là tứ giác nội tiếp đường tròn đường kính $AM$.[[br]]Vậy tứ giác $ABMH$ là tứ giác nội tiếp.",
+          "dang_id": "TH2",
+          "source": "Đề thi HK2 Hoàn Kiếm 2024"
+        },
+        {
+          "type": "problem",
+          "label": "BTVN~7.",
+          "statement": "[VD] Cho tam giác nhọn $ABC$ nội tiếp đường tròn $(O)$. Hai đường cao $BE, CF$ cắt nhau tại $H$. Gọi $M$ là trung điểm của $BC$.[[br]]Chứng minh tứ giác $BCEF$ nội tiếp và $ME = MF$.",
+          "tier": "btvn",
+          "level": 3,
+          "quy_trinh": [
+            "\\textbf{Bước 1} $-$ chỉ ra $\\widehat{BFC} = 90^\\circ$ và $\\widehat{BEC} = 90^\\circ$.",
+            "\\textbf{Bước 2} $-$ nhận xét hai đỉnh kề $E, F$ cùng nhìn cạnh $BC$ dưới góc vuông nên $BCEF$ nội tiếp.",
+            "\\textbf{Bước 3} $-$ dùng tính chất trung tuyến ứng với cạnh huyền của hai tam giác vuông $\\triangle BCF$ và $\\triangle BCE$.",
+            "\\textbf{Bước 4} $-$ suy ra $MF = \\dfrac{1}{2}BC$ và $ME = \\dfrac{1}{2}BC$, do đó $ME = MF$."
+          ],
+          "solution": "Xét tứ giác $BCEF$ có $\\widehat{BFC} = 90^\\circ$ ($CF \\perp AB$) và $\\widehat{BEC} = 90^\\circ$ ($BE \\perp AC$).[[br]]Hai đỉnh $E, F$ cùng nhìn đoạn thẳng $BC$ dưới góc $90^\\circ$ nên bốn điểm $B, C, E, F$ cùng thuộc đường tròn đường kính $BC$.[[br]]Trong tam giác vuông $BFC$ vuông tại $F$, $FM$ là đường trung tuyến ứng với cạnh huyền $BC$ nên $FM = \\dfrac{BC}{2}$.[[br]]Trong tam giác vuông $BEC$ vuông tại $E$, $EM$ là đường trung tuyến ứng với cạnh huyền $BC$ nên $EM = \\dfrac{BC}{2}$.[[br]]Do đó $ME = MF = \\dfrac{BC}{2}$.[[br]]Vậy tứ giác $BCEF$ nội tiếp và $ME = MF$.",
+          "dang_id": "VD1",
+          "source": "Đề thi Tuyển sinh Vào 10 Cầu Giấy"
+        },
+        {
+          "type": "problem",
+          "label": "BTVN~8.",
+          "statement": "[VDC] (Ý cuối bài hình thi Vào 10) Cho tứ giác $ABCD$ nội tiếp đường tròn $(O)$ có hai dây cung vuông góc với nhau: $AB \\perp CD$ tại $P$. Gọi khoảng cách từ tâm $O$ đến dây $AB$ là $OH$. Chứng minh rằng độ dài đoạn thẳng $OH = \\dfrac{1}{2}\\,CD$.[[br]]\\begin{center}\\adjustbox{max width=0.48\\linewidth, max totalheight=2.8cm}{\n\\begin{tikzpicture}[line width=0.8pt, font=\\small]\n  \\draw[ink] (0,0) circle (1.8);\n  \\coordinate (ptA) at (-1.2,1.341);\n  \\coordinate (ptB) at (1.2,1.341);\n  \\coordinate (ptC) at (1.2,-1.341);\n  \\coordinate (ptD) at (-1.2,-1.341);\n  \\draw[ink] (ptA) -- (ptB);\n  \\draw[ink] (ptC) -- (ptD);\n  \\fill[ink] (0,0) circle (1.3pt) node[below=2pt]{$O$};\n  \\node[above left] at (ptA) {$A$};\n  \\node[above right] at (ptB) {$B$};\n  \\node[below right] at (ptC) {$C$};\n  \\node[below left] at (ptD) {$D$};\n\\end{tikzpicture}\n}\\par\\vspace{2pt}{\\sffamily\\scriptsize\\itshape\\color{muted}Hình 7}\\end{center}",
+          "statement_slide": "Cho tứ giác $ABCD$ nội tiếp $(O)$ có hai dây $AB \\perp CD$ tại $P$. Chứng minh khoảng cách từ $O$ đến dây $AB$ bằng một nửa độ dài dây $CD$.",
+          "tier": "btvn",
+          "level": 4,
+          "figure_given": true,
+          "solution": "Kẻ $OH \\perp AB$ tại $H$ và $OK \\perp CD$ tại $K$. Theo định lí đường kính vuông góc với dây cung:[[br]]\\hspace*{1.4em}$H$ là trung điểm $AB$ và $K$ là trung điểm $CD$.[[br]]Tứ giác $OHPK$ có ba góc vuông (tại $H, P, K$) nên là hình chữ nhật, suy ra $OH = PK$.[[br]]Kẻ đường kính $CE$ của đường tròn $(O)$. Ta có $\\widehat{CDE} = 90^\\circ$ (góc nội tiếp chắn nửa đường tròn) nên $ED \\perp CD$.[[br]]Lại có $AB \\perp CD$ tại $P$ nên $ED \\parallel AB$.[[br]]Tứ giác $ABED$ nội tiếp có $ED \\parallel AB$ nên $ABED$ là hình thang cân.[[br]]Suy ra $AD = BE$ và hai đoạn thẳng chiếu xuống dây vuông góc bằng nhau:[[br]]Ta có $PK = \\dfrac{1}{2} CD$, do đó $OH = \\dfrac{1}{2} CD$.[[br]]Vậy khoảng cách từ tâm $O$ đến dây $AB$ bằng $\\dfrac{1}{2} CD$.",
+          "dang_id": "VDC1",
+          "source": "Đề thi Tuyển sinh Vào 10 Chuyên Khoa học Tự nhiên"
+        }
+      ]
+    }
+  ]
+}

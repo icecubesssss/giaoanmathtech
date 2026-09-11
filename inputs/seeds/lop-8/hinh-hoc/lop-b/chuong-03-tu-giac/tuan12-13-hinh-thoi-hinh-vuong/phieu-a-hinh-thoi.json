@@ -38,16 +38,6 @@
         },
         {
           "type": "noted",
-          "variant": "example",
-          "text": "\\par\\nopagebreak\n\\begin{minipage}[t]{0.62\\linewidth}\\vspace{0pt}\n\\textbf{Ví dụ 1.} Cho hình thoi $ABCD$ có $\\widehat{ACD} = 35^\\circ$. Tính các góc của hình thoi $ABCD$.[[br]]{\\sffamily\\bfseries\\color{brand}Lời giải}[[br]]\\hspace*{1.4em}Xét hình thoi $ABCD$, ta có đường chéo $AC$ là đường phân giác của góc $\\widehat{C}$.[[br]]\\hspace*{1.4em}Do đó $\\widehat{C} = 2 \\cdot \\widehat{ACD} = 2 \\cdot 35^\\circ = 70^\\circ$.[[br]]\\hspace*{1.4em}Vì hình thoi $ABCD$ là hình bình hành nên các góc đối bằng nhau:[[br]]\\hspace*{1.4em}$\\widehat{A} = \\widehat{C} = 70^\\circ$.[[br]]\\hspace*{1.4em}Vì $AB \\parallel CD$ nên hai góc trong cùng phía bù nhau:[[br]]\\hspace*{1.4em}$\\widehat{B} = 180^\\circ - \\widehat{C} = 180^\\circ - 70^\\circ = 110^\\circ$.[[br]]\\hspace*{1.4em}Suy ra $\\widehat{D} = \\widehat{B} = 110^\\circ$.[[br]]\\hspace*{1.4em}Vậy $\\widehat{A} = \\widehat{C} = 70^\\circ$ và $\\widehat{B} = \\widehat{D} = 110^\\circ$.\n\\end{minipage}\\hfill\n\\begin{minipage}[t]{0.33\\linewidth}\\vspace{0pt}\n\\centering\n\\adjustbox{max width=\\linewidth, max totalheight=2.4cm}{\n\\begin{tikzpicture}[line width=0.8pt, font=\\small]\n  \\coordinate (vA) at (1.6,2.4);\n  \\coordinate (vB) at (3.0,1.2);\n  \\coordinate (vC) at (1.6,0.0);\n  \\coordinate (vD) at (0.2,1.2);\n  \\draw[ink,fill=brand!8] (vA) -- (vB) -- (vC) -- (vD) -- cycle;\n  \\draw[brand,line width=1.0pt] (vA) -- (vC);\n  \\node[above] at (vA) {$A$};\n  \\node[right] at (vB) {$B$};\n  \\node[below] at (vC) {$C$};\n  \\node[left] at (vD) {$D$};\n  \\node[brand,font=\\scriptsize] at (1.4,0.45) {$35^\\circ$};\n\\end{tikzpicture}\n}\n\\par\\vspace{2pt}{\\sffamily\\scriptsize\\itshape\\color{muted}Ví dụ 1}\n\\end{minipage}"
-        },
-        {
-          "type": "noted",
-          "variant": "example",
-          "text": "\\par\\nopagebreak\n\\begin{minipage}[t]{0.62\\linewidth}\\vspace{0pt}\n\\textbf{Ví dụ 2.} Cho tam giác $ABC$ có tia phân giác $AD$. Qua $D$ kẻ đường thẳng song song với $AB$ cắt $AC$ tại $E$, kẻ đường thẳng song song với $AC$ cắt $AB$ tại $F$. Chứng minh tứ giác $AEDF$ là hình thoi.[[br]]{\\sffamily\\bfseries\\color{brand}Lời giải}[[br]]\\hspace*{1.4em}Xét tứ giác $AEDF$, ta có $DE \\parallel AF$ (do $DE \\parallel AB$) và $DF \\parallel AE$ (do $DF \\parallel AC$).[[br]]\\hspace*{1.4em}Do đó tứ giác $AEDF$ là hình bình hành.[[br]]\\hspace*{1.4em}Mặt khác, đường chéo $AD$ là tia phân giác của góc $\\widehat{FAE}$ (theo giả thiết).[[br]]\\hspace*{1.4em}Hình bình hành $AEDF$ có một đường chéo là tia phân giác của một góc nên là hình thoi.[[br]]\\hspace*{1.4em}Vậy $AEDF$ là hình thoi.\n\\end{minipage}\\hfill\n\\begin{minipage}[t]{0.33\\linewidth}\\vspace{0pt}\n\\centering\n\\adjustbox{max width=\\linewidth, max totalheight=2.4cm}{\n\\begin{tikzpicture}[line width=0.8pt, font=\\small]\n  \\coordinate (vA) at (1.2,2.2);\n  \\coordinate (vB) at (0.0,0.0);\n  \\coordinate (vC) at (3.2,0.0);\n  \\coordinate (vD) at (1.5,0.0);\n  \\coordinate (vE) at (2.2,1.1);\n  \\coordinate (vF) at (0.6,1.1);\n  \\draw[ink] (vB) -- (vA) -- (vC) -- cycle;\n  \\draw[brand,line width=1.1pt,fill=brand!8] (vA) -- (vF) -- (vD) -- (vE) -- cycle;\n  \\draw[brand,dashed] (vA) -- (vD);\n  \\node[above] at (vA) {$A$};\n  \\node[below left] at (vB) {$B$};\n  \\node[below right] at (vC) {$C$};\n  \\node[below] at (vD) {$D$};\n  \\node[above right] at (vE) {$E$};\n  \\node[above left] at (vF) {$F$};\n\\end{tikzpicture}\n}\n\\par\\vspace{2pt}{\\sffamily\\scriptsize\\itshape\\color{muted}Ví dụ 2}\n\\end{minipage}"
-        },
-        {
-          "type": "noted",
           "variant": "trap",
           "text": "BẪY ĐIỂM: Tứ giác có hai đường chéo vuông góc CHƯA ĐỦ để là hình thoi! [[br]] Ví dụ cánh diều lồi có 2 đường chéo vuông góc nhưng không cắt nhau tại trung điểm mỗi đường thì không phải hình thoi. Muốn dùng dấu hiệu hai đường chéo vuông góc, bắt buộc phải chứng minh tứ giác đó là HÌNH BÌNH HÀNH trước!"
         }
@@ -58,108 +48,63 @@
     {
       "kind": "practice1",
       "number": 3,
-      "title": "Luyện tập 1",
+      "title": "Luyện tập 1 — Nhận biết",
       "blocks": [
         {
           "type": "problem",
           "label": "Bài 1.",
-          "statement": "[NB] Nối mỗi tên hình ở Cột A với tính chất hai đường chéo tương ứng ở Cột B:[[br]]\\par\\vspace{3pt}\n\\begin{tabular}{p{5.5cm} @{\\hspace{2.5cm}} p{6.5cm}}\n\\textbf{Cột A (Hình)} & \\textbf{Cột B (Tính chất hai đường chéo)} \\\\[4pt]\n(1) Hình chữ nhật & (a) Cắt nhau tại trung điểm và vuông góc với nhau. \\\\[4pt]\n(2) Hình thoi & (b) Cắt nhau tại trung điểm và bằng nhau. \\\\[4pt]\n(3) Hình bình hành & (c) Chỉ cắt nhau tại trung điểm mỗi đường.\n\\end{tabular}",
-          "tier": "onclass",
           "level": 1,
+          "tier": "onclass",
           "dang_id": "NB1",
-          "solution": "Nối đúng: (1) nối với (b); (2) nối với (a); (3) nối với (c). Vậy các cặp nối là: 1--b, 2--a, 3--c.",
           "figure_given": true,
-          "writelines": 0
+          "writelines": 0,
+          "statement": "[NB] Nối mỗi tên hình ở Cột A với tính chất hai đường chéo tương ứng ở Cột B:[[br]]\\par\\vspace{3pt}\n\\begin{tabular}{p{5.5cm} @{\\hspace{1.5cm}} p{7.5cm}}\n\\textbf{Cột A} & \\textbf{Cột B} \\\\\n(1) Hình thoi & (a) Cắt nhau tại trung điểm và bằng nhau \\\\\n(2) Hình bình hành & (b) Vuông góc và là phân giác các góc \\\\\n(3) Hình chữ nhật & (c) Cắt nhau tại trung điểm mỗi đường\n\\end{tabular}",
+          "solution": "(1) nối với (b): Hai đường chéo của hình thoi vuông góc với nhau và là các đường phân giác của các góc của hình thoi.[[br]]\n(2) nối với (c): Hai đường chéo của hình bình hành cắt nhau tại trung điểm của mỗi đường.[[br]]\n(3) nối với (a): Hai đường chéo của hình chữ nhật cắt nhau tại trung điểm của mỗi đường và bằng nhau."
         },
         {
           "type": "problem",
           "label": "Bài 2.",
-          "statement": "\\par\\nopagebreak\n\\begin{minipage}[t]{0.64\\linewidth}\\vspace{0pt}\n[NB] Cho hình thoi $ABCD$ ở Hình 1. Kể tên bốn cạnh bằng nhau và góc tạo bởi hai đường chéo $AC$ và $BD$.\n\\end{minipage}\\hfill\n\\begin{minipage}[t]{0.31\\linewidth}\\vspace{0pt}\n\\centering\n\\adjustbox{max width=\\linewidth, max totalheight=2.4cm}{\n\\begin{tikzpicture}[line width=0.8pt, font=\\small]\n  \\coordinate (vA) at (1.6,2.4);\n  \\coordinate (vB) at (3.0,1.2);\n  \\coordinate (vC) at (1.6,0.0);\n  \\coordinate (vD) at (0.2,1.2);\n  \\coordinate (vO) at (1.6,1.2);\n  \\draw[ink,fill=brand!8] (vA) -- (vB) -- (vC) -- (vD) -- cycle;\n  \\draw[brand,line width=1.0pt] (vA) -- (vC);\n  \\draw[brand,line width=1.0pt] (vB) -- (vD);\n  \\fill[brand] (1.6,1.2) circle (1.3pt) node[below right=1pt]{$O$};\n  \\node[above] at (vA) {$A$};\n  \\node[right] at (vB) {$B$};\n  \\node[below] at (vC) {$C$};\n  \\node[left] at (vD) {$D$};\n  \\draw[ink] (1.6, 1.4) -| (1.8, 1.2);\n\\end{tikzpicture}\n}\n\\par\\vspace{2pt}{\\sffamily\\scriptsize\\itshape\\color{muted}Hình 1}\n\\end{minipage}",
-          "tier": "onclass",
           "level": 1,
+          "tier": "onclass",
           "dang_id": "NB1",
-          "solution": "Bốn cạnh bằng nhau: $AB = BC = CD = DA$. Góc tạo bởi hai đường chéo bằng $90^\\circ$ (vì $AC \\perp BD$). Vậy bốn cạnh bằng nhau là $AB, BC, CD, DA$ và hai đường chéo vuông góc với nhau.",
-          "figure_given": true
+          "figure_given": true,
+          "writelines": 0,
+          "statement": "\\par\\nopagebreak\n\\begin{minipage}[t]{0.64\\linewidth}\\vspace{0pt}\n[NB] Cho hình thoi $ABCD$ ở Hình 1. Kể tên bốn cạnh bằng nhau của hình thoi và nêu quan hệ giữa hai đường chéo $AC, BD$.\n\\end{minipage}\\hfill\n\\begin{minipage}[t]{0.31\\linewidth}\\vspace{0pt}\n\\centering\n\\adjustbox{max width=\\linewidth, max totalheight=2.4cm}{\n\\begin{tikzpicture}[line width=0.8pt, font=\\small]\n  \\coordinate (vA) at (1.4,2.2);\n  \\coordinate (vB) at (2.6,1.1);\n  \\coordinate (vC) at (1.4,0.0);\n  \\coordinate (vD) at (0.2,1.1);\n  \\coordinate (vO) at (1.4,1.1);\n  \\draw[ink,fill=brand!8] (vA) -- (vB) -- (vC) -- (vD) -- cycle;\n  \\draw[brand,line width=1.0pt] (vA) -- (vC);\n  \\draw[brand,line width=1.0pt] (vB) -- (vD);\n  \\fill[brand] (1.4,1.1) circle (1.2pt) node[below right=1pt]{$O$};\n  \\node[above] at (vA) {$A$};\n  \\node[right] at (vB) {$B$};\n  \\node[below] at (vC) {$C$};\n  \\node[left] at (vD) {$D$};\n  \\draw[ink] (1.4, 1.25) -| (1.55, 1.1);\n\\end{tikzpicture}\n}\n\\par\\vspace{2pt}{\\sffamily\\scriptsize\\itshape\\color{muted}Hình 1}\n\\end{minipage}",
+          "solution": "Bốn cạnh bằng nhau của hình thoi $ABCD$ là: $AB = BC = CD = DA$.[[br]]\nHai đường chéo $AC$ và $BD$ vuông góc với nhau tại trung điểm $O$ của mỗi đường ($AC \\perp BD$)."
         },
         {
           "type": "problem",
           "label": "Bài 3.",
-          "statement": "\\par\\nopagebreak\n\\begin{minipage}[t]{0.64\\linewidth}\\vspace{0pt}\n[NB] Quan sát Hình 2 rồi điền vào chỗ trống:[[br]] Hình thoi $ABCD$ có đường chéo $AC$ là tia phân giác của [[blank:1.2cm]] và [[blank:1.2cm]]; hai đường chéo cắt nhau tại trung điểm $O$ và vuông góc tại [[blank:1.2cm]].\n\\end{minipage}\\hfill\n\\begin{minipage}[t]{0.31\\linewidth}\\vspace{0pt}\n\\centering\n\\adjustbox{max width=\\linewidth, max totalheight=2.4cm}{\n\\begin{tikzpicture}[line width=0.8pt, font=\\small]\n  \\coordinate (vA) at (1.6,2.4);\n  \\coordinate (vB) at (3.0,1.2);\n  \\coordinate (vC) at (1.6,0.0);\n  \\coordinate (vD) at (0.2,1.2);\n  \\coordinate (vO) at (1.6,1.2);\n  \\draw[ink,fill=brand!8] (vA) -- (vB) -- (vC) -- (vD) -- cycle;\n  \\draw[brand,line width=1.0pt] (vA) -- (vC);\n  \\draw[brand,line width=1.0pt] (vB) -- (vD);\n  \\fill[brand] (1.6,1.2) circle (1.3pt) node[below right=1pt]{$O$};\n  \\node[above] at (vA) {$A$};\n  \\node[right] at (vB) {$B$};\n  \\node[below] at (vC) {$C$};\n  \\node[left] at (vD) {$D$};\n  \\draw[ink] (1.6, 1.4) -| (1.8, 1.2);\n\\end{tikzpicture}\n}\n\\par\\vspace{2pt}{\\sffamily\\scriptsize\\itshape\\color{muted}Hình 2}\n\\end{minipage}",
-          "tier": "onclass",
           "level": 1,
-          "dang_id": "NB1",
-          "solution": "Các chỗ trống cần điền lần lượt là: $\\widehat{A}$; $\\widehat{C}$; $O$. Vậy kết quả điền là $\\widehat{A}, \\widehat{C}$ và điểm $O$.",
-          "figure_given": true
+          "tier": "onclass",
+          "dang_id": "NB2",
+          "figure_given": true,
+          "writelines": 0,
+          "statement": "\\par\\nopagebreak\n\\begin{minipage}[t]{0.64\\linewidth}\\vspace{0pt}\n[NB] Quan sát Hình 2 rồi điền vào chỗ trống:[[br]]\nHình thoi $MNPQ$ có hai đường chéo $MP$ và $NQ$ cắt nhau tại điểm $I$. Khi đó:[[br]]\na) $MP$ [[blank:1.6cm]] $NQ$ tại $I$.[[br]]\nb) $I$ là [[blank:2.2cm]] của mỗi đường chéo.[[br]]\nc) $MP$ là tia phân giác của góc [[blank:1.6cm]].\n\\end{minipage}\\hfill\n\\begin{minipage}[t]{0.31\\linewidth}\\vspace{0pt}\n\\centering\n\\adjustbox{max width=\\linewidth, max totalheight=2.4cm}{\n\\begin{tikzpicture}[line width=0.8pt, font=\\small]\n  \\coordinate (vM) at (1.5,2.2);\n  \\coordinate (vN) at (2.8,1.1);\n  \\coordinate (vP) at (1.5,0.0);\n  \\coordinate (vQ) at (0.2,1.1);\n  \\draw[ink,fill=brand!8] (vM) -- (vN) -- (vP) -- (vQ) -- cycle;\n  \\draw[brand,line width=1.0pt] (vM) -- (vP);\n  \\draw[brand,line width=1.0pt] (vN) -- (vQ);\n  \\fill[brand] (1.5,1.1) circle (1.2pt) node[below right=1pt]{$I$};\n  \\node[above] at (vM) {$M$};\n  \\node[right] at (vN) {$N$};\n  \\node[below] at (vP) {$P$};\n  \\node[left] at (vQ) {$Q$};\n  \\draw[ink] (1.5, 1.25) -| (1.65, 1.1);\n\\end{tikzpicture}\n}\n\\par\\vspace{2pt}{\\sffamily\\scriptsize\\itshape\\color{muted}Hình 2}\n\\end{minipage}",
+          "solution": "a) $MP \\perp NQ$ tại $I$.[[br]]\nb) $I$ là trung điểm của mỗi đường chéo.[[br]]\nc) $MP$ là tia phân giác của góc $\\widehat{NMQ}$ (hoặc góc $\\widehat{NPQ}$)."
         },
         {
           "type": "problem",
           "label": "Bài 4.",
-          "statement": "\\par\\nopagebreak\n\\begin{minipage}[t]{0.64\\linewidth}\\vspace{0pt}\n[NB] Trong các hình ở Hình 3, hình nào là \\textbf{hình thoi}?[[br]]\\par\\vspace{3pt}\\parbox[t]{0.46\\linewidth}{\\textbf{A.} Hình 3a}\\hspace{0.04\\linewidth}\\parbox[t]{0.46\\linewidth}{\\textbf{B.} Hình 3b}\\par\\vspace{4pt}\\parbox[t]{0.46\\linewidth}{\\textbf{C.} Hình 3c}\\hspace{0.04\\linewidth}\\parbox[t]{0.46\\linewidth}{\\textbf{D.} Hình 3d}\n\\end{minipage}\\hfill\n\\begin{minipage}[t]{0.31\\linewidth}\\vspace{0pt}\n\\centering\n\\adjustbox{max width=\\linewidth, max totalheight=2.4cm}{\n\\begin{tikzpicture}[line width=0.8pt, font=\\small]\n  \\begin{scope}[shift={(0,0)}]\n    \\draw[ink,fill=brand!8] (0.75,1.2) -- (1.5,0.6) -- (0.75,0) -- (0,0.6) -- cycle;\n    \\node[font=\\scriptsize,ink] at (0.75,-0.35) {Hình 3a};\n  \\end{scope}\n  \\begin{scope}[shift={(2.0,0)}]\n    \\draw[ink,fill=brand!8] (0,0) rectangle (1.5,1.2);\n    \\node[font=\\scriptsize,ink] at (0.75,-0.35) {Hình 3b};\n  \\end{scope}\n  \\begin{scope}[shift={(4.0,0)}]\n    \\draw[ink,fill=brand!8] (0,0) -- (1.4,0) -- (1.8,1.2) -- (0.4,1.2) -- cycle;\n    \\node[font=\\scriptsize,ink] at (0.9,-0.35) {Hình 3c};\n  \\end{scope}\n  \\begin{scope}[shift={(6.1,0)}]\n    \\draw[ink,fill=brand!8] (0,0) -- (1.5,0) -- (1.2,1.2) -- (0.3,1.2) -- cycle;\n    \\node[font=\\scriptsize,ink] at (0.75,-0.35) {Hình 3d};\n  \\end{scope}\n\\end{tikzpicture}\n}\n\\par\\vspace{2pt}{\\sffamily\\scriptsize\\itshape\\color{muted}Hình 3}\n\\end{minipage}",
-          "tier": "onclass",
           "level": 1,
-          "dang_id": "NB2",
-          "solution": "Đáp án \\textbf{A}. Hình 3a có bốn cạnh bằng nhau nên là hình thoi. Hình 3b là hình chữ nhật, Hình 3c là hình bình hành, Hình 3d là hình thang cân. Vậy hình thoi là Hình 3a.",
-          "figure_given": true
+          "tier": "onclass",
+          "dang_id": "NB3",
+          "figure_given": true,
+          "writelines": 0,
+          "statement": "\\par\\nopagebreak\n\\begin{minipage}[t]{0.64\\linewidth}\\vspace{0pt}\n[NB] Trong các hình ở Hình 3, hình nào là \\textbf{hình thoi}?[[br]] Giải thích dấu hiệu nhận biết đã sử dụng.\n\\end{minipage}\\hfill\n\\begin{minipage}[t]{0.31\\linewidth}\\vspace{0pt}\n\\centering\n\\adjustbox{max width=\\linewidth, max totalheight=2.4cm}{\n\\begin{tikzpicture}[line width=0.7pt, font=\\scriptsize]\n  \\coordinate (h1A) at (0.3,2.2); \\coordinate (h1B) at (1.1,2.2); \\coordinate (h1C) at (1.1,1.3); \\coordinate (h1D) at (0.3,1.3);\n  \\draw[ink] (h1A) -- (h1B) -- (h1C) -- (h1D) -- cycle;\n  \\node[below] at (0.7,1.25) {Hình 3a};\n  \\coordinate (h2A) at (2.2,2.3); \\coordinate (h2B) at (2.8,1.7); \\coordinate (h2C) at (2.2,1.1); \\coordinate (h2D) at (1.6,1.7);\n  \\draw[brand,line width=1.0pt,fill=brand!8] (h2A) -- (h2B) -- (h2C) -- (h2D) -- cycle;\n  \\node[below] at (2.2,1.05) {Hình 3b};\n\\end{tikzpicture}\n}\n\\par\\vspace{2pt}{\\sffamily\\scriptsize\\itshape\\color{muted}Hình 3}\n\\end{minipage}",
+          "solution": "Hình 3b là hình thoi vì tứ giác có bốn cạnh bằng nhau (hoặc hình bình hành có hai đường chéo vuông góc). Hình 3a là hình chữ nhật (có bốn góc vuông nhưng hai cạnh kề không bằng nhau)."
         },
         {
           "type": "problem",
           "label": "Bài 5.",
-          "statement": "\\par\\nopagebreak\n\\begin{minipage}[t]{0.64\\linewidth}\\vspace{0pt}\n[NB] Cho hình bình hành $ABCD$ có $AB = AD$ (Hình 4). Tứ giác $ABCD$ là hình gì?[[br]]\\par\\vspace{3pt}\\parbox[t]{0.46\\linewidth}{\\textbf{A.} Hình chữ nhật}\\hspace{0.04\\linewidth}\\parbox[t]{0.46\\linewidth}{\\textbf{B.} Hình thoi}\\par\\vspace{4pt}\\parbox[t]{0.46\\linewidth}{\\textbf{C.} Hình thang cân}\\hspace{0.04\\linewidth}\\parbox[t]{0.46\\linewidth}{\\textbf{D.} Hình vuông}\n\\end{minipage}\\hfill\n\\begin{minipage}[t]{0.31\\linewidth}\\vspace{0pt}\n\\centering\n\\adjustbox{max width=\\linewidth, max totalheight=2.4cm}{\n\\begin{tikzpicture}[line width=0.8pt, font=\\small]\n  \\coordinate (vA) at (1.6,2.2);\n  \\coordinate (vB) at (3.0,1.1);\n  \\coordinate (vC) at (1.6,0.0);\n  \\coordinate (vD) at (0.2,1.1);\n  \\draw[ink,fill=brand!8] (vA) -- (vB) -- (vC) -- (vD) -- cycle;\n  \\node[above] at (vA) {$A$};\n  \\node[right] at (vB) {$B$};\n  \\node[below] at (vC) {$C$};\n  \\node[left] at (vD) {$D$};\n  \\node[ink,font=\\scriptsize] at (2.4,1.75) {$|$};\n  \\node[ink,font=\\scriptsize] at (0.8,1.75) {$|$};\n\\end{tikzpicture}\n}\n\\par\\vspace{2pt}{\\sffamily\\scriptsize\\itshape\\color{muted}Hình 4}\n\\end{minipage}",
-          "tier": "onclass",
           "level": 1,
-          "dang_id": "NB2",
-          "solution": "Đáp án \\textbf{B}. Hình bình hành có hai cạnh kề bằng nhau là hình thoi. Vậy $ABCD$ là hình thoi.",
-          "figure_given": true
-        },
-        {
-          "type": "problem",
-          "label": "Bài 6.",
-          "statement": "[NB] Hình bình hành có hai đường chéo vuông góc với nhau là hình gì?[[br]]\\par\\vspace{3pt}\\parbox[t]{0.46\\linewidth}{\\textbf{A.} Hình chữ nhật}\\hspace{0.04\\linewidth}\\parbox[t]{0.46\\linewidth}{\\textbf{B.} Hình thoi}\\par\\vspace{4pt}\\parbox[t]{0.46\\linewidth}{\\textbf{C.} Hình thang}\\hspace{0.04\\linewidth}\\parbox[t]{0.46\\linewidth}{\\textbf{D.} Tứ giác thường}",
           "tier": "onclass",
-          "level": 1,
-          "dang_id": "NB3",
-          "solution": "Đáp án \\textbf{B}. Theo dấu hiệu nhận biết 3, hình bình hành có hai đường chéo vuông góc là hình thoi. Vậy đáp án đúng là B.",
-          "figure_given": true
-        },
-        {
-          "type": "problem",
-          "label": "Bài 7.",
-          "statement": "[NB] Chọn Đúng (Đ) hoặc Sai (S) cho mỗi khẳng định sau:[[br]] a) Tứ giác có hai đường chéo vuông góc là hình thoi. [[blank:1cm]][[br]] b) Hình bình hành có một đường chéo là phân giác của một góc là hình thoi. [[blank:1cm]]",
-          "tier": "onclass",
-          "level": 1,
-          "dang_id": "NB3",
-          "solution": "a) \\textbf{S} (Tứ giác có 2 đường chéo vuông góc chưa chắc là hình thoi nếu không phải hình bình hành).[[br]] b) \\textbf{Đ} (Dấu hiệu nhận biết 4 của hình thoi).[[br]] Vậy kết quả là: a) S; b) Đ.",
-          "figure_given": true
-        },
-        {
-          "type": "problem",
-          "label": "Bài 8.",
-          "statement": "[NB] Hãy vẽ hình thoi $ABCD$ có hai đường chéo $AC$ và $BD$ cắt nhau tại điểm $O$. Đánh dấu góc vuông tại $O$ và các cạnh bằng nhau trên hình.",
-          "tier": "onclass",
-          "level": 1,
           "dang_id": "NB4",
-          "solution": "Hình vẽ phải thể hiện: Hình thoi $ABCD$ có 4 cạnh bằng nhau $AB=BC=CD=DA$, hai đường chéo $AC, BD$ cắt nhau tại $O$ và vuông góc tại $O$. Vậy hoàn thành hình vẽ và GT--KL.",
-          "draw": true
-        },
-        {
-          "type": "problem",
-          "label": "Bài 9.",
-          "statement": "\\par\\nopagebreak\n\\begin{minipage}[t]{0.64\\linewidth}\\vspace{0pt}\nQuan sát Hình 5 (hình thoi $ABCD$).[[br]] Điền vào chỗ trống để hoàn thành chứng minh:[[br]] a) [NB] Trong hình thoi $ABCD$, đường chéo $AC$ là tia phân giác của góc [[blank:1.2cm]].[[br]] b) [NB] Do đó nếu $\\widehat{DAB} = 80^\\circ$ thì số đo góc $\\widehat{DAC} = $ [[blank:1.2cm]].\n\\end{minipage}\\hfill\n\\begin{minipage}[t]{0.31\\linewidth}\\vspace{0pt}\n\\centering\n\\adjustbox{max width=\\linewidth, max totalheight=2.4cm}{\n\\begin{tikzpicture}[line width=0.8pt, font=\\small]\n  \\coordinate (vA) at (1.6,2.4);\n  \\coordinate (vB) at (3.0,1.2);\n  \\coordinate (vC) at (1.6,0.0);\n  \\coordinate (vD) at (0.2,1.2);\n  \\draw[ink,fill=brand!8] (vA) -- (vB) -- (vC) -- (vD) -- cycle;\n  \\draw[brand,line width=1.0pt] (vA) -- (vC);\n  \\node[above] at (vA) {$A$};\n  \\node[right] at (vB) {$B$};\n  \\node[below] at (vC) {$C$};\n  \\node[left] at (vD) {$D$};\n\\end{tikzpicture}\n}\n\\par\\vspace{2pt}{\\sffamily\\scriptsize\\itshape\\color{muted}Hình 5}\n\\end{minipage}",
-          "tier": "onclass",
-          "level": 1,
-          "dang_id": "NB5",
-          "solution": "a) $\\widehat{A}$ (hoặc $\\widehat{DAB}$).[[br]] b) $40^\\circ$.[[br]] Vậy chỗ trống a là $\\widehat{A}$ và chỗ trống b là $40^\\circ$.",
-          "figure_given": true
-        },
-        {
-          "type": "problem",
-          "label": "Bài 10.",
-          "statement": "\\par\\nopagebreak\n\\begin{minipage}[t]{0.64\\linewidth}\\vspace{0pt}\nCho hình thoi $ABCD$ có $\\widehat{A} = 60^\\circ$ (Hình 6).[[br]] a) [NB] Tam giác $ABD$ là tam giác gì?[[br]] b) [NB] Tính số đo góc $\\widehat{ADB}$ và $\\widehat{ABD}$.\n\\end{minipage}\\hfill\n\\begin{minipage}[t]{0.31\\linewidth}\\vspace{0pt}\n\\centering\n\\adjustbox{max width=\\linewidth, max totalheight=2.4cm}{\n\\begin{tikzpicture}[line width=0.8pt, font=\\small]\n  \\coordinate (vA) at (1.6,2.4);\n  \\coordinate (vB) at (3.0,1.2);\n  \\coordinate (vC) at (1.6,0.0);\n  \\coordinate (vD) at (0.2,1.2);\n  \\draw[ink,fill=brand!8] (vA) -- (vB) -- (vC) -- (vD) -- cycle;\n  \\draw[brand,line width=1.0pt] (vB) -- (vD);\n  \\node[above] at (vA) {$A$};\n  \\node[right] at (vB) {$B$};\n  \\node[below] at (vC) {$C$};\n  \\node[left] at (vD) {$D$};\n  \\node[brand,font=\\scriptsize] at (1.6,1.9) {$60^\\circ$};\n\\end{tikzpicture}\n}\n\\par\\vspace{2pt}{\\sffamily\\scriptsize\\itshape\\color{muted}Hình 6}\n\\end{minipage}",
-          "tier": "onclass",
-          "level": 1,
-          "dang_id": "NB6",
-          "solution": "a) Vì $AB = AD$ (tính chất hình thoi) nên $\\triangle ABD$ cân tại $A$. Tam giác cân $ABD$ có $\\widehat{A}=60^\\circ$ nên là tam giác đều.[[br]] b) Vì $\\triangle ABD$ là tam giác đều nên $\\widehat{ADB} = \\widehat{ABD} = 60^\\circ$.[[br]] Vậy $\\triangle ABD$ là tam giác đều và $\\widehat{ADB} = \\widehat{ABD} = 60^\\circ$.",
-          "figure_given": true
+          "draw": true,
+          "figure_given": false,
+          "writelines": 0,
+          "statement": "[NB] Hãy vẽ hình thoi $ABCD$ có hai đường chéo $AC$ và $BD$ cắt nhau tại điểm $O$. Đánh dấu góc vuông tại $O$ và các cạnh bằng nhau trên hình vừa vẽ.",
+          "solution": "Cách vẽ:[[br]]\n1. Vẽ đoạn thẳng $AC$. Lấy $O$ là trung điểm của $AC$.[[br]]\n2. Qua $O$ kẻ đường thẳng vuông góc với $AC$. Trên đường thẳng đó lấy hai điểm $B$ và $D$ sao cho $OB = OD$.[[br]]\n3. Nối $A$ với $B$, $B$ với $C$, $C$ với $D$, $D$ với $A$ ta được hình thoi $ABCD$.[[br]]\n4. Đánh dấu góc vuông tại $O$ và ký hiệu bốn cạnh $AB, BC, CD, DA$ bằng nhau."
         }
       ],
       "teacher_note": "Bài 1 đến 7 làm nhanh 10 phút. Bài 8, 9, 10 rèn kĩ năng nhận diện góc và tam giác đều trong hình thoi."
@@ -167,71 +112,96 @@
     {
       "kind": "practice2",
       "number": 4,
-      "title": "Luyện tập 2",
+      "title": "Luyện tập 2 — Thông hiểu \\& Vận dụng",
       "blocks": [
         {
+          "type": "noted",
+          "variant": "example",
+          "text": "\\par\\nopagebreak\n\\begin{minipage}[t]{0.62\\linewidth}\\vspace{0pt}\n\\textbf{Ví dụ 1.} Cho hình thoi $ABCD$ có $\\widehat{ACD} = 35^\\circ$. Tính các góc của hình thoi $ABCD$.[[br]]{\\sffamily\\bfseries\\color{brand}Lời giải}[[br]]\\hspace*{1.4em}Xét hình thoi $ABCD$, ta có đường chéo $AC$ là đường phân giác của góc $\\widehat{C}$.[[br]]\\hspace*{1.4em}Do đó $\\widehat{C} = 2 \\cdot \\widehat{ACD} = 2 \\cdot 35^\\circ = 70^\\circ$.[[br]]\\hspace*{1.4em}Vì hình thoi $ABCD$ là hình bình hành nên các góc đối bằng nhau:[[br]]\\hspace*{1.4em}$\\widehat{A} = \\widehat{C} = 70^\\circ$.[[br]]\\hspace*{1.4em}Vì $AB \\parallel CD$ nên hai góc trong cùng phía bù nhau:[[br]]\\hspace*{1.4em}$\\widehat{B} = 180^\\circ - \\widehat{C} = 180^\\circ - 70^\\circ = 110^\\circ$.[[br]]\\hspace*{1.4em}Suy ra $\\widehat{D} = \\widehat{B} = 110^\\circ$.[[br]]\\hspace*{1.4em}Vậy $\\widehat{A} = \\widehat{C} = 70^\\circ$ và $\\widehat{B} = \\widehat{D} = 110^\\circ$.\n\\end{minipage}\\hfill\n\\begin{minipage}[t]{0.33\\linewidth}\\vspace{0pt}\n\\centering\n\\adjustbox{max width=\\linewidth, max totalheight=2.4cm}{\n\\begin{tikzpicture}[line width=0.8pt, font=\\small]\n  \\coordinate (vA) at (1.6,2.4);\n  \\coordinate (vB) at (3.0,1.2);\n  \\coordinate (vC) at (1.6,0.0);\n  \\coordinate (vD) at (0.2,1.2);\n  \\draw[ink,fill=brand!8] (vA) -- (vB) -- (vC) -- (vD) -- cycle;\n  \\draw[brand,line width=1.0pt] (vA) -- (vC);\n  \\node[above] at (vA) {$A$};\n  \\node[right] at (vB) {$B$};\n  \\node[below] at (vC) {$C$};\n  \\node[left] at (vD) {$D$};\n  \\node[brand,font=\\scriptsize] at (1.4,0.45) {$35^\\circ$};\n\\end{tikzpicture}\n}\n\\par\\vspace{2pt}{\\sffamily\\scriptsize\\itshape\\color{muted}Ví dụ 1}\n\\end{minipage}"
+        },
+        {
           "type": "problem",
-          "label": "Bài 11.",
-          "statement": "\\par\\nopagebreak\n\\begin{minipage}[t]{0.64\\linewidth}\\vspace{0pt}\na) [TH] Cho hình thoi $ABCD$ có $\\widehat{ABD} = 25^\\circ$ (Hình 7). Tính số đo các góc của hình thoi $ABCD$.[[br]] b) [TH] Cho hình thoi $ABCD$ có đường chéo $AC = AB$. Tính các góc của hình thoi đó.\n\\end{minipage}\\hfill\n\\begin{minipage}[t]{0.31\\linewidth}\\vspace{0pt}\n\\centering\n\\adjustbox{max width=\\linewidth, max totalheight=2.4cm}{\n\\begin{tikzpicture}[line width=0.8pt, font=\\small]\n  \\coordinate (vA) at (1.6,2.4);\n  \\coordinate (vB) at (3.0,1.2);\n  \\coordinate (vC) at (1.6,0.0);\n  \\coordinate (vD) at (0.2,1.2);\n  \\draw[ink,fill=brand!8] (vA) -- (vB) -- (vC) -- (vD) -- cycle;\n  \\draw[brand,line width=1.0pt] (vB) -- (vD);\n  \\node[above] at (vA) {$A$};\n  \\node[right] at (vB) {$B$};\n  \\node[below] at (vC) {$C$};\n  \\node[left] at (vD) {$D$};\n  \\node[brand,font=\\scriptsize] at (2.4,1.35) {$25^\\circ$};\n\\end{tikzpicture}\n}\n\\par\\vspace{2pt}{\\sffamily\\scriptsize\\itshape\\color{muted}Hình 7}\n\\end{minipage}",
-          "tier": "onclass",
+          "label": "Bài 6.",
           "level": 2,
+          "tier": "onclass",
           "dang_id": "TH1",
-          "solution": "a) Xét hình thoi $ABCD$, đường chéo $BD$ là tia phân giác của góc $\\widehat{B}$.[[br]]\\hspace*{1.4em}Do đó $\\widehat{B} = 2 \\cdot \\widehat{ABD} = 2 \\cdot 25^\\circ = 50^\\circ$.[[br]]\\hspace*{1.4em}Suy ra $\\widehat{D} = \\widehat{B} = 50^\\circ$.[[br]]\\hspace*{1.4em}Vì $AB \\parallel CD$ nên hai góc trong cùng phía bù nhau:[[br]]\\hspace*{1.4em}$\\widehat{A} = 180^\\circ - \\widehat{B} = 180^\\circ - 50^\\circ = 130^\\circ \\implies \\widehat{C} = 130^\\circ$.[[br]]\\hspace*{1.4em}Vậy $\\widehat{B} = \\widehat{D} = 50^\\circ$ và $\\widehat{A} = \\widehat{C} = 130^\\circ$.[[br]] b) Vì $AB = BC = AC$ nên $\\triangle ABC$ là tam giác đều, suy ra $\\widehat{B} = 60^\\circ$.[[br]]\\hspace*{1.4em}Do đó $\\widehat{D} = \\widehat{B} = 60^\\circ$ và $\\widehat{A} = \\widehat{C} = 180^\\circ - 60^\\circ = 120^\\circ$.[[br]]\\hspace*{1.4em}Vậy các góc của hình thoi là $\\widehat{B} = \\widehat{D} = 60^\\circ$ và $\\widehat{A} = \\widehat{C} = 120^\\circ$.",
           "figure_given": true,
-          "hints": [
-            "Đường chéo hình thoi là tia phân giác của góc ở đỉnh."
-          ]
+          "writelines": 0,
+          "statement": "\\par\\nopagebreak\n\\begin{minipage}[t]{0.64\\linewidth}\\vspace{0pt}\na) [TH] Cho hình thoi $ABCD$ có $\\widehat{ABD} = 25^\\circ$ (Hình 6). Tính các góc của hình thoi $ABCD$.[[br]]\nb) [TH] Cho hình thoi $ABCD$ có góc $\\widehat{A} = 60^\\circ$ và đường chéo $BD = 5\\text{ cm}$. Tính chu vi của hình thoi $ABCD$.\n\\end{minipage}\\hfill\n\\begin{minipage}[t]{0.31\\linewidth}\\vspace{0pt}\n\\centering\n\\adjustbox{max width=\\linewidth, max totalheight=2.4cm}{\n\\begin{tikzpicture}[line width=0.8pt, font=\\small]\n  \\coordinate (vA) at (1.5,2.3);\n  \\coordinate (vB) at (3.0,1.15);\n  \\coordinate (vC) at (1.5,0.0);\n  \\coordinate (vD) at (0.0,1.15);\n  \\draw[ink,fill=brand!8] (vA) -- (vB) -- (vC) -- (vD) -- cycle;\n  \\draw[brand,line width=1.0pt] (vB) -- (vD);\n  \\node[above] at (vA) {$A$};\n  \\node[right] at (vB) {$B$};\n  \\node[below] at (vC) {$C$};\n  \\node[left] at (vD) {$D$};\n  \\node[brand,font=\\scriptsize] at (2.4,1.3) {$25^\\circ$};\n\\end{tikzpicture}\n}\n\\par\\vspace{2pt}{\\sffamily\\scriptsize\\itshape\\color{muted}Hình 6}\n\\end{minipage}",
+          "solution": "a) Xét hình thoi $ABCD$, đường chéo $BD$ là tia phân giác của góc $\\widehat{B}$.[[br]]\nDo đó $\\widehat{B} = 2 \\cdot \\widehat{ABD} = 2 \\cdot 25^\\circ = 50^\\circ$.[[br]]\nVì các góc đối của hình thoi bằng nhau nên $\\widehat{D} = \\widehat{B} = 50^\\circ$.[[br]]\nVì $AB \\parallel CD$ nên $\\widehat{A} = 180^\\circ - \\widehat{B} = 180^\\circ - 50^\\circ = 130^\\circ$. Suy ra $\\widehat{C} = \\widehat{A} = 130^\\circ$.[[br]]\nb) Xét tam giác $ABD$, có $AB = AD$ (tính chất hình thoi) nên $\\triangle ABD$ cân tại $A$.[[br]]\nMà $\\widehat{A} = 60^\\circ$ nên $\\triangle ABD$ là tam giác đều.[[br]]\nSuy ra $AB = BD = 5\\text{ cm}$. Chu vi hình thoi $ABCD$ là: $4 \\cdot 5 = 20\\text{ cm}$.[[br]]\nVậy chu vi hình thoi là $20\\text{ cm}$."
+        },
+        {
+          "type": "noted",
+          "variant": "example",
+          "text": "\\par\\nopagebreak\n\\begin{minipage}[t]{0.62\\linewidth}\\vspace{0pt}\n\\textbf{Ví dụ 2.} Cho tam giác $ABC$ có tia phân giác $AD$. Qua $D$ kẻ đường thẳng song song với $AB$ cắt $AC$ tại $E$, kẻ đường thẳng song song với $AC$ cắt $AB$ tại $F$. Chứng minh tứ giác $AEDF$ là hình thoi.[[br]]{\\sffamily\\bfseries\\color{brand}Lời giải}[[br]]\\hspace*{1.4em}Xét tứ giác $AEDF$, ta có $DE \\parallel AF$ (do $DE \\parallel AB$) và $DF \\parallel AE$ (do $DF \\parallel AC$).[[br]]\\hspace*{1.4em}Do đó tứ giác $AEDF$ là hình bình hành.[[br]]\\hspace*{1.4em}Mặt khác, đường chéo $AD$ là tia phân giác của góc $\\widehat{FAE}$ (theo giả thiết).[[br]]\\hspace*{1.4em}Hình bình hành $AEDF$ có một đường chéo là tia phân giác của một góc nên là hình thoi.[[br]]\\hspace*{1.4em}Vậy $AEDF$ là hình thoi.\n\\end{minipage}\\hfill\n\\begin{minipage}[t]{0.33\\linewidth}\\vspace{0pt}\n\\centering\n\\adjustbox{max width=\\linewidth, max totalheight=2.4cm}{\n\\begin{tikzpicture}[line width=0.8pt, font=\\small]\n  \\coordinate (vA) at (1.2,2.2);\n  \\coordinate (vB) at (0.0,0.0);\n  \\coordinate (vC) at (3.2,0.0);\n  \\coordinate (vD) at (1.5,0.0);\n  \\coordinate (vE) at (2.2,1.1);\n  \\coordinate (vF) at (0.6,1.1);\n  \\draw[ink] (vB) -- (vA) -- (vC) -- cycle;\n  \\draw[brand,line width=1.1pt,fill=brand!8] (vA) -- (vF) -- (vD) -- (vE) -- cycle;\n  \\draw[brand,dashed] (vA) -- (vD);\n  \\node[above] at (vA) {$A$};\n  \\node[below left] at (vB) {$B$};\n  \\node[below right] at (vC) {$C$};\n  \\node[below] at (vD) {$D$};\n  \\node[above right] at (vE) {$E$};\n  \\node[above left] at (vF) {$F$};\n\\end{tikzpicture}\n}\n\\par\\vspace{2pt}{\\sffamily\\scriptsize\\itshape\\color{muted}Ví dụ 2}\n\\end{minipage}"
         },
         {
           "type": "problem",
-          "label": "Bài 12.",
-          "statement": "\\par\\nopagebreak\n\\begin{minipage}[t]{0.64\\linewidth}\\vspace{0pt}\nCho hình chữ nhật $ABCD$. Gọi $M, N, P, Q$ lần lượt là trung điểm của các cạnh $AB, BC, CD, DA$ (Hình 8).[[br]] a) [TH] Chứng minh $MN = NP = PQ = QM$.[[br]] b) [TH] Chứng minh tứ giác $MNPQ$ là hình thoi.\n\\end{minipage}\\hfill\n\\begin{minipage}[t]{0.31\\linewidth}\\vspace{0pt}\n\\centering\n\\adjustbox{max width=\\linewidth, max totalheight=2.4cm}{\n\\begin{tikzpicture}[line width=0.8pt, font=\\small]\n  \\coordinate (vA) at (0.0,1.8);\n  \\coordinate (vB) at (3.2,1.8);\n  \\coordinate (vC) at (3.2,0.0);\n  \\coordinate (vD) at (0.0,0.0);\n  \\coordinate (vM) at (1.6,1.8);\n  \\coordinate (vN) at (3.2,0.9);\n  \\coordinate (vP) at (1.6,0.0);\n  \\coordinate (vQ) at (0.0,0.9);\n  \\draw[ink] (vA) -- (vB) -- (vC) -- (vD) -- cycle;\n  \\draw[brand,line width=1.1pt,fill=brand!8] (vM) -- (vN) -- (vP) -- (vQ) -- cycle;\n  \\node[above left] at (vA) {$A$};\n  \\node[above right] at (vB) {$B$};\n  \\node[below right] at (vC) {$C$};\n  \\node[below left] at (vD) {$D$};\n  \\node[above] at (vM) {$M$};\n  \\node[right] at (vN) {$N$};\n  \\node[below] at (vP) {$P$};\n  \\node[left] at (vQ) {$Q$};\n\\end{tikzpicture}\n}\n\\par\\vspace{2pt}{\\sffamily\\scriptsize\\itshape\\color{muted}Hình 8}\n\\end{minipage}",
-          "tier": "onclass",
+          "label": "Bài 7.",
           "level": 2,
+          "tier": "onclass",
           "dang_id": "TH2",
-          "solution": "a) Xét bốn tam giác vuông $\\triangle AQM, \\triangle BNM, \\triangle CPN, \\triangle DQP$, ta có:[[br]]\\hspace*{1.4em}$AQ = BN = CP = DQ = \\dfrac{AD}{2}$ và $AM = BM = CN = DP = \\dfrac{AB}{2}$.[[br]]\\hspace*{1.4em}Do đó bốn tam giác vuông trên bằng nhau (hai cạnh góc vuông).[[br]]\\hspace*{1.4em}Suy ra bốn cạnh huyền bằng nhau: $MN = NP = PQ = QM$.[[br]]\\hspace*{1.4em}Vậy $MN = NP = PQ = QM$.[[br]] b) Tứ giác $MNPQ$ có bốn cạnh bằng nhau nên là hình thoi (theo định nghĩa).[[br]]\\hspace*{1.4em}Vậy tứ giác $MNPQ$ là hình thoi.",
           "figure_given": true,
-          "hints": [
-            "Chứng minh 4 tam giác vuông ở 4 góc bằng nhau để suy ra 4 cạnh bằng nhau."
-          ]
+          "writelines": 0,
+          "statement": "\\par\\nopagebreak\n\\begin{minipage}[t]{0.64\\linewidth}\\vspace{0pt}\nCho hình chữ nhật $ABCD$. Gọi $M, N, P, Q$ lần lượt là trung điểm của các cạnh $AB, BC, CD, DA$ (Hình 7).[[br]]\nĐiền vào chỗ trống để hoàn thành bài chứng minh:[[br]]\na) [TH] Chứng minh $MNPQ$ là hình bình hành:[[br]]\n\\hspace*{1.4em}Ta có $\\triangle AMQ = \\triangle CPN$ (hai cạnh góc vuông) $\\implies MQ = $ [[blank:1.2cm]].[[br]]\n\\hspace*{1.4em}Tương tự $\\triangle BMN = \\triangle DPQ \\implies MN = $ [[blank:1.2cm]].[[br]]\n\\hspace*{1.4em}Tứ giác $MNPQ$ có các cặp cạnh đối bằng nhau nên là [[blank:2.0cm]].[[br]]\nb) [TH] Chứng minh $MNPQ$ là hình thoi:[[br]]\n\\hspace*{1.4em}Lại có $\\triangle AMQ = \\triangle BMN \\implies MQ = $ [[blank:1.2cm]].[[br]]\n\\hspace*{1.4em}Hình bình hành $MNPQ$ có hai cạnh kề bằng nhau nên là [[blank:1.8cm]].\n\\end{minipage}\\hfill\n\\begin{minipage}[t]{0.31\\linewidth}\\vspace{0pt}\n\\centering\n\\adjustbox{max width=\\linewidth, max totalheight=2.4cm}{\n\\begin{tikzpicture}[line width=0.8pt, font=\\small]\n  \\coordinate (vA) at (0.0,2.0);\n  \\coordinate (vB) at (3.0,2.0);\n  \\coordinate (vC) at (3.0,0.0);\n  \\coordinate (vD) at (0.0,0.0);\n  \\coordinate (vM) at (1.5,2.0);\n  \\coordinate (vN) at (3.0,1.0);\n  \\coordinate (vP) at (1.5,0.0);\n  \\coordinate (vQ) at (0.0,1.0);\n  \\draw[ink] (vA) -- (vB) -- (vC) -- (vD) -- cycle;\n  \\draw[brand,line width=1.1pt,fill=brand!8] (vM) -- (vN) -- (vP) -- (vQ) -- cycle;\n  \\draw[ink,dashed] (vA) -- (vC);\n  \\draw[ink,dashed] (vB) -- (vD);\n  \\node[above left] at (vA) {$A$};\n  \\node[above right] at (vB) {$B$};\n  \\node[below right] at (vC) {$C$};\n  \\node[below left] at (vD) {$D$};\n  \\node[above] at (vM) {$M$};\n  \\node[right] at (vN) {$N$};\n  \\node[below] at (vP) {$P$};\n  \\node[left] at (vQ) {$Q$};\n\\end{tikzpicture}\n}\n\\par\\vspace{2pt}{\\sffamily\\scriptsize\\itshape\\color{muted}Hình 7}\n\\end{minipage}",
+          "statement_slide": "\\par\\nopagebreak\n\\begin{minipage}[t]{0.64\\linewidth}\\vspace{0pt}\nCho hình chữ nhật $ABCD$. Gọi $M, N, P, Q$ lần lượt là trung điểm của các cạnh $AB, BC, CD, DA$ (Hình 7).[[br]]\na) [TH] Chứng minh $MNPQ$ là hình bình hành.[[br]]\nb) [TH] Chứng minh $MNPQ$ là hình thoi.\n\\end{minipage}\\hfill\n\\begin{minipage}[t]{0.31\\linewidth}\\vspace{0pt}\n\\centering\n\\adjustbox{max width=\\linewidth, max totalheight=2.4cm}{\n\\begin{tikzpicture}[line width=0.8pt, font=\\small]\n  \\coordinate (vA) at (0.0,2.0);\n  \\coordinate (vB) at (3.0,2.0);\n  \\coordinate (vC) at (3.0,0.0);\n  \\coordinate (vD) at (0.0,0.0);\n  \\coordinate (vM) at (1.5,2.0);\n  \\coordinate (vN) at (3.0,1.0);\n  \\coordinate (vP) at (1.5,0.0);\n  \\coordinate (vQ) at (0.0,1.0);\n  \\draw[ink] (vA) -- (vB) -- (vC) -- (vD) -- cycle;\n  \\draw[brand,line width=1.1pt,fill=brand!8] (vM) -- (vN) -- (vP) -- (vQ) -- cycle;\n  \\draw[ink,dashed] (vA) -- (vC);\n  \\draw[ink,dashed] (vB) -- (vD);\n  \\node[above left] at (vA) {$A$};\n  \\node[above right] at (vB) {$B$};\n  \\node[below right] at (vC) {$C$};\n  \\node[below left] at (vD) {$D$};\n  \\node[above] at (vM) {$M$};\n  \\node[right] at (vN) {$N$};\n  \\node[below] at (vP) {$P$};\n  \\node[left] at (vQ) {$Q$};\n\\end{tikzpicture}\n}\n\\par\\vspace{2pt}{\\sffamily\\scriptsize\\itshape\\color{muted}Hình 7}\n\\end{minipage}",
+          "solution": "a) Xét các tam giác vuông $\\triangle AMQ, \\triangle BMN, \\triangle CPN, \\triangle DPQ$:[[br]]\nTa có $AM = MB = CP = PD = \\dfrac{1}{2}AB$ và $AQ = QD = BN = NC = \\dfrac{1}{2}AD$.[[br]]\nDo đó $\\triangle AMQ = \\triangle CPN$ (c.g.c) $\\implies MQ = NP$.[[br]]\nTương tự $\\triangle BMN = \\triangle DPQ$ (c.g.c) $\\implies MN = PQ$.[[br]]\nTứ giác $MNPQ$ có các cặp cạnh đối bằng nhau nên là hình bình hành.[[br]]\nb) Lại có $\\triangle AMQ = \\triangle BMN$ (do $AM = MB, AQ = BN$) $\\implies MQ = MN$.[[br]]\nHình bình hành $MNPQ$ có hai cạnh kề bằng nhau ($MQ = MN$) nên là hình thoi.[[br]]\nVậy $MNPQ$ là hình thoi."
         },
         {
           "type": "problem",
-          "label": "Bài 13.",
-          "statement": "\\par\\nopagebreak\n\\begin{minipage}[t]{0.64\\linewidth}\\vspace{0pt}\nCho hình bình hành $ABCD$. Tia phân giác của góc $\\widehat{A}$ cắt cạnh $CD$ tại điểm $E$ (Hình 9).[[br]] a) [TH] Chứng minh tam giác $ADE$ là tam giác cân tại $D$.[[br]] b) [TH] Lấy điểm $F$ trên cạnh $AB$ sao cho $AF = DE$. Chứng minh tứ giác $AFED$ là hình thoi.\n\\end{minipage}\\hfill\n\\begin{minipage}[t]{0.31\\linewidth}\\vspace{0pt}\n\\centering\n\\adjustbox{max width=\\linewidth, max totalheight=2.4cm}{\n\\begin{tikzpicture}[line width=0.8pt, font=\\small]\n  \\coordinate (vA) at (0.6,1.8);\n  \\coordinate (vB) at (3.4,1.8);\n  \\coordinate (vC) at (2.8,0.0);\n  \\coordinate (vD) at (0.0,0.0);\n  \\coordinate (vE) at (1.8,0.0);\n  \\coordinate (vF) at (2.4,1.8);\n  \\draw[ink] (vA) -- (vB) -- (vC) -- (vD) -- cycle;\n  \\draw[brand,line width=1.1pt,fill=brand!8] (vA) -- (vF) -- (vE) -- (vD) -- cycle;\n  \\draw[brand,dashed] (vA) -- (vE);\n  \\node[above left] at (vA) {$A$};\n  \\node[above right] at (vB) {$B$};\n  \\node[below right] at (vC) {$C$};\n  \\node[below left] at (vD) {$D$};\n  \\node[below] at (vE) {$E$};\n  \\node[above] at (vF) {$F$};\n\\end{tikzpicture}\n}\n\\par\\vspace{2pt}{\\sffamily\\scriptsize\\itshape\\color{muted}Hình 9}\n\\end{minipage}",
-          "tier": "onclass",
-          "level": 2,
-          "dang_id": "TH3",
-          "solution": "a) Vì $AB \\parallel CD$ nên $\\widehat{AED} = \\widehat{BAE}$ (hai góc so le trong).[[br]]\\hspace*{1.4em}Mà $AE$ là tia phân giác của $\\widehat{A}$ nên $\\widehat{DAE} = \\widehat{BAE}$.[[br]]\\hspace*{1.4em}Do đó $\\widehat{AED} = \\widehat{DAE}$, suy ra $\\triangle ADE$ cân tại $D$, do đó $DE = AD$.[[br]]\\hspace*{1.4em}Vậy tam giác $ADE$ cân tại $D$.[[br]] b) Tứ giác $AFED$ có $AF \\parallel DE$ (do $AB \\parallel CD$) và $AF = DE$ (giả thiết) nên là hình bình hành.[[br]]\\hspace*{1.4em}Hình bình hành $AFED$ có hai cạnh kề $AD = DE$ (chứng minh trên) nên là hình thoi.[[br]]\\hspace*{1.4em}Vậy $AFED$ là hình thoi.",
-          "figure_given": true,
-          "hints": [
-            "Dùng góc so le trong và tia phân giác để chỉ ra tam giác cân, từ đó suy ra hai cạnh kề bằng nhau."
-          ]
-        },
-        {
-          "type": "problem",
-          "label": "Bài 14.",
-          "statement": "\\par\\nopagebreak\n\\begin{minipage}[t]{0.64\\linewidth}\\vspace{0pt}\n[VD] (Đề thi học kì) Cho tam giác $ABC$ cân tại $A$. Gọi $M$ là trung điểm của cạnh $BC$. Lấy điểm $D$ đối xứng với điểm $A$ qua điểm $M$ (Hình 10).[[br]] Chứng minh tứ giác $ABDC$ là hình thoi.\n\\end{minipage}\\hfill\n\\begin{minipage}[t]{0.31\\linewidth}\\vspace{0pt}\n\\centering\n\\adjustbox{max width=\\linewidth, max totalheight=2.4cm}{\n\\begin{tikzpicture}[line width=0.8pt, font=\\small]\n  \\coordinate (vA) at (1.5,2.4);\n  \\coordinate (vB) at (0.0,1.2);\n  \\coordinate (vC) at (3.0,1.2);\n  \\coordinate (vD) at (1.5,0.0);\n  \\coordinate (vM) at (1.5,1.2);\n  \\draw[ink,fill=brand!8] (vA) -- (vB) -- (vD) -- (vC) -- cycle;\n  \\draw[brand,line width=1.0pt] (vA) -- (vD);\n  \\draw[brand,line width=1.0pt] (vB) -- (vC);\n  \\fill[brand] (1.5,1.2) circle (1.3pt) node[below right=1pt]{$M$};\n  \\node[above] at (vA) {$A$};\n  \\node[left] at (vB) {$B$};\n  \\node[right] at (vC) {$C$};\n  \\node[below] at (vD) {$D$};\n  \\draw[ink] (1.5, 1.4) -| (1.7, 1.2);\n\\end{tikzpicture}\n}\n\\par\\vspace{2pt}{\\sffamily\\scriptsize\\itshape\\color{muted}Hình 10}\n\\end{minipage}",
-          "tier": "onclass",
+          "label": "Bài 8.",
           "level": 3,
+          "tier": "onclass",
           "dang_id": "VD1",
-          "solution": "Xét tứ giác $ABDC$, ta có $M$ là trung điểm của đường chéo $BC$ (giả thiết) và $M$ là trung điểm của đường chéo $AD$ (do $D$ đối xứng với $A$ qua $M$).[[br]]\\hspace*{1.4em}Do đó tứ giác $ABDC$ là hình bình hành.[[br]]\\hspace*{1.4em}Mặt khác, vì tam giác $ABC$ cân tại $A$ nên đường trung tuyến $AM$ đồng thời là đường cao, suy ra $AM \\perp BC$, hay $AD \\perp BC$.[[br]]\\hspace*{1.4em}Hình bình hành $ABDC$ có hai đường chéo vuông góc với nhau ($AD \\perp BC$) nên là hình thoi.[[br]]\\hspace*{1.4em}Vậy $ABDC$ là hình thoi.",
           "figure_given": true,
-          "hints": [
-            "Trong tam giác cân, đường trung tuyến đồng thời là đường cao nên hai đường chéo vuông góc."
+          "writelines": 0,
+          "statement": "\\par\\nopagebreak\n\\begin{minipage}[t]{0.64\\linewidth}\\vspace{0pt}\n[VD] (Đề thi học kì) Cho tam giác $ABC$ cân tại $A$. Gọi $M$ là trung điểm của cạnh $BC$. Lấy điểm $D$ đối xứng với điểm $A$ qua điểm $M$ (Hình 8).[[br]]\nChứng minh tứ giác $ABDC$ là hình thoi.\n\\end{minipage}\\hfill\n\\begin{minipage}[t]{0.31\\linewidth}\\vspace{0pt}\n\\centering\n\\adjustbox{max width=\\linewidth, max totalheight=2.4cm}{\n\\begin{tikzpicture}[line width=0.8pt, font=\\small]\n  \\coordinate (vA) at (1.5,2.4);\n  \\coordinate (vB) at (0.0,1.2);\n  \\coordinate (vC) at (3.0,1.2);\n  \\coordinate (vD) at (1.5,0.0);\n  \\coordinate (vM) at (1.5,1.2);\n  \\draw[ink,fill=brand!8] (vA) -- (vB) -- (vD) -- (vC) -- cycle;\n  \\draw[brand,line width=1.0pt] (vA) -- (vD);\n  \\draw[brand,line width=1.0pt] (vB) -- (vC);\n  \\fill[brand] (1.5,1.2) circle (1.3pt) node[below right=1pt]{$M$};\n  \\node[above] at (vA) {$A$};\n  \\node[left] at (vB) {$B$};\n  \\node[right] at (vC) {$C$};\n  \\node[below] at (vD) {$D$};\n  \\draw[ink] (1.5, 1.4) -| (1.7, 1.2);\n\\end{tikzpicture}\n}\n\\par\\vspace{2pt}{\\sffamily\\scriptsize\\itshape\\color{muted}Hình 8}\n\\end{minipage}",
+          "solution": "Xét tứ giác $ABDC$, ta có:[[br]]\n$M$ là trung điểm của $BC$ (theo giả thiết),[[br]]\n$M$ là trung điểm của $AD$ (do $D$ đối xứng với $A$ qua $M$).[[br]]\nTứ giác $ABDC$ có hai đường chéo $AD$ và $BC$ cắt nhau tại trung điểm $M$ của mỗi đường nên là hình bình hành.[[br]]\nMặt khác, tam giác $ABC$ cân tại $A$ có $AM$ là đường trung tuyến nên $AM$ đồng thời là đường cao, suy ra $AD \\perp BC$ tại $M$.[[br]]\nHình bình hành $ABDC$ có hai đường chéo vuông góc với nhau ($AD \\perp BC$) nên là hình thoi.[[br]]\nVậy tứ giác $ABDC$ là hình thoi.",
+          "quy_trinh": [
+            "Bước 1 — Cái phải tìm là gì? Gạch chân tên tứ giác phải xét và tính chất phải chứng minh.",
+            "Bước 2 — Vẽ hình theo đúng thứ tự giả thiết cho, đánh dấu các góc vuông và đoạn bằng nhau.",
+            "Bước 3 — Tứ giác ấy đã có hai đường chéo cắt nhau tại trung điểm mỗi đường chưa? Kết luận nó là hình bình hành trước.",
+            "Bước 4 — Trong tam giác cân, đường trung tuyến đồng thời là đường gì? Suy ra quan hệ vuông góc giữa hai đường chéo.",
+            "Bước 5 — Đã dùng hết giả thiết chưa? Kết hợp hai yếu tố để kết luận hình thoi.",
+            "Bước 6 — Viết câu \\emph{Vậy…} trả lời đúng kết luận đề bài."
           ]
         },
         {
           "type": "problem",
-          "label": "Bài 15.",
-          "statement": "\\par\\nopagebreak\n\\begin{minipage}[t]{0.64\\linewidth}\\vspace{0pt}\n[VD] Cho tam giác $ABC$. Lấy điểm $D$ trên cạnh $BC$. Qua $D$ kẻ đường thẳng song song với $AC$ cắt $AB$ tại $E$, kẻ đường thẳng song song với $AB$ cắt $AC$ tại $F$ (Hình 11). Tìm vị trí của điểm $D$ trên cạnh $BC$ để tứ giác $AEDF$ là hình thoi.\n\\end{minipage}\\hfill\n\\begin{minipage}[t]{0.31\\linewidth}\\vspace{0pt}\n\\centering\n\\adjustbox{max width=\\linewidth, max totalheight=2.4cm}{\n\\begin{tikzpicture}[line width=0.8pt, font=\\small]\n  \\coordinate (vA) at (1.2,2.2);\n  \\coordinate (vB) at (0.0,0.0);\n  \\coordinate (vC) at (3.2,0.0);\n  \\coordinate (vD) at (1.5,0.0);\n  \\coordinate (vE) at (0.6,1.1);\n  \\coordinate (vF) at (2.2,1.1);\n  \\draw[ink] (vB) -- (vA) -- (vC) -- cycle;\n  \\draw[brand,line width=1.1pt,fill=brand!8] (vA) -- (vE) -- (vD) -- (vF) -- cycle;\n  \\draw[brand,dashed] (vA) -- (vD);\n  \\node[above] at (vA) {$A$};\n  \\node[below left] at (vB) {$B$};\n  \\node[below right] at (vC) {$C$};\n  \\node[below] at (vD) {$D$};\n  \\node[above left] at (vE) {$E$};\n  \\node[above right] at (vF) {$F$};\n\\end{tikzpicture}\n}\n\\par\\vspace{2pt}{\\sffamily\\scriptsize\\itshape\\color{muted}Hình 11}\n\\end{minipage}",
-          "tier": "onclass",
+          "label": "Bài 9.",
           "level": 3,
-          "dang_id": "VD1",
-          "solution": "Tứ giác $AEDF$ có $DE \\parallel AF$ và $DF \\parallel AE$ nên luôn là hình bình hành.[[br]]\\hspace*{1.4em}Để hình bình hành $AEDF$ là hình thoi thì đường chéo $AD$ phải là tia phân giác của góc $\\widehat{A}$.[[br]]\\hspace*{1.4em}Vậy điểm $D$ là giao điểm của tia phân giác góc $\\widehat{A}$ với cạnh $BC$.",
+          "tier": "onclass",
+          "dang_id": "VD2",
           "figure_given": true,
-          "hints": [
-            "Hình bình hành trở thành hình thoi khi một đường chéo là tia phân giác của một góc."
+          "writelines": 0,
+          "statement": "\\par\\nopagebreak\n\\begin{minipage}[t]{0.64\\linewidth}\\vspace{0pt}\n[VD] Cho tam giác $ABC$. Lấy điểm $D$ trên cạnh $BC$. Qua $D$ kẻ đường thẳng song song với $AC$ cắt $AB$ tại $E$, kẻ đường thẳng song song với $AB$ cắt $AC$ tại $F$ (Hình 9). Tìm vị trí của điểm $D$ trên cạnh $BC$ để tứ giác $AEDF$ là hình thoi.\n\\end{minipage}\\hfill\n\\begin{minipage}[t]{0.31\\linewidth}\\vspace{0pt}\n\\centering\n\\adjustbox{max width=\\linewidth, max totalheight=2.4cm}{\n\\begin{tikzpicture}[line width=0.8pt, font=\\small]\n  \\coordinate (vA) at (1.2,2.2);\n  \\coordinate (vB) at (0.0,0.0);\n  \\coordinate (vC) at (3.2,0.0);\n  \\coordinate (vD) at (1.5,0.0);\n  \\coordinate (vE) at (0.6,1.1);\n  \\coordinate (vF) at (2.2,1.1);\n  \\draw[ink] (vB) -- (vA) -- (vC) -- cycle;\n  \\draw[brand,line width=1.1pt,fill=brand!8] (vA) -- (vE) -- (vD) -- (vF) -- cycle;\n  \\draw[brand,dashed] (vA) -- (vD);\n  \\node[above] at (vA) {$A$};\n  \\node[below left] at (vB) {$B$};\n  \\node[below right] at (vC) {$C$};\n  \\node[below] at (vD) {$D$};\n  \\node[above left] at (vE) {$E$};\n  \\node[above right] at (vF) {$F$};\n\\end{tikzpicture}\n}\n\\par\\vspace{2pt}{\\sffamily\\scriptsize\\itshape\\color{muted}Hình 9}\n\\end{minipage}",
+          "solution": "Xét tứ giác $AEDF$, ta có $DE \\parallel AF$ và $DF \\parallel AE$.[[br]]\nDo đó tứ giác $AEDF$ là hình bình hành.[[br]]\nHình bình hành $AEDF$ là hình thoi khi và chỉ khi đường chéo $AD$ là tia phân giác của góc $\\widehat{EAF}$, tức $AD$ là tia phân giác của góc $\\widehat{BAC}$ của tam giác $ABC$.[[br]]\nVậy điểm $D$ là giao điểm của tia phân giác góc $\\widehat{BAC}$ với cạnh $BC$ thì tứ giác $AEDF$ là hình thoi.",
+          "quy_trinh": [
+            "Bước 1 — Cái phải tìm là gì? Vị trí của điểm nào trên cạnh nào để tứ giác là hình thoi.",
+            "Bước 2 — Vẽ hình, đánh dấu các cặp cạnh song song đã cho trong giả thiết.",
+            "Bước 3 — Tứ giác có các cạnh đối song song là hình gì? Kết luận hình bình hành.",
+            "Bước 4 — Hình bình hành trở thành hình thoi khi đường chéo xuất phát từ đỉnh là tia gì?",
+            "Bước 5 — Đã dùng hết giả thiết chưa? Điểm cần tìm chính là giao điểm của đường phân giác với cạnh đối diện.",
+            "Bước 6 — Viết câu \\emph{Vậy…} nêu rõ vị trí của điểm cần tìm."
+          ]
+        },
+        {
+          "type": "problem",
+          "label": "Bài 10.",
+          "level": 4,
+          "tier": "onclass",
+          "dang_id": "VDC1",
+          "figure_given": true,
+          "writelines": 0,
+          "statement": "\\par\\nopagebreak\n\\begin{minipage}[t]{0.64\\linewidth}\\vspace{0pt}\n[VDC] (Giữa kì I $-$ THCS Bát Tràng) Cho hình thoi $ABCD$ có hai đường chéo $AC$ và $BD$ cắt nhau tại $O$. Trên tia đối của tia $CB$ lấy điểm $E$ sao cho $CE = CB$ (Hình 10). Gọi $I$ là trung điểm của $CD$. Chứng minh ba điểm $A, I, E$ thẳng hàng.\n\\end{minipage}\\hfill\n\\begin{minipage}[t]{0.31\\linewidth}\\vspace{0pt}\n\\centering\n\\adjustbox{max width=\\linewidth, max totalheight=2.5cm}{\n\\begin{tikzpicture}[line width=0.8pt, font=\\small]\n  \\coordinate (vB) at (0.0,0.0);\n  \\coordinate (vC) at (2.2,0.0);\n  \\coordinate (vE) at (4.4,0.0);\n  \\coordinate (vA) at (1.1,1.8);\n  \\coordinate (vD) at (3.3,1.8);\n  \\coordinate (vO) at (1.65,0.9);\n  \\coordinate (vI) at (2.75,0.9);\n  \\draw[ink,fill=brand!8] (vA) -- (vB) -- (vC) -- (vD) -- cycle;\n  \\draw[brand,line width=1.0pt] (vA) -- (vC);\n  \\draw[brand,line width=1.0pt] (vB) -- (vD);\n  \\draw[ink] (vC) -- (vE) -- (vD);\n  \\draw[brand,dashed] (vA) -- (vE);\n  \\fill[brand] (vO) circle (1.2pt) node[below=1pt]{$O$};\n  \\fill[brand] (vI) circle (1.2pt) node[above right=1pt]{$I$};\n  \\node[above] at (vA) {$A$};\n  \\node[below left] at (vB) {$B$};\n  \\node[below] at (vC) {$C$};\n  \\node[above right] at (vD) {$D$};\n  \\node[below right] at (vE) {$E$};\n\\end{tikzpicture}\n}\n\\par\\vspace{2pt}{\\sffamily\\scriptsize\\itshape\\color{muted}Hình 10}\n\\end{minipage}",
+          "solution": "Xét hình thoi $ABCD$, ta có $AD \\parallel BC$ và $AD = BC$.[[br]]\nVì $E$ thuộc tia đối của tia $CB$ và $CE = CB$ nên $AD \\parallel CE$ và $AD = CE$.[[br]]\nTứ giác $ACED$ có một cặp cạnh đối song song và bằng nhau ($AD \\parallel CE, AD = CE$) nên là hình bình hành.[[br]]\nVì tứ giác $ACED$ là hình bình hành nên hai đường chéo $AE$ và $CD$ cắt nhau tại trung điểm của mỗi đường.[[br]]\nMà $I$ là trung điểm của cạnh $CD$ (theo giả thiết), suy ra $I$ cũng đồng thời là trung điểm của đường chéo $AE$.[[br]]\nDo đó ba điểm $A, I, E$ thẳng hàng.[[br]]\nVậy ba điểm $A, I, E$ thẳng hàng.",
+          "quy_trinh": [
+            "Bước 1 — Cái phải tìm là gì? Ba điểm nào phải thẳng hàng? Nối thử ba điểm ấy trên hình.",
+            "Bước 2 — Ba điểm thẳng hàng khi nào? Khi điểm ở giữa là trung điểm của đoạn nối hai điểm kia, hoặc tạo thành hai tia đối nhau.",
+            "Bước 3 — Điểm ở giữa đang là giao điểm hai đường chéo của hình nào? Sử dụng tính chất của hình thoi và hình bình hành phụ.",
+            "Bước 4 — Muốn đoạn thẳng đi qua điểm đó thì tứ giác liên quan phải là hình bình hành.",
+            "Bước 5 — Đã dùng hết giả thiết chưa? Giả thiết về tính chất đối xứng và song song cho ta cặp cạnh bằng nhau.",
+            "Bước 6 — Viết câu \\emph{Vậy…} kết luận ba điểm thẳng hàng."
           ]
         }
       ],
@@ -295,116 +265,132 @@
         {
           "type": "problem",
           "label": "BTVN 1.",
-          "statement": "[NB] Nối mỗi hình ở Cột A với điều kiện để trở thành hình thoi ở Cột B:[[br]]\\par\\vspace{3pt}\n\\begin{tabular}{p{5.5cm} @{\\hspace{2.5cm}} p{6.5cm}}\n\\textbf{Cột A (Hình)} & \\textbf{Cột B (Điều kiện thành hình thoi)} \\\\[4pt]\n(1) Tứ giác lồi & (a) Có hai đường chéo vuông góc. \\\\[4pt]\n(2) Hình bình hành & (b) Có bốn cạnh bằng nhau. \\\\[4pt]\n(3) Hình bình hành & (c) Có một đường chéo là phân giác một góc.\n\\end{tabular}",
-          "tier": "btvn",
           "level": 1,
+          "tier": "btvn",
           "dang_id": "NB1",
-          "solution": "Nối: (1) nối với (b); (2) nối với (a); (3) nối với (c). Vậy các cặp nối là: 1--b, 2--a, 3--c.",
           "figure_given": true,
-          "writelines": 0
+          "writelines": 0,
+          "statement": "[NB] Nối mỗi hình ở Cột A với điều kiện để trở thành hình thoi ở Cột B:[[br]]\\par\\vspace{3pt}\n\\begin{tabular}{p{5.5cm} @{\\hspace{1.5cm}} p{7.5cm}}\n\\textbf{Cột A} & \\textbf{Cột B} \\\\\n(1) Tứ giác & (a) có hai cạnh kề bằng nhau \\\\\n(2) Hình bình hành & (b) có bốn cạnh bằng nhau \\\\\n(3) Hình bình hành & (c) có hai đường chéo vuông góc\n\\end{tabular}",
+          "solution": "(1) nối với (b): Tứ giác có bốn cạnh bằng nhau là hình thoi.[[br]]\n(2) nối với (a): Hình bình hành có hai cạnh kề bằng nhau là hình thoi.[[br]]\n(3) nối với (c): Hình bình hành có hai đường chéo vuông góc là hình thoi."
         },
         {
           "type": "problem",
           "label": "BTVN 2.",
-          "statement": "\\par\\nopagebreak\n\\begin{minipage}[t]{0.64\\linewidth}\\vspace{0pt}\n[NB] Cho hình thoi $ABCD$ có $AB = 6\\text{ cm}$ và $\\widehat{A} = 60^\\circ$ (Hình 12). Tính độ dài các cạnh còn lại và độ dài đường chéo $BD$.\n\\end{minipage}\\hfill\n\\begin{minipage}[t]{0.31\\linewidth}\\vspace{0pt}\n\\centering\n\\adjustbox{max width=\\linewidth, max totalheight=2.4cm}{\n\\begin{tikzpicture}[line width=0.8pt, font=\\small]\n  \\coordinate (vA) at (1.6,2.4);\n  \\coordinate (vB) at (3.0,1.2);\n  \\coordinate (vC) at (1.6,0.0);\n  \\coordinate (vD) at (0.2,1.2);\n  \\draw[ink,fill=brand!8] (vA) -- (vB) -- (vC) -- (vD) -- cycle;\n  \\draw[brand,line width=1.0pt] (vB) -- (vD);\n  \\node[above] at (vA) {$A$};\n  \\node[right] at (vB) {$B$};\n  \\node[below] at (vC) {$C$};\n  \\node[left] at (vD) {$D$};\n  \\node[brand,font=\\scriptsize] at (1.6,1.9) {$60^\\circ$};\n\\end{tikzpicture}\n}\n\\par\\vspace{2pt}{\\sffamily\\scriptsize\\itshape\\color{muted}Hình 12}\n\\end{minipage}",
-          "tier": "btvn",
           "level": 1,
+          "tier": "btvn",
           "dang_id": "NB1",
-          "solution": "Vì $ABCD$ là hình thoi nên $BC = CD = DA = AB = 6\\text{ cm}$.[[br]] Tam giác $ABD$ cân tại $A$ có $\\widehat{A}=60^\\circ$ nên là tam giác đều, do đó $BD = AB = 6\\text{ cm}$.[[br]] Vậy các cạnh còn lại bằng $6\\text{ cm}$ và $BD = 6\\text{ cm}$.",
-          "figure_given": true
+          "figure_given": true,
+          "writelines": 0,
+          "statement": "\\par\\nopagebreak\n\\begin{minipage}[t]{0.64\\linewidth}\\vspace{0pt}\n[NB] Cho hình thoi $ABCD$ có $AB = 6\\text{ cm}$ và $\\widehat{A} = 70^\\circ$ (Hình 11). Hãy tính độ dài các cạnh $BC, CD, DA$ và số đo góc $\\widehat{C}$.\n\\end{minipage}\\hfill\n\\begin{minipage}[t]{0.31\\linewidth}\\vspace{0pt}\n\\centering\n\\adjustbox{max width=\\linewidth, max totalheight=2.4cm}{\n\\begin{tikzpicture}[line width=0.8pt, font=\\small]\n  \\coordinate (vA) at (0.8,2.2);\n  \\coordinate (vB) at (2.6,1.8);\n  \\coordinate (vC) at (2.2,0.0);\n  \\coordinate (vD) at (0.4,0.4);\n  \\draw[ink,fill=brand!8] (vA) -- (vB) -- (vC) -- (vD) -- cycle;\n  \\node[above left] at (vA) {$A$};\n  \\node[above right] at (vB) {$B$};\n  \\node[below right] at (vC) {$C$};\n  \\node[below left] at (vD) {$D$};\n  \\node[brand,font=\\scriptsize] at (1.0,1.8) {$70^\\circ$};\n  \\node[ink,font=\\scriptsize] at (1.6,2.2) {$6\\text{ cm}$};\n\\end{tikzpicture}\n}\n\\par\\vspace{2pt}{\\sffamily\\scriptsize\\itshape\\color{muted}Hình 11}\n\\end{minipage}",
+          "solution": "Vì $ABCD$ là hình thoi nên bốn cạnh bằng nhau: $BC = CD = DA = AB = 6\\text{ cm}$.[[br]]\nVì các góc đối của hình thoi bằng nhau nên $\\widehat{C} = \\widehat{A} = 70^\\circ$.[[br]]\nVậy $BC = CD = DA = 6\\text{ cm}$ và $\\widehat{C} = 70^\\circ$."
         },
         {
           "type": "problem",
           "label": "BTVN 3.",
-          "statement": "\\par\\nopagebreak\n\\begin{minipage}[t]{0.64\\linewidth}\\vspace{0pt}\n[NB] Cho tứ giác $ABCD$ có $AB=BC=CD=DA$ (Hình 13). Tứ giác $ABCD$ là hình gì?[[br]]\\par\\vspace{3pt}\\parbox[t]{0.46\\linewidth}{\\textbf{A.} Hình chữ nhật}\\hspace{0.04\\linewidth}\\parbox[t]{0.46\\linewidth}{\\textbf{B.} Hình thang cân}\\par\\vspace{4pt}\\parbox[t]{0.46\\linewidth}{\\textbf{C.} Hình thoi}\\hspace{0.04\\linewidth}\\parbox[t]{0.46\\linewidth}{\\textbf{D.} Hình thang vuông}\n\\end{minipage}\\hfill\n\\begin{minipage}[t]{0.31\\linewidth}\\vspace{0pt}\n\\centering\n\\adjustbox{max width=\\linewidth, max totalheight=2.4cm}{\n\\begin{tikzpicture}[line width=0.8pt, font=\\small]\n  \\coordinate (vA) at (1.6,2.2);\n  \\coordinate (vB) at (3.0,1.1);\n  \\coordinate (vC) at (1.6,0.0);\n  \\coordinate (vD) at (0.2,1.1);\n  \\draw[ink,fill=brand!8] (vA) -- (vB) -- (vC) -- (vD) -- cycle;\n  \\node[above] at (vA) {$A$};\n  \\node[right] at (vB) {$B$};\n  \\node[below] at (vC) {$C$};\n  \\node[left] at (vD) {$D$};\n  \\node[ink,font=\\scriptsize] at (2.4,1.75) {$|$};\n  \\node[ink,font=\\scriptsize] at (2.4,0.45) {$|$};\n  \\node[ink,font=\\scriptsize] at (0.8,0.45) {$|$};\n  \\node[ink,font=\\scriptsize] at (0.8,1.75) {$|$};\n\\end{tikzpicture}\n}\n\\par\\vspace{2pt}{\\sffamily\\scriptsize\\itshape\\color{muted}Hình 13}\n\\end{minipage}",
-          "tier": "btvn",
           "level": 1,
+          "tier": "btvn",
           "dang_id": "NB2",
-          "solution": "Đáp án \\textbf{C}. Tứ giác có 4 cạnh bằng nhau là hình thoi. Vậy tứ giác $ABCD$ là hình thoi.",
-          "figure_given": true
+          "figure_given": true,
+          "writelines": 0,
+          "statement": "\\par\\nopagebreak\n\\begin{minipage}[t]{0.64\\linewidth}\\vspace{0pt}\n[NB] Cho tứ giác $ABCD$ có $AB=BC=CD=DA$ (Hình 12). Tứ giác $ABCD$ là hình gì? Kể tên các góc bằng nhau trong tứ giác đó.\n\\end{minipage}\\hfill\n\\begin{minipage}[t]{0.31\\linewidth}\\vspace{0pt}\n\\centering\n\\adjustbox{max width=\\linewidth, max totalheight=2.4cm}{\n\\begin{tikzpicture}[line width=0.8pt, font=\\small]\n  \\coordinate (vA) at (1.4,2.2);\n  \\coordinate (vB) at (2.6,1.1);\n  \\coordinate (vC) at (1.4,0.0);\n  \\coordinate (vD) at (0.2,1.1);\n  \\draw[ink,fill=brand!8] (vA) -- (vB) -- (vC) -- (vD) -- cycle;\n  \\node[above] at (vA) {$A$};\n  \\node[right] at (vB) {$B$};\n  \\node[below] at (vC) {$C$};\n  \\node[left] at (vD) {$D$};\n\\end{tikzpicture}\n}\n\\par\\vspace{2pt}{\\sffamily\\scriptsize\\itshape\\color{muted}Hình 12}\n\\end{minipage}",
+          "solution": "Tứ giác $ABCD$ có bốn cạnh bằng nhau ($AB=BC=CD=DA$) nên là hình thoi.[[br]]\nTrong hình thoi $ABCD$, các góc đối bằng nhau: $\\widehat{A} = \\widehat{C}$ và $\\widehat{B} = \\widehat{D}$."
         },
         {
           "type": "problem",
           "label": "BTVN 4.",
-          "statement": "[NB] Điền vào chỗ trống dấu hiệu nhận biết hình thoi thích hợp:[[br]] a) Hình bình hành có hai cạnh kề bằng nhau là [[blank:2.2cm]].[[br]] b) Hình bình hành có hai đường chéo vuông góc là [[blank:2.2cm]].",
-          "tier": "btvn",
           "level": 1,
+          "tier": "btvn",
           "dang_id": "NB2",
-          "solution": "a) hình thoi.[[br]] b) hình thoi.[[br]] Vậy các chỗ trống đều điền là hình thoi.",
-          "figure_given": true
+          "figure_given": true,
+          "writelines": 0,
+          "statement": "[NB] Điền vào chỗ trống dấu hiệu nhận biết hình thoi thích hợp:[[br]]\na) Hình bình hành có hai cạnh kề bằng nhau là [[blank:2.2cm]].[[br]]\nb) Hình bình hành có hai đường chéo [[blank:2.2cm]] là hình thoi.[[br]]\nc) Hình bình hành có một đường chéo là [[blank:3.5cm]] là hình thoi.",
+          "solution": "a) Hình bình hành có hai cạnh kề bằng nhau là hình thoi.[[br]]\nb) Hình bình hành có hai đường chéo vuông góc với nhau là hình thoi.[[br]]\nc) Hình bình hành có một đường chéo là tia phân giác của một góc là hình thoi."
         },
         {
           "type": "problem",
           "label": "BTVN 5.",
-          "statement": "Chọn Đúng (Đ) hoặc Sai (S) cho các khẳng định sau:[[br]] a) [NB] Hình bình hành có một đường chéo là tia phân giác của một góc là hình thoi. [[blank:1cm]][[br]] b) [NB] Tứ giác có hai đường chéo vuông góc luôn là hình thoi. [[blank:1cm]]",
-          "tier": "btvn",
           "level": 1,
+          "tier": "btvn",
           "dang_id": "NB3",
-          "solution": "a) \\textbf{Đ} (Dấu hiệu nhận biết 4 của hình thoi).[[br]] b) \\textbf{S} (Tứ giác có 2 đường chéo vuông góc chưa chắc là hình thoi nếu không phải hình bình hành).[[br]] Vậy kết quả là: a) Đ; b) S.",
-          "figure_given": true
+          "figure_given": true,
+          "writelines": 0,
+          "statement": "[NB] Chọn Đúng (Đ) hoặc Sai (S) cho các khẳng định sau:[[br]]\na) Hình bình hành có một đường chéo là tia phân giác của một góc là hình thoi. [[blank:1.0cm]][[br]]\nb) Tứ giác có hai đường chéo vuông góc với nhau luôn là hình thoi. [[blank:1.0cm]][[br]]\nc) Trong hình thoi, hai đường chéo vuông góc và cắt nhau tại trung điểm mỗi đường. [[blank:1.0cm]]",
+          "solution": "a) Đúng (Đ) — Dấu hiệu nhận biết hình thoi.[[br]]\nb) Sai (S) — Phải là hình bình hành có hai đường chéo vuông góc mới là hình thoi.[[br]]\nc) Đúng (Đ) — Tính chất hai đường chéo của hình thoi."
         },
         {
           "type": "problem",
           "label": "BTVN 6.",
-          "statement": "[NB] Hãy vẽ hình thoi $MNPQ$ có hai đường chéo $MP$ và $NQ$ cắt nhau tại điểm $I$. Đánh dấu góc vuông tại $I$ trên hình.",
-          "tier": "btvn",
           "level": 1,
-          "dang_id": "NB4",
-          "solution": "Hình vẽ phải thể hiện: Hình thoi $MNPQ$ có 4 cạnh bằng nhau, hai đường chéo $MP, NQ$ cắt nhau tại $I$ và vuông góc tại $I$. Vậy hoàn thành hình vẽ yêu cầu.",
-          "draw": true
+          "tier": "btvn",
+          "dang_id": "NB5",
+          "figure_given": true,
+          "writelines": 0,
+          "statement": "\\par\\nopagebreak\n\\begin{minipage}[t]{0.64\\linewidth}\\vspace{0pt}\n[NB] Cho hình thoi $ABCD$ có $\\widehat{B} = 120^\\circ$ (Hình 13). Tính số đo các góc còn lại của hình thoi $ABCD$.\n\\end{minipage}\\hfill\n\\begin{minipage}[t]{0.31\\linewidth}\\vspace{0pt}\n\\centering\n\\adjustbox{max width=\\linewidth, max totalheight=2.4cm}{\n\\begin{tikzpicture}[line width=0.8pt, font=\\small]\n  \\coordinate (vA) at (0.4,1.8);\n  \\coordinate (vB) at (2.2,1.8);\n  \\coordinate (vC) at (2.8,0.2);\n  \\coordinate (vD) at (1.0,0.2);\n  \\draw[ink,fill=brand!8] (vA) -- (vB) -- (vC) -- (vD) -- cycle;\n  \\node[above left] at (vA) {$A$};\n  \\node[above right] at (vB) {$B$};\n  \\node[below right] at (vC) {$C$};\n  \\node[below left] at (vD) {$D$};\n  \\node[brand,font=\\scriptsize] at (1.8,1.5) {$120^\\circ$};\n\\end{tikzpicture}\n}\n\\par\\vspace{2pt}{\\sffamily\\scriptsize\\itshape\\color{muted}Hình 13}\n\\end{minipage}",
+          "solution": "Xét hình thoi $ABCD$, ta có:[[br]]\n$\\widehat{D} = \\widehat{B} = 120^\\circ$ (hai góc đối bằng nhau).[[br]]\nVì $AB \\parallel CD$ nên $\\widehat{A} = 180^\\circ - \\widehat{B} = 180^\\circ - 120^\\circ = 60^\\circ$.[[br]]\nSuy ra $\\widehat{C} = \\widehat{A} = 60^\\circ$.[[br]]\nVậy $\\widehat{A} = \\widehat{C} = 60^\\circ$ và $\\widehat{D} = 120^\\circ$."
         },
         {
           "type": "problem",
           "label": "BTVN 7.",
-          "statement": "\\par\\nopagebreak\n\\begin{minipage}[t]{0.64\\linewidth}\\vspace{0pt}\nQuan sát Hình 14 (hình thoi $ABCD$ có hai đường chéo cắt nhau tại $O$).[[br]] Điền vào chỗ trống:[[br]] a) [NB] Hai đường chéo $AC$ và $BD$ vuông góc với nhau tại điểm [[blank:1.2cm]].[[br]] b) [NB] Đường chéo $BD$ là tia phân giác của góc [[blank:1.2cm]] và góc [[blank:1.2cm]].\n\\end{minipage}\\hfill\n\\begin{minipage}[t]{0.31\\linewidth}\\vspace{0pt}\n\\centering\n\\adjustbox{max width=\\linewidth, max totalheight=2.4cm}{\n\\begin{tikzpicture}[line width=0.8pt, font=\\small]\n  \\coordinate (vA) at (1.6,2.4);\n  \\coordinate (vB) at (3.0,1.2);\n  \\coordinate (vC) at (1.6,0.0);\n  \\coordinate (vD) at (0.2,1.2);\n  \\coordinate (vO) at (1.6,1.2);\n  \\draw[ink,fill=brand!8] (vA) -- (vB) -- (vC) -- (vD) -- cycle;\n  \\draw[brand,line width=1.0pt] (vA) -- (vC);\n  \\draw[brand,line width=1.0pt] (vB) -- (vD);\n  \\fill[brand] (1.6,1.2) circle (1.3pt) node[below right=1pt]{$O$};\n  \\node[above] at (vA) {$A$};\n  \\node[right] at (vB) {$B$};\n  \\node[below] at (vC) {$C$};\n  \\node[left] at (vD) {$D$};\n  \\draw[ink] (1.6, 1.4) -| (1.8, 1.2);\n\\end{tikzpicture}\n}\n\\par\\vspace{2pt}{\\sffamily\\scriptsize\\itshape\\color{muted}Hình 14}\n\\end{minipage}",
+          "level": 2,
           "tier": "btvn",
-          "level": 1,
-          "dang_id": "NB5",
-          "solution": "a) $O$.[[br]] b) $\\widehat{B}$ và $\\widehat{D}$.[[br]] Vậy chỗ trống a là $O$ và chỗ trống b là $\\widehat{B}, \\widehat{D}$.",
-          "figure_given": true
+          "dang_id": "TH1",
+          "figure_given": true,
+          "writelines": 0,
+          "statement": "\\par\\nopagebreak\n\\begin{minipage}[t]{0.64\\linewidth}\\vspace{0pt}\n[TH] Cho hình thoi $ABCD$ có $\\widehat{CAD} = 40^\\circ$ (Hình 14). Tính số đo các góc $\\widehat{A}, \\widehat{B}, \\widehat{C}, \\widehat{D}$ của hình thoi.\n\\end{minipage}\\hfill\n\\begin{minipage}[t]{0.31\\linewidth}\\vspace{0pt}\n\\centering\n\\adjustbox{max width=\\linewidth, max totalheight=2.4cm}{\n\\begin{tikzpicture}[line width=0.8pt, font=\\small]\n  \\coordinate (vA) at (1.4,2.2);\n  \\coordinate (vB) at (2.7,1.1);\n  \\coordinate (vC) at (1.4,0.0);\n  \\coordinate (vD) at (0.1,1.1);\n  \\draw[ink,fill=brand!8] (vA) -- (vB) -- (vC) -- (vD) -- cycle;\n  \\draw[brand,line width=1.0pt] (vA) -- (vC);\n  \\node[above] at (vA) {$A$};\n  \\node[right] at (vB) {$B$};\n  \\node[below] at (vC) {$C$};\n  \\node[left] at (vD) {$D$};\n  \\node[brand,font=\\scriptsize] at (1.1,1.6) {$40^\\circ$};\n\\end{tikzpicture}\n}\n\\par\\vspace{2pt}{\\sffamily\\scriptsize\\itshape\\color{muted}Hình 14}\n\\end{minipage}",
+          "solution": "Xét hình thoi $ABCD$, đường chéo $AC$ là tia phân giác của góc $\\widehat{A}$.[[br]]\nDo đó $\\widehat{A} = 2 \\cdot \\widehat{CAD} = 2 \\cdot 40^\\circ = 80^\\circ$.[[br]]\nSuy ra $\\widehat{C} = \\widehat{A} = 80^\\circ$.[[br]]\nVì $AB \\parallel CD$ nên $\\widehat{B} = 180^\\circ - \\widehat{A} = 180^\\circ - 80^\\circ = 100^\\circ$.[[br]]\nSuy ra $\\widehat{D} = \\widehat{B} = 100^\\circ$.[[br]]\nVậy $\\widehat{A} = \\widehat{C} = 80^\\circ$ và $\\widehat{B} = \\widehat{D} = 100^\\circ$."
         },
         {
           "type": "problem",
           "label": "BTVN 8.",
-          "statement": "\\par\\nopagebreak\n\\begin{minipage}[t]{0.64\\linewidth}\\vspace{0pt}\nCho hình thoi $ABCD$ có $\\widehat{B} = 120^\\circ$ (Hình 15).[[br]] a) [NB] Tính số đo góc $\\widehat{A}$ của hình thoi.[[br]] b) [NB] Chứng minh tam giác $ABC$ là tam giác đều.\n\\end{minipage}\\hfill\n\\begin{minipage}[t]{0.31\\linewidth}\\vspace{0pt}\n\\centering\n\\adjustbox{max width=\\linewidth, max totalheight=2.4cm}{\n\\begin{tikzpicture}[line width=0.8pt, font=\\small]\n  \\coordinate (vA) at (1.6,2.4);\n  \\coordinate (vB) at (3.0,1.2);\n  \\coordinate (vC) at (1.6,0.0);\n  \\coordinate (vD) at (0.2,1.2);\n  \\draw[ink,fill=brand!8] (vA) -- (vB) -- (vC) -- (vD) -- cycle;\n  \\draw[brand,line width=1.0pt] (vA) -- (vC);\n  \\node[above] at (vA) {$A$};\n  \\node[right] at (vB) {$B$};\n  \\node[below] at (vC) {$C$};\n  \\node[left] at (vD) {$D$};\n  \\node[brand,font=\\scriptsize] at (2.5,1.2) {$120^\\circ$};\n\\end{tikzpicture}\n}\n\\par\\vspace{2pt}{\\sffamily\\scriptsize\\itshape\\color{muted}Hình 15}\n\\end{minipage}",
+          "level": 2,
           "tier": "btvn",
-          "level": 1,
-          "dang_id": "NB6",
-          "solution": "a) Vì $AB \\parallel CD$ nên $\\widehat{A} = 180^\\circ - \\widehat{B} = 180^\\circ - 120^\\circ = 60^\\circ$.[[br]] b) Tam giác $ABC$ có $AB = BC$ và $\\widehat{B}=60^\\circ$ (hoặc $\\widehat{BAC} = 60^\\circ$) nên là tam giác đều.[[br]] Vậy $\\widehat{A} = 60^\\circ$ và $\\triangle ABC$ là tam giác đều.",
-          "figure_given": true
+          "dang_id": "TH2",
+          "figure_given": true,
+          "writelines": 0,
+          "statement": "\\par\\nopagebreak\n\\begin{minipage}[t]{0.64\\linewidth}\\vspace{0pt}\n[TH] Cho hình bình hành $ABCD$ có hai đường chéo cắt nhau tại $O$. Biết $AC \\perp BD$ tại $O$ và $AB = 7\\text{ cm}$ (Hình 15). Chứng minh tứ giác $ABCD$ là hình thoi và tính chu vi của nó.\n\\end{minipage}\\hfill\n\\begin{minipage}[t]{0.31\\linewidth}\\vspace{0pt}\n\\centering\n\\adjustbox{max width=\\linewidth, max totalheight=2.4cm}{\n\\begin{tikzpicture}[line width=0.8pt, font=\\small]\n  \\coordinate (vA) at (1.3,2.2);\n  \\coordinate (vB) at (2.6,1.1);\n  \\coordinate (vC) at (1.3,0.0);\n  \\coordinate (vD) at (0.0,1.1);\n  \\coordinate (vO) at (1.3,1.1);\n  \\draw[ink,fill=brand!8] (vA) -- (vB) -- (vC) -- (vD) -- cycle;\n  \\draw[brand,line width=1.0pt] (vA) -- (vC);\n  \\draw[brand,line width=1.0pt] (vB) -- (vD);\n  \\fill[brand] (vO) circle (1.2pt) node[below right=1pt]{$O$};\n  \\node[above] at (vA) {$A$};\n  \\node[right] at (vB) {$B$};\n  \\node[below] at (vC) {$C$};\n  \\node[left] at (vD) {$D$};\n  \\draw[ink] (1.3, 1.25) -| (1.45, 1.1);\n\\end{tikzpicture}\n}\n\\par\\vspace{2pt}{\\sffamily\\scriptsize\\itshape\\color{muted}Hình 15}\n\\end{minipage}",
+          "solution": "Hình bình hành $ABCD$ có hai đường chéo vuông góc với nhau ($AC \\perp BD$) nên là hình thoi.[[br]]\nVì $ABCD$ là hình thoi nên bốn cạnh bằng nhau: $AB = BC = CD = DA = 7\\text{ cm}$.[[br]]\nChu vi hình thoi $ABCD$ là: $4 \\cdot 7 = 28\\text{ cm}$.[[br]]\nVậy tứ giác $ABCD$ là hình thoi và có chu vi bằng $28\\text{ cm}$."
         },
         {
           "type": "problem",
           "label": "BTVN 9.",
-          "statement": "\\par\\nopagebreak\n\\begin{minipage}[t]{0.64\\linewidth}\\vspace{0pt}\na) [TH] Cho hình thoi $ABCD$ có $\\widehat{CAD} = 40^\\circ$ (Hình 16). Tính các góc của hình thoi $ABCD$.[[br]] b) [TH] Cho hình thoi $ABCD$ có độ dài hai đường chéo $AC = 6\\text{ cm}, BD = 8\\text{ cm}$. Tính độ dài cạnh của hình thoi.\n\\end{minipage}\\hfill\n\\begin{minipage}[t]{0.31\\linewidth}\\vspace{0pt}\n\\centering\n\\adjustbox{max width=\\linewidth, max totalheight=2.4cm}{\n\\begin{tikzpicture}[line width=0.8pt, font=\\small]\n  \\coordinate (vA) at (1.6,2.4);\n  \\coordinate (vB) at (3.0,1.2);\n  \\coordinate (vC) at (1.6,0.0);\n  \\coordinate (vD) at (0.2,1.2);\n  \\draw[ink,fill=brand!8] (vA) -- (vB) -- (vC) -- (vD) -- cycle;\n  \\draw[brand,line width=1.0pt] (vA) -- (vC);\n  \\node[above] at (vA) {$A$};\n  \\node[right] at (vB) {$B$};\n  \\node[below] at (vC) {$C$};\n  \\node[left] at (vD) {$D$};\n  \\node[brand,font=\\scriptsize] at (1.3,1.9) {$40^\\circ$};\n\\end{tikzpicture}\n}\n\\par\\vspace{2pt}{\\sffamily\\scriptsize\\itshape\\color{muted}Hình 16}\n\\end{minipage}",
+          "level": 3,
           "tier": "btvn",
-          "level": 2,
-          "dang_id": "TH1",
-          "solution": "a) Vì $AC$ là phân giác $\\widehat{A}$ nên $\\widehat{A} = 2 \\cdot 40^\\circ = 80^\\circ \\implies \\widehat{C} = 80^\\circ$.[[br]]\\hspace*{1.4em}Suy ra $\\widehat{B} = \\widehat{D} = 180^\\circ - 80^\\circ = 100^\\circ$.[[br]]\\hspace*{1.4em}Vậy $\\widehat{A} = \\widehat{C} = 80^\\circ$ và $\\widehat{B} = \\widehat{D} = 100^\\circ$.[[br]] b) Gọi $O$ là giao điểm hai đường chéo. Ta có $OA = 3\\text{ cm}, OB = 4\\text{ cm}$ và $AC \\perp BD$.[[br]]\\hspace*{1.4em}Xét tam giác vuông $OAB$, ta có $AB^2 = OA^2 + OB^2 = 3^2 + 4^2 = 25 \\implies AB = 5\\text{ cm}$.[[br]]\\hspace*{1.4em}Vậy độ dài cạnh của hình thoi bằng $5\\text{ cm}$.",
-          "figure_given": true
+          "dang_id": "VD2",
+          "figure_given": true,
+          "writelines": 0,
+          "statement": "\\par\\nopagebreak\n\\begin{minipage}[t]{0.64\\linewidth}\\vspace{0pt}\n[VD] Cho tam giác $ABC$ cân tại $A$. Lấy điểm $D$ đối xứng với $A$ qua trung điểm $M$ của $BC$ (Hình 16). Chứng minh tứ giác $ABDC$ là hình thoi.\n\\end{minipage}\\hfill\n\\begin{minipage}[t]{0.31\\linewidth}\\vspace{0pt}\n\\centering\n\\adjustbox{max width=\\linewidth, max totalheight=2.4cm}{\n\\begin{tikzpicture}[line width=0.8pt, font=\\small]\n  \\coordinate (vA) at (1.5,2.4);\n  \\coordinate (vB) at (0.0,1.2);\n  \\coordinate (vC) at (3.0,1.2);\n  \\coordinate (vD) at (1.5,0.0);\n  \\coordinate (vM) at (1.5,1.2);\n  \\draw[ink,fill=brand!8] (vA) -- (vB) -- (vD) -- (vC) -- cycle;\n  \\draw[brand,line width=1.0pt] (vA) -- (vD);\n  \\draw[brand,line width=1.0pt] (vB) -- (vC);\n  \\fill[brand] (1.5,1.2) circle (1.3pt) node[below right=1pt]{$M$};\n  \\node[above] at (vA) {$A$};\n  \\node[left] at (vB) {$B$};\n  \\node[right] at (vC) {$C$};\n  \\node[below] at (vD) {$D$};\n  \\draw[ink] (1.5, 1.4) -| (1.7, 1.2);\n\\end{tikzpicture}\n}\n\\par\\vspace{2pt}{\\sffamily\\scriptsize\\itshape\\color{muted}Hình 16}\n\\end{minipage}",
+          "solution": "Xét tứ giác $ABDC$, ta có:[[br]]\n$M$ là trung điểm của $BC$ (giả thiết), $M$ là trung điểm của $AD$ (do $D$ đối xứng với $A$ qua $M$).[[br]]\nTứ giác $ABDC$ có hai đường chéo cắt nhau tại trung điểm của mỗi đường nên là hình bình hành.[[br]]\nMặt khác, $\\triangle ABC$ cân tại $A$ có $AM$ là đường trung tuyến nên $AM$ đồng thời là đường cao ($AD \\perp BC$).[[br]]\nHình bình hành $ABDC$ có hai đường chéo vuông góc với nhau nên là hình thoi.[[br]]\nVậy tứ giác $ABDC$ là hình thoi.",
+          "quy_trinh": [
+            "Bước 1 — Cái phải tìm là gì? Vị trí của điểm nào trên cạnh nào để tứ giác là hình thoi.",
+            "Bước 2 — Vẽ hình, đánh dấu các cặp cạnh song song đã cho trong giả thiết.",
+            "Bước 3 — Tứ giác có các cạnh đối song song là hình gì? Kết luận hình bình hành.",
+            "Bước 4 — Hình bình hành trở thành hình thoi khi đường chéo xuất phát từ đỉnh là tia gì?",
+            "Bước 5 — Đã dùng hết giả thiết chưa? Điểm cần tìm chính là giao điểm của đường phân giác với cạnh đối diện.",
+            "Bước 6 — Viết câu \\emph{Vậy…} nêu rõ vị trí của điểm cần tìm."
+          ]
         },
         {
           "type": "problem",
           "label": "BTVN 10.",
-          "statement": "\\par\\nopagebreak\n\\begin{minipage}[t]{0.64\\linewidth}\\vspace{0pt}\n[TH] Cho hình bình hành $ABCD$ có hai đường chéo cắt nhau tại $O$ và $AC \\perp BD$ (Hình 17). Chứng minh tứ giác $ABCD$ là hình thoi.\n\\end{minipage}\\hfill\n\\begin{minipage}[t]{0.31\\linewidth}\\vspace{0pt}\n\\centering\n\\adjustbox{max width=\\linewidth, max totalheight=2.4cm}{\n\\begin{tikzpicture}[line width=0.8pt, font=\\small]\n  \\coordinate (vA) at (1.6,2.4);\n  \\coordinate (vB) at (3.0,1.2);\n  \\coordinate (vC) at (1.6,0.0);\n  \\coordinate (vD) at (0.2,1.2);\n  \\coordinate (vO) at (1.6,1.2);\n  \\draw[ink,fill=brand!8] (vA) -- (vB) -- (vC) -- (vD) -- cycle;\n  \\draw[brand,line width=1.0pt] (vA) -- (vC);\n  \\draw[brand,line width=1.0pt] (vB) -- (vD);\n  \\fill[brand] (1.6,1.2) circle (1.3pt) node[below right=1pt]{$O$};\n  \\node[above] at (vA) {$A$};\n  \\node[right] at (vB) {$B$};\n  \\node[below] at (vC) {$C$};\n  \\node[left] at (vD) {$D$};\n  \\draw[ink] (1.6, 1.4) -| (1.8, 1.2);\n\\end{tikzpicture}\n}\n\\par\\vspace{2pt}{\\sffamily\\scriptsize\\itshape\\color{muted}Hình 17}\n\\end{minipage}",
+          "level": 4,
           "tier": "btvn",
-          "level": 2,
-          "dang_id": "TH2",
-          "solution": "Xét hình bình hành $ABCD$, ta có hai đường chéo $AC$ và $BD$ vuông góc với nhau tại $O$.[[br]]\\hspace*{1.4em}Theo dấu hiệu nhận biết, hình bình hành có hai đường chéo vuông góc là hình thoi.[[br]]\\hspace*{1.4em}Vậy $ABCD$ là hình thoi.",
-          "figure_given": true
-        },
-        {
-          "type": "problem",
-          "label": "BTVN 11.",
-          "statement": "\\par\\nopagebreak\n\\begin{minipage}[t]{0.64\\linewidth}\\vspace{0pt}\n[TH] Cho tam giác $ABC$ cân tại $A$. Lấy điểm $D$ đối xứng với $A$ qua trung điểm $M$ của $BC$ (Hình 18). Chứng minh tứ giác $ABDC$ là hình thoi.\n\\end{minipage}\\hfill\n\\begin{minipage}[t]{0.31\\linewidth}\\vspace{0pt}\n\\centering\n\\adjustbox{max width=\\linewidth, max totalheight=2.4cm}{\n\\begin{tikzpicture}[line width=0.8pt, font=\\small]\n  \\coordinate (vA) at (1.5,2.4);\n  \\coordinate (vB) at (0.0,1.2);\n  \\coordinate (vC) at (3.0,1.2);\n  \\coordinate (vD) at (1.5,0.0);\n  \\coordinate (vM) at (1.5,1.2);\n  \\draw[ink,fill=brand!8] (vA) -- (vB) -- (vD) -- (vC) -- cycle;\n  \\draw[brand,line width=1.0pt] (vA) -- (vD);\n  \\draw[brand,line width=1.0pt] (vB) -- (vC);\n  \\fill[brand] (1.5,1.2) circle (1.3pt) node[below right=1pt]{$M$};\n  \\node[above] at (vA) {$A$};\n  \\node[left] at (vB) {$B$};\n  \\node[right] at (vC) {$C$};\n  \\node[below] at (vD) {$D$};\n  \\draw[ink] (1.5, 1.4) -| (1.7, 1.2);\n\\end{tikzpicture}\n}\n\\par\\vspace{2pt}{\\sffamily\\scriptsize\\itshape\\color{muted}Hình 18}\n\\end{minipage}",
-          "tier": "btvn",
-          "level": 2,
-          "dang_id": "TH3",
-          "solution": "Tứ giác $ABDC$ có hai đường chéo $AD, BC$ cắt nhau tại trung điểm $M$ của mỗi đường nên là hình bình hành.[[br]]\\hspace*{1.4em}Vì $\\triangle ABC$ cân tại $A$ nên trung tuyến $AM$ đồng thời là đường cao $\\implies AD \\perp BC$.[[br]]\\hspace*{1.4em}Hình bình hành $ABDC$ có hai đường chéo vuông góc $AD \\perp BC$ nên là hình thoi.[[br]]\\hspace*{1.4em}Vậy $ABDC$ là hình thoi.",
-          "figure_given": true
+          "dang_id": "VDC1",
+          "figure_given": true,
+          "writelines": 0,
+          "statement": "\\par\\nopagebreak\n\\begin{minipage}[t]{0.64\\linewidth}\\vspace{0pt}\n[VDC] (Giữa kì I $-$ THCS Phú Châu) Cho hình thoi $ABCD$ có hai đường chéo cắt nhau tại $O$. Trên tia đối của tia $DA$ lấy điểm $E$ sao cho $DE = DA$ (Hình 17). Gọi $M$ là trung điểm của $CD$. Chứng minh ba điểm $B, M, E$ thẳng hàng.\n\\end{minipage}\\hfill\n\\begin{minipage}[t]{0.31\\linewidth}\\vspace{0pt}\n\\centering\n\\adjustbox{max width=\\linewidth, max totalheight=2.5cm}{\n\\begin{tikzpicture}[line width=0.8pt, font=\\small]\n  \\coordinate (vA) at (0.0,0.0);\n  \\coordinate (vB) at (2.0,0.0);\n  \\coordinate (vC) at (3.0,1.6);\n  \\coordinate (vD) at (1.0,1.6);\n  \\coordinate (vE) at (2.0,3.2);\n  \\coordinate (vO) at (1.5,0.8);\n  \\coordinate (vM) at (2.0,1.6);\n  \\draw[ink,fill=brand!8] (vA) -- (vB) -- (vC) -- (vD) -- cycle;\n  \\draw[brand,line width=1.0pt] (vA) -- (vC);\n  \\draw[brand,line width=1.0pt] (vB) -- (vD);\n  \\draw[ink] (vD) -- (vE) -- (vC);\n  \\draw[brand,dashed] (vB) -- (vE);\n  \\fill[brand] (vM) circle (1.2pt) node[below right=1pt]{$M$};\n  \\node[below left] at (vA) {$A$};\n  \\node[below right] at (vB) {$B$};\n  \\node[right] at (vC) {$C$};\n  \\node[left] at (vD) {$D$};\n  \\node[above] at (vE) {$E$};\n\\end{tikzpicture}\n}\n\\par\\vspace{2pt}{\\sffamily\\scriptsize\\itshape\\color{muted}Hình 17}\n\\end{minipage}",
+          "solution": "Xét hình thoi $ABCD$, ta có $BC \\parallel AD$ và $BC = AD$.[[br]]\nDo $E$ thuộc tia đối của tia $DA$ và $DE = DA$ nên $DE \\parallel BC$ và $DE = BC$.[[br]]\nTứ giác $BCED$ có một cặp cạnh đối song song và bằng nhau ($DE \\parallel BC, DE = BC$) nên là hình bình hành.[[br]]\nVì $BCED$ là hình bình hành nên hai đường chéo $BE$ và $CD$ cắt nhau tại trung điểm của mỗi đường.[[br]]\nMặt khác theo giả thiết, $M$ là trung điểm của $CD$.[[br]]\nDo đó $M$ cũng là trung điểm của đường chéo $BE$, suy ra ba điểm $B, M, E$ thẳng hàng.[[br]]\nVậy ba điểm $B, M, E$ thẳng hàng.",
+          "quy_trinh": [
+            "Bước 1 — Cái phải tìm là gì? Ba điểm nào phải thẳng hàng? Nối thử ba điểm ấy trên hình.",
+            "Bước 2 — Ba điểm thẳng hàng khi nào? Khi điểm ở giữa là trung điểm của đoạn nối hai điểm kia, hoặc tạo thành hai tia đối nhau.",
+            "Bước 3 — Điểm ở giữa đang là giao điểm hai đường chéo của hình nào? Sử dụng tính chất của hình thoi và hình bình hành phụ.",
+            "Bước 4 — Muốn đoạn thẳng đi qua điểm đó thì tứ giác liên quan phải là hình bình hành.",
+            "Bước 5 — Đã dùng hết giả thiết chưa? Giả thiết về tính chất đối xứng và song song cho ta cặp cạnh bằng nhau.",
+            "Bước 6 — Viết câu \\emph{Vậy…} kết luận ba điểm thẳng hàng."
+          ]
         }
       ],
       "teacher_note": "Giao 11 bài BTVN để HS rèn luyện kĩ năng tính toán và chứng minh hình thoi."
     }
-  ]
+  ],
+  "chuong": "chuong-03-tu-giac"
 }

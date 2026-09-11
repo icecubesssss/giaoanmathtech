@@ -1,0 +1,456 @@
+{
+  "slug": "phieu-c-giai-bai-toan-bang-cach-lap-he-phuong-trinh",
+  "title": "Giải bài toán bằng cách lập hệ phương trình",
+  "eyebrow": "ĐẠI SỐ — BUỔI 3 (TUẦN 6): SGK BÀI 3",
+  "grade_label": "Lớp 9 • Ôn vào 10",
+  "class_tier": "C",
+  "stages": [
+    {
+      "kind": "review",
+      "number": 1,
+      "title": "Khám phá",
+      "blocks": [
+        {
+          "type": "noted",
+          "variant": "note",
+          "text": "\\textbf{Trọng tâm đề thi Vào 10:} Bài toán thực tế lập phương trình hoặc hệ phương trình chiếm từ $1{,}5$ đến $2{,}0$ điểm (Câu III.2 và phần thực tế). [[br]] Lớp 9C cần nắm chắc lược đồ 3 bước chuẩn SGK: [[br]] $\\bullet$ \\textbf{Bước 1: Lập hệ:} Chọn hai ẩn, đặt đơn vị và điều kiện $\\to$ Biểu diễn các đại lượng chưa biết theo ẩn $\\to$ Lập hai phương trình. [[br]] $\\bullet$ \\textbf{Bước 2: Giải hệ:} Dùng thế hoặc cộng đại số. [[br]] $\\bullet$ \\textbf{Bước 3: Kết luận:} Đối chiếu nghiệm với điều kiện và trả lời kèm đơn vị."
+        }
+      ],
+      "solution": "Mục tiêu buổi học: Ăn trọn điểm bài toán thực tế lập hệ phương trình.",
+      "teacher_note": "Nhắc nhở HS luôn lập BẢNG ĐẠI LƯỢNG nháp trước khi viết bài giải."
+    },
+    {
+      "kind": "concept",
+      "number": 2,
+      "title": "Kiến thức cần nhớ",
+      "blocks": [
+        {
+          "type": "noted",
+          "variant": "note",
+          "text": "\\textbf{Bảng công thức các dạng toán thực tế thường gặp:} [[br]] $\\bullet$ \\textbf{Toán chuyển động:} Quãng đường $=$ Vận tốc $\\cdot$ Thời gian ($s = v \\cdot t$). [[br]] \\qquad $v_{\\text{xuôi}} = v_{\\text{thực}} + v_{\\text{dòng}};\\quad v_{\\text{ngược}} = v_{\\text{thực}} - v_{\\text{dòng}}$. [[br]] $\\bullet$ \\textbf{Toán mua sắm/tiền tệ:} Tổng số tiền $=$ Đơn giá $\\cdot$ Số lượng. [[br]] $\\bullet$ \\textbf{Toán hình học:} Nửa chu vi hình chữ nhật $=$ Chiều dài $+$ Chiều rộng ($x + y = \\dfrac{P}{2}$)."
+        },
+        {
+          "type": "noted",
+          "variant": "trap",
+          "text": "\\textbf{Các lỗi hay bị trừ điểm:} [[br]] $\\bullet$ Quên đặt điều kiện cho ẩn (ví dụ: $x, y \\in \\mathbb{N}^*$ khi đếm số lượng người, số quả, số xe...). [[br]] $\\bullet$ Quên đổi đơn vị thời gian (phút ra giờ) trong bài toán chuyển động. [[br]] $\\bullet$ Quên chia đôi chu vi khi lập phương trình hình chữ nhật."
+        },
+        {
+          "type": "noted",
+          "variant": "tip",
+          "text": "\\textbf{Ví dụ mồi trực quan:} [[br]] $\\bullet$ \\emph{Xuôi dòng – ngược dòng:} Chiếc thuyền xuôi dòng được dòng nước đẩy thêm nên vận tốc tăng ($v_{\\text{xuôi}} = v_{\\text{thực}} + v_{\\text{nước}}$); khi ngược dòng bị nước cản nên vận tốc giảm. [[br]] $\\bullet$ \\emph{Làm chung – làm riêng:} Cả hai người cùng làm giống như cùng chia nhau ăn một chiếc bánh, mỗi giờ mỗi người làm được một phần công việc."
+        }
+      ]
+    },
+    {
+      "kind": "practice1",
+      "number": 3,
+      "title": "Luyện tập 1 — Giàn giáo bóc tách bước lập hệ",
+      "blocks": [
+        {
+          "type": "para",
+          "text": "\\textbf{Dạng NB1: Chọn hai ẩn số và đặt điều kiện thích hợp}"
+        },
+        {
+          "type": "problem",
+          "label": "Bài 1.",
+          "dang_id": "NB1",
+          "level": 1,
+          "tier": "onclass",
+          "statement": "Nêu cách gọi hai ẩn số kèm đơn vị và điều kiện cho mỗi bài toán sau: [[br]] a) Tính số học sinh nam và số học sinh nữ của lớp 9A biết lớp có $40$ học sinh. [[br]] b) Tính chiều dài và chiều rộng của một mảnh vườn hình chữ nhật. [[br]] c) Tính vận tốc riêng của ca nô và vận tốc dòng nước. [[br]] d) Tính giá tiền một quyển vở và một chiếc bút bi.",
+          "solution": "Ta có cách gọi ẩn và điều kiện chuẩn: [[br]] a) Gọi số HS nam là $x$, HS nữ là $y$ (học sinh; $x, y \\in \\mathbb{N}^*, x, y < 40$). [[br]] b) Gọi chiều dài là $x$, chiều rộng là $y$ (m; $x > y > 0$). [[br]] c) Gọi vận tốc riêng ca nô là $x$, vận tốc dòng nước là $y$ (km/h; $x > y > 0$). [[br]] d) Gọi giá tiền quyển vở là $x$, chiếc bút là $y$ (đồng; $x, y > 0$).",
+          "writelines": 0
+        },
+        {
+          "type": "para",
+          "text": "\\textbf{Dạng NB2: Biểu diễn mối quan hệ tổng/hiệu số lượng}"
+        },
+        {
+          "type": "problem",
+          "label": "Bài 2.",
+          "dang_id": "NB2",
+          "level": 1,
+          "tier": "onclass",
+          "statement": "Viết phương trình biểu diễn các mối quan hệ sau: [[br]] a) Hai bạn An và Bình có tất cả $50$ viên bi: $\\dots$ [[br]] b) Số bi của An nhiều hơn số bi của Bình là $10$ viên: $\\dots$ [[br]] c) Số học sinh nam gấp đôi số học sinh nữ: $\\dots$ [[br]] d) Tổng số gà và vịt là $120$ con: $\\dots$",
+          "solution": "Gọi các đại lượng là $x$ và $y$: [[br]] a) $x + y = 50$. [[br]] b) $x - y = 10$. [[br]] c) $x = 2y$ (hay $x - 2y = 0$). [[br]] d) $x + y = 120$.",
+          "writelines": 0
+        },
+        {
+          "type": "para",
+          "text": "\\textbf{Dạng NB3: Điền khuyết bước lập bảng đại lượng}"
+        },
+        {
+          "type": "problem",
+          "label": "Bài 3.",
+          "dang_id": "NB3",
+          "level": 1,
+          "tier": "onclass",
+          "statement": "Điền vào chỗ chấm để hoàn thành bảng biểu diễn bài toán: «Một ô tô đi quãng đường $120$ km lúc đi và $120$ km lúc về»: [[br]] a) Gọi vận tốc lúc đi là $x$ (km/h, $x > 0$), thời gian lúc đi là: $[[blank:2.0cm]]$ (h). [[br]] b) Nếu vận tốc lúc về lớn hơn lúc đi là $10$ km/h thì vận tốc lúc về là: $[[blank:2.0cm]]$ (km/h). [[br]] c) Thời gian lúc về là: $[[blank:2.0cm]]$ (h). [[br]] d) Biết thời gian về ít hơn thời gian đi là $30$ phút ($\\dfrac{1}{2}$ h), ta có phương trình: $[[blank:2.5cm]]$.",
+          "solution": "a) $\\dfrac{120}{x}$. [[br]] b) $x + 10$. [[br]] c) $\\dfrac{120}{x+10}$. [[br]] d) $\\dfrac{120}{x} - \\dfrac{120}{x+10} = \\dfrac{1}{2}$.",
+          "writelines": 0
+        },
+        {
+          "type": "para",
+          "text": "\\textbf{Dạng NB4: Biểu diễn số tiền theo đơn giá}"
+        },
+        {
+          "type": "problem",
+          "label": "Bài 4.",
+          "dang_id": "NB4",
+          "level": 1,
+          "tier": "onclass",
+          "statement": "Gọi giá $1$ quyển vở là $x$ (nghìn đồng), giá $1$ chiếc bút là $y$ (nghìn đồng). Viết phương trình cho mỗi câu sau: [[br]] a) Mua $3$ quyển vở và $2$ chiếc bút hết $35$ nghìn đồng: $\\dots$ [[br]] b) Mua $5$ quyển vở và $4$ chiếc bút hết $62$ nghìn đồng: $\\dots$ [[br]] c) Giá tiền $1$ quyển vở đắt hơn $1$ chiếc bút là $3$ nghìn đồng: $\\dots$ [[br]] d) Mua $2$ quyển vở và $1$ chiếc bút hết $22$ nghìn đồng: $\\dots$",
+          "solution": "a) $3x + 2y = 35$. [[br]] b) $5x + 4y = 62$. [[br]] c) $x - y = 3$. [[br]] d) $2x + y = 22$.",
+          "writelines": 0
+        },
+        {
+          "type": "para",
+          "text": "\\textbf{Dạng NB5: Biểu diễn quãng đường và thời gian}"
+        },
+        {
+          "type": "problem",
+          "label": "Bài 5.",
+          "dang_id": "NB5",
+          "level": 1,
+          "tier": "onclass",
+          "statement": "Điền biểu thức thích hợp vào chỗ chấm: [[br]] a) Một người đi xe máy với vận tốc $x$ (km/h) trong $2$ giờ, quãng đường đi được là: $s = \\dots$ [[br]] b) Đi xe đạp quãng đường $30$ km với vận tốc $y$ (km/h), thời gian đi là: $t = \\dots$ [[br]] c) Đi bộ trong $45$ phút với vận tốc $v$ (km/h), quãng đường đi được là: $s = \\dots$ [[br]] d) Hai xe khởi hành cùng lúc đi ngược chiều gặp nhau sau $2$ giờ, tổng quãng đường hai xe đi là: $\\dots$",
+          "solution": "a) $s = 2x$ (km). [[br]] b) $t = \\dfrac{30}{y}$ (giờ). [[br]] c) Đổi $45$ phút $= \\dfrac{3}{4}$ giờ $\\implies s = \\dfrac{3}{4}v$ (km). [[br]] d) $2(v_1 + v_2)$ (km).",
+          "writelines": 0
+        },
+        {
+          "type": "para",
+          "text": "\\textbf{Dạng NB6: Vận tốc xuôi dòng và ngược dòng}"
+        },
+        {
+          "type": "problem",
+          "label": "Bài 6.",
+          "dang_id": "NB6",
+          "level": 1,
+          "tier": "onclass",
+          "statement": "Gọi vận tốc riêng của ca nô là $x$ (km/h), vận tốc dòng nước là $y$ (km/h, $x > y > 0$). Viết biểu thức cho mỗi đại lượng sau: [[br]] a) Vận tốc của ca nô khi xuôi dòng: $\\dots$ [[br]] b) Vận tốc của ca nô khi ngược dòng: $\\dots$ [[br]] c) Quãng đường ca nô đi xuôi dòng trong $3$ giờ: $\\dots$ [[br]] d) Quãng đường ca nô đi ngược dòng trong $4$ giờ: $\\dots$",
+          "solution": "a) $x + y$ (km/h). [[br]] b) $x - y$ (km/h). [[br]] c) $3(x + y)$ (km). [[br]] d) $4(x - y)$ (km).",
+          "writelines": 0
+        },
+        {
+          "type": "para",
+          "text": "\\textbf{Dạng NB7: Chu vi và diện tích hình chữ nhật}"
+        },
+        {
+          "type": "problem",
+          "label": "Bài 7.",
+          "dang_id": "NB7",
+          "level": 1,
+          "tier": "onclass",
+          "statement": "Gọi chiều dài hình chữ nhật là $x$ (m), chiều rộng là $y$ (m, $x > y > 0$): [[br]] a) Chu vi hình chữ nhật là $40$ m, phương trình nửa chu vi là: $\\dots$ [[br]] b) Nếu tăng chiều dài $3$ m và giảm chiều rộng $2$ m thì kích thước mới là: $\\dots$ [[br]] c) Diện tích ban đầu của hình chữ nhật là: $\\dots$ [[br]] d) Chiều dài hơn chiều rộng $5$ m, phương trình là: $\\dots$",
+          "solution": "a) $x + y = 20$. [[br]] b) Chiều dài mới: $x + 3$; chiều rộng mới: $y - 2$. [[br]] c) $xy$ (m$^2$). [[br]] d) $x - y = 5$.",
+          "writelines": 0
+        },
+        {
+          "type": "para",
+          "text": "\\textbf{Dạng NB8: Trắc nghiệm lựa chọn hệ phương trình đúng}"
+        },
+        {
+          "type": "problem",
+          "label": "Bài 8.",
+          "dang_id": "NB8",
+          "level": 1,
+          "tier": "onclass",
+          "statement": "Chọn phương án đúng: [[br]] a) Hai số có tổng bằng $25$ và hiệu bằng $7$. Hệ phương trình tìm hai số đó là: \\quad A. $\\begin{cases} x+y=25 \\\\ x-y=7 \\end{cases}$ \\quad B. $\\begin{cases} x+y=7 \\\\ x-y=25 \\end{cases}$ [[br]] b) Mua $2$ bút và $3$ vở hết $40$ nghìn; $4$ bút và $1$ vở hết $30$ nghìn. Hệ phương trình là: \\quad A. $\\begin{cases} 2x+3y=40 \\\\ 4x+y=30 \\end{cases}$ \\quad B. $\\begin{cases} 3x+2y=40 \\\\ x+4y=30 \\end{cases}$ [[br]] c) Mảnh đất có chu vi $50$ m, chiều dài hơn chiều rộng $5$ m. Hệ phương trình là: \\quad A. $\\begin{cases} x+y=50 \\\\ x-y=5 \\end{cases}$ \\quad B. $\\begin{cases} x+y=25 \\\\ x-y=5 \\end{cases}$ [[br]] d) Một ca nô xuôi dòng $2$ giờ và ngược dòng $3$ giờ đi được $80$ km. Biểu thức đúng là: \\quad A. $2(x+y) + 3(x-y) = 80$ \\quad B. $2(x-y) + 3(x+y) = 80$",
+          "solution": "a) A. [[br]] b) A. [[br]] c) B (nửa chu vi là $25$). [[br]] d) A.",
+          "writelines": 0
+        }
+      ]
+    },
+    {
+      "kind": "practice2",
+      "number": 4,
+      "title": "Luyện tập 2 — Các bài toán thực tế",
+      "blocks": [
+        {
+          "type": "para",
+          "text": "\\textbf{Dạng TH1: Bài toán tìm hai số}"
+        },
+        {
+          "type": "noted",
+          "variant": "example",
+          "text": "\\textbf{Ví dụ 1.} Tìm hai số tự nhiên biết tổng của chúng bằng $1006$. Nếu lấy số lớn chia cho số nhỏ thì được thương là $2$ và số dư là $124$. [[br]] {\\sffamily\\bfseries\\color{brand}Lời giải} [[br]] \\hspace*{1.4em}Gọi số lớn là $x$, số nhỏ là $y$ ($x, y \\in \\mathbb{N}, x > y > 124$). [[br]] \\hspace*{1.4em}Vì tổng hai số bằng $1006$ nên ta có phương trình: $x + y = 1006$. [[br]] \\hspace*{1.4em}Vì số lớn chia số nhỏ được thương $2$ dư $124$ nên ta có: $x = 2y + 124 \\implies x - 2y = 124$. [[br]] \\hspace*{1.4em}Ta có hệ phương trình: $\\begin{cases} x + y = 1006 \\\\ x - 2y = 124 \\end{cases}$. [[br]] \\hspace*{1.4em}Trừ từng vế hai phương trình, ta được: $3y = 882 \\implies y = 294$ (thỏa mãn). [[br]] \\hspace*{1.4em}Thay $y = 294$ vào PT(1): $x + 294 = 1006 \\implies x = 712$ (thỏa mãn). [[br]] Vậy số lớn là $712$, số nhỏ là $294$."
+        },
+        {
+          "type": "problem",
+          "label": "Bài 9.",
+          "dang_id": "TH1",
+          "level": 2,
+          "tier": "onclass",
+          "statement": "Giải các bài toán sau bằng cách lập hệ phương trình: [[br]] a) Tìm hai số biết tổng của chúng bằng $85$ và số thứ nhất gấp $4$ lần số thứ hai. [[br]] b) Hai số có hiệu bằng $32$. Tỉ số giữa số bé và số lớn là $\\dfrac{3}{5}$. Tìm hai số đó.",
+          "solution": "Ta có: [[br]] Theo đề bài, ta lập và giải hệ phương trình: [[br]] a) Gọi hai số là $x, y$. Hệ: $\\begin{cases} x+y=85 \\\\ x=4y \\end{cases} \\implies 5y=85 \\implies y=17, x=68$. [[br]] b) Gọi hai số là $x, y$ ($x > y$). Hệ: $\\begin{cases} x-y=32 \\\\ \\dfrac{y}{x}=\\dfrac{3}{5} \\end{cases} \\implies \\begin{cases} x-y=32 \\\\ 5y-3x=0 \\end{cases} \\implies x = 80, y = 48$. [[br]] Vậy câu a hai số là $68$ và $17$; câu b hai số là $80$ và $48$.",
+          "writelines": 6
+        },
+        {
+          "type": "para",
+          "text": "\\textbf{Dạng TH2: Bài toán thực tế mua sắm và chi phí}"
+        },
+        {
+          "type": "noted",
+          "variant": "example",
+          "text": "\\textbf{Ví dụ 2.} Bạn Lan mua $2$ cốc trà sữa và $3$ chiếc bánh ngọt hết $105$ nghìn đồng. Bạn Mai mua $3$ cốc trà sữa và $1$ chiếc bánh ngọt cùng loại hết $105$ nghìn đồng. Tính giá tiền một cốc trà sữa và một chiếc bánh ngọt. [[br]] {\\sffamily\\bfseries\\color{brand}Lời giải} [[br]] \\hspace*{1.4em}Gọi giá tiền $1$ cốc trà sữa là $x$ (nghìn đồng), $1$ chiếc bánh ngọt là $y$ (nghìn đồng) ($x, y > 0$). [[br]] \\hspace*{1.4em}Theo bài ra, ta có hệ phương trình: $\\begin{cases} 2x + 3y = 105 \\\\ 3x + y = 105 \\end{cases}$. [[br]] \\hspace*{1.4em}Nhân phương trình (2) với $3$: $\\begin{cases} 2x + 3y = 105 \\\\ 9x + 3y = 315 \\end{cases}$. [[br]] \\hspace*{1.4em}Trừ từng vế: $7x = 210 \\implies x = 30$ (thỏa mãn). [[br]] \\hspace*{1.4em}Thay vào PT(2): $3(30) + y = 105 \\implies y = 15$ (thỏa mãn). [[br]] Vậy $1$ cốc trà sữa giá $30$ nghìn đồng, $1$ chiếc bánh ngọt giá $15$ nghìn đồng."
+        },
+        {
+          "type": "problem",
+          "label": "Bài 10.",
+          "dang_id": "TH2",
+          "level": 2,
+          "tier": "onclass",
+          "statement": "Giải các bài toán sau bằng cách lập hệ phương trình: [[br]] a) Bác An mua $3$ kg cam và $2$ kg táo hết $165$ nghìn đồng. Bác Bình mua $2$ kg cam và $3$ kg táo cùng loại hết $160$ nghìn đồng. Tính giá tiền $1$ kg cam và $1$ kg táo. [[br]] b) Một rạp chiếu phim bán được $150$ vé gồm vé người lớn và vé trẻ em, thu về tổng cộng $12$ triệu đồng. Biết giá vé người lớn là $100$ nghìn đồng, vé trẻ em là $60$ nghìn đồng. Hỏi rạp đã bán bao nhiêu vé mỗi loại?",
+          "solution": "Ta có: [[br]] Theo đề bài, ta lập và giải hệ phương trình: [[br]] a) Gọi giá cam là $x$, giá táo là $y$ (nghìn đồng). Hệ: $\\begin{cases} 3x+2y=165 \\\\ 2x+3y=160 \\end{cases} \\implies x = 35, y = 30$. Giá $1$ kg cam là $35$ nghìn đồng, $1$ kg táo là $30$ nghìn đồng. [[br]] b) Gọi số vé người lớn là $x$, vé trẻ em là $y$ (vé, $x, y \\in \\mathbb{N}^*$). Hệ: $\\begin{cases} x+y=150 \\\\ 100x+60y=12000 \\end{cases} \\implies x = 75, y = 75$. Rạp bán được $75$ vé người lớn và $75$ vé trẻ em. [[br]] Vậy kết quả được xác định đầy đủ.",
+          "writelines": 6
+        },
+        {
+          "type": "para",
+          "text": "\\textbf{Dạng TH3: Bài toán hình học thực tế}"
+        },
+        {
+          "type": "problem",
+          "label": "Bài 11.",
+          "dang_id": "TH3",
+          "level": 2,
+          "tier": "onclass",
+          "statement": "Giải các bài toán sau: [[br]] a) Một thửa ruộng hình chữ nhật có chu vi $100$ m. Nếu tăng chiều dài thêm $5$ m và giảm chiều rộng đi $5$ m thì diện tích giảm đi $50$ m$^2$. Tính kích thước thửa ruộng ban đầu. [[br]] b) Một khu vườn hình chữ nhật có chu vi $72$ m. Biết rằng $2$ lần chiều dài hơn $3$ lần chiều rộng là $4$ m. Tính diện tích khu vườn.",
+          "solution": "Ta có: [[br]] Theo đề bài, ta lập và giải hệ phương trình: [[br]] a) Gọi chiều dài là $x$, rộng là $y$ ($x > y > 5$). Nửa chu vi $x+y=50$. Diện tích: $(x+5)(y-5) = xy - 50 \\implies -5x + 5y - 25 = -50 \\implies x - y = 5$. Hệ: $\\begin{cases} x+y=50 \\\\ x-y=5 \\end{cases} \\implies x = 27{,}5; y = 22{,}5$. [[br]] b) Nửa chu vi: $x+y=36$. Ta có hệ: $\\begin{cases} x+y=36 \\\\ 2x-3y=4 \\end{cases} \\implies x = 22{,}4; y = 13{,}6$. Diện tích: $22{,}4 \\cdot 13{,}6 = 304{,}64$ m$^2$. [[br]] Vậy các kích thước được tính chính xác.",
+          "writelines": 6
+        },
+        {
+          "type": "para",
+          "text": "\\textbf{Dạng TH4: Bài toán chia tổ, phân phối}"
+        },
+        {
+          "type": "problem",
+          "label": "Bài 12.",
+          "dang_id": "TH4",
+          "level": 2,
+          "tier": "onclass",
+          "statement": "Giải bài toán: [[br]] a) Lớp 9A dự định chia đều một số vở thành các phần quà. Nếu mỗi phần quà có $6$ quyển thì thừa $5$ quyển. Nếu mỗi phần quà có $7$ quyển thì thiếu $15$ quyển. Hỏi có bao nhiêu phần quà và bao nhiêu quyển vở? [[br]] b) Một đoàn xe vận tải được điều đi chở $140$ tấn hàng. Lúc sắp khởi hành có $2$ xe được điều đi làm nhiệm vụ khác, nên mỗi xe còn lại phải chở thêm $1$ tấn hàng. Tính số xe ban đầu.",
+          "solution": "Ta có: [[br]] Theo đề bài, ta lập và giải hệ phương trình: [[br]] a) Gọi số phần quà là $x$, số quyển vở là $y$ ($x, y \\in \\mathbb{N}^*$). Hệ: $\\begin{cases} y = 6x + 5 \\\\ y = 7x - 15 \\end{cases} \\implies 7x - 15 = 6x + 5 \\implies x = 20, y = 125$. Có $20$ phần quà và $125$ quyển vở. [[br]] b) Gọi số xe ban đầu là $x$ (xe), mỗi xe chở $y$ tấn ($x, y \\in \\mathbb{N}^*$). Hệ: $\\begin{cases} xy = 140 \\\\ (x-2)(y+1) = 140 \\end{cases} \\implies x - 2y = 2$. Thay $y = \\dfrac{140}{x} \\implies x^2 - 2x - 280 = 0 \\implies x = 20, y = 7$. Số xe ban đầu là $20$ xe. [[br]] Vậy kết quả được xác định đầy đủ.",
+          "writelines": 6
+        },
+        {
+          "type": "para",
+          "text": "\\textbf{Dạng VD1: Bài toán thực tế chuyển động}"
+        },
+        {
+          "type": "noted",
+          "variant": "example",
+          "text": "\\textbf{Ví dụ 3.} Một ca nô chạy trên sông xuôi dòng $84$ km và ngược dòng $44$ km hết tất cả $5$ giờ. Một lần khác, ca nô chạy xuôi dòng $112$ km và ngược dòng $110$ km thì hết $9$ giờ. Tính vận tốc riêng của ca nô và vận tốc của dòng nước (biết vận tốc dòng nước không đổi). [[br]] {\\sffamily\\bfseries\\color{brand}Lời giải} [[br]] \\hspace*{1.4em}Gọi vận tốc riêng của ca nô là $x$ (km/h), vận tốc dòng nước là $y$ (km/h) ($x > y > 0$). [[br]] \\hspace*{1.4em}Vận tốc xuôi dòng là $x + y$ (km/h); vận tốc ngược dòng là $x - y$ (km/h). [[br]] \\hspace*{1.4em}Thời gian xuôi dòng lần $1$ là $\\dfrac{84}{x+y}$ (h); ngược dòng là $\\dfrac{44}{x-y}$ (h). [[br]] \\hspace*{1.4em}Ta có phương trình: $\\dfrac{84}{x+y} + \\dfrac{44}{x-y} = 5$. [[br]] \\hspace*{1.4em}Lần $2$ tương tự ta có phương trình: $\\dfrac{112}{x+y} + \\dfrac{110}{x-y} = 9$. [[br]] \\hspace*{1.4em}Đặt $u = \\dfrac{1}{x+y},\\; v = \\dfrac{1}{x-y}$ ($u, v > 0$). Ta được hệ: [[br]] \\hspace*{1.4em}$\\begin{cases} 84u + 44v = 5 \\\\ 112u + 110v = 9 \\end{cases} \\implies u = \\dfrac{1}{28},\\; v = \\dfrac{1}{22}$. [[br]] \\hspace*{1.4em}Suy ra $\\begin{cases} x + y = 28 \\\\ x - y = 22 \\end{cases} \\implies 2x = 50 \\implies x = 25$ (thỏa mãn); $y = 3$ (thỏa mãn). [[br]] Vậy vận tốc riêng của ca nô là $25$ km/h, vận tốc dòng nước là $3$ km/h."
+        },
+        {
+          "type": "problem",
+          "label": "Bài 13.",
+          "dang_id": "VD1",
+          "level": 3,
+          "tier": "onclass",
+          "statement": "Một ô tô và một xe máy khởi hành cùng một lúc từ hai địa điểm A và B cách nhau $180$ km, đi ngược chiều nhau và gặp nhau sau $2$ giờ. Biết rằng mỗi giờ ô tô đi nhanh hơn xe máy là $10$ km. Tính vận tốc của mỗi xe.",
+          "solution": "Ta có: [[br]] Theo bài ra, ta gọi vận tốc ô tô là $x$ (km/h), xe máy là $y$ (km/h) ($x > y > 0$). [[br]] Vì mỗi giờ ô tô đi nhanh hơn xe máy $10$ km nên: $x - y = 10$. [[br]] Sau $2$ giờ hai xe gặp nhau nên tổng quãng đường là $180$ km: $2x + 2y = 180 \\implies x + y = 90$. [[br]] Ta có hệ: $\\begin{cases} x - y = 10 \\\\ x + y = 90 \\end{cases} \\implies 2x = 100 \\implies x = 50$ (thỏa mãn); $y = 40$ (thỏa mãn). [[br]] Vậy vận tốc ô tô là $50$ km/h, vận tốc xe máy là $40$ km/h.",
+          "writelines": 8
+        },
+        {
+          "type": "para",
+          "text": "\\textbf{Dạng VD2: Bài toán thực tế làm chung làm riêng}"
+        },
+        {
+          "type": "problem",
+          "label": "Bài 14.",
+          "dang_id": "VD2",
+          "level": 3,
+          "tier": "onclass",
+          "statement": "Hai người thợ cùng làm một công việc thì hoàn thành trong $16$ giờ. Nếu người thứ nhất làm trong $3$ giờ và người thứ hai làm trong $6$ giờ thì chỉ hoàn thành được $25\\%$ công việc. Hỏi nếu làm riêng thì mỗi người hoàn thành công việc đó trong bao lâu?",
+          "solution": "Ta có: [[br]] Theo đề bài, ta có: [[br]] Theo bài ra, gọi thời gian người thứ nhất và thứ hai làm riêng xong việc là $x, y$ (giờ, $x, y > 16$). [[br]] Trong $1$ giờ, người 1 làm được $\\dfrac{1}{x}$, người 2 làm được $\\dfrac{1}{y}$ công việc. [[br]] Cả hai cùng làm trong $1$ giờ được $\\dfrac{1}{16}$ công việc: $\\dfrac{1}{x} + \\dfrac{1}{y} = \\dfrac{1}{16}$. [[br]] Người 1 làm $3$ giờ, người 2 làm $6$ giờ được $25\\% = \\dfrac{1}{4}$ công việc: $\\dfrac{3}{x} + \\dfrac{6}{y} = \\dfrac{1}{4}$. [[br]] Đặt $u = \\dfrac{1}{x}, v = \\dfrac{1}{y}$. Hệ: $\\begin{cases} u+v=\\dfrac{1}{16} \\\\ 3u+6v=\\dfrac{1}{4} \\end{cases} \\implies u = \\dfrac{1}{24}, v = \\dfrac{1}{48} \\implies x = 24, y = 48$ (thỏa mãn). [[br]] Vậy nếu làm riêng, người thứ nhất mất $24$ giờ, người thứ hai mất $48$ giờ.",
+          "writelines": 8
+        }
+      ]
+    },
+    {
+      "kind": "reflection",
+      "number": 5,
+      "title": "Về đích \\& Bài tập về nhà",
+      "blocks": [
+        {
+          "type": "mindmap",
+          "caption": "Sơ đồ 3 bước giải bài toán bằng cách lập hệ phương trình",
+          "root": "Giải bài toán bằng cách lập hệ PT",
+          "branches": [
+            {
+              "label": "Bước 1: Lập hệ phương trình",
+              "children": [
+                {
+                  "label": "Chọn 2 ẩn, đặt đơn vị và điều kiện"
+                },
+                {
+                  "label": "Lập bảng đại lượng nháp liên kết các yếu tố"
+                },
+                {
+                  "label": "Thiết lập 2 phương trình theo giả thiết"
+                }
+              ]
+            },
+            {
+              "label": "Bước 2 \\& 3: Giải và kết luận",
+              "children": [
+                {
+                  "label": "Giải hệ bằng phương pháp thế hoặc cộng đại số"
+                },
+                {
+                  "label": "Đối chiếu nghiệm với điều kiện ban đầu"
+                },
+                {
+                  "label": "Trả lời câu hỏi của bài toán kèm đơn vị"
+                }
+              ]
+            }
+          ]
+        },
+        {
+          "type": "para",
+          "text": "\\textbf{BÀI TẬP VỀ NHÀ (BTVN)}"
+        },
+        {
+          "type": "problem",
+          "label": "BTVN 1.",
+          "dang_id": "NB1",
+          "level": 1,
+          "tier": "btvn",
+          "statement": "Chọn ẩn và đặt điều kiện cho bài toán: [[br]] a) Tìm hai số nguyên biết tổng bằng $30$. [[br]] b) Một xe tải và một xe con đi từ A đến B. [[br]] c) Chiều dài và chiều rộng của sân bóng hình chữ nhật.",
+          "solution": "Ta có: [[br]] Theo quy chuẩn giải toán: [[br]] a) Gọi hai số là $x, y \\in \\mathbb{Z}$. [[br]] b) Gọi vận tốc xe tải là $x$ (km/h), xe con là $y$ (km/h) ($y > x > 0$). [[br]] c) Gọi chiều dài là $x$ (m), chiều rộng là $y$ (m) ($x > y > 0$).",
+          "writelines": 0
+        },
+        {
+          "type": "problem",
+          "label": "BTVN 2.",
+          "dang_id": "NB2",
+          "level": 1,
+          "tier": "btvn",
+          "statement": "Viết phương trình cho các mối liên hệ sau: [[br]] a) Số lớn hơn số bé $15$ đơn vị: $\\dots$ [[br]] b) Tổng hai số bằng $150$: $\\dots$ [[br]] c) Số thứ nhất bằng $\\dfrac{2}{3}$ số thứ hai: $\\dots$",
+          "solution": "Ta có: [[br]] Gọi hai số là $x$ và $y$ ($x > y$): [[br]] a) $x - y = 15$. [[br]] b) $x + y = 150$. [[br]] c) $x = \\dfrac{2}{3}y \\implies 3x - 2y = 0$.",
+          "writelines": 0
+        },
+        {
+          "type": "problem",
+          "label": "BTVN 3.",
+          "dang_id": "NB3",
+          "level": 1,
+          "tier": "btvn",
+          "statement": "Điền vào chỗ chấm: Một người đi xe đạp từ A đến B dài $24$ km: [[br]] a) Vận tốc đi là $x$ (km/h, $x > 0$), thời gian đi là: $[[blank:1.5cm]]$ (h). [[br]] b) Vận tốc về là $y$ (km/h, $y > 0$), thời gian về là: $[[blank:1.5cm]]$ (h). [[br]] c) Thời gian về ít hơn thời gian đi $20$ phút ($\\dfrac{1}{3}$ h), phương trình là: $[[blank:2.5cm]]$.",
+          "solution": "Ta có: [[br]] a) $\\dfrac{24}{x}$. [[br]] b) $\\dfrac{24}{y}$. [[br]] c) $\\dfrac{24}{x} - \\dfrac{24}{y} = \\dfrac{1}{3}$.",
+          "writelines": 0
+        },
+        {
+          "type": "problem",
+          "label": "BTVN 4.",
+          "dang_id": "NB4",
+          "level": 1,
+          "tier": "btvn",
+          "statement": "Viết phương trình biểu diễn chi phí: [[br]] a) Mua $4$ cây bút và $5$ cuốn tập hết $65$ nghìn đồng: $\\dots$ [[br]] b) Mua $2$ cây bút và $3$ cuốn tập hết $37$ nghìn đồng: $\\dots$ [[br]] c) Giá tiền $1$ cuốn tập đắt hơn $1$ cây bút là $3$ nghìn đồng: $\\dots$",
+          "solution": "Ta có: [[br]] Gọi giá bút là $x$, giá tập là $y$: [[br]] a) $4x + 5y = 65$. [[br]] b) $2x + 3y = 37$. [[br]] c) $y - x = 3$.",
+          "writelines": 0
+        },
+        {
+          "type": "problem",
+          "label": "BTVN 5.",
+          "dang_id": "NB5",
+          "level": 1,
+          "tier": "btvn",
+          "statement": "Viết biểu thức quãng đường: [[br]] a) Đi ô tô với vận tốc $v$ trong $3{,}5$ giờ: $s = \\dots$ [[br]] b) Đi tàu hỏa quãng đường $s$ km trong $4$ giờ, vận tốc là: $v = \\dots$",
+          "solution": "Ta có: [[br]] a) $s = 3{,}5v$ (km). [[br]] b) $v = \\dfrac{s}{4}$ (km/h).",
+          "writelines": 0
+        },
+        {
+          "type": "problem",
+          "label": "BTVN 6.",
+          "dang_id": "NB6",
+          "level": 1,
+          "tier": "btvn",
+          "statement": "Một tàu thủy có vận tốc thực $x$ (km/h), vận tốc dòng nước $y$ (km/h): [[br]] a) Vận tốc xuôi dòng là: $\\dots$ [[br]] b) Vận tốc ngược dòng là: $\\dots$ [[br]] c) Đi xuôi $2$ giờ rồi ngược $3$ giờ được tổng quãng đường $110$ km, phương trình là: $\\dots$",
+          "solution": "Ta có: [[br]] a) $x + y$. [[br]] b) $x - y$. [[br]] c) $2(x+y) + 3(x-y) = 110$.",
+          "writelines": 0
+        },
+        {
+          "type": "problem",
+          "label": "BTVN 7.",
+          "dang_id": "NB7",
+          "level": 1,
+          "tier": "btvn",
+          "statement": "Hình chữ nhật có chiều dài $x$, rộng $y$: [[br]] a) Chu vi $60$ m $\\implies$ phương trình nửa chu vi là: $\\dots$ [[br]] b) Giảm dài $2$ m, tăng rộng $1$ m thì kích thước mới là: $\\dots$ [[br]] c) Chiều dài gấp $3$ lần chiều rộng $\\implies$ phương trình là: $\\dots$",
+          "solution": "Ta có: [[br]] a) $x + y = 30$. [[br]] b) $x - 2$ và $y + 1$. [[br]] c) $x = 3y$.",
+          "writelines": 0
+        },
+        {
+          "type": "problem",
+          "label": "BTVN 8.",
+          "dang_id": "NB8",
+          "level": 1,
+          "tier": "btvn",
+          "statement": "Chọn phương án đúng: [[br]] a) Hai vòi nước cùng chảy vào bể sau $6$ giờ đầy bể. Trong $1$ giờ hai vòi chảy được: \\quad A. $6$ bể \\quad B. $\\dfrac{1}{6}$ bể [[br]] b) Một tổ dự định may $x$ cái áo mỗi ngày. Sau $y$ ngày may được: \\quad A. $xy$ cái áo \\quad B. $\\dfrac{x}{y}$ cái áo",
+          "solution": "Ta có: [[br]] a) B. [[br]] b) A.",
+          "writelines": 0
+        },
+        {
+          "type": "problem",
+          "label": "BTVN 9.",
+          "dang_id": "TH1",
+          "level": 2,
+          "tier": "btvn",
+          "statement": "Giải các bài toán sau: [[br]] a) Tìm hai số có tổng bằng $140$ và hiệu bằng $28$. [[br]] b) Tìm hai số tự nhiên có tỉ số bằng $\\dfrac{2}{3}$ và tổng bình phương hai số bằng $117$.",
+          "solution": "Ta có: [[br]] Theo bài ra, ta lập và giải hệ phương trình: [[br]] a) Gọi hai số là $x, y$. Hệ: $\\begin{cases} x+y=140 \\\\ x-y=28 \\end{cases} \\implies x = 84, y = 56$. [[br]] b) Gọi hai số là $x = 2k, y = 3k$ ($k \\in \\mathbb{N}^*$). Ta có $(2k)^2 + (3k)^2 = 117 \\implies 13k^2 = 117 \\implies k = 3 \\implies x = 6, y = 9$. [[br]] Vậy kết quả được xác định đầy đủ.",
+          "writelines": 6
+        },
+        {
+          "type": "problem",
+          "label": "BTVN 10.",
+          "dang_id": "TH2",
+          "level": 2,
+          "tier": "btvn",
+          "statement": "Giải bài toán: [[br]] a) Mua $5$ vé người lớn và $3$ vé trẻ em hết $290$ nghìn. Mua $3$ vé người lớn và $2$ vé trẻ em hết $180$ nghìn. Tính giá mỗi loại vé. [[br]] b) Hai bạn Minh và Nam mua $40$ gói bánh và kẹo hết $380$ nghìn đồng. Biết $1$ gói bánh giá $12$ nghìn, $1$ gói kẹo giá $8$ nghìn. Tính số gói mỗi loại.",
+          "solution": "Ta có: [[br]] Theo đề bài, ta lập và giải hệ phương trình: [[br]] a) Gọi giá vé người lớn là $x$, trẻ em là $y$ (nghìn). Hệ: $\\begin{cases} 5x+3y=290 \\\\ 3x+2y=180 \\end{cases} \\implies x = 40, y = 30$. [[br]] b) Gọi số gói bánh là $x$, kẹo là $y$. Hệ: $\\begin{cases} x+y=40 \\\\ 12x+8y=380 \\end{cases} \\implies x = 15, y = 25$. [[br]] Vậy kết quả được xác định đầy đủ.",
+          "writelines": 6
+        },
+        {
+          "type": "problem",
+          "label": "BTVN 11.",
+          "dang_id": "TH3",
+          "level": 2,
+          "tier": "btvn",
+          "statement": "Giải bài toán: [[br]] a) Một sân bóng hình chữ nhật có chu vi $120$ m. Chiều dài gấp rưỡi chiều rộng. Tính kích thước sân bóng. [[br]] b) Một khu đất hình chữ nhật có diện tích $360$ m$^2$. Nếu tăng dài $2$ m và giảm rộng $3$ m thì diện tích giảm $30$ m$^2$. Tính kích thước ban đầu.",
+          "solution": "Ta có: [[br]] Theo đề bài, ta lập và giải hệ phương trình: [[br]] a) Nửa chu vi $x+y=60$. Chiều dài $x = 1{,}5y \\implies 2{,}5y = 60 \\implies y = 24, x = 36$. Kích thước là $36$ m và $24$ m. [[br]] b) Gọi chiều dài $x$, rộng $y$. Hệ: $\\begin{cases} xy=360 \\\\ (x+2)(y-3)=330 \\end{cases} \\implies -3x+2y-6=-30 \\implies 3x-2y=24$. Thay $y=\\dfrac{360}{x} \\implies 3x^2-24x-720=0 \\implies x=20, y=18$. [[br]] Vậy kết quả được xác định đầy đủ.",
+          "writelines": 6
+        },
+        {
+          "type": "problem",
+          "label": "BTVN 12.",
+          "dang_id": "TH4",
+          "level": 2,
+          "tier": "btvn",
+          "statement": "Giải bài toán: [[br]] a) Một đoàn học sinh đi tham quan bằng xe buýt. Nếu xếp $45$ học sinh vào mỗi xe thì thừa $10$ học sinh. Nếu xếp $50$ học sinh vào mỗi xe thì vừa đủ số xe nhưng còn $1$ xe trống. Tính số học sinh và số xe. [[br]] b) Hai vòi nước cùng chảy vào bể thì đầy sau $4$ giờ $48$ phút ($4{,}8$ giờ). Nếu vòi $1$ chảy $3$ giờ và vòi $2$ chảy $4$ giờ thì được $\\dfrac{3}{4}$ bể. Tính thời gian mỗi vòi chảy một mình đầy bể.",
+          "solution": "Ta có: [[br]] Theo đề bài, ta lập và giải hệ phương trình: [[br]] a) Gọi số xe là $x$, số học sinh là $y$. Hệ: $\\begin{cases} y = 45x+10 \\\\ y = 50(x-1) \\end{cases} \\implies 50x-50=45x+10 \\implies 5x=60 \\implies x=12, y=550$. [[br]] b) Gọi thời gian mỗi vòi chảy riêng là $x, y$ (giờ). Hệ: $\\begin{cases} \\dfrac{1}{x}+\\dfrac{1}{y}=\\dfrac{1}{4{,}8}=\\dfrac{5}{24} \\\\ \\dfrac{3}{x}+\\dfrac{4}{y}=\\dfrac{3}{4} \\end{cases} \\implies x = 12, y = 8$. [[br]] Vậy kết quả được xác định đầy đủ.",
+          "writelines": 6
+        },
+        {
+          "type": "problem",
+          "label": "BTVN 13.",
+          "dang_id": "VD1",
+          "level": 3,
+          "tier": "btvn",
+          "statement": "Một người đi xe đạp từ A đến B với vận tốc không đổi. Khi từ B về A người đó đi đường khác dài hơn $5$ km nhưng với vận tốc lớn hơn $2$ km/h nên thời gian về vẫn ít hơn thời gian đi là $20$ phút. Tính quãng đường AB biết vận tốc lúc đi là $15$ km/h.",
+          "solution": "Ta có: [[br]] Theo bài ra, ta có vận tốc lúc đi là $15$ km/h nên vận tốc lúc về là $15 + 2 = 17$ km/h. [[br]] Gọi quãng đường AB là $s$ (km, $s > 0$). Quãng đường về là $s + 5$ km. [[br]] Thời gian đi là $\\dfrac{s}{15}$ (h); thời gian về là $\\dfrac{s+5}{17}$ (h). [[br]] Vì thời gian về ít hơn thời gian đi là $20$ phút $= \\dfrac{1}{3}$ giờ nên: [[br]] $\\dfrac{s}{15} - \\dfrac{s+5}{17} = \\dfrac{1}{3} \\implies 17s - 15(s+5) = 85 \\implies 2s = 160 \\implies s = 80$ (thỏa mãn). [[br]] Vậy quãng đường AB dài $80$ km.",
+          "writelines": 8
+        },
+        {
+          "type": "problem",
+          "label": "BTVN 14.",
+          "dang_id": "VD2",
+          "level": 3,
+          "tier": "btvn",
+          "statement": "Hai đội công nhân cùng đào một đoạn mương trong $12$ ngày thì xong. Nếu đội I làm một mình trong $5$ ngày rồi đội II đến cùng làm tiếp trong $3$ ngày nữa thì cả hai đội mới đào được $50\\%$ đoạn mương. Hỏi nếu làm riêng thì mỗi đội đào xong đoạn mương đó trong bao nhiêu ngày?",
+          "solution": "Ta có: [[br]] Theo đề bài, ta có: [[br]] Theo bài ra, gọi thời gian đội I và đội II làm riêng xong công việc là $x, y$ (ngày, $x, y > 12$). [[br]] Trong $1$ ngày cả hai đội làm được: $\\dfrac{1}{x} + \\dfrac{1}{y} = \\dfrac{1}{12}$. [[br]] Đội I làm $5$ ngày rồi cả hai đội cùng làm $3$ ngày, tức là đội I làm $8$ ngày, đội II làm $3$ ngày được $50\\% = \\dfrac{1}{2}$ công việc: $\\dfrac{8}{x} + \\dfrac{3}{y} = \\dfrac{1}{2}$. [[br]] Đặt $u = \\dfrac{1}{x}, v = \\dfrac{1}{y}$. Hệ: $\\begin{cases} u+v=\\dfrac{1}{12} \\\\ 8u+3v=\\dfrac{1}{2} \\end{cases} \\implies u = \\dfrac{1}{20}, v = \\dfrac{1}{30} \\implies x = 20, y = 30$ (thỏa mãn). [[br]] Vậy làm riêng thì đội I mất $20$ ngày, đội II mất $30$ ngày.",
+          "writelines": 8
+        }
+      ]
+    }
+  ]
+}

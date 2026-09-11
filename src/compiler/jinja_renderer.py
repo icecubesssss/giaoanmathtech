@@ -56,6 +56,23 @@ _HEAD_BTVN = re.compile(r"về\s*nhà|btvn", re.IGNORECASE)
 _HEAD_EXT = re.compile(r"mở\s*rộng|nhịp\s*cầu", re.IGNORECASE)
 _STRIP_TEX = re.compile(r"\\[a-zA-Z]+|\[\[[^\]]*\]\]|[{}$]")
 
+# Mẫu nhận diện bắt đầu phần Lời giải trong Ví dụ mẫu để ẩn trên Slide
+_LOI_GIAI_PAT = (
+    r"(?:(?:\s*\[\[br\]\])*\s*(?:\{\s*(?:\\[a-zA-Z]+(?:\{[^{}]*\})?\s*)*Lời\s*giải[.:\-]?\s*\}"
+    r"|\\(?:textbf|textit|textsf|text)\{\s*Lời\s*giải[.:\-]?\s*\}|Lời\s*giải\s*[.:\-]?)).*?(?=(\\end\{minipage\}|$))"
+)
+_LOI_GIAI_RE = re.compile(_LOI_GIAI_PAT, re.DOTALL)
+
+
+def strip_example_solution(text: str) -> str:
+    """Trên slide TV: ví dụ mẫu CHỈ CẦN ĐỀ BÀI + HÌNH VẼ, không in phần 'Lời giải'.
+
+    (Thầy tự giải/hướng dẫn trực tiếp trên lớp — Thầy chốt 09/09/2026).
+    """
+    s = _LOI_GIAI_RE.sub("", text)
+    s = re.sub(r"(?:\s*\[\[br\]\]\s*)+(?=\\end\{minipage\}|$)", "", s)
+    return s
+
 
 def split_reflection(blocks):
     """Chia blocks chặng reflection thành 3 mục để tách BTVN/Mở rộng khỏi 'Tổng kết'.
@@ -172,9 +189,10 @@ def group_slide_segments(blocks):
         if typ == "problem":
             # Đề có hộp hình [[wrap]]: bóc hình ra cột phải (mode "cols") thay vì để
             # mã định vị khổ A4 chạy trên slide.
-            fig, rest = split_wrap(getattr(b, "statement", "") or "")
-            if rest != getattr(b, "statement", ""):
-                b = b.model_copy(update={"statement": rest})
+            stmt = getattr(b, "statement_slide", "") or getattr(b, "statement", "") or ""
+            fig, rest = split_wrap(stmt)
+            if rest != stmt:
+                b = b.model_copy(update={"statement": rest, "statement_slide": rest})
                 if fig is not None:
                     segs[-1]["figures"].append(fig)
         segs[-1]["text"].append(b)
@@ -229,6 +247,7 @@ def _env() -> Environment:
         autoescape=False, undefined=StrictUndefined,
     )
     env.filters["tex"] = _texify
+    env.filters["strip_example_solution"] = strip_example_solution
     env.globals["split_reflection"] = split_reflection
     env.globals["group_slide_segments"] = group_slide_segments
     return env

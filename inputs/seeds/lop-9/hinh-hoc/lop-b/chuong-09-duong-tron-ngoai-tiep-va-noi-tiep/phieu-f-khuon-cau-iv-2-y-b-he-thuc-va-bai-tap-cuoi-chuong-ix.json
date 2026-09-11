@@ -1,0 +1,320 @@
+{
+  "slug": "phieu-f-khuon-cau-iv-2-y-b-he-thuc-va-bai-tap-cuoi-chuong-ix",
+  "title": "KHUÔN Câu IV.2 ý b: chứng minh hệ thức bằng tam giác đồng dạng \\& Bài tập cuối chương IX",
+  "eyebrow": "HÌNH HỌC 9 — CHƯƠNG IX · PHIẾU F",
+  "grade_label": "Lớp 9 • Ôn vào 10",
+  "class_tier": "B",
+  "chuong": "chuong-09-duong-tron-ngoai-tiep-va-noi-tiep",
+  "so_ca": 1,
+  "stages": [
+    {
+      "kind": "review",
+      "number": 1,
+      "title": "Khám phá",
+      "teacher_note": "Viết ba hệ thức của ba đề lên bảng cạnh nhau cho HS thấy chúng cùng một dạng. Chỉ mất 5 phút rồi vào khuôn ngay.",
+      "blocks": [
+        {
+          "type": "opener",
+          "text": "Buổi trước cả lớp đã ăn trọn 1,0 điểm của ý a. Ý b của Câu IV.2 đắt hơn nữa $-$ 1,5 điểm $-$ và ba năm liền đều có một vế giống nhau: một \\textbf{hệ thức dạng TÍCH}. Năm 2025 là $AB\\cdot AC = AE\\cdot AS$, năm 2026 là $AE\\cdot BC = EH\\cdot AB$, đề trường là $AB\\cdot AC = AD\\cdot AT$. [[br]]Nhìn kĩ ba hệ thức trên: cả ba đều có dạng \\emph{tích bằng tích}. Em có nghĩ ra cách biến một đẳng thức tích thành một đẳng thức PHÂN SỐ không?",
+          "tikz": "\\begin{tikzpicture}[line width=0.8pt, font=\\small]\n  \\draw[ink] (0,0) circle (1.8);\n  \\node[above] at (-0.3126,1.7727) {$A$};\n  \\node[left] at (-1.7119,-0.5562) {$B$};\n  \\node[right] at (1.7825,-0.2505) {$C$};\n  \\fill[ink] (0,0) circle (1.3pt);\n  \\node[right] at (0,0) {$O$};\n  \\draw[ink] (-0.3126,1.7727) -- (-1.7119,-0.5562) -- (1.7825,-0.2505) -- (-0.3126,1.7727);\n  \\node[below] at (-0.121,-0.417) {$D$};\n  \\draw[ink] (-0.3126,1.7727) -- (-0.121,-0.417);\n  \\draw[ink] (-0.1358,-0.2477) -- (0.0335,-0.2329) -- (0.0484,-0.4022);\n  \\node[below] at (0.3126,-1.7727) {$T$};\n  \\draw[ink] (-0.3126,1.7727) -- (0.3126,-1.7727);\n  \\draw[ink] (0.3126,-1.7727) -- (1.7825,-0.2505);\n  \\draw[ink] (1.653,-0.1255) -- (1.528,-0.255) -- (1.6574,-0.38);\n  \\fill[brand!16] (-0.3126,1.7727) -- (-1.7119,-0.5562) -- (-0.121,-0.417) -- cycle;\n  \\fill[stage3!16] (-0.3126,1.7727) -- (0.3126,-1.7727) -- (1.7825,-0.2505) -- cycle;\n\\end{tikzpicture}"
+        },
+        {
+          "type": "noted",
+          "variant": "note",
+          "text": "\\textbf{Nhắc lại Lớp 8 — công cụ DUY NHẤT của buổi hôm nay.}[[br]]$\\bullet$ Hai tam giác có hai cặp góc bằng nhau thì đồng dạng (trường hợp góc $-$ góc).[[br]]$\\bullet$ Hai tam giác đồng dạng thì các cạnh tương ứng TỈ LỆ.[[br]]$\\bullet$ Từ tỉ lệ thức $\\dfrac{a}{b} = \\dfrac{c}{d}$ nhân chéo được $a\\cdot d = b\\cdot c$; ngược lại từ $a\\cdot d = b\\cdot c$ viết được $\\dfrac{a}{b} = \\dfrac{c}{d}$."
+        },
+        {
+          "type": "noted",
+          "variant": "target",
+          "text": "\\textbf{Đích của buổi học.}[[br]]Ý b của Câu IV.2 có hai vế; tầng C nhắm vào \\textbf{vế hệ thức} vì nó lặp nguyên khuôn ở cả 3/3 đề. Làm trọn vế này được khoảng 0,75 trong 1,5 điểm. Buổi cuối chương cũng chốt lại Bài 30 (đa giác đều) ở mức nhận biết để qua đề của trường."
+        }
+      ]
+    },
+    {
+      "kind": "concept",
+      "number": 2,
+      "title": "Kiến thức cần nhớ",
+      "teacher_note": "Ví dụ 3 là BẢN MẪU đầy đủ nhất của khuôn — bắt HS chép nguyên vào vở. Ví dụ 4 là trường hợp dễ nhất (góc chung), nên chữa trước nếu lớp yếu.",
+      "blocks": [
+        {
+          "type": "para",
+          "text": "\\textbf{1. Khuôn năm bước cho vế hệ thức}"
+        },
+        {
+          "type": "para",
+          "text": "$\\bullet$ \\textbf{Bước 1.} Đổi TÍCH thành TỈ SỐ: $AB\\cdot AC = AD\\cdot AT \\Leftrightarrow \\dfrac{AB}{AD} = \\dfrac{AT}{AC}$ (hai đoạn của vế trái làm tử và mẫu chéo nhau).[[br]]$\\bullet$ \\textbf{Bước 2.} Từ tỉ số đọc ra HAI TAM GIÁC: các chữ ở tử và mẫu cùng một vế, cộng thêm đỉnh chung, cho ta $\\triangle ABD$ và $\\triangle ATC$.[[br]]$\\bullet$ \\textbf{Bước 3.} Tìm cặp góc bằng nhau thứ nhất: \\emph{góc chung} hoặc \\emph{hai góc vuông}.[[br]]$\\bullet$ \\textbf{Bước 4.} Tìm cặp góc bằng nhau thứ hai: \\emph{hai góc nội tiếp cùng chắn một cung} (phải nói rõ chắn cung nào).[[br]]$\\bullet$ \\textbf{Bước 5.} Kết luận đồng dạng (g.g), viết tỉ số các cạnh tương ứng rồi NHÂN CHÉO."
+        },
+        {
+          "type": "para",
+          "text": "\\textbf{2. Hai chỗ lấy cặp góc bằng nhau}"
+        },
+        {
+          "type": "para",
+          "text": "$\\bullet$ \\textbf{Góc chung}: hai tam giác cùng có đỉnh $A$ thì $\\widehat{A}$ là góc chung. Hoặc \\textbf{hai góc vuông}: cả hai tam giác đều vuông.[[br]]$\\bullet$ \\textbf{Hai góc nội tiếp cùng chắn một cung} thì bằng nhau (Bài 27). Khi viết phải nêu rõ chắn cung nào, ví dụ: \\emph{$\\widehat{ABD} = \\widehat{ATC}$ (hai góc nội tiếp cùng chắn cung $AC$)}."
+        },
+        {
+          "type": "noted",
+          "variant": "trap",
+          "text": "\\textbf{Bốn lỗi làm mất điểm ở vế hệ thức.}[[br]]$\\bullet$ Ghép SAI thứ tự đỉnh khi viết hai tam giác đồng dạng $\\Rightarrow$ tỉ số sai, nhân chéo ra hệ thức khác đề.[[br]]$\\bullet$ Chỉ tìm được MỘT cặp góc bằng nhau rồi kết luận đồng dạng luôn — thiếu cặp thứ hai nên chưa đủ trường hợp (g.g).[[br]]$\\bullet$ Viết \\emph{hai góc nội tiếp cùng chắn một cung} mà không nói rõ chắn cung nào.[[br]]$\\bullet$ Quên bước cuối: đã có đồng dạng nhưng không viết tỉ số rồi nhân chéo nên chưa ra hệ thức đề hỏi."
+        },
+        {
+          "type": "noted",
+          "variant": "tip",
+          "text": "\\textbf{Năm dòng chép thuộc — vào phòng thi viết y hệt.}[[br]]\\quad 1. \\emph{Ta có (hệ thức tích) $\\Leftrightarrow$ $\\dfrac{\\ldots}{\\ldots} = \\dfrac{\\ldots}{\\ldots}$, nên xét hai tam giác $\\ldots$ và $\\ldots$}[[br]]\\quad 2. \\emph{Cặp góc thứ nhất: góc chung $\\ldots$ (hoặc hai góc vuông $\\ldots$).}[[br]]\\quad 3. \\emph{Cặp góc thứ hai: $\\widehat{\\ldots} = \\widehat{\\ldots}$ (hai góc nội tiếp cùng chắn cung $\\ldots$).}[[br]]\\quad 4. \\emph{Do đó $\\triangle \\ldots \\backsim \\triangle \\ldots$ (g.g).}[[br]]\\quad 5. \\emph{Suy ra $\\dfrac{\\ldots}{\\ldots} = \\dfrac{\\ldots}{\\ldots}$, nhân chéo được (hệ thức cần chứng minh).}"
+        }
+      ]
+    },
+    {
+      "kind": "practice1",
+      "number": 3,
+      "title": "Luyện tập 1 — Nhận biết",
+      "teacher_note": "Nhận diện nhanh cặp tam giác đồng dạng và chuyển đổi thành thạo giữa hệ thức dạng tích và tỉ số các cạnh.",
+      "blocks": [
+        {
+          "type": "noted",
+          "variant": "example",
+          "text": "\\textbf{Ví dụ 1.} Cho tam giác nhọn $ABC$ nội tiếp đường tròn $(O)$. Hai đường cao $BE, CF$ cắt nhau tại $H$. Từ tứ giác $BCEF$ nội tiếp, hãy chỉ ra hai tam giác $\\triangle AEF$ và $\\triangle ABC$ đồng dạng theo trường hợp g-g.\\par\\nopagebreak\\smallskip {\\sffamily\\bfseries\\color{brand}Lời giải}[[br]]Xét tứ giác $BCEF$ có $\\widehat{BEC} = \\widehat{BFC} = 90^\\circ$ nên tứ giác $BCEF$ nội tiếp đường tròn đường kính $BC$.[[br]]Suy ra góc ngoài tại đỉnh $F$ bằng góc đối trong: $\\widehat{AFE} = \\widehat{ACB}$.[[br]]Xét $\\triangle AEF$ và $\\triangle ABC$, ta có:[[br]]\\hspace*{1.4em}$\\widehat{BAC}$ là góc chung;[[br]]\\hspace*{1.4em}$\\widehat{AFE} = \\widehat{ACB}$ (chứng minh trên).[[br]]Do đó $\\triangle AEF \\backsim \\triangle ABC$ (g-g).[[br]]Vậy hai tam giác $\\triangle AEF$ và $\\triangle ABC$ đồng dạng."
+        },
+        {
+          "type": "problem",
+          "label": "Bài 1.",
+          "statement": "Quan sát Hình 1 rồi trả lời.\\par\\nopagebreak\\smallskip\\begin{center}\\adjustbox{max width=0.75\\linewidth, max totalheight=2.8cm}{\n\\begin{tikzpicture}[line width=0.8pt, font=\\small]\n  \\coordinate (ptA) at (0,1.8);\n  \\coordinate (ptB) at (-1.5,-0.5);\n  \\coordinate (ptC) at (1.8,-0.5);\n  \\coordinate (ptE) at (0.85,0.73);\n  \\coordinate (ptF) at (-0.68,0.73);\n  \\draw[ink] (ptA) -- (ptB) -- (ptC) -- cycle;\n  \\draw[brand, line width=1.0pt] (ptE) -- (ptF);\n  \\node[above] at (ptA) {$A$};\n  \\node[below left] at (ptB) {$B$};\n  \\node[below right] at (ptC) {$C$};\n  \\node[right] at (ptE) {$E$};\n  \\node[left] at (ptF) {$F$};\n\\end{tikzpicture}\n}\\par\\vspace{2pt}{\\sffamily\\scriptsize\\itshape\\color{muted}Hình 1}\\end{center}\\smallskip a) [NB] Trong Hình 1, nếu tứ giác $BCEF$ nội tiếp thì $\\widehat{AEF} = \\widehat{ABC}$. Đúng hay Sai?[[br]]b) [NB] Nhận biết cặp tam giác đồng dạng chứa các cạnh $AE, AB, AF, AC$ để suy ra hệ thức $AE\\cdot AB = AF\\cdot AC$.",
+          "tier": "onclass",
+          "level": 1,
+          "figure_given": true,
+          "solution": "a) Đúng, vì góc ngoài tại đỉnh $E$ bằng góc đối trong tại đỉnh $B$.[[br]]b) Cặp tam giác đồng dạng cần dùng là $\\triangle AEF$ và $\\triangle ABC$ (có $\\widehat{A}$ chung và $\\widehat{AEF} = \\widehat{ABC}$).[[br]]Vậy ta tìm được cặp tam giác $\\triangle AEF \\backsim \\triangle ABC$.",
+          "dang_id": "NB1",
+          "source": "Đề thi Tuyển sinh Vào 10 Hà Nội 2023"
+        },
+        {
+          "type": "noted",
+          "variant": "example",
+          "text": "\\textbf{Ví dụ 2.} Đổi hệ thức dạng tích $MA\\cdot MB = MC\\cdot MD$ thành các tỉ lệ thức tương ứng giữa các cạnh.\\par\\nopagebreak\\smallskip {\\sffamily\\bfseries\\color{brand}Lời giải}[[br]]Từ đẳng thức tích $MA\\cdot MB = MC\\cdot MD$, chia cả hai vế cho tích $MD\\cdot MB$ ta được:[[br]]\\hspace*{1.4em}$\\dfrac{MA}{MD} = \\dfrac{MC}{MB}$.[[br]]Hoặc chia cả hai vế cho tích $MC\\cdot MB$ ta được:[[br]]\\hspace*{1.4em}$\\dfrac{MA}{MC} = \\dfrac{MD}{MB}$.[[br]]Vậy từ hệ thức tích đã lập được tỉ lệ thức $\\dfrac{MA}{MD} = \\dfrac{MC}{MB}$."
+        },
+        {
+          "type": "problem",
+          "label": "Bài 2.",
+          "statement": "[NB] Cho hệ thức tích $AB\\cdot AC = AD\\cdot AE$. Hãy chuyển hệ thức này thành tỉ lệ thức đúng có dạng: $\\dfrac{AB}{AD} = \\dfrac{[[blank:1.2cm]]}{AC}$.",
+          "tier": "onclass",
+          "level": 1,
+          "solution": "Từ $AB\\cdot AC = AD\\cdot AE$, chia hai vế cho $AD\\cdot AC$ ta được: $\\dfrac{AB}{AD} = \\dfrac{AE}{AC}$.[[br]]Vậy biểu thức cần điền vào ô trống là $AE$.",
+          "dang_id": "NB2",
+          "source": "Đề thi Tuyển sinh Vào 10 Hà Nội 2022"
+        },
+        {
+          "type": "noted",
+          "variant": "example",
+          "text": "\\textbf{Ví dụ 3.} Điền vào chỗ trống bài giải mẫu: \\textquotedblleft Cho điểm $M$ nằm ngoài đường tròn $(O)$, kẻ cát tuyến $MAB$ và $MCD$. Chứng minh $MA\\cdot MB = MC\\cdot MD$\\textquotedblright.[\\par\\nopagebreak\\smallskip {\\sffamily\\bfseries\\color{brand}Lời giải}[[br]]Bước 1: Nối $AD$ và $BC$. Xét $\\triangle MAD$ và $\\triangle MCB$ có $\\widehat{M}$ chung.[[br]]Bước 2: Có $\\widehat{MDA} = \\widehat{MBC}$ (hai góc nội tiếp cùng chắn cung $AC$).[[br]]Bước 3: Do đó $\\triangle MAD \\backsim \\triangle MCB$ (g-g).[[br]]Bước 4: Suy ra $\\dfrac{MA}{MC} = \\dfrac{MD}{MB} \\implies MA\\cdot MB = MC\\cdot MD$.[[br]]Vậy ta chứng minh được hệ thức $MA\\cdot MB = MC\\cdot MD$."
+        },
+        {
+          "type": "problem",
+          "label": "Bài 3.",
+          "statement": "[NB] Điền vào chỗ trống để ráp đủ 4 bước chuẩn barem: \\textquotedblleft Cho tam giác nhọn $ABC$ nội tiếp $(O)$, đường cao $AD$ và đường kính $AK$. Chứng minh $AB\\cdot AC = AD\\cdot AK$.\\textquotedblright[[br]]1. Xét $\\triangle ABD$ và $\\triangle AKC$ có $\\widehat{ADB} = [[blank:1.0cm]] = 90^\\circ$.[[br]]2. Lại có $\\widehat{ABD} = [[blank:1.2cm]]$ (hai góc nội tiếp cùng chắn cung $AC$).[[br]]3. Do đó $\\triangle ABD \\backsim [[blank:1.5cm]]$ (g-g).[[br]]4. Suy ra tỉ số $\\dfrac{AB}{AK} = \\dfrac{AD}{AC}$, do đó $AB\\cdot AC = AD\\cdot AK$.",
+          "statement_slide": "Nêu 4 bước lập luận chuẩn barem để chứng minh $AB\\cdot AC = AD\\cdot AK$ (với $AD$ là đường cao và $AK$ là đường kính).",
+          "tier": "onclass",
+          "level": 1,
+          "solution": "Các biểu thức cần điền theo thứ tự: $\\widehat{ACK}$, $\\widehat{AKC}$, $\\triangle AKC$.[[br]]Vậy ta có hệ thức $AB\\cdot AC = AD\\cdot AK$.",
+          "dang_id": "NB3",
+          "source": "Barem chấm thi Vào 10 Sở GD&ĐT Hà Nội"
+        },
+        {
+          "type": "noted",
+          "variant": "example",
+          "text": "\\textbf{Ví dụ 4.} Vẽ hình cho đề bài sau: Cho nửa đường tròn đường kính $AB$, trên nửa đường tròn lấy điểm $C$. Kẻ tiếp tuyến $Ax$, tia phân giác của $\\widehat{CAx}$ cắt nửa đường tròn tại $D$. Đánh dấu hai góc bằng nhau.\\par\\nopagebreak\\smallskip {\\sffamily\\bfseries\\color{brand}Lời giải}[[br]]Vẽ nửa đường tròn đường kính $AB$ tâm $O$. Lấy điểm $C$ trên cung $AB$.[[br]]Vẽ tiếp tuyến $Ax \\perp AB$ tại $A$. Vẽ tia phân giác của $\\widehat{CAx}$ cắt cung tại $D$.[[br]]Đánh dấu hai góc bằng nhau $\\widehat{xAD} = \\widehat{CAD}$.[[br]]Vậy đã hoàn thành hình vẽ theo đúng yêu cầu."
+        },
+        {
+          "type": "problem",
+          "label": "Bài 4.",
+          "statement": "[NB] Vẽ lại Hình 2 vào vở: Cho điểm $M$ nằm ngoài $(O)$, kẻ tiếp tuyến $MA$ và cát tuyến $MBC$. Đánh dấu hai tam giác $\\triangle MAB$ và $\\triangle MCA$ để chuẩn bị chứng minh hệ thức $MA^2 = MB\\cdot MC$.\\par\\nopagebreak\\smallskip\\begin{center}\\adjustbox{max width=0.45\\linewidth, max totalheight=2.8cm}{\n\\begin{tikzpicture}[line width=0.8pt, font=\\small]\n  \\draw[ink] (0,0) circle (1.4);\n  \\coordinate (ptO) at (0,0);\n  \\coordinate (ptM) at (-2.2,0);\n  \\coordinate (ptA) at (-0.89,1.08);\n  \\coordinate (ptB) at (-0.4,1.34);\n  \\coordinate (ptC) at (1.3,0.52);\n  \\draw[ink] (ptM) -- (ptA);\n  \\draw[ink] (ptM) -- (ptC);\n  \\draw[brand, line width=1.0pt] (ptA) -- (ptB);\n  \\draw[brand, line width=1.0pt] (ptA) -- (ptC);\n  \\fill[ink] (ptO) circle (1.2pt) node[below=2pt]{$O$};\n  \\node[left] at (ptM) {$M$};\n  \\node[above] at (ptA) {$A$};\n  \\node[above right] at (ptB) {$B$};\n  \\node[right] at (ptC) {$C$};\n\\end{tikzpicture}\n}\\par\\vspace{2pt}{\\sffamily\\scriptsize\\itshape\\color{muted}Hình 2}\\end{center}",
+          "statement_slide": "Vẽ hình: Điểm $M$ ngoài $(O)$, tiếp tuyến $MA$, cát tuyến $MBC$. Xác định hai tam giác đồng dạng cần dùng để chứng minh $MA^2 = MB\\cdot MC$.",
+          "tier": "onclass",
+          "level": 1,
+          "solution": "Vẽ đúng đường tròn $(O)$, điểm $M$ bên ngoài, tiếp tuyến $MA$ vuông góc bán kính $OA$, cát tuyến $MBC$ cắt $(O)$ tại $B$ và $C$. Nối $AB, AC$.[[br]]Hai tam giác cần chứng minh đồng dạng là $\\triangle MAB$ và $\\triangle MCA$.[[br]]Vậy đã hoàn thành hình vẽ và xác định đúng hai tam giác.",
+          "dang_id": "NB4",
+          "source": "Sách giáo khoa Toán 9 Cánh Diều"
+        }
+      ]
+    },
+    {
+      "kind": "practice2",
+      "number": 4,
+      "title": "Luyện tập 2 — Thông hiểu, Vận dụng \\& VDC",
+      "teacher_note": "Rèn khuôn viết trọn 1,0 điểm Câu IV.2 ý b của đề thi tuyển sinh Vào 10 Hà Nội. Khắc sâu kĩ thuật tam giác đồng dạng mượn góc từ tứ giác nội tiếp ở ý a.",
+      "blocks": [
+        {
+          "type": "noted",
+          "variant": "example",
+          "text": "\\textbf{Ví dụ 5.} (Học sinh học cách trình bày quy trình) Viết lại 4 bước chứng minh hệ thức $AB\\cdot AC = AD\\cdot AE$ bằng tam giác đồng dạng.\\par\\nopagebreak\\smallskip {\\sffamily\\bfseries\\color{brand}Lời giải}[[br]]Bước 1: Từ $AB\\cdot AC = AD\\cdot AE$, chuyển thành tỉ lệ thức $\\dfrac{AB}{AD} = \\dfrac{AE}{AC}$.[[br]]Bước 2: Tìm hai tam giác tương ứng là $\\triangle ABE$ và $\\triangle ADC$.[[br]]Bước 3: Chứng minh $\\triangle ABE \\backsim \\triangle ADC$ (g-g) nhờ góc $\\widehat{A}$ chung và một cặp góc bằng nhau.[[br]]Bước 4: Suy ra $\\dfrac{AB}{AD} = \\dfrac{AE}{AC} \\implies AB\\cdot AC = AD\\cdot AE$.[[br]]Vậy ta đã hoàn thiện 4 bước của quy trình."
+        },
+        {
+          "type": "problem",
+          "label": "Bài 5.",
+          "statement": "Thực hiện các yêu cầu sau:\\par\\nopagebreak\\smallskip a) [TH] Hãy tự viết lại 4 bước của quy trình chứng minh hệ thức tích $MA\\cdot MB = MC\\cdot MD$ bằng phương pháp tam giác đồng dạng.[[br]]b) [TH] Nêu hai cách thông dụng nhất để tìm cặp góc bằng nhau khi chứng minh hai tam giác đồng dạng trong bài toán đường tròn.",
+          "tier": "onclass",
+          "level": 2,
+          "solution": "a) Bốn bước quy trình:[[br]]Bước 1: Chuyển $MA\\cdot MB = MC\\cdot MD$ thành tỉ lệ thức $\\dfrac{MA}{MC} = \\dfrac{MD}{MB}$.[[br]]Bước 2: Xác định hai tam giác cần chứng minh đồng dạng là $\\triangle MAD$ và $\\triangle MCB$.[[br]]Bước 3: Chứng minh $\\triangle MAD \\backsim \\triangle MCB$ (g-g) có $\\widehat{M}$ chung và $\\widehat{MDA} = \\widehat{MBC}$ (cùng chắn cung $AC$).[[br]]Bước 4: Suy ra tỉ số $\\dfrac{MA}{MC} = \\dfrac{MD}{MB} \\implies MA\\cdot MB = MC\\cdot MD$.[[br]]b) Hai cách thông dụng nhất để tìm cặp góc bằng nhau:[[br]]1. Hai góc nội tiếp (hoặc góc tạo bởi tiếp tuyến và dây cung) cùng chắn một cung trong một đường tròn.[[br]]2. Dùng tứ giác nội tiếp ở ý a: góc ngoài tại một đỉnh bằng góc đối trong tại đỉnh đối diện.[[br]]Vậy ta đã trình bày đủ 4 bước và 2 cách tìm góc.",
+          "dang_id": "TH1",
+          "source": "Quy trình giải toán hình thi Vào 10 MathTech"
+        },
+        {
+          "type": "noted",
+          "variant": "example",
+          "text": "\\textbf{Ví dụ 6.} Cho đường tròn $(O)$ và điểm $M$ nằm ngoài đường tròn. Qua $M$ kẻ cát tuyến $MAB$ và tiếp tuyến $MC$ ($C$ là tiếp điểm). Chứng minh hệ thức $MC^2 = MA\\cdot MB$.\\par\\nopagebreak\\smallskip {\\sffamily\\bfseries\\color{brand}Lời giải}[[br]]Xét $\\triangle MCA$ và $\\triangle MBC$, ta có:[[br]]\\hspace*{1.4em}$\\widehat{M}$ là góc chung;[[br]]\\hspace*{1.4em}$\\widehat{MCA} = \\widehat{MBC}$ (góc tạo bởi tiếp tuyến và dây cung cùng góc nội tiếp cùng chắn cung $AC$).[[br]]Do đó $\\triangle MCA \\backsim \\triangle MBC$ (g-g).[[br]]Suy ra $\\dfrac{MC}{MB} = \\dfrac{MA}{MC}$, do đó $MC^2 = MA\\cdot MB$.[[br]]Vậy ta có hệ thức $MC^2 = MA\\cdot MB$."
+        },
+        {
+          "type": "problem",
+          "label": "Bài 6.",
+          "statement": "[TH] Cho tam giác nhọn $ABC$ nội tiếp đường tròn $(O)$. Hai đường cao $BD$ và $CE$ cắt nhau tại $H$. Chứng minh hệ thức $AE\\cdot AB = AD\\cdot AC$ bằng cách chứng minh $\\triangle ADE \\backsim \\triangle ABC$.",
+          "tier": "onclass",
+          "level": 2,
+          "solution": "Vì $BD \\perp AC$ và $CE \\perp AB$ nên $\\widehat{BDC} = \\widehat{BEC} = 90^\\circ$.[[br]]Tứ giác $BCEF$ có hai đỉnh $D, E$ cùng nhìn $BC$ dưới góc $90^\\circ$ nên $BCED$ là tứ giác nội tiếp đường tròn đường kính $BC$.[[br]]Suy ra góc ngoài tại đỉnh $D$ bằng góc đối trong: $\\widehat{ADE} = \\widehat{ABC}$.[[br]]Xét $\\triangle ADE$ và $\\triangle ABC$, ta có:[[br]]\\hspace*{1.4em}$\\widehat{BAC}$ là góc chung;[[br]]\\hspace*{1.4em}$\\widehat{ADE} = \\widehat{ABC}$ (chứng minh trên).[[br]]Do đó $\\triangle ADE \\backsim \\triangle ABC$ (g-g).[[br]]Suy ra $\\dfrac{AE}{AC} = \\dfrac{AD}{AB} \\implies AE\\cdot AB = AD\\cdot AC$.[[br]]Vậy ta có hệ thức $AE\\cdot AB = AD\\cdot AC$.",
+          "dang_id": "TH2",
+          "source": "Đề thi Tuyển sinh Vào 10 Chu Văn An"
+        },
+        {
+          "type": "noted",
+          "variant": "example",
+          "text": "\\textbf{Ví dụ 7.} (Trích Câu IV ý b Đề thi Tuyển sinh Vào 10 Hà Nội) Cho tam giác nhọn $ABC$ ($AB < AC$) nội tiếp đường tròn $(O)$. Kẻ đường cao $AD$ và đường kính $AK$. Hạ $BE \\perp AK$ tại $E$. Ở câu a đã chứng minh bốn điểm $A, B, D, E$ cùng thuộc một đường tròn. Chứng minh rằng $AD\\cdot AK = AB\\cdot AC$.\\par\\nopagebreak\\smallskip {\\sffamily\\bfseries\\color{brand}Lời giải}[[br]]Nối $CK$. Xét đường tròn $(O)$, ta có $\\widehat{ACK} = 90^\\circ$ (góc nội tiếp chắn nửa đường tròn).[[br]]Xét $\\triangle ABD$ và $\\triangle AKC$, ta có:[[br]]\\hspace*{1.4em}$\\widehat{ADB} = 90^\\circ$ (do $AD \\perp BC$) và $\\widehat{ACK} = 90^\\circ$ (chứng minh trên), suy ra $\\widehat{ADB} = \\widehat{ACK} = 90^\\circ$;[[br]]\\hspace*{1.4em}$\\widehat{ABD} = \\widehat{AKC}$ (hai góc nội tiếp cùng chắn cung $AC$ của đường tròn $(O)$).[[br]]Do đó $\\triangle ABD \\backsim \\triangle AKC$ (g-g).[[br]]Suy ra tỉ số đồng dạng: $\\dfrac{AB}{AK} = \\dfrac{AD}{AC}$.[[br]]Nhân chéo hai vế ta được: $AB\\cdot AC = AD\\cdot AK$.[[br]]Vậy $AD\\cdot AK = AB\\cdot AC$."
+        },
+        {
+          "type": "problem",
+          "label": "Bài 7.",
+          "statement": "Cho đường tròn $(O)$ đường kính $AB$. Lấy điểm $C$ thuộc đường tròn ($C \\neq A, B$). Kẻ tiếp tuyến tại $C$ của $(O)$ cắt tiếp tuyến tại $A$ ở $M$. Kẻ $CH \\perp AB$ tại $H$. Đường thẳng $MB$ cắt $CH$ tại $K$.[[br]]a) [VD] Chứng minh $\\triangle MAC \\backsim \\triangle MCO$.[[br]]b) [VD] Chứng minh $K$ là trung điểm của $CH$ và suy ra $MB\\cdot MK = MC^2 - KC^2$.",
+          "tier": "onclass",
+          "level": 3,
+          "quy_trinh": [
+            "\\textbf{Bước 1} $-$ từ hệ thức cần chứng minh $AB\\cdot AC = AE\\cdot AS$, lập tỉ lệ thức $\\dfrac{AB}{AE} = \\dfrac{AS}{AC}$.",
+            "\\textbf{Bước 2} $-$ xác định hai tam giác chứa các cạnh: $\\triangle ABS$ và $\\triangle AEC$.",
+            "\\textbf{Bước 3} $-$ chứng minh $\\triangle ABS \\backsim \\triangle AEC$ (g-g) nhờ góc chung $\\widehat{A}$ và cặp góc bằng nhau suy từ tứ giác nội tiếp ở ý a.",
+            "\\textbf{Bước 4} $-$ suy ra tỉ số đồng dạng và nhân chéo để được đẳng thức tích."
+          ],
+          "solution": "a) Theo tính chất hai tiếp tuyến cắt nhau, ta có $MA = MC$ và $MO \\perp AC$.[[br]]Tam giác $MAC$ cân tại $M$ có $MO$ là đường phân giác đồng thời là đường cao nên $\\triangle MAC \\backsim \\triangle MCO$.[[br]]b) Kéo dài $BC$ cắt tiếp tuyến $Ax$ tại $P$.[[br]]Vì $\\widehat{ACB} = 90^\\circ$ (góc nội tiếp chắn nửa đường tròn) nên $AC \\perp BP$.[[br]]Trong tam giác vuông $ABP$ vuông tại $A$, có $AC \\perp BP$ nên $M$ là trung điểm của $AP$ (do $MA = MC = MP$).[[br]]Áp dụng định lí Ta-lét trong $\\triangle ABP$ có $CH \\parallel AP$ (cùng vuông góc với $AB$):[[br]]\\hspace*{1.4em}$\\dfrac{KH}{MA} = \\dfrac{BK}{BM} = \\dfrac{KC}{MP}$.[[br]]Vì $MA = MP$ nên $KH = KC$, suy ra $K$ là trung điểm của đoạn thẳng $CH$.[[br]]Áp dụng hệ thức lượng trong tam giác vuông, ta có $MB\\cdot MK = MC^2 - KC^2$.[[br]]Vậy $K$ là trung điểm của $CH$ và hệ thức được chứng minh.",
+          "dang_id": "VD1",
+          "source": "Đề thi Tuyển sinh Vào 10 Hà Nội 2021"
+        },
+        {
+          "type": "problem",
+          "label": "Bài 8.",
+          "statement": "[VDC] (Ý cuối bài hình thi Vào 10 Hà Nội) Cho đường tròn $(O)$ có dây $BC$ cố định không qua tâm. Điểm $A$ di động trên cung lớn $BC$. Các đường cao $AD, BE, CF$ của $\\triangle ABC$ cắt nhau tại trực tâm $H$. Kẻ đường kính $AK$. Gọi $I$ là trung điểm của $BC$. Chứng minh rằng ba điểm $H, I, K$ thẳng hàng và tìm vị trí của điểm $A$ để diện tích tam giác $HBC$ đạt giá trị lớn nhất.[[br]]\\begin{center}\\adjustbox{max width=0.48\\linewidth, max totalheight=3.0cm}{\n\\begin{tikzpicture}[line width=0.8pt, font=\\small]\n  \\draw[ink] (0,0) circle (1.8);\n  \\coordinate (ptA) at (0,1.8);\n  \\coordinate (ptB) at (-1.5,-0.995);\n  \\coordinate (ptC) at (1.5,-0.995);\n  \\coordinate (ptD) at (0,-0.995);\n  \\coordinate (ptH) at (0,0.2);\n  \\coordinate (ptK) at (0,-1.8);\n  \\draw[ink] (ptA) -- (ptB) -- (ptC) -- cycle;\n  \\draw[ink, dashed] (ptA) -- (ptK);\n  \\draw[ink, dashed] (ptB) -- (ptK) -- (ptC);\n  \\fill[ink] (0,0) circle (1.3pt) node[right=2pt]{$O$};\n  \\node[above] at (ptA) {$A$};\n  \\node[left] at (ptB) {$B$};\n  \\node[right] at (ptC) {$C$};\n  \\node[above] at (ptH) {$H$};\n  \\node[below] at (ptK) {$K$};\n\\end{tikzpicture}\n}\\par\\vspace{2pt}{\\sffamily\\scriptsize\\itshape\\color{muted}Hình 3}\\end{center}",
+          "statement_slide": "Cho $(O)$ có dây $BC$ cố định. Điểm $A$ di động trên cung lớn $BC$. Trực tâm $H$, đường kính $AK$. Gọi $I$ là trung điểm $BC$. Chứng minh $H, I, K$ thẳng hàng và tìm vị trí của $A$ để diện tích $\\triangle HBC$ lớn nhất.",
+          "tier": "onclass",
+          "level": 4,
+          "figure_given": true,
+          "quy_trinh": [
+            "\\textbf{Bước 1} $-$ kéo dài các đoạn thẳng cắt nhau tại điểm phụ và áp dụng hệ thức lượng.",
+            "\\textbf{Bước 2} $-$ sử dụng định lí Ta-lét và tính chất trung điểm để thiết lập tỉ số song song.",
+            "\\textbf{Bước 3} $-$ chứng minh hai góc đối đỉnh bằng nhau hoặc tổng góc bằng $180^\\circ$.",
+            "\\textbf{Bước 4} $-$ kết luận ba điểm thẳng hàng."
+          ],
+          "solution": "Nối $BK, CK$. Vì $AK$ là đường kính nên $\\widehat{ABK} = \\widehat{ACK} = 90^\\circ$.[[br]]Ta có $BK \\perp AB$ và $CH \\perp AB$ nên $BK \\parallel CH$.[[br]]Tương tự $CK \\perp AC$ và $BH \\perp AC$ nên $CK \\parallel BH$.[[br]]Tứ giác $BHCK$ có các cặp cạnh đối song song nên $BHCK$ là hình bình hành.[[br]]Hình bình hành $BHCK$ có $I$ là trung điểm đường chéo $BC$ nên $I$ cũng là trung điểm đường chéo $HK$.[[br]]Do đó ba điểm $H, I, K$ thẳng hàng.[[br]]Diện tích tam giác $HBC$ là $S_{HBC} = \\dfrac{1}{2}BC\\cdot HD$.[[br]]Vì $BC$ cố định nên $S_{HBC}$ lớn nhất khi $HD$ lớn nhất, tức là khoảng cách từ $H$ đến $BC$ lớn nhất.[[br]]Điều này xảy ra khi điểm $A$ là điểm chính giữa của cung lớn $BC$.[[br]]Vậy ba điểm $H, I, K$ thẳng hàng và $S_{HBC}$ đạt giá trị lớn nhất khi $A$ là điểm chính giữa cung lớn $BC$.",
+          "dang_id": "VDC1",
+          "source": "Đề thi Tuyển sinh Vào 10 Chuyên Hà Nội"
+        }
+      ]
+    },
+    {
+      "kind": "reflection",
+      "number": 5,
+      "title": "Tổng kết \\& Bài tập về nhà",
+      "teacher_note": "Giao BTVN bám sát 8 dạng bài của phiếu để HS củng cố vững chắc kỹ thuật chứng minh hệ thức và giải quyết câu phân loại.",
+      "blocks": [
+        {
+          "type": "problem",
+          "label": "BTVN~1.",
+          "statement": "Quan sát Hình 4 rồi trả lời.\\par\\nopagebreak\\smallskip\\begin{center}\\adjustbox{max width=0.75\\linewidth, max totalheight=2.8cm}{\n\\begin{tikzpicture}[line width=0.8pt, font=\\small]\n  \\coordinate (ptA) at (0,1.8);\n  \\coordinate (ptB) at (-1.4,-0.5);\n  \\coordinate (ptC) at (1.6,-0.5);\n  \\coordinate (ptE) at (0.8,0.7);\n  \\coordinate (ptF) at (-0.6,0.7);\n  \\draw[ink] (ptA) -- (ptB) -- (ptC) -- cycle;\n  \\draw[brand, line width=1.0pt] (ptE) -- (ptF);\n  \\node[above] at (ptA) {$A$};\n  \\node[below left] at (ptB) {$B$};\n  \\node[below right] at (ptC) {$C$};\n  \\node[right] at (ptE) {$E$};\n  \\node[left] at (ptF) {$F$};\n\\end{tikzpicture}\n}\\par\\vspace{2pt}{\\sffamily\\scriptsize\\itshape\\color{muted}Hình 4}\\end{center}\\smallskip a) [NB] Trong Hình 4, nếu $\\widehat{AEF} = \\widehat{ABC}$ thì $\\triangle AEF \\backsim \\triangle ABC$. Đúng hay Sai?[[br]]b) [NB] Từ $\\triangle AEF \\backsim \\triangle ABC$, hãy suy ra hệ thức tích giữa các cạnh $AE, AB, AF, AC$.",
+          "tier": "btvn",
+          "level": 1,
+          "figure_given": true,
+          "solution": "a) Đúng, vì hai tam giác có góc $\\widehat{A}$ chung và $\\widehat{AEF} = \\widehat{ABC}$ (trường hợp g-g).[[br]]b) Ta có $\\dfrac{AE}{AB} = \\dfrac{AF}{AC} \\implies AE\\cdot AC = AF\\cdot AB$.[[br]]Vậy hệ thức tích là $AE\\cdot AC = AF\\cdot AB$.",
+          "dang_id": "NB1",
+          "source": "Đề thi Tuyển sinh Vào 10 Cầu Giấy"
+        },
+        {
+          "type": "problem",
+          "label": "BTVN~2.",
+          "statement": "[NB] Cho hệ thức tích $AE\\cdot AB = AF\\cdot AC$. Hãy viết tỉ số đồng dạng tương ứng: $\\dfrac{AE}{AF} = \\dfrac{[[blank:1.2cm]]}{AB}$.",
+          "tier": "btvn",
+          "level": 1,
+          "solution": "Từ $AE\\cdot AB = AF\\cdot AC$, chia cả hai vế cho $AF\\cdot AB$ ta được $\\dfrac{AE}{AF} = \\dfrac{AC}{AB}$.[[br]]Vậy biểu thức cần điền vào ô trống là $AC$.",
+          "dang_id": "NB2",
+          "source": "Đề thi Tuyển sinh Vào 10 Thanh Xuân"
+        },
+        {
+          "type": "problem",
+          "label": "BTVN~3.",
+          "statement": "[NB] Điền vào chỗ trống bài giải mẫu: \\textquotedblleft Cho tiếp tuyến $MA$ và cát tuyến $MBC$ của $(O)$. Chứng minh $MA^2 = MB\\cdot MC$\\textquotedblright:[[br]]1. Xét $\\triangle MAB$ và $\\triangle MCA$ có góc $[[blank:1.0cm]]$ chung.[[br]]2. Có $\\widehat{MAB} = [[blank:1.2cm]]$ (cùng chắn cung $AB$).[[br]]3. Do đó $\\triangle MAB \\backsim \\triangle MCA$ (g-g).[[br]]4. Suy ra $\\dfrac{MA}{MC} = \\dfrac{MB}{MA} \\implies MA^2 = MB\\cdot MC$.",
+          "tier": "btvn",
+          "level": 1,
+          "solution": "Các yếu tố cần điền: góc $\\widehat{M}$ chung; góc $\\widehat{MCA}$ (hoặc $\\widehat{BCA}$).[[br]]Vậy ta có hệ thức $MA^2 = MB\\cdot MC$.",
+          "dang_id": "NB3",
+          "source": "Barem thi Vào 10 Hà Nội"
+        },
+        {
+          "type": "problem",
+          "label": "BTVN~4.",
+          "statement": "[NB] Cho tam giác nhọn $ABC$ có hai đường cao $BD, CE$ cắt nhau tại $H$ như Hình 5. Nối đoạn thẳng $DE$. Hãy chỉ ra hai tam giác $\\triangle ADE$ và $\\triangle ABC$ đồng dạng theo trường hợp nào.\\par\\nopagebreak\\smallskip\\begin{center}\\adjustbox{max width=0.45\\linewidth, max totalheight=2.8cm}{\n\\begin{tikzpicture}[line width=0.8pt, font=\\small]\n  \\coordinate (ptA) at (0,1.8);\n  \\coordinate (ptB) at (-1.4,-0.6);\n  \\coordinate (ptC) at (1.8,-0.6);\n  \\coordinate (ptD) at (0.85,0.6);\n  \\coordinate (ptE) at (-0.6,0.6);\n  \\draw[ink] (ptA) -- (ptB) -- (ptC) -- cycle;\n  \\draw[brand, line width=1.0pt] (ptB) -- (ptD);\n  \\draw[brand, line width=1.0pt] (ptC) -- (ptE);\n  \\draw[ink, dashed] (ptD) -- (ptE);\n  \\node[above] at (ptA) {$A$};\n  \\node[below left] at (ptB) {$B$};\n  \\node[below right] at (ptC) {$C$};\n  \\node[right] at (ptD) {$D$};\n  \\node[left] at (ptE) {$E$};\n\\end{tikzpicture}\n}\\par\\vspace{2pt}{\\sffamily\\scriptsize\\itshape\\color{muted}Hình 5}\\end{center}",
+          "tier": "btvn",
+          "level": 1,
+          "figure_given": true,
+          "solution": "Hai tam giác $\\triangle ADE$ và $\\triangle ABC$ có góc $\\widehat{BAC}$ chung và $\\widehat{ADE} = \\widehat{ABC}$ (do tứ giác $BCED$ nội tiếp).[[br]]Do đó $\\triangle ADE \\backsim \\triangle ABC$ theo trường hợp góc - góc (g-g).[[br]]Vậy hai tam giác đồng dạng theo trường hợp góc - góc (g-g).",
+          "dang_id": "NB4",
+          "source": "Sách giáo khoa Toán 9 Kết nối tri thức"
+        },
+        {
+          "type": "problem",
+          "label": "BTVN~5.",
+          "statement": "Thực hiện các yêu cầu sau:\\par\\nopagebreak\\smallskip a) [TH] Hãy tự viết lại 4 bước khuôn giải ý b đề thi Vào 10 (chứng minh hệ thức tích bằng tam giác đồng dạng).[[br]]b) [TH] Giải thích vì sao khi chứng minh $\\triangle ABE \\backsim \\triangle ADC$ ta thường mượn góc từ tứ giác nội tiếp ở ý a.",
+          "tier": "btvn",
+          "level": 2,
+          "solution": "a) Bốn bước khuôn giải ý b:[[br]]Bước 1: Chuyển hệ thức tích thành tỉ lệ thức các cạnh tương ứng.[[br]]Bước 2: Tìm hai tam giác chứa các cạnh của tỉ lệ thức.[[br]]Bước 3: Chứng minh hai tam giác đồng dạng theo trường hợp g-g (có một góc chung và một cặp góc bằng nhau).[[br]]Bước 4: Suy ra tỉ số đồng dạng và nhân chéo để được hệ thức tích.[[br]]b) Vì ở ý a ta đã chứng minh tứ giác nội tiếp, nên theo tính chất tứ giác nội tiếp, góc ngoài tại một đỉnh bằng góc đối trong tại đỉnh đối diện, hoặc hai góc cùng nhìn một cạnh thì bằng nhau. Nhờ đó ta có ngay cặp góc thứ hai bằng nhau mà không cần dựng thêm hình phụ.[[br]]Vậy ta đã hoàn thành bài giải thích chi tiết.",
+          "dang_id": "TH1",
+          "source": "Cẩm nang ôn thi Vào 10 MathTech"
+        },
+        {
+          "type": "problem",
+          "label": "BTVN~6.",
+          "statement": "[TH] Cho tam giác nhọn $ABC$ nội tiếp $(O)$. Kẻ các đường cao $BE, CF$. Chứng minh rằng $AE\\cdot AC = AF\\cdot AB$.",
+          "tier": "btvn",
+          "level": 2,
+          "solution": "Xét $\\triangle ABE$ và $\\triangle ACF$, ta có:[[br]]\\hspace*{1.4em}$\\widehat{BAC}$ là góc chung;[[br]]\\hspace*{1.4em}$\\widehat{AEB} = \\widehat{AFC} = 90^\\circ$ (do $BE \\perp AC, CF \\perp AB$).[[br]]Do đó $\\triangle ABE \\backsim \\triangle ACF$ (g-g).[[br]]Suy ra $\\dfrac{AE}{AF} = \\dfrac{AB}{AC} \\implies AE\\cdot AC = AF\\cdot AB$.[[br]]Vậy ta có hệ thức $AE\\cdot AC = AF\\cdot AB$.",
+          "dang_id": "TH2",
+          "source": "Đề thi Tuyển sinh Vào 10 Ba Đình"
+        },
+        {
+          "type": "problem",
+          "label": "BTVN~7.",
+          "statement": "[VD] (Đề thi Tuyển sinh Vào 10) Cho đường tròn $(O; R)$ và điểm $M$ nằm ngoài đường tròn. Kẻ hai tiếp tuyến $MA, MB$ với $(O)$ ($A, B$ là tiếp điểm). Kẻ cát tuyến $MCD$ ($C$ nằm giữa $M$ và $D$). Gọi $H$ là giao điểm của $MO$ và $AB$. Chứng minh rằng $MC\\cdot MD = MH\\cdot MO = MA^2$.",
+          "tier": "btvn",
+          "level": 3,
+          "quy_trinh": [
+            "\\textbf{Bước 1} $-$ từ hệ thức cần chứng minh $AB\\cdot AC = AE\\cdot AS$, lập tỉ lệ thức $\\dfrac{AB}{AE} = \\dfrac{AS}{AC}$.",
+            "\\textbf{Bước 2} $-$ xác định hai tam giác chứa các cạnh: $\\triangle ABS$ và $\\triangle AEC$.",
+            "\\textbf{Bước 3} $-$ chứng minh $\\triangle ABS \\backsim \\triangle AEC$ (g-g) nhờ góc chung $\\widehat{A}$ và cặp góc bằng nhau suy từ tứ giác nội tiếp ở ý a.",
+            "\\textbf{Bước 4} $-$ suy ra tỉ số đồng dạng và nhân chéo để được đẳng thức tích."
+          ],
+          "solution": "1. Chứng minh $MC\\cdot MD = MA^2$:[[br]]Xét $\\triangle MAC$ và $\\triangle MDA$ có $\\widehat{M}$ chung và $\\widehat{MAC} = \\widehat{MDA}$ (cùng chắn cung $AC$).[[br]]Do đó $\\triangle MAC \\backsim \\triangle MDA$ (g-g) $\\implies \\dfrac{MA}{MD} = \\dfrac{MC}{MA} \\implies MC\\cdot MD = MA^2$.[[br]]2. Chứng minh $MH\\cdot MO = MA^2$:[[br]]Theo tính chất tiếp tuyến, $MO \\perp AB$ tại $H$. Tam giác $MAO$ vuông tại $A$ có đường cao $AH$.[[br]]Áp dụng hệ thức lượng: $MA^2 = MH\\cdot MO$.[[br]]Từ đó suy ra $MC\\cdot MD = MH\\cdot MO = MA^2$.[[br]]Vậy hệ thức được chứng minh hoàn toàn.",
+          "dang_id": "VD1",
+          "source": "Đề thi Tuyển sinh Vào 10 Hà Nội 2020"
+        },
+        {
+          "type": "problem",
+          "label": "BTVN~8.",
+          "statement": "[VDC] (Ý cuối bài hình thi Vào 10) Cho đường tròn $(O)$ và dây $BC$ cố định. Điểm $A$ di động trên cung lớn $BC$. Trực tâm $H$ của tam giác $ABC$. Gọi $M$ là trung điểm của đoạn thẳng $BC$. Kẻ đường kính $AK$ của $(O)$. Chứng minh rằng $AH = 2OM$ và đường tròn ngoại tiếp $\\triangle HBC$ có bán kính không đổi.[[br]]\\begin{center}\\adjustbox{max width=0.48\\linewidth, max totalheight=3.0cm}{\n\\begin{tikzpicture}[line width=0.8pt, font=\\small]\n  \\draw[ink] (0,0) circle (1.8);\n  \\coordinate (ptA) at (0,1.8);\n  \\coordinate (ptB) at (-1.5,-0.995);\n  \\coordinate (ptC) at (1.5,-0.995);\n  \\coordinate (ptH) at (0,0.2);\n  \\coordinate (ptM) at (0,-0.995);\n  \\draw[ink] (ptA) -- (ptB) -- (ptC) -- cycle;\n  \\fill[ink] (0,0) circle (1.3pt) node[right=2pt]{$O$};\n  \\node[above] at (ptA) {$A$};\n  \\node[left] at (ptB) {$B$};\n  \\node[right] at (ptC) {$C$};\n  \\node[above] at (ptH) {$H$};\n  \\node[below] at (ptM) {$M$};\n\\end{tikzpicture}\n}\\par\\vspace{2pt}{\\sffamily\\scriptsize\\itshape\\color{muted}Hình 5}\\end{center}",
+          "statement_slide": "Cho $(O)$ và dây $BC$ cố định. Điểm $A$ di động trên cung lớn $BC$. Trực tâm $H$, trung điểm $M$ của $BC$. Chứng minh $AH = 2OM$ và bán kính đường tròn ngoại tiếp $\\triangle HBC$ không đổi.",
+          "tier": "btvn",
+          "level": 4,
+          "figure_given": true,
+          "quy_trinh": [
+            "\\textbf{Bước 1} $-$ kéo dài các đoạn thẳng cắt nhau tại điểm phụ và áp dụng hệ thức lượng.",
+            "\\textbf{Bước 2} $-$ sử dụng định lí Ta-lét và tính chất trung điểm để thiết lập tỉ số song song.",
+            "\\textbf{Bước 3} $-$ chứng minh hai góc đối đỉnh bằng nhau hoặc tổng góc bằng $180^\\circ$.",
+            "\\textbf{Bước 4} $-$ kết luận ba điểm thẳng hàng."
+          ],
+          "solution": "Kẻ đường kính $AK$ của $(O)$. Tương tự như Bài 8 trên lớp, tứ giác $BHCK$ là hình bình hành.[[br]]Suy ra $M$ là trung điểm của $HK$.[[br]]Trong tam giác $AHK$, có $O$ là trung điểm $AK$ và $M$ là trung điểm $HK$.[[br]]Do đó $OM$ là đường trung bình của tam giác $AHK$, suy ra $OM = \\dfrac{1}{2}AH \\implies AH = 2OM$.[[br]]Vì dây $BC$ cố định nên khoảng cách $OM$ từ $O$ đến $BC$ là một đại lượng không đổi.[[br]]Do đó đoạn thẳng $AH$ có độ dài không đổi khi $A$ di chuyển.[[br]]Mặt khác, $\\triangle HBC$ và $\\triangle KBC$ đối xứng nhau qua $BC$ nên đường tròn ngoại tiếp $\\triangle HBC$ có bán kính bằng bán kính đường tròn $(O)$, tức là không đổi.[[br]]Vậy $AH = 2OM$ và bán kính đường tròn ngoại tiếp tam giác $HBC$ luôn không đổi.",
+          "dang_id": "VDC1",
+          "source": "Đề thi Tuyển sinh Vào 10 Chuyên Khoa học Tự nhiên"
+        }
+      ]
+    }
+  ]
+}

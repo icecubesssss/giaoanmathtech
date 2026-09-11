@@ -1,0 +1,422 @@
+{
+  "slug": "phieu-a-khai-niem-he-va-giai-he-co-ban",
+  "title": "Khái niệm hệ \\& Giải hệ phương trình bậc nhất hai ẩn",
+  "eyebrow": "ĐẠI SỐ — BUỔI 1 (TUẦN 4): SGK BÀI 1 \\& BÀI 2",
+  "grade_label": "Lớp 9 • Ôn vào 10",
+  "class_tier": "C",
+  "stages": [
+    {
+      "kind": "review",
+      "number": 1,
+      "title": "Khám phá",
+      "blocks": [
+        {
+          "type": "noted",
+          "variant": "note",
+          "text": "\\textbf{Ôn bài cũ (Lớp 8).} Giải phương trình bậc nhất một ẩn: [[br]] $3x - 12 = 0 \\implies 3x = 12 \\implies x = 4$. [[br]] Phương trình một ẩn cho ta \\textbf{một} giá trị $x$. Hôm nay ta gặp phương trình có \\textbf{hai} ẩn $x$ và $y$ — cách biểu diễn nghiệm sẽ hoàn toàn khác."
+        },
+        {
+          "type": "opener",
+          "text": "\\textbf{Bài toán cổ (SGK tr.5):} [[br]] \\emph{«Quýt, cam mười bảy quả tươi [[br]] Đem chia cho một trăm người cùng vui. [[br]] Chia ba mỗi quả quýt rồi, [[br]] Còn cam, mỗi quả chia mười vừa xinh. [[br]] Trăm người, trăm miếng ngọt lành. [[br]] Quýt, cam mỗi loại tính rành là bao?»} [[br]] Gọi $x$ là số quả cam, $y$ là số quả quýt ($x, y \\in \\mathbb{N}^*$). [[br]] $\\bullet$ Tổng số quả là $17$: $x + y = 17$. [[br]] $\\bullet$ Tổng số miếng là $100$: $10x + 3y = 100$. [[br]] Cặp hai phương trình trên tạo thành một \\textbf{hệ hai phương trình bậc nhất hai ẩn}."
+        }
+      ],
+      "solution": "Ôn bài cũ: $x = 4$. Bài toán cổ: nghiệm $x = 7$ (cam), $y = 10$ (quýt).",
+      "teacher_note": "Khởi động bài học bằng câu chuyện bài toán dân gian quen thuộc, tạo động lực khám phá cách giải hệ hai phương trình."
+    },
+    {
+      "kind": "concept",
+      "number": 2,
+      "title": "Kiến thức cần nhớ",
+      "blocks": [
+        {
+          "type": "noted",
+          "variant": "note",
+          "text": "\\textbf{1. Phương trình bậc nhất hai ẩn} có dạng tổng quát: [[br]] \\qquad $ax + by = c$ \\quad ($a \\neq 0$ HOẶC $b \\neq 0$). [[br]] Nghiệm của phương trình là cặp số $(x_0; y_0)$ thỏa mãn $ax_0 + by_0 = c$."
+        },
+        {
+          "type": "noted",
+          "variant": "note",
+          "text": "\\textbf{2. Hệ hai phương trình bậc nhất hai ẩn} có dạng: [[br]] \\qquad $\\begin{cases} ax + by = c \\\\ a'x + b'y = c' \\end{cases}$ [[br]] Nghiệm của hệ là cặp số $(x_0; y_0)$ đồng thời là nghiệm của cả hai phương trình."
+        },
+        {
+          "type": "noted",
+          "variant": "trap",
+          "text": "\\textbf{Bẫy điểm thi cần tránh:} [[br]] $\\bullet$ Một \\emph{phương trình} bậc nhất hai ẩn có \\textbf{vô số nghiệm}. [[br]] $\\bullet$ Một \\emph{hệ hai phương trình} bậc nhất hai ẩn thường có \\textbf{nghiệm duy nhất}."
+        },
+        {
+          "type": "noted",
+          "variant": "tip",
+          "text": "\\textbf{Mẹo chọn phương pháp giải hệ:} [[br]] $\\bullet$ Có ẩn mang hệ số $1$ hoặc $-1$ $\\to$ \\textbf{Phương pháp thế} (rút ẩn đó nhanh nhất). [[br]] $\\bullet$ Hệ số của một ẩn bằng nhau hoặc đối nhau $\\to$ \\textbf{Phương pháp cộng đại số} (trừ hoặc cộng vế)."
+        }
+      ]
+    },
+    {
+      "kind": "practice1",
+      "number": 3,
+      "title": "Luyện tập 1 — Nhận biết \\& Phương pháp Thế",
+      "blocks": [
+        {
+          "type": "para",
+          "text": "\\textbf{Dạng NB1: Nhận biết phương trình bậc nhất hai ẩn}"
+        },
+        {
+          "type": "problem",
+          "label": "Bài 1.",
+          "dang_id": "NB1",
+          "level": 1,
+          "tier": "onclass",
+          "statement": "Chọn khẳng định đúng cho mỗi câu sau: [[br]] a) Phương trình nào sau đây là phương trình bậc nhất hai ẩn? \\quad A. $2x - 3y = 5$ \\quad B. $0x + 0y = 3$ \\quad C. $x^2 + y = 1$ \\quad D. $xy = 2$ [[br]] b) Hệ số $a, b, c$ của phương trình $3x - y = 4$ lần lượt là: \\quad A. $3; -1; 4$ \\quad B. $3; 1; 4$ \\quad C. $3; -1; -4$ \\quad D. $1; 3; 4$ [[br]] c) Phương trình $0x + 2y = -6$ có phải là phương trình bậc nhất hai ẩn không? \\quad A. Có \\quad B. Không [[br]] d) Phương trình nào sau đây \\textbf{không} là phương trình bậc nhất hai ẩn? \\quad A. $x - y = 0$ \\quad B. $2x + 0y = 1$ \\quad C. $0x + 0y = 0$ \\quad D. $5x + 3y = -2$",
+          "solution": "a) A. [[br]] b) A. [[br]] c) A (vì $b = 2 \\neq 0$). [[br]] d) C (vì cả hai hệ số $a, b$ đều bằng $0$).",
+          "writelines": 0
+        },
+        {
+          "type": "para",
+          "text": "\\textbf{Dạng NB2: Kiểm tra nghiệm của hệ phương trình}"
+        },
+        {
+          "type": "problem",
+          "label": "Bài 2.",
+          "dang_id": "NB2",
+          "level": 1,
+          "tier": "onclass",
+          "statement": "Xét xem mỗi khẳng định sau là \\textbf{Đúng} hay \\textbf{Sai}: [[br]] a) Cặp số $(1; 2)$ là nghiệm của phương trình $2x + y = 4$. [[br]] b) Cặp số $(2; 1)$ là nghiệm của hệ phương trình $\\begin{cases} x + y = 3 \\\\ x - y = 1 \\end{cases}$. [[br]] c) Cặp số $(0; 3)$ là nghiệm của hệ phương trình $\\begin{cases} 2x + y = 3 \\\\ x - 2y = 0 \\end{cases}$. [[br]] d) Cặp số $(-1; 2)$ là nghiệm của hệ phương trình $\\begin{cases} 3x + y = -1 \\\\ x + 2y = 3 \\end{cases}$.",
+          "solution": "a) Đúng, vì $2(1) + 2 = 4$. [[br]] b) Đúng, vì $2+1=3$ và $2-1=1$. [[br]] c) Sai, vì $0 - 2(3) = -6 \\neq 0$. [[br]] d) Đúng, vì $3(-1)+2=-1$ và $-1+2(2)=3$.",
+          "writelines": 0
+        },
+        {
+          "type": "para",
+          "text": "\\textbf{Dạng NB3: Rút một ẩn theo ẩn còn lại}"
+        },
+        {
+          "type": "problem",
+          "label": "Bài 3.",
+          "dang_id": "NB3",
+          "level": 1,
+          "tier": "onclass",
+          "statement": "Điền biểu thức thích hợp vào chỗ chấm để biểu diễn một ẩn theo ẩn còn lại: [[br]] a) Từ phương trình $x - 2y = 3$, rút $x$ theo $y$: $x = \\dots$ [[br]] b) Từ phương trình $2x + y = 5$, rút $y$ theo $x$: $y = \\dots$ [[br]] c) Từ phương trình $x + 3y = 7$, rút $x$ theo $y$: $x = \\dots$ [[br]] d) Từ phương trình $3x - y = -2$, rút $y$ theo $x$: $y = \\dots$",
+          "solution": "a) $x = 3 + 2y$. [[br]] b) $y = 5 - 2x$. [[br]] c) $x = 7 - 3y$. [[br]] d) $y = 3x + 2$.",
+          "writelines": 0
+        },
+        {
+          "type": "para",
+          "text": "\\textbf{Dạng NB4: Thực hiện phép thế và điền khuyết bước giải}"
+        },
+        {
+          "type": "problem",
+          "label": "Bài 4.",
+          "dang_id": "NB4",
+          "level": 1,
+          "tier": "onclass",
+          "statement": "Điền vào chỗ chấm để hoàn thiện các bước giải hệ $\\begin{cases} x - y = 1 \\\\ 2x + y = 8 \\end{cases}$ bằng phương pháp thế: [[br]] a) Từ phương trình thứ nhất, rút $x = [[blank:2.0cm]]$. [[br]] b) Thế vào phương trình thứ hai ta được: $2(\\dots) + y = 8$. [[br]] c) Thu gọn phương trình một ẩn: $3y + 2 = 8 \\implies y = [[blank:1.5cm]]$. [[br]] d) Thay giá trị $y$ tìm được vào biểu thức rút ta có: $x = [[blank:1.5cm]]$.",
+          "solution": "a) $x = y + 1$. [[br]] b) $2(y+1) + y = 8$. [[br]] c) $y = 2$. [[br]] d) $x = 2 + 1 = 3$. Hệ có nghiệm $(3; 2)$.",
+          "writelines": 0
+        },
+        {
+          "type": "para",
+          "text": "\\textbf{Dạng NB5: Nối hệ phương trình với biểu thức rút ẩn thích hợp}"
+        },
+        {
+          "type": "problem",
+          "label": "Bài 5.",
+          "dang_id": "NB5",
+          "level": 1,
+          "tier": "onclass",
+          "statement": "Nối mỗi hệ phương trình ở Cột A với biểu thức rút ẩn tối ưu nhất ở Cột B: [[br]] {\\centering \\begin{tabular}{p{5.5cm} @{\\hspace{1.5cm}} p{5.5cm}} \\textbf{Cột A (Hệ PT)} & \\textbf{Cột B (Bước rút ẩn)} \\\\[3pt] a) $\\begin{cases} x + 2y = 4 \\\\ 3x - y = 5 \\end{cases}$ & 1) Rút $y = 7 - 2x$ từ PT (1) \\\\[6pt] b) $\\begin{cases} 2x + y = 7 \\\\ 4x - 3y = 1 \\end{cases}$ & 2) Rút $x = 4 - 2y$ từ PT (1) \\\\[6pt] c) $\\begin{cases} 3x - y = 2 \\\\ 2x + 5y = 12 \\end{cases}$ & 3) Rút $y = 3x - 2$ từ PT (1) \\\\[6pt] d) $\\begin{cases} 4x + 3y = 11 \\\\ x - 2y = 0 \\end{cases}$ & 4) Rút $x = 2y$ từ PT (2) \\end{tabular} \\par}",
+          "solution": "a) nối 2). [[br]] b) nối 1). [[br]] c) nối 3). [[br]] d) nối 4).",
+          "writelines": 0
+        },
+        {
+          "type": "para",
+          "text": "\\textbf{Dạng TH1: Giải hệ phương trình bằng phương pháp thế khi hệ số là $1$ hoặc $-1$}"
+        },
+        {
+          "type": "noted",
+          "variant": "example",
+          "text": "\\textbf{Ví dụ 1.} Giải hệ phương trình $\\begin{cases} x + 2y = 5 \\\\ 3x - y = 1 \\end{cases}$ bằng phương pháp thế. [[br]] {\\sffamily\\bfseries\\color{brand}Lời giải} [[br]] \\hspace*{1.4em}Từ phương trình thứ nhất, ta có: $x = 5 - 2y$. [[br]] \\hspace*{1.4em}Thế biểu thức của $x$ vào phương trình thứ hai, ta được: [[br]] \\hspace*{1.4em}$3(5 - 2y) - y = 1$ [[br]] \\hspace*{1.4em}$15 - 6y - y = 1 \\implies -7y = -14 \\implies y = 2$. [[br]] \\hspace*{1.4em}Thay $y = 2$ vào biểu thức $x = 5 - 2y$, ta được: $x = 5 - 2(2) = 1$. [[br]] Vậy hệ phương trình có nghiệm duy nhất là $(1; 2)$."
+        },
+        {
+          "type": "problem",
+          "label": "Bài 6.",
+          "dang_id": "TH1",
+          "level": 2,
+          "tier": "onclass",
+          "statement": "Giải các hệ phương trình sau bằng phương pháp thế: [[br]] a) $\\begin{cases} x - 3y = 2 \\\\ 2x + y = 11 \\end{cases}$ [[br]] b) $\\begin{cases} 2x + y = 7 \\\\ 3x - 2y = 0 \\end{cases}$ [[br]] c) $\\begin{cases} x + y = 17 \\\\ 10x + 3y = 100 \\end{cases}$",
+          "solution": "Áp dụng phương pháp thế, ta có: [[br]] a) Rút $x = 2 + 3y$. Thế: $2(2+3y)+y=11 \\implies 7y=7 \\implies y=1 \\implies x=5$. [[br]] b) Rút $y = 7 - 2x$. Thế: $3x - 2(7-2x) = 0 \\implies 7x=14 \\implies x=2 \\implies y=3$. [[br]] c) Rút $y = 17 - x$. Thế: $10x + 3(17-x) = 100 \\implies 7x=49 \\implies x=7 \\implies y=10$. [[br]] Vậy nghiệm của các hệ phương trình lần lượt là $(5; 1)$, $(2; 3)$ và $(7; 10)$.",
+          "writelines": 6
+        },
+        {
+          "type": "para",
+          "text": "\\textbf{Dạng TH2: Giải hệ phương trình bằng phương pháp thế với hệ số nguyên bất kỳ}"
+        },
+        {
+          "type": "noted",
+          "variant": "example",
+          "text": "\\textbf{Ví dụ 2.} Giải hệ phương trình $\\begin{cases} 2x + 3y = 13 \\\\ 3x - 2y = 0 \\end{cases}$ bằng phương pháp thế. [[br]] {\\sffamily\\bfseries\\color{brand}Lời giải} [[br]] \\hspace*{1.4em}Từ phương trình thứ hai, ta có: $3x = 2y \\implies x = \\dfrac{2}{3}y$. [[br]] \\hspace*{1.4em}Thế vào phương trình thứ nhất, ta được: [[br]] \\hspace*{1.4em}$2\\left(\\dfrac{2}{3}y\\right) + 3y = 13$ [[br]] \\hspace*{1.4em}Nhân cả hai vế với $3$: $4y + 9y = 39 \\implies 13y = 39 \\implies y = 3$. [[br]] \\hspace*{1.4em}Thay $y = 3$ vào $x = \\dfrac{2}{3}y$, ta được: $x = \\dfrac{2}{3}\\cdot 3 = 2$. [[br]] Vậy hệ phương trình có nghiệm duy nhất là $(2; 3)$."
+        },
+        {
+          "type": "problem",
+          "label": "Bài 7.",
+          "dang_id": "TH2",
+          "level": 2,
+          "tier": "onclass",
+          "statement": "Giải các hệ phương trình sau bằng phương pháp thế: [[br]] a) $\\begin{cases} 2x + 3y = 8 \\\\ 3x - y = 1 \\end{cases}$ [[br]] b) $\\begin{cases} 3x + 2y = 12 \\\\ 2x - 3y = -5 \\end{cases}$ [[br]] c) $\\begin{cases} 4x + 3y = 6 \\\\ 2x - 5y = 16 \\end{cases}$",
+          "solution": "Áp dụng phương pháp thế, ta có: [[br]] a) Rút $y = 3x - 1$. Thế: $2x + 3(3x-1) = 8 \\implies 11x=11 \\implies x=1 \\implies y=2$. [[br]] b) Rút $x = \\dfrac{12-2y}{3}$. Thế: $2\\left(\\dfrac{12-2y}{3}\\right)-3y=-5 \\implies 24-4y-9y=-15 \\implies -13y=-39 \\implies y=3 \\implies x=2$. [[br]] c) Rút $2x = 5y + 16 \\implies 4x = 10y + 32$. Thế: $10y+32+3y=6 \\implies 13y=-26 \\implies y=-2 \\implies x=3$. [[br]] Vậy nghiệm của các hệ phương trình lần lượt là $(1; 2)$, $(2; 3)$ và $(3; -2)$.",
+          "writelines": 6
+        }
+      ]
+    },
+    {
+      "kind": "practice2",
+      "number": 4,
+      "title": "Luyện tập 2 — Cộng đại số \\& Toán thực tế",
+      "blocks": [
+        {
+          "type": "para",
+          "text": "\\textbf{Dạng NB6: Lựa chọn phép cộng hay trừ đại số}"
+        },
+        {
+          "type": "problem",
+          "label": "Bài 8.",
+          "dang_id": "NB6",
+          "level": 1,
+          "tier": "onclass",
+          "statement": "Cho biết nên \\textbf{cộng} hay \\textbf{trừ} từng vế của hai phương trình để triệt tiêu một ẩn: [[br]] a) Hệ $\\begin{cases} 3x + 2y = 7 \\\\ 5x - 2y = 1 \\end{cases}$ (triệt tiêu ẩn $y$) [[br]] b) Hệ $\\begin{cases} 5x + 2y = 16 \\\\ 5x - 3y = 1 \\end{cases}$ (triệt tiêu ẩn $x$) [[br]] c) Hệ $\\begin{cases} 4x - 3y = 5 \\\\ 2x + 3y = 7 \\end{cases}$ (triệt tiêu ẩn $y$) [[br]] d) Hệ $\\begin{cases} 2x + 5y = 11 \\\\ 2x - y = -1 \\end{cases}$ (triệt tiêu ẩn $x$)",
+          "solution": "a) Hệ số của $y$ đối nhau ($2$ và $-2$) $\\implies$ \\textbf{Cộng}. [[br]] b) Hệ số của $x$ bằng nhau ($5$ và $5$) $\\implies$ \\textbf{Trừ}. [[br]] c) Hệ số của $y$ đối nhau ($-3$ và $3$) $\\implies$ \\textbf{Cộng}. [[br]] d) Hệ số của $x$ bằng nhau ($2$ và $2$) $\\implies$ \\textbf{Trừ}.",
+          "writelines": 0
+        },
+        {
+          "type": "para",
+          "text": "\\textbf{Dạng NB7: Thực hiện cộng/trừ đại số để triệt tiêu ẩn}"
+        },
+        {
+          "type": "problem",
+          "label": "Bài 9.",
+          "dang_id": "NB7",
+          "level": 1,
+          "tier": "onclass",
+          "statement": "Thực hiện phép tính vế theo vế để viết phương trình một ẩn thu được: [[br]] a) Cộng vế hai phương trình của hệ $\\begin{cases} 3x + 2y = 7 \\\\ 5x - 2y = 1 \\end{cases}$: $[[blank:2.0cm]] = 8$. [[br]] b) Trừ vế PT(1) cho PT(2) của hệ $\\begin{cases} 5x + 2y = 16 \\\\ 5x - 3y = 1 \\end{cases}$: $[[blank:2.0cm]] = 15$. [[br]] c) Cộng vế hai phương trình của hệ $\\begin{cases} 4x - 3y = 5 \\\\ 2x + 3y = 7 \\end{cases}$: $[[blank:2.0cm]] = 12$. [[br]] d) Trừ vế PT(1) cho PT(2) của hệ $\\begin{cases} 2x + 5y = 11 \\\\ 2x - y = -1 \\end{cases}$: $[[blank:2.0cm]] = 12$.",
+          "solution": "a) $8x = 8$. [[br]] b) $5y = 15$. [[br]] c) $6x = 12$. [[br]] d) $6y = 12$.",
+          "writelines": 0
+        },
+        {
+          "type": "para",
+          "text": "\\textbf{Dạng NB8: Thay giá trị ẩn và kết luận nghiệm}"
+        },
+        {
+          "type": "problem",
+          "label": "Bài 10.",
+          "dang_id": "NB8",
+          "level": 1,
+          "tier": "onclass",
+          "statement": "Tìm giá trị của ẩn còn lại và viết nghiệm $(x; y)$ của hệ: [[br]] a) Biết $x = 1$, thay vào phương trình $3x + 2y = 7$ để tìm $y$: $y = \\dots$ [[br]] b) Biết $y = 3$, thay vào phương trình $5x + 2y = 16$ để tìm $x$: $x = \\dots$ [[br]] c) Biết $x = 2$, thay vào phương trình $2x + 3y = 7$ để tìm $y$: $y = \\dots$ [[br]] d) Biết $y = 2$, thay vào phương trình $2x - y = -1$ để tìm $x$: $x = \\dots$",
+          "solution": "a) $3(1)+2y=7 \\implies y=2$. Nghiệm $(1; 2)$. [[br]] b) $5x+2(3)=16 \\implies x=2$. Nghiệm $(2; 3)$. [[br]] c) $2(2)+3y=7 \\implies y=1$. Nghiệm $(2; 1)$. [[br]] d) $2x-2=-1 \\implies x=\\dfrac{1}{2}$. Nghiệm $\\left(\\dfrac{1}{2}; 2\\right)$.",
+          "writelines": 0
+        },
+        {
+          "type": "para",
+          "text": "\\textbf{Dạng TH3: Giải hệ phương trình bằng phương pháp cộng đại số}"
+        },
+        {
+          "type": "noted",
+          "variant": "example",
+          "text": "\\textbf{Ví dụ 3.} Giải hệ phương trình $\\begin{cases} 3x + 2y = 7 \\\\ 5x - 2y = 1 \\end{cases}$ bằng phương pháp cộng đại số. [[br]] {\\sffamily\\bfseries\\color{brand}Lời giải} [[br]] \\hspace*{1.4em}Nhận thấy hệ số của $y$ ở hai phương trình đối nhau ($2$ và $-2$). [[br]] \\hspace*{1.4em}Cộng từng vế hai phương trình, ta được: [[br]] \\hspace*{1.4em}$(3x + 2y) + (5x - 2y) = 7 + 1 \\implies 8x = 8 \\implies x = 1$. [[br]] \\hspace*{1.4em}Thay $x = 1$ vào phương trình thứ nhất, ta được: [[br]] \\hspace*{1.4em}$3(1) + 2y = 7 \\implies 2y = 4 \\implies y = 2$. [[br]] Vậy hệ phương trình có nghiệm duy nhất là $(1; 2)$."
+        },
+        {
+          "type": "problem",
+          "label": "Bài 11.",
+          "dang_id": "TH3",
+          "level": 2,
+          "tier": "onclass",
+          "statement": "Giải các hệ phương trình sau bằng phương pháp cộng đại số: [[br]] a) $\\begin{cases} 5x - 2y = 8 \\\\ 3x + 2y = 8 \\end{cases}$ [[br]] b) $\\begin{cases} 5x + 2y = 16 \\\\ 5x - 3y = 1 \\end{cases}$",
+          "solution": "Áp dụng phương pháp cộng đại số, ta có: [[br]] a) Hệ số của $y$ đối nhau. Cộng vế: $8x = 16 \\implies x = 2$. Thay vào PT(2): $3(2)+2y=8 \\implies y=1$. [[br]] b) Hệ số của $x$ bằng nhau. Trừ vế: $5y = 15 \\implies y = 3$. Thay vào PT(1): $5x+2(3)=16 \\implies x=2$. [[br]] Vậy nghiệm của các hệ phương trình lần lượt là $(2; 1)$ và $(2; 3)$.",
+          "writelines": 6
+        },
+        {
+          "type": "para",
+          "text": "\\textbf{Dạng VD1: Lập và giải hệ phương trình tìm hai số hoặc bài toán thực tế}"
+        },
+        {
+          "type": "noted",
+          "variant": "example",
+          "text": "\\textbf{Ví dụ 4.} Hai lớp 9A và 9B quyên góp được tất cả $27$ quyển vở. Biết rằng lớp 9A quyên góp nhiều hơn lớp 9B là $5$ quyển. Hỏi mỗi lớp quyên góp được bao nhiêu quyển vở? [[br]] {\\sffamily\\bfseries\\color{brand}Lời giải} [[br]] \\hspace*{1.4em}Gọi số quyển vở lớp 9A quyên góp là $x$, lớp 9B quyên góp là $y$ ($x, y \\in \\mathbb{N}^*; x > y$). [[br]] \\hspace*{1.4em}Vì hai lớp quyên góp được tất cả $27$ quyển vở nên ta có phương trình: $x + y = 27$. [[br]] \\hspace*{1.4em}Vì lớp 9A quyên góp nhiều hơn lớp 9B là $5$ quyển nên ta có phương trình: $x - y = 5$. [[br]] \\hspace*{1.4em}Ta có hệ phương trình: $\\begin{cases} x + y = 27 \\\\ x - y = 5 \\end{cases}$. [[br]] \\hspace*{1.4em}Cộng từng vế hai phương trình, ta được: $2x = 32 \\implies x = 16$ (thỏa mãn). [[br]] \\hspace*{1.4em}Thay $x = 16$ vào phương trình thứ nhất: $16 + y = 27 \\implies y = 11$ (thỏa mãn). [[br]] Vậy lớp 9A quyên góp được $16$ quyển vở, lớp 9B quyên góp được $11$ quyển vở."
+        },
+        {
+          "type": "problem",
+          "label": "Bài 12.",
+          "dang_id": "VD1",
+          "level": 3,
+          "tier": "onclass",
+          "statement": "Giải các bài toán sau bằng cách lập hệ phương trình: [[br]] a) Tìm hai số tự nhiên biết tổng của chúng bằng $45$ và số thứ nhất lớn hơn số thứ hai là $9$ đơn vị. [[br]] b) Một mảnh vườn hình chữ nhật có chu vi bằng $36$ m. Biết chiều dài hơn chiều rộng $4$ m. Tính chiều dài và chiều rộng của mảnh vườn đó.",
+          "solution": "Ta có, theo đề bài ta lập và giải hệ phương trình: [[br]] a) Gọi hai số là $x, y$ ($x, y \\in \\mathbb{N}, x > y$). Ta có hệ: $\\begin{cases} x+y=45 \\\\ x-y=9 \\end{cases} \\implies 2x=54 \\implies x=27, y=18$. [[br]] b) Gọi chiều dài là $x$ (m), chiều rộng là $y$ (m) ($x > y > 0$). Nửa chu vi là $36 : 2 = 18$ m. Do đó ta có hệ: $\\begin{cases} x+y=18 \\\\ x-y=4 \\end{cases} \\implies 2x=22 \\implies x=11, y=7$. [[br]] Vậy hai số cần tìm là $27$ và $18$; chiều dài và chiều rộng mảnh vườn là $11$ m và $7$ m.",
+          "writelines": 8
+        }
+      ]
+    },
+    {
+      "kind": "reflection",
+      "number": 5,
+      "title": "Về đích \\& Bài tập về nhà",
+      "blocks": [
+        {
+          "type": "mindmap",
+          "caption": "Sơ đồ kiến thức cốt lõi Buổi 1",
+          "root": "Giải hệ phương trình bậc nhất hai ẩn",
+          "branches": [
+            {
+              "label": "Phương pháp Thế",
+              "children": [
+                {
+                  "label": "Rút một ẩn theo ẩn kia"
+                },
+                {
+                  "label": "Thế vào PT còn lại để đưa về PT 1 ẩn"
+                },
+                {
+                  "label": "Tìm ẩn thứ nhất rồi thay ngược tìm ẩn thứ hai"
+                }
+              ]
+            },
+            {
+              "label": "Phương pháp Cộng đại số",
+              "children": [
+                {
+                  "label": "Hệ số đối nhau: CỘNG từng vế"
+                },
+                {
+                  "label": "Hệ số bằng nhau: TRỪ từng vế"
+                },
+                {
+                  "label": "Chưa bằng/đối: Nhân vế để cân bằng hệ số"
+                }
+              ]
+            }
+          ]
+        },
+        {
+          "type": "para",
+          "text": "\\textbf{BÀI TẬP VỀ NHÀ (BTVN)}"
+        },
+        {
+          "type": "problem",
+          "label": "BTVN 1.",
+          "dang_id": "NB1",
+          "level": 1,
+          "tier": "btvn",
+          "statement": "Chỉ ra phương trình bậc nhất hai ẩn trong các phương trình sau: [[br]] a) $3x + 4y = 12$ [[br]] b) $0x + 5y = -10$ [[br]] c) $2x^2 - y = 3$",
+          "solution": "a) Là phương trình bậc nhất hai ẩn. [[br]] b) Là phương trình bậc nhất hai ẩn (vì $b = 5 \\neq 0$). [[br]] c) Không phải (vì chứa $x^2$).",
+          "writelines": 0
+        },
+        {
+          "type": "problem",
+          "label": "BTVN 2.",
+          "dang_id": "NB2",
+          "level": 1,
+          "tier": "btvn",
+          "statement": "Kiểm tra xem cặp số $(x; y)$ cho trước có là nghiệm của hệ phương trình hay không: [[br]] a) Cặp số $(3; 1)$ với hệ $\\begin{cases} x + y = 4 \\\\ 2x - y = 5 \\end{cases}$ [[br]] b) Cặp số $(2; -1)$ với hệ $\\begin{cases} 3x + 2y = 4 \\\\ x - y = 1 \\end{cases}$ [[br]] c) Cặp số $(1; 1)$ với hệ $\\begin{cases} 4x - y = 3 \\\\ x + 3y = 4 \\end{cases}$",
+          "solution": "a) Là nghiệm vì $3+1=4$ và $2(3)-1=5$. [[br]] b) Không là nghiệm vì $2 - (-1) = 3 \\neq 1$. [[br]] c) Là nghiệm vì $4(1)-1=3$ và $1+3(1)=4$.",
+          "writelines": 0
+        },
+        {
+          "type": "problem",
+          "label": "BTVN 3.",
+          "dang_id": "NB3",
+          "level": 1,
+          "tier": "btvn",
+          "statement": "Rút ẩn thích hợp theo ẩn còn lại từ mỗi phương trình sau: [[br]] a) $x + 4y = 9 \\implies x = \\dots$ [[br]] b) $3x - y = 7 \\implies y = \\dots$ [[br]] c) $2x + y = -1 \\implies y = \\dots$",
+          "solution": "a) $x = 9 - 4y$. [[br]] b) $y = 3x - 7$. [[br]] c) $y = -1 - 2x$.",
+          "writelines": 0
+        },
+        {
+          "type": "problem",
+          "label": "BTVN 4.",
+          "dang_id": "NB4",
+          "level": 1,
+          "tier": "btvn",
+          "statement": "Điền vào chỗ chấm để giải hệ $\\begin{cases} x + y = 5 \\\\ 3x - 2y = 5 \\end{cases}$: [[br]] a) Rút $x = [[blank:1.5cm]]$ từ phương trình thứ nhất. [[br]] b) Thế vào phương trình thứ hai: $3(\\dots) - 2y = 5$. [[br]] c) Tìm được $y = [[blank:1.2cm]]$ và $x = [[blank:1.2cm]]$.",
+          "solution": "a) $x = 5 - y$. [[br]] b) $3(5-y) - 2y = 5$. [[br]] c) $15 - 5y = 5 \\implies y = 2 \\implies x = 3$.",
+          "writelines": 0
+        },
+        {
+          "type": "problem",
+          "label": "BTVN 5.",
+          "dang_id": "NB5",
+          "level": 1,
+          "tier": "btvn",
+          "statement": "Nối mỗi hệ phương trình với phương pháp giải thuận tiện nhất: [[br]] a) $\\begin{cases} x - 2y = 3 \\\\ 3x + 4y = 1 \\end{cases}$ nối với: 1) Phương pháp thế (rút $x$) [[br]] b) $\\begin{cases} 2x + 3y = 8 \\\\ 5x - 3y = 6 \\end{cases}$ nối với: 2) Phương pháp cộng đại số (cộng vế)",
+          "solution": "a) nối 1). [[br]] b) nối 2).",
+          "writelines": 0
+        },
+        {
+          "type": "problem",
+          "label": "BTVN 6.",
+          "dang_id": "NB6",
+          "level": 1,
+          "tier": "btvn",
+          "statement": "Nên cộng hay trừ từng vế để giải các hệ phương trình sau: [[br]] a) $\\begin{cases} 4x + 3y = 10 \\\\ 2x - 3y = 2 \\end{cases}$ [[br]] b) $\\begin{cases} 3x + 5y = 11 \\\\ 3x + y = 7 \\end{cases}$ [[br]] c) $\\begin{cases} 2x - 7y = 1 \\\\ 5x + 7y = 20 \\end{cases}$",
+          "solution": "a) Hệ số của $y$ đối nhau $\\implies$ Cộng. [[br]] b) Hệ số của $x$ bằng nhau $\\implies$ Trừ. [[br]] c) Hệ số của $y$ đối nhau $\\implies$ Cộng.",
+          "writelines": 0
+        },
+        {
+          "type": "problem",
+          "label": "BTVN 7.",
+          "dang_id": "NB7",
+          "level": 1,
+          "tier": "btvn",
+          "statement": "Cộng hoặc trừ vế theo vế để tìm phương trình một ẩn: [[br]] a) Cộng vế hệ $\\begin{cases} 2x + y = 5 \\\\ 3x - y = 5 \\end{cases}$: $[[blank:2.0cm]] = 10$. [[br]] b) Trừ vế hệ $\\begin{cases} 4x + 3y = 9 \\\\ 4x - y = 1 \\end{cases}$: $[[blank:2.0cm]] = 8$. [[br]] c) Cộng vế hệ $\\begin{cases} x - 2y = 3 \\\\ 4x + 2y = 12 \\end{cases}$: $[[blank:2.0cm]] = 15$.",
+          "solution": "a) $5x = 10$. [[br]] b) $4y = 8$. [[br]] c) $5x = 15$.",
+          "writelines": 0
+        },
+        {
+          "type": "problem",
+          "label": "BTVN 8.",
+          "dang_id": "NB8",
+          "level": 1,
+          "tier": "btvn",
+          "statement": "Tìm ẩn còn lại và kết luận nghiệm của hệ: [[br]] a) Cho $x = 2$, thay vào $2x + y = 7$ để tìm $y$: $y = \\dots$ [[br]] b) Cho $y = 1$, thay vào $3x - 2y = 4$ để tìm $x$: $x = \\dots$",
+          "solution": "a) $2(2)+y=7 \\implies y=3$. Nghiệm $(2; 3)$. [[br]] b) $3x-2(1)=4 \\implies x=2$. Nghiệm $(2; 1)$.",
+          "writelines": 0
+        },
+        {
+          "type": "problem",
+          "label": "BTVN 9.",
+          "dang_id": "TH1",
+          "level": 2,
+          "tier": "btvn",
+          "statement": "Giải các hệ phương trình sau bằng phương pháp thế: [[br]] a) $\\begin{cases} x - 2y = 1 \\\\ 3x + y = 10 \\end{cases}$ [[br]] b) $\\begin{cases} 2x + y = 8 \\\\ 3x - 2y = 5 \\end{cases}$ [[br]] c) $\\begin{cases} x + 3y = 7 \\\\ 2x - y = 7 \\end{cases}$",
+          "solution": "Áp dụng phương pháp thế, ta có: [[br]] a) Rút $x = 2y + 1$. Thế: $3(2y+1)+y=10 \\implies 7y=7 \\implies y=1 \\implies x=3$. [[br]] b) Rút $y = 8 - 2x$. Thế: $3x - 2(8-2x) = 5 \\implies 7x=21 \\implies x=3 \\implies y=2$. [[br]] c) Rút $y = 2x - 7$. Thế: $x + 3(2x-7) = 7 \\implies 7x=28 \\implies x=4 \\implies y=1$. [[br]] Vậy nghiệm của các hệ phương trình lần lượt là $(3; 1)$, $(3; 2)$ và $(4; 1)$.",
+          "writelines": 6
+        },
+        {
+          "type": "problem",
+          "label": "BTVN 10.",
+          "dang_id": "TH2",
+          "level": 2,
+          "tier": "btvn",
+          "statement": "Giải các hệ phương trình sau bằng phương pháp thế: [[br]] a) $\\begin{cases} 2x + 3y = 7 \\\\ 3x + y = 7 \\end{cases}$ [[br]] b) $\\begin{cases} 3x - 2y = 4 \\\\ 2x + 3y = 7 \\end{cases}$ [[br]] c) $\\begin{cases} 4x + 3y = 17 \\\\ 2x - 5y = -11 \\end{cases}$",
+          "solution": "Áp dụng phương pháp thế, ta có: [[br]] a) Rút $y = 7 - 3x$. Thế: $2x + 3(7-3x) = 7 \\implies -7x=-14 \\implies x=2 \\implies y=1$. [[br]] b) Rút $x = \\dfrac{4+2y}{3}$. Thế: $2\\left(\\dfrac{4+2y}{3}\\right)+3y=7 \\implies 8+4y+9y=21 \\implies 13y=13 \\implies y=1 \\implies x=2$. [[br]] c) Rút $2x = 5y - 11 \\implies 4x = 10y - 22$. Thế: $10y-22+3y=17 \\implies 13y=39 \\implies y=3 \\implies x=2$. [[br]] Vậy nghiệm của các hệ phương trình lần lượt là $(2; 1)$, $(2; 1)$ và $(2; 3)$.",
+          "writelines": 6
+        },
+        {
+          "type": "problem",
+          "label": "BTVN 11.",
+          "dang_id": "TH3",
+          "level": 2,
+          "tier": "btvn",
+          "statement": "Giải các hệ phương trình sau bằng phương pháp cộng đại số: [[br]] a) $\\begin{cases} 3x + 2y = 8 \\\\ 2x - 2y = 2 \\end{cases}$ [[br]] b) $\\begin{cases} 4x + 3y = 11 \\\\ 4x - 2y = 6 \\end{cases}$",
+          "solution": "Áp dụng phương pháp cộng đại số, ta có: [[br]] a) Cộng vế: $5x = 10 \\implies x = 2$. Thay vào PT(1): $3(2)+2y=8 \\implies y=1$. [[br]] b) Trừ vế: $5y = 5 \\implies y = 1$. Thay vào PT(1): $4x+3(1)=11 \\implies x=2$. [[br]] Vậy nghiệm của các hệ phương trình lần lượt là $(2; 1)$ và $(2; 1)$.",
+          "writelines": 6
+        },
+        {
+          "type": "problem",
+          "label": "BTVN 12.",
+          "dang_id": "VD1",
+          "level": 3,
+          "tier": "btvn",
+          "statement": "Giải các bài toán sau bằng cách lập hệ phương trình: [[br]] a) Hai thùng chứa tất cả $60$ lít dầu. Thùng thứ nhất chứa nhiều hơn thùng thứ hai là $14$ lít dầu. Hỏi mỗi thùng chứa bao nhiêu lít dầu? [[br]] b) Một mảnh đất hình chữ nhật có chu vi $48$ m. Chiều dài lớn hơn chiều rộng $6$ m. Tính diện tích của mảnh đất đó.",
+          "solution": "Ta có, theo đề bài ta lập và giải hệ phương trình: [[br]] a) Gọi số dầu thùng 1 và thùng 2 là $x, y$ (lít) ($x > y > 0$). Ta có hệ: $\\begin{cases} x+y=60 \\\\ x-y=14 \\end{cases} \\implies 2x=74 \\implies x=37, y=23$. [[br]] b) Gọi chiều dài là $x$ (m), chiều rộng là $y$ (m) ($x > y > 0$). Nửa chu vi là $48 : 2 = 24$ m. Do đó ta có hệ: $\\begin{cases} x+y=24 \\\\ x-y=6 \\end{cases} \\implies 2x=30 \\implies x=15, y=9$. Diện tích mảnh đất là $15 \\cdot 9 = 135$ m$^2$. [[br]] Vậy thùng 1 có $37$ lít, thùng 2 có $23$ lít; diện tích mảnh đất là $135$ m$^2$.",
+          "writelines": 8
+        }
+      ]
+    }
+  ]
+}
