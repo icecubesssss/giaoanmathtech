@@ -149,8 +149,9 @@ def find_presentation_warnings(lesson) -> list[str]:
                     warns.append(f"{loc}: có chú thích cho GV trong block hiển thị cho HS — chuyển sang teacher_note.")
                 if len(_SUBITEM.findall(v)) >= 2 and "[[br]]" not in v:
                     warns.append(f"{loc}: nhiều ý a)b)c) cùng block nhưng thiếu [[br]] — dễ dính chữ, nên xuống dòng.")
-                if attr == "text" and len(v) > 240 and "[[br]]" not in v:
-                    warns.append(f"{loc}: đoạn dài ({len(v)} ký tự) không có [[br]] — nên tách bước/dòng cho dễ đọc.")
+                v_clean = re.sub(r"\\begin\{tikzpicture\}.*?\\end\{tikzpicture\}", "", v, flags=re.DOTALL)
+                if attr == "text" and len(v_clean) > 240 and "[[br]]" not in v_clean:
+                    warns.append(f"{loc}: đoạn dài ({len(v_clean)} ký tự) không có [[br]] — nên tách bước/dòng cho dễ đọc.")
 
         # Lời giải (chỉ in ở Guide) cũng phải xuống dòng: nhiều ý a)b)c) mà thiếu
         # [[br]] -> dồn một dòng, GV khó dò (đặc biệt khi có phân số \dfrac).
@@ -159,8 +160,10 @@ def find_presentation_warnings(lesson) -> list[str]:
 
         # Lời giải KHÔNG được là 'bức tường chữ': tách theo [[br]] / \par, nếu còn
         # đoạn quá dài (nhiều bước dồn một dòng) -> cảnh báo chèn [[br]] tách bước.
+        # Bỏ qua code vẽ hình TikZ vì đây là đồ hoạ, không phải văn bản đọc.
         if st.solution:
-            segs = re.split(r"\[\[br\]\]|\\par", st.solution)
+            sol_clean = re.sub(r"\\begin\{tikzpicture\}.*?\\end\{tikzpicture\}", "", st.solution, flags=re.DOTALL)
+            segs = re.split(r"\[\[br\]\]|\\par", sol_clean)
             longest = max((len(s.strip()) for s in segs), default=0)
             if longest > 220:
                 warns.append(f"stage[{st.kind}].solution: có đoạn dài {longest} ký tự không xuống dòng — chèn [[br]] tách từng bước cho dễ đọc.")

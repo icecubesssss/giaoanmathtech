@@ -42,3 +42,15 @@ def test_ten_khong_dau_va_khong_ky_tu_la():
     assert bo_dau("Ôn tập hình bình hành") == "On tap hinh binh hanh"
     ten = ten_ban_in(_les("phieu-a-do-dai-cung-tron"), _SEED, "handout")
     assert ten.isascii() and " " not in ten
+
+
+def test_ten_de_kiem_tra_ngoai_cay_tuan():
+    """Đề kiểm tra tháng (nằm trong de-kiem-tra-thang-09) tự nói ra mình là bài gì."""
+    seed_tren_lop = "inputs/seeds/lop-9/de-kiem-tra-thang-09/lop-9c/de-kiem-tra-thang-9-tren-lop.json"
+    seed_btvn = "inputs/seeds/lop-9/de-kiem-tra-thang-09/lop-9c/de-kiem-tra-thang-9-btvn.json"
+    les_1 = _les("phieu-1-de-kiem-tra-thang-9-tren-lop", "C", "Lớp 9 • Đại số")
+    les_2 = _les("de-kiem-tra-thang-9-btvn", "C", "Lớp 9 • Đại số")
+    assert ten_ban_in(les_1, seed_tren_lop, "handout") == "Toan9C-De-kiem-tra-thang-9-tren-lop-Phieu-HS"
+    assert ten_ban_in(les_1, seed_tren_lop, "guide") == "Toan9C-De-kiem-tra-thang-9-tren-lop-Dap-an-GV"
+    assert ten_ban_in(les_2, seed_btvn, "handout") == "Toan9C-De-kiem-tra-thang-9-btvn-Phieu-HS"
+

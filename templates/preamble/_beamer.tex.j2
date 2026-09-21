@@ -85,6 +85,9 @@
 % Chỗ trống cho slide (đơn giản, không tikz): [[blank]] -> \blank, [[mblank]] -> \mblank, [[oly]] -> \olybox
 \newcommand{\blank}[1][4cm]{\rule[-0.3ex]{#1}{0.5pt}}
 \newcommand{\mblank}[1][2cm]{\rule[-0.3ex]{#1}{0.5pt}}
+% Ô khuyết của Ví dụ mẫu ([[fill:đáp án]]) — slide luôn chiếu bản TRỐNG.
+\newcommand{\fillblank}[1]{\rule[-0.35ex]{#1}{0.5pt}}
+\newcommand{\fillans}[1]{\textcolor{brand}{\underline{\smash{#1}}}}
 \newcommand{\olybox}[1]{%
   \begin{tikzpicture}[baseline=-0.5ex]
     \draw[step=0.25cm,ink!15,line width=0.3pt] (0,0) grid (#1, 0.6);

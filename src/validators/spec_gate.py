@@ -20,14 +20,38 @@ _BANDS = ("NB", "TH", "VD", "VDC")
 
 
 def _match_phieu(spec: ThuyetMinhSpec, lesson: LessonPackage):
-    """Phiếu trong spec ứng với lesson: theo tiền tố slug phieu-a-/b-…; nếu spec chỉ
-    1 phiếu thì khớp luôn."""
-    m = re.match(r"phieu-([a-z])-", lesson.slug or "")
+    """Phiếu trong spec ứng với lesson: theo tiền tố slug phieu-1/2 hoặc phieu-a/b…,
+    hoặc tren-lop (phiếu 1/A), btvn (phiếu 2/B); nếu spec chỉ 1 phiếu thì khớp luôn."""
+    slug = lesson.slug or ""
+    # 1. phieu-(\d+)
+    m_num = re.match(r"phieu-(\d+)-", slug)
+    if m_num:
+        idx = int(m_num.group(1)) - 1
+        if 0 <= idx < len(spec.phieu):
+            return spec.phieu[idx]
+
+    # 2. phieu-([a-z])
+    m = re.match(r"phieu-([a-z])-", slug)
     if m:
         code = m.group(1).upper()
         for p in spec.phieu:
             if p.code.upper() == code:
                 return p
+
+    # 3. tren-lop / btvn
+    if "tren-lop" in slug or "tren_lop" in slug:
+        for p in spec.phieu:
+            if p.code.upper() in ("A", "1"):
+                return p
+        if len(spec.phieu) >= 1:
+            return spec.phieu[0]
+    if "btvn" in slug:
+        for p in spec.phieu:
+            if p.code.upper() in ("B", "2"):
+                return p
+        if len(spec.phieu) >= 2:
+            return spec.phieu[1]
+
     return spec.phieu[0] if len(spec.phieu) == 1 else None
 
 

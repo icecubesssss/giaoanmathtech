@@ -73,3 +73,25 @@ def test_statement_slide_and_text_slide_schema():
         text_slide="Nội dung ví dụ trên slide",
     )
     assert n.text_slide == "Nội dung ví dụ trên slide"
+
+
+# ── Token [[fill:đáp án]] — ví dụ mẫu điền khuyết (Thầy chốt 21/09/2026) ──────
+
+def test_fill_phieu_hs_in_o_trong_con_so_tay_gv_in_dap_an():
+    from src.compiler.jinja_renderer import _texify
+    t = r"$BC^2 = [[fill:225]]$ nên $BC = [[fill:15]]$ cm."
+    hs, gv = _texify(t, False), _texify(t, True)
+    assert "fillblank" in hs and "225" not in hs and "15" not in hs
+    assert r"\fillans{225}" in gv and r"\fillans{15}" in gv
+
+
+def test_fill_rong_o_theo_do_dai_dap_an_va_ep_tay_duoc():
+    from src.compiler.jinja_renderer import _texify
+    assert r"\fillblank{1.2cm}" in _texify(r"$x = [[fill:225|1.2cm]]$", False)
+    ngan, dai = _texify(r"[[fill:5]]", False), _texify(r"[[fill:trung điểm của $BC$]]", False)
+    assert float(ngan.split("{")[1].rstrip("cm}")) < float(dai.split("{")[1].rstrip("cm}"))
+
+
+def test_fill_o_khong_co_dap_an_van_ra_o_trong_o_so_tay_gv():
+    from src.compiler.jinja_renderer import _texify
+    assert "fillblank" in _texify(r"$R = [[fill:]]$", True)

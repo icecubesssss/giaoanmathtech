@@ -8,6 +8,9 @@ Token chỗ trống (do AI sinh ra trong text, KHÔNG phải lệnh LaTeX) đư�
   [[blank]]      -> \\blank[5cm]      (dòng kẻ chấm để HS viết)
   [[blank:W]]    -> \\blank[W]
   [[mblank:W]]   -> \\rule{W}{0.4pt}  (gạch ngắn trong công thức)
+  [[fill:đáp án]] -> ô khuyết của VÍ DỤ MẪU: phiếu HS/slide in gạch trống
+                     (\\fillblank), Sổ tay GV in sẵn đáp án (\\fillans).
+                     Rộng ô tự suy theo độ dài đáp án, ép tay bằng [[fill:đáp án|1.6cm]].
 """
 from __future__ import annotations
 
@@ -23,6 +26,9 @@ from src.schema import LessonPackage
 _BLANK_W = re.compile(r"\[\[blank:([^\]]+)\]\]")
 _BLANK = re.compile(r"\[\[blank\]\]")
 _MBLANK = re.compile(r"\[\[mblank:([^\]]+)\]\]")
+# Ô khuyết CÓ ĐÁP ÁN của Ví dụ mẫu — Thầy chốt 21/09/2026 ("ví dụ phải thành bài điền
+# khuyết"). Một nguồn sự thật cho cả ba bản in: sửa số chỉ sửa ở đây, không chép đôi.
+_FILL = re.compile(r"\[\[fill:([^\]|]*?)(?:\|([^\]]+))?\]\]")
 # [[br]] -> xuống dòng LaTeX. Bỏ [[br]] thừa ở cuối chuỗi (xuống dòng cuối đoạn
 # gây lỗi "There's no line here to end") rồi mới đổi phần còn lại thành "\\".
 _BR_TRAIL = re.compile(r"(?:\s*\[\[br\]\]\s*)+$")
@@ -39,9 +45,27 @@ _WRAP_TAG = re.compile(r"\[\[/?wrap\]\]")
 _TIKZ = re.compile(r"\\begin\{tikzpicture\}.*?\\end\{tikzpicture\}", re.DOTALL)
 
 
-def _texify(s: str) -> str:
-    """Dịch token chỗ trống / xuống dòng sang lệnh LaTeX. (Khử mã độc là việc của S2.)"""
+def _be_rong_o(dap_an: str) -> str:
+    """Bề rộng ô khuyết suy từ ĐỘ DÀI ĐÁP ÁN (bỏ lệnh LaTeX), kẹp trong [0,9cm; 4,5cm]
+    để ô không bao giờ hẹp hơn chữ số lẫn không đẩy dòng vỡ sang trang sau."""
+    n = len(_STRIP_TEX.sub("", dap_an or "").strip()) or 3
+    return f"{min(max(0.34 * n + 0.45, 0.9), 4.5):.2f}cm"
+
+
+def _fill_sub(m: "re.Match[str]", show_solution: bool) -> str:
+    dap_an = (m.group(1) or "").strip()
+    rong = (m.group(2) or "").strip() or _be_rong_o(dap_an)
+    if show_solution and dap_an:
+        return rf"\fillans{{{dap_an}}}"
+    return rf"\fillblank{{{rong}}}"
+
+
+def _texify(s: str, show_solution: bool = False) -> str:
+    """Dịch token chỗ trống / xuống dòng sang lệnh LaTeX. (Khử mã độc là việc của S2.)
+
+    `show_solution` CHỈ đổi cách in [[fill:…]]: Sổ tay GV in đáp án, hai bản kia in ô trống."""
     s = _WRAP_TAG.sub("", s)
+    s = _FILL.sub(lambda m: _fill_sub(m, show_solution), s)
     s = _BLANK_W.sub(r"\\blank[\1]", s)
     s = _BLANK.sub(r"\\blank[5cm]", s)
     s = _MBLANK.sub(r"\\rule{\1}{0.4pt}", s)
@@ -237,7 +261,7 @@ def _tidy_segments(segs: list[dict]) -> list[dict]:
     return out
 
 
-def _env() -> Environment:
+def _env(show_solution: bool = False) -> Environment:
     env = Environment(
         loader=FileSystemLoader(str(settings.TEMPLATES_DIR)),
         block_start_string="((*", block_end_string="*))",
@@ -246,7 +270,8 @@ def _env() -> Environment:
         trim_blocks=True, lstrip_blocks=True,
         autoescape=False, undefined=StrictUndefined,
     )
-    env.filters["tex"] = _texify
+    # Filter đóng gói cờ bản in: chỉ Sổ tay GV mới thay [[fill:…]] bằng đáp án.
+    env.filters["tex"] = lambda t: _texify(t, show_solution)
     env.filters["strip_example_solution"] = strip_example_solution
     env.globals["split_reflection"] = split_reflection
     env.globals["group_slide_segments"] = group_slide_segments
@@ -270,7 +295,7 @@ def _render(template_name: str, lesson: LessonPackage, tokens: dict | None,
     """`show_solution` đi vào context để `_blocks.j2` in `problem.solution` — CHỈ bật ở
     Sổ tay GV. Phải truyền cho CẢ BA bản (StrictUndefined nổ nếu biến thiếu)."""
     tokens = tokens or load_tokens()
-    env = _env()
+    env = _env(show_solution)
     tpl = env.get_template(template_name)
     return tpl.render(lesson=lesson, show_solution=show_solution, **tokens)
 
@@ -301,6 +326,6 @@ def render_summary(summary, tokens: dict | None = None, show_solution: bool = Fa
 
     show_solution=False → bản HS (sơ đồ trống); True → bản GV (kèm đáp án ô trống)."""
     tokens = tokens or load_tokens()
-    env = _env()
+    env = _env(show_solution)
     tpl = env.get_template("base_summary.tex.j2")
     return tpl.render(summary=summary, show_solution=show_solution, **tokens)

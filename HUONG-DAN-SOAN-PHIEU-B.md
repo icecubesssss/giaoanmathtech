@@ -263,6 +263,17 @@ NB **không phải bài rời** — nó là *bước* cắt ra từ chính bài 
   hướng dẫn (cổng `check_vi_du_style`).
 - Bài nhiều ý → 2 cột `minipage`; hình ngang đặt **dưới** đề.
 
+**F1. Ví dụ mẫu — ba luật Thầy chốt 21/09/2026** (cổng `vi_du_gate`, chi tiết ở AGENTS.md):
+- **Ví dụ KHÔNG giống hệt bài**: cấm chép đề của bài rồi đổi số. Cùng dạng nhưng **đổi chiều
+  dữ kiện** (bài tìm dây thì ví dụ tìm bán kính), **đổi bối cảnh**, hoặc **đổi thứ phải tìm**.
+- **Ví dụ đi cùng bài**: mỗi ví dụ đứng ngay trước nhóm bài của dạng đó; không dồn ví dụ thành
+  chuỗi, không để ví dụ một chặng — bài của nó ở chặng khác.
+- **Ví dụ là bài ĐIỀN KHUYẾT**: chừa các mắt xích then chốt và đáp số câu "Vậy" bằng
+  `[[fill:đáp án]]` (HS thấy ô trống, Sổ tay GV in sẵn đáp án). Ô trong `$…$` thì đáp án
+  **không bọc `$`**. Sửa số trong đề thì sửa luôn nhãn số trên hình.
+- **Gợi ý câu Thông hiểu**: phiếu luyện tập chương **có** `hints` (kể cả BTVN); phiếu ôn tập
+  giữa kì / cuối kì và đề kiểm tra thì **bỏ hết gợi ý**.
+
 **F. Khác tầng C ở đâu** — xem §7.
 
 ---

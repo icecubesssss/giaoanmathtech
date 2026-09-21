@@ -54,6 +54,7 @@ from src.validators import (
     check_sgk_style,
     check_vi_du_style,
     check_goi_ten_canh,
+    check_vi_du,
     check_print_layout,
     check_thuyetminh,
     check_meta_wrap,
@@ -342,10 +343,11 @@ def _gate_before_build(lesson: LessonPackage, force: bool, fast: bool = False,
 def get_ca_prefix(lesson: LessonPackage | None = None, json_path: Path | str | None = None) -> str:
     """Xác định tiền tố Ca ('ca-01-', 'ca-02-'...) cho phiếu học tập.
 
-    1. Ưu tiên slug / filename chứa phieu-[a-z] (phieu-a -> ca-01-, phieu-b -> ca-02-...)
-    2. Soi eyebrow hoặc title chứa PHIẾU [A-Z], Ca N, Buổi N
-    3. Thư mục có nhiều file: vị trí của json_path trong folder
-    4. Mặc định: ca-01-
+    1. Ưu tiên slug / filename chứa phieu-(\\d+) hoặc phieu-[a-z]
+    2. Soi eyebrow hoặc title chứa PHIẾU \\d+, PHIẾU [A-Z], Ca N, Buổi N
+    3. Nhận diện từ khóa tren-lop (ca-01-) hoặc btvn (ca-02-)
+    4. Thư mục có nhiều file: vị trí của json_path trong folder
+    5. Mặc định: ca-01-
     """
     slug = lesson.slug if lesson else ""
     eyebrow = getattr(lesson, "eyebrow", "") or ""
@@ -353,12 +355,20 @@ def get_ca_prefix(lesson: LessonPackage | None = None, json_path: Path | str | N
     filename = Path(json_path).name if json_path else ""
 
     for text in (slug, filename):
+        m_num = re.search(r"phieu-(\d+)(?:-|$)", text, re.IGNORECASE)
+        if m_num:
+            ca_num = int(m_num.group(1))
+            return f"ca-{ca_num:02d}-"
         m = re.search(r"phieu-([a-z])(?:-|$)", text, re.IGNORECASE)
         if m:
             ca_num = ord(m.group(1).lower()) - ord("a") + 1
             return f"ca-{ca_num:02d}-"
 
     for text in (eyebrow, title):
+        m_p_num = re.search(r"PHIẾU\s*(\d+)", text, re.IGNORECASE)
+        if m_p_num:
+            ca_num = int(m_p_num.group(1))
+            return f"ca-{ca_num:02d}-"
         m_p = re.search(r"PHIẾU\s+([A-Z])", text, re.IGNORECASE)
         if m_p:
             ca_num = ord(m_p.group(1).upper()) - ord("A") + 1
@@ -367,6 +377,12 @@ def get_ca_prefix(lesson: LessonPackage | None = None, json_path: Path | str | N
         if m_c:
             ca_num = int(m_c.group(1))
             return f"ca-{ca_num:02d}-"
+
+    for text in (slug, filename, eyebrow, title):
+        if re.search(r"tren[-_ ]lop", text, re.IGNORECASE):
+            return "ca-01-"
+        if re.search(r"btvn", text, re.IGNORECASE):
+            return "ca-02-"
 
     if json_path:
         p = Path(json_path)
@@ -737,6 +753,8 @@ def cmd_validate(args: argparse.Namespace) -> int:
     spec_warns += [f"[sgk_style] {m}" for m in check_sgk_style(lesson)]
     spec_warns += [f"[sgk_style] {m}" for m in check_vi_du_style(lesson)]
     spec_warns += [f"[sgk_style] {m}" for m in check_goi_ten_canh(lesson)]
+    # Ví dụ ↔ bài tập: trùng khuôn / không đi cùng bài / chưa điền khuyết / TH thiếu gợi ý.
+    spec_warns += [f"[vi_du_gate] {m}" for m in check_vi_du(lesson)]
     print(f"  • spec_gate:        {'OK (hoặc không có spec)' if not spec_warns else f'{len(spec_warns)} lệch hợp đồng'}")
     for w in spec_warns:
         print(f"    ⚠ {w}")
@@ -822,7 +840,7 @@ def cmd_audit(args: argparse.Namespace) -> int:
     hôm trước chưa hề áp cho 38 phiếu còn lại. Cả hai đều là thứ chỉ lộ khi nhìn TOÀN KHO.
     """
     from src.validators.staleness_gate import check_stale, tom_tat as _tom_tat
-    from src.validators import check_vi_du_style, check_goi_ten_canh
+    from src.validators import check_vi_du_style, check_goi_ten_canh, check_vi_du
     from src.schema.thuyetminh_spec import ThuyetMinhSpec
     from src.validators.thuyetminh_gate import check_thuyetminh
 
@@ -856,7 +874,7 @@ def cmd_audit(args: argparse.Namespace) -> int:
             les = LessonPackage.model_validate(json.loads(j.read_text(encoding="utf-8")))
         except Exception:
             continue
-        w = check_vi_du_style(les) + check_goi_ten_canh(les)
+        w = check_vi_du_style(les) + check_goi_ten_canh(les) + check_vi_du(les)
         if w:
             xau.append((j, w))
     tong = sum(len(w) for _, w in xau)

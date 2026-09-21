@@ -207,6 +207,13 @@
 \newcommand{\blank}[1][5cm]{\tikz[baseline]{\draw[rule,line width=.6pt,dotted](0,0)--(\dimexpr#1-2pt,0);}}
 \newcommand{\fillline}{\par\nointerlineskip\vspace{7pt}\noindent\blank[\dimexpr\linewidth-8pt]}
 
+% Ô khuyết TRONG VÍ DỤ MẪU (token [[fill:đáp án]]). Cùng một token in ra hai kiểu:
+%   • Phiếu HS + Slide : \fillblank{W} — gạch trống để trò điền cùng thầy;
+%   • Sổ tay GV        : \fillans{đáp án} — in sẵn đáp án, khỏi lặp lại bẫy
+%                        "guide.pdf trắng đáp án" (Thầy bắt 2026-08-12).
+\newcommand{\fillblank}[1]{\rule[-0.35ex]{#1}{0.4pt}}
+\newcommand{\fillans}[1]{\textcolor{brand}{\underline{\smash{#1}}}}
+
 % Khung TRỐNG để HS TỰ VẼ HÌNH vào phiếu (Thầy An 2026-07-28: "tạo thêm chỗ cho hs
 % vẽ vào đề"). #1 = chiều cao tính bằng cm. Viền đứt mảnh + nhãn nhắc việc ở góc.
 \newcommand{\drawbox}[1][3]{%

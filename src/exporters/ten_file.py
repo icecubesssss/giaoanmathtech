@@ -76,9 +76,12 @@ def _ten_bai(lesson) -> str:
 
     Dùng slug chứ không dùng `title` vì slug đã là chuỗi không dấu Thầy tự đặt, và
     hai phiếu cùng thư mục luôn khác slug — tên file vì thế không bao giờ đụng nhau.
+    Hỗ trợ bóc cả tiền tố cũ 'phieu-a-' lẫn tiền tố mới 'phieu-1-', 'phieu-01-'.
     """
     slug = (getattr(lesson, "slug", "") or "").strip()
-    slug = re.sub(r"^phieu-[a-z]-", "", slug)
+    slug = re.sub(r"^phieu-[a-z0-9]+-", "", slug)
+    # Lược bỏ lặp lại tên lớp/tầng nếu có trong slug (vd '-lop-9c-')
+    slug = re.sub(r"-lop-\d+[a-z]?", "", slug, flags=re.IGNORECASE)
     slug = bo_dau(slug.replace(" ", "-"))
     slug = re.sub(r"[^A-Za-z0-9-]+", "-", slug).strip("-")
     return slug[:1].upper() + slug[1:] if slug else ""
@@ -90,7 +93,31 @@ def ten_ban_in(lesson, json_path: Path | str | None, kind: str, ca_pre: str = ""
     if json_path is None:
         return lui
     p = Path(json_path).resolve()
-    phan = [_khoi_tang(p, lesson), _tuan(p), _ten_bai(lesson), BAN_IN.get(kind, kind)]
-    if not all(phan):
-        return lui
-    return "-".join(phan)
+    kt = _khoi_tang(p, lesson)
+    tu = _tuan(p)
+    tb = _ten_bai(lesson)
+    bi = BAN_IN.get(kind, kind)
+
+    # Đầy đủ dữ kiện cây tuần: <khối><tầng>-Tuan<NN>-<tên bài>-<bản in>
+    if kt and tu and tb:
+        return f"{kt}-{tu}-{tb}-{bi}"
+
+    # File mồ côi nằm thẳng dưới lop-X (vd seeds/lop-8/le-te.json) thì lùi về ca-NN-handout
+    segs = p.parts
+    is_le_te = False
+    if "seeds" in segs:
+        idx = segs.index("seeds")
+        rel_parts = segs[idx + 1:]
+        if len(rel_parts) <= 2:
+            is_le_te = True
+
+    if kt and tb and not is_le_te:
+        phan = [kt]
+        if tu and tu.lower() not in tb.lower():
+            phan.append(tu)
+        phan.extend([tb, bi])
+        return "-".join(phan)
+
+    return lui
+
+
