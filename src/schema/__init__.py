@@ -14,6 +14,9 @@ from .lesson_package import (
     TableBlock,
     FigureBlock,
     OpenerBlock,
+    DefListBlock,
+    DefItem,
+    ProblemFigure,
 )
 
 __all__ = [
@@ -32,4 +35,7 @@ __all__ = [
     "TableBlock",
     "FigureBlock",
     "OpenerBlock",
+    "DefListBlock",
+    "DefItem",
+    "ProblemFigure",
 ]

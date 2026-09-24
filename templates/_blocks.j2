@@ -1,16 +1,28 @@
 ((= Macro Jinja dựng các Block nội dung. Token [[blank]] do filter `tex` xử lý. =))
 ((* macro render_block(b) *))
 ((* if b.type == "para" *))
-((( b.text | tex )))
+((* if b.variant == "heading" *))\lythuyetmuc{((( b.text | tex )))}
+((* else *))((( b.text | tex )))
+((* endif *))
+
+((* elif b.type == "deflist" *))
+((= Mỗi mục MỘT DÒNG — template lo xuống dòng và canh thụt, seed chỉ khai nội dung. =))
+\begin{dinhnghia}
+((* for it in b.items *))\item[((( it.term | tex )))] ((( it.desc | tex )))
+((* endfor *))\end{dinhnghia}
 
 ((* elif b.type == "math" *))
 \[ ((( b.latex | tex ))) \]
 ((* elif b.type == "noted" *))
-((* if b.variant == "trap" *))\begin{callouttrap}((( b.text | tex )))\end{callouttrap}
-((* elif b.variant == "target" *))\begin{callouttarget}((( b.text | tex )))\end{callouttarget}
-((* elif b.variant == "tip" *))\begin{callouttip}((( b.text | tex )))\end{callouttip}
-((* elif b.variant == "example" *))\begin{calloutexample}((( b.text | tex )))\end{calloutexample}
-((* else *))\begin{noted}((( b.text | tex )))\end{noted}((* endif *))
+((= Hộp CÓ HÌNH xếp DỌC y như bài tập: đề → HÌNH → lời giải. Thay lối gõ tay hai
+    \begin{minipage}[t]{0.58\linewidth} cạnh nhau ngay trong `text` (bố cục lẫn vào
+    nội dung), và thay cả kiểu treo hình sang cột phải đã bỏ ngày 22/09/2026. =))
+((* set _noi *))((* if b.figure *))((* set _de, _lg = tach_loi_giai(b.text) *))((( _de | tex )))\figbelow[3cm]{0.40}{((* if b.figure.image *))\includegraphics[width=\linewidth]{((( b.figure.image )))}((* else *))((( b.figure.tikz )))((* endif *))}{((( b.figure.caption | tex )))}((* if _lg *))((( _lg | tex )))((* endif *))((* else *))((( b.text | tex )))((* endif *))((* endset *))
+((* if b.variant == "trap" *))\begin{callouttrap}((( _noi )))\end{callouttrap}
+((* elif b.variant == "target" *))\begin{callouttarget}((( _noi )))\end{callouttarget}
+((* elif b.variant == "tip" *))\begin{callouttip}((( _noi )))\end{callouttip}
+((* elif b.variant == "example" *))\begin{calloutexample}((( _noi )))\end{calloutexample}
+((* else *))\begin{noted}((( _noi )))\end{noted}((* endif *))
 
 ((* elif b.type == "opener" *))
 \begin{openerbox}
@@ -26,7 +38,31 @@
     block writelines phía sau sẽ CHẢY TIẾP vào dòng bài trước ("… cạnh nào? Bài 8. …"
     — Thầy bắt 15/08/2026, dính 69 phiếu). \addvspace chứ không \vspace: seed cũ đã có
     writelines count=0 (=\vspace{5mm}) đứng giữa hai bài thì cộng thêm 0, khỏi dãn đôi. =))
-\par\addvspace{5mm}
+\par\addvspace{3mm}
+((* if b.layout_moi *))
+((= ══ ĐƯỜNG MỚI — seed khai NỘI DUNG, template tự canh bố cục. Không một số đo
+    canh tay nào ở đây: bề rộng ô phương án tính từ số cột, chỗ né hình do TeX
+    tính từ chiều cao hộp hình thật. ══ =))
+((* set _pos = fig_side(b) *))
+((* set _nhan *))\textbf{((( b.label | tex )))}((* if b.level *))~\diffstars{((( b.level )))}((* elif b.tier == "onclass" *))~\diffstars{2}((* elif b.tier == "btvn" *))~\diffstars{1}((* elif b.tier == "extend" *))~\diffstars{3}((* endif *))((* endset *))
+((= THỨ TỰ CỐ ĐỊNH (Thầy chốt 22/09/2026): ĐỀ BÀI → HÌNH (to, trọn bề ngang) →
+    phương án trắc nghiệm / các ý điền khuyết. Các ý a) b) c) vốn nằm chung trong
+    `statement` nên phải tách ra, nếu không HS đọc ý trước khi thấy hình. =))
+((* set _dec, _ycon = tach_y_con(b.statement) *))
+((* set _de *))((( _nhan ))) ((( _dec | tex )))((* endset *))
+((* set _hinh *))((* if b.figure and b.figure.image *))\includegraphics[width=\linewidth]{((( b.figure.image )))}((* elif b.figure *))((( b.figure.tikz )))((* endif *))((* endset *))
+{\clubpenalty=10000 \widowpenalty=10000 \relax ((( _de )))\par}
+((* if _pos == "below" *))\figbelow((* if (_dec | length) < 200 *))keep((* endif *)){0.44}{((( _hinh )))}{((( b.figure.caption | tex )))}
+((* endif *))
+((* if _ycon *))((( _ycon | tex )))\par
+((* endif *))
+((* if b.options *))
+((* set _n = mcq_cols(b.options) *))
+\begin{mcq}{((( _n )))}
+((* for o in b.options *))\mcqitem{((( "ABCDEFGH"[loop.index0] )))}{((( o | tex )))}
+((* endfor *))\end{mcq}
+((* endif *))
+((* else *))
 ((= Hộp hình [[wrap]] treo bằng \smash (cao 0pt) nên TeX KHÔNG biết nó chiếm chỗ:
     bài rơi sát đáy trang thì hình vẽ đè lên chân trang. Môi trường `wrapclump`
     (xem preamble/_macros) gói đề + hình thành MỘT hộp không cắt được, nên hết chỗ
@@ -41,6 +77,8 @@
 {\clubpenalty=10000 \widowpenalty=10000 \relax
 ((* set _w = "[[/wrap]]" in b.statement *))((* if _w *))\begin{wrapclump}\leavevmode\hangafter=-5\hangindent=-0.38\linewidth\relax((( b.statement.split("[[/wrap]]")[0] | replace("[[wrap]]","") )))((* endif *))\textbf{((( b.label | tex )))}((* if b.level *))~\diffstars{((( b.level )))}((* elif b.tier == "onclass" *))~\diffstars{2}((* elif b.tier == "btvn" *))~\diffstars{1}((* elif b.tier == "extend" *))~\diffstars{3}((* endif *)) ((( (b.statement.split("[[/wrap]]")[1] if _w else b.statement) | tex )))((* if _w *))\end{wrapclump}((* endif *))
 \par}
+((* endif *))
+((= Từ đây trở xuống DÙNG CHUNG cho cả hai đường. =))
 ((* if b.video *))\videoqr{((( b.video )))}((* endif *))
 ((= Chỗ viết khai thẳng trên bài (`"writelines": N`) — bằng một WriteLinesBlock đặt sau. =))
 ((* if b.writelines *))\par
@@ -63,10 +101,14 @@
 ((* for h in b.hints *))\textbullet\ ((( h | tex )))((* if not loop.last *))\par((* endif *))
 ((* endfor *))\end{hintbox}
 ((* endif *))
-((= Lời giải từng bài — CHỈ in ở Sổ tay GV (show_solution=True), không lọt sang phiếu HS. =))
-((* if show_solution and b.solution *))
+((= Lời giải / đáp án từng bài — CHỈ in ở Sổ tay GV (show_solution=True), không lọt sang phiếu HS.
+    `answer` là đáp án GỌN một dòng (trắc nghiệm, hỏi đáp nhanh), `solution` là lời giải đầy đủ.
+    Bài có cả hai thì in đáp án trước rồi tới lời giải. =))
+((* if show_solution and (b.solution or b.answer) *))
 \par\nopagebreak
-\begin{answerbox}{\sffamily\bfseries Lời giải.}~((( b.solution | tex )))\end{answerbox}
+((= `\par{}` chứ KHÔNG `\par`: lời giải mở đầu bằng chữ cái thì `\par` nuốt luôn chữ đó
+    thành một lệnh không tồn tại (`\parĐáp`) ⇒ Tectonic chết "Undefined control sequence". =))
+\begin{answerbox}{\sffamily\bfseries Lời giải.}~((* if b.answer *)){\bfseries ((( b.answer | tex )))}((* if b.solution *))\par{}((* endif *))((* endif *))((( b.solution | tex )))\end{answerbox}
 ((* endif *))
 
 ((* elif b.type == "table" *))
@@ -88,7 +130,7 @@
     forest vẽ tràn ra ngoài lề phải và bị xén mất (phiếu C chương IV từng mất
     nguyên hai nhánh). =))
 \begin{center}
-\adjustbox{max width=\linewidth}{%
+\adjustbox{max width=\linewidth, max totalheight=8.5cm}{%
 \begin{forest}
 [{((( b.root | tex )))}, mindmap
 ((* for br in b.branches *))((( mm_node(br) )))((* endfor *))

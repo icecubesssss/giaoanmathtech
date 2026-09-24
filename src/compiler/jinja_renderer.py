@@ -210,6 +210,13 @@ def group_slide_segments(blocks):
             continue
         if typ in HEADERS or not segs:
             segs.append({"text": [], "figures": []})
+        # Hình khai bằng TRƯỜNG `figure` (khuôn tách bố cục 22/09/2026) của bài/ví dụ:
+        # đưa sang cột phải như block `figure`. Thiếu dòng này thì slide MẤT HÌNH —
+        # bản in có biểu đồ mà bản chiếu chỉ còn đề "Biểu đồ dưới đây cho biết…".
+        f = getattr(b, "figure", None) if typ in ("problem", "noted") else None
+        if f is not None and (getattr(f, "tikz", "") or getattr(f, "image", "")) \
+                and getattr(f, "pos", "") != "none":
+            segs[-1]["figures"].append(f)
         if typ == "problem":
             # Đề có hộp hình [[wrap]]: bóc hình ra cột phải (mode "cols") thay vì để
             # mã định vị khổ A4 chạy trên slide.
@@ -261,6 +268,90 @@ def _tidy_segments(segs: list[dict]) -> list[dict]:
     return out
 
 
+_STRIP_TEX = re.compile(r"\\[a-zA-Z]+\*?(\[[^\]]*\])?|\[\[[^\]]*\]\]|[{}$\\]")
+
+
+def plainlen(s: str) -> int:
+    """Độ dài CHỮ THẬT (bỏ lệnh LaTeX, token [[…]], ngoặc, $) — thước đo bố cục."""
+    return len(_STRIP_TEX.sub("", s or "").strip())
+
+
+def mcq_cols(options) -> int:
+    """SỐ CỘT xếp phương án trắc nghiệm, chọn theo phương án DÀI NHẤT.
+
+    Cột chữ trong hộp \\begin{stage} rộng ~16,2cm; font 12pt ⇒ bề ngang trung bình một
+    ký tự ~0,2cm. 4 cột ⇒ mỗi ô ~3,9cm ≈ 19 ký tự kể cả nhãn 'A. ' ⇒ ~16 ký tự nội
+    dung; 2 cột ⇒ ~39 ký tự. Vượt ngưỡng cũng KHÔNG vỡ (ô \\raggedright tự xuống dòng),
+    chỉ là ô cao hai dòng — nên ngưỡng đặt rộng tay được.
+    Phần lớn phương án chương V là '$OA$', 'Dây cung', '$6\\pi$ cm$^2$' (≤10 ký tự)
+    ⇒ 4 cột, MỘT hàng thay vì hai hàng + đệm."""
+    if not options:
+        return 0
+    n = max(plainlen(o) for o in options)
+    if n <= 14:
+        return 4
+    if n <= 34:
+        return 2
+    return 1
+
+
+_LOI_GIAI = re.compile(r"(\[\[br\]\]\s*)?\{\\sffamily\\bfseries\\color\{brand\}L[ờo]i gi[ảa]i\}")
+
+
+def tach_loi_giai(text: str) -> tuple[str, str]:
+    """Cắt hộp ví dụ thành (ĐỀ, LỜI GIẢI) ở tiêu đề "Lời giải".
+
+    Vì sao cần: hộp ví dụ CÓ HÌNH mà nhét cả lời giải vào cột trái cạnh hình thì cụm
+    thành một khối cao không cắt trang được (phiếu A trang 8 bỏ trắng 11,1cm), lại để
+    trống toang cột phải bên dưới hình — đúng thủ phạm đã ghi trong "không chừa chỗ
+    trống". Đề thì ngắn, đứng cạnh hình vừa đẹp; lời giải dài phải CHẠY FULL WIDTH.
+
+    Không tìm thấy tiêu đề ⇒ trả (toàn bộ, "") để chỗ gọi tự xử."""
+    m = _LOI_GIAI.search(text or "")
+    if not m:
+        return text, ""
+    de, lg = text[:m.start()].rstrip(), text[m.start():].lstrip()
+    # BỎ [[br]] mở đầu: nó dịch ra `\\` mà đứng ngay sau `\par` của \sidefig thì
+    # LaTeX kêu "There's no line here to end" — phần lời giải đã tự mở đoạn mới rồi.
+    if lg.startswith("[[br]]"):
+        lg = lg[len("[[br]]"):].lstrip()
+    return de, lg
+
+
+_Y_CON = re.compile(r"\[\[br\]\]\s*(?=\\textbf\{?a\)|a\))")
+
+
+def tach_y_con(statement: str) -> tuple[str, str]:
+    """Cắt đề thành (ĐỀ CHUNG, CÁC Ý a) b) c)…) ở ý đầu tiên.
+
+    Thầy chốt 22/09/2026: *"với những bài trắc nghiệm hay điền khuyết thì sẽ là đề bài
+    trước → Hình → các đáp án / các câu điền khuyết"*. Các ý con vốn nằm chung trong
+    `statement` nối bằng `[[br]]`, nên nếu in cả cục rồi mới tới hình thì HS phải đọc
+    ý a), b) trước khi nhìn thấy hình mà ý đó nói về — ngược chiều tư duy.
+
+    Không có ý con ⇒ trả (toàn bộ, "")."""
+    m = _Y_CON.search(statement or "")
+    if not m:
+        return statement, ""
+    return statement[:m.start()].rstrip(), statement[m.end():].lstrip()
+
+
+def fig_side(prob) -> str:
+    """Chỗ đặt hình: 'below' | 'none'. KHÔNG còn 'right'.
+
+    Thầy chốt 22/09/2026: *"hình vẽ quá bé, việc để cột cho hình có vẻ không hợp lý nếu
+    bài quá dài nên bỏ cái định dạng đó… đề bài trước → Hình → các đáp án / các câu điền
+    khuyết"*. Nhốt hình vào cột hẹp 0,30–0,32\\linewidth (~5cm) thì hình hình học chi tiết
+    co lại còn đọc không ra nhãn; mà nới cột hình thì cột đề hẹp đi, bài dài càng xấu.
+    Xếp DỌC thì hình được trọn bề ngang, to gấp đôi, và cụm cắt trang được tự nhiên.
+
+    Giữ lại `pos: "none"` cho bài chỉ TRỎ sang hình của bài trước (`ref`)."""
+    f = getattr(prob, "figure", None)
+    if f is None or f.pos == "none" or not (f.tikz or f.image):
+        return "none"
+    return "below"
+
+
 def _env(show_solution: bool = False) -> Environment:
     env = Environment(
         loader=FileSystemLoader(str(settings.TEMPLATES_DIR)),
@@ -275,6 +366,10 @@ def _env(show_solution: bool = False) -> Environment:
     env.filters["strip_example_solution"] = strip_example_solution
     env.globals["split_reflection"] = split_reflection
     env.globals["group_slide_segments"] = group_slide_segments
+    env.globals["mcq_cols"] = mcq_cols
+    env.globals["fig_side"] = fig_side
+    env.globals["tach_loi_giai"] = tach_loi_giai
+    env.globals["tach_y_con"] = tach_y_con
     return env
 
 

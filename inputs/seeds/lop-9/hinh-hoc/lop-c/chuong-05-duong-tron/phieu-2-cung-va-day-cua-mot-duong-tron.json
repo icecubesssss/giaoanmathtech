@@ -1,0 +1,721 @@
+{
+  "slug": "phieu-2-cung-va-day-cua-mot-duong-tron",
+  "title": "Cung và dây của một đường tròn",
+  "eyebrow": "PHIẾU 2 • HÌNH HỌC 9 · CHƯƠNG V — BÀI 14",
+  "grade_label": "Lớp 9 • Hình học",
+  "class_tier": "C",
+  "stages": [
+    {
+      "kind": "review",
+      "number": 1,
+      "title": "Khám phá",
+      "teacher_note": "Cho HS đoán trước 'xe qua được không', rồi mới dựng đoạn $OH$. Đừng sa đà, 5 phút là chuyển sang Kiến thức.",
+      "blocks": [
+        {
+          "type": "para",
+          "text": "\\textbf{Xe tải có chui lọt cổng vòm không?}"
+        },
+        {
+          "type": "noted",
+          "variant": "note",
+          "text": "Một cổng vào khu vui chơi có dạng nửa đường tròn tâm $O$ bán kính $2{,}5$ m, mặt đường đi qua $O$. [[br]]Một xe tải rộng $3$ m, cao $1{,}8$ m đi vào chính giữa cổng. [[br]]\\textbf{a)} Mép trái và mép phải của xe cách điểm $O$ bao nhiêu mét? [[br]]\\textbf{b)} Ngay chỗ mép xe, cổng vòm cao bao nhiêu mét? [[br]]\\textbf{c)} Vậy xe có chui lọt không?",
+          "figure": {
+            "tikz": "\\begin{tikzpicture}[line width=0.8pt, font=\\small, scale=0.62]\n  \\draw[ink] (-3.2,0) -- (3.2,0);\n  \\draw[ink] (2.5,0) arc (0:180:2.5);\n  \\draw[ink, fill=black!10] (-1.5,0) rectangle (1.5,1.8);\n  \\fill[ink] (0.0000,0.0000) circle (1.3pt);\n  \\node[below] at (0.0000,0.0000) {$O$};\n  \\draw[ink, dashed] (0,0) -- (-2.5,0);\n  \\node[below, font=\\scriptsize] at (-1.2500,0.0000) {$2{,}5$ m};\n  \\node[inner sep=0pt, font=\\scriptsize] at (0.0000,0.9000) {xe tải};\n\\end{tikzpicture}",
+            "caption": "Hình 1",
+            "pos": "right"
+          }
+        }
+      ]
+    },
+    {
+      "kind": "concept",
+      "number": 2,
+      "title": "Kiến thức cần nhớ",
+      "teacher_note": "Nhấn BỘ BA $R$ – $OH$ – $AH$ ở mục 4: mọi bài tính toán của buổi này đều chạy bằng đúng bộ ba đó. Ví dụ mẫu nằm ngay trước nhóm bài của từng dạng ở Luyện tập 1 và 2.",
+      "blocks": [
+        {
+          "type": "para",
+          "variant": "heading",
+          "text": "1. Cung và dây"
+        },
+        {
+          "type": "para",
+          "text": "Hai điểm $A$, $B$ nằm trên đường tròn $(O)$ chia đường tròn thành hai phần, mỗi phần gọi là một \\textbf{cung}."
+        },
+        {
+          "type": "deflist",
+          "items": [
+            {
+              "term": "Cung nhỏ, cung lớn:",
+              "desc": "phần nhỏ hơn là cung nhỏ, phần lớn hơn là cung lớn. Gọi tên cung bằng hai mút và một điểm nằm trên cung: cung $ANB$, cung $AMB$."
+            },
+            {
+              "term": "Dây:",
+              "desc": "đoạn thẳng $AB$ gọi là dây (dây cung) căng hai cung đó."
+            },
+            {
+              "term": "Đường kính:",
+              "desc": "dây đi qua tâm; là dây \\textbf{lớn nhất}, dài $2R$."
+            }
+          ]
+        },
+        {
+          "type": "figure",
+          "tikz": "\\begin{tikzpicture}[line width=0.8pt, font=\\small]\n  \\draw[ink] (0.0000,0.0000) circle (1.5000);\n  \\draw[ink, line width=1.8pt] (-1.4095,-0.5130) arc (200:340:1.5);\n  \\draw[ink] (-1.4095,-0.5130) -- (1.4095,-0.5130);\n  \\fill[ink] (0.0000,0.0000) circle (1.3pt);\n  \\fill[ink] (-1.4095,-0.5130) circle (1.3pt);\n  \\fill[ink] (1.4095,-0.5130) circle (1.3pt);\n  \\fill[ink] (0.0000,1.5000) circle (1.3pt);\n  \\fill[ink] (-0.0000,-1.5000) circle (1.3pt);\n  \\node[above] at (0.0000,0.0000) {$O$};\n  \\node[inner sep=0pt] at (-1.6727,-0.6088) {$A$};\n  \\node[inner sep=0pt] at (1.6727,-0.6088) {$B$};\n  \\node[inner sep=0pt] at (0.0000,1.7800) {$M$};\n  \\node[inner sep=0pt] at (-0.0000,-1.7800) {$N$};\n\\end{tikzpicture}",
+          "caption": "Dây $AB$; cung nhỏ $ANB$ (nét đậm), cung lớn $AMB$",
+          "width": "0.46\\linewidth"
+        },
+        {
+          "type": "para",
+          "variant": "heading",
+          "text": "2. Đường kính vuông góc với một dây"
+        },
+        {
+          "type": "deflist",
+          "items": [
+            {
+              "term": "Đường kính $\\perp$ dây $\\Rightarrow$",
+              "desc": "đi qua \\textbf{trung điểm} của dây ấy."
+            },
+            {
+              "term": "Đường kính qua trung điểm dây $\\Rightarrow$",
+              "desc": "\\textbf{vuông góc} với dây ấy (dây không đi qua tâm)."
+            }
+          ]
+        },
+        {
+          "type": "figure",
+          "tikz": "\\begin{tikzpicture}[line width=0.8pt, font=\\small]\n  \\draw[ink] (0.0000,0.0000) circle (1.5000);\n  \\draw[ink] (0.0000,1.5000) -- (-0.0000,-1.5000);\n  \\draw[ink] (-1.2990,-0.7500) -- (1.2990,-0.7500);\n  \\draw[ink] (0.1800,-0.7500) -- (0.1800,-0.5700) -- (-0.0000,-0.5700);\n  \\draw[ink] (-0.6495,-0.8400) -- (-0.6495,-0.6600);\n  \\draw[ink] (0.6495,-0.8400) -- (0.6495,-0.6600);\n  \\fill[ink] (0.0000,0.0000) circle (1.3pt);\n  \\fill[ink] (0.0000,1.5000) circle (1.3pt);\n  \\fill[ink] (-0.0000,-1.5000) circle (1.3pt);\n  \\fill[ink] (-1.2990,-0.7500) circle (1.3pt);\n  \\fill[ink] (1.2990,-0.7500) circle (1.3pt);\n  \\fill[ink] (-0.0000,-0.7500) circle (1.3pt);\n  \\node[right] at (0.0000,0.0000) {$O$};\n  \\node[inner sep=0pt] at (0.0000,1.7800) {$C$};\n  \\node[inner sep=0pt] at (-0.0000,-1.7800) {$D$};\n  \\node[inner sep=0pt] at (-1.5415,-0.8900) {$A$};\n  \\node[inner sep=0pt] at (1.5415,-0.8900) {$B$};\n  \\node[below left] at (-0.0000,-0.7500) {$H$};\n\\end{tikzpicture}",
+          "caption": "Đường kính $CD \\perp AB$ tại $H$ $\\Rightarrow HA = HB$",
+          "width": "0.46\\linewidth"
+        },
+        {
+          "type": "para",
+          "variant": "heading",
+          "text": "3. Dây và khoảng cách đến tâm"
+        },
+        {
+          "type": "deflist",
+          "items": [
+            {
+              "term": "Hai dây bằng nhau",
+              "desc": "$\\Leftrightarrow$ hai dây \\textbf{cách đều tâm}."
+            },
+            {
+              "term": "Dây lớn hơn",
+              "desc": "$\\Leftrightarrow$ dây \\textbf{gần tâm hơn}."
+            }
+          ]
+        },
+        {
+          "type": "figure",
+          "tikz": "\\begin{tikzpicture}[line width=0.8pt, font=\\small]\n  \\draw[ink] (0.0000,0.0000) circle (1.5000);\n  \\draw[ink] (1.4309,0.4500) -- (-1.4309,0.4500);\n  \\draw[ink] (-1.2373,-0.8480) -- (0.8726,-1.2201);\n  \\draw[ink, dashed] (0.0000,0.0000) -- (0.0000,0.4500);\n  \\draw[ink, dashed] (0.0000,0.0000) -- (-0.1823,-1.0340);\n  \\draw[ink] (-0.1800,0.4500) -- (-0.1800,0.2700) -- (0.0000,0.2700);\n  \\draw[ink] (-0.3596,-1.0028) -- (-0.3283,-0.8255) -- (-0.1511,-0.8568);\n  \\fill[ink] (0.0000,0.0000) circle (1.3pt);\n  \\fill[ink] (1.4309,0.4500) circle (1.3pt);\n  \\fill[ink] (-1.4309,0.4500) circle (1.3pt);\n  \\fill[ink] (-1.2373,-0.8480) circle (1.3pt);\n  \\fill[ink] (0.8726,-1.2201) circle (1.3pt);\n  \\fill[ink] (0.0000,0.4500) circle (1.3pt);\n  \\fill[ink] (-0.1823,-1.0340) circle (1.3pt);\n  \\node[right] at (0.0000,0.0000) {$O$};\n  \\node[inner sep=0pt] at (1.6980,0.5340) {$A$};\n  \\node[inner sep=0pt] at (-1.6980,0.5340) {$B$};\n  \\node[inner sep=0pt] at (-1.4682,-1.0063) {$C$};\n  \\node[inner sep=0pt] at (1.0355,-1.4478) {$D$};\n  \\node[inner sep=0pt] at (0.1909,0.6409) {$H$};\n  \\node[inner sep=0pt] at (-0.0275,-1.2552) {$K$};\n\\end{tikzpicture}",
+          "caption": "$AB > CD \\Leftrightarrow OH < OK$",
+          "width": "0.46\\linewidth"
+        },
+        {
+          "type": "para",
+          "variant": "heading",
+          "text": "4. Bộ ba $R$ — $OH$ — $AH$"
+        },
+        {
+          "type": "para",
+          "text": "Kẻ $OH \\perp AB$ tại $H$ $\\Rightarrow H$ là trung điểm $AB$, $AH = \\dfrac{AB}{2}$. [[br]]$\\triangle OAH$ vuông tại $H$, cạnh huyền $OA = R$ $\\Rightarrow R^2 = OH^2 + AH^2$. [[br]]Biết hai trong ba đoạn $R$, $OH$, $AH$ thì tính được đoạn còn lại."
+        },
+        {
+          "type": "figure",
+          "tikz": "\\begin{tikzpicture}[line width=0.8pt, font=\\small]\n  \\draw[ink] (0.0000,0.0000) circle (1.5000);\n  \\draw[ink] (-1.2000,-0.9000) -- (1.2000,-0.9000);\n  \\fill[black!10] (0.0000,0.0000) -- (-1.2000,-0.9000) -- (-0.0000,-0.9000) -- cycle;\n  \\draw[ink] (0.0000,0.0000) -- (-1.2000,-0.9000);\n  \\draw[ink] (0.0000,0.0000) -- (-0.0000,-0.9000);\n  \\draw[ink] (-0.0000,-0.7200) -- (0.1800,-0.7200) -- (0.1800,-0.9000);\n  \\fill[ink] (0.0000,0.0000) circle (1.3pt);\n  \\fill[ink] (-1.2000,-0.9000) circle (1.3pt);\n  \\fill[ink] (1.2000,-0.9000) circle (1.3pt);\n  \\fill[ink] (-0.0000,-0.9000) circle (1.3pt);\n  \\node[above] at (0.0000,0.0000) {$O$};\n  \\node[inner sep=0pt] at (-1.4240,-1.0680) {$A$};\n  \\node[inner sep=0pt] at (1.4240,-1.0680) {$B$};\n  \\node[below] at (-0.0000,-0.9000) {$H$};\n  \\node[above left, font=\\scriptsize] at (-0.6000,-0.4500) {$R$};\n\\end{tikzpicture}",
+          "caption": "$\\triangle OAH$ vuông tại $H$: $OA^2 = OH^2 + AH^2$",
+          "width": "0.46\\linewidth"
+        }
+      ]
+    },
+    {
+      "kind": "practice1",
+      "number": 3,
+      "title": "Luyện tập 1",
+      "teacher_note": "18 câu nhận biết, hình vẽ sẵn nên HS chỉ đọc hình rồi chọn/điền — khoảng 1 phút một câu. Bài 9, 10, 11 là giàn giáo trực tiếp cho Bài 12–15; đừng bỏ qua dù HS kêu dễ.",
+      "blocks": [
+        {
+          "type": "noted",
+          "variant": "example",
+          "text": "\\textbf{Ví dụ 1.} Trên Hình 2, hãy chỉ ra dây, cung nhỏ và cung lớn ứng với hai điểm $A$, $B$.[[br]]{\\sffamily\\bfseries\\color{brand}Lời giải}[[br]]Dây: $[[fill:AB]]$.[[br]]Cung nhỏ: cung $[[fill:ANB]]$; cung lớn: cung $[[fill:AMB]]$.[[br]]Vậy dây $AB$ căng cung nhỏ $ANB$ và cung lớn $AMB$.",
+          "figure": {
+            "tikz": "\\begin{tikzpicture}[line width=0.8pt, font=\\small]\n  \\draw[ink] (0.0000,0.0000) circle (1.5000);\n  \\draw[ink] (1.2990,0.7500) -- (-1.2990,0.7500);\n  \\fill[ink] (0.0000,0.0000) circle (1.3pt);\n  \\fill[ink] (1.2990,0.7500) circle (1.3pt);\n  \\fill[ink] (-1.2990,0.7500) circle (1.3pt);\n  \\fill[ink] (-0.5130,-1.4095) circle (1.3pt);\n  \\fill[ink] (0.0000,1.5000) circle (1.3pt);\n  \\node[below] at (0.0000,0.0000) {$O$};\n  \\node[inner sep=0pt] at (1.5415,0.8900) {$A$};\n  \\node[inner sep=0pt] at (-1.5415,0.8900) {$B$};\n  \\node[inner sep=0pt] at (-0.6088,-1.6727) {$M$};\n  \\node[inner sep=0pt] at (0.0000,1.7800) {$N$};\n\\end{tikzpicture}",
+            "caption": "Hình 2",
+            "pos": "right"
+          }
+        },
+        {
+          "type": "problem",
+          "label": "Bài 1.",
+          "level": 1,
+          "tier": "onclass",
+          "dang_id": "NB1",
+          "statement": "[NB] Hai điểm $A$, $B$ nằm trên đường tròn $(O)$ chia đường tròn thành mấy cung?",
+          "figure_given": true,
+          "options": [
+            "$1$ cung",
+            "$2$ cung",
+            "$3$ cung",
+            "$4$ cung"
+          ],
+          "solution": "Đáp án \\textbf{B}. Hai cung: cung nhỏ và cung lớn."
+        },
+        {
+          "type": "problem",
+          "label": "Bài 2.",
+          "level": 1,
+          "tier": "onclass",
+          "dang_id": "NB1",
+          "statement": "[NB] Trên Hình 3, đoạn thẳng $CD$ được gọi là gì của đường tròn $(O)$?",
+          "figure_given": true,
+          "options": [
+            "Bán kính",
+            "Dây",
+            "Cung nhỏ",
+            "Đường kính"
+          ],
+          "solution": "Đáp án \\textbf{B}. $CD$ nối hai điểm trên đường tròn, không đi qua $O$ $\\Rightarrow$ dây.",
+          "figure": {
+            "tikz": "\\begin{tikzpicture}[line width=0.8pt, font=\\small]\n  \\draw[ink] (0.0000,0.0000) circle (1.5000);\n  \\draw[ink] (-1.3338,-0.6864) -- (1.1943,-0.9075);\n  \\fill[ink] (0.0000,0.0000) circle (1.3pt);\n  \\fill[ink] (-1.3338,-0.6864) circle (1.3pt);\n  \\fill[ink] (1.1943,-0.9075) circle (1.3pt);\n  \\fill[ink] (-0.2605,1.4772) circle (1.3pt);\n  \\fill[ink] (-0.1307,-1.4943) circle (1.3pt);\n  \\node[above right] at (0.0000,0.0000) {$O$};\n  \\node[inner sep=0pt] at (-1.5827,-0.8145) {$C$};\n  \\node[inner sep=0pt] at (1.4172,-1.0770) {$D$};\n  \\node[inner sep=0pt] at (-0.3091,1.7530) {$M$};\n  \\node[inner sep=0pt] at (-0.1551,-1.7732) {$N$};\n\\end{tikzpicture}",
+            "caption": "Hình 3",
+            "pos": "right"
+          }
+        },
+        {
+          "type": "problem",
+          "label": "Bài 3.",
+          "level": 1,
+          "tier": "onclass",
+          "dang_id": "NB1",
+          "statement": "[NB] Vẫn trên Hình 3, cung $CD$ \\textbf{có chứa} điểm $M$ được gọi là:",
+          "figure_given": true,
+          "options": [
+            "Cung nhỏ",
+            "Cung lớn",
+            "Dây",
+            "Đường kính"
+          ],
+          "solution": "Đáp án \\textbf{B}. Cung $CMD$ là phần lớn hơn $\\Rightarrow$ cung lớn."
+        },
+        {
+          "type": "noted",
+          "variant": "example",
+          "text": "\\textbf{Ví dụ 2.} Trên Hình 4, đường kính $CD$ vuông góc với dây $AB$ tại $H$. Biết $AB = 10$ cm, tính $AH$ và $HB$.[[br]]{\\sffamily\\bfseries\\color{brand}Lời giải}[[br]]Đường kính $CD \\perp AB$ tại $H$ $\\Rightarrow H$ là [[fill:trung điểm]] của $AB$.[[br]]$\\Rightarrow AH = HB = [[fill:\\dfrac{AB}{2}]] = \\dfrac{10}{2} = [[fill:5]]$ (cm).[[br]]Vậy $AH = HB = 5$ cm.",
+          "figure": {
+            "tikz": "\\begin{tikzpicture}[line width=0.8pt, font=\\small]\n  \\draw[ink] (0.0000,0.0000) circle (1.5000);\n  \\draw[ink] (-0.7500,1.2990) -- (0.7500,-1.2990);\n  \\draw[ink] (-0.7989,-1.2695) -- (1.4989,0.0571);\n  \\draw[ink] (0.5059,-0.5162) -- (0.4159,-0.3603) -- (0.2600,-0.4503);\n  \\draw[ink] (-0.1795,-1.0158) -- (-0.2695,-0.8599);\n  \\draw[ink] (0.9695,-0.3525) -- (0.8795,-0.1966);\n  \\fill[ink] (0.0000,0.0000) circle (1.3pt);\n  \\fill[ink] (-0.7500,1.2990) circle (1.3pt);\n  \\fill[ink] (0.7500,-1.2990) circle (1.3pt);\n  \\fill[ink] (-0.7989,-1.2695) circle (1.3pt);\n  \\fill[ink] (1.4989,0.0571) circle (1.3pt);\n  \\fill[ink] (0.3500,-0.6062) circle (1.3pt);\n  \\node[right] at (0.0000,0.0000) {$O$};\n  \\node[inner sep=0pt] at (-0.8900,1.5415) {$C$};\n  \\node[inner sep=0pt] at (0.8900,-1.5415) {$D$};\n  \\node[inner sep=0pt] at (-0.9480,-1.5065) {$A$};\n  \\node[inner sep=0pt] at (1.7787,0.0678) {$B$};\n  \\node[inner sep=0pt] at (0.6108,-0.6761) {$H$};\n\\end{tikzpicture}",
+            "caption": "Hình 4",
+            "pos": "right"
+          }
+        },
+        {
+          "type": "problem",
+          "label": "Bài 4.",
+          "level": 1,
+          "tier": "onclass",
+          "dang_id": "NB2",
+          "statement": "Trên Hình 5, đường kính $EF$ vuông góc với dây $MN$ tại $K$. Điền vào chỗ chấm:[[br]]a) [NB] $EF \\perp MN$ tại $K \\Rightarrow K$ là \\ldots\\ldots\\ldots\\ldots của $MN$.[[br]]b) [NB] Biết $KM = 7$ cm $\\Rightarrow MN = \\ldots\\ldots = \\ldots\\ldots$ cm.",
+          "figure_given": true,
+          "answer": "a) $K$ là trung điểm của $MN$.[[br]]b) $MN = 2KM = 2 \\cdot 7 = 14$ cm.",
+          "figure": {
+            "tikz": "\\begin{tikzpicture}[line width=0.8pt, font=\\small]\n  \\draw[ink] (0.0000,0.0000) circle (1.5000);\n  \\draw[ink] (0.7500,1.2990) -- (-0.7500,-1.2990);\n  \\draw[ink] (-1.4989,0.0571) -- (0.7989,-1.2695);\n  \\draw[ink] (-0.1941,-0.6962) -- (-0.1041,-0.5403) -- (-0.2600,-0.4503);\n  \\draw[ink] (-0.9695,-0.3525) -- (-0.8795,-0.1966);\n  \\draw[ink] (0.1795,-1.0158) -- (0.2695,-0.8599);\n  \\fill[ink] (0.0000,0.0000) circle (1.3pt);\n  \\fill[ink] (0.7500,1.2990) circle (1.3pt);\n  \\fill[ink] (-0.7500,-1.2990) circle (1.3pt);\n  \\fill[ink] (-1.4989,0.0571) circle (1.3pt);\n  \\fill[ink] (0.7989,-1.2695) circle (1.3pt);\n  \\fill[ink] (-0.3500,-0.6062) circle (1.3pt);\n  \\node[right] at (0.0000,0.0000) {$O$};\n  \\node[inner sep=0pt] at (0.8900,1.5415) {$E$};\n  \\node[inner sep=0pt] at (-0.8900,-1.5415) {$F$};\n  \\node[inner sep=0pt] at (-1.7787,0.0678) {$M$};\n  \\node[inner sep=0pt] at (0.9480,-1.5065) {$N$};\n  \\node[inner sep=0pt] at (-0.2801,-0.8670) {$K$};\n\\end{tikzpicture}",
+            "caption": "Hình 5",
+            "pos": "right"
+          }
+        },
+        {
+          "type": "problem",
+          "label": "Bài 5.",
+          "level": 1,
+          "tier": "onclass",
+          "dang_id": "NB2",
+          "statement": "[NB] Đường kính $CD$ của đường tròn $(O)$ đi qua trung điểm $I$ của dây $AB$ ($AB$ không đi qua tâm). Khẳng định nào đúng?",
+          "figure_given": true,
+          "options": [
+            "$CD \\perp AB$",
+            "$CD = AB$",
+            "$CD \\parallel AB$",
+            "$IA = 2IB$"
+          ],
+          "solution": "Đáp án \\textbf{A}. Đường kính qua trung điểm dây không qua tâm $\\Rightarrow$ vuông góc với dây."
+        },
+        {
+          "type": "problem",
+          "label": "Bài 6.",
+          "level": 1,
+          "tier": "onclass",
+          "dang_id": "NB3",
+          "statement": "[NB] Trong một đường tròn, hai dây bằng nhau thì:",
+          "figure_given": true,
+          "options": [
+            "Cách đều tâm",
+            "Cùng đi qua tâm",
+            "Vuông góc với nhau",
+            "Song song với nhau"
+          ],
+          "solution": "Đáp án \\textbf{A}. Hai dây bằng nhau $\\Leftrightarrow$ cách đều tâm."
+        },
+        {
+          "type": "problem",
+          "label": "Bài 7.",
+          "level": 1,
+          "tier": "onclass",
+          "dang_id": "NB3",
+          "statement": "Trên Hình 6, hai dây $AB = CD = 8$ cm, $OH \\perp AB$ tại $H$, $OK \\perp CD$ tại $K$ và $OH = 3$ cm. Điền vào chỗ chấm:[[br]]a) [NB] $AB = CD \\Rightarrow OK \\ldots\\ldots OH \\Rightarrow OK = \\ldots\\ldots$ cm.[[br]]b) [NB] Dây $EF$ của đường tròn này cách tâm $O$ đúng $3$ cm $\\Rightarrow EF = \\ldots\\ldots$ cm.",
+          "figure_given": true,
+          "answer": "a) $OK = OH = 3$ cm (hai dây bằng nhau thì cách đều tâm).[[br]]b) $EF = AB = 8$ cm (hai dây cách đều tâm thì bằng nhau).",
+          "figure": {
+            "tikz": "\\begin{tikzpicture}[line width=0.8pt, font=\\small]\n  \\draw[ink] (0.0000,0.0000) circle (1.5000);\n  \\draw[ink] (1.2000,0.9000) -- (-1.2000,0.9000);\n  \\draw[ink] (-0.5892,-1.3794) -- (1.4892,-0.1794);\n  \\draw[ink, dashed] (0.0000,0.0000) -- (0.0000,0.9000);\n  \\draw[ink, dashed] (0.0000,0.0000) -- (0.4500,-0.7794);\n  \\draw[ink] (-0.1800,0.9000) -- (-0.1800,0.7200) -- (0.0000,0.7200);\n  \\draw[ink] (0.6059,-0.6894) -- (0.5159,-0.5335) -- (0.3600,-0.6235);\n  \\fill[ink] (0.0000,0.0000) circle (1.3pt);\n  \\fill[ink] (1.2000,0.9000) circle (1.3pt);\n  \\fill[ink] (-1.2000,0.9000) circle (1.3pt);\n  \\fill[ink] (-0.5892,-1.3794) circle (1.3pt);\n  \\fill[ink] (1.4892,-0.1794) circle (1.3pt);\n  \\fill[ink] (0.0000,0.9000) circle (1.3pt);\n  \\fill[ink] (0.4500,-0.7794) circle (1.3pt);\n  \\node[right] at (0.0000,0.0000) {$O$};\n  \\node[inner sep=0pt] at (1.4240,1.0680) {$A$};\n  \\node[inner sep=0pt] at (-1.4240,1.0680) {$B$};\n  \\node[inner sep=0pt] at (-0.6992,-1.6369) {$C$};\n  \\node[inner sep=0pt] at (1.7672,-0.2129) {$D$};\n  \\node[inner sep=0pt] at (0.1909,1.0909) {$H$};\n  \\node[inner sep=0pt] at (0.3801,-1.0402) {$K$};\n\\end{tikzpicture}",
+            "caption": "Hình 6",
+            "pos": "right"
+          }
+        },
+        {
+          "type": "problem",
+          "label": "Bài 8.",
+          "level": 1,
+          "tier": "onclass",
+          "dang_id": "NB4",
+          "statement": "Cho đường tròn $(O)$ và dây $AB$ không đi qua tâm. Kẻ $OH \\perp AB$ tại $H$.[[br]]a) [NB] Vẽ hình vào vở, đánh dấu góc vuông tại $H$.[[br]]b) [NB] $OH \\perp AB$ tại $H \\Rightarrow H$ là \\ldots\\ldots\\ldots\\ldots của $AB$; đánh dấu hai đoạn bằng nhau $HA = \\ldots\\ldots$ trên hình.[[br]]c) [NB] Nối $OA$. Tam giác $OAH$ vuông tại \\ldots\\ldots, cạnh huyền là \\ldots\\ldots $= R$.",
+          "figure_given": false,
+          "draw": true,
+          "answer": "a) Hình như mục 4 phần Kiến thức cần nhớ.[[br]]b) $H$ là trung điểm của $AB$; $HA = HB$.[[br]]c) $\\triangle OAH$ vuông tại $H$, cạnh huyền $OA = R$."
+        },
+        {
+          "type": "problem",
+          "label": "Bài 9.",
+          "level": 1,
+          "tier": "onclass",
+          "dang_id": "NB5",
+          "statement": "Trên Hình 7, $OH \\perp AB$ tại $H$. Điền vào chỗ chấm:[[br]]a) [NB] $AB = 10$ cm $\\Rightarrow AH = \\ldots\\ldots = \\ldots\\ldots$ cm.[[br]]b) [NB] $AB = 24$ cm $\\Rightarrow HB = \\ldots\\ldots = \\ldots\\ldots$ cm.[[br]]c) [NB] $AH = 9$ cm $\\Rightarrow AB = \\ldots\\ldots = \\ldots\\ldots$ cm.",
+          "figure_given": true,
+          "answer": "a) $AH = \\dfrac{AB}{2} = 5$ cm.[[br]]b) $HB = \\dfrac{AB}{2} = 12$ cm.[[br]]c) $AB = 2AH = 18$ cm.",
+          "figure": {
+            "tikz": "\\begin{tikzpicture}[line width=0.8pt, font=\\small]\n  \\draw[ink] (0.0000,0.0000) circle (1.5000);\n  \\draw[ink] (-1.2000,-0.9000) -- (1.2000,-0.9000);\n  \\draw[ink, dashed] (0.0000,0.0000) -- (-0.0000,-0.9000);\n  \\draw[ink] (0.1800,-0.9000) -- (0.1800,-0.7200) -- (-0.0000,-0.7200);\n  \\fill[ink] (0.0000,0.0000) circle (1.3pt);\n  \\fill[ink] (-1.2000,-0.9000) circle (1.3pt);\n  \\fill[ink] (1.2000,-0.9000) circle (1.3pt);\n  \\fill[ink] (-0.0000,-0.9000) circle (1.3pt);\n  \\node[above] at (0.0000,0.0000) {$O$};\n  \\node[inner sep=0pt] at (-1.4240,-1.0680) {$A$};\n  \\node[inner sep=0pt] at (1.4240,-1.0680) {$B$};\n  \\node[inner sep=0pt] at (-0.1909,-1.0909) {$H$};\n\\end{tikzpicture}",
+            "caption": "Hình 7",
+            "pos": "right"
+          }
+        },
+        {
+          "type": "problem",
+          "label": "Bài 10.",
+          "level": 1,
+          "tier": "onclass",
+          "dang_id": "NB6",
+          "statement": "Cho đường tròn $(O; 13\\text{ cm})$, dây $AB = 24$ cm, $OH \\perp AB$ tại $H$. Điền vào chỗ chấm để hoàn thành bài giải:[[br]]a) [NB] $OH \\perp AB$ tại $H \\Rightarrow H$ là trung điểm $AB \\Rightarrow AH = \\ldots\\ldots = \\ldots\\ldots$ cm.[[br]]b) [NB] Xét $\\triangle OAH$ vuông tại $H$, theo định lí Pythagore:[[br]]$\\quad OH^2 = \\ldots\\ldots = \\ldots\\ldots \\Rightarrow OH = \\ldots\\ldots$ cm.",
+          "figure_given": true,
+          "answer": "a) $AH = \\dfrac{AB}{2} = 12$ cm.[[br]]b) $OH^2 = OA^2 - AH^2 = 13^2 - 12^2 = 25 \\Rightarrow OH = 5$ cm."
+        },
+        {
+          "type": "problem",
+          "label": "Bài 11.",
+          "level": 1,
+          "tier": "onclass",
+          "dang_id": "NB6",
+          "statement": "Cho đường tròn $(O; 10\\text{ cm})$, dây $MN$ cách tâm $O$ một khoảng $OK = 8$ cm ($K$ là trung điểm $MN$). Điền vào chỗ chấm:[[br]][NB] Xét $\\triangle OMK$ vuông tại $K$, theo định lí Pythagore:[[br]]$\\quad MK^2 = \\ldots\\ldots = \\ldots\\ldots \\Rightarrow MK = \\ldots\\ldots$ cm.",
+          "figure_given": true,
+          "answer": "$MK^2 = OM^2 - OK^2 = 10^2 - 8^2 = 36 \\Rightarrow MK = 6$ cm."
+        }
+      ]
+    },
+    {
+      "kind": "practice2",
+      "number": 4,
+      "title": "Luyện tập 2",
+      "teacher_note": "Mỗi bài bắt HS viết đủ chuỗi 'kẻ $OH \\perp AB$ $\\Rightarrow$ trung điểm $\\Rightarrow$ Pythagore $\\Rightarrow$ Vậy', đó là mẫu trình bày đi thi. Bài 16 là bài thực tế: ẩn là $R$ nằm ở cả hai vế, chữa kĩ bước khai triển $(R-4)^2$.",
+      "blocks": [
+        {
+          "type": "noted",
+          "variant": "example",
+          "text": "\\textbf{Ví dụ 3.} Một mặt bàn hình tròn tâm $O$ bán kính $5$ dm. Người ta đặt một thanh gỗ thẳng $AB$ dài $8$ dm, hai đầu $A$, $B$ nằm trên mép bàn (Hình 8). Tính khoảng cách từ tâm $O$ đến thanh gỗ.[[br]]{\\sffamily\\bfseries\\color{brand}Lời giải}[[br]]Kẻ $OH \\perp AB$ tại $H \\Rightarrow H$ là trung điểm $AB \\Rightarrow AH = [[fill:\\dfrac{AB}{2}]] = [[fill:4]]$ (dm).[[br]]Xét $\\triangle OAH$ vuông tại $H$, theo Pythagore:[[br]]$OH^2 = [[fill:OA^2 - AH^2]] = 5^2 - 4^2 = [[fill:9]] \\Rightarrow OH = 3$ (dm).[[br]]Vậy tâm $O$ cách thanh gỗ $3$ dm.",
+          "figure": {
+            "tikz": "\\begin{tikzpicture}[line width=0.8pt, font=\\small]\n  \\draw[ink] (0.0000,0.0000) circle (1.5000);\n  \\draw[ink, line width=2.2pt] (-1.2000,-0.9000) -- (1.2000,-0.9000);\n  \\draw[ink, dashed] (0.0000,0.0000) -- (-0.0000,-0.9000);\n  \\draw[ink] (0.1800,-0.9000) -- (0.1800,-0.7200) -- (-0.0000,-0.7200);\n  \\fill[ink] (0.0000,0.0000) circle (1.3pt);\n  \\fill[ink] (-1.2000,-0.9000) circle (1.3pt);\n  \\fill[ink] (1.2000,-0.9000) circle (1.3pt);\n  \\fill[ink] (-0.0000,-0.9000) circle (1.3pt);\n  \\node[above] at (0.0000,0.0000) {$O$};\n  \\node[inner sep=0pt] at (-1.4240,-1.0680) {$A$};\n  \\node[inner sep=0pt] at (1.4240,-1.0680) {$B$};\n  \\node[inner sep=0pt] at (-0.1909,-1.0909) {$H$};\n\\end{tikzpicture}",
+            "caption": "Hình 8",
+            "pos": "right"
+          }
+        },
+        {
+          "type": "problem",
+          "label": "Bài 12.",
+          "level": 2,
+          "tier": "onclass",
+          "dang_id": "TH1",
+          "statement": "[TH] Cho đường tròn $(O; 17\\text{ cm})$ và dây $AB = 30$ cm. Tính khoảng cách từ tâm $O$ đến dây $AB$.",
+          "figure_given": false,
+          "hints": [
+            "Khoảng cách từ $O$ đến dây là đoạn nào? Kẻ nó ra hình.",
+            "Chân đường vuông góc nằm ở đâu trên dây? Tam giác vuông nào chứa cả $R$ lẫn đoạn cần tìm?"
+          ],
+          "answer": "Kẻ $OH \\perp AB$ tại $H \\Rightarrow H$ là trung điểm $AB \\Rightarrow AH = \\dfrac{AB}{2} = 15$ (cm).[[br]]Xét $\\triangle OAH$ vuông tại $H$, theo Pythagore:[[br]]$OH^2 = OA^2 - AH^2 = 17^2 - 15^2 = 64 \\Rightarrow OH = 8$ (cm).[[br]]Vậy khoảng cách từ $O$ đến $AB$ bằng $8$ cm."
+        },
+        {
+          "type": "problem",
+          "label": "Bài 13.",
+          "level": 2,
+          "tier": "onclass",
+          "dang_id": "TH1",
+          "statement": "[TH] Cho đường tròn $(O)$ có đường kính $26$ cm và dây $MN = 10$ cm. Tính khoảng cách từ tâm $O$ đến dây $MN$.",
+          "figure_given": false,
+          "hints": [
+            "Đề cho đường kính — bán kính $R$ bằng bao nhiêu?",
+            "Sau đó làm như Bài 12: tam giác vuông nào có cạnh huyền là $R$?"
+          ],
+          "answer": "$R = \\dfrac{26}{2} = 13$ (cm).[[br]]Kẻ $OK \\perp MN$ tại $K \\Rightarrow K$ là trung điểm $MN \\Rightarrow MK = \\dfrac{MN}{2} = 5$ (cm).[[br]]Xét $\\triangle OMK$ vuông tại $K$, theo Pythagore:[[br]]$OK^2 = OM^2 - MK^2 = 13^2 - 5^2 = 144 \\Rightarrow OK = 12$ (cm).[[br]]Vậy khoảng cách từ $O$ đến $MN$ bằng $12$ cm."
+        },
+        {
+          "type": "noted",
+          "variant": "example",
+          "text": "\\textbf{Ví dụ 4.} Một chiếc bánh hình tròn tâm $O$ bán kính $10$ cm bị cắt một nhát thẳng $AB$ cách tâm $6$ cm (Hình 9). Tính độ dài vết cắt $AB$.[[br]]{\\sffamily\\bfseries\\color{brand}Lời giải}[[br]]Kẻ $OH \\perp AB$ tại $H \\Rightarrow OH = 6$ cm và $H$ là trung điểm $AB$.[[br]]Xét $\\triangle OAH$ vuông tại $H$, theo Pythagore:[[br]]$AH^2 = [[fill:OA^2 - OH^2]] = 10^2 - 6^2 = [[fill:64]] \\Rightarrow AH = 8$ (cm).[[br]]$\\Rightarrow AB = [[fill:2AH]] = [[fill:16]]$ (cm).[[br]]Vậy vết cắt dài $16$ cm.",
+          "figure": {
+            "tikz": "\\begin{tikzpicture}[line width=0.8pt, font=\\small]\n  \\draw[ink] (0.0000,0.0000) circle (1.5000);\n  \\draw[ink] (0.9000,-1.2000) -- (0.9000,1.2000);\n  \\draw[ink, dashed] (0.0000,0.0000) -- (0.9000,0.0000);\n  \\draw[ink] (0.9000,0.1800) -- (0.7200,0.1800) -- (0.7200,0.0000);\n  \\fill[ink] (0.0000,0.0000) circle (1.3pt);\n  \\fill[ink] (0.9000,-1.2000) circle (1.3pt);\n  \\fill[ink] (0.9000,1.2000) circle (1.3pt);\n  \\fill[ink] (0.9000,0.0000) circle (1.3pt);\n  \\node[left] at (0.0000,0.0000) {$O$};\n  \\node[inner sep=0pt] at (1.0680,-1.4240) {$A$};\n  \\node[inner sep=0pt] at (1.0680,1.4240) {$B$};\n  \\node[inner sep=0pt] at (1.0909,-0.1909) {$H$};\n\\end{tikzpicture}",
+            "caption": "Hình 9",
+            "pos": "right"
+          }
+        },
+        {
+          "type": "problem",
+          "label": "Bài 14.",
+          "level": 2,
+          "tier": "onclass",
+          "dang_id": "TH2",
+          "statement": "[TH] Cho đường tròn $(O; 25\\text{ cm})$ và dây $CD$ cách tâm $O$ một khoảng $7$ cm. Tính độ dài dây $CD$.",
+          "figure_given": false,
+          "hints": [
+            "Gọi $H$ là chân đường vuông góc từ $O$ xuống $CD$: $OH$ dài bao nhiêu? $H$ nằm ở đâu trên $CD$?",
+            "Tính được nửa dây rồi thì cả dây bằng bao nhiêu?"
+          ],
+          "answer": "Kẻ $OH \\perp CD$ tại $H \\Rightarrow OH = 7$ cm và $H$ là trung điểm $CD$.[[br]]Xét $\\triangle OCH$ vuông tại $H$, theo Pythagore:[[br]]$CH^2 = OC^2 - OH^2 = 25^2 - 7^2 = 576 \\Rightarrow CH = 24$ (cm).[[br]]$\\Rightarrow CD = 2CH = 48$ (cm).[[br]]Vậy $CD = 48$ cm."
+        },
+        {
+          "type": "noted",
+          "variant": "example",
+          "text": "\\textbf{Ví dụ 5.} Cho đường tròn $(O; 5\\text{ cm})$ có dây $AB$ cách tâm $3$ cm và dây $CD$ cách tâm $4$ cm (Hình 10). Tính độ dài hai dây rồi so sánh.[[br]]{\\sffamily\\bfseries\\color{brand}Lời giải}[[br]]Kẻ $OH \\perp AB$, $OK \\perp CD$ $\\Rightarrow OH = 3$ cm, $OK = 4$ cm; $H$, $K$ là trung điểm $AB$, $CD$.[[br]]$\\triangle OAH$ vuông tại $H$: $AH^2 = 5^2 - 3^2 = 16 \\Rightarrow AH = 4 \\Rightarrow AB = [[fill:8]]$ (cm).[[br]]$\\triangle OCK$ vuông tại $K$: $CK^2 = 5^2 - 4^2 = 9 \\Rightarrow CK = 3 \\Rightarrow CD = [[fill:6]]$ (cm).[[br]]$OH < OK$ và $AB [[fill:>]] CD$.[[br]]Vậy $AB > CD$: dây gần tâm hơn thì [[fill:lớn hơn]].",
+          "figure": {
+            "tikz": "\\begin{tikzpicture}[line width=0.8pt, font=\\small]\n  \\draw[ink] (0.0000,0.0000) circle (1.5000);\n  \\draw[ink] (1.2000,0.9000) -- (-1.2000,0.9000);\n  \\draw[ink] (-1.2561,-0.8198) -- (0.4353,-1.4354);\n  \\draw[ink, dashed] (0.0000,0.0000) -- (0.0000,0.9000);\n  \\draw[ink, dashed] (0.0000,0.0000) -- (-0.4104,-1.1276);\n  \\draw[ink] (-0.1800,0.9000) -- (-0.1800,0.7200) -- (0.0000,0.7200);\n  \\draw[ink] (-0.2413,-1.1892) -- (-0.1797,-1.0201) -- (-0.3489,-0.9585);\n  \\fill[ink] (0.0000,0.0000) circle (1.3pt);\n  \\fill[ink] (1.2000,0.9000) circle (1.3pt);\n  \\fill[ink] (-1.2000,0.9000) circle (1.3pt);\n  \\fill[ink] (-1.2561,-0.8198) circle (1.3pt);\n  \\fill[ink] (0.4353,-1.4354) circle (1.3pt);\n  \\fill[ink] (0.0000,0.9000) circle (1.3pt);\n  \\fill[ink] (-0.4104,-1.1276) circle (1.3pt);\n  \\node[right] at (0.0000,0.0000) {$O$};\n  \\node[inner sep=0pt] at (1.4240,1.0680) {$A$};\n  \\node[inner sep=0pt] at (-1.4240,1.0680) {$B$};\n  \\node[inner sep=0pt] at (-1.4906,-0.9728) {$C$};\n  \\node[inner sep=0pt] at (0.5166,-1.7034) {$D$};\n  \\node[inner sep=0pt] at (0.1909,1.0909) {$H$};\n  \\node[inner sep=0pt] at (-0.6551,-1.2417) {$K$};\n\\end{tikzpicture}",
+            "caption": "Hình 10",
+            "pos": "right"
+          }
+        },
+        {
+          "type": "problem",
+          "label": "Bài 15.",
+          "level": 2,
+          "tier": "onclass",
+          "dang_id": "TH3",
+          "statement": "[TH] Cho đường tròn $(O; 10\\text{ cm})$ có hai dây $AB = 16$ cm và $CD = 12$ cm.[[br]]a) Tính khoảng cách từ tâm $O$ đến dây $AB$ và đến dây $CD$.[[br]]b) Dây nào gần tâm hơn? Kết quả có khớp với tính chất dây lớn hơn thì gần tâm hơn không?",
+          "figure_given": false,
+          "hints": [
+            "Mỗi dây kẻ một đường vuông góc từ $O$; mỗi đường cho một tam giác vuông có cạnh huyền $R$.",
+            "Hai khoảng cách tính xong, so sánh chúng với độ dài hai dây."
+          ],
+          "answer": "a) Kẻ $OH \\perp AB$, $OK \\perp CD$ $\\Rightarrow AH = \\dfrac{AB}{2} = 8$ cm, $CK = \\dfrac{CD}{2} = 6$ cm.[[br]]$\\triangle OAH$ vuông tại $H$: $OH^2 = 10^2 - 8^2 = 36 \\Rightarrow OH = 6$ (cm).[[br]]$\\triangle OCK$ vuông tại $K$: $OK^2 = 10^2 - 6^2 = 64 \\Rightarrow OK = 8$ (cm).[[br]]b) $OH < OK \\Rightarrow AB$ gần tâm hơn; khớp với tính chất vì $AB > CD$.[[br]]Vậy $O$ cách $AB$ $6$ cm, cách $CD$ $8$ cm; dây $AB$ gần tâm hơn."
+        },
+        {
+          "type": "noted",
+          "variant": "example",
+          "text": "\\textbf{Ví dụ 6.} Mặt cắt ngang của một ống dẫn nước là đường tròn tâm $O$ bán kính $25$ cm. Mặt nước là dây $AB$ rộng $40$ cm, $D$ là điểm thấp nhất của ống (Hình 11). Tính độ sâu $HD$ của lớp nước.[[br]]{\\sffamily\\bfseries\\color{brand}Lời giải}[[br]]Kẻ $OH \\perp AB$ tại $H \\Rightarrow AH = \\dfrac{AB}{2} = 20$ (cm).[[br]]Xét $\\triangle OAH$ vuông tại $H$, theo Pythagore:[[br]]$OH^2 = [[fill:OA^2 - AH^2]] = 25^2 - 20^2 = 225 \\Rightarrow OH = [[fill:15]]$ (cm).[[br]]$O$, $H$, $D$ thẳng hàng, $OD = R$ $\\Rightarrow HD = [[fill:OD - OH]] = 25 - 15 = [[fill:10]]$ (cm).[[br]]Vậy lớp nước sâu $10$ cm.",
+          "figure": {
+            "tikz": "\\begin{tikzpicture}[line width=0.8pt, font=\\small]\n  \\fill[black!12] (-1.2000,-0.9000) arc (216.8699:323.1301:1.5) -- cycle;\n  \\draw[ink] (0.0000,0.0000) circle (1.5000);\n  \\draw[ink] (-1.2000,-0.9000) -- (1.2000,-0.9000);\n  \\draw[ink, dashed] (0.0000,0.0000) -- (-0.0000,-1.5000);\n  \\draw[ink] (0.1800,-0.9000) -- (0.1800,-0.7200) -- (-0.0000,-0.7200);\n  \\draw[ink] (0.0000,0.0000) -- (-1.2000,-0.9000);\n  \\fill[ink] (0.0000,0.0000) circle (1.3pt);\n  \\fill[ink] (-1.2000,-0.9000) circle (1.3pt);\n  \\fill[ink] (1.2000,-0.9000) circle (1.3pt);\n  \\fill[ink] (-0.0000,-0.9000) circle (1.3pt);\n  \\fill[ink] (-0.0000,-1.5000) circle (1.3pt);\n  \\node[above] at (0.0000,0.0000) {$O$};\n  \\node[inner sep=0pt] at (-1.4240,-1.0680) {$A$};\n  \\node[inner sep=0pt] at (1.4240,-1.0680) {$B$};\n  \\node[inner sep=0pt] at (-0.1556,-1.0556) {$H$};\n  \\node[inner sep=0pt] at (-0.0000,-1.7800) {$D$};\n\\end{tikzpicture}",
+            "caption": "Hình 11",
+            "pos": "right"
+          }
+        },
+        {
+          "type": "problem",
+          "label": "Bài 16.",
+          "level": 3,
+          "tier": "onclass",
+          "dang_id": "VD1",
+          "statement": "[VD] \\textbf{Bài toán thực tế.} Vòm một cây cầu có dạng cung tròn $AMB$ (Hình 12). Chân vòm $A$, $B$ cách nhau $16$ m; $H$ là trung điểm $AB$, điểm cao nhất $M$ của vòm cao $HM = 4$ m. Tính bán kính của đường tròn chứa cung vòm cầu.",
+          "figure_given": false,
+          "quy_trinh": [
+            "Gọi $O$ là tâm, $R$ là bán kính; $O$, $H$, $M$ thẳng hàng và $OH \\perp AB$",
+            "Biểu diễn $OH$ theo $R$: $OH = R - HM$",
+            "Viết Pythagore cho $\\triangle OAH$ vuông tại $H$ rồi giải tìm $R$",
+            "Kết luận bán kính"
+          ],
+          "solution": "Gọi $O$ là tâm, $R$ là bán kính đường tròn chứa cung $AMB$.[[br]]$M$ là điểm chính giữa cung $\\Rightarrow O$, $H$, $M$ thẳng hàng, $OH \\perp AB$ và $OM = R$.[[br]]$\\Rightarrow AH = \\dfrac{AB}{2} = 8$ (m), $OH = OM - HM = R - 4$ (m).[[br]]Xét $\\triangle OAH$ vuông tại $H$, theo Pythagore:[[br]]$OA^2 = OH^2 + AH^2 \\Rightarrow R^2 = (R - 4)^2 + 8^2$[[br]]$\\Rightarrow R^2 = R^2 - 8R + 16 + 64 \\Rightarrow 8R = 80 \\Rightarrow R = 10$ (m).[[br]]Vậy bán kính đường tròn chứa vòm cầu là $10$ m.",
+          "figure": {
+            "tikz": "\\begin{tikzpicture}[line width=0.8pt, font=\\small]\n  \\draw[ink] (-2.3,0) -- (2.3,0);\n  \\draw[ink, line width=1.4pt] (1.6000,0.0000) arc (36.8699:143.1301:2.0000);\n  \\draw[ink, dashed] (0.0000,0.0000) -- (0.0000,0.8000);\n  \\draw[ink] (0.1800,0.0000) -- (0.1800,0.1800) -- (0.0000,0.1800);\n  \\fill[ink] (-1.6000,0.0000) circle (1.3pt);\n  \\fill[ink] (1.6000,0.0000) circle (1.3pt);\n  \\fill[ink] (0.0000,0.0000) circle (1.3pt);\n  \\fill[ink] (0.0000,0.8000) circle (1.3pt);\n  \\node[below left] at (-1.6000,0.0000) {$A$};\n  \\node[below right] at (1.6000,0.0000) {$B$};\n  \\node[below] at (0.0000,0.0000) {$H$};\n  \\node[above] at (0.0000,0.8000) {$M$};\n  \\node[right, font=\\scriptsize] at (0.0000,0.4000) {$4$ m};\n  \\draw[ink, <->, line width=0.5pt] (-1.6,-0.62) -- (1.6,-0.62) node[midway, fill=white, font=\\scriptsize, inner sep=1pt] {$16$ m};\n\\end{tikzpicture}",
+            "caption": "Hình 12",
+            "pos": "right"
+          }
+        }
+      ]
+    },
+    {
+      "kind": "reflection",
+      "number": 5,
+      "title": "Sơ đồ tư duy",
+      "teacher_note": "BTVN 8 yêu cầu HS tự vẽ hình — nhắc mang compa. Giàn giáo giữ nguyên ở mọi bài về nhà vì không có GV đỡ.",
+      "blocks": [
+        {
+          "type": "mindmap",
+          "caption": "Sơ đồ tư duy: Cung và dây của một đường tròn",
+          "root": "CUNG VÀ DÂY",
+          "branches": [
+            {
+              "label": "CUNG — DÂY",
+              "children": [
+                {
+                  "label": "$A$, $B$ chia đường tròn thành 2 cung"
+                },
+                {
+                  "label": "Cung nhỏ · cung lớn"
+                },
+                {
+                  "label": "Dây $AB$ căng hai cung"
+                },
+                {
+                  "label": "Đường kính $=$ dây lớn nhất"
+                }
+              ]
+            },
+            {
+              "label": "ĐƯỜNG KÍNH $\\perp$ DÂY",
+              "children": [
+                {
+                  "label": "$\\perp$ dây $\\Rightarrow$ qua TRUNG ĐIỂM dây"
+                },
+                {
+                  "label": "Qua trung điểm dây (không qua tâm) $\\Rightarrow \\perp$ dây"
+                }
+              ]
+            },
+            {
+              "label": "DÂY \\& KHOẢNG CÁCH TÂM",
+              "children": [
+                {
+                  "label": "Hai dây bằng nhau $\\Leftrightarrow$ cách đều tâm"
+                },
+                {
+                  "label": "Dây lớn hơn $\\Leftrightarrow$ gần tâm hơn"
+                }
+              ]
+            },
+            {
+              "label": "BỘ BA $R$ — $OH$ — $AH$",
+              "children": [
+                {
+                  "label": "Kẻ $OH \\perp AB$ tại $H$"
+                },
+                {
+                  "label": "$AH = \\dfrac{AB}{2}$"
+                },
+                {
+                  "label": "$\\triangle OAH$ vuông tại $H$, huyền $OA = R$"
+                },
+                {
+                  "label": "$R^2 = OH^2 + AH^2$"
+                }
+              ]
+            }
+          ]
+        },
+        {
+          "type": "para",
+          "text": "\\textbf{BÀI TẬP VỀ NHÀ (Cung và dây của một đường tròn).}"
+        },
+        {
+          "type": "problem",
+          "label": "BTVN 1.",
+          "level": 1,
+          "tier": "btvn",
+          "dang_id": "NB1",
+          "statement": "[NB] Trên Hình 13, đoạn thẳng nào là \\textbf{dây} không đi qua tâm của $(O)$?",
+          "figure_given": true,
+          "options": [
+            "$OM$",
+            "$EF$",
+            "$CD$",
+            "$OE$"
+          ],
+          "answer": "\\textbf{Đáp án C.} $CD$ nối hai điểm trên đường tròn, không đi qua $O$.",
+          "figure": {
+            "tikz": "\\begin{tikzpicture}[line width=0.8pt, font=\\small]\n  \\draw[ink] (0.0000,0.0000) circle (1.5000);\n  \\draw[ink] (-1.4095,0.5130) -- (1.4095,-0.5130);\n  \\draw[ink] (1.1491,0.9642) -- (-0.5130,1.4095);\n  \\draw[ink] (0.0000,0.0000) -- (-0.5130,-1.4095);\n  \\fill[ink] (0.0000,0.0000) circle (1.3pt);\n  \\fill[ink] (-1.4095,0.5130) circle (1.3pt);\n  \\fill[ink] (1.4095,-0.5130) circle (1.3pt);\n  \\fill[ink] (1.1491,0.9642) circle (1.3pt);\n  \\fill[ink] (-0.5130,1.4095) circle (1.3pt);\n  \\fill[ink] (-0.5130,-1.4095) circle (1.3pt);\n  \\node[below right] at (0.0000,0.0000) {$O$};\n  \\node[inner sep=0pt] at (-1.6727,0.6088) {$E$};\n  \\node[inner sep=0pt] at (1.6727,-0.6088) {$F$};\n  \\node[inner sep=0pt] at (1.3636,1.1442) {$C$};\n  \\node[inner sep=0pt] at (-0.6088,1.6727) {$D$};\n  \\node[inner sep=0pt] at (-0.6088,-1.6727) {$M$};\n\\end{tikzpicture}",
+            "caption": "Hình 13",
+            "pos": "right"
+          }
+        },
+        {
+          "type": "problem",
+          "label": "BTVN 2.",
+          "level": 1,
+          "tier": "btvn",
+          "dang_id": "NB1",
+          "statement": "[NB] Vẫn trên Hình 13, cung $CD$ \\textbf{có chứa} điểm $E$ được gọi là:",
+          "figure_given": true,
+          "options": [
+            "Cung nhỏ",
+            "Cung lớn",
+            "Dây",
+            "Đường kính"
+          ],
+          "answer": "\\textbf{Đáp án B.} Cung $CED$ là phần lớn hơn $\\Rightarrow$ cung lớn."
+        },
+        {
+          "type": "problem",
+          "label": "BTVN 3.",
+          "level": 1,
+          "tier": "btvn",
+          "dang_id": "NB1",
+          "statement": "[NB] Cho đường tròn $(O; 6\\text{ cm})$. Một dây của đường tròn này KHÔNG thể có độ dài bằng:",
+          "figure_given": true,
+          "options": [
+            "$5$ cm",
+            "$10$ cm",
+            "$12$ cm",
+            "$13$ cm"
+          ],
+          "answer": "\\textbf{Đáp án D.} Dây lớn nhất là đường kính $= 2R = 12$ cm $< 13$ cm."
+        },
+        {
+          "type": "problem",
+          "label": "BTVN 4.",
+          "level": 1,
+          "tier": "btvn",
+          "dang_id": "NB2",
+          "statement": "Trên Hình 14, đường kính $MN$ vuông góc với dây $EF$ tại $K$. Điền vào chỗ chấm:[[br]]a) [NB] $MN \\perp EF$ tại $K \\Rightarrow K$ là \\ldots\\ldots\\ldots\\ldots của $EF$.[[br]]b) [NB] Biết $EF = 16$ cm $\\Rightarrow KE = KF = \\ldots\\ldots = \\ldots\\ldots$ cm.",
+          "figure_given": true,
+          "answer": "a) $K$ là trung điểm của $EF$.[[br]]b) $KE = KF = \\dfrac{EF}{2} = 8$ cm.",
+          "figure": {
+            "tikz": "\\begin{tikzpicture}[line width=0.8pt, font=\\small]\n  \\draw[ink] (0.0000,0.0000) circle (1.5000);\n  \\draw[ink] (0.0000,1.5000) -- (-0.0000,-1.5000);\n  \\draw[ink] (1.3519,0.6500) -- (-1.3519,0.6500);\n  \\draw[ink] (-0.1800,0.6500) -- (-0.1800,0.8300) -- (0.0000,0.8300);\n  \\draw[ink] (0.6759,0.7400) -- (0.6759,0.5600);\n  \\draw[ink] (-0.6759,0.7400) -- (-0.6759,0.5600);\n  \\fill[ink] (0.0000,0.0000) circle (1.3pt);\n  \\fill[ink] (0.0000,1.5000) circle (1.3pt);\n  \\fill[ink] (-0.0000,-1.5000) circle (1.3pt);\n  \\fill[ink] (1.3519,0.6500) circle (1.3pt);\n  \\fill[ink] (-1.3519,0.6500) circle (1.3pt);\n  \\fill[ink] (0.0000,0.6500) circle (1.3pt);\n  \\node[right] at (0.0000,0.0000) {$O$};\n  \\node[inner sep=0pt] at (0.0000,1.7800) {$M$};\n  \\node[inner sep=0pt] at (-0.0000,-1.7800) {$N$};\n  \\node[inner sep=0pt] at (1.6042,0.7713) {$F$};\n  \\node[inner sep=0pt] at (-1.6042,0.7713) {$E$};\n  \\node[inner sep=0pt] at (-0.1909,0.4591) {$K$};\n\\end{tikzpicture}",
+            "caption": "Hình 14",
+            "pos": "right"
+          }
+        },
+        {
+          "type": "problem",
+          "label": "BTVN 5.",
+          "level": 1,
+          "tier": "btvn",
+          "dang_id": "NB2",
+          "statement": "[NB] Đường kính $AB$ của đường tròn $(O)$ vuông góc với dây $CD$ tại $I$. Khẳng định nào đúng?",
+          "figure_given": true,
+          "options": [
+            "$IC = ID$",
+            "$IA = IB$",
+            "$CD = AB$",
+            "$OI = IC$"
+          ],
+          "answer": "\\textbf{Đáp án A.} Đường kính $\\perp$ dây $\\Rightarrow I$ là trung điểm $CD$ $\\Rightarrow IC = ID$."
+        },
+        {
+          "type": "problem",
+          "label": "BTVN 6.",
+          "level": 1,
+          "tier": "btvn",
+          "dang_id": "NB3",
+          "statement": "[NB] Trong một đường tròn, hai dây cách đều tâm thì:",
+          "figure_given": true,
+          "options": [
+            "Bằng nhau",
+            "Vuông góc với nhau",
+            "Cắt nhau",
+            "Song song với nhau"
+          ],
+          "answer": "\\textbf{Đáp án A.} Hai dây cách đều tâm $\\Leftrightarrow$ bằng nhau."
+        },
+        {
+          "type": "problem",
+          "label": "BTVN 7.",
+          "level": 1,
+          "tier": "btvn",
+          "dang_id": "NB3",
+          "statement": "Đường tròn $(O)$ có dây $AB$ và dây $CD$ cùng cách tâm $3$ cm. Điền vào chỗ chấm:[[br]]a) [NB] So sánh: $AB \\ldots\\ldots CD$.[[br]]b) [NB] Biết $AB = 8$ cm $\\Rightarrow CD = \\ldots\\ldots$ cm.",
+          "figure_given": true,
+          "answer": "a) $AB = CD$ (hai dây cách đều tâm thì bằng nhau).[[br]]b) $CD = 8$ cm."
+        },
+        {
+          "type": "problem",
+          "label": "BTVN 8.",
+          "level": 1,
+          "tier": "btvn",
+          "dang_id": "NB4",
+          "statement": "Cho đường tròn $(O)$ và dây $CD$ không đi qua tâm. Kẻ $OK \\perp CD$ tại $K$.[[br]]a) [NB] Vẽ hình vào vở, đánh dấu góc vuông tại $K$.[[br]]b) [NB] $OK \\perp CD$ tại $K \\Rightarrow K$ là \\ldots\\ldots\\ldots\\ldots của $CD$; đánh dấu $KC = \\ldots\\ldots$ trên hình.[[br]]c) [NB] Nối $OC$. Tam giác $OCK$ vuông tại \\ldots\\ldots, cạnh huyền là \\ldots\\ldots $= R$.",
+          "figure_given": false,
+          "draw": true,
+          "answer": "b) $K$ là trung điểm của $CD$; $KC = KD$.[[br]]c) $\\triangle OCK$ vuông tại $K$, cạnh huyền $OC = R$."
+        },
+        {
+          "type": "problem",
+          "label": "BTVN 9.",
+          "level": 1,
+          "tier": "btvn",
+          "dang_id": "NB5",
+          "statement": "Trên Hình 15, $OH \\perp AB$ tại $H$. Điền vào chỗ chấm:[[br]]a) [NB] $AB = 14$ cm $\\Rightarrow AH = \\ldots\\ldots = \\ldots\\ldots$ cm.[[br]]b) [NB] $AB = 30$ cm $\\Rightarrow HB = \\ldots\\ldots = \\ldots\\ldots$ cm.[[br]]c) [NB] $HB = 6{,}5$ cm $\\Rightarrow AB = \\ldots\\ldots = \\ldots\\ldots$ cm.",
+          "figure_given": true,
+          "answer": "a) $AH = \\dfrac{AB}{2} = 7$ cm.[[br]]b) $HB = \\dfrac{AB}{2} = 15$ cm.[[br]]c) $AB = 2HB = 13$ cm.",
+          "figure": {
+            "tikz": "\\begin{tikzpicture}[line width=0.8pt, font=\\small]\n  \\draw[ink] (0.0000,0.0000) circle (1.5000);\n  \\draw[ink] (1.3272,-0.6989) -- (0.0584,1.4989);\n  \\draw[ink, dashed] (0.0000,0.0000) -- (0.6928,0.4000);\n  \\draw[ink] (0.6028,0.5559) -- (0.4469,0.4659) -- (0.5369,0.3100);\n  \\fill[ink] (0.0000,0.0000) circle (1.3pt);\n  \\fill[ink] (1.3272,-0.6989) circle (1.3pt);\n  \\fill[ink] (0.0584,1.4989) circle (1.3pt);\n  \\fill[ink] (0.6928,0.4000) circle (1.3pt);\n  \\node[above] at (0.0000,0.0000) {$O$};\n  \\node[inner sep=0pt] at (1.5750,-0.8293) {$A$};\n  \\node[inner sep=0pt] at (0.0693,1.7787) {$B$};\n  \\node[inner sep=0pt] at (0.9536,0.3301) {$H$};\n\\end{tikzpicture}",
+            "caption": "Hình 15",
+            "pos": "right"
+          }
+        },
+        {
+          "type": "problem",
+          "label": "BTVN 10.",
+          "level": 1,
+          "tier": "btvn",
+          "dang_id": "NB6",
+          "statement": "Cho đường tròn $(O; 5\\text{ cm})$, dây $AB = 6$ cm, $OH \\perp AB$ tại $H$. Điền vào chỗ chấm để hoàn thành bài giải:[[br]]a) [NB] $OH \\perp AB$ tại $H \\Rightarrow H$ là trung điểm $AB \\Rightarrow AH = \\ldots\\ldots = \\ldots\\ldots$ cm.[[br]]b) [NB] Xét $\\triangle OAH$ vuông tại $H$, theo định lí Pythagore:[[br]]$\\quad OH^2 = \\ldots\\ldots = \\ldots\\ldots \\Rightarrow OH = \\ldots\\ldots$ cm.",
+          "figure_given": true,
+          "answer": "a) $AH = \\dfrac{AB}{2} = 3$ cm.[[br]]b) $OH^2 = OA^2 - AH^2 = 5^2 - 3^2 = 16 \\Rightarrow OH = 4$ cm."
+        },
+        {
+          "type": "problem",
+          "label": "BTVN 11.",
+          "level": 1,
+          "tier": "btvn",
+          "dang_id": "NB6",
+          "statement": "Cho đường tròn $(O; 17\\text{ cm})$, dây $MN$ cách tâm $O$ một khoảng $OK = 8$ cm ($K$ là trung điểm $MN$). Điền vào chỗ chấm:[[br]][NB] Xét $\\triangle OMK$ vuông tại $K$, theo định lí Pythagore:[[br]]$\\quad MK^2 = \\ldots\\ldots = \\ldots\\ldots \\Rightarrow MK = \\ldots\\ldots$ cm.",
+          "figure_given": true,
+          "answer": "$MK^2 = OM^2 - OK^2 = 17^2 - 8^2 = 225 \\Rightarrow MK = 15$ cm."
+        },
+        {
+          "type": "problem",
+          "label": "BTVN 12.",
+          "level": 2,
+          "tier": "btvn",
+          "dang_id": "TH1",
+          "statement": "[TH] Cho đường tròn $(O; 15\\text{ cm})$ và dây $AB = 24$ cm. Tính khoảng cách từ tâm $O$ đến dây $AB$.",
+          "figure_given": false,
+          "hints": [
+            "Khoảng cách từ $O$ đến dây là đoạn nào? Kẻ nó ra hình.",
+            "Chân đường vuông góc nằm ở đâu trên dây? Tam giác vuông nào chứa cả $R$ lẫn đoạn cần tìm?"
+          ],
+          "answer": "Kẻ $OH \\perp AB$ tại $H \\Rightarrow AH = \\dfrac{AB}{2} = 12$ (cm).[[br]]$\\triangle OAH$ vuông tại $H$: $OH^2 = 15^2 - 12^2 = 81 \\Rightarrow OH = 9$ (cm).[[br]]Vậy khoảng cách từ $O$ đến $AB$ bằng $9$ cm."
+        },
+        {
+          "type": "problem",
+          "label": "BTVN 13.",
+          "level": 2,
+          "tier": "btvn",
+          "dang_id": "TH2",
+          "statement": "[TH] Cho đường tròn $(O; 13\\text{ cm})$ và dây $MN$ cách tâm $O$ một khoảng $5$ cm. Tính độ dài dây $MN$.",
+          "figure_given": false,
+          "hints": [
+            "Chân đường vuông góc $H$ từ $O$ xuống $MN$ nằm ở đâu trên dây?",
+            "Tính nửa dây trong tam giác vuông có cạnh huyền $R$, rồi suy ra cả dây."
+          ],
+          "answer": "Kẻ $OH \\perp MN$ tại $H \\Rightarrow OH = 5$ cm, $H$ là trung điểm $MN$.[[br]]$\\triangle OMH$ vuông tại $H$: $MH^2 = 13^2 - 5^2 = 144 \\Rightarrow MH = 12$ (cm).[[br]]$\\Rightarrow MN = 2MH = 24$ (cm).[[br]]Vậy $MN = 24$ cm."
+        },
+        {
+          "type": "problem",
+          "label": "BTVN 14.",
+          "level": 2,
+          "tier": "btvn",
+          "dang_id": "TH3",
+          "statement": "[TH] Cho đường tròn $(O; 13\\text{ cm})$ có hai dây $AB = 24$ cm và $CD = 10$ cm. Tính khoảng cách từ $O$ đến mỗi dây, rồi cho biết dây nào gần tâm hơn.",
+          "figure_given": false,
+          "hints": [
+            "Mỗi dây một đường vuông góc từ $O$, mỗi đường một tam giác vuông có cạnh huyền $R$.",
+            "So hai khoảng cách vừa tính."
+          ],
+          "answer": "Kẻ $OH \\perp AB$, $OK \\perp CD$ $\\Rightarrow AH = 12$ cm, $CK = 5$ cm.[[br]]$OH^2 = 13^2 - 12^2 = 25 \\Rightarrow OH = 5$ (cm); $OK^2 = 13^2 - 5^2 = 144 \\Rightarrow OK = 12$ (cm).[[br]]Vậy $O$ cách $AB$ $5$ cm, cách $CD$ $12$ cm; dây $AB$ gần tâm hơn."
+        }
+      ]
+    }
+  ]
+}

@@ -85,9 +85,17 @@ def _iter_co_hinh(lesson: LessonPackage):
         for i, block in enumerate(stage.blocks, 1):
             kind = getattr(block, "type", "")
             if kind == "problem":
-                yield block.label, block.statement
+                # Bài đã tách bố cục giữ TikZ ở trường `figure`, không còn trong
+                # `statement` — nối lại để cổng soi được cả hai kiểu khai.
+                yield block.label, block.statement + _tikz_cua(block)
             elif kind in ("para", "noted", "opener"):
                 yield f"[{stage.title} · khối {i}]", getattr(block, "text", "")
+
+
+def _tikz_cua(prob) -> str:
+    """Mã TikZ khai ở trường `figure` của bài (rỗng nếu bài dùng kiểu cũ)."""
+    fig = getattr(prob, "figure", None)
+    return ("\n" + fig.tikz) if (fig is not None and fig.tikz) else ""
 
 
 def _split_figure(statement: str) -> tuple[str, str]:
@@ -209,7 +217,12 @@ def check_hinh_thieu(lesson: LessonPackage) -> list[FigureViolation]:
     """
     out: list[FigureViolation] = []
     for _stage, prob in _iter_problems(lesson):
-        text, figure = _split_figure(prob.statement)
+        text, figure = _split_figure(prob.statement + _tikz_cua(prob))
+        # Bài chỉ TRỎ sang hình của bài trước ("Vẫn trên Hình 6") vẫn có căn cứ hình,
+        # khai bằng `figure.ref` — không phải bài mất hình.
+        _fig = getattr(prob, "figure", None)
+        if _fig is not None and _fig.ref:
+            figure = figure or _fig.ref
 
         if _TRO_HINH.search(text) and not figure:
             out.append(FigureViolation(

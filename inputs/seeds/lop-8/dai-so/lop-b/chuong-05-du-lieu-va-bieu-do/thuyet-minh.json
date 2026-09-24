@@ -1,0 +1,996 @@
+{
+  "_nguon": "Tiến độ trung tâm lớp 8 (T8. Tiến độ kiến thức. Nội bộ.pdf): tuần 18 Thu thập và phân loại dữ liệu (90 phút), tuần 19 Biểu diễn dữ liệu bằng bảng, biểu đồ (90 phút), tuần 20 Phân tích số liệu thống kê dựa vào biểu đồ, tuần 21 Ôn tập chương 5. Mã trích dẫn: 'Thu thập Dn.Bm' = '1. Thu thập và phân loại dữ liệu.pdf' (bản 6 trang), 'T8-Thu thập Dn.Bm' = bản 5 trang, 'Biểu diễn D1.k.Bm' = '2. Biểu diễn dữ liệu bằng bảng, biểu đồ.pdf' Dạng 1 mục k (1 tranh-cột, 2 tròn, 3 cột kép, 4 đoạn thẳng, 5 tổng hợp), 'Phân tích Dn.Bm' = '3. Phân tích số liệu thống kê dựa vào biểu đồ.pdf', 'Ôn tập V <phần>.Bm' = '4. T8 - Bài tập tổng hợp Dữ liệu và biểu đồ.pdf', TN = phần trắc nghiệm; 'CK1/HK1 <trường> (năm) Cx' = đề trong inputs/refs/de-thi/lop-8/cuoi-ki-1.",
+  "_luat": "Soạn theo HUONG-DAN-SOAN-PHIEU-B.md. Chương V lớp 8 có co_vd = false (bản đồ VD-VDC: chi-TH) => tỉ lệ 30 NB / 70 TH, không soạn VD-VDC, gộp hai buổi thành một phiếu (so_ca = 2).",
+  "_so_cau": "Quỹ lớp 8 đại số mỗi ca: ví dụ 20′, trên lớp 60′, BTVN 35′ (rate NB 0,5′, TH 3′). Phiếu 2 ca: ví dụ 40′, trên lớp 120′ = 72 câu NB (24 dạng x 3) = 36′ = 30% + 28 câu TH = 84′ = 70%.",
+  "slug": "thuyet-minh-lop-8b-chuong-05-du-lieu-va-bieu-do",
+  "title": "Chương V (SGK KNTT): Dữ liệu và biểu đồ — kế hoạch 4 ca, 2 phiếu",
+  "grade": "lop-8",
+  "subject": "dai-so",
+  "tier": "B",
+  "tuan": "18-21",
+  "chuong": "chuong-05-du-lieu-va-bieu-do",
+  "thoiluong": [
+    "Ca 1 (Tuần 18) — SGK Bài 18: Thu thập và phân loại dữ liệu: 1 ca $=$ 90 phút — SGV xếp 1 tiết.",
+    "Ca 2 (Tuần 19) — SGK Bài 19: Biểu diễn dữ liệu bằng bảng, biểu đồ: 1 ca $=$ 90 phút — SGV xếp 2 tiết.",
+    "Ca 3 (Tuần 20) — SGK Bài 20: Phân tích số liệu thống kê dựa vào biểu đồ: 1 ca $=$ 90 phút — SGV xếp 2 tiết.",
+    "Ca 4 (Tuần 21) — Luyện tập chung $+$ Bài tập cuối chương V: 1 ca $=$ 90 phút — SGV xếp 3 tiết (Luyện tập chung 2, Bài tập cuối chương 1).",
+    "\\textbf{Tổng 4 ca $=$ 360 phút $=$ 8 tiết} (1 ca 90 phút $=$ 2 tiết).",
+    "SGV Toán 8 KNTT (bảng phân phối) xếp chương V đúng 8 tiết: Bài 18 (1), Bài 19 (2), Bài 20 (2), Luyện tập chung (2), Bài tập cuối chương (1) — trung tâm dạy KHỚP số tiết của sách, không nén.",
+    "Bốn ca dùng HAI phiếu, mỗi phiếu 2 ca (khai \\texttt{so\\_ca} $=2$) theo luật gộp phiếu của chương không có bài vận dụng: phiếu 1 cho ca 1 $+$ ca 2, phiếu 2 cho ca 3 $+$ ca 4."
+  ],
+  "kien_thuc_nen": [
+    "\\textbf{Bảng thống kê, biểu đồ tranh, biểu đồ cột, biểu đồ cột kép} (Lớp 6): học sinh đã đọc và vẽ được; lớp 8 chỉ thêm việc CHỌN biểu đồ và CHUYỂN từ cách biểu diễn này sang cách khác.",
+    "\\textbf{Thu thập, phân loại dữ liệu; biểu đồ hình quạt tròn, biểu đồ đoạn thẳng} (Lớp 7): lớp 7 đã chia dữ liệu thành số liệu và dữ liệu không là số; lớp 8 tách tiếp số liệu thành rời rạc và liên tục, cách thu thập thành trực tiếp và gián tiếp.",
+    "\\textbf{Tỉ số phần trăm} (Lớp 6): tính một phần khi biết tổng và tỉ lệ, tính tỉ lệ của một phần so với tổng — xuất hiện ở mọi câu tính toán trên biểu đồ hình quạt tròn và câu tự luận đề cuối kì.",
+    "\\textbf{Làm tròn số thập phân} (Lớp 7): đề thường yêu cầu làm tròn tỉ lệ phần trăm đến hàng phần mười (đề Chương Mỹ $16:45$)."
+  ],
+  "lythuyet": [
+    "\\textbf{Mục tiêu của chương}: làm được MỌI câu thuộc phần Dữ liệu và biểu đồ của đề cuối kì I (khoảng \\textbf{1,0 $-$ 1,5 điểm}). Rà 7 đề cuối kì I lớp 8 Hà Nội có câu thuộc chương này: trắc nghiệm 0,25 điểm mỗi câu (trực tiếp hay gián tiếp, rời rạc hay liên tục, chọn biểu đồ, đọc biểu đồ) và một câu tự luận 1,0 $-$ 1,5 điểm (lập bảng từ biểu đồ cột kép rồi tính tỉ lệ phần trăm; vẽ biểu đồ cột kép; nêu cách thu thập và xếp loại dữ liệu).",
+    "Không đề nào đặt câu vận dụng vào chương này (bản đồ VD-VDC ghi \\emph{chỉ thông hiểu}), nên phiếu soạn theo tỉ lệ 30 NB $/$ 70 TH và không có bài vận dụng.",
+    "\\textbf{Thu thập dữ liệu}: trực tiếp (quan sát, làm thí nghiệm, lập bảng hỏi, phỏng vấn) hoặc gián tiếp (sách, báo, Internet); dữ liệu phải đại diện cho toàn bộ đối tượng đang quan tâm.",
+    "\\textbf{Phân loại dữ liệu}: số liệu gồm rời rạc (đếm) và liên tục (đo); dữ liệu không là số gồm loại sắp được thứ tự và loại không sắp được thứ tự.",
+    "\\textbf{Chọn biểu đồ}: tranh để lôi cuốn, cột để so sánh số lượng, cột kép để so sánh từng cặp của hai dãy số liệu, đoạn thẳng để thấy thay đổi theo thời gian, hình quạt tròn để thấy tỉ lệ từng phần trong tổng thể.",
+    "\\textbf{Đọc biểu đồ cho đúng}: gốc trục đứng khác $0$ thì tỉ lệ chiều cao cột không bằng tỉ lệ số liệu; các mốc thời gian không cách đều thì không dựa vào độ dốc để kết luận tốc độ."
+  ],
+  "vidu": [
+    "Ca 1: xếp loại từng dữ liệu của một tình huống khen thưởng — họ tên, loại giấy khen, số tiền thưởng — theo đúng bốn nhóm của sơ đồ phân loại.",
+    "Ca 1: chỉ ra giá trị không hợp lí trong dãy số liệu và nói rõ vì sao không hợp lí.",
+    "Ca 2: từ biểu đồ hình quạt tròn và tổng khối lượng quả bán được, lập bảng số lượng từng loại rồi vẽ biểu đồ cột — một dãy số liệu, hai cách biểu diễn.",
+    "Ca 2: chọn biểu đồ cột kép cho bảng hai dãy số liệu, vẽ đủ tên biểu đồ, tên hai trục, chú thích.",
+    "Ca 3: biểu đồ có gốc trục đứng là $200$ — cột của Tuyết cao gấp đôi cột của Khánh nhưng số tiền chỉ gấp $\\dfrac{7}{6}$ lần.",
+    "Ca 4, \\textbf{ví dụ trục}: giải trọn câu tự luận 1,0 điểm đề cuối kì I THCS Nguyễn Công Trứ (lập bảng từ biểu đồ cột kép, tính tỉ lệ phần trăm so với sĩ số 50), viết như khi đi thi."
+  ],
+  "dang_vd": [
+    "\\textbf{Chương V KHÔNG soạn dạng vận dụng} (\\texttt{co\\_vd} $=$ false): 7 đề cuối kì I có câu thuộc chương này đều hỏi ở mức nhận biết $-$ thông hiểu.",
+    "Dạng gần vận dụng nhất là \\emph{ra quyết định dựa vào biểu đồ} (cửa hàng giày nên nhập bao nhiêu đôi, bãi xe có cần thêm chỗ không). Theo quy ước bài thực tế chỉ 2 $-$ 3 bước là THÔNG HIỂU, nên dạng này nằm ở dòng TH của phiếu 2 chứ không tách thành dòng VD."
+  ],
+  "loisai": [
+    "\\textbf{Nhầm rời rạc với liên tục}: coi số điểm kiểm tra, số tiền là liên tục vì có thể có số thập phân. Phải hỏi \\emph{có được nhờ đếm hay nhờ đo}.",
+    "\\textbf{Coi thu thập qua bảng hỏi là gián tiếp}: lập bảng hỏi, phỏng vấn đều là TRỰC TIẾP; chỉ dữ liệu lấy từ nguồn có sẵn mới là gián tiếp.",
+    "\\textbf{Chọn biểu đồ hình quạt tròn cho dữ liệu không phải tỉ lệ của một tổng thể}, hoặc chọn biểu đồ cột đơn khi phải so sánh từng cặp của hai dãy số liệu.",
+    "\\textbf{So sánh bằng chiều cao cột khi gốc trục đứng khác $0$}: kết luận \\emph{gấp đôi} theo hình trong khi số liệu chỉ gấp $1,2$ lần.",
+    "\\textbf{Vẽ biểu đồ thiếu yếu tố}: không ghi tên biểu đồ, tên trục, đơn vị hoặc chú thích màu của biểu đồ cột kép — mất điểm trình bày.",
+    "\\textbf{Tính tỉ lệ phần trăm chia nhầm tổng}: chia cho tổng số học sinh tham gia câu lạc bộ thay vì chia cho sĩ số lớp như đề yêu cầu; quên nhân $100\\%$ hoặc quên làm tròn."
+  ],
+  "kienthuc_nb": [
+    "Thu thập trực tiếp: quan sát, làm thí nghiệm, lập bảng hỏi, phỏng vấn. Thu thập gián tiếp: từ sách, báo, Internet.",
+    "Số liệu rời rạc có được nhờ ĐẾM; số liệu liên tục có được nhờ ĐO.",
+    "Dữ liệu không là số chia thành loại sắp được thứ tự (xếp loại, cỡ áo) và loại không sắp được thứ tự (tên, màu sắc).",
+    "Năm loại biểu đồ và mục đích của mỗi loại: tranh, cột, cột kép, đoạn thẳng, hình quạt tròn.",
+    "Tổng các phần của biểu đồ hình quạt tròn bằng $100\\%$; số lượng một phần $=$ tổng $\\times$ tỉ lệ phần trăm của phần đó.",
+    "Gốc trục đứng khác $0$ thì không so sánh số liệu bằng chiều cao cột."
+  ],
+  "phieu": [
+    {
+      "code": "1",
+      "so_ca": 2,
+      "title": "Ca 1 $-$ 2 (Tuần 18 $-$ 19) — Bài 18: Thu thập và phân loại dữ liệu $+$ Bài 19: Biểu diễn dữ liệu bằng bảng, biểu đồ",
+      "rows": [
+        {
+          "dang": "Phân biệt thu thập TRỰC TIẾP (quan sát, làm thí nghiệm, lập bảng hỏi, phỏng vấn) với thu thập GIÁN TIẾP (sách, báo, Internet)",
+          "band": "NB",
+          "loai": "NB lẻ LT",
+          "lythuyet": 1,
+          "vidu": 1,
+          "onclass": 3,
+          "btvn": 2,
+          "source_refs": [
+            "Thu thập D1.VD"
+          ],
+          "decompose": "none"
+        },
+        {
+          "dang": "Chọn phương án là thu thập trực tiếp trong bốn tình huống (trắc nghiệm)",
+          "band": "NB",
+          "loai": "NB tách TH",
+          "lythuyet": 0,
+          "vidu": 0,
+          "onclass": 3,
+          "btvn": 2,
+          "source_refs": [
+            "HK1 Giảng Võ 2 (24-25) C7",
+            "Thu thập TN C7"
+          ],
+          "decompose": "none"
+        },
+        {
+          "dang": "Nêu cách thu thập cho một dữ liệu cho trước và gọi tên cách đó là trực tiếp hay gián tiếp",
+          "band": "NB",
+          "loai": "NB tách TH",
+          "lythuyet": 0,
+          "vidu": 0,
+          "onclass": 3,
+          "btvn": 2,
+          "source_refs": [
+            "Thu thập D1.B1",
+            "Thu thập D1.B3"
+          ],
+          "decompose": "none"
+        },
+        {
+          "dang": "Nhận ra dữ liệu là số (số liệu) hay dữ liệu không là số",
+          "band": "NB",
+          "loai": "NB lẻ LT",
+          "lythuyet": 0,
+          "vidu": 0,
+          "onclass": 3,
+          "btvn": 2,
+          "source_refs": [
+            "Thu thập TN C5",
+            "Thu thập TN C6"
+          ],
+          "decompose": "none"
+        },
+        {
+          "dang": "Phân biệt số liệu RỜI RẠC (có được nhờ đếm) với số liệu LIÊN TỤC (có được nhờ đo)",
+          "band": "NB",
+          "loai": "NB lẻ LT",
+          "lythuyet": 1,
+          "vidu": 1,
+          "onclass": 3,
+          "btvn": 2,
+          "source_refs": [
+            "Thu thập D2.VD",
+            "HK1 Giảng Võ 2 (24-25) C8"
+          ],
+          "decompose": "none"
+        },
+        {
+          "dang": "Dữ liệu không là số: có sắp được thứ tự hay không (cỡ áo S, M, L; xếp loại Tốt, Khá; tên hãng điện thoại)",
+          "band": "NB",
+          "loai": "NB lẻ LT",
+          "lythuyet": 0,
+          "vidu": 0,
+          "onclass": 3,
+          "btvn": 2,
+          "source_refs": [
+            "Thu thập TN C3",
+            "Thu thập TN C4"
+          ],
+          "decompose": "none"
+        },
+        {
+          "dang": "Gọi tên loại dữ liệu thu được từ một câu hỏi khảo sát (\\emph{Bạn cao bao nhiêu?}, \\emph{Nhà bạn có mấy người?})",
+          "band": "NB",
+          "loai": "NB tách TH",
+          "lythuyet": 0,
+          "vidu": 0,
+          "onclass": 3,
+          "btvn": 2,
+          "source_refs": [
+            "Thu thập D2.B1",
+            "Thu thập D2.B6"
+          ],
+          "decompose": "none"
+        },
+        {
+          "dang": "Bảng nối hai cột: mỗi dãy dữ liệu với loại dữ liệu của nó",
+          "band": "NB",
+          "loai": "NB ghép bài",
+          "lythuyet": 0,
+          "vidu": 0,
+          "onclass": 3,
+          "btvn": 2,
+          "source_refs": [
+            "T8-Thu thập D2.B6"
+          ],
+          "decompose": "none"
+        },
+        {
+          "dang": "Chỉ ra giá trị không hợp lí trong một dãy số liệu (cân nặng $145$ kg của học sinh, $1900$ bàn trong một lớp)",
+          "band": "NB",
+          "loai": "NB tách TH",
+          "lythuyet": 0,
+          "vidu": 1,
+          "onclass": 3,
+          "btvn": 2,
+          "source_refs": [
+            "Thu thập D2.VD",
+            "Thu thập D2.B2"
+          ],
+          "decompose": "none"
+        },
+        {
+          "dang": "Đọc bảng kiểm đếm để biết người điều tra đang tìm hiểu vấn đề gì",
+          "band": "NB",
+          "loai": "NB tách TH",
+          "lythuyet": 0,
+          "vidu": 0,
+          "onclass": 3,
+          "btvn": 2,
+          "source_refs": [
+            "Thu thập TN C9"
+          ],
+          "decompose": "none"
+        },
+        {
+          "dang": "Dữ liệu có đại diện cho toàn bộ đối tượng không: chọn nhóm người được hỏi cho hợp lí",
+          "band": "NB",
+          "loai": "NB lẻ LT",
+          "lythuyet": 0,
+          "vidu": 0,
+          "onclass": 3,
+          "btvn": 2,
+          "source_refs": [
+            "Thu thập — Lí thuyết mục 1 (tính đại diện)"
+          ],
+          "decompose": "none"
+        },
+        {
+          "dang": "Điền khuyết bài giải mẫu: xếp loại từng dữ liệu trong bảng khen thưởng (họ tên, loại giấy khen, số tiền thưởng)",
+          "band": "NB",
+          "loai": "NB ghép bài",
+          "lythuyet": 0,
+          "vidu": 0,
+          "onclass": 3,
+          "btvn": 2,
+          "source_refs": [
+            "CK1 Thanh Trì (24-25) B3b",
+            "Ôn tập V I.B7"
+          ],
+          "decompose": "none",
+          "gian_giao": "dien-khuyet"
+        },
+        {
+          "dang": "Chọn loại biểu đồ theo mục đích: tranh, cột, cột kép, đoạn thẳng, hình quạt tròn",
+          "band": "NB",
+          "loai": "NB lẻ LT",
+          "lythuyet": 1,
+          "vidu": 1,
+          "onclass": 3,
+          "btvn": 2,
+          "source_refs": [
+            "Biểu diễn D1.B1",
+            "CK1 Nguyễn Công Trứ (24-25) C5"
+          ],
+          "decompose": "none"
+        },
+        {
+          "dang": "Đọc biểu đồ tranh: mỗi biểu tượng ứng với bao nhiêu, nửa biểu tượng ứng với bao nhiêu",
+          "band": "NB",
+          "loai": "NB tách TH",
+          "lythuyet": 0,
+          "vidu": 0,
+          "onclass": 3,
+          "btvn": 2,
+          "source_refs": [
+            "Biểu diễn D1.1.B1",
+            "Ôn tập V II.B1"
+          ],
+          "decompose": "none"
+        },
+        {
+          "dang": "Đọc giá trị của một cột trên biểu đồ cột; chỉ ra cột cao nhất, thấp nhất",
+          "band": "NB",
+          "loai": "NB tách TH",
+          "lythuyet": 0,
+          "vidu": 0,
+          "onclass": 3,
+          "btvn": 2,
+          "source_refs": [
+            "Biểu diễn D1.1.B2"
+          ],
+          "decompose": "none"
+        },
+        {
+          "dang": "Đọc một cặp cột trên biểu đồ cột kép theo chú thích màu",
+          "band": "NB",
+          "loai": "NB tách TH",
+          "lythuyet": 0,
+          "vidu": 0,
+          "onclass": 3,
+          "btvn": 2,
+          "source_refs": [
+            "Biểu diễn D1.3.B2",
+            "CK1 Nguyễn Công Trứ (24-25) C3"
+          ],
+          "decompose": "none"
+        },
+        {
+          "dang": "Đọc biểu đồ đoạn thẳng: giá trị tại một mốc thời gian, mốc cao nhất và thấp nhất",
+          "band": "NB",
+          "loai": "NB tách TH",
+          "lythuyet": 0,
+          "vidu": 0,
+          "onclass": 3,
+          "btvn": 2,
+          "source_refs": [
+            "CK1 Hát Môn (25-26) C9",
+            "Biểu diễn D1.4.B1"
+          ],
+          "decompose": "none"
+        },
+        {
+          "dang": "Đọc tỉ lệ phần trăm của một phần trên biểu đồ hình quạt tròn; kiểm tổng các phần bằng $100\\%$",
+          "band": "NB",
+          "loai": "NB tách TH",
+          "lythuyet": 0,
+          "vidu": 1,
+          "onclass": 3,
+          "btvn": 2,
+          "source_refs": [
+            "CK1 Nguyễn Công Trứ (24-25) C6",
+            "Ôn tập V II.B6",
+            "Biểu diễn D2.B2"
+          ],
+          "decompose": "none"
+        },
+        {
+          "dang": "Gọi tên các yếu tố của biểu đồ: tên biểu đồ, trục ngang, trục đứng, chú thích",
+          "band": "NB",
+          "loai": "NB lẻ LT",
+          "lythuyet": 0,
+          "vidu": 0,
+          "onclass": 3,
+          "btvn": 2,
+          "source_refs": [
+            "Biểu diễn TN B2",
+            "Phân tích TN C7"
+          ],
+          "decompose": "none"
+        },
+        {
+          "dang": "Lập bảng thống kê theo mẫu từ dãy số liệu cho bằng lời",
+          "band": "NB",
+          "loai": "NB ghép bài",
+          "lythuyet": 0,
+          "vidu": 0,
+          "onclass": 3,
+          "btvn": 2,
+          "source_refs": [
+            "Biểu diễn D1.1.B4",
+            "CK1 Tân Triều (25-26) C3a"
+          ],
+          "decompose": "none"
+        },
+        {
+          "dang": "Điền số liệu còn thiếu lên các cột của biểu đồ cột đã vẽ sẵn khung",
+          "band": "NB",
+          "loai": "NB tách TH",
+          "lythuyet": 0,
+          "vidu": 0,
+          "onclass": 3,
+          "btvn": 2,
+          "source_refs": [
+            "Biểu diễn D2.B1",
+            "Biểu diễn D1.1.B5"
+          ],
+          "decompose": "none"
+        },
+        {
+          "dang": "Đếm số hình quạt $5\\%$ cần tô cho mỗi phần khi hoàn thiện biểu đồ hình quạt tròn chia sẵn",
+          "band": "NB",
+          "loai": "NB tách TH",
+          "lythuyet": 0,
+          "vidu": 0,
+          "onclass": 3,
+          "btvn": 2,
+          "source_refs": [
+            "Biểu diễn D1.2.B2"
+          ],
+          "decompose": "none"
+        },
+        {
+          "dang": "Tính số lượng của một phần khi biết tổng và tỉ lệ phần trăm của phần đó (một phép nhân)",
+          "band": "NB",
+          "loai": "NB tách TH",
+          "lythuyet": 0,
+          "vidu": 0,
+          "onclass": 3,
+          "btvn": 2,
+          "source_refs": [
+            "Biểu diễn D2.B3",
+            "Biểu diễn TN B5"
+          ],
+          "decompose": "none"
+        },
+        {
+          "dang": "Điền khuyết bài giải mẫu: từ biểu đồ hình quạt tròn và tổng khối lượng, lập bảng số lượng từng phần",
+          "band": "NB",
+          "loai": "NB ghép bài",
+          "lythuyet": 0,
+          "vidu": 0,
+          "onclass": 3,
+          "btvn": 2,
+          "source_refs": [
+            "Biểu diễn D2.B2"
+          ],
+          "decompose": "none",
+          "gian_giao": "dien-khuyet"
+        },
+        {
+          "dang": "Một tình huống nhiều ý: nêu cách thu thập rồi xếp loại TỪNG dữ liệu thu được (khối lượng, bán kính, số mặt trăng của các hành tinh)",
+          "band": "TH",
+          "loai": "TH ghép bài",
+          "lythuyet": 0,
+          "vidu": 1,
+          "onclass": 4,
+          "btvn": 2,
+          "source_refs": [
+            "Thu thập D2.B3",
+            "Thu thập D2.B5",
+            "Ôn tập V I.B6"
+          ],
+          "decompose": "th2nb"
+        },
+        {
+          "dang": "Tình huống khen thưởng: cách thu thập là trực tiếp hay gián tiếp, liệt kê các dữ liệu thu được và xếp loại từng dữ liệu",
+          "band": "TH",
+          "loai": "TH ghép bài",
+          "lythuyet": 0,
+          "vidu": 1,
+          "onclass": 4,
+          "btvn": 2,
+          "source_refs": [
+            "Ôn tập V I.B7",
+            "Ôn tập V I.B6",
+            "Thu thập D1.B2"
+          ],
+          "decompose": "th2nb"
+        },
+        {
+          "dang": "Phát hiện số liệu không hợp lí trên bảng hoặc biểu đồ và giải thích vì sao",
+          "band": "TH",
+          "loai": "TH ghép bài",
+          "lythuyet": 0,
+          "vidu": 1,
+          "onclass": 3,
+          "btvn": 2,
+          "source_refs": [
+            "Thu thập D2.B7",
+            "Thu thập D2.B8",
+            "Biểu diễn D1.2.B1",
+            "Biểu diễn D1.3.B1"
+          ],
+          "decompose": "th2nb"
+        },
+        {
+          "dang": "Đặt câu hỏi khảo sát cho một vấn đề và cho biết dữ liệu thu được từ mỗi câu hỏi thuộc loại nào",
+          "band": "TH",
+          "loai": "TH lẻ LT",
+          "lythuyet": 0,
+          "vidu": 1,
+          "onclass": 3,
+          "btvn": 3,
+          "source_refs": [
+            "Thu thập D2.B4"
+          ],
+          "decompose": "none"
+        },
+        {
+          "dang": "Lập bảng thống kê từ biểu đồ tranh, biểu đồ cột, cột kép, đoạn thẳng",
+          "band": "TH",
+          "loai": "TH ghép bài",
+          "lythuyet": 0,
+          "vidu": 1,
+          "onclass": 4,
+          "btvn": 3,
+          "source_refs": [
+            "Ôn tập V II.B1",
+            "Ôn tập V II.B2",
+            "Biểu diễn D1.4.B1",
+            "Biểu diễn D1.1.B3"
+          ],
+          "decompose": "th2nb"
+        },
+        {
+          "dang": "Chọn biểu đồ thích hợp cho một bảng rồi vẽ biểu đồ cột hoặc cột kép",
+          "band": "TH",
+          "loai": "TH tách VD",
+          "lythuyet": 0,
+          "vidu": 1,
+          "onclass": 4,
+          "btvn": 3,
+          "source_refs": [
+            "Biểu diễn D1.5.B5",
+            "Biểu diễn D1.5.B1",
+            "Biểu diễn D1.3.B3",
+            "Biểu diễn D1.5.B3",
+            "Ôn tập V II.B5"
+          ],
+          "decompose": "th2nb"
+        },
+        {
+          "dang": "Chuyển cách biểu diễn: bảng tỉ lệ sang biểu đồ hình quạt tròn, bảng theo thời gian sang biểu đồ đoạn thẳng",
+          "band": "TH",
+          "loai": "TH tách VD",
+          "lythuyet": 0,
+          "vidu": 1,
+          "onclass": 3,
+          "btvn": 3,
+          "source_refs": [
+            "Biểu diễn D1.4.B2",
+            "Biểu diễn D1.4.B3",
+            "Biểu diễn D1.2.B4",
+            "Ôn tập V II.B7",
+            "Ôn tập V II.B4"
+          ],
+          "decompose": "th2nb"
+        },
+        {
+          "dang": "Tính số lượng từng phần từ tỉ lệ phần trăm và tổng; tính tỉ lệ phần trăm của một phần so với tổng, làm tròn theo yêu cầu",
+          "band": "TH",
+          "loai": "TH ghép bài",
+          "lythuyet": 0,
+          "vidu": 1,
+          "onclass": 3,
+          "btvn": 3,
+          "source_refs": [
+            "CK1 Chương Mỹ (24-25) C4A.1b",
+            "Biểu diễn D2.B1",
+            "Phân tích — Lí thuyết mục 2"
+          ],
+          "decompose": "th2nb"
+        }
+      ]
+    },
+    {
+      "code": "2",
+      "so_ca": 2,
+      "title": "Ca 3 $-$ 4 (Tuần 20 $-$ 21) — Bài 20: Phân tích số liệu thống kê dựa vào biểu đồ $+$ Luyện tập chung $+$ Bài tập cuối chương V",
+      "rows": [
+        {
+          "dang": "Biểu đồ cột có gốc trục đứng khác $0$: tỉ lệ chiều cao hai cột KHÔNG bằng tỉ lệ hai số liệu",
+          "band": "NB",
+          "loai": "NB lẻ LT",
+          "lythuyet": 1,
+          "vidu": 1,
+          "onclass": 3,
+          "btvn": 2,
+          "source_refs": [
+            "Phân tích — Lí thuyết mục 1",
+            "Biểu diễn TN B3"
+          ],
+          "decompose": "none"
+        },
+        {
+          "dang": "Biểu đồ đoạn thẳng có các mốc thời gian cách đều hay không: không cách đều thì không kết luận tốc độ tăng giảm theo độ dốc",
+          "band": "NB",
+          "loai": "NB lẻ LT",
+          "lythuyet": 1,
+          "vidu": 0,
+          "onclass": 3,
+          "btvn": 2,
+          "source_refs": [
+            "Phân tích — Lí thuyết mục 1"
+          ],
+          "decompose": "none"
+        },
+        {
+          "dang": "Đọc gốc của trục đứng và giá trị mỗi vạch chia",
+          "band": "NB",
+          "loai": "NB tách TH",
+          "lythuyet": 0,
+          "vidu": 1,
+          "onclass": 3,
+          "btvn": 2,
+          "source_refs": [
+            "Phân tích D1.VD"
+          ],
+          "decompose": "none"
+        },
+        {
+          "dang": "Chỉ ra đối tượng có số liệu lớn nhất, nhỏ nhất trên biểu đồ cột",
+          "band": "NB",
+          "loai": "NB tách TH",
+          "lythuyet": 0,
+          "vidu": 0,
+          "onclass": 3,
+          "btvn": 2,
+          "source_refs": [
+            "Phân tích D1.B3",
+            "Ôn tập V III.B4"
+          ],
+          "decompose": "none"
+        },
+        {
+          "dang": "Lọc các đối tượng có số liệu vượt, hoặc dưới, một mức cho trước",
+          "band": "NB",
+          "loai": "NB tách TH",
+          "lythuyet": 0,
+          "vidu": 0,
+          "onclass": 3,
+          "btvn": 2,
+          "source_refs": [
+            "Phân tích D1.B2",
+            "Phân tích D1.B3"
+          ],
+          "decompose": "none"
+        },
+        {
+          "dang": "Tính hiệu hai số liệu đọc từ biểu đồ (nhiều hơn, ít hơn bao nhiêu)",
+          "band": "NB",
+          "loai": "NB tách TH",
+          "lythuyet": 0,
+          "vidu": 1,
+          "onclass": 3,
+          "btvn": 2,
+          "source_refs": [
+            "Phân tích TN C1",
+            "Phân tích D1.B4"
+          ],
+          "decompose": "none"
+        },
+        {
+          "dang": "Cộng các số liệu trên biểu đồ để ra tổng của một nhóm (tổng một quý, tổng số học sinh)",
+          "band": "NB",
+          "loai": "NB tách TH",
+          "lythuyet": 0,
+          "vidu": 0,
+          "onclass": 3,
+          "btvn": 2,
+          "source_refs": [
+            "Phân tích D4.VD",
+            "Phân tích D4.B2",
+            "Phân tích D4.B3"
+          ],
+          "decompose": "none"
+        },
+        {
+          "dang": "Nhận xét xu thế tăng, giảm trên biểu đồ đoạn thẳng",
+          "band": "NB",
+          "loai": "NB tách TH",
+          "lythuyet": 0,
+          "vidu": 1,
+          "onclass": 3,
+          "btvn": 2,
+          "source_refs": [
+            "Phân tích D1.B5",
+            "Phân tích D2.B1",
+            "Phân tích D4.B1"
+          ],
+          "decompose": "none"
+        },
+        {
+          "dang": "Tìm mốc có chênh lệch nhiều nhất, ít nhất giữa hai đường trên cùng một biểu đồ đoạn thẳng",
+          "band": "NB",
+          "loai": "NB tách TH",
+          "lythuyet": 0,
+          "vidu": 0,
+          "onclass": 3,
+          "btvn": 2,
+          "source_refs": [
+            "Phân tích D2.B2"
+          ],
+          "decompose": "none"
+        },
+        {
+          "dang": "Chỉ ra phần lớn nhất trên biểu đồ hình quạt tròn cùng tỉ lệ của nó",
+          "band": "NB",
+          "loai": "NB tách TH",
+          "lythuyet": 0,
+          "vidu": 1,
+          "onclass": 3,
+          "btvn": 2,
+          "source_refs": [
+            "Phân tích D3.VD",
+            "Phân tích D3.B1"
+          ],
+          "decompose": "none"
+        },
+        {
+          "dang": "So sánh tỉ lệ các phần trên biểu đồ hình quạt tròn (gấp mấy lần, bằng tổng hai phần khác)",
+          "band": "NB",
+          "loai": "NB tách TH",
+          "lythuyet": 0,
+          "vidu": 0,
+          "onclass": 3,
+          "btvn": 2,
+          "source_refs": [
+            "Phân tích TN C6"
+          ],
+          "decompose": "none"
+        },
+        {
+          "dang": "Tính tỉ số hai số liệu bằng CON SỐ, không bằng chiều cao cột",
+          "band": "NB",
+          "loai": "NB tách TH",
+          "lythuyet": 0,
+          "vidu": 0,
+          "onclass": 3,
+          "btvn": 2,
+          "source_refs": [
+            "Phân tích D1.VD",
+            "Ôn tập V III.B2"
+          ],
+          "decompose": "none"
+        },
+        {
+          "dang": "Đọc hai cột của một nhóm trên biểu đồ cột kép theo chú thích",
+          "band": "NB",
+          "loai": "NB tách TH",
+          "lythuyet": 0,
+          "vidu": 0,
+          "onclass": 3,
+          "btvn": 2,
+          "source_refs": [
+            "Phân tích D4.B3"
+          ],
+          "decompose": "none"
+        },
+        {
+          "dang": "Điền khuyết bài giải mẫu: phân tích biểu đồ cột có gốc trục đứng khác $0$",
+          "band": "NB",
+          "loai": "NB ghép bài",
+          "lythuyet": 0,
+          "vidu": 0,
+          "onclass": 3,
+          "btvn": 2,
+          "source_refs": [
+            "Phân tích D1.VD"
+          ],
+          "decompose": "none",
+          "gian_giao": "dien-khuyet"
+        },
+        {
+          "dang": "Đúng hay sai: các khẳng định về hai biểu đồ vẽ cùng một dãy số liệu",
+          "band": "NB",
+          "loai": "NB tách TH",
+          "lythuyet": 0,
+          "vidu": 0,
+          "onclass": 3,
+          "btvn": 2,
+          "source_refs": [
+            "Phân tích TN C3",
+            "Phân tích TN C5"
+          ],
+          "decompose": "none"
+        },
+        {
+          "dang": "Tính tỉ lệ phần trăm tăng, giảm của một nhóm giữa hai năm đọc từ hai biểu đồ hình quạt tròn",
+          "band": "NB",
+          "loai": "NB tách TH",
+          "lythuyet": 0,
+          "vidu": 0,
+          "onclass": 3,
+          "btvn": 2,
+          "source_refs": [
+            "Phân tích TN C2"
+          ],
+          "decompose": "none"
+        },
+        {
+          "dang": "Xếp loại các dữ liệu trong một bảng thống kê (dữ liệu là số, dữ liệu không là số)",
+          "band": "NB",
+          "loai": "NB tách TH",
+          "lythuyet": 0,
+          "vidu": 0,
+          "onclass": 3,
+          "btvn": 2,
+          "source_refs": [
+            "CK1 Tân Triều (25-26) C3b",
+            "CK1 Hát Môn (25-26) C14d"
+          ],
+          "decompose": "none"
+        },
+        {
+          "dang": "Trắc nghiệm ôn: cách thu thập trực tiếp, gián tiếp; số liệu rời rạc, liên tục",
+          "band": "NB",
+          "loai": "NB lẻ LT",
+          "lythuyet": 0,
+          "vidu": 0,
+          "onclass": 3,
+          "btvn": 2,
+          "source_refs": [
+            "HK1 Giảng Võ 2 (24-25) C7",
+            "HK1 Giảng Võ 2 (24-25) C8"
+          ],
+          "decompose": "none"
+        },
+        {
+          "dang": "Trắc nghiệm ôn: chọn biểu đồ thích hợp với một bảng số liệu",
+          "band": "NB",
+          "loai": "NB lẻ LT",
+          "lythuyet": 0,
+          "vidu": 0,
+          "onclass": 3,
+          "btvn": 2,
+          "source_refs": [
+            "CK1 Nguyễn Công Trứ (24-25) C5",
+            "Biểu diễn TN B6",
+            "Biểu diễn TN B7"
+          ],
+          "decompose": "none"
+        },
+        {
+          "dang": "Đọc tỉ lệ phần trăm trên biểu đồ hình quạt tròn rồi đổi ra số lượng",
+          "band": "NB",
+          "loai": "NB tách TH",
+          "lythuyet": 0,
+          "vidu": 0,
+          "onclass": 3,
+          "btvn": 2,
+          "source_refs": [
+            "CK1 Nguyễn Công Trứ (24-25) C6",
+            "Ôn tập V III.B7"
+          ],
+          "decompose": "none"
+        },
+        {
+          "dang": "Chỉ ra điểm không hợp lí của một biểu đồ hình quạt tròn (tổng các phần khác $100\\%$)",
+          "band": "NB",
+          "loai": "NB tách TH",
+          "lythuyet": 0,
+          "vidu": 0,
+          "onclass": 3,
+          "btvn": 2,
+          "source_refs": [
+            "Phân tích D3.B3",
+            "Ôn tập V III.B7"
+          ],
+          "decompose": "none"
+        },
+        {
+          "dang": "Tính một thành phần khi biết tổng và tỉ lệ phần trăm (GDP của một ngành, khối lượng sắt trong quặng)",
+          "band": "NB",
+          "loai": "NB tách TH",
+          "lythuyet": 0,
+          "vidu": 1,
+          "onclass": 3,
+          "btvn": 2,
+          "source_refs": [
+            "Phân tích D3.B1",
+            "Phân tích D3.B4"
+          ],
+          "decompose": "none"
+        },
+        {
+          "dang": "Đọc hai đại lượng trên cùng một biểu đồ (lượng mưa và nhiệt độ theo tháng)",
+          "band": "NB",
+          "loai": "NB tách TH",
+          "lythuyet": 0,
+          "vidu": 0,
+          "onclass": 3,
+          "btvn": 2,
+          "source_refs": [
+            "CK1 Phan Đình Giót (24-25) B3",
+            "Ôn tập V III.B3"
+          ],
+          "decompose": "none"
+        },
+        {
+          "dang": "Điền khuyết bài giải mẫu câu tự luận đề cuối kì I: lập bảng từ biểu đồ cột kép rồi tính tỉ lệ phần trăm",
+          "band": "NB",
+          "loai": "NB ghép bài",
+          "lythuyet": 0,
+          "vidu": 0,
+          "onclass": 3,
+          "btvn": 2,
+          "source_refs": [
+            "CK1 Nguyễn Công Trứ (24-25) C3"
+          ],
+          "decompose": "none",
+          "gian_giao": "dien-khuyet"
+        },
+        {
+          "dang": "Tự viết lại quy trình ba bước trả lời một câu hỏi phân tích biểu đồ (đọc trục và chú thích $\\to$ đọc số liệu $\\to$ tính rồi kết luận kèm đơn vị) và giải thích vì sao phải nhìn gốc trục đứng trước khi so sánh",
+          "band": "NB",
+          "loai": "NB lẻ LT",
+          "lythuyet": 0,
+          "vidu": 0,
+          "onclass": 0,
+          "btvn": 2,
+          "source_refs": [],
+          "decompose": "none",
+          "viet_quy_trinh": true
+        },
+        {
+          "dang": "Nhận định \\emph{gấp đôi} dựa vào chiều cao cột khi gốc trục đứng khác $0$: kiểm lại bằng số rồi lập bảng thống kê",
+          "band": "TH",
+          "loai": "TH ghép bài",
+          "lythuyet": 0,
+          "vidu": 1,
+          "onclass": 4,
+          "btvn": 2,
+          "source_refs": [
+            "Phân tích D1.VD",
+            "Phân tích TN C3"
+          ],
+          "decompose": "th2nb"
+        },
+        {
+          "dang": "Đọc biểu đồ cột, biểu đồ tranh để trả lời một câu hỏi thực tế (bãi xe có đủ chỗ không, cửa hàng nào phải đóng cửa)",
+          "band": "TH",
+          "loai": "TH ghép bài",
+          "lythuyet": 0,
+          "vidu": 1,
+          "onclass": 4,
+          "btvn": 3,
+          "source_refs": [
+            "Phân tích D1.B1",
+            "Phân tích D1.B2",
+            "Phân tích D1.B3"
+          ],
+          "decompose": "th2nb"
+        },
+        {
+          "dang": "Kiểm tra một nhận định của bài báo: tính tổng sản lượng và phần trăm tăng so với năm gốc",
+          "band": "TH",
+          "loai": "TH tách VD",
+          "lythuyet": 0,
+          "vidu": 1,
+          "onclass": 3,
+          "btvn": 2,
+          "source_refs": [
+            "Phân tích D1.B6"
+          ],
+          "decompose": "th2nb"
+        },
+        {
+          "dang": "Phân tích hai biểu đồ đoạn thẳng: so sánh, nêu xu thế, lập bảng, tính diện tích từ tỉ lệ phần trăm",
+          "band": "TH",
+          "loai": "TH ghép bài",
+          "lythuyet": 0,
+          "vidu": 1,
+          "onclass": 4,
+          "btvn": 3,
+          "source_refs": [
+            "Phân tích D2.B1",
+            "Phân tích D2.B3",
+            "Phân tích D2.B4"
+          ],
+          "decompose": "th2nb"
+        },
+        {
+          "dang": "Phân tích biểu đồ cột kép: tổng của từng nhóm, chọn phương án kinh doanh, kiểm tra một ý kiến",
+          "band": "TH",
+          "loai": "TH ghép bài",
+          "lythuyet": 0,
+          "vidu": 1,
+          "onclass": 3,
+          "btvn": 3,
+          "source_refs": [
+            "Phân tích D4.VD",
+            "Phân tích D4.B2",
+            "Phân tích D4.B3"
+          ],
+          "decompose": "th2nb"
+        },
+        {
+          "dang": "Câu tự luận đề cuối kì I: từ biểu đồ cột kép lập bảng thống kê rồi tính tỉ lệ phần trăm so với sĩ số, làm tròn theo yêu cầu",
+          "band": "TH",
+          "loai": "TH ghép bài",
+          "lythuyet": 0,
+          "vidu": 1,
+          "onclass": 4,
+          "btvn": 3,
+          "source_refs": [
+            "CK1 Nguyễn Công Trứ (24-25) C3",
+            "CK1 Chương Mỹ (24-25) C4A.1b",
+            "Ôn tập V III.B5"
+          ],
+          "decompose": "th2nb"
+        },
+        {
+          "dang": "Chọn và vẽ biểu đồ thích hợp cho một bảng hai dãy số liệu rồi trả lời câu hỏi (doanh thu hai chi nhánh, huy chương hai kì SEA Games)",
+          "band": "TH",
+          "loai": "TH tách VD",
+          "lythuyet": 0,
+          "vidu": 1,
+          "onclass": 3,
+          "btvn": 3,
+          "source_refs": [
+            "CK1 Hát Môn (25-26) B1",
+            "CK1 Chương Mỹ (24-25) C4A.1a",
+            "Biểu diễn D1.5.B5"
+          ],
+          "decompose": "th2nb"
+        },
+        {
+          "dang": "Tính ngược từ tỉ lệ phần trăm: biết số học sinh một câu lạc bộ chiếm $20\\%$ thì lớp có bao nhiêu học sinh; tỉ lệ thời gian trong ngày dành cho từng việc",
+          "band": "TH",
+          "loai": "TH ghép bài",
+          "lythuyet": 0,
+          "vidu": 1,
+          "onclass": 3,
+          "btvn": 2,
+          "source_refs": [
+            "Ôn tập V III.B5",
+            "Phân tích D1.B5"
+          ],
+          "decompose": "th2nb"
+        }
+      ]
+    }
+  ]
+}

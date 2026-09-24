@@ -2,8 +2,19 @@
     không có lời giải. Token [[blank]]/[[mblank]] do filter `tex` xử lý. =))
 ((* macro render_block(b) *))
 ((* if b.type == "para" *))
-((( b.text | tex )))
+((* if b.variant == "heading" *)){\bfseries\color{brand}((( b.text | tex )))}
+((* else *))((( b.text | tex )))
+((* endif *))
 \par\medskip
+((* elif b.type == "deflist" *))
+((= Mỗi mục một dòng. Dựng thẳng bằng \par chứ KHÔNG mượn môi trường `dinhnghia`
+    của bản in: preamble beamer không nạp enumitem nên `\newlist` không có ở đây. =))
+((= Thuật ngữ in đậm MÀU MỰC, KHÔNG dùng brand — để riêng brand cho tiêu đề mục,
+    nếu không hai cấp trông ngang hàng (cùng lỗi đã sửa ở bản in). =))
+((= `\bfseries{}` chứ KHÔNG `\bfseries`: thuật ngữ mở đầu bằng chữ cái thì dính liền
+    thành lệnh không tồn tại (`\bfseriesBán`) — đúng họ lỗi `\parĐáp` đã vấp. =))
+((* for it in b.items *)){\bfseries{}((( it.term | tex )))}\; ((( it.desc | tex )))\par\smallskip
+((* endfor *))\medskip
 ((* elif b.type == "math" *))
 \[ ((( b.latex | tex ))) \]
 ((* elif b.type == "noted" *))
@@ -20,6 +31,11 @@
 \medskip
 ((* elif b.type == "problem" *))
 {\bfseries\color{brand}((( b.label | tex )))}\; ((( (b.statement_slide or b.statement) | tex )))
+((= Phương án trắc nghiệm khai bằng TRƯỜNG `options` (khuôn 22/09/2026) — thiếu khối
+    này thì slide chiếu câu hỏi trắc nghiệm mà KHÔNG có A, B, C, D. =))
+((* if b.options *))\par\smallskip
+((* for o in b.options *)){\bfseries\color{brand}((( "ABCDEFGH"[loop.index0] ))).}~((( o | tex )))\par
+((* endfor *))((* endif *))
 \par\medskip
 ((* elif b.type == "table" *))
 ((* if b.caption *)){\color{brand}\small\textbf{((( b.caption | tex )))}}\par\vspace{2pt}

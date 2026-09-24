@@ -104,6 +104,7 @@
 
 % Khối CHẶNG — thanh nhấn trái + nền tô NHẠT theo màu chặng (zoning thị giác).
 % #1=số chặng, #2=tiêu đề, #3=màu chặng, #4=icon nét vẽ.
+\colorlet{stagecolor}{brand}
 \newtcolorbox{stage}[4]{
   enhanced, breakable, colback=white, colframe=#3,
   boxrule=0pt, arc=6pt, outer arc=6pt,
@@ -112,7 +113,7 @@
   overlay unbroken and first={
     \node[anchor=north west,xshift=14pt,yshift=-8pt] (sb) at (frame.north west) {\stagebadge{#3}{#4}};
     \node[anchor=west,text=ink] at ([xshift=9pt]sb.east) {\adjustbox{max width=0.8\linewidth}{\sffamily\bfseries\large #1.\;\;#2}}; },
-  before upper={\vspace{32pt}} }
+  before upper={\colorlet{stagecolor}{#3}\vspace{32pt}} }
 
 % --- Thanh HÀNH TRÌNH 5 chặng (tuyến "metro") — ICON trong vòng tròn màu chặng,
 %     tô đậm chặng hiện tại (#1=1..5; truyền 0 = bản đồ tĩnh, không tô đậm chặng nào).
@@ -135,29 +136,29 @@
 
 % --- Thẻ CALLOUT (nhãn màu, icon) cho block noted có 'variant'. ---
 \newtcolorbox{calloutexample}{enhanced, breakable, drop shadow=black!8, colback=white, colframe=info!50,
-  boxrule=0.6pt, arc=6pt, top=6pt,bottom=6pt,left=10pt,right=10pt, before=\vspace{2pt},
+  boxrule=0.6pt, arc=6pt, top=6pt,bottom=4pt,left=8pt,right=8pt, before=\vspace{2pt},
   coltitle=white, colbacktitle=info, fonttitle=\sffamily\bfseries\small,
   attach boxed title to top left={xshift=10pt,yshift=-8pt}, boxed title style={arc=3pt,boxrule=0pt},
   title={\ding{46}\ \ VÍ DỤ MẪU}}
 \newtcolorbox{callouttrap}{enhanced, breakable, drop shadow=black!8, colback=white, colframe=trap!55,
-  boxrule=0.6pt, arc=6pt, top=6pt,bottom=6pt,left=10pt,right=10pt, before=\vspace{2pt},
+  boxrule=0.6pt, arc=6pt, top=6pt,bottom=4pt,left=8pt,right=8pt, before=\vspace{2pt},
   coltitle=white, colbacktitle=trap, fonttitle=\sffamily\bfseries\small,
   attach boxed title to top left={xshift=10pt,yshift=-8pt}, boxed title style={arc=3pt,boxrule=0pt},
   title={\ding{43}\ \ BẪY ĐIỂM}}
 \newtcolorbox{callouttarget}{enhanced, breakable, drop shadow=black!8, colback=white, colframe=gold!75,
-  boxrule=0.6pt, arc=6pt, top=6pt,bottom=6pt,left=10pt,right=10pt, before=\vspace{2pt},
+  boxrule=0.6pt, arc=6pt, top=6pt,bottom=4pt,left=8pt,right=8pt, before=\vspace{2pt},
   coltitle=ink, colbacktitle=gold, fonttitle=\sffamily\bfseries\small,
   attach boxed title to top left={xshift=10pt,yshift=-8pt}, boxed title style={arc=3pt,boxrule=0pt},
   title={\ding{72}\ \ ĐÍCH THI VÀO 10}}
 \newtcolorbox{callouttip}{enhanced, breakable, drop shadow=black!8, colback=white, colframe=stage2!45,
-  boxrule=0.6pt, arc=6pt, top=6pt,bottom=6pt,left=10pt,right=10pt, before=\vspace{2pt},
+  boxrule=0.6pt, arc=6pt, top=6pt,bottom=4pt,left=8pt,right=8pt, before=\vspace{2pt},
   coltitle=white, colbacktitle=stage2, fonttitle=\sffamily\bfseries\small,
   attach boxed title to top left={xshift=10pt,yshift=-8pt}, boxed title style={arc=3pt,boxrule=0pt},
   title={\ding{42}\ \ MẸO}}
 
 % --- Thẻ MỞ MÀN THỰC TẾ (đặc sản: hook đời thực mở đầu phiếu) ---
 \newtcolorbox{openerbox}{enhanced, breakable, drop shadow=black!10, colback=white, colframe=stage1!55,
-  boxrule=0.6pt, arc=6pt, top=7pt,bottom=8pt,left=12pt,right=12pt, before=\vspace{2pt},
+  boxrule=0.6pt, arc=6pt, top=7pt,bottom=5pt,left=9pt,right=9pt, before=\vspace{2pt},
   coltitle=white, colbacktitle=stage1, fonttitle=\sffamily\bfseries\small,
   attach boxed title to top left={xshift=10pt,yshift=-8pt}, boxed title style={arc=3pt,boxrule=0pt},
   title={\ding{44}\ \ MỞ MÀN THỰC TẾ}}
@@ -187,7 +188,7 @@
   {\tiny\sffamily\color{muted}\ding{42}\,video lời giải}\end{tabular}\par\vspace{-2pt}}
 
 % Hộp "kiến thức điền khuyết"
-\newtcolorbox{noted}{enhanced, drop shadow=black!8, colback=white, colframe=rule, boxrule=0.4pt, arc=6pt,
+\newtcolorbox{noted}{enhanced, breakable, drop shadow=black!8, colback=white, colframe=rule, boxrule=0.4pt, arc=6pt,
   left=12pt, right=12pt, top=8pt, bottom=8pt, before=\vspace{4pt}}
 
 % Banner MỤC PHỤ (BTVN / Bài tập mở rộng) — tách hẳn khỏi hộp chặng đánh số.
@@ -196,7 +197,7 @@
 % đỏ "BÀI TẬP VỀ NHÀ" nằm chốt cuối trang, BTVN 1 nhảy sang trang sau. Đòi đủ chỗ cho
 % banner + ít nhất một bài có hình (\wrapclumpmin 3,1cm) trước khi in.
 \newcommand{\worksheetsection}[1]{%
-  \stageneedspace{7cm}%
+  \stageneedspace{4cm}%
   \par\addvspace{13pt}\noindent
   \colorbox{brand}{\makebox[\dimexpr\linewidth-2\fboxsep\relax][l]{%
     \sffamily\bfseries\color{white}\strut #1}}%
@@ -267,14 +268,14 @@
 % Hộp "gợi ý mở khi bí" cho bài khó — hạ ngưỡng nhập, KHÔNG phải lời giải.
 \newtcolorbox{hintbox}{enhanced, breakable, colback=white, colframe=brand!35,
   boxrule=0.4pt, arc=2pt, top=4pt,bottom=4pt,left=10pt,right=10pt,
-  fontupper=\small, before=\vspace{3pt}}
+  before=\vspace{3pt}}
 
 % Hộp QUY TRÌNH GIẢI BÀI — in trên phiếu HS ngay dưới đề bài VẬN DỤNG (Thầy chốt
 % 30/08/2026: "các dạng vận dụng có phần quy trình giải bài trong phiếu từng bài").
 % Khác `hintbox` (gợi ý mở khi bí): đây là CÁC BƯỚC CHUẨN, luôn hiện, để HS bám mà làm.
 \newtcolorbox{quytrinhbox}{enhanced, breakable, colback=stage3!6, colframe=stage3!45,
   boxrule=0.5pt, arc=3pt, top=4pt,bottom=4pt,left=10pt,right=10pt,
-  fontupper=\small, before=\vspace{3pt}}
+  before=\vspace{3pt}}
 
 % Sơ đồ tư duy điền khuyết — style chung cho forest (nút bo, viền brand, nút gốc nổi).
 \forestset{
@@ -294,7 +295,7 @@
 % --- Linh kiện riêng cho Sổ tay GV (guide.pdf) ---
 % Hộp LỜI GIẢI: viền + nhãn đỏ trầm (brand), chữ giải cũng đỏ trầm để tách khỏi đề.
 \newtcolorbox{solutionbox}{enhanced, breakable, drop shadow=black!8, colback=white, colframe=brand,
-  boxrule=0.6pt, arc=6pt, top=6pt,bottom=6pt,left=10pt,right=10pt, before=\vspace{2pt},
+  boxrule=0.6pt, arc=6pt, top=6pt,bottom=4pt,left=8pt,right=8pt, before=\vspace{2pt},
   coltitle=white, colbacktitle=brand, attach boxed title to top left={xshift=10pt,yshift=-8pt},
   boxed title style={arc=3pt,boxrule=0pt}, fonttitle=\sffamily\bfseries\small,
   title={HƯỚNG DẪN CHI TIẾT}}
@@ -308,7 +309,7 @@
 
 % Hộp MẸO chung
 \newtcolorbox{tipbox}{enhanced, breakable, drop shadow=black!8, colback=white, colframe=ink!55,
-  boxrule=0.6pt, arc=6pt, top=6pt,bottom=6pt,left=10pt,right=10pt, before=\vspace{2pt},
+  boxrule=0.6pt, arc=6pt, top=6pt,bottom=4pt,left=8pt,right=8pt, before=\vspace{2pt},
   coltitle=white, colbacktitle=ink, attach boxed title to top left={xshift=10pt,yshift=-8pt},
   boxed title style={arc=3pt,boxrule=0pt}, fonttitle=\sffamily\bfseries\small,
   title={\ding{42}\ \ MẸO SƯ PHẠM ĐIỀU PHỐI}}
@@ -338,3 +339,73 @@
     \draw[step=1cm,ink!35,line width=0.5pt] (0,0) grid (#1, 1);
   \end{tikzpicture}%
 }
+
+
+% ═══ LINH KIỆN CHO KHUÔN NỘI DUNG CÓ CẤU TRÚC (22–23/09/2026) ═══════════════
+% Đi kèm các trường mới của schema (`ParaBlock.variant`, `DefListBlock`,
+% `ProblemBlock.options/figure`). Bố cục do template tính, seed chỉ khai nội dung.
+
+% --- Tiêu đề mục trong khối lý thuyết ("1. Đường tròn", "2. Vị trí của một điểm…").
+% Trước đây chỉ gõ `\textbf{1. Đường tròn}` nên tiêu đề CHÌM vào thân bài: cùng cỡ,
+% cùng màu, không khoảng thở ⇒ cả khối lý thuyết đọc thành một mảng chữ đặc.
+% Khoảng TRÊN rộng hơn khoảng DƯỚI (8/3pt) — luật gần-xa: tiêu đề phải dính vào phần
+% nội dung của CHÍNH NÓ, tách khỏi mục trước.
+\newcommand{\lythuyetmuc}[1]{%
+  \par\addvspace{8pt}%
+  {\sffamily\bfseries\color{stagecolor}#1}%
+  \par\nobreak\addvspace{3pt}}% \nobreak: tiêu đề mục KHÔNG được mồ côi cuối trang
+
+% --- Danh sách ĐỊNH NGHĨA: mỗi mục MỘT DÒNG, dòng tràn thụt vào thẳng hàng.
+% Thay lối gõ tay "$\bullet$ A \quad $\bullet$ B" dán hai định nghĩa vào CÙNG một
+% dòng rồi tự ngắt ở chỗ ngẫu nhiên (Thầy chê 22/09: "lý thuyết quá khó nhìn").
+% Thuật ngữ in đậm MÀU MỰC, KHÔNG dùng màu chặng: tô cùng màu với \lythuyetmuc thì
+% hai cấp trông ngang hàng, mắt không tách được mục lớn với mục con.
+\newlist{dinhnghia}{description}{1}
+\setlist[dinhnghia]{
+  leftmargin=1.2em, labelindent=0pt, labelsep=0.4em, align=left,
+  topsep=3pt, itemsep=3.5pt, parsep=0pt, partopsep=0pt,
+  font=\normalfont\bfseries\color{ink}}
+
+% --- Lưới PHƯƠNG ÁN TRẮC NGHIỆM. Thay lối gõ tay \parbox[t]{0.30\linewidth}×4 (chỉ
+% dùng 60% bề ngang, lại phải chèn \par\vspace{6pt} giữa hai hàng). Bề rộng ô TÍNH RA
+% từ số cột; số cột do `_blocks.j2` chọn theo phương án dài nhất.
+% Trừ #1 khe chứ KHÔNG phải #1-1 (dù chỉ có #1-1 khe thật): cộng khít đúng \linewidth
+% thì TeX hết chỗ co, ô CUỐI rớt xuống dòng ⇒ 4 phương án in ra thành 3+1.
+\newlength{\mcqw}\newlength{\mcqgap}\setlength{\mcqgap}{0.02\linewidth}
+\newcounter{mcqcol}\newcounter{mcqn}
+\newenvironment{mcq}[1]
+  {\par\addvspace{3pt}\setcounter{mcqcol}{0}\setcounter{mcqn}{#1}%
+   \setlength{\mcqw}{\mcqgap}\multiply\mcqw by #1\relax
+   \setlength{\mcqw}{\dimexpr(\linewidth-\mcqw)/#1\relax}%
+   \setlength{\parindent}{0pt}\noindent}
+  {\par\addvspace{2pt}}
+\newcommand{\mcqitem}[2]{%
+  \parbox[t]{\mcqw}{\raggedright\textbf{#1.}~#2}%
+  \stepcounter{mcqcol}%
+  \ifnum\value{mcqcol}<\value{mcqn}\hspace{\mcqgap}\else
+    \setcounter{mcqcol}{0}\par\addvspace{3pt}\fi}
+
+% --- Hình ĐẶT DƯỚI đề, căn giữa (Thầy chốt 22/09: "đề bài trước → Hình → các đáp án
+% / các câu điền khuyết"; bỏ hẳn kiểu treo hình sang cột phải vì cột hẹp làm hình co
+% nhỏ đọc không ra nhãn, mà bài dài thì cột đề cũng hẹp theo).
+% `width=` (ÉP bề ngang) chứ KHÔNG `max width=` (chỉ THU NHỎ): hình TikZ hình học có
+% kích thước tự nhiên rất nhỏ nên `max width` để nguyên vẫn bé tí.
+% `\par\nobreak` mở đầu: cấm ngắt trang GIỮA đề và hình của chính nó.
+\newcommand{\hinhcap}[1]{\ifx\relax#1\relax\else
+  \par\vspace{2pt}{\sffamily\scriptsize\itshape\color{muted}#1}\fi}
+% Phạt MỀM (\penalty400) chứ KHÔNG \nobreak: \nobreak = penalty 10000 = CẤM TUYỆT ĐỐI
+% tách đề khỏi hình, nên cụm đề+hình+ý thành khối cao ~9cm nhảy nguyên khối, để lại
+% 8–10cm trắng (phiếu A trang 5, 9, 11). Phạt mềm để TeX tự cân: giữ đề với hình khi
+% còn chỗ, chịu tách khi cái giá phải trả là cả mảng giấy trắng.
+% Tham số TUỲ CHỌN #1 = trần chiều cao (mặc định 5cm). Hình trong HỘP VÍ DỤ dùng
+% trần nhỏ hơn: hộp ví dụ là tcolorbox LỒNG trong hộp chặng nên KHÔNG cắt trang được,
+% hộp cao ~9cm gặp trang còn 8cm là nhảy nguyên khối. Hạ trần hình trong hộp là cách
+% duy nhất bớt chiều cao mà vẫn giữ form đóng khung.
+\newcommand{\figbelow}[4][5cm]{\par\penalty400\addvspace{3pt}%
+  {\centering\adjustbox{width=#2\linewidth, max totalheight=#1}{#3}\hinhcap{#4}\par}\addvspace{2pt}}
+% Bản DÍNH CỨNG (\nobreak) cho đề NGẮN (1–2 dòng): tách đề ngắn khỏi hình không cứu
+% được bao nhiêu giấy (hình vẫn phải sang trang sau) mà HS phải lật trang mới thấy
+% hình (phiếu 2 ch.5 9C: Bài 2 đề cuối trang 3, Hình 3 đầu trang 4). Đề dài vẫn dùng
+% \figbelow phạt mềm như trên. Template chọn theo độ dài đề (xem _blocks.j2).
+\newcommand{\figbelowkeep}[4][5cm]{\par\nobreak\addvspace{3pt}%
+  {\centering\adjustbox{width=#2\linewidth, max totalheight=#1}{#3}\hinhcap{#4}\par}\addvspace{2pt}}

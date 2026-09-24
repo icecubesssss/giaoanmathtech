@@ -95,3 +95,27 @@ def test_fill_rong_o_theo_do_dai_dap_an_va_ep_tay_duoc():
 def test_fill_o_khong_co_dap_an_van_ra_o_trong_o_so_tay_gv():
     from src.compiler.jinja_renderer import _texify
     assert "fillblank" in _texify(r"$R = [[fill:]]$", True)
+
+
+def test_slide_giu_hinh_va_phuong_an_cua_khuon_moi():
+    """Bài khai hình bằng trường `figure` + phương án bằng `options` (khuôn 22/09/2026):
+    slide phải có ĐỦ hình và A, B, C, D — trước đây cả hai rơi mất trên bản chiếu."""
+    from src.compiler.jinja_renderer import group_slide_segments, render_slide
+    from src.schema.lesson_package import LessonPackage
+
+    tikz = "\\begin{tikzpicture}\\draw (0,0) rectangle (1,1);\\end{tikzpicture}"
+    lesson = LessonPackage.model_validate({
+        "slug": "t", "title": "T", "stages": [{"kind": "practice1", "number": 3, "title": "L", "blocks": [
+            {"type": "problem", "label": "Bài 1.", "statement": "[NB] Chọn đáp án.", "level": 1,
+             "tier": "onclass", "options": ["Mot", "Hai", "Ba", "Bon"],
+             "figure": {"tikz": tikz, "caption": "Hình 1", "pos": "below"}},
+            {"type": "noted", "variant": "example", "text": "\\textbf{Ví dụ 1.} Đề.",
+             "figure": {"tikz": tikz, "caption": "Hình 2", "pos": "below"}}]}]})
+    blocks = lesson.stages[0].blocks
+    segs = group_slide_segments(blocks)
+    assert [len(s["figures"]) for s in segs] == [1, 1]
+    assert all(s["mode"] == "cols" for s in segs)
+    tex = render_slide(lesson)
+    assert tex.count("rectangle (1,1)") == 2
+    for nhan in ("A.}~Mot", "B.}~Hai", "C.}~Ba", "D.}~Bon"):
+        assert nhan in tex

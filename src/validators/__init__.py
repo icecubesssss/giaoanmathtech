@@ -5,7 +5,8 @@ cho LessonPackage (sanitizer + schema + difficulty), còn `sympy_solver` /
 `geometry_gate` dùng cho MathProblem trong ngân hàng đề (S4).
 """
 from .latex_sanitizer import sanitize, find_unsafe, UnsafeLatexError
-from .schema_validator import validate_lesson_structure, SchemaReport
+from .trinh_bay_gate import check_trinh_bay, check_lenh_dinh_chu
+from .schema_validator import validate_lesson_structure, SchemaReport, check_khoa_la
 from .difficulty_gate import check_difficulty, check_ramp, load_profile, DifficultyProfile, DifficultyReject
 from .geometry_gate import check_geometry_problems, is_geometry, GeometryViolation
 from .figure_gate import check_figures, check_image_paths, warn_figures, check_figure_symbols, check_clone_problems, check_hinh_thieu, FigureViolation
@@ -25,7 +26,8 @@ from . import sympy_solver
 
 __all__ = [
     "sanitize", "find_unsafe", "UnsafeLatexError",
-    "validate_lesson_structure", "SchemaReport",
+    "validate_lesson_structure", "SchemaReport", "check_khoa_la",
+    "check_trinh_bay", "check_lenh_dinh_chu",
     "check_difficulty", "check_ramp", "load_profile", "DifficultyProfile", "DifficultyReject",
     "check_geometry_problems", "is_geometry", "GeometryViolation",
     "check_figures", "check_image_paths", "warn_figures", "check_figure_symbols", "check_clone_problems",

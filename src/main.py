@@ -43,6 +43,9 @@ from src.compiler import (
 from src.validators import (
     sanitize,
     UnsafeLatexError,
+    check_khoa_la,
+    check_lenh_dinh_chu,
+    check_trinh_bay,
     validate_lesson_structure,
     check_difficulty,
     check_ramp,
@@ -151,6 +154,14 @@ def _iter_text(lesson: LessonPackage):
                 v = getattr(b, attr, None)
                 if v:
                     yield f"stage[{stage.kind}].block[{i}].{attr}", v
+            # Mục của DefListBlock cũng phải qua sanitizer, nếu không `%`/`#` thô
+            # trong thuật ngữ/giải thích lọt xuống Tectonic và làm vỡ build.
+            if getattr(b, "type", "") == "deflist":
+                for k, it in enumerate(getattr(b, "items", []) or []):
+                    for attr in ("term", "desc"):
+                        v = getattr(it, attr, None)
+                        if v:
+                            yield f"stage[{stage.kind}].block[{i}].item[{k}].{attr}", v
             # Ô bảng (TableBlock) cũng phải qua sanitizer.
             if getattr(b, "type", "") == "table":
                 for h in getattr(b, "headers", []) or []:
@@ -700,6 +711,23 @@ def _run_validation(lesson: LessonPackage, fast: bool = False,
     for e in sch.errors:
         violations.append(f"[schema_validator] {e}")
 
+    # Khoá lạ trong JSON thô: pydantic đã vứt đi TRƯỚC khi tới đây, nên phải đọc lại
+    # file gốc mới thấy. Đây là lưới chặn họ lỗi "dữ liệu có trong seed mà không tới
+    # được bản in" đã tái diễn ba lần (solution / writelines / answer).
+    khoa_la_warns: list[str] = []
+    if lesson_path:
+        try:
+            khoa_la_warns = [
+                f"[schema_validator] {m}"
+                for m in check_khoa_la(json.loads(Path(lesson_path).read_text(encoding="utf-8")))
+            ]
+        except (OSError, ValueError):
+            pass    # đọc lại được thì tốt, không thì thôi — cổng chính đã chạy trên object
+
+    # Lệnh LaTeX trần dính liền chữ Việt (`\parĐáp`) làm Tectonic chết lúc build —
+    # bắt ở validate để khỏi phải đọc log Tectonic mới biết.
+    violations.extend(f"[trinh_bay_gate] {m}" for m in check_lenh_dinh_chu(lesson))
+
     diff = check_difficulty(lesson)
     for r in diff.reasons:
         violations.append(f"[difficulty_gate] {r}")
@@ -711,7 +739,7 @@ def _run_validation(lesson: LessonPackage, fast: bool = False,
     if lesson_path:
         violations.extend(f"[figure_gate] {v}" for v in check_image_paths(lesson_path))
 
-    warns = find_presentation_warnings(lesson)
+    warns = khoa_la_warns + find_presentation_warnings(lesson)
     ramp_warns = check_ramp(lesson)
 
     if not fast:  # answer_gate chạy SymPy (đắt) — bỏ khi --fast, bắt buộc lại trước approve
@@ -721,6 +749,7 @@ def _run_validation(lesson: LessonPackage, fast: bool = False,
 
     # Phiếu phân tầng: kiểm quỹ phút + tỉ lệ 40-40-20 từng phiếu (Thầy chốt 2026-06-11).
     warns = warns + [f"[figure_gate] {m}" for m in warn_figures(lesson)]
+    warns = warns + [f"[trinh_bay_gate] {m}" for m in check_trinh_bay(lesson)]
     warns = warns + [f"[duration_gate] {m}" for m in check_duration(lesson)]
     return violations, warns, ramp_warns
 

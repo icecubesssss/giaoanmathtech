@@ -119,6 +119,58 @@
 > 5. **CÂU VẬN DỤNG trong phiếu luyện tập chương phải CÓ ví dụ mẫu** cùng dạng đứng trước nó (ngoài `quy_trinh` in tại bài).
 > 6. **Hai bẫy kỹ thuật đã vấp, cổng gác sẵn:** (a) ô `[[fill:…]]` nằm **trong** `$…$` thì đáp án **không được bọc `$`** (math lồng math $\Rightarrow$ Tectonic chết "Missing } inserted") — `check_fill_math_long_nhau`; (b) **sửa đề ví dụ thì phải sửa cả nhãn số trên hình** (viết lại đề mà quên hình là đề một đằng hình một nẻo) — `check_so_tren_hinh_vi_du`.
 
+> **BẢN MẪU CHUẨN = `inputs/seeds/lop-9/hinh-hoc/lop-c/chuong-05-duong-tron/phieu-1-mo-dau-ve-duong-tron.json`**
+> (Thầy chốt 24/09/2026 sau khi dựng lại trọn vẹn). Soạn phiếu mới thì MỞ FILE ĐÓ RA XEM
+> trước, đừng chép phiếu cũ. Bảy luật dưới đây rút từ chính lần dựng lại đó; bốn luật đầu
+> đã thành cổng `trinh_bay_gate` (chạy trong `validate`), ba luật sau người phải tự giữ.
+>
+> 1. **NHỊP LỜI GIẢI = ĐI THI.** Nêu **cấu hình** (mệnh đề cụt) → `\Rightarrow` → **chuỗi
+>    đẳng thức** → **dừng**. Thầy đưa mẫu: *"chỉ cần xét tam giác vuông ABC, trung tuyến AM
+>    / Suy ra AM = 1/2 BC = MB = MC / Đó thế thôi."*
+>    ✅ `Xét $\triangle ABC$ vuông tại $A$, trung tuyến $AO$.[[br]]$\Rightarrow AO = \dfrac{BC}{2} = OB = OC$.`
+>    ❌ "Vì △ABC vuông tại A nên AO là đường trung tuyến ứng với cạnh huyền, suy ra… Do đó…
+>    Mặt khác… Vậy…" — cấm `Do đó`, `Mặt khác`, `Như vậy`, cấm giải thích định nghĩa
+>    ("cạnh huyền là cạnh đối diện góc vuông"). Nhưng **đừng nhảy cóc căn cứ**: mỗi bước
+>    suy luận vẫn phải có lý do NGẮN đi kèm. Chuẩn đối chiếu = **barem đề thi thật** ở
+>    `inputs/refs/de-thi/lop-9/exams/*.json` (trường `dap_an`), đừng tự nghĩ ra độ dài.
+> 2. **KHUNG ĐIỀN KHUYẾT PHẢI CÙNG NHỊP VỚI VÍ DỤ MẪU**, và **ô trống phải bắt ÁP DỤNG
+>    CÔNG THỨC, không phải bấm máy.** Thầy: *"HS gần như chỉ bấm máy tính, kp áp dụng công
+>    thức hay điền cạnh… bạn làm điền khuyết như thế này k nhất quán với cách trình bày mẫu
+>    của ví dụ hay như HS đi thi!"*
+>    ❌ `BC^2 = AB^2 + AC^2 = 6^2 + 8^2 = ……` rồi tách riêng ý `Suy ra BC = …… cm`
+>    ✅ `BC^2 = …… = …… \Rightarrow BC = …… cm` — HS tự viết $AB^2+AC^2$.
+>    Chuỗi tính bán kính phải ĐỦ: gọi trung điểm → xét tam giác vuông, trung tuyến nào →
+>    các điểm cùng thuộc đường tròn → mới suy ra $R$.
+> 3. **`answer` và `solution` KHÔNG được cùng nội dung** — Sổ tay GV sẽ in lời giải HAI LẦN.
+>    Bài chỉ cần một. (`answer` = đáp án gọn một dòng; `solution` = lời giải đầy đủ.)
+> 4. **PHIẾU HÌNH HỌC: chặng Kiến thức cần nhớ PHẢI CÓ HÌNH** — mỗi mục lý thuyết kèm một
+>    hình, chèn bằng block `figure` đặt ngay sau mục. Caption viết MÔ TẢ, KHÔNG đánh số
+>    "Hình N" (dãy số đó dành cho bài tập).
+> 5. **KHÔNG CHỪA DÒNG KẺ** — HS trình bày vào VỞ. Bỏ hết `writelines` (kể cả `count: 0`,
+>    nó vẫn sinh `\vspace{5mm}`); chỉ giữ `variant: "draw"` là khung HS tự vẽ hình.
+> 6. **THỨ TỰ CỐ ĐỊNH: đề bài → HÌNH → phương án / ý điền khuyết.** Khai `options` và
+>    `figure` thành TRƯỜNG, đừng gõ `\parbox`/`\makebox` vào `statement`.
+> 7. **GIỮ NGUYÊN DIỆN MẠO** (Thầy bác ba lần khi tôi tự lột): khung viền trang, watermark,
+>    hộp tiêu đề, thanh hành trình, hộp chặng có huy hiệu màu, **hộp ví dụ đóng khung**,
+>    chân trang đỏ, chữ nền 12pt. *"màu thì vẫn cần để"*. Muốn đổi diện mạo thì HỎI TRƯỚC;
+>    chê bố cục thì sửa CÁCH TỔ CHỨC NỘI DUNG, đừng đụng khung.
+>
+> **Ba bẫy kỹ thuật đã làm gãy build trong phiên đó** (cổng gác `\par`, hai cái sau tự nhớ):
+> (a) lệnh LaTeX trần dính chữ Việt — `\parĐáp`, `\bfseriesBán` ⇒ luôn viết `\par{}`,
+> `\bfseries{}`; lệnh kết bằng `}` như `\color{brand}` thì an toàn.
+> (b) ô `[[fill:…]]` nằm TRONG `$…$` thì đáp án **không được bọc `$`** (math lồng math).
+> (c) **sửa đề thì phải sửa cả nhãn số trên hình**, và nhãn hình không được chồng nhau —
+> tâm $O$ nằm ngay trên đoạn ghi số thì đừng đặt cả hai nhãn cùng `below`.
+>
+> **Căn trang trong form hộp thì QUÉT LƯỚI, đừng vặn tay.** Hộp callout là `tcolorbox` lồng
+> trong hộp chặng nên mất `breakable` ⇒ mỗi hộp là một khối cứng, việc lấp trang **nhạy và
+> hỗn loạn** (đổi lề trong hộp 2pt là lật một trang). Cách làm: đo bằng raster (`pdftoppm
+> -gray` + parse PGM P5), lấy TỔNG ĐÁY TRỐNG làm hàm mục tiêu, quét lưới rồi chọn điểm
+> GIỮA vùng ổn định. `\stageneedspace` ĂN THEO KHUNG — đổi cỡ chữ / bỏ dòng kẻ / thu sơ đồ
+> là phải dò lại. ⚠️ Đừng dùng `print_gate` để dò: luật "tiêu đề mồ côi" đếm ký tự dưới đầu
+> mục nên chặng có DÒNG PHỤ ĐỀ thì cổng im dù sơ đồ đã rớt trang — phải tra xem chữ CỦA
+> SƠ ĐỒ có cùng trang với tiêu đề không.
+
 > **CẤM CHỮ THỪA trong mọi thứ Thầy/HS đọc (Thầy chốt 2026-07-27: _"Luyện tập thôi chứ luyện tập vừa sức Bài I ????"_)** — áp cho cả `dang` của spec lẫn `statement`/`title`/`eyebrow`/`teacher_note`/tiêu đề phần của phiếu:
 > 1. **Cấm nhãn tự khen / tự xếp hạng**: "vừa sức", "vừa sức Tầng C", "trọn bộ", "tổng hợp", "ăn trọn 2 điểm".
 > 2. **Cấm thuật ngữ nội bộ của engine lọt ra bản in**: "16 dạng NB 1 bước", "bóc tách", "cầu nối Lớp 8", "(Dạng NB 1 bước)". Nội dung nối lớp dưới thì viết thẳng "Lớp 8 $\to$ Lớp 9".
