@@ -36,6 +36,11 @@ _BR = re.compile(r"\s*\[\[br\]\]\s*")
 
 
 _OLY_W = re.compile(r"\[\[oly:([^\]]+)\]\]")
+# Thẻ mức độ [NB]/[TH]/[VD]/[VDC] trong `statement` là dữ liệu CHO CỔNG (spec_gate,
+# duration_gate đếm câu theo thẻ) — KHÔNG phải chữ cho HS đọc. Góp ý chương V lớp 9C
+# (26/09/2026): "Vẫn còn các chữ NB, TH, VD bên cạnh các bài ⇒ cần xoá". Xoá ở khâu in,
+# giữ nguyên trong JSON để cổng vẫn đếm được.
+_THE_MUC_DO = re.compile(r"\[(?:NB|TH|VD|VDC)\]\s*")
 
 # Cờ [[wrap]]…[[/wrap]] (hộp hình treo góc phải, chữ chảy quanh) chỉ có nghĩa ở bản A4:
 # `_blocks.j2` tự tách trước khi gọi filter. Mọi nơi khác (slide, tổng kết) mà token còn
@@ -65,6 +70,7 @@ def _texify(s: str, show_solution: bool = False) -> str:
 
     `show_solution` CHỈ đổi cách in [[fill:…]]: Sổ tay GV in đáp án, hai bản kia in ô trống."""
     s = _WRAP_TAG.sub("", s)
+    s = _THE_MUC_DO.sub("", s)
     s = _FILL.sub(lambda m: _fill_sub(m, show_solution), s)
     s = _BLANK_W.sub(r"\\blank[\1]", s)
     s = _BLANK.sub(r"\\blank[5cm]", s)

@@ -18,7 +18,9 @@ from .staleness_gate import check_stale, tom_tat as tom_tat_stale
 from .sgk_style_gate import check_sgk_style, check_vi_du_style, check_goi_ten_canh
 from .vi_du_gate import (check_vi_du, check_vi_du_trung_bai, check_vi_du_di_cung_bai,
                          check_vi_du_dien_khuyet, check_goi_y_thong_hieu,
-                         check_fill_math_long_nhau, check_so_tren_hinh_vi_du)
+                         check_fill_math_long_nhau, check_so_tren_hinh_vi_du,
+                         check_vi_du_ket_luan, check_vi_du_lo_dap_an)
+from .nhan_hinh_gate import check_nhan_hinh
 from .spec_gate import check_spec_conformance
 from .thuyetminh_gate import check_meta_wrap, check_thuyetminh
 from .de_gate import check_de
@@ -47,6 +49,9 @@ __all__ = [
     "check_goi_y_thong_hieu",
     "check_fill_math_long_nhau",
     "check_so_tren_hinh_vi_du",
+    "check_vi_du_ket_luan",
+    "check_vi_du_lo_dap_an",
+    "check_nhan_hinh",
     "check_stale",
     "tom_tat_stale",
     "check_print_layout",

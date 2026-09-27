@@ -263,6 +263,70 @@ def check_so_tren_hinh_vi_du(lesson: LessonPackage) -> list[str]:
     return out
 
 
+# ── 7–8. Kết luận là chỗ HS điền · ô phía trên không bị lộ ở dòng dưới ─────────
+# Góp ý chương V lớp 9C (26/09/2026): *"Các bài ví dụ phần kết luận chính là phần học
+# sinh cần điền"*, *"Ví dụ 6: phần trên hỏi phần dưới cho đáp án"*, *"VD4: học sinh tính
+# OA, AB ở trên rồi mà dòng cuối lại có đáp án"*. Hai lỗi cùng họ: ô khuyết vô nghĩa vì
+# đáp số đã in sẵn ở câu "Vậy …" hoặc ở phép tính ngay dòng dưới.
+_VAY = re.compile(r"Vậy\b")
+# Đáp án dạng SỐ (có thể kèm căn / phẩy thập phân kiểu {,}) mới dò được là lộ hay không.
+_DAP_SO = re.compile(r"^-?\d+(?:\{,\}\d+)?(?:\\sqrt\{?\d+\}?)?(?:\\pi)?$")
+
+
+def _vay_cuoi(text: str) -> str:
+    """Câu kết luận: đoạn từ chữ "Vậy" CUỐI CÙNG trở đi (bỏ trắng)."""
+    ms = list(_VAY.finditer(text or ""))
+    return text[ms[-1].start():] if ms else ""
+
+
+def check_vi_du_ket_luan(lesson: LessonPackage) -> list[str]:
+    """Câu "Vậy …" của ví dụ phải có ô [[fill:]] — kết luận là thứ HS cần điền."""
+    out: list[str] = []
+    for st in lesson.stages:
+        for b in st.blocks:
+            if not _la_vi_du(b):
+                continue
+            vay = _vay_cuoi(b.text or "")
+            if vay and "[[fill:" not in vay:
+                out.append(
+                    f"vi_du_gate: {_ten_vi_du(b.text)} — câu kết luận \"{_LENH.sub('', vay)[:50]}…\" "
+                    f"in sẵn đáp số. Kết luận là chỗ HS điền: khoét bằng [[fill:…]].")
+    return out
+
+
+def _lo_o(dap: str, phan_sau: str) -> bool:
+    """Đáp án `dap` của một ô có còn in TRẦN ở phần phía sau không (ngoài ô khác)."""
+    sau = _FILL_TOKEN.sub(" ", phan_sau)
+    sau = _TIKZ.sub(" ", sau)
+    bien = r"(?<![\d{,])" + re.escape(dap) + r"(?![\d}]|\{,\})"
+    if len(re.sub(r"\D", "", dap)) >= 2 or "sqrt" in dap:
+        return re.search(bien, sau) is not None
+    # Đáp án một chữ số ("3", "4") xuất hiện khắp nơi (mẫu số, số mũ) — chỉ tính là lộ
+    # khi nó đứng sau dấu "=" như một kết quả.
+    return re.search(r"=\s*" + bien, sau) is not None
+
+
+def check_vi_du_lo_dap_an(lesson: LessonPackage) -> list[str]:
+    """Ô [[fill:số]] ở trên mà dòng dưới (kể cả câu "Vậy") lại in trần con số đó."""
+    out: list[str] = []
+    for st in lesson.stages:
+        for b in st.blocks:
+            if not _la_vi_du(b):
+                continue
+            text = b.text or ""
+            lo: list[str] = []
+            for m in _FILL_TOKEN.finditer(text):
+                dap = (m.group(1) or "").strip().replace(" ", "")
+                if dap and _DAP_SO.match(dap) and _lo_o(dap, text[m.end():]):
+                    lo.append(dap)
+            if lo:
+                out.append(
+                    f"vi_du_gate: {_ten_vi_du(text)} — ô điền {', '.join(dict.fromkeys(lo))} ở trên "
+                    f"nhưng phía dưới lại in sẵn số đó (\"phần trên hỏi, phần dưới cho đáp án\"). "
+                    f"Khoét luôn chỗ dưới hoặc bỏ ô trên.")
+    return out
+
+
 def check_vi_du(lesson: LessonPackage) -> list[str]:
     """Chạy cả bốn luật một lượt (dùng trong `validate` / `audit`)."""
     return (check_vi_du_trung_bai(lesson)
@@ -270,4 +334,6 @@ def check_vi_du(lesson: LessonPackage) -> list[str]:
             + check_vi_du_dien_khuyet(lesson)
             + check_goi_y_thong_hieu(lesson)
             + check_fill_math_long_nhau(lesson)
-            + check_so_tren_hinh_vi_du(lesson))
+            + check_so_tren_hinh_vi_du(lesson)
+            + check_vi_du_ket_luan(lesson)
+            + check_vi_du_lo_dap_an(lesson))

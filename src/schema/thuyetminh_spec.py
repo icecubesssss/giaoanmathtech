@@ -89,6 +89,10 @@ class SpecPhieu(BaseModel):
     # file (vd chương III lớp 9 tầng B gộp tuần 16+17 thành 1 phiếu 2 ca) — khai
     # `so_ca` để gate nhân quỹ giờ lên, thay vì báo oan "vượt quỹ MỘT BUỔI".
     so_ca: int = Field(1, ge=1, le=6, description="Số ca (buổi) phiếu này trải ra; quỹ giờ ×so_ca")
+    # PHÚT KIỂM TRA CHƯƠNG cắt ra từ chính buổi của phiếu (Thầy chốt 26/09/2026: cuối
+    # MỖI chương có bài kiểm tra 45′ — buổi cuối chương V lớp 9C = 45′ luyện + 45′ kiểm
+    # tra). Quỹ ví dụ/luyện tập/giờ trên lớp co theo phần còn lại; BTVN giữ nguyên.
+    kiem_tra_phut: int = Field(0, ge=0, le=180, description="Phút kiểm tra chương trong buổi của phiếu")
     rows: list[SpecRow] = Field(default_factory=list)
 
 
@@ -188,6 +192,18 @@ def phieu_totals(phieu: SpecPhieu, rates: dict) -> dict:
 def rates_for_spec(spec: ThuyetMinhSpec) -> dict:
     """Phút/câu áp cho spec này (theo lớp/môn của spec)."""
     return rates_for(load_tier_spec(), spec.grade, spec.subject)
+
+
+def he_so_con_lai(session_minutes: float | None, so_ca: int = 1, kiem_tra_phut: int = 0) -> float:
+    """Phần buổi CÒN LẠI cho phiếu sau khi cắt giờ kiểm tra chương (1.0 = cả buổi).
+
+    Buổi 90′ cắt 45′ kiểm tra ⇒ 0,5: quỹ ví dụ, luyện tập và giờ trên lớp nhân 0,5.
+    Dùng chung cho thuyetminh_gate, duration_gate và dòng "Cân buổi" của PDF."""
+    ca = max(1, so_ca or 1)
+    if not session_minutes or not kiem_tra_phut:
+        return 1.0
+    tong = session_minutes * ca
+    return max(0.0, (tong - kiem_tra_phut) / tong)
 
 
 def session_info(spec: ThuyetMinhSpec) -> dict:

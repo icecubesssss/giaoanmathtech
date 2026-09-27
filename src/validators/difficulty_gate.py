@@ -55,8 +55,13 @@ def load_profile(path: Path | None = None) -> DifficultyProfile:
 
 def _has_math_substance(stage: Stage) -> bool:
     """Chặng có bài toán/công thức thực sự (không phải chỉ chữ giảng suông)?"""
+    def _chu(b) -> str:
+        # `deflist` (22/09) giữ công thức trong items[].term/desc, không có trường `text`.
+        items = getattr(b, "items", None) or []
+        return (getattr(b, "text", "") or "") + " ".join(
+            f"{getattr(it, 'term', '')} {getattr(it, 'desc', '')}" for it in items)
     return any(
-        b.type in ("math", "problem", "writelines") or "$" in getattr(b, "text", "") or "\\" in getattr(b, "text", "")
+        b.type in ("math", "problem", "writelines") or "$" in _chu(b) or "\\" in _chu(b)
         for b in stage.blocks
     )
 

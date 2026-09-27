@@ -97,6 +97,27 @@ def test_fill_o_khong_co_dap_an_van_ra_o_trong_o_so_tay_gv():
     assert "fillblank" in _texify(r"$R = [[fill:]]$", True)
 
 
+def test_de_ngan_dinh_cung_voi_hinh_de_dai_phat_mem():
+    """Đề NGẮN (1–2 dòng) dính cứng với hình (\\figbelowkeep = \\nobreak): tách ra chẳng
+    cứu được giấy mà HS phải lật trang mới thấy hình (phiếu 2 ch.5 9C, Bài 2 cuối trang).
+    Đề DÀI vẫn dùng \\figbelow phạt mềm để khỏi nhảy nguyên khối bỏ trắng nửa trang."""
+    from src.compiler.jinja_renderer import render_handout
+    from src.schema.lesson_package import LessonPackage
+
+    tikz = "\\begin{tikzpicture}\\draw (0,0) circle (1);\\end{tikzpicture}"
+    dai = "[TH] " + "Một đề bài rất dài kể lể bối cảnh thực tế. " * 8
+    lesson = LessonPackage.model_validate({
+        "slug": "t", "title": "T", "stages": [{"kind": "practice1", "number": 3, "title": "L", "blocks": [
+            {"type": "problem", "label": "Bài 1.", "statement": "[NB] Trên Hình 1, $CD$ là gì?",
+             "level": 1, "tier": "onclass", "options": ["A1", "B1", "C1", "D1"],
+             "figure": {"tikz": tikz, "caption": "Hình 1", "pos": "below"}},
+            {"type": "problem", "label": "Bài 2.", "statement": dai, "level": 2, "tier": "onclass",
+             "figure": {"tikz": tikz, "caption": "Hình 2", "pos": "below"}}]}]})
+    tex = render_handout(lesson)
+    assert tex.count("\\figbelowkeep{0.44}") == 1
+    assert tex.count("\\figbelow{0.44}") == 1
+
+
 def test_slide_giu_hinh_va_phuong_an_cua_khuon_moi():
     """Bài khai hình bằng trường `figure` + phương án bằng `options` (khuôn 22/09/2026):
     slide phải có ĐỦ hình và A, B, C, D — trước đây cả hai rơi mất trên bản chiếu."""

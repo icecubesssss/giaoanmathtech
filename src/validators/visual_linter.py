@@ -170,7 +170,8 @@ def find_presentation_warnings(lesson) -> list[str]:
 
     # Reflection phải giao BTVN (bài tập về nhà).
     refl = next((s for s in lesson.stages if s.kind == "reflection"), None)
-    if refl is not None:
+    # Tờ đề kiểm tra (theme de_thi) không giao BTVN — chặng cuối chỉ là dòng "HẾT".
+    if refl is not None and getattr(lesson, "theme", "") != "de_thi":
         joined = " ".join(
             str(getattr(b, a, "") or "") for b in refl.blocks for a in ("text", "statement", "label")
         ).lower()

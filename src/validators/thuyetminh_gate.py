@@ -25,6 +25,7 @@ from src.schema.thuyetminh_spec import (
     phieu_band_minutes,
     phieu_totals,
     rates_for_spec,
+    he_so_con_lai,
     row_minutes,
     session_info,
 )
@@ -136,12 +137,16 @@ def check_thuyetminh(spec: ThuyetMinhSpec) -> tuple[list[str], list[str]]:
         # Phiếu cố ý trải nhiều CA (vd 1 phiếu dày dạy trong 2 buổi) thì quỹ giờ nhân
         # lên bấy nhiêu — không thì mọi phiếu ≥2 ca đều bị chặn oan "vượt quỹ MỘT BUỔI".
         ca = max(1, getattr(p, "so_ca", 1) or 1)
-        onclass_budget = budgets.get("onclass", 0.0) * ca
-        vidu_budget = budgets.get("vidu", 0.0) * ca
+        # Buổi có KIỂM TRA CHƯƠNG thì quỹ dạy chỉ còn phần còn lại (buổi 90′ − 45′ ⇒ ×0,5).
+        kt = getattr(p, "kiem_tra_phut", 0) or 0
+        f = he_so_con_lai(session, ca, kt)
+        onclass_budget = budgets.get("onclass", 0.0) * ca * f
+        vidu_budget = budgets.get("vidu", 0.0) * ca * f
         btvn_budget = budgets.get("btvn", 0.0) * ca
-        usable = ((session - brk) * ca) if session else 0
+        usable = ((session - brk) * ca * f) if session else 0
 
-        tag = f"phiếu {p.code}" + (f" ({ca} ca)" if ca > 1 else "")
+        tag = (f"phiếu {p.code}" + (f" ({ca} ca)" if ca > 1 else "")
+               + (f" (còn {session * ca - kt}′ sau {kt}′ kiểm tra)" if kt and session else ""))
 
         # (E) GỘP PHIẾU (anh An chốt 30/08/2026): chương KHÔNG có VD-VDC thì hai buổi
         # dùng CHUNG một phiếu (so_ca = 2); chương có VD-VDC thì một phiếu một buổi.
@@ -265,7 +270,8 @@ def check_thuyetminh(spec: ThuyetMinhSpec) -> tuple[list[str], list[str]]:
             errors.append(
                 f"thuyetminh: {tag} giờ TRÊN LỚP {on_class:.0f}′ (ví dụ {vidu_min:.0f}′ + "
                 f"luyện tập {on_min:.0f}′) VƯỢT quỹ {'MỘT BUỔI' if ca == 1 else f'{ca} BUỔI'} "
-                f"{usable:.0f}′ ({ca}×({session}′ − giải lao {brk}′)) quá "
+                f"{usable:.0f}′ ({ca}×({session}′ − giải lao {brk}′)"
+                f"{f' − {kt}′ kiểm tra' if kt else ''}) quá "
                 f"±{budget_tol*100:.0f}% — không dạy kịp.")
 
         # (W) lệch quỹ phiếu (vidu / onclass / btvn-hụt)
@@ -347,12 +353,45 @@ def check_chuong_level(spec: ThuyetMinhSpec) -> list[str]:
             f"MỘT spec, mỗi buổi là một phiếu."]
 
 
+# ── KIỂM TRA CHƯƠNG 45′ — LUẬT CỨNG (Thầy chốt 26/09/2026) ───────────────────
+# Góp ý chương V lớp 9C: *"Thời gian ca này là 45p + 45p kiểm tra"*, rồi Thầy chốt
+# *"thêm luật cứng là sẽ có kiểm tra chương 45 phút cuối mỗi chương"*. Trước đó không
+# spec nào chừa giờ kiểm tra — buổi cuối chương soạn đủ 90′ phiếu, dạy thật thì mất
+# nửa buổi cho bài kiểm tra.
+KIEM_TRA_CHUONG_PHUT = 45
+# Spec có từ ngần này phiếu trở lên là kế hoạch CẢ CHƯƠNG (spec theo tuần có 1–2 phiếu).
+SO_PHIEU_CAP_CHUONG = 3
+
+
+def check_kiem_tra_chuong(spec: ThuyetMinhSpec) -> list[str]:
+    """Spec cả chương phải chừa ≥45′ kiểm tra chương ở PHIẾU CUỐI (`kiem_tra_phut`)
+    và dòng thời lượng của buổi đó phải ghi rõ bài kiểm tra."""
+    phieu = [p for p in spec.phieu if p.rows]
+    if len(phieu) < SO_PHIEU_CAP_CHUONG:
+        return []
+    cuoi = phieu[-1]
+    out: list[str] = []
+    if (getattr(cuoi, "kiem_tra_phut", 0) or 0) < KIEM_TRA_CHUONG_PHUT:
+        out.append(
+            f"thuyetminh: THIẾU KIỂM TRA CHƯƠNG — phiếu cuối ({cuoi.code}) phải khai "
+            f"`kiem_tra_phut: {KIEM_TRA_CHUONG_PHUT}` (Thầy chốt 26/09/2026: cuối MỖI chương "
+            f"có bài kiểm tra {KIEM_TRA_CHUONG_PHUT} phút, buổi đó chỉ còn phần còn lại cho "
+            f"phiếu). Kèm `de-kiem-tra.json` cạnh thuyết minh để chốt ma trận đề.")
+    if spec.thoiluong and not any(re.search(r"kiểm\s*tra\s*chương", d, re.I) for d in spec.thoiluong):
+        out.append(
+            "thuyetminh: khối THỜI LƯỢNG chưa ghi buổi KIỂM TRA CHƯƠNG "
+            f"{KIEM_TRA_CHUONG_PHUT}′ — thêm vào dòng của buổi cuối, vd "
+            f"\"Buổi 7: 45 phút luyện tập $+$ {KIEM_TRA_CHUONG_PHUT} phút kiểm tra chương\".")
+    return out
+
+
 def _noi_dung_errors(spec: ThuyetMinhSpec) -> list[str]:
     """Cổng NỘI DUNG — CHẶN build (Thầy yêu cầu 'codebase NGHIÊM NGẶT' 14/08/2026).
     Không phụ thuộc chuẩn giờ nên luôn chạy được. `--force` vẫn qua để build nháp."""
     return (check_kien_thuc_nen(spec) + check_thoiluong(spec)
             + check_chuong_level(spec) + check_loai_4b(spec)
-            + check_scaffold_rails(spec) + check_source_refs(spec))
+            + check_scaffold_rails(spec) + check_source_refs(spec)
+            + check_kiem_tra_chuong(spec))
 
 
 # ── Cổng XUỐNG DÒNG cho BẢNG ĐẦU (Tên bài / Thời gian / Thời lượng) ─────────

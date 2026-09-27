@@ -137,6 +137,12 @@ def plan_target(out_dir: Path, outputs_root: Path, tieu_de: str | None = None) -
         parts.append(f"Thuyet-minh-chuong-{_ROMAN.get(chuong, chuong)}")
         return DriveTarget(parts, "phiếu thuyết minh")
 
+    # Bài KIỂM TRA CHƯƠNG 45′ (luật cứng 26/09/2026): tờ đề + ma trận-đáp án nằm chung một
+    # thư mục cạnh "Thuyet-minh-chuong-…", không đẻ hai thư mục tên theo slug.
+    if "kiem-tra-chuong" in segs:
+        parts.append(f"Kiem-tra-chuong-{_ROMAN.get(chuong, chuong)}")
+        return DriveTarget(parts, "kiểm tra chương")
+
     # Phiếu học tập: lấy số Ca từ tiền tố file ca-NN-, tên lấy từ title của phiếu.
     ca = ""
     for pdf in sorted(out_dir.glob("*.pdf")):
@@ -144,6 +150,13 @@ def plan_target(out_dir: Path, outputs_root: Path, tieu_de: str | None = None) -
         if m:
             ca = m.group(1).capitalize()      # 'ca-01' → 'Ca-01'
             break
+    if not ca:
+        # PDF tên mới (Toan9C-…-Phieu-HS.pdf) không còn tiền tố ca-NN ⇒ lấy số từ slug
+        # 'phieu-3-…'. Thiếu bước này thì thư mục Drive mất "Ca-03 - " và đẻ song sinh
+        # cạnh thư mục cũ, lại xếp theo chữ cái chứ không theo thứ tự buổi (24/09/2026).
+        m = re.match(r"phieu-(\d+)-", slug)
+        if m:
+            ca = f"Ca-{int(m.group(1)):02d}"
     raw_ten = bo_dau(tieu_de) if tieu_de else bo_dau(re.sub(r"^phieu-[a-z]-", "", slug).replace("-", " ")).capitalize()
     ten = re.sub(r"[/\\:*?\"<>|]+", " ", raw_ten).strip()
     ten = re.sub(r"\s+", " ", ten)
@@ -161,6 +174,9 @@ def sync_dir(out_dir: Path, outputs_root: Path, tieu_de: str | None = None,
     # từ khi tên file tự mô tả ('Toan8B-Tuan10-…-Phieu-HS.pdf') thì lọc theo tiền tố
     # là bỏ sót sạch — Drive nhận nguyên thư mục, tên nào cũng là thành phẩm.
     pdfs = sorted(out_dir.glob("*.pdf"))
+    # Tờ đề / đáp án kiểm tra không chiếu lên màn — bỏ bản Slide khỏi Drive.
+    if target.ly_do == "kiểm tra chương":
+        pdfs = [p for p in pdfs if not p.name.endswith("-Slide.pdf")]
     if not pdfs:
         return None, []
 

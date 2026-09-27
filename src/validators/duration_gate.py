@@ -18,6 +18,7 @@ from __future__ import annotations
 import re
 
 from src.schema.lesson_package import LessonPackage
+from src.schema.thuyetminh_spec import he_so_con_lai
 from src.schema.tier_spec import (
     chuong_co_vd, draw_minutes, gop_vd_vdc, load_tier_spec, quick_minutes, subject_block,
     rates_for, so_ca_yeu_cau, tier_ratio,
@@ -228,7 +229,9 @@ def check_duration(lesson: LessonPackage) -> list[str]:
     """Cảnh báo khi phiếu tầng lệch quỹ phút hoặc tỉ lệ (đọc chuẩn từ tier_spec)."""
     vdc_warns = check_vdc_cuoi_bai(lesson)
     tier = lesson.class_tier
-    if not tier:
+    # Tờ đề kiểm tra: phút làm bài do người ra đề quyết (de_gate soi), không đo bằng
+    # rate của phiếu — trước đây cổng này luôn kêu oan "lệch quỹ 55′" với mọi tờ đề.
+    if not tier or getattr(lesson, "theme", "") == "de_thi":
         return vdc_warns
     grade, subject = _grade_subject(lesson)
     try:
@@ -251,7 +254,9 @@ def check_duration(lesson: LessonPackage) -> list[str]:
     # Phiếu cố ý trải nhiều CA thì quỹ nhân lên bấy nhiêu (xem LessonPackage.so_ca),
     # không thì phiếu 2 ca nào cũng kêu "lệch quỹ" dù soạn đúng.
     ca = max(1, getattr(lesson, "so_ca", 1) or 1)
-    budget_dict = {"onclass": budgets.get("onclass", 0.0) * ca,
+    # Buổi có KIỂM TRA CHƯƠNG (`kiem_tra_phut`) thì quỹ luyện tập co theo phần còn lại.
+    f = he_so_con_lai(block.get("session_minutes"), ca, getattr(lesson, "kiem_tra_phut", 0) or 0)
+    budget_dict = {"onclass": budgets.get("onclass", 0.0) * ca * f,
                    "btvn": budgets.get("btvn", 0.0) * ca}
 
     counts = band_counts(lesson)        # {onclass|btvn: {band: n}}

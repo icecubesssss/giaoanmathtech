@@ -26,6 +26,15 @@ def test_phieu_ra_dung_folder_ca(tmp_path):
     assert t.parts == ["lop9", "C", "Chuong 5", "Ca-01 - Mo dau ve duong tron"]
 
 
+def test_ten_pdf_moi_lay_so_ca_tu_slug_phieu_n(tmp_path):
+    """PDF tên Toan9C-… không còn tiền tố ca-NN: số ca lấy từ slug 'phieu-3-' để thư mục
+    Drive vẫn là 'Ca-03 - …' (không đẻ thư mục song sinh, giữ thứ tự buổi)."""
+    root, d = _mk(tmp_path, "lop-9/hinh-hoc/lop-c/chuong-05-duong-tron/phieu-3-do-dai-cung",
+                  files=("Toan9C-Do-dai-cung-Phieu-HS.pdf",))
+    t = plan_target(d, root, "Độ dài cung tròn")
+    assert t.parts[-1] == "Ca-03 - Do dai cung tron"
+
+
 def test_thuyet_minh_ra_folder_so_la_ma(tmp_path):
     root, d = _mk(tmp_path, "lop-9/hinh-hoc/lop-c/chuong-05-duong-tron/thuyet-minh-lop-9c-chuong-05",
                   files=("thuyet-minh-lop-9c-chuong-05.pdf",))
@@ -83,3 +92,13 @@ def test_dry_run_khong_dung_vao_o_dia(tmp_path):
     dest, files = sync_dir(d, root, "Mở đầu về đường tròn", dry_run=True, root=drive)
     assert files == ["ca-01-handout.pdf"]
     assert not drive.exists()
+
+
+def test_kiem_tra_chuong_ra_mot_folder_rieng_va_bo_slide(tmp_path):
+    """Luật cứng 26/09/2026: đề + đáp án kiểm tra chương vào chung 'Kiem-tra-chuong-V', không chép Slide."""
+    files = ("Toan9C-De-kiem-tra-chuong-v-Phieu-HS.pdf", "Toan9C-De-kiem-tra-chuong-v-Slide.pdf")
+    root, d = _mk(tmp_path, "lop-9/hinh-hoc/lop-c/chuong-05-duong-tron/kiem-tra-chuong/de-kiem-tra-chuong-v-lop-9c", files)
+    t = plan_target(d, root, "Đề kiểm tra Chương V")
+    assert t.parts == ["lop9", "C", "Chuong 5", "Kiem-tra-chuong-V"]
+    dest, chep = sync_dir(d, root, "Đề kiểm tra Chương V", root=tmp_path / "drive")
+    assert chep == ["Toan9C-De-kiem-tra-chuong-v-Phieu-HS.pdf"]

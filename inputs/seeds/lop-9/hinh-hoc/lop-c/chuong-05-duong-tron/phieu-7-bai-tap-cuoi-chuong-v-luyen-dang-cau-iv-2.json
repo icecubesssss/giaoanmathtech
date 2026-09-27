@@ -9,7 +9,7 @@
       "kind": "review",
       "number": 1,
       "title": "Khám phá",
-      "teacher_note": "Đây là buổi tổng duyệt. Cho HS đọc đề mẫu trước, chưa giải, chỉ hỏi 'đề này hỏi mấy ý, mỗi ý đáng bao nhiêu điểm' để HS thấy mình lấy được ý nào.",
+      "teacher_note": "Buổi 7 = 45 phút luyện tập (phiếu này) $+$ 45 phút KIỂM TRA CHƯƠNG V (đề riêng). Cho HS đọc đề mẫu, chưa giải, chỉ hỏi \\textquotedblleft đề có mấy ý, em đã gặp từng ý ở buổi nào\\textquotedblright{} — 3 phút rồi chuyển sang ôn.",
       "blocks": [
         {
           "type": "para",
@@ -18,11 +18,12 @@
         {
           "type": "noted",
           "variant": "note",
-          "text": "Dưới đây là dạng câu hình quen thuộc của đề thi Vào 10: [[br]]\\textit{Cho đường tròn $(O; R)$ và điểm $A$ nằm ngoài đường tròn. Từ $A$ kẻ hai tiếp tuyến $AB$, $AC$ của $(O)$ ($B$, $C$ là hai tiếp điểm), $AO$ cắt $BC$ tại $H$.} [[br]]\\textbf{a)} Chứng minh bốn điểm $A$, $B$, $O$, $C$ cùng thuộc một đường tròn. [[br]]\\textbf{b)} Chứng minh $AO \\perp BC$ và $AB^2 = AH \\cdot AO$. [[br]]\\textbf{c)} Cho $OA = 2R$, tính diện tích phần mặt phẳng giới hạn bởi $AB$, $AC$ và cung nhỏ $BC$. [[br]]\\textbf{Câu hỏi:} Đề có mấy ý? Em đã gặp từng ý ở buổi nào trong chương này?"
-        },
-        {
-          "type": "writelines",
-          "count": 3
+          "text": "Dạng câu hình quen thuộc của đề thi Vào 10 (Hình 1): [[br]]\\textit{Cho đường tròn $(O; R)$ và điểm $A$ nằm ngoài đường tròn. Từ $A$ kẻ hai tiếp tuyến $AB$, $AC$ ($B$, $C$ là tiếp điểm), $AO$ cắt $BC$ tại $H$.} [[br]]\\textbf{a)} Chứng minh bốn điểm $A$, $B$, $O$, $C$ cùng thuộc một đường tròn. [[br]]\\textbf{b)} Chứng minh $AO \\perp BC$ và $AB^2 = AH \\cdot AO$. [[br]]\\textbf{c)} Cho $OA = 2R$, tính $AB$, $AH$, $BC$ theo $R$. [[br]]\\textbf{Câu hỏi:} Đề có mấy ý? Em đã gặp từng ý ở buổi nào trong chương này?",
+          "figure": {
+            "tikz": "\\begin{tikzpicture}[line width=0.8pt, font=\\small]\n  \\draw[ink] (0.0000,0.0000) circle (1.5000);\n  \\draw[ink] (0.0000,0.0000) -- (3.0000,0.0000);\n  \\draw[ink] (3.0000,0.0000) -- (0.7500,1.2990);\n  \\draw[ink] (0.0000,0.0000) -- (0.7500,1.2990);\n  \\draw[ink] (3.0000,0.0000) -- (0.7500,-1.2990);\n  \\draw[ink] (0.0000,0.0000) -- (0.7500,-1.2990);\n  \\draw[ink] (0.8799,1.2240) -- (0.8049,1.0941) -- (0.6750,1.1691);\n  \\draw[ink] (0.8799,-1.2240) -- (0.8049,-1.0941) -- (0.6750,-1.1691);\n  \\draw[ink] (0.7500,1.2990) -- (0.7500,-1.2990);\n  \\fill[ink] (0.7500,0.0000) circle (1.3pt);\n  \\node[below right] at (0.7500,0.0000) {$H$};\n  \\fill[ink] (0.7500,1.2990) circle (1.3pt);\n  \\node[inner sep=0pt] at (0.8900,1.5415) {$B$};\n  \\fill[ink] (0.7500,-1.2990) circle (1.3pt);\n  \\node[inner sep=0pt] at (0.8900,-1.5415) {$C$};\n  \\fill[ink] (3.0000,0.0000) circle (1.3pt);\n  \\node[right] at (3.0000,0.0000) {$A$};\n  \\fill[ink] (0.0000,0.0000) circle (1.3pt);\n  \\node[left] at (0.0000,0.0000) {$O$};\n\\end{tikzpicture}",
+            "caption": "Hình 1",
+            "pos": "right"
+          }
         }
       ]
     },
@@ -30,64 +31,135 @@
       "kind": "concept",
       "number": 2,
       "title": "Kiến thức cần nhớ",
-      "teacher_note": "Chỉ nhắc lại bằng bảng, đừng giảng lại từ đầu. Ví dụ 1–6 là khuôn Câu IV.2, mỗi ví dụ đều có hình bên cạnh. Ví dụ 7 là bài thực tế dạng Câu IV.1 (quạt giấy) — dạng ăn điểm chắc của tầng C, thay cho bài tính diện tích giới hạn bởi hai tiếp tuyến đã bỏ.",
+      "teacher_note": "Chỉ nhắc lại bằng bảng, 8–10 phút. Mục 4 (tỉ số lượng giác, Chương IV) HS tầng C hay quên — cho HS đọc to ba tỉ số trên chính tam giác $ABO$. Không có \\textquotedblleft hệ thức lượng\\textquotedblright{} nào được viết thẳng: $AB^2 = AH \\cdot AO$ chứng minh bằng đồng dạng, $BH$ tính qua diện tích $\\triangle ABO$.",
       "blocks": [
         {
           "type": "para",
-          "text": "1. Công thức đo lường — nhắc nhanh",
-          "variant": "heading"
-        },
-        {
-          "type": "para",
-          "text": "Hai công thức \\textbf{gốc}: $C = 2\\pi R = \\pi d$ và $S = \\pi R^2$. [[br]]Phần có góc ở tâm $n^\\circ$ chiếm $\\dfrac{n}{360}$, nên $l = \\dfrac{n}{360} \\cdot 2\\pi R$ và $S_q = \\dfrac{n}{360} \\cdot \\pi R^2$. [[br]]Hình vành khuyên $= \\pi R^2 - \\pi r^2$ (hình tròn lớn trừ hình tròn nhỏ)."
-        },
-        {
-          "type": "para",
-          "text": "2. Ba cách chứng minh hay dùng",
-          "variant": "heading"
+          "variant": "heading",
+          "text": "1. Công thức đo lường — nhắc nhanh"
         },
         {
           "type": "deflist",
           "items": [
             {
-              "term": "Bốn điểm cùng thuộc một đường tròn:",
-              "desc": "chỉ ra bốn điểm cùng cách đều một điểm $I$; thường dùng trung tuyến ứng cạnh huyền trong hai tam giác vuông chung cạnh huyền."
+              "term": "Gốc:",
+              "desc": "$C = 2\\pi R$; $S = \\pi R^2$."
             },
             {
-              "term": "Một đường thẳng là tiếp tuyến:",
-              "desc": "chỉ ra nó đi qua một điểm thuộc đường tròn và vuông góc với bán kính tại chính điểm đó."
+              "term": "Góc ở tâm $n^\\circ$:",
+              "desc": "$l = \\dfrac{n}{360} \\cdot 2\\pi R$; $S_q = \\dfrac{n}{360} \\cdot \\pi R^2$."
             },
             {
-              "term": "Hệ thức $AB^2 = AH \\cdot AO$:",
-              "desc": "chứng minh $\\triangle AHB \\backsim \\triangle ABO$ (g.g) rồi nhân chéo. \\textbf{Không được viết thẳng ra kết quả.}"
+              "term": "Vành khuyên:",
+              "desc": "$S = \\pi R^2 - \\pi r^2$."
             }
           ]
         },
         {
+          "type": "figure",
+          "tikz": "\\begin{tikzpicture}[line width=0.8pt, font=\\small]\n  \\fill[black!12] (0.0000,0.0000) -- (1.2990,0.7500) arc (30:150:1.5) -- cycle;\n  \\draw[ink] (0.0000,0.0000) circle (1.5000);\n  \\draw[ink] (1.2990,0.7500) -- (0.0000,0.0000) -- (-1.2990,0.7500);\n  \\draw[ink, line width=0.5pt] (0.3031,0.1750) arc (30:150:0.35);\n  \\node[font=\\scriptsize] at (0.0000,0.6000) {$120^\\circ$};\n  \\fill[ink] (0.0000,0.0000) circle (1.3pt);\n  \\node[below] at (0.0000,0.0000) {$O$};\n  \\node[below right, font=\\scriptsize] at (0.6495,0.3750) {$6$ cm};\n\\end{tikzpicture}",
+          "caption": "Hình quạt $120^\\circ$, bán kính $6$ cm: $S_q = \\dfrac{120}{360} \\cdot \\pi \\cdot 6^2 = 12\\pi$ (cm$^2$)",
+          "width": "0.42\\linewidth"
+        },
+        {
           "type": "para",
-          "text": "3. Bốn bước của hình chuẩn hai tiếp tuyến",
-          "variant": "heading"
+          "variant": "heading",
+          "text": "2. Các cách chứng minh hay dùng"
+        },
+        {
+          "type": "deflist",
+          "items": [
+            {
+              "term": "Bốn điểm cùng thuộc đường tròn:",
+              "desc": "chỉ ra bốn điểm cách đều một điểm $I$ (thường: trung tuyến ứng với cạnh huyền của hai tam giác vuông chung cạnh huyền)."
+            },
+            {
+              "term": "Hai tiếp tuyến cắt nhau (Định lí 2):",
+              "desc": "$AB = AC$; $AO$ là tia \\textbf{phân giác} của $\\widehat{BAC}$; $OA$ là tia \\textbf{phân giác} của $\\widehat{BOC}$."
+            },
+            {
+              "term": "Tiếp tuyến:",
+              "desc": "đi qua một điểm của $(O)$ và vuông góc với bán kính tại điểm đó (Định lí 1); góc vuông có thể lấy từ Pythagore đảo hoặc hai tam giác bằng nhau."
+            },
+            {
+              "term": "Trung điểm của dây:",
+              "desc": "$\\triangle OAB$ cân tại $O$ $\\Rightarrow$ đường cao đồng thời là trung tuyến; hoặc $AO$ là đường trung trực."
+            },
+            {
+              "term": "$AB^2 = AH \\cdot AO$:",
+              "desc": "$\\triangle AHB \\backsim \\triangle ABO$ (g.g) rồi nhân chéo — không viết thẳng kết quả."
+            }
+          ]
+        },
+        {
+          "type": "figure",
+          "tikz": "\\begin{tikzpicture}[line width=0.8pt, font=\\small]\n  \\draw[ink] (0.0000,0.0000) circle (1.5000);\n  \\draw[ink] (3.2000,0.0000) -- (0.7031,1.3250);\n  \\draw[ink] (3.2000,0.0000) -- (0.7031,-1.3250);\n  \\draw[ink] (0.0000,0.0000) -- (0.7031,1.3250);\n  \\draw[ink] (0.0000,0.0000) -- (0.7031,-1.3250);\n  \\draw[ink] (0.0000,0.0000) -- (3.2000,0.0000);\n  \\draw[ink] (0.8268,1.2594) -- (0.7612,1.1357) -- (0.6375,1.2013);\n  \\draw[ink] (0.8268,-1.2594) -- (0.7612,-1.1357) -- (0.6375,-1.2013);\n  \\fill[ink] (0.0000,0.0000) circle (1.3pt);\n  \\fill[ink] (3.2000,0.0000) circle (1.3pt);\n  \\fill[ink] (0.7031,1.3250) circle (1.3pt);\n  \\fill[ink] (0.7031,-1.3250) circle (1.3pt);\n  \\fill[ink] (1.6000,0.0000) circle (1.3pt);\n  \\node[inner sep=0pt] at (-0.2400,0.0000) {$O$};\n  \\node[inner sep=0pt] at (3.4400,0.0000) {$A$};\n  \\node[inner sep=0pt] at (0.8531,1.5848) {$B$};\n  \\node[inner sep=0pt] at (0.8531,-1.5848) {$C$};\n  \\node[inner sep=0pt] at (1.6417,0.2364) {$I$};\n\\end{tikzpicture}",
+          "caption": "$I$ trung điểm $AO$: $IA = IB = IO = IC$",
+          "width": "0.42\\linewidth"
+        },
+        {
+          "type": "para",
+          "variant": "heading",
+          "text": "3. Bốn bước của hình hai tiếp tuyến"
         },
         {
           "type": "deflist",
           "items": [
             {
               "term": "B1.",
-              "desc": "$\\widehat{ABO} = \\widehat{ACO} = 90^\\circ$."
+              "desc": "$\\widehat{ABO} = \\widehat{ACO} = 90^\\circ$ (tiếp tuyến $\\perp$ bán kính)."
             },
             {
               "term": "B2.",
-              "desc": "$I$ trung điểm $AO$ $\\Rightarrow$ bốn điểm $A$, $B$, $O$, $C$ cùng thuộc đường tròn đường kính $AO$."
+              "desc": "$I$ trung điểm $AO$ $\\Rightarrow IA = IB = IO = IC$ $\\Rightarrow$ bốn điểm thuộc $\\left(I; \\dfrac{AO}{2}\\right)$."
             },
             {
               "term": "B3.",
-              "desc": "$AB = AC$, $OB = OC$ $\\Rightarrow$ $AO$ là trung trực $BC$ $\\Rightarrow$ $AO \\perp BC$ tại $H$."
+              "desc": "$AB = AC$, $OB = OC$ $\\Rightarrow AO$ là trung trực $BC$ $\\Rightarrow AO \\perp BC$ tại trung điểm $H$."
             },
             {
               "term": "B4.",
-              "desc": "$AB = \\sqrt{OA^2 - R^2}$; $AH = \\dfrac{AB^2}{AO}$; $BH = \\dfrac{AB \\cdot OB}{AO}$ và $BC = 2 \\cdot BH$."
+              "desc": "$AB^2 = OA^2 - R^2$; đồng dạng cho $AH = \\dfrac{AB^2}{AO}$; diện tích $\\triangle ABO$: $AB \\cdot OB = AO \\cdot BH$; $BC = 2BH$."
             }
           ]
+        },
+        {
+          "type": "figure",
+          "tikz": "\\begin{tikzpicture}[line width=0.8pt, font=\\small]\n  \\draw[ink] (0.0000,0.0000) circle (1.5000);\n  \\draw[ink] (3.2000,0.0000) -- (0.7031,1.3250);\n  \\draw[ink] (3.2000,0.0000) -- (0.7031,-1.3250);\n  \\draw[ink] (0.0000,0.0000) -- (0.7031,1.3250);\n  \\draw[ink] (0.0000,0.0000) -- (0.7031,-1.3250);\n  \\draw[ink] (0.0000,0.0000) -- (3.2000,0.0000);\n  \\draw[ink] (0.8268,1.2594) -- (0.7612,1.1357) -- (0.6375,1.2013);\n  \\draw[ink] (0.8268,-1.2594) -- (0.7612,-1.1357) -- (0.6375,-1.2013);\n  \\draw[ink] (0.7031,1.3250) -- (0.7031,-1.3250);\n  \\draw[ink] (0.7031,0.1200) -- (0.8231,0.1200) -- (0.8231,0.0000);\n  \\fill[ink] (0.0000,0.0000) circle (1.3pt);\n  \\fill[ink] (3.2000,0.0000) circle (1.3pt);\n  \\fill[ink] (0.7031,1.3250) circle (1.3pt);\n  \\fill[ink] (0.7031,-1.3250) circle (1.3pt);\n  \\fill[ink] (0.7031,0.0000) circle (1.3pt);\n  \\node[inner sep=0pt] at (-0.2400,0.0000) {$O$};\n  \\node[inner sep=0pt] at (3.4400,0.0000) {$A$};\n  \\node[inner sep=0pt] at (0.8531,1.5848) {$B$};\n  \\node[inner sep=0pt] at (0.8531,-1.5848) {$C$};\n  \\node[inner sep=0pt] at (0.5489,0.1839) {$H$};\n\\end{tikzpicture}",
+          "caption": "$AO \\perp BC$ tại $H$, $BH$ là đường cao của $\\triangle ABO$",
+          "width": "0.42\\linewidth"
+        },
+        {
+          "type": "para",
+          "variant": "heading",
+          "text": "4. Nhắc lại: tỉ số lượng giác trong tam giác vuông (Chương IV)"
+        },
+        {
+          "type": "para",
+          "text": "Xét $\\triangle ABO$ vuông tại $B$ — đúng tam giác có trong mọi bài hai tiếp tuyến:"
+        },
+        {
+          "type": "deflist",
+          "items": [
+            {
+              "term": "Tỉ số lượng giác:",
+              "desc": "$\\sin\\widehat{AOB} = \\dfrac{AB}{OA}$; $\\cos\\widehat{AOB} = \\dfrac{OB}{OA}$; $\\tan\\widehat{AOB} = \\dfrac{AB}{OB}$."
+            },
+            {
+              "term": "Tính cạnh:",
+              "desc": "$AB = OA \\cdot \\sin\\widehat{AOB} = OB \\cdot \\tan\\widehat{AOB}$; $OB = OA \\cdot \\cos\\widehat{AOB}$."
+            },
+            {
+              "term": "Góc đặc biệt:",
+              "desc": "$\\sin 30^\\circ = \\cos 60^\\circ = \\dfrac{1}{2}$; $\\cos 30^\\circ = \\sin 60^\\circ = \\dfrac{\\sqrt{3}}{2}$; $\\tan 60^\\circ = \\sqrt{3}$."
+            }
+          ]
+        },
+        {
+          "type": "figure",
+          "tikz": "\\begin{tikzpicture}[line width=0.8pt, font=\\small]\n  \\draw[ink] (0.0000,0.0000) -- (2.2000,0.0000) -- (2.2000,1.7000) -- cycle;\n  \\draw[ink] (2.0400,0.0000) -- (2.0400,0.1600) -- (2.2000,0.1600);\n  \\draw[brand] (0.4500,0.0000) arc (0.0000:37.6942:0.4500);\n  \\fill[ink] (0.0000,0.0000) circle (1.3pt);\n  \\fill[ink] (2.2000,0.0000) circle (1.3pt);\n  \\fill[ink] (2.2000,1.7000) circle (1.3pt);\n  \\node[inner sep=0pt] at (-0.2255,-0.0821) {$O$};\n  \\node[inner sep=0pt] at (2.3543,-0.1839) {$B$};\n  \\node[inner sep=0pt] at (2.3200,1.9078) {$A$};\n\\end{tikzpicture}",
+          "caption": "$\\triangle ABO$ vuông tại $B$, góc $\\widehat{AOB}$ tại tâm",
+          "width": "0.46\\linewidth"
         }
       ]
     },
@@ -95,162 +167,100 @@
       "kind": "practice1",
       "number": 3,
       "title": "Luyện tập 1",
-      "teacher_note": "20 câu chạy khoảng 20 phút. Bài 5–10 chính là ba ý của đề mẫu được chẻ nhỏ — chữa xong là HS ráp lại thành Bài 13 được ngay.",
+      "teacher_note": "9 câu nhận biết, khoảng 1 phút một câu (10 phút). Bài 4 ôn Định lí 2 (hai tia phân giác), Bài 5 ôn tỉ số lượng giác — hai chỗ HS tầng C hay hổng nhất trước bài kiểm tra.",
       "blocks": [
-        {
-          "type": "noted",
-          "variant": "example",
-          "text": "\\begin{minipage}[t]{0.58\\linewidth}\\vspace{0pt}\\textbf{Ví dụ 1.} Cho đường tròn bán kính $R = 5$ cm. Tính chu vi đường tròn và diện tích hình tròn (lấy $\\pi \\approx 3{,}14$). [[br]]{\\sffamily\\bfseries\\color{brand}Lời giải}[[br]]Chu vi đường tròn là $C = 2\\pi R = 10\\pi \\approx 31{,}4$ (cm). [[br]]Diện tích hình tròn là $S = \\pi R^2 = 25\\pi \\approx 78{,}5$ (cm$^2$). [[br]]Vậy chu vi khoảng $31{,}4$ cm và diện tích khoảng $78{,}5$ cm$^2$.\\end{minipage}\\hfill\\begin{minipage}[t]{0.36\\linewidth}\\vspace{0pt}\n\\centering\n\\adjustbox{max width=\\linewidth, max totalheight=2.8cm}{\n\\begin{tikzpicture}[line width=0.8pt, font=\\small]\n  \\draw[ink] (0,0) circle (2.4);\n  \\draw[ink] (0,0) -- (2.4,0);\n  \\fill[ink] (0,0) circle (1.2pt);\n  \\node[below left] at (0,0) {$O$};\n  \\node[above] at (1.2,0.02) {$R = 5$ cm};\n\\end{tikzpicture}\n}\n\\par\\vspace{2pt}{\\sffamily\\scriptsize\\itshape\\color{muted}Hình 1}\n\\end{minipage}"
-        },
         {
           "type": "problem",
           "label": "Bài 1.",
           "level": 1,
           "tier": "onclass",
+          "dang_id": "NB1",
+          "statement": "[NB] Độ dài cung $90^\\circ$ của đường tròn bán kính $4$ cm bằng:",
           "figure_given": true,
-          "statement": "[NB] Tam giác $ABC$ vuông tại $A$ nội tiếp đường tròn $(O)$. Khi đó đường kính của $(O)$ là:\\par\\vspace{4pt}\\parbox[t]{0.30\\linewidth}{\\textbf{A.} $AB$}\\parbox[t]{0.30\\linewidth}{\\textbf{B.} $AC$}\\par\\vspace{6pt}\\parbox[t]{0.30\\linewidth}{\\textbf{C.} $BC$}\\parbox[t]{0.30\\linewidth}{\\textbf{D.} $OA$}",
-          "solution": "Đáp án \\textbf{C}. Cạnh huyền $BC$ chính là đường kính, tâm $O$ là trung điểm $BC$.",
-          "dang_id": "NB1"
-        },
-        {
-          "type": "writelines",
-          "count": 0
+          "options": [
+            "$\\pi$ cm",
+            "$2\\pi$ cm",
+            "$4\\pi$ cm",
+            "$8\\pi$ cm"
+          ],
+          "solution": "Đáp án \\textbf{B}. $l = \\dfrac{n}{360} \\cdot 2\\pi R = \\dfrac{90}{360} \\cdot 2\\pi \\cdot 4 = 2\\pi$ (cm)."
         },
         {
           "type": "problem",
           "label": "Bài 2.",
           "level": 1,
           "tier": "onclass",
+          "dang_id": "NB1",
+          "statement": "[NB] Diện tích hình vành khuyên giữa hai đường tròn đồng tâm bán kính $5$ cm và $3$ cm bằng:",
           "figure_given": true,
-          "statement": "[NB] Cho $(O; R)$ và dây $AB$, kẻ $OH \\perp AB$ tại $H$. Khẳng định nào ĐÚNG?\\par\\vspace{4pt}\\parbox[t]{0.46\\linewidth}{\\textbf{A.} $H$ là trung điểm $AB$}\\parbox[t]{0.46\\linewidth}{\\textbf{B.} $H$ là trung điểm $OA$}\\par\\vspace{6pt}\\parbox[t]{0.46\\linewidth}{\\textbf{C.} $OH = R$}\\parbox[t]{0.46\\linewidth}{\\textbf{D.} $AB = 2R$}",
-          "solution": "Đáp án \\textbf{A}. Đường kính (hay bán kính) vuông góc với dây thì đi qua trung điểm dây.",
-          "dang_id": "NB1"
-        },
-        {
-          "type": "writelines",
-          "count": 0
+          "options": [
+            "$4\\pi$ cm$^2$",
+            "$16\\pi$ cm$^2$",
+            "$25\\pi$ cm$^2$",
+            "$34\\pi$ cm$^2$"
+          ],
+          "solution": "Đáp án \\textbf{B}. $S = \\pi R^2 - \\pi r^2 = 25\\pi - 9\\pi = 16\\pi$ (cm$^2$)."
         },
         {
           "type": "problem",
           "label": "Bài 3.",
           "level": 1,
           "tier": "onclass",
+          "dang_id": "NB2",
+          "statement": "[NB] $AB$ là tiếp tuyến của $(O)$ tại $B$. Khẳng định nào đúng?",
           "figure_given": true,
-          "statement": "[NB] Độ dài cung $90^\\circ$ của đường tròn bán kính $R = 4$ cm bằng:\\par\\vspace{4pt}\\parbox[t]{0.30\\linewidth}{\\textbf{A.} $2\\pi$ cm}\\parbox[t]{0.30\\linewidth}{\\textbf{B.} $4\\pi$ cm}\\par\\vspace{6pt}\\parbox[t]{0.30\\linewidth}{\\textbf{C.} $8\\pi$ cm}\\parbox[t]{0.30\\linewidth}{\\textbf{D.} $\\pi$ cm}",
-          "solution": "Đáp án \\textbf{A}. Cả đường tròn dài $C = 2\\pi \\cdot 4 = 8\\pi$ (cm); cung $90^\\circ$ chiếm $\\dfrac{1}{4}$ nên $l = \\dfrac{1}{4} \\cdot 8\\pi = 2\\pi$ (cm).",
-          "dang_id": "NB2"
-        },
-        {
-          "type": "writelines",
-          "count": 0
-        },
-        {
-          "type": "noted",
-          "variant": "example",
-          "text": "\\begin{minipage}[t]{0.58\\linewidth}\\vspace{0pt}\\textbf{Ví dụ 2.} Tính diện tích hình quạt tròn có bán kính $R = 6$ cm và góc ở tâm $120^\\circ$ (lấy $\\pi \\approx 3{,}14$). [[br]]{\\sffamily\\bfseries\\color{brand}Lời giải}[[br]]Cả hình tròn có diện tích $S = \\pi R^2 = \\pi \\cdot 6^2 = 36\\pi$ (cm$^2$). [[br]]Hình quạt $120^\\circ$ chiếm $\\dfrac{120}{360} = \\dfrac{1}{3}$ hình tròn. [[br]]Do đó $S_q = \\dfrac{1}{3} \\cdot 36\\pi = 12\\pi$ (cm$^2$). [[br]]Với $\\pi \\approx 3{,}14$ ta được $S_q \\approx 12 \\cdot 3{,}14 = 37{,}68$ (cm$^2$). [[br]]Vậy diện tích hình quạt khoảng $37{,}68$ cm$^2$.\\end{minipage}\\hfill\\begin{minipage}[t]{0.36\\linewidth}\\vspace{0pt}\n\\centering\n\\adjustbox{max width=\\linewidth, max totalheight=3.4cm}{\n\\begin{tikzpicture}[line width=0.8pt, font=\\small]\n  \\fill[ink!18] (0,0) -- (1.5,0) arc (0:120:1.5) -- cycle;\n  \\draw[ink] (0,0) circle (1.5);\n  \\draw[ink] (0,0) -- (1.5,0);\n  \\draw[ink] (0,0) -- (120:1.5);\n  \\fill[ink] (0,0) circle (1.2pt);\n  \\node[below left] at (0,0) {$O$};\n  \\node[below] at (0.75,0) {$6$};\n  \\node[above right] at (60:0.66) {$120^\\circ$};\n\\end{tikzpicture}\n}\n\\par\\vspace{2pt}{\\sffamily\\scriptsize\\itshape\\color{muted}Hình 2}\n\\end{minipage}"
+          "options": [
+            "$AB \\perp OA$",
+            "$AB \\perp OB$ tại $B$",
+            "$AB = OB$",
+            "$AB \\parallel OB$"
+          ],
+          "solution": "Đáp án \\textbf{B}. Tiếp tuyến vuông góc với bán kính tại tiếp điểm."
         },
         {
           "type": "problem",
           "label": "Bài 4.",
           "level": 1,
           "tier": "onclass",
+          "dang_id": "NB2",
+          "statement": "Trên Hình 2, $AB$, $AC$ là hai tiếp tuyến của $(O)$ tại $B$, $C$. Điền vào chỗ chấm:[[br]]a) [NB] Tia $AO$ là tia phân giác của góc [[blank:1.6cm]].[[br]]b) [NB] Tia $OA$ là tia phân giác của góc [[blank:1.6cm]].",
           "figure_given": true,
-          "statement": "[NB] Diện tích hình vành khuyên giữa hai đường tròn đồng tâm bán kính $5$ cm và $3$ cm bằng:\\par\\vspace{4pt}\\parbox[t]{0.30\\linewidth}{\\textbf{A.} $2\\pi$ cm$^2$}\\parbox[t]{0.30\\linewidth}{\\textbf{B.} $4\\pi$ cm$^2$}\\par\\vspace{6pt}\\parbox[t]{0.30\\linewidth}{\\textbf{C.} $16\\pi$ cm$^2$}\\parbox[t]{0.30\\linewidth}{\\textbf{D.} $34\\pi$ cm$^2$}",
-          "solution": "Đáp án \\textbf{C}. $\\pi R^2 = 25\\pi$; $\\pi r^2 = 9\\pi$; $S = 25\\pi - 9\\pi = 16\\pi$ (cm$^2$).",
-          "dang_id": "NB2"
+          "figure": {
+            "tikz": "\\begin{tikzpicture}[line width=0.8pt, font=\\small]\n  \\draw[ink] (0.0000,0.0000) circle (1.5000);\n  \\draw[ink] (3.2000,0.0000) -- (0.7031,1.3250);\n  \\draw[ink] (3.2000,0.0000) -- (0.7031,-1.3250);\n  \\draw[ink] (0.0000,0.0000) -- (0.7031,1.3250);\n  \\draw[ink] (0.0000,0.0000) -- (0.7031,-1.3250);\n  \\draw[ink] (0.0000,0.0000) -- (3.2000,0.0000);\n  \\draw[ink] (0.8268,1.2594) -- (0.7612,1.1357) -- (0.6375,1.2013);\n  \\draw[ink] (0.8268,-1.2594) -- (0.7612,-1.1357) -- (0.6375,-1.2013);\n  \\fill[ink] (0.0000,0.0000) circle (1.3pt);\n  \\fill[ink] (3.2000,0.0000) circle (1.3pt);\n  \\fill[ink] (0.7031,1.3250) circle (1.3pt);\n  \\fill[ink] (0.7031,-1.3250) circle (1.3pt);\n  \\node[inner sep=0pt] at (-0.2400,0.0000) {$O$};\n  \\node[inner sep=0pt] at (3.4400,0.0000) {$A$};\n  \\node[inner sep=0pt] at (0.8531,1.5848) {$B$};\n  \\node[inner sep=0pt] at (0.8531,-1.5848) {$C$};\n\\end{tikzpicture}",
+            "caption": "Hình 2",
+            "pos": "right"
+          },
+          "answer": "a) $\\widehat{BAC}$. [[br]]b) $\\widehat{BOC}$."
         },
         {
-          "type": "writelines",
-          "count": 0
+          "type": "noted",
+          "variant": "example",
+          "text": "\\textbf{Ví dụ 1.} Tam giác $ABO$ vuông tại $B$ có $OB = 3$ cm, $OA = 6$ cm. Tính $\\widehat{AOB}$ và $AB$.[[br]]{\\sffamily\\bfseries\\color{brand}Lời giải}[[br]]Xét $\\triangle ABO$ vuông tại $B$: $\\cos\\widehat{AOB} = [[fill:\\dfrac{OB}{OA}]] = [[fill:\\dfrac{3}{6}]] = \\dfrac{1}{2} \\Rightarrow \\widehat{AOB} = [[fill:60^\\circ]]$.[[br]]$AB = OA \\cdot \\sin\\widehat{AOB} = [[fill:6 \\cdot \\sin 60^\\circ]] = [[fill:3\\sqrt{3}]]$ (cm).[[br]]Vậy $\\widehat{AOB} = [[fill:60^\\circ]]$, $AB = [[fill:3\\sqrt{3}]]$ cm.",
+          "figure": {
+            "tikz": "\\begin{tikzpicture}[line width=0.8pt, font=\\small]\n  \\draw[ink] (0.0000,0.0000) -- (2.2000,0.0000) -- (2.2000,1.7000) -- cycle;\n  \\draw[ink] (2.0400,0.0000) -- (2.0400,0.1600) -- (2.2000,0.1600);\n  \\draw[brand] (0.4500,0.0000) arc (0.0000:37.6942:0.4500);\n  \\fill[ink] (0.0000,0.0000) circle (1.3pt);\n  \\fill[ink] (2.2000,0.0000) circle (1.3pt);\n  \\fill[ink] (2.2000,1.7000) circle (1.3pt);\n  \\node[inner sep=0pt] at (-0.2255,-0.0821) {$O$};\n  \\node[inner sep=0pt] at (2.3543,-0.1839) {$B$};\n  \\node[inner sep=0pt] at (2.3200,1.9078) {$A$};\n\\end{tikzpicture}",
+            "caption": "Hình 3",
+            "pos": "right"
+          }
         },
         {
           "type": "problem",
           "label": "Bài 5.",
           "level": 1,
           "tier": "onclass",
+          "dang_id": "NB3",
+          "statement": "Cho $\\triangle ABO$ vuông tại $B$ có $OB = 5$ cm, $OA = 10$ cm. Điền vào chỗ chấm:[[br]]a) [NB] $\\cos\\widehat{AOB} =$ [[blank:2.4cm]] $=$ [[blank:1.6cm]] $\\Rightarrow \\widehat{AOB} =$ [[blank:1.6cm]].[[br]]b) [NB] $AB = OA \\cdot \\sin\\widehat{AOB} =$ [[blank:2.4cm]] $=$ [[blank:1.6cm]] cm.[[br]]c) [NB] $\\tan\\widehat{AOB} = \\dfrac{AB}{OB} =$ [[blank:2.4cm]] $=$ [[blank:1.6cm]].",
           "figure_given": true,
-          "statement": "[[wrap]]\\makebox[0pt][l]{\\hspace{0.62\\linewidth}\\smash{\\raisebox{-1.75cm}{\\vtop{\\hbox{\\adjustbox{max width=0.32\\linewidth, max totalheight=2.6cm}{\n\\begin{tikzpicture}[line width=0.8pt, font=\\small]\n  \\draw[ink] (0,0) circle (1.2);\n  \\fill[ink] (0,0) circle (1.2pt);\n  \\node[below left] at (0,0) {$O$};\n  \\draw[ink] (0,0) -- (0.6,1.039);\n  \\draw[ink] (0,0) -- (0.6,-1.039);\n  \\draw[ink] (0.6,1.039) -- (2.4,0) -- (0.6,-1.039);\n  \\draw[ink] (0,0) -- (2.4,0);\n  \\draw[ink] (0.6,1.039) -- (0.6,-1.039);\n  \\draw[ink] (0.4900,0.8485) -- (0.6805,0.7385) -- (0.7905,0.9290);\n  \\draw[ink] (0.4900,-0.8485) -- (0.6805,-0.7385) -- (0.7905,-0.9290);\n  \\draw[ink] (0.8200,0.0000) -- (0.8200,0.2200) -- (0.6000,0.2200);\n  \\fill[ink] (0.6,0) circle (1.2pt);\n  \\node[below right] at (0.62,0) {$H$};\n  \\fill[ink] (1.2,0) circle (1.2pt);\n  \\node[above] at (1.2,0.06) {$I$};\n  \\node[above left] at (0.6,1.039) {$B$};\n  \\node[below left] at (0.6,-1.039) {$C$};\n  \\node[right] at (2.4,0) {$A$};\n\\end{tikzpicture}\n}}\n\\hbox to 0.32\\linewidth{\\hfil{\\sffamily\\scriptsize\\itshape\\color{muted}Hình 8}\\hfil}}}}}[[/wrap]]Trên Hình 8, $AB$, $AC$ là hai tiếp tuyến của $(O)$. Điền vào chỗ chấm: [[br]]a) [NB] $AB \\perp \\ldots\\ldots$ nên $\\widehat{ABO} = \\ldots\\ldots$ độ. [[br]]b) [NB] $AC \\perp \\ldots\\ldots$ nên $\\widehat{ACO} = \\ldots\\ldots$ độ. [[br]]c) [NB] Hai tam giác $ABO$ và $ACO$ có chung cạnh huyền là \\ldots\\ldots\\par\\vspace{1.63cm}",
-          "solution": "a) $AB \\perp OB$ nên $\\widehat{ABO} = 90^\\circ$. [[br]]b) $AC \\perp OC$ nên $\\widehat{ACO} = 90^\\circ$. [[br]]c) Cạnh huyền chung là $AO$.",
-          "dang_id": "NB3"
-        },
-        {
-          "type": "writelines",
-          "count": 2
+          "answer": "a) $\\dfrac{OB}{OA} = \\dfrac{5}{10} = \\dfrac{1}{2}$; $60^\\circ$. [[br]]b) $10 \\cdot \\sin 60^\\circ = 5\\sqrt{3}$ cm. [[br]]c) $\\dfrac{5\\sqrt{3}}{5} = \\sqrt{3}$."
         },
         {
           "type": "problem",
           "label": "Bài 6.",
           "level": 1,
           "tier": "onclass",
+          "dang_id": "NB4",
+          "statement": "Vẫn trên Hình 2, $I$ là trung điểm $AO$. Điền vào chỗ chấm:[[br]]a) [NB] $\\triangle ABO$ vuông tại $B$, trung tuyến $BI$ $\\Rightarrow BI =$ [[blank:1.6cm]] $= IA = IO$; tương tự $CI =$ [[blank:1.6cm]].[[br]]b) [NB] $\\Rightarrow A$, $B$, $O$, $C$ cùng thuộc đường tròn tâm [[blank:1.1cm]], bán kính [[blank:1.6cm]].",
           "figure_given": true,
-          "statement": "Vẫn trên Hình 8, $I$ là trung điểm của $AO$. Điền vào chỗ chấm: [[br]]a) [NB] Trong tam giác $ABO$ vuông tại $B$, $BI$ là đường \\ldots\\ldots ứng với cạnh huyền $AO$ nên $BI = \\ldots\\ldots$ [[br]]b) [NB] Tương tự $CI = \\ldots\\ldots$ [[br]]c) [NB] Vì $I$ là trung điểm $AO$ nên $IA = IO = \\ldots\\ldots$",
-          "solution": "a) $BI$ là đường trung tuyến, $BI = \\dfrac{AO}{2}$. [[br]]b) $CI = \\dfrac{AO}{2}$. [[br]]c) $IA = IO = \\dfrac{AO}{2}$.",
-          "dang_id": "NB4"
-        },
-        {
-          "type": "writelines",
-          "count": 2
-        },
-        {
-          "type": "noted",
-          "variant": "example",
-          "text": "\\begin{minipage}[t]{0.58\\linewidth}\\vspace{0pt}\\textbf{Ví dụ 3.} Trên Hình 3, $AB$, $AC$ là hai tiếp tuyến của $(O)$, $I$ là trung điểm $AO$, $AO$ cắt $BC$ tại $H$. Hãy chỉ ra hai góc vuông và nêu cạnh huyền chung của hai tam giác vuông đó. [[br]]{\\sffamily\\bfseries\\color{brand}Lời giải}[[br]]Vì $AB$ là tiếp tuyến của $(O)$ tại $B$ nên $AB \\perp OB$, suy ra $\\widehat{ABO} = 90^\\circ$. [[br]]Vì $AC$ là tiếp tuyến của $(O)$ tại $C$ nên $AC \\perp OC$, suy ra $\\widehat{ACO} = 90^\\circ$. [[br]]Hai tam giác $ABO$ và $ACO$ cùng vuông và có chung cạnh huyền $AO$. [[br]]Vậy hai góc vuông là $\\widehat{ABO}$, $\\widehat{ACO}$ và cạnh huyền chung là $AO$.\\end{minipage}\\hfill\\begin{minipage}[t]{0.36\\linewidth}\\vspace{0pt}\n\\centering\n\\adjustbox{max width=\\linewidth, max totalheight=3.0cm}{\n\\begin{tikzpicture}[line width=0.8pt, font=\\small]\n  \\draw[ink] (0,0) circle (1.2);\n  \\fill[ink] (0,0) circle (1.2pt);\n  \\node[below left] at (0,0) {$O$};\n  \\draw[ink] (0,0) -- (0.6,1.039);\n  \\draw[ink] (0,0) -- (0.6,-1.039);\n  \\draw[ink] (0.6,1.039) -- (2.4,0) -- (0.6,-1.039);\n  \\draw[ink] (0,0) -- (2.4,0);\n  \\draw[ink] (0.6,1.039) -- (0.6,-1.039);\n  \\draw[ink] (0.4900,0.8485) -- (0.6805,0.7385) -- (0.7905,0.9290);\n  \\draw[ink] (0.4900,-0.8485) -- (0.6805,-0.7385) -- (0.7905,-0.9290);\n  \\draw[ink] (0.8200,0.0000) -- (0.8200,0.2200) -- (0.6000,0.2200);\n  \\fill[ink] (0.6,0) circle (1.2pt);\n  \\node[below right] at (0.62,0) {$H$};\n  \\fill[ink] (1.2,0) circle (1.2pt);\n  \\node[above] at (1.2,0.06) {$I$};\n  \\node[above left] at (0.6,1.039) {$B$};\n  \\node[below left] at (0.6,-1.039) {$C$};\n  \\node[right] at (2.4,0) {$A$};\n\\end{tikzpicture}\n}\n\\par\\vspace{2pt}{\\sffamily\\scriptsize\\itshape\\color{muted}Hình 3}\n\\end{minipage}"
-        },
-        {
-          "type": "problem",
-          "label": "Bài 7.",
-          "level": 1,
-          "tier": "onclass",
-          "figure_given": true,
-          "statement": "Vẫn trên Hình 8, $AO$ cắt $BC$ tại $H$. Điền vào chỗ chấm: [[br]]a) [NB] $H$ nằm trên cạnh huyền \\ldots\\ldots của tam giác $ABO$ vuông tại $B$. [[br]]b) [NB] Vì $BH \\perp AO$ nên $BH$ là đường \\ldots\\ldots ứng với cạnh huyền. [[br]]c) [NB] Hệ thức cần chứng minh giữa $AB$, $AH$, $AO$ là $AB^2 = \\ldots\\ldots$",
-          "solution": "a) Cạnh huyền $AO$. [[br]]b) Đường cao. [[br]]c) $AB^2 = AH \\cdot AO$.",
-          "dang_id": "NB5"
-        },
-        {
-          "type": "writelines",
-          "count": 2
-        },
-        {
-          "type": "problem",
-          "label": "Bài 8.",
-          "level": 1,
-          "tier": "onclass",
-          "figure_given": true,
-          "statement": "Vẫn trên Hình 8. Điền vào chỗ chấm để hoàn thành ý a của đề: [[br]]a) [NB] Từ Bài 5 và Bài 6 ta có $IA = IB = IO = IC = \\ldots\\ldots$ [[br]]b) [NB] Vậy bốn điểm $A$, $B$, $O$, $C$ cùng thuộc đường tròn tâm \\ldots\\ldots, đường kính \\ldots\\ldots",
-          "solution": "a) $IA = IB = IO = IC = \\dfrac{AO}{2}$. [[br]]b) Tâm $I$ (trung điểm $AO$), đường kính $AO$.",
-          "dang_id": "NB6"
-        },
-        {
-          "type": "writelines",
-          "count": 2
-        },
-        {
-          "type": "problem",
-          "label": "Bài 9.",
-          "level": 1,
-          "tier": "onclass",
-          "figure_given": true,
-          "statement": "Vẫn trên Hình 8. Điền vào chỗ chấm để hoàn thành nửa đầu ý b của đề: [[br]]a) [NB] Vì $AB = AC$ và $OB = OC = R$ nên $AO$ là đường \\ldots\\ldots của đoạn $BC$. [[br]]b) [NB] Do đó $AO \\ldots\\ldots BC$ tại $H$ và $H$ là \\ldots\\ldots của $BC$.",
-          "solution": "a) Đường trung trực. [[br]]b) $AO \\perp BC$ tại $H$ và $H$ là trung điểm của $BC$.",
-          "dang_id": "NB7"
-        },
-        {
-          "type": "writelines",
-          "count": 2
-        },
-        {
-          "type": "problem",
-          "label": "Bài 10.",
-          "level": 1,
-          "tier": "onclass",
-          "figure_given": true,
-          "statement": "Cho $(O; R)$ và điểm $A$ với $OA = 2R$, hai tiếp tuyến $AB$, $AC$, $AO$ cắt $BC$ tại $H$. Điền vào chỗ chấm (theo $R$): [[br]]a) [NB] $AB^2 = OA^2 - OB^2 = (2R)^2 - R^2 = \\ldots\\ldots$, suy ra $AB = \\ldots\\ldots$ [[br]]b) [NB] Từ $AB^2 = AH \\cdot AO$ ta có $AH = \\dfrac{3R^2}{2R} = \\ldots\\ldots$ [[br]]c) [NB] $\\cos \\widehat{AOB} = \\dfrac{OB}{OA} = \\dfrac{R}{2R} = \\ldots$, nên $\\widehat{AOB} = \\ldots\\ldots$ độ.",
-          "solution": "a) $AB^2 = 3R^2$, suy ra $AB = R\\sqrt{3}$. [[br]]b) $AH = \\dfrac{3R}{2}$. [[br]]c) $\\cos \\widehat{AOB} = \\dfrac{1}{2}$ nên $\\widehat{AOB} = 60^\\circ$.",
-          "dang_id": "NB8"
-        },
-        {
-          "type": "writelines",
-          "count": 2
+          "answer": "a) $\\dfrac{AO}{2}$; $\\dfrac{AO}{2}$. [[br]]b) $I$; $\\dfrac{AO}{2}$."
         }
       ]
     },
@@ -258,101 +268,70 @@
       "kind": "practice2",
       "number": 4,
       "title": "Luyện tập 2",
-      "teacher_note": "Bài 13 là ĐỀ MẪU trọn vẹn theo định dạng Câu IV.2 — cho HS làm như đang thi, chấm theo từng ý. Nhắc HS ý a và b là phần phải lấy bằng được; ý c chỉ là thay số vào hai hệ thức vừa chứng minh.",
+      "teacher_note": "Bài 9 là ĐỀ MẪU Câu IV.2 dạng điền khuyết — khung trình bày HS chép lại nguyên nhịp khi làm bài kiểm tra ở nửa sau buổi. Không chấp nhận \\textquotedblleft áp dụng hệ thức lượng\\textquotedblright{} viết thẳng: phải có đồng dạng và diện tích.",
       "blocks": [
         {
           "type": "noted",
           "variant": "example",
-          "text": "\\begin{minipage}[t]{0.58\\linewidth}\\vspace{0pt}\\textbf{Ví dụ 4 (ý a của đề).} Cho $(O; R)$ và điểm $A$ ngoài $(O)$, hai tiếp tuyến $AB$, $AC$. Chứng minh bốn điểm $A$, $B$, $O$, $C$ cùng thuộc một đường tròn. [[br]]{\\sffamily\\bfseries\\color{brand}Lời giải}[[br]]Vì $AB$ là tiếp tuyến của $(O)$ tại $B$ nên $AB \\perp OB$, suy ra $\\widehat{ABO} = 90^\\circ$. [[br]]Vì $AC$ là tiếp tuyến của $(O)$ tại $C$ nên $AC \\perp OC$, suy ra $\\widehat{ACO} = 90^\\circ$. [[br]]Gọi $I$ là trung điểm của đoạn $AO$. [[br]]Xét tam giác $ABO$ vuông tại $B$ có $BI$ là đường trung tuyến ứng với cạnh huyền $AO$, nên $BI = \\dfrac{AO}{2}$. [[br]]Xét tam giác $ACO$ vuông tại $C$ có $CI$ là đường trung tuyến ứng với cạnh huyền $AO$, nên $CI = \\dfrac{AO}{2}$. [[br]]Mặt khác $IA = IO = \\dfrac{AO}{2}$. [[br]]Do đó $IA = IB = IO = IC = \\dfrac{AO}{2}$. [[br]]Vậy bốn điểm $A$, $B$, $O$, $C$ cùng thuộc đường tròn tâm $I$ đường kính $AO$.\\end{minipage}\\hfill\\begin{minipage}[t]{0.36\\linewidth}\\vspace{0pt}\n\\centering\n\\adjustbox{max width=\\linewidth, max totalheight=3.4cm}{\n\\begin{tikzpicture}[line width=0.8pt, font=\\small]\n  \\draw[ink] (0,0) circle (1.2);\n  \\draw[ink] (0,0) -- (0.6,1.0392);\n  \\draw[ink] (0,0) -- (0.6,-1.0392);\n  \\draw[ink] (0.6,1.0392) -- (2.4,0) -- (0.6,-1.0392);\n  \\draw[ink] (0,0) -- (2.4,0);\n  \\draw[ink, dashed] (1.2,0) circle (1.2);\n  \\draw[ink] (0.5,0.866) -- (0.6732,0.766) -- (0.7732,0.9392);\n  \\draw[ink] (0.5,-0.866) -- (0.6732,-0.766) -- (0.7732,-0.9392);\n  \\fill[ink] (0,0) circle (1.2pt);\n  \\node[below left] at (0,0) {$O$};\n  \\fill[ink] (1.2,0) circle (1.2pt);\n  \\node[below] at (1.2,-0.06) {$I$};\n  \\node[above left] at (0.6,1.0392) {$B$};\n  \\node[below left] at (0.6,-1.0392) {$C$};\n  \\node[right] at (2.4,0) {$A$};\n\\end{tikzpicture}\n}\n\\par\\vspace{2pt}{\\sffamily\\scriptsize\\itshape\\color{muted}Hình 4}\n\\end{minipage}"
+          "text": "\\textbf{Ví dụ 2.} Cho hình vuông $ABCD$ cạnh $6$ cm và đường tròn $(A; 6\\text{ cm})$ (Hình 4). Chứng minh $BC$ là tiếp tuyến của $(A; 6\\text{ cm})$.[[br]]{\\sffamily\\bfseries\\color{brand}Lời giải}[[br]]$AB = 6$ cm $= R$ $\\Rightarrow B$ [[fill:thuộc]] đường tròn $(A; 6\\text{ cm})$.[[br]]$ABCD$ là hình vuông $\\Rightarrow BC \\perp [[fill:AB]]$ tại $B$.[[br]]$BC$ đi qua $B$ thuộc đường tròn và vuông góc với bán kính $AB$ tại $B$.[[br]]Vậy $BC$ là [[fill:tiếp tuyến]] của $(A; 6\\text{ cm})$ tại $B$ ([[fill:Định lí 1]]).",
+          "figure": {
+            "tikz": "\\begin{tikzpicture}[line width=0.8pt, font=\\small]\n  \\draw[ink] (0,0) -- (1.7999999999999998,0) -- (1.7999999999999998,1.7999999999999998) -- (0,1.7999999999999998) -- cycle;\n  \\draw[ink] (1.7999999999999998,0) arc (0:90:1.7999999999999998);\n  \\draw[ink, dashed] (1.7999999999999998,0) arc (0:-40:1.7999999999999998); \\draw[ink, dashed] (0,1.7999999999999998) arc (90:130:1.7999999999999998);\n  \\draw[ink] (1.6500,0.0000) -- (1.6500,0.1500) -- (1.8000,0.1500);\n  \\fill[ink] (0.0000,0.0000) circle (1.3pt);\n  \\node[below left] at (0.0000,0.0000) {$A$};\n  \\fill[ink] (1.8000,0.0000) circle (1.3pt);\n  \\node[below right] at (1.8000,0.0000) {$B$};\n  \\fill[ink] (1.8000,1.8000) circle (1.3pt);\n  \\node[above right] at (1.8000,1.8000) {$C$};\n  \\fill[ink] (0.0000,1.8000) circle (1.3pt);\n  \\node[above left] at (0.0000,1.8000) {$D$};\n  \\node[below, font=\\scriptsize] at (0.9000,0.0000) {$6$ cm};\n\\end{tikzpicture}",
+            "caption": "Hình 4",
+            "pos": "right"
+          }
         },
         {
           "type": "problem",
-          "label": "Bài 11.",
+          "label": "Bài 7.",
           "level": 2,
           "tier": "onclass",
-          "statement": "[TH] Cho tam giác $ABC$ vuông tại $A$, đường cao $AH$. Vẽ đường tròn tâm $A$ bán kính $AH$. Chứng minh $BC$ là tiếp tuyến của đường tròn $(A; AH)$.",
-          "solution": "Vì $AH$ là đường cao của tam giác $ABC$ nên $AH \\perp BC$ tại $H$. [[br]]Điểm $H$ cách tâm $A$ một khoảng bằng $AH$, đúng bằng bán kính của đường tròn $(A; AH)$, nên $H$ thuộc đường tròn đó. [[br]]Đường thẳng $BC$ đi qua điểm $H$ thuộc $(A; AH)$ và vuông góc với bán kính $AH$ tại chính điểm $H$. [[br]]Vậy $BC$ là tiếp tuyến của đường tròn $(A; AH)$ tại $H$.",
-          "dang_id": "TH1"
-        },
-        {
-          "type": "writelines",
-          "count": 4
-        },
-        {
-          "type": "noted",
-          "variant": "example",
-          "text": "\\begin{minipage}[t]{0.58\\linewidth}\\vspace{0pt}\\textbf{Ví dụ 5 (ý b của đề).} Với giả thiết như Ví dụ 4, gọi $H$ là giao điểm của $AO$ và $BC$. Chứng minh $AO \\perp BC$ và $AB^2 = AH \\cdot AO$. [[br]]{\\sffamily\\bfseries\\color{brand}Lời giải}[[br]]Vì $AB$, $AC$ là hai tiếp tuyến của $(O)$ cắt nhau tại $A$ nên $AB = AC$, do đó $A$ cách đều $B$ và $C$. [[br]]Mặt khác $OB = OC = R$ nên $O$ cũng cách đều $B$ và $C$. [[br]]Hai điểm phân biệt $A$ và $O$ cùng cách đều $B$ và $C$ nên $AO$ là đường trung trực của đoạn $BC$. [[br]]Do đó $AO \\perp BC$ tại $H$, suy ra $\\widehat{AHB} = 90^\\circ$. [[br]]Xét hai tam giác $AHB$ và $ABO$ có: $\\widehat{BAH}$ chung; $\\widehat{AHB} = \\widehat{ABO} = 90^\\circ$. [[br]]Do đó $\\triangle AHB \\backsim \\triangle ABO$ (g.g). [[br]]Suy ra $\\dfrac{AH}{AB} = \\dfrac{AB}{AO}$, nhân chéo được $AB^2 = AH \\cdot AO$. [[br]]Vậy $AO \\perp BC$ và $AB^2 = AH \\cdot AO$.\\end{minipage}\\hfill\\begin{minipage}[t]{0.36\\linewidth}\\vspace{0pt}\n\\centering\n\\adjustbox{max width=\\linewidth, max totalheight=3.4cm}{\n\\begin{tikzpicture}[line width=0.8pt, font=\\small]\n  \\fill[ink!16] (2.4,0) -- (0.6,0) -- (0.6,1.0392) -- cycle;\n  \\draw[ink] (0,0) circle (1.2);\n  \\draw[ink] (0,0) -- (0.6,1.0392);\n  \\draw[ink] (0,0) -- (0.6,-1.0392);\n  \\draw[ink] (0.6,1.0392) -- (2.4,0) -- (0.6,-1.0392);\n  \\draw[ink] (0,0) -- (2.4,0);\n  \\draw[ink] (0.6,1.0392) -- (0.6,-1.0392);\n  \\draw[ink] (0.5,0.866) -- (0.6732,0.766) -- (0.7732,0.9392);\n  \\draw[ink] (0.8,0) -- (0.8,0.2) -- (0.6,0.2);\n  \\fill[ink] (0,0) circle (1.2pt);\n  \\node[below left] at (0,0) {$O$};\n  \\fill[ink] (0.6,0) circle (1.2pt);\n  \\node[below left] at (0.6,0) {$H$};\n  \\node[above left] at (0.6,1.0392) {$B$};\n  \\node[below left] at (0.6,-1.0392) {$C$};\n  \\node[right] at (2.4,0) {$A$};\n\\end{tikzpicture}\n}\n\\par\\vspace{2pt}{\\sffamily\\scriptsize\\itshape\\color{muted}Hình 5}\n\\end{minipage}"
-        },
-        {
-          "type": "problem",
-          "label": "Bài 12.",
-          "level": 2,
-          "tier": "onclass",
+          "dang_id": "TH1",
           "statement": "[TH] Cho đường tròn $(O; 5\\text{ cm})$ và điểm $A$ với $OA = 13$ cm. Trên đường tròn lấy điểm $B$ sao cho $AB = 12$ cm. Chứng minh $AB$ là tiếp tuyến của $(O)$.",
-          "solution": "Ta có $AB^2 + OB^2 = 12^2 + 5^2 = 144 + 25 = 169$ (cm$^2$). [[br]]Mặt khác $OA^2 = 13^2 = 169$ (cm$^2$). [[br]]Do đó $AB^2 + OB^2 = OA^2$. [[br]]Theo định lí Pythagore đảo, tam giác $ABO$ vuông tại $B$, suy ra $AB \\perp OB$ tại $B$. [[br]]Điểm $B$ thuộc đường tròn $(O)$ và $AB$ vuông góc với bán kính $OB$ tại chính $B$. [[br]]Vậy $AB$ là tiếp tuyến của $(O)$ tại $B$.",
-          "dang_id": "TH1"
-        },
-        {
-          "type": "writelines",
-          "count": 4
-        },
-        {
-          "type": "noted",
-          "variant": "example",
-          "text": "\\begin{minipage}[t]{0.58\\linewidth}\\vspace{0pt}\\textbf{Ví dụ 6.} Cho tam giác $ABC$ vuông tại $A$, đường cao $AH$ (Hình 6). Vẽ đường tròn tâm $A$ bán kính $AH$. Chứng minh $BC$ là tiếp tuyến của đường tròn $(A; AH)$. [[br]]{\\sffamily\\bfseries\\color{brand}Lời giải}[[br]]Vì $AH$ là đường cao của tam giác $ABC$ nên $AH \\perp BC$ tại $H$. [[br]]Điểm $H$ cách tâm $A$ một khoảng $AH$ đúng bằng bán kính, nên $H$ thuộc đường tròn $(A; AH)$. [[br]]Đường thẳng $BC$ đi qua điểm $H$ thuộc $(A; AH)$ và vuông góc với bán kính $AH$ tại chính $H$. [[br]]Vậy $BC$ là tiếp tuyến của đường tròn $(A; AH)$ tại $H$.\\end{minipage}\\hfill\\begin{minipage}[t]{0.36\\linewidth}\\vspace{0pt}\n\\centering\n\\adjustbox{max width=\\linewidth, max totalheight=3.0cm}{\n\\begin{tikzpicture}[line width=0.8pt, font=\\small]\n  \\draw[ink] (0,0) -- (4,0) -- (1,1.7321) -- cycle;\n  \\draw[ink] (1,1.7321) -- (1,0);\n  \\draw[ink] (1,1.7321) circle (1.7321);\n  \\draw[ink] (0.8900,1.5416) -- (1.0805,1.4316) -- (1.1905,1.6221);\n  \\draw[ink] (1.0000,0.2200) -- (1.2200,0.2200) -- (1.2200,0.0000);\n  \\node[below left] at (0,0) {$B$};\n  \\node[below right] at (4,0) {$C$};\n  \\node[above right] at (1,1.7321) {$A$};\n  \\node[below] at (1,0) {$H$};\n\\end{tikzpicture}\n}\n\\par\\vspace{2pt}{\\sffamily\\scriptsize\\itshape\\color{muted}Hình 6}\n\\end{minipage}"
-        },
-        {
-          "type": "noted",
-          "variant": "example",
-          "text": "\\begin{minipage}[t]{0.60\\linewidth}\\vspace{0pt}\\textbf{Ví dụ 7 (bài toán thực tế — dạng Câu IV.1 của đề thi).} Một chiếc quạt giấy khi xòe ra hết cỡ có dạng nửa hình tròn tâm $O$ bán kính $2{,}2$ dm. Khi gấp lại, phần giấy có chiều dài $1{,}6$ dm. Lấy $\\pi \\approx 3{,}14$, làm tròn đến chữ số thập phân thứ hai. [[br]]\\textbf{a)} Cung tròn lớn nhất khi quạt xòe ra dài bao nhiêu decimét? [[br]]\\textbf{b)} Tính diện tích phần giấy của chiếc quạt. [[br]]{\\sffamily\\bfseries\\color{brand}Lời giải}[[br]]a) Cung lớn nhất là nửa đường tròn bán kính $R = 2{,}2$ dm, tức cung $180^\\circ$, chiếm $\\dfrac{180}{360} = \\dfrac{1}{2}$ đường tròn.[[br]]Cả đường tròn dài $C = 2\\pi R = 2\\pi \\cdot 2{,}2 = 4{,}4\\pi$ (dm).[[br]]Do đó $l = \\dfrac{1}{2} \\cdot 4{,}4\\pi = 2{,}2\\pi \\approx 2{,}2 \\cdot 3{,}14 = 6{,}908 \\approx 6{,}91$ (dm).[[br]]Vậy cung lớn nhất dài khoảng $6{,}91$ dm.[[br]]b) Phần giấy dài $1{,}6$ dm tính từ mép ngoài vào nên bán kính vòng trong là $r = 2{,}2 - 1{,}6 = 0{,}6$ (dm).[[br]]Phần giấy là \\textbf{nửa} hình vành khuyên giới hạn bởi hai nửa đường tròn bán kính $2{,}2$ dm và $0{,}6$ dm.[[br]]Diện tích hình tròn lớn là $\\pi R^2 = \\pi \\cdot 2{,}2^2 = 4{,}84\\pi$ (dm$^2$); hình tròn nhỏ là $\\pi r^2 = \\pi \\cdot 0{,}6^2 = 0{,}36\\pi$ (dm$^2$).[[br]]Cả hình vành khuyên có diện tích $4{,}84\\pi - 0{,}36\\pi = 4{,}48\\pi$ (dm$^2$).[[br]]Phần giấy chỉ là một nửa nên $S = \\dfrac{1}{2} \\cdot 4{,}48\\pi = 2{,}24\\pi \\approx 2{,}24 \\cdot 3{,}14 = 7{,}0336 \\approx 7{,}03$ (dm$^2$).[[br]]Vậy diện tích phần giấy của chiếc quạt khoảng $7{,}03$ dm$^2$.\\end{minipage}\\hfill\\begin{minipage}[t]{0.34\\linewidth}\\vspace{0pt}\n\\centering\n\\adjustbox{max width=\\linewidth, max totalheight=3.0cm}{\n\\begin{tikzpicture}[line width=0.8pt, font=\\small]\n  \\fill[ink!18] (0.409,0) -- (1.5,0) arc (0:180:1.5) -- (-0.409,0) arc (180:0:0.409);\n  \\draw[ink] (1.5,0) arc (0:180:1.5);\n  \\draw[ink] (0.409,0) arc (0:180:0.409);\n  \\draw[ink] (-1.5,0) -- (-0.409,0);\n  \\draw[ink] (0.409,0) -- (1.5,0);\n  \\foreach \\a in {30,60,90,120,150}{\\draw[ink] (\\a:0.409) -- (\\a:1.5);}\n  \\foreach \\a in {0,30,...,180}{\\draw[ink] (0,0) -- (\\a:0.409);}\n  \\fill[ink] (0,0) circle (1.2pt);\n  \\node[below] at (0,0) {$O$};\n  \\node[below] at (0.95,-0.02) {$1{,}6$ dm};\n  \\node[below] at (-0.95,-0.02) {$2{,}2$ dm};\n\\end{tikzpicture}\n}\n\\par\\vspace{2pt}{\\sffamily\\scriptsize\\itshape\\color{muted}Hình 7}\n\\end{minipage}"
+          "figure_given": false,
+          "hints": [
+            "Ba cạnh $OB$, $AB$, $OA$ có thoả mãn hệ thức Pythagore không?",
+            "Nếu $\\triangle ABO$ vuông thì vuông ở đâu?"
+          ],
+          "answer": "Xét $\\triangle ABO$: $AB^2 + OB^2 = 12^2 + 5^2 = 169 = 13^2 = OA^2$.[[br]]$\\Rightarrow \\triangle ABO$ vuông tại $B$ (định lí Pythagore đảo) $\\Rightarrow AB \\perp OB$ tại $B$.[[br]]Mà $B \\in (O)$.[[br]]Vậy $AB$ là tiếp tuyến của $(O)$ tại $B$ (Định lí 1)."
         },
         {
           "type": "problem",
-          "label": "Bài 13.",
+          "label": "Bài 8.",
           "level": 2,
           "tier": "onclass",
           "dang_id": "TH2",
+          "statement": "[TH] Từ điểm $A$ ngoài $(O; R)$ kẻ hai tiếp tuyến $AB$, $AC$ ($B$, $C$ là tiếp điểm), $AO$ cắt $BC$ tại $H$, biết $OA = 2R$ và $AO \\perp BC$. Tính $AB$ và $BH$ theo $R$.",
           "figure_given": false,
-          "statement": "Cho đường tròn $(O; 8\\text{ cm})$ và điểm $A$ nằm ngoài đường tròn với $OA = 10$ cm. Kẻ hai tiếp tuyến $AB$, $AC$ của $(O)$ ($B$, $C$ là hai tiếp điểm), $AO$ cắt $BC$ tại $H$. [TH] Chứng minh $AO \\perp BC$ tại $H$ và $AB^2 = AH \\cdot AO$.",
-          "solution": "\\textbf{Lời giải:}\\\\\nVì $AB, AC$ là hai tiếp tuyến của $(O)$ cắt nhau tại $A$ nên $AB = AC$ và $OB = OC = R$, suy ra $AO$ là đường trung trực của $BC$, do đó $AO \\perp BC$ tại $H$.\\\\\nVì $AB$ là tiếp tuyến tại $B$ nên tam giác $ABO$ vuông tại $B$.\\\\\nÁp dụng hệ thức lượng trong tam giác $ABO$ vuông tại $B$, đường cao $BH$, ta có:\\\\\n\\hspace*{1.4em}$AB^2 = AH \\cdot AO$ (đpcm).\\\\\nVậy $AB^2 = AH \\cdot AO$."
+          "hints": [
+            "Tam giác vuông nào chứa $AB$ và đã biết hai cạnh theo $R$?",
+            "Góc $AOB$ bằng bao nhiêu? $BH$ nằm trong tam giác vuông nào có góc đó?"
+          ],
+          "answer": "$AB$ là tiếp tuyến tại $B$ $\\Rightarrow \\triangle ABO$ vuông tại $B$.[[br]]Theo định lí Pythagore: $AB^2 = OA^2 - OB^2 = 4R^2 - R^2 = 3R^2 \\Rightarrow AB = R\\sqrt{3}$.[[br]]$\\cos\\widehat{AOB} = \\dfrac{OB}{OA} = \\dfrac{1}{2} \\Rightarrow \\widehat{AOB} = 60^\\circ$.[[br]]Xét $\\triangle OHB$ vuông tại $H$: $BH = OB \\cdot \\sin 60^\\circ = \\dfrac{R\\sqrt{3}}{2}$.[[br]]Vậy $AB = R\\sqrt{3}$, $BH = \\dfrac{R\\sqrt{3}}{2}$."
         },
         {
-          "type": "writelines",
-          "count": 1
+          "type": "noted",
+          "variant": "example",
+          "text": "\\textbf{Ví dụ 3.} Từ điểm $M$ ngoài $(O; 3\\text{ cm})$ với $OM = 5$ cm kẻ hai tiếp tuyến $MA$, $MB$; $OM$ cắt $AB$ tại $K$ (Hình 5). Chứng minh $OM \\perp AB$ tại $K$, rồi tính $MA$ và $AB$.[[br]]{\\sffamily\\bfseries\\color{brand}Lời giải}[[br]]$MA = MB$ (Định lí 2) $\\Rightarrow \\triangle MAB$ cân tại $M$.[[br]]$MO$ là tia [[fill:phân giác]] của $\\widehat{AMB}$ (Định lí 2).[[br]]$\\Rightarrow MK$ đồng thời là [[fill:đường cao]], trung tuyến $\\Rightarrow OM \\perp AB$ tại trung điểm $K$.[[br]]Xét $\\triangle MAO$ vuông tại $A$, theo định lí Pythagore:[[br]]$MA^2 = [[fill:OM^2 - OA^2]] = [[fill:5^2 - 3^2]] = [[fill:16]] \\Rightarrow MA = [[fill:4]]$ (cm).[[br]]Hai lần diện tích $\\triangle MAO$: $MA \\cdot OA = MO \\cdot AK \\Rightarrow AK = [[fill:\\dfrac{4 \\cdot 3}{5}]] = [[fill:2{,}4]]$ (cm).[[br]]$\\Rightarrow AB = 2AK = [[fill:4{,}8]]$ (cm).[[br]]Vậy $MA = [[fill:4]]$ cm, $AB = [[fill:4{,}8]]$ cm.",
+          "figure": {
+            "tikz": "\\begin{tikzpicture}[line width=0.8pt, font=\\small]\n  \\draw[ink] (0.0000,0.0000) circle (1.8000);\n  \\draw[ink] (3.0000,0.0000) -- (1.0800,1.4400);\n  \\draw[ink] (3.0000,0.0000) -- (1.0800,-1.4400);\n  \\draw[ink] (0.0000,0.0000) -- (1.0800,1.4400);\n  \\draw[ink] (0.0000,0.0000) -- (3.0000,0.0000);\n  \\draw[ink] (1.0800,1.4400) -- (1.0800,-1.4400);\n  \\draw[ink] (1.1920,1.3560) -- (1.1080,1.2440) -- (0.9960,1.3280);\n  \\draw[ink] (1.0800,0.1200) -- (1.2000,0.1200) -- (1.2000,0.0000);\n  \\fill[ink] (0.0000,0.0000) circle (1.3pt);\n  \\fill[ink] (3.0000,0.0000) circle (1.3pt);\n  \\fill[ink] (1.0800,1.4400) circle (1.3pt);\n  \\fill[ink] (1.0800,-1.4400) circle (1.3pt);\n  \\fill[ink] (1.0800,0.0000) circle (1.3pt);\n  \\node[inner sep=0pt] at (-0.2078,-0.1200) {$O$};\n  \\node[inner sep=0pt] at (3.2400,0.0000) {$M$};\n  \\node[inner sep=0pt] at (1.2728,1.6698) {$A$};\n  \\node[inner sep=0pt] at (1.2728,-1.6698) {$B$};\n  \\node[inner sep=0pt] at (0.9257,0.1839) {$K$};\n\\end{tikzpicture}",
+            "caption": "Hình 5",
+            "pos": "right"
+          }
         },
         {
           "type": "problem",
-          "label": "Bài 14.",
-          "level": 2,
-          "tier": "onclass",
-          "dang_id": "TH3",
-          "figure_given": false,
-          "statement": "Với giả thiết như Bài 13, biết $R = 8$ cm, $OA = 10$ cm và $AO \\perp BC$ tại $H$. [TH] Tính độ dài các đoạn thẳng $AB$, $AH$, $BH$ và suy ra độ dài dây $BC$.",
-          "solution": "\\textbf{Lời giải:}\\\\\nÁp dụng định lý Pythagore trong tam giác $ABO$ vuông tại $B$:\\\\\n\\hspace*{1.4em}$AB = \\sqrt{OA^2 - OB^2} = \\sqrt{10^2 - 8^2} = 6\\text{ cm}$.\\\\\nÁp dụng hệ thức lượng trong tam giác vuông $ABO$:\\\\\n\\hspace*{1.4em}$AH = \\dfrac{AB^2}{AO} = \\dfrac{6^2}{10} = 3{,}6\\text{ cm}$.\\\\\n\\hspace*{1.4em}$BH = \\dfrac{AB \\cdot OB}{AO} = \\dfrac{6 \\cdot 8}{10} = 4{,}8\\text{ cm}$.\\\\\nVì $AO \\perp BC$ tại $H$ nên $H$ là trung điểm của dây $BC$, suy ra:\\\\\n\\hspace*{1.4em}$BC = 2 \\cdot BH = 2 \\cdot 4{,}8 = 9{,}6\\text{ cm}$.\\\\\nVậy $AB = 6\\text{ cm}$, $AH = 3{,}6\\text{ cm}$, $BH = 4{,}8\\text{ cm}$ và $BC = 9{,}6\\text{ cm}$."
-        },
-        {
-          "type": "writelines",
-          "count": 1
-        },
-        {
-          "type": "problem",
-          "label": "Bài 15.",
+          "label": "Bài 9.",
           "level": 3,
           "tier": "onclass",
           "dang_id": "VD1",
-          "figure_given": false,
-          "statement": "\\textbf{ĐỀ MẪU — làm như đang thi.} Cho đường tròn $(O; R)$ và điểm $A$ nằm ngoài $(O)$ sao cho $OA = 2R$. Từ $A$ kẻ hai tiếp tuyến $AB$, $AC$ với $(O)$ ($B$, $C$ là hai tiếp điểm), $AO$ cắt $BC$ tại $H$. [VD] Chứng minh bốn điểm $A, B, O, C$ cùng thuộc một đường tròn và tính $AB, AH, BC$ theo $R$.",
-          "quy_trinh": [
-            "Xác định hai tiếp tuyến $AB, AC$ vuông góc với các bán kính $OB, OC$.",
-            "Chứng minh bốn điểm $A, B, O, C$ cùng cách đều trung điểm $I$ của $AO$ một khoảng $AO/2$.",
-            "Dùng định lý Pythagore và hệ thức lượng trong tam giác vuông $ABO$ vuông tại $B$.",
-            "Tính các đoạn thẳng $AB, AH, BH$ và suy ra $BC = 2BH$ theo bán kính $R$."
-          ],
-          "solution": "\\textbf{Lời giải:}\\\\\n1. Vì $AB, AC$ là hai tiếp tuyến của $(O)$ nên $\\widehat{ABO} = 90^\\circ$ và $\\widehat{ACO} = 90^\\circ$.\\\\\nGọi $I$ là trung điểm của $AO$. Trong tam giác vuông $ABO$, $BI = \\dfrac{1}{2}AO$. Trong tam giác vuông $ACO$, $CI = \\dfrac{1}{2}AO$.\\\\\nSuy ra $IA = IB = IO = IC = \\dfrac{AO}{2}$, nên bốn điểm $A, B, O, C$ cùng thuộc đường tròn đường kính $AO$.\\\\\n2. Vì $AB, AC$ là hai tiếp tuyến cắt nhau nên $AB = AC$ và $OB = OC = R$, suy ra $AO$ là đường trung trực của $BC$, do đó $AO \\perp BC$ tại trung điểm $H$ của $BC$.\\\\\nTrong tam giác $ABO$ vuông tại $B$:\\\\\n\\hspace*{1.4em}$AB = \\sqrt{OA^2 - OB^2} = \\sqrt{(2R)^2 - R^2} = R\\sqrt{3}$.\\\\\nÁp dụng hệ thức lượng:\\\\\n\\hspace*{1.4em}$AH = \\dfrac{AB^2}{AO} = \\dfrac{3R^2}{2R} = \\dfrac{3R}{2}$.\\\\\n\\hspace*{1.4em}$BH = \\dfrac{AB \\cdot OB}{AO} = \\dfrac{R\\sqrt{3} \\cdot R}{2R} = \\dfrac{R\\sqrt{3}}{2} \\implies BC = 2 \\cdot BH = R\\sqrt{3}$.\\\\\nVậy bốn điểm $A, B, O, C$ cùng thuộc đường tròn đường kính $AO$, $AB = R\\sqrt{3}$, $AH = \\dfrac{3R}{2}$ và $BC = R\\sqrt{3}$."
-        },
-        {
-          "type": "writelines",
-          "count": 2
+          "statement": "[VD] \\textbf{Đề mẫu — hoàn thành bài giải.} Cho $(O; 6\\text{ cm})$ và điểm $A$ với $OA = 10$ cm. Kẻ hai tiếp tuyến $AB$, $AC$ ($B$, $C$ là tiếp điểm), $AO$ cắt $BC$ tại $H$ (Hình 6).[[br]]a) Chứng minh bốn điểm $A$, $B$, $O$, $C$ cùng thuộc một đường tròn.[[br]]$AB$, $AC$ là tiếp tuyến $\\Rightarrow \\widehat{ABO} = \\widehat{ACO} =$ [[blank:1.6cm]].[[br]]Gọi $I$ là trung điểm $AO$.[[br]]$\\triangle ABO$, $\\triangle ACO$ vuông có trung tuyến $BI$, $CI$ $\\Rightarrow IA = IB = IO = IC =$ [[blank:1.6cm]].[[br]]Vậy $A$, $B$, $O$, $C$ cùng thuộc đường tròn tâm [[blank:1.1cm]], bán kính [[blank:1.6cm]].[[br]]b) Chứng minh $AO \\perp BC$ tại $H$ và $AB^2 = AH \\cdot AO$.[[br]]$AB = AC$ ([[blank:2.4cm]]), $OB = OC = R$ $\\Rightarrow A$, $O$ cùng cách đều $B$, $C$.[[br]]$\\Rightarrow AO$ là [[blank:3.2cm]] của $BC$ $\\Rightarrow AO \\perp BC$ tại $H$.[[br]]Xét $\\triangle AHB$ và $\\triangle ABO$: $\\widehat{A}$ chung, $\\widehat{AHB} = \\widehat{ABO} = 90^\\circ$.[[br]]$\\Rightarrow \\triangle AHB \\backsim$ [[blank:1.6cm]] (g.g) $\\Rightarrow \\dfrac{AH}{AB} =$ [[blank:1.6cm]].[[br]]Vậy $AB^2 = AH \\cdot AO$.[[br]]c) Tính $AB$, $AH$ và $BC$.[[br]]Xét $\\triangle ABO$ vuông tại $B$, theo định lí Pythagore:[[br]]$AB^2 = OA^2 - OB^2 =$ [[blank:2.4cm]] $=$ [[blank:1.1cm]] $\\Rightarrow AB =$ [[blank:1.1cm]] cm.[[br]]$AH = \\dfrac{AB^2}{AO} =$ [[blank:1.6cm]] cm.[[br]]Hai lần diện tích $\\triangle ABO$: $AB \\cdot OB = AO \\cdot BH \\Rightarrow BH =$ [[blank:2.4cm]] $=$ [[blank:1.1cm]] cm.[[br]]$\\Rightarrow BC = 2BH =$ [[blank:1.1cm]] cm.[[br]]Vậy $AB =$ [[blank:1.1cm]] cm, $AH =$ [[blank:1.1cm]] cm, $BC =$ [[blank:1.1cm]] cm.",
+          "figure_given": true,
+          "figure": {
+            "tikz": "\\begin{tikzpicture}[line width=0.8pt, font=\\small]\n  \\draw[ink] (0.0000,0.0000) circle (1.5000);\n  \\draw[ink] (2.5000,0.0000) -- (0.9000,1.2000);\n  \\draw[ink] (2.5000,0.0000) -- (0.9000,-1.2000);\n  \\draw[ink] (0.0000,0.0000) -- (0.9000,1.2000);\n  \\draw[ink] (0.0000,0.0000) -- (0.9000,-1.2000);\n  \\draw[ink] (0.0000,0.0000) -- (2.5000,0.0000);\n  \\draw[ink] (1.0120,1.1160) -- (0.9280,1.0040) -- (0.8160,1.0880);\n  \\draw[ink] (1.0120,-1.1160) -- (0.9280,-1.0040) -- (0.8160,-1.0880);\n  \\draw[ink] (0.9000,1.2000) -- (0.9000,-1.2000);\n  \\draw[ink] (0.9000,0.1200) -- (1.0200,0.1200) -- (1.0200,0.0000);\n  \\fill[ink] (0.0000,0.0000) circle (1.3pt);\n  \\fill[ink] (2.5000,0.0000) circle (1.3pt);\n  \\fill[ink] (0.9000,1.2000) circle (1.3pt);\n  \\fill[ink] (0.9000,-1.2000) circle (1.3pt);\n  \\fill[ink] (0.9000,0.0000) circle (1.3pt);\n  \\node[inner sep=0pt] at (-0.2400,0.0000) {$O$};\n  \\node[inner sep=0pt] at (2.7400,0.0000) {$A$};\n  \\node[inner sep=0pt] at (1.0928,1.4298) {$B$};\n  \\node[inner sep=0pt] at (1.0928,-1.4298) {$C$};\n  \\node[inner sep=0pt] at (0.7457,0.1839) {$H$};\n\\end{tikzpicture}",
+            "caption": "Hình 6",
+            "pos": "right"
+          },
+          "answer": "a) $90^\\circ$; $\\dfrac{AO}{2}$; $I$; $\\dfrac{AO}{2} = 5$ cm.[[br]]b) Định lí 2; đường trung trực; $\\triangle ABO$; $\\dfrac{AB}{AO}$.[[br]]c) $10^2 - 6^2 = 64$; $AB = 8$ cm; $AH = \\dfrac{64}{10} = 6{,}4$ cm; $BH = \\dfrac{8 \\cdot 6}{10} = 4{,}8$ cm; $BC = 9{,}6$ cm.[[br]]Vậy $AB = 8$ cm, $AH = 6{,}4$ cm, $BC = 9{,}6$ cm."
         }
       ]
     },
@@ -360,7 +339,7 @@
       "kind": "reflection",
       "number": 5,
       "title": "Sơ đồ tư duy",
-      "teacher_note": "Sơ đồ này là bản tổng kết cả chương — bảo HS dán vào sổ tay để ôn trước kì thi. BTVN 17 là đề mẫu thứ hai, giao về nhà làm trọn vẹn như đi thi.",
+      "teacher_note": "Sơ đồ là bản tổng kết cả chương — bảo HS dán vào sổ tay. BTVN 10 là đề mẫu thứ hai (HS tự vẽ hình, làm như đi thi) — chữa sau khi trả bài kiểm tra chương.",
       "blocks": [
         {
           "type": "mindmap",
@@ -385,13 +364,13 @@
               "label": "DÂY",
               "children": [
                 {
-                  "label": "$OH \\perp AB \\Rightarrow H$ trung điểm, $AH = \\dfrac{AB}{2}$"
+                  "label": "$\\triangle OAB$ cân tại $O$: đường cao $OH$ = trung tuyến"
                 },
                 {
-                  "label": "$R^2 = OH^2 + AH^2$"
+                  "label": "$AH = \\dfrac{AB}{2}$; $R^2 = OH^2 + AH^2$"
                 },
                 {
-                  "label": "Dây lớn hơn $\\Leftrightarrow$ gần tâm hơn"
+                  "label": "Dây lớn hơn $\\Leftrightarrow$ gần tâm hơn (từ Pythagore)"
                 }
               ]
             },
@@ -419,13 +398,16 @@
                   "label": "B1. $\\widehat{ABO} = \\widehat{ACO} = 90^\\circ$"
                 },
                 {
+                  "label": "Định lí 2: $AB = AC$, $AO$ và $OA$ là hai tia phân giác"
+                },
+                {
                   "label": "B2. $I$ trung điểm $AO$ $\\Rightarrow$ 4 điểm cùng đường tròn"
                 },
                 {
                   "label": "B3. $AO$ trung trực $BC \\Rightarrow AO \\perp BC$ tại $H$"
                 },
                 {
-                  "label": "B4. $AB^2 = AH \\cdot AO$ · $BH = \\dfrac{AB \\cdot OB}{AO}$ · $BC = 2BH$"
+                  "label": "B4. Đồng dạng: $AB^2 = AH \\cdot AO$ · diện tích: $BH$ · $BC = 2BH$"
                 }
               ]
             },
@@ -442,12 +424,19 @@
                   "label": "Cách 3: hai tam giác bằng nhau $\\Rightarrow$ góc $90^\\circ$"
                 }
               ]
+            },
+            {
+              "label": "TỈ SỐ LƯỢNG GIÁC (Ch. IV)",
+              "children": [
+                {
+                  "label": "$\\sin\\widehat{AOB} = \\dfrac{AB}{OA}$, $\\cos\\widehat{AOB} = \\dfrac{OB}{OA}$"
+                },
+                {
+                  "label": "$AB = OA \\cdot \\sin\\widehat{AOB}$"
+                }
+              ]
             }
           ]
-        },
-        {
-          "type": "writelines",
-          "count": 0
         },
         {
           "type": "para",
@@ -459,13 +448,15 @@
           "level": 1,
           "tier": "btvn",
           "dang_id": "NB1",
+          "statement": "[NB] Diện tích hình quạt tròn bán kính $6$ cm, góc ở tâm $60^\\circ$ bằng:",
           "figure_given": true,
-          "statement": "[NB] Cho $(O; 6\\text{ cm})$. Dây lớn nhất của đường tròn dài:\\par\\vspace{4pt}\\parbox[t]{0.30\\linewidth}{\\textbf{A.} $6$ cm}\\parbox[t]{0.30\\linewidth}{\\textbf{B.} $12$ cm}\\parbox[t]{0.30\\linewidth}{\\textbf{C.} $18$ cm}",
-          "solution": "\\textbf{Đáp án:} B. Dây lớn nhất của đường tròn là đường kính $d = 2R = 2 \\cdot 6 = 12$ cm."
-        },
-        {
-          "type": "writelines",
-          "count": 1
+          "options": [
+            "$6\\pi$ cm$^2$",
+            "$12\\pi$ cm$^2$",
+            "$36\\pi$ cm$^2$",
+            "$2\\pi$ cm$^2$"
+          ],
+          "answer": "\\textbf{Đáp án A.} $S_q = \\dfrac{n}{360} \\cdot \\pi R^2 = \\dfrac{60}{360} \\cdot \\pi \\cdot 6^2 = 6\\pi$ (cm$^2$)."
         },
         {
           "type": "problem",
@@ -473,13 +464,15 @@
           "level": 1,
           "tier": "btvn",
           "dang_id": "NB1",
+          "statement": "[NB] Độ dài cung $120^\\circ$ của đường tròn bán kính $9$ cm bằng:",
           "figure_given": true,
-          "statement": "[NB] Cho $(O; 10\\text{ cm})$ và dây $AB = 16$ cm. Khoảng cách từ $O$ đến $AB$ bằng:\\par\\vspace{4pt}\\parbox[t]{0.30\\linewidth}{\\textbf{A.} $6$ cm}\\parbox[t]{0.30\\linewidth}{\\textbf{B.} $8$ cm}\\parbox[t]{0.30\\linewidth}{\\textbf{C.} $12$ cm}",
-          "solution": "\\textbf{Đáp án:} A. Kẻ $OH \\perp AB$ tại $H \\implies HA = 8$ cm. Khoảng cách $OH = \\sqrt{10^2 - 8^2} = 6$ cm."
-        },
-        {
-          "type": "writelines",
-          "count": 1
+          "options": [
+            "$3\\pi$ cm",
+            "$6\\pi$ cm",
+            "$9\\pi$ cm",
+            "$18\\pi$ cm"
+          ],
+          "answer": "\\textbf{Đáp án B.} $l = \\dfrac{n}{360} \\cdot 2\\pi R = \\dfrac{120}{360} \\cdot 2\\pi \\cdot 9 = 6\\pi$ (cm)."
         },
         {
           "type": "problem",
@@ -487,13 +480,15 @@
           "level": 1,
           "tier": "btvn",
           "dang_id": "NB1",
+          "statement": "[NB] Diện tích hình vành khuyên giữa hai đường tròn đồng tâm bán kính $4$ cm và $2$ cm bằng:",
           "figure_given": true,
-          "statement": "[NB] Cho $(O; R)$ và tiếp tuyến $AB$ tại $B$. Khẳng định nào ĐÚNG?\\par\\vspace{4pt}\\parbox[t]{0.46\\linewidth}{\\textbf{A.} $OB \\perp AB$ tại $B$}\\parbox[t]{0.46\\linewidth}{\\textbf{B.} $OA \\perp AB$ tại $A$}",
-          "solution": "\\textbf{Đáp án:} A. Tiếp tuyến vuông góc với bán kính đi qua tiếp điểm."
-        },
-        {
-          "type": "writelines",
-          "count": 1
+          "options": [
+            "$6\\pi$ cm$^2$",
+            "$12\\pi$ cm$^2$",
+            "$16\\pi$ cm$^2$",
+            "$4\\pi$ cm$^2$"
+          ],
+          "answer": "\\textbf{Đáp án B.} $16\\pi - 4\\pi = 12\\pi$ cm$^2$."
         },
         {
           "type": "problem",
@@ -501,169 +496,82 @@
           "level": 1,
           "tier": "btvn",
           "dang_id": "NB2",
+          "statement": "Cho hai tiếp tuyến $AB$, $AC$ của $(O)$ tại $B$, $C$. Điền vào chỗ chấm:[[br]]a) [NB] $\\widehat{ABO} = [[blank:2.4cm]]$ vì $AB \\perp [[blank:2.4cm]]$[[br]]b) [NB] $\\widehat{ACO} = [[blank:2.4cm]]$ vì $AC \\perp [[blank:2.4cm]]$[[br]]c) [NB] Cạnh huyền chung của $\\triangle ABO$ và $\\triangle ACO$ là [[blank:2.4cm]]",
           "figure_given": true,
-          "statement": "[NB] Diện tích hình quạt tròn bán kính $6$ cm, góc ở tâm $60^\\circ$ bằng:\\par\\vspace{4pt}\\parbox[t]{0.30\\linewidth}{\\textbf{A.} $6\\pi\\text{ cm}^2$}\\parbox[t]{0.30\\linewidth}{\\textbf{B.} $12\\pi\\text{ cm}^2$}\\parbox[t]{0.30\\linewidth}{\\textbf{C.} $36\\pi\\text{ cm}^2$}",
-          "solution": "\\textbf{Đáp án:} A. $S = \\dfrac{\\pi \\cdot 6^2 \\cdot 60}{360} = 6\\pi\\text{ cm}^2$."
-        },
-        {
-          "type": "writelines",
-          "count": 1
+          "answer": "a) $90^\\circ$; $OB$.[[br]]b) $90^\\circ$; $OC$.[[br]]c) $AO$."
         },
         {
           "type": "problem",
           "label": "BTVN 5.",
           "level": 1,
           "tier": "btvn",
-          "dang_id": "NB2",
+          "dang_id": "NB4",
+          "statement": "Cho hai tiếp tuyến $AB$, $AC$ của $(O)$, $I$ là trung điểm $AO$. Điền vào chỗ chấm:[[br]]a) [NB] $\\triangle ABO$ vuông, trung tuyến $BI = [[blank:2.4cm]]$[[br]]b) [NB] $\\triangle ACO$ vuông, trung tuyến $CI = [[blank:2.4cm]]$[[br]]c) [NB] Bốn điểm $A$, $B$, $O$, $C$ cách đều điểm [[blank:2.4cm]]",
           "figure_given": true,
-          "statement": "[NB] Độ dài cung $120^\\circ$ của đường tròn bán kính $9$ cm bằng:\\par\\vspace{4pt}\\parbox[t]{0.30\\linewidth}{\\textbf{A.} $3\\pi\\text{ cm}$}\\parbox[t]{0.30\\linewidth}{\\textbf{B.} $6\\pi\\text{ cm}$}\\parbox[t]{0.30\\linewidth}{\\textbf{C.} $9\\pi\\text{ cm}$}",
-          "solution": "\\textbf{Đáp án:} B. $l = \\dfrac{\\pi \\cdot 9 \\cdot 120}{180} = 6\\pi\\text{ cm}$."
-        },
-        {
-          "type": "writelines",
-          "count": 1
+          "answer": "a) $\\dfrac{AO}{2}$.[[br]]b) $\\dfrac{AO}{2}$.[[br]]c) $I$."
         },
         {
           "type": "problem",
           "label": "BTVN 6.",
           "level": 1,
           "tier": "btvn",
-          "dang_id": "NB2",
+          "dang_id": "NB3",
+          "statement": "Từ điểm $A$ ngoài $(O; R)$ kẻ hai tiếp tuyến $AB$, $AC$ ($B$, $C$ là tiếp điểm), $AO$ cắt $BC$ tại $H$, biết $OA = 2R$. Điền vào chỗ chấm (theo $R$, dùng tỉ số lượng giác ở mục 4):[[br]]a) [NB] $AB^2 = [[blank:2.4cm]] = [[blank:2.4cm]] \\Rightarrow AB = [[blank:2.4cm]]$[[br]]b) [NB] $\\cos \\widehat{AOB} = \\dfrac{OB}{OA} = [[blank:2.4cm]] \\Rightarrow \\widehat{AOB} = [[blank:2.4cm]]$",
           "figure_given": true,
-          "statement": "[NB] Diện tích hình vành khuyên giới hạn bởi hai đường tròn đồng tâm bán kính $4$ cm và $2$ cm bằng:\\par\\vspace{4pt}\\parbox[t]{0.30\\linewidth}{\\textbf{A.} $6\\pi\\text{ cm}^2$}\\parbox[t]{0.30\\linewidth}{\\textbf{B.} $12\\pi\\text{ cm}^2$}\\parbox[t]{0.30\\linewidth}{\\textbf{C.} $16\\pi\\text{ cm}^2$}",
-          "solution": "\\textbf{Đáp án:} B. $S = \\pi(4^2 - 2^2) = 12\\pi\\text{ cm}^2$."
-        },
-        {
-          "type": "writelines",
-          "count": 1
+          "answer": "a) $AB^2 = OA^2 - OB^2 = 3R^2 \\Rightarrow AB = R\\sqrt{3}$.[[br]]b) $\\dfrac{1}{2}$; $60^\\circ$."
         },
         {
           "type": "problem",
           "label": "BTVN 7.",
           "level": 1,
           "tier": "btvn",
-          "dang_id": "NB3",
-          "figure_given": true,
-          "statement": "Cho hai tiếp tuyến $AB$, $AC$ của $(O)$ tại $B$, $C$. Điền vào chỗ chấm: [[br]]a) [NB] $\\widehat{ABO} = \\dots\\dots^\\circ$ vì $AB$ là tiếp tuyến tại $B$. [[br]]b) [NB] $\\widehat{ACO} = \\dots\\dots^\\circ$ vì $AC$ là tiếp tuyến tại $C$. [[br]]c) [NB] Hai góc $\\widehat{ABO}$ và $\\widehat{ACO}$ có tổng bằng $\\dots\\dots^\\circ$.",
-          "solution": "\\textbf{Lời giải:}\\\\ a) $90^\\circ$;\\\\ b) $90^\\circ$;\\\\ c) $180^\\circ$."
-        },
-        {
-          "type": "writelines",
-          "count": 1
+          "dang_id": "NB5",
+          "statement": "Vẽ hình vào vở theo các bước (dùng compa và thước):[[br]]a) [NB] Vẽ $(O; 3\\text{ cm})$ và điểm $A$ với $OA = 5$ cm; vẽ hai tiếp tuyến $AB$, $AC$ (dùng đường tròn đường kính $AO$).[[br]]b) [NB] Nối $BC$ cắt $AO$ tại $H$; đánh dấu các góc vuông tại $B$, $C$, $H$ và hai đoạn bằng nhau $AB = AC$.",
+          "figure_given": false,
+          "draw": true,
+          "answer": "Hình vẽ đúng: $B$, $C$ là giao điểm của $(O)$ với đường tròn đường kính $AO$; ba góc vuông tại $B$, $C$, $H$."
         },
         {
           "type": "problem",
           "label": "BTVN 8.",
-          "level": 1,
+          "level": 2,
           "tier": "btvn",
-          "dang_id": "NB4",
-          "figure_given": true,
-          "statement": "Cho hai tiếp tuyến $AB$, $AC$ của $(O)$, $I$ là trung điểm $AO$. Điền vào chỗ chấm: [[br]]a) [NB] Trong tam giác vuông $ABO$, trung tuyến $BI = \\dots\\dots AO$. [[br]]b) [NB] Trong tam giác vuông $ACO$, trung tuyến $CI = \\dots\\dots AO$. [[br]]c) [NB] Bốn điểm $A$, $B$, $O$, $C$ cách đều điểm $\\dots\\dots$.",
-          "solution": "\\textbf{Lời giải:}\\\\ a) $\\dfrac{1}{2}$;\\\\ b) $\\dfrac{1}{2}$;\\\\ c) $I$."
-        },
-        {
-          "type": "writelines",
-          "count": 1
+          "dang_id": "TH1",
+          "statement": "[TH] Cho đường tròn $(O; 8\\text{ cm})$ và điểm $A$ với $OA = 17$ cm. Trên đường tròn lấy $B$ sao cho $AB = 15$ cm. Chứng minh $AB$ là tiếp tuyến của $(O)$.",
+          "figure_given": false,
+          "hints": [
+            "Ba cạnh của $\\triangle ABO$ có thoả mãn Pythagore không?",
+            "Góc vuông nằm ở đâu?"
+          ],
+          "answer": "Xét $\\triangle ABO$: $AB^2 + OB^2 = 15^2 + 8^2 = 289 = 17^2 = OA^2$.[[br]]$\\Rightarrow \\triangle ABO$ vuông tại $B$ (định lí Pythagore đảo) $\\Rightarrow AB \\perp OB$ tại $B$.[[br]]Mà $B \\in (O)$.[[br]]Vậy $AB$ là tiếp tuyến của $(O)$ tại $B$ (Định lí 1)."
         },
         {
           "type": "problem",
           "label": "BTVN 9.",
-          "level": 1,
+          "level": 2,
           "tier": "btvn",
-          "dang_id": "NB5",
-          "figure_given": true,
-          "statement": "Cho hai tiếp tuyến $AB$, $AC$ của $(O)$, $AO$ cắt $BC$ tại $H$. Điền vào chỗ chấm: [[br]]a) [NB] $H$ nằm trên đoạn $BC$ và $AO \\perp \\dots\\dots$ tại $H$. [[br]]b) [NB] $BH$ là đường cao của tam giác vuông $\\dots\\dots$ (vuông tại $B$). [[br]]c) [NB] Hệ thức lượng tương ứng là $AB^2 = \\dots\\dots \\cdot AO$.",
-          "solution": "\\textbf{Lời giải:}\\\\ a) $BC$;\\\\ b) $ABO$;\\\\ c) $AH$."
-        },
-        {
-          "type": "writelines",
-          "count": 1
+          "dang_id": "TH2",
+          "statement": "[TH] Từ điểm $A$ ngoài $(O; 6\\text{ cm})$ kẻ hai tiếp tuyến $AB$, $AC$ ($B$, $C$ là tiếp điểm), $AO$ cắt $BC$ tại $H$, $OA = 12$ cm. Biết $AO \\perp BC$ tại trung điểm $H$ của $BC$ và $AB^2 = AH \\cdot AO$, tính $AB$, $AH$, $BC$.",
+          "figure_given": false,
+          "hints": [
+            "Tính $AB$ trong tam giác vuông nào?",
+            "Tính $BH$ bằng hai cách viết diện tích $\\triangle ABO$."
+          ],
+          "answer": "Xét $\\triangle ABO$ vuông tại $B$, theo định lí Pythagore:[[br]]$AB^2 = OA^2 - OB^2 = 12^2 - 6^2 = 108 \\Rightarrow AB = 6\\sqrt{3}$ (cm).[[br]]$AB^2 = AH \\cdot AO \\Rightarrow AH = \\dfrac{AB^2}{AO} = \\dfrac{108}{12} = 9$ (cm).[[br]]Hai lần diện tích $\\triangle ABO$: $AB \\cdot OB = AO \\cdot BH \\Rightarrow BH = \\dfrac{6\\sqrt{3} \\cdot 6}{12} = 3\\sqrt{3}$ (cm).[[br]]$H$ là trung điểm $BC$ $\\Rightarrow BC = 2BH = 6\\sqrt{3}$ (cm).[[br]]Vậy $AB = 6\\sqrt{3}$ cm, $AH = 9$ cm, $BC = 6\\sqrt{3}$ cm."
         },
         {
           "type": "problem",
           "label": "BTVN 10.",
-          "level": 1,
+          "level": 3,
           "tier": "btvn",
-          "dang_id": "NB6",
-          "figure_given": true,
-          "statement": "Cho hai tiếp tuyến $AB$, $AC$ của $(O)$, $I$ là trung điểm $AO$. Điền vào chỗ chấm để hoàn thành chứng minh bốn điểm cùng thuộc đường tròn: [[br]]a) [NB] Vì $\\triangle ABO$ vuông tại $B$ và $\\triangle ACO$ vuông tại $C$ nên $IA = IB = IO = IC = \\dots\\dots$. [[br]]b) [NB] Vậy bốn điểm $A$, $B$, $O$, $C$ cùng thuộc đường tròn tâm $\\dots\\dots$ đường kính $\\dots\\dots$.",
-          "solution": "\\textbf{Lời giải:}\\\\ a) $\\dfrac{AO}{2}$;\\\\ b) $I$, đường kính $AO$."
-        },
-        {
-          "type": "writelines",
-          "count": 1
-        },
-        {
-          "type": "problem",
-          "label": "BTVN 11.",
-          "level": 1,
-          "tier": "btvn",
-          "dang_id": "NB7",
-          "figure_given": true,
-          "statement": "Cho hai tiếp tuyến $AB$, $AC$ của $(O)$, $AO$ cắt $BC$ tại $H$. Điền vào chỗ chấm để chứng minh $AO \\perp BC$: [[br]]a) [NB] Ta có $AB = AC$ (tính chất hai tiếp tuyến cắt nhau) và $OB = OC = \\dots\\dots$. [[br]]b) [NB] Do đó $AO$ là đường $\\dots\\dots$ của đoạn thẳng $BC$, suy ra $AO \\perp BC$ tại $H$.",
-          "solution": "\\textbf{Lời giải:}\\\\ a) $R$;\\\\ b) trung trực."
-        },
-        {
-          "type": "writelines",
-          "count": 1
-        },
-        {
-          "type": "problem",
-          "label": "BTVN 12.",
-          "level": 1,
-          "tier": "btvn",
-          "dang_id": "NB8",
-          "figure_given": true,
-          "statement": "Cho $(O; 12\\text{ cm})$ và điểm $A$ với $OA = 20$ cm, hai tiếp tuyến $AB$, $AC$, $AO$ cắt $BC$ tại $H$. Điền số vào chỗ chấm: [[br]]a) [NB] $AB^2 = 20^2 - 12^2 = \\dots\\dots$, suy ra $AB = \\dots\\dots$ cm. [[br]]b) [NB] Từ $AB^2 = AH \\cdot AO$ ta có $AH = \\dfrac{256}{20} = \\dots\\dots$ cm.",
-          "solution": "\\textbf{Lời giải:}\\\\ a) $256$, $16$;\\\\ b) $12{,}8$."
-        },
-        {
-          "type": "writelines",
-          "count": 1
-        },
-        {
-          "type": "problem",
-          "label": "BTVN 13.",
-          "level": 2,
-          "tier": "btvn",
-          "dang_id": "TH1",
+          "dang_id": "VD1",
+          "statement": "[VD] \\textbf{Đề mẫu 2 — tự làm như đi thi.} Cho $(O; 12\\text{ cm})$ và điểm $A$ với $OA = 20$ cm. Kẻ hai tiếp tuyến $AB$, $AC$ ($B$, $C$ là tiếp điểm), $AO$ cắt $BC$ tại $H$.[[br]]a) Chứng minh bốn điểm $A$, $B$, $O$, $C$ cùng thuộc một đường tròn.[[br]]b) Chứng minh $AO \\perp BC$ tại $H$ và $AB^2 = AH \\cdot AO$.[[br]]c) Tính $AB$, $AH$ và $BC$.",
           "figure_given": false,
-          "statement": "[TH] Cho đường tròn $(O; 8\\text{ cm})$ và điểm $A$ với $OA = 17$ cm. Trên đường tròn lấy điểm $B$ sao cho $AB = 15$ cm. Chứng minh $AB$ là tiếp tuyến của $(O)$.",
-          "solution": "\\textbf{Lời giải:}\\\\\nXét tam giác $ABO$ có $OA = 17\\text{ cm}$, $OB = 8\\text{ cm}$, $AB = 15\\text{ cm}$.\\\\\nTa có $OB^2 + AB^2 = 8^2 + 15^2 = 64 + 225 = 289 = 17^2 = OA^2$.\\\\\nTheo định lý Pythagore đảo, tam giác $ABO$ vuông tại $B$, hay $AB \\perp OB$ tại $B$.\\\\\nVì $B \\in (O)$ và $AB \\perp OB$ tại $B$ nên $AB$ là tiếp tuyến của $(O)$.\\\\\nVậy $AB$ là tiếp tuyến của $(O)$."
-        },
-        {
-          "type": "writelines",
-          "count": 1
-        },
-        {
-          "type": "problem",
-          "label": "BTVN 14.",
-          "level": 2,
-          "tier": "btvn",
-          "dang_id": "TH2",
-          "figure_given": false,
-          "statement": "[TH] Cho đường tròn $(O; R)$ và điểm $A$ ngoài $(O)$. Kẻ hai tiếp tuyến $AB$, $AC$ với $(O)$ ($B$, $C$ là hai tiếp điểm), $AO$ cắt $BC$ tại $H$. Chứng minh hệ thức $AB^2 = AH \\cdot AO$.",
-          "solution": "\\textbf{Lời giải:}\\\\\nVì $AB, AC$ là hai tiếp tuyến cắt nhau nên $AB = AC$ và $OB = OC = R$, suy ra $AO$ là đường trung trực của $BC$, do đó $AO \\perp BC$ tại $H$.\\\\\nTrong tam giác $ABO$ vuông tại $B$ (do $AB$ là tiếp tuyến), có $BH$ là đường cao ($BH \\perp AO$).\\\\\nÁp dụng hệ thức lượng trong tam giác vuông: $AB^2 = AH \\cdot AO$ (đpcm).\\\\\nVậy $AB^2 = AH \\cdot AO$."
-        },
-        {
-          "type": "writelines",
-          "count": 1
-        },
-        {
-          "type": "problem",
-          "label": "BTVN 15.",
-          "level": 2,
-          "tier": "btvn",
-          "dang_id": "TH3",
-          "figure_given": false,
-          "statement": "[TH] Cho đường tròn $(O; 6\\text{ cm})$ và điểm $A$ với $OA = 10$ cm. Kẻ hai tiếp tuyến $AB$, $AC$ với $(O)$, $AO$ cắt $BC$ tại $H$. Biết $AO \\perp BC$ tại $H$, tính độ dài các đoạn thẳng $AB$, $AH$ và dây $BC$.",
-          "solution": "\\textbf{Lời giải:}\\\\\nTrong tam giác $ABO$ vuông tại $B$:\\\\\n\\hspace*{1.4em}$AB = \\sqrt{OA^2 - OB^2} = \\sqrt{10^2 - 6^2} = 8\\text{ cm}$.\\\\\nVì $AO \\perp BC$ tại $H$ nên $BH$ là đường cao của tam giác vuông $ABO$:\\\\\n\\hspace*{1.4em}$AH = \\dfrac{AB^2}{AO} = \\dfrac{8^2}{10} = 6{,}4\\text{ cm}$.\\\\\n\\hspace*{1.4em}$BH = \\dfrac{AB \\cdot OB}{AO} = \\dfrac{8 \\cdot 6}{10} = 4{,}8\\text{ cm}$.\\\\\nVì $H$ là trung điểm của $BC$ nên $BC = 2 \\cdot BH = 2 \\cdot 4{,}8 = 9{,}6\\text{ cm}$.\\\\\nVậy $AB = 8\\text{ cm}$, $AH = 6{,}4\\text{ cm}$ và $BC = 9{,}6\\text{ cm}$."
-        },
-        {
-          "type": "writelines",
-          "count": 1
+          "draw": true,
+          "solution": "a) $AB$, $AC$ là tiếp tuyến $\\Rightarrow \\widehat{ABO} = \\widehat{ACO} = 90^\\circ$.[[br]]Gọi $I$ là trung điểm $AO$.[[br]]$\\triangle ABO$, $\\triangle ACO$ vuông có trung tuyến $BI$, $CI$ $\\Rightarrow IA = IB = IO = IC = \\dfrac{AO}{2} = 10$ (cm).[[br]]Vậy $A$, $B$, $O$, $C$ cùng thuộc đường tròn $(I; 10\\text{ cm})$.[[br]]b) $AB = AC$ (Định lí 2), $OB = OC = R$ $\\Rightarrow A$, $O$ cùng cách đều $B$, $C$.[[br]]$\\Rightarrow AO$ là đường trung trực của $BC$ $\\Rightarrow AO \\perp BC$ tại $H$.[[br]]Xét $\\triangle AHB$ và $\\triangle ABO$: $\\widehat{A}$ chung, $\\widehat{AHB} = \\widehat{ABO} = 90^\\circ$.[[br]]$\\Rightarrow \\triangle AHB \\backsim \\triangle ABO$ (g.g) $\\Rightarrow \\dfrac{AH}{AB} = \\dfrac{AB}{AO}$.[[br]]Vậy $AB^2 = AH \\cdot AO$.[[br]]c) Xét $\\triangle ABO$ vuông tại $B$, theo định lí Pythagore:[[br]]$AB^2 = OA^2 - OB^2 = 20^2 - 12^2 = 256 \\Rightarrow AB = 16$ (cm).[[br]]$AH = \\dfrac{AB^2}{AO} = \\dfrac{256}{20} = 12{,}8$ (cm).[[br]]Hai lần diện tích $\\triangle ABO$: $AB \\cdot OB = AO \\cdot BH \\Rightarrow BH = \\dfrac{16 \\cdot 12}{20} = 9{,}6$ (cm).[[br]]$H$ là trung điểm $BC$ $\\Rightarrow BC = 2BH = 19{,}2$ (cm).[[br]]Vậy $AB = 16$ cm, $AH = 12{,}8$ cm, $BC = 19{,}2$ cm."
         }
       ]
     }
-  ]
+  ],
+  "kiem_tra_phut": 45
 }

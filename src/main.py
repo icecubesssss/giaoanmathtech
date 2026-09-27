@@ -58,6 +58,7 @@ from src.validators import (
     check_vi_du_style,
     check_goi_ten_canh,
     check_vi_du,
+    check_nhan_hinh,
     check_print_layout,
     check_thuyetminh,
     check_meta_wrap,
@@ -784,6 +785,8 @@ def cmd_validate(args: argparse.Namespace) -> int:
     spec_warns += [f"[sgk_style] {m}" for m in check_goi_ten_canh(lesson)]
     # Ví dụ ↔ bài tập: trùng khuôn / không đi cùng bài / chưa điền khuyết / TH thiếu gợi ý.
     spec_warns += [f"[vi_du_gate] {m}" for m in check_vi_du(lesson)]
+    # Nhãn điểm bị nét vẽ đè qua (góp ý chương V lớp 9C, 26/09/2026).
+    spec_warns += [f"[nhan_hinh] {m}" for m in check_nhan_hinh(lesson)]
     print(f"  • spec_gate:        {'OK (hoặc không có spec)' if not spec_warns else f'{len(spec_warns)} lệch hợp đồng'}")
     for w in spec_warns:
         print(f"    ⚠ {w}")
@@ -869,7 +872,7 @@ def cmd_audit(args: argparse.Namespace) -> int:
     hôm trước chưa hề áp cho 38 phiếu còn lại. Cả hai đều là thứ chỉ lộ khi nhìn TOÀN KHO.
     """
     from src.validators.staleness_gate import check_stale, tom_tat as _tom_tat
-    from src.validators import check_vi_du_style, check_goi_ten_canh, check_vi_du
+    from src.validators import check_vi_du_style, check_goi_ten_canh, check_vi_du, check_nhan_hinh
     from src.schema.thuyetminh_spec import ThuyetMinhSpec
     from src.validators.thuyetminh_gate import check_thuyetminh
 
@@ -903,7 +906,7 @@ def cmd_audit(args: argparse.Namespace) -> int:
             les = LessonPackage.model_validate(json.loads(j.read_text(encoding="utf-8")))
         except Exception:
             continue
-        w = check_vi_du_style(les) + check_goi_ten_canh(les) + check_vi_du(les)
+        w = check_vi_du_style(les) + check_goi_ten_canh(les) + check_vi_du(les) + check_nhan_hinh(les)
         if w:
             xau.append((j, w))
     tong = sum(len(w) for _, w in xau)

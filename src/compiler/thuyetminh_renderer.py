@@ -9,7 +9,7 @@ from __future__ import annotations
 from src.compiler.jinja_renderer import _env, load_tokens
 from src.schema.thuyetminh_spec import (
     META_MARK_BEGIN, META_MARK_END,
-    ThuyetMinhSpec, rates_for_spec, row_minutes, session_info,
+    ThuyetMinhSpec, he_so_con_lai, rates_for_spec, row_minutes, session_info,
 )
 from src.schema.tier_spec import draw_minutes, load_tier_spec
 
@@ -157,12 +157,12 @@ def _phieu_table(phieu, rates, info):
     # thì gặp bảng vừa kín trang, mỗi dòng này bị đẩy sang một trang trắng riêng
     # (chương IV lớp 9 từng thừa 2 trang chỉ vì vậy).
     L.append(rf"\multicolumn{{{ncol}}}{{|l|}}"
-             rf"{{{_canbuoi(grand, info, getattr(phieu, 'so_ca', 1))}}} \\ \hline")
+             rf"{{{_canbuoi(grand, info, getattr(phieu, 'so_ca', 1), getattr(phieu, 'kiem_tra_phut', 0))}}} \\ \hline")
     L.append(r"\end{longtable}\endgroup")
     return "\n".join(L), grand
 
 
-def _canbuoi(grand, info, so_ca: int = 1) -> str:
+def _canbuoi(grand, info, so_ca: int = 1, kiem_tra_phut: int = 0) -> str:
     """Dòng cân buổi: GV giảng (lý thuyết+ví dụ) + luyện tập + BTVN.
 
     Phiếu trải nhiều ca (`SpecPhieu.so_ca`) thì quỹ in ra phải nhân lên bấy nhiêu,
@@ -172,10 +172,13 @@ def _canbuoi(grand, info, so_ca: int = 1) -> str:
     gv = grand[1] + grand[3]
     onclass, btvn = grand[5], grand[7]
     b = info.get("budgets", {})
+    # Buổi có kiểm tra chương: quỹ dạy chỉ còn phần còn lại (xem he_so_con_lai).
+    f = he_so_con_lai(info.get("session_minutes"), ca, kiem_tra_phut)
     nhan = f" cho {ca} ca" if ca > 1 else ""
+    kt = (rf" $+$ \textbf{{Kiểm tra chương {kiem_tra_phut}′}}" if kiem_tra_phut else "")
     return (rf"{{\small\textbf{{\color{{brand}}Cân buổi{nhan}:}} "
-            rf"Ví dụ/lý thuyết (GV giảng) $\approx${round(gv)}′ (quỹ {round(b.get('vidu',0)*ca)}′) "
-            rf"$+$ Luyện tập {round(onclass)}′ (quỹ {round(b.get('onclass',0)*ca)}′) tại lớp. "
+            rf"Ví dụ/lý thuyết (GV giảng) $\approx${round(gv)}′ (quỹ {round(b.get('vidu',0)*ca*f)}′) "
+            rf"$+$ Luyện tập {round(onclass)}′ (quỹ {round(b.get('onclass',0)*ca*f)}′){kt} tại lớp. "
             rf"BTVN $\approx${round(btvn)}′ (quỹ {round(b.get('btvn',0)*ca)}′) ở nhà.}}")
 
 

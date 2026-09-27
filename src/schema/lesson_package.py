@@ -368,6 +368,9 @@ class LessonPackage(BaseModel):
     # lớp 9 tầng B gộp tuần 16+17). Khai `so_ca` để `duration_gate` nhân quỹ phút lên,
     # thay vì kêu oan "lệch quỹ 120′" ở mọi phiếu nhiều ca. Khớp `SpecPhieu.so_ca`.
     so_ca: int = Field(1, ge=1, le=6, description="Số ca (buổi) phiếu này trải ra; quỹ giờ ×so_ca")
+    # Phút KIỂM TRA CHƯƠNG cắt ra từ buổi của phiếu (khớp `SpecPhieu.kiem_tra_phut`) —
+    # `duration_gate` co quỹ luyện tập theo phần còn lại, không kêu oan "hụt giờ".
+    kiem_tra_phut: int = Field(0, ge=0, le=180, description="Phút kiểm tra chương trong buổi của phiếu")
     theme: str = Field("", description="Giao diện (vd: 'thay_thai' cho giao diện mới, để trống cho mặc định)")
     stages: list[Stage] = Field(default_factory=list)
 

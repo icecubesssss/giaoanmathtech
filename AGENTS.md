@@ -88,6 +88,43 @@
 >    - **Bài tập điền khuyết dài:** Bản in Handout HS và Guide GV giữ 100% khung điền khuyết `[[blank:...]]`. Trên Slide, khai `statement_slide` trong `ProblemBlock` để rút gọn thành câu hỏi toán học thuần túy (Cho... Chứng minh a... b...) kèm hình vẽ TikZ.
 >    - **Footer Slide chuẩn:** Dùng logo compact `logo_mathtech_compact.png` (không dùng `Logo4.png` dài gây overfull làm dính chữ "MathTechSlide N"), có đường kẻ ngang mảnh `\color{rule}\rule` phía trên, căn trái logo + tên bài + tác giả, căn phải `Slide \insertframenumber`.
 
+> **LUẬT CỨNG: CUỐI MỖI CHƯƠNG CÓ BÀI KIỂM TRA CHƯƠNG 45 PHÚT (Thầy chốt 26/09/2026).** Góp ý chương V lớp 9C:
+> *"Thời gian ca này là 45p + 45p kiểm tra"*, rồi Thầy chốt *"thêm luật cứng là sẽ có kiểm tra chương 45 phút cuối
+> mỗi chương"*. Mọi kế hoạch chương (spec ≥ 3 phiếu) phải có đủ ba thứ, thiếu là **CHẶN** `build-thuyetminh`:
+> 1. **Phiếu cuối khai `kiem_tra_phut: 45`** — cả trong `thuyet-minh.json` (`SpecPhieu`) lẫn phiếu JSON (`LessonPackage`).
+>    Quỹ ví dụ / luyện tập / giờ trên lớp của buổi đó co theo phần còn lại (`he_so_con_lai`: buổi 90′ − 45′ ⇒ ×0,5),
+>    BTVN giữ nguyên. Phiếu buổi đó soạn cho **~45′**: ~10 NB + 2 TH + 1 VD điền khuyết (bản mẫu: phiếu 7 ch.V 9C).
+> 2. **Khối `thoiluong` ghi rõ** "… 45 phút luyện tập $+$ 45 phút kiểm tra chương" ở dòng buổi cuối.
+> 3. **Đề thật + ma trận**: `de-kiem-tra.json` (DeSpec, `make check-de`/`make de`) cạnh thuyết minh, và thư mục
+>    `kiem-tra-chuong/` chứa tờ đề HS + ma trận-đáp án GV (`theme: de_thi`) — bản mẫu `lop-9/hinh-hoc/lop-c/chuong-05-duong-tron/`.
+>    Số liệu đề KHÔNG trùng bài trên lớp; câu hình bám khuôn đề vào 10 (Câu IV.1 đo lường, Câu IV.2 hai tiếp tuyến).
+> Cổng: `thuyetminh_gate.check_kiem_tra_chuong`. Nợ lúc chốt luật: **17 spec chương khác chưa có bài kiểm tra** (`make audit` mục 3).
+>
+> **NĂM LỖI TRÌNH BÀY người chấm gạch ở chương V 9C (26/09/2026) — nay có cổng, soạn phiếu mới khỏi phải nhắc:**
+> 1. *"Vẫn còn các chữ NB, TH, VD bên cạnh các bài"* — thẻ `[NB]`/`[TH]`/`[VD]` là dữ liệu cho cổng đếm câu, renderer
+>    (`_texify`) nay XOÁ khi in. Cứ gắn thẻ trong JSON như cũ.
+> 2. *"Các bài ví dụ phần kết luận chính là phần học sinh cần điền"* — câu "Vậy …" của ví dụ PHẢI có `[[fill:]]`
+>    (`vi_du_gate.check_vi_du_ket_luan`).
+> 3. *"Phần trên hỏi, phần dưới cho đáp án"* — ô `[[fill:15]]` ở trên mà dòng dưới in trần `25 - 15` là vô nghĩa; khoét
+>    luôn chỗ dưới (`check_vi_du_lo_dap_an`).
+> 4. *"Tránh để tên điểm bị đường thẳng đè qua"* — `nhan_hinh_gate` đọc TikZ, ước hộp chữ từng nhãn và báo nét cắt qua.
+>    Nhãn điểm trên đường tròn đặt RA NGOÀI theo bán kính; số mặt đồng hồ dùng `fill=white` vẽ SAU kim. Dựng hình
+>    mới thì tính toạ độ + đặt nhãn bằng máy — `scripts/tikz_geo.py` (lớp `Fig`, tự kiểm bằng chính cổng này), đừng gõ `above right` bằng mắt.
+> 5. *"Để đủ khoảng … để học sinh điền"* — chỗ điền trong ĐỀ dùng `[[blank:W]]` (1,1 cm ký hiệu · 2,4 cm biểu thức ·
+>    3,2 cm cụm từ), KHÔNG dùng `\ldots\ldots` (in ra chưa tới 1 cm).
+> Kèm hai bài học nội dung: **(a)** tính độ dài cung / diện tích quạt thì lời giải chỉ "xác định $R$, $n$ → thay vào
+> $l = \frac{n}{360}\cdot 2\pi R$"; câu "góc $n^\circ$ chiếm mấy phần" chỉ để GIẢI THÍCH ở lý thuyết. **(b)** Phiếu phải
+> phủ đủ mục SGK: Bài 13 có *tính đối xứng*, Bài 14 có *góc ở tâm – số đo cung* — tra ảnh SGK trước khi soạn, đừng
+> chỉ bám thuyết minh cũ. **(c)** BTVN mỗi phiếu có ≥ 1 bài VẬN DỤNG. **(d)** Không để hai bài chỉ khác số (đổi chiều
+> dữ kiện hoặc bỏ). **(e)** Dạy thử thấy phiếu dài thì cắt câu, chấp nhận cảnh báo "luyện tập 48′ lệch quỹ 55′" —
+> rate 1′/câu NB hình sẵn đang lạc quan so với lớp thật.
+> 6. *(Thầy nhắc 27/09/2026)* *"Chưa xuống dòng, trình bày không như HS đi thi"* — `trinh_bay_gate.check_nhip_loi_giai`
+>    soi lời giải ví dụ + đáp án bài TH/VD: **mỗi bước một dòng** (`[[br]]`), câu "Vậy …" **dòng riêng**, tính cạnh bằng
+>    bình phương phải nêu **"Xét △… vuông tại …, theo định lí Pythagore:"** ngay trước, bỏ nối dài "Do đó / Mặt khác /
+>    suy ra" (dùng ⇒), luôn có câu kết "Vậy". Dòng khung điền khuyết dài quá bề ngang thì bẻ bằng `[[br]]$\quad$ `.
+>    Bài khung điền khuyết (đề có `[[blank`) chỉ soi ĐỀ, không soi `answer` (đáp án từng ô). Toàn kho còn **862 cảnh báo
+>    ở 75 phiếu** (27/09) — chương V 9C đã về 0.
+>
 > **HAI KHỐI BẮT BUỘC của phiếu thuyết minh: `kien_thuc_nen` + `thoiluong` (Thầy chốt 19/08/2026).** Thầy hỏi *"sang chat mới soạn lại chương 6 thì có ra đúng output như chương 4, 5 không?"* — trước đó là KHÔNG, vì hai khối này **không cổng nào soi** và khung `new-thuyetminh` cũng không sinh ra ⇒ **70/75 spec lớp 8+9 thiếu**. Nay:
 > 1. **`kien_thuc_nen`** — kiến thức LỚP DƯỚI dùng lại (bản mẫu: chương IV có Pythagore $+$ tam giác đồng dạng; chương V có Pythagore $+$ trung tuyến ứng cạnh huyền $+$ đường trung trực). Spec có dòng mà bỏ trống ⇒ **CHẶN**. `goi_y_kien_thuc_nen()` **tự dò trên chính chữ của spec** và in ra nền đang dùng chùa — chạy `make check-tm SPEC=…` là biết phải thêm gì; thứ vốn là nội dung chính của chương (dò trong `title`) thì không gợi ý.
 > 2. **`thoiluong`** — mỗi buổi mấy ca $+$ dòng TỔNG đối chiếu số tiết SGK. **CẤM giả định "kiểm tra 15′ đầu buổi"** (Thầy bỏ 19/08/2026: mọi buổi là 1 ca ĐỦ GIỜ) và **dòng TỔNG phải khớp phép cộng** — bản chương V cũ ghi 90+55+75×5 $=$ 520′ mà dòng tổng vẫn để 630′.
@@ -121,7 +158,7 @@
 
 > **BẢN MẪU CHUẨN = `inputs/seeds/lop-9/hinh-hoc/lop-c/chuong-05-duong-tron/phieu-1-mo-dau-ve-duong-tron.json`**
 > (Thầy chốt 24/09/2026 sau khi dựng lại trọn vẹn). Soạn phiếu mới thì MỞ FILE ĐÓ RA XEM
-> trước, đừng chép phiếu cũ. Bảy luật dưới đây rút từ chính lần dựng lại đó; bốn luật đầu
+> trước, đừng chép phiếu cũ. Bảy luật dưới đây rút từ chính lần dựng lại đó (luật 8–9 thêm 24/09); bốn luật đầu
 > đã thành cổng `trinh_bay_gate` (chạy trong `validate`), ba luật sau người phải tự giữ.
 >
 > 1. **NHỊP LỜI GIẢI = ĐI THI.** Nêu **cấu hình** (mệnh đề cụt) → `\Rightarrow` → **chuỗi
@@ -154,6 +191,39 @@
 >    hộp tiêu đề, thanh hành trình, hộp chặng có huy hiệu màu, **hộp ví dụ đóng khung**,
 >    chân trang đỏ, chữ nền 12pt. *"màu thì vẫn cần để"*. Muốn đổi diện mạo thì HỎI TRƯỚC;
 >    chê bố cục thì sửa CÁCH TỔ CHỨC NỘI DUNG, đừng đụng khung.
+>
+> 8. **MỖI DẤU ⇒ PHẢI TRUY NGƯỢC ĐƯỢC VỀ GIẢ THIẾT HOẶC ĐỊNH LÍ SGK KNTT** (Thầy bác phiếu 2
+>    ch.V 9C hai lần ngày 24/09/2026: *"Có những cái k từ giả thiết mà bạn vẫn suy được ra"*,
+>    rồi *"Vuông góc đâu có suy ra được luôn H là trung điểm đâu?"*). Hai họ lỗi:
+>    - **Dùng điều ĐỀ KHÔNG CHO** vì nhìn hình thấy hiển nhiên ("D là điểm thấp nhất ⇒ O, H, D
+>      thẳng hàng"; "K là trung điểm ⇒ xét △OMK vuông tại K"). Thiếu dữ kiện thì **sửa ĐỀ**
+>      ("bán kính OD ⊥ AB tại H", "kẻ OK ⊥ MN tại K"), đừng lách trong lời giải; điều đọc từ
+>      hình (thứ tự điểm) thì ghi "(Hình N)".
+>    - **Dùng định lí sách CŨ mà KNTT không có.** KNTT 9 Bài 14 chỉ có "đường kính là dây lớn
+>      nhất" — KHÔNG có "đường kính ⊥ dây ⇒ qua trung điểm", KHÔNG có "dây bằng nhau ⇔ cách đều
+>      tâm". Mỗi lần dùng phải viết: `OA = OB = R ⇒ △OAB cân tại O; OH ⊥ AB ⇒ OH là đường cao
+>      đồng thời là trung tuyến ⇒ H là trung điểm AB` (chiều ngược: trung tuyến đồng thời là
+>      đường cao). "Cách đều tâm" chỉ là hệ quả của OH² = R² − AH². Nghi ngờ định lí nào thì
+>      **tra ảnh SGK** `inputs/refs/sgk/lop-9/` trước khi dùng.
+>      Đã tra sẵn (tập 1, tr. 87–107): Bài 16 có vị trí theo $d$–$R$, "tiếp tuyến ⊥ bán kính tại
+>      tiếp điểm", Định lí 1 (dấu hiệu tiếp tuyến), Định lí 2 (hai tiếp tuyến cắt nhau); Bài 17
+>      có bảng vị trí hai đường tròn và "tiếp điểm nằm trên đường nối tâm" — KHÔNG có "đường nối
+>      tâm là trung trực của dây chung". **Hệ thức lượng** ($AB^2 = AH \cdot AO$,
+>      $BH = \frac{AB \cdot OB}{AO}$) KNTT không cho dùng thẳng: chứng minh bằng tam giác đồng dạng
+>      (lớp 8), tính đường cao qua hai lần diện tích. Căn cứ lớp dưới dùng được: tính chất
+>      đường trung trực (lớp 7), trung tuyến ứng cạnh huyền, Pythagore đảo, tam giác đồng dạng.
+>    Cổng `check_trinh_bay` (f) cảnh báo hai mẫu định lí trên; lỗi "dùng điều đề không cho"
+>    thì cổng KHÔNG bắt được — phải đọc lại từng lời giải trước khi trình.
+> 10. **ĐỔI CÁCH DẠY THÌ SỬA THUYẾT MINH TRƯỚC, RỒI MỚI DỰNG PHIẾU** (Thầy hỏi 24/09/2026:
+>     *"bạn cập nhật file thuyết minh rồi mới cập nhật về các file khác á chứ?"*). Lần đó tôi làm
+>     ngược: dựng lại 7 phiếu theo luật 8 rồi chỉ vá số câu trong `thuyet-minh.json` ⇒ mục
+>     `lythuyet` vẫn ghi định lí Thầy vừa bác, `vidu` còn liệt kê ví dụ đã bỏ, và bản đó đã lên
+>     Drive. Thứ tự đúng: sửa `lythuyet` · `vidu` · `dang_vd` · `kienthuc_nb` · `kien_thuc_nen` ·
+>     `loisai` · câu chữ `rows[].dang` → `make thuyetminh` → dựng phiếu bám theo → đẩy Drive.
+>     Trước khi đẩy, `pdftotext` bản thuyết minh và grep lại đúng những cụm vừa bị bác.
+> 9. **ĐỀ NGẮN DÍNH CỨNG VỚI HÌNH.** Template tự dùng `\figbelowkeep` (`\nobreak`) cho đề
+>    < 200 ký tự để đề không nằm cuối trang còn hình trôi sang trang sau; đề dài vẫn
+>    `\figbelow` phạt mềm. Test `test_de_ngan_dinh_cung_voi_hinh_de_dai_phat_mem`.
 >
 > **Ba bẫy kỹ thuật đã làm gãy build trong phiên đó** (cổng gác `\par`, hai cái sau tự nhớ):
 > (a) lệnh LaTeX trần dính chữ Việt — `\parĐáp`, `\bfseriesBán` ⇒ luôn viết `\par{}`,

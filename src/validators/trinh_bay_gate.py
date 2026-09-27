@@ -108,8 +108,9 @@ def check_trinh_bay(lesson: LessonPackage) -> list[str]:
                 out.append(f"trinh_bay: {nhan} có ô `[[fill:…]]` mà đáp án bọc `$` — "
                            f"math lồng math, Tectonic chết. Bỏ `$` trong đáp án.")
 
-    # (e) Phiếu HÌNH HỌC mà chặng lý thuyết không có hình nào.
-    if mon_hinh:
+    # (e) Phiếu HÌNH HỌC mà chặng lý thuyết không có hình nào. Tờ ĐỀ KIỂM TRA (theme de_thi)
+    # không có chặng lý thuyết — chặng "concept" chỉ là khung chứa phần tự luận.
+    if mon_hinh and getattr(lesson, "theme", "") != "de_thi":
         for st in lesson.stages:
             if st.kind != "concept":
                 continue
@@ -120,4 +121,91 @@ def check_trinh_bay(lesson: LessonPackage) -> list[str]:
             if not co_hinh:
                 out.append("trinh_bay: chặng Kiến thức cần nhớ KHÔNG có hình nào — phiếu hình "
                            "học thì mỗi mục lý thuyết phải kèm một hình minh hoạ.")
+
+    # (f) Dùng định lí KHÔNG có trong SGK KNTT (Thầy bắt 24/09/2026, phiếu 2 ch.V 9C):
+    #     "đường kính ⊥ dây ⇒ qua trung điểm" và "dây bằng nhau ⇔ cách đều tâm" là định lí
+    #     sách CŨ. KNTT 9 Bài 14 chỉ có "đường kính là dây lớn nhất" ⇒ mỗi lần dùng phải đi
+    #     qua △OAB cân (đường cao đồng thời là trung tuyến), hoặc qua OH² = R² − AH².
+    if mon_hinh:
+        for st in lesson.stages:
+            for b in st.blocks:
+                nhan = getattr(b, "label", "") or ""
+                for attr in ("text", "statement", "answer", "solution"):
+                    txt = getattr(b, attr, "") or ""
+                    if not nhan and attr == "text":
+                        m = _VI_DU.search(txt)
+                        nhan = f"Ví dụ {m.group(1)}" if m else "(lý thuyết)"
+                    for dong in re.split(r"\[\[br\]\]|\n", txt):
+                        suy = re.search(r"\\Rightarrow|\bnên\b|suy ra", dong)
+                        if (suy and "\\perp" in dong and "trung điểm" in dong
+                                and not _CAN_CU_CAN.search(dong)):
+                            out.append(f"trinh_bay: {nhan or '?'} suy '⊥ ⇔ trung điểm' thẳng "
+                                       f"— SGK KNTT KHÔNG có định lí này. Viết đủ: OA = OB = R ⇒ "
+                                       f"△OAB cân tại O ⇒ đường cao OH đồng thời là trung tuyến.")
+                        if (suy and "cách đều tâm" in dong
+                                and not re.search(r"\^2|Pythagore|mục", dong)):
+                            out.append(f"trinh_bay: {nhan or '?'} dùng 'dây bằng nhau ⇔ cách đều "
+                                       f"tâm' như định lí — KNTT không có; suy qua OH² = R² − AH².")
+    return out + check_nhip_loi_giai(lesson)
+
+
+_CAN_CU_CAN = re.compile(r"cân|trung tuyến|đường cao|trung trực|mục 2")
+
+
+# ── (g) NHỊP LỜI GIẢI ĐI THI: mỗi bước một dòng, có căn cứ (Thầy nhắc 27/09/2026) ─────
+# *"check lại các lỗi trình bày như chưa xuống dòng, trình bày không như HS trình bày khi
+# đi thi"*. Soi từng DÒNG (tách theo [[br]]) của ví dụ mẫu và lời giải bài TH/VD — đúng
+# phần HS chép theo. Bảy lỗi đã gặp thật ở chương V lớp 9C:
+_MATH = re.compile(r"(?<!\\)\$.*?(?<!\\)\$")
+_HAI_CAU = re.compile(r"\.\s+(?=Vậy|Xét|Gọi|Kẻ|Mà|Theo|Tương tự|Hai lần|§)")
+_PYTHAGORE_TINH = re.compile(r"(?:[A-Z]{2}\^2|\d+\^2)\s*[-+]\s*(?:[A-Z]{2}\^2|\d+\^2)")
+_NOI_DAI = re.compile(r"\b(?:Do đó|Mặt khác|Như vậy|suy ra|Suy ra)\b|\\implies|\\hspace\*")
+_BAI_TRINH_BAY = ("solution", "answer")
+
+
+def _dong_loi_giai(lesson: LessonPackage):
+    """(nhãn, [dòng…]) cho ví dụ mẫu (phần sau "Lời giải") và lời giải bài TH/VD."""
+    for st in lesson.stages:
+        for b in st.blocks:
+            if getattr(b, "type", "") == "noted" and getattr(b, "variant", "") == "example":
+                t = b.text or ""
+                m = _VI_DU.search(t)
+                if "Lời giải" in t:
+                    yield (f"Ví dụ {m.group(1)}" if m else "Ví dụ"), t.split("Lời giải", 1)[1].split("[[br]]")[1:]
+            elif (getattr(b, "type", "") == "problem" and (getattr(b, "level", 0) or 0) >= 2
+                  and not re.search(r"\[\[blank|\\ldots", getattr(b, "statement", "") or "")):
+                # Bài khung ĐIỀN KHUYẾT: `answer` chỉ là đáp án từng ô, khung trong đề mới là bài giải.
+                for k in _BAI_TRINH_BAY:
+                    t = getattr(b, k, "") or ""
+                    if t:
+                        yield (b.label or "?"), t.split("[[br]]")
+
+
+def check_nhip_loi_giai(lesson: LessonPackage) -> list[str]:
+    """Cảnh báo lời giải không theo nhịp bài thi: dồn nhiều bước một dòng, "Vậy" dính dòng
+    trên, tính Pythagore không nêu căn cứ, nối lời bằng "Do đó/suy ra", thiếu câu "Vậy"."""
+    if getattr(lesson, "theme", "") == "de_thi":
+        return []                     # tờ đề / đáp án có barem riêng, soi bằng mắt
+    out: list[str] = []
+    for nhan, dong in _dong_loi_giai(lesson):
+        loi: list[str] = []
+        for i, d in enumerate(dong):
+            ngoai = _MATH.sub("§", d)
+            if _HAI_CAU.search(ngoai) or (re.search(r";\s*§", ngoai) and d.count("=") >= 2):
+                loi.append("nhiều bước trên một dòng")
+            if "Vậy" in ngoai and not ngoai.lstrip().startswith("Vậy"):
+                loi.append("\"Vậy\" dính dòng trên")
+            if _PYTHAGORE_TINH.search(d):
+                ke = " ".join(dong[max(0, i - 1):i + 3])   # Pythagore đảo nêu tên ở dòng kết luận
+                if "Pythagore" not in ke:
+                    loi.append("tính theo Pythagore mà không nêu \"theo định lí Pythagore\"")
+            if "theo Pythagore" in d:
+                loi.append("\"theo Pythagore\" → \"theo định lí Pythagore\"")
+            if _NOI_DAI.search(d):
+                loi.append("nối lời dài (Do đó / suy ra / \\implies / \\hspace*)")
+        if not any("Vậy" in d for d in dong):
+            loi.append("thiếu câu \"Vậy …\"")
+        if loi:
+            out.append(f"trinh_bay: {nhan} — lời giải chưa đúng nhịp đi thi: "
+                       f"{'; '.join(dict.fromkeys(loi))}. Mỗi bước một dòng, căn cứ trước, \"Vậy\" dòng riêng.")
     return out

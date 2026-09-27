@@ -81,3 +81,28 @@ def test_bat_phieu_hinh_ma_ly_thuyet_khong_co_hinh():
 def test_phieu_dai_so_thi_khong_doi_hinh_o_ly_thuyet():
     les = _les([{"type": "para", "text": "x"}], slug="phieu-dai-so", grade="Lớp 9 • Đại số")
     assert not any("KHÔNG có hình" in m for m in check_trinh_bay(les))
+
+
+def test_bat_suy_vuong_goc_ra_trung_diem_khong_qua_tam_giac_can():
+    """Thầy 24/09: "Vuông góc đâu có suy ra được luôn H là trung điểm đâu?" — SGK KNTT
+    không có định lí đường kính ⊥ dây ⇒ trung điểm; phải qua △OAB cân."""
+    sai = _les([{"type": "problem", "label": "Bài 12.", "statement": "x",
+                 "answer": r"Kẻ $OH \perp AB$ tại $H \Rightarrow H$ là trung điểm $AB$."}])
+    assert any("SGK KNTT KHÔNG có" in m for m in check_trinh_bay(sai))
+    dung = _les([{"type": "problem", "label": "Bài 12.", "statement": "x",
+                  "answer": r"Kẻ $OH \perp AB$.[[br]]$\triangle OAB$ cân tại $O$, $OH \perp AB$ "
+                            r"$\Rightarrow$ đường cao $OH$ đồng thời là trung tuyến $\Rightarrow H$ là trung điểm $AB$."}])
+    assert not any("SGK KNTT" in m for m in check_trinh_bay(dung))
+
+
+def test_bat_day_bang_nhau_cach_deu_tam_dung_nhu_dinh_li():
+    sai = _les([{"type": "problem", "label": "Bài 7.", "statement": "x",
+                 "answer": r"$AB = CD \Rightarrow$ hai dây cách đều tâm $\Rightarrow OK = OH$."}])
+    assert any("cách đều" in m for m in check_trinh_bay(sai))
+
+
+def test_duong_trung_truc_la_can_cu_hop_le():
+    """A, O cùng cách đều B, C ⇒ AO là trung trực của BC (lớp 7) — không được báo oan."""
+    les = _les([{"type": "problem", "label": "Bài 15.", "statement": "x",
+                 "solution": r"$\Rightarrow AO$ là đường trung trực của $BC$ $\Rightarrow AO \perp BC$ tại trung điểm $H$."}])
+    assert not any("SGK KNTT" in m for m in check_trinh_bay(les))
