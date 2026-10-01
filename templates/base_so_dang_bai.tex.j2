@@ -1,0 +1,35 @@
+% SỔ DẠNG BÀI — A4 DỌC. Sinh từ scripts/build_so_dang_bai.py, không sửa tay.
+% Mỗi dạng: thanh tiêu đề · dòng tần suất · nhận dạng · các bước · lỗi hay gặp · hộp bài mẫu
+% (trên: đề nguyên văn; dưới: lời giải trình bày như HS đi thi).
+\documentclass[11pt]{article}
+\usepackage[a4paper,top=1.2cm,bottom=1.4cm,left=1.6cm,right=1.6cm]{geometry}
+\usepackage{amsmath,amssymb}
+
+((* include "preamble/_fonts.tex.j2" *))
+((* include "preamble/_colors.tex.j2" *))
+
+\usepackage{enumitem}
+\usepackage{tikz}
+\usetikzlibrary{calc,decorations.pathreplacing}
+\usepackage[most]{tcolorbox}
+\usepackage{array}
+\usepackage[colorlinks=true,linkcolor=brand,urlcolor=brand]{hyperref}
+
+\setlength{\parindent}{0pt}
+\setlength{\parskip}{2.5pt}
+
+\newcommand{\tmtitle}[1]{{\sffamily\bfseries\fontsize{20pt}{24pt}\selectfont\color{brand}#1}}
+\newcommand{\tmsub}[1]{{\sffamily\color{muted}#1}}
+\newcommand{\chuongbar}[1]{\par\vspace{9pt}{\setlength{\fboxsep}{5pt}\colorbox{brand}{\parbox{\dimexpr\linewidth-10pt}{\color{white}\sffamily\bfseries #1}}}\par\vspace{3pt}}
+\newcommand{\dangtitle}[2]{\par\vspace{6pt}{\sffamily\bfseries\large\color{brand}#1.\ #2}\par}
+\newcommand{\tsline}[1]{{\small\sffamily\color{muted}Tần suất trong đề HN: \color{ink}#1}\par\vspace{1pt}}
+\newcommand{\muc}[1]{{\sffamily\bfseries\small\color{ink}#1:}\ }
+
+\newtcolorbox{baimau}[2]{enhanced,breakable,colback=white,colframe=brand!55,colbacklower=brand!4,
+  boxrule=0.6pt,arc=2pt,left=6pt,right=6pt,top=4pt,bottom=4pt,before skip=5pt,after skip=4pt,
+  segmentation style={dashed,brand!45},
+  title={\sffamily\bfseries\small #1\hfill\mdseries\footnotesize #2},fonttitle=\color{white},colbacktitle=brand!80}
+
+\begin{document}
+((( body )))
+\end{document}

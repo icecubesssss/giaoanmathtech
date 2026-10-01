@@ -178,7 +178,7 @@ DANG: dict[str, list[tuple[str, str, str]]] = {
         ("III. Căn thức", "Căn bậc hai, căn bậc ba: tính, điều kiện xác định", r"\bv\d|\bvx\b|\d ?v\d|căn bậc (hai|ba)|√|∛|căn thức|có nghĩa|xác định khi"),
         ("III. Căn thức", "Rút gọn biểu thức chứa căn", r"rút gọn|cho (hai )?biểu thức|với x ?(≥|>)"),
         ("III. Căn thức", "Câu phụ của bài rút gọn (tìm x, so sánh, giá trị nguyên)", r"tìm (giá trị )?(của )?x để|giá trị nguyên|so sánh [a-z] với"),
-        ("IV. Hệ thức lượng", "Tỉ số lượng giác của góc nhọn", r"tỉ số lượng giác|\bsin|\bcos|\btan|\bcot"),
+        ("IV. Hệ thức lượng", "Tỉ số lượng giác của góc nhọn", r"tỉ số lượng giác|\b(sin|cos|tan|cot|cotg|tg)(?![a-zăâđêôơưàáảãạ])"),
         ("IV. Hệ thức lượng", "Giải tam giác vuông, hệ thức cạnh – góc", r"giải tam giác vuông|tam giác .{0,20}vuông"),
         ("IV. Hệ thức lượng", "Ứng dụng thực tế (đo chiều cao, khoảng cách, góc nghiêng)", r"góc (nâng|nghiêng|tạo bởi)|chiều cao|tia nắng|bóng|cột cờ|thang|máy bay|con diều|tòa nhà|toà nhà|ngọn|đỉnh tháp|dốc"),
         ("V. Đường tròn", "Đường tròn, dây, vị trí tương đối", r"đường tròn|dây cung|bán kính"),
@@ -215,6 +215,190 @@ KET_LUAN = [
     ("Đồng quy", r"đồng quy"),
 ]
 
+# ─────────────────── TOÁN LỜI VĂN: tách theo BỐI CẢNH (dùng chung 6-9) ───────────────────
+# Một bài được coi là "lời văn" khi khớp ít nhất một bối cảnh dưới đây. Thứ tự = thứ tự in ra.
+LOI_VAN: list[tuple[str, str]] = [
+    ("Chuyển động: vận tốc – quãng đường – thời gian",
+     r"vận tốc|km ?/ ?h|km ?/ ?giờ|quãng đường|khởi hành|tốc độ|đi từ [a-z] đến [a-z]|gặp nhau"),
+    ("Chuyển động trên dòng nước (ca nô, xuôi – ngược dòng)",
+     r"xuôi dòng|ngược dòng|dòng nước|ca ?nô|nước yên lặng|bến sông"),
+    ("Làm chung – làm riêng (hai đội, hai vòi nước)",
+     r"làm chung|làm riêng|cùng làm|làm một mình|một mình .{0,40}(xong|hoàn thành)|vòi nước|hai vòi|chảy (vào|đầy)|đầy bể|(hoàn thành|làm xong) (xong )?công việc"),
+    ("Năng suất – kế hoạch (dự định/thực tế, vượt mức, cải tiến kĩ thuật)",
+     r"năng suất|theo kế hoạch|(?<!phong trào )(?<!phong trào \")kế hoạch(?! nhỏ)|vượt (mức|kế hoạch)|cải tiến (kĩ|kỹ) thuật|mỗi (ngày|giờ) (làm|sản xuất|may|dệt|đóng|trồng)|chi tiết máy|xưởng|phân xưởng|xí nghiệp"),
+    ("Mua bán: giá niêm yết, khuyến mãi, giảm giá %",
+     r"giá niêm yết|khuyến m[ãạ]i|giảm giá|chiết khấu|giảm \d+(,\d+)? ?%|giá (gốc|bìa)|ưu đãi"),
+    ("Mua bán: tính tiền, số lượng hàng mua được (không %)",
+     r"\d ?(nghìn |ngàn )?đồng|triệu đồng|thanh toán|hóa đơn|hoá đơn|\bmua\b|giá (bán|tiền|vé|mỗi)"),
+    ("Lợi nhuận: giá nhập – giá bán, lãi/lỗ",
+     r"giá nhập|giá vốn|lợi nhuận|doanh thu|lãi \d+(,\d+)? ?%|bán lỗ|\blỗ\b|tiền lời"),
+    ("Lãi suất ngân hàng, gửi tiết kiệm, đầu tư",
+     r"lãi suất|tiết kiệm|gửi (vào )?ngân hàng|kì hạn|kỳ hạn|đầu tư|cả gốc (lẫn|và) lãi"),
+    ("Tăng – giảm phần trăm theo thời gian (dân số, sản lượng năm ngoái/năm nay)",
+     r"năm (ngoái|nay|trước)|dân số|tăng (thêm )?\d+(,\d+)? ?%|vượt \d+(,\d+)? ?%|so với (năm|tháng|kì|kỳ) (trước|ngoái)"),
+    ("Hình học thực tế: vườn, ruộng, sân, phòng (chu vi – diện tích – kích thước)",
+     r"mảnh (vườn|đất|ruộng)|khu (vườn|đất)|thửa ruộng|miếng đất|sân (trường|chơi|vận động|bóng)|căn phòng|nền nhà|lát (gạch|nền)|hàng rào|bồn hoa|chiều dài.{0,60}chiều rộng|chiều rộng.{0,60}chiều dài"),
+    ("Hình khối thực tế: bể, thùng, hộp, lều, cốc (thể tích – diện tích xung quanh)",
+     r"(bể|thùng|hộp|lều|cốc|\blon\b|bồn|bình|chậu|téc|bồn chứa).{0,160}(thể tích|dung tích|diện tích xung quanh|\blít\b|m3|cm3|dm3|m³|cm³)"
+     r"|(thể tích|dung tích|diện tích xung quanh).{0,120}(bể|thùng|hộp|lều|cốc|lon|bồn|bình)|kim tự tháp|lều trại"),
+    ("Đo đạc gián tiếp: bóng cây, góc nâng, thang dựa tường, chiều cao tháp",
+     r"bóng (của )?(cây|cột|tòa|toà|người|tháp)|tia nắng|góc (nâng|nghiêng|tạo bởi)|cột cờ|ngọn (cây|hải đăng|tháp|núi)|con diều|thang (dựa|tựa|nghiêng)|chiều cao (của )?(cây|tòa|toà|tháp|cột|ngôi nhà)|máy bay|khinh khí cầu|con dốc"),
+    ("Bài toán hai loại (xe lớn/nhỏ, vé loại I/II, hai loại hàng)",
+     r"(hai|2) loại|loại (i|1)\b.{0,120}loại (ii|2)\b|xe (cỡ )?(lớn|nhỏ)|\d+ chỗ( ngồi)?\b"),
+    ("Tìm số (chữ số, hai số, tổng – hiệu – tỉ số)",
+     r"chữ số hàng|số có hai chữ số|tổng (của )?hai số|hiệu (của )?hai số|tỉ số (của )?hai số|hai số tự nhiên"),
+    ("Chia theo tỉ lệ (tỉ lệ thuận/nghịch: máy cày, công nhân, chia tiền thưởng)",
+     r"tỉ lệ (với|thuận|nghịch).{0,200}(máy|người|thợ|công nhân|đội|lớp|học sinh|cây|tiền|sách|ngày|giờ|kg|lít)"
+     r"|theo tỉ lệ|máy cày|cánh đồng|(năng suất|công suất) (các|mỗi) máy"),
+    ("Phân số/phần trăm của một số (số trang sách, học sinh các khối)",
+     r"(đọc|còn lại|đã đọc).{0,40}số trang|số trang .{0,20}(còn lại|đã đọc)|ngày thứ (nhất|hai|ba) .{0,60}(đọc|làm|được|bán)|số (sách|trang|học sinh) còn lại|(khối|lớp) (6|7|8|9)[a-z]? .{0,50}(bằng|chiếm)|chiếm \d+(,\d+)? ?% (tổng|số)"),
+    ("Chia đều, xếp hàng (ƯCLN – BCNN)",
+     r"xếp (thành )?(các )?hàng|chia đều|vừa đủ|đều (thừa|thiếu)|không (thừa|dư) (ai|người|bạn)|(nhiều|ít) nhất .{0,80}(nhóm|tổ|phần|đĩa|túi|hàng|khay)|(nhóm|tổ|phần|đĩa|túi|khay) .{0,80}(nhiều|ít) nhất"),
+    ("Điểm thi: trả lời đúng/sai (cộng – trừ điểm), điểm trung bình hệ số",
+     r"(số câu|bao nhiêu câu).{0,80}(trả lời )?(đúng|sai)|(đúng|sai) .{0,40}(bị trừ|được cộng)|bị trừ \d|hệ số (2|3|hai|ba)|điểm trung bình (môn|cả năm|của)"),
+    ("Nhiệt độ, độ cao – độ sâu so với mực nước biển (số nguyên)",
+     r"nhiệt độ|°c|độ c\b|mực nước biển|dưới (mặt|mực) nước|tầng hầm|độ sâu"),
+    ("Cước phí, tiền điện – nước, taxi (tính theo bậc/km)",
+     r"taxi|cước|tiền điện|tiền nước|số điện|kwh|kw ?h|bậc (1|i|thang)|gói cước|km đầu tiên"),
+    ("Hoá – lý: dung dịch, nồng độ, khối lượng riêng, hợp kim",
+     r"dung dịch|nồng độ|khối lượng riêng|nhiệt lượng|hợp kim|axit|gam muối|lít nước biển"),
+    ("Tính tuổi", r"\b\d+ tuổi\b|(bố|mẹ|ông|bà|anh|chị|em|con|cha) .{0,40}\btuổi\b(?! đời)"),
+]
+# Gắn THÊM (không tự thành bài lời văn): bài lời văn có hỏi lớn nhất/nhỏ nhất.
+TOI_UU_LV = ("(kèm) Tối ưu: hỏi lớn nhất / nhỏ nhất / nhiều nhất / ít nhất",
+             r"(lớn|nhỏ|cao|thấp) nhất|tối (đa|thiểu)|nhiều nhất|ít nhất")
+
+# ─────────────────── TIỂU DẠNG của một số dạng lớn (theo TÊN dạng cha) ───────────────────
+# Chỉ xét trên câu đã mang dạng cha. Câu không khớp tiểu dạng nào rơi vào "(chưa rõ tiểu dạng)".
+_SUB_TIMX = [
+    ("theo điều kiện ước – bội – chia hết", r"ước|bội|chia hết|⋮|ưcln|bcnn"),
+    ("có giá trị tuyệt đối", r"\||giá trị tuyệt đối"),
+    ("dạng tích bằng 0", r"\)\s*\.?\s*\(.{0,40}= ?0\b|tích .{0,20}bằng 0"),
+    ("trong tỉ lệ thức / dãy tỉ số", r"tỉ lệ thức|dãy tỉ số|x ?: ?\d+ ?= ?y|x ?/ ?\d+ ?= ?y"),
+    ("tìm x, y (hai ẩn) / tìm cặp số", r"tìm (các )?(cặp )?(số )?(nguyên |tự nhiên )?x ?, ?y"),
+    ("có luỹ thừa / căn bậc hai", r"lu[ỹỹ] thừa|√|căn|x ?\^|\^ ?x"),
+]
+SUB: dict[str, list[tuple[str, str]]] = {
+    "Tìm x": _SUB_TIMX,
+    "Thực hiện phép tính / tính hợp lí": [
+        ("tính hợp lí / tính nhanh (giao hoán, kết hợp, phân phối)", r"hợp l[íý]|tính nhanh|một cách hợp"),
+        ("biểu thức nhiều tầng ngoặc, thứ tự thực hiện", r"\[|\{|thứ tự thực hiện"),
+    ],
+    "Rút gọn biểu thức chứa căn": [
+        ("tính giá trị biểu thức tại x = …", r"tính giá trị (của )?(biểu thức )?[a-z]\b.{0,15}(khi|tại) x"),
+        ("rút gọn / chứng minh P = …", r"rút gọn|chứng minh (rằng )?[a-z] ?="),
+        ("tìm x để P = số", r"tìm (giá trị (của )?|các giá trị (của )?)?x để [a-z] ?="),
+        ("tìm x để P < / > số (bất phương trình)", r"(tìm (giá trị (của )?|các giá trị (của )?)?x để [a-z] ?[<>≤≥])|để [a-z] (âm|dương|< ?0|> ?0)"),
+        ("so sánh P với một số", r"so sánh [a-z] (với|và)"),
+        ("tìm x nguyên để P nguyên", r"giá trị nguyên|x nguyên|số nguyên x|nhận giá trị nguyên"),
+        ("GTLN / GTNN của P", r"(giá trị )?(lớn|nhỏ) nhất"),
+    ],
+    "Câu phụ của bài rút gọn (tìm x, so sánh, giá trị nguyên)": [
+        ("tìm x để P = số", r"x để [a-z] ?="),
+        ("tìm x để P < / > số", r"x để [a-z] ?[<>≤≥]|để [a-z] (âm|dương)"),
+        ("so sánh P với một số", r"so sánh"),
+        ("giá trị nguyên", r"nguyên"),
+    ],
+    "Câu phụ: tìm x nguyên để biểu thức nguyên / thoả điều kiện": [
+        ("tìm x nguyên để biểu thức nhận giá trị nguyên", r"giá trị nguyên|x nguyên|số nguyên x"),
+        ("tìm x để biểu thức = / < / > số", r"x để [a-z] ?[=<>≤≥]|để [a-z] (âm|dương|có giá trị)"),
+        ("tính giá trị biểu thức tại x = …", r"tính giá trị .{0,30}(khi|tại) x"),
+    ],
+    "Giá trị lớn nhất / nhỏ nhất, bài toán tối ưu thực tế": [
+        ("tối ưu trong bài thực tế (lợi nhuận, diện tích, chi phí…)",
+         r"lợi nhuận|chi phí|doanh thu|đồng|mảnh|diện tích|thể tích|sản phẩm|khách|phòng|\bvé\b|mét|\bm2\b|m²|tiền"),
+        ("GTLN / GTNN của biểu thức đại số", r"(giá trị )?(lớn|nhỏ) nhất của (biểu thức|[a-z]\b)"),
+        ("chứng minh bất đẳng thức", r"chứng minh .{0,60}(≥|≤|>|<)"),
+    ],
+    "Giá trị lớn nhất / nhỏ nhất": [
+        ("GTLN / GTNN của biểu thức đại số", r"(lớn|nhỏ) nhất của"),
+        ("tối ưu trong bài thực tế", r"lợi nhuận|chi phí|diện tích|đồng|tiền|sản phẩm"),
+    ],
+    "Phân tích đa thức thành nhân tử": [
+        ("dùng để tìm x / giải phương trình", r"tìm x|= ?0"),
+        ("dùng để tính nhanh / tính giá trị", r"tính (nhanh|giá trị|hợp l)"),
+    ],
+}
+CHUA_RO = "(chưa rõ tiểu dạng)"
+
+# ── Tiểu dạng LỚP 9 (01/10/2026, Thầy: "tách dạng sâu hơn") ──
+SUB.update({
+    "Giải hệ phương trình": [
+        ("hệ hai PT bậc nhất hai ẩn (thế / cộng đại số)", r"giải (các )?hệ|hệ phương trình sau"),
+        ("hệ quy về bậc nhất (khai triển có xy, đặt ẩn phụ 1/x…)", r"đặt ẩn|ẩn phụ|1 ?/ ?\(?x|√|\bvx\b|\bxy\b"),
+        ("nằm trong bài lập hệ (lời văn)", r"lập hệ|hoặc hệ phương trình"),
+        ("có tham số m", r"\bm\b|tham số"),
+    ],
+    "Phương trình quy về bậc nhất (tích, chứa ẩn ở mẫu)": [
+        ("phương trình tích", r"\)\s*\.?\s*\(|phương trình tích"),
+        ("phương trình chứa ẩn ở mẫu", r"ẩn ở mẫu|điều kiện xác định|đkxđ|x ?≠"),
+        ("phương trình bậc nhất một ẩn (khai triển, chuyển vế)", r"^(?![\s\S]*(\)\s*\.?\s*\(|ẩn ở mẫu|x ?≠|phương trình tích))[\s\S]*giải (các )?phương trình"),
+    ],
+    "Giải bất phương trình bậc nhất một ẩn": [
+        ("biểu diễn tập nghiệm trên trục số", r"trục số|biểu diễn (tập )?nghiệm"),
+        ("tìm nghiệm nguyên lớn nhất / nhỏ nhất", r"nghiệm nguyên|số nguyên (lớn|nhỏ) nhất|giá trị nguyên"),
+        ("giải BPT (có mẫu, khai triển ngoặc)", r"giải (các )?bất phương trình"),
+    ],
+    "Tỉ số lượng giác của góc nhọn": [
+        ("tính tỉ số lượng giác, so sánh / sắp xếp", r"tính (các )?tỉ số lượng giác|so sánh|sắp xếp|giá trị (của )?(sin|cos|tan|cot)"),
+        ("tính cạnh, góc (giải tam giác vuông)", r"tính (độ dài|cạnh|góc|số đo)|giải tam giác"),
+        ("tính / rút gọn biểu thức lượng giác", r"(sin|cos) ?\^? ?2|(sin|cos)2|biểu thức"),
+        ("chứng minh hệ thức lượng giác", r"chứng minh[^.\n]{0,80}\b(sin|cos|tan|cot)(?![a-zăâđêôơư])"),
+    ],
+    "Đường tròn, dây, vị trí tương đối": [
+        ("vị trí tương đối (điểm, đường thẳng, hai đường tròn)", r"vị trí tương đối|tiếp xúc|không giao|cắt nhau tại hai"),
+        ("dây và khoảng cách từ tâm đến dây", r"\bdây\b|khoảng cách từ (tâm|o)"),
+        ("bài hình tổng hợp có chứng minh", r"chứng minh"),
+    ],
+    "Tiếp tuyến": [
+        ("chứng minh một đường thẳng là tiếp tuyến", r"chứng minh .{0,60}tiếp tuyến"),
+        ("tính chất hai tiếp tuyến cắt nhau", r"hai tiếp tuyến|các tiếp tuyến"),
+        ("tính độ dài đoạn tiếp tuyến / góc", r"tính .{0,60}(độ dài|góc|tiếp tuyến)"),
+    ],
+    "Độ dài cung, diện tích hình quạt, hình vành khuyên": [
+        ("độ dài cung, chu vi đường tròn", r"độ dài (cung|đường tròn)|chu vi"),
+        ("diện tích hình tròn, hình quạt", r"hình quạt|diện tích hình tròn"),
+        ("hình vành khuyên", r"vành khuyên"),
+    ],
+    "Giải phương trình bậc hai": [
+        ("giải PT bậc hai (công thức nghiệm, nhẩm nghiệm)", r"giải (các )?phương trình"),
+        ("tham số m (có nghiệm, hai nghiệm phân biệt…)", r"\bm\b|tham số"),
+    ],
+    "Định lí Viète": [
+        ("không giải PT, tính biểu thức của hai nghiệm", r"không giải|x ?1|x₁|biểu thức"),
+        ("tìm hai số biết tổng và tích", r"hai số .{0,40}tổng|tổng .{0,30}tích"),
+        ("có tham số m", r"\bm\b|tham số"),
+    ],
+    "Bảng tần số, tần số tương đối, biểu đồ": [
+        ("lập bảng tần số / tần số tương đối", r"lập bảng|bảng tần số"),
+        ("đọc bảng, tính tần số tương đối, tỉ lệ %", r"tần số tương đối|tỉ lệ|phần trăm|%"),
+        ("bảng / biểu đồ tần số ghép nhóm", r"ghép nhóm|\[\s*\d+\s*;\s*\d+\s*\)"),
+        ("vẽ / đọc biểu đồ", r"biểu đồ"),
+    ],
+    "Phép thử, không gian mẫu, xác suất của biến cố": [
+        ("liệt kê không gian mẫu, kết quả thuận lợi", r"không gian mẫu|kết quả có thể|liệt kê|thuận lợi"),
+        ("một hành động: xúc xắc, rút thẻ, lấy bóng", r"xúc xắc|thẻ|quả bóng|viên bi|đồng xu|rút ngẫu nhiên|lấy ngẫu nhiên"),
+        ("hai hành động / chọn hai đối tượng", r"hai (lần|đồng xu|con xúc xắc|bạn|học sinh)|lần lượt|2 lần|đồng thời|liên tiếp"),
+    ],
+    "Góc nội tiếp, tứ giác nội tiếp, đường tròn ngoại/nội tiếp": [
+        ("chứng minh tứ giác nội tiếp / 4 điểm cùng thuộc đường tròn", r"tứ giác .{0,40}nội tiếp|cùng (thuộc|nằm trên)"),
+        ("góc nội tiếp, tính số đo góc", r"góc nội tiếp|số đo"),
+        ("đường tròn ngoại/nội tiếp tam giác, tính bán kính", r"(ngoại|nội) tiếp (tam giác|∆|△)|bán kính"),
+    ],
+    "Hình trụ, hình nón, hình cầu": [
+        ("hình trụ", r"hình trụ|\btrụ\b"),
+        ("hình nón", r"hình nón|\bnón\b"),
+        ("hình cầu", r"hình cầu|khối cầu|quả bóng|quả cầu"),
+    ],
+    "Căn bậc hai, căn bậc ba: tính, điều kiện xác định": [
+        ("tính, rút gọn biểu thức số có căn", r"tính|rút gọn|thực hiện"),
+        ("điều kiện xác định của căn", r"xác định|có nghĩa"),
+        ("căn bậc ba", r"căn bậc ba|∛"),
+        ("giải phương trình chứa căn", r"phương trình"),
+    ],
+})
+
+
 def _bo_ma(lop: str) -> list[tuple[str, str, str]]:
     """Bộ mã đầy đủ của khối: dạng theo chương + câu nâng cao (6-8) + toán thực tế (6-7).
     Lớp 8 đã có dạng GTLN/GTNN ở chương II nên không lấy lại mục đó ở phần nâng cao."""
@@ -231,6 +415,10 @@ _CAU = re.compile(r"^\s{0,8}(?:câu|bài)\s*(\d{1,2}|[ivx]{1,4})\b\s*[.:)(/-]?",
 _CAU_DAU = re.compile(r"^\s{0,8}(?:câu|bài)\s*(?:1|i)\b\s*[.:)(/-]?\s*\S", re.I)
 _HET = re.compile(r"^[\s\-–—_.*=]*h[ếe]t[\s\-–—_.*=!]*$", re.I)
 _DUNG = re.compile(r"hướng dẫn chấm|đáp án|biểu điểm|\bhdc\b|hướng dẫn giải|lời giải", re.I)
+# tiêu đề phần chấm viết thường / OCR sai dấu — dừng khối đề cả khi dòng KHÔNG in hoa
+# đầu đề thứ hai (mã đề khác) dính ngay sau câu cuối khi file thiếu dòng "Hết"
+_DE_MOI = re.compile(r"đ[ềèệ] ki[ểếề]m tra (giữa|cuối|học)|mã đ[ềệè] \d{3}|^\s*ubnd\b|^\s*phòng (gd|giáo dục)", re.I)
+_DUNG_MO = re.compile(r"hướng d[ẫaáã]n ch[ấaảá]m|biểu đi[ểe]m|đáp án (và|&|-) ?(biểu|hướng)|^\s*đáp án\s*[:.]?\s*$|^\s*(i|1)\.\s*đáp án", re.I)
 _BO_QUA = re.compile(r"ma trận|bản đặc tả|khung ma trận|đặc tả", re.I)
 _TN = re.compile(r"trắc nghiệm", re.I)
 # bảng đáp án trắc nghiệm ("Câu | 1 2 3 4 …" / "Đáp án A C B …") — đề thiếu dòng "Hết" thì đây là mốc dừng
@@ -278,7 +466,8 @@ def khoi_de(text: str) -> list[tuple[str, str]]:
             else:
                 continue
         # đang trong đề
-        if _HET.match(d) or (hoa and _DUNG.search(d)) or (hoa and _BO_QUA.search(d)) or _BANG_DA.match(dong):
+        if (_HET.match(d) or (hoa and _DUNG.search(d)) or (hoa and _BO_QUA.search(d)) or _BANG_DA.match(dong)
+                or (len(d) < 90 and _DUNG_MO.search(d)) or (len(ra) > 20 and _DE_MOI.search(d))):
             break
         if _TN.search(d) and len(d) < 120:
             phan = "TN"
@@ -339,9 +528,22 @@ def doc_kho(lop: str) -> list[dict]:
 def gan_dang(lop: str, de: list[dict]) -> None:
     rx = [(ch, ten, re.compile(p, re.I)) for ch, ten, p in _bo_ma(lop)]
     kl = [(ten, re.compile(p, re.I)) for ten, p in KET_LUAN]
+    lv = [(ten, re.compile(p, re.I)) for ten, p in LOI_VAN]
+    tu = re.compile(TOI_UU_LV[1], re.I)
+    sub = {cha: [(t, re.compile(p, re.I)) for t, p in ds] for cha, ds in SUB.items()}
     for d in de:
         for c in d["cau"]:
             c["dang"] = [(ch, ten) for ch, ten, r in rx if r.search(c["text"])]
+            c["loi_van"] = [ten for ten, r in lv if r.search(c["text"])]
+            if (any(t.startswith("Hình khối") for t in c["loi_van"])
+                    and not re.search(r"mảnh|khu (vườn|đất)|thửa|sân|căn phòng|nền nhà|rào", c["text"])):
+                c["loi_van"] = [t for t in c["loi_van"] if not t.startswith("Hình học thực tế")]
+            if c["loi_van"] and tu.search(c["text"]):
+                c["loi_van"].append(TOI_UU_LV[0])
+            c["sub"] = {}
+            for _, ten in c["dang"]:
+                if ten in sub:
+                    c["sub"][ten] = [t for t, r in sub[ten] if r.search(c["text"])] or [CHUA_RO]
             c["ket_luan"] = []
             if lop != "6" and re.search(_CM_HINH, c["text"]) and re.search(
                     r"tam giác|tứ giác|hình (thang|bình hành|chữ nhật|thoi|vuông)|đường tròn|△|∆|đường thẳng|\btia\b|\bgóc\b",
@@ -389,6 +591,9 @@ def xuat(lop: str, de: list[dict], dest: Path) -> dict:
         "ĐỘ TIN CẬY (soát tay 01/10/2026, 60 cặp câu–dạng chọn ngẫu nhiên, 15 cặp/khối): ~52/60 đúng (~87%). "
         "Lỗi hay gặp: bài tự luận nhiều ý mang cả dạng của ý khác; câu OCR vỡ chữ bị sót dạng. "
         "Con số % là để so dạng NHIỀU/ÍT, không dùng như số đếm chính xác.",
+        "TIỂU DẠNG (dòng ↳) và TOÁN LỜI VĂN theo bối cảnh: soát tay 24 cặp ngẫu nhiên, ~21/24 đúng (~87%). "
+        "Tiểu dạng của \"Tìm x\" phần lớn rơi vào \"(chưa rõ tiểu dạng)\" vì công thức trong đề bị vỡ khi đọc máy — "
+        "không đoán bừa.",
     ]
     for i, g in enumerate(ghi, 3):
         ws.cell(i, 1, "• " + g).alignment = Alignment(wrap_text=True)
@@ -398,65 +603,152 @@ def xuat(lop: str, de: list[dict], dest: Path) -> dict:
         rows.append([k, len(ds), sum(d["nguon"] == "text" for d in ds), sum(d["nguon"] == "ocr" for d in ds),
                      sum(len(d["cau"]) for d in ds), loi_ky[k],
                      ", ".join(f"{n}: {c}" for n, c in sorted(Counter(d["nam"] for d in ds).items()))])
-    bang(ws, 11, ["Kỳ", "Số đề dùng thống kê", "Có lớp chữ", "OCR (scan)", "Số câu/bài tách được",
+    bang(ws, 12, ["Kỳ", "Số đề dùng thống kê", "Có lớp chữ", "OCR (scan)", "Số câu/bài tách được",
                   "Đề KHÔNG tách được (bỏ ra)", "Theo năm học"], rows, [10, 11, 12, 12, 14, 14, 60])
     ws.column_dimensions["A"].width = 12
-    for i in range(3, 9):
+    for i in range(3, 10):
         ws.merge_cells(start_row=i, start_column=1, end_row=i, end_column=6)
         ws.row_dimensions[i].height = 30
 
-    # ── Cả năm: dạng × kỳ
+    xanh = PatternFill("solid", fgColor="C6EFCE")
+    vang = PatternFill("solid", fgColor="FFF2CC")
+    nhat = Font(italic=True, color="555555")
+
+    def pt(n, ds):
+        return round(100 * n / len(ds)) if ds else None
+
+    def so_de(ds, dk):
+        """Số đề có ít nhất một câu thoả dk(câu)."""
+        return sum(any(dk(c) for c in d["cau"]) for d in ds)
+
+    def vi_du(cau, uu_tien_it_dang=True):
+        vd = sorted(cau, key=lambda x: (x[0]["nguon"] != "text",
+                                        len(x[1]["dang"]) if uu_tien_it_dang else 0,
+                                        abs(len(x[1]["text"]) - 240)))
+        if not vd:
+            return ""
+        d0, c0 = vd[0]
+        return f"[{d0['truong']} {d0['nam']}] " + re.sub(r"\s+", " ", c0["text"])[:280]
+
+    def to_mau(ws, hang, cot_tu, cot_den):
+        for j in range(cot_tu, cot_den + 1):
+            v = ws.cell(hang, j).value
+            if isinstance(v, (int, float)) and v >= 50:
+                ws.cell(hang, j).font = dam; ws.cell(hang, j).fill = xanh
+            elif isinstance(v, (int, float)) and v >= 20:
+                ws.cell(hang, j).fill = vang
+
+    def ds_sub(ten):
+        return [t for t, _ in SUB.get(ten, [])] + ([CHUA_RO] if ten in SUB else [])
+
+    # ── Cả năm: dạng × kỳ (tiểu dạng ngay dưới dạng cha)
     ws = wb.create_sheet("Cả năm")
-    rows = []
+    rows, la_sub = [], []
     for ch, ten in thu_tu_dang:
-        r = [ch, ten]
-        for k in KY_THU_TU:
-            ds = theo_ky[k]
-            n = sum(any((ch, ten) in c["dang"] for c in d["cau"]) for d in ds)
-            r.append(round(100 * n / len(ds)) if ds else None)
-        rows.append(r)
-    bang(ws, 1, ["Chương KNTT", "Dạng", "% đề GK1", "% đề CK1", "% đề GK2", "% đề CK2"], rows, [22, 58, 10, 10, 10, 10])
-    for i, r in enumerate(rows, 2):
-        for j in range(3, 7):
-            v = r[j - 1]
-            if v is not None and v >= 50:
-                ws.cell(i, j).font = dam
-                ws.cell(i, j).fill = PatternFill("solid", fgColor="C6EFCE")
-            elif v:
-                ws.cell(i, j).fill = PatternFill("solid", fgColor="FFF2CC") if v >= 20 else nen_ch
+        rows.append([ch, ten] + [pt(so_de(theo_ky[k], lambda c: (ch, ten) in c["dang"]), theo_ky[k]) for k in KY_THU_TU])
+        la_sub.append(False)
+        for st in ds_sub(ten):
+            r = ["", "      ↳ " + st] + [pt(so_de(theo_ky[k], lambda c, st=st: st in c["sub"].get(ten, [])), theo_ky[k])
+                                        for k in KY_THU_TU]
+            if any(r[2:]):
+                rows.append(r); la_sub.append(True)
+    bang(ws, 1, ["Chương KNTT", "Dạng  (↳ = tiểu dạng; % tính trên TOÀN BỘ đề của kỳ)", "% đề GK1", "% đề CK1",
+                 "% đề GK2", "% đề CK2"], rows, [22, 66, 10, 10, 10, 10])
+    for i, sb in enumerate(la_sub, 2):
+        to_mau(ws, i, 3, 6)
+        if sb:
+            ws.cell(i, 2).font = nhat
 
     # ── Từng kỳ
     tom_tat = {}
+    thu_tu_ch = [ch for ch, _ in thu_tu_dang]
     for k in KY_THU_TU:
         ds = theo_ky[k]
         if not ds:
             continue
         ws = wb.create_sheet(k)
-        rows = []
+        nhom = []
         for ch, ten in thu_tu_dang:
-            co = [d for d in ds if any((ch, ten) in c["dang"] for c in d["cau"])]
             cau = [(d, c) for d in ds for c in d["cau"] if (ch, ten) in c["dang"]]
-            if not co:
+            if not cau:
                 continue
+            n = so_de(ds, lambda c: (ch, ten) in c["dang"])
             diem = [c["diem"] for _, c in cau if c["diem"] is not None and c["phan"] == "TL" and len(c["dang"]) == 1]
-            # ví dụ: ưu tiên câu có lớp chữ, ngắn, chỉ mang MỘT dạng
-            vd = sorted(cau, key=lambda x: (x[0]["nguon"] != "text", len(x[1]["dang"]), abs(len(x[1]["text"]) - 220)))
-            vi_du = ""
-            if vd:
-                d0, c0 = vd[0]
-                vi_du = f"[{d0['truong']} {d0['nam']}] " + re.sub(r"\s+", " ", c0["text"])[:260]
-            rows.append([ch, ten, len(co), round(100 * len(co) / len(ds)),
-                         sum(c["phan"] == "TN" for _, c in cau), sum(c["phan"] == "TL" for _, c in cau),
-                         round(sum(diem) / len(diem), 2) if diem else None, vi_du])
-        rows.sort(key=lambda r: (thu_tu_dang.index((r[0], r[1])) if r[0] == "Chung" else 0, -r[3]))
-        rows.sort(key=lambda r: [ch for ch, _ in thu_tu_dang].index(r[0]))
+            cha = [ch, ten, n, pt(n, ds), sum(c["phan"] == "TN" for _, c in cau),
+                   sum(c["phan"] == "TL" for _, c in cau), round(sum(diem) / len(diem), 2) if diem else None,
+                   vi_du(cau)]
+            con = []
+            for st in ds_sub(ten):
+                cs = [(d, c) for d, c in cau if st in c["sub"].get(ten, [])]
+                if not cs:
+                    continue
+                m = len({id(d) for d, _ in cs})
+                con.append(["", "      ↳ " + st, m, pt(m, ds), sum(c["phan"] == "TN" for _, c in cs),
+                            sum(c["phan"] == "TL" for _, c in cs), None,
+                            "" if st == CHUA_RO else vi_du(cs, False)])
+            con.sort(key=lambda r: (r[1].endswith(CHUA_RO), -r[3]))
+            nhom.append((cha, con))
+        nhom.sort(key=lambda g: (thu_tu_ch.index(g[0][0]), -g[0][3]))
+        rows, la_sub = [], []
+        for cha, con in nhom:
+            rows.append(cha); la_sub.append(False)
+            rows += con; la_sub += [True] * len(con)
         ws["A1"] = f"{k} — {len(ds)} đề"; ws["A1"].font = Font(bold=True, size=13)
+        ws["A2"] = "↳ = tiểu dạng của dòng trên; % tính trên TOÀN BỘ đề của kỳ. Toán lời văn tách theo bối cảnh ở cuối trang."
+        ws["A2"].font = nhat
         bang(ws, 3, ["Chương KNTT", "Dạng", "Số đề có", "% số đề", "Lượt câu TN", "Lượt câu/bài TL",
-                     "Điểm TB bài TL (chỉ bài 1 dạng)", "Ví dụ trích đề"], rows, [20, 50, 9, 9, 10, 10, 13, 90])
-        for i, r in enumerate(rows, 4):
-            if r[3] >= 50:
-                ws.cell(i, 4).font = dam; ws.cell(i, 4).fill = PatternFill("solid", fgColor="C6EFCE")
-        tom_tat[k] = sorted(((r[3], r[1]) for r in rows), reverse=True)[:6]
+                     "Điểm TB bài TL (chỉ bài 1 dạng)", "Ví dụ trích đề"], rows, [20, 56, 9, 9, 10, 10, 13, 90])
+        for i, sb in enumerate(la_sub, 4):
+            to_mau(ws, i, 4, 4)
+            if sb:
+                ws.cell(i, 2).font = nhat
+        # khối TOÁN LỜI VĂN của kỳ
+        h = 4 + len(rows) + 2
+        co_lv = so_de(ds, lambda c: bool(c["loi_van"]))
+        tb = sum(sum(1 for c in d["cau"] if c["loi_van"]) for d in ds) / len(ds)
+        ws.cell(h, 1, f"TOÁN LỜI VĂN — {k}: {pt(co_lv, ds)}% đề có ít nhất 1 bài lời văn · trung bình {tb:.1f} bài/đề").font = Font(bold=True, size=12)
+        rows_lv = []
+        for ten, _ in LOI_VAN + [TOI_UU_LV]:
+            cs = [(d, c) for d in ds for c in d["cau"] if ten in c["loi_van"]]
+            if not cs:
+                continue
+            m = len({id(d) for d, _ in cs})
+            rows_lv.append(["Lời văn", ten, m, pt(m, ds), sum(c["phan"] == "TN" for _, c in cs),
+                            sum(c["phan"] == "TL" for _, c in cs), None, vi_du(cs, False)])
+        rows_lv.sort(key=lambda r: (r[1].startswith("(kèm)"), -r[3]))
+        bang(ws, h + 1, ["", "Bối cảnh bài lời văn", "Số đề có", "% số đề", "Lượt câu TN", "Lượt câu/bài TL", "",
+                         "Ví dụ trích đề"], rows_lv, [20, 56, 9, 9, 10, 10, 13, 90])
+        for i in range(len(rows_lv)):
+            to_mau(ws, h + 2 + i, 4, 4)
+        ws.freeze_panes = ws.cell(4, 1)
+        tom_tat[k] = sorted(((r[3], r[1]) for r in rows if not r[1].startswith(" ")), reverse=True)[:6]
+
+    # ── Toán lời văn: bối cảnh × kỳ
+    ws = wb.create_sheet("Toán lời văn")
+    ws["A1"] = f"TOÁN LỜI VĂN — Toán {lop}: tách theo BỐI CẢNH"; ws["A1"].font = Font(bold=True, size=13)
+    ws["A2"] = ("Một bài có thể mang nhiều bối cảnh (VD: chuyển động + tối ưu). \"Hay giải bằng\" = các dạng "
+                "(công cụ) hay đi cùng bối cảnh đó trong cùng một bài.")
+    ws["A2"].font = nhat
+    tong = ["", "Có ít nhất 1 bài lời văn"] + [pt(so_de(theo_ky[k], lambda c: bool(c["loi_van"])), theo_ky[k])
+                                              for k in KY_THU_TU] + ["", "", ""]
+    rows = [tong]
+    tat_ca = [(d, c) for k in KY_THU_TU for d in theo_ky[k] for c in d["cau"]]
+    for ten, _ in LOI_VAN + [TOI_UU_LV]:
+        cs = [(d, c) for d, c in tat_ca if ten in c["loi_van"]]
+        if not cs:
+            continue
+        cung = Counter(t for _, c in cs for ch, t in c["dang"]
+                       if ch != "Chung" or "lập" in t or "thực tế" in t)
+        rows.append(["", ten] + [pt(so_de(theo_ky[k], lambda c, ten=ten: ten in c["loi_van"]), theo_ky[k])
+                                 for k in KY_THU_TU]
+                    + [len(cs), "; ".join(f"{t} ({n})" for t, n in cung.most_common(3)), vi_du(cs, False)])
+    rows[1:] = sorted(rows[1:], key=lambda r: (r[1].startswith("(kèm)"), -sum(x or 0 for x in r[2:6])))
+    bang(ws, 3, ["", "Bối cảnh", "% đề GK1", "% đề CK1", "% đề GK2", "% đề CK2", "Tổng lượt (4 kỳ)",
+                 "Hay giải bằng (dạng đi cùng)", "Ví dụ trích đề"], rows, [3, 58, 9, 9, 9, 9, 10, 48, 90])
+    ws.cell(4, 2).font = dam
+    for i in range(len(rows)):
+        to_mau(ws, 4 + i, 3, 6)
+    ws.column_dimensions["A"].width = 3
 
     # ── Bài hình: kết luận hay gặp (lớp 7-9)
     if lop != "6":
