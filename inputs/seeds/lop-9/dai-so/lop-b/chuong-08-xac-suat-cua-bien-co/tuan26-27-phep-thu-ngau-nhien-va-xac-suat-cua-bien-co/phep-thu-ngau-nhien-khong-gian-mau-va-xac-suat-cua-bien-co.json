@@ -1,0 +1,832 @@
+{
+ "slug": "phep-thu-ngau-nhien-khong-gian-mau-va-xac-suat-cua-bien-co",
+ "title": "Phép thử ngẫu nhiên, không gian mẫu và xác suất của biến cố",
+ "eyebrow": "ĐẠI SỐ 9 — CHƯƠNG VIII • BÀI 25, BÀI 26 • 2 CA",
+ "grade_label": "Lớp 9 • Chương VIII",
+ "class_tier": "B",
+ "chuong": "chuong-08-xac-suat-cua-bien-co",
+ "so_ca": 2,
+ "kiem_tra_phut": 45,
+ "stages": [
+  {
+   "kind": "review",
+   "number": 1,
+   "title": "Khám phá",
+   "teacher_note": "Cho HS trả lời miệng câu a), b) rồi dừng ở c): hai hộp thì viết kết quả thế nào cho khỏi lẫn? [[br]]Chưa nói tên \\emph{phép thử}, \\emph{không gian mẫu} — để HS tự thấy: biết hết các khả năng nhưng không biết trước khả năng nào. [[br]]Nhắc: công thức xác suất các em đã học ở lớp 8, hai buổi này chỉ thêm tên gọi, kí hiệu và cách đếm khi có HAI hành động.",
+   "blocks": [
+    {
+     "type": "opener",
+     "text": "Bạn Minh mua một hộp \\emph{blind box} (hộp mù) của bộ sưu tập nhân vật hoạt hình yêu thích. Bộ có 6 mẫu nhân vật khác nhau, mỗi hộp đựng ngẫu nhiên một mẫu, hộp bọc kín nên không nhìn được bên trong.[[br]]a) Trước khi mở hộp, Minh có biết chắc mình được mẫu nào không?[[br]]b) Minh có thể nhận được những mẫu nào? Có tất cả bao nhiêu khả năng?[[br]]c) Minh mua thêm một hộp nữa. Em ghi lại kết quả của cả hai hộp thế nào? Có bao nhiêu khả năng?"
+    },
+    {
+     "type": "para",
+     "text": "Hai buổi của chương VIII:[[br]]- \\textbf{Buổi 1} — phép thử MỘT hành động: không gian mẫu, kết quả thuận lợi, xác suất của biến cố (đúng khuôn Câu I.2 của đề Vào 10).[[br]]- \\textbf{Buổi 2} — phép thử HAI hành động: bảng hai chiều, lấy hai vật lần lượt hoặc đồng thời; cuối buổi làm bài kiểm tra 45 phút phần Thống kê $-$ Xác suất."
+    }
+   ]
+  },
+  {
+   "kind": "concept",
+   "number": 2,
+   "title": "Kiến thức cần nhớ",
+   "teacher_note": "Mục 1 $-$ 3 dạy đầu buổi 1; mục 4 $-$ 5 dạy đầu buổi 2. [[br]]Mục 3: chép bốn bước lên góc bảng, giữ suốt hai buổi — mọi bài giải đều đi đúng bốn bước này. [[br]]Hộp BẪY ĐIỂM đọc ở cuối buổi 2, trước bài kiểm tra.",
+   "blocks": [
+    {
+     "type": "para",
+     "variant": "heading",
+     "text": "1. Phép thử ngẫu nhiên và không gian mẫu"
+    },
+    {
+     "type": "deflist",
+     "items": [
+      {
+       "term": "Phép thử ngẫu nhiên:",
+       "desc": "một hoặc một số hành động, thực nghiệm tiến hành liên tiếp hay đồng thời mà kết quả không thể biết trước khi thực hiện nhưng liệt kê được tất cả các kết quả có thể xảy ra (gọi tắt là phép thử)."
+      },
+      {
+       "term": "Không gian mẫu:",
+       "desc": "tập hợp tất cả các kết quả có thể của phép thử, kí hiệu $\\Omega$; $n(\\Omega)$ là số phần tử của $\\Omega$."
+      }
+     ]
+    },
+    {
+     "type": "para",
+     "variant": "heading",
+     "text": "2. Kết quả thuận lợi cho một biến cố"
+    },
+    {
+     "type": "deflist",
+     "items": [
+      {
+       "term": "Kết quả thuận lợi:",
+       "desc": "kết quả của phép thử làm cho biến cố $E$ xảy ra; $n(E)$ là số kết quả thuận lợi cho $E$."
+      }
+     ]
+    },
+    {
+     "type": "para",
+     "variant": "heading",
+     "text": "3. Tính xác suất khi các kết quả đồng khả năng"
+    },
+    {
+     "type": "deflist",
+     "items": [
+      {
+       "term": "Công thức:",
+       "desc": "$P(E)=\\dfrac{n(E)}{n(\\Omega)}$, luôn có $0\\le P(E)\\le 1$."
+      },
+      {
+       "term": "Bước 1:",
+       "desc": "mô tả không gian mẫu, xác định $n(\\Omega)$."
+      },
+      {
+       "term": "Bước 2:",
+       "desc": "chứng tỏ các kết quả có thể là đồng khả năng."
+      },
+      {
+       "term": "Bước 3:",
+       "desc": "mô tả các kết quả thuận lợi cho $E$, xác định $n(E)$."
+      },
+      {
+       "term": "Bước 4:",
+       "desc": "lập tỉ số $\\dfrac{n(E)}{n(\\Omega)}$ rồi rút gọn."
+      }
+     ]
+    },
+    {
+     "type": "para",
+     "variant": "heading",
+     "text": "4. Phép thử gồm hai hành động"
+    },
+    {
+     "type": "deflist",
+     "items": [
+      {
+       "term": "Kết quả:",
+       "desc": "một cặp $(a, b)$, $a$ là kết quả của hành động thứ nhất, $b$ là kết quả của hành động thứ hai."
+      },
+      {
+       "term": "Bảng hai chiều:",
+       "desc": "hành động thứ nhất cho các dòng, hành động thứ hai cho các cột; mỗi ô là một kết quả, $n(\\Omega)$ bằng số ô."
+      },
+      {
+       "term": "Có ít nhất một:",
+       "desc": "đếm các ô KHÔNG thoả biến cố rồi lấy $n(\\Omega)$ trừ đi."
+      }
+     ]
+    },
+    {
+     "type": "para",
+     "variant": "heading",
+     "text": "5. Lấy hai vật từ cùng một hộp"
+    },
+    {
+     "type": "deflist",
+     "items": [
+      {
+       "term": "Lần lượt, không trả lại:",
+       "desc": "hai vật khác nhau, có kể thứ tự — lập bảng rồi gạch các ô $(a, a)$ trên đường chéo."
+      },
+      {
+       "term": "Đồng thời:",
+       "desc": "không kể thứ tự — $(a, b)$ và $(b, a)$ chỉ là MỘT kết quả; liệt kê mỗi cặp đúng một lần."
+      }
+     ]
+    },
+    {
+     "type": "noted",
+     "variant": "target",
+     "text": "\\textbf{Đề thi hỏi gì ở phần này.} Câu I.2 đề Vào 10 Hà Nội ($0{,}5$ điểm), ba năm liền một khuôn: hộp thẻ, hộp bóng hoặc đĩa quay đánh số, biến cố theo tính chất số.[[br]]Đề giữa kì II, cuối kì II của trường ($0{,}5$ $-$ $1{,}0$ điểm) còn hỏi thêm lấy đồng thời hai viên bi, hai tấm thẻ, chọn hai bạn (THCS Nguyễn Du, THCS Đức Giang, Ban Mai School)."
+    },
+    {
+     "type": "noted",
+     "variant": "trap",
+     "text": "Bạn Minh tính xác suất \\textquotedblleft chia 6 dư 2\\textquotedblright{} trong hộp 20 thẻ ra $\\dfrac{3}{20}$ vì đếm từ số 8 — sai: số $2=6\\cdot 0+2$ cũng chia 6 dư 2, đáp số đúng là $\\dfrac{4}{20}=\\dfrac{1}{5}$.[[br]]Bạn Lan rút một thẻ từ túi 4 thẻ và một thẻ từ túi 5 thẻ rồi viết $n(\\Omega)=4+5=9$ — sai: mỗi kết quả là một cặp, $n(\\Omega)=4\\cdot 5=20$.[[br]]Bạn Hùng viết $P(A)=3$ — sai: 3 là số kết quả thuận lợi, xác suất phải là một tỉ số không lớn hơn 1."
+    }
+   ]
+  },
+  {
+   "kind": "practice1",
+   "number": 3,
+   "title": "Ca 1 — Phép thử một hành động",
+   "teacher_note": "Ví dụ 1 $-$ 3 và Bài 1 $-$ 6 chạy nhanh, gọi HS trả lời miệng. [[br]]Ví dụ 4 là bài trục: chép nguyên đề Vào 10 năm 2026 lên bảng, thầy trò điền đủ bốn bước; sau đó HS tự điền Bài 7 và làm Bài 8 vào vở. [[br]]Bài 9 $-$ 13 mỗi bài gọi một HS lên bảng; Bài 13 nhắc lại cách giải phương trình bậc nhất.",
+   "blocks": [
+    {
+     "type": "noted",
+     "variant": "example",
+     "text": "\\textbf{Ví dụ 1.} Bạn An quay một tấm bìa hình tròn chia 5 hình quạt bằng nhau ghi các chữ cái $A$, $B$, $C$, $D$, $E$ (mũi tên gắn cố định ở tâm) một lần rồi ghi lại chữ cái ở hình quạt mà mũi tên chỉ vào.[[br]]a) Phép thử và kết quả của phép thử là gì?[[br]]b) Viết không gian mẫu và tìm số phần tử của nó.[[br]]{\\sffamily\\bfseries\\color{brand}Lời giải}[[br]]a) Phép thử là [[fill:quay tấm bìa một lần]].[[br]]Kết quả của phép thử là [[fill:chữ cái ở hình quạt mà mũi tên chỉ vào]].[[br]]b) Không gian mẫu $\\Omega=\\{[[fill:A;\\,B;\\,C;\\,D;\\,E]]\\}$.[[br]]Vậy $n(\\Omega)=[[fill:5]]$."
+    },
+    {
+     "type": "problem",
+     "label": "Bài 1.",
+     "statement": "Một hộp chứa 1 quả bóng màu xanh, 1 quả bóng màu vàng và 1 quả bóng màu đỏ \\;(bộ Mathtech, Dạng 1, Bài 2).[[br]]a) [NB] Lấy bất kì 1 quả bóng từ hộp rồi xem màu. Hoạt động này có phải phép thử ngẫu nhiên không? Vì sao?[[br]]b) [NB] Lấy đồng thời cả 3 quả bóng từ hộp rồi xem màu. Hoạt động này có phải phép thử ngẫu nhiên không? Vì sao?[[br]]c) [NB] Chọn ngẫu nhiên một gia đình có hai con và quan sát giới tính của hai người con \\;(Bài 8{.}1 SGK). Phép thử và kết quả của phép thử là gì?",
+     "level": 1,
+     "tier": "onclass",
+     "dang_id": "NB1",
+     "solution": "a) Có. Trước khi lấy không biết được màu của quả bóng, nhưng liệt kê được mọi kết quả có thể: xanh, vàng, đỏ.[[br]]b) Không. Lấy cả 3 quả thì luôn được đủ ba màu, kết quả đã biết trước.[[br]]c) Phép thử là chọn ngẫu nhiên một gia đình có hai con. Kết quả của phép thử là giới tính của con thứ nhất và con thứ hai, chẳng hạn (trai, gái)."
+    },
+    {
+     "type": "problem",
+     "label": "Bài 2.",
+     "statement": "Viết không gian mẫu $\\Omega$ rồi tìm $n(\\Omega)$.[[br]]a) [NB] Rút ngẫu nhiên một tấm thẻ từ hộp có 12 tấm thẻ cùng loại ghi các số $1,\\,2,\\,\\dots,\\,12$.[[br]]b) [NB] Bạn Minh Anh rút ngẫu nhiên một quyển sách trên giá có 4 quyển Văn học, 3 quyển Lịch sử và 2 quyển Khoa học viễn tưởng; kí hiệu các quyển là $V_1,\\,V_2,\\,V_3,\\,V_4$; $L_1,\\,L_2,\\,L_3$; $K_1,\\,K_2$.[[br]]c) [NB] Quay một lần đĩa tròn chia 8 hình quạt bằng nhau ghi các số $1;\\,12;\\,18;\\,22;\\,27;\\,69;\\,96;\\,99$, chiếc kim gắn cố định ở tâm (Hình 1).",
+     "level": 1,
+     "tier": "onclass",
+     "dang_id": "NB2",
+     "solution": "a) $\\Omega=\\{1;\\,2;\\,\\dots;\\,12\\}$, $n(\\Omega)=12$.[[br]]b) $\\Omega=\\{V_1;\\,V_2;\\,V_3;\\,V_4;\\,L_1;\\,L_2;\\,L_3;\\,K_1;\\,K_2\\}$, $n(\\Omega)=9$.[[br]]c) $\\Omega=\\{1;\\,12;\\,18;\\,22;\\,27;\\,69;\\,96;\\,99\\}$, $n(\\Omega)=8$.",
+     "figure": {
+      "tikz": "\\begin{tikzpicture}[font=\\small,line width=0.7pt]\\filldraw[stage2!22,draw=stage2,line width=0.8pt] (0,0) -- (90.00:1.20) arc (90.00:45.00:1.20) -- cycle;\\node[font=\\small,align=center] at (67.50:0.82) {1};\\filldraw[stage3!22,draw=stage3,line width=0.8pt] (0,0) -- (45.00:1.20) arc (45.00:0.00:1.20) -- cycle;\\node[font=\\small,align=center] at (22.50:0.82) {12};\\filldraw[stage1!22,draw=stage1,line width=0.8pt] (0,0) -- (0.00:1.20) arc (0.00:-45.00:1.20) -- cycle;\\node[font=\\small,align=center] at (-22.50:0.82) {18};\\filldraw[brand!22,draw=brand,line width=0.8pt] (0,0) -- (-45.00:1.20) arc (-45.00:-90.00:1.20) -- cycle;\\node[font=\\small,align=center] at (-67.50:0.82) {22};\\filldraw[stage5!22,draw=stage5,line width=0.8pt] (0,0) -- (-90.00:1.20) arc (-90.00:-135.00:1.20) -- cycle;\\node[font=\\small,align=center] at (-112.50:0.82) {27};\\filldraw[info!22,draw=info,line width=0.8pt] (0,0) -- (-135.00:1.20) arc (-135.00:-180.00:1.20) -- cycle;\\node[font=\\small,align=center] at (-157.50:0.82) {69};\\filldraw[gold!22,draw=gold,line width=0.8pt] (0,0) -- (-180.00:1.20) arc (-180.00:-225.00:1.20) -- cycle;\\node[font=\\small,align=center] at (-202.50:0.82) {96};\\filldraw[stage4!22,draw=stage4,line width=0.8pt] (0,0) -- (-225.00:1.20) arc (-225.00:-270.00:1.20) -- cycle;\\node[font=\\small,align=center] at (-247.50:0.82) {99};\\draw[->,ink,line width=1.1pt] (0,0) -- (-90:0.98);\\fill[ink] (0,0) circle (1.7pt);\\end{tikzpicture}",
+      "caption": "Hình 1",
+      "pos": "right"
+     }
+    },
+    {
+     "type": "noted",
+     "variant": "example",
+     "text": "\\textbf{Ví dụ 2.} Viết ngẫu nhiên một số tự nhiên có hai chữ số và chia hết cho 5. Viết không gian mẫu và tìm số phần tử của nó.[[br]]{\\sffamily\\bfseries\\color{brand}Lời giải}[[br]]Các số tự nhiên có hai chữ số và chia hết cho 5 là $10;\\,15;\\,20;\\,\\dots$, số lớn nhất là $[[fill:95]]$.[[br]]$\\Omega=\\{10;\\,15;\\,20;\\,\\dots;\\,[[fill:95]]\\}$.[[br]]Số phần tử của dãy cách đều: $([[fill:95]]-10):5+1=[[fill:18]]$.[[br]]Vậy $n(\\Omega)=[[fill:18]]$."
+    },
+    {
+     "type": "problem",
+     "label": "Bài 3.",
+     "statement": "Viết không gian mẫu $\\Omega$ của mỗi phép thử sau (dùng dấu $\\dots$ khi dãy dài) rồi tìm $n(\\Omega)$.[[br]]a) [NB] Viết ngẫu nhiên một số tự nhiên lẻ có hai chữ số và nhỏ hơn 40 \\;(cuối kì II, THCS Trưng Vương).[[br]]b) [NB] Viết ngẫu nhiên một số tự nhiên có hai chữ số không nhỏ hơn 80.[[br]]c) [NB] Viết ngẫu nhiên một số tự nhiên lớn hơn 499 và nhỏ hơn 1\\,000.",
+     "level": 1,
+     "tier": "onclass",
+     "dang_id": "NB3",
+     "solution": "a) $\\Omega=\\{11;\\,13;\\,\\dots;\\,39\\}$, $n(\\Omega)=(39-11):2+1=15$.[[br]]b) $\\Omega=\\{80;\\,81;\\,\\dots;\\,99\\}$, $n(\\Omega)=99-80+1=20$.[[br]]c) $\\Omega=\\{500;\\,501;\\,\\dots;\\,999\\}$, $n(\\Omega)=999-500+1=500$."
+    },
+    {
+     "type": "noted",
+     "variant": "example",
+     "text": "\\textbf{Ví dụ 3.} Một bánh xe được chia thành 24 hình quạt bằng nhau, đánh số từ 1 đến 24. Quay bánh xe một lần và xem mũi kim chỉ vào số mấy. Liệt kê các kết quả thuận lợi rồi đếm số kết quả thuận lợi cho mỗi biến cố:[[br]]a) $A$: \\textquotedblleft Kim chỉ vào số chia 7 dư 2\\textquotedblright{};[[br]]b) $B$: \\textquotedblleft Kim chỉ vào số chia hết cho 4 hoặc chia hết cho 5\\textquotedblright{}.[[br]]{\\sffamily\\bfseries\\color{brand}Lời giải}[[br]]a) Các kết quả thuận lợi cho $A$ là $[[fill:2]];\\,9;\\,16;\\,[[fill:23]]$.[[br]]$n(A)=[[fill:4]]$.[[br]]b) Các số chia hết cho 4 là $4;\\,8;\\,12;\\,16;\\,20;\\,24$ (6 số).[[br]]Các số chia hết cho 5 là $5;\\,10;\\,15;\\,20$ (4 số).[[br]]Số $20$ có mặt ở cả hai dãy nên chỉ đếm một lần.[[br]]Vậy $n(B)=6+4-1=[[fill:9]]$."
+    },
+    {
+     "type": "problem",
+     "label": "Bài 4.",
+     "statement": "Một hộp có 20 tấm thẻ cùng loại ghi các số $1,\\,2,\\,\\dots,\\,20$. Rút ngẫu nhiên một tấm thẻ. Liệt kê các kết quả thuận lợi rồi tìm số kết quả thuận lợi cho mỗi biến cố sau.[[br]]a) [NB] $A$: \\textquotedblleft Số ghi trên thẻ là số nguyên tố\\textquotedblright{}.[[br]]b) [NB] $B$: \\textquotedblleft Số ghi trên thẻ chia 6 dư 2\\textquotedblright{} \\;(cuối kì II, THCS Chu Văn An).[[br]]c) [NB] $C$: \\textquotedblleft Số ghi trên thẻ là ước của 18\\textquotedblright{}.",
+     "level": 1,
+     "tier": "onclass",
+     "dang_id": "NB4",
+     "solution": "a) $2;\\,3;\\,5;\\,7;\\,11;\\,13;\\,17;\\,19$, $n(A)=8$ (số 1 không phải số nguyên tố).[[br]]b) $2;\\,8;\\,14;\\,20$, $n(B)=4$ (nhớ số $2=6\\cdot 0+2$).[[br]]c) $1;\\,2;\\,3;\\,6;\\,9;\\,18$, $n(C)=6$."
+    },
+    {
+     "type": "problem",
+     "label": "Bài 5.",
+     "statement": "Một hộp đựng 15 tấm thẻ đánh số từ 1 đến 15, không có hai thẻ nào trùng số. An rút ngẫu nhiên một tấm thẻ \\;(cuối kì II, THCS Ngọc Thuỵ). Tìm số kết quả thuận lợi cho mỗi biến cố sau.[[br]]a) [NB] $A$: \\textquotedblleft Số ghi trên thẻ chia hết cho 3 và không vượt quá 10\\textquotedblright{}.[[br]]b) [NB] $B$: \\textquotedblleft Số ghi trên thẻ là số lẻ hoặc lớn hơn 12\\textquotedblright{}.[[br]]c) [NB] $C$: \\textquotedblleft Số ghi trên thẻ không chia hết cho 5\\textquotedblright{}.",
+     "level": 1,
+     "tier": "onclass",
+     "dang_id": "NB5",
+     "solution": "a) Phải thoả CẢ HAI điều kiện: $3;\\,6;\\,9$, $n(A)=3$.[[br]]b) Thoả MỘT TRONG HAI điều kiện: $1;\\,3;\\,5;\\,7;\\,9;\\,11;\\,13;\\,14;\\,15$, $n(B)=9$.[[br]]c) Bỏ các số $5;\\,10;\\,15$ khỏi 15 số: $n(C)=15-3=12$."
+    },
+    {
+     "type": "problem",
+     "label": "Bài 6.",
+     "statement": "Mỗi khẳng định sau đúng hay sai? Vì sao? \\;(bộ Mathtech, Dạng 2, Bài 1 và Bài 2)[[br]]a) [NB] Lấy ngẫu nhiên 1 viên bi từ hộp có 10 viên bi cùng kích thước và khối lượng, đánh số từ 1 đến 10 thì các kết quả có thể là đồng khả năng.[[br]]b) [NB] Lấy ngẫu nhiên 1 viên bi từ hộp có 1 bi xanh, 1 bi đỏ và 8 bi trắng (cùng kích thước, khối lượng) rồi xem màu thì ba kết quả xanh, đỏ, trắng là đồng khả năng.[[br]]c) [NB] Rút ngẫu nhiên 1 lá bài từ bộ bài tây 52 lá thì các kết quả có thể là đồng khả năng.",
+     "level": 1,
+     "tier": "onclass",
+     "dang_id": "NB6",
+     "solution": "a) Đúng, vì các viên bi giống nhau và được lấy ngẫu nhiên.[[br]]b) Sai, vì có tới 8 bi trắng nên khả năng lấy được bi trắng lớn hơn hẳn bi xanh, bi đỏ.[[br]]c) Đúng, vì các lá bài giống nhau về hình dạng và được rút ngẫu nhiên."
+    },
+    {
+     "type": "noted",
+     "variant": "example",
+     "text": "\\textbf{Ví dụ 4.} (Đề chính thức Vào 10 Hà Nội năm 2026) Một hộp đựng 6 quả bóng cùng loại, mỗi quả bóng ghi một trong các số $1,\\,2,\\,3,\\,4,\\,5,\\,6$; hai quả bóng khác nhau được ghi hai số khác nhau. Lấy ngẫu nhiên một quả bóng trong hộp. Tính xác suất của biến cố $A$: \\textquotedblleft Số ghi trên quả bóng lấy được là số chẵn\\textquotedblright{}.[[br]]{\\sffamily\\bfseries\\color{brand}Lời giải}[[br]]Không gian mẫu $\\Omega=\\{1;\\,2;\\,3;\\,4;\\,5;\\,6\\}$, $n(\\Omega)=[[fill:6]]$.[[br]]Vì [[fill:các quả bóng cùng loại và được lấy ngẫu nhiên]] nên các kết quả có thể là đồng khả năng.[[br]]Các kết quả thuận lợi cho $A$ là $[[fill:2;\\,4;\\,6]]$, $n(A)=[[fill:3]]$.[[br]]$P(A)=\\dfrac{n(A)}{n(\\Omega)}=\\dfrac{[[fill:3]]\\rule[-0.9ex]{0pt}{2.6ex}}{[[fill:6]]\\rule{0pt}{2.2ex}}$.[[br]]Vậy $P(A)=\\dfrac{[[fill:1]]\\rule[-0.9ex]{0pt}{2.6ex}}{[[fill:2]]\\rule{0pt}{2.2ex}}$."
+    },
+    {
+     "type": "problem",
+     "label": "Bài 7.",
+     "statement": "Điền vào chỗ trống để hoàn thành bài giải theo đúng bốn bước \\;(đề chính thức Vào 10 Hà Nội năm 2025): Một hộp có 8 chiếc thẻ cùng loại, mỗi thẻ được ghi một trong các số $1,\\,2,\\,\\dots,\\,8$; hai thẻ khác nhau được ghi hai số khác nhau. Rút ngẫu nhiên một thẻ trong hộp. Tính xác suất của biến cố $A$: \\textquotedblleft Số ghi trên thẻ rút được là một số chia hết cho 3\\textquotedblright{}.[[br]]a) [NB] Không gian mẫu $\\Omega=\\{$ [[blank:4.2cm]] $\\}$, $n(\\Omega)=$ [[blank:1.1cm]].[[br]]b) [NB] Vì [[blank:5.2cm]] nên các kết quả có thể là đồng khả năng. Các kết quả thuận lợi cho $A$ là [[blank:2.4cm]], $n(A)=$ [[blank:1.1cm]].[[br]]c) [NB] $P(A)=\\dfrac{n(A)}{n(\\Omega)}=$ [[blank:2.4cm]]. Vậy $P(A)=$ [[blank:1.1cm]].",
+     "level": 1,
+     "tier": "onclass",
+     "dang_id": "NB7",
+     "solution": "a) $\\Omega=\\{1;\\,2;\\,3;\\,4;\\,5;\\,6;\\,7;\\,8\\}$, $n(\\Omega)=8$.[[br]]b) Vì các thẻ cùng loại và được rút ngẫu nhiên; các kết quả thuận lợi là $3;\\,6$, $n(A)=2$.[[br]]c) $P(A)=\\dfrac{2}{8}=\\dfrac{1}{4}$. Vậy $P(A)=\\dfrac{1}{4}$."
+    },
+    {
+     "type": "problem",
+     "label": "Bài 8.",
+     "statement": "Tính xác suất của biến cố, trình bày đủ bốn bước như Ví dụ 4.[[br]]a) [TH] Trong một hộp có 20 chiếc thẻ cùng loại, được ghi số từ 1 đến 20; hai thẻ khác nhau ghi số khác nhau. Bạn Hà rút ngẫu nhiên một thẻ. Tính xác suất của biến cố $A$: \\textquotedblleft Số ghi trên thẻ là số lớn hơn 15\\textquotedblright{} \\;(cuối kì II, Phòng GD\\&ĐT Hai Bà Trưng).[[br]]b) [TH] Một hộp có 52 chiếc thẻ cùng loại ghi các số $1,\\,2,\\,\\dots,\\,52$; hai thẻ khác nhau ghi hai số khác nhau. Rút ngẫu nhiên một thẻ. Tính xác suất của biến cố $B$: \\textquotedblleft Số xuất hiện trên thẻ là bội của 5\\textquotedblright{} \\;(giữa kì II, THCS Nghĩa Tân).[[br]]c) [TH] Một hộp có 20 viên bi như nhau, bạn Ngân viết lên các viên bi các số $1,\\,2,\\,\\dots,\\,20$, hai viên khác nhau viết hai số khác nhau. Lấy ngẫu nhiên một viên bi. Tính xác suất của biến cố $C$: \\textquotedblleft Số trên viên bi chia 7 dư 1\\textquotedblright{} \\;(cuối kì II, THCS Phúc Đồng).",
+     "level": 2,
+     "tier": "onclass",
+     "dang_id": "TH1",
+     "solution": "a) Không gian mẫu $\\Omega=\\{1;\\,2;\\,3;\\,\\dots;\\,20\\}$, $n(\\Omega)=20$.[[br]]Vì các thẻ cùng loại và được rút ngẫu nhiên nên các kết quả có thể là đồng khả năng.[[br]]Các kết quả thuận lợi cho $A$ là $16;\\,17;\\,18;\\,19;\\,20$, $n(A)=5$.[[br]]$P(A)=\\dfrac{n(A)}{n(\\Omega)}=\\dfrac{5}{20}=\\dfrac{1}{4}$.[[br]]Vậy $P(A)=\\dfrac{1}{4}$.[[br]]b) Không gian mẫu $\\Omega=\\{1;\\,2;\\,3;\\,\\dots;\\,52\\}$, $n(\\Omega)=52$.[[br]]Vì các thẻ cùng loại và được rút ngẫu nhiên nên các kết quả có thể là đồng khả năng.[[br]]Các kết quả thuận lợi cho $B$ là $5;\\,10;\\,15;\\,20;\\,25;\\,30;\\,35;\\,40;\\,45;\\,50$, $n(B)=10$.[[br]]$P(B)=\\dfrac{n(B)}{n(\\Omega)}=\\dfrac{10}{52}=\\dfrac{5}{26}$.[[br]]Vậy $P(B)=\\dfrac{5}{26}$.[[br]]c) Không gian mẫu $\\Omega=\\{1;\\,2;\\,3;\\,\\dots;\\,20\\}$, $n(\\Omega)=20$.[[br]]Vì các viên bi như nhau và được lấy ngẫu nhiên nên các kết quả có thể là đồng khả năng.[[br]]Các kết quả thuận lợi cho $C$ là $1;\\,8;\\,15$, $n(C)=3$.[[br]]$P(C)=\\dfrac{n(C)}{n(\\Omega)}=\\dfrac{3}{20}$.[[br]]Vậy $P(C)=\\dfrac{3}{20}$.",
+     "hints": [
+      "Phép thử có tất cả bao nhiêu kết quả có thể? Viết chúng ra trong ngoặc nhọn.",
+      "Trong các kết quả đó, những kết quả nào làm biến cố xảy ra? Đã soát số đầu dãy và số cuối dãy chưa?"
+     ]
+    },
+    {
+     "type": "noted",
+     "variant": "example",
+     "text": "\\textbf{Ví dụ 5.} Một đĩa tròn bằng bìa cứng được chia làm 8 phần bằng nhau và ghi các số $5;\\,9;\\,14;\\,18;\\,21;\\,33;\\,40;\\,57$; chiếc kim được gắn cố định vào trục quay ở tâm của đĩa. Quay đĩa một lần. Tính xác suất của biến cố $M$: \\textquotedblleft Kim chỉ vào hình quạt ghi số chia hết cho 3\\textquotedblright{}.[[br]]{\\sffamily\\bfseries\\color{brand}Lời giải}[[br]]Không gian mẫu $\\Omega=\\{5;\\,9;\\,14;\\,18;\\,21;\\,33;\\,40;\\,57\\}$, $n(\\Omega)=[[fill:8]]$.[[br]]Vì đĩa được chia thành các phần bằng nhau nên các kết quả có thể là đồng khả năng.[[br]]Các kết quả thuận lợi cho $M$ là $[[fill:9;\\,18;\\,21;\\,33;\\,57]]$, $n(M)=[[fill:5]]$.[[br]]$P(M)=\\dfrac{n(M)}{n(\\Omega)}$.[[br]]Vậy $P(M)=\\dfrac{[[fill:5]]\\rule[-0.9ex]{0pt}{2.6ex}}{[[fill:8]]\\rule{0pt}{2.2ex}}$."
+    },
+    {
+     "type": "problem",
+     "label": "Bài 9.",
+     "statement": "Tính xác suất của biến cố trong mỗi trường hợp sau.[[br]]a) [TH] Một đĩa tròn bằng bìa cứng được chia làm 12 phần bằng nhau và ghi các số $1,\\,2,\\,\\dots,\\,12$; chiếc kim được gắn cố định vào trục quay ở tâm. Quay đĩa một lần. Tính xác suất của biến cố $M$: \\textquotedblleft Kim chỉ vào hình quạt ghi số chia hết cho 4\\textquotedblright{} \\;(đề minh hoạ Vào 10 của Sở GD\\&ĐT Hà Nội).[[br]]b) [TH] Quay một lần đĩa tròn ở Bài 2 ý c). Tính xác suất của biến cố $N$: \\textquotedblleft Kim chỉ vào hình quạt ghi số chia cho 5 dư 2\\textquotedblright{} \\;(cuối kì II, THCS Phúc Lợi).[[br]]c) [TH] Một bánh xe được chia thành 16 hình quạt bằng nhau, đánh số từ 1 đến 16. Quay bánh xe một lần. Tính xác suất của biến cố $B$: \\textquotedblleft Kim chỉ vào số là ước của 14\\textquotedblright{}.",
+     "level": 2,
+     "tier": "onclass",
+     "dang_id": "TH2",
+     "solution": "a) Không gian mẫu $\\Omega=\\{1;\\,2;\\,3;\\,\\dots;\\,12\\}$, $n(\\Omega)=12$.[[br]]Vì đĩa được chia thành 12 phần bằng nhau nên các kết quả có thể là đồng khả năng.[[br]]Các kết quả thuận lợi cho $M$ là $4;\\,8;\\,12$, $n(M)=3$.[[br]]$P(M)=\\dfrac{n(M)}{n(\\Omega)}=\\dfrac{3}{12}=\\dfrac{1}{4}$.[[br]]Vậy $P(M)=\\dfrac{1}{4}$.[[br]]b) Không gian mẫu $\\Omega=\\{1;\\,12;\\,18;\\,22;\\,27;\\,69;\\,96;\\,99\\}$, $n(\\Omega)=8$.[[br]]Vì đĩa được chia thành 8 phần bằng nhau nên các kết quả có thể là đồng khả năng.[[br]]Các kết quả thuận lợi cho $N$ là $12;\\,22;\\,27$, $n(N)=3$.[[br]]$P(N)=\\dfrac{n(N)}{n(\\Omega)}=\\dfrac{3}{8}$.[[br]]Vậy $P(N)=\\dfrac{3}{8}$.[[br]]c) Không gian mẫu $\\Omega=\\{1;\\,2;\\,3;\\,\\dots;\\,16\\}$, $n(\\Omega)=16$.[[br]]Vì bánh xe được chia thành 16 hình quạt bằng nhau nên các kết quả có thể là đồng khả năng.[[br]]Các kết quả thuận lợi cho $B$ là $1;\\,2;\\,7;\\,14$, $n(B)=4$.[[br]]$P(B)=\\dfrac{n(B)}{n(\\Omega)}=\\dfrac{4}{16}=\\dfrac{1}{4}$.[[br]]Vậy $P(B)=\\dfrac{1}{4}$.",
+     "hints": [
+      "Đĩa có bao nhiêu hình quạt bằng nhau? Đó chính là số kết quả có thể.",
+      "Soát từng số ghi trên đĩa: số nào thoả biến cố? Có số nào bị bỏ sót vì dãy không liên tiếp không?"
+     ]
+    },
+    {
+     "type": "noted",
+     "variant": "example",
+     "text": "\\textbf{Ví dụ 6.} Viết ngẫu nhiên một số tự nhiên lẻ có hai chữ số. Tính xác suất của biến cố $E$: \\textquotedblleft Số tự nhiên được viết ra là bội của 9\\textquotedblright{}.[[br]]{\\sffamily\\bfseries\\color{brand}Lời giải}[[br]]Không gian mẫu $\\Omega=\\{11;\\,13;\\,\\dots;\\,99\\}$, $n(\\Omega)=(99-11):2+1=[[fill:45]]$.[[br]]Vì số được viết ngẫu nhiên nên các kết quả có thể là đồng khả năng.[[br]]Các kết quả thuận lợi cho $E$ là $[[fill:27;\\,45;\\,63;\\,81;\\,99]]$, $n(E)=[[fill:5]]$.[[br]]$P(E)=\\dfrac{n(E)}{n(\\Omega)}=\\dfrac{[[fill:5]]\\rule[-0.9ex]{0pt}{2.6ex}}{[[fill:45]]\\rule{0pt}{2.2ex}}$.[[br]]Vậy $P(E)=\\dfrac{[[fill:1]]\\rule[-0.9ex]{0pt}{2.6ex}}{[[fill:9]]\\rule{0pt}{2.2ex}}$."
+    },
+    {
+     "type": "problem",
+     "label": "Bài 10.",
+     "statement": "Vẫn ba phép thử ở Bài 3. Tính xác suất của mỗi biến cố sau.[[br]]a) [TH] Số lẻ có hai chữ số và nhỏ hơn 40; $M$: \\textquotedblleft Số tự nhiên được viết ra là bội của 3\\textquotedblright{} \\;(cuối kì II, THCS Trưng Vương).[[br]]b) [TH] Số có hai chữ số không nhỏ hơn 80; $A$: \\textquotedblleft Số được viết ra có chữ số hàng chục lớn hơn chữ số hàng đơn vị\\textquotedblright{}.[[br]]c) [TH] Số lớn hơn 499 và nhỏ hơn 1\\,000; $D$: \\textquotedblleft Số được viết ra chia hết cho 100\\textquotedblright{}.",
+     "level": 2,
+     "tier": "onclass",
+     "dang_id": "TH3",
+     "solution": "a) Không gian mẫu $\\Omega=\\{11;\\,13;\\,15;\\,\\dots;\\,39\\}$, $n(\\Omega)=15$.[[br]]Vì số được viết ngẫu nhiên nên các kết quả có thể là đồng khả năng.[[br]]Các kết quả thuận lợi cho $M$ là $15;\\,21;\\,27;\\,33;\\,39$, $n(M)=5$.[[br]]$P(M)=\\dfrac{n(M)}{n(\\Omega)}=\\dfrac{5}{15}=\\dfrac{1}{3}$.[[br]]Vậy $P(M)=\\dfrac{1}{3}$.[[br]]b) Không gian mẫu $\\Omega=\\{80;\\,81;\\,82;\\,\\dots;\\,99\\}$, $n(\\Omega)=20$.[[br]]Vì số được viết ngẫu nhiên nên các kết quả có thể là đồng khả năng.[[br]]Các kết quả thuận lợi cho $A$ là $80;\\,81;\\,82;\\,83;\\,84;\\,85;\\,86;\\,87;\\,90;\\,91;\\,92;\\,93;\\,94;\\,95;\\,96;\\,97;\\,98$, $n(A)=17$.[[br]]$P(A)=\\dfrac{n(A)}{n(\\Omega)}=\\dfrac{17}{20}$.[[br]]Vậy $P(A)=\\dfrac{17}{20}$.[[br]]c) Không gian mẫu $\\Omega=\\{500;\\,501;\\,502;\\,\\dots;\\,999\\}$, $n(\\Omega)=500$.[[br]]Vì số được viết ngẫu nhiên nên các kết quả có thể là đồng khả năng.[[br]]Các kết quả thuận lợi cho $D$ là $500;\\,600;\\,700;\\,800;\\,900$, $n(D)=5$.[[br]]$P(D)=\\dfrac{n(D)}{n(\\Omega)}=\\dfrac{5}{500}=\\dfrac{1}{100}$.[[br]]Vậy $P(D)=\\dfrac{1}{100}$.",
+     "hints": [
+      "Không gian mẫu đã lập ở Bài 3 có bao nhiêu phần tử?",
+      "Trong dãy đó, viết lần lượt từng số thoả biến cố — có cách nào viết đủ mà không sót?"
+     ]
+    },
+    {
+     "type": "problem",
+     "label": "Bài 11.",
+     "statement": "a) [NB] Trong một kì thi học sinh giỏi Toán, tỉ lệ học sinh đạt giải là $35\\%$. Chọn ngẫu nhiên một học sinh đã dự thi. Xác suất để học sinh đó đạt giải là bao nhiêu? \\;(bộ Mathtech, Dạng 3, Bài 41)[[br]]b) [NB] Nhà máy thống kê sản phẩm của hai dây chuyền $Y$, $Z$ như sau \\;(bộ Mathtech, Dạng 3, Bài 10).\\par\\nopagebreak\\begin{center}\\footnotesize\\renewcommand\\arraystretch{1.25}\\begin{tabular}{|l|c|c|c|}\\hline \\textbf{Chất lượng sản phẩm} & \\textbf{Đạt} & \\textbf{Không đạt} & \\textbf{Tổng} \\\\ \\hline Dây chuyền $Y$ & 250 & 14 & 264 \\\\ \\hline Dây chuyền $Z$ & 270 & 18 & 288 \\\\ \\hline Tổng & 520 & 32 & 552 \\\\ \\hline\\end{tabular}\\end{center}Lấy ngẫu nhiên một sản phẩm. Tìm $n(\\Omega)$ và số kết quả thuận lợi cho biến cố $C$: \\textquotedblleft Lấy được một sản phẩm không đạt chất lượng\\textquotedblright{}.[[br]]c) [NB] Chiều cao của 40 học sinh lớp 9A được cho trong bảng \\;(giữa kì II, THCS Chương Dương).\\par\\nopagebreak\\begin{center}\\footnotesize\\renewcommand\\arraystretch{1.25}\\begin{tabular}{|l|c|c|c|c|}\\hline \\textbf{Chiều cao (cm)} & $[146;152)$ & $[152;158)$ & $[158;164)$ & $[164;170)$ \\\\ \\hline \\textbf{Số học sinh} & 6 & 18 & 10 & 6 \\\\ \\hline \\end{tabular}\\end{center}Chọn ngẫu nhiên một học sinh. Tìm số kết quả thuận lợi cho biến cố $H$: \\textquotedblleft Học sinh được chọn cao từ 158 cm trở lên\\textquotedblright{}.",
+     "level": 1,
+     "tier": "onclass",
+     "dang_id": "NB8",
+     "solution": "a) $P=35\\%=0{,}35=\\dfrac{7}{20}$.[[br]]b) $n(\\Omega)=552$; $n(C)=14+18=32$.[[br]]c) Hai nhóm $[158;164)$ và $[164;170)$: $n(H)=10+6=16$."
+    },
+    {
+     "type": "noted",
+     "variant": "example",
+     "text": "\\textbf{Ví dụ 7.} Túi kẹo trái cây có 60 viên cùng loại, trong đó 20 viên vị sầu riêng, 15 viên vị cam, 7 viên vị dâu, 10 viên vị chanh và 8 viên vị mít. Bạn Toàn lấy ngẫu nhiên một viên kẹo. Tính xác suất của các biến cố $F$: \\textquotedblleft Lấy được kẹo vị cam hoặc vị chanh\\textquotedblright{} và $G$: \\textquotedblleft Không lấy được kẹo vị dâu\\textquotedblright{}.[[br]]{\\sffamily\\bfseries\\color{brand}Lời giải}[[br]]Mỗi viên kẹo là một kết quả có thể, $n(\\Omega)=[[fill:60]]$.[[br]]Vì các viên kẹo cùng loại và được lấy ngẫu nhiên nên các kết quả có thể là đồng khả năng.[[br]]$n(F)=15+10=[[fill:25]]$.[[br]]$n(G)=[[fill:60-7]]=[[fill:53]]$.[[br]]Vậy $P(F)=\\dfrac{[[fill:5]]\\rule[-0.9ex]{0pt}{2.6ex}}{[[fill:12]]\\rule{0pt}{2.2ex}}$ và $P(G)=\\dfrac{[[fill:53]]\\rule[-0.9ex]{0pt}{2.6ex}}{[[fill:60]]\\rule{0pt}{2.2ex}}$."
+    },
+    {
+     "type": "problem",
+     "label": "Bài 12.",
+     "statement": "a) [TH] Trên bàn học của An có 3 quyển sách Toán, 3 quyển sách Văn và 2 quyển sách Tiếng Anh. An chọn ngẫu nhiên 1 quyển sách để đọc (mỗi quyển đều có khả năng được chọn như nhau). Tính xác suất của biến cố \\textquotedblleft An chọn được sách Toán\\textquotedblright{} \\;(cuối kì II, Phòng GD\\&ĐT Ba Đình).[[br]]b) [TH] Với bảng sản phẩm ở Bài 11 ý b), tính xác suất của biến cố $D$: \\textquotedblleft Lấy được một sản phẩm đạt chất lượng do dây chuyền $Z$ sản xuất\\textquotedblright{}.[[br]]c) [TH] Với bảng chiều cao ở Bài 11 ý c), tính xác suất để chọn được học sinh cao từ 158 cm trở lên.",
+     "level": 2,
+     "tier": "onclass",
+     "dang_id": "TH4",
+     "solution": "a) Mỗi quyển sách là một kết quả có thể, $n(\\Omega)=3+3+2=8$.[[br]]Vì chọn ngẫu nhiên nên các kết quả có thể là đồng khả năng.[[br]]Có 3 quyển sách Toán nên $n(T)=3$.[[br]]$P(T)=\\dfrac{3}{8}$.[[br]]Vậy xác suất chọn được sách Toán là $\\dfrac{3}{8}$.[[br]]b) $n(\\Omega)=552$, các kết quả đồng khả năng vì lấy ngẫu nhiên.[[br]]$n(D)=270$.[[br]]$P(D)=\\dfrac{270}{552}=\\dfrac{45}{92}$.[[br]]Vậy $P(D)=\\dfrac{45}{92}$.[[br]]c) $n(\\Omega)=40$, $n(H)=10+6=16$.[[br]]$P(H)=\\dfrac{16}{40}=\\dfrac{2}{5}$.[[br]]Vậy $P(H)=\\dfrac{2}{5}$.",
+     "hints": [
+      "Mỗi quyển sách (mỗi sản phẩm, mỗi học sinh) là một kết quả có thể — tổng cộng có bao nhiêu?",
+      "Biến cố ứng với ô nào, nhóm nào của bảng? Cộng đúng những ô đó."
+     ]
+    },
+    {
+     "type": "noted",
+     "variant": "example",
+     "text": "\\textbf{Ví dụ 8.} Một hộp chứa 5 quả bóng màu đỏ và một số quả bóng màu trắng có cùng kích thước và khối lượng. Lấy ngẫu nhiên một quả bóng. Biết xác suất của biến cố \\textquotedblleft Lấy được quả bóng màu đỏ\\textquotedblright{} là $0{,}25$. Hỏi trong hộp có bao nhiêu quả bóng màu trắng?[[br]]{\\sffamily\\bfseries\\color{brand}Lời giải}[[br]]Gọi số quả bóng trắng là $x$ ($x$ là số tự nhiên).[[br]]Số kết quả có thể là $n(\\Omega)=[[fill:x+5]]$.[[br]]Vì lấy ngẫu nhiên nên các kết quả có thể là đồng khả năng.[[br]]Có 5 quả bóng đỏ nên số kết quả thuận lợi là 5.[[br]]$\\dfrac{5}{x+5}=0{,}25$.[[br]]$x+5=[[fill:5:0{,}25]]=[[fill:20]]$.[[br]]$x=[[fill:15]]$ (thoả mãn).[[br]]Vậy trong hộp có [[fill:15]] quả bóng màu trắng."
+    },
+    {
+     "type": "problem",
+     "label": "Bài 13.",
+     "statement": "a) [TH] Một túi chứa 3 viên bi màu xanh và một số viên bi màu đỏ có cùng kích thước và khối lượng. Bạn Luân lấy ngẫu nhiên 1 viên bi. Biết xác suất của biến cố \\textquotedblleft Lấy được viên bi màu xanh\\textquotedblright{} là $0{,}6$. Hỏi trong túi có tất cả bao nhiêu viên bi? \\;(bộ Mathtech, Dạng 3, Bài 40)[[br]]b) [TH] Một hộp đựng 20 viên bi màu đỏ và màu xanh có cùng kích thước, khối lượng. Lấy ngẫu nhiên một viên bi. Biết xác suất của biến cố \\textquotedblleft Lấy được bi đỏ\\textquotedblright{} là $0{,}6$. Tìm số viên bi mỗi màu \\;(bộ Mathtech, Dạng 3, Bài 42).",
+     "level": 2,
+     "tier": "onclass",
+     "dang_id": "TH5",
+     "solution": "a) Gọi tổng số viên bi là $n$ ($n$ là số tự nhiên, $n>3$).[[br]]Vì lấy ngẫu nhiên nên các kết quả có thể là đồng khả năng, số kết quả thuận lợi là 3.[[br]]Ta có $\\dfrac{3}{n}=0{,}6$.[[br]]$n=3:0{,}6=5$ (thoả mãn).[[br]]Vậy trong túi có 5 viên bi.[[br]]b) Gọi số bi đỏ là $d$ ($d$ là số tự nhiên, $d\\le 20$).[[br]]Vì lấy ngẫu nhiên nên các kết quả có thể là đồng khả năng, $n(\\Omega)=20$.[[br]]Ta có $\\dfrac{d}{20}=0{,}6$.[[br]]$d=20\\cdot 0{,}6=12$ (thoả mãn).[[br]]Số bi xanh là $20-12=8$.[[br]]Vậy hộp có 12 bi đỏ và 8 bi xanh.",
+     "hints": [
+      "Gọi ẩn là số nào đề hỏi (hay số nào chưa biết)? Khi đó có tất cả bao nhiêu kết quả có thể?",
+      "Viết xác suất đề cho thành một tỉ số chứa ẩn rồi giải phương trình nhận được."
+     ]
+    }
+   ]
+  },
+  {
+   "kind": "practice2",
+   "number": 4,
+   "title": "Ca 2 — Phép thử hai hành động",
+   "teacher_note": "Ví dụ 9 và Bài 14, 15: bắt HS kẻ bảng vào vở, không làm nhẩm. [[br]]Ví dụ 10: hỏi \\emph{đếm thẳng hay đếm phần bù nhanh hơn?} trước khi giải. [[br]]Bài 21 làm ngay sau mục 5 (bảng gạch đường chéo); Ví dụ 13 đặt cạnh Ví dụ 12 trên bảng để HS so: đồng thời thì không kể thứ tự, lần lượt thì bỏ đường chéo. Bài 23 chốt lại ba cách đếm. [[br]]Phần này dừng sau 135 phút; 45 phút cuối buổi làm bài kiểm tra Thống kê $-$ Xác suất (tờ đề riêng).",
+   "blocks": [
+    {
+     "type": "noted",
+     "variant": "example",
+     "text": "\\textbf{Ví dụ 9.} Bạn An tung một đồng xu (mặt sấp $S$, mặt ngửa $N$), bạn Bình rút ngẫu nhiên một tấm thẻ từ hộp có 4 tấm thẻ ghi $1,\\,2,\\,3,\\,4$. Lập bảng liệt kê các kết quả có thể và tìm $n(\\Omega)$.[[br]]{\\sffamily\\bfseries\\color{brand}Lời giải}[[br]]Mỗi kết quả là một cặp $(x, k)$: $x$ là mặt của đồng xu, $k$ là số ghi trên thẻ.\\par\\nopagebreak\\begin{center}\\footnotesize\\renewcommand\\arraystretch{1.25}\\begin{tabular}{|c|c|c|c|c|}\\hline \\textbf{Đồng xu $\\backslash$ Thẻ} & \\textbf{1} & \\textbf{2} & \\textbf{3} & \\textbf{4} \\\\ \\hline \\textbf{S} & $(S, 1)$ & $(S, 2)$ & $[[fill:(S, 3)|1.3cm]]$ & $[[fill:(S, 4)|1.3cm]]$ \\\\ \\hline \\textbf{N} & $(N, 1)$ & $(N, 2)$ & $(N, 3)$ & $[[fill:(N, 4)|1.3cm]]$ \\\\ \\hline \\end{tabular}\\end{center}Mỗi ô là một kết quả có thể, bảng có $2\\cdot 4=[[fill:8]]$ ô.[[br]]Vậy $n(\\Omega)=[[fill:8]]$."
+    },
+    {
+     "type": "problem",
+     "label": "Bài 14.",
+     "statement": "a) [NB] Bạn Hiền quay tấm bìa tròn chia ba hình quạt bằng nhau ghi $1;\\,2;\\,3$ liên tiếp hai lần \\;(Luyện tập 1, Bài 25 SGK). Kết quả được ghi vào bảng sau.\\par\\nopagebreak\\begin{center}\\footnotesize\\renewcommand\\arraystretch{1.25}\\begin{tabular}{|c|c|c|c|}\\hline \\textbf{Lần 1 $\\backslash$ Lần 2} & \\textbf{1} & \\textbf{2} & \\textbf{3} \\\\ \\hline \\textbf{1} & $(1, 1)$ & $\\ldots$ & $\\ldots$ \\\\ \\hline \\textbf{2} & $\\ldots$ & $\\ldots$ & $\\ldots$ \\\\ \\hline \\textbf{3} & $\\ldots$ & $\\ldots$ & $(3, 3)$ \\\\ \\hline \\end{tabular}\\end{center}Điền các ô còn trống rồi tìm $n(\\Omega)$.[[br]]b) [NB] Trên một dãy phố có ba quán ăn $A$, $B$, $C$. Hai bạn Văn và Hải mỗi người chọn ngẫu nhiên một quán để ăn trưa \\;(Bài 8{.}11 SGK). Lập bảng liệt kê các kết quả có thể và tìm $n(\\Omega)$.[[br]]c) [NB] Gieo đồng thời hai con xúc xắc cân đối, đồng chất I và II. Không lập bảng, tính nhanh $n(\\Omega)$.",
+     "level": 1,
+     "tier": "onclass",
+     "dang_id": "NB9",
+     "solution": "a) Các ô còn trống: $(1, 2);\\,(1, 3);\\,(2, 1);\\,(2, 2);\\,(2, 3);\\,(3, 1);\\,(3, 2)$; $n(\\Omega)=3\\cdot 3=9$.[[br]]b) Bảng 3 dòng (quán của Văn) và 3 cột (quán của Hải), các ô là $(A, A);\\,(A, B);\\,\\dots;\\,(C, C)$; $n(\\Omega)=3\\cdot 3=9$.[[br]]c) $n(\\Omega)=6\\cdot 6=36$."
+    },
+    {
+     "type": "problem",
+     "label": "Bài 15.",
+     "statement": "Bạn Tuấn quay tấm bìa tròn chia bốn hình quạt bằng nhau ghi $1;\\,2;\\,3;\\,4$ hai lần \\;(Ví dụ 1, Bài 26 SGK). Bảng dưới ghi TỔNG hai số ở hai lần quay.\\par\\nopagebreak\\begin{center}\\footnotesize\\renewcommand\\arraystretch{1.25}\\begin{tabular}{|c|c|c|c|c|}\\hline \\textbf{Lần 1 $\\backslash$ Lần 2} & \\textbf{1} & \\textbf{2} & \\textbf{3} & \\textbf{4} \\\\ \\hline \\textbf{1} & $2$ & $3$ & $4$ & $5$ \\\\ \\hline \\textbf{2} & $3$ & $\\ldots$ & $\\ldots$ & $\\ldots$ \\\\ \\hline \\textbf{3} & $4$ & $\\ldots$ & $\\ldots$ & $\\ldots$ \\\\ \\hline \\textbf{4} & $5$ & $\\ldots$ & $\\ldots$ & $\\ldots$ \\\\ \\hline \\end{tabular}\\end{center}a) [NB] Điền các ô còn trống của bảng tổng.[[br]]b) [NB] Có bao nhiêu ô có tổng bằng 5? Đó là những cặp nào?[[br]]c) [NB] Có bao nhiêu ô có tổng lớn hơn 5?",
+     "level": 1,
+     "tier": "onclass",
+     "dang_id": "NB10",
+     "solution": "a) Dòng 2: $3;\\,4;\\,5;\\,6$. Dòng 3: $4;\\,5;\\,6;\\,7$. Dòng 4: $5;\\,6;\\,7;\\,8$.[[br]]b) 4 ô: $(1, 4);\\,(2, 3);\\,(3, 2);\\,(4, 1)$.[[br]]c) 6 ô: $(2, 4);\\,(3, 3);\\,(3, 4);\\,(4, 2);\\,(4, 3);\\,(4, 4)$."
+    },
+    {
+     "type": "noted",
+     "variant": "example",
+     "text": "\\textbf{Ví dụ 10.} Gieo đồng thời hai con xúc xắc cân đối, đồng chất. Tính xác suất của biến cố $E$: \\textquotedblleft Có ít nhất một con xúc xắc xuất hiện mặt có số chấm chẵn\\textquotedblright{}.[[br]]{\\sffamily\\bfseries\\color{brand}Lời giải}[[br]]Lập bảng 6 dòng, 6 cột, mỗi ô là một kết quả có thể, $n(\\Omega)=[[fill:36]]$.[[br]]Vì hai con xúc xắc cân đối, đồng chất nên các kết quả có thể là đồng khả năng.[[br]]Các ô KHÔNG thoả $E$ là các ô có cả hai số chấm đều lẻ: $3\\cdot 3=[[fill:9]]$ ô.[[br]]$n(E)=[[fill:36-9]]=[[fill:27]]$.[[br]]Vậy $P(E)=\\dfrac{[[fill:27]]\\rule[-0.9ex]{0pt}{2.6ex}}{[[fill:36]]\\rule{0pt}{2.2ex}}=\\dfrac{[[fill:3]]\\rule[-0.9ex]{0pt}{2.6ex}}{[[fill:4]]\\rule{0pt}{2.2ex}}$."
+    },
+    {
+     "type": "problem",
+     "label": "Bài 16.",
+     "statement": "Gieo đồng thời hai con xúc xắc cân đối, đồng chất I và II; bảng kết quả có 36 ô.[[br]]a) [NB] Đếm số ô mà KHÔNG con xúc xắc nào xuất hiện mặt 6 chấm \\;(Bài 8{.}10 SGK).[[br]]b) [NB] Từ ý a), suy ra số ô có ít nhất một con xúc xắc xuất hiện mặt 6 chấm.[[br]]c) [NB] Đếm số ô có ít nhất một con xúc xắc xuất hiện số chấm nhỏ hơn 3 (đếm phần bù).",
+     "level": 1,
+     "tier": "onclass",
+     "dang_id": "NB11",
+     "solution": "a) Mỗi con có 5 mặt khác 6: $5\\cdot 5=25$ ô.[[br]]b) $36-25=11$ ô.[[br]]c) Phần bù: cả hai số chấm đều từ 3 trở lên, có $4\\cdot 4=16$ ô; số ô cần tìm là $36-16=20$."
+    },
+    {
+     "type": "problem",
+     "label": "Bài 17.",
+     "statement": "Gieo đồng thời hai con xúc xắc cân đối, đồng chất I và II \\;(Bài 8{.}16 SGK). Tính xác suất của các biến cố sau.[[br]]a) [TH] $E$: \\textquotedblleft Tổng số chấm xuất hiện trên hai con xúc xắc bằng 11\\textquotedblright{}.[[br]]b) [TH] $F$: \\textquotedblleft Tổng số chấm xuất hiện trên hai con xúc xắc bằng 8 hoặc 9\\textquotedblright{}.[[br]]c) [TH] $G$: \\textquotedblleft Tổng số chấm xuất hiện trên hai con xúc xắc nhỏ hơn 6\\textquotedblright{}.",
+     "level": 2,
+     "tier": "onclass",
+     "dang_id": "TH6",
+     "solution": "a) Lập bảng 6 dòng, 6 cột, $n(\\Omega)=36$.[[br]]Vì hai con xúc xắc cân đối, đồng chất nên các kết quả có thể là đồng khả năng.[[br]]Các kết quả thuận lợi cho $E$ là $(5, 6);\\,(6, 5)$, $n(E)=2$.[[br]]$P(E)=\\dfrac{n(E)}{n(\\Omega)}=\\dfrac{2}{36}=\\dfrac{1}{18}$.[[br]]Vậy $P(E)=\\dfrac{1}{18}$.[[br]]b) Các kết quả thuận lợi cho $F$ là $(2, 6);\\,(3, 5);\\,(3, 6);\\,(4, 4);\\,(4, 5);\\,(5, 3);\\,(5, 4);\\,(6, 2);\\,(6, 3)$, $n(F)=9$.[[br]]$P(F)=\\dfrac{n(F)}{n(\\Omega)}=\\dfrac{9}{36}=\\dfrac{1}{4}$.[[br]]Vậy $P(F)=\\dfrac{1}{4}$.[[br]]c) Các kết quả thuận lợi cho $G$ là $(1, 1);\\,(1, 2);\\,(1, 3);\\,(1, 4);\\,(2, 1);\\,(2, 2);\\,(2, 3);\\,(3, 1);\\,(3, 2);\\,(4, 1)$, $n(G)=10$.[[br]]$P(G)=\\dfrac{n(G)}{n(\\Omega)}=\\dfrac{10}{36}=\\dfrac{5}{18}$.[[br]]Vậy $P(G)=\\dfrac{5}{18}$.",
+     "hints": [
+      "Mỗi kết quả của phép thử là một cặp gồm những gì? Bảng có bao nhiêu dòng, bao nhiêu cột?",
+      "Biến cố hỏi về tổng, tích hay về từng số? Điền con số đó vào từng ô rồi đánh dấu các ô thoả mãn."
+     ]
+    },
+    {
+     "type": "noted",
+     "variant": "example",
+     "text": "\\textbf{Ví dụ 11.} Túi I chứa 3 tấm thẻ ghi $1;\\,2;\\,3$, túi II chứa 2 tấm thẻ ghi $4;\\,5$. Rút ngẫu nhiên từ mỗi túi một tấm thẻ rồi ghép thành số có hai chữ số, chữ số trên thẻ của túi I là chữ số hàng chục. Tính xác suất của biến cố $A$: \\textquotedblleft Số tạo thành chia hết cho 3\\textquotedblright{}.[[br]]{\\sffamily\\bfseries\\color{brand}Lời giải}[[br]]Các số tạo thành là $14;\\,15;\\,24;\\,25;\\,34;\\,35$, $n(\\Omega)=3\\cdot 2=[[fill:6]]$.[[br]]Vì rút ngẫu nhiên từ mỗi túi nên các kết quả có thể là đồng khả năng.[[br]]Các kết quả thuận lợi cho $A$ là $[[fill:15;\\,24]]$, $n(A)=[[fill:2]]$.[[br]]Vậy $P(A)=\\dfrac{[[fill:2]]\\rule[-0.9ex]{0pt}{2.6ex}}{[[fill:6]]\\rule{0pt}{2.2ex}}=\\dfrac{[[fill:1]]\\rule[-0.9ex]{0pt}{2.6ex}}{[[fill:3]]\\rule{0pt}{2.2ex}}$."
+    },
+    {
+     "type": "problem",
+     "label": "Bài 18.",
+     "statement": "Cho hai túi I và II, mỗi túi chứa ba tấm thẻ ghi các số $2;\\,3;\\,7$. Rút ngẫu nhiên từ mỗi túi ra một tấm thẻ và ghép thành số có hai chữ số, chữ số trên thẻ rút từ túi I là chữ số hàng chục \\;(Luyện tập 2, Bài 26 SGK).[[br]]a) [TH] Tính xác suất của biến cố $A$: \\textquotedblleft Số tạo thành chia hết cho 4\\textquotedblright{}.[[br]]b) [TH] Tính xác suất của biến cố $B$: \\textquotedblleft Số tạo thành là số nguyên tố\\textquotedblright{}.[[br]]c) [TH] Túi III chứa 3 tấm thẻ ghi $2;\\,3;\\,4$, túi IV chứa 2 tấm thẻ ghi $5;\\,6$. Rút ngẫu nhiên từ mỗi túi một tấm thẻ. Tính xác suất của biến cố $C$: \\textquotedblleft Tích hai số ghi trên hai tấm thẻ là một số chẵn\\textquotedblright{} \\;(Bài 8{.}15 SGK).",
+     "level": 2,
+     "tier": "onclass",
+     "dang_id": "TH7",
+     "solution": "a) Các số tạo thành: $22;\\,23;\\,27;\\,32;\\,33;\\,37;\\,72;\\,73;\\,77$, $n(\\Omega)=3\\cdot 3=9$.[[br]]Vì rút ngẫu nhiên từ mỗi túi nên các kết quả có thể là đồng khả năng.[[br]]Các kết quả thuận lợi cho $A$ là $32;\\,72$, $n(A)=2$.[[br]]$P(A)=\\dfrac{n(A)}{n(\\Omega)}=\\dfrac{2}{9}$.[[br]]Vậy $P(A)=\\dfrac{2}{9}$.[[br]]b) Các kết quả thuận lợi cho $B$ là $23;\\,37;\\,73$, $n(B)=3$.[[br]]$P(B)=\\dfrac{n(B)}{n(\\Omega)}=\\dfrac{3}{9}=\\dfrac{1}{3}$.[[br]]Vậy $P(B)=\\dfrac{1}{3}$.[[br]]c) $n(\\Omega)=3\\cdot 2=6$, các kết quả đồng khả năng.[[br]]Các kết quả thuận lợi cho $C$ là $(2, 5);\\,(2, 6);\\,(3, 6);\\,(4, 5);\\,(4, 6)$, $n(C)=5$.[[br]]$P(C)=\\dfrac{n(C)}{n(\\Omega)}=\\dfrac{5}{6}$.[[br]]Vậy $P(C)=\\dfrac{5}{6}$.",
+     "hints": [
+      "Mỗi lần rút cho một cặp thẻ — có bao nhiêu cặp? Viết hết các số tạo thành ra.",
+      "Với từng số (từng cặp), kiểm tra điều kiện của biến cố: chia hết cho 4 thì nhìn vào đâu? số nguyên tố thì có ước nào khác 1 và chính nó không?"
+     ]
+    },
+    {
+     "type": "noted",
+     "variant": "example",
+     "text": "\\textbf{Ví dụ 12.} Một hộp có 4 tấm thẻ cùng loại ghi các số $2;\\,3;\\,5;\\,8$. Lấy ngẫu nhiên đồng thời hai tấm thẻ. Tính xác suất của biến cố $E$: \\textquotedblleft Tổng hai số ghi trên hai tấm thẻ là số lẻ\\textquotedblright{}.[[br]]{\\sffamily\\bfseries\\color{brand}Lời giải}[[br]]Lấy đồng thời nên mỗi kết quả là một cặp hai thẻ KHÔNG kể thứ tự.[[br]]$\\Omega=\\{(2, 3);\\,(2, 5);\\,(2, 8);\\,[[fill:(3, 5);\\,(3, 8);\\,(5, 8)]]\\}$, $n(\\Omega)=[[fill:6]]$.[[br]]Vì các thẻ cùng loại và được lấy ngẫu nhiên nên các kết quả có thể là đồng khả năng.[[br]]Các kết quả thuận lợi cho $E$ là $[[fill:(2, 3);\\,(2, 5);\\,(3, 8);\\,(5, 8)]]$, $n(E)=[[fill:4]]$.[[br]]Vậy $P(E)=\\dfrac{[[fill:4]]\\rule[-0.9ex]{0pt}{2.6ex}}{[[fill:6]]\\rule{0pt}{2.2ex}}=\\dfrac{[[fill:2]]\\rule[-0.9ex]{0pt}{2.6ex}}{[[fill:3]]\\rule{0pt}{2.2ex}}$."
+    },
+    {
+     "type": "problem",
+     "label": "Bài 19.",
+     "statement": "Liệt kê không gian mẫu (mỗi cặp chỉ viết một lần) rồi tìm $n(\\Omega)$.[[br]]a) [NB] Một túi đựng 4 viên bi cùng khối lượng và kích thước, đánh số $1;\\,2;\\,3;\\,4$. Lấy ngẫu nhiên đồng thời hai viên bi \\;(Bài 8{.}14 SGK).[[br]]b) [NB] Một hộp có 5 tấm thẻ cùng loại đánh số từ 1 đến 5. Lấy ra ngẫu nhiên cùng một lúc 2 tấm thẻ \\;(bộ Mathtech, Dạng 2, Ví dụ 2).[[br]]c) [NB] Một bó hoa gồm 3 bông màu đỏ $\\text{Đ}_1,\\,\\text{Đ}_2,\\,\\text{Đ}_3$ và 1 bông màu vàng $V$. Bạn Trúc Linh chọn ngẫu nhiên 2 bông \\;(bộ Mathtech, Dạng 3, Bài 14).",
+     "level": 1,
+     "tier": "onclass",
+     "dang_id": "NB12",
+     "solution": "a) $\\Omega=\\{(1, 2);\\,(1, 3);\\,(1, 4);\\,(2, 3);\\,(2, 4);\\,(3, 4)\\}$, $n(\\Omega)=6$.[[br]]b) $\\Omega=\\{(1, 2);\\,(1, 3);\\,(1, 4);\\,(1, 5);\\,(2, 3);\\,(2, 4);\\,(2, 5);\\,(3, 4);\\,(3, 5);\\,(4, 5)\\}$, $n(\\Omega)=10$.[[br]]c) $\\Omega=\\{(\\text{Đ}_1, \\text{Đ}_2);\\,(\\text{Đ}_1, \\text{Đ}_3);\\,(\\text{Đ}_1, V);\\,(\\text{Đ}_2, \\text{Đ}_3);\\,(\\text{Đ}_2, V);\\,(\\text{Đ}_3, V)\\}$, $n(\\Omega)=6$."
+    },
+    {
+     "type": "problem",
+     "label": "Bài 20.",
+     "statement": "a) [TH] Với phép thử ở Bài 19 ý a), tính xác suất để tích hai số ghi trên hai viên bi lớn hơn 3.[[br]]b) [TH] Một hộp đựng ba viên bi màu xanh và một viên bi màu đỏ (cùng kích thước và khối lượng). Lấy ngẫu nhiên đồng thời hai viên bi. Tính xác suất của biến cố $B$: \\textquotedblleft Lấy được một viên bi màu xanh và một viên bi màu đỏ\\textquotedblright{} \\;(cuối kì II, THCS Nguyễn Du).[[br]]c) [TH] Một chiếc hộp chứa 5 tấm thẻ cùng loại, được đánh số lần lượt là $3;\\,5;\\,6;\\,7;\\,9$. Lấy ngẫu nhiên đồng thời 2 tấm thẻ. Tính xác suất của biến cố $C$: \\textquotedblleft Tích các số ghi trên 2 tấm thẻ chia hết cho 3\\textquotedblright{} \\;(giữa kì II, Ban Mai School).",
+     "level": 2,
+     "tier": "onclass",
+     "dang_id": "TH8",
+     "solution": "a) Lấy đồng thời nên mỗi kết quả là một cặp không kể thứ tự, $n(\\Omega)=6$.[[br]]Vì các viên bi như nhau và được lấy ngẫu nhiên nên các kết quả có thể là đồng khả năng.[[br]]Các kết quả thuận lợi cho $A$ là $(1, 4);\\,(2, 3);\\,(2, 4);\\,(3, 4)$, $n(A)=4$.[[br]]$P(A)=\\dfrac{n(A)}{n(\\Omega)}=\\dfrac{4}{6}=\\dfrac{2}{3}$.[[br]]Vậy $P(A)=\\dfrac{2}{3}$.[[br]]b) Lấy đồng thời nên mỗi kết quả là một cặp không kể thứ tự, $n(\\Omega)=6$.[[br]]Vì các viên bi cùng kích thước, khối lượng nên các kết quả có thể là đồng khả năng.[[br]]Các kết quả thuận lợi cho $B$ là $(X_1, \\text{Đ});\\,(X_2, \\text{Đ});\\,(X_3, \\text{Đ})$, $n(B)=3$.[[br]]$P(B)=\\dfrac{n(B)}{n(\\Omega)}=\\dfrac{3}{6}=\\dfrac{1}{2}$.[[br]]Vậy $P(B)=\\dfrac{1}{2}$.[[br]]c) Lấy đồng thời nên mỗi kết quả là một cặp không kể thứ tự, $n(\\Omega)=10$.[[br]]Vì các thẻ cùng loại nên các kết quả có thể là đồng khả năng.[[br]]Các kết quả thuận lợi cho $C$ là $(3, 5);\\,(3, 6);\\,(3, 7);\\,(3, 9);\\,(5, 6);\\,(5, 9);\\,(6, 7);\\,(6, 9);\\,(7, 9)$, $n(C)=9$.[[br]]$P(C)=\\dfrac{n(C)}{n(\\Omega)}=\\dfrac{9}{10}$.[[br]]Vậy $P(C)=\\dfrac{9}{10}$.",
+     "hints": [
+      "Lấy đồng thời thì $(1, 2)$ và $(2, 1)$ có khác nhau không? Liệt kê mỗi cặp đúng một lần.",
+      "Biến cố cần cặp có đặc điểm gì? Soát lần lượt từng cặp trong danh sách."
+     ]
+    },
+    {
+     "type": "problem",
+     "label": "Bài 21.",
+     "statement": "a) [NB] Một hộp đựng 5 tấm thẻ ghi các số $1;\\,2;\\,3;\\,4;\\,5$. Rút ngẫu nhiên lần lượt hai tấm thẻ, tấm thẻ rút ra lần đầu không trả lại vào hộp \\;(Bài 8{.}2 SGK). Bảng 5 dòng, 5 cột phải gạch mấy ô? Tìm $n(\\Omega)$.[[br]]b) [NB] Một cửa hàng viết tên bốn khách hàng $A$, $B$, $C$, $D$ vào 4 lá phiếu, rút ngẫu nhiên một lá, không trả lại, rồi rút tiếp một lá nữa \\;(Luyện tập 2, Bài 25 SGK). Liệt kê không gian mẫu và tìm $n(\\Omega)$.[[br]]c) [NB] Xếp ngẫu nhiên ba bạn Mai, Việt, Lan trên một chiếc ghế dài \\;(Bài 8{.}4 SGK). Kí hiệu ba bạn là $M$, $V$, $L$; liệt kê không gian mẫu và tìm $n(\\Omega)$.",
+     "level": 1,
+     "tier": "onclass",
+     "dang_id": "NB13",
+     "solution": "a) Gạch 5 ô $(1, 1);\\,\\dots;\\,(5, 5)$; $n(\\Omega)=25-5=20$.[[br]]b) $\\Omega=\\{(A, B);\\,(A, C);\\,(A, D);\\,(B, A);\\,(B, C);\\,(B, D);\\,(C, A);\\,(C, B);\\,(C, D);\\,(D, A);\\,(D, B);\\,(D, C)\\}$, $n(\\Omega)=12$.[[br]]c) $\\Omega=\\{MVL;\\,MLV;\\,VML;\\,VLM;\\,LMV;\\,LVM\\}$, $n(\\Omega)=6$."
+    },
+    {
+     "type": "noted",
+     "variant": "example",
+     "text": "\\textbf{Ví dụ 13.} Một hộp có 3 tấm thẻ ghi $1;\\,2;\\,3$. Bạn An rút ngẫu nhiên lần lượt hai tấm thẻ, tấm rút lần đầu không trả lại vào hộp, rồi ghép thành số có hai chữ số (thẻ rút lần đầu là chữ số hàng chục). Tính xác suất của biến cố $E$: \\textquotedblleft Số tạo thành lớn hơn 20\\textquotedblright{}.[[br]]{\\sffamily\\bfseries\\color{brand}Lời giải}[[br]]Thẻ lần đầu không trả lại nên hai thẻ khác nhau, ta gạch các ô trên đường chéo.\\par\\nopagebreak\\begin{center}\\footnotesize\\renewcommand\\arraystretch{1.25}\\begin{tabular}{|c|c|c|c|}\\hline \\textbf{Lần 1 $\\backslash$ Lần 2} & \\textbf{1} & \\textbf{2} & \\textbf{3} \\\\ \\hline \\textbf{1} & $\\times$ & $(1, 2)$ & $(1, 3)$ \\\\ \\hline \\textbf{2} & $(2, 1)$ & $\\times$ & $[[fill:(2, 3)|1.3cm]]$ \\\\ \\hline \\textbf{3} & $(3, 1)$ & $[[fill:(3, 2)|1.3cm]]$ & $\\times$ \\\\ \\hline \\end{tabular}\\end{center}$n(\\Omega)=3\\cdot 3-3=[[fill:6]]$.[[br]]Vì rút ngẫu nhiên nên các kết quả có thể là đồng khả năng.[[br]]Các số tạo thành lớn hơn 20 là $[[fill:21;\\,23;\\,31;\\,32]]$, $n(E)=[[fill:4]]$.[[br]]Vậy $P(E)=\\dfrac{[[fill:4]]\\rule[-0.9ex]{0pt}{2.6ex}}{[[fill:6]]\\rule{0pt}{2.2ex}}=\\dfrac{[[fill:2]]\\rule[-0.9ex]{0pt}{2.6ex}}{[[fill:3]]\\rule{0pt}{2.2ex}}$."
+    },
+    {
+     "type": "problem",
+     "label": "Bài 22.",
+     "statement": "a) [TH] Một hộp chứa 4 tấm thẻ cùng loại được đánh số $1;\\,4;\\,7;\\,9$. Bạn Khuê và bạn Hương lần lượt mỗi người lấy ra 1 tấm thẻ (Khuê lấy trước, không trả lại). Tính xác suất của biến cố $C$: \\textquotedblleft Số ghi trên thẻ của bạn Khuê nhỏ hơn số ghi trên thẻ của bạn Hương\\textquotedblright{} \\;(bộ Mathtech, Dạng 3, Bài 30).[[br]]b) [TH] Một chiếc hộp chứa 1 viên bi xanh, 1 viên bi đỏ và 1 viên bi trắng cùng kích thước, khối lượng. Dung lần lượt lấy ra ngẫu nhiên từng viên bi cho đến khi hết bi. Tính xác suất của biến cố $A$: \\textquotedblleft Viên bi màu xanh được lấy ra cuối cùng\\textquotedblright{} \\;(bộ Mathtech, Dạng 3, Bài 32).",
+     "level": 2,
+     "tier": "onclass",
+     "dang_id": "TH9",
+     "solution": "a) Kết quả là cặp $(k, h)$ với $k\\ne h$, $n(\\Omega)=4\\cdot 4-4=12$.[[br]]Vì lấy ngẫu nhiên nên các kết quả có thể là đồng khả năng.[[br]]Các kết quả thuận lợi cho $C$ là $(1, 4);\\,(1, 7);\\,(1, 9);\\,(4, 7);\\,(4, 9);\\,(7, 9)$, $n(C)=6$.[[br]]$P(C)=\\dfrac{n(C)}{n(\\Omega)}=\\dfrac{6}{12}=\\dfrac{1}{2}$.[[br]]Vậy $P(C)=\\dfrac{1}{2}$.[[br]]b) Kí hiệu bi xanh, đỏ, trắng là $X$, $\\text{Đ}$, $T$; mỗi kết quả là một thứ tự lấy bi.[[br]]$\\Omega=\\{X\\text{Đ}T;\\,XT\\text{Đ};\\,\\text{Đ}XT;\\,\\text{Đ}TX;\\,TX\\text{Đ};\\,T\\text{Đ}X\\}$, $n(\\Omega)=6$.[[br]]Vì lấy ngẫu nhiên nên các kết quả có thể là đồng khả năng.[[br]]Các kết quả thuận lợi cho $A$ là $\\text{Đ}TX;\\,T\\text{Đ}X$, $n(A)=2$.[[br]]$P(A)=\\dfrac{n(A)}{n(\\Omega)}=\\dfrac{2}{6}=\\dfrac{1}{3}$.[[br]]Vậy $P(A)=\\dfrac{1}{3}$.",
+     "hints": [
+      "Lấy lần lượt không trả lại thì cặp $(a, a)$ có xảy ra không? Bảng còn lại bao nhiêu ô?",
+      "Thứ tự có quan trọng không — $(1, 4)$ và $(4, 1)$ có phải hai kết quả khác nhau?"
+     ]
+    },
+    {
+     "type": "problem",
+     "label": "Bài 23.",
+     "statement": "Một hộp có 3 viên bi cùng kích thước ghi $1;\\,2;\\,3$. Nối mỗi phép thử ở cột A với số phần tử của không gian mẫu ở cột B.[[br]]\\par{}{\\centering\\begin{tabular}{p{7.4cm} @{\\hspace{1.6cm}} p{3.2cm}} \\textbf{Cột A} & \\textbf{Cột B} \\\\[3pt] a) [NB] Lấy một viên, xem số, trả lại hộp rồi lấy tiếp một viên & 1) $n(\\Omega)=3$ \\\\[6pt] b) [NB] Lấy lần lượt hai viên, viên đầu không trả lại & 2) $n(\\Omega)=6$ \\\\[6pt] c) [NB] Lấy đồng thời hai viên & 3) $n(\\Omega)=9$ \\\\[6pt]  & 4) $n(\\Omega)=5$ \\\\ \\end{tabular}\\par}",
+     "level": 1,
+     "tier": "onclass",
+     "dang_id": "NB14",
+     "solution": "a) Có trả lại: đủ $3\\cdot 3=9$ ô, nối với 3).[[br]]b) Lần lượt không trả lại: $9-3=6$, nối với 2).[[br]]c) Đồng thời, không kể thứ tự: $(1, 2);\\,(1, 3);\\,(2, 3)$, nối với 1)."
+    }
+   ]
+  },
+  {
+   "kind": "reflection",
+   "number": 5,
+   "title": "Tổng kết \\& bài tập về nhà",
+   "teacher_note": "Cho HS điền sơ đồ tổng kết trong 3 phút rồi giao BTVN. [[br]]BTVN 1 $-$ 13 làm sau buổi 1, BTVN 14 $-$ 26 làm sau buổi 2. [[br]]BTVN 26 là bài tự viết lại quy trình: buổi sau gọi hai bạn đọc to, cả lớp so với bốn bước ở mục 3.",
+   "blocks": [
+    {
+     "type": "mindmap",
+     "caption": "Sơ đồ tư duy: Xác suất của biến cố",
+     "root": "XÁC SUẤT CỦA BIẾN CỐ",
+     "branches": [
+      {
+       "label": "PHÉP THỬ",
+       "children": [
+        {
+         "label": "Không biết trước kết quả"
+        },
+        {
+         "label": "Không gian mẫu $\\Omega$, $n(\\Omega)$"
+        }
+       ]
+      },
+      {
+       "label": "BIẾN CỐ",
+       "children": [
+        {
+         "label": "Kết quả thuận lợi, $n(E)$"
+        }
+       ]
+      },
+      {
+       "label": "CÔNG THỨC",
+       "children": [
+        {
+         "label": "Đồng khả năng"
+        },
+        {
+         "label": "$P(E)=\\dfrac{n(E)}{n(\\Omega)}$"
+        }
+       ]
+      },
+      {
+       "label": "HAI HÀNH ĐỘNG",
+       "children": [
+        {
+         "label": "Cặp $(a, b)$, bảng hai chiều"
+        },
+        {
+         "label": "Ít nhất một: đếm phần bù"
+        }
+       ]
+      },
+      {
+       "label": "LẤY HAI VẬT",
+       "children": [
+        {
+         "label": "Lần lượt: bỏ đường chéo"
+        },
+        {
+         "label": "Đồng thời: không kể thứ tự"
+        }
+       ]
+      }
+     ]
+    },
+    {
+     "type": "problem",
+     "label": "BTVN~1.",
+     "statement": "a) [NB] Rút một tấm thẻ từ hộp có 10 tấm thẻ đều ghi số 7 rồi xem số ghi trên thẻ. Đây có phải phép thử ngẫu nhiên không? Vì sao?[[br]]b) [NB] Gieo một con xúc xắc rồi xem số chấm xuất hiện. Đây có phải phép thử ngẫu nhiên không? Vì sao?[[br]]c) [NB] Có hai nhóm học sinh: nhóm I có ba bạn nam Huy, Sơn, Tùng; nhóm II có ba bạn nữ Hồng, Phương, Linh. Cô giáo chọn ngẫu nhiên một bạn từ mỗi nhóm \\;(Bài 8{.}3 SGK). Phép thử và kết quả của phép thử là gì?",
+     "level": 1,
+     "tier": "btvn",
+     "dang_id": "NB1",
+     "solution": "a) Không, vì thẻ nào cũng ghi số 7, kết quả biết trước.[[br]]b) Có, vì không biết trước số chấm nhưng liệt kê được 6 kết quả có thể.[[br]]c) Phép thử là chọn ngẫu nhiên một bạn từ mỗi nhóm. Kết quả là cặp (bạn nam, bạn nữ), chẳng hạn (Huy, Hồng)."
+    },
+    {
+     "type": "problem",
+     "label": "BTVN~2.",
+     "statement": "Viết không gian mẫu $\\Omega$ rồi tìm $n(\\Omega)$.[[br]]a) [NB] Lấy ngẫu nhiên một viên bi trong hộp có 20 viên bi như nhau ghi các số $1,\\,2,\\,\\dots,\\,20$.[[br]]b) [NB] Rút ngẫu nhiên một tấm thẻ trong hộp có 30 tấm thẻ cùng loại ghi các số $2;\\,4;\\,6;\\,\\dots;\\,60$ \\;(bộ Mathtech, Dạng 3, Bài 36).[[br]]c) [NB] Bạn Hưng có 6 thùng sơn đậy kín, không nhãn, màu đỏ, vàng, cam, xanh lục, nâu, trắng. Mở ngẫu nhiên một thùng \\;(giữa kì II, THCS Trưng Vương).",
+     "level": 1,
+     "tier": "btvn",
+     "dang_id": "NB2",
+     "solution": "a) $\\Omega=\\{1;\\,2;\\,\\dots;\\,20\\}$, $n(\\Omega)=20$.[[br]]b) $\\Omega=\\{2;\\,4;\\,\\dots;\\,60\\}$, $n(\\Omega)=(60-2):2+1=30$.[[br]]c) $\\Omega=\\{$đỏ; vàng; cam; xanh lục; nâu; trắng$\\}$, $n(\\Omega)=6$."
+    },
+    {
+     "type": "problem",
+     "label": "BTVN~3.",
+     "statement": "Viết không gian mẫu $\\Omega$ rồi tìm $n(\\Omega)$.[[br]]a) [NB] Viết ngẫu nhiên một số tự nhiên chẵn có hai chữ số và nhỏ hơn 30.[[br]]b) [NB] Viết ngẫu nhiên một số tự nhiên có hai chữ số mà chữ số hàng đơn vị bằng 5.[[br]]c) [NB] Viết ngẫu nhiên một số tự nhiên có ba chữ số và nhỏ hơn 400 \\;(bộ Mathtech, Dạng 3, Bài 19).",
+     "level": 1,
+     "tier": "btvn",
+     "dang_id": "NB3",
+     "solution": "a) $\\Omega=\\{10;\\,12;\\,\\dots;\\,28\\}$, $n(\\Omega)=(28-10):2+1=10$.[[br]]b) $\\Omega=\\{15;\\,25;\\,\\dots;\\,95\\}$, $n(\\Omega)=9$.[[br]]c) $\\Omega=\\{100;\\,101;\\,\\dots;\\,399\\}$, $n(\\Omega)=300$."
+    },
+    {
+     "type": "problem",
+     "label": "BTVN~4.",
+     "statement": "Một hộp có 30 tấm thẻ cùng loại ghi các số $1,\\,2,\\,\\dots,\\,30$. Rút ngẫu nhiên một tấm thẻ. Liệt kê các kết quả thuận lợi rồi tìm số kết quả thuận lợi cho mỗi biến cố sau.[[br]]a) [NB] $A$: \\textquotedblleft Số ghi trên thẻ là bội của 4\\textquotedblright{}.[[br]]b) [NB] $B$: \\textquotedblleft Số ghi trên thẻ chia 5 dư 1\\textquotedblright{}.[[br]]c) [NB] $C$: \\textquotedblleft Số ghi trên thẻ là số chính phương\\textquotedblright{}.",
+     "level": 1,
+     "tier": "btvn",
+     "dang_id": "NB4",
+     "solution": "a) $4;\\,8;\\,12;\\,16;\\,20;\\,24;\\,28$, $n(A)=7$.[[br]]b) $1;\\,6;\\,11;\\,16;\\,21;\\,26$, $n(B)=6$.[[br]]c) $1;\\,4;\\,9;\\,16;\\,25$, $n(C)=5$."
+    },
+    {
+     "type": "problem",
+     "label": "BTVN~5.",
+     "statement": "Một hộp có 15 quả cầu màu xanh đánh số từ 1 đến 15 và 5 quả cầu màu đỏ đánh số từ 16 đến 20. Lấy ngẫu nhiên một quả \\;(bộ Mathtech, Dạng 3, Bài 5). Tìm số kết quả thuận lợi cho mỗi biến cố sau.[[br]]a) [NB] $A$: \\textquotedblleft Quả cầu có màu xanh và ghi số chẵn\\textquotedblright{}.[[br]]b) [NB] $B$: \\textquotedblleft Quả cầu có màu đỏ hoặc ghi số chẵn\\textquotedblright{}.[[br]]c) [NB] $C$: \\textquotedblleft Quả cầu có màu xanh và ghi số lẻ chia cho 3 dư 1\\textquotedblright{}.",
+     "level": 1,
+     "tier": "btvn",
+     "dang_id": "NB5",
+     "solution": "a) $2;\\,4;\\,6;\\,8;\\,10;\\,12;\\,14$, $n(A)=7$.[[br]]b) $2;\\,4;\\,6;\\,8;\\,10;\\,12;\\,14;\\,16;\\,17;\\,18;\\,19;\\,20$, $n(B)=12$.[[br]]c) $1;\\,7;\\,13$, $n(C)=3$."
+    },
+    {
+     "type": "problem",
+     "label": "BTVN~6.",
+     "statement": "a) [NB] Đúng hay sai? Gieo một đồng xu cân đối và đồng chất thì hai kết quả $S$, $N$ là đồng khả năng.[[br]]b) [NB] Đúng hay sai? Lấy ngẫu nhiên 1 tấm thẻ từ hộp có 2 tấm thẻ ghi số 5 và 5 tấm thẻ ghi số 2 rồi xem số thì hai kết quả 5 và 2 là đồng khả năng \\;(bộ Mathtech, Dạng 2, Bài 1).[[br]]c) [NB] Phép thử: rút ngẫu nhiên một thẻ từ hộp có 12 thẻ cùng loại. Điền vào chỗ trống câu thứ hai của bài giải: Vì [[blank:5.2cm]] nên các kết quả có thể là đồng khả năng.",
+     "level": 1,
+     "tier": "btvn",
+     "dang_id": "NB6",
+     "solution": "a) Đúng, vì đồng xu cân đối và đồng chất.[[br]]b) Sai, vì số thẻ ghi số 2 nhiều hơn nên dễ rút được số 2 hơn.[[br]]c) Vì các thẻ cùng loại và được rút ngẫu nhiên."
+    },
+    {
+     "type": "problem",
+     "label": "BTVN~7.",
+     "statement": "Điền vào chỗ trống để hoàn thành bài giải \\;(đề minh hoạ Vào 10 của Sở GD\\&ĐT Hà Nội): Một đĩa tròn bằng bìa cứng được chia làm 12 phần bằng nhau và ghi các số $1,\\,2,\\,\\dots,\\,12$; chiếc kim được gắn cố định vào trục quay ở tâm của đĩa. Quay đĩa một lần. Tính xác suất của biến cố $M$: \\textquotedblleft Kim chỉ vào hình quạt ghi số chia hết cho 3\\textquotedblright{}.[[br]]a) [NB] Không gian mẫu $\\Omega=\\{$ [[blank:4.2cm]] $\\}$, $n(\\Omega)=$ [[blank:1.1cm]].[[br]]b) [NB] Vì [[blank:5.2cm]] nên các kết quả có thể là đồng khả năng. Các kết quả thuận lợi cho $M$ là [[blank:2.4cm]], $n(M)=$ [[blank:1.1cm]].[[br]]c) [NB] $P(M)=\\dfrac{n(M)}{n(\\Omega)}=$ [[blank:2.4cm]]. Vậy $P(M)=$ [[blank:1.1cm]].",
+     "level": 1,
+     "tier": "btvn",
+     "dang_id": "NB7",
+     "solution": "a) $\\Omega=\\{1;\\,2;\\,\\dots;\\,12\\}$, $n(\\Omega)=12$.[[br]]b) Vì đĩa được chia thành 12 phần bằng nhau; các kết quả thuận lợi là $3;\\,6;\\,9;\\,12$, $n(M)=4$.[[br]]c) $P(M)=\\dfrac{4}{12}=\\dfrac{1}{3}$. Vậy $P(M)=\\dfrac{1}{3}$."
+    },
+    {
+     "type": "problem",
+     "label": "BTVN~8.",
+     "statement": "Tính xác suất của biến cố, trình bày đủ bốn bước.[[br]]a) [TH] Một hộp có 60 chiếc thẻ cùng loại ghi các số $1,\\,2,\\,\\dots,\\,60$; hai thẻ khác nhau ghi hai số khác nhau. Rút ngẫu nhiên một thẻ. Biến cố $A$: \\textquotedblleft Số xuất hiện trên thẻ là số nhỏ hơn 31\\textquotedblright{} \\;(giữa kì II, Ban Mai School).[[br]]b) [TH] Vẫn hộp 60 thẻ ở ý a). Biến cố $B$: \\textquotedblleft Số xuất hiện trên thẻ chia cho 8 dư 5\\textquotedblright{}.[[br]]c) [TH] Bình đựng 12 quả cầu đánh số từ 1 đến 12, chọn ngẫu nhiên một quả. Biến cố $C$: \\textquotedblleft Chọn được quả có số là số tự nhiên có hai chữ số\\textquotedblright{} \\;(giữa kì I, THCS Phú Diễn).",
+     "level": 2,
+     "tier": "btvn",
+     "dang_id": "TH1",
+     "solution": "a) Không gian mẫu $\\Omega=\\{1;\\,2;\\,3;\\,\\dots;\\,60\\}$, $n(\\Omega)=60$.[[br]]Vì các thẻ cùng loại và được rút ngẫu nhiên nên các kết quả có thể là đồng khả năng.[[br]]Các kết quả thuận lợi cho $A$ là $1;\\,2;\\,3;\\,4;\\,5;\\,6;\\,7;\\,8;\\,9;\\,10;\\,11;\\,12;\\,13;\\,14;\\,15;\\,16;\\,17;\\,18;\\,19;\\,20;\\,21;\\,22;\\,23;\\,24;\\,25;\\,26;\\,27;\\,28;\\,29;\\,30$, $n(A)=30$.[[br]]$P(A)=\\dfrac{n(A)}{n(\\Omega)}=\\dfrac{30}{60}=\\dfrac{1}{2}$.[[br]]Vậy $P(A)=\\dfrac{1}{2}$.[[br]]b) Không gian mẫu $\\Omega=\\{1;\\,2;\\,3;\\,\\dots;\\,60\\}$, $n(\\Omega)=60$.[[br]]Vì các thẻ cùng loại và được rút ngẫu nhiên nên các kết quả có thể là đồng khả năng.[[br]]Các kết quả thuận lợi cho $B$ là $5;\\,13;\\,21;\\,29;\\,37;\\,45;\\,53$, $n(B)=7$.[[br]]$P(B)=\\dfrac{n(B)}{n(\\Omega)}=\\dfrac{7}{60}$.[[br]]Vậy $P(B)=\\dfrac{7}{60}$.[[br]]c) Không gian mẫu $\\Omega=\\{1;\\,2;\\,3;\\,\\dots;\\,12\\}$, $n(\\Omega)=12$.[[br]]Vì chọn ngẫu nhiên nên các kết quả có thể là đồng khả năng.[[br]]Các kết quả thuận lợi cho $C$ là $10;\\,11;\\,12$, $n(C)=3$.[[br]]$P(C)=\\dfrac{n(C)}{n(\\Omega)}=\\dfrac{3}{12}=\\dfrac{1}{4}$.[[br]]Vậy $P(C)=\\dfrac{1}{4}$.",
+     "hints": [
+      "Phép thử có tất cả bao nhiêu kết quả có thể? Viết chúng ra trong ngoặc nhọn.",
+      "Trong các kết quả đó, những kết quả nào làm biến cố xảy ra? Đã soát số đầu dãy và số cuối dãy chưa?"
+     ]
+    },
+    {
+     "type": "problem",
+     "label": "BTVN~9.",
+     "statement": "a) [TH] Một đĩa tròn bằng bìa cứng được chia làm tám phần bằng nhau và ghi các số $1,\\,2,\\,\\dots,\\,8$. Quay đĩa một lần. Tính xác suất của biến cố $A$: \\textquotedblleft Kim chỉ vào hình quạt ghi số lớn hơn 3\\textquotedblright{} \\;(cuối kì II, Phòng GD\\&ĐT Thạch Thất).[[br]]b) [TH] Một đĩa tròn chia 9 phần bằng nhau ghi các số $1,\\,2,\\,\\dots,\\,9$. Quay đĩa một lần. Tính xác suất của biến cố $B$: \\textquotedblleft Kim chỉ vào hình quạt ghi số nguyên tố\\textquotedblright{}.[[br]]c) [TH] Một đĩa tròn chia 10 phần bằng nhau ghi các số $2;\\,5;\\,9;\\,12;\\,15;\\,21;\\,26;\\,30;\\,33;\\,48$. Quay đĩa một lần. Tính xác suất của biến cố $C$: \\textquotedblleft Kim chỉ vào hình quạt ghi số chia hết cho 3\\textquotedblright{}.",
+     "level": 2,
+     "tier": "btvn",
+     "dang_id": "TH2",
+     "solution": "a) Không gian mẫu $\\Omega=\\{1;\\,2;\\,3;\\,4;\\,5;\\,6;\\,7;\\,8\\}$, $n(\\Omega)=8$.[[br]]Vì đĩa được chia thành các phần bằng nhau nên các kết quả có thể là đồng khả năng.[[br]]Các kết quả thuận lợi cho $A$ là $4;\\,5;\\,6;\\,7;\\,8$, $n(A)=5$.[[br]]$P(A)=\\dfrac{n(A)}{n(\\Omega)}=\\dfrac{5}{8}$.[[br]]Vậy $P(A)=\\dfrac{5}{8}$.[[br]]b) Không gian mẫu $\\Omega=\\{1;\\,2;\\,3;\\,4;\\,5;\\,6;\\,7;\\,8;\\,9\\}$, $n(\\Omega)=9$.[[br]]Vì đĩa được chia thành các phần bằng nhau nên các kết quả có thể là đồng khả năng.[[br]]Các kết quả thuận lợi cho $B$ là $2;\\,3;\\,5;\\,7$, $n(B)=4$.[[br]]$P(B)=\\dfrac{n(B)}{n(\\Omega)}=\\dfrac{4}{9}$.[[br]]Vậy $P(B)=\\dfrac{4}{9}$.[[br]]c) Không gian mẫu $\\Omega=\\{2;\\,5;\\,9;\\,12;\\,15;\\,21;\\,26;\\,30;\\,33;\\,48\\}$, $n(\\Omega)=10$.[[br]]Vì đĩa được chia thành các phần bằng nhau nên các kết quả có thể là đồng khả năng.[[br]]Các kết quả thuận lợi cho $C$ là $9;\\,12;\\,15;\\,21;\\,30;\\,33;\\,48$, $n(C)=7$.[[br]]$P(C)=\\dfrac{n(C)}{n(\\Omega)}=\\dfrac{7}{10}$.[[br]]Vậy $P(C)=\\dfrac{7}{10}$.",
+     "hints": [
+      "Đĩa có bao nhiêu hình quạt bằng nhau?",
+      "Soát từng số trên đĩa, số nào thoả biến cố?"
+     ]
+    },
+    {
+     "type": "problem",
+     "label": "BTVN~10.",
+     "statement": "a) [TH] Viết ngẫu nhiên một số tự nhiên chẵn có hai chữ số và nhỏ hơn 30. Tính xác suất của biến cố \\textquotedblleft Số viết ra chia hết cho 4\\textquotedblright{}.[[br]]b) [TH] Viết ngẫu nhiên một số tự nhiên có ba chữ số và nhỏ hơn 400. Tính xác suất của biến cố \\textquotedblleft Số viết ra là lập phương của một số tự nhiên\\textquotedblright{} \\;(bộ Mathtech, Dạng 3, Bài 19).[[br]]c) [TH] Viết ngẫu nhiên một số tự nhiên có hai chữ số không nhỏ hơn 80. Tính xác suất của biến cố \\textquotedblleft Chữ số hàng chục gấp hai hoặc gấp ba lần chữ số hàng đơn vị\\textquotedblright{} \\;(bộ Mathtech, Dạng 3, Bài 18).",
+     "level": 2,
+     "tier": "btvn",
+     "dang_id": "TH3",
+     "solution": "a) Không gian mẫu $\\Omega=\\{10;\\,12;\\,14;\\,16;\\,18;\\,20;\\,22;\\,24;\\,26;\\,28\\}$, $n(\\Omega)=10$.[[br]]Vì số được viết ngẫu nhiên nên các kết quả có thể là đồng khả năng.[[br]]Các kết quả thuận lợi cho $A$ là $12;\\,16;\\,20;\\,24;\\,28$, $n(A)=5$.[[br]]$P(A)=\\dfrac{n(A)}{n(\\Omega)}=\\dfrac{5}{10}=\\dfrac{1}{2}$.[[br]]Vậy $P(A)=\\dfrac{1}{2}$.[[br]]b) Không gian mẫu $\\Omega=\\{100;\\,101;\\,102;\\,\\dots;\\,399\\}$, $n(\\Omega)=300$.[[br]]Vì số được viết ngẫu nhiên nên các kết quả có thể là đồng khả năng.[[br]]Các kết quả thuận lợi cho $B$ là $125;\\,216;\\,343$, $n(B)=3$.[[br]]$P(B)=\\dfrac{n(B)}{n(\\Omega)}=\\dfrac{3}{300}=\\dfrac{1}{100}$.[[br]]Vậy $P(B)=\\dfrac{1}{100}$.[[br]]c) Không gian mẫu $\\Omega=\\{80;\\,81;\\,82;\\,\\dots;\\,99\\}$, $n(\\Omega)=20$.[[br]]Vì số được viết ngẫu nhiên nên các kết quả có thể là đồng khả năng.[[br]]Các kết quả thuận lợi cho $C$ là $84;\\,93$, $n(C)=2$.[[br]]$P(C)=\\dfrac{n(C)}{n(\\Omega)}=\\dfrac{2}{20}=\\dfrac{1}{10}$.[[br]]Vậy $P(C)=\\dfrac{1}{10}$.",
+     "hints": [
+      "Tự viết không gian mẫu trước: số đầu, số cuối là số nào, cách nhau mấy đơn vị?",
+      "Trong dãy đó có những số nào thoả biến cố?"
+     ]
+    },
+    {
+     "type": "problem",
+     "label": "BTVN~11.",
+     "statement": "a) [NB] Một đoàn khách quốc tế tham quan vịnh Hạ Long có tỉ lệ khách người châu Âu là $27\\%$. Chọn ngẫu nhiên một hành khách. Xác suất để người đó là người châu Âu bằng bao nhiêu? \\;(bộ Mathtech, Dạng 3, Bài 43)[[br]]b) [NB] Đài truyền hình điều tra ý kiến của khán giả về một chương trình giải trí \\;(bộ Mathtech, Dạng 3, Bài 11).\\par\\nopagebreak\\begin{center}\\footnotesize\\renewcommand\\arraystretch{1.25}\\begin{tabular}{|l|c|c|}\\hline & \\textbf{Thích} & \\textbf{Không thích} \\\\ \\hline Nam & 523 & 154 \\\\ \\hline Nữ & 147 & 68 \\\\ \\hline\\end{tabular}\\end{center}Chọn ngẫu nhiên một người được điều tra. Tìm $n(\\Omega)$ và số kết quả thuận lợi cho biến cố \\textquotedblleft Chọn được khán giả nữ không thích chương trình\\textquotedblright{}.[[br]]c) [NB] Phân xưởng H có 2 kĩ sư, 25 kĩ thuật viên và 7 thợ học việc. Chọn ngẫu nhiên một người. Tìm $n(\\Omega)$ và số kết quả thuận lợi cho biến cố \\textquotedblleft Chọn được một thợ học việc\\textquotedblright{}.",
+     "level": 1,
+     "tier": "btvn",
+     "dang_id": "NB8",
+     "solution": "a) $P=27\\%=0{,}27$.[[br]]b) $n(\\Omega)=523+154+147+68=892$; số kết quả thuận lợi là 68.[[br]]c) $n(\\Omega)=2+25+7=34$; số kết quả thuận lợi là 7."
+    },
+    {
+     "type": "problem",
+     "label": "BTVN~12.",
+     "statement": "a) [TH] Với bảng khán giả ở BTVN~11 ý b), tính xác suất của biến cố \\textquotedblleft Chọn được một khán giả nam\\textquotedblright{}.[[br]]b) [TH] Với phân xưởng H ở BTVN~11 ý c), tính xác suất của biến cố \\textquotedblleft Chọn được một kĩ sư hoặc kĩ thuật viên\\textquotedblright{} \\;(bộ Mathtech, Dạng 3, Bài 35).[[br]]c) [TH] Một giỏ trái cây có 4 quả cam, 5 quả táo và 3 quả lê. Lấy ngẫu nhiên một quả. Tính xác suất của biến cố \\textquotedblleft Không lấy được quả táo\\textquotedblright{}.",
+     "level": 2,
+     "tier": "btvn",
+     "dang_id": "TH4",
+     "solution": "a) $n(\\Omega)=892$, các kết quả đồng khả năng vì chọn ngẫu nhiên.[[br]]Số khán giả nam là $523+154=677$.[[br]]$P=\\dfrac{677}{892}$.[[br]]Vậy xác suất chọn được khán giả nam là $\\dfrac{677}{892}$.[[br]]b) $n(\\Omega)=34$, các kết quả đồng khả năng.[[br]]Số kết quả thuận lợi là $2+25=27$.[[br]]Vậy xác suất cần tìm là $\\dfrac{27}{34}$.[[br]]c) $n(\\Omega)=4+5+3=12$, các kết quả đồng khả năng.[[br]]Số kết quả thuận lợi là $12-5=7$.[[br]]Vậy xác suất cần tìm là $\\dfrac{7}{12}$.",
+     "hints": [
+      "Có tất cả bao nhiêu người (bao nhiêu quả)? Mỗi người là một kết quả có thể.",
+      "Biến cố ứng với những ô (những nhóm) nào? Có cách đếm nhanh bằng phép trừ không?"
+     ]
+    },
+    {
+     "type": "problem",
+     "label": "BTVN~13.",
+     "statement": "a) [TH] Bạn Thắng có $n$ tấm thẻ cùng loại được đánh số từ 1 đến $n$. Bạn rút ngẫu nhiên 1 tấm thẻ. Biết xác suất của biến cố \\textquotedblleft Lấy được tấm thẻ ghi số có một chữ số\\textquotedblright{} là $0{,}18$. Hỏi bạn Thắng có bao nhiêu tấm thẻ? \\;(bộ Mathtech, Dạng 3, Bài 39)[[br]]b) [TH] Một túi có 8 viên kẹo vị dâu và một số viên kẹo vị cam cùng loại. Lấy ngẫu nhiên một viên. Biết xác suất lấy được kẹo vị dâu là $0{,}4$. Hỏi túi có bao nhiêu viên kẹo vị cam?",
+     "level": 2,
+     "tier": "btvn",
+     "dang_id": "TH5",
+     "solution": "a) Các số có một chữ số là $1;\\,2;\\,\\dots;\\,9$ nên có 9 kết quả thuận lợi ($n>9$).[[br]]$\\dfrac{9}{n}=0{,}18$.[[br]]$n=9:0{,}18=50$ (thoả mãn).[[br]]Vậy bạn Thắng có 50 tấm thẻ.[[br]]b) Gọi số kẹo vị cam là $x$ ($x$ là số tự nhiên), $n(\\Omega)=x+8$.[[br]]$\\dfrac{8}{x+8}=0{,}4$.[[br]]$x+8=8:0{,}4=20$.[[br]]$x=12$ (thoả mãn).[[br]]Vậy túi có 12 viên kẹo vị cam.",
+     "hints": [
+      "Số kết quả thuận lợi là bao nhiêu? Tổng số kết quả viết theo ẩn thế nào?",
+      "Cho tỉ số đó bằng xác suất đề cho rồi giải phương trình."
+     ]
+    },
+    {
+     "type": "problem",
+     "label": "BTVN~14.",
+     "statement": "a) [NB] Bạn Lan gieo một con xúc xắc, bạn Hoà tung một đồng xu \\;(Ví dụ 1, Bài 25 SGK). Lập bảng liệt kê các kết quả có thể và tìm $n(\\Omega)$.[[br]]b) [NB] Túi I chứa 3 tấm thẻ ghi $2;\\,3;\\,4$, túi II chứa 2 tấm thẻ ghi $5;\\,6$. Rút ngẫu nhiên từ mỗi túi một tấm thẻ \\;(Bài 8{.}15 SGK). Lập bảng và tìm $n(\\Omega)$.[[br]]c) [NB] Túi I chứa 4 tấm thẻ ghi $1;\\,2;\\,3;\\,4$, túi II chứa 5 tấm thẻ ghi $1;\\,2;\\,3;\\,4;\\,5$. Rút ngẫu nhiên một tấm thẻ từ mỗi túi \\;(Bài 8{.}13 SGK). Tính nhanh $n(\\Omega)$.",
+     "level": 1,
+     "tier": "btvn",
+     "dang_id": "NB9",
+     "solution": "a) Bảng 2 dòng ($S$, $N$), 6 cột (số chấm): $n(\\Omega)=2\\cdot 6=12$.[[br]]b) $\\Omega=\\{(2, 5);\\,(2, 6);\\,(3, 5);\\,(3, 6);\\,(4, 5);\\,(4, 6)\\}$, $n(\\Omega)=3\\cdot 2=6$.[[br]]c) $n(\\Omega)=4\\cdot 5=20$."
+    },
+    {
+     "type": "problem",
+     "label": "BTVN~15.",
+     "statement": "Có hai túi I và II, mỗi túi chứa 4 tấm thẻ đánh số $1;\\,2;\\,3;\\,4$. Rút ngẫu nhiên từ mỗi túi một tấm thẻ rồi nhân hai số ghi trên hai thẻ \\;(Bài 8{.}8 SGK).[[br]]a) [NB] Lập bảng TÍCH hai số ($4\\cdot 4=16$ ô).[[br]]b) [NB] Có bao nhiêu ô ghi số lẻ?[[br]]c) [NB] Có bao nhiêu ô ghi số 1 hoặc một số nguyên tố?",
+     "level": 1,
+     "tier": "btvn",
+     "dang_id": "NB10",
+     "solution": "a) Dòng 1: $1;\\,2;\\,3;\\,4$. Dòng 2: $2;\\,4;\\,6;\\,8$. Dòng 3: $3;\\,6;\\,9;\\,12$. Dòng 4: $4;\\,8;\\,12;\\,16$.[[br]]b) 4 ô: $(1, 1);\\,(1, 3);\\,(3, 1);\\,(3, 3)$.[[br]]c) 5 ô: $(1, 1);\\,(1, 2);\\,(1, 3);\\,(2, 1);\\,(3, 1)$."
+    },
+    {
+     "type": "problem",
+     "label": "BTVN~16.",
+     "statement": "a) [NB] Hai bạn Văn và Hải mỗi người chọn ngẫu nhiên một trong ba quán $A$, $B$, $C$ \\;(Bài 8{.}11 SGK). Đếm số kết quả mà KHÔNG bạn nào chọn quán $B$.[[br]]b) [NB] Từ ý a), suy ra số kết quả thuận lợi cho biến cố \\textquotedblleft Có ít nhất một bạn chọn quán $B$\\textquotedblright{}.[[br]]c) [NB] Gieo đồng thời hai con xúc xắc. Đếm số kết quả có ít nhất một con xúc xắc xuất hiện mặt 5 chấm.",
+     "level": 1,
+     "tier": "btvn",
+     "dang_id": "NB11",
+     "solution": "a) Mỗi bạn chỉ chọn $A$ hoặc $C$: $2\\cdot 2=4$ kết quả.[[br]]b) $9-4=5$.[[br]]c) Phần bù: $5\\cdot 5=25$ ô không có mặt 5; số ô cần tìm là $36-25=11$."
+    },
+    {
+     "type": "problem",
+     "label": "BTVN~17.",
+     "statement": "[TH] Gieo đồng thời hai con xúc xắc cân đối, đồng chất. Xác suất để \\textquotedblleft Tổng số chấm xuất hiện trên hai con xúc xắc lớn hơn hoặc bằng 10\\textquotedblright{} là \\;(Bài 8{.}12 SGK)",
+     "level": 2,
+     "tier": "btvn",
+     "dang_id": "TH6",
+     "solution": "Lập bảng 6 dòng, 6 cột, $n(\\Omega)=36$.[[br]]Vì hai con xúc xắc cân đối, đồng chất nên các kết quả có thể là đồng khả năng.[[br]]Các kết quả thuận lợi cho $E$ là $(4, 6);\\,(5, 5);\\,(5, 6);\\,(6, 4);\\,(6, 5);\\,(6, 6)$, $n(E)=6$.[[br]]$P(E)=\\dfrac{n(E)}{n(\\Omega)}=\\dfrac{6}{36}=\\dfrac{1}{6}$.[[br]]Vậy chọn \\textbf{C}.",
+     "hints": [
+      "Liệt kê các ô có tổng bằng 10, 11, 12."
+     ],
+     "options": [
+      "$\\dfrac{7}{36}$",
+      "$\\dfrac{2}{9}$",
+      "$\\dfrac{1}{6}$",
+      "$\\dfrac{5}{36}$"
+     ]
+    },
+    {
+     "type": "problem",
+     "label": "BTVN~18.",
+     "statement": "Gieo đồng thời hai con xúc xắc cân đối, đồng chất I và II. Tính xác suất của các biến cố sau.[[br]]a) [TH] $H$: \\textquotedblleft Số chấm trên con xúc xắc I là số lẻ và số chấm trên con xúc xắc II lớn hơn 4\\textquotedblright{} \\;(Bài 8{.}10 SGK).[[br]]b) [TH] $G$: \\textquotedblleft Tích của hai số chấm nhỏ hơn hoặc bằng 6\\textquotedblright{} \\;(Bài 8{.}6 SGK).",
+     "level": 2,
+     "tier": "btvn",
+     "dang_id": "TH6",
+     "solution": "a) Lập bảng 6 dòng, 6 cột, $n(\\Omega)=36$.[[br]]Vì hai con xúc xắc cân đối, đồng chất nên các kết quả có thể là đồng khả năng.[[br]]Các kết quả thuận lợi cho $H$ là $(1, 5);\\,(1, 6);\\,(3, 5);\\,(3, 6);\\,(5, 5);\\,(5, 6)$, $n(H)=6$.[[br]]$P(H)=\\dfrac{n(H)}{n(\\Omega)}=\\dfrac{6}{36}=\\dfrac{1}{6}$.[[br]]Vậy $P(H)=\\dfrac{1}{6}$.[[br]]b) Các kết quả thuận lợi cho $G$ là $(1, 1);\\,(1, 2);\\,(1, 3);\\,(1, 4);\\,(1, 5);\\,(1, 6);\\,(2, 1);\\,(2, 2);\\,(2, 3);\\,(3, 1);\\,(3, 2);\\,(4, 1);\\,(5, 1);\\,(6, 1)$, $n(G)=14$.[[br]]$P(G)=\\dfrac{n(G)}{n(\\Omega)}=\\dfrac{14}{36}=\\dfrac{7}{18}$.[[br]]Vậy $P(G)=\\dfrac{7}{18}$.",
+     "hints": [
+      "Mỗi kết quả của phép thử là một cặp gồm những gì? Bảng có bao nhiêu dòng, bao nhiêu cột?",
+      "Biến cố hỏi về tổng, tích hay về từng số? Điền con số đó vào từng ô rồi đánh dấu các ô thoả mãn."
+     ]
+    },
+    {
+     "type": "problem",
+     "label": "BTVN~19.",
+     "statement": "[TH] Có hai túi I và II. Túi I chứa 4 tấm thẻ đánh số $1;\\,2;\\,3;\\,4$, túi II chứa 5 tấm thẻ đánh số $1;\\,2;\\,3;\\,4;\\,5$. Rút ngẫu nhiên một tấm thẻ từ mỗi túi. Xác suất để cả hai tấm thẻ rút ra đều ghi số chẵn là \\;(Bài 8{.}13 SGK)",
+     "level": 2,
+     "tier": "btvn",
+     "dang_id": "TH7",
+     "solution": "$n(\\Omega)=4\\cdot 5=20$.[[br]]Vì rút ngẫu nhiên nên các kết quả có thể là đồng khả năng.[[br]]Các kết quả thuận lợi là $(2, 2);\\,(2, 4);\\,(4, 2);\\,(4, 4)$, có 4 kết quả.[[br]]$P=\\dfrac{4}{20}=\\dfrac{1}{5}$.[[br]]Vậy chọn \\textbf{A}.",
+     "hints": [
+      "Mỗi túi có những số chẵn nào? Ghép chúng thành cặp."
+     ],
+     "options": [
+      "$\\dfrac{1}{5}$",
+      "$\\dfrac{3}{20}$",
+      "$\\dfrac{1}{4}$",
+      "$\\dfrac{4}{21}$"
+     ]
+    },
+    {
+     "type": "problem",
+     "label": "BTVN~20.",
+     "statement": "a) [TH] Túi I chứa 3 tấm thẻ ghi $2;\\,3;\\,4$, túi II chứa 2 tấm thẻ ghi $5;\\,6$. Rút ngẫu nhiên từ mỗi túi một tấm thẻ. Tính xác suất của biến cố $A$: \\textquotedblleft Hai số ghi trên hai tấm thẻ chênh nhau 2 đơn vị\\textquotedblright{} \\;(Bài 8{.}15 SGK).[[br]]b) [TH] Minh chọn ngẫu nhiên một số trong tập hợp $\\{5;\\,6;\\,7;\\,8;\\,9;\\,10\\}$, Huy chọn ngẫu nhiên một số trong tập hợp $\\{4;\\,5;\\,7;\\,8;\\,9;\\,11\\}$. Bạn nào chọn được số lớn hơn là người thắng. Tính xác suất của biến cố \\textquotedblleft Bạn Minh thắng\\textquotedblright{} \\;(Bài 8{.}17 SGK).",
+     "level": 2,
+     "tier": "btvn",
+     "dang_id": "TH7",
+     "solution": "a) $n(\\Omega)=3\\cdot 2=6$.[[br]]Vì rút ngẫu nhiên nên các kết quả có thể là đồng khả năng.[[br]]Các kết quả thuận lợi cho $A$ là $(3, 5);\\,(4, 6)$, $n(A)=2$.[[br]]$P(A)=\\dfrac{n(A)}{n(\\Omega)}=\\dfrac{2}{6}=\\dfrac{1}{3}$.[[br]]Vậy $P(A)=\\dfrac{1}{3}$.[[br]]b) Kết quả là cặp (số của Minh, số của Huy), $n(\\Omega)=6\\cdot 6=36$.[[br]]Vì hai bạn chọn ngẫu nhiên nên các kết quả có thể là đồng khả năng.[[br]]Đếm theo số của Minh: $5$ thắng 1 số, $6$ và $7$ thắng 2 số, $8$ thắng 3 số, $9$ thắng 4 số, $10$ thắng 5 số.[[br]]$n=1+2+2+3+4+5=17$.[[br]]$P=\\dfrac{17}{36}$.[[br]]Vậy xác suất bạn Minh thắng là $\\dfrac{17}{36}$.",
+     "hints": [
+      "Mỗi kết quả là một cặp gồm những gì? Có bao nhiêu cặp?",
+      "Với từng số của bạn thứ nhất, có bao nhiêu số của bạn thứ hai thoả điều kiện?"
+     ]
+    },
+    {
+     "type": "problem",
+     "label": "BTVN~21.",
+     "statement": "Liệt kê không gian mẫu (mỗi cặp chỉ viết một lần) rồi tìm $n(\\Omega)$.[[br]]a) [NB] Hai bạn nam Huy, Việt và ba bạn nữ Nga, Thảo, Diệp tham gia đội vẽ lịch Tết. Cô giáo chọn ngẫu nhiên hai bạn \\;(giữa kì II, Ban Mai School).[[br]]b) [NB] Một hộp có 4 tấm thẻ cùng loại ghi $1;\\,4;\\,7;\\,9$. Lấy ngẫu nhiên đồng thời hai tấm thẻ.[[br]]c) [NB] Một hộp có ba viên bi vàng ghi $1;\\,2;\\,3$ và hai viên bi nâu ghi $4;\\,5$. Lấy ngẫu nhiên đồng thời hai viên bi \\;(bộ Mathtech, Dạng 3, Bài 4).",
+     "level": 1,
+     "tier": "btvn",
+     "dang_id": "NB12",
+     "solution": "a) Kí hiệu $H$, $V$, $N$, $T$, $D$: $\\Omega=\\{HV;\\,HN;\\,HT;\\,HD;\\,VN;\\,VT;\\,VD;\\,NT;\\,ND;\\,TD\\}$, $n(\\Omega)=10$.[[br]]b) $\\Omega=\\{(1, 4);\\,(1, 7);\\,(1, 9);\\,(4, 7);\\,(4, 9);\\,(7, 9)\\}$, $n(\\Omega)=6$.[[br]]c) $\\Omega=\\{(1, 2);\\,(1, 3);\\,(1, 4);\\,(1, 5);\\,(2, 3);\\,(2, 4);\\,(2, 5);\\,(3, 4);\\,(3, 5);\\,(4, 5)\\}$, $n(\\Omega)=10$."
+    },
+    {
+     "type": "problem",
+     "label": "BTVN~22.",
+     "statement": "a) [TH] Với phép chọn hai bạn ở BTVN~21 ý a), tính xác suất của biến cố $A$: \\textquotedblleft Trong hai bạn được chọn có một bạn nam và một bạn nữ\\textquotedblright{}.[[br]]b) [TH] Một chiếc hộp có 5 tấm thẻ cùng loại đánh số $3;\\,5;\\,6;\\,7;\\,9$. Lấy ngẫu nhiên đồng thời 2 tấm thẻ. Tính xác suất của biến cố $B$: \\textquotedblleft Tổng các số ghi trên 2 tấm thẻ lớn hơn 13\\textquotedblright{} \\;(bộ Mathtech, Dạng 3, Bài 31).",
+     "level": 2,
+     "tier": "btvn",
+     "dang_id": "TH8",
+     "solution": "a) Lấy đồng thời nên mỗi kết quả là một cặp không kể thứ tự, $n(\\Omega)=10$.[[br]]Vì cô giáo chọn ngẫu nhiên nên các kết quả có thể là đồng khả năng.[[br]]Các kết quả thuận lợi cho $A$ là $(H, N);\\,(H, T);\\,(H, D);\\,(V, N);\\,(V, T);\\,(V, D)$, $n(A)=6$.[[br]]$P(A)=\\dfrac{n(A)}{n(\\Omega)}=\\dfrac{6}{10}=\\dfrac{3}{5}$.[[br]]Vậy $P(A)=\\dfrac{3}{5}$.[[br]]b) Lấy đồng thời nên mỗi kết quả là một cặp không kể thứ tự, $n(\\Omega)=10$.[[br]]Vì các thẻ cùng loại nên các kết quả có thể là đồng khả năng.[[br]]Các kết quả thuận lợi cho $B$ là $(5, 9);\\,(6, 9);\\,(7, 9)$, $n(B)=3$.[[br]]$P(B)=\\dfrac{n(B)}{n(\\Omega)}=\\dfrac{3}{10}$.[[br]]Vậy $P(B)=\\dfrac{3}{10}$.",
+     "hints": [
+      "Mỗi cặp chỉ viết một lần — đã có danh sách ở BTVN 21 chưa?",
+      "Soát từng cặp xem có thoả biến cố không."
+     ]
+    },
+    {
+     "type": "problem",
+     "label": "BTVN~23.",
+     "statement": "a) [NB] Một hộp chứa 4 tấm thẻ cùng loại đánh số $2;\\,5;\\,7;\\,10$. Bạn Phi và bạn Thanh lần lượt mỗi người lấy ra 1 tấm thẻ (Phi lấy trước, không bỏ lại vào hộp). Liệt kê không gian mẫu \\;(giữa kì II, Ban Mai School).[[br]]b) [NB] Bạn Việt giải đề thi có 3 bài đánh số $1;\\,2;\\,3$, chọn lần lượt các bài để giải theo một thứ tự ngẫu nhiên \\;(bộ Mathtech, Dạng 2, Bài 15). Liệt kê không gian mẫu.[[br]]c) [NB] Một hộp có 4 quả bóng đánh số $1;\\,2;\\,3;\\,4$. Bạn Trọng và bạn Thuỷ lần lượt lấy ra ngẫu nhiên 1 quả bóng. Tìm $n(\\Omega)$.",
+     "level": 1,
+     "tier": "btvn",
+     "dang_id": "NB13",
+     "solution": "a) $\\Omega=\\{(2, 5);\\,(2, 7);\\,(2, 10);\\,(5, 2);\\,(5, 7);\\,(5, 10);\\,(7, 2);\\,(7, 5);\\,(7, 10);\\,(10, 2);\\,(10, 5);\\,(10, 7)\\}$, $n(\\Omega)=12$.[[br]]b) $\\Omega=\\{123;\\,132;\\,213;\\,231;\\,312;\\,321\\}$, $n(\\Omega)=6$.[[br]]c) $n(\\Omega)=4\\cdot 4-4=12$."
+    },
+    {
+     "type": "problem",
+     "label": "BTVN~24.",
+     "statement": "a) [TH] Với phép thử ở BTVN~23 ý a), tính xác suất của biến cố $M$: \\textquotedblleft Tích các số ghi trên 2 tấm thẻ là số lẻ\\textquotedblright{}.[[br]]b) [TH] Với phép thử ở BTVN~23 ý b), tính xác suất của biến cố $A$: \\textquotedblleft Việt giải bài 2 đầu tiên\\textquotedblright{}.",
+     "level": 2,
+     "tier": "btvn",
+     "dang_id": "TH9",
+     "solution": "a) $n(\\Omega)=12$, các kết quả đồng khả năng vì lấy ngẫu nhiên.[[br]]Tích lẻ khi cả hai số đều lẻ, các kết quả thuận lợi là $(5, 7);\\,(7, 5)$, $n(M)=2$.[[br]]$P(M)=\\dfrac{n(M)}{n(\\Omega)}=\\dfrac{2}{12}=\\dfrac{1}{6}$.[[br]]Vậy $P(M)=\\dfrac{1}{6}$.[[br]]b) $n(\\Omega)=6$, các kết quả đồng khả năng vì thứ tự được chọn ngẫu nhiên.[[br]]Các kết quả thuận lợi cho $A$ là $213;\\,231$, $n(A)=2$.[[br]]$P(A)=\\dfrac{n(A)}{n(\\Omega)}=\\dfrac{2}{6}=\\dfrac{1}{3}$.[[br]]Vậy $P(A)=\\dfrac{1}{3}$.",
+     "hints": [
+      "Lấy lần lượt, không trả lại: hai thẻ có trùng nhau được không? Thứ tự có quan trọng không?",
+      "Biến cố đòi hỏi điều gì ở từng phần tử của cặp (của thứ tự)?"
+     ]
+    },
+    {
+     "type": "problem",
+     "label": "BTVN~25.",
+     "statement": "Mỗi phép thử sau đếm theo cách nào (đủ ô $/$ bỏ đường chéo $/$ không kể thứ tự) và $n(\\Omega)$ bằng bao nhiêu?[[br]]a) [NB] Gieo một con xúc xắc hai lần liên tiếp.[[br]]b) [NB] Chọn ngẫu nhiên 2 bạn trong 4 bạn để đi trực nhật.[[br]]c) [NB] Chọn ngẫu nhiên 1 bạn làm lớp trưởng rồi 1 bạn khác làm lớp phó trong 4 bạn.",
+     "level": 1,
+     "tier": "btvn",
+     "dang_id": "NB14",
+     "solution": "a) Đủ ô: $n(\\Omega)=6\\cdot 6=36$.[[br]]b) Không kể thứ tự: $n(\\Omega)=6$.[[br]]c) Có kể thứ tự, bỏ đường chéo: $n(\\Omega)=4\\cdot 4-4=12$."
+    },
+    {
+     "type": "problem",
+     "label": "BTVN~26.",
+     "statement": "a) [NB] Không nhìn lại phiếu, hãy tự viết ra bốn bước tính xác suất của một biến cố.[[br]]b) [NB] Giải thích bằng lời của em: vì sao khi lấy LẦN LƯỢT hai thẻ thì $(1, 2)$ và $(2, 1)$ là hai kết quả khác nhau, còn khi lấy ĐỒNG THỜI hai thẻ thì chúng chỉ là một kết quả?",
+     "level": 1,
+     "tier": "btvn",
+     "dang_id": "NB15",
+     "solution": "a) Bước 1: mô tả không gian mẫu, tìm $n(\\Omega)$. Bước 2: chứng tỏ các kết quả đồng khả năng. Bước 3: mô tả các kết quả thuận lợi, tìm $n(E)$. Bước 4: lập tỉ số $P(E)=\\dfrac{n(E)}{n(\\Omega)}$.[[br]]b) Lấy lần lượt thì có thẻ lần 1 và thẻ lần 2, thứ tự khác nhau là kết quả khác nhau. Lấy đồng thời thì chỉ biết hai thẻ nào, không có thẻ trước, thẻ sau."
+    }
+   ]
+  }
+ ]
+}

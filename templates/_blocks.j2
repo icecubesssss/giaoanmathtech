@@ -52,7 +52,7 @@
 ((* set _de *))((( _nhan ))) ((( _dec | tex )))((* endset *))
 ((* set _hinh *))((* if b.figure and b.figure.image *))\includegraphics[width=\linewidth]{((( b.figure.image )))}((* elif b.figure *))((( b.figure.tikz )))((* endif *))((* endset *))
 {\clubpenalty=10000 \widowpenalty=10000 \relax ((( _de )))\par}
-((* if _pos == "below" *))\figbelow((* if (_dec | length) < 200 *))keep((* endif *)){0.44}{((( _hinh )))}{((( b.figure.caption | tex )))}
+((* if _pos == "below" *))\figbelow((* if (_dec | length) < 200 *))keep((* endif *))((* if lesson is defined and lesson.trinh_bay == "thoang" *))[6.5cm]{0.5}((* else *)){0.44}((* endif *)){((( _hinh )))}{((( b.figure.caption | tex )))}
 ((* endif *))
 ((* if _ycon *))((( _ycon | tex )))\par
 ((* endif *))

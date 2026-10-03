@@ -1,0 +1,451 @@
+{
+  "slug": "phieu-4-ung-dung-dinh-li-viete",
+  "title": "Ứng dụng định lí Viète: tính giá trị biểu thức của hai nghiệm",
+  "eyebrow": "ĐẠI SỐ 9 — PHIẾU 4 • CHƯƠNG VI — BÀI 20 (PHẦN 2)",
+  "grade_label": "Lớp 9 • Chương VI",
+  "class_tier": "B",
+  "chuong": "chuong-06-ham-so-va-phuong-trinh-bac-hai",
+  "so_ca": 1,
+  "stages": [
+    {
+      "kind": "review",
+      "number": 1,
+      "title": "Khám phá",
+      "blocks": [
+        {
+          "type": "opener",
+          "text": "Câu III.3 đề thi vào 10 năm 2026 của Hà Nội: phương trình $x^2 - 3x + 1 = 0$ có hai nghiệm $x_1$, $x_2$; tính $Q = \\dfrac{3x_2 - 1}{x_1} + \\dfrac{3x_1}{x_2} - x_1$.[[br]]a) Đổi chỗ $x_1$ và $x_2$ thì $Q$ có giữ nguyên không?[[br]]b) Vì $x_2$ là nghiệm nên $x_2^2 - 3x_2 + 1 = 0$. Biểu thức $3x_2 - 1$ bằng gì?[[br]]c) Em đoán xem: muốn dùng được tổng và tích hai nghiệm thì phải làm gì trước?"
+        }
+      ],
+      "teacher_note": "Câu a) không giữ nguyên — biểu thức không đối xứng, chưa dùng thẳng tổng, tích được.[[br]]Câu b) $3x_2 - 1 = x_2^2$: chốt kĩ thuật \"hạ bậc\" — nội dung chính của buổi. Lời giải trọn ở Ví dụ 8."
+    },
+    {
+      "kind": "concept",
+      "number": 2,
+      "title": "Kiến thức cần nhớ",
+      "blocks": [
+        {
+          "type": "para",
+          "variant": "heading",
+          "text": "1. Hạ bậc"
+        },
+        {
+          "type": "deflist",
+          "items": [
+            {
+              "term": "Từ một nghiệm:",
+              "desc": "$x_1$ là nghiệm của $ax^2 + bx + c = 0$ nên $ax_1^2 = -bx_1 - c$; nhân thêm $x_1$ để hạ $x_1^3$, $x_1^4$ về bậc một."
+            },
+            {
+              "term": "Ví dụ:",
+              "desc": "$x_1^2 - 3x_1 - 1 = 0$ nên $x_1^2 = 3x_1 + 1$, $x_1^3 = 3x_1^2 + x_1 = 10x_1 + 3$."
+            }
+          ]
+        },
+        {
+          "type": "para",
+          "variant": "heading",
+          "text": "2. Biểu thức của hai nghiệm qua tổng và tích"
+        },
+        {
+          "type": "deflist",
+          "items": [
+            {
+              "term": "Bình phương:",
+              "desc": "$x_1^2 + x_2^2 = (x_1 + x_2)^2 - 2x_1x_2$; $(x_1 - x_2)^2 = (x_1 + x_2)^2 - 4x_1x_2$."
+            },
+            {
+              "term": "Lập phương:",
+              "desc": "$x_1^3 + x_2^3 = (x_1 + x_2)^3 - 3x_1x_2(x_1 + x_2)$."
+            },
+            {
+              "term": "Có mẫu:",
+              "desc": "quy đồng rồi đưa tử, mẫu về tổng và tích; $\\dfrac{1}{x_1} + \\dfrac{1}{x_2} = \\dfrac{x_1 + x_2}{x_1x_2}$."
+            }
+          ]
+        },
+        {
+          "type": "para",
+          "variant": "heading",
+          "text": "3. Dấu của nghiệm và giá trị tuyệt đối"
+        },
+        {
+          "type": "deflist",
+          "items": [
+            {
+              "term": "Trái dấu, $x_1 < x_2$:",
+              "desc": "$x_1 < 0 < x_2$ nên $|x_1| = -x_1$, $|x_2| = x_2$."
+            },
+            {
+              "term": "Hai nghiệm âm:",
+              "desc": "$|x_1| + |x_2| = -(x_1 + x_2)$; $\\sqrt{(x_1 - d)^2} = |x_1 - d|$."
+            }
+          ]
+        },
+        {
+          "type": "noted",
+          "variant": "target",
+          "text": "\\textbf{Đề vào 10 hỏi gì ở phần này.} Câu III.3 ($0{,}5$ điểm) của ba đề Sở gần nhất: biểu thức không đối xứng phải hạ bậc (2026: $Q = 18$), hệ thức phải quy đồng rồi hạ bậc (2025), tìm một nghiệm biết trước (minh hoạ).[[br]]Đề thi thử: $\\sqrt{-16x_1 + 5} - x_2$ (Từ Liêm), $\\dfrac{|x_2| - |x_1|}{x_1^2 + x_2^2}$ (cụm trường công lập)."
+        },
+        {
+          "type": "noted",
+          "variant": "trap",
+          "text": "Bạn Minh tính $|x_1| + |x_2| = |x_1 + x_2|$ cho phương trình có hai nghiệm trái dấu — sai: chỉ đúng khi hai nghiệm cùng dấu.[[br]]Bạn Lan hạ bậc $x_1^2 = 3x_1 - 1$ rồi viết $x_1^3 = 3x_1 - 1$ — sai: $x_1^3 = x_1 \\cdot x_1^2 = 3x_1^2 - x_1 = 8x_1 - 3$."
+        }
+      ],
+      "teacher_note": "Mục 1 dạy trước Bài 1 và Luyện tập 2; mục 2, 3 dạy cạnh Bài 2, Bài 3.[[br]]Giữ bảng công thức ở góc bảng cả buổi."
+    },
+    {
+      "kind": "practice1",
+      "number": 3,
+      "title": "Luyện tập 1",
+      "blocks": [
+        {
+          "type": "noted",
+          "variant": "example",
+          "text": "\\textbf{Ví dụ 1.} Cho $x_1$ là một nghiệm của phương trình $x^2 - 3x + 1 = 0$. Viết $x_1^2$ và $x_1^3$ dưới dạng $mx_1 + n$.[[br]]{\\sffamily\\bfseries\\color{brand}Lời giải}[[br]]$x_1$ là nghiệm nên $x_1^2 - 3x_1 + 1 = 0$, tức là $x_1^2 = [[fill:3x_1 - 1]]$.[[br]]$x_1^3 = x_1 \\cdot x_1^2 = 3x_1^2 - x_1 = 3(3x_1 - 1) - x_1$.[[br]]Vậy $x_1^3 = [[fill:8x_1 - 3]]$."
+        },
+        {
+          "type": "problem",
+          "label": "Bài 1.",
+          "statement": "Cho $x_1$ là một nghiệm của mỗi phương trình sau. Viết $x_1^2$ theo $x_1$:[[br]]a) [NB] $x^2 + 10x + 4 = 0$;[[br]]b) [NB] $4x^2 - 2x - 1 = 0$;[[br]]c) [NB] $x^2 - 3x - 1 = 0$.",
+          "level": 1,
+          "tier": "onclass",
+          "dang_id": "NB1",
+          "solution": "a) $x_1^2 = -10x_1 - 4$.[[br]]b) $x_1^2 = \\dfrac{1}{2}x_1 + \\dfrac{1}{4}$.[[br]]c) $x_1^2 = 3x_1 + 1$."
+        },
+        {
+          "type": "noted",
+          "variant": "example",
+          "text": "\\textbf{Ví dụ 2.} Viết $x_1^4 + x_2^4$ qua tổng và tích hai nghiệm, rồi tính với $x_1$, $x_2$ là hai nghiệm của $x^2 - 6x + 8 = 0$.[[br]]{\\sffamily\\bfseries\\color{brand}Lời giải}[[br]]$x_1^4 + x_2^4 = (x_1^2 + x_2^2)^2 - 2x_1^2x_2^2$.[[br]]Ta có $x_1 + x_2 = 6$, $x_1x_2 = 8$ nên $x_1^2 + x_2^2 = 36 - 16 = [[fill:20]]$.[[br]]Vậy $x_1^4 + x_2^4 = 400 - 2 \\cdot 64 = [[fill:272]]$."
+        },
+        {
+          "type": "problem",
+          "label": "Bài 2.",
+          "statement": "Điền vào chỗ trống:[[br]]a) [NB] $x_1^2 + x_2^2 = (x_1 + x_2)^2 - $ [[blank:2.4cm]];[[br]]b) [NB] $(x_1 - x_2)^2 = (x_1 + x_2)^2 - $ [[blank:2.4cm]];[[br]]c) [NB] $x_1^3 + x_2^3 = (x_1 + x_2)^3 - $ [[blank:3.2cm]].",
+          "level": 1,
+          "tier": "onclass",
+          "dang_id": "NB2",
+          "solution": "a) $2x_1x_2$.[[br]]b) $4x_1x_2$.[[br]]c) $3x_1x_2(x_1 + x_2)$."
+        },
+        {
+          "type": "noted",
+          "variant": "example",
+          "text": "\\textbf{Ví dụ 3.} Biết phương trình $x^2 + 10x + 4 = 0$ có hai nghiệm $x_1$, $x_2$. Chứng tỏ hai nghiệm đều âm.[[br]]{\\sffamily\\bfseries\\color{brand}Lời giải}[[br]]Ta có $\\Delta' = 25 - 4 = [[fill:21]] > 0$ nên phương trình có hai nghiệm phân biệt.[[br]]$x_1x_2 = 4 > 0$ nên hai nghiệm cùng dấu, $x_1 + x_2 = -10 < 0$.[[br]]Vậy hai nghiệm đều [[fill:âm]]."
+        },
+        {
+          "type": "problem",
+          "label": "Bài 3.",
+          "statement": "Không giải phương trình, xét dấu hai nghiệm:[[br]]a) [NB] $x^2 - 8x - 5 = 0$ với $x_1 < x_2$;[[br]]b) [NB] $2x^2 - 4x + 1 = 0$;[[br]]c) [NB] $x^2 + x - 2 + \\sqrt{2} = 0$.",
+          "level": 1,
+          "tier": "onclass",
+          "dang_id": "NB3",
+          "solution": "a) $ac = -5 < 0$: $x_1 < 0 < x_2$.[[br]]b) $\\Delta' = 2 > 0$, tổng $2$, tích $\\dfrac{1}{2}$: hai nghiệm dương.[[br]]c) $ac = -2 + \\sqrt{2} < 0$: hai nghiệm trái dấu."
+        },
+        {
+          "type": "noted",
+          "variant": "example",
+          "text": "\\textbf{Ví dụ 4.} Quy đồng biểu thức $\\dfrac{x_2}{x_1 + 3} + \\dfrac{x_1}{x_2 + 3}$ rồi viết tử và mẫu qua $x_1 + x_2$ và $x_1x_2$.[[br]]{\\sffamily\\bfseries\\color{brand}Lời giải}[[br]]Mẫu chung: $(x_1 + 3)(x_2 + 3) = x_1x_2 + 3(x_1 + x_2) + [[fill:9]]$.[[br]]Tử: $x_2(x_2 + 3) + x_1(x_1 + 3) = x_1^2 + x_2^2 + 3(x_1 + x_2)$.[[br]]Vậy tử bằng $(x_1 + x_2)^2 - [[fill:2x_1x_2]] + 3(x_1 + x_2)$."
+        },
+        {
+          "type": "problem",
+          "label": "Bài 4.",
+          "statement": "Viết mỗi biểu thức thành một phân thức mà tử, mẫu chỉ chứa tổng $x_1 + x_2$ và tích $x_1x_2$:[[br]]a) [NB] $\\dfrac{x_1}{x_2} + \\dfrac{x_2}{x_1}$;[[br]]b) [NB] $\\dfrac{1}{x_1^2} + \\dfrac{1}{x_2^2}$;[[br]]c) [NB] $\\dfrac{1}{x_1 - 1} + \\dfrac{1}{x_2 - 1}$.",
+          "level": 1,
+          "tier": "onclass",
+          "dang_id": "NB4",
+          "solution": "a) $\\dfrac{(x_1 + x_2)^2 - 2x_1x_2}{x_1x_2}$.[[br]]b) $\\dfrac{(x_1 + x_2)^2 - 2x_1x_2}{(x_1x_2)^2}$.[[br]]c) $\\dfrac{x_1 + x_2 - 2}{x_1x_2 - (x_1 + x_2) + 1}$."
+        }
+      ],
+      "teacher_note": "Mỗi ví dụ 2 $-$ 3 phút. Bài 1 là thao tác bắt buộc của câu cuối Câu III — cho HS làm nhanh, chữa miệng.[[br]]Bài 4: chỉ quy đồng, chưa tính số."
+    },
+    {
+      "kind": "practice2",
+      "number": 4,
+      "title": "Luyện tập 2",
+      "blocks": [
+        {
+          "type": "noted",
+          "variant": "example",
+          "text": "\\textbf{Ví dụ 5.} Cho phương trình $x^2 - 3x - 40 = 0$ có hai nghiệm $x_1$, $x_2$. Tính $A = \\dfrac{x_2}{x_1 + 3} + \\dfrac{x_1}{x_2 + 3}$.[[br]]{\\sffamily\\bfseries\\color{brand}Lời giải}[[br]]Ta có $x_1 + x_2 = 3$, $x_1x_2 = -40$[[br]]$x_1^2 + x_2^2 = 9 + 80 = 89$.[[br]]Quy đồng: $A = \\dfrac{x_1^2 + x_2^2 + 3(x_1 + x_2)}{x_1x_2 + 3(x_1 + x_2) + 9} = \\dfrac{89 + 9}{[[fill:-22]]}$.[[br]]Vậy $A = -\\dfrac{[[fill:49]]\\rule[-0.9ex]{0pt}{2.6ex}}{11}$."
+        },
+        {
+          "type": "problem",
+          "label": "Bài 5.",
+          "statement": "Không giải phương trình, tính:[[br]]a) [TH] $\\dfrac{1}{x_1^2} + \\dfrac{1}{x_2^2}$ với $x_1$, $x_2$ là hai nghiệm của $x^2 - 5x + 3 = 0$;[[br]]b) [TH] $\\dfrac{x_1^2}{x_2} + \\dfrac{x_2^2}{x_1}$ với $x_1$, $x_2$ là hai nghiệm của $x^2 - 3x - 5 = 0$.",
+          "level": 2,
+          "tier": "onclass",
+          "dang_id": "TH1",
+          "solution": "a) Ta có $\\Delta = 13 > 0$[[br]]$x_1 + x_2 = 5$, $x_1x_2 = 3$.[[br]]$\\dfrac{1}{x_1^2} + \\dfrac{1}{x_2^2} = \\dfrac{(x_1 + x_2)^2 - 2x_1x_2}{(x_1x_2)^2} = \\dfrac{19}{9}$.[[br]]Vậy giá trị cần tính là $\\dfrac{19}{9}$.[[br]]b) Ta có $ac < 0$[[br]]$x_1 + x_2 = 3$, $x_1x_2 = -5$.[[br]]$\\dfrac{x_1^2}{x_2} + \\dfrac{x_2^2}{x_1} = \\dfrac{x_1^3 + x_2^3}{x_1x_2} = \\dfrac{27 + 45}{-5}$.[[br]]Vậy giá trị cần tính là $-\\dfrac{72}{5}$.",
+          "hints": [
+            "Quy đồng biểu thức trước. Tử và mẫu viết qua tổng, tích hai nghiệm thế nào?",
+            "Phương trình đã có hai nghiệm khác $0$ (hoặc khác số làm mẫu bằng $0$) chưa?"
+          ]
+        },
+        {
+          "type": "noted",
+          "variant": "example",
+          "text": "\\textbf{Ví dụ 6.} Cho phương trình $x^2 - 3x - 1 = 0$ có hai nghiệm phân biệt $x_1$, $x_2$. Tính $H = x_1^3 - 10x_1 + 1992$. (Đề thi thử, Ứng Hoà)[[br]]{\\sffamily\\bfseries\\color{brand}Lời giải}[[br]]$x_1$ là nghiệm nên $x_1^2 = 3x_1 + 1$.[[br]]$x_1^3 = 3x_1^2 + x_1 = 3(3x_1 + 1) + x_1 = [[fill:10x_1 + 3]]$.[[br]]$H = 10x_1 + 3 - 10x_1 + 1992$.[[br]]Vậy $H = [[fill:1995]]$."
+        },
+        {
+          "type": "problem",
+          "label": "Bài 6.",
+          "statement": "a) [TH] Cho phương trình $x^2 - 2x - 1 = 0$ có hai nghiệm $x_1$, $x_2$. Tính $H = x_1^3 - 5x_1 + 2026$.[[br]]b) [TH] Cho phương trình $4x^2 - 2x - 1 = 0$ có hai nghiệm $x_1$, $x_2$. Tính $A = (x_1 - x_2)^2 - x_1\\left(x_1 - \\dfrac{1}{2}\\right)$.",
+          "level": 2,
+          "tier": "onclass",
+          "dang_id": "TH2",
+          "solution": "a) Ta có $x_1^2 = 2x_1 + 1$ nên $x_1^3 = 2x_1^2 + x_1 = 5x_1 + 2$.[[br]]$H = 5x_1 + 2 - 5x_1 + 2026 = 2028$.[[br]]Vậy $H = 2028$.[[br]]b) Ta có $x_1 + x_2 = \\dfrac{1}{2}$, $x_1x_2 = -\\dfrac{1}{4}$ nên $(x_1 - x_2)^2 = \\dfrac{1}{4} + 1 = \\dfrac{5}{4}$.[[br]]$x_1$ là nghiệm nên $4x_1^2 - 2x_1 = 1$, tức là $x_1\\left(x_1 - \\dfrac{1}{2}\\right) = \\dfrac{1}{4}$.[[br]]Vậy $A = \\dfrac{5}{4} - \\dfrac{1}{4} = 1$.",
+          "hints": [
+            "Từ việc $x_1$ là nghiệm, viết $x_1^2$ theo $x_1$.",
+            "Luỹ thừa cao hơn: nhân thêm $x_1$ rồi lại thay $x_1^2$."
+          ]
+        },
+        {
+          "type": "noted",
+          "variant": "example",
+          "text": "\\textbf{Ví dụ 7.} Cho phương trình $x^2 - 8x - 5 = 0$ có hai nghiệm $x_1 < x_2$. Không giải phương trình, tính $T = \\dfrac{|x_2| - |x_1|}{x_1^2 + x_2^2}$. (Đề thi thử, cụm trường công lập)[[br]]{\\sffamily\\bfseries\\color{brand}Lời giải}[[br]]Ta có $x_1 + x_2 = 8$, $x_1x_2 = -5 < 0$ nên $x_1 < 0 < x_2$.[[br]]$|x_2| - |x_1| = x_2 + x_1 = [[fill:8]]$[[br]]$x_1^2 + x_2^2 = 64 + 10 = [[fill:74]]$.[[br]]Vậy $T = \\dfrac{8}{74} = \\dfrac{[[fill:4]]\\rule[-0.9ex]{0pt}{2.6ex}}{37}$."
+        },
+        {
+          "type": "problem",
+          "label": "Bài 7.",
+          "statement": "a) [TH] Phương trình $x^2 + 10x + 4 = 0$ có hai nghiệm $x_1$, $x_2$. Tính $|x_1| + |x_2|$.[[br]]b) [TH] Phương trình $x^2 - 3x - 5 = 0$ có hai nghiệm $x_1$, $x_2$. Tính $|x_1| + |x_2|$.",
+          "level": 2,
+          "tier": "onclass",
+          "dang_id": "TH3",
+          "solution": "a) Ta có $x_1x_2 = 4 > 0$, $x_1 + x_2 = -10 < 0$ nên hai nghiệm đều âm.[[br]]$|x_1| + |x_2| = -(x_1 + x_2) = 10$.[[br]]Vậy $|x_1| + |x_2| = 10$.[[br]]b) Ta có $x_1x_2 = -5 < 0$ nên hai nghiệm trái dấu, $|x_1| + |x_2| = |x_1 - x_2|$.[[br]]$(x_1 - x_2)^2 = (x_1 + x_2)^2 - 4x_1x_2 = 9 + 20 = 29$.[[br]]Vậy $|x_1| + |x_2| = \\sqrt{29}$.",
+          "hints": [
+            "Hai nghiệm cùng dấu hay trái dấu? Dấu đó xác định nhờ tổng và tích.",
+            "Bỏ dấu giá trị tuyệt đối theo dấu từng nghiệm."
+          ]
+        },
+        {
+          "type": "noted",
+          "variant": "example",
+          "text": "\\textbf{Ví dụ 8.} Biết phương trình $x^2 - 3x + 1 = 0$ có hai nghiệm phân biệt $x_1$, $x_2$. Tính $Q = \\dfrac{3x_2 - 1}{x_1} + \\dfrac{3x_1}{x_2} - x_1$. (Đề thi vào 10 Hà Nội 2026)[[br]]{\\sffamily\\bfseries\\color{brand}Lời giải}[[br]]Ta có $x_1 + x_2 = 3$, $x_1x_2 = 1$[[br]]$x_2$ là nghiệm nên $3x_2 - 1 = [[fill:x_2^2]]$.[[br]]Vì $x_1x_2 = 1$ nên $\\dfrac{1}{x_1} = x_2$, $\\dfrac{1}{x_2} = x_1$.[[br]]$Q = x_2^2 \\cdot x_2 + 3x_1 \\cdot x_1 - x_1 = x_2^3 + 3x_1^2 - x_1$; mà $3x_1^2 - x_1 = x_1^3$ (vì $x_1^2 = 3x_1 - 1$).[[br]]$Q = x_1^3 + x_2^3 = (x_1 + x_2)^3 - 3x_1x_2(x_1 + x_2) = 27 - 9$.[[br]]Vậy $Q = [[fill:18]]$."
+        },
+        {
+          "type": "problem",
+          "label": "Bài 8.",
+          "statement": "a) [VD] Biết phương trình $x^2 + 10x + 4 = 0$ có hai nghiệm âm phân biệt $x_1$, $x_2$. Không giải phương trình, tính $A = \\sqrt{-16x_1 + 5} - x_2$. (Đề thi thử, Từ Liêm)[[br]]b) [VD] Phương trình $x^2 - 5x + a = 0$ có một nghiệm là $x = \\sqrt{6 - 2\\sqrt{5}}$. Tính $A = x_1^3 - x_1 + x_2^3 - x_2 - 285$.",
+          "level": 3,
+          "tier": "onclass",
+          "dang_id": "VD1",
+          "solution": "a) Ta có $x_1^2 = -10x_1 - 4$ nên $-16x_1 + 5 = x_1^2 - 6x_1 + 9 = (x_1 - 3)^2$.[[br]]$x_1 < 0$ nên $\\sqrt{(x_1 - 3)^2} = 3 - x_1$.[[br]]$A = 3 - x_1 - x_2 = 3 + 10 = 13$.[[br]]Vậy $A = 13$.[[br]]b) Ta có $\\sqrt{6 - 2\\sqrt{5}} = \\sqrt{5} - 1$ là nghiệm nên $a = 5(\\sqrt{5} - 1) - (\\sqrt{5} - 1)^2 = 7\\sqrt{5} - 11$.[[br]]$x_1 + x_2 = 5$, $x_1x_2 = 7\\sqrt{5} - 11$[[br]]$x_1^3 + x_2^3 = 125 - 15(7\\sqrt{5} - 11) = 290 - 105\\sqrt{5}$.[[br]]$A = 290 - 105\\sqrt{5} - 5 - 285 = -105\\sqrt{5}$.[[br]]Vậy $A = -105\\sqrt{5}$.",
+          "quy_trinh": [
+            "Bước 1 — Cái phải tính là gì? Viết tổng, tích hai nghiệm và kiểm tra dấu của nghiệm nếu cần.",
+            "Bước 2 — Hạ bậc: $x_1$ là nghiệm nên $ax_1^2 = -bx_1 - c$ (tương tự với $x_2$); thay vào các luỹ thừa bậc cao.",
+            "Bước 3 — Biến đổi biểu thức còn lại về tổng và tích (quy đồng, dùng $x_1x_2$ để đổi $\\dfrac{1}{x_1}$ thành $x_2$…).",
+            "Bước 4 — Đã dùng hết giả thiết chưa? Dấu của nghiệm dùng để bỏ trị tuyệt đối, căn bậc hai.",
+            "Bước 5 — Nhìn lại: viết câu \"Vậy …\"."
+          ]
+        },
+        {
+          "type": "noted",
+          "variant": "example",
+          "text": "\\textbf{Ví dụ 9.} Biết phương trình $x^2 + 8x - 6 = 0$ có hai nghiệm $x_1$, $x_2$. Chứng minh $\\dfrac{70 - x_1^2}{x_2} = x_1 + x_2$. (Theo đề thi vào 10 Hà Nội 2025)[[br]]{\\sffamily\\bfseries\\color{brand}Lời giải}[[br]]Ta có $x_1 + x_2 = -8$, $x_1x_2 = -6$.[[br]]Đẳng thức tương đương với $70 - x_1^2 = x_1x_2 + x_2^2$, tức là $x_1^2 + x_1x_2 + x_2^2 = 70$.[[br]]$x_1^2 + x_1x_2 + x_2^2 = (x_1 + x_2)^2 - x_1x_2 = 64 + [[fill:6]]$.[[br]]Vậy vế trái bằng $[[fill:70]]$, đẳng thức được chứng minh."
+        },
+        {
+          "type": "problem",
+          "label": "Bài 9.",
+          "statement": "[VD] Gọi $x_1$, $x_2$ là hai nghiệm của $x^2 + 4x - 2 = 0$. Không giải phương trình, hãy kiểm tra đẳng thức $\\dfrac{18 - x_1^2}{x_2} = x_1 + x_2$ là đúng.",
+          "level": 3,
+          "tier": "onclass",
+          "dang_id": "VD1",
+          "solution": "Ta có $x_1 + x_2 = -4$, $x_1x_2 = -2$, và $x_2 \\ne 0$.[[br]]Đẳng thức tương đương với $18 - x_1^2 = x_1x_2 + x_2^2$, tức là $x_1^2 + x_1x_2 + x_2^2 = 18$.[[br]]$x_1^2 + x_1x_2 + x_2^2 = (x_1 + x_2)^2 - x_1x_2 = 16 + 2 = 18$.[[br]]Vậy đẳng thức được chứng minh.",
+          "quy_trinh": [
+            "Bước 1 — Cái phải tính là gì? Viết tổng, tích hai nghiệm và kiểm tra dấu của nghiệm nếu cần.",
+            "Bước 2 — Hạ bậc: $x_1$ là nghiệm nên $ax_1^2 = -bx_1 - c$ (tương tự với $x_2$); thay vào các luỹ thừa bậc cao.",
+            "Bước 3 — Biến đổi biểu thức còn lại về tổng và tích (quy đồng, dùng $x_1x_2$ để đổi $\\dfrac{1}{x_1}$ thành $x_2$…).",
+            "Bước 4 — Đã dùng hết giả thiết chưa? Dấu của nghiệm dùng để bỏ trị tuyệt đối, căn bậc hai.",
+            "Bước 5 — Nhìn lại: viết câu \"Vậy …\"."
+          ]
+        },
+        {
+          "type": "noted",
+          "variant": "example",
+          "text": "\\textbf{Ví dụ 10.} Cho phương trình $x^2 - 6x + 8 = 0$ có hai nghiệm $x_1$, $x_2$. Tính $\\dfrac{1}{x_1^2} + \\dfrac{1}{x_2^2}$ và $(x_1 + 1)(x_2 + 1) - (x_1 - x_2)^2$.[[br]]{\\sffamily\\bfseries\\color{brand}Lời giải}[[br]]Ta có $x_1 + x_2 = 6$, $x_1x_2 = 8$.[[br]]$\\dfrac{1}{x_1^2} + \\dfrac{1}{x_2^2} = \\dfrac{36 - 16}{64} = \\dfrac{[[fill:5]]}{16}$.[[br]]$(x_1 + 1)(x_2 + 1) - (x_1 - x_2)^2 = 8 + 6 + 1 - (36 - 32)$.[[br]]Vậy biểu thức thứ hai bằng $[[fill:11]]$."
+        },
+        {
+          "type": "problem",
+          "label": "Bài 10.",
+          "statement": "a) [VD] Cho phương trình $x^2 - 5x + 3 = 0$ có hai nghiệm $x_1$, $x_2$. Không giải phương trình, tính $A = \\dfrac{1}{x_1^4} + \\dfrac{1}{x_2^4}$.[[br]]b) [VD] Cho phương trình $x^2 - 5x - 2 = 0$ có hai nghiệm $x_1$, $x_2$. Tính $F = (x_1 + 2)(x_2 + 2) - (x_1 - x_2)^2$.",
+          "level": 3,
+          "tier": "onclass",
+          "dang_id": "VD2",
+          "solution": "a) Ta có $x_1 + x_2 = 5$, $x_1x_2 = 3$[[br]]$x_1^2 + x_2^2 = 19$, $x_1^4 + x_2^4 = 361 - 18 = 343$.[[br]]$A = \\dfrac{x_1^4 + x_2^4}{(x_1x_2)^4} = \\dfrac{343}{81}$.[[br]]Vậy $A = \\dfrac{343}{81}$.[[br]]b) Ta có $x_1 + x_2 = 5$, $x_1x_2 = -2$.[[br]]$F = x_1x_2 + 2(x_1 + x_2) + 4 - \\left[(x_1 + x_2)^2 - 4x_1x_2\\right] = -2 + 10 + 4 - 33$.[[br]]Vậy $F = -21$.",
+          "quy_trinh": [
+            "Bước 1 — Cái phải tính là gì? Kiểm tra phương trình có hai nghiệm ($ac < 0$ hoặc $\\Delta \\ge 0$).",
+            "Bước 2 — Viết ngay tổng $x_1 + x_2 = -\\dfrac{b}{a}$ và tích $x_1x_2 = \\dfrac{c}{a}$.",
+            "Bước 3 — Biến đổi biểu thức về tổng và tích bằng các công thức: $x_1^2 + x_2^2$, $x_1^3 + x_2^3$, $(x_1 - x_2)^2$, $\\dfrac{1}{x_1} + \\dfrac{1}{x_2}$.",
+            "Bước 4 — Đã dùng hết giả thiết chưa? Thay tổng, tích vào rồi tính.",
+            "Bước 5 — Nhìn lại: viết câu \"Vậy …\"."
+          ]
+        }
+      ],
+      "teacher_note": "Ví dụ 5 và Bài 6: viết hạ bậc ra dòng riêng, rồi mới thay vào.[[br]]Ví dụ 7 là ví dụ trục (đề Sở 2026): trình bày trọn như đi thi, cho HS chép.[[br]]Bài 8a) (Từ Liêm): gợi ý HS nhìn $-16x_1 + 5$ và thử thay $x_1^2 = -10x_1 - 4$ để thành bình phương."
+    },
+    {
+      "kind": "reflection",
+      "number": 5,
+      "title": "Tổng kết \\& bài tập về nhà",
+      "blocks": [
+        {
+          "type": "mindmap",
+          "caption": "Sơ đồ tư duy: Khuôn Câu III.3",
+          "root": "CÂU III.3",
+          "branches": [
+            {
+              "label": "KIỂM TRA",
+              "children": [
+                {
+                  "label": "Có hai nghiệm"
+                },
+                {
+                  "label": "Dấu của nghiệm"
+                }
+              ]
+            },
+            {
+              "label": "HẠ BẬC",
+              "children": [
+                {
+                  "label": "$ax_1^2 = -bx_1 - c$"
+                },
+                {
+                  "label": "Nhân thêm $x_1$"
+                }
+              ]
+            },
+            {
+              "label": "ĐỐI XỨNG",
+              "children": [
+                {
+                  "label": "Quy đồng"
+                },
+                {
+                  "label": "Đưa về tổng, tích"
+                }
+              ]
+            },
+            {
+              "label": "TRỊ TUYỆT ĐỐI",
+              "children": [
+                {
+                  "label": "Bỏ theo dấu nghiệm"
+                }
+              ]
+            }
+          ]
+        },
+        {
+          "type": "problem",
+          "label": "BTVN~1.",
+          "statement": "Viết $x_1^2$ theo $x_1$, với $x_1$ là một nghiệm của:[[br]]a) [NB] $x^2 - 5x + 3 = 0$;[[br]]b) [NB] $x^2 + 8x - 6 = 0$;[[br]]c) [NB] $x^2 + x - 6 = 0$.",
+          "level": 1,
+          "tier": "btvn",
+          "dang_id": "NB1",
+          "solution": "a) $x_1^2 = 5x_1 - 3$.[[br]]b) $x_1^2 = -8x_1 + 6$.[[br]]c) $x_1^2 = 6 - x_1$."
+        },
+        {
+          "type": "problem",
+          "label": "BTVN~2.",
+          "statement": "Điền vào chỗ trống:[[br]]a) [NB] $\\dfrac{1}{x_1} + \\dfrac{1}{x_2} = $ [[blank:2.4cm]];[[br]]b) [NB] $x_1^2x_2 + x_1x_2^2 = $ [[blank:2.4cm]];[[br]]c) [NB] $(x_1 + 1)(x_2 + 1) = $ [[blank:3.2cm]].",
+          "level": 1,
+          "tier": "btvn",
+          "dang_id": "NB2",
+          "solution": "a) $\\dfrac{x_1 + x_2}{x_1x_2}$.[[br]]b) $x_1x_2(x_1 + x_2)$.[[br]]c) $x_1x_2 + (x_1 + x_2) + 1$."
+        },
+        {
+          "type": "problem",
+          "label": "BTVN~3.",
+          "statement": "Không giải phương trình, xét dấu hai nghiệm:[[br]]a) [NB] $x^2 - 3x + 1 = 0$;[[br]]b) [NB] $x^2 + 8x - 6 = 0$;[[br]]c) [NB] $x^2 - 5x + 3 = 0$.",
+          "level": 1,
+          "tier": "btvn",
+          "dang_id": "NB3",
+          "solution": "a) $\\Delta = 5 > 0$, tổng $3$, tích $1$: hai nghiệm dương.[[br]]b) $ac < 0$: trái dấu.[[br]]c) $\\Delta = 13 > 0$, tổng $5$, tích $3$: hai nghiệm dương."
+        },
+        {
+          "type": "problem",
+          "label": "BTVN~4.",
+          "statement": "Đưa mỗi biểu thức về một phân thức có tử, mẫu chỉ chứa tổng và tích hai nghiệm:[[br]]a) [NB] $\\dfrac{x_1}{x_2 + 1} + \\dfrac{x_2}{x_1 + 1}$;[[br]]b) [NB] $\\dfrac{1}{x_1 + 2} + \\dfrac{1}{x_2 + 2}$;[[br]]c) [NB] $\\dfrac{x_1^2}{x_2} + \\dfrac{x_2^2}{x_1}$.",
+          "level": 1,
+          "tier": "btvn",
+          "dang_id": "NB4",
+          "solution": "a) $\\dfrac{(x_1 + x_2)^2 - 2x_1x_2 + (x_1 + x_2)}{x_1x_2 + (x_1 + x_2) + 1}$.[[br]]b) $\\dfrac{x_1 + x_2 + 4}{x_1x_2 + 2(x_1 + x_2) + 4}$.[[br]]c) $\\dfrac{(x_1 + x_2)^3 - 3x_1x_2(x_1 + x_2)}{x_1x_2}$."
+        },
+        {
+          "type": "problem",
+          "label": "BTVN~5.",
+          "statement": "Không giải phương trình, tính:[[br]]a) [TH] $\\dfrac{x_1}{x_2} + \\dfrac{x_2}{x_1}$ với $2x^2 - 4x + 1 = 0$;[[br]]b) [TH] $\\dfrac{1}{x_1 - 1} + \\dfrac{1}{x_2 - 1}$ với $x^2 + x - 6 = 0$.",
+          "level": 2,
+          "tier": "btvn",
+          "dang_id": "TH1",
+          "solution": "a) Ta có $x_1 + x_2 = 2$, $x_1x_2 = \\dfrac{1}{2}$.[[br]]$\\dfrac{x_1}{x_2} + \\dfrac{x_2}{x_1} = \\dfrac{4 - 1}{\\frac{1}{2}} = 6$.[[br]]Vậy giá trị bằng $6$.[[br]]b) Ta có $x_1 + x_2 = -1$, $x_1x_2 = -6$.[[br]]$\\dfrac{x_1 + x_2 - 2}{x_1x_2 - (x_1 + x_2) + 1} = \\dfrac{-3}{-4} = \\dfrac{3}{4}$.[[br]]Vậy giá trị bằng $\\dfrac{3}{4}$.",
+          "hints": [
+            "Quy đồng biểu thức trước. Tử và mẫu viết qua tổng, tích hai nghiệm thế nào?",
+            "Phương trình đã có hai nghiệm khác $0$ (hoặc khác số làm mẫu bằng $0$) chưa?"
+          ]
+        },
+        {
+          "type": "problem",
+          "label": "BTVN~6.",
+          "statement": "[TH] Với $x_1$ là một nghiệm của $x^2 - 3x + 1 = 0$, hãy chứng tỏ biểu thức $x_1^3 - 8x_1 + 10$ là một hằng số và tìm hằng số đó.",
+          "level": 2,
+          "tier": "btvn",
+          "dang_id": "TH2",
+          "solution": "Ta có $x_1^2 = 3x_1 - 1$ nên $x_1^3 = 3x_1^2 - x_1 = 8x_1 - 3$.[[br]]$x_1^3 - 8x_1 + 10 = -3 + 10 = 7$.[[br]]Vậy giá trị cần tính là $7$.",
+          "hints": [
+            "Từ việc $x_1$ là nghiệm, viết $x_1^2$ theo $x_1$.",
+            "Luỹ thừa cao hơn: nhân thêm $x_1$ rồi lại thay $x_1^2$."
+          ]
+        },
+        {
+          "type": "problem",
+          "label": "BTVN~7.",
+          "statement": "a) [TH] Phương trình $x^2 + 8x - 6 = 0$ có hai nghiệm $x_1 < x_2$. Tính $|x_1| - |x_2|$.[[br]]b) [TH] Phương trình $2x^2 - 4x + 1 = 0$ có hai nghiệm $x_1$, $x_2$. Tính $\\sqrt{x_1} \\cdot \\sqrt{x_2}$.",
+          "level": 2,
+          "tier": "btvn",
+          "dang_id": "TH3",
+          "solution": "a) Ta có $x_1x_2 = -6 < 0$ nên $x_1 < 0 < x_2$.[[br]]$|x_1| - |x_2| = -x_1 - x_2 = 8$.[[br]]Vậy $|x_1| - |x_2| = 8$.[[br]]b) Ta có hai nghiệm dương (tổng $2$, tích $\\dfrac{1}{2}$).[[br]]$\\sqrt{x_1} \\cdot \\sqrt{x_2} = \\sqrt{x_1x_2} = \\sqrt{\\dfrac{1}{2}} = \\dfrac{\\sqrt{2}}{2}$.[[br]]Vậy giá trị bằng $\\dfrac{\\sqrt{2}}{2}$.",
+          "hints": [
+            "Hai nghiệm cùng dấu hay trái dấu? Dấu đó xác định nhờ tổng và tích.",
+            "Bỏ dấu giá trị tuyệt đối theo dấu từng nghiệm."
+          ]
+        },
+        {
+          "type": "problem",
+          "label": "BTVN~8.",
+          "statement": "[VD] Biết phương trình $x^2 + 6x + 1 = 0$ có hai nghiệm âm phân biệt $x_1$, $x_2$. Không giải phương trình, tính $A = \\sqrt{-8x_1} - x_2$.",
+          "level": 3,
+          "tier": "btvn",
+          "dang_id": "VD1",
+          "solution": "Ta có $x_1^2 = -6x_1 - 1$ nên $-8x_1 = x_1^2 - 2x_1 + 1 = (x_1 - 1)^2$.[[br]]$x_1 < 0$ nên $\\sqrt{(x_1 - 1)^2} = 1 - x_1$.[[br]]$A = 1 - x_1 - x_2 = 1 + 6 = 7$.[[br]]Vậy $A = 7$.",
+          "quy_trinh": [
+            "Bước 1 — Cái phải tính là gì? Viết tổng, tích hai nghiệm và kiểm tra dấu của nghiệm nếu cần.",
+            "Bước 2 — Hạ bậc: $x_1$ là nghiệm nên $ax_1^2 = -bx_1 - c$ (tương tự với $x_2$); thay vào các luỹ thừa bậc cao.",
+            "Bước 3 — Biến đổi biểu thức còn lại về tổng và tích (quy đồng, dùng $x_1x_2$ để đổi $\\dfrac{1}{x_1}$ thành $x_2$…).",
+            "Bước 4 — Đã dùng hết giả thiết chưa? Dấu của nghiệm dùng để bỏ trị tuyệt đối, căn bậc hai.",
+            "Bước 5 — Nhìn lại: viết câu \"Vậy …\"."
+          ]
+        },
+        {
+          "type": "problem",
+          "label": "BTVN~9.",
+          "statement": "Không giải phương trình, tính:[[br]]a) [VD] $x_1^4 + x_2^4$ với $x_1$, $x_2$ là hai nghiệm của $x^2 - 4x - 7 = 0$;[[br]]b) [VD] $|x_1 - x_2|$ với $x_1$, $x_2$ là hai nghiệm của $2x^2 - 4x - 3 = 0$;[[br]]c) [VD] $x_1^2x_2 + x_1x_2^2 - (x_1 + x_2)$ với $x_1$, $x_2$ là hai nghiệm của $x^2 - 3x - 5 = 0$.",
+          "level": 3,
+          "tier": "btvn",
+          "dang_id": "VD2",
+          "solution": "a) Ta có $x_1 + x_2 = 4$, $x_1x_2 = -7$[[br]]$x_1^2 + x_2^2 = 30$.[[br]]$x_1^4 + x_2^4 = 900 - 2 \\cdot 49 = 802$.[[br]]Vậy giá trị bằng $802$.[[br]]b) Ta có $(x_1 - x_2)^2 = 4 + 6 = 10$.[[br]]Vậy $|x_1 - x_2| = \\sqrt{10}$.[[br]]c) Ta có $x_1x_2(x_1 + x_2) - (x_1 + x_2) = -15 - 3$.[[br]]Vậy giá trị bằng $-18$.",
+          "quy_trinh": [
+            "Bước 1 — Cái phải tính là gì? Kiểm tra phương trình có hai nghiệm ($ac < 0$ hoặc $\\Delta \\ge 0$).",
+            "Bước 2 — Viết ngay tổng $x_1 + x_2 = -\\dfrac{b}{a}$ và tích $x_1x_2 = \\dfrac{c}{a}$.",
+            "Bước 3 — Biến đổi biểu thức về tổng và tích bằng các công thức: $x_1^2 + x_2^2$, $x_1^3 + x_2^3$, $(x_1 - x_2)^2$, $\\dfrac{1}{x_1} + \\dfrac{1}{x_2}$.",
+            "Bước 4 — Đã dùng hết giả thiết chưa? Thay tổng, tích vào rồi tính.",
+            "Bước 5 — Nhìn lại: viết câu \"Vậy …\"."
+          ]
+        }
+      ],
+      "teacher_note": "Cho HS điền sơ đồ tư duy 3 phút rồi giao bài tập về nhà.[[br]]BTVN 8 làm giống Bài 8a): tìm bình phương trong căn nhờ hạ bậc."
+    }
+  ]
+}

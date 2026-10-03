@@ -21,12 +21,14 @@ from .vi_du_gate import (check_vi_du, check_vi_du_trung_bai, check_vi_du_di_cung
                          check_fill_math_long_nhau, check_so_tren_hinh_vi_du,
                          check_vi_du_ket_luan, check_vi_du_lo_dap_an)
 from .nhan_hinh_gate import check_nhan_hinh
+from .loi_giai_thi_gate import check_loi_giai_thi
 from .spec_gate import check_spec_conformance
 from .thuyetminh_gate import check_meta_wrap, check_thuyetminh
 from .de_gate import check_de
 from . import sympy_solver
 
 __all__ = [
+    "check_loi_giai_thi",
     "sanitize", "find_unsafe", "UnsafeLatexError",
     "validate_lesson_structure", "SchemaReport", "check_khoa_la",
     "check_trinh_bay", "check_lenh_dinh_chu",

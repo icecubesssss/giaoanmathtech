@@ -1,0 +1,464 @@
+{
+  "slug": "phieu-3-dinh-li-viete",
+  "title": "Định lí Viète và ứng dụng",
+  "eyebrow": "ĐẠI SỐ 9 — PHIẾU 3 • CHƯƠNG VI — BÀI 20 (PHẦN 1)",
+  "grade_label": "Lớp 9 • Chương VI",
+  "class_tier": "B",
+  "chuong": "chuong-06-ham-so-va-phuong-trinh-bac-hai",
+  "so_ca": 1,
+  "stages": [
+    {
+      "kind": "review",
+      "number": 1,
+      "title": "Khám phá",
+      "blocks": [
+        {
+          "type": "opener",
+          "text": "Minh đố Lan: \"Tớ nghĩ hai số có tổng bằng $7$ và tích bằng $12$. Đó là hai số nào?\"[[br]]a) Lan đoán ra ngay. Em hãy đoán hai số đó.[[br]]b) Khai triển $(x - 3)(x - 4) = 0$ thành dạng $x^2 + bx + c = 0$. Hệ số $b$, $c$ liên quan thế nào đến tổng và tích của hai nghiệm?[[br]]c) Nếu Minh nói tổng là $20$, tích là $96$ thì đoán có còn dễ không?"
+        }
+      ],
+      "teacher_note": "Câu a) $3$ và $4$; câu b) $x^2 - 7x + 12 = 0$: $-b$ bằng tổng, $c$ bằng tích hai nghiệm.[[br]]Câu c) khó đoán ($12$ và $8$) — dẫn vào cách tìm hai số bằng phương trình bậc hai ở mục 3."
+    },
+    {
+      "kind": "concept",
+      "number": 2,
+      "title": "Kiến thức cần nhớ",
+      "blocks": [
+        {
+          "type": "para",
+          "variant": "heading",
+          "text": "1. Định lí Viète"
+        },
+        {
+          "type": "deflist",
+          "items": [
+            {
+              "term": "Định lí:",
+              "desc": "nếu $x_1$, $x_2$ là hai nghiệm của phương trình $ax^2 + bx + c = 0$ $(a \\ne 0)$ thì tổng hai nghiệm $x_1 + x_2 = -\\dfrac{b}{a}$ và tích hai nghiệm $x_1x_2 = \\dfrac{c}{a}$."
+            },
+            {
+              "term": "Trước khi dùng:",
+              "desc": "phải chỉ ra phương trình có nghiệm ($\\Delta \\ge 0$, hoặc $a$ và $c$ trái dấu)."
+            }
+          ]
+        },
+        {
+          "type": "para",
+          "variant": "heading",
+          "text": "2. Nhẩm nghiệm"
+        },
+        {
+          "type": "deflist",
+          "items": [
+            {
+              "term": "$a + b + c = 0$:",
+              "desc": "phương trình có nghiệm $x_1 = 1$, $x_2 = \\dfrac{c}{a}$."
+            },
+            {
+              "term": "$a - b + c = 0$:",
+              "desc": "phương trình có nghiệm $x_1 = -1$, $x_2 = -\\dfrac{c}{a}$."
+            }
+          ]
+        },
+        {
+          "type": "para",
+          "variant": "heading",
+          "text": "3. Tìm hai số biết tổng và tích"
+        },
+        {
+          "type": "deflist",
+          "items": [
+            {
+              "term": "Cách làm:",
+              "desc": "hai số có tổng bằng $u$ và tích bằng $v$ là hai nghiệm của phương trình $x^2 - ux + v = 0$ (cần $u^2 - 4v \\ge 0$)."
+            }
+          ]
+        },
+        {
+          "type": "para",
+          "variant": "heading",
+          "text": "4. Dấu của hai nghiệm"
+        },
+        {
+          "type": "deflist",
+          "items": [
+            {
+              "term": "Trái dấu:",
+              "desc": "$ac < 0$ thì phương trình có hai nghiệm trái dấu."
+            },
+            {
+              "term": "Cùng dấu:",
+              "desc": "phương trình có hai nghiệm, tích dương: tổng dương thì hai nghiệm dương, tổng âm thì hai nghiệm âm."
+            }
+          ]
+        },
+        {
+          "type": "noted",
+          "variant": "target",
+          "text": "\\textbf{Đề vào 10 hỏi gì ở phần này.} Câu III.3 ($0{,}5$ điểm): \"Không giải phương trình, tính tổng nghịch đảo hai nghiệm\" (Cầu Giấy), \"tổng các lập phương hai nghiệm\" (Đống Đa), \"biết một nghiệm là $\\dfrac{3 - \\sqrt{5}}{2}$, tìm tổng bình phương hai nghiệm\" (đề minh hoạ của Sở).[[br]]Đề luôn hỏi bằng lời: \\emph{tổng hai nghiệm}, \\emph{tích hai nghiệm}."
+        },
+        {
+          "type": "noted",
+          "variant": "trap",
+          "text": "Bạn Minh viết tổng hai nghiệm của $2x^2 - 7x + 6 = 0$ là $-\\dfrac{7}{2}$ — sai dấu: tổng là $-\\dfrac{b}{a} = \\dfrac{7}{2}$.[[br]]Bạn Lan dùng định lí Viète cho $x^2 - \\sqrt{5}x + 2 = 0$ mà không kiểm tra: $\\Delta = 5 - 8 < 0$, phương trình vô nghiệm nên không có tổng, tích nào cả."
+        }
+      ],
+      "teacher_note": "Mục 1, 2 dạy trước Luyện tập 1; mục 3, 4 dạy cạnh Bài 3, Bài 6.[[br]]Thầy chốt: KHÔNG dùng kí hiệu $S$, $P$ — viết đủ $x_1 + x_2$, $x_1x_2$ và gọi bằng lời."
+    },
+    {
+      "kind": "practice1",
+      "number": 3,
+      "title": "Luyện tập 1",
+      "blocks": [
+        {
+          "type": "noted",
+          "variant": "example",
+          "text": "\\textbf{Ví dụ 1.} Không giải phương trình $2x^2 - 7x + 6 = 0$, chứng tỏ phương trình có hai nghiệm phân biệt và tính tổng, tích hai nghiệm.[[br]]{\\sffamily\\bfseries\\color{brand}Lời giải}[[br]]Ta có $\\Delta = (-7)^2 - 4 \\cdot 2 \\cdot 6 = [[fill:1]] > 0$ nên phương trình có hai nghiệm phân biệt $x_1$, $x_2$.[[br]]Theo định lí Viète, tổng hai nghiệm $x_1 + x_2 = \\dfrac{7}{2}$.[[br]]Vậy tổng hai nghiệm là $\\dfrac{7}{2}$, tích hai nghiệm là $x_1x_2 = [[fill:3]]$."
+        },
+        {
+          "type": "problem",
+          "label": "Bài 1.",
+          "statement": "Không giải phương trình, viết tổng và tích hai nghiệm (nếu có) của mỗi phương trình:[[br]]a) [NB] $x^2 - 3x - 40 = 0$;[[br]]b) [NB] $4x^2 - 5x - 3 = 0$;[[br]]c) [NB] $2x^2 - 4x + 1 = 0$.",
+          "level": 1,
+          "tier": "onclass",
+          "dang_id": "NB1",
+          "solution": "a) $ac < 0$: tổng $3$, tích $-40$.[[br]]b) $ac < 0$: tổng $\\dfrac{5}{4}$, tích $-\\dfrac{3}{4}$.[[br]]c) $\\Delta' = 4 - 2 = 2 > 0$: tổng $2$, tích $\\dfrac{1}{2}$."
+        },
+        {
+          "type": "noted",
+          "variant": "example",
+          "text": "\\textbf{Ví dụ 2.} Không giải, chứng tỏ $x = 1$ là một nghiệm của $x^2 - 9x + 8 = 0$ và $x = -1$ là một nghiệm của $43x^2 + 75x + 32 = 0$; tìm nghiệm còn lại của mỗi phương trình.[[br]]{\\sffamily\\bfseries\\color{brand}Lời giải}[[br]]a) Ta có $a + b + c = 1 - 9 + 8 = 0$ nên $x_1 = 1$, $x_2 = \\dfrac{c}{a} = [[fill:8]]$.[[br]]b) Ta có $a - b + c = 43 - 75 + 32 = 0$ nên $x_1 = -1$.[[br]]Vậy phương trình b) có nghiệm còn lại là $x_2 = -\\dfrac{[[fill:32]]\\rule[-0.9ex]{0pt}{2.6ex}}{[[fill:43]]\\rule{0pt}{2.2ex}}$."
+        },
+        {
+          "type": "problem",
+          "label": "Bài 2.",
+          "statement": "Nhẩm nghiệm các phương trình sau:[[br]]a) [NB] $3x^2 - x - 2 = 0$;[[br]]b) [NB] $-4x^2 + x + 5 = 0$;[[br]]c) [NB] $24x^2 - 19x - 5 = 0$.",
+          "level": 1,
+          "tier": "onclass",
+          "dang_id": "NB2",
+          "solution": "a) $a + b + c = 0$: $x = 1$, $x = -\\dfrac{2}{3}$.[[br]]b) $a - b + c = 0$: $x = -1$, $x = \\dfrac{5}{4}$.[[br]]c) $a + b + c = 0$: $x = 1$, $x = -\\dfrac{5}{24}$."
+        },
+        {
+          "type": "noted",
+          "variant": "example",
+          "text": "\\textbf{Ví dụ 3.} Không giải, cho biết phương trình $x^2 - 3x - 5 = 0$ có hai nghiệm cùng dấu hay trái dấu.[[br]]{\\sffamily\\bfseries\\color{brand}Lời giải}[[br]]Ta có $a = 1$, $c = -5$ nên $ac = [[fill:-5]] < 0$.[[br]]Vậy phương trình có hai nghiệm [[fill:trái dấu]]."
+        },
+        {
+          "type": "problem",
+          "label": "Bài 3.",
+          "statement": "Điền vào chỗ trống:[[br]]a) [NB] $x^2 - 8x - 5 = 0$ có $ac = $ [[blank:1.1cm]] nên có hai nghiệm [[blank:2.4cm]];[[br]]b) [NB] $x^2 + 10x + 4 = 0$ có $\\Delta' = 21 > 0$, tổng hai nghiệm $= $ [[blank:1.1cm]], tích $= $ [[blank:1.1cm]], nên hai nghiệm cùng [[blank:2.4cm]];[[br]]c) [NB] $x^2 - 3x + 1 = 0$ có $\\Delta = 5 > 0$, tổng và tích đều dương nên hai nghiệm cùng [[blank:2.4cm]].",
+          "level": 1,
+          "tier": "onclass",
+          "dang_id": "NB3",
+          "solution": "a) $-5$; trái dấu.[[br]]b) $-10$; $4$; âm.[[br]]c) dương."
+        },
+        {
+          "type": "noted",
+          "variant": "example",
+          "text": "\\textbf{Ví dụ 4.} Hai số $\\sqrt{5} + 1$ và $\\sqrt{5} - 1$ là hai nghiệm của phương trình bậc hai nào (hệ số của $x^2$ bằng $1$)? (Đề thi thử, Đống Đa)[[br]]{\\sffamily\\bfseries\\color{brand}Lời giải}[[br]]Tổng hai số: $(\\sqrt{5} + 1) + (\\sqrt{5} - 1) = 2\\sqrt{5}$.[[br]]Tích hai số: $(\\sqrt{5} + 1)(\\sqrt{5} - 1) = 5 - 1 = [[fill:4]]$.[[br]]Vậy phương trình cần lập là $x^2 - [[fill:2\\sqrt{5}]]x + 4 = 0$."
+        },
+        {
+          "type": "problem",
+          "label": "Bài 4.",
+          "statement": "Lập phương trình bậc hai có hai nghiệm là:[[br]]a) [NB] $12$ và $8$;[[br]]b) [NB] $2 + \\sqrt{3}$ và $2 - \\sqrt{3}$;[[br]]c) [NB] $-3$ và $5$.",
+          "level": 1,
+          "tier": "onclass",
+          "dang_id": "NB4",
+          "solution": "a) Tổng $20$, tích $96$: $x^2 - 20x + 96 = 0$.[[br]]b) Tổng $4$, tích $1$: $x^2 - 4x + 1 = 0$.[[br]]c) Tổng $2$, tích $-15$: $x^2 - 2x - 15 = 0$."
+        }
+      ],
+      "teacher_note": "Mỗi ví dụ 2 $-$ 3 phút. Bài 1 bắt HS viết dòng kiểm tra có nghiệm ($ac < 0$ hoặc $\\Delta$) trước.[[br]]Bài 3 là bước đầu của câu có trị tuyệt đối ở phiếu sau — giữ kết quả về dấu."
+    },
+    {
+      "kind": "practice2",
+      "number": 4,
+      "title": "Luyện tập 2",
+      "blocks": [
+        {
+          "type": "noted",
+          "variant": "example",
+          "text": "\\textbf{Ví dụ 5.} Cho phương trình $x^2 - x - 10 = 0$. Chứng tỏ phương trình có hai nghiệm phân biệt $x_1$, $x_2$ và tính $x_1^2 + x_2^2$, $\\dfrac{1}{x_1} + \\dfrac{1}{x_2}$.[[br]]{\\sffamily\\bfseries\\color{brand}Lời giải}[[br]]Ta có $ac = -10 < 0$ nên phương trình có hai nghiệm phân biệt[[br]]$x_1 + x_2 = 1$, $x_1x_2 = -10$.[[br]]$x_1^2 + x_2^2 = (x_1 + x_2)^2 - 2x_1x_2 = 1 + 20 = [[fill:21]]$.[[br]]Vậy $\\dfrac{1}{x_1} + \\dfrac{1}{x_2} = \\dfrac{x_1 + x_2}{x_1x_2} = -\\dfrac{1}{[[fill:10]]\\rule{0pt}{2.2ex}}$."
+        },
+        {
+          "type": "problem",
+          "label": "Bài 5.",
+          "statement": "a) [TH] Biết phương trình $2x^2 - 4x + 1 = 0$ có hai nghiệm $x_1$, $x_2$. Chứng minh $x_1$, $x_2$ khác $0$ và tính tổng nghịch đảo hai nghiệm. (Đề thi thử vào 10, Cầu Giấy)[[br]]b) [TH] Cho phương trình $x^2 - 6x + 8 = 0$. Không giải phương trình, tính $M = x_1^2 + x_2^2 - 3x_1x_2$.",
+          "level": 2,
+          "tier": "onclass",
+          "dang_id": "TH1",
+          "solution": "a) Ta có $x_1 + x_2 = 2$, $x_1x_2 = \\dfrac{1}{2} \\ne 0$ nên hai nghiệm đều khác $0$.[[br]]$\\dfrac{1}{x_1} + \\dfrac{1}{x_2} = \\dfrac{x_1 + x_2}{x_1x_2} = \\dfrac{2}{\\frac{1}{2}} = 4$.[[br]]Vậy tổng nghịch đảo hai nghiệm bằng $4$.[[br]]b) Ta có $\\Delta' = 9 - 8 = 1 > 0$[[br]]$x_1 + x_2 = 6$, $x_1x_2 = 8$.[[br]]$M = (x_1 + x_2)^2 - 5x_1x_2 = 36 - 40 = -4$.[[br]]Vậy $M = -4$.",
+          "hints": [
+            "Phương trình có hai nghiệm chưa? Viết tổng và tích trước.",
+            "Biểu thức cần tính viết được qua $x_1 + x_2$ và $x_1x_2$ bằng công thức nào?"
+          ]
+        },
+        {
+          "type": "noted",
+          "variant": "example",
+          "text": "\\textbf{Ví dụ 6.} Tìm hai số $u$ và $v$ biết $u + v = 19$ và $uv = 60$.[[br]]{\\sffamily\\bfseries\\color{brand}Lời giải}[[br]]Ta có $19^2 - 4 \\cdot 60 = 121 > 0$ nên $u$, $v$ là hai nghiệm của phương trình $x^2 - 19x + [[fill:60]] = 0$.[[br]]$\\Delta = 121$, $x_1 = \\dfrac{19 + 11}{2}$, $x_2 = \\dfrac{19 - 11}{2}$.[[br]]Vậy hai số cần tìm là $[[fill:15]]$ và $[[fill:4]]$."
+        },
+        {
+          "type": "problem",
+          "label": "Bài 6.",
+          "statement": "Tìm hai số $u$ và $v$ biết:[[br]]a) [TH] $u + v = 12$, $uv = 35$;[[br]]b) [TH] $u + v = -15$, $uv = 54$.",
+          "level": 2,
+          "tier": "onclass",
+          "dang_id": "TH2",
+          "solution": "a) Ta có $u$, $v$ là nghiệm của $x^2 - 12x + 35 = 0$, $\\Delta' = 36 - 35 = 1$.[[br]]Vậy hai số là $7$ và $5$.[[br]]b) Ta có $u$, $v$ là nghiệm của $x^2 + 15x + 54 = 0$, $\\Delta = 225 - 216 = 9$.[[br]]Vậy hai số là $-6$ và $-9$.",
+          "hints": [
+            "Hai số có tổng và tích cho trước là nghiệm của phương trình nào?",
+            "Phương trình đó có nghiệm không? Giải ra rồi kết luận."
+          ]
+        },
+        {
+          "type": "noted",
+          "variant": "example",
+          "text": "\\textbf{Ví dụ 7.} Biết phương trình $2x^2 - 7x + 6 = 0$ có một nghiệm $x_1 = 2$. Tìm nghiệm còn lại.[[br]]{\\sffamily\\bfseries\\color{brand}Lời giải}[[br]]Theo định lí Viète, $x_1x_2 = \\dfrac{6}{2}$.[[br]]Thay $x_1 = 2$: $2 \\cdot x_2 = [[fill:3]]$.[[br]]Vậy nghiệm còn lại là $x_2 = \\dfrac{[[fill:3]]\\rule[-0.9ex]{0pt}{2.6ex}}{2}$."
+        },
+        {
+          "type": "problem",
+          "label": "Bài 7.",
+          "statement": "Không tính $\\Delta$, giải các phương trình sau:[[br]]a) [TH] $7x^2 + 3\\sqrt{3}x - 7 + 3\\sqrt{3} = 0$;[[br]]b) [TH] $(5 + \\sqrt{2})x^2 - (\\sqrt{2} - 5)x - 10 = 0$.",
+          "level": 2,
+          "tier": "onclass",
+          "dang_id": "TH3",
+          "solution": "a) Ta có $a - b + c = 7 - 3\\sqrt{3} - 7 + 3\\sqrt{3} = 0$ nên có một nghiệm $x_1 = -1$.[[br]]$x_2 = -\\dfrac{c}{a} = \\dfrac{7 - 3\\sqrt{3}}{7}$.[[br]]Vậy phương trình có hai nghiệm $-1$ và $\\dfrac{7 - 3\\sqrt{3}}{7}$.[[br]]b) Ta có $a + b + c = 5 + \\sqrt{2} - \\sqrt{2} + 5 - 10 = 0$ nên có một nghiệm $x_1 = 1$.[[br]]$x_2 = \\dfrac{c}{a} = \\dfrac{-10}{5 + \\sqrt{2}} = \\dfrac{-10(5 - \\sqrt{2})}{23}$.[[br]]Vậy phương trình có hai nghiệm $1$ và $\\dfrac{-10(5 - \\sqrt{2})}{23}$.",
+          "hints": [
+            "Tổng các hệ số bằng bao nhiêu?",
+            "Biết một nghiệm, dùng tích (hoặc tổng) hai nghiệm để tìm nghiệm kia."
+          ]
+        },
+        {
+          "type": "noted",
+          "variant": "example",
+          "text": "\\textbf{Ví dụ 8.} Cho phương trình $x^2 - 3x - 5 = 0$ có hai nghiệm $x_1$, $x_2$. Không giải phương trình, tính tổng các lập phương hai nghiệm. (Đề thi thử, Đống Đa)[[br]]{\\sffamily\\bfseries\\color{brand}Lời giải}[[br]]Ta có $ac < 0$ nên phương trình có hai nghiệm[[br]]$x_1 + x_2 = 3$, $x_1x_2 = -5$.[[br]]$x_1^3 + x_2^3 = (x_1 + x_2)^3 - 3x_1x_2(x_1 + x_2) = 27 - 3 \\cdot (-5) \\cdot 3$.[[br]]Vậy $x_1^3 + x_2^3 = [[fill:72]]$, bằng $27 + [[fill:45]]$."
+        },
+        {
+          "type": "problem",
+          "label": "Bài 8.",
+          "statement": "Không giải phương trình, tính:[[br]]a) [VD] $D = x_1^3 + x_2^3$, với $x_1$, $x_2$ là hai nghiệm của $x^2 + x - 2 + \\sqrt{2} = 0$;[[br]]b) [VD] $A = (x_1 - x_2)^2$, với $x_1$, $x_2$ là hai nghiệm của $2x^2 - 4x - 3 = 0$.",
+          "level": 3,
+          "tier": "onclass",
+          "dang_id": "VD1",
+          "solution": "a) Ta có $\\Delta = 1 - 4(-2 + \\sqrt{2}) = 9 - 4\\sqrt{2} > 0$[[br]]$x_1 + x_2 = -1$, $x_1x_2 = -2 + \\sqrt{2}$.[[br]]$D = (-1)^3 - 3(-2 + \\sqrt{2})(-1) = -1 - 6 + 3\\sqrt{2}$.[[br]]Vậy $D = -7 + 3\\sqrt{2}$.[[br]]b) Ta có $ac < 0$[[br]]$x_1 + x_2 = 2$, $x_1x_2 = -\\dfrac{3}{2}$.[[br]]$A = (x_1 + x_2)^2 - 4x_1x_2 = 4 + 6 = 10$.[[br]]Vậy $A = 10$.",
+          "quy_trinh": [
+            "Bước 1 — Cái phải tính là gì? Kiểm tra phương trình có hai nghiệm ($ac < 0$ hoặc $\\Delta \\ge 0$).",
+            "Bước 2 — Viết ngay tổng $x_1 + x_2 = -\\dfrac{b}{a}$ và tích $x_1x_2 = \\dfrac{c}{a}$.",
+            "Bước 3 — Biến đổi biểu thức về tổng và tích bằng các công thức: $x_1^2 + x_2^2$, $x_1^3 + x_2^3$, $(x_1 - x_2)^2$, $\\dfrac{1}{x_1} + \\dfrac{1}{x_2}$.",
+            "Bước 4 — Đã dùng hết giả thiết chưa? Thay tổng, tích vào rồi tính.",
+            "Bước 5 — Nhìn lại: viết câu \"Vậy …\"."
+          ]
+        },
+        {
+          "type": "noted",
+          "variant": "example",
+          "text": "\\textbf{Ví dụ 9.} Tỉ số $\\dfrac{x_1}{x_2} + \\dfrac{x_2}{x_1}$ của hai nghiệm phương trình $x^2 + x - 6 = 0$ bằng bao nhiêu? (Đề thi thử, Đống Đa)[[br]]{\\sffamily\\bfseries\\color{brand}Lời giải}[[br]]Ta có $ac < 0$[[br]]$x_1 + x_2 = -1$, $x_1x_2 = -6$.[[br]]$A = \\dfrac{x_1^2 + x_2^2}{x_1x_2} = \\dfrac{(x_1 + x_2)^2 - 2x_1x_2}{x_1x_2} = \\dfrac{1 + [[fill:12]]}{-6}$.[[br]]Vậy $A = -\\dfrac{[[fill:13]]\\rule[-0.9ex]{0pt}{2.6ex}}{6}$."
+        },
+        {
+          "type": "problem",
+          "label": "Bài 9.",
+          "statement": "[VD] Gọi $x_1$, $x_2$ là hai nghiệm của $x^2 - 4\\sqrt{3}x + 8 = 0$. Hãy tìm $Q = x_1^3 + x_2^3$ mà không cần tìm từng nghiệm.",
+          "level": 3,
+          "tier": "onclass",
+          "dang_id": "VD1",
+          "solution": "Ta có $\\Delta' = 12 - 8 = 4 > 0$[[br]]$x_1 + x_2 = 4\\sqrt{3}$, $x_1x_2 = 8$.[[br]]$Q = (x_1 + x_2)^3 - 3x_1x_2(x_1 + x_2) = 192\\sqrt{3} - 96\\sqrt{3}$.[[br]]Vậy $Q = 96\\sqrt{3}$.",
+          "quy_trinh": [
+            "Bước 1 — Cái phải tính là gì? Kiểm tra phương trình có hai nghiệm ($ac < 0$ hoặc $\\Delta \\ge 0$).",
+            "Bước 2 — Viết ngay tổng $x_1 + x_2 = -\\dfrac{b}{a}$ và tích $x_1x_2 = \\dfrac{c}{a}$.",
+            "Bước 3 — Biến đổi biểu thức về tổng và tích bằng các công thức: $x_1^2 + x_2^2$, $x_1^3 + x_2^3$, $(x_1 - x_2)^2$, $\\dfrac{1}{x_1} + \\dfrac{1}{x_2}$.",
+            "Bước 4 — Đã dùng hết giả thiết chưa? Thay tổng, tích vào rồi tính.",
+            "Bước 5 — Nhìn lại: viết câu \"Vậy …\"."
+          ]
+        },
+        {
+          "type": "noted",
+          "variant": "example",
+          "text": "\\textbf{Ví dụ 10.} Biết phương trình $x^2 - 3x + a = 0$ có một nghiệm $x = \\dfrac{3 - \\sqrt{5}}{2}$. Tìm tổng bình phương hai nghiệm. (Đề minh hoạ của Sở)[[br]]{\\sffamily\\bfseries\\color{brand}Lời giải}[[br]]Thay nghiệm vào phương trình: $\\dfrac{7 - 3\\sqrt{5}}{2} - \\dfrac{9 - 3\\sqrt{5}}{2} + a = 0$ nên $[[fill:a = 1]]$.[[br]]Phương trình $x^2 - 3x + 1 = 0$ có $x_1 + x_2 = 3$, $x_1x_2 = 1$.[[br]]$x_1^2 + x_2^2 = 3^2 - 2 \\cdot 1$.[[br]]Vậy tổng bình phương hai nghiệm bằng $[[fill:7]]$."
+        },
+        {
+          "type": "problem",
+          "label": "Bài 10.",
+          "statement": "a) [VD] Phương trình $x^2 + 5x + c = 0$ có một nghiệm là $\\dfrac{-\\sqrt{13} - 5}{2}$. Tìm tổng bình phương hai nghiệm.[[br]]b) [VD] Phương trình $-x^2 - bx + 1 = 0$ có một nghiệm $x = \\dfrac{1 - \\sqrt{3}}{2}$. Tìm tổng nghịch đảo hai nghiệm.",
+          "level": 3,
+          "tier": "onclass",
+          "dang_id": "VD2",
+          "solution": "a) Ta có $x_1 + x_2 = -5$ nên nghiệm còn lại là $x_2 = -5 - \\dfrac{-\\sqrt{13} - 5}{2} = \\dfrac{\\sqrt{13} - 5}{2}$.[[br]]$x_1x_2 = \\dfrac{25 - 13}{4} = 3$.[[br]]$x_1^2 + x_2^2 = 25 - 6 = 19$.[[br]]Vậy tổng bình phương hai nghiệm bằng $19$.[[br]]b) Ta có tích hai nghiệm $x_1x_2 = \\dfrac{1}{-1} = -1$ nên nghiệm còn lại $x_2 = -\\dfrac{2}{1 - \\sqrt{3}} = \\sqrt{3} + 1$.[[br]]Tổng hai nghiệm $x_1 + x_2 = \\dfrac{1 - \\sqrt{3}}{2} + \\sqrt{3} + 1 = \\dfrac{3 + \\sqrt{3}}{2}$.[[br]]$\\dfrac{1}{x_1} + \\dfrac{1}{x_2} = \\dfrac{x_1 + x_2}{x_1x_2} = -\\dfrac{3 + \\sqrt{3}}{2}$.[[br]]Vậy tổng nghịch đảo hai nghiệm bằng $-\\dfrac{3 + \\sqrt{3}}{2}$.",
+          "quy_trinh": [
+            "Bước 1 — Cái phải tìm là gì? Viết lại phương trình và nghiệm đã biết.",
+            "Bước 2 — Thay nghiệm đã biết vào phương trình để tìm hệ số còn thiếu.",
+            "Bước 3 — Viết tổng và tích hai nghiệm của phương trình vừa có.",
+            "Bước 4 — Biến đổi biểu thức đề hỏi về tổng và tích rồi tính.",
+            "Bước 5 — Nhìn lại: viết câu \"Vậy …\"."
+          ]
+        }
+      ],
+      "teacher_note": "Ví dụ 5 và Bài 5: bốn công thức ở hộp Kiến thức — viết lên góc bảng, giữ cả buổi.[[br]]Ví dụ 8, 9 và Bài 8, 9: đọc to hộp quy trình; kiểm tra có nghiệm ở dòng đầu.[[br]]Ví dụ 10 là đề minh hoạ của Sở: thay nghiệm tìm hệ số trước, dùng tổng, tích sau."
+    },
+    {
+      "kind": "reflection",
+      "number": 5,
+      "title": "Tổng kết \\& bài tập về nhà",
+      "blocks": [
+        {
+          "type": "mindmap",
+          "caption": "Sơ đồ tư duy: Định lí Viète",
+          "root": "VIÈTE",
+          "branches": [
+            {
+              "label": "TỔNG, TÍCH",
+              "children": [
+                {
+                  "label": "$x_1 + x_2 = -\\dfrac{b}{a}$"
+                },
+                {
+                  "label": "$x_1x_2 = \\dfrac{c}{a}$"
+                }
+              ]
+            },
+            {
+              "label": "NHẨM NGHIỆM",
+              "children": [
+                {
+                  "label": "$a + b + c = 0$: $1$ và $\\dfrac{c}{a}$"
+                },
+                {
+                  "label": "$a - b + c = 0$: $-1$ và $-\\dfrac{c}{a}$"
+                }
+              ]
+            },
+            {
+              "label": "HAI SỐ",
+              "children": [
+                {
+                  "label": "Tổng $u$, tích $v$"
+                },
+                {
+                  "label": "$x^2 - ux + v = 0$"
+                }
+              ]
+            },
+            {
+              "label": "BIỂU THỨC",
+              "children": [
+                {
+                  "label": "Đưa về tổng và tích"
+                },
+                {
+                  "label": "Kiểm tra có nghiệm trước"
+                }
+              ]
+            }
+          ]
+        },
+        {
+          "type": "problem",
+          "label": "BTVN~1.",
+          "statement": "Viết tổng và tích hai nghiệm (nếu có):[[br]]a) [NB] $x^2 - 4x - 7 = 0$;[[br]]b) [NB] $3x^2 - 5x + 1 = 0$;[[br]]c) [NB] $x^2 - 6x + 8 = 0$.",
+          "level": 1,
+          "tier": "btvn",
+          "dang_id": "NB1",
+          "solution": "a) $ac < 0$: tổng $4$, tích $-7$.[[br]]b) $\\Delta = 13 > 0$: tổng $\\dfrac{5}{3}$, tích $\\dfrac{1}{3}$.[[br]]c) $\\Delta' = 1 > 0$: tổng $6$, tích $8$."
+        },
+        {
+          "type": "problem",
+          "label": "BTVN~2.",
+          "statement": "Nhẩm nghiệm:[[br]]a) [NB] $2{,}5x^2 + 7{,}2x + 4{,}7 = 0$;[[br]]b) [NB] $\\dfrac{3}{2}x^2 + 5x + \\dfrac{7}{2} = 0$;[[br]]c) [NB] $x^2 - (1 + \\sqrt{2})x + \\sqrt{2} = 0$.",
+          "level": 1,
+          "tier": "btvn",
+          "dang_id": "NB2",
+          "solution": "a) $a - b + c = 0$: $-1$ và $-\\dfrac{47}{25}$.[[br]]b) $a - b + c = 0$: $-1$ và $-\\dfrac{7}{3}$.[[br]]c) $a + b + c = 0$: $1$ và $\\sqrt{2}$."
+        },
+        {
+          "type": "problem",
+          "label": "BTVN~3.",
+          "statement": "Không giải, xét dấu hai nghiệm:[[br]]a) [NB] $2x^2 - 4x - 3 = 0$;[[br]]b) [NB] $x^2 - 5x + 3 = 0$;[[br]]c) [NB] $x^2 - 4\\sqrt{3}x + 8 = 0$.",
+          "level": 1,
+          "tier": "btvn",
+          "dang_id": "NB3",
+          "solution": "a) $ac < 0$: trái dấu.[[br]]b) $\\Delta = 13 > 0$, tổng $5$, tích $3$: hai nghiệm dương.[[br]]c) $\\Delta' = 4 > 0$, tổng $4\\sqrt{3}$, tích $8$: hai nghiệm dương."
+        },
+        {
+          "type": "problem",
+          "label": "BTVN~4.",
+          "statement": "Lập phương trình bậc hai có hai nghiệm là:[[br]]a) [NB] $15$ và $4$;[[br]]b) [NB] $\\sqrt{3} + 1$ và $\\sqrt{3} - 1$;[[br]]c) [NB] $\\dfrac{1}{2}$ và $-2$.",
+          "level": 1,
+          "tier": "btvn",
+          "dang_id": "NB4",
+          "solution": "a) $x^2 - 19x + 60 = 0$.[[br]]b) $x^2 - 2\\sqrt{3}x + 2 = 0$.[[br]]c) $x^2 + \\dfrac{3}{2}x - 1 = 0$, hay $2x^2 + 3x - 2 = 0$."
+        },
+        {
+          "type": "problem",
+          "label": "BTVN~5.",
+          "statement": "Không giải phương trình, tính:[[br]]a) [TH] $M = x_1^2 + x_2^2 - 6x_1x_2$ với $x_1$, $x_2$ là hai nghiệm của $3x^2 - 5x + 1 = 0$;[[br]]b) [TH] $T = \\dfrac{x_1}{x_2} + \\dfrac{x_2}{x_1} - 2$ với $x_1$, $x_2$ là hai nghiệm của $x^2 - 4x - 7 = 0$.",
+          "level": 2,
+          "tier": "btvn",
+          "dang_id": "TH1",
+          "solution": "a) Ta có $x_1 + x_2 = \\dfrac{5}{3}$, $x_1x_2 = \\dfrac{1}{3}$.[[br]]$M = (x_1 + x_2)^2 - 8x_1x_2 = \\dfrac{25}{9} - \\dfrac{8}{3} = \\dfrac{1}{9}$.[[br]]Vậy $M = \\dfrac{1}{9}$.[[br]]b) Ta có $x_1 + x_2 = 4$, $x_1x_2 = -7$.[[br]]$T = \\dfrac{16 + 14}{-7} - 2 = -\\dfrac{44}{7}$.[[br]]Vậy $T = -\\dfrac{44}{7}$.",
+          "hints": [
+            "Phương trình có hai nghiệm chưa? Viết tổng và tích trước.",
+            "Biểu thức cần tính viết được qua $x_1 + x_2$ và $x_1x_2$ bằng công thức nào?"
+          ]
+        },
+        {
+          "type": "problem",
+          "label": "BTVN~6.",
+          "statement": "Tìm hai số $x$ và $y$ biết:[[br]]a) [TH] $x + y = 2$, $xy = -2$;[[br]]b) [TH] $x + y = \\sqrt{5}$, $xy = -10$.",
+          "level": 2,
+          "tier": "btvn",
+          "dang_id": "TH2",
+          "solution": "a) Ta có $x$, $y$ là nghiệm của $t^2 - 2t - 2 = 0$, $\\Delta' = 3$.[[br]]Vậy hai số là $1 + \\sqrt{3}$ và $1 - \\sqrt{3}$.[[br]]b) Ta có $x$, $y$ là nghiệm của $t^2 - \\sqrt{5}t - 10 = 0$, $\\Delta = 45$, $\\sqrt{\\Delta} = 3\\sqrt{5}$.[[br]]Vậy hai số là $2\\sqrt{5}$ và $-\\sqrt{5}$.",
+          "hints": [
+            "Hai số có tổng và tích cho trước là nghiệm của phương trình nào?",
+            "Phương trình đó có nghiệm không? Giải ra rồi kết luận."
+          ]
+        },
+        {
+          "type": "problem",
+          "label": "BTVN~7.",
+          "statement": "[TH] Không tính $\\Delta$, giải phương trình $2\\sqrt{3}x^2 + (5 - 2\\sqrt{3})x - 5 = 0$.",
+          "level": 2,
+          "tier": "btvn",
+          "dang_id": "TH3",
+          "solution": "Ta có $a + b + c = 2\\sqrt{3} + 5 - 2\\sqrt{3} - 5 = 0$ nên có nghiệm $x_1 = 1$.[[br]]$x_2 = \\dfrac{c}{a} = -\\dfrac{5}{2\\sqrt{3}} = -\\dfrac{5\\sqrt{3}}{6}$.[[br]]Vậy phương trình có hai nghiệm $1$ và $-\\dfrac{5\\sqrt{3}}{6}$.",
+          "hints": [
+            "Tổng các hệ số bằng bao nhiêu?",
+            "Biết một nghiệm, dùng tích (hoặc tổng) hai nghiệm để tìm nghiệm kia."
+          ]
+        },
+        {
+          "type": "problem",
+          "label": "BTVN~8.",
+          "statement": "a) [VD] Cho phương trình $4x^2 - 5x - 3 = 0$ có hai nghiệm $x_1$, $x_2$. Tính $F = (x_1 + 1)(x_2 + 1) - (x_1 - x_2)^2$.[[br]]b) [VD] Phương trình $x^2 - 6x + c = 0$ có hai nghiệm phân biệt thoả mãn $x_1 = 2x_2$. Tính $S = x_1^3 + x_2^3 + 3x_1x_2(x_1 + x_2)$.",
+          "level": 3,
+          "tier": "btvn",
+          "dang_id": "VD1",
+          "solution": "a) Ta có $ac < 0$[[br]]$x_1 + x_2 = \\dfrac{5}{4}$, $x_1x_2 = -\\dfrac{3}{4}$.[[br]]$F = x_1x_2 + (x_1 + x_2) + 1 - \\left[(x_1 + x_2)^2 - 4x_1x_2\\right] = \\dfrac{3}{2} - \\dfrac{73}{16}$.[[br]]Vậy $F = -\\dfrac{49}{16}$.[[br]]b) Ta có $S = (x_1 + x_2)^3$ và $x_1 + x_2 = 6$.[[br]]Vậy $S = 216$.",
+          "quy_trinh": [
+            "Bước 1 — Cái phải tính là gì? Kiểm tra phương trình có hai nghiệm ($ac < 0$ hoặc $\\Delta \\ge 0$).",
+            "Bước 2 — Viết ngay tổng $x_1 + x_2 = -\\dfrac{b}{a}$ và tích $x_1x_2 = \\dfrac{c}{a}$.",
+            "Bước 3 — Biến đổi biểu thức về tổng và tích bằng các công thức: $x_1^2 + x_2^2$, $x_1^3 + x_2^3$, $(x_1 - x_2)^2$, $\\dfrac{1}{x_1} + \\dfrac{1}{x_2}$.",
+            "Bước 4 — Đã dùng hết giả thiết chưa? Thay tổng, tích vào rồi tính.",
+            "Bước 5 — Nhìn lại: viết câu \"Vậy …\"."
+          ]
+        },
+        {
+          "type": "problem",
+          "label": "BTVN~9.",
+          "statement": "a) [VD] Phương trình $x^2 - 5x + k = 0$ có một nghiệm $x_1 = \\dfrac{5 - \\sqrt{13}}{2}$. Tính $x_1^2x_2 + x_1x_2^2$.[[br]]b) [VD] Phương trình $2x^2 - 4x + c = 0$ có một nghiệm $x = \\dfrac{2 + \\sqrt{10}}{2}$. Tính tổng nghịch đảo hai nghiệm.",
+          "level": 3,
+          "tier": "btvn",
+          "dang_id": "VD2",
+          "solution": "a) Ta có $x_1 + x_2 = 5$ nên $x_2 = \\dfrac{5 + \\sqrt{13}}{2}$, $k = x_1x_2 = \\dfrac{25 - 13}{4} = 3$.[[br]]$x_1^2x_2 + x_1x_2^2 = x_1x_2(x_1 + x_2) = 15$.[[br]]Vậy giá trị cần tính là $15$.[[br]]b) Ta có $x_1 + x_2 = 2$ nên nghiệm còn lại là $\\dfrac{2 - \\sqrt{10}}{2}$[[br]]$x_1x_2 = \\dfrac{4 - 10}{4} = -\\dfrac{3}{2}$.[[br]]$\\dfrac{1}{x_1} + \\dfrac{1}{x_2} = \\dfrac{2}{-\\frac{3}{2}} = -\\dfrac{4}{3}$.[[br]]Vậy tổng nghịch đảo hai nghiệm bằng $-\\dfrac{4}{3}$.",
+          "quy_trinh": [
+            "Bước 1 — Cái phải tìm là gì? Viết lại phương trình và nghiệm đã biết.",
+            "Bước 2 — Thay nghiệm đã biết vào phương trình để tìm hệ số còn thiếu.",
+            "Bước 3 — Viết tổng và tích hai nghiệm của phương trình vừa có.",
+            "Bước 4 — Biến đổi biểu thức đề hỏi về tổng và tích rồi tính.",
+            "Bước 5 — Nhìn lại: viết câu \"Vậy …\"."
+          ]
+        }
+      ],
+      "teacher_note": "Cho HS điền sơ đồ tư duy 3 phút rồi giao bài tập về nhà.[[br]]BTVN 8, 9 là khuôn Câu III.3: HS viết dòng \"có hai nghiệm\" trước khi dùng tổng, tích."
+    }
+  ]
+}

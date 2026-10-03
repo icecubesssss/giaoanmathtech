@@ -1,0 +1,826 @@
+{
+  "_nguon": "Tiến độ trung tâm lớp 9 đại số: tuần 27 (Hàm số $y = ax^2$), tuần 28 (Phương trình bậc hai một ẩn), tuần 29 và 30 (Định lí Viète và ứng dụng), tuần 31 (Giải bài toán bằng cách lập phương trình). Nguồn bài ở nguon-pdf của chương. Mã trích dẫn: 'HS1 Dn.Bm' = '1. HÀM SỐ y=ax2 VÀ ĐỒ THỊ.pdf' Dạng n Bài m (VD = ví dụ, LT = lý thuyết); 'PT2 Dn.Bm' = '2. PHƯƠNG TRÌNH BẬC HAI MỘT ẨN.pdf'; 'VIET Dn.Bm' = '3. ĐỊNH LÍ VIÈTE VÀ ỨNG DỤNG.pdf'; 'LPT Dn.Bm' = '4. GIẢI BÀI TOÁN BẰNG CÁCH LẬP PHƯƠNG TRÌNH.pdf'; mã 'v10-…', 'ck1-…' = câu trong ngân hàng đề inputs/refs/de-thi/lop-9/exams.",
+  "_luat": "Soạn theo HUONG-DAN-SOAN-PHIEU-B.md. Bản đồ VD-VDC: chương VI co_vd = true, p = 0 (nhóm KHÔNG) => NB 15 / TH 30 / VD 55 / VDC 0, trần 9,5 (kì II); mỗi phiếu một buổi 180 phút. Giữ hai điều Thầy chốt ở chương VI tầng C (13/08/2026): không dùng kí hiệu S, P (viết tổng hai nghiệm, tích hai nghiệm) và không có dạng tham số m.",
+  "slug": "thuyet-minh-lop-9b-chuong-06-ham-so-va-phuong-trinh-bac-hai",
+  "title": "Chương VI. Hàm số $y = ax^2$ $(a \\ne 0)$. Phương trình bậc hai một ẩn (tuần 27 $-$ 31)",
+  "grade": "lop-9",
+  "subject": "dai-so",
+  "tier": "B",
+  "tuan": "27-31",
+  "chuong": "chuong-06-ham-so-va-phuong-trinh-bac-hai",
+  "thoiluong": [
+    "Ca 1 (Tuần 27) — SGK Bài 18: Hàm số $y = ax^2$ $(a \\ne 0)$: 1 ca $=$ 180 phút.",
+    "Ca 2 (Tuần 28) — SGK Bài 19: Phương trình bậc hai một ẩn: 1 ca $=$ 180 phút.",
+    "Ca 3 (Tuần 29) — SGK Bài 20 (phần 1): Định lí Viète: 1 ca $=$ 180 phút.",
+    "Ca 4 (Tuần 30) — SGK Bài 20 (phần 2): Ứng dụng định lí Viète, luyện khuôn Câu III.3: 1 ca $=$ 180 phút.",
+    "Ca 5 (Tuần 31) — SGK Bài 21: Giải bài toán bằng cách lập phương trình: 1 ca $=$ 180 phút $=$ 135 phút luyện tập $+$ 45 phút kiểm tra chương.",
+    "\\textbf{Tổng 5 ca $=$ 900 phút} (1 ca 180 phút $=$ 4 tiết), trong đó 45 phút là bài kiểm tra chương.",
+    "ĐỐI CHIẾU phân phối chương trình SGK KNTT: chương VI có 16 tiết (Bài 18: 3, Bài 19: 4, Luyện tập chung: 2, Bài 20: 3, Bài 21: 2, Luyện tập chung và Bài tập cuối chương: 2).",
+    "Trung tâm dạy 19 tiết $+$ 1 tiết kiểm tra; dày ở Bài 20 (hai buổi) vì câu Viète $0{,}5$ điểm có ở mọi đề vào 10 đã rà, mỏng ở Bài 18 vì ma trận đề vào 10 của Sở không còn hỏi đồ thị."
+  ],
+  "kien_thuc_nen": [
+    "\\textbf{Hàm số và đồ thị, mặt phẳng toạ độ} (Lớp 7, Lớp 8): tính giá trị hàm số, điểm thuộc đồ thị, toạ độ một điểm.",
+    "\\textbf{Hệ hai phương trình bậc nhất hai ẩn} (chương I): tìm giao điểm hai đường thẳng để xác định hệ số $a$.",
+    "\\textbf{Hằng đẳng thức và phân tích đa thức thành nhân tử} (Lớp 8): giải phương trình khuyết, biến đổi biểu thức của hai nghiệm $x_1^2 + x_2^2 = (x_1 + x_2)^2 - 2x_1x_2$.",
+    "\\textbf{Căn bậc hai, rút gọn căn} (chương III): viết nghiệm $\\dfrac{-b \\pm \\sqrt{\\Delta}}{2a}$ gọn, phương trình có hệ số chứa căn.",
+    "\\textbf{Phương trình chứa ẩn ở mẫu, giải bài toán bằng cách lập phương trình} (Lớp 8, chương I): bài lời văn dẫn tới phương trình bậc hai.",
+    "\\textbf{Giá trị tuyệt đối} (Lớp 7): biểu thức có $|x_1|$, $|x_2|$ khi biết dấu hai nghiệm."
+  ],
+  "lythuyet": [
+    "\\textbf{Mục tiêu của chương}: giải thành thạo phương trình bậc hai, \\textbf{thuộc định lí Viète và áp dụng linh hoạt} vào Câu III đề vào 10: III.1 giải bài toán bằng cách lập phương trình ($1{,}0$ điểm), III.3 tính giá trị biểu thức của hai nghiệm ($0{,}5$ điểm).",
+    "\\textbf{Trọng số đề}: rà 16 câu Viète trong đề vào 10 và đề thi thử Hà Nội thì 11 câu không có tham số; bài lời văn có ở mọi đề, bối cảnh nhiều nhất là năng suất, chuyển động, mua bán.",
+    "Bản đồ VD-VDC: chương thuộc nhóm tần suất VDC \\emph{không} ($p = 0$) nên tỉ lệ trên lớp 15 NB $/$ 30 TH $/$ 55 VD, không có câu VDC; trần điểm kì II là $9{,}5$.",
+    "\\textbf{Hàm số $y = ax^2$}: đồ thị là parabol đỉnh $O$, nhận trục tung làm trục đối xứng; $a > 0$ nằm phía trên, $a < 0$ nằm phía dưới trục hoành.",
+    "\\textbf{Phương trình bậc hai $ax^2 + bx + c = 0$}: $\\Delta = b^2 - 4ac$; $\\Delta > 0$ hai nghiệm phân biệt $x_{1,2} = \\dfrac{-b \\pm \\sqrt{\\Delta}}{2a}$; $\\Delta = 0$ nghiệm kép; $\\Delta < 0$ vô nghiệm; công thức thu gọn với $b = 2b'$.",
+    "\\textbf{Định lí Viète}: tổng hai nghiệm $x_1 + x_2 = -\\dfrac{b}{a}$, tích hai nghiệm $x_1x_2 = \\dfrac{c}{a}$; nhẩm nghiệm khi $a + b + c = 0$, $a - b + c = 0$; hai số có tổng $u$, tích $v$ là nghiệm của $x^2 - ux + v = 0$.",
+    "\\textbf{Chuẩn đầu ra}: làm trọn Câu III.1 và Câu III.3 dạng không tham số; viết đúng tổng, tích bằng lời, không dùng kí hiệu $S$, $P$."
+  ],
+  "vidu": [
+    "Ca 1: lực gió $F = av^2$ tác động lên cánh buồm — tìm $a$, tính $F$, kết luận thuyền có ra khơi được không.",
+    "Ca 2: giải $5x^2 - 72x - 45 = 0$; phương trình $\\sqrt{3}x^2 + x - \\sqrt{3} = 2x - 1$; giao điểm của $y = -x^2$ và $y = 5x + 6$.",
+    "Ca 3: tìm hai số có tổng $19$, tích $60$; biết $x^2 - 3x + a = 0$ có một nghiệm $\\frac{3 - \\sqrt{5}}{2}$, tính tổng bình phương hai nghiệm.",
+    "Ca 4, \\textbf{ví dụ trục}: đề Sở 2026 — $x^2 - 3x + 1 = 0$, tính $Q = \\frac{3x_2 - 1}{x_1} + \\frac{3x_1}{x_2} - x_1$ bằng hạ bậc, viết như đi thi.",
+    "Ca 5: xưởng may 280 bộ quần áo sớm 1 ngày; hai ô tô đi 180 km chênh 36 phút; tàu du lịch xuôi ngược dòng."
+  ],
+  "dang_vd": [
+    "\\textbf{Câu III.1 — giải bài toán bằng cách lập phương trình} ($1{,}0$ điểm): chuyển động, năng suất, làm chung, hình học — ẩn ở mẫu dẫn tới phương trình bậc hai.",
+    "\\textbf{Câu III.3 — biểu thức của hai nghiệm} ($0{,}5$ điểm): đối xứng (tổng lập phương, tổng nghịch đảo), không đối xứng phải hạ bậc, có trị tuyệt đối hoặc căn khi biết dấu nghiệm.",
+    "\\textbf{Phương trình phải biến đổi rồi mới giải} và \\textbf{giao điểm parabol với đường thẳng} (ca 2).",
+    "\\textbf{Bài thực tế $y = ax^2$} (cánh buồm, cổng parabol) có ba bước tìm $a$ $-$ tính $-$ so sánh nên xếp vận dụng; bài chỉ thay số là thông hiểu."
+  ],
+  "loisai": [
+    "\\textbf{Sai dấu khi tính $\\Delta$}: $b$ âm mà quên bình phương cả dấu, $-4ac$ với $a$, $c$ trái dấu.",
+    "\\textbf{Giải phương trình khuyết $c$ bằng cách chia hai vế cho $x$}, mất nghiệm $x = 0$.",
+    "\\textbf{Viết tổng hai nghiệm là $\\frac{b}{a}$} (thiếu dấu trừ); dùng định lí Viète khi chưa kiểm tra phương trình có nghiệm.",
+    "\\textbf{Biểu thức không đối xứng} mà cố đưa thẳng về tổng, tích; quên hạ bậc.",
+    "\\textbf{Bài lời văn}: quên điều kiện của ẩn, không loại nghiệm âm, đổi phút ra giờ sai ($36$ phút $= 0{,}6$ giờ)."
+  ],
+  "kienthuc_nb": [
+    "$y = ax^2$: điểm $M(x_0; y_0)$ thuộc đồ thị khi $y_0 = ax_0^2$.",
+    "$\\Delta = b^2 - 4ac$, $\\Delta' = b'^2 - ac$; $x_{1,2} = \\dfrac{-b \\pm \\sqrt{\\Delta}}{2a}$.",
+    "Tổng hai nghiệm $-\\dfrac{b}{a}$, tích hai nghiệm $\\dfrac{c}{a}$; $ac < 0$ thì có hai nghiệm trái dấu.",
+    "$x_1^2 + x_2^2 = (x_1 + x_2)^2 - 2x_1x_2$; $x_1^3 + x_2^3 = (x_1 + x_2)^3 - 3x_1x_2(x_1 + x_2)$; $(x_1 - x_2)^2 = (x_1 + x_2)^2 - 4x_1x_2$."
+  ],
+  "phieu": [
+    {
+      "code": "1",
+      "so_ca": 1,
+      "title": "Ca 1 (Tuần 27) — Bài 18: Hàm số $y = ax^2$ $(a \\ne 0)$",
+      "rows": [
+        {
+          "dang": "Tính giá trị của hàm số $y = ax^2$ tại giá trị cho trước của $x$",
+          "band": "NB",
+          "loai": "NB tách TH",
+          "lythuyet": 1,
+          "vidu": 1,
+          "onclass": 3,
+          "btvn": 3,
+          "source_refs": [
+            "HS1 D1.VD1",
+            "HS1 D1.B1",
+            "HS1 D1.B3"
+          ],
+          "decompose": "none"
+        },
+        {
+          "dang": "Kiểm tra một điểm có thuộc đồ thị hàm số $y = ax^2$ hay không",
+          "band": "NB",
+          "loai": "NB tách TH",
+          "lythuyet": 1,
+          "vidu": 1,
+          "onclass": 3,
+          "btvn": 3,
+          "source_refs": [
+            "HS1 D1.VD3",
+            "HS1 D1.B5",
+            "HS1 D1.B8"
+          ],
+          "decompose": "none"
+        },
+        {
+          "dang": "Tìm điểm thuộc đồ thị có hoành độ hoặc tung độ cho trước",
+          "band": "NB",
+          "loai": "NB tách TH",
+          "lythuyet": 0,
+          "vidu": 1,
+          "onclass": 3,
+          "btvn": 3,
+          "source_refs": [
+            "HS1 D1.B1",
+            "HS1 D1.B2",
+            "HS1 D1.B6"
+          ],
+          "decompose": "none",
+          "gian_giao": "dien-khuyet"
+        },
+        {
+          "dang": "Đồ thị hàm số $y = ax^2$: bảng giá trị, vị trí so với trục hoành, đối xứng qua trục tung",
+          "band": "NB",
+          "loai": "NB lẻ LT",
+          "lythuyet": 1,
+          "vidu": 1,
+          "onclass": 3,
+          "btvn": 3,
+          "source_refs": [
+            "HS1 LT",
+            "HS1 D1.VD2"
+          ],
+          "decompose": "none"
+        },
+        {
+          "dang": "Xác định hệ số $a$ biết đồ thị đi qua một điểm",
+          "band": "TH",
+          "loai": "TH ghép bài",
+          "lythuyet": 0,
+          "vidu": 1,
+          "onclass": 2,
+          "btvn": 2,
+          "source_refs": [
+            "HS1 D2.VD5",
+            "HS1 D2.B1",
+            "HS1 D2.B2",
+            "HS1 D2.B4",
+            "HS1 D1.B8"
+          ],
+          "decompose": "th2nb"
+        },
+        {
+          "dang": "Tìm giá trị của biến khi biết giá trị của hàm số, kể cả số chứa căn",
+          "band": "TH",
+          "loai": "TH ghép bài",
+          "lythuyet": 0,
+          "vidu": 1,
+          "onclass": 2,
+          "btvn": 2,
+          "source_refs": [
+            "HS1 D1.B3",
+            "HS1 D1.B4",
+            "HS1 D1.B2",
+            "HS1 D2.B4"
+          ],
+          "decompose": "th2nb"
+        },
+        {
+          "dang": "Bài toán thực tế dùng công thức dạng $y = ax^2$: thay số rồi tính",
+          "band": "TH",
+          "loai": "TH ghép bài",
+          "lythuyet": 0,
+          "vidu": 1,
+          "onclass": 2,
+          "btvn": 1,
+          "source_refs": [
+            "HS1 D1.B9",
+            "HS1 D1.B10"
+          ],
+          "decompose": "th2nb"
+        },
+        {
+          "dang": "Bài toán thực tế: tìm hằng số $a$, tính đại lượng rồi so sánh để kết luận",
+          "band": "VD",
+          "loai": "VD lẻ",
+          "lythuyet": 0,
+          "vidu": 1,
+          "onclass": 3,
+          "btvn": 1,
+          "source_refs": [
+            "HS1 D3.VD6",
+            "HS1 D3.B1",
+            "HS1 D3.B2",
+            "HS1 D3.B3"
+          ],
+          "decompose": "vd",
+          "quy_trinh": [
+            "Bước 1 — Cái phải tìm là gì? Đại lượng nào đóng vai $x$, đại lượng nào đóng vai $y$ trong công thức $y = ax^2$?",
+            "Bước 2 — Thay cặp giá trị đề cho để tìm hệ số $a$.",
+            "Bước 3 — Viết lại công thức với $a$ vừa tìm, thay giá trị mới để tính đại lượng cần tìm (đổi đơn vị nếu cần).",
+            "Bước 4 — Đã dùng hết giả thiết chưa? So sánh kết quả với điều kiện đề cho (lực tối đa, chiều cao xe…).",
+            "Bước 5 — Nhìn lại: trả lời câu hỏi bằng một câu \"Vậy …\" kèm đơn vị."
+          ]
+        },
+        {
+          "dang": "Điểm thuộc đồ thị khi toạ độ là giao điểm hai đường thẳng hoặc nghiệm của hệ phương trình",
+          "band": "VD",
+          "loai": "VD lẻ",
+          "lythuyet": 0,
+          "vidu": 2,
+          "onclass": 2,
+          "btvn": 3,
+          "source_refs": [
+            "HS1 D1.B11",
+            "HS1 D1.B7",
+            "HS1 D2.VD4",
+            "HS1 D2.VD5",
+            "HS1 D2.B6",
+            "HS1 D2.B7",
+            "HS1 D2.B8"
+          ],
+          "decompose": "vd",
+          "quy_trinh": [
+            "Bước 1 — Cái phải tìm là gì? Viết rõ điểm cần đi qua là điểm nào.",
+            "Bước 2 — Tìm toạ độ điểm đó (giải hệ phương trình hoặc tìm giao điểm hai đường thẳng).",
+            "Bước 3 — Thay toạ độ vào $y = ax^2$, tìm $a$ (hoặc kiểm tra đẳng thức).",
+            "Bước 4 — Đã dùng hết giả thiết chưa? Đối chiếu điều kiện $a \\ne 0$.",
+            "Bước 5 — Nhìn lại: viết câu \"Vậy …\"."
+          ]
+        }
+      ]
+    },
+    {
+      "code": "2",
+      "so_ca": 1,
+      "title": "Ca 2 (Tuần 28) — Bài 19: Phương trình bậc hai một ẩn",
+      "rows": [
+        {
+          "dang": "Nhận biết phương trình bậc hai, chỉ ra hệ số $a$, $b$, $c$",
+          "band": "NB",
+          "loai": "NB lẻ LT",
+          "lythuyet": 1,
+          "vidu": 1,
+          "onclass": 3,
+          "btvn": 3,
+          "source_refs": [
+            "PT2 LT"
+          ],
+          "decompose": "none"
+        },
+        {
+          "dang": "Giải phương trình bậc hai khuyết $b$ hoặc khuyết $c$",
+          "band": "NB",
+          "loai": "NB tách TH",
+          "lythuyet": 1,
+          "vidu": 1,
+          "onclass": 3,
+          "btvn": 3,
+          "source_refs": [
+            "PT2 LT",
+            "PT2 D1.B3",
+            "ck1-ly-thanh-tong-2a"
+          ],
+          "decompose": "none"
+        },
+        {
+          "dang": "Tính biệt thức $\\Delta$ (hoặc $\\Delta'$) rồi kết luận số nghiệm",
+          "band": "NB",
+          "loai": "NB tách TH",
+          "lythuyet": 1,
+          "vidu": 1,
+          "onclass": 3,
+          "btvn": 3,
+          "source_refs": [
+            "PT2 D1.VD1",
+            "PT2 D1.B1",
+            "PT2 D1.B2"
+          ],
+          "decompose": "none",
+          "gian_giao": "dien-khuyet"
+        },
+        {
+          "dang": "Khai triển, chuyển vế đưa phương trình về dạng $ax^2 + bx + c = 0$",
+          "band": "NB",
+          "loai": "NB tách TH",
+          "lythuyet": 0,
+          "vidu": 1,
+          "onclass": 3,
+          "btvn": 3,
+          "source_refs": [
+            "PT2 D1.B4",
+            "PT2 D1.VD1"
+          ],
+          "decompose": "none"
+        },
+        {
+          "dang": "Giải phương trình bằng công thức nghiệm",
+          "band": "TH",
+          "loai": "TH ghép bài",
+          "lythuyet": 0,
+          "vidu": 1,
+          "onclass": 2,
+          "btvn": 2,
+          "source_refs": [
+            "PT2 D1.VD1",
+            "PT2 D1.B1"
+          ],
+          "decompose": "th2nb"
+        },
+        {
+          "dang": "Giải phương trình bằng công thức nghiệm thu gọn ($b = 2b'$)",
+          "band": "TH",
+          "loai": "TH ghép bài",
+          "lythuyet": 0,
+          "vidu": 1,
+          "onclass": 2,
+          "btvn": 2,
+          "source_refs": [
+            "PT2 D1.VD1",
+            "PT2 D1.B2"
+          ],
+          "decompose": "th2nb"
+        },
+        {
+          "dang": "Giải phương trình có hệ số chứa căn hoặc hệ số thập phân (có dùng máy tính cầm tay kiểm tra)",
+          "band": "TH",
+          "loai": "TH ghép bài",
+          "lythuyet": 0,
+          "vidu": 1,
+          "onclass": 2,
+          "btvn": 1,
+          "source_refs": [
+            "PT2 D1.B2",
+            "PT2 D1.B3"
+          ],
+          "decompose": "th2nb"
+        },
+        {
+          "dang": "Phương trình phải biến đổi mới về bậc hai rồi giải",
+          "band": "VD",
+          "loai": "VD lẻ",
+          "lythuyet": 0,
+          "vidu": 2,
+          "onclass": 3,
+          "btvn": 2,
+          "source_refs": [
+            "PT2 D1.VD1",
+            "PT2 D1.B4"
+          ],
+          "decompose": "vd",
+          "quy_trinh": [
+            "Bước 1 — Cái phải tìm là gì? Phương trình đã có dạng $ax^2 + bx + c = 0$ chưa?",
+            "Bước 2 — Khai triển, chuyển vế, thu gọn về dạng $ax^2 + bx + c = 0$; chỉ rõ $a$, $b$, $c$.",
+            "Bước 3 — Phương trình khuyết hệ số thì đặt nhân tử chung hoặc tách bình phương; đủ hệ số thì tính $\\Delta$ (hoặc $\\Delta'$).",
+            "Bước 4 — Tính nghiệm theo công thức, rút gọn căn.",
+            "Bước 5 — Nhìn lại: thử một nghiệm vào phương trình ban đầu, viết câu \"Vậy …\"."
+          ]
+        },
+        {
+          "dang": "Tìm toạ độ giao điểm của parabol $y = ax^2$ và đường thẳng bằng phép tính",
+          "band": "VD",
+          "loai": "VD lẻ",
+          "lythuyet": 0,
+          "vidu": 1,
+          "onclass": 2,
+          "btvn": 2,
+          "source_refs": [
+            "PT2 D3.VD3",
+            "PT2 D3.B1",
+            "PT2 D3.B2"
+          ],
+          "decompose": "vd",
+          "quy_trinh": [
+            "Bước 1 — Cái phải tìm là gì? Toạ độ giao điểm gồm hoành độ và tung độ.",
+            "Bước 2 — Viết phương trình hoành độ giao điểm: cho hai vế $y$ bằng nhau, đưa về $ax^2 + bx + c = 0$.",
+            "Bước 3 — Giải phương trình, được các hoành độ.",
+            "Bước 4 — Đã dùng hết giả thiết chưa? Thay từng hoành độ vào một trong hai hàm số để được tung độ.",
+            "Bước 5 — Nhìn lại: viết các giao điểm dưới dạng toạ độ, câu \"Vậy …\"."
+          ]
+        }
+      ]
+    },
+    {
+      "code": "3",
+      "so_ca": 1,
+      "title": "Ca 3 (Tuần 29) — Bài 20 (phần 1): Định lí Viète, nhẩm nghiệm, tìm hai số biết tổng và tích",
+      "rows": [
+        {
+          "dang": "Viết tổng và tích hai nghiệm sau khi kiểm tra phương trình có nghiệm",
+          "band": "NB",
+          "loai": "NB tách TH",
+          "lythuyet": 1,
+          "vidu": 1,
+          "onclass": 3,
+          "btvn": 3,
+          "source_refs": [
+            "VIET LT",
+            "VIET D1.VD1",
+            "v10-cau-giay-III3"
+          ],
+          "decompose": "none"
+        },
+        {
+          "dang": "Nhẩm nghiệm khi $a + b + c = 0$ hoặc $a - b + c = 0$",
+          "band": "NB",
+          "loai": "NB tách TH",
+          "lythuyet": 1,
+          "vidu": 1,
+          "onclass": 3,
+          "btvn": 3,
+          "source_refs": [
+            "VIET LT",
+            "VIET D3.B1"
+          ],
+          "decompose": "none"
+        },
+        {
+          "dang": "Nhận biết phương trình có hai nghiệm trái dấu ($ac < 0$)",
+          "band": "NB",
+          "loai": "NB tách TH",
+          "lythuyet": 1,
+          "vidu": 1,
+          "onclass": 3,
+          "btvn": 3,
+          "source_refs": [
+            "VIET D5 LT",
+            "v10-cum-cong-lap-III3"
+          ],
+          "decompose": "none",
+          "gian_giao": "dien-khuyet"
+        },
+        {
+          "dang": "Lập phương trình bậc hai khi biết tổng và tích hai nghiệm",
+          "band": "NB",
+          "loai": "NB tách TH",
+          "lythuyet": 1,
+          "vidu": 1,
+          "onclass": 3,
+          "btvn": 3,
+          "source_refs": [
+            "VIET LT",
+            "VIET D6.VD10",
+            "v10-dong-da-03-III3"
+          ],
+          "decompose": "none"
+        },
+        {
+          "dang": "Tính $x_1^2 + x_2^2$, $\\frac{1}{x_1} + \\frac{1}{x_2}$ không giải phương trình",
+          "band": "TH",
+          "loai": "TH ghép bài",
+          "lythuyet": 0,
+          "vidu": 1,
+          "onclass": 2,
+          "btvn": 2,
+          "source_refs": [
+            "VIET D1.VD1",
+            "VIET D1.VD2",
+            "VIET D1.B5",
+            "VIET D1.B6",
+            "v10-cau-giay-III3"
+          ],
+          "decompose": "th2nb"
+        },
+        {
+          "dang": "Tìm hai số biết tổng và tích của chúng",
+          "band": "TH",
+          "loai": "TH ghép bài",
+          "lythuyet": 0,
+          "vidu": 1,
+          "onclass": 2,
+          "btvn": 2,
+          "source_refs": [
+            "VIET D6.VD10",
+            "VIET D6.B1",
+            "VIET D6.B2"
+          ],
+          "decompose": "th2nb"
+        },
+        {
+          "dang": "Biết một nghiệm, tìm nghiệm còn lại bằng tổng hoặc tích hai nghiệm",
+          "band": "TH",
+          "loai": "TH tách VD",
+          "lythuyet": 0,
+          "vidu": 1,
+          "onclass": 2,
+          "btvn": 1,
+          "source_refs": [
+            "VIET LT",
+            "VIET D3.B1",
+            "VIET D3.B2"
+          ],
+          "decompose": "th2nb"
+        },
+        {
+          "dang": "Tính biểu thức đối xứng bậc cao: $x_1^3 + x_2^3$, $(x_1 - x_2)^2$, $\\frac{x_1}{x_2} + \\frac{x_2}{x_1}$",
+          "band": "VD",
+          "loai": "VD lẻ",
+          "lythuyet": 0,
+          "vidu": 2,
+          "onclass": 3,
+          "btvn": 2,
+          "source_refs": [
+            "VIET D1.B3",
+            "VIET D1.B4",
+            "VIET D1.B7",
+            "VIET D1.B8",
+            "VIET D1.B9",
+            "VIET D4.B5",
+            "v10-dong-da-01-III3"
+          ],
+          "decompose": "vd",
+          "quy_trinh": [
+            "Bước 1 — Cái phải tính là gì? Kiểm tra phương trình có hai nghiệm ($ac < 0$ hoặc $\\Delta \\ge 0$).",
+            "Bước 2 — Viết ngay tổng $x_1 + x_2 = -\\dfrac{b}{a}$ và tích $x_1x_2 = \\dfrac{c}{a}$.",
+            "Bước 3 — Biến đổi biểu thức về tổng và tích bằng các công thức: $x_1^2 + x_2^2$, $x_1^3 + x_2^3$, $(x_1 - x_2)^2$, $\\dfrac{1}{x_1} + \\dfrac{1}{x_2}$.",
+            "Bước 4 — Đã dùng hết giả thiết chưa? Thay tổng, tích vào rồi tính.",
+            "Bước 5 — Nhìn lại: viết câu \"Vậy …\"."
+          ]
+        },
+        {
+          "dang": "Biết một nghiệm chứa căn: tìm hệ số còn thiếu rồi tính biểu thức của hai nghiệm",
+          "band": "VD",
+          "loai": "VD lẻ",
+          "lythuyet": 0,
+          "vidu": 1,
+          "onclass": 2,
+          "btvn": 2,
+          "source_refs": [
+            "VIET D4.VD7",
+            "VIET D4.B1",
+            "VIET D4.B2",
+            "VIET D4.B3",
+            "VIET D4.B4",
+            "v10-so-minh-hoa-III3"
+          ],
+          "decompose": "vd",
+          "quy_trinh": [
+            "Bước 1 — Cái phải tìm là gì? Viết lại phương trình và nghiệm đã biết.",
+            "Bước 2 — Thay nghiệm đã biết vào phương trình để tìm hệ số còn thiếu.",
+            "Bước 3 — Viết tổng và tích hai nghiệm của phương trình vừa có.",
+            "Bước 4 — Biến đổi biểu thức đề hỏi về tổng và tích rồi tính.",
+            "Bước 5 — Nhìn lại: viết câu \"Vậy …\"."
+          ]
+        }
+      ]
+    },
+    {
+      "code": "4",
+      "so_ca": 1,
+      "title": "Ca 4 (Tuần 30) — Bài 20 (phần 2): Ứng dụng định lí Viète, luyện khuôn Câu III.3",
+      "rows": [
+        {
+          "dang": "Hạ bậc: từ $x_1$ là nghiệm viết $x_1^2$ theo $x_1$",
+          "band": "NB",
+          "loai": "NB tách TH",
+          "lythuyet": 1,
+          "vidu": 1,
+          "onclass": 3,
+          "btvn": 3,
+          "source_refs": [
+            "v10-ung-hoa-III3",
+            "v10-so-2026-III3"
+          ],
+          "decompose": "none"
+        },
+        {
+          "dang": "Viết biểu thức của hai nghiệm qua tổng và tích (các công thức thường gặp)",
+          "band": "NB",
+          "loai": "NB tách TH",
+          "lythuyet": 1,
+          "vidu": 1,
+          "onclass": 3,
+          "btvn": 3,
+          "source_refs": [
+            "VIET D1 LT",
+            "VIET D1.B9"
+          ],
+          "decompose": "none",
+          "gian_giao": "dien-khuyet"
+        },
+        {
+          "dang": "Xét dấu hai nghiệm từ tổng và tích",
+          "band": "NB",
+          "loai": "NB tách TH",
+          "lythuyet": 1,
+          "vidu": 1,
+          "onclass": 3,
+          "btvn": 3,
+          "source_refs": [
+            "VIET D5 LT",
+            "v10-tu-lap-III3",
+            "v10-cum-cong-lap-III3"
+          ],
+          "decompose": "none"
+        },
+        {
+          "dang": "Quy đồng biểu thức có $x_1$, $x_2$ ở mẫu",
+          "band": "NB",
+          "loai": "NB tách TH",
+          "lythuyet": 0,
+          "vidu": 1,
+          "onclass": 3,
+          "btvn": 3,
+          "source_refs": [
+            "VIET D1.B1",
+            "VIET D1.B6"
+          ],
+          "decompose": "none"
+        },
+        {
+          "dang": "Tính biểu thức có $x_1$, $x_2$ ở mẫu bằng tổng và tích",
+          "band": "TH",
+          "loai": "TH ghép bài",
+          "lythuyet": 0,
+          "vidu": 1,
+          "onclass": 2,
+          "btvn": 2,
+          "source_refs": [
+            "VIET D1.B1",
+            "VIET D1.B4",
+            "VIET D1.B6"
+          ],
+          "decompose": "th2nb"
+        },
+        {
+          "dang": "Hạ bậc để tính biểu thức của một nghiệm",
+          "band": "TH",
+          "loai": "TH ghép bài",
+          "lythuyet": 0,
+          "vidu": 1,
+          "onclass": 2,
+          "btvn": 1,
+          "source_refs": [
+            "v10-ung-hoa-III3",
+            "VIET D2.B5",
+            "v10-so-2026-III3"
+          ],
+          "decompose": "th2nb"
+        },
+        {
+          "dang": "Biểu thức có giá trị tuyệt đối, căn bậc hai khi đã biết dấu hai nghiệm",
+          "band": "TH",
+          "loai": "TH tách VD",
+          "lythuyet": 0,
+          "vidu": 1,
+          "onclass": 2,
+          "btvn": 2,
+          "source_refs": [
+            "v10-cum-cong-lap-III3",
+            "v10-tu-lap-III3",
+            "VIET D5 LT"
+          ],
+          "decompose": "th2nb"
+        },
+        {
+          "dang": "Biểu thức không đối xứng: hạ bậc rồi dùng tổng và tích (khuôn Câu III.3 đề Sở)",
+          "band": "VD",
+          "loai": "VD lẻ",
+          "lythuyet": 0,
+          "vidu": 2,
+          "onclass": 3,
+          "btvn": 1,
+          "source_refs": [
+            "v10-so-2026-III3",
+            "v10-tu-lap-III3",
+            "v10-so-2025-III3",
+            "VIET D1.B11"
+          ],
+          "decompose": "vd",
+          "quy_trinh": [
+            "Bước 1 — Cái phải tính là gì? Viết tổng, tích hai nghiệm và kiểm tra dấu của nghiệm nếu cần.",
+            "Bước 2 — Hạ bậc: $x_1$ là nghiệm nên $ax_1^2 = -bx_1 - c$ (tương tự với $x_2$); thay vào các luỹ thừa bậc cao.",
+            "Bước 3 — Biến đổi biểu thức còn lại về tổng và tích (quy đồng, dùng $x_1x_2$ để đổi $\\dfrac{1}{x_1}$ thành $x_2$…).",
+            "Bước 4 — Đã dùng hết giả thiết chưa? Dấu của nghiệm dùng để bỏ trị tuyệt đối, căn bậc hai.",
+            "Bước 5 — Nhìn lại: viết câu \"Vậy …\"."
+          ]
+        },
+        {
+          "dang": "Biểu thức đối xứng phức hợp: $\\frac{1}{x_1^4} + \\frac{1}{x_2^4}$, $(x_1 + 1)(x_2 + 1) - (x_1 - x_2)^2$",
+          "band": "VD",
+          "loai": "VD lẻ",
+          "lythuyet": 0,
+          "vidu": 1,
+          "onclass": 2,
+          "btvn": 3,
+          "source_refs": [
+            "VIET D1 LT",
+            "VIET D1.B2",
+            "VIET D1.B9",
+            "VIET D1.B7"
+          ],
+          "decompose": "vd",
+          "quy_trinh": [
+            "Bước 1 — Cái phải tính là gì? Kiểm tra phương trình có hai nghiệm ($ac < 0$ hoặc $\\Delta \\ge 0$).",
+            "Bước 2 — Viết ngay tổng $x_1 + x_2 = -\\dfrac{b}{a}$ và tích $x_1x_2 = \\dfrac{c}{a}$.",
+            "Bước 3 — Biến đổi biểu thức về tổng và tích bằng các công thức: $x_1^2 + x_2^2$, $x_1^3 + x_2^3$, $(x_1 - x_2)^2$, $\\dfrac{1}{x_1} + \\dfrac{1}{x_2}$.",
+            "Bước 4 — Đã dùng hết giả thiết chưa? Thay tổng, tích vào rồi tính.",
+            "Bước 5 — Nhìn lại: viết câu \"Vậy …\"."
+          ]
+        }
+      ]
+    },
+    {
+      "code": "5",
+      "so_ca": 1,
+      "kiem_tra_phut": 45,
+      "title": "Ca 5 (Tuần 31) — Bài 21: Giải bài toán bằng cách lập phương trình (135 phút) $+$ Kiểm tra chương VI (45 phút)",
+      "rows": [
+        {
+          "dang": "Biểu diễn đại lượng chưa biết theo ẩn (thời gian, năng suất, phần việc)",
+          "band": "NB",
+          "loai": "NB tách TH",
+          "lythuyet": 1,
+          "vidu": 1,
+          "onclass": 3,
+          "btvn": 4,
+          "source_refs": [
+            "LPT D2.VD3",
+            "LPT D4.VD5",
+            "LPT D5.VD6"
+          ],
+          "decompose": "none"
+        },
+        {
+          "dang": "Chọn phương trình đúng từ dữ kiện bài toán",
+          "band": "NB",
+          "loai": "NB tách TH",
+          "lythuyet": 1,
+          "vidu": 1,
+          "onclass": 3,
+          "btvn": 4,
+          "source_refs": [
+            "LPT D4.VD5",
+            "v10-so-minh-hoa-III2",
+            "v10-chuong-my-4-III2"
+          ],
+          "decompose": "none",
+          "gian_giao": "dien-khuyet"
+        },
+        {
+          "dang": "Giải phương trình nhận được, chọn nghiệm thoả mãn điều kiện của ẩn",
+          "band": "NB",
+          "loai": "NB tách TH",
+          "lythuyet": 0,
+          "vidu": 0,
+          "onclass": 3,
+          "btvn": 4,
+          "source_refs": [
+            "v10-chuong-my-4-III2",
+            "v10-dong-da-01-III1"
+          ],
+          "decompose": "none"
+        },
+        {
+          "dang": "Bài toán hình học, quan hệ giữa các số dẫn tới phương trình bậc hai",
+          "band": "TH",
+          "loai": "TH ghép bài",
+          "lythuyet": 0,
+          "vidu": 1,
+          "onclass": 3,
+          "btvn": 4,
+          "source_refs": [
+            "LPT D3.VD4",
+            "LPT D3.B1",
+            "LPT D3.B12",
+            "v10-dong-da-01-III1"
+          ],
+          "decompose": "th2nb"
+        },
+        {
+          "dang": "Viết lại quy trình giải bài toán bằng cách lập phương trình và chỉ ra bước hay mất điểm",
+          "band": "TH",
+          "loai": "TH lẻ LT",
+          "lythuyet": 0,
+          "vidu": 0,
+          "onclass": 1,
+          "btvn": 1,
+          "source_refs": [],
+          "decompose": "none",
+          "viet_quy_trinh": true
+        },
+        {
+          "dang": "Bài toán chuyển động có ẩn ở mẫu",
+          "band": "VD",
+          "loai": "VD lẻ",
+          "lythuyet": 0,
+          "vidu": 2,
+          "onclass": 2,
+          "btvn": 2,
+          "source_refs": [
+            "LPT D2.VD3",
+            "LPT D2.B4",
+            "v10-chuong-my-5-III1"
+          ],
+          "decompose": "vd",
+          "quy_trinh": [
+            "Bước 1 — Cái phải tìm là gì? Gọi ẩn cho đại lượng đề hỏi, ghi đơn vị và điều kiện.",
+            "Bước 2 — Biểu diễn các đại lượng còn lại theo ẩn (thời gian $=$ quãng đường : vận tốc, số ngày $=$ khối lượng công việc : năng suất…).",
+            "Bước 3 — Đã dùng hết dữ kiện chưa? Dữ kiện còn lại (sớm hơn, chênh lệch, tổng) cho phương trình.",
+            "Bước 4 — Giải phương trình (quy đồng, đưa về bậc hai), tìm nghiệm.",
+            "Bước 5 — Nhìn lại: đối chiếu điều kiện, loại nghiệm không thoả mãn, trả lời bằng câu \"Vậy …\"."
+          ]
+        },
+        {
+          "dang": "Bài toán năng suất, làm chung làm riêng",
+          "band": "VD",
+          "loai": "VD lẻ",
+          "lythuyet": 0,
+          "vidu": 1,
+          "onclass": 2,
+          "btvn": 2,
+          "source_refs": [
+            "LPT D4.VD5",
+            "LPT D4.B6",
+            "LPT D5.VD6",
+            "v10-so-minh-hoa-III2",
+            "v10-ung-hoa-III2"
+          ],
+          "decompose": "vd",
+          "quy_trinh": [
+            "Bước 1 — Cái phải tìm là gì? Gọi ẩn cho đại lượng đề hỏi, ghi đơn vị và điều kiện.",
+            "Bước 2 — Biểu diễn các đại lượng còn lại theo ẩn (thời gian $=$ quãng đường : vận tốc, số ngày $=$ khối lượng công việc : năng suất…).",
+            "Bước 3 — Đã dùng hết dữ kiện chưa? Dữ kiện còn lại (sớm hơn, chênh lệch, tổng) cho phương trình.",
+            "Bước 4 — Giải phương trình (quy đồng, đưa về bậc hai), tìm nghiệm.",
+            "Bước 5 — Nhìn lại: đối chiếu điều kiện, loại nghiệm không thoả mãn, trả lời bằng câu \"Vậy …\"."
+          ]
+        }
+      ]
+    }
+  ]
+}

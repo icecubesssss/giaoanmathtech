@@ -1,0 +1,857 @@
+{
+  "_nguon": "Tiến độ trung tâm lớp 9 đại số: tuần 16 (Căn bậc hai. Căn thức bậc hai. Căn bậc ba), tuần 17 (Liên hệ giữa phép nhân và phép chia với phép khai phương), tuần 18 (Biến đổi đơn giản biểu thức chứa căn thức bậc hai), tuần 19 (Rút gọn biểu thức chứa căn thức bậc hai), tuần 20 (Luyện tập rút gọn biểu thức chứa căn và các câu hỏi phụ). Nguồn bài ở nguon-pdf của chương. Mã trích dẫn: 'CBH Dn.Bm' = '1. CĂN BẬC HAI VÀ CĂN THỨC BẬC HAI.pdf' Dạng n Bài m (VD = ví dụ); 'LHN Dn.Bm' = '2. LIÊN HỆ GIỮA PHÉP NHÂN VÀ PHÉP CHIA VỚI PHÉP KHAI PHƯƠNG.pdf' (LT = phần lý thuyết, MR = phần mở rộng GTLN, GTNN); 'BĐĐG Dn.Bm' = '3. BIẾN ĐỔI ĐƠN GIẢN BIỂU THỨC CHỨA CĂN THỨC BẬC HAI.pdf'; 'GPT Dn.Bm' = '4a. Giải phương trình.pdf'; 'GTLN Dn.Bm' = '4b. Tìm GTLN, GTNN.pdf'; 'PNG Dn.Bm' = '4c. Tìm x để P nguyên.pdf'; 'RGV10 Cn' = '4d. RÚT GỌN BIỂU THỨC CHỨA CĂN THỨC BẬC HAI. CÂU 2 - ĐỀ THI VÀO 10.pdf' Câu n; 'CBB Bm' = '5. CĂN BẬC BA. CĂN THỨC BẬC BA.pdf'; mã 'ck1-…', 'gk1-…' = câu trong ngân hàng đề inputs/refs/de-thi/lop-9/exams.",
+  "_luat": "Soạn theo HUONG-DAN-SOAN-PHIEU-B.md. Bản đồ VD-VDC: chương III lớp 9 co_vd = true, p = 0,048 (1/21 đề có câu cuối đề thuộc chương) => nhóm THẤP: NB 15 / TH 30 / VD 50 / VDC 5, trần 10,0, mục tiêu an-tron; mỗi phiếu một buổi 180 phút; phiếu thường không có câu VDC, câu VDC đặt ở phiếu 5 (bài tập về nhà).",
+  "_cam": "Phương trình bậc hai (chương VI) chưa học: mọi phương trình, câu hỏi phụ đưa về bậc nhất theo $x$ hoặc theo $\\sqrt{x}$; không đặt ẩn phụ ra tam thức bậc hai. Không gọi tên bất đẳng thức Cô-si: câu GTLN, GTNN viết dưới dạng tách phần nguyên hoặc xét hiệu ra bình phương.",
+  "slug": "thuyet-minh-lop-9b-chuong-03-can-bac-hai-can-bac-ba",
+  "title": "Chương III. Căn bậc hai và căn bậc ba (tuần 16 $-$ 20)",
+  "grade": "lop-9",
+  "subject": "dai-so",
+  "tier": "B",
+  "tuan": "16-20",
+  "chuong": "chuong-03-can-bac-hai-can-bac-ba",
+  "thoiluong": [
+    "Ca 1 (Tuần 16) — SGK Bài 7: Căn bậc hai và căn thức bậc hai $+$ Bài 10: Căn bậc ba và căn thức bậc ba: 1 ca $=$ 180 phút.",
+    "Ca 2 (Tuần 17) — SGK Bài 8: Khai căn bậc hai với phép nhân và phép chia: 1 ca $=$ 180 phút.",
+    "Ca 3 (Tuần 18) — SGK Bài 9 (phần 1): Biến đổi đơn giản biểu thức chứa căn thức bậc hai: 1 ca $=$ 180 phút.",
+    "Ca 4 (Tuần 19) — SGK Bài 9 (phần 2): Rút gọn biểu thức chứa căn thức bậc hai: 1 ca $=$ 180 phút.",
+    "Ca 5 (Tuần 20) — Luyện tập chung $+$ Bài tập cuối chương III: 1 ca $=$ 180 phút $=$ 135 phút luyện tập câu hỏi phụ của Bài I $+$ 45 phút kiểm tra chương.",
+    "\\textbf{Tổng 5 ca $=$ 900 phút} (1 ca 180 phút $=$ 4 tiết), trong đó 45 phút là bài kiểm tra chương.",
+    "ĐỐI CHIẾU phân phối chương trình SGK KNTT: chương III có 13 tiết (Bài 7: 2, Bài 8: 2, Bài 9: 3, Bài 10: 1, Luyện tập chung và Bài tập cuối chương: 5).",
+    "Trung tâm dạy 19 tiết $+$ 1 tiết kiểm tra, dày hơn sách ở Bài 9 và phần câu hỏi phụ vì bài rút gọn biểu thức chứa căn chiếm trung bình $2{,}27$ điểm mỗi đề cuối kì I; Bài 10 (căn bậc ba) dạy gọn trong ca 1."
+  ],
+  "kien_thuc_nen": [
+    "\\textbf{Căn bậc hai số học, số vô tỉ} (Lớp 7): $\\sqrt{a}$ với $a \\ge 0$, dùng máy tính cầm tay tính gần đúng — chương III mở rộng sang căn thức chứa chữ.",
+    "\\textbf{Giá trị tuyệt đối} (Lớp 7): $|A| = A$ khi $A \\ge 0$, $|A| = -A$ khi $A < 0$ — nền của $\\sqrt{A^2} = |A|$ và phương trình $|A| = k$.",
+    "\\textbf{Bảy hằng đẳng thức đáng nhớ} (Lớp 8): $(a \\pm b)^2$, $a^2 - b^2$ dùng để viết $a \\pm 2\\sqrt{b}$ thành bình phương, nhân liên hợp và phân tích $x - a^2 = (\\sqrt{x} - a)(\\sqrt{x} + a)$.",
+    "\\textbf{Phân thức đại số: điều kiện xác định, rút gọn, quy đồng, cộng trừ nhân chia} (Lớp 8): Bài I rút gọn biểu thức chứa căn là phép tính phân thức với ẩn $\\sqrt{x}$.",
+    "\\textbf{Phương trình bậc nhất một ẩn} (Lớp 8, chương I) và \\textbf{bất phương trình bậc nhất một ẩn} (chương II): câu hỏi phụ $P = k$, $P < k$ quy về phương trình, bất phương trình bậc nhất ẩn $\\sqrt{x}$.",
+    "\\textbf{Định lí Pythagore} (Lớp 8): bài thực tế tính cạnh, đường chéo bằng căn bậc hai.",
+    "\\textbf{Ước của một số nguyên, số nguyên tố} (Lớp 6): tìm $x$ nguyên để $P$ nhận giá trị nguyên, tìm số nguyên tố $x$ thoả mãn bất đẳng thức."
+  ],
+  "lythuyet": [
+    "\\textbf{Mục tiêu của chương}: \\textbf{thành thạo thực hiện phép tính chứa căn} (Bài I.1 đề cuối kì I) và làm trọn \\textbf{Bài I rút gọn biểu thức chứa căn} — khuôn lặp ở 10/11 đề cuối kì I đã rà: cho $A$, $B$ kèm điều kiện; 1) tính $A$ tại $x = x_0$ ($0{,}5$ điểm); 2) rút gọn hoặc chứng minh $B$ ($0{,}5 - 1{,}0$ điểm); 3) câu hỏi phụ với $P = A \\cdot B$ hoặc $P = B : A$ ($0{,}5$ điểm).",
+    "\\textbf{Trọng số đề}: bài biểu thức chứa căn trung bình $2{,}27$ điểm mỗi đề cuối kì I, trong đó phần Nhận biết $+$ Thông hiểu là $1{,}78$ điểm; đề giữa kì I chỉ 1/10 đề có (chương học sau giữa kì).",
+    "Bản đồ VD-VDC: chương thuộc nhóm tần suất VDC \\emph{thấp} ($p = 0{,}05$: 1/21 đề có câu cuối đề thuộc chương này) nên tỉ lệ trên lớp là 15 NB $/$ 30 TH $/$ 55 VD $+$ VDC; phiếu 1 $-$ 4 không có câu VDC, câu VDC (giá trị lớn nhất, nhỏ nhất của biểu thức chứa căn) đặt ở phiếu 5.",
+    "\\textbf{Căn bậc hai, căn thức bậc hai}: $\\sqrt{A}$ xác định khi $A \\ge 0$; $\\sqrt{A^2} = |A|$.",
+    "\\textbf{Khai căn bậc hai với phép nhân, phép chia}: $\\sqrt{A}\\cdot\\sqrt{B} = \\sqrt{AB}$ ($A, B \\ge 0$); $\\dfrac{\\sqrt{A}}{\\sqrt{B}} = \\sqrt{\\dfrac{A}{B}}$ ($A \\ge 0$, $B > 0$).",
+    "\\textbf{Biến đổi đơn giản}: đưa thừa số ra ngoài, vào trong dấu căn; khử mẫu của biểu thức lấy căn; trục căn thức ở mẫu bằng biểu thức liên hợp.",
+    "\\textbf{Căn bậc ba}: $\\sqrt[3]{a^3} = a$ với mọi số thực $a$; trong 21 đề giữa kì I, cuối kì I đã rà không có câu nào về căn bậc ba nên chỉ dạy ở mức nhận biết và bài thực tế.",
+    "\\textbf{Chuẩn đầu ra}: làm trọn ý 1 và ý 2 Bài I ($\\approx 1{,}5$ điểm) và câu hỏi phụ dạng $P = k$, $P < k$, $x$ nguyên; câu giá trị lớn nhất, nhỏ nhất là phần vận dụng cao, giao ở phiếu 5."
+  ],
+  "vidu": [
+    "Ca 1: bỏ dấu căn $\\sqrt{(1 - \\sqrt{2})^2}$; viết $4 + 2\\sqrt{3}$ thành bình phương; giải phương trình $\\sqrt{x^2 + 6x + 9} = 2018$ và $\\sqrt{x^2 - 2x + 1} = 3x + 2$.",
+    "Ca 2: tính $\\sqrt{5}\\left(\\sqrt{125} + \\sqrt{5}\\right)$, $\\sqrt{\\sqrt{2} - 1}\\cdot\\sqrt{\\sqrt{2} + 1}$; giải phương trình $\\frac{\\sqrt{9x^2 - 16}}{\\sqrt{3x - 4}} = 2$ (vô nghiệm sau khi đối chiếu).",
+    "Ca 3: trục căn thức $\\frac{3}{\\sqrt{5} - \\sqrt{2}}$, $\\frac{x - 36}{\\sqrt{x} - 6}$; tính $\\left(1 - \\frac{5 + \\sqrt{5}}{1 + \\sqrt{5}}\\right)\\left(\\frac{5 - \\sqrt{5}}{1 - \\sqrt{5}} - 1\\right)$.",
+    "Ca 4, \\textbf{ví dụ trục}: chứng minh $B = \\frac{x + 15}{x - 9} + \\frac{1}{\\sqrt{x} + 3} - \\frac{4}{\\sqrt{x} - 3} = \\frac{\\sqrt{x}}{\\sqrt{x} + 3}$ (đề cuối kì I THCS Ngọc Lâm), viết như khi đi thi.",
+    "Ca 5: tìm $x$ để $P = \\frac{1}{3}$; Bài I đầy đủ có câu tìm $x$ nguyên lớn nhất để $P < 3$; tìm giá trị lớn nhất của $M = \\frac{\\sqrt{x} + 5}{\\sqrt{x} + 3}$."
+  ],
+  "dang_vd": [
+    "\\textbf{Câu hỏi phụ của Bài I} ($0{,}5$ điểm, 9/9 câu VD của chương trong ngân hàng đề): tìm $x$ để $P = k$, $P < k$; tìm $x$ nguyên, $x$ nguyên tố thoả mãn bất đẳng thức; tìm $x$ để $P$ nguyên (ca 5).",
+    "\\textbf{Rút gọn, chứng minh $B$ gồm ba phân thức} (ca 4): phân tích mẫu, đổi dấu, quy đồng, thu gọn tử, phân tích tử, rút gọn — ý 2 Bài I.",
+    "\\textbf{Phép tính nhiều bước và phương trình chứa căn} (ca 1 $-$ 3): trục căn thức rồi rút gọn trong ngoặc; phương trình đưa về $|A| = B$, về $\\sqrt{A} = k$ sau khi thu gọn căn đồng dạng.",
+    "\\textbf{Câu VDC}: giá trị lớn nhất, nhỏ nhất của biểu thức chứa $\\sqrt{x}$ (tách phần nguyên, xét hiệu ra bình phương) — chỉ ở phiếu 5.",
+    "Bài thực tế dùng căn (tốc độ khủng long, cân nặng hươu cao cổ, cạnh khối lập phương, vườn hình vuông) chỉ thay số vào công thức 2 $-$ 3 bước nên theo quy ước là THÔNG HIỂU."
+  ],
+  "loisai": [
+    "\\textbf{Bỏ dấu căn quên giá trị tuyệt đối}: viết $\\sqrt{(\\sqrt{3} - 2)^2} = \\sqrt{3} - 2$ trong khi $\\sqrt{3} - 2 < 0$.",
+    "\\textbf{Điều kiện xác định thiếu dấu bằng hoặc thiếu điều kiện mẫu}: $\\sqrt{x - 6}$ có nghĩa khi $x > 6$; biểu thức có $\\sqrt{x} - 3$ ở mẫu mà quên $x \\neq 9$.",
+    "\\textbf{Cộng các căn không đồng dạng}: $\\sqrt{12} + \\sqrt{3} = \\sqrt{15}$; quên đưa thừa số ra ngoài dấu căn trước khi cộng.",
+    "\\textbf{Trục căn thức nhân sai biểu thức liên hợp} hoặc quên nhân cả tử.",
+    "\\textbf{Rút gọn bằng cách gạch hạng tử}: $\\frac{x - 1}{\\sqrt{x} - 1} = \\sqrt{x} - 1$; chưa phân tích tử, mẫu thành nhân tử đã chia.",
+    "\\textbf{Câu hỏi phụ}: từ $\\sqrt{x} = \\frac{1}{2}$ kết luận $x = \\frac{1}{2}$; nhân hai vế với mẫu chưa biết dấu; quên đối chiếu điều kiện xác định khi kết luận."
+  ],
+  "kienthuc_nb": [
+    "$\\sqrt{A}$ xác định khi $A \\ge 0$; biểu thức có mẫu thì thêm điều kiện mẫu khác $0$.",
+    "$\\sqrt{A^2} = |A|$; $\\left(\\sqrt{A}\\right)^2 = A$ với $A \\ge 0$; $\\sqrt[3]{a^3} = a$.",
+    "$\\sqrt{A}\\cdot\\sqrt{B} = \\sqrt{AB}$ ($A, B \\ge 0$); $\\frac{\\sqrt{A}}{\\sqrt{B}} = \\sqrt{\\frac{A}{B}}$ ($A \\ge 0$, $B > 0$).",
+    "$\\sqrt{A^2 B} = |A|\\sqrt{B}$ ($B \\ge 0$); $\\frac{C}{\\sqrt{A} - B} = \\frac{C(\\sqrt{A} + B)}{A - B^2}$.",
+    "$x - a^2 = (\\sqrt{x} - a)(\\sqrt{x} + a)$; $x \\pm a\\sqrt{x} = \\sqrt{x}(\\sqrt{x} \\pm a)$ với $x \\ge 0$."
+  ],
+  "phieu": [
+    {
+      "code": "1",
+      "so_ca": 1,
+      "title": "Ca 1 (Tuần 16) — Bài 7: Căn bậc hai và căn thức bậc hai $+$ Bài 10: Căn bậc ba và căn thức bậc ba",
+      "rows": [
+        {
+          "dang": "Tính giá trị của căn thức bậc hai, căn thức bậc ba và biểu thức chứa $\\sqrt{x}$ tại giá trị cho trước của biến",
+          "band": "NB",
+          "loai": "NB tách TH",
+          "lythuyet": 1,
+          "vidu": 1,
+          "onclass": 3,
+          "btvn": 3,
+          "source_refs": [
+            "CBH D3.VD5",
+            "CBH D3.B3",
+            "CBH D3.B4",
+            "CBB VD3",
+            "ck1-ngoc-lam-II1"
+          ],
+          "decompose": "none"
+        },
+        {
+          "dang": "Tìm điều kiện xác định của căn thức bậc hai $\\sqrt{A}$",
+          "band": "NB",
+          "loai": "NB tách TH",
+          "lythuyet": 1,
+          "vidu": 1,
+          "onclass": 3,
+          "btvn": 3,
+          "source_refs": [
+            "CBH D3.VD4",
+            "CBH D3.B1"
+          ],
+          "decompose": "none"
+        },
+        {
+          "dang": "Bỏ dấu căn bằng hằng đẳng thức $\\sqrt{A^2} = |A|$",
+          "band": "NB",
+          "loai": "NB tách TH",
+          "lythuyet": 1,
+          "vidu": 1,
+          "onclass": 3,
+          "btvn": 3,
+          "source_refs": [
+            "CBH D4.VD7",
+            "ck1-ngoc-thuy-I1.b",
+            "ck1-ly-thanh-tong-1b",
+            "CBH D4.VD6"
+          ],
+          "decompose": "none",
+          "gian_giao": "dien-khuyet"
+        },
+        {
+          "dang": "Căn bậc ba của một số; tính giá trị biểu thức chứa căn bậc ba",
+          "band": "NB",
+          "loai": "NB lẻ LT",
+          "lythuyet": 1,
+          "vidu": 1,
+          "onclass": 3,
+          "btvn": 3,
+          "source_refs": [
+            "CBB VD1",
+            "CBB B1"
+          ],
+          "decompose": "none"
+        },
+        {
+          "dang": "Rút gọn $\\sqrt{a \\pm 2\\sqrt{b}}$ bằng cách viết biểu thức dưới dấu căn thành bình phương",
+          "band": "TH",
+          "loai": "TH ghép bài",
+          "lythuyet": 0,
+          "vidu": 1,
+          "onclass": 2,
+          "btvn": 2,
+          "source_refs": [
+            "CBH D4.VD7",
+            "CBH D4.B5",
+            "ck1-ly-thanh-tong-1b"
+          ],
+          "decompose": "th2nb"
+        },
+        {
+          "dang": "Rút gọn biểu thức chứa chữ có điều kiện bằng $\\sqrt{A^2} = |A|$",
+          "band": "TH",
+          "loai": "TH ghép bài",
+          "lythuyet": 0,
+          "vidu": 1,
+          "onclass": 2,
+          "btvn": 1,
+          "source_refs": [
+            "CBH D4.VD6",
+            "CBH D4.B1",
+            "CBH D4.B6"
+          ],
+          "decompose": "th2nb"
+        },
+        {
+          "dang": "Bài toán thực tế dùng căn bậc hai, căn bậc ba: thay số vào công thức",
+          "band": "TH",
+          "loai": "TH ghép bài",
+          "lythuyet": 0,
+          "vidu": 1,
+          "onclass": 2,
+          "btvn": 2,
+          "source_refs": [
+            "BĐĐG D4.B3",
+            "CBB VD5",
+            "CBB B12",
+            "CBB B13"
+          ],
+          "decompose": "th2nb"
+        },
+        {
+          "dang": "Giải phương trình đưa về $|A| = B$: $\\sqrt{A^2} = k$ và $\\sqrt{A^2} = g(x)$",
+          "band": "VD",
+          "loai": "VD lẻ",
+          "lythuyet": 0,
+          "vidu": 2,
+          "onclass": 3,
+          "btvn": 2,
+          "source_refs": [
+            "GPT D7.VD",
+            "GPT D7.B1",
+            "GPT D8.VD",
+            "GPT D8.B1"
+          ],
+          "decompose": "vd",
+          "quy_trinh": [
+            "Bước 1 — Cái phải tìm là gì? Viết điều kiện để phương trình có nghĩa (vế phải phải không âm nếu vế trái là căn).",
+            "Bước 2 — Biểu thức dưới dấu căn có viết được thành bình phương $A^2$ không? Đưa về $|A| = B$.",
+            "Bước 3 — Xét hai trường hợp $A = B$ và $A = -B$, giải từng phương trình bậc nhất.",
+            "Bước 4 — Đã dùng hết điều kiện chưa? Đối chiếu từng giá trị với điều kiện, loại giá trị không thoả mãn.",
+            "Bước 5 — Nhìn lại: thay nghiệm vào phương trình ban đầu, viết câu \"Vậy …\"."
+          ]
+        },
+        {
+          "dang": "Rút gọn biểu thức chứa căn có điều kiện rồi tính giá trị tại $x$ cho trước",
+          "band": "VD",
+          "loai": "VD lẻ",
+          "lythuyet": 0,
+          "vidu": 1,
+          "onclass": 2,
+          "btvn": 2,
+          "source_refs": [
+            "LHN D2.B4",
+            "LHN D2.B3"
+          ],
+          "decompose": "vd",
+          "quy_trinh": [
+            "Bước 1 — Cái phải tính là gì? Đọc điều kiện của chữ đề cho.",
+            "Bước 2 — Viết biểu thức dưới dấu căn thành tích hoặc bình phương, khai căn bằng $\\sqrt{A^2} = |A|$.",
+            "Bước 3 — Dùng điều kiện đề cho để bỏ dấu giá trị tuyệt đối, thu gọn biểu thức.",
+            "Bước 4 — Đã dùng hết giả thiết chưa? Kiểm tra giá trị của biến thoả mãn điều kiện rồi thay vào biểu thức ĐÃ RÚT GỌN.",
+            "Bước 5 — Nhìn lại: viết câu \"Vậy …\"."
+          ]
+        }
+      ]
+    },
+    {
+      "code": "2",
+      "so_ca": 1,
+      "title": "Ca 2 (Tuần 17) — Bài 8: Khai căn bậc hai với phép nhân và phép chia",
+      "rows": [
+        {
+          "dang": "Khai căn bậc hai một tích, nhân các căn bậc hai: $\\sqrt{A}\\cdot\\sqrt{B} = \\sqrt{AB}$",
+          "band": "NB",
+          "loai": "NB tách TH",
+          "lythuyet": 1,
+          "vidu": 1,
+          "onclass": 3,
+          "btvn": 3,
+          "source_refs": [
+            "LHN LT.VD",
+            "LHN D1.B1",
+            "ck1-ngoc-lam-I1"
+          ],
+          "decompose": "none"
+        },
+        {
+          "dang": "Khai căn bậc hai một thương, chia các căn bậc hai: $\\frac{\\sqrt{A}}{\\sqrt{B}} = \\sqrt{\\frac{A}{B}}$",
+          "band": "NB",
+          "loai": "NB tách TH",
+          "lythuyet": 1,
+          "vidu": 1,
+          "onclass": 3,
+          "btvn": 3,
+          "source_refs": [
+            "LHN LT.VD",
+            "LHN D1.B2",
+            "ck1-ngoc-lam-I1"
+          ],
+          "decompose": "none"
+        },
+        {
+          "dang": "Nhân phân phối và nhân liên hợp với căn: $\\sqrt{a}(\\sqrt{b} \\pm \\sqrt{c})$, $(\\sqrt{a} - \\sqrt{b})(\\sqrt{a} + \\sqrt{b})$",
+          "band": "NB",
+          "loai": "NB tách TH",
+          "lythuyet": 1,
+          "vidu": 1,
+          "onclass": 3,
+          "btvn": 3,
+          "source_refs": [
+            "LHN D1.VD1",
+            "LHN D1.B3"
+          ],
+          "decompose": "none",
+          "gian_giao": "dien-khuyet"
+        },
+        {
+          "dang": "Khai căn biểu thức chứa chữ: $\\sqrt{16a^4b^2}$, $\\sqrt{5x}\\cdot\\sqrt{45x}$",
+          "band": "NB",
+          "loai": "NB tách TH",
+          "lythuyet": 1,
+          "vidu": 1,
+          "onclass": 3,
+          "btvn": 3,
+          "source_refs": [
+            "LHN D2.VD2",
+            "LHN D2.B1"
+          ],
+          "decompose": "none"
+        },
+        {
+          "dang": "Thực hiện phép tính biểu thức số phối hợp nhân, chia căn bậc hai và hằng đẳng thức",
+          "band": "TH",
+          "loai": "TH ghép bài",
+          "lythuyet": 0,
+          "vidu": 1,
+          "onclass": 2,
+          "btvn": 2,
+          "source_refs": [
+            "LHN D1.VD1",
+            "LHN D1.B3",
+            "LHN D1.B4"
+          ],
+          "decompose": "th2nb"
+        },
+        {
+          "dang": "Rút gọn biểu thức chứa chữ bằng khai căn một tích, một thương (có điều kiện của chữ)",
+          "band": "TH",
+          "loai": "TH ghép bài",
+          "lythuyet": 0,
+          "vidu": 1,
+          "onclass": 2,
+          "btvn": 2,
+          "source_refs": [
+            "LHN D2.VD2",
+            "LHN D2.B1",
+            "LHN D2.B2"
+          ],
+          "decompose": "th2nb"
+        },
+        {
+          "dang": "Tìm $x$ trong phương trình $\\sqrt{A} = k$ sau một bước khai căn tích, thương",
+          "band": "TH",
+          "loai": "TH ghép bài",
+          "lythuyet": 0,
+          "vidu": 1,
+          "onclass": 2,
+          "btvn": 1,
+          "source_refs": [
+            "LHN D3.VD3",
+            "LHN D3.B1",
+            "ck1-ngoc-thuy-I2.a"
+          ],
+          "decompose": "th2nb"
+        },
+        {
+          "dang": "Giải phương trình có căn ở cả tử và mẫu ($\\frac{\\sqrt{A}}{\\sqrt{B}} = k$, $\\sqrt{\\frac{A}{B}} = k$) hoặc hai căn bằng nhau",
+          "band": "VD",
+          "loai": "VD lẻ",
+          "lythuyet": 0,
+          "vidu": 2,
+          "onclass": 3,
+          "btvn": 2,
+          "source_refs": [
+            "LHN D3.VD3",
+            "LHN D3.B2"
+          ],
+          "decompose": "vd",
+          "quy_trinh": [
+            "Bước 1 — Cái phải tìm là gì? Viết điều kiện: biểu thức dưới mỗi dấu căn không âm, mẫu khác $0$.",
+            "Bước 2 — Đưa hai căn về một căn (khai căn một thương) hoặc nhân chéo để bỏ mẫu.",
+            "Bước 3 — Bình phương hai vế (hai vế đều không âm), giải phương trình bậc nhất vừa nhận được.",
+            "Bước 4 — Đã dùng hết điều kiện chưa? Đối chiếu nghiệm với điều kiện ở Bước 1.",
+            "Bước 5 — Nhìn lại: viết câu \"Vậy …\" (có thể là phương trình vô nghiệm)."
+          ]
+        },
+        {
+          "dang": "Rút gọn biểu thức có nhiều căn của bình phương, bỏ giá trị tuyệt đối theo điều kiện của chữ",
+          "band": "VD",
+          "loai": "VD lẻ",
+          "lythuyet": 0,
+          "vidu": 1,
+          "onclass": 2,
+          "btvn": 2,
+          "source_refs": [
+            "LHN D2.B3",
+            "LHN D2.B5"
+          ],
+          "decompose": "vd",
+          "quy_trinh": [
+            "Bước 1 — Cái phải làm là gì? Đọc điều kiện của chữ đề cho.",
+            "Bước 2 — Viết từng biểu thức dưới dấu căn thành bình phương, khai căn bằng $\\sqrt{A^2} = |A|$.",
+            "Bước 3 — Với điều kiện đề cho, xét dấu từng biểu thức trong dấu giá trị tuyệt đối (nếu điều kiện chưa đủ để biết dấu thì chia trường hợp).",
+            "Bước 4 — Bỏ dấu giá trị tuyệt đối rồi thu gọn.",
+            "Bước 5 — Nhìn lại: đã dùng hết giả thiết chưa? Viết \"Vậy …\" cho từng trường hợp."
+          ]
+        }
+      ]
+    },
+    {
+      "code": "3",
+      "so_ca": 1,
+      "title": "Ca 3 (Tuần 18) — Bài 9 (phần 1): Biến đổi đơn giản biểu thức chứa căn thức bậc hai",
+      "rows": [
+        {
+          "dang": "Đưa thừa số ra ngoài dấu căn, nhận ra các căn đồng dạng",
+          "band": "NB",
+          "loai": "NB tách TH",
+          "lythuyet": 1,
+          "vidu": 1,
+          "onclass": 3,
+          "btvn": 3,
+          "source_refs": [
+            "BĐĐG D1.VD1",
+            "BĐĐG D1.B1",
+            "ck1-cau-dien-1a"
+          ],
+          "decompose": "none"
+        },
+        {
+          "dang": "Đưa thừa số vào trong dấu căn",
+          "band": "NB",
+          "loai": "NB lẻ LT",
+          "lythuyet": 1,
+          "vidu": 1,
+          "onclass": 3,
+          "btvn": 3,
+          "source_refs": [
+            "BĐĐG D1.VD2",
+            "BĐĐG D1.B2"
+          ],
+          "decompose": "none"
+        },
+        {
+          "dang": "Khử mẫu của biểu thức lấy căn; trục căn thức ở mẫu dạng $\\frac{a}{\\sqrt{b}}$",
+          "band": "NB",
+          "loai": "NB tách TH",
+          "lythuyet": 1,
+          "vidu": 1,
+          "onclass": 3,
+          "btvn": 3,
+          "source_refs": [
+            "BĐĐG D3.VD4",
+            "BĐĐG D3.B1",
+            "BĐĐG D3.B2",
+            "ck1-ngoc-thuy-I1.c"
+          ],
+          "decompose": "none"
+        },
+        {
+          "dang": "Trục căn thức ở mẫu dạng $\\frac{c}{\\sqrt{a} \\pm b}$ bằng biểu thức liên hợp",
+          "band": "NB",
+          "loai": "NB tách TH",
+          "lythuyet": 1,
+          "vidu": 1,
+          "onclass": 3,
+          "btvn": 3,
+          "source_refs": [
+            "BĐĐG LT.VD",
+            "BĐĐG D3.VD5",
+            "BĐĐG D3.B2",
+            "gk1-thai-thinh-2-1b"
+          ],
+          "decompose": "none",
+          "gian_giao": "dien-khuyet"
+        },
+        {
+          "dang": "Thực hiện phép tính: đưa thừa số ra ngoài dấu căn rồi cộng, trừ căn đồng dạng",
+          "band": "TH",
+          "loai": "TH ghép bài",
+          "lythuyet": 0,
+          "vidu": 1,
+          "onclass": 2,
+          "btvn": 2,
+          "source_refs": [
+            "ck1-cau-dien-1a",
+            "ck1-ly-thanh-tong-1a",
+            "ck1-ngoc-thuy-I1.a",
+            "BĐĐG D1.B3"
+          ],
+          "decompose": "th2nb"
+        },
+        {
+          "dang": "Thực hiện phép tính có trục căn thức ở mẫu (Bài I.1 đề cuối kì I)",
+          "band": "TH",
+          "loai": "TH ghép bài",
+          "lythuyet": 0,
+          "vidu": 1,
+          "onclass": 2,
+          "btvn": 2,
+          "source_refs": [
+            "ck1-ngoc-thuy-I1.c",
+            "gk1-thai-thinh-2-1b",
+            "BĐĐG D3.B4"
+          ],
+          "decompose": "th2nb"
+        },
+        {
+          "dang": "Bài toán thực tế: tính cạnh hình vuông từ diện tích rồi tính chu vi",
+          "band": "TH",
+          "loai": "TH ghép bài",
+          "lythuyet": 0,
+          "vidu": 1,
+          "onclass": 2,
+          "btvn": 1,
+          "source_refs": [
+            "BĐĐG D4.B4",
+            "BĐĐG D4.B5"
+          ],
+          "decompose": "th2nb"
+        },
+        {
+          "dang": "Thực hiện phép tính nhiều bước: trục căn thức, rút gọn trong ngoặc rồi nhân",
+          "band": "VD",
+          "loai": "VD lẻ",
+          "lythuyet": 0,
+          "vidu": 2,
+          "onclass": 3,
+          "btvn": 2,
+          "source_refs": [
+            "ck1-cau-dien-1b",
+            "ck1-phuong-ha-dong-11.b",
+            "BĐĐG D3.B5"
+          ],
+          "decompose": "vd",
+          "quy_trinh": [
+            "Bước 1 — Cái phải tính là gì? Nhìn cả biểu thức: có mẫu chứa căn nào phải trục, có căn nào đưa thừa số ra ngoài được?",
+            "Bước 2 — Làm trong ngoặc trước: trục căn thức ở mẫu (nhân với biểu thức liên hợp) hoặc phân tích tử để rút gọn.",
+            "Bước 3 — Đưa thừa số ra ngoài dấu căn, cộng trừ các căn đồng dạng.",
+            "Bước 4 — Thực hiện phép nhân, chia phía ngoài ngoặc (dùng hằng đẳng thức nếu gặp $(a-b)(a+b)$).",
+            "Bước 5 — Nhìn lại: kết quả đã gọn chưa (không còn căn ở mẫu)? Viết câu \"Vậy …\"."
+          ]
+        },
+        {
+          "dang": "Giải phương trình chứa căn: đưa thừa số ra ngoài dấu căn, thu gọn căn đồng dạng",
+          "band": "VD",
+          "loai": "VD lẻ",
+          "lythuyet": 0,
+          "vidu": 1,
+          "onclass": 2,
+          "btvn": 2,
+          "source_refs": [
+            "BĐĐG D1.B7",
+            "LHN D3.B1"
+          ],
+          "decompose": "vd",
+          "quy_trinh": [
+            "Bước 1 — Cái phải tìm là gì? Viết điều kiện xác định của các căn.",
+            "Bước 2 — Đưa thừa số ra ngoài dấu căn để các căn trở thành căn đồng dạng.",
+            "Bước 3 — Thu gọn các căn đồng dạng, đưa về dạng $\\sqrt{A} = k$ ($k \\ge 0$).",
+            "Bước 4 — Bình phương hai vế, giải tìm $x$, đối chiếu điều kiện.",
+            "Bước 5 — Nhìn lại: viết câu \"Vậy …\"."
+          ]
+        }
+      ]
+    },
+    {
+      "code": "4",
+      "so_ca": 1,
+      "title": "Ca 4 (Tuần 19) — Bài 9 (phần 2): Rút gọn biểu thức chứa căn thức bậc hai",
+      "rows": [
+        {
+          "dang": "Tìm điều kiện xác định của biểu thức có $\\sqrt{x}$ ở mẫu",
+          "band": "NB",
+          "loai": "NB tách TH",
+          "lythuyet": 1,
+          "vidu": 1,
+          "onclass": 3,
+          "btvn": 3,
+          "source_refs": [
+            "ck1-tan-trieu-21",
+            "ck1-phuc-dong-II1",
+            "RGV10 C2"
+          ],
+          "decompose": "none"
+        },
+        {
+          "dang": "Tính giá trị biểu thức $A$ tại $x = x_0$ (Bài I ý 1)",
+          "band": "NB",
+          "loai": "NB tách TH",
+          "lythuyet": 0,
+          "vidu": 1,
+          "onclass": 3,
+          "btvn": 3,
+          "source_refs": [
+            "ck1-ngoc-lam-II1",
+            "ck1-cau-dien-3Aa",
+            "ck1-chu-van-an-I1",
+            "ck1-dich-vong-IIa"
+          ],
+          "decompose": "none"
+        },
+        {
+          "dang": "Phân tích thành nhân tử với ẩn $\\sqrt{x}$: $x - a^2$, $x \\pm a\\sqrt{x}$, $x \\pm 2a\\sqrt{x} + a^2$",
+          "band": "NB",
+          "loai": "NB tách TH",
+          "lythuyet": 1,
+          "vidu": 1,
+          "onclass": 3,
+          "btvn": 3,
+          "source_refs": [
+            "CBH D4.B4",
+            "ck1-ngoc-lam-II2",
+            "RGV10 C11"
+          ],
+          "decompose": "none"
+        },
+        {
+          "dang": "Tìm mẫu thức chung, nhân tử phụ; viết tử thức sau khi quy đồng",
+          "band": "NB",
+          "loai": "NB tách TH",
+          "lythuyet": 1,
+          "vidu": 1,
+          "onclass": 3,
+          "btvn": 3,
+          "source_refs": [
+            "ck1-tan-trieu-22",
+            "ck1-dich-vong-IIb",
+            "gk1-thai-thinh-2-2b"
+          ],
+          "decompose": "none",
+          "gian_giao": "dien-khuyet"
+        },
+        {
+          "dang": "Rút gọn phân thức chứa căn bằng phân tích thành nhân tử",
+          "band": "TH",
+          "loai": "TH ghép bài",
+          "lythuyet": 0,
+          "vidu": 1,
+          "onclass": 2,
+          "btvn": 2,
+          "source_refs": [
+            "CBH D4.B2",
+            "BĐĐG D3.VD5",
+            "BĐĐG D3.B6"
+          ],
+          "decompose": "th2nb"
+        },
+        {
+          "dang": "Rút gọn biểu thức hai phân thức chứa $\\sqrt{x}$, có đổi dấu mẫu",
+          "band": "TH",
+          "loai": "TH ghép bài",
+          "lythuyet": 0,
+          "vidu": 1,
+          "onclass": 2,
+          "btvn": 2,
+          "source_refs": [
+            "RGV10 C3",
+            "RGV10 C28",
+            "ck1-chu-van-an-I2"
+          ],
+          "decompose": "th2nb"
+        },
+        {
+          "dang": "Tính giá trị của $A$ tại $x$ thoả mãn một đẳng thức, loại giá trị không thoả mãn điều kiện",
+          "band": "TH",
+          "loai": "TH tách VD",
+          "lythuyet": 0,
+          "vidu": 1,
+          "onclass": 2,
+          "btvn": 1,
+          "source_refs": [
+            "RGV10 C26",
+            "RGV10 C33",
+            "RGV10 C38"
+          ],
+          "decompose": "th2nb"
+        },
+        {
+          "dang": "Rút gọn hoặc chứng minh biểu thức $B$ ba phân thức (Bài I ý 2)",
+          "band": "VD",
+          "loai": "VD lẻ",
+          "lythuyet": 0,
+          "vidu": 2,
+          "onclass": 3,
+          "btvn": 2,
+          "source_refs": [
+            "ck1-ngoc-lam-II2",
+            "ck1-phuc-dong-II2",
+            "ck1-trung-vuong-I2",
+            "ck1-dich-vong-IIb"
+          ],
+          "decompose": "vd",
+          "quy_trinh": [
+            "Bước 1 — Cái phải làm là gì? Đọc điều kiện xác định đề cho.",
+            "Bước 2 — Phân tích các mẫu thành nhân tử với ẩn $\\sqrt{x}$; mẫu nào ngược dấu thì đổi dấu cả phân thức.",
+            "Bước 3 — Tìm mẫu thức chung, nhân tử phụ của từng phân thức rồi quy đồng.",
+            "Bước 4 — Cộng, trừ các tử (dấu trừ trước ngoặc đổi dấu mọi hạng tử), thu gọn tử rồi phân tích tử thành nhân tử.",
+            "Bước 5 — Rút gọn nhân tử chung của tử và mẫu.",
+            "Bước 6 — Nhìn lại: đã dùng hết giả thiết chưa? Kết quả có trùng biểu thức đề bắt chứng minh không? Viết \"Vậy …\"."
+          ]
+        },
+        {
+          "dang": "Rút gọn biểu thức có ngoặc rồi nhân, chia",
+          "band": "VD",
+          "loai": "VD lẻ",
+          "lythuyet": 0,
+          "vidu": 1,
+          "onclass": 2,
+          "btvn": 2,
+          "source_refs": [
+            "RGV10 C5",
+            "RGV10 C10",
+            "RGV10 C15"
+          ],
+          "decompose": "vd",
+          "quy_trinh": [
+            "Bước 1 — Cái phải làm là gì? Đọc điều kiện xác định đề cho.",
+            "Bước 2 — Rút gọn biểu thức trong ngoặc: phân tích mẫu, quy đồng, thu gọn tử.",
+            "Bước 3 — Phép chia thì đổi thành nhân với phân thức nghịch đảo.",
+            "Bước 4 — Phân tích tử và mẫu thành nhân tử rồi rút gọn nhân tử chung.",
+            "Bước 5 — Nhìn lại: đã dùng hết giả thiết chưa? Viết \"Vậy …\"."
+          ]
+        }
+      ]
+    },
+    {
+      "code": "5",
+      "so_ca": 1,
+      "kiem_tra_phut": 45,
+      "title": "Ca 5 (Tuần 20) — Luyện tập chung và Bài tập cuối chương III: câu hỏi phụ của Bài I (135 phút) $+$ Kiểm tra chương III (45 phút)",
+      "rows": [
+        {
+          "dang": "Lập $P = A \\cdot B$ hoặc $P = B : A$ rồi rút gọn",
+          "band": "NB",
+          "loai": "NB tách TH",
+          "lythuyet": 1,
+          "vidu": 0,
+          "onclass": 3,
+          "btvn": 4,
+          "source_refs": [
+            "ck1-ngoc-lam-II3",
+            "ck1-chu-van-an-I3",
+            "ck1-phuc-dong-II3"
+          ],
+          "decompose": "none"
+        },
+        {
+          "dang": "Xét dấu phân thức chứa $\\sqrt{x}$; từ $\\sqrt{x} < a$ suy ra khoảng giá trị của $x$",
+          "band": "NB",
+          "loai": "NB tách TH",
+          "lythuyet": 1,
+          "vidu": 1,
+          "onclass": 3,
+          "btvn": 4,
+          "source_refs": [
+            "ck1-tan-trieu-23",
+            "gk1-thai-thinh-2-2c",
+            "ck1-trung-vuong-I3"
+          ],
+          "decompose": "none"
+        },
+        {
+          "dang": "Điền khuyết lời giải một Bài I trọn vẹn theo khuôn đi thi",
+          "band": "NB",
+          "loai": "NB ghép bài",
+          "lythuyet": 0,
+          "vidu": 0,
+          "onclass": 3,
+          "btvn": 4,
+          "source_refs": [
+            "RGV10 C1",
+            "ck1-dich-vong-IIa"
+          ],
+          "decompose": "none",
+          "gian_giao": "dien-khuyet"
+        },
+        {
+          "dang": "Tìm $x$ để $P = k$, có đối chiếu điều kiện",
+          "band": "TH",
+          "loai": "TH tách VD",
+          "lythuyet": 0,
+          "vidu": 1,
+          "onclass": 2,
+          "btvn": 2,
+          "source_refs": [
+            "ck1-ngoc-lam-II3",
+            "ck1-dich-vong-IIc",
+            "GPT D2.B1"
+          ],
+          "decompose": "th2nb"
+        },
+        {
+          "dang": "Viết lại quy trình ba câu hỏi phụ của Bài I ($P = k$, $P < k$, $P$ nguyên) và chỉ ra bước hay mất điểm",
+          "band": "TH",
+          "loai": "TH lẻ LT",
+          "lythuyet": 0,
+          "vidu": 0,
+          "onclass": 1,
+          "btvn": 1,
+          "source_refs": [],
+          "decompose": "none",
+          "viet_quy_trinh": true
+        },
+        {
+          "dang": "Tìm $x$ để $P < k$ khi mẫu của $P$ luôn dương",
+          "band": "TH",
+          "loai": "TH tách VD",
+          "lythuyet": 0,
+          "vidu": 0,
+          "onclass": 1,
+          "btvn": 1,
+          "source_refs": [
+            "ck1-chu-van-an-I3",
+            "RGV10 C22"
+          ],
+          "decompose": "th2nb"
+        },
+        {
+          "dang": "Bài I đầy đủ: tính $A$, rút gọn $B$, tìm $x$ (nguyên) để $P$ thoả mãn bất đẳng thức",
+          "band": "VD",
+          "loai": "VD lẻ",
+          "lythuyet": 0,
+          "vidu": 1,
+          "onclass": 2,
+          "btvn": 2,
+          "source_refs": [
+            "ck1-tan-trieu-22",
+            "ck1-tan-trieu-23",
+            "ck1-phuong-ha-dong-23",
+            "ck1-chu-van-an-I3"
+          ],
+          "decompose": "vd",
+          "quy_trinh": [
+            "Bước 1 — Cái phải tìm là gì? Viết lại $P$ đã rút gọn và điều kiện xác định.",
+            "Bước 2 — Lập phương trình hoặc bất phương trình theo yêu cầu ($P = k$, $P < k$…), chuyển về một vế, quy đồng.",
+            "Bước 3 — Xét dấu của mẫu (thường mẫu luôn dương) để bỏ mẫu mà không đổi chiều.",
+            "Bước 4 — Giải ra điều kiện của $\\sqrt{x}$ rồi của $x$.",
+            "Bước 5 — Đã dùng hết giả thiết chưa? Kết hợp điều kiện xác định và yêu cầu ($x$ nguyên, $x$ nguyên tố…), viết \"Vậy …\"."
+          ]
+        },
+        {
+          "dang": "Tìm $x$ để $P$ nhận giá trị nguyên",
+          "band": "VD",
+          "loai": "VD lẻ",
+          "lythuyet": 0,
+          "vidu": 1,
+          "onclass": 2,
+          "btvn": 1,
+          "source_refs": [
+            "PNG D1.VD",
+            "PNG D1.B1",
+            "PNG D3.B1",
+            "RGV10 C2"
+          ],
+          "decompose": "vd",
+          "quy_trinh": [
+            "Bước 1 — Cái phải tìm là gì? Viết điều kiện xác định và yêu cầu ($x$ nguyên hay $x$ thực).",
+            "Bước 2 — Tách $P$ thành phần nguyên cộng một phân số có tử là hằng số: $P = a + \\dfrac{c}{\\sqrt{x} + d}$.",
+            "Bước 3 — $P$ nguyên khi mẫu là ước của tử (với $x$ nguyên), hoặc chặn hai đầu giá trị của $P$ (với $x$ thực).",
+            "Bước 4 — Lập bảng các giá trị, tìm $\\sqrt{x}$ rồi $x$.",
+            "Bước 5 — Đã dùng hết giả thiết chưa? Đối chiếu điều kiện xác định, viết \"Vậy …\"."
+          ]
+        },
+        {
+          "dang": "Tìm giá trị lớn nhất, nhỏ nhất của biểu thức chứa $\\sqrt{x}$ (câu cuối đề)",
+          "band": "VDC",
+          "loai": "VD lẻ",
+          "lythuyet": 0,
+          "vidu": 1,
+          "onclass": 0,
+          "btvn": 1,
+          "source_refs": [
+            "GTLN D1.VD",
+            "GTLN D2.B1",
+            "LHN MR.B6",
+            "ck1-ngoc-thuy-IV"
+          ],
+          "decompose": "vdc"
+        }
+      ]
+    }
+  ]
+}

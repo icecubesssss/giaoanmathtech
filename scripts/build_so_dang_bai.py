@@ -155,6 +155,74 @@ def dong_tan_suat(ts: list[int], chi_ky: list[str] | None = None) -> str:
     return s + (" (chỉ tính kỳ II)" if chi_ky else "")
 
 
+
+# ─────────────────────────── XUỐNG DÒNG (Thầy 01/10/2026: "nên xuống dòng nữa") ───────────────────────────
+import re as _re
+_MUI = _re.compile(r"\\(?:Rightarrow|Leftrightarrow)")
+
+
+def _tach_toan(m: str) -> list[str]:
+    """Cắt một đoạn toán DÀI tại các mũi tên ⇒/⇔ nằm ở mức ngoặc 0 và NGOÀI \\begin…\\end."""
+    if len(m) < 55 and "\\Leftrightarrow" not in m:
+        return [_re.sub(r"^\s*\\Leftrightarrow\s*", "", m)]
+    cut, depth, env, i = [], 0, 0, 0
+    while i < len(m):
+        if m.startswith("\\begin", i):
+            env += 1
+        elif m.startswith("\\end", i):
+            env -= 1
+        c = m[i]
+        if c == "{":
+            depth += 1
+        elif c == "}":
+            depth -= 1
+        elif c == "\\" and depth == 0 and env == 0 and _MUI.match(m, i) and (i > 0 or m.startswith("\\Leftrightarrow", i)):
+            cut.append(i)
+        i += 1
+    if not cut:
+        return [m]
+    parts, last = [], 0
+    for c in cut:
+        parts.append(m[last:c]); last = c
+    parts.append(m[last:])
+    # HS đi thi không dùng ⇔ (Thầy 01/10/2026): xuống dòng là đủ, bỏ dấu ⇔ đầu dòng.
+    parts = [_re.sub(r"^\s*\\Leftrightarrow\s*", "", x) for x in parts]
+    return [x for x in parts if x.strip()]
+
+
+def _tach_cau(t: str) -> list[str]:
+    """Cắt đoạn văn tại '. ' / '; ' / ': ' khi chữ kế tiếp là chữ HOA (câu mới)."""
+    out, last = [], 0
+    for mm in _re.finditer(r"(?<=[.;:])\s+", t):
+        j = mm.end()
+        if j < len(t) and t[j].isupper():
+            out.append(t[last:mm.start()]); last = j
+    out.append(t[last:])
+    return out
+
+
+def xuong_dong(dong: str) -> str:
+    """Một bước lời giải → nhiều dòng: câu văn mới xuống dòng; chuỗi biến đổi dài xuống dòng
+    trước mỗi ⇒/⇔ (không cắt bên trong \\begin{…}…\\end{…}, không đụng bảng)."""
+    if "\\begin{tabular}" in dong:
+        return dong
+    seg = _re.split(r"(\$[^$]*\$)", dong)
+    lines, cur = [], ""
+    for sgm in seg:
+        if sgm.startswith("$") and sgm.endswith("$") and len(sgm) > 1:
+            parts = _tach_toan(sgm[1:-1])
+            cur += "$" + parts[0] + "$"
+            for q in parts[1:]:
+                lines.append(cur); cur = "$" + q + "$"
+        else:
+            pieces = _tach_cau(sgm)
+            cur += pieces[0]
+            for q in pieces[1:]:
+                lines.append(cur); cur = q
+    lines.append(cur)
+    return "\\par ".join(x.strip() for x in lines if x.strip())
+
+
 # ─────────────────────────── DỰNG PDF ───────────────────────────
 def esc(s: str) -> str:
     """Thoát kí tự đặc biệt cho chuỗi THUẦN VĂN BẢN (nguồn, tên file)."""
@@ -207,7 +275,7 @@ def render(lop: str, muc: list[dict]) -> Path:
                 hinh = ""
                 if b.get("hinh"):
                     hinh = "\\par\\begin{center}" + b["hinh"] + "\\end{center}"
-                lg = "\\par ".join(b["loi_giai"])
+                lg = "\\par ".join(xuong_dong(x) for x in b["loi_giai"])
                 body.append(
                     f"\\begin{{baimau}}{{{nhan}}}{{{esc(b['nguon'])}}}\n"
                     f"{b['de']}{bc}{hinh}\n\\tcblower\n\\textbf{{Lời giải}}\\par {lg}\n\\end{{baimau}}")

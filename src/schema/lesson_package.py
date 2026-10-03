@@ -372,6 +372,11 @@ class LessonPackage(BaseModel):
     # `duration_gate` co quỹ luyện tập theo phần còn lại, không kêu oan "hụt giờ".
     kiem_tra_phut: int = Field(0, ge=0, le=180, description="Phút kiểm tra chương trong buổi của phiếu")
     theme: str = Field("", description="Giao diện (vd: 'thay_thai' cho giao diện mới, để trống cho mặc định)")
+    # Thầy 01/10/2026 (bộ đề ôn GK1 lớp 9): "trình bày thưa ra, chữ to lên… ríu rít và khá
+    # mất thẩm mỹ, căn chỉnh lại hình vẽ cho đẹp, to, rõ ràng". Bật RIÊNG từng tài liệu để
+    # không đổi bản in của các phiếu/đề cũ đã duyệt (staleness_gate so hash .tex).
+    trinh_bay: Literal["", "thoang"] = Field(
+        "", description="'' = mặc định | 'thoang' = chữ 13pt, giãn dòng rộng, cách bài xa hơn, hình to hơn")
     stages: list[Stage] = Field(default_factory=list)
 
 

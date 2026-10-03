@@ -225,6 +225,10 @@ _Chốt bảo mật LaTeX — quét và TỪ CHỐI mọi lệnh có thể thự
 - `find_unsafe(text)` — Trả về danh sách tên lệnh nguy hiểm tìm thấy (rỗng nếu sạch).
 - `sanitize(text)` — Trả lại `text` y nguyên nếu an toàn; ném UnsafeLatexError nếu phát hiện vi phạm.
 
+### `src/validators/loi_giai_thi_gate.py`
+_loi_giai_thi_gate — gác ĐÁP ÁN đề kiểm tra / đề ôn tập phải trình bày như HS ĐI THI._
+- `check_loi_giai_thi(lesson)` — CHẶN (đề `de_thi`): ⇔ trong lời giải, hệ thức lượng dùng trực tiếp, bài hình thiếu hình.
+
 ### `src/validators/nhan_hinh_gate.py`
 _Cổng NHÃN HÌNH BỊ NÉT VẼ ĐÈ — góp ý chương V lớp 9C (26/09/2026)._
 - `nhan_bi_de(tikz)` — Danh sách nhãn (chữ) bị nét vẽ cắt ngang trong một hình TikZ.
@@ -284,6 +288,7 @@ _thuyetminh_gate — soi GIỜ VÔ LÝ trong phiếu THUYẾT MINH (spec) TRƯ�
 _trinh_bay_gate — gác CÁCH TRÌNH BÀY phiếu (Thầy chốt 24/09/2026)._
 - `check_lenh_dinh_chu(lesson)` — CHẶN: lệnh LaTeX trần dính liền chữ → Tectonic gãy ngay lúc build.
 - `check_trinh_bay(lesson)` — Cảnh báo về cách trình bày (không chặn).
+- `check_nhip_loi_giai(lesson)` — Cảnh báo lời giải không theo nhịp bài thi: dồn nhiều bước một dòng, "Vậy" dính dòng
 
 ### `src/validators/vi_du_gate.py`
 _Cổng VÍ DỤ MẪU ↔ BÀI TẬP — Thầy chốt 21/09/2026 (chấm phiếu chương V Hình 9B)._
@@ -340,6 +345,17 @@ _ÔN TẬP THEO PHẦN — gom đề bài từ CÁC ĐỀ THI THỬ VÀO 10 Hà 
 - `render(ph, muc)`
 - `main()`
 
+### `scripts/build_so_dang_bai.py`
+_SỔ DẠNG BÀI — mỗi (tiểu) dạng trong đề Hà Nội: tần suất · nhận dạng · các bước · lỗi hay gặp ·_
+- `kiem_bai(k)` — Trả danh sách lỗi (rỗng = đúng).
+- `kiem_tat_ca(muc)`
+- `tan_suat(lop)`
+- `dong_tan_suat(ts, chi_ky)`
+- `xuong_dong(dong)` — Một bước lời giải → nhiều dòng: câu văn mới xuống dòng; chuỗi biến đổi dài xuống dòng
+- `esc(s)` — Thoát kí tự đặc biệt cho chuỗi THUẦN VĂN BẢN (nguồn, tên file).
+- `render(lop, muc)`
+- `main(argv)`
+
 ### `scripts/build_trich_vdc.py`
 _Dựng PDF 'TRÍCH XUẤT CÂU VDC' — in NGUYÊN VĂN đề bài để Thầy kiểm có thật là VDC không._
 - `tex(s, n)`
@@ -348,6 +364,29 @@ _Dựng PDF 'TRÍCH XUẤT CÂU VDC' — in NGUYÊN VĂN đề bài để Thầy
 - `bang_trich(rows)`
 - `bang_phan_loai(rows)` — Chương nào chỉ TH · TH+VD · TH+VD+VDC — VDC lấy từ chính bảng trích trên.
 - `main()`
+
+### `scripts/de_on_tap_gk1_lop9.py`
+_BỘ ĐỀ ÔN GK1 LỚP 9 — sinh 4 đề (Ôn 1, Ôn 2, Ôn 3, GK1 chính thức) + 4 file "Ma trận đề và_
+- `d(x)`
+- `st(text, diem)`
+- `bo_tuong_duong(t)` — HS đi thi KHÔNG dùng dấu ⇔ (Thầy 01/10/2026): mỗi phép biến đổi xuống một dòng.
+- `y(nhan, diem, steps)`
+- `goc(cx, cy, a0, a1, r, nhan, rn)`
+- `vuong(x, y, dx, dy, s)` — kí hiệu góc vuông tại (x,y), hai cạnh theo hướng (dx,0) và (0,dy)
+- `hinh(pts, segs, ticks, extra, scale, dashed)`
+- `vg(P, Q, R, s)` — kí hiệu góc vuông tại Q (giữa QP và QR) — vẽ theo toạ độ
+- `bang_mt(rows)`
+- `bang_muc(rows)`
+- `bang_tien_bo(gk)`
+- `bang_theo_doi()`
+- `de_json(k, D)`
+- `mt_json(k, D)`
+
+### `scripts/de_on_tap_gk1_lop9_hinh.py`
+_Toạ độ hình của bộ đề ôn GK1 lớp 9 — TÍNH và KIỂM bằng giải tích (tính chất cần chứng minh_
+- `foot(P, A, B)`
+- `inter(P1, P2, P3, P4)`
+- `ang(A, O, B)`
 
 ### `scripts/exam_annotate.py`
 _Gắn `band` (NB/TH/VD/VDC) + `phut` (thời gian HS làm, ước) vào từng câu trong_
@@ -381,6 +420,10 @@ _Tải SÁCH GIÁO VIÊN (SGV) Toán Kết nối tri thức khối 6-12 về inp
 - `fetch_grade(grade)`
 - `main(argv)`
 
+### `scripts/ocr_kho_de.py`
+_OCR KHO ĐỀ — dựng kho text cho mọi đề hợp lệ ở inputs/refs/de-thi/lop-{6..9}/<kỳ>/._
+- `job(p)`
+
 ### `scripts/prune_outputs.py`
 _prune_outputs — soi thư mục `outputs/` mồ côi (bản in cũ của phiếu đã đổi tên/xoá)._
 - `expected_dirs()` — slug → các thư mục output hợp lệ (mirror cây seeds, xem src/main.py::_out_root).
@@ -402,6 +445,14 @@ _Sinh PROJECT_MAP.md — bản đồ codebase TIẾT KIỆM TOKEN cho agent/ngư
 _Seed band (NB/TH/VD/VDC) + phut (thời gian HS làm, ước) cho ngân hàng đề lớp 9._
 - `judge(dangs, do_kho)`
 - `main()`
+
+### `scripts/so_dang_bai_lop9.py`
+_NỘI DUNG SỔ DẠNG BÀI TOÁN 9 (Hà Nội, KNTT) — dữ liệu cho scripts/build_so_dang_bai.py._
+- _(không có symbol công khai)_
+
+### `scripts/soat_lech_kntt.py`
+_SOÁT LỆCH TIẾN ĐỘ KNTT — đánh dấu đề Hà Nội có CHƯƠNG KNTT dạy ở kỳ khác (trường đảo PPCT_
+- `luat(lop, ky)`
 
 ### `scripts/soi_ma_tran_de.py`
 _Trích MA TRẬN (bảng 'câu → kiến thức → mức độ') từ kho đề THCS đã tải về._
@@ -428,6 +479,17 @@ _TẦN SUẤT VDC theo chương — đếm ở ĐÚNG HAI VỊ TRÍ, mỗi bài 
 - `cuc_tri_ca_4_ky(chi_tiet, dang2)` — Câu cuối đề là bài CỰC TRỊ/TỐI ƯU trong bao nhiêu đề của cả bốn kỳ?
 - `main()`
 
+### `scripts/thong_ke_dang_de.py`
+_THỐNG KÊ DẠNG BÀI trong đề kiểm tra Toán Hà Nội, khối 6-9 × 4 kỳ → 4 file Excel._
+- `chuan(t)` — Chữ thường, gộp khoảng trắng; đưa chữ toán nghiêng 𝑥 → x (pdftotext hay nhân đôi 𝑥𝑥) và
+- `khoi_de(text)` — [(phan, dòng)] của KHỐI ĐỀ đầu tiên; phan = 'TN' | 'TL' | '?'.
+- `tach_cau(dong_de)`
+- `ten_de(stem)`
+- `doc_kho(lop)`
+- `gan_dang(lop, de)`
+- `xuat(lop, de, dest)`
+- `main(argv)`
+
 ### `scripts/tien-do-lop-c/_data.py`
 _Tiến độ tầng C — Lớp 9. Đại số 180′ · Hình học 90′._
 - `t15(what, n)`
@@ -448,6 +510,20 @@ _Xuất tiến độ tầng C ra .xlsx — định dạng bám file PDF gốc c�
 - `banner(ws, r, text, bg, ncol, color)`
 - `row_bg(hm, lkt, nd)`
 - `build(weeks, path, title, buoi_label)`
+
+### `scripts/tikz_geo.py`
+_Sinh TikZ hình học có TOẠ ĐỘ TÍNH + NHÃN TỰ ĐẶT vào góc trống (không bị nét đè)._
+- `polar(deg, r, c)`
+- `f4(p)`
+- `sub(a, b)`
+- `add(a, b)`
+- `mul(a, k)`
+- `norm(v)`
+- `dist(a, b)`
+- `foot(p, a, b)` — Chân đường vuông góc từ p xuống đường thẳng ab.
+- `lerp(a, b, t)`
+- `tangent_points(o, r, a)` — Hai tiếp điểm từ điểm a ngoài (o, r).
+- **class Fig**
 
 ### `scripts/trich_cau_cuoi_de.py`
 _Trích CÂU CUỐI ĐỀ (ứng viên VDC) từ kho đề đã tải — để Thầy soi đề bài thật._

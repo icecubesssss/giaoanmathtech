@@ -1,0 +1,430 @@
+{
+ "_nguon": "Tiến độ lớp 9 đại số tầng B: chương VII ở tuần 24 $-$ 25 nên chương VIII nhận tuần 26 $-$ 27. Tài liệu gốc: tệp \\emph{Phép thử ngẫu nhiên và không gian mẫu. Xác suất của biến cố} trong nguon-pdf của chương, SGK Toán 9 tập hai (Bài 25, Bài 26, Luyện tập chung, Bài tập cuối chương VIII) và 18 câu xác suất trong ngân hàng đề lớp 9.",
+ "_luat": "Soạn theo HUONG-DAN-SOAN-PHIEU-B.md. Chương VIII có co\\_vd $=$ false (ma trận Sở: Thống kê $-$ Xác suất vận dụng $0$ điểm) nên tỉ lệ 30 NB $/$ 70 TH và gộp hai buổi thành một phiếu. Thầy chốt 01/10/2026: tầng B dạy CẢ lấy đồng thời hai vật lẫn lấy lần lượt không trả lại; kiểm tra 45 phút gộp chương VII và VIII ở cuối ca 2.",
+ "_so_cau": "Quỹ 2 ca nhân $\\dfrac{360-45}{360}=0{,}875$: ví dụ $+$ lý thuyết $\\approx 79$′ · trên lớp $210$′ · BTVN $180$′. Trên lớp 42 câu NB ($63$′) $+$ 25 câu TH ($150$′).",
+ "slug": "thuyet-minh-lop-9b-chuong-08-xac-suat-cua-bien-co",
+ "title": "Chương VIII. Xác suất của biến cố trong một số mô hình xác suất đơn giản (tuần 26 $-$ 27)",
+ "grade": "lop-9",
+ "subject": "dai-so",
+ "tier": "B",
+ "tuan": "26-27",
+ "chuong": "chuong-08-xac-suat-cua-bien-co",
+ "thoiluong": [
+  "Buổi 1 (tuần 26 — Bài 25. Phép thử ngẫu nhiên và không gian mẫu $+$ Bài 26. Xác suất của biến cố liên quan tới phép thử, phép thử MỘT hành động): 1 ca $=$ 180 phút (PPCT SGV: Bài 25 hai tiết, Bài 26 ba tiết).",
+  "Buổi 2 (tuần 27 — phép thử HAI hành động, lấy hai vật $+$ Luyện tập chung $+$ Bài tập cuối chương VIII): 1 ca $=$ 180 phút, gồm 135 phút luyện tập $+$ 45 phút kiểm tra chương VII và VIII.",
+  "\\textbf{Tổng 2 ca $=$ 360 phút $\\approx$ 8 tiết}, trong đó 45 phút là bài kiểm tra chung của hai chương.",
+  "PPCT SGV chương VIII là 8 tiết (Bài 25: 2 tiết, Bài 26: 3 tiết, Luyện tập chung: 2 tiết, Bài tập cuối chương: 1 tiết).",
+  "Hai buổi dùng CHUNG một phiếu (\\texttt{so\\_ca} $= 2$) theo luật gộp phiếu của chương không có bài vận dụng; phiếu khai \\texttt{kiem\\_tra\\_phut} $= 45$ nên quỹ luyện tập co còn $\\dfrac{315}{360}$.",
+  "Thầy chốt 01/10/2026: chương VII (tuần 24 $-$ 25) KHÔNG kiểm tra riêng — bài kiểm tra 45 phút cuối buổi 2 gồm cả Câu I.1 (thống kê ghép nhóm) lẫn Câu I.2 (xác suất)."
+ ],
+ "kien_thuc_nen": [
+  "\\textbf{Kết quả có thể, kết quả thuận lợi và công thức xác suất bằng tỉ số} (Lớp 8, chương VIII, Bài 30 $-$ Bài 31): $P=\\dfrac{\\text{số kết quả thuận lợi}}{\\text{tổng số kết quả có thể}}$ chính là $\\dfrac{n(E)}{n(\\Omega)}$ của lớp 9 — học sinh ĐÃ biết, buổi 1 chỉ thêm tên gọi và kí hiệu.",
+  "\\textbf{Dấu hiệu chia hết, phép chia có dư, số nguyên tố, ước và bội, số chính phương, lập phương} (Lớp 6, Lớp 7): mọi biến cố của Câu I.2 phát biểu bằng tính chất số; bỏ sót số $r$ khi đếm \\emph{chia $k$ dư $r$} hay coi $1$ là số nguyên tố là mất điểm.",
+  "\\textbf{Liệt kê phần tử của tập hợp và đếm số phần tử của dãy cách đều} (Lớp 6): $\\Omega=\\{11;\\,13;\\,\\dots;\\,39\\}$ có $(39-11):2+1=15$ phần tử.",
+  "\\textbf{Rút gọn phân số, đổi phân số sang số thập phân và phần trăm} (Lớp 6): kết quả xác suất luôn rút gọn về tối giản.",
+  "\\textbf{Bảng hai chiều, bảng tần số, biểu đồ} (Lớp 7, Lớp 8 và chương VII lớp 9): đọc được bảng mới lấy được $n(\\Omega)$, $n(E)$ khi chọn ngẫu nhiên một đối tượng.",
+  "\\textbf{Phương trình bậc nhất một ẩn} (Lớp 8): dùng cho dạng biết xác suất, tìm số vật trong hộp."
+ ],
+ "lythuyet": [
+  "\\textbf{Mục tiêu chương}: làm đúng và đủ bốn bước Câu I.2 của đề Vào 10 ($0{,}5$ điểm) và câu xác suất $0{,}5$ $-$ $1{,}0$ điểm của đề giữa kì II, cuối kì II của trường — kể cả dạng lấy hai vật mà đề trường hay ra.",
+  "\\textbf{Phép thử ngẫu nhiên}: một hoặc một số hành động, thực nghiệm tiến hành liên tiếp hay đồng thời mà kết quả không biết trước nhưng liệt kê được tất cả các kết quả có thể. \\textbf{Không gian mẫu} $\\Omega$ là tập hợp tất cả các kết quả có thể của phép thử.",
+  "\\textbf{Kết quả thuận lợi} cho biến cố $E$: kết quả của phép thử làm cho $E$ xảy ra.",
+  "\\textbf{Xác suất}: khi các kết quả có thể là đồng khả năng thì $P(E)=\\dfrac{n(E)}{n(\\Omega)}$. Bốn bước của SGK: mô tả $\\Omega$, tìm $n(\\Omega)$ $\\to$ chứng tỏ đồng khả năng $\\to$ mô tả kết quả thuận lợi, tìm $n(E)$ $\\to$ lập tỉ số.",
+  "\\textbf{Phép thử hai hành động}: kết quả là cặp $(a, b)$; liệt kê bằng bảng hai chiều, $n(\\Omega)$ bằng số ô.",
+  "\\textbf{Lấy hai vật từ một hộp}: lần lượt không trả lại thì bỏ các ô trên đường chéo ($a\\ne b$, có kể thứ tự); lấy đồng thời thì mỗi cặp chỉ tính một lần (không kể thứ tự).",
+  "\\textbf{Chuẩn đầu ra}: cùng với Câu I.1 của chương VII ($1{,}0$ điểm) thì cả Câu I ($1{,}5$ điểm) là phần ăn chắc của tầng B."
+ ],
+ "vidu": [
+  "Buổi 1: quay tấm bìa chia 5 hình quạt ghi $A,\\,B,\\,C,\\,D,\\,E$ — chỉ ra phép thử, kết quả, viết $\\Omega$ và $n(\\Omega)=5$.",
+  "Buổi 1: viết ngẫu nhiên một số tự nhiên có hai chữ số chia hết cho 5 — tự lập $\\Omega=\\{10;\\,15;\\,\\dots;\\,95\\}$, $n(\\Omega)=18$.",
+  "Buổi 1: bánh xe chia 24 hình quạt — liệt kê kết quả thuận lợi cho \\emph{chia 7 dư 2} (nhớ số 2) và cho biến cố ghép \\emph{chia hết cho 4 hoặc cho 5} (số 20 chỉ đếm một lần).",
+  "Buổi 1 (bài trục): đề chính thức Vào 10 năm 2026 — hộp 6 quả bóng, biến cố số chẵn, trình bày đủ bốn bước, $P=\\dfrac{1}{2}$.",
+  "Buổi 1: đĩa 8 phần ghi số không liên tiếp; viết ngẫu nhiên một số lẻ có hai chữ số (bội của 9, $P=\\dfrac{1}{9}$); túi kẹo 60 viên chia theo vị; hộp 5 bóng đỏ biết $P=0{,}25$ tìm số bóng trắng.",
+  "Buổi 2: tung đồng xu và rút thẻ — lập bảng $2\\times 4$; gieo hai con xúc xắc, biến cố \\emph{có ít nhất một mặt chẵn} đếm phần bù; hai túi thẻ ghép số.",
+  "Buổi 2: lấy đồng thời hai thẻ trong hộp 4 thẻ ghi $2;\\,3;\\,5;\\,8$, biến cố tổng hai số lẻ, $P=\\dfrac{2}{3}$; rút lần lượt hai thẻ không trả lại từ hộp 3 thẻ rồi ghép số lớn hơn 20, $P=\\dfrac{2}{3}$."
+ ],
+ "dang_vd": [
+  "\\textbf{Chương VIII KHÔNG soạn dạng vận dụng} (co\\_vd $=$ false): ma trận của Sở ghi mạch Thống kê $-$ Xác suất có vận dụng $=0$ điểm. Một số trường ghi câu lấy hai vật là \\emph{vận dụng} (ma trận THCS Ngô Gia Tự), nhưng theo quy ước của anh An đó là liệt kê rồi lập tỉ số — 2 $-$ 3 bước nên là THÔNG HIỂU (dòng TH7, TH8).",
+  "Dạng gần vận dụng nhất là \\emph{biết xác suất, tìm số vật} (dòng TH5): phải lập và giải một phương trình bậc nhất."
+ ],
+ "loisai": [
+  "\\textbf{Đếm $n(\\Omega)$ sai} khi dãy không bắt đầu từ 1 hoặc không liên tiếp (đĩa ghi $1;\\,12;\\,18;\\,22;\\,27;\\,69;\\,96;\\,99$), hoặc khi tự liệt kê tập số mà sót số đầu, số cuối.",
+  "\\textbf{Chia $k$ dư $r$}: bỏ sót chính số $r$ (chia 6 dư 2 thì số 2 vẫn tính); coi $1$ là số nguyên tố.",
+  "\\textbf{Viết $P(A)=n(A)$}: trả lời bằng SỐ KẾT QUẢ, không lập tỉ số; hoặc không rút gọn phân số cuối.",
+  "\\textbf{Thiếu câu đồng khả năng}: barem đề trường cho riêng câu này $0{,}25$ điểm.",
+  "\\textbf{Hai hành động mà CỘNG thay vì NHÂN}: túi 4 thẻ và túi 5 thẻ thì $n(\\Omega)=4\\cdot 5=20$ chứ không phải $9$.",
+  "\\textbf{Lẫn ba cách lấy hai vật}: có trả lại (đủ ô), lần lượt không trả lại (bỏ đường chéo), đồng thời (không kể thứ tự) — đếm theo cách này mà đề hỏi cách kia.",
+  "\\textbf{Biến cố \\emph{có ít nhất một}}: đếm trực tiếp nên sót ô; nên đếm phần bù.",
+  "\\textbf{Kết quả lớn hơn 1} mà không nhận ra là vô lí; luôn tự kiểm $0\\le P(E)\\le 1$."
+ ],
+ "kienthuc_nb": [
+  "Phép thử ngẫu nhiên: kết quả không biết trước nhưng liệt kê được tất cả các kết quả có thể.",
+  "Không gian mẫu $\\Omega$: tập hợp tất cả các kết quả có thể; $n(\\Omega)$ là số phần tử của $\\Omega$.",
+  "Kết quả thuận lợi cho $E$: kết quả làm $E$ xảy ra; $n(E)$ là số kết quả thuận lợi.",
+  "Đồng khả năng: $P(E)=\\dfrac{n(E)}{n(\\Omega)}$, rút gọn về phân số tối giản, $0\\le P(E)\\le 1$.",
+  "Hai hành động: kết quả là cặp $(a, b)$, $n(\\Omega)$ bằng số ô của bảng hai chiều.",
+  "Lần lượt không trả lại: bỏ các ô $(a, a)$ trên đường chéo; đồng thời: $(a, b)$ và $(b, a)$ là MỘT kết quả.",
+  "Biến cố \\emph{có ít nhất một}: $n(E)=n(\\Omega)-$ số kết quả \\emph{không có}."
+ ],
+ "phieu": [
+  {
+   "code": "1",
+   "title": "Phép thử ngẫu nhiên, không gian mẫu và xác suất của biến cố (2 ca)",
+   "so_ca": 2,
+   "kiem_tra_phut": 45,
+   "rows": [
+    {
+     "dang": "Nhận ra \\textbf{phép thử ngẫu nhiên} (không biết trước kết quả nhưng liệt kê được mọi kết quả); chỉ ra phép thử là gì, kết quả của phép thử là gì",
+     "band": "NB",
+     "loai": "NB lẻ LT",
+     "lythuyet": 1,
+     "vidu": 1,
+     "onclass": 3,
+     "btvn": 3,
+     "source_refs": [
+      "Mathtech — Phép thử ngẫu nhiên và không gian mẫu. Xác suất của biến cố — Dạng 1, Bài 2 (hộp 3 quả bóng)",
+      "sgk9t2-8{.}1",
+      "sgk9t2-8{.}3"
+     ],
+     "decompose": "none"
+    },
+    {
+     "dang": "Viết không gian mẫu $\\Omega$ bằng ngoặc nhọn và đếm $n(\\Omega)$ của phép thử một hành động: thẻ, bi đánh số; đĩa ghi số không liên tiếp; vật chia theo nhóm",
+     "band": "NB",
+     "loai": "NB tách TH",
+     "lythuyet": 1,
+     "vidu": 1,
+     "onclass": 3,
+     "btvn": 3,
+     "source_refs": [
+      "Mathtech — Phép thử ngẫu nhiên và không gian mẫu. Xác suất của biến cố — Lý thuyết, Ví dụ giá sách 9 quyển",
+      "Mathtech — Phép thử ngẫu nhiên và không gian mẫu. Xác suất của biến cố — Dạng 3, Bài 36",
+      "ck2-phuc-loi-I2"
+     ],
+     "decompose": "none"
+    },
+    {
+     "dang": "Không gian mẫu KHÔNG cho sẵn: tự liệt kê tập số (số lẻ có hai chữ số nhỏ hơn 40, số có ba chữ số nhỏ hơn 400…) rồi đếm $n(\\Omega)$",
+     "band": "NB",
+     "loai": "NB tách TH",
+     "lythuyet": 0,
+     "vidu": 1,
+     "onclass": 3,
+     "btvn": 3,
+     "source_refs": [
+      "ck2-trung-vuong-I2",
+      "Mathtech — Phép thử ngẫu nhiên và không gian mẫu. Xác suất của biến cố — Dạng 3, Bài 17, 18, 19"
+     ],
+     "decompose": "none"
+    },
+    {
+     "dang": "Liệt kê các kết quả thuận lợi và đếm $n(E)$ khi biến cố có MỘT điều kiện: số nguyên tố, chia $k$ dư $r$, ước, bội, số chính phương",
+     "band": "NB",
+     "loai": "NB tách TH",
+     "lythuyet": 1,
+     "vidu": 1,
+     "onclass": 3,
+     "btvn": 3,
+     "source_refs": [
+      "ck2-chu-van-an-I2",
+      "v10-so-2025-I2"
+     ],
+     "decompose": "none"
+    },
+    {
+     "dang": "Biến cố ghép điều kiện bằng chữ \\emph{và}, \\emph{hoặc}, \\emph{không}: đếm $n(E)$ cho đúng",
+     "band": "NB",
+     "loai": "NB tách TH",
+     "lythuyet": 0,
+     "vidu": 1,
+     "onclass": 3,
+     "btvn": 3,
+     "source_refs": [
+      "ck2-ngoc-thuy-I2",
+      "Mathtech — Phép thử ngẫu nhiên và không gian mẫu. Xác suất của biến cố — Dạng 3, Bài 5"
+     ],
+     "decompose": "none"
+    },
+    {
+     "dang": "Các kết quả có \\textbf{đồng khả năng} không, vì sao; viết câu khẳng định đồng khả năng trong bài giải",
+     "band": "NB",
+     "loai": "NB lẻ LT",
+     "lythuyet": 1,
+     "vidu": 0,
+     "onclass": 3,
+     "btvn": 3,
+     "source_refs": [
+      "Mathtech — Phép thử ngẫu nhiên và không gian mẫu. Xác suất của biến cố — Dạng 2, Bài 1, Bài 2"
+     ],
+     "decompose": "none"
+    },
+    {
+     "dang": "Điền khuyết bài giải Câu I.2 đủ bốn bước: $\\Omega$ và $n(\\Omega)$ $\\to$ đồng khả năng $\\to$ kết quả thuận lợi và $n(E)$ $\\to$ lập tỉ số, rút gọn",
+     "band": "NB",
+     "loai": "NB ghép bài",
+     "lythuyet": 0,
+     "vidu": 0,
+     "onclass": 3,
+     "btvn": 3,
+     "source_refs": [
+      "v10-so-2025-I2",
+      "v10-so-minh-hoa-I2"
+     ],
+     "decompose": "none",
+     "gian_giao": "dien-khuyet"
+    },
+    {
+     "dang": "Đọc bảng thống kê, biểu đồ hoặc tỉ lệ phần trăm (chương VII) để lấy $n(\\Omega)$ và $n(E)$ khi chọn ngẫu nhiên một đối tượng",
+     "band": "NB",
+     "loai": "NB tách TH",
+     "lythuyet": 0,
+     "vidu": 1,
+     "onclass": 3,
+     "btvn": 3,
+     "source_refs": [
+      "Mathtech — Phép thử ngẫu nhiên và không gian mẫu. Xác suất của biến cố — Dạng 3, Bài 10, 11, 41, 43",
+      "Giữa kì II THCS Chương Dương 2025 $-$ 2026, Bài I.2"
+     ],
+     "decompose": "none"
+    },
+    {
+     "dang": "Kết quả của phép thử hai hành động là một \\textbf{cặp} $(a, b)$; lập bảng hai chiều, $n(\\Omega)$ bằng số ô $=$ tích số kết quả của từng hành động",
+     "band": "NB",
+     "loai": "NB tách TH",
+     "lythuyet": 1,
+     "vidu": 1,
+     "onclass": 3,
+     "btvn": 3,
+     "source_refs": [
+      "sgk9t2-b25-vd1",
+      "sgk9t2-b25-lt1",
+      "sgk9t2-8{.}3",
+      "sgk9t2-8{.}11"
+     ],
+     "decompose": "none"
+    },
+    {
+     "dang": "Điền tổng hoặc tích hai số vào từng ô của bảng, đánh dấu các ô thoả biến cố rồi đếm $n(E)$",
+     "band": "NB",
+     "loai": "NB tách TH",
+     "lythuyet": 0,
+     "vidu": 1,
+     "onclass": 3,
+     "btvn": 3,
+     "source_refs": [
+      "sgk9t2-b26-vd1",
+      "sgk9t2-8{.}8"
+     ],
+     "decompose": "none"
+    },
+    {
+     "dang": "Biến cố \\emph{có ít nhất một} $/$ \\emph{không có}: đếm các ô KHÔNG thoả rồi lấy $n(\\Omega)$ trừ đi",
+     "band": "NB",
+     "loai": "NB tách TH",
+     "lythuyet": 0,
+     "vidu": 1,
+     "onclass": 3,
+     "btvn": 3,
+     "source_refs": [
+      "sgk9t2-8{.}6",
+      "sgk9t2-8{.}10",
+      "sgk9t2-8{.}11"
+     ],
+     "decompose": "none"
+    },
+    {
+     "dang": "Lấy \\textbf{đồng thời} hai vật: liệt kê các cặp KHÔNG kể thứ tự, đếm $n(\\Omega)$",
+     "band": "NB",
+     "loai": "NB tách TH",
+     "lythuyet": 1,
+     "vidu": 1,
+     "onclass": 3,
+     "btvn": 3,
+     "source_refs": [
+      "sgk9t2-8{.}14",
+      "Mathtech — Phép thử ngẫu nhiên và không gian mẫu. Xác suất của biến cố — Dạng 2, Ví dụ 2",
+      "Mathtech — Phép thử ngẫu nhiên và không gian mẫu. Xác suất của biến cố — Dạng 3, Bài 14",
+      "gk2-ban-mai-7a"
+     ],
+     "decompose": "none"
+    },
+    {
+     "dang": "Lấy \\textbf{lần lượt không trả lại} hai vật: bảng hai chiều bỏ các ô trên đường chéo; xếp ngẫu nhiên ba bạn vào ba chỗ",
+     "band": "NB",
+     "loai": "NB tách TH",
+     "lythuyet": 1,
+     "vidu": 1,
+     "onclass": 3,
+     "btvn": 3,
+     "source_refs": [
+      "sgk9t2-b25-vd2",
+      "sgk9t2-8{.}2",
+      "sgk9t2-8{.}4",
+      "Mathtech — Phép thử ngẫu nhiên và không gian mẫu. Xác suất của biến cố — Dạng 2, Bài 10, 15"
+     ],
+     "decompose": "none"
+    },
+    {
+     "dang": "Đọc đề rồi chọn cách đếm: một hành động $/$ hai hành động (đủ ô) $/$ lần lượt không trả lại (bỏ đường chéo) $/$ đồng thời (không kể thứ tự)",
+     "band": "NB",
+     "loai": "NB lẻ LT",
+     "lythuyet": 0,
+     "vidu": 1,
+     "onclass": 3,
+     "btvn": 3,
+     "source_refs": [],
+     "decompose": "none"
+    },
+    {
+     "dang": "Tự viết lại bốn bước tính xác suất và giải thích khi nào $(1, 2)$ và $(2, 1)$ là hai kết quả khác nhau",
+     "band": "NB",
+     "loai": "NB lẻ LT",
+     "lythuyet": 0,
+     "vidu": 0,
+     "onclass": 0,
+     "btvn": 2,
+     "source_refs": [],
+     "decompose": "none",
+     "viet_quy_trinh": true
+    },
+    {
+     "dang": "Khuôn Câu I.2: hộp thẻ, bi, bóng đánh số liên tiếp $1;\\,2;\\,\\dots;\\,n$, biến cố về tính chất số — trình bày đủ bốn bước",
+     "band": "TH",
+     "loai": "TH ghép bài",
+     "lythuyet": 0,
+     "vidu": 2,
+     "onclass": 3,
+     "btvn": 3,
+     "source_refs": [
+      "v10-so-2026-I2",
+      "v10-so-2025-I2",
+      "ck2-hai-ba-trung-I2",
+      "gk2-nghia-tan-I2b",
+      "gk2-ban-mai-7a"
+     ],
+     "decompose": "th2nb"
+    },
+    {
+     "dang": "Đĩa quay chia $n$ hình quạt bằng nhau, kể cả đĩa ghi các số KHÔNG liên tiếp",
+     "band": "TH",
+     "loai": "TH ghép bài",
+     "lythuyet": 0,
+     "vidu": 1,
+     "onclass": 3,
+     "btvn": 3,
+     "source_refs": [
+      "v10-so-minh-hoa-I2",
+      "ck2-phuc-loi-I2",
+      "ck2-thach-that-I2"
+     ],
+     "decompose": "th2nb"
+    },
+    {
+     "dang": "Không gian mẫu không cho sẵn: viết ngẫu nhiên một số tự nhiên thoả điều kiện rồi tính xác suất",
+     "band": "TH",
+     "loai": "TH ghép bài",
+     "lythuyet": 0,
+     "vidu": 1,
+     "onclass": 3,
+     "btvn": 3,
+     "source_refs": [
+      "ck2-trung-vuong-I2",
+      "Mathtech — Phép thử ngẫu nhiên và không gian mẫu. Xác suất của biến cố — Dạng 3, Ví dụ 4, Bài 17, 18, 19"
+     ],
+     "decompose": "th2nb"
+    },
+    {
+     "dang": "Vật không đánh số, đếm theo nhóm (sách, kẹo, người); chọn ngẫu nhiên một đối tượng từ bảng thống kê",
+     "band": "TH",
+     "loai": "TH ghép bài",
+     "lythuyet": 0,
+     "vidu": 2,
+     "onclass": 3,
+     "btvn": 3,
+     "source_refs": [
+      "ck2-ba-dinh-I2",
+      "Mathtech — Phép thử ngẫu nhiên và không gian mẫu. Xác suất của biến cố — Dạng 3, Bài 3, 10, 11, 35",
+      "Giữa kì II THCS Chương Dương 2025 $-$ 2026, Bài I.2"
+     ],
+     "decompose": "th2nb"
+    },
+    {
+     "dang": "Biết xác suất, tìm số vật trong hộp (lập phương trình bậc nhất một ẩn)",
+     "band": "TH",
+     "loai": "TH tách VD",
+     "lythuyet": 0,
+     "vidu": 1,
+     "onclass": 2,
+     "btvn": 2,
+     "source_refs": [
+      "Mathtech — Phép thử ngẫu nhiên và không gian mẫu. Xác suất của biến cố — Dạng 3, Ví dụ 5, Bài 39, 40, 42"
+     ],
+     "decompose": "th2nb"
+    },
+    {
+     "dang": "Hai hành động: gieo hai con xúc xắc, quay tấm bìa hai lần — biến cố về tổng, tích số chấm",
+     "band": "TH",
+     "loai": "TH ghép bài",
+     "lythuyet": 0,
+     "vidu": 2,
+     "onclass": 3,
+     "btvn": 3,
+     "source_refs": [
+      "sgk9t2-8{.}6",
+      "sgk9t2-8{.}10",
+      "sgk9t2-8{.}12",
+      "sgk9t2-8{.}16"
+     ],
+     "decompose": "th2nb"
+    },
+    {
+     "dang": "Rút một thẻ từ mỗi túi, hai bạn mỗi người chọn một: tích, tổng, ghép thành số có hai chữ số, ai thắng",
+     "band": "TH",
+     "loai": "TH ghép bài",
+     "lythuyet": 0,
+     "vidu": 2,
+     "onclass": 3,
+     "btvn": 3,
+     "source_refs": [
+      "sgk9t2-b26-lt2",
+      "sgk9t2-8{.}13",
+      "sgk9t2-8{.}15",
+      "sgk9t2-8{.}17"
+     ],
+     "decompose": "th2nb"
+    },
+    {
+     "dang": "Lấy đồng thời hai vật, chọn ngẫu nhiên hai bạn: tính xác suất",
+     "band": "TH",
+     "loai": "TH ghép bài",
+     "lythuyet": 0,
+     "vidu": 2,
+     "onclass": 3,
+     "btvn": 2,
+     "source_refs": [
+      "ck2-nguyen-du-III2",
+      "gk2-ban-mai-7b",
+      "ck1-dich-vong-I2",
+      "sgk9t2-8{.}14"
+     ],
+     "decompose": "th2nb"
+    },
+    {
+     "dang": "Lấy lần lượt không trả lại, xếp thứ tự ngẫu nhiên: tính xác suất",
+     "band": "TH",
+     "loai": "TH ghép bài",
+     "lythuyet": 0,
+     "vidu": 2,
+     "onclass": 2,
+     "btvn": 2,
+     "source_refs": [
+      "Giữa kì II Ban Mai School 2024 $-$ 2025, Bài 7b",
+      "Mathtech — Phép thử ngẫu nhiên và không gian mẫu. Xác suất của biến cố — Dạng 3, Bài 30, 32",
+      "Mathtech — Phép thử ngẫu nhiên và không gian mẫu. Xác suất của biến cố — Dạng 2, Bài 15"
+     ],
+     "decompose": "th2nb"
+    }
+   ]
+  }
+ ]
+}

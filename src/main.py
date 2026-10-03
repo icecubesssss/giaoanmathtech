@@ -45,6 +45,7 @@ from src.validators import (
     UnsafeLatexError,
     check_khoa_la,
     check_lenh_dinh_chu,
+    check_loi_giai_thi,
     check_trinh_bay,
     validate_lesson_structure,
     check_difficulty,
@@ -728,6 +729,10 @@ def _run_validation(lesson: LessonPackage, fast: bool = False,
     # Lệnh LaTeX trần dính liền chữ Việt (`\parĐáp`) làm Tectonic chết lúc build —
     # bắt ở validate để khỏi phải đọc log Tectonic mới biết.
     violations.extend(f"[trinh_bay_gate] {m}" for m in check_lenh_dinh_chu(lesson))
+
+    # Đáp án đề kiểm tra / đề ôn: trình bày như HS đi thi — không ⇔, không hệ thức lượng
+    # trực tiếp (phải qua đồng dạng), bài hình phải có hình (Thầy chốt 01/10/2026).
+    violations.extend(f"[loi_giai_thi_gate] {m}" for m in check_loi_giai_thi(lesson))
 
     diff = check_difficulty(lesson)
     for r in diff.reasons:

@@ -60,6 +60,17 @@
 
 ((* import "_blocks.j2" as B with context *))
 
+((* if lesson.trinh_bay == "thoang" *))
+% ── TRÌNH BÀY THOÁNG (Thầy 01/10/2026): chữ 13pt, giãn dòng, cách bài xa hơn ──
+\makeatletter
+\renewcommand\normalsize{\@setfontsize\normalsize{13}{16}%
+  \abovedisplayskip 10pt plus 2pt minus 4pt\belowdisplayskip \abovedisplayskip
+  \abovedisplayshortskip 4pt plus 2pt\belowdisplayshortskip 6pt plus 2pt}
+\makeatother
+\setstretch{1.32}
+\setlength{\parskip}{7pt}
+\AtBeginDocument{\normalsize\renewcommand{\stageseparator}{\par\vspace{13pt}{\color{brand!40}\hrule height 0.5pt}\par\vspace{13pt}}}
+((* endif *))
 \begin{document}
 
 % Khối tiêu đề với Top Card thông tin học sinh

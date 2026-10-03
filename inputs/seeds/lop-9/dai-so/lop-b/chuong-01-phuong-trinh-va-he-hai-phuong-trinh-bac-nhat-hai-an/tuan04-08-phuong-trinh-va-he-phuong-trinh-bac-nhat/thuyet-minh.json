@@ -1,0 +1,849 @@
+{
+  "_nguon": "Tiến độ trung tâm lớp 9 đại số: tuần 4 (Phương trình quy về phương trình bậc nhất một ẩn), tuần 5 (Phương trình bậc nhất hai ẩn. Hệ hai phương trình bậc nhất hai ẩn), tuần 6 và 7 (Giải hệ hai phương trình bậc nhất hai ẩn — tuần 7 dạy Bài 3 giải bài toán bằng cách lập hệ phương trình), tuần 8 (Kiểm tra chương I). Nguồn bài ở nguon-pdf của chương. Mã trích dẫn: 'PTQV Dn.Bm' = '1. PHƯƠNG TRÌNH QUY VỀ PHƯƠNG TRÌNH BẬC NHẤT MỘT ẨN.pdf' (LT = phần lý thuyết); 'PTHE TN.Cn' = '2. PHƯƠNG TRÌNH - HỆ PHƯƠNG TRÌNH BẬC NHẤT HAI ẨN.pdf' phần trắc nghiệm Câu n, 'PTHE Bm' / 'PTHE VDn' = phần tự luận cùng tệp; 'GHE Dn.Bm' = '3. GIẢI HỆ PHƯƠNG TRÌNH BẬC NHẤT HAI ẨN.pdf'; 'LHE Dn.Bm' = '4. GIẢI BÀI TOÁN BẰNG CÁCH LẬP HỆ PHƯƠNG TRÌNH.pdf'; mã 'gk1-…', 'ck1-…' = câu trong ngân hàng đề inputs/refs/de-thi/lop-9/exams.",
+  "_luat": "Soạn theo HUONG-DAN-SOAN-PHIEU-B.md. Bản đồ VD-VDC: chương I lớp 9 co_vd = true, p = 0 (0/21 đề có câu VDC thuộc chương) => nhóm KHÔNG: NB 15 / TH 30 / VD 55 / VDC 0, trần 10,0, mỗi phiếu một buổi 180 phút. Giữ điều Thầy chốt ở chương I tầng C (17/07/2026): không có dạng tham số $m$.",
+  "slug": "thuyet-minh-lop-9b-chuong-01-phuong-trinh-va-he-phuong-trinh-bac-nhat",
+  "title": "Chương I. Phương trình và hệ hai phương trình bậc nhất hai ẩn (tuần 4 $-$ 8)",
+  "grade": "lop-9",
+  "subject": "dai-so",
+  "tier": "B",
+  "tuan": "4-8",
+  "chuong": "chuong-01-phuong-trinh-va-he-hai-phuong-trinh-bac-nhat-hai-an",
+  "thoiluong": [
+    "Ca 1 (Tuần 4) — Phương trình quy về phương trình bậc nhất một ẩn (SGK Bài 4, dạy trước theo tiến độ trung tâm): 1 ca $=$ 180 phút.",
+    "Ca 2 (Tuần 5) — SGK Bài 1: Khái niệm phương trình và hệ hai phương trình bậc nhất hai ẩn: 1 ca $=$ 180 phút.",
+    "Ca 3 (Tuần 6) — SGK Bài 2: Giải hệ hai phương trình bậc nhất hai ẩn: 1 ca $=$ 180 phút.",
+    "Ca 4 (Tuần 7) — SGK Bài 3: Giải bài toán bằng cách lập hệ phương trình: 1 ca $=$ 180 phút.",
+    "Ca 5 (Tuần 8) — Luyện tập chung $+$ Bài tập cuối chương I: 1 ca $=$ 180 phút $=$ 135 phút luyện tập $+$ 45 phút kiểm tra chương.",
+    "\\textbf{Tổng 5 ca $=$ 900 phút} (1 ca 180 phút $=$ 4 tiết), trong đó 45 phút là bài kiểm tra chương.",
+    "ĐỐI CHIẾU phân phối chương trình SGK KNTT: chương I có 10 tiết (Bài 1: 2, Bài 2: 3, Luyện tập chung: 1, Bài 3: 2, Bài tập cuối chương: 2); Bài 4 (phương trình quy về) thuộc chương II, 2 tiết.",
+    "Trung tâm dạy 19 tiết $+$ 1 tiết kiểm tra cho 12 tiết sách; phần dôi dồn vào giải hệ và lập hệ vì bài lập hệ có ở 10/10 đề giữa kì I đã rà (trung bình $1{,}85$ điểm)."
+  ],
+  "kien_thuc_nen": [
+    "\\textbf{Phương trình bậc nhất một ẩn, quy tắc chuyển vế và nhân} (Lớp 8): mọi bước giải hệ quy về giải một phương trình bậc nhất một ẩn.",
+    "\\textbf{Phân tích đa thức thành nhân tử, hằng đẳng thức} (Lớp 8): đưa phương trình về dạng tích, tìm mẫu thức chung $x^2 - a^2$.",
+    "\\textbf{Phân thức: điều kiện xác định, quy đồng mẫu} (Lớp 8): phương trình chứa ẩn ở mẫu.",
+    "\\textbf{Giải bài toán bằng cách lập phương trình} (Lớp 8): cách gọi ẩn, đặt điều kiện, trả lời — dùng lại cho bài lập hệ.",
+    "\\textbf{Tỉ số phần trăm} (Lớp 6, 7): giá sau giảm $p\\%$ bằng $(100 - p)\\%$ giá gốc; lãi suất.",
+    "\\textbf{Hàm số bậc nhất $y = ax + b$ và đồ thị} (Lớp 8): tập nghiệm của $ax + by = c$ là một đường thẳng."
+  ],
+  "lythuyet": [
+    "\\textbf{Mục tiêu của chương}: làm trọn \\textbf{Bài I đề giữa kì I} (giải phương trình tích, phương trình chứa ẩn ở mẫu, giải hệ — khoảng $2{,}5$ điểm) và \\textbf{Bài II giải bài toán bằng cách lập hệ phương trình} ($1{,}5 - 2{,}0$ điểm, 10/10 đề giữa kì I đã rà).",
+    "\\textbf{Trọng số đề}: phương trình quy về có ở 10/10 đề giữa kì I (khoảng $1{,}4$ điểm); giải hệ 9/10 đề; bài lập hệ thường là bài giảm giá phần trăm, vé, làm chung, chuyển động.",
+    "Bản đồ VD-VDC: chương thuộc nhóm tần suất VDC \\emph{không} ($p = 0$) nên tỉ lệ trên lớp 15 NB $/$ 30 TH $/$ 55 VD, không có câu VDC; trần điểm kì I là $10{,}0$.",
+    "\\textbf{Phương trình tích} $A \\cdot B = 0$ khi $A = 0$ hoặc $B = 0$; \\textbf{phương trình chứa ẩn ở mẫu}: điều kiện xác định $\\to$ quy đồng, khử mẫu $\\to$ giải $\\to$ đối chiếu.",
+    "\\textbf{Phương trình bậc nhất hai ẩn} $ax + by = c$ ($a$, $b$ không đồng thời bằng $0$) có vô số nghiệm, biểu diễn bởi một đường thẳng; \\textbf{hệ hai phương trình}: nghiệm là nghiệm chung.",
+    "\\textbf{Giải hệ}: phương pháp thế, phương pháp cộng đại số; hệ có thể có một nghiệm, vô nghiệm hoặc vô số nghiệm.",
+    "\\textbf{Chuẩn đầu ra}: giải đúng, trình bày đủ các bài phương trình, hệ phương trình; làm trọn bài lập hệ phương trình có đối chiếu điều kiện."
+  ],
+  "vidu": [
+    "Ca 1: giải $x^2 - x = -2x + 2$ đưa về tích; giải $\\frac{x}{x + 1} = \\frac{x - 1}{x - 2}$; bài đạp xe hai bạn Phong và Khang lập phương trình.",
+    "Ca 2: viết hệ cho bài toán 180 học sinh hai trường dự ngày hội STEM rồi kiểm tra cặp số $(80; 100)$.",
+    "Ca 3: giải hệ bằng phương pháp thế, phương pháp cộng; hệ $5(x + 2y) - 3(x - y) = 99$, $x - 3y = 7x - 4y - 17$.",
+    "Ca 4, \\textbf{ví dụ trục}: bài mua bánh và kẹo (15 hộp bánh, 5 túi kẹo, 850 nghìn đồng) giải trọn như đi thi; bài hai đội xe chở cát làm chung.",
+    "Ca 5: hệ đặt ẩn phụ $\\frac{1}{x} + \\frac{1}{y} = \\frac{1}{12}$, $\\frac{8}{x} + \\frac{15}{y} = 1$."
+  ],
+  "dang_vd": [
+    "\\textbf{Bài II — giải bài toán bằng cách lập hệ phương trình} ($1{,}5 - 2{,}0$ điểm): giảm giá phần trăm (nhiều nhất), số vé, làm chung $-$ làm riêng, chuyển động xuôi ngược dòng.",
+    "\\textbf{Phương trình chứa ẩn ở mẫu có mẫu $x^2 - a^2$} (Bài I.2 đề giữa kì I, $0{,}5 - 0{,}75$ điểm): phải phân tích mẫu, đối chiếu điều kiện, có đề ra vô nghiệm.",
+    "\\textbf{Hệ phải biến đổi trước} (khai triển, đặt ẩn phụ) và \\textbf{lập hệ rồi kiểm tra nghiệm} (ca 2)."
+  ],
+  "loisai": [
+    "\\textbf{Phương trình tích}: chia hai vế cho một nhân tử chứa ẩn, mất nghiệm.",
+    "\\textbf{Phương trình chứa ẩn ở mẫu}: quên điều kiện xác định hoặc quên đối chiếu, kết luận cả nghiệm làm mẫu bằng $0$.",
+    "\\textbf{Giải hệ}: nhân thiếu một vế khi đưa hệ số về bằng nhau; trừ hai phương trình sai dấu.",
+    "\\textbf{Kiểm tra nghiệm của hệ} chỉ thay vào một phương trình.",
+    "\\textbf{Bài lập hệ}: giá sau giảm $20\\%$ viết thành $0{,}2x$ thay vì $0{,}8x$; không đổi phút ra giờ; thiếu điều kiện của ẩn và câu trả lời."
+  ],
+  "kienthuc_nb": [
+    "$A \\cdot B = 0$ khi $A = 0$ hoặc $B = 0$.",
+    "Phương trình chứa ẩn ở mẫu: điều kiện xác định là mọi mẫu khác $0$.",
+    "$(x_0; y_0)$ là nghiệm của $ax + by = c$ khi $ax_0 + by_0 = c$.",
+    "Phương pháp thế: rút một ẩn rồi thế; phương pháp cộng: làm cho hệ số một ẩn bằng nhau hoặc đối nhau rồi trừ (cộng)."
+  ],
+  "phieu": [
+    {
+      "code": "1",
+      "so_ca": 1,
+      "title": "Ca 1 (Tuần 4) — Phương trình quy về phương trình bậc nhất một ẩn (SGK Bài 4)",
+      "rows": [
+        {
+          "dang": "Giải phương trình tích $(ax + b)(cx + d) = 0$",
+          "band": "NB",
+          "loai": "NB tách TH",
+          "lythuyet": 1,
+          "vidu": 1,
+          "onclass": 3,
+          "btvn": 3,
+          "source_refs": [
+            "PTQV LT.VD",
+            "PTQV D1.VD1",
+            "gk1-bat-trang-2a",
+            "gk1-thai-thinh-1-1",
+            "ck1-ai-mo-1-1"
+          ],
+          "decompose": "none"
+        },
+        {
+          "dang": "Đưa phương trình về dạng tích bằng đặt nhân tử chung, hằng đẳng thức",
+          "band": "NB",
+          "loai": "NB tách TH",
+          "lythuyet": 1,
+          "vidu": 1,
+          "onclass": 3,
+          "btvn": 3,
+          "source_refs": [
+            "PTQV D1.VD2",
+            "gk1-van-yen-1b",
+            "gk1-nguyen-du-1-3",
+            "ck1-ly-thanh-tong-2a"
+          ],
+          "decompose": "none"
+        },
+        {
+          "dang": "Tìm điều kiện xác định của phương trình chứa ẩn ở mẫu",
+          "band": "NB",
+          "loai": "NB tách TH",
+          "lythuyet": 1,
+          "vidu": 1,
+          "onclass": 3,
+          "btvn": 3,
+          "source_refs": [
+            "PTQV LT.VD",
+            "gk1-co-nhue-2-1b",
+            "gk1-phu-dien-2b"
+          ],
+          "decompose": "none"
+        },
+        {
+          "dang": "Quy đồng, khử mẫu một phương trình chứa ẩn ở mẫu",
+          "band": "NB",
+          "loai": "NB tách TH",
+          "lythuyet": 0,
+          "vidu": 1,
+          "onclass": 3,
+          "btvn": 3,
+          "source_refs": [
+            "PTQV LT.VD",
+            "gk1-dvhau-1-3",
+            "gk1-nbk-1c"
+          ],
+          "decompose": "none",
+          "gian_giao": "dien-khuyet"
+        },
+        {
+          "dang": "Giải phương trình đưa về phương trình tích (khai triển rồi phân tích)",
+          "band": "TH",
+          "loai": "TH ghép bài",
+          "lythuyet": 0,
+          "vidu": 1,
+          "onclass": 2,
+          "btvn": 2,
+          "source_refs": [
+            "PTQV D1.VD2",
+            "gk1-dvhau-1-1",
+            "gk1-nguyen-du-1-3"
+          ],
+          "decompose": "th2nb"
+        },
+        {
+          "dang": "Giải phương trình chứa ẩn ở mẫu có mẫu chung bậc nhất hoặc tích hai nhân tử",
+          "band": "TH",
+          "loai": "TH ghép bài",
+          "lythuyet": 0,
+          "vidu": 1,
+          "onclass": 2,
+          "btvn": 2,
+          "source_refs": [
+            "gk1-phu-dien-2b",
+            "gk1-thai-thinh-1-3",
+            "gk1-nbk-1c",
+            "ck1-ai-mo-1-2"
+          ],
+          "decompose": "th2nb"
+        },
+        {
+          "dang": "Phương trình chứa ẩn ở mẫu có giá trị bị loại (có thể vô nghiệm)",
+          "band": "TH",
+          "loai": "TH tách VD",
+          "lythuyet": 0,
+          "vidu": 1,
+          "onclass": 2,
+          "btvn": 1,
+          "source_refs": [
+            "gk1-ngo-gia-tu-1b",
+            "gk1-dvhau-1-3"
+          ],
+          "decompose": "th2nb"
+        },
+        {
+          "dang": "Giải phương trình chứa ẩn ở mẫu có mẫu $x^2 - a^2$ (khuôn đề giữa kì I)",
+          "band": "VD",
+          "loai": "VD lẻ",
+          "lythuyet": 0,
+          "vidu": 2,
+          "onclass": 3,
+          "btvn": 2,
+          "source_refs": [
+            "gk1-bat-trang-2b",
+            "gk1-nguyen-du-1-2",
+            "gk1-co-nhue-2-1b",
+            "ck1-tan-trieu-11",
+            "ck1-ngoc-lam-I3"
+          ],
+          "decompose": "vd",
+          "quy_trinh": [
+            "Bước 1 — Cái phải tìm là gì? Phân tích các mẫu thành nhân tử, viết điều kiện xác định.",
+            "Bước 2 — Tìm mẫu thức chung, quy đồng hai vế rồi khử mẫu.",
+            "Bước 3 — Bỏ ngoặc, thu gọn, giải phương trình vừa nhận được (bậc nhất hoặc đưa về tích).",
+            "Bước 4 — Đã dùng hết điều kiện chưa? Đối chiếu từng giá trị với điều kiện xác định, loại giá trị không thoả mãn.",
+            "Bước 5 — Nhìn lại: viết câu \"Vậy …\" (có thể là phương trình vô nghiệm)."
+          ]
+        },
+        {
+          "dang": "Giải bài toán bằng cách lập phương trình có ẩn ở mẫu dẫn tới phương trình bậc nhất",
+          "band": "VD",
+          "loai": "VD lẻ",
+          "lythuyet": 0,
+          "vidu": 1,
+          "onclass": 2,
+          "btvn": 2,
+          "source_refs": [
+            "ck1-ai-mo-3-2",
+            "ck1-phuc-dong-III1",
+            "PTQV D3.VD4",
+            "PTQV D3.VD5"
+          ],
+          "decompose": "vd",
+          "quy_trinh": [
+            "Bước 1 — Cái phải tìm là gì? Gọi ẩn cho đại lượng đó, ghi đơn vị và điều kiện.",
+            "Bước 2 — Biểu diễn các đại lượng còn lại theo ẩn (thời gian $=$ quãng đường : vận tốc…).",
+            "Bước 3 — Đã dùng hết dữ kiện chưa? Dữ kiện \"nhiều hơn, ít hơn, bằng\" cho phương trình; đổi phút ra giờ.",
+            "Bước 4 — Giải phương trình.",
+            "Bước 5 — Nhìn lại: đối chiếu điều kiện, trả lời bằng câu \"Vậy …\" kèm đơn vị."
+          ]
+        }
+      ]
+    },
+    {
+      "code": "2",
+      "so_ca": 1,
+      "title": "Ca 2 (Tuần 5) — Bài 1: Khái niệm phương trình và hệ hai phương trình bậc nhất hai ẩn",
+      "rows": [
+        {
+          "dang": "Nhận biết phương trình bậc nhất hai ẩn, chỉ ra hệ số $a$, $b$, $c$ (chú ý hệ số bằng $0$)",
+          "band": "NB",
+          "loai": "NB lẻ LT",
+          "lythuyet": 1,
+          "vidu": 1,
+          "onclass": 3,
+          "btvn": 3,
+          "source_refs": [
+            "PTHE LT.VD",
+            "PTHE TN.C1",
+            "PTHE TN.C2",
+            "PTHE TN.C3"
+          ],
+          "decompose": "none"
+        },
+        {
+          "dang": "Kiểm tra một cặp số có là nghiệm của phương trình bậc nhất hai ẩn",
+          "band": "NB",
+          "loai": "NB tách TH",
+          "lythuyet": 1,
+          "vidu": 1,
+          "onclass": 3,
+          "btvn": 3,
+          "source_refs": [
+            "PTHE LT.VD",
+            "PTHE TN.C5",
+            "PTHE TN.C6",
+            "PTHE TN.C7"
+          ],
+          "decompose": "none"
+        },
+        {
+          "dang": "Kiểm tra một cặp số có là nghiệm của hệ hai phương trình",
+          "band": "NB",
+          "loai": "NB tách TH",
+          "lythuyet": 1,
+          "vidu": 1,
+          "onclass": 3,
+          "btvn": 3,
+          "source_refs": [
+            "PTHE LT.VD2",
+            "PTHE TN.C10",
+            "PTHE B3",
+            "PTHE B4"
+          ],
+          "decompose": "none",
+          "gian_giao": "dien-khuyet"
+        },
+        {
+          "dang": "Viết nghiệm tổng quát; biểu diễn tập nghiệm là một đường thẳng",
+          "band": "NB",
+          "loai": "NB lẻ LT",
+          "lythuyet": 1,
+          "vidu": 1,
+          "onclass": 3,
+          "btvn": 3,
+          "source_refs": [
+            "PTHE VD1",
+            "PTHE TN.C11",
+            "PTHE TN.C12",
+            "PTHE B1",
+            "PTHE B2"
+          ],
+          "decompose": "none"
+        },
+        {
+          "dang": "Tìm giá trị còn thiếu để một cặp số là nghiệm của phương trình",
+          "band": "TH",
+          "loai": "TH ghép bài",
+          "lythuyet": 0,
+          "vidu": 1,
+          "onclass": 2,
+          "btvn": 2,
+          "source_refs": [
+            "PTHE TN.C14",
+            "PTHE TN.C15",
+            "PTHE B2"
+          ],
+          "decompose": "th2nb"
+        },
+        {
+          "dang": "Viết phương trình bậc nhất hai ẩn biểu thị một dữ kiện thực tế",
+          "band": "TH",
+          "loai": "TH ghép bài",
+          "lythuyet": 0,
+          "vidu": 1,
+          "onclass": 2,
+          "btvn": 2,
+          "source_refs": [
+            "PTHE VD2",
+            "PTHE B5",
+            "PTHE B6"
+          ],
+          "decompose": "th2nb"
+        },
+        {
+          "dang": "Viết hệ phương trình từ hai dữ kiện về tổng và về tiền",
+          "band": "TH",
+          "loai": "TH tách VD",
+          "lythuyet": 0,
+          "vidu": 1,
+          "onclass": 2,
+          "btvn": 1,
+          "source_refs": [
+            "PTHE VD2",
+            "PTHE B5",
+            "PTHE B6"
+          ],
+          "decompose": "th2nb"
+        },
+        {
+          "dang": "Lập hệ phương trình cho bài toán phần trăm, pha trộn rồi kiểm tra cặp số là nghiệm",
+          "band": "VD",
+          "loai": "VD lẻ",
+          "lythuyet": 0,
+          "vidu": 2,
+          "onclass": 3,
+          "btvn": 2,
+          "source_refs": [
+            "PTHE VD2",
+            "PTHE B7",
+            "PTHE B9"
+          ],
+          "decompose": "vd",
+          "quy_trinh": [
+            "Bước 1 — Cái phải tìm là gì? Hai ẩn $x$, $y$ biểu thị đại lượng nào, đơn vị gì?",
+            "Bước 2 — Đã dùng hết dữ kiện chưa? Mỗi dữ kiện về tổng, về tiền (hoặc về phần trăm) cho một phương trình.",
+            "Bước 3 — Viết hệ gồm hai phương trình vừa lập.",
+            "Bước 4 — Thay cặp số đề cho vào CẢ HAI phương trình, kiểm tra từng phương trình.",
+            "Bước 5 — Nhìn lại: cặp số thoả mãn cả hai phương trình mới là nghiệm của hệ; viết câu \"Vậy …\"."
+          ]
+        },
+        {
+          "dang": "Lập hệ phương trình cho bài toán hình học, chuyển động rồi kiểm tra cặp số là nghiệm",
+          "band": "VD",
+          "loai": "VD lẻ",
+          "lythuyet": 0,
+          "vidu": 1,
+          "onclass": 2,
+          "btvn": 2,
+          "source_refs": [
+            "PTHE B8",
+            "PTHE B10"
+          ],
+          "decompose": "vd",
+          "quy_trinh": [
+            "Bước 1 — Cái phải tìm là gì? Hai ẩn $x$, $y$ biểu thị đại lượng nào, đơn vị gì?",
+            "Bước 2 — Đã dùng hết dữ kiện chưa? Mỗi dữ kiện về tổng, về tiền (hoặc về phần trăm) cho một phương trình.",
+            "Bước 3 — Viết hệ gồm hai phương trình vừa lập.",
+            "Bước 4 — Thay cặp số đề cho vào CẢ HAI phương trình, kiểm tra từng phương trình.",
+            "Bước 5 — Nhìn lại: cặp số thoả mãn cả hai phương trình mới là nghiệm của hệ; viết câu \"Vậy …\"."
+          ]
+        }
+      ]
+    },
+    {
+      "code": "3",
+      "so_ca": 1,
+      "title": "Ca 3 (Tuần 6) — Bài 2: Giải hệ hai phương trình bậc nhất hai ẩn",
+      "rows": [
+        {
+          "dang": "Rút một ẩn theo ẩn kia từ một phương trình của hệ (bước đầu của phương pháp thế)",
+          "band": "NB",
+          "loai": "NB tách TH",
+          "lythuyet": 1,
+          "vidu": 1,
+          "onclass": 3,
+          "btvn": 3,
+          "source_refs": [
+            "GHE LT.VD1",
+            "GHE D1.VD1",
+            "GHE D1.B1"
+          ],
+          "decompose": "none"
+        },
+        {
+          "dang": "Nhân hai vế để hệ số của một ẩn bằng nhau hoặc đối nhau (bước đầu của phương pháp cộng)",
+          "band": "NB",
+          "loai": "NB tách TH",
+          "lythuyet": 1,
+          "vidu": 1,
+          "onclass": 3,
+          "btvn": 3,
+          "source_refs": [
+            "GHE LT.VD2",
+            "GHE D1.VD2",
+            "GHE D1.B2"
+          ],
+          "decompose": "none"
+        },
+        {
+          "dang": "Giải hệ có một ẩn có hệ số bằng $1$ hoặc $-1$",
+          "band": "NB",
+          "loai": "NB tách TH",
+          "lythuyet": 0,
+          "vidu": 1,
+          "onclass": 3,
+          "btvn": 3,
+          "source_refs": [
+            "gk1-nguyen-du-1-1",
+            "gk1-thai-thinh-1-2",
+            "gk1-co-nhue-2-1d",
+            "gk1-phu-dien-2c"
+          ],
+          "decompose": "none",
+          "gian_giao": "dien-khuyet"
+        },
+        {
+          "dang": "Nhận ra hệ vô nghiệm, hệ có vô số nghiệm khi khử một ẩn",
+          "band": "NB",
+          "loai": "NB lẻ LT",
+          "lythuyet": 1,
+          "vidu": 1,
+          "onclass": 3,
+          "btvn": 3,
+          "source_refs": [
+            "GHE D1.VD3",
+            "GHE D1.VD4",
+            "PTHE LT.VD3"
+          ],
+          "decompose": "none"
+        },
+        {
+          "dang": "Giải hệ bằng phương pháp thế",
+          "band": "TH",
+          "loai": "TH ghép bài",
+          "lythuyet": 0,
+          "vidu": 1,
+          "onclass": 2,
+          "btvn": 2,
+          "source_refs": [
+            "gk1-bat-trang-1a",
+            "gk1-ngo-gia-tu-2",
+            "GHE D1.B1"
+          ],
+          "decompose": "th2nb"
+        },
+        {
+          "dang": "Giải hệ bằng phương pháp cộng đại số",
+          "band": "TH",
+          "loai": "TH ghép bài",
+          "lythuyet": 0,
+          "vidu": 1,
+          "onclass": 2,
+          "btvn": 2,
+          "source_refs": [
+            "gk1-bat-trang-1b",
+            "gk1-van-yen-1a",
+            "ck1-ngoc-thuy-I2.b",
+            "GHE D1.B2"
+          ],
+          "decompose": "th2nb"
+        },
+        {
+          "dang": "Giải hệ có hệ số thập phân, phân số (nhân để được hệ số nguyên)",
+          "band": "TH",
+          "loai": "TH ghép bài",
+          "lythuyet": 0,
+          "vidu": 1,
+          "onclass": 2,
+          "btvn": 1,
+          "source_refs": [
+            "GHE D2.B1"
+          ],
+          "decompose": "th2nb"
+        },
+        {
+          "dang": "Giải hệ phương trình phải khai triển, thu gọn trước",
+          "band": "VD",
+          "loai": "VD lẻ",
+          "lythuyet": 0,
+          "vidu": 2,
+          "onclass": 3,
+          "btvn": 2,
+          "source_refs": [
+            "GHE D2.VD3",
+            "GHE D2.B1",
+            "ck1-ai-mo-2-1",
+            "ck1-chu-van-an-II1"
+          ],
+          "decompose": "vd",
+          "quy_trinh": [
+            "Bước 1 — Cái phải làm là gì? Hệ đã ở dạng $ax + by = c$ chưa?",
+            "Bước 2 — Khai triển, bỏ ngoặc (hoặc quy đồng bỏ mẫu) ở từng phương trình; các hạng tử $xy$ ở hai vế triệt tiêu.",
+            "Bước 3 — Chuyển vế, thu gọn về hệ hai phương trình bậc nhất hai ẩn.",
+            "Bước 4 — Giải hệ bằng phương pháp thế hoặc cộng đại số.",
+            "Bước 5 — Nhìn lại: thử cặp nghiệm vào hệ ban đầu, viết câu \"Vậy …\"."
+          ]
+        },
+        {
+          "dang": "Xác định hệ số $a$, $b$ của đường thẳng $y = ax + b$ đi qua hai điểm",
+          "band": "VD",
+          "loai": "VD lẻ",
+          "lythuyet": 0,
+          "vidu": 1,
+          "onclass": 2,
+          "btvn": 2,
+          "source_refs": [
+            "GHE D2.B2",
+            "GHE D2.B3"
+          ],
+          "decompose": "vd",
+          "quy_trinh": [
+            "Bước 1 — Cái phải tìm là gì? Hai hệ số $a$, $b$ (hoặc hai số chưa biết) là ẩn.",
+            "Bước 2 — Mỗi điều kiện đề cho (đi qua một điểm, có một nghiệm) cho một phương trình bậc nhất của $a$, $b$.",
+            "Bước 3 — Lập hệ hai phương trình ẩn $a$, $b$ và giải.",
+            "Bước 4 — Đã dùng hết giả thiết chưa? Thay ngược lại để kiểm tra.",
+            "Bước 5 — Nhìn lại: viết câu \"Vậy …\"."
+          ]
+        }
+      ]
+    },
+    {
+      "code": "4",
+      "so_ca": 1,
+      "title": "Ca 4 (Tuần 7) — Bài 3: Giải bài toán bằng cách lập hệ phương trình",
+      "rows": [
+        {
+          "dang": "Gọi hai ẩn, ghi đơn vị và điều kiện",
+          "band": "NB",
+          "loai": "NB tách TH",
+          "lythuyet": 1,
+          "vidu": 1,
+          "onclass": 3,
+          "btvn": 3,
+          "source_refs": [
+            "LHE LT",
+            "LHE D1.VD1",
+            "gk1-ngo-gia-tu-3-2"
+          ],
+          "decompose": "none"
+        },
+        {
+          "dang": "Biểu diễn đại lượng theo ẩn: giá sau giảm $p\\%$, phần việc làm trong một ngày, vận tốc xuôi ngược dòng",
+          "band": "NB",
+          "loai": "NB tách TH",
+          "lythuyet": 1,
+          "vidu": 1,
+          "onclass": 3,
+          "btvn": 3,
+          "source_refs": [
+            "gk1-bat-trang-3-1",
+            "gk1-dvhau-2-1",
+            "gk1-phu-dien-3-1",
+            "ck1-trung-vuong-II2"
+          ],
+          "decompose": "none"
+        },
+        {
+          "dang": "Lập phương trình thứ hai từ dữ kiện, viết hệ (điền khuyết lời giải)",
+          "band": "NB",
+          "loai": "NB tách TH",
+          "lythuyet": 0,
+          "vidu": 1,
+          "onclass": 3,
+          "btvn": 3,
+          "source_refs": [
+            "gk1-nbk-2-1",
+            "ck1-phuong-ha-dong-3",
+            "LHE D1.VD1"
+          ],
+          "decompose": "none",
+          "gian_giao": "dien-khuyet"
+        },
+        {
+          "dang": "Đối chiếu nghiệm của hệ với điều kiện rồi trả lời bài toán",
+          "band": "NB",
+          "loai": "NB tách TH",
+          "lythuyet": 0,
+          "vidu": 1,
+          "onclass": 3,
+          "btvn": 3,
+          "source_refs": [
+            "LHE LT",
+            "ck1-dich-vong-III"
+          ],
+          "decompose": "none"
+        },
+        {
+          "dang": "Bài toán tổng $-$ hiệu, số tiền, số vé, chữ số",
+          "band": "TH",
+          "loai": "TH ghép bài",
+          "lythuyet": 0,
+          "vidu": 1,
+          "onclass": 2,
+          "btvn": 2,
+          "source_refs": [
+            "LHE D1.B1",
+            "LHE D1.B3",
+            "ck1-phuong-ha-dong-3",
+            "ck1-tan-trieu-31",
+            "ck1-ly-thanh-tong-4"
+          ],
+          "decompose": "th2nb"
+        },
+        {
+          "dang": "Bài toán giảm giá, lãi suất phần trăm",
+          "band": "TH",
+          "loai": "TH ghép bài",
+          "lythuyet": 0,
+          "vidu": 1,
+          "onclass": 2,
+          "btvn": 2,
+          "source_refs": [
+            "gk1-bat-trang-3-1",
+            "gk1-dvhau-2-1",
+            "gk1-nbk-2-1",
+            "LHE D1.B2",
+            "ck1-ngoc-thuy-II"
+          ],
+          "decompose": "th2nb"
+        },
+        {
+          "dang": "Bài toán hình học (chu vi, diện tích hình chữ nhật)",
+          "band": "TH",
+          "loai": "TH ghép bài",
+          "lythuyet": 0,
+          "vidu": 1,
+          "onclass": 2,
+          "btvn": 1,
+          "source_refs": [
+            "LHE D2.B6",
+            "LHE D2.B8",
+            "gk1-nguyen-du-2-1",
+            "ck1-ngoc-lam-III"
+          ],
+          "decompose": "th2nb"
+        },
+        {
+          "dang": "Bài toán làm chung $-$ làm riêng lập hệ",
+          "band": "VD",
+          "loai": "VD lẻ",
+          "lythuyet": 0,
+          "vidu": 2,
+          "onclass": 3,
+          "btvn": 2,
+          "source_refs": [
+            "gk1-phu-dien-3-1",
+            "ck1-ai-mo-3-1",
+            "LHE D6.VD1",
+            "LHE D6.B3"
+          ],
+          "decompose": "vd",
+          "quy_trinh": [
+            "Bước 1 — Cái phải tìm là gì? Gọi hai ẩn cho hai đại lượng cần tìm, ghi đơn vị và điều kiện.",
+            "Bước 2 — Biểu diễn các đại lượng chưa biết theo hai ẩn (giá sau giảm $= (1 - p\\%) \\cdot$ giá gốc, phần việc trong một ngày $= \\dfrac{1}{x}$…).",
+            "Bước 3 — Đã dùng hết dữ kiện chưa? Lập hai phương trình từ hai dữ kiện.",
+            "Bước 4 — Giải hệ phương trình.",
+            "Bước 5 — Nhìn lại: đối chiếu điều kiện, trả lời đủ hai đại lượng kèm đơn vị."
+          ]
+        },
+        {
+          "dang": "Bài toán chuyển động, năng suất lập hệ",
+          "band": "VD",
+          "loai": "VD lẻ",
+          "lythuyet": 0,
+          "vidu": 1,
+          "onclass": 2,
+          "btvn": 2,
+          "source_refs": [
+            "ck1-trung-vuong-II2",
+            "gk1-van-yen-2-2",
+            "gk1-trung-vuong-2-2",
+            "gk1-co-nhue-2-2-1"
+          ],
+          "decompose": "vd",
+          "quy_trinh": [
+            "Bước 1 — Cái phải tìm là gì? Gọi hai ẩn cho hai đại lượng cần tìm, ghi đơn vị và điều kiện.",
+            "Bước 2 — Biểu diễn các đại lượng chưa biết theo hai ẩn (giá sau giảm $= (1 - p\\%) \\cdot$ giá gốc, phần việc trong một ngày $= \\dfrac{1}{x}$…).",
+            "Bước 3 — Đã dùng hết dữ kiện chưa? Lập hai phương trình từ hai dữ kiện.",
+            "Bước 4 — Giải hệ phương trình.",
+            "Bước 5 — Nhìn lại: đối chiếu điều kiện, trả lời đủ hai đại lượng kèm đơn vị."
+          ]
+        }
+      ]
+    },
+    {
+      "code": "5",
+      "so_ca": 1,
+      "kiem_tra_phut": 45,
+      "title": "Ca 5 (Tuần 8) — Luyện tập chung và Bài tập cuối chương I (135 phút) $+$ Kiểm tra chương I (45 phút)",
+      "rows": [
+        {
+          "dang": "Giải phương trình tích, phương trình chứa ẩn ở mẫu (trả lời nhanh)",
+          "band": "NB",
+          "loai": "NB tách TH",
+          "lythuyet": 1,
+          "vidu": 0,
+          "onclass": 3,
+          "btvn": 4,
+          "source_refs": [
+            "gk1-co-nhue-2-1a",
+            "gk1-nbk-1b",
+            "gk1-phu-dien-2a"
+          ],
+          "decompose": "none"
+        },
+        {
+          "dang": "Giải hệ phương trình bậc nhất hai ẩn (trả lời nhanh)",
+          "band": "NB",
+          "loai": "NB tách TH",
+          "lythuyet": 1,
+          "vidu": 1,
+          "onclass": 3,
+          "btvn": 4,
+          "source_refs": [
+            "gk1-thai-thinh-1-2",
+            "gk1-van-yen-1a",
+            "gk1-ngo-gia-tu-2"
+          ],
+          "decompose": "none"
+        },
+        {
+          "dang": "Điền khuyết lời giải một bài lập hệ phương trình trọn vẹn theo khuôn đi thi",
+          "band": "NB",
+          "loai": "NB ghép bài",
+          "lythuyet": 0,
+          "vidu": 0,
+          "onclass": 3,
+          "btvn": 4,
+          "source_refs": [
+            "gk1-ngo-gia-tu-3-2",
+            "ck1-chu-van-an-III"
+          ],
+          "decompose": "none",
+          "gian_giao": "dien-khuyet"
+        },
+        {
+          "dang": "Giải hệ phương trình quy về hệ bậc nhất (khai triển, thu gọn)",
+          "band": "TH",
+          "loai": "TH ghép bài",
+          "lythuyet": 0,
+          "vidu": 1,
+          "onclass": 2,
+          "btvn": 2,
+          "source_refs": [
+            "ck1-ai-mo-2-1",
+            "ck1-chu-van-an-II1"
+          ],
+          "decompose": "th2nb"
+        },
+        {
+          "dang": "Viết lại quy trình giải bài toán bằng cách lập hệ phương trình và chỉ ra bước hay mất điểm",
+          "band": "TH",
+          "loai": "TH lẻ LT",
+          "lythuyet": 0,
+          "vidu": 0,
+          "onclass": 1,
+          "btvn": 1,
+          "source_refs": [],
+          "decompose": "none",
+          "viet_quy_trinh": true
+        },
+        {
+          "dang": "Bài toán thực tế lập hệ: giảm giá, vé, tiền",
+          "band": "TH",
+          "loai": "TH ghép bài",
+          "lythuyet": 0,
+          "vidu": 1,
+          "onclass": 1,
+          "btvn": 2,
+          "source_refs": [
+            "ck1-phuc-dong-III2",
+            "gk1-thai-thinh-3",
+            "gk1-van-yen-2-1"
+          ],
+          "decompose": "th2nb"
+        },
+        {
+          "dang": "Giải hệ phương trình bằng cách đặt ẩn phụ",
+          "band": "VD",
+          "loai": "VD lẻ",
+          "lythuyet": 0,
+          "vidu": 1,
+          "onclass": 2,
+          "btvn": 2,
+          "source_refs": [
+            "gk1-dvhau-1-4",
+            "GHE D3.VD4",
+            "GHE D3.B1"
+          ],
+          "decompose": "vd",
+          "quy_trinh": [
+            "Bước 1 — Cái phải tìm là gì? Viết điều kiện xác định (các mẫu khác $0$).",
+            "Bước 2 — Biểu thức nào lặp lại ở cả hai phương trình? Đặt ẩn phụ cho chúng.",
+            "Bước 3 — Giải hệ bậc nhất theo ẩn phụ.",
+            "Bước 4 — Trả lại ẩn ban đầu, giải tìm $x$, $y$ và đối chiếu điều kiện.",
+            "Bước 5 — Nhìn lại: viết câu \"Vậy …\"."
+          ]
+        },
+        {
+          "dang": "Bài toán lập hệ trọn vẹn theo khuôn Bài II đề giữa kì I",
+          "band": "VD",
+          "loai": "VD lẻ",
+          "lythuyet": 0,
+          "vidu": 2,
+          "onclass": 2,
+          "btvn": 3,
+          "source_refs": [
+            "ck1-chu-van-an-III",
+            "ck1-dich-vong-III",
+            "gk1-thai-thinh-3",
+            "ck1-ai-mo-3-1"
+          ],
+          "decompose": "vd",
+          "quy_trinh": [
+            "Bước 1 — Cái phải tìm là gì? Gọi hai ẩn cho hai đại lượng cần tìm, ghi đơn vị và điều kiện.",
+            "Bước 2 — Biểu diễn các đại lượng chưa biết theo hai ẩn (giá sau giảm $= (1 - p\\%) \\cdot$ giá gốc, phần việc trong một ngày $= \\dfrac{1}{x}$…).",
+            "Bước 3 — Đã dùng hết dữ kiện chưa? Lập hai phương trình từ hai dữ kiện.",
+            "Bước 4 — Giải hệ phương trình.",
+            "Bước 5 — Nhìn lại: đối chiếu điều kiện, trả lời đủ hai đại lượng kèm đơn vị."
+          ]
+        }
+      ]
+    }
+  ]
+}
