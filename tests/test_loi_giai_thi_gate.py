@@ -90,8 +90,10 @@ def test_bo_de_on_gk1_lop9_sach_cong():
     """Bộ đề đã sửa theo góp ý phải qua cổng (chốt chặn hồi quy)."""
     import glob
     import json
-    files = glob.glob("inputs/seeds/lop-9/de-on-tap-giua-ki-1/*.json")
-    assert files
+    files = glob.glob("inputs/seeds/lop-9/de-on-tap-giua-ki-1/*.json")       # bản 1
+    files_v2 = glob.glob("inputs/seeds/lop-9/de-on-tap-giua-ki-1-v2/*.json")  # bản 2 (rải nguồn)
+    assert files and files_v2
+    files += files_v2
     for f in files:
         les = LessonPackage.model_validate(json.load(open(f, encoding="utf-8")))
         assert check_loi_giai_thi(les) == [], f

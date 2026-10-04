@@ -1,6 +1,7 @@
 # Quy trình dựng BỘ ĐỀ ÔN TẬP + ĐỀ KIỂM TRA (bản mẫu: GK1 lớp 9, 01/10/2026)
 
 Bộ mẫu đã Thầy duyệt: 3 đề ôn + 1 đề GK1 chính thức lớp 9.
+- **Hai phiên bản** (03/10/2026): **bản 1** = bộ đã duyệt 01/10 (`scripts/de_on_tap_gk1_lop9.py` → `inputs/seeds/lop-9/de-on-tap-giua-ki-1/`); **bản 2** = rải nguồn theo trường/quận + khung theo lưới dạng gắn tay (`scripts/de_on_tap_gk1_lop9_v2.py` → `inputs/seeds/lop-9/de-on-tap-giua-ki-1-v2/`, PDF có hậu tố `-v2`). Hai bản dùng hai script + hai file toạ độ hình riêng, sửa bản nào chỉ chạy script bản đó.
 - Seed: [inputs/seeds/lop-9/de-on-tap-giua-ki-1/](../inputs/seeds/lop-9/de-on-tap-giua-ki-1/).
 - PDF trên Drive: `giaoanmathtech/Lop 9 2026-2027/On tap giua ki 1/`.
 
@@ -44,17 +45,26 @@ Làm khối khác (lớp 8, 7, 6) hay kỳ khác (CK1, GK2, CK2) thì đi **đú
 ```
 - Ra `outputs/thong-ke-dang-de/Thong-ke-dang-de-Toan8-Ha-Noi.xlsx`, có tiểu dạng (dòng ↳) và toán lời văn tách theo 22 bối cảnh.
 - Độ tin cậy khoảng 87%: dùng để **so dạng nào nhiều, dạng nào ít**, không phải số đếm chính xác.
+- **Chốt khung thì phải dùng LƯỚI DẠNG GẮN TAY, không dùng bộ đếm từ khoá.** Bộ đếm sót nặng dạng lời văn: lớp 9 GK1 nó báo "lập BPT thực tế" 10%, ngân hàng 10 đề báo 80%, đếm tay 54 đề ra **39% (52% năm 2025--2026)** -- khung cũ đặt 1,5đ lập BPT vào cả 4 đề là sai.
+  - Đọc văn bản từng đề (pdftotext/OCR ở `storage/cache/de-txt-all/`), gắn mã dạng cho TỪNG BÀI, ghi vào `inputs/refs/de-thi/lop-<N>/luoi-dang/<ky>.json` (kèm quận/huyện cũ đọc từ header, ghi chú đề gần trùng). Chỗ OCR vỡ công thức thì xem ảnh.
+  - `.venv/bin/python scripts/thong_ke_luoi_dang.py --ky gk1` ⇒ `outputs/thong-ke-dang-de/Thong-ke-dang-GK1-Toan9-luoi-tay.{xlsx,md}`.
+  - Đề gần trùng nhau (Nguyễn Huy Tưởng 25-26 ≈ Chu Văn An 24-25, Hoàng Hoa Thám ≈ Phú Châu, Kim Sơn ≈ Sơn Đông…) không phải bằng chứng độc lập.
 - Dạng nào bị mất phân số khi đọc máy (ví dụ phương trình chứa ẩn ở mẫu) thì đối chiếu thêm ngân hàng đề hoặc ảnh đề.
 
 ## Bước 5 — Chọn KHUNG đề và câu cho từng đề
 
 - **Khung = khung đề của các trường.** Đọc ảnh 8–10 đề GK1 thật để chốt số bài, điểm từng bài, thời gian, và có trắc nghiệm hay không.
   - Thầy: *"Các đề thì dựa theo các đề của các trường nhé. Nếu k có trắc nghiệm thì đừng cho vào."*
-  - Ví dụ khung GK1 lớp 9 Hà Nội: I 3,0 (PT tích, PT chứa ẩn ở mẫu, BPT, hệ) — II 3,0 (lập hệ + lập BPT) — III 1,0 (lượng giác thực tế) — IV 2,5 (tam giác vuông + đường cao) — V 0,5 (tối ưu).
+  - Ví dụ khung GK1 lớp 9 Hà Nội: I 3,0 (PT tích, PT chứa ẩn ở mẫu, BPT, hệ) — II 3,0 (hai bài lập hệ/lập PT; bài thứ hai là lập BPT ở 2/4 đề vì dạng này có ở ~1/2 đề trường) — III 1,0 (lượng giác thực tế) — IV 2,5 (tam giác vuông + đường cao) — V 0,5 (tối ưu).
 - **Đề ôn 1, 2:** các dạng tần suất **cao nhất**, **bốc nguyên văn** từ đề trường. Đề ôn 2 giữ dạng nhưng nâng một nấc suy luận.
 - **Đề ôn 3:** các dạng tần suất **thứ nhì**, được mở rộng câu (ghi rõ "(mở rộng)" trong ma trận).
 - **Đề chính thức:** câu của trường **chưa xuất hiện trong 3 đề ôn** (cùng dạng, khác trường) để đo đúng năng lực, không đo trí nhớ. File đáp án có **bản đồ dạng qua 4 đề** và **phiếu theo dõi tiến bộ**.
   - Thầy: *"đánh giá mang mục đích vì sự tiến bộ của học sinh"*.
+- **RẢI NGUỒN theo trường và quận** (03/10/2026, sếp góp ý "các đề mình lấy được toàn khu vực LB - Gia Lâm nhỉ"):
+  - Mỗi đề lấy câu từ **≥ 4 quận/huyện**, không quận nào **quá 40%** số điểm của đề.
+  - Cả bộ: không quận nào **quá 25%**, không trường nào **quá 15%** tổng điểm.
+  - Bốc từ **toàn bộ** đề trong lưới dạng, không chỉ từ ngân hàng `exams/` (ngân hàng GK1 lớp 9 chỉ có 10/54 đề, 3 đề LB–GL, và bản cũ dồn 62% số ý vào 4 đề có sẵn biểu điểm).
+  - Script đề tự kiểm luật (`kiem_nguon()` trong `scripts/de_on_tap_gk1_lop9_v2.py`, bảng `QUAN`) và in dòng "Nguồn đề: … trường thuộc … quận" vào file ma trận.
 - **Chép đề từ ẢNH đề gốc, KHÔNG từ ngân hàng `exams/*.json`.** Trong phiên này đối chiếu ảnh đã lòi thêm 6 chỗ ngân hàng chép sai, ví dụ góc 3° bị chép thành 30°, dấu + thành −. Sửa luôn ngân hàng và ghi chú vào `ghi_chu_can_Thay_xem`.
 - Kiểm phạm vi kiến thức: không dùng câu cần kiến thức kỳ sau (ví dụ tứ giác nội tiếp ở GK1).
 
@@ -88,9 +98,10 @@ Làm khối khác (lớp 8, 7, 6) hay kỳ khác (CK1, GK2, CK2) thì đi **đú
 ## Bước 8 — Cổng → build → SOÁT PDF BẰNG MẮT
 
 ```bash
-.venv/bin/python scripts/de_on_tap_gk1_lop9.py                       # sinh 8 seed (sửa đề thì sửa script này)
+.venv/bin/python scripts/de_on_tap_gk1_lop9_v2.py                    # bản 2: sinh 8 seed vào de-on-tap-giua-ki-1-v2/ (sửa đề thì sửa script này)
+.venv/bin/python scripts/de_on_tap_gk1_lop9.py                       # bản 1 (giữ nguyên để đối chiếu)
 for f in inputs/seeds/lop-9/de-on-tap-giua-ki-1/*.json; do .venv/bin/python -m src.main validate "$f"; done
-.venv/bin/python -m src.main build-folder inputs/seeds/lop-9/de-on-tap-giua-ki-1
+.venv/bin/python -m src.main build-folder inputs/seeds/lop-9/de-on-tap-giua-ki-1-v2   # (bản 1: bỏ -v2)
 .venv/bin/python -m pytest -q tests/test_loi_giai_thi_gate.py        # có test chốt: bộ đề phải sạch cổng
 ```
 Render trang ra ảnh (`pdftoppm -r 55`) và xem từng trang. Những lỗi từng chỉ thấy được trên PDF:

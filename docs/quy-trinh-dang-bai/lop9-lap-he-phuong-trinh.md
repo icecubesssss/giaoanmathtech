@@ -31,7 +31,7 @@
 | 4 | `gk1-dvhau-2-1` | Dịch Vọng Hậu · GK1 | 1,5 | Giá niêm yết – giảm % (sách Toán 20%, Văn 10%) | 250 000đ; 200 000đ |
 | 5 | `gk1-ngo-gia-tu-3-2` | Ngô Gia Tự · GK1 | 1,5 | Giá niêm yết – giảm % (bàn là 10%, quạt 20%) ⚠️ *HDC gốc tự mâu thuẫn* | **500; 250 nghìn** (HDC ghi 400; 300) |
 | 6 | `gk1-nbk-2-1` | Nguyễn Bỉnh Khiêm · GK1 | 1,5 | Giá niêm yết – giảm % (bánh nướng 20%, bánh dẻo 25%) | 90; 60 nghìn |
-| 7 | `gk1-van-yen-2-1` | Vân Yên · GK1 | 1,5 | Giá niêm yết – giảm % (10 bút + 20 vở) ⚠️ *đã sửa lại đề* | Bút 3 500đ; vở 8 000đ |
+| 7 | `gk1-van-yen-2-1` | Văn Yên · GK1 | 1,5 | Giá niêm yết – giảm % (10 bút + 20 vở) ⚠️ *đã sửa lại đề* | Bút 3 500đ; vở 8 000đ |
 | 8 | `v10-dong-da-01-III2` | PGD Đống Đa · Vào 10 | 1,0 | Giá niêm yết – giảm % (bàn là 10%, quạt 20%) | 450; 400 nghìn |
 | 9 | `ck1-dich-vong-III` | Dịch Vọng · CK1 | 2,0 | Hai loại đối tượng (xe 45 chỗ / 30 chỗ, 615 người) | 11 xe; 4 xe |
 | 10 | `ck1-ly-thanh-tong-4` | Lý Thánh Tông · CK1 | 1,0 | Hai loại đối tượng (tờ 10k / 20k, 32 tờ) | 12 tờ; 20 tờ |
@@ -41,7 +41,7 @@
 | 14 | `gk1-phu-dien-3-1` | Phú Diễn · GK1 | 1,0 | Công việc chung – riêng (2 đội xe, 8 ngày) ⚠️ *đã sửa đáp án* | Đội I 24 ngày; đội II 12 ngày |
 | 15 | `ck1-trung-vuong-II2` | Trưng Vương · CK1 | 1,5 | Chuyển động xuôi / ngược dòng (2 tour du thuyền) | v riêng 15 km/h; v nước 5 km/h |
 | 16 | `gk1-nbk-2-2` | Nguyễn Bỉnh Khiêm · GK1 | 2,0 | Chuyển động 2 xe (hơn 15 km/h, đến trước 30′) | 60 và 75 km/h |
-| 17 | `gk1-van-yen-2-2` | Vân Yên · GK1 | 1,5 | Chuyển động sớm 1h / muộn 1h ⚠️ *đã bổ sung đáp án* | AB = 300 km (v = 60, t = 5) |
+| 17 | `gk1-van-yen-2-2` | Văn Yên · GK1 | 1,5 | Chuyển động sớm 1h / muộn 1h ⚠️ *đã bổ sung đáp án* | AB = 300 km (v = 60, t = 5) |
 | 18 | `gk1-co-nhue-2-2-1` | Cổ Nhuế 2 · GK1 | 1,5 | Năng suất – kế hoạch (tăng 15%/25%, vượt 95 bộ) | Tổ I 300; tổ II 200 bộ |
 | 19 | `gk1-nguyen-du-2-1` | Nguyễn Du · GK1 | 1,5 | Hình học (HCN, dài hơn rộng 5m, S giảm 180 m²) | 25 m; 20 m |
 | 20 | `gk1-trung-vuong-2-2` | Trưng Vương · GK1 | 1,5 | Hai giả thiết lệch (đọc thêm 9 trang / bớt 12 trang) | 360 trang |

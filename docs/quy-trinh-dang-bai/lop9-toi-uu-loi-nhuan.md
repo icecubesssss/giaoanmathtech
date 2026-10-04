@@ -48,7 +48,7 @@
 
 | # | Mã câu | Trường / Kỳ | Đề tóm tắt | Đáp số |
 |---|---|---|---|---|
-| 13 | `gk1-van-yen-5` | Vân Yên · GK1 | 645 người; xe 35 chỗ giá 3,5 tr, xe 50 chỗ giá 5,2 tr. Thuê thế nào để chi phí ít nhất? ⚠️ *đã chép lại đề + giải* | **17 xe 35 chỗ + 1 xe 50 chỗ = 64,7 tr** |
+| 13 | `gk1-van-yen-5` | Văn Yên · GK1 | 645 người; xe 35 chỗ giá 3,5 tr, xe 50 chỗ giá 5,2 tr. Thuê thế nào để chi phí ít nhất? ⚠️ *đã chép lại đề + giải* | **17 xe 35 chỗ + 1 xe 50 chỗ = 64,7 tr** |
 | 14 | `ck1-trung-vuong-V` | Trưng Vương · CK1 | Vườn 20 × 15 m, hai ô vuông ở hai góc, mỗi ô ≥ 1 m², tổng 5 m²; viền hoa 30 000đ/m và 70 000đ/m. Chi phí dao động từ đâu đến đâu? | Từ **520 000đ** đến **680 000đ** |
 | 15 | `gk1-dvhau-4` / `ck1-phuong-ha-dong-5` | Dịch Vọng Hậu · GK1 / Phương Hà Đông · CK1 | Vườn (bếp) hình chữ U/N, A cố định trên MN với MA = 4, AN = 1; tìm B, C để tam giác vuông ABC có S nhỏ nhất | B cách M 4 m, C cách N 1 m — **bài cực trị hình học, cần Thầy xác nhận HDC** |
 

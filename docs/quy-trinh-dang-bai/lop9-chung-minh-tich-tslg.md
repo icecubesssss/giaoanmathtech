@@ -31,7 +31,7 @@ Cấu hình lặp lại: **ΔABC vuông tại A, đường cao AH; M, N (hoặc 
 | # | Mã câu | Trường / Kỳ | Điểm | Hệ thức phải chứng minh | Trạng thái |
 |---|---|---|---|---|---|
 | 1 | `gk1-trung-vuong-4-2` | Trưng Vương · GK1 | 1,5 | ΔAMN ∽ ΔACB và **HN = AB·sin²B** | ✅ đã kiểm chứng |
-| 2 | `gk1-van-yen-4b` | Vân Yên · GK1 | 1,0 | **HN·AC = HA·HC** và **HN = AB·sin²B** | ⚠️ **đã sửa lại đề** |
+| 2 | `gk1-van-yen-4b` | Văn Yên · GK1 | 1,0 | **HN·AC = HA·HC** và **HN = AB·sin²B** | ⚠️ **đã sửa lại đề** |
 | 3 | `gk1-nbk-5b` | Nguyễn Bỉnh Khiêm · GK1 | 1,0 | **sin²B = CF/AC** | ✅ đã kiểm chứng |
 | 4 | `gk1-ngo-gia-tu-5b` | Ngô Gia Tự · GK1 | 1,0 | ΔAMB ∽ ΔIMA và **sin²(ABM) = IM/BM** (I là hình chiếu của A trên **BM**) | ⚠️ **đã sửa lại đề** |
 | 5 | `gk1-nguyen-du-4b` | Nguyễn Du · GK1 | 0,75 | AM/BM = HM/AM và **cos²(AMB) = HM/BM** | ✅ đã kiểm chứng |
@@ -49,7 +49,7 @@ Cấu hình lặp lại: **ΔABC vuông tại A, đường cao AH; M, N (hoặc 
 | 12 | `gk1-trung-vuong-4-3` | Trưng Vương | 0,5 | AI ⊥ CK |
 | 13 | `gk1-ngo-gia-tu-5c` | Ngô Gia Tự | 0,5 | M, K, N thẳng hàng |
 | 14 | `gk1-nguyen-du-4c` | Nguyễn Du | 0,5 | A, H, K thẳng hàng |
-| 15 | `gk1-van-yen-4c` | Vân Yên | 0,5 | M, I, N thẳng hàng ⚠️ *đã chép lại đề đầy đủ* |
+| 15 | `gk1-van-yen-4c` | Văn Yên | 0,5 | M, I, N thẳng hàng ⚠️ *đã chép lại đề đầy đủ* |
 | 16 | `gk1-phu-dien-4-2c` | Phú Diễn | 0,5 | CM ⊥ MP |
 | 17 | `ck1-phuong-ha-dong-5` / `gk1-dvhau-4` | Phương Hà Đông / DVH | 0,5 | Cực trị hình học (diện tích tam giác vuông nhỏ nhất) |
 
@@ -76,7 +76,7 @@ Cấu hình lặp lại: **ΔABC vuông tại A, đường cao AH; M, N (hoặc 
 | `gk1-ngo-gia-tu-5b` | "I là hình chiếu của A trên **BC**; ΔABC ∽ ΔIMA; sin²(ABC) = IM/**BC**" | I là hình chiếu của A trên **BM**; **ΔAMB ∽ ΔIMA**; **sin²(ABM) = IM/BM** |
 
 **Cách phát hiện:** đặt AB = c, AC = b, BC = a rồi tính hai vế bằng a, b, c.
-Với bản cũ của Vân Yên: HN = b²c/a² nhưng AB·sin³B = b³c/a³ — **không bằng nhau**, nên đề chép sai.
+Với bản cũ của Văn Yên: HN = b²c/a² nhưng AB·sin³B = b³c/a³ — **không bằng nhau**, nên đề chép sai.
 Với bản cũ của Ngô Gia Tự: nếu I trên BC thì MI = MA (trung tuyến ứng với cạnh huyền của ΔAIC) nên ΔIMA **cân**, không thể đồng dạng với tam giác vuông ABC.
 
 > 📌 **Đây chính là "vũ khí kiểm tra" nên dạy cho cả GV lẫn HS khá:** mọi hệ thức trong dạng này đều **kiểm chứng được bằng a, b, c** trước khi đi chứng minh hình học. Xem §2.3.

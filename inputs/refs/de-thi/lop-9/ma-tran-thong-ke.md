@@ -3,7 +3,7 @@
 > Tổng hợp tự động từ 10 file trong `exams/gk1-*.json`. Sinh lại bằng script ở cuối phần xử lý.
 > `điểm TB/đề` = điểm trung bình của dạng đó, **chỉ tính trên các đề có xuất hiện dạng**.
 
-**10 đề:** Bát Tràng, Trưng Vương, Ngô Gia Tự, Nguyễn Du *(có biểu điểm gốc)* · Cổ Nhuế 2, Dịch Vọng Hậu, Phú Diễn, Thái Thịnh, Vân Yên, Nguyễn Bình Khiêm *(scan, đáp án tự dựng — chờ Thầy duyệt)*.
+**10 đề:** Bát Tràng, Trưng Vương, Ngô Gia Tự, Nguyễn Du *(có biểu điểm gốc)* · Cổ Nhuế 2, Dịch Vọng Hậu, Phú Diễn, Thái Thịnh, Văn Yên, Nguyễn Bỉnh Khiêm *(scan, đáp án tự dựng — chờ Thầy duyệt)*.
 
 ## Theo chương
 
