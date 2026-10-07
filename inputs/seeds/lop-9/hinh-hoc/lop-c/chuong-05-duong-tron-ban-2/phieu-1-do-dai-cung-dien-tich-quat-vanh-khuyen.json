@@ -1,0 +1,640 @@
+{
+ "slug": "phieu-1-do-dai-cung-dien-tich-quat-vanh-khuyen",
+ "title": "Độ dài cung tròn. Diện tích hình quạt tròn và hình vành khuyên",
+ "eyebrow": "PHIẾU 1 • HÌNH HỌC 9 · CHƯƠNG V — BÀI 15",
+ "grade_label": "Lớp 9 • Hình học",
+ "class_tier": "C",
+ "stages": [
+  {
+   "kind": "review",
+   "number": 1,
+   "title": "Khám phá",
+   "teacher_note": "Cho HS trả lời bằng phân số trước ($\\frac{1}{8}$ cái bánh), rồi mới đổi ra độ. Đây là chỗ HS tự nhận ra \\textquotedblleft phần của hình tròn\\textquotedblright{} đo bằng góc ở tâm — mọi công thức của buổi này chỉ là $\\frac{n}{360}$ nhân với chu vi hoặc diện tích cả hình tròn.",
+   "blocks": [
+    {
+     "type": "para",
+     "text": "\\textbf{Một miếng pizza là mấy phần của cả cái bánh?}"
+    },
+    {
+     "type": "noted",
+     "variant": "note",
+     "text": "Một chiếc pizza tròn được cắt thành $8$ miếng bằng nhau, các nhát cắt đều đi qua tâm $O$ (Hình 1).[[br]]\\textbf{a)} Mỗi miếng chiếm mấy phần của cả cái bánh?[[br]]\\textbf{b)} Cả cái bánh ứng với góc ở tâm $360^\\circ$. Góc ở tâm của một miếng bằng bao nhiêu độ?[[br]]\\textbf{c)} Viền cả cái bánh dài $60$ cm. Viền của một miếng dài bao nhiêu xăngtimét?",
+     "figure": {
+      "tikz": "\\begin{tikzpicture}[line width=0.8pt, font=\\small]\n  \\fill[brand!18] (0.0000,0.0000) -- (1.5000,0.0000) arc (0.0000:45.0000:1.5000) -- cycle;\n  \\draw[ink, line width=1.1pt] (0.0000,0.0000) circle (1.5000);\n  \\draw[ink] (1.5000,0.0000) -- (-1.5000,0.0000);\n  \\draw[ink] (1.0607,1.0607) -- (-1.0607,-1.0607);\n  \\draw[ink] (0.0000,1.5000) -- (-0.0000,-1.5000);\n  \\draw[ink] (-1.0607,1.0607) -- (1.0607,-1.0607);\n  \\fill[ink] (0.0000,0.0000) circle (1.3pt);\n  \\node[inner sep=0pt] at (0.4511,0.1642) {$O$};\n\\end{tikzpicture}",
+      "caption": "Hình 1",
+      "pos": "right"
+     }
+    }
+   ]
+  },
+  {
+   "kind": "concept",
+   "number": 2,
+   "title": "Kiến thức cần nhớ",
+   "teacher_note": "Mục 2 chỉ lấy đúng phần góc ở tâm – số đo cung của Bài 14, đủ để tính cung và quạt. Mục 4: phần $\\dfrac{n}{360}$ chỉ để GIẢI THÍCH vì sao có công thức (nối với chiếc pizza ở Khám phá). Khi giải bài: xác định $R$, $n$ rồi thay vào công thức, làm tròn MỘT lần ở bước cuối.",
+   "blocks": [
+    {
+     "type": "para",
+     "variant": "heading",
+     "text": "1. Đường tròn"
+    },
+    {
+     "type": "para",
+     "text": "Đường tròn tâm $O$ bán kính $R$, kí hiệu $(O; R)$, gồm các điểm cách $O$ một khoảng bằng $R$."
+    },
+    {
+     "type": "deflist",
+     "items": [
+      {
+       "term": "Bán kính:",
+       "desc": "đoạn nối tâm với một điểm của đường tròn, ví dụ $OA = R$."
+      },
+      {
+       "term": "Đường kính:",
+       "desc": "dây đi qua tâm, ví dụ $BC$; \\quad $d = 2R$, \\quad $R = \\dfrac{d}{2}$."
+      }
+     ]
+    },
+    {
+     "type": "figure",
+     "tikz": "\\begin{tikzpicture}[line width=0.8pt, font=\\small]\n  \\draw[ink] (0.0000,0.0000) circle (1.5000);\n  \\draw[ink] (0.0000,0.0000) -- (0.5130,1.4095);\n  \\draw[ink] (-1.4095,-0.5130) -- (1.4095,0.5130);\n  \\fill[ink] (0.0000,0.0000) circle (1.3pt);\n  \\fill[ink] (0.5130,1.4095) circle (1.3pt);\n  \\fill[ink] (-1.4095,-0.5130) circle (1.3pt);\n  \\fill[ink] (1.4095,0.5130) circle (1.3pt);\n  \\node[inner sep=0pt] at (0.0821,-0.2255) {$O$};\n  \\node[inner sep=0pt] at (0.6156,1.6914) {$A$};\n  \\node[inner sep=0pt] at (-1.6914,-0.6156) {$B$};\n  \\node[inner sep=0pt] at (1.6914,0.6156) {$C$};\n  \\node[inner sep=0pt] at (0.0310,0.7869) {$R$};\n\\end{tikzpicture}",
+     "caption": "Bán kính $OA$, đường kính $BC$",
+     "width": "0.32\\linewidth"
+    },
+    {
+     "type": "para",
+     "variant": "heading",
+     "text": "2. Góc ở tâm. Số đo cung"
+    },
+    {
+     "type": "deflist",
+     "items": [
+      {
+       "term": "Góc ở tâm:",
+       "desc": "góc có đỉnh trùng với tâm $O$, ví dụ $\\widehat{AOB}$."
+      },
+      {
+       "term": "Cung nhỏ $AB$:",
+       "desc": "số đo bằng số đo góc ở tâm $\\widehat{AOB}$ chắn cung đó."
+      },
+      {
+       "term": "Cung lớn $AB$:",
+       "desc": "số đo bằng $360^\\circ -$ số đo cung nhỏ $AB$."
+      },
+      {
+       "term": "Nửa đường tròn:",
+       "desc": "số đo $180^\\circ$; \\quad cả đường tròn ứng với $360^\\circ$."
+      }
+     ]
+    },
+    {
+     "type": "figure",
+     "tikz": "\\begin{tikzpicture}[line width=0.8pt, font=\\small]\n  \\draw[ink] (0.0000,0.0000) circle (1.6000);\n  \\draw[ink, line width=1.8pt] (1.5035,-0.5472) arc (-20.0000:90.0000:1.6000);\n  \\draw[ink] (0.0000,0.0000) -- (1.5035,-0.5472);\n  \\draw[ink] (0.0000,0.0000) -- (0.0000,1.6000);\n  \\draw[ink, line width=0.5pt] (0.3759,-0.1368) arc (-20.0000:90.0000:0.4000);\n  \\fill[ink] (0.0000,0.0000) circle (1.3pt);\n  \\fill[ink] (1.5035,-0.5472) circle (1.3pt);\n  \\fill[ink] (0.0000,1.6000) circle (1.3pt);\n  \\node[inner sep=0pt] at (-0.2078,-0.1200) {$O$};\n  \\node[inner sep=0pt] at (1.7854,-0.6498) {$A$};\n  \\node[inner sep=0pt] at (0.0000,1.9000) {$B$};\n  \\node[inner sep=0pt] at (0.9080,0.3900) {$n^\\circ$};\n\\end{tikzpicture}",
+     "caption": "Góc ở tâm $\\widehat{AOB} = n^\\circ$ chắn cung nhỏ $AB$ (nét đậm)",
+     "width": "0.32\\linewidth"
+    },
+    {
+     "type": "para",
+     "variant": "heading",
+     "text": "3. Độ dài đường tròn. Diện tích hình tròn"
+    },
+    {
+     "type": "deflist",
+     "items": [
+      {
+       "term": "Độ dài đường tròn (chu vi):",
+       "desc": "$C = 2\\pi R = \\pi d$."
+      },
+      {
+       "term": "Diện tích hình tròn:",
+       "desc": "$S = \\pi R^2$."
+      }
+     ]
+    },
+    {
+     "type": "figure",
+     "tikz": "\\begin{tikzpicture}[line width=0.8pt, font=\\small]\n  \\fill[brand!18] (0,0) circle (1.5000);\n  \\draw[ink] (0.0000,0.0000) circle (1.5000);\n  \\draw[ink] (0.0000,0.0000) -- (1.2990,0.7500);\n  \\fill[ink] (0.0000,0.0000) circle (1.3pt);\n  \\node[inner sep=0pt] at (-0.2078,-0.1200) {$O$};\n  \\node[inner sep=0pt] at (0.8932,0.7928) {$R$};\n\\end{tikzpicture}",
+     "caption": "Hình tròn bán kính $R$: chu vi là đường viền, diện tích là phần tô màu",
+     "width": "0.32\\linewidth"
+    },
+    {
+     "type": "para",
+     "variant": "heading",
+     "text": "4. Độ dài cung tròn. Diện tích hình quạt tròn"
+    },
+    {
+     "type": "para",
+     "text": "Cả đường tròn ứng với góc ở tâm $360^\\circ$ nên cung (hình quạt) $n^\\circ$ chiếm $\\dfrac{n}{360}$ đường tròn (hình tròn). Do đó:"
+    },
+    {
+     "type": "deflist",
+     "items": [
+      {
+       "term": "Độ dài cung $n^\\circ$:",
+       "desc": "$l = \\dfrac{n}{360} \\cdot 2\\pi R$ \\quad (SGK viết gọn $l = \\dfrac{\\pi R n}{180}$)."
+      },
+      {
+       "term": "Diện tích hình quạt $n^\\circ$:",
+       "desc": "$S_q = \\dfrac{n}{360} \\cdot \\pi R^2$ \\quad (SGK viết gọn $S_q = \\dfrac{\\pi R^2 n}{360}$)."
+      }
+     ]
+    },
+    {
+     "type": "para",
+     "text": "\\textbf{Khi giải bài:} xác định bán kính $R$ và số đo $n^\\circ$, rồi thay thẳng vào công thức. Hỏi \\textit{độ dài} thì dùng $l$, hỏi \\textit{diện tích} thì dùng $S_q$."
+    },
+    {
+     "type": "figure",
+     "tikz": "\\begin{tikzpicture}[line width=0.8pt, font=\\small]\n  \\fill[brand!18] (0.0000,0.0000) -- (1.5035,0.5472) arc (20.0000:120.0000:1.6000) -- cycle;\n  \\draw[ink] (0.0000,0.0000) circle (1.6000);\n  \\draw[ink] (0.0000,0.0000) -- (1.5035,0.5472);\n  \\draw[ink] (0.0000,0.0000) -- (-0.8000,1.3856);\n  \\draw[ink, line width=1.6pt] (1.5035,0.5472) arc (20.0000:120.0000:1.6000);\n  \\draw[ink, line width=0.5pt] (0.3571,0.1300) arc (20.0000:120.0000:0.3800);\n  \\fill[ink] (0.0000,0.0000) circle (1.3pt);\n  \\fill[ink] (1.5035,0.5472) circle (1.3pt);\n  \\fill[ink] (-0.8000,1.3856) circle (1.3pt);\n  \\node[inner sep=0pt] at (-0.0821,-0.2255) {$O$};\n  \\node[inner sep=0pt] at (1.7854,0.6498) {$A$};\n  \\node[inner sep=0pt] at (-0.9500,1.6454) {$B$};\n  \\node[inner sep=0pt] at (0.5767,0.6202) {$n^\\circ$};\n  \\node[inner sep=0pt] at (0.8338,0.0481) {$R$};\n  \\node[inner sep=0pt] at (0.6464,1.7760) {$l$};\n\\end{tikzpicture}",
+     "caption": "Hình quạt $OAB$: bán kính $R$, cung $l$, góc ở tâm $n^\\circ$",
+     "width": "0.32\\linewidth"
+    },
+    {
+     "type": "para",
+     "variant": "heading",
+     "text": "5. Hình vành khuyên"
+    },
+    {
+     "type": "para",
+     "text": "Hai đường tròn đồng tâm bán kính $R > r$: hình vành khuyên $=$ hình tròn lớn bỏ đi hình tròn nhỏ.[[br]]$S = \\pi R^2 - \\pi r^2$. \\quad Đề cho đường kính thì chia đôi trước."
+    },
+    {
+     "type": "figure",
+     "tikz": "\\begin{tikzpicture}[line width=0.8pt, font=\\small]\n  \\fill[brand!18, even odd rule] (0,0) circle (2.4000) (0,0) circle (1.5000);\n  \\draw[ink] (0.0000,0.0000) circle (2.4000);\n  \\draw[ink] (0.0000,0.0000) circle (1.5000);\n  \\draw[ink] (0.0000,0.0000) -- (2.0785,1.2000);\n  \\draw[ink] (0.0000,0.0000) -- (-1.2990,0.7500);\n  \\fill[ink] (0.0000,0.0000) circle (1.3pt);\n  \\node[inner sep=0pt] at (-0.0000,-0.2400) {$O$};\n  \\node[inner sep=0pt] at (1.5012,1.1438) {$R$};\n  \\node[inner sep=0pt] at (-0.5945,0.6203) {$r$};\n\\end{tikzpicture}",
+     "caption": "Hình vành khuyên giữa $(O; R)$ và $(O; r)$",
+     "width": "0.32\\linewidth"
+    }
+   ]
+  },
+  {
+   "kind": "practice1",
+   "number": 3,
+   "title": "Luyện tập 1",
+   "teacher_note": "20 câu nhận biết, khoảng 1 phút một câu. Ô trống bắt HS viết CÔNG THỨC trước rồi mới thay số, đừng cho bấm máy thẳng. Hai bài vành khuyên (xác định $R$, $r$ rồi tính từng hình tròn) là hai bước đầu của Bài 11 ở Luyện tập 2.",
+   "blocks": [
+    {
+     "type": "problem",
+     "label": "Bài 1.",
+     "level": 1,
+     "tier": "onclass",
+     "dang_id": "NB1",
+     "statement": "Điền vào chỗ chấm:[[br]]a) [NB] Đường tròn có đường kính $18$ cm thì bán kính $R = [[blank:1.1cm]]$ cm.[[br]]b) [NB] Đường tròn có bán kính $3{,}5$ cm thì đường kính $d = [[blank:1.1cm]]$ cm.",
+     "figure_given": true,
+     "answer": "a) $R = \\dfrac{18}{2} = 9$ cm.[[br]]b) $d = 2 \\cdot 3{,}5 = 7$ cm."
+    },
+    {
+     "type": "noted",
+     "variant": "example",
+     "text": "\\textbf{Ví dụ 1.} Trên Hình 2, góc ở tâm $\\widehat{AOB} = 70^\\circ$. Tính số đo cung nhỏ $AB$ và số đo cung lớn $AB$.[[br]]{\\sffamily\\bfseries\\color{brand}Lời giải}[[br]]Góc ở tâm $\\widehat{AOB}$ chắn cung nhỏ $AB$.[[br]]$\\Rightarrow$ số đo cung nhỏ $AB = [[fill:70^\\circ]]$.[[br]]Số đo cung lớn $AB = [[fill:360^\\circ - 70^\\circ]] = [[fill:290^\\circ]]$.[[br]]Vậy cung nhỏ $AB$ có số đo $[[fill:70^\\circ]]$, cung lớn $AB$ có số đo $[[fill:290^\\circ]]$.",
+     "figure": {
+      "tikz": "\\begin{tikzpicture}[line width=0.8pt, font=\\small]\n  \\draw[ink] (0.0000,0.0000) circle (1.6000);\n  \\draw[ink, line width=1.8pt] (1.5035,-0.5472) arc (-20.0000:50.0000:1.6000);\n  \\draw[ink] (0.0000,0.0000) -- (1.5035,-0.5472);\n  \\draw[ink] (0.0000,0.0000) -- (1.0285,1.2257);\n  \\draw[ink, line width=0.5pt] (0.3759,-0.1368) arc (-20.0000:50.0000:0.4000);\n  \\fill[ink] (0.0000,0.0000) circle (1.3pt);\n  \\fill[ink] (1.5035,-0.5472) circle (1.3pt);\n  \\fill[ink] (1.0285,1.2257) circle (1.3pt);\n  \\node[inner sep=0pt] at (-0.2364,-0.0417) {$O$};\n  \\node[inner sep=0pt] at (1.7854,-0.6498) {$A$};\n  \\node[inner sep=0pt] at (1.2213,1.4555) {$B$};\n  \\node[inner sep=0pt] at (1.1183,0.1760) {$70^\\circ$};\n\\end{tikzpicture}",
+      "caption": "Hình 2",
+      "pos": "right"
+     }
+    },
+    {
+     "type": "problem",
+     "label": "Bài 2.",
+     "level": 1,
+     "tier": "onclass",
+     "dang_id": "NB2",
+     "statement": "Trên Hình 3, góc ở tâm $\\widehat{MON} = 110^\\circ$. Điền vào chỗ chấm:[[br]]a) [NB] Số đo cung nhỏ $MN$ bằng [[blank:2.4cm]].[[br]]b) [NB] Số đo cung lớn $MN$ bằng [[blank:2.4cm]] $=$ [[blank:2.4cm]].",
+     "figure_given": true,
+     "answer": "a) $110^\\circ$.[[br]]b) $360^\\circ - 110^\\circ = 250^\\circ$.",
+     "figure": {
+      "tikz": "\\begin{tikzpicture}[line width=0.8pt, font=\\small, scale=1.33]\n  \\draw[ink] (0.0000,0.0000) circle (1.6000);\n  \\draw[ink, line width=1.8pt] (1.3856,-0.8000) arc (-30.0000:80.0000:1.6000);\n  \\draw[ink] (0.0000,0.0000) -- (1.3856,-0.8000);\n  \\draw[ink] (0.0000,0.0000) -- (0.2778,1.5757);\n  \\draw[ink, line width=0.5pt] (0.3464,-0.2000) arc (-30.0000:80.0000:0.4000);\n  \\fill[ink] (0.0000,0.0000) circle (1.3pt);\n  \\fill[ink] (1.3856,-0.8000) circle (1.3pt);\n  \\fill[ink] (0.2778,1.5757) circle (1.3pt);\n  \\node[inner sep=0pt] at (-0.2255,-0.0821) {$O$};\n  \\node[inner sep=0pt] at (1.6454,-0.9500) {$M$};\n  \\node[inner sep=0pt] at (0.3299,1.8711) {$N$};\n  \\node[inner sep=0pt] at (0.9950,0.4416) {$110^\\circ$};\n\\end{tikzpicture}",
+      "caption": "Hình 3",
+      "pos": "right"
+     }
+    },
+    {
+     "type": "problem",
+     "label": "Bài 3.",
+     "level": 1,
+     "tier": "onclass",
+     "dang_id": "NB3",
+     "statement": "Điền vào chỗ chấm để được công thức (đường tròn bán kính $R$, cung $n^\\circ$):[[br]]a) [NB] Độ dài cung $n^\\circ$: $l = \\dfrac{n}{[[blank:1.1cm]]} \\cdot [[blank:2.4cm]]$.[[br]]b) [NB] Diện tích hình quạt tròn $n^\\circ$: $S_q = \\dfrac{n}{360} \\cdot [[blank:2.4cm]]$.",
+     "figure_given": true,
+     "answer": "a) $l = \\dfrac{n}{360} \\cdot 2\\pi R$.[[br]]b) $S_q = \\dfrac{n}{360} \\cdot \\pi R^2$."
+    },
+    {
+     "type": "noted",
+     "variant": "example",
+     "text": "\\textbf{Ví dụ 2.} Một bánh xe đạp có đường kính $8$ dm (Hình 4). Tính độ dài một vòng bánh xe (lấy $\\pi \\approx 3{,}14$).[[br]]{\\sffamily\\bfseries\\color{brand}Lời giải}[[br]]$C = [[fill:\\pi d]] = [[fill:\\pi \\cdot 8]] = [[fill:8\\pi]] \\approx [[fill:25{,}12]]$ (dm).[[br]]Vậy một vòng bánh xe dài khoảng [[fill:25{,}12]] dm.",
+     "figure": {
+      "tikz": "\\begin{tikzpicture}[line width=0.8pt, font=\\small]\n  \\draw[ink] (0.0000,0.0000) circle (1.5000);\n  \\draw[ink] (-1.5000,0.0000) -- (1.5000,0.0000);\n  \\fill[ink] (0.0000,0.0000) circle (1.3pt);\n  \\fill[ink] (-1.5000,0.0000) circle (1.3pt);\n  \\fill[ink] (1.5000,0.0000) circle (1.3pt);\n  \\node[inner sep=0pt] at (0.0000,0.2400) {$O$};\n  \\node[inner sep=0pt] at (0.7500,-0.2400) {$8$ dm};\n\\end{tikzpicture}",
+      "caption": "Hình 4",
+      "pos": "right"
+     }
+    },
+    {
+     "type": "problem",
+     "label": "Bài 4.",
+     "level": 1,
+     "tier": "onclass",
+     "dang_id": "NB4",
+     "statement": "Tính độ dài đường tròn (lấy $\\pi \\approx 3{,}14$). Điền vào chỗ chấm:[[br]]a) [NB] $R = 5$ cm: $C = [[blank:2.4cm]] = [[blank:2.4cm]] \\approx [[blank:2.4cm]]$ cm.[[br]]b) [NB] $d = 12$ cm: $C = [[blank:2.4cm]] = [[blank:2.4cm]] \\approx [[blank:2.4cm]]$ cm.[[br]]c) [NB] $R = 2{,}5$ m: $C = [[blank:2.4cm]] = [[blank:2.4cm]] \\approx [[blank:2.4cm]]$ m.",
+     "figure_given": true,
+     "answer": "a) $C = 2\\pi \\cdot 5 = 10\\pi \\approx 31{,}4$ cm.[[br]]b) $C = \\pi \\cdot 12 = 12\\pi \\approx 37{,}68$ cm.[[br]]c) $C = 2\\pi \\cdot 2{,}5 = 5\\pi \\approx 15{,}7$ m."
+    },
+    {
+     "type": "problem",
+     "label": "Bài 5.",
+     "level": 1,
+     "tier": "onclass",
+     "dang_id": "NB5",
+     "statement": "Tính diện tích hình tròn (lấy $\\pi \\approx 3{,}14$). Điền vào chỗ chấm:[[br]]a) [NB] $R = 4$ cm: $S = [[blank:2.4cm]] = [[blank:2.4cm]] \\approx [[blank:2.4cm]]$ cm$^2$.[[br]]b) [NB] $d = 10$ cm $\\Rightarrow R = [[blank:1.1cm]]$ cm: $S = [[blank:2.4cm]] \\approx [[blank:2.4cm]]$ cm$^2$.[[br]]c) [NB] Mặt chiếc bánh pizza đường kính $20$ cm: $S = [[blank:2.4cm]] \\approx [[blank:2.4cm]]$ cm$^2$.",
+     "figure_given": true,
+     "answer": "a) $S = \\pi \\cdot 4^2 = 16\\pi \\approx 50{,}24$ cm$^2$.[[br]]b) $R = 5$ cm; $S = 25\\pi \\approx 78{,}5$ cm$^2$.[[br]]c) $R = 10$ cm; $S = 100\\pi \\approx 314$ cm$^2$."
+    },
+    {
+     "type": "problem",
+     "label": "Bài 6.",
+     "level": 1,
+     "tier": "onclass",
+     "dang_id": "NB7",
+     "statement": "Điền vào chỗ chấm:[[br]]a) [NB] Hình vành khuyên giới hạn bởi hai đường tròn đồng tâm có đường kính $16$ cm và $10$ cm có $R = [[blank:1.1cm]]$ cm, $r = [[blank:1.1cm]]$ cm.[[br]]b) [NB] Một hồ nước hình tròn bán kính $50$ m, xung quanh có lối đi rộng $5$ m. Vẽ phác vào vở hai đường tròn đồng tâm (bờ hồ và mép ngoài lối đi), ghi lên hình: $r = [[blank:1.1cm]]$ m, $R = [[blank:1.1cm]]$ m.",
+     "figure_given": true,
+     "answer": "a) $R = 8$ cm, $r = 5$ cm.[[br]]b) $r = 50$ m, $R = 50 + 5 = 55$ m."
+    },
+    {
+     "type": "noted",
+     "variant": "example",
+     "text": "\\textbf{Ví dụ 3.} Hình quạt tô màu ở Hình 5 có bán kính $4$ cm, góc ở tâm $90^\\circ$. Tính độ dài cung và diện tích của hình quạt (lấy $\\pi \\approx 3{,}14$).[[br]]{\\sffamily\\bfseries\\color{brand}Lời giải}[[br]]$l = \\dfrac{n}{360} \\cdot 2\\pi R = [[fill:\\dfrac{90}{360} \\cdot 2\\pi \\cdot 4]] = [[fill:2\\pi]] \\approx [[fill:6{,}28]]$ (cm).[[br]]$S_q = \\dfrac{n}{360} \\cdot \\pi R^2 = [[fill:\\dfrac{90}{360} \\cdot \\pi \\cdot 4^2]] = [[fill:4\\pi]] \\approx [[fill:12{,}56]]$ (cm$^2$).[[br]]Vậy cung dài khoảng [[fill:6{,}28]] cm, hình quạt có diện tích khoảng [[fill:12{,}56]] cm$^2$.",
+     "figure": {
+      "tikz": "\\begin{tikzpicture}[line width=0.8pt, font=\\small]\n  \\fill[brand!18] (0.0000,0.0000) -- (1.6000,0.0000) arc (0.0000:90.0000:1.6000) -- cycle;\n  \\draw[ink] (0.0000,0.0000) circle (1.6000);\n  \\draw[ink] (0.0000,0.0000) -- (1.6000,0.0000);\n  \\draw[ink] (0.0000,0.0000) -- (0.0000,1.6000);\n  \\draw[ink, line width=1.6pt] (1.6000,0.0000) arc (0.0000:90.0000:1.6000);\n  \\fill[ink] (0.0000,0.0000) circle (1.3pt);\n  \\fill[ink] (1.6000,0.0000) circle (1.3pt);\n  \\fill[ink] (0.0000,1.6000) circle (1.3pt);\n  \\node[inner sep=0pt] at (-0.1839,-0.1543) {$O$};\n  \\node[inner sep=0pt] at (1.9000,0.0000) {$A$};\n  \\node[inner sep=0pt] at (0.0000,1.9000) {$B$};\n  \\node[inner sep=0pt] at (0.8000,0.2400) {$4$ cm};\n\\end{tikzpicture}",
+      "caption": "Hình 5",
+      "pos": "right"
+     }
+    },
+    {
+     "type": "problem",
+     "label": "Bài 7.",
+     "level": 1,
+     "tier": "onclass",
+     "dang_id": "NB6",
+     "statement": "Đọc Hình 6 rồi điền vào chỗ chấm (lấy $\\pi \\approx 3{,}14$):[[br]]a) [NB] Bán kính của hình quạt tô màu: $R = [[blank:1.1cm]]$ cm; góc ở tâm: $n = [[blank:1.1cm]]^\\circ$.[[br]]b) [NB] $l = [[blank:3.2cm]] = [[blank:1.1cm]] \\approx [[blank:1.6cm]]$ cm.[[br]]c) [NB] $S_q = [[blank:3.2cm]] = [[blank:1.1cm]] \\approx [[blank:1.6cm]]$ cm$^2$.",
+     "figure_given": true,
+     "answer": "a) $R = 6$ cm, $n = 60^\\circ$.[[br]]b) $l = \\dfrac{60}{360} \\cdot 2\\pi \\cdot 6 = 2\\pi \\approx 6{,}28$ cm.[[br]]c) $S_q = \\dfrac{60}{360} \\cdot \\pi \\cdot 6^2 = 6\\pi \\approx 18{,}84$ cm$^2$.",
+     "figure": {
+      "tikz": "\\begin{tikzpicture}[line width=0.8pt, font=\\small, scale=1.56]\n  \\fill[brand!18] (0.0000,0.0000) -- (1.5588,0.9000) arc (30.0000:90.0000:1.8000) -- cycle;\n  \\draw[ink] (0.0000,0.0000) circle (1.8000);\n  \\draw[ink] (0.0000,0.0000) -- (1.5588,0.9000);\n  \\draw[ink] (0.0000,0.0000) -- (0.0000,1.8000);\n  \\draw[ink, line width=1.6pt] (1.5588,0.9000) arc (30.0000:90.0000:1.8000);\n  \\draw[ink, line width=0.5pt] (0.3291,0.1900) arc (30.0000:90.0000:0.3800);\n  \\fill[ink] (0.0000,0.0000) circle (1.3pt);\n  \\fill[ink] (1.5588,0.9000) circle (1.3pt);\n  \\fill[ink] (0.0000,1.8000) circle (1.3pt);\n  \\node[inner sep=0pt] at (-0.1200,-0.2078) {$O$};\n  \\node[inner sep=0pt] at (1.8187,1.0500) {$A$};\n  \\node[inner sep=0pt] at (0.0000,2.1000) {$B$};\n  \\node[inner sep=0pt] at (0.6438,0.7258) {$60^\\circ$};\n  \\node[inner sep=0pt] at (1.0124,0.1902) {$6$ cm};\n\\end{tikzpicture}",
+      "caption": "Hình 6",
+      "pos": "right"
+     }
+    },
+    {
+     "type": "problem",
+     "label": "Bài 8.",
+     "level": 1,
+     "tier": "onclass",
+     "dang_id": "NB8",
+     "statement": "Hình 7 là hình vành khuyên giới hạn bởi $(O; 8\\text{ cm})$ và $(O; 5\\text{ cm})$. Điền vào chỗ chấm để hoàn thành bài giải (lấy $\\pi \\approx 3{,}14$):[[br]]a) [NB] Diện tích hình tròn lớn: $S_1 = [[blank:2.4cm]] = [[blank:1.6cm]]$ (cm$^2$).[[br]]b) [NB] Diện tích hình tròn nhỏ: $S_2 = [[blank:2.4cm]] = [[blank:1.6cm]]$ (cm$^2$).[[br]]c) [NB] Diện tích hình vành khuyên: $S = S_1 - S_2 = [[blank:1.6cm]] \\approx [[blank:1.6cm]]$ (cm$^2$).",
+     "figure_given": true,
+     "answer": "a) $S_1 = \\pi \\cdot 8^2 = 64\\pi$.[[br]]b) $S_2 = \\pi \\cdot 5^2 = 25\\pi$.[[br]]c) $S = 39\\pi \\approx 122{,}46$ cm$^2$.",
+     "figure": {
+      "tikz": "\\begin{tikzpicture}[line width=0.8pt, font=\\small, scale=1.71]\n  \\fill[brand!18, even odd rule] (0,0) circle (2.4000) (0,0) circle (1.5000);\n  \\draw[ink] (0.0000,0.0000) circle (2.4000);\n  \\draw[ink] (0.0000,0.0000) circle (1.5000);\n  \\draw[ink] (0.0000,0.0000) -- (2.0785,1.2000);\n  \\draw[ink] (0.0000,0.0000) -- (-1.2990,0.7500);\n  \\fill[ink] (0.0000,0.0000) circle (1.3pt);\n  \\node[inner sep=0pt] at (-0.0000,-0.2400) {$O$};\n  \\node[inner sep=0pt] at (1.4524,1.2931) {$8$ cm};\n  \\node[inner sep=0pt] at (-0.4815,0.6723) {$5$ cm};\n\\end{tikzpicture}",
+      "caption": "Hình 7",
+      "pos": "right"
+     }
+    }
+   ]
+  },
+  {
+   "kind": "practice2",
+   "number": 4,
+   "title": "Luyện tập 2",
+   "teacher_note": "Bài nào cũng làm đúng khuôn: xác định $R$, $n$ $\\to$ thay vào công thức; để nguyên $\\pi$ đến bước cuối mới làm tròn. Bài 10: HS phải tự tìm $n = 360^\\circ : 6$. Bài 13 là đề thật (Ái Mộ, đổi số): nhắc HS đề hỏi phần cỏ CÒN LẠI, không phải phần bò ăn.",
+   "blocks": [
+    {
+     "type": "noted",
+     "variant": "example",
+     "text": "\\textbf{Ví dụ 4.} Một chiếc quạt giấy khi xoè ra là hình quạt tròn bán kính $15$ cm, góc ở tâm $120^\\circ$ (Hình 8). Tính độ dài mép cung $AB$ và diện tích mặt quạt (lấy $\\pi \\approx 3{,}14$).[[br]]{\\sffamily\\bfseries\\color{brand}Lời giải}[[br]]Hình quạt có $R = 15$ cm, $n = 120^\\circ$.[[br]]$l = \\dfrac{n}{360} \\cdot 2\\pi R = [[fill:\\dfrac{120}{360} \\cdot 2\\pi \\cdot 15]] = [[fill:10\\pi]] \\approx [[fill:31{,}4]]$ (cm).[[br]]$S_q = \\dfrac{n}{360} \\cdot \\pi R^2 = [[fill:\\dfrac{120}{360} \\cdot \\pi \\cdot 15^2]] = [[fill:75\\pi]] \\approx [[fill:235{,}5]]$ (cm$^2$).[[br]]Vậy mép cung dài khoảng [[fill:31{,}4]] cm, mặt quạt rộng khoảng [[fill:235{,}5]] cm$^2$.",
+     "figure": {
+      "tikz": "\\begin{tikzpicture}[line width=0.8pt, font=\\small]\n  \\fill[brand!18] (0.0000,0.0000) -- (1.5588,0.9000) arc (30.0000:150.0000:1.8000) -- cycle;\n  \\draw[ink] (0.0000,0.0000) -- (1.5588,0.9000);\n  \\draw[ink] (0.0000,0.0000) -- (-1.5588,0.9000);\n  \\draw[ink, line width=1.6pt] (1.5588,0.9000) arc (30.0000:150.0000:1.8000);\n  \\draw[ink, line width=0.5pt] (0.3291,0.1900) arc (30.0000:150.0000:0.3800);\n  \\fill[ink] (0.0000,0.0000) circle (1.3pt);\n  \\fill[ink] (1.5588,0.9000) circle (1.3pt);\n  \\fill[ink] (-1.5588,0.9000) circle (1.3pt);\n  \\node[inner sep=0pt] at (-0.0000,-0.2400) {$O$};\n  \\node[inner sep=0pt] at (1.7952,0.8583) {$A$};\n  \\node[inner sep=0pt] at (-1.7952,0.8583) {$B$};\n  \\node[inner sep=0pt] at (0.5187,0.7421) {$120^\\circ$};\n  \\node[inner sep=0pt] at (1.2689,0.2572) {$15$ cm};\n\\end{tikzpicture}",
+      "caption": "Hình 8",
+      "pos": "right"
+     }
+    },
+    {
+     "type": "problem",
+     "label": "Bài 9.",
+     "level": 2,
+     "tier": "onclass",
+     "dang_id": "TH1",
+     "statement": "[TH] Cho đường tròn bán kính $R = 9$ cm. Tính độ dài cung $80^\\circ$ và diện tích hình quạt tròn ứng với cung đó (lấy $\\pi \\approx 3{,}14$).",
+     "figure_given": false,
+     "hints": [
+      "Đề đã cho đủ $R$ và $n$ chưa? Đại lượng nào hỏi \\textit{độ dài}, đại lượng nào hỏi \\textit{diện tích}?",
+      "Giữ nguyên $\\pi$ đến bước cuối rồi mới thay $3{,}14$."
+     ],
+     "answer": "$l = \\dfrac{80}{360} \\cdot 2\\pi \\cdot 9 = 4\\pi \\approx 12{,}56$ (cm).[[br]]$S_q = \\dfrac{80}{360} \\cdot \\pi \\cdot 9^2 = 18\\pi \\approx 56{,}52$ (cm$^2$).[[br]]Vậy cung dài khoảng $12{,}56$ cm, hình quạt có diện tích khoảng $56{,}52$ cm$^2$."
+    },
+    {
+     "type": "problem",
+     "label": "Bài 10.",
+     "level": 2,
+     "tier": "onclass",
+     "dang_id": "TH1",
+     "statement": "[TH] Một chiếc bánh pizza hình tròn đường kính $30$ cm được cắt thành $6$ miếng bằng nhau có dạng hình quạt tròn. Tính diện tích bề mặt một miếng bánh và độ dài phần viền cong của miếng bánh đó (lấy $\\pi \\approx 3{,}14$).",
+     "figure_given": false,
+     "hints": [
+      "Bán kính chiếc bánh là bao nhiêu? Cắt $6$ miếng bằng nhau thì góc ở tâm của một miếng bằng bao nhiêu độ?",
+      "Viền cong là \\textit{độ dài} hay \\textit{diện tích}?"
+     ],
+     "answer": "$R = \\dfrac{30}{2} = 15$ cm, $n = \\dfrac{360^\\circ}{6} = 60^\\circ$.[[br]]$S_q = \\dfrac{60}{360} \\cdot \\pi \\cdot 15^2 = 37{,}5\\pi \\approx 117{,}75$ (cm$^2$).[[br]]$l = \\dfrac{60}{360} \\cdot 2\\pi \\cdot 15 = 5\\pi \\approx 15{,}7$ (cm).[[br]]Vậy mỗi miếng bánh có diện tích khoảng $117{,}75$ cm$^2$, viền cong dài khoảng $15{,}7$ cm."
+    },
+    {
+     "type": "noted",
+     "variant": "example",
+     "text": "\\textbf{Ví dụ 5.} Quanh một hồ nước hình tròn bán kính $10$ m, người ta làm một lối đi rộng $2$ m (Hình 9). Tính diện tích lối đi (lấy $\\pi \\approx 3{,}14$).[[br]]{\\sffamily\\bfseries\\color{brand}Lời giải}[[br]]Lối đi là hình vành khuyên có $r = 10$ m, $R = [[fill:10 + 2]] = [[fill:12]]$ m.[[br]]$S = \\pi R^2 - \\pi r^2 = [[fill:\\pi \\cdot 12^2 - \\pi \\cdot 10^2]] = [[fill:44\\pi]] \\approx [[fill:138{,}16]]$ (m$^2$).[[br]]Vậy lối đi có diện tích khoảng [[fill:138{,}16]] m$^2$.",
+     "figure": {
+      "tikz": "\\begin{tikzpicture}[line width=0.8pt, font=\\small]\n  \\fill[brand!18, even odd rule] (0,0) circle (1.5000) (0,0) circle (1.2500);\n  \\draw[ink] (0.0000,0.0000) circle (1.5000);\n  \\draw[ink] (0.0000,0.0000) circle (1.2500);\n  \\draw[ink] (0.0000,0.0000) -- (-1.1746,0.4275);\n  \\draw[ink] (1.1329,0.5283) -- (1.3595,0.6339);\n  \\fill[ink] (0.0000,0.0000) circle (1.3pt);\n  \\node[inner sep=0pt] at (0.2255,-0.0821) {$O$};\n  \\node[inner sep=0pt] at (-0.5046,0.5170) {$10$ m};\n  \\node[inner sep=0pt] at (1.8259,0.7371) {$2$ m};\n\\end{tikzpicture}",
+      "caption": "Hình 9",
+      "pos": "right"
+     }
+    },
+    {
+     "type": "problem",
+     "label": "Bài 11.",
+     "level": 2,
+     "tier": "onclass",
+     "dang_id": "TH2",
+     "statement": "[TH] Người ta dùng một chiếc khăn hình tròn đường kính $160$ cm để phủ lên một mặt bàn hình tròn đường kính $120$ cm, tâm khăn trùng tâm mặt bàn. Tính diện tích phần khăn rủ xuống khỏi mép bàn (coi phần đó là hình vành khuyên, lấy $\\pi \\approx 3{,}14$).",
+     "figure_given": false,
+     "hints": [
+      "Phần khăn rủ xuống nằm giữa hai đường tròn nào? Bán kính của mỗi đường tròn là bao nhiêu?",
+      "Lấy diện tích hình tròn nào trừ đi hình tròn nào?"
+     ],
+     "answer": "Khăn: $R = \\dfrac{160}{2} = 80$ cm; mặt bàn: $r = \\dfrac{120}{2} = 60$ cm.[[br]]$S = \\pi \\cdot 80^2 - \\pi \\cdot 60^2 = 2800\\pi \\approx 8792$ (cm$^2$).[[br]]Vậy phần khăn rủ xuống có diện tích khoảng $8792$ cm$^2$."
+    },
+    {
+     "type": "noted",
+     "variant": "example",
+     "text": "\\textbf{Ví dụ 6.} Một cung tròn của đường tròn bán kính $12$ cm có độ dài $4\\pi$ cm (Hình 10). Tính số đo $n^\\circ$ của cung đó.[[br]]{\\sffamily\\bfseries\\color{brand}Lời giải}[[br]]$l = \\dfrac{n}{360} \\cdot 2\\pi R$ $\\Rightarrow$ $[[fill:\\dfrac{n}{360} \\cdot 2\\pi \\cdot 12]] = 4\\pi$.[[br]]$\\Rightarrow n = [[fill:\\dfrac{4 \\cdot 360}{24}]] = [[fill:60]]$.[[br]]Vậy cung có số đo [[fill:60]]$^\\circ$.",
+     "figure": {
+      "tikz": "\\begin{tikzpicture}[line width=0.8pt, font=\\small]\n  \\fill[white] (0.0000,0.0000) -- (1.3023,1.0927) arc (40.0000:100.0000:1.7000) -- cycle;\n  \\draw[ink] (0.0000,0.0000) circle (1.7000);\n  \\draw[ink] (0.0000,0.0000) -- (1.3023,1.0927);\n  \\draw[ink] (0.0000,0.0000) -- (-0.2952,1.6742);\n  \\draw[ink, line width=1.6pt] (1.3023,1.0927) arc (40.0000:100.0000:1.7000);\n  \\draw[ink, line width=0.5pt] (0.2911,0.2443) arc (40.0000:100.0000:0.3800);\n  \\fill[ink] (0.0000,0.0000) circle (1.3pt);\n  \\fill[ink] (1.3023,1.0927) circle (1.3pt);\n  \\fill[ink] (-0.2952,1.6742) circle (1.3pt);\n  \\node[inner sep=0pt] at (-0.0821,-0.2255) {$O$};\n  \\node[inner sep=0pt] at (1.5321,1.2856) {$A$};\n  \\node[inner sep=0pt] at (-0.3473,1.9696) {$B$};\n  \\node[inner sep=0pt] at (0.4747,0.7745) {$n^\\circ$};\n  \\node[inner sep=0pt] at (1.0782,0.2553) {$12$ cm};\n  \\node[inner sep=0pt] at (0.6936,1.8700) {$4\\pi$};\n\\end{tikzpicture}",
+      "caption": "Hình 10",
+      "pos": "right"
+     }
+    },
+    {
+     "type": "problem",
+     "label": "Bài 12.",
+     "level": 2,
+     "tier": "onclass",
+     "dang_id": "TH3",
+     "statement": "[TH] Một con lắc đồng hồ có thanh treo dài $60$ cm. Khi dao động, đầu con lắc vạch nên một cung tròn tâm là điểm treo, dài $31{,}4$ cm. Hỏi con lắc quét được một góc bao nhiêu độ? (lấy $\\pi \\approx 3{,}14$)",
+     "figure_given": false,
+     "hints": [
+      "Thanh treo đóng vai trò gì của cung tròn mà đầu con lắc vạch nên?",
+      "Viết công thức độ dài cung, cái gì đã biết, cái gì cần tìm?"
+     ],
+     "answer": "Cung có $R = 60$ cm, $l = 31{,}4$ cm.[[br]]$\\dfrac{n}{360} \\cdot 2 \\cdot 3{,}14 \\cdot 60 = 31{,}4$.[[br]]$\\Rightarrow \\dfrac{n}{360} \\cdot 376{,}8 = 31{,}4$.[[br]]$\\Rightarrow n = \\dfrac{31{,}4 \\cdot 360}{376{,}8} = 30$.[[br]]Vậy con lắc quét được góc $30^\\circ$."
+    },
+    {
+     "type": "noted",
+     "variant": "example",
+     "text": "\\textbf{Ví dụ 7.} Một con dê được buộc vào cọc $O$ đóng sát chân một bức tường thẳng rất dài, sợi dây dài $4$ m (Hình 11). Tính diện tích phần cỏ con dê ăn được (lấy $\\pi \\approx 3{,}14$).[[br]]{\\sffamily\\bfseries\\color{brand}Lời giải}[[br]]Bức tường qua $O$ $\\Rightarrow$ phần cỏ là nửa hình tròn: $R = 4$ m, $n = [[fill:180^\\circ]]$.[[br]]$S_q = \\dfrac{n}{360} \\cdot \\pi R^2 = [[fill:\\dfrac{180}{360} \\cdot \\pi \\cdot 4^2]] = [[fill:8\\pi]] \\approx [[fill:25{,}12]]$ (m$^2$).[[br]]Vậy con dê ăn được khoảng [[fill:25{,}12]] m$^2$ cỏ.",
+     "figure": {
+      "tikz": "\\begin{tikzpicture}[line width=0.8pt, font=\\small]\n  \\fill[brand!18] (0.0000,0.0000) -- (1.5000,0.0000) arc (0.0000:180.0000:1.5000) -- cycle;\n  \\draw[ink, line width=1.6pt] (-2.1000,0.0000) -- (2.1000,0.0000);\n  \\draw[ink, dashed] (1.5000,0.0000) arc (0.0000:180.0000:1.5000);\n  \\draw[ink] (0.0000,0.0000) -- (0.9642,1.1491);\n  \\fill[ink] (0.0000,0.0000) circle (1.3pt);\n  \\node[inner sep=0pt] at (-0.0000,-0.2400) {$O$};\n  \\node[inner sep=0pt] at (0.1081,0.6945) {$4$ m};\n\\end{tikzpicture}",
+      "caption": "Hình 11",
+      "pos": "right"
+     }
+    },
+    {
+     "type": "problem",
+     "label": "Bài 13.",
+     "level": 3,
+     "tier": "onclass",
+     "dang_id": "VD1",
+     "statement": "[VD] \\textbf{Bài toán thực tế.} Con bò trong vườn cỏ hình vuông $ABCD$ cạnh $6$ m bị buộc vào cột ở góc $A$ bằng dây dài $2$ m (Hình 12). Tính diện tích phần cỏ bò không ăn tới được (lấy $\\pi \\approx 3{,}14$).",
+     "figure_given": false,
+     "quy_trinh": [
+      "Phần cỏ bò ăn được: hình quạt tâm $A$, $R$ bằng dây buộc, $n = 90^\\circ$",
+      "Lấy diện tích vườn trừ diện tích hình quạt, làm tròn ở bước cuối"
+     ],
+     "solution": "Vì cột ở góc vuông $A$, dây dài $2$ m nên phần cỏ bò ăn được là hình quạt tâm $A$, $R = 2$ m, $n = \\widehat{DAB} = 90^\\circ$.[[br]]$S_q = \\dfrac{90}{360} \\cdot \\pi \\cdot 2^2 = \\pi$ (m$^2$).[[br]]$S_{ABCD} = 6^2 = 36$ (m$^2$).[[br]]$S_{\\text{còn lại}} = 36 - \\pi \\approx 32{,}86$ (m$^2$).[[br]]Vậy phần cỏ còn lại khoảng $32{,}86$ m$^2$.",
+     "figure": {
+      "tikz": "\\begin{tikzpicture}[line width=0.8pt, font=\\small, scale=1.33]\n  \\fill[brand!18] (0.0000,0.0000) -- (0.8000,0.0000) arc (0.0000:90.0000:0.8000) -- cycle;\n  \\draw[ink] (0.0000,0.0000) -- (2.4000,0.0000) -- (2.4000,2.4000) -- (0.0000,2.4000) -- cycle;\n  \\draw[ink] (0.8000,0.0000) arc (0.0000:90.0000:0.8000);\n  \\draw[ink] (0.0000,0.0000) -- (0.5657,0.5657);\n  \\fill[ink] (0.0000,0.0000) circle (1.3pt);\n  \\fill[ink] (2.4000,0.0000) circle (1.3pt);\n  \\fill[ink] (2.4000,2.4000) circle (1.3pt);\n  \\fill[ink] (0.0000,2.4000) circle (1.3pt);\n  \\node[inner sep=0pt] at (-0.1839,-0.1543) {$A$};\n  \\node[inner sep=0pt] at (2.5543,-0.1839) {$B$};\n  \\node[inner sep=0pt] at (2.5839,2.5543) {$C$};\n  \\node[inner sep=0pt] at (-0.1543,2.5839) {$D$};\n  \\node[inner sep=0pt] at (1.2000,-0.2400) {$6$ m};\n  \\node[inner sep=0pt] at (0.9397,0.6857) {$2$ m};\n\\end{tikzpicture}",
+      "caption": "Hình 12",
+      "pos": "right"
+     }
+    }
+   ]
+  },
+  {
+   "kind": "reflection",
+   "number": 5,
+   "title": "Sơ đồ tư duy",
+   "teacher_note": "BTVN soạn dày hơn quỹ, giao thì Thầy tự cắt. BTVN 12 là bài vận dụng cùng khuôn Bài 13 (bối cảnh vòi tưới) — chữa đầu buổi sau. Nhắc HS luôn ghi đơn vị cm$^2$ / m$^2$ cho diện tích.",
+   "blocks": [
+    {
+     "type": "mindmap",
+     "caption": "Sơ đồ tư duy: Chu vi, diện tích, cung, quạt, vành khuyên",
+     "root": "ĐƯỜNG TRÒN BÁN KÍNH $R$",
+     "branches": [
+      {
+       "label": "CẢ HÌNH TRÒN",
+       "children": [
+        {
+         "label": "Chu vi $C = 2\\pi R = \\pi d$"
+        },
+        {
+         "label": "Diện tích $S = \\pi R^2$"
+        },
+        {
+         "label": "Đề cho $d$ thì $R = \\dfrac{d}{2}$"
+        }
+       ]
+      },
+      {
+       "label": "GÓC Ở TÂM",
+       "children": [
+        {
+         "label": "Cung nhỏ $=$ góc ở tâm"
+        },
+        {
+         "label": "Cung lớn $= 360^\\circ -$ cung nhỏ"
+        },
+        {
+         "label": "Nửa đường tròn $= 180^\\circ$"
+        }
+       ]
+      },
+      {
+       "label": "CUNG VÀ QUẠT",
+       "children": [
+        {
+         "label": "$l = \\dfrac{n}{360} \\cdot 2\\pi R$"
+        },
+        {
+         "label": "$S_q = \\dfrac{n}{360} \\cdot \\pi R^2$"
+        },
+        {
+         "label": "Hỏi độ dài dùng $l$, hỏi diện tích dùng $S_q$"
+        }
+       ]
+      },
+      {
+       "label": "VÀNH KHUYÊN, THỰC TẾ",
+       "children": [
+        {
+         "label": "$S = \\pi R^2 - \\pi r^2$; lối đi rộng $a$: $R = r + a$"
+        },
+        {
+         "label": "Buộc ở góc vuông: quạt $90^\\circ$; sát tường: $180^\\circ$"
+        },
+        {
+         "label": "Làm tròn MỘT LẦN ở bước cuối"
+        }
+       ]
+      }
+     ]
+    },
+    {
+     "type": "para",
+     "text": "\\textbf{BÀI TẬP VỀ NHÀ (Độ dài cung tròn. Diện tích hình quạt tròn và hình vành khuyên).}"
+    },
+    {
+     "type": "problem",
+     "label": "BTVN 1.",
+     "level": 1,
+     "tier": "btvn",
+     "dang_id": "NB1",
+     "statement": "Điền vào chỗ chấm:[[br]]a) [NB] Đường tròn có đường kính $26$ cm thì bán kính $R = [[blank:1.1cm]]$ cm.[[br]]b) [NB] Đường tròn có bán kính $4{,}5$ cm thì đường kính $d = [[blank:1.1cm]]$ cm.",
+     "figure_given": true,
+     "answer": "a) $13$ cm.[[br]]b) $9$ cm."
+    },
+    {
+     "type": "problem",
+     "label": "BTVN 2.",
+     "level": 1,
+     "tier": "btvn",
+     "dang_id": "NB2",
+     "statement": "Góc ở tâm $\\widehat{AOB} = 45^\\circ$. Điền vào chỗ chấm:[[br]]a) [NB] Số đo cung nhỏ $AB$ bằng [[blank:2.4cm]].[[br]]b) [NB] Số đo cung lớn $AB$ bằng [[blank:2.4cm]].",
+     "figure_given": true,
+     "answer": "a) $45^\\circ$.[[br]]b) $315^\\circ$."
+    },
+    {
+     "type": "problem",
+     "label": "BTVN 3.",
+     "level": 1,
+     "tier": "btvn",
+     "dang_id": "NB3",
+     "statement": "Điền vào chỗ chấm (đường tròn bán kính $R$, đường kính $d$):[[br]]a) [NB] Độ dài đường tròn: $C = [[blank:1.6cm]] = [[blank:1.6cm]]$.[[br]]b) [NB] Diện tích hình tròn: $S = [[blank:1.6cm]]$.",
+     "figure_given": true,
+     "answer": "a) $C = 2\\pi R = \\pi d$.[[br]]b) $S = \\pi R^2$."
+    },
+    {
+     "type": "problem",
+     "label": "BTVN 4.",
+     "level": 1,
+     "tier": "btvn",
+     "dang_id": "NB4",
+     "statement": "Tính độ dài đường tròn (lấy $\\pi \\approx 3{,}14$). Điền vào chỗ chấm:[[br]]a) [NB] $R = 7$ cm: $C = [[blank:2.4cm]] \\approx [[blank:2.4cm]]$ cm.[[br]]b) [NB] $d = 20$ cm: $C = [[blank:2.4cm]] \\approx [[blank:2.4cm]]$ cm.[[br]]c) [NB] $R = 1{,}5$ m: $C = [[blank:2.4cm]] \\approx [[blank:2.4cm]]$ m.",
+     "figure_given": true,
+     "answer": "a) $14\\pi \\approx 43{,}96$ cm.[[br]]b) $20\\pi \\approx 62{,}8$ cm.[[br]]c) $3\\pi \\approx 9{,}42$ m."
+    },
+    {
+     "type": "problem",
+     "label": "BTVN 5.",
+     "level": 1,
+     "tier": "btvn",
+     "dang_id": "NB5",
+     "statement": "Tính diện tích hình tròn (lấy $\\pi \\approx 3{,}14$). Điền vào chỗ chấm:[[br]]a) [NB] $R = 6$ cm: $S = [[blank:2.4cm]] \\approx [[blank:2.4cm]]$ cm$^2$.[[br]]b) [NB] $d = 8$ cm: $S = [[blank:2.4cm]] \\approx [[blank:2.4cm]]$ cm$^2$.[[br]]c) [NB] $R = 10$ m: $S = [[blank:2.4cm]] \\approx [[blank:2.4cm]]$ m$^2$.",
+     "figure_given": true,
+     "answer": "a) $36\\pi \\approx 113{,}04$ cm$^2$.[[br]]b) $16\\pi \\approx 50{,}24$ cm$^2$.[[br]]c) $100\\pi \\approx 314$ m$^2$."
+    },
+    {
+     "type": "problem",
+     "label": "BTVN 6.",
+     "level": 1,
+     "tier": "btvn",
+     "dang_id": "NB6",
+     "statement": "Đọc Hình 13 rồi điền vào chỗ chấm (lấy $\\pi \\approx 3{,}14$):[[br]]a) [NB] $R = [[blank:1.1cm]]$ cm, $n = [[blank:1.1cm]]^\\circ$.[[br]]b) [NB] $l = [[blank:3.2cm]] \\approx [[blank:1.6cm]]$ cm.[[br]]c) [NB] $S_q = [[blank:3.2cm]] \\approx [[blank:1.6cm]]$ cm$^2$.",
+     "figure_given": true,
+     "answer": "a) $R = 12$ cm, $n = 30^\\circ$.[[br]]b) $l = \\dfrac{30}{360} \\cdot 2\\pi \\cdot 12 = 2\\pi \\approx 6{,}28$ cm.[[br]]c) $S_q = \\dfrac{30}{360} \\cdot \\pi \\cdot 12^2 = 12\\pi \\approx 37{,}68$ cm$^2$.",
+     "figure": {
+      "tikz": "\\begin{tikzpicture}[line width=0.8pt, font=\\small, scale=1.89]\n  \\fill[brand!18] (0.0000,0.0000) -- (1.7854,0.6498) arc (20.0000:50.0000:1.9000) -- cycle;\n  \\draw[ink] (0.0000,0.0000) circle (1.9000);\n  \\draw[ink] (0.0000,0.0000) -- (1.7854,0.6498);\n  \\draw[ink] (0.0000,0.0000) -- (1.2213,1.4555);\n  \\draw[ink, line width=1.6pt] (1.7854,0.6498) arc (20.0000:50.0000:1.9000);\n  \\draw[ink, line width=0.5pt] (0.3571,0.1300) arc (20.0000:50.0000:0.3800);\n  \\fill[ink] (0.0000,0.0000) circle (1.3pt);\n  \\fill[ink] (1.7854,0.6498) circle (1.3pt);\n  \\fill[ink] (1.2213,1.4555) circle (1.3pt);\n  \\node[inner sep=0pt] at (-0.2078,-0.1200) {$O$};\n  \\node[inner sep=0pt] at (2.0673,0.7524) {$A$};\n  \\node[inner sep=0pt] at (1.4141,1.6853) {$B$};\n  \\node[inner sep=0pt] at (1.0383,0.6871) {$30^\\circ$};\n  \\node[inner sep=0pt] at (1.0471,0.0430) {$12$ cm};\n\\end{tikzpicture}",
+      "caption": "Hình 13",
+      "pos": "right"
+     }
+    },
+    {
+     "type": "problem",
+     "label": "BTVN 7.",
+     "level": 1,
+     "tier": "btvn",
+     "dang_id": "NB7",
+     "statement": "Vẽ phác hình vào vở rồi điền vào chỗ chấm:[[br]]a) [NB] Mặt đĩa CD là hình vành khuyên: đường kính ngoài $12$ cm, lỗ giữa đường kính $3$ cm: $R = [[blank:1.1cm]]$ cm, $r = [[blank:1.1cm]]$ cm.[[br]]b) [NB] Khăn tròn đường kính $160$ cm phủ mặt bàn tròn đường kính $108$ cm: $R = [[blank:1.1cm]]$ cm, $r = [[blank:1.1cm]]$ cm.",
+     "figure_given": true,
+     "answer": "a) $R = 6$ cm, $r = 1{,}5$ cm.[[br]]b) $R = 80$ cm, $r = 54$ cm."
+    },
+    {
+     "type": "problem",
+     "label": "BTVN 8.",
+     "level": 1,
+     "tier": "btvn",
+     "dang_id": "NB8",
+     "statement": "Hình vành khuyên giới hạn bởi $(O; 10\\text{ cm})$ và $(O; 6\\text{ cm})$. Điền vào chỗ chấm (lấy $\\pi \\approx 3{,}14$):[[br]]a) [NB] $S_1 = [[blank:2.4cm]] = [[blank:1.6cm]]$ (cm$^2$).[[br]]b) [NB] $S_2 = [[blank:2.4cm]] = [[blank:1.6cm]]$ (cm$^2$).[[br]]c) [NB] $S = S_1 - S_2 = [[blank:1.6cm]] \\approx [[blank:1.6cm]]$ (cm$^2$).",
+     "figure_given": true,
+     "answer": "a) $\\pi \\cdot 10^2 = 100\\pi$.[[br]]b) $\\pi \\cdot 6^2 = 36\\pi$.[[br]]c) $64\\pi \\approx 200{,}96$ cm$^2$."
+    },
+    {
+     "type": "problem",
+     "label": "BTVN 9.",
+     "level": 2,
+     "tier": "btvn",
+     "dang_id": "TH1",
+     "statement": "[TH] Cho đường tròn bán kính $R = 6$ cm. Tính độ dài cung $150^\\circ$ và diện tích hình quạt tròn ứng với cung đó (lấy $\\pi \\approx 3{,}14$).",
+     "figure_given": false,
+     "hints": [
+      "Xác định $R$ và $n$ trước. Đại lượng nào là độ dài, đại lượng nào là diện tích?"
+     ],
+     "answer": "$l = \\dfrac{150}{360} \\cdot 2\\pi \\cdot 6 = 5\\pi \\approx 15{,}7$ (cm).[[br]]$S_q = \\dfrac{150}{360} \\cdot \\pi \\cdot 6^2 = 15\\pi \\approx 47{,}1$ (cm$^2$).[[br]]Vậy cung dài khoảng $15{,}7$ cm, hình quạt có diện tích khoảng $47{,}1$ cm$^2$."
+    },
+    {
+     "type": "problem",
+     "label": "BTVN 10.",
+     "level": 2,
+     "tier": "btvn",
+     "dang_id": "TH2",
+     "statement": "[TH] Mặt một đĩa CD có dạng hình vành khuyên giới hạn bởi hai đường tròn đồng tâm bán kính $6$ cm và $1{,}5$ cm. Tính diện tích mặt đĩa (lấy $\\pi \\approx 3{,}14$, làm tròn đến hàng đơn vị).",
+     "figure_given": false,
+     "hints": [
+      "Mặt đĩa là phần nằm giữa hai đường tròn nào? Lấy hình nào trừ hình nào?"
+     ],
+     "answer": "$S = \\pi \\cdot 6^2 - \\pi \\cdot 1{,}5^2 = 33{,}75\\pi \\approx 106$ (cm$^2$).[[br]]Vậy mặt đĩa có diện tích khoảng $106$ cm$^2$."
+    },
+    {
+     "type": "problem",
+     "label": "BTVN 11.",
+     "level": 2,
+     "tier": "btvn",
+     "dang_id": "TH3",
+     "statement": "[TH] Kim phút của một chiếc đồng hồ dài $10$ cm. Sau một khoảng thời gian, đầu kim phút đi được một cung dài $15{,}7$ cm. Kim phút đã quay được một góc bao nhiêu độ? (lấy $\\pi \\approx 3{,}14$)",
+     "figure_given": false,
+     "hints": [
+      "Đầu kim vạch nên một cung tròn có bán kính bằng gì? Cung đã biết độ dài, còn thiếu gì trong công thức?"
+     ],
+     "answer": "Cung có $R = 10$ cm, $l = 15{,}7$ cm.[[br]]$\\dfrac{n}{360} \\cdot 2 \\cdot 3{,}14 \\cdot 10 = 15{,}7$.[[br]]$\\Rightarrow n = \\dfrac{15{,}7 \\cdot 360}{62{,}8} = 90$.[[br]]Vậy kim phút quay được góc $90^\\circ$."
+    },
+    {
+     "type": "problem",
+     "label": "BTVN 12.",
+     "level": 3,
+     "tier": "btvn",
+     "dang_id": "VD1",
+     "statement": "[VD] \\textbf{Bài toán thực tế.} Một sân cỏ hình chữ nhật $ABCD$ có $AB = 10$ m, $BC = 6$ m. Người ta đặt một vòi phun nước ở góc $A$, vòi tưới xa được $4$ m theo mọi hướng (Hình 14). Tính diện tích phần sân cỏ \\textit{không} được tưới (lấy $\\pi \\approx 3{,}14$).",
+     "figure_given": false,
+     "solution": "Vì vòi đặt ở góc vuông $A$, tưới xa $4$ m nên phần được tưới là hình quạt tâm $A$, $R = 4$ m, $n = \\widehat{DAB} = 90^\\circ$.[[br]]$S_q = \\dfrac{90}{360} \\cdot \\pi \\cdot 4^2 = 4\\pi$ (m$^2$).[[br]]$S_{ABCD} = 10 \\cdot 6 = 60$ (m$^2$).[[br]]$S = 60 - 4\\pi \\approx 47{,}44$ (m$^2$).[[br]]Vậy phần sân không được tưới khoảng $47{,}44$ m$^2$.",
+     "figure": {
+      "tikz": "\\begin{tikzpicture}[line width=0.8pt, font=\\small, scale=1.61]\n  \\fill[brand!18] (0.0000,0.0000) -- (1.2000,0.0000) arc (0.0000:90.0000:1.2000) -- cycle;\n  \\draw[ink] (0.0000,0.0000) -- (3.0000,0.0000) -- (3.0000,1.8000) -- (0.0000,1.8000) -- cycle;\n  \\draw[ink] (1.2000,0.0000) arc (0.0000:90.0000:1.2000);\n  \\fill[ink] (0.0000,0.0000) circle (1.3pt);\n  \\fill[ink] (3.0000,0.0000) circle (1.3pt);\n  \\fill[ink] (3.0000,1.8000) circle (1.3pt);\n  \\fill[ink] (0.0000,1.8000) circle (1.3pt);\n  \\node[inner sep=0pt] at (-0.1839,-0.1543) {$A$};\n  \\node[inner sep=0pt] at (3.1543,-0.1839) {$B$};\n  \\node[inner sep=0pt] at (3.1839,1.9543) {$C$};\n  \\node[inner sep=0pt] at (-0.1543,1.9839) {$D$};\n  \\node[inner sep=0pt] at (1.5000,-0.2400) {$10$ m};\n  \\node[inner sep=0pt] at (3.4615,0.9000) {$6$ m};\n\\end{tikzpicture}",
+      "caption": "Hình 14",
+      "pos": "right"
+     }
+    }
+   ]
+  }
+ ]
+}

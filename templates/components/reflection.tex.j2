@@ -2,8 +2,11 @@
 ((* import "_blocks.j2" as B with context *))
 ((* set parts = split_reflection(stage.blocks) *))
 ((= Sơ đồ tư duy KHÔNG tự bẻ trang được: thiếu chỗ thì hộp chặng in ra một khung
-    xanh RỖNG ở cuối trang rồi sơ đồ nhảy sang trang sau. Đòi đủ chỗ trước. =))
-((* if parts.tong_ket | selectattr("type", "equalto", "mindmap") | list *))\stageneedspace{10cm}
+    xanh RỖNG ở cuối trang rồi sơ đồ nhảy sang trang sau. Đòi đủ chỗ trước.
+    11cm = khối chặng đo thật ~10,4cm (tiêu đề + chú thích + sơ đồ 8,5cm) + đệm. Ngưỡng cũ
+    10cm để lọt ca trang còn 10–11,5cm: tiêu đề "5. Sơ đồ tư duy" nằm trơ cuối trang, sơ đồ
+    sang trang sau (phiếu 1 chương V 9C bản 2, 05/10/2026). =))
+((* if parts.tong_ket | selectattr("type", "equalto", "mindmap") | list *))\stageneedspace{11cm}
 ((* else *))\stageneedspace{4cm}
 ((* endif *))
 \begin{stage}{((( stage.number )))}{((( stage.title )))}{stage5}{\iconreflect}

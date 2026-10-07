@@ -111,6 +111,15 @@ def _chuong_so(seg: str) -> int | None:
     return int(m.group(1)) if m else None
 
 
+def _ban_so(seg: str) -> int | None:
+    """Phiên bản khác của cùng một chương ('chuong-05-duong-tron-ban-2' → 2).
+
+    Thầy cho dựng chương V lớp 9C bản 2 (6 buổi, 05/10/2026) song song bản cũ 7 buổi.
+    Không tách thì hai bản đổ chung 'Chuong 5' ⇒ hai 'Ca-01' khác nội dung nằm cạnh nhau."""
+    m = re.match(r"chuong-0*\d+.*-ban-(\d+)$", seg)
+    return int(m.group(1)) if m else None
+
+
 def plan_target(out_dir: Path, outputs_root: Path, tieu_de: str | None = None) -> DriveTarget | None:
     """Dịch một thư mục trong `outputs/` sang danh sách thư mục trên Drive.
 
@@ -130,7 +139,8 @@ def plan_target(out_dir: Path, outputs_root: Path, tieu_de: str | None = None) -
     if not lop or not tier or chuong is None:
         return None
 
-    parts = [lop.replace("-", ""), tier, f"Chuong {chuong}"]
+    ban = next((_ban_so(s) for s in segs if _ban_so(s) is not None), None)
+    parts = [lop.replace("-", ""), tier, f"Chuong {chuong}" + (f" - Ban {ban}" if ban else "")]
     slug = segs[-1]
 
     if slug.startswith("thuyet-minh"):

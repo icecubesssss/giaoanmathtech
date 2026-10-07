@@ -1,0 +1,634 @@
+{
+ "slug": "phieu-5-luyen-tap-chung",
+ "title": "Luyện tập chung",
+ "eyebrow": "PHIẾU 5 • HÌNH HỌC 9 · CHƯƠNG V — LUYỆN TẬP CHUNG",
+ "grade_label": "Lớp 9 • Hình học",
+ "class_tier": "C",
+ "stages": [
+  {
+   "kind": "review",
+   "number": 1,
+   "title": "Khám phá",
+   "teacher_note": "Buổi luyện tập: HS đo thật trên Hình 1 rồi tự phát hiện ba điều sẽ chứng minh trong buổi (Định lí 2 dùng hai lần, $\\widehat{COD} = 90^\\circ$). Dặn HS: \\textquotedblleft đo thấy bằng\\textquotedblright{} chưa phải là chứng minh.",
+   "blocks": [
+    {
+     "type": "para",
+     "text": "\\textbf{Ba tiếp tuyến của một nửa đường tròn}"
+    },
+    {
+     "type": "noted",
+     "variant": "note",
+     "text": "Nửa đường tròn tâm $O$ đường kính $AB$; tiếp tuyến tại $M$ cắt tiếp tuyến tại $A$ và tại $B$ lần lượt ở $C$ và $D$ (Hình 1).[[br]]\\textbf{a)} Dùng thước đo $CA$ và $CM$, $DB$ và $DM$. Có những đoạn nào bằng nhau?[[br]]\\textbf{b)} So sánh $CD$ với $AC + BD$.[[br]]\\textbf{c)} Dùng thước đo góc đo $\\widehat{COD}$.",
+     "figure": {
+      "tikz": "\\begin{tikzpicture}[line width=0.8pt, font=\\small]\n  \\draw[ink] (1.5000,0.0000) arc (0.0000:180.0000:1.5000);\n  \\draw[ink] (-1.5000,0.0000) -- (1.5000,0.0000);\n  \\draw[ink] (-1.5000,-0.0000) -- (-1.5000,2.4922);\n  \\draw[ink] (-1.5000,2.1422) -- (0.5130,1.4095);\n  \\draw[ink] (-1.3400,0.0000) -- (-1.3400,0.1600) -- (-1.5000,0.1600);\n  \\draw[ink] (0.0000,0.0000) -- (-1.5000,2.1422);\n  \\draw[ink] (0.0000,0.0000) -- (0.5130,1.4095);\n  \\draw[ink] (0.4583,1.2592) -- (0.3080,1.3139) -- (0.3627,1.4643);\n  \\draw[ink] (1.5000,0.0000) -- (1.5000,2.4922);\n  \\draw[ink] (0.5130,1.4095) -- (1.5000,1.0503);\n  \\draw[ink] (1.3400,0.0000) -- (1.3400,0.1600) -- (1.5000,0.1600);\n  \\draw[ink] (0.0000,0.0000) -- (1.5000,1.0503);\n  \\fill[ink] (-1.5000,0.0000) circle (1.3pt);\n  \\fill[ink] (1.5000,0.0000) circle (1.3pt);\n  \\fill[ink] (0.0000,0.0000) circle (1.3pt);\n  \\fill[ink] (0.5130,1.4095) circle (1.3pt);\n  \\fill[ink] (-1.5000,2.1422) circle (1.3pt);\n  \\fill[ink] (1.5000,1.0503) circle (1.3pt);\n  \\node[inner sep=0pt] at (-1.6839,-0.1543) {$A$};\n  \\node[inner sep=0pt] at (1.6543,-0.1839) {$B$};\n  \\node[inner sep=0pt] at (-0.0000,-0.2400) {$O$};\n  \\node[inner sep=0pt] at (0.5951,1.6351) {$M$};\n  \\node[inner sep=0pt] at (-1.7400,2.1422) {$C$};\n  \\node[inner sep=0pt] at (1.7400,1.0503) {$D$};\n\\end{tikzpicture}",
+      "caption": "Hình 1",
+      "pos": "right"
+     }
+    }
+   ]
+  },
+  {
+   "kind": "concept",
+   "number": 2,
+   "title": "Kiến thức cần nhớ",
+   "teacher_note": "Mục 1 nhắc nhanh Câu IV.1. Mục 2 là khuôn Câu IV.2 thứ hai trong ngân hàng đề (tiếp tuyến tại hai điểm của đường tròn đường kính $AB$ — Tân Triều, Cầu Diễn, Dịch Vọng, Trưng Vương, Ái Mộ): mọi ý đều quy về Định lí 2, đường trung trực và trung tuyến ứng với cạnh huyền đã học ở buổi 2, 3.",
+   "blocks": [
+    {
+     "type": "para",
+     "variant": "heading",
+     "text": "1. Công thức đo lường"
+    },
+    {
+     "type": "deflist",
+     "items": [
+      {
+       "term": "Cả hình tròn:",
+       "desc": "$C = 2\\pi R = \\pi d$; \\quad $S = \\pi R^2$."
+      },
+      {
+       "term": "Cung, quạt $n^\\circ$:",
+       "desc": "$l = \\dfrac{n}{360} \\cdot 2\\pi R$; \\quad $S_q = \\dfrac{n}{360} \\cdot \\pi R^2$."
+      },
+      {
+       "term": "Vành khuyên:",
+       "desc": "$S = \\pi R^2 - \\pi r^2$; nửa vành khuyên thì nhân thêm $\\dfrac{1}{2}$."
+      }
+     ]
+    },
+    {
+     "type": "figure",
+     "tikz": "\\begin{tikzpicture}[line width=0.8pt, font=\\small]\n  \\fill[brand!18] (0.0000,0.0000) -- (1.6421,0.4400) arc (15.0000:165.0000:1.7000) -- cycle;\n  \\draw[ink] (0.0000,0.0000) circle (1.7000);\n  \\draw[ink] (0.0000,0.0000) -- (1.6421,0.4400);\n  \\draw[ink] (0.0000,0.0000) -- (-1.6421,0.4400);\n  \\draw[ink, line width=1.6pt] (1.6421,0.4400) arc (15.0000:165.0000:1.7000);\n  \\draw[ink, line width=0.5pt] (0.3671,0.0984) arc (15.0000:165.0000:0.3800);\n  \\fill[ink] (0.0000,0.0000) circle (1.3pt);\n  \\fill[ink] (1.6421,0.4400) circle (1.3pt);\n  \\fill[ink] (-1.6421,0.4400) circle (1.3pt);\n  \\node[inner sep=0pt] at (-0.0000,-0.2400) {$O$};\n  \\node[inner sep=0pt] at (1.9375,0.4921) {$A$};\n  \\node[inner sep=0pt] at (-1.9240,0.5426) {$B$};\n  \\node[inner sep=0pt] at (0.3510,0.6600) {$n^\\circ$};\n  \\node[inner sep=0pt] at (0.7794,0.4564) {$R$};\n  \\node[inner sep=0pt] at (0.0000,1.9900) {$l$};\n\\end{tikzpicture}",
+     "caption": "Hình quạt bán kính $R$, cung $l$, góc ở tâm $n^\\circ$",
+     "width": "0.32\\linewidth"
+    },
+    {
+     "type": "para",
+     "variant": "heading",
+     "text": "2. Tiếp tuyến tại hai điểm của đường tròn đường kính $AB$"
+    },
+    {
+     "type": "para",
+     "text": "Tiếp tuyến tại $M$ cắt tiếp tuyến tại $A$, $B$ lần lượt ở $C$, $D$:"
+    },
+    {
+     "type": "deflist",
+     "items": [
+      {
+       "term": "Bốn điểm:",
+       "desc": "$\\triangle OAC$ vuông tại $A$, $\\triangle OMC$ vuông tại $M$ chung cạnh huyền $OC$; $I$ là trung điểm $OC$ $\\Rightarrow IA = IM = \\dfrac{OC}{2} = IO = IC$ (trung tuyến ứng với cạnh huyền) $\\Rightarrow O$, $A$, $C$, $M$ cùng thuộc $\\left(I; \\dfrac{OC}{2}\\right)$."
+      },
+      {
+       "term": "Tổng đoạn:",
+       "desc": "$CA = CM$, $DB = DM$ (Định lí 2) $\\Rightarrow CD = CM + MD = AC + BD$."
+      },
+      {
+       "term": "Góc vuông:",
+       "desc": "$OC$, $OD$ là tia phân giác của $\\widehat{AOM}$, $\\widehat{MOB}$ (Định lí 2) $\\Rightarrow \\widehat{COD} = \\widehat{COM} + \\widehat{MOD} = \\dfrac{1}{2}\\left(\\widehat{AOM} + \\widehat{MOB}\\right) = \\dfrac{1}{2} \\cdot 180^\\circ = 90^\\circ$."
+      },
+      {
+       "term": "Song song:",
+       "desc": "$CA = CM$ (Định lí 2), $OA = OM = R$ $\\Rightarrow OC$ là đường trung trực của $AM$ $\\Rightarrow OC \\perp AM$. $\\triangle AMB$ có $MO$ là đường trung tuyến ($O$ là trung điểm của $AB$) và $MO = \\dfrac{AB}{2}$ (bán kính bằng nửa đường kính) nên $\\triangle AMB$ vuông tại $M$ $\\Rightarrow BM \\perp AM$. Do đó $OC \\parallel BM$."
+      }
+     ]
+    },
+    {
+     "type": "figure",
+     "tikz": "\\begin{tikzpicture}[line width=0.8pt, font=\\small]\n  \\draw[ink] (1.5000,0.0000) arc (0.0000:180.0000:1.5000);\n  \\draw[ink] (-1.5000,0.0000) -- (1.5000,0.0000);\n  \\draw[ink] (-1.5000,-0.0000) -- (-1.5000,2.4922);\n  \\draw[ink] (-1.5000,2.1422) -- (0.5130,1.4095);\n  \\draw[ink] (-1.3400,0.0000) -- (-1.3400,0.1600) -- (-1.5000,0.1600);\n  \\draw[ink] (0.0000,0.0000) -- (-1.5000,2.1422);\n  \\draw[ink] (0.0000,0.0000) -- (0.5130,1.4095);\n  \\draw[ink] (0.4583,1.2592) -- (0.3080,1.3139) -- (0.3627,1.4643);\n  \\draw[ink] (1.5000,0.0000) -- (1.5000,2.4922);\n  \\draw[ink] (0.5130,1.4095) -- (1.5000,1.0503);\n  \\draw[ink] (1.3400,0.0000) -- (1.3400,0.1600) -- (1.5000,0.1600);\n  \\draw[ink] (0.0000,0.0000) -- (1.5000,1.0503);\n  \\draw[ink] (-1.5000,0.0000) -- (0.5130,1.4095);\n  \\draw[ink] (1.5000,0.0000) -- (0.5130,1.4095);\n  \\fill[ink] (-1.5000,0.0000) circle (1.3pt);\n  \\fill[ink] (1.5000,0.0000) circle (1.3pt);\n  \\fill[ink] (0.0000,0.0000) circle (1.3pt);\n  \\fill[ink] (0.5130,1.4095) circle (1.3pt);\n  \\fill[ink] (-1.5000,2.1422) circle (1.3pt);\n  \\fill[ink] (1.5000,1.0503) circle (1.3pt);\n  \\node[inner sep=0pt] at (-1.6839,-0.1543) {$A$};\n  \\node[inner sep=0pt] at (1.6543,-0.1839) {$B$};\n  \\node[inner sep=0pt] at (-0.0000,-0.2400) {$O$};\n  \\node[inner sep=0pt] at (0.5951,1.6351) {$M$};\n  \\node[inner sep=0pt] at (-1.7400,2.1422) {$C$};\n  \\node[inner sep=0pt] at (1.7400,1.0503) {$D$};\n\\end{tikzpicture}",
+     "caption": "Ba tiếp tuyến tại $A$, $M$, $B$; $OC \\perp AM$, $BM \\perp AM$",
+     "width": "0.48\\linewidth"
+    }
+   ]
+  },
+  {
+   "kind": "practice1",
+   "number": 3,
+   "title": "Luyện tập 1",
+   "teacher_note": "20 câu nhận biết: Bài 1 – 4 ôn Câu IV.1, Bài 5 – 9 chẻ khuôn ba tiếp tuyến của nửa đường tròn. Bài 6 – 8 cùng một hình: điền xong là có ba ý chứng minh hay ra trong đề.",
+   "blocks": [
+    {
+     "type": "problem",
+     "label": "Bài 1.",
+     "level": 1,
+     "tier": "onclass",
+     "dang_id": "NB1",
+     "statement": "[NB] Độ dài cung $90^\\circ$ của đường tròn bán kính $4$ cm bằng:",
+     "figure_given": true,
+     "options": [
+      "$4\\pi$ cm",
+      "$2\\pi$ cm",
+      "$\\pi$ cm",
+      "$8\\pi$ cm"
+     ],
+     "solution": "Đáp án \\textbf{B}. $l = \\dfrac{90}{360} \\cdot 2\\pi \\cdot 4 = 2\\pi$ cm."
+    },
+    {
+     "type": "problem",
+     "label": "Bài 2.",
+     "level": 1,
+     "tier": "onclass",
+     "dang_id": "NB1",
+     "statement": "[NB] Diện tích hình quạt tròn bán kính $6$ cm, góc ở tâm $60^\\circ$ bằng:",
+     "figure_given": true,
+     "options": [
+      "$6\\pi$ cm$^2$",
+      "$2\\pi$ cm$^2$",
+      "$12\\pi$ cm$^2$",
+      "$36\\pi$ cm$^2$"
+     ],
+     "solution": "Đáp án \\textbf{A}. $S_q = \\dfrac{60}{360} \\cdot \\pi \\cdot 6^2 = 6\\pi$ cm$^2$."
+    },
+    {
+     "type": "problem",
+     "label": "Bài 3.",
+     "level": 1,
+     "tier": "onclass",
+     "dang_id": "NB1",
+     "statement": "[NB] Diện tích hình vành khuyên giới hạn bởi hai đường tròn đồng tâm bán kính $5$ cm và $3$ cm bằng:",
+     "figure_given": true,
+     "options": [
+      "$4\\pi$ cm$^2$",
+      "$2\\pi$ cm$^2$",
+      "$16\\pi$ cm$^2$",
+      "$34\\pi$ cm$^2$"
+     ],
+     "solution": "Đáp án \\textbf{C}. $S = 25\\pi - 9\\pi = 16\\pi$ cm$^2$."
+    },
+    {
+     "type": "noted",
+     "variant": "example",
+     "text": "\\textbf{Ví dụ 1.} Một chiếc bánh pizza hình tròn đường kính $30$ cm được cắt thành $6$ miếng bằng nhau; Lan lấy $2$ miếng liền nhau (phần tô màu ở Hình 2). Phần bánh của Lan là một hình quạt tròn. Xác định bán kính $R$ và số đo $n^\\circ$ của hình quạt đó.[[br]]{\\sffamily\\bfseries\\color{brand}Lời giải}[[br]]$R = \\dfrac{d}{2} = \\dfrac{30}{2} = [[fill:15]]$ (cm).[[br]]Mỗi miếng ứng với góc ở tâm $\\dfrac{360^\\circ}{6} = [[fill:60^\\circ]]$.[[br]]Hai miếng liền nhau $\\Rightarrow n = 2 \\cdot 60^\\circ = [[fill:120^\\circ]]$.[[br]]Vậy hình quạt có $R = [[fill:15]]$ cm, $n = [[fill:120^\\circ]]$.",
+     "figure": {
+      "tikz": "\\begin{tikzpicture}[line width=0.8pt, font=\\small]\n  \\fill[brand!18] (0.0000,0.0000) -- (1.5000,0.0000) arc (0.0000:120.0000:1.5000) -- cycle;\n  \\draw[ink] (0.0000,0.0000) circle (1.5000);\n  \\draw[ink] (1.5000,0.0000) -- (-1.5000,0.0000);\n  \\draw[ink] (0.7500,1.2990) -- (-0.7500,-1.2990);\n  \\draw[ink] (-0.7500,1.2990) -- (0.7500,-1.2990);\n  \\fill[ink] (0.0000,0.0000) circle (1.3pt);\n  \\node[inner sep=0pt] at (-0.0000,-0.3800) {$O$};\n\\end{tikzpicture}",
+      "caption": "Hình 2",
+      "pos": "right"
+     }
+    },
+    {
+     "type": "problem",
+     "label": "Bài 4.",
+     "level": 1,
+     "tier": "onclass",
+     "dang_id": "NB2",
+     "statement": "Đọc đề rồi điền vào chỗ chấm:[[br]]a) [NB] Quạt giấy xoè hết cỡ thành nửa hình tròn, nan dài $2$ dm: $R = [[blank:1.1cm]]$ dm, $n = [[blank:1.1cm]]^\\circ$.[[br]]b) [NB] Khăn tròn phủ mặt bàn tròn đường kính $150$ cm, phần khăn rủ xuống khỏi mép bàn dài $20$ cm: $r = [[blank:1.1cm]]$ cm, $R = [[blank:1.1cm]]$ cm.[[br]]c) [NB] Con lắc dài $60$ cm quét một góc $30^\\circ$: cung con lắc vạch nên có $R = [[blank:1.1cm]]$ cm, $n = [[blank:1.1cm]]^\\circ$.",
+     "figure_given": true,
+     "answer": "a) $R = 2$ dm, $n = 180^\\circ$.[[br]]b) $r = 75$ cm, $R = 75 + 20 = 95$ cm.[[br]]c) $R = 60$ cm, $n = 30^\\circ$."
+    },
+    {
+     "type": "problem",
+     "label": "Bài 5.",
+     "level": 1,
+     "tier": "onclass",
+     "dang_id": "NB3",
+     "statement": "Hình 3: nửa đường tròn tâm $O$ đường kính $AB$; tiếp tuyến tại $M$ cắt tiếp tuyến tại $A$, $B$ lần lượt ở $C$, $D$. Vẽ lại Hình 3 vào vở rồi:[[br]]a) [NB] Đánh dấu các góc vuông tại $A$ và tại $M$ (tiếp tuyến vuông góc với bán kính tại tiếp điểm).[[br]]b) [NB] Điền: $\\widehat{OAC} = \\widehat{OMC} = [[blank:1.6cm]]$.[[br]]c) [NB] Điền: $\\triangle OAC$ và $\\triangle OMC$ là hai tam giác vuông có chung cạnh huyền [[blank:1.1cm]].",
+     "figure_given": true,
+     "answer": "a) Ô vuông tại $A$, $M$.[[br]]b) $90^\\circ$.[[br]]c) $OC$.",
+     "figure": {
+      "tikz": "\\begin{tikzpicture}[line width=0.8pt, font=\\small, scale=1.36]\n  \\draw[ink] (1.5000,0.0000) arc (0.0000:180.0000:1.5000);\n  \\draw[ink] (-1.5000,0.0000) -- (1.5000,0.0000);\n  \\draw[ink] (-1.5000,-0.0000) -- (-1.5000,2.4922);\n  \\draw[ink] (-1.5000,2.1422) -- (0.5130,1.4095);\n  \\draw[ink] (-1.3400,0.0000) -- (-1.3400,0.1600) -- (-1.5000,0.1600);\n  \\draw[ink] (0.0000,0.0000) -- (-1.5000,2.1422);\n  \\draw[ink] (0.0000,0.0000) -- (0.5130,1.4095);\n  \\draw[ink] (0.4583,1.2592) -- (0.3080,1.3139) -- (0.3627,1.4643);\n  \\draw[ink] (1.5000,0.0000) -- (1.5000,2.4922);\n  \\draw[ink] (0.5130,1.4095) -- (1.5000,1.0503);\n  \\draw[ink] (1.3400,0.0000) -- (1.3400,0.1600) -- (1.5000,0.1600);\n  \\draw[ink] (0.0000,0.0000) -- (1.5000,1.0503);\n  \\draw[ink] (-1.5000,0.0000) -- (0.5130,1.4095);\n  \\draw[ink] (1.5000,0.0000) -- (0.5130,1.4095);\n  \\fill[ink] (-1.5000,0.0000) circle (1.3pt);\n  \\fill[ink] (1.5000,0.0000) circle (1.3pt);\n  \\fill[ink] (0.0000,0.0000) circle (1.3pt);\n  \\fill[ink] (0.5130,1.4095) circle (1.3pt);\n  \\fill[ink] (-1.5000,2.1422) circle (1.3pt);\n  \\fill[ink] (1.5000,1.0503) circle (1.3pt);\n  \\node[inner sep=0pt] at (-1.6839,-0.1543) {$A$};\n  \\node[inner sep=0pt] at (1.6543,-0.1839) {$B$};\n  \\node[inner sep=0pt] at (-0.0000,-0.2400) {$O$};\n  \\node[inner sep=0pt] at (0.5951,1.6351) {$M$};\n  \\node[inner sep=0pt] at (-1.7400,2.1422) {$C$};\n  \\node[inner sep=0pt] at (1.7400,1.0503) {$D$};\n\\end{tikzpicture}",
+      "caption": "Hình 3",
+      "pos": "right"
+     }
+    },
+    {
+     "type": "problem",
+     "label": "Bài 6.",
+     "level": 1,
+     "tier": "onclass",
+     "dang_id": "NB4",
+     "statement": "Vẫn trên Hình 3. Điền vào chỗ chấm để hoàn thành bài giải $CD = AC + BD$:[[br]]a) [NB] $CA$, $CM$ là hai tiếp tuyến cắt nhau tại $C$ $\\Rightarrow CA = [[blank:1.1cm]]$ (Định lí 2).[[br]]b) [NB] $DB$, $DM$ là hai tiếp tuyến cắt nhau tại $D$ $\\Rightarrow DB = [[blank:1.1cm]]$ (Định lí 2).[[br]]c) [NB] $CD = CM + MD = [[blank:1.1cm]] + [[blank:1.1cm]]$.",
+     "figure_given": true,
+     "answer": "a) $CM$.[[br]]b) $DM$.[[br]]c) $AC + BD$."
+    },
+    {
+     "type": "problem",
+     "label": "Bài 7.",
+     "level": 1,
+     "tier": "onclass",
+     "dang_id": "NB5",
+     "statement": "Vẫn trên Hình 3. Điền vào chỗ chấm để chứng minh $OC \\parallel BM$:[[br]]a) [NB] $CA = CM$ (Định lí 2), $OA = OM = R$ $\\Rightarrow OC$ là [[blank:3.2cm]] của $AM$ $\\Rightarrow OC \\perp AM$.[[br]]b) [NB] $\\triangle AMB$ có $MO$ là đường trung tuyến ($O$ là trung điểm của $AB$) và $MO = [[blank:1.6cm]]$ (bán kính bằng nửa đường kính) nên $\\triangle AMB$ vuông tại [[blank:1.1cm]].[[br]]c) [NB] $OC \\perp AM$ và $BM \\perp AM$ $\\Rightarrow OC$ [[blank:1.1cm]] $BM$.",
+     "figure_given": true,
+     "answer": "a) đường trung trực.[[br]]b) $\\dfrac{AB}{2}$; $M$.[[br]]c) $\\parallel$."
+    },
+    {
+     "type": "problem",
+     "label": "Bài 8.",
+     "level": 1,
+     "tier": "onclass",
+     "dang_id": "NB6",
+     "statement": "Vẫn trên Hình 3. Điền vào chỗ chấm để tính $\\widehat{COD}$:[[br]]a) [NB] $OC$ là tia phân giác của $\\widehat{AOM}$ (Định lí 2) $\\Rightarrow \\widehat{COM} = \\dfrac{1}{2} \\cdot$ góc [[blank:1.6cm]].[[br]]b) [NB] $OD$ là tia phân giác của $\\widehat{MOB}$ $\\Rightarrow \\widehat{MOD} = \\dfrac{1}{2} \\cdot$ góc [[blank:1.6cm]].[[br]]c) [NB] $\\widehat{COD} = \\dfrac{1}{2}\\left(\\widehat{AOM} + \\widehat{MOB}\\right) = \\dfrac{1}{2} \\cdot [[blank:1.6cm]] = [[blank:1.6cm]]$.",
+     "figure_given": true,
+     "answer": "a) $\\widehat{AOM}$.[[br]]b) $\\widehat{MOB}$.[[br]]c) $180^\\circ$; $90^\\circ$."
+    },
+    {
+     "type": "problem",
+     "label": "Bài 9.",
+     "level": 1,
+     "tier": "onclass",
+     "dang_id": "NB7",
+     "statement": "Trên Hình 4, $AB$ là đường kính của $(O)$, $Ax$ là tiếp tuyến tại $A$, $C \\in Ax$, $CB$ cắt $(O)$ tại $K$. Điền vào chỗ chấm:[[br]]a) [NB] $\\triangle AKB$ có $KO$ là đường trung tuyến ($O$ là trung điểm của $AB$) và $KO = [[blank:1.6cm]]$ (bán kính bằng nửa đường kính) nên $\\triangle AKB$ vuông tại [[blank:1.1cm]].[[br]]b) [NB] Xét $\\triangle BKA$ và $\\triangle BAC$: $\\widehat{BKA} = \\widehat{BAC} = 90^\\circ$, góc $B$ chung $\\Rightarrow \\triangle BKA \\backsim \\triangle [[blank:1.6cm]]$ (g.g).",
+     "figure_given": true,
+     "answer": "a) $\\dfrac{AB}{2}$; $K$.[[br]]b) $\\triangle BAC$.",
+     "figure": {
+      "tikz": "\\begin{tikzpicture}[line width=0.8pt, font=\\small, scale=1.20]\n  \\draw[ink] (1.4000,0.0000) arc (0.0000:180.0000:1.4000);\n  \\draw[ink] (-1.4000,0.0000) -- (1.4000,0.0000);\n  \\draw[ink] (-1.4000,0.0000) -- (-1.4000,2.8000);\n  \\draw[ink] (-1.4000,2.4000) -- (1.4000,0.0000);\n  \\draw[ink] (-1.4000,0.0000) -- (-0.2141,1.3835);\n  \\draw[ink] (-1.2400,0.0000) -- (-1.2400,0.1600) -- (-1.4000,0.1600);\n  \\draw[ink] (-0.3182,1.2620) -- (-0.1968,1.1579) -- (-0.0926,1.2794);\n  \\fill[ink] (-1.4000,0.0000) circle (1.3pt);\n  \\fill[ink] (1.4000,0.0000) circle (1.3pt);\n  \\fill[ink] (0.0000,0.0000) circle (1.3pt);\n  \\fill[ink] (-1.4000,2.4000) circle (1.3pt);\n  \\fill[ink] (-0.2141,1.3835) circle (1.3pt);\n  \\node[inner sep=0pt] at (-1.5839,-0.1543) {$A$};\n  \\node[inner sep=0pt] at (1.5839,-0.1543) {$B$};\n  \\node[inner sep=0pt] at (0.0000,0.2400) {$O$};\n  \\node[inner sep=0pt] at (-1.6400,2.4000) {$C$};\n  \\node[inner sep=0pt] at (-0.0598,1.5674) {$K$};\n  \\node[inner sep=0pt] at (-1.4000,3.0400) {$x$};\n\\end{tikzpicture}",
+      "caption": "Hình 4",
+      "pos": "right"
+     }
+    }
+   ]
+  },
+  {
+   "kind": "practice2",
+   "number": 4,
+   "title": "Luyện tập 2",
+   "teacher_note": "Bài 10 là Câu IV.1 đề Ngọc Lâm; Bài 11 là ý 1 đề Trưng Vương; Bài 12 là ý a đề Cầu Diễn; Bài 13 là ý b đề Dịch Vọng (đổi tên điểm). Bài 14 là bài vận dụng: ý b dùng đúng kĩ thuật \\textquotedblleft cùng phụ\\textquotedblright{} của Ví dụ 6.",
+   "blocks": [
+    {
+     "type": "noted",
+     "variant": "example",
+     "text": "\\textbf{Ví dụ 2.} Một chiếc quạt giấy khi xoè ra hết cỡ có dạng nửa hình tròn bán kính $2{,}2$ dm; khi gấp lại, phần giấy dài $1{,}6$ dm (phần tô màu ở Hình 5). Tính diện tích phần giấy của quạt (lấy $\\pi \\approx 3{,}14$, làm tròn đến hàng phần trăm).[[br]]{\\sffamily\\bfseries\\color{brand}Lời giải}[[br]]Phần giấy là nửa hình vành khuyên có $R = 2{,}2$ dm, $r = 2{,}2 - 1{,}6 = [[fill:0{,}6]]$ dm.[[br]]$S = \\dfrac{1}{2}\\left(\\pi R^2 - \\pi r^2\\right) = [[fill:\\dfrac{1}{2}\\left(\\pi \\cdot 2{,}2^2 - \\pi \\cdot 0{,}6^2\\right)]] = [[fill:2{,}24\\pi]] \\approx [[fill:7{,}03]]$ (dm$^2$).[[br]]Vậy phần giấy có diện tích khoảng [[fill:7{,}03]] dm$^2$.",
+     "figure": {
+      "tikz": "\\begin{tikzpicture}[line width=0.8pt, font=\\small]\n  \\fill[brand!18] (2.2000,0) arc (0:180:2.2) -- (-0.6000,0) arc (180:0:0.6) -- cycle;\n  \\draw[ink] (2.2000,0.0000) arc (0.0000:180.0000:2.2000);\n  \\draw[ink] (0.6000,0.0000) arc (0.0000:180.0000:0.6000);\n  \\draw[ink] (-2.2000,0.0000) -- (2.2000,0.0000);\n  \\draw[ink] (0.3000,0.5196) -- (1.1000,1.9053);\n  \\fill[ink] (0.0000,0.0000) circle (1.3pt);\n  \\node[inner sep=0pt] at (-0.0000,-0.2400) {$O$};\n  \\node[inner sep=0pt] at (-0.0138,1.2945) {$1{,}6$ dm};\n  \\node[inner sep=0pt] at (-1.4000,-0.2400) {$2{,}2$ dm};\n\\end{tikzpicture}",
+      "caption": "Hình 5",
+      "pos": "right"
+     }
+    },
+    {
+     "type": "problem",
+     "label": "Bài 10.",
+     "level": 2,
+     "tier": "onclass",
+     "dang_id": "TH1",
+     "statement": "[TH] Dùng một khăn vải hình tròn phủ lên mặt bàn hình tròn đường kính $150$ cm, phần khăn rủ xuống khỏi mép bàn dài $20$ cm (bề dày mặt bàn không đáng kể, coi phần khăn rủ xuống là hình vành khuyên). Tính diện tích phần khăn rủ xuống (lấy $\\pi \\approx 3{,}14$, làm tròn đến hàng đơn vị).",
+     "figure_given": false,
+     "hints": [
+      "Bán kính mặt bàn bằng bao nhiêu? Bán kính chiếc khăn lớn hơn bán kính mặt bàn bao nhiêu?",
+      "Phần rủ xuống nằm giữa hai đường tròn nào?"
+     ],
+     "answer": "Mặt bàn: $r = \\dfrac{150}{2} = 75$ cm; khăn: $R = 75 + 20 = 95$ cm.[[br]]$S = \\pi \\cdot 95^2 - \\pi \\cdot 75^2 = 3400\\pi \\approx 10676$ (cm$^2$).[[br]]Vậy phần khăn rủ xuống có diện tích khoảng $10676$ cm$^2$."
+    },
+    {
+     "type": "noted",
+     "variant": "example",
+     "text": "\\textbf{Ví dụ 3.} Cho tam giác $ABC$ vuông tại $A$, đường cao $AH$. Vẽ đường tròn $(A; AH)$. Từ $C$ kẻ tiếp tuyến $CM$ với $(A; AH)$ ($M$ là tiếp điểm, $M$ không nằm trên $BC$) (Hình 6). Chứng minh bốn điểm $A$, $M$, $C$, $H$ cùng thuộc một đường tròn.[[br]]{\\sffamily\\bfseries\\color{brand}Lời giải}[[br]]$AH \\perp BC$ $\\Rightarrow \\widehat{AHC} = [[fill:90^\\circ]]$.[[br]]$CM$ là tiếp tuyến của $(A)$ tại $M$ $\\Rightarrow \\widehat{AMC} = 90^\\circ$.[[br]]Gọi $I$ là trung điểm $AC$.[[br]]Xét $\\triangle AHC$ vuông tại $H$, trung tuyến $HI$ $\\Rightarrow HI = [[fill:\\dfrac{AC}{2}]] = IA = IC$.[[br]]Xét $\\triangle AMC$ vuông tại $M$, trung tuyến $MI$ $\\Rightarrow MI = \\dfrac{AC}{2}$.[[br]]Vậy $A$, $M$, $C$, $H$ cùng thuộc đường tròn tâm $[[fill:I]]$, bán kính $[[fill:\\dfrac{AC}{2}]]$.",
+     "figure": {
+      "tikz": "\\begin{tikzpicture}[line width=0.8pt, font=\\small]\n  \\draw[ink, dashed] (1.2508,1.8544) circle (1.8544);\n  \\draw[ink] (1.2508,1.8544) -- (0.0000,0.0000) -- (4.0000,0.0000) -- cycle;\n  \\draw[ink] (1.2508,1.8544) -- (1.2508,0.0000);\n  \\draw[ink] (4.0000,0.0000) -- (2.9701,2.5490);\n  \\draw[ink] (1.2508,1.8544) -- (2.9701,2.5490);\n  \\draw[ink] (1.1613,1.7217) -- (1.2940,1.6323) -- (1.3834,1.7649);\n  \\draw[ink] (1.2508,0.1600) -- (1.4108,0.1600) -- (1.4108,0.0000);\n  \\draw[ink] (2.8218,2.4891) -- (2.8817,2.3407) -- (3.0301,2.4007);\n  \\fill[ink] (1.2508,1.8544) circle (1.3pt);\n  \\fill[ink] (0.0000,0.0000) circle (1.3pt);\n  \\fill[ink] (4.0000,0.0000) circle (1.3pt);\n  \\fill[ink] (1.2508,0.0000) circle (1.3pt);\n  \\fill[ink] (2.9701,2.5490) circle (1.3pt);\n  \\node[inner sep=0pt] at (1.0965,2.0382) {$A$};\n  \\node[inner sep=0pt] at (-0.2078,-0.1200) {$B$};\n  \\node[inner sep=0pt] at (4.2078,-0.1200) {$C$};\n  \\node[inner sep=0pt] at (1.2508,-0.3000) {$H$};\n  \\node[inner sep=0pt] at (3.2520,2.6516) {$M$};\n\\end{tikzpicture}",
+      "caption": "Hình 6",
+      "pos": "right"
+     }
+    },
+    {
+     "type": "problem",
+     "label": "Bài 11.",
+     "level": 2,
+     "tier": "onclass",
+     "dang_id": "TH2",
+     "statement": "[TH] Cho đường tròn $(O; R)$ đường kính $AB$. Từ $A$ kẻ tiếp tuyến $Ax$. Trên tia $Ax$ lấy điểm $M$ sao cho $MA > R$. Từ $M$ kẻ tiếp tuyến $MC$ với $(O)$ ($C$ là tiếp điểm) (Hình 7). Chứng minh bốn điểm $A$, $O$, $C$, $M$ cùng thuộc một đường tròn.",
+     "figure_given": false,
+     "hints": [
+      "Tìm hai góc vuông có trên hình. Chúng cùng \\textquotedblleft nhìn\\textquotedblright{} đoạn nào?",
+      "Trung điểm của đoạn đó cách bốn điểm bao xa?"
+     ],
+     "answer": "$MA$, $MC$ là tiếp tuyến tại $A$, $C$ $\\Rightarrow \\widehat{OAM} = \\widehat{OCM} = 90^\\circ$.[[br]]Gọi $I$ là trung điểm $OM$.[[br]]Xét $\\triangle OAM$ vuông tại $A$, trung tuyến $AI$ $\\Rightarrow AI = \\dfrac{OM}{2} = IO = IM$.[[br]]Xét $\\triangle OCM$ vuông tại $C$, trung tuyến $CI$ $\\Rightarrow CI = \\dfrac{OM}{2}$.[[br]]Vậy $A$, $O$, $C$, $M$ cùng thuộc đường tròn tâm $I$ (trung điểm $OM$), bán kính $\\dfrac{OM}{2}$.",
+     "figure": {
+      "tikz": "\\begin{tikzpicture}[line width=0.8pt, font=\\small, scale=1.10]\n  \\draw[ink] (0.0000,0.0000) circle (1.4000);\n  \\draw[ink] (-1.4000,0.0000) -- (1.4000,0.0000);\n  \\draw[ink] (-1.4000,-0.3000) -- (-1.4000,3.0000);\n  \\draw[ink] (-1.4000,2.6000) -- (0.7706,1.1688);\n  \\draw[ink] (0.0000,0.0000) -- (0.7706,1.1688);\n  \\draw[ink] (-1.2400,0.0000) -- (-1.2400,0.1600) -- (-1.4000,0.1600);\n  \\draw[ink] (0.6826,1.0352) -- (0.5490,1.1233) -- (0.6371,1.2569);\n  \\fill[ink] (-1.4000,0.0000) circle (1.3pt);\n  \\fill[ink] (1.4000,0.0000) circle (1.3pt);\n  \\fill[ink] (0.0000,0.0000) circle (1.3pt);\n  \\fill[ink] (-1.4000,2.6000) circle (1.3pt);\n  \\fill[ink] (0.7706,1.1688) circle (1.3pt);\n  \\node[inner sep=0pt] at (-1.7000,0.0000) {$A$};\n  \\node[inner sep=0pt] at (1.7000,0.0000) {$B$};\n  \\node[inner sep=0pt] at (-0.0000,-0.2400) {$O$};\n  \\node[inner sep=0pt] at (-1.6400,2.6000) {$M$};\n  \\node[inner sep=0pt] at (0.9206,1.4286) {$C$};\n  \\node[inner sep=0pt] at (-1.4000,3.2400) {$x$};\n\\end{tikzpicture}",
+      "caption": "Hình 7",
+      "pos": "right"
+     }
+    },
+    {
+     "type": "noted",
+     "variant": "example",
+     "text": "\\textbf{Ví dụ 4.} Hai tiếp tuyến tại $A$, $B$ của $(O)$ cắt nhau tại $M$; tiếp tuyến tại điểm $E$ thuộc cung nhỏ $AB$ cắt $MA$, $MB$ lần lượt tại $P$, $Q$ (Hình 8). Chứng minh chu vi tam giác $MPQ$ bằng $2MA$.[[br]]{\\sffamily\\bfseries\\color{brand}Lời giải}[[br]]$PA = PE$, $QB = QE$, $MA = MB$ (Định lí 2).[[br]]Chu vi $\\triangle MPQ = MP + PQ + QM = MP + PE + EQ + QM$.[[br]]$= MP + [[fill:PA]] + [[fill:QB]] + QM = MA + MB$.[[br]]Vậy chu vi $\\triangle MPQ = [[fill:2MA]]$.",
+     "figure": {
+      "tikz": "\\begin{tikzpicture}[line width=0.8pt, font=\\small]\n  \\draw[ink] (0.0000,0.0000) circle (1.3000);\n  \\draw[ink] (3.0000,0.0000) -- (0.5633,1.1716);\n  \\draw[ink] (3.0000,0.0000) -- (0.5633,-1.1716);\n  \\draw[ink] (0.0000,0.0000) -- (0.5633,1.1716);\n  \\draw[ink] (0.0000,0.0000) -- (0.5633,-1.1716);\n  \\draw[ink] (0.4940,1.0274) -- (0.6382,0.9581) -- (0.7075,1.1023);\n  \\draw[ink] (0.4940,-1.0274) -- (0.6382,-0.9581) -- (0.7075,-1.1023);\n  \\draw[ink] (1.0645,0.9306) -- (1.5876,-0.6791);\n  \\fill[ink] (0.0000,0.0000) circle (1.3pt);\n  \\fill[ink] (3.0000,0.0000) circle (1.3pt);\n  \\fill[ink] (0.5633,1.1716) circle (1.3pt);\n  \\fill[ink] (0.5633,-1.1716) circle (1.3pt);\n  \\fill[ink] (1.2364,0.4017) circle (1.3pt);\n  \\fill[ink] (1.0645,0.9306) circle (1.3pt);\n  \\fill[ink] (1.5876,-0.6791) circle (1.3pt);\n  \\node[inner sep=0pt] at (-0.2400,0.0000) {$O$};\n  \\node[inner sep=0pt] at (3.2400,0.0000) {$M$};\n  \\node[inner sep=0pt] at (0.7133,1.4314) {$A$};\n  \\node[inner sep=0pt] at (0.7133,-1.4314) {$B$};\n  \\node[inner sep=0pt] at (1.5183,0.5043) {$E$};\n  \\node[inner sep=0pt] at (1.1845,1.1385) {$P$};\n  \\node[inner sep=0pt] at (1.7076,-0.8870) {$Q$};\n\\end{tikzpicture}",
+      "caption": "Hình 8",
+      "pos": "right"
+     }
+    },
+    {
+     "type": "problem",
+     "label": "Bài 12.",
+     "level": 2,
+     "tier": "onclass",
+     "dang_id": "TH3",
+     "statement": "[TH] Cho đường tròn $(O; R)$ đường kính $AB$. Trên $(O)$ lấy điểm $M$ ($MA < MB$). Tiếp tuyến tại $M$ cắt tiếp tuyến tại $A$ và tại $B$ lần lượt ở $C$ và $D$ (Hình 9). Chứng minh $CD = AC + BD$.",
+     "figure_given": false,
+     "hints": [
+      "Từ $C$ có mấy tiếp tuyến tới $(O)$? Tính chất nào nói về hai đoạn tiếp tuyến đó?"
+     ],
+     "answer": "$CA$, $CM$ là hai tiếp tuyến cắt nhau tại $C$ $\\Rightarrow CA = CM$ (Định lí 2).[[br]]$DB$, $DM$ là hai tiếp tuyến cắt nhau tại $D$ $\\Rightarrow DB = DM$ (Định lí 2).[[br]]$M$ nằm giữa $C$ và $D$ $\\Rightarrow CD = CM + MD$.[[br]]Vậy $CD = AC + BD$.",
+     "figure": {
+      "tikz": "\\begin{tikzpicture}[line width=0.8pt, font=\\small, scale=1.20]\n  \\draw[ink] (0.0000,0.0000) circle (1.5000);\n  \\draw[ink] (-1.5000,0.0000) -- (1.5000,0.0000);\n  \\draw[ink] (-1.5000,-0.0000) -- (-1.5000,2.9481);\n  \\draw[ink] (-1.5000,0.8660) -- (-0.7500,1.2990);\n  \\draw[ink] (-1.3400,0.0000) -- (-1.3400,0.1600) -- (-1.5000,0.1600);\n  \\draw[ink] (0.0000,0.0000) -- (-0.7500,1.2990);\n  \\draw[ink] (-0.6700,1.1605) -- (-0.8086,1.0805) -- (-0.8886,1.2190);\n  \\draw[ink] (1.5000,0.0000) -- (1.5000,2.9481);\n  \\draw[ink] (-0.7500,1.2990) -- (1.5000,2.5981);\n  \\draw[ink] (1.3400,0.0000) -- (1.3400,0.1600) -- (1.5000,0.1600);\n  \\fill[ink] (-1.5000,0.0000) circle (1.3pt);\n  \\fill[ink] (1.5000,0.0000) circle (1.3pt);\n  \\fill[ink] (0.0000,0.0000) circle (1.3pt);\n  \\fill[ink] (-0.7500,1.2990) circle (1.3pt);\n  \\fill[ink] (-1.5000,0.8660) circle (1.3pt);\n  \\fill[ink] (1.5000,2.5981) circle (1.3pt);\n  \\node[inner sep=0pt] at (-1.8000,0.0000) {$A$};\n  \\node[inner sep=0pt] at (1.8000,0.0000) {$B$};\n  \\node[inner sep=0pt] at (-0.0000,-0.2400) {$O$};\n  \\node[inner sep=0pt] at (-0.9000,1.5588) {$M$};\n  \\node[inner sep=0pt] at (-1.7400,0.8660) {$C$};\n  \\node[inner sep=0pt] at (1.7400,2.5981) {$D$};\n\\end{tikzpicture}",
+      "caption": "Hình 9",
+      "pos": "right"
+     }
+    },
+    {
+     "type": "noted",
+     "variant": "example",
+     "text": "\\textbf{Ví dụ 5.} Cho tam giác $ABC$ vuông tại $A$, đường cao $AH$ (Hình 10). Chứng minh $AB^2 = BH \\cdot BC$.[[br]]{\\sffamily\\bfseries\\color{brand}Lời giải}[[br]]Xét $\\triangle HBA$ và $\\triangle ABC$: $\\widehat{BHA} = \\widehat{BAC} = [[fill:90^\\circ]]$, góc $B$ chung.[[br]]$\\Rightarrow \\triangle HBA \\backsim \\triangle ABC$ ([[fill:g.g]]) $\\Rightarrow \\dfrac{BH}{BA} = [[fill:\\dfrac{BA}{BC}]]$.[[br]]Vậy $AB^2 = [[fill:BH \\cdot BC]]$.",
+     "figure": {
+      "tikz": "\\begin{tikzpicture}[line width=0.8pt, font=\\small]\n  \\draw[ink] (1.0006,1.4835) -- (0.0000,0.0000) -- (3.2000,0.0000) -- cycle;\n  \\draw[ink] (1.0006,1.4835) -- (1.0006,0.0000);\n  \\draw[ink] (0.9112,1.3508) -- (1.0438,1.2614) -- (1.1333,1.3940);\n  \\draw[ink] (1.0006,0.1600) -- (1.1606,0.1600) -- (1.1606,0.0000);\n  \\fill[ink] (1.0006,1.4835) circle (1.3pt);\n  \\fill[ink] (0.0000,0.0000) circle (1.3pt);\n  \\fill[ink] (3.2000,0.0000) circle (1.3pt);\n  \\fill[ink] (1.0006,0.0000) circle (1.3pt);\n  \\node[inner sep=0pt] at (0.9590,1.7198) {$A$};\n  \\node[inner sep=0pt] at (-0.2078,-0.1200) {$B$};\n  \\node[inner sep=0pt] at (3.4255,-0.0821) {$C$};\n  \\node[inner sep=0pt] at (1.0006,-0.2400) {$H$};\n\\end{tikzpicture}",
+      "caption": "Hình 10",
+      "pos": "right"
+     }
+    },
+    {
+     "type": "problem",
+     "label": "Bài 13.",
+     "level": 2,
+     "tier": "onclass",
+     "dang_id": "TH4",
+     "statement": "[TH] Cho nửa đường tròn $(O; R)$ đường kính $AB$ và điểm $M$ thuộc nửa đường tròn. Tiếp tuyến tại $A$ cắt tia $BM$ tại $E$ (Hình 11). Chứng minh $\\triangle AMB$ vuông và $BM \\cdot BE = 4R^2$.",
+     "figure_given": false,
+     "hints": [
+      "Trung tuyến nào của $\\triangle AMB$ bằng nửa cạnh $AB$?",
+      "Đẳng thức $BM \\cdot BE = AB^2$ gợi ý cặp tam giác nào? Chúng có chung góc nào?"
+     ],
+     "answer": "$\\triangle AMB$ có $MO$ là đường trung tuyến ($O$ là trung điểm của $AB$) và $MO = \\dfrac{AB}{2}$ (bán kính bằng nửa đường kính) nên $\\triangle AMB$ vuông tại $M$.[[br]]$AE$ là tiếp tuyến tại $A$ $\\Rightarrow \\widehat{BAE} = 90^\\circ$.[[br]]Xét $\\triangle BMA$ và $\\triangle BAE$: $\\widehat{BMA} = \\widehat{BAE} = 90^\\circ$, góc $B$ chung.[[br]]$\\Rightarrow \\triangle BMA \\backsim \\triangle BAE$ (g.g) $\\Rightarrow \\dfrac{BM}{BA} = \\dfrac{BA}{BE}$ $\\Rightarrow BM \\cdot BE = AB^2$.[[br]]Vậy $BM \\cdot BE = (2R)^2 = 4R^2$.",
+     "figure": {
+      "tikz": "\\begin{tikzpicture}[line width=0.8pt, font=\\small, scale=1.64]\n  \\draw[ink] (1.4000,0.0000) arc (0.0000:180.0000:1.4000);\n  \\draw[ink] (-1.4000,0.0000) -- (1.4000,0.0000);\n  \\draw[ink] (-1.4000,0.0000) -- (-1.4000,2.0166);\n  \\draw[ink] (1.4000,0.0000) -- (-1.4000,1.6166);\n  \\draw[ink] (-1.4000,0.0000) -- (-0.7000,1.2124);\n  \\draw[ink] (-1.2400,0.0000) -- (-1.2400,0.1600) -- (-1.4000,0.1600);\n  \\draw[ink] (-0.7800,1.0739) -- (-0.6414,0.9939) -- (-0.5614,1.1324);\n  \\fill[ink] (-1.4000,0.0000) circle (1.3pt);\n  \\fill[ink] (1.4000,0.0000) circle (1.3pt);\n  \\fill[ink] (0.0000,0.0000) circle (1.3pt);\n  \\fill[ink] (-0.7000,1.2124) circle (1.3pt);\n  \\fill[ink] (-1.4000,1.6166) circle (1.3pt);\n  \\node[inner sep=0pt] at (-1.5839,-0.1543) {$A$};\n  \\node[inner sep=0pt] at (1.5839,-0.1543) {$B$};\n  \\node[inner sep=0pt] at (0.0000,0.2400) {$O$};\n  \\node[inner sep=0pt] at (-0.6179,1.4380) {$M$};\n  \\node[inner sep=0pt] at (-1.6400,1.6166) {$E$};\n\\end{tikzpicture}",
+      "caption": "Hình 11",
+      "pos": "right"
+     }
+    },
+    {
+     "type": "noted",
+     "variant": "example",
+     "text": "\\textbf{Ví dụ 6.} Cho tam giác $ABC$ vuông tại $A$, đường cao $AH$ với $BH = 4$ cm, $HC = 9$ cm (Hình 12). Chứng minh $AH^2 = BH \\cdot HC$ rồi tính $AH$.[[br]]{\\sffamily\\bfseries\\color{brand}Lời giải}[[br]]Xét $\\triangle HBA$ và $\\triangle HAC$: $\\widehat{AHB} = \\widehat{CHA} = 90^\\circ$.[[br]]$\\widehat{BAH} = \\widehat{ACH}$ (cùng phụ với $\\widehat{ABC}$).[[br]]$\\Rightarrow \\triangle HBA \\backsim \\triangle HAC$ ([[fill:g.g]]) $\\Rightarrow \\dfrac{HB}{HA} = [[fill:\\dfrac{HA}{HC}]]$.[[br]]$\\Rightarrow AH^2 = BH \\cdot HC = 4 \\cdot 9 = [[fill:36]] \\Rightarrow AH = [[fill:6]]$ (cm).[[br]]Vậy $AH = [[fill:6]]$ cm.",
+     "figure": {
+      "tikz": "\\begin{tikzpicture}[line width=0.8pt, font=\\small]\n  \\draw[ink] (1.0800,1.6200) -- (0.0000,0.0000) -- (3.5100,0.0000) -- cycle;\n  \\draw[ink] (1.0800,1.6200) -- (1.0800,0.0000);\n  \\draw[ink] (0.9912,1.4869) -- (1.1244,1.3981) -- (1.2131,1.5312);\n  \\draw[ink] (1.0800,0.1600) -- (1.2400,0.1600) -- (1.2400,0.0000);\n  \\fill[ink] (0.0000,0.0000) circle (1.3pt);\n  \\fill[ink] (3.5100,0.0000) circle (1.3pt);\n  \\fill[ink] (1.0800,0.0000) circle (1.3pt);\n  \\fill[ink] (1.0800,1.6200) circle (1.3pt);\n  \\node[inner sep=0pt] at (-0.2078,-0.1200) {$B$};\n  \\node[inner sep=0pt] at (3.7355,-0.0821) {$C$};\n  \\node[inner sep=0pt] at (1.0800,-0.2400) {$H$};\n  \\node[inner sep=0pt] at (1.0383,1.8564) {$A$};\n  \\node[inner sep=0pt] at (0.5400,-0.2400) {$4$};\n  \\node[inner sep=0pt] at (2.2950,-0.2400) {$9$};\n\\end{tikzpicture}",
+      "caption": "Hình 12",
+      "pos": "right"
+     }
+    },
+    {
+     "type": "problem",
+     "label": "Bài 14.",
+     "level": 3,
+     "tier": "onclass",
+     "dang_id": "VD1",
+     "statement": "[VD] Cho nửa đường tròn $(O; R)$ đường kính $AB$, điểm $M$ thuộc nửa đường tròn. Tiếp tuyến tại $M$ cắt tiếp tuyến tại $A$ và tại $B$ lần lượt ở $C$ và $D$ (Hình 13).[[br]]a) Chứng minh $\\widehat{COD} = 90^\\circ$.[[br]]b) Chứng minh $AC \\cdot BD = R^2$.",
+     "figure_given": false,
+     "quy_trinh": [
+      "$OC$, $OD$ là phân giác hai góc kề bù $\\widehat{AOM}$, $\\widehat{MOB}$ (Định lí 2) $\\Rightarrow \\widehat{COD} = 90^\\circ$",
+      "$OM \\perp CD$ (tiếp tuyến tại $M$) $\\Rightarrow OM$ là đường cao của $\\triangle COD$ vuông tại $O$",
+      "$\\triangle MOC \\backsim \\triangle MDO$ (g.g) $\\Rightarrow OM^2 = MC \\cdot MD$",
+      "Thay $MC = AC$, $MD = BD$ (Định lí 2), $OM = R$"
+     ],
+     "solution": "a) $OC$ là tia phân giác của $\\widehat{AOM}$, $OD$ là tia phân giác của $\\widehat{MOB}$ (Định lí 2).[[br]]$\\widehat{COD} = \\widehat{COM} + \\widehat{MOD} = \\dfrac{1}{2}\\left(\\widehat{AOM} + \\widehat{MOB}\\right) = \\dfrac{1}{2} \\cdot 180^\\circ = 90^\\circ$ ($\\widehat{AOM}$, $\\widehat{MOB}$ kề bù).[[br]]Vậy $\\widehat{COD} = 90^\\circ$.[[br]]b) $CD$ là tiếp tuyến tại $M$ $\\Rightarrow OM \\perp CD$ tại $M$.[[br]]Xét $\\triangle MOC$ và $\\triangle MDO$: $\\widehat{OMC} = \\widehat{DMO} = 90^\\circ$, $\\widehat{MOC} = \\widehat{MDO}$ (cùng phụ với $\\widehat{MOD}$).[[br]]$\\Rightarrow \\triangle MOC \\backsim \\triangle MDO$ (g.g) $\\Rightarrow \\dfrac{MO}{MD} = \\dfrac{MC}{MO} \\Rightarrow OM^2 = MC \\cdot MD$.[[br]]Mà $MC = AC$, $MD = BD$ (Định lí 2), $OM = R$.[[br]]Vậy $AC \\cdot BD = R^2$.",
+     "figure": {
+      "tikz": "\\begin{tikzpicture}[line width=0.8pt, font=\\small, scale=1.20]\n  \\draw[ink] (1.5000,0.0000) arc (0.0000:180.0000:1.5000);\n  \\draw[ink] (-1.5000,0.0000) -- (1.5000,0.0000);\n  \\draw[ink] (-1.5000,-0.0000) -- (-1.5000,2.9481);\n  \\draw[ink] (-1.5000,2.5981) -- (0.7500,1.2990);\n  \\draw[ink] (-1.3400,0.0000) -- (-1.3400,0.1600) -- (-1.5000,0.1600);\n  \\draw[ink] (0.0000,0.0000) -- (-1.5000,2.5981);\n  \\draw[ink] (0.0000,0.0000) -- (0.7500,1.2990);\n  \\draw[ink] (0.6700,1.1605) -- (0.5314,1.2405) -- (0.6114,1.3790);\n  \\draw[ink] (1.5000,0.0000) -- (1.5000,2.9481);\n  \\draw[ink] (0.7500,1.2990) -- (1.5000,0.8660);\n  \\draw[ink] (1.3400,0.0000) -- (1.3400,0.1600) -- (1.5000,0.1600);\n  \\draw[ink] (0.0000,0.0000) -- (1.5000,0.8660);\n  \\fill[ink] (-1.5000,0.0000) circle (1.3pt);\n  \\fill[ink] (1.5000,0.0000) circle (1.3pt);\n  \\fill[ink] (0.0000,0.0000) circle (1.3pt);\n  \\fill[ink] (0.7500,1.2990) circle (1.3pt);\n  \\fill[ink] (-1.5000,2.5981) circle (1.3pt);\n  \\fill[ink] (1.5000,0.8660) circle (1.3pt);\n  \\node[inner sep=0pt] at (-1.6839,-0.1543) {$A$};\n  \\node[inner sep=0pt] at (1.6543,-0.1839) {$B$};\n  \\node[inner sep=0pt] at (-0.0000,-0.2400) {$O$};\n  \\node[inner sep=0pt] at (0.8700,1.5069) {$M$};\n  \\node[inner sep=0pt] at (-1.7400,2.5981) {$C$};\n  \\node[inner sep=0pt] at (1.7400,0.8660) {$D$};\n\\end{tikzpicture}",
+      "caption": "Hình 13",
+      "pos": "right"
+     }
+    }
+   ]
+  },
+  {
+   "kind": "reflection",
+   "number": 5,
+   "title": "Sơ đồ tư duy",
+   "teacher_note": "BTVN 10 là Câu IV.1 đề Dịch Vọng; BTVN 11 là ý a đề Ái Mộ; BTVN 14 là bài vận dụng cùng khuôn Bài 14 có số liệu — chữa đầu buổi 6 trước phần luyện đề.",
+   "blocks": [
+    {
+     "type": "mindmap",
+     "caption": "Sơ đồ tư duy: Luyện tập chung",
+     "root": "CÂU IV ĐỀ VÀO 10",
+     "branches": [
+      {
+       "label": "IV.1 ĐO LƯỜNG",
+       "children": [
+        {
+         "label": "Xác định $R$, $r$, $n$ trước"
+        },
+        {
+         "label": "Quạt: $\\dfrac{n}{360}$ hình tròn"
+        },
+        {
+         "label": "Vành khuyên: lớn trừ nhỏ"
+        }
+       ]
+      },
+      {
+       "label": "BỐN ĐIỂM",
+       "children": [
+        {
+         "label": "Hai góc vuông cùng nhìn một đoạn"
+        },
+        {
+         "label": "Trung điểm đoạn đó là tâm"
+        },
+        {
+         "label": "Nêu tâm và bán kính"
+        }
+       ]
+      },
+      {
+       "label": "ĐỊNH LÍ 2",
+       "children": [
+        {
+         "label": "Đoạn tiếp tuyến bằng nhau: $CD = AC + BD$"
+        },
+        {
+         "label": "Phân giác hai góc kề bù: $\\widehat{COD} = 90^\\circ$"
+        },
+        {
+         "label": "Trung trực: $OC \\perp AM$, $OC \\parallel BM$"
+        }
+       ]
+      },
+      {
+       "label": "HỆ THỨC TÍCH",
+       "children": [
+        {
+         "label": "Hai tam giác vuông chung góc: g.g"
+        },
+        {
+         "label": "Hoặc góc \\textquotedblleft cùng phụ\\textquotedblright"
+        },
+        {
+         "label": "Tỉ số $\\Rightarrow$ nhân chéo"
+        }
+       ]
+      }
+     ]
+    },
+    {
+     "type": "para",
+     "text": "\\textbf{BÀI TẬP VỀ NHÀ (Luyện tập chung).}"
+    },
+    {
+     "type": "problem",
+     "label": "BTVN 1.",
+     "level": 1,
+     "tier": "btvn",
+     "dang_id": "NB1",
+     "statement": "[NB] Độ dài cung $120^\\circ$ của đường tròn bán kính $9$ cm bằng:",
+     "figure_given": true,
+     "options": [
+      "$3\\pi$ cm",
+      "$6\\pi$ cm",
+      "$9\\pi$ cm",
+      "$27\\pi$ cm"
+     ],
+     "answer": "Đáp án \\textbf{B}. $\\dfrac{120}{360} \\cdot 18\\pi = 6\\pi$."
+    },
+    {
+     "type": "problem",
+     "label": "BTVN 2.",
+     "level": 1,
+     "tier": "btvn",
+     "dang_id": "NB1",
+     "statement": "[NB] Diện tích hình quạt tròn bán kính $4$ cm, góc ở tâm $90^\\circ$ bằng:",
+     "figure_given": true,
+     "options": [
+      "$2\\pi$ cm$^2$",
+      "$4\\pi$ cm$^2$",
+      "$8\\pi$ cm$^2$",
+      "$16\\pi$ cm$^2$"
+     ],
+     "answer": "Đáp án \\textbf{B}. $\\dfrac{90}{360} \\cdot 16\\pi = 4\\pi$."
+    },
+    {
+     "type": "problem",
+     "label": "BTVN 3.",
+     "level": 1,
+     "tier": "btvn",
+     "dang_id": "NB1",
+     "statement": "[NB] Diện tích hình vành khuyên giới hạn bởi hai đường tròn đồng tâm bán kính $6$ cm và $4$ cm bằng:",
+     "figure_given": true,
+     "options": [
+      "$4\\pi$ cm$^2$",
+      "$20\\pi$ cm$^2$",
+      "$52\\pi$ cm$^2$",
+      "$2\\pi$ cm$^2$"
+     ],
+     "answer": "Đáp án \\textbf{B}. $36\\pi - 16\\pi = 20\\pi$."
+    },
+    {
+     "type": "problem",
+     "label": "BTVN 4.",
+     "level": 1,
+     "tier": "btvn",
+     "dang_id": "NB2",
+     "statement": "Đọc đề rồi điền vào chỗ chấm:[[br]]a) [NB] Mặt đĩa CD: đường kính ngoài $12$ cm, lỗ giữa đường kính $3$ cm: $R = [[blank:1.1cm]]$ cm, $r = [[blank:1.1cm]]$ cm.[[br]]b) [NB] Pizza đường kính $20$ cm cắt $8$ miếng bằng nhau, mỗi miếng: $R = [[blank:1.1cm]]$ cm, $n = [[blank:1.1cm]]^\\circ$.[[br]]c) [NB] Hồ tròn bán kính $50$ m, lối đi bao quanh rộng $5$ m: $r = [[blank:1.1cm]]$ m, $R = [[blank:1.1cm]]$ m.",
+     "figure_given": true,
+     "answer": "a) $6$; $1{,}5$.[[br]]b) $10$; $45^\\circ$.[[br]]c) $50$; $55$."
+    },
+    {
+     "type": "problem",
+     "label": "BTVN 5.",
+     "level": 1,
+     "tier": "btvn",
+     "dang_id": "NB3",
+     "statement": "Vẽ lại hình của Bài 12 vào vở:[[br]]a) [NB] Đánh dấu các góc vuông tại $A$, $B$, $M$.[[br]]b) [NB] Đánh dấu các đoạn bằng nhau $CA = CM$ (một gạch), $DB = DM$ (hai gạch).",
+     "figure_given": true,
+     "answer": "a) Ba ô vuông tại $A$, $B$, $M$.[[br]]b) Một gạch trên $CA$, $CM$; hai gạch trên $DB$, $DM$."
+    },
+    {
+     "type": "problem",
+     "label": "BTVN 6.",
+     "level": 1,
+     "tier": "btvn",
+     "dang_id": "NB4",
+     "statement": "Cho nửa đường tròn $(O)$ đường kính $AB$; tiếp tuyến tại $M$ cắt tiếp tuyến tại $A$, $B$ lần lượt ở $C$, $D$; biết $AC = 3$ cm, $BD = 5$ cm. Điền vào chỗ chấm:[[br]]a) [NB] $CM = [[blank:1.1cm]]$ cm.[[br]]b) [NB] $DM = [[blank:1.1cm]]$ cm.[[br]]c) [NB] $CD = [[blank:1.1cm]]$ cm.",
+     "figure_given": true,
+     "answer": "a) $3$.[[br]]b) $5$.[[br]]c) $8$."
+    },
+    {
+     "type": "problem",
+     "label": "BTVN 7.",
+     "level": 1,
+     "tier": "btvn",
+     "dang_id": "NB5",
+     "statement": "Cho nửa đường tròn $(O)$ đường kính $AB$; tiếp tuyến tại $A$ và tại $M$ cắt nhau ở $C$. Điền vào chỗ chấm:[[br]]a) [NB] $CA = CM$ (Định lí 2), $OA = OM = R$ $\\Rightarrow OC$ là [[blank:3.2cm]] của $AM$.[[br]]b) [NB] $\\triangle AMB$ có đường trung tuyến $MO = \\dfrac{AB}{2}$ (bán kính bằng nửa đường kính) $\\Rightarrow \\triangle AMB$ vuông tại [[blank:1.1cm]].[[br]]c) [NB] $OC \\perp AM$, $BM \\perp AM$ $\\Rightarrow OC$ [[blank:1.1cm]] $BM$.",
+     "figure_given": true,
+     "answer": "a) đường trung trực.[[br]]b) $M$.[[br]]c) $\\parallel$."
+    },
+    {
+     "type": "problem",
+     "label": "BTVN 8.",
+     "level": 1,
+     "tier": "btvn",
+     "dang_id": "NB6",
+     "statement": "Vẫn với hình của BTVN 6, biết $\\widehat{AOM} = 70^\\circ$. Điền vào chỗ chấm:[[br]]a) [NB] $\\widehat{COM} = [[blank:1.6cm]]$.[[br]]b) [NB] $\\widehat{MOB} = 110^\\circ \\Rightarrow \\widehat{MOD} = [[blank:1.6cm]]$.",
+     "figure_given": true,
+     "answer": "a) $35^\\circ$.[[br]]b) $55^\\circ$."
+    },
+    {
+     "type": "problem",
+     "label": "BTVN 9.",
+     "level": 1,
+     "tier": "btvn",
+     "dang_id": "NB7",
+     "statement": "Cho đường tròn $(O)$ đường kính $AB$, tiếp tuyến $Ax$, $C \\in Ax$, $CB$ cắt $(O)$ tại $K$. Điền vào chỗ chấm:[[br]]a) [NB] $\\triangle AKB$ có đường trung tuyến $KO = [[blank:1.6cm]]$ (bán kính bằng nửa đường kính) $\\Rightarrow \\triangle AKB$ vuông tại [[blank:1.1cm]].[[br]]b) [NB] $\\triangle BKA \\backsim \\triangle BAC$ $\\Rightarrow BK \\cdot BC = [[blank:1.6cm]]$.",
+     "figure_given": true,
+     "answer": "a) $\\dfrac{AB}{2}$; $K$.[[br]]b) $AB^2$."
+    },
+    {
+     "type": "problem",
+     "label": "BTVN 10.",
+     "level": 2,
+     "tier": "btvn",
+     "dang_id": "TH1",
+     "statement": "[TH] Một chiếc bánh pizza hình tròn đường kính $20$ cm được cắt thành $8$ miếng đều nhau. Biết $1$ gam sốt phủ kín được $2$ cm$^2$ mặt bánh, tính lượng sốt cần dùng để phủ kín $2$ miếng bánh (lấy $\\pi \\approx 3{,}14$).",
+     "figure_given": false,
+     "hints": [
+      "Hai miếng bánh chiếm mấy phần cái bánh? Ứng với hình quạt bao nhiêu độ?"
+     ],
+     "answer": "Hai miếng là hình quạt $R = 10$ cm, $n = 2 \\cdot 45^\\circ = 90^\\circ$.[[br]]$S_q = \\dfrac{90}{360} \\cdot \\pi \\cdot 10^2 = 25\\pi \\approx 78{,}5$ (cm$^2$).[[br]]Lượng sốt: $78{,}5 : 2 = 39{,}25$ (g).[[br]]Vậy cần khoảng $39{,}25$ g sốt."
+    },
+    {
+     "type": "problem",
+     "label": "BTVN 11.",
+     "level": 2,
+     "tier": "btvn",
+     "dang_id": "TH2",
+     "statement": "[TH] Cho $(O; R)$ đường kính $AB$, điểm $C$ thuộc $(O)$. Tiếp tuyến tại $A$ và tiếp tuyến tại $C$ của $(O)$ cắt nhau tại $M$. Chứng minh bốn điểm $A$, $C$, $M$, $O$ cùng thuộc một đường tròn.",
+     "figure_given": false,
+     "hints": [
+      "Hai tiếp tuyến tạo với hai bán kính những góc nào? Chúng cùng nhìn đoạn nào?"
+     ],
+     "answer": "$MA$, $MC$ là tiếp tuyến tại $A$, $C$ $\\Rightarrow \\widehat{OAM} = \\widehat{OCM} = 90^\\circ$.[[br]]Gọi $I$ là trung điểm $OM$.[[br]]Xét $\\triangle OAM$ vuông tại $A$, trung tuyến $AI$ $\\Rightarrow AI = \\dfrac{OM}{2} = IO = IM$.[[br]]Xét $\\triangle OCM$ vuông tại $C$, trung tuyến $CI$ $\\Rightarrow CI = \\dfrac{OM}{2}$.[[br]]Vậy $A$, $C$, $M$, $O$ cùng thuộc đường tròn $\\left(I; \\dfrac{OM}{2}\\right)$."
+    },
+    {
+     "type": "problem",
+     "label": "BTVN 12.",
+     "level": 2,
+     "tier": "btvn",
+     "dang_id": "TH3",
+     "statement": "[TH] Đường tròn $(O)$ tiếp xúc với ba cạnh $AB$, $BC$, $CA$ của tam giác $ABC$ lần lượt tại $F$, $D$, $E$. Biết $AB = 5$ cm, $BC = 7$ cm, $CA = 6$ cm. Tính độ dài $AF$.",
+     "figure_given": false,
+     "hints": [
+      "Từ mỗi đỉnh $A$, $B$, $C$ có hai đoạn tiếp tuyến tới $(O)$. Chúng bằng nhau không?",
+      "Đặt $AF = x$ rồi viết $BF$, $CE$ theo $x$."
+     ],
+     "answer": "$AF = AE$, $BF = BD$, $CD = CE$ (Định lí 2). Đặt $AF = AE = x$.[[br]]$BD = BF = 5 - x$, $CD = CE = 6 - x$.[[br]]$BC = BD + DC \\Rightarrow (5 - x) + (6 - x) = 7 \\Rightarrow x = 2$.[[br]]Vậy $AF = 2$ cm."
+    },
+    {
+     "type": "problem",
+     "label": "BTVN 13.",
+     "level": 2,
+     "tier": "btvn",
+     "dang_id": "TH4",
+     "statement": "[TH] Cho đường tròn $(O; 5\\text{ cm})$ đường kính $AB$, tiếp tuyến $Ax$ tại $A$; lấy $C \\in Ax$, $CB$ cắt $(O)$ tại $K$ ($K \\ne B$). Chứng minh $BK \\cdot BC = AB^2$ rồi tính $BK \\cdot BC$.",
+     "figure_given": false,
+     "hints": [
+      "$\\triangle AKB$ là tam giác gì? Cặp tam giác nào cho tỉ số $\\dfrac{BK}{BA} = \\dfrac{BA}{BC}$?"
+     ],
+     "answer": "$\\triangle AKB$ có $KO$ là đường trung tuyến ($O$ là trung điểm của $AB$) và $KO = \\dfrac{AB}{2}$ (bán kính bằng nửa đường kính) nên $\\triangle AKB$ vuông tại $K$.[[br]]Xét $\\triangle BKA$ và $\\triangle BAC$: $\\widehat{BKA} = \\widehat{BAC} = 90^\\circ$, góc $B$ chung.[[br]]$\\Rightarrow \\triangle BKA \\backsim \\triangle BAC$ (g.g) $\\Rightarrow \\dfrac{BK}{BA} = \\dfrac{BA}{BC} \\Rightarrow BK \\cdot BC = AB^2$.[[br]]Vậy $BK \\cdot BC = 10^2 = 100$ (cm$^2$)."
+    },
+    {
+     "type": "problem",
+     "label": "BTVN 14.",
+     "level": 3,
+     "tier": "btvn",
+     "dang_id": "VD1",
+     "statement": "[VD] Cho nửa đường tròn $(O; 6\\text{ cm})$ đường kính $AB$; tiếp tuyến tại điểm $M$ của nửa đường tròn cắt tiếp tuyến tại $A$, $B$ lần lượt ở $C$, $D$; biết $AC = 4$ cm.[[br]]a) Chứng minh $\\widehat{COD} = 90^\\circ$.[[br]]b) Tính $BD$.",
+     "figure_given": false,
+     "solution": "a) $OC$, $OD$ là tia phân giác của $\\widehat{AOM}$, $\\widehat{MOB}$ (Định lí 2).[[br]]$\\widehat{COD} = \\widehat{COM} + \\widehat{MOD} = \\dfrac{1}{2}\\left(\\widehat{AOM} + \\widehat{MOB}\\right) = \\dfrac{1}{2} \\cdot 180^\\circ = 90^\\circ$ ($\\widehat{AOM}$, $\\widehat{MOB}$ kề bù).[[br]]b) $CD$ là tiếp tuyến tại $M$ $\\Rightarrow OM \\perp CD$ tại $M$.[[br]]Xét $\\triangle MOC$ và $\\triangle MDO$: $\\widehat{OMC} = \\widehat{DMO} = 90^\\circ$, $\\widehat{MOC} = \\widehat{MDO}$ (cùng phụ với $\\widehat{MOD}$).[[br]]$\\Rightarrow \\triangle MOC \\backsim \\triangle MDO$ (g.g) $\\Rightarrow OM^2 = MC \\cdot MD$.[[br]]$MC = AC = 4$ cm, $MD = BD$ (Định lí 2) $\\Rightarrow 6^2 = 4 \\cdot BD$.[[br]]Vậy $BD = 9$ cm."
+    }
+   ]
+  }
+ ]
+}

@@ -31,6 +31,15 @@ def test_lenh_ket_thuc_bang_ngoac_thi_khong_bao_oan():
     assert check_lenh_dinh_chu(les) == []
 
 
+def test_parallel_partial_la_lenh_that_khong_bao_oan():
+    """`\\parallel` = `\\par` + "allel" theo mắt regex, nhưng là lệnh LaTeX thật (song song)."""
+    les = _les([{"type": "problem", "label": "Bài 1.",
+                 "statement": r"Chứng minh $AO \parallel CD$ và $\partial$."}])
+    assert check_lenh_dinh_chu(les) == []
+    les = _les([{"type": "problem", "label": "Bài 1.", "statement": r"x \parallelVậy"}])
+    assert check_lenh_dinh_chu(les)
+
+
 def test_bat_dong_ke_vi_hs_lam_vao_vo():
     les = _les([{"type": "para", "text": "x"}, {"type": "writelines", "count": 3}])
     assert any("dòng kẻ" in m for m in check_trinh_bay(les))

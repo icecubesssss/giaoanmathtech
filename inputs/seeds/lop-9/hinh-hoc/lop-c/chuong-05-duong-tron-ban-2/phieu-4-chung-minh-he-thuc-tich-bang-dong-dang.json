@@ -1,0 +1,540 @@
+{
+ "slug": "phieu-4-chung-minh-he-thuc-tich-bang-dong-dang",
+ "title": "Chứng minh hệ thức tích bằng tam giác đồng dạng",
+ "eyebrow": "PHIẾU 4 • HÌNH HỌC 9 · CHƯƠNG V — BÀI 16 (LUYỆN TẬP)",
+ "grade_label": "Lớp 9 • Hình học",
+ "class_tier": "C",
+ "stages": [
+  {
+   "kind": "review",
+   "number": 1,
+   "title": "Khám phá",
+   "teacher_note": "Cho HS tính hai tích bằng số trước rồi mới hỏi \\textquotedblleft vì sao bằng nhau\\textquotedblright. Câu b dẫn thẳng vào trường hợp đồng dạng g.g của hai tam giác vuông (Lớp 8) — công cụ DUY NHẤT của buổi này, vì hệ thức lượng đã giảm tải, HS không được dùng thẳng.",
+   "blocks": [
+    {
+     "type": "para",
+     "text": "\\textbf{Hai tích bằng nhau — trùng hợp hay có lí do?}"
+    },
+    {
+     "type": "noted",
+     "variant": "note",
+     "text": "Tam giác $ABO$ vuông tại $B$ có $AB = 6$ cm, $AO = 10$ cm, đường cao $BH$ và $AH = 3{,}6$ cm (Hình 1).[[br]]\\textbf{a)} Tính $AB^2$ và $AH \\cdot AO$. Em có nhận xét gì?[[br]]\\textbf{b)} Hai tam giác vuông $AHB$ và $ABO$ có chung góc nào?[[br]]\\textbf{c)} Hai tam giác đó có quan hệ gì? Viết các tỉ số cạnh tương ứng.",
+     "figure": {
+      "tikz": "\\begin{tikzpicture}[line width=0.8pt, font=\\small]\n  \\draw[ink] (0.0000,0.0000) -- (3.2000,2.4000) -- (5.0000,0.0000) -- cycle;\n  \\draw[ink] (3.2000,2.4000) -- (3.2000,0.0000);\n  \\draw[ink] (3.0720,2.3040) -- (3.1680,2.1760) -- (3.2960,2.2720);\n  \\draw[ink] (3.2000,0.1600) -- (3.3600,0.1600) -- (3.3600,0.0000);\n  \\fill[ink] (0.0000,0.0000) circle (1.3pt);\n  \\fill[ink] (5.0000,0.0000) circle (1.3pt);\n  \\fill[ink] (3.2000,2.4000) circle (1.3pt);\n  \\fill[ink] (3.2000,0.0000) circle (1.3pt);\n  \\node[inner sep=0pt] at (-0.2255,-0.0821) {$O$};\n  \\node[inner sep=0pt] at (5.2078,-0.1200) {$A$};\n  \\node[inner sep=0pt] at (3.2417,2.6364) {$B$};\n  \\node[inner sep=0pt] at (3.2000,-0.2400) {$H$};\n  \\node[inner sep=0pt] at (3.9161,1.0457) {$6$};\n  \\node[inner sep=0pt] at (3.7500,-0.2400) {$10$};\n\\end{tikzpicture}",
+      "caption": "Hình 1",
+      "pos": "right"
+     }
+    }
+   ]
+  },
+  {
+   "kind": "concept",
+   "number": 2,
+   "title": "Kiến thức cần nhớ",
+   "teacher_note": "Hệ thức lượng trong tam giác vuông đã GIẢM TẢI: mọi đẳng thức tích phải chứng minh qua hai tam giác đồng dạng, đúng ba bước ở mục 2. Mục 3, 4 là các ý b quen thuộc của Câu IV.2 (Lý Thánh Tông, Ngọc Thụy, Phúc Đồng, Dịch Vọng).",
+   "blocks": [
+    {
+     "type": "para",
+     "variant": "heading",
+     "text": "1. Nhắc lại (Lớp 8): hai tam giác vuông đồng dạng"
+    },
+    {
+     "type": "deflist",
+     "items": [
+      {
+       "term": "Dấu hiệu:",
+       "desc": "hai tam giác vuông có một góc nhọn bằng nhau (hoặc chung) thì đồng dạng (g.g)."
+      },
+      {
+       "term": "Thứ tự đỉnh:",
+       "desc": "đỉnh góc vuông ứng với đỉnh góc vuông, đỉnh góc chung ứng với đỉnh góc chung."
+      },
+      {
+       "term": "Tỉ số:",
+       "desc": "$\\triangle AHB \\backsim \\triangle ABO \\Rightarrow \\dfrac{AH}{AB} = \\dfrac{HB}{BO} = \\dfrac{AB}{AO}$."
+      }
+     ]
+    },
+    {
+     "type": "figure",
+     "tikz": "\\begin{tikzpicture}[line width=0.8pt, font=\\small]\n  \\draw[ink] (0.0000,0.0000) -- (0.5281,1.1879) -- (3.2000,0.0000) -- cycle;\n  \\draw[ink] (0.5281,1.1879) -- (0.5281,0.0000);\n  \\draw[ink] (0.4631,1.0417) -- (0.6093,0.9767) -- (0.6743,1.1229);\n  \\draw[ink] (0.5281,0.1600) -- (0.6881,0.1600) -- (0.6881,0.0000);\n  \\fill[ink] (0.0000,0.0000) circle (1.3pt);\n  \\fill[ink] (3.2000,0.0000) circle (1.3pt);\n  \\fill[ink] (0.5281,1.1879) circle (1.3pt);\n  \\fill[ink] (0.5281,0.0000) circle (1.3pt);\n  \\node[inner sep=0pt] at (-0.2078,-0.1200) {$O$};\n  \\node[inner sep=0pt] at (3.4364,-0.0417) {$A$};\n  \\node[inner sep=0pt] at (0.4460,1.4134) {$B$};\n  \\node[inner sep=0pt] at (0.5281,-0.2400) {$H$};\n\\end{tikzpicture}",
+     "caption": "$\\triangle AHB$ và $\\triangle ABO$ vuông, chung góc $A$",
+     "width": "0.32\\linewidth"
+    },
+    {
+     "type": "para",
+     "variant": "heading",
+     "text": "2. Ba bước chứng minh một đẳng thức tích"
+    },
+    {
+     "type": "deflist",
+     "items": [
+      {
+       "term": "B1.",
+       "desc": "Đổi tích thành tỉ số: $AB^2 = AH \\cdot AO \\Leftarrow \\dfrac{AH}{AB} = \\dfrac{AB}{AO}$."
+      },
+      {
+       "term": "B2.",
+       "desc": "Đọc cặp tam giác: tử số $AH$, $AB$ $\\to \\triangle AHB$; mẫu số $AB$, $AO$ $\\to \\triangle ABO$."
+      },
+      {
+       "term": "B3.",
+       "desc": "Chứng minh hai tam giác đồng dạng (g.g) $\\Rightarrow$ tỉ số $\\Rightarrow$ nhân chéo ra tích."
+      }
+     ]
+    },
+    {
+     "type": "para",
+     "variant": "heading",
+     "text": "3. Hai hệ thức trong hình hai tiếp tuyến"
+    },
+    {
+     "type": "para",
+     "text": "Với $AO \\perp BC$ tại $H$ ($AO$ là đường trung trực của $BC$) và $AB \\perp OB$ tại $B$ ($AB$ là tiếp tuyến):[[br]]$\\triangle AHB \\backsim \\triangle ABO$ (g.g, chung góc $A$) $\\Rightarrow AB^2 = AH \\cdot AO$.[[br]]$\\triangle OHB \\backsim \\triangle OBA$ (g.g, chung góc $O$) $\\Rightarrow OB^2 = OH \\cdot OA$, tức $OH \\cdot OA = R^2$."
+    },
+    {
+     "type": "figure",
+     "tikz": "\\begin{tikzpicture}[line width=0.8pt, font=\\small]\n  \\draw[ink] (0.0000,0.0000) circle (1.3000);\n  \\draw[ink] (3.2000,0.0000) -- (0.5281,1.1879);\n  \\draw[ink] (3.2000,0.0000) -- (0.5281,-1.1879);\n  \\draw[ink] (0.0000,0.0000) -- (0.5281,1.1879);\n  \\draw[ink] (0.0000,0.0000) -- (0.5281,-1.1879);\n  \\draw[ink] (0.0000,0.0000) -- (3.2000,0.0000);\n  \\draw[ink] (0.4631,1.0417) -- (0.6093,0.9767) -- (0.6743,1.1229);\n  \\draw[ink] (0.4631,-1.0417) -- (0.6093,-0.9767) -- (0.6743,-1.1229);\n  \\draw[ink] (0.5281,1.1879) -- (0.5281,-1.1879);\n  \\draw[ink] (0.5281,0.1600) -- (0.6881,0.1600) -- (0.6881,0.0000);\n  \\fill[ink] (0.0000,0.0000) circle (1.3pt);\n  \\fill[ink] (3.2000,0.0000) circle (1.3pt);\n  \\fill[ink] (0.5281,1.1879) circle (1.3pt);\n  \\fill[ink] (0.5281,-1.1879) circle (1.3pt);\n  \\fill[ink] (0.5281,0.0000) circle (1.3pt);\n  \\node[inner sep=0pt] at (-0.2400,0.0000) {$O$};\n  \\node[inner sep=0pt] at (3.4400,0.0000) {$A$};\n  \\node[inner sep=0pt] at (0.6307,1.4698) {$B$};\n  \\node[inner sep=0pt] at (0.6307,-1.4698) {$C$};\n  \\node[inner sep=0pt] at (0.3739,0.1839) {$H$};\n\\end{tikzpicture}",
+     "caption": "$AO \\perp BC$ tại $H$, $AB \\perp OB$ tại $B$",
+     "width": "0.46\\linewidth"
+    },
+    {
+     "type": "para",
+     "variant": "heading",
+     "text": "4. Cát tuyến đi qua đầu đường kính"
+    },
+    {
+     "type": "para",
+     "text": "Vẽ đường kính $BD$, $AD$ cắt $(O)$ tại $E$.[[br]]$\\triangle BED$ có $EO$ là đường trung tuyến ($O$ là trung điểm của $BD$) và $EO = \\dfrac{BD}{2}$ (bán kính bằng nửa đường kính) nên $\\triangle BED$ vuông tại $E$ $\\Rightarrow BE \\perp AD$.[[br]]$\\triangle AEB \\backsim \\triangle ABD$ (g.g, chung góc $A$) $\\Rightarrow AB^2 = AE \\cdot AD$.[[br]]Kết hợp với $AB^2 = AH \\cdot AO$ (mục 3): $AE \\cdot AD = AH \\cdot AO$."
+    },
+    {
+     "type": "figure",
+     "tikz": "\\begin{tikzpicture}[line width=0.8pt, font=\\small]\n  \\draw[ink] (0.0000,0.0000) circle (1.3000);\n  \\draw[ink] (3.2000,0.0000) -- (0.5281,1.1879);\n  \\draw[ink] (3.2000,0.0000) -- (0.5281,-1.1879);\n  \\draw[ink] (0.0000,0.0000) -- (0.5281,1.1879);\n  \\draw[ink] (0.0000,0.0000) -- (0.5281,-1.1879);\n  \\draw[ink] (0.0000,0.0000) -- (3.2000,0.0000);\n  \\draw[ink] (0.4631,1.0417) -- (0.6093,0.9767) -- (0.6743,1.1229);\n  \\draw[ink] (0.4631,-1.0417) -- (0.6093,-0.9767) -- (0.6743,-1.1229);\n  \\draw[ink] (0.5281,1.1879) -- (0.5281,-1.1879);\n  \\draw[ink] (0.5281,0.1600) -- (0.6881,0.1600) -- (0.6881,0.0000);\n  \\draw[ink] (0.5281,1.1879) -- (-0.5281,-1.1879);\n  \\draw[ink] (3.2000,0.0000) -- (-0.5281,-1.1879);\n  \\draw[ink] (0.5281,1.1879) -- (1.1180,-0.6634);\n  \\fill[ink] (0.0000,0.0000) circle (1.3pt);\n  \\fill[ink] (3.2000,0.0000) circle (1.3pt);\n  \\fill[ink] (0.5281,1.1879) circle (1.3pt);\n  \\fill[ink] (0.5281,-1.1879) circle (1.3pt);\n  \\fill[ink] (0.5281,0.0000) circle (1.3pt);\n  \\fill[ink] (-0.5281,-1.1879) circle (1.3pt);\n  \\fill[ink] (1.1180,-0.6634) circle (1.3pt);\n  \\node[inner sep=0pt] at (-0.2255,0.0821) {$O$};\n  \\node[inner sep=0pt] at (3.4400,0.0000) {$A$};\n  \\node[inner sep=0pt] at (0.6307,1.4698) {$B$};\n  \\node[inner sep=0pt] at (0.6307,-1.4698) {$C$};\n  \\node[inner sep=0pt] at (0.3739,0.1839) {$H$};\n  \\node[inner sep=0pt] at (-0.6307,-1.4698) {$D$};\n  \\node[inner sep=0pt] at (0.8582,-0.5134) {$E$};\n\\end{tikzpicture}",
+     "caption": "$BD$ là đường kính, $BE \\perp AD$ tại $E$",
+     "width": "0.46\\linewidth"
+    }
+   ]
+  },
+  {
+   "kind": "practice1",
+   "number": 3,
+   "title": "Luyện tập 1",
+   "teacher_note": "20 câu nhận biết, chẻ đúng ba bước ở mục 2. Bài 3 – 5 cùng một hình: HS điền xong là có trọn bản chứng minh $AB^2 = AH \\cdot AO$ và $OH \\cdot OA = R^2$ để chép vào vở. Bài 7: nhắc HS kiểm tra lại $AH + OH = AO$.",
+   "blocks": [
+    {
+     "type": "noted",
+     "variant": "example",
+     "text": "\\textbf{Ví dụ 1.} Cho tam giác $ABC$ vuông tại $A$, đường cao $AH$ (Hình 2). Chứng minh $\\triangle HBA \\backsim \\triangle ABC$.[[br]]{\\sffamily\\bfseries\\color{brand}Lời giải}[[br]]Xét $\\triangle HBA$ và $\\triangle ABC$ có:[[br]]$\\widehat{BHA} = \\widehat{BAC} = [[fill:90^\\circ]]$;[[br]]$\\widehat{B}$ [[fill:chung]].[[br]]Vậy $\\triangle HBA \\backsim \\triangle ABC$ ([[fill:g.g]]).",
+     "figure": {
+      "tikz": "\\begin{tikzpicture}[line width=0.8pt, font=\\small]\n  \\draw[ink] (1.0006,1.4835) -- (0.0000,0.0000) -- (3.2000,0.0000) -- cycle;\n  \\draw[ink] (1.0006,1.4835) -- (1.0006,0.0000);\n  \\draw[ink] (0.9112,1.3508) -- (1.0438,1.2614) -- (1.1333,1.3940);\n  \\draw[ink] (1.0006,0.1600) -- (1.1606,0.1600) -- (1.1606,0.0000);\n  \\fill[ink] (1.0006,1.4835) circle (1.3pt);\n  \\fill[ink] (0.0000,0.0000) circle (1.3pt);\n  \\fill[ink] (3.2000,0.0000) circle (1.3pt);\n  \\fill[ink] (1.0006,0.0000) circle (1.3pt);\n  \\node[inner sep=0pt] at (0.9590,1.7198) {$A$};\n  \\node[inner sep=0pt] at (-0.2078,-0.1200) {$B$};\n  \\node[inner sep=0pt] at (3.4255,-0.0821) {$C$};\n  \\node[inner sep=0pt] at (1.0006,-0.2400) {$H$};\n\\end{tikzpicture}",
+      "caption": "Hình 2",
+      "pos": "right"
+     }
+    },
+    {
+     "type": "problem",
+     "label": "Bài 1.",
+     "level": 1,
+     "tier": "onclass",
+     "dang_id": "NB1",
+     "statement": "Trên Hình 3, tam giác $MNP$ vuông tại $M$, đường cao $MK$. Điền vào chỗ chấm:[[br]]a) [NB] $\\triangle KNM$ và $\\triangle MNP$ có chung góc [[blank:1.1cm]].[[br]]b) [NB] $\\widehat{MKN} = \\widehat{NMP} = [[blank:1.6cm]]$.[[br]]c) [NB] $\\Rightarrow \\triangle KNM \\backsim \\triangle [[blank:1.6cm]]$ (g.g).",
+     "figure_given": true,
+     "answer": "a) $\\widehat{N}$.[[br]]b) $90^\\circ$.[[br]]c) $\\triangle MNP$.",
+     "figure": {
+      "tikz": "\\begin{tikzpicture}[line width=0.8pt, font=\\small, scale=1.60]\n  \\draw[ink] (1.3222,1.5757) -- (0.0000,0.0000) -- (3.2000,0.0000) -- cycle;\n  \\draw[ink] (1.3222,1.5757) -- (1.3222,0.0000);\n  \\draw[ink] (1.2193,1.4531) -- (1.3419,1.3503) -- (1.4447,1.4728);\n  \\draw[ink] (1.3222,0.1600) -- (1.4822,0.1600) -- (1.4822,0.0000);\n  \\fill[ink] (1.3222,1.5757) circle (1.3pt);\n  \\fill[ink] (0.0000,0.0000) circle (1.3pt);\n  \\fill[ink] (3.2000,0.0000) circle (1.3pt);\n  \\fill[ink] (1.3222,0.0000) circle (1.3pt);\n  \\node[inner sep=0pt] at (1.3222,1.8157) {$M$};\n  \\node[inner sep=0pt] at (-0.2255,-0.0821) {$N$};\n  \\node[inner sep=0pt] at (3.4255,-0.0821) {$P$};\n  \\node[inner sep=0pt] at (1.3222,-0.2400) {$K$};\n\\end{tikzpicture}",
+      "caption": "Hình 3",
+      "pos": "right"
+     }
+    },
+    {
+     "type": "problem",
+     "label": "Bài 2.",
+     "level": 1,
+     "tier": "onclass",
+     "dang_id": "NB2",
+     "statement": "Điền vào chỗ chấm để đổi đẳng thức tích thành tỉ số (bước 1):[[br]]a) [NB] $AB^2 = AH \\cdot AO \\Leftarrow \\dfrac{AH}{AB} = \\dfrac{[[blank:1.1cm]]}{AO}$.[[br]]b) [NB] $OB^2 = OH \\cdot OA \\Leftarrow \\dfrac{OH}{OB} = \\dfrac{OB}{[[blank:1.1cm]]}$.[[br]]c) [NB] $AE \\cdot AD = AB^2 \\Leftarrow \\dfrac{AE}{AB} = \\dfrac{[[blank:1.1cm]]}{AD}$.",
+     "figure_given": true,
+     "answer": "a) $AB$.[[br]]b) $OA$.[[br]]c) $AB$."
+    },
+    {
+     "type": "problem",
+     "label": "Bài 3.",
+     "level": 1,
+     "tier": "onclass",
+     "dang_id": "NB3",
+     "statement": "Trên Hình 4, $AB$, $AC$ là hai tiếp tuyến của $(O)$; $AO \\perp BC$ tại $H$ (đã chứng minh); $BD$ là đường kính, $AD$ cắt $(O)$ tại $E$. Điền vào chỗ chấm để chứng minh $\\triangle AHB \\backsim \\triangle ABO$:[[br]]a) [NB] $AO \\perp BC$ tại $H$ $\\Rightarrow \\widehat{AHB} = [[blank:1.6cm]]$.[[br]]b) [NB] $AB$ là tiếp tuyến tại $B$ $\\Rightarrow \\widehat{ABO} = [[blank:1.6cm]]$.[[br]]c) [NB] Xét $\\triangle AHB$ và $\\triangle ABO$: $\\widehat{AHB} = \\widehat{ABO}$, góc [[blank:1.6cm]] chung $\\Rightarrow \\triangle AHB \\backsim \\triangle ABO$ ([[blank:1.1cm]]).",
+     "figure_given": true,
+     "answer": "a) $90^\\circ$.[[br]]b) $90^\\circ$.[[br]]c) $\\widehat{BAO}$ (góc $A$); g.g.",
+     "figure": {
+      "tikz": "\\begin{tikzpicture}[line width=0.8pt, font=\\small, scale=1.28]\n  \\draw[ink] (0.0000,0.0000) circle (1.3000);\n  \\draw[ink] (3.2000,0.0000) -- (0.5281,1.1879);\n  \\draw[ink] (3.2000,0.0000) -- (0.5281,-1.1879);\n  \\draw[ink] (0.0000,0.0000) -- (0.5281,1.1879);\n  \\draw[ink] (0.0000,0.0000) -- (0.5281,-1.1879);\n  \\draw[ink] (0.0000,0.0000) -- (3.2000,0.0000);\n  \\draw[ink] (0.4631,1.0417) -- (0.6093,0.9767) -- (0.6743,1.1229);\n  \\draw[ink] (0.4631,-1.0417) -- (0.6093,-0.9767) -- (0.6743,-1.1229);\n  \\draw[ink] (0.5281,1.1879) -- (0.5281,-1.1879);\n  \\draw[ink] (0.5281,0.1600) -- (0.6881,0.1600) -- (0.6881,0.0000);\n  \\draw[ink] (0.5281,1.1879) -- (-0.5281,-1.1879);\n  \\draw[ink] (3.2000,0.0000) -- (-0.5281,-1.1879);\n  \\draw[ink] (0.5281,1.1879) -- (1.1180,-0.6634);\n  \\fill[ink] (0.0000,0.0000) circle (1.3pt);\n  \\fill[ink] (3.2000,0.0000) circle (1.3pt);\n  \\fill[ink] (0.5281,1.1879) circle (1.3pt);\n  \\fill[ink] (0.5281,-1.1879) circle (1.3pt);\n  \\fill[ink] (0.5281,0.0000) circle (1.3pt);\n  \\fill[ink] (-0.5281,-1.1879) circle (1.3pt);\n  \\fill[ink] (1.1180,-0.6634) circle (1.3pt);\n  \\node[inner sep=0pt] at (-0.2255,0.0821) {$O$};\n  \\node[inner sep=0pt] at (3.4400,0.0000) {$A$};\n  \\node[inner sep=0pt] at (0.6307,1.4698) {$B$};\n  \\node[inner sep=0pt] at (0.6307,-1.4698) {$C$};\n  \\node[inner sep=0pt] at (0.3739,0.1839) {$H$};\n  \\node[inner sep=0pt] at (-0.6307,-1.4698) {$D$};\n  \\node[inner sep=0pt] at (0.8582,-0.5134) {$E$};\n\\end{tikzpicture}",
+      "caption": "Hình 4",
+      "pos": "right"
+     }
+    },
+    {
+     "type": "noted",
+     "variant": "example",
+     "text": "\\textbf{Ví dụ 2.} Tam giác $DEF$ vuông tại $E$, đường cao $EG$ (Hình 5). Biết $\\triangle DGE \\backsim \\triangle DEF$, chứng minh $DE^2 = DG \\cdot DF$.[[br]]{\\sffamily\\bfseries\\color{brand}Lời giải}[[br]]$\\triangle DGE \\backsim \\triangle DEF$ $\\Rightarrow \\dfrac{DG}{DE} = [[fill:\\dfrac{DE}{DF}]]$ (tỉ số cạnh tương ứng).[[br]]$\\Rightarrow [[fill:DE \\cdot DE]] = DG \\cdot DF$ (nhân chéo).[[br]]Vậy $DE^2 = [[fill:DG \\cdot DF]]$.",
+     "figure": {
+      "tikz": "\\begin{tikzpicture}[line width=0.8pt, font=\\small]\n  \\draw[ink] (1.2129,1.5525) -- (0.0000,0.0000) -- (3.2000,0.0000) -- cycle;\n  \\draw[ink] (1.2129,1.5525) -- (1.2129,0.0000);\n  \\draw[ink] (1.1144,1.4264) -- (1.2405,1.3279) -- (1.3390,1.4540);\n  \\draw[ink] (1.2129,0.1600) -- (1.3729,0.1600) -- (1.3729,0.0000);\n  \\fill[ink] (1.2129,1.5525) circle (1.3pt);\n  \\fill[ink] (0.0000,0.0000) circle (1.3pt);\n  \\fill[ink] (3.2000,0.0000) circle (1.3pt);\n  \\fill[ink] (1.2129,0.0000) circle (1.3pt);\n  \\node[inner sep=0pt] at (1.1712,1.7888) {$E$};\n  \\node[inner sep=0pt] at (-0.2078,-0.1200) {$D$};\n  \\node[inner sep=0pt] at (3.4255,-0.0821) {$F$};\n  \\node[inner sep=0pt] at (1.2129,-0.2400) {$G$};\n\\end{tikzpicture}",
+      "caption": "Hình 5",
+      "pos": "right"
+     }
+    },
+    {
+     "type": "problem",
+     "label": "Bài 4.",
+     "level": 1,
+     "tier": "onclass",
+     "dang_id": "NB4",
+     "statement": "Vẫn trên Hình 4. Điền vào chỗ chấm:[[br]]a) [NB] $\\triangle AHB \\backsim \\triangle ABO$ $\\Rightarrow \\dfrac{AH}{AB} = \\dfrac{[[blank:1.1cm]]}{[[blank:1.1cm]]}$.[[br]]b) [NB] Nhân chéo: $AB^2 = [[blank:2.4cm]]$.[[br]]c) [NB] $\\triangle AEB \\backsim \\triangle ABD$ $\\Rightarrow \\dfrac{AE}{AB} = \\dfrac{AB}{[[blank:1.1cm]]} \\Rightarrow AB^2 = [[blank:2.4cm]]$.",
+     "figure_given": true,
+     "answer": "a) $\\dfrac{AB}{AO}$.[[br]]b) $AH \\cdot AO$.[[br]]c) $AD$; $AE \\cdot AD$."
+    },
+    {
+     "type": "problem",
+     "label": "Bài 5.",
+     "level": 1,
+     "tier": "onclass",
+     "dang_id": "NB5",
+     "statement": "Vẫn trên Hình 4. Điền vào chỗ chấm để chứng minh $OH \\cdot OA = R^2$:[[br]]a) [NB] Xét $\\triangle OHB$ và $\\triangle OBA$: $\\widehat{OHB} = \\widehat{OBA} = [[blank:1.6cm]]$, góc [[blank:1.6cm]] chung.[[br]]b) [NB] $\\Rightarrow \\triangle OHB \\backsim \\triangle OBA$ (g.g) $\\Rightarrow \\dfrac{OH}{OB} = \\dfrac{[[blank:1.1cm]]}{[[blank:1.1cm]]}$.[[br]]c) [NB] $\\Rightarrow OH \\cdot OA = [[blank:1.6cm]] = R^2$.",
+     "figure_given": true,
+     "answer": "a) $90^\\circ$; $\\widehat{BOA}$ (góc $O$).[[br]]b) $\\dfrac{OB}{OA}$.[[br]]c) $OB^2$."
+    },
+    {
+     "type": "problem",
+     "label": "Bài 6.",
+     "level": 1,
+     "tier": "onclass",
+     "dang_id": "NB6",
+     "statement": "Vẽ lại Hình 4 vào vở rồi điền vào chỗ chấm:[[br]]a) [NB] Đánh dấu góc vuông tại $B$ của $\\triangle ABD$ ($AB$ là tiếp tuyến tại $B$).[[br]]b) [NB] $O$ là trung điểm của đường kính $BD$ $\\Rightarrow EO$ là đường [[blank:2.4cm]] của $\\triangle BED$.[[br]]c) [NB] $\\triangle BED$ có đường trung tuyến $EO = \\dfrac{BD}{2}$ (bán kính bằng nửa đường kính) $\\Rightarrow \\triangle BED$ vuông tại [[blank:1.1cm]] $\\Rightarrow BE \\perp [[blank:1.1cm]]$.",
+     "figure_given": true,
+     "answer": "a) $\\widehat{ABD} = 90^\\circ$.[[br]]b) trung tuyến.[[br]]c) $E$; $AD$."
+    },
+    {
+     "type": "problem",
+     "label": "Bài 7.",
+     "level": 1,
+     "tier": "onclass",
+     "dang_id": "NB7",
+     "statement": "Trên Hình 4, cho $R = 6$ cm, $OA = 10$ cm; đã chứng minh $AB^2 = AH \\cdot AO$ và $OH \\cdot OA = R^2$. Điền vào chỗ chấm:[[br]]a) [NB] Theo định lí Pythagore, $AB = 8$ cm $\\Rightarrow AH = \\dfrac{AB^2}{AO} = [[blank:1.6cm]] = [[blank:1.1cm]]$ cm.[[br]]b) [NB] $OH = \\dfrac{R^2}{OA} = [[blank:1.6cm]] = [[blank:1.1cm]]$ cm.",
+     "figure_given": true,
+     "answer": "a) $\\dfrac{64}{10} = 6{,}4$.[[br]]b) $\\dfrac{36}{10} = 3{,}6$."
+    }
+   ]
+  },
+  {
+   "kind": "practice2",
+   "number": 4,
+   "title": "Luyện tập 2",
+   "teacher_note": "Bài 8 là ý a đề Lý Thánh Tông, Bài 9 là cấu hình đề Phúc Đồng, Bài 11 là ý b quen thuộc \\textquotedblleft $AE \\cdot AD = AH \\cdot AO$\\textquotedblright. Bắt HS viết đủ \\textquotedblleft Xét … và … có\\textquotedblright, hai cặp góc kèm lí do, rồi mới tỉ số — không chấp nhận dùng thẳng hệ thức lượng.",
+   "blocks": [
+    {
+     "type": "noted",
+     "variant": "example",
+     "text": "\\textbf{Ví dụ 3.} Cho tam giác $ABO$ vuông tại $B$, đường cao $BH$ (Hình 6). Chứng minh $OB^2 = OH \\cdot OA$.[[br]]{\\sffamily\\bfseries\\color{brand}Lời giải}[[br]]Xét $\\triangle OHB$ và $\\triangle OBA$ có:[[br]]$\\widehat{OHB} = \\widehat{OBA} = [[fill:90^\\circ]]$; \\ $\\widehat{O}$ chung.[[br]]$\\Rightarrow \\triangle OHB \\backsim \\triangle OBA$ ([[fill:g.g]]).[[br]]$\\Rightarrow \\dfrac{OH}{OB} = [[fill:\\dfrac{OB}{OA}]]$.[[br]]Vậy $OB^2 = [[fill:OH \\cdot OA]]$.",
+     "figure": {
+      "tikz": "\\begin{tikzpicture}[line width=0.8pt, font=\\small]\n  \\draw[ink] (0.0000,0.0000) -- (0.5281,1.1879) -- (3.2000,0.0000) -- cycle;\n  \\draw[ink] (0.5281,1.1879) -- (0.5281,0.0000);\n  \\draw[ink] (0.4631,1.0417) -- (0.6093,0.9767) -- (0.6743,1.1229);\n  \\draw[ink] (0.5281,0.1600) -- (0.6881,0.1600) -- (0.6881,0.0000);\n  \\fill[ink] (0.0000,0.0000) circle (1.3pt);\n  \\fill[ink] (3.2000,0.0000) circle (1.3pt);\n  \\fill[ink] (0.5281,1.1879) circle (1.3pt);\n  \\fill[ink] (0.5281,0.0000) circle (1.3pt);\n  \\node[inner sep=0pt] at (-0.2078,-0.1200) {$O$};\n  \\node[inner sep=0pt] at (3.4364,-0.0417) {$A$};\n  \\node[inner sep=0pt] at (0.4460,1.4134) {$B$};\n  \\node[inner sep=0pt] at (0.5281,-0.2400) {$H$};\n\\end{tikzpicture}",
+      "caption": "Hình 6",
+      "pos": "right"
+     }
+    },
+    {
+     "type": "problem",
+     "label": "Bài 8.",
+     "level": 2,
+     "tier": "onclass",
+     "dang_id": "TH1",
+     "statement": "[TH] Từ điểm $A$ nằm ngoài $(O)$ kẻ hai tiếp tuyến $AB$, $AC$ ($B$, $C$ là tiếp điểm); $AO$ cắt $BC$ tại $H$. Biết $AO \\perp BC$ tại $H$, chứng minh $AB^2 = AH \\cdot AO$.",
+     "figure_given": false,
+     "hints": [
+      "Đổi đẳng thức thành tỉ số. Tỉ số đó gợi ý hai tam giác nào?",
+      "Hai tam giác đó có những góc nào bằng nhau? Vì sao?"
+     ],
+     "answer": "Xét $\\triangle AHB$ và $\\triangle ABO$ có:[[br]]$\\widehat{AHB} = \\widehat{ABO} = 90^\\circ$ ($AO \\perp BC$, $AB$ là tiếp tuyến tại $B$),[[br]]$\\widehat{BAO}$ chung.[[br]]$\\Rightarrow \\triangle AHB \\backsim \\triangle ABO$ (g.g).[[br]]$\\Rightarrow \\dfrac{AH}{AB} = \\dfrac{AB}{AO}$.[[br]]Vậy $AB^2 = AH \\cdot AO$."
+    },
+    {
+     "type": "noted",
+     "variant": "example",
+     "text": "\\textbf{Ví dụ 4.} Cho đường tròn $(O)$ đường kính $AB$, tiếp tuyến $Ax$ tại $A$. Lấy điểm $C$ trên $Ax$; $CB$ cắt $(O)$ tại $K$ ($K \\ne B$) (Hình 7). Chứng minh $\\triangle AKB$ vuông và $BK \\cdot BC = AB^2$.[[br]]{\\sffamily\\bfseries\\color{brand}Lời giải}[[br]]$\\triangle AKB$ có $KO$ là đường trung tuyến ($O$ là trung điểm của $AB$) và $KO = [[fill:\\dfrac{AB}{2}]]$ (bán kính bằng nửa đường kính) nên $\\triangle AKB$ vuông tại $K$.[[br]]$Ax$ là tiếp tuyến tại $A$ $\\Rightarrow \\widehat{BAC} = 90^\\circ$.[[br]]Xét $\\triangle BKA$ và $\\triangle BAC$: $\\widehat{BKA} = \\widehat{BAC} = 90^\\circ$, $\\widehat{B}$ chung.[[br]]$\\Rightarrow \\triangle BKA \\backsim \\triangle BAC$ ([[fill:g.g]]) $\\Rightarrow \\dfrac{BK}{BA} = [[fill:\\dfrac{BA}{BC}]]$.[[br]]Vậy $\\triangle AKB$ vuông tại $K$ và $BK \\cdot BC = [[fill:AB^2]]$.",
+     "figure": {
+      "tikz": "\\begin{tikzpicture}[line width=0.8pt, font=\\small]\n  \\draw[ink] (0.0000,0.0000) circle (1.4000);\n  \\draw[ink] (-0.5000,-1.4000) -- (2.8000,-1.4000);\n  \\draw[ink] (0.0000,-1.4000) -- (0.0000,1.4000);\n  \\draw[ink] (0.0000,1.4000) -- (2.3000,-1.4000);\n  \\draw[ink] (0.0000,-1.4000) -- (1.3733,-0.2719);\n  \\draw[ink] (0.0000,-1.2400) -- (0.1600,-1.2400) -- (0.1600,-1.4000);\n  \\draw[ink] (1.2497,-0.3735) -- (1.1481,-0.2498) -- (1.2718,-0.1483);\n  \\fill[ink] (0.0000,-1.4000) circle (1.3pt);\n  \\fill[ink] (0.0000,1.4000) circle (1.3pt);\n  \\fill[ink] (0.0000,0.0000) circle (1.3pt);\n  \\fill[ink] (2.3000,-1.4000) circle (1.3pt);\n  \\fill[ink] (1.3733,-0.2719) circle (1.3pt);\n  \\node[inner sep=0pt] at (-0.0000,-1.7000) {$A$};\n  \\node[inner sep=0pt] at (0.0000,1.7000) {$B$};\n  \\node[inner sep=0pt] at (0.2400,0.0000) {$O$};\n  \\node[inner sep=0pt] at (2.3000,-1.6400) {$C$};\n  \\node[inner sep=0pt] at (1.6688,-0.2198) {$K$};\n  \\node[inner sep=0pt] at (3.0400,-1.4000) {$x$};\n\\end{tikzpicture}",
+      "caption": "Hình 7",
+      "pos": "right"
+     }
+    },
+    {
+     "type": "problem",
+     "label": "Bài 9.",
+     "level": 2,
+     "tier": "onclass",
+     "dang_id": "TH2",
+     "statement": "[TH] Từ điểm $A$ nằm ngoài $(O)$ kẻ tiếp tuyến $AB$ ($B$ là tiếp điểm), vẽ đường kính $BD$; $AD$ cắt $(O)$ tại $E$ ($E \\ne D$) (Hình 8). Chứng minh $AE \\cdot AD = AB^2$.",
+     "figure_given": false,
+     "hints": [
+      "Tam giác $BED$ là tam giác gì? Căn cứ vào trung tuyến nào?",
+      "Đẳng thức cần chứng minh gợi ý cặp tam giác nào? Chúng có chung góc nào?"
+     ],
+     "answer": "$\\triangle BED$ có $EO$ là đường trung tuyến ($O$ là trung điểm của $BD$) và $EO = \\dfrac{BD}{2}$ (bán kính bằng nửa đường kính) nên $\\triangle BED$ vuông tại $E$ $\\Rightarrow BE \\perp AD$.[[br]]$AB$ là tiếp tuyến tại $B$ $\\Rightarrow \\widehat{ABD} = 90^\\circ$.[[br]]Xét $\\triangle AEB$ và $\\triangle ABD$: $\\widehat{AEB} = \\widehat{ABD} = 90^\\circ$, $\\widehat{BAD}$ chung.[[br]]$\\Rightarrow \\triangle AEB \\backsim \\triangle ABD$ (g.g) $\\Rightarrow \\dfrac{AE}{AB} = \\dfrac{AB}{AD}$.[[br]]Vậy $AE \\cdot AD = AB^2$.",
+     "figure": {
+      "tikz": "\\begin{tikzpicture}[line width=0.8pt, font=\\small, scale=1.28]\n  \\draw[ink] (0.0000,0.0000) circle (1.3000);\n  \\draw[ink] (3.2000,0.0000) -- (0.5281,1.1879);\n  \\draw[ink] (0.5281,1.1879) -- (-0.5281,-1.1879);\n  \\draw[ink] (3.2000,0.0000) -- (-0.5281,-1.1879);\n  \\draw[ink] (0.5281,1.1879) -- (1.1180,-0.6634);\n  \\draw[ink] (0.4631,1.0417) -- (0.6093,0.9767) -- (0.6743,1.1229);\n  \\draw[ink] (1.0694,-0.5109) -- (0.9170,-0.5595) -- (0.9655,-0.7120);\n  \\fill[ink] (0.0000,0.0000) circle (1.3pt);\n  \\fill[ink] (3.2000,0.0000) circle (1.3pt);\n  \\fill[ink] (0.5281,1.1879) circle (1.3pt);\n  \\fill[ink] (-0.5281,-1.1879) circle (1.3pt);\n  \\fill[ink] (1.1180,-0.6634) circle (1.3pt);\n  \\node[inner sep=0pt] at (-0.2255,0.0821) {$O$};\n  \\node[inner sep=0pt] at (3.4400,0.0000) {$A$};\n  \\node[inner sep=0pt] at (0.6307,1.4698) {$B$};\n  \\node[inner sep=0pt] at (-0.6307,-1.4698) {$D$};\n  \\node[inner sep=0pt] at (1.3108,-0.8932) {$E$};\n\\end{tikzpicture}",
+      "caption": "Hình 8",
+      "pos": "right"
+     }
+    },
+    {
+     "type": "noted",
+     "variant": "example",
+     "text": "\\textbf{Ví dụ 5.} Hai tiếp tuyến $AB$, $AC$ của $(O; 9\\text{ cm})$ cắt nhau tại $A$ với $OA = 15$ cm; $AO \\perp BC$ tại $H$ (Hình 9). Biết $AB^2 = AH \\cdot AO$ và $OH \\cdot OA = R^2$ (đã chứng minh), tính $AB$, $AH$ và $OH$.[[br]]{\\sffamily\\bfseries\\color{brand}Lời giải}[[br]]Xét $\\triangle ABO$ vuông tại $B$, theo định lí Pythagore:[[br]]$AB^2 = OA^2 - OB^2 = 15^2 - 9^2 = [[fill:144]] \\Rightarrow AB = [[fill:12]]$ (cm).[[br]]$AH = \\dfrac{AB^2}{AO} = [[fill:\\dfrac{144}{15}]] = [[fill:9{,}6]]$ (cm).[[br]]$OH = \\dfrac{R^2}{OA} = \\dfrac{81}{15} = [[fill:5{,}4]]$ (cm).[[br]]Vậy $AB = [[fill:12]]$ cm, $AH = [[fill:9{,}6]]$ cm, $OH = [[fill:5{,}4]]$ cm.",
+     "figure": {
+      "tikz": "\\begin{tikzpicture}[line width=0.8pt, font=\\small]\n  \\draw[ink] (0.0000,0.0000) circle (1.5000);\n  \\draw[ink] (2.5000,0.0000) -- (0.9000,1.2000);\n  \\draw[ink] (2.5000,0.0000) -- (0.9000,-1.2000);\n  \\draw[ink] (0.0000,0.0000) -- (0.9000,1.2000);\n  \\draw[ink] (0.0000,0.0000) -- (0.9000,-1.2000);\n  \\draw[ink] (0.0000,0.0000) -- (2.5000,0.0000);\n  \\draw[ink] (0.8040,1.0720) -- (0.9320,0.9760) -- (1.0280,1.1040);\n  \\draw[ink] (0.8040,-1.0720) -- (0.9320,-0.9760) -- (1.0280,-1.1040);\n  \\draw[ink] (0.9000,1.2000) -- (0.9000,-1.2000);\n  \\draw[ink] (0.9000,0.1600) -- (1.0600,0.1600) -- (1.0600,0.0000);\n  \\fill[ink] (0.0000,0.0000) circle (1.3pt);\n  \\fill[ink] (2.5000,0.0000) circle (1.3pt);\n  \\fill[ink] (0.9000,1.2000) circle (1.3pt);\n  \\fill[ink] (0.9000,-1.2000) circle (1.3pt);\n  \\fill[ink] (0.9000,0.0000) circle (1.3pt);\n  \\node[inner sep=0pt] at (-0.2400,0.0000) {$O$};\n  \\node[inner sep=0pt] at (2.7400,0.0000) {$A$};\n  \\node[inner sep=0pt] at (1.0928,1.4298) {$B$};\n  \\node[inner sep=0pt] at (1.0928,-1.4298) {$C$};\n  \\node[inner sep=0pt] at (0.7457,0.1839) {$H$};\n  \\node[inner sep=0pt] at (0.2661,0.7543) {$9$};\n  \\node[inner sep=0pt] at (1.7522,-0.2078) {$15$};\n\\end{tikzpicture}",
+      "caption": "Hình 9",
+      "pos": "right"
+     }
+    },
+    {
+     "type": "problem",
+     "label": "Bài 10.",
+     "level": 2,
+     "tier": "onclass",
+     "dang_id": "TH3",
+     "statement": "[TH] Với hình của Bài 8 ($AO \\perp BC$ tại trung điểm $H$ của $BC$), cho $R = 8$ cm, $OA = 10$ cm. Tính $AB$, $AH$, $BH$ và $BC$.",
+     "figure_given": false,
+     "hints": [
+      "Tính $AB$ trong tam giác vuông nào? Đẳng thức nào ở Bài 8 cho ngay $AH$?",
+      "Có $AB$, $AH$ rồi thì $BH$ nằm trong tam giác vuông nào? $BC$ gấp mấy lần $BH$?"
+     ],
+     "answer": "Xét $\\triangle ABO$ vuông tại $B$, theo định lí Pythagore:[[br]]$AB^2 = OA^2 - OB^2 = 10^2 - 8^2 = 36 \\Rightarrow AB = 6$ (cm).[[br]]$AH = \\dfrac{AB^2}{AO} = \\dfrac{36}{10} = 3{,}6$ (cm) (Bài 8).[[br]]Xét $\\triangle AHB$ vuông tại $H$, theo định lí Pythagore:[[br]]$BH^2 = AB^2 - AH^2 = 36 - 12{,}96 = 23{,}04 \\Rightarrow BH = 4{,}8$ (cm).[[br]]$H$ là trung điểm $BC$ $\\Rightarrow BC = 2BH = 9{,}6$ (cm).[[br]]Vậy $AB = 6$ cm, $AH = 3{,}6$ cm, $BH = 4{,}8$ cm, $BC = 9{,}6$ cm."
+    },
+    {
+     "type": "noted",
+     "variant": "example",
+     "text": "\\textbf{Ví dụ 6.} Từ $A$ ngoài $(O; R)$ kẻ hai tiếp tuyến $AB$, $AC$; $AO$ cắt $BC$ tại $H$; tia $AO$ cắt $(O)$ tại $M$, $N$ ($M$ nằm giữa $A$ và $N$) (Hình 10). Biết $AB^2 = AH \\cdot AO$, chứng minh $AM \\cdot AN = AH \\cdot AO$.[[br]]{\\sffamily\\bfseries\\color{brand}Lời giải}[[br]]$M$, $N$ thuộc tia $AO$, $OM = ON = R$ $\\Rightarrow AM = AO - R$, $AN = AO + R$.[[br]]$\\Rightarrow AM \\cdot AN = (AO - R)(AO + R) = [[fill:AO^2 - R^2]]$.[[br]]Xét $\\triangle ABO$ vuông tại $B$, theo định lí Pythagore: $AO^2 - OB^2 = [[fill:AB^2]]$.[[br]]$\\Rightarrow AM \\cdot AN = AB^2$, mà $AB^2 = AH \\cdot AO$ (gt).[[br]]Vậy $AM \\cdot AN = [[fill:AH \\cdot AO]]$.",
+     "figure": {
+      "tikz": "\\begin{tikzpicture}[line width=0.8pt, font=\\small]\n  \\draw[ink] (0.0000,0.0000) circle (1.3000);\n  \\draw[ink] (3.2000,0.0000) -- (0.5281,1.1879);\n  \\draw[ink] (3.2000,0.0000) -- (0.5281,-1.1879);\n  \\draw[ink] (0.0000,0.0000) -- (0.5281,1.1879);\n  \\draw[ink] (0.0000,0.0000) -- (0.5281,-1.1879);\n  \\draw[ink] (0.0000,0.0000) -- (3.2000,0.0000);\n  \\draw[ink] (0.4631,1.0417) -- (0.6093,0.9767) -- (0.6743,1.1229);\n  \\draw[ink] (0.4631,-1.0417) -- (0.6093,-0.9767) -- (0.6743,-1.1229);\n  \\draw[ink] (0.5281,1.1879) -- (0.5281,-1.1879);\n  \\draw[ink] (0.5281,0.1600) -- (0.6881,0.1600) -- (0.6881,0.0000);\n  \\draw[ink] (0.0000,0.0000) -- (-1.3000,0.0000);\n  \\fill[ink] (0.0000,0.0000) circle (1.3pt);\n  \\fill[ink] (3.2000,0.0000) circle (1.3pt);\n  \\fill[ink] (0.5281,1.1879) circle (1.3pt);\n  \\fill[ink] (0.5281,-1.1879) circle (1.3pt);\n  \\fill[ink] (0.5281,0.0000) circle (1.3pt);\n  \\fill[ink] (1.3000,0.0000) circle (1.3pt);\n  \\fill[ink] (-1.3000,0.0000) circle (1.3pt);\n  \\node[inner sep=0pt] at (-0.1200,0.2078) {$O$};\n  \\node[inner sep=0pt] at (3.4400,0.0000) {$A$};\n  \\node[inner sep=0pt] at (0.6307,1.4698) {$B$};\n  \\node[inner sep=0pt] at (0.6307,-1.4698) {$C$};\n  \\node[inner sep=0pt] at (0.3739,0.1839) {$H$};\n  \\node[inner sep=0pt] at (1.5298,0.1928) {$M$};\n  \\node[inner sep=0pt] at (-1.6000,0.0000) {$N$};\n\\end{tikzpicture}",
+      "caption": "Hình 10",
+      "pos": "right"
+     }
+    },
+    {
+     "type": "problem",
+     "label": "Bài 11.",
+     "level": 3,
+     "tier": "onclass",
+     "dang_id": "VD1",
+     "statement": "[VD] Từ điểm $A$ nằm ngoài $(O)$ kẻ hai tiếp tuyến $AB$, $AC$ ($B$, $C$ là tiếp điểm); $AO$ cắt $BC$ tại $H$. Vẽ đường kính $BD$ của $(O)$; $AD$ cắt $(O)$ tại $E$ ($E \\ne D$) (Hình 11). Chứng minh $AE \\cdot AD = AH \\cdot AO$.",
+     "figure_given": false,
+     "quy_trinh": [
+      "Chứng minh $AO \\perp BC$ tại $H$ (đường trung trực)",
+      "$\\triangle AHB \\backsim \\triangle ABO$ (g.g) $\\Rightarrow AB^2 = AH \\cdot AO$",
+      "$\\triangle BED$ vuông tại $E$ (trung tuyến), $\\triangle AEB \\backsim \\triangle ABD$ (g.g) $\\Rightarrow AB^2 = AE \\cdot AD$",
+      "Bắc cầu qua $AB^2$"
+     ],
+     "solution": "$AB = AC$ (Định lí 2), $OB = OC = R$ $\\Rightarrow AO$ là đường trung trực của $BC$ $\\Rightarrow AO \\perp BC$ tại $H$.[[br]]Xét $\\triangle AHB$ và $\\triangle ABO$: $\\widehat{AHB} = \\widehat{ABO} = 90^\\circ$, $\\widehat{BAO}$ chung.[[br]]$\\Rightarrow \\triangle AHB \\backsim \\triangle ABO$ (g.g) $\\Rightarrow \\dfrac{AH}{AB} = \\dfrac{AB}{AO} \\Rightarrow AB^2 = AH \\cdot AO$. (1)[[br]]$\\triangle BED$ có $EO$ là đường trung tuyến ($O$ là trung điểm của $BD$) và $EO = \\dfrac{BD}{2}$ (bán kính bằng nửa đường kính) nên $\\triangle BED$ vuông tại $E$ $\\Rightarrow BE \\perp AD$.[[br]]Xét $\\triangle AEB$ và $\\triangle ABD$: $\\widehat{AEB} = \\widehat{ABD} = 90^\\circ$, $\\widehat{BAD}$ chung.[[br]]$\\Rightarrow \\triangle AEB \\backsim \\triangle ABD$ (g.g) $\\Rightarrow \\dfrac{AE}{AB} = \\dfrac{AB}{AD} \\Rightarrow AB^2 = AE \\cdot AD$. (2)[[br]]Vậy từ (1) và (2): $AE \\cdot AD = AH \\cdot AO$.",
+     "figure": {
+      "tikz": "\\begin{tikzpicture}[line width=0.8pt, font=\\small, scale=1.28]\n  \\draw[ink] (0.0000,0.0000) circle (1.3000);\n  \\draw[ink] (3.2000,0.0000) -- (0.5281,1.1879);\n  \\draw[ink] (3.2000,0.0000) -- (0.5281,-1.1879);\n  \\draw[ink] (0.0000,0.0000) -- (0.5281,1.1879);\n  \\draw[ink] (0.0000,0.0000) -- (0.5281,-1.1879);\n  \\draw[ink] (0.0000,0.0000) -- (3.2000,0.0000);\n  \\draw[ink] (0.4631,1.0417) -- (0.6093,0.9767) -- (0.6743,1.1229);\n  \\draw[ink] (0.4631,-1.0417) -- (0.6093,-0.9767) -- (0.6743,-1.1229);\n  \\draw[ink] (0.5281,1.1879) -- (0.5281,-1.1879);\n  \\draw[ink] (0.5281,0.1600) -- (0.6881,0.1600) -- (0.6881,0.0000);\n  \\draw[ink] (0.5281,1.1879) -- (-0.5281,-1.1879);\n  \\draw[ink] (3.2000,0.0000) -- (-0.5281,-1.1879);\n  \\draw[ink] (0.5281,1.1879) -- (1.1180,-0.6634);\n  \\fill[ink] (0.0000,0.0000) circle (1.3pt);\n  \\fill[ink] (3.2000,0.0000) circle (1.3pt);\n  \\fill[ink] (0.5281,1.1879) circle (1.3pt);\n  \\fill[ink] (0.5281,-1.1879) circle (1.3pt);\n  \\fill[ink] (0.5281,0.0000) circle (1.3pt);\n  \\fill[ink] (-0.5281,-1.1879) circle (1.3pt);\n  \\fill[ink] (1.1180,-0.6634) circle (1.3pt);\n  \\node[inner sep=0pt] at (-0.2255,0.0821) {$O$};\n  \\node[inner sep=0pt] at (3.4400,0.0000) {$A$};\n  \\node[inner sep=0pt] at (0.6307,1.4698) {$B$};\n  \\node[inner sep=0pt] at (0.6307,-1.4698) {$C$};\n  \\node[inner sep=0pt] at (0.3739,0.1839) {$H$};\n  \\node[inner sep=0pt] at (-0.6307,-1.4698) {$D$};\n  \\node[inner sep=0pt] at (0.8582,-0.5134) {$E$};\n\\end{tikzpicture}",
+      "caption": "Hình 11",
+      "pos": "right"
+     }
+    }
+   ]
+  },
+  {
+   "kind": "reflection",
+   "number": 5,
+   "title": "Sơ đồ tư duy",
+   "teacher_note": "BTVN 8, 10 là ý b đề thật dạng \\textquotedblleft $AB^2 = AH \\cdot AO$\\textquotedblright{} (Lý Thánh Tông, Ngọc Thụy); BTVN 11 là bài vận dụng đổi tên điểm của Bài 11 — chữa đầu buổi 5.",
+   "blocks": [
+    {
+     "type": "mindmap",
+     "caption": "Sơ đồ tư duy: Chứng minh hệ thức tích",
+     "root": "ĐẲNG THỨC TÍCH",
+     "branches": [
+      {
+       "label": "BA BƯỚC",
+       "children": [
+        {
+         "label": "B1. Đổi tích thành tỉ số"
+        },
+        {
+         "label": "B2. Đọc cặp tam giác"
+        },
+        {
+         "label": "B3. Đồng dạng g.g $\\Rightarrow$ nhân chéo"
+        }
+       ]
+      },
+      {
+       "label": "HAI TIẾP TUYẾN",
+       "children": [
+        {
+         "label": "$\\triangle AHB \\backsim \\triangle ABO$: $AB^2 = AH \\cdot AO$"
+        },
+        {
+         "label": "$\\triangle OHB \\backsim \\triangle OBA$: $OH \\cdot OA = R^2$"
+        },
+        {
+         "label": "Trước đó: chứng minh $AO \\perp BC$"
+        }
+       ]
+      },
+      {
+       "label": "ĐƯỜNG KÍNH $BD$",
+       "children": [
+        {
+         "label": "Trung tuyến $EO = \\dfrac{BD}{2}$: $\\triangle BED$ vuông"
+        },
+        {
+         "label": "$\\triangle AEB \\backsim \\triangle ABD$: $AB^2 = AE \\cdot AD$"
+        },
+        {
+         "label": "Bắc cầu: $AE \\cdot AD = AH \\cdot AO$"
+        }
+       ]
+      },
+      {
+       "label": "TÍNH ĐỘ DÀI",
+       "children": [
+        {
+         "label": "$AB^2 = OA^2 - R^2$"
+        },
+        {
+         "label": "$AH = \\dfrac{AB^2}{AO}$, $OH = \\dfrac{R^2}{OA}$"
+        },
+        {
+         "label": "Kiểm tra: $AH + OH = AO$"
+        }
+       ]
+      }
+     ]
+    },
+    {
+     "type": "para",
+     "text": "\\textbf{BÀI TẬP VỀ NHÀ (Chứng minh hệ thức tích bằng tam giác đồng dạng).}"
+    },
+    {
+     "type": "problem",
+     "label": "BTVN 1.",
+     "level": 1,
+     "tier": "btvn",
+     "dang_id": "NB1",
+     "statement": "Tam giác $DEF$ vuông tại $D$, đường cao $DK$. Điền vào chỗ chấm:[[br]]a) [NB] $\\triangle KED$ và $\\triangle DEF$ có chung góc [[blank:1.1cm]].[[br]]b) [NB] $\\widehat{DKE} = \\widehat{EDF} = [[blank:1.6cm]]$.[[br]]c) [NB] $\\Rightarrow \\triangle KED \\backsim \\triangle [[blank:1.6cm]]$ (g.g).",
+     "figure_given": true,
+     "answer": "a) $\\widehat{E}$.[[br]]b) $90^\\circ$.[[br]]c) $\\triangle DEF$."
+    },
+    {
+     "type": "problem",
+     "label": "BTVN 2.",
+     "level": 1,
+     "tier": "btvn",
+     "dang_id": "NB2",
+     "statement": "Điền vào chỗ chấm:[[br]]a) [NB] $MA^2 = MK \\cdot MO \\Leftarrow \\dfrac{MK}{MA} = \\dfrac{[[blank:1.1cm]]}{MO}$.[[br]]b) [NB] $OK \\cdot OM = OA^2 \\Leftarrow \\dfrac{OK}{OA} = \\dfrac{OA}{[[blank:1.1cm]]}$.",
+     "figure_given": true,
+     "answer": "a) $MA$.[[br]]b) $OM$."
+    },
+    {
+     "type": "problem",
+     "label": "BTVN 3.",
+     "level": 1,
+     "tier": "btvn",
+     "dang_id": "NB3",
+     "statement": "Từ $M$ ngoài $(O)$ kẻ hai tiếp tuyến $MA$, $MB$; $MO \\perp AB$ tại $K$. Điền vào chỗ chấm:[[br]]a) [NB] $\\widehat{MKA} = [[blank:1.6cm]]$ vì $MO \\perp AB$ tại $K$.[[br]]b) [NB] $\\widehat{MAO} = [[blank:1.6cm]]$ vì $MA$ là tiếp tuyến tại $A$.[[br]]c) [NB] Xét $\\triangle MKA$ và $\\triangle MAO$: $\\widehat{MKA} = \\widehat{MAO}$, góc [[blank:1.6cm]] chung $\\Rightarrow \\triangle MKA \\backsim \\triangle MAO$ ([[blank:1.1cm]]).",
+     "figure_given": true,
+     "answer": "a) $90^\\circ$.[[br]]b) $90^\\circ$.[[br]]c) $\\widehat{AMO}$ (góc $M$); g.g."
+    },
+    {
+     "type": "problem",
+     "label": "BTVN 4.",
+     "level": 1,
+     "tier": "btvn",
+     "dang_id": "NB4",
+     "statement": "Vẫn với hình ở BTVN 3. Điền vào chỗ chấm:[[br]]a) [NB] $\\triangle MKA \\backsim \\triangle MAO \\Rightarrow \\dfrac{MK}{MA} = \\dfrac{[[blank:1.1cm]]}{[[blank:1.1cm]]}$.[[br]]b) [NB] $\\Rightarrow MA^2 = [[blank:2.4cm]]$.[[br]]c) [NB] Biết $MA = 4$ cm, $MO = 5$ cm $\\Rightarrow MK = \\dfrac{MA^2}{MO} = [[blank:1.1cm]]$ cm.",
+     "figure_given": true,
+     "answer": "a) $\\dfrac{MA}{MO}$.[[br]]b) $MK \\cdot MO$.[[br]]c) $\\dfrac{16}{5} = 3{,}2$."
+    },
+    {
+     "type": "problem",
+     "label": "BTVN 5.",
+     "level": 1,
+     "tier": "btvn",
+     "dang_id": "NB5",
+     "statement": "Vẫn với hình ở BTVN 3. Điền vào chỗ chấm để chứng minh $OK \\cdot OM = R^2$:[[br]]a) [NB] Xét $\\triangle OKA$ và $\\triangle OAM$: $\\widehat{OKA} = \\widehat{OAM} = [[blank:1.6cm]]$, góc [[blank:1.6cm]] chung.[[br]]b) [NB] $\\Rightarrow \\triangle OKA \\backsim \\triangle OAM \\Rightarrow \\dfrac{OK}{OA} = \\dfrac{[[blank:1.1cm]]}{[[blank:1.1cm]]}$.[[br]]c) [NB] $\\Rightarrow OK \\cdot OM = [[blank:1.6cm]] = R^2$.",
+     "figure_given": true,
+     "answer": "a) $90^\\circ$; $\\widehat{AOM}$.[[br]]b) $\\dfrac{OA}{OM}$.[[br]]c) $OA^2$."
+    },
+    {
+     "type": "problem",
+     "label": "BTVN 6.",
+     "level": 1,
+     "tier": "btvn",
+     "dang_id": "NB6",
+     "statement": "Vẽ lại Hình 4 vào vở. Điền vào chỗ chấm:[[br]]a) [NB] $O$ là trung điểm của đường kính $BD$ $\\Rightarrow EO$ là đường [[blank:2.4cm]] của $\\triangle BED$ và $EO = R = [[blank:1.6cm]]$.[[br]]b) [NB] $\\triangle BED$ có đường trung tuyến $EO$ bằng nửa cạnh $BD$ $\\Rightarrow \\triangle BED$ vuông tại [[blank:1.1cm]].",
+     "figure_given": true,
+     "answer": "a) trung tuyến; $\\dfrac{BD}{2}$.[[br]]b) $E$."
+    },
+    {
+     "type": "problem",
+     "label": "BTVN 7.",
+     "level": 1,
+     "tier": "btvn",
+     "dang_id": "NB7",
+     "statement": "Hai tiếp tuyến $AB$, $AC$ của $(O; 12\\text{ cm})$ cắt nhau tại $A$, $OA = 20$ cm, $AO \\perp BC$ tại $H$; đã chứng minh $AB^2 = AH \\cdot AO$, $OH \\cdot OA = R^2$. Điền vào chỗ chấm:[[br]]a) [NB] $AB = \\sqrt{20^2 - 12^2} = [[blank:1.1cm]]$ cm $\\Rightarrow AH = [[blank:1.6cm]]$ cm.[[br]]b) [NB] $OH = \\dfrac{12^2}{20} = [[blank:1.6cm]]$ cm.",
+     "figure_given": true,
+     "answer": "a) $16$; $\\dfrac{256}{20} = 12{,}8$.[[br]]b) $7{,}2$."
+    },
+    {
+     "type": "problem",
+     "label": "BTVN 8.",
+     "level": 2,
+     "tier": "btvn",
+     "dang_id": "TH1",
+     "statement": "[TH] Từ điểm $M$ nằm ngoài $(O; R)$ kẻ hai tiếp tuyến $MA$, $MB$ ($A$, $B$ là tiếp điểm); $MO$ cắt $AB$ tại $K$. Chứng minh $MO \\perp AB$ tại $K$ rồi chứng minh $MA^2 = MK \\cdot MO$.",
+     "figure_given": false,
+     "hints": [
+      "Hai điểm nào cùng cách đều $A$ và $B$?",
+      "Đổi đẳng thức thành tỉ số rồi đọc ra cặp tam giác."
+     ],
+     "answer": "$MA = MB$ (Định lí 2), $OA = OB = R$ $\\Rightarrow MO$ là đường trung trực của $AB$ $\\Rightarrow MO \\perp AB$ tại $K$.[[br]]Xét $\\triangle MKA$ và $\\triangle MAO$: $\\widehat{MKA} = \\widehat{MAO} = 90^\\circ$, $\\widehat{AMO}$ chung.[[br]]$\\Rightarrow \\triangle MKA \\backsim \\triangle MAO$ (g.g) $\\Rightarrow \\dfrac{MK}{MA} = \\dfrac{MA}{MO}$.[[br]]Vậy $MA^2 = MK \\cdot MO$."
+    },
+    {
+     "type": "problem",
+     "label": "BTVN 9.",
+     "level": 2,
+     "tier": "btvn",
+     "dang_id": "TH2",
+     "statement": "[TH] Từ điểm $A$ nằm ngoài $(O)$ kẻ tiếp tuyến $AC$ ($C$ là tiếp điểm), vẽ đường kính $CD$; $AD$ cắt $(O)$ tại $F$ ($F \\ne D$). Chứng minh $AF \\cdot AD = AC^2$.",
+     "figure_given": false,
+     "hints": [
+      "Tam giác $CFD$ là tam giác gì? Vì sao?",
+      "Cặp tam giác nào cho tỉ số $\\dfrac{AF}{AC} = \\dfrac{AC}{AD}$?"
+     ],
+     "answer": "$\\triangle CFD$ có $FO$ là đường trung tuyến ($O$ là trung điểm của $CD$) và $FO = \\dfrac{CD}{2}$ (bán kính bằng nửa đường kính) nên $\\triangle CFD$ vuông tại $F$ $\\Rightarrow CF \\perp AD$.[[br]]$AC$ là tiếp tuyến tại $C$ $\\Rightarrow \\widehat{ACD} = 90^\\circ$.[[br]]Xét $\\triangle AFC$ và $\\triangle ACD$: $\\widehat{AFC} = \\widehat{ACD} = 90^\\circ$, $\\widehat{CAD}$ chung.[[br]]$\\Rightarrow \\triangle AFC \\backsim \\triangle ACD$ (g.g) $\\Rightarrow \\dfrac{AF}{AC} = \\dfrac{AC}{AD}$.[[br]]Vậy $AF \\cdot AD = AC^2$."
+    },
+    {
+     "type": "problem",
+     "label": "BTVN 10.",
+     "level": 2,
+     "tier": "btvn",
+     "dang_id": "TH3",
+     "statement": "[TH] Cho đường tròn $(O; 6\\text{ cm})$, điểm $A$ cách $O$ là $10$ cm. Kẻ hai tiếp tuyến $AB$, $AC$; gọi $H$ là giao điểm của $AO$ và $BC$ (đã biết $AO \\perp BC$ tại $H$ và $H$ là trung điểm của $BC$).[[br]]a) Chứng minh $AB^2 = AH \\cdot AO$.[[br]]b) Tính $AH$ và độ dài dây $BC$.",
+     "figure_given": false,
+     "hints": [
+      "Chứng minh đẳng thức như Bài 8.",
+      "$BH$ nằm trong tam giác vuông nào có hai cạnh đã biết?"
+     ],
+     "answer": "a) Xét $\\triangle AHB$ và $\\triangle ABO$: $\\widehat{AHB} = \\widehat{ABO} = 90^\\circ$, $\\widehat{BAO}$ chung.[[br]]$\\Rightarrow \\triangle AHB \\backsim \\triangle ABO$ (g.g) $\\Rightarrow \\dfrac{AH}{AB} = \\dfrac{AB}{AO}$.[[br]]Vậy $AB^2 = AH \\cdot AO$.[[br]]b) Xét $\\triangle ABO$ vuông tại $B$, theo định lí Pythagore:[[br]]$AB^2 = 10^2 - 6^2 = 64 \\Rightarrow AB = 8$ (cm).[[br]]$AH = \\dfrac{AB^2}{AO} = \\dfrac{64}{10} = 6{,}4$ (cm).[[br]]Xét $\\triangle AHB$ vuông tại $H$, theo định lí Pythagore:[[br]]$BH^2 = AB^2 - AH^2 = 64 - 40{,}96 = 23{,}04 \\Rightarrow BH = 4{,}8$ (cm).[[br]]$H$ là trung điểm $BC$ $\\Rightarrow BC = 2BH = 9{,}6$ (cm).[[br]]Vậy $AH = 6{,}4$ cm, $BC = 9{,}6$ cm."
+    },
+    {
+     "type": "problem",
+     "label": "BTVN 11.",
+     "level": 3,
+     "tier": "btvn",
+     "dang_id": "VD1",
+     "statement": "[VD] Từ điểm $M$ nằm ngoài $(O)$ kẻ hai tiếp tuyến $MA$, $MB$ ($A$, $B$ là tiếp điểm); $MO$ cắt $AB$ tại $K$. Vẽ đường kính $AD$; $MD$ cắt $(O)$ tại $E$ ($E \\ne D$). Chứng minh $ME \\cdot MD = MK \\cdot MO$.",
+     "figure_given": false,
+     "solution": "$MA = MB$ (Định lí 2), $OA = OB = R$ $\\Rightarrow MO$ là đường trung trực của $AB$ $\\Rightarrow MO \\perp AB$ tại $K$.[[br]]Xét $\\triangle MKA$ và $\\triangle MAO$: $\\widehat{MKA} = \\widehat{MAO} = 90^\\circ$, $\\widehat{AMO}$ chung $\\Rightarrow \\triangle MKA \\backsim \\triangle MAO$ (g.g) $\\Rightarrow MA^2 = MK \\cdot MO$. (1)[[br]]$\\triangle AED$ có $EO$ là đường trung tuyến ($O$ là trung điểm của $AD$) và $EO = \\dfrac{AD}{2}$ (bán kính bằng nửa đường kính) nên $\\triangle AED$ vuông tại $E$ $\\Rightarrow AE \\perp MD$.[[br]]Xét $\\triangle MEA$ và $\\triangle MAD$: $\\widehat{MEA} = \\widehat{MAD} = 90^\\circ$, $\\widehat{AMD}$ chung $\\Rightarrow \\triangle MEA \\backsim \\triangle MAD$ (g.g) $\\Rightarrow MA^2 = ME \\cdot MD$. (2)[[br]]Vậy từ (1) và (2): $ME \\cdot MD = MK \\cdot MO$."
+    }
+   ]
+  }
+ ]
+}

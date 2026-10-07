@@ -35,6 +35,17 @@ def test_ten_pdf_moi_lay_so_ca_tu_slug_phieu_n(tmp_path):
     assert t.parts[-1] == "Ca-03 - Do dai cung tron"
 
 
+def test_ban_2_cua_chuong_ra_folder_rieng(tmp_path):
+    """Bản 2 của chương V (6 buổi) không được đổ chung 'Chuong 5' với bản cũ 7 buổi."""
+    root, d = _mk(tmp_path, "lop-9/hinh-hoc/lop-c/chuong-05-duong-tron-ban-2/phieu-1-do-dai-cung",
+                  files=("Toan9C-Do-dai-cung-Phieu-HS.pdf",))
+    t = plan_target(d, root, "Độ dài cung tròn")
+    assert t.parts == ["lop9", "C", "Chuong 5 - Ban 2", "Ca-01 - Do dai cung tron"]
+    root, d = _mk(tmp_path, "lop-9/hinh-hoc/lop-c/chuong-05-duong-tron-ban-2/kiem-tra-chuong/de-x",
+                  files=("x.pdf",))
+    assert plan_target(d, root).parts[:3] == ["lop9", "C", "Chuong 5 - Ban 2"]
+
+
 def test_thuyet_minh_ra_folder_so_la_ma(tmp_path):
     root, d = _mk(tmp_path, "lop-9/hinh-hoc/lop-c/chuong-05-duong-tron/thuyet-minh-lop-9c-chuong-05",
                   files=("thuyet-minh-lop-9c-chuong-05.pdf",))

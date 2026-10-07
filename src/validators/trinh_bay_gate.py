@@ -21,7 +21,11 @@ __all__ = ["check_trinh_bay", "check_lenh_dinh_chu"]
 _LENH_TRAN = re.compile(
     r"\\(par|bfseries|itshape|slshape|scshape|normalfont|centering|raggedright"
     r"|small|footnotesize|scriptsize|large|Large|huge|noindent)"
-    r"(?=[A-Za-zÀ-ỹĐđ])")
+    r"(?=([A-Za-zÀ-ỹĐđ]+))")
+# Lệnh LaTeX THẬT có tên bắt đầu bằng một lệnh trong danh sách trên — không phải lỗi dính
+# chữ. `\parallel` (song song) từng bị chặn oan khi dựng chương V bản 2 (05/10/2026).
+_LENH_HOP_LE = {"parallel", "partial", "paragraph", "parbox", "parskip", "parindent",
+                "smallskip", "smallint", "smallsetminus", "largestar"}
 
 # ── 2. Ô [[fill:…]] nằm TRONG $…$ mà đáp án lại bọc $ → math lồng math ──────────
 _FILL = re.compile(r"\[\[fill:([^\]|]*?)(?:\|[^\]]+)?\]\]")
@@ -54,6 +58,8 @@ def check_lenh_dinh_chu(lesson: LessonPackage) -> list[str]:
                 if not isinstance(v, str):
                     continue
                 for m in _LENH_TRAN.finditer(v):
+                    if m.group(1) + m.group(2) in _LENH_HOP_LE:
+                        continue
                     nhan = getattr(b, "label", "") or f"khối {i}"
                     out.append(
                         f"[{st.kind} · {nhan}] `{m.group(0)}` dính liền chữ ngay sau — "
