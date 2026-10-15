@@ -1,0 +1,372 @@
+{
+ "slug": "phieu-4-tuan31-cac-truong-hop-dong-dang-cua-tam-giac-vuong",
+ "title": "Các trường hợp đồng dạng của hai tam giác vuông",
+ "eyebrow": "HÌNH HỌC 8 — PHIẾU 4 • CHƯƠNG IX — BÀI 36",
+ "grade_label": "Lớp 8 • Hình học",
+ "class_tier": "B",
+ "chuong": "chuong-09-tam-giac-dong-dang",
+ "so_ca": 1,
+ "stages": [
+  {
+   "kind": "review",
+   "number": 1,
+   "title": "Khởi động",
+   "teacher_note": "Hỏi nhanh: hai tam giác vuông đã có sẵn một cặp góc bằng nhau ($90^\\circ$), vậy cần thêm gì để đồng dạng? Từ g.g và c.g.c HS tự rút ra hai dấu hiệu đầu; dấu hiệu cạnh huyền $-$ cạnh góc vuông là dấu hiệu mới.",
+   "blocks": [
+    {
+     "type": "opener",
+     "text": "Hai tam giác vuông đã có sẵn một cặp góc bằng nhau là góc vuông. Vậy chỉ cần biết thêm \\textbf{một} điều gì nữa là đủ để khẳng định chúng đồng dạng?",
+     "tikz": "\\begin{tikzpicture}[line width=0.8pt, font=\\small, scale=1.0]\n\\draw[ink] (0.000,0.000) -- (0.000,1.800) -- (2.600,0.000) -- cycle;\n\\draw[brand,line width=1.0pt] (3.600,0.000) -- (3.600,1.200) -- (5.330,0.000) -- cycle;\n\\draw[ink] (0.000,0.160) -- (0.160,0.160) -- (0.160,0.000);\n\\draw[ink] (3.600,0.160) -- (3.760,0.160) -- (3.760,0.000);\n\\draw[brand] (2.337,0.182) arc[start angle=145.30, end angle=180.00, radius=0.320];\n\\draw[brand] (5.067,0.182) arc[start angle=145.25, end angle=180.00, radius=0.320];\n\\fill[ink] (0.000,0.000) circle (1.2pt);\n\\fill[ink] (0.000,1.800) circle (1.2pt);\n\\fill[ink] (2.600,0.000) circle (1.2pt);\n\\fill[ink] (3.600,0.000) circle (1.2pt);\n\\fill[ink] (3.600,1.200) circle (1.2pt);\n\\fill[ink] (5.330,0.000) circle (1.2pt);\n\\node at (-0.184,-0.184) {$A$};\n\\node at (-0.130,2.025) {$B$};\n\\node at (2.844,-0.089) {$C$};\n\\node at (3.416,-0.184) {$A'$};\n\\node at (3.490,1.436) {$B'$};\n\\node at (5.581,-0.067) {$C'$};\n\\end{tikzpicture}"
+    }
+   ]
+  },
+  {
+   "kind": "concept",
+   "number": 2,
+   "title": "Kiến thức cần nhớ",
+   "teacher_note": "Ba dấu hiệu dạy liền trong 15 phút đầu. Nhấn mạnh dấu hiệu 3: tỉ số \\emph{cạnh huyền} với \\emph{cạnh huyền}, \\emph{cạnh góc vuông} với \\emph{cạnh góc vuông}.",
+   "blocks": [
+    {
+     "type": "para",
+     "variant": "heading",
+     "text": "1. Ba dấu hiệu nhận biết hai tam giác vuông đồng dạng"
+    },
+    {
+     "type": "deflist",
+     "items": [
+      {
+       "term": "Góc nhọn:",
+       "desc": "tam giác vuông này có một góc nhọn bằng góc nhọn của tam giác vuông kia."
+      },
+      {
+       "term": "Hai cạnh góc vuông:",
+       "desc": "hai cạnh góc vuông của tam giác này tỉ lệ với hai cạnh góc vuông của tam giác kia."
+      },
+      {
+       "term": "Cạnh huyền $-$ cạnh góc vuông:",
+       "desc": "cạnh huyền và một cạnh góc vuông của tam giác này tỉ lệ với cạnh huyền và một cạnh góc vuông của tam giác kia: $\\dfrac{B'C'}{BC}=\\dfrac{A'B'}{AB}$ $\\Rightarrow \\triangle A'B'C' \\backsim \\triangle ABC$."
+      }
+     ]
+    },
+    {
+     "type": "figure",
+     "tikz": "\\begin{tikzpicture}[line width=0.8pt, font=\\small, scale=1.0]\n\\draw[ink] (0.000,0.000) -- (0.000,1.800) -- (2.600,0.000) -- cycle;\n\\draw[brand,line width=1.0pt] (3.600,0.000) -- (3.600,1.200) -- (5.330,0.000) -- cycle;\n\\draw[ink] (0.000,0.160) -- (0.160,0.160) -- (0.160,0.000);\n\\draw[ink] (3.600,0.160) -- (3.760,0.160) -- (3.760,0.000);\n\\draw[brand] (2.337,0.182) arc[start angle=145.30, end angle=180.00, radius=0.320];\n\\draw[brand] (5.067,0.182) arc[start angle=145.25, end angle=180.00, radius=0.320];\n\\fill[ink] (0.000,0.000) circle (1.2pt);\n\\fill[ink] (0.000,1.800) circle (1.2pt);\n\\fill[ink] (2.600,0.000) circle (1.2pt);\n\\fill[ink] (3.600,0.000) circle (1.2pt);\n\\fill[ink] (3.600,1.200) circle (1.2pt);\n\\fill[ink] (5.330,0.000) circle (1.2pt);\n\\node at (-0.184,-0.184) {$A$};\n\\node at (-0.130,2.025) {$B$};\n\\node at (2.844,-0.089) {$C$};\n\\node at (3.416,-0.184) {$A'$};\n\\node at (3.490,1.436) {$B'$};\n\\node at (5.581,-0.067) {$C'$};\n\\end{tikzpicture}",
+     "caption": "Hai tam giác vuông có một góc nhọn bằng nhau"
+    },
+    {
+     "type": "para",
+     "variant": "heading",
+     "text": "2. Tam giác vuông có đường cao"
+    },
+    {
+     "type": "deflist",
+     "items": [
+      {
+       "term": "Ba tam giác đồng dạng:",
+       "desc": "$\\triangle ABC$ vuông tại $A$, đường cao $AH$: $\\triangle HBA \\backsim \\triangle ABC$, $\\triangle HAC \\backsim \\triangle ABC$ (góc nhọn chung)."
+      },
+      {
+       "term": "Hệ thức hay dùng:",
+       "desc": "$AB^2 = BH\\cdot BC$, $AC^2 = CH\\cdot CB$, $AH^2 = BH\\cdot CH$, $AH\\cdot BC = AB\\cdot AC$ $-$ mỗi hệ thức đều phải chứng minh qua một cặp tam giác đồng dạng."
+      }
+     ]
+    },
+    {
+     "type": "noted",
+     "variant": "note",
+     "text": "\\textbf{Đề thi hỏi gì ở phần này.} Bài hình cuối kì II hay cho tam giác vuông có đường cao: ý a chứng minh hai tam giác vuông đồng dạng, ý b hệ thức $AH^2 = BH\\cdot CH$ hoặc tính độ dài, ý c diện tích hoặc hệ thức qua hình chiếu."
+    },
+    {
+     "type": "noted",
+     "variant": "trap",
+     "text": "Dùng hệ thức $AH^2 = BH\\cdot CH$ như một công thức có sẵn — bài thi phải chứng minh qua tam giác đồng dạng.[[br]]Lập tỉ số cạnh huyền với cạnh góc vuông của hai tam giác."
+    }
+   ]
+  },
+  {
+   "kind": "practice1",
+   "number": 3,
+   "title": "Luyện tập 1 — Ba dấu hiệu, đo gián tiếp",
+   "teacher_note": "Bài đo cây: cho HS tự kẻ đường ngang qua mắt người trước khi đưa lời giải.",
+   "blocks": [
+    {
+     "type": "noted",
+     "variant": "example",
+     "text": "\\textbf{Ví dụ 1.} (Tài liệu Ba trường hợp đồng dạng) Cho tam giác $ABC$ vuông tại $A$, đường cao $AH$. Hãy nêu các cặp tam giác đồng dạng.[[br]]{\\sffamily\\bfseries\\color{brand}Lời giải}[[br]]$\\triangle HBA$ và $\\triangle ABC$ vuông tại $H$, $A$ có $\\widehat{B}$ chung $\\Rightarrow \\triangle HBA \\backsim \\triangle ABC$.[[br]]$\\triangle HAC$ và $\\triangle ABC$ vuông tại $H$, $A$ có $\\widehat{C}$ chung $\\Rightarrow \\triangle HAC \\backsim \\triangle$[[fill:ABC]].[[br]]Vậy $\\triangle HBA \\backsim \\triangle ABC$, $\\triangle HAC \\backsim \\triangle ABC$, $\\triangle HBA \\backsim \\triangle$[[fill:HAC]].",
+     "figure": {
+      "tikz": "\\begin{tikzpicture}[line width=0.8pt, font=\\small, scale=1.0]\n\\draw[ink] (0.000,0.000) -- (0.000,1.800) -- (2.400,0.000) -- cycle;\n\\draw[brand] (0.000,0.000) -- (0.864,1.152);\n\\draw[ink] (0.000,0.160) -- (0.160,0.160) -- (0.160,0.000);\n\\draw[ink] (0.768,1.024) -- (0.896,0.928) -- (0.992,1.056);\n\\fill[ink] (0.000,0.000) circle (1.2pt);\n\\fill[ink] (0.000,1.800) circle (1.2pt);\n\\fill[ink] (2.400,0.000) circle (1.2pt);\n\\fill[ink] (0.864,1.152) circle (1.2pt);\n\\node at (-0.184,-0.184) {$A$};\n\\node at (-0.110,2.036) {$B$};\n\\node at (2.644,-0.089) {$C$};\n\\node at (1.013,1.365) {$H$};\n\\end{tikzpicture}",
+      "caption": "Hình 1",
+      "pos": "right"
+     }
+    },
+    {
+     "type": "problem",
+     "label": "Bài 1.",
+     "statement": "[NB] (Tài liệu Tam giác vuông đồng dạng) Cho tam giác $ABC$ vuông tại $A$, kẻ $AH \\perp BC$, $MN \\perp AC$ ($N \\in AC$, $M \\in BC$) (hình dưới). Chỉ ra các tam giác vuông đồng dạng với tam giác $ABC$, viết theo đúng thứ tự đỉnh.",
+     "level": 1,
+     "tier": "onclass",
+     "dang_id": "NB1",
+     "solution": "Ta có $\\triangle HBA \\backsim \\triangle ABC$ ($\\widehat{B}$ chung), $\\triangle HAC \\backsim \\triangle ABC$ ($\\widehat{C}$ chung), $\\triangle NMC \\backsim \\triangle ABC$ ($\\widehat{C}$ chung).",
+     "figure": {
+      "tikz": "\\begin{tikzpicture}[line width=0.8pt, font=\\small, scale=1.0]\n\\draw[ink] (0.000,0.000) -- (0.000,1.900) -- (2.600,0.000) -- cycle;\n\\draw[ink] (0.000,0.000) -- (0.905,1.239);\n\\draw[brand] (1.690,0.665) -- (1.690,0.000);\n\\draw[ink] (0.000,0.160) -- (0.160,0.160) -- (0.160,0.000);\n\\draw[ink] (0.811,1.109) -- (0.940,1.015) -- (1.034,1.144);\n\\draw[ink] (1.690,0.160) -- (1.850,0.160) -- (1.850,0.000);\n\\fill[ink] (0.000,0.000) circle (1.2pt);\n\\fill[ink] (0.000,1.900) circle (1.2pt);\n\\fill[ink] (2.600,0.000) circle (1.2pt);\n\\fill[ink] (0.905,1.239) circle (1.2pt);\n\\fill[ink] (1.690,0.665) circle (1.2pt);\n\\fill[ink] (1.690,0.000) circle (1.2pt);\n\\node at (-0.184,-0.184) {$A$};\n\\node at (-0.110,2.136) {$B$};\n\\node at (2.844,-0.089) {$C$};\n\\node at (1.054,1.452) {$H$};\n\\node at (1.839,0.878) {$M$};\n\\node at (1.690,-0.260) {$N$};\n\\end{tikzpicture}",
+      "caption": "Hình 2",
+      "pos": "right"
+     }
+    },
+    {
+     "type": "problem",
+     "label": "Bài 2.",
+     "statement": "[NB] (Tài liệu c.c.c) Tam giác $ABC$ vuông tại $A$ có $AB = 6$ cm, $AC = 8$ cm và tam giác $MNP$ vuông tại $M$ có $MN = 4$ cm, $MP = 3$ cm. Hai tam giác có đồng dạng không? Vì sao?",
+     "level": 1,
+     "tier": "onclass",
+     "dang_id": "NB1",
+     "solution": "Có, vì $\\dfrac{AB}{MP}=\\dfrac{6}{3}=2$, $\\dfrac{AC}{MN}=\\dfrac{8}{4}=2$ (hai cạnh góc vuông tỉ lệ) $\\Rightarrow \\triangle ABC \\backsim \\triangle MPN$."
+    },
+    {
+     "type": "problem",
+     "label": "Bài 3.",
+     "statement": "(Tài liệu Tam giác vuông đồng dạng) Cho tam giác $ABC$ vuông tại $A$ có đường cao $AH$ (hình ở Ví dụ 1). Điền vào chỗ trống.[[br]]a) [NB] $\\triangle HBA$ và $\\triangle HAC$ có $\\widehat{BHA}=\\widehat{AHC}=90^\\circ$, $\\widehat{HBA}=\\widehat{HAC}$ (cùng phụ $\\widehat{C}$) $\\Rightarrow \\triangle HBA \\backsim \\triangle$[[blank:1.2cm]] (g.g).[[br]]b) [NB] $\\Rightarrow \\dfrac{HB}{HA}=\\dfrac{HA}{\\ldots}$ $\\Rightarrow AH^2 =$ [[blank:1.6cm]].",
+     "level": 1,
+     "tier": "onclass",
+     "dang_id": "NB2",
+     "solution": "a) $HAC$.[[br]]b) $\\dfrac{HA}{HC}$; $BH\\cdot CH$."
+    },
+    {
+     "type": "noted",
+     "variant": "example",
+     "text": "\\textbf{Ví dụ 2.} (Tài liệu Tam giác vuông đồng dạng) Điểm $M$ nằm trên đoạn $AB$, $MA = 6$ cm, $MB = 24$ cm. Vẽ về một phía của $AB$ các tia $Ax$, $By$ vuông góc với $AB$; lấy $C \\in Ax$, $D \\in By$ sao cho $MC = 10$ cm, $MD = 30$ cm (hình bên). Chứng minh $\\widehat{CMD}=90^\\circ$.[[br]]{\\sffamily\\bfseries\\color{brand}Lời giải}[[br]]Áp dụng định lí Pythagore cho $\\triangle DBM$ vuông tại $B$: $DB = \\sqrt{30^2 - 24^2} = 18$ (cm).[[br]]Xét $\\triangle MAC$ và $\\triangle DBM$ vuông tại $A$, $B$ có $\\dfrac{MC}{DM}=\\dfrac{10}{30}=\\dfrac{1}{3}$, $\\dfrac{MA}{DB}=\\dfrac{6}{18}=\\dfrac{[[fill:1]]\\rule[-0.9ex]{0pt}{2.6ex}}{[[fill:3]]\\rule{0pt}{2.2ex}}$.[[br]]$\\Rightarrow \\triangle MAC \\backsim \\triangle DBM$ (cạnh huyền $-$ cạnh góc vuông) $\\Rightarrow \\widehat{AMC}=\\widehat{BDM}$.[[br]]$\\Rightarrow \\widehat{AMC}+\\widehat{BMD}=\\widehat{BDM}+\\widehat{BMD}=90^\\circ$.[[br]]Vậy $\\widehat{CMD}=180^\\circ - 90^\\circ = [[fill:90^\\circ]]$.",
+     "figure": {
+      "tikz": "\\begin{tikzpicture}[line width=0.8pt, font=\\small, scale=1.0]\n\\draw[ink] (0.000,0.000) -- (3.600,0.000);\n\\draw[ink] (0.000,0.000) -- (0.000,0.960);\n\\draw[ink] (3.600,0.000) -- (3.600,2.160);\n\\draw[brand] (0.720,0.000) -- (0.000,0.960);\n\\draw[brand] (0.720,0.000) -- (3.600,2.160);\n\\draw[ink,dashed] (0.000,0.960) -- (3.600,2.160);\n\\draw[ink] (0.160,0.000) -- (0.160,0.160) -- (0.000,0.160);\n\\draw[ink] (3.600,0.160) -- (3.440,0.160) -- (3.440,0.000);\n\\fill[ink] (0.000,0.000) circle (1.2pt);\n\\fill[ink] (0.720,0.000) circle (1.2pt);\n\\fill[ink] (3.600,0.000) circle (1.2pt);\n\\fill[ink] (0.000,0.960) circle (1.2pt);\n\\fill[ink] (3.600,2.160) circle (1.2pt);\n\\node at (0.000,-0.260) {$A$};\n\\node at (0.720,-0.260) {$M$};\n\\node at (3.600,-0.260) {$B$};\n\\node at (-0.260,0.960) {$C$};\n\\node at (3.860,2.160) {$D$};\n\\end{tikzpicture}",
+      "caption": "Hình 3",
+      "pos": "right"
+     }
+    },
+    {
+     "type": "problem",
+     "label": "Bài 4.",
+     "statement": "[TH] (Tài liệu Tam giác vuông đồng dạng) Cho tam giác $ABC$ vuông tại $A$, $AC = 4$ cm, $BC = 6$ cm. Ở phía ngoài tam giác $ABC$ vẽ tam giác $BCD$ vuông tại $C$ có $BD = 9$ cm (hình dưới). Chứng minh $BD \\parallel AC$.",
+     "level": 2,
+     "tier": "onclass",
+     "dang_id": "TH1",
+     "solution": "Xét $\\triangle ABC$ vuông tại $A$ và $\\triangle CDB$ vuông tại $C$ có $\\dfrac{BC}{DB}=\\dfrac{6}{9}=\\dfrac{2}{3}$, $\\dfrac{AC}{CB}=\\dfrac{4}{6}=\\dfrac{2}{3}$.[[br]]$\\Rightarrow \\triangle ABC \\backsim \\triangle CDB$ (cạnh huyền $-$ cạnh góc vuông) $\\Rightarrow \\widehat{ACB}=\\widehat{CBD}$.[[br]]Hai góc này ở vị trí so le trong.[[br]]Vậy $BD \\parallel AC$.",
+     "figure_given": true,
+     "hints": [
+      "Cạnh huyền $BC$ ứng với cạnh huyền $BD$; cạnh góc vuông $AC$ ứng với $CB$."
+     ],
+     "figure": {
+      "tikz": "\\begin{tikzpicture}[line width=0.8pt, font=\\small, scale=1.0]\n\\draw[ink] (1.120,1.252) -- (2.520,0.000) -- (0.000,0.000) -- cycle;\n\\draw[ink] (0.000,0.000) -- (2.520,0.000) -- (0.000,-2.817) -- cycle;\n\\draw[ink] (1.239,1.146) -- (1.133,1.026) -- (1.013,1.133);\n\\draw[ink] (0.160,0.000) -- (0.160,-0.160) -- (0.000,-0.160);\n\\node[font=\\footnotesize, fill=white, inner sep=0.6pt] at (0.381,0.786) {$4$};\n\\node[font=\\footnotesize, fill=white, inner sep=0.6pt] at (1.081,-1.249) {$9$};\n\\fill[ink] (0.000,0.000) circle (1.2pt);\n\\fill[ink] (2.520,0.000) circle (1.2pt);\n\\fill[ink] (1.120,1.252) circle (1.2pt);\n\\fill[ink] (0.000,-2.817) circle (1.2pt);\n\\node at (-0.244,0.089) {$C$};\n\\node at (2.779,0.023) {$B$};\n\\node at (1.097,1.511) {$A$};\n\\node at (-0.089,-3.062) {$D$};\n\\end{tikzpicture}",
+      "caption": "Hình 4",
+      "pos": "right"
+     }
+    },
+    {
+     "type": "problem",
+     "label": "Bài 5.",
+     "statement": "[TH] (Tài liệu Tam giác vuông đồng dạng) Hình thang $ABCD$ có $\\widehat{A}=\\widehat{D}=90^\\circ$, điểm $E$ thuộc cạnh $AD$; $AB = 4$ cm, $BE = 5$ cm, $DE = 12$ cm, $CE = 15$ cm (hình dưới). Tính $\\widehat{BEC}$.",
+     "level": 2,
+     "tier": "onclass",
+     "dang_id": "TH1",
+     "solution": "Xét $\\triangle ABE$ vuông tại $A$ và $\\triangle DEC$ vuông tại $D$ có $\\dfrac{AB}{DE}=\\dfrac{4}{12}=\\dfrac{1}{3}$, $\\dfrac{BE}{EC}=\\dfrac{5}{15}=\\dfrac{1}{3}$.[[br]]$\\Rightarrow \\triangle ABE \\backsim \\triangle DEC$ (cạnh huyền $-$ cạnh góc vuông) $\\Rightarrow \\widehat{AEB}=\\widehat{DCE}$.[[br]]$\\Rightarrow \\widehat{AEB}+\\widehat{DEC}=\\widehat{DCE}+\\widehat{DEC}=90^\\circ$.[[br]]Vậy $\\widehat{BEC}=180^\\circ - 90^\\circ = 90^\\circ$.",
+     "figure_given": true,
+     "hints": [
+      "Tìm hai tam giác vuông có cạnh huyền $BE$, $EC$."
+     ],
+     "figure": {
+      "tikz": "\\begin{tikzpicture}[line width=0.8pt, font=\\small, scale=1.0]\n\\draw[ink] (0.000,2.400) -- (0.640,2.400) -- (1.440,0.000) -- (0.000,0.000) -- cycle;\n\\draw[brand] (0.000,1.920) -- (0.640,2.400);\n\\draw[brand] (0.000,1.920) -- (1.440,0.000);\n\\draw[ink] (0.160,2.400) -- (0.160,2.240) -- (0.000,2.240);\n\\draw[ink] (0.000,0.160) -- (0.160,0.160) -- (0.160,0.000);\n\\node[font=\\footnotesize, fill=white, inner sep=0.6pt] at (0.320,2.640) {$4$};\n\\node[font=\\footnotesize, fill=white, inner sep=0.6pt] at (0.464,1.968) {$5$};\n\\node[font=\\footnotesize, fill=white, inner sep=0.6pt] at (-0.240,0.960) {$12$};\n\\node[font=\\footnotesize, fill=white, inner sep=0.6pt] at (0.912,1.104) {$15$};\n\\fill[ink] (0.000,2.400) circle (1.2pt);\n\\fill[ink] (0.000,0.000) circle (1.2pt);\n\\fill[ink] (0.640,2.400) circle (1.2pt);\n\\fill[ink] (1.440,0.000) circle (1.2pt);\n\\fill[ink] (0.000,1.920) circle (1.2pt);\n\\node at (-0.184,2.584) {$A$};\n\\node at (-0.184,-0.184) {$D$};\n\\node at (0.789,2.613) {$B$};\n\\node at (1.653,-0.149) {$C$};\n\\node at (-0.260,1.920) {$E$};\n\\end{tikzpicture}",
+      "caption": "Hình 5",
+      "pos": "right"
+     }
+    },
+    {
+     "type": "noted",
+     "variant": "example",
+     "text": "\\textbf{Ví dụ 3.} (Tài liệu g.g) Để đo chiều cao cột đèn $A'C'$, người ta đặt một tấm gương phẳng tại $B$ trên mặt đất; người quan sát đứng sao cho thấy đỉnh cột đèn trong gương, khi đó $\\widehat{ABC}=\\widehat{A'BC'}$ (hình bên). Biết mắt người cách mặt đất $AC = 1{,}6$ m, $BC = 0{,}8$ m, $BC' = 1{,}5$ m (hình không đúng tỉ lệ). Tính chiều cao cột đèn.[[br]]{\\sffamily\\bfseries\\color{brand}Lời giải}[[br]]Xét $\\triangle ACB$ và $\\triangle A'C'B$ vuông tại $C$, $C'$ có $\\widehat{ABC}=\\widehat{A'BC'}$.[[br]]$\\Rightarrow \\triangle ACB \\backsim \\triangle A'C'B$ ([[fill:g.g]]) $\\Rightarrow \\dfrac{A'C'}{AC}=\\dfrac{BC'}{BC}$.[[br]]$\\Rightarrow A'C' = \\dfrac{1{,}6\\cdot 1{,}5}{0{,}8}$.[[br]]Vậy cột đèn cao [[fill:3]] m.",
+     "figure": {
+      "tikz": "\\begin{tikzpicture}[line width=0.8pt, font=\\small, scale=1.0]\n\\draw[ink] (0.000,0.000) -- (3.450,0.000);\n\\draw[ink,line width=1.3pt] (0.000,0.000) -- (0.000,1.600);\n\\draw[ink,line width=1.3pt] (3.450,0.000) -- (3.450,3.000);\n\\draw[brand,dashed] (0.000,1.600) -- (1.200,0.000);\n\\draw[brand,dashed] (1.200,0.000) -- (3.450,3.000);\n\\draw[ink] (0.000,0.160) -- (0.160,0.160) -- (0.160,0.000);\n\\draw[ink] (3.290,0.000) -- (3.290,0.160) -- (3.450,0.160);\n\\fill[ink] (0.000,1.600) circle (1.2pt);\n\\fill[ink] (0.000,0.000) circle (1.2pt);\n\\fill[ink] (1.200,0.000) circle (1.2pt);\n\\fill[ink] (3.450,0.000) circle (1.2pt);\n\\fill[ink] (3.450,3.000) circle (1.2pt);\n\\node at (-0.089,1.844) {$A$};\n\\node at (0.000,-0.260) {$C$};\n\\node at (1.200,-0.260) {$B$};\n\\node at (3.450,-0.260) {$C'$};\n\\node at (3.539,3.244) {$A'$};\n\\end{tikzpicture}",
+      "caption": "Hình 6",
+      "pos": "right"
+     }
+    },
+    {
+     "type": "problem",
+     "label": "Bài 6.",
+     "statement": "[TH] (Tài liệu c.g.c) Một người đo chiều cao của một cây nhờ một cọc cao $2$ m chôn cách cây $15$ m. Người ấy lùi ra xa cọc $0{,}8$ m thì thấy đầu cọc và đỉnh cây cùng nằm trên một đường thẳng. Khoảng cách từ chân đến mắt người ấy là $1{,}6$ m (hình dưới, hình không đúng tỉ lệ; $F$ là mắt, $K$ là đầu cọc, $T$ là đỉnh cây). Tính chiều cao của cây.",
+     "level": 2,
+     "tier": "onclass",
+     "dang_id": "TH2",
+     "solution": "Kẻ đường thẳng qua $F$ song song với mặt đất, cắt cọc tại $P$ và cắt cây tại $Q$ $\\Rightarrow FP = 0{,}8$ m, $FQ = 15{,}8$ m, $KP = 2 - 1{,}6 = 0{,}4$ (m).[[br]]Xét $\\triangle FPK$ và $\\triangle FQT$ vuông tại $P$, $Q$ có $\\widehat{F}$ chung $\\Rightarrow \\triangle FPK \\backsim \\triangle FQT$ (g.g).[[br]]$\\Rightarrow \\dfrac{TQ}{KP}=\\dfrac{FQ}{FP}$ $\\Rightarrow TQ = \\dfrac{0{,}4\\cdot 15{,}8}{0{,}8}=7{,}9$ (m).[[br]]Vậy cây cao $7{,}9 + 1{,}6 = 9{,}5$ (m).",
+     "figure_given": true,
+     "hints": [
+      "Kẻ đường thẳng ngang qua mắt người để có hai tam giác vuông chung góc $F$."
+     ],
+     "figure": {
+      "tikz": "\\begin{tikzpicture}[line width=0.8pt, font=\\small, scale=1.0]\n\\draw[ink] (0.000,0.000) -- (4.200,0.000);\n\\draw[ink,line width=1.3pt] (0.000,0.000) -- (0.000,0.600);\n\\draw[ink,line width=1.3pt] (1.000,0.000) -- (1.000,1.000);\n\\draw[ink,line width=1.6pt] (4.200,0.000) -- (4.200,2.280);\n\\draw[brand,dashed] (0.000,0.600) -- (4.200,2.280);\n\\draw[ink] (4.040,0.000) -- (4.040,0.160) -- (4.200,0.160);\n\\node[font=\\footnotesize, fill=white, inner sep=0.6pt] at (0.500,-0.420) {$0{,}8$ m};\n\\node[font=\\footnotesize, fill=white, inner sep=0.6pt] at (2.600,-0.420) {$15$ m};\n\\node[font=\\footnotesize, fill=white, inner sep=0.6pt] at (-0.480,0.300) {$1{,}6$ m};\n\\node[font=\\footnotesize, fill=white, inner sep=0.6pt] at (1.320,0.500) {$2$ m};\n\\fill[ink] (0.000,0.000) circle (1.2pt);\n\\fill[ink] (0.000,0.600) circle (1.2pt);\n\\fill[ink] (1.000,0.000) circle (1.2pt);\n\\fill[ink] (1.000,1.000) circle (1.2pt);\n\\fill[ink] (4.200,0.000) circle (1.2pt);\n\\fill[ink] (4.200,2.280) circle (1.2pt);\n\\node at (-0.184,0.784) {$F$};\n\\node at (0.955,1.256) {$K$};\n\\node at (4.384,2.464) {$T$};\n\\end{tikzpicture}",
+      "caption": "Hình 7",
+      "pos": "right"
+     }
+    },
+    {
+     "type": "problem",
+     "label": "Bài 7.",
+     "statement": "[TH] (Tài liệu g.g) Để đo chiều rộng $AB$ của một khúc sông, người ta chọn các điểm $A$, $C$, $D$ thẳng hàng trên bờ, $AB \\perp AD$, $DE \\perp AD$ và $B$, $C$, $E$ thẳng hàng (hình dưới, hình không đúng tỉ lệ). Biết $AC = 79{,}6$ m, $CD = 34{,}2$ m, $DE = 18{,}6$ m. Tính $AB$ (làm tròn đến hàng phần mười).",
+     "level": 2,
+     "tier": "onclass",
+     "dang_id": "TH2",
+     "solution": "Xét $\\triangle ABC$ và $\\triangle DEC$ vuông tại $A$, $D$ có $\\widehat{ACB}=\\widehat{DCE}$ (đối đỉnh) $\\Rightarrow \\triangle ABC \\backsim \\triangle DEC$ (g.g).[[br]]$\\Rightarrow \\dfrac{AB}{DE}=\\dfrac{AC}{DC}$ $\\Rightarrow AB = \\dfrac{18{,}6\\cdot 79{,}6}{34{,}2}\\approx 43{,}3$ (m).[[br]]Vậy khúc sông rộng khoảng $43{,}3$ m.",
+     "figure_given": true,
+     "hints": [
+      "Hai góc tại $C$ là hai góc đối đỉnh."
+     ],
+     "figure": {
+      "tikz": "\\begin{tikzpicture}[line width=0.8pt, font=\\small, scale=1.0]\n\\draw[ink] (0.000,0.000) -- (3.900,0.000);\n\\draw[brand,line width=1.2pt] (0.000,0.000) -- (0.000,1.500);\n\\draw[ink] (3.900,0.000) -- (3.900,-0.750);\n\\draw[ink] (0.000,1.500) -- (3.900,-0.750);\n\\draw[ink] (0.000,0.160) -- (0.160,0.160) -- (0.160,0.000);\n\\draw[ink] (3.740,0.000) -- (3.740,-0.160) -- (3.900,-0.160);\n\\node[font=\\footnotesize, fill=white, inner sep=0.6pt] at (1.300,-0.300) {$79{,}6$ m};\n\\node[font=\\footnotesize, fill=white, inner sep=0.6pt] at (3.250,0.300) {$34{,}2$ m};\n\\node[font=\\footnotesize, fill=white, inner sep=0.6pt] at (4.450,-0.375) {$18{,}6$ m};\n\\fill[ink] (0.000,0.000) circle (1.2pt);\n\\fill[ink] (2.600,0.000) circle (1.2pt);\n\\fill[ink] (3.900,0.000) circle (1.2pt);\n\\fill[ink] (0.000,1.500) circle (1.2pt);\n\\fill[ink] (3.900,-0.750) circle (1.2pt);\n\\node at (-0.184,-0.184) {$A$};\n\\node at (2.555,-0.256) {$C$};\n\\node at (4.084,0.184) {$D$};\n\\node at (-0.184,1.684) {$B$};\n\\node at (4.084,-0.934) {$E$};\n\\end{tikzpicture}",
+      "caption": "Hình 8",
+      "pos": "right"
+     }
+    }
+   ]
+  },
+  {
+   "kind": "practice2",
+   "number": 4,
+   "title": "Luyện tập 2 — Tam giác vuông có đường cao",
+   "teacher_note": "Câu diện tích là câu phân loại: gợi ý tính $AM$, $AN$ từ hai hệ thức ở ý b.",
+   "blocks": [
+    {
+     "type": "noted",
+     "variant": "example",
+     "text": "\\textbf{Ví dụ 4.} (Tài liệu Tam giác vuông đồng dạng) Cho hình chữ nhật $ABCD$ có $AB = 12$ cm, $BC = 9$ cm; vẽ $AH \\perp DB$ (Hình 9). Chứng minh $AD^2 = DH\\cdot DB$ rồi tính $DH$, $AH$.[[br]]{\\sffamily\\bfseries\\color{brand}Lời giải}[[br]]Xét $\\triangle ABD$ và $\\triangle HAD$ vuông tại $A$, $H$ có $\\widehat{D}$ chung.[[br]]$\\Rightarrow \\triangle ABD \\backsim \\triangle HAD$ (g.g) $\\Rightarrow \\dfrac{AD}{HD}=\\dfrac{BD}{AD}$ $\\Rightarrow AD^2 = [[fill:DH\\cdot DB]]$.[[br]]Áp dụng định lí Pythagore cho $\\triangle ABD$: $BD = \\sqrt{144 + 81} = 15$ (cm).[[br]]$\\Rightarrow DH = \\dfrac{81}{15} =$ [[fill:5{,}4]] (cm).[[br]]Áp dụng định lí Pythagore cho $\\triangle AHD$: $AH = \\sqrt{81 - 29{,}16}$.[[br]]Vậy $AH =$ [[fill:7{,}2]] cm.",
+     "figure": {
+      "tikz": "\\begin{tikzpicture}[line width=0.8pt, font=\\small, scale=1.0]\n\\draw[ink] (0.000,1.800) -- (2.400,1.800) -- (2.400,0.000) -- (0.000,0.000) -- cycle;\n\\draw[ink] (2.400,1.800) -- (0.000,0.000);\n\\draw[brand] (0.000,1.800) -- (0.864,0.648);\n\\draw[ink] (0.768,0.776) -- (0.896,0.872) -- (0.992,0.744);\n\\fill[ink] (0.000,1.800) circle (1.2pt);\n\\fill[ink] (2.400,1.800) circle (1.2pt);\n\\fill[ink] (2.400,0.000) circle (1.2pt);\n\\fill[ink] (0.000,0.000) circle (1.2pt);\n\\fill[ink] (0.864,0.648) circle (1.2pt);\n\\node at (-0.184,1.984) {$A$};\n\\node at (2.584,1.984) {$B$};\n\\node at (2.584,-0.184) {$C$};\n\\node at (-0.184,-0.184) {$D$};\n\\node at (1.013,0.435) {$H$};\n\\end{tikzpicture}",
+      "caption": "Hình 9",
+      "pos": "right"
+     }
+    },
+    {
+     "type": "problem",
+     "label": "Bài 8.",
+     "statement": "(Tài liệu Ôn tập tam giác đồng dạng) Cho tam giác $ABC$ vuông tại $A$ có $AB = 6$ cm, $AC = 8$ cm, đường cao $AH$. Gọi $M$, $N$ lần lượt là hình chiếu của $H$ trên $AB$, $AC$ (Hình 10).[[br]]a) [VD] Chứng minh $AH\\cdot BC = AB\\cdot AC$. Tính $AH$.[[br]]b) [VD] Chứng minh $\\triangle AMN \\backsim \\triangle ACB$.",
+     "level": 3,
+     "tier": "onclass",
+     "dang_id": "VD1",
+     "solution": "a) Xét $\\triangle HBA$ và $\\triangle ABC$ vuông tại $H$, $A$ có $\\widehat{B}$ chung $\\Rightarrow \\triangle HBA \\backsim \\triangle ABC$ (g.g).[[br]]$\\Rightarrow \\dfrac{HA}{AC}=\\dfrac{BA}{BC}$ $\\Rightarrow AH\\cdot BC = AB\\cdot AC$.[[br]]Áp dụng định lí Pythagore: $BC = \\sqrt{36 + 64} = 10$ cm.[[br]]Vậy $AH = \\dfrac{6\\cdot 8}{10} = 4{,}8$ cm.[[br]]b) Xét $\\triangle AMH$ và $\\triangle AHB$ vuông tại $M$, $H$ có $\\widehat{MAH}$ chung $\\Rightarrow \\triangle AMH \\backsim \\triangle AHB$ (g.g) $\\Rightarrow AM\\cdot AB = AH^2$.[[br]]Tương tự $\\triangle ANH \\backsim \\triangle AHC$ (g.g) $\\Rightarrow AN\\cdot AC = AH^2$.[[br]]$\\Rightarrow AM\\cdot AB = AN\\cdot AC$ $\\Rightarrow \\dfrac{AM}{AC}=\\dfrac{AN}{AB}$.[[br]]Xét $\\triangle AMN$ và $\\triangle ACB$ có $\\widehat{A}$ chung, $\\dfrac{AM}{AC}=\\dfrac{AN}{AB}$.[[br]]Vậy $\\triangle AMN \\backsim \\triangle ACB$ (c.g.c).",
+     "figure_given": true,
+     "figure": {
+      "tikz": "\\begin{tikzpicture}[line width=0.8pt, font=\\small, scale=1.0]\n\\draw[ink] (0.000,0.000) -- (0.000,2.160) -- (2.880,0.000) -- cycle;\n\\draw[brand] (0.000,0.000) -- (1.037,1.382);\n\\draw[ink] (1.037,1.382) -- (0.000,1.382);\n\\draw[ink] (1.037,1.382) -- (1.037,0.000);\n\\draw[brand] (0.000,1.382) -- (1.037,0.000);\n\\draw[ink] (0.000,0.160) -- (0.160,0.160) -- (0.160,0.000);\n\\draw[ink] (0.941,1.254) -- (1.069,1.158) -- (1.165,1.286);\n\\draw[ink] (0.160,1.382) -- (0.160,1.542) -- (0.000,1.542);\n\\draw[ink] (1.037,0.160) -- (1.197,0.160) -- (1.197,0.000);\n\\fill[ink] (0.000,0.000) circle (1.2pt);\n\\fill[ink] (0.000,2.160) circle (1.2pt);\n\\fill[ink] (2.880,0.000) circle (1.2pt);\n\\fill[ink] (1.037,1.382) circle (1.2pt);\n\\fill[ink] (0.000,1.382) circle (1.2pt);\n\\fill[ink] (1.037,0.000) circle (1.2pt);\n\\node at (-0.184,-0.184) {$A$};\n\\node at (-0.110,2.396) {$B$};\n\\node at (3.124,-0.089) {$C$};\n\\node at (1.186,1.595) {$H$};\n\\node at (-0.260,1.382) {$M$};\n\\node at (1.037,-0.260) {$N$};\n\\end{tikzpicture}",
+      "caption": "Hình 10",
+      "pos": "right"
+     },
+     "quy_trinh": [
+      "Cái phải chứng minh là gì? Hệ thức tích $a\\cdot b = c\\cdot d$ thì đổi thành tỉ lệ thức để tìm hai tam giác.",
+      "Chọn trường hợp đồng dạng: tìm góc bằng nhau (chung, đối đỉnh, so le, vuông) hoặc cạnh tỉ lệ.",
+      "Viết hai tam giác đồng dạng đúng thứ tự đỉnh, nêu trường hợp.",
+      "Suy ra tỉ lệ thức hoặc góc bằng nhau, rồi kết luận \"Vậy …\"."
+     ]
+    },
+    {
+     "type": "problem",
+     "label": "Bài 9.",
+     "statement": "[VDC] (Tiếp bài trên, dùng Hình 10) Tính diện tích tứ giác $BMNC$.",
+     "level": 4,
+     "tier": "onclass",
+     "dang_id": "VDC1",
+     "solution": "Từ câu b: $AM = \\dfrac{AH^2}{AB} = \\dfrac{23{,}04}{6} = 3{,}84$ (cm), $AN = \\dfrac{AH^2}{AC} = \\dfrac{23{,}04}{8} = 2{,}88$ (cm).[[br]]Xét $\\triangle AMN$ vuông tại $A$: $S_{AMN} = \\dfrac{3{,}84\\cdot 2{,}88}{2} = 5{,}5296$ (cm$^2$).[[br]]$S_{ABC} = \\dfrac{6\\cdot 8}{2} = 24$ (cm$^2$).[[br]]Vậy $S_{BMNC} = 24 - 5{,}5296 = 18{,}4704$ (cm$^2$).",
+     "figure_given": true
+    }
+   ]
+  },
+  {
+   "kind": "reflection",
+   "number": 5,
+   "title": "Tổng kết \\& bài tập về nhà",
+   "teacher_note": "BTVN cuối dùng tính chất trung tuyến ứng với cạnh huyền (Chương III) $-$ nhắc HS viết đủ.",
+   "blocks": [
+    {
+     "type": "problem",
+     "label": "BTVN~1.",
+     "statement": "[NB] (Tài liệu Tam giác vuông đồng dạng) Cho tam giác $ABC$ vuông tại $A$ ($AB < AC$), đường cao $AH$. Chứng minh $\\triangle ABH \\backsim \\triangle CBA$.",
+     "level": 1,
+     "tier": "btvn",
+     "dang_id": "NB1",
+     "solution": "Xét $\\triangle ABH$ và $\\triangle CBA$ có $\\widehat{AHB}=\\widehat{CAB}=90^\\circ$, $\\widehat{B}$ chung.[[br]]Vậy $\\triangle ABH \\backsim \\triangle CBA$ (g.g)."
+    },
+    {
+     "type": "problem",
+     "label": "BTVN~2.",
+     "statement": "[NB] (Tài liệu Tam giác vuông đồng dạng) Cho tam giác $ABC$ có ba góc nhọn, đường cao $AH$. Gọi $M$, $N$ lần lượt là hình chiếu vuông góc của $H$ trên $AB$, $AC$. Chứng minh $\\triangle AHN \\backsim \\triangle ACH$.",
+     "level": 1,
+     "tier": "btvn",
+     "dang_id": "NB1",
+     "solution": "Xét $\\triangle AHN$ và $\\triangle ACH$ có $\\widehat{ANH}=\\widehat{AHC}=90^\\circ$, $\\widehat{HAN}$ chung.[[br]]Vậy $\\triangle AHN \\backsim \\triangle ACH$ (g.g)."
+    },
+    {
+     "type": "problem",
+     "label": "BTVN~3.",
+     "statement": "[NB] (Tài liệu Tam giác vuông đồng dạng) Điền vào chỗ trống: tam giác $ABC$ vuông tại $A$, đường cao $AH$. Xét $\\triangle HAC$ và $\\triangle ABC$ có $\\widehat{AHC}=\\widehat{BAC}=90^\\circ$, $\\widehat{C}$ chung $\\Rightarrow \\triangle HAC \\backsim \\triangle$[[blank:1.2cm]] (g.g) $\\Rightarrow \\dfrac{CA}{CB}=\\dfrac{CH}{\\ldots}$ $\\Rightarrow CA^2 =$ [[blank:1.6cm]].",
+     "level": 1,
+     "tier": "btvn",
+     "dang_id": "NB2",
+     "solution": "$ABC$; $\\dfrac{CH}{CA}$; $CH\\cdot CB$."
+    },
+    {
+     "type": "problem",
+     "label": "BTVN~4.",
+     "statement": "[NB] Vẽ hình vào vở: tam giác $ABC$ vuông tại $A$, đường cao $AH$, $M$ và $N$ là hình chiếu của $H$ trên $AB$, $AC$. Đánh dấu các góc vuông, ghi giả thiết $-$ kết luận của bài hình trên lớp.",
+     "level": 1,
+     "tier": "btvn",
+     "dang_id": "NB3",
+     "solution": "GT: $\\triangle ABC$ vuông tại $A$, $AB = 6$, $AC = 8$, $AH \\perp BC$, $HM \\perp AB$, $HN \\perp AC$. KL: $AH\\cdot BC = AB\\cdot AC$; $\\triangle AMN \\backsim \\triangle ACB$; $S_{BMNC}$.",
+     "draw": true
+    },
+    {
+     "type": "problem",
+     "label": "BTVN~5.",
+     "statement": "[TH] (Tài liệu Tam giác vuông đồng dạng) Cho hai tam giác cân $ABC$ ($AB = AC$) và $A'B'C'$ ($A'B' = A'C'$) có các đường cao $BH$, $B'H'$ (hình dưới). Biết $\\dfrac{BH}{B'H'}=\\dfrac{BC}{B'C'}$. Chứng minh $\\triangle ABC \\backsim \\triangle A'B'C'$.",
+     "level": 2,
+     "tier": "btvn",
+     "dang_id": "TH1",
+     "solution": "Xét $\\triangle BHC$ và $\\triangle B'H'C'$ vuông tại $H$, $H'$ có $\\dfrac{BC}{B'C'}=\\dfrac{BH}{B'H'}$ $\\Rightarrow \\triangle BHC \\backsim \\triangle B'H'C'$ (cạnh huyền $-$ cạnh góc vuông).[[br]]$\\Rightarrow \\widehat{C}=\\widehat{C'}$; tam giác cân $\\Rightarrow \\widehat{B}=\\widehat{C}=\\widehat{C'}=\\widehat{B'}$.[[br]]Vậy $\\triangle ABC \\backsim \\triangle A'B'C'$ (g.g).",
+     "figure_given": true,
+     "hints": [
+      "Hai tam giác vuông $BHC$ và $B'H'C'$ có cạnh huyền $BC$, $B'C'$."
+     ],
+     "figure": {
+      "tikz": "\\begin{tikzpicture}[line width=0.8pt, font=\\small, scale=1.0]\n\\draw[ink] (1.000,2.400) -- (0.000,0.000) -- (2.000,0.000) -- cycle;\n\\draw[ink] (3.900,1.600) -- (3.200,0.000) -- (4.600,0.000) -- cycle;\n\\draw[brand] (0.000,0.000) -- (1.704,0.710);\n\\draw[brand] (3.200,0.000) -- (4.375,0.514);\n\\draw[ink] (1.556,0.649) -- (1.618,0.501) -- (1.766,0.562);\n\\draw[ink] (4.228,0.450) -- (4.293,0.303) -- (4.439,0.368);\n\\fill[ink] (1.000,2.400) circle (1.2pt);\n\\fill[ink] (0.000,0.000) circle (1.2pt);\n\\fill[ink] (2.000,0.000) circle (1.2pt);\n\\fill[ink] (3.900,1.600) circle (1.2pt);\n\\fill[ink] (3.200,0.000) circle (1.2pt);\n\\fill[ink] (4.600,0.000) circle (1.2pt);\n\\fill[ink] (1.704,0.710) circle (1.2pt);\n\\fill[ink] (4.375,0.514) circle (1.2pt);\n\\node at (1.000,2.660) {$A$};\n\\node at (-0.213,-0.149) {$B$};\n\\node at (2.213,-0.149) {$C$};\n\\node at (3.900,1.860) {$A'$};\n\\node at (2.987,-0.149) {$B'$};\n\\node at (4.813,-0.149) {$C'$};\n\\node at (1.940,0.820) {$H$};\n\\node at (4.611,0.624) {$H'$};\n\\end{tikzpicture}",
+      "caption": "Hình 11",
+      "pos": "right"
+     }
+    },
+    {
+     "type": "problem",
+     "label": "BTVN~6.",
+     "statement": "(Tài liệu Tam giác vuông đồng dạng) Cho tam giác $ABC$ vuông tại $A$ ($AB < AC$), trung tuyến $AD$. Đường thẳng vuông góc với $AD$ tại $D$ cắt $AC$ tại $E$ và cắt đường thẳng $AB$ tại $F$ (Hình 12).[[br]]a) [VD] Chứng minh $\\triangle DCE \\backsim \\triangle DFB$.",
+     "level": 3,
+     "tier": "btvn",
+     "dang_id": "VD1",
+     "solution": "Xét $\\triangle ABC$ vuông tại $A$ có $AD$ là đường trung tuyến ứng với cạnh huyền $\\Rightarrow AD = DC = \\dfrac{BC}{2}$.[[br]]$\\Rightarrow \\triangle DAC$ cân tại $D$ $\\Rightarrow \\widehat{DAC}=\\widehat{DCA}$.[[br]]Xét $\\triangle ADF$ vuông tại $D$: $\\widehat{AFD}=90^\\circ - \\widehat{DAB}=\\widehat{DAC}=\\widehat{DCE}$.[[br]]Xét $\\triangle DCE$ và $\\triangle DFB$ có $\\widehat{DCE}=\\widehat{DFB}$, $\\widehat{CDE}=\\widehat{FDB}$ (đối đỉnh).[[br]]Vậy $\\triangle DCE \\backsim \\triangle DFB$ (g.g).",
+     "figure_given": true,
+     "figure": {
+      "tikz": "\\begin{tikzpicture}[line width=0.8pt, font=\\small, scale=1.0]\n\\draw[ink] (0.000,0.000) -- (0.000,1.800) -- (2.400,0.000) -- cycle;\n\\draw[ink] (0.000,0.000) -- (1.200,0.900);\n\\draw[ink] (0.000,1.800) -- (0.000,2.500);\n\\draw[brand] (0.000,2.500) -- (1.875,0.000);\n\\draw[ink] (0.000,0.160) -- (0.160,0.160) -- (0.160,0.000);\n\\draw[ink] (1.072,0.804) -- (1.168,0.676) -- (1.296,0.772);\n\\draw[ink] (0.666,1.438) -- (0.534,1.262);\n\\draw[ink] (1.866,0.538) -- (1.734,0.362);\n\\fill[ink] (0.000,0.000) circle (1.2pt);\n\\fill[ink] (0.000,1.800) circle (1.2pt);\n\\fill[ink] (2.400,0.000) circle (1.2pt);\n\\fill[ink] (1.200,0.900) circle (1.2pt);\n\\fill[ink] (1.875,0.000) circle (1.2pt);\n\\fill[ink] (0.000,2.500) circle (1.2pt);\n\\node at (-0.184,-0.184) {$A$};\n\\node at (-0.260,1.800) {$B$};\n\\node at (2.644,-0.089) {$C$};\n\\node at (1.384,1.084) {$D$};\n\\node at (1.875,-0.260) {$E$};\n\\node at (-0.089,2.744) {$F$};\n\\end{tikzpicture}",
+      "caption": "Hình 12",
+      "pos": "right"
+     },
+     "quy_trinh": [
+      "Cái phải chứng minh là gì? Hệ thức tích $a\\cdot b = c\\cdot d$ thì đổi thành tỉ lệ thức để tìm hai tam giác.",
+      "Chọn trường hợp đồng dạng: tìm góc bằng nhau (chung, đối đỉnh, so le, vuông) hoặc cạnh tỉ lệ.",
+      "Viết hai tam giác đồng dạng đúng thứ tự đỉnh, nêu trường hợp.",
+      "Suy ra tỉ lệ thức hoặc góc bằng nhau, rồi kết luận \"Vậy …\"."
+     ]
+    },
+    {
+     "type": "problem",
+     "label": "BTVN~7.",
+     "statement": "[VDC] (Tiếp bài trên) Chứng minh $AE\\cdot AC = AB\\cdot AF$.",
+     "level": 4,
+     "tier": "btvn",
+     "dang_id": "VDC1",
+     "solution": "Xét $\\triangle AEF$ và $\\triangle ABC$ vuông tại $A$ có $\\widehat{AFE}=\\widehat{ACB}$ (bài trên).[[br]]$\\Rightarrow \\triangle AEF \\backsim \\triangle ABC$ (g.g) $\\Rightarrow \\dfrac{AE}{AB}=\\dfrac{AF}{AC}$.[[br]]Vậy $AE\\cdot AC = AB\\cdot AF$.",
+     "figure_given": true
+    }
+   ]
+  }
+ ]
+}

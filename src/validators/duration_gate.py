@@ -166,10 +166,12 @@ def check_vdc_cuoi_bai(lesson: LessonPackage) -> list[str]:
 
 
 def _grade_subject(lesson: LessonPackage) -> tuple[str, str]:
-    """Suy (lớp, môn) để tra tier_spec. Lesson chỉ có grade_label → phân lớp 8/9;
+    """Suy (lớp, môn) để tra tier_spec. Lesson chỉ có grade_label → đọc số sau chữ
+    'Lớp' (trước chỉ phân 8/9 nên phiếu lớp 6, 7 bị chấm theo rate card lớp 9);
     phát hiện môn 'hinh-hoc' nếu eyebrow hoặc title chứa chữ 'hình'/'hinh'."""
     gl = getattr(lesson, "grade_label", "") or ""
-    grade = "lop-8" if "Lớp 8" in gl else "lop-9"
+    m = re.search(r"Lớp\s*(\d+)", gl)
+    grade = f"lop-{m.group(1)}" if m else "lop-9"
     eyebrow = getattr(lesson, "eyebrow", "") or ""
     title = getattr(lesson, "title", "") or ""
     # Soi cả `grade_label` (vd "Lớp 9 • Hình học") — trước chỉ soi eyebrow+title nên
@@ -206,7 +208,9 @@ def _luat_tang_b(lesson: LessonPackage, spec: dict, grade: str, subject: str,
     # (W) GỘP PHIẾU: chương không có VD-VDC thì hai buổi dùng chung một phiếu.
     ca_yc = so_ca_yeu_cau(spec, grade, subject, tier, chuong)
     ca = max(1, getattr(lesson, "so_ca", 1) or 1)
-    if ca_yc and ca != ca_yc:
+    # Phiếu CUỐI chương lẻ ca (một ca: 45′ luyện tập + 45′ kiểm tra) được đứng riêng — 08/10/2026.
+    le_kt = ca == 1 and (getattr(lesson, "kiem_tra_phut", 0) or 0) >= 45
+    if ca_yc and ca != ca_yc and not le_kt:
         warns.append(
             f"duration: phiếu khai `so_ca` = {ca} nhưng chương '{chuong}' "
             + ("KHÔNG có bài VD-VDC nên phải GỘP 2 PHIẾU THÀNH 1 (`so_ca: 2`)"

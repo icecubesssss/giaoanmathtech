@@ -5,7 +5,15 @@ Bộ mẫu đã Thầy duyệt: 3 đề ôn + 1 đề GK1 chính thức lớp 9.
 - Seed: [inputs/seeds/lop-9/de-on-tap-giua-ki-1/](../inputs/seeds/lop-9/de-on-tap-giua-ki-1/).
 - PDF trên Drive: `giaoanmathtech/Lop 9 2026-2027/On tap giua ki 1/`.
 
-Làm khối khác (lớp 8, 7, 6) hay kỳ khác (CK1, GK2, CK2) thì đi **đúng 9 bước dưới đây, không bỏ bước nào**. Mỗi luật ghi kèm câu Thầy đã nói, vì mỗi luật là một lần con làm sai thật.
+**Bộ lớp 8 (10/10/2026)** — 3 đề ôn + 1 đề GK1, cùng 9 bước: `scripts/de_on_tap_gk1_lop8.py` (+ `_hinh.py` kiểm toạ độ)
+→ `inputs/seeds/lop-8/de-on-tap-giua-ki-1/`; lưới dạng gắn tay 27 đề ở `inputs/refs/de-thi/lop-8/luoi-dang/gk1.json`
+(`thong_ke_luoi_dang.py --lop 8`). Khác lớp 9: đề trường lớp 8 có trắc nghiệm ở 63% số đề ⇒ khung có **Phần I 2,0đ (8 câu)**
++ Bài 1 đa thức 1,0 · Bài 2 phép tính/HĐT 1,5 · Bài 3 tìm $x$ 1,0 · Bài 4 thực tế 1,0 · Bài 5 hình 3,0 · Bài 6 0,5.
+Phương án trắc nghiệm là các `\parbox` rời nên TeX ngắt trang GIỮA các phương án ⇒ soát PDF rồi khai `ngat=[("tn", 6), ("bai", 4)]`
+trong script để ngắt trang chủ động (không sửa template). Trong bảng ma trận dùng `\linespread{1}\selectfont`, KHÔNG dùng
+`\setstretch` (bản Slide beamer không có `setspace` ⇒ Tectonic chết).
+
+Làm khối khác (lớp 7, 6) hay kỳ khác (CK1, GK2, CK2) thì đi **đúng 9 bước dưới đây, không bỏ bước nào**. Mỗi luật ghi kèm câu Thầy đã nói, vì mỗi luật là một lần con làm sai thật.
 
 ---
 

@@ -7,7 +7,7 @@ Token chỗ trống (do AI sinh ra trong text, KHÔNG phải lệnh LaTeX) đư�
 `tex` dịch sang lệnh an toàn:
   [[blank]]      -> \\blank[5cm]      (dòng kẻ chấm để HS viết)
   [[blank:W]]    -> \\blank[W]
-  [[mblank:W]]   -> \\rule{W}{0.4pt}  (gạch ngắn trong công thức)
+  [[mblank:W]]   -> \\blank[W]      (cùng kiểu chấm, dùng trong công thức)
   [[fill:đáp án]] -> ô khuyết của VÍ DỤ MẪU: phiếu HS/slide in gạch trống
                      (\\fillblank), Sổ tay GV in sẵn đáp án (\\fillans).
                      Rộng ô tự suy theo độ dài đáp án, ép tay bằng [[fill:đáp án|1.6cm]].
@@ -74,7 +74,7 @@ def _texify(s: str, show_solution: bool = False) -> str:
     s = _FILL.sub(lambda m: _fill_sub(m, show_solution), s)
     s = _BLANK_W.sub(r"\\blank[\1]", s)
     s = _BLANK.sub(r"\\blank[5cm]", s)
-    s = _MBLANK.sub(r"\\rule{\1}{0.4pt}", s)
+    s = _MBLANK.sub(r"\\blank[\1]", s)
     s = _OLY_W.sub(r"\\olybox{\1}", s)
     s = _BR_TRAIL.sub("", s)
     # [[br]] -> xuống dòng kèm 3pt hở dọc, để dòng chứa \dfrac không chạm dòng kế.
@@ -259,8 +259,14 @@ def _tidy_segments(segs: list[dict]) -> list[dict]:
 
     def lone_heading(seg) -> bool:
         txt = [b for b in seg["text"] if getattr(b, "type", "") != "writelines"]
-        return (not seg["figures"] and len(txt) == 1
-                and getattr(txt[0], "type", "") == "para" and len(_plain(txt[0])) < 60)
+        if seg["figures"] or not txt:
+            return False
+        if len(txt) == 1:
+            tieu_de = getattr(txt[0], "variant", "") in ("heading", "part")
+            return getattr(txt[0], "type", "") == "para" and len(_plain(txt[0])) < (140 if tieu_de else 60)
+        # Cụm CHỈ gồm tiêu đề phần + tiêu đề mục ("A. Lý thuyết" / "1. Đường tròn") — 10/10/2026.
+        return all(getattr(b, "type", "") == "para" and getattr(b, "variant", "") in ("heading", "part")
+                   for b in txt) and sum(len(_plain(b)) for b in txt) < 140
 
     out: list[dict] = []
     for seg in segs:

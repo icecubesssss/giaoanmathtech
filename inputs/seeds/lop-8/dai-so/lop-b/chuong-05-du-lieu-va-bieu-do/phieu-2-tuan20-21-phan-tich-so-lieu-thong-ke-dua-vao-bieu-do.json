@@ -1,0 +1,1089 @@
+{
+ "slug": "phieu-2-tuan20-21-phan-tich-so-lieu-thong-ke-dua-vao-bieu-do",
+ "title": "Phân tích số liệu thống kê dựa vào biểu đồ",
+ "eyebrow": "ĐẠI SỐ 8 — PHIẾU 2 • 2 CA • CHƯƠNG V — BÀI 20, LUYỆN TẬP CHUNG",
+ "grade_label": "Lớp 8 • Chương V",
+ "class_tier": "B",
+ "chuong": "chuong-05-du-lieu-va-bieu-do",
+ "so_ca": 2,
+ "kiem_tra_phut": 45,
+ "stages": [
+  {
+   "kind": "review",
+   "number": 1,
+   "title": "Khám phá",
+   "teacher_note": "Chiếu biểu đồ, cho HS 2 phút nhìn rồi giơ tay: ai đồng ý \\emph{nem gấp mấy lần bánh mì}? Đa số sẽ trả lời theo chiều cao cột.[[br]]Chưa giải thích ngay — để HS tự đọc số trên đầu cột và tính tỉ số, thấy chênh lệch thật rất nhỏ rồi mới hỏi: \\emph{vì sao hình lại cho cảm giác khác?}[[br]]Câu hỏi đó dẫn vào mục 1 của chặng Kiến thức cần nhớ: nhìn gốc trục đứng trước khi so sánh.",
+   "blocks": [
+    {
+     "type": "opener",
+     "text": "Một công ty du lịch hỏi khách nước ngoài thích món ăn Việt Nam nào nhất rồi vẽ biểu đồ bên. Nhìn biểu đồ, bạn Minh nói: \\emph{“Cột Nem cao gấp mấy lần cột Bánh mì, vậy nem được chọn nhiều hơn hẳn bánh mì”}.[[br]]Em hãy đọc số trên đầu mỗi cột rồi cho biết: số lượt chọn nem nhiều hơn số lượt chọn bánh mì bao nhiêu? Bạn Minh nói có đúng không?",
+     "tikz": "\\begin{tikzpicture}[line width=0.6pt, font=\\small]\n\\draw[-{Stealth[length=4pt]}] (0,0) -- (6.05,0);\n\\draw[-{Stealth[length=4pt]}] (0,0) -- (0,3.85);\n\\draw (-0.06,0.00) -- (0.06,0.00);\n\\node[left, font=\\scriptsize] at (0,0.00) {$950$};\n\\draw[black!22, dashed] (0,0.85) -- (5.90,0.85);\n\\draw (-0.06,0.85) -- (0.06,0.85);\n\\node[left, font=\\scriptsize] at (0,0.85) {$960$};\n\\draw[black!22, dashed] (0,1.70) -- (5.90,1.70);\n\\draw (-0.06,1.70) -- (0.06,1.70);\n\\node[left, font=\\scriptsize] at (0,1.70) {$970$};\n\\draw[black!22, dashed] (0,2.55) -- (5.90,2.55);\n\\draw (-0.06,2.55) -- (0.06,2.55);\n\\node[left, font=\\scriptsize] at (0,2.55) {$980$};\n\\draw[black!22, dashed] (0,3.40) -- (5.90,3.40);\n\\draw (-0.06,3.40) -- (0.06,3.40);\n\\node[left, font=\\scriptsize] at (0,3.40) {$990$};\n\\node[above right, font=\\scriptsize, align=left] at (0,3.85) {Số lượt\\\\bình chọn};\n\\node[right, font=\\scriptsize] at (6.30,0) {Món ăn};\n\\fill[black!18, draw=black] (0.80,0) rectangle (1.70,1.87);\n\\node[above, font=\\scriptsize, fill=white, inner sep=1pt] at (1.25,1.91) {$972$};\n\\node[below, font=\\scriptsize, align=center] at (1.25,0) {Phở};\n\\fill[black!18, draw=black] (2.50,0) rectangle (3.40,3.15);\n\\node[above, font=\\scriptsize, fill=white, inner sep=1pt] at (2.95,3.19) {$987$};\n\\node[below, font=\\scriptsize, align=center] at (2.95,0) {Nem};\n\\fill[black!18, draw=black] (4.20,0) rectangle (5.10,0.42);\n\\node[above, font=\\scriptsize, fill=white, inner sep=1pt] at (4.65,0.46) {$955$};\n\\node[below, font=\\scriptsize, align=center] at (4.65,0) {Bánh mì};\n\\end{tikzpicture}"
+    }
+   ]
+  },
+  {
+   "kind": "concept",
+   "number": 2,
+   "title": "Kiến thức cần nhớ",
+   "teacher_note": "Ca 3 dạy mục 1, 2, 3; ca 4 ôn nhanh cả ba mục qua sơ đồ tư duy rồi vào luyện tập chung.[[br]]Mục 2 là quy trình dùng cho MỌI câu phân tích biểu đồ: bắt HS nói to ba bước trước khi tính.[[br]]Hộp BẪY ĐIỂM đọc ngay sau mục 1 và nhắc lại trước khi kiểm tra chương.",
+   "blocks": [
+    {
+     "type": "para",
+     "variant": "heading",
+     "text": "1. Đọc biểu đồ cho đúng"
+    },
+    {
+     "type": "deflist",
+     "items": [
+      {
+       "term": "Gốc trục đứng khác 0:",
+       "desc": "trong biểu đồ cột, tỉ lệ chiều cao các cột KHÔNG bằng tỉ lệ các số liệu mà chúng biểu diễn. Muốn so sánh thì đọc số rồi tính."
+      },
+      {
+       "term": "Mốc thời gian không đều:",
+       "desc": "trong biểu đồ đoạn thẳng, khi các mốc trên trục ngang không cách đều, ta không dựa vào độ dốc để kết luận tăng, giảm nhanh hay chậm."
+      },
+      {
+       "term": "Nhiều biểu đồ:",
+       "desc": "có thể kết hợp thông tin từ hai hay nhiều biểu đồ; muốn so sánh sự thay đổi của hai đại lượng theo thời gian thì vẽ chúng trên cùng một biểu đồ."
+      }
+     ]
+    },
+    {
+     "type": "para",
+     "variant": "heading",
+     "text": "2. Ba bước trả lời một câu hỏi phân tích biểu đồ"
+    },
+    {
+     "type": "deflist",
+     "items": [
+      {
+       "term": "Bước 1:",
+       "desc": "đọc tên biểu đồ, hai trục (đại lượng, đơn vị, gốc trục đứng) và chú thích."
+      },
+      {
+       "term": "Bước 2:",
+       "desc": "đọc đúng các số liệu cần dùng."
+      },
+      {
+       "term": "Bước 3:",
+       "desc": "tính (hiệu, tổng, tỉ số, tỉ lệ phần trăm) rồi kết luận, ghi đủ đơn vị."
+      }
+     ]
+    },
+    {
+     "type": "para",
+     "variant": "heading",
+     "text": "3. Các phép tính hay gặp"
+    },
+    {
+     "type": "deflist",
+     "items": [
+      {
+       "term": "Nhiều hơn, ít hơn:",
+       "desc": "lấy hiệu hai số liệu."
+      },
+      {
+       "term": "Gấp mấy lần:",
+       "desc": "lấy thương hai số liệu (không lấy thương hai chiều cao cột)."
+      },
+      {
+       "term": "Tỉ lệ phần trăm:",
+       "desc": "$\\text{tỉ lệ} = \\dfrac{\\text{phần}}{\\text{tổng}}\\cdot 100\\%$."
+      },
+      {
+       "term": "Một thành phần:",
+       "desc": "$\\text{số lượng} = \\text{tổng}\\cdot\\text{tỉ lệ phần trăm}$."
+      }
+     ]
+    },
+    {
+     "type": "noted",
+     "variant": "note",
+     "text": "\\textbf{Đề cuối kì I hỏi gì ở phần này.} Trắc nghiệm $0{,}25$ điểm mỗi câu: đọc một số liệu, so sánh hai số liệu, chọn biểu đồ, chỉ ra điểm không hợp lí.[[br]]Tự luận $1{,}0$ điểm: từ biểu đồ cột kép lập bảng thống kê rồi tính tỉ lệ phần trăm so với sĩ số; chọn và vẽ biểu đồ cột kép cho bảng hai dãy số liệu."
+    },
+    {
+     "type": "noted",
+     "variant": "trap",
+     "text": "Bạn Minh nhìn biểu đồ có gốc trục đứng $200$ rồi kết luận \\emph{số tiền của Tuyết gấp đôi của Khánh} — sai, phải đọc số: $280:240\\approx 1{,}2$ lần.[[br]]Bạn Lan tính tỉ lệ học sinh lớp 8A tham gia câu lạc bộ nhưng chia cho tổng số học sinh của CẢ HAI câu lạc bộ — sai, đề hỏi so với sĩ số lớp thì chia cho sĩ số.[[br]]Quên đơn vị hoặc quên câu \\emph{Vậy} ở câu tự luận là mất điểm trình bày."
+    }
+   ]
+  },
+  {
+   "kind": "practice1",
+   "number": 3,
+   "title": "Ca 3 — Phân tích số liệu dựa vào biểu đồ",
+   "teacher_note": "Mỗi ví dụ: thầy trò cùng điền ô trống rồi HS làm ngay nhóm bài sau nó.[[br]]Các bài nhận biết gọi HS trả lời miệng, bắt chỉ tay lên trục đứng trước khi đọc số.[[br]]Bài có biểu đồ gốc trục đứng khác $0$: luôn hỏi \\emph{gốc là bao nhiêu?} trước.",
+   "blocks": [
+    {
+     "type": "noted",
+     "variant": "example",
+     "text": "\\textbf{Ví dụ 1.} Hai biểu đồ cột ở Hình 1 cùng biểu diễn số học sinh nam của lớp 8A ($15$ bạn) và lớp 8B ($10$ bạn). Ở biểu đồ b), cột của lớp 8A cao gấp mấy lần cột của lớp 8B? Tỉ lệ đó có bằng tỉ lệ hai số liệu không?\\par\\nopagebreak\\smallskip{\\centering\\adjustbox{max width=0.86\\linewidth}{\\begin{tabular}{cc}\\begin{tikzpicture}[line width=0.6pt, font=\\small]\n\\draw[-{Stealth[length=4pt]}] (0,0) -- (3.85,0);\n\\draw[-{Stealth[length=4pt]}] (0,0) -- (0,3.45);\n\\draw (-0.06,0.00) -- (0.06,0.00);\n\\node[left, font=\\scriptsize] at (0,0.00) {$0$};\n\\draw[black!22, dashed] (0,0.60) -- (3.70,0.60);\n\\draw (-0.06,0.60) -- (0.06,0.60);\n\\node[left, font=\\scriptsize] at (0,0.60) {$5$};\n\\draw[black!22, dashed] (0,1.20) -- (3.70,1.20);\n\\draw (-0.06,1.20) -- (0.06,1.20);\n\\node[left, font=\\scriptsize] at (0,1.20) {$10$};\n\\draw[black!22, dashed] (0,1.80) -- (3.70,1.80);\n\\draw (-0.06,1.80) -- (0.06,1.80);\n\\node[left, font=\\scriptsize] at (0,1.80) {$15$};\n\\draw[black!22, dashed] (0,2.40) -- (3.70,2.40);\n\\draw (-0.06,2.40) -- (0.06,2.40);\n\\node[left, font=\\scriptsize] at (0,2.40) {$20$};\n\\draw[black!22, dashed] (0,3.00) -- (3.70,3.00);\n\\draw (-0.06,3.00) -- (0.06,3.00);\n\\node[left, font=\\scriptsize] at (0,3.00) {$25$};\n\\node[above right, font=\\scriptsize, align=left] at (0,3.45) {Học sinh};\n\\node[right, font=\\scriptsize] at (4.10,0) {Lớp};\n\\fill[black!18, draw=black] (0.70,0) rectangle (1.50,1.80);\n\\node[above, font=\\scriptsize, fill=white, inner sep=1pt] at (1.10,1.84) {$15$};\n\\node[below, font=\\scriptsize, align=center] at (1.10,0) {8A};\n\\fill[black!18, draw=black] (2.20,0) rectangle (3.00,1.20);\n\\node[above, font=\\scriptsize, fill=white, inner sep=1pt] at (2.60,1.24) {$10$};\n\\node[below, font=\\scriptsize, align=center] at (2.60,0) {8B};\n\\end{tikzpicture} & \\begin{tikzpicture}[line width=0.6pt, font=\\small]\n\\draw[-{Stealth[length=4pt]}] (0,0) -- (3.85,0);\n\\draw[-{Stealth[length=4pt]}] (0,0) -- (0,3.45);\n\\draw (-0.06,0.00) -- (0.06,0.00);\n\\node[left, font=\\scriptsize] at (0,0.00) {$9$};\n\\draw[black!22, dashed] (0,0.50) -- (3.70,0.50);\n\\draw (-0.06,0.50) -- (0.06,0.50);\n\\node[left, font=\\scriptsize] at (0,0.50) {$10$};\n\\draw[black!22, dashed] (0,1.00) -- (3.70,1.00);\n\\draw (-0.06,1.00) -- (0.06,1.00);\n\\node[left, font=\\scriptsize] at (0,1.00) {$11$};\n\\draw[black!22, dashed] (0,1.50) -- (3.70,1.50);\n\\draw (-0.06,1.50) -- (0.06,1.50);\n\\node[left, font=\\scriptsize] at (0,1.50) {$12$};\n\\draw[black!22, dashed] (0,2.00) -- (3.70,2.00);\n\\draw (-0.06,2.00) -- (0.06,2.00);\n\\node[left, font=\\scriptsize] at (0,2.00) {$13$};\n\\draw[black!22, dashed] (0,2.50) -- (3.70,2.50);\n\\draw (-0.06,2.50) -- (0.06,2.50);\n\\node[left, font=\\scriptsize] at (0,2.50) {$14$};\n\\draw[black!22, dashed] (0,3.00) -- (3.70,3.00);\n\\draw (-0.06,3.00) -- (0.06,3.00);\n\\node[left, font=\\scriptsize] at (0,3.00) {$15$};\n\\node[above right, font=\\scriptsize, align=left] at (0,3.45) {Học sinh};\n\\node[right, font=\\scriptsize] at (4.10,0) {Lớp};\n\\fill[black!18, draw=black] (0.70,0) rectangle (1.50,3.00);\n\\node[above, font=\\scriptsize, fill=white, inner sep=1pt] at (1.10,3.04) {$15$};\n\\node[below, font=\\scriptsize, align=center] at (1.10,0) {8A};\n\\fill[black!18, draw=black] (2.20,0) rectangle (3.00,0.50);\n\\node[above, font=\\scriptsize, fill=white, inner sep=1pt] at (2.60,0.54) {$10$};\n\\node[below, font=\\scriptsize, align=center] at (2.60,0) {8B};\n\\end{tikzpicture} \\\\ a) & b)\\end{tabular}}[[br]]\\par{\\footnotesize\\sffamily\\color{black!60}Hình 1}\\par}\\smallskip{}\\par{}{\\sffamily\\bfseries\\color{brand}Lời giải}[[br]]Gốc trục đứng của biểu đồ a) là $0$, của biểu đồ b) là $9$; mỗi vạch của biểu đồ b) ứng với $1$ học sinh.[[br]]Ở biểu đồ b), cột 8A cao [[fill:6]] vạch, cột 8B cao [[fill:1]] vạch nên cột 8A cao gấp sáu lần cột 8B.[[br]]Tỉ số hai số liệu là $\\dfrac{15}{10}=$ [[fill:1{,}5]].[[br]]Vậy ở biểu đồ b) tỉ lệ chiều cao hai cột [[fill:không bằng]] tỉ lệ hai số liệu, vì gốc trục đứng khác $0$."
+    },
+    {
+     "type": "problem",
+     "label": "Bài 1.",
+     "statement": "Biểu đồ cột ở Hình 2 cho biết điểm kiểm tra giữa học kì II các môn của bạn Hòa. Mỗi khẳng định sau đúng hay sai?[[br]]a) [NB] Vì gốc trục đứng là $2$ nên tỉ lệ chiều cao các cột không bằng tỉ lệ các điểm số.[[br]]b) [NB] Cột môn Toán cao gấp $1{,}4$ lần cột môn Văn nên điểm Toán gấp $1{,}4$ lần điểm Văn.[[br]]c) [NB] Hai cột cao bằng nhau thì hai điểm số bằng nhau.",
+     "level": 1,
+     "tier": "onclass",
+     "dang_id": "NB1",
+     "solution": "a) Đúng.[[br]]b) Sai, vì $9:7\\approx 1{,}29$ chứ không phải $1{,}4$.[[br]]c) Đúng.",
+     "figure": {
+      "tikz": "\\begin{tikzpicture}[line width=0.6pt, font=\\small]\n\\draw[-{Stealth[length=4pt]}] (0,0) -- (7.25,0);\n\\draw[-{Stealth[length=4pt]}] (0,0) -- (0,3.85);\n\\draw (-0.06,0.00) -- (0.06,0.00);\n\\node[left, font=\\scriptsize] at (0,0.00) {$2$};\n\\draw[black!22, dashed] (0,0.42) -- (7.10,0.42);\n\\draw (-0.06,0.42) -- (0.06,0.42);\n\\node[left, font=\\scriptsize] at (0,0.42) {$3$};\n\\draw[black!22, dashed] (0,0.85) -- (7.10,0.85);\n\\draw (-0.06,0.85) -- (0.06,0.85);\n\\node[left, font=\\scriptsize] at (0,0.85) {$4$};\n\\draw[black!22, dashed] (0,1.27) -- (7.10,1.27);\n\\draw (-0.06,1.27) -- (0.06,1.27);\n\\node[left, font=\\scriptsize] at (0,1.27) {$5$};\n\\draw[black!22, dashed] (0,1.70) -- (7.10,1.70);\n\\draw (-0.06,1.70) -- (0.06,1.70);\n\\node[left, font=\\scriptsize] at (0,1.70) {$6$};\n\\draw[black!22, dashed] (0,2.12) -- (7.10,2.12);\n\\draw (-0.06,2.12) -- (0.06,2.12);\n\\node[left, font=\\scriptsize] at (0,2.12) {$7$};\n\\draw[black!22, dashed] (0,2.55) -- (7.10,2.55);\n\\draw (-0.06,2.55) -- (0.06,2.55);\n\\node[left, font=\\scriptsize] at (0,2.55) {$8$};\n\\draw[black!22, dashed] (0,2.98) -- (7.10,2.98);\n\\draw (-0.06,2.98) -- (0.06,2.98);\n\\node[left, font=\\scriptsize] at (0,2.98) {$9$};\n\\draw[black!22, dashed] (0,3.40) -- (7.10,3.40);\n\\draw (-0.06,3.40) -- (0.06,3.40);\n\\node[left, font=\\scriptsize] at (0,3.40) {$10$};\n\\node[above right, font=\\scriptsize, align=left] at (0,3.85) {Điểm};\n\\node[right, font=\\scriptsize] at (7.50,0) {Môn};\n\\fill[black!18, draw=black] (0.50,0) rectangle (1.10,2.98);\n\\node[above, font=\\scriptsize, fill=white, inner sep=1pt] at (0.80,3.02) {$9$};\n\\node[below, font=\\scriptsize, align=center] at (0.80,0) {Toán};\n\\fill[black!18, draw=black] (1.60,0) rectangle (2.20,2.12);\n\\node[above, font=\\scriptsize, fill=white, inner sep=1pt] at (1.90,2.17) {$7$};\n\\node[below, font=\\scriptsize, align=center] at (1.90,0) {Văn};\n\\fill[black!18, draw=black] (2.70,0) rectangle (3.30,1.27);\n\\node[above, font=\\scriptsize, fill=white, inner sep=1pt] at (3.00,1.31) {$5$};\n\\node[below, font=\\scriptsize, align=center] at (3.00,0) {Anh};\n\\fill[black!18, draw=black] (3.80,0) rectangle (4.40,2.55);\n\\node[above, font=\\scriptsize, fill=white, inner sep=1pt] at (4.10,2.59) {$8$};\n\\node[below, font=\\scriptsize, align=center] at (4.10,0) {Lý};\n\\fill[black!18, draw=black] (4.90,0) rectangle (5.50,2.98);\n\\node[above, font=\\scriptsize, fill=white, inner sep=1pt] at (5.20,3.02) {$9$};\n\\node[below, font=\\scriptsize, align=center] at (5.20,0) {Hóa};\n\\fill[black!18, draw=black] (6.00,0) rectangle (6.60,2.98);\n\\node[above, font=\\scriptsize, fill=white, inner sep=1pt] at (6.30,3.02) {$9$};\n\\node[below, font=\\scriptsize, align=center] at (6.30,0) {Sinh};\n\\end{tikzpicture}",
+      "caption": "Hình 2",
+      "pos": "below"
+     }
+    },
+    {
+     "type": "problem",
+     "label": "Bài 2.",
+     "statement": "Với biểu đồ ở Hình 2:[[br]]a) [NB] Gốc của trục đứng là số nào?[[br]]b) [NB] Mỗi vạch chia trên trục đứng ứng với bao nhiêu điểm?[[br]]c) [NB] Bạn Hòa được mấy điểm môn Văn?",
+     "level": 1,
+     "tier": "onclass",
+     "dang_id": "NB3",
+     "solution": "a) Gốc trục đứng là $2$.[[br]]b) Mỗi vạch ứng với $1$ điểm.[[br]]c) $7$ điểm."
+    },
+    {
+     "type": "problem",
+     "label": "Bài 3.",
+     "statement": "Trục ngang của một biểu đồ đoạn thẳng ghi các năm: $2000$; $2010$; $2015$; $2020$; $2022$, các mốc được vẽ cách đều nhau.[[br]]a) [NB] Các mốc thời gian đó có cách đều nhau không?[[br]]b) [NB] Có được dựa vào độ dốc của các đoạn thẳng để so sánh tốc độ tăng, giảm giữa các giai đoạn không?[[br]]c) [NB] Dãy mốc nào sau đây cách đều: $2017$; $2018$; $2019$; $2020$ hay $2010$; $2014$; $2015$; $2017$?",
+     "level": 1,
+     "tier": "onclass",
+     "dang_id": "NB2",
+     "solution": "a) Không cách đều (cách nhau $10$; $5$; $5$; $2$ năm).[[br]]b) Không được.[[br]]c) Dãy $2017$; $2018$; $2019$; $2020$."
+    },
+    {
+     "type": "problem",
+     "label": "Bài 4.",
+     "statement": "Biểu đồ cột ở Hình 3 cho biết số máy cày của năm xã.[[br]]a) [NB] Xã nào có nhiều máy cày nhất?[[br]]b) [NB] Xã nào có ít máy cày nhất?[[br]]c) [NB] Hai xã nào có số máy cày bằng nhau?",
+     "level": 1,
+     "tier": "onclass",
+     "dang_id": "NB4",
+     "solution": "a) Xã B ($45$ máy).[[br]]b) Xã E ($15$ máy).[[br]]c) Xã A và xã D (cùng $20$ máy).",
+     "figure": {
+      "tikz": "\\begin{tikzpicture}[line width=0.6pt, font=\\small]\n\\draw[-{Stealth[length=4pt]}] (0,0) -- (6.75,0);\n\\draw[-{Stealth[length=4pt]}] (0,0) -- (0,3.85);\n\\draw (-0.06,0.00) -- (0.06,0.00);\n\\node[left, font=\\scriptsize] at (0,0.00) {$0$};\n\\draw[black!22, dashed] (0,0.68) -- (6.60,0.68);\n\\draw (-0.06,0.68) -- (0.06,0.68);\n\\node[left, font=\\scriptsize] at (0,0.68) {$10$};\n\\draw[black!22, dashed] (0,1.36) -- (6.60,1.36);\n\\draw (-0.06,1.36) -- (0.06,1.36);\n\\node[left, font=\\scriptsize] at (0,1.36) {$20$};\n\\draw[black!22, dashed] (0,2.04) -- (6.60,2.04);\n\\draw (-0.06,2.04) -- (0.06,2.04);\n\\node[left, font=\\scriptsize] at (0,2.04) {$30$};\n\\draw[black!22, dashed] (0,2.72) -- (6.60,2.72);\n\\draw (-0.06,2.72) -- (0.06,2.72);\n\\node[left, font=\\scriptsize] at (0,2.72) {$40$};\n\\draw[black!22, dashed] (0,3.40) -- (6.60,3.40);\n\\draw (-0.06,3.40) -- (0.06,3.40);\n\\node[left, font=\\scriptsize] at (0,3.40) {$50$};\n\\node[above right, font=\\scriptsize, align=left] at (0,3.85) {Số máy cày};\n\\node[right, font=\\scriptsize] at (7.00,0) {Xã};\n\\fill[black!18, draw=black] (0.60,0) rectangle (1.20,1.36);\n\\node[above, font=\\scriptsize, fill=white, inner sep=1pt] at (0.90,1.40) {$20$};\n\\node[below, font=\\scriptsize, align=center] at (0.90,0) {Xã A};\n\\fill[black!18, draw=black] (1.80,0) rectangle (2.40,3.06);\n\\node[above, font=\\scriptsize, fill=white, inner sep=1pt] at (2.10,3.10) {$45$};\n\\node[below, font=\\scriptsize, align=center] at (2.10,0) {Xã B};\n\\fill[black!18, draw=black] (3.00,0) rectangle (3.60,1.70);\n\\node[above, font=\\scriptsize, fill=white, inner sep=1pt] at (3.30,1.74) {$25$};\n\\node[below, font=\\scriptsize, align=center] at (3.30,0) {Xã C};\n\\fill[black!18, draw=black] (4.20,0) rectangle (4.80,1.36);\n\\node[above, font=\\scriptsize, fill=white, inner sep=1pt] at (4.50,1.40) {$20$};\n\\node[below, font=\\scriptsize, align=center] at (4.50,0) {Xã D};\n\\fill[black!18, draw=black] (5.40,0) rectangle (6.00,1.02);\n\\node[above, font=\\scriptsize, fill=white, inner sep=1pt] at (5.70,1.06) {$15$};\n\\node[below, font=\\scriptsize, align=center] at (5.70,0) {Xã E};\n\\end{tikzpicture}",
+      "caption": "Hình 3",
+      "pos": "below"
+     }
+    },
+    {
+     "type": "noted",
+     "variant": "example",
+     "text": "\\textbf{Ví dụ 2.} Một người dùng ứng dụng đếm bước chân trên điện thoại và thấy biểu đồ ở Hình 4. Điền số thích hợp vào câu khuyến cáo của ứng dụng: \\emph{“Bạn đi ít hơn \\ldots bước so với trung bình của những người dùng cùng độ tuổi với bạn”}.[[br]]{\\sffamily\\bfseries\\color{brand}Lời giải}[[br]]Cột thứ nhất cho số bước trung bình mỗi ngày của người đó, cột thứ hai cho số bước của những người cùng độ tuổi.[[br]]Ta có [[fill:5\\,285|1.3cm]] $-$ [[fill:3\\,455|1.3cm]] $=$ [[fill:1\\,830|1.3cm]].[[br]]Vậy người đó đi ít hơn [[fill:1\\,830|1.5cm]] bước so với trung bình của những người cùng độ tuổi.",
+     "figure": {
+      "tikz": "\\begin{tikzpicture}[line width=0.6pt, font=\\small]\n\\draw[-{Stealth[length=4pt]}] (0,0) -- (6.85,0);\n\\draw[-{Stealth[length=4pt]}] (0,0) -- (0,3.85);\n\\draw (-0.06,0.00) -- (0.06,0.00);\n\\node[left, font=\\scriptsize] at (0,0.00) {$0$};\n\\draw[black!22, dashed] (0,0.57) -- (6.70,0.57);\n\\draw (-0.06,0.57) -- (0.06,0.57);\n\\node[left, font=\\scriptsize] at (0,0.57) {$1000$};\n\\draw[black!22, dashed] (0,1.13) -- (6.70,1.13);\n\\draw (-0.06,1.13) -- (0.06,1.13);\n\\node[left, font=\\scriptsize] at (0,1.13) {$2000$};\n\\draw[black!22, dashed] (0,1.70) -- (6.70,1.70);\n\\draw (-0.06,1.70) -- (0.06,1.70);\n\\node[left, font=\\scriptsize] at (0,1.70) {$3000$};\n\\draw[black!22, dashed] (0,2.27) -- (6.70,2.27);\n\\draw (-0.06,2.27) -- (0.06,2.27);\n\\node[left, font=\\scriptsize] at (0,2.27) {$4000$};\n\\draw[black!22, dashed] (0,2.83) -- (6.70,2.83);\n\\draw (-0.06,2.83) -- (0.06,2.83);\n\\node[left, font=\\scriptsize] at (0,2.83) {$5000$};\n\\draw[black!22, dashed] (0,3.40) -- (6.70,3.40);\n\\draw (-0.06,3.40) -- (0.06,3.40);\n\\node[left, font=\\scriptsize] at (0,3.40) {$6000$};\n\\node[above right, font=\\scriptsize, align=left] at (0,3.85) {Số bước};\n\\node[right, font=\\scriptsize] at (7.10,0) {};\n\\fill[black!18, draw=black] (1.00,0) rectangle (1.90,1.96);\n\\node[above, font=\\scriptsize, fill=white, inner sep=1pt] at (1.45,2.00) {$3455$};\n\\node[below, font=\\scriptsize, align=center] at (1.45,0) {Cá nhân\\\\người dùng};\n\\fill[black!18, draw=black] (2.90,0) rectangle (3.80,2.99);\n\\node[above, font=\\scriptsize, fill=white, inner sep=1pt] at (3.35,3.03) {$5285$};\n\\node[below, font=\\scriptsize, align=center] at (3.35,0) {Người dùng\\\\cùng độ tuổi};\n\\fill[black!18, draw=black] (4.80,0) rectangle (5.70,2.49);\n\\node[above, font=\\scriptsize, fill=white, inner sep=1pt] at (5.25,2.53) {$4399$};\n\\node[below, font=\\scriptsize, align=center] at (5.25,0) {Tất cả\\\\người dùng};\n\\end{tikzpicture}",
+      "caption": "Hình 4",
+      "pos": "below"
+     }
+    },
+    {
+     "type": "problem",
+     "label": "Bài 5.",
+     "statement": "[NB] Biểu đồ đoạn thẳng ở Hình 5 cho biết số máy điều hòa nhiệt độ và máy sưởi một cửa hàng bán được trong $6$ tháng đầu năm. Trong tháng 6, cửa hàng đó bán được",
+     "level": 1,
+     "tier": "onclass",
+     "dang_id": "NB5",
+     "solution": "B. Máy sưởi ít hơn máy điều hòa nhiệt độ $97$ chiếc ($100-3=97$).",
+     "figure": {
+      "tikz": "\\begin{tikzpicture}[line width=0.6pt, font=\\small]\n\\draw[-{Stealth[length=4pt]}] (0,0) -- (6.23,0);\n\\draw[-{Stealth[length=4pt]}] (0,0) -- (0,3.85);\n\\draw (-0.06,0.00) -- (0.06,0.00);\n\\node[left, font=\\scriptsize] at (0,0.00) {$0$};\n\\draw[black!22, dashed] (0,0.57) -- (6.08,0.57);\n\\draw (-0.06,0.57) -- (0.06,0.57);\n\\node[left, font=\\scriptsize] at (0,0.57) {$20$};\n\\draw[black!22, dashed] (0,1.13) -- (6.08,1.13);\n\\draw (-0.06,1.13) -- (0.06,1.13);\n\\node[left, font=\\scriptsize] at (0,1.13) {$40$};\n\\draw[black!22, dashed] (0,1.70) -- (6.08,1.70);\n\\draw (-0.06,1.70) -- (0.06,1.70);\n\\node[left, font=\\scriptsize] at (0,1.70) {$60$};\n\\draw[black!22, dashed] (0,2.27) -- (6.08,2.27);\n\\draw (-0.06,2.27) -- (0.06,2.27);\n\\node[left, font=\\scriptsize] at (0,2.27) {$80$};\n\\draw[black!22, dashed] (0,2.83) -- (6.08,2.83);\n\\draw (-0.06,2.83) -- (0.06,2.83);\n\\node[left, font=\\scriptsize] at (0,2.83) {$100$};\n\\draw[black!22, dashed] (0,3.40) -- (6.08,3.40);\n\\draw (-0.06,3.40) -- (0.06,3.40);\n\\node[left, font=\\scriptsize] at (0,3.40) {$120$};\n\\node[above right, font=\\scriptsize, align=left] at (0,3.85) {Số lượng\\\\(chiếc)};\n\\node[right, font=\\scriptsize] at (6.48,0) {Tháng};\n\\draw[solid, line width=0.9pt] (0.57,0.26) -- (1.52,0.14) -- (2.47,0.99) -- (3.42,2.04) -- (4.37,2.55) -- (5.32,2.83);\n\\fill (0.57,0.26) circle (1.6pt);\n\\node[above right=2pt, font=\\scriptsize, fill=white, inner sep=1pt] at (0.57,0.26) {$9$};\n\\fill (1.52,0.14) circle (1.6pt);\n\\node[above left=2pt, font=\\scriptsize, fill=white, inner sep=1pt] at (1.52,0.14) {$5$};\n\\fill (2.47,0.99) circle (1.6pt);\n\\node[above=2pt, font=\\scriptsize, fill=white, inner sep=1pt] at (2.47,0.99) {$35$};\n\\fill (3.42,2.04) circle (1.6pt);\n\\node[above=2pt, font=\\scriptsize, fill=white, inner sep=1pt] at (3.42,2.04) {$72$};\n\\fill (4.37,2.55) circle (1.6pt);\n\\node[above=2pt, font=\\scriptsize, fill=white, inner sep=1pt] at (4.37,2.55) {$90$};\n\\fill (5.32,2.83) circle (1.6pt);\n\\node[above=2pt, font=\\scriptsize, fill=white, inner sep=1pt] at (5.32,2.83) {$100$};\n\\draw[dashed, line width=0.9pt] (0.57,2.72) -- (1.52,1.98) -- (2.47,1.33) -- (3.42,0.42) -- (4.37,0.14) -- (5.32,0.09);\n\\fill[white, draw=black] (0.57,2.72) circle (1.7pt);\n\\node[above=2pt, font=\\scriptsize, fill=white, inner sep=1pt] at (0.57,2.72) {$96$};\n\\fill[white, draw=black] (1.52,1.98) circle (1.7pt);\n\\node[below=2pt, font=\\scriptsize, fill=white, inner sep=1pt] at (1.52,1.98) {$70$};\n\\fill[white, draw=black] (2.47,1.33) circle (1.7pt);\n\\node[below=2pt, font=\\scriptsize, fill=white, inner sep=1pt] at (2.47,1.33) {$47$};\n\\fill[white, draw=black] (3.42,0.42) circle (1.7pt);\n\\node[below=2pt, font=\\scriptsize, fill=white, inner sep=1pt] at (3.42,0.42) {$15$};\n\\fill[white, draw=black] (4.37,0.14) circle (1.7pt);\n\\node[above right=2pt, font=\\scriptsize, fill=white, inner sep=1pt] at (4.37,0.14) {$5$};\n\\fill[white, draw=black] (5.32,0.09) circle (1.7pt);\n\\node[above right=2pt, font=\\scriptsize, fill=white, inner sep=1pt] at (5.32,0.09) {$3$};\n\\node[below, font=\\scriptsize, align=center] at (0.57,0) {1};\n\\node[below, font=\\scriptsize, align=center] at (1.52,0) {2};\n\\node[below, font=\\scriptsize, align=center] at (2.47,0) {3};\n\\node[below, font=\\scriptsize, align=center] at (3.42,0) {4};\n\\node[below, font=\\scriptsize, align=center] at (4.37,0) {5};\n\\node[below, font=\\scriptsize, align=center] at (5.32,0) {6};\n\\draw[solid, line width=0.9pt] (0.40,-0.95) -- (1.10,-0.95);\n\\fill (0.75,-0.95) circle (1.6pt);\n\\node[right, font=\\scriptsize] at (1.15,-0.95) {Máy điều hòa nhiệt độ};\n\\draw[dashed, line width=0.9pt] (4.92,-0.95) -- (5.62,-0.95);\n\\fill[white, draw=black] (5.27,-0.95) circle (1.7pt);\n\\node[right, font=\\scriptsize] at (5.67,-0.95) {Máy sưởi};\n\\end{tikzpicture}",
+      "caption": "Hình 5",
+      "pos": "below"
+     },
+     "options": [
+      "Máy sưởi nhiều hơn máy điều hòa nhiệt độ $97$ chiếc.",
+      "Máy sưởi ít hơn máy điều hòa nhiệt độ $97$ chiếc.",
+      "Máy sưởi nhiều hơn máy điều hòa nhiệt độ $98$ chiếc.",
+      "Máy sưởi ít hơn máy điều hòa nhiệt độ $98$ chiếc."
+     ]
+    },
+    {
+     "type": "problem",
+     "label": "Bài 6.",
+     "statement": "Điền vào chỗ chấm.[[br]]a) [NB] Ở Hình 3, xã B có nhiều hơn xã E [[blank:1.4cm]] máy cày.[[br]]b) [NB] Ở Hình 2, điểm Toán của bạn Hòa cao hơn điểm Anh [[blank:1.4cm]] điểm.",
+     "level": 1,
+     "tier": "onclass",
+     "dang_id": "NB5",
+     "solution": "a) $45-15=30$ máy cày.[[br]]b) $9-5=4$ điểm."
+    },
+    {
+     "type": "problem",
+     "label": "Bài 7.",
+     "statement": "Tính tổng các số liệu sau.[[br]]a) [NB] Tổng số máy cày của năm xã ở Hình 3.[[br]]b) [NB] Tổng số máy điều hòa nhiệt độ cửa hàng bán được trong $6$ tháng ở Hình 5.[[br]]c) [NB] Tổng số máy sưởi cửa hàng bán được trong quý I (tháng 1, 2, 3) ở Hình 5.",
+     "level": 1,
+     "tier": "onclass",
+     "dang_id": "NB6",
+     "solution": "a) $20+45+25+20+15=125$ máy.[[br]]b) $9+5+35+72+90+100=311$ chiếc.[[br]]c) $96+70+47=213$ chiếc."
+    },
+    {
+     "type": "noted",
+     "variant": "example",
+     "text": "\\textbf{Ví dụ 3.} Biểu đồ ở Hình 6 cho biết thời gian ngủ cần thiết trung bình trong một ngày theo độ tuổi. Nêu xu thế của thời gian ngủ khi độ tuổi tăng lên.[[br]]{\\sffamily\\bfseries\\color{brand}Lời giải}[[br]]Đọc lần lượt từ trái sang phải: $15{,}5$; $13{,}5$; $11{,}5$; $10{,}5$; $9$; $8$; $7{,}5$ giờ.[[br]]Các số liệu này [[fill:giảm dần]] khi độ tuổi tăng.[[br]]Vậy độ tuổi càng tăng thì thời gian ngủ cần thiết trung bình càng [[fill:giảm]].",
+     "figure": {
+      "tikz": "\\begin{tikzpicture}[line width=0.6pt, font=\\small]\n\\draw[-{Stealth[length=4pt]}] (0,0) -- (7.36,0);\n\\draw[-{Stealth[length=4pt]}] (0,0) -- (0,3.85);\n\\draw (-0.06,0.00) -- (0.06,0.00);\n\\node[left, font=\\scriptsize] at (0,0.00) {$0$};\n\\draw[black!22, dashed] (0,0.85) -- (7.21,0.85);\n\\draw (-0.06,0.85) -- (0.06,0.85);\n\\node[left, font=\\scriptsize] at (0,0.85) {$5$};\n\\draw[black!22, dashed] (0,1.70) -- (7.21,1.70);\n\\draw (-0.06,1.70) -- (0.06,1.70);\n\\node[left, font=\\scriptsize] at (0,1.70) {$10$};\n\\draw[black!22, dashed] (0,2.55) -- (7.21,2.55);\n\\draw (-0.06,2.55) -- (0.06,2.55);\n\\node[left, font=\\scriptsize] at (0,2.55) {$15$};\n\\draw[black!22, dashed] (0,3.40) -- (7.21,3.40);\n\\draw (-0.06,3.40) -- (0.06,3.40);\n\\node[left, font=\\scriptsize] at (0,3.40) {$20$};\n\\node[above right, font=\\scriptsize, align=left] at (0,3.85) {Thời gian\\\\(giờ)};\n\\node[right, font=\\scriptsize] at (7.61,0) {};\n\\fill[black!18, draw=black] (0.42,0) rectangle (0.97,2.63);\n\\node[above, font=\\scriptsize, fill=white, inner sep=1pt] at (0.70,2.67) {$15{,}5$};\n\\node[below, font=\\scriptsize, align=center] at (0.70,0) {0--3\\\\tháng};\n\\fill[black!18, draw=black] (1.39,0) rectangle (1.94,2.29);\n\\node[above, font=\\scriptsize, fill=white, inner sep=1pt] at (1.67,2.33) {$13{,}5$};\n\\node[below, font=\\scriptsize, align=center] at (1.67,0) {4--24\\\\tháng};\n\\fill[black!18, draw=black] (2.36,0) rectangle (2.91,1.95);\n\\node[above, font=\\scriptsize, fill=white, inner sep=1pt] at (2.63,1.99) {$11{,}5$};\n\\node[below, font=\\scriptsize, align=center] at (2.63,0) {3--5\\\\tuổi};\n\\fill[black!18, draw=black] (3.33,0) rectangle (3.88,1.78);\n\\node[above, font=\\scriptsize, fill=white, inner sep=1pt] at (3.60,1.82) {$10{,}5$};\n\\node[below, font=\\scriptsize, align=center] at (3.60,0) {6--13\\\\tuổi};\n\\fill[black!18, draw=black] (4.30,0) rectangle (4.85,1.53);\n\\node[above, font=\\scriptsize, fill=white, inner sep=1pt] at (4.58,1.57) {$9$};\n\\node[below, font=\\scriptsize, align=center] at (4.58,0) {14--17\\\\tuổi};\n\\fill[black!18, draw=black] (5.27,0) rectangle (5.82,1.36);\n\\node[above, font=\\scriptsize, fill=white, inner sep=1pt] at (5.54,1.40) {$8$};\n\\node[below, font=\\scriptsize, align=center] at (5.54,0) {18--64\\\\tuổi};\n\\fill[black!18, draw=black] (6.24,0) rectangle (6.79,1.27);\n\\node[above, font=\\scriptsize, fill=white, inner sep=1pt] at (6.51,1.31) {$7{,}5$};\n\\node[below, font=\\scriptsize, align=center] at (6.51,0) {trên 64\\\\tuổi};\n\\end{tikzpicture}",
+      "caption": "Hình 6",
+      "pos": "below"
+     }
+    },
+    {
+     "type": "problem",
+     "label": "Bài 8.",
+     "statement": "Biểu đồ ở Hình 7 cho biết tỉ lệ diện tích đất rừng trên tổng diện tích đất của Việt Nam và Indonesia.[[br]]a) [NB] Nêu xu thế tăng, giảm của tỉ lệ này ở Việt Nam.[[br]]b) [NB] Nêu xu thế tăng, giảm của tỉ lệ này ở Indonesia.",
+     "level": 1,
+     "tier": "onclass",
+     "dang_id": "NB7",
+     "solution": "a) Việt Nam: tăng dần (từ $44{,}5\\%$ lên $46{,}5\\%$).[[br]]b) Indonesia: giảm dần (từ $53{,}5\\%$ xuống $50\\%$).",
+     "figure": {
+      "tikz": "\\begin{tikzpicture}[line width=0.6pt, font=\\small]\n\\draw[-{Stealth[length=4pt]}] (0,0) -- (6.36,0);\n\\draw[-{Stealth[length=4pt]}] (0,0) -- (0,3.85);\n\\draw (-0.06,0.00) -- (0.06,0.00);\n\\node[left, font=\\scriptsize] at (0,0.00) {$40$};\n\\draw[black!22, dashed] (0,0.42) -- (6.21,0.42);\n\\draw (-0.06,0.42) -- (0.06,0.42);\n\\node[left, font=\\scriptsize] at (0,0.42) {$42$};\n\\draw[black!22, dashed] (0,0.85) -- (6.21,0.85);\n\\draw (-0.06,0.85) -- (0.06,0.85);\n\\node[left, font=\\scriptsize] at (0,0.85) {$44$};\n\\draw[black!22, dashed] (0,1.27) -- (6.21,1.27);\n\\draw (-0.06,1.27) -- (0.06,1.27);\n\\node[left, font=\\scriptsize] at (0,1.27) {$46$};\n\\draw[black!22, dashed] (0,1.70) -- (6.21,1.70);\n\\draw (-0.06,1.70) -- (0.06,1.70);\n\\node[left, font=\\scriptsize] at (0,1.70) {$48$};\n\\draw[black!22, dashed] (0,2.12) -- (6.21,2.12);\n\\draw (-0.06,2.12) -- (0.06,2.12);\n\\node[left, font=\\scriptsize] at (0,2.12) {$50$};\n\\draw[black!22, dashed] (0,2.55) -- (6.21,2.55);\n\\draw (-0.06,2.55) -- (0.06,2.55);\n\\node[left, font=\\scriptsize] at (0,2.55) {$52$};\n\\draw[black!22, dashed] (0,2.98) -- (6.21,2.98);\n\\draw (-0.06,2.98) -- (0.06,2.98);\n\\node[left, font=\\scriptsize] at (0,2.98) {$54$};\n\\draw[black!22, dashed] (0,3.40) -- (6.21,3.40);\n\\draw (-0.06,3.40) -- (0.06,3.40);\n\\node[left, font=\\scriptsize] at (0,3.40) {$56$};\n\\node[above right, font=\\scriptsize, align=left] at (0,3.85) {Tỉ lệ (\\%)};\n\\node[right, font=\\scriptsize] at (6.61,0) {Năm};\n\\draw[solid, line width=0.9pt] (0.69,0.96) -- (1.84,1.04) -- (2.99,1.15) -- (4.14,1.36) -- (5.29,1.38);\n\\fill (0.69,0.96) circle (1.6pt);\n\\node[below=2pt, font=\\scriptsize, fill=white, inner sep=1pt] at (0.69,0.96) {$44{,}5$};\n\\fill (1.84,1.04) circle (1.6pt);\n\\node[below=2pt, font=\\scriptsize, fill=white, inner sep=1pt] at (1.84,1.04) {$44{,}9$};\n\\fill (2.99,1.15) circle (1.6pt);\n\\node[below=2pt, font=\\scriptsize, fill=white, inner sep=1pt] at (2.99,1.15) {$45{,}4$};\n\\fill (4.14,1.36) circle (1.6pt);\n\\node[below=2pt, font=\\scriptsize, fill=white, inner sep=1pt] at (4.14,1.36) {$46{,}4$};\n\\fill (5.29,1.38) circle (1.6pt);\n\\node[above=2pt, font=\\scriptsize, fill=white, inner sep=1pt] at (5.29,1.38) {$46{,}5$};\n\\draw[dashed, line width=0.9pt] (0.69,2.87) -- (1.84,2.76) -- (2.99,2.66) -- (4.14,2.27) -- (5.29,2.12);\n\\fill[white, draw=black] (0.69,2.87) circle (1.7pt);\n\\node[above=2pt, font=\\scriptsize, fill=white, inner sep=1pt] at (0.69,2.87) {$53{,}5$};\n\\fill[white, draw=black] (1.84,2.76) circle (1.7pt);\n\\node[above=2pt, font=\\scriptsize, fill=white, inner sep=1pt] at (1.84,2.76) {$53$};\n\\fill[white, draw=black] (2.99,2.66) circle (1.7pt);\n\\node[above=2pt, font=\\scriptsize, fill=white, inner sep=1pt] at (2.99,2.66) {$52{,}5$};\n\\fill[white, draw=black] (4.14,2.27) circle (1.7pt);\n\\node[above=2pt, font=\\scriptsize, fill=white, inner sep=1pt] at (4.14,2.27) {$50{,}7$};\n\\fill[white, draw=black] (5.29,2.12) circle (1.7pt);\n\\node[below=2pt, font=\\scriptsize, fill=white, inner sep=1pt] at (5.29,2.12) {$50$};\n\\node[below, font=\\scriptsize, align=center] at (0.69,0) {2013};\n\\node[below, font=\\scriptsize, align=center] at (1.84,0) {2014};\n\\node[below, font=\\scriptsize, align=center] at (2.99,0) {2015};\n\\node[below, font=\\scriptsize, align=center] at (4.14,0) {2016};\n\\node[below, font=\\scriptsize, align=center] at (5.29,0) {2017};\n\\draw[solid, line width=0.9pt] (0.40,-0.95) -- (1.10,-0.95);\n\\fill (0.75,-0.95) circle (1.6pt);\n\\node[right, font=\\scriptsize] at (1.15,-0.95) {Việt Nam};\n\\draw[dashed, line width=0.9pt] (2.71,-0.95) -- (3.41,-0.95);\n\\fill[white, draw=black] (3.06,-0.95) circle (1.7pt);\n\\node[right, font=\\scriptsize] at (3.46,-0.95) {Indonesia};\n\\end{tikzpicture}",
+      "caption": "Hình 7",
+      "pos": "below"
+     }
+    },
+    {
+     "type": "problem",
+     "label": "Bài 9.",
+     "statement": "[NB] Biểu đồ cột kép ở Hình 8 cho biết thị phần xuất khẩu gạo của Việt Nam và Thái Lan. Nêu xu thế thị phần xuất khẩu gạo của Thái Lan trong các năm từ 2017 đến 2020.",
+     "level": 1,
+     "tier": "onclass",
+     "dang_id": "NB7",
+     "solution": "Giảm dần: $24\\%$; $23\\%$; $17\\%$; $12\\%$.",
+     "figure": {
+      "tikz": "\\begin{tikzpicture}[line width=0.6pt, font=\\small]\n\\draw[-{Stealth[length=4pt]}] (0,0) -- (7.55,0);\n\\draw[-{Stealth[length=4pt]}] (0,0) -- (0,3.85);\n\\draw (-0.06,0.00) -- (0.06,0.00);\n\\node[left, font=\\scriptsize] at (0,0.00) {$0$};\n\\draw[black!22, dashed] (0,0.57) -- (7.40,0.57);\n\\draw (-0.06,0.57) -- (0.06,0.57);\n\\node[left, font=\\scriptsize] at (0,0.57) {$5$};\n\\draw[black!22, dashed] (0,1.13) -- (7.40,1.13);\n\\draw (-0.06,1.13) -- (0.06,1.13);\n\\node[left, font=\\scriptsize] at (0,1.13) {$10$};\n\\draw[black!22, dashed] (0,1.70) -- (7.40,1.70);\n\\draw (-0.06,1.70) -- (0.06,1.70);\n\\node[left, font=\\scriptsize] at (0,1.70) {$15$};\n\\draw[black!22, dashed] (0,2.27) -- (7.40,2.27);\n\\draw (-0.06,2.27) -- (0.06,2.27);\n\\node[left, font=\\scriptsize] at (0,2.27) {$20$};\n\\draw[black!22, dashed] (0,2.83) -- (7.40,2.83);\n\\draw (-0.06,2.83) -- (0.06,2.83);\n\\node[left, font=\\scriptsize] at (0,2.83) {$25$};\n\\draw[black!22, dashed] (0,3.40) -- (7.40,3.40);\n\\draw (-0.06,3.40) -- (0.06,3.40);\n\\node[left, font=\\scriptsize] at (0,3.40) {$30$};\n\\node[above right, font=\\scriptsize, align=left] at (0,3.85) {Thị phần (\\%)};\n\\node[right, font=\\scriptsize] at (7.80,0) {Năm};\n\\fill[black!12, draw=black] (0.68,0) rectangle (1.18,1.36);\n\\node[above, font=\\scriptsize, fill=white, inner sep=1pt] at (0.93,1.40) {$12$};\n\\fill[black!60, draw=black] (1.18,0) rectangle (1.68,2.72);\n\\node[above, font=\\scriptsize, fill=white, inner sep=1pt] at (1.43,2.76) {$24$};\n\\node[below, font=\\scriptsize, align=center] at (1.18,0) {2017};\n\\fill[black!12, draw=black] (2.36,0) rectangle (2.86,1.47);\n\\node[above, font=\\scriptsize, fill=white, inner sep=1pt] at (2.61,1.51) {$13$};\n\\fill[black!60, draw=black] (2.86,0) rectangle (3.36,2.61);\n\\node[above, font=\\scriptsize, fill=white, inner sep=1pt] at (3.11,2.65) {$23$};\n\\node[below, font=\\scriptsize, align=center] at (2.86,0) {2018};\n\\fill[black!12, draw=black] (4.04,0) rectangle (4.54,1.70);\n\\node[above, font=\\scriptsize, fill=white, inner sep=1pt] at (4.29,1.74) {$15$};\n\\fill[black!60, draw=black] (4.54,0) rectangle (5.04,1.93);\n\\node[above, font=\\scriptsize, fill=white, inner sep=1pt] at (4.79,1.97) {$17$};\n\\node[below, font=\\scriptsize, align=center] at (4.54,0) {2019};\n\\fill[black!12, draw=black] (5.72,0) rectangle (6.22,1.59);\n\\node[above, font=\\scriptsize, fill=white, inner sep=1pt] at (5.97,1.63) {$14$};\n\\fill[black!60, draw=black] (6.22,0) rectangle (6.72,1.36);\n\\node[above, font=\\scriptsize, fill=white, inner sep=1pt] at (6.47,1.40) {$12$};\n\\node[below, font=\\scriptsize, align=center] at (6.22,0) {2020};\n\\fill[black!12, draw=black] (5.00,4.35) rectangle ++(0.28,0.2);\n\\node[right, font=\\scriptsize] at (5.30,4.45) {Việt Nam};\n\\fill[black!60, draw=black] (5.00,4.00) rectangle ++(0.28,0.2);\n\\node[right, font=\\scriptsize] at (5.30,4.10) {Thái Lan};\n\\end{tikzpicture}",
+      "caption": "Hình 8",
+      "pos": "below"
+     }
+    },
+    {
+     "type": "problem",
+     "label": "Bài 10.",
+     "statement": "Biểu đồ ở Hình 9 cho biết nhiệt độ cao nhất trong ngày tại Thành phố Hồ Chí Minh và Hà Nội.[[br]]a) [NB] Ngày nào nhiệt độ chênh lệch giữa hai thành phố nhiều nhất?[[br]]b) [NB] Ngày nào nhiệt độ chênh lệch giữa hai thành phố ít nhất?[[br]]c) [NB] Ở Hình 7, năm nào tỉ lệ đất rừng của hai nước chênh lệch ít nhất?",
+     "level": 1,
+     "tier": "onclass",
+     "dang_id": "NB8",
+     "solution": "a) Ngày 18/02 ($30-20=10^\\circ$C).[[br]]b) Ngày 21/02 và 22/02 (cùng chênh $5^\\circ$C).[[br]]c) Năm 2017 ($50-46{,}5=3{,}5\\%$).",
+     "figure": {
+      "tikz": "\\begin{tikzpicture}[line width=0.6pt, font=\\small]\n\\draw[-{Stealth[length=4pt]}] (0,0) -- (7.18,0);\n\\draw[-{Stealth[length=4pt]}] (0,0) -- (0,3.85);\n\\draw (-0.06,0.00) -- (0.06,0.00);\n\\node[left, font=\\scriptsize] at (0,0.00) {$0$};\n\\draw[black!22, dashed] (0,0.49) -- (7.03,0.49);\n\\draw (-0.06,0.49) -- (0.06,0.49);\n\\node[left, font=\\scriptsize] at (0,0.49) {$5$};\n\\draw[black!22, dashed] (0,0.97) -- (7.03,0.97);\n\\draw (-0.06,0.97) -- (0.06,0.97);\n\\node[left, font=\\scriptsize] at (0,0.97) {$10$};\n\\draw[black!22, dashed] (0,1.46) -- (7.03,1.46);\n\\draw (-0.06,1.46) -- (0.06,1.46);\n\\node[left, font=\\scriptsize] at (0,1.46) {$15$};\n\\draw[black!22, dashed] (0,1.94) -- (7.03,1.94);\n\\draw (-0.06,1.94) -- (0.06,1.94);\n\\node[left, font=\\scriptsize] at (0,1.94) {$20$};\n\\draw[black!22, dashed] (0,2.43) -- (7.03,2.43);\n\\draw (-0.06,2.43) -- (0.06,2.43);\n\\node[left, font=\\scriptsize] at (0,2.43) {$25$};\n\\draw[black!22, dashed] (0,2.91) -- (7.03,2.91);\n\\draw (-0.06,2.91) -- (0.06,2.91);\n\\node[left, font=\\scriptsize] at (0,2.91) {$30$};\n\\draw[black!22, dashed] (0,3.40) -- (7.03,3.40);\n\\draw (-0.06,3.40) -- (0.06,3.40);\n\\node[left, font=\\scriptsize] at (0,3.40) {$35$};\n\\node[above right, font=\\scriptsize, align=left] at (0,3.85) {Nhiệt độ\\\\($^\\circ$C)};\n\\node[right, font=\\scriptsize] at (7.43,0) {Ngày};\n\\draw[solid, line width=0.9pt] (0.57,2.91) -- (1.52,3.01) -- (2.47,3.01) -- (3.42,2.91) -- (4.37,3.01) -- (5.32,3.01) -- (6.27,3.11);\n\\fill (0.57,2.91) circle (1.6pt);\n\\node[below=2pt, font=\\scriptsize, fill=white, inner sep=1pt] at (0.57,2.91) {$30$};\n\\fill (1.52,3.01) circle (1.6pt);\n\\node[above=2pt, font=\\scriptsize, fill=white, inner sep=1pt] at (1.52,3.01) {$31$};\n\\fill (2.47,3.01) circle (1.6pt);\n\\node[above=2pt, font=\\scriptsize, fill=white, inner sep=1pt] at (2.47,3.01) {$31$};\n\\fill (3.42,2.91) circle (1.6pt);\n\\node[below=2pt, font=\\scriptsize, fill=white, inner sep=1pt] at (3.42,2.91) {$30$};\n\\fill (4.37,3.01) circle (1.6pt);\n\\node[above=2pt, font=\\scriptsize, fill=white, inner sep=1pt] at (4.37,3.01) {$31$};\n\\fill (5.32,3.01) circle (1.6pt);\n\\node[below=2pt, font=\\scriptsize, fill=white, inner sep=1pt] at (5.32,3.01) {$31$};\n\\fill (6.27,3.11) circle (1.6pt);\n\\node[above=2pt, font=\\scriptsize, fill=white, inner sep=1pt] at (6.27,3.11) {$32$};\n\\draw[dashed, line width=0.9pt] (0.57,1.94) -- (1.52,2.23) -- (2.47,2.43) -- (3.42,2.43) -- (4.37,2.53) -- (5.32,2.43) -- (6.27,2.43);\n\\fill[white, draw=black] (0.57,1.94) circle (1.7pt);\n\\node[below=2pt, font=\\scriptsize, fill=white, inner sep=1pt] at (0.57,1.94) {$20$};\n\\fill[white, draw=black] (1.52,2.23) circle (1.7pt);\n\\node[below=2pt, font=\\scriptsize, fill=white, inner sep=1pt] at (1.52,2.23) {$23$};\n\\fill[white, draw=black] (2.47,2.43) circle (1.7pt);\n\\node[above=2pt, font=\\scriptsize, fill=white, inner sep=1pt] at (2.47,2.43) {$25$};\n\\fill[white, draw=black] (3.42,2.43) circle (1.7pt);\n\\node[below=2pt, font=\\scriptsize, fill=white, inner sep=1pt] at (3.42,2.43) {$25$};\n\\fill[white, draw=black] (4.37,2.53) circle (1.7pt);\n\\node[above=2pt, font=\\scriptsize, fill=white, inner sep=1pt] at (4.37,2.53) {$26$};\n\\fill[white, draw=black] (5.32,2.43) circle (1.7pt);\n\\node[below=2pt, font=\\scriptsize, fill=white, inner sep=1pt] at (5.32,2.43) {$25$};\n\\fill[white, draw=black] (6.27,2.43) circle (1.7pt);\n\\node[below=2pt, font=\\scriptsize, fill=white, inner sep=1pt] at (6.27,2.43) {$25$};\n\\node[below, font=\\scriptsize, align=center] at (0.57,0) {18/02};\n\\node[below, font=\\scriptsize, align=center] at (1.52,0) {19/02};\n\\node[below, font=\\scriptsize, align=center] at (2.47,0) {20/02};\n\\node[below, font=\\scriptsize, align=center] at (3.42,0) {21/02};\n\\node[below, font=\\scriptsize, align=center] at (4.37,0) {22/02};\n\\node[below, font=\\scriptsize, align=center] at (5.32,0) {23/02};\n\\node[below, font=\\scriptsize, align=center] at (6.27,0) {24/02};\n\\draw[solid, line width=0.9pt] (0.40,-0.95) -- (1.10,-0.95);\n\\fill (0.75,-0.95) circle (1.6pt);\n\\node[right, font=\\scriptsize] at (1.15,-0.95) {TP Hồ Chí Minh};\n\\draw[dashed, line width=0.9pt] (3.73,-0.95) -- (4.43,-0.95);\n\\fill[white, draw=black] (4.08,-0.95) circle (1.7pt);\n\\node[right, font=\\scriptsize] at (4.48,-0.95) {Hà Nội};\n\\end{tikzpicture}",
+      "caption": "Hình 9",
+      "pos": "below"
+     }
+    },
+    {
+     "type": "problem",
+     "label": "Bài 11.",
+     "statement": "[NB] Biểu đồ hình quạt tròn ở Hình 10 cho biết tỉ lệ các loại bánh một cửa hàng bán được. Loại bánh nào bán được nhiều nhất, chiếm bao nhiêu phần trăm?",
+     "level": 1,
+     "tier": "onclass",
+     "dang_id": "NB9",
+     "solution": "Bánh mì, chiếm $42\\%$.",
+     "figure": {
+      "tikz": "\\begin{tikzpicture}[line width=0.6pt, font=\\small]\n\\fill[white, draw=black] (0,0) -- (90.00:1.5) arc (90.00:-61.20:1.5) -- cycle;\n\\node[font=\\scriptsize, align=center, anchor=194] at (14.40:1.62) {Bánh mì\\\\$42\\%$};\n\\fill[black!14, draw=black] (0,0) -- (-61.20:1.5) arc (-61.20:-133.20:1.5) -- cycle;\n\\node[font=\\scriptsize, align=center, anchor=83] at (-97.20:1.62) {Bánh kem\\\\$20\\%$};\n\\fill[black!34, draw=black] (0,0) -- (-133.20:1.5) arc (-133.20:-183.60:1.5) -- cycle;\n\\node[font=\\scriptsize, align=center, anchor=22] at (-158.40:1.62) {Bánh quy\\\\$14\\%$};\n\\fill[black!55, draw=black] (0,0) -- (-183.60:1.5) arc (-183.60:-212.40:1.5) -- cycle;\n\\node[font=\\scriptsize, align=center, anchor=342] at (-198.00:1.62) {Bánh donut\\\\$8\\%$};\n\\fill[black!8, draw=black] (0,0) -- (-212.40:1.5) arc (-212.40:-270.00:1.5) -- cycle;\n\\node[font=\\scriptsize, align=center, anchor=299] at (-241.20:1.62) {Bánh chuối\\\\$16\\%$};\n\\end{tikzpicture}",
+      "caption": "Hình 10",
+      "pos": "below"
+     }
+    },
+    {
+     "type": "problem",
+     "label": "Bài 12.",
+     "statement": "[NB] Biểu đồ ở Hình 11 cho biết tỉ lệ số xe đạp một cửa hàng bán được trong tháng theo màu sơn. Xe màu nào bán được nhiều nhất, chiếm bao nhiêu phần trăm?",
+     "level": 1,
+     "tier": "onclass",
+     "dang_id": "NB9",
+     "solution": "Màu xanh dương, chiếm $60\\%$.",
+     "figure": {
+      "tikz": "\\begin{tikzpicture}[line width=0.6pt, font=\\small]\n\\fill[white, draw=black] (0,0) -- (90.00:1.5) arc (90.00:-126.00:1.5) -- cycle;\n\\node[font=\\scriptsize, align=center, anchor=162] at (-18.00:1.62) {Xanh dương\\\\$60\\%$};\n\\fill[black!14, draw=black] (0,0) -- (-126.00:1.5) arc (-126.00:-180.00:1.5) -- cycle;\n\\node[font=\\scriptsize, align=center, anchor=27] at (-153.00:1.62) {Đỏ\\\\$15\\%$};\n\\fill[black!34, draw=black] (0,0) -- (-180.00:1.5) arc (-180.00:-216.00:1.5) -- cycle;\n\\node[font=\\scriptsize, align=center, anchor=342] at (-198.00:1.62) {Xanh lá\\\\$10\\%$};\n\\fill[black!55, draw=black] (0,0) -- (-216.00:1.5) arc (-216.00:-270.00:1.5) -- cycle;\n\\node[font=\\scriptsize, align=center, anchor=297] at (-243.00:1.62) {Xám bạc\\\\$15\\%$};\n\\end{tikzpicture}",
+      "caption": "Hình 11",
+      "pos": "below"
+     }
+    },
+    {
+     "type": "problem",
+     "label": "Bài 13.",
+     "statement": "[NB] Biểu đồ ở Hình 12 cho biết cơ cấu GDP của Việt Nam năm 2021. Lĩnh vực nào đóng góp nhiều nhất, với bao nhiêu phần trăm?",
+     "level": 1,
+     "tier": "onclass",
+     "dang_id": "NB9",
+     "solution": "Dịch vụ, với $40{,}95\\%$.",
+     "figure": {
+      "tikz": "\\begin{tikzpicture}[line width=0.6pt, font=\\small]\n\\fill[white, draw=black] (0,0) -- (90.00:1.5) arc (90.00:45.50:1.5) -- cycle;\n\\node[font=\\scriptsize, align=center, anchor=248] at (67.75:1.62) {Nông, lâm nghiệp\\\\và thủy sản\\\\$12{,}36\\%$};\n\\fill[black!14, draw=black] (0,0) -- (45.50:1.5) arc (45.50:-90.79:1.5) -- cycle;\n\\node[font=\\scriptsize, align=center, anchor=157] at (-22.64:1.62) {Công nghiệp\\\\và xây dựng\\\\$37{,}86\\%$};\n\\fill[black!34, draw=black] (0,0) -- (-90.79:1.5) arc (-90.79:-122.58:1.5) -- cycle;\n\\node[font=\\scriptsize, align=center, anchor=73] at (-106.69:1.62) {Thuế sản phẩm\\\\$8{,}83\\%$};\n\\fill[black!55, draw=black] (0,0) -- (-122.58:1.5) arc (-122.58:-270.00:1.5) -- cycle;\n\\node[font=\\scriptsize, align=center, anchor=344] at (-196.29:1.62) {Dịch vụ\\\\$40{,}95\\%$};\n\\end{tikzpicture}",
+      "caption": "Hình 12",
+      "pos": "below"
+     }
+    },
+    {
+     "type": "problem",
+     "label": "Bài 14.",
+     "statement": "Tính các tỉ số sau bằng SỐ LIỆU (không dựa vào chiều cao cột).[[br]]a) [NB] Điểm Toán của bạn Hòa gấp mấy lần điểm Anh (Hình 2)?[[br]]b) [NB] Số máy cày của xã B gấp mấy lần xã E (Hình 3)?[[br]]c) [NB] Số máy điều hòa bán trong tháng 6 gấp mấy lần tháng 4 (Hình 5, làm tròn đến hàng phần mười)?",
+     "level": 1,
+     "tier": "onclass",
+     "dang_id": "NB10",
+     "solution": "a) $9:5=1{,}8$ lần.[[br]]b) $45:15=3$ lần.[[br]]c) $100:72\\approx 1{,}4$ lần."
+    },
+    {
+     "type": "problem",
+     "label": "Bài 15.",
+     "statement": "Biểu đồ cột kép ở Hình 13 cho biết số học sinh nam và nữ lớp 6A đăng kí mỗi môn thể thao (mỗi bạn đăng kí đúng một môn).[[br]]a) [NB] Có bao nhiêu bạn nam đăng kí cầu lông?[[br]]b) [NB] Có bao nhiêu bạn nữ đăng kí cầu lông?[[br]]c) [NB] Cột màu đậm biểu diễn số học sinh nam hay nữ?",
+     "level": 1,
+     "tier": "onclass",
+     "dang_id": "NB11",
+     "solution": "a) $5$ bạn nam.[[br]]b) $4$ bạn nữ.[[br]]c) Học sinh nữ.",
+     "figure": {
+      "tikz": "\\begin{tikzpicture}[line width=0.6pt, font=\\small]\n\\draw[-{Stealth[length=4pt]}] (0,0) -- (6.75,0);\n\\draw[-{Stealth[length=4pt]}] (0,0) -- (0,3.85);\n\\draw (-0.06,0.00) -- (0.06,0.00);\n\\node[left, font=\\scriptsize] at (0,0.00) {$0$};\n\\draw[black!22, dashed] (0,0.57) -- (6.60,0.57);\n\\draw (-0.06,0.57) -- (0.06,0.57);\n\\node[left, font=\\scriptsize] at (0,0.57) {$2$};\n\\draw[black!22, dashed] (0,1.13) -- (6.60,1.13);\n\\draw (-0.06,1.13) -- (0.06,1.13);\n\\node[left, font=\\scriptsize] at (0,1.13) {$4$};\n\\draw[black!22, dashed] (0,1.70) -- (6.60,1.70);\n\\draw (-0.06,1.70) -- (0.06,1.70);\n\\node[left, font=\\scriptsize] at (0,1.70) {$6$};\n\\draw[black!22, dashed] (0,2.27) -- (6.60,2.27);\n\\draw (-0.06,2.27) -- (0.06,2.27);\n\\node[left, font=\\scriptsize] at (0,2.27) {$8$};\n\\draw[black!22, dashed] (0,2.83) -- (6.60,2.83);\n\\draw (-0.06,2.83) -- (0.06,2.83);\n\\node[left, font=\\scriptsize] at (0,2.83) {$10$};\n\\draw[black!22, dashed] (0,3.40) -- (6.60,3.40);\n\\draw (-0.06,3.40) -- (0.06,3.40);\n\\node[left, font=\\scriptsize] at (0,3.40) {$12$};\n\\node[above right, font=\\scriptsize, align=left] at (0,3.85) {Số học sinh};\n\\node[right, font=\\scriptsize] at (7.00,0) {Môn};\n\\fill[black!12, draw=black] (0.90,0) rectangle (1.40,2.55);\n\\node[above, font=\\scriptsize, fill=white, inner sep=1pt] at (1.15,2.59) {$9$};\n\\fill[black!60, draw=black] (1.40,0) rectangle (1.90,2.27);\n\\node[above, font=\\scriptsize, fill=white, inner sep=1pt] at (1.65,2.31) {$8$};\n\\node[below, font=\\scriptsize, align=center] at (1.40,0) {Bóng bàn};\n\\fill[black!12, draw=black] (2.80,0) rectangle (3.30,1.42);\n\\node[above, font=\\scriptsize, fill=white, inner sep=1pt] at (3.05,1.46) {$5$};\n\\fill[black!60, draw=black] (3.30,0) rectangle (3.80,1.13);\n\\node[above, font=\\scriptsize, fill=white, inner sep=1pt] at (3.55,1.17) {$4$};\n\\node[below, font=\\scriptsize, align=center] at (3.30,0) {Cầu lông};\n\\fill[black!12, draw=black] (4.70,0) rectangle (5.20,2.83);\n\\node[above, font=\\scriptsize, fill=white, inner sep=1pt] at (4.95,2.87) {$10$};\n\\fill[black!60, draw=black] (5.20,0) rectangle (5.70,1.13);\n\\node[above, font=\\scriptsize, fill=white, inner sep=1pt] at (5.45,1.17) {$4$};\n\\node[below, font=\\scriptsize, align=center] at (5.20,0) {Chạy bộ};\n\\fill[black!12, draw=black] (4.20,4.35) rectangle ++(0.28,0.2);\n\\node[right, font=\\scriptsize] at (4.50,4.45) {Nam};\n\\fill[black!60, draw=black] (4.20,4.00) rectangle ++(0.28,0.2);\n\\node[right, font=\\scriptsize] at (4.50,4.10) {Nữ};\n\\end{tikzpicture}",
+      "caption": "Hình 13",
+      "pos": "below"
+     }
+    },
+    {
+     "type": "problem",
+     "label": "Bài 16.",
+     "statement": "Biểu đồ cột kép ở Hình 14 cho biết số ti vi ba cửa hàng bán được trong tháng 5 và tháng 6 năm 2018. Bạn Minh cho rằng: \\emph{“Tháng 6, cửa hàng 1 bán gấp hơn hai lần tháng 5, vì cột tháng 6 cao gấp hơn hai lần cột tháng 5”}. Điền vào chỗ trống để kiểm tra nhận định đó.[[br]]a) [NB] Tháng 5 cửa hàng 1 bán [[blank:1.2cm]] chiếc, tháng 6 bán [[blank:1.2cm]] chiếc.[[br]]b) [NB] Tỉ số hai số liệu là $47:30\\approx$ [[blank:1.4cm]] (làm tròn đến hàng phần mười).[[br]]c) [NB] Gốc trục đứng là [[blank:1.1cm]] nên tỉ lệ chiều cao hai cột [[blank:2.4cm]] tỉ lệ hai số liệu. Vậy nhận định của bạn Minh [[blank:1.4cm]].",
+     "level": 1,
+     "tier": "onclass",
+     "dang_id": "NB12",
+     "solution": "a) $30$; $47$.[[br]]b) $47:30\\approx 1{,}6$.[[br]]c) $20$; không bằng; sai.",
+     "figure": {
+      "tikz": "\\begin{tikzpicture}[line width=0.6pt, font=\\small]\n\\draw[-{Stealth[length=4pt]}] (0,0) -- (6.75,0);\n\\draw[-{Stealth[length=4pt]}] (0,0) -- (0,3.85);\n\\draw (-0.06,0.00) -- (0.06,0.00);\n\\node[left, font=\\scriptsize] at (0,0.00) {$20$};\n\\draw[black!22, dashed] (0,0.42) -- (6.60,0.42);\n\\draw (-0.06,0.42) -- (0.06,0.42);\n\\node[left, font=\\scriptsize] at (0,0.42) {$30$};\n\\draw[black!22, dashed] (0,0.85) -- (6.60,0.85);\n\\draw (-0.06,0.85) -- (0.06,0.85);\n\\node[left, font=\\scriptsize] at (0,0.85) {$40$};\n\\draw[black!22, dashed] (0,1.27) -- (6.60,1.27);\n\\draw (-0.06,1.27) -- (0.06,1.27);\n\\node[left, font=\\scriptsize] at (0,1.27) {$50$};\n\\draw[black!22, dashed] (0,1.70) -- (6.60,1.70);\n\\draw (-0.06,1.70) -- (0.06,1.70);\n\\node[left, font=\\scriptsize] at (0,1.70) {$60$};\n\\draw[black!22, dashed] (0,2.12) -- (6.60,2.12);\n\\draw (-0.06,2.12) -- (0.06,2.12);\n\\node[left, font=\\scriptsize] at (0,2.12) {$70$};\n\\draw[black!22, dashed] (0,2.55) -- (6.60,2.55);\n\\draw (-0.06,2.55) -- (0.06,2.55);\n\\node[left, font=\\scriptsize] at (0,2.55) {$80$};\n\\draw[black!22, dashed] (0,2.98) -- (6.60,2.98);\n\\draw (-0.06,2.98) -- (0.06,2.98);\n\\node[left, font=\\scriptsize] at (0,2.98) {$90$};\n\\draw[black!22, dashed] (0,3.40) -- (6.60,3.40);\n\\draw (-0.06,3.40) -- (0.06,3.40);\n\\node[left, font=\\scriptsize] at (0,3.40) {$100$};\n\\node[above right, font=\\scriptsize, align=left] at (0,3.85) {Số ti vi\\\\(chiếc)};\n\\node[right, font=\\scriptsize] at (7.00,0) {};\n\\fill[black!12, draw=black] (0.90,0) rectangle (1.40,0.42);\n\\node[above, font=\\scriptsize, fill=white, inner sep=1pt] at (1.15,0.46) {$30$};\n\\fill[black!60, draw=black] (1.40,0) rectangle (1.90,1.15);\n\\node[above, font=\\scriptsize, fill=white, inner sep=1pt] at (1.65,1.19) {$47$};\n\\node[below, font=\\scriptsize, align=center] at (1.40,0) {Cửa hàng 1};\n\\fill[black!12, draw=black] (2.80,0) rectangle (3.30,0.94);\n\\node[above, font=\\scriptsize, fill=white, inner sep=1pt] at (3.05,0.98) {$42$};\n\\fill[black!60, draw=black] (3.30,0) rectangle (3.80,2.17);\n\\node[above, font=\\scriptsize, fill=white, inner sep=1pt] at (3.55,2.21) {$71$};\n\\node[below, font=\\scriptsize, align=center] at (3.30,0) {Cửa hàng 2};\n\\fill[black!12, draw=black] (4.70,0) rectangle (5.20,1.40);\n\\node[above, font=\\scriptsize, fill=white, inner sep=1pt] at (4.95,1.44) {$53$};\n\\fill[black!60, draw=black] (5.20,0) rectangle (5.70,2.89);\n\\node[above, font=\\scriptsize, fill=white, inner sep=1pt] at (5.45,2.93) {$88$};\n\\node[below, font=\\scriptsize, align=center] at (5.20,0) {Cửa hàng 3};\n\\fill[black!12, draw=black] (4.20,4.35) rectangle ++(0.28,0.2);\n\\node[right, font=\\scriptsize] at (4.50,4.45) {Tháng 5};\n\\fill[black!60, draw=black] (4.20,4.00) rectangle ++(0.28,0.2);\n\\node[right, font=\\scriptsize] at (4.50,4.10) {Tháng 6};\n\\end{tikzpicture}",
+      "caption": "Hình 14",
+      "pos": "below"
+     }
+    },
+    {
+     "type": "problem",
+     "label": "Bài 17.",
+     "statement": "Hai biểu đồ ở Hình 15 biểu diễn doanh thu của một nhà máy. Mỗi khẳng định sau đúng hay sai?\\par\\nopagebreak\\smallskip{\\centering\\adjustbox{max width=0.86\\linewidth}{\\begin{tabular}{cc}\\begin{tikzpicture}[line width=0.6pt, font=\\small]\n\\draw[-{Stealth[length=4pt]}] (0,0) -- (5.01,0);\n\\draw[-{Stealth[length=4pt]}] (0,0) -- (0,3.45);\n\\draw (-0.06,0.00) -- (0.06,0.00);\n\\node[left, font=\\scriptsize] at (0,0.00) {$30$};\n\\draw[black!22, dashed] (0,0.75) -- (4.86,0.75);\n\\draw (-0.06,0.75) -- (0.06,0.75);\n\\node[left, font=\\scriptsize] at (0,0.75) {$32$};\n\\draw[black!22, dashed] (0,1.50) -- (4.86,1.50);\n\\draw (-0.06,1.50) -- (0.06,1.50);\n\\node[left, font=\\scriptsize] at (0,1.50) {$34$};\n\\draw[black!22, dashed] (0,2.25) -- (4.86,2.25);\n\\draw (-0.06,2.25) -- (0.06,2.25);\n\\node[left, font=\\scriptsize] at (0,2.25) {$36$};\n\\draw[black!22, dashed] (0,3.00) -- (4.86,3.00);\n\\draw (-0.06,3.00) -- (0.06,3.00);\n\\node[left, font=\\scriptsize] at (0,3.00) {$38$};\n\\node[above right, font=\\scriptsize, align=left] at (0,3.45) {Doanh thu\\\\(tỉ đồng)};\n\\node[right, font=\\scriptsize] at (5.26,0) {Năm};\n\\draw[solid, line width=0.9pt] (0.54,0.00) -- (1.44,1.12) -- (2.34,1.50) -- (3.24,1.88) -- (4.14,3.00);\n\\fill (0.54,0.00) circle (1.6pt);\n\\node[above left=2pt, font=\\scriptsize, fill=white, inner sep=1pt] at (0.54,0.00) {$30$};\n\\fill (1.44,1.12) circle (1.6pt);\n\\node[above=2pt, font=\\scriptsize, fill=white, inner sep=1pt] at (1.44,1.12) {$33$};\n\\fill (2.34,1.50) circle (1.6pt);\n\\node[above=2pt, font=\\scriptsize, fill=white, inner sep=1pt] at (2.34,1.50) {$34$};\n\\fill (3.24,1.88) circle (1.6pt);\n\\node[above=2pt, font=\\scriptsize, fill=white, inner sep=1pt] at (3.24,1.88) {$35$};\n\\fill (4.14,3.00) circle (1.6pt);\n\\node[above=2pt, font=\\scriptsize, fill=white, inner sep=1pt] at (4.14,3.00) {$38$};\n\\node[below, font=\\scriptsize, align=center] at (0.54,0) {2017};\n\\node[below, font=\\scriptsize, align=center] at (1.44,0) {2018};\n\\node[below, font=\\scriptsize, align=center] at (2.34,0) {2019};\n\\node[below, font=\\scriptsize, align=center] at (3.24,0) {2020};\n\\node[below, font=\\scriptsize, align=center] at (4.14,0) {2021};\n\\end{tikzpicture} & \\begin{tikzpicture}[line width=0.6pt, font=\\small]\n\\draw[-{Stealth[length=4pt]}] (0,0) -- (5.01,0);\n\\draw[-{Stealth[length=4pt]}] (0,0) -- (0,3.45);\n\\draw (-0.06,0.00) -- (0.06,0.00);\n\\node[left, font=\\scriptsize] at (0,0.00) {$0$};\n\\draw[black!22, dashed] (0,0.75) -- (4.86,0.75);\n\\draw (-0.06,0.75) -- (0.06,0.75);\n\\node[left, font=\\scriptsize] at (0,0.75) {$10$};\n\\draw[black!22, dashed] (0,1.50) -- (4.86,1.50);\n\\draw (-0.06,1.50) -- (0.06,1.50);\n\\node[left, font=\\scriptsize] at (0,1.50) {$20$};\n\\draw[black!22, dashed] (0,2.25) -- (4.86,2.25);\n\\draw (-0.06,2.25) -- (0.06,2.25);\n\\node[left, font=\\scriptsize] at (0,2.25) {$30$};\n\\draw[black!22, dashed] (0,3.00) -- (4.86,3.00);\n\\draw (-0.06,3.00) -- (0.06,3.00);\n\\node[left, font=\\scriptsize] at (0,3.00) {$40$};\n\\node[above right, font=\\scriptsize, align=left] at (0,3.45) {Doanh thu\\\\(tỉ đồng)};\n\\node[right, font=\\scriptsize] at (5.26,0) {Năm};\n\\draw[solid, line width=0.9pt] (0.54,2.25) -- (1.44,2.47) -- (2.34,2.55) -- (3.24,2.62) -- (4.14,2.85);\n\\fill (0.54,2.25) circle (1.6pt);\n\\node[below=2pt, font=\\scriptsize, fill=white, inner sep=1pt] at (0.54,2.25) {$30$};\n\\fill (1.44,2.47) circle (1.6pt);\n\\node[above=2pt, font=\\scriptsize, fill=white, inner sep=1pt] at (1.44,2.47) {$33$};\n\\fill (2.34,2.55) circle (1.6pt);\n\\node[above=2pt, font=\\scriptsize, fill=white, inner sep=1pt] at (2.34,2.55) {$34$};\n\\fill (3.24,2.62) circle (1.6pt);\n\\node[above=2pt, font=\\scriptsize, fill=white, inner sep=1pt] at (3.24,2.62) {$35$};\n\\fill (4.14,2.85) circle (1.6pt);\n\\node[above=2pt, font=\\scriptsize, fill=white, inner sep=1pt] at (4.14,2.85) {$38$};\n\\node[below, font=\\scriptsize, align=center] at (0.54,0) {2017};\n\\node[below, font=\\scriptsize, align=center] at (1.44,0) {2018};\n\\node[below, font=\\scriptsize, align=center] at (2.34,0) {2019};\n\\node[below, font=\\scriptsize, align=center] at (3.24,0) {2020};\n\\node[below, font=\\scriptsize, align=center] at (4.14,0) {2021};\n\\end{tikzpicture} \\\\ a) & b)\\end{tabular}}\\par{\\footnotesize\\sffamily\\color{black!60}Hình 15}\\par}\\smallskip{}\\par{}a) [NB] Hai biểu đồ biểu diễn cùng một dãy số liệu.[[br]]b) [NB] Doanh thu ở biểu đồ a) tăng nhanh hơn doanh thu ở biểu đồ b).[[br]]c) [NB] Hai đường gấp khúc có độ dốc khác nhau vì gốc trục đứng của hai biểu đồ khác nhau.",
+     "level": 1,
+     "tier": "onclass",
+     "dang_id": "NB13",
+     "solution": "a) Đúng (cùng là $30$; $33$; $34$; $35$; $38$).[[br]]b) Sai, doanh thu như nhau.[[br]]c) Đúng."
+    },
+    {
+     "type": "noted",
+     "variant": "example",
+     "text": "\\textbf{Ví dụ 4.} Với biểu đồ máy cày ở Hình 3, những xã có trên $20$ máy cày cần đầu tư một trạm bảo trì và sửa chữa riêng. Đó có thể là những xã nào?[[br]]{\\sffamily\\bfseries\\color{brand}Lời giải}[[br]]Đọc biểu đồ: xã A có $20$, xã B có $45$, xã C có $25$, xã D có $20$, xã E có $15$ máy cày.[[br]]Xã A và xã D có đúng $20$ máy nên [[fill:không]] thuộc nhóm có trên $20$ máy cày.[[br]]Vậy các xã cần đầu tư trạm bảo trì riêng là xã [[fill:B]] và xã [[fill:C]]."
+    },
+    {
+     "type": "problem",
+     "label": "Bài 18.",
+     "statement": "Biểu đồ tranh ở Hình 16 cho biết số giỏ trái cây sáu cửa hàng bán được trong mùa hè.[[br]]a) [TH] Những cửa hàng bán được dưới $200$ giỏ phải đóng cửa hoặc chuyển sang kinh doanh mặt hàng khác. Đó có thể là cửa hàng nào?[[br]]b) [TH] Những cửa hàng bán được từ $500$ giỏ trở lên sẽ xây một nhà kho bảo quản. Đó có thể là những cửa hàng nào?",
+     "level": 2,
+     "tier": "onclass",
+     "dang_id": "TH2",
+     "solution": "Vì mỗi biểu tượng đủ ứng với $100$ giỏ, nửa biểu tượng ứng với $50$ giỏ nên ta có: Bốn Mùa $650$, Tươi Xanh $400$, Miệt Vườn $300$, Phù Sa $350$, Xanh Sạch $100$, Quả Ngọt $600$ giỏ.[[br]]a) Chỉ có Xanh Sạch bán dưới $200$ giỏ.[[br]]b) Bốn Mùa và Quả Ngọt bán từ $500$ giỏ trở lên.[[br]]Vậy Xanh Sạch có thể phải đóng cửa; Bốn Mùa và Quả Ngọt sẽ xây nhà kho.",
+     "hints": [
+      "Mỗi biểu tượng ứng với bao nhiêu giỏ? Nửa biểu tượng thì sao?",
+      "Câu hỏi đặt ngưỡng nào? Cửa hàng nào vượt, cửa hàng nào chưa tới ngưỡng?"
+     ],
+     "figure": {
+      "tikz": "\\begin{tikzpicture}[line width=0.6pt, font=\\small]\n\\draw (0,0.39) rectangle (7.04,-0.39);\n\\draw (2.20,0.39) -- (2.20,-0.39);\n\\node[right] at (0.05,0.00) {Bốn Mùa};\n\\draw (2.60,0.00) circle (0.24);\\fill (2.52,0.07) circle (0.031);\\fill (2.69,0.07) circle (0.031);\\draw (2.47,-0.04) arc (200:340:0.140);\n\\draw (3.22,0.00) circle (0.24);\\fill (3.14,0.07) circle (0.031);\\fill (3.31,0.07) circle (0.031);\\draw (3.09,-0.04) arc (200:340:0.140);\n\\draw (3.84,0.00) circle (0.24);\\fill (3.76,0.07) circle (0.031);\\fill (3.93,0.07) circle (0.031);\\draw (3.71,-0.04) arc (200:340:0.140);\n\\draw (4.46,0.00) circle (0.24);\\fill (4.38,0.07) circle (0.031);\\fill (4.54,0.07) circle (0.031);\\draw (4.33,-0.04) arc (200:340:0.140);\n\\draw (5.08,0.00) circle (0.24);\\fill (5.00,0.07) circle (0.031);\\fill (5.17,0.07) circle (0.031);\\draw (4.95,-0.04) arc (200:340:0.140);\n\\draw (5.70,0.00) circle (0.24);\\fill (5.62,0.07) circle (0.031);\\fill (5.79,0.07) circle (0.031);\\draw (5.57,-0.04) arc (200:340:0.140);\n\\draw (6.32,0.24) arc (90:270:0.24) -- cycle;\\fill (6.24,0.07) circle (0.031);\n\\draw (0,-0.39) rectangle (7.04,-1.17);\n\\draw (2.20,-0.39) -- (2.20,-1.17);\n\\node[right] at (0.05,-0.78) {Tươi Xanh};\n\\draw (2.60,-0.78) circle (0.24);\\fill (2.52,-0.71) circle (0.031);\\fill (2.69,-0.71) circle (0.031);\\draw (2.47,-0.82) arc (200:340:0.140);\n\\draw (3.22,-0.78) circle (0.24);\\fill (3.14,-0.71) circle (0.031);\\fill (3.31,-0.71) circle (0.031);\\draw (3.09,-0.82) arc (200:340:0.140);\n\\draw (3.84,-0.78) circle (0.24);\\fill (3.76,-0.71) circle (0.031);\\fill (3.93,-0.71) circle (0.031);\\draw (3.71,-0.82) arc (200:340:0.140);\n\\draw (4.46,-0.78) circle (0.24);\\fill (4.38,-0.71) circle (0.031);\\fill (4.54,-0.71) circle (0.031);\\draw (4.33,-0.82) arc (200:340:0.140);\n\\draw (0,-1.17) rectangle (7.04,-1.95);\n\\draw (2.20,-1.17) -- (2.20,-1.95);\n\\node[right] at (0.05,-1.56) {Miệt Vườn};\n\\draw (2.60,-1.56) circle (0.24);\\fill (2.52,-1.49) circle (0.031);\\fill (2.69,-1.49) circle (0.031);\\draw (2.47,-1.60) arc (200:340:0.140);\n\\draw (3.22,-1.56) circle (0.24);\\fill (3.14,-1.49) circle (0.031);\\fill (3.31,-1.49) circle (0.031);\\draw (3.09,-1.60) arc (200:340:0.140);\n\\draw (3.84,-1.56) circle (0.24);\\fill (3.76,-1.49) circle (0.031);\\fill (3.93,-1.49) circle (0.031);\\draw (3.71,-1.60) arc (200:340:0.140);\n\\draw (0,-1.95) rectangle (7.04,-2.73);\n\\draw (2.20,-1.95) -- (2.20,-2.73);\n\\node[right] at (0.05,-2.34) {Phù Sa};\n\\draw (2.60,-2.34) circle (0.24);\\fill (2.52,-2.27) circle (0.031);\\fill (2.69,-2.27) circle (0.031);\\draw (2.47,-2.38) arc (200:340:0.140);\n\\draw (3.22,-2.34) circle (0.24);\\fill (3.14,-2.27) circle (0.031);\\fill (3.31,-2.27) circle (0.031);\\draw (3.09,-2.38) arc (200:340:0.140);\n\\draw (3.84,-2.34) circle (0.24);\\fill (3.76,-2.27) circle (0.031);\\fill (3.93,-2.27) circle (0.031);\\draw (3.71,-2.38) arc (200:340:0.140);\n\\draw (4.46,-2.10) arc (90:270:0.24) -- cycle;\\fill (4.38,-2.27) circle (0.031);\n\\draw (0,-2.73) rectangle (7.04,-3.51);\n\\draw (2.20,-2.73) -- (2.20,-3.51);\n\\node[right] at (0.05,-3.12) {Xanh Sạch};\n\\draw (2.60,-3.12) circle (0.24);\\fill (2.52,-3.05) circle (0.031);\\fill (2.69,-3.05) circle (0.031);\\draw (2.47,-3.16) arc (200:340:0.140);\n\\draw (0,-3.51) rectangle (7.04,-4.29);\n\\draw (2.20,-3.51) -- (2.20,-4.29);\n\\node[right] at (0.05,-3.90) {Quả Ngọt};\n\\draw (2.60,-3.90) circle (0.24);\\fill (2.52,-3.83) circle (0.031);\\fill (2.69,-3.83) circle (0.031);\\draw (2.47,-3.94) arc (200:340:0.140);\n\\draw (3.22,-3.90) circle (0.24);\\fill (3.14,-3.83) circle (0.031);\\fill (3.31,-3.83) circle (0.031);\\draw (3.09,-3.94) arc (200:340:0.140);\n\\draw (3.84,-3.90) circle (0.24);\\fill (3.76,-3.83) circle (0.031);\\fill (3.93,-3.83) circle (0.031);\\draw (3.71,-3.94) arc (200:340:0.140);\n\\draw (4.46,-3.90) circle (0.24);\\fill (4.38,-3.83) circle (0.031);\\fill (4.54,-3.83) circle (0.031);\\draw (4.33,-3.94) arc (200:340:0.140);\n\\draw (5.08,-3.90) circle (0.24);\\fill (5.00,-3.83) circle (0.031);\\fill (5.17,-3.83) circle (0.031);\\draw (4.95,-3.94) arc (200:340:0.140);\n\\draw (5.70,-3.90) circle (0.24);\\fill (5.62,-3.83) circle (0.031);\\fill (5.79,-3.83) circle (0.031);\\draw (5.57,-3.94) arc (200:340:0.140);\n\\draw (0.40,-4.79) circle (0.24);\\fill (0.32,-4.72) circle (0.031);\\fill (0.49,-4.72) circle (0.031);\\draw (0.27,-4.83) arc (200:340:0.140);\n\\node[right] at (0.7,-4.79) {ứng với $100$ giỏ};\n\\draw (4.70,-4.55) arc (90:270:0.24) -- cycle;\\fill (4.62,-4.72) circle (0.031);\n\\node[right] at (4.9,-4.79) {ứng với $50$ giỏ};\n\\end{tikzpicture}",
+      "caption": "Hình 16",
+      "pos": "below"
+     }
+    },
+    {
+     "type": "problem",
+     "label": "Bài 19.",
+     "statement": "Biểu đồ ở Hình 17 thống kê sản lượng than của tỉnh Quảng Ninh. Một bài báo nhận định: \\emph{“Tổng sản lượng than trong bốn năm 2017 -- 2020 xấp xỉ $164$ triệu tấn; so với năm 2017, sản lượng năm 2020 tăng xấp xỉ $34\\%$”}.[[br]]a) [TH] Kiểm tra phần nhận định về tổng sản lượng.[[br]]b) [TH] Kiểm tra phần nhận định về mức tăng. Nhận định của bài báo có chính xác không?",
+     "level": 2,
+     "tier": "onclass",
+     "dang_id": "TH2",
+     "solution": "a) Ta có $35{,}5+38{,}0+42{,}9+47{,}5=163{,}9\\approx 164$ (triệu tấn).[[br]]b) Ta có $\\dfrac{47{,}5}{35{,}5}\\cdot 100\\%\\approx 133{,}8\\%$ nên sản lượng năm 2020 tăng khoảng $133{,}8\\%-100\\%=33{,}8\\%\\approx 34\\%$.[[br]]Vậy nhận định của bài báo là chính xác.",
+     "hints": [
+      "\\emph{Tăng bao nhiêu phần trăm so với năm 2017} nghĩa là lấy số liệu nào làm $100\\%$?"
+     ],
+     "figure": {
+      "tikz": "\\begin{tikzpicture}[line width=0.6pt, font=\\small]\n\\draw[-{Stealth[length=4pt]}] (0,0) -- (6.45,0);\n\\draw[-{Stealth[length=4pt]}] (0,0) -- (0,3.85);\n\\draw (-0.06,0.00) -- (0.06,0.00);\n\\node[left, font=\\scriptsize] at (0,0.00) {$0$};\n\\draw[black!22, dashed] (0,0.68) -- (6.30,0.68);\n\\draw (-0.06,0.68) -- (0.06,0.68);\n\\node[left, font=\\scriptsize] at (0,0.68) {$10$};\n\\draw[black!22, dashed] (0,1.36) -- (6.30,1.36);\n\\draw (-0.06,1.36) -- (0.06,1.36);\n\\node[left, font=\\scriptsize] at (0,1.36) {$20$};\n\\draw[black!22, dashed] (0,2.04) -- (6.30,2.04);\n\\draw (-0.06,2.04) -- (0.06,2.04);\n\\node[left, font=\\scriptsize] at (0,2.04) {$30$};\n\\draw[black!22, dashed] (0,2.72) -- (6.30,2.72);\n\\draw (-0.06,2.72) -- (0.06,2.72);\n\\node[left, font=\\scriptsize] at (0,2.72) {$40$};\n\\draw[black!22, dashed] (0,3.40) -- (6.30,3.40);\n\\draw (-0.06,3.40) -- (0.06,3.40);\n\\node[left, font=\\scriptsize] at (0,3.40) {$50$};\n\\node[above right, font=\\scriptsize, align=left] at (0,3.85) {Sản lượng\\\\(triệu tấn)};\n\\node[right, font=\\scriptsize] at (6.70,0) {Năm};\n\\fill[black!18, draw=black] (0.70,0) rectangle (1.40,2.41);\n\\node[above, font=\\scriptsize, fill=white, inner sep=1pt] at (1.05,2.45) {$35{,}5$};\n\\node[below, font=\\scriptsize, align=center] at (1.05,0) {2017};\n\\fill[black!18, draw=black] (2.10,0) rectangle (2.80,2.58);\n\\node[above, font=\\scriptsize, fill=white, inner sep=1pt] at (2.45,2.62) {$38$};\n\\node[below, font=\\scriptsize, align=center] at (2.45,0) {2018};\n\\fill[black!18, draw=black] (3.50,0) rectangle (4.20,2.92);\n\\node[above, font=\\scriptsize, fill=white, inner sep=1pt] at (3.85,2.96) {$42{,}9$};\n\\node[below, font=\\scriptsize, align=center] at (3.85,0) {2019};\n\\fill[black!18, draw=black] (4.90,0) rectangle (5.60,3.23);\n\\node[above, font=\\scriptsize, fill=white, inner sep=1pt] at (5.25,3.27) {$47{,}5$};\n\\node[below, font=\\scriptsize, align=center] at (5.25,0) {2020};\n\\end{tikzpicture}",
+      "caption": "Hình 17",
+      "pos": "below"
+     }
+    },
+    {
+     "type": "noted",
+     "variant": "example",
+     "text": "\\textbf{Ví dụ 5.} Biểu đồ cột ở Hình 18 biểu diễn số tiền mỗi bạn trong nhóm có được nhờ bán phế liệu.[[br]]a) Số tiền của Tuyết có gấp đôi số tiền của Khánh không? Giải thích.[[br]]b) Lập bảng thống kê số tiền của mỗi bạn.[[br]]{\\sffamily\\bfseries\\color{brand}Lời giải}[[br]]a) Đọc biểu đồ: Tuyết có $280$ nghìn đồng, Khánh có $240$ nghìn đồng.[[br]]Ta có $280:240\\approx$ [[fill:1{,}2]] (lần).[[br]]Cột của Tuyết trông cao gấp đôi cột của Khánh chỉ vì gốc trục đứng là [[fill:200]].[[br]]Vậy số tiền của Tuyết [[fill:không]] gấp đôi số tiền của Khánh.[[br]]b) Bảng thống kê:[[br]]{\\small\\renewcommand\\arraystretch{1.2}\\begin{tabular}{|l|c|c|c|c|c|}\\hline \\textbf{Tên} & \\textbf{An} & \\textbf{Bình} & \\textbf{Tuyết} & \\textbf{Khánh} & \\textbf{Hải} \\\\ \\hline Số tiền (nghìn đồng) & $230$ & [[fill:250]] & $280$ & $240$ & [[fill:300]] \\\\ \\hline \\end{tabular}}[[br]]Vậy người có nhiều tiền nhất là bạn [[fill:Hải]].",
+     "figure": {
+      "tikz": "\\begin{tikzpicture}[line width=0.6pt, font=\\small]\n\\draw[-{Stealth[length=4pt]}] (0,0) -- (6.95,0);\n\\draw[-{Stealth[length=4pt]}] (0,0) -- (0,3.85);\n\\draw (-0.06,0.00) -- (0.06,0.00);\n\\node[left, font=\\scriptsize] at (0,0.00) {$200$};\n\\draw[black!22, dashed] (0,0.42) -- (6.80,0.42);\n\\draw (-0.06,0.42) -- (0.06,0.42);\n\\node[left, font=\\scriptsize] at (0,0.42) {$220$};\n\\draw[black!22, dashed] (0,0.85) -- (6.80,0.85);\n\\draw (-0.06,0.85) -- (0.06,0.85);\n\\node[left, font=\\scriptsize] at (0,0.85) {$240$};\n\\draw[black!22, dashed] (0,1.27) -- (6.80,1.27);\n\\draw (-0.06,1.27) -- (0.06,1.27);\n\\node[left, font=\\scriptsize] at (0,1.27) {$260$};\n\\draw[black!22, dashed] (0,1.70) -- (6.80,1.70);\n\\draw (-0.06,1.70) -- (0.06,1.70);\n\\node[left, font=\\scriptsize] at (0,1.70) {$280$};\n\\draw[black!22, dashed] (0,2.12) -- (6.80,2.12);\n\\draw (-0.06,2.12) -- (0.06,2.12);\n\\node[left, font=\\scriptsize] at (0,2.12) {$300$};\n\\draw[black!22, dashed] (0,2.55) -- (6.80,2.55);\n\\draw (-0.06,2.55) -- (0.06,2.55);\n\\node[left, font=\\scriptsize] at (0,2.55) {$320$};\n\\draw[black!22, dashed] (0,2.98) -- (6.80,2.98);\n\\draw (-0.06,2.98) -- (0.06,2.98);\n\\node[left, font=\\scriptsize] at (0,2.98) {$340$};\n\\draw[black!22, dashed] (0,3.40) -- (6.80,3.40);\n\\draw (-0.06,3.40) -- (0.06,3.40);\n\\node[left, font=\\scriptsize] at (0,3.40) {$360$};\n\\node[above right, font=\\scriptsize, align=left] at (0,3.85) {Số tiền\\\\(nghìn đồng)};\n\\node[right, font=\\scriptsize] at (7.20,0) {Tên};\n\\fill[black!18, draw=black] (0.55,0) rectangle (1.25,0.64);\n\\node[above, font=\\scriptsize, fill=white, inner sep=1pt] at (0.90,0.68) {$230$};\n\\node[below, font=\\scriptsize, align=center] at (0.90,0) {An};\n\\fill[black!18, draw=black] (1.80,0) rectangle (2.50,1.06);\n\\node[above, font=\\scriptsize, fill=white, inner sep=1pt] at (2.15,1.10) {$250$};\n\\node[below, font=\\scriptsize, align=center] at (2.15,0) {Bình};\n\\fill[black!18, draw=black] (3.05,0) rectangle (3.75,1.70);\n\\node[above, font=\\scriptsize, fill=white, inner sep=1pt] at (3.40,1.74) {$280$};\n\\node[below, font=\\scriptsize, align=center] at (3.40,0) {Tuyết};\n\\fill[black!18, draw=black] (4.30,0) rectangle (5.00,0.85);\n\\node[above, font=\\scriptsize, fill=white, inner sep=1pt] at (4.65,0.89) {$240$};\n\\node[below, font=\\scriptsize, align=center] at (4.65,0) {Khánh};\n\\fill[black!18, draw=black] (5.55,0) rectangle (6.25,2.12);\n\\node[above, font=\\scriptsize, fill=white, inner sep=1pt] at (5.90,2.17) {$300$};\n\\node[below, font=\\scriptsize, align=center] at (5.90,0) {Hải};\n\\end{tikzpicture}",
+      "caption": "Hình 18",
+      "pos": "below"
+     }
+    },
+    {
+     "type": "problem",
+     "label": "Bài 20.",
+     "statement": "Với biểu đồ ti vi ở Hình 14:[[br]]a) [TH] Bạn Minh nói: \\emph{“Tháng 6, cửa hàng 2 bán gấp đôi tháng 5”}. Nhận định đó đúng không? Giải thích.[[br]]b) [TH] Lập bảng thống kê số ti vi mỗi cửa hàng bán được trong hai tháng.[[br]]c) [TH] Cả ba cửa hàng bán được trong tháng 6 nhiều hơn tháng 5 bao nhiêu chiếc ti vi?",
+     "level": 2,
+     "tier": "onclass",
+     "dang_id": "TH1",
+     "solution": "a) Ta có tháng 5 cửa hàng 2 bán $42$ chiếc, tháng 6 bán $71$ chiếc.[[br]]$71:42\\approx 1{,}7$ nên nhận định sai; cột trông cao gấp đôi vì gốc trục đứng là $20$.[[br]]b) Bảng thống kê:[[br]]{\\small\\renewcommand\\arraystretch{1.2}\\begin{tabular}{|l|c|c|c|}\\hline \\textbf{Cửa hàng} & \\textbf{1} & \\textbf{2} & \\textbf{3} \\\\ \\hline Tháng 5 (chiếc) & $30$ & $42$ & $53$ \\\\ \\hline Tháng 6 (chiếc) & $47$ & $71$ & $88$ \\\\ \\hline \\end{tabular}}[[br]]c) Ta có tháng 6 bán $47+71+88=206$ chiếc, tháng 5 bán $30+42+53=125$ chiếc.[[br]]$206-125=81$.[[br]]Vậy tháng 6 bán nhiều hơn tháng 5 là $81$ chiếc ti vi.",
+     "hints": [
+      "Muốn biết \\emph{gấp đôi} hay không thì so sánh hai chiều cao cột hay hai con số?",
+      "Câu c) hỏi về cả ba cửa hàng: cần tính những tổng nào trước?"
+     ]
+    },
+    {
+     "type": "problem",
+     "label": "Bài 21.",
+     "statement": "[TH] Với biểu đồ món ăn ở phần Khám phá, công ty du lịch ghi chú dưới biểu đồ: \\emph{“Số lượt chọn nem gấp hơn bảy lần số lượt chọn bánh mì”}. Ghi chú đó đúng không? Giải thích.",
+     "level": 2,
+     "tier": "onclass",
+     "dang_id": "TH1",
+     "solution": "Ta có nem được $987$ lượt chọn, bánh mì được $955$ lượt chọn.[[br]]$987:955\\approx 1{,}03$ nên nem chỉ nhiều hơn bánh mì một chút.[[br]]Cột Nem trông cao gấp nhiều lần vì gốc trục đứng là $950$.[[br]]Vậy ghi chú đó sai.",
+     "hints": [
+      "Gốc trục đứng của biểu đồ là bao nhiêu? Điều đó ảnh hưởng gì tới chiều cao các cột?"
+     ]
+    },
+    {
+     "type": "noted",
+     "variant": "example",
+     "text": "\\textbf{Ví dụ 6.} Với biểu đồ ở Hình 7, biết tổng diện tích đất của Việt Nam là $331\\,690$ km$^2$, của Indonesia là $1\\,826\\,440$ km$^2$. Tính diện tích rừng của mỗi nước năm 2017.[[br]]{\\sffamily\\bfseries\\color{brand}Lời giải}[[br]]Năm 2017, tỉ lệ đất rừng của Việt Nam là $46{,}5\\%$, của Indonesia là $50\\%$.[[br]]Diện tích rừng của Việt Nam là $331\\,690\\cdot 46{,}5\\%=$ [[fill:154\\,235{,}85|2.2cm]] (km$^2$).[[br]]Diện tích rừng của Indonesia là $1\\,826\\,440\\cdot 50\\%=$ [[fill:913\\,220|1.8cm]] (km$^2$).[[br]]Vậy năm 2017 diện tích rừng của Indonesia [[fill:lớn hơn]] diện tích rừng của Việt Nam."
+    },
+    {
+     "type": "problem",
+     "label": "Bài 22.",
+     "statement": "Biểu đồ ở Hình 19 cho biết số bàn thắng của cầu thủ giành Chiếc giày vàng ở giải Ngoại hạng Anh và giải La Liga (Tây Ban Nha) qua các mùa giải.[[br]]a) [TH] So sánh số bàn thắng của hai cầu thủ giành Chiếc giày vàng ở hai giải trong từng mùa.[[br]]b) [TH] Trong các mùa đó, một cầu thủ ghi được nhiều nhất bao nhiêu bàn trong một mùa, ở giải nào, mùa nào?[[br]]c) [TH] Lập bảng thống kê số bàn thắng của cầu thủ giành Chiếc giày vàng giải La Liga.",
+     "level": 2,
+     "tier": "onclass",
+     "dang_id": "TH3",
+     "solution": "a) Vì ở mọi mùa, điểm của La Liga đều nằm trên điểm của Ngoại hạng Anh nên cầu thủ giành Chiếc giày vàng La Liga luôn ghi nhiều bàn hơn.[[br]]b) Ta có số lớn nhất trên biểu đồ là $40$ nên nhiều nhất là $40$ bàn (La Liga, mùa 2015/2016).[[br]]c) Bảng thống kê:[[br]]{\\small\\renewcommand\\arraystretch{1.2}\\begin{tabular}{|l|c|c|c|c|c|c|c|}\\hline \\textbf{Mùa giải} & \\textbf{15/16} & \\textbf{16/17} & \\textbf{17/18} & \\textbf{18/19} & \\textbf{19/20} & \\textbf{20/21} & \\textbf{21/22} \\\\ \\hline Số bàn & $40$ & $37$ & $34$ & $36$ & $25$ & $30$ & $27$ \\\\ \\hline \\end{tabular}}[[br]]Vậy La Liga luôn hơn và kỉ lục trong giai đoạn này là $40$ bàn.",
+     "hints": [
+      "Đường nào ở trên trong mọi mùa? Có mùa nào hai đường cắt nhau không?",
+      "Muốn lập bảng thì đọc lần lượt các điểm của đường nào?"
+     ],
+     "figure": {
+      "tikz": "\\begin{tikzpicture}[line width=0.6pt, font=\\small]\n\\draw[-{Stealth[length=4pt]}] (0,0) -- (7.18,0);\n\\draw[-{Stealth[length=4pt]}] (0,0) -- (0,3.85);\n\\draw (-0.06,0.00) -- (0.06,0.00);\n\\node[left, font=\\scriptsize] at (0,0.00) {$0$};\n\\draw[black!22, dashed] (0,0.68) -- (7.03,0.68);\n\\draw (-0.06,0.68) -- (0.06,0.68);\n\\node[left, font=\\scriptsize] at (0,0.68) {$10$};\n\\draw[black!22, dashed] (0,1.36) -- (7.03,1.36);\n\\draw (-0.06,1.36) -- (0.06,1.36);\n\\node[left, font=\\scriptsize] at (0,1.36) {$20$};\n\\draw[black!22, dashed] (0,2.04) -- (7.03,2.04);\n\\draw (-0.06,2.04) -- (0.06,2.04);\n\\node[left, font=\\scriptsize] at (0,2.04) {$30$};\n\\draw[black!22, dashed] (0,2.72) -- (7.03,2.72);\n\\draw (-0.06,2.72) -- (0.06,2.72);\n\\node[left, font=\\scriptsize] at (0,2.72) {$40$};\n\\draw[black!22, dashed] (0,3.40) -- (7.03,3.40);\n\\draw (-0.06,3.40) -- (0.06,3.40);\n\\node[left, font=\\scriptsize] at (0,3.40) {$50$};\n\\node[above right, font=\\scriptsize, align=left] at (0,3.85) {Số bàn};\n\\node[right, font=\\scriptsize] at (7.43,0) {Mùa giải};\n\\draw[solid, line width=0.9pt] (0.57,1.70) -- (1.52,1.97) -- (2.47,2.18) -- (3.42,1.50) -- (4.37,1.56) -- (5.32,1.56) -- (6.27,1.56);\n\\fill (0.57,1.70) circle (1.6pt);\n\\node[below=2pt, font=\\scriptsize, fill=white, inner sep=1pt] at (0.57,1.70) {$25$};\n\\fill (1.52,1.97) circle (1.6pt);\n\\node[below=2pt, font=\\scriptsize, fill=white, inner sep=1pt] at (1.52,1.97) {$29$};\n\\fill (2.47,2.18) circle (1.6pt);\n\\node[above=2pt, font=\\scriptsize, fill=white, inner sep=1pt] at (2.47,2.18) {$32$};\n\\fill (3.42,1.50) circle (1.6pt);\n\\node[below=2pt, font=\\scriptsize, fill=white, inner sep=1pt] at (3.42,1.50) {$22$};\n\\fill (4.37,1.56) circle (1.6pt);\n\\node[above=2pt, font=\\scriptsize, fill=white, inner sep=1pt] at (4.37,1.56) {$23$};\n\\fill (5.32,1.56) circle (1.6pt);\n\\node[below=2pt, font=\\scriptsize, fill=white, inner sep=1pt] at (5.32,1.56) {$23$};\n\\fill (6.27,1.56) circle (1.6pt);\n\\node[below=2pt, font=\\scriptsize, fill=white, inner sep=1pt] at (6.27,1.56) {$23$};\n\\draw[dashed, line width=0.9pt] (0.57,2.72) -- (1.52,2.52) -- (2.47,2.31) -- (3.42,2.45) -- (4.37,1.70) -- (5.32,2.04) -- (6.27,1.84);\n\\fill[white, draw=black] (0.57,2.72) circle (1.7pt);\n\\node[above=2pt, font=\\scriptsize, fill=white, inner sep=1pt] at (0.57,2.72) {$40$};\n\\fill[white, draw=black] (1.52,2.52) circle (1.7pt);\n\\node[above=2pt, font=\\scriptsize, fill=white, inner sep=1pt] at (1.52,2.52) {$37$};\n\\fill[white, draw=black] (2.47,2.31) circle (1.7pt);\n\\node[below=2pt, font=\\scriptsize, fill=white, inner sep=1pt] at (2.47,2.31) {$34$};\n\\fill[white, draw=black] (3.42,2.45) circle (1.7pt);\n\\node[above=2pt, font=\\scriptsize, fill=white, inner sep=1pt] at (3.42,2.45) {$36$};\n\\fill[white, draw=black] (4.37,1.70) circle (1.7pt);\n\\node[below=2pt, font=\\scriptsize, fill=white, inner sep=1pt] at (4.37,1.70) {$25$};\n\\fill[white, draw=black] (5.32,2.04) circle (1.7pt);\n\\node[above=2pt, font=\\scriptsize, fill=white, inner sep=1pt] at (5.32,2.04) {$30$};\n\\fill[white, draw=black] (6.27,1.84) circle (1.7pt);\n\\node[below=2pt, font=\\scriptsize, fill=white, inner sep=1pt] at (6.27,1.84) {$27$};\n\\node[below, font=\\scriptsize, align=center] at (0.57,0) {15/16};\n\\node[below, font=\\scriptsize, align=center] at (1.52,0) {16/17};\n\\node[below, font=\\scriptsize, align=center] at (2.47,0) {17/18};\n\\node[below, font=\\scriptsize, align=center] at (3.42,0) {18/19};\n\\node[below, font=\\scriptsize, align=center] at (4.37,0) {19/20};\n\\node[below, font=\\scriptsize, align=center] at (5.32,0) {20/21};\n\\node[below, font=\\scriptsize, align=center] at (6.27,0) {21/22};\n\\draw[solid, line width=0.9pt] (0.40,-0.95) -- (1.10,-0.95);\n\\fill (0.75,-0.95) circle (1.6pt);\n\\node[right, font=\\scriptsize] at (1.15,-0.95) {Ngoại hạng Anh};\n\\draw[dashed, line width=0.9pt] (3.73,-0.95) -- (4.43,-0.95);\n\\fill[white, draw=black] (4.08,-0.95) circle (1.7pt);\n\\node[right, font=\\scriptsize] at (4.48,-0.95) {La Liga};\n\\end{tikzpicture}",
+      "caption": "Hình 19",
+      "pos": "below"
+     }
+    },
+    {
+     "type": "noted",
+     "variant": "example",
+     "text": "\\textbf{Ví dụ 7.} Biểu đồ cột kép ở Hình 20 cho biết số đôi giày thể thao hai cửa hàng bán được trong quý I. Hết quý I cửa hàng 1 còn lại $5$ đôi giày. Để bán hết hàng, cửa hàng 1 nên nhập bao nhiêu đôi cho tháng tiếp theo: A. $10$; B. $15$; C. $20$; D. $40$ đôi?[[br]]{\\sffamily\\bfseries\\color{brand}Lời giải}[[br]]Mỗi tháng cửa hàng 1 bán $25$; $23$; $24$ đôi, tổng quý I là [[fill:72]] đôi.[[br]]Trung bình mỗi tháng cửa hàng 1 bán khoảng [[fill:24]] đôi giày.[[br]]Cửa hàng còn $5$ đôi nên tháng sau cần nhập thêm khoảng [[fill:19]] đôi; phương án gần nhất là C.[[br]]Vậy cửa hàng 1 nên nhập về [[fill:20]] đôi giày.",
+     "figure": {
+      "tikz": "\\begin{tikzpicture}[line width=0.6pt, font=\\small]\n\\draw[-{Stealth[length=4pt]}] (0,0) -- (6.75,0);\n\\draw[-{Stealth[length=4pt]}] (0,0) -- (0,3.85);\n\\draw (-0.06,0.00) -- (0.06,0.00);\n\\node[left, font=\\scriptsize] at (0,0.00) {$0$};\n\\draw[black!22, dashed] (0,0.42) -- (6.60,0.42);\n\\draw (-0.06,0.42) -- (0.06,0.42);\n\\node[left, font=\\scriptsize] at (0,0.42) {$5$};\n\\draw[black!22, dashed] (0,0.85) -- (6.60,0.85);\n\\draw (-0.06,0.85) -- (0.06,0.85);\n\\node[left, font=\\scriptsize] at (0,0.85) {$10$};\n\\draw[black!22, dashed] (0,1.27) -- (6.60,1.27);\n\\draw (-0.06,1.27) -- (0.06,1.27);\n\\node[left, font=\\scriptsize] at (0,1.27) {$15$};\n\\draw[black!22, dashed] (0,1.70) -- (6.60,1.70);\n\\draw (-0.06,1.70) -- (0.06,1.70);\n\\node[left, font=\\scriptsize] at (0,1.70) {$20$};\n\\draw[black!22, dashed] (0,2.12) -- (6.60,2.12);\n\\draw (-0.06,2.12) -- (0.06,2.12);\n\\node[left, font=\\scriptsize] at (0,2.12) {$25$};\n\\draw[black!22, dashed] (0,2.55) -- (6.60,2.55);\n\\draw (-0.06,2.55) -- (0.06,2.55);\n\\node[left, font=\\scriptsize] at (0,2.55) {$30$};\n\\draw[black!22, dashed] (0,2.98) -- (6.60,2.98);\n\\draw (-0.06,2.98) -- (0.06,2.98);\n\\node[left, font=\\scriptsize] at (0,2.98) {$35$};\n\\draw[black!22, dashed] (0,3.40) -- (6.60,3.40);\n\\draw (-0.06,3.40) -- (0.06,3.40);\n\\node[left, font=\\scriptsize] at (0,3.40) {$40$};\n\\node[above right, font=\\scriptsize, align=left] at (0,3.85) {Số đôi giày};\n\\node[right, font=\\scriptsize] at (7.00,0) {Tháng};\n\\fill[black!12, draw=black] (0.90,0) rectangle (1.40,2.12);\n\\node[above, font=\\scriptsize, fill=white, inner sep=1pt] at (1.15,2.17) {$25$};\n\\fill[black!60, draw=black] (1.40,0) rectangle (1.90,2.98);\n\\node[above, font=\\scriptsize, fill=white, inner sep=1pt] at (1.65,3.02) {$35$};\n\\node[below, font=\\scriptsize, align=center] at (1.40,0) {1};\n\\fill[black!12, draw=black] (2.80,0) rectangle (3.30,1.95);\n\\node[above, font=\\scriptsize, fill=white, inner sep=1pt] at (3.05,1.99) {$23$};\n\\fill[black!60, draw=black] (3.30,0) rectangle (3.80,3.15);\n\\node[above, font=\\scriptsize, fill=white, inner sep=1pt] at (3.55,3.19) {$37$};\n\\node[below, font=\\scriptsize, align=center] at (3.30,0) {2};\n\\fill[black!12, draw=black] (4.70,0) rectangle (5.20,2.04);\n\\node[above, font=\\scriptsize, fill=white, inner sep=1pt] at (4.95,2.08) {$24$};\n\\fill[black!60, draw=black] (5.20,0) rectangle (5.70,3.06);\n\\node[above, font=\\scriptsize, fill=white, inner sep=1pt] at (5.45,3.10) {$36$};\n\\node[below, font=\\scriptsize, align=center] at (5.20,0) {3};\n\\fill[black!12, draw=black] (4.20,4.35) rectangle ++(0.28,0.2);\n\\node[right, font=\\scriptsize] at (4.50,4.45) {Cửa hàng 1};\n\\fill[black!60, draw=black] (4.20,4.00) rectangle ++(0.28,0.2);\n\\node[right, font=\\scriptsize] at (4.50,4.10) {Cửa hàng 2};\n\\end{tikzpicture}",
+      "caption": "Hình 20",
+      "pos": "below"
+     }
+    },
+    {
+     "type": "problem",
+     "label": "Bài 23.",
+     "statement": "Biểu đồ cột kép ở Hình 21 cho biết lượng gạo hai chi nhánh của cửa hàng X bán được trong quý I.[[br]]a) [TH] Mỗi chi nhánh bán được bao nhiêu kilôgam gạo trong quý I?[[br]]b) [TH] Chi nhánh bán dưới $100$ kg gạo trong quý I phải đóng cửa. Cửa hàng X có phải đóng cửa chi nhánh nào không?[[br]]c) [TH] Tháng nào lượng gạo hai chi nhánh bán được chênh lệch ít nhất, chênh lệch bao nhiêu kilôgam?",
+     "level": 2,
+     "tier": "onclass",
+     "dang_id": "TH4",
+     "solution": "a) Ta có chi nhánh A bán $58+47+62=167$ (kg), chi nhánh B bán $25+45+24=94$ (kg).[[br]]b) Vì $94<100$ nên chi nhánh B phải đóng cửa.[[br]]c) Ta có chênh lệch tháng 1: $33$ kg; tháng 2: $2$ kg; tháng 3: $38$ kg.[[br]]Vậy tháng 2 chênh lệch ít nhất, chỉ $2$ kg.",
+     "hints": [
+      "Mỗi chi nhánh ứng với màu cột nào? Tổng quý I gồm những tháng nào?",
+      "Chênh lệch của một tháng là hiệu hai cột nào?"
+     ],
+     "figure": {
+      "tikz": "\\begin{tikzpicture}[line width=0.6pt, font=\\small]\n\\draw[-{Stealth[length=4pt]}] (0,0) -- (6.75,0);\n\\draw[-{Stealth[length=4pt]}] (0,0) -- (0,3.85);\n\\draw (-0.06,0.00) -- (0.06,0.00);\n\\node[left, font=\\scriptsize] at (0,0.00) {$0$};\n\\draw[black!22, dashed] (0,0.49) -- (6.60,0.49);\n\\draw (-0.06,0.49) -- (0.06,0.49);\n\\node[left, font=\\scriptsize] at (0,0.49) {$10$};\n\\draw[black!22, dashed] (0,0.97) -- (6.60,0.97);\n\\draw (-0.06,0.97) -- (0.06,0.97);\n\\node[left, font=\\scriptsize] at (0,0.97) {$20$};\n\\draw[black!22, dashed] (0,1.46) -- (6.60,1.46);\n\\draw (-0.06,1.46) -- (0.06,1.46);\n\\node[left, font=\\scriptsize] at (0,1.46) {$30$};\n\\draw[black!22, dashed] (0,1.94) -- (6.60,1.94);\n\\draw (-0.06,1.94) -- (0.06,1.94);\n\\node[left, font=\\scriptsize] at (0,1.94) {$40$};\n\\draw[black!22, dashed] (0,2.43) -- (6.60,2.43);\n\\draw (-0.06,2.43) -- (0.06,2.43);\n\\node[left, font=\\scriptsize] at (0,2.43) {$50$};\n\\draw[black!22, dashed] (0,2.91) -- (6.60,2.91);\n\\draw (-0.06,2.91) -- (0.06,2.91);\n\\node[left, font=\\scriptsize] at (0,2.91) {$60$};\n\\draw[black!22, dashed] (0,3.40) -- (6.60,3.40);\n\\draw (-0.06,3.40) -- (0.06,3.40);\n\\node[left, font=\\scriptsize] at (0,3.40) {$70$};\n\\node[above right, font=\\scriptsize, align=left] at (0,3.85) {Lượng gạo\\\\(kg)};\n\\node[right, font=\\scriptsize] at (7.00,0) {};\n\\fill[black!12, draw=black] (0.90,0) rectangle (1.40,2.82);\n\\node[above, font=\\scriptsize, fill=white, inner sep=1pt] at (1.15,2.86) {$58$};\n\\fill[black!60, draw=black] (1.40,0) rectangle (1.90,1.21);\n\\node[above, font=\\scriptsize, fill=white, inner sep=1pt] at (1.65,1.25) {$25$};\n\\node[below, font=\\scriptsize, align=center] at (1.40,0) {Tháng 1};\n\\fill[black!12, draw=black] (2.80,0) rectangle (3.30,2.28);\n\\node[above, font=\\scriptsize, fill=white, inner sep=1pt] at (3.05,2.32) {$47$};\n\\fill[black!60, draw=black] (3.30,0) rectangle (3.80,2.19);\n\\node[above, font=\\scriptsize, fill=white, inner sep=1pt] at (3.55,2.23) {$45$};\n\\node[below, font=\\scriptsize, align=center] at (3.30,0) {Tháng 2};\n\\fill[black!12, draw=black] (4.70,0) rectangle (5.20,3.01);\n\\node[above, font=\\scriptsize, fill=white, inner sep=1pt] at (4.95,3.05) {$62$};\n\\fill[black!60, draw=black] (5.20,0) rectangle (5.70,1.17);\n\\node[above, font=\\scriptsize, fill=white, inner sep=1pt] at (5.45,1.21) {$24$};\n\\node[below, font=\\scriptsize, align=center] at (5.20,0) {Tháng 3};\n\\fill[black!12, draw=black] (4.20,4.35) rectangle ++(0.28,0.2);\n\\node[right, font=\\scriptsize] at (4.50,4.45) {Chi nhánh A};\n\\fill[black!60, draw=black] (4.20,4.00) rectangle ++(0.28,0.2);\n\\node[right, font=\\scriptsize] at (4.50,4.10) {Chi nhánh B};\n\\end{tikzpicture}",
+      "caption": "Hình 21",
+      "pos": "below"
+     }
+    }
+   ]
+  },
+  {
+   "kind": "practice2",
+   "number": 4,
+   "title": "Ca 4 — Luyện tập chung",
+   "teacher_note": "Ca 4 chỉ có $45$ phút luyện tập, $45$ phút sau là bài kiểm tra chương V.[[br]]Ví dụ câu tự luận đề Nguyễn Công Trứ: viết đủ như đi thi, nhấn mạnh chia cho SĨ SỐ lớp.[[br]]Bài vẽ biểu đồ: kiểm đủ tên biểu đồ, tên hai trục, đơn vị, chú thích.",
+   "blocks": [
+    {
+     "type": "problem",
+     "label": "Bài 24.",
+     "statement": "[NB] Phương pháp nào phù hợp nhất để thống kê số học sinh lớp 8A tham gia câu lạc bộ thể thao của một trường THCS? (Đề giữa kì II, THCS Phúc Lợi)",
+     "level": 1,
+     "tier": "onclass",
+     "dang_id": "NB14",
+     "solution": "B. Phỏng vấn.",
+     "options": [
+      "Làm thí nghiệm.",
+      "Phỏng vấn.",
+      "Thu thập từ nguồn có sẵn như sách, báo.",
+      "Quan sát trực tiếp."
+     ]
+    },
+    {
+     "type": "problem",
+     "label": "Bài 25.",
+     "statement": "[NB] Trước chuyến đi biển Đà Nẵng một tuần, bạn Bình vào website của Trung tâm Dự báo khí tượng thủy văn quốc gia để tìm hiểu thời tiết ở đó. Bạn Bình đã dùng phương pháp nào để thu thập dữ liệu? (Đề giữa kì II, THCS Phúc Lợi)",
+     "level": 1,
+     "tier": "onclass",
+     "dang_id": "NB14",
+     "solution": "A. Thu thập dữ liệu gián tiếp.",
+     "options": [
+      "Thu thập dữ liệu gián tiếp.",
+      "Thu thập dữ liệu trực tiếp.",
+      "Phỏng vấn.",
+      "Làm thí nghiệm."
+     ]
+    },
+    {
+     "type": "problem",
+     "label": "Bài 26.",
+     "statement": "[NB] Bảng sau ghi tên một số ngôi chùa và địa điểm của chúng. Dữ liệu thu thập trong bảng thuộc loại nào?\\par\\nopagebreak\\smallskip{\\centering\\small\\renewcommand\\arraystretch{1.25}\\begin{tabular}{|l|c|c|c|c|}\\hline \\textbf{Tên chùa} & \\textbf{Chùa Hương} & \\textbf{Chùa Bái Đính} & \\textbf{Chùa Bà Đen} & \\textbf{Chùa Thiên Mụ} \\\\ \\hline Địa điểm & Hà Nội & Ninh Bình & Tây Ninh & Thừa Thiên Huế \\\\ \\hline \\end{tabular}\\par}\\smallskip{}\\par{}(Đề cuối kì I, THCS Hát Môn)",
+     "level": 1,
+     "tier": "onclass",
+     "dang_id": "NB14",
+     "solution": "Dữ liệu không là số và không sắp được thứ tự."
+    },
+    {
+     "type": "problem",
+     "label": "Bài 27.",
+     "statement": "[NB] Bạn Hiếu muốn lập biểu đồ về tỉ lệ phần trăm số học sinh lớp 8A xếp loại học lực Tốt, Khá, Đạt, Chưa đạt cuối học kì I. Bạn Hiếu nên dùng biểu đồ nào? (Đề giữa kì II, THCS Việt Hưng)",
+     "level": 1,
+     "tier": "onclass",
+     "dang_id": "NB15",
+     "solution": "C. Biểu đồ hình quạt tròn.",
+     "options": [
+      "Biểu đồ tranh.",
+      "Biểu đồ cột.",
+      "Biểu đồ hình quạt tròn.",
+      "Biểu đồ đoạn thẳng."
+     ]
+    },
+    {
+     "type": "problem",
+     "label": "Bài 28.",
+     "statement": "Chọn biểu đồ thích hợp nhất cho mỗi bảng số liệu sau.[[br]]a) [NB] Thị phần xuất khẩu gạo của Việt Nam và Thái Lan trong từng năm từ 2017 đến 2020, cần so sánh hai nước trong mỗi năm.[[br]]b) [NB] Nhiệt độ cao nhất mỗi ngày trong tuần ở hai thành phố, cần thấy sự thay đổi theo ngày của cả hai.",
+     "level": 1,
+     "tier": "onclass",
+     "dang_id": "NB15",
+     "solution": "a) Biểu đồ cột kép.[[br]]b) Biểu đồ đoạn thẳng (hai đường trên cùng một biểu đồ)."
+    },
+    {
+     "type": "problem",
+     "label": "Bài 29.",
+     "statement": "Biểu đồ ở Hình 22 cho biết tỉ lệ xếp loại học lực của lớp 8A trong học kì I. Lớp 8A có $40$ học sinh.[[br]]a) [NB] Lớp 8A có bao nhiêu học sinh giỏi?[[br]]b) [NB] Lớp 8A có bao nhiêu học sinh khá?",
+     "level": 1,
+     "tier": "onclass",
+     "dang_id": "NB16",
+     "solution": "a) $40\\cdot 25\\%=10$ học sinh.[[br]]b) $40\\cdot 50\\%=20$ học sinh.",
+     "figure": {
+      "tikz": "\\begin{tikzpicture}[line width=0.6pt, font=\\small]\n\\fill[white, draw=black] (0,0) -- (90.00:1.5) arc (90.00:0.00:1.5) -- cycle;\n\\node[font=\\scriptsize, align=center, anchor=225] at (45.00:1.62) {Giỏi\\\\$25\\%$};\n\\fill[black!14, draw=black] (0,0) -- (0.00:1.5) arc (0.00:-180.00:1.5) -- cycle;\n\\node[font=\\scriptsize, align=center, anchor=90] at (-90.00:1.62) {Khá\\\\$50\\%$};\n\\fill[black!34, draw=black] (0,0) -- (-180.00:1.5) arc (-180.00:-252.00:1.5) -- cycle;\n\\node[font=\\scriptsize, align=center, anchor=324] at (-216.00:1.62) {Trung bình\\\\$20\\%$};\n\\fill[black!55, draw=black] (0,0) -- (-252.00:1.5) arc (-252.00:-270.00:1.5) -- cycle;\n\\node[font=\\scriptsize, align=center, anchor=279] at (-261.00:1.62) {Yếu\\\\$5\\%$};\n\\end{tikzpicture}",
+      "caption": "Hình 22",
+      "pos": "below"
+     }
+    },
+    {
+     "type": "problem",
+     "label": "Bài 30.",
+     "statement": "[NB] Biểu đồ ở Hình 23 cho biết tỉ lệ xếp loại học lực của lớp 8E có $50$ học sinh. Lớp 8E có bao nhiêu học sinh giỏi?",
+     "level": 1,
+     "tier": "onclass",
+     "dang_id": "NB16",
+     "solution": "$50\\cdot 26\\%=13$ học sinh.",
+     "figure": {
+      "tikz": "\\begin{tikzpicture}[line width=0.6pt, font=\\small]\n\\fill[white, draw=black] (0,0) -- (90.00:1.5) arc (90.00:-3.60:1.5) -- cycle;\n\\node[font=\\scriptsize, align=center, anchor=223] at (43.20:1.62) {Giỏi\\\\$26\\%$};\n\\fill[black!14, draw=black] (0,0) -- (-3.60:1.5) arc (-3.60:-190.80:1.5) -- cycle;\n\\node[font=\\scriptsize, align=center, anchor=83] at (-97.20:1.62) {Khá\\\\$52\\%$};\n\\fill[black!34, draw=black] (0,0) -- (-190.80:1.5) arc (-190.80:-270.00:1.5) -- cycle;\n\\node[font=\\scriptsize, align=center, anchor=310] at (-230.40:1.62) {Trung bình\\\\$22\\%$};\n\\end{tikzpicture}",
+      "caption": "Hình 23",
+      "pos": "below"
+     }
+    },
+    {
+     "type": "noted",
+     "variant": "example",
+     "text": "\\textbf{Ví dụ 8.} Quặng hematite là loại quặng sắt chính trong các mỏ của Brasil. Tỉ lệ sắt trong quặng hematite cho ở biểu đồ Hình 24. Trong $10$ kg quặng hematite có bao nhiêu kilôgam sắt?[[br]]{\\sffamily\\bfseries\\color{brand}Lời giải}[[br]]Đọc biểu đồ: sắt chiếm $69{,}9\\%$ khối lượng quặng.[[br]]Khối lượng sắt là $10\\cdot 69{,}9\\%=\\dfrac{10\\cdot 69{,}9}{100}=$ [[fill:6{,}99]] (kg).[[br]]Vậy trong $10$ kg quặng hematite có [[fill:6{,}99]] kg sắt.",
+     "figure": {
+      "tikz": "\\begin{tikzpicture}[line width=0.6pt, font=\\small]\n\\fill[white, draw=black] (0,0) -- (90.00:1.5) arc (90.00:-161.64:1.5) -- cycle;\n\\node[font=\\scriptsize, align=center, anchor=144] at (-35.82:1.62) {Sắt\\\\$69{,}9\\%$};\n\\fill[black!14, draw=black] (0,0) -- (-161.64:1.5) arc (-161.64:-270.00:1.5) -- cycle;\n\\node[font=\\scriptsize, align=center, anchor=324] at (-215.82:1.62) {Chất khác\\\\$30{,}1\\%$};\n\\end{tikzpicture}",
+      "caption": "Hình 24",
+      "pos": "below"
+     }
+    },
+    {
+     "type": "problem",
+     "label": "Bài 31.",
+     "statement": "Với biểu đồ cơ cấu GDP ở Hình 12, biết GDP của Việt Nam năm 2021 là $0{,}4$ nghìn tỉ đô la Mỹ ($=400$ tỉ đô la Mỹ). Mỗi lĩnh vực sau đóng góp bao nhiêu tỉ đô la Mỹ?[[br]]a) [NB] Dịch vụ.[[br]]b) [NB] Công nghiệp và xây dựng.[[br]]c) [NB] Nông, lâm nghiệp và thủy sản.",
+     "level": 1,
+     "tier": "onclass",
+     "dang_id": "NB17",
+     "solution": "a) $400\\cdot 40{,}95\\%=163{,}8$ tỉ đô la Mỹ.[[br]]b) $400\\cdot 37{,}86\\%=151{,}44$ tỉ đô la Mỹ.[[br]]c) $400\\cdot 12{,}36\\%=49{,}44$ tỉ đô la Mỹ."
+    },
+    {
+     "type": "problem",
+     "label": "Bài 32.",
+     "statement": "Biểu đồ ở Hình 25 cho biết tỉ lệ phần trăm các loại trái cây yêu thích của $60$ học sinh lớp 8A. Điền vào chỗ trống để hoàn thành lời giải. (Theo đề giữa kì II, THCS Việt Hưng)[[br]]a) [NB] Số học sinh thích quả chuối là $60\\cdot 20\\%=$ [[blank:1.2cm]]; thích quả cam là [[blank:1.2cm]]; thích quả lê là $60\\cdot$ [[blank:1.4cm]] $=18$; thích quả măng cụt là [[blank:1.2cm]] (học sinh).[[br]]b) [NB] Tổng số học sinh thích chuối, cam và măng cụt là $60-18=$ [[blank:1.2cm]] (học sinh).[[br]]c) [NB] Số học sinh thích quả lê ít hơn tổng số học sinh thích các loại còn lại là $42-18=$ [[blank:1.2cm]] (học sinh).",
+     "level": 1,
+     "tier": "onclass",
+     "dang_id": "NB18",
+     "solution": "a) $12$; $12$; $30\\%$; $18$.[[br]]b) $42$.[[br]]c) $24$.",
+     "figure": {
+      "tikz": "\\begin{tikzpicture}[line width=0.6pt, font=\\small]\n\\fill[white, draw=black] (0,0) -- (90.00:1.5) arc (90.00:18.00:1.5) -- cycle;\n\\node[font=\\scriptsize, align=center, anchor=234] at (54.00:1.62) {Chuối\\\\$20\\%$};\n\\fill[black!14, draw=black] (0,0) -- (18.00:1.5) arc (18.00:-54.00:1.5) -- cycle;\n\\node[font=\\scriptsize, align=center, anchor=162] at (-18.00:1.62) {Cam\\\\$20\\%$};\n\\fill[black!34, draw=black] (0,0) -- (-54.00:1.5) arc (-54.00:-162.00:1.5) -- cycle;\n\\node[font=\\scriptsize, align=center, anchor=72] at (-108.00:1.62) {Lê\\\\$30\\%$};\n\\fill[black!55, draw=black] (0,0) -- (-162.00:1.5) arc (-162.00:-270.00:1.5) -- cycle;\n\\node[font=\\scriptsize, align=center, anchor=324] at (-216.00:1.62) {Măng cụt\\\\$30\\%$};\n\\end{tikzpicture}",
+      "caption": "Hình 25",
+      "pos": "below"
+     }
+    },
+    {
+     "type": "noted",
+     "variant": "example",
+     "text": "\\textbf{Ví dụ 9.} Biểu đồ cột kép ở Hình 26 cho biết số học sinh các lớp khối 8 tham gia câu lạc bộ thể thao và câu lạc bộ nghệ thuật. (Đề cuối kì I, THCS Nguyễn Công Trứ, $1{,}0$ điểm)[[br]]a) Lập bảng thống kê cho dữ liệu được biểu diễn trong biểu đồ.[[br]]b) Lớp 8A có $50$ học sinh. Số học sinh lớp 8A tham gia mỗi câu lạc bộ chiếm bao nhiêu phần trăm sĩ số lớp?[[br]]{\\sffamily\\bfseries\\color{brand}Lời giải}[[br]]a) Bảng thống kê:[[br]]{\\small\\renewcommand\\arraystretch{1.2}\\begin{tabular}{|l|c|c|c|c|}\\hline \\textbf{Lớp} & \\textbf{8A} & \\textbf{8B} & \\textbf{8C} & \\textbf{8D} \\\\ \\hline CLB thể thao & $8$ & [[fill:12]] & $10$ & $5$ \\\\ \\hline CLB nghệ thuật & $16$ & $4$ & [[fill:8]] & $8$ \\\\ \\hline \\end{tabular}}[[br]]b) Tỉ lệ học sinh lớp 8A tham gia câu lạc bộ thể thao là $\\dfrac{8}{50}\\cdot 100\\%$.[[br]]Tỉ lệ học sinh lớp 8A tham gia câu lạc bộ nghệ thuật là $\\dfrac{16}{50}\\cdot 100\\%$.[[br]]Vậy câu lạc bộ thể thao chiếm [[fill:16]]$\\%$, câu lạc bộ nghệ thuật chiếm [[fill:32]]$\\%$ sĩ số lớp 8A.",
+     "figure": {
+      "tikz": "\\begin{tikzpicture}[line width=0.6pt, font=\\small]\n\\draw[-{Stealth[length=4pt]}] (0,0) -- (8.15,0);\n\\draw[-{Stealth[length=4pt]}] (0,0) -- (0,3.85);\n\\draw (-0.06,0.00) -- (0.06,0.00);\n\\node[left, font=\\scriptsize] at (0,0.00) {$0$};\n\\draw[black!22, dashed] (0,0.38) -- (8.00,0.38);\n\\draw (-0.06,0.38) -- (0.06,0.38);\n\\node[left, font=\\scriptsize] at (0,0.38) {$2$};\n\\draw[black!22, dashed] (0,0.76) -- (8.00,0.76);\n\\draw (-0.06,0.76) -- (0.06,0.76);\n\\node[left, font=\\scriptsize] at (0,0.76) {$4$};\n\\draw[black!22, dashed] (0,1.13) -- (8.00,1.13);\n\\draw (-0.06,1.13) -- (0.06,1.13);\n\\node[left, font=\\scriptsize] at (0,1.13) {$6$};\n\\draw[black!22, dashed] (0,1.51) -- (8.00,1.51);\n\\draw (-0.06,1.51) -- (0.06,1.51);\n\\node[left, font=\\scriptsize] at (0,1.51) {$8$};\n\\draw[black!22, dashed] (0,1.89) -- (8.00,1.89);\n\\draw (-0.06,1.89) -- (0.06,1.89);\n\\node[left, font=\\scriptsize] at (0,1.89) {$10$};\n\\draw[black!22, dashed] (0,2.27) -- (8.00,2.27);\n\\draw (-0.06,2.27) -- (0.06,2.27);\n\\node[left, font=\\scriptsize] at (0,2.27) {$12$};\n\\draw[black!22, dashed] (0,2.64) -- (8.00,2.64);\n\\draw (-0.06,2.64) -- (0.06,2.64);\n\\node[left, font=\\scriptsize] at (0,2.64) {$14$};\n\\draw[black!22, dashed] (0,3.02) -- (8.00,3.02);\n\\draw (-0.06,3.02) -- (0.06,3.02);\n\\node[left, font=\\scriptsize] at (0,3.02) {$16$};\n\\draw[black!22, dashed] (0,3.40) -- (8.00,3.40);\n\\draw (-0.06,3.40) -- (0.06,3.40);\n\\node[left, font=\\scriptsize] at (0,3.40) {$18$};\n\\node[above right, font=\\scriptsize, align=left] at (0,3.85) {Số học sinh};\n\\node[right, font=\\scriptsize] at (8.40,0) {Lớp};\n\\fill[black!12, draw=black] (0.80,0) rectangle (1.30,1.51);\n\\node[above, font=\\scriptsize, fill=white, inner sep=1pt] at (1.05,1.55) {$8$};\n\\fill[black!60, draw=black] (1.30,0) rectangle (1.80,3.02);\n\\node[above, font=\\scriptsize, fill=white, inner sep=1pt] at (1.55,3.06) {$16$};\n\\node[below, font=\\scriptsize, align=center] at (1.30,0) {8A};\n\\fill[black!12, draw=black] (2.60,0) rectangle (3.10,2.27);\n\\node[above, font=\\scriptsize, fill=white, inner sep=1pt] at (2.85,2.31) {$12$};\n\\fill[black!60, draw=black] (3.10,0) rectangle (3.60,0.76);\n\\node[above, font=\\scriptsize, fill=white, inner sep=1pt] at (3.35,0.80) {$4$};\n\\node[below, font=\\scriptsize, align=center] at (3.10,0) {8B};\n\\fill[black!12, draw=black] (4.40,0) rectangle (4.90,1.89);\n\\node[above, font=\\scriptsize, fill=white, inner sep=1pt] at (4.65,1.93) {$10$};\n\\fill[black!60, draw=black] (4.90,0) rectangle (5.40,1.51);\n\\node[above, font=\\scriptsize, fill=white, inner sep=1pt] at (5.15,1.55) {$8$};\n\\node[below, font=\\scriptsize, align=center] at (4.90,0) {8C};\n\\fill[black!12, draw=black] (6.20,0) rectangle (6.70,0.94);\n\\node[above, font=\\scriptsize, fill=white, inner sep=1pt] at (6.45,0.98) {$5$};\n\\fill[black!60, draw=black] (6.70,0) rectangle (7.20,1.51);\n\\node[above, font=\\scriptsize, fill=white, inner sep=1pt] at (6.95,1.55) {$8$};\n\\node[below, font=\\scriptsize, align=center] at (6.70,0) {8D};\n\\fill[black!12, draw=black] (5.60,4.35) rectangle ++(0.28,0.2);\n\\node[right, font=\\scriptsize] at (5.90,4.45) {CLB thể thao};\n\\fill[black!60, draw=black] (5.60,4.00) rectangle ++(0.28,0.2);\n\\node[right, font=\\scriptsize] at (5.90,4.10) {CLB nghệ thuật};\n\\end{tikzpicture}",
+      "caption": "Hình 26",
+      "pos": "below"
+     }
+    },
+    {
+     "type": "problem",
+     "label": "Bài 33.",
+     "statement": "Với biểu đồ lớp 6A ở Hình 13:[[br]]a) [TH] Lập bảng thống kê số học sinh nam đăng kí mỗi môn.[[br]]b) [TH] Lớp 6A có bao nhiêu học sinh?[[br]]c) [TH] Một bạn lớp 6B nói: \\emph{“Lớp 6A có số học sinh nữ nhiều hơn số học sinh nam”}. Bạn đó nói đúng không?[[br]]d) [TH] Số học sinh đăng kí bóng bàn chiếm bao nhiêu phần trăm số học sinh cả lớp?",
+     "level": 2,
+     "tier": "onclass",
+     "dang_id": "TH5",
+     "solution": "a) Bảng thống kê:[[br]]{\\small\\renewcommand\\arraystretch{1.2}\\begin{tabular}{|l|c|c|c|}\\hline \\textbf{Môn} & \\textbf{Bóng bàn} & \\textbf{Cầu lông} & \\textbf{Chạy bộ} \\\\ \\hline Số học sinh nam & $9$ & $5$ & $10$ \\\\ \\hline \\end{tabular}}[[br]]b) Ta có số nam là $9+5+10=24$, số nữ là $8+4+4=16$.[[br]]Lớp 6A có $24+16=40$ học sinh.[[br]]c) Vì $16<24$ nên nữ ít hơn nam, bạn đó nói không đúng.[[br]]d) Ta có số bạn đăng kí bóng bàn là $9+8=17$.[[br]]$\\dfrac{17}{40}\\cdot 100\\%=42{,}5\\%$.[[br]]Vậy bóng bàn chiếm $42{,}5\\%$ số học sinh cả lớp.",
+     "hints": [
+      "Mỗi bạn đăng kí đúng một môn: tổng số học sinh cả lớp là tổng của những cột nào?",
+      "Câu d) so sánh phần nào với tổng nào?"
+     ]
+    },
+    {
+     "type": "noted",
+     "variant": "example",
+     "text": "\\textbf{Ví dụ 10.} Doanh thu (đơn vị: tỉ đồng) của hai chi nhánh một công ty trong hai năm như sau. (Đề cuối kì I, THCS Hát Môn, $1{,}0$ điểm)\\par\\nopagebreak\\smallskip{\\centering\\small\\renewcommand\\arraystretch{1.25}\\begin{tabular}{|l|c|c|}\\hline \\textbf{Chi nhánh} & \\textbf{Năm 2021} & \\textbf{Năm 2022} \\\\ \\hline Hà Nội & $6$ & $8$ \\\\ \\hline TP Hồ Chí Minh & $10$ & $12$ \\\\ \\hline \\end{tabular}\\par}\\smallskip{}\\par{}a) Chọn dạng biểu đồ thích hợp rồi vẽ để so sánh doanh thu của hai chi nhánh trong hai năm.[[br]]b) Trong giai đoạn 2021 -- 2022, doanh thu của hai chi nhánh là bao nhiêu?[[br]]{\\sffamily\\bfseries\\color{brand}Lời giải}[[br]]a) Cần so sánh từng cặp số liệu của hai dãy nên chọn biểu đồ [[fill:cột kép]].[[br]]Vẽ trục ngang ghi tên hai chi nhánh, trục đứng ghi doanh thu (tỉ đồng), mỗi năm một màu cột, có chú thích:[[br]]\\adjustbox{max width=0.5\\linewidth}{\\begin{tikzpicture}[line width=0.6pt, font=\\small]\n\\draw[-{Stealth[length=4pt]}] (0,0) -- (5.15,0);\n\\draw[-{Stealth[length=4pt]}] (0,0) -- (0,3.85);\n\\draw (-0.06,0.00) -- (0.06,0.00);\n\\node[left, font=\\scriptsize] at (0,0.00) {$0$};\n\\draw[black!22, dashed] (0,0.49) -- (5.00,0.49);\n\\draw (-0.06,0.49) -- (0.06,0.49);\n\\node[left, font=\\scriptsize] at (0,0.49) {$2$};\n\\draw[black!22, dashed] (0,0.97) -- (5.00,0.97);\n\\draw (-0.06,0.97) -- (0.06,0.97);\n\\node[left, font=\\scriptsize] at (0,0.97) {$4$};\n\\draw[black!22, dashed] (0,1.46) -- (5.00,1.46);\n\\draw (-0.06,1.46) -- (0.06,1.46);\n\\node[left, font=\\scriptsize] at (0,1.46) {$6$};\n\\draw[black!22, dashed] (0,1.94) -- (5.00,1.94);\n\\draw (-0.06,1.94) -- (0.06,1.94);\n\\node[left, font=\\scriptsize] at (0,1.94) {$8$};\n\\draw[black!22, dashed] (0,2.43) -- (5.00,2.43);\n\\draw (-0.06,2.43) -- (0.06,2.43);\n\\node[left, font=\\scriptsize] at (0,2.43) {$10$};\n\\draw[black!22, dashed] (0,2.91) -- (5.00,2.91);\n\\draw (-0.06,2.91) -- (0.06,2.91);\n\\node[left, font=\\scriptsize] at (0,2.91) {$12$};\n\\draw[black!22, dashed] (0,3.40) -- (5.00,3.40);\n\\draw (-0.06,3.40) -- (0.06,3.40);\n\\node[left, font=\\scriptsize] at (0,3.40) {$14$};\n\\node[above right, font=\\scriptsize, align=left] at (0,3.85) {Doanh thu\\\\(tỉ đồng)};\n\\node[right, font=\\scriptsize] at (5.40,0) {};\n\\fill[black!12, draw=black] (1.00,0) rectangle (1.50,1.46);\n\\node[above, font=\\scriptsize, fill=white, inner sep=1pt] at (1.25,1.50) {$6$};\n\\fill[black!60, draw=black] (1.50,0) rectangle (2.00,1.94);\n\\node[above, font=\\scriptsize, fill=white, inner sep=1pt] at (1.75,1.98) {$8$};\n\\node[below, font=\\scriptsize, align=center] at (1.50,0) {Hà Nội};\n\\fill[black!12, draw=black] (3.00,0) rectangle (3.50,2.43);\n\\node[above, font=\\scriptsize, fill=white, inner sep=1pt] at (3.25,2.47) {$10$};\n\\fill[black!60, draw=black] (3.50,0) rectangle (4.00,2.91);\n\\node[above, font=\\scriptsize, fill=white, inner sep=1pt] at (3.75,2.95) {$12$};\n\\node[below, font=\\scriptsize, align=center] at (3.50,0) {TP Hồ Chí Minh};\n\\fill[black!12, draw=black] (2.60,4.35) rectangle ++(0.28,0.2);\n\\node[right, font=\\scriptsize] at (2.90,4.45) {Năm 2021};\n\\fill[black!60, draw=black] (2.60,4.00) rectangle ++(0.28,0.2);\n\\node[right, font=\\scriptsize] at (2.90,4.10) {Năm 2022};\n\\end{tikzpicture}}[[br]]b) Doanh thu của hai chi nhánh trong hai năm là $6+10+8+12$ (tỉ đồng).[[br]]Vậy trong giai đoạn 2021 -- 2022, hai chi nhánh có doanh thu [[fill:36]] tỉ đồng."
+    },
+    {
+     "type": "problem",
+     "label": "Bài 34.",
+     "statement": "Thống kê môn thể thao yêu thích của học sinh lớp 8A (mỗi bạn chọn một môn) như sau. (Theo đề giữa kì II, THCS Phúc Lợi)\\par\\nopagebreak\\smallskip{\\centering\\small\\renewcommand\\arraystretch{1.25}\\begin{tabular}{|l|c|c|c|c|}\\hline \\textbf{Môn thể thao} & \\textbf{Bóng đá} & \\textbf{Bóng rổ} & \\textbf{Cầu lông} & \\textbf{Bóng bàn} \\\\ \\hline Nam & $10$ & $6$ & $3$ & $3$ \\\\ \\hline Nữ & $5$ & $2$ & $5$ & $3$ \\\\ \\hline \\end{tabular}\\par}\\smallskip{}\\par{}a) [TH] Chọn biểu đồ thích hợp để so sánh số bạn nam và số bạn nữ thích mỗi môn, rồi vẽ biểu đồ đó.[[br]]b) [TH] Môn nào có chênh lệch giữa số bạn nam và số bạn nữ nhiều nhất? Chênh lệch bao nhiêu bạn?",
+     "level": 2,
+     "tier": "onclass",
+     "dang_id": "TH6",
+     "solution": "a) Vì cần so sánh từng cặp số liệu (nam, nữ) của mỗi môn nên chọn biểu đồ cột kép:[[br]]\\adjustbox{max width=0.6\\linewidth}{\\begin{tikzpicture}[line width=0.6pt, font=\\small]\n\\draw[-{Stealth[length=4pt]}] (0,0) -- (7.55,0);\n\\draw[-{Stealth[length=4pt]}] (0,0) -- (0,3.85);\n\\draw (-0.06,0.00) -- (0.06,0.00);\n\\node[left, font=\\scriptsize] at (0,0.00) {$0$};\n\\draw[black!22, dashed] (0,0.57) -- (7.40,0.57);\n\\draw (-0.06,0.57) -- (0.06,0.57);\n\\node[left, font=\\scriptsize] at (0,0.57) {$2$};\n\\draw[black!22, dashed] (0,1.13) -- (7.40,1.13);\n\\draw (-0.06,1.13) -- (0.06,1.13);\n\\node[left, font=\\scriptsize] at (0,1.13) {$4$};\n\\draw[black!22, dashed] (0,1.70) -- (7.40,1.70);\n\\draw (-0.06,1.70) -- (0.06,1.70);\n\\node[left, font=\\scriptsize] at (0,1.70) {$6$};\n\\draw[black!22, dashed] (0,2.27) -- (7.40,2.27);\n\\draw (-0.06,2.27) -- (0.06,2.27);\n\\node[left, font=\\scriptsize] at (0,2.27) {$8$};\n\\draw[black!22, dashed] (0,2.83) -- (7.40,2.83);\n\\draw (-0.06,2.83) -- (0.06,2.83);\n\\node[left, font=\\scriptsize] at (0,2.83) {$10$};\n\\draw[black!22, dashed] (0,3.40) -- (7.40,3.40);\n\\draw (-0.06,3.40) -- (0.06,3.40);\n\\node[left, font=\\scriptsize] at (0,3.40) {$12$};\n\\node[above right, font=\\scriptsize, align=left] at (0,3.85) {Số học sinh};\n\\node[right, font=\\scriptsize] at (7.80,0) {Môn};\n\\fill[black!12, draw=black] (0.68,0) rectangle (1.18,2.83);\n\\node[above, font=\\scriptsize, fill=white, inner sep=1pt] at (0.93,2.87) {$10$};\n\\fill[black!60, draw=black] (1.18,0) rectangle (1.68,1.42);\n\\node[above, font=\\scriptsize, fill=white, inner sep=1pt] at (1.43,1.46) {$5$};\n\\node[below, font=\\scriptsize, align=center] at (1.18,0) {Bóng đá};\n\\fill[black!12, draw=black] (2.36,0) rectangle (2.86,1.70);\n\\node[above, font=\\scriptsize, fill=white, inner sep=1pt] at (2.61,1.74) {$6$};\n\\fill[black!60, draw=black] (2.86,0) rectangle (3.36,0.57);\n\\node[above, font=\\scriptsize, fill=white, inner sep=1pt] at (3.11,0.61) {$2$};\n\\node[below, font=\\scriptsize, align=center] at (2.86,0) {Bóng rổ};\n\\fill[black!12, draw=black] (4.04,0) rectangle (4.54,0.85);\n\\node[above, font=\\scriptsize, fill=white, inner sep=1pt] at (4.29,0.89) {$3$};\n\\fill[black!60, draw=black] (4.54,0) rectangle (5.04,1.42);\n\\node[above, font=\\scriptsize, fill=white, inner sep=1pt] at (4.79,1.46) {$5$};\n\\node[below, font=\\scriptsize, align=center] at (4.54,0) {Cầu lông};\n\\fill[black!12, draw=black] (5.72,0) rectangle (6.22,0.85);\n\\node[above, font=\\scriptsize, fill=white, inner sep=1pt] at (5.97,0.89) {$3$};\n\\fill[black!60, draw=black] (6.22,0) rectangle (6.72,0.85);\n\\node[above, font=\\scriptsize, fill=white, inner sep=1pt] at (6.47,0.89) {$3$};\n\\node[below, font=\\scriptsize, align=center] at (6.22,0) {Bóng bàn};\n\\fill[black!12, draw=black] (5.00,4.35) rectangle ++(0.28,0.2);\n\\node[right, font=\\scriptsize] at (5.30,4.45) {Nam};\n\\fill[black!60, draw=black] (5.00,4.00) rectangle ++(0.28,0.2);\n\\node[right, font=\\scriptsize] at (5.30,4.10) {Nữ};\n\\end{tikzpicture}}[[br]]b) Ta có chênh lệch: bóng đá $5$, bóng rổ $4$, cầu lông $2$, bóng bàn $0$.[[br]]Vậy bóng đá chênh lệch nhiều nhất, $5$ bạn.",
+     "hints": [
+      "Bảng có mấy dãy số liệu? Cần so sánh theo từng cặp hay theo tỉ lệ trong tổng thể?"
+     ]
+    },
+    {
+     "type": "problem",
+     "label": "Bài 35.",
+     "statement": "[TH] Một cửa hàng quần áo giảm giá các mặt hàng: quần âu $25\\%$, áo sơ mi $35\\%$, áo khoác $20\\%$, quần jeans $10\\%$. Bạn Nam định biểu diễn các số liệu này bằng biểu đồ hình quạt tròn. Cách làm đó có hợp lí không? Nên dùng biểu đồ nào? Vẽ biểu đồ đó. (Theo Ôn tập chương V)",
+     "level": 2,
+     "tier": "onclass",
+     "dang_id": "TH6",
+     "solution": "Vì các mức giảm giá không phải là các phần của một tổng thể (tổng $25\\%+35\\%+20\\%+10\\%=90\\%\\ne 100\\%$) nên dùng biểu đồ hình quạt tròn là không hợp lí.[[br]]Ta dùng biểu đồ cột:[[br]]\\adjustbox{max width=0.55\\linewidth}{\\begin{tikzpicture}[line width=0.6pt, font=\\small]\n\\draw[-{Stealth[length=4pt]}] (0,0) -- (6.45,0);\n\\draw[-{Stealth[length=4pt]}] (0,0) -- (0,3.85);\n\\draw (-0.06,0.00) -- (0.06,0.00);\n\\node[left, font=\\scriptsize] at (0,0.00) {$0$};\n\\draw[black!22, dashed] (0,0.85) -- (6.30,0.85);\n\\draw (-0.06,0.85) -- (0.06,0.85);\n\\node[left, font=\\scriptsize] at (0,0.85) {$10$};\n\\draw[black!22, dashed] (0,1.70) -- (6.30,1.70);\n\\draw (-0.06,1.70) -- (0.06,1.70);\n\\node[left, font=\\scriptsize] at (0,1.70) {$20$};\n\\draw[black!22, dashed] (0,2.55) -- (6.30,2.55);\n\\draw (-0.06,2.55) -- (0.06,2.55);\n\\node[left, font=\\scriptsize] at (0,2.55) {$30$};\n\\draw[black!22, dashed] (0,3.40) -- (6.30,3.40);\n\\draw (-0.06,3.40) -- (0.06,3.40);\n\\node[left, font=\\scriptsize] at (0,3.40) {$40$};\n\\node[above right, font=\\scriptsize, align=left] at (0,3.85) {Mức giảm\\\\(\\%)};\n\\node[right, font=\\scriptsize] at (6.70,0) {Mặt hàng};\n\\fill[black!18, draw=black] (0.70,0) rectangle (1.40,2.12);\n\\node[above, font=\\scriptsize, fill=white, inner sep=1pt] at (1.05,2.17) {$25$};\n\\node[below, font=\\scriptsize, align=center] at (1.05,0) {Quần âu};\n\\fill[black!18, draw=black] (2.10,0) rectangle (2.80,2.98);\n\\node[above, font=\\scriptsize, fill=white, inner sep=1pt] at (2.45,3.02) {$35$};\n\\node[below, font=\\scriptsize, align=center] at (2.45,0) {Áo sơ mi};\n\\fill[black!18, draw=black] (3.50,0) rectangle (4.20,1.70);\n\\node[above, font=\\scriptsize, fill=white, inner sep=1pt] at (3.85,1.74) {$20$};\n\\node[below, font=\\scriptsize, align=center] at (3.85,0) {Áo khoác};\n\\fill[black!18, draw=black] (4.90,0) rectangle (5.60,0.85);\n\\node[above, font=\\scriptsize, fill=white, inner sep=1pt] at (5.25,0.89) {$10$};\n\\node[below, font=\\scriptsize, align=center] at (5.25,0) {Quần jeans};\n\\end{tikzpicture}}[[br]]Vậy nên dùng biểu đồ cột như trên.",
+     "hints": [
+      "Biểu đồ hình quạt tròn dùng khi các số liệu là gì của một tổng thể? Tổng của chúng phải bằng bao nhiêu?"
+     ]
+    }
+   ]
+  },
+  {
+   "kind": "reflection",
+   "number": 5,
+   "title": "Tổng kết \\& bài tập về nhà",
+   "teacher_note": "Cho HS điền sơ đồ tư duy trong 3 phút trước giờ kiểm tra.[[br]]Bài tập về nhà làm sau buổi kiểm tra; BTVN 21 là bài tự viết lại quy trình.",
+   "blocks": [
+    {
+     "type": "mindmap",
+     "caption": "Sơ đồ tư duy: Phân tích số liệu thống kê dựa vào biểu đồ",
+     "root": "PHÂN TÍCH BIỂU ĐỒ",
+     "branches": [
+      {
+       "label": "ĐỌC ĐÚNG",
+       "children": [
+        {
+         "label": "Tên biểu đồ, hai trục, đơn vị"
+        },
+        {
+         "label": "Gốc trục đứng khác $0$: không so chiều cao"
+        },
+        {
+         "label": "Mốc không đều: không xét độ dốc"
+        }
+       ]
+      },
+      {
+       "label": "BA BƯỚC",
+       "children": [
+        {
+         "label": "Đọc trục và chú thích"
+        },
+        {
+         "label": "Đọc số liệu cần dùng"
+        },
+        {
+         "label": "Tính rồi kết luận, có đơn vị"
+        }
+       ]
+      },
+      {
+       "label": "PHÉP TÍNH",
+       "children": [
+        {
+         "label": "Hiệu: nhiều hơn, ít hơn"
+        },
+        {
+         "label": "Thương: gấp mấy lần"
+        },
+        {
+         "label": "Phần $:$ tổng $\\cdot 100\\%$"
+        },
+        {
+         "label": "Tổng $\\cdot$ tỉ lệ $=$ số lượng"
+        }
+       ]
+      },
+      {
+       "label": "CÂU TỰ LUẬN",
+       "children": [
+        {
+         "label": "Biểu đồ cột kép $\\to$ bảng"
+        },
+        {
+         "label": "Tỉ lệ so với sĩ số"
+        },
+        {
+         "label": "Bảng hai dãy $\\to$ vẽ cột kép"
+        }
+       ]
+      }
+     ]
+    },
+    {
+     "type": "problem",
+     "label": "BTVN~1.",
+     "statement": "Với biểu đồ điểm của bạn Hòa ở Hình 2, mỗi khẳng định sau đúng hay sai?[[br]]a) [NB] Nếu vẽ lại biểu đồ với gốc trục đứng là $0$ thì cột Toán cao gấp $1{,}8$ lần cột Anh.[[br]]b) [NB] Ở Hình 2, tỉ lệ chiều cao cột Văn và cột Anh bằng $\\dfrac{7}{5}$.",
+     "level": 1,
+     "tier": "btvn",
+     "dang_id": "NB1",
+     "solution": "a) Đúng ($9:5=1{,}8$).[[br]]b) Sai (cột Văn cao $5$ vạch, cột Anh cao $3$ vạch)."
+    },
+    {
+     "type": "problem",
+     "label": "BTVN~2.",
+     "statement": "Mỗi khẳng định sau đúng hay sai?[[br]]a) [NB] Biểu đồ đoạn thẳng có các mốc $2010$; $2014$; $2015$; $2017$ vẽ cách đều thì đoạn dốc hơn cho biết đại lượng tăng nhanh hơn.[[br]]b) [NB] Muốn so sánh tốc độ tăng theo độ dốc, các mốc thời gian trên trục ngang phải cách đều nhau.",
+     "level": 1,
+     "tier": "btvn",
+     "dang_id": "NB2",
+     "solution": "a) Sai.[[br]]b) Đúng."
+    },
+    {
+     "type": "problem",
+     "label": "BTVN~3.",
+     "statement": "Với biểu đồ ti vi ở Hình 14:[[br]]a) [NB] Gốc của trục đứng là số nào?[[br]]b) [NB] Mỗi vạch chia trên trục đứng ứng với bao nhiêu chiếc ti vi?",
+     "level": 1,
+     "tier": "btvn",
+     "dang_id": "NB3",
+     "solution": "a) $20$.[[br]]b) $10$ chiếc."
+    },
+    {
+     "type": "problem",
+     "label": "BTVN~4.",
+     "statement": "Với biểu đồ gạo ở Hình 21:[[br]]a) [NB] Tháng nào chi nhánh A bán được nhiều gạo nhất?[[br]]b) [NB] Tháng nào chi nhánh B bán được ít gạo nhất?",
+     "level": 1,
+     "tier": "btvn",
+     "dang_id": "NB4",
+     "solution": "a) Tháng 3 ($62$ kg).[[br]]b) Tháng 3 ($24$ kg)."
+    },
+    {
+     "type": "problem",
+     "label": "BTVN~5.",
+     "statement": "Điền vào chỗ chấm.[[br]]a) [NB] Ở Hình 4, người đó đi ít hơn trung bình của tất cả người dùng [[blank:1.4cm]] bước.[[br]]b) [NB] Ở Hình 20, tháng 2 cửa hàng 2 bán nhiều hơn cửa hàng 1 [[blank:1.2cm]] đôi giày.",
+     "level": 1,
+     "tier": "btvn",
+     "dang_id": "NB5",
+     "solution": "a) $4\\,399-3\\,455=944$ bước.[[br]]b) $37-23=14$ đôi."
+    },
+    {
+     "type": "problem",
+     "label": "BTVN~6.",
+     "statement": "Tính tổng.[[br]]a) [NB] Sản lượng than của Quảng Ninh trong hai năm 2019 và 2020 (Hình 17).[[br]]b) [NB] Tổng số bàn thắng của cầu thủ giành Chiếc giày vàng La Liga trong ba mùa đầu (Hình 19).",
+     "level": 1,
+     "tier": "btvn",
+     "dang_id": "NB6",
+     "solution": "a) $42{,}9+47{,}5=90{,}4$ triệu tấn.[[br]]b) $40+37+34=111$ bàn."
+    },
+    {
+     "type": "problem",
+     "label": "BTVN~7.",
+     "statement": "Với biểu đồ ở Hình 5:[[br]]a) [NB] Nêu xu thế số máy điều hòa bán được từ tháng 2 đến tháng 6.[[br]]b) [NB] Nêu xu thế số máy sưởi bán được trong $6$ tháng.",
+     "level": 1,
+     "tier": "btvn",
+     "dang_id": "NB7",
+     "solution": "a) Tăng dần.[[br]]b) Giảm dần."
+    },
+    {
+     "type": "problem",
+     "label": "BTVN~8.",
+     "statement": "Với biểu đồ Chiếc giày vàng ở Hình 19:[[br]]a) [NB] Mùa giải nào số bàn của hai cầu thủ chênh lệch nhiều nhất?[[br]]b) [NB] Những mùa giải nào số bàn của hai cầu thủ chênh lệch ít nhất?",
+     "level": 1,
+     "tier": "btvn",
+     "dang_id": "NB8",
+     "solution": "a) Mùa 2015/2016 ($40-25=15$ bàn).[[br]]b) Mùa 2017/2018 và 2019/2020 (cùng chênh $2$ bàn)."
+    },
+    {
+     "type": "problem",
+     "label": "BTVN~9.",
+     "statement": "[NB] Biểu đồ ở Hình 27 cho biết tỉ lệ học sinh khối 8 chọn môn thể thao yêu thích. Môn nào được yêu thích nhất, chiếm bao nhiêu phần trăm?",
+     "level": 1,
+     "tier": "btvn",
+     "dang_id": "NB9",
+     "solution": "Bóng đá, chiếm $47\\%$.",
+     "figure": {
+      "tikz": "\\begin{tikzpicture}[line width=0.6pt, font=\\small]\n\\fill[white, draw=black] (0,0) -- (90.00:1.5) arc (90.00:-79.20:1.5) -- cycle;\n\\node[font=\\scriptsize, align=center, anchor=185] at (5.40:1.62) {Bóng đá\\\\$47\\%$};\n\\fill[black!14, draw=black] (0,0) -- (-79.20:1.5) arc (-79.20:-140.40:1.5) -- cycle;\n\\node[font=\\scriptsize, align=center, anchor=70] at (-109.80:1.62) {Bóng chuyền\\\\$17\\%$};\n\\fill[black!34, draw=black] (0,0) -- (-140.40:1.5) arc (-140.40:-201.60:1.5) -- cycle;\n\\node[font=\\scriptsize, align=center, anchor=9] at (-171.00:1.62) {Bóng bàn\\\\$17\\%$};\n\\fill[black!55, draw=black] (0,0) -- (-201.60:1.5) arc (-201.60:-270.00:1.5) -- cycle;\n\\node[font=\\scriptsize, align=center, anchor=304] at (-235.80:1.62) {Cầu lông\\\\$19\\%$};\n\\end{tikzpicture}",
+      "caption": "Hình 27",
+      "pos": "below"
+     }
+    },
+    {
+     "type": "problem",
+     "label": "BTVN~10.",
+     "statement": "[NB] Biểu đồ ở Hình 28 cho biết cơ cấu dân số Việt Nam năm 2020 theo nhóm tuổi. Nhóm tuổi nào chiếm tỉ lệ lớn nhất, bao nhiêu phần trăm?",
+     "level": 1,
+     "tier": "btvn",
+     "dang_id": "NB9",
+     "solution": "Nhóm $15$ -- $64$ tuổi, chiếm $68{,}94\\%$.",
+     "figure": {
+      "tikz": "\\begin{tikzpicture}[line width=0.6pt, font=\\small]\n\\fill[white, draw=black] (0,0) -- (90.00:1.5) arc (90.00:6.52:1.5) -- cycle;\n\\node[font=\\scriptsize, align=center, anchor=228] at (48.26:1.62) {0--14 tuổi\\\\$23{,}19\\%$};\n\\fill[black!14, draw=black] (0,0) -- (6.52:1.5) arc (6.52:-241.67:1.5) -- cycle;\n\\node[font=\\scriptsize, align=center, anchor=62] at (-117.58:1.62) {15--64 tuổi\\\\$68{,}94\\%$};\n\\fill[black!34, draw=black] (0,0) -- (-241.67:1.5) arc (-241.67:-270.00:1.5) -- cycle;\n\\node[font=\\scriptsize, align=center, anchor=284] at (-255.83:1.62) {trên 64 tuổi\\\\$7{,}87\\%$};\n\\end{tikzpicture}",
+      "caption": "Hình 28",
+      "pos": "below"
+     }
+    },
+    {
+     "type": "problem",
+     "label": "BTVN~11.",
+     "statement": "Tính các tỉ số sau bằng số liệu.[[br]]a) [NB] Thời gian ngủ cần thiết của trẻ $0$ -- $3$ tháng gấp mấy lần người trên $64$ tuổi (Hình 6, làm tròn đến hàng phần mười)?[[br]]b) [NB] Số giày cửa hàng 2 bán trong quý I gấp mấy lần cửa hàng 1 (Hình 20)?",
+     "level": 1,
+     "tier": "btvn",
+     "dang_id": "NB10",
+     "solution": "a) $15{,}5:7{,}5\\approx 2{,}1$ lần.[[br]]b) $(35+37+36):(25+23+24)=108:72=1{,}5$ lần."
+    },
+    {
+     "type": "problem",
+     "label": "BTVN~12.",
+     "statement": "Với biểu đồ thị phần xuất khẩu gạo ở Hình 8:[[br]]a) [NB] Năm 2019, thị phần của Việt Nam là bao nhiêu phần trăm?[[br]]b) [NB] Năm 2018, thị phần của Thái Lan là bao nhiêu phần trăm?",
+     "level": 1,
+     "tier": "btvn",
+     "dang_id": "NB11",
+     "solution": "a) $15\\%$.[[br]]b) $23\\%$."
+    },
+    {
+     "type": "problem",
+     "label": "BTVN~13.",
+     "statement": "Với biểu đồ ti vi ở Hình 14, bạn Lan cho rằng cửa hàng 3 bán tháng 6 gấp đôi tháng 5. Điền vào chỗ trống.[[br]]a) [NB] Tỉ số hai số liệu là $88:53\\approx$ [[blank:1.4cm]] (làm tròn đến hàng phần mười).[[br]]b) [NB] Vì gốc trục đứng là $20$ nên ta [[blank:2.4cm]] dựa vào chiều cao cột để so sánh. Vậy nhận định của bạn Lan [[blank:1.4cm]].",
+     "level": 1,
+     "tier": "btvn",
+     "dang_id": "NB12",
+     "solution": "a) $88:53\\approx 1{,}7$.[[br]]b) không được; sai."
+    },
+    {
+     "type": "problem",
+     "label": "BTVN~14.",
+     "statement": "Với hai biểu đồ ở phần Khám phá và Hình 15, mỗi khẳng định sau đúng hay sai?[[br]]a) [NB] Biểu đồ món ăn ở phần Khám phá có gốc trục đứng khác $0$.[[br]]b) [NB] Nếu vẽ lại biểu đồ doanh thu với gốc trục đứng là $30$ thì doanh thu mỗi năm thay đổi.",
+     "level": 1,
+     "tier": "btvn",
+     "dang_id": "NB13",
+     "solution": "a) Đúng (gốc là $950$).[[br]]b) Sai."
+    },
+    {
+     "type": "problem",
+     "label": "BTVN~15.",
+     "statement": "[NB] Dữ liệu nào sau đây là số liệu rời rạc?",
+     "level": 1,
+     "tier": "btvn",
+     "dang_id": "NB14",
+     "solution": "C. Số tiền có trong túi.",
+     "options": [
+      "Thời gian ngủ trưa của các thành viên trong gia đình.",
+      "Chiều cao của các bạn trong lớp.",
+      "Số tiền có trong túi.",
+      "Nhiệt độ không khí lúc $7$ giờ sáng các ngày trong tuần."
+     ]
+    },
+    {
+     "type": "problem",
+     "label": "BTVN~16.",
+     "statement": "[NB] Bạn Hùng đến chợ hỏi các tiểu thương về giá rau trong tuần. Đó là cách thu thập dữ liệu trực tiếp hay gián tiếp?",
+     "level": 1,
+     "tier": "btvn",
+     "dang_id": "NB14",
+     "solution": "Trực tiếp (phỏng vấn)."
+    },
+    {
+     "type": "problem",
+     "label": "BTVN~17.",
+     "statement": "Chọn biểu đồ thích hợp nhất.[[br]]a) [NB] Thời gian ngủ cần thiết của từng nhóm tuổi, cần so sánh các nhóm.[[br]]b) [NB] Cơ cấu GDP theo lĩnh vực, cần thấy tỉ lệ mỗi lĩnh vực trong tổng thể.",
+     "level": 1,
+     "tier": "btvn",
+     "dang_id": "NB15",
+     "solution": "a) Biểu đồ cột.[[br]]b) Biểu đồ hình quạt tròn."
+    },
+    {
+     "type": "problem",
+     "label": "BTVN~18.",
+     "statement": "Với các biểu đồ học lực ở Hình 22 và Hình 23:[[br]]a) [NB] Lớp 8A ($40$ học sinh) có bao nhiêu học sinh yếu?[[br]]b) [NB] Lớp 8E ($50$ học sinh) có bao nhiêu học sinh khá?",
+     "level": 1,
+     "tier": "btvn",
+     "dang_id": "NB16",
+     "solution": "a) $40\\cdot 5\\%=2$ học sinh.[[br]]b) $50\\cdot 52\\%=26$ học sinh."
+    },
+    {
+     "type": "problem",
+     "label": "BTVN~19.",
+     "statement": "Điền vào chỗ chấm.[[br]]a) [NB] Ở Hình 12, phần thuế sản phẩm trừ trợ cấp sản phẩm đóng góp $400\\cdot 8{,}83\\%=$ [[blank:1.6cm]] tỉ đô la Mỹ.[[br]]b) [NB] Nếu khối 8 có $150$ học sinh với tỉ lệ như Hình 25 thì số học sinh thích quả cam là [[blank:1.2cm]].",
+     "level": 1,
+     "tier": "btvn",
+     "dang_id": "NB17",
+     "solution": "a) $35{,}32$.[[br]]b) $150\\cdot 20\\%=30$."
+    },
+    {
+     "type": "problem",
+     "label": "BTVN~20.",
+     "statement": "Điền vào chỗ trống để hoàn thành lời giải câu tự luận sau. Với biểu đồ lớp 6A ở Hình 13, số học sinh đăng kí chạy bộ chiếm bao nhiêu phần trăm số học sinh cả lớp?[[br]]a) [NB] Số học sinh đăng kí chạy bộ là $10+4=$ [[blank:1.2cm]].[[br]]b) [NB] Tỉ lệ cần tìm là $\\frac{14}{40}\\cdot 100\\%=$ [[blank:1.4cm]]. Vậy chạy bộ chiếm $35\\%$ số học sinh cả lớp.",
+     "level": 1,
+     "tier": "btvn",
+     "dang_id": "NB18",
+     "solution": "a) $14$.[[br]]b) $35\\%$."
+    },
+    {
+     "type": "problem",
+     "label": "BTVN~21.",
+     "statement": "Viết lại quy trình ba bước trả lời một câu hỏi phân tích biểu đồ.[[br]]a) [NB] Viết ba bước, mỗi bước một dòng.[[br]]b) [NB] Giải thích vì sao phải nhìn gốc trục đứng trước khi so sánh hai cột.",
+     "level": 1,
+     "tier": "btvn",
+     "dang_id": "NB19",
+     "solution": "a) Bước 1: đọc tên biểu đồ, hai trục, đơn vị, chú thích. Bước 2: đọc các số liệu cần dùng. Bước 3: tính rồi kết luận, ghi đơn vị.[[br]]b) Vì khi gốc trục đứng khác $0$, tỉ lệ chiều cao các cột không bằng tỉ lệ các số liệu."
+    },
+    {
+     "type": "problem",
+     "label": "BTVN~22.",
+     "statement": "Với biểu đồ điểm của bạn Hòa ở Hình 2:[[br]]a) [TH] Bạn Hòa nói: \\emph{“Điểm Lý của mình gấp đôi điểm Anh vì cột Lý cao gấp đôi cột Anh”}. Bạn Hòa nói đúng không?[[br]]b) [TH] Lập bảng thống kê điểm các môn của bạn Hòa.[[br]]c) [TH] Muốn tỉ lệ chiều cao các cột bằng tỉ lệ các điểm số thì gốc trục đứng phải là số nào? Khi đó cột Toán cao gấp mấy lần cột Anh?",
+     "level": 2,
+     "tier": "btvn",
+     "dang_id": "TH1",
+     "solution": "a) Ta có $8:5=1{,}6$ nên điểm Lý không gấp đôi điểm Anh; cột Lý trông gấp đôi vì gốc trục đứng là $2$.[[br]]Vậy bạn Hòa nói sai.[[br]]b) Bảng thống kê:[[br]]{\\small\\renewcommand\\arraystretch{1.2}\\begin{tabular}{|l|c|c|c|c|c|c|}\\hline \\textbf{Môn} & \\textbf{Toán} & \\textbf{Văn} & \\textbf{Anh} & \\textbf{Lý} & \\textbf{Hóa} & \\textbf{Sinh} \\\\ \\hline Điểm & $9$ & $7$ & $5$ & $8$ & $9$ & $9$ \\\\ \\hline \\end{tabular}}[[br]]c) Vì gốc trục đứng phải là $0$ nên cột Toán cao gấp $9:5=1{,}8$ lần cột Anh.[[br]]Vậy gốc là $0$, cột Toán gấp $1{,}8$ lần cột Anh.",
+     "hints": [
+      "So sánh hai điểm số thì dùng hai con số nào?",
+      "Khi nào chiều cao cột tỉ lệ đúng với số liệu?"
+     ]
+    },
+    {
+     "type": "problem",
+     "label": "BTVN~23.",
+     "statement": "Bạn An $15$ tuổi, mỗi ngày dành $8$ giờ cho việc học ở trường và ở nhà, $3$ giờ cho việc ăn uống và ngủ đúng thời gian cần thiết theo biểu đồ Hình 6.[[br]]a) [TH] Mỗi ngày An dành bao nhiêu giờ cho các việc khác?[[br]]b) [TH] Tính tỉ lệ phần trăm thời gian trong ngày An dành cho việc ngủ và cho việc học (làm tròn đến hàng phần mười).",
+     "level": 2,
+     "tier": "btvn",
+     "dang_id": "TH2",
+     "solution": "a) Vì An $15$ tuổi thuộc nhóm $14$ -- $17$ tuổi nên An ngủ $9$ giờ.[[br]]Thời gian cho các việc khác là $24-9-8-3=4$ (giờ).[[br]]b) Ta có tỉ lệ ngủ là $\\dfrac{9}{24}\\cdot 100\\%=37{,}5\\%$; tỉ lệ học là $\\dfrac{8}{24}\\cdot 100\\%\\approx 33{,}3\\%$.[[br]]Vậy An dành $4$ giờ cho việc khác, ngủ $37{,}5\\%$ và học khoảng $33{,}3\\%$ thời gian trong ngày.",
+     "hints": [
+      "An thuộc nhóm tuổi nào trên biểu đồ?",
+      "Một ngày có bao nhiêu giờ? Đó là tổng để so sánh."
+     ]
+    },
+    {
+     "type": "problem",
+     "label": "BTVN~24.",
+     "statement": "[TH] Với biểu đồ ở Hình 11, chủ cửa hàng nên đặt thêm xe đạp màu nào cho tháng sau? Vì sao?",
+     "level": 2,
+     "tier": "btvn",
+     "dang_id": "TH2",
+     "solution": "Vì xe màu xanh dương chiếm $60\\%$, nhiều hơn hẳn các màu khác ($15\\%$; $10\\%$; $15\\%$) nên khách mua xe màu này nhiều nhất.[[br]]Vậy chủ cửa hàng nên đặt thêm xe màu xanh dương.",
+     "hints": [
+      "Màu nào được mua nhiều nhất? Điều đó nói gì về nhu cầu của khách?"
+     ]
+    },
+    {
+     "type": "problem",
+     "label": "BTVN~25.",
+     "statement": "Hai biểu đồ ở Hình 29 biểu diễn doanh thu $6$ tháng cuối năm của một cửa hàng.\\par\\nopagebreak\\smallskip{\\centering\\adjustbox{max width=0.86\\linewidth}{\\begin{tabular}{cc}\\begin{tikzpicture}[line width=0.6pt, font=\\small]\n\\draw[-{Stealth[length=4pt]}] (0,0) -- (4.95,0);\n\\draw[-{Stealth[length=4pt]}] (0,0) -- (0,3.45);\n\\draw (-0.06,0.00) -- (0.06,0.00);\n\\node[left, font=\\scriptsize] at (0,0.00) {$0$};\n\\draw[black!22, dashed] (0,0.75) -- (4.80,0.75);\n\\draw (-0.06,0.75) -- (0.06,0.75);\n\\node[left, font=\\scriptsize] at (0,0.75) {$5$};\n\\draw[black!22, dashed] (0,1.50) -- (4.80,1.50);\n\\draw (-0.06,1.50) -- (0.06,1.50);\n\\node[left, font=\\scriptsize] at (0,1.50) {$10$};\n\\draw[black!22, dashed] (0,2.25) -- (4.80,2.25);\n\\draw (-0.06,2.25) -- (0.06,2.25);\n\\node[left, font=\\scriptsize] at (0,2.25) {$15$};\n\\draw[black!22, dashed] (0,3.00) -- (4.80,3.00);\n\\draw (-0.06,3.00) -- (0.06,3.00);\n\\node[left, font=\\scriptsize] at (0,3.00) {$20$};\n\\node[above right, font=\\scriptsize, align=left] at (0,3.45) {Doanh thu\\\\(tỉ đồng)};\n\\node[right, font=\\scriptsize] at (5.20,0) {Tháng};\n\\draw[solid, line width=0.9pt] (0.45,0.45) -- (1.20,0.75) -- (1.95,0.90) -- (2.70,0.90) -- (3.45,1.35) -- (4.20,1.65);\n\\fill (0.45,0.45) circle (1.6pt);\n\\node[below=2pt, font=\\scriptsize, fill=white, inner sep=1pt] at (0.45,0.45) {$3$};\n\\fill (1.20,0.75) circle (1.6pt);\n\\node[above=2pt, font=\\scriptsize, fill=white, inner sep=1pt] at (1.20,0.75) {$5$};\n\\fill (1.95,0.90) circle (1.6pt);\n\\node[above=2pt, font=\\scriptsize, fill=white, inner sep=1pt] at (1.95,0.90) {$6$};\n\\fill (2.70,0.90) circle (1.6pt);\n\\node[below=2pt, font=\\scriptsize, fill=white, inner sep=1pt] at (2.70,0.90) {$6$};\n\\fill (3.45,1.35) circle (1.6pt);\n\\node[above=2pt, font=\\scriptsize, fill=white, inner sep=1pt] at (3.45,1.35) {$9$};\n\\fill (4.20,1.65) circle (1.6pt);\n\\node[above=2pt, font=\\scriptsize, fill=white, inner sep=1pt] at (4.20,1.65) {$11$};\n\\node[below, font=\\scriptsize, align=center] at (0.45,0) {7};\n\\node[below, font=\\scriptsize, align=center] at (1.20,0) {8};\n\\node[below, font=\\scriptsize, align=center] at (1.95,0) {9};\n\\node[below, font=\\scriptsize, align=center] at (2.70,0) {10};\n\\node[below, font=\\scriptsize, align=center] at (3.45,0) {11};\n\\node[below, font=\\scriptsize, align=center] at (4.20,0) {12};\n\\end{tikzpicture} & \\begin{tikzpicture}[line width=0.6pt, font=\\small]\n\\draw[-{Stealth[length=4pt]}] (0,0) -- (4.95,0);\n\\draw[-{Stealth[length=4pt]}] (0,0) -- (0,3.45);\n\\draw (-0.06,0.00) -- (0.06,0.00);\n\\node[left, font=\\scriptsize] at (0,0.00) {$2$};\n\\draw[black!22, dashed] (0,0.75) -- (4.80,0.75);\n\\draw (-0.06,0.75) -- (0.06,0.75);\n\\node[left, font=\\scriptsize] at (0,0.75) {$5$};\n\\draw[black!22, dashed] (0,1.50) -- (4.80,1.50);\n\\draw (-0.06,1.50) -- (0.06,1.50);\n\\node[left, font=\\scriptsize] at (0,1.50) {$8$};\n\\draw[black!22, dashed] (0,2.25) -- (4.80,2.25);\n\\draw (-0.06,2.25) -- (0.06,2.25);\n\\node[left, font=\\scriptsize] at (0,2.25) {$11$};\n\\draw[black!22, dashed] (0,3.00) -- (4.80,3.00);\n\\draw (-0.06,3.00) -- (0.06,3.00);\n\\node[left, font=\\scriptsize] at (0,3.00) {$14$};\n\\node[above right, font=\\scriptsize, align=left] at (0,3.45) {Doanh thu\\\\(tỉ đồng)};\n\\node[right, font=\\scriptsize] at (5.20,0) {Tháng};\n\\draw[solid, line width=0.9pt] (0.45,0.25) -- (1.20,0.75) -- (1.95,1.00) -- (2.70,1.00) -- (3.45,1.75) -- (4.20,2.25);\n\\fill (0.45,0.25) circle (1.6pt);\n\\node[above left=2pt, font=\\scriptsize, fill=white, inner sep=1pt] at (0.45,0.25) {$3$};\n\\fill (1.20,0.75) circle (1.6pt);\n\\node[above=2pt, font=\\scriptsize, fill=white, inner sep=1pt] at (1.20,0.75) {$5$};\n\\fill (1.95,1.00) circle (1.6pt);\n\\node[above=2pt, font=\\scriptsize, fill=white, inner sep=1pt] at (1.95,1.00) {$6$};\n\\fill (2.70,1.00) circle (1.6pt);\n\\node[below=2pt, font=\\scriptsize, fill=white, inner sep=1pt] at (2.70,1.00) {$6$};\n\\fill (3.45,1.75) circle (1.6pt);\n\\node[above=2pt, font=\\scriptsize, fill=white, inner sep=1pt] at (3.45,1.75) {$9$};\n\\fill (4.20,2.25) circle (1.6pt);\n\\node[above=2pt, font=\\scriptsize, fill=white, inner sep=1pt] at (4.20,2.25) {$11$};\n\\node[below, font=\\scriptsize, align=center] at (0.45,0) {7};\n\\node[below, font=\\scriptsize, align=center] at (1.20,0) {8};\n\\node[below, font=\\scriptsize, align=center] at (1.95,0) {9};\n\\node[below, font=\\scriptsize, align=center] at (2.70,0) {10};\n\\node[below, font=\\scriptsize, align=center] at (3.45,0) {11};\n\\node[below, font=\\scriptsize, align=center] at (4.20,0) {12};\n\\end{tikzpicture} \\\\ a) & b)\\end{tabular}}\\par{\\footnotesize\\sffamily\\color{black!60}Hình 29}\\par}\\smallskip{}\\par{}a) [TH] Dữ liệu trên hai biểu đồ có như nhau không? Nếu có, lập bảng thống kê cho dữ liệu đó.[[br]]b) [TH] Có thể căn cứ vào độ dốc của hai đường gấp khúc để so sánh tốc độ tăng doanh thu không? Vì sao?",
+     "level": 2,
+     "tier": "btvn",
+     "dang_id": "TH3",
+     "solution": "a) Ta có hai biểu đồ cùng biểu diễn $3$; $5$; $6$; $6$; $9$; $11$ nên dữ liệu như nhau:[[br]]{\\small\\renewcommand\\arraystretch{1.2}\\begin{tabular}{|l|c|c|c|c|c|c|}\\hline \\textbf{Tháng} & \\textbf{7} & \\textbf{8} & \\textbf{9} & \\textbf{10} & \\textbf{11} & \\textbf{12} \\\\ \\hline Doanh thu (tỉ đồng) & $3$ & $5$ & $6$ & $6$ & $9$ & $11$ \\\\ \\hline \\end{tabular}}[[br]]b) Vì gốc trục đứng và độ chia trên trục đứng của hai biểu đồ khác nhau nên không thể căn cứ vào độ dốc.[[br]]Vậy không so sánh được tốc độ tăng bằng độ dốc.",
+     "hints": [
+      "Đọc từng điểm của hai đường: các số có giống nhau không?",
+      "Hai trục đứng bắt đầu từ đâu, mỗi vạch ứng với bao nhiêu?"
+     ]
+    },
+    {
+     "type": "problem",
+     "label": "BTVN~26.",
+     "statement": "[TH] Với biểu đồ ở Hình 5, trong những tháng nào cửa hàng bán được nhiều máy sưởi hơn máy điều hòa? Giải thích vì sao có thể như vậy.",
+     "level": 2,
+     "tier": "btvn",
+     "dang_id": "TH3",
+     "solution": "Ta có tháng 1: $96>9$; tháng 2: $70>5$; tháng 3: $47>35$; từ tháng 4 trở đi máy điều hòa nhiều hơn.[[br]]Vì tháng 1, 2, 3 là mùa lạnh nên người ta mua máy sưởi nhiều hơn.[[br]]Vậy đó là các tháng 1, 2, 3.",
+     "hints": [
+      "Tháng nào đường máy sưởi nằm trên đường máy điều hòa?"
+     ]
+    },
+    {
+     "type": "problem",
+     "label": "BTVN~27.",
+     "statement": "Với biểu đồ thị phần gạo ở Hình 8:[[br]]a) [TH] Lập bảng thống kê thị phần xuất khẩu gạo của Việt Nam từ năm 2017 đến 2020.[[br]]b) [TH] Năm nào thị phần của Việt Nam lớn hơn thị phần của Thái Lan?",
+     "level": 2,
+     "tier": "btvn",
+     "dang_id": "TH4",
+     "solution": "a) Bảng thống kê:[[br]]{\\small\\renewcommand\\arraystretch{1.2}\\begin{tabular}{|l|c|c|c|c|}\\hline \\textbf{Năm} & \\textbf{2017} & \\textbf{2018} & \\textbf{2019} & \\textbf{2020} \\\\ \\hline Thị phần (\\%) & $12$ & $13$ & $15$ & $14$ \\\\ \\hline \\end{tabular}}[[br]]b) Ta có năm 2020: $14\\%>12\\%$, các năm khác Việt Nam đều thấp hơn.[[br]]Vậy đó là năm 2020.",
+     "hints": [
+      "Thị phần Việt Nam ứng với màu cột nào?"
+     ]
+    },
+    {
+     "type": "problem",
+     "label": "BTVN~28.",
+     "statement": "[TH] Biểu đồ ở Hình 30 cho biết thu nhập bình quân đầu người mỗi năm của Việt Nam và Singapore. Lập bảng tỉ số thu nhập của Singapore so với Việt Nam trong từng năm (làm tròn đến hàng phần mười) rồi nêu nhận xét về sự thay đổi của các tỉ số đó.",
+     "level": 2,
+     "tier": "btvn",
+     "dang_id": "TH4",
+     "solution": "Ta có $55\\,647:2\\,097\\approx 26{,}5$; tương tự với các năm khác:[[br]]{\\small\\renewcommand\\arraystretch{1.2}\\begin{tabular}{|l|c|c|c|c|c|c|}\\hline \\textbf{Năm} & \\textbf{2015} & \\textbf{2016} & \\textbf{2017} & \\textbf{2018} & \\textbf{2019} & \\textbf{2020} \\\\ \\hline Tỉ số & $26{,}5$ & $25{,}8$ & $25{,}8$ & $25{,}9$ & $24{,}0$ & $21{,}5$ \\\\ \\hline \\end{tabular}}[[br]]Vậy nhìn chung tỉ số giảm dần: khoảng cách thu nhập giữa hai nước đang thu hẹp.",
+     "hints": [
+      "Tỉ số của Singapore so với Việt Nam: số nào chia cho số nào?"
+     ],
+     "figure": {
+      "tikz": "\\begin{tikzpicture}[line width=0.6pt, font=\\small]\n\\draw[-{Stealth[length=4pt]}] (0,0) -- (8.69,0);\n\\draw[-{Stealth[length=4pt]}] (0,0) -- (0,3.85);\n\\draw (-0.06,0.00) -- (0.06,0.00);\n\\node[left, font=\\scriptsize] at (0,0.00) {$0$};\n\\draw[black!22, dashed] (0,0.49) -- (8.54,0.49);\n\\draw (-0.06,0.49) -- (0.06,0.49);\n\\node[left, font=\\scriptsize] at (0,0.49) {$10\\,000$};\n\\draw[black!22, dashed] (0,0.97) -- (8.54,0.97);\n\\draw (-0.06,0.97) -- (0.06,0.97);\n\\node[left, font=\\scriptsize] at (0,0.97) {$20\\,000$};\n\\draw[black!22, dashed] (0,1.46) -- (8.54,1.46);\n\\draw (-0.06,1.46) -- (0.06,1.46);\n\\node[left, font=\\scriptsize] at (0,1.46) {$30\\,000$};\n\\draw[black!22, dashed] (0,1.94) -- (8.54,1.94);\n\\draw (-0.06,1.94) -- (0.06,1.94);\n\\node[left, font=\\scriptsize] at (0,1.94) {$40\\,000$};\n\\draw[black!22, dashed] (0,2.43) -- (8.54,2.43);\n\\draw (-0.06,2.43) -- (0.06,2.43);\n\\node[left, font=\\scriptsize] at (0,2.43) {$50\\,000$};\n\\draw[black!22, dashed] (0,2.91) -- (8.54,2.91);\n\\draw (-0.06,2.91) -- (0.06,2.91);\n\\node[left, font=\\scriptsize] at (0,2.91) {$60\\,000$};\n\\draw[black!22, dashed] (0,3.40) -- (8.54,3.40);\n\\draw (-0.06,3.40) -- (0.06,3.40);\n\\node[left, font=\\scriptsize] at (0,3.40) {$70\\,000$};\n\\node[above right, font=\\scriptsize, align=left] at (0,3.85) {Thu nhập bình quân\\\\(đô la Mỹ)};\n\\node[right, font=\\scriptsize] at (8.94,0) {Năm};\n\\fill[black!12, draw=black] (0.50,0) rectangle (0.92,0.10);\n\\node[above, font=\\scriptsize, fill=white, inner sep=1pt] at (0.71,0.14) {$2097$};\n\\fill[black!60, draw=black] (0.92,0) rectangle (1.34,2.70);\n\\node[above, font=\\scriptsize, fill=white, inner sep=1pt] at (1.13,2.74) {$55\\,647$};\n\\node[below, font=\\scriptsize, align=center] at (0.92,0) {2015};\n\\fill[black!12, draw=black] (1.84,0) rectangle (2.26,0.11);\n\\node[above, font=\\scriptsize, fill=white, inner sep=1pt] at (2.05,0.15) {$2202$};\n\\fill[black!60, draw=black] (2.26,0) rectangle (2.68,2.76);\n\\node[above, font=\\scriptsize, fill=white, inner sep=1pt] at (2.47,2.80) {$56\\,848$};\n\\node[below, font=\\scriptsize, align=center] at (2.26,0) {2016};\n\\fill[black!12, draw=black] (3.18,0) rectangle (3.60,0.12);\n\\node[above, font=\\scriptsize, fill=white, inner sep=1pt] at (3.39,0.16) {$2373$};\n\\fill[black!60, draw=black] (3.60,0) rectangle (4.02,2.97);\n\\node[above, font=\\scriptsize, fill=white, inner sep=1pt] at (3.81,3.01) {$61\\,176$};\n\\node[below, font=\\scriptsize, align=center] at (3.60,0) {2017};\n\\fill[black!12, draw=black] (4.52,0) rectangle (4.94,0.12);\n\\node[above, font=\\scriptsize, fill=white, inner sep=1pt] at (4.73,0.16) {$2570$};\n\\fill[black!60, draw=black] (4.94,0) rectangle (5.36,3.24);\n\\node[above, font=\\scriptsize, fill=white, inner sep=1pt] at (5.15,3.28) {$66\\,679$};\n\\node[below, font=\\scriptsize, align=center] at (4.94,0) {2018};\n\\fill[black!12, draw=black] (5.86,0) rectangle (6.28,0.13);\n\\node[above, font=\\scriptsize, fill=white, inner sep=1pt] at (6.07,0.17) {$2714$};\n\\fill[black!60, draw=black] (6.28,0) rectangle (6.70,3.17);\n\\node[above, font=\\scriptsize, fill=white, inner sep=1pt] at (6.49,3.21) {$65\\,233$};\n\\node[below, font=\\scriptsize, align=center] at (6.28,0) {2019};\n\\fill[black!12, draw=black] (7.20,0) rectangle (7.62,0.13);\n\\node[above, font=\\scriptsize, fill=white, inner sep=1pt] at (7.41,0.17) {$2779$};\n\\fill[black!60, draw=black] (7.62,0) rectangle (8.04,2.90);\n\\node[above, font=\\scriptsize, fill=white, inner sep=1pt] at (7.83,2.94) {$59\\,798$};\n\\node[below, font=\\scriptsize, align=center] at (7.62,0) {2020};\n\\fill[black!12, draw=black] (6.14,4.35) rectangle ++(0.28,0.2);\n\\node[right, font=\\scriptsize] at (6.44,4.45) {Việt Nam};\n\\fill[black!60, draw=black] (6.14,4.00) rectangle ++(0.28,0.2);\n\\node[right, font=\\scriptsize] at (6.44,4.10) {Singapore};\n\\end{tikzpicture}",
+      "caption": "Hình 30",
+      "pos": "below"
+     }
+    },
+    {
+     "type": "problem",
+     "label": "BTVN~29.",
+     "statement": "Với biểu đồ giày ở Hình 20:[[br]]a) [TH] Số giày cửa hàng 1 bán trong tháng 3 chiếm bao nhiêu phần trăm số giày cửa hàng đó bán trong quý I (làm tròn đến hàng phần mười)?[[br]]b) [TH] Với biểu đồ gạo ở Hình 21, lượng gạo chi nhánh B bán trong tháng 2 chiếm bao nhiêu phần trăm lượng gạo chi nhánh đó bán trong quý I (làm tròn đến hàng phần mười)?",
+     "level": 2,
+     "tier": "btvn",
+     "dang_id": "TH5",
+     "solution": "a) Ta có cửa hàng 1 bán cả quý $25+23+24=72$ đôi.[[br]]$\\dfrac{24}{72}\\cdot 100\\%\\approx 33{,}3\\%$.[[br]]b) Ta có chi nhánh B bán cả quý $25+45+24=94$ kg.[[br]]$\\dfrac{45}{94}\\cdot 100\\%\\approx 47{,}9\\%$.[[br]]Vậy hai tỉ lệ lần lượt khoảng $33{,}3\\%$ và $47{,}9\\%$.",
+     "hints": [
+      "Tổng để so sánh ở đây là tổng của cả quý của chính cửa hàng (chi nhánh) đó."
+     ]
+    },
+    {
+     "type": "problem",
+     "label": "BTVN~30.",
+     "statement": "[TH] Với biểu đồ ở Hình 26, số học sinh lớp 8B tham gia mỗi câu lạc bộ chiếm bao nhiêu phần trăm số học sinh lớp 8B tham gia cả hai câu lạc bộ?",
+     "level": 2,
+     "tier": "btvn",
+     "dang_id": "TH5",
+     "solution": "Ta có lớp 8B có $12$ bạn tham gia câu lạc bộ thể thao, $4$ bạn tham gia câu lạc bộ nghệ thuật, tổng $16$ bạn.[[br]]Tỉ lệ câu lạc bộ thể thao là $\\dfrac{12}{16}\\cdot 100\\%=75\\%$.[[br]]Tỉ lệ câu lạc bộ nghệ thuật là $\\dfrac{4}{16}\\cdot 100\\%=25\\%$.[[br]]Vậy câu lạc bộ thể thao chiếm $75\\%$, câu lạc bộ nghệ thuật chiếm $25\\%$.",
+     "hints": [
+      "Đề hỏi so với tổng nào: sĩ số lớp hay tổng số bạn tham gia hai câu lạc bộ?"
+     ]
+    },
+    {
+     "type": "problem",
+     "label": "BTVN~31.",
+     "statement": "Sản lượng than của tỉnh Quảng Ninh các năm 2017 đến 2020 lần lượt là $35{,}5$; $38{,}0$; $42{,}9$; $47{,}5$ (triệu tấn).[[br]]a) [TH] Lập bảng thống kê rồi vẽ biểu đồ đoạn thẳng biểu diễn bảng đó.[[br]]b) [TH] Doanh thu của một nhà máy các năm 2017 -- 2021 là $30$; $33$; $34$; $35$; $38$ (tỉ đồng). Vẽ biểu đồ đoạn thẳng với gốc trục đứng là $0$.",
+     "level": 2,
+     "tier": "btvn",
+     "dang_id": "TH6",
+     "solution": "a) Bảng thống kê:[[br]]{\\small\\renewcommand\\arraystretch{1.2}\\begin{tabular}{|l|c|c|c|c|}\\hline \\textbf{Năm} & \\textbf{2017} & \\textbf{2018} & \\textbf{2019} & \\textbf{2020} \\\\ \\hline Sản lượng (triệu tấn) & $35{,}5$ & $38{,}0$ & $42{,}9$ & $47{,}5$ \\\\ \\hline \\end{tabular}}[[br]]Vì sản lượng thay đổi theo năm nên ta vẽ biểu đồ đoạn thẳng:[[br]]\\adjustbox{max width=0.5\\linewidth}{\\begin{tikzpicture}[line width=0.6pt, font=\\small]\n\\draw[-{Stealth[length=4pt]}] (0,0) -- (4.99,0);\n\\draw[-{Stealth[length=4pt]}] (0,0) -- (0,3.85);\n\\draw (-0.06,0.00) -- (0.06,0.00);\n\\node[left, font=\\scriptsize] at (0,0.00) {$0$};\n\\draw[black!22, dashed] (0,0.68) -- (4.84,0.68);\n\\draw (-0.06,0.68) -- (0.06,0.68);\n\\node[left, font=\\scriptsize] at (0,0.68) {$10$};\n\\draw[black!22, dashed] (0,1.36) -- (4.84,1.36);\n\\draw (-0.06,1.36) -- (0.06,1.36);\n\\node[left, font=\\scriptsize] at (0,1.36) {$20$};\n\\draw[black!22, dashed] (0,2.04) -- (4.84,2.04);\n\\draw (-0.06,2.04) -- (0.06,2.04);\n\\node[left, font=\\scriptsize] at (0,2.04) {$30$};\n\\draw[black!22, dashed] (0,2.72) -- (4.84,2.72);\n\\draw (-0.06,2.72) -- (0.06,2.72);\n\\node[left, font=\\scriptsize] at (0,2.72) {$40$};\n\\draw[black!22, dashed] (0,3.40) -- (4.84,3.40);\n\\draw (-0.06,3.40) -- (0.06,3.40);\n\\node[left, font=\\scriptsize] at (0,3.40) {$50$};\n\\node[above right, font=\\scriptsize, align=left] at (0,3.85) {Sản lượng\\\\(triệu tấn)};\n\\node[right, font=\\scriptsize] at (5.24,0) {Năm};\n\\draw[solid, line width=0.9pt] (0.66,2.41) -- (1.76,2.58) -- (2.86,2.92) -- (3.96,3.23);\n\\fill (0.66,2.41) circle (1.6pt);\n\\node[below=2pt, font=\\scriptsize, fill=white, inner sep=1pt] at (0.66,2.41) {$35{,}5$};\n\\fill (1.76,2.58) circle (1.6pt);\n\\node[above=2pt, font=\\scriptsize, fill=white, inner sep=1pt] at (1.76,2.58) {$38$};\n\\fill (2.86,2.92) circle (1.6pt);\n\\node[above=2pt, font=\\scriptsize, fill=white, inner sep=1pt] at (2.86,2.92) {$42{,}9$};\n\\fill (3.96,3.23) circle (1.6pt);\n\\node[above=2pt, font=\\scriptsize, fill=white, inner sep=1pt] at (3.96,3.23) {$47{,}5$};\n\\node[below, font=\\scriptsize, align=center] at (0.66,0) {2017};\n\\node[below, font=\\scriptsize, align=center] at (1.76,0) {2018};\n\\node[below, font=\\scriptsize, align=center] at (2.86,0) {2019};\n\\node[below, font=\\scriptsize, align=center] at (3.96,0) {2020};\n\\end{tikzpicture}}[[br]]b) Biểu đồ như Hình 15b).[[br]]Vậy hai biểu đồ đều có đủ tên trục, đơn vị và số liệu.",
+     "hints": [
+      "Số liệu thay đổi theo thời gian thì chọn loại biểu đồ nào?"
+     ]
+    },
+    {
+     "type": "problem",
+     "label": "BTVN~32.",
+     "statement": "[TH] Cơ cấu dân số Việt Nam năm 2010 gồm: $0$ -- $14$ tuổi $23{,}63\\%$; $15$ -- $64$ tuổi $69{,}88\\%$; trên $64$ tuổi $6{,}49\\%$. Chọn biểu đồ thích hợp và vẽ biểu đồ đó.",
+     "level": 2,
+     "tier": "btvn",
+     "dang_id": "TH6",
+     "solution": "Vì các số liệu là tỉ lệ các phần của một tổng thể (tổng $100\\%$) nên chọn biểu đồ hình quạt tròn:[[br]]\\adjustbox{max width=0.42\\linewidth}{\\begin{tikzpicture}[line width=0.6pt, font=\\small]\n\\fill[white, draw=black] (0,0) -- (90.00:1.5) arc (90.00:4.93:1.5) -- cycle;\n\\node[font=\\scriptsize, align=center, anchor=227] at (47.47:1.62) {$0$--$14$ tuổi\\\\$23{,}63\\%$};\n\\fill[black!14, draw=black] (0,0) -- (4.93:1.5) arc (4.93:-246.64:1.5) -- cycle;\n\\node[font=\\scriptsize, align=center, anchor=59] at (-120.85:1.62) {$15$--$64$ tuổi\\\\$69{,}88\\%$};\n\\fill[black!34, draw=black] (0,0) -- (-246.64:1.5) arc (-246.64:-270.00:1.5) -- cycle;\n\\node[font=\\scriptsize, align=center, anchor=282] at (-258.32:1.62) {trên $64$ tuổi\\\\$6{,}49\\%$};\n\\end{tikzpicture}}[[br]]Vậy biểu đồ hình quạt tròn như trên.",
+     "hints": [
+      "Cộng ba tỉ lệ được bao nhiêu? Điều đó gợi ý loại biểu đồ nào?"
+     ]
+    }
+   ]
+  }
+ ]
+}

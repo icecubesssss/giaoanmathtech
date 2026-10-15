@@ -1,0 +1,529 @@
+{
+ "slug": "phieu-5-tuan32-bai-tap-cuoi-chuong-vi-phan-thuc-dai-so",
+ "title": "Bài tập cuối chương VI: phân thức đại số",
+ "eyebrow": "ĐẠI SỐ 8 — PHIẾU 5 • CHƯƠNG VI — BÀI TẬP CUỐI CHƯƠNG",
+ "grade_label": "Lớp 8 • Chương VI",
+ "class_tier": "B",
+ "chuong": "chuong-06-phan-thuc-dai-so",
+ "so_ca": 1,
+ "stages": [
+  {
+   "kind": "review",
+   "number": 1,
+   "title": "Khám phá",
+   "teacher_note": "Câu a) HS liệt kê ước của $60$ — nhắc chỉ lấy ước dương vì số bạn là số tự nhiên.[[br]]Câu b) chính là ý cuối Bài I: biểu thức nguyên khi mẫu là ước của tử. Câu c) dẫn tới bước tách phần nguyên. Chưa gọi tên quy trình.",
+   "blocks": [
+    {
+     "type": "opener",
+     "text": "Lớp 8B có $60$ chiếc bút để chia đều làm phần thưởng cho $x$ bạn, mỗi bạn được nguyên chiếc.[[br]]a) Số bạn $x$ có thể là bao nhiêu?[[br]]b) Nếu có thêm $x$ chiếc bút nữa, tổng $60+x$ chiếc chia đều cho $x$ bạn. Mỗi bạn được $\\dfrac{60+x}{x}=1+\\dfrac{60}{x}$ chiếc. Khi nào đó là số nguyên?[[br]]c) Vì sao viết $\\dfrac{60+x}{x}$ thành $1+\\dfrac{60}{x}$ lại giúp trả lời dễ hơn?"
+    }
+   ]
+  },
+  {
+   "kind": "concept",
+   "number": 2,
+   "title": "Kiến thức cần nhớ",
+   "teacher_note": "Mục 1 ôn nhanh ước nguyên (lớp 6). Mục 2 là quy trình chính của buổi — viết lên bảng giữ suốt buổi.[[br]]Hộp BẪY ĐIỂM đọc trước Luyện tập 2.",
+   "blocks": [
+    {
+     "type": "para",
+     "variant": "heading",
+     "text": "1. Ước nguyên"
+    },
+    {
+     "type": "deflist",
+     "items": [
+      {
+       "term": "Ước của $k$:",
+       "desc": "$\\text{Ư}(6)=\\{\\pm 1;\\pm 2;\\pm 3;\\pm 6\\}$ — luôn có cả ước âm."
+      },
+      {
+       "term": "Biểu thức nguyên:",
+       "desc": "với $x$ nguyên, $\\dfrac{k}{M}$ nguyên khi $M$ là ước của $k$."
+      }
+     ]
+    },
+    {
+     "type": "para",
+     "variant": "heading",
+     "text": "2. Tìm $x$ nguyên để $P$ nguyên"
+    },
+    {
+     "type": "deflist",
+     "items": [
+      {
+       "term": "Tách:",
+       "desc": "$\\dfrac{ax+b}{x+c}=a+\\dfrac{b-ac}{x+c}$ (chia tử cho mẫu, giữ phần dư)."
+      },
+      {
+       "term": "Liệt kê:",
+       "desc": "$x+c$ là ước của $b-ac$; lập bảng giá trị của $x$."
+      },
+      {
+       "term": "Đối chiếu:",
+       "desc": "loại giá trị vi phạm điều kiện xác định và điều kiện đề cho (nguyên dương, tự nhiên)."
+      }
+     ]
+    },
+    {
+     "type": "para",
+     "variant": "heading",
+     "text": "3. Bài toán thực tế"
+    },
+    {
+     "type": "deflist",
+     "items": [
+      {
+       "term": "Biểu thị:",
+       "desc": "thời gian $=\\dfrac{\\text{quãng đường}}{\\text{vận tốc}}$; năng suất $=\\dfrac{\\text{khối lượng}}{\\text{thời gian}}$."
+      },
+      {
+       "term": "Tỉ số:",
+       "desc": "\\emph{gấp mấy lần} là thương hai phân thức, rút gọn rồi thay số."
+      }
+     ]
+    },
+    {
+     "type": "para",
+     "variant": "heading",
+     "text": "4. Câu cuối đề"
+    },
+    {
+     "type": "deflist",
+     "items": [
+      {
+       "term": "Không âm:",
+       "desc": "rút gọn về dạng $\\dfrac{(\\ldots)^2}{\\text{số dương}}$ hoặc tổng các bình phương rồi kết luận $\\ge 0$."
+      }
+     ]
+    },
+    {
+     "type": "noted",
+     "variant": "target",
+     "text": "\\textbf{Đề giữa kì II hỏi gì ở phần này.}[[br]]Ý cuối Bài I ($0{,}5$ điểm): tìm $x$ nguyên để $P$ nguyên; bài thực tế viết phân thức ($1{,}0$ điểm); câu cuối đề chứng minh phân thức không âm ($0{,}5$ điểm)."
+    },
+    {
+     "type": "noted",
+     "variant": "trap",
+     "text": "Bạn Minh tìm $x$ nguyên để $\\dfrac{5}{x-3}$ nguyên nhưng chỉ lấy ước dương $1$; $5$ — thiếu hai giá trị ứng với ước âm.[[br]]Bạn Lan tìm được $x=1$ cho $P=\\dfrac{x^2}{x-1}$ rồi giữ lại — sai, $x=1$ làm mẫu bằng $0$."
+    }
+   ]
+  },
+  {
+   "kind": "practice1",
+   "number": 3,
+   "title": "Luyện tập 1",
+   "teacher_note": "Bài 1 -- 3 là ba bước cắt ra từ ý cuối Bài I; Bài 4, 5 là bước đầu của bài thực tế.[[br]]Bài 9 cho HS tranh luận vì sao sai trước khi chữa.",
+   "blocks": [
+    {
+     "type": "problem",
+     "label": "Bài 1.",
+     "statement": "a) [NB] Liệt kê các ước nguyên của $5$.[[br]]b) [NB] Liệt kê các ước nguyên của $8$.[[br]]c) [NB] Biết $x-2$ là ước nguyên của $3$. Lập bảng các giá trị tương ứng của $x$.",
+     "level": 1,
+     "tier": "onclass",
+     "dang_id": "NB1",
+     "solution": "a) $\\pm 1$; $\\pm 5$.[[br]]b) $\\pm 1$; $\\pm 2$; $\\pm 4$; $\\pm 8$.[[br]]c) $x-2\\in\\{1;-1;3;-3\\}$ nên $x\\in\\{3;1;5;-1\\}$."
+    },
+    {
+     "type": "problem",
+     "label": "Bài 2.",
+     "statement": "Viết mỗi phân thức sau dưới dạng tổng của một số nguyên và một phân thức có tử là hằng số.[[br]]a) [NB] $\\dfrac{x+2}{x-1}$.[[br]]b) [NB] $\\dfrac{2x+1}{x-2}$.[[br]]c) [NB] $\\dfrac{4x-1}{x+3}$.",
+     "level": 1,
+     "tier": "onclass",
+     "dang_id": "NB2",
+     "solution": "a) $1+\\dfrac{3}{x-1}$.[[br]]b) $2+\\dfrac{5}{x-2}$.[[br]]c) $4-\\dfrac{13}{x+3}$."
+    },
+    {
+     "type": "problem",
+     "label": "Bài 3.",
+     "statement": "Điền vào chỗ trống để hoàn thành lời giải: \\emph{Tìm $x$ nguyên để $\\dfrac{5}{x-7}$ có giá trị nguyên.} (Theo Rút gọn biểu thức và các bài toán liên quan, Dạng 4)[[br]]a) [NB] Điều kiện $x\\ne 7$. Biểu thức nguyên khi $x-7\\in\\text{Ư}(5)=$ [[blank:3cm]].[[br]]b) [NB] Khi đó $x\\in$ [[blank:3cm]].[[br]]c) [NB] Các giá trị đó đều thoả mãn điều kiện. Vậy $x\\in$ [[blank:3cm]].",
+     "level": 1,
+     "tier": "onclass",
+     "dang_id": "NB3",
+     "solution": "a) $\\{1;-1;5;-5\\}$.[[br]]b) $\\{8;6;12;2\\}$.[[br]]c) $\\{2;6;8;12\\}$."
+    },
+    {
+     "type": "problem",
+     "label": "Bài 4.",
+     "statement": "Một xí nghiệp theo kế hoạch cần sản xuất $120$ tấn hàng trong $x$ ngày. Nhờ cải tiến kĩ thuật, xí nghiệp hoàn thành sớm hơn $1$ ngày và làm thêm được $5$ tấn hàng. Viết phân thức biểu thị theo $x$:[[br]]a) [NB] số tấn hàng làm trong $1$ ngày theo kế hoạch;[[br]]b) [NB] số tấn hàng làm trong $1$ ngày trên thực tế. (SGK Cánh diều)",
+     "level": 1,
+     "tier": "onclass",
+     "dang_id": "NB4",
+     "solution": "a) $\\dfrac{120}{x}$ (tấn).[[br]]b) $\\dfrac{125}{x-1}$ (tấn)."
+    },
+    {
+     "type": "problem",
+     "label": "Bài 5.",
+     "statement": "[NB] Một xe ô tô chở hàng đi từ A đến B hết $x$ giờ, quãng đường AB dài $160$ km. Viết phân thức biểu thị tốc độ của xe khi chạy từ A đến B. (SGK Cánh diều)",
+     "level": 1,
+     "tier": "onclass",
+     "dang_id": "NB4",
+     "solution": "$\\dfrac{160}{x}$ (km/h)."
+    },
+    {
+     "type": "problem",
+     "label": "Bài 6.",
+     "statement": "[NB] Điều kiện của biến $x$ để phân thức $\\dfrac{3x}{x^2-9}$ được xác định là (Đề cuối kì II, THCS Hát Môn)",
+     "level": 1,
+     "tier": "onclass",
+     "dang_id": "NB5",
+     "solution": "A.",
+     "options": [
+      "$x\\ne\\pm 3$.",
+      "$x\\ne 3$.",
+      "$x\\ne -3$.",
+      "$x\\ne 0$ và $x\\ne\\pm 3$."
+     ]
+    },
+    {
+     "type": "problem",
+     "label": "Bài 7.",
+     "statement": "[NB] Biểu thức nào sau đây là phân thức đại số? (Đề giữa kì II, THCS Uy Nỗ)",
+     "level": 1,
+     "tier": "onclass",
+     "dang_id": "NB5",
+     "solution": "A.",
+     "options": [
+      "$\\dfrac{x^2-y}{x^4+xy}$.",
+      "$\\dfrac{2x+\\frac{x}{y}}{x^3-1}$.",
+      "$\\dfrac{x+8}{\\frac{2x-y}{xy}}$.",
+      "$\\dfrac{4x+2}{\\frac{y}{x^2}+xy}$."
+     ]
+    },
+    {
+     "type": "problem",
+     "label": "Bài 8.",
+     "statement": "[NB] Rút gọn rồi tính giá trị của phân thức $A=\\dfrac{x^2-2x-3}{x^2+2x+1}$ ($x\\ne -1$) tại $x$ thoả mãn $3x-1=0$. (Theo Rút gọn biểu thức và các bài toán liên quan, Dạng 1)",
+     "level": 1,
+     "tier": "onclass",
+     "dang_id": "NB5",
+     "solution": "$A=\\dfrac{(x+1)(x-3)}{(x+1)^2}=\\dfrac{x-3}{x+1}$; $x=\\dfrac{1}{3}$ nên $A=-2$."
+    },
+    {
+     "type": "problem",
+     "label": "Bài 9.",
+     "statement": "Mỗi lời giải sau đúng hay sai? Vì sao?[[br]]a) [NB] $\\dfrac{x+3}{x+5}=\\dfrac{3}{5}$.[[br]]b) [NB] $\\dfrac{x^2-9}{x-3}=x+3$ với $x\\ne 3$.[[br]]c) [NB] $\\dfrac{x-y}{y-x}=1$.",
+     "level": 1,
+     "tier": "onclass",
+     "dang_id": "NB6",
+     "solution": "a) Sai, không được gạch $x$ trong tổng.[[br]]b) Đúng.[[br]]c) Sai, $\\dfrac{x-y}{y-x}=-1$."
+    }
+   ]
+  },
+  {
+   "kind": "practice2",
+   "number": 4,
+   "title": "Luyện tập 2",
+   "teacher_note": "Ví dụ 1 viết trọn như đi thi rồi HS làm Bài 14 -- 17; đọc to hộp quy trình.[[br]]Bài 13 là bài tự viết lại quy trình, chấm đủ năm bước.",
+   "blocks": [
+    {
+     "type": "problem",
+     "label": "Bài 10.",
+     "statement": "Hai công nhân cùng làm một mặt hàng. Người thứ nhất làm được $1\\,000$ sản phẩm trong $x$ giờ; người thứ hai làm được $1\\,250$ sản phẩm trong $x+10$ giờ. (SBT Cánh diều)[[br]]a) [TH] Viết phân thức biểu thị số sản phẩm mỗi người làm trong $1$ giờ và tỉ số năng suất của người thứ hai so với người thứ nhất.[[br]]b) [TH] Tính tỉ số đó khi $x=240$. Khi đó năng suất người thứ hai tăng bao nhiêu phần trăm so với người thứ nhất?",
+     "level": 2,
+     "tier": "onclass",
+     "dang_id": "TH1",
+     "solution": "a) Ta có năng suất người thứ nhất là $\\dfrac{1\\,000}{x}$, người thứ hai là $\\dfrac{1\\,250}{x+10}$ (sản phẩm/giờ).[[br]]Tỉ số là $\\dfrac{1\\,250}{x+10}:\\dfrac{1\\,000}{x}=\\dfrac{5x}{4(x+10)}$.[[br]]b) Với $x=240$, tỉ số là $\\dfrac{5\\cdot 240}{4\\cdot 250}=1{,}2$.[[br]]Vậy năng suất người thứ hai tăng $20\\%$ so với người thứ nhất.",
+     "hints": [
+      "Năng suất là số sản phẩm chia cho đại lượng nào?",
+      "Tỉ số $1{,}2$ nghĩa là bằng bao nhiêu phần trăm?"
+     ]
+    },
+    {
+     "type": "problem",
+     "label": "Bài 11.",
+     "statement": "[TH] Một xe máy đi từ TP Hồ Chí Minh đến Cà Mau ($300$ km) với vận tốc $x$ km/h; cùng lúc một ô tô đi cùng quãng đường với vận tốc $x+20$ km/h. Thời gian đi của xe máy gấp mấy lần thời gian đi của ô tô (tính theo $x$)? Tính tỉ số đó khi $x=40$.",
+     "level": 2,
+     "tier": "onclass",
+     "dang_id": "TH1",
+     "solution": "Ta có thời gian xe máy là $\\dfrac{300}{x}$ giờ, thời gian ô tô là $\\dfrac{300}{x+20}$ giờ.[[br]]Tỉ số là $\\dfrac{300}{x}:\\dfrac{300}{x+20}=\\dfrac{x+20}{x}$.[[br]]Với $x=40$: $\\dfrac{60}{40}=1{,}5$.[[br]]Vậy thời gian xe máy gấp $\\dfrac{x+20}{x}$ lần, khi $x=40$ là $1{,}5$ lần.",
+     "hints": [
+      "Thời gian bằng quãng đường chia cho đại lượng nào?"
+     ]
+    },
+    {
+     "type": "problem",
+     "label": "Bài 12.",
+     "statement": "Rút gọn các biểu thức sau. (Theo Bài tập tổng hợp phân thức đại số)[[br]]a) [TH] $A=\\dfrac{1}{x-2}+\\dfrac{x^2-x-2}{x^2-7x+10}-\\dfrac{2x-4}{x-5}$ với $x\\ne 2$, $x\\ne 5$.[[br]]b) [TH] $A=\\left(\\dfrac{2+x}{2-x}-\\dfrac{4x^2}{x^2-4}-\\dfrac{2-x}{2+x}\\right):\\dfrac{x^2-3x}{2x^2-x^3}$ với $x\\ne 0$, $x\\ne\\pm 2$, $x\\ne 3$.",
+     "level": 2,
+     "tier": "onclass",
+     "dang_id": "TH2",
+     "solution": "a) Ta có $x^2-7x+10=(x-2)(x-5)$ và $x^2-x-2=(x-2)(x+1)$ nên $\\dfrac{x^2-x-2}{x^2-7x+10}=\\dfrac{x+1}{x-5}$.[[br]]$A=\\dfrac{1}{x-2}+\\dfrac{x+1-2x+4}{x-5}=\\dfrac{1}{x-2}-1=\\dfrac{3-x}{x-2}$.[[br]]b) Ta có trong ngoặc $\\dfrac{-(2+x)^2-4x^2+(2-x)^2}{(x-2)(x+2)}=\\dfrac{-4x(x+2)}{(x-2)(x+2)}=\\dfrac{-4x}{x-2}$.[[br]]$\\dfrac{x^2-3x}{2x^2-x^3}=\\dfrac{x(x-3)}{-x^2(x-2)}=\\dfrac{x-3}{-x(x-2)}$.[[br]]$A=\\dfrac{-4x}{x-2}\\cdot\\dfrac{-x(x-2)}{x-3}=\\dfrac{4x^2}{x-3}$.[[br]]Vậy a) $A=\\dfrac{3-x}{x-2}$; b) $A=\\dfrac{4x^2}{x-3}$.",
+     "hints": [
+      "Có phân thức nào rút gọn được ngay trước khi quy đồng không?",
+      "Câu b): mẫu nào ngược dấu với $x^2-4$?"
+     ]
+    },
+    {
+     "type": "problem",
+     "label": "Bài 13.",
+     "statement": "[TH] Viết lại quy trình tìm $x$ nguyên để một biểu thức nhận giá trị nguyên, mỗi bước một dòng, và giải thích vì sao phải đối chiếu điều kiện ở bước cuối.",
+     "level": 2,
+     "tier": "onclass",
+     "dang_id": "TH3",
+     "solution": "Ta có quy trình: (1) rút gọn, viết điều kiện; (2) tách $P=m+\\dfrac{k}{\\text{mẫu}}$; (3) mẫu là ước của $k$, liệt kê cả ước âm; (4) lập bảng giá trị của $x$; (5) đối chiếu rồi kết luận.[[br]]Vì có giá trị của $x$ tìm được làm mẫu ban đầu bằng $0$ hoặc không thoả mãn yêu cầu nguyên dương, tự nhiên.[[br]]Vậy phải đối chiếu để loại các giá trị đó.",
+     "hints": [
+      "Giá trị nào của $x$ có thể làm mẫu ban đầu bằng $0$?"
+     ]
+    },
+    {
+     "type": "noted",
+     "variant": "example",
+     "text": "\\textbf{Ví dụ 1.} Cho $P=\\dfrac{x^2}{x-1}$ với $x\\ne 0$, $x\\ne\\pm 1$. Tìm $x$ là số nguyên dương để $P$ nhận giá trị nguyên. (Đề minh hoạ giữa kì II, THCS Nghĩa Tân)[[br]]{\\sffamily\\bfseries\\color{brand}Lời giải}[[br]]Ta có $x^2=(x-1)(x+1)+1$ nên $P=x+1+\\dfrac{1}{x-1}$.[[br]]Với $x$ nguyên, $P$ nguyên khi $x-1$ là ước của [[fill:1]].[[br]]Ta có $x-1\\in\\{1;-1\\}$, tức là $x\\in\\{[[fill:2;\\,0]]\\}$.[[br]]Giá trị nhỏ hơn không thoả mãn điều kiện; giá trị còn lại là số nguyên dương thoả mãn điều kiện.[[br]]Vậy $x=[[fill:2]]$."
+    },
+    {
+     "type": "problem",
+     "label": "Bài 14.",
+     "statement": "Cho $A=\\dfrac{5}{x+3}$ và $B=\\dfrac{x+3}{x-3}$ (đã rút gọn) với $x\\ne\\pm 3$. (Đề giữa kì II, THCS Việt Hưng)[[br]][VD] Tìm các số nguyên $x$ để $Q=A\\cdot B$ có giá trị là số nguyên.",
+     "level": 3,
+     "tier": "onclass",
+     "dang_id": "VD1",
+     "solution": "Ta có $Q=\\dfrac{5}{x+3}\\cdot\\dfrac{x+3}{x-3}=\\dfrac{5}{x-3}$.[[br]]$Q$ nguyên khi $x-3\\in\\{1;-1;5;-5\\}$.[[br]]$x\\in\\{4;2;8;-2\\}$, đều thoả mãn điều kiện.[[br]]Vậy $x\\in\\{-2;2;4;8\\}$.",
+     "hints": [
+      "Sau khi rút gọn $Q$, tử là hằng số nào?"
+     ],
+     "quy_trinh": [
+      "Bước 1 — Cái phải tìm là gì? Viết biểu thức đã rút gọn và điều kiện xác định.",
+      "Bước 2 — Tách thành phần nguyên cộng một phân số có tử là hằng số: $P=m+\\dfrac{k}{\\text{mẫu}}$.",
+      "Bước 3 — $P$ nguyên khi mẫu là ước của $k$: liệt kê đủ các ước nguyên (cả ước âm).",
+      "Bước 4 — Lập bảng giá trị của $x$; đối chiếu điều kiện và yêu cầu (nguyên dương, tự nhiên…), loại giá trị sai.",
+      "Bước 5 — Nhìn lại: đã dùng hết giả thiết chưa? Thử lại một giá trị rồi viết \"Vậy …\"."
+     ]
+    },
+    {
+     "type": "problem",
+     "label": "Bài 15.",
+     "statement": "Cho $A=\\dfrac{x+1}{x(x-2)}$ và $B=\\dfrac{8}{x-2}$ (đã rút gọn) với $x\\ne\\pm 2$, $x\\ne 0$. (Đề minh hoạ giữa kì II, THCS Nghĩa Tân)[[br]][VD] Đặt $P=B:A$. Tìm $x$ nguyên dương để $P$ là số tự nhiên.",
+     "level": 3,
+     "tier": "onclass",
+     "dang_id": "VD1",
+     "solution": "Ta có $P=\\dfrac{8}{x-2}\\cdot\\dfrac{x(x-2)}{x+1}=\\dfrac{8x}{x+1}=8-\\dfrac{8}{x+1}$.[[br]]$x$ nguyên dương nên $x+1\\ge 2$; $P$ nguyên khi $x+1\\in\\{2;4;8\\}$.[[br]]$x\\in\\{1;3;7\\}$, khi đó $P\\in\\{4;6;7\\}$ đều là số tự nhiên và các giá trị đều thoả mãn điều kiện.[[br]]Vậy $x\\in\\{1;3;7\\}$.",
+     "hints": [
+      "$x$ nguyên dương thì $x+1$ nhỏ nhất bằng bao nhiêu? Những ước nào của $8$ còn dùng được?"
+     ],
+     "quy_trinh": [
+      "Bước 1 — Cái phải tìm là gì? Viết biểu thức đã rút gọn và điều kiện xác định.",
+      "Bước 2 — Tách thành phần nguyên cộng một phân số có tử là hằng số: $P=m+\\dfrac{k}{\\text{mẫu}}$.",
+      "Bước 3 — $P$ nguyên khi mẫu là ước của $k$: liệt kê đủ các ước nguyên (cả ước âm).",
+      "Bước 4 — Lập bảng giá trị của $x$; đối chiếu điều kiện và yêu cầu (nguyên dương, tự nhiên…), loại giá trị sai.",
+      "Bước 5 — Nhìn lại: đã dùng hết giả thiết chưa? Thử lại một giá trị rồi viết \"Vậy …\"."
+     ]
+    },
+    {
+     "type": "problem",
+     "label": "Bài 16.",
+     "statement": "Cho $A=\\dfrac{x+1}{x+2}$ và $B=\\dfrac{x}{x+1}$ (đã rút gọn) với $x\\ne\\pm 1$, $x\\ne -2$. (Đề giữa kì II, Ban Mai, lớp T)[[br]][VD] Đặt $C=A\\cdot B$. Tìm các giá trị nguyên của $x$ để $C$ có giá trị nguyên.",
+     "level": 3,
+     "tier": "onclass",
+     "dang_id": "VD1",
+     "solution": "Ta có $C=\\dfrac{x}{x+2}=1-\\dfrac{2}{x+2}$.[[br]]$C$ nguyên khi $x+2\\in\\{1;-1;2;-2\\}$, tức là $x\\in\\{-1;-3;0;-4\\}$.[[br]]$x=-1$ không thoả mãn điều kiện nên loại.[[br]]Vậy $x\\in\\{-4;-3;0\\}$.",
+     "hints": [
+      "Có giá trị nào của $x$ vừa tìm làm mẫu của $A$ hoặc $B$ bằng $0$ không?"
+     ],
+     "quy_trinh": [
+      "Bước 1 — Cái phải tìm là gì? Viết biểu thức đã rút gọn và điều kiện xác định.",
+      "Bước 2 — Tách thành phần nguyên cộng một phân số có tử là hằng số: $P=m+\\dfrac{k}{\\text{mẫu}}$.",
+      "Bước 3 — $P$ nguyên khi mẫu là ước của $k$: liệt kê đủ các ước nguyên (cả ước âm).",
+      "Bước 4 — Lập bảng giá trị của $x$; đối chiếu điều kiện và yêu cầu (nguyên dương, tự nhiên…), loại giá trị sai.",
+      "Bước 5 — Nhìn lại: đã dùng hết giả thiết chưa? Thử lại một giá trị rồi viết \"Vậy …\"."
+     ]
+    },
+    {
+     "type": "problem",
+     "label": "Bài 17.",
+     "statement": "Cho $A=\\dfrac{2x+3}{x+1}$ và $B=\\dfrac{x+1}{x+3}$ (đã rút gọn) với $x\\ne -1$, $x\\ne -3$. (Đề kiểm tra học kì I, Cầu Giấy)[[br]][VD] Đặt $P=A\\cdot B$. Tìm tất cả các giá trị nguyên âm của $x$ để $P$ là số nguyên.",
+     "level": 3,
+     "tier": "onclass",
+     "dang_id": "VD1",
+     "solution": "Ta có $P=\\dfrac{2x+3}{x+3}=2-\\dfrac{3}{x+3}$.[[br]]$P$ nguyên khi $x+3\\in\\{1;-1;3;-3\\}$, tức là $x\\in\\{-2;-4;0;-6\\}$.[[br]]$x=0$ không là số nguyên âm nên loại; các giá trị còn lại thoả mãn điều kiện.[[br]]Vậy $x\\in\\{-6;-4;-2\\}$.",
+     "hints": [
+      "Đề đòi $x$ nguyên âm: giá trị nào phải loại?"
+     ],
+     "quy_trinh": [
+      "Bước 1 — Cái phải tìm là gì? Viết biểu thức đã rút gọn và điều kiện xác định.",
+      "Bước 2 — Tách thành phần nguyên cộng một phân số có tử là hằng số: $P=m+\\dfrac{k}{\\text{mẫu}}$.",
+      "Bước 3 — $P$ nguyên khi mẫu là ước của $k$: liệt kê đủ các ước nguyên (cả ước âm).",
+      "Bước 4 — Lập bảng giá trị của $x$; đối chiếu điều kiện và yêu cầu (nguyên dương, tự nhiên…), loại giá trị sai.",
+      "Bước 5 — Nhìn lại: đã dùng hết giả thiết chưa? Thử lại một giá trị rồi viết \"Vậy …\"."
+     ]
+    }
+   ]
+  },
+  {
+   "kind": "reflection",
+   "number": 5,
+   "title": "Tổng kết \\& bài tập về nhà",
+   "teacher_note": "Cho HS điền sơ đồ tư duy rồi giao bài tập về nhà.[[br]]Ví dụ 2 chữa ở lớp nếu còn giờ; BTVN 10 là câu cuối đề $0{,}5$ điểm cùng khuôn với Ví dụ 2.",
+   "blocks": [
+    {
+     "type": "mindmap",
+     "caption": "Sơ đồ tư duy: Bài tập cuối chương VI",
+     "root": "CHƯƠNG VI",
+     "branches": [
+      {
+       "label": "x NGUYÊN",
+       "children": [
+        {
+         "label": "Tách phần nguyên"
+        },
+        {
+         "label": "Mẫu là ước (cả âm)"
+        },
+        {
+         "label": "Bảng giá trị, đối chiếu"
+        }
+       ]
+      },
+      {
+       "label": "THỰC TẾ",
+       "children": [
+        {
+         "label": "Thời gian $=$ quãng đường $:$ vận tốc"
+        },
+        {
+         "label": "Năng suất $=$ khối lượng $:$ thời gian"
+        },
+        {
+         "label": "Tỉ số rồi thay số"
+        }
+       ]
+      },
+      {
+       "label": "RÚT GỌN",
+       "children": [
+        {
+         "label": "Điều kiện trước"
+        },
+        {
+         "label": "Phân tích, đổi dấu, quy đồng"
+        }
+       ]
+      },
+      {
+       "label": "CÂU CUỐI",
+       "children": [
+        {
+         "label": "Đưa về bình phương"
+        },
+        {
+         "label": "Mẫu dương $\\Rightarrow\\ \\ge 0$"
+        }
+       ]
+      }
+     ]
+    },
+    {
+     "type": "problem",
+     "label": "BTVN~1.",
+     "statement": "a) [NB] Liệt kê các ước nguyên của $6$.[[br]]b) [NB] Biết $x+1$ là ước nguyên của $4$. Lập bảng các giá trị tương ứng của $x$.",
+     "level": 1,
+     "tier": "btvn",
+     "dang_id": "NB1",
+     "solution": "a) $\\pm 1$; $\\pm 2$; $\\pm 3$; $\\pm 6$.[[br]]b) $x\\in\\{0;-2;1;-3;3;-5\\}$."
+    },
+    {
+     "type": "problem",
+     "label": "BTVN~2.",
+     "statement": "Viết mỗi phân thức dưới dạng tổng của một số nguyên và một phân thức có tử là hằng số.[[br]]a) [NB] $\\dfrac{3x-1}{x+1}$.[[br]]b) [NB] $\\dfrac{x-1}{x+3}$.",
+     "level": 1,
+     "tier": "btvn",
+     "dang_id": "NB2",
+     "solution": "a) $3-\\dfrac{4}{x+1}$.[[br]]b) $1-\\dfrac{4}{x+3}$."
+    },
+    {
+     "type": "problem",
+     "label": "BTVN~3.",
+     "statement": "Điền vào chỗ trống: \\emph{Tìm $x$ nguyên để $\\dfrac{4}{x-3}$ là số tự nhiên.}[[br]]a) [NB] $\\dfrac{4}{x-3}$ là số tự nhiên khi $x-3$ là ước dương của $4$, tức là $x-3\\in$ [[blank:2.4cm]].[[br]]b) [NB] Vậy $x\\in$ [[blank:2.4cm]].",
+     "level": 1,
+     "tier": "btvn",
+     "dang_id": "NB3",
+     "solution": "a) $\\{1;2;4\\}$.[[br]]b) $\\{4;5;7\\}$."
+    },
+    {
+     "type": "problem",
+     "label": "BTVN~4.",
+     "statement": "Viết phân thức biểu thị theo $x$.[[br]]a) [NB] Xe ô tô ở Bài 5 quay về A hết $x-1$ giờ: tốc độ khi chạy từ B về A.[[br]]b) [NB] Mảnh đất hình chữ nhật có chiều dài $x+10$ (m), chiều rộng $x-2$ (m): diện tích của mảnh đất.",
+     "level": 1,
+     "tier": "btvn",
+     "dang_id": "NB4",
+     "solution": "a) $\\dfrac{160}{x-1}$ (km/h).[[br]]b) $(x+10)(x-2)$ (m$^2$)."
+    },
+    {
+     "type": "problem",
+     "label": "BTVN~5.",
+     "statement": "Rút gọn rồi tính giá trị.[[br]]a) [NB] $B=\\dfrac{x-2}{x^2-5x+6}$ ($x\\ne 2$, $x\\ne 3$) tại $x$ thoả mãn $x^2-4=0$.[[br]]b) [NB] $\\dfrac{x^2-1}{2x^2-3x+1}$ ($x\\ne 1$, $x\\ne\\dfrac{1}{2}$) tại $x=-2$.",
+     "level": 1,
+     "tier": "btvn",
+     "dang_id": "NB5",
+     "solution": "a) $B=\\dfrac{1}{x-3}$; $x=2$ bị loại, $x=-2$ nên $B=-\\dfrac{1}{5}$.[[br]]b) $=\\dfrac{x+1}{2x-1}$; tại $x=-2$ có giá trị $\\dfrac{1}{5}$."
+    },
+    {
+     "type": "problem",
+     "label": "BTVN~6.",
+     "statement": "Mỗi lời giải sau đúng hay sai?[[br]]a) [NB] $\\dfrac{x^2+x}{x}=x^2$.[[br]]b) [NB] $\\dfrac{3-x}{x-3}=-1$ với $x\\ne 3$.",
+     "level": 1,
+     "tier": "btvn",
+     "dang_id": "NB6",
+     "solution": "a) Sai, $\\dfrac{x(x+1)}{x}=x+1$.[[br]]b) Đúng."
+    },
+    {
+     "type": "problem",
+     "label": "BTVN~7.",
+     "statement": "Quãng đường TP Hồ Chí Minh -- Nha Trang dài $350$ km. Một ô tô và một tàu hoả cùng chạy quãng đường đó; vận tốc ô tô là $x$ km/h, nhanh hơn tàu hoả $20$ km/h. (SBT Cánh diều)[[br]]a) [TH] Thời gian đi của tàu hoả gấp mấy lần thời gian đi của ô tô?[[br]]b) [TH] Biết vận tốc tàu hoả là $50$ km/h. Thời gian đi của ô tô gấp mấy lần thời gian đi của tàu hoả?",
+     "level": 2,
+     "tier": "btvn",
+     "dang_id": "TH1",
+     "solution": "a) Ta có thời gian tàu hoả là $\\dfrac{350}{x-20}$, ô tô là $\\dfrac{350}{x}$ (giờ).[[br]]Tỉ số là $\\dfrac{x}{x-20}$.[[br]]b) Ta có $x=50+20=70$ nên thời gian ô tô gấp $\\dfrac{350}{70}:\\dfrac{350}{50}=\\dfrac{5}{7}$ lần thời gian tàu hoả.[[br]]Vậy a) $\\dfrac{x}{x-20}$; b) $\\dfrac{5}{7}$.",
+     "hints": [
+      "Vận tốc tàu hoả viết theo $x$ thế nào?"
+     ]
+    },
+    {
+     "type": "problem",
+     "label": "BTVN~8.",
+     "statement": "Rút gọn các biểu thức sau. (Theo Bài tập tổng hợp phân thức đại số)[[br]]a) [TH] $A=\\left(\\dfrac{x+1}{x-1}-\\dfrac{x-1}{x+1}\\right):\\left(\\dfrac{2}{x^2-1}-\\dfrac{x}{x-1}+\\dfrac{1}{x+1}\\right)$.[[br]]b) [TH] $A=\\left(\\dfrac{x+1}{x-1}-\\dfrac{x-1}{x+1}+\\dfrac{x^2-4x-1}{x^2-1}\\right)\\cdot\\dfrac{x+2006}{x}$.",
+     "level": 2,
+     "tier": "btvn",
+     "dang_id": "TH2",
+     "solution": "a) Ta có ngoặc thứ nhất bằng $\\dfrac{4x}{x^2-1}$; ngoặc thứ hai bằng $\\dfrac{2-x(x+1)+x-1}{x^2-1}=-1$.[[br]]$A=-\\dfrac{4x}{x^2-1}$.[[br]]b) Ta có trong ngoặc $\\dfrac{4x+x^2-4x-1}{x^2-1}=1$.[[br]]$A=\\dfrac{x+2006}{x}$.[[br]]Vậy a) $A=-\\dfrac{4x}{x^2-1}$; b) $A=\\dfrac{x+2006}{x}$.",
+     "hints": [
+      "Mẫu thức chung của mỗi ngoặc là gì?"
+     ]
+    },
+    {
+     "type": "problem",
+     "label": "BTVN~9.",
+     "statement": "Cho $A=\\dfrac{3-x}{x-2}$ (đã rút gọn ở Bài 12a) với $x\\ne 2$, $x\\ne 5$.[[br]][VD] Tìm $x$ nguyên để $A$ nguyên.",
+     "level": 3,
+     "tier": "btvn",
+     "dang_id": "VD1",
+     "solution": "Ta có $A=-1+\\dfrac{1}{x-2}$.[[br]]$A$ nguyên khi $x-2\\in\\{1;-1\\}$, tức là $x\\in\\{3;1\\}$.[[br]]Các giá trị đều thoả mãn điều kiện.[[br]]Vậy $x\\in\\{1;3\\}$.",
+     "hints": [
+      "Tách $\\dfrac{3-x}{x-2}$ thành số nguyên cộng một phân số có tử là hằng số."
+     ],
+     "quy_trinh": [
+      "Bước 1 — Cái phải tìm là gì? Viết biểu thức đã rút gọn và điều kiện xác định.",
+      "Bước 2 — Tách thành phần nguyên cộng một phân số có tử là hằng số: $P=m+\\dfrac{k}{\\text{mẫu}}$.",
+      "Bước 3 — $P$ nguyên khi mẫu là ước của $k$: liệt kê đủ các ước nguyên (cả ước âm).",
+      "Bước 4 — Lập bảng giá trị của $x$; đối chiếu điều kiện và yêu cầu (nguyên dương, tự nhiên…), loại giá trị sai.",
+      "Bước 5 — Nhìn lại: đã dùng hết giả thiết chưa? Thử lại một giá trị rồi viết \"Vậy …\"."
+     ]
+    },
+    {
+     "type": "noted",
+     "variant": "example",
+     "text": "\\textbf{Ví dụ 2.} Vì sao phân thức $A=\\dfrac{x^4+x^3+x+1}{x^4-x^3+2x^2-x+1}$ không bao giờ nhận giá trị âm? Hãy phân tích tử, mẫu thành nhân tử để trả lời.[[br]]{\\sffamily\\bfseries\\color{brand}Lời giải}[[br]]Tử: $x^4+x^3+x+1=x^3(x+1)+(x+1)=(x+1)(x^3+1)=(x+1)^2([[fill:x^2-x+1]])$.[[br]]Mẫu: $x^4-x^3+2x^2-x+1=(x^2+1)(x^2-x+1)$.[[br]]$x^2-x+1=\\left(x-\\dfrac{1}{2}\\right)^2+\\dfrac{3}{4}>0$ nên mẫu luôn khác $0$.[[br]]$A=\\dfrac{(x+1)^2}{x^2+1}$.[[br]]Vì $(x+1)^2\\ge 0$ và $x^2+1>0$ nên $A\\ge [[fill:0]]$.[[br]]Vậy $A$ [[fill:không âm]] với mọi $x$."
+    },
+    {
+     "type": "problem",
+     "label": "BTVN~10.",
+     "statement": "[VDC] Chứng minh biểu thức sau không âm với mọi $a$: $A=(a^2+1)+\\dfrac{1}{a^2+1}-2$. (Theo Bài tập tổng hợp phân thức đại số)",
+     "level": 4,
+     "tier": "btvn",
+     "dang_id": "VDC1",
+     "solution": "Đặt $t=a^2+1$, ta có $t\\ge 1>0$.[[br]]$A=t+\\dfrac{1}{t}-2=\\dfrac{t^2-2t+1}{t}=\\dfrac{(t-1)^2}{t}$.[[br]]Vì $(t-1)^2\\ge 0$ và $t>0$ nên $A\\ge 0$.[[br]]Vậy $A$ không âm với mọi $a$."
+    }
+   ]
+  }
+ ]
+}

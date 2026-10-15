@@ -22,6 +22,7 @@ import json
 import re
 import subprocess
 import sys
+import unicodedata
 from pathlib import Path
 
 ROOT = Path(__file__).resolve().parent.parent
@@ -112,12 +113,16 @@ _DE_GOM_TAY = re.compile(r"đề\s*(?:thi|kiểm\s*tra)", re.I)
 
 
 def hop_le_de_thi(pdf: Path) -> bool:
-    """File này có phải ĐỀ THI định kì dùng để chấm mức độ được không?"""
-    if _KHONG_PHAI_DE.search(pdf.stem):
+    """File này có phải ĐỀ THI định kì dùng để chấm mức độ được không?
+
+    Tên file macOS hay lưu dạng NFD ("Đ" + dấu rời) ⇒ phải chuẩn NFC trước khi so regex,
+    nếu không "Đề thi HK2 - THCS Ba Đình" bị loại oan (từng mất 17 đề lớp 8, 14 đề CK2)."""
+    stem = unicodedata.normalize("NFC", pdf.stem)
+    if _KHONG_PHAI_DE.search(stem):
         return False
-    if pdf.name.startswith("de-") and pdf.stem.endswith("-ha-noi"):
+    if pdf.name.startswith("de-") and stem.endswith("-ha-noi"):
         return True                        # slug tải từ toanmath
-    return bool(_DE_GOM_TAY.search(pdf.stem))   # file gom tay, tên tiếng Việt
+    return bool(_DE_GOM_TAY.search(stem))   # file gom tay, tên tiếng Việt
 
 
 def quet(lop: str | None, ky: str | None, so: int) -> list[dict]:

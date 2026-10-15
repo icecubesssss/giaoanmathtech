@@ -1,6 +1,6 @@
 {
  "slug": "phieu-2-bon-diem-cung-thuoc-duong-tron-tiep-tuyen",
- "title": "Bốn điểm cùng thuộc một đường tròn. Tiếp tuyến của đường tròn",
+ "title": "Bốn điểm cùng thuộc một đường tròn. Chứng minh tiếp tuyến",
  "eyebrow": "PHIẾU 2 • HÌNH HỌC 9 · CHƯƠNG V — BÀI 13, BÀI 16",
  "grade_label": "Lớp 9 • Hình học",
  "class_tier": "C",
@@ -9,7 +9,7 @@
    "kind": "review",
    "number": 1,
    "title": "Khám phá",
-   "teacher_note": "Cho HS dùng ê ke kiểm tra trực tiếp trên Hình 1: nan hoa $OT$ vuông góc với mặt đường. Chưa gọi tên \\textquotedblleft tiếp tuyến\\textquotedblright{} — để HS tự nói \\textquotedblleft chạm đúng một điểm\\textquotedblright{} rồi mới đặt tên ở mục 4, 5.",
+   "teacher_note": "Cho HS dùng ê ke kiểm tra trực tiếp trên Hình 1: nan hoa $OT$ vuông góc với mặt đường. Chưa gọi tên \\textquotedblleft tiếp tuyến\\textquotedblright{} — để HS tự nói \\textquotedblleft chạm đúng một điểm\\textquotedblright{} rồi mới đặt tên ở mục 3, 4.",
    "blocks": [
     {
      "type": "para",
@@ -30,32 +30,37 @@
   {
    "kind": "concept",
    "number": 2,
-   "title": "Kiến thức cần nhớ",
-   "teacher_note": "Mục 3 là khuôn ý a Câu IV.2 — dạng THÔNG HIỂU, chép đủ ba nhịp: hai góc vuông $\\to$ trung điểm cạnh huyền chung cách đều bốn điểm $\\to$ kết luận kèm TÂM và BÁN KÍNH. Mục 5 chỉ dùng đúng SGK KNTT Bài 16: tính chất tiếp tuyến và Định lí 1.",
+   "title": "Kiến thức trọng tâm",
+   "teacher_note": "Phần A đọc đúng lời SGK (định nghĩa, định lí) — không kèm cách làm bài. Phần B là phương pháp cho hai dạng của Câu IV.2: bốn điểm cùng thuộc đường tròn (ý a, 9/11 đề CK1) và chứng minh tiếp tuyến (ý b, 4/11 đề); ví dụ của từng dạng nằm ngay ở Luyện tập 1.",
    "blocks": [
     {
      "type": "para",
-     "variant": "heading",
-     "text": "1. Vị trí của một điểm đối với đường tròn"
+     "variant": "part",
+     "text": "A. Lý thuyết"
     },
     {
      "type": "para",
-     "text": "So sánh khoảng cách từ điểm đến tâm $O$ với bán kính $R$:"
+     "variant": "heading",
+     "text": "1. Đường tròn"
+    },
+    {
+     "type": "para",
+     "text": "Đường tròn tâm $O$ bán kính $R$ ($R > 0$), kí hiệu $(O; R)$, là hình gồm tất cả các điểm cách điểm $O$ một khoảng bằng $R$. Cho điểm $M$:"
     },
     {
      "type": "deflist",
      "items": [
       {
-       "term": "$OA < R$:",
-       "desc": "$A$ nằm \\textbf{trong} đường tròn."
+       "term": "$OM < R$:",
+       "desc": "điểm $M$ nằm trong đường tròn $(O; R)$."
       },
       {
-       "term": "$OB = R$:",
-       "desc": "$B$ nằm \\textbf{trên} đường tròn, viết $B \\in (O)$."
+       "term": "$OM = R$:",
+       "desc": "điểm $M$ nằm trên đường tròn $(O; R)$, kí hiệu $M \\in (O)$."
       },
       {
-       "term": "$OC > R$:",
-       "desc": "$C$ nằm \\textbf{ngoài} đường tròn."
+       "term": "$OM > R$:",
+       "desc": "điểm $M$ nằm ngoài đường tròn $(O; R)$."
       }
      ]
     },
@@ -68,97 +73,50 @@
     {
      "type": "para",
      "variant": "heading",
-     "text": "2. Đường tròn đi qua ba đỉnh của tam giác vuông"
-    },
-    {
-     "type": "para",
-     "text": "Cho $\\triangle ABC$ vuông tại $A$, $O$ là trung điểm cạnh huyền $BC$.[[br]]Xét $\\triangle ABC$ vuông tại $A$, trung tuyến $AO$ $\\Rightarrow AO = \\dfrac{BC}{2} = OB = OC$.[[br]]$\\Rightarrow A$, $B$, $C$ cùng thuộc đường tròn tâm $O$ (trung điểm cạnh huyền), bán kính $\\dfrac{BC}{2}$."
-    },
-    {
-     "type": "figure",
-     "tikz": "\\begin{tikzpicture}[line width=0.8pt, font=\\small]\n  \\draw[ink] (0.0000,0.0000) circle (1.5000);\n  \\draw[ink] (-0.6339,1.3595) -- (-1.5000,0.0000) -- (1.5000,0.0000) -- cycle;\n  \\draw[ink] (-0.6339,1.3595) -- (0.0000,0.0000);\n  \\draw[ink] (-0.7199,1.2245) -- (-0.5850,1.1386) -- (-0.4990,1.2735);\n  \\fill[ink] (-1.5000,0.0000) circle (1.3pt);\n  \\fill[ink] (1.5000,0.0000) circle (1.3pt);\n  \\fill[ink] (-0.6339,1.3595) circle (1.3pt);\n  \\fill[ink] (0.0000,0.0000) circle (1.3pt);\n  \\node[inner sep=0pt] at (-1.8000,0.0000) {$B$};\n  \\node[inner sep=0pt] at (1.8000,0.0000) {$C$};\n  \\node[inner sep=0pt] at (-0.7365,1.6414) {$A$};\n  \\node[inner sep=0pt] at (-0.0000,-0.2400) {$O$};\n\\end{tikzpicture}",
-     "caption": "$\\triangle ABC$ vuông tại $A$, $O$ là trung điểm cạnh huyền $BC$",
-     "width": "0.32\\linewidth"
-    },
-    {
-     "type": "para",
-     "variant": "heading",
-     "text": "3. Chứng minh bốn điểm cùng thuộc một đường tròn"
-    },
-    {
-     "type": "para",
-     "text": "Khuôn \\textbf{hai tam giác vuông chung cạnh huyền} ($\\triangle ABC$ vuông tại $B$, $\\triangle ADC$ vuông tại $D$):"
+     "text": "2. Vị trí tương đối của đường thẳng và đường tròn"
     },
     {
      "type": "deflist",
      "items": [
       {
-       "term": "B1.",
-       "desc": "Chỉ ra hai góc vuông: $\\widehat{ABC} = \\widehat{ADC} = 90^\\circ$."
+       "term": "Cắt nhau:",
+       "desc": "đường thẳng $a$ và đường tròn $(O)$ có đúng hai điểm chung."
       },
       {
-       "term": "B2.",
-       "desc": "Gọi $O$ là trung điểm cạnh huyền chung $AC$. $\\triangle ABC$ vuông tại $B$, trung tuyến $BO$ $\\Rightarrow BO = \\dfrac{AC}{2}$; $\\triangle ADC$ vuông tại $D$, trung tuyến $DO$ $\\Rightarrow DO = \\dfrac{AC}{2}$. Do đó $OA = OB = OC = OD = \\dfrac{AC}{2}$."
+       "term": "Tiếp xúc:",
+       "desc": "đường thẳng $a$ và đường tròn $(O)$ có duy nhất một điểm chung $H$. Khi đó $a$ gọi là \\textbf{tiếp tuyến} của $(O)$, $H$ gọi là \\textbf{tiếp điểm}."
       },
       {
-       "term": "B3.",
-       "desc": "Kết luận: $A$, $B$, $C$, $D$ cùng thuộc đường tròn tâm $O$, bán kính $\\dfrac{AC}{2}$."
+       "term": "Không giao:",
+       "desc": "đường thẳng $a$ và đường tròn $(O)$ không có điểm chung."
       }
      ]
     },
     {
-     "type": "figure",
-     "tikz": "\\begin{tikzpicture}[line width=0.8pt, font=\\small]\n  \\draw[ink, dashed] (0.0000,0.0000) circle (1.5000);\n  \\draw[ink] (-1.5000,0.0000) -- (0.7500,-1.2990) -- (1.5000,0.0000) -- (-0.8604,1.2287) -- cycle;\n  \\draw[ink] (-1.5000,0.0000) -- (1.5000,0.0000);\n  \\draw[ink] (0.0000,0.0000) -- (0.7500,-1.2990);\n  \\draw[ink] (0.0000,0.0000) -- (-0.8604,1.2287);\n  \\draw[ink] (0.6114,-1.2190) -- (0.6914,-1.0805) -- (0.8300,-1.1605);\n  \\draw[ink] (-0.9342,1.0868) -- (-0.7923,1.0129) -- (-0.7184,1.1548);\n  \\fill[ink] (-1.5000,0.0000) circle (1.3pt);\n  \\fill[ink] (1.5000,0.0000) circle (1.3pt);\n  \\fill[ink] (0.7500,-1.2990) circle (1.3pt);\n  \\fill[ink] (-0.8604,1.2287) circle (1.3pt);\n  \\fill[ink] (0.0000,0.0000) circle (1.3pt);\n  \\node[inner sep=0pt] at (-1.8000,0.0000) {$A$};\n  \\node[inner sep=0pt] at (1.8000,0.0000) {$C$};\n  \\node[inner sep=0pt] at (0.9000,-1.5588) {$B$};\n  \\node[inner sep=0pt] at (-1.0104,1.4885) {$D$};\n  \\node[inner sep=0pt] at (0.1200,0.2078) {$O$};\n\\end{tikzpicture}",
-     "caption": "Hai tam giác vuông chung cạnh huyền $AC$: $OA = OB = OC = OD$",
-     "width": "0.32\\linewidth"
-    },
-    {
      "type": "para",
-     "variant": "heading",
-     "text": "4. Vị trí tương đối của đường thẳng và đường tròn"
-    },
-    {
-     "type": "para",
-     "text": "Gọi $d$ là khoảng cách từ tâm $O$ đến đường thẳng $a$:"
-    },
-    {
-     "type": "deflist",
-     "items": [
-      {
-       "term": "$d < R$:",
-       "desc": "$a$ và $(O)$ \\textbf{cắt nhau} — hai điểm chung."
-      },
-      {
-       "term": "$d = R$:",
-       "desc": "$a$ và $(O)$ \\textbf{tiếp xúc} — một điểm chung. Khi đó $a$ là \\textbf{tiếp tuyến}, điểm chung là \\textbf{tiếp điểm}."
-      },
-      {
-       "term": "$d > R$:",
-       "desc": "$a$ và $(O)$ \\textbf{không giao nhau} — không có điểm chung."
-      }
-     ]
+     "text": "Gọi $d$ là khoảng cách từ $O$ đến $a$: $a$ cắt $(O)$ khi $d < R$; $a$ tiếp xúc với $(O)$ khi $d = R$; $a$ và $(O)$ không giao nhau khi $d > R$."
     },
     {
      "type": "figure",
      "tikz": "\\begin{tikzpicture}[line width=0.8pt, font=\\small]\n  \\draw[ink] (0.0000,0.0000) circle (1.2000);\n  \\draw[ink] (0.5500,-1.7000) -- (0.5500,1.7000);\n  \\draw[ink] (1.2000,-1.7000) -- (1.2000,1.7000);\n  \\draw[ink] (1.9000,-1.7000) -- (1.9000,1.7000);\n  \\draw[ink, dashed] (0.0000,0.0000) -- (1.2000,0.0000);\n  \\fill[ink] (0.0000,0.0000) circle (1.3pt);\n  \\node[inner sep=0pt] at (-0.2400,0.0000) {$O$};\n  \\node[inner sep=0pt] at (0.5500,1.9400) {$a_1$};\n  \\node[inner sep=0pt] at (1.2000,1.9400) {$a_2$};\n  \\node[inner sep=0pt] at (1.9000,1.9400) {$a_3$};\n\\end{tikzpicture}",
      "caption": "$a_1$ cắt, $a_2$ tiếp xúc, $a_3$ không giao $(O)$",
-     "width": "0.32\\linewidth"
+     "width": "0.34\\linewidth"
     },
     {
      "type": "para",
      "variant": "heading",
-     "text": "5. Tiếp tuyến. Dấu hiệu nhận biết tiếp tuyến"
+     "text": "3. Tính chất của tiếp tuyến. Dấu hiệu nhận biết tiếp tuyến"
     },
     {
      "type": "deflist",
      "items": [
       {
        "term": "Tính chất:",
-       "desc": "$a$ là tiếp tuyến của $(O)$ tại $C$ $\\Rightarrow a \\perp OC$ \\textbf{tại tiếp điểm} $C$."
+       "desc": "Nếu đường thẳng $a$ tiếp xúc với đường tròn $(O)$ tại $H$ thì $OH \\perp a$."
       },
       {
-       "term": "Định lí 1:",
-       "desc": "$a$ đi qua điểm $C \\in (O)$ và $a \\perp OC$ tại $C$ $\\Rightarrow a$ là tiếp tuyến của $(O)$ tại $C$."
+       "term": "Dấu hiệu nhận biết:",
+       "desc": "Nếu một đường thẳng đi qua một điểm nằm trên một đường tròn và vuông góc với bán kính đi qua điểm đó thì đường thẳng ấy là một tiếp tuyến của đường tròn."
       }
      ]
     },
@@ -166,7 +124,104 @@
      "type": "figure",
      "tikz": "\\begin{tikzpicture}[line width=0.8pt, font=\\small]\n  \\draw[ink] (0.0000,0.0000) circle (1.3000);\n  \\draw[ink] (0.0000,0.0000) -- (0.8356,0.9959);\n  \\draw[ink] (-0.1602,1.8315) -- (1.8315,0.1602);\n  \\draw[ink] (0.7328,0.8733) -- (0.6102,0.9761) -- (0.7131,1.0987);\n  \\fill[ink] (0.0000,0.0000) circle (1.3pt);\n  \\fill[ink] (0.8356,0.9959) circle (1.3pt);\n  \\node[inner sep=0pt] at (-0.1543,-0.1839) {$O$};\n  \\node[inner sep=0pt] at (1.0285,1.2257) {$C$};\n  \\node[inner sep=0pt] at (2.0153,0.0060) {$a$};\n\\end{tikzpicture}",
      "caption": "Tiếp tuyến $a$ vuông góc với bán kính $OC$ tại tiếp điểm $C$",
-     "width": "0.32\\linewidth"
+     "width": "0.34\\linewidth"
+    },
+    {
+     "type": "para",
+     "variant": "heading",
+     "text": "4. Kiến thức lớp dưới thường dùng"
+    },
+    {
+     "type": "deflist",
+     "items": [
+      {
+       "term": "Tam giác vuông (Lớp 8):",
+       "desc": "Trong tam giác vuông, đường trung tuyến ứng với cạnh huyền bằng nửa cạnh huyền."
+      },
+      {
+       "term": "Tam giác cân (Lớp 7):",
+       "desc": "Trong tam giác cân, đường cao ứng với cạnh đáy đồng thời là đường trung tuyến và đường phân giác."
+      },
+      {
+       "term": "Tam giác bằng nhau (Lớp 7):",
+       "desc": "Hai tam giác bằng nhau theo trường hợp c.c.c, c.g.c, g.c.g thì các cạnh tương ứng bằng nhau, các góc tương ứng bằng nhau."
+      }
+     ]
+    },
+    {
+     "type": "figure",
+     "tikz": "\\begin{tikzpicture}[line width=0.8pt, font=\\small]\n  \\draw[ink] (0.0000,0.0000) circle (1.5000);\n  \\draw[ink] (-0.6339,1.3595) -- (-1.5000,0.0000) -- (1.5000,0.0000) -- cycle;\n  \\draw[ink] (-0.6339,1.3595) -- (0.0000,0.0000);\n  \\draw[ink] (-0.7199,1.2245) -- (-0.5850,1.1386) -- (-0.4990,1.2735);\n  \\fill[ink] (-1.5000,0.0000) circle (1.3pt);\n  \\fill[ink] (1.5000,0.0000) circle (1.3pt);\n  \\fill[ink] (-0.6339,1.3595) circle (1.3pt);\n  \\fill[ink] (0.0000,0.0000) circle (1.3pt);\n  \\node[inner sep=0pt] at (-1.8000,0.0000) {$B$};\n  \\node[inner sep=0pt] at (1.8000,0.0000) {$C$};\n  \\node[inner sep=0pt] at (-0.7365,1.6414) {$A$};\n  \\node[inner sep=0pt] at (-0.0000,-0.2400) {$O$};\n\\end{tikzpicture}",
+     "caption": "$\\triangle ABC$ vuông tại $A$, $O$ là trung điểm cạnh huyền $BC$",
+     "width": "0.34\\linewidth"
+    },
+    {
+     "type": "para",
+     "variant": "part",
+     "text": "B. Phương pháp chứng minh — các dạng quen thuộc"
+    },
+    {
+     "type": "para",
+     "variant": "heading",
+     "text": "Dạng 1. Chứng minh bốn điểm cùng thuộc một đường tròn"
+    },
+    {
+     "type": "para",
+     "text": "\\textbf{Phương pháp:} chỉ ra bốn điểm cùng cách đều một điểm $I$. Trường hợp hay gặp: \\textbf{hai tam giác vuông có chung cạnh huyền}, khi đó $I$ là trung điểm của cạnh huyền chung."
+    },
+    {
+     "type": "deflist",
+     "items": [
+      {
+       "term": "Bước 1:",
+       "desc": "Chỉ ra hai góc vuông (từ đường cao, đường vuông góc, hoặc tính chất tiếp tuyến)."
+      },
+      {
+       "term": "Bước 2:",
+       "desc": "Gọi $I$ là trung điểm cạnh huyền chung; xét lần lượt từng tam giác vuông: đường trung tuyến bằng nửa cạnh huyền."
+      },
+      {
+       "term": "Bước 3:",
+       "desc": "Kết luận bốn điểm cùng thuộc đường tròn, nêu rõ \\textbf{tâm} và \\textbf{bán kính}."
+      }
+     ]
+    },
+    {
+     "type": "figure",
+     "tikz": "\\begin{tikzpicture}[line width=0.8pt, font=\\small]\n  \\draw[ink, dashed] (0.0000,0.0000) circle (1.5000);\n  \\draw[ink] (-1.5000,0.0000) -- (0.7500,-1.2990) -- (1.5000,0.0000) -- (-0.8604,1.2287) -- cycle;\n  \\draw[ink] (-1.5000,0.0000) -- (1.5000,0.0000);\n  \\draw[ink] (0.0000,0.0000) -- (0.7500,-1.2990);\n  \\draw[ink] (0.0000,0.0000) -- (-0.8604,1.2287);\n  \\draw[ink] (0.6114,-1.2190) -- (0.6914,-1.0805) -- (0.8300,-1.1605);\n  \\draw[ink] (-0.9342,1.0868) -- (-0.7923,1.0129) -- (-0.7184,1.1548);\n  \\fill[ink] (-1.5000,0.0000) circle (1.3pt);\n  \\fill[ink] (1.5000,0.0000) circle (1.3pt);\n  \\fill[ink] (0.7500,-1.2990) circle (1.3pt);\n  \\fill[ink] (-0.8604,1.2287) circle (1.3pt);\n  \\fill[ink] (0.0000,0.0000) circle (1.3pt);\n  \\node[inner sep=0pt] at (-1.8000,0.0000) {$A$};\n  \\node[inner sep=0pt] at (1.8000,0.0000) {$C$};\n  \\node[inner sep=0pt] at (0.9000,-1.5588) {$B$};\n  \\node[inner sep=0pt] at (-1.0104,1.4885) {$D$};\n  \\node[inner sep=0pt] at (0.1200,0.2078) {$O$};\n\\end{tikzpicture}",
+     "caption": "Hai tam giác vuông chung cạnh huyền $AC$: $OA = OB = OC = OD$",
+     "width": "0.34\\linewidth"
+    },
+    {
+     "type": "para",
+     "variant": "heading",
+     "text": "Dạng 2. Chứng minh một đường thẳng là tiếp tuyến của đường tròn"
+    },
+    {
+     "type": "para",
+     "text": "\\textbf{Phương pháp:} dùng dấu hiệu nhận biết tiếp tuyến."
+    },
+    {
+     "type": "deflist",
+     "items": [
+      {
+       "term": "Bước 1:",
+       "desc": "Chỉ ra điểm $C$ thuộc đường tròn $(O)$."
+      },
+      {
+       "term": "Bước 2:",
+       "desc": "Chỉ ra đường thẳng vuông góc với bán kính $OC$ tại $C$. Góc $90^\\circ$ thường lấy từ \\textbf{hai tam giác bằng nhau} (c.c.c, c.g.c) có một góc tương ứng là góc vuông đã biết; cặp cạnh bằng nhau hay dùng là hai bán kính, cặp góc bằng nhau hay lấy từ tam giác cân."
+      },
+      {
+       "term": "Bước 3:",
+       "desc": "Kết luận đường thẳng là tiếp tuyến của $(O)$ tại $C$ (dấu hiệu nhận biết tiếp tuyến)."
+      }
+     ]
+    },
+    {
+     "type": "figure",
+     "tikz": "\\begin{tikzpicture}[line width=0.8pt, font=\\small, scale=1.05]\n  \\draw[ink] (0.0000,0.0000) circle (1.3000);\n  \\draw[ink] (0.0000,0.0000) -- (0.5281,1.1879);\n  \\draw[ink] (0.0000,0.0000) -- (0.5281,-1.1879);\n  \\draw[ink] (3.2000,0.0000) -- (0.5281,1.1879);\n  \\draw[ink] (3.2000,0.0000) -- (0.5281,-1.1879);\n  \\draw[ink] (0.0000,0.0000) -- (3.2000,0.0000);\n  \\draw[ink] (0.5281,1.1879) -- (0.5281,-1.1879);\n  \\draw[ink] (0.4631,1.0417) -- (0.6093,0.9767) -- (0.6743,1.1229);\n  \\draw[ink] (0.5281,0.1600) -- (0.6881,0.1600) -- (0.6881,0.0000);\n  \\fill[ink] (0.0000,0.0000) circle (1.3pt);\n  \\fill[ink] (3.2000,0.0000) circle (1.3pt);\n  \\fill[ink] (0.5281,1.1879) circle (1.3pt);\n  \\fill[ink] (0.5281,-1.1879) circle (1.3pt);\n  \\fill[ink] (0.5281,0.0000) circle (1.3pt);\n  \\node[inner sep=0pt] at (-0.2400,0.0000) {$O$};\n  \\node[inner sep=0pt] at (3.4400,0.0000) {$A$};\n  \\node[inner sep=0pt] at (0.6307,1.4698) {$B$};\n  \\node[inner sep=0pt] at (0.6307,-1.4698) {$C$};\n  \\node[inner sep=0pt] at (0.3739,0.1839) {$H$};\n\\end{tikzpicture}",
+     "caption": "$\\triangle AOB = \\triangle AOC$ (c.g.c) $\\Rightarrow \\widehat{ACO} = \\widehat{ABO} = 90^\\circ$",
+     "width": "0.34\\linewidth"
     }
    ]
   },
@@ -174,25 +229,40 @@
    "kind": "practice1",
    "number": 3,
    "title": "Luyện tập 1",
-   "teacher_note": "20 câu nhận biết, khoảng 1 phút một câu. Bài 2a là giàn giáo vẽ hình — bắt HS vẽ lại và đánh dấu góc vuông. Bài 3 và Bài 9 là hai khung điền khuyết của khuôn bốn điểm (Bài 9 chính là ý a đề thi): chữa kĩ để HS chép đúng nhịp sang Luyện tập 2.",
+   "teacher_note": "Bốn khung bài giải hoàn chỉnh trên hình vẽ sẵn — mỗi khung đi sau một ví dụ cùng dạng. Điền xong, HS có trọn một bài trình bày đúng như đi thi. Bài 3 là bước đệm của Bài 5 (đề Lý Thánh Tông).",
    "blocks": [
+    {
+     "type": "noted",
+     "variant": "example",
+     "text": "\\textbf{Ví dụ 1.} Cho tam giác nhọn $ABC$ có hai đường cao $BE$, $CF$ (Hình 2). Chứng minh bốn điểm $B$, $C$, $E$, $F$ cùng thuộc một đường tròn.[[br]]{\\sffamily\\bfseries\\color{brand}Lời giải}[[br]]$BE \\perp AC$ tại $E$ $\\Rightarrow \\widehat{BEC} = [[fill:90^\\circ]]$; \\ $CF \\perp AB$ tại $F$ $\\Rightarrow \\widehat{BFC} = 90^\\circ$.[[br]]Gọi $M$ là trung điểm $BC$.[[br]]Xét $\\triangle BEC$ vuông tại $E$, trung tuyến $EM$ $\\Rightarrow EM = [[fill:\\dfrac{BC}{2}]] = MB = MC$.[[br]]Xét $\\triangle BFC$ vuông tại $F$, trung tuyến $FM$ $\\Rightarrow FM = \\dfrac{BC}{2}$.[[br]]Vậy $B$, $C$, $E$, $F$ cùng thuộc đường tròn tâm $[[fill:M]]$, bán kính $[[fill:\\dfrac{BC}{2}]]$.",
+     "figure": {
+      "tikz": "\\begin{tikzpicture}[line width=0.8pt, font=\\small, scale=1.38]\n  \\draw[ink] (0.9000,2.3000) -- (0.0000,0.0000) -- (3.2000,0.0000) -- cycle;\n  \\draw[ink] (0.0000,0.0000) -- (1.6000,1.6000);\n  \\draw[ink] (3.2000,0.0000) -- (0.4249,1.0859);\n  \\draw[ink] (1.4869,1.4869) -- (1.6000,1.3737) -- (1.7131,1.4869);\n  \\draw[ink] (0.5739,1.0276) -- (0.6322,1.1766) -- (0.4832,1.2349);\n  \\fill[ink] (0.9000,2.3000) circle (1.3pt);\n  \\fill[ink] (0.0000,0.0000) circle (1.3pt);\n  \\fill[ink] (3.2000,0.0000) circle (1.3pt);\n  \\fill[ink] (1.6000,1.6000) circle (1.3pt);\n  \\fill[ink] (0.4249,1.0859) circle (1.3pt);\n  \\fill[ink] (1.6000,0.0000) circle (1.3pt);\n  \\node[inner sep=0pt] at (0.8583,2.5364) {$A$};\n  \\node[inner sep=0pt] at (-0.2078,-0.1200) {$B$};\n  \\node[inner sep=0pt] at (3.4255,-0.0821) {$C$};\n  \\node[inner sep=0pt] at (1.7839,1.7543) {$E$};\n  \\node[inner sep=0pt] at (0.1994,1.1680) {$F$};\n  \\node[inner sep=0pt] at (1.6000,0.2400) {$M$};\n\\end{tikzpicture}",
+      "caption": "Hình 2",
+      "pos": "right"
+     }
+    },
     {
      "type": "problem",
      "label": "Bài 1.",
      "level": 1,
      "tier": "onclass",
      "dang_id": "NB1",
-     "statement": "Cho đường tròn $(O; 5\\text{ cm})$. Điền vào chỗ chấm ($<$, $=$, $>$ và \\textit{trong} / \\textit{trên} / \\textit{ngoài}):[[br]]a) [NB] $OA = 3$ cm $\\Rightarrow OA$ [[blank:1.1cm]] $R \\Rightarrow A$ nằm [[blank:2.4cm]] đường tròn.[[br]]b) [NB] $OB = 5$ cm $\\Rightarrow OB$ [[blank:1.1cm]] $R \\Rightarrow B$ nằm [[blank:2.4cm]] đường tròn.[[br]]c) [NB] $OC = 6$ cm $\\Rightarrow OC$ [[blank:1.1cm]] $R \\Rightarrow C$ nằm [[blank:2.4cm]] đường tròn.",
-     "figure_given": true,
-     "answer": "a) $<$, trong.[[br]]b) $=$, trên.[[br]]c) $>$, ngoài."
+     "statement": "Cho tứ giác $ABCD$ có $\\widehat{ABC} = \\widehat{ADC} = 90^\\circ$ (Hình 3). Chứng minh bốn điểm $A$, $B$, $C$, $D$ cùng thuộc một đường tròn.[[br]]\\textit{Điền vào chỗ trống để hoàn thành bài giải:}[[br]]Gọi $O$ là trung điểm $AC$.[[br]][NB] Xét $\\triangle ABC$ vuông tại $B$, trung tuyến $BO$ $\\Rightarrow BO = [[blank:2.4cm]] = OA = OC$.[[br]][NB] Xét $\\triangle ADC$ vuông tại [[blank:1.1cm]], trung tuyến $DO$ $\\Rightarrow DO = \\dfrac{AC}{2}$.[[br]][NB] Vậy $A$, $B$, $C$, $D$ cùng thuộc đường tròn tâm [[blank:1.1cm]], bán kính [[blank:2.4cm]].",
+     "figure_given": false,
+     "answer": "$BO = \\dfrac{AC}{2}$.[[br]]Vuông tại $D$.[[br]]Tâm $O$, bán kính $\\dfrac{AC}{2}$.",
+     "figure": {
+      "tikz": "\\begin{tikzpicture}[line width=0.8pt, font=\\small, scale=1.84]\n  \\draw[ink] (-1.5000,0.0000) -- (-0.5130,-1.4095) -- (1.5000,0.0000) -- (-0.3882,1.4489) -- cycle;\n  \\draw[ink] (-1.5000,0.0000) -- (1.5000,0.0000);\n  \\draw[ink] (0.0000,0.0000) -- (-0.5130,-1.4095);\n  \\draw[ink] (0.0000,0.0000) -- (-0.3882,1.4489);\n  \\draw[ink] (-0.6048,-1.2785) -- (-0.4737,-1.1867) -- (-0.3820,-1.3178);\n  \\draw[ink] (-0.4856,1.3220) -- (-0.3587,1.2246) -- (-0.2613,1.3515);\n  \\fill[ink] (-1.5000,0.0000) circle (1.3pt);\n  \\fill[ink] (1.5000,0.0000) circle (1.3pt);\n  \\fill[ink] (-0.5130,-1.4095) circle (1.3pt);\n  \\fill[ink] (-0.3882,1.4489) circle (1.3pt);\n  \\fill[ink] (0.0000,0.0000) circle (1.3pt);\n  \\node[inner sep=0pt] at (-1.7400,0.0000) {$A$};\n  \\node[inner sep=0pt] at (1.7400,0.0000) {$C$};\n  \\node[inner sep=0pt] at (-0.5547,-1.6459) {$B$};\n  \\node[inner sep=0pt] at (-0.4299,1.6852) {$D$};\n  \\node[inner sep=0pt] at (0.1543,0.1839) {$O$};\n\\end{tikzpicture}",
+      "caption": "Hình 3",
+      "pos": "right"
+     }
     },
     {
      "type": "noted",
      "variant": "example",
-     "text": "\\textbf{Ví dụ 1.} Gọi $O$ là trung điểm cạnh huyền $BC$ của tam giác $ABC$ vuông tại $A$, biết $BC = 13$ cm (Hình 2). Tính $OA$, từ đó chỉ ra đường tròn đi qua ba đỉnh $A$, $B$, $C$.[[br]]{\\sffamily\\bfseries\\color{brand}Lời giải}[[br]]Xét $\\triangle ABC$ vuông tại $A$, trung tuyến $AO$.[[br]]$\\Rightarrow AO = [[fill:\\dfrac{BC}{2}]] = OB = OC$.[[br]]$\\Rightarrow A$, $B$, $C$ cùng thuộc đường tròn tâm $O$, bán kính $R = \\dfrac{BC}{2} = [[fill:\\dfrac{13}{2}]] = [[fill:6{,}5]]$ (cm).[[br]]Vậy $A$, $B$, $C$ cùng thuộc đường tròn $(O; [[fill:6{,}5]]\\text{ cm})$.",
+     "text": "\\textbf{Ví dụ 2.} Từ điểm $M$ nằm ngoài $(O)$ kẻ hai tiếp tuyến $MA$, $MB$ ($A$, $B$ là tiếp điểm) (Hình 4). Chứng minh bốn điểm $M$, $A$, $O$, $B$ cùng thuộc một đường tròn.[[br]]{\\sffamily\\bfseries\\color{brand}Lời giải}[[br]]$MA$ là tiếp tuyến tại $A$ $\\Rightarrow MA \\perp OA$ $\\Rightarrow \\widehat{MAO} = [[fill:90^\\circ]]$.[[br]]$MB$ là tiếp tuyến tại $B$ $\\Rightarrow \\widehat{MBO} = 90^\\circ$.[[br]]Gọi $K$ là trung điểm $MO$.[[br]]Xét $\\triangle MAO$ vuông tại $A$, trung tuyến $AK$ $\\Rightarrow AK = [[fill:\\dfrac{MO}{2}]] = KM = KO$.[[br]]Xét $\\triangle MBO$ vuông tại $B$, trung tuyến $BK$ $\\Rightarrow BK = \\dfrac{MO}{2}$.[[br]]Vậy $M$, $A$, $O$, $B$ cùng thuộc đường tròn tâm $[[fill:K]]$, bán kính $[[fill:\\dfrac{MO}{2}]]$.",
      "figure": {
-      "tikz": "\\begin{tikzpicture}[line width=0.8pt, font=\\small]\n  \\draw[ink] (0.0000,0.0000) circle (1.5000);\n  \\draw[ink] (-0.6339,1.3595) -- (-1.5000,0.0000) -- (1.5000,0.0000) -- cycle;\n  \\draw[ink] (-0.6339,1.3595) -- (0.0000,0.0000);\n  \\draw[ink] (-0.7199,1.2245) -- (-0.5850,1.1386) -- (-0.4990,1.2735);\n  \\fill[ink] (-1.5000,0.0000) circle (1.3pt);\n  \\fill[ink] (1.5000,0.0000) circle (1.3pt);\n  \\fill[ink] (-0.6339,1.3595) circle (1.3pt);\n  \\fill[ink] (0.0000,0.0000) circle (1.3pt);\n  \\node[inner sep=0pt] at (-1.8000,0.0000) {$B$};\n  \\node[inner sep=0pt] at (1.8000,0.0000) {$C$};\n  \\node[inner sep=0pt] at (-0.7365,1.6414) {$A$};\n  \\node[inner sep=0pt] at (-0.0000,-0.2400) {$O$};\n\\end{tikzpicture}",
-      "caption": "Hình 2",
+      "tikz": "\\begin{tikzpicture}[line width=0.8pt, font=\\small, scale=1.05]\n  \\draw[ink] (0.0000,0.0000) circle (1.3000);\n  \\draw[ink] (3.2000,0.0000) -- (0.5281,1.1879);\n  \\draw[ink] (3.2000,0.0000) -- (0.5281,-1.1879);\n  \\draw[ink] (0.0000,0.0000) -- (0.5281,1.1879);\n  \\draw[ink] (0.0000,0.0000) -- (0.5281,-1.1879);\n  \\draw[ink] (0.0000,0.0000) -- (3.2000,0.0000);\n  \\draw[ink] (0.6743,1.1229) -- (0.6093,0.9767) -- (0.4631,1.0417);\n  \\draw[ink] (0.6743,-1.1229) -- (0.6093,-0.9767) -- (0.4631,-1.0417);\n  \\fill[ink] (0.0000,0.0000) circle (1.3pt);\n  \\fill[ink] (3.2000,0.0000) circle (1.3pt);\n  \\fill[ink] (0.5281,1.1879) circle (1.3pt);\n  \\fill[ink] (0.5281,-1.1879) circle (1.3pt);\n  \\fill[ink] (1.6000,0.0000) circle (1.3pt);\n  \\node[inner sep=0pt] at (-0.2400,0.0000) {$O$};\n  \\node[inner sep=0pt] at (3.4400,0.0000) {$M$};\n  \\node[inner sep=0pt] at (0.6307,1.4698) {$A$};\n  \\node[inner sep=0pt] at (0.6307,-1.4698) {$B$};\n  \\node[inner sep=0pt] at (1.6000,0.2400) {$K$};\n\\end{tikzpicture}",
+      "caption": "Hình 4",
       "pos": "right"
      }
     },
@@ -202,12 +272,22 @@
      "level": 1,
      "tier": "onclass",
      "dang_id": "NB2",
-     "statement": "Trên Hình 3, tam giác $MNP$ vuông tại $M$ có ba đỉnh cùng thuộc đường tròn $(O)$.[[br]]a) [NB] Vẽ lại Hình 3 vào vở, đánh dấu góc vuông tại $M$.[[br]]b) [NB] Tâm $O$ là [[blank:3.2cm]] của cạnh [[blank:1.1cm]].[[br]]c) [NB] Biết $NP = 10$ cm, bán kính đường tròn $R = [[blank:2.4cm]] = [[blank:1.1cm]]$ cm.",
-     "figure_given": true,
-     "answer": "a) Vẽ hình, đánh dấu $\\widehat{NMP} = 90^\\circ$.[[br]]b) trung điểm, $NP$.[[br]]c) $R = \\dfrac{NP}{2} = 5$ cm.",
+     "statement": "Cho nửa đường tròn tâm $O$ đường kính $AB$, điểm $M$ thuộc nửa đường tròn. Tiếp tuyến tại $A$ và tiếp tuyến tại $M$ cắt nhau ở $C$ (Hình 5). Chứng minh bốn điểm $O$, $A$, $C$, $M$ cùng thuộc một đường tròn.[[br]]\\textit{Điền vào chỗ trống để hoàn thành bài giải:}[[br]][NB] $CA$, $CM$ là tiếp tuyến tại $A$, $M$ $\\Rightarrow \\widehat{OAC} = \\widehat{OMC} = [[blank:1.1cm]]$.[[br]]Gọi $I$ là trung điểm $OC$.[[br]][NB] Xét $\\triangle OAC$ vuông tại $A$, trung tuyến $AI$ $\\Rightarrow AI = [[blank:2.4cm]] = IO = IC$.[[br]]Xét $\\triangle OMC$ vuông tại $M$, trung tuyến $MI$ $\\Rightarrow MI = \\dfrac{OC}{2}$.[[br]][NB] Vậy $O$, $A$, $C$, $M$ cùng thuộc đường tròn tâm [[blank:1.1cm]], bán kính [[blank:2.4cm]].",
+     "figure_given": false,
+     "answer": "$90^\\circ$.[[br]]$AI = \\dfrac{OC}{2}$.[[br]]Tâm $I$, bán kính $\\dfrac{OC}{2}$.",
      "figure": {
-      "tikz": "\\begin{tikzpicture}[line width=0.8pt, font=\\small, scale=1.62]\n  \\draw[ink] (0.0000,0.0000) circle (1.5000);\n  \\draw[ink] (0.7500,1.2990) -- (-1.5000,0.0000) -- (1.5000,0.0000) -- cycle;\n  \\draw[ink] (0.7500,1.2990) -- (0.0000,0.0000);\n  \\fill[ink] (-1.5000,0.0000) circle (1.3pt);\n  \\fill[ink] (1.5000,0.0000) circle (1.3pt);\n  \\fill[ink] (0.7500,1.2990) circle (1.3pt);\n  \\fill[ink] (0.0000,0.0000) circle (1.3pt);\n  \\node[inner sep=0pt] at (-1.8000,0.0000) {$N$};\n  \\node[inner sep=0pt] at (1.8000,0.0000) {$P$};\n  \\node[inner sep=0pt] at (0.9000,1.5588) {$M$};\n  \\node[inner sep=0pt] at (-0.0000,-0.2400) {$O$};\n\\end{tikzpicture}",
-      "caption": "Hình 3",
+      "tikz": "\\begin{tikzpicture}[line width=0.8pt, font=\\small, scale=2.16]\n  \\draw[ink] (1.3000,0.0000) arc (0.0000:180.0000:1.3000);\n  \\draw[ink] (-1.3000,0.0000) -- (1.3000,0.0000);\n  \\draw[ink] (0.0000,0.0000) -- (0.6103,1.1478);\n  \\draw[ink] (-1.3000,0.0000) -- (-1.3000,2.1636);\n  \\draw[ink] (-1.3000,2.1636) -- (0.6103,1.1478);\n  \\draw[ink] (-1.3000,0.1600) -- (-1.1400,0.1600) -- (-1.1400,0.0000);\n  \\draw[ink] (0.5352,1.0066) -- (0.3939,1.0817) -- (0.4690,1.2229);\n  \\draw[ink] (0.0000,0.0000) -- (-1.3000,2.1636);\n  \\fill[ink] (-1.3000,0.0000) circle (1.3pt);\n  \\fill[ink] (1.3000,0.0000) circle (1.3pt);\n  \\fill[ink] (0.0000,0.0000) circle (1.3pt);\n  \\fill[ink] (0.6103,1.1478) circle (1.3pt);\n  \\fill[ink] (-1.3000,2.1636) circle (1.3pt);\n  \\fill[ink] (-0.6500,1.0818) circle (1.3pt);\n  \\node[inner sep=0pt] at (-1.4839,-0.1543) {$A$};\n  \\node[inner sep=0pt] at (1.4839,-0.1543) {$B$};\n  \\node[inner sep=0pt] at (-0.0000,-0.2400) {$O$};\n  \\node[inner sep=0pt] at (0.8358,1.2299) {$M$};\n  \\node[inner sep=0pt] at (-1.4200,2.3714) {$C$};\n  \\node[inner sep=0pt] at (-0.4136,1.0401) {$I$};\n\\end{tikzpicture}",
+      "caption": "Hình 5",
+      "pos": "right"
+     }
+    },
+    {
+     "type": "noted",
+     "variant": "example",
+     "text": "\\textbf{Ví dụ 3.} Cho đường tròn $(O)$ và dây $MN$ không đi qua $O$. Kẻ $OK \\perp MN$ tại $K$, trên tia $OK$ lấy điểm $P$ nằm ngoài $(O)$ (Hình 6). Chứng minh $\\triangle OMP = \\triangle ONP$.[[br]]{\\sffamily\\bfseries\\color{brand}Lời giải}[[br]]$OM = ON = R$ $\\Rightarrow \\triangle OMN$ cân tại $[[fill:O]]$.[[br]]$OK \\perp MN$ $\\Rightarrow$ đường cao $OK$ đồng thời là đường [[fill:phân giác]] $\\Rightarrow \\widehat{MOP} = \\widehat{NOP}$.[[br]]Xét $\\triangle OMP$ và $\\triangle ONP$ có: $OM = ON$, $\\widehat{MOP} = \\widehat{NOP}$, $OP$ chung.[[br]]Vậy $\\triangle OMP = \\triangle ONP$ ([[fill:c.g.c]]).",
+     "figure": {
+      "tikz": "\\begin{tikzpicture}[line width=0.8pt, font=\\small, scale=1.24]\n  \\draw[ink] (0.0000,0.0000) circle (1.3000);\n  \\draw[ink] (0.6103,1.1478) -- (0.6103,-1.1478);\n  \\draw[ink] (0.0000,0.0000) -- (0.6103,1.1478);\n  \\draw[ink] (0.0000,0.0000) -- (0.6103,-1.1478);\n  \\draw[ink] (0.0000,0.0000) -- (2.5000,0.0000);\n  \\draw[ink] (2.5000,0.0000) -- (0.6103,1.1478);\n  \\draw[ink] (2.5000,0.0000) -- (0.6103,-1.1478);\n  \\draw[ink] (0.6103,0.1400) -- (0.7503,0.1400) -- (0.7503,0.0000);\n  \\fill[ink] (0.0000,0.0000) circle (1.3pt);\n  \\fill[ink] (0.6103,1.1478) circle (1.3pt);\n  \\fill[ink] (0.6103,-1.1478) circle (1.3pt);\n  \\fill[ink] (0.6103,0.0000) circle (1.3pt);\n  \\fill[ink] (2.5000,0.0000) circle (1.3pt);\n  \\node[inner sep=0pt] at (-0.2400,0.0000) {$O$};\n  \\node[inner sep=0pt] at (0.7603,1.4076) {$M$};\n  \\node[inner sep=0pt] at (0.7603,-1.4076) {$N$};\n  \\node[inner sep=0pt] at (0.4560,0.1839) {$K$};\n  \\node[inner sep=0pt] at (2.7400,0.0000) {$P$};\n\\end{tikzpicture}",
+      "caption": "Hình 6",
       "pos": "right"
      }
     },
@@ -217,22 +297,22 @@
      "level": 1,
      "tier": "onclass",
      "dang_id": "NB3",
-     "statement": "Trên Hình 4, $\\triangle ABC$ vuông tại $B$, $\\triangle ADC$ vuông tại $D$, $O$ là trung điểm $AC$. Điền vào chỗ chấm để hoàn thành bài giải:[[br]]a) [NB] Xét $\\triangle ABC$ vuông tại $B$, trung tuyến $BO$ $\\Rightarrow BO = [[blank:2.4cm]] = OA = OC$.[[br]]b) [NB] Xét $\\triangle ADC$ vuông tại $D$, trung tuyến $DO$ $\\Rightarrow DO = [[blank:2.4cm]]$.[[br]]c) [NB] $\\Rightarrow OA = OB = OC = OD$ $\\Rightarrow A$, $B$, $C$, $D$ cùng thuộc đường tròn $\\left([[blank:1.1cm]]; [[blank:2.4cm]]\\right)$.",
-     "figure_given": true,
-     "answer": "a) $\\dfrac{AC}{2}$.[[br]]b) $\\dfrac{AC}{2}$.[[br]]c) $\\left(O; \\dfrac{AC}{2}\\right)$.",
+     "statement": "Từ điểm $A$ nằm ngoài $(O)$ kẻ tiếp tuyến $AB$ ($B$ là tiếp điểm). Kẻ dây $BC$ vuông góc với $OA$ tại $H$ (Hình 7). Chứng minh $\\triangle AOB = \\triangle AOC$.[[br]]\\textit{Điền vào chỗ trống để hoàn thành bài giải:}[[br]][NB] $OB = OC = R$ $\\Rightarrow \\triangle OBC$ cân tại [[blank:1.1cm]].[[br]][NB] $OH \\perp BC$ $\\Rightarrow$ đường cao $OH$ đồng thời là đường [[blank:3.2cm]] $\\Rightarrow \\widehat{BOA} = \\widehat{COA}$.[[br]]Xét $\\triangle AOB$ và $\\triangle AOC$ có: $OB = OC$, $\\widehat{BOA} = \\widehat{COA}$, $OA$ chung.[[br]][NB] Vậy $\\triangle AOB = \\triangle AOC$ ([[blank:1.1cm]]).",
+     "figure_given": false,
+     "answer": "Cân tại $O$.[[br]]Đường phân giác.[[br]]c.g.c.",
      "figure": {
-      "tikz": "\\begin{tikzpicture}[line width=0.8pt, font=\\small, scale=1.16]\n  \\draw[ink] (-1.5000,0.0000) -- (-0.5130,-1.4095) -- (1.5000,0.0000) -- (-0.3882,1.4489) -- cycle;\n  \\draw[ink] (-1.5000,0.0000) -- (1.5000,0.0000);\n  \\draw[ink] (0.0000,0.0000) -- (-0.5130,-1.4095);\n  \\draw[ink] (0.0000,0.0000) -- (-0.3882,1.4489);\n  \\draw[ink] (-0.6048,-1.2785) -- (-0.4737,-1.1867) -- (-0.3820,-1.3178);\n  \\draw[ink] (-0.4856,1.3220) -- (-0.3587,1.2246) -- (-0.2613,1.3515);\n  \\fill[ink] (-1.5000,0.0000) circle (1.3pt);\n  \\fill[ink] (1.5000,0.0000) circle (1.3pt);\n  \\fill[ink] (-0.5130,-1.4095) circle (1.3pt);\n  \\fill[ink] (-0.3882,1.4489) circle (1.3pt);\n  \\fill[ink] (0.0000,0.0000) circle (1.3pt);\n  \\node[inner sep=0pt] at (-1.7400,0.0000) {$A$};\n  \\node[inner sep=0pt] at (1.7400,0.0000) {$C$};\n  \\node[inner sep=0pt] at (-0.5547,-1.6459) {$B$};\n  \\node[inner sep=0pt] at (-0.4299,1.6852) {$D$};\n  \\node[inner sep=0pt] at (0.1543,0.1839) {$O$};\n\\end{tikzpicture}",
-      "caption": "Hình 4",
+      "tikz": "\\begin{tikzpicture}[line width=0.8pt, font=\\small, scale=1.35]\n  \\draw[ink] (0.0000,0.0000) circle (1.3000);\n  \\draw[ink] (0.0000,0.0000) -- (0.5281,1.1879);\n  \\draw[ink] (0.0000,0.0000) -- (0.5281,-1.1879);\n  \\draw[ink] (3.2000,0.0000) -- (0.5281,1.1879);\n  \\draw[ink] (3.2000,0.0000) -- (0.5281,-1.1879);\n  \\draw[ink] (0.0000,0.0000) -- (3.2000,0.0000);\n  \\draw[ink] (0.5281,1.1879) -- (0.5281,-1.1879);\n  \\draw[ink] (0.4631,1.0417) -- (0.6093,0.9767) -- (0.6743,1.1229);\n  \\draw[ink] (0.5281,0.1600) -- (0.6881,0.1600) -- (0.6881,0.0000);\n  \\fill[ink] (0.0000,0.0000) circle (1.3pt);\n  \\fill[ink] (3.2000,0.0000) circle (1.3pt);\n  \\fill[ink] (0.5281,1.1879) circle (1.3pt);\n  \\fill[ink] (0.5281,-1.1879) circle (1.3pt);\n  \\fill[ink] (0.5281,0.0000) circle (1.3pt);\n  \\node[inner sep=0pt] at (-0.2400,0.0000) {$O$};\n  \\node[inner sep=0pt] at (3.4400,0.0000) {$A$};\n  \\node[inner sep=0pt] at (0.6307,1.4698) {$B$};\n  \\node[inner sep=0pt] at (0.6307,-1.4698) {$C$};\n  \\node[inner sep=0pt] at (0.3739,0.1839) {$H$};\n\\end{tikzpicture}",
+      "caption": "Hình 7",
       "pos": "right"
      }
     },
     {
      "type": "noted",
      "variant": "example",
-     "text": "\\textbf{Ví dụ 2.} Ba đường thẳng $a_1$, $a_2$, $a_3$ cách tâm $O$ của $(O; 5\\text{ cm})$ lần lượt $3$ cm, $5$ cm, $7$ cm (Hình 5). Xác định vị trí của mỗi đường thẳng với $(O)$.[[br]]{\\sffamily\\bfseries\\color{brand}Lời giải}[[br]]$d_1 = 3$ cm $< R = 5$ cm $\\Rightarrow a_1$ và $(O)$ [[fill:cắt nhau]].[[br]]$d_2 = 5$ cm $= R$ $\\Rightarrow a_2$ và $(O)$ [[fill:tiếp xúc]].[[br]]$d_3 = 7$ cm $> R$ $\\Rightarrow a_3$ và $(O)$ [[fill:không giao nhau]].[[br]]Vậy $a_2$ là [[fill:tiếp tuyến]] của $(O)$.",
+     "text": "\\textbf{Ví dụ 4.} Cho tam giác $ABC$ vuông tại $A$ (Hình 8). Chứng minh $AC$ là tiếp tuyến của đường tròn $(B; BA)$.[[br]]{\\sffamily\\bfseries\\color{brand}Lời giải}[[br]]$BA$ là bán kính $\\Rightarrow A \\in (B; BA)$.[[br]]$\\triangle ABC$ vuông tại $A$ $\\Rightarrow AC \\perp [[fill:BA]]$ tại $A$.[[br]]Vậy $AC$ là [[fill:tiếp tuyến]] của $(B; BA)$ tại $A$ ([[fill:dấu hiệu nhận biết tiếp tuyến]]).",
      "figure": {
-      "tikz": "\\begin{tikzpicture}[line width=0.8pt, font=\\small]\n  \\draw[ink] (0.0000,0.0000) circle (1.2500);\n  \\draw[ink] (0.7500,-1.6000) -- (0.7500,1.6000);\n  \\draw[ink] (1.2500,-1.6000) -- (1.2500,1.6000);\n  \\draw[ink] (1.7500,-1.6000) -- (1.7500,1.6000);\n  \\fill[ink] (0.0000,0.0000) circle (1.3pt);\n  \\node[inner sep=0pt] at (0.2400,0.0000) {$O$};\n  \\node[inner sep=0pt] at (0.7500,1.8400) {$a_1$};\n  \\node[inner sep=0pt] at (1.2500,1.8400) {$a_2$};\n  \\node[inner sep=0pt] at (1.7500,1.8400) {$a_3$};\n\\end{tikzpicture}",
-      "caption": "Hình 5",
+      "tikz": "\\begin{tikzpicture}[line width=0.8pt, font=\\small, scale=1.32]\n  \\draw[ink] (0.0000,1.1500) circle (1.1500);\n  \\draw[ink] (0.0000,0.0000) -- (0.0000,1.1500) -- (2.4000,0.0000) -- cycle;\n  \\draw[ink] (0.0000,0.1600) -- (0.1600,0.1600) -- (0.1600,0.0000);\n  \\fill[ink] (0.0000,0.0000) circle (1.3pt);\n  \\fill[ink] (0.0000,1.1500) circle (1.3pt);\n  \\fill[ink] (2.4000,0.0000) circle (1.3pt);\n  \\node[inner sep=0pt] at (-0.0000,-0.3000) {$A$};\n  \\node[inner sep=0pt] at (-0.1200,1.3578) {$B$};\n  \\node[inner sep=0pt] at (2.6364,-0.0417) {$C$};\n\\end{tikzpicture}",
+      "caption": "Hình 8",
       "pos": "right"
      }
     },
@@ -242,85 +322,12 @@
      "level": 1,
      "tier": "onclass",
      "dang_id": "NB4",
-     "statement": "[NB] Cho $(O; 7\\text{ cm})$ và đường thẳng $a$ cách $O$ một khoảng $9$ cm. Khi đó $a$ và $(O)$:",
-     "figure_given": true,
-     "options": [
-      "cắt nhau",
-      "tiếp xúc nhau",
-      "không giao nhau",
-      "có hai điểm chung"
-     ],
-     "solution": "Đáp án \\textbf{C}. $d = 9 > R = 7$ $\\Rightarrow$ không giao nhau."
-    },
-    {
-     "type": "problem",
-     "label": "Bài 5.",
-     "level": 1,
-     "tier": "onclass",
-     "dang_id": "NB4",
-     "statement": "Cho $(O; 6\\text{ cm})$ và đường thẳng $a$ cách $O$ một khoảng $d$. Điền vào chỗ chấm:[[br]]a) [NB] $d = 4$ cm $\\Rightarrow d$ [[blank:1.1cm]] $R \\Rightarrow a$ và $(O)$ [[blank:2.4cm]], có [[blank:1.1cm]] điểm chung.[[br]]b) [NB] $d = 6$ cm $\\Rightarrow d = R \\Rightarrow a$ là [[blank:3.2cm]] của $(O)$.",
-     "figure_given": true,
-     "answer": "a) $<$, cắt nhau, $2$.[[br]]b) tiếp tuyến."
-    },
-    {
-     "type": "problem",
-     "label": "Bài 6.",
-     "level": 1,
-     "tier": "onclass",
-     "dang_id": "NB6",
-     "statement": "[NB] Đường thẳng $d$ đi qua điểm $C$ thuộc $(O)$ và vuông góc với $OC$ tại $C$. Khi đó $d$ là:",
-     "figure_given": true,
-     "options": [
-      "một đường kính của $(O)$",
-      "tiếp tuyến của $(O)$ tại $C$",
-      "một dây của $(O)$",
-      "đường thẳng cắt $(O)$ tại hai điểm"
-     ],
-     "solution": "Đáp án \\textbf{B} (Định lí 1)."
-    },
-    {
-     "type": "problem",
-     "label": "Bài 7.",
-     "level": 1,
-     "tier": "onclass",
-     "dang_id": "NB6",
-     "statement": "[NB] Để chứng minh đường thẳng $xy$ là tiếp tuyến của $(O)$ tại $M$, cần chỉ ra:",
-     "figure_given": true,
-     "options": [
-      "$xy$ đi qua $M$",
-      "$xy \\perp OM$",
-      "$M \\in (O)$ và $xy \\perp OM$ tại $M$",
-      "$xy$ đi qua $O$"
-     ],
-     "solution": "Đáp án \\textbf{C}: $M$ thuộc đường tròn và $xy$ vuông góc với bán kính $OM$ tại $M$ (Định lí 1)."
-    },
-    {
-     "type": "problem",
-     "label": "Bài 8.",
-     "level": 1,
-     "tier": "onclass",
-     "dang_id": "NB5",
-     "statement": "Trên Hình 6, $AB$ là tiếp tuyến của $(O)$ tại $B$. Điền vào chỗ chấm:[[br]]a) [NB] $AB$ là tiếp tuyến tại $B$ $\\Rightarrow AB \\perp [[blank:1.1cm]]$ tại [[blank:1.1cm]].[[br]]b) [NB] $\\Rightarrow \\widehat{ABO} = [[blank:1.6cm]]$.[[br]]c) [NB] $\\triangle ABO$ vuông tại [[blank:1.1cm]], có cạnh huyền là [[blank:1.1cm]].",
-     "figure_given": true,
-     "answer": "a) $OB$, $B$.[[br]]b) $90^\\circ$.[[br]]c) $B$, $AO$.",
+     "statement": "Cho tam giác nhọn $ABC$, đường cao $AH$ (Hình 9). Chứng minh $BC$ là tiếp tuyến của đường tròn $(A; AH)$.[[br]]\\textit{Điền vào chỗ trống để hoàn thành bài giải:}[[br]][NB] $AH$ là bán kính của $(A; AH)$ $\\Rightarrow H [[blank:1.1cm]] (A; AH)$.[[br]][NB] $AH$ là đường cao của $\\triangle ABC$ $\\Rightarrow BC \\perp [[blank:1.1cm]]$ tại $H$.[[br]][NB] Vậy $BC$ là [[blank:3.2cm]] của $(A; AH)$ tại $H$ (dấu hiệu nhận biết tiếp tuyến).",
+     "figure_given": false,
+     "answer": "$H \\in (A; AH)$.[[br]]$BC \\perp AH$.[[br]]Tiếp tuyến.",
      "figure": {
-      "tikz": "\\begin{tikzpicture}[line width=0.8pt, font=\\small, scale=1.61]\n  \\draw[ink] (0.0000,0.0000) circle (1.3000);\n  \\draw[ink] (0.0000,0.0000) -- (0.5281,1.1879);\n  \\draw[ink] (3.2000,0.0000) -- (0.5281,1.1879);\n  \\draw[ink] (0.0000,0.0000) -- (3.2000,0.0000);\n  \\draw[ink] (0.4631,1.0417) -- (0.6093,0.9767) -- (0.6743,1.1229);\n  \\fill[ink] (0.0000,0.0000) circle (1.3pt);\n  \\fill[ink] (3.2000,0.0000) circle (1.3pt);\n  \\fill[ink] (0.5281,1.1879) circle (1.3pt);\n  \\node[inner sep=0pt] at (-0.2078,-0.1200) {$O$};\n  \\node[inner sep=0pt] at (3.4364,-0.0417) {$A$};\n  \\node[inner sep=0pt] at (0.6307,1.4698) {$B$};\n\\end{tikzpicture}",
-      "caption": "Hình 6",
-      "pos": "right"
-     }
-    },
-    {
-     "type": "problem",
-     "label": "Bài 9.",
-     "level": 1,
-     "tier": "onclass",
-     "dang_id": "NB7",
-     "statement": "Trên Hình 7, $AB$, $AC$ là hai tiếp tuyến của $(O)$ tại $B$, $C$; $I$ là trung điểm $AO$. Điền vào chỗ chấm:[[br]]a) [NB] $AB$, $AC$ là tiếp tuyến $\\Rightarrow \\widehat{ABO} = \\widehat{ACO} = [[blank:1.6cm]]$.[[br]]b) [NB] $\\triangle ABO$ và $\\triangle ACO$ là hai tam giác vuông có chung cạnh huyền [[blank:1.1cm]].[[br]]c) [NB] $I$ là trung điểm cạnh huyền $\\Rightarrow IB = IC = [[blank:2.4cm]] = IA = IO$.",
-     "figure_given": true,
-     "answer": "a) $90^\\circ$.[[br]]b) $AO$.[[br]]c) $\\dfrac{AO}{2}$.",
-     "figure": {
-      "tikz": "\\begin{tikzpicture}[line width=0.8pt, font=\\small, scale=1.28]\n  \\draw[ink] (0.0000,0.0000) circle (1.3000);\n  \\draw[ink] (3.2000,0.0000) -- (0.5281,1.1879);\n  \\draw[ink] (3.2000,0.0000) -- (0.5281,-1.1879);\n  \\draw[ink] (0.0000,0.0000) -- (0.5281,1.1879);\n  \\draw[ink] (0.0000,0.0000) -- (0.5281,-1.1879);\n  \\draw[ink] (0.0000,0.0000) -- (3.2000,0.0000);\n  \\draw[ink] (0.4631,1.0417) -- (0.6093,0.9767) -- (0.6743,1.1229);\n  \\draw[ink] (0.4631,-1.0417) -- (0.6093,-0.9767) -- (0.6743,-1.1229);\n  \\fill[ink] (0.0000,0.0000) circle (1.3pt);\n  \\fill[ink] (3.2000,0.0000) circle (1.3pt);\n  \\fill[ink] (0.5281,1.1879) circle (1.3pt);\n  \\fill[ink] (0.5281,-1.1879) circle (1.3pt);\n  \\fill[ink] (1.6000,0.0000) circle (1.3pt);\n  \\node[inner sep=0pt] at (-0.2400,0.0000) {$O$};\n  \\node[inner sep=0pt] at (3.4400,0.0000) {$A$};\n  \\node[inner sep=0pt] at (0.6307,1.4698) {$B$};\n  \\node[inner sep=0pt] at (0.6307,-1.4698) {$C$};\n  \\node[inner sep=0pt] at (1.6000,0.2400) {$I$};\n\\end{tikzpicture}",
-      "caption": "Hình 7",
+      "tikz": "\\begin{tikzpicture}[line width=0.8pt, font=\\small, scale=1.62]\n  \\draw[ink] (0.0000,1.4500) circle (1.4500);\n  \\draw[ink] (0.0000,1.4500) -- (-1.6000,0.0000) -- (1.9000,0.0000) -- cycle;\n  \\draw[ink] (0.0000,1.4500) -- (0.0000,0.0000);\n  \\draw[ink] (0.0000,0.1400) -- (0.1400,0.1400) -- (0.1400,0.0000);\n  \\fill[ink] (0.0000,1.4500) circle (1.3pt);\n  \\fill[ink] (-1.6000,0.0000) circle (1.3pt);\n  \\fill[ink] (1.9000,0.0000) circle (1.3pt);\n  \\fill[ink] (0.0000,0.0000) circle (1.3pt);\n  \\node[inner sep=0pt] at (0.0000,1.6900) {$A$};\n  \\node[inner sep=0pt] at (-1.8255,-0.0821) {$B$};\n  \\node[inner sep=0pt] at (2.1255,-0.0821) {$C$};\n  \\node[inner sep=0pt] at (-0.0000,-0.3000) {$H$};\n\\end{tikzpicture}",
+      "caption": "Hình 9",
       "pos": "right"
      }
     }
@@ -330,119 +337,94 @@
    "kind": "practice2",
    "number": 4,
    "title": "Luyện tập 2",
-   "teacher_note": "Đi từ dễ lên khó: tính độ dài tiếp tuyến $\\to$ bốn điểm (ý a Câu IV.2, THÔNG HIỂU, $1{,}0$ điểm — bắt HS viết đủ ba nhịp và kết luận có tâm, bán kính) $\\to$ chứng minh tiếp tuyến. Bài cuối là đề thật (Lý Thánh Tông, ý b): chữa theo quy trình in tại bài.",
+   "teacher_note": "Bài thông hiểu, vận dụng KHÔNG in hình: HS tự vẽ (đã tính $+5$ phút mỗi hình). Bài 5 là Bài 3 bỏ giàn giáo; Bài 7 vẽ hình cho Bài 8 (đề Ái Mộ, ý a và b) — HS tự trình bày trọn hai ý.",
    "blocks": [
     {
      "type": "noted",
      "variant": "example",
-     "text": "\\textbf{Ví dụ 3.} Cho $(O; 5\\text{ cm})$, $OA = 13$ cm, tiếp tuyến $AB$ ($B$ là tiếp điểm) (Hình 8). Tính $AB$.[[br]]{\\sffamily\\bfseries\\color{brand}Lời giải}[[br]]Xét $\\triangle ABO$ vuông tại $B$ ($AB$ là tiếp tuyến), theo định lí Pythagore:[[br]]$AB^2 = [[fill:OA^2 - OB^2]] = 13^2 - 5^2 = [[fill:144]]$.[[br]]$\\Rightarrow AB = [[fill:12]]$ (cm).[[br]]Vậy $AB = [[fill:12]]$ cm.",
+     "text": "\\textbf{Ví dụ 5.} Từ điểm $A$ nằm ngoài $(O)$ kẻ tiếp tuyến $AB$ ($B$ là tiếp điểm). Trên $(O)$ lấy điểm $C$ khác $B$ sao cho $AC = AB$ (Hình 10). Chứng minh $AC$ là tiếp tuyến của $(O)$.[[br]]{\\sffamily\\bfseries\\color{brand}Lời giải}[[br]]Xét $\\triangle ABO$ và $\\triangle ACO$ có: $AB = AC$ (gt), $OB = OC = R$, $AO$ chung.[[br]]$\\Rightarrow \\triangle ABO = \\triangle ACO$ ([[fill:c.c.c]]).[[br]]$\\Rightarrow \\widehat{ACO} = \\widehat{ABO} = [[fill:90^\\circ]]$ ($AB$ là tiếp tuyến tại $B$).[[br]]$\\Rightarrow AC \\perp OC$ tại $C$, mà $C \\in (O)$.[[br]]Vậy $AC$ là [[fill:tiếp tuyến]] của $(O)$ tại $C$ (dấu hiệu nhận biết tiếp tuyến).",
      "figure": {
-      "tikz": "\\begin{tikzpicture}[line width=0.8pt, font=\\small]\n  \\draw[ink] (0.0000,0.0000) circle (1.3000);\n  \\draw[ink] (0.0000,0.0000) -- (0.5281,1.1879);\n  \\draw[ink] (3.2000,0.0000) -- (0.5281,1.1879);\n  \\draw[ink] (0.0000,0.0000) -- (3.2000,0.0000);\n  \\draw[ink] (0.4631,1.0417) -- (0.6093,0.9767) -- (0.6743,1.1229);\n  \\fill[ink] (0.0000,0.0000) circle (1.3pt);\n  \\fill[ink] (3.2000,0.0000) circle (1.3pt);\n  \\fill[ink] (0.5281,1.1879) circle (1.3pt);\n  \\node[inner sep=0pt] at (-0.2078,-0.1200) {$O$};\n  \\node[inner sep=0pt] at (3.4364,-0.0417) {$A$};\n  \\node[inner sep=0pt] at (0.6307,1.4698) {$B$};\n  \\node[inner sep=0pt] at (0.0385,0.6760) {$5$};\n  \\node[inner sep=0pt] at (1.6000,0.2400) {$13$};\n\\end{tikzpicture}",
-      "caption": "Hình 8",
-      "pos": "right"
-     }
-    },
-    {
-     "type": "problem",
-     "label": "Bài 10.",
-     "level": 2,
-     "tier": "onclass",
-     "dang_id": "TH3",
-     "statement": "[TH] Từ điểm $A$ kẻ tiếp tuyến $AB$ tới đường tròn $(O; 6\\text{ cm})$ ($B$ là tiếp điểm), biết $AB = 8$ cm. Tính khoảng cách $OA$ từ $A$ đến tâm $O$.",
-     "figure_given": false,
-     "hints": [
-      "Tiếp tuyến $AB$ và bán kính $OB$ tạo thành tam giác gì? Đoạn $OA$ đóng vai trò gì trong tam giác đó?"
-     ],
-     "answer": "$AB$ là tiếp tuyến tại $B$ $\\Rightarrow AB \\perp OB$ tại $B$.[[br]]Xét $\\triangle ABO$ vuông tại $B$, theo định lí Pythagore:[[br]]$OA^2 = OB^2 + AB^2 = 6^2 + 8^2 = 100$.[[br]]$\\Rightarrow OA = 10$ (cm).[[br]]Vậy $OA = 10$ cm."
-    },
-    {
-     "type": "noted",
-     "variant": "example",
-     "text": "\\textbf{Ví dụ 4.} Cho tam giác nhọn $ABC$ có hai đường cao $BE$, $CF$; $M$ là trung điểm $BC$ (Hình 9). Chứng minh bốn điểm $B$, $C$, $E$, $F$ cùng thuộc một đường tròn.[[br]]{\\sffamily\\bfseries\\color{brand}Lời giải}[[br]]$BE \\perp AC$ tại $E$ $\\Rightarrow \\widehat{BEC} = [[fill:90^\\circ]]$; \\ $CF \\perp AB$ tại $F$ $\\Rightarrow \\widehat{BFC} = 90^\\circ$.[[br]]Xét $\\triangle BEC$ vuông tại $E$, trung tuyến $EM$ $\\Rightarrow EM = [[fill:\\dfrac{BC}{2}]] = MB = MC$.[[br]]Xét $\\triangle BFC$ vuông tại $F$, trung tuyến $FM$ $\\Rightarrow FM = \\dfrac{BC}{2}$.[[br]]$\\Rightarrow MB = MC = ME = MF = \\dfrac{BC}{2}$.[[br]]Vậy $B$, $C$, $E$, $F$ cùng thuộc đường tròn tâm $[[fill:M]]$, bán kính $[[fill:\\dfrac{BC}{2}]]$.",
-     "figure": {
-      "tikz": "\\begin{tikzpicture}[line width=0.8pt, font=\\small]\n  \\draw[ink] (0.9000,2.3000) -- (0.0000,0.0000) -- (3.2000,0.0000) -- cycle;\n  \\draw[ink] (0.0000,0.0000) -- (1.6000,1.6000);\n  \\draw[ink] (3.2000,0.0000) -- (0.4249,1.0859);\n  \\draw[ink] (1.4869,1.4869) -- (1.6000,1.3737) -- (1.7131,1.4869);\n  \\draw[ink] (0.5739,1.0276) -- (0.6322,1.1766) -- (0.4832,1.2349);\n  \\fill[ink] (0.9000,2.3000) circle (1.3pt);\n  \\fill[ink] (0.0000,0.0000) circle (1.3pt);\n  \\fill[ink] (3.2000,0.0000) circle (1.3pt);\n  \\fill[ink] (1.6000,1.6000) circle (1.3pt);\n  \\fill[ink] (0.4249,1.0859) circle (1.3pt);\n  \\fill[ink] (1.6000,0.0000) circle (1.3pt);\n  \\node[inner sep=0pt] at (0.8583,2.5364) {$A$};\n  \\node[inner sep=0pt] at (-0.2078,-0.1200) {$B$};\n  \\node[inner sep=0pt] at (3.4255,-0.0821) {$C$};\n  \\node[inner sep=0pt] at (1.7839,1.7543) {$E$};\n  \\node[inner sep=0pt] at (0.1994,1.1680) {$F$};\n  \\node[inner sep=0pt] at (1.6000,0.2400) {$M$};\n\\end{tikzpicture}",
-      "caption": "Hình 9",
-      "pos": "right"
-     }
-    },
-    {
-     "type": "problem",
-     "label": "Bài 11.",
-     "level": 2,
-     "tier": "onclass",
-     "dang_id": "TH1",
-     "statement": "[TH] Cho tam giác $ABC$ vuông tại $A$. Trên cạnh $AC$ lấy điểm $D$ ($D$ khác $A$ và $C$), kẻ $DE \\perp BC$ tại $E$ (Hình 10). Chứng minh bốn điểm $A$, $B$, $E$, $D$ cùng thuộc một đường tròn; chỉ rõ tâm và bán kính.",
-     "figure_given": false,
-     "hints": [
-      "Trong bốn điểm, những tam giác vuông nào có chung một cạnh huyền?",
-      "Trung điểm của cạnh huyền chung đó cách các đỉnh bao xa?"
-     ],
-     "answer": "$\\widehat{BAD} = 90^\\circ$ (gt), $\\widehat{BED} = 90^\\circ$ ($DE \\perp BC$).[[br]]Gọi $O$ là trung điểm $BD$.[[br]]Xét $\\triangle BAD$ vuông tại $A$, trung tuyến $AO$ $\\Rightarrow AO = \\dfrac{BD}{2} = OB = OD$.[[br]]Xét $\\triangle BED$ vuông tại $E$, trung tuyến $EO$ $\\Rightarrow EO = \\dfrac{BD}{2}$.[[br]]Vậy $A$, $B$, $E$, $D$ cùng thuộc đường tròn tâm $O$ (trung điểm $BD$), bán kính $\\dfrac{BD}{2}$.",
-     "figure": {
-      "tikz": "\\begin{tikzpicture}[line width=0.8pt, font=\\small, scale=1.44]\n  \\draw[ink] (0.0000,0.0000) -- (0.0000,2.1000) -- (3.2000,0.0000) -- cycle;\n  \\draw[ink] (1.7000,0.0000) -- (2.1515,0.6881);\n  \\draw[ink, dashed] (0.0000,2.1000) -- (1.7000,0.0000);\n  \\draw[ink] (0.0000,0.1600) -- (0.1600,0.1600) -- (0.1600,0.0000);\n  \\draw[ink] (2.0638,0.5543) -- (2.1975,0.4665) -- (2.2853,0.6003);\n  \\fill[ink] (0.0000,0.0000) circle (1.3pt);\n  \\fill[ink] (0.0000,2.1000) circle (1.3pt);\n  \\fill[ink] (3.2000,0.0000) circle (1.3pt);\n  \\fill[ink] (1.7000,0.0000) circle (1.3pt);\n  \\fill[ink] (2.1515,0.6881) circle (1.3pt);\n  \\node[inner sep=0pt] at (-0.1839,-0.1543) {$A$};\n  \\node[inner sep=0pt] at (-0.1200,2.3078) {$B$};\n  \\node[inner sep=0pt] at (3.4255,-0.0821) {$C$};\n  \\node[inner sep=0pt] at (1.7000,-0.2400) {$D$};\n  \\node[inner sep=0pt] at (2.2715,0.8959) {$E$};\n\\end{tikzpicture}",
+      "tikz": "\\begin{tikzpicture}[line width=0.8pt, font=\\small, scale=1.05]\n  \\draw[ink] (0.0000,0.0000) circle (1.3000);\n  \\draw[ink] (0.0000,0.0000) -- (0.5281,1.1879);\n  \\draw[ink] (0.0000,0.0000) -- (0.5281,-1.1879);\n  \\draw[ink] (3.2000,0.0000) -- (0.5281,1.1879);\n  \\draw[ink] (3.2000,0.0000) -- (0.5281,-1.1879);\n  \\draw[ink, dashed] (0.0000,0.0000) -- (3.2000,0.0000);\n  \\draw[ink] (0.4631,1.0417) -- (0.6093,0.9767) -- (0.6743,1.1229);\n  \\draw[ink] (1.8316,0.5208) -- (1.8966,0.6670);\n  \\draw[ink] (1.8966,-0.6670) -- (1.8316,-0.5208);\n  \\fill[ink] (0.0000,0.0000) circle (1.3pt);\n  \\fill[ink] (3.2000,0.0000) circle (1.3pt);\n  \\fill[ink] (0.5281,1.1879) circle (1.3pt);\n  \\fill[ink] (0.5281,-1.1879) circle (1.3pt);\n  \\node[inner sep=0pt] at (-0.2400,0.0000) {$O$};\n  \\node[inner sep=0pt] at (3.4400,0.0000) {$A$};\n  \\node[inner sep=0pt] at (0.6307,1.4698) {$B$};\n  \\node[inner sep=0pt] at (0.6307,-1.4698) {$C$};\n\\end{tikzpicture}",
       "caption": "Hình 10",
       "pos": "right"
      }
     },
     {
+     "type": "problem",
+     "label": "Bài 5.",
+     "level": 2,
+     "tier": "onclass",
+     "dang_id": "TH1",
+     "statement": "[TH] Từ điểm $A$ nằm ngoài đường tròn $(O)$ kẻ tiếp tuyến $AB$ ($B$ là tiếp điểm). Kẻ dây $BC$ vuông góc với $OA$ tại $H$. Chứng minh $AC$ là tiếp tuyến của $(O)$.",
+     "figure_given": false,
+     "draw": true,
+     "hints": [
+      "Hai bán kính $OB$, $OC$ tạo thành tam giác gì? Đường cao $OH$ của tam giác đó còn là đường gì?",
+      "Muốn có $\\widehat{ACO} = 90^\\circ$ thì nên chứng minh hai tam giác nào bằng nhau?"
+     ],
+     "answer": "$OB = OC = R$ $\\Rightarrow \\triangle OBC$ cân tại $O$.[[br]]$OH \\perp BC$ $\\Rightarrow$ đường cao $OH$ đồng thời là đường phân giác $\\Rightarrow \\widehat{BOA} = \\widehat{COA}$.[[br]]Xét $\\triangle AOB$ và $\\triangle AOC$ có: $OB = OC$, $\\widehat{BOA} = \\widehat{COA}$, $OA$ chung.[[br]]$\\Rightarrow \\triangle AOB = \\triangle AOC$ (c.g.c) $\\Rightarrow \\widehat{ACO} = \\widehat{ABO} = 90^\\circ$ ($AB$ là tiếp tuyến tại $B$).[[br]]$\\Rightarrow AC \\perp OC$ tại $C$, mà $C \\in (O)$.[[br]]Vậy $AC$ là tiếp tuyến của $(O)$ tại $C$."
+    },
+    {
      "type": "noted",
      "variant": "example",
-     "text": "\\textbf{Ví dụ 5.} Từ điểm $M$ nằm ngoài $(O)$ kẻ hai tiếp tuyến $MA$, $MB$ ($A$, $B$ là tiếp điểm); $K$ là trung điểm $MO$ (Hình 11). Chứng minh bốn điểm $M$, $A$, $O$, $B$ cùng thuộc một đường tròn.[[br]]{\\sffamily\\bfseries\\color{brand}Lời giải}[[br]]$MA$, $MB$ là tiếp tuyến $\\Rightarrow \\widehat{MAO} = \\widehat{MBO} = [[fill:90^\\circ]]$.[[br]]Xét $\\triangle MAO$ vuông tại $A$, trung tuyến $AK$ $\\Rightarrow AK = [[fill:\\dfrac{MO}{2}]] = KM = KO$.[[br]]Xét $\\triangle MBO$ vuông tại $B$, trung tuyến $BK$ $\\Rightarrow BK = \\dfrac{MO}{2}$.[[br]]Vậy $M$, $A$, $O$, $B$ cùng thuộc đường tròn tâm $[[fill:K]]$, bán kính $[[fill:\\dfrac{MO}{2}]]$.",
+     "text": "\\textbf{Ví dụ 6.} Cho tam giác $ABC$ vuông tại $A$, đường cao $AH$. Vẽ đường tròn $(A; AH)$. Từ $C$ kẻ tiếp tuyến $CM$ với $(A; AH)$ ($M$ là tiếp điểm, $M$ không nằm trên $BC$) (Hình 11). Chứng minh bốn điểm $A$, $M$, $C$, $H$ cùng thuộc một đường tròn.[[br]]{\\sffamily\\bfseries\\color{brand}Lời giải}[[br]]$AH \\perp BC$ $\\Rightarrow \\widehat{AHC} = [[fill:90^\\circ]]$.[[br]]$CM$ là tiếp tuyến của $(A)$ tại $M$ $\\Rightarrow \\widehat{AMC} = 90^\\circ$.[[br]]Gọi $I$ là trung điểm $AC$.[[br]]Xét $\\triangle AHC$ vuông tại $H$, trung tuyến $HI$ $\\Rightarrow HI = [[fill:\\dfrac{AC}{2}]] = IA = IC$.[[br]]Xét $\\triangle AMC$ vuông tại $M$, trung tuyến $MI$ $\\Rightarrow MI = \\dfrac{AC}{2}$.[[br]]Vậy $A$, $M$, $C$, $H$ cùng thuộc đường tròn tâm $[[fill:I]]$, bán kính $[[fill:\\dfrac{AC}{2}]]$.",
      "figure": {
-      "tikz": "\\begin{tikzpicture}[line width=0.8pt, font=\\small]\n  \\draw[ink] (0.0000,0.0000) circle (1.3000);\n  \\draw[ink] (3.2000,0.0000) -- (0.5281,1.1879);\n  \\draw[ink] (3.2000,0.0000) -- (0.5281,-1.1879);\n  \\draw[ink] (0.0000,0.0000) -- (0.5281,1.1879);\n  \\draw[ink] (0.0000,0.0000) -- (0.5281,-1.1879);\n  \\draw[ink] (0.0000,0.0000) -- (3.2000,0.0000);\n  \\draw[ink] (0.4631,1.0417) -- (0.6093,0.9767) -- (0.6743,1.1229);\n  \\draw[ink] (0.4631,-1.0417) -- (0.6093,-0.9767) -- (0.6743,-1.1229);\n  \\fill[ink] (0.0000,0.0000) circle (1.3pt);\n  \\fill[ink] (3.2000,0.0000) circle (1.3pt);\n  \\fill[ink] (0.5281,1.1879) circle (1.3pt);\n  \\fill[ink] (0.5281,-1.1879) circle (1.3pt);\n  \\fill[ink] (1.6000,0.0000) circle (1.3pt);\n  \\node[inner sep=0pt] at (-0.2400,0.0000) {$O$};\n  \\node[inner sep=0pt] at (3.4400,0.0000) {$M$};\n  \\node[inner sep=0pt] at (0.6307,1.4698) {$A$};\n  \\node[inner sep=0pt] at (0.6307,-1.4698) {$B$};\n  \\node[inner sep=0pt] at (1.6000,0.2400) {$K$};\n\\end{tikzpicture}",
+      "tikz": "\\begin{tikzpicture}[line width=0.8pt, font=\\small, scale=1.04]\n  \\draw[ink, dashed] (1.2508,1.8544) circle (1.8544);\n  \\draw[ink] (1.2508,1.8544) -- (0.0000,0.0000) -- (4.0000,0.0000) -- cycle;\n  \\draw[ink] (1.2508,1.8544) -- (1.2508,0.0000);\n  \\draw[ink] (4.0000,0.0000) -- (2.9701,2.5490);\n  \\draw[ink] (1.2508,1.8544) -- (2.9701,2.5490);\n  \\draw[ink] (1.1613,1.7217) -- (1.2940,1.6323) -- (1.3834,1.7649);\n  \\draw[ink] (1.2508,0.1600) -- (1.4108,0.1600) -- (1.4108,0.0000);\n  \\draw[ink] (2.8218,2.4891) -- (2.8817,2.3407) -- (3.0301,2.4007);\n  \\fill[ink] (1.2508,1.8544) circle (1.3pt);\n  \\fill[ink] (0.0000,0.0000) circle (1.3pt);\n  \\fill[ink] (4.0000,0.0000) circle (1.3pt);\n  \\fill[ink] (1.2508,0.0000) circle (1.3pt);\n  \\fill[ink] (2.9701,2.5490) circle (1.3pt);\n  \\node[inner sep=0pt] at (1.0965,2.0382) {$A$};\n  \\node[inner sep=0pt] at (-0.2078,-0.1200) {$B$};\n  \\node[inner sep=0pt] at (4.2078,-0.1200) {$C$};\n  \\node[inner sep=0pt] at (1.2508,-0.3000) {$H$};\n  \\node[inner sep=0pt] at (3.2520,2.6516) {$M$};\n\\end{tikzpicture}",
       "caption": "Hình 11",
       "pos": "right"
      }
     },
     {
      "type": "problem",
-     "label": "Bài 12.",
+     "label": "Bài 6.",
      "level": 2,
      "tier": "onclass",
      "dang_id": "TH2",
-     "statement": "[TH] Cho nửa đường tròn tâm $O$ đường kính $AB$. Lấy điểm $M$ trên nửa đường tròn ($M$ khác $A$, $B$). Tiếp tuyến tại $A$ và tiếp tuyến tại $M$ của $(O)$ cắt nhau tại $C$ (Hình 12). Chứng minh bốn điểm $O$, $A$, $C$, $M$ cùng thuộc một đường tròn; chỉ rõ tâm và bán kính.",
+     "statement": "[TH] Cho đường tròn $(O; R)$ đường kính $AB$. Từ $A$ kẻ tiếp tuyến $Ax$ với $(O)$. Trên tia $Ax$ lấy điểm $M$ sao cho $MA > R$. Từ $M$ kẻ tiếp tuyến $MC$ với $(O)$ ($C$ là tiếp điểm). Chứng minh bốn điểm $A$, $O$, $C$, $M$ cùng thuộc một đường tròn.",
      "figure_given": false,
+     "draw": true,
      "hints": [
-      "Hai tiếp tuyến tạo với hai bán kính $OA$, $OM$ những góc bao nhiêu độ?",
-      "Hai tam giác vuông đó có chung cạnh huyền nào?"
+      "Hai tiếp tuyến $MA$, $MC$ tạo với hai bán kính $OA$, $OC$ những góc bao nhiêu độ?",
+      "Hai tam giác vuông đó có chung cạnh huyền nào? Trung điểm của cạnh huyền ấy cách các đỉnh bao xa?"
      ],
-     "answer": "$CA$, $CM$ là tiếp tuyến tại $A$, $M$ $\\Rightarrow \\widehat{OAC} = \\widehat{OMC} = 90^\\circ$.[[br]]Gọi $I$ là trung điểm $OC$.[[br]]Xét $\\triangle OAC$ vuông tại $A$, trung tuyến $AI$ $\\Rightarrow AI = \\dfrac{OC}{2} = IO = IC$.[[br]]Xét $\\triangle OMC$ vuông tại $M$, trung tuyến $MI$ $\\Rightarrow MI = \\dfrac{OC}{2}$.[[br]]Vậy $O$, $A$, $C$, $M$ cùng thuộc đường tròn tâm $I$ (trung điểm $OC$), bán kính $\\dfrac{OC}{2}$.",
+     "answer": "$MA$, $MC$ là tiếp tuyến $\\Rightarrow \\widehat{MAO} = \\widehat{MCO} = 90^\\circ$.[[br]]Gọi $I$ là trung điểm $MO$.[[br]]Xét $\\triangle MAO$ vuông tại $A$, trung tuyến $AI$ $\\Rightarrow AI = \\dfrac{MO}{2} = IM = IO$.[[br]]Xét $\\triangle MCO$ vuông tại $C$, trung tuyến $CI$ $\\Rightarrow CI = \\dfrac{MO}{2}$.[[br]]Vậy $A$, $O$, $C$, $M$ cùng thuộc đường tròn tâm $I$, bán kính $\\dfrac{MO}{2}$."
+    },
+    {
+     "type": "noted",
+     "variant": "example",
+     "text": "\\textbf{Ví dụ 7.} \\textbf{Đề mẫu.} Cho đường tròn $(O)$ và dây $AB$ không đi qua $O$. Gọi $I$ là trung điểm $AB$. Tiếp tuyến tại $A$ của $(O)$ cắt tia $OI$ tại $M$ (Hình 12). a) Chứng minh $MB$ là tiếp tuyến của $(O)$. b) Chứng minh bốn điểm $M$, $A$, $O$, $B$ cùng thuộc một đường tròn.[[br]]{\\sffamily\\bfseries\\color{brand}Lời giải}[[br]]a) $OA = OB = R$ $\\Rightarrow \\triangle OAB$ cân tại $O$.[[br]]$OI$ là đường trung tuyến ($I$ là trung điểm $AB$) đồng thời là đường [[fill:phân giác]] $\\Rightarrow \\widehat{AOM} = \\widehat{BOM}$.[[br]]Xét $\\triangle OAM$ và $\\triangle OBM$ có: $OA = OB$, $\\widehat{AOM} = \\widehat{BOM}$, $OM$ chung.[[br]]$\\Rightarrow \\triangle OAM = \\triangle OBM$ ([[fill:c.g.c]]).[[br]]$\\Rightarrow \\widehat{OBM} = \\widehat{OAM} = [[fill:90^\\circ]]$ ($MA$ là tiếp tuyến tại $A$).[[br]]$\\Rightarrow MB \\perp OB$ tại $B$, mà $B \\in (O)$.[[br]]Vậy $MB$ là [[fill:tiếp tuyến]] của $(O)$ tại $B$.[[br]]b) $\\widehat{OAM} = \\widehat{OBM} = 90^\\circ$ (chứng minh trên).[[br]]Gọi $K$ là trung điểm $OM$.[[br]]Xét $\\triangle OAM$ vuông tại $A$, trung tuyến $AK$ $\\Rightarrow AK = \\dfrac{OM}{2} = KO = KM$.[[br]]Xét $\\triangle OBM$ vuông tại $B$, trung tuyến $BK$ $\\Rightarrow BK = \\dfrac{OM}{2}$.[[br]]Vậy $M$, $A$, $O$, $B$ cùng thuộc đường tròn tâm $[[fill:K]]$, bán kính $[[fill:\\dfrac{OM}{2}]]$.",
      "figure": {
-      "tikz": "\\begin{tikzpicture}[line width=0.8pt, font=\\small, scale=1.20]\n  \\draw[ink] (1.5000,0.0000) arc (0.0000:180.0000:1.5000);\n  \\draw[ink] (-1.5000,0.0000) -- (1.5000,0.0000);\n  \\draw[ink] (-1.5000,-0.0000) -- (-1.5000,2.9481);\n  \\draw[ink] (-1.5000,2.5981) -- (0.7500,1.2990);\n  \\draw[ink] (-1.3400,0.0000) -- (-1.3400,0.1600) -- (-1.5000,0.1600);\n  \\draw[ink] (0.0000,0.0000) -- (-1.5000,2.5981);\n  \\draw[ink] (0.0000,0.0000) -- (0.7500,1.2990);\n  \\draw[ink] (0.6700,1.1605) -- (0.5314,1.2405) -- (0.6114,1.3790);\n  \\fill[ink] (-1.5000,0.0000) circle (1.3pt);\n  \\fill[ink] (1.5000,0.0000) circle (1.3pt);\n  \\fill[ink] (0.0000,0.0000) circle (1.3pt);\n  \\fill[ink] (0.7500,1.2990) circle (1.3pt);\n  \\fill[ink] (-1.5000,2.5981) circle (1.3pt);\n  \\node[inner sep=0pt] at (-1.6839,-0.1543) {$A$};\n  \\node[inner sep=0pt] at (1.6839,-0.1543) {$B$};\n  \\node[inner sep=0pt] at (-0.0000,-0.2400) {$O$};\n  \\node[inner sep=0pt] at (0.9755,1.3811) {$M$};\n  \\node[inner sep=0pt] at (-1.7400,2.5981) {$C$};\n\\end{tikzpicture}",
+      "tikz": "\\begin{tikzpicture}[line width=0.8pt, font=\\small, scale=1.05]\n  \\draw[ink] (0.0000,0.0000) circle (1.3000);\n  \\draw[ink] (3.2000,0.0000) -- (0.5281,1.1879);\n  \\draw[ink] (3.2000,0.0000) -- (0.5281,-1.1879);\n  \\draw[ink] (0.0000,0.0000) -- (0.5281,1.1879);\n  \\draw[ink] (0.0000,0.0000) -- (0.5281,-1.1879);\n  \\draw[ink] (0.0000,0.0000) -- (3.2000,0.0000);\n  \\draw[ink] (0.5281,1.1879) -- (0.5281,-1.1879);\n  \\draw[ink] (0.6743,1.1229) -- (0.6093,0.9767) -- (0.4631,1.0417);\n  \\draw[ink] (0.6743,-1.1229) -- (0.6093,-0.9767) -- (0.4631,-1.0417);\n  \\draw[ink] (0.6681,0.0000) -- (0.6681,0.1400) -- (0.5281,0.1400);\n  \\fill[ink] (0.0000,0.0000) circle (1.3pt);\n  \\fill[ink] (3.2000,0.0000) circle (1.3pt);\n  \\fill[ink] (0.5281,1.1879) circle (1.3pt);\n  \\fill[ink] (0.5281,-1.1879) circle (1.3pt);\n  \\fill[ink] (0.5281,0.0000) circle (1.3pt);\n  \\fill[ink] (1.6000,0.0000) circle (1.3pt);\n  \\node[inner sep=0pt] at (-0.2400,0.0000) {$O$};\n  \\node[inner sep=0pt] at (3.4400,0.0000) {$M$};\n  \\node[inner sep=0pt] at (0.6307,1.4698) {$A$};\n  \\node[inner sep=0pt] at (0.6307,-1.4698) {$B$};\n  \\node[inner sep=0pt] at (0.3739,0.1839) {$I$};\n  \\node[inner sep=0pt] at (1.6000,0.2400) {$K$};\n\\end{tikzpicture}",
       "caption": "Hình 12",
       "pos": "right"
      }
     },
     {
-     "type": "noted",
-     "variant": "example",
-     "text": "\\textbf{Ví dụ 6.} Từ điểm $A$ ngoài $(O)$ kẻ tiếp tuyến $AB$ ($B$ là tiếp điểm). Trên $(O)$ lấy điểm $C$ khác $B$ sao cho $AC = AB$ (Hình 13). Chứng minh $AC$ là tiếp tuyến của $(O)$.[[br]]{\\sffamily\\bfseries\\color{brand}Lời giải}[[br]]Xét $\\triangle ABO$ và $\\triangle ACO$ có: $AB = AC$ (gt), $OB = OC = R$, $AO$ chung.[[br]]$\\Rightarrow \\triangle ABO = \\triangle ACO$ ([[fill:c.c.c]]).[[br]]$\\Rightarrow \\widehat{ACO} = \\widehat{ABO} = [[fill:90^\\circ]]$ ($AB$ là tiếp tuyến tại $B$).[[br]]$\\Rightarrow AC \\perp OC$ tại $C$, mà $C \\in (O)$.[[br]]Vậy $AC$ là [[fill:tiếp tuyến]] của $(O)$ tại $C$ ([[fill:Định lí 1]]).",
-     "figure": {
-      "tikz": "\\begin{tikzpicture}[line width=0.8pt, font=\\small]\n  \\draw[ink] (0.0000,0.0000) circle (1.3000);\n  \\draw[ink] (0.0000,0.0000) -- (0.5281,1.1879);\n  \\draw[ink] (0.0000,0.0000) -- (0.5281,-1.1879);\n  \\draw[ink] (3.2000,0.0000) -- (0.5281,1.1879);\n  \\draw[ink] (3.2000,0.0000) -- (0.5281,-1.1879);\n  \\draw[ink, dashed] (0.0000,0.0000) -- (3.2000,0.0000);\n  \\draw[ink] (0.4631,1.0417) -- (0.6093,0.9767) -- (0.6743,1.1229);\n  \\draw[ink] (1.8316,0.5208) -- (1.8966,0.6670);\n  \\draw[ink] (1.8966,-0.6670) -- (1.8316,-0.5208);\n  \\fill[ink] (0.0000,0.0000) circle (1.3pt);\n  \\fill[ink] (3.2000,0.0000) circle (1.3pt);\n  \\fill[ink] (0.5281,1.1879) circle (1.3pt);\n  \\fill[ink] (0.5281,-1.1879) circle (1.3pt);\n  \\node[inner sep=0pt] at (-0.2400,0.0000) {$O$};\n  \\node[inner sep=0pt] at (3.4400,0.0000) {$A$};\n  \\node[inner sep=0pt] at (0.6307,1.4698) {$B$};\n  \\node[inner sep=0pt] at (0.6307,-1.4698) {$C$};\n\\end{tikzpicture}",
-      "caption": "Hình 13",
-      "pos": "right"
-     }
+     "type": "problem",
+     "label": "Bài 7.",
+     "level": 1,
+     "tier": "onclass",
+     "dang_id": "NB5",
+     "statement": "Cho đường tròn $(O; R)$ đường kính $AB$, điểm $C$ thuộc $(O)$ ($AC > BC$). Kẻ $CH \\perp AB$ tại $H$, tia $CH$ cắt $(O)$ tại $D$. Tiếp tuyến tại $A$ và tiếp tuyến tại $C$ của $(O)$ cắt nhau ở $M$; đường thẳng $MC$ cắt đường thẳng $AB$ tại $F$.[[br]]a) [NB] Vẽ hình theo đề bằng compa và thước.[[br]]b) [NB] Đánh dấu các góc vuông tại $A$, $C$, $H$ và hai đoạn bằng nhau $OC = OD$.",
+     "figure_given": false,
+     "draw": true,
+     "answer": "Vẽ $(O)$, đường kính $AB$; lấy $C$ gần $B$; kẻ $CH \\perp AB$, kéo dài cắt $(O)$ tại $D$; tiếp tuyến tại $A$ vuông góc với $OA$, tiếp tuyến tại $C$ vuông góc với $OC$, cắt nhau ở $M$; $MC$ kéo dài cắt tia $AB$ tại $F$ (ngoài đoạn $AB$, phía $B$).[[br]]Góc vuông: $\\widehat{OAM}$, $\\widehat{OCM}$, $\\widehat{CHB}$; $OC = OD = R$."
     },
     {
      "type": "problem",
-     "label": "Bài 13.",
+     "label": "Bài 8.",
      "level": 3,
      "tier": "onclass",
      "dang_id": "VD1",
-     "statement": "[VD] Cho đường tròn $(O; R)$ và điểm $A$ nằm ngoài $(O)$. Kẻ tiếp tuyến $AB$ ($B$ là tiếp điểm). Kẻ dây $BC$ vuông góc với $OA$ tại $H$ (Hình 14). Chứng minh $AC$ là tiếp tuyến của $(O)$.",
+     "statement": "[VD] Với giả thiết của Bài 7 (dùng hình đã vẽ ở Bài 7):[[br]]a) Chứng minh bốn điểm $A$, $C$, $M$, $O$ cùng thuộc một đường tròn.[[br]]b) Chứng minh $DF$ là tiếp tuyến của $(O)$.",
      "figure_given": false,
      "quy_trinh": [
-      "$\\triangle OBC$ cân tại $O$, đường cao $OH$ đồng thời là phân giác $\\Rightarrow \\widehat{BOA} = \\widehat{COA}$",
-      "Chứng minh $\\triangle AOB = \\triangle AOC$ (c.g.c)",
-      "Suy ra $\\widehat{ACO} = \\widehat{ABO} = 90^\\circ$",
-      "Kết luận theo Định lí 1"
+      "Ý a: chỉ ra hai góc vuông có chung cạnh huyền $MO$, gọi trung điểm cạnh huyền, kết luận tâm và bán kính",
+      "Ý b: $\\triangle OCD$ cân tại $O$, đường cao $OH$ đồng thời là phân giác $\\Rightarrow \\widehat{COF} = \\widehat{DOF}$",
+      "Chứng minh $\\triangle OCF = \\triangle ODF$ (c.g.c) $\\Rightarrow \\widehat{ODF} = \\widehat{OCF} = 90^\\circ$",
+      "Kết luận theo dấu hiệu nhận biết tiếp tuyến"
      ],
-     "solution": "$OB = OC = R \\Rightarrow \\triangle OBC$ cân tại $O$.[[br]]$OH \\perp BC$ $\\Rightarrow$ đường cao $OH$ đồng thời là phân giác $\\Rightarrow \\widehat{BOA} = \\widehat{COA}$.[[br]]Xét $\\triangle AOB$ và $\\triangle AOC$: $OB = OC$, $\\widehat{BOA} = \\widehat{COA}$, $OA$ chung.[[br]]$\\Rightarrow \\triangle AOB = \\triangle AOC$ (c.g.c) $\\Rightarrow \\widehat{ACO} = \\widehat{ABO}$.[[br]]Mà $\\widehat{ABO} = 90^\\circ$ ($AB$ là tiếp tuyến tại $B$) $\\Rightarrow \\widehat{ACO} = 90^\\circ$, tức $AC \\perp OC$ tại $C \\in (O)$.[[br]]Vậy $AC$ là tiếp tuyến của $(O)$ tại $C$ (Định lí 1).",
-     "figure": {
-      "tikz": "\\begin{tikzpicture}[line width=0.8pt, font=\\small, scale=1.28]\n  \\draw[ink] (0.0000,0.0000) circle (1.3000);\n  \\draw[ink] (0.0000,0.0000) -- (0.5281,1.1879);\n  \\draw[ink] (0.0000,0.0000) -- (0.5281,-1.1879);\n  \\draw[ink] (3.2000,0.0000) -- (0.5281,1.1879);\n  \\draw[ink] (3.2000,0.0000) -- (0.5281,-1.1879);\n  \\draw[ink] (0.0000,0.0000) -- (3.2000,0.0000);\n  \\draw[ink] (0.5281,1.1879) -- (0.5281,-1.1879);\n  \\draw[ink] (0.4631,1.0417) -- (0.6093,0.9767) -- (0.6743,1.1229);\n  \\draw[ink] (0.5281,0.1600) -- (0.6881,0.1600) -- (0.6881,0.0000);\n  \\fill[ink] (0.0000,0.0000) circle (1.3pt);\n  \\fill[ink] (3.2000,0.0000) circle (1.3pt);\n  \\fill[ink] (0.5281,1.1879) circle (1.3pt);\n  \\fill[ink] (0.5281,-1.1879) circle (1.3pt);\n  \\fill[ink] (0.5281,0.0000) circle (1.3pt);\n  \\node[inner sep=0pt] at (-0.2400,0.0000) {$O$};\n  \\node[inner sep=0pt] at (3.4400,0.0000) {$A$};\n  \\node[inner sep=0pt] at (0.6307,1.4698) {$B$};\n  \\node[inner sep=0pt] at (0.6307,-1.4698) {$C$};\n  \\node[inner sep=0pt] at (0.3739,0.1839) {$H$};\n\\end{tikzpicture}",
-      "caption": "Hình 14",
-      "pos": "right"
-     }
+     "solution": "a) $MA$, $MC$ là tiếp tuyến $\\Rightarrow \\widehat{MAO} = \\widehat{MCO} = 90^\\circ$.[[br]]Gọi $I$ là trung điểm $MO$.[[br]]Xét $\\triangle MAO$ vuông tại $A$, trung tuyến $AI$ $\\Rightarrow AI = \\dfrac{MO}{2} = IM = IO$.[[br]]Xét $\\triangle MCO$ vuông tại $C$, trung tuyến $CI$ $\\Rightarrow CI = \\dfrac{MO}{2}$.[[br]]Vậy $A$, $C$, $M$, $O$ cùng thuộc đường tròn tâm $I$, bán kính $\\dfrac{MO}{2}$.[[br]]b) $OC = OD = R$ $\\Rightarrow \\triangle OCD$ cân tại $O$.[[br]]$OH \\perp CD$ ($CH \\perp AB$) $\\Rightarrow$ đường cao $OH$ đồng thời là đường phân giác $\\Rightarrow \\widehat{COF} = \\widehat{DOF}$.[[br]]Xét $\\triangle OCF$ và $\\triangle ODF$ có: $OC = OD$, $\\widehat{COF} = \\widehat{DOF}$, $OF$ chung.[[br]]$\\Rightarrow \\triangle OCF = \\triangle ODF$ (c.g.c) $\\Rightarrow \\widehat{ODF} = \\widehat{OCF} = 90^\\circ$ ($MC$ là tiếp tuyến tại $C$).[[br]]$\\Rightarrow DF \\perp OD$ tại $D$, mà $D \\in (O)$.[[br]]Vậy $DF$ là tiếp tuyến của $(O)$ tại $D$."
     }
    ]
   },
@@ -450,52 +432,24 @@
    "kind": "reflection",
    "number": 5,
    "title": "Sơ đồ tư duy",
-   "teacher_note": "BTVN 11 là đề thật ý a (Phúc Đồng); BTVN 13 là bài vận dụng kết hợp Pythagore đảo và khuôn bốn điểm — chữa đầu buổi 3. Nhắc HS: kết luận bốn điểm luôn phải có TÂM và BÁN KÍNH.",
+   "teacher_note": "BTVN đi đúng nhịp bài trên lớp: BTVN 1, 2 ứng với Bài 1, 3; BTVN 3, 4 ứng với Bài 5, 6; BTVN 5, 6 ứng với Bài 7, 8. Chữa BTVN 6 đầu buổi 3.",
    "blocks": [
     {
      "type": "mindmap",
-     "caption": "Sơ đồ tư duy: Bốn điểm cùng thuộc đường tròn. Tiếp tuyến",
+     "caption": "Sơ đồ tư duy: Bốn điểm cùng thuộc đường tròn. Chứng minh tiếp tuyến",
      "root": "ĐƯỜNG TRÒN $(O; R)$",
      "branches": [
-      {
-       "label": "ĐIỂM VÀ ĐƯỜNG TRÒN",
-       "children": [
-        {
-         "label": "$OM < R$: trong"
-        },
-        {
-         "label": "$OM = R$: trên"
-        },
-        {
-         "label": "$OM > R$: ngoài"
-        }
-       ]
-      },
       {
        "label": "BỐN ĐIỂM CÙNG THUỘC",
        "children": [
         {
-         "label": "Hai tam giác vuông chung cạnh huyền"
+         "label": "Hai góc vuông chung cạnh huyền"
         },
         {
-         "label": "Trung điểm cạnh huyền cách đều 4 điểm"
+         "label": "Trung tuyến bằng nửa cạnh huyền"
         },
         {
-         "label": "Kết luận: nêu TÂM và BÁN KÍNH"
-        }
-       ]
-      },
-      {
-       "label": "ĐƯỜNG THẲNG VÀ ĐƯỜNG TRÒN",
-       "children": [
-        {
-         "label": "$d < R$: cắt nhau"
-        },
-        {
-         "label": "$d = R$: tiếp xúc — tiếp tuyến"
-        },
-        {
-         "label": "$d > R$: không giao"
+         "label": "Kết luận: nêu tâm và bán kính"
         }
        ]
       },
@@ -503,13 +457,35 @@
        "label": "TIẾP TUYẾN",
        "children": [
         {
-         "label": "Tiếp tuyến $\\perp$ bán kính TẠI TIẾP ĐIỂM"
+         "label": "$d = R$: một điểm chung"
         },
         {
-         "label": "Định lí 1: qua $C \\in (O)$, $\\perp OC$ tại $C$"
+         "label": "Tiếp tuyến $\\perp$ bán kính tại tiếp điểm"
+        }
+       ]
+      },
+      {
+       "label": "CHỨNG MINH TIẾP TUYẾN",
+       "children": [
+        {
+         "label": "Điểm thuộc đường tròn"
         },
         {
-         "label": "Độ dài: $AB^2 = OA^2 - R^2$"
+         "label": "Vuông góc với bán kính tại điểm đó"
+        },
+        {
+         "label": "Dấu hiệu nhận biết tiếp tuyến"
+        }
+       ]
+      },
+      {
+       "label": "LẤY GÓC VUÔNG",
+       "children": [
+        {
+         "label": "Hai tam giác bằng nhau (c.c.c, c.g.c)"
+        },
+        {
+         "label": "Tam giác cân: đường cao là phân giác"
         }
        ]
       }
@@ -517,182 +493,92 @@
     },
     {
      "type": "para",
-     "text": "\\textbf{BÀI TẬP VỀ NHÀ (Bốn điểm cùng thuộc một đường tròn. Tiếp tuyến của đường tròn).}"
+     "text": "\\textbf{BÀI TẬP VỀ NHÀ (Bốn điểm cùng thuộc một đường tròn. Chứng minh tiếp tuyến).}"
     },
     {
      "type": "problem",
-     "label": "BTVN 1.",
+     "label": "BTVN~1.",
      "level": 1,
      "tier": "btvn",
      "dang_id": "NB1",
-     "statement": "Cho đường tròn $(O; 8\\text{ cm})$. Điền \\textit{trong} / \\textit{trên} / \\textit{ngoài} vào chỗ chấm:[[br]]a) [NB] $OM = 10$ cm $> R \\Rightarrow M$ nằm [[blank:2.4cm]] đường tròn.[[br]]b) [NB] $ON = 8$ cm $= R \\Rightarrow N$ nằm [[blank:2.4cm]] đường tròn.",
-     "figure_given": true,
-     "answer": "a) ngoài.[[br]]b) trên."
+     "statement": "Cho tam giác $ABC$ vuông tại $A$. Trên cạnh $AC$ lấy điểm $D$ ($D$ khác $A$, $C$), kẻ $DE \\perp BC$ tại $E$ (Hình 13). Chứng minh bốn điểm $A$, $B$, $E$, $D$ cùng thuộc một đường tròn.[[br]]\\textit{Điền vào chỗ trống để hoàn thành bài giải:}[[br]][NB] $\\widehat{BAD} = 90^\\circ$ (gt); \\ $DE \\perp BC$ tại $E$ $\\Rightarrow \\widehat{BED} = [[blank:1.1cm]]$.[[br]]Gọi $K$ là trung điểm $BD$.[[br]][NB] Xét $\\triangle BAD$ vuông tại $A$, trung tuyến $AK$ $\\Rightarrow AK = [[blank:2.4cm]] = KB = KD$.[[br]]Xét $\\triangle BED$ vuông tại $E$, trung tuyến $EK$ $\\Rightarrow EK = \\dfrac{BD}{2}$.[[br]][NB] Vậy $A$, $B$, $E$, $D$ cùng thuộc đường tròn tâm [[blank:1.1cm]], bán kính [[blank:2.4cm]].",
+     "figure_given": false,
+     "answer": "$90^\\circ$.[[br]]$AK = \\dfrac{BD}{2}$.[[br]]Tâm $K$, bán kính $\\dfrac{BD}{2}$.",
+     "figure": {
+      "tikz": "\\begin{tikzpicture}[line width=0.8pt, font=\\small, scale=1.77]\n  \\draw[ink] (0.0000,0.0000) -- (0.0000,2.1000) -- (3.2000,0.0000) -- cycle;\n  \\draw[ink] (1.7000,0.0000) -- (2.1515,0.6881);\n  \\draw[ink, dashed] (0.0000,2.1000) -- (1.7000,0.0000);\n  \\draw[ink] (0.0000,0.1600) -- (0.1600,0.1600) -- (0.1600,0.0000);\n  \\draw[ink] (2.0638,0.5543) -- (2.1975,0.4665) -- (2.2853,0.6003);\n  \\fill[ink] (0.0000,0.0000) circle (1.3pt);\n  \\fill[ink] (0.0000,2.1000) circle (1.3pt);\n  \\fill[ink] (3.2000,0.0000) circle (1.3pt);\n  \\fill[ink] (1.7000,0.0000) circle (1.3pt);\n  \\fill[ink] (2.1515,0.6881) circle (1.3pt);\n  \\node[inner sep=0pt] at (-0.1839,-0.1543) {$A$};\n  \\node[inner sep=0pt] at (-0.1200,2.3078) {$B$};\n  \\node[inner sep=0pt] at (3.4255,-0.0821) {$C$};\n  \\node[inner sep=0pt] at (1.7000,-0.2400) {$D$};\n  \\node[inner sep=0pt] at (2.2715,0.8959) {$E$};\n\\end{tikzpicture}",
+      "caption": "Hình 13",
+      "pos": "right"
+     }
     },
     {
      "type": "problem",
-     "label": "BTVN 2.",
-     "level": 1,
-     "tier": "btvn",
-     "dang_id": "NB2",
-     "statement": "[NB] Cho tam giác $ABC$ vuông tại $A$ có $BC = 18$ cm. Bán kính đường tròn đi qua ba điểm $A$, $B$, $C$ bằng:",
-     "figure_given": true,
-     "options": [
-      "$18$ cm",
-      "$9$ cm",
-      "$36$ cm",
-      "$6$ cm"
-     ],
-     "answer": "Đáp án \\textbf{B}. $R = \\dfrac{BC}{2} = 9$ cm."
-    },
-    {
-     "type": "problem",
-     "label": "BTVN 3.",
-     "level": 1,
-     "tier": "btvn",
-     "dang_id": "NB2",
-     "statement": "[NB] Tâm của đường tròn đi qua ba đỉnh của tam giác $DEF$ vuông tại $D$ là:",
-     "figure_given": true,
-     "options": [
-      "đỉnh $D$",
-      "trung điểm $DE$",
-      "trung điểm $EF$",
-      "trung điểm $DF$"
-     ],
-     "answer": "Đáp án \\textbf{C}: trung điểm cạnh huyền $EF$."
-    },
-    {
-     "type": "problem",
-     "label": "BTVN 4.",
+     "label": "BTVN~2.",
      "level": 1,
      "tier": "btvn",
      "dang_id": "NB3",
-     "statement": "Trên Hình 15, $\\triangle MNP$ vuông tại $N$, $\\triangle MQP$ vuông tại $Q$, $O$ là trung điểm $MP$. Điền vào chỗ chấm:[[br]]a) [NB] Xét $\\triangle MNP$ vuông tại $N$, trung tuyến $NO$ $\\Rightarrow NO = [[blank:2.4cm]] = OM = OP$.[[br]]b) [NB] Xét $\\triangle MQP$ vuông tại $Q$, trung tuyến $QO$ $\\Rightarrow QO = [[blank:2.4cm]]$.[[br]]c) [NB] $\\Rightarrow M$, $N$, $P$, $Q$ cùng thuộc đường tròn $\\left([[blank:1.1cm]]; [[blank:2.4cm]]\\right)$.",
-     "figure_given": true,
-     "answer": "a) $\\dfrac{MP}{2}$.[[br]]b) $\\dfrac{MP}{2}$.[[br]]c) $\\left(O; \\dfrac{MP}{2}\\right)$.",
+     "statement": "Từ điểm $M$ nằm ngoài $(O)$ kẻ tiếp tuyến $MA$ ($A$ là tiếp điểm). Kẻ dây $AB$ vuông góc với $OM$ tại $I$ (Hình 14). Chứng minh $\\triangle MOA = \\triangle MOB$.[[br]]\\textit{Điền vào chỗ trống để hoàn thành bài giải:}[[br]][NB] $OA = OB = R$ $\\Rightarrow \\triangle OAB$ cân tại [[blank:1.1cm]].[[br]][NB] $OI \\perp AB$ $\\Rightarrow$ đường cao $OI$ đồng thời là đường [[blank:3.2cm]] $\\Rightarrow \\widehat{AOM} = \\widehat{BOM}$.[[br]]Xét $\\triangle MOA$ và $\\triangle MOB$ có: $OA = OB$, $\\widehat{AOM} = \\widehat{BOM}$, $OM$ chung.[[br]][NB] Vậy $\\triangle MOA = \\triangle MOB$ ([[blank:1.1cm]]).",
+     "figure_given": false,
+     "answer": "Cân tại $O$.[[br]]Đường phân giác.[[br]]c.g.c.",
      "figure": {
-      "tikz": "\\begin{tikzpicture}[line width=0.8pt, font=\\small, scale=1.15]\n  \\draw[ink] (-1.5000,0.0000) -- (0.5130,-1.4095) -- (1.5000,0.0000) -- (-0.2605,1.4772) -- cycle;\n  \\draw[ink] (-1.5000,0.0000) -- (1.5000,0.0000);\n  \\draw[ink] (0.0000,0.0000) -- (0.5130,-1.4095);\n  \\draw[ink] (0.0000,0.0000) -- (-0.2605,1.4772);\n  \\draw[ink] (0.3820,-1.3178) -- (0.4737,-1.1867) -- (0.6048,-1.2785);\n  \\draw[ink] (-0.3633,1.3546) -- (-0.2408,1.2518) -- (-0.1379,1.3744);\n  \\fill[ink] (-1.5000,0.0000) circle (1.3pt);\n  \\fill[ink] (1.5000,0.0000) circle (1.3pt);\n  \\fill[ink] (0.5130,-1.4095) circle (1.3pt);\n  \\fill[ink] (-0.2605,1.4772) circle (1.3pt);\n  \\fill[ink] (0.0000,0.0000) circle (1.3pt);\n  \\node[inner sep=0pt] at (-1.7364,-0.0417) {$M$};\n  \\node[inner sep=0pt] at (1.7364,0.0417) {$P$};\n  \\node[inner sep=0pt] at (0.5547,-1.6459) {$N$};\n  \\node[inner sep=0pt] at (-0.2605,1.7172) {$Q$};\n  \\node[inner sep=0pt] at (0.1543,0.1839) {$O$};\n\\end{tikzpicture}",
-      "caption": "Hình 15",
+      "tikz": "\\begin{tikzpicture}[line width=0.8pt, font=\\small, scale=1.35]\n  \\draw[ink] (0.0000,0.0000) circle (1.3000);\n  \\draw[ink] (3.2000,0.0000) -- (0.5281,1.1879);\n  \\draw[ink] (3.2000,0.0000) -- (0.5281,-1.1879);\n  \\draw[ink] (0.0000,0.0000) -- (0.5281,1.1879);\n  \\draw[ink] (0.0000,0.0000) -- (0.5281,-1.1879);\n  \\draw[ink] (0.0000,0.0000) -- (3.2000,0.0000);\n  \\draw[ink] (0.5281,1.1879) -- (0.5281,-1.1879);\n  \\draw[ink] (0.6681,0.0000) -- (0.6681,0.1400) -- (0.5281,0.1400);\n  \\fill[ink] (0.0000,0.0000) circle (1.3pt);\n  \\fill[ink] (3.2000,0.0000) circle (1.3pt);\n  \\fill[ink] (0.5281,1.1879) circle (1.3pt);\n  \\fill[ink] (0.5281,-1.1879) circle (1.3pt);\n  \\fill[ink] (0.5281,0.0000) circle (1.3pt);\n  \\node[inner sep=0pt] at (-0.2400,0.0000) {$O$};\n  \\node[inner sep=0pt] at (3.4400,0.0000) {$M$};\n  \\node[inner sep=0pt] at (0.6307,1.4698) {$A$};\n  \\node[inner sep=0pt] at (0.6307,-1.4698) {$B$};\n  \\node[inner sep=0pt] at (0.3739,0.1839) {$I$};\n\\end{tikzpicture}",
+      "caption": "Hình 14",
       "pos": "right"
      }
     },
     {
      "type": "problem",
-     "label": "BTVN 5.",
-     "level": 1,
-     "tier": "btvn",
-     "dang_id": "NB4",
-     "statement": "[NB] Cho $(O; 4\\text{ cm})$ và đường thẳng $a$ cách $O$ một khoảng $4$ cm. Khi đó $a$ và $(O)$:",
-     "figure_given": true,
-     "options": [
-      "cắt nhau",
-      "tiếp xúc nhau",
-      "không giao nhau",
-      "có hai điểm chung"
-     ],
-     "answer": "Đáp án \\textbf{B}. $d = R$."
-    },
-    {
-     "type": "problem",
-     "label": "BTVN 6.",
-     "level": 1,
-     "tier": "btvn",
-     "dang_id": "NB4",
-     "statement": "[NB] Cho $(O; 10\\text{ cm})$ và đường thẳng $a$ cách $O$ một khoảng $6$ cm. Số điểm chung của $a$ và $(O)$ là:",
-     "figure_given": true,
-     "options": [
-      "$0$",
-      "$1$",
-      "$2$",
-      "$3$"
-     ],
-     "answer": "Đáp án \\textbf{C}. $d = 6 < R = 10$."
-    },
-    {
-     "type": "problem",
-     "label": "BTVN 7.",
-     "level": 1,
-     "tier": "btvn",
-     "dang_id": "NB5",
-     "statement": "Cho $(O; R)$, điểm $A$ ngoài $(O)$ và tiếp tuyến $AB$ ($B$ là tiếp điểm). Điền vào chỗ chấm:[[br]]a) [NB] $AB \\perp [[blank:1.1cm]]$ tại [[blank:1.1cm]].[[br]]b) [NB] $\\widehat{ABO} = [[blank:1.6cm]]$.[[br]]c) [NB] $\\triangle ABO$ vuông tại [[blank:1.1cm]], cạnh huyền là [[blank:1.1cm]].",
-     "figure_given": true,
-     "answer": "a) $OB$, $B$.[[br]]b) $90^\\circ$.[[br]]c) $B$, $AO$."
-    },
-    {
-     "type": "problem",
-     "label": "BTVN 8.",
-     "level": 1,
-     "tier": "btvn",
-     "dang_id": "NB6",
-     "statement": "Điền vào chỗ chấm:[[br]]a) [NB] Đường thẳng $a$ đi qua $C \\in (O)$ và $a \\perp OC$ tại $C$ thì $a$ là [[blank:3.2cm]] của $(O)$.[[br]]b) [NB] Muốn chứng minh $xy$ là tiếp tuyến của $(O)$ tại $M$, cần chỉ ra $M$ [[blank:1.1cm]] $(O)$ và $xy \\perp [[blank:1.1cm]]$ tại $M$.",
-     "figure_given": true,
-     "answer": "a) tiếp tuyến.[[br]]b) $\\in$; $OM$."
-    },
-    {
-     "type": "problem",
-     "label": "BTVN 9.",
-     "level": 1,
-     "tier": "btvn",
-     "dang_id": "NB7",
-     "statement": "Cho $(O; 6\\text{ cm})$, điểm $A$ với $OA = 10$ cm, hai tiếp tuyến $AB$, $AC$ ($B$, $C$ là tiếp điểm); $I$ là trung điểm $AO$. Điền vào chỗ chấm:[[br]]a) [NB] $\\widehat{ABO} = \\widehat{ACO} = [[blank:1.6cm]]$.[[br]]b) [NB] $\\triangle ABO$, $\\triangle ACO$ vuông có chung cạnh huyền [[blank:1.1cm]].[[br]]c) [NB] $IB = IC = \\dfrac{AO}{2} = [[blank:1.1cm]]$ cm.",
-     "figure_given": true,
-     "answer": "a) $90^\\circ$.[[br]]b) $AO$.[[br]]c) $5$."
-    },
-    {
-     "type": "problem",
-     "label": "BTVN 10.",
+     "label": "BTVN~3.",
      "level": 2,
      "tier": "btvn",
      "dang_id": "TH1",
-     "statement": "[TH] Cho hình chữ nhật $MNPQ$ có $MN = 15$ cm, $NP = 8$ cm (Hình 16). Chứng minh bốn đỉnh $M$, $N$, $P$, $Q$ cùng thuộc một đường tròn và tính bán kính của đường tròn đó.",
+     "statement": "[TH] Với giả thiết của BTVN 2 (dùng hình đã cho ở BTVN 2). Chứng minh $MB$ là tiếp tuyến của $(O)$.",
      "figure_given": false,
      "hints": [
-      "Đường chéo $MP$ là cạnh huyền của những tam giác vuông nào?",
-      "Muốn tính bán kính thì cần biết độ dài đoạn nào trước?"
+      "Hai tam giác nào chứa $\\widehat{OAM}$ và $\\widehat{OBM}$? BTVN 2 đã cho biết gì về chúng?",
+      "Góc $\\widehat{OAM}$ bằng bao nhiêu độ? Vì sao?"
      ],
-     "answer": "$\\widehat{MNP} = \\widehat{MQP} = 90^\\circ$ ($MNPQ$ là hình chữ nhật).[[br]]Gọi $O$ là trung điểm $MP$.[[br]]Xét $\\triangle MNP$ vuông tại $N$, trung tuyến $NO$ $\\Rightarrow NO = \\dfrac{MP}{2} = OM = OP$.[[br]]Xét $\\triangle MQP$ vuông tại $Q$, trung tuyến $QO$ $\\Rightarrow QO = \\dfrac{MP}{2}$.[[br]]$\\Rightarrow M$, $N$, $P$, $Q$ cùng thuộc $\\left(O; \\dfrac{MP}{2}\\right)$.[[br]]Xét $\\triangle MNP$ vuông tại $N$, theo định lí Pythagore:[[br]]$MP^2 = MN^2 + NP^2 = 15^2 + 8^2 = 289 \\Rightarrow MP = 17$ (cm).[[br]]Vậy bốn đỉnh cùng thuộc đường tròn tâm $O$, bán kính $\\dfrac{17}{2} = 8{,}5$ cm.",
-     "figure": {
-      "tikz": "\\begin{tikzpicture}[line width=0.8pt, font=\\small, scale=1.72]\n  \\draw[ink] (0.0000,1.6000) -- (3.0000,1.6000) -- (3.0000,0.0000) -- (0.0000,0.0000) -- cycle;\n  \\draw[ink] (0.0000,1.6000) -- (3.0000,0.0000);\n  \\draw[ink] (2.8400,1.6000) -- (2.8400,1.4400) -- (3.0000,1.4400);\n  \\draw[ink] (0.1600,0.0000) -- (0.1600,0.1600) -- (0.0000,0.1600);\n  \\fill[ink] (0.0000,1.6000) circle (1.3pt);\n  \\fill[ink] (3.0000,1.6000) circle (1.3pt);\n  \\fill[ink] (3.0000,0.0000) circle (1.3pt);\n  \\fill[ink] (0.0000,0.0000) circle (1.3pt);\n  \\node[inner sep=0pt] at (-0.1543,1.7839) {$M$};\n  \\node[inner sep=0pt] at (3.1839,1.7543) {$N$};\n  \\node[inner sep=0pt] at (3.1543,-0.1839) {$P$};\n  \\node[inner sep=0pt] at (-0.1839,-0.1543) {$Q$};\n\\end{tikzpicture}",
-      "caption": "Hình 16",
-      "pos": "right"
-     }
+     "answer": "$\\triangle MOA = \\triangle MOB$ (BTVN 2) $\\Rightarrow \\widehat{OBM} = \\widehat{OAM}$.[[br]]$MA$ là tiếp tuyến tại $A$ $\\Rightarrow \\widehat{OAM} = 90^\\circ$ $\\Rightarrow \\widehat{OBM} = 90^\\circ$.[[br]]$\\Rightarrow MB \\perp OB$ tại $B$, mà $B \\in (O)$.[[br]]Vậy $MB$ là tiếp tuyến của $(O)$ tại $B$."
     },
     {
      "type": "problem",
-     "label": "BTVN 11.",
+     "label": "BTVN~4.",
      "level": 2,
      "tier": "btvn",
      "dang_id": "TH2",
-     "statement": "[TH] Từ điểm $A$ nằm ngoài đường tròn $(O; R)$ vẽ hai tiếp tuyến $AB$, $AC$ ($B$, $C$ là tiếp điểm). Chứng minh bốn điểm $A$, $B$, $O$, $C$ cùng thuộc một đường tròn. Xác định tâm và bán kính của đường tròn đó.",
+     "statement": "[TH] Cho đường tròn $(O; R)$ và điểm $A$ nằm ngoài đường tròn. Từ $A$ vẽ hai tiếp tuyến $AB$, $AC$ với $(O)$ ($B$, $C$ là tiếp điểm). Chứng minh bốn điểm $A$, $B$, $O$, $C$ cùng thuộc một đường tròn. Xác định tâm và bán kính của đường tròn đó.",
      "figure_given": false,
+     "draw": true,
      "hints": [
-      "Hai tiếp tuyến tạo với hai bán kính những góc bao nhiêu độ?",
-      "Trung điểm của cạnh huyền chung cách các đỉnh bao xa?"
+      "Hai tiếp tuyến tạo với hai bán kính $OB$, $OC$ những góc bao nhiêu độ?",
+      "Hai tam giác vuông nào có chung cạnh huyền?"
      ],
      "answer": "$AB$, $AC$ là tiếp tuyến $\\Rightarrow \\widehat{ABO} = \\widehat{ACO} = 90^\\circ$.[[br]]Gọi $I$ là trung điểm $AO$.[[br]]Xét $\\triangle ABO$ vuông tại $B$, trung tuyến $BI$ $\\Rightarrow BI = \\dfrac{AO}{2} = IA = IO$.[[br]]Xét $\\triangle ACO$ vuông tại $C$, trung tuyến $CI$ $\\Rightarrow CI = \\dfrac{AO}{2}$.[[br]]Vậy $A$, $B$, $O$, $C$ cùng thuộc đường tròn tâm $I$ (trung điểm $AO$), bán kính $\\dfrac{AO}{2}$."
     },
     {
      "type": "problem",
-     "label": "BTVN 12.",
-     "level": 2,
+     "label": "BTVN~5.",
+     "level": 1,
      "tier": "btvn",
-     "dang_id": "TH3",
-     "statement": "[TH] Một ròng rọc hình tròn tâm $O$ bán kính $9$ cm. Sợi dây căng từ móc $A$ tiếp xúc với vành ròng rọc tại $B$, đoạn dây $AB$ dài $12$ cm. Tính khoảng cách $OA$ từ móc tới tâm ròng rọc.",
+     "dang_id": "NB5",
+     "statement": "Cho đường tròn $(O; R)$ đường kính $AB$, điểm $M$ thuộc $(O)$ ($MA < MB$). Kẻ $MK \\perp AB$ tại $K$, tia $MK$ cắt $(O)$ tại $N$. Tiếp tuyến tại $B$ và tiếp tuyến tại $M$ của $(O)$ cắt nhau ở $P$; đường thẳng $PM$ cắt đường thẳng $AB$ tại $E$.[[br]]a) [NB] Vẽ hình theo đề bằng compa và thước.[[br]]b) [NB] Đánh dấu các góc vuông tại $B$, $M$, $K$ và hai đoạn bằng nhau $OM = ON$.",
      "figure_given": false,
-     "hints": [
-      "Đoạn dây $AB$ là gì của đường tròn? Nó tạo với bán kính $OB$ góc bao nhiêu độ?"
-     ],
-     "answer": "$AB$ là tiếp tuyến tại $B$ $\\Rightarrow AB \\perp OB$ tại $B$.[[br]]Xét $\\triangle ABO$ vuông tại $B$, theo định lí Pythagore:[[br]]$OA^2 = OB^2 + AB^2 = 9^2 + 12^2 = 225 \\Rightarrow OA = 15$ (cm).[[br]]Vậy $OA = 15$ cm."
+     "draw": true,
+     "answer": "Lấy $M$ gần $A$; $MK \\perp AB$ kéo dài cắt $(O)$ tại $N$; hai tiếp tuyến tại $B$, $M$ cắt nhau ở $P$; $PM$ kéo dài cắt tia $BA$ tại $E$ (ngoài đoạn $AB$, phía $A$).[[br]]Góc vuông: $\\widehat{OBP}$, $\\widehat{OMP}$, $\\widehat{MKA}$; $OM = ON = R$."
     },
     {
      "type": "problem",
-     "label": "BTVN 13.",
+     "label": "BTVN~6.",
      "level": 3,
      "tier": "btvn",
      "dang_id": "VD1",
-     "statement": "[VD] Cho đường tròn $(O; 6\\text{ cm})$ và điểm $A$ với $OA = 10$ cm. Trên $(O)$ lấy hai điểm $B$, $C$ sao cho $AB = AC = 8$ cm.[[br]]a) Chứng minh $AB$, $AC$ là tiếp tuyến của $(O)$.[[br]]b) Chứng minh bốn điểm $A$, $B$, $O$, $C$ cùng thuộc một đường tròn.",
+     "statement": "[VD] Với giả thiết của BTVN 5 (dùng hình đã vẽ ở BTVN 5):[[br]]a) Chứng minh bốn điểm $B$, $M$, $P$, $O$ cùng thuộc một đường tròn.[[br]]b) Chứng minh $NE$ là tiếp tuyến của $(O)$.",
      "figure_given": false,
-     "solution": "a) Xét $\\triangle ABO$ có $OB^2 + AB^2 = 6^2 + 8^2 = 100 = 10^2 = OA^2$.[[br]]$\\Rightarrow \\triangle ABO$ vuông tại $B$ (định lí Pythagore đảo) $\\Rightarrow AB \\perp OB$ tại $B \\in (O)$.[[br]]$\\Rightarrow AB$ là tiếp tuyến của $(O)$ (Định lí 1).[[br]]Chứng minh tương tự, $AC$ là tiếp tuyến của $(O)$.[[br]]b) Gọi $I$ là trung điểm $AO$.[[br]]Xét $\\triangle ABO$ vuông tại $B$, trung tuyến $BI$ $\\Rightarrow BI = \\dfrac{AO}{2} = IA = IO$.[[br]]Xét $\\triangle ACO$ vuông tại $C$, trung tuyến $CI$ $\\Rightarrow CI = \\dfrac{AO}{2}$.[[br]]Vậy $A$, $B$, $O$, $C$ cùng thuộc đường tròn $(I; 5\\text{ cm})$."
+     "quy_trinh": [
+      "Ý a: hai góc vuông tại $B$, $M$ có chung cạnh huyền $OP$",
+      "Ý b: $\\triangle OMN$ cân, đường cao $OK$ đồng thời là phân giác $\\Rightarrow \\widehat{MOE} = \\widehat{NOE}$",
+      "$\\triangle OME = \\triangle ONE$ (c.g.c) $\\Rightarrow \\widehat{ONE} = 90^\\circ$, kết luận tiếp tuyến"
+     ],
+     "solution": "a) $PB$, $PM$ là tiếp tuyến $\\Rightarrow \\widehat{OBP} = \\widehat{OMP} = 90^\\circ$.[[br]]Gọi $Q$ là trung điểm $OP$.[[br]]Xét $\\triangle OBP$ vuông tại $B$, trung tuyến $BQ$ $\\Rightarrow BQ = \\dfrac{OP}{2} = QO = QP$.[[br]]Xét $\\triangle OMP$ vuông tại $M$, trung tuyến $MQ$ $\\Rightarrow MQ = \\dfrac{OP}{2}$.[[br]]Vậy $B$, $M$, $P$, $O$ cùng thuộc đường tròn tâm $Q$, bán kính $\\dfrac{OP}{2}$.[[br]]b) $OM = ON = R$ $\\Rightarrow \\triangle OMN$ cân tại $O$.[[br]]$OK \\perp MN$ $\\Rightarrow$ đường cao $OK$ đồng thời là đường phân giác $\\Rightarrow \\widehat{MOE} = \\widehat{NOE}$.[[br]]Xét $\\triangle OME$ và $\\triangle ONE$ có: $OM = ON$, $\\widehat{MOE} = \\widehat{NOE}$, $OE$ chung.[[br]]$\\Rightarrow \\triangle OME = \\triangle ONE$ (c.g.c) $\\Rightarrow \\widehat{ONE} = \\widehat{OME} = 90^\\circ$ ($PM$ là tiếp tuyến tại $M$).[[br]]$\\Rightarrow NE \\perp ON$ tại $N$, mà $N \\in (O)$.[[br]]Vậy $NE$ là tiếp tuyến của $(O)$ tại $N$."
     }
    ]
   }

@@ -128,6 +128,10 @@ class ThuyetMinhSpec(BaseModel):
     dang_vd: list[str] = Field(default_factory=list, description="Các dạng VẬN DỤNG trong đề")
     loisai: list[str] = Field(default_factory=list, description="Lỗi sai thường gặp")
     kienthuc_nb: list[str] = Field(default_factory=list, description="Kiến thức NHẬN BIẾT cần nhớ")
+    # Thầy chốt 01/10 (9B) và 07/10/2026 (8B): chương VII KHÔNG kiểm tra riêng mà gộp bài 45′ với
+    # chương sau. Khai slug chương có bài kiểm tra gộp thì `check_kiem_tra_chuong` không đòi
+    # `kiem_tra_phut` ở phiếu cuối chương này (khối thời lượng vẫn phải ghi rõ kiểm tra chương).
+    kiem_tra_gop: str = Field("", description="Slug chương có bài kiểm tra 45′ gộp với chương này")
     phieu: list[SpecPhieu] = Field(default_factory=list)
 
 

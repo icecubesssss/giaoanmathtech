@@ -3,6 +3,7 @@
 ((* macro render_block(b) *))
 ((* if b.type == "para" *))
 ((* if b.variant == "heading" *)){\bfseries\color{brand}((( b.text | tex )))}
+((* elif b.variant == "part" *)){\large\bfseries\color{brand}((( b.text | tex )))}
 ((* else *))((( b.text | tex )))
 ((* endif *))
 \par\medskip

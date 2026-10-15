@@ -97,3 +97,14 @@ def test_bo_de_on_gk1_lop9_sach_cong():
     for f in files:
         les = LessonPackage.model_validate(json.load(open(f, encoding="utf-8")))
         assert check_loi_giai_thi(les) == [], f
+
+
+def test_bo_de_on_gk1_lop8_sach_cong():
+    """Bộ 3 đề ôn + đề GK1 lớp 8 (scripts/de_on_tap_gk1_lop8.py) phải qua cổng lời giải đi thi."""
+    import glob
+    import json
+    files = glob.glob("inputs/seeds/lop-8/de-on-tap-giua-ki-1/*.json")
+    assert len(files) == 8
+    for f in files:
+        les = LessonPackage.model_validate(json.load(open(f, encoding="utf-8")))
+        assert check_loi_giai_thi(les) == [], f

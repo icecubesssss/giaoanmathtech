@@ -1,0 +1,363 @@
+{
+ "_nguon": "Tiến độ trung tâm lớp 8 (T8. Tiến độ kiến thức. Nội bộ.pdf, trang Hình): tuần 40 Hình chóp tam giác đều; tuần 41 Hình chóp tứ giác đều; tuần 42 Luyện tập hình không gian (90 phút mỗi tuần). Nguồn bài: 'SGK x.y' = SGK Toán 8 KNTT tập hai tr.112-124 (Bài 38, Bài 39, Luyện tập chung, Bài tập cuối chương X; đọc ảnh scan); đề CK1/GK1/CK2 Hà Nội ở storage/cache/de-txt/lop-8 (nhiều trường Hà Nội ĐẢO chương X lên giữa kì I).",
+ "_luat": "Soạn theo HUONG-DAN-SOAN-PHIEU-B.md. Bản đồ VD-VDC: chương X lớp 8 co_vd = false (chi-TH) => 30 NB / 70 TH, gộp hai ca thành một phiếu (so_ca = 2); ca 3 lẻ => phiếu 2 một ca có kiểm tra 45 phút. Rate hình lớp 8 nhân đôi; câu in sẵn hình (hinh_san): TH nửa rate; câu tự vẽ hình +5′. Định lí Pythagore học ở tuần 30 nên được dùng; mặt đáy tam giác đều cần căn bậc hai => cho sẵn giá trị gần đúng như SGK.",
+ "_so_cau": "Quỹ hình lớp 8 mỗi ca: ví dụ 20′, trên lớp 60′, BTVN 35′. Phiếu 1 (2 ca): ví dụ 40′, trên lớp 120′, BTVN 70′. Phiếu 2 (ca 3) có 45 phút kiểm tra => hệ số 0,5: ví dụ 10′, trên lớp 30′.",
+ "slug": "thuyet-minh-lop-8b-chuong-10-hinh-khoi",
+ "title": "Chương X (SGK KNTT): Một số hình khối trong thực tiễn — kế hoạch 3 ca, 2 phiếu",
+ "grade": "lop-8",
+ "subject": "hinh-hoc",
+ "tier": "B",
+ "tuan": "40-42",
+ "chuong": "chuong-10-hinh-khoi",
+ "thoiluong": [
+  "Ca 1 (Tuần 40) — SGK Bài 38: Hình chóp tam giác đều: 1 ca $=$ 90 phút.",
+  "Ca 2 (Tuần 41) — SGK Bài 39: Hình chóp tứ giác đều: 1 ca $=$ 90 phút.",
+  "Ca 3 (Tuần 42) — Luyện tập chung $+$ Bài tập cuối chương X: 1 ca $=$ 90 phút $=$ 45 phút luyện tập $+$ 45 phút kiểm tra chương.",
+  "\\textbf{Tổng 3 ca $=$ 270 phút $=$ 6 tiết} (1 ca 90 phút $=$ 2 tiết), trong đó 45 phút là bài kiểm tra chương X.",
+  "Ba ca dùng HAI phiếu: phiếu 1 (ca 1 $+$ 2) gộp hai ca (\\texttt{so\\_ca} $=2$) theo luật gộp phiếu của chương không có bài vận dụng; phiếu 2 cho ca 3.",
+  "Hai bài 38, 39 dạy chung một phiếu vì cùng một khuôn: gọi tên yếu tố $\\to$ $S_{xq} = p\\cdot d$ $\\to$ $V = \\dfrac{1}{3}S\\cdot h$; chỉ khác hình dạng đáy.",
+  "Theo luật kiểm tra chương 45 phút (Thầy chốt 26/09/2026): phiếu 2 khai \\texttt{kiem\\_tra\\_phut} $=45$, quỹ ví dụ và trên lớp nhân $\\dfrac{90-45}{90}=0{,}5$."
+ ],
+ "kien_thuc_nen": [
+  "\\textbf{Hình lăng trụ đứng, hình hộp chữ nhật, hình lập phương} (Lớp 7): công thức thể tích $V = S_{\\text{đáy}}\\cdot h$ $-$ để so sánh với hình chóp ($\\dfrac{1}{3}$).",
+  "\\textbf{Tam giác đều, tam giác cân, hình vuông} (Lớp 6, 7): đường cao tam giác cân cũng là trung tuyến; chu vi, diện tích.",
+  "\\textbf{Định lí Pythagore} (Lớp 8, chương IX, tuần 30): tính trung đoạn, chiều cao của mặt đáy.",
+  "\\textbf{Đổi đơn vị} diện tích ($\\mathrm{m}^2$, $\\mathrm{cm}^2$) và thể tích ($\\mathrm{m}^3$, lít, $\\mathrm{dm}^3$)."
+ ],
+ "lythuyet": [
+  "\\textbf{Mục tiêu của chương}: làm được các câu hình chóp của đề cuối kì II (và giữa kì I ở những trường đảo chương) lớp 8 Hà Nội: trắc nghiệm $0{,}25 - 0{,}5$ điểm (gọi tên yếu tố, công thức) và câu thực tế $0{,}5 - 1{,}0$ điểm (thể tích, diện tích xung quanh, tính tiền).",
+  "Bản đồ VD-VDC ghi chương X \\emph{chỉ thông hiểu}: phiếu soạn 30 NB $/$ 70 TH, không có bài vận dụng.",
+  "\\textbf{Hình chóp tam giác đều}: đáy là tam giác đều, các mặt bên là tam giác cân bằng nhau có chung đỉnh; chân đường cao là trọng tâm (giao ba đường trung tuyến) của đáy.",
+  "\\textbf{Hình chóp tứ giác đều}: đáy là hình vuông, các mặt bên là tam giác cân bằng nhau có chung đỉnh; chân đường cao là giao hai đường chéo của đáy.",
+  "\\textbf{Trung đoạn}: đường cao của mặt bên kẻ từ đỉnh. \\textbf{Diện tích xung quanh} $S_{xq} = p\\cdot d$ ($p$ nửa chu vi đáy, $d$ trung đoạn). \\textbf{Thể tích} $V = \\dfrac{1}{3}S\\cdot h$."
+ ],
+ "vidu": [
+  "Ca 1: diện tích xung quanh hình chóp tam giác đều cạnh đáy $5$ cm, trung đoạn $6$ cm (SGK Bài 38 Ví dụ 1); thể tích khi cạnh đáy $6$ cm, chiều cao $10$ cm, cho $\\sqrt{27}\\approx 5{,}2$ (SGK Bài 38 Ví dụ 2).",
+  "Ca 2, \\textbf{ví dụ trục}: SGK Bài 39 Ví dụ 2 (cạnh đáy $6$, chiều cao $4$, trung đoạn $5$: $S_{xq} = 60$, $V = 48$) viết như khi đi thi; bài thực tế bác Khôi sơn hộp gỗ (tính tiền).",
+  "Ca 3: kim tự tháp Louvre (đề cuối kì I THCS Lý Sơn 2025-2026): thể tích và số viên gạch lát sàn."
+ ],
+ "dang_vd": [
+  "\\textbf{Chương X KHÔNG soạn dạng vận dụng} (\\texttt{co\\_vd} $=$ false): rà 20 đề có câu hình chóp, câu khó nhất là bài thực tế hai bước (tính diện tích rồi tính tiền, hoặc dùng định lí Pythagore tính chiều cao).",
+  "Dạng gần vận dụng nhất là \\emph{Pythagore $+$ hình chóp} (SGK Luyện tập chung Ví dụ 2, 10.24) $-$ xếp dòng TH tách VD, cho sẵn căn gần đúng."
+ ],
+ "loisai": [
+  "\\textbf{Nhầm trung đoạn với chiều cao}: dùng chiều cao $h$ trong $S_{xq}$ hoặc trung đoạn $d$ trong $V$.",
+  "\\textbf{Dùng cả chu vi thay cho nửa chu vi} trong $S_{xq} = p\\cdot d$; hoặc quên $\\dfrac{1}{3}$ trong công thức thể tích.",
+  "\\textbf{Nhầm diện tích đáy với cạnh đáy}: $V = \\dfrac{1}{3}\\cdot 6\\cdot 4$ thay vì $\\dfrac{1}{3}\\cdot 6^2\\cdot 4$.",
+  "\\textbf{Sai đơn vị}: diện tích ghi $\\mathrm{cm}^3$, thể tích ghi $\\mathrm{cm}^2$; đổi $\\mathrm{m}^3$ ra lít sai.",
+  "\\textbf{Bài lều, hộp có đáy}: quên cộng diện tích đáy khi đề hỏi \\emph{bốn phía và mặt đất}."
+ ],
+ "kienthuc_nb": [
+  "Hình chóp tam giác đều: đáy tam giác đều, mặt bên tam giác cân.",
+  "Hình chóp tứ giác đều: đáy hình vuông, mặt bên tam giác cân.",
+  "Trung đoạn là đường cao của mặt bên kẻ từ đỉnh.",
+  "$S_{xq} = p\\cdot d$ (nửa chu vi đáy nhân trung đoạn).",
+  "$V = \\dfrac{1}{3}S\\cdot h$ (một phần ba diện tích đáy nhân chiều cao)."
+ ],
+ "phieu": [
+  {
+   "code": "1",
+   "so_ca": 2,
+   "title": "Ca 1 $-$ 2 (Tuần 40 $-$ 41) — Bài 38: Hình chóp tam giác đều $+$ Bài 39: Hình chóp tứ giác đều",
+   "rows": [
+    {
+     "dang": "Gọi tên đỉnh, cạnh bên, mặt bên, mặt đáy, đường cao, trung đoạn của hình chóp tam giác đều, hình chóp tứ giác đều; nhận biết đặc điểm đáy và mặt bên (trắc nghiệm)",
+     "band": "NB",
+     "loai": "NB lẻ LT",
+     "lythuyet": 1,
+     "vidu": 1,
+     "onclass": 3,
+     "btvn": 3,
+     "source_refs": [
+      "SGK 10{.}1",
+      "SGK 10{.}5",
+      "SGK Bài 39 Ví dụ 1",
+      "CK2 Tam Hưng (25-26) C7",
+      "GK1 Thanh Quan (24-25) C6, C7",
+      "GK1 Ái Mộ (25-26) C6, C7",
+      "GK1 Thạch Bàn (24-25) C1"
+     ],
+     "decompose": "none"
+    },
+    {
+     "dang": "Nhận biết miếng bìa gấp được hình chóp tam giác đều, hình chóp tứ giác đều",
+     "band": "NB",
+     "loai": "NB lẻ LT",
+     "lythuyet": 0,
+     "vidu": 0,
+     "onclass": 1,
+     "btvn": 1,
+     "source_refs": [
+      "SGK 10{.}6",
+      "SGK 10{.}12"
+     ],
+     "decompose": "none"
+    },
+    {
+     "dang": "Tính diện tích xung quanh $S_{xq} = p\\cdot d$ khi biết cạnh đáy và trung đoạn",
+     "band": "NB",
+     "loai": "NB tách TH",
+     "lythuyet": 1,
+     "vidu": 1,
+     "onclass": 3,
+     "btvn": 3,
+     "source_refs": [
+      "SGK Bài 38 Ví dụ 1",
+      "SGK Luyện tập chung Ví dụ 1",
+      "SGK 10{.}8a",
+      "CK1 Đức Giang (25-26) C3",
+      "GK1 Trung Vương (25-26) C4"
+     ],
+     "decompose": "none"
+    },
+    {
+     "dang": "Tính thể tích $V = \\dfrac{1}{3}S\\cdot h$ khi biết diện tích đáy (hoặc cạnh đáy hình vuông) và chiều cao",
+     "band": "NB",
+     "loai": "NB tách TH",
+     "lythuyet": 1,
+     "vidu": 1,
+     "onclass": 3,
+     "btvn": 3,
+     "source_refs": [
+      "SGK Bài 39 Ví dụ 2",
+      "SGK 10{.}9",
+      "SGK 10{.}11",
+      "CK1 Ngô Gia Tự (25-26) B4",
+      "CK1 Việt Hưng (25-26) 4.1",
+      "CK2 Tam Hưng (25-26) C8"
+     ],
+     "decompose": "none"
+    },
+    {
+     "dang": "Điền khuyết lời giải mẫu: nửa chu vi đáy $\\to$ diện tích xung quanh; diện tích đáy $\\to$ thể tích",
+     "band": "NB",
+     "loai": "NB ghép bài",
+     "lythuyet": 0,
+     "vidu": 0,
+     "onclass": 2,
+     "btvn": 2,
+     "source_refs": [
+      "SGK Bài 39 Ví dụ 2",
+      "SGK 10{.}8"
+     ],
+     "decompose": "none",
+     "gian_giao": "dien-khuyet"
+    },
+    {
+     "dang": "Vẽ hình chóp tứ giác đều $S.ABCD$: đáy hình vuông vẽ thành hình bình hành, nét khuất vẽ nét đứt, đường cao $SO$, trung đoạn $SH$",
+     "band": "NB",
+     "loai": "NB tách TH",
+     "lythuyet": 0,
+     "vidu": 0,
+     "onclass": 1,
+     "btvn": 1,
+     "source_refs": [
+      "SGK Hình 10{.}18",
+      "SGK 10{.}19"
+     ],
+     "decompose": "none",
+     "ve_hinh": {
+      "onclass": 1,
+      "btvn": 1
+     },
+     "gian_giao": "ve-hinh"
+    },
+    {
+     "dang": "Bài toán thực tế về diện tích xung quanh: sơn, bọc giấy, lợp kính, tính chi phí",
+     "band": "TH",
+     "loai": "TH ghép bài",
+     "lythuyet": 0,
+     "vidu": 2,
+     "onclass": 4,
+     "btvn": 2,
+     "source_refs": [
+      "SGK Bài 39 Luyện tập 1",
+      "SGK 10{.}4",
+      "CK2 Chúc Sơn (25-26) 4.1",
+      "CK1 Chương Mỹ (24-25) 2",
+      "CK2 Tam Hưng (25-26) II.2",
+      "GK1 Ban Mai (24-25) bánh ít"
+     ],
+     "decompose": "th2nb",
+     "hinh_san": true
+    },
+    {
+     "dang": "Bài toán thực tế về thể tích: lều, hộp quà, phễu, kim tự tháp",
+     "band": "TH",
+     "loai": "TH ghép bài",
+     "lythuyet": 0,
+     "vidu": 1,
+     "onclass": 4,
+     "btvn": 2,
+     "source_refs": [
+      "SGK Bài 39 Luyện tập 2a",
+      "SGK 10{.}14a",
+      "GK1 Ngọc Thụy (25-26) 4.2a",
+      "GK1 Nghĩa Tân (25-26) 2a",
+      "GK1 Thạch Bàn (24-25) B4",
+      "CK2 Nghĩa Tân (24-25) IV.1"
+     ],
+     "decompose": "th2nb",
+     "hinh_san": true
+    },
+    {
+     "dang": "Dùng định lí Pythagore tính trung đoạn hoặc chiều cao của mặt đáy rồi tính diện tích xung quanh, thể tích",
+     "band": "TH",
+     "loai": "TH tách VD",
+     "lythuyet": 0,
+     "vidu": 1,
+     "onclass": 4,
+     "btvn": 2,
+     "source_refs": [
+      "SGK Bài 38 Luyện tập",
+      "SGK Bài 38 Ví dụ 2",
+      "SGK 10{.}3",
+      "SGK Luyện tập chung Ví dụ 2",
+      "CK1 Đức Giang (25-26) bê tông"
+     ],
+     "decompose": "th2nb",
+     "hinh_san": true
+    },
+    {
+     "dang": "Tính ngược: biết thể tích (diện tích xung quanh) và chiều cao (trung đoạn), tìm diện tích đáy, cạnh đáy",
+     "band": "TH",
+     "loai": "TH ghép bài",
+     "lythuyet": 0,
+     "vidu": 1,
+     "onclass": 3,
+     "btvn": 1,
+     "source_refs": [
+      "SGK 10{.}18",
+      "SGK 10{.}21",
+      "GK1 Ngô Gia Tự (24-25) C6",
+      "GK1 Ngô Gia Tự (25-26) C6",
+      "GK1 Ái Mộ (25-26) C8"
+     ],
+     "decompose": "th2nb",
+     "hinh_san": true
+    },
+    {
+     "dang": "Khối ghép hình hộp $-$ hình chóp; phần gỗ cắt đi; diện tích toàn phần",
+     "band": "TH",
+     "loai": "TH ghép bài",
+     "lythuyet": 0,
+     "vidu": 1,
+     "onclass": 3,
+     "btvn": 2,
+     "source_refs": [
+      "SGK 10{.}10",
+      "SGK 10{.}22",
+      "SGK 10{.}23",
+      "SGK 10{.}8b",
+      "SGK Bài 39 Luyện tập 2b"
+     ],
+     "decompose": "th2nb",
+     "hinh_san": true
+    }
+   ]
+  },
+  {
+   "code": "2",
+   "so_ca": 1,
+   "kiem_tra_phut": 45,
+   "title": "Ca 3 (Tuần 42) — Luyện tập chung $+$ Bài tập cuối chương X $+$ Kiểm tra chương",
+   "rows": [
+    {
+     "dang": "Trắc nghiệm nhận biết yếu tố và công thức của hình chóp đều",
+     "band": "NB",
+     "loai": "NB lẻ LT",
+     "lythuyet": 0,
+     "vidu": 1,
+     "onclass": 2,
+     "btvn": 2,
+     "source_refs": [
+      "SGK 10{.}15",
+      "SGK 10{.}16",
+      "SGK 10{.}17",
+      "CK1 Thạch Thất (24-25) C9",
+      "GK1 Ban Mai (24-25) C3"
+     ],
+     "decompose": "none"
+    },
+    {
+     "dang": "Điền khuyết lời giải mẫu bài thực tế: diện tích xung quanh và thể tích của cùng một vật",
+     "band": "NB",
+     "loai": "NB ghép bài",
+     "lythuyet": 0,
+     "vidu": 0,
+     "onclass": 2,
+     "btvn": 1,
+     "source_refs": [
+      "SGK 10{.}13",
+      "SGK Bài 38 Ví dụ 2"
+     ],
+     "decompose": "none",
+     "gian_giao": "dien-khuyet"
+    },
+    {
+     "dang": "Vẽ hình chóp tam giác đều, đánh dấu đường cao và trung đoạn",
+     "band": "NB",
+     "loai": "NB tách TH",
+     "lythuyet": 0,
+     "vidu": 0,
+     "onclass": 0,
+     "btvn": 1,
+     "source_refs": [
+      "SGK 10{.}19"
+     ],
+     "decompose": "none",
+     "ve_hinh": {
+      "onclass": 0,
+      "btvn": 1
+     },
+     "gian_giao": "ve-hinh"
+    },
+    {
+     "dang": "Tự viết lại quy trình giải bài thực tế hình chóp (xác định hình, yếu tố đã biết, công thức, đơn vị) và giải thích khi nào dùng định lí Pythagore",
+     "band": "NB",
+     "loai": "NB lẻ LT",
+     "lythuyet": 0,
+     "vidu": 0,
+     "onclass": 0,
+     "btvn": 2,
+     "source_refs": [],
+     "decompose": "none",
+     "viet_quy_trinh": true
+    },
+    {
+     "dang": "Bài thực tế tổng hợp kiểu đề cuối kì: cùng một vật tính cả thể tích, diện tích xung quanh, chi phí",
+     "band": "TH",
+     "loai": "TH ghép bài",
+     "lythuyet": 0,
+     "vidu": 1,
+     "onclass": 3,
+     "btvn": 3,
+     "source_refs": [
+      "CK1 Lý Sơn (25-26) kim tự tháp Louvre",
+      "GK1 Ngọc Thụy (25-26) 4.2",
+      "GK1 Thạch Bàn (24-25) B4",
+      "SGK 10{.}14"
+     ],
+     "decompose": "th2nb",
+     "hinh_san": true
+    },
+    {
+     "dang": "Kết hợp định lí Pythagore với hình chóp (tính chiều cao từ trung đoạn, tính trung đoạn từ cạnh bên)",
+     "band": "TH",
+     "loai": "TH tách VD",
+     "lythuyet": 0,
+     "vidu": 1,
+     "onclass": 2,
+     "btvn": 1,
+     "source_refs": [
+      "CK1 Đức Giang (25-26) bê tông",
+      "SGK 10{.}24",
+      "SGK 10{.}13"
+     ],
+     "decompose": "th2nb",
+     "hinh_san": true
+    }
+   ]
+  }
+ ]
+}

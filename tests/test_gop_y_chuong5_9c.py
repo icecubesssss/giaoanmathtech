@@ -51,6 +51,38 @@ def test_thoi_luong_khong_ghi_buoi_kiem_tra_thi_nhac():
     assert any("THỜI LƯỢNG" in m for m in w)
 
 
+def test_chuong_kiem_tra_gop_voi_chuong_sau_khong_bi_ep_phieu_cuoi():
+    """Chương VII 8B: Thầy chốt kiểm tra gộp VII+VIII ở chương VIII (07/10/2026)."""
+    tl = ["Buổi 1: 1 ca $=$ 90 phút", "Buổi 2: 1 ca $=$ 90 phút",
+          "Buổi 3: 1 ca $=$ 90 phút; kiểm tra chương gộp với chương VIII"]
+    sp = _spec_chuong(kt=0, thoiluong=tl)
+    sp.kiem_tra_gop = "chuong-08-xac-suat"
+    assert check_kiem_tra_chuong(sp) == []
+    sp.thoiluong = ["Buổi 1: 1 ca $=$ 90 phút"]
+    assert any("THỜI LƯỢNG" in m for m in check_kiem_tra_chuong(sp))
+
+
+def _spec_chi_th(so_ca):
+    """Chương IV lớp 8B (chi-TH ⇒ phải gộp 2 ca/phiếu) với danh sách so_ca từng phiếu."""
+    phieu = [{"code": str(i + 1), "title": f"Ca {i + 1}", "so_ca": c, "rows": [_row()]}
+             for i, c in enumerate(so_ca)]
+    return ThuyetMinhSpec.model_validate({
+        "slug": "thuyet-minh-thu", "title": "Chương IV. Thử", "grade": "lop-8", "subject": "hinh-hoc",
+        "tier": "B", "chuong": "chuong-04-dinh-li-thales", "phieu": phieu})
+
+
+def _loi_gop(sp):
+    errors, _ = check_thuyetminh(sp)
+    return [e for e in errors if "GỘP 2 PHIẾU" in e]
+
+
+def test_chuong_so_ca_le_cho_phieu_cuoi_mot_ca():
+    """08/10/2026: chương 5 ca gộp 2+2 thì ca thứ 5 (ôn tập + kiểm tra) đứng riêng một phiếu."""
+    assert _loi_gop(_spec_chi_th([2, 2, 1])) == []
+    assert _loi_gop(_spec_chi_th([1, 2, 2]))        # ca lẻ không phải phiếu cuối thì vẫn chặn
+    assert _loi_gop(_spec_chi_th([2, 2, 1, 1]))     # tổng chẵn mà còn phiếu 1 ca thì vẫn chặn
+
+
 def test_spec_theo_tuan_mot_hai_phieu_khong_bi_ep():
     assert check_kiem_tra_chuong(_spec_chuong(so_phieu=2, kt=0)) == []
 

@@ -133,6 +133,15 @@ def test_bat_ve_hinh_da_bat_draw_thi_qua_cong():
     assert check_hinh_thieu(_lesson([p])) == []
 
 
+def test_to_de_kiem_tra_khong_doi_draw():
+    """Tờ đề kiểm tra (theme de_thi): "Học sinh vẽ hình vào giấy kiểm tra" — HS vẽ vào
+    giấy thi, không cần khung trống trên đề → không báo."""
+    lesson = _lesson([_problem("Câu 7.", "Cho tam giác $ABC$ vuông tại $A$. (Học sinh vẽ hình vào giấy kiểm tra.)")])
+    assert len(check_hinh_thieu(lesson)) == 1
+    lesson.theme = "de_thi"
+    assert check_hinh_thieu(lesson) == []
+
+
 def test_da_co_hinh_san_thi_KHONG_doi_draw():
     """'Vẽ tia Ot là tia phân giác' trong bài ĐÃ CÓ HÌNH vẽ sẵn tia Ot → không phải
     việc của HS, không được báo nhầm."""

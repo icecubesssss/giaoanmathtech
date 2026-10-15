@@ -1,0 +1,771 @@
+{
+ "slug": "phieu-1-tuan18-19-dinh-li-thales-trong-tam-giac",
+ "title": "Định lí Thalès trong tam giác",
+ "eyebrow": "HÌNH HỌC 8 — PHIẾU 1 • 2 CA • CHƯƠNG IV — BÀI 15",
+ "grade_label": "Lớp 8 • Hình học",
+ "class_tier": "B",
+ "chuong": "chuong-04-dinh-li-thales",
+ "so_ca": 2,
+ "stages": [
+  {
+   "kind": "review",
+   "number": 1,
+   "title": "Khám phá",
+   "teacher_note": "Cho HS đọc tình huống 2 phút, hỏi: \\emph{không bơi qua sông thì đo $CD$ bằng cách nào?}[[br]]Gợi ý: hai bờ sông song song, nên $AC \\parallel BD$. Chưa giải ngay — để dành cho Bài 15 cuối phiếu khi HS đã có định lí Thalès.",
+   "blocks": [
+    {
+     "type": "opener",
+     "text": "Cây cầu $AB$ bắc qua một con sông rộng $300$ m. Để đo khoảng cách giữa hai điểm $C$ và $D$ trên hai bờ sông, người ta chọn điểm $E$ trên đường thẳng $AB$ sao cho ba điểm $E$, $C$, $D$ thẳng hàng và đo được $AE = 400$ m, $EC = 500$ m (hai bờ sông song song).[[br]]Theo em, người ta tính khoảng cách giữa $C$ và $D$ như thế nào?",
+     "tikz": "\\begin{tikzpicture}[line width=0.8pt, font=\\small, scale=0.9]\n\\draw[ink!50] (-0.6,1.5) -- (3.4,1.5); \\draw[ink!50] (-0.6,0) -- (3.4,0);\n\\draw[ink] (0.000,3.500) -- (0.000,1.500);\n\\draw[ink] (0.000,1.500) -- (0.000,0.000);\n\\draw[brand,line width=1.0pt] (0.000,3.500) -- (1.500,1.500);\n\\draw[brand,line width=1.0pt] (1.500,1.500) -- (2.625,0.000);\n\\draw[ink] (0.000,1.500) -- (1.500,1.500);\n\\draw[ink] (0.000,0.000) -- (2.625,0.000);\n\\node[font=\\footnotesize, fill=white, inner sep=0.6pt] at (-0.240,2.500) {$400$ m};\n\\node[font=\\footnotesize, fill=white, inner sep=0.6pt] at (-0.240,0.750) {$300$ m};\n\\node[font=\\footnotesize, fill=white, inner sep=0.6pt] at (0.942,2.644) {$500$ m};\n\\fill[ink] (0.000,3.500) circle (1.2pt);\n\\fill[ink] (0.000,1.500) circle (1.2pt);\n\\fill[ink] (0.000,0.000) circle (1.2pt);\n\\fill[ink] (1.500,1.500) circle (1.2pt);\n\\fill[ink] (2.625,0.000) circle (1.2pt);\n\\node at (0.000,3.789) {$E$};\n\\node at (-0.204,1.704) {$A$};\n\\node at (-0.204,-0.204) {$B$};\n\\node at (1.644,1.750) {$C$};\n\\node at (2.769,-0.250) {$D$};\n\\end{tikzpicture}"
+    }
+   ]
+  },
+  {
+   "kind": "concept",
+   "number": 2,
+   "title": "Kiến thức cần nhớ",
+   "teacher_note": "Ca 1 dạy mục 1, 2; ca 2 dạy mục 3 rồi chốt bốn bước trình bày.[[br]]Bắt HS đọc to \\emph{“đoạn con trên đoạn con, hoặc đoạn con trên cả cạnh”} trước khi lập tỉ lệ thức.",
+   "blocks": [
+    {
+     "type": "para",
+     "variant": "heading",
+     "text": "1. Tỉ số của hai đoạn thẳng. Đoạn thẳng tỉ lệ"
+    },
+    {
+     "type": "deflist",
+     "items": [
+      {
+       "term": "Tỉ số:",
+       "desc": "tỉ số của hai đoạn thẳng là tỉ số độ dài của chúng theo \\textbf{cùng một đơn vị đo}."
+      },
+      {
+       "term": "Đoạn thẳng tỉ lệ:",
+       "desc": "$AB$ và $CD$ tỉ lệ với $A'B'$ và $C'D'$ nếu $\\dfrac{AB}{CD}=\\dfrac{A'B'}{C'D'}$."
+      }
+     ]
+    },
+    {
+     "type": "para",
+     "variant": "heading",
+     "text": "2. Định lí Thalès trong tam giác"
+    },
+    {
+     "type": "deflist",
+     "items": [
+      {
+       "term": "Định lí:",
+       "desc": "nếu một đường thẳng song song với một cạnh của tam giác và cắt hai cạnh còn lại thì nó định ra trên hai cạnh đó những đoạn thẳng tương ứng tỉ lệ."
+      },
+      {
+       "term": "Kí hiệu:",
+       "desc": "$\\triangle ABC$, $B'C' \\parallel BC$ ($B' \\in AB$, $C' \\in AC$) $\\Rightarrow \\dfrac{AB'}{AB}=\\dfrac{AC'}{AC}$; $\\dfrac{AB'}{B'B}=\\dfrac{AC'}{C'C}$; $\\dfrac{B'B}{AB}=\\dfrac{C'C}{AC}$."
+      }
+     ]
+    },
+    {
+     "type": "figure",
+     "tikz": "\\begin{tikzpicture}[line width=0.8pt, font=\\small, scale=1.0]\n\\draw[ink] (1.300,2.700) -- (0.000,0.000) -- (3.800,0.000) -- cycle;\n\\draw[brand,line width=1.0pt] (0.754,1.566) -- (2.350,1.566);\n\\fill[ink] (1.300,2.700) circle (1.2pt);\n\\fill[ink] (0.000,0.000) circle (1.2pt);\n\\fill[ink] (3.800,0.000) circle (1.2pt);\n\\fill[ink] (0.754,1.566) circle (1.2pt);\n\\fill[ink] (2.350,1.566) circle (1.2pt);\n\\node at (1.255,2.956) {$A$};\n\\node at (-0.225,-0.130) {$B$};\n\\node at (4.036,-0.110) {$C$};\n\\node at (0.518,1.676) {$B'$};\n\\node at (2.534,1.750) {$C'$};\n\\end{tikzpicture}",
+     "caption": "Đường thẳng $B'C'$ song song với cạnh $BC$"
+    },
+    {
+     "type": "para",
+     "variant": "heading",
+     "text": "3. Định lí Thalès đảo"
+    },
+    {
+     "type": "deflist",
+     "items": [
+      {
+       "term": "Định lí đảo:",
+       "desc": "nếu một đường thẳng cắt hai cạnh của một tam giác và định ra trên hai cạnh này những đoạn thẳng tương ứng tỉ lệ thì đường thẳng đó song song với cạnh còn lại."
+      },
+      {
+       "term": "Bốn bước trình bày:",
+       "desc": "xét tam giác $\\to$ chỉ ra đường song song (căn cứ) $\\to$ viết tỉ lệ thức (định lí Thalès) $\\to$ thay số, giải tìm $x$, kết luận có đơn vị."
+      }
+     ]
+    },
+    {
+     "type": "noted",
+     "variant": "note",
+     "text": "\\textbf{Đề thi hỏi gì ở phần này.} Trắc nghiệm $0{,}25$ điểm: chọn tỉ lệ thức đúng, tính một độ dài.[[br]]Tự luận $0{,}5 - 1{,}0$ điểm: tính độ dài bằng định lí Thalès, bài thực tế đo khoảng cách qua sông, ao."
+    },
+    {
+     "type": "noted",
+     "variant": "trap",
+     "text": "Viết $\\dfrac{AM}{MB}=\\dfrac{AN}{AC}$ — sai: một vế là đoạn con trên đoạn con, vế kia là đoạn con trên cả cạnh.[[br]]Viết $\\dfrac{AM}{AB}=\\dfrac{MN}{BC}$ — chương này CHƯA có tỉ số đó, chỉ lập tỉ số trên hai cạnh bị cắt.[[br]]Chưa chỉ ra $MN \\parallel BC$ đã viết tỉ lệ thức — mất điểm căn cứ."
+    }
+   ]
+  },
+  {
+   "kind": "practice1",
+   "number": 3,
+   "title": "Ca 1 — Định lí Thalès và định lí đảo",
+   "teacher_note": "Mỗi ví dụ: thầy trò cùng điền ô trống rồi HS làm ngay bài sau nó.[[br]]Bài nhận biết: bắt HS chỉ tay vào HAI cạnh bị cắt trước khi viết tỉ lệ thức.[[br]]Bài vẽ hình: HS tự đo $AC''$ và thấy bằng $6$ cm — dẫn vào định lí đảo.",
+   "blocks": [
+    {
+     "type": "noted",
+     "variant": "example",
+     "text": "\\textbf{Ví dụ 1.} Tìm tỉ số $\\dfrac{EF}{HK}$ của hai đoạn thẳng $EF = 25$ cm và $HK = 10$ dm.[[br]]{\\sffamily\\bfseries\\color{brand}Lời giải}[[br]]Đổi về cùng đơn vị: $HK = 10$ dm $=$ [[fill:100]] cm.[[br]]Tỉ số của hai đoạn thẳng là $\\dfrac{EF}{HK}=\\dfrac{25}{100}$.[[br]]Vậy $\\dfrac{EF}{HK}=\\dfrac{[[fill:1]]\\rule[-0.9ex]{0pt}{2.6ex}}{[[fill:4]]\\rule{0pt}{2.2ex}}$."
+    },
+    {
+     "type": "problem",
+     "label": "Bài 1.",
+     "statement": "Trả lời các câu hỏi sau.[[br]]a) [NB] Tìm tỉ số $\\dfrac{MN}{PQ}$ biết $MN = 3$ cm, $PQ = 9$ cm.[[br]]b) [NB] Cho $EF = 6$ cm, $GH = 3$ cm, $IK = 5$ cm, $MN = x$ cm. Tìm $x$ để hai đoạn thẳng $EF$ và $GH$ tỉ lệ với hai đoạn thẳng $IK$ và $MN$.[[br]]c) [NB] Điểm $M$ nằm trên đoạn thẳng $AB$ sao cho $\\dfrac{MA}{MB}=\\dfrac{1}{2}$. Tính các tỉ số $\\dfrac{AM}{AB}$ và $\\dfrac{MB}{AB}$.",
+     "level": 1,
+     "tier": "onclass",
+     "dang_id": "NB1",
+     "solution": "a) $\\dfrac{MN}{PQ}=\\dfrac{3}{9}=\\dfrac{1}{3}$.[[br]]b) Ta có $\\dfrac{EF}{GH}=\\dfrac{IK}{MN}$ hay $\\dfrac{6}{3}=\\dfrac{5}{x}$ nên $x=\\dfrac{3\\cdot 5}{6}=2{,}5$.[[br]]c) Ta có $MA = k$, $MB = 2k$ thì $AB = 3k$ nên $\\dfrac{AM}{AB}=\\dfrac{1}{3}$, $\\dfrac{MB}{AB}=\\dfrac{2}{3}$."
+    },
+    {
+     "type": "problem",
+     "label": "Bài 2.",
+     "statement": "Trên Hình 1, $MN \\parallel BC$ ($M \\in AB$, $N \\in AC$). Điền vào chỗ chấm để được các tỉ lệ thức đúng theo định lí Thalès.[[br]]a) [NB] $\\dfrac{AM}{AB}=\\dfrac{\\ldots}{AC}$.[[br]]b) [NB] $\\dfrac{AM}{MB}=\\dfrac{AN}{\\ldots}$.[[br]]c) [NB] $\\dfrac{MB}{AB}=\\dfrac{\\ldots}{AC}$.",
+     "level": 1,
+     "tier": "onclass",
+     "dang_id": "NB2",
+     "solution": "a) $AN$.[[br]]b) $NC$.[[br]]c) $NC$.",
+     "figure": {
+      "tikz": "\\begin{tikzpicture}[line width=0.8pt, font=\\small, scale=1.0]\n\\draw[ink] (1.300,2.700) -- (0.000,0.000) -- (3.800,0.000) -- cycle;\n\\draw[brand,line width=1.0pt] (0.780,1.620) -- (2.300,1.620);\n\\fill[ink] (1.300,2.700) circle (1.2pt);\n\\fill[ink] (0.000,0.000) circle (1.2pt);\n\\fill[ink] (3.800,0.000) circle (1.2pt);\n\\fill[ink] (0.780,1.620) circle (1.2pt);\n\\fill[ink] (2.300,1.620) circle (1.2pt);\n\\node at (1.255,2.956) {$A$};\n\\node at (-0.225,-0.130) {$B$};\n\\node at (4.036,-0.110) {$C$};\n\\node at (0.544,1.730) {$M$};\n\\node at (2.484,1.804) {$N$};\n\\end{tikzpicture}",
+      "caption": "Hình 1",
+      "pos": "right"
+     }
+    },
+    {
+     "type": "noted",
+     "variant": "example",
+     "text": "\\textbf{Ví dụ 2.} (SGK Ví dụ 1) Tính độ dài $x$ trên Hình 2, biết $MN \\parallel EF$, $DM = 2$, $ME = 4$, $NF = 5$.[[br]]{\\sffamily\\bfseries\\color{brand}Lời giải}[[br]]Xét $\\triangle DEF$ có $MN \\parallel EF$ ($M \\in DE$, $N \\in DF$).[[br]]Theo định lí Thalès: $\\dfrac{DM}{ME}=\\dfrac{DN}{[[fill:NF]]}$ hay $\\dfrac{2}{4}=\\dfrac{x}{5}$.[[br]]$\\Rightarrow x=\\dfrac{2\\cdot 5}{4}$.[[br]]Vậy $x=$ [[fill:2{,}5]].",
+     "figure": {
+      "tikz": "\\begin{tikzpicture}[line width=0.8pt, font=\\small, scale=1.0]\n\\draw[ink] (1.200,2.800) -- (0.000,0.000) -- (3.900,0.000) -- cycle;\n\\draw[brand,line width=1.0pt] (0.800,1.867) -- (2.100,1.867);\n\\node[font=\\footnotesize, fill=white, inner sep=0.6pt] at (0.779,2.428) {$2$};\n\\node[font=\\footnotesize, fill=white, inner sep=0.6pt] at (0.179,1.028) {$4$};\n\\node[font=\\footnotesize, fill=white, inner sep=0.6pt] at (1.823,2.500) {$x$};\n\\node[font=\\footnotesize, fill=white, inner sep=0.6pt] at (3.173,1.100) {$5$};\n\\fill[ink] (1.200,2.800) circle (1.2pt);\n\\fill[ink] (0.000,0.000) circle (1.2pt);\n\\fill[ink] (3.900,0.000) circle (1.2pt);\n\\fill[ink] (0.800,1.867) circle (1.2pt);\n\\fill[ink] (2.100,1.867) circle (1.2pt);\n\\node at (1.155,3.056) {$D$};\n\\node at (-0.213,-0.149) {$E$};\n\\node at (4.136,-0.110) {$F$};\n\\node at (0.564,1.977) {$M$};\n\\node at (2.284,2.051) {$N$};\n\\end{tikzpicture}",
+      "caption": "Hình 2",
+      "pos": "right"
+     }
+    },
+    {
+     "type": "problem",
+     "label": "Bài 3.",
+     "statement": "[NB] (Đề giữa kì II, THCS Đức Giang) Cho tam giác $ABC$, đường thẳng song song với $BC$ cắt $AB$, $AC$ lần lượt tại $M$ và $N$. Biết $AM = 2$ cm, $MB = 3$ cm, $AN = 1{,}5$ cm. Độ dài đoạn thẳng $NC$ là",
+     "level": 1,
+     "tier": "onclass",
+     "dang_id": "NB3",
+     "solution": "D. Ta có $\\dfrac{AM}{MB}=\\dfrac{AN}{NC}$ hay $\\dfrac{2}{3}=\\dfrac{1{,}5}{NC}$ nên $NC=\\dfrac{3\\cdot 1{,}5}{2}=2{,}25$ (cm).",
+     "options": [
+      "$2{,}5$ cm.",
+      "$5{,}2$ cm.",
+      "$4$ cm.",
+      "$2{,}25$ cm."
+     ]
+    },
+    {
+     "type": "problem",
+     "label": "Bài 4.",
+     "statement": "[NB] (SGK Luyện tập 3) Trên Hình 3, $MN \\parallel BC$. Tính độ dài $x$.",
+     "level": 1,
+     "tier": "onclass",
+     "dang_id": "NB3",
+     "solution": "Xét $\\triangle ABC$ có $MN \\parallel BC$ nên $\\dfrac{AM}{MB}=\\dfrac{AN}{NC}$ (định lí Thalès) hay $\\dfrac{6{,}5}{x}=\\dfrac{4}{2}$.[[br]]Vậy $x=\\dfrac{6{,}5\\cdot 2}{4}=3{,}25$.",
+     "figure": {
+      "tikz": "\\begin{tikzpicture}[line width=0.8pt, font=\\small, scale=1.0]\n\\draw[ink] (1.300,2.700) -- (0.000,0.000) -- (3.800,0.000) -- cycle;\n\\draw[brand,line width=1.0pt] (0.433,0.900) -- (2.967,0.900);\n\\node[font=\\footnotesize, fill=white, inner sep=0.6pt] at (0.650,1.904) {$6{,}5$};\n\\node[font=\\footnotesize, fill=white, inner sep=0.6pt] at (0.000,0.554) {$x$};\n\\node[font=\\footnotesize, fill=white, inner sep=0.6pt] at (2.309,1.963) {$4$};\n\\node[font=\\footnotesize, fill=white, inner sep=0.6pt] at (3.559,0.613) {$2$};\n\\fill[ink] (1.300,2.700) circle (1.2pt);\n\\fill[ink] (0.000,0.000) circle (1.2pt);\n\\fill[ink] (3.800,0.000) circle (1.2pt);\n\\fill[ink] (0.433,0.900) circle (1.2pt);\n\\fill[ink] (2.967,0.900) circle (1.2pt);\n\\node at (1.255,2.956) {$A$};\n\\node at (-0.225,-0.130) {$B$};\n\\node at (4.036,-0.110) {$C$};\n\\node at (0.198,1.010) {$M$};\n\\node at (3.151,1.084) {$N$};\n\\end{tikzpicture}",
+      "caption": "Hình 3",
+      "pos": "right"
+     }
+    },
+    {
+     "type": "problem",
+     "label": "Bài 5.",
+     "statement": "[NB] (SGK Luyện tập 3) Trên Hình 4, $EF \\perp PH$ và $HQ \\perp PH$. Tính độ dài $y = PH$.",
+     "level": 1,
+     "tier": "onclass",
+     "dang_id": "NB3",
+     "solution": "Vì $EF \\perp PH$, $HQ \\perp PH$ nên $EF \\parallel HQ$.[[br]]Xét $\\triangle PHQ$ có $EF \\parallel HQ$ nên $\\dfrac{PE}{PH}=\\dfrac{PF}{PQ}$ (định lí Thalès) hay $\\dfrac{4}{y}=\\dfrac{5}{8{,}5}$.[[br]]Vậy $y=\\dfrac{4\\cdot 8{,}5}{5}=6{,}8$.",
+     "figure": {
+      "tikz": "\\begin{tikzpicture}[line width=0.8pt, font=\\small, scale=1.0]\n\\draw[ink] (0.000,3.400) -- (0.000,0.000) -- (2.600,0.000) -- cycle;\n\\draw[brand,line width=1.0pt] (0.000,1.400) -- (1.529,1.400);\n\\draw[ink] (0.000,1.560) -- (0.160,1.560) -- (0.160,1.400);\n\\draw[ink] (0.000,0.160) -- (0.160,0.160) -- (0.160,0.000);\n\\node[font=\\footnotesize, fill=white, inner sep=0.6pt] at (0.240,2.400) {$4$};\n\\node[font=\\footnotesize, fill=white, inner sep=0.6pt] at (0.955,2.546) {$5$};\n\\node[font=\\footnotesize, fill=white, inner sep=0.6pt] at (2.255,0.846) {$3{,}5$};\n\\fill[ink] (0.000,3.400) circle (1.2pt);\n\\fill[ink] (0.000,0.000) circle (1.2pt);\n\\fill[ink] (2.600,0.000) circle (1.2pt);\n\\fill[ink] (0.000,1.400) circle (1.2pt);\n\\fill[ink] (1.529,1.400) circle (1.2pt);\n\\node at (0.000,3.660) {$P$};\n\\node at (-0.184,-0.184) {$H$};\n\\node at (2.784,-0.184) {$Q$};\n\\node at (-0.260,1.400) {$E$};\n\\node at (1.755,1.530) {$F$};\n\\end{tikzpicture}",
+      "caption": "Hình 4",
+      "pos": "right"
+     }
+    },
+    {
+     "type": "noted",
+     "variant": "example",
+     "text": "\\textbf{Ví dụ 3.} (SGK Ví dụ 2) Quan sát Hình 5 với $DM = 2$, $ME = 4$, $DN = 2{,}5$, $NF = 5$. Chứng minh $MN \\parallel EF$.[[br]]{\\sffamily\\bfseries\\color{brand}Lời giải}[[br]]Trong $\\triangle DEF$ ta có $\\dfrac{DM}{ME}=\\dfrac{2}{4}=\\dfrac{[[fill:1]]\\rule[-0.9ex]{0pt}{2.6ex}}{[[fill:2]]\\rule{0pt}{2.2ex}}$ và $\\dfrac{DN}{NF}=\\dfrac{2{,}5}{5}=\\dfrac{1}{2}$.[[br]]Do $\\dfrac{DM}{ME}=\\dfrac{DN}{NF}$ nên theo định lí Thalès [[fill:đảo]] ta có kết luận.[[br]]Vậy $MN$ [[fill:\\parallel]] $EF$.",
+     "figure": {
+      "tikz": "\\begin{tikzpicture}[line width=0.8pt, font=\\small, scale=1.0]\n\\draw[ink] (1.200,2.800) -- (0.000,0.000) -- (3.900,0.000) -- cycle;\n\\draw[brand,line width=1.0pt] (0.800,1.867) -- (2.100,1.867);\n\\node[font=\\footnotesize, fill=white, inner sep=0.6pt] at (0.779,2.428) {$2$};\n\\node[font=\\footnotesize, fill=white, inner sep=0.6pt] at (0.179,1.028) {$4$};\n\\node[font=\\footnotesize, fill=white, inner sep=0.6pt] at (1.823,2.500) {$2{,}5$};\n\\node[font=\\footnotesize, fill=white, inner sep=0.6pt] at (3.173,1.100) {$5$};\n\\fill[ink] (1.200,2.800) circle (1.2pt);\n\\fill[ink] (0.000,0.000) circle (1.2pt);\n\\fill[ink] (3.900,0.000) circle (1.2pt);\n\\fill[ink] (0.800,1.867) circle (1.2pt);\n\\fill[ink] (2.100,1.867) circle (1.2pt);\n\\node at (1.155,3.056) {$D$};\n\\node at (-0.213,-0.149) {$E$};\n\\node at (4.136,-0.110) {$F$};\n\\node at (0.564,1.977) {$M$};\n\\node at (2.284,2.051) {$N$};\n\\end{tikzpicture}",
+      "caption": "Hình 5",
+      "pos": "right"
+     }
+    },
+    {
+     "type": "problem",
+     "label": "Bài 6.",
+     "statement": "(SGK 4{.}2) Quan sát Hình 6.[[br]]a) [NB] Ở hình a), $EF$ có song song với $NP$ không? Vì sao?[[br]]b) [NB] Ở hình b), tìm đường thẳng song song với $HK$ (kí hiệu các điểm $F'$, $M'$, $E'$ như trên hình) và giải thích.",
+     "level": 1,
+     "tier": "onclass",
+     "dang_id": "NB4",
+     "solution": "a) Ta có $\\dfrac{ME}{EN}=\\dfrac{2}{3}$, $\\dfrac{MF}{FP}=\\dfrac{3}{4{,}5}=\\dfrac{2}{3}$ nên $EF \\parallel NP$ (định lí Thalès đảo).[[br]]b) Ta có $\\dfrac{QM'}{M'H}=\\dfrac{10}{15}=\\dfrac{2}{3}$, $\\dfrac{QE'}{E'K}=\\dfrac{12}{18}=\\dfrac{2}{3}$ nên $M'E' \\parallel HK$ (định lí Thalès đảo).",
+     "figure": {
+      "tikz": "\\begin{tikzpicture}[line width=0.8pt, font=\\small, scale=1.0]\n\\draw[ink] (1.000,2.600) -- (0.000,0.200) -- (3.400,0.000) -- cycle;\n\\draw[brand,line width=1.0pt] (0.600,1.640) -- (1.960,1.560);\n\\draw[ink] (5.800,2.600) -- (4.600,0.000) -- (8.600,0.000) -- cycle;\n\\draw[brand,line width=1.0pt] (5.154,1.200) -- (7.480,1.040);\n\\draw[brand,line width=1.0pt] (7.480,1.040) -- (7.000,0.000);\n\\node[font=\\footnotesize, fill=white, inner sep=0.6pt] at (0.578,2.212) {$2$};\n\\node[font=\\footnotesize, fill=white, inner sep=0.6pt] at (0.078,1.012) {$3$};\n\\node[font=\\footnotesize, fill=white, inner sep=0.6pt] at (1.304,1.917) {$3$};\n\\node[font=\\footnotesize, fill=white, inner sep=0.6pt] at (2.504,0.617) {$4{,}5$};\n\\node[font=\\footnotesize, fill=white, inner sep=0.6pt] at (5.695,1.799) {$14$};\n\\node[font=\\footnotesize, fill=white, inner sep=0.6pt] at (5.095,0.499) {$12$};\n\\node[font=\\footnotesize, fill=white, inner sep=0.6pt] at (6.803,1.996) {$15$};\n\\node[font=\\footnotesize, fill=white, inner sep=0.6pt] at (8.203,0.696) {$10$};\n\\node[font=\\footnotesize, fill=white, inner sep=0.6pt] at (5.800,-0.240) {$18$};\n\\node[font=\\footnotesize, fill=white, inner sep=0.6pt] at (7.800,-0.240) {$12$};\n\\node[font=\\small] at (1.6,-0.6) {a)}; \\node[font=\\small] at (6.6,-0.75) {b)};\n\\fill[ink] (1.000,2.600) circle (1.2pt);\n\\fill[ink] (0.000,0.200) circle (1.2pt);\n\\fill[ink] (3.400,0.000) circle (1.2pt);\n\\fill[ink] (0.600,1.640) circle (1.2pt);\n\\fill[ink] (1.960,1.560) circle (1.2pt);\n\\fill[ink] (5.800,2.600) circle (1.2pt);\n\\fill[ink] (4.600,0.000) circle (1.2pt);\n\\fill[ink] (8.600,0.000) circle (1.2pt);\n\\fill[ink] (5.154,1.200) circle (1.2pt);\n\\fill[ink] (7.480,1.040) circle (1.2pt);\n\\fill[ink] (7.000,0.000) circle (1.2pt);\n\\node at (1.000,2.860) {$M$};\n\\node at (-0.244,0.111) {$N$};\n\\node at (3.625,-0.130) {$P$};\n\\node at (0.356,1.729) {$E$};\n\\node at (2.185,1.690) {$F$};\n\\node at (5.800,2.860) {$H$};\n\\node at (4.416,-0.184) {$K$};\n\\node at (8.784,-0.184) {$Q$};\n\\node at (4.918,1.310) {$F'$};\n\\node at (7.657,1.230) {$M'$};\n\\node at (7.000,-0.260) {$E'$};\n\\end{tikzpicture}",
+      "caption": "Hình 6",
+      "pos": "below"
+     }
+    },
+    {
+     "type": "problem",
+     "label": "Bài 7.",
+     "statement": "Điền vào chỗ trống để hoàn thành lời giải bài sau.[[br]]Cho tam giác $ABC$ có $AB = 4{,}5$ cm, $AC = 6$ cm. Các điểm $M$, $N$ lần lượt thuộc các cạnh $AB$, $AC$ thoả mãn $AM = 3$ cm và $MN \\parallel BC$. Tính độ dài đoạn thẳng $AN$.[[br]]a) [NB] Xét $\\triangle ABC$ có $MN \\parallel$ [[blank:1cm]] ($M \\in AB$, $N \\in AC$) nên theo định lí Thalès ta có $\\dfrac{AM}{AB}=\\dfrac{AN}{\\ldots\\ldots}$.[[br]]b) [NB] Thay số: $\\dfrac{3}{4{,}5}=\\dfrac{AN}{6}$ nên $AN=$ [[blank:1.6cm]] $=$ [[blank:1cm]] (cm). Vậy $AN = 4$ cm.",
+     "level": 1,
+     "tier": "onclass",
+     "dang_id": "NB5",
+     "solution": "a) $BC$; $AC$.[[br]]b) $\\dfrac{3\\cdot 6}{4{,}5}$; $4$."
+    },
+    {
+     "type": "problem",
+     "label": "Bài 8.",
+     "statement": "[NB] Vẽ hình vào vở: tam giác $ABC$ có $AB = 6$ cm, $AC = 9$ cm. Trên cạnh $AB$ lấy điểm $B'$ với $AB' = 4$ cm; qua $B'$ vẽ đường thẳng song song với $BC$, cắt $AC$ tại $C''$. Ghi giả thiết $-$ kết luận và đo độ dài $AC''$.",
+     "level": 1,
+     "tier": "onclass",
+     "dang_id": "NB6",
+     "solution": "GT: $\\triangle ABC$, $AB = 6$ cm, $AC = 9$ cm, $B' \\in AB$, $AB' = 4$ cm, $B'C'' \\parallel BC$ ($C'' \\in AC$).[[br]]Đo được $AC'' = 6$ cm (đúng với $\\dfrac{AB'}{AB}=\\dfrac{AC''}{AC}$).",
+     "draw": true
+    },
+    {
+     "type": "noted",
+     "variant": "example",
+     "text": "\\textbf{Ví dụ 4.} (SGK 4{.}1) Trên Hình 7, $HK \\parallel QE$. Tính độ dài $x$ (làm tròn kết quả đến chữ số thập phân thứ nhất).[[br]]{\\sffamily\\bfseries\\color{brand}Lời giải}[[br]]Xét $\\triangle PQE$ có $HK \\parallel QE$ ($H \\in PQ$, $K \\in PE$).[[br]]Theo định lí Thalès: $\\dfrac{PH}{HQ}=\\dfrac{PK}{KE}$ hay $\\dfrac{6}{4}=\\dfrac{8}{x}$.[[br]]$\\Rightarrow x=\\dfrac{8\\cdot 4}{6}=\\dfrac{[[fill:16]]\\rule[-0.9ex]{0pt}{2.6ex}}{[[fill:3]]\\rule{0pt}{2.2ex}}$.[[br]]Vậy $x\\approx$ [[fill:5{,}3]].",
+     "figure": {
+      "tikz": "\\begin{tikzpicture}[line width=0.8pt, font=\\small, scale=1.0]\n\\draw[ink] (0.900,2.900) -- (0.000,0.000) -- (4.000,0.000) -- cycle;\n\\draw[brand,line width=1.0pt] (0.360,1.160) -- (2.760,1.160);\n\\node[font=\\footnotesize, fill=white, inner sep=0.6pt] at (0.401,2.101) {$6$};\n\\node[font=\\footnotesize, fill=white, inner sep=0.6pt] at (-0.049,0.651) {$4$};\n\\node[font=\\footnotesize, fill=white, inner sep=0.6pt] at (1.994,2.205) {$8$};\n\\node[font=\\footnotesize, fill=white, inner sep=0.6pt] at (3.544,0.755) {$x$};\n\\fill[ink] (0.900,2.900) circle (1.2pt);\n\\fill[ink] (0.000,0.000) circle (1.2pt);\n\\fill[ink] (4.000,0.000) circle (1.2pt);\n\\fill[ink] (0.360,1.160) circle (1.2pt);\n\\fill[ink] (2.760,1.160) circle (1.2pt);\n\\node at (0.833,3.151) {$P$};\n\\node at (-0.213,-0.149) {$Q$};\n\\node at (4.244,-0.089) {$E$};\n\\node at (0.109,1.227) {$H$};\n\\node at (2.944,1.344) {$K$};\n\\end{tikzpicture}",
+      "caption": "Hình 7",
+      "pos": "right"
+     }
+    },
+    {
+     "type": "problem",
+     "label": "Bài 9.",
+     "statement": "[TH] (SBT Cánh diều) Cho tam giác $ABC$. Một đường thẳng $d$ song song với $BC$ và cắt $AB$, $AC$ lần lượt tại $M$, $N$ với $\\dfrac{AM}{AB}=\\dfrac{1}{3}$ và $AN + AC = 16$ cm. Tính $AN$.",
+     "level": 2,
+     "tier": "onclass",
+     "dang_id": "TH1",
+     "solution": "Xét $\\triangle ABC$ có $MN \\parallel BC$ nên $\\dfrac{AN}{AC}=\\dfrac{AM}{AB}=\\dfrac{1}{3}$ (định lí Thalès).[[br]]Ta có $AC = 3AN$, mà $AN + AC = 16$ nên $4AN = 16$, $AN = 4$.[[br]]Vậy $AN = 4$ cm.",
+     "hints": [
+      "Viết tỉ lệ thức chứa $AN$ và $AC$; từ đó $AC$ gấp mấy lần $AN$?"
+     ]
+    },
+    {
+     "type": "noted",
+     "variant": "example",
+     "text": "\\textbf{Ví dụ 5.} (SGK 4{.}1) Trên Hình 8, $\\widehat{AMN}=\\widehat{ABC}$, $MB = 6{,}5$, $AN = 8$, $AC = 11$. Tính độ dài $y = AM$ (làm tròn kết quả đến chữ số thập phân thứ nhất).[[br]]{\\sffamily\\bfseries\\color{brand}Lời giải}[[br]]Vì $\\widehat{AMN}=\\widehat{ABC}$ (hai góc đồng vị) nên $MN \\parallel BC$.[[br]]Xét $\\triangle ABC$ có $MN \\parallel BC$ nên $\\dfrac{AM}{AB}=\\dfrac{AN}{AC}$ (định lí Thalès) hay $\\dfrac{y}{y+6{,}5}=\\dfrac{8}{11}$.[[br]]Ta có $11y = 8y + 52$, tức là $3y = 52$, $y=\\dfrac{[[fill:52]]\\rule[-0.9ex]{0pt}{2.6ex}}{[[fill:3]]\\rule{0pt}{2.2ex}}$.[[br]]Vậy $y\\approx$ [[fill:17{,}3]].",
+     "figure": {
+      "tikz": "\\begin{tikzpicture}[line width=0.8pt, font=\\small, scale=1.0]\n\\draw[ink] (2.700,3.000) -- (0.000,0.000) -- (3.400,0.000) -- cycle;\n\\draw[brand,line width=1.0pt] (0.736,0.818) -- (3.209,0.818);\n\\draw[brand] (1.056,0.818) arc[start angle=0.00, end angle=48.01, radius=0.320];\n\\draw[brand] (0.320,0.000) arc[start angle=0.00, end angle=48.01, radius=0.320];\n\\node[font=\\footnotesize, fill=white, inner sep=0.6pt] at (1.540,2.070) {$y$};\n\\node[font=\\footnotesize, fill=white, inner sep=0.6pt] at (0.190,0.570) {$6{,}5$};\n\\node[font=\\footnotesize, fill=white, inner sep=0.6pt] at (3.188,1.964) {$8$};\n\\node[font=\\footnotesize, fill=white, inner sep=0.6pt] at (3.586,1.625) {$11$};\n\\fill[ink] (2.700,3.000) circle (1.2pt);\n\\fill[ink] (0.000,0.000) circle (1.2pt);\n\\fill[ink] (3.400,0.000) circle (1.2pt);\n\\fill[ink] (0.736,0.818) circle (1.2pt);\n\\fill[ink] (3.209,0.818) circle (1.2pt);\n\\node at (2.767,3.251) {$A$};\n\\node at (-0.236,-0.110) {$B$};\n\\node at (3.599,-0.167) {$C$};\n\\node at (0.537,0.985) {$M$};\n\\node at (3.460,0.885) {$N$};\n\\end{tikzpicture}",
+      "caption": "Hình 8",
+      "pos": "right"
+     }
+    },
+    {
+     "type": "problem",
+     "label": "Bài 10.",
+     "statement": "(SBT Chân trời sáng tạo) Cho đoạn thẳng $AB = 10$ cm. Lấy $C$ thuộc tia đối của tia $AB$ sao cho $\\dfrac{CA}{CB}=\\dfrac{2}{3}$; lấy $D$ thuộc tia đối của tia $BA$ sao cho $\\dfrac{DA}{DB}=\\dfrac{3}{2}$.[[br]]a) [TH] Tính $CB$.[[br]]b) [TH] Tính $DB$ và $CD$.",
+     "level": 2,
+     "tier": "onclass",
+     "dang_id": "TH1",
+     "solution": "a) Vì $C$ thuộc tia đối của tia $AB$ nên $CB = CA + AB = CA + 10$.[[br]]Ta có $\\dfrac{CA}{CA+10}=\\dfrac{2}{3}$ nên $3CA = 2CA + 20$, $CA = 20$.[[br]]Vậy $CB = 30$ cm.[[br]]b) Vì $D$ thuộc tia đối của tia $BA$ nên $DA = DB + 10$.[[br]]Ta có $\\dfrac{DB+10}{DB}=\\dfrac{3}{2}$ nên $2DB + 20 = 3DB$, $DB = 20$.[[br]]Ta có $CD = CA + AB + BD = 20 + 10 + 20 = 50$.[[br]]Vậy $DB = 20$ cm, $CD = 50$ cm.",
+     "hints": [
+      "Vẽ đoạn $AB$ rồi đặt $C$, $D$ đúng phía; viết $CB$ theo $CA$, $DA$ theo $DB$.",
+      "Lập tỉ lệ thức chứa một ẩn rồi giải."
+     ]
+    },
+    {
+     "type": "noted",
+     "variant": "example",
+     "text": "\\textbf{Ví dụ 6.} (Tài liệu Thalès, Dạng 2) Trên Hình 9, các điểm $P$, $M$, $N$ lần lượt nằm trên các cạnh $AB$, $AC$, $BC$ của tam giác $ABC$. Hỏi $PM$ có song song với $BC$ không? $MN$ có song song với $AB$ không?[[br]]{\\sffamily\\bfseries\\color{brand}Lời giải}[[br]]Ta có $\\dfrac{AP}{PB}=\\dfrac{3}{5}$ và $\\dfrac{AM}{MC}=\\dfrac{5}{15}=\\dfrac{1}{3}$.[[br]]Do $\\dfrac{AP}{PB}\\ne\\dfrac{AM}{MC}$ nên $PM$ [[fill:không song song]] với $BC$.[[br]]Ta có $\\dfrac{CM}{MA}=\\dfrac{15}{5}=3$ và $\\dfrac{CN}{NB}=\\dfrac{21}{7}=3$.[[br]]Vậy $MN \\parallel$ [[fill:AB]] (định lí Thalès đảo trong $\\triangle ABC$).",
+     "figure": {
+      "tikz": "\\begin{tikzpicture}[line width=0.8pt, font=\\small, scale=1.0]\n\\draw[ink] (1.200,3.000) -- (0.000,0.000) -- (4.000,0.000) -- cycle;\n\\draw[brand] (0.750,1.875) -- (1.900,2.250);\n\\draw[brand,line width=1.0pt] (1.900,2.250) -- (1.000,0.000);\n\\node[font=\\footnotesize, fill=white, inner sep=0.6pt] at (0.752,2.527) {$3$};\n\\node[font=\\footnotesize, fill=white, inner sep=0.6pt] at (0.152,1.027) {$5$};\n\\node[font=\\footnotesize, fill=white, inner sep=0.6pt] at (1.725,2.789) {$5$};\n\\node[font=\\footnotesize, fill=white, inner sep=0.6pt] at (3.125,1.289) {$15$};\n\\node[font=\\footnotesize, fill=white, inner sep=0.6pt] at (0.500,-0.240) {$7$};\n\\node[font=\\footnotesize, fill=white, inner sep=0.6pt] at (2.500,-0.240) {$21$};\n\\fill[ink] (1.200,3.000) circle (1.2pt);\n\\fill[ink] (0.000,0.000) circle (1.2pt);\n\\fill[ink] (4.000,0.000) circle (1.2pt);\n\\fill[ink] (0.750,1.875) circle (1.2pt);\n\\fill[ink] (1.900,2.250) circle (1.2pt);\n\\fill[ink] (1.000,0.000) circle (1.2pt);\n\\node at (1.155,3.256) {$A$};\n\\node at (-0.213,-0.149) {$B$};\n\\node at (4.236,-0.110) {$C$};\n\\node at (0.506,1.964) {$P$};\n\\node at (2.084,2.434) {$M$};\n\\node at (1.000,-0.260) {$N$};\n\\end{tikzpicture}",
+      "caption": "Hình 9",
+      "pos": "right"
+     }
+    },
+    {
+     "type": "problem",
+     "label": "Bài 11.",
+     "statement": "(SGK HĐ4) Cho tam giác $ABC$ có $AB = 6$ cm, $AC = 9$ cm. Trên cạnh $AB$ lấy điểm $B'$, trên cạnh $AC$ lấy điểm $C'$ sao cho $AB' = 4$ cm, $AC' = 6$ cm (Hình 10).[[br]]a) [TH] Chứng minh $B'C' \\parallel BC$.[[br]]b) [TH] Tứ giác $BB'C'C$ là hình gì? Vì sao?",
+     "level": 2,
+     "tier": "onclass",
+     "dang_id": "TH2",
+     "solution": "a) Ta có $\\dfrac{AB'}{AB}=\\dfrac{4}{6}=\\dfrac{2}{3}$ và $\\dfrac{AC'}{AC}=\\dfrac{6}{9}=\\dfrac{2}{3}$.[[br]]Do $\\dfrac{AB'}{AB}=\\dfrac{AC'}{AC}$ nên $B'C' \\parallel BC$ (định lí Thalès đảo).[[br]]b) Tứ giác $BB'C'C$ có $B'C' \\parallel BC$.[[br]]Vậy $BB'C'C$ là hình thang.",
+     "figure_given": true,
+     "hints": [
+      "Lập hai tỉ số trên hai cạnh $AB$, $AC$ rồi so sánh.",
+      "Tứ giác có hai cạnh đối song song là hình gì?"
+     ],
+     "figure": {
+      "tikz": "\\begin{tikzpicture}[line width=0.8pt, font=\\small, scale=1.0]\n\\draw[ink] (1.300,3.000) -- (0.000,0.000) -- (4.000,0.000) -- cycle;\n\\draw[brand,line width=1.0pt] (0.433,1.000) -- (3.100,1.000);\n\\node[font=\\footnotesize, fill=white, inner sep=0.6pt] at (0.646,2.095) {$4$};\n\\node[font=\\footnotesize, fill=white, inner sep=0.6pt] at (2.378,2.161) {$6$};\n\\fill[ink] (1.300,3.000) circle (1.2pt);\n\\fill[ink] (0.000,0.000) circle (1.2pt);\n\\fill[ink] (4.000,0.000) circle (1.2pt);\n\\fill[ink] (0.433,1.000) circle (1.2pt);\n\\fill[ink] (3.100,1.000) circle (1.2pt);\n\\node at (1.255,3.256) {$A$};\n\\node at (-0.213,-0.149) {$B$};\n\\node at (4.236,-0.110) {$C$};\n\\node at (0.194,1.102) {$B'$};\n\\node at (3.293,1.174) {$C'$};\n\\end{tikzpicture}",
+      "caption": "Hình 10",
+      "pos": "right"
+     }
+    },
+    {
+     "type": "noted",
+     "variant": "example",
+     "text": "\\textbf{Ví dụ 7.} (Tài liệu Thalès, Dạng 2) Cho tam giác $ABC$, điểm $D$ nằm giữa $B$ và $C$. Các điểm $E$, $F$, $G$ lần lượt thuộc các đoạn $AB$, $AC$, $AD$ thoả mãn $\\dfrac{AE}{AB}=\\dfrac{AF}{AC}=\\dfrac{AG}{AD}$ (Hình 11). Chứng minh $EG \\parallel BD$, $GF \\parallel DC$ rồi suy ra ba điểm $E$, $G$, $F$ thẳng hàng.[[br]]{\\sffamily\\bfseries\\color{brand}Lời giải}[[br]]Trong $\\triangle ABD$ có $\\dfrac{AE}{AB}=\\dfrac{AG}{AD}$ nên $EG \\parallel$ [[fill:BD]] (định lí Thalès đảo).[[br]]Trong $\\triangle ADC$ có $\\dfrac{AG}{AD}=\\dfrac{AF}{AC}$ nên $GF \\parallel$ [[fill:DC]] (định lí Thalès đảo).[[br]]Qua $G$ có $GE$ và $GF$ cùng song song với $BC$ nên $GE$, $GF$ [[fill:trùng nhau]] (tiên đề Euclid).[[br]]Vậy ba điểm $E$, $G$, $F$ [[fill:thẳng hàng]].",
+     "figure": {
+      "tikz": "\\begin{tikzpicture}[line width=0.8pt, font=\\small, scale=1.0]\n\\draw[ink] (1.600,3.000) -- (0.000,0.000) -- (4.200,0.000) -- cycle;\n\\draw[ink] (1.600,3.000) -- (1.890,0.000);\n\\draw[brand,line width=1.0pt] (0.880,1.650) -- (1.731,1.650);\n\\draw[brand,line width=1.0pt] (1.731,1.650) -- (2.770,1.650);\n\\fill[ink] (1.600,3.000) circle (1.2pt);\n\\fill[ink] (0.000,0.000) circle (1.2pt);\n\\fill[ink] (4.200,0.000) circle (1.2pt);\n\\fill[ink] (1.890,0.000) circle (1.2pt);\n\\fill[ink] (0.880,1.650) circle (1.2pt);\n\\fill[ink] (2.770,1.650) circle (1.2pt);\n\\fill[ink] (1.731,1.650) circle (1.2pt);\n\\node at (1.577,3.259) {$A$};\n\\node at (-0.225,-0.130) {$B$};\n\\node at (4.436,-0.110) {$C$};\n\\node at (1.890,-0.260) {$D$};\n\\node at (0.655,1.780) {$E$};\n\\node at (2.969,1.817) {$F$};\n\\node at (1.563,1.451) {$G$};\n\\end{tikzpicture}",
+      "caption": "Hình 11",
+      "pos": "right"
+     }
+    },
+    {
+     "type": "problem",
+     "label": "Bài 12.",
+     "statement": "[TH] (SGK Cánh diều) Cho tam giác $ABC$ và điểm $O$ nằm trong tam giác. Trên các đoạn $OA$, $OB$, $OC$ lần lượt lấy các điểm $M$, $N$, $P$ sao cho $MN \\parallel AB$ và $NP \\parallel BC$ (Hình 12). Chứng minh $MP \\parallel AC$.",
+     "level": 2,
+     "tier": "onclass",
+     "dang_id": "TH2",
+     "solution": "Xét $\\triangle OAB$ có $MN \\parallel AB$ nên $\\dfrac{OM}{OA}=\\dfrac{ON}{OB}$ (định lí Thalès).[[br]]Xét $\\triangle OBC$ có $NP \\parallel BC$ nên $\\dfrac{ON}{OB}=\\dfrac{OP}{OC}$ (định lí Thalès).[[br]]$\\Rightarrow \\dfrac{OM}{OA}=\\dfrac{OP}{OC}$.[[br]]Vậy trong $\\triangle OAC$ có $MP \\parallel AC$ (định lí Thalès đảo).",
+     "figure_given": true,
+     "hints": [
+      "Hai tam giác $OAB$ và $OBC$ có chung đoạn nào? Tỉ số nào xuất hiện ở cả hai?"
+     ],
+     "figure": {
+      "tikz": "\\begin{tikzpicture}[line width=0.8pt, font=\\small, scale=1.0]\n\\draw[ink] (1.500,3.200) -- (0.000,0.000) -- (4.200,0.000) -- cycle;\n\\draw[ink] (1.900,1.100) -- (1.500,3.200);\n\\draw[ink] (1.900,1.100) -- (0.000,0.000);\n\\draw[ink] (1.900,1.100) -- (4.200,0.000);\n\\draw[brand,line width=1.0pt] (1.680,2.255) -- (0.855,0.495) -- (3.165,0.495) -- cycle;\n\\fill[ink] (1.500,3.200) circle (1.2pt);\n\\fill[ink] (0.000,0.000) circle (1.2pt);\n\\fill[ink] (4.200,0.000) circle (1.2pt);\n\\fill[ink] (1.900,1.100) circle (1.2pt);\n\\fill[ink] (1.680,2.255) circle (1.2pt);\n\\fill[ink] (0.855,0.495) circle (1.2pt);\n\\fill[ink] (3.165,0.495) circle (1.2pt);\n\\node at (1.455,3.456) {$A$};\n\\node at (-0.225,-0.130) {$B$};\n\\node at (4.436,-0.110) {$C$};\n\\node at (1.909,0.840) {$O$};\n\\node at (1.436,2.344) {$M$};\n\\node at (0.725,0.720) {$N$};\n\\node at (3.295,0.720) {$P$};\n\\end{tikzpicture}",
+      "caption": "Hình 12",
+      "pos": "right"
+     }
+    }
+   ]
+  },
+  {
+   "kind": "practice2",
+   "number": 4,
+   "title": "Ca 2 — Thalès trong hình thang, bài thực tế",
+   "teacher_note": "Ca 2 mở đầu bằng bài cầu qua sông ở phần Khám phá.[[br]]Với hình thang: luôn kẻ đường chéo để có tam giác — đây là thao tác HS hay quên.[[br]]Ba bài cuối dùng Thalès hai lần: hỏi HS \\emph{tỉ số nào là cầu nối?}",
+   "blocks": [
+    {
+     "type": "noted",
+     "variant": "example",
+     "text": "\\textbf{Ví dụ 8.} Cho tam giác $ABC$ vuông tại $A$, đường cao $AD$. Từ $D$ kẻ $DE \\perp AB$ ($E \\in AB$) và $DF \\perp AC$ ($F \\in AC$) (Hình 13). Chứng minh $\\dfrac{AE}{AB}+\\dfrac{AF}{AC}=1$.[[br]]{\\sffamily\\bfseries\\color{brand}Lời giải}[[br]]Vì $DE \\perp AB$, $AC \\perp AB$ nên $DE \\parallel$ [[fill:AC]]; tương tự $DF \\parallel AB$.[[br]]Xét $\\triangle ABC$ có $DE \\parallel AC$ nên $\\dfrac{AE}{AB}=\\dfrac{[[fill:CD]]\\rule[-0.9ex]{0pt}{2.6ex}}{[[fill:CB]]\\rule{0pt}{2.2ex}}$ (định lí Thalès).[[br]]Xét $\\triangle ABC$ có $DF \\parallel AB$ nên $\\dfrac{AF}{AC}=\\dfrac{BD}{BC}$ (định lí Thalès).[[br]]Ta có $\\dfrac{AE}{AB}+\\dfrac{AF}{AC}=\\dfrac{CD+BD}{BC}=\\dfrac{BC}{BC}$.[[br]]Vậy $\\dfrac{AE}{AB}+\\dfrac{AF}{AC}=$ [[fill:1]].",
+     "figure": {
+      "tikz": "\\begin{tikzpicture}[line width=0.8pt, font=\\small, scale=1.0]\n\\draw[ink] (1.300,1.873) -- (0.000,0.000) -- (4.000,0.000) -- cycle;\n\\draw[ink] (1.300,1.873) -- (1.300,0.000);\n\\draw[brand,line width=1.0pt] (0.422,0.609) -- (1.300,0.000);\n\\draw[brand,line width=1.0pt] (1.300,0.000) -- (2.178,1.265);\n\\draw[ink] (1.209,1.742) -- (1.340,1.651) -- (1.431,1.782);\n\\draw[ink] (1.300,0.160) -- (1.460,0.160) -- (1.460,0.000);\n\\draw[ink] (0.554,0.518) -- (0.645,0.649) -- (0.514,0.740);\n\\draw[ink] (2.086,1.133) -- (1.955,1.224) -- (2.046,1.356);\n\\fill[ink] (1.300,1.873) circle (1.2pt);\n\\fill[ink] (0.000,0.000) circle (1.2pt);\n\\fill[ink] (4.000,0.000) circle (1.2pt);\n\\fill[ink] (1.300,0.000) circle (1.2pt);\n\\fill[ink] (0.422,0.609) circle (1.2pt);\n\\fill[ink] (2.178,1.265) circle (1.2pt);\n\\node at (1.300,2.133) {$A$};\n\\node at (-0.184,-0.184) {$B$};\n\\node at (4.184,-0.184) {$C$};\n\\node at (1.300,-0.260) {$D$};\n\\node at (0.197,0.739) {$E$};\n\\node at (2.377,1.432) {$F$};\n\\end{tikzpicture}",
+      "caption": "Hình 13",
+      "pos": "right"
+     }
+    },
+    {
+     "type": "problem",
+     "label": "Bài 13.",
+     "statement": "[TH] (SGK 4{.}3) Cho tam giác $ABC$. Từ điểm $D$ trên cạnh $BC$, kẻ đường thẳng song song với $AB$ cắt $AC$ tại $F$ và kẻ đường thẳng song song với $AC$ cắt $AB$ tại $E$ (Hình 14). Chứng minh $\\dfrac{AE}{AB}+\\dfrac{AF}{AC}=1$.",
+     "level": 2,
+     "tier": "onclass",
+     "dang_id": "TH3",
+     "solution": "Xét $\\triangle ABC$ có $DE \\parallel AC$ nên $\\dfrac{AE}{AB}=\\dfrac{CD}{CB}$ (định lí Thalès).[[br]]Xét $\\triangle ABC$ có $DF \\parallel AB$ nên $\\dfrac{AF}{AC}=\\dfrac{BD}{BC}$ (định lí Thalès).[[br]]Ta có $\\dfrac{AE}{AB}+\\dfrac{AF}{AC}=\\dfrac{CD+BD}{BC}=\\dfrac{BC}{BC}$.[[br]]Vậy $\\dfrac{AE}{AB}+\\dfrac{AF}{AC}=1$.",
+     "figure_given": true,
+     "hints": [
+      "Mỗi đường song song cho một tỉ lệ thức; đưa hai tỉ số về cùng mẫu $BC$."
+     ],
+     "figure": {
+      "tikz": "\\begin{tikzpicture}[line width=0.8pt, font=\\small, scale=1.0]\n\\draw[ink] (1.200,3.000) -- (0.000,0.000) -- (4.200,0.000) -- cycle;\n\\draw[brand,line width=1.0pt] (0.420,1.050) -- (1.470,0.000);\n\\draw[brand,line width=1.0pt] (1.470,0.000) -- (2.250,1.950);\n\\fill[ink] (1.200,3.000) circle (1.2pt);\n\\fill[ink] (0.000,0.000) circle (1.2pt);\n\\fill[ink] (4.200,0.000) circle (1.2pt);\n\\fill[ink] (1.470,0.000) circle (1.2pt);\n\\fill[ink] (0.420,1.050) circle (1.2pt);\n\\fill[ink] (2.250,1.950) circle (1.2pt);\n\\node at (1.155,3.256) {$A$};\n\\node at (-0.213,-0.149) {$B$};\n\\node at (4.444,-0.089) {$C$};\n\\node at (1.470,-0.260) {$D$};\n\\node at (0.176,1.139) {$E$};\n\\node at (2.434,2.134) {$F$};\n\\end{tikzpicture}",
+      "caption": "Hình 14",
+      "pos": "right"
+     }
+    },
+    {
+     "type": "problem",
+     "label": "Bài 14.",
+     "statement": "(SBT Kết nối tri thức) Xét hình thang $ABCD$ ($AB \\parallel CD$). Một đường thẳng song song với hai đáy cắt các đoạn $AD$, $AC$, $BC$ lần lượt tại $M$, $I$, $N$ (Hình 15).[[br]]a) [TH] Chứng minh $\\dfrac{AM}{MD}=\\dfrac{BN}{NC}$.[[br]]b) [TH] Chứng minh $\\dfrac{AM}{AD}+\\dfrac{CN}{CB}=1$.",
+     "level": 2,
+     "tier": "onclass",
+     "dang_id": "TH3",
+     "solution": "a) Xét $\\triangle ADC$ có $MI \\parallel DC$ nên $\\dfrac{AM}{MD}=\\dfrac{AI}{IC}$ (định lí Thalès).[[br]]Xét $\\triangle CAB$ có $IN \\parallel AB$ nên $\\dfrac{AI}{IC}=\\dfrac{BN}{NC}$ (định lí Thalès).[[br]]Vậy $\\dfrac{AM}{MD}=\\dfrac{BN}{NC}$.[[br]]b) Xét $\\triangle ADC$ có $MI \\parallel DC$ nên $\\dfrac{AM}{AD}=\\dfrac{AI}{AC}$.[[br]]Xét $\\triangle CAB$ có $IN \\parallel AB$ nên $\\dfrac{CN}{CB}=\\dfrac{CI}{CA}$.[[br]]Ta có $\\dfrac{AM}{AD}+\\dfrac{CN}{CB}=\\dfrac{AI+CI}{AC}=1$.[[br]]Vậy $\\dfrac{AM}{AD}+\\dfrac{CN}{CB}=1$.",
+     "figure_given": true,
+     "hints": [
+      "Điểm $I$ trên đường chéo $AC$ là cầu nối giữa hai tam giác $ADC$ và $CAB$."
+     ],
+     "figure": {
+      "tikz": "\\begin{tikzpicture}[line width=0.8pt, font=\\small, scale=1.0]\n\\draw[ink] (0.700,2.400) -- (2.300,2.400) -- (3.700,0.000) -- (0.000,0.000) -- cycle;\n\\draw[ink] (0.700,2.400) -- (3.700,0.000);\n\\draw[brand,line width=1.0pt] (0.455,1.560) -- (2.790,1.560);\n\\fill[ink] (0.700,2.400) circle (1.2pt);\n\\fill[ink] (2.300,2.400) circle (1.2pt);\n\\fill[ink] (3.700,0.000) circle (1.2pt);\n\\fill[ink] (0.000,0.000) circle (1.2pt);\n\\fill[ink] (0.455,1.560) circle (1.2pt);\n\\fill[ink] (2.790,1.560) circle (1.2pt);\n\\fill[ink] (1.750,1.560) circle (1.2pt);\n\\node at (0.551,2.613) {$A$};\n\\node at (2.430,2.625) {$B$};\n\\node at (3.925,-0.130) {$C$};\n\\node at (-0.213,-0.149) {$D$};\n\\node at (0.204,1.627) {$M$};\n\\node at (3.015,1.690) {$N$};\n\\node at (1.661,1.316) {$I$};\n\\end{tikzpicture}",
+      "caption": "Hình 15",
+      "pos": "right"
+     }
+    },
+    {
+     "type": "noted",
+     "variant": "example",
+     "text": "\\textbf{Ví dụ 9.} (SGK 4{.}5) Để đo khoảng cách giữa hai vị trí $B$ và $E$ ở hai bên bờ sông, bác An chọn ba vị trí $A$, $F$, $C$ cùng nằm ở một bên bờ sông sao cho ba điểm $C$, $E$, $B$ thẳng hàng, ba điểm $C$, $F$, $A$ thẳng hàng và $AB \\parallel EF$ (Hình 16). Bác An đo được $AF = 40$ m, $FC = 20$ m, $EC = 30$ m. Tính khoảng cách $BE$.[[br]]{\\sffamily\\bfseries\\color{brand}Lời giải}[[br]]Xét $\\triangle CAB$ có $EF \\parallel AB$ ($F \\in CA$, $E \\in CB$).[[br]]Theo định lí Thalès: $\\dfrac{CF}{CA}=\\dfrac{CE}{CB}$ hay $\\dfrac{20}{60}=\\dfrac{30}{CB}$.[[br]]$\\Rightarrow CB=\\dfrac{30\\cdot 60}{20}=$ [[fill:90]] (m).[[br]]Vậy $BE = CB - CE =$ [[fill:60]] m.",
+     "figure": {
+      "tikz": "\\begin{tikzpicture}[line width=0.8pt, font=\\small, scale=1.0]\n\\draw[ink!45] (-0.5,1.7) .. controls (1.2,2.2) and (2.4,1.3) .. (4.2,1.8);\n\\draw[ink] (0.000,3.000) -- (2.400,3.000);\n\\draw[ink] (2.400,3.000) -- (3.600,3.000);\n\\draw[brand,line width=1.0pt] (3.600,3.000) -- (2.733,2.000);\n\\draw[brand,line width=1.0pt] (2.733,2.000) -- (1.000,0.000);\n\\draw[ink] (0.000,3.000) -- (1.000,0.000);\n\\draw[ink] (2.400,3.000) -- (2.733,2.000);\n\\node[font=\\footnotesize, fill=white, inner sep=0.6pt] at (1.200,3.240) {$40$ m};\n\\node[font=\\footnotesize, fill=white, inner sep=0.6pt] at (3.000,3.240) {$20$ m};\n\\node[font=\\footnotesize, fill=white, inner sep=0.6pt] at (2.985,2.657) {$30$ m};\n\\fill[ink] (0.000,3.000) circle (1.2pt);\n\\fill[ink] (2.400,3.000) circle (1.2pt);\n\\fill[ink] (3.600,3.000) circle (1.2pt);\n\\fill[ink] (1.000,0.000) circle (1.2pt);\n\\fill[ink] (2.733,2.000) circle (1.2pt);\n\\node at (-0.184,3.184) {$A$};\n\\node at (2.251,2.787) {$F$};\n\\node at (3.784,3.184) {$C$};\n\\node at (1.000,-0.260) {$B$};\n\\node at (2.993,2.000) {$E$};\n\\end{tikzpicture}",
+      "caption": "Hình 16",
+      "pos": "right"
+     }
+    },
+    {
+     "type": "problem",
+     "label": "Bài 15.",
+     "statement": "[TH] Trở lại tình huống ở phần Khám phá: cây cầu $AB$ dài $300$ m, $AE = 400$ m, $EC = 500$ m, hai bờ sông song song. Tính khoảng cách $CD$.",
+     "level": 2,
+     "tier": "onclass",
+     "dang_id": "TH4",
+     "solution": "Vì hai bờ sông song song nên $AC \\parallel BD$.[[br]]Xét $\\triangle EBD$ có $AC \\parallel BD$ ($A \\in EB$, $C \\in ED$) nên $\\dfrac{EA}{EB}=\\dfrac{EC}{ED}$ (định lí Thalès) hay $\\dfrac{400}{700}=\\dfrac{500}{ED}$.[[br]]$\\Rightarrow ED=\\dfrac{500\\cdot 700}{400}=875$ (m).[[br]]Vậy $CD = ED - EC = 375$ m.",
+     "figure_given": true,
+     "hints": [
+      "Tam giác nào chứa cả hai bờ sông? $EB$ dài bao nhiêu?"
+     ],
+     "figure": {
+      "tikz": "\\begin{tikzpicture}[line width=0.8pt, font=\\small, scale=0.9]\n\\draw[ink!50] (-0.6,1.5) -- (3.4,1.5); \\draw[ink!50] (-0.6,0) -- (3.4,0);\n\\draw[ink] (0.000,3.500) -- (0.000,1.500);\n\\draw[ink] (0.000,1.500) -- (0.000,0.000);\n\\draw[brand,line width=1.0pt] (0.000,3.500) -- (1.500,1.500);\n\\draw[brand,line width=1.0pt] (1.500,1.500) -- (2.625,0.000);\n\\draw[ink] (0.000,1.500) -- (1.500,1.500);\n\\draw[ink] (0.000,0.000) -- (2.625,0.000);\n\\node[font=\\footnotesize, fill=white, inner sep=0.6pt] at (-0.240,2.500) {$400$ m};\n\\node[font=\\footnotesize, fill=white, inner sep=0.6pt] at (-0.240,0.750) {$300$ m};\n\\node[font=\\footnotesize, fill=white, inner sep=0.6pt] at (0.942,2.644) {$500$ m};\n\\fill[ink] (0.000,3.500) circle (1.2pt);\n\\fill[ink] (0.000,1.500) circle (1.2pt);\n\\fill[ink] (0.000,0.000) circle (1.2pt);\n\\fill[ink] (1.500,1.500) circle (1.2pt);\n\\fill[ink] (2.625,0.000) circle (1.2pt);\n\\node at (0.000,3.789) {$E$};\n\\node at (-0.204,1.704) {$A$};\n\\node at (-0.204,-0.204) {$B$};\n\\node at (1.644,1.750) {$C$};\n\\node at (2.769,-0.250) {$D$};\n\\end{tikzpicture}",
+      "caption": "Hình 17",
+      "pos": "right"
+     }
+    },
+    {
+     "type": "problem",
+     "label": "Bài 16.",
+     "statement": "[TH] (SGK Cánh diều) Mặt đường rộng $10$ m, hai lề đường song song với nhau. Bạn Nam đứng ở điểm $N$ trên vỉa hè, cách lề đường gần nhất $3$ m; điểm $A$ trên lề đường gần Nam và trạm xe buýt $B$ ở lề bên kia thẳng hàng với $N$; $AN = 6$ m (Hình 18, $NK$ vuông góc với hai lề đường tại $H$, $K$). Tính khoảng cách $BN$.",
+     "level": 2,
+     "tier": "onclass",
+     "dang_id": "TH4",
+     "solution": "Vì $AH \\perp NK$ và $BK \\perp NK$ nên $AH \\parallel BK$.[[br]]Xét $\\triangle NKB$ có $AH \\parallel BK$ ($H \\in NK$, $A \\in NB$) nên $\\dfrac{NA}{NB}=\\dfrac{NH}{NK}$ (định lí Thalès) hay $\\dfrac{6}{NB}=\\dfrac{3}{13}$.[[br]]Vậy $NB=\\dfrac{6\\cdot 13}{3}=26$ m.",
+     "figure_given": true,
+     "hints": [
+      "$NK$ dài bao nhiêu? Hai đường nào cùng vuông góc với $NK$?"
+     ],
+     "figure": {
+      "tikz": "\\begin{tikzpicture}[line width=0.8pt, font=\\small, scale=0.8]\n\\draw[ink!50] (-0.4,0.9) -- (8.4,0.9); \\draw[ink!50] (-0.4,3.9) -- (8.4,3.9);\n\\draw[ink,dashed] (0.000,0.000) -- (0.000,0.900);\n\\draw[ink,dashed] (0.000,0.900) -- (0.000,3.900);\n\\draw[brand,line width=1.0pt] (0.000,0.000) -- (1.800,0.900);\n\\draw[brand,line width=1.0pt] (1.800,0.900) -- (7.800,3.900);\n\\draw[ink] (0.000,0.740) -- (0.160,0.740) -- (0.160,0.900);\n\\draw[ink] (0.000,3.740) -- (0.160,3.740) -- (0.160,3.900);\n\\node[font=\\footnotesize, fill=white, inner sep=0.6pt] at (-0.240,0.450) {$3$ m};\n\\node[font=\\footnotesize, fill=white, inner sep=0.6pt] at (-0.240,2.400) {$10$ m};\n\\node[font=\\footnotesize, fill=white, inner sep=0.6pt] at (1.007,0.235) {$6$ m};\n\\fill[ink] (0.000,0.000) circle (1.2pt);\n\\fill[ink] (0.000,0.900) circle (1.2pt);\n\\fill[ink] (0.000,3.900) circle (1.2pt);\n\\fill[ink] (1.800,0.900) circle (1.2pt);\n\\fill[ink] (7.800,3.900) circle (1.2pt);\n\\node at (-0.230,-0.230) {$N$};\n\\node at (-0.230,1.130) {$H$};\n\\node at (-0.230,4.130) {$K$};\n\\node at (1.963,0.619) {$A$};\n\\node at (7.962,4.181) {$B$};\n\\end{tikzpicture}",
+      "caption": "Hình 18",
+      "pos": "below"
+     }
+    },
+    {
+     "type": "noted",
+     "variant": "example",
+     "text": "\\textbf{Ví dụ 10.} (Tài liệu Thalès, Dạng 2) Trên Hình 19 có $AB \\parallel EF \\parallel DC$, $AE = 4$ cm, $ED = 2$ cm, $BF = 6$ cm. Tính $FC$.[[br]]{\\sffamily\\bfseries\\color{brand}Lời giải}[[br]]Gọi $K$ là giao điểm của $AC$ và $EF$.[[br]]Xét $\\triangle ADC$ có $EK \\parallel DC$ nên $\\dfrac{AE}{ED}=\\dfrac{[[fill:AK]]\\rule[-0.9ex]{0pt}{2.6ex}}{[[fill:KC]]\\rule{0pt}{2.2ex}}$ (định lí Thalès).[[br]]Xét $\\triangle CAB$ có $KF \\parallel AB$ nên $\\dfrac{AK}{KC}=\\dfrac{BF}{FC}$ (định lí Thalès).[[br]]$\\Rightarrow \\dfrac{AE}{ED}=\\dfrac{BF}{FC}$ hay $\\dfrac{4}{2}=\\dfrac{6}{FC}$.[[br]]Vậy $FC =$ [[fill:3]] cm.",
+     "figure": {
+      "tikz": "\\begin{tikzpicture}[line width=0.8pt, font=\\small, scale=1.0]\n\\draw[ink] (0.700,2.400) -- (2.300,2.400) -- (3.700,0.000) -- (0.000,0.000) -- cycle;\n\\draw[ink,dashed] (0.700,2.400) -- (3.700,0.000);\n\\draw[brand,line width=1.0pt] (0.233,0.800) -- (3.233,0.800);\n\\node[font=\\footnotesize, fill=white, inner sep=0.6pt] at (0.236,1.667) {$4$};\n\\node[font=\\footnotesize, fill=white, inner sep=0.6pt] at (-0.114,0.467) {$2$};\n\\node[font=\\footnotesize, fill=white, inner sep=0.6pt] at (2.974,1.721) {$6$};\n\\fill[ink] (0.700,2.400) circle (1.2pt);\n\\fill[ink] (2.300,2.400) circle (1.2pt);\n\\fill[ink] (3.700,0.000) circle (1.2pt);\n\\fill[ink] (0.000,0.000) circle (1.2pt);\n\\fill[ink] (0.233,0.800) circle (1.2pt);\n\\fill[ink] (3.233,0.800) circle (1.2pt);\n\\fill[ink] (2.700,0.800) circle (1.2pt);\n\\node at (0.551,2.613) {$A$};\n\\node at (2.430,2.625) {$B$};\n\\node at (3.925,-0.130) {$C$};\n\\node at (-0.213,-0.149) {$D$};\n\\node at (-0.018,0.867) {$E$};\n\\node at (3.458,0.930) {$F$};\n\\node at (2.611,0.556) {$K$};\n\\end{tikzpicture}",
+      "caption": "Hình 19",
+      "pos": "right"
+     }
+    },
+    {
+     "type": "problem",
+     "label": "Bài 17.",
+     "statement": "[TH] (Tài liệu Thalès, Dạng 2) Xét hình thang $ABCD$ ($AB \\parallel CD$). Một đường thẳng song song với hai đáy cắt các cạnh bên $AD$, $BC$ lần lượt tại $M$, $N$ sao cho $\\dfrac{MA}{MD}=\\dfrac{1}{2}$ (Hình 20). Tính tỉ số $\\dfrac{NB}{NC}$.",
+     "level": 2,
+     "tier": "onclass",
+     "dang_id": "TH5",
+     "solution": "Gọi $I$ là giao điểm của $AC$ và $MN$.[[br]]Xét $\\triangle ADC$ có $MI \\parallel DC$ nên $\\dfrac{MA}{MD}=\\dfrac{IA}{IC}$ (định lí Thalès).[[br]]Xét $\\triangle CAB$ có $IN \\parallel AB$ nên $\\dfrac{IA}{IC}=\\dfrac{NB}{NC}$ (định lí Thalès).[[br]]Vậy $\\dfrac{NB}{NC}=\\dfrac{MA}{MD}=\\dfrac{1}{2}$.",
+     "figure_given": true,
+     "hints": [
+      "Kẻ thêm đường chéo $AC$ để có hai tam giác chứa đường $MN$."
+     ],
+     "figure": {
+      "tikz": "\\begin{tikzpicture}[line width=0.8pt, font=\\small, scale=1.0]\n\\draw[ink] (0.800,2.400) -- (2.200,2.400) -- (3.800,0.000) -- (0.000,0.000) -- cycle;\n\\draw[brand,line width=1.0pt] (0.533,1.600) -- (2.733,1.600);\n\\fill[ink] (0.800,2.400) circle (1.2pt);\n\\fill[ink] (2.200,2.400) circle (1.2pt);\n\\fill[ink] (3.800,0.000) circle (1.2pt);\n\\fill[ink] (0.000,0.000) circle (1.2pt);\n\\fill[ink] (0.533,1.600) circle (1.2pt);\n\\fill[ink] (2.733,1.600) circle (1.2pt);\n\\node at (0.651,2.613) {$A$};\n\\node at (2.330,2.625) {$B$};\n\\node at (4.025,-0.130) {$C$};\n\\node at (-0.213,-0.149) {$D$};\n\\node at (0.289,1.689) {$M$};\n\\node at (2.946,1.749) {$N$};\n\\end{tikzpicture}",
+      "caption": "Hình 20",
+      "pos": "right"
+     }
+    },
+    {
+     "type": "problem",
+     "label": "Bài 18.",
+     "statement": "(Tài liệu Thalès, Dạng 2) Xét hình thang $ABCD$ ($AB \\parallel CD$) ở Hình 21. Đường thẳng song song với hai đáy cắt $AD$, $BC$ lần lượt tại $E$, $F$.[[br]]a) [TH] Biết $AE = 3$ cm, $ED = 6$ cm, $FC = 8$ cm. Tính $BF$.[[br]]b) [TH] Biết $\\dfrac{AE}{AD}=\\dfrac{2}{5}$ và $BC = 15$ cm. Tính $BF$ và $FC$.",
+     "level": 2,
+     "tier": "onclass",
+     "dang_id": "TH5",
+     "solution": "Gọi $K$ là giao điểm của $AC$ và $EF$; như Ví dụ 10 ta có $\\dfrac{AE}{ED}=\\dfrac{BF}{FC}$ và $\\dfrac{AE}{AD}=\\dfrac{AK}{AC}=\\dfrac{BF}{BC}$.[[br]]a) $\\dfrac{3}{6}=\\dfrac{BF}{8}$ nên $BF = 4$.[[br]]Vậy $BF = 4$ cm.[[br]]b) $\\dfrac{BF}{15}=\\dfrac{2}{5}$ nên $BF = 6$, $FC = 15 - 6 = 9$.[[br]]Vậy $BF = 6$ cm, $FC = 9$ cm.",
+     "figure_given": true,
+     "hints": [
+      "Dùng lại hai tỉ lệ thức qua giao điểm $K$ của $AC$ với $EF$."
+     ],
+     "figure": {
+      "tikz": "\\begin{tikzpicture}[line width=0.8pt, font=\\small, scale=1.0]\n\\draw[ink] (0.700,2.400) -- (2.300,2.400) -- (3.700,0.000) -- (0.000,0.000) -- cycle;\n\\draw[brand,line width=1.0pt] (0.420,1.440) -- (2.860,1.440);\n\\fill[ink] (0.700,2.400) circle (1.2pt);\n\\fill[ink] (2.300,2.400) circle (1.2pt);\n\\fill[ink] (3.700,0.000) circle (1.2pt);\n\\fill[ink] (0.000,0.000) circle (1.2pt);\n\\fill[ink] (0.420,1.440) circle (1.2pt);\n\\fill[ink] (2.860,1.440) circle (1.2pt);\n\\node at (0.551,2.613) {$A$};\n\\node at (2.430,2.625) {$B$};\n\\node at (3.925,-0.130) {$C$};\n\\node at (-0.213,-0.149) {$D$};\n\\node at (0.169,1.507) {$E$};\n\\node at (3.085,1.570) {$F$};\n\\end{tikzpicture}",
+      "caption": "Hình 21",
+      "pos": "right"
+     }
+    },
+    {
+     "type": "noted",
+     "variant": "example",
+     "text": "\\textbf{Ví dụ 11.} (SGK 4{.}23) Cho góc $xOy$. Trên tia $Ox$ lấy hai điểm $A$, $B$ sao cho $OA = 2$ cm, $OB = 5$ cm. Trên tia $Oy$ lấy điểm $C$ sao cho $OC = 3$ cm. Từ $B$ kẻ đường thẳng song song với $AC$ cắt $Oy$ tại $D$ (Hình 22). Tính độ dài $CD$.[[br]]{\\sffamily\\bfseries\\color{brand}Lời giải}[[br]]Xét $\\triangle OBD$ có $AC \\parallel BD$ ($A \\in OB$, $C \\in OD$).[[br]]Theo định lí Thalès: $\\dfrac{OA}{OB}=\\dfrac{OC}{OD}$ hay $\\dfrac{2}{5}=\\dfrac{3}{OD}$.[[br]]$\\Rightarrow OD=\\dfrac{3\\cdot 5}{2}=$ [[fill:7{,}5]] (cm).[[br]]Vậy $CD = OD - OC =$ [[fill:4{,}5]] cm.",
+     "figure": {
+      "tikz": "\\begin{tikzpicture}[line width=0.8pt, font=\\small, scale=1.0]\n\\draw[ink] (0.000,0.000) -- (4.600,0.000);\n\\draw[ink] (0.000,0.000) -- (3.000,2.600);\n\\draw[ink] (1.643,0.000) -- (0.968,0.839);\n\\draw[brand,line width=1.0pt] (4.107,0.000) -- (2.419,2.097);\n\\node[font=\\footnotesize, fill=white, inner sep=0.6pt] at (0.821,-0.240) {$2$};\n\\node[font=\\footnotesize, fill=white, inner sep=0.6pt] at (0.327,0.601) {$3$};\n\\node at (4.8, -0.2) {$x$}; \\node at (3.15, 2.85) {$y$};\n\\fill[ink] (0.000,0.000) circle (1.2pt);\n\\fill[ink] (1.643,0.000) circle (1.2pt);\n\\fill[ink] (4.107,0.000) circle (1.2pt);\n\\fill[ink] (0.968,0.839) circle (1.2pt);\n\\fill[ink] (2.419,2.097) circle (1.2pt);\n\\node at (-0.244,-0.089) {$O$};\n\\node at (1.643,-0.260) {$A$};\n\\node at (4.107,-0.260) {$B$};\n\\node at (0.838,1.064) {$C$};\n\\node at (2.289,2.322) {$D$};\n\\end{tikzpicture}",
+      "caption": "Hình 22",
+      "pos": "right"
+     }
+    },
+    {
+     "type": "problem",
+     "label": "Bài 19.",
+     "statement": "[TH] (SGK 4{.}21) Cho tam giác $ABC$ có $AB = 9$ cm, $D$ là điểm thuộc cạnh $AB$ sao cho $AD = 6$ cm. Kẻ $DE$ song song với $BC$ ($E$ thuộc $AC$), kẻ $EF$ song song với $CD$ ($F$ thuộc $AB$) (Hình 23). Tính độ dài $AF$.",
+     "level": 2,
+     "tier": "onclass",
+     "dang_id": "TH6",
+     "solution": "Xét $\\triangle ABC$ có $DE \\parallel BC$ nên $\\dfrac{AE}{AC}=\\dfrac{AD}{AB}=\\dfrac{6}{9}=\\dfrac{2}{3}$ (định lí Thalès).[[br]]Xét $\\triangle ADC$ có $EF \\parallel CD$ nên $\\dfrac{AF}{AD}=\\dfrac{AE}{AC}=\\dfrac{2}{3}$ (định lí Thalès).[[br]]Vậy $AF=\\dfrac{2}{3}\\cdot 6=4$ cm.",
+     "figure_given": true,
+     "hints": [
+      "Tỉ số $\\dfrac{AE}{AC}$ xuất hiện trong cả hai tam giác $ABC$ và $ADC$."
+     ],
+     "figure": {
+      "tikz": "\\begin{tikzpicture}[line width=0.8pt, font=\\small, scale=1.0]\n\\draw[ink] (1.200,3.000) -- (0.000,0.000) -- (4.200,0.000) -- cycle;\n\\draw[brand] (0.400,1.000) -- (3.200,1.000);\n\\draw[ink] (0.400,1.000) -- (4.200,0.000);\n\\draw[brand,line width=1.0pt] (3.200,1.000) -- (0.667,1.667);\n\\fill[ink] (1.200,3.000) circle (1.2pt);\n\\fill[ink] (0.000,0.000) circle (1.2pt);\n\\fill[ink] (4.200,0.000) circle (1.2pt);\n\\fill[ink] (0.400,1.000) circle (1.2pt);\n\\fill[ink] (3.200,1.000) circle (1.2pt);\n\\fill[ink] (0.667,1.667) circle (1.2pt);\n\\node at (1.155,3.256) {$A$};\n\\node at (-0.213,-0.149) {$B$};\n\\node at (4.436,-0.110) {$C$};\n\\node at (0.140,1.000) {$D$};\n\\node at (3.384,1.184) {$E$};\n\\node at (0.407,1.667) {$F$};\n\\end{tikzpicture}",
+      "caption": "Hình 23",
+      "pos": "right"
+     }
+    },
+    {
+     "type": "problem",
+     "label": "Bài 20.",
+     "statement": "[TH] (SGK 4{.}4) Cho tam giác $ABC$ có trọng tâm $G$. Vẽ đường thẳng $d$ qua $G$ và song song với $AB$, $d$ cắt $BC$ tại điểm $M$ (Hình 24, $N$ là trung điểm của $AB$). Chứng minh $BM = \\dfrac{1}{3}BC$.",
+     "level": 2,
+     "tier": "onclass",
+     "dang_id": "TH6",
+     "solution": "Vì $G$ là trọng tâm, $CN$ là đường trung tuyến nên $\\dfrac{CG}{CN}=\\dfrac{2}{3}$.[[br]]Xét $\\triangle CNB$ có $GM \\parallel NB$ nên $\\dfrac{CM}{CB}=\\dfrac{CG}{CN}=\\dfrac{2}{3}$ (định lí Thalès).[[br]]Ta có $BM = BC - CM = BC - \\dfrac{2}{3}BC$.[[br]]Vậy $BM=\\dfrac{1}{3}BC$.",
+     "figure_given": true,
+     "hints": [
+      "Trọng tâm chia đường trung tuyến $CN$ theo tỉ số nào (lớp 7)?"
+     ],
+     "figure": {
+      "tikz": "\\begin{tikzpicture}[line width=0.8pt, font=\\small, scale=1.0]\n\\draw[ink] (1.500,3.000) -- (0.000,0.000) -- (4.200,0.000) -- cycle;\n\\draw[ink,dashed] (4.200,0.000) -- (0.750,1.500);\n\\draw[brand,line width=1.0pt] (1.900,1.000) -- (1.400,0.000);\n\\draw[ink] (1.223,2.201) -- (1.027,2.299);\n\\draw[ink] (0.473,0.701) -- (0.277,0.799);\n\\fill[ink] (1.500,3.000) circle (1.2pt);\n\\fill[ink] (0.000,0.000) circle (1.2pt);\n\\fill[ink] (4.200,0.000) circle (1.2pt);\n\\fill[ink] (0.750,1.500) circle (1.2pt);\n\\fill[ink] (1.900,1.000) circle (1.2pt);\n\\fill[ink] (1.400,0.000) circle (1.2pt);\n\\node at (1.455,3.256) {$A$};\n\\node at (-0.225,-0.130) {$B$};\n\\node at (4.436,-0.110) {$C$};\n\\node at (0.490,1.500) {$N$};\n\\node at (1.855,1.256) {$G$};\n\\node at (1.400,-0.260) {$M$};\n\\end{tikzpicture}",
+      "caption": "Hình 24",
+      "pos": "right"
+     }
+    },
+    {
+     "type": "problem",
+     "label": "Bài 21.",
+     "statement": "[TH] (SGK 4{.}26) Cho tam giác $ABC$, điểm $I$ thuộc cạnh $AB$, điểm $K$ thuộc cạnh $AC$. Kẻ $IM$ song song với $BK$ ($M$ thuộc $AC$), kẻ $KN$ song song với $CI$ ($N$ thuộc $AB$) (Hình 25). Chứng minh $MN \\parallel BC$.",
+     "level": 2,
+     "tier": "onclass",
+     "dang_id": "TH6",
+     "solution": "Xét $\\triangle ABK$ có $IM \\parallel BK$ nên $\\dfrac{AI}{AB}=\\dfrac{AM}{AK}$ (định lí Thalès) $\\Rightarrow AI\\cdot AK = AB\\cdot AM$.[[br]]Xét $\\triangle ACI$ có $KN \\parallel CI$ nên $\\dfrac{AN}{AI}=\\dfrac{AK}{AC}$ (định lí Thalès) $\\Rightarrow AN\\cdot AC = AI\\cdot AK$.[[br]]Ta có $AB\\cdot AM = AN\\cdot AC$, tức là $\\dfrac{AN}{AB}=\\dfrac{AM}{AC}$.[[br]]Vậy $MN \\parallel BC$ (định lí Thalès đảo).",
+     "figure_given": true,
+     "hints": [
+      "Hai tỉ lệ thức cùng chứa tích $AI\\cdot AK$.",
+      "Đưa về $\\dfrac{AN}{AB}=\\dfrac{AM}{AC}$."
+     ],
+     "figure": {
+      "tikz": "\\begin{tikzpicture}[line width=0.8pt, font=\\small, scale=1.0]\n\\draw[ink] (1.400,3.100) -- (0.000,0.000) -- (4.200,0.000) -- cycle;\n\\draw[ink] (0.000,0.000) -- (2.940,1.395);\n\\draw[ink] (4.200,0.000) -- (0.840,1.860);\n\\draw[brand] (0.840,1.860) -- (2.016,2.418);\n\\draw[brand] (2.940,1.395) -- (1.092,2.418);\n\\draw[brand,line width=1.0pt] (2.016,2.418) -- (1.092,2.418);\n\\fill[ink] (1.400,3.100) circle (1.2pt);\n\\fill[ink] (0.000,0.000) circle (1.2pt);\n\\fill[ink] (4.200,0.000) circle (1.2pt);\n\\fill[ink] (0.840,1.860) circle (1.2pt);\n\\fill[ink] (2.940,1.395) circle (1.2pt);\n\\fill[ink] (2.016,2.418) circle (1.2pt);\n\\fill[ink] (1.092,2.418) circle (1.2pt);\n\\node at (1.355,3.356) {$A$};\n\\node at (-0.213,-0.149) {$B$};\n\\node at (4.436,-0.110) {$C$};\n\\node at (0.580,1.860) {$I$};\n\\node at (3.200,1.395) {$K$};\n\\node at (2.276,2.418) {$M$};\n\\node at (0.832,2.418) {$N$};\n\\end{tikzpicture}",
+      "caption": "Hình 25",
+      "pos": "right"
+     }
+    }
+   ]
+  },
+  {
+   "kind": "reflection",
+   "number": 5,
+   "title": "Tổng kết \\& bài tập về nhà",
+   "teacher_note": "BTVN bám đúng các dạng trên lớp; bài tự vẽ hình làm trước để có hình cho bài hệ thức SGK 4{.}3.",
+   "blocks": [
+    {
+     "type": "problem",
+     "label": "BTVN~1.",
+     "statement": "(SBT Chân trời sáng tạo) Trên một đường thẳng, đặt ba đoạn thẳng liên tiếp $AB = BC = CD$.[[br]]a) [NB] Tìm tỉ số $\\dfrac{AB}{BD}$.[[br]]b) [NB] Tìm các tỉ số $\\dfrac{AB}{AD}$ và $\\dfrac{AC}{AD}$.",
+     "level": 1,
+     "tier": "btvn",
+     "dang_id": "NB1",
+     "solution": "a) $\\dfrac{1}{2}$.[[br]]b) $\\dfrac{1}{3}$; $\\dfrac{2}{3}$."
+    },
+    {
+     "type": "problem",
+     "label": "BTVN~2.",
+     "statement": "[NB] (Đề giữa kì II, THCS Gia Quất) Cho tam giác $ABC$ có $DE \\parallel BC$ ($D \\in AB$, $E \\in AC$). Theo định lí Thalès, khẳng định nào sau đây đúng?",
+     "level": 1,
+     "tier": "btvn",
+     "dang_id": "NB2",
+     "solution": "A.",
+     "options": [
+      "$\\dfrac{AD}{DB}=\\dfrac{AE}{EC}$.",
+      "$\\dfrac{AD}{AB}=\\dfrac{AE}{EB}$.",
+      "$\\dfrac{AE}{EC}=\\dfrac{DB}{AD}$.",
+      "$\\dfrac{AD}{AE}=\\dfrac{AB}{EC}$."
+     ]
+    },
+    {
+     "type": "problem",
+     "label": "BTVN~3.",
+     "statement": "Cho tam giác $DEF$ có $PQ \\parallel EF$ ($P \\in DE$, $Q \\in DF$). Điền vào chỗ chấm.[[br]]a) [NB] $\\dfrac{DP}{PE}=\\dfrac{\\ldots}{QF}$.[[br]]b) [NB] $\\dfrac{PE}{DE}=\\dfrac{QF}{\\ldots}$.",
+     "level": 1,
+     "tier": "btvn",
+     "dang_id": "NB2",
+     "solution": "a) $DQ$.[[br]]b) $DF$."
+    },
+    {
+     "type": "problem",
+     "label": "BTVN~4.",
+     "statement": "[NB] (SGK 4{.}18) Cho tam giác $ABC$ có $M \\in AB$, $N \\in AC$, $\\widehat{AMN}=\\widehat{ABC}$, $AM = 2$, $MB = 3$, $AN = 1{,}5$, $NC = x$. Độ dài $x$ bằng",
+     "level": 1,
+     "tier": "btvn",
+     "dang_id": "NB3",
+     "solution": "C. Vì $\\widehat{AMN}=\\widehat{ABC}$ (đồng vị) nên $MN \\parallel BC$ $\\Rightarrow$ $\\dfrac{2}{3}=\\dfrac{1{,}5}{x}$, $x = 2{,}25$.",
+     "options": [
+      "$2{,}75$.",
+      "$2$.",
+      "$2{,}25$.",
+      "$3{,}75$."
+     ]
+    },
+    {
+     "type": "problem",
+     "label": "BTVN~5.",
+     "statement": "(Tài liệu Thalès, Dạng 1) Tìm $x$ trong mỗi tỉ lệ thức sau.[[br]]a) [NB] $\\dfrac{3}{x}=\\dfrac{9}{12}$.[[br]]b) [NB] $\\dfrac{5x}{8}=\\dfrac{15}{16}$.",
+     "level": 1,
+     "tier": "btvn",
+     "dang_id": "NB3",
+     "solution": "a) $x=\\dfrac{3\\cdot 12}{9}=4$.[[br]]b) $5x=\\dfrac{15\\cdot 8}{16}=7{,}5$ nên $x = 1{,}5$."
+    },
+    {
+     "type": "problem",
+     "label": "BTVN~6.",
+     "statement": "Cho tam giác $ABC$, $D \\in AB$, $E \\in AC$. Trong mỗi trường hợp, $DE$ có song song với $BC$ không?[[br]]a) [NB] $AD = 3$, $DB = 6$, $AE = 4$, $EC = 8$.[[br]]b) [NB] $AD = 2$, $DB = 5$, $AE = 3$, $EC = 6$.[[br]]c) [NB] $AD = 4$, $AB = 10$, $AE = 6$, $AC = 15$.",
+     "level": 1,
+     "tier": "btvn",
+     "dang_id": "NB4",
+     "solution": "a) $\\dfrac{3}{6}=\\dfrac{4}{8}$ nên có.[[br]]b) $\\dfrac{2}{5}\\ne\\dfrac{3}{6}$ nên không.[[br]]c) $\\dfrac{4}{10}=\\dfrac{6}{15}$ nên có."
+    },
+    {
+     "type": "problem",
+     "label": "BTVN~7.",
+     "statement": "Điền vào chỗ trống để hoàn thành lời giải: cho tam giác $ABC$ có $MN \\parallel BC$ ($M \\in AB$, $N \\in AC$), $AM = 2$, $MB = 3$, $AN = 1{,}5$. Tính $x = NC$.[[br]]a) [NB] Xét $\\triangle ABC$ có $MN \\parallel BC$ nên $\\dfrac{AM}{MB}=\\dfrac{\\ldots}{NC}$ (định lí [[blank:1.6cm]]).[[br]]b) [NB] Thay số: $\\dfrac{2}{3}=\\dfrac{1{,}5}{x}$.[[br]]c) [NB] $\\Rightarrow x=$ [[blank:1.6cm]] $=$ [[blank:1cm]].",
+     "level": 1,
+     "tier": "btvn",
+     "dang_id": "NB5",
+     "solution": "a) $AN$; Thalès.[[br]]b) (đã cho).[[br]]c) $\\dfrac{3\\cdot 1{,}5}{2}$; $2{,}25$."
+    },
+    {
+     "type": "problem",
+     "label": "BTVN~8.",
+     "statement": "[NB] (SGK 4{.}3) Vẽ hình vào vở: tam giác $ABC$, điểm $D$ trên cạnh $BC$, đường thẳng qua $D$ song song với $AB$ cắt $AC$ tại $F$, đường thẳng qua $D$ song song với $AC$ cắt $AB$ tại $E$. Ghi giả thiết $-$ kết luận.",
+     "level": 1,
+     "tier": "btvn",
+     "dang_id": "NB6",
+     "solution": "GT: $\\triangle ABC$, $D \\in BC$, $DF \\parallel AB$ ($F \\in AC$), $DE \\parallel AC$ ($E \\in AB$).[[br]]KL: $\\dfrac{AE}{AB}+\\dfrac{AF}{AC}=1$.",
+     "draw": true
+    },
+    {
+     "type": "problem",
+     "label": "BTVN~9.",
+     "statement": "[TH] (Tài liệu Thalès, Dạng 1) Cho điểm $C$ thuộc đoạn thẳng $AB$. Biết $AB = 20$ cm, $\\dfrac{CA}{CB}=\\dfrac{2}{3}$. Tính độ dài $CA$, $CB$.",
+     "level": 2,
+     "tier": "btvn",
+     "dang_id": "TH1",
+     "solution": "Ta có $\\dfrac{CA}{2}=\\dfrac{CB}{3}=\\dfrac{CA+CB}{5}=\\dfrac{20}{5}=4$.[[br]]Vậy $CA = 8$ cm, $CB = 12$ cm.",
+     "hints": [
+      "Dùng tính chất dãy tỉ số bằng nhau."
+     ]
+    },
+    {
+     "type": "problem",
+     "label": "BTVN~10.",
+     "statement": "[TH] (Tài liệu Thalès, Dạng 1) Cho đoạn thẳng $AB$. Điểm $C$ thuộc đoạn $AB$ và điểm $D$ thuộc tia đối của tia $BA$ sao cho $\\dfrac{CA}{CB}=\\dfrac{DA}{DB}=2$. Biết $CD = 4$ cm, tính độ dài $AB$.",
+     "level": 2,
+     "tier": "btvn",
+     "dang_id": "TH1",
+     "solution": "Đặt $AB = a$. Ta có $CA = \\dfrac{2a}{3}$, $CB=\\dfrac{a}{3}$.[[br]]Vì $DA = DB + a$ và $DA = 2DB$ nên $DB = a$.[[br]]Ta có $CD = CB + BD = \\dfrac{a}{3}+a=\\dfrac{4a}{3}=4$ nên $a = 3$.[[br]]Vậy $AB = 3$ cm.",
+     "hints": [
+      "Đặt $AB = a$ rồi viết $CB$, $DB$ theo $a$."
+     ]
+    },
+    {
+     "type": "problem",
+     "label": "BTVN~11.",
+     "statement": "[TH] Cho tam giác $ABC$ có $AB = 12$ cm, $AC = 15$ cm. Trên cạnh $AB$ lấy điểm $M$ với $AM = 4$ cm, trên cạnh $AC$ lấy điểm $N$ với $AN = 5$ cm. Chứng minh $MN \\parallel BC$ và tứ giác $BMNC$ là hình thang.",
+     "level": 2,
+     "tier": "btvn",
+     "dang_id": "TH2",
+     "solution": "Ta có $\\dfrac{AM}{AB}=\\dfrac{4}{12}=\\dfrac{1}{3}$, $\\dfrac{AN}{AC}=\\dfrac{5}{15}=\\dfrac{1}{3}$ nên $MN \\parallel BC$ (định lí Thalès đảo).[[br]]Vậy tứ giác $BMNC$ có $MN \\parallel BC$ nên là hình thang.",
+     "figure_given": true,
+     "hints": [
+      "Làm như Bài về hình thang $BB'C'C$ ở Ca 1."
+     ],
+     "figure": {
+      "tikz": "\\begin{tikzpicture}[line width=0.8pt, font=\\small, scale=1.0]\n\\draw[ink] (1.300,2.700) -- (0.000,0.000) -- (3.800,0.000) -- cycle;\n\\draw[brand,line width=1.0pt] (0.867,1.800) -- (2.133,1.800);\n\\fill[ink] (1.300,2.700) circle (1.2pt);\n\\fill[ink] (0.000,0.000) circle (1.2pt);\n\\fill[ink] (3.800,0.000) circle (1.2pt);\n\\fill[ink] (0.867,1.800) circle (1.2pt);\n\\fill[ink] (2.133,1.800) circle (1.2pt);\n\\node at (1.255,2.956) {$A$};\n\\node at (-0.225,-0.130) {$B$};\n\\node at (4.036,-0.110) {$C$};\n\\node at (0.631,1.910) {$M$};\n\\node at (2.317,1.984) {$N$};\n\\end{tikzpicture}",
+      "caption": "Hình 26",
+      "pos": "right"
+     }
+    },
+    {
+     "type": "problem",
+     "label": "BTVN~12.",
+     "statement": "[TH] (Tài liệu Thalès, Dạng 3) Xét hình thang $ABCD$ ($AB \\parallel CD$). Một đường thẳng song song với hai đáy cắt các cạnh bên $AD$, $BC$ lần lượt tại $E$, $F$; $K$ là giao điểm của $AC$ và $EF$. Chứng minh $\\dfrac{AE}{AD}+\\dfrac{CF}{CB}=1$.",
+     "level": 2,
+     "tier": "btvn",
+     "dang_id": "TH3",
+     "solution": "Xét $\\triangle ADC$ có $EK \\parallel DC$ nên $\\dfrac{AE}{AD}=\\dfrac{AK}{AC}$ (định lí Thalès).[[br]]Xét $\\triangle CAB$ có $KF \\parallel AB$ nên $\\dfrac{CF}{CB}=\\dfrac{CK}{CA}$ (định lí Thalès).[[br]]Ta có $\\dfrac{AE}{AD}+\\dfrac{CF}{CB}=\\dfrac{AK+CK}{AC}=1$.[[br]]Vậy $\\dfrac{AE}{AD}+\\dfrac{CF}{CB}=1$.",
+     "figure_given": true,
+     "hints": [
+      "Điểm $K$ là cầu nối giữa hai tam giác $ADC$ và $CAB$."
+     ],
+     "figure": {
+      "tikz": "\\begin{tikzpicture}[line width=0.8pt, font=\\small, scale=1.0]\n\\draw[ink] (0.600,2.400) -- (2.400,2.400) -- (3.600,0.000) -- (0.000,0.000) -- cycle;\n\\draw[ink,dashed] (0.600,2.400) -- (3.600,0.000);\n\\draw[brand,line width=1.0pt] (0.360,1.440) -- (2.880,1.440);\n\\fill[ink] (0.600,2.400) circle (1.2pt);\n\\fill[ink] (2.400,2.400) circle (1.2pt);\n\\fill[ink] (3.600,0.000) circle (1.2pt);\n\\fill[ink] (0.000,0.000) circle (1.2pt);\n\\fill[ink] (0.360,1.440) circle (1.2pt);\n\\fill[ink] (2.880,1.440) circle (1.2pt);\n\\fill[ink] (1.800,1.440) circle (1.2pt);\n\\node at (0.433,2.599) {$A$};\n\\node at (2.530,2.625) {$B$};\n\\node at (3.825,-0.130) {$C$};\n\\node at (-0.199,-0.167) {$D$};\n\\node at (0.109,1.507) {$E$};\n\\node at (3.116,1.550) {$F$};\n\\node at (1.755,1.184) {$K$};\n\\end{tikzpicture}",
+      "caption": "Hình 27",
+      "pos": "right"
+     }
+    },
+    {
+     "type": "problem",
+     "label": "BTVN~13.",
+     "statement": "[TH] (SGK 4{.}5, đổi số) Với cách đo như Ví dụ sông ở Ca 2 (hình dưới): nếu bác An đo được $AF = 45$ m, $FC = 15$ m, $EC = 24$ m thì khoảng cách $BE$ bằng bao nhiêu?",
+     "level": 2,
+     "tier": "btvn",
+     "dang_id": "TH4",
+     "solution": "Xét $\\triangle CAB$ có $EF \\parallel AB$ nên $\\dfrac{CF}{CA}=\\dfrac{CE}{CB}$ (định lí Thalès) hay $\\dfrac{15}{60}=\\dfrac{24}{CB}$.[[br]]$\\Rightarrow CB = 96$ (m).[[br]]Vậy $BE = 96 - 24 = 72$ m.",
+     "figure_given": true,
+     "hints": [
+      "Làm như Ví dụ đo khoảng cách qua sông."
+     ],
+     "figure": {
+      "tikz": "\\begin{tikzpicture}[line width=0.8pt, font=\\small, scale=1.0]\n\\draw[ink!45] (-0.5,1.7) .. controls (1.2,2.2) and (2.4,1.3) .. (4.2,1.8);\n\\draw[ink] (0.000,3.000) -- (2.400,3.000);\n\\draw[ink] (2.400,3.000) -- (3.600,3.000);\n\\draw[brand,line width=1.0pt] (3.600,3.000) -- (2.733,2.000);\n\\draw[brand,line width=1.0pt] (2.733,2.000) -- (1.000,0.000);\n\\draw[ink] (0.000,3.000) -- (1.000,0.000);\n\\draw[ink] (2.400,3.000) -- (2.733,2.000);\n\\fill[ink] (0.000,3.000) circle (1.2pt);\n\\fill[ink] (2.400,3.000) circle (1.2pt);\n\\fill[ink] (3.600,3.000) circle (1.2pt);\n\\fill[ink] (1.000,0.000) circle (1.2pt);\n\\fill[ink] (2.733,2.000) circle (1.2pt);\n\\node at (-0.184,3.184) {$A$};\n\\node at (2.251,2.787) {$F$};\n\\node at (3.784,3.184) {$C$};\n\\node at (1.000,-0.260) {$B$};\n\\node at (2.993,2.000) {$E$};\n\\end{tikzpicture}",
+      "caption": "Hình 28",
+      "pos": "right"
+     }
+    },
+    {
+     "type": "problem",
+     "label": "BTVN~14.",
+     "statement": "[TH] (Tài liệu Thalès, Dạng 2) Xét hình thang $ABCD$ ($AB \\parallel CD$). Đường thẳng song song với hai đáy cắt $AD$, $BC$ lần lượt tại $M$, $N$ với $AM = 2$ cm, $MD = 5$ cm, $BC = 14$ cm. Tính $BN$, $NC$.",
+     "level": 2,
+     "tier": "btvn",
+     "dang_id": "TH5",
+     "solution": "Như Bài hình thang ở Ca 2 ta có $\\dfrac{BN}{BC}=\\dfrac{AM}{AD}=\\dfrac{2}{7}$.[[br]]$\\Rightarrow$ $BN=\\dfrac{2}{7}\\cdot 14=4$.[[br]]Vậy $BN = 4$ cm, $NC = 10$ cm.",
+     "figure_given": true,
+     "hints": [
+      "Kẻ đường chéo $AC$ cắt $MN$ tại $I$."
+     ],
+     "figure": {
+      "tikz": "\\begin{tikzpicture}[line width=0.8pt, font=\\small, scale=1.0]\n\\draw[ink] (0.800,2.400) -- (2.200,2.400) -- (3.800,0.000) -- (0.000,0.000) -- cycle;\n\\draw[brand,line width=1.0pt] (0.533,1.600) -- (2.733,1.600);\n\\fill[ink] (0.800,2.400) circle (1.2pt);\n\\fill[ink] (2.200,2.400) circle (1.2pt);\n\\fill[ink] (3.800,0.000) circle (1.2pt);\n\\fill[ink] (0.000,0.000) circle (1.2pt);\n\\fill[ink] (0.533,1.600) circle (1.2pt);\n\\fill[ink] (2.733,1.600) circle (1.2pt);\n\\node at (0.651,2.613) {$A$};\n\\node at (2.330,2.625) {$B$};\n\\node at (4.025,-0.130) {$C$};\n\\node at (-0.213,-0.149) {$D$};\n\\node at (0.289,1.689) {$M$};\n\\node at (2.946,1.749) {$N$};\n\\end{tikzpicture}",
+      "caption": "Hình 29",
+      "pos": "right"
+     }
+    },
+    {
+     "type": "problem",
+     "label": "BTVN~15.",
+     "statement": "[TH] (SBT Chân trời sáng tạo) Cho tam giác $ABC$ có $AM$ là đường trung tuyến. Trên $AB$ lấy $D$ với $AD = \\dfrac{1}{3}AB$; qua $D$ kẻ đường thẳng song song với $BC$ cắt $AM$ tại $I$, cắt $AC$ tại $E$. Tính các tỉ số $\\dfrac{AI}{AM}$ và $\\dfrac{AE}{AC}$.",
+     "level": 2,
+     "tier": "btvn",
+     "dang_id": "TH6",
+     "solution": "Xét $\\triangle ABM$ có $DI \\parallel BM$ nên $\\dfrac{AI}{AM}=\\dfrac{AD}{AB}=\\dfrac{1}{3}$ (định lí Thalès).[[br]]Xét $\\triangle AMC$ có $IE \\parallel MC$ nên $\\dfrac{AE}{AC}=\\dfrac{AI}{AM}=\\dfrac{1}{3}$ (định lí Thalès).[[br]]Vậy $\\dfrac{AI}{AM}=\\dfrac{AE}{AC}=\\dfrac{1}{3}$.",
+     "figure_given": true,
+     "hints": [
+      "Đường $DE$ cắt cả hai tam giác $ABM$ và $AMC$."
+     ],
+     "figure": {
+      "tikz": "\\begin{tikzpicture}[line width=0.8pt, font=\\small, scale=1.0]\n\\draw[ink] (1.300,3.000) -- (0.000,0.000) -- (4.200,0.000) -- cycle;\n\\draw[ink] (1.300,3.000) -- (2.100,0.000);\n\\draw[brand,line width=1.0pt] (0.867,2.000) -- (1.567,2.000);\n\\draw[brand,line width=1.0pt] (1.567,2.000) -- (2.267,2.000);\n\\draw[ink] (1.050,0.110) -- (1.050,-0.110);\n\\draw[ink] (3.150,0.110) -- (3.150,-0.110);\n\\fill[ink] (1.300,3.000) circle (1.2pt);\n\\fill[ink] (0.000,0.000) circle (1.2pt);\n\\fill[ink] (4.200,0.000) circle (1.2pt);\n\\fill[ink] (2.100,0.000) circle (1.2pt);\n\\fill[ink] (0.867,2.000) circle (1.2pt);\n\\fill[ink] (1.567,2.000) circle (1.2pt);\n\\fill[ink] (2.267,2.000) circle (1.2pt);\n\\node at (1.255,3.256) {$A$};\n\\node at (-0.213,-0.149) {$B$};\n\\node at (4.436,-0.110) {$C$};\n\\node at (2.100,-0.260) {$M$};\n\\node at (0.631,2.110) {$D$};\n\\node at (1.741,2.193) {$I$};\n\\node at (2.451,2.184) {$E$};\n\\end{tikzpicture}",
+      "caption": "Hình 30",
+      "pos": "right"
+     }
+    },
+    {
+     "type": "problem",
+     "label": "BTVN~16.",
+     "statement": "[TH] (SGK 4{.}23, đổi số) Hai điểm $A$, $B$ nằm trên một tia gốc $O$, hai điểm $C$, $D$ nằm trên một tia gốc $O$ khác, $AC \\parallel BD$, $OA = 3$ cm, $OB = 7{,}5$ cm, $OC = 4$ cm. Tính $CD$.",
+     "level": 2,
+     "tier": "btvn",
+     "dang_id": "TH6",
+     "solution": "Xét $\\triangle OBD$ có $AC \\parallel BD$ nên $\\dfrac{OA}{OB}=\\dfrac{OC}{OD}$ (định lí Thalès) hay $\\dfrac{3}{7{,}5}=\\dfrac{4}{OD}$.[[br]]$\\Rightarrow OD = 10$ (cm).[[br]]Vậy $CD = 10 - 4 = 6$ cm.",
+     "figure_given": true,
+     "hints": [
+      "Làm như Ví dụ góc $xOy$."
+     ],
+     "figure": {
+      "tikz": "\\begin{tikzpicture}[line width=0.8pt, font=\\small, scale=1.0]\n\\draw[ink] (0.000,0.000) -- (4.600,0.000);\n\\draw[ink] (0.000,0.000) -- (3.000,2.600);\n\\draw[ink] (1.643,0.000) -- (0.968,0.839);\n\\draw[brand,line width=1.0pt] (4.107,0.000) -- (2.419,2.097);\n\\fill[ink] (0.000,0.000) circle (1.2pt);\n\\fill[ink] (1.643,0.000) circle (1.2pt);\n\\fill[ink] (4.107,0.000) circle (1.2pt);\n\\fill[ink] (0.968,0.839) circle (1.2pt);\n\\fill[ink] (2.419,2.097) circle (1.2pt);\n\\node at (-0.244,-0.089) {$O$};\n\\node at (1.643,-0.260) {$A$};\n\\node at (4.107,-0.260) {$B$};\n\\node at (0.838,1.064) {$C$};\n\\node at (2.289,2.322) {$D$};\n\\end{tikzpicture}",
+      "caption": "Hình 31",
+      "pos": "right"
+     }
+    }
+   ]
+  }
+ ]
+}

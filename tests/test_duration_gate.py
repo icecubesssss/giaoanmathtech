@@ -247,3 +247,12 @@ def test_gop_vd_vdc_thi_dich_cung_phai_gop():
         b.figure_given = True
         b.quy_trinh = ["Bước 1 — vẽ hình, ghi giả thiết"]
     assert not any("tỉ lệ" in w for w in check_duration(lesson)), check_duration(lesson)
+
+
+def test_grade_subject_doc_dung_lop_6_7():
+    """Trước 15/10/2026 mọi lớp ≠ 8 bị suy thành lớp 9 → phiếu lớp 6, 7 chấm theo rate card lớp 9."""
+    from src.validators.duration_gate import _grade_subject
+    for nhan, lop in (("Lớp 6", "lop-6"), ("Lớp 7 • Hình học", "lop-7"),
+                      ("Lớp 8", "lop-8"), ("Lớp 9 • Ôn vào 10", "lop-9"), ("", "lop-9")):
+        les = LessonPackage(slug="t", title="t", grade_label=nhan, stages=[])
+        assert _grade_subject(les)[0] == lop, nhan

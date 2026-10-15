@@ -4,12 +4,13 @@
 Khác `thong_ke_dang_de.py` (đếm từ khoá, ~87% tin cậy, SÓT dạng lời văn như "lập BPT"):
 lưới dạng do người đọc từng đề và gắn mã, nên con số dùng được để CHỐT KHUNG đề.
 
-Ra: outputs/thong-ke-dang-de/Thong-ke-dang-<KY>-Toan9-luoi-tay.xlsx + .md
+Ra: outputs/thong-ke-dang-de/Thong-ke-dang-<KY>-Toan{a.lop}-luoi-tay.xlsx + .md
     - % số đề có dạng (cả 2 năm / riêng năm mới nhất), điểm TB khi có
     - phủ theo quận/huyện, đề gần trùng nhau
 
 Dùng:
-    .venv/bin/python scripts/thong_ke_luoi_dang.py            # mặc định gk1
+    .venv/bin/python scripts/thong_ke_luoi_dang.py            # mặc định gk1 lớp 9
+    .venv/bin/python scripts/thong_ke_luoi_dang.py --lop 8    # lưới lớp 8
     .venv/bin/python scripts/thong_ke_luoi_dang.py --ky gk1
 """
 from __future__ import annotations
@@ -20,7 +21,7 @@ import json
 from pathlib import Path
 
 ROOT = Path(__file__).resolve().parent.parent
-LUOI = ROOT / "inputs" / "refs" / "de-thi" / "lop-9" / "luoi-dang"
+LUOI_GOC = ROOT / "inputs" / "refs" / "de-thi"  # lop-<N>/luoi-dang/<ky>.json
 OUT = ROOT / "outputs" / "thong-ke-dang-de"
 
 # Nhóm hiển thị theo khung đề GK1 (thứ tự = thứ tự bài trong đề trường)
@@ -32,6 +33,16 @@ NHOM = [
     ("IV. Hình tam giác vuông", ["TGV_TINH", "TGV_CM", "TGV_VDC", "DTRON"]),
     ("V. Câu cuối", ["TOIUU_TT", "VDC_DS"]),
     ("Khác", ["TN", "CAN", "KHAC"]),
+]
+# Lớp 8 (GK1 = Chương I, II đa thức – HĐT + Chương III tứ giác), lưới gắn tay 10/10/2026
+NHOM_8 = [
+    ("I. Đơn thức – đa thức", ["DON_THUC", "DA_THUC"]),
+    ("II. Phép tính – HĐT", ["PHEP_TINH", "RG_HDT", "KPT_BIEN", "TINH_NHANH", "CHIA_HET_N"]),
+    ("III. Tìm x", ["TIM_X", "TIM_X_HDT"]),
+    ("IV. Toán thực tế", ["THUC_TE"]),
+    ("V. Hình tứ giác", ["GOC_TG", "H_HCN", "H_HBH", "H_THOI_VUONG", "H_HTC", "H_VDC", "DUONG_TB"]),
+    ("VI. Câu cuối", ["VDC_BINHPHUONG", "VDC_GTNN", "VDC_TOIUU", "VDC_SO", "VDC_DU"]),
+    ("Khác", ["TN"]),
 ]
 
 
@@ -60,7 +71,12 @@ def thong_ke(du_lieu: dict) -> dict:
 def main() -> int:
     ap = argparse.ArgumentParser()
     ap.add_argument("--ky", default="gk1")
+    ap.add_argument("--lop", type=int, default=9)
     a = ap.parse_args()
+    global NHOM
+    if a.lop == 8:
+        NHOM = NHOM_8
+    LUOI = LUOI_GOC / f"lop-{a.lop}" / "luoi-dang"
     du_lieu = json.loads((LUOI / f"{a.ky}.json").read_text(encoding="utf-8"))
     tk = thong_ke(du_lieu)
     ten = du_lieu["ma_dang"]
@@ -69,7 +85,7 @@ def main() -> int:
     trung = [(e["truong"], e["nam"], e["ghi_chu"]) for e in de
              if "TRÙNG" in e.get("ghi_chu", "") or "trùng" in e.get("ghi_chu", "").lower()]
 
-    md = [f"# Thống kê dạng đề {a.ky.upper()} Toán 9 Hà Nội — gắn tay {tk['n']} đề",
+    md = [f"# Thống kê dạng đề {a.ky.upper()} Toán {a.lop} Hà Nội — gắn tay {tk['n']} đề",
           "",
           f"Nguồn: {tk['n']} đề {a.ky.upper()} Hà Nội (toàn bộ đề trên toanmath, đã bỏ đề lệch KNTT); "
           f"riêng năm {tk['nam_moi']}: {tk['n_moi']} đề. Mỗi bài trong đề được đọc và gắn dạng bằng tay.",
@@ -86,7 +102,7 @@ def main() -> int:
     md += ["", "## Đề gần trùng nhau (không đếm là bằng chứng độc lập)", ""]
     md += [f"- {t} {n}: {g}" for t, n, g in trung]
     OUT.mkdir(parents=True, exist_ok=True)
-    (OUT / f"Thong-ke-dang-{a.ky.upper()}-Toan9-luoi-tay.md").write_text("\n".join(md) + "\n", encoding="utf-8")
+    (OUT / f"Thong-ke-dang-{a.ky.upper()}-Toan{a.lop}-luoi-tay.md").write_text("\n".join(md) + "\n", encoding="utf-8")
 
     try:
         import openpyxl
@@ -97,7 +113,7 @@ def main() -> int:
     wb = openpyxl.Workbook()
     ws = wb.active
     ws.title = "Tổng hợp"
-    ws.append([f"THỐNG KÊ DẠNG ĐỀ {a.ky.upper()} TOÁN 9 HÀ NỘI — GẮN TAY {tk['n']} ĐỀ"])
+    ws.append([f"THỐNG KÊ DẠNG ĐỀ {a.ky.upper()} TOÁN {a.lop} HÀ NỘI — GẮN TAY {tk['n']} ĐỀ"])
     ws.append([f"Năm {tk['nam_moi']}: {tk['n_moi']} đề. Nguồn: toàn bộ đề trên toanmath, đã bỏ đề lệch KNTT."])
     ws.append([])
     ws.append(["Nhóm", "Dạng", "Số đề", "% cả 2 năm", f"% năm {tk['nam_moi']}", "Điểm TB khi có", "Trường"])
@@ -135,7 +151,7 @@ def main() -> int:
     ws3.column_dimensions["A"].width = 26
     ws3.column_dimensions["F"].width = 70
     ws3.column_dimensions["G"].width = 45
-    p = OUT / f"Thong-ke-dang-{a.ky.upper()}-Toan9-luoi-tay.xlsx"
+    p = OUT / f"Thong-ke-dang-{a.ky.upper()}-Toan{a.lop}-luoi-tay.xlsx"
     wb.save(p)
     print(p.relative_to(ROOT))
     return 0

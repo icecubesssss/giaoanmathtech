@@ -1,0 +1,468 @@
+{
+ "_nguon": "Tiến độ trung tâm lớp 8 (T8. Tiến độ kiến thức. Nội bộ.pdf): tuần 41 Kết quả có thể và kết quả thuận lợi. Cách tính xác suất bằng tỉ số; tuần 42 Mối liên hệ giữa xác suất thực nghiệm với xác suất và ứng dụng. Luyện tập xác suất (90 phút mỗi tuần). Nguồn bài ở inputs/seeds/lop-8/dai-so/kntt/chuong-8-tinh-xac-suat. Mã: 'XSBC Dn.Bm' = '2. Xác suất của biến cố ngẫu nhiên.pdf' (D1 rút thẻ, D2 xúc xắc, D3 đồng xu, D4 vòng quay, D5 chọn đối tượng); 'XSTN Dn.Bm' = '1. Xác suất thực nghiệm của một biến cố trong một số trò chơi đơn giản.pdf'; 'SGK x.y' = SGK Toán 8 KNTT tập hai tr.59-77 (inputs/refs/sgk/lop-8, ảnh scan); đề GK2/CK2 trong inputs/refs/de-thi/lop-8 (bản chữ ở storage/cache/de-txt/lop-8).",
+ "_luat": "Soạn theo HUONG-DAN-SOAN-PHIEU-B.md. Thầy chốt 07/10/2026: chương VIII CHỈ NB-TH (bản đồ VD-VDC: co_vd = false) => tỉ lệ 30 NB / 70 TH, không soạn VD-VDC; câu 'bốc ít nhất bao nhiêu viên bi để chắc chắn' là nguyên lí Dirichlet, KHÔNG tính cho chương VIII. Hai ca gộp một phiếu (so_ca = 2). Kiểm tra 45 phút GỘP chương VII và VIII ở cuối tuần 42.",
+ "_so_cau": "Quỹ lớp 8 đại số mỗi ca: ví dụ 20′, trên lớp 60′, BTVN 35′ (rate NB 0,5′, TH 3′). Phiếu 2 ca có 45 phút kiểm tra => hệ số 0,75: ví dụ 30′ (4 NB + 6 TH + 2 mục lý thuyết), trên lớp 90′ = 54 câu NB (18 dạng x 3) = 27′ + 21 câu TH = 63′; BTVN 70′ (37 NB + 18 TH = 63,5′).",
+ "slug": "thuyet-minh-lop-8b-chuong-08-xac-suat",
+ "title": "Chương VIII (SGK KNTT): Mở đầu về tính xác suất của biến cố — kế hoạch 2 ca, 1 phiếu",
+ "grade": "lop-8",
+ "subject": "dai-so",
+ "tier": "B",
+ "tuan": "41-42",
+ "chuong": "chuong-08-xac-suat",
+ "thoiluong": [
+  "Ca 1 (Tuần 41) — SGK Bài 30: Kết quả có thể và kết quả thuận lợi $+$ Bài 31: Cách tính xác suất của biến cố bằng tỉ số: 1 ca $=$ 90 phút — SGV xếp 3 tiết.",
+  "Ca 2 (Tuần 42) — SGK Bài 32: Mối liên hệ giữa xác suất thực nghiệm với xác suất và ứng dụng $+$ Luyện tập chung $+$ Bài tập cuối chương VIII: 1 ca $=$ 90 phút $=$ 45 phút luyện tập $+$ 45 phút kiểm tra chương VII $-$ VIII.",
+  "SGV xếp ca 2 tới 6 tiết (Bài 32: 3, Luyện tập chung 2, Bài tập cuối chương 1).",
+  "\\textbf{Tổng 2 ca $=$ 180 phút $=$ 4 tiết} (1 ca 90 phút $=$ 2 tiết), trong đó 45 phút là bài kiểm tra gộp chương VII và chương VIII.",
+  "ĐỐI CHIẾU SGV Toán 8 KNTT: chương VIII có 9 tiết (Bài 30: 1, Bài 31: 2, Bài 32: 3, Luyện tập chung 2, Bài tập cuối chương 1).",
+  "Trung tâm dạy 3 tiết kiến thức $+$ 1 tiết kiểm tra, hụt 6 tiết.",
+  "Nén được vì lớp 6 đã học xác suất thực nghiệm, lớp 7 đã làm quen với biến cố và xác suất; lớp 8 chỉ thêm \\emph{kết quả thuận lợi}, công thức tỉ số, ước lượng $-$ dự đoán.",
+  "Hai ca dùng MỘT phiếu (khai \\texttt{so\\_ca} $=2$) theo luật gộp phiếu của chương không có bài vận dụng.",
+  "Theo luật kiểm tra chương 45 phút (chốt gộp chương VII $+$ VIII ngày 07/10/2026): phiếu khai \\texttt{kiem\\_tra\\_phut} $=45$, quỹ ví dụ và trên lớp nhân $\\dfrac{180-45}{180}=0{,}75$; bài tập về nhà giữ nguyên.",
+  "Đề kiểm tra 45 phút gồm cả câu phương trình, hàm số bậc nhất của chương VII (đề nằm ở thư mục chương VIII)."
+ ],
+ "kien_thuc_nen": [
+  "\\textbf{Xác suất thực nghiệm} (Lớp 6): tung đồng xu, gieo xúc xắc, lấy bóng rồi trả lại; tỉ số $\\dfrac{\\text{số lần xảy ra}}{\\text{tổng số lần}}$.",
+  "\\textbf{Biến cố, xác suất của biến cố} (Lớp 7): biến cố chắc chắn, không thể, ngẫu nhiên; xác suất trong các trò chơi đồng khả năng.",
+  "\\textbf{Số nguyên tố, hợp số, ước, bội, số chính phương, dấu hiệu chia hết} (Lớp 6): là phần đếm kết quả thuận lợi của gần hết các câu rút thẻ, vòng quay.",
+  "\\textbf{Rút gọn phân số, tỉ số phần trăm, làm tròn số} (Lớp 6, 7): kết quả xác suất phải ở dạng tối giản hoặc số thập phân, phần trăm theo yêu cầu.",
+  "\\textbf{Phương trình bậc nhất một ẩn} (Lớp 8, chương VII): bài ngược \\emph{biết xác suất, tìm số lượng}."
+ ],
+ "lythuyet": [
+  "\\textbf{Mục tiêu của chương}: làm được MỌI câu xác suất của đề giữa kì II, cuối kì II lớp 8 Hà Nội (khoảng \\textbf{0,5 $-$ 1,5 điểm}). Rà 20 đề có câu thuộc chương này: trắc nghiệm 0,25 điểm (xác suất, xác suất thực nghiệm, kết quả thuận lợi) và một câu tự luận 0,5 $-$ 1,5 điểm (rút thẻ, vòng quay 8 phần, lấy bóng nhiều màu, gieo xúc xắc có bảng kết quả). Cuối ca 2 làm bài kiểm tra 45 phút gộp chương VII và VIII.",
+  "Thầy chốt chương VIII chỉ dạy nhận biết $-$ thông hiểu (tỉ lệ 30 NB $/$ 70 TH), không soạn bài vận dụng.",
+  "\\textbf{Kết quả có thể, kết quả thuận lợi}: các kết quả có thể của hành động, thực nghiệm $T$; kết quả có thể làm biến cố $E$ xảy ra gọi là kết quả thuận lợi cho $E$.",
+  "\\textbf{Cách tính xác suất bằng tỉ số}: khi các kết quả có thể là đồng khả năng, $P(E)=\\dfrac{\\text{Số kết quả thuận lợi cho }E}{\\text{Tổng số kết quả có thể}}$; bốn bước: đếm kết quả có thể $\\to$ chỉ ra đồng khả năng $\\to$ đếm kết quả thuận lợi $\\to$ lập tỉ số.",
+  "\\textbf{Xác suất thực nghiệm}: $n$ lần thực nghiệm (theo dõi) mà biến cố $E$ xảy ra $k$ lần thì xác suất thực nghiệm của $E$ là $\\dfrac{k}{n}$; ước lượng $P(E)\\approx\\dfrac{k}{n}$.",
+  "\\textbf{Ứng dụng}: dự đoán trong $N$ lần mới, biến cố $E$ xảy ra khoảng $N\\cdot\\dfrac{k}{n}$ lần."
+ ],
+ "vidu": [
+  "Ca 1: liệt kê các kết quả có thể và các kết quả thuận lợi khi rút một thẻ từ hộp ghi số liên tiếp — đánh dấu đủ, không sót.",
+  "Ca 1: túi bi nhiều màu, mỗi màu số viên khác nhau — vì sao phải đánh số từng viên mới có các kết quả đồng khả năng.",
+  "Ca 1, \\textbf{ví dụ trục}: giải trọn câu tự luận đề cuối kì II THCS Ngô Gia Tự (hộp 10 thẻ ghi 11 đến 20, biến cố chia hết cho 4 và biến cố số nguyên tố), viết như khi đi thi.",
+  "Ca 1: túi có số bi vàng gấp đôi số bi đỏ — tìm số bi từng màu rồi mới lập tỉ số.",
+  "Ca 2: từ bảng gieo xúc xắc tính xác suất thực nghiệm của biến cố \\emph{mặt có số chấm là số lẻ}.",
+  "Ca 2: kiểm tra 100 sản phẩm, ước lượng xác suất có lỗi rồi dự đoán số sản phẩm lỗi trong lô 120 sản phẩm."
+ ],
+ "dang_vd": [
+  "\\textbf{Chương VIII KHÔNG soạn dạng vận dụng} (Thầy chốt 07/10/2026, \\texttt{co\\_vd} $=$ false).",
+  "Hai loại câu khó gặp trong đề nhưng KHÔNG đưa vào chương: \\emph{chọn hai đối tượng một lúc} (chọn hai câu lạc bộ thành một cặp đấu, lấy hai điểm nối thành đoạn thẳng — đề Phúc Lợi, Chương Dương) cần đếm cặp, vượt nội dung SGK lớp 8; \\emph{bốc ít nhất bao nhiêu viên bi để chắc chắn} là nguyên lí Dirichlet.",
+  "Dạng gần vận dụng nhất là \\emph{bài ngược} (biết xác suất, tìm số lượng ban đầu — SGK Luyện tập 2 tr.65): chỉ 2 $-$ 3 bước, xếp dòng TH tách VD."
+ ],
+ "loisai": [
+  "\\textbf{Đếm kết quả có thể theo màu}: túi 8 bi đỏ, 5 bi xanh, 4 bi vàng mà nói có 3 kết quả, $P=\\dfrac{1}{3}$ — các màu không đồng khả năng; phải đếm từng viên (17 kết quả).",
+  "\\textbf{Đếm sót, đếm thừa kết quả thuận lợi}: quên số $1$ không là số nguyên tố, quên $2$ là số nguyên tố chẵn; \\emph{số có hai chữ số} là từ $10$ đến $99$ (90 số), không phải 99 số.",
+  "\\textbf{Lẫn xác suất với xác suất thực nghiệm}: hộp có 3 bút đỏ trong 10 bút thì $\\dfrac{3}{10}$ là xác suất, không phải xác suất thực nghiệm; xác suất thực nghiệm phải có số lần làm thực nghiệm.",
+  "\\textbf{Tung $n$ lần có $k$ lần mặt N mà hỏi mặt S}: viết $\\dfrac{k}{n}$ thay vì $\\dfrac{n-k}{n}$.",
+  "\\textbf{Không rút gọn phân số} hoặc viết xác suất lớn hơn $1$ (lấy tổng chia số kết quả thuận lợi).",
+  "\\textbf{Dự đoán ra số lẻ thập phân}: $120\\cdot 0{,}62=74{,}4$ phải kết luận \\emph{khoảng 74 sản phẩm}."
+ ],
+ "kienthuc_nb": [
+  "Kết quả có thể là mọi kết quả của hành động, thực nghiệm; kết quả thuận lợi là kết quả làm biến cố xảy ra.",
+  "Các vật giống hệt nhau chỉ khác màu: đánh số từng vật để có các kết quả đồng khả năng.",
+  "$P(E)=\\dfrac{\\text{số kết quả thuận lợi}}{\\text{tổng số kết quả có thể}}$, luôn có $0\\le P(E)\\le 1$.",
+  "Tung đồng xu: $P(N)=P(S)=\\dfrac{1}{2}$; gieo xúc xắc: mỗi mặt có xác suất $\\dfrac{1}{6}$.",
+  "Xác suất thực nghiệm $=\\dfrac{k}{n}$; số lần thực nghiệm càng lớn thì xác suất thực nghiệm càng gần xác suất.",
+  "Dự đoán số lần xảy ra trong $N$ lần: $N\\cdot\\dfrac{k}{n}$, làm tròn đến số tự nhiên gần nhất."
+ ],
+ "phieu": [
+  {
+   "code": "1",
+   "so_ca": 2,
+   "kiem_tra_phut": 45,
+   "title": "Ca 1 $-$ 2 (Tuần 41 $-$ 42) — Bài 30, 31, 32 $+$ Luyện tập chung $+$ Bài tập cuối chương VIII $+$ Kiểm tra chương VII $-$ VIII",
+   "rows": [
+    {
+     "dang": "Liệt kê các kết quả có thể của một hành động (rút thẻ, gieo xúc xắc, chọn một bạn) và đếm số kết quả có thể",
+     "band": "NB",
+     "loai": "NB lẻ LT",
+     "lythuyet": 1,
+     "vidu": 1,
+     "onclass": 3,
+     "btvn": 2,
+     "source_refs": [
+      "SGK 8.1a",
+      "SGK 8.2a",
+      "SGK Bài 30 Ví dụ 1",
+      "CK2 Ngô Gia Tự (25-26) B2a"
+     ],
+     "decompose": "none"
+    },
+    {
+     "dang": "Nhận ra các kết quả có thể có đồng khả năng hay không (bi giống hệt nhau chỉ khác màu: phải đánh số từng viên)",
+     "band": "NB",
+     "loai": "NB lẻ LT",
+     "lythuyet": 0,
+     "vidu": 0,
+     "onclass": 3,
+     "btvn": 2,
+     "source_refs": [
+      "SGK Bài 30 Tranh luận",
+      "SGK Bài 31 Tranh luận"
+     ],
+     "decompose": "none"
+    },
+    {
+     "dang": "Liệt kê các kết quả thuận lợi cho một biến cố",
+     "band": "NB",
+     "loai": "NB tách TH",
+     "lythuyet": 0,
+     "vidu": 0,
+     "onclass": 3,
+     "btvn": 2,
+     "source_refs": [
+      "SGK 8.1b",
+      "SGK 8.2b",
+      "SGK 8.3b",
+      "SGK Bài 30 Ví dụ 2"
+     ],
+     "decompose": "none"
+    },
+    {
+     "dang": "Đếm số kết quả thuận lợi khi các số ghi từ $1$ đến $n$ (bội, ước, số nguyên tố, số chính phương, chữ số tận cùng)",
+     "band": "NB",
+     "loai": "NB tách TH",
+     "lythuyet": 0,
+     "vidu": 0,
+     "onclass": 3,
+     "btvn": 2,
+     "source_refs": [
+      "XSBC D1.B2",
+      "XSBC D1.B3",
+      "XSBC D1.B5",
+      "GK2 Phúc Đồng (24-25) B3"
+     ],
+     "decompose": "none"
+    },
+    {
+     "dang": "Tính xác suất bằng tỉ số $P(E)=\\dfrac{\\text{số kết quả thuận lợi}}{\\text{tổng số kết quả có thể}}$ rồi rút gọn",
+     "band": "NB",
+     "loai": "NB tách TH",
+     "lythuyet": 0,
+     "vidu": 1,
+     "onclass": 3,
+     "btvn": 2,
+     "source_refs": [
+      "SGK 8.5",
+      "SGK 8.6",
+      "GK2 Gia Quất (24-25) C4",
+      "CK2 Ngô Gia Tự (25-26) C2"
+     ],
+     "decompose": "none"
+    },
+    {
+     "dang": "Xác suất trong trò chơi tung một đồng xu, gieo một con xúc xắc",
+     "band": "NB",
+     "loai": "NB lẻ LT",
+     "lythuyet": 0,
+     "vidu": 0,
+     "onclass": 3,
+     "btvn": 2,
+     "source_refs": [
+      "XSBC D2.VD2",
+      "XSBC D3.VD3",
+      "SGK 8.14",
+      "GK2 Thanh Mỹ (24-25) C5"
+     ],
+     "decompose": "none"
+    },
+    {
+     "dang": "Xác suất trong trò chơi vòng quay (đĩa chia thành các hình quạt như nhau)",
+     "band": "NB",
+     "loai": "NB tách TH",
+     "lythuyet": 0,
+     "vidu": 0,
+     "onclass": 3,
+     "btvn": 2,
+     "source_refs": [
+      "SGK 8.4",
+      "GK2 Ban Mai (24-25) B2",
+      "CK2 Tam Hưng (25-26) BII.1"
+     ],
+     "decompose": "none"
+    },
+    {
+     "dang": "Biến cố \\emph{không \\dots}: số kết quả thuận lợi $=$ tổng trừ phần còn lại",
+     "band": "NB",
+     "loai": "NB tách TH",
+     "lythuyet": 0,
+     "vidu": 0,
+     "onclass": 3,
+     "btvn": 2,
+     "source_refs": [
+      "SGK 8.5d",
+      "CK2 Hai Bà Trưng (24-25) B4",
+      "CK2 Lê Ngọc Hân (25-26) BII.1",
+      "GK2 Ái Mộ LT (24-25) C5"
+     ],
+     "decompose": "none"
+    },
+    {
+     "dang": "Điền khuyết lời giải mẫu tính xác suất theo bốn bước (đếm kết quả có thể, chỉ ra đồng khả năng, đếm kết quả thuận lợi, lập tỉ số)",
+     "band": "NB",
+     "loai": "NB ghép bài",
+     "lythuyet": 0,
+     "vidu": 0,
+     "onclass": 3,
+     "btvn": 2,
+     "source_refs": [
+      "SGK Bài 31 Ví dụ 1",
+      "CK2 Ngô Gia Tự (25-26) B2"
+     ],
+     "decompose": "none",
+     "gian_giao": "dien-khuyet"
+    },
+    {
+     "dang": "Tính xác suất thực nghiệm $\\dfrac{k}{n}$ ($n$ lần thực nghiệm, biến cố xảy ra $k$ lần)",
+     "band": "NB",
+     "loai": "NB lẻ LT",
+     "lythuyet": 1,
+     "vidu": 1,
+     "onclass": 3,
+     "btvn": 2,
+     "source_refs": [
+      "SGK Bài 32 mục 1",
+      "XSTN D1.VD",
+      "XSTN D2.B1",
+      "GK2 Thanh Mỹ (24-25) C6"
+     ],
+     "decompose": "none"
+    },
+    {
+     "dang": "Xác suất thực nghiệm của mặt còn lại: tung $n$ lần có $k$ lần mặt N thì mặt S xuất hiện $n-k$ lần",
+     "band": "NB",
+     "loai": "NB tách TH",
+     "lythuyet": 0,
+     "vidu": 0,
+     "onclass": 3,
+     "btvn": 2,
+     "source_refs": [
+      "CK2 Ngô Gia Tự (25-26) C1",
+      "GK2 Gia Quất (24-25) C6",
+      "GK2 Phúc Đồng (24-25) C8"
+     ],
+     "decompose": "none"
+    },
+    {
+     "dang": "Đọc bảng kết quả thực nghiệm rồi cộng các cột thuận lợi (mặt lẻ, mặt nguyên tố, ít nhất, nhiều nhất)",
+     "band": "NB",
+     "loai": "NB tách TH",
+     "lythuyet": 0,
+     "vidu": 0,
+     "onclass": 3,
+     "btvn": 2,
+     "source_refs": [
+      "GK2 Lý Sơn (24-25) B2",
+      "GK2 Phúc Lợi (24-25) TL3",
+      "XSTN D2.B5",
+      "SGK 8.8"
+     ],
+     "decompose": "none"
+    },
+    {
+     "dang": "Mối liên hệ: số lần thực nghiệm càng lớn thì xác suất thực nghiệm càng gần xác suất; ước lượng $P(E)\\approx\\dfrac{k}{n}$",
+     "band": "NB",
+     "loai": "NB lẻ LT",
+     "lythuyet": 0,
+     "vidu": 0,
+     "onclass": 3,
+     "btvn": 2,
+     "source_refs": [
+      "SGK Bài 32 mục 2",
+      "XSTN D2.VD",
+      "XSTN D2.B2",
+      "CK2 Hát Môn (25-26) C10"
+     ],
+     "decompose": "none"
+    },
+    {
+     "dang": "Viết xác suất thực nghiệm dưới dạng số thập phân, tỉ số phần trăm (tỉ lệ phế phẩm, tỉ lệ tử vong)",
+     "band": "NB",
+     "loai": "NB tách TH",
+     "lythuyet": 0,
+     "vidu": 1,
+     "onclass": 3,
+     "btvn": 2,
+     "source_refs": [
+      "SGK Bài 32 Ví dụ 2",
+      "SGK Bài 32 Ví dụ 3",
+      "SGK 8.11"
+     ],
+     "decompose": "none"
+    },
+    {
+     "dang": "Dự đoán số lần xảy ra: trong $N$ lần mới, biến cố xảy ra khoảng $N\\cdot\\dfrac{k}{n}$ lần",
+     "band": "NB",
+     "loai": "NB tách TH",
+     "lythuyet": 0,
+     "vidu": 0,
+     "onclass": 3,
+     "btvn": 2,
+     "source_refs": [
+      "SGK Bài 32 Ví dụ 4",
+      "SGK 8.12"
+     ],
+     "decompose": "none"
+    },
+    {
+     "dang": "Điền khuyết lời giải mẫu: ước lượng xác suất từ bảng thống kê rồi dự đoán số lần xảy ra",
+     "band": "NB",
+     "loai": "NB ghép bài",
+     "lythuyet": 0,
+     "vidu": 0,
+     "onclass": 3,
+     "btvn": 2,
+     "source_refs": [
+      "SGK Bài 32 Ví dụ 4",
+      "SGK LTC Ví dụ 2"
+     ],
+     "decompose": "none",
+     "gian_giao": "dien-khuyet"
+    },
+    {
+     "dang": "Trắc nghiệm ôn: phân biệt xác suất với xác suất thực nghiệm; kết quả thuận lợi (câu đúng $-$ sai đề cuối kì II)",
+     "band": "NB",
+     "loai": "NB lẻ LT",
+     "lythuyet": 0,
+     "vidu": 0,
+     "onclass": 3,
+     "btvn": 2,
+     "source_refs": [
+      "CK2 Lý Sơn (24-25) C5",
+      "CK2 Lý Sơn (24-25) C6",
+      "CK2 Hai Bà Trưng (24-25) C3"
+     ],
+     "decompose": "none"
+    },
+    {
+     "dang": "Trắc nghiệm ôn: chọn ngẫu nhiên một người, một vật trong nhóm có nhiều loại (lớp có $x$ bạn nữ, túi nhiều màu)",
+     "band": "NB",
+     "loai": "NB tách TH",
+     "lythuyet": 0,
+     "vidu": 0,
+     "onclass": 3,
+     "btvn": 2,
+     "source_refs": [
+      "CK2 Tam Hưng (25-26) C4",
+      "SGK 8.20",
+      "SGK 8.21",
+      "GK2 Ái Mộ LT (24-25) C4"
+     ],
+     "decompose": "none"
+    },
+    {
+     "dang": "Tự viết lại bốn bước tính xác suất bằng tỉ số và hai bước ước lượng rồi dự đoán bằng xác suất thực nghiệm; giải thích vì sao túi 8 bi đỏ, 5 bi xanh, 4 bi vàng không cho xác suất lấy bi đỏ bằng $\\dfrac{1}{3}$",
+     "band": "NB",
+     "loai": "NB lẻ LT",
+     "lythuyet": 0,
+     "vidu": 0,
+     "onclass": 0,
+     "btvn": 2,
+     "source_refs": [],
+     "decompose": "none",
+     "viet_quy_trinh": true
+    },
+    {
+     "dang": "Câu tự luận đề cuối kì II: hộp thẻ ghi các số liên tiếp — liệt kê kết quả có thể rồi tính xác suất của hai, ba biến cố",
+     "band": "TH",
+     "loai": "TH ghép bài",
+     "lythuyet": 0,
+     "vidu": 1,
+     "onclass": 4,
+     "btvn": 3,
+     "source_refs": [
+      "CK2 Ngô Gia Tự (25-26) B2",
+      "GK2 Phúc Đồng (24-25) B3",
+      "SGK 8.22",
+      "SGK LTC Ví dụ 1",
+      "GK2 Việt Hưng (25-26) B3"
+     ],
+     "decompose": "th2nb"
+    },
+    {
+     "dang": "Số lượng một nhóm phải tính trước rồi mới lập tỉ số (tổng trừ các nhóm còn lại, nhóm này gấp đôi nhóm kia, hai tiêu chí nam $-$ nữ và câu lạc bộ)",
+     "band": "TH",
+     "loai": "TH ghép bài",
+     "lythuyet": 0,
+     "vidu": 1,
+     "onclass": 4,
+     "btvn": 3,
+     "source_refs": [
+      "SGK Bài 31 Ví dụ 2",
+      "CK2 Phúc Đồng (25-26) B2",
+      "SGK 8.18",
+      "SGK 8.19",
+      "SGK 8.25",
+      "GK2 Đức Giang (25-26) BI.2"
+     ],
+     "decompose": "th2nb"
+    },
+    {
+     "dang": "Vòng quay có nhiều hình quạt ghi cùng một giá trị; chọn ngẫu nhiên một ngày từ bảng số liệu trong tuần",
+     "band": "TH",
+     "loai": "TH ghép bài",
+     "lythuyet": 0,
+     "vidu": 1,
+     "onclass": 3,
+     "btvn": 3,
+     "source_refs": [
+      "SGK 8.7",
+      "CK2 Chương Dương (25-26) BI.2",
+      "GK2 Chương Dương (24-25) BI.3",
+      "XSBC D4.B3"
+     ],
+     "decompose": "th2nb"
+    },
+    {
+     "dang": "Xác suất thực nghiệm từ bảng tần số: gộp các cột theo điều kiện \\emph{ít nhất}, \\emph{nhiều nhất}, \\emph{từ \\dots\\ đến \\dots}",
+     "band": "TH",
+     "loai": "TH ghép bài",
+     "lythuyet": 0,
+     "vidu": 1,
+     "onclass": 3,
+     "btvn": 3,
+     "source_refs": [
+      "SGK Bài 32 Ví dụ 1",
+      "SGK 8.9",
+      "SGK 8.10",
+      "SGK 8.16",
+      "GK2 Lý Sơn (24-25) B2"
+     ],
+     "decompose": "th2nb"
+    },
+    {
+     "dang": "Ước lượng xác suất bằng xác suất thực nghiệm rồi dự đoán số lần xảy ra trong lần thống kê mới (sản phẩm lỗi, lượt khách, ngày có tai nạn)",
+     "band": "TH",
+     "loai": "TH ghép bài",
+     "lythuyet": 0,
+     "vidu": 1,
+     "onclass": 4,
+     "btvn": 3,
+     "source_refs": [
+      "SGK Bài 32 Ví dụ 4",
+      "SGK LTC Ví dụ 2",
+      "SGK 8.13",
+      "SGK 8.17",
+      "SGK 8.26"
+     ],
+     "decompose": "th2nb"
+    },
+    {
+     "dang": "Bài ngược: biết xác suất (hoặc xác suất thực nghiệm), tìm số lượng ban đầu bằng cách lập phương trình",
+     "band": "TH",
+     "loai": "TH tách VD",
+     "lythuyet": 0,
+     "vidu": 1,
+     "onclass": 3,
+     "btvn": 3,
+     "source_refs": [
+      "SGK Bài 31 Luyện tập 2",
+      "SGK Bài 31 Ví dụ 2",
+      "SGK 8.12"
+     ],
+     "decompose": "th2nb"
+    }
+   ]
+  }
+ ]
+}

@@ -161,3 +161,17 @@ def test_lop_8_da_thoat_dien_mau_qua_nho():
     được cả bốn kỳ: chương II giữ câu cuối đề 0,85 và chương IX giữ ý cuối bài hình 1,00."""
     assert phan_bo_vdc("lop-8", "chuong-02-hang-dang-thuc") == {"VD": 35, "VDC": 20}
     assert phan_bo_vdc("lop-8", "chuong-09-tam-giac-dong-dang") == {"VD": 35, "VDC": 20}
+
+
+def test_lop_6_7_du_hai_mon_khung_90_phut():
+    """Tiến độ 2026-2027 (Thầy chốt 15/09/2026): ca 90′ = giảng 25 + luyện 55 + nghỉ 10, BTVN 40,
+    cả Đại lẫn Hình; mỗi môn có tầng B (theo chương) và C (40-40-20)."""
+    from src.schema.tier_spec import subject_block
+    spec = load_tier_spec()
+    for lop in ("lop-6", "lop-7"):
+        for mon in ("dai-so", "hinh-hoc"):
+            b = subject_block(spec, lop, mon)
+            assert b["session_minutes"] == 90 and b["break_minutes"] == 10
+            assert b["budgets"] == {"vidu": 25.0, "onclass": 55.0, "btvn": 40.0}
+            assert tier_ratio(spec, lop, mon, "C")["NB"] == 40
+            assert set(b["tiers"]) >= {"B", "C"}

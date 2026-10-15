@@ -83,10 +83,11 @@
   \fi}
 
 % Chỗ trống cho slide (đơn giản, không tikz): [[blank]] -> \blank, [[mblank]] -> \mblank, [[oly]] -> \olybox
-\newcommand{\blank}[1][4cm]{\rule[-0.3ex]{#1}{0.5pt}}
-\newcommand{\mblank}[1][2cm]{\rule[-0.3ex]{#1}{0.5pt}}
+% Cùng MỘT kiểu chấm "......" với phiếu HS (xem _macros: \blank).
+\newcommand{\blank}[1][4cm]{\tikz[baseline]{\draw[ink!85,line width=1.2pt,line cap=round,dash pattern=on 0pt off 3.2pt](2pt,-.1ex)--(\dimexpr#1-1pt,-.1ex);}}
+\newcommand{\mblank}[1][2cm]{\blank[#1]}
 % Ô khuyết của Ví dụ mẫu ([[fill:đáp án]]) — slide luôn chiếu bản TRỐNG.
-\newcommand{\fillblank}[1]{\rule[-0.35ex]{#1}{0.5pt}}
+\newcommand{\fillblank}[1]{\blank[#1]}
 \newcommand{\fillans}[1]{\textcolor{brand}{\underline{\smash{#1}}}}
 \newcommand{\olybox}[1]{%
   \begin{tikzpicture}[baseline=-0.5ex]

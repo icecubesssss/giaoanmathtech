@@ -1,0 +1,882 @@
+{
+ "slug": "phieu-2-tuan20-21-duong-trung-binh-va-duong-phan-giac-cua-tam-giac",
+ "title": "Đường trung bình và đường phân giác của tam giác",
+ "eyebrow": "HÌNH HỌC 8 — PHIẾU 2 • 2 CA • CHƯƠNG IV — BÀI 16, BÀI 17",
+ "grade_label": "Lớp 8 • Hình học",
+ "class_tier": "B",
+ "chuong": "chuong-04-dinh-li-thales",
+ "so_ca": 2,
+ "stages": [
+  {
+   "kind": "review",
+   "number": 1,
+   "title": "Khám phá",
+   "teacher_note": "Cho HS nhìn hình 1 phút: $D$, $E$ là trung điểm hai cạnh. Hỏi: \\emph{đoạn $DE$ và đoạn $BC$ có quan hệ gì về phương và về độ dài?} Cho HS đo trên hình vẽ trong vở để phỏng đoán.[[br]]Chưa chứng minh — dẫn vào mục 1 của chặng Kiến thức cần nhớ.",
+   "blocks": [
+    {
+     "type": "opener",
+     "text": "Hai điểm $B$ và $C$ cách nhau bởi một hồ nước. Người ta chọn điểm $A$ rồi xác định trung điểm $D$ của $AB$ và trung điểm $E$ của $AC$, đo được $DE = 500$ m.[[br]]Không cần đo trực tiếp qua hồ, ta có thể tính được khoảng cách giữa hai điểm $B$ và $C$ không?",
+     "tikz": "\\begin{tikzpicture}[line width=0.8pt, font=\\small, scale=1.0]\n\\draw[ink] (0.000,0.000) -- (2.600,3.000) -- (4.400,0.000) -- cycle;\n\\draw[brand,line width=1.0pt] (1.300,1.500) -- (2.200,0.000);\n\\draw[ink] (0.567,0.822) -- (0.733,0.678);\n\\draw[ink] (1.867,2.322) -- (2.033,2.178);\n\\draw[ink] (1.065,0.110) -- (1.065,-0.110);\n\\draw[ink] (1.135,0.110) -- (1.135,-0.110);\n\\draw[ink] (3.265,0.110) -- (3.265,-0.110);\n\\draw[ink] (3.335,0.110) -- (3.335,-0.110);\n\\fill[ink] (0.000,0.000) circle (1.2pt);\n\\fill[ink] (2.600,3.000) circle (1.2pt);\n\\fill[ink] (4.400,0.000) circle (1.2pt);\n\\fill[ink] (1.300,1.500) circle (1.2pt);\n\\fill[ink] (2.200,0.000) circle (1.2pt);\n\\node at (-0.184,-0.184) {$A$};\n\\node at (2.600,3.260) {$B$};\n\\node at (4.584,-0.184) {$C$};\n\\node at (1.075,1.630) {$D$};\n\\node at (2.200,-0.260) {$E$};\n\\end{tikzpicture}"
+    }
+   ]
+  },
+  {
+   "kind": "concept",
+   "number": 2,
+   "title": "Kiến thức cần nhớ",
+   "teacher_note": "Ca 3 dạy mục 1; ca 4 dạy mục 2.[[br]]Nhấn mạnh hai chiều: biết HAI trung điểm thì có đường trung bình; biết MỘT trung điểm và một đường song song thì có trung điểm thứ hai.",
+   "blocks": [
+    {
+     "type": "para",
+     "variant": "heading",
+     "text": "1. Đường trung bình của tam giác"
+    },
+    {
+     "type": "deflist",
+     "items": [
+      {
+       "term": "Định nghĩa:",
+       "desc": "đường trung bình của tam giác là đoạn thẳng nối trung điểm hai cạnh của tam giác."
+      },
+      {
+       "term": "Tính chất:",
+       "desc": "đường trung bình của tam giác song song với cạnh thứ ba và bằng nửa cạnh đó: $DE \\parallel BC$, $DE = \\dfrac{1}{2}BC$."
+      },
+      {
+       "term": "Chú ý:",
+       "desc": "trong một tam giác, đường thẳng đi qua trung điểm một cạnh và song song với cạnh thứ hai thì đi qua trung điểm của cạnh thứ ba."
+      }
+     ]
+    },
+    {
+     "type": "figure",
+     "tikz": "\\begin{tikzpicture}[line width=0.8pt, font=\\small, scale=1.0]\n\\draw[ink] (1.300,3.000) -- (0.000,0.000) -- (4.200,0.000) -- cycle;\n\\draw[brand,line width=1.0pt] (0.650,1.500) -- (2.750,1.500);\n\\draw[ink] (1.076,2.206) -- (0.874,2.294);\n\\draw[ink] (0.426,0.706) -- (0.224,0.794);\n\\draw[ink] (2.080,2.352) -- (1.922,2.199);\n\\draw[ink] (2.128,2.301) -- (1.970,2.148);\n\\draw[ink] (3.530,0.852) -- (3.372,0.699);\n\\draw[ink] (3.578,0.801) -- (3.420,0.648);\n\\fill[ink] (1.300,3.000) circle (1.2pt);\n\\fill[ink] (0.000,0.000) circle (1.2pt);\n\\fill[ink] (4.200,0.000) circle (1.2pt);\n\\fill[ink] (0.650,1.500) circle (1.2pt);\n\\fill[ink] (2.750,1.500) circle (1.2pt);\n\\node at (1.255,3.256) {$A$};\n\\node at (-0.213,-0.149) {$B$};\n\\node at (4.436,-0.110) {$C$};\n\\node at (0.414,1.610) {$D$};\n\\node at (2.934,1.684) {$E$};\n\\end{tikzpicture}",
+     "caption": "$D$, $E$ là trung điểm của $AB$, $AC$"
+    },
+    {
+     "type": "para",
+     "variant": "heading",
+     "text": "2. Tính chất đường phân giác của tam giác"
+    },
+    {
+     "type": "deflist",
+     "items": [
+      {
+       "term": "Định lí:",
+       "desc": "trong tam giác, đường phân giác của một góc chia cạnh đối diện thành hai đoạn thẳng tỉ lệ với hai cạnh kề hai đoạn ấy."
+      },
+      {
+       "term": "Kí hiệu:",
+       "desc": "$AD$ là đường phân giác của $\\widehat{BAC}$ ($D \\in BC$) $\\Rightarrow \\dfrac{DB}{DC}=\\dfrac{AB}{AC}$."
+      }
+     ]
+    },
+    {
+     "type": "figure",
+     "tikz": "\\begin{tikzpicture}[line width=0.8pt, font=\\small, scale=1.0]\n\\draw[ink] (1.400,3.000) -- (0.000,0.000) -- (4.400,0.000) -- cycle;\n\\draw[brand,line width=1.0pt] (1.400,3.000) -- (1.929,0.000);\n\\draw[brand] (1.222,2.619) arc[start angle=-115.02, end angle=-80.01, radius=0.420];\n\\draw[brand] (1.487,2.508) arc[start angle=-80.01, end angle=-45.00, radius=0.500];\n\\fill[ink] (1.400,3.000) circle (1.2pt);\n\\fill[ink] (0.000,0.000) circle (1.2pt);\n\\fill[ink] (4.400,0.000) circle (1.2pt);\n\\fill[ink] (1.929,0.000) circle (1.2pt);\n\\node at (1.355,3.256) {$A$};\n\\node at (-0.225,-0.130) {$B$};\n\\node at (4.644,-0.089) {$C$};\n\\node at (1.929,-0.260) {$D$};\n\\end{tikzpicture}",
+     "caption": "$AD$ là đường phân giác của góc $A$"
+    },
+    {
+     "type": "noted",
+     "variant": "note",
+     "text": "\\textbf{Đề thi hỏi gì ở phần này.} Trắc nghiệm $0{,}25$ điểm: nhận biết đường trung bình, tính độ dài đường trung bình, tỉ số trên đường phân giác.[[br]]Tự luận: bài thực tế đo khoảng cách bằng đường trung bình ($0{,}5 - 1{,}0$ điểm); ý a bài hình chứng minh đường trung bình rồi suy ra song song; tính độ dài nhờ đường phân giác."
+    },
+    {
+     "type": "noted",
+     "variant": "trap",
+     "text": "Kết luận $MN = \\dfrac{1}{2}BC$ khi CHƯA chỉ ra $M$, $N$ là trung điểm — mất điểm căn cứ.[[br]]Đường phân giác: viết $\\dfrac{DB}{DC}=\\dfrac{AC}{AB}$ — đảo cạnh. Đoạn kề cạnh nào thì tỉ lệ với cạnh đó ($DB$ kề $AB$)."
+    }
+   ]
+  },
+  {
+   "kind": "practice1",
+   "number": 3,
+   "title": "Ca 3 — Đường trung bình của tam giác",
+   "teacher_note": "Mỗi ví dụ: thầy trò cùng điền rồi HS làm ngay bài sau.[[br]]Bắt HS viết đủ câu \\emph{có … là trung điểm … nên … là đường trung bình} trước khi dùng tính chất.[[br]]Ba bài thực tế (cọc đo, ao cá, hồ nước) chữa nhanh, chấm theo barem đề.",
+   "blocks": [
+    {
+     "type": "noted",
+     "variant": "example",
+     "text": "\\textbf{Ví dụ 1.} (SGK Ví dụ tr.82) Cho tam giác $ABC$ với $M$ là trung điểm của $AB$, $N$ là trung điểm của $AC$ và $BC = 10$ cm (Hình 1). Tính $MN$.[[br]]{\\sffamily\\bfseries\\color{brand}Lời giải}[[br]]Tam giác $ABC$ có $M$ là trung điểm của $AB$, $N$ là trung điểm của $AC$.[[br]]$\\Rightarrow MN$ là [[fill:đường trung bình]] của $\\triangle ABC$.[[br]]$\\Rightarrow MN = \\dfrac{1}{2}BC = \\dfrac{1}{2}\\cdot 10$ (tính chất đường trung bình).[[br]]Vậy $MN =$ [[fill:5]] cm.",
+     "figure": {
+      "tikz": "\\begin{tikzpicture}[line width=0.8pt, font=\\small, scale=1.0]\n\\draw[ink] (1.300,3.000) -- (0.000,0.000) -- (4.200,0.000) -- cycle;\n\\draw[brand,line width=1.0pt] (0.650,1.500) -- (2.750,1.500);\n\\draw[ink] (1.076,2.206) -- (0.874,2.294);\n\\draw[ink] (0.426,0.706) -- (0.224,0.794);\n\\draw[ink] (2.080,2.352) -- (1.922,2.199);\n\\draw[ink] (2.128,2.301) -- (1.970,2.148);\n\\draw[ink] (3.530,0.852) -- (3.372,0.699);\n\\draw[ink] (3.578,0.801) -- (3.420,0.648);\n\\fill[ink] (1.300,3.000) circle (1.2pt);\n\\fill[ink] (0.000,0.000) circle (1.2pt);\n\\fill[ink] (4.200,0.000) circle (1.2pt);\n\\fill[ink] (0.650,1.500) circle (1.2pt);\n\\fill[ink] (2.750,1.500) circle (1.2pt);\n\\node at (1.255,3.256) {$A$};\n\\node at (-0.213,-0.149) {$B$};\n\\node at (4.436,-0.110) {$C$};\n\\node at (0.414,1.610) {$M$};\n\\node at (2.934,1.684) {$N$};\n\\end{tikzpicture}",
+      "caption": "Hình 1",
+      "pos": "right"
+     }
+    },
+    {
+     "type": "problem",
+     "label": "Bài 1.",
+     "statement": "[NB] (Đề giữa kì II, THCS Phúc Đồng) Đường trung bình trong tam giác là",
+     "level": 1,
+     "tier": "onclass",
+     "dang_id": "NB1",
+     "solution": "C (định nghĩa đường trung bình).",
+     "options": [
+      "đoạn thẳng nối từ đỉnh đến trung điểm của cạnh đối diện.",
+      "đường thẳng đi qua đỉnh và vuông góc với cạnh đối diện.",
+      "đoạn thẳng nối trung điểm của hai cạnh của tam giác đó.",
+      "đường thẳng vuông góc với một cạnh của tam giác."
+     ]
+    },
+    {
+     "type": "problem",
+     "label": "Bài 2.",
+     "statement": "[NB] (SGK 4{.}19) Cho tam giác $ABC$. Gọi $H$, $K$ lần lượt là trung điểm của $AC$, $BC$. Biết $HK = 3{,}5$ cm. Độ dài $AB$ bằng",
+     "level": 1,
+     "tier": "onclass",
+     "dang_id": "NB1",
+     "solution": "B. $HK$ là đường trung bình của $\\triangle ABC$ nên $AB = 2HK = 7$ (cm).",
+     "options": [
+      "$3{,}5$ cm.",
+      "$7$ cm.",
+      "$10$ cm.",
+      "$15$ cm."
+     ]
+    },
+    {
+     "type": "problem",
+     "label": "Bài 3.",
+     "statement": "[NB] (SGK 4{.}20) Cho tam giác $ABC$ có chu vi là $32$ cm. Gọi $M$, $N$, $P$ lần lượt là trung điểm của các cạnh $AB$, $AC$, $BC$. Chu vi của tam giác $MNP$ là",
+     "level": 1,
+     "tier": "onclass",
+     "dang_id": "NB1",
+     "solution": "D. Mỗi cạnh của $\\triangle MNP$ là một đường trung bình, bằng nửa một cạnh của $\\triangle ABC$, nên chu vi $\\triangle MNP$ bằng $\\dfrac{32}{2}=16$ (cm).",
+     "options": [
+      "$8$ cm.",
+      "$64$ cm.",
+      "$30$ cm.",
+      "$16$ cm."
+     ]
+    },
+    {
+     "type": "noted",
+     "variant": "example",
+     "text": "\\textbf{Ví dụ 2.} (SGK 4{.}6) Trên Hình 2 có $MN \\perp AB$, $AC \\perp AB$, $BM = MA = 3$, $BN = 5$. Tính độ dài $y = NC$.[[br]]{\\sffamily\\bfseries\\color{brand}Lời giải}[[br]]Vì $MN \\perp AB$, $AC \\perp AB$ nên $MN \\parallel$ [[fill:AC]].[[br]]$\\triangle ABC$ có $M$ là trung điểm của $AB$ và $MN \\parallel AC$ $\\Rightarrow N$ là [[fill:trung điểm]] của $BC$.[[br]]Vậy $y = NC = BN =$ [[fill:5]].",
+     "figure": {
+      "tikz": "\\begin{tikzpicture}[line width=0.8pt, font=\\small, scale=1.0]\n\\draw[ink] (0.000,3.000) -- (0.000,0.000) -- (4.000,0.000) -- cycle;\n\\draw[brand,line width=1.0pt] (0.000,1.500) -- (2.000,1.500);\n\\draw[ink] (0.000,0.160) -- (0.160,0.160) -- (0.160,0.000);\n\\draw[ink] (0.000,1.340) -- (0.160,1.340) -- (0.160,1.500);\n\\node[font=\\footnotesize, fill=white, inner sep=0.6pt] at (-0.240,2.250) {$3$};\n\\node[font=\\footnotesize, fill=white, inner sep=0.6pt] at (-0.240,0.750) {$3$};\n\\node[font=\\footnotesize, fill=white, inner sep=0.6pt] at (1.144,2.442) {$5$};\n\\node[font=\\footnotesize, fill=white, inner sep=0.6pt] at (3.144,0.942) {$y$};\n\\fill[ink] (0.000,3.000) circle (1.2pt);\n\\fill[ink] (0.000,0.000) circle (1.2pt);\n\\fill[ink] (4.000,0.000) circle (1.2pt);\n\\fill[ink] (0.000,1.500) circle (1.2pt);\n\\fill[ink] (2.000,1.500) circle (1.2pt);\n\\node at (0.000,3.260) {$B$};\n\\node at (-0.184,-0.184) {$A$};\n\\node at (4.184,-0.184) {$C$};\n\\node at (-0.260,1.500) {$M$};\n\\node at (2.184,1.684) {$N$};\n\\end{tikzpicture}",
+      "caption": "Hình 2",
+      "pos": "right"
+     }
+    },
+    {
+     "type": "problem",
+     "label": "Bài 4.",
+     "statement": "(SGK 4{.}6) Trên Hình 3, $H$ là trung điểm của $DF$, $K$ là trung điểm của $EF$, $HK = 3$.[[br]]a) [NB] Đoạn $HK$ là gì của tam giác $DEF$?[[br]]b) [NB] Tính độ dài $x = DE$.[[br]]c) [NB] Đường thẳng đi qua $H$ và song song với $DE$ cắt $EF$ tại điểm nào? Vì sao?",
+     "level": 1,
+     "tier": "onclass",
+     "dang_id": "NB2",
+     "solution": "a) $HK$ là đường trung bình của $\\triangle DEF$.[[br]]b) $x = DE = 2HK = 6$.[[br]]c) Tại $K$, vì đường thẳng qua trung điểm $H$ của $DF$, song song với $DE$ thì đi qua trung điểm $K$ của $EF$.",
+     "figure": {
+      "tikz": "\\begin{tikzpicture}[line width=0.8pt, font=\\small, scale=1.0]\n\\draw[ink] (1.000,3.000) -- (0.000,0.000) -- (4.400,0.000) -- cycle;\n\\draw[brand,line width=1.0pt] (2.700,1.500) -- (2.200,0.000);\n\\draw[ink] (1.923,2.332) -- (1.777,2.168);\n\\draw[ink] (3.623,0.832) -- (3.477,0.668);\n\\draw[ink] (1.065,0.110) -- (1.065,-0.110);\n\\draw[ink] (1.135,0.110) -- (1.135,-0.110);\n\\draw[ink] (3.265,0.110) -- (3.265,-0.110);\n\\draw[ink] (3.335,0.110) -- (3.335,-0.110);\n\\node[font=\\footnotesize, fill=white, inner sep=0.6pt] at (2.678,0.674) {$3$};\n\\node[font=\\footnotesize, fill=white, inner sep=0.6pt] at (0.272,1.576) {$x$};\n\\fill[ink] (1.000,3.000) circle (1.2pt);\n\\fill[ink] (0.000,0.000) circle (1.2pt);\n\\fill[ink] (4.400,0.000) circle (1.2pt);\n\\fill[ink] (2.700,1.500) circle (1.2pt);\n\\fill[ink] (2.200,0.000) circle (1.2pt);\n\\node at (0.933,3.251) {$D$};\n\\node at (-0.213,-0.149) {$E$};\n\\node at (4.644,-0.089) {$F$};\n\\node at (2.925,1.630) {$H$};\n\\node at (2.200,-0.260) {$K$};\n\\end{tikzpicture}",
+      "caption": "Hình 3",
+      "pos": "right"
+     }
+    },
+    {
+     "type": "problem",
+     "label": "Bài 5.",
+     "statement": "[NB] Vẽ hình vào vở: tam giác $ABC$ có đường trung tuyến $AM$; trên cạnh $AB$ lấy hai điểm $D$, $E$ sao cho $AD = DE = EB$ ($D$ nằm giữa $A$ và $E$); vẽ đoạn $DC$ cắt $AM$ tại $I$. Đánh dấu các đoạn bằng nhau và ghi giả thiết $-$ kết luận của SGK 4{.}8.",
+     "level": 1,
+     "tier": "onclass",
+     "dang_id": "NB6",
+     "solution": "GT: $\\triangle ABC$, $MB = MC$, $D, E \\in AB$, $AD = DE = EB$, $I = DC \\cap AM$.[[br]]KL: a) $DC \\parallel EM$; b) $I$ là trung điểm của $AM$.",
+     "draw": true
+    },
+    {
+     "type": "problem",
+     "label": "Bài 6.",
+     "statement": "[NB] (Đề cuối kì I, THCS Nguyễn Công Trứ) Cho tam giác $ABC$ vuông tại $A$. Điểm $M$, $E$ lần lượt là trung điểm của $BC$, $AB$ (Hình 4). Điền vào chỗ trống để hoàn thành lời giải chứng minh $ME \\parallel AC$.[[br]]Xét $\\triangle ABC$ có $E$ là trung điểm của $AB$, $M$ là trung điểm của [[blank:1cm]] $\\Rightarrow ME$ là [[blank:3cm]] của $\\triangle ABC$ $\\Rightarrow ME \\parallel$ [[blank:1cm]] (tính chất đường trung bình).",
+     "level": 1,
+     "tier": "onclass",
+     "dang_id": "NB5",
+     "solution": "$BC$; đường trung bình; $AC$.",
+     "figure": {
+      "tikz": "\\begin{tikzpicture}[line width=0.8pt, font=\\small, scale=1.0]\n\\draw[ink] (0.000,3.000) -- (0.000,0.000) -- (4.000,0.000) -- cycle;\n\\draw[brand,line width=1.0pt] (0.000,1.500) -- (2.000,1.500);\n\\draw[ink] (0.110,2.250) -- (-0.110,2.250);\n\\draw[ink] (0.110,0.750) -- (-0.110,0.750);\n\\draw[ink] (1.038,2.359) -- (0.906,2.183);\n\\draw[ink] (1.094,2.317) -- (0.962,2.141);\n\\draw[ink] (3.038,0.859) -- (2.906,0.683);\n\\draw[ink] (3.094,0.817) -- (2.962,0.641);\n\\draw[ink] (0.000,0.160) -- (0.160,0.160) -- (0.160,0.000);\n\\fill[ink] (0.000,3.000) circle (1.2pt);\n\\fill[ink] (0.000,0.000) circle (1.2pt);\n\\fill[ink] (4.000,0.000) circle (1.2pt);\n\\fill[ink] (0.000,1.500) circle (1.2pt);\n\\fill[ink] (2.000,1.500) circle (1.2pt);\n\\node at (0.000,3.260) {$B$};\n\\node at (-0.184,-0.184) {$A$};\n\\node at (4.184,-0.184) {$C$};\n\\node at (-0.260,1.500) {$E$};\n\\node at (2.184,1.684) {$M$};\n\\end{tikzpicture}",
+      "caption": "Hình 4",
+      "pos": "right"
+     }
+    },
+    {
+     "type": "noted",
+     "variant": "example",
+     "text": "\\textbf{Ví dụ 3.} (SBT Kết nối tri thức) Cho tam giác $ABC$ vuông tại $A$. Gọi $H$, $I$, $K$ lần lượt là trung điểm của $AB$, $BC$, $AC$ (Hình 5). Chứng minh tứ giác $AHIK$ là hình chữ nhật.[[br]]{\\sffamily\\bfseries\\color{brand}Lời giải}[[br]]$\\triangle ABC$ có $H$, $I$ là trung điểm của $AB$, $BC$ $\\Rightarrow HI$ là đường trung bình $\\Rightarrow HI \\parallel AC$, $HI = \\dfrac{1}{2}AC$.[[br]]$K$ là trung điểm của $AC$ $\\Rightarrow AK = \\dfrac{1}{2}AC = HI$.[[br]]Tứ giác $AHIK$ có $HI \\parallel AK$, $HI = AK$ $\\Rightarrow AHIK$ là [[fill:hình bình hành]].[[br]]Vậy hình bình hành $AHIK$ có $\\widehat{HAK} = 90^\\circ$ nên là [[fill:hình chữ nhật]].",
+     "figure": {
+      "tikz": "\\begin{tikzpicture}[line width=0.8pt, font=\\small, scale=1.0]\n\\draw[ink] (0.000,3.000) -- (0.000,0.000) -- (4.200,0.000) -- cycle;\n\\draw[brand,line width=1.0pt] (0.000,3.000) -- (0.000,1.500) -- (2.100,0.000) -- (2.100,1.500) -- cycle;\n\\draw[ink] (0.000,2.840) -- (0.130,2.747) -- (0.130,2.907);\n\\fill[ink] (0.000,3.000) circle (1.2pt);\n\\fill[ink] (0.000,0.000) circle (1.2pt);\n\\fill[ink] (4.200,0.000) circle (1.2pt);\n\\fill[ink] (0.000,1.500) circle (1.2pt);\n\\fill[ink] (2.100,0.000) circle (1.2pt);\n\\fill[ink] (2.100,1.500) circle (1.2pt);\n\\node at (0.000,3.260) {$A$};\n\\node at (-0.184,-0.184) {$B$};\n\\node at (4.384,-0.184) {$C$};\n\\node at (-0.260,1.500) {$H$};\n\\node at (2.100,-0.260) {$I$};\n\\node at (2.284,1.684) {$K$};\n\\end{tikzpicture}",
+      "caption": "Hình 5",
+      "pos": "right"
+     }
+    },
+    {
+     "type": "problem",
+     "label": "Bài 7.",
+     "statement": "[TH] (SGK 4{.}9) Cho hình chữ nhật $ABCD$ có $AC$ cắt $BD$ tại $O$. Gọi $H$, $K$ lần lượt là trung điểm của $AB$, $AD$ (Hình 6). Chứng minh rằng tứ giác $AHOK$ là hình chữ nhật.",
+     "level": 2,
+     "tier": "onclass",
+     "dang_id": "TH1",
+     "solution": "Ta có $ABCD$ là hình chữ nhật $\\Rightarrow O$ là trung điểm của $BD$.[[br]]$\\triangle ABD$ có $H$, $O$ là trung điểm của $AB$, $BD$ $\\Rightarrow HO \\parallel AD$, $HO = \\dfrac{1}{2}AD = AK$.[[br]]Tứ giác $AHOK$ có $HO \\parallel AK$, $HO = AK$ $\\Rightarrow AHOK$ là hình bình hành.[[br]]Vậy hình bình hành $AHOK$ có $\\widehat{HAK} = 90^\\circ$ nên là hình chữ nhật.",
+     "figure_given": true,
+     "hints": [
+      "Trong tam giác $ABD$, đoạn $HO$ nối trung điểm hai cạnh nào?"
+     ],
+     "figure": {
+      "tikz": "\\begin{tikzpicture}[line width=0.8pt, font=\\small, scale=1.0]\n\\draw[ink] (0.000,2.400) -- (3.600,2.400) -- (3.600,0.000) -- (0.000,0.000) -- cycle;\n\\draw[ink] (0.000,2.400) -- (3.600,0.000);\n\\draw[ink] (3.600,2.400) -- (0.000,0.000);\n\\draw[brand,line width=1.0pt] (0.000,2.400) -- (1.800,2.400) -- (1.800,1.200) -- (0.000,1.200) -- cycle;\n\\fill[ink] (0.000,2.400) circle (1.2pt);\n\\fill[ink] (3.600,2.400) circle (1.2pt);\n\\fill[ink] (3.600,0.000) circle (1.2pt);\n\\fill[ink] (0.000,0.000) circle (1.2pt);\n\\fill[ink] (1.800,1.200) circle (1.2pt);\n\\fill[ink] (1.800,2.400) circle (1.2pt);\n\\fill[ink] (0.000,1.200) circle (1.2pt);\n\\node at (-0.184,2.584) {$A$};\n\\node at (3.784,2.584) {$B$};\n\\node at (3.784,-0.184) {$C$};\n\\node at (-0.184,-0.184) {$D$};\n\\node at (1.800,0.940) {$O$};\n\\node at (1.800,2.660) {$H$};\n\\node at (-0.260,1.200) {$K$};\n\\end{tikzpicture}",
+      "caption": "Hình 6",
+      "pos": "right"
+     }
+    },
+    {
+     "type": "noted",
+     "variant": "example",
+     "text": "\\textbf{Ví dụ 4.} (SGK 4{.}7) Trên Hình 7, ba điểm $M$, $N$, $P$ chia đôi ba cạnh của tam giác $ABC$. Tứ giác $BMNC$, tứ giác $MNPB$ là hình gì?[[br]]{\\sffamily\\bfseries\\color{brand}Lời giải}[[br]]$MN$ là đường trung bình của $\\triangle ABC$ $\\Rightarrow MN \\parallel$ [[fill:BC]] $\\Rightarrow BMNC$ là hình thang.[[br]]$NP$ là đường trung bình của $\\triangle ABC$ $\\Rightarrow NP \\parallel$ [[fill:AB]], tức là $NP \\parallel MB$.[[br]]Tứ giác $MNPB$ có $MN \\parallel BP$, $NP \\parallel MB$.[[br]]Vậy $MNPB$ là [[fill:hình bình hành]].",
+     "figure": {
+      "tikz": "\\begin{tikzpicture}[line width=0.8pt, font=\\small, scale=1.0]\n\\draw[ink] (1.300,3.000) -- (0.000,0.000) -- (4.200,0.000) -- cycle;\n\\draw[brand,line width=1.0pt] (0.650,1.500) -- (2.750,1.500) -- (2.100,0.000) -- cycle;\n\\draw[ink] (1.076,2.206) -- (0.874,2.294);\n\\draw[ink] (0.426,0.706) -- (0.224,0.794);\n\\draw[ink] (2.080,2.352) -- (1.922,2.199);\n\\draw[ink] (2.128,2.301) -- (1.970,2.148);\n\\draw[ink] (3.530,0.852) -- (3.372,0.699);\n\\draw[ink] (3.578,0.801) -- (3.420,0.648);\n\\draw[ink] (0.980,0.110) -- (0.980,-0.110);\n\\draw[ink] (1.050,0.110) -- (1.050,-0.110);\n\\draw[ink] (1.120,0.110) -- (1.120,-0.110);\n\\draw[ink] (3.080,0.110) -- (3.080,-0.110);\n\\draw[ink] (3.150,0.110) -- (3.150,-0.110);\n\\draw[ink] (3.220,0.110) -- (3.220,-0.110);\n\\fill[ink] (1.300,3.000) circle (1.2pt);\n\\fill[ink] (0.000,0.000) circle (1.2pt);\n\\fill[ink] (4.200,0.000) circle (1.2pt);\n\\fill[ink] (0.650,1.500) circle (1.2pt);\n\\fill[ink] (2.750,1.500) circle (1.2pt);\n\\fill[ink] (2.100,0.000) circle (1.2pt);\n\\node at (1.255,3.256) {$A$};\n\\node at (-0.213,-0.149) {$B$};\n\\node at (4.436,-0.110) {$C$};\n\\node at (0.414,1.610) {$M$};\n\\node at (2.934,1.684) {$N$};\n\\node at (2.100,-0.260) {$P$};\n\\end{tikzpicture}",
+      "caption": "Hình 7",
+      "pos": "right"
+     }
+    },
+    {
+     "type": "problem",
+     "label": "Bài 8.",
+     "statement": "[TH] (SGK 4{.}25) Cho tam giác $ABC$, các đường trung tuyến $BD$ và $CE$ cắt nhau tại $G$. Gọi $I$, $K$ lần lượt là trung điểm của $GB$, $GC$ (Hình 8). Chứng minh tứ giác $EDKI$ là hình bình hành.",
+     "level": 2,
+     "tier": "onclass",
+     "dang_id": "TH1",
+     "solution": "Xét $\\triangle ABC$ có $E$, $D$ là trung điểm của $AB$, $AC$ $\\Rightarrow ED \\parallel BC$, $ED = \\dfrac{1}{2}BC$.[[br]]$\\triangle GBC$ có $I$, $K$ là trung điểm của $GB$, $GC$ $\\Rightarrow IK \\parallel BC$, $IK = \\dfrac{1}{2}BC$.[[br]]$\\Rightarrow ED \\parallel IK$, $ED = IK$.[[br]]Vậy tứ giác $EDKI$ là hình bình hành.",
+     "figure_given": true,
+     "hints": [
+      "Hai đoạn $ED$ và $IK$ cùng là đường trung bình ứng với cạnh nào?"
+     ],
+     "figure": {
+      "tikz": "\\begin{tikzpicture}[line width=0.8pt, font=\\small, scale=1.0]\n\\draw[ink] (1.400,3.300) -- (0.000,0.000) -- (4.400,0.000) -- cycle;\n\\draw[ink] (0.000,0.000) -- (2.900,1.650);\n\\draw[ink] (4.400,0.000) -- (0.700,1.650);\n\\draw[brand,line width=1.0pt] (0.700,1.650) -- (2.900,1.650) -- (3.167,0.550) -- (0.967,0.550) -- cycle;\n\\fill[ink] (1.400,3.300) circle (1.2pt);\n\\fill[ink] (0.000,0.000) circle (1.2pt);\n\\fill[ink] (4.400,0.000) circle (1.2pt);\n\\fill[ink] (2.900,1.650) circle (1.2pt);\n\\fill[ink] (0.700,1.650) circle (1.2pt);\n\\fill[ink] (1.933,1.100) circle (1.2pt);\n\\fill[ink] (0.967,0.550) circle (1.2pt);\n\\fill[ink] (3.167,0.550) circle (1.2pt);\n\\node at (1.355,3.556) {$A$};\n\\node at (-0.213,-0.149) {$B$};\n\\node at (4.636,-0.110) {$C$};\n\\node at (3.160,1.650) {$D$};\n\\node at (0.440,1.650) {$E$};\n\\node at (1.933,0.840) {$G$};\n\\node at (0.722,0.639) {$I$};\n\\node at (3.411,0.639) {$K$};\n\\end{tikzpicture}",
+      "caption": "Hình 8",
+      "pos": "right"
+     }
+    },
+    {
+     "type": "problem",
+     "label": "Bài 9.",
+     "statement": "[TH] (SGK Cánh diều) Cho tứ giác $ABCD$ có $M$, $N$, $P$, $Q$ lần lượt là trung điểm của các cạnh $AB$, $BC$, $CD$, $DA$ (Hình 9). Chứng minh tứ giác $MNPQ$ là hình bình hành.",
+     "level": 2,
+     "tier": "onclass",
+     "dang_id": "TH1",
+     "solution": "Xét $\\triangle ABC$ có $M$, $N$ là trung điểm của $AB$, $BC$ $\\Rightarrow MN \\parallel AC$, $MN = \\dfrac{1}{2}AC$.[[br]]$\\triangle ADC$ có $Q$, $P$ là trung điểm của $AD$, $DC$ $\\Rightarrow QP \\parallel AC$, $QP = \\dfrac{1}{2}AC$.[[br]]$\\Rightarrow MN \\parallel QP$, $MN = QP$.[[br]]Vậy tứ giác $MNPQ$ là hình bình hành.",
+     "figure_given": true,
+     "hints": [
+      "Kẻ đường chéo $AC$ để có hai tam giác."
+     ],
+     "figure": {
+      "tikz": "\\begin{tikzpicture}[line width=0.8pt, font=\\small, scale=1.0]\n\\draw[ink] (0.600,2.800) -- (3.400,3.200) -- (4.400,0.200) -- (0.000,0.000) -- cycle;\n\\draw[ink,dashed] (0.600,2.800) -- (4.400,0.200);\n\\draw[brand,line width=1.0pt] (2.000,3.000) -- (3.900,1.700) -- (2.200,0.100) -- (0.300,1.400) -- cycle;\n\\fill[ink] (0.600,2.800) circle (1.2pt);\n\\fill[ink] (3.400,3.200) circle (1.2pt);\n\\fill[ink] (4.400,0.200) circle (1.2pt);\n\\fill[ink] (0.000,0.000) circle (1.2pt);\n\\fill[ink] (2.000,3.000) circle (1.2pt);\n\\fill[ink] (3.900,1.700) circle (1.2pt);\n\\fill[ink] (2.200,0.100) circle (1.2pt);\n\\fill[ink] (0.300,1.400) circle (1.2pt);\n\\node at (0.416,2.984) {$A$};\n\\node at (3.530,3.425) {$B$};\n\\node at (4.613,0.051) {$C$};\n\\node at (-0.199,-0.167) {$D$};\n\\node at (1.955,3.256) {$M$};\n\\node at (4.144,1.789) {$N$};\n\\node at (2.223,-0.159) {$P$};\n\\node at (0.044,1.445) {$Q$};\n\\end{tikzpicture}",
+      "caption": "Hình 9",
+      "pos": "right"
+     }
+    },
+    {
+     "type": "noted",
+     "variant": "example",
+     "text": "\\textbf{Ví dụ 5.} (Đề cuối kì I, THCS Giảng Võ 2) Bác An có một kệ để đồ bằng gỗ dạng hình tam giác $ABC$ như Hình 10, $D$, $E$ là trung điểm của $AB$, $AC$. Tấm ván ở giữa ($DE$) bị mục và bác An muốn thay. Bác đo được tấm ván dưới ($BC$) dài $36$ cm. Tính chiều dài tấm ván cần thay.[[br]]{\\sffamily\\bfseries\\color{brand}Lời giải}[[br]]$\\triangle ABC$ có $D$, $E$ lần lượt là trung điểm của $AB$, $AC$ $\\Rightarrow DE$ là [[fill:đường trung bình]] của $\\triangle ABC$.[[br]]$\\Rightarrow DE = \\dfrac{1}{2}BC = \\dfrac{1}{2}\\cdot 36$.[[br]]Vậy tấm ván cần thay dài [[fill:18]] cm.",
+     "figure": {
+      "tikz": "\\begin{tikzpicture}[line width=0.8pt, font=\\small, scale=1.0]\n\\draw[ink] (2.000,3.200) -- (0.000,0.000) -- (4.000,0.000) -- cycle;\n\\draw[brand,line width=1.0pt] (1.000,1.600) -- (3.000,1.600);\n\\draw[ink] (1.593,2.342) -- (1.407,2.458);\n\\draw[ink] (0.593,0.742) -- (0.407,0.858);\n\\draw[ink] (2.575,2.488) -- (2.388,2.371);\n\\draw[ink] (2.612,2.429) -- (2.425,2.312);\n\\draw[ink] (3.575,0.888) -- (3.388,0.771);\n\\draw[ink] (3.612,0.829) -- (3.425,0.712);\n\\node[font=\\footnotesize, fill=white, inner sep=0.6pt] at (2.000,-0.240) {$36$ cm};\n\\fill[ink] (2.000,3.200) circle (1.2pt);\n\\fill[ink] (0.000,0.000) circle (1.2pt);\n\\fill[ink] (4.000,0.000) circle (1.2pt);\n\\fill[ink] (1.000,1.600) circle (1.2pt);\n\\fill[ink] (3.000,1.600) circle (1.2pt);\n\\node at (2.000,3.460) {$A$};\n\\node at (-0.225,-0.130) {$B$};\n\\node at (4.225,-0.130) {$C$};\n\\node at (0.775,1.730) {$D$};\n\\node at (3.225,1.730) {$E$};\n\\end{tikzpicture}",
+      "caption": "Hình 10",
+      "pos": "right"
+     }
+    },
+    {
+     "type": "problem",
+     "label": "Bài 10.",
+     "statement": "[TH] (Đề cuối kì I, THCS Nguyễn Công Trứ) Để đo khoảng cách giữa hai điểm $A$ và $B$ bị ngăn cách, người ta đóng các cọc đo tại các vị trí như Hình 11. Biết $M$, $N$ lần lượt là các điểm chính giữa của các đoạn thẳng $CA$, $CB$ và khoảng cách $MN = 45$ m. Tính khoảng cách giữa hai điểm $A$ và $B$.",
+     "level": 2,
+     "tier": "onclass",
+     "dang_id": "TH2",
+     "solution": "Xét $\\triangle ABC$ có $M$, $N$ lần lượt là trung điểm của $CA$, $CB$ $\\Rightarrow MN$ là đường trung bình của $\\triangle ABC$.[[br]]$\\Rightarrow AB = 2MN = 2\\cdot 45 = 90$ (m).[[br]]Vậy khoảng cách giữa $A$ và $B$ là $90$ m.",
+     "figure_given": true,
+     "hints": [
+      "Hai điểm $M$, $N$ là gì của hai cạnh $CA$, $CB$?"
+     ],
+     "figure": {
+      "tikz": "\\begin{tikzpicture}[line width=0.8pt, font=\\small, scale=1.0]\n\\draw[ink,dashed] (2.200,3.000) -- (0.000,0.000) -- (4.400,0.400) -- cycle;\n\\draw[brand,line width=1.0pt] (1.100,1.500) -- (3.300,1.700);\n\\draw[ink] (1.739,2.185) -- (1.561,2.315);\n\\draw[ink] (0.639,0.685) -- (0.461,0.815);\n\\draw[ink] (2.811,2.448) -- (2.643,2.306);\n\\draw[ink] (2.857,2.394) -- (2.689,2.252);\n\\draw[ink] (3.911,1.148) -- (3.743,1.006);\n\\draw[ink] (3.957,1.094) -- (3.789,0.952);\n\\node[font=\\footnotesize, fill=white, inner sep=0.6pt] at (2.222,1.361) {$45$ m};\n\\fill[ink] (2.200,3.000) circle (1.2pt);\n\\fill[ink] (0.000,0.000) circle (1.2pt);\n\\fill[ink] (4.400,0.400) circle (1.2pt);\n\\fill[ink] (1.100,1.500) circle (1.2pt);\n\\fill[ink] (3.300,1.700) circle (1.2pt);\n\\node at (2.200,3.260) {$C$};\n\\node at (-0.225,-0.130) {$A$};\n\\node at (4.644,0.311) {$B$};\n\\node at (0.887,1.649) {$M$};\n\\node at (3.499,1.867) {$N$};\n\\end{tikzpicture}",
+      "caption": "Hình 11",
+      "pos": "right"
+     }
+    },
+    {
+     "type": "problem",
+     "label": "Bài 11.",
+     "statement": "[TH] (SGK 4{.}27) Bác Mến muốn tính khoảng cách giữa hai vị trí $P$, $Q$ ở hai bên bờ ao cá. Bác chọn ba vị trí $A$, $B$, $C$, thực hiện đo đạc và vẽ mô phỏng như Hình 12 ($A$, $P$, $B$ thẳng hàng; $A$, $Q$, $C$ thẳng hàng). Tính khoảng cách giữa hai điểm $P$ và $Q$.",
+     "level": 2,
+     "tier": "onclass",
+     "dang_id": "TH2",
+     "solution": "Ta có Ta có $AP = PB = 150$ m, $AQ = QC = 250$ m $\\Rightarrow P$, $Q$ là trung điểm của $AB$, $AC$.[[br]]$\\Rightarrow PQ$ là đường trung bình của $\\triangle ABC$ $\\Rightarrow PQ = \\dfrac{1}{2}BC = 200$ (m).[[br]]Vậy $PQ = 200$ m.",
+     "figure_given": true,
+     "hints": [
+      "Đọc trên hình: $P$, $Q$ chia $AB$, $AC$ thế nào?"
+     ],
+     "figure": {
+      "tikz": "\\begin{tikzpicture}[line width=0.8pt, font=\\small, scale=1.0]\n\\draw[ink,dashed] (0.000,3.000) -- (0.000,0.000);\n\\draw[ink,dashed] (0.000,0.000) -- (4.000,0.000);\n\\draw[ink,dashed] (0.000,3.000) -- (4.000,0.000);\n\\draw[brand,line width=1.0pt] (0.000,1.500) -- (2.000,1.500);\n\\node[font=\\footnotesize, fill=white, inner sep=0.6pt] at (-0.450,2.250) {$150$ m};\n\\node[font=\\footnotesize, fill=white, inner sep=0.6pt] at (-0.450,0.750) {$150$ m};\n\\node[font=\\footnotesize, fill=white, inner sep=0.6pt] at (1.240,2.570) {$250$ m};\n\\node[font=\\footnotesize, fill=white, inner sep=0.6pt] at (3.240,1.070) {$250$ m};\n\\node[font=\\footnotesize, fill=white, inner sep=0.6pt] at (2.000,-0.240) {$400$ m};\n\\fill[ink] (0.000,3.000) circle (1.2pt);\n\\fill[ink] (0.000,0.000) circle (1.2pt);\n\\fill[ink] (4.000,0.000) circle (1.2pt);\n\\fill[ink] (0.000,1.500) circle (1.2pt);\n\\fill[ink] (2.000,1.500) circle (1.2pt);\n\\node at (0.000,3.260) {$A$};\n\\node at (-0.184,-0.184) {$B$};\n\\node at (4.184,-0.184) {$C$};\n\\node at (-0.260,1.500) {$P$};\n\\node at (2.184,1.684) {$Q$};\n\\end{tikzpicture}",
+      "caption": "Hình 12",
+      "pos": "right"
+     }
+    },
+    {
+     "type": "problem",
+     "label": "Bài 12.",
+     "statement": "[TH] Trở lại tình huống ở phần Khám phá: $D$, $E$ lần lượt là trung điểm của $AB$, $AC$ và $DE = 500$ m. Tính khoảng cách giữa hai điểm $B$ và $C$.",
+     "level": 2,
+     "tier": "onclass",
+     "dang_id": "TH2",
+     "solution": "Xét $\\triangle ABC$ có $D$, $E$ là trung điểm của $AB$, $AC$ $\\Rightarrow DE$ là đường trung bình $\\Rightarrow BC = 2DE = 1\\,000$ (m).[[br]]Vậy khoảng cách giữa $B$ và $C$ là $1\\,000$ m.",
+     "figure_given": true,
+     "hints": [
+      "Biết đường trung bình, tính cạnh thứ ba thế nào?"
+     ],
+     "figure": {
+      "tikz": "\\begin{tikzpicture}[line width=0.8pt, font=\\small, scale=1.0]\n\\draw[ink] (0.000,0.000) -- (2.600,3.000) -- (4.400,0.000) -- cycle;\n\\draw[brand,line width=1.0pt] (1.300,1.500) -- (2.200,0.000);\n\\draw[ink] (0.567,0.822) -- (0.733,0.678);\n\\draw[ink] (1.867,2.322) -- (2.033,2.178);\n\\draw[ink] (1.065,0.110) -- (1.065,-0.110);\n\\draw[ink] (1.135,0.110) -- (1.135,-0.110);\n\\draw[ink] (3.265,0.110) -- (3.265,-0.110);\n\\draw[ink] (3.335,0.110) -- (3.335,-0.110);\n\\fill[ink] (0.000,0.000) circle (1.2pt);\n\\fill[ink] (2.600,3.000) circle (1.2pt);\n\\fill[ink] (4.400,0.000) circle (1.2pt);\n\\fill[ink] (1.300,1.500) circle (1.2pt);\n\\fill[ink] (2.200,0.000) circle (1.2pt);\n\\node at (-0.184,-0.184) {$A$};\n\\node at (2.600,3.260) {$B$};\n\\node at (4.584,-0.184) {$C$};\n\\node at (1.075,1.630) {$D$};\n\\node at (2.200,-0.260) {$E$};\n\\end{tikzpicture}",
+      "caption": "Hình 13",
+      "pos": "right"
+     }
+    },
+    {
+     "type": "problem",
+     "label": "Bài 13.",
+     "statement": "[TH] (SGK Cánh diều) Ba cạnh $AB$, $BC$, $CA$ của một mái nhà gợi nên hình ảnh tam giác $ABC$ và thanh ngang $MN$ là một đường trung bình của tam giác đó, $M \\in AB$, $N \\in AC$. Bạn Duyên ước lượng được $MN$ khoảng $4{,}5$ m. Khoảng cách giữa hai mép dưới của mái ($BC$) khoảng bao nhiêu mét?",
+     "level": 2,
+     "tier": "onclass",
+     "dang_id": "TH2",
+     "solution": "Ta có $MN$ là đường trung bình của $\\triangle ABC$ $\\Rightarrow BC = 2MN = 9$ (m).[[br]]Vậy khoảng cách đó khoảng $9$ m.",
+     "figure_given": true,
+     "hints": [
+      "Đường trung bình bằng bao nhiêu phần cạnh thứ ba?"
+     ],
+     "figure": {
+      "tikz": "\\begin{tikzpicture}[line width=0.8pt, font=\\small, scale=1.0]\n\\draw[ink] (2.100,2.600) -- (0.000,0.000) -- (4.200,0.000) -- cycle;\n\\draw[brand,line width=1.0pt] (1.050,1.300) -- (3.150,1.300);\n\\draw[ink] (1.661,1.881) -- (1.489,2.019);\n\\draw[ink] (0.611,0.581) -- (0.439,0.719);\n\\draw[ink] (2.689,2.046) -- (2.517,1.908);\n\\draw[ink] (2.733,1.992) -- (2.561,1.854);\n\\draw[ink] (3.739,0.746) -- (3.567,0.608);\n\\draw[ink] (3.783,0.692) -- (3.611,0.554);\n\\fill[ink] (2.100,2.600) circle (1.2pt);\n\\fill[ink] (0.000,0.000) circle (1.2pt);\n\\fill[ink] (4.200,0.000) circle (1.2pt);\n\\fill[ink] (1.050,1.300) circle (1.2pt);\n\\fill[ink] (3.150,1.300) circle (1.2pt);\n\\node at (2.100,2.860) {$A$};\n\\node at (-0.236,-0.110) {$B$};\n\\node at (4.436,-0.110) {$C$};\n\\node at (0.851,1.467) {$M$};\n\\node at (3.349,1.467) {$N$};\n\\end{tikzpicture}",
+      "caption": "Hình 14",
+      "pos": "right"
+     }
+    },
+    {
+     "type": "noted",
+     "variant": "example",
+     "text": "\\textbf{Ví dụ 6.} (SGK 4{.}8) Cho tam giác $ABC$ có trung tuyến $AM$. Lấy hai điểm $D$, $E$ trên cạnh $AB$ sao cho $AD = DE = EB$ và $D$ nằm giữa $A$, $E$; $DC$ cắt $AM$ tại $I$ (Hình 15). Chứng minh $DC \\parallel EM$ và $I$ là trung điểm của $AM$.[[br]]{\\sffamily\\bfseries\\color{brand}Lời giải}[[br]]$\\triangle BDC$ có $E$, $M$ là trung điểm của $BD$, $BC$ $\\Rightarrow EM$ là đường trung bình $\\Rightarrow EM \\parallel$ [[fill:DC]].[[br]]$\\triangle AEM$ có $D$ là trung điểm của $AE$ và $DI \\parallel EM$ $\\Rightarrow I$ là trung điểm của [[fill:AM]].[[br]]Vậy $DC \\parallel EM$ và $I$ là [[fill:trung điểm]] của $AM$.",
+     "figure": {
+      "tikz": "\\begin{tikzpicture}[line width=0.8pt, font=\\small, scale=1.0]\n\\draw[ink] (1.200,3.300) -- (0.000,0.000) -- (4.600,0.000) -- cycle;\n\\draw[ink] (1.200,3.300) -- (2.300,0.000);\n\\draw[brand,line width=1.0pt] (0.800,2.200) -- (4.600,0.000);\n\\draw[brand] (0.400,1.100) -- (2.300,0.000);\n\\draw[ink] (1.103,2.712) -- (0.897,2.788);\n\\draw[ink] (0.703,1.612) -- (0.497,1.688);\n\\draw[ink] (0.303,0.512) -- (0.097,0.588);\n\\draw[ink] (1.115,0.110) -- (1.115,-0.110);\n\\draw[ink] (1.185,0.110) -- (1.185,-0.110);\n\\draw[ink] (3.415,0.110) -- (3.415,-0.110);\n\\draw[ink] (3.485,0.110) -- (3.485,-0.110);\n\\fill[ink] (1.200,3.300) circle (1.2pt);\n\\fill[ink] (0.000,0.000) circle (1.2pt);\n\\fill[ink] (4.600,0.000) circle (1.2pt);\n\\fill[ink] (2.300,0.000) circle (1.2pt);\n\\fill[ink] (0.800,2.200) circle (1.2pt);\n\\fill[ink] (0.400,1.100) circle (1.2pt);\n\\fill[ink] (1.750,1.650) circle (1.2pt);\n\\node at (1.133,3.551) {$A$};\n\\node at (-0.213,-0.149) {$B$};\n\\node at (4.844,-0.089) {$C$};\n\\node at (2.300,-0.260) {$M$};\n\\node at (0.540,2.200) {$D$};\n\\node at (0.140,1.100) {$E$};\n\\node at (1.994,1.739) {$I$};\n\\end{tikzpicture}",
+      "caption": "Hình 15",
+      "pos": "right"
+     }
+    },
+    {
+     "type": "problem",
+     "label": "Bài 14.",
+     "statement": "(Tài liệu ĐTB, Dạng 2) Cho tam giác $ABC$, hai đường trung tuyến $BM$ và $CN$ cắt nhau tại $G$. Gọi $E$, $F$ lần lượt là trung điểm của $GB$ và $GC$ (Hình 16).[[br]]a) [TH] Chứng minh $EF \\parallel MN$.[[br]]b) [TH] Chứng minh $NE \\parallel MF$.",
+     "level": 2,
+     "tier": "onclass",
+     "dang_id": "TH3",
+     "solution": "Ta có a) $MN$ là đường trung bình của $\\triangle ABC$ $\\Rightarrow MN \\parallel BC$.[[br]]$EF$ là đường trung bình của $\\triangle GBC$ $\\Rightarrow EF \\parallel BC$.[[br]]Vậy $EF \\parallel MN$.[[br]]b) Ta có $MN \\parallel EF$, $MN = \\dfrac{1}{2}BC = EF$ $\\Rightarrow MNEF$ là hình bình hành.[[br]]Vậy $NE \\parallel MF$ (hai cạnh đối của hình bình hành).",
+     "figure_given": true,
+     "hints": [
+      "$MN$ và $EF$ cùng song song và bằng nửa cạnh nào?",
+      "Một tứ giác có hai cạnh đối song song và bằng nhau là hình gì?"
+     ],
+     "figure": {
+      "tikz": "\\begin{tikzpicture}[line width=0.8pt, font=\\small, scale=1.0]\n\\draw[ink] (1.600,3.400) -- (0.000,0.000) -- (4.600,0.000) -- cycle;\n\\draw[ink] (0.000,0.000) -- (3.100,1.700);\n\\draw[ink] (4.600,0.000) -- (0.800,1.700);\n\\draw[brand] (3.100,1.700) -- (0.800,1.700);\n\\draw[brand] (1.033,0.567) -- (3.333,0.567);\n\\draw[ink,dashed] (0.800,1.700) -- (1.033,0.567);\n\\draw[ink,dashed] (3.100,1.700) -- (3.333,0.567);\n\\fill[ink] (1.600,3.400) circle (1.2pt);\n\\fill[ink] (0.000,0.000) circle (1.2pt);\n\\fill[ink] (4.600,0.000) circle (1.2pt);\n\\fill[ink] (3.100,1.700) circle (1.2pt);\n\\fill[ink] (0.800,1.700) circle (1.2pt);\n\\fill[ink] (2.067,1.133) circle (1.2pt);\n\\fill[ink] (1.033,0.567) circle (1.2pt);\n\\fill[ink] (3.333,0.567) circle (1.2pt);\n\\node at (1.555,3.656) {$A$};\n\\node at (-0.225,-0.130) {$B$};\n\\node at (4.836,-0.110) {$C$};\n\\node at (3.360,1.700) {$M$};\n\\node at (0.540,1.700) {$N$};\n\\node at (2.067,0.873) {$G$};\n\\node at (0.782,0.634) {$E$};\n\\node at (3.584,0.634) {$F$};\n\\end{tikzpicture}",
+      "caption": "Hình 16",
+      "pos": "right"
+     }
+    },
+    {
+     "type": "problem",
+     "label": "Bài 15.",
+     "statement": "[TH] (SGK Luyện tập chung, Ví dụ 3) Cho tam giác $ABC$ vuông tại $A$, đường cao $AH$ ($H \\in BC$). Gọi $I$ và $K$ lần lượt là trung điểm của $AH$ và $HB$ (Hình 17). Chứng minh $IK \\perp AC$.",
+     "level": 2,
+     "tier": "onclass",
+     "dang_id": "TH3",
+     "solution": "$\\triangle AHB$ có $I$, $K$ là trung điểm của $AH$, $HB$ $\\Rightarrow KI$ là đường trung bình $\\Rightarrow KI \\parallel AB$.[[br]]Mà $AB \\perp AC$ ($\\triangle ABC$ vuông tại $A$).[[br]]Vậy $KI \\perp AC$.",
+     "figure_given": true,
+     "hints": [
+      "$KI$ là đường trung bình của tam giác nào? Nó song song với cạnh nào?"
+     ],
+     "figure": {
+      "tikz": "\\begin{tikzpicture}[line width=0.8pt, font=\\small, scale=1.0]\n\\draw[ink] (0.000,3.200) -- (0.000,0.000) -- (4.400,0.000) -- cycle;\n\\draw[ink] (0.000,0.000) -- (1.522,2.093);\n\\draw[brand,line width=1.0pt] (0.761,2.646) -- (0.761,1.046);\n\\draw[ink] (0.000,0.160) -- (0.160,0.160) -- (0.160,0.000);\n\\draw[ink] (1.428,1.964) -- (1.557,1.869) -- (1.652,1.999);\n\\draw[ink] (0.292,0.588) -- (0.470,0.459);\n\\draw[ink] (1.053,1.634) -- (1.231,1.505);\n\\draw[ink] (1.105,2.260) -- (1.235,2.438);\n\\draw[ink] (1.049,2.301) -- (1.178,2.479);\n\\draw[ink] (0.344,2.814) -- (0.474,2.992);\n\\draw[ink] (0.288,2.855) -- (0.417,3.033);\n\\fill[ink] (0.000,3.200) circle (1.2pt);\n\\fill[ink] (0.000,0.000) circle (1.2pt);\n\\fill[ink] (4.400,0.000) circle (1.2pt);\n\\fill[ink] (1.522,2.093) circle (1.2pt);\n\\fill[ink] (0.761,1.046) circle (1.2pt);\n\\fill[ink] (0.761,2.646) circle (1.2pt);\n\\node at (0.000,3.460) {$B$};\n\\node at (-0.184,-0.184) {$A$};\n\\node at (4.584,-0.184) {$C$};\n\\node at (1.706,2.277) {$H$};\n\\node at (0.891,0.821) {$I$};\n\\node at (0.986,2.776) {$K$};\n\\end{tikzpicture}",
+      "caption": "Hình 17",
+      "pos": "right"
+     }
+    }
+   ]
+  },
+  {
+   "kind": "practice2",
+   "number": 4,
+   "title": "Ca 4 — Tính chất đường phân giác",
+   "teacher_note": "Nhắc khẩu quyết: \\emph{đoạn kề cạnh nào thì tỉ lệ với cạnh đó}.[[br]]Bài biết cả cạnh đối diện: dùng dãy tỉ số bằng nhau.[[br]]Bài Mai $-$ Dung: hỏi HS vì sao $AC$ là phân giác của góc $A$.",
+   "blocks": [
+    {
+     "type": "problem",
+     "label": "Bài 16.",
+     "statement": "[NB] (Đề giữa kì II, THCS Đức Giang) Cho tam giác $ABC$ có $AD$ là đường phân giác. Biết $AB = 3{,}5$ cm, $AC = 7{,}5$ cm. Tỉ số $BD : DC$ bằng",
+     "level": 1,
+     "tier": "onclass",
+     "dang_id": "NB3",
+     "solution": "A. $\\dfrac{DB}{DC}=\\dfrac{AB}{AC}=\\dfrac{3{,}5}{7{,}5}=\\dfrac{7}{15}$.",
+     "options": [
+      "$7 : 15$.",
+      "$1 : 7$.",
+      "$15 : 7$.",
+      "$1 : 15$."
+     ]
+    },
+    {
+     "type": "problem",
+     "label": "Bài 17.",
+     "statement": "Trên Hình 18, $MI$ là đường phân giác của tam giác $MNP$.[[br]]a) [NB] Điền vào chỗ chấm: $\\dfrac{IN}{IP}=\\dfrac{MN}{\\ldots}$.[[br]]b) [NB] Nếu $MN = MP$ thì tỉ số $\\dfrac{IN}{IP}$ bằng bao nhiêu?",
+     "level": 1,
+     "tier": "onclass",
+     "dang_id": "NB3",
+     "solution": "a) $MP$.[[br]]b) $\\dfrac{IN}{IP}=\\dfrac{MN}{MP}=1$.",
+     "figure": {
+      "tikz": "\\begin{tikzpicture}[line width=0.8pt, font=\\small, scale=1.0]\n\\draw[ink] (1.400,3.000) -- (0.000,0.000) -- (4.400,0.000) -- cycle;\n\\draw[brand,line width=1.0pt] (1.400,3.000) -- (1.929,0.000);\n\\draw[brand] (1.222,2.619) arc[start angle=-115.02, end angle=-80.01, radius=0.420];\n\\draw[brand] (1.487,2.508) arc[start angle=-80.01, end angle=-45.00, radius=0.500];\n\\fill[ink] (1.400,3.000) circle (1.2pt);\n\\fill[ink] (0.000,0.000) circle (1.2pt);\n\\fill[ink] (4.400,0.000) circle (1.2pt);\n\\fill[ink] (1.929,0.000) circle (1.2pt);\n\\node at (1.355,3.256) {$M$};\n\\node at (-0.225,-0.130) {$N$};\n\\node at (4.644,-0.089) {$P$};\n\\node at (1.929,-0.260) {$I$};\n\\end{tikzpicture}",
+      "caption": "Hình 18",
+      "pos": "right"
+     }
+    },
+    {
+     "type": "noted",
+     "variant": "example",
+     "text": "\\textbf{Ví dụ 7.} (SGK Ví dụ tr.85) Tính độ dài $x$ trên Hình 19, biết $MI$ là đường phân giác của góc $M$.[[br]]{\\sffamily\\bfseries\\color{brand}Lời giải}[[br]]Trong $\\triangle MNP$ có $MI$ là đường phân giác của góc $M$ $\\Rightarrow \\dfrac{IP}{IN}=\\dfrac{[[fill:MP]]\\rule[-0.9ex]{0pt}{2.6ex}}{[[fill:MN]]\\rule{0pt}{2.2ex}}$.[[br]]Hay $\\dfrac{x}{15}=\\dfrac{32}{24}$ $\\Rightarrow x=\\dfrac{15\\cdot 32}{24}$.[[br]]Vậy $x=$ [[fill:20]].",
+     "figure": {
+      "tikz": "\\begin{tikzpicture}[line width=0.8pt, font=\\small, scale=1.0]\n\\draw[ink] (1.332,2.553) -- (0.000,0.000) -- (4.200,0.000) -- cycle;\n\\draw[brand,line width=1.0pt] (1.332,2.553) -- (1.800,0.000);\n\\draw[brand] (1.147,2.199) arc[start angle=-117.55, end angle=-79.61, radius=0.400];\n\\draw[brand] (1.419,2.081) arc[start angle=-79.61, end angle=-41.68, radius=0.480];\n\\node[font=\\footnotesize, fill=white, inner sep=0.6pt] at (0.453,1.388) {$24$};\n\\node[font=\\footnotesize, fill=white, inner sep=0.6pt] at (2.926,1.456) {$32$};\n\\node[font=\\footnotesize, fill=white, inner sep=0.6pt] at (0.900,-0.240) {$15$};\n\\node[font=\\footnotesize, fill=white, inner sep=0.6pt] at (3.000,-0.240) {$x$};\n\\fill[ink] (1.332,2.553) circle (1.2pt);\n\\fill[ink] (0.000,0.000) circle (1.2pt);\n\\fill[ink] (4.200,0.000) circle (1.2pt);\n\\fill[ink] (1.800,0.000) circle (1.2pt);\n\\node at (1.287,2.810) {$M$};\n\\node at (-0.225,-0.130) {$N$};\n\\node at (4.444,-0.089) {$P$};\n\\node at (1.800,-0.260) {$I$};\n\\end{tikzpicture}",
+      "caption": "Hình 19",
+      "pos": "right"
+     }
+    },
+    {
+     "type": "problem",
+     "label": "Bài 18.",
+     "statement": "[NB] (Đề cuối kì II, THCS Ngô Gia Tự) Cho tam giác $ABC$ có đường phân giác $BD$ (Hình 20). Biết $AB = 12$ cm, $BC = 18$ cm, $AD = 10$ cm. Tính độ dài đoạn thẳng $CD$.",
+     "level": 1,
+     "tier": "onclass",
+     "dang_id": "NB4",
+     "solution": "$BD$ là đường phân giác của $\\triangle ABC$ $\\Rightarrow \\dfrac{DA}{DC}=\\dfrac{BA}{BC}$ hay $\\dfrac{10}{DC}=\\dfrac{12}{18}$.[[br]]Vậy $DC=\\dfrac{10\\cdot 18}{12}=15$ cm.",
+     "figure": {
+      "tikz": "\\begin{tikzpicture}[line width=0.8pt, font=\\small, scale=1.0]\n\\draw[ink] (1.495,1.352) -- (0.000,0.000) -- (4.200,0.000) -- cycle;\n\\draw[brand,line width=1.0pt] (1.495,1.352) -- (1.680,0.000);\n\\draw[brand] (1.199,1.084) arc[start angle=-137.87, end angle=-82.22, radius=0.400];\n\\draw[brand] (1.560,0.877) arc[start angle=-82.22, end angle=-26.56, radius=0.480];\n\\node[font=\\footnotesize, fill=white, inner sep=0.6pt] at (0.587,0.854) {$12$ cm};\n\\node[font=\\footnotesize, fill=white, inner sep=0.6pt] at (2.955,0.891) {$18$ cm};\n\\node[font=\\footnotesize, fill=white, inner sep=0.6pt] at (0.840,-0.240) {$10$ cm};\n\\fill[ink] (1.495,1.352) circle (1.2pt);\n\\fill[ink] (0.000,0.000) circle (1.2pt);\n\\fill[ink] (4.200,0.000) circle (1.2pt);\n\\fill[ink] (1.680,0.000) circle (1.2pt);\n\\node at (1.450,1.608) {$B$};\n\\node at (-0.244,-0.089) {$A$};\n\\node at (4.451,-0.067) {$C$};\n\\node at (1.680,-0.260) {$D$};\n\\end{tikzpicture}",
+      "caption": "Hình 20",
+      "pos": "right"
+     }
+    },
+    {
+     "type": "problem",
+     "label": "Bài 19.",
+     "statement": "[NB] (Đề cuối kì II, Phòng GD Hai Bà Trưng) Cho tam giác $ABC$ có $BD$ là đường phân giác của $\\widehat{ABC}$. Biết $AB = 3$, $BC = 6$, $AD = 2$. Độ dài $CD$ bằng",
+     "level": 1,
+     "tier": "onclass",
+     "dang_id": "NB4",
+     "solution": "A. $\\dfrac{AD}{CD}=\\dfrac{AB}{BC}$ hay $\\dfrac{2}{CD}=\\dfrac{3}{6}$ $\\Rightarrow CD = 4$.",
+     "options": [
+      "$4$.",
+      "$3$.",
+      "$5$.",
+      "$6$."
+     ]
+    },
+    {
+     "type": "problem",
+     "label": "Bài 20.",
+     "statement": "[NB] (Đề cuối kì I, THCS Phan Chu Trinh) Cho tam giác $ABC$ có $AD$ là đường phân giác (Hình 21), $AB = 4$ cm, $AC = 6$ cm, $BD = 3$ cm. Điền vào chỗ trống để hoàn thành lời giải tính $CD$.[[br]]Trong $\\triangle ABC$ có $AD$ là đường phân giác $\\Rightarrow \\dfrac{BD}{CD}=\\dfrac{AB}{\\ldots}$ $\\Rightarrow \\dfrac{3}{CD}=\\dfrac{4}{6}$ $\\Rightarrow CD =$ [[blank:1.6cm]] $=$ [[blank:1.2cm]] (cm).",
+     "level": 1,
+     "tier": "onclass",
+     "dang_id": "NB5",
+     "solution": "$AC$; $\\dfrac{3\\cdot 6}{4}$; $4{,}5$.",
+     "figure": {
+      "tikz": "\\begin{tikzpicture}[line width=0.8pt, font=\\small, scale=1.0]\n\\draw[ink] (1.353,1.785) -- (0.000,0.000) -- (4.200,0.000) -- cycle;\n\\draw[brand,line width=1.0pt] (1.353,1.785) -- (1.680,0.000);\n\\draw[brand] (1.112,1.466) arc[start angle=-127.17, end angle=-79.63, radius=0.400];\n\\draw[brand] (1.440,1.313) arc[start angle=-79.63, end angle=-32.09, radius=0.480];\n\\fill[ink] (1.353,1.785) circle (1.2pt);\n\\fill[ink] (0.000,0.000) circle (1.2pt);\n\\fill[ink] (4.200,0.000) circle (1.2pt);\n\\fill[ink] (1.680,0.000) circle (1.2pt);\n\\node at (1.308,2.041) {$A$};\n\\node at (-0.236,-0.110) {$B$};\n\\node at (4.451,-0.067) {$C$};\n\\node at (1.680,-0.260) {$D$};\n\\end{tikzpicture}",
+      "caption": "Hình 21",
+      "pos": "right"
+     }
+    },
+    {
+     "type": "noted",
+     "variant": "example",
+     "text": "\\textbf{Ví dụ 8.} (SGK Luyện tập tr.85) Tính độ dài $x$ trên Hình 22, biết $EM$ là đường phân giác của góc $E$ của tam giác $DEF$, $DE = 4{,}5$, $DM = 3{,}5$, $MF = 5{,}6$.[[br]]{\\sffamily\\bfseries\\color{brand}Lời giải}[[br]]Trong $\\triangle DEF$ có $EM$ là đường phân giác của góc $E$ $\\Rightarrow \\dfrac{MD}{MF}=\\dfrac{[[fill:ED]]\\rule[-0.9ex]{0pt}{2.6ex}}{[[fill:EF]]\\rule{0pt}{2.2ex}}$.[[br]]Hay $\\dfrac{3{,}5}{5{,}6}=\\dfrac{4{,}5}{x}$ $\\Rightarrow x=\\dfrac{4{,}5\\cdot 5{,}6}{3{,}5}$.[[br]]Vậy $x=$ [[fill:7{,}2]].",
+     "figure": {
+      "tikz": "\\begin{tikzpicture}[line width=0.8pt, font=\\small, scale=1.0]\n\\draw[ink] (1.299,1.621) -- (0.000,0.000) -- (4.200,0.000) -- cycle;\n\\draw[brand,line width=1.0pt] (1.299,1.621) -- (1.615,0.000);\n\\draw[brand] (1.049,1.309) arc[start angle=-128.71, end angle=-78.95, radius=0.400];\n\\draw[brand] (1.391,1.150) arc[start angle=-78.95, end angle=-29.19, radius=0.480];\n\\node[font=\\footnotesize, fill=white, inner sep=0.6pt] at (0.462,0.960) {$4{,}5$};\n\\node[font=\\footnotesize, fill=white, inner sep=0.6pt] at (0.808,-0.240) {$3{,}5$};\n\\node[font=\\footnotesize, fill=white, inner sep=0.6pt] at (2.908,-0.240) {$5{,}6$};\n\\node[font=\\footnotesize, fill=white, inner sep=0.6pt] at (2.866,1.020) {$x$};\n\\fill[ink] (1.299,1.621) circle (1.2pt);\n\\fill[ink] (0.000,0.000) circle (1.2pt);\n\\fill[ink] (4.200,0.000) circle (1.2pt);\n\\fill[ink] (1.615,0.000) circle (1.2pt);\n\\node at (1.254,1.877) {$E$};\n\\node at (-0.236,-0.110) {$D$};\n\\node at (4.451,-0.067) {$F$};\n\\node at (1.765,0.213) {$M$};\n\\end{tikzpicture}",
+      "caption": "Hình 22",
+      "pos": "right"
+     }
+    },
+    {
+     "type": "problem",
+     "label": "Bài 21.",
+     "statement": "[TH] (SGK 4{.}10) Tam giác $MNP$ có đường phân giác $PH$ ($H \\in MN$), $NH = 5{,}1$, $HM = 3$, $MP = 5$ (Hình 23). Tính độ dài $x = NP$.",
+     "level": 2,
+     "tier": "onclass",
+     "dang_id": "TH4",
+     "solution": "Xét $\\triangle MNP$ có $PH$ là đường phân giác của góc $P$ $\\Rightarrow \\dfrac{HN}{HM}=\\dfrac{PN}{PM}$.[[br]]Hay $\\dfrac{5{,}1}{3}=\\dfrac{x}{5}$ $\\Rightarrow x=\\dfrac{5{,}1\\cdot 5}{3}$.[[br]]Vậy $x = 8{,}5$.",
+     "figure_given": true,
+     "hints": [
+      "Đoạn $HN$ kề cạnh nào của góc $P$, đoạn $HM$ kề cạnh nào?"
+     ],
+     "figure": {
+      "tikz": "\\begin{tikzpicture}[line width=0.8pt, font=\\small, scale=1.0]\n\\draw[ink] (3.612,2.525) -- (0.000,0.000) -- (4.200,0.000) -- cycle;\n\\draw[brand,line width=1.0pt] (3.612,2.525) -- (2.644,0.000);\n\\draw[brand] (3.285,2.296) arc[start angle=-145.05, end angle=-110.97, radius=0.400];\n\\draw[brand] (3.441,2.077) arc[start angle=-110.97, end angle=-76.90, radius=0.480];\n\\node[font=\\footnotesize, fill=white, inner sep=0.6pt] at (1.322,-0.240) {$5{,}1$};\n\\node[font=\\footnotesize, fill=white, inner sep=0.6pt] at (3.422,-0.240) {$3$};\n\\node[font=\\footnotesize, fill=white, inner sep=0.6pt] at (4.140,1.317) {$5$};\n\\node[font=\\footnotesize, fill=white, inner sep=0.6pt] at (1.669,1.459) {$x$};\n\\fill[ink] (3.612,2.525) circle (1.2pt);\n\\fill[ink] (0.000,0.000) circle (1.2pt);\n\\fill[ink] (4.200,0.000) circle (1.2pt);\n\\fill[ink] (2.644,0.000) circle (1.2pt);\n\\node at (3.701,2.769) {$P$};\n\\node at (-0.251,-0.067) {$N$};\n\\node at (4.399,-0.167) {$M$};\n\\node at (2.644,-0.260) {$H$};\n\\end{tikzpicture}",
+      "caption": "Hình 23",
+      "pos": "right"
+     }
+    },
+    {
+     "type": "noted",
+     "variant": "example",
+     "text": "\\textbf{Ví dụ 9.} (SGK 4{.}11) Cho tam giác $ABC$. Đường phân giác của góc $A$ cắt $BC$ tại $D$. Tính độ dài đoạn thẳng $DC$ biết $AB = 4{,}5$ m, $AC = 7{,}0$ m và $CB = 3{,}5$ m (làm tròn kết quả đến hàng phần mười).[[br]]{\\sffamily\\bfseries\\color{brand}Lời giải}[[br]]$AD$ là đường phân giác $\\Rightarrow \\dfrac{DC}{DB}=\\dfrac{AC}{AB}=\\dfrac{7}{4{,}5}$ $\\Rightarrow \\dfrac{DC}{7}=\\dfrac{DB}{4{,}5}=\\dfrac{DC+DB}{7+4{,}5}=\\dfrac{[[fill:3{,}5]]\\rule[-0.9ex]{0pt}{2.6ex}}{[[fill:11{,}5]]\\rule{0pt}{2.2ex}}$.[[br]]$\\Rightarrow DC=\\dfrac{7\\cdot 3{,}5}{11{,}5}$.[[br]]Vậy $DC\\approx$ [[fill:2{,}1]] m.",
+     "figure": {
+      "tikz": "\\begin{tikzpicture}[line width=0.8pt, font=\\small, scale=1.0]\n\\draw[ink] (1.400,3.000) -- (0.000,0.000) -- (4.400,0.000) -- cycle;\n\\draw[brand,line width=1.0pt] (1.400,3.000) -- (1.929,0.000);\n\\draw[brand] (1.222,2.619) arc[start angle=-115.02, end angle=-80.01, radius=0.420];\n\\draw[brand] (1.487,2.508) arc[start angle=-80.01, end angle=-45.00, radius=0.500];\n\\fill[ink] (1.400,3.000) circle (1.2pt);\n\\fill[ink] (0.000,0.000) circle (1.2pt);\n\\fill[ink] (4.400,0.000) circle (1.2pt);\n\\fill[ink] (1.929,0.000) circle (1.2pt);\n\\node at (1.355,3.256) {$A$};\n\\node at (-0.225,-0.130) {$B$};\n\\node at (4.644,-0.089) {$C$};\n\\node at (1.929,-0.260) {$D$};\n\\end{tikzpicture}",
+      "caption": "Hình 24",
+      "pos": "right"
+     }
+    },
+    {
+     "type": "problem",
+     "label": "Bài 22.",
+     "statement": "[TH] (Đề cuối kì I, THCS Phan Chu Trinh) Cho tam giác $DEF$ có $DE = 5$ cm, $DF = 8$ cm, $EF = 10$ cm. Vẽ tia $DG$ là tia phân giác của $\\widehat{EDF}$ ($G \\in EF$) (Hình 25). Tính độ dài $GE$, $GF$.",
+     "level": 2,
+     "tier": "onclass",
+     "dang_id": "TH4",
+     "solution": "Ta có $DG$ là đường phân giác của $\\triangle DEF$ $\\Rightarrow \\dfrac{GE}{GF}=\\dfrac{DE}{DF}=\\dfrac{5}{8}$ $\\Rightarrow \\dfrac{GE}{5}=\\dfrac{GF}{8}=\\dfrac{GE+GF}{13}=\\dfrac{10}{13}$.[[br]]Vậy $GE=\\dfrac{50}{13}$ cm, $GF=\\dfrac{80}{13}$ cm.",
+     "figure_given": true,
+     "hints": [
+      "Dùng tính chất dãy tỉ số bằng nhau với $GE + GF = EF$."
+     ],
+     "figure": {
+      "tikz": "\\begin{tikzpicture}[line width=0.8pt, font=\\small, scale=1.0]\n\\draw[ink] (1.281,1.664) -- (0.000,0.000) -- (4.200,0.000) -- cycle;\n\\draw[brand,line width=1.0pt] (1.281,1.664) -- (1.615,0.000);\n\\draw[brand] (1.037,1.347) arc[start angle=-127.59, end angle=-78.64, radius=0.400];\n\\draw[brand] (1.376,1.193) arc[start angle=-78.64, end angle=-29.69, radius=0.480];\n\\fill[ink] (1.281,1.664) circle (1.2pt);\n\\fill[ink] (0.000,0.000) circle (1.2pt);\n\\fill[ink] (4.200,0.000) circle (1.2pt);\n\\fill[ink] (1.615,0.000) circle (1.2pt);\n\\node at (1.236,1.920) {$D$};\n\\node at (-0.236,-0.110) {$E$};\n\\node at (4.451,-0.067) {$F$};\n\\node at (1.615,-0.260) {$G$};\n\\end{tikzpicture}",
+      "caption": "Hình 25",
+      "pos": "right"
+     }
+    },
+    {
+     "type": "problem",
+     "label": "Bài 23.",
+     "statement": "[TH] (SGK 4{.}16) Tam giác $ABC$ có $AB = 15$ cm, $AC = 20$ cm, $BC = 25$ cm. Đường phân giác của góc $BAC$ cắt cạnh $BC$ tại $D$ (Hình 26). Tính độ dài các đoạn thẳng $DB$ và $DC$.",
+     "level": 2,
+     "tier": "onclass",
+     "dang_id": "TH4",
+     "solution": "Ta có $AD$ là đường phân giác $\\Rightarrow \\dfrac{DB}{DC}=\\dfrac{AB}{AC}=\\dfrac{15}{20}=\\dfrac{3}{4}$ $\\Rightarrow \\dfrac{DB}{3}=\\dfrac{DC}{4}=\\dfrac{25}{7}$.[[br]]Vậy $DB=\\dfrac{75}{7}$ cm, $DC=\\dfrac{100}{7}$ cm.",
+     "figure_given": true,
+     "hints": [
+      "Rút gọn tỉ số $\\dfrac{15}{20}$ trước rồi chia $25$ theo tỉ lệ."
+     ],
+     "figure": {
+      "tikz": "\\begin{tikzpicture}[line width=0.8pt, font=\\small, scale=1.0]\n\\draw[ink] (1.512,2.016) -- (0.000,0.000) -- (4.200,0.000) -- cycle;\n\\draw[brand,line width=1.0pt] (1.512,2.016) -- (1.800,0.000);\n\\draw[ink] (1.416,1.888) -- (1.544,1.792) -- (1.640,1.920);\n\\draw[brand] (1.272,1.696) arc[start angle=-126.87, end angle=-81.87, radius=0.400];\n\\fill[ink] (1.512,2.016) circle (1.2pt);\n\\fill[ink] (0.000,0.000) circle (1.2pt);\n\\fill[ink] (4.200,0.000) circle (1.2pt);\n\\fill[ink] (1.800,0.000) circle (1.2pt);\n\\node at (1.467,2.272) {$A$};\n\\node at (-0.236,-0.110) {$B$};\n\\node at (4.444,-0.089) {$C$};\n\\node at (1.800,-0.260) {$D$};\n\\end{tikzpicture}",
+      "caption": "Hình 26",
+      "pos": "right"
+     }
+    },
+    {
+     "type": "noted",
+     "variant": "example",
+     "text": "\\textbf{Ví dụ 10.} (SGK Luyện tập chung, Ví dụ 2) Cho tam giác $ABC$ với đường trung tuyến $AM$. Tia phân giác của góc $AMB$ cắt cạnh $AB$ tại $D$, tia phân giác của góc $AMC$ cắt cạnh $AC$ tại $E$ (Hình 27). Chứng minh $DE \\parallel BC$.[[br]]{\\sffamily\\bfseries\\color{brand}Lời giải}[[br]]Trong $\\triangle AMB$, $MD$ là phân giác của $\\widehat{AMB}$ $\\Rightarrow \\dfrac{DA}{DB}=\\dfrac{[[fill:MA]]\\rule[-0.9ex]{0pt}{2.6ex}}{[[fill:MB]]\\rule{0pt}{2.2ex}}$.[[br]]Trong $\\triangle AMC$, $ME$ là phân giác của $\\widehat{AMC}$ $\\Rightarrow \\dfrac{EA}{EC}=\\dfrac{MA}{MC}$.[[br]]Mà $MB = MC$ ($M$ là trung điểm của $BC$) $\\Rightarrow \\dfrac{DA}{DB}=\\dfrac{EA}{EC}$.[[br]]Vậy $DE \\parallel BC$ (định lí Thalès [[fill:đảo]]).",
+     "figure": {
+      "tikz": "\\begin{tikzpicture}[line width=0.8pt, font=\\small, scale=1.0]\n\\draw[ink] (1.800,3.300) -- (0.000,0.000) -- (4.400,0.000) -- cycle;\n\\draw[ink] (1.800,3.300) -- (2.200,0.000);\n\\draw[brand] (2.200,0.000) -- (0.717,1.314);\n\\draw[brand] (2.200,0.000) -- (3.365,1.314);\n\\draw[brand,line width=1.0pt] (0.717,1.314) -- (3.365,1.314);\n\\draw[ink] (1.100,0.110) -- (1.100,-0.110);\n\\draw[ink] (3.300,0.110) -- (3.300,-0.110);\n\\fill[ink] (1.800,3.300) circle (1.2pt);\n\\fill[ink] (0.000,0.000) circle (1.2pt);\n\\fill[ink] (4.400,0.000) circle (1.2pt);\n\\fill[ink] (2.200,0.000) circle (1.2pt);\n\\fill[ink] (0.717,1.314) circle (1.2pt);\n\\fill[ink] (3.365,1.314) circle (1.2pt);\n\\node at (1.777,3.559) {$A$};\n\\node at (-0.225,-0.130) {$B$};\n\\node at (4.636,-0.110) {$C$};\n\\node at (2.200,-0.260) {$M$};\n\\node at (0.457,1.314) {$D$};\n\\node at (3.625,1.314) {$E$};\n\\end{tikzpicture}",
+      "caption": "Hình 27",
+      "pos": "right"
+     }
+    },
+    {
+     "type": "problem",
+     "label": "Bài 24.",
+     "statement": "[TH] (Tài liệu Thalès, Dạng 4) Cho tam giác $ABC$ cân tại $A$, các đường phân giác $BD$, $CE$ ($D \\in AC$, $E \\in AB$) (Hình 28). Chứng minh rằng $DE \\parallel BC$.",
+     "level": 2,
+     "tier": "onclass",
+     "dang_id": "TH5",
+     "solution": "Ta có $BD$ là phân giác của $\\triangle ABC$ $\\Rightarrow \\dfrac{DA}{DC}=\\dfrac{BA}{BC}$.[[br]]$CE$ là phân giác của $\\triangle ABC$ $\\Rightarrow \\dfrac{EA}{EB}=\\dfrac{CA}{CB}$.[[br]]Mà $BA = CA$ $\\Rightarrow \\dfrac{DA}{DC}=\\dfrac{EA}{EB}$.[[br]]Vậy $DE \\parallel BC$ (định lí Thalès đảo).",
+     "figure_given": true,
+     "hints": [
+      "Viết tỉ lệ thức của hai đường phân giác; tam giác cân cho hai cạnh nào bằng nhau?"
+     ],
+     "figure": {
+      "tikz": "\\begin{tikzpicture}[line width=0.8pt, font=\\small, scale=1.0]\n\\draw[ink] (2.200,3.400) -- (0.000,0.000) -- (4.400,0.000) -- cycle;\n\\draw[ink] (0.000,0.000) -- (3.254,1.770);\n\\draw[ink] (4.400,0.000) -- (1.146,1.770);\n\\draw[brand,line width=1.0pt] (3.254,1.770) -- (1.146,1.770);\n\\draw[ink] (1.192,1.640) -- (1.008,1.760);\n\\draw[ink] (3.392,1.760) -- (3.208,1.640);\n\\fill[ink] (2.200,3.400) circle (1.2pt);\n\\fill[ink] (0.000,0.000) circle (1.2pt);\n\\fill[ink] (4.400,0.000) circle (1.2pt);\n\\fill[ink] (3.254,1.770) circle (1.2pt);\n\\fill[ink] (1.146,1.770) circle (1.2pt);\n\\node at (2.200,3.660) {$A$};\n\\node at (-0.225,-0.130) {$B$};\n\\node at (4.625,-0.130) {$C$};\n\\node at (3.514,1.770) {$D$};\n\\node at (0.886,1.770) {$E$};\n\\end{tikzpicture}",
+      "caption": "Hình 28",
+      "pos": "right"
+     }
+    },
+    {
+     "type": "problem",
+     "label": "Bài 25.",
+     "statement": "[TH] (SGK 4{.}15) Cho tam giác $ABC$, phân giác $AD$ ($D \\in BC$). Đường thẳng qua $D$ song song với $AB$ cắt $AC$ tại $E$ (Hình 29). Chứng minh rằng $\\dfrac{AC}{AB}=\\dfrac{EC}{EA}$.",
+     "level": 2,
+     "tier": "onclass",
+     "dang_id": "TH5",
+     "solution": "Ta có $AD$ là phân giác của $\\triangle ABC$ $\\Rightarrow \\dfrac{DC}{DB}=\\dfrac{AC}{AB}$.[[br]]$\\triangle ABC$ có $DE \\parallel AB$ $\\Rightarrow \\dfrac{EC}{EA}=\\dfrac{DC}{DB}$ (định lí Thalès).[[br]]Vậy $\\dfrac{AC}{AB}=\\dfrac{EC}{EA}$.",
+     "figure_given": true,
+     "hints": [
+      "Tỉ số $\\dfrac{DC}{DB}$ là cầu nối."
+     ],
+     "figure": {
+      "tikz": "\\begin{tikzpicture}[line width=0.8pt, font=\\small, scale=1.0]\n\\draw[ink] (1.400,3.200) -- (0.000,0.000) -- (4.600,0.000) -- cycle;\n\\draw[ink] (1.400,3.200) -- (2.004,0.000);\n\\draw[brand,line width=1.0pt] (2.004,0.000) -- (2.794,1.806);\n\\draw[brand] (1.240,2.834) arc[start angle=-113.63, end angle=-79.31, radius=0.400];\n\\fill[ink] (1.400,3.200) circle (1.2pt);\n\\fill[ink] (0.000,0.000) circle (1.2pt);\n\\fill[ink] (4.600,0.000) circle (1.2pt);\n\\fill[ink] (2.004,0.000) circle (1.2pt);\n\\fill[ink] (2.794,1.806) circle (1.2pt);\n\\node at (1.355,3.456) {$A$};\n\\node at (-0.213,-0.149) {$B$};\n\\node at (4.844,-0.089) {$C$};\n\\node at (2.004,-0.260) {$D$};\n\\node at (3.019,1.936) {$E$};\n\\end{tikzpicture}",
+      "caption": "Hình 29",
+      "pos": "right"
+     }
+    },
+    {
+     "type": "problem",
+     "label": "Bài 26.",
+     "statement": "[TH] (Đề giữa kì II, THCS Gia Quất) Cho tam giác $MNP$, trung tuyến $MQ$, đường phân giác của $\\widehat{MQN}$ cắt $MN$ ở $K$, đường phân giác của $\\widehat{MQP}$ cắt $MP$ ở $H$ (Hình 30). Cho $MQ = 5$ cm, $NQ = 4$ cm, $NK = 3$ cm. Tính độ dài $KM$.",
+     "level": 2,
+     "tier": "onclass",
+     "dang_id": "TH5",
+     "solution": "Xét $\\triangle MQN$, $QK$ là phân giác của $\\widehat{MQN}$ $\\Rightarrow \\dfrac{KM}{KN}=\\dfrac{QM}{QN}$ hay $\\dfrac{KM}{3}=\\dfrac{5}{4}$.[[br]]Vậy $KM=\\dfrac{15}{4}=3{,}75$ cm.",
+     "figure_given": true,
+     "hints": [
+      "Xét tam giác chứa đường phân giác $QK$."
+     ],
+     "figure": {
+      "tikz": "\\begin{tikzpicture}[line width=0.8pt, font=\\small, scale=1.0]\n\\draw[ink] (1.600,3.200) -- (0.000,0.000) -- (5.000,0.000) -- cycle;\n\\draw[ink] (1.600,3.200) -- (2.500,0.000);\n\\draw[brand] (2.500,0.000) -- (0.687,1.374);\n\\draw[brand] (2.500,0.000) -- (3.541,1.374);\n\\draw[ink] (1.250,0.110) -- (1.250,-0.110);\n\\draw[ink] (3.750,0.110) -- (3.750,-0.110);\n\\fill[ink] (1.600,3.200) circle (1.2pt);\n\\fill[ink] (0.000,0.000) circle (1.2pt);\n\\fill[ink] (5.000,0.000) circle (1.2pt);\n\\fill[ink] (2.500,0.000) circle (1.2pt);\n\\fill[ink] (0.687,1.374) circle (1.2pt);\n\\fill[ink] (3.541,1.374) circle (1.2pt);\n\\node at (1.555,3.456) {$M$};\n\\node at (-0.225,-0.130) {$N$};\n\\node at (5.244,-0.089) {$P$};\n\\node at (2.500,-0.260) {$Q$};\n\\node at (0.427,1.374) {$K$};\n\\node at (3.766,1.504) {$H$};\n\\end{tikzpicture}",
+      "caption": "Hình 30",
+      "pos": "right"
+     }
+    },
+    {
+     "type": "noted",
+     "variant": "example",
+     "text": "\\textbf{Ví dụ 11.} (Đề cuối kì II, THCS Chương Dương) Một vườn hoa hình tam giác $ABC$ có cạnh $AB = 60$ m, $AC = 90$ m và $BC = 100$ m (Hình 31). Ban quản lý xây một con đường đi bộ xuất phát từ đỉnh $A$ và chia $\\widehat{BAC}$ thành hai góc bằng nhau, tia phân giác này cắt cạnh $BC$ tại điểm $D$. Tính các khoảng cách từ điểm $D$ đến đỉnh $B$ và đỉnh $C$.[[br]]{\\sffamily\\bfseries\\color{brand}Lời giải}[[br]]Xét $\\triangle ABC$, phân giác $AD$ $\\Rightarrow \\dfrac{DB}{DC}=\\dfrac{AB}{AC}$ $\\Rightarrow \\dfrac{DB}{60}=\\dfrac{DC}{90}$.[[br]]$\\Rightarrow \\dfrac{DB}{60}=\\dfrac{DC}{90}=\\dfrac{DB+DC}{60+90}=\\dfrac{100}{150}=\\dfrac{[[fill:2]]\\rule[-0.9ex]{0pt}{2.6ex}}{[[fill:3]]\\rule{0pt}{2.2ex}}$.[[br]]Vậy $DB =$ [[fill:40]] m, $DC =$ [[fill:60]] m.",
+     "figure": {
+      "tikz": "\\begin{tikzpicture}[line width=0.8pt, font=\\small, scale=1.0]\n\\draw[ink] (1.155,2.240) -- (0.000,0.000) -- (4.200,0.000) -- cycle;\n\\draw[brand,line width=1.0pt] (1.155,2.240) -- (1.680,0.000);\n\\draw[brand] (0.972,1.884) arc[start angle=-117.28, end angle=-76.81, radius=0.400];\n\\draw[brand] (1.265,1.772) arc[start angle=-76.81, end angle=-36.34, radius=0.480];\n\\node[font=\\footnotesize, fill=white, inner sep=0.6pt] at (0.364,1.230) {$60$ m};\n\\node[font=\\footnotesize, fill=white, inner sep=0.6pt] at (2.820,1.313) {$90$ m};\n\\node[font=\\footnotesize, fill=white, inner sep=0.6pt] at (2.100,-0.320) {$100$ m};\n\\fill[ink] (1.155,2.240) circle (1.2pt);\n\\fill[ink] (0.000,0.000) circle (1.2pt);\n\\fill[ink] (4.200,0.000) circle (1.2pt);\n\\fill[ink] (1.680,0.000) circle (1.2pt);\n\\node at (1.088,2.491) {$A$};\n\\node at (-0.225,-0.130) {$B$};\n\\node at (4.444,-0.089) {$C$};\n\\node at (1.810,0.225) {$D$};\n\\end{tikzpicture}",
+      "caption": "Hình 31",
+      "pos": "right"
+     }
+    },
+    {
+     "type": "problem",
+     "label": "Bài 27.",
+     "statement": "[TH] (SGK 4{.}12) Nhà bạn Mai ở vị trí $M$, nhà bạn Dung ở vị trí $D$ (Hình 32), tứ giác $ABCD$ là hình vuông và $M$ là trung điểm của $AB$. Hai bạn đi bộ với cùng một vận tốc trên con đường $MD$ để đến điểm $I$ ($I$ là giao điểm của $MD$ và $AC$). Bạn Mai xuất phát lúc 7 giờ. Hỏi bạn Dung phải xuất phát lúc mấy giờ để gặp bạn Mai lúc 7 giờ 30 phút tại điểm $I$?",
+     "level": 2,
+     "tier": "onclass",
+     "dang_id": "TH6",
+     "solution": "Ta có $AC$ là đường chéo của hình vuông $ABCD$ $\\Rightarrow AC$ là phân giác của $\\widehat{MAD}$.[[br]]$\\triangle AMD$ có $AI$ là phân giác $\\Rightarrow \\dfrac{IM}{ID}=\\dfrac{AM}{AD}=\\dfrac{1}{2}$ $\\Rightarrow ID = 2IM$.[[br]]Mai đi $IM$ hết $30$ phút nên Dung đi $ID$ hết $60$ phút.[[br]]Vậy Dung phải xuất phát lúc $6$ giờ $30$ phút.",
+     "figure_given": true,
+     "hints": [
+      "Đường chéo $AC$ của hình vuông có tính chất gì với góc $A$?",
+      "So sánh quãng đường $ID$ với $IM$ rồi suy ra thời gian."
+     ],
+     "figure": {
+      "tikz": "\\begin{tikzpicture}[line width=0.8pt, font=\\small, scale=1.0]\n\\draw[ink] (0.000,3.200) -- (3.200,3.200) -- (3.200,0.000) -- (0.000,0.000) -- cycle;\n\\draw[ink] (3.200,3.200) -- (0.000,0.000);\n\\draw[brand,line width=1.0pt] (1.600,3.200) -- (3.200,0.000);\n\\draw[ink] (0.800,3.310) -- (0.800,3.090);\n\\draw[ink] (2.400,3.310) -- (2.400,3.090);\n\\fill[ink] (0.000,3.200) circle (1.2pt);\n\\fill[ink] (3.200,3.200) circle (1.2pt);\n\\fill[ink] (3.200,0.000) circle (1.2pt);\n\\fill[ink] (0.000,0.000) circle (1.2pt);\n\\fill[ink] (1.600,3.200) circle (1.2pt);\n\\fill[ink] (2.133,2.133) circle (1.2pt);\n\\node at (-0.184,3.384) {$B$};\n\\node at (3.384,3.384) {$A$};\n\\node at (3.384,-0.184) {$D$};\n\\node at (-0.184,-0.184) {$C$};\n\\node at (1.600,3.460) {$M$};\n\\node at (1.874,2.156) {$I$};\n\\end{tikzpicture}",
+      "caption": "Hình 32",
+      "pos": "right"
+     }
+    }
+   ]
+  },
+  {
+   "kind": "reflection",
+   "number": 5,
+   "title": "Tổng kết \\& bài tập về nhà",
+   "teacher_note": "BTVN bám đúng các dạng; bài vẽ hình làm trước để có hình cho bài $DE \\parallel BC$.",
+   "blocks": [
+    {
+     "type": "problem",
+     "label": "BTVN~1.",
+     "statement": "(Tài liệu ĐTB, Dạng 1)[[br]]a) [NB] Cho tam giác đều $ABC$ có cạnh $16$ cm; $H$, $K$, $T$ lần lượt là trung điểm của $AB$, $BC$, $CA$. Tính $HK$, $KT$, $HT$.[[br]]b) [NB] Cho tam giác $ABC$ có $J$, $K$ lần lượt là trung điểm của $AB$, $AC$, biết $JK = 12$ cm. Tính $BC$.[[br]]c) [NB] Với tam giác ở câu b, biết thêm $AB = 10$ cm, $AC = 16$ cm. Tính chu vi tam giác $ABC$.",
+     "level": 1,
+     "tier": "btvn",
+     "dang_id": "NB1",
+     "solution": "a) $HK = KT = HT = 8$ cm.[[br]]b) $BC = 2JK = 24$ cm.[[br]]c) Chu vi $= 10 + 16 + 24 = 50$ (cm)."
+    },
+    {
+     "type": "problem",
+     "label": "BTVN~2.",
+     "statement": "(SGK Cánh diều) Cho tam giác $ABC$ có $M$ là trung điểm của $AB$, điểm $N$ thuộc cạnh $AC$ thoả mãn $MN \\parallel BC$.[[br]]a) [NB] Chứng minh $NA = NC$.[[br]]b) [NB] Chứng minh $MN = \\dfrac{1}{2}BC$.[[br]]c) [NB] Biết $BC = 9$ cm, tính $MN$.",
+     "level": 1,
+     "tier": "btvn",
+     "dang_id": "NB2",
+     "solution": "a) Đường thẳng qua trung điểm $M$ của $AB$, song song với $BC$ thì qua trung điểm của $AC$ nên $NA = NC$.[[br]]b) $MN$ là đường trung bình nên $MN = \\dfrac{1}{2}BC$.[[br]]c) $MN = 4{,}5$ cm."
+    },
+    {
+     "type": "problem",
+     "label": "BTVN~3.",
+     "statement": "Cho tam giác $ABC$ có $AD$ là đường phân giác.[[br]]a) [NB] Điền vào chỗ chấm: $\\dfrac{DB}{DC}=\\dfrac{\\ldots}{AC}$.[[br]]b) [NB] Biết $AB = 2$ cm, $AC = 4$ cm. Tính $\\dfrac{DB}{DC}$.[[br]]c) [NB] Biết $\\dfrac{DB}{DC}=1$. Tam giác $ABC$ có gì đặc biệt?",
+     "level": 1,
+     "tier": "btvn",
+     "dang_id": "NB3",
+     "solution": "a) $AB$.[[br]]b) $\\dfrac{1}{2}$.[[br]]c) $AB = AC$: tam giác cân tại $A$."
+    },
+    {
+     "type": "problem",
+     "label": "BTVN~4.",
+     "statement": "[NB] (SGK 4{.}22) Cho tam giác $ABC$ cân tại $A$ có $AB = 15$ cm, $BC = 10$ cm, đường phân giác của góc $B$ cắt $AC$ tại $D$. Khi đó, đoạn thẳng $AD$ có độ dài là",
+     "level": 1,
+     "tier": "btvn",
+     "dang_id": "NB4",
+     "solution": "C. $\\dfrac{DA}{DC}=\\dfrac{BA}{BC}=\\dfrac{3}{2}$, $DA + DC = 15$ nên $DA = 9$ cm.",
+     "options": [
+      "$3$ cm.",
+      "$6$ cm.",
+      "$9$ cm.",
+      "$12$ cm."
+     ]
+    },
+    {
+     "type": "problem",
+     "label": "BTVN~5.",
+     "statement": "[NB] (Đề cuối kì II, THCS Ngô Gia Tự) Cho tam giác $ABC$ có đường phân giác $AM$. Biết $AB = 24$ cm, $AC = 32$ cm, $BM = 15$ cm. Độ dài đoạn thẳng $CM$ là",
+     "level": 1,
+     "tier": "btvn",
+     "dang_id": "NB4",
+     "solution": "D. $\\dfrac{CM}{BM}=\\dfrac{AC}{AB}$ nên $CM=\\dfrac{15\\cdot 32}{24}=20$ (cm).",
+     "options": [
+      "$5$ cm.",
+      "$10$ cm.",
+      "$15$ cm.",
+      "$20$ cm."
+     ]
+    },
+    {
+     "type": "problem",
+     "label": "BTVN~6.",
+     "statement": "[NB] (Đề cuối kì II, THCS Lý Sơn) Cho tam giác $ABC$ nhọn, tia phân giác của góc $ACB$ cắt $AB$ tại $D$. Biết $AC = 6$ cm, $BC = 4$ cm, $AD = 3$ cm. Tính $DB$.",
+     "level": 1,
+     "tier": "btvn",
+     "dang_id": "NB4",
+     "solution": "$\\dfrac{DA}{DB}=\\dfrac{CA}{CB}$ hay $\\dfrac{3}{DB}=\\dfrac{6}{4}$ nên $DB = 2$ cm."
+    },
+    {
+     "type": "problem",
+     "label": "BTVN~7.",
+     "statement": "Điền vào chỗ trống để hoàn thành lời giải.[[br]]a) [NB] (Đề giữa kì II, THCS Chương Dương) Cho tam giác $ABC$, hai đường trung tuyến $BM$ và $CN$ cắt nhau tại $G$. Ta có $M$, $N$ là trung điểm của $AC$, [[blank:1cm]] $\\Rightarrow MN$ là [[blank:3cm]] của $\\triangle ABC$ $\\Rightarrow MN \\parallel$ [[blank:1cm]].[[br]]b) [NB] (Tài liệu PG, Ví dụ 1) Cho $AD$ là phân giác của tam giác $ABC$, $AB = 5$, $AC = 8{,}5$, $DB = 3$. Ta có $\\dfrac{DC}{DB}=\\dfrac{AC}{\\ldots}$ $\\Rightarrow DC =$ [[blank:1.2cm]], $BC =$ [[blank:1.2cm]].[[br]]c) [NB] Với tam giác ở câu a, đoạn $MN$ bằng bao nhiêu phần $BC$?",
+     "level": 1,
+     "tier": "btvn",
+     "dang_id": "NB5",
+     "solution": "a) $AB$; đường trung bình; $BC$.[[br]]b) $AB$; $5{,}1$; $8{,}1$.[[br]]c) $MN = \\dfrac{1}{2}BC$."
+    },
+    {
+     "type": "problem",
+     "label": "BTVN~8.",
+     "statement": "[NB] Vẽ hình vào vở: tam giác $ABC$ cân tại $A$, các đường phân giác $BD$, $CE$ ($D \\in AC$, $E \\in AB$); đánh dấu hai cạnh bằng nhau, các cặp góc bằng nhau và ghi giả thiết $-$ kết luận \\emph{“$DE \\parallel BC$”}.",
+     "level": 1,
+     "tier": "btvn",
+     "dang_id": "NB6",
+     "solution": "GT: $\\triangle ABC$ cân tại $A$, $BD$, $CE$ là phân giác. KL: $DE \\parallel BC$.",
+     "draw": true
+    },
+    {
+     "type": "problem",
+     "label": "BTVN~9.",
+     "statement": "[TH] (SGK Cánh diều) Với tứ giác $ABCD$ có $M$, $N$, $P$, $Q$ là trung điểm bốn cạnh như ở Ca 3, biết thêm $AC = BD$. Chứng minh tứ giác $MNPQ$ là hình thoi.",
+     "level": 2,
+     "tier": "btvn",
+     "dang_id": "TH1",
+     "solution": "Ta có $MNPQ$ là hình bình hành (Ca 3), $MN = \\dfrac{1}{2}AC$.[[br]]$\\triangle ABD$ có $MQ$ là đường trung bình $\\Rightarrow MQ = \\dfrac{1}{2}BD$.[[br]]Mà $AC = BD$ $\\Rightarrow MN = MQ$.[[br]]Vậy hình bình hành $MNPQ$ có hai cạnh kề bằng nhau nên là hình thoi.",
+     "figure_given": true,
+     "hints": [
+      "Hai cạnh kề $MN$, $MQ$ lần lượt bằng nửa đường chéo nào?"
+     ],
+     "figure": {
+      "tikz": "\\begin{tikzpicture}[line width=0.8pt, font=\\small, scale=1.0]\n\\draw[ink] (0.600,2.800) -- (3.400,3.200) -- (4.400,0.200) -- (0.000,0.000) -- cycle;\n\\draw[ink,dashed] (0.600,2.800) -- (4.400,0.200);\n\\draw[ink,dashed] (3.400,3.200) -- (0.000,0.000);\n\\draw[brand,line width=1.0pt] (2.000,3.000) -- (3.900,1.700) -- (2.200,0.100) -- (0.300,1.400) -- cycle;\n\\fill[ink] (0.600,2.800) circle (1.2pt);\n\\fill[ink] (3.400,3.200) circle (1.2pt);\n\\fill[ink] (4.400,0.200) circle (1.2pt);\n\\fill[ink] (0.000,0.000) circle (1.2pt);\n\\fill[ink] (2.000,3.000) circle (1.2pt);\n\\fill[ink] (3.900,1.700) circle (1.2pt);\n\\fill[ink] (2.200,0.100) circle (1.2pt);\n\\fill[ink] (0.300,1.400) circle (1.2pt);\n\\node at (0.416,2.984) {$A$};\n\\node at (3.530,3.425) {$B$};\n\\node at (4.613,0.051) {$C$};\n\\node at (-0.199,-0.167) {$D$};\n\\node at (1.955,3.256) {$M$};\n\\node at (4.144,1.789) {$N$};\n\\node at (2.223,-0.159) {$P$};\n\\node at (0.044,1.445) {$Q$};\n\\end{tikzpicture}",
+      "caption": "Hình 33",
+      "pos": "right"
+     }
+    },
+    {
+     "type": "problem",
+     "label": "BTVN~10.",
+     "statement": "[TH] (SBT Kết nối tri thức) Ba điểm $H$, $K$, $I$ chia đôi các cạnh $DE$, $DF$, $EF$ của tam giác $DEF$ (hình dưới). Tứ giác $HKIE$ là hình gì? Vì sao?",
+     "level": 2,
+     "tier": "btvn",
+     "dang_id": "TH1",
+     "solution": "Ta có $HK$ là đường trung bình của $\\triangle DEF$ $\\Rightarrow HK \\parallel EF$, tức là $HK \\parallel EI$.[[br]]$KI$ là đường trung bình của $\\triangle DEF$ $\\Rightarrow KI \\parallel DE$, tức là $KI \\parallel HE$.[[br]]Vậy tứ giác $HKIE$ có các cạnh đối song song nên là hình bình hành.",
+     "figure_given": true,
+     "hints": [
+      "Làm như Ví dụ tứ giác $MNPB$."
+     ],
+     "figure": {
+      "tikz": "\\begin{tikzpicture}[line width=0.8pt, font=\\small, scale=1.0]\n\\draw[ink] (1.300,3.000) -- (0.000,0.000) -- (4.200,0.000) -- cycle;\n\\draw[brand,line width=1.0pt] (0.650,1.500) -- (2.750,1.500) -- (2.100,0.000) -- (0.000,0.000) -- cycle;\n\\fill[ink] (1.300,3.000) circle (1.2pt);\n\\fill[ink] (0.000,0.000) circle (1.2pt);\n\\fill[ink] (4.200,0.000) circle (1.2pt);\n\\fill[ink] (0.650,1.500) circle (1.2pt);\n\\fill[ink] (2.750,1.500) circle (1.2pt);\n\\fill[ink] (2.100,0.000) circle (1.2pt);\n\\node at (1.255,3.256) {$D$};\n\\node at (-0.213,-0.149) {$E$};\n\\node at (4.436,-0.110) {$F$};\n\\node at (0.414,1.610) {$H$};\n\\node at (2.934,1.684) {$K$};\n\\node at (2.100,-0.260) {$I$};\n\\end{tikzpicture}",
+      "caption": "Hình 34",
+      "pos": "right"
+     }
+    },
+    {
+     "type": "problem",
+     "label": "BTVN~11.",
+     "statement": "[TH] (Tài liệu ĐTB, Dạng 1) Cho tam giác $ABC$, các đường trung tuyến $BN$, $CP$ cắt nhau tại $G$; $E$, $F$ lần lượt là trung điểm của $BG$, $CG$; biết $BC = 15$ cm. Tính $FE$ và $PN$.",
+     "level": 2,
+     "tier": "btvn",
+     "dang_id": "TH3",
+     "solution": "Ta có $EF$ là đường trung bình của $\\triangle GBC$ $\\Rightarrow EF = \\dfrac{1}{2}BC = 7{,}5$ cm.[[br]]$PN$ là đường trung bình của $\\triangle ABC$ $\\Rightarrow PN = \\dfrac{1}{2}BC = 7{,}5$ cm.[[br]]Vậy $FE = PN = 7{,}5$ cm.",
+     "figure_given": true,
+     "hints": [
+      "Mỗi đoạn là đường trung bình của tam giác nào?"
+     ],
+     "figure": {
+      "tikz": "\\begin{tikzpicture}[line width=0.8pt, font=\\small, scale=1.0]\n\\draw[ink] (1.600,3.400) -- (0.000,0.000) -- (4.600,0.000) -- cycle;\n\\draw[ink] (0.000,0.000) -- (3.100,1.700);\n\\draw[ink] (4.600,0.000) -- (0.800,1.700);\n\\draw[brand] (0.800,1.700) -- (3.100,1.700);\n\\draw[brand] (1.033,0.567) -- (3.333,0.567);\n\\fill[ink] (1.600,3.400) circle (1.2pt);\n\\fill[ink] (0.000,0.000) circle (1.2pt);\n\\fill[ink] (4.600,0.000) circle (1.2pt);\n\\fill[ink] (3.100,1.700) circle (1.2pt);\n\\fill[ink] (0.800,1.700) circle (1.2pt);\n\\fill[ink] (2.067,1.133) circle (1.2pt);\n\\fill[ink] (1.033,0.567) circle (1.2pt);\n\\fill[ink] (3.333,0.567) circle (1.2pt);\n\\node at (1.555,3.656) {$A$};\n\\node at (-0.225,-0.130) {$B$};\n\\node at (4.836,-0.110) {$C$};\n\\node at (3.360,1.700) {$N$};\n\\node at (0.540,1.700) {$P$};\n\\node at (2.067,0.873) {$G$};\n\\node at (0.903,0.792) {$E$};\n\\node at (3.463,0.792) {$F$};\n\\end{tikzpicture}",
+      "caption": "Hình 35",
+      "pos": "right"
+     }
+    },
+    {
+     "type": "problem",
+     "label": "BTVN~12.",
+     "statement": "[TH] (SBT Kết nối tri thức) Cho tam giác $ABC$, các đường trung tuyến $BD$, $CE$ cắt nhau tại $G$. Gọi $I$, $K$ theo thứ tự là trung điểm của $GB$, $GC$. Chứng minh rằng $EI = DK$.",
+     "level": 2,
+     "tier": "btvn",
+     "dang_id": "TH3",
+     "solution": "Ta có Như Bài $EDKI$ ở Ca 3, tứ giác $EDKI$ là hình bình hành.[[br]]$\\Rightarrow EI$ và $DK$ là hai cạnh đối của hình bình hành.[[br]]Vậy $EI = DK$.",
+     "figure_given": true,
+     "hints": [
+      "Chứng minh $EDKI$ là hình bình hành trước."
+     ],
+     "figure": {
+      "tikz": "\\begin{tikzpicture}[line width=0.8pt, font=\\small, scale=1.0]\n\\draw[ink] (1.400,3.300) -- (0.000,0.000) -- (4.400,0.000) -- cycle;\n\\draw[ink] (0.000,0.000) -- (2.900,1.650);\n\\draw[ink] (4.400,0.000) -- (0.700,1.650);\n\\draw[brand,line width=1.0pt] (0.700,1.650) -- (2.900,1.650) -- (3.167,0.550) -- (0.967,0.550) -- cycle;\n\\fill[ink] (1.400,3.300) circle (1.2pt);\n\\fill[ink] (0.000,0.000) circle (1.2pt);\n\\fill[ink] (4.400,0.000) circle (1.2pt);\n\\fill[ink] (2.900,1.650) circle (1.2pt);\n\\fill[ink] (0.700,1.650) circle (1.2pt);\n\\fill[ink] (1.933,1.100) circle (1.2pt);\n\\fill[ink] (0.967,0.550) circle (1.2pt);\n\\fill[ink] (3.167,0.550) circle (1.2pt);\n\\node at (1.355,3.556) {$A$};\n\\node at (-0.213,-0.149) {$B$};\n\\node at (4.636,-0.110) {$C$};\n\\node at (3.160,1.650) {$D$};\n\\node at (0.440,1.650) {$E$};\n\\node at (1.933,0.840) {$G$};\n\\node at (0.722,0.639) {$I$};\n\\node at (3.411,0.639) {$K$};\n\\end{tikzpicture}",
+      "caption": "Hình 36",
+      "pos": "right"
+     }
+    },
+    {
+     "type": "problem",
+     "label": "BTVN~13.",
+     "statement": "[TH] (Tài liệu PG, Ví dụ 1) Cho tam giác $IJK$ có $IL$ là đường phân giác ($L \\in JK$), $IK = 6{,}2$, $IJ = 8{,}7$, $KJ = 12{,}5$. Tính $x = LJ$ (làm tròn đến hàng phần mười).",
+     "level": 2,
+     "tier": "btvn",
+     "dang_id": "TH4",
+     "solution": "Ta có $\\dfrac{LK}{LJ}=\\dfrac{IK}{IJ}$ hay $\\dfrac{12{,}5-x}{x}=\\dfrac{6{,}2}{8{,}7}$.[[br]]$8{,}7(12{,}5-x)=6{,}2x$ $\\Rightarrow 14{,}9x = 108{,}75$ $\\Rightarrow x\\approx 7{,}3$.[[br]]Vậy $LJ\\approx 7{,}3$.",
+     "figure_given": true,
+     "hints": [
+      "Đặt $LJ = x$ thì $LK = 12{,}5 - x$."
+     ],
+     "figure": {
+      "tikz": "\\begin{tikzpicture}[line width=0.8pt, font=\\small, scale=1.0]\n\\draw[ink] (1.400,3.000) -- (0.000,0.000) -- (4.400,0.000) -- cycle;\n\\draw[brand,line width=1.0pt] (1.400,3.000) -- (1.929,0.000);\n\\draw[brand] (1.222,2.619) arc[start angle=-115.02, end angle=-80.01, radius=0.420];\n\\draw[brand] (1.487,2.508) arc[start angle=-80.01, end angle=-45.00, radius=0.500];\n\\fill[ink] (1.400,3.000) circle (1.2pt);\n\\fill[ink] (0.000,0.000) circle (1.2pt);\n\\fill[ink] (4.400,0.000) circle (1.2pt);\n\\fill[ink] (1.929,0.000) circle (1.2pt);\n\\node at (1.355,3.256) {$I$};\n\\node at (-0.225,-0.130) {$K$};\n\\node at (4.644,-0.089) {$J$};\n\\node at (1.929,-0.260) {$L$};\n\\end{tikzpicture}",
+      "caption": "Hình 37",
+      "pos": "right"
+     }
+    },
+    {
+     "type": "problem",
+     "label": "BTVN~14.",
+     "statement": "[TH] (SGK 4{.}16) Với tam giác $ABC$ có $AB = 15$ cm, $AC = 20$ cm, $BC = 25$ cm và phân giác $AD$ ở Ca 4, tính tỉ số diện tích của hai tam giác $ABD$ và $ACD$.",
+     "level": 2,
+     "tier": "btvn",
+     "dang_id": "TH4",
+     "solution": "Ta có Hai tam giác $ABD$ và $ACD$ có chung đường cao kẻ từ $A$ nên tỉ số diện tích bằng $\\dfrac{DB}{DC}=\\dfrac{3}{4}$.[[br]]Vậy $\\dfrac{S_{ABD}}{S_{ACD}}=\\dfrac{3}{4}$.",
+     "figure_given": true,
+     "hints": [
+      "Hai tam giác chung đỉnh $A$, đáy nằm trên cùng đường thẳng $BC$."
+     ],
+     "figure": {
+      "tikz": "\\begin{tikzpicture}[line width=0.8pt, font=\\small, scale=1.0]\n\\draw[ink] (1.512,2.016) -- (0.000,0.000) -- (4.200,0.000) -- cycle;\n\\draw[brand,line width=1.0pt] (1.512,2.016) -- (1.800,0.000);\n\\draw[ink] (1.416,1.888) -- (1.544,1.792) -- (1.640,1.920);\n\\draw[brand] (1.272,1.696) arc[start angle=-126.87, end angle=-81.87, radius=0.400];\n\\fill[ink] (1.512,2.016) circle (1.2pt);\n\\fill[ink] (0.000,0.000) circle (1.2pt);\n\\fill[ink] (4.200,0.000) circle (1.2pt);\n\\fill[ink] (1.800,0.000) circle (1.2pt);\n\\node at (1.467,2.272) {$A$};\n\\node at (-0.236,-0.110) {$B$};\n\\node at (4.444,-0.089) {$C$};\n\\node at (1.800,-0.260) {$D$};\n\\end{tikzpicture}",
+      "caption": "Hình 38",
+      "pos": "right"
+     }
+    },
+    {
+     "type": "problem",
+     "label": "BTVN~15.",
+     "statement": "[TH] (Đề giữa kì II, THCS Gia Quất) Với tam giác $MNP$, trung tuyến $MQ$ và hai phân giác $QK$, $QH$ ở Ca 4, chứng minh rằng $KM\\cdot HP = KN\\cdot HM$ và $KH \\parallel NP$.",
+     "level": 2,
+     "tier": "btvn",
+     "dang_id": "TH5",
+     "solution": "Ta có $\\dfrac{KM}{KN}=\\dfrac{QM}{QN}$, $\\dfrac{HM}{HP}=\\dfrac{QM}{QP}$, mà $QN = QP$ nên $\\dfrac{KM}{KN}=\\dfrac{HM}{HP}$.[[br]]$\\Rightarrow KM\\cdot HP = KN\\cdot HM$ và $KH \\parallel NP$ (định lí Thalès đảo).[[br]]Vậy hai kết luận đều đúng.",
+     "figure_given": true,
+     "hints": [
+      "Làm như Ví dụ trung tuyến $AM$ và hai phân giác."
+     ],
+     "figure": {
+      "tikz": "\\begin{tikzpicture}[line width=0.8pt, font=\\small, scale=1.0]\n\\draw[ink] (1.600,3.200) -- (0.000,0.000) -- (5.000,0.000) -- cycle;\n\\draw[ink] (1.600,3.200) -- (2.500,0.000);\n\\draw[brand] (2.500,0.000) -- (0.687,1.374);\n\\draw[brand] (2.500,0.000) -- (3.541,1.374);\n\\draw[ink] (1.250,0.110) -- (1.250,-0.110);\n\\draw[ink] (3.750,0.110) -- (3.750,-0.110);\n\\fill[ink] (1.600,3.200) circle (1.2pt);\n\\fill[ink] (0.000,0.000) circle (1.2pt);\n\\fill[ink] (5.000,0.000) circle (1.2pt);\n\\fill[ink] (2.500,0.000) circle (1.2pt);\n\\fill[ink] (0.687,1.374) circle (1.2pt);\n\\fill[ink] (3.541,1.374) circle (1.2pt);\n\\node at (1.555,3.456) {$M$};\n\\node at (-0.225,-0.130) {$N$};\n\\node at (5.244,-0.089) {$P$};\n\\node at (2.500,-0.260) {$Q$};\n\\node at (0.427,1.374) {$K$};\n\\node at (3.766,1.504) {$H$};\n\\end{tikzpicture}",
+      "caption": "Hình 39",
+      "pos": "right"
+     }
+    }
+   ]
+  }
+ ]
+}

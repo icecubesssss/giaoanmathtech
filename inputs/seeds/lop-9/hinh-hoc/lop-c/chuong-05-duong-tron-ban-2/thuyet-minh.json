@@ -7,8 +7,8 @@
   "tuan": "07-12",
   "thoiluong": [
     "Buổi 1 (Bài 15, kèm góc ở tâm — số đo cung của Bài 14): 1 ca $=$ 90 phút",
-    "Buổi 2 (Bài 13: bốn điểm cùng thuộc một đường tròn $+$ Bài 16: tiếp tuyến): 1 ca $=$ 90 phút",
-    "Buổi 3 (Bài 16: hai tiếp tuyến cắt nhau, chứng minh $AO \\perp BC$): 1 ca $=$ 90 phút",
+    "Buổi 2 (Bài 13: bốn điểm cùng thuộc một đường tròn $+$ Bài 16: chứng minh tiếp tuyến): 1 ca $=$ 90 phút",
+    "Buổi 3 (Bài 16: tính chất hai tiếp tuyến cắt nhau — chứng minh vuông góc, song song): 1 ca $=$ 90 phút",
     "Buổi 4 (Bài 16 — luyện tập: chứng minh hệ thức tích bằng tam giác đồng dạng): 1 ca $=$ 90 phút",
     "Buổi 5 (Luyện tập chung): 1 ca $=$ 90 phút",
     "Buổi 6 (Bài tập cuối chương V $+$ kiểm tra chương): 1 ca $=$ 90 phút $=$ 45 phút luyện tập $+$ \\textbf{45 phút kiểm tra chương V}",
@@ -18,54 +18,51 @@
   "lythuyet": [
     "Đường tròn $(O; R)$, bán kính, đường kính $d = 2R$; góc ở tâm và số đo cung (cung nhỏ bằng góc ở tâm, cung lớn bằng $360^\\circ$ trừ cung nhỏ) — đủ để tính cung và hình quạt.",
     "Độ dài đường tròn $C = 2\\pi R = \\pi d$; diện tích hình tròn $S = \\pi R^2$; $l = \\frac{n}{360} \\cdot 2\\pi R$, $S_q = \\frac{n}{360} \\cdot \\pi R^2$ (SGK viết gọn $\\frac{\\pi R n}{180}$, $\\frac{\\pi R^2 n}{360}$); hình vành khuyên $S = \\pi R^2 - \\pi r^2$. \\textbf{Khi giải bài}: xác định $R$, $n$ rồi thay thẳng vào công thức, làm tròn một lần ở bước cuối.",
-    "\\textbf{Chứng minh bốn điểm cùng thuộc một đường tròn là dạng THÔNG HIỂU} (Thầy chốt 05/10/2026): hai tam giác vuông chung cạnh huyền $\\Rightarrow$ trung điểm cạnh huyền cách đều bốn đỉnh — Câu IV.2 ý a, $1{,}0$ điểm.",
-    "Ba vị trí tương đối của đường thẳng và đường tròn theo $d$ và $R$; tiếp tuyến vuông góc với bán kính \\textbf{tại tiếp điểm}; \\textbf{Định lí 1} (dấu hiệu nhận biết tiếp tuyến); \\textbf{Định lí 2} (hai tiếp tuyến cắt nhau): $AB = AC$, $AO$ là phân giác $\\widehat{BAC}$, $OA$ là phân giác $\\widehat{BOC}$.",
-    "\\textbf{Chứng minh $AO \\perp BC$ tại trung điểm $H$} bằng đường trung trực ($AB = AC$ (Định lí 2), $OB = OC = R$ $\\Rightarrow$ $AO$ là đường trung trực của $BC$). Kèm ý b hay đi cùng: vẽ đường kính $BD$, $\\triangle BCD$ có đường trung tuyến $CO = \\frac{BD}{2}$ nên vuông tại $C$ $\\Rightarrow CD \\perp BC$ $\\Rightarrow CD \\parallel AO$.",
-    "\\textbf{Chứng minh hệ thức tích bằng tam giác đồng dạng} (hệ thức lượng đã giảm tải, HS không dùng thẳng): $AB^2 = AH \\cdot AO$ ($\\triangle AHB \\backsim \\triangle ABO$), $OH \\cdot OA = R^2$ ($\\triangle OHB \\backsim \\triangle OBA$), $AE \\cdot AD = AB^2$ ($\\triangle AEB \\backsim \\triangle ABD$) — Câu IV.2 ý b.",
-    "\\textbf{Trọng số đề}: ngân hàng 11 đề CK1 có \\textbf{48 câu} đường tròn — nhiều nhất toàn ngân hàng: 9 câu đo lường thực tế (Câu IV.1) và 11 đề có Câu IV.2 gồm ý a (bốn điểm cùng thuộc đường tròn, band TH) và ý b (vuông góc, song song, hệ thức tích, band TH).",
-    "\\textbf{Chuẩn đầu ra Tầng C}: trọn Câu IV.1 ($1{,}0$ điểm) $+$ trọn ý a Câu IV.2 ($1{,}0$ điểm) $=$ \\textbf{2,0 điểm}; ý b Câu IV.2 ($AO \\perp BC$, hệ thức tích — $1{,}0$ điểm) là đích vươn tới. Đo bằng \\textbf{bài kiểm tra chương 45 phút} ở nửa sau buổi 6 (ma trận ở \\texttt{de-kiem-tra.json})."
+    "\\textbf{Buổi 2 trở đi chỉ dạy CHỨNG MINH} (góp ý 09/10/2026): bỏ hết bài thay số tính độ dài (Pythagore, tỉ số lượng giác) vì Câu IV.2 của 11 đề CK1 không hỏi — giờ dồn cho các ý a, b. Phân dạng ý a, b trong 11 đề: bốn điểm cùng thuộc một đường tròn \\textbf{9/11}, song song qua đường kính \\textbf{6/11}, đẳng thức tích \\textbf{5/11}, chứng minh tiếp tuyến \\textbf{4/11}, $AO \\perp BC$ \\textbf{4/11}.",
+    "\\textbf{Bốn điểm cùng thuộc một đường tròn} (dạng THÔNG HIỂU, Câu IV.2 ý a): phương pháp chung — chỉ ra một điểm cách đều bốn điểm; hay gặp nhất là hai tam giác vuông có chung cạnh huyền $\\Rightarrow$ trung điểm cạnh huyền cách đều bốn đỉnh.",
+    "\\textbf{Tiếp tuyến} (SGK Bài 16): vị trí tương đối theo khoảng cách $d$ từ tâm đến đường thẳng; tiếp tuyến vuông góc với bán kính tại tiếp điểm; \\textbf{dấu hiệu nhận biết tiếp tuyến}. Phương pháp chứng minh tiếp tuyến: điểm thuộc đường tròn $+$ vuông góc với bán kính tại điểm đó; góc $90^\\circ$ lấy từ \\textbf{hai tam giác bằng nhau} (c.c.c, c.g.c).",
+    "\\textbf{Tính chất hai tiếp tuyến cắt nhau} (SGK Định lí 2) và ba cách dùng trong đề: $AB = AC$ $\\Rightarrow$ $AO$ là đường trung trực của $BC$ ($AO \\perp BC$ tại trung điểm $H$); tia phân giác $\\Rightarrow$ góc bằng nhau ($\\widehat{COD} = 90^\\circ$); cộng đoạn tiếp tuyến ($CD = AC + BD$). Đi kèm: đường kính qua tiếp điểm, tam giác có trung tuyến bằng nửa cạnh $\\Rightarrow$ vuông $\\Rightarrow$ song song.",
+    "\\textbf{Chứng minh đẳng thức tích bằng tam giác đồng dạng} (hệ thức lượng đã giảm tải, HS không dùng thẳng): đổi tích thành tỉ số $\\to$ chọn hai tam giác $\\to$ chứng minh đồng dạng (g.g) $\\to$ nhân chéo; bắc cầu qua đại lượng chung $AB^2$ — Câu IV.2 ý b.",
+    "\\textbf{Mỗi phiếu chứng minh}: một bài đề thi (hai ý a, b) HS hoàn thiện toàn bộ $+$ một bài đề thi tách thành các câu nhận biết (khung bài giải điền khuyết, hình vẽ sẵn) và thông hiểu (HS tự vẽ hình, $+5$ phút mỗi hình). Bài thông hiểu, vận dụng KHÔNG in hình sẵn. \\textbf{Chặng Kiến thức chia hai phần} (Thầy chốt 10/10/2026): A. Lý thuyết — phát biểu tổng quát đúng lời SGK (định nghĩa, định lí, kiến thức lớp dưới); B. Phương pháp chứng minh — các dạng quen thuộc, mỗi dạng có phương pháp và Bước 1–2–3.",
+    "\\textbf{Chuẩn đầu ra Tầng C}: trọn Câu IV.1 ($1{,}0$ điểm) $+$ trọn ý a Câu IV.2 ($1{,}0$ điểm) $+$ ý b Câu IV.2 (vuông góc, song song, tiếp tuyến, đẳng thức tích — $1{,}0$ điểm) $=$ \\textbf{3,0 điểm}. Đo bằng \\textbf{bài kiểm tra chương 45 phút} ở nửa sau buổi 6 (ma trận ở \\texttt{de-kiem-tra.json})."
   ],
   "vidu": [
     "Buổi 1: Góc ở tâm $\\widehat{AOB} = 70^\\circ$ — số đo cung nhỏ, cung lớn. Bánh xe đạp đường kính $8$ dm — độ dài một vòng. Quạt giấy bán kính $15$ cm, góc $120^\\circ$ — độ dài mép cung và diện tích. Hồ tròn bán kính $10$ m, lối đi rộng $2$ m — diện tích lối đi. Con dê buộc sát chân tường bằng dây $4$ m — hình quạt $180^\\circ$.",
-    "Buổi 2: Tam giác vuông có cạnh huyền $13$ cm — tâm và bán kính đường tròn qua ba đỉnh. Tam giác nhọn có hai đường cao $BE$, $CF$ — bốn điểm $B$, $C$, $E$, $F$ cùng thuộc một đường tròn. Hai tiếp tuyến $MA$, $MB$ — bốn điểm $M$, $A$, $O$, $B$. Từ $A$ kẻ tiếp tuyến $AB$, lấy $C \\in (O)$ với $AC = AB$ — chứng minh $AC$ là tiếp tuyến (c.c.c, Định lí 1).",
-    "Buổi 3: Hai tiếp tuyến $SA$, $SB$ — chứng minh $SO \\perp AB$ bằng đường trung trực, rồi đường kính $BD$ $\\Rightarrow AD \\parallel SO$. Ròng rọc bán kính $3$ cm, móc cách tâm $5$ cm — tính đoạn dây $AB$ và $BC$ bằng tỉ số lượng giác. Hai tiếp tuyến $MA$, $MB$ với $\\widehat{AMB} = 60^\\circ$ — $\\triangle MAB$ đều.",
-    "Buổi 4: $\\triangle ABC$ vuông tại $A$, đường cao $AH$ — viết $\\triangle HBA \\backsim \\triangle ABC$. $\\triangle ABO$ vuông tại $B$, đường cao $BH$ — chứng minh $OB^2 = OH \\cdot OA$ (bản mẫu chép khi đi thi). Đường kính $AB$, tiếp tuyến tại $A$, $CB$ cắt $(O)$ tại $K$ — $BK \\cdot BC = AB^2$. Tia $AO$ cắt $(O)$ tại $M$, $N$ — $AM \\cdot AN = AH \\cdot AO$.",
-    "Buổi 5: Bánh pizza đường kính $30$ cm cắt $6$ miếng, lấy $2$ miếng liền nhau — xác định $R$, $n$ của hình quạt. Quạt giấy nửa hình tròn (đề Chu Văn An) — phần giấy là nửa hình vành khuyên. Tiếp tuyến $CM$ của $(A; AH)$ — bốn điểm $A$, $M$, $C$, $H$. Ba tiếp tuyến tạo $\\triangle MPQ$ — chu vi bằng $2MA$. $\\triangle ABC$ vuông, đường cao $AH$ — $AB^2 = BH \\cdot BC$ và $AH^2 = BH \\cdot HC$ bằng đồng dạng.",
-    "Buổi 6: Lối đi hình vành khuyên quanh bồn hoa — diện tích lối đi. Đề mẫu Câu IV.2 giải trọn ($R = 12$ cm, $OA = 20$ cm): bốn điểm cùng thuộc đường tròn, $AO \\perp BC$ và $AB^2 = AH \\cdot AO$, tính $AB$, $AH$, $BC$."
+    "Buổi 2: Tam giác nhọn có hai đường cao $BE$, $CF$ — bốn điểm $B$, $C$, $E$, $F$. Hai tiếp tuyến $MA$, $MB$ — bốn điểm $M$, $A$, $O$, $B$. Dây $MN$, $OK \\perp MN$ — $\\triangle OMP = \\triangle ONP$ (c.g.c). $\\triangle ABC$ vuông tại $A$ — $AC$ là tiếp tuyến của $(B; BA)$. Từ $A$ kẻ tiếp tuyến $AB$, lấy $C \\in (O)$ với $AC = AB$ — $AC$ là tiếp tuyến (c.c.c). $\\triangle ABC$ vuông, đường cao $AH$, tiếp tuyến $CM$ của $(A; AH)$ — bốn điểm $A$, $M$, $C$, $H$. Đề mẫu: trung điểm $I$ của dây $AB$, tia $OI$ cắt tiếp tuyến tại $A$ ở $M$ — $MB$ là tiếp tuyến, bốn điểm $M$, $A$, $O$, $B$.",
+    "Buổi 3: Hai tiếp tuyến $MA$, $MB$ — $MO \\perp AB$ tại trung điểm $K$. Đường kính $AB$, $M \\in (O)$ — $\\triangle AMB$ vuông. Ba tiếp tuyến tạo $\\triangle MPQ$ — $PQ = PA + QB$. Tiếp tuyến $AB$, dây $BC \\perp OA$, đường kính $CD$ — $DB \\parallel OA$. Tiếp tuyến tại $A$, $C$ của đường tròn đường kính $AB$ cắt nhau tại $M$ — $OM \\parallel BC$ (khác cấu hình bài $OC \\parallel BM$). Đề mẫu: nửa đường tròn, tiếp tuyến tại $A$, $M$ cắt nhau ở $C$ — bốn điểm và $OC \\parallel BM$.",
+    "Buổi 4: $\\triangle ABC$ vuông tại $A$, đường cao $AH$ — $\\triangle HBA \\backsim \\triangle ABC$. $\\triangle ABO$ vuông tại $B$, đường cao $BH$ — $OB^2 = OH \\cdot OA$. Tiếp tuyến $AC$, đường kính $CD$, $AD$ cắt $(O)$ tại $F$ — $AF \\cdot AD = AC^2$. $\\triangle ABC$ vuông, đường cao $AH$, hình chiếu $E$, $F$ của $H$ — $AE \\cdot AB = AF \\cdot AC$ (bắc cầu qua $AH^2$). Nửa đường tròn, tiếp tuyến tại $B$ cắt tia $AM$ tại $E$ — $AM \\cdot AE = AB^2$. Hai tiếp tuyến, $AO \\perp BC$ tại $H$ — $HB^2 = HA \\cdot HO$. Đề mẫu: bốn điểm $A$, $B$, $O$, $C$; $AO \\perp BC$ và $AE \\cdot AD = AH \\cdot AO$.",
+    "Buổi 5: Bánh pizza đường kính $30$ cm cắt $6$ miếng, lấy $2$ miếng liền nhau — xác định $R$, $n$. Quạt giấy nửa hình tròn (đề Chu Văn An) — nửa hình vành khuyên. Đường tròn tiếp xúc ba cạnh tam giác — $AF = \\frac{AB + AC - BC}{2}$. Tiếp tuyến $CM$ của $(A; AH)$ — bốn điểm $A$, $M$, $C$, $H$. Nửa đường tròn, tiếp tuyến tại $B$ cắt tia $AM$ tại $E$ — $AM \\cdot AE = AB^2$. Đề mẫu: tam giác vuông, đường cao $AH$, tiếp tuyến $BD$, $CE$ của $(A; AH)$ — $D$, $A$, $E$ thẳng hàng và $BD \\cdot CE = AH^2$.",
+    "Buổi 6: Lối đi hình vành khuyên quanh bồn hoa — diện tích lối đi. Đề mẫu Câu IV.2 giải trọn: bốn điểm cùng thuộc đường tròn, $AO \\perp BC$ và $AB^2 = AH \\cdot AO$, $OH \\cdot OA = R^2$."
   ],
   "dang_vd": [
     "Bài toán thực tế đo lường: diện tích phần còn lại sau khi bỏ hình quạt (con vật buộc ở góc vườn, vòi tưới ở góc sân) — Câu IV.1, $1{,}0$ điểm.",
-    "Chứng minh một đường thẳng là tiếp tuyến: hai tam giác bằng nhau suy ra góc $90^\\circ$, hoặc Pythagore đảo, rồi Định lí 1.",
-    "Hai tiếp tuyến với $OA = 2R$: chứng minh $\\triangle ABC$ đều, tính chu vi.",
-    "Bắc cầu hai đẳng thức tích qua $AB^2$: $AE \\cdot AD = AH \\cdot AO$, $AM \\cdot AN = AH \\cdot AO$ — Câu IV.2 ý b.",
-    "Hình tiếp tuyến tại hai điểm của đường tròn đường kính $AB$: $\\widehat{COD} = 90^\\circ$ và $AC \\cdot BD = R^2$.",
+    "Đề thi Câu IV.2 (hai ý a, b) ở mỗi buổi 2–4: bốn điểm cùng thuộc đường tròn $+$ một ý b (tiếp tuyến bằng hai tam giác bằng nhau · $SO \\perp AB$ và $AD \\parallel SO$ · $AM \\cdot AN = AH \\cdot AO$) — HS hoàn thiện toàn bộ.",
+    "Hình nửa đường tròn có ba tiếp tuyến: $\\widehat{COD} = 90^\\circ$ và $AC \\cdot BD = R^2$.",
     "Đề mẫu Câu IV.2 trọn ba ý — buổi 6, làm như đang thi."
   ],
   "loisai": [
     "Buổi 1: hỏi độ dài cung mà dùng công thức diện tích hình quạt (hoặc ngược lại); thay đường kính vào chỗ bán kính; vành khuyên lấy $\\pi(R - r)^2$; làm tròn ở bước trung gian; thiếu đơn vị $\\text{cm}^2$, $\\text{m}^2$.",
-    "Buổi 2: chỉ viết \\textquotedblleft bốn điểm cùng thuộc một đường tròn\\textquotedblright{} mà không chỉ ra hai tam giác vuông chung cạnh huyền, không nêu tâm và bán kính (mất $0{,}25$ điểm); viết \\textquotedblleft $AB$ là tiếp tuyến nên $AB \\perp OB$\\textquotedblright{} mà quên \\textbf{tại tiếp điểm $B$}; chứng minh tiếp tuyến mà quên nêu điểm thuộc đường tròn.",
-    "Buổi 3: gộp $AO \\perp BC$ vào tính chất hai tiếp tuyến rồi dùng thẳng — phải chứng minh lại bằng đường trung trực; quên $H$ là trung điểm khi tính $BC = 2BH$.",
+    "Buổi 2: chỉ viết \\textquotedblleft bốn điểm cùng thuộc một đường tròn\\textquotedblright{} mà không chỉ ra hai tam giác vuông chung cạnh huyền, không nêu tâm và bán kính (mất $0{,}25$ điểm); viết \\textquotedblleft $AB$ là tiếp tuyến nên $AB \\perp OB$\\textquotedblright{} mà quên \\textbf{tại tiếp điểm $B$}; chứng minh tiếp tuyến mà quên nêu điểm thuộc đường tròn; hai tam giác bằng nhau mà kể thiếu yếu tố hoặc sai trường hợp.",
+    "Buổi 3: gộp $AO \\perp BC$ vào tính chất hai tiếp tuyến rồi dùng thẳng — phải chứng minh bằng đường trung trực; kết luận song song mà chưa chỉ ra cả hai đường cùng vuông góc với một đường; dùng $\\triangle BCD$ vuông mà chưa nêu trung tuyến $CO = \\frac{BD}{2}$.",
     "Buổi 4: viết sai thứ tự đỉnh tương ứng của hai tam giác đồng dạng nên tỉ số sai; dùng thẳng $AB^2 = AH \\cdot AO$ (hệ thức lượng) mà không chứng minh đồng dạng; chưa chứng minh $\\triangle BED$ vuông đã dùng $BE \\perp AD$.",
     "Buổi 5: nhầm điểm $C$ (giao hai tiếp tuyến) với tiếp điểm; quên lý do $OC \\perp AM$ (trung trực) trước khi kết luận song song.",
-    "Buổi 6: vẽ hình sai vị trí điểm $A$; kết luận thiếu \\textquotedblleft Vậy\\textquotedblright{} ở cuối mỗi ý; làm tròn ở bước trung gian khi tính $AH$, $BC$."
+    "Buổi 6: vẽ hình sai vị trí điểm $A$; kết luận thiếu \\textquotedblleft Vậy\\textquotedblright{} ở cuối mỗi ý; dùng thẳng $OH \\cdot OA = R^2$ mà không chứng minh tam giác đồng dạng."
   ],
   "kienthuc_nb": [
     "Đường tròn tâm $O$ bán kính $R$, kí hiệu $(O; R)$; đường kính $d = 2R$.",
     "Số đo cung nhỏ $=$ số đo góc ở tâm chắn cung; số đo cung lớn $= 360^\\circ -$ số đo cung nhỏ; nửa đường tròn $= 180^\\circ$.",
     "$C = 2\\pi R$; $S = \\pi R^2$; $l = \\frac{n}{360} \\cdot 2\\pi R$; $S_q = \\frac{n}{360} \\cdot \\pi R^2$; $S_{\\text{vành khuyên}} = \\pi R^2 - \\pi r^2$.",
     "Tam giác vuông: trung điểm cạnh huyền cách đều ba đỉnh, là tâm đường tròn đi qua ba đỉnh.",
-    "Tiếp tuyến vuông góc với bán kính tại tiếp điểm; Định lí 1: đi qua $C \\in (O)$ và vuông góc với $OC$ tại $C$ thì là tiếp tuyến.",
-    "Định lí 2: hai tiếp tuyến cắt nhau tại $A$ thì $AB = AC$, $AO$ là phân giác $\\widehat{BAC}$, $OA$ là phân giác $\\widehat{BOC}$.",
+    "Tiếp tuyến vuông góc với bán kính tại tiếp điểm; dấu hiệu nhận biết tiếp tuyến: đi qua $C \\in (O)$ và vuông góc với $OC$ tại $C$ thì là tiếp tuyến.",
+    "Tính chất hai tiếp tuyến cắt nhau (Định lí 2): hai tiếp tuyến cắt nhau tại $A$ thì $AB = AC$, $AO$ là phân giác $\\widehat{BAC}$, $OA$ là phân giác $\\widehat{BOC}$.",
     "$AO \\perp BC$ tại trung điểm $H$ của $BC$ (chứng minh bằng đường trung trực của $BC$).",
     "Hai tam giác vuông có chung một góc nhọn thì đồng dạng (g.g); từ tỉ số cạnh tương ứng nhân chéo ra tích."
   ],
   "kien_thuc_nen": [
-    "\\textbf{Định lí Pythagore} (Lớp 8): tính độ dài tiếp tuyến $AB = \\sqrt{OA^2 - R^2}$, cạnh huyền của tam giác vuông nội tiếp; \\textbf{Pythagore đảo} để chứng minh góc $90^\\circ$ khi chứng minh tiếp tuyến.",
     "\\textbf{Đường trung tuyến ứng với cạnh huyền} (Lớp 8): trong tam giác vuông bằng nửa cạnh huyền $\\Rightarrow$ trung điểm cạnh huyền cách đều ba đỉnh — công cụ chứng minh bốn điểm cùng thuộc một đường tròn. Chiều ngược: tam giác có trung tuyến bằng nửa cạnh tương ứng thì vuông — dùng cho đường kính $BD$ ($\\triangle BCD$ vuông tại $C$).",
     "\\textbf{Đường trung trực của một đoạn thẳng} (Lớp 7): hai điểm phân biệt cùng cách đều hai đầu mút thì đường thẳng qua chúng là đường trung trực — công cụ chứng minh $AO \\perp BC$ tại trung điểm $H$.",
-    "\\textbf{Hai tam giác bằng nhau} (Lớp 7, c.c.c và c.g.c): suy ra góc $90^\\circ$ khi chứng minh tiếp tuyến.",
-    "\\textbf{Tam giác đồng dạng} (Lớp 8): hai tam giác vuông có chung một góc nhọn thì đồng dạng (g.g) — công cụ DUY NHẤT để chứng minh hệ thức tích ở buổi 4, 5, 6 (hệ thức lượng đã giảm tải).",
-    "\\textbf{Tỉ số lượng giác của góc nhọn} (Chương IV lớp 9): tính $\\widehat{AOB}$ qua $\\cos\\widehat{AOB} = \\frac{OB}{OA}$, tính $BH = OB \\cdot \\sin\\widehat{BOH}$ ở buổi 3.",
+    "\\textbf{Hai tam giác bằng nhau} (Lớp 7, c.c.c và c.g.c) và \\textbf{tam giác cân} (đường cao đồng thời là phân giác): suy ra góc $90^\\circ$ khi chứng minh tiếp tuyến.",
+    "\\textbf{Tam giác đồng dạng} (Lớp 8): hai tam giác vuông có chung một góc nhọn thì đồng dạng (g.g) — công cụ DUY NHẤT để chứng minh đẳng thức tích ở buổi 4, 5, 6 (hệ thức lượng đã giảm tải).",
     "\\textbf{Hai đường thẳng cùng vuông góc với một đường thẳng thì song song} (Lớp 7) — chứng minh $AO \\parallel CD$, $OC \\parallel BM$."
   ],
   "phieu": [
@@ -251,239 +248,174 @@
     },
     {
       "code": "2",
-      "title": "Buổi 2 — Bài 13, Bài 16: Bốn điểm cùng thuộc một đường tròn. Tiếp tuyến của đường tròn",
+      "title": "Buổi 2 — Bài 13, Bài 16: Bốn điểm cùng thuộc một đường tròn. Chứng minh tiếp tuyến",
       "rows": [
         {
           "band": "NB",
-          "dang": "Vị trí của điểm đối với $(O; R)$ theo $OM$ và $R$; điểm thuộc đường tròn khi $OM = R$",
+          "dang": "Bốn điểm cùng thuộc một đường tròn khi đề cho sẵn hai góc vuông (hai đường cao, tứ giác có hai góc vuông): điền khuyết bài giải hoàn chỉnh",
           "onclass": 3,
-          "btvn": 2,
-          "vidu": 0,
-          "loai": "NB lẻ LT",
-          "decompose": "none",
-          "source_refs": [],
-          "lythuyet": 1,
-          "hinh_san": true
-        },
-        {
-          "band": "NB",
-          "dang": "Vẽ lại tam giác vuông có ba đỉnh thuộc $(O)$, đánh dấu góc vuông; chỉ ra tâm là trung điểm cạnh huyền và $R = \\frac{\\text{cạnh huyền}}{2}$",
-          "onclass": 3,
-          "btvn": 2,
+          "btvn": 3,
           "vidu": 1,
           "loai": "NB tách TH",
           "decompose": "none",
-          "source_refs": [
-            "ck1-phuong-ha-dong-42.a",
-            "ck1-chu-van-an-IV2.a"
-          ],
-          "lythuyet": 0,
-          "hinh_san": true,
-          "gian_giao": "ve-hinh"
-        },
-        {
-          "band": "NB",
-          "dang": "Điền khuyết bài giải mẫu: hai tam giác vuông chung cạnh huyền, trung điểm cạnh huyền cách đều bốn điểm",
-          "onclass": 3,
-          "btvn": 3,
-          "vidu": 0,
-          "loai": "NB ghép bài",
-          "decompose": "none",
-          "source_refs": [
-            "ck1-chu-van-an-IV2.a",
-            "ck1-phuc-dong-IV2.a"
-          ],
-          "lythuyet": 0,
-          "hinh_san": true,
-          "gian_giao": "dien-khuyet"
-        },
-        {
-          "band": "NB",
-          "dang": "Ba vị trí tương đối của đường thẳng và đường tròn theo $d$ và $R$; số điểm chung",
-          "onclass": 3,
-          "btvn": 2,
-          "vidu": 1,
-          "loai": "NB lẻ LT",
-          "decompose": "none",
-          "source_refs": [],
-          "lythuyet": 1,
-          "hinh_san": true
-        },
-        {
-          "band": "NB",
-          "dang": "Tính chất tiếp tuyến: $AB$ là tiếp tuyến tại $B$ $\\Rightarrow AB \\perp OB$, $\\widehat{ABO} = 90^\\circ$, $\\triangle ABO$ vuông tại $B$ có cạnh huyền $AO$",
-          "onclass": 3,
-          "btvn": 3,
-          "vidu": 0,
-          "loai": "NB tách TH",
-          "decompose": "none",
-          "source_refs": [
-            "ck1-ngoc-thuy-III2.a",
-            "ck1-ly-thanh-tong-7a"
-          ],
-          "lythuyet": 1,
-          "hinh_san": true
-        },
-        {
-          "band": "NB",
-          "dang": "Dấu hiệu nhận biết tiếp tuyến (Định lí 1): đi qua điểm $C \\in (O)$ và vuông góc với bán kính $OC$ tại $C$",
-          "onclass": 2,
-          "btvn": 2,
-          "vidu": 0,
-          "loai": "NB lẻ LT",
-          "decompose": "none",
-          "source_refs": [],
-          "lythuyet": 0,
-          "hinh_san": true
-        },
-        {
-          "band": "NB",
-          "dang": "Hai tiếp tuyến $AB$, $AC$: chỉ ra $\\triangle ABO$, $\\triangle ACO$ vuông có chung cạnh huyền $AO$; trung điểm $I$ của $AO$ cách đều $A$, $B$, $O$, $C$",
-          "onclass": 3,
-          "btvn": 3,
-          "vidu": 0,
-          "loai": "NB tách TH",
-          "decompose": "none",
-          "source_refs": [
-            "ck1-ngoc-lam-IV2.a",
-            "ck1-ngoc-thuy-III2.a"
-          ],
-          "lythuyet": 0,
-          "hinh_san": true
-        },
-        {
-          "band": "TH",
-          "dang": "Chứng minh bốn điểm cùng thuộc một đường tròn từ hai tam giác vuông chung cạnh huyền (hai đường cao của tam giác, hình chữ nhật)",
-          "onclass": 1,
-          "btvn": 1,
-          "vidu": 1,
-          "loai": "TH ghép bài",
-          "decompose": "th2nb",
           "source_refs": [
             "ck1-chu-van-an-IV2.a",
             "ck1-phuong-ha-dong-42.a"
           ],
-          "lythuyet": 0,
+          "lythuyet": 1,
+          "hinh_san": false,
+          "gian_giao": "dien-khuyet"
+        },
+        {
+          "band": "NB",
+          "dang": "Bốn điểm cùng thuộc một đường tròn trong hình tiếp tuyến: góc vuông lấy từ tính chất tiếp tuyến, điền khuyết bài giải hoàn chỉnh",
+          "onclass": 3,
+          "btvn": 0,
+          "vidu": 1,
+          "loai": "NB tách TH",
+          "decompose": "none",
+          "source_refs": [
+            "ck1-tan-trieu-42.a",
+            "ck1-dich-vong-IV4.2.a",
+            "ck1-ngoc-lam-IV2.a"
+          ],
+          "lythuyet": 1,
+          "hinh_san": false,
+          "gian_giao": "dien-khuyet"
+        },
+        {
+          "band": "NB",
+          "dang": "Hai tam giác bằng nhau (c.g.c) có cặp cạnh là bán kính: tam giác cân có đường cao đồng thời là phân giác $\\Rightarrow$ hai góc ở tâm bằng nhau",
+          "onclass": 3,
+          "btvn": 3,
+          "vidu": 1,
+          "loai": "NB tách TH",
+          "decompose": "none",
+          "source_refs": [
+            "ck1-ly-thanh-tong-7b",
+            "ck1-ai-mo-4-2b"
+          ],
+          "lythuyet": 1,
+          "hinh_san": false,
+          "gian_giao": "dien-khuyet"
+        },
+        {
+          "band": "NB",
+          "dang": "Dấu hiệu nhận biết tiếp tuyến: điểm thuộc đường tròn và đường thẳng vuông góc với bán kính tại điểm đó",
+          "onclass": 3,
+          "btvn": 0,
+          "vidu": 1,
+          "loai": "NB lẻ LT",
+          "decompose": "none",
+          "source_refs": [],
+          "lythuyet": 1,
           "hinh_san": false
         },
         {
+          "band": "NB",
+          "dang": "Vẽ hình theo đề bài thi (hai tiếp tuyến, đường vuông góc với đường kính) bằng compa và thước, đánh dấu các góc vuông",
+          "onclass": 2,
+          "btvn": 2,
+          "vidu": 0,
+          "loai": "NB ghép bài",
+          "decompose": "none",
+          "source_refs": [
+            "ck1-ai-mo-4-2a"
+          ],
+          "lythuyet": 0,
+          "hinh_san": false,
+          "gian_giao": "ve-hinh",
+          "ve_hinh": {
+            "onclass": 1,
+            "btvn": 1
+          }
+        },
+        {
           "band": "TH",
-          "dang": "Chứng minh bốn điểm cùng thuộc một đường tròn trong hình tiếp tuyến ($A$, $B$, $O$, $C$ hoặc $O$, $A$, $C$, $M$), chỉ rõ tâm và bán kính",
+          "dang": "Chứng minh một đường thẳng là tiếp tuyến: hai tam giác bằng nhau cho góc $90^\\circ$, rồi dấu hiệu nhận biết tiếp tuyến",
+          "onclass": 1,
+          "btvn": 1,
+          "vidu": 1,
+          "loai": "TH tách VD",
+          "decompose": "th2nb",
+          "source_refs": [
+            "ck1-ly-thanh-tong-7b",
+            "ck1-tan-trieu-42.b",
+            "ck1-phuong-ha-dong-42.b"
+          ],
+          "lythuyet": 0,
+          "hinh_san": false,
+          "ve_hinh": {
+            "onclass": 1
+          }
+        },
+        {
+          "band": "TH",
+          "dang": "Chứng minh bốn điểm cùng thuộc một đường tròn (Câu IV.2 ý a): HS tự vẽ hình, trình bày đủ hai tam giác vuông, nêu tâm và bán kính",
           "onclass": 1,
           "btvn": 1,
           "vidu": 1,
           "loai": "TH ghép bài",
           "decompose": "th2nb",
           "source_refs": [
-            "ck1-ngoc-thuy-III2.a",
+            "ck1-trung-vuong-IV1",
             "ck1-phuc-dong-IV2.a",
-            "ck1-tan-trieu-42.a",
-            "ck1-trung-vuong-IV1"
+            "ck1-ngoc-thuy-III2.a"
           ],
           "lythuyet": 0,
-          "hinh_san": false
-        },
-        {
-          "band": "TH",
-          "dang": "Tính độ dài tiếp tuyến $AB$ hoặc khoảng cách $OA$ bằng định lí Pythagore trong $\\triangle ABO$ vuông tại $B$",
-          "onclass": 1,
-          "btvn": 1,
-          "vidu": 1,
-          "loai": "TH lẻ LT",
-          "decompose": "none",
-          "source_refs": [
-            "ck1-ly-thanh-tong-7a"
-          ],
-          "lythuyet": 0,
-          "hinh_san": false
+          "hinh_san": false,
+          "ve_hinh": {
+            "onclass": 1,
+            "btvn": 1
+          }
         },
         {
           "band": "VD",
-          "dang": "Chứng minh một đường thẳng là tiếp tuyến: hai tam giác bằng nhau (c.c.c, c.g.c) hoặc Pythagore đảo cho góc $90^\\circ$, rồi Định lí 1",
+          "dang": "Đề thi Câu IV.2 hai ý: bốn điểm cùng thuộc một đường tròn; chứng minh tiếp tuyến bằng hai tam giác bằng nhau — HS hoàn thiện toàn bộ",
           "onclass": 1,
           "btvn": 1,
           "vidu": 1,
           "loai": "VD lẻ",
           "decompose": "vd",
           "source_refs": [
-            "ck1-ly-thanh-tong-7b",
+            "ck1-ai-mo-4-2a",
             "ck1-ai-mo-4-2b"
           ],
           "lythuyet": 0,
-          "hinh_san": false
+          "hinh_san": false,
+          "quy_trinh": [
+            "Ý a: chỉ ra hai góc vuông có chung cạnh huyền, gọi trung điểm cạnh huyền, kết luận tâm và bán kính",
+            "Ý b: tam giác cân có đường cao đồng thời là phân giác $\\Rightarrow$ hai góc ở tâm bằng nhau",
+            "Chứng minh hai tam giác bằng nhau (c.g.c) $\\Rightarrow$ góc tương ứng bằng $90^\\circ$",
+            "Kết luận theo dấu hiệu nhận biết tiếp tuyến"
+          ]
         }
       ]
     },
     {
       "code": "3",
-      "title": "Buổi 3 — Bài 16: Hai tiếp tuyến cắt nhau. Chứng minh $AO \\perp BC$",
+      "title": "Buổi 3 — Bài 16: Tính chất hai tiếp tuyến cắt nhau. Chứng minh vuông góc, song song",
       "rows": [
         {
           "band": "NB",
-          "dang": "Định lí 2 (hai tiếp tuyến cắt nhau): $AB = AC$, $AO$ là phân giác $\\widehat{BAC}$, $OA$ là phân giác $\\widehat{BOC}$",
+          "dang": "Tính chất hai tiếp tuyến cắt nhau $\\Rightarrow$ đường trung trực: chứng minh $AO \\perp BC$ tại trung điểm $H$ của $BC$, điền khuyết bài giải hoàn chỉnh",
           "onclass": 3,
           "btvn": 3,
           "vidu": 1,
-          "loai": "NB lẻ LT",
-          "decompose": "none",
-          "source_refs": [],
-          "lythuyet": 1,
-          "hinh_san": true
-        },
-        {
-          "band": "NB",
-          "dang": "\\textbf{Bước 1} — $AB = AC$ $\\Rightarrow$ $A$ cách đều $B$, $C$ $\\Rightarrow$ $A$ thuộc đường trung trực của $BC$",
-          "onclass": 3,
-          "btvn": 2,
-          "vidu": 0,
-          "loai": "NB tách TH",
-          "decompose": "none",
-          "source_refs": [
-            "ck1-ngoc-lam-IV2.b",
-            "ck1-phuc-dong-IV2.b"
-          ],
-          "lythuyet": 0,
-          "hinh_san": true
-        },
-        {
-          "band": "NB",
-          "dang": "\\textbf{Bước 2, 3} — điền khuyết: $OB = OC = R$ $\\Rightarrow$ $O$ thuộc trung trực; $AO$ là trung trực của $BC$ $\\Rightarrow AO \\perp BC$ tại trung điểm $H$",
-          "onclass": 3,
-          "btvn": 3,
-          "vidu": 0,
           "loai": "NB tách TH",
           "decompose": "none",
           "source_refs": [
             "ck1-ngoc-thuy-III2.b",
-            "ck1-phuc-dong-IV2.b"
+            "ck1-phuc-dong-IV2.b",
+            "ck1-ngoc-lam-IV2.b"
           ],
-          "lythuyet": 0,
-          "hinh_san": true,
+          "lythuyet": 1,
+          "hinh_san": false,
           "gian_giao": "dien-khuyet"
         },
         {
           "band": "NB",
-          "dang": "Vẽ hình hai tiếp tuyến bằng compa (đường tròn đường kính $AO$), đánh dấu góc vuông, $AB = AC$, $HB = HC$; tính $BH = \\frac{BC}{2}$",
-          "onclass": 3,
-          "btvn": 2,
-          "vidu": 0,
-          "loai": "NB ghép bài",
-          "decompose": "none",
-          "source_refs": [
-            "ck1-ngoc-thuy-III2.a",
-            "ck1-phuc-dong-IV2.a"
-          ],
-          "lythuyet": 1,
-          "hinh_san": true,
-          "gian_giao": "ve-hinh",
-          "ve_hinh": {
-            "onclass": 0,
-            "btvn": 1
-          }
-        },
-        {
-          "band": "NB",
-          "dang": "Đường kính $BD$: $O$ là trung điểm $BD$, $\\triangle BCD$ có đường trung tuyến $CO = \\frac{BD}{2}$ $\\Rightarrow$ vuông tại $C$ $\\Rightarrow CD \\perp BC$",
+          "dang": "Đường kính đi qua một tiếp điểm: tam giác có đường trung tuyến bằng nửa cạnh tương ứng thì vuông $\\Rightarrow$ hai đường thẳng cùng vuông góc với $BC$ thì song song",
           "onclass": 3,
           "btvn": 3,
           "vidu": 1,
@@ -495,57 +427,60 @@
             "ck1-ly-thanh-tong-7a"
           ],
           "lythuyet": 1,
-          "hinh_san": true
+          "hinh_san": false,
+          "gian_giao": "dien-khuyet"
         },
         {
           "band": "NB",
-          "dang": "Hai đường thẳng cùng vuông góc với $BC$ thì song song: $AO \\parallel CD$",
+          "dang": "Tính chất hai tiếp tuyến cắt nhau dùng cho góc: $OC$, $OD$ là tia phân giác của hai góc kề bù $\\widehat{AOM}$, $\\widehat{MOB}$ $\\Rightarrow \\widehat{COD} = 90^\\circ$",
+          "onclass": 3,
+          "btvn": 0,
+          "vidu": 0,
+          "loai": "NB tách TH",
+          "decompose": "none",
+          "source_refs": [
+            "ck1-cau-dien-42.a",
+            "ck1-tan-trieu-42.b"
+          ],
+          "lythuyet": 1,
+          "hinh_san": false
+        },
+        {
+          "band": "NB",
+          "dang": "Tính chất hai tiếp tuyến cắt nhau dùng để cộng đoạn thẳng: $CA = CM$, $DB = DM$ $\\Rightarrow CD = AC + BD$",
+          "onclass": 3,
+          "btvn": 0,
+          "vidu": 1,
+          "loai": "NB tách TH",
+          "decompose": "none",
+          "source_refs": [
+            "ck1-cau-dien-42.a"
+          ],
+          "lythuyet": 1,
+          "hinh_san": false
+        },
+        {
+          "band": "NB",
+          "dang": "Vẽ hình theo đề bài thi (hai tiếp tuyến cắt nhau, đường kính qua tiếp điểm) bằng compa và thước, đánh dấu góc vuông và hai đoạn tiếp tuyến bằng nhau",
           "onclass": 2,
           "btvn": 2,
           "vidu": 0,
           "loai": "NB ghép bài",
           "decompose": "none",
           "source_refs": [
-            "ck1-phuc-dong-IV2.b",
-            "ck1-ngoc-lam-IV2.b"
+            "ck1-ngoc-lam-IV2.a"
           ],
           "lythuyet": 0,
-          "hinh_san": true
-        },
-        {
-          "band": "NB",
-          "dang": "Tỉ số lượng giác trong $\\triangle ABO$ vuông tại $B$ và $\\triangle OHB$ vuông tại $H$: tính $\\widehat{AOB}$, $AB$, $BH$",
-          "onclass": 3,
-          "btvn": 3,
-          "vidu": 0,
-          "loai": "NB tách TH",
-          "decompose": "none",
-          "source_refs": [
-            "ck1-ly-thanh-tong-7a"
-          ],
-          "lythuyet": 0,
-          "hinh_san": true
+          "hinh_san": false,
+          "gian_giao": "ve-hinh",
+          "ve_hinh": {
+            "onclass": 1,
+            "btvn": 1
+          }
         },
         {
           "band": "TH",
-          "dang": "Chứng minh $AO \\perp BC$ tại $H$ và $H$ là trung điểm của $BC$ (hai tiếp tuyến cắt nhau)",
-          "onclass": 1,
-          "btvn": 1,
-          "vidu": 1,
-          "loai": "TH ghép bài",
-          "decompose": "th2nb",
-          "source_refs": [
-            "ck1-ngoc-thuy-III2.b",
-            "ck1-phuc-dong-IV2.b",
-            "ck1-ngoc-lam-IV2.b",
-            "ck1-tan-trieu-42.a"
-          ],
-          "lythuyet": 0,
-          "hinh_san": false
-        },
-        {
-          "band": "TH",
-          "dang": "Chứng minh $AO \\parallel CD$ (hoặc $DB \\parallel OA$) khi có đường kính qua một tiếp điểm",
+          "dang": "Chứng minh $OA \\perp BC$ tại $H$ và $OA \\parallel CD$ (Câu IV.2 ý b, hai tiếp tuyến cắt nhau, đường kính $BD$)",
           "onclass": 1,
           "btvn": 1,
           "vidu": 1,
@@ -553,40 +488,52 @@
           "decompose": "th2nb",
           "source_refs": [
             "ck1-phuc-dong-IV2.b",
-            "ck1-ngoc-lam-IV2.b",
-            "ck1-ly-thanh-tong-7a"
+            "ck1-ngoc-lam-IV2.b"
           ],
           "lythuyet": 0,
-          "hinh_san": false
+          "hinh_san": false,
+          "ve_hinh": {
+            "onclass": 1
+          }
         },
         {
           "band": "TH",
-          "dang": "Tính $\\widehat{AOB}$, $AB$, $BH$, $BC$ khi biết $R$ và $OA$ (Pythagore, tỉ số lượng giác)",
+          "dang": "Hình nửa đường tròn có ba tiếp tuyến: chứng minh $CD = AC + BD$ và $\\widehat{COD} = 90^\\circ$ (Câu IV.2 ý a đề Cầu Diễn)",
           "onclass": 1,
           "btvn": 1,
           "vidu": 1,
-          "loai": "TH lẻ LT",
-          "decompose": "none",
+          "loai": "TH tách VD",
+          "decompose": "th2nb",
           "source_refs": [
-            "ck1-ly-thanh-tong-7a"
+            "ck1-cau-dien-42.a"
           ],
           "lythuyet": 0,
-          "hinh_san": false
+          "hinh_san": false,
+          "ve_hinh": {
+            "onclass": 1,
+            "btvn": 1
+          }
         },
         {
           "band": "VD",
-          "dang": "$OA = 2R$: chứng minh $\\triangle ABC$ đều rồi tính chu vi $\\triangle ABC$",
+          "dang": "Đề thi Câu IV.2 hai ý: bốn điểm cùng thuộc một đường tròn; $SO \\perp AB$ tại $H$ và $AD \\parallel SO$ — HS hoàn thiện toàn bộ",
           "onclass": 1,
           "btvn": 1,
           "vidu": 1,
           "loai": "VD lẻ",
           "decompose": "vd",
           "source_refs": [
-            "ck1-ly-thanh-tong-7a",
-            "ck1-phuc-dong-IV2.c"
+            "ck1-ngoc-lam-IV2.a",
+            "ck1-ngoc-lam-IV2.b"
           ],
           "lythuyet": 0,
-          "hinh_san": false
+          "hinh_san": false,
+          "quy_trinh": [
+            "Ý a: hai góc vuông tại hai tiếp điểm có chung cạnh huyền $SO$ $\\Rightarrow$ bốn điểm, nêu tâm và bán kính",
+            "Ý b: tính chất hai tiếp tuyến cắt nhau và $OA = OB = R$ $\\Rightarrow$ $SO$ là đường trung trực của $AB$",
+            "Tam giác có đường trung tuyến bằng nửa cạnh tương ứng thì vuông $\\Rightarrow$ $AD \\perp AB$",
+            "Hai đường thẳng cùng vuông góc với $AB$ $\\Rightarrow$ song song"
+          ]
         }
       ]
     },
@@ -596,127 +543,43 @@
       "rows": [
         {
           "band": "NB",
-          "dang": "Nhắc lại (Lớp 8): hai tam giác vuông có chung một góc nhọn thì đồng dạng (g.g) — viết đúng thứ tự đỉnh tương ứng",
+          "dang": "Hai tam giác vuông có chung một góc nhọn thì đồng dạng (g.g): điền khuyết bài giải, viết đúng thứ tự đỉnh tương ứng",
           "onclass": 3,
           "btvn": 3,
           "vidu": 1,
-          "loai": "NB lẻ LT",
-          "decompose": "none",
-          "source_refs": [],
-          "lythuyet": 1,
-          "hinh_san": true
-        },
-        {
-          "band": "NB",
-          "dang": "Đổi đẳng thức tích thành tỉ số ($AB^2 = AH \\cdot AO \\Leftrightarrow \\frac{AH}{AB} = \\frac{AB}{AO}$) và đọc ra cặp tam giác cần xét",
-          "onclass": 3,
-          "btvn": 2,
-          "vidu": 0,
-          "loai": "NB lẻ LT",
-          "decompose": "none",
-          "source_refs": [],
-          "lythuyet": 1,
-          "hinh_san": true
-        },
-        {
-          "band": "NB",
-          "dang": "Điền khuyết: chỉ ra $\\widehat{AHB} = \\widehat{ABO} = 90^\\circ$ và góc chung $\\Rightarrow \\triangle AHB \\backsim \\triangle ABO$ (g.g)",
-          "onclass": 3,
-          "btvn": 3,
-          "vidu": 0,
           "loai": "NB tách TH",
           "decompose": "none",
           "source_refs": [
             "ck1-ly-thanh-tong-7a",
             "ck1-ngoc-thuy-III2.b"
           ],
-          "lythuyet": 0,
-          "hinh_san": true,
+          "lythuyet": 1,
+          "hinh_san": false,
           "gian_giao": "dien-khuyet"
         },
         {
           "band": "NB",
-          "dang": "Từ hai tam giác đồng dạng viết tỉ số cạnh tương ứng rồi nhân chéo thành tích",
+          "dang": "Chứng minh $AB^2 = AH \\cdot AO$ trong hình hai tiếp tuyến: tam giác đồng dạng $\\Rightarrow$ tỉ số cạnh tương ứng $\\Rightarrow$ nhân chéo",
           "onclass": 3,
           "btvn": 3,
           "vidu": 1,
           "loai": "NB tách TH",
-          "decompose": "none",
-          "source_refs": [
-            "ck1-ly-thanh-tong-7a",
-            "ck1-dich-vong-IV4.2.b"
-          ],
-          "lythuyet": 0,
-          "hinh_san": true
-        },
-        {
-          "band": "NB",
-          "dang": "$\\triangle OHB \\backsim \\triangle OBA$ (g.g) $\\Rightarrow OH \\cdot OA = OB^2 = R^2$",
-          "onclass": 3,
-          "btvn": 3,
-          "vidu": 0,
-          "loai": "NB ghép bài",
-          "decompose": "none",
-          "source_refs": [
-            "ck1-ly-thanh-tong-7a",
-            "ck1-ngoc-thuy-III2.b"
-          ],
-          "lythuyet": 0,
-          "hinh_san": true
-        },
-        {
-          "band": "NB",
-          "dang": "Vẽ hình có đường kính $BD$, $AD$ cắt $(O)$ tại $E$; trung tuyến $EO = \\frac{BD}{2}$ $\\Rightarrow \\triangle BED$ vuông tại $E$",
-          "onclass": 3,
-          "btvn": 2,
-          "vidu": 0,
-          "loai": "NB tách TH",
-          "decompose": "none",
-          "source_refs": [
-            "ck1-phuc-dong-IV2.a",
-            "ck1-dich-vong-IV4.2.b"
-          ],
-          "lythuyet": 1,
-          "hinh_san": true,
-          "gian_giao": "ve-hinh"
-        },
-        {
-          "band": "NB",
-          "dang": "Thay số vào hệ thức vừa chứng minh để tính $AH$, $OH$",
-          "onclass": 2,
-          "btvn": 2,
-          "vidu": 0,
-          "loai": "NB ghép bài",
           "decompose": "none",
           "source_refs": [
             "ck1-ly-thanh-tong-7a"
           ],
-          "lythuyet": 0,
-          "hinh_san": true
+          "lythuyet": 1,
+          "hinh_san": false,
+          "gian_giao": "dien-khuyet"
         },
         {
-          "band": "TH",
-          "dang": "Chứng minh $AB^2 = AH \\cdot AO$ (hoặc $OH \\cdot OA = R^2$) bằng tam giác đồng dạng — không dùng thẳng hệ thức lượng",
-          "onclass": 1,
-          "btvn": 1,
+          "band": "NB",
+          "dang": "Có đường kính: tam giác vuông nhờ trung tuyến bằng nửa cạnh, rồi hai tam giác vuông chung góc nhọn cho đẳng thức tích ($BK \\cdot BC = AB^2$, $AF \\cdot AD = AC^2$)",
+          "onclass": 3,
+          "btvn": 0,
           "vidu": 1,
-          "loai": "TH ghép bài",
-          "decompose": "th2nb",
-          "source_refs": [
-            "ck1-ly-thanh-tong-7a",
-            "ck1-ngoc-thuy-III2.b"
-          ],
-          "lythuyet": 0,
-          "hinh_san": false
-        },
-        {
-          "band": "TH",
-          "dang": "Chứng minh $AE \\cdot AD = AB^2$ (hoặc $BK \\cdot BC = AB^2$) khi có đường kính: tam giác vuông nhờ trung tuyến, rồi đồng dạng",
-          "onclass": 1,
-          "btvn": 1,
-          "vidu": 1,
-          "loai": "TH tách VD",
-          "decompose": "th2nb",
+          "loai": "NB tách TH",
+          "decompose": "none",
           "source_refs": [
             "ck1-dich-vong-IV4.2.b",
             "ck1-phuc-dong-IV2.a"
@@ -725,33 +588,94 @@
           "hinh_san": false
         },
         {
-          "band": "TH",
-          "dang": "Tính $AB$, $AH$, $OH$, $BH$, $BC$ bằng Pythagore và hệ thức đã chứng minh",
-          "onclass": 1,
-          "btvn": 1,
+          "band": "NB",
+          "dang": "Bắc cầu hai đẳng thức tích qua một đại lượng chung ($BK \\cdot BC = BL \\cdot BD = AB^2$)",
+          "onclass": 3,
+          "btvn": 0,
           "vidu": 1,
-          "loai": "TH lẻ LT",
+          "loai": "NB tách TH",
           "decompose": "none",
           "source_refs": [
-            "ck1-ly-thanh-tong-7a"
+            "ck1-ngoc-thuy-III2.b"
           ],
-          "lythuyet": 0,
+          "lythuyet": 1,
           "hinh_san": false
         },
         {
+          "band": "NB",
+          "dang": "Vẽ hình theo đề bài thi (hai tiếp tuyến, tia $AO$ cắt đường tròn tại hai điểm) bằng compa và thước, đánh dấu các góc vuông",
+          "onclass": 2,
+          "btvn": 2,
+          "vidu": 0,
+          "loai": "NB ghép bài",
+          "decompose": "none",
+          "source_refs": [
+            "ck1-ngoc-thuy-III2.a"
+          ],
+          "lythuyet": 0,
+          "hinh_san": false,
+          "gian_giao": "ve-hinh",
+          "ve_hinh": {
+            "onclass": 1,
+            "btvn": 1
+          }
+        },
+        {
+          "band": "TH",
+          "dang": "Chứng minh tam giác vuông nhờ trung tuyến rồi chứng minh đẳng thức tích ($BK \\cdot BC = AB^2 = 4R^2$)",
+          "onclass": 1,
+          "btvn": 1,
+          "vidu": 1,
+          "loai": "TH tách VD",
+          "decompose": "th2nb",
+          "source_refs": [
+            "ck1-dich-vong-IV4.2.b"
+          ],
+          "lythuyet": 0,
+          "hinh_san": false,
+          "ve_hinh": {
+            "onclass": 1,
+            "btvn": 1
+          }
+        },
+        {
+          "band": "TH",
+          "dang": "Đẳng thức tích trong tam giác vuông có đường cao ($AH^2 = BH \\cdot HC$, $HB^2 = HA \\cdot HO$) bằng tam giác đồng dạng",
+          "onclass": 1,
+          "btvn": 1,
+          "vidu": 1,
+          "loai": "TH ghép bài",
+          "decompose": "th2nb",
+          "source_refs": [
+            "ck1-phuong-ha-dong-42.b",
+            "ck1-cau-dien-42.b"
+          ],
+          "lythuyet": 0,
+          "hinh_san": false,
+          "ve_hinh": {
+            "onclass": 1
+          }
+        },
+        {
           "band": "VD",
-          "dang": "Bắc cầu hai đẳng thức tích qua $AB^2$: chứng minh $AE \\cdot AD = AH \\cdot AO$ (hoặc $AM \\cdot AN = AH \\cdot AO$)",
+          "dang": "Đề thi Câu IV.2 hai ý: bốn điểm cùng thuộc một đường tròn; $AO \\perp BC$ và $AM \\cdot AN = AH \\cdot AO$ — HS hoàn thiện toàn bộ",
           "onclass": 1,
           "btvn": 1,
           "vidu": 1,
           "loai": "VD lẻ",
           "decompose": "vd",
           "source_refs": [
-            "ck1-ngoc-thuy-III2.b",
-            "ck1-phuc-dong-IV2.a"
+            "ck1-ngoc-thuy-III2.a",
+            "ck1-ngoc-thuy-III2.b"
           ],
           "lythuyet": 0,
-          "hinh_san": false
+          "hinh_san": false,
+          "quy_trinh": [
+            "Ý a: hai góc vuông tại hai tiếp điểm có chung cạnh huyền $AO$ $\\Rightarrow$ bốn điểm, nêu tâm và bán kính",
+            "Ý b: $AO$ là đường trung trực của $BC$ $\\Rightarrow AO \\perp BC$ tại $H$",
+            "Hai cặp tam giác đồng dạng cho $AB^2 = AH \\cdot AO$ và $AB^2 = AM \\cdot AN$",
+            "Bắc cầu qua $AB^2$"
+          ]
         }
       ]
     },
@@ -763,7 +687,7 @@
           "band": "NB",
           "dang": "Trắc nghiệm nhanh: độ dài cung, diện tích hình quạt, diện tích hình vành khuyên",
           "onclass": 3,
-          "btvn": 3,
+          "btvn": 2,
           "vidu": 0,
           "loai": "NB lẻ LT",
           "decompose": "none",
@@ -775,7 +699,7 @@
           "band": "NB",
           "dang": "Đọc bài thực tế (hình quạt, khăn trải bàn, con lắc, bánh pizza): xác định $R$, $r$, $n$",
           "onclass": 3,
-          "btvn": 3,
+          "btvn": 2,
           "vidu": 1,
           "loai": "NB tách TH",
           "decompose": "none",
@@ -789,79 +713,53 @@
         },
         {
           "band": "NB",
-          "dang": "Vẽ hình tiếp tuyến tại $A$ và tại $M$ của nửa đường tròn đường kính $AB$; chỉ ra hai tam giác vuông chung cạnh huyền $OC$",
-          "onclass": 3,
-          "btvn": 2,
+          "dang": "Vẽ hình nửa đường tròn đường kính $AB$ với tiếp tuyến tại $A$, $B$, $M$; đánh dấu các góc vuông và các đoạn tiếp tuyến bằng nhau",
+          "onclass": 2,
+          "btvn": 0,
           "vidu": 0,
-          "loai": "NB tách TH",
+          "loai": "NB ghép bài",
           "decompose": "none",
           "source_refs": [
-            "ck1-tan-trieu-42.a",
-            "ck1-dich-vong-IV4.2.a",
-            "ck1-trung-vuong-IV1"
+            "ck1-cau-dien-42.a",
+            "ck1-tan-trieu-42.a"
           ],
           "lythuyet": 0,
-          "hinh_san": true,
-          "gian_giao": "ve-hinh"
+          "hinh_san": false,
+          "gian_giao": "ve-hinh",
+          "ve_hinh": {
+            "onclass": 1
+          }
         },
         {
           "band": "NB",
-          "dang": "Định lí 2 ở hình nửa đường tròn: $CA = CM$, $DB = DM$ $\\Rightarrow CD = AC + BD$",
+          "dang": "Tính chất hai tiếp tuyến cắt nhau ở hình nửa đường tròn: $CA = CM$, $DB = DM$ $\\Rightarrow CD = AC + BD$ — điền khuyết bài giải hoàn chỉnh",
           "onclass": 3,
           "btvn": 3,
-          "vidu": 0,
-          "loai": "NB ghép bài",
+          "vidu": 1,
+          "loai": "NB tách TH",
           "decompose": "none",
           "source_refs": [
             "ck1-cau-dien-42.a"
           ],
           "lythuyet": 1,
-          "hinh_san": true,
+          "hinh_san": false,
           "gian_giao": "dien-khuyet"
         },
         {
           "band": "NB",
-          "dang": "$OC$ là trung trực của $AM$ $\\Rightarrow OC \\perp AM$; $\\triangle AMB$ vuông tại $M$ $\\Rightarrow OC \\parallel BM$",
+          "dang": "$OC$ là đường trung trực của $AM$ $\\Rightarrow OC \\perp AM$; $\\triangle AMB$ vuông tại $M$ $\\Rightarrow OC \\parallel BM$ — điền khuyết bài giải hoàn chỉnh",
           "onclass": 3,
-          "btvn": 3,
+          "btvn": 0,
           "vidu": 0,
           "loai": "NB tách TH",
           "decompose": "none",
           "source_refs": [
             "ck1-cau-dien-42.b",
-            "ck1-trung-vuong-IV2",
-            "ck1-tan-trieu-42.b"
+            "ck1-tan-trieu-42.b",
+            "ck1-trung-vuong-IV2"
           ],
           "lythuyet": 0,
-          "hinh_san": true
-        },
-        {
-          "band": "NB",
-          "dang": "$OC$, $OD$ là phân giác của hai góc kề bù $\\widehat{AOM}$, $\\widehat{MOB}$ $\\Rightarrow \\widehat{COD} = 90^\\circ$",
-          "onclass": 3,
-          "btvn": 2,
-          "vidu": 0,
-          "loai": "NB ghép bài",
-          "decompose": "none",
-          "source_refs": [
-            "ck1-cau-dien-42.a"
-          ],
-          "lythuyet": 0,
-          "hinh_san": true
-        },
-        {
-          "band": "NB",
-          "dang": "$K \\in (O)$: $\\triangle AKB$ vuông tại $K$; chỉ ra cặp tam giác đồng dạng cho $BK \\cdot BC = AB^2$",
-          "onclass": 2,
-          "btvn": 2,
-          "vidu": 0,
-          "loai": "NB tách TH",
-          "decompose": "none",
-          "source_refs": [
-            "ck1-dich-vong-IV4.2.b"
-          ],
-          "lythuyet": 0,
-          "hinh_san": true
+          "hinh_san": false
         },
         {
           "band": "TH",
@@ -881,38 +779,26 @@
         },
         {
           "band": "TH",
-          "dang": "Chứng minh $O$, $A$, $C$, $M$ (hoặc $A$, $M$, $C$, $H$) cùng thuộc một đường tròn",
-          "onclass": 1,
-          "btvn": 1,
-          "vidu": 1,
-          "loai": "TH ghép bài",
-          "decompose": "th2nb",
-          "source_refs": [
-            "ck1-tan-trieu-42.a",
-            "ck1-trung-vuong-IV1",
-            "ck1-dich-vong-IV4.2.a",
-            "ck1-phuong-ha-dong-42.a"
-          ],
-          "lythuyet": 0,
-          "hinh_san": false
-        },
-        {
-          "band": "TH",
-          "dang": "Chứng minh tổng đoạn tiếp tuyến: $CD = AC + BD$, chu vi tam giác tạo bởi ba tiếp tuyến",
+          "dang": "Chứng minh bốn điểm cùng thuộc một đường tròn trong hình nửa đường tròn có tiếp tuyến ($O$, $A$, $C$, $M$)",
           "onclass": 1,
           "btvn": 1,
           "vidu": 1,
           "loai": "TH tách VD",
           "decompose": "th2nb",
           "source_refs": [
-            "ck1-cau-dien-42.a"
+            "ck1-tan-trieu-42.a",
+            "ck1-trung-vuong-IV1",
+            "ck1-dich-vong-IV4.2.a"
           ],
           "lythuyet": 0,
-          "hinh_san": false
+          "hinh_san": false,
+          "ve_hinh": {
+            "btvn": 1
+          }
         },
         {
           "band": "TH",
-          "dang": "Chứng minh $BK \\cdot BC = AB^2 = 4R^2$ bằng tam giác đồng dạng",
+          "dang": "Chứng minh tam giác vuông nhờ trung tuyến rồi đẳng thức tích ($BK \\cdot BC = 4R^2$, $BM \\cdot BE = 4R^2$) — HS tự vẽ hình",
           "onclass": 1,
           "btvn": 1,
           "vidu": 1,
@@ -922,11 +808,15 @@
             "ck1-dich-vong-IV4.2.b"
           ],
           "lythuyet": 0,
-          "hinh_san": false
+          "hinh_san": false,
+          "ve_hinh": {
+            "onclass": 1,
+            "btvn": 1
+          }
         },
         {
           "band": "VD",
-          "dang": "Chứng minh $\\widehat{COD} = 90^\\circ$ rồi $AC \\cdot BD = R^2$ (đường cao $OM$ của $\\triangle COD$, đồng dạng)",
+          "dang": "Hình nửa đường tròn có ba tiếp tuyến: chứng minh $\\widehat{COD} = 90^\\circ$ rồi $AC \\cdot BD = R^2$ — HS hoàn thiện toàn bộ",
           "onclass": 1,
           "btvn": 1,
           "vidu": 1,
@@ -937,7 +827,13 @@
             "ck1-cau-dien-42.b"
           ],
           "lythuyet": 0,
-          "hinh_san": false
+          "hinh_san": false,
+          "quy_trinh": [
+            "Ý a: tính chất hai tiếp tuyến cắt nhau $\\Rightarrow$ $OC$, $OD$ là tia phân giác của hai góc kề bù $\\widehat{AOM}$, $\\widehat{MOB}$",
+            "Cộng hai góc: $\\widehat{COD} = \\frac{1}{2}\\left(\\widehat{AOM} + \\widehat{MOB}\\right) = 90^\\circ$",
+            "Ý b: $OM \\perp CD$, chứng minh $\\triangle CMO \\backsim \\triangle OMD$ (g.g) $\\Rightarrow CM \\cdot MD = OM^2$",
+            "Thay $CM = AC$, $MD = BD$ (tính chất hai tiếp tuyến cắt nhau), $OM = R$"
+          ]
         }
       ]
     },
@@ -1040,22 +936,26 @@
         },
         {
           "band": "TH",
-          "dang": "Tính $AB$, $AH$, $BH$, $BC$ khi biết $R$, $OA$ (Pythagore, hệ thức vừa chứng minh)",
+          "dang": "Chứng minh song song khi có đường kính đi qua tiếp điểm ($OA \\parallel CD$, $OM \\parallel BC$ — Câu IV.2 ý b)",
           "onclass": 1,
           "btvn": 1,
           "vidu": 1,
           "loai": "TH tách VD",
           "decompose": "th2nb",
           "source_refs": [
-            "ck1-ly-thanh-tong-7a",
-            "ck1-ngoc-thuy-III2.b"
+            "ck1-phuc-dong-IV2.b",
+            "ck1-ngoc-lam-IV2.b",
+            "ck1-trung-vuong-IV2"
           ],
           "lythuyet": 0,
-          "hinh_san": false
+          "hinh_san": false,
+          "ve_hinh": {
+            "btvn": 1
+          }
         },
         {
           "band": "VD",
-          "dang": "Đề mẫu Câu IV.2 trọn ba ý (bốn điểm cùng thuộc đường tròn $\\cdot$ $AO \\perp BC$ và $AB^2 = AH \\cdot AO$ $\\cdot$ tính độ dài) — hoàn thành bài giải",
+          "dang": "Đề mẫu Câu IV.2 trọn ba ý (bốn điểm cùng thuộc đường tròn $\\cdot$ $AO \\perp BC$ và $AB^2 = AH \\cdot AO$ $\\cdot$ $OH \\cdot OA = R^2$)",
           "onclass": 1,
           "btvn": 1,
           "vidu": 1,
@@ -1068,10 +968,7 @@
           ],
           "lythuyet": 0,
           "hinh_san": true,
-          "ve_hinh": {
-            "onclass": 0,
-            "btvn": 1
-          }
+          "ve_hinh": {}
         }
       ],
       "kiem_tra_phut": 45

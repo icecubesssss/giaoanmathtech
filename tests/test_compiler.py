@@ -140,3 +140,30 @@ def test_slide_giu_hinh_va_phuong_an_cua_khuon_moi():
     assert tex.count("rectangle (1,1)") == 2
     for nhan in ("A.}~Mot", "B.}~Hai", "C.}~Ba", "D.}~Bon"):
         assert nhan in tex
+
+
+def test_tieu_de_phan_A_B_in_ra_va_khong_tro_mot_minh_tren_slide():
+    """Chặng Kiến thức chia hai phần (Thầy chốt 10/10/2026): 'A. Lý thuyết' / 'B. Phương pháp…'.
+    Bản in dùng \\phanmuc; trên slide, cụm tiêu đề phần + mục không được đứng trơ một trang."""
+    from src.compiler.jinja_renderer import group_slide_segments, render_handout
+    from src.schema.lesson_package import LessonPackage
+
+    tikz = "\\begin{tikzpicture}\\draw (0,0) circle (1);\\end{tikzpicture}"
+    lesson = LessonPackage.model_validate({
+        "slug": "t", "title": "T", "stages": [{"kind": "concept", "number": 2, "title": "K", "blocks": [
+            {"type": "para", "variant": "part", "text": "A. Lý thuyết"},
+            {"type": "para", "variant": "heading", "text": "1. Đường tròn"},
+            {"type": "para", "text": "Đường tròn tâm $O$ bán kính $R$ là hình gồm các điểm cách $O$ một khoảng $R$."},
+            {"type": "figure", "tikz": tikz, "caption": "Đường tròn"},
+            {"type": "para", "variant": "part", "text": "B. Phương pháp chứng minh — các dạng quen thuộc"},
+            {"type": "para", "variant": "heading",
+             "text": "Dạng 2. Chứng minh một đường thẳng là tiếp tuyến của đường tròn"},
+            {"type": "para", "text": "Phương pháp: dùng dấu hiệu nhận biết tiếp tuyến."}]}]})
+    tex = render_handout(lesson)
+    assert tex.count("\\phanmuc{") == 2
+    segs = group_slide_segments(lesson.stages[0].blocks)
+    for s in segs:
+        txt = [b for b in s["text"] if getattr(b, "type", "") == "para"]
+        assert not (txt and not s["figures"]
+                    and all(getattr(b, "variant", "") in ("heading", "part") for b in txt)), \
+            "slide chỉ có tiêu đề, nội dung rơi sang slide sau"

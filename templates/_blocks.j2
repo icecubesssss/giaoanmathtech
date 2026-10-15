@@ -2,6 +2,7 @@
 ((* macro render_block(b) *))
 ((* if b.type == "para" *))
 ((* if b.variant == "heading" *))\lythuyetmuc{((( b.text | tex )))}
+((* elif b.variant == "part" *))\phanmuc{((( b.text | tex )))}
 ((* else *))((( b.text | tex )))
 ((* endif *))
 

@@ -204,15 +204,18 @@
   \par\addvspace{7pt}%
 }
 
-% Chỗ trống cho HS điền (dòng kẻ mảnh)
-\newcommand{\blank}[1][5cm]{\tikz[baseline]{\draw[rule,line width=.6pt,dotted](0,0)--(\dimexpr#1-2pt,0);}}
+% Chỗ trống cho HS điền: MỘT kiểu chấm "......" cho MỌI ô — bài tập ([[blank]]), ô trong
+% công thức ([[mblank]]) lẫn ví dụ mẫu ([[fill:]]). Thầy 09/10/2026: "kí hiệu ___ hay ....
+% nhất quán, mỗi chỗ một cái khác nhau". Màu ink!85 chứ KHÔNG dùng `rule` (#E1E4EA): xám
+% nhạt đó in ra giấy gần như mất hẳn, trông như phiếu "thiếu dấu ... chỗ điền khuyết".
+\newcommand{\blank}[1][5cm]{\tikz[baseline]{\draw[ink!85,line width=1.1pt,line cap=round,dash pattern=on 0pt off 3pt](2pt,-.1ex)--(\dimexpr#1-1pt,-.1ex);}}
 \newcommand{\fillline}{\par\nointerlineskip\vspace{7pt}\noindent\blank[\dimexpr\linewidth-8pt]}
 
 % Ô khuyết TRONG VÍ DỤ MẪU (token [[fill:đáp án]]). Cùng một token in ra hai kiểu:
-%   • Phiếu HS + Slide : \fillblank{W} — gạch trống để trò điền cùng thầy;
+%   • Phiếu HS + Slide : \fillblank{W} — ô chấm (CÙNG kiểu \blank) để trò điền cùng thầy;
 %   • Sổ tay GV        : \fillans{đáp án} — in sẵn đáp án, khỏi lặp lại bẫy
 %                        "guide.pdf trắng đáp án" (Thầy bắt 2026-08-12).
-\newcommand{\fillblank}[1]{\rule[-0.35ex]{#1}{0.4pt}}
+\newcommand{\fillblank}[1]{\blank[#1]}
 \newcommand{\fillans}[1]{\textcolor{brand}{\underline{\smash{#1}}}}
 
 % Khung TRỐNG để HS TỰ VẼ HÌNH vào phiếu (Thầy An 2026-07-28: "tạo thêm chỗ cho hs
@@ -350,6 +353,13 @@
 % cùng màu, không khoảng thở ⇒ cả khối lý thuyết đọc thành một mảng chữ đặc.
 % Khoảng TRÊN rộng hơn khoảng DƯỚI (8/3pt) — luật gần-xa: tiêu đề phải dính vào phần
 % nội dung của CHÍNH NÓ, tách khỏi mục trước.
+% Tiêu đề PHẦN (cấp trên \lythuyetmuc): "A. Lý thuyết" / "B. Phương pháp chứng minh…" (10/10/2026).
+% Chữ to hơn + vạch màu chặng bên dưới để mắt tách được phần với mục con.
+\newcommand{\phanmuc}[1]{%
+  \par\addvspace{12pt}%
+  {\sffamily\bfseries\large\color{stagecolor}#1}%
+  \par\nobreak\vspace{2pt}{\color{stagecolor}\hrule height 0.7pt}%
+  \par\nobreak\addvspace{5pt}}
 \newcommand{\lythuyetmuc}[1]{%
   \par\addvspace{8pt}%
   {\sffamily\bfseries\color{stagecolor}#1}%
@@ -391,8 +401,9 @@
 % `width=` (ÉP bề ngang) chứ KHÔNG `max width=` (chỉ THU NHỎ): hình TikZ hình học có
 % kích thước tự nhiên rất nhỏ nên `max width` để nguyên vẫn bé tí.
 % `\par\nobreak` mở đầu: cấm ngắt trang GIỮA đề và hình của chính nó.
+% `\nobreak` trước nhãn: cấm nhãn "Hình N" rớt sang trang sau, xa hình của nó (09/10/2026).
 \newcommand{\hinhcap}[1]{\ifx\relax#1\relax\else
-  \par\vspace{2pt}{\sffamily\scriptsize\itshape\color{muted}#1}\fi}
+  \par\nobreak\vspace{2pt}{\sffamily\scriptsize\itshape\color{muted}#1}\fi}
 % Phạt MỀM (\penalty400) chứ KHÔNG \nobreak: \nobreak = penalty 10000 = CẤM TUYỆT ĐỐI
 % tách đề khỏi hình, nên cụm đề+hình+ý thành khối cao ~9cm nhảy nguyên khối, để lại
 % 8–10cm trắng (phiếu A trang 5, 9, 11). Phạt mềm để TeX tự cân: giữ đề với hình khi

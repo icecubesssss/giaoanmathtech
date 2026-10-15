@@ -1,0 +1,589 @@
+{
+ "_nguon": "Tiến độ trung tâm lớp 8 (T8. Tiến độ kiến thức. Nội bộ.pdf, trang Hình): tuần 18 và 19 Định lí Thalès trong tam giác; tuần 20 Đường trung bình của tam giác; tuần 21 Tính chất đường phân giác của tam giác; tuần 22 Ôn tập chương Định lí Thales (90 phút mỗi tuần). Nguồn bài ở inputs/seeds/lop-8/hinh-hoc/kntt/chuong-4-dinh-li-thales. Mã: 'Thalès Dn.Bm' = '1. Định lí Thalès trong tam giác_KNTT.pdf' (D1 tỉ lệ thức, D2 Thalès đảo, D3 hệ thức); 'Thalès-2 Dn.Bm' = 'Định lý Thales.pdf'; 'ĐTB Dn.Bm' = '2. Đường trung bình của tam giác_vrs2.pdf'; 'PG Dn.Bm' = '3. Tính chất đường phân giác của tam giác.pdf'; 'LT-Thalès Bm' = '5. T8 - Luyện tập chương định lý Thales.pdf'; 'SGK x.y' = SGK Toán 8 KNTT tập một tr.76-89; đề CK1/GK2/CK2 Hà Nội ở storage/cache/de-txt/lop-8.",
+ "_luat": "Soạn theo HUONG-DAN-SOAN-PHIEU-B.md. Bản đồ VD-VDC: chương IV lớp 8 co_vd = false (chi-TH) => tỉ lệ 30 NB / 70 TH, gộp hai ca thành một phiếu (so_ca = 2). Rate hình lớp 8 nhân đôi; câu in sẵn hình (hinh_san): NB 1′, TH nửa rate; câu tự vẽ hình +5′. Phạm vi: CHƯA có tam giác đồng dạng, định lí Pythagore (học kì II) và SGK KNTT KHÔNG có hệ quả của định lí Thalès => không dùng tỉ số đoạn song song với cạnh đáy.",
+ "_so_cau": "Quỹ hình lớp 8 mỗi ca: ví dụ 20′, trên lớp 60′, BTVN 35′. Phiếu 2 ca: ví dụ 40′ (6 NB × 1′ + 8 TH × 4′ + 2 mục lý thuyết), trên lớp 120′ = 33 NB hình sẵn × 1′ + 1 câu tự vẽ hình 7,5′ + 18 TH × 4,5′ (33-67), BTVN ~73′. Phiếu 3 (ca 5) có 45 phút kiểm tra => hệ số 0,5: ví dụ 10′, trên lớp 30′, BTVN giữ 35′.",
+ "slug": "thuyet-minh-lop-8b-chuong-04-dinh-li-thales",
+ "title": "Chương IV (SGK KNTT): Định lí Thalès — kế hoạch 5 ca, 3 phiếu",
+ "grade": "lop-8",
+ "subject": "hinh-hoc",
+ "tier": "B",
+ "tuan": "18-22",
+ "chuong": "chuong-04-dinh-li-thales",
+ "thoiluong": [
+  "Ca 1 $-$ 2 (Tuần 18 $-$ 19) — SGK Bài 15: Định lí Thalès trong tam giác: 2 ca $=$ 180 phút — SGV xếp 3 tiết.",
+  "Ca 3 (Tuần 20) — SGK Bài 16: Đường trung bình của tam giác: 1 ca $=$ 90 phút — SGV xếp 1 tiết.",
+  "Ca 4 (Tuần 21) — SGK Bài 17: Tính chất đường phân giác của tam giác: 1 ca $=$ 90 phút — SGV xếp 1 tiết.",
+  "Ca 5 (Tuần 22) — Luyện tập chung $+$ Bài tập cuối chương IV: 1 ca $=$ 90 phút $=$ 45 phút luyện tập $+$ 45 phút kiểm tra chương.",
+  "\\textbf{Tổng 5 ca $=$ 450 phút $=$ 10 tiết} (1 ca 90 phút $=$ 2 tiết), trong đó 45 phút là bài kiểm tra chương IV.",
+  "ĐỐI CHIẾU SGV Toán 8 KNTT: chương IV có 8 tiết (Bài 15: 3, Bài 16: 1, Bài 17: 1, Luyện tập chung 2, Bài tập cuối chương 1).",
+  "Trung tâm dạy 9 tiết kiến thức $+$ 1 tiết kiểm tra, dôi 1 tiết so với SGV: dồn cho định lí Thalès (2 ca) vì đây là công cụ của cả chương IX.",
+  "Năm ca dùng BA phiếu: phiếu 1 (ca 1 $+$ 2) và phiếu 2 (ca 3 $+$ 4) gộp hai ca (\\texttt{so\\_ca} $=2$) theo luật gộp phiếu của chương không có bài vận dụng; phiếu 3 cho ca 5.",
+  "Theo luật kiểm tra chương 45 phút (Thầy chốt 26/09/2026): phiếu 3 khai \\texttt{kiem\\_tra\\_phut} $=45$, quỹ ví dụ và trên lớp nhân $\\dfrac{90-45}{90}=0{,}5$."
+ ],
+ "kien_thuc_nen": [
+  "\\textbf{Tỉ lệ thức, tính chất dãy tỉ số bằng nhau} (Lớp 7): nhân chéo, đổi vị trí trung tỉ $-$ ngoại tỉ, cộng tử với mẫu — mọi bài tính độ dài của chương kết thúc bằng một tỉ lệ thức.",
+  "\\textbf{Hai đường thẳng song song, góc đồng vị, góc so le trong} (Lớp 7): dấu hiệu nhận biết song song và hệ quả về góc.",
+  "\\textbf{Trung điểm, đường trung tuyến, trọng tâm} (Lớp 7): trọng tâm chia trung tuyến theo tỉ số $2:1$.",
+  "\\textbf{Tứ giác đặc biệt} (Lớp 8, chương III): dấu hiệu nhận biết hình thang, hình bình hành, hình chữ nhật — dùng ở mọi bài chứng minh với đường trung bình.",
+  "\\textbf{Tia phân giác của một góc} (Lớp 7): chia góc thành hai góc bằng nhau; tam giác cân có hai góc ở đáy bằng nhau."
+ ],
+ "lythuyet": [
+  "\\textbf{Mục tiêu của chương}: làm được các câu thuộc chương IV của đề cuối kì I và giữa kì II lớp 8 Hà Nội: trắc nghiệm $0{,}25$ điểm (tỉ lệ thức của định lí Thalès, độ dài đường trung bình, tỉ số trên đường phân giác) và câu tự luận $0{,}5 - 1{,}5$ điểm (tính độ dài, bài thực tế đo khoảng cách, ý a bài hình chứng minh đường trung bình).",
+  "Bản đồ VD-VDC ghi chương IV \\emph{chỉ thông hiểu}: ý cuối bài hình kì I thuộc chương III, kì II thuộc chương IX. Phiếu soạn 30 NB $/$ 70 TH, không có bài vận dụng.",
+  "\\textbf{Định lí Thalès}: $B'C' \\parallel BC$ ($B' \\in AB$, $C' \\in AC$) $\\Rightarrow \\dfrac{AB'}{AB}=\\dfrac{AC'}{AC}$; $\\dfrac{AB'}{B'B}=\\dfrac{AC'}{C'C}$; $\\dfrac{B'B}{AB}=\\dfrac{C'C}{AC}$.",
+  "\\textbf{Định lí Thalès đảo}: đường thẳng cắt hai cạnh và định ra những đoạn thẳng tương ứng tỉ lệ thì song song với cạnh còn lại.",
+  "\\textbf{Đường trung bình của tam giác}: nối trung điểm hai cạnh; song song với cạnh thứ ba và bằng nửa cạnh đó. Đường thẳng qua trung điểm một cạnh, song song với cạnh thứ hai thì đi qua trung điểm cạnh thứ ba.",
+  "\\textbf{Tính chất đường phân giác}: $AD$ là phân giác của $\\widehat{BAC}$ ($D \\in BC$) $\\Rightarrow \\dfrac{DB}{DC}=\\dfrac{AB}{AC}$."
+ ],
+ "vidu": [
+  "Ca 1: tính độ dài $x$ khi $MN \\parallel EF$ (SGK Ví dụ 1), viết đủ \\emph{Xét tam giác \\dots\\ có \\dots\\ nên theo định lí Thalès}.",
+  "Ca 2: so sánh $\\dfrac{DM}{ME}$ và $\\dfrac{DN}{NF}$ để kết luận $MN \\parallel EF$ (SGK Ví dụ 2), rồi đo khoảng cách qua sông (SGK 4.5).",
+  "Ca 3: biết $BC = 10$ cm tính đường trung bình; chứng minh tứ giác $AHIK$ là hình chữ nhật nhờ đường trung bình.",
+  "Ca 4, \\textbf{ví dụ trục}: câu tự luận đề cuối kì I THCS Phan Chu Trinh — $AD$ là phân giác, $AB = 4$, $AC = 6$, $BD = 3$, tính $CD$ — viết như khi đi thi.",
+  "Ca 5: bài hình tổng hợp SGK 4.24 (tam giác vuông với ba trung điểm), chứng minh $AE = DF$ và ba điểm thẳng hàng."
+ ],
+ "dang_vd": [
+  "\\textbf{Chương IV KHÔNG soạn dạng vận dụng} (\\texttt{co\\_vd} $=$ false): rà 8 đề cuối kì I và 13 đề giữa kì II có câu thuộc chương này, câu khó nhất chỉ là ý a hoặc ý b của bài hình.",
+  "Dạng gần vận dụng nhất là \\emph{dùng định lí Thalès hai lần qua tỉ số trung gian} (SGK 4.21, 4.23, 4.26) và \\emph{hai lần đường trung bình} (SGK 4.8) — xếp dòng TH tách VD.",
+  "Các bài hệ thức kiểu $OA \\cdot OD = OB \\cdot OC$, $DM^2 = MN \\cdot MK$ (SGK 4.17) cần tỉ số đoạn song song với cạnh đáy — để sang chương IX (tam giác đồng dạng)."
+ ],
+ "loisai": [
+  "\\textbf{Lập sai tỉ lệ thức}: viết $\\dfrac{AM}{MB}=\\dfrac{AN}{AC}$ (một đoạn con với một cả cạnh). Hai tỉ số phải cùng kiểu: đoạn con với đoạn con, hoặc đoạn con với cả cạnh.",
+  "\\textbf{Dùng định lí Thalès khi chưa có song song}: phải chỉ ra (hoặc chứng minh) $MN \\parallel BC$ trước khi viết tỉ lệ thức.",
+  "\\textbf{Lập tỉ số với cạnh song song}: $\\dfrac{AM}{AB}=\\dfrac{MN}{BC}$ là hệ quả, SGK KNTT chương IV không có — chưa được dùng.",
+  "\\textbf{Đường trung bình}: kết luận $MN = \\dfrac{1}{2}BC$ khi $M$, $N$ chưa chắc là trung điểm; hoặc nhân đôi nhầm (lấy cạnh chia đôi khi đề cho đường trung bình).",
+  "\\textbf{Đường phân giác}: viết $\\dfrac{DB}{DC}=\\dfrac{AC}{AB}$ (đảo cạnh kề). Nhớ: đoạn kề cạnh nào thì tỉ lệ với cạnh đó ($DB$ kề $AB$).",
+  "\\textbf{Thiếu câu kết luận, thiếu đơn vị} ở bài tính độ dài; quên làm tròn theo yêu cầu."
+ ],
+ "kienthuc_nb": [
+  "Tỉ số của hai đoạn thẳng tính khi hai độ dài cùng đơn vị đo.",
+  "Ba tỉ lệ thức của định lí Thalès khi $B'C' \\parallel BC$.",
+  "Định lí Thalès đảo: hai tỉ số bằng nhau $\\Rightarrow$ song song.",
+  "Đường trung bình: nối hai trung điểm, song song cạnh thứ ba, bằng nửa cạnh đó.",
+  "Qua trung điểm một cạnh, song song cạnh thứ hai thì qua trung điểm cạnh thứ ba.",
+  "Phân giác $AD$: $\\dfrac{DB}{DC}=\\dfrac{AB}{AC}$."
+ ],
+ "phieu": [
+  {
+   "code": "1",
+   "so_ca": 2,
+   "title": "Ca 1 $-$ 2 (Tuần 18 $-$ 19) — Bài 15: Định lí Thalès trong tam giác",
+   "rows": [
+    {
+     "dang": "Tính tỉ số của hai đoạn thẳng (đổi về cùng đơn vị) và nhận biết hai đoạn thẳng tỉ lệ",
+     "band": "NB",
+     "loai": "NB lẻ LT",
+     "lythuyet": 1,
+     "vidu": 1,
+     "onclass": 3,
+     "btvn": 2,
+     "source_refs": [
+      "SGK Luyện tập 1 tr.77",
+      "SGK Hình 4.3",
+      "Thalès D1.B3",
+      "Thalès D1.VD1"
+     ],
+     "decompose": "none"
+    },
+    {
+     "dang": "Viết tỉ lệ thức của định lí Thalès khi $B'C' \\parallel BC$; chọn khẳng định đúng (trắc nghiệm)",
+     "band": "NB",
+     "loai": "NB lẻ LT",
+     "lythuyet": 1,
+     "vidu": 0,
+     "onclass": 3,
+     "btvn": 3,
+     "source_refs": [
+      "SGK Định lí Thalès tr.78",
+      "GK2 Gia Quất (24-25) C2",
+      "GK2 Phúc Lợi (24-25) TN7"
+     ],
+     "decompose": "none"
+    },
+    {
+     "dang": "Tính độ dài $x$ bằng định lí Thalès (đoạn trên hai cạnh, hoặc cả một cạnh) rồi giải tỉ lệ thức",
+     "band": "NB",
+     "loai": "NB tách TH",
+     "lythuyet": 0,
+     "vidu": 1,
+     "onclass": 3,
+     "btvn": 3,
+     "source_refs": [
+      "SGK Ví dụ 1 tr.78",
+      "SGK Luyện tập 3",
+      "GK2 Đức Giang (25-26) C5",
+      "GK2 Phúc Đồng (24-25) C5"
+     ],
+     "decompose": "none"
+    },
+    {
+     "dang": "So sánh hai tỉ số để kết luận hai đường thẳng có song song không (định lí Thalès đảo)",
+     "band": "NB",
+     "loai": "NB tách TH",
+     "lythuyet": 0,
+     "vidu": 1,
+     "onclass": 2,
+     "btvn": 3,
+     "source_refs": [
+      "SGK Ví dụ 2 tr.79",
+      "SGK 4.2",
+      "Thalès D2.VD6"
+     ],
+     "decompose": "none"
+    },
+    {
+     "dang": "Điền khuyết lời giải mẫu: xét tam giác, chỉ ra đường song song, áp dụng định lí Thalès, thay số, kết luận",
+     "band": "NB",
+     "loai": "NB ghép bài",
+     "lythuyet": 0,
+     "vidu": 0,
+     "onclass": 2,
+     "btvn": 3,
+     "source_refs": [
+      "SGK Ví dụ 1 tr.78",
+      "CK1 Phan Đình Giót (24-25) B4.1"
+     ],
+     "decompose": "none",
+     "gian_giao": "dien-khuyet"
+    },
+    {
+     "dang": "Vẽ hình theo đề: qua một điểm trên cạnh kẻ đường thẳng song song với cạnh khác, ghi giả thiết $-$ kết luận",
+     "band": "NB",
+     "loai": "NB tách TH",
+     "lythuyet": 0,
+     "vidu": 0,
+     "onclass": 1,
+     "btvn": 1,
+     "source_refs": [
+      "SGK HĐ4 tr.79",
+      "SGK 4.3"
+     ],
+     "decompose": "none",
+     "ve_hinh": {
+      "onclass": 1,
+      "btvn": 1
+     },
+     "gian_giao": "ve-hinh"
+    },
+    {
+     "dang": "Tính hai độ dài trên cùng một hình, kết quả làm tròn theo yêu cầu",
+     "band": "TH",
+     "loai": "TH ghép bài",
+     "lythuyet": 0,
+     "vidu": 2,
+     "onclass": 3,
+     "btvn": 2,
+     "source_refs": [
+      "SGK 4.1",
+      "SGK Luyện tập 3",
+      "Thalès-2 D2.B3"
+     ],
+     "decompose": "th2nb",
+     "hinh_san": true
+    },
+    {
+     "dang": "Chứng minh hai đường thẳng song song bằng định lí Thalès đảo rồi suy ra tứ giác là hình thang",
+     "band": "TH",
+     "loai": "TH ghép bài",
+     "lythuyet": 0,
+     "vidu": 2,
+     "onclass": 3,
+     "btvn": 1,
+     "source_refs": [
+      "SGK 4.2",
+      "Thalès D2.B2",
+      "Thalès D2.B3",
+      "Thalès D2.VD7"
+     ],
+     "decompose": "th2nb",
+     "hinh_san": true
+    },
+    {
+     "dang": "Chứng minh hệ thức giữa các tỉ số nhờ hai lần định lí Thalès ($\\dfrac{AE}{AB}+\\dfrac{AF}{AC}=1$)",
+     "band": "TH",
+     "loai": "TH ghép bài",
+     "lythuyet": 0,
+     "vidu": 1,
+     "onclass": 3,
+     "btvn": 1,
+     "source_refs": [
+      "SGK 4.3",
+      "Thalès D3.B1",
+      "Thalès D3.VD4"
+     ],
+     "decompose": "th2nb",
+     "hinh_san": true
+    },
+    {
+     "dang": "Bài toán thực tế: đo khoảng cách qua sông, ao bằng định lí Thalès",
+     "band": "TH",
+     "loai": "TH ghép bài",
+     "lythuyet": 0,
+     "vidu": 1,
+     "onclass": 2,
+     "btvn": 1,
+     "source_refs": [
+      "SGK 4.5",
+      "CK1 Phan Đình Giót (24-25) B4.1",
+      "Thalès-2 D2.B6"
+     ],
+     "decompose": "th2nb",
+     "hinh_san": true
+    },
+    {
+     "dang": "Đường thẳng song song với hai đáy hình thang: kẻ đường chéo, tính đoạn trên cạnh bên",
+     "band": "TH",
+     "loai": "TH ghép bài",
+     "lythuyet": 0,
+     "vidu": 1,
+     "onclass": 3,
+     "btvn": 1,
+     "source_refs": [
+      "Thalès-2 D2.B7",
+      "Thalès-2 D2.B14a",
+      "Thalès D3.B2a"
+     ],
+     "decompose": "th2nb",
+     "hinh_san": true
+    },
+    {
+     "dang": "Dùng định lí Thalès hai lần qua một tỉ số trung gian (độ dài $AF$, đoạn $CD$)",
+     "band": "TH",
+     "loai": "TH tách VD",
+     "lythuyet": 0,
+     "vidu": 1,
+     "onclass": 3,
+     "btvn": 2,
+     "source_refs": [
+      "SGK 4.21",
+      "SGK 4.23",
+      "SGK 4.26"
+     ],
+     "decompose": "th2nb",
+     "hinh_san": true
+    }
+   ]
+  },
+  {
+   "code": "2",
+   "so_ca": 2,
+   "title": "Ca 3 $-$ 4 (Tuần 20 $-$ 21) — Bài 16: Đường trung bình của tam giác $+$ Bài 17: Tính chất đường phân giác của tam giác",
+   "rows": [
+    {
+     "dang": "Nhận biết đường trung bình của tam giác; tính độ dài, chu vi nhờ tính chất đường trung bình",
+     "band": "NB",
+     "loai": "NB lẻ LT",
+     "lythuyet": 1,
+     "vidu": 1,
+     "onclass": 3,
+     "btvn": 3,
+     "source_refs": [
+      "SGK Hình 4.14",
+      "SGK Ví dụ tr.82",
+      "SGK 4.19",
+      "SGK 4.20",
+      "GK2 Phúc Đồng (24-25) C4",
+      "GK2 Đức Giang (25-26) C7"
+     ],
+     "decompose": "none"
+    },
+    {
+     "dang": "Đường thẳng qua trung điểm một cạnh, song song cạnh thứ hai thì qua trung điểm cạnh thứ ba; từ đường trung bình suy ra song song, góc đồng vị bằng nhau",
+     "band": "NB",
+     "loai": "NB tách TH",
+     "lythuyet": 0,
+     "vidu": 1,
+     "onclass": 3,
+     "btvn": 3,
+     "source_refs": [
+      "SGK Chú ý tr.82",
+      "GK2 Đức Giang (25-26) C8",
+      "CK1 Phan Chu Trinh (24-25) IV.1b",
+      "SGK 4.7a"
+     ],
+     "decompose": "none"
+    },
+    {
+     "dang": "Viết tỉ lệ thức của tính chất đường phân giác; tính tỉ số hai đoạn khi biết hai cạnh kề",
+     "band": "NB",
+     "loai": "NB lẻ LT",
+     "lythuyet": 1,
+     "vidu": 0,
+     "onclass": 3,
+     "btvn": 3,
+     "source_refs": [
+      "SGK Định lí tr.84",
+      "GK2 Đức Giang (25-26) C6",
+      "CK1 Nguyễn Công Trứ (24-25) C7"
+     ],
+     "decompose": "none"
+    },
+    {
+     "dang": "Tính một đoạn trên cạnh đối diện bằng tính chất đường phân giác",
+     "band": "NB",
+     "loai": "NB tách TH",
+     "lythuyet": 0,
+     "vidu": 1,
+     "onclass": 2,
+     "btvn": 3,
+     "source_refs": [
+      "SGK Ví dụ tr.85",
+      "CK2 Ngô Gia Tự (25-26) C5",
+      "CK2 Hai Bà Trưng (24-25) C6"
+     ],
+     "decompose": "none"
+    },
+    {
+     "dang": "Điền khuyết lời giải mẫu: chứng minh đường trung bình rồi suy ra song song, bằng nửa cạnh; tính đoạn nhờ đường phân giác",
+     "band": "NB",
+     "loai": "NB ghép bài",
+     "lythuyet": 0,
+     "vidu": 0,
+     "onclass": 2,
+     "btvn": 3,
+     "source_refs": [
+      "CK1 Nguyễn Công Trứ (24-25) 4.2a",
+      "CK1 Phan Chu Trinh (24-25) IV.2a"
+     ],
+     "decompose": "none",
+     "gian_giao": "dien-khuyet"
+    },
+    {
+     "dang": "Vẽ hình theo đề có trung điểm, đường trung bình, đường phân giác; ghi giả thiết $-$ kết luận",
+     "band": "NB",
+     "loai": "NB tách TH",
+     "lythuyet": 0,
+     "vidu": 0,
+     "onclass": 1,
+     "btvn": 1,
+     "source_refs": [
+      "SGK 4.7",
+      "SGK 4.8"
+     ],
+     "decompose": "none",
+     "ve_hinh": {
+      "onclass": 1,
+      "btvn": 1
+     },
+     "gian_giao": "ve-hinh"
+    },
+    {
+     "dang": "Chứng minh tứ giác là hình bình hành, hình chữ nhật nhờ đường trung bình",
+     "band": "TH",
+     "loai": "TH ghép bài",
+     "lythuyet": 0,
+     "vidu": 2,
+     "onclass": 3,
+     "btvn": 2,
+     "source_refs": [
+      "SGK 4.7b",
+      "SGK 4.9",
+      "ĐTB D2.VD2",
+      "CK1 Phan Chu Trinh (24-25) IV.2b",
+      "SGK 4.25"
+     ],
+     "decompose": "th2nb",
+     "hinh_san": true
+    },
+    {
+     "dang": "Bài toán thực tế dùng đường trung bình (khoảng cách qua hồ, thanh ngang thước chữ A)",
+     "band": "TH",
+     "loai": "TH ghép bài",
+     "lythuyet": 0,
+     "vidu": 1,
+     "onclass": 4,
+     "btvn": 0,
+     "source_refs": [
+      "SGK mở đầu Bài 16",
+      "CK1 Nguyễn Công Trứ (24-25) 4.1",
+      "CK1 Giảng Võ 2 (24-25) BIII"
+     ],
+     "decompose": "th2nb",
+     "hinh_san": true
+    },
+    {
+     "dang": "Hai lần đường trung bình trong tam giác có trung tuyến (chia cạnh làm ba phần bằng nhau)",
+     "band": "TH",
+     "loai": "TH tách VD",
+     "lythuyet": 0,
+     "vidu": 1,
+     "onclass": 3,
+     "btvn": 2,
+     "source_refs": [
+      "SGK 4.8",
+      "ĐTB D2.B9",
+      "ĐTB D2.B5"
+     ],
+     "decompose": "th2nb",
+     "hinh_san": true
+    },
+    {
+     "dang": "Tính độ dài bằng tính chất đường phân giác rồi tính tiếp chu vi, đoạn còn lại (biết cả cạnh đối diện)",
+     "band": "TH",
+     "loai": "TH ghép bài",
+     "lythuyet": 0,
+     "vidu": 2,
+     "onclass": 3,
+     "btvn": 2,
+     "source_refs": [
+      "SGK 4.10",
+      "SGK 4.11",
+      "CK2 Chương Dương (25-26) BIV",
+      "SGK 4.16a"
+     ],
+     "decompose": "th2nb",
+     "hinh_san": true
+    },
+    {
+     "dang": "Kết hợp tính chất đường phân giác với định lí Thalès đảo để chứng minh hai đường thẳng song song",
+     "band": "TH",
+     "loai": "TH ghép bài",
+     "lythuyet": 0,
+     "vidu": 1,
+     "onclass": 3,
+     "btvn": 1,
+     "source_refs": [
+      "SGK LTC Ví dụ 2",
+      "GK2 Nghĩa Tân MH (25-26) 2a",
+      "GK2 Ái Mộ LT (24-25) 4.2"
+     ],
+     "decompose": "th2nb",
+     "hinh_san": true
+    },
+    {
+     "dang": "Bài toán thực tế có đường phân giác (con đường chia đôi góc vườn hoa)",
+     "band": "TH",
+     "loai": "TH ghép bài",
+     "lythuyet": 0,
+     "vidu": 1,
+     "onclass": 1,
+     "btvn": 0,
+     "source_refs": [
+      "CK2 Chương Dương (25-26) BIV",
+      "SGK 4.12"
+     ],
+     "decompose": "th2nb",
+     "hinh_san": true
+    }
+   ]
+  },
+  {
+   "code": "3",
+   "so_ca": 1,
+   "kiem_tra_phut": 45,
+   "title": "Ca 5 (Tuần 22) — Luyện tập chung $+$ Bài tập cuối chương IV $+$ Kiểm tra chương",
+   "rows": [
+    {
+     "dang": "Tính nhanh độ dài, chu vi nhờ đường trung bình; nhận biết đường trung bình (câu hỏi ngắn kiểu trắc nghiệm)",
+     "band": "NB",
+     "loai": "NB lẻ LT",
+     "lythuyet": 0,
+     "vidu": 1,
+     "onclass": 2,
+     "btvn": 2,
+     "source_refs": [
+      "GK2 Phúc Đồng (24-25) đề 2 C4",
+      "ĐTB D1.B7",
+      "ĐTB D1.B9",
+      "ĐTB D1.B5"
+     ],
+     "decompose": "none"
+    },
+    {
+     "dang": "Điền khuyết lời giải mẫu bài hình tổng hợp: trung tuyến ứng với cạnh huyền $+$ đường trung bình",
+     "band": "NB",
+     "loai": "NB ghép bài",
+     "lythuyet": 0,
+     "vidu": 0,
+     "onclass": 2,
+     "btvn": 2,
+     "source_refs": [
+      "SGK 4{.}24a",
+      "SGK 4{.}14a"
+     ],
+     "decompose": "none",
+     "gian_giao": "dien-khuyet"
+    },
+    {
+     "dang": "Chọn đúng công cụ của chương (Thalès, đường trung bình, đường phân giác) để tính một độ dài",
+     "band": "NB",
+     "loai": "NB tách TH",
+     "lythuyet": 0,
+     "vidu": 0,
+     "onclass": 0,
+     "btvn": 1,
+     "source_refs": [
+      "LT-Thalès B24a"
+     ],
+     "decompose": "none"
+    },
+    {
+     "dang": "Vẽ hình bài hình tổng hợp, đánh dấu trung điểm, góc vuông, ghi giả thiết $-$ kết luận",
+     "band": "NB",
+     "loai": "NB tách TH",
+     "lythuyet": 0,
+     "vidu": 0,
+     "onclass": 0,
+     "btvn": 1,
+     "source_refs": [
+      "SGK 4{.}24"
+     ],
+     "decompose": "none",
+     "ve_hinh": {
+      "onclass": 0,
+      "btvn": 1
+     },
+     "gian_giao": "ve-hinh"
+    },
+    {
+     "dang": "Tự viết lại ba khuôn lập luận của chương (Thalès, Thalès đảo, đường trung bình) và giải thích khi nào dùng khuôn nào",
+     "band": "NB",
+     "loai": "NB lẻ LT",
+     "lythuyet": 0,
+     "vidu": 0,
+     "onclass": 0,
+     "btvn": 2,
+     "source_refs": [],
+     "decompose": "none",
+     "viet_quy_trinh": true
+    },
+    {
+     "dang": "Bài hình tổng hợp kiểu đề cuối kì I: đường trung bình, hình bình hành, hình thang, ba điểm thẳng hàng",
+     "band": "TH",
+     "loai": "TH ghép bài",
+     "lythuyet": 0,
+     "vidu": 1,
+     "onclass": 3,
+     "btvn": 3,
+     "source_refs": [
+      "ĐTB D2.B16",
+      "SGK 4{.}24b",
+      "ĐTB D2.B14",
+      "ĐTB D2.B15",
+      "ĐTB D2.B12",
+      "ĐTB D2.B7",
+      "LT-Thalès B4"
+     ],
+     "decompose": "th2nb",
+     "hinh_san": true
+    },
+    {
+     "dang": "Tính độ dài trong hình có đường phân giác kết hợp đường song song (định lí Thalès)",
+     "band": "TH",
+     "loai": "TH ghép bài",
+     "lythuyet": 0,
+     "vidu": 1,
+     "onclass": 2,
+     "btvn": 0,
+     "source_refs": [
+      "PG D2.VD3",
+      "LT-Thalès B21a",
+      "LT-Thalès B23"
+     ],
+     "decompose": "th2nb",
+     "hinh_san": true
+    }
+   ]
+  }
+ ]
+}

@@ -150,7 +150,11 @@ def check_thuyetminh(spec: ThuyetMinhSpec) -> tuple[list[str], list[str]]:
 
         # (E) GỘP PHIẾU (anh An chốt 30/08/2026): chương KHÔNG có VD-VDC thì hai buổi
         # dùng CHUNG một phiếu (so_ca = 2); chương có VD-VDC thì một phiếu một buổi.
-        if ca_yeu_cau and ca != ca_yeu_cau:
+        # Chương có SỐ CA LẺ (vd 5 ca) thì gộp đôi xong còn dư đúng một ca: cho phiếu
+        # CUỐI khai `so_ca: 1` (thường là ca ôn tập + kiểm tra chương) — 08/10/2026.
+        tong_ca = sum(max(1, getattr(q, "so_ca", 1) or 1) for q in spec.phieu)
+        le_cuoi = (ca_yeu_cau == 2 and ca == 1 and p is spec.phieu[-1] and tong_ca % 2 == 1)
+        if ca_yeu_cau and ca != ca_yeu_cau and not le_cuoi:
             errors.append(
                 f"thuyetminh: {tag} khai `so_ca` = {ca} nhưng chương '{spec.chuong}' "
                 + ("KHÔNG có bài VD-VDC trong đề nên phải GỘP 2 PHIẾU THÀNH 1 "
@@ -371,7 +375,8 @@ def check_kiem_tra_chuong(spec: ThuyetMinhSpec) -> list[str]:
         return []
     cuoi = phieu[-1]
     out: list[str] = []
-    if (getattr(cuoi, "kiem_tra_phut", 0) or 0) < KIEM_TRA_CHUONG_PHUT:
+    gop = (getattr(spec, "kiem_tra_gop", "") or "").strip()
+    if not gop and (getattr(cuoi, "kiem_tra_phut", 0) or 0) < KIEM_TRA_CHUONG_PHUT:
         out.append(
             f"thuyetminh: THIẾU KIỂM TRA CHƯƠNG — phiếu cuối ({cuoi.code}) phải khai "
             f"`kiem_tra_phut: {KIEM_TRA_CHUONG_PHUT}` (Thầy chốt 26/09/2026: cuối MỖI chương "

@@ -232,7 +232,10 @@ def check_hinh_thieu(lesson: LessonPackage) -> list[FigureViolation]:
 
         # Chỉ tính là "HS phải tự vẽ" khi đề KHÔNG kèm hình sẵn. Bài đã có hình mà đề
         # viết "vẽ tia Ot là tia phân giác…" thì tia đó đã vẽ sẵn trên hình rồi.
-        if not figure and _BAT_VE.search(text) and not getattr(prob, "draw", False):
+        # Tờ đề kiểm tra (theme de_thi): HS vẽ vào GIẤY THI, không vẽ vào đề — không
+        # cần khung trống, phút vẽ đã nằm trong ma trận đề.
+        if (not figure and _BAT_VE.search(text) and not getattr(prob, "draw", False)
+                and getattr(lesson, "theme", "") != "de_thi"):
             out.append(FigureViolation(
                 prob.label,
                 "đề bắt HS TỰ VẼ HÌNH nhưng chưa bật `draw: true` — thiếu khung trống "

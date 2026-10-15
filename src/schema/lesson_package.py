@@ -22,8 +22,12 @@ class ParaBlock(BaseModel):
     # cùng cỡ chữ, cùng màu, không có khoảng thở phía trên ⇒ cả khối lý thuyết đọc
     # thành một mảng chữ đặc (Thầy chê: "lý thuyết quá khó nhìn"). Variant này cho
     # tiêu đề màu brand, chữ sans, và khoảng cách rõ phía trên.
-    variant: Literal["", "heading"] = Field(
-        "", description="'heading' = tiêu đề mục trong khối lý thuyết; rỗng = đoạn văn thường"
+    # 10/10/2026 thêm cấp 'part' (Thầy: "lý thuyết viết như SGK cho tổng quát, còn phương pháp
+    # chứng minh hay dạng quen thuộc thì CHIA PHẦN RA mà viết") ⇒ chặng Kiến thức có hai phần
+    # "A. Lý thuyết" / "B. Phương pháp chứng minh — dạng quen thuộc", mỗi phần nhiều mục 'heading'.
+    variant: Literal["", "heading", "part"] = Field(
+        "", description="'part' = tiêu đề PHẦN (A. Lý thuyết / B. Phương pháp); "
+                        "'heading' = tiêu đề mục trong khối lý thuyết; rỗng = đoạn văn thường"
     )
 
 
