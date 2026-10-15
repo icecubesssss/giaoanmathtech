@@ -23,6 +23,29 @@ Hai file tiến độ **lệch số tuần**: thư mục/slug `tuanNN` của t�
 (không phải "B = C + VDC") · soạn **đủ cả năm theo chương** · phiếu 8B cũ (theo tiến độ cũ) tái dùng làm
 nền, map sang buổi mới. **KT chương 45′ vẫn giữ cho cả B và C** (Thầy chốt 08/10 cho 8B, sau file B).
 
+Chốt thêm 15/10/2026:
+- Rate phút/câu lớp 6, 7: rate GỐC cho cả Đại lẫn Hình. Lớp 8 khung 25/55/40 (như 6, 7). Tầng C lớp 8 = 40-40-20.
+- Bản đồ VD/VDC: lớp 7 ch.III CÓ VD (B dùng 15-30-55); lớp 8 ch.VIII không VD.
+- **8B**: bảng map `config/tien_do/map-8b-cu.{json,md}`. Ch.I-III **dựng lại** theo quy trình phiếu B (phiếu cũ
+  chỉ là nguồn đề — trống đáp án, writelines, Pythagore sớm). KT 45′ 8B chỉ ở ch.III (t10), IV (t13),
+  VI (t29), VII (t33), IX (t33); bỏ I, II, V, VIII, X; đề KT gộp VII+VIII cũ → đề luyện CK2.
+  Ca "gộp" (nhiều bài SGV/1 ca) **nén về đúng 1 ca**; phần dư → BTVN hoặc ca luyện dạng kế tiếp.
+- **KT 45′ tầng B lớp 6, 7**: như 8B — chỉ chương có VD lớn và còn đất (đặt ở ca luyện dạng cuối chương);
+  agent đề xuất trong TM để Thầy duyệt. Tầng C: ca "Luyện tập chương" = 45′ luyện + 45′ KT.
+- **Lớp 6**: ch.I tầng B CÓ VDC phần luỹ thừa (tổng luỹ thừa cùng cơ số, tìm x ở số mũ); phần chứng minh
+  chia hết để ch.II. "Số phần tử của tập hợp" đưa vào mức NB nhẹ (cả B, C; không tập con/giao).
+  **Tìm x trình bày theo quan hệ thành phần phép tính** (không "chuyển vế") cho mọi phiếu lớp 6.
+- Trưởng nhóm tự chốt theo luật sẵn có (Thầy sửa nếu khác ý):
+  - Ca luyện dạng sau khi đã sang chương mới được dùng kiến thức đã học tới tuần đó.
+  - Câu NB nhận dạng hình thức ("$-\frac13 \in \mathbb{Q}$") GIỮ cho lớp 6-8 (luật cấm 07/07 là của lớp 9).
+  - Lớp 7: $|x|$ + luỹ thừa chẵn chuyển sang ch.II/ca VDC GK1 (|x| là Bài 7); tính hợp lí có luỹ thừa chỉ
+    từ sau Bài 3; tìm x 1-2 bước theo quan hệ thành phần dùng được từ Bài 1+2, chuyển vế từ Bài 4;
+    tổng dãy có quy luật (SGK không dạy) chỉ tầng B ở ca VDC GK1; % ngược ở tầng C thì chẻ thang.
+  - Lớp 8: "Tìm x" dạy từ tuần 6 cả 2 tầng; tích nhân trực tiếp có dáng HĐT giữ ở ch.I (trừ $(a\pm b)^2$);
+    KT 45′ tầng C theo khuôn GK1 trường thu nhỏ; "đa thức dư" không dạy (ngoài KNTT 8).
+- Bank `inputs/refs/de-thi/lop-N/exams/`: nhãn `chuong` và id vị trí câu nhiều chỗ SAI — đừng lọc chỉ bằng
+  `chuong`; thống kê máy thiếu dạng luỹ thừa. `build_ngan_hang_678.py` nay GIỮ trường tầng 2 khi dựng lại.
+
 ## 2. Cây thư mục
 
 ```

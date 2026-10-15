@@ -119,7 +119,47 @@ assert bang(dx(A, K), 3 * dx(A, G))                      # c)
 assert dx(A, B) < dx(A, C)
 GK = {k: la(v) for k, v in dict(A=A, B=B, C=C, H=H, M=M, N=N, I=I, K=K, O=O, G=G).items()}
 
-TOA_DO = {"on1": ON1, "on2": ON2, "on3": ON3, "gk": GK}
+# ══ CHƯƠNG IV (bổ sung 15/10/2026 — tiến độ mới dạy Thalès, đường trung bình, phân giác tuần 11–13) ══
+def goc(P, Q, R):
+    """số đo góc PQR (độ)"""
+    u, v = tru(P, Q), tru(R, Q)
+    return math.degrees(math.acos(cham(u, v) / (dx(P, Q) * dx(R, Q))))
+
+
+# ── ĐỀ ÔN 2 · Bài 5.1 — THCS Lê Lợi 2023-2024 (Câu 16a): M, N trung điểm AB, AC; MN = 3,5 cm ──
+A = (1.3, 2.6); B = (0.0, 0.0); C = (4.2, 0.0)
+M = tv(A, B); N = tv(A, C)
+assert song_song(M, N, B, C) and bang(dx(B, C), 2 * dx(M, N))     # MN // BC, BC = 2MN ⇒ BMNC là hình thang
+C4_LE_LOI = {k: la(v) for k, v in dict(A=A, B=B, C=C, M=M, N=N).items()}
+
+# ── ĐỀ ÔN 1 · Bài 5.1 — THCS Văn Yên 2025-2026 (Bài IV.1): D, E trung điểm AB, AC; BC = 5 cm;
+#    góc ADE = 70°, góc DAE = 60° (đề cho hình) ⇒ DE = 2,5 cm; góc ABC = 70°, góc ACB = 50°.
+B = (0.0, 0.0); C = (5.0, 0.0)
+A = giao(B, (math.cos(math.radians(70)), math.sin(math.radians(70))),
+         C, (C[0] + math.cos(math.radians(130)), math.sin(math.radians(130))))
+D = tv(A, B); E = tv(A, C)
+assert bang(goc(B, A, C), 60, 1e-7) and bang(goc(A, D, E), 70, 1e-7)    # đúng số đo đề cho
+assert bang(dx(D, E), 2.5) and bang(goc(A, B, C), 70, 1e-7) and bang(goc(A, C, B), 50, 1e-7)
+C4_VAN_YEN = {k: la(v) for k, v in dict(A=A, B=B, C=C, D=D, E=E).items()}
+
+# ── ĐỀ ÔN 3 · Bài 5.1 — THCS Văn Khê 2025-2026 (Bài IV.1): ao cá, MA = AN = 9 m, MB = BP = 16 m,
+#    NP = 29 m ⇒ AB = 14,5 m. Toạ độ theo MÉT (vẽ theo tỉ lệ, scale trong TikZ).
+N = (0.0, 0.0); P = (29.0, 0.0)
+_x = (18 ** 2 - 32 ** 2 + 29 ** 2) / (2 * 29); M = (_x, math.sqrt(18 ** 2 - _x ** 2))
+A = tv(M, N); B = tv(M, P)
+assert bang(dx(M, A), 9) and bang(dx(A, N), 9) and bang(dx(M, B), 16) and bang(dx(B, P), 16)
+assert bang(dx(A, B), 14.5) and song_song(A, B, N, P)
+C4_VAN_KHE = {k: la(v) for k, v in dict(M=M, N=N, P=P, A=A, B=B).items()}
+
+# ── GK1 · Bài 5.1 — THCS Nguyễn Trãi 2025-2026 (Bài 4.1): D, E trung điểm AB, AC (hình đánh dấu);
+#    DE = 35 m ⇒ BC = 70 m. Hình minh hoạ (không theo tỉ lệ mét).
+A = (1.6, 0.0); B = (0.0, 3.0); C = (4.4, 3.7)
+D = tv(A, B); E = tv(A, C)
+assert song_song(D, E, B, C) and bang(dx(B, C), 2 * dx(D, E))
+C4_NGUYEN_TRAI = {k: la(v) for k, v in dict(A=A, B=B, C=C, D=D, E=E).items()}
+
+TOA_DO = {"on1": ON1, "on2": ON2, "on3": ON3, "gk": GK,
+          "c4_le_loi": C4_LE_LOI, "c4_van_yen": C4_VAN_YEN, "c4_van_khe": C4_VAN_KHE, "c4_nguyen_trai": C4_NGUYEN_TRAI}
 
 if __name__ == "__main__":
     for k, v in TOA_DO.items():

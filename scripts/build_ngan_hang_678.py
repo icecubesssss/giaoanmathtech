@@ -381,6 +381,28 @@ def dung_mot_de(lop: str, ky: str, p: Path, nguon: str, raw: str, lech: str = ""
     }
 
 
+# Trường do người/agent thêm sau khi máy dựng (tầng 2: đọc ảnh, gõ lại LaTeX, giải) — dựng lại
+# KHÔNG được xoá (15/10/2026: agent hồ sơ chương đã gõ lại 136 câu lớp 6 vào exam JSON).
+TRUONG_TANG2 = ("de_latex", "dap_an_kiem", "da_duyet")
+
+
+def giu_tang2(dich: Path, d: dict) -> None:
+    """Chép trường tầng 2 của bản cũ (cùng id câu) sang bản vừa dựng."""
+    if not dich.exists():
+        return
+    try:
+        cu = {c.get("id"): c for c in json.loads(dich.read_text(encoding="utf-8")).get("cau", [])}
+    except (ValueError, OSError):
+        return
+    for c in d["cau"]:
+        old = cu.get(c["id"])
+        if not old:
+            continue
+        for k, v in old.items():
+            if (k in TRUONG_TANG2 or k.startswith("tang2")) and v not in (None, "", False):
+                c[k] = v
+
+
 def main(argv: list[str]) -> int:
     ap = argparse.ArgumentParser()
     ap.add_argument("--lop", default="6,7,8")
@@ -438,7 +460,9 @@ def main(argv: list[str]) -> int:
                     c["id"] = c["id"].replace(ma, ten, 1)
                     if c.get("barem_tho", "").startswith("(xem "):
                         c["barem_tho"] = c["barem_tho"].replace(ma, ten, 1)
-            (out / f"{ten.split('-', 1)[1]}.json").write_text(json.dumps(d, ensure_ascii=False, indent=1), encoding="utf-8")
+            dich = out / f"{ten.split('-', 1)[1]}.json"
+            giu_tang2(dich, d)
+            dich.write_text(json.dumps(d, ensure_ascii=False, indent=1), encoding="utf-8")
             st["de"] += 1; st[f"de_{nguon}"] += 1; st["cau"] += len(d["cau"])
             if lech:
                 st["de_lech_kntt"] += 1; st["cau_lech_kntt"] += len(d["cau"])

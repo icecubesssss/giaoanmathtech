@@ -8,8 +8,11 @@ Sinh 4 đề HS + 4 file "Ma trận đề và đáp án chi tiết" vào inputs/
 - Khung đề chốt từ LƯỚI DẠNG GẮN TAY 27 đề GK1 Hà Nội (inputs/refs/de-thi/lop-8/luoi-dang/gk1.json,
   thống kê: scripts/thong_ke_luoi_dang.py --lop 8): trắc nghiệm có ở 63% đề ⇒ giữ Phần I 2,0đ (8 câu);
   tìm x 89%, phép tính/rút gọn 81%, thực tế 67%, hình "tam giác vuông + hình chiếu ⇒ HCN ⇒ HBH" 70–78%.
-- Phạm vi = tiến độ nội bộ T8 (GK1 tuần 16–17): Chương I, II (cả phân tích nhân tử) + trọn Chương III
-  (đến hình thoi, hình vuông). KHÔNG dùng đường trung bình / Thalès (Chương IV) — đã loại 4 đề có câu đó.
+- Phạm vi = HẾT CHƯƠNG IV (Thầy chốt 15/10/2026 theo tiến độ mới config/tien_do/B-lop-8.json: tuần 11–13 dạy
+  Chương IV — Thalès, đường trung bình, tính chất đường phân giác): Chương I, II (cả phân tích nhân tử), trọn
+  Chương III, Chương IV. Mỗi đề 1,0đ Chương IV = 1 câu TN (thay câu TN hình trùng dạng) + Bài 5 ý 1) 0,75đ
+  (đường trung bình — đúng khung các trường đã dạy Ch.IV: Văn Khê, Văn Yên, Nguyễn Trãi, Lê Lợi); bài tứ giác thành
+  ý 2) 2,25đ (a 0,75 gồm vẽ hình, b 0,75, c 0,75). Đề GK1 HN không có TN Thalès/phân giác ⇒ TN Ch.IV lấy từ đề CK1 HN.
 - Mọi câu chép từ ẢNH đề gốc (inputs/refs/de-thi/lop-8/giua-ki-1/). Đáp số đã kiểm SymPy; toạ độ hình
   kiểm tính chất ở scripts/de_on_tap_gk1_lop8_hinh.py.
 SỬA ĐỀ THÌ SỬA Ở ĐÂY rồi chạy lại — không sửa tay JSON (sửa tay sẽ bị ghi đè).
@@ -132,6 +135,77 @@ HINH_SAN = ("\\begin{tikzpicture}[line width=1pt,scale=0.9]"
             "\\path (-3.2,0) (8.4,0);\\end{tikzpicture}")
 
 
+# ─────────── HÌNH CHƯƠNG IV (bổ sung 15/10/2026 — Bài 5 ý 1) ───────────
+def cung(P, Q, R, r=0.38, nhan="", dn=0.7):
+    """cung đánh dấu góc PQR tại Q (+ nhãn số đo đặt trên tia phân giác)"""
+    (px, py), (qx, qy), (rx, ry) = P, Q, R
+    a1 = math.degrees(math.atan2(py - qy, px - qx)); a2 = math.degrees(math.atan2(ry - qy, rx - qx))
+    dd = (a2 - a1) % 360
+    if dd > 180:
+        a1, dd = a2, 360 - dd
+    s = (f"\\draw[line width=0.5pt] ({qx + r * math.cos(math.radians(a1)):.3f},{qy + r * math.sin(math.radians(a1)):.3f}) "
+         f"arc[start angle={a1:.2f},delta angle={dd:.2f},radius={r}];")
+    if nhan:
+        m = math.radians(a1 + dd / 2)
+        s += f"\\node[font=\\scriptsize] at ({qx + dn * math.cos(m):.3f},{qy + dn * math.sin(m):.3f}) {{{nhan}}};"
+    return s
+
+
+def ao(cx, cy, rx, ry):
+    """vật cản (ao, chướng ngại vật) — đường cong kín tô xám quanh (cx, cy)"""
+    pts = [(1.0, 0.1), (0.75, 0.85), (0.15, 1.0), (-0.5, 0.8), (-1.0, 0.25), (-0.85, -0.55), (-0.2, -0.95), (0.55, -0.8)]
+    return ("\\draw[fill=gray!35,line width=0.7pt] plot[smooth cycle] coordinates {"
+            + " ".join(f"({cx + rx * a:.3f},{cy + ry * b:.3f})" for a, b in pts) + "};")
+
+
+def nhan_doan(P, Q, txt, pos="left", t=0.5):
+    (px, py), (qx, qy) = P, Q
+    return f"\\node[{pos},font=\\small] at ({px + t * (qx - px):.3f},{py + t * (qy - py):.3f}) {{{txt}}};"
+
+
+def dem(tikz, cx, rong):
+    """bản HÌNH TRONG ĐỀ: thêm lề trắng hai bên (\\path) cho khung rộng `rong` — \\figbelow ép hình theo bề
+    ngang 0,5\\linewidth nên hình hẹp-cao bị phóng to tới trần 6,5 cm, đẩy đề sang trang 4."""
+    return tikz.replace("\\end{tikzpicture}", f"\\path ({cx - rong / 2:.2f},0) ({cx + rong / 2:.2f},0);\\end{{tikzpicture}}")
+
+
+# Lê Lợi Câu 16a (Đề ôn 2) (đề không cho hình; hình chỉ ở lời giải)
+k1 = {k: tuple(v) for k, v in T["c4_le_loi"].items()}
+HINH_C4_LELOI = hinh({"A": (*k1["A"], "above"), "B": (*k1["B"], "below left"), "C": (*k1["C"], "below right"),
+                    "M": (*k1["M"], "left"), "N": (*k1["N"], "right")},
+                   [("A", "B"), ("B", "C"), ("C", "A"), ("M", "N")],
+                   extra=gach(k1["A"], k1["M"]) + gach(k1["M"], k1["B"]) + gach(k1["A"], k1["N"], 2) + gach(k1["N"], k1["C"], 2),
+                   scale=1.0)
+# Văn Yên IV.1 (Đề ôn 1) (đề cho hình: số đo góc, BC = 5 cm)
+k2 = {k: tuple(v) for k, v in T["c4_van_yen"].items()}
+HINH_C4_VANYEN = hinh({"A": (*k2["A"], "above"), "B": (*k2["B"], "below left"), "C": (*k2["C"], "below right"),
+                    "D": (*k2["D"], "left"), "E": (*k2["E"], "right")},
+                   [("A", "B"), ("B", "C"), ("C", "A"), ("D", "E")],
+                   extra=gach(k2["A"], k2["D"]) + gach(k2["D"], k2["B"]) + gach(k2["A"], k2["E"], 2) + gach(k2["E"], k2["C"], 2)
+                   + cung(k2["B"], k2["A"], k2["C"], r=0.45, nhan="$60^\\circ$", dn=0.95)
+                   + cung(k2["A"], k2["D"], k2["E"], r=0.3, nhan="$70^\\circ$", dn=0.8)
+                   + nhan_doan(k2["B"], k2["C"], "$5$ cm", pos="above"), scale=0.8)
+HINH_C4_VANYEN_DE = dem(HINH_C4_VANYEN, 2.5, 12.0)
+# Văn Khê IV.1 (Đề ôn 3) (toạ độ theo mét, vẽ theo tỉ lệ 1 m = 0,2 cm)
+k3 = {k: (v[0] * 0.2, v[1] * 0.2) for k, v in T["c4_van_khe"].items()}
+HINH_C4_VANKHE = hinh({"M": (*k3["M"], "above"), "N": (*k3["N"], "below left"), "P": (*k3["P"], "below right"),
+                    "A": (*k3["A"], "left"), "B": (*k3["B"], "above right")},
+                   [("M", "N"), ("M", "P"), ("N", "P")], dashed=[("A", "B")],
+                   extra=ao((k3["A"][0] + k3["B"][0]) / 2, k3["A"][1] + 0.05, 1.05, 0.55)
+                   + nhan_doan(k3["M"], k3["A"], "$9$ m") + nhan_doan(k3["A"], k3["N"], "$9$ m")
+                   + nhan_doan(k3["M"], k3["B"], "$16$ m", pos="above right") + nhan_doan(k3["B"], k3["P"], "$16$ m", pos="above right")
+                   + nhan_doan(k3["N"], k3["P"], "$29$ m", pos="above"), scale=1.0)
+# Nguyễn Trãi 4.1 (GK1) (D, E trung điểm đánh dấu trên hình; BC vướng chướng ngại vật)
+k4 = {k: tuple(v) for k, v in T["c4_nguyen_trai"].items()}
+HINH_C4_NGTRAI = hinh({"A": (*k4["A"], "below"), "B": (*k4["B"], "left"), "C": (*k4["C"], "right"),
+                   "D": (*k4["D"], "left"), "E": (*k4["E"], "right")},
+                  [("A", "B"), ("A", "C"), ("D", "E")], dashed=[("B", "C")],
+                  extra=ao((k4["B"][0] + k4["C"][0]) / 2, (k4["B"][1] + k4["C"][1]) / 2, 0.7, 0.42)
+                  + gach(k4["A"], k4["D"]) + gach(k4["D"], k4["B"]) + gach(k4["A"], k4["E"], 2) + gach(k4["E"], k4["C"], 2),
+                  scale=1.0)
+HINH_C4_NGTRAI_DE = dem(HINH_C4_NGTRAI, 2.2, 9.0)
+
+
 def tn(cau, de, options, dap, giai, nd, ch, muc, nguon, level=1):
     return dict(cau=cau, de=de, options=options, dap=dap, giai=giai, nd=nd, ch=ch, muc=muc, nguon=nguon, level=level)
 
@@ -147,7 +221,7 @@ DE = {}
 # ═══════════ ĐỀ ÔN 1 — các dạng tần suất cao nhất, bốc nguyên văn ═══════════
 DE["on-1"] = dict(
     ten="ĐỀ ÔN TẬP SỐ 1", slug_de="de-on-tap-giua-ki-1-so-1", slug_mt="ma-tran-va-dap-an-on-tap-so-1",
-    eyebrow="LỚP 8 • ĐỀ ÔN TẬP SỐ 1", ngat=[("tn", 6), ("bai", 4)],
+    eyebrow="LỚP 8 • ĐỀ ÔN TẬP SỐ 1", ngat=[("tn", 6)],
     cach_dung=("Cho HS làm như thi thật 90 phút, không gợi ý. Chữa ngay sau giờ: ưu tiên các ý mất điểm vì trình bày "
                "(quên đổi dấu khi bỏ ngoặc, thiếu câu kết luận, bài hình thiếu căn cứ). Ghi điểm từng bài vào phiếu "
                "theo dõi tiến bộ (file đáp án đề GK1)."),
@@ -156,8 +230,13 @@ DE["on-1"] = dict(
                 "trắc nghiệm có ở $63\\%$ số đề, tìm $x$ ở $89\\%$, thực hiện phép tính -- rút gọn $81\\%$, toán thực tế $67\\%$, "
                 "bài hình ``tam giác vuông, hình chiếu $\\Rightarrow$ hình chữ nhật $\\Rightarrow$ hình bình hành'' $70$--$78\\%$." + BR +
                 "\\textbf{Cách chọn câu:} Đề ôn 1 chỉ lấy các dạng tần suất cao nhất, mỗi câu chép \\textbf{nguyên văn} "
-                "từ đề của trường (cột Nguồn). Phạm vi: Chương I, II (đa thức, hằng đẳng thức) và Chương III (tứ giác) -- "
-                "không dùng câu có đường trung bình (Chương IV)."),
+                "từ đề của trường (cột Nguồn). Phạm vi: hết Chương IV -- Chương I, II (đa thức, hằng đẳng thức), "
+                "Chương III (tứ giác), Chương IV (định lí Thalès, đường trung bình, tính chất đường phân giác)." + BR +
+                "\\textbf{Chương IV (bổ sung 15/10/2026 theo tiến độ mới, dạy tuần 11--13):} $1{,}0$ điểm/đề = 1 câu trắc nghiệm "
+                "+ ý 1) của bài hình. Đề GK1 của các trường đã dạy Chương IV (Văn Khê, Văn Yên, Nguyễn Trãi, Lê Lợi) đều đặt "
+                "câu đường trung bình thành ý 1) của bài hình, ý 2) là bài tứ giác -- bộ đề giữ đúng khung đó. "
+                "Đề GK1 Hà Nội không có câu trắc nghiệm Thalès/phân giác nên câu trắc nghiệm Chương IV lấy từ đề "
+                "\\textbf{cuối kì I} của trường Hà Nội (ghi ``đề CK1'' ở cột Nguồn)."),
     tn=[
         tn(1, "Trong các biểu thức sau, đâu là đơn thức?", ["$5-2y$", "$-7x$", "$\\dfrac12x+3$", "$7x^2-2$"], "B",
            "$-7x$ là tích của một số với một biến.", "Nhận biết đơn thức", "ĐS I", "NB", "THCS Nguyễn Huy Tưởng"),
@@ -177,8 +256,12 @@ DE["on-1"] = dict(
             "Hình thang cân có hai cạnh bên bằng nhau.", "Hình thang có hai cạnh bên bằng nhau là hình thang cân."], "D",
            "Hình bình hành là hình thang có hai cạnh bên bằng nhau nhưng không phải hình thang cân.",
            "Dấu hiệu nhận biết hình thang cân", "HH III", "NB", "THCS Lê Lợi"),
-        tn(7, "Nếu $ABCD$ là hình bình hành thì", ["$AC=BD$", "$AB=CD$", "$DC=AC$", "$AB=AD$"], "B",
-           "Hình bình hành có các cạnh đối bằng nhau.", "Tính chất hình bình hành", "HH III", "NB", "THCS Nguyễn Trường Tộ"),
+        tn(7, "Cho tam giác $ABC$, điểm $D$ thuộc cạnh $AB$, điểm $E$ thuộc cạnh $BC$ sao cho $DE\\parallel AC$. "
+           "Tỉ số nào sau đây là đúng?",
+           ["$\\dfrac{BD}{AD}=\\dfrac{BE}{EC}$", "$\\dfrac{BD}{AD}=\\dfrac{BE}{BC}$", "$\\dfrac{DE}{AC}=\\dfrac{BC}{BE}$",
+            "$\\dfrac{AD}{AB}=\\dfrac{BC}{EC}$"], "A",
+           "$\\triangle ABC$ có $DE\\parallel AC$ $\\Rightarrow\\dfrac{BD}{AD}=\\dfrac{BE}{EC}$ (định lí Thalès).",
+           "Định lí Thalès: viết tỉ số", "HH IV", "NB", "THCS Đa Tốn (đề CK1)"),
         tn(8, "Cho tam giác $ABC$ vuông tại $A$ có $BC=10$ cm, đường trung tuyến $AM$. Độ dài $AM$ là:",
            ["$10$ cm", "$8$ cm", "$20$ cm", "$5$ cm"], "D",
            "$\\triangle ABC$ vuông tại $A$, trung tuyến $AM$ $\\Rightarrow AM=\\dfrac{BC}{2}=5$ cm.",
@@ -212,7 +295,7 @@ DE["on-1"] = dict(
              note="Lỗi hay gặp: bỏ ngoặc $-\\left(x^2-y^2\\right)$ quên đổi dấu $y^2$ (ý a), khai triển $-2x(x-1)$ sai dấu (ý b)."),
         dict(label="Bài 3.", level=2,
              statement="\\textbf{(1,0 điểm)} Tìm $x$, biết:" + BR +
-             "a) $2(x-3)-4x=0$;" + BR + "b) $(3x+2)(2x-3)-(x-2)(3x+5)=4$.",
+             "a) $2(x-3)-4x=0$; \\qquad b) $(3x+2)(2x-3)-(x-2)(3x+5)=4$.",
              dap_an=[
                  y("a)", 0.5, [("$2x-6-4x=0$"), ("$-2x=6$", 0.25), ("$x=-3$.", 0.25)]),
                  y("b)", 0.5, [("$6x^2-9x+4x-6-\\left(3x^2+5x-6x-10\\right)=4$"), ("$3x^2-4x+4=4$"),
@@ -237,20 +320,30 @@ DE["on-1"] = dict(
                  ("4b", "Tính giá trị biểu thức trong tình huống thực tế", "ĐS I", "VD", 0.5, 3, "THCS Tam Hiệp")],
              note="Ý a: viết $3x+4y$ (quên nhân khối lượng) không cho điểm."),
         dict(label="Bài 5.", level=3, hinh_da=HINH_ON1,
-             statement="\\textbf{(3,0 điểm)} Cho $\\triangle ABC$ có $\\widehat{A}=90^\\circ$, có $AH$ là đường cao, đường trung tuyến $AM$. "
+             statement="\\textbf{(3,0 điểm)}" + BR +
+             "\\textbf{1)} Cho tam giác $ABC$ có $D$, $E$ lần lượt là trung điểm của $AB$, $AC$. Biết $BC=5$ cm; "
+             "$\\widehat{ADE}=70^\\circ$, $\\widehat{DAE}=60^\\circ$ (như hình vẽ)." + BR +
+             "a) Tính độ dài $DE$. \\qquad b) Tính số đo các góc: $\\widehat{ABC}$, $\\widehat{ACB}$.",
+             figure=dict(tikz=HINH_C4_VANYEN_DE, pos="below"), hinh_1=HINH_C4_VANYEN, rong_1="0.3",
+             sau_hinh="\\textbf{2)} Cho $\\triangle ABC$ có $\\widehat{A}=90^\\circ$, có $AH$ là đường cao, đường trung tuyến $AM$. "
              "Kẻ $HD$ vuông góc với $AB$ và $HE$ vuông góc với $AC$ ($D\\in AB$; $E\\in AC$). $DE$ cắt $AH$ ở $O$, $DE$ cắt $AM$ ở $Q$." + BR +
              "a) Tứ giác $ADHE$ là hình gì? Vì sao?" + BR +
              "b) Lấy điểm $K$ sao cho $E$ là trung điểm của $AK$. Chứng minh tứ giác $DHKE$ là hình bình hành." + BR +
              "c) Chứng minh $\\triangle AEQ$ vuông ở $Q$.",
+             dap_an_1=[
+                 y("1) a)", 0.25, [("$\\triangle ABC$ có $D$, $E$ lần lượt là trung điểm của $AB$, $AC$ $\\Rightarrow DE$ là đường trung bình "
+                                    "của $\\triangle ABC$ $\\Rightarrow DE=\\dfrac{BC}{2}=\\dfrac52=2{,}5$ (cm).", 0.25)]),
+                 y("1) b)", 0.5, [("$DE\\parallel BC$ (tính chất đường trung bình) $\\Rightarrow\\widehat{ABC}=\\widehat{ADE}=70^\\circ$ (đồng vị).", 0.25),
+                                  ("Xét $\\triangle ABC$: $\\widehat{ACB}=180^\\circ-\\widehat{BAC}-\\widehat{ABC}=180^\\circ-60^\\circ-70^\\circ=50^\\circ$.", 0.25)]),
+             ],
              dap_an=[
-                 HINH_DUNG + " \\hfill \\textit{(0,25đ)}",
-                 y("a)", 1.0, [("Tứ giác $ADHE$ có $\\widehat{DAE}=90^\\circ$, $\\widehat{ADH}=90^\\circ$ ($HD\\perp AB$), "
-                                "$\\widehat{AEH}=90^\\circ$ ($HE\\perp AC$)", 0.5),
-                               ("$\\Rightarrow ADHE$ là hình chữ nhật (tứ giác có ba góc vuông).", 0.5)]),
-                 y("b)", 1.0, [("$ADHE$ là hình chữ nhật $\\Rightarrow DH\\parallel AE$ và $DH=AE$.", 0.25),
-                               ("$E$ là trung điểm của $AK$ $\\Rightarrow AE=EK$ và $K$ thuộc tia $AC$.", 0.25),
-                               ("$\\Rightarrow DH\\parallel EK$ và $DH=EK$.", 0.25),
-                               ("Tứ giác $DHKE$ có hai cạnh đối $DH$, $EK$ song song và bằng nhau nên $DHKE$ là hình bình hành.", 0.25)]),
+                 "\\textbf{2)} " + HINH_DUNG + " \\hfill \\textit{(0,25đ)}",
+                 y("a)", 0.5, [("Tứ giác $ADHE$ có $\\widehat{DAE}=90^\\circ$, $\\widehat{ADH}=90^\\circ$ ($HD\\perp AB$), "
+                                "$\\widehat{AEH}=90^\\circ$ ($HE\\perp AC$)", 0.25),
+                               ("$\\Rightarrow ADHE$ là hình chữ nhật (tứ giác có ba góc vuông).", 0.25)]),
+                 y("b)", 0.75, [("$ADHE$ là hình chữ nhật $\\Rightarrow DH\\parallel AE$ và $DH=AE$.", 0.25),
+                                ("$E$ là trung điểm của $AK$ $\\Rightarrow AE=EK$ và $K$ thuộc tia $AC$ $\\Rightarrow DH\\parallel EK$ và $DH=EK$.", 0.25),
+                                ("Tứ giác $DHKE$ có hai cạnh đối $DH$, $EK$ song song và bằng nhau nên $DHKE$ là hình bình hành.", 0.25)]),
                  y("c)", 0.75, [("Xét $\\triangle ABC$ vuông tại $A$, trung tuyến $AM$ $\\Rightarrow AM=\\dfrac{BC}{2}=MC$ "
                                  "$\\Rightarrow \\triangle AMC$ cân tại $M$ $\\Rightarrow \\widehat{MAC}=\\widehat{ACB}$.", 0.25),
                                 ("$ADHE$ là hình chữ nhật nên hai đường chéo $AH$, $DE$ bằng nhau và cắt nhau tại trung điểm $O$ "
@@ -261,11 +354,14 @@ DE["on-1"] = dict(
                                 ("Xét $\\triangle AEQ$: $\\widehat{AQE}=180^\\circ-\\left(\\widehat{QEA}+\\widehat{QAE}\\right)=90^\\circ$. "
                                  "Vậy $\\triangle AEQ$ vuông ở $Q$.", 0.25)]),
              ],
-             mt=[("5a", "Chứng minh hình chữ nhật (tứ giác có ba góc vuông)", "HH III", "NB", 1.25, 7, "THCS Tam Khương"),
-                 ("5b", "Chứng minh hình bình hành (cặp cạnh đối song song và bằng nhau)", "HH III", "TH", 1.0, 9, "THCS Tam Khương"),
-                 ("5c", "Góc vuông qua trung tuyến ứng với cạnh huyền và tính chất đường chéo hình chữ nhật", "HH III", "VDC", 0.75, 12, "THCS Tam Khương")],
-             note="Điểm 5a gồm 0,25đ vẽ hình. Cùng cấu hình này có ở đề Tam Hiệp và Hoàng Hoa Thám 2025--2026 -- là cấu hình hay gặp nhất. "
-                  "Ý c: HS chỉ ghi ``$\\widehat{QEA}=\\widehat{HAC}$'' mà không nêu $OA=OE$ thì trừ 0,25đ."),
+             mt=[("5.1", "Đường trung bình: tính độ dài; song song $\\Rightarrow$ góc đồng vị, tổng ba góc", "HH IV", "TH", 0.75, 6, "THCS Văn Yên"),
+                 ("5.2a", "Chứng minh hình chữ nhật (tứ giác có ba góc vuông)", "HH III", "NB", 0.75, 6, "THCS Tam Khương"),
+                 ("5.2b", "Chứng minh hình bình hành (cặp cạnh đối song song và bằng nhau)", "HH III", "TH", 0.75, 7, "THCS Tam Khương"),
+                 ("5.2c", "Góc vuông qua trung tuyến ứng với cạnh huyền và tính chất đường chéo hình chữ nhật", "HH III", "VDC", 0.75, 12, "THCS Tam Khương")],
+             note="Ý 1 (Văn Yên 2025--2026, Bài IV.1): ý b phải nêu $DE\\parallel BC$ (do đường trung bình) rồi mới dùng góc đồng vị. "
+                  "Điểm 2a gồm 0,25đ vẽ hình. "
+                  "Cùng cấu hình ý 2 có ở đề Tam Hiệp và Hoàng Hoa Thám 2025--2026 -- là cấu hình hay gặp nhất. "
+                  "Ý 2c: HS chỉ ghi ``$\\widehat{QEA}=\\widehat{HAC}$'' mà không nêu $OA=OE$ thì trừ 0,25đ."),
         dict(label="Bài 6.", level=4,
              statement="\\textbf{(0,5 điểm)} Cho $x$, $y$ là các số thực thỏa mãn $x^2+y^2+xy-3x-3y+3=0$. "
              "Chứng minh biểu thức $P=(3x+2y-6)^{1010}+(x-y+1)^{1011}+2021$ có giá trị là một số nguyên.",
@@ -283,7 +379,7 @@ DE["on-1"] = dict(
 # ═══════════ ĐỀ ÔN 2 — giữ dạng, nâng một nấc ═══════════
 DE["on-2"] = dict(
     ten="ĐỀ ÔN TẬP SỐ 2", slug_de="de-on-tap-giua-ki-1-so-2", slug_mt="ma-tran-va-dap-an-on-tap-so-2",
-    eyebrow="LỚP 8 • ĐỀ ÔN TẬP SỐ 2",
+    eyebrow="LỚP 8 • ĐỀ ÔN TẬP SỐ 2", ngat=[("bai", 4)],
     cach_dung=("Làm như thi thật 90 phút. Đề 2 cùng dạng với Đề 1 nhưng mỗi bài nâng một nấc: hằng đẳng thức bậc ba, "
                "tìm $x$ đưa về tích, bài thực tế hai bước, bài hình có ý ``trung tuyến bằng nửa cạnh $\\Rightarrow$ góc vuông''. "
                "So điểm từng bài với Đề 1 để biết HS đã vững dạng chưa."),
@@ -291,7 +387,8 @@ DE["on-2"] = dict(
                 "\\textbf{Cách chọn câu:} giữ nguyên khung và các dạng tần suất cao của Đề 1, chép nguyên văn từ trường khác, "
                 "chọn câu khó hơn một nấc: hằng đẳng thức lập phương ($41\\%$ số đề có rút gọn bằng hằng đẳng thức), "
                 "chứng minh biểu thức không phụ thuộc biến ($22\\%$), tìm $x$ dùng hằng đẳng thức ($56\\%$), "
-                "câu cuối ba ẩn ``tổng bình phương bằng $0$'' ($48\\%$)."),
+                "câu cuối ba ẩn ``tổng bình phương bằng $0$'' ($48\\%$). Chương IV: trắc nghiệm tính độ dài bằng tính chất "
+                "đường phân giác; bài hình ý 1) đường trung bình: tính độ dài, chứng tỏ hình thang (Lê Lợi)."),
     tn=[
         tn(1, "Hai đơn thức \\textbf{không} đồng dạng là:",
            ["$9xy^3$ và $xy^3$", "$8x^4y$ và $8xy^4$", "$15xy$ và $-xy$", "$2025$ và $2026$"], "B",
@@ -311,11 +408,11 @@ DE["on-2"] = dict(
         tn(6, "Hình bình hành cần thêm điều kiện nào sau đây để thành hình thoi?",
            ["Hai cạnh đối bằng nhau.", "Hai đường chéo bằng nhau.", "Hai đường chéo vuông góc.", "Hai cạnh đối song song."], "C",
            "Hình bình hành có hai đường chéo vuông góc là hình thoi.", "Dấu hiệu nhận biết hình thoi", "HH III", "NB", "THCS Đỗ Ngọc Du"),
-        tn(7, "Trong các khẳng định sau, khẳng định \\textbf{sai} là:",
-           ["Tứ giác có hai cạnh đối song song và bằng nhau là hình bình hành.", "Hình thang có hai cạnh bên song song là hình bình hành.",
-            "Hình thang có hai đường chéo bằng nhau là hình bình hành.",
-            "Tứ giác có hai đường chéo cắt nhau tại trung điểm của mỗi đường là hình bình hành."], "C",
-           "Hình thang có hai đường chéo bằng nhau là hình thang cân.", "Dấu hiệu nhận biết hình bình hành", "HH III", "NB", "THCS Nguyễn Khê"),
+        tn(7, "Cho $\\triangle ABC$ có $AD$ là tia phân giác của $\\widehat{BAC}$. Biết $AB=6$ cm, $AC=8$ cm, $CD=3$ cm. "
+           "Độ dài $BD$ bằng:",
+           ["$4$ cm", "$5$ cm", "$3{,}5$ cm", "$2{,}25$ cm"], "D",
+           "$AD$ là phân giác $\\Rightarrow\\dfrac{BD}{CD}=\\dfrac{AB}{AC}$ $\\Rightarrow BD=\\dfrac{3\\cdot 6}{8}=2{,}25$ cm.",
+           "Tính chất đường phân giác: tính độ dài", "HH IV", "TH", "Phòng GD\\&ĐT Thanh Trì (đề CK1)", level=2),
         tn(8, "Cho tam giác $ABC$ vuông tại đỉnh $A$ và trung tuyến $AM$ thỏa mãn $\\widehat{AMC}=110^\\circ$, khi đó số đo $\\widehat{ACB}$ là:",
            ["$35^\\circ$", "$55^\\circ$", "$65^\\circ$", "$70^\\circ$"], "A",
            "$AM=\\dfrac{BC}{2}=MC$ $\\Rightarrow\\triangle AMC$ cân tại $M$ $\\Rightarrow\\widehat{ACB}=\\dfrac{180^\\circ-110^\\circ}{2}=35^\\circ$.",
@@ -383,37 +480,46 @@ DE["on-2"] = dict(
                  ("4b", "Viết biểu thức diện tích phần còn lại", "ĐS II", "VD", 0.5, 4, "THCS Văn Yên"),
                  ("4c", "Tính giá trị, tính tiền", "ĐS I", "VD", 0.25, 2, "THCS Văn Yên")],
              note="Ý b: lối đi bao quanh nên mỗi chiều giảm $2\\cdot 3=6$ m; HS chỉ trừ $3$ m không cho điểm ý b."),
-        dict(label="Bài 5.", level=3, hinh_da=HINH_ON2, rong_da="0.6",
-             statement="\\textbf{(3,0 điểm)} Cho tam giác $ABC$ vuông tại $A$ $(AB<AC)$, lấy điểm $M$ bất kỳ thuộc $BC$ ($M$ khác $B$; $M$ khác $C$). "
+        dict(label="Bài 5.", level=3, hinh_da=HINH_ON2, rong_da="0.6", hinh_1=HINH_C4_LELOI, rong_1="0.4",
+             statement="\\textbf{(3,0 điểm)}" + BR +
+             "\\textbf{1)} Cho $\\triangle ABC$, gọi $M$, $N$ lần lượt là trung điểm của $AB$, $AC$. Cho $MN=3{,}5$ cm. "
+             "Tính độ dài $BC$ và chứng tỏ tứ giác $BMNC$ là hình thang." + BR +
+             "\\textbf{2)} Cho tam giác $ABC$ vuông tại $A$ $(AB<AC)$, lấy điểm $M$ bất kỳ thuộc $BC$ ($M$ khác $B$; $M$ khác $C$). "
              "Kẻ $MD$ vuông góc với $AB$ tại $D$, $ME$ vuông góc với $AC$ tại $E$." + BR +
              "a) Chứng minh tứ giác $ADME$ là hình chữ nhật." + BR +
              "b) Qua $A$ kẻ tia $Ax$ song song với $DE$; $Ax$ cắt tia $ME$ tại $F$. Trên tia $MD$ lấy điểm $G$ sao cho $D$ là trung điểm của $MG$. "
              "Chứng minh tứ giác $ADEF$ là hình bình hành và $A$ là trung điểm của đoạn thẳng $GF$." + BR +
              "c) $AM$ cắt $DE$ tại $O$, kẻ đường cao $AH$ của tam giác $ABC$. Tính số đo góc $DHE$.",
+             dap_an_1=[
+                 y("1)", 0.75, [("$M$, $N$ lần lượt là trung điểm của $AB$, $AC$ $\\Rightarrow MN$ là đường trung bình của $\\triangle ABC$.", 0.25),
+                                ("$\\Rightarrow MN\\parallel BC$ và $MN=\\dfrac{BC}{2}$ $\\Rightarrow BC=2MN=2\\cdot 3{,}5=7$ (cm).", 0.25),
+                                ("Tứ giác $BMNC$ có $MN\\parallel BC$ nên $BMNC$ là hình thang.", 0.25)]),
+             ],
              dap_an=[
-                 HINH_DUNG + " \\hfill \\textit{(0,25đ)}",
-                 y("a)", 1.0, [("Tứ giác $ADME$ có $\\widehat{DAE}=90^\\circ$, $\\widehat{ADM}=90^\\circ$ ($MD\\perp AB$), "
-                                "$\\widehat{AEM}=90^\\circ$ ($ME\\perp AC$)", 0.5),
-                               ("$\\Rightarrow ADME$ là hình chữ nhật (tứ giác có ba góc vuông).", 0.5)]),
-                 y("b)", 1.0, [("$ME\\perp AC$, $AB\\perp AC$ $\\Rightarrow ME\\parallel AB$ $\\Rightarrow EF\\parallel AD$. "
-                                "Lại có $AF\\parallel DE$ nên tứ giác $ADEF$ là hình bình hành.", 0.25),
-                               ("$\\Rightarrow AF\\parallel DE$ và $AF=DE$.", 0.25),
-                               ("$ADME$ là hình chữ nhật $\\Rightarrow DM=AE$; $D$ là trung điểm của $MG$ $\\Rightarrow GD=DM=AE$. "
-                                "Lại có $GD\\parallel AE$ (cùng vuông góc với $AB$) nên tứ giác $AGDE$ là hình bình hành "
-                                "$\\Rightarrow AG\\parallel DE$ và $AG=DE$.", 0.25),
-                               ("Qua $A$ có $AG$, $AF$ cùng song song với $DE$ nên $G$, $A$, $F$ thẳng hàng; lại có $AG=AF$ ($=DE$). "
-                                "Vậy $A$ là trung điểm của $GF$.", 0.25)]),
+                 "\\textbf{2)} " + HINH_DUNG + " \\hfill \\textit{(0,25đ)}",
+                 y("a)", 0.5, [("Tứ giác $ADME$ có $\\widehat{DAE}=90^\\circ$, $\\widehat{ADM}=90^\\circ$ ($MD\\perp AB$), "
+                                "$\\widehat{AEM}=90^\\circ$ ($ME\\perp AC$)", 0.25),
+                               ("$\\Rightarrow ADME$ là hình chữ nhật (tứ giác có ba góc vuông).", 0.25)]),
+                 y("b)", 0.75, [("$ME\\perp AC$, $AB\\perp AC$ $\\Rightarrow ME\\parallel AB$ $\\Rightarrow EF\\parallel AD$. "
+                                 "Lại có $AF\\parallel DE$ nên tứ giác $ADEF$ là hình bình hành $\\Rightarrow AF\\parallel DE$ và $AF=DE$.", 0.25),
+                                ("$ADME$ là hình chữ nhật $\\Rightarrow DM=AE$; $D$ là trung điểm của $MG$ $\\Rightarrow GD=DM=AE$. "
+                                 "Lại có $GD\\parallel AE$ (cùng vuông góc với $AB$) nên tứ giác $AGDE$ là hình bình hành "
+                                 "$\\Rightarrow AG\\parallel DE$ và $AG=DE$.", 0.25),
+                                ("Qua $A$ có $AG$, $AF$ cùng song song với $DE$ nên $G$, $A$, $F$ thẳng hàng; lại có $AG=AF$ ($=DE$). "
+                                 "Vậy $A$ là trung điểm của $GF$.", 0.25)]),
                  y("c)", 0.75, [("$ADME$ là hình chữ nhật nên hai đường chéo $AM$, $DE$ bằng nhau và cắt nhau tại trung điểm $O$ "
                                  "của mỗi đường.", 0.25),
                                 ("Xét $\\triangle AHM$ vuông tại $H$, trung tuyến $HO$ $\\Rightarrow HO=\\dfrac{AM}{2}=\\dfrac{DE}{2}$.", 0.25),
                                 ("$\\triangle DHE$ có $HO$ là đường trung tuyến ($O$ là trung điểm của $DE$) và $HO=\\dfrac{DE}{2}$ "
                                  "nên $\\triangle DHE$ vuông tại $H$. Vậy $\\widehat{DHE}=90^\\circ$.", 0.25)]),
              ],
-             mt=[("5a", "Chứng minh hình chữ nhật (tứ giác có ba góc vuông)", "HH III", "NB", 1.25, 7, "THCS Nguyễn Du"),
-                 ("5b", "Chứng minh hình bình hành; chứng minh trung điểm qua hai hình bình hành", "HH III", "VD", 1.0, 11, "THCS Nguyễn Du"),
-                 ("5c", "Trung tuyến bằng nửa cạnh $\\Rightarrow$ tam giác vuông", "HH III", "VDC", 0.75, 12, "THCS Nguyễn Du")],
-             note="Điểm 5a gồm 0,25đ vẽ hình. Trường hợp $M\\equiv H$ thì $\\widehat{DHE}=\\widehat{DME}=90^\\circ$ ngay. "
-                  "Ý b: HS chứng minh $AG=AF$ mà không nêu $G$, $A$, $F$ thẳng hàng thì chỉ cho 0,25đ ý cuối."),
+             mt=[("5.1", "Đường trung bình của tam giác: tính độ dài, nhận biết hình thang", "HH IV", "TH", 0.75, 5, "THCS Lê Lợi"),
+                 ("5.2a", "Chứng minh hình chữ nhật (tứ giác có ba góc vuông)", "HH III", "NB", 0.75, 6, "THCS Nguyễn Du"),
+                 ("5.2b", "Chứng minh hình bình hành; chứng minh trung điểm qua hai hình bình hành", "HH III", "VD", 0.75, 9, "THCS Nguyễn Du"),
+                 ("5.2c", "Trung tuyến bằng nửa cạnh $\\Rightarrow$ tam giác vuông", "HH III", "VDC", 0.75, 12, "THCS Nguyễn Du")],
+             note="Ý 1 (Lê Lợi 2023--2024, Câu 16a): HS phải nêu ``$MN$ là đường trung bình'' rồi mới suy ra $BC=2MN$; "
+                  "chỉ ghi $BC=7$ cm không cho 0,25đ đầu. Điểm 2a gồm 0,25đ vẽ hình. Trường hợp $M\\equiv H$ thì $\\widehat{DHE}=\\widehat{DME}=90^\\circ$ ngay. "
+                  "Ý 2b: HS chứng minh $AG=AF$ mà không nêu $G$, $A$, $F$ thẳng hàng thì chỉ cho 0,25đ ý cuối."),
         dict(label="Bài 6.", level=4,
              statement="\\textbf{(0,5 điểm)} Cho $a$, $b$, $c$ thỏa mãn đồng thời $a+b+c=6$ và $a^2+b^2+c^2=12$. "
              "Tính giá trị của biểu thức $P=(a-3)^{2023}+(b-3)^{2024}+(c-3)^{2025}$.",
@@ -438,7 +544,8 @@ DE["on-3"] = dict(
                 "\\textbf{Cách chọn câu:} các dạng tần suất \\textbf{thứ nhì} trong lưới 27 đề: tìm đa thức chưa biết, "
                 "tính nhanh bằng hằng đẳng thức ($19\\%$), chia hết với mọi $n$, toán thực tế quãng đường, "
                 "hình vuông -- hình thoi ($15\\%$), câu cuối tối ưu thực tế ($27\\%$ đề 2025--2026). "
-                "Câu mở rộng ghi ``(mở rộng)'' ở cột Nội dung."),
+                "Câu mở rộng ghi ``(mở rộng)'' ở cột Nội dung. Chương IV: trắc nghiệm tính độ dài bằng định lí Thalès; "
+                "bài hình ý 1) bài thực tế đo khoảng cách qua ao bằng đường trung bình (Văn Khê)."),
     tn=[
         tn(1, "Trong các biểu thức sau, biểu thức nào \\textbf{không} là đơn thức?",
            ["$(x+1)y$", "$2x^2\\left(-\\dfrac12\\right)y$", "$x^2zt$", "$0$"], "A",
@@ -464,9 +571,10 @@ DE["on-3"] = dict(
         tn(7, "Cho hình bình hành $ABCD$ có chu vi bằng $30$ cm, biết chu vi của tam giác $ACD$ bằng $22$ cm. Độ dài đường chéo $AC$ bằng",
            ["$7$ cm", "$8$ cm", "$19$ cm", "$4$ cm"], "A",
            "$AD+DC=15$ cm $\\Rightarrow AC=22-15=7$ cm.", "Tính chất cạnh đối hình bình hành (mở rộng)", "HH III", "VD", "THCS Chúc Sơn", level=3),
-        tn(8, "Cho hình bình hành $ABCD$ có $\\widehat{A}=50^\\circ$. Khi đó:",
-           ["$\\widehat{C}=50^\\circ$", "$\\widehat{B}=50^\\circ$", "$\\widehat{D}=120^\\circ$", "$\\widehat{C}=120^\\circ$"], "A",
-           "Hình bình hành có các góc đối bằng nhau.", "Tính chất góc hình bình hành", "HH III", "NB", "THCS Phan Đình Giót"),
+        tn(8, "Cho tam giác $ABC$, $DE\\parallel BC$ ($D\\in AB$, $E\\in AC$), $AE=6$, $EC=3$, $AD=4$. Độ dài đoạn thẳng $DB$ là",
+           ["$2$", "$3$", "$4$", "$5$"], "A",
+           "$DE\\parallel BC$ $\\Rightarrow\\dfrac{AD}{DB}=\\dfrac{AE}{EC}$ (định lí Thalès) $\\Rightarrow DB=\\dfrac{4\\cdot 3}{6}=2$.",
+           "Định lí Thalès: tính độ dài", "HH IV", "TH", "THCS Giảng Võ 2 (đề CK1)", level=2),
     ],
     bai=[
         dict(label="Bài 1.", level=2,
@@ -520,30 +628,41 @@ DE["on-3"] = dict(
                  ("4b", "Tính giá trị biểu thức trong tình huống thực tế", "ĐS I", "VD", 0.5, 3, "THCS Phú Diễn A")],
              note="Ý b: tính theo $(9\\cdot 5+15)(5-2)=60\\cdot 3$ cũng được."),
         dict(label="Bài 5.", level=3, hinh_da=HINH_ON3,
-             statement="\\textbf{(3,0 điểm)} Cho $\\triangle ABC$ vuông cân tại $A$. Gọi $M$ là trung điểm của $BC$. "
+             statement="\\textbf{(3,0 điểm)}" + BR +
+             "\\textbf{1)} Để tính khoảng cách giữa hai vị trí $A$ và $B$ ở hai bên bờ ao cá, người ta đã thực hiện đo đạc "
+             "như hình vẽ. Hỏi hai vị trí $A$ và $B$ cách nhau bao nhiêu mét?",
+             figure=dict(tikz=HINH_C4_VANKHE, pos="below"), hinh_1=HINH_C4_VANKHE, rong_1="0.5",
+             sau_hinh="\\textbf{2)} Cho $\\triangle ABC$ vuông cân tại $A$. Gọi $M$ là trung điểm của $BC$. "
              "Trên tia đối của tia $MA$ lấy điểm $D$ bất kì. Từ $D$ kẻ các đường thẳng vuông góc với $AB$, $AC$ lần lượt tại $E$, $F$." + BR +
              "a) Chứng minh $AEDF$ là hình vuông." + BR +
              "b) Chứng minh $EF\\parallel BC$." + BR +
              "c) Qua $E$ kẻ đường thẳng vuông góc với $MF$ tại $N$. Chứng minh $\\widehat{AND}=90^\\circ$.",
+             dap_an_1=[
+                 y("1)", 0.75, [("Trên hình: $MA=AN=9$ m $\\Rightarrow A$ là trung điểm của $MN$; $MB=BP=16$ m $\\Rightarrow B$ là trung điểm của $MP$.", 0.25),
+                                ("$\\Rightarrow AB$ là đường trung bình của $\\triangle MNP$ $\\Rightarrow AB=\\dfrac{NP}{2}$.", 0.25),
+                                ("$AB=\\dfrac{29}{2}=14{,}5$ (m). Vậy hai vị trí $A$ và $B$ cách nhau $14{,}5$ m.", 0.25)]),
+             ],
              dap_an=[
-                 HINH_DUNG + " \\hfill \\textit{(0,25đ)}",
-                 y("a)", 1.0, [("Tứ giác $AEDF$ có $\\widehat{EAF}=90^\\circ$, $\\widehat{AED}=90^\\circ$, $\\widehat{AFD}=90^\\circ$ "
+                 "\\textbf{2)} " + HINH_DUNG + " \\hfill \\textit{(0,25đ)}",
+                 y("a)", 0.5, [("Tứ giác $AEDF$ có $\\widehat{EAF}=90^\\circ$, $\\widehat{AED}=90^\\circ$, $\\widehat{AFD}=90^\\circ$ "
                                 "$\\Rightarrow AEDF$ là hình chữ nhật.", 0.25),
-                               ("$\\triangle ABC$ cân tại $A$, $AM$ là đường trung tuyến nên $AM$ cũng là đường phân giác của $\\widehat{BAC}$.", 0.25),
+                               ("$\\triangle ABC$ cân tại $A$, $AM$ là đường trung tuyến nên $AM$ cũng là đường phân giác của $\\widehat{BAC}$."),
                                ("$D$ thuộc tia $AM$ nên $AD$ là phân giác của $\\widehat{EAF}$. Hình chữ nhật $AEDF$ có đường chéo $AD$ "
-                                "là phân giác của một góc nên $AEDF$ là hình vuông.", 0.5)]),
-                 y("b)", 1.0, [("$AEDF$ là hình vuông nên hai đường chéo vuông góc: $EF\\perp AD$.", 0.5),
-                               ("$\\triangle ABC$ cân tại $A$, $AM$ là đường trung tuyến nên $AM$ cũng là đường cao: $BC\\perp AD$.", 0.25),
-                               ("$EF$ và $BC$ cùng vuông góc với $AD$ nên $EF\\parallel BC$.", 0.25)]),
+                                "là phân giác của một góc nên $AEDF$ là hình vuông.", 0.25)]),
+                 y("b)", 0.75, [("$AEDF$ là hình vuông nên hai đường chéo vuông góc: $EF\\perp AD$.", 0.25),
+                                ("$\\triangle ABC$ cân tại $A$, $AM$ là đường trung tuyến nên $AM$ cũng là đường cao: $BC\\perp AD$.", 0.25),
+                                ("$EF$ và $BC$ cùng vuông góc với $AD$ nên $EF\\parallel BC$.", 0.25)]),
                  y("c)", 0.75, [("Gọi $I$ là giao điểm của $AD$ và $EF$. $AEDF$ là hình vuông nên $AD=EF$ và $I$ là trung điểm của $AD$, $EF$.", 0.25),
                                 ("Xét $\\triangle ENF$ vuông tại $N$, trung tuyến $NI$ $\\Rightarrow NI=\\dfrac{EF}{2}=\\dfrac{AD}{2}$.", 0.25),
                                 ("$\\triangle AND$ có $NI$ là đường trung tuyến ($I$ là trung điểm của $AD$) và $NI=\\dfrac{AD}{2}$ "
                                  "nên $\\triangle AND$ vuông tại $N$. Vậy $\\widehat{AND}=90^\\circ$.", 0.25)]),
              ],
-             mt=[("5a", "Chứng minh hình vuông (hình chữ nhật có đường chéo là phân giác)", "HH III", "TH", 1.25, 8, "THCS Nguyễn Huy Tưởng"),
-                 ("5b", "Chứng minh song song qua tính chất đường chéo hình vuông", "HH III", "TH", 1.0, 8, "THCS Nguyễn Huy Tưởng"),
-                 ("5c", "Góc vuông qua trung tuyến bằng nửa cạnh (mở rộng: thêm giao điểm $I$)", "HH III", "VDC", 0.75, 12, "THCS Nguyễn Huy Tưởng")],
-             note="Điểm 5a gồm 0,25đ vẽ hình. Ý c: $N$ có thể nằm trên phần kéo dài của đoạn $MF$ -- lời giải không phụ thuộc vị trí đó."),
+             mt=[("5.1", "Đường trung bình trong thực tế: đo khoảng cách qua vật cản", "HH IV", "VD", 0.75, 5, "THCS Văn Khê"),
+                 ("5.2a", "Chứng minh hình vuông (hình chữ nhật có đường chéo là phân giác)", "HH III", "TH", 0.75, 7, "THCS Nguyễn Huy Tưởng"),
+                 ("5.2b", "Chứng minh song song qua tính chất đường chéo hình vuông", "HH III", "TH", 0.75, 6, "THCS Nguyễn Huy Tưởng"),
+                 ("5.2c", "Góc vuông qua trung tuyến bằng nửa cạnh (mở rộng: thêm giao điểm $I$)", "HH III", "VDC", 0.75, 12, "THCS Nguyễn Huy Tưởng")],
+             note="Ý 1 (Văn Khê 2025--2026, Bài IV.1): phải chỉ ra $A$, $B$ là trung điểm từ số đo trên hình rồi mới gọi $AB$ là đường trung bình. "
+                  "Điểm 2a gồm 0,25đ vẽ hình. Ý 2c: $N$ có thể nằm trên phần kéo dài của đoạn $MF$ -- lời giải không phụ thuộc vị trí đó."),
         dict(label="Bài 6.", level=4,
              statement="\\textbf{(0,5 điểm)} Một nông trại nghiên cứu việc trồng cây ăn quả trên mỗi $100\\ \\text{m}^2$ đất. "
              "Người ta thấy rằng nếu trồng $n$ cây trên $100\\ \\text{m}^2$ thì trung bình mỗi cây sẽ cho năng suất $P(n)=100-2n$ (kg/cây). "
@@ -561,12 +680,13 @@ DE["on-3"] = dict(
 # ═══════════ ĐỀ GK1 CHÍNH THỨC — câu trường khác, chưa xuất hiện ở 3 đề ôn ═══════════
 DE["gk1"] = dict(
     ten="ĐỀ CHÍNH THỨC", slug_de="de-kiem-tra-giua-ki-1-chinh-thuc", slug_mt="ma-tran-va-dap-an-giua-ki-1-chinh-thuc",
-    eyebrow="LỚP 8 • ĐỀ CHÍNH THỨC", ngat=[("tn", 6), ("bai", 4)],
+    eyebrow="LỚP 8 • ĐỀ CHÍNH THỨC", ngat=[("tn", 6), ("bai", 3)],
     cach_dung=("Thi như thật 90 phút, không gợi ý. Đề đo lại đúng các dạng của 3 đề ôn bằng câu của trường khác "
                "(đánh giá vì sự tiến bộ: HS đã thành thạo dạng chưa, chứ không đo trí nhớ). Ghi điểm từng bài vào phiếu theo dõi ở cuối file."),
     gioi_thieu=("\\textbf{ĐỀ KIỂM TRA GIỮA HỌC KÌ I TOÁN 8 -- ĐỀ CHÍNH THỨC} (90 phút -- Thang điểm 10 -- 8 câu trắc nghiệm, 6 bài tự luận)." + BR +
                 "\\textbf{Cách chọn câu:} giữ đúng khung của 3 đề ôn; mỗi bài lấy câu của trường \\textbf{chưa dùng} cho bài đó ở 3 đề ôn "
-                "(cùng dạng, khác trường) để đo năng lực thật. Mức độ tương đương Đề ôn 2."),
+                "(cùng dạng, khác trường) để đo năng lực thật. Mức độ tương đương Đề ôn 2. Phạm vi hết Chương IV: "
+                "trắc nghiệm phân giác tính độ dài (Hát Môn), bài hình ý 1) đo khoảng cách qua vật cản bằng đường trung bình (Nguyễn Trãi)."),
     tn=[
         tn(1, "Kết quả của phép tính $2x^2y+3xy^2-\\left(2xy^2-3x^2y\\right)$ là:",
            ["$6x^2y$", "$5x^2y+xy^2$", "$-x^2y+xy^2$", "$xy^2$"], "B",
@@ -589,9 +709,10 @@ DE["gk1"] = dict(
         tn(7, "Hình bình hành $ABCD$ là hình chữ nhật khi",
            ["$AB=AD$", "$\\widehat{D}=90^\\circ$", "$AB=2AC$", "$\\widehat{A}=\\widehat{C}$"], "B",
            "Hình bình hành có một góc vuông là hình chữ nhật.", "Dấu hiệu nhận biết hình chữ nhật", "HH III", "NB", "THCS Nguyễn Khê"),
-        tn(8, "Tứ giác có hai cạnh đối song song và hai đường chéo bằng nhau là:",
-           ["Hình thang cân", "Hình bình hành", "Hình chữ nhật", "Hình thoi"], "A",
-           "Hình thang có hai đường chéo bằng nhau là hình thang cân.", "Dấu hiệu nhận biết hình thang cân", "HH III", "TH", "THCS Đỗ Ngọc Du", level=2),
+        tn(8, "Cho $\\triangle ABC$, phân giác $AD$ ($D\\in BC$), biết: $AB=10$ cm, $AC=19$ cm, $BD=5$ cm. Độ dài đoạn thẳng $CD$ bằng:",
+           ["$20$ cm", "$38$ cm", "$9{,}5$ cm", "$\\dfrac{50}{19}$ cm"], "C",
+           "$AD$ là phân giác $\\Rightarrow\\dfrac{CD}{BD}=\\dfrac{AC}{AB}$ $\\Rightarrow CD=\\dfrac{5\\cdot 19}{10}=9{,}5$ cm.",
+           "Tính chất đường phân giác: tính độ dài", "HH IV", "TH", "THCS Hát Môn (đề CK1)", level=2),
     ],
     bai=[
         dict(label="Bài 1.", level=1,
@@ -647,32 +768,44 @@ DE["gk1"] = dict(
                  ("4b", "Viết đa thức diện tích mới (nhân hai đa thức) và tính giá trị", "ĐS I", "VD", 0.75, 6, "THCS Đỗ Ngọc Du")],
              note="Ý b: viết $(x+2)(y-3)$ chưa khai triển vẫn cho 0,25đ thứ hai."),
         dict(label="Bài 5.", level=3, hinh_da=HINH_GK,
-             statement="\\textbf{(3,0 điểm)} Cho $\\triangle ABC$ vuông tại $A$ có $AB<AC$, đường cao $AH$. Từ $H$ kẻ $HM\\perp AB$ $(M\\in AB)$. "
+             statement="\\textbf{(3,0 điểm)}" + BR +
+             "\\textbf{1)} Giữa hai điểm $B$ và $C$ có một chướng ngại vật, không thể đo trực tiếp được. Để đo khoảng cách giữa hai điểm "
+             "$B$ và $C$, người ta lấy thêm các điểm $A$, $D$, $E$ như trên hình vẽ và đo đoạn thẳng $DE$. Hỏi khoảng cách giữa hai điểm "
+             "$B$ và $C$ là bao nhiêu mét, biết $DE=35$ m.",
+             figure=dict(tikz=HINH_C4_NGTRAI_DE, pos="below"), hinh_1=HINH_C4_NGTRAI, rong_1="0.4",
+             sau_hinh="\\textbf{2)} Cho $\\triangle ABC$ vuông tại $A$ có $AB<AC$, đường cao $AH$. Từ $H$ kẻ $HM\\perp AB$ $(M\\in AB)$. "
              "Kẻ $HN\\perp AC$ $(N\\in AC)$. Gọi $I$ là trung điểm của $HC$. Tia $MH$ cắt tia $AI$ tại $K$." + BR +
              "a) Tứ giác $AMHN$ là hình gì? Vì sao?" + BR +
              "b) Chứng minh tứ giác $AHKC$ là hình bình hành." + BR +
              "c) $MN$ cắt $AH$ tại $O$, $CO$ cắt $AK$ tại $G$. Chứng minh $AK=3AG$.",
+             dap_an_1=[
+                 y("1)", 0.75, [("Trên hình: $AD=DB$, $AE=EC$ $\\Rightarrow D$, $E$ lần lượt là trung điểm của $AB$, $AC$.", 0.25),
+                                ("$\\Rightarrow DE$ là đường trung bình của $\\triangle ABC$ $\\Rightarrow DE=\\dfrac{BC}{2}$.", 0.25),
+                                ("$BC=2DE=2\\cdot 35=70$ (m). Vậy khoảng cách giữa hai điểm $B$ và $C$ là $70$ m.", 0.25)]),
+             ],
              dap_an=[
-                 HINH_DUNG + " \\hfill \\textit{(0,25đ)}",
-                 y("a)", 1.0, [("Tứ giác $AMHN$ có $\\widehat{MAN}=90^\\circ$, $\\widehat{AMH}=90^\\circ$ ($HM\\perp AB$), "
-                                "$\\widehat{ANH}=90^\\circ$ ($HN\\perp AC$)", 0.5),
-                               ("$\\Rightarrow AMHN$ là hình chữ nhật (tứ giác có ba góc vuông).", 0.5)]),
-                 y("b)", 1.0, [("$AMHN$ là hình chữ nhật $\\Rightarrow MH\\parallel AN$ $\\Rightarrow HK\\parallel AC$.", 0.25),
-                               ("Xét $\\triangle IHK$ và $\\triangle ICA$: $\\widehat{HIK}=\\widehat{CIA}$ (đối đỉnh), $IH=IC$ ($I$ là trung điểm của $HC$), "
-                                "$\\widehat{IHK}=\\widehat{ICA}$ (so le trong, $HK\\parallel AC$)", 0.25),
-                               ("$\\Rightarrow\\triangle IHK=\\triangle ICA$ (g.c.g) $\\Rightarrow IK=IA$.", 0.25),
-                               ("Tứ giác $AHKC$ có hai đường chéo $AK$, $HC$ cắt nhau tại trung điểm $I$ của mỗi đường "
-                                "nên $AHKC$ là hình bình hành.", 0.25)]),
+                 "\\textbf{2)} " + HINH_DUNG + " \\hfill \\textit{(0,25đ)}",
+                 y("a)", 0.5, [("Tứ giác $AMHN$ có $\\widehat{MAN}=90^\\circ$, $\\widehat{AMH}=90^\\circ$ ($HM\\perp AB$), "
+                                "$\\widehat{ANH}=90^\\circ$ ($HN\\perp AC$)", 0.25),
+                               ("$\\Rightarrow AMHN$ là hình chữ nhật (tứ giác có ba góc vuông).", 0.25)]),
+                 y("b)", 0.75, [("$AMHN$ là hình chữ nhật $\\Rightarrow MH\\parallel AN$ $\\Rightarrow HK\\parallel AC$.", 0.25),
+                                ("Xét $\\triangle IHK$ và $\\triangle ICA$: $\\widehat{HIK}=\\widehat{CIA}$ (đối đỉnh), $IH=IC$ ($I$ là trung điểm của $HC$), "
+                                 "$\\widehat{IHK}=\\widehat{ICA}$ (so le trong, $HK\\parallel AC$)"),
+                                ("$\\Rightarrow\\triangle IHK=\\triangle ICA$ (g.c.g) $\\Rightarrow IK=IA$.", 0.25),
+                                ("Tứ giác $AHKC$ có hai đường chéo $AK$, $HC$ cắt nhau tại trung điểm $I$ của mỗi đường "
+                                 "nên $AHKC$ là hình bình hành.", 0.25)]),
                  y("c)", 0.75, [("$AMHN$ là hình chữ nhật nên hai đường chéo $MN$, $AH$ cắt nhau tại trung điểm $O$ của mỗi đường "
                                  "$\\Rightarrow O$ là trung điểm của $AH$.", 0.25),
                                 ("$\\triangle AHC$ có hai đường trung tuyến $CO$, $AI$ cắt nhau tại $G$ $\\Rightarrow G$ là trọng tâm "
                                  "$\\Rightarrow AG=\\dfrac23 AI$.", 0.25),
                                 ("Mà $IK=IA$ nên $AK=2AI$ $\\Rightarrow AG=\\dfrac23\\cdot\\dfrac{AK}{2}=\\dfrac{AK}{3}$. Vậy $AK=3AG$.", 0.25)]),
              ],
-             mt=[("5a", "Chứng minh hình chữ nhật (tứ giác có ba góc vuông)", "HH III", "NB", 1.25, 7, "THCS Phan Đình Giót"),
-                 ("5b", "Chứng minh hình bình hành (hai đường chéo cắt nhau tại trung điểm)", "HH III", "TH", 1.0, 10, "THCS Phan Đình Giót"),
-                 ("5c", "Trọng tâm tam giác kết hợp đường chéo hình chữ nhật, hình bình hành", "HH III", "VDC", 0.75, 12, "THCS Phan Đình Giót")],
-             note="Điểm 5a gồm 0,25đ vẽ hình. Ý c dùng trọng tâm tam giác (lớp 7): HS không nêu ``$O$ là trung điểm của $AH$'' thì không có cơ sở gọi $CO$ là trung tuyến -- trừ 0,25đ."),
+             mt=[("5.1", "Đường trung bình trong thực tế: đo khoảng cách qua chướng ngại vật", "HH IV", "VD", 0.75, 5, "THCS Nguyễn Trãi"),
+                 ("5.2a", "Chứng minh hình chữ nhật (tứ giác có ba góc vuông)", "HH III", "NB", 0.75, 6, "THCS Phan Đình Giót"),
+                 ("5.2b", "Chứng minh hình bình hành (hai đường chéo cắt nhau tại trung điểm)", "HH III", "TH", 0.75, 8, "THCS Phan Đình Giót"),
+                 ("5.2c", "Trọng tâm tam giác kết hợp đường chéo hình chữ nhật, hình bình hành", "HH III", "VDC", 0.75, 12, "THCS Phan Đình Giót")],
+             note="Ý 1 (Nguyễn Trãi 2025--2026, Bài 4.1): cùng dạng ý 1 Đề ôn 3 (đo khoảng cách qua vật cản), khác trường. "
+                  "HS phải đọc kí hiệu đoạn bằng nhau trên hình để nêu $D$, $E$ là trung điểm. Điểm 2a gồm 0,25đ vẽ hình. Ý 2c dùng trọng tâm tam giác (lớp 7): HS không nêu ``$O$ là trung điểm của $AH$'' thì không có cơ sở gọi $CO$ là trung tuyến -- trừ 0,25đ."),
         dict(label="Bài 6.", level=4,
              statement="\\textbf{(0,5 điểm)} Cho $a^2+b^2+c^2=ab+bc+ca$ và $a+b+c=2022$. Tính $a$, $b$, $c$.",
              dap_an=[
@@ -688,7 +821,7 @@ DE["gk1"] = dict(
 
 # Bản đồ dạng qua 4 đề (in ở file đáp án đề GK1)
 TIEN_BO = [
-    ["Phần I (8 câu)", "Đơn thức, bậc, chia, HĐT; góc tứ giác; HTC, HBH; trung tuyến", "Đồng dạng, chia hết, lập phương; HBH $\\to$ thoi; trung tuyến + tam giác cân",
+    ["Phần I (8 câu)", "Đơn thức, bậc, chia, HĐT; góc tứ giác; HTC; trung tuyến", "Đồng dạng, chia hết, lập phương; HBH $\\to$ thoi; trung tuyến + tam giác cân",
      "Điều kiện chia hết, tính giá trị; HCN, thoi; chu vi HBH", "Cộng đa thức, chia, HĐT; góc; HTC, HCN"],
     ["Bài 1 -- đa thức", "Thu gọn, tính giá trị (Bát Tràng)", "Cộng đa thức, tìm $N$ (Chu Văn An)", "Tìm đa thức chưa biết (Vạn Phúc)",
      "Cộng, tìm $C$ (Nguyễn Trường Tộ)"],
@@ -697,7 +830,9 @@ TIEN_BO = [
     ["Bài 3 -- tìm $x$", "Chuyển vế; đặt nhân tử chung (Hoàng Hoa Thám)", "Lập phương; hiệu hai bình phương", "Bình phương một hiệu; hiệu hai lập phương",
      "Chia đơn thức; hiệu hai bình phương"],
     ["Bài 4 -- thực tế", "Tiền mua hoa quả (Tam Hiệp)", "Diện tích sân cỏ (Văn Yên)", "Quãng đường (Phú Diễn A)", "Diện tích vườn mới (Đỗ Ngọc Du)"],
-    ["Bài 5 -- hình", "HCN $\\to$ HBH $\\to$ góc vuông (Tam Khương)", "HCN $\\to$ HBH, trung điểm $\\to$ góc vuông (Nguyễn Du)",
+    ["Chương IV (TN, Bài 5 ý 1)", "Tỉ số Thalès; đường TB, góc (Văn Yên)", "Phân giác; đường TB, hình thang (Lê Lợi)",
+     "Thalès tính độ dài; đo qua ao (Văn Khê)", "Phân giác; đo qua vật cản (Nguyễn Trãi)"],
+    ["Bài 5 ý 2 -- tứ giác", "HCN $\\to$ HBH $\\to$ góc vuông (Tam Khương)", "HCN $\\to$ HBH, trung điểm $\\to$ góc vuông (Nguyễn Du)",
      "Hình vuông $\\to$ song song $\\to$ góc vuông (Nguyễn Huy Tưởng)", "HCN $\\to$ HBH $\\to$ trọng tâm (Phan Đình Giót)"],
     ["Bài 6 -- câu cuối", "Tổng bình phương hai ẩn (LTV)", "Tổng bình phương ba ẩn (Ba Đình)", "Tối ưu thực tế (Chu Văn An)",
      "Tổng bình phương, $a=b=c$ (Phú Diễn A)"],
@@ -707,6 +842,7 @@ TIEN_BO = [
 # Quận/huyện CŨ (trước 7/2025) — khớp inputs/refs/de-thi/lop-8/luoi-dang/gk1.json.
 # Luật (docs/quy-trinh-bo-de-on-tap.md): mỗi đề >= 4 quận và không quận nào quá 40% điểm đề;
 # cả bộ 4 đề không quận nào quá 25%, không trường nào quá 15% tổng điểm.
+CHUA_RO = "chưa rõ quận"
 QUAN = {
     "THCS Nguyễn Huy Tưởng": "Đông Anh", "THCS Tam Khương": "Đống Đa", "THCS Tam Hiệp": "Thanh Trì",
     "THCS Phan Đình Giót": "Thanh Xuân", "THCS Phú Diễn A": "Bắc Từ Liêm", "THCS Lê Lợi": "Hà Đông",
@@ -716,6 +852,9 @@ QUAN = {
     "THCS Chu Văn An": "Hoàng Mai", "THCS Văn Khê": "Hà Đông", "THCS Ba Đình": "Ba Đình", "THCS Văn Yên": "Hà Đông",
     "THCS Vạn Phúc (Hà Đông)": "Hà Đông", "THCS Chuyên Mỹ": "Phú Xuyên", "THCS Vạn Phúc (Thanh Trì)": "Thanh Trì",
     "THCS Nguyễn Công Trứ": "Ba Đình",
+    # Chương IV (bổ sung 15/10/2026). Nguyễn Trãi: header đề không ghi quận (lưới dạng ghi "?").
+    "THCS Nguyễn Trãi": CHUA_RO, "THCS Đa Tốn (đề CK1)": "Gia Lâm", "Phòng GD\\&ĐT Thanh Trì (đề CK1)": "Thanh Trì",
+    "THCS Giảng Võ 2 (đề CK1)": "Ba Đình", "THCS Hát Môn (đề CK1)": "Phúc Thọ",
 }
 
 
@@ -732,7 +871,7 @@ def kiem_nguon():
         q = defaultdict(float)
         for r in dong_mt(D):
             q[QUAN[r[6]]] += r[4]; tq[QUAN[r[6]]] += r[4]; tt[r[6]] += r[4]
-        assert len(q) >= 4, (k, dict(q))
+        assert len([a for a in q if a != CHUA_RO]) >= 4, (k, dict(q))
         assert max(q.values()) <= 4.0 + 1e-9, (k, dict(q))
         truong = {r[6] for r in dong_mt(D)}
         bao_cao[k] = (len(truong), q)
@@ -750,7 +889,7 @@ def kiem_diem():
         for b in D["bai"]:
             tong_mt = sum(r[4] for r in b["mt"])
             tong_da = 0.0
-            for a in b["dap_an"]:
+            for a in b.get("dap_an_1", []) + b["dap_an"]:
                 tong_da += sum(float(m.replace(",", ".")) for m in re.findall(r"\\hfill \\textit\{\(([\d,]+)đ\)\}", a))
             assert abs(tong_mt - tong_da) < 1e-9, (k, b["label"], tong_mt, tong_da)
         assert "Leftrightarrow" not in json.dumps(D), k
@@ -783,9 +922,12 @@ def bang_mt(rows, tieu_de):
 
 def bang_muc(rows):
     muc = {"NB": 0, "TH": 0, "VD": 0, "VDC": 0}
-    ds = {"Đại số (Chương I, II)": dict(muc), "Hình học (Chương III)": dict(muc)}
+    ds = {"Đại số (Chương I, II)": dict(muc), "Hình học -- Tứ giác (Chương III)": dict(muc),
+          "Hình học -- Định lí Thalès (Chương IV)": dict(muc)}
     for c, nd, ch, m, di, ph, ng in rows:
-        ds["Hình học (Chương III)" if ch.startswith("HH") else "Đại số (Chương I, II)"][m] += di
+        k = ("Hình học -- Định lí Thalès (Chương IV)" if ch == "HH IV" else
+             "Hình học -- Tứ giác (Chương III)" if ch.startswith("HH") else "Đại số (Chương I, II)")
+        ds[k][m] += di
     s = ("\\noindent\\textbf{TỔNG HỢP THEO MẠCH KIẾN THỨC VÀ CẤP ĐỘ (điểm)}\\par\\vspace{-6pt}\n"
          "\\begin{center}\\footnotesize\\linespread{1}\\selectfont\\renewcommand{\\arraystretch}{1.12}\n\\begin{tabular}{|l|c|c|c|c|c|}\n\\hline\n"
          "\\textbf{Mạch kiến thức} & \\textbf{NB} & \\textbf{TH} & \\textbf{VD} & \\textbf{VDC} & \\textbf{Tổng} \\\\ \\hline\n")
@@ -809,7 +951,7 @@ def bang_dap_an_tn(D):
 
 
 def bang_tien_bo():
-    s = ("\\begin{center}\\footnotesize\\renewcommand{\\arraystretch}{1.1}\n"
+    s = ("\\begin{center}\\scriptsize\\linespread{1}\\selectfont\\renewcommand{\\arraystretch}{1.1}\n"
          "\\begin{tabular}{|p{2.2cm}|p{3.05cm}|p{3.05cm}|p{3.05cm}|p{3.05cm}|}\n\\hline\n"
          "\\textbf{Dạng} & \\textbf{Đề ôn 1} & \\textbf{Đề ôn 2} & \\textbf{Đề ôn 3} & \\textbf{GK1 chính thức} \\\\ \\hline\n")
     for r in TIEN_BO:
@@ -822,7 +964,7 @@ def bang_theo_doi():
          "\\begin{tabular}{|l|c|c|c|c|c|}\n\\hline\n"
          "\\textbf{Phần (điểm tối đa)} & \\textbf{Đề ôn 1} & \\textbf{Đề ôn 2} & \\textbf{Đề ôn 3} & \\textbf{GK1} & \\textbf{Tiến bộ?} \\\\ \\hline\n")
     for b in ["Phần I -- trắc nghiệm (2,0)", "Bài 1, 2 -- đa thức, phép tính, HĐT (2,5)", "Bài 3 -- tìm $x$ (1,0)",
-              "Bài 4 -- toán thực tế (1,0)", "Bài 5 -- hình học (3,0)", "Bài 6 -- câu cuối (0,5)", "\\textbf{Tổng (10,0)}"]:
+              "Bài 4 -- toán thực tế (1,0)", "Bài 5 -- hình học: ý 1 Chương IV, ý 2 tứ giác (3,0)", "Bài 6 -- câu cuối (0,5)", "\\textbf{Tổng (10,0)}"]:
         s += b + " & & & & & \\\\ \\hline\n"
     return s + "\\end{tabular}\\end{center}"
 
@@ -840,6 +982,10 @@ def khoi_bai(b):
     sol = BR.join(b["dap_an"])
     if b.get("hinh_da"):
         sol = "\\begin{center}\\adjustbox{max width=0.75\\linewidth}{" + b["hinh_da"] + "}\\end{center}" + sol
+    if b.get("dap_an_1"):   # Bài 5 ý 1 (Chương IV): hình + lời giải ý 1 đứng trước hình/lời giải ý 2
+        h1 = b.get("hinh_1") or b["figure"]["tikz"]
+        sol = ("\\begin{center}\\adjustbox{max width=0.5\\linewidth}{" + h1 + "}\\end{center}"
+               + BR.join(b["dap_an_1"]) + BR + sol)
     blk = dict(type="problem", label=b["label"], level=b["level"], statement=b["statement"], tier="onclass", solution=sol)
     if b.get("figure"):
         blk["figure"] = dict(tikz=b["figure"]["tikz"], pos=b["figure"]["pos"])
@@ -886,10 +1032,10 @@ def mt_json(k, D):
     t2, tot = bang_muc(rows)
     assert abs(d_tn + d_tl - 10) < 1e-9, (k, d_tn + d_tl)
     n_tr, q = NGUON[k]
-    nguon = (f"\\textbf{{Nguồn đề:}} câu lấy từ {n_tr} trường thuộc {len(q)} quận/huyện ("
+    nguon = (f"\\textbf{{Nguồn đề:}} câu lấy từ {n_tr} trường thuộc {len([a for a in q if a != CHUA_RO])} quận/huyện ("
              + "; ".join(f"{a} {d(v)}đ" for a, v in sorted(q.items(), key=lambda t: -t[1]))
              + "). Không quận nào quá $40\\%$ số điểm của đề; cả bộ 4 đề lấy từ "
-             + f"{len(NGUON_BO)} quận/huyện, không quận nào quá $25\\%$.")
+             + f"{len([a for a in NGUON_BO if a != CHUA_RO])} quận/huyện, không quận nào quá $25\\%$.")
     tong_p = p_tn + p_tl
     st0 = [dict(type="para", text=D["gioi_thieu"] + BR + nguon), dict(type="para", text=t_tn), dict(type="para", text=t_tl),
            dict(type="para", text=t2),
@@ -910,9 +1056,16 @@ def mt_json(k, D):
             b = D["bai"][i]
             diem = sum(r[4] for r in b["mt"])
             blocks.append(dict(type="para", text=f"\\textbf{{{b['label'].upper().replace('.', '')} ({d(diem)} điểm).}}"))
+            if b.get("dap_an_1"):   # Bài 5 ý 1 (Chương IV): hình ý 1 + lời giải ý 1 trước
+                if b.get("hinh_1"):
+                    blocks.append(dict(type="figure", tikz=b["hinh_1"], width=b.get("rong_1", "0.4") + "\\linewidth"))
+                elif b.get("figure"):
+                    blocks.append(dict(type="figure", tikz=b["figure"]["tikz"], width=b["figure"].get("rong_da", "0.45") + "\\linewidth"))
+                for a in b["dap_an_1"]:
+                    blocks.append(dict(type="para", text=a))
             if b.get("hinh_da"):
                 blocks.append(dict(type="figure", tikz=b["hinh_da"], width=b.get("rong_da", "0.75") + "\\linewidth"))
-            if b.get("figure"):
+            if b.get("figure") and not b.get("dap_an_1"):
                 blocks.append(dict(type="figure", tikz=b["figure"]["tikz"], width=b["figure"].get("rong_da", "0.45") + "\\linewidth"))
             for a in b["dap_an"]:
                 blocks.append(dict(type="para", text=a))
@@ -933,8 +1086,8 @@ def mt_json(k, D):
             dict(type="para", text=bang_tien_bo()),
             dict(type="para", text="\\textbf{PHIẾU THEO DÕI TIẾN BỘ (ghi điểm từng phần của mỗi học sinh)}" + BR +
                  "\\textbf{Mức thành thạo:} Phần I $\\ge 1{,}5$ -- Bài 1, 2 $\\ge 2{,}0$ -- Bài 3 đủ $1{,}0$ -- Bài 4 $\\ge 0{,}75$ -- "
-                 "Bài 5 $\\ge 2{,}25$ (lấy trọn a, b)." + BR +
-                 "Đạt cả năm mức là khoảng $7{,}5$ điểm trở lên. Ý c bài hình và Bài 6 ($1{,}25$ điểm) là phần phân loại học sinh khá -- giỏi." + BR +
+                 "Bài 5 $\\ge 2{,}25$ (lấy trọn ý 1 và 2a, 2b)." + BR +
+                 "Đạt cả năm mức là khoảng $7{,}5$ điểm trở lên. Ý 2c bài hình và Bài 6 ($1{,}25$ điểm) là phần phân loại học sinh khá -- giỏi." + BR +
                  "Cột \\textit{Tiến bộ?}: so điểm GK1 với điểm cao nhất của phần đó ở 3 đề ôn; phần nào GK1 thấp hơn thì tra bản đồ dạng ở trên để ôn lại."),
             dict(type="para", text=bang_theo_doi()),
         ]
