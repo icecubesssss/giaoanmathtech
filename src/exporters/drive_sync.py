@@ -183,7 +183,8 @@ def sync_dir(out_dir: Path, outputs_root: Path, tieu_de: str | None = None,
     # Chép MỌI bản in trong thư mục. Trước 06/09/2026 chỉ nhận bộ có tiền tố 'ca-';
     # từ khi tên file tự mô tả ('Toan8B-Tuan10-…-Phieu-HS.pdf') thì lọc theo tiền tố
     # là bỏ sót sạch — Drive nhận nguyên thư mục, tên nào cũng là thành phẩm.
-    pdfs = sorted(out_dir.glob("*.pdf"))
+    # Bản WORD (.docx) cùng tên đi kèm PDF (Thầy 22/10/2026: "cần các file xuất ra là word").
+    pdfs = sorted(list(out_dir.glob("*.pdf")) + list(out_dir.glob("*.docx")))
     # Tờ đề / đáp án kiểm tra không chiếu lên màn — bỏ bản Slide khỏi Drive.
     if target.ly_do == "kiểm tra chương":
         pdfs = [p for p in pdfs if not p.name.endswith("-Slide.pdf")]

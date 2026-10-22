@@ -10,6 +10,12 @@ outputs/
 *.synctex.gz
 # === Trạng thái/cache cục bộ từng máy (đẩy lên sẽ gây xung đột liên tục) ===
 storage/run_state.json
+# Cache bản Word (máy nào tự sinh lại: công thức ~10s, hình theo từng phiếu) — 22/10/2026
+# từng lỡ commit 56 nghìn file .xml (221MB) ⇒ cấm hẳn.
+storage/cache/omml/
+storage/cache/omml.sqlite*
+storage/cache/tikz/
+storage/cache/qr/
 .tectonic/
 __pycache__/
 *.pyc
@@ -27,6 +33,8 @@ config/design_tokens.json
 *.PDF
 *.doc
 *.docx
+# NGOẠI LỆ: KHUÔN Word (header/footer/watermark) phải theo repo, thiếu là build Word gãy.
+!templates/docx/*.docx
 *.ppt
 *.pptx
 *.pptm

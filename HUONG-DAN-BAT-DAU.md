@@ -20,6 +20,7 @@ git clone <địa-chỉ-repo> && cd giaoanMathtech
 python3 -m venv .venv
 .venv/bin/pip install -r requirements.txt
 brew install tectonic                 # bộ dựng PDF
+brew install pandoc                   # (tuỳ chọn) bản Word .docx — đổi công thức thành Equation của Word
 ```
 
 ### Windows
@@ -33,7 +34,11 @@ py -3 -m venv .venv
 # Tectonic: tải bản .exe cho Windows ở trang phát hành chính thức
 #   https://github.com/tectonic-typesetting/tectonic/releases
 # giải nén, để tectonic.exe vào một thư mục rồi thêm thư mục đó vào PATH.
+winget install JohnMacFarlane.Pandoc  # (tuỳ chọn) bản Word .docx
 ```
+
+> **Bản Word (.docx)** chỉ cần thêm **pandoc**. Máy chưa cài pandoc thì build vẫn ra PDF
+> bình thường, chỉ báo "bỏ qua bản Word".
 
 **Kiểm tra cài xong chưa** — chạy đúng 1 lệnh, phải thấy `155 passed`:
 
@@ -80,6 +85,7 @@ Cấu hình phím tắt nằm ở [.vscode/tasks.json](.vscode/tasks.json), đã
 | Build phiếu theo tên | `make b Q="hinh binh hanh"` | `.venv\Scripts\python -m scripts.quick build "hinh binh hanh"` |
 | Xem bản đọc | `make md Q="hbh"` | `.venv\Scripts\python -m scripts.quick md "hbh"` |
 | Tìm phiếu nằm đâu | `make f Q="hbh"` | `.venv\Scripts\python -m scripts.quick find "hbh"` |
+| Ra bản Word cạnh PDF | `make docx FILE=đường/dẫn.json` | `.venv\Scripts\python -m src.main build-docx đường\dẫn.json` |
 | Kiểm cả kho | `make check` | `.venv\Scripts\python -m src.main validate-all` |
 | Chạy test | `make test` | `.venv\Scripts\python -m pytest -q` |
 | Dọn bản in cũ mồ côi | `make prune` | `.venv\Scripts\python -m scripts.prune_outputs` |

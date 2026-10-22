@@ -419,7 +419,8 @@ _RENDERERS = {"handout": render_handout, "guide": render_guide, "slide": render_
 
 
 def _build_kinds(lesson: LessonPackage, kinds, out_root: Path, force: bool = False,
-                 prefix: str = "", quiet: bool = False, json_path: Path | str | None = None):
+                 prefix: str = "", quiet: bool = False, json_path: Path | str | None = None,
+                 docx: bool | None = None):
     """Build các bản (handout/guide/slide) SONG SONG với tiền tố Ca (vd 'ca-01-handout.pdf')."""
     import shutil
     ca_pre = get_ca_prefix(lesson, json_path)
@@ -445,7 +446,38 @@ def _build_kinds(lesson: LessonPackage, kinds, out_root: Path, force: bool = Fal
             if fn == "handout":
                 for m in check_print_layout(pdf, dau_muc):
                     print(f"{prefix}  ⚠ {m}")
+    # Bản WORD (.docx) cạnh phiếu HS — cùng tên, cùng thư mục (Thầy 22/10/2026).
+    from src.compiler.docx_builder import DOCX_DEFAULT
+    if "handout" in kinds and (docx if docx is not None else DOCX_DEFAULT):
+        _build_docx_one(lesson, out_root, json_path, ca_pre, force=force, prefix=prefix)
     return results
+
+
+def _build_docx_one(lesson: LessonPackage, out_root: Path, json_path, ca_pre: str,
+                    force: bool = False, prefix: str = "") -> Path | None:
+    from src.compiler.docx_builder import build_docx
+    lesson_dir = Path(json_path).resolve().parent if json_path else None
+    path, errs = build_docx(lesson, out_root / lesson.slug,
+                            ten_ban_in(lesson, json_path, "handout", ca_pre),
+                            lesson_dir=lesson_dir, force=force)
+    if path is not None:
+        print(f"{prefix}OK → {path}")
+    for e in errs[:25]:
+        print(f"{prefix}  {'⚠' if path else '✗'} [docx] {e}", file=sys.stderr if not path else sys.stdout)
+    if len(errs) > 25:
+        print(f"{prefix}  … còn {len(errs) - 25} lỗi [docx] nữa")
+    return path
+
+
+def cmd_build_docx(args: argparse.Namespace) -> int:
+    """CHỈ ra bản Word (.docx) của phiếu HS — xem nhanh / sửa trong Word."""
+    lesson = _load(args.lesson)
+    if not _gate_before_build(lesson, getattr(args, "force", False), lesson_path=args.lesson):
+        return 1
+    ca_pre = get_ca_prefix(lesson, args.lesson)
+    path = _build_docx_one(lesson, _out_root(args.lesson), args.lesson, ca_pre,
+                           force=getattr(args, "force", False))
+    return 0 if path else 1
 
 
 def cmd_build_handout(args: argparse.Namespace) -> int:
@@ -493,7 +525,8 @@ def cmd_build_all(args: argparse.Namespace) -> int:
         return 1
     only = getattr(args, "only", None)
     kinds = [only] if only else list(_BUILD_KINDS)
-    _build_kinds(lesson, kinds, _out_root(args.lesson), force=getattr(args, "force", False), json_path=args.lesson)
+    _build_kinds(lesson, kinds, _out_root(args.lesson), force=getattr(args, "force", False), json_path=args.lesson,
+                 docx=getattr(args, "docx", None))
     _set_lesson_status(lesson.slug, "built")
     return 0
 
@@ -526,7 +559,8 @@ def cmd_build_folder(args: argparse.Namespace) -> int:
             continue
         out_root = _out_root(str(j))
         try:
-            _build_kinds(lesson, list(_BUILD_KINDS), out_root, force=force, prefix="  ", json_path=str(j))
+            _build_kinds(lesson, list(_BUILD_KINDS), out_root, force=force, prefix="  ", json_path=str(j),
+                         docx=getattr(args, "docx", None))
             _set_lesson_status(lesson.slug, "built")
             built.append(lesson.slug)
         except Exception as e:  # noqa: BLE001 — báo lỗi build 1 phiếu, vẫn chạy tiếp phiếu khác
@@ -646,6 +680,14 @@ def cmd_build_thuyetminh(args: argparse.Namespace) -> int:
     pdf = build_pdf(render_thuyetminh(spec), slug=spec.slug, filename=pdf_filename,
                     out_root=_out_root(args.spec), force=force)
     print(f"OK → {pdf}")
+    from src.compiler.docx_builder import DOCX_DEFAULT, build_thuyetminh_docx
+    want = getattr(args, "docx", None)
+    if want if want is not None else DOCX_DEFAULT:
+        path, errs = build_thuyetminh_docx(spec, pdf.parent, pdf_filename, force=force)
+        if path:
+            print(f"OK → {path}")
+        for e in errs[:25]:
+            print(f"  {'⚠' if path else '✗'} [docx] {e}")
     return 0
 
 
@@ -1539,11 +1581,20 @@ def main(argv: list[str] | None = None) -> int:
     a.add_argument("--force", action="store_true", help="Build nháp dù validate còn vi phạm")
     a.add_argument("--only", choices=["handout", "guide", "slide"], help="Chỉ dựng 1 bản (xem nhanh khi nháp)")
     a.add_argument("--fast", action="store_true", help="Bỏ SymPy answer_gate khi build nháp (nhớ build full trước approve)")
+    a.add_argument("--docx", dest="docx", action="store_true", default=None, help="Ra thêm bản Word (.docx) cạnh phiếu HS")
+    a.add_argument("--no-docx", dest="docx", action="store_false", help="Không ra bản Word")
     a.set_defaults(func=cmd_build_all)
+
+    bw = sub.add_parser("build-docx", help="CHỈ ra bản Word (.docx) của phiếu HS (header/footer/watermark như PDF)")
+    bw.add_argument("lesson", help="Đường dẫn file lesson .json")
+    bw.add_argument("--force", action="store_true", help="Ghi file dù cổng docx còn lỗi + build lại dù không đổi")
+    bw.set_defaults(func=cmd_build_docx)
 
     bf = sub.add_parser("build-folder", help="Build MỌI phiếu trong 1 folder tuần (validate từng file trước)")
     bf.add_argument("folder", help="Folder tuần dưới inputs/seeds/<lop>/<mon>/")
     bf.add_argument("--force", action="store_true", help="Build nháp dù validate còn vi phạm")
+    bf.add_argument("--docx", dest="docx", action="store_true", default=None, help="Ra thêm bản Word (.docx)")
+    bf.add_argument("--no-docx", dest="docx", action="store_false", help="Không ra bản Word")
     bf.set_defaults(func=cmd_build_folder)
 
     bs = sub.add_parser("build-summary", help="Render phiếu TỔNG KẾT CHƯƠNG 1 trang (bản HS + GV)")
@@ -1553,6 +1604,8 @@ def main(argv: list[str] | None = None) -> int:
     tm = sub.add_parser("build-thuyetminh", help="Render PHIẾU THUYẾT MINH (spec) ra PDF A4 ngang")
     tm.add_argument("spec", help="Đường dẫn file ThuyetMinhSpec .json")
     tm.add_argument("--force", action="store_true", help="Bỏ qua lỗi giờ vô lý + build lại dù .tex không đổi")
+    tm.add_argument("--docx", dest="docx", action="store_true", default=None, help="Ra thêm bản Word (.docx)")
+    tm.add_argument("--no-docx", dest="docx", action="store_false", help="Không ra bản Word")
     tm.set_defaults(func=cmd_build_thuyetminh)
 
     vtm = sub.add_parser("validate-thuyetminh", help="Soi GIỜ VÔ LÝ trong spec trước khi chốt số câu")

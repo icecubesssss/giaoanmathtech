@@ -51,6 +51,12 @@ rebuild: ## SỬA TEMPLATE/design_tokens xong → build lại MỌI phiếu đã
 spec: ## Sinh khung THUYẾT MINH (số câu auto):  make spec FOLDER="..." TIER=C
 	@$(PY) -m src.main new-thuyetminh "$(FOLDER)" $(if $(TIER),--tier $(TIER),)
 
+docx: ## Ra bản WORD (.docx) của phiếu HS cạnh PDF:  make docx FILE=path.json
+	@$(PY) -m src.main build-docx "$(FILE)"
+
+docx-template: ## Dựng lại KHUÔN Word (header/footer/watermark) sau khi đổi design_tokens
+	@$(PY) -m scripts.make_docx_template
+
 thuyetminh: ## Render thuyết minh ra PDF:  make thuyetminh SPEC=path/thuyet-minh.json
 	@$(PY) -m src.main build-thuyetminh "$(SPEC)"
 
@@ -108,4 +114,4 @@ c3-c: ## Build nhanh toàn bộ 5 phiếu Lớp 9 [C] Chương 3 (PDF Handout/Gu
 tm-c3: ## Render Thuyết Minh PDF Chương 3 Lớp 9 [C]
 	@$(PY) -m src.main build-thuyetminh "inputs/seeds/lop-9/dai-so/lop-c/chuong-03-can-bac-hai-can-bac-ba/thuyet-minh.json"
 
-.PHONY: b md f prune help map test progress check new validate build rebuild spec thuyetminh check-tm coverage exam-report exam-check exam-weights deadcode build-folder c3-c tm-c3
+.PHONY: b md f prune help map test progress check new validate build rebuild docx docx-template spec thuyetminh check-tm coverage exam-report exam-check exam-weights deadcode build-folder c3-c tm-c3
