@@ -60,13 +60,42 @@ def _mb(d: Path) -> float:
     return sum(f.stat().st_size for f in d.rglob("*") if f.is_file()) / 1e6
 
 
+def scan_obsolete_files() -> list[Path]:
+    """Các file ca-*.pdf và sidecar cũ nằm trong folder ĐÃ CÓ bản in tên mô tả (*-Phieu-HS.pdf...)."""
+    from src.exporters.ten_file import BAN_IN
+    obsolete = []
+    for d in sorted(OUTPUTS.rglob("*")):
+        if not d.is_dir():
+            continue
+        pdfs = list(d.glob("*.pdf"))
+        has_new = {kind: any(p.stem.endswith("-" + hau_to) for p in pdfs) for kind, hau_to in BAN_IN.items()}
+        for p in pdfs:
+            if p.name.startswith("ca-"):
+                duoi = p.stem.rsplit("-", 1)[-1]
+                if has_new.get(duoi, False):
+                    obsolete.append(p)
+                    for ext in (".tex", ".tex.sha256", ".log", ".aux"):
+                        sidecar = d / f"{p.stem}{ext}"
+        # Thuyết minh cũ: thuyet-minh.pdf khi đã có thuyet-minh-<khối>-...pdf
+        if any(p.name != "thuyet-minh.pdf" and p.name.startswith("thuyet-minh-") for p in pdfs):
+            old_tm = d / "thuyet-minh.pdf"
+            if old_tm.exists():
+                obsolete.append(old_tm)
+                for ext in (".tex", ".tex.sha256", ".log", ".aux"):
+                    sidecar = d / f"thuyet-minh{ext}"
+                    if sidecar.exists():
+                        obsolete.append(sidecar)
+    return sorted(set(obsolete))
+
+
 def main(argv: list[str]) -> int:
     delete = "--delete" in argv
     misplaced, gone = scan()
+    obsolete_files = scan_obsolete_files()
     exp = expected_dirs()
 
-    if not misplaced and not gone:
-        print("✓ outputs/ sạch — không có thư mục mồ côi.")
+    if not misplaced and not gone and not obsolete_files:
+        print("✓ outputs/ sạch — không có thư mục mồ côi hoặc file trùng lặp cũ.")
         return 0
 
     if misplaced:
@@ -81,12 +110,30 @@ def main(argv: list[str]) -> int:
         for d in gone:
             print(f"   {_mb(d):6.1f} MB  {d.relative_to(ROOT)}")
 
+    if obsolete_files:
+        obs_pdf_count = sum(1 for f in obsolete_files if f.suffix == ".pdf")
+        obs_mb = sum(f.stat().st_size for f in obsolete_files) / 1e6
+        print(f"\n▲ FILE CŨ TRÙNG LẶP ({obs_pdf_count} PDF, {len(obsolete_files)} files, {obs_mb:.1f} MB) — đã có bản in tên mô tả mới (*-Phieu-HS...):")
+        for f in obsolete_files[:10]:
+            print(f"   {f.relative_to(ROOT)}")
+        if len(obsolete_files) > 10:
+            print(f"   ... và {len(obsolete_files) - 10} files khác")
+
     total = sum(_mb(d) for d in misplaced + gone)
-    print(f"\nTổng: {len(misplaced) + len(gone)} thư mục · {total:.0f} MB")
+    if obsolete_files:
+        total += sum(f.stat().st_size for f in obsolete_files) / 1e6
+    print(f"\nTổng: {len(misplaced) + len(gone)} thư mục + {len(obsolete_files)} file thừa · {total:.0f} MB")
 
     if not delete:
         print("\n(chỉ liệt kê — thêm --delete để xoá thật)")
         return 0
+
+    # Xoá file cũ thừa
+    da_xoa_files = 0
+    for f in obsolete_files:
+        if f.exists():
+            f.unlink()
+            da_xoa_files += 1
 
     # Xoá thư mục SÂU TRƯỚC: có trường hợp cả cha lẫn con cùng mồ côi (vd folder tuần
     # chứa PDF lạc + các thư mục phiếu bên trong) — xoá cha trước là con nổ FileNotFound.
@@ -95,7 +142,7 @@ def main(argv: list[str]) -> int:
         if d.exists():
             shutil.rmtree(d)
             da_xoa += 1
-    print(f"\n✓ Đã xoá {da_xoa} thư mục.")
+    print(f"\n✓ Đã xoá {da_xoa} thư mục và {da_xoa_files} file thừa.")
     return 0
 
 

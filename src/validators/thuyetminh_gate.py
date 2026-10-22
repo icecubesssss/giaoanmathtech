@@ -153,7 +153,7 @@ def check_thuyetminh(spec: ThuyetMinhSpec) -> tuple[list[str], list[str]]:
         # Chương có SỐ CA LẺ (vd 5 ca) thì gộp đôi xong còn dư đúng một ca: cho phiếu
         # CUỐI khai `so_ca: 1` (thường là ca ôn tập + kiểm tra chương) — 08/10/2026.
         tong_ca = sum(max(1, getattr(q, "so_ca", 1) or 1) for q in spec.phieu)
-        le_cuoi = (ca_yeu_cau == 2 and ca == 1 and p is spec.phieu[-1] and tong_ca % 2 == 1)
+        le_cuoi = (ca_yeu_cau == 2 and ca == 1 and len(spec.phieu) > 1 and p is spec.phieu[-1] and tong_ca % 2 == 1)
         if ca_yeu_cau and ca != ca_yeu_cau and not le_cuoi:
             errors.append(
                 f"thuyetminh: {tag} khai `so_ca` = {ca} nhưng chương '{spec.chuong}' "
@@ -346,6 +346,29 @@ def check_source_refs(spec: ThuyetMinhSpec) -> list[str]:
     return out
 
 
+def check_nguon_sheet(spec: ThuyetMinhSpec) -> list[str]:
+    """CHỈ BỐC BÀI TỪ SHEET PHÂN DẠNG (Thầy chốt 22/10/2026): chương nào đã có tab phân
+    dạng (snapshot `inputs/refs/ngan-hang-sheet/<grade>/<subject>/chuong-NN.json`) thì
+    MỌI `source_refs` phải là Mã câu của tab đó (được trỏ một ý: '<mã>.b' / '<mã>b').
+    Chương chưa có tab ⇒ im (spec cũ không vỡ); xem scripts/ngan_hang_sheet.py."""
+    from src.schema import ngan_hang_sheet as nhs
+    so = nhs.chuong_of_slug(spec.slug) or nhs.chuong_of_slug(getattr(spec, "chuong", ""))
+    snap = nhs.load(spec.grade, spec.subject, so) if so else None
+    if not snap:
+        return []
+    idx = nhs.index(snap)
+    out: list[str] = []
+    for p in spec.phieu:
+        ngoai = [f"{r.band}{i}:{ref}" for i, r in enumerate(p.rows, 1)
+                 for ref in (r.source_refs or []) if nhs.resolve(ref, idx) is None]
+        if ngoai:
+            out.append(
+                f"thuyetminh: phiếu {p.code} — {len(ngoai)} source_refs KHÔNG có trong tab "
+                f"'{snap.get('tab')}' (chỉ được bốc bài từ sheet phân dạng): "
+                f"{', '.join(ngoai[:6])}" + (" …" if len(ngoai) > 6 else ""))
+    return out
+
+
 def check_chuong_level(spec: ThuyetMinhSpec) -> list[str]:
     """Thầy chốt 14/08/2026: TỪ GIỜ CHỈ LÀM THUYẾT MINH CẤP CHƯƠNG, mọi khối.
     Nhận biết qua slug/tiêu đề có chữ 'chuong'/'chương' (spec theo tuần thì không)."""
@@ -371,14 +394,18 @@ def check_kiem_tra_chuong(spec: ThuyetMinhSpec) -> list[str]:
     """Spec cả chương phải chừa ≥45′ kiểm tra chương ở PHIẾU CUỐI (`kiem_tra_phut`)
     và dòng thời lượng của buổi đó phải ghi rõ bài kiểm tra."""
     phieu = [p for p in spec.phieu if p.rows]
-    if len(phieu) < SO_PHIEU_CAP_CHUONG:
+    if len(phieu) < SO_PHIEU_CAP_CHUONG or getattr(spec, "khong_kiem_tra", False):
         return []
     cuoi = phieu[-1]
     out: list[str] = []
     gop = (getattr(spec, "kiem_tra_gop", "") or "").strip()
-    if not gop and (getattr(cuoi, "kiem_tra_phut", 0) or 0) < KIEM_TRA_CHUONG_PHUT:
+    # KT không bắt buộc ở phiếu CUỐI: tiến độ 2026-2027 (Thầy chốt 15/09) có chương đặt
+    # "Luyện tập chương + KT" giữa chương rồi mới tới các ca luyện dạng mượn ca Hình
+    # (vd lớp 6C ch.I: KT tuần 8, luyện dạng tuần 12-13) — 15/10/2026.
+    co_kt = any((getattr(p, "kiem_tra_phut", 0) or 0) >= KIEM_TRA_CHUONG_PHUT for p in phieu)
+    if not gop and not co_kt:
         out.append(
-            f"thuyetminh: THIẾU KIỂM TRA CHƯƠNG — phiếu cuối ({cuoi.code}) phải khai "
+            f"thuyetminh: THIẾU KIỂM TRA CHƯƠNG — phiếu của buổi luyện tập chương (thường là phiếu cuối, {cuoi.code}) phải khai "
             f"`kiem_tra_phut: {KIEM_TRA_CHUONG_PHUT}` (Thầy chốt 26/09/2026: cuối MỖI chương "
             f"có bài kiểm tra {KIEM_TRA_CHUONG_PHUT} phút, buổi đó chỉ còn phần còn lại cho "
             f"phiếu). Kèm `de-kiem-tra.json` cạnh thuyết minh để chốt ma trận đề.")
@@ -396,7 +423,7 @@ def _noi_dung_errors(spec: ThuyetMinhSpec) -> list[str]:
     return (check_kien_thuc_nen(spec) + check_thoiluong(spec)
             + check_chuong_level(spec) + check_loai_4b(spec)
             + check_scaffold_rails(spec) + check_source_refs(spec)
-            + check_kiem_tra_chuong(spec))
+            + check_nguon_sheet(spec) + check_kiem_tra_chuong(spec))
 
 
 # ── Cổng XUỐNG DÒNG cho BẢNG ĐẦU (Tên bài / Thời gian / Thời lượng) ─────────
@@ -569,7 +596,9 @@ _TONG = re.compile(r"Tổng|Cộng|ĐỐI CHIẾU")
 # Chấp cả "90 phút" lẫn "90′" — chương VI viết bằng dấu phút nên bản đầu đọc ra 0.
 _PHUT = re.compile(r"(\d+)\s*(?:phút|[\u2032'])")
 # "sau kiểm tra 15′" lẫn "15′ KIỂM TRA đầu buổi" — hai chiều, bản đầu chỉ bắt một.
-_KT15 = re.compile(r"(?:kiểm\s*tra)[^.]{0,40}?\$?15|15\s*[\u2032']?[^.]{0,30}?kiểm\s*tra", re.I)
+# "15" đứng riêng (không phải ngày "15/10/2026" hay số "150") — agent lớp 8 bị báo oan 15/10/2026.
+_KT15 = re.compile(r"(?:kiểm\s*tra)[^.]{0,40}?\$?(?<![\d/])15(?![\d/])"
+                   r"|(?<![\d/])15(?![\d/])\s*[\u2032']?[^.]{0,30}?kiểm\s*tra", re.I)
 
 
 def check_thoiluong(spec: ThuyetMinhSpec) -> list[str]:

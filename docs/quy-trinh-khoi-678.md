@@ -43,6 +43,14 @@ Chốt thêm 15/10/2026:
     tổng dãy có quy luật (SGK không dạy) chỉ tầng B ở ca VDC GK1; % ngược ở tầng C thì chẻ thang.
   - Lớp 8: "Tìm x" dạy từ tuần 6 cả 2 tầng; tích nhân trực tiếp có dáng HĐT giữ ở ch.I (trừ $(a\pm b)^2$);
     KT 45′ tầng C theo khuôn GK1 trường thu nhỏ; "đa thức dư" không dạy (ngoài KNTT 8).
+- **Sau pilot ch.I (Thầy chốt 15/10/2026):**
+  - Tầng C lớp 8 dùng RATE GỐC như lớp 6, 7 (`rates_goc: true` trong tier_spec) — rate NB 0,5′ cũ đẻ ra 44 NB/buổi.
+  - **VD chỉ khi bài ≥4 bước hoặc có biến đổi**; bài thực tế 2-3 bước thay số vẫn là TH. Chương thiếu bài VD
+    thật thì HẠ tỉ lệ tầng B bằng `ty_le_b` của chương trong `config/ban_do_vd_vdc.json` (trưởng nhóm khai,
+    agent đề xuất kèm bằng chứng) — KHÔNG gán nhãn VD sai để đủ 55%. Đã khai: lớp 8 ch.I = 30-45-25.
+  - 6B ch.I CÓ KT 45′ ở nửa sau ca tuần 11.
+  - Dấu nhân lớp 6 theo SGK từng bài: Bài 1-4 dùng $\times$, từ Bài 5 dùng $\cdot$ (cổng không bắt `\times` ở lớp 6).
+  - Lớp 8 tìm x trình bày bằng chuyển vế (nền lớp 7).
 - Bank `inputs/refs/de-thi/lop-N/exams/`: nhãn `chuong` và id vị trí câu nhiều chỗ SAI — đừng lọc chỉ bằng
   `chuong`; thống kê máy thiếu dạng luỹ thừa. `build_ngan_hang_678.py` nay GIỮ trường tầng 2 khi dựng lại.
 

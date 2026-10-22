@@ -230,3 +230,14 @@ def test_bai_khung_dien_khuyet_chi_soi_de_khong_soi_dap_an():
     """`answer` của bài khung điền khuyết là đáp án từng ô, không phải bài giải."""
     assert check_nhip_loi_giai(_bai([r"a) $90^\circ$; $I$."], level=3,
                                     statement="[VD] a) $\\widehat{ABO} =$ [[blank:1.6cm]].")) == []
+
+
+def test_kt_o_giua_chuong_va_co_khong_kiem_tra():
+    """15/10/2026: KT 45′ được nằm ở phiếu GIỮA chương (luyện dạng mượn ca Hình xếp sau);
+    chương Thầy cho bỏ KT thì khai `khong_kiem_tra: true` (không lách bằng kiem_tra_gop)."""
+    sp = _spec_chuong(kt=0)
+    sp.phieu[0].kiem_tra_phut = 45
+    assert not any("THIẾU KIỂM TRA CHƯƠNG" in m for m in check_kiem_tra_chuong(sp))
+    sp2 = _spec_chuong(kt=0)
+    sp2.khong_kiem_tra = True
+    assert check_kiem_tra_chuong(sp2) == []

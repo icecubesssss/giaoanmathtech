@@ -175,3 +175,14 @@ def test_lop_6_7_du_hai_mon_khung_90_phut():
             assert b["budgets"] == {"vidu": 25.0, "onclass": 55.0, "btvn": 40.0}
             assert tier_ratio(spec, lop, mon, "C")["NB"] == 40
             assert set(b["tiers"]) >= {"B", "C"}
+
+
+def test_8c_rate_goc_va_8b_ch1_ha_ti_le_vd():
+    """Thầy chốt 15/10/2026: tầng C lớp 8 dùng rate GỐC (bỏ override NB 0,5′ của lớp 8);
+    chương thiếu bài VD thật khai `ty_le_b` trong ban_do để hạ tỉ lệ thay vì gán nhãn sai."""
+    spec = load_tier_spec()
+    assert rates_for(spec, "lop-8", "dai-so", "C")["onclass"]["NB"] == 1.5
+    assert rates_for(spec, "lop-8", "dai-so", "B")["onclass"]["NB"] == 0.5
+    assert rates_for(spec, "lop-8", "hinh-hoc", "C")["onclass"]["TH"] == 6.0
+    assert tier_ratio(spec, "lop-8", "dai-so", "B", "chuong-01-da-thuc") == \
+        {"NB": 30, "TH": 45, "VD": 25, "VDC": 0}

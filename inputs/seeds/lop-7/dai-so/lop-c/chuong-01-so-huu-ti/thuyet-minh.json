@@ -1,72 +1,963 @@
 {
-  "slug": "thuyet-minh-chuong-01-so-huu-ti",
-  "title": "Chuong 01 so huu ti",
-  "grade": "lop-7",
-  "subject": "dai-so",
-  "tier": "C",
-  "tuan": "",
-  "chuong": "chuong-01-so-huu-ti",
-  "thoiluong": [
-    "TODO: Buổi 1 (Bài …): 1 ca $=$ 90 phút (SGK n tiết)",
-    "TODO: \\textbf{Tổng N ca $=$ … phút $\\approx$ … tiết} (SGK chương …: … tiết)"
-  ],
-  "kien_thuc_nen": [
-    "TODO: kiến thức LỚP DƯỚI dùng lại (vd Định lí Pythagore — Lớp 8). Chạy `make check-tm` để cổng tự dò xem spec đang dùng chùa nền nào."
-  ],
-  "lythuyet": [
-    "TODO: lý thuyết trọng tâm."
-  ],
-  "vidu": [
-    "TODO: ví dụ GV làm mẫu."
-  ],
-  "dang_vd": [
-    "TODO: dạng VẬN DỤNG trong đề (bám GKI)."
-  ],
-  "loisai": [
-    "TODO: lỗi sai thường gặp."
-  ],
-  "kienthuc_nb": [
-    "TODO: kiến thức NHẬN BIẾT cần nhớ."
-  ],
-  "phieu": [
+ "slug": "thuyet-minh-lop-7c-chuong-01-so-huu-ti",
+ "title": "Chương I. Số hữu tỉ (Bài 1 – Bài 4 SGK Toán 7 tập một)",
+ "grade": "lop-7",
+ "subject": "dai-so",
+ "tier": "C",
+ "tuan": "04-15",
+ "chuong": "chuong-01-so-huu-ti",
+ "thoiluong": [
+  "Buổi 1 (Bài 1 $+$ Bài 2, gộp; tuần 4): 1 ca $=$ 90 phút (SGK 4 tiết)",
+  "Buổi 2 (luyện tính hợp lí, toán thực tế phần trăm; tuần 5): 1 ca $=$ 90 phút (SGK Luyện tập chung 2 tiết)",
+  "Buổi 3 (Bài 3; tuần 6): 1 ca $=$ 90 phút (SGK 3 tiết)",
+  "Buổi 4 (luyện luỹ thừa; tuần 7): 1 ca $=$ 90 phút (dạy thêm, SGK không có tiết riêng)",
+  "Buổi 5 (Bài 4; tuần 8): 1 ca $=$ 90 phút (SGK 2 tiết)",
+  "Buổi 6 (Luyện tập chương I; tuần 10, tuần 9 nghỉ): 1 ca $=$ 90 phút $=$ 45 phút luyện tập $+$ \\textbf{45 phút kiểm tra chương I} (SGK Luyện tập chung 2 tiết $+$ Bài tập cuối chương 1 tiết)",
+  "Buổi 7 (luyện dạng đề giữa kì I phần đại số; tuần 15, sau chương II): 1 ca $=$ 90 phút",
+  "\\textbf{Tổng 7 ca $=$ 630 phút $\\approx$ 14 tiết} (SGK chương I: 14 tiết) — thêm 1 ca luyện luỹ thừa vì đây là nền của hai dạng câu khó đề giữa kì; bù lại phần luyện tập chung dồn vào ca luyện tập chương và ca luyện dạng đề"
+ ],
+ "kien_thuc_nen": [
+  "\\textbf{Phân số} (Lớp 6): phân số bằng nhau, rút gọn, quy đồng mẫu; đưa phân số có mẫu âm về mẫu dương — dùng khi nhận biết, so sánh và làm mọi phép tính với số hữu tỉ.",
+  "\\textbf{Cộng, trừ, nhân, chia phân số; phân số nghịch đảo} (Lớp 6) — chia cho $\\frac ab$ là nhân với $\\frac ba$.",
+  "\\textbf{Hỗn số, số thập phân} (Lớp 5--6): đổi qua lại với phân số, kể cả hỗn số âm $-4\\frac15=-\\frac{21}{5}$.",
+  "\\textbf{Số nguyên} (Lớp 6): quy tắc dấu khi cộng, nhân; quy tắc dấu ngoặc trong $\\mathbb Z$.",
+  "\\textbf{Luỹ thừa với số mũ tự nhiên của số tự nhiên} (Lớp 6): $a^m\\cdot a^n=a^{m+n}$, $a^m:a^n=a^{m-n}$; bảng luỹ thừa nhỏ $2^5=32$, $3^5=243$, $5^3=125$.",
+  "\\textbf{Thứ tự thực hiện phép tính; tìm thành phần chưa biết} (Lớp 6).",
+  "\\textbf{Tỉ số phần trăm} (Lớp 6): tính $p\\%$ của một số; tìm một số biết $p\\%$ của nó."
+ ],
+ "lythuyet": [
+  "\\textbf{Mục tiêu tối thiểu (NB $+$ TH):} nhận biết số hữu tỉ, số đối, trục số, so sánh; cộng, trừ, nhân, chia, luỹ thừa số hữu tỉ; tính hợp lí; tìm $x$ hai bước bằng quy tắc chuyển vế.",
+  "\\textbf{Chuẩn đầu ra điểm số (đề giữa kì I Hà Nội, chương I chiếm khoảng $3{,}5$--$5{,}5$ điểm):} trắc nghiệm chương I khoảng $1{,}0$--$1{,}5$ điểm; Bài tính $1$--$2$ điểm (bỏ ý cuối có luỹ thừa phức tạp nếu chưa chắc); Bài tìm $x$ hai ý đầu khoảng $1{,}0$ điểm. Mục tiêu chắc chắn $\\approx 3{,}0$ điểm phần chương I.",
+  "\\textbf{Bổ sung (VD):} bài thực tế phần trăm $1$--$1{,}5$ điểm (làm được ít nhất ý a); ý tìm $x$ có luỹ thừa ở vế phải. Câu nâng cao $0{,}5$ điểm cuối đề (so sánh luỹ thừa, tổng dãy) \\textbf{không dạy ở tầng C}.",
+  "Bài 1: số hữu tỉ $\\frac ab$ ($a,b\\in\\mathbb Z$, $b\\ne0$), tập $\\mathbb Q$; số đối; biểu diễn trên trục số; so sánh (đưa về phân số mẫu dương, bắc cầu).",
+  "Bài 2: cộng, trừ, nhân, chia số hữu tỉ; tính chất giao hoán, kết hợp, phân phối; quy tắc dấu ngoặc (SGK tr.11).",
+  "Bài 3: $x^n$; $x^0=1$; $x^m\\cdot x^n=x^{m+n}$; $x^m:x^n=x^{m-n}$; $(x^m)^n=x^{m\\cdot n}$; luỹ thừa của tích, thương (SGK tr.17, Chú ý).",
+  "Bài 4: thứ tự thực hiện phép tính; quy tắc chuyển vế: chuyển một số hạng từ vế này sang vế kia thì đổi dấu số hạng đó."
+ ],
+ "vidu": [
+  "Buổi 1: giải thích vì sao $-0{,}6$; $2\\frac13$; $-5$ là số hữu tỉ; biểu diễn $-\\frac34$ trên trục số; so sánh hai số hữu tỉ âm; tính biểu thức có ngoặc vuông; tính hợp lí bằng phân phối; khinh khí cầu (SGK Ví dụ 4 tr.13) điền khuyết.",
+  "Buổi 2: bỏ ngoặc có dấu trừ; nhóm số hạng; đặt thừa số chung; tính $15\\%$ của $240\\,000$ đồng; giá áo sau khi giảm $20\\%$; bài ngược tìm giá niêm yết chẻ ba bậc.",
+  "Buổi 3: tính $\\left(-\\frac23\\right)^3$; luỹ thừa của tích; nhân, chia cùng cơ số; luỹ thừa của luỹ thừa; khoảng cách trong Hệ Mặt Trời viết bằng luỹ thừa của $10$.",
+  "Buổi 4: dấu của $(-3)^4$, $(-3)^5$; đưa $\\frac{1}{27}$ về luỹ thừa cơ số $\\frac13$; tính $\\frac{2^{10}+2^{13}}{1+2^3}$ bằng đặt thừa số chung.",
+  "Buổi 5: thứ tự phép tính có luỹ thừa; tìm $x$ bằng chuyển vế; tìm $x$ là số chia; tìm $x$ khi vế phải là thương hai luỹ thừa.",
+  "Buổi 6: bài tính tổng hợp cuối chương; tìm $x$ hai bước.",
+  "Buổi 7: mỗi dạng của đề giữa kì một ví dụ điền khuyết (bài tính, tìm $x$, thực tế phần trăm)."
+ ],
+ "dang_vd": [
+  "Bài toán phần trăm từ 4 bước (bài ngược tìm giá niêm yết) — ý cuối Bài 3 đề giữa kì I; bài mua bán, lãi suất 2--3 phép tính xếp mức TH.",
+  "Tìm $x$ khi vế phải là biểu thức luỹ thừa; tìm $x$ dạng $(x+a)^2=b$ — ý cuối Bài tìm $x$, $0{,}5$ điểm.",
+  "Tính giá trị biểu thức nhiều luỹ thừa bằng đặt thừa số chung (SGK 1.36) — ý cuối Bài tính."
+ ],
+ "loisai": [
+  "Buổi 1: để mẫu âm khi so sánh; đọc $-4\\frac15$ thành $-4+\\frac15$; so sánh số âm theo phần số ($-8>-4{,}2$); cho $\\frac{11}{0}\\in\\mathbb Q$; số $0$ là số hữu tỉ dương; đếm vạch trục số từ sai gốc.",
+  "Buổi 2: bỏ ngoặc có dấu “$-$” chỉ đổi dấu số hạng đầu; cộng trước khi chia; giảm $10\\%$ rồi giảm thêm $3\\%$ coi như giảm $13\\%$; bài ngược lấy giá sau giảm nhân $(1+p\\%)$.",
+  "Buổi 3: $x^m\\cdot x^n=x^{m\\cdot n}$; $\\left(-\\frac13\\right)^3$ ra số dương; $\\left(\\frac ab\\right)^n=\\frac{a^n}{b}$; $x^0=0$; $1^{99}=99$.",
+  "Buổi 4: giữ dấu âm cho luỹ thừa bậc chẵn; nhầm $(-2)^4$ với $-2^4$; đưa về cùng cơ số sai ($8=2^4$).",
+  "Buổi 5: chuyển vế không đổi dấu; “chia cả hai vế” khi còn số hạng tự do; tìm sai khi $x$ là số chia hoặc số trừ.",
+  "Buổi 6: $(x+a)^2=b$ chỉ lấy một giá trị; thiếu dòng “Vậy”.",
+  "Buổi 7: đọc đề phần trăm nhầm “giảm” với “còn lại”; làm tròn sai đơn vị tiền."
+ ],
+ "kienthuc_nb": [
+  "$\\mathbb N\\subset\\mathbb Z\\subset\\mathbb Q$; số nguyên, số thập phân, hỗn số đều là số hữu tỉ.",
+  "Số đối của $a$ là $-a$; $a+(-a)=0$; trên trục số $a$ và $-a$ cách đều gốc $O$.",
+  "$a<b$ thì điểm $a$ nằm trước điểm $b$ trên trục số; số $0$ không dương, không âm.",
+  "Quy tắc dấu ngoặc: dấu “$-$” đằng trước thì đổi dấu MỌI số hạng trong ngoặc.",
+  "$x^0=1$ ($x\\ne0$); luỹ thừa bậc chẵn của số âm là số dương, bậc lẻ là số âm.",
+  "$x^m\\cdot x^n=x^{m+n}$; $x^m:x^n=x^{m-n}$; $(x^m)^n=x^{m\\cdot n}$.",
+  "Thứ tự: luỹ thừa $\\to$ nhân, chia $\\to$ cộng, trừ; ngoặc $(\\,)\\to[\\,]\\to\\{\\,\\}$.",
+  "Chuyển vế: $a+b=c\\Rightarrow a=c-b$; $a-b=c\\Rightarrow a=c+b$."
+ ],
+ "phieu": [
+  {
+   "code": "1",
+   "title": "Buổi 1 (tuần 4) — Bài 1 $+$ Bài 2: Tập hợp các số hữu tỉ. Cộng, trừ, nhân, chia số hữu tỉ",
+   "rows": [
     {
-      "code": "A",
-      "title": "TODO tên phiếu",
-      "rows": [
-        {
-          "dang": "TODO (NB) — mô tả dạng + nguồn (Bài … / BTVN …)",
-          "band": "NB",
-          "lythuyet": 0,
-          "vidu": 0,
-          "onclass": 15,
-          "btvn": 12,
-          "source_refs": [],
-          "loai": "TODO §4b",
-          "decompose": "none"
-        },
-        {
-          "dang": "TODO (TH) — mô tả dạng + nguồn (Bài … / BTVN …)",
-          "band": "TH",
-          "lythuyet": 0,
-          "vidu": 0,
-          "onclass": 4,
-          "btvn": 3,
-          "source_refs": [],
-          "loai": "TODO §4b",
-          "decompose": "none"
-        },
-        {
-          "dang": "TODO (VD) — mô tả dạng + nguồn (Bài … / BTVN …)",
-          "band": "VD",
-          "lythuyet": 0,
-          "vidu": 0,
-          "onclass": 1,
-          "btvn": 1,
-          "source_refs": [],
-          "loai": "TODO §4b",
-          "decompose": "vd"
-        }
-      ]
+     "dang": "Nhận biết số hữu tỉ; quan hệ $\\in$, $\\notin$ giữa số và các tập $\\mathbb N$, $\\mathbb Z$, $\\mathbb Q$ (đúng/sai, trắc nghiệm)",
+     "band": "NB",
+     "loai": "NB lẻ LT",
+     "lythuyet": 1,
+     "vidu": 1,
+     "onclass": 3,
+     "btvn": 2,
+     "source_refs": [
+      "C1-02 GK1 Đa Trí Tuệ C2",
+      "SGK 7T1 tr.9 BT 1.1",
+      "SGK 7T1 tr.6 Ví dụ 1"
+     ],
+     "decompose": "none"
+    },
+    {
+     "dang": "Phân số cùng biểu diễn một số hữu tỉ; số đối của một số hữu tỉ",
+     "band": "NB",
+     "loai": "NB lẻ LT",
+     "lythuyet": 0,
+     "vidu": 0,
+     "onclass": 3,
+     "btvn": 2,
+     "source_refs": [
+      "C1-17 GK1 Tam Hiệp C1",
+      "C1-01 GK1 Đa Trí Tuệ C1",
+      "SGK 7T1 tr.9 BT 1.2",
+      "SGK 7T1 tr.9 BT 1.4a"
+     ],
+     "decompose": "none"
+    },
+    {
+     "dang": "Biểu diễn và đọc số hữu tỉ trên trục số (chia đoạn đơn vị thành $b$ phần)",
+     "band": "NB",
+     "loai": "NB lẻ LT",
+     "lythuyet": 1,
+     "vidu": 1,
+     "onclass": 2,
+     "btvn": 2,
+     "source_refs": [
+      "C1-11 GK1 Đỗ Ngọc Du C2",
+      "C1-04 GK1 Bát Tràng C2",
+      "SGK 7T1 tr.7 Luyện tập 2",
+      "SGK 7T1 tr.14 LTC Ví dụ 2"
+     ],
+     "decompose": "none"
+    },
+    {
+     "dang": "So sánh hai số hữu tỉ; tìm số lớn nhất trong một nhóm số",
+     "band": "NB",
+     "loai": "NB lẻ LT",
+     "lythuyet": 1,
+     "vidu": 1,
+     "onclass": 3,
+     "btvn": 2,
+     "source_refs": [
+      "C1-03 GK1 Đa Trí Tuệ C3",
+      "SGK 7T1 tr.9 BT 1.5",
+      "SGK 7T1 tr.14 BT 1.12",
+      "SGK 7T1 tr.8 Ví dụ 2"
+     ],
+     "decompose": "none"
+    },
+    {
+     "dang": "Cộng, trừ, nhân, chia hai số hữu tỉ (một phép tính)",
+     "band": "NB",
+     "loai": "NB lẻ LT",
+     "lythuyet": 0,
+     "vidu": 1,
+     "onclass": 2,
+     "btvn": 2,
+     "source_refs": [
+      "SGK 7T1 tr.13 BT 1.7",
+      "SGK 7T1 tr.11 Luyện tập 1",
+      "SGK 7T1 tr.12 Luyện tập 3"
+     ],
+     "decompose": "none"
+    },
+    {
+     "dang": "Điền khuyết lời giải: làm phép chia trước phép cộng; bỏ dấu ngoặc rồi tính",
+     "band": "NB",
+     "loai": "NB tách TH",
+     "lythuyet": 0,
+     "vidu": 0,
+     "onclass": 2,
+     "btvn": 2,
+     "source_refs": [
+      "C1-28 GK1 Chúc Sơn B1a",
+      "C1-30 GK1 Đỗ Ngọc Du B1a",
+      "SGK 7T1 tr.11 Luyện tập 2"
+     ],
+     "decompose": "none",
+     "gian_giao": "dien-khuyet"
+    },
+    {
+     "dang": "Tính giá trị biểu thức: tính trong từng ngoặc rồi chia (2--3 bước)",
+     "band": "TH",
+     "loai": "TH lẻ LT",
+     "lythuyet": 0,
+     "vidu": 1,
+     "onclass": 1,
+     "btvn": 1,
+     "source_refs": [
+      "SGK 7T1 tr.13 BT 1.8b",
+      "SGK 7T1 tr.15 BT 1.16"
+     ],
+     "decompose": "none"
+    },
+    {
+     "dang": "Tính hợp lí dùng một tính chất (số đối, phân phối)",
+     "band": "TH",
+     "loai": "TH lẻ LT",
+     "lythuyet": 0,
+     "vidu": 1,
+     "onclass": 2,
+     "btvn": 1,
+     "source_refs": [
+      "C1-22 GK1 Đa Trí Tuệ B2a",
+      "C1-23 GK1 Đa Trí Tuệ B2b",
+      "C1-37 GK1 Tam Hiệp B1c",
+      "SGK 7T1 tr.14 LTC Ví dụ 1"
+     ],
+     "decompose": "none"
+    },
+    {
+     "dang": "Bài toán thực tế 2--3 phép tính với số hữu tỉ (diện tích, độ cao, tiền mua hàng)",
+     "band": "TH",
+     "loai": "TH lẻ LT",
+     "lythuyet": 0,
+     "vidu": 1,
+     "onclass": 1,
+     "btvn": 1,
+     "source_refs": [
+      "SGK 7T1 tr.13 Vận dụng 2",
+      "SGK 7T1 tr.13 Ví dụ 4",
+      "C1-54 GK1 Đỗ Ngọc Du B3"
+     ],
+     "decompose": "none"
+    },
+    {
+     "dang": "Biến đổi biểu thức nhiều tầng ngoặc: bỏ ngoặc, đổi chỗ, nhóm số hạng rồi tính (từ 4 bước)",
+     "band": "VD",
+     "loai": "VD lẻ",
+     "lythuyet": 0,
+     "vidu": 1,
+     "onclass": 1,
+     "btvn": 1,
+     "source_refs": [
+      "SGK 7T1 tr.13 BT 1.8a",
+      "SGK 7T1 tr.11 Ví dụ 2",
+      "C1-35 GK1 Phúc Hoà B1c"
+     ],
+     "decompose": "vd"
     }
-  ]
+   ]
+  },
+  {
+   "code": "2",
+   "title": "Buổi 2 (tuần 5) — Luyện tập: tính hợp lí và toán thực tế phần trăm",
+   "rows": [
+    {
+     "dang": "Bỏ dấu ngoặc có dấu “$-$” đằng trước (điền dấu từng số hạng)",
+     "band": "NB",
+     "loai": "NB tách TH",
+     "lythuyet": 1,
+     "vidu": 1,
+     "onclass": 3,
+     "btvn": 2,
+     "source_refs": [
+      "C1-32 GK1 Nguyễn Trường Tộ B1b",
+      "SGK 7T1 tr.22 BT 1.29"
+     ],
+     "decompose": "none",
+     "gian_giao": "dien-khuyet"
+    },
+    {
+     "dang": "Nhóm các số hạng cùng mẫu hoặc đối nhau trước khi tính",
+     "band": "NB",
+     "loai": "NB tách TH",
+     "lythuyet": 0,
+     "vidu": 1,
+     "onclass": 3,
+     "btvn": 2,
+     "source_refs": [
+      "C1-22 GK1 Đa Trí Tuệ B2a",
+      "C1-37 GK1 Tam Hiệp B1c",
+      "SGK 7T1 tr.22 BT 1.28"
+     ],
+     "decompose": "none"
+    },
+    {
+     "dang": "Đặt thừa số chung: $a\\cdot b+a\\cdot c=a\\cdot(b+c)$",
+     "band": "NB",
+     "loai": "NB tách TH",
+     "lythuyet": 1,
+     "vidu": 1,
+     "onclass": 3,
+     "btvn": 2,
+     "source_refs": [
+      "C1-23 GK1 Đa Trí Tuệ B2b",
+      "C1-27 GK1 Bát Tràng B1b",
+      "SGK 7T1 tr.12 Luyện tập 4"
+     ],
+     "decompose": "none"
+    },
+    {
+     "dang": "Tính $p\\%$ của một số (nền lớp 6)",
+     "band": "NB",
+     "loai": "NB lẻ LT",
+     "lythuyet": 1,
+     "vidu": 1,
+     "onclass": 3,
+     "btvn": 3,
+     "source_refs": [
+      "C1-42 GK1 Phúc Hoà B3"
+     ],
+     "decompose": "none"
+    },
+    {
+     "dang": "Số tiền phải trả sau khi giảm $p\\%$; tiền lãi sau một năm",
+     "band": "NB",
+     "loai": "NB tách TH",
+     "lythuyet": 1,
+     "vidu": 1,
+     "onclass": 3,
+     "btvn": 3,
+     "source_refs": [
+      "C1-53 GK1 Bát Tràng B3",
+      "C1-56 GK1 Trưng Vương B3"
+     ],
+     "decompose": "none"
+    },
+    {
+     "dang": "Tính hợp lí biểu thức nhiều số hạng (có hỗn số, số thập phân)",
+     "band": "TH",
+     "loai": "TH lẻ LT",
+     "lythuyet": 0,
+     "vidu": 1,
+     "onclass": 2,
+     "btvn": 2,
+     "source_refs": [
+      "C1-32 GK1 Nguyễn Trường Tộ B1b",
+      "SGK 7T1 tr.22 BT 1.28",
+      "SGK 7T1 tr.15 BT 1.17"
+     ],
+     "decompose": "none"
+    },
+    {
+     "dang": "Bài toán thực tế 2--3 phép tính với phân số, phần trăm",
+     "band": "TH",
+     "loai": "TH lẻ LT",
+     "lythuyet": 0,
+     "vidu": 1,
+     "onclass": 2,
+     "btvn": 1,
+     "source_refs": [
+      "C1-42 GK1 Phúc Hoà B3",
+      "SGK 7T1 tr.25 BT 1.37",
+      "SGK 7T1 tr.22 BT 1.30"
+     ],
+     "decompose": "none"
+    },
+    {
+     "dang": "Bài toán phần trăm từ 4 bước: bài ngược (biết tổng tiền sau giảm, tìm giá niêm yết) chẻ thành bậc thang; rút tiền gốc và lãi chia suất quà",
+     "band": "VD",
+     "loai": "VD lẻ",
+     "lythuyet": 0,
+     "vidu": 1,
+     "onclass": 1,
+     "btvn": 1,
+     "source_refs": [
+      "C1-55 GK1 Nguyễn Trường Tộ B3",
+      "C1-56 GK1 Trưng Vương B3"
+     ],
+     "decompose": "vd"
+    }
+   ]
+  },
+  {
+   "code": "3",
+   "title": "Buổi 3 (tuần 6) — Bài 3: Luỹ thừa với số mũ tự nhiên của một số hữu tỉ",
+   "rows": [
+    {
+     "dang": "Tính luỹ thừa của một số hữu tỉ; dấu của luỹ thừa số âm",
+     "band": "NB",
+     "loai": "NB lẻ LT",
+     "lythuyet": 1,
+     "vidu": 1,
+     "onclass": 3,
+     "btvn": 2,
+     "source_refs": [
+      "C1-08 GK1 Chúc Sơn C5",
+      "SGK 7T1 tr.17 Ví dụ 1",
+      "SGK 7T1 tr.17 Luyện tập 1"
+     ],
+     "decompose": "none"
+    },
+    {
+     "dang": "Quy ước $x^0=1$, $x^1=x$; luỹ thừa của một tích, một thương",
+     "band": "NB",
+     "loai": "NB lẻ LT",
+     "lythuyet": 1,
+     "vidu": 1,
+     "onclass": 3,
+     "btvn": 2,
+     "source_refs": [
+      "C1-06 GK1 Bát Tràng C5",
+      "SGK 7T1 tr.17 Ví dụ 2",
+      "SGK 7T1 tr.17 Luyện tập 2"
+     ],
+     "decompose": "none"
+    },
+    {
+     "dang": "Nhân, chia hai luỹ thừa cùng cơ số",
+     "band": "NB",
+     "loai": "NB lẻ LT",
+     "lythuyet": 1,
+     "vidu": 1,
+     "onclass": 3,
+     "btvn": 3,
+     "source_refs": [
+      "C1-14 GK1 Phúc Hoà C5",
+      "C1-12 GK1 Đỗ Ngọc Du C3",
+      "SGK 7T1 tr.18 Ví dụ 3",
+      "SGK 7T1 tr.18 Luyện tập 3"
+     ],
+     "decompose": "none"
+    },
+    {
+     "dang": "Luỹ thừa của luỹ thừa",
+     "band": "NB",
+     "loai": "NB lẻ LT",
+     "lythuyet": 1,
+     "vidu": 1,
+     "onclass": 3,
+     "btvn": 2,
+     "source_refs": [
+      "C1-16 GK1 Phúc Hoà C7",
+      "SGK 7T1 tr.18 Ví dụ 4",
+      "SGK 7T1 tr.18 Luyện tập 4"
+     ],
+     "decompose": "none"
+    },
+    {
+     "dang": "Điền khuyết: viết một số dưới dạng luỹ thừa của cơ số cho trước",
+     "band": "NB",
+     "loai": "NB tách TH",
+     "lythuyet": 0,
+     "vidu": 0,
+     "onclass": 3,
+     "btvn": 3,
+     "source_refs": [
+      "SGK 7T1 tr.18 BT 1.18",
+      "SGK 7T1 tr.18 BT 1.19",
+      "C1-19 GK1 Nguyễn Công Trứ C3"
+     ],
+     "decompose": "none",
+     "gian_giao": "dien-khuyet"
+    },
+    {
+     "dang": "Viết biểu thức dưới dạng luỹ thừa của một số hữu tỉ",
+     "band": "TH",
+     "loai": "TH lẻ LT",
+     "lythuyet": 0,
+     "vidu": 1,
+     "onclass": 2,
+     "btvn": 2,
+     "source_refs": [
+      "SGK 7T1 tr.19 BT 1.22",
+      "SGK 7T1 tr.19 BT 1.21",
+      "C1-20 CK1 Tân Triều C3"
+     ],
+     "decompose": "none"
+    },
+    {
+     "dang": "Tính giá trị biểu thức có luỹ thừa; bài thực tế với luỹ thừa của $10$ (2--3 bước)",
+     "band": "TH",
+     "loai": "TH lẻ LT",
+     "lythuyet": 0,
+     "vidu": 1,
+     "onclass": 2,
+     "btvn": 1,
+     "source_refs": [
+      "C1-40 GK1 Nguyễn Công Trứ B1b",
+      "SGK 7T1 tr.19 BT 1.23",
+      "SGK 7T1 tr.19 BT 1.24",
+      "SGK 7T1 tr.19 BT 1.25"
+     ],
+     "decompose": "none"
+    },
+    {
+     "dang": "Tính giá trị biểu thức có luỹ thừa qua nhiều bước: đặt thừa số chung (từ 4 bước)",
+     "band": "VD",
+     "loai": "VD lẻ",
+     "lythuyet": 0,
+     "vidu": 1,
+     "onclass": 1,
+     "btvn": 1,
+     "source_refs": [
+      "SGK 7T1 tr.25 BT 1.36a",
+      "SGK 7T1 tr.23 LTC Ví dụ 2"
+     ],
+     "decompose": "vd"
+    }
+   ]
+  },
+  {
+   "code": "4",
+   "title": "Buổi 4 (tuần 7) — Luyện tập luỹ thừa: thu gọn, tính giá trị, so sánh",
+   "rows": [
+    {
+     "dang": "Chọn công thức luỹ thừa đúng, sai (nhân, chia cùng cơ số; luỹ thừa của luỹ thừa)",
+     "band": "NB",
+     "loai": "NB lẻ LT",
+     "lythuyet": 1,
+     "vidu": 1,
+     "onclass": 3,
+     "btvn": 2,
+     "source_refs": [
+      "C1-06 GK1 Bát Tràng C5"
+     ],
+     "decompose": "none"
+    },
+    {
+     "dang": "Luỹ thừa bậc chẵn, bậc lẻ của số âm; phân biệt $(-2)^4$ và $-2^4$",
+     "band": "NB",
+     "loai": "NB lẻ LT",
+     "lythuyet": 1,
+     "vidu": 1,
+     "onclass": 3,
+     "btvn": 2,
+     "source_refs": [
+      "C1-16 GK1 Phúc Hoà C7",
+      "SGK 7T1 tr.19 BT 1.21"
+     ],
+     "decompose": "none"
+    },
+    {
+     "dang": "Đưa về cùng cơ số: $4=2^2$, $25=5^2$, $\\frac19=\\left(\\frac13\\right)^2$",
+     "band": "NB",
+     "loai": "NB tách TH",
+     "lythuyet": 1,
+     "vidu": 1,
+     "onclass": 3,
+     "btvn": 3,
+     "source_refs": [
+      "C1-20 CK1 Tân Triều C3",
+      "SGK 7T1 tr.18 BT 1.19",
+      "SGK 7T1 tr.18 Luyện tập 4"
+     ],
+     "decompose": "none"
+    },
+    {
+     "dang": "Tìm số mũ $n$ biết $a^n=b$ (trắc nghiệm)",
+     "band": "NB",
+     "loai": "NB lẻ LT",
+     "lythuyet": 0,
+     "vidu": 1,
+     "onclass": 3,
+     "btvn": 2,
+     "source_refs": [
+      "C1-07 GK1 Bát Tràng C6",
+      "C1-19 GK1 Nguyễn Công Trứ C3"
+     ],
+     "decompose": "none"
+    },
+    {
+     "dang": "Điền khuyết các bước thu gọn tích, thương các luỹ thừa",
+     "band": "NB",
+     "loai": "NB tách TH",
+     "lythuyet": 1,
+     "vidu": 0,
+     "onclass": 3,
+     "btvn": 3,
+     "source_refs": [
+      "SGK 7T1 tr.19 BT 1.22",
+      "C1-12 GK1 Đỗ Ngọc Du C3",
+      "C1-20 CK1 Tân Triều C3"
+     ],
+     "decompose": "none",
+     "gian_giao": "dien-khuyet"
+    },
+    {
+     "dang": "Thu gọn, viết dưới dạng một luỹ thừa",
+     "band": "TH",
+     "loai": "TH lẻ LT",
+     "lythuyet": 0,
+     "vidu": 1,
+     "onclass": 2,
+     "btvn": 1,
+     "source_refs": [
+      "SGK 7T1 tr.19 BT 1.22",
+      "C1-12 GK1 Đỗ Ngọc Du C3",
+      "C1-20 CK1 Tân Triều C3"
+     ],
+     "decompose": "none"
+    },
+    {
+     "dang": "Tính giá trị biểu thức có luỹ thừa (thứ tự phép tính, tính hợp lí)",
+     "band": "TH",
+     "loai": "TH lẻ LT",
+     "lythuyet": 0,
+     "vidu": 1,
+     "onclass": 2,
+     "btvn": 2,
+     "source_refs": [
+      "C1-26 GK1 Bát Tràng B1a"
+     ],
+     "decompose": "none"
+    },
+    {
+     "dang": "Tính giá trị biểu thức nhiều luỹ thừa, nhiều phép tính (từ 4 bước)",
+     "band": "VD",
+     "loai": "VD lẻ",
+     "lythuyet": 0,
+     "vidu": 1,
+     "onclass": 1,
+     "btvn": 1,
+     "source_refs": [
+      "SGK 7T1 tr.25 BT 1.36b",
+      "SGK 7T1 tr.24 BT 1.33b"
+     ],
+     "decompose": "vd"
+    }
+   ]
+  },
+  {
+   "code": "5",
+   "title": "Buổi 5 (tuần 8) — Bài 4: Thứ tự thực hiện các phép tính. Quy tắc chuyển vế",
+   "rows": [
+    {
+     "dang": "Thứ tự thực hiện các phép tính: chỉ ra phép tính làm trước",
+     "band": "NB",
+     "loai": "NB lẻ LT",
+     "lythuyet": 1,
+     "vidu": 1,
+     "onclass": 3,
+     "btvn": 2,
+     "source_refs": [
+      "SGK 7T1 tr.20 Ví dụ 1",
+      "SGK 7T1 tr.21 Luyện tập 1"
+     ],
+     "decompose": "none"
+    },
+    {
+     "dang": "Quy tắc chuyển vế: chuyển một số hạng sang vế kia và đổi dấu (đúng/sai)",
+     "band": "NB",
+     "loai": "NB lẻ LT",
+     "lythuyet": 1,
+     "vidu": 1,
+     "onclass": 3,
+     "btvn": 2,
+     "source_refs": [
+      "SGK 7T1 tr.21 Ví dụ 3",
+      "SGK 7T1 tr.22 Luyện tập 2"
+     ],
+     "decompose": "none"
+    },
+    {
+     "dang": "Tìm $x$ một bước: $x+a=b$, $x-a=b$",
+     "band": "NB",
+     "loai": "NB tách TH",
+     "lythuyet": 0,
+     "vidu": 1,
+     "onclass": 3,
+     "btvn": 3,
+     "source_refs": [
+      "SGK 7T1 tr.22 BT 1.26"
+     ],
+     "decompose": "none"
+    },
+    {
+     "dang": "Tìm thành phần chưa biết: $a\\cdot x=b$, $a:x=b$, $a-x=b$",
+     "band": "NB",
+     "loai": "NB tách TH",
+     "lythuyet": 1,
+     "vidu": 1,
+     "onclass": 3,
+     "btvn": 2,
+     "source_refs": [
+      "C1-29 GK1 Chúc Sơn B2b",
+      "C1-24 GK1 Đa Trí Tuệ B3a",
+      "SGK 7T1 tr.22 BT 1.27b"
+     ],
+     "decompose": "none"
+    },
+    {
+     "dang": "Điền khuyết lời giải tìm $x$ hai bước",
+     "band": "NB",
+     "loai": "NB tách TH",
+     "lythuyet": 1,
+     "vidu": 0,
+     "onclass": 3,
+     "btvn": 3,
+     "source_refs": [
+      "C1-31 GK1 Đỗ Ngọc Du B2a",
+      "SGK 7T1 tr.24 BT 1.31a"
+     ],
+     "decompose": "none",
+     "gian_giao": "dien-khuyet"
+    },
+    {
+     "dang": "Tìm $x$ hai, ba bước (có dấu ngoặc)",
+     "band": "TH",
+     "loai": "TH lẻ LT",
+     "lythuyet": 0,
+     "vidu": 1,
+     "onclass": 2,
+     "btvn": 2,
+     "source_refs": [
+      "C1-25 GK1 Đa Trí Tuệ B3b",
+      "C1-33 GK1 Nguyễn Trường Tộ B2a",
+      "C1-38 GK1 Tam Hiệp B2b",
+      "SGK 7T1 tr.22 BT 1.27a"
+     ],
+     "decompose": "none"
+    },
+    {
+     "dang": "Tính giá trị biểu thức theo thứ tự (có luỹ thừa)",
+     "band": "TH",
+     "loai": "TH lẻ LT",
+     "lythuyet": 0,
+     "vidu": 1,
+     "onclass": 2,
+     "btvn": 1,
+     "source_refs": [
+      "SGK 7T1 tr.20 Ví dụ 1",
+      "SGK 7T1 tr.21 Luyện tập 1"
+     ],
+     "decompose": "none"
+    },
+    {
+     "dang": "Tìm $x$ khi vế phải chứa luỹ thừa; $x$ ở hai vế (từ 4 bước)",
+     "band": "VD",
+     "loai": "VD lẻ",
+     "lythuyet": 0,
+     "vidu": 1,
+     "onclass": 1,
+     "btvn": 1,
+     "source_refs": [
+      "C1-45 GK1 Bát Tràng B2b",
+      "C1-48 GK1 Nguyễn Trường Tộ B2b",
+      "C1-43 GK1 Trưng Vương B2c"
+     ],
+     "decompose": "vd"
+    }
+   ]
+  },
+  {
+   "code": "6",
+   "title": "Buổi 6 (tuần 10) — Luyện tập chương I ($45$ phút) $+$ Kiểm tra chương I ($45$ phút)",
+   "kiem_tra_phut": 45,
+   "rows": [
+    {
+     "dang": "Ôn số hữu tỉ: trục số, so sánh, dấu của biểu thức (trắc nghiệm)",
+     "band": "NB",
+     "loai": "NB lẻ LT",
+     "lythuyet": 1,
+     "vidu": 0,
+     "onclass": 2,
+     "btvn": 3,
+     "source_refs": [
+      "C1-04 GK1 Bát Tràng C2",
+      "C1-21 GK1 Nguyễn Trường Tộ C3",
+      "SGK 7T1 tr.25 BT 1.35"
+     ],
+     "decompose": "none"
+    },
+    {
+     "dang": "Ôn luỹ thừa: tích, thương, luỹ thừa của luỹ thừa (trắc nghiệm)",
+     "band": "NB",
+     "loai": "NB lẻ LT",
+     "lythuyet": 0,
+     "vidu": 0,
+     "onclass": 3,
+     "btvn": 3,
+     "source_refs": [
+      "C1-14 GK1 Phúc Hoà C5",
+      "C1-16 GK1 Phúc Hoà C7",
+      "C1-20 CK1 Tân Triều C3"
+     ],
+     "decompose": "none"
+    },
+    {
+     "dang": "Điền khuyết lời giải tìm $x$ có dấu ngoặc",
+     "band": "NB",
+     "loai": "NB tách TH",
+     "lythuyet": 0,
+     "vidu": 0,
+     "onclass": 2,
+     "btvn": 3,
+     "source_refs": [
+      "C1-25 GK1 Đa Trí Tuệ B3b",
+      "C1-33 GK1 Nguyễn Trường Tộ B2a",
+      "SGK 7T1 tr.22 BT 1.27a"
+     ],
+     "decompose": "none",
+     "gian_giao": "dien-khuyet"
+    },
+    {
+     "dang": "Bài tính tổng hợp cuối chương",
+     "band": "TH",
+     "loai": "TH lẻ LT",
+     "lythuyet": 0,
+     "vidu": 1,
+     "onclass": 1,
+     "btvn": 2,
+     "source_refs": [
+      "C1-27 GK1 Bát Tràng B1b",
+      "SGK 7T1 tr.24 BT 1.33c"
+     ],
+     "decompose": "none"
+    },
+    {
+     "dang": "Tìm $x$ hai bước",
+     "band": "TH",
+     "loai": "TH lẻ LT",
+     "lythuyet": 0,
+     "vidu": 1,
+     "onclass": 1,
+     "btvn": 2,
+     "source_refs": [
+      "C1-38 GK1 Tam Hiệp B2b",
+      "SGK 7T1 tr.24 BT 1.31b"
+     ],
+     "decompose": "none"
+    },
+    {
+     "dang": "Tìm $x$ dạng $(x+a)^2=b$ — khung lời giải điền khuyết",
+     "band": "VD",
+     "loai": "VD lẻ",
+     "lythuyet": 0,
+     "vidu": 0,
+     "onclass": 1,
+     "btvn": 1,
+     "source_refs": [
+      "C1-51 GK1 Nguyễn Công Trứ B3c",
+      "C1-46 GK1 Bát Tràng B2c"
+     ],
+     "decompose": "vd"
+    }
+   ]
+  },
+  {
+   "code": "7",
+   "title": "Buổi 7 (tuần 15) — Luyện dạng đề giữa kì I phần đại số: phép tính, tìm $x$, phần trăm",
+   "rows": [
+    {
+     "dang": "Trắc nghiệm số hữu tỉ: thuộc tập hợp, số đối, so sánh",
+     "band": "NB",
+     "loai": "NB lẻ LT",
+     "lythuyet": 1,
+     "vidu": 1,
+     "onclass": 3,
+     "btvn": 2,
+     "source_refs": [
+      "C1-02 GK1 Đa Trí Tuệ C2",
+      "C1-01 GK1 Đa Trí Tuệ C1",
+      "C1-03 GK1 Đa Trí Tuệ C3",
+      "C1-21 GK1 Nguyễn Trường Tộ C3"
+     ],
+     "decompose": "none"
+    },
+    {
+     "dang": "Trắc nghiệm đọc số hữu tỉ trên trục số",
+     "band": "NB",
+     "loai": "NB lẻ LT",
+     "lythuyet": 0,
+     "vidu": 1,
+     "onclass": 3,
+     "btvn": 2,
+     "source_refs": [
+      "C1-04 GK1 Bát Tràng C2",
+      "C1-11 GK1 Đỗ Ngọc Du C2"
+     ],
+     "decompose": "none"
+    },
+    {
+     "dang": "Trắc nghiệm luỹ thừa",
+     "band": "NB",
+     "loai": "NB lẻ LT",
+     "lythuyet": 0,
+     "vidu": 1,
+     "onclass": 3,
+     "btvn": 3,
+     "source_refs": [
+      "C1-06 GK1 Bát Tràng C5",
+      "C1-14 GK1 Phúc Hoà C5",
+      "C1-16 GK1 Phúc Hoà C7",
+      "C1-20 CK1 Tân Triều C3",
+      "C1-08 GK1 Chúc Sơn C5"
+     ],
+     "decompose": "none"
+    },
+    {
+     "dang": "Trắc nghiệm tìm số mũ $n$ biết $a^n=b$",
+     "band": "NB",
+     "loai": "NB lẻ LT",
+     "lythuyet": 1,
+     "vidu": 1,
+     "onclass": 3,
+     "btvn": 2,
+     "source_refs": [
+      "C1-07 GK1 Bát Tràng C6",
+      "C1-19 GK1 Nguyễn Công Trứ C3"
+     ],
+     "decompose": "none"
+    },
+    {
+     "dang": "Điền khuyết lời giải bài tìm $x$ của đề",
+     "band": "NB",
+     "loai": "NB tách TH",
+     "lythuyet": 1,
+     "vidu": 0,
+     "onclass": 3,
+     "btvn": 3,
+     "source_refs": [
+      "C1-31 GK1 Đỗ Ngọc Du B2a",
+      "C1-38 GK1 Tam Hiệp B2b",
+      "C1-24 GK1 Đa Trí Tuệ B3a"
+     ],
+     "decompose": "none",
+     "gian_giao": "dien-khuyet"
+    },
+    {
+     "dang": "Bài tính của đề giữa kì (tính hợp lí, có luỹ thừa)",
+     "band": "TH",
+     "loai": "TH lẻ LT",
+     "lythuyet": 0,
+     "vidu": 1,
+     "onclass": 2,
+     "btvn": 1,
+     "source_refs": [
+      "C1-26 GK1 Bát Tràng B1a",
+      "C1-27 GK1 Bát Tràng B1b",
+      "C1-32 GK1 Nguyễn Trường Tộ B1b",
+      "C1-35 GK1 Phúc Hoà B1c",
+      "C1-40 GK1 Nguyễn Công Trứ B1b"
+     ],
+     "decompose": "none"
+    },
+    {
+     "dang": "Bài tìm $x$ hai, ba bước của đề giữa kì",
+     "band": "TH",
+     "loai": "TH lẻ LT",
+     "lythuyet": 0,
+     "vidu": 1,
+     "onclass": 1,
+     "btvn": 1,
+     "source_refs": [
+      "C1-25 GK1 Đa Trí Tuệ B3b",
+      "C1-29 GK1 Chúc Sơn B2b",
+      "C1-33 GK1 Nguyễn Trường Tộ B2a",
+      "C1-43 GK1 Trưng Vương B2c"
+     ],
+     "decompose": "none"
+    },
+    {
+     "dang": "Bài thực tế phần trăm hai ý của đề giữa kì (mỗi ý 2--3 phép tính)",
+     "band": "TH",
+     "loai": "TH lẻ LT",
+     "lythuyet": 0,
+     "vidu": 1,
+     "onclass": 1,
+     "btvn": 1,
+     "source_refs": [
+      "C1-53 GK1 Bát Tràng B3",
+      "C1-54 GK1 Đỗ Ngọc Du B3"
+     ],
+     "decompose": "none"
+    },
+    {
+     "dang": "Tìm $x$ có luỹ thừa của đề giữa kì: vế phải là biểu thức luỹ thừa, dạng $(x+a)^2=b$",
+     "band": "VD",
+     "loai": "VD lẻ",
+     "lythuyet": 0,
+     "vidu": 1,
+     "onclass": 1,
+     "btvn": 1,
+     "source_refs": [
+      "C1-47 GK1 Đỗ Ngọc Du B2b",
+      "C1-50 GK1 Tam Hiệp B2d"
+     ],
+     "decompose": "vd"
+    }
+   ]
+  }
+ ]
 }

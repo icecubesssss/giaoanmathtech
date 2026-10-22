@@ -78,6 +78,9 @@ def _noi_dung_toan(s: str) -> str:
 def check_sgk_style(lesson: LessonPackage) -> list[str]:
     """Cảnh báo trình bày lệch chuẩn SGK. Trả list chuỗi (rỗng = sạch)."""
     out: list[str] = []
+    # SGK Toán 6 KNTT Bài 1-4 dùng "×", từ Bài 5 mới dùng dấu chấm — Thầy chốt 15/10/2026
+    # phiếu lớp 6 theo SGK từng bài ⇒ không bắt `\times` ở lớp 6 (người soạn tự theo bài).
+    cho_times = "Lớp 6" in (getattr(lesson, "grade_label", "") or "")
     for st in lesson.stages:
         for b in st.blocks:
             if getattr(b, "type", "") != "problem":
@@ -103,7 +106,7 @@ def check_sgk_style(lesson: LessonPackage) -> list[str]:
 
             # ── Ký hiệu (áp cho MỌI bài) ─────────────────────────────────
             for ten, txt in (("đề", de), ("lời giải", giai)):
-                if r"\times" in txt:
+                if r"\times" in txt and not cho_times:
                     out.append(f"sgk_style: {nhan} — {ten} dùng `\\times`; SGK dùng `\\cdot`.")
                 sai = _DOT_DEC.findall(txt)
                 if sai:

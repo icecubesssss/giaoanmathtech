@@ -277,6 +277,23 @@
 
 Dù bạn là Claude, Codex, Antigravity, Copilot hay người không dùng AI: mọi luật kiểm được tự động đều nằm trong **code Python**, không phải prompt. Chỉ cần chạy `python -m src.main validate <file.json>` (và `python -m pytest`) là nhận **cùng một bộ gác cổng** (sanitizer/schema/difficulty/visual_linter/gradient + SymPy). **Bắt buộc** validate sạch trước khi `approve`/`build`. Các nguyên tắc dưới đây là phần _con người/tác nhân_ phải tự giữ (validator không soi được).
 
+## Bước 0 mỗi chương — NGÂN HÀNG BÀI trên Google Sheets (BẮT BUỘC trước thuyết minh, Thầy chốt 22/10/2026)
+
+Thuyết minh/phiếu **chỉ bốc bài từ tab "Phân dạng" của chương** (sheet dùng chung `1ucQH5yw…2LNOM`, chỉ đụng tab mình). Chi tiết + mẫu prompt agent: **[docs/quy-trinh-ngan-hang-chuong.md](docs/quy-trinh-ngan-hang-chuong.md)**. Tóm tắt:
+
+```bash
+# 0. viết khung chương: config/khung-phan-dang/<grade>-<subject>-chuong-NN.json (chép mẫu chương V)
+make bank-giao G=lop-9 S=hinh-hoc C=5     # 1. kiểm kê MỌI file inputs + sinh prompt agent cho từng việc
+#                                            2. mỗi việc một subagent (song song) đọc ẢNH → ban-ghi/*.json + log/*.txt
+make bank-gop  G=lop-9 S=hinh-hoc C=5     # 3. soát + gán phiếu theo khung + nén, chia khối ghi Sheets (CHẶN file chưa mở)
+#                                            4. ghi: 1 khối/subagent → find-replace.json → sort.json (connector Sheets)
+make bank-doi-chieu RAW=… G=… S=… C=…     # 5. so tab từng ô với bản gộp → chụp snapshot vào repo
+make du-bai GRADE=lop-9 SUBJECT=hinh-hoc CHUONG=5 SO_PHIEU=6   # 6. đủ bài chưa — THIẾU thì thêm nguồn vào khung, về 1
+#                                            7. ĐỦ ⇒ dựng thuyết minh, source_refs = Mã câu; check_nguon_sheet chặn mã ngoài tab
+```
+
+**Cấm lọc bằng từ khoá rồi bỏ file 0 hit** (22/10 sót 12 bài/10 đề thi thử ở chương V) — `bank-gop` chặn file kiểm kê không có bài cũng không có dòng log.
+
 ## Quy trình mỗi phiếu
 
 ```bash

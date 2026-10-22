@@ -163,7 +163,7 @@ _PHIẾU THUYẾT MINH (spec) — artifact MÁY-ĐỌC, là HỢP ĐỒNG chốt
 _Đọc `config/tier_spec.json` — RATE CARD cố định theo tầng lớp._
 - `load_tier_spec(path)` — Đọc (và cache) tier_spec.json.
 - `subject_block(spec, grade, subject)` — Khối cấu hình của (lớp, môn), vd ('lop-9','dai-so'). KeyError nếu chưa khai báo.
-- `rates_for(spec, grade, subject)` — Phút/câu mỗi đoạn×band cho (lớp, môn): gộp `rates` toàn cục với
+- `rates_for(spec, grade, subject, tier)` — Phút/câu mỗi đoạn×band cho (lớp, môn[, tầng]): gộp `rates` toàn cục với
 - `draw_minutes(spec)` — Phút CỘNG THÊM cho mỗi hình HS phải TỰ VẼ (Thầy chốt 2026-07-26: 5′).
 - `quick_minutes(spec)` — Phút/câu cho câu NHẬN BIẾT trắc nghiệm / điền chỗ chấm trên HÌNH VẼ SẴN
 - `load_ban_do(path)` — Đọc (và cache) `config/ban_do_vd_vdc.json` — chương nào CÓ bài VD/VDC trong đề.
@@ -334,6 +334,26 @@ _Sinh file WEIGHT dẫn xuất từ ngân hàng đề (đã gắn band/phut) —
 ### `scripts/build_lop9b_geometry.py`
 - `generate_all()`
 
+### `scripts/build_ngan_hang_678.py`
+_NGÂN HÀNG CÂU lớp 6-7-8 (TẦNG 1 — máy dựng) từ kho đề Hà Nội đã tải._
+- `nfc(s)`
+- `nhan_file(p)`
+- `duong_txt(p)`
+- `tao_text(p)` — Như ocr_kho_de.job nhưng nhận cả đề ở de-thi-lech-kntt/ (cùng cây lop-N/<kỳ>/).
+- `lay_text(p)`
+- `tach_y(text)` — [(nhãn ý, đoạn)] — '' khi bài không có ý. Hỗ trợ bài chia phần 1., 2. rồi a), b).
+- `dong_dau(text, n)`
+- `phan_hdc(raw, het_de)`
+- `dap_an_tn(hdc)` — {số câu: chữ} từ bảng 'Câu 1 2 3…' / 'Đáp án B C A…' hoặc dạng '1.B 2.C'.
+- `barem_bai(hdc)` — {số bài: khối HDC thô} — chỉ phần sau bảng trắc nghiệm, cắt theo mốc Bài/Câu.
+- `doc_vdc_mat()` — (lớp, kỳ, 50 kí tự đầu tên file) → chương (số La Mã) của CÂU CUỐI ĐỀ đã phân loại bằng mắt.
+- `nhan_chuong(lop)` — số La Mã → nhãn đầy đủ ('II' → 'II. Chia hết').
+- `chon_chuong(lop, ky, thuong, la_hinh, chs, nhan)` — (nhãn chương, cờ đoán). Ưu tiên chương từ khoá NẰM TRONG phạm vi kỳ; không có thì
+- `so_trang(raw, doan)`
+- `dung_mot_de(lop, ky, p, nguon, raw, lech)`
+- `giu_tang2(dich, d)` — Chép trường tầng 2 của bản cũ (cùng id câu) sang bản vừa dựng.
+- `main(argv)`
+
 ### `scripts/build_on_tap_thi_thu.py`
 _ÔN TẬP THEO PHẦN — gom đề bài từ CÁC ĐỀ THI THỬ VÀO 10 Hà Nội, mỗi phần một tệp._
 - `tex(s)`
@@ -365,6 +385,49 @@ _Dựng PDF 'TRÍCH XUẤT CÂU VDC' — in NGUYÊN VĂN đề bài để Thầy
 - `bang_phan_loai(rows)` — Chương nào chỉ TH · TH+VD · TH+VD+VDC — VDC lấy từ chính bảng trích trên.
 - `main()`
 
+### `scripts/de_on_tap_gk1_lop8.py`
+_BỘ ĐỀ ÔN GK1 LỚP 8 (10/10/2026) — 3 đề ôn + 1 đề GK1 chính thức, theo đúng quy trình_
+- `d(x)`
+- `st(text, diem)`
+- `y(nhan, diem, steps)`
+- `hinh(pts, segs, extra, scale, dashed)`
+- `vg(P, Q, R, s)` — kí hiệu góc vuông tại Q (giữa QP và QR)
+- `gach(P, Q, n, s)` — n gạch nhỏ đánh dấu đoạn bằng nhau ở trung điểm PQ
+- `cung(P, Q, R, r, nhan, dn)` — cung đánh dấu góc PQR tại Q (+ nhãn số đo đặt trên tia phân giác)
+- `ao(cx, cy, rx, ry)` — vật cản (ao, chướng ngại vật) — đường cong kín tô xám quanh (cx, cy)
+- `nhan_doan(P, Q, txt, pos, t)`
+- `dem(tikz, cx, rong)` — bản HÌNH TRONG ĐỀ: thêm lề trắng hai bên (\path) cho khung rộng `rong` — \figbelow ép hình theo bề
+- `tn(cau, de, options, dap, giai, nd, ch, muc, nguon, level)`
+- `dong_mt(D)` — mọi dòng ma trận của đề: 8 câu TN + các ý tự luận, dạng (câu, nội dung, chương, mức, điểm, phút, nguồn)
+- `kiem_nguon()`
+- `kiem_diem()` — tổng điểm = 10; điểm từng ý trong đáp án (\hfill (xđ)) cộng đúng bằng điểm ý trong ma trận
+- `bang_mt(rows, tieu_de)`
+- `bang_muc(rows)`
+- `bang_dap_an_tn(D)`
+- `bang_tien_bo()`
+- `bang_theo_doi()`
+- `khoi_tn(c, co_loi_giai)`
+- `khoi_bai(b)`
+- `de_json(k, D)`
+- `mt_json(k, D)`
+
+### `scripts/de_on_tap_gk1_lop8_hinh.py`
+_TOẠ ĐỘ hình bài hình học của bộ đề ôn GK1 lớp 8 (scripts/de_on_tap_gk1_lop8.py)._
+- `tru(P, Q)`
+- `tv(P, Q)`
+- `cham(u, v)`
+- `chan(P, A, B)` — chân đường vuông góc từ P xuống đường thẳng AB
+- `giao(A, B, C, D)` — giao điểm hai đường thẳng AB, CD
+- `dx(P, Q)`
+- `bang(a, b, e)`
+- `vuong_goc(P, Q, R, S)`
+- `song_song(P, Q, R, S)`
+- `thang_hang(P, Q, R)`
+- `hbh(P, Q, R, S)`
+- `hcn(P, Q, R, S)`
+- `la(P)`
+- `goc(P, Q, R)` — số đo góc PQR (độ)
+
 ### `scripts/de_on_tap_gk1_lop9.py`
 _BỘ ĐỀ ÔN GK1 LỚP 9 — sinh 4 đề (Ôn 1, Ôn 2, Ôn 3, GK1 chính thức) + 4 file "Ma trận đề và_
 - `d(x)`
@@ -387,6 +450,30 @@ _Toạ độ hình của bộ đề ôn GK1 lớp 9 — TÍNH và KIỂM bằng 
 - `foot(P, A, B)`
 - `inter(P1, P2, P3, P4)`
 - `ang(A, O, B)`
+
+### `scripts/de_on_tap_gk1_lop9_hinh_v2.py`
+_Toạ độ hình của bộ đề ôn GK1 lớp 9 — TÍNH và KIỂM bằng giải tích (tính chất cần chứng minh_
+- `foot(P, A, B)`
+- `inter(P1, P2, P3, P4)`
+- `ang(A, O, B)`
+
+### `scripts/de_on_tap_gk1_lop9_v2.py`
+_BỘ ĐỀ ÔN GK1 LỚP 9 — PHIÊN BẢN 2 (03/10/2026: rải nguồn theo trường/quận, lưới dạng gắn tay 54 đề;_
+- `d(x)`
+- `st(text, diem)`
+- `bo_tuong_duong(t)` — HS đi thi KHÔNG dùng dấu ⇔ (Thầy 01/10/2026): mỗi phép biến đổi xuống một dòng.
+- `y(nhan, diem, steps)`
+- `goc(cx, cy, a0, a1, r, nhan, rn)`
+- `vuong(x, y, dx, dy, s)` — kí hiệu góc vuông tại (x,y), hai cạnh theo hướng (dx,0) và (0,dy)
+- `hinh(pts, segs, ticks, extra, scale, dashed)`
+- `vg(P, Q, R, s)` — kí hiệu góc vuông tại Q (giữa QP và QR) — vẽ theo toạ độ
+- `kiem_nguon()`
+- `bang_mt(rows)`
+- `bang_muc(rows)`
+- `bang_tien_bo(gk)`
+- `bang_theo_doi()`
+- `de_json(k, D)`
+- `mt_json(k, D)`
 
 ### `scripts/exam_annotate.py`
 _Gắn `band` (NB/TH/VD/VDC) + `phut` (thời gian HS làm, ước) vào từng câu trong_
@@ -428,6 +515,7 @@ _OCR KHO ĐỀ — dựng kho text cho mọi đề hợp lệ ở inputs/refs/de
 _prune_outputs — soi thư mục `outputs/` mồ côi (bản in cũ của phiếu đã đổi tên/xoá)._
 - `expected_dirs()` — slug → các thư mục output hợp lệ (mirror cây seeds, xem src/main.py::_out_root).
 - `scan()` — (lạc chỗ — seed còn nhưng đã chuyển folder, mất gốc — không seed nào khớp).
+- `scan_obsolete_files()` — Các file ca-*.pdf và sidecar cũ nằm trong folder ĐÃ CÓ bản in tên mô tả (*-Phieu-HS.pdf...).
 - `main(argv)`
 
 ### `scripts/quick.py`
@@ -490,6 +578,11 @@ _THỐNG KÊ DẠNG BÀI trong đề kiểm tra Toán Hà Nội, khối 6-9 × 4
 - `xuat(lop, de, dest)`
 - `main(argv)`
 
+### `scripts/thong_ke_luoi_dang.py`
+_Thống kê dạng từ LƯỚI DẠNG gắn tay (inputs/refs/de-thi/lop-9/luoi-dang/<ky>.json)._
+- `thong_ke(du_lieu)`
+- `main()`
+
 ### `scripts/tien-do-lop-c/_data.py`
 _Tiến độ tầng C — Lớp 9. Đại số 180′ · Hình học 90′._
 - `t15(what, n)`
@@ -510,6 +603,13 @@ _Xuất tiến độ tầng C ra .xlsx — định dạng bám file PDF gốc c�
 - `banner(ws, r, text, bg, ncol, color)`
 - `row_bg(hm, lkt, nd)`
 - `build(weeks, path, title, buoi_label)`
+
+### `scripts/tien_do_2026.py`
+_Đọc 2 file TIẾN ĐỘ 2026-2027 (Thầy chốt 15/09/2026) → JSON máy đọc được._
+- `doc_c(lop)`
+- `doc_b(lop, bai_chuong)`
+- `dung()`
+- `check()`
 
 ### `scripts/tikz_geo.py`
 _Sinh TikZ hình học có TOẠ ĐỘ TÍNH + NHÃN TỰ ĐẶT vào góc trống (không bị nét đè)._

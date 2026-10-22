@@ -1,0 +1,768 @@
+{
+ "slug": "phieu-2-tuan05-cong-tru-da-thuc",
+ "title": "Phép cộng và phép trừ đa thức",
+ "eyebrow": "ĐẠI SỐ 8 — PHIẾU 2 • CHƯƠNG I — BÀI 3 $+$ LUYỆN TẬP CHUNG",
+ "grade_label": "Lớp 8 • Chương I",
+ "chuong": "chuong-01-da-thuc",
+ "so_ca": 1,
+ "class_tier": "B",
+ "stages": [
+  {
+   "kind": "review",
+   "number": 1,
+   "title": "Khám phá",
+   "blocks": [
+    {
+     "type": "opener",
+     "text": "Một khu vườn sinh thái có hai khu: khu trồng hoa có diện tích $A = 3x^2 + 2xy - 1$ (m$^2$) và khu trồng rau có diện tích $B = 2x^2 - xy + 5$ (m$^2$).[[br]]a) Viết biểu thức biểu thị tổng diện tích của hai khu vườn bằng cách lấy $A + B$.[[br]]b) Viết biểu thức biểu thị diện tích khu trồng hoa hơn khu trồng rau bao nhiêu mét vuông bằng cách lấy $A - B$.[[br]]c) Nếu $x = 3$ và $y = 2$, hãy tính cụ thể các diện tích trên."
+    }
+   ],
+   "solution": "a) $A + B = (3x^2 + 2xy - 1) + (2x^2 - xy + 5) = 5x^2 + xy + 4$ (m$^2$).[[br]]b) $A - B = (3x^2 + 2xy - 1) - (2x^2 - xy + 5) = x^2 + 3xy - 6$ (m$^2$).[[br]]c) Khi $x = 3, y = 2$: $A + B = 5\\cdot 9 + 3\\cdot 2 + 4 = 55$ (m$^2$); $A - B = 9 + 3\\cdot 6 - 6 = 21$ (m$^2$).[[br]]Vậy tổng diện tích là $55$ m$^2$ và khu hoa hơn khu rau $21$ m$^2$.",
+   "teacher_note": "Cho HS làm nhanh câu a và b. Nhắc lại: khi trừ đa thức $B$, phải đặt $B$ trong dấu ngoặc rồi đổi dấu mọi hạng tử của $B$. Chốt: hôm nay học quy tắc cộng, trừ đa thức nhiều biến."
+  },
+  {
+   "kind": "concept",
+   "number": 2,
+   "title": "Kiến thức cần nhớ",
+   "blocks": [
+    {
+     "type": "para",
+     "variant": "heading",
+     "text": "1. Phép cộng hai đa thức"
+    },
+    {
+     "type": "deflist",
+     "items": [
+      {
+       "term": "Quy tắc cộng:",
+       "desc": "Để cộng hai đa thức, ta đặt dấu cộng giữa hai đa thức (có ngoặc), bỏ dấu ngoặc, nhóm các hạng tử đồng dạng rồi cộng các hệ số và giữ nguyên phần biến."
+      },
+      {
+       "term": "Ví dụ:",
+       "desc": "$(2x^2 + xy) + (x^2 - 3xy + 1) = (2x^2 + x^2) + (xy - 3xy) + 1 = 3x^2 - 2xy + 1$."
+      }
+     ]
+    },
+    {
+     "type": "para",
+     "variant": "heading",
+     "text": "2. Phép trừ hai đa thức"
+    },
+    {
+     "type": "deflist",
+     "items": [
+      {
+       "term": "Quy tắc trừ:",
+       "desc": "Để trừ đa thức $B$ cho đa thức $A$, ta viết $A - B = A - (B)$, bỏ dấu ngoặc có dấu trừ đằng trước bằng cách ĐỔI DẤU mọi hạng tử của $B$ ($+ \\to -$, $- \\to +$), rồi nhóm các hạng tử đồng dạng và thu gọn."
+      },
+      {
+       "term": "Ví dụ:",
+       "desc": "$(3x^2 - 2xy) - (x^2 - 2xy + 5) = 3x^2 - 2xy - x^2 + 2xy - 5 = 2x^2 - 5$."
+      }
+     ]
+    },
+    {
+     "type": "para",
+     "variant": "heading",
+     "text": "3. Tìm đa thức chưa biết trong đẳng thức"
+    },
+    {
+     "type": "deflist",
+     "items": [
+      {
+       "term": "$A + X = B$:",
+       "desc": "Suy ra $X = B - A$ (số hạng chưa biết bằng tổng trừ số hạng đã biết)."
+      },
+      {
+       "term": "$X - A = B$:",
+       "desc": "Suy ra $X = B + A$ (số bị trừ bằng hiệu cộng số trừ)."
+      },
+      {
+       "term": "$A - X = B$:",
+       "desc": "Suy ra $X = A - B$ (số trừ bằng số bị trừ trừ hiệu)."
+      }
+     ]
+    },
+    {
+     "type": "noted",
+     "variant": "target",
+     "text": "\\textbf{Đề giữa kì I hỏi gì ở phần này.} Trắc nghiệm $0{,}25$ điểm: nhận biết quy tắc bỏ ngoặc, chọn phép tính tìm đa thức chưa biết, tìm bậc của đa thức tổng/hiệu.[[br]]Tự luận $1{,}0$ $-$ $1{,}5$ điểm: cho hai đa thức $A, B$, tính $A + B$, $A - B$, tìm bậc và tính giá trị (THCS Bát Tràng, Nguyễn Trãi, Đỗ Ngọc Du); tìm đa thức $C$ biết $C + B = A$ (THCS Nguyễn Trường Tộ, Vạn Phúc); bài toán thực tế diện tích hoặc tiền hàng có giảm giá (THCS Hoàng Hoa Thám, Chúc Sơn)."
+    },
+    {
+     "type": "noted",
+     "variant": "trap",
+     "text": "Bạn Nam viết $-(2x^2 - 3xy + 1) = -2x^2 - 3xy + 1$ — sai: dấu trừ trước ngoặc phải đổi dấu MỌI hạng tử bên trong, đúng là $-2x^2 + 3xy - 1$.[[br]]Bạn Hoa tìm $C$ từ $A - C = B$ lại lấy $C = A + B$ — sai: $C$ là số trừ nên $C = A - B$.[[br]]Bạn Lan cộng hai hạng tử không đồng dạng: $2x^2y + 3xy^2 = 5x^3y^3$ — sai: không cộng được vì phần biến khác nhau."
+    }
+   ],
+   "teacher_note": "Nhấn mạnh kỹ thuật đóng ngoặc - mở ngoặc đổi dấu. Cho HS luyện phản xạ nhận diện số bị trừ, số trừ, số hạng chưa biết trước khi làm bài tập."
+  },
+  {
+   "kind": "practice1",
+   "number": 3,
+   "title": "Luyện tập 1",
+   "blocks": [
+    {
+     "type": "problem",
+     "label": "Bài 1.",
+     "statement": "Điền Đ (Đúng) hoặc S (Sai) vào các khẳng định sau:[[br]]a) [NB] $-(2x^2 - 3xy + 5) = -2x^2 + 3xy - 5$;[[br]]b) [NB] $-(x^2y - 4xy + 1) = -x^2y - 4xy - 1$;[[br]]c) [NB] $3x^2 - (x^2 - 2x + 1) = 3x^2 - x^2 + 2x - 1$.",
+     "level": 1,
+     "tier": "onclass",
+     "dang_id": "NB1",
+     "solution": "a) Đ: Đổi dấu $+2x^2 \\to -2x^2$, $-3xy \\to +3xy$, $+5 \\to -5$.[[br]]b) S: Trước ngoặc có dấu trừ, $-4xy$ phải đổi thành $+4xy$.[[br]]c) Đ: Đổi dấu đúng các hạng tử trong ngoặc."
+    },
+    {
+     "type": "noted",
+     "variant": "example",
+     "text": "\\textbf{Ví dụ 1.} Cho hai đa thức $M = 3x^2y - 2xy + 1$ và $N = -x^2y + 5xy - 4$. Tính $M + N$.[[br]]{\\sffamily\\bfseries\\color{brand}Lời giải}[[br]]$M + N = (3x^2y - 2xy + 1) + (-x^2y + 5xy - 4)$[[br]]$M + N = (3x^2y - x^2y) + (-2xy + 5xy) + (1 - 4)$[[br]]$M + N = [[fill:2x^2y]] + [[fill:3xy]] - 3$[[br]]Vậy $M + N = [[fill:2x^2y + 3xy - 3]]$."
+    },
+    {
+     "type": "problem",
+     "label": "Bài 2.",
+     "statement": "Cho hai đa thức $A = 2x^2y - 6xy + x^2 + 7$ và $B = 3xy + 5x^2 - 2x^2y - 8$ (Đề giữa kì I, THCS Bát Tràng). Điền vào chỗ trống:[[br]]a) [NB] Nhóm các hạng tử đồng dạng: $A + B = \\big($[[blank:2.4cm]]$\\big) + \\big($[[blank:2.4cm]]$\\big) + (x^2 + 5x^2) + (7 - 8)$.[[br]]b) [NB] Rút gọn từng nhóm: $A + B = 0 + \\big($[[blank:1.5cm]]$\\big) + 6x^2 - 1$.[[br]]c) [NB] Kết quả thu gọn là $A + B = $[[blank:3.5cm]].",
+     "level": 1,
+     "tier": "onclass",
+     "dang_id": "NB2",
+     "solution": "a) $A + B = (2x^2y - 2x^2y) + (-6xy + 3xy) + (x^2 + 5x^2) + (7 - 8)$.[[br]]b) $A + B = 0 + (-3xy) + 6x^2 - 1$.[[br]]c) Vậy $A + B = 6x^2 - 3xy - 1$."
+    },
+    {
+     "type": "problem",
+     "label": "Bài 3.",
+     "statement": "Tính tổng hai đa thức:[[br]]a) [NB] $(2x^2 - 3x + 1) + (x^2 + 3x - 5)$;[[br]]b) [NB] $(5x^2y - 2xy^2) + (-3x^2y + 2xy^2)$;[[br]]c) [NB] $(3x^2y - 2xy + 5) + (-x^2y + 2xy - 3)$ (Đề giữa kì I, THCS Nguyễn Công Trứ).",
+     "level": 1,
+     "tier": "onclass",
+     "dang_id": "NB3",
+     "solution": "a) $(2x^2 + x^2) + (-3x + 3x) + (1 - 5) = 3x^2 - 4$.[[br]]b) $(5x^2y - 3x^2y) + (-2xy^2 + 2xy^2) = 2x^2y$.[[br]]c) $(3x^2y - x^2y) + (-2xy + 2xy) + (5 - 3) = 2x^2y + 2$."
+    },
+    {
+     "type": "noted",
+     "variant": "example",
+     "text": "\\textbf{Ví dụ 2.} Tính hiệu $A - B$ với $A = 4x^2 - 3xy + 2$ và $B = x^2 - 3xy - 5$.[[br]]{\\sffamily\\bfseries\\color{brand}Lời giải}[[br]]$A - B = (4x^2 - 3xy + 2) - (x^2 - 3xy - 5)$[[br]]$A - B = 4x^2 - 3xy + 2 - x^2 + [[fill:3xy]] + [[fill:5]]$[[br]]$A - B = (4x^2 - x^2) + (-3xy + 3xy) + (2 + 5)$[[br]]$A - B = [[fill:3x^2 + 7]]$[[br]]Vậy $A - B = [[fill:3x^2 + 7]]$."
+    },
+    {
+     "type": "problem",
+     "label": "Bài 4.",
+     "statement": "Tính hiệu hai đa thức:[[br]]a) [NB] $(3x^2 - 2xy + 1) - (x^2 - 2xy + 4)$;[[br]]b) [NB] $(2x^2y^3 + 3x^3) - (-3x^3 + 2x^2y^3)$ (Đề giữa kì I, THCS Văn Yên);[[br]]c) [NB] $(5xy - 2x^2) - (3xy - 2x^2 + 7)$.",
+     "level": 1,
+     "tier": "onclass",
+     "dang_id": "NB4",
+     "solution": "a) $3x^2 - 2xy + 1 - x^2 + 2xy - 4 = (3x^2 - x^2) + (-2xy + 2xy) + (1 - 4) = 2x^2 - 3$.[[br]]b) $2x^2y^3 + 3x^3 + 3x^3 - 2x^2y^3 = (2x^2y^3 - 2x^2y^3) + (3x^3 + 3x^3) = 6x^3$.[[br]]c) $5xy - 2x^2 - 3xy + 2x^2 - 7 = (5xy - 3xy) + (-2x^2 + 2x^2) - 7 = 2xy - 7$."
+    },
+    {
+     "type": "problem",
+     "label": "Bài 5.",
+     "statement": "Tìm bậc của đa thức tổng, hiệu sau khi thu gọn:[[br]]a) [NB] Cho $M = (x^3 - 2x^2y + 1) + (-x^3 + 5x^2y - 3)$. Bậc của $M$ là",
+     "level": 1,
+     "tier": "onclass",
+     "dang_id": "NB5",
+     "options": [
+      "$3$",
+      "$2$",
+      "$1$",
+      "$4$"
+     ],
+     "solution": "Thu gọn: $M = 3x^2y - 2$. Hạng tử $3x^2y$ có bậc $2 + 1 = 3$.",
+     "answer": "A"
+    },
+    {
+     "type": "problem",
+     "label": "Bài 6.",
+     "statement": "[NB] Cho $P = (2x^2y^2 - 3xy + 5) - (2x^2y^2 + xy - 1)$. Bậc của $P$ bằng bao nhiêu?",
+     "level": 1,
+     "tier": "onclass",
+     "dang_id": "NB5",
+     "options": [
+      "$4$",
+      "$3$",
+      "$2$",
+      "$1$"
+     ],
+     "solution": "Thu gọn: $P = -4xy + 6$. Hạng tử $-4xy$ có bậc $1 + 1 = 2$.",
+     "answer": "C"
+    },
+    {
+     "type": "problem",
+     "label": "Bài 7.",
+     "statement": "[NB] Điền vào chỗ trống: Đa thức tổng $Q = (x^2y + x^3 - xy^2 + 3) + (x^3 + xy^2 - xy - 6)$ sau khi thu gọn có bậc là [[blank:1.1cm]] (Đề giữa kì I, THCS Nguyễn Trãi).",
+     "level": 1,
+     "tier": "onclass",
+     "dang_id": "NB5",
+     "solution": "Thu gọn: $Q = 2x^3 + x^2y - xy - 3$. Bậc của $Q$ là $3$.",
+     "answer": "$3$"
+    },
+    {
+     "type": "problem",
+     "label": "Bài 8.",
+     "statement": "Tính giá trị của đa thức tổng, hiệu sau khi thu gọn:[[br]]a) [NB] Cho $A = (2x^2 - 3xy) + (x^2 + 3xy - 5) = 3x^2 - 5$. Tính giá trị của $A$ tại $x = 2$.[[br]]b) [NB] Cho $B = (4xy + 3) - (xy - 2) = 3xy + 5$. Tính giá trị của $B$ tại $x = -1, y = 2$.[[br]]c) [NB] Cho $C = (x^2y - 2xy + 3) - (x^2y - 5xy + 3) = 3xy$. Tính giá trị của $C$ tại $x = 4, y = \\dfrac{1}{3}$.",
+     "level": 1,
+     "tier": "onclass",
+     "dang_id": "NB6",
+     "solution": "a) Thay $x = 2$: $A = 3\\cdot 2^2 - 5 = 12 - 5 = 7$.[[br]]b) Thay $x = -1, y = 2$: $B = 3\\cdot(-1)\\cdot 2 + 5 = -6 + 5 = -1$.[[br]]c) Thay $x = 4, y = \\dfrac{1}{3}$: $C = 3\\cdot 4\\cdot\\dfrac{1}{3} = 4$."
+    },
+    {
+     "type": "problem",
+     "label": "Bài 9.",
+     "statement": "Điền vào chỗ trống để hoàn thành công thức tìm đa thức chưa biết:[[br]]a) [NB] Nếu $A + X = B$ thì $X = $[[blank:2.4cm]].[[br]]b) [NB] Nếu $X - A = B$ thì $X = $[[blank:2.4cm]].[[br]]c) [NB] Nếu $A - X = B$ thì $X = $[[blank:2.4cm]].",
+     "level": 1,
+     "tier": "onclass",
+     "dang_id": "NB7",
+     "solution": "a) $X = B - A$.[[br]]b) $X = B + A$.[[br]]c) $X = A - B$."
+    },
+    {
+     "type": "noted",
+     "variant": "example",
+     "text": "\\textbf{Ví dụ 3.} Tìm đa thức $X$ biết $X + (2x^2 - xy) = 5x^2 + 3xy - 1$.[[br]]{\\sffamily\\bfseries\\color{brand}Lời giải}[[br]]Ta có $X = (5x^2 + 3xy - 1) - (2x^2 - xy)$[[br]]$X = 5x^2 + 3xy - 1 - [[fill:2x^2]] + [[fill:xy]]$[[br]]$X = (5x^2 - 2x^2) + (3xy + xy) - 1$[[br]]$X = [[fill:3x^2 + 4xy - 1]]$[[br]]Vậy $X = [[fill:3x^2 + 4xy - 1]]$."
+    },
+    {
+     "type": "problem",
+     "label": "Bài 10.",
+     "statement": "Chọn phép tính đúng để tìm đa thức chưa biết:[[br]]a) [NB] Để tìm đa thức $C$ thỏa mãn $C + (3x^2 - y^2) = 5x^2 + 2y^2$ (Đề giữa kì I, THCS Nguyễn Trường Tộ), ta thực hiện",
+     "level": 1,
+     "tier": "onclass",
+     "dang_id": "NB8",
+     "options": [
+      "$C = (5x^2 + 2y^2) + (3x^2 - y^2)$",
+      "$C = (5x^2 + 2y^2) - (3x^2 - y^2)$",
+      "$C = (3x^2 - y^2) - (5x^2 + 2y^2)$",
+      "$C = -(5x^2 + 2y^2) - (3x^2 - y^2)$"
+     ],
+     "solution": "$C$ là số hạng chưa biết nên $C = (5x^2 + 2y^2) - (3x^2 - y^2)$.",
+     "answer": "B"
+    },
+    {
+     "type": "problem",
+     "label": "Bài 11.",
+     "statement": "[NB] Để tìm đa thức $M$ thỏa mãn $M - (2xy - 3x^2) = 5x^2 - xy + 1$ (Đề giữa kì I, THCS Vạn Phúc, Hà Đông), ta thực hiện",
+     "level": 1,
+     "tier": "onclass",
+     "dang_id": "NB8",
+     "options": [
+      "$M = (5x^2 - xy + 1) + (2xy - 3x^2)$",
+      "$M = (5x^2 - xy + 1) - (2xy - 3x^2)$",
+      "$M = (2xy - 3x^2) - (5x^2 - xy + 1)$",
+      "$M = (5x^2 - xy + 1) - (3x^2 - 2xy)$"
+     ],
+     "solution": "$M$ là số bị trừ nên $M = (5x^2 - xy + 1) + (2xy - 3x^2)$.",
+     "answer": "A"
+    },
+    {
+     "type": "problem",
+     "label": "Bài 12.",
+     "statement": "[NB] Để tìm đa thức $D$ thỏa mãn $(4x^2 - 3xy) - D = x^2 + 2xy$, ta thực hiện",
+     "level": 1,
+     "tier": "onclass",
+     "dang_id": "NB8",
+     "options": [
+      "$D = (x^2 + 2xy) + (4x^2 - 3xy)$",
+      "$D = (x^2 + 2xy) - (4x^2 - 3xy)$",
+      "$D = (4x^2 - 3xy) - (x^2 + 2xy)$",
+      "$D = -(4x^2 - 3xy) - (x^2 + 2xy)$"
+     ],
+     "solution": "$D$ là số trừ nên $D = (4x^2 - 3xy) - (x^2 + 2xy)$.",
+     "answer": "C"
+    }
+   ],
+   "teacher_note": "Bài 1, 2, 3 rèn cộng trừ cơ bản. Bài 5, 6 kiểm tra bậc và giá trị. Bài 9, 10, 11, 12 khắc sâu quy tắc chuyển vế tìm đa thức chưa biết."
+  },
+  {
+   "kind": "practice2",
+   "number": 4,
+   "title": "Luyện tập 2",
+   "blocks": [
+    {
+     "type": "problem",
+     "label": "Bài 13.",
+     "statement": "Nối biểu thức ở Cột A với ý nghĩa tương ứng ở Cột B, biết mảnh vườn có diện tích $A = 7x^2y + 4xy^2$ (m$^2$) và lối đi có diện tích $B = 3x^2y + xy^2$ (m$^2$):[[br]]a) [NB] Biểu thức $A - B$ ứng với ý nghĩa nào?[[br]]b) [NB] Biểu thức $A + B$ ứng với ý nghĩa nào?[[br]]c) [NB] Biểu thức $2A - B$ ứng với ý nghĩa nào?",
+     "level": 1,
+     "tier": "onclass",
+     "dang_id": "NB9",
+     "options": [
+      "1 nối với Phần diện tích đất còn lại để trồng cây; 2 nối với Tổng diện tích khu vườn và khu phụ trợ; 3 nối với Diện tích hai khu vườn trừ đi lối đi",
+      "1 nối với Tổng diện tích khu vườn và khu phụ trợ; 2 nối với Phần diện tích đất còn lại; 3 nối với Diện tích hai khu",
+      "1 nối với Diện tích lối đi; 2 nối với Diện tích khu vườn; 3 nối với Tổng diện tích",
+      "1 nối với Phần đất còn lại; 2 nối với Diện tích hai khu; 3 nối với Tổng diện tích"
+     ],
+     "solution": "a) $A - B$ là phần diện tích đất còn lại để trồng cây.[[br]]b) $A + B$ là tổng diện tích khu vườn và khu phụ trợ.[[br]]c) $2A - B$ là diện tích hai khu vườn trừ đi lối đi.",
+     "answer": "A"
+    },
+    {
+     "type": "problem",
+     "label": "Bài 14.",
+     "statement": "Nhận biết biểu thức giảm giá:[[br]]a) [NB] Một chiếc áo có giá niêm yết là $x$ nghìn đồng. Trong đợt khuyến mãi, áo được giảm $20$ nghìn đồng. Biểu thức biểu thị giá chiếc áo sau khi giảm là (Đề giữa kì I, THCS Chúc Sơn)",
+     "level": 1,
+     "tier": "onclass",
+     "dang_id": "NB10",
+     "options": [
+      "$x + 20$",
+      "$x - 20$",
+      "$20 - x$",
+      "$20x$"
+     ],
+     "solution": "Giảm $20$ nghìn đồng thì giá mới là $x - 20$ (nghìn đồng).",
+     "answer": "B"
+    },
+    {
+     "type": "problem",
+     "label": "Bài 15.",
+     "statement": "[NB] Một chiếc quần có giá niêm yết $y$ nghìn đồng, được giảm giá $10\\%$. Biểu thức biểu thị số tiền khách phải trả cho chiếc quần là (Đề giữa kì I, THCS Vạn Phúc, Thanh Trì)",
+     "level": 1,
+     "tier": "onclass",
+     "dang_id": "NB10",
+     "options": [
+      "$y - 10$",
+      "$0{,}1y$",
+      "$0{,}9y$",
+      "$10y$"
+     ],
+     "solution": "Giảm $10\\%$ nên khách trả $90\\%$ giá niêm yết: $0{,}9y$ (nghìn đồng).",
+     "answer": "C"
+    },
+    {
+     "type": "problem",
+     "label": "Bài 16.",
+     "statement": "[NB] Điền vào chỗ trống: Bạn An mua $1$ chiếc áo (giá niêm yết $x$ nghìn đồng, giảm $20$ nghìn đồng) và $1$ chiếc quần (giá niêm yết $y$ nghìn đồng, giảm $10\\%$). Biểu thức biểu thị tổng số tiền An phải trả là [[blank:2.4cm]] (nghìn đồng).",
+     "level": 1,
+     "tier": "onclass",
+     "dang_id": "NB10",
+     "solution": "Tổng số tiền phải trả là $x - 20 + 0{,}9y$ (nghìn đồng).",
+     "answer": "$x - 20 + 0{,}9y$"
+    },
+    {
+     "type": "noted",
+     "variant": "example",
+     "text": "\\textbf{Ví dụ 4.} Cho ba đa thức $M = 3x^2 - xy$, $N = x^2 + 2xy - 1$, $P = 2x^2 - 3xy + 4$. Tính $M + N - P$.[[br]]{\\sffamily\\bfseries\\color{brand}Lời giải}[[br]]$M + N - P = (3x^2 - xy) + (x^2 + 2xy - 1) - (2x^2 - 3xy + 4)$[[br]]$M + N - P = 3x^2 - xy + x^2 + 2xy - 1 - [[fill:2x^2]] + [[fill:3xy]] - [[fill:4]]$[[br]]$M + N - P = (3x^2 + x^2 - 2x^2) + (-xy + 2xy + 3xy) + (-1 - 4)$[[br]]$M + N - P = [[fill:2x^2 + 4xy - 5]]$[[br]]Vậy $M + N - P = [[fill:2x^2 + 4xy - 5]]$."
+    },
+    {
+     "type": "problem",
+     "label": "Bài 17.",
+     "statement": "Cho ba đa thức $A = x^2 - 2xy + y^2$, $B = 2x^2 + xy - y^2$, $C = -x^2 + 3xy + 2y^2$ (SGK 1{.}23). Tính:[[br]]a) [NB] $A + B$;[[br]]b) [NB] $(A + B) - C$;[[br]]c) [NB] $A - B + C$.",
+     "level": 1,
+     "tier": "onclass",
+     "dang_id": "NB11",
+     "solution": "a) $A + B = (x^2 + 2x^2) + (-2xy + xy) + (y^2 - y^2) = 3x^2 - xy$.[[br]]b) $(A + B) - C = (3x^2 - xy) - (-x^2 + 3xy + 2y^2) = 3x^2 - xy + x^2 - 3xy - 2y^2 = 4x^2 - 4xy - 2y^2$.[[br]]c) $A - B + C = (x^2 - 2xy + y^2) - (2x^2 + xy - y^2) + (-x^2 + 3xy + 2y^2) = -2x^2 + 4y^2$."
+    },
+    {
+     "type": "noted",
+     "variant": "example",
+     "text": "\\textbf{Ví dụ 5.} Cho hai đa thức $P = 5x^2 - 3xy + 2y^2$ và $Q = -2x^2 + 3xy - y^2$. Tính $M = P + Q$ rồi tìm bậc của $M$.[[br]]{\\sffamily\\bfseries\\color{brand}Lời giải}[[br]]$M = (5x^2 - 3xy + 2y^2) + (-2x^2 + 3xy - y^2)$[[br]]$M = (5x^2 - 2x^2) + (-3xy + 3xy) + (2y^2 - y^2)$[[br]]$M = [[fill:3x^2 + y^2]]$[[br]]Hạng tử có bậc cao nhất là $3x^2$ và $y^2$, đều có bậc $[[fill:2]]$.[[br]]Vậy $M = [[fill:3x^2 + y^2]]$ và bậc của $M$ là $[[fill:2]]$."
+    },
+    {
+     "type": "problem",
+     "label": "Bài 18.",
+     "statement": "Cho hai đa thức $A = x^2y + x^3 - xy^2 + 3$ và $B = x^3 + xy^2 - xy - 6$ (SGK 1{.}14 và Đề giữa kì I, THCS Nguyễn Trãi).[[br]]a) [TH] Tìm đa thức $M = A + B$ và xác định bậc của đa thức $M$.[[br]]b) [TH] Tìm đa thức $N = B - A$ và tính giá trị của đa thức $N$ khi $x = 1, y = -2$.",
+     "level": 2,
+     "tier": "onclass",
+     "dang_id": "TH1",
+     "hints": [
+      "Khi cộng hai đa thức, nhóm các hạng tử cùng phần biến rồi cộng hệ số.",
+      "Khi trừ $B - A$, nhớ đổi dấu mọi hạng tử của đa thức $A$ đứng sau dấu trừ."
+     ],
+     "solution": "a) Ta có $M = A + B = (x^2y + x^3 - xy^2 + 3) + (x^3 + xy^2 - xy - 6)$[[br]]$M = (x^3 + x^3) + x^2y + (-xy^2 + xy^2) - xy + (3 - 6)$[[br]]$M = 2x^3 + x^2y - xy - 3$[[br]]Các hạng tử có bậc lần lượt là $3, 3, 2, 0$.[[br]]Vậy $M = 2x^3 + x^2y - xy - 3$ và bậc của $M$ là $3$.[[br]]b) Ta có $N = B - A = (x^3 + xy^2 - xy - 6) - (x^2y + x^3 - xy^2 + 3)$[[br]]$N = x^3 + xy^2 - xy - 6 - x^2y - x^3 + xy^2 - 3$[[br]]$N = (x^3 - x^3) + (xy^2 + xy^2) - x^2y - xy + (-6 - 3)$[[br]]$N = 2xy^2 - x^2y - xy - 9$[[br]]Thay $x = 1, y = -2$ vào $N$:[[br]]$N = 2\\cdot 1\\cdot(-2)^2 - 1^2\\cdot(-2) - 1\\cdot(-2) - 9 = 8 + 2 + 2 - 9 = 3$.[[br]]Vậy khi $x = 1, y = -2$ thì $N = 3$."
+    },
+    {
+     "type": "noted",
+     "variant": "example",
+     "text": "\\textbf{Ví dụ 6.} Tìm đa thức $C$ biết $(2x^2y - xy^2 + 1) - C = x^2y + 3xy^2 - 4$.[[br]]{\\sffamily\\bfseries\\color{brand}Lời giải}[[br]]Vì $(2x^2y - xy^2 + 1) - C = x^2y + 3xy^2 - 4$ nên[[br]]$C = (2x^2y - xy^2 + 1) - (x^2y + 3xy^2 - 4)$[[br]]$C = 2x^2y - xy^2 + 1 - x^2y - [[fill:3xy^2]] + [[fill:4]]$[[br]]$C = (2x^2y - x^2y) + (-xy^2 - 3xy^2) + (1 + 4)$[[br]]$C = [[fill:x^2y - 4xy^2 + 5]]$[[br]]Vậy $C = [[fill:x^2y - 4xy^2 + 5]]$."
+    },
+    {
+     "type": "problem",
+     "label": "Bài 19.",
+     "statement": "Tìm đa thức chưa biết:[[br]]a) [TH] Cho $A = x^3y^2 + 4y^2 - x^2y$ và $B = 3x^2y + 5y^2 + 2x^3y^2$. Tìm đa thức $C$ sao cho $C + B = A$ (Đề giữa kì I, THCS Nguyễn Trường Tộ).[[br]]b) [TH] Tìm đa thức $M$ biết $M - (2x^2 - 3xy) = x^2 + xy - y^2$ (SGK 1{.}16).",
+     "level": 2,
+     "tier": "onclass",
+     "dang_id": "TH2",
+     "hints": [
+      "$C + B = A \\implies C = A - B$; nhớ đặt cả đa thức $B$ trong ngoặc.",
+      "$M - (2x^2 - 3xy) = x^2 + xy - y^2 \\implies M = (x^2 + xy - y^2) + (2x^2 - 3xy)$."
+     ],
+     "solution": "a) Ta có $C + B = A$[[br]]$C = A - B$[[br]]$C = (x^3y^2 + 4y^2 - x^2y) - (3x^2y + 5y^2 + 2x^3y^2)$[[br]]$C = x^3y^2 + 4y^2 - x^2y - 3x^2y - 5y^2 - 2x^3y^2$[[br]]$C = (x^3y^2 - 2x^3y^2) + (-x^2y - 3x^2y) + (4y^2 - 5y^2)$[[br]]$C = -x^3y^2 - 4x^2y - y^2$[[br]]Vậy $C = -x^3y^2 - 4x^2y - y^2$.[[br]]b) Ta có $M - (2x^2 - 3xy) = x^2 + xy - y^2$[[br]]$M = (x^2 + xy - y^2) + (2x^2 - 3xy)$[[br]]$M = (x^2 + 2x^2) + (xy - 3xy) - y^2$[[br]]$M = 3x^2 - 2xy - y^2$[[br]]Vậy $M = 3x^2 - 2xy - y^2$."
+    },
+    {
+     "type": "noted",
+     "variant": "example",
+     "text": "\\textbf{Ví dụ 7.} Thực hiện thu gọn biểu thức tổng $K = (x^3 - 3x^2y + xy) + (2x^2y - xy + 4)$ và xác định giá trị của nó ứng với cặp số $x = 2, y = 3$.[[br]]{\\sffamily\\bfseries\\color{brand}Lời giải}[[br]]$K = x^3 - 3x^2y + xy + 2x^2y - xy + 4$[[br]]$K = x^3 + (-3x^2y + 2x^2y) + (xy - xy) + 4$[[br]]$K = x^3 - [[fill:x^2y]] + [[fill:4]]$[[br]]Thay $x = 2, y = 3$ vào $K$:[[br]]$K = 2^3 - 2^2\\cdot 3 + 4 = 8 - 12 + 4 = [[fill:0]]$[[br]]Vậy khi $x = 2, y = 3$ thì $K = [[fill:0]]$."
+    },
+    {
+     "type": "problem",
+     "label": "Bài 20.",
+     "statement": "Rút gọn biểu thức rồi tính giá trị:[[br]]a) [TH] Cho hai đa thức $A = 2x^6 - x^2y^3 - 4x^3y^2 - 3$ và $B = x^6 - 3x^3y^2 + xy^3 + 1$. Tìm đa thức $C = A - B$ rồi tính giá trị của $A$ khi $x = -1, y = 2$ (Đề giữa kì I, THCS Đỗ Ngọc Du).[[br]]b) [TH] Rút gọn biểu thức $N = (-2xy + 3xy^2 + 3) + (xy^2 + xy - 3)$ rồi tính giá trị của $N$ khi $x = -4, y = 2$ (Đề giữa kì I, THCS Tam Khương).",
+     "level": 2,
+     "tier": "onclass",
+     "dang_id": "TH3",
+     "hints": [
+      "Thu gọn biểu thức trước khi thay số để phép tính nhanh và chính xác.",
+      "Số âm khi nâng lên luỹ thừa chẵn mang dấu dương: $(-1)^6 = 1$."
+     ],
+     "solution": "a) Ta có $C = A - B = (2x^6 - x^2y^3 - 4x^3y^2 - 3) - (x^6 - 3x^3y^2 + xy^3 + 1)$[[br]]$C = 2x^6 - x^2y^3 - 4x^3y^2 - 3 - x^6 + 3x^3y^2 - xy^3 - 1$[[br]]$C = x^6 - x^2y^3 - x^3y^2 - xy^3 - 4$[[br]]Thay $x = -1, y = 2$ vào $A$:[[br]]$A = 2\\cdot(-1)^6 - (-1)^2\\cdot 2^3 - 4\\cdot(-1)^3\\cdot 2^2 - 3$[[br]]$A = 2\\cdot 1 - 1\\cdot 8 - 4\\cdot(-1)\\cdot 4 - 3 = 2 - 8 + 16 - 3 = 7$.[[br]]Vậy $C = x^6 - x^2y^3 - x^3y^2 - xy^3 - 4$ và $A = 7$.[[br]]b) Ta có $N = (-2xy + xy) + (3xy^2 + xy^2) + (3 - 3) = 4xy^2 - xy$[[br]]Thay $x = -4, y = 2$ vào $N$:[[br]]$N = 4\\cdot(-4)\\cdot 2^2 - (-4)\\cdot 2 = 4\\cdot(-4)\\cdot 4 + 8 = -64 + 8 = -56$.[[br]]Vậy khi $x = -4, y = 2$ thì $N = -56$."
+    },
+    {
+     "type": "problem",
+     "label": "Bài 21.",
+     "statement": "[TH] Trong khu vườn sinh thái của trường, biểu thức $A = 7x^2y + 4xy^2 + 2xy + 3$ (m$^2$) biểu thị diện tích của cả khu vườn. Biểu thức $B = 3x^2y + xy^2 + 2xy + 1$ (m$^2$) biểu thị tổng diện tích chỗ ngồi nghỉ và lối đi (Đề giữa kì I, THCS Hoàng Hoa Thám). Biết diện tích trồng rau bằng $A - B$. Hãy tìm đa thức thu gọn biểu thị diện tích trồng rau và tính diện tích đó khi $x = 2, y = 1$.",
+     "level": 2,
+     "tier": "onclass",
+     "dang_id": "TH4",
+     "hints": [
+      "Thực hiện phép trừ $A - B$, chú ý đổi dấu mọi hạng tử của $B$.",
+      "Thay $x = 2, y = 1$ vào đa thức diện tích vừa thu gọn."
+     ],
+     "solution": "Ta có Diện tích trồng rau là $S = A - B$[[br]]$S = (7x^2y + 4xy^2 + 2xy + 3) - (3x^2y + xy^2 + 2xy + 1)$[[br]]$S = 7x^2y + 4xy^2 + 2xy + 3 - 3x^2y - xy^2 - 2xy - 1$[[br]]$S = (7x^2y - 3x^2y) + (4xy^2 - xy^2) + (2xy - 2xy) + (3 - 1)$[[br]]$S = 4x^2y + 3xy^2 + 2$ (m$^2$)[[br]]Khi $x = 2, y = 1$:[[br]]$S = 4\\cdot 2^2\\cdot 1 + 3\\cdot 2\\cdot 1^2 + 2 = 16 + 6 + 2 = 24$ (m$^2$).[[br]]Vậy diện tích trồng rau là $4x^2y + 3xy^2 + 2$ m$^2$ và bằng $24$ m$^2$ khi $x = 2, y = 1$."
+    },
+    {
+     "type": "problem",
+     "label": "Bài 22.",
+     "statement": "[TH] Em hãy tự viết lại các bước tìm đa thức chưa biết $X$ trong đẳng thức $A - X = B$ và giải thích vì sao khi viết $X = A - B$, ta bắt buộc phải đặt đa thức $B$ trong dấu ngoặc trước khi đổi dấu.",
+     "level": 2,
+     "tier": "onclass",
+     "dang_id": "TH5",
+     "hints": [
+      "Bước 1: Chuyển vế để tìm công thức tính $X$.",
+      "Bước 2: Thay biểu thức $A, B$ kèm ngoặc.",
+      "Bước 3: Bỏ ngoặc, đổi dấu và thu gọn."
+     ],
+     "solution": "Theo quy tắc chuyển vế, ta thực hiện các bước sau:[[br]]Bước 1: Xác định vai trò của $X$: $X$ là số trừ, do đó $X = A - B$.[[br]]Bước 2: Thay đa thức $A$ và $B$ vào công thức, bắt buộc đặt đa thức $B$ trong dấu ngoặc: $X = A - (B)$.[[br]]Bước 3: Bỏ dấu ngoặc có dấu trừ đằng trước bằng cách đổi dấu tất cả các hạng tử của $B$. Nếu không đặt ngoặc, ta sẽ chỉ đổi dấu hạng tử đầu tiên của $B$ và giữ nguyên dấu các hạng tử sau, dẫn đến kết quả sai hoàn toàn.[[br]]Bước 4: Nhóm các hạng tử đồng dạng, thu gọn.[[br]]Vậy khi tìm đa thức chưa biết, ta thực hiện theo 4 bước trên và luôn đặt đa thức trong ngoặc khi thực hiện phép trừ."
+    },
+    {
+     "type": "noted",
+     "variant": "example",
+     "text": "\\textbf{Ví dụ 8.} Hãy thu gọn rồi chỉ ra rằng biểu thức $P = (x^2 - 2xy + 3y^2) - (2x^2 - 2xy - y^2) + (x^2 - 4y^2 + 9)$ luôn nhận giá trị không đổi với mọi giá trị của các biến $x, y$.[[br]]{\\sffamily\\bfseries\\color{brand}Lời giải}[[br]]$P = x^2 - 2xy + 3y^2 - 2x^2 + 2xy + y^2 + x^2 - 4y^2 + 9$[[br]]$P = (x^2 - 2x^2 + x^2) + (-2xy + 2xy) + (3y^2 + y^2 - 4y^2) + 9$[[br]]$P = [[fill:0]] + [[fill:0]] + [[fill:0]] + 9$[[br]]$P = [[fill:9]]$[[br]]Vậy biểu thức $P$ luôn bằng $[[fill:9]]$, không phụ thuộc vào giá trị của các biến $x, y$."
+    },
+    {
+     "type": "problem",
+     "label": "Bài 23.",
+     "statement": "Chứng minh giá trị của biểu thức không phụ thuộc vào biến:[[br]]a) [VD] Chứng tỏ biểu thức sau không phụ thuộc vào biến: $M = (2x^6 - x^2y^3 - 4x^3y^2 - 3) + x^2y^3 + 4x^3y^2 - 2x^6 + 5$ (Đề giữa kì I, THCS Đỗ Ngọc Du).[[br]]b) [VD] Chứng minh rằng giá trị của biểu thức $Q$ không phụ thuộc vào giá trị của các biến $x, y, z$: $Q = (x - y) + (y - z) + (z - x) + 12$ (SGK 1{.}15).",
+     "level": 3,
+     "tier": "onclass",
+     "dang_id": "VD1",
+     "quy_trinh": [
+      "Cái phải chứng tỏ là gì? (sau khi rút gọn, biểu thức chỉ còn một số, mọi hạng tử chứa biến triệt tiêu).",
+      "Khai triển từng tích (hoặc bỏ từng ngoặc) trên một dòng riêng; đã dùng hết các hạng tử chưa?",
+      "Nhóm hạng tử đồng dạng, thu gọn: mọi hạng tử chứa biến phải triệt tiêu.",
+      "Kết luận ``Vậy giá trị của biểu thức bằng … , không phụ thuộc vào giá trị của biến''."
+     ],
+     "solution": "a) Ta có $M = (2x^6 - 2x^6) + (-x^2y^3 + x^2y^3) + (-4x^3y^2 + 4x^3y^2) + (-3 + 5)$[[br]]$M = 0 + 0 + 0 + 2 = 2$[[br]]Vậy giá trị của biểu thức $M$ bằng $2$, không phụ thuộc vào giá trị của biến.[[br]]b) Ta có $Q = x - y + y - z + z - x + 12$[[br]]$Q = (x - x) + (-y + y) + (-z + z) + 12$[[br]]$Q = 0 + 0 + 0 + 12 = 12$[[br]]Vậy giá trị của biểu thức $Q$ bằng $12$, không phụ thuộc vào giá trị của các biến $x, y, z$."
+    }
+   ],
+   "teacher_note": "Bài 18 là bài tự luận trọng tâm của đề giữa kì. Bài 21 kết nối thực tế vườn trường. Bài 22 giúp HS tự hệ thống hoá phương pháp. Bài 23 là dạng vận dụng chứng minh không phụ thuộc biến."
+  },
+  {
+   "kind": "reflection",
+   "number": 5,
+   "title": "Tổng kết \\& bài tập về nhà",
+   "blocks": [
+    {
+     "type": "mindmap",
+     "caption": "Sơ đồ tư duy: Phép cộng và phép trừ đa thức",
+     "root": "CỘNG, TRỪ ĐA THỨC",
+     "branches": [
+      {
+       "label": "PHÉP CỘNG",
+       "children": [
+        {
+         "label": "Đặt dấu cộng giữa hai ngoặc"
+        },
+        {
+         "label": "Bỏ ngoặc, giữ nguyên dấu"
+        },
+        {
+         "label": "Nhóm hạng tử đồng dạng rồi cộng"
+        }
+       ]
+      },
+      {
+       "label": "PHÉP TRỪ",
+       "children": [
+        {
+         "label": "Đặt dấu trừ trước ngoặc đa thức trừ"
+        },
+        {
+         "label": "ĐỔI DẤU mọi hạng tử trong ngoặc"
+        },
+        {
+         "label": "Nhóm hạng tử đồng dạng, thu gọn"
+        }
+       ]
+      },
+      {
+       "label": "TÌM ĐA THỨC CHƯA BIẾT",
+       "children": [
+        {
+         "label": "$A + X = B \\implies X = B - A$"
+        },
+        {
+         "label": "$X - A = B \\implies X = B + A$"
+        },
+        {
+         "label": "$A - X = B \\implies X = A - B$"
+        }
+       ]
+      },
+      {
+       "label": "ỨNG DỤNG",
+       "children": [
+        {
+         "label": "Thu gọn, tìm bậc, tính giá trị"
+        },
+        {
+         "label": "Chứng minh không phụ thuộc biến"
+        },
+        {
+         "label": "Bài toán thực tế diện tích, tiền hàng"
+        }
+       ]
+      }
+     ]
+    },
+    {
+     "type": "problem",
+     "label": "BTVN~1.",
+     "statement": "Điền Đ (Đúng) hoặc S (Sai) vào các khẳng định sau:[[br]]a) [NB] $-(3x^2 - 5xy + 2) = -3x^2 + 5xy - 2$;[[br]]b) [NB] $-(x^2 - y^2) = -x^2 - y^2$.",
+     "level": 1,
+     "tier": "btvn",
+     "dang_id": "NB1",
+     "solution": "a) Đ: Đổi dấu $+3x^2 \\to -3x^2$, $-5xy \\to +5xy$, $+2 \\to -2$.[[br]]b) S: Trước ngoặc có dấu trừ, $-y^2$ phải đổi dấu thành $+y^2$."
+    },
+    {
+     "type": "problem",
+     "label": "BTVN~2.",
+     "statement": "Cho hai đa thức $P = x^2 - 3xy + 2$ và $Q = 2x^2 + 3xy - 5$. Điền vào chỗ trống:[[br]]a) [NB] Nhóm hạng tử đồng dạng: $P + Q = (x^2 + 2x^2) + \\big($[[blank:2.4cm]]$\\big) + (2 - 5)$.[[br]]b) [NB] Kết quả thu gọn: $P + Q = $[[blank:2.4cm]].",
+     "level": 1,
+     "tier": "btvn",
+     "dang_id": "NB2",
+     "solution": "a) $P + Q = (x^2 + 2x^2) + (-3xy + 3xy) + (2 - 5)$.[[br]]b) $P + Q = 3x^2 - 3$."
+    },
+    {
+     "type": "problem",
+     "label": "BTVN~3.",
+     "statement": "Tính tổng hai đa thức:[[br]]a) [NB] $(4x^2 - 2xy) + (x^2 + 2xy - 3)$;[[br]]b) [NB] $(2x^2y - 3xy^2 + 1) + (-x^2y + 3xy^2 + 4)$.",
+     "level": 1,
+     "tier": "btvn",
+     "dang_id": "NB3",
+     "solution": "a) $(4x^2 + x^2) + (-2xy + 2xy) - 3 = 5x^2 - 3$.[[br]]b) $(2x^2y - x^2y) + (-3xy^2 + 3xy^2) + (1 + 4) = x^2y + 5$."
+    },
+    {
+     "type": "problem",
+     "label": "BTVN~4.",
+     "statement": "Tính hiệu hai đa thức:[[br]]a) [NB] $(5x^2 - 3xy + 1) - (2x^2 - 3xy - 4)$;[[br]]b) [NB] $(x^2y^2 - 2xy + 3) - (x^2y^2 + xy - 1)$.",
+     "level": 1,
+     "tier": "btvn",
+     "dang_id": "NB4",
+     "solution": "a) $5x^2 - 3xy + 1 - 2x^2 + 3xy + 4 = 3x^2 + 5$.[[br]]b) $x^2y^2 - 2xy + 3 - x^2y^2 - xy + 1 = -3xy + 4$."
+    },
+    {
+     "type": "problem",
+     "label": "BTVN~5.",
+     "statement": "Tìm bậc của mỗi đa thức sau khi thu gọn:[[br]]a) [NB] Bậc của đa thức $(2x^3 - x^2y + 1) + (-2x^3 + 3x^2y - 5)$;[[br]]b) [NB] Bậc của đa thức $(x^4 - 2y^3 + 3) - (x^4 + 3y^2 - 1)$.",
+     "level": 1,
+     "tier": "btvn",
+     "dang_id": "NB5",
+     "solution": "a) Thu gọn được $2x^2y - 4$; bậc là $2 + 1 = 3$.[[br]]b) Thu gọn được $-2y^3 - 3y^2 + 4$; bậc là $3$."
+    },
+    {
+     "type": "problem",
+     "label": "BTVN~6.",
+     "statement": "Tính giá trị của đa thức sau khi thu gọn:[[br]]a) [NB] Cho $A = (3x^2 - xy) - (x^2 - xy + 2) = 2x^2 - 2$. Tính $A$ tại $x = -3$;[[br]]b) [NB] Cho $B = (2xy^2 + 1) + (3xy^2 - 5) = 5xy^2 - 4$. Tính $B$ tại $x = 2, y = -1$.",
+     "level": 1,
+     "tier": "btvn",
+     "dang_id": "NB6",
+     "solution": "a) $A = 2\\cdot(-3)^2 - 2 = 2\\cdot 9 - 2 = 16$.[[br]]b) $B = 5\\cdot 2\\cdot(-1)^2 - 4 = 10 - 4 = 6$."
+    },
+    {
+     "type": "problem",
+     "label": "BTVN~7.",
+     "statement": "Điền vào chỗ trống để tìm đa thức chưa biết:[[br]]a) [NB] Biết $M + (x^2 - 2xy) = 3x^2 + y^2$, suy ra $M = (3x^2 + y^2) -$ [[blank:2.4cm]].[[br]]b) [NB] Biết $N - (2xy - y^2) = x^2 + 3xy$, suy ra $N = (x^2 + 3xy) +$ [[blank:2.4cm]].",
+     "level": 1,
+     "tier": "btvn",
+     "dang_id": "NB7",
+     "solution": "a) $M = (3x^2 + y^2) - (x^2 - 2xy)$.[[br]]b) $N = (x^2 + 3xy) + (2xy - y^2)$."
+    },
+    {
+     "type": "problem",
+     "label": "BTVN~8.",
+     "statement": "Chọn phép tính đúng:[[br]]a) [NB] Tìm đa thức $X$ biết $X + (2x^2 - 3) = 4x^2 + 1$:",
+     "level": 1,
+     "tier": "btvn",
+     "dang_id": "NB8",
+     "options": [
+      "$X = (4x^2 + 1) + (2x^2 - 3)$",
+      "$X = (4x^2 + 1) - (2x^2 - 3)$",
+      "$X = (2x^2 - 3) - (4x^2 + 1)$",
+      "$X = -(4x^2 + 1) - (2x^2 - 3)$"
+     ],
+     "solution": "$X$ là số hạng chưa biết: $X = (4x^2 + 1) - (2x^2 - 3)$.",
+     "answer": "B"
+    },
+    {
+     "type": "problem",
+     "label": "BTVN~9.",
+     "statement": "[NB] Tìm đa thức $Y$ biết $(5x^2 - 2xy) - Y = x^2 + xy$:",
+     "level": 1,
+     "tier": "btvn",
+     "dang_id": "NB8",
+     "options": [
+      "$Y = (5x^2 - 2xy) + (x^2 + xy)$",
+      "$Y = (x^2 + xy) - (5x^2 - 2xy)$",
+      "$Y = (5x^2 - 2xy) - (x^2 + xy)$",
+      "$Y = 2(5x^2 - 2xy)$"
+     ],
+     "solution": "$Y$ là số trừ: $Y = (5x^2 - 2xy) - (x^2 + xy)$.",
+     "answer": "C"
+    },
+    {
+     "type": "problem",
+     "label": "BTVN~10.",
+     "statement": "Cho mảnh đất có diện tích $S_1 = 5x^2 + 3xy$ và ao cá có diện tích $S_2 = 2x^2 + xy$.[[br]]a) [NB] Biểu thức biểu thị diện tích phần đất còn lại sau khi đào ao là:",
+     "level": 1,
+     "tier": "btvn",
+     "dang_id": "NB9",
+     "options": [
+      "$S_1 + S_2$",
+      "$S_1 - S_2$",
+      "$S_2 - S_1$",
+      "$S_1\\cdot S_2$"
+     ],
+     "solution": "Diện tích còn lại bằng diện tích đất trừ diện tích ao: $S_1 - S_2$.",
+     "answer": "B"
+    },
+    {
+     "type": "problem",
+     "label": "BTVN~11.",
+     "statement": "[NB] Biểu thức biểu thị tổng diện tích mảnh đất $S_1$ và một khu phụ trợ có diện tích $S_2$ là",
+     "level": 1,
+     "tier": "btvn",
+     "dang_id": "NB9",
+     "options": [
+      "$S_1 + S_2$",
+      "$S_1 - S_2$",
+      "$S_1 / S_2$",
+      "$2S_1$"
+     ],
+     "solution": "Tổng diện tích là $S_1 + S_2$.",
+     "answer": "A"
+    },
+    {
+     "type": "problem",
+     "label": "BTVN~12.",
+     "statement": "[NB] Thu gọn biểu thức $S_1 - S_2 = (5x^2 + 3xy) - (2x^2 + xy)$ ta được kết quả",
+     "level": 1,
+     "tier": "btvn",
+     "dang_id": "NB9",
+     "options": [
+      "$3x^2 + 2xy$",
+      "$7x^2 + 4xy$",
+      "$3x^2 + 4xy$",
+      "$3x^2 - 2xy$"
+     ],
+     "solution": "$5x^2 + 3xy - 2x^2 - xy = 3x^2 + 2xy$.",
+     "answer": "A"
+    },
+    {
+     "type": "problem",
+     "label": "BTVN~13.",
+     "statement": "Nhận biết biểu thức thực tế:[[br]]a) [NB] Một hộp bút có giá niêm yết $a$ đồng, nhân dịp khai giảng được giảm $5\\,000$ đồng. Biểu thức biểu thị giá hộp bút sau giảm là:",
+     "level": 1,
+     "tier": "btvn",
+     "dang_id": "NB10",
+     "options": [
+      "$a - 5\\,000$",
+      "$a + 5\\,000$",
+      "$5\\,000 - a$",
+      "$5\\,000a$"
+     ],
+     "solution": "Giá sau khi giảm $5\\,000$ đồng là $a - 5\\,000$ (đồng).",
+     "answer": "A"
+    },
+    {
+     "type": "problem",
+     "label": "BTVN~14.",
+     "statement": "[NB] Một chiếc cặp sách có giá niêm yết $b$ đồng, được giảm giá $15\\%$. Biểu thức biểu thị số tiền khách phải trả cho chiếc cặp là",
+     "level": 1,
+     "tier": "btvn",
+     "dang_id": "NB10",
+     "options": [
+      "$0{,}15b$",
+      "$0{,}85b$",
+      "$b - 15$",
+      "$15b$"
+     ],
+     "solution": "Khách trả $100\\% - 15\\% = 85\\%$ giá niêm yết: $0{,}85b$ (đồng).",
+     "answer": "B"
+    },
+    {
+     "type": "problem",
+     "label": "BTVN~15.",
+     "statement": "Cho $A = 2x^2 - xy$, $B = x^2 + 3xy - 1$, $C = 3x^2 - 2xy + 2$. Tính:[[br]]a) [NB] $A + B$;[[br]]b) [NB] $A - C$;[[br]]c) [NB] $A + B - C$.",
+     "level": 1,
+     "tier": "btvn",
+     "dang_id": "NB11",
+     "solution": "a) $A + B = (2x^2 + x^2) + (-xy + 3xy) - 1 = 3x^2 + 2xy - 1$.[[br]]b) $A - C = (2x^2 - xy) - (3x^2 - 2xy + 2) = -x^2 + xy - 2$.[[br]]c) $A + B - C = (3x^2 + 2xy - 1) - (3x^2 - 2xy + 2) = 4xy - 3$."
+    },
+    {
+     "type": "problem",
+     "label": "BTVN~16.",
+     "statement": "Cho hai đa thức $C = 3x^2y - 2xy^2 + x$ và $D = -x^2y + 2xy^2 + 3x - 1$ (SGK 1{.}17).[[br]]a) [TH] Tính $M = C + D$ và tìm bậc của $M$.[[br]]b) [TH] Tính $N = C - D$ và tìm bậc của $N$.",
+     "level": 2,
+     "tier": "btvn",
+     "dang_id": "TH1",
+     "hints": [
+      "Bỏ ngoặc, nhóm các cặp hạng tử đồng dạng.",
+      "Bậc là số mũ cao nhất trong đa thức đã thu gọn."
+     ],
+     "solution": "a) Ta có $M = C + D = (3x^2y - x^2y) + (-2xy^2 + 2xy^2) + (x + 3x) - 1$[[br]]$M = 2x^2y + 4x - 1$[[br]]Các hạng tử có bậc lần lượt là $3, 1, 0$.[[br]]Vậy $M = 2x^2y + 4x - 1$ và bậc của $M$ là $3$.[[br]]b) Ta có $N = C - D = (3x^2y - 2xy^2 + x) - (-x^2y + 2xy^2 + 3x - 1)$[[br]]$N = 3x^2y - 2xy^2 + x + x^2y - 2xy^2 - 3x + 1$[[br]]$N = (3x^2y + x^2y) + (-2xy^2 - 2xy^2) + (x - 3x) + 1$[[br]]$N = 4x^2y - 4xy^2 - 2x + 1$[[br]]Các hạng tử có bậc lần lượt là $3, 3, 1, 0$.[[br]]Vậy $N = 4x^2y - 4xy^2 - 2x + 1$ và bậc của $N$ là $3$."
+    },
+    {
+     "type": "problem",
+     "label": "BTVN~17.",
+     "statement": "Tìm đa thức chưa biết:[[br]]a) [TH] Tìm đa thức $A$ biết $A - (x^2y - 2xy^2) = 3x^2y + xy^2 - 4$;[[br]]b) [TH] Tìm đa thức $B$ biết $(4x^2 - 3xy + 1) + B = 2x^2 + xy - 3$.",
+     "level": 2,
+     "tier": "btvn",
+     "dang_id": "TH2",
+     "hints": [
+      "Số bị trừ bằng hiệu cộng số trừ: $A = (3x^2y + xy^2 - 4) + (x^2y - 2xy^2)$.",
+      "Số hạng chưa biết bằng tổng trừ số hạng đã biết: $B = (2x^2 + xy - 3) - (4x^2 - 3xy + 1)$."
+     ],
+     "solution": "a) Ta có $A = (3x^2y + xy^2 - 4) + (x^2y - 2xy^2)$[[br]]$A = (3x^2y + x^2y) + (xy^2 - 2xy^2) - 4$[[br]]$A = 4x^2y - xy^2 - 4$[[br]]Vậy $A = 4x^2y - xy^2 - 4$.[[br]]b) Ta có $B = (2x^2 + xy - 3) - (4x^2 - 3xy + 1)$[[br]]$B = 2x^2 + xy - 3 - 4x^2 + 3xy - 1$[[br]]$B = (2x^2 - 4x^2) + (xy + 3xy) + (-3 - 1)$[[br]]$B = -2x^2 + 4xy - 4$[[br]]Vậy $B = -2x^2 + 4xy - 4$."
+    },
+    {
+     "type": "problem",
+     "label": "BTVN~18.",
+     "statement": "[TH] Cho đa thức $P = (5x^2 - 3xy + 2y^2) - (2x^2 - 3xy - y^2)$. Thu gọn $P$ rồi tính giá trị của $P$ khi $x = -2, y = 1$.",
+     "level": 2,
+     "tier": "btvn",
+     "dang_id": "TH3",
+     "hints": [
+      "Bỏ ngoặc có dấu trừ đằng trước nhớ đổi dấu mọi hạng tử bên trong."
+     ],
+     "solution": "Ta có $P = 5x^2 - 3xy + 2y^2 - 2x^2 + 3xy + y^2$[[br]]$P = (5x^2 - 2x^2) + (-3xy + 3xy) + (2y^2 + y^2)$[[br]]$P = 3x^2 + 3y^2$[[br]]Thay $x = -2, y = 1$ vào $P$:[[br]]$P = 3\\cdot(-2)^2 + 3\\cdot 1^2 = 3\\cdot 4 + 3\\cdot 1 = 12 + 3 = 15$.[[br]]Vậy khi $x = -2, y = 1$ thì $P = 15$."
+    },
+    {
+     "type": "problem",
+     "label": "BTVN~19.",
+     "statement": "Một cửa hàng đồ uống có chương trình khuyến mãi: mỗi cốc trà sữa giá niêm yết $x$ nghìn đồng được giảm $15$ nghìn đồng, mỗi cốc trà sen giá niêm yết $y$ nghìn đồng được giảm $10\\%$ (Đề giữa kì I, THCS Chúc Sơn).[[br]]a) [TH] Viết biểu thức biểu thị số tiền khách phải trả khi mua $2$ cốc trà sữa và $3$ cốc trà sen sau khi đã giảm giá.[[br]]b) [TH] Tính số tiền khách phải trả khi giá niêm yết của trà sữa là $45$ nghìn đồng/cốc và trà sen là $50$ nghìn đồng/cốc.",
+     "level": 2,
+     "tier": "btvn",
+     "dang_id": "TH4",
+     "hints": [
+      "Giá một cốc trà sữa sau giảm: $x - 15$; giá một cốc trà sen sau giảm: $0{,}9y$.",
+      "Nhân với số lượng tương ứng rồi cộng lại."
+     ],
+     "solution": "Theo đề bài, ta có:[[br]]Giá một cốc trà sữa sau giảm: $x - 15$ (nghìn đồng).[[br]]Giá một cốc trà sen sau giảm: $0{,}9y$ (nghìn đồng).[[br]]Số tiền mua $2$ cốc trà sữa và $3$ cốc trà sen:[[br]]$T = 2(x - 15) + 3\\cdot 0{,}9y = 2x - 30 + 2{,}7y$ (nghìn đồng).[[br]]Vậy biểu thức là $2x + 2{,}7y - 30$ (nghìn đồng).[[br]]Thay $x = 45, y = 50$ vào biểu thức:[[br]]$T = 2\\cdot 45 + 2{,}7\\cdot 50 - 30 = 90 + 135 - 30 = 195$ (nghìn đồng).[[br]]Vậy khách phải trả $195$ nghìn đồng."
+    },
+    {
+     "type": "problem",
+     "label": "BTVN~20.",
+     "statement": "[VD] Chứng minh rằng giá trị của biểu thức sau không phụ thuộc vào giá trị của biến:[[br]]$A = (2x^2 - 3x + 1) - (x^2 - 3x - 5) - (x^2 + 4)$ (SGK Luyện tập 2 tr.16).",
+     "level": 3,
+     "tier": "btvn",
+     "dang_id": "VD1",
+     "quy_trinh": [
+      "Bỏ dấu ngoặc, chú ý đổi dấu các hạng tử đứng sau dấu trừ.",
+      "Nhóm các hạng tử chứa $x^2$, chứa $x$ và các số tự do.",
+      "Thu gọn và kết luận."
+     ],
+     "solution": "Ta có $A = 2x^2 - 3x + 1 - x^2 + 3x + 5 - x^2 - 4$[[br]]$A = (2x^2 - x^2 - x^2) + (-3x + 3x) + (1 + 5 - 4)$[[br]]$A = 0 + 0 + 2 = 2$[[br]]Vậy giá trị của biểu thức $A$ bằng $2$, không phụ thuộc vào giá trị của biến."
+    }
+   ],
+   "teacher_note": "Giao 20 bài về nhà. Nhắc HS đọc kỹ sơ đồ tư duy trước khi làm bài. Bài 20 là câu vận dụng chứng minh giá trị biểu thức không phụ thuộc biến."
+  }
+ ]
+}

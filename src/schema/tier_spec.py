@@ -40,11 +40,16 @@ def subject_block(spec: dict, grade: str, subject: str) -> dict:
     return spec["grades"][grade][subject]
 
 
-def rates_for(spec: dict, grade: str, subject: str) -> dict:
-    """Phút/câu mỗi đoạn×band cho (lớp, môn): gộp `rates` toàn cục với
-    `rates_override` của khối (override thắng theo từng đoạn)."""
+def rates_for(spec: dict, grade: str, subject: str, tier: str | None = None) -> dict:
+    """Phút/câu mỗi đoạn×band cho (lớp, môn[, tầng]): gộp `rates` toàn cục với
+    `rates_override` của khối (override thắng theo từng đoạn).
+
+    Tầng khai `rates_goc: true` thì BỎ override của khối, dùng rate gốc — Thầy chốt
+    15/10/2026 cho tầng C lớp 8 (rate NB 0,5′ của lớp 8 đẻ ra 44 câu NB/buổi)."""
     block = subject_block(spec, grade, subject)
     merged = {seg: dict(bands) for seg, bands in spec["rates"].items() if not seg.startswith("_")}
+    if tier and block.get("tiers", {}).get(tier, {}).get("rates_goc"):
+        return merged
     for seg, bands in block.get("rates_override", {}).items():
         merged.setdefault(seg, {}).update(bands)
     return merged
@@ -173,6 +178,12 @@ def tier_ratio(spec: dict, grade: str, subject: str, tier: str,
     if not variants:
         return tier_block.get("ratio")
     co_vd = chuong_co_vd(grade, chuong or "")
+    # Chương khai `ty_le_b` (ban_do) thì dùng thẳng: Thầy chốt 15/10/2026 — bài thực tế 2-3
+    # bước vẫn là TH, chương thiếu bài VD thật (≥4 bước/có biến đổi) thì HẠ tỉ lệ VD thay
+    # vì gán nhãn VD sai để đủ 55%.
+    ent = _chuong_entry(grade, chuong or "") if chuong else None
+    if co_vd is True and ent and ent.get("ty_le_b"):
+        return dict(ent["ty_le_b"])
     if co_vd is True:
         ratio = variants.get("co_vd")
         # Thầy chốt 04/09/2026: khối 55% VD+VDC chia theo TẦN SUẤT VDC của chương —
@@ -197,7 +208,7 @@ def target_counts(spec: dict, grade: str, subject: str, tier: str,
     ratio = tier_ratio(spec, grade, subject, tier, chuong)
     if not ratio:
         return {}
-    rates = rates_for(spec, grade, subject)
+    rates = rates_for(spec, grade, subject, tier)
     out: dict[str, dict[str, int]] = {}
     for seg, budget in block["budgets"].items():
         if not budget or budget <= 0:

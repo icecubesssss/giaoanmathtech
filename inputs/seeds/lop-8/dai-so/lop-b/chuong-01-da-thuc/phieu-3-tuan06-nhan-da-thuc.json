@@ -1,0 +1,683 @@
+{
+ "slug": "phieu-3-tuan06-nhan-da-thuc",
+ "title": "Phép nhân đa thức",
+ "eyebrow": "ĐẠI SỐ 8 — PHIẾU 3 • CHƯƠNG I — BÀI 4",
+ "grade_label": "Lớp 8 • Chương I",
+ "chuong": "chuong-01-da-thuc",
+ "so_ca": 1,
+ "class_tier": "B",
+ "stages": [
+  {
+   "kind": "review",
+   "number": 1,
+   "title": "Khám phá",
+   "blocks": [
+    {
+     "type": "opener",
+     "text": "Bác An có một mảnh vườn hình chữ nhật với chiều dài $x$ (m) và chiều rộng $y$ (m). Bác mở rộng mảnh vườn bằng cách tăng chiều dài thêm $2$ m và tăng chiều rộng thêm $3$ m.[[br]]a) Viết biểu thức biểu thị chiều dài mới và chiều rộng mới của mảnh vườn.[[br]]b) Viết biểu thức biểu thị diện tích mới của mảnh vườn dưới dạng tích của hai đa thức.[[br]]c) Bằng cách nhân từng kích thước, hãy tính diện tích mới theo hai biến $x, y$."
+    }
+   ],
+   "solution": "a) Chiều dài mới là $x + 2$ (m); chiều rộng mới là $y + 3$ (m).[[br]]b) Diện tích mới là $(x + 2)(y + 3)$ (m$^2$).[[br]]c) $(x + 2)(y + 3) = x(y + 3) + 2(y + 3) = xy + 3x + 2y + 6$ (m$^2$).[[br]]Vậy diện tích mới của mảnh vườn là $xy + 3x + 2y + 6$ m$^2$.",
+   "teacher_note": "Cho HS quan sát hình chữ nhật ghép từ 4 mảnh nhỏ: mảnh ban đầu diện tích $xy$, hai dải mở rộng $3x$ và $2y$, góc vuông thêm $6$. Dẫn dắt sang quy tắc nhân hai đa thức."
+  },
+  {
+   "kind": "concept",
+   "number": 2,
+   "title": "Kiến thức cần nhớ",
+   "blocks": [
+    {
+     "type": "para",
+     "variant": "heading",
+     "text": "1. Nhân đơn thức với đa thức"
+    },
+    {
+     "type": "deflist",
+     "items": [
+      {
+       "term": "Quy tắc:",
+       "desc": "Muốn nhân một đơn thức với một đa thức, ta nhân đơn thức với từng hạng tử của đa thức rồi cộng các tích với nhau: $A(B + C) = AB + AC$."
+      },
+      {
+       "term": "Kỹ thuật nhân:",
+       "desc": "Nhân các hệ số với nhau, nhân các luỹ thừa của cùng một biến với nhau ($x^m\\cdot x^n = x^{m+n}$). Chú ý dấu của đơn thức âm: $(-a)(b - c) = -ab + ac$."
+      }
+     ]
+    },
+    {
+     "type": "para",
+     "variant": "heading",
+     "text": "2. Nhân đa thức với đa thức"
+    },
+    {
+     "type": "deflist",
+     "items": [
+      {
+       "term": "Quy tắc:",
+       "desc": "Muốn nhân một đa thức với một đa thức, ta nhân mỗi hạng tử của đa thức này với từng hạng tử của đa thức kia rồi cộng các tích với nhau: $(A + B)(C + D) = AC + AD + BC + BD$."
+      },
+      {
+       "term": "Thu gọn:",
+       "desc": "Sau khi nhân phá ngoặc, luôn tìm các hạng tử đồng dạng và cộng chúng lại để đưa về đa thức thu gọn."
+      }
+     ]
+    },
+    {
+     "type": "para",
+     "variant": "heading",
+     "text": "3. Rút gọn biểu thức và tìm $x$"
+    },
+    {
+     "type": "deflist",
+     "items": [
+      {
+       "term": "Rút gọn:",
+       "desc": "Khai triển từng tích riêng biệt, chú ý đặt cả tích đứng sau dấu trừ trong dấu ngoặc trước khi đổi dấu."
+      },
+      {
+       "term": "Tìm $x$:",
+       "desc": "Khai triển và thu gọn vế trái để các hạng tử $x^2$ triệt tiêu, đưa phương trình về dạng bậc nhất $ax + b = c \\implies ax = c - b \\implies x = \\dfrac{c - b}{a}$ ($a \\ne 0$)."
+      }
+     ]
+    },
+    {
+     "type": "noted",
+     "variant": "target",
+     "text": "\\textbf{Đề giữa kì I hỏi gì ở phần này.} Trắc nghiệm $0{,}25$ điểm: nhân đơn thức với đa thức, nhân hai nhị thức, tính chất luỹ thừa.[[br]]Tự luận $1{,}0$ $-$ $2{,}0$ điểm: thực hiện phép nhân và rút gọn biểu thức (THCS Đa Trí Tuệ, Nguyễn Trãi); chứng minh giá trị biểu thức không phụ thuộc vào biến (THCS Bát Tràng, Nguyễn Huy Tưởng); dạng tìm $x$ trọng tâm xuất hiện ở 24/27 đề (THCS Tam Hiệp, Bát Tràng, Nguyễn Khê, Đỗ Ngọc Du); bài toán thực tế diện tích (THCS Phú Diễn, Đỗ Ngọc Du)."
+    },
+    {
+     "type": "noted",
+     "variant": "trap",
+     "text": "Bạn Nam nhân $-2x(x - 3) = -2x^2 - 6x$ — sai: âm nhân âm thành dương, đúng phải là $-2x^2 + 6x$.[[br]]Bạn Hoa tính $x^3\\cdot x^4 = x^{12}$ — sai: nhân hai luỹ thừa cùng cơ số thì CỘNG số mũ, $x^3\\cdot x^4 = x^7$.[[br]]Bạn Hưng khai triển $-(x - 1)(x + 2) = -x^2 + 2x - 2$ — sai: phải giữ ngoặc $-(x^2 + x - 2) = -x^2 - x + 2$."
+    }
+   ],
+   "teacher_note": "Nhắc nhở HS thói quen viết dấu nhân rõ ràng giữa các hệ số và các luỹ thừa. Khi gặp dấu trừ trước tích, luôn để ngoặc vuông bao quanh toàn bộ tích trước khi đổi dấu."
+  },
+  {
+   "kind": "practice1",
+   "number": 3,
+   "title": "Luyện tập 1",
+   "blocks": [
+    {
+     "type": "problem",
+     "label": "Bài 1.",
+     "statement": "Hoàn thành quy tắc nhân đơn thức với đa thức:[[br]]a) [NB] Muốn nhân một đơn thức với một đa thức, ta nhân đơn thức với [[blank:3cm]] của đa thức rồi cộng các tích với nhau.[[br]]b) [NB] Điền công thức: $A(B + C) = $[[blank:2.5cm]].[[br]]c) [NB] Điền công thức: $A(B - C + D) = $[[blank:3.5cm]].",
+     "level": 1,
+     "tier": "onclass",
+     "dang_id": "NB1",
+     "solution": "a) từng hạng tử.[[br]]b) $A(B + C) = AB + AC$.[[br]]c) $A(B - C + D) = AB - AC + AD$."
+    },
+    {
+     "type": "problem",
+     "label": "Bài 2.",
+     "statement": "Nhân đơn thức với đa thức:[[br]]a) [NB] Kết quả của phép nhân $-5x(2x - 5)$ là (Đề giữa kì I, THCS Đỗ Ngọc Du)",
+     "level": 1,
+     "tier": "onclass",
+     "dang_id": "NB2",
+     "options": [
+      "$-10x^2 - 25x$",
+      "$10x^2 - 25x$",
+      "$-10x^2 + 25x$",
+      "$-10x + 25$"
+     ],
+     "solution": "Ta có $-5x\\cdot 2x - 5x\\cdot(-5) = -10x^2 + 25x$.",
+     "answer": "C"
+    },
+    {
+     "type": "problem",
+     "label": "Bài 3.",
+     "statement": "[NB] Tích của đơn thức $2xy$ với đa thức $3x^2 - xy$ là (Đề giữa kì I, THCS Tam Khương)",
+     "level": 1,
+     "tier": "onclass",
+     "dang_id": "NB2",
+     "options": [
+      "$6x^3y - 2x^2y^2$",
+      "$6x^2y - 2xy^2$",
+      "$5x^3y - 2x^2y^2$",
+      "$6x^3y + 2x^2y^2$"
+     ],
+     "solution": "Ta có $2xy\\cdot 3x^2 - 2xy\\cdot xy = 6x^3y - 2x^2y^2$.",
+     "answer": "A"
+    },
+    {
+     "type": "problem",
+     "label": "Bài 4.",
+     "statement": "[NB] Kết quả của phép tính $3x^2y\\left(2x - \\dfrac{1}{3}y\\right)$ là",
+     "level": 1,
+     "tier": "onclass",
+     "dang_id": "NB2",
+     "options": [
+      "$6x^3y - x^2y^2$",
+      "$6x^2y - x^2y^2$",
+      "$6x^3y + x^2y^2$",
+      "$5x^3y - y$"
+     ],
+     "solution": "Ta có $3x^2y\\cdot 2x - 3x^2y\\cdot\\dfrac{1}{3}y = 6x^3y - x^2y^2$.",
+     "answer": "A"
+    },
+    {
+     "type": "problem",
+     "label": "Bài 5.",
+     "statement": "Điền Đ (Đúng) hoặc S (Sai) vào các khẳng định sau:[[br]]a) [NB] $x^3\\cdot x^4 = x^7$;[[br]]b) [NB] $-2x^2(3x - 1) = -6x^3 - 2x^2$;[[br]]c) [NB] $(-x)(-y + z) = xy - xz$.",
+     "level": 1,
+     "tier": "onclass",
+     "dang_id": "NB3",
+     "solution": "a) Đ: $x^3\\cdot x^4 = x^{3+4} = x^7$.[[br]]b) S: $-2x^2\\cdot(-1) = +2x^2$, kết quả đúng là $-6x^3 + 2x^2$.[[br]]c) Đ: $(-x)\\cdot(-y) = xy$ và $(-x)\\cdot z = -xz$."
+    },
+    {
+     "type": "noted",
+     "variant": "example",
+     "text": "\\textbf{Ví dụ 1.} Tính tích $(x + 2y)(2x - y)$.[[br]]{\\sffamily\\bfseries\\color{brand}Lời giải}[[br]]$ (x + 2y)(2x - y) = x\\cdot 2x - x\\cdot y + 2y\\cdot 2x - 2y\\cdot y$[[br]]$= 2x^2 - xy + [[fill:4xy]] - [[fill:2y^2]]$[[br]]$= [[fill:2x^2 + 3xy - 2y^2]]$[[br]]Vậy $(x + 2y)(2x - y) = [[fill:2x^2 + 3xy - 2y^2]]$."
+    },
+    {
+     "type": "problem",
+     "label": "Bài 6.",
+     "statement": "Điền vào chỗ trống để thực hiện phép nhân đa thức với đa thức (SGK Ví dụ 3 tr.21 \\& Đề giữa kì I, THCS Chuyên Mỹ):[[br]]Cho biểu thức $(x + 2y)(x^2 + 3y^2)$.[[br]]a) [NB] Nhân từng hạng tử: $(x + 2y)(x^2 + 3y^2) = x\\cdot x^2 + x\\cdot 3y^2 + 2y\\cdot[[blank:1.2cm]] + 2y\\cdot[[blank:1.2cm]]$.[[br]]b) [NB] Thu gọn từng tích: $= x^3 + 3xy^2 + [[blank:2cm]] + 6y^3$.[[br]]c) [NB] Sắp xếp lại: $= $[[blank:4cm]].",
+     "level": 1,
+     "tier": "onclass",
+     "dang_id": "NB4",
+     "solution": "a) $x\\cdot x^2 + x\\cdot 3y^2 + 2y\\cdot x^2 + 2y\\cdot 3y^2$.[[br]]b) $x^3 + 3xy^2 + 2x^2y + 6y^3$.[[br]]c) $x^3 + 2x^2y + 3xy^2 + 6y^3$."
+    },
+    {
+     "type": "problem",
+     "label": "Bài 7.",
+     "statement": "Nhân hai nhị thức rồi thu gọn (SGK 1{.}24, 1{.}25):[[br]]a) [NB] $(x^2 - 1)(x + 1)$;[[br]]b) [NB] $(x + y)(x - y)$;[[br]]c) [NB] $(2x - 1)(3x + 2)$.",
+     "level": 1,
+     "tier": "onclass",
+     "dang_id": "NB5",
+     "solution": "a) $x^2\\cdot x + x^2\\cdot 1 - x - 1 = x^3 + x^2 - x - 1$.[[br]]b) $x^2 - xy + yx - y^2 = x^2 - y^2$.[[br]]c) $6x^2 + 4x - 3x - 2 = 6x^2 + x - 2$."
+    },
+    {
+     "type": "noted",
+     "variant": "example",
+     "text": "\\textbf{Ví dụ 2.} Hãy thực hiện nhân phá ngoặc và thu gọn biểu thức $A = x(x - 2) - (x + 1)(x - 3)$.[[br]]{\\sffamily\\bfseries\\color{brand}Lời giải}[[br]]$A = (x^2 - 2x) - (x^2 - 3x + x - 3)$[[br]]$A = x^2 - 2x - x^2 + 3x - x + [[fill:3]]$[[br]]$A = (x^2 - x^2) + (-2x + 3x - x) + [[fill:3]]$[[br]]$A = [[fill:3]]$[[br]]Vậy biểu thức $A$ có giá trị thu gọn bằng $[[fill:3]]$."
+    },
+    {
+     "type": "problem",
+     "label": "Bài 8.",
+     "statement": "Khai triển từng tích trong mỗi biểu thức sau:[[br]]a) [NB] $x(2x + 1) - x^2$;[[br]]b) [NB] $(x - 1)(x + 2) - x^2$;[[br]]c) [NB] $2x(x - 3) - (2x^2 - 5x)$ (Đề giữa kì I, THCS Nguyễn Trãi).",
+     "level": 1,
+     "tier": "onclass",
+     "dang_id": "NB6",
+     "solution": "a) $2x^2 + x - x^2 = x^2 + x$.[[br]]b) $x^2 + 2x - x - 2 - x^2 = x - 2$.[[br]]c) $2x^2 - 6x - 2x^2 + 5x = -x$."
+    },
+    {
+     "type": "problem",
+     "label": "Bài 9.",
+     "statement": "Tìm $x$ từ phương trình bậc nhất $ax + b = c$:[[br]]a) [NB] $2x + 3 = 11$;[[br]]b) [NB] $-3x + 13 = 4$;[[br]]c) [NB] $5x - 13 = 7$ (Đề giữa kì I, THCS Bát Tràng).",
+     "level": 1,
+     "tier": "onclass",
+     "dang_id": "NB7",
+     "solution": "a) $2x = 11 - 3 = 8 \\implies x = 4$.[[br]]b) $-3x = 4 - 13 = -9 \\implies x = 3$.[[br]]c) $5x = 7 + 13 = 20 \\implies x = 4$."
+    },
+    {
+     "type": "noted",
+     "variant": "example",
+     "text": "\\textbf{Ví dụ 3.} Tìm $x$ biết $2x(x - 3) - 2x^2 = 12$.[[br]]{\\sffamily\\bfseries\\color{brand}Lời giải}[[br]]Ta có $2x^2 - 6x - 2x^2 = 12$[[br]]$(2x^2 - 2x^2) - 6x = 12$[[br]]$[[fill:-6x]] = 12$[[br]]$x = 12 : (-6) = [[fill:-2]]$[[br]]Vậy $x = [[fill:-2]]$."
+    },
+    {
+     "type": "problem",
+     "label": "Bài 10.",
+     "statement": "Khai triển vế trái để tìm $x$:[[br]]a) [NB] $x(x - 2) - x^2 = 4$;[[br]]b) [NB] $3x(x + 1) - 3x^2 = 15$ (Đề giữa kì I, THCS Tam Hiệp);[[br]]c) [NB] $-2x(x - 5) + 2x^2 = 20$ (Đề giữa kì I, THCS Nguyễn Huy Tưởng).",
+     "level": 1,
+     "tier": "onclass",
+     "dang_id": "NB8",
+     "solution": "a) $x^2 - 2x - x^2 = 4 \\implies -2x = 4 \\implies x = -2$.[[br]]b) $3x^2 + 3x - 3x^2 = 15 \\implies 3x = 15 \\implies x = 5$.[[br]]c) $-2x^2 + 10x + 2x^2 = 20 \\implies 10x = 20 \\implies x = 2$."
+    }
+   ],
+   "teacher_note": "Các bài 1 - 5 rèn phản xạ dấu và tính chất phân phối. Bài 8, 9, 10 dẫn dắt nhẹ nhàng từ phương trình bậc nhất sang dạng tìm x chứa tích."
+  },
+  {
+   "kind": "practice2",
+   "number": 4,
+   "title": "Luyện tập 2",
+   "blocks": [
+    {
+     "type": "problem",
+     "label": "Bài 11.",
+     "statement": "Thu gọn vế trái để đưa về dạng $ax = b$ rồi tìm $x$:[[br]]a) [NB] $x(x + 3) - (x^2 - 6) = 15$ (Đề giữa kì I, THCS Vạn Phúc, Hà Đông);[[br]]b) [NB] $2x(x - 2) - 2x(x + 1) = 10$;[[br]]c) [NB] $x(2x + 1) - 2x(x - 3) = 14$ (Đề giữa kì I, THCS Ba Đình).",
+     "level": 1,
+     "tier": "onclass",
+     "dang_id": "NB9",
+     "solution": "a) $x^2 + 3x - x^2 + 6 = 15 \\implies 3x + 6 = 15 \\implies 3x = 9 \\implies x = 3$.[[br]]b) $2x^2 - 4x - 2x^2 - 2x = 10 \\implies -6x = 10 \\implies x = -\\dfrac{5}{3}$.[[br]]c) $2x^2 + x - 2x^2 + 6x = 14 \\implies 7x = 14 \\implies x = 2$."
+    },
+    {
+     "type": "problem",
+     "label": "Bài 12.",
+     "statement": "Bài toán diện tích hình chữ nhật sau khi thay đổi kích thước:[[br]]a) [NB] Một mảnh đất hình chữ nhật có chiều dài ban đầu $x$ (m), chiều rộng $y$ (m). Nếu tăng chiều dài thêm $2$ m và giảm chiều rộng đi $3$ m thì diện tích mới là (Đề giữa kì I, THCS Đỗ Ngọc Du)",
+     "level": 1,
+     "tier": "onclass",
+     "dang_id": "NB10",
+     "options": [
+      "$(x + 2)(y - 3)$",
+      "$(x - 2)(y + 3)$",
+      "$xy - 6$",
+      "$(x + 2) + (y - 3)$"
+     ],
+     "solution": "Chiều dài mới là $x + 2$, chiều rộng mới là $y - 3$, diện tích là $(x + 2)(y - 3)$.",
+     "answer": "A"
+    },
+    {
+     "type": "problem",
+     "label": "Bài 13.",
+     "statement": "[NB] Khai triển biểu thức diện tích $(x + 2)(y - 3)$ ta được",
+     "level": 1,
+     "tier": "onclass",
+     "dang_id": "NB10",
+     "options": [
+      "$xy - 3x + 2y - 6$",
+      "$xy + 3x - 2y - 6$",
+      "$xy - 6$",
+      "$xy - 3x + 2y + 6$"
+     ],
+     "solution": "Ta có $x\\cdot y - 3\\cdot x + 2\\cdot y - 2\\cdot 3 = xy - 3x + 2y - 6$.",
+     "answer": "A"
+    },
+    {
+     "type": "problem",
+     "label": "Bài 14.",
+     "statement": "[NB] Một thửa ruộng hình chữ nhật có kích thước $x$ (m) và $y$ (m). Nếu tăng mỗi chiều thêm $4$ m thì diện tích mới là (Đề giữa kì I, THCS Tam Khương)",
+     "level": 1,
+     "tier": "onclass",
+     "dang_id": "NB10",
+     "options": [
+      "$xy + 16$",
+      "$(x + 4)(y + 4)$",
+      "$(x + 4) + (y + 4)$",
+      "$4xy$"
+     ],
+     "solution": "Mỗi chiều tăng $4$ m nên kích thước mới là $x + 4$ và $y + 4$, diện tích là $(x + 4)(y + 4)$.",
+     "answer": "B"
+    },
+    {
+     "type": "noted",
+     "variant": "example",
+     "text": "\\textbf{Ví dụ 4.} Một ô tô chuyển động với vận tốc $v = x + 10$ (km/h) trong thời gian $t = 2x - 1$ (h). Viết đa thức biểu thị quãng đường $S$ mà ô tô đi được.[[br]]{\\sffamily\\bfseries\\color{brand}Lời giải}[[br]]$S = v\\cdot t = (x + 10)(2x - 1)$[[br]]$S = x\\cdot 2x - x\\cdot 1 + 10\\cdot 2x - 10\\cdot 1$[[br]]$S = 2x^2 - x + [[fill:20x]] - 10$[[br]]$S = [[fill:2x^2 + 19x - 10]]$ (km)[[br]]Vậy quãng đường đi được là $[[fill:2x^2 + 19x - 10]]$ km."
+    },
+    {
+     "type": "problem",
+     "label": "Bài 15.",
+     "statement": "Viết các biểu thức thực tế dưới dạng đa thức thu gọn:[[br]]a) [NB] Một người đi xe đạp với vận tốc $x + 2$ (km/h) trong thời gian $2x$ (h). Viết đa thức biểu thị quãng đường người đó đi được;[[br]]b) [NB] Một hình hộp chữ nhật có đáy hình vuông cạnh $x$ (cm) và chiều cao $x + 5$ (cm). Viết đa thức biểu thị thể tích của hình hộp (Đề giữa kì I, THCS Chu Văn An);[[br]]c) [NB] Một mảnh vườn hình chữ nhật có chiều rộng $x$ (m), chiều dài hơn chiều rộng $5$ m. Viết đa thức biểu thị diện tích mảnh vườn (Đề giữa kì I, THCS Phú Diễn A).",
+     "level": 1,
+     "tier": "onclass",
+     "dang_id": "NB11",
+     "solution": "a) $S = 2x(x + 2) = 2x^2 + 4x$ (km).[[br]]b) $V = x^2(x + 5) = x^3 + 5x^2$ (cm$^3$).[[br]]c) Chiều dài là $x + 5$ (m), diện tích là $S = x(x + 5) = x^2 + 5x$ (m$^2$)."
+    },
+    {
+     "type": "noted",
+     "variant": "example",
+     "text": "\\textbf{Ví dụ 5.} Tính tích của đa thức $2x - y$ với đa thức $x^2 + xy - 1$ rồi rút gọn kết quả.[[br]]{\\sffamily\\bfseries\\color{brand}Lời giải}[[br]]$A = 2x\\cdot x^2 + 2x\\cdot xy - 2x\\cdot 1 - y\\cdot x^2 - y\\cdot xy + y\\cdot 1$[[br]]$A = 2x^3 + 2x^2y - 2x - x^2y - xy^2 + y$[[br]]$A = 2x^3 + (2x^2y - x^2y) - xy^2 - 2x + y$[[br]]$A = [[fill:2x^3 + x^2y - xy^2 - 2x + y]]$[[br]]Vậy $A = [[fill:2x^3 + x^2y - xy^2 - 2x + y]]$."
+    },
+    {
+     "type": "problem",
+     "label": "Bài 16.",
+     "statement": "Thực hiện phép tính rồi thu gọn:[[br]]a) [TH] $2x^2y\\left(4xy^2 - \\dfrac{3}{2}x^2y + xy\\right)$ (Đề giữa kì I, THCS Văn Yên);[[br]]b) [TH] $(x + 2y)\\left(x^2 + 3y^2\\right)$ (Đề giữa kì I, THCS Nguyễn Công Trứ).",
+     "level": 2,
+     "tier": "onclass",
+     "dang_id": "TH1",
+     "hints": [
+      "Nhân đơn thức với từng hạng tử: chú ý luỹ thừa cùng biến và dấu của phân số.",
+      "Nhân từng hạng tử của nhị thức thứ nhất với từng hạng tử của nhị thức thứ hai."
+     ],
+     "solution": "a) Ta có $2x^2y\\cdot 4xy^2 - 2x^2y\\cdot\\dfrac{3}{2}x^2y + 2x^2y\\cdot xy = 8x^3y^3 - 3x^4y^2 + 2x^3y^2$[[br]]Vậy kết quả là $8x^3y^3 - 3x^4y^2 + 2x^3y^2$.[[br]]b) Ta có $x\\cdot x^2 + x\\cdot 3y^2 + 2y\\cdot x^2 + 2y\\cdot 3y^2 = x^3 + 3xy^2 + 2x^2y + 6y^3$[[br]]Vậy kết quả là $x^3 + 2x^2y + 3xy^2 + 6y^3$."
+    },
+    {
+     "type": "noted",
+     "variant": "example",
+     "text": "\\textbf{Ví dụ 6.} Rút gọn biểu thức $M = (x - 1)(x + 2) - (x + 3)(x - 4)$.[[br]]{\\sffamily\\bfseries\\color{brand}Lời giải}[[br]]$M = (x^2 + 2x - x - 2) - (x^2 - 4x + 3x - 12)$[[br]]$M = (x^2 + x - 2) - [[fill:x^2 - x - 12]]$[[br]]$M = x^2 + x - 2 - x^2 + x + 12$[[br]]$M = (x^2 - x^2) + (x + x) + (-2 + 12)$[[br]]$M = [[fill:2x + 10]]$[[br]]Vậy $M = [[fill:2x + 10]]$."
+    },
+    {
+     "type": "problem",
+     "label": "Bài 17.",
+     "statement": "Rút gọn các biểu thức sau:[[br]]a) [TH] $A = (x - 2)(2x - 1) - (2x^2 - 5x + 3)$ (Đề giữa kì I, THCS Nguyễn Trãi);[[br]]b) [TH] $B = (2x - 3)(x + 1) - x(2x - 1)$ (Đề giữa kì I, THCS Nguyễn Huy Tưởng).",
+     "level": 2,
+     "tier": "onclass",
+     "dang_id": "TH2",
+     "hints": [
+      "Khai triển tích trước, giữ ngoặc nếu trước tích có dấu trừ.",
+      "Bỏ ngoặc đổi dấu rồi nhóm các hạng tử đồng dạng."
+     ],
+     "solution": "a) Ta có $A = (2x^2 - x - 4x + 2) - (2x^2 - 5x + 3)$[[br]]$A = 2x^2 - 5x + 2 - 2x^2 + 5x - 3$[[br]]$A = (2x^2 - 2x^2) + (-5x + 5x) + (2 - 3) = -1$[[br]]Vậy $A = -1$.[[br]]b) Ta có $B = (2x^2 + 2x - 3x - 3) - (2x^2 - x)$[[br]]$B = 2x^2 - x - 3 - 2x^2 + x$[[br]]$B = (2x^2 - 2x^2) + (-x + x) - 3 = -3$[[br]]Vậy $B = -3$."
+    },
+    {
+     "type": "noted",
+     "variant": "example",
+     "text": "\\textbf{Ví dụ 7.} Tìm $x$ biết $(x - 3)(x + 2) - x^2 = 7$.[[br]]{\\sffamily\\bfseries\\color{brand}Lời giải}[[br]]$x^2 + 2x - 3x - 6 - x^2 = 7$[[br]]$(x^2 - x^2) + (2x - 3x) - 6 = 7$[[br]]$[[fill:-x]] - 6 = 7$[[br]]$[[fill:-x]] = 7 + 6 = 13$[[br]]$x = [[fill:-13]]$[[br]]Vậy $x = [[fill:-13]]$."
+    },
+    {
+     "type": "problem",
+     "label": "Bài 18.",
+     "statement": "Tìm $x$, biết:[[br]]a) [TH] $(x - 2)(x + 2) - x(x - 3) = 19$ (Đề giữa kì I, THCS Chúc Sơn);[[br]]b) [TH] $(2x - 1)(x + 3) - 2x(x + 2) = 5$ (Đề giữa kì I, THCS Nguyễn Khê).",
+     "level": 2,
+     "tier": "onclass",
+     "dang_id": "TH3",
+     "hints": [
+      "Khai triển các tích ở vế trái.",
+      "Thu gọn các hạng tử chứa $x^2$ (chúng sẽ triệt tiêu) rồi chuyển vế tìm $x$."
+     ],
+     "solution": "a) Ta có $x^2 + 2x - 2x - 4 - x^2 + 3x = 19$[[br]]$3x - 4 = 19$[[br]]$3x = 23$[[br]]$x = \\dfrac{23}{3}$[[br]]Vậy $x = \\dfrac{23}{3}$.[[br]]b) Ta có $2x^2 + 6x - x - 3 - 2x^2 - 4x = 5$[[br]]$x - 3 = 5$[[br]]$x = 8$[[br]]Vậy $x = 8$."
+    },
+    {
+     "type": "problem",
+     "label": "Bài 19.",
+     "statement": "Một mảnh vườn hình chữ nhật ban đầu có chiều dài $x$ (m) và chiều rộng $y$ (m) (Đề giữa kì I, THCS Đỗ Ngọc Du). Người ta mở rộng mảnh vườn bằng cách tăng chiều dài thêm $2$ m và giảm chiều rộng đi $3$ m.[[br]]a) [TH] Viết đa thức biểu thị diện tích mới của mảnh vườn sau khi thay đổi kích thước dưới dạng thu gọn.[[br]]b) [TH] Tính diện tích mới của mảnh vườn khi $x = 10$ và $y = 4$.",
+     "level": 2,
+     "tier": "onclass",
+     "dang_id": "TH4",
+     "hints": [
+      "Kích thước mới: chiều dài $x + 2$, chiều rộng $y - 3$.",
+      "Diện tích mới $S = (x + 2)(y - 3)$, nhân phá ngoặc rồi thay số."
+     ],
+     "solution": "Theo đề bài, ta có:[[br]]a) Chiều dài mới là $x + 2$ (m); chiều rộng mới là $y - 3$ (m).[[br]]Diện tích mới của mảnh vườn là $S = (x + 2)(y - 3)$[[br]]$S = xy - 3x + 2y - 6$ (m$^2$)[[br]]Vậy đa thức biểu thị diện tích mới là $xy - 3x + 2y - 6$ m$^2$.[[br]]b) Thay $x = 10, y = 4$ vào biểu thức diện tích:[[br]]$S = 10\\cdot 4 - 3\\cdot 10 + 2\\cdot 4 - 6 = 40 - 30 + 8 - 6 = 12$ (m$^2$).[[br]]Vậy diện tích mới của mảnh vườn khi $x = 10, y = 4$ là $12$ m$^2$."
+    },
+    {
+     "type": "noted",
+     "variant": "example",
+     "text": "\\textbf{Ví dụ 8.} Hãy rút gọn biểu thức sau để thấy giá trị của nó không phụ thuộc vào biến: $H = (2x - 1)(3x + 2) - 6x(x - 1) - 7x + 8$.[[br]]{\\sffamily\\bfseries\\color{brand}Lời giải}[[br]]$H = (6x^2 + 4x - 3x - 2) - (6x^2 - 6x) - 7x + 8$[[br]]$H = 6x^2 + x - 2 - 6x^2 + 6x - 7x + 8$[[br]]$H = (6x^2 - 6x^2) + (x + 6x - 7x) + (-2 + 8)$[[br]]$H = [[fill:0]] + [[fill:0]] + [[fill:6]]$[[br]]$H = [[fill:6]]$[[br]]Vậy biểu thức $H$ luôn bằng $[[fill:6]]$, không phụ thuộc vào giá trị của biến $x$."
+    },
+    {
+     "type": "problem",
+     "label": "Bài 20.",
+     "statement": "[VD] Chứng minh giá trị của biểu thức sau không phụ thuộc vào giá trị của biến: $A = (x - 2y)\\left(x^2 + 2xy + 4y^2\\right) - \\left(x^3 - 8y^3 + 15\\right)$ (Đề giữa kì I, THCS Bát Tràng).",
+     "level": 3,
+     "tier": "onclass",
+     "dang_id": "VD1",
+     "quy_trinh": [
+      "Cái phải chứng tỏ là gì? (sau khi rút gọn, biểu thức chỉ còn một số)",
+      "Khai triển từng tích (hoặc bỏ từng ngoặc) trên một dòng riêng; đã dùng hết các hạng tử chưa?",
+      "Nhóm hạng tử đồng dạng, thu gọn: mọi hạng tử chứa biến phải triệt tiêu.",
+      "Kết luận ``Vậy giá trị của biểu thức bằng … , không phụ thuộc vào giá trị của biến''."
+     ],
+     "solution": "Ta có $A = x\\left(x^2 + 2xy + 4y^2\\right) - 2y\\left(x^2 + 2xy + 4y^2\\right) - x^3 + 8y^3 - 15$[[br]]$A = x^3 + 2x^2y + 4xy^2 - 2x^2y - 4xy^2 - 8y^3 - x^3 + 8y^3 - 15$[[br]]$A = (x^3 - x^3) + (2x^2y - 2x^2y) + (4xy^2 - 4xy^2) + (-8y^3 + 8y^3) - 15$[[br]]$A = 0 + 0 + 0 + 0 - 15 = -15$[[br]]Vậy giá trị của biểu thức $A$ bằng $-15$, không phụ thuộc vào giá trị của biến."
+    },
+    {
+     "type": "problem",
+     "label": "Bài 21.",
+     "statement": "[VD] Tìm $x$, biết: $(x - 3)(-x + 4) - (x - 1)(x + 5) = -2x^2$ (Đề giữa kì I, THCS Tam Khương).",
+     "level": 3,
+     "tier": "onclass",
+     "dang_id": "VD2",
+     "quy_trinh": [
+      "Cái phải tìm là $x$; muốn tìm $x$ thì phải đưa đẳng thức về dạng $ax + b = c$.",
+      "Khai triển từng tích trên một dòng; trước tích có dấu $-$ thì đặt cả tích trong ngoặc.",
+      "Thu gọn vế trái (hạng tử $x^2$ phải triệt tiêu), tìm $x$; đã dùng hết dữ kiện chưa?",
+      "Kết luận ``Vậy $x = \\ldots$''."
+     ],
+     "solution": "Ta có $(x - 3)(-x + 4) = -x^2 + 4x + 3x - 12 = -x^2 + 7x - 12$[[br]]$(x - 1)(x + 5) = x^2 + 5x - x - 5 = x^2 + 4x - 5$[[br]]Thay vào phương trình:[[br]]$(-x^2 + 7x - 12) - (x^2 + 4x - 5) = -2x^2$[[br]]$-x^2 + 7x - 12 - x^2 - 4x + 5 = -2x^2$[[br]]$-2x^2 + 3x - 7 = -2x^2$[[br]]$3x - 7 = 0$[[br]]$3x = 7$[[br]]$x = \\dfrac{7}{3}$[[br]]Vậy $x = \\dfrac{7}{3}$."
+    }
+   ],
+   "teacher_note": "Bài 16 rèn kỹ năng nhân đa thức với đa thức. Bài 18 là trọng tâm dạng tìm x. Bài 20, 21 là các câu vận dụng quen thuộc trong đề thi."
+  },
+  {
+   "kind": "reflection",
+   "number": 5,
+   "title": "Tổng kết \\& bài tập về nhà",
+   "blocks": [
+    {
+     "type": "mindmap",
+     "caption": "Sơ đồ tư duy: Phép nhân đa thức",
+     "root": "NHÂN ĐA THỨC",
+     "branches": [
+      {
+       "label": "ĐƠN THỨC $\\times$ ĐA THỨC",
+       "children": [
+        {
+         "label": "$A(B + C) = AB + AC$"
+        },
+        {
+         "label": "Nhân hệ số với hệ số"
+        },
+        {
+         "label": "Cộng số mũ cùng biến: $x^m x^n = x^{m+n}$"
+        }
+       ]
+      },
+      {
+       "label": "ĐA THỨC $\\times$ ĐA THỨC",
+       "children": [
+        {
+         "label": "$(A+B)(C+D) = AC + AD + BC + BD$"
+        },
+        {
+         "label": "Mỗi hạng tử nhân lần lượt"
+        },
+        {
+         "label": "Nhóm hạng tử đồng dạng, thu gọn"
+        }
+       ]
+      },
+      {
+       "label": "DẠNG BÀI TRỌNG TÂM",
+       "children": [
+        {
+         "label": "Rút gọn biểu thức nhiều tích"
+        },
+        {
+         "label": "Tìm $x$ (hạng tử $x^2$ triệt tiêu)"
+        },
+        {
+         "label": "Chứng minh không phụ thuộc biến"
+        },
+        {
+         "label": "Toán thực tế diện tích, quãng đường"
+        }
+       ]
+      }
+     ]
+    },
+    {
+     "type": "problem",
+     "label": "BTVN~1.",
+     "statement": "Hoàn thành quy tắc nhân:[[br]]a) [NB] Muốn nhân đơn thức $A$ với đa thức $B - C$, ta viết $A(B - C) = $[[blank:2.5cm]];[[br]]b) [NB] Muốn nhân đa thức $A + B$ với đa thức $C - D$, ta viết $(A + B)(C - D) = $[[blank:3.5cm]].",
+     "level": 1,
+     "tier": "btvn",
+     "dang_id": "NB1",
+     "solution": "a) $AB - AC$.[[br]]b) $AC - AD + BC - BD$."
+    },
+    {
+     "type": "problem",
+     "label": "BTVN~2.",
+     "statement": "Chọn kết quả đúng:[[br]]a) [NB] Kết quả của phép nhân $-2x(3x^2 - 4x)$ là",
+     "level": 1,
+     "tier": "btvn",
+     "dang_id": "NB2",
+     "options": [
+      "$-6x^3 + 8x^2$",
+      "$-6x^3 - 8x^2$",
+      "$6x^3 + 8x^2$",
+      "$-6x^2 + 8x$"
+     ],
+     "solution": "$-2x\\cdot 3x^2 - 2x\\cdot(-4x) = -6x^3 + 8x^2$.",
+     "answer": "A"
+    },
+    {
+     "type": "problem",
+     "label": "BTVN~3.",
+     "statement": "[NB] Tích của $4x^2y$ với $\\left(x - \\dfrac{1}{2}y\\right)$ là",
+     "level": 1,
+     "tier": "btvn",
+     "dang_id": "NB2",
+     "options": [
+      "$4x^3y - 2x^2y^2$",
+      "$4x^2y - 2x^2y^2$",
+      "$4x^3y + 2x^2y^2$",
+      "$4x^3y - 2y$"
+     ],
+     "solution": "$4x^2y\\cdot x - 4x^2y\\cdot\\dfrac{1}{2}y = 4x^3y - 2x^2y^2$.",
+     "answer": "A"
+    },
+    {
+     "type": "problem",
+     "label": "BTVN~4.",
+     "statement": "Điền Đ (Đúng) hoặc S (Sai):[[br]]a) [NB] $(-3x)(-2x + 1) = 6x^2 - 3x$;[[br]]b) [NB] $x^2\\cdot x^5 = x^{10}$.",
+     "level": 1,
+     "tier": "btvn",
+     "dang_id": "NB3",
+     "solution": "a) Đ: $(-3x)\\cdot(-2x) = 6x^2$ và $(-3x)\\cdot 1 = -3x$.[[br]]b) S: $x^2\\cdot x^5 = x^{2+5} = x^7$ chứ không phải $x^{10}$."
+    },
+    {
+     "type": "problem",
+     "label": "BTVN~5.",
+     "statement": "Điền vào chỗ trống để thực hiện phép nhân $(2x - 1)(x + 3)$:[[br]]a) [NB] Nhân từng hạng tử: $(2x - 1)(x + 3) = 2x\\cdot x + 2x\\cdot 3 - 1\\cdot x - 1\\cdot[[blank:1.2cm]]$;[[br]]b) [NB] Kết quả thu gọn: $= $[[blank:3cm]].",
+     "level": 1,
+     "tier": "btvn",
+     "dang_id": "NB4",
+     "solution": "a) $2x\\cdot x + 2x\\cdot 3 - 1\\cdot x - 1\\cdot 3$.[[br]]b) $2x^2 + 6x - x - 3 = 2x^2 + 5x - 3$."
+    },
+    {
+     "type": "problem",
+     "label": "BTVN~6.",
+     "statement": "Nhân hai nhị thức rồi thu gọn:[[br]]a) [NB] $(x - 3)(x + 3)$;[[br]]b) [NB] $(2x + 1)(x - 4)$.",
+     "level": 1,
+     "tier": "btvn",
+     "dang_id": "NB5",
+     "solution": "a) $x^2 + 3x - 3x - 9 = x^2 - 9$.[[br]]b) $2x^2 - 8x + x - 4 = 2x^2 - 7x - 4$."
+    },
+    {
+     "type": "problem",
+     "label": "BTVN~7.",
+     "statement": "Khai triển từng tích trong biểu thức:[[br]]a) [NB] $3x(x - 1) - 3x^2$;[[br]]b) [NB] $(x + 1)(x + 2) - x^2$.",
+     "level": 1,
+     "tier": "btvn",
+     "dang_id": "NB6",
+     "solution": "a) $3x^2 - 3x - 3x^2 = -3x$.[[br]]b) $x^2 + 2x + x + 2 - x^2 = 3x + 2$."
+    },
+    {
+     "type": "problem",
+     "label": "BTVN~8.",
+     "statement": "Tìm $x$:[[br]]a) [NB] $4x - 5 = 11$;[[br]]b) [NB] $-2x + 8 = 0$.",
+     "level": 1,
+     "tier": "btvn",
+     "dang_id": "NB7",
+     "solution": "a) $4x = 16 \\implies x = 4$.[[br]]b) $-2x = -8 \\implies x = 4$."
+    },
+    {
+     "type": "problem",
+     "label": "BTVN~9.",
+     "statement": "Tìm $x$, biết:[[br]]a) [NB] $x(x + 4) - x^2 = 12$;[[br]]b) [NB] $2x(x - 1) - 2x^2 = -6$.",
+     "level": 1,
+     "tier": "btvn",
+     "dang_id": "NB8",
+     "solution": "a) $x^2 + 4x - x^2 = 12 \\implies 4x = 12 \\implies x = 3$.[[br]]b) $2x^2 - 2x - 2x^2 = -6 \\implies -2x = -6 \\implies x = 3$."
+    },
+    {
+     "type": "problem",
+     "label": "BTVN~10.",
+     "statement": "Tìm $x$, biết:[[br]]a) [NB] $x(2x + 3) - 2x(x - 1) = 15$;[[br]]b) [NB] $3x(x - 2) - 3x^2 + 4 = -8$;[[br]]c) [NB] $(x + 1)(x + 2) - x(x + 5) = 6$.",
+     "level": 1,
+     "tier": "btvn",
+     "dang_id": "NB9",
+     "solution": "a) $2x^2 + 3x - 2x^2 + 2x = 15 \\implies 5x = 15 \\implies x = 3$.[[br]]b) $3x^2 - 6x - 3x^2 + 4 = -8 \\implies -6x = -12 \\implies x = 2$.[[br]]c) $x^2 + 3x + 2 - x^2 - 5x = 6 \\implies -2x + 2 = 6 \\implies -2x = 4 \\implies x = -2$."
+    },
+    {
+     "type": "problem",
+     "label": "BTVN~11.",
+     "statement": "Chọn biểu thức thực tế:[[br]]a) [NB] Một mảnh vườn hình chữ nhật có kích thước $x$ (m) và $y$ (m). Nếu giảm chiều dài $1$ m và tăng chiều rộng $2$ m thì diện tích mới là:",
+     "level": 1,
+     "tier": "btvn",
+     "dang_id": "NB10",
+     "options": [
+      "$(x - 1)(y + 2)$",
+      "$(x + 1)(y - 2)$",
+      "$xy - 2$",
+      "$(x - 1) + (y + 2)$"
+     ],
+     "solution": "Kích thước mới là $x - 1$ và $y + 2$, diện tích là $(x - 1)(y + 2)$.",
+     "answer": "A"
+    },
+    {
+     "type": "problem",
+     "label": "BTVN~12.",
+     "statement": "[NB] Khai triển biểu thức diện tích $(x - 1)(y + 2)$ ta được",
+     "level": 1,
+     "tier": "btvn",
+     "dang_id": "NB10",
+     "options": [
+      "$xy + 2x - y - 2$",
+      "$xy - 2x + y - 2$",
+      "$xy + 2x - y + 2$",
+      "$xy - 2$"
+     ],
+     "solution": "$x\\cdot y + x\\cdot 2 - 1\\cdot y - 1\\cdot 2 = xy + 2x - y - 2$.",
+     "answer": "A"
+    },
+    {
+     "type": "problem",
+     "label": "BTVN~13.",
+     "statement": "Viết đa thức biểu thị các đại lượng thực tế:[[br]]a) [NB] Một xe máy chạy với vận tốc $2x + 5$ (km/h) trong thời gian $x$ (h). Viết đa thức biểu thị quãng đường xe máy đi được;[[br]]b) [NB] Một bể nước hình hộp chữ nhật có đáy hình vuông cạnh $2x$ (m) và chiều cao $x + 1$ (m). Viết đa thức biểu thị thể tích bể;[[br]]c) [NB] Một sân bóng hình chữ nhật có chiều rộng $x$ (m), chiều dài gấp đôi chiều rộng cộng thêm $3$ m. Viết đa thức biểu thị diện tích sân bóng.",
+     "level": 1,
+     "tier": "btvn",
+     "dang_id": "NB11",
+     "solution": "a) $S = x(2x + 5) = 2x^2 + 5x$ (km).[[br]]b) $V = (2x)^2(x + 1) = 4x^2(x + 1) = 4x^3 + 4x^2$ (m$^3$).[[br]]c) Chiều dài là $2x + 3$ (m), diện tích là $S = x(2x + 3) = 2x^2 + 3x$ (m$^2$)."
+    },
+    {
+     "type": "problem",
+     "label": "BTVN~14.",
+     "statement": "Thực hiện phép tính rồi thu gọn:[[br]]a) [TH] $3xy\\left(2x^2 - xy + 3y^2\\right)$;[[br]]b) [TH] $(2x - 1)(x^2 - 3x + 2)$.",
+     "level": 2,
+     "tier": "btvn",
+     "dang_id": "TH1",
+     "hints": [
+      "Nhân đơn thức với từng hạng tử trong ngoặc.",
+      "Nhân đa thức với đa thức rồi nhóm các hạng tử đồng dạng."
+     ],
+     "solution": "Theo đề bài, ta có:[[br]]a) $3xy\\cdot 2x^2 - 3xy\\cdot xy + 3xy\\cdot 3y^2 = 6x^3y - 3x^2y^2 + 9xy^3$[[br]]Vậy kết quả là $6x^3y - 3x^2y^2 + 9xy^3$.[[br]]b) $2x(x^2 - 3x + 2) - 1(x^2 - 3x + 2) = 2x^3 - 6x^2 + 4x - x^2 + 3x - 2 = 2x^3 - 7x^2 + 7x - 2$[[br]]Vậy kết quả là $2x^3 - 7x^2 + 7x - 2$."
+    },
+    {
+     "type": "problem",
+     "label": "BTVN~15.",
+     "statement": "Rút gọn các biểu thức sau:[[br]]a) [TH] $M = (x + 3)(x - 2) - (x^2 + x - 5)$;[[br]]b) [TH] $N = (3x - 1)(x + 2) - 3x(x + 1)$.",
+     "level": 2,
+     "tier": "btvn",
+     "dang_id": "TH2",
+     "hints": [
+      "Khai triển tích trước, cẩn thận dấu trừ trước ngoặc.",
+      "Nhóm các hạng tử đồng dạng để triệt tiêu $x^2$."
+     ],
+     "solution": "Theo đề bài, ta có:[[br]]a) $M = (x^2 - 2x + 3x - 6) - (x^2 + x - 5) = x^2 + x - 6 - x^2 - x + 5 = -1$[[br]]Vậy $M = -1$.[[br]]b) $N = (3x^2 + 6x - x - 2) - (3x^2 + 3x) = 3x^2 + 5x - 2 - 3x^2 - 3x = 2x - 2$[[br]]Vậy $N = 2x - 2$."
+    },
+    {
+     "type": "problem",
+     "label": "BTVN~16.",
+     "statement": "Tìm $x$, biết:[[br]]a) [TH] $(x - 1)(x + 3) - x(x - 2) = 17$;[[br]]b) [TH] $(3x - 2)(x + 1) - 3x(x - 1) = 8$.",
+     "level": 2,
+     "tier": "btvn",
+     "dang_id": "TH3",
+     "hints": [
+      "Khai triển từng tích ở vế trái.",
+      "Thu gọn vế trái để các hạng tử $x^2$ triệt tiêu rồi tìm $x$."
+     ],
+     "solution": "Theo đề bài, ta có:[[br]]a) $x^2 + 3x - x - 3 - x^2 + 2x = 17$[[br]]$4x - 3 = 17$[[br]]$4x = 20$[[br]]$x = 5$[[br]]Vậy $x = 5$.[[br]]b) $3x^2 + 3x - 2x - 2 - 3x^2 + 3x = 8$[[br]]$4x - 2 = 8$[[br]]$4x = 10$[[br]]$x = \\dfrac{5}{2}$[[br]]Vậy $x = \\dfrac{5}{2}$."
+    },
+    {
+     "type": "problem",
+     "label": "BTVN~17.",
+     "statement": "[TH] Một khu đất hình chữ nhật có chiều dài $x$ (m) và chiều rộng $y$ (m). Người ta làm một lối đi xung quanh vườn rộng $1$ m, phần đất còn lại bên trong dùng để trồng hoa (kích thước khu trồng hoa là dài $x - 2$ m, rộng $y - 2$ m).[[br]]a) Viết đa thức biểu thị diện tích khu trồng hoa theo $x, y$.[[br]]b) Tính diện tích khu trồng hoa khi $x = 15$ và $y = 10$.",
+     "level": 2,
+     "tier": "btvn",
+     "dang_id": "TH4",
+     "hints": [
+      "Khu trồng hoa có diện tích là $S = (x - 2)(y - 2)$.",
+      "Khai triển tích và thay $x = 15, y = 10$."
+     ],
+     "solution": "Theo đề bài, ta có:[[br]]a) Diện tích khu trồng hoa là $S = (x - 2)(y - 2)$[[br]]$S = xy - 2x - 2y + 4$ (m$^2$)[[br]]Vậy biểu thức diện tích khu trồng hoa là $xy - 2x - 2y + 4$ m$^2$.[[br]]b) Thay $x = 15, y = 10$ vào biểu thức:[[br]]$S = 15\\cdot 10 - 2\\cdot 15 - 2\\cdot 10 + 4 = 150 - 30 - 20 + 4 = 104$ (m$^2$).[[br]]Vậy diện tích khu trồng hoa là $104$ m$^2$."
+    },
+    {
+     "type": "problem",
+     "label": "BTVN~18.",
+     "statement": "[VD] Chứng minh rằng giá trị của biểu thức sau không phụ thuộc vào giá trị của biến: $P = (3x - 2)(2x + 1) - (x + 2)(6x - 1) + 12x$ (SGK 1{.}28).",
+     "level": 3,
+     "tier": "btvn",
+     "dang_id": "VD1",
+     "quy_trinh": [
+      "Cái phải chứng tỏ là gì? (sau khi rút gọn, biểu thức chỉ còn một số)",
+      "Khai triển từng tích (hoặc bỏ từng ngoặc) trên một dòng riêng; đã dùng hết các hạng tử chưa?",
+      "Nhóm hạng tử đồng dạng, thu gọn: mọi hạng tử chứa biến phải triệt tiêu.",
+      "Kết luận ``Vậy giá trị của biểu thức bằng … , không phụ thuộc vào giá trị của biến''."
+     ],
+     "solution": "Ta có $(3x - 2)(2x + 1) = 6x^2 + 3x - 4x - 2 = 6x^2 - x - 2$[[br]]$(x + 2)(6x - 1) = 6x^2 - x + 12x - 2 = 6x^2 + 11x - 2$[[br]]$P = (6x^2 - x - 2) - (6x^2 + 11x - 2) + 12x$[[br]]$P = 6x^2 - x - 2 - 6x^2 - 11x + 2 + 12x$[[br]]$P = (6x^2 - 6x^2) + (-x - 11x + 12x) + (-2 + 2)$[[br]]$P = 0 + 0 + 0 = 0$[[br]]Vậy giá trị của biểu thức $P$ bằng $0$, không phụ thuộc vào giá trị của biến $x$."
+    }
+   ],
+   "teacher_note": "Giao 18 bài về nhà. Nhắc HS bài 16, 17, 18 là các bài luyện kỹ năng biến đổi chuẩn bị cho đề thi giữa kì I."
+  }
+ ]
+}

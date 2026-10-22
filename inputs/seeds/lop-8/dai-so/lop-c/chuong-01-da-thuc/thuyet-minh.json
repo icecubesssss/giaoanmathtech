@@ -1,69 +1,803 @@
 {
-  "slug": "thuyet-minh-chuong-01-da-thuc",
-  "title": "Chuong 01 da thuc",
+  "slug": "thuyet-minh-lop-8c-chuong-01-da-thuc",
+  "title": "Chương I (SGK KNTT): Đa thức — kế hoạch 5 buổi, 5 phiếu, tầng C (rate gốc)",
   "grade": "lop-8",
   "subject": "dai-so",
   "tier": "C",
-  "tuan": "",
+  "tuan": "4-8",
   "chuong": "chuong-01-da-thuc",
+  "_nguon": "Hồ sơ chương inputs/refs/ho-so-chuong/lop-8/chuong-01-da-thuc.{md,json} (101 câu GK1 Hà Nội 2023-2026 đã đọc ảnh, gõ LaTeX, kiểm SymPy; mã C1-xx). Tiến độ C config/tien_do/C-lop-8.json tuần 4-8. Câu dành riêng cho đề kiểm tra chương (KHÔNG dùng ở 5 phiếu): C1-20, C1-36, C1-55, C1-56, C1-57, C1-63, C1-72, C1-91, C1-92, C1-93, C1-96, C1-98, C1-99.",
   "thoiluong": [
-    "TODO: Buổi 1 (Bài …): 1 ca $=$ 90 phút (SGK n tiết)",
-    "TODO: \\textbf{Tổng N ca $=$ … phút $\\approx$ … tiết} (SGK chương …: … tiết)"
+    "Buổi 1 (Tuần 4) — Bài 1: Đơn thức $+$ Bài 2: Đa thức (gộp): 1 ca $=$ 90 phút — SGV xếp 4 tiết.",
+    "Buổi 2 (Tuần 5) — Bài 3: Phép cộng và phép trừ đa thức $+$ Luyện tập chung tr.17: 1 ca $=$ 90 phút — SGV xếp 1 $+$ 2 tiết.",
+    "Buổi 3 (Tuần 6) — Bài 4: Phép nhân đa thức (bắt đầu dạy tìm $x$): 1 ca $=$ 90 phút — SGV xếp 2 tiết.",
+    "Buổi 4 (Tuần 7) — Bài 5: Phép chia đa thức cho đơn thức $+$ tính giá trị biểu thức: 1 ca $=$ 90 phút — SGV xếp 1 tiết.",
+    "Buổi 5 (Tuần 8) — Luyện tập chung tr.25 $+$ Bài tập cuối chương I $+$ Hoạt động trải nghiệm lãi kép: 1 ca $=$ 90 phút $=$ 45 phút luyện tập $+$ 45 phút kiểm tra chương.",
+    "\\textbf{Tổng 5 ca $=$ 450 phút $=$ 10 tiết} (1 ca 90 phút $=$ 2 tiết), trong đó 45 phút là bài kiểm tra chương.",
+    "ĐỐI CHIẾU SGV Toán 8 KNTT: chương I có 13 tiết (Bài 1: 2, Bài 2: 2, Bài 3: 1, Luyện tập chung 2, Bài 4: 2, Bài 5: 1, Luyện tập chung 2, Bài tập cuối chương 1).",
+    "Trung tâm dạy 9 tiết kiến thức $+$ 1 tiết kiểm tra, hụt 4 tiết: hai mục Luyện tập chung dồn vào buổi 2 và buổi 5; dạng tìm $x$ (89\\% đề giữa kì I) không có mục riêng trong SGK nên dạy lồng từ buổi 3."
   ],
   "kien_thuc_nen": [
-    "TODO: kiến thức LỚP DƯỚI dùng lại (vd Định lí Pythagore — Lớp 8). Chạy `make check-tm` để cổng tự dò xem spec đang dùng chùa nền nào."
+    "\\textbf{Luỹ thừa với số mũ tự nhiên} (Lớp 6, 7): $x^m\\cdot x^n = x^{m+n}$, $x^m : x^n = x^{m-n}$ ($m \\ge n$), $x^0 = 1$; $(-2)^2 = 4$, $(-2)^3 = -8$, $-2^2 = -4$ — nền của thu gọn đơn thức, tính giá trị, nhân và chia.",
+    "\\textbf{Đơn thức, đa thức một biến} (Lớp 7, chương VII): thu gọn, bậc, giá trị, cộng, trừ, nhân, chia — chương I làm lại y hệt với nhiều biến.",
+    "\\textbf{Quy tắc dấu ngoặc và bốn phép tính số hữu tỉ} (Lớp 7): hệ số là phân số, số thập phân, số âm; bỏ ngoặc có dấu $-$ đằng trước.",
+    "\\textbf{Tìm $x$ trong $ax + b = c$} (Lớp 7: quy tắc chuyển vế): bước cuối của dạng tìm $x$ từ buổi 3.",
+    "\\textbf{Chu vi, diện tích hình chữ nhật, hình vuông; thể tích hình hộp chữ nhật; quãng đường $=$ vận tốc $\\times$ thời gian; giảm $10\\%$ thì trả $90\\%$} (Lớp 6, 7): dùng ở mọi bài thực tế lập biểu thức."
   ],
   "lythuyet": [
-    "TODO: lý thuyết trọng tâm."
+    "\\textbf{Mục tiêu của chương (tầng C)}: chắc phần đại số chương I của đề giữa kì I Hà Nội, khoảng $3$ điểm/đề: trắc nghiệm nhận biết ($0{,}25$ điểm mỗi câu), thu gọn đa thức $+$ bậc $+$ giá trị ($1{,}0$ điểm), thực hiện phép tính ($1{,}0$ điểm), tìm $x$ ($1{,}0$ điểm); làm được một phần bài thực tế lập biểu thức ($0{,}69$ điểm/đề).",
+    "Tầng C bỏ câu cuối đề $0{,}5$ điểm (chương I chỉ 2/34 đề có), không soạn câu Vận dụng cao. Nhịp tính giờ: rate gốc (trên lớp NB $1{,}5'$, TH $6'$, VD $12'$ mỗi câu — Thầy chốt 16/10/2026) nên mỗi buổi khoảng 15 câu NB, 4 câu TH, 1 câu VD.",
+    "\\textbf{Đơn thức}: một số, một biến, hoặc tích của các số và biến. \\textbf{Đơn thức thu gọn}: hệ số $\\times$ các luỹ thừa biến, mỗi biến một lần. \\textbf{Bậc}: tổng số mũ các biến (hệ số khác $0$). \\textbf{Đồng dạng}: hệ số khác $0$, cùng phần biến; cộng (trừ) thì cộng (trừ) hệ số.",
+    "\\textbf{Đa thức}: tổng các đơn thức (hạng tử); \\textbf{đa thức thu gọn}: không còn hai hạng tử đồng dạng; \\textbf{bậc của đa thức}: bậc của hạng tử bậc cao nhất trong dạng thu gọn.",
+    "\\textbf{Cộng, trừ đa thức}: bỏ ngoặc (dấu $-$ đằng trước thì đổi dấu mọi hạng tử), nhóm hạng tử đồng dạng, thu gọn. $A + X = B$ thì $X = B - A$.",
+    "\\textbf{Nhân}: đơn thức nhân từng hạng tử; đa thức nhân đa thức: mỗi hạng tử nhân với từng hạng tử rồi thu gọn. \\textbf{Chia đa thức cho đơn thức} (trường hợp chia hết): chia từng hạng tử rồi cộng các thương."
   ],
   "vidu": [
-    "TODO: ví dụ GV làm mẫu."
+    "Buổi 1: thu gọn $0{,}5xy^2\\cdot 4x^2$ rồi nêu hệ số, phần biến, bậc; thu gọn một đa thức có hạng tử triệt tiêu rồi tìm bậc; bài toán mở đầu SGK tr.5 (quà thiện nguyện $12xy + 4{,}5xy$).",
+    "Buổi 2: tính $A + B$, $A - B$ trình bày bỏ ngoặc từng dòng; tìm $M$ biết $M - A = B$; chứng tỏ một hiệu đa thức không phụ thuộc vào biến.",
+    "Buổi 3: nhân hai đa thức có khung điền khuyết; rút gọn biểu thức hai tích; tìm $x$ mà hạng tử $x^2$ triệt tiêu; diện tích phần còn lại của mảnh vườn.",
+    "Buổi 4: chia đa thức cho đơn thức từng hạng tử; rút gọn biểu thức phối hợp rồi tính giá trị; tìm đa thức $B$ biết $2xy^2(B - x^3y) = \\ldots$",
+    "Buổi 5: bài thực tế lập biểu thức nhiều bước (sân có lối đi, hộp không nắp), trình bày như đi thi."
   ],
   "dang_vd": [
-    "TODO: dạng VẬN DỤNG trong đề (bám GKI)."
+    "\\textbf{Quy ước (Thầy chốt 16/10/2026)}: bài thực tế 2 $-$ 3 bước (viết biểu thức rồi thay số, giảm giá $10\\%$) là THÔNG HIỂU; chỉ bài từ 4 bước trở lên hoặc có biến đổi mới là VẬN DỤNG.",
+    "\\textbf{Diện tích hình ghép theo hai cách} (buổi 1), \\textbf{chứng tỏ giá trị biểu thức không phụ thuộc vào biến} (buổi 2, 3), \\textbf{tìm đa thức qua phép nhân, phép chia} (buổi 4), \\textbf{thực tế nhiều bước có biến đổi} (buổi 5, bài tập về nhà)."
   ],
   "loisai": [
-    "TODO: lỗi sai thường gặp."
+    "\\textbf{Buổi 1}: nhận đơn thức theo kiểu ``không có dấu cộng trừ'' (loại nhầm $\\left(\\frac{3}{7} + 2{,}5\\right)xy^2$, nhận nhầm $\\frac{5x}{2y}$); tính bậc gộp cả số mũ của hệ số ($3^3x^2yz^2$ bậc $5$ chứ không phải $8$); xét đồng dạng không nhìn số mũ ($8x^4y$ và $8xy^4$); tìm bậc đa thức trước khi thu gọn; thay số âm không đặt ngoặc.",
+    "\\textbf{Buổi 2}: bỏ ngoặc có dấu $-$ chỉ đổi dấu hạng tử đầu; cộng hai hạng tử không đồng dạng $3x^2y + 2xy^2 = 5x^3y^3$; tìm $C$ từ $C + B = A$ lại lấy $A + B$.",
+    "\\textbf{Buổi 3}: nhân đơn thức âm sai dấu từ hạng tử thứ hai; $x^3\\cdot x^4 = x^{12}$; nhân thiếu hạng tử khi nhân hai đa thức; tìm $x$ quên đổi dấu cả tích đứng sau dấu $-$.",
+    "\\textbf{Buổi 4}: chỉ chia hạng tử đầu; $xy : xy = 0$ (đúng là $1$); kết luận chia hết khi có một hạng tử thiếu biến hoặc số mũ nhỏ hơn.",
+    "\\textbf{Buổi 5}: bài thực tế quên nhân khối lượng mỗi chùm, viết giảm $10\\%$ thành $y - 10$; lấy nhầm diện tích ao thay cho diện tích phần còn lại; thiếu đơn vị và câu ``Vậy''."
   ],
   "kienthuc_nb": [
-    "TODO: kiến thức NHẬN BIẾT cần nhớ."
+    "Đơn thức thu gọn $-6x^3y$: hệ số $-6$, phần biến $x^3y$, bậc $4$. Số khác $0$ là đơn thức bậc $0$; số $0$ không có bậc.",
+    "Hai đơn thức đồng dạng: hệ số khác $0$, cùng phần biến. $3xy^2 + (-5)xy^2 = -2xy^2$.",
+    "Bậc của đa thức tìm trong dạng thu gọn.",
+    "$-(A - B + C) = -A + B - C$; $A + X = B \\Rightarrow X = B - A$.",
+    "$A(B + C) = AB + AC$; $(A + B)(C + D) = AC + AD + BC + BD$.",
+    "$(A + B) : C = A : C + B : C$ (khi $A$, $B$ cùng chia hết cho $C$)."
   ],
   "phieu": [
     {
-      "code": "A",
-      "title": "TODO tên phiếu",
+      "code": "1",
+      "so_ca": 1,
+      "title": "Buổi 1 (Tuần 4) — Bài 1: Đơn thức $+$ Bài 2: Đa thức",
       "rows": [
         {
-          "dang": "TODO (NB) — mô tả dạng + nguồn (Bài … / BTVN …)",
+          "dang": "Nhận biết đơn thức, đa thức (phép chia cho biến, căn của biến thì không phải); kể các hạng tử",
           "band": "NB",
-          "lythuyet": 0,
+          "loai": "NB lẻ LT",
+          "lythuyet": 1,
           "vidu": 0,
-          "onclass": 44,
-          "btvn": 32,
-          "source_refs": [],
-          "loai": "TODO §4b",
+          "onclass": 3,
+          "btvn": 2,
+          "source_refs": [
+            "SGK 1.1",
+            "SGK Luyện tập 1 tr.12",
+            "SGK 1.8",
+            "GK1 Bát Tràng 2025 C1 (C1-08)",
+            "GK1 Chúc Sơn 2025 C1 (C1-19)"
+          ],
           "decompose": "none"
         },
         {
-          "dang": "TODO (TH) — mô tả dạng + nguồn (Bài … / BTVN …)",
+          "dang": "Thu gọn đơn thức; chỉ ra hệ số, phần biến",
+          "band": "NB",
+          "loai": "NB tách TH",
+          "lythuyet": 0,
+          "vidu": 1,
+          "onclass": 3,
+          "btvn": 2,
+          "source_refs": [
+            "SGK Ví dụ 2 tr.7",
+            "SGK Luyện tập 2 tr.8",
+            "SGK 1.2",
+            "GK1 Tam Hiệp 2025 C1 (C1-01)"
+          ],
+          "decompose": "none"
+        },
+        {
+          "dang": "Bậc của đơn thức; số mũ của hệ số (như $3^3$) không tính vào bậc",
+          "band": "NB",
+          "loai": "NB tách TH",
+          "lythuyet": 0,
+          "vidu": 1,
+          "onclass": 3,
+          "btvn": 2,
+          "source_refs": [
+            "GK1 Chúc Sơn 2025 C3 (C1-21)",
+            "GK1 Bát Tràng 2025 C4 (C1-11)",
+            "SGK câu hỏi tr.7"
+          ],
+          "decompose": "none"
+        },
+        {
+          "dang": "Đơn thức đồng dạng; cộng, trừ các đơn thức đồng dạng",
+          "band": "NB",
+          "loai": "NB lẻ LT",
+          "lythuyet": 1,
+          "vidu": 1,
+          "onclass": 3,
+          "btvn": 2,
+          "source_refs": [
+            "SGK Ví dụ 3 tr.9",
+            "SGK 1.4",
+            "SGK 1.5",
+            "SGK 1.6",
+            "GK1 Tam Hiệp 2025 C2 (C1-02)",
+            "GK1 Bát Tràng 2025 C2 (C1-09)"
+          ],
+          "decompose": "none"
+        },
+        {
+          "dang": "Điền khuyết: nhóm các hạng tử đồng dạng rồi thu gọn đa thức, tìm bậc",
+          "band": "NB",
+          "loai": "NB tách TH",
+          "lythuyet": 0,
+          "vidu": 1,
+          "onclass": 3,
+          "btvn": 2,
+          "source_refs": [
+            "SGK Ví dụ 2 tr.13",
+            "SGK 1.10",
+            "GK1 Bát Tràng 2025 C6 (C1-13)"
+          ],
+          "decompose": "none",
+          "gian_giao": "dien-khuyet"
+        },
+        {
+          "dang": "Tính giá trị của đơn thức, đa thức thu gọn (số âm đặt trong ngoặc)",
+          "band": "NB",
+          "loai": "NB tách TH",
+          "lythuyet": 1,
+          "vidu": 0,
+          "onclass": 0,
+          "btvn": 2,
+          "source_refs": [
+            "SGK 1.3",
+            "GK1 Vạn Phúc (Hà Đông) 2024 B2 (C1-76)"
+          ],
+          "decompose": "none"
+        },
+        {
+          "dang": "Thu gọn tích hai đơn thức rồi tìm hệ số, bậc và tính giá trị",
           "band": "TH",
+          "loai": "TH ghép bài",
+          "lythuyet": 0,
+          "vidu": 1,
+          "onclass": 2,
+          "btvn": 1,
+          "source_refs": [
+            "GK1 Nguyễn Công Trứ 2024 B1 (C1-68)",
+            "GK1 Hoàng Hoa Thám 2025 B1 (C1-32)",
+            "SGK 1.3"
+          ],
+          "decompose": "th2nb"
+        },
+        {
+          "dang": "Thu gọn đa thức, tìm bậc rồi tính giá trị",
+          "band": "TH",
+          "loai": "TH ghép bài",
+          "lythuyet": 0,
+          "vidu": 1,
+          "onclass": 2,
+          "btvn": 1,
+          "source_refs": [
+            "SGK 1.13",
+            "GK1 Bát Tràng 2025 B1 (C1-14)"
+          ],
+          "decompose": "th2nb"
+        },
+        {
+          "dang": "Thực tế 2 $-$ 3 bước: viết biểu thức biểu thị số tiền mua hàng rồi tính giá trị",
+          "band": "TH",
+          "loai": "TH tách VD",
           "lythuyet": 0,
           "vidu": 0,
-          "onclass": 7,
-          "btvn": 6,
-          "source_refs": [],
-          "loai": "TODO §4b",
+          "onclass": 0,
+          "btvn": 1,
+          "source_refs": [
+            "GK1 Tam Hiệp 2025 B3 (C1-07)",
+            "GK1 Nguyễn Trãi 2025 B1.2 (C1-42)"
+          ],
+          "decompose": "th2nb"
+        },
+        {
+          "dang": "Lập đơn thức biểu thị diện tích hình ghép theo hai cách (biến đổi, đối chiếu)",
+          "band": "VD",
+          "loai": "VD lẻ",
+          "lythuyet": 0,
+          "vidu": 1,
+          "onclass": 1,
+          "btvn": 1,
+          "source_refs": [
+            "SGK 1.7",
+            "SGK 1.22",
+            "SGK Bài toán mở đầu tr.5"
+          ],
+          "decompose": "vd"
+        }
+      ]
+    },
+    {
+      "code": "2",
+      "so_ca": 1,
+      "title": "Buổi 2 (Tuần 5) — Bài 3: Phép cộng và phép trừ đa thức $+$ Luyện tập chung",
+      "rows": [
+        {
+          "dang": "Đa thức đối; bỏ dấu ngoặc có dấu $-$ đằng trước: đổi dấu mọi hạng tử (Đúng / Sai)",
+          "band": "NB",
+          "loai": "NB lẻ LT",
+          "lythuyet": 1,
+          "vidu": 1,
+          "onclass": 3,
+          "btvn": 2,
+          "source_refs": [
+            "SGK Bài 3 tr.15",
+            "SGK Ví dụ tr.16",
+            "SGV tr.42"
+          ],
           "decompose": "none"
         },
         {
-          "dang": "TODO (VD) — mô tả dạng + nguồn (Bài … / BTVN …)",
+          "dang": "Điền khuyết: bỏ ngoặc, nhóm các hạng tử đồng dạng của $A + B$, $A - B$",
+          "band": "NB",
+          "loai": "NB tách TH",
+          "lythuyet": 0,
+          "vidu": 1,
+          "onclass": 3,
+          "btvn": 2,
+          "source_refs": [
+            "SGK Ví dụ tr.16",
+            "GK1 Bát Tràng 2025 B2a (C1-15)"
+          ],
+          "decompose": "none",
+          "gian_giao": "dien-khuyet"
+        },
+        {
+          "dang": "Tính tổng, hiệu hai đa thức ngắn; bậc của kết quả",
+          "band": "NB",
+          "loai": "NB tách TH",
+          "lythuyet": 0,
+          "vidu": 1,
+          "onclass": 3,
+          "btvn": 2,
+          "source_refs": [
+            "SGK Luyện tập 1 tr.16",
+            "GK1 Nguyễn Công Trứ 2024 B2d (C1-69)",
+            "GK1 Chuyên Mỹ 2025 C13a (C1-38)",
+            "GK1 Nguyễn Trãi 2025 B1.1a (C1-41)"
+          ],
+          "decompose": "none"
+        },
+        {
+          "dang": "Quan hệ $A + X = B \\Rightarrow X = B - A$; chọn phép tính đúng để tìm đa thức chưa biết",
+          "band": "NB",
+          "loai": "NB lẻ LT",
+          "lythuyet": 1,
+          "vidu": 1,
+          "onclass": 3,
+          "btvn": 2,
+          "source_refs": [
+            "SGK Bài 3 tr.16",
+            "GK1 Nguyễn Trường Tộ 2025 B1b (C1-67)",
+            "GK1 Vạn Phúc (Hà Đông) 2024 B3b (C1-77)"
+          ],
+          "decompose": "none"
+        },
+        {
+          "dang": "Thực tế: chọn biểu thức $A - B$, $A + B$; giảm $20$ nghìn đồng viết $x - 20$, giảm $10\\%$ viết $0{,}9y$",
+          "band": "NB",
+          "loai": "NB tách TH",
+          "lythuyet": 0,
+          "vidu": 0,
+          "onclass": 3,
+          "btvn": 2,
+          "source_refs": [
+            "GK1 Hoàng Hoa Thám 2025 B4b (C1-35)",
+            "GK1 Chúc Sơn 2025 B3 (C1-25)",
+            "GK1 Vạn Phúc (Thanh Trì) 2024 B3b (C1-75)"
+          ],
+          "decompose": "none"
+        },
+        {
+          "dang": "Giá trị của đa thức tổng, hiệu sau khi thu gọn",
+          "band": "NB",
+          "loai": "NB tách TH",
+          "lythuyet": 1,
+          "vidu": 0,
+          "onclass": 0,
+          "btvn": 2,
+          "source_refs": [
+            "SGK Ví dụ c tr.17",
+            "SGK 1.17b"
+          ],
+          "decompose": "none"
+        },
+        {
+          "dang": "Tính $A + B$, $A - B$, tìm bậc rồi tính giá trị",
+          "band": "TH",
+          "loai": "TH ghép bài",
+          "lythuyet": 0,
+          "vidu": 1,
+          "onclass": 2,
+          "btvn": 1,
+          "source_refs": [
+            "SGK 1.14",
+            "GK1 Nguyễn Trãi 2025 B1.1 (C1-41)",
+            "GK1 Đỗ Ngọc Du 2025 B1a, b (C1-29)",
+            "GK1 Tam Khương 2024 B1 (C1-84)"
+          ],
+          "decompose": "th2nb"
+        },
+        {
+          "dang": "Tìm đa thức chưa biết: $M - A = B$, $C + B = A$, $A - C = B$",
+          "band": "TH",
+          "loai": "TH ghép bài",
+          "lythuyet": 0,
+          "vidu": 1,
+          "onclass": 2,
+          "btvn": 1,
+          "source_refs": [
+            "SGK 1.16",
+            "SGK 1.21",
+            "GK1 Nguyễn Trường Tộ 2025 B1 (C1-67)",
+            "GK1 Vạn Phúc (Hà Đông) 2024 B3 (C1-77)"
+          ],
+          "decompose": "th2nb"
+        },
+        {
+          "dang": "Thực tế: đa thức diện tích phần còn lại; tổng số tiền sau khi giảm giá",
+          "band": "TH",
+          "loai": "TH tách VD",
+          "lythuyet": 0,
+          "vidu": 0,
+          "onclass": 0,
+          "btvn": 1,
+          "source_refs": [
+            "GK1 Hoàng Hoa Thám 2025 B4 (C1-35)",
+            "GK1 Chúc Sơn 2025 B3 (C1-25)"
+          ],
+          "decompose": "th2nb"
+        },
+        {
+          "dang": "Chứng tỏ giá trị của biểu thức (tổng, hiệu các đa thức) không phụ thuộc vào biến",
           "band": "VD",
+          "loai": "VD lẻ",
+          "lythuyet": 0,
+          "vidu": 1,
+          "onclass": 1,
+          "btvn": 1,
+          "source_refs": [
+            "GK1 Đỗ Ngọc Du 2025 B1c (C1-29)",
+            "SGK 1.15"
+          ],
+          "decompose": "vd"
+        }
+      ]
+    },
+    {
+      "code": "3",
+      "so_ca": 1,
+      "title": "Buổi 3 (Tuần 6) — Bài 4: Phép nhân đa thức",
+      "rows": [
+        {
+          "dang": "Quy tắc nhân đơn thức với đa thức; dấu khi nhân đơn thức âm (trắc nghiệm, Đúng / Sai)",
+          "band": "NB",
+          "loai": "NB lẻ LT",
+          "lythuyet": 1,
+          "vidu": 0,
+          "onclass": 3,
+          "btvn": 2,
+          "source_refs": [
+            "SGK Bài 4 tr.20",
+            "GK1 Đỗ Ngọc Du 2025 C2 (C1-26)",
+            "GK1 Tam Khương 2024 C3 (C1-82)",
+            "SGV tr.46"
+          ],
+          "decompose": "none"
+        },
+        {
+          "dang": "Điền khuyết: nhân từng hạng tử của đa thức này với từng hạng tử của đa thức kia",
+          "band": "NB",
+          "loai": "NB tách TH",
+          "lythuyet": 0,
+          "vidu": 1,
+          "onclass": 3,
+          "btvn": 2,
+          "source_refs": [
+            "SGK Ví dụ 3 tr.21",
+            "SGK 1.25",
+            "GK1 Chuyên Mỹ 2025 C13b (C1-38)"
+          ],
+          "decompose": "none",
+          "gian_giao": "dien-khuyet"
+        },
+        {
+          "dang": "Khai triển từng tích trong một biểu thức rồi nhóm các hạng tử đồng dạng",
+          "band": "NB",
+          "loai": "NB tách TH",
+          "lythuyet": 0,
+          "vidu": 1,
+          "onclass": 3,
+          "btvn": 2,
+          "source_refs": [
+            "SGK Ví dụ 4 tr.21",
+            "GK1 Nguyễn Trãi 2025 B2a (C1-43)",
+            "GK1 Hoàng Hoa Thám 2025 B2b (C1-33)"
+          ],
+          "decompose": "none"
+        },
+        {
+          "dang": "Tìm $x$ từ $ax + b = c$ (lớp 7: quy tắc chuyển vế)",
+          "band": "NB",
+          "loai": "NB lẻ LT",
+          "lythuyet": 1,
+          "vidu": 1,
+          "onclass": 3,
+          "btvn": 2,
+          "source_refs": [
+            "SGK Toán 7 tập hai, tìm $x$"
+          ],
+          "decompose": "none"
+        },
+        {
+          "dang": "Tìm $x$: khai triển một tích ở vế trái, thu gọn để về dạng $ax + b = c$",
+          "band": "NB",
+          "loai": "NB tách TH",
+          "lythuyet": 0,
+          "vidu": 1,
+          "onclass": 3,
+          "btvn": 2,
+          "source_refs": [
+            "GK1 Tam Hiệp 2025 B2a (C1-06)",
+            "GK1 Nguyễn Huy Tưởng 2025 C2a (C1-53)",
+            "GK1 Vạn Phúc (Hà Đông) 2024 B5 (C1-79)"
+          ],
+          "decompose": "none"
+        },
+        {
+          "dang": "Thực tế: chọn tích biểu thị diện tích, quãng đường (trắc nghiệm)",
+          "band": "NB",
+          "loai": "NB tách TH",
+          "lythuyet": 1,
+          "vidu": 0,
+          "onclass": 0,
+          "btvn": 2,
+          "source_refs": [
+            "GK1 Tam Khương 2024 C5 (C1-83)",
+            "GK1 Phú Diễn A 2023 B3a (C1-94)",
+            "GK1 Chu Văn An 2025 B4.1 (C1-64)"
+          ],
+          "decompose": "none"
+        },
+        {
+          "dang": "Nhân đa thức; rút gọn biểu thức có nhiều tích",
+          "band": "TH",
+          "loai": "TH ghép bài",
+          "lythuyet": 0,
+          "vidu": 1,
+          "onclass": 2,
+          "btvn": 1,
+          "source_refs": [
+            "SGK 1.24",
+            "GK1 Đa Trí Tuệ 2025 B1a (C1-58)",
+            "GK1 Nguyễn Trãi 2025 B2 (C1-43)",
+            "GK1 Nguyễn Huy Tưởng 2025 C1.1b (C1-52)"
+          ],
+          "decompose": "th2nb"
+        },
+        {
+          "dang": "Tìm $x$: khai triển, thu gọn rồi đưa về $ax + b = c$",
+          "band": "TH",
+          "loai": "TH tách VD",
+          "lythuyet": 0,
+          "vidu": 1,
+          "onclass": 2,
+          "btvn": 1,
+          "source_refs": [
+            "GK1 Bát Tràng 2025 B3 (C1-16)",
+            "GK1 Nguyễn Khê 2025 B3 (C1-49)",
+            "GK1 Nguyễn Huy Tưởng 2025 C2 (C1-53)"
+          ],
+          "decompose": "th2nb"
+        },
+        {
+          "dang": "Thực tế 2 $-$ 3 bước: đa thức diện tích sau khi tăng, giảm kích thước; diện tích phần còn lại",
+          "band": "TH",
+          "loai": "TH tách VD",
+          "lythuyet": 0,
+          "vidu": 0,
+          "onclass": 0,
+          "btvn": 1,
+          "source_refs": [
+            "GK1 Đỗ Ngọc Du 2025 B3 (C1-31)",
+            "GK1 Bát Tràng 2025 B4 (C1-17)",
+            "GK1 Phú Diễn A 2023 B3 (C1-94)"
+          ],
+          "decompose": "th2nb"
+        },
+        {
+          "dang": "Chứng minh giá trị của biểu thức có các tích đa thức không phụ thuộc vào biến",
+          "band": "VD",
+          "loai": "VD lẻ",
+          "lythuyet": 0,
+          "vidu": 1,
+          "onclass": 1,
+          "btvn": 1,
+          "source_refs": [
+            "GK1 Bát Tràng 2025 B2b (C1-15)",
+            "GK1 Nguyễn Huy Tưởng 2025 C1.2 (C1-52)",
+            "SGK 1.28"
+          ],
+          "decompose": "vd"
+        }
+      ]
+    },
+    {
+      "code": "4",
+      "so_ca": 1,
+      "title": "Buổi 4 (Tuần 7) — Bài 5: Phép chia đa thức cho đơn thức",
+      "rows": [
+        {
+          "dang": "Đơn thức, đa thức chia hết cho đơn thức: mỗi biến của đơn thức chia có mặt với số mũ không lớn hơn (trắc nghiệm)",
+          "band": "NB",
+          "loai": "NB lẻ LT",
+          "lythuyet": 1,
+          "vidu": 1,
+          "onclass": 3,
+          "btvn": 2,
+          "source_refs": [
+            "SGK Ví dụ 1 tr.23",
+            "GK1 Bát Tràng 2025 C5 (C1-12)",
+            "GK1 Chuyên Mỹ 2025 C5 (C1-37)"
+          ],
+          "decompose": "none"
+        },
+        {
+          "dang": "Chia đơn thức cho đơn thức (trắc nghiệm)",
+          "band": "NB",
+          "loai": "NB tách TH",
+          "lythuyet": 0,
+          "vidu": 1,
+          "onclass": 3,
+          "btvn": 2,
+          "source_refs": [
+            "GK1 Tam Hiệp 2025 C4 (C1-04)",
+            "GK1 Bát Tràng 2025 C3 (C1-10)"
+          ],
+          "decompose": "none"
+        },
+        {
+          "dang": "Điền khuyết: chia từng hạng tử của đa thức cho đơn thức rồi cộng các thương",
+          "band": "NB",
+          "loai": "NB tách TH",
+          "lythuyet": 0,
+          "vidu": 1,
+          "onclass": 3,
+          "btvn": 2,
+          "source_refs": [
+            "SGK Ví dụ 2 tr.24",
+            "GK1 Chúc Sơn 2025 C6 (C1-23)",
+            "GK1 Nguyễn Trường Tộ 2025 C2 (C1-65)"
+          ],
+          "decompose": "none",
+          "gian_giao": "dien-khuyet"
+        },
+        {
+          "dang": "Quan hệ nhân $-$ chia: $A : B = Q$ thì $A = B\\cdot Q$; hạng tử bằng đơn thức chia thì thương là $1$ (Đúng / Sai)",
+          "band": "NB",
+          "loai": "NB lẻ LT",
+          "lythuyet": 1,
+          "vidu": 1,
+          "onclass": 3,
+          "btvn": 2,
+          "source_refs": [
+            "SGK Bài 5 tr.22",
+            "SGV tr.50"
+          ],
+          "decompose": "none"
+        },
+        {
+          "dang": "Rút gọn biểu thức phối hợp: thực hiện phép chia trước rồi thay số",
+          "band": "NB",
+          "loai": "NB tách TH",
+          "lythuyet": 0,
+          "vidu": 1,
+          "onclass": 3,
+          "btvn": 2,
+          "source_refs": [
+            "GK1 Hoàng Hoa Thám 2025 B2c (C1-33)",
+            "GK1 Ba Đình 2024 B2c (C1-89)",
+            "GK1 Nguyễn Khê 2025 C3 (C1-45)"
+          ],
+          "decompose": "none"
+        },
+        {
+          "dang": "Tìm số mũ để đơn thức chia hết cho đơn thức (trắc nghiệm)",
+          "band": "NB",
+          "loai": "NB tách TH",
+          "lythuyet": 1,
+          "vidu": 0,
+          "onclass": 0,
+          "btvn": 2,
+          "source_refs": [
+            "GK1 Đỗ Ngọc Du 2025 C4 (C1-28)"
+          ],
+          "decompose": "none"
+        },
+        {
+          "dang": "Chia đa thức cho đơn thức; rút gọn biểu thức phối hợp rồi tính giá trị",
+          "band": "TH",
+          "loai": "TH ghép bài",
+          "lythuyet": 0,
+          "vidu": 1,
+          "onclass": 2,
+          "btvn": 1,
+          "source_refs": [
+            "SGK 1.31",
+            "GK1 Vạn Phúc (Hà Đông) 2024 B4b (C1-78)",
+            "GK1 Văn Yên 2025 BI.3 (C1-60)",
+            "GK1 Tam Hiệp 2025 B1 (C1-05)"
+          ],
+          "decompose": "th2nb"
+        },
+        {
+          "dang": "Tìm $x$ khi biểu thức có phép chia; tìm đa thức $N$ biết $N : B = M$",
+          "band": "TH",
+          "loai": "TH tách VD",
+          "lythuyet": 0,
+          "vidu": 1,
+          "onclass": 2,
+          "btvn": 1,
+          "source_refs": [
+            "GK1 Nguyễn Công Trứ 2024 B3a (C1-70)",
+            "GK1 Chu Văn An 2025 B1.2 (C1-62)"
+          ],
+          "decompose": "th2nb"
+        },
+        {
+          "dang": "Tính giá trị biểu thức sau khi rút gọn",
+          "band": "TH",
+          "loai": "TH ghép bài",
+          "lythuyet": 0,
+          "vidu": 0,
+          "onclass": 0,
+          "btvn": 1,
+          "source_refs": [
+            "GK1 Tam Hiệp 2025 B1c (C1-05)",
+            "GK1 Phú Diễn A 2023 B2a (C1-93c)"
+          ],
+          "decompose": "th2nb"
+        },
+        {
+          "dang": "Tìm đa thức chưa biết qua phép nhân và phép chia",
+          "band": "VD",
+          "loai": "VD lẻ",
+          "lythuyet": 0,
+          "vidu": 1,
+          "onclass": 1,
+          "btvn": 1,
+          "source_refs": [
+            "GK1 Vạn Phúc (Thanh Trì) 2024 B2c (C1-74)",
+            "SGK Vận dụng 2 tr.24"
+          ],
+          "decompose": "vd"
+        }
+      ]
+    },
+    {
+      "code": "5",
+      "so_ca": 1,
+      "kiem_tra_phut": 45,
+      "title": "Buổi 5 (Tuần 8) — Luyện tập chương I $+$ kiểm tra chương",
+      "rows": [
+        {
+          "dang": "Ôn: nhận biết đơn thức, đồng dạng, bậc của đơn thức và đa thức (trắc nghiệm)",
+          "band": "NB",
+          "loai": "NB tách TH",
+          "lythuyet": 0,
+          "vidu": 0,
+          "onclass": 3,
+          "btvn": 3,
+          "source_refs": [
+            "SGK 1.39",
+            "SGK 1.40",
+            "SGK 1.43",
+            "GK1 Bát Tràng 2025 C1 (C1-08)",
+            "GK1 Đỗ Ngọc Du 2025 C3 (C1-27)"
+          ],
+          "decompose": "none"
+        },
+        {
+          "dang": "Ôn: nhân, chia đơn thức và đa thức (trắc nghiệm)",
+          "band": "NB",
+          "loai": "NB tách TH",
+          "lythuyet": 0,
+          "vidu": 0,
+          "onclass": 3,
+          "btvn": 3,
+          "source_refs": [
+            "SGK 1.41",
+            "SGK 1.42",
+            "GK1 Nguyễn Trường Tộ 2025 C2 (C1-65)"
+          ],
+          "decompose": "none"
+        },
+        {
+          "dang": "Lập biểu thức: đổi lời thành phép tính (mỗi chùm $1{,}2$ kg, giảm $10\\%$ còn trả $90\\%$)",
+          "band": "NB",
+          "loai": "NB tách TH",
+          "lythuyet": 0,
+          "vidu": 0,
+          "onclass": 2,
+          "btvn": 3,
+          "source_refs": [
+            "GK1 Tam Hiệp 2025 B3a (C1-07)",
+            "GK1 Vạn Phúc (Thanh Trì) 2024 B3 (C1-75)",
+            "GK1 Chúc Sơn 2025 C4 (C1-22)"
+          ],
+          "decompose": "none",
+          "gian_giao": "dien-khuyet"
+        },
+        {
+          "dang": "Hoạt động trải nghiệm lãi kép: số tiền nhận được sau $1$ kì, $2$ kì gửi tiết kiệm (tính số)",
+          "band": "NB",
+          "loai": "NB lẻ LT",
+          "lythuyet": 0,
+          "vidu": 0,
+          "onclass": 0,
+          "btvn": 3,
+          "source_refs": [
+            "SGK Hoạt động thực hành trải nghiệm tr.111"
+          ],
+          "decompose": "none"
+        },
+        {
+          "dang": "Thực tế 2 $-$ 3 bước: lập đa thức rồi tính giá trị (tiền hàng có giảm giá, thể tích bể, quãng đường)",
+          "band": "TH",
+          "loai": "TH tách VD",
+          "lythuyet": 0,
+          "vidu": 1,
+          "onclass": 2,
+          "btvn": 1,
+          "source_refs": [
+            "GK1 Vạn Phúc (Thanh Trì) 2024 B3 (C1-75)",
+            "GK1 Nguyễn Du 2025 B4 (C1-39)",
+            "SGK 1.19",
+            "GK1 Phú Diễn A 2023 B3 (C1-94)"
+          ],
+          "decompose": "th2nb"
+        },
+        {
+          "dang": "Ôn: rút gọn biểu thức bốn phép tính; tìm $x$",
+          "band": "TH",
+          "loai": "TH ghép bài",
           "lythuyet": 0,
           "vidu": 0,
           "onclass": 1,
+          "btvn": 2,
+          "source_refs": [
+            "GK1 Phan Đình Giót 2023 B1 (C1-97)",
+            "GK1 Nguyễn Khê 2025 B2 (C1-48)",
+            "GK1 Nguyễn Trãi 2025 B3b (C1-44)",
+            "GK1 Tam Khương 2024 B2 (C1-85)"
+          ],
+          "decompose": "th2nb"
+        },
+        {
+          "dang": "Thực tế nhiều bước có biến đổi: sân có lối đi xung quanh; hộp không nắp gấp từ tấm bìa",
+          "band": "VD",
+          "loai": "VD lẻ",
+          "lythuyet": 0,
+          "vidu": 1,
+          "onclass": 0,
           "btvn": 1,
-          "source_refs": [],
-          "loai": "TODO §4b",
+          "source_refs": [
+            "GK1 Văn Yên 2025 BIII (C1-61)",
+            "SGK 1.46"
+          ],
           "decompose": "vd"
         }
       ]

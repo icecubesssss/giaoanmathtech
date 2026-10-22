@@ -132,6 +132,9 @@ class ThuyetMinhSpec(BaseModel):
     # chương sau. Khai slug chương có bài kiểm tra gộp thì `check_kiem_tra_chuong` không đòi
     # `kiem_tra_phut` ở phiếu cuối chương này (khối thời lượng vẫn phải ghi rõ kiểm tra chương).
     kiem_tra_gop: str = Field("", description="Slug chương có bài kiểm tra 45′ gộp với chương này")
+    # Thầy cho BỎ kiểm tra chương này (15/10/2026: 8B chỉ KT ch.III, IV, VI, VII, IX — ch.I, II, V,
+    # VIII, X không còn đất trong tiến độ mới). Trước đó agent phải lách bằng `kiem_tra_gop` giả.
+    khong_kiem_tra: bool = Field(False, description="Thầy chốt chương này KHÔNG có kiểm tra chương 45′")
     phieu: list[SpecPhieu] = Field(default_factory=list)
 
 
@@ -195,7 +198,7 @@ def phieu_totals(phieu: SpecPhieu, rates: dict) -> dict:
 
 def rates_for_spec(spec: ThuyetMinhSpec) -> dict:
     """Phút/câu áp cho spec này (theo lớp/môn của spec)."""
-    return rates_for(load_tier_spec(), spec.grade, spec.subject)
+    return rates_for(load_tier_spec(), spec.grade, spec.subject, spec.tier)
 
 
 def he_so_con_lai(session_minutes: float | None, so_ca: int = 1, kiem_tra_phut: int = 0) -> float:

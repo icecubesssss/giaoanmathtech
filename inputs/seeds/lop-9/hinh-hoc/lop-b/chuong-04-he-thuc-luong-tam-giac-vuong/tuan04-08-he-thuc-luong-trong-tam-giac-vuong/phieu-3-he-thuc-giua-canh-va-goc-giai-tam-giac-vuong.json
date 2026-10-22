@@ -1,0 +1,530 @@
+{
+ "slug": "phieu-3-he-thuc-giua-canh-va-goc-giai-tam-giac-vuong",
+ "title": "Một số hệ thức giữa cạnh, góc trong tam giác vuông. Giải tam giác vuông",
+ "eyebrow": "PHIẾU 3 • HÌNH HỌC 9 · CHƯƠNG IV — BÀI 12",
+ "grade_label": "Lớp 9 • Hình học",
+ "class_tier": "B",
+ "chuong": "chuong-04-he-thuc-luong-tam-giac-vuong",
+ "so_ca": 1,
+ "stages": [
+  {
+   "kind": "review",
+   "number": 1,
+   "title": "Khám phá",
+   "blocks": [
+    {
+     "type": "para",
+     "text": "\\textbf{Đỉnh cầu trượt cao bao nhiêu?}"
+    },
+    {
+     "type": "noted",
+     "variant": "note",
+     "text": "Mặt cầu trượt $AB$ dài $3{,}5$ m, nghiêng với mặt đất một góc $35^\\circ$; $BC$ là chiều cao của đỉnh cầu trượt so với mặt đất (Hình 1). Bạn Nam không có thước đo đủ dài để đo $BC$.[[br]]\\textbf{a)} Tam giác nào là tam giác vuông? Cạnh nào là cạnh huyền?[[br]]\\textbf{b)} Viết $\\sin A$ theo $BC$ và $AB$. Từ đó tính $BC$ (bấm máy, làm tròn đến hàng phần trăm).[[br]]\\textbf{c)} Muốn tính $AC$ thì dùng tỉ số nào?",
+     "figure": {
+      "tikz": "\\begin{tikzpicture}[line width=0.8pt, font=\\small]\n  \\draw[ink] (0.0000,0.0000) -- (3.0000,0.0000) -- (0.0000,2.1006) -- cycle;\n  \\draw[ink] (0.1600,0.0000) -- (0.1600,0.1600) -- (0.0000,0.1600);\n  \\draw[brand] (2.6887,0.2180) arc (505.0000:540.0000:0.3800);\n  \\fill[ink] (0.0000,0.0000) circle (1.3pt);\n  \\fill[ink] (3.0000,0.0000) circle (1.3pt);\n  \\fill[ink] (0.0000,2.1006) circle (1.3pt);\n  \\node[inner sep=0pt] at (-0.1839,-0.1543) {$C$};\n  \\node[inner sep=0pt] at (3.2255,-0.0821) {$A$};\n  \\node[inner sep=0pt] at (-0.1200,2.3085) {$B$};\n  \\node[inner sep=0pt] at (1.9966,0.3185) {$35^\\circ$};\n  \\node[inner sep=0pt] at (1.9895,1.2431) {$3{,}5$ m};\n\\end{tikzpicture}",
+      "caption": "Hình 1",
+      "pos": "right"
+     }
+    }
+   ],
+   "teacher_note": "HS ra $BC = AB \\cdot \\sin A \\approx 2{,}01$ m và $AC = AB \\cdot \\cos A$. Chốt: cạnh góc vuông $=$ cạnh huyền nhân sin góc đối $=$ cạnh huyền nhân côsin góc kề — đó là Định lí 1 ở chặng 2."
+  },
+  {
+   "kind": "concept",
+   "number": 2,
+   "title": "Kiến thức cần nhớ",
+   "blocks": [
+    {
+     "type": "para",
+     "text": "1. Hệ thức giữa cạnh huyền và cạnh góc vuông",
+     "variant": "heading"
+    },
+    {
+     "type": "para",
+     "text": "\\textbf{Định lí 1.} Trong tam giác vuông, mỗi cạnh góc vuông bằng cạnh huyền nhân với sin góc đối hoặc nhân với côsin góc kề.[[br]]Trong $\\triangle ABC$ vuông tại $A$ ($BC = a$, $AC = b$, $AB = c$):"
+    },
+    {
+     "type": "deflist",
+     "items": [
+      {
+       "term": "$b = a \\cdot \\sin B = a \\cdot \\cos C$;",
+       "desc": "$c = a \\cdot \\sin C = a \\cdot \\cos B$."
+      }
+     ]
+    },
+    {
+     "type": "figure",
+     "tikz": "\\begin{tikzpicture}[line width=0.8pt, font=\\small]\n  \\draw[ink] (0.0000,0.0000) -- (1.9500,0.0000) -- (0.0000,2.6000) -- cycle;\n  \\draw[ink] (0.1600,0.0000) -- (0.1600,0.1600) -- (0.0000,0.1600);\n  \\fill[ink] (0.0000,0.0000) circle (1.3pt);\n  \\fill[ink] (1.9500,0.0000) circle (1.3pt);\n  \\fill[ink] (0.0000,2.6000) circle (1.3pt);\n  \\node[inner sep=0pt] at (-0.1839,-0.1543) {$A$};\n  \\node[inner sep=0pt] at (2.1578,-0.1200) {$B$};\n  \\node[inner sep=0pt] at (-0.0821,2.8255) {$C$};\n  \\node[inner sep=0pt] at (0.9750,0.2400) {$c$};\n  \\node[inner sep=0pt] at (0.2400,1.3000) {$b$};\n  \\node[inner sep=0pt] at (0.7911,1.1457) {$a$};\n\\end{tikzpicture}",
+     "caption": "Cạnh huyền $a$, hai cạnh góc vuông $b$, $c$",
+     "width": "0.32\\linewidth"
+    },
+    {
+     "type": "para",
+     "text": "2. Hệ thức giữa hai cạnh góc vuông",
+     "variant": "heading"
+    },
+    {
+     "type": "para",
+     "text": "\\textbf{Định lí 2.} Trong tam giác vuông, mỗi cạnh góc vuông bằng cạnh góc vuông kia nhân với tang góc đối hoặc nhân với côtang góc kề."
+    },
+    {
+     "type": "deflist",
+     "items": [
+      {
+       "term": "$b = c \\cdot \\tan B = c \\cdot \\cot C$;",
+       "desc": "$c = b \\cdot \\tan C = b \\cdot \\cot B$."
+      }
+     ]
+    },
+    {
+     "type": "para",
+     "text": "3. Giải tam giác vuông",
+     "variant": "heading"
+    },
+    {
+     "type": "para",
+     "text": "Giải tam giác vuông là tìm tất cả các cạnh và góc còn lại khi biết hai cạnh, hoặc một cạnh và một góc nhọn."
+    },
+    {
+     "type": "deflist",
+     "items": [
+      {
+       "term": "Biết hai cạnh:",
+       "desc": "định lí Pythagore tính cạnh thứ ba $\\to$ một tỉ số lượng giác tính một góc nhọn $\\to$ góc kia bằng $90^\\circ$ trừ góc vừa tìm."
+      },
+      {
+       "term": "Biết một cạnh và một góc nhọn:",
+       "desc": "góc nhọn kia bằng $90^\\circ$ trừ góc đã biết $\\to$ Định lí 1 hoặc Định lí 2 tính hai cạnh còn lại."
+      }
+     ]
+    },
+    {
+     "type": "para",
+     "text": "Tính cạnh thì dùng số đề cho, tránh dùng góc đã làm tròn, để kết quả cuối không lệch."
+    },
+    {
+     "type": "figure",
+     "tikz": "\\begin{tikzpicture}[line width=0.8pt, font=\\small]\n  \\draw[ink] (0.0000,0.0000) -- (2.6000,0.0000) -- (0.0000,2.3411) -- cycle;\n  \\draw[ink] (0.1600,0.0000) -- (0.1600,0.1600) -- (0.0000,0.1600);\n  \\draw[brand] (2.3176,0.2543) arc (498.0000:540.0000:0.3800);\n  \\fill[ink] (0.0000,0.0000) circle (1.3pt);\n  \\fill[ink] (2.6000,0.0000) circle (1.3pt);\n  \\fill[ink] (0.0000,2.3411) circle (1.3pt);\n  \\node[inner sep=0pt] at (-0.1839,-0.1543) {$A$};\n  \\node[inner sep=0pt] at (2.8255,-0.0821) {$B$};\n  \\node[inner sep=0pt] at (-0.0821,2.5666) {$C$};\n  \\node[inner sep=0pt] at (1.6700,0.3908) {$42^\\circ$};\n  \\node[inner sep=0pt] at (1.3000,-0.2400) {$3$};\n\\end{tikzpicture}",
+     "caption": "Biết $AB = 3$ và $\\widehat{B} = 42^\\circ$: tìm $\\widehat{C}$, $AC$, $BC$",
+     "width": "0.32\\linewidth"
+    },
+    {
+     "type": "noted",
+     "variant": "target",
+     "text": "\\textbf{Đề thi hỏi gì ở phần này.} Ý a) bài hình đề giữa kì I: \\textbf{giải tam giác vuông} (biết một cạnh và một góc, hoặc hai cạnh), $0{,}75$ – $1{,}25$ điểm. Ý b) hay kẻ thêm đường cao rồi chứng minh một đẳng thức cạnh – góc."
+    },
+    {
+     "type": "noted",
+     "variant": "trap",
+     "text": "\\textbf{Chỗ mất điểm.} Nhân cạnh huyền với sin của góc \\emph{kề}: $AB = BC \\cdot \\sin B$ là sai, đúng là $AB = BC \\cdot \\cos B$. Làm tròn góc rồi dùng góc đó tính cạnh khiến đáp số lệch so với đáp án."
+    }
+   ],
+   "teacher_note": "Chặng này 8 phút. Hai định lí suy ra ngay từ định nghĩa tỉ số lượng giác (chỉ cần nhân chéo) — cho HS tự suy từ $\\sin B = \\dfrac{b}{a}$, đừng bắt học thuộc."
+  },
+  {
+   "kind": "practice1",
+   "number": 3,
+   "title": "Luyện tập 1",
+   "blocks": [
+    {
+     "type": "noted",
+     "variant": "example",
+     "text": "\\textbf{Ví dụ 1.} Cho tam giác $PQR$ vuông tại $P$ (Hình 2). Viết cạnh $PQ$ theo cạnh huyền $QR$ và theo cạnh góc vuông $PR$.[[br]]{\\sffamily\\bfseries\\color{brand}Lời giải}[[br]]Xét $\\triangle PQR$ vuông tại $P$, ta có:[[br]]$PQ = QR \\cdot [[fill:\\sin R]] = QR \\cdot [[fill:\\cos Q]]$.[[br]]$PQ = PR \\cdot [[fill:\\tan R]] = PR \\cdot [[fill:\\cot Q]]$.[[br]]Vậy cạnh $PQ$ bằng cạnh huyền nhân [[fill:sin]] góc đối, hoặc bằng cạnh góc vuông kia nhân [[fill:tang]] góc đối.",
+     "figure": {
+      "tikz": "\\begin{tikzpicture}[line width=0.8pt, font=\\small]\n  \\draw[ink] (0.0000,0.0000) -- (1.6500,0.0000) -- (0.0000,2.2000) -- cycle;\n  \\draw[ink] (0.1600,0.0000) -- (0.1600,0.1600) -- (0.0000,0.1600);\n  \\fill[ink] (0.0000,0.0000) circle (1.3pt);\n  \\fill[ink] (1.6500,0.0000) circle (1.3pt);\n  \\fill[ink] (0.0000,2.2000) circle (1.3pt);\n  \\node[inner sep=0pt] at (-0.1839,-0.1543) {$P$};\n  \\node[inner sep=0pt] at (1.8578,-0.1200) {$Q$};\n  \\node[inner sep=0pt] at (-0.0821,2.4255) {$R$};\n\\end{tikzpicture}",
+      "caption": "Hình 2",
+      "pos": "right"
+     }
+    },
+    {
+     "type": "problem",
+     "label": "Bài 1.",
+     "tier": "onclass",
+     "level": 1,
+     "statement": "Trên Hình 3, tam giác $DEF$ vuông tại $D$. Điền tỉ số lượng giác thích hợp vào chỗ chấm.[[br]]a) [NB] $DE = EF \\cdot$ [[blank:1.6cm]] $= EF \\cdot$ [[blank:1.6cm]].[[br]]b) [NB] $DF = DE \\cdot$ [[blank:1.6cm]] $= DE \\cdot$ [[blank:1.6cm]].",
+     "dang_id": "NB1",
+     "answer": "a) $DE = EF \\cdot \\sin F = EF \\cdot \\cos E$.[[br]]b) $DF = DE \\cdot \\tan E = DE \\cdot \\cot F$.",
+     "figure": {
+      "tikz": "\\begin{tikzpicture}[line width=0.8pt, font=\\small]\n  \\draw[ink] (0.0000,0.0000) -- (2.0785,1.2000) -- (-0.9000,1.5588) -- cycle;\n  \\draw[ink] (0.1386,0.0800) -- (0.0586,0.2186) -- (-0.0800,0.1386);\n  \\fill[ink] (0.0000,0.0000) circle (1.3pt);\n  \\fill[ink] (2.0785,1.2000) circle (1.3pt);\n  \\fill[ink] (-0.9000,1.5588) circle (1.3pt);\n  \\node[inner sep=0pt] at (-0.0821,-0.2255) {$D$};\n  \\node[inner sep=0pt] at (2.3148,1.2417) {$E$};\n  \\node[inner sep=0pt] at (-1.1078,1.6788) {$F$};\n\\end{tikzpicture}",
+      "caption": "Hình 3",
+      "pos": "right"
+     },
+     "figure_given": true
+    },
+    {
+     "type": "noted",
+     "variant": "example",
+     "text": "\\textbf{Ví dụ 2.} Một con diều bay với sợi dây căng thẳng dài $50$ m, dây tạo với phương nằm ngang một góc $52^\\circ$ (Hình 4). Tính độ cao $BC$ của diều so với tay người cầm dây (làm tròn đến hàng phần mười).[[br]]{\\sffamily\\bfseries\\color{brand}Lời giải}[[br]]Xét $\\triangle ABC$ vuông tại $C$, ta có:[[br]]$BC = AB \\cdot [[fill:\\sin A]] = 50 \\cdot \\sin 52^\\circ \\approx [[fill:39{,}4]]$ (m).[[br]]Vậy diều cao khoảng $[[fill:39{,}4]]$ m so với tay người cầm dây.",
+     "figure": {
+      "tikz": "\\begin{tikzpicture}[line width=0.8pt, font=\\small]\n  \\draw[ink] (0.0000,0.0000) -- (2.0313,0.0000) -- (0.0000,2.6000) -- cycle;\n  \\draw[ink] (0.1600,0.0000) -- (0.1600,0.1600) -- (0.0000,0.1600);\n  \\draw[brand] (1.7974,0.2994) arc (488.0000:540.0000:0.3800);\n  \\fill[ink] (0.0000,0.0000) circle (1.3pt);\n  \\fill[ink] (2.0313,0.0000) circle (1.3pt);\n  \\fill[ink] (0.0000,2.6000) circle (1.3pt);\n  \\node[inner sep=0pt] at (-0.1839,-0.1543) {$C$};\n  \\node[inner sep=0pt] at (2.2392,-0.1200) {$A$};\n  \\node[inner sep=0pt] at (-0.0821,2.8255) {$B$};\n  \\node[inner sep=0pt] at (1.1924,0.4732) {$52^\\circ$};\n  \\node[inner sep=0pt] at (1.5344,1.3821) {$50$ m};\n\\end{tikzpicture}",
+      "caption": "Hình 4",
+      "pos": "right"
+     }
+    },
+    {
+     "type": "problem",
+     "label": "Bài 2.",
+     "tier": "onclass",
+     "level": 1,
+     "statement": "Trên Hình 5, tam giác $ABC$ vuông tại $A$ có $BC = 12$ cm, $\\widehat{C} = 40^\\circ$. Điền vào chỗ chấm (làm tròn đến hàng phần trăm).[[br]]a) [NB] $AB = BC \\cdot \\sin C = 12 \\cdot \\sin 40^\\circ \\approx$ [[blank:1.6cm]] cm.[[br]]b) [NB] $AC = BC \\cdot \\cos C = 12 \\cdot \\cos 40^\\circ \\approx$ [[blank:1.6cm]] cm.",
+     "dang_id": "NB2",
+     "answer": "a) $AB \\approx 7{,}71$ cm.[[br]]b) $AC \\approx 9{,}19$ cm.",
+     "figure": {
+      "tikz": "\\begin{tikzpicture}[line width=0.8pt, font=\\small]\n  \\draw[ink] (0.0000,0.0000) -- (2.8000,0.0000) -- (0.0000,2.3495) -- cycle;\n  \\draw[ink] (0.1600,0.0000) -- (0.1600,0.1600) -- (0.0000,0.1600);\n  \\draw[brand] (2.5089,0.2443) arc (500.0000:540.0000:0.3800);\n  \\fill[ink] (0.0000,0.0000) circle (1.3pt);\n  \\fill[ink] (2.8000,0.0000) circle (1.3pt);\n  \\fill[ink] (0.0000,2.3495) circle (1.3pt);\n  \\node[inner sep=0pt] at (-0.1839,-0.1543) {$A$};\n  \\node[inner sep=0pt] at (3.0255,-0.0821) {$C$};\n  \\node[inner sep=0pt] at (-0.0821,2.5750) {$B$};\n  \\node[inner sep=0pt] at (1.8058,0.3457) {$40^\\circ$};\n  \\node[inner sep=0pt] at (1.8895,1.3676) {$12$ cm};\n\\end{tikzpicture}",
+      "caption": "Hình 5",
+      "pos": "right"
+     },
+     "figure_given": true
+    },
+    {
+     "type": "noted",
+     "variant": "example",
+     "text": "\\textbf{Ví dụ 3.} Cho tam giác $DEF$ vuông tại $D$ có $DE = 8$ cm, $\\widehat{E} = 38^\\circ$ (Hình 6). Tính góc $F$ và cạnh $DF$ (làm tròn đến hàng phần trăm).[[br]]{\\sffamily\\bfseries\\color{brand}Lời giải}[[br]]Xét $\\triangle DEF$ vuông tại $D$, ta có:[[br]]$\\widehat{F} = 90^\\circ - \\widehat{E} = [[fill:52^\\circ]]$.[[br]]$DF = DE \\cdot [[fill:\\tan E]] = 8 \\cdot \\tan 38^\\circ \\approx [[fill:6{,}25]]$ (cm).[[br]]Vậy $\\widehat{F} = [[fill:52^\\circ]]$ và $DF \\approx [[fill:6{,}25]]$ cm.",
+     "figure": {
+      "tikz": "\\begin{tikzpicture}[line width=0.8pt, font=\\small]\n  \\draw[ink] (0.0000,0.0000) -- (2.6000,0.0000) -- (0.0000,2.0313) -- cycle;\n  \\draw[ink] (0.1600,0.0000) -- (0.1600,0.1600) -- (0.0000,0.1600);\n  \\draw[brand] (2.3006,0.2340) arc (502.0000:540.0000:0.3800);\n  \\fill[ink] (0.0000,0.0000) circle (1.3pt);\n  \\fill[ink] (2.6000,0.0000) circle (1.3pt);\n  \\fill[ink] (0.0000,2.0313) circle (1.3pt);\n  \\node[inner sep=0pt] at (-0.1839,-0.1543) {$D$};\n  \\node[inner sep=0pt] at (2.8255,-0.0821) {$E$};\n  \\node[inner sep=0pt] at (-0.1200,2.2392) {$F$};\n  \\node[inner sep=0pt] at (1.6020,0.3349) {$38^\\circ$};\n  \\node[inner sep=0pt] at (1.3000,-0.2400) {$8$ cm};\n\\end{tikzpicture}",
+      "caption": "Hình 6",
+      "pos": "right"
+     }
+    },
+    {
+     "type": "problem",
+     "label": "Bài 3.",
+     "tier": "onclass",
+     "level": 1,
+     "statement": "a) [NB] Vẽ vào vở tam giác $ABC$ vuông tại $A$ có $AB = 6$ cm, $\\widehat{B} = 40^\\circ$; đánh dấu góc vuông, góc $40^\\circ$ và cạnh $6$ cm.[[br]]b) [NB] Điền vào chỗ chấm: $\\widehat{C} = $ [[blank:1.6cm]]; \\quad $AC = AB \\cdot \\tan B \\approx$ [[blank:1.6cm]] cm (làm tròn đến hàng phần trăm).",
+     "dang_id": "NB3",
+     "answer": "a) HS vẽ hình, đánh dấu đủ ba dữ kiện.[[br]]b) $\\widehat{C} = 50^\\circ$; $AC = 6 \\cdot \\tan 40^\\circ \\approx 5{,}03$ cm."
+    },
+    {
+     "type": "problem",
+     "label": "Bài 4.",
+     "tier": "onclass",
+     "level": 1,
+     "statement": "[NB] Trên Hình 7, tam giác $MNP$ vuông tại $M$ có $NP = 20$ cm, $\\widehat{N} = 50^\\circ$. Điền vào chỗ trống để hoàn thành bài giải tam giác vuông $MNP$ (cạnh làm tròn đến hàng phần trăm).[[br]]a) Tính góc $P$.[[br]]$\\widehat{P} = 90^\\circ - $ [[blank:1.6cm]] $=$ [[blank:1.6cm]].[[br]]b) Tính $MN$, $MP$.[[br]]Xét $\\triangle MNP$ vuông tại $M$, ta có:[[br]]$MN = NP \\cdot$ [[blank:1.6cm]] $= 20 \\cdot$ [[blank:2.4cm]] $\\approx$ [[blank:1.6cm]] (cm).[[br]]$MP = NP \\cdot$ [[blank:1.6cm]] $= 20 \\cdot$ [[blank:2.4cm]] $\\approx$ [[blank:1.6cm]] (cm).[[br]]Vậy $\\widehat{P} = $ [[blank:1.6cm]], $MN \\approx$ [[blank:1.6cm]] cm, $MP \\approx$ [[blank:1.6cm]] cm.",
+     "dang_id": "NB4",
+     "answer": "a) $\\widehat{P} = 90^\\circ - 50^\\circ = 40^\\circ$.[[br]]b) $MN = NP \\cdot \\cos N = 20 \\cdot \\cos 50^\\circ \\approx 12{,}86$ (cm); $MP = NP \\cdot \\sin N = 20 \\cdot \\sin 50^\\circ \\approx 15{,}32$ (cm).",
+     "figure": {
+      "tikz": "\\begin{tikzpicture}[line width=0.8pt, font=\\small]\n  \\draw[ink] (0.0000,0.0000) -- (2.3495,0.0000) -- (0.0000,2.8000) -- cycle;\n  \\draw[ink] (0.1600,0.0000) -- (0.1600,0.1600) -- (0.0000,0.1600);\n  \\draw[brand] (2.1052,0.2911) arc (490.0000:540.0000:0.3800);\n  \\fill[ink] (0.0000,0.0000) circle (1.3pt);\n  \\fill[ink] (2.3495,0.0000) circle (1.3pt);\n  \\fill[ink] (0.0000,2.8000) circle (1.3pt);\n  \\node[inner sep=0pt] at (-0.1839,-0.1543) {$M$};\n  \\node[inner sep=0pt] at (2.5573,-0.1200) {$N$};\n  \\node[inner sep=0pt] at (-0.0821,3.0255) {$P$};\n  \\node[inner sep=0pt] at (1.5055,0.4628) {$50^\\circ$};\n  \\node[inner sep=0pt] at (1.7910,1.4821) {$20$ cm};\n\\end{tikzpicture}",
+      "caption": "Hình 7",
+      "pos": "right"
+     },
+     "figure_given": true
+    }
+   ],
+   "teacher_note": "Mỗi ví dụ một dạng nhận biết, chữa 2 phút rồi HS làm ngay bài kề sau.[[br]]Bài 3a bắt buộc vẽ hình vào vở trước khi tính — khâu này đề thi không cho sẵn.[[br]]Bài 4 là khung bài giải tam giác vuông (biết cạnh huyền và một góc): điền xong HS có một bài mẫu chép vào vở."
+  },
+  {
+   "kind": "practice2",
+   "number": 4,
+   "title": "Luyện tập 2",
+   "blocks": [
+    {
+     "type": "noted",
+     "variant": "example",
+     "text": "\\textbf{Ví dụ 4.} Giải tam giác $XYZ$ vuông tại $X$, biết hai cạnh góc vuông $XY = 5$, $XZ = 8$ (Hình 8; cạnh làm tròn đến chữ số thập phân thứ nhất, góc làm tròn đến độ).[[br]]{\\sffamily\\bfseries\\color{brand}Lời giải}[[br]]Xét $\\triangle XYZ$ vuông tại $X$, theo định lí Pythagore:[[br]]$YZ = \\sqrt{XY^2 + XZ^2} = [[fill:\\sqrt{89}]] \\approx 9{,}4$.[[br]]$\\tan Z = \\dfrac{XY}{XZ} = \\dfrac{5}{8} \\Rightarrow \\widehat{Z} \\approx [[fill:32^\\circ]]$.[[br]]$\\widehat{Y} = 90^\\circ - \\widehat{Z} \\approx [[fill:58^\\circ]]$.[[br]]Vậy $YZ \\approx [[fill:9{,}4]]$, $\\widehat{Y} \\approx [[fill:58^\\circ]]$, $\\widehat{Z} \\approx [[fill:32^\\circ]]$.",
+     "figure": {
+      "tikz": "\\begin{tikzpicture}[line width=0.8pt, font=\\small]\n  \\draw[ink] (0.0000,0.0000) -- (1.6250,0.0000) -- (0.0000,2.6000) -- cycle;\n  \\draw[ink] (0.1600,0.0000) -- (0.1600,0.1600) -- (0.0000,0.1600);\n  \\fill[ink] (0.0000,0.0000) circle (1.3pt);\n  \\fill[ink] (1.6250,0.0000) circle (1.3pt);\n  \\fill[ink] (0.0000,2.6000) circle (1.3pt);\n  \\node[inner sep=0pt] at (-0.1839,-0.1543) {$X$};\n  \\node[inner sep=0pt] at (1.8328,-0.1200) {$Y$};\n  \\node[inner sep=0pt] at (-0.0821,2.8255) {$Z$};\n  \\node[inner sep=0pt] at (0.8125,0.2400) {$5$};\n  \\node[inner sep=0pt] at (0.2400,1.3000) {$8$};\n\\end{tikzpicture}",
+      "caption": "Hình 8",
+      "pos": "right"
+     }
+    },
+    {
+     "type": "problem",
+     "label": "Bài 5.",
+     "tier": "onclass",
+     "level": 2,
+     "statement": "[TH] Cho tam giác $ABC$ vuông tại $A$ có cạnh góc vuông $AB = 4$, cạnh huyền $BC = 8$. Tính cạnh $AC$ (làm tròn đến chữ số thập phân thứ ba) và các góc $B$, $C$.",
+     "dang_id": "TH1",
+     "answer": "Xét $\\triangle ABC$ vuông tại $A$, theo định lí Pythagore:[[br]]$AC^2 = BC^2 - AB^2 = 64 - 16 = 48 \\Rightarrow AC = \\sqrt{48} \\approx 6{,}928$.[[br]]$\\cos B = \\dfrac{AB}{BC} = \\dfrac{4}{8} = \\dfrac{1}{2} \\Rightarrow \\widehat{B} = 60^\\circ$.[[br]]$\\widehat{C} = 90^\\circ - 60^\\circ = 30^\\circ$.[[br]]Vậy $AC \\approx 6{,}928$, $\\widehat{B} = 60^\\circ$, $\\widehat{C} = 30^\\circ$.",
+     "hints": [
+      "Đề cho mấy cạnh? Cạnh thứ ba tính bằng gì?",
+      "Hai cạnh đề cho là gì đối với góc $B$? Tỉ số nào chứa đúng hai cạnh đó?"
+     ]
+    },
+    {
+     "type": "noted",
+     "variant": "example",
+     "text": "\\textbf{Ví dụ 5.} Giải tam giác $KLM$ vuông tại $K$, biết $KL = 3$ cm và $\\widehat{L} = 42^\\circ$ (Hình 9; cạnh làm tròn đến chữ số thập phân thứ ba).[[br]]{\\sffamily\\bfseries\\color{brand}Lời giải}[[br]]Xét $\\triangle KLM$ vuông tại $K$, ta có:[[br]]$\\widehat{M} = 90^\\circ - \\widehat{L} = [[fill:48^\\circ]]$.[[br]]$KM = KL \\cdot [[fill:\\tan L]] = 3 \\cdot \\tan 42^\\circ \\approx 2{,}701$ (cm).[[br]]$\\cos L = \\dfrac{KL}{LM} \\Rightarrow LM = \\dfrac{3}{\\cos 42^\\circ} \\approx [[fill:4{,}037]]$ (cm).[[br]]Vậy $\\widehat{M} = [[fill:48^\\circ]]$, $KM \\approx [[fill:2{,}701]]$ cm, $LM \\approx [[fill:4{,}037]]$ cm.",
+     "figure": {
+      "tikz": "\\begin{tikzpicture}[line width=0.8pt, font=\\small]\n  \\draw[ink] (0.0000,0.0000) -- (2.6000,0.0000) -- (0.0000,2.3411) -- cycle;\n  \\draw[ink] (0.1600,0.0000) -- (0.1600,0.1600) -- (0.0000,0.1600);\n  \\draw[brand] (2.3176,0.2543) arc (498.0000:540.0000:0.3800);\n  \\fill[ink] (0.0000,0.0000) circle (1.3pt);\n  \\fill[ink] (2.6000,0.0000) circle (1.3pt);\n  \\fill[ink] (0.0000,2.3411) circle (1.3pt);\n  \\node[inner sep=0pt] at (-0.1839,-0.1543) {$K$};\n  \\node[inner sep=0pt] at (2.8255,-0.0821) {$L$};\n  \\node[inner sep=0pt] at (-0.0821,2.5666) {$M$};\n  \\node[inner sep=0pt] at (1.6700,0.3908) {$42^\\circ$};\n  \\node[inner sep=0pt] at (1.3000,-0.2400) {$3$ cm};\n\\end{tikzpicture}",
+      "caption": "Hình 9",
+      "pos": "right"
+     }
+    },
+    {
+     "type": "problem",
+     "label": "Bài 6.",
+     "tier": "onclass",
+     "level": 2,
+     "statement": "[TH] Cho tam giác $ABC$ vuông tại $A$ ($AB < AC$), $AB = 6$ cm, $\\widehat{ABC} = 53^\\circ$. Giải tam giác vuông $ABC$ (cạnh làm tròn đến chữ số thập phân thứ hai).",
+     "dang_id": "TH2",
+     "answer": "Xét $\\triangle ABC$ vuông tại $A$, ta có:[[br]]$\\widehat{ACB} = 90^\\circ - 53^\\circ = 37^\\circ$.[[br]]$AC = AB \\cdot \\tan B = 6 \\cdot \\tan 53^\\circ \\approx 7{,}96$ (cm).[[br]]$\\cos B = \\dfrac{AB}{BC} \\Rightarrow BC = \\dfrac{6}{\\cos 53^\\circ} \\approx 9{,}97$ (cm).[[br]]Vậy $\\widehat{ACB} = 37^\\circ$, $AC \\approx 7{,}96$ cm, $BC \\approx 9{,}97$ cm.",
+     "hints": [
+      "Giải tam giác vuông là phải tìm những gì? Đề đã cho những gì?",
+      "Cạnh $AB$ là gì đối với góc $B$? Định lí nào nối nó với cạnh còn lại và với cạnh huyền?"
+     ]
+    },
+    {
+     "type": "noted",
+     "variant": "example",
+     "text": "\\textbf{Ví dụ 6.} Biết cạnh góc vuông $AB = 10$ cm và góc $B$ bằng $30^\\circ$ của tam giác $ABC$ vuông tại $A$; chân đường vuông góc kẻ từ $A$ xuống $BC$ là $H$ (Hình 10). Hãy tìm độ dài $AH$ và $BH$.[[br]]{\\sffamily\\bfseries\\color{brand}Lời giải}[[br]]Xét $\\triangle ABH$ vuông tại $H$, ta có:[[br]]$AH = AB \\cdot [[fill:\\sin B]] = 10 \\cdot \\sin 30^\\circ = 5$ (cm).[[br]]$BH = AB \\cdot \\cos B = 10 \\cdot \\cos 30^\\circ = [[fill:5\\sqrt{3}]]$ (cm).[[br]]Vậy $AH = [[fill:5]]$ cm và $BH = [[fill:5\\sqrt{3}]]$ cm.",
+     "figure": {
+      "tikz": "\\begin{tikzpicture}[line width=0.8pt, font=\\small]\n  \\draw[ink] (2.5500,1.4722) -- (0.0000,0.0000) -- (3.4000,0.0000) -- cycle;\n  \\draw[ink] (2.5500,1.4722) -- (2.5500,0.0000);\n  \\draw[ink] (2.4114,1.3922) -- (2.4914,1.2537) -- (2.6300,1.3337);\n  \\draw[ink] (2.5500,0.1600) -- (2.7100,0.1600) -- (2.7100,0.0000);\n  \\draw[brand] (0.4000,0.0000) arc (0.0000:30.0000:0.4000);\n  \\fill[ink] (2.5500,1.4722) circle (1.3pt);\n  \\fill[ink] (0.0000,0.0000) circle (1.3pt);\n  \\fill[ink] (3.4000,0.0000) circle (1.3pt);\n  \\fill[ink] (2.5500,0.0000) circle (1.3pt);\n  \\node[inner sep=0pt] at (2.6321,1.6978) {$A$};\n  \\node[inner sep=0pt] at (-0.2364,-0.0417) {$B$};\n  \\node[inner sep=0pt] at (3.6078,-0.1200) {$C$};\n  \\node[inner sep=0pt] at (2.5500,-0.2400) {$H$};\n  \\node[inner sep=0pt] at (1.1183,0.1760) {$30^\\circ$};\n  \\node[inner sep=0pt] at (0.7855,0.9290) {$10$ cm};\n\\end{tikzpicture}",
+      "caption": "Hình 10",
+      "pos": "right"
+     }
+    },
+    {
+     "type": "problem",
+     "label": "Bài 7.",
+     "tier": "onclass",
+     "level": 2,
+     "statement": "[TH] Cho tam giác $MNP$ vuông tại $M$, đường cao $MH$, $MN = 6$ cm, $MP = 8$ cm. Tính $NP$, số đo góc $MNP$ (làm tròn đến độ) và độ dài $MH$.",
+     "dang_id": "TH3",
+     "answer": "Xét $\\triangle MNP$ vuông tại $M$, theo định lí Pythagore:[[br]]$NP^2 = MN^2 + MP^2 = 36 + 64 = 100 \\Rightarrow NP = 10$ (cm).[[br]]$\\sin N = \\dfrac{MP}{NP} = \\dfrac{8}{10} = 0{,}8 \\Rightarrow \\widehat{MNP} \\approx 53^\\circ$.[[br]]Xét $\\triangle MNH$ vuông tại $H$, ta có $MH = MN \\cdot \\sin N = 6 \\cdot 0{,}8 = 4{,}8$ (cm).[[br]]Vậy $NP = 10$ cm, $\\widehat{MNP} \\approx 53^\\circ$, $MH = 4{,}8$ cm.",
+     "hints": [
+      "Đường cao $MH$ tạo ra những tam giác vuông nào? $MH$ là cạnh góc vuông của tam giác nào có cạnh huyền đã biết?",
+      "Trong tam giác đó, góc nào đã biết tỉ số lượng giác?"
+     ]
+    },
+    {
+     "type": "noted",
+     "variant": "example",
+     "text": "\\textbf{Ví dụ 7.} Cho tam giác nhọn $ABC$, đường cao $AH$ (Hình 11). Chứng minh $AB \\cdot \\sin B = AC \\cdot \\sin C$. Áp dụng: tính $AC$ khi $AB = 8$ cm, $\\widehat{B} = 50^\\circ$, $\\widehat{C} = 65^\\circ$ (làm tròn đến hàng phần trăm).[[br]]{\\sffamily\\bfseries\\color{brand}Lời giải}[[br]]Xét $\\triangle ABH$ vuông tại $H$, ta có $AH = AB \\cdot [[fill:\\sin B]]$.[[br]]Xét $\\triangle ACH$ vuông tại $H$, ta có $AH = AC \\cdot [[fill:\\sin C]]$.[[br]]$\\Rightarrow AB \\cdot \\sin B = AC \\cdot \\sin C$.[[br]]Áp dụng: $AC = \\dfrac{AB \\cdot \\sin B}{\\sin C} = \\dfrac{8 \\cdot \\sin 50^\\circ}{\\sin 65^\\circ} \\approx [[fill:6{,}76]]$ (cm).[[br]]Vậy $AB \\cdot \\sin B = AC \\cdot \\sin C$ và $AC \\approx [[fill:6{,}76]]$ cm.",
+     "figure": {
+      "tikz": "\\begin{tikzpicture}[line width=0.8pt, font=\\small]\n  \\draw[ink] (1.6000,2.6000) -- (0.0000,0.0000) -- (4.0000,0.0000) -- cycle;\n  \\draw[ink] (1.6000,2.6000) -- (1.6000,0.0000);\n  \\draw[ink] (1.6000,0.1600) -- (1.7600,0.1600) -- (1.7600,0.0000);\n  \\fill[ink] (1.6000,2.6000) circle (1.3pt);\n  \\fill[ink] (0.0000,0.0000) circle (1.3pt);\n  \\fill[ink] (4.0000,0.0000) circle (1.3pt);\n  \\fill[ink] (1.6000,0.0000) circle (1.3pt);\n  \\node[inner sep=0pt] at (1.5583,2.8364) {$A$};\n  \\node[inner sep=0pt] at (-0.2078,-0.1200) {$B$};\n  \\node[inner sep=0pt] at (4.2255,-0.0821) {$C$};\n  \\node[inner sep=0pt] at (1.6000,-0.2400) {$H$};\n\\end{tikzpicture}",
+      "caption": "Hình 11",
+      "pos": "right"
+     }
+    },
+    {
+     "type": "problem",
+     "label": "Bài 8.",
+     "tier": "onclass",
+     "level": 3,
+     "statement": "[VD] Cho tam giác $ABC$ vuông tại $A$, đường cao $AH$ (Hình 12). Chứng minh $BC = AB \\cdot \\cos B + AC \\cdot \\cos C$.",
+     "dang_id": "VD1",
+     "solution": "Xét $\\triangle ABH$ vuông tại $H$, ta có $BH = AB \\cdot \\cos B$.[[br]]Xét $\\triangle ACH$ vuông tại $H$, ta có $CH = AC \\cdot \\cos C$.[[br]]$H$ nằm giữa $B$ và $C$ $\\Rightarrow BC = BH + CH = AB \\cdot \\cos B + AC \\cdot \\cos C$.[[br]]Vậy $BC = AB \\cdot \\cos B + AC \\cdot \\cos C$.",
+     "figure": {
+      "tikz": "\\begin{tikzpicture}[line width=0.8pt, font=\\small]\n  \\draw[ink] (1.2314,1.6341) -- (0.0000,0.0000) -- (3.4000,0.0000) -- cycle;\n  \\draw[ink] (1.2314,1.6341) -- (1.2314,0.0000);\n  \\draw[ink] (1.1351,1.5064) -- (1.2629,1.4101) -- (1.3592,1.5379);\n  \\draw[ink] (1.2314,0.1600) -- (1.3914,0.1600) -- (1.3914,0.0000);\n  \\fill[ink] (1.2314,1.6341) circle (1.3pt);\n  \\fill[ink] (0.0000,0.0000) circle (1.3pt);\n  \\fill[ink] (3.4000,0.0000) circle (1.3pt);\n  \\fill[ink] (1.2314,0.0000) circle (1.3pt);\n  \\node[inner sep=0pt] at (1.1897,1.8705) {$A$};\n  \\node[inner sep=0pt] at (-0.2078,-0.1200) {$B$};\n  \\node[inner sep=0pt] at (3.6255,-0.0821) {$C$};\n  \\node[inner sep=0pt] at (1.2314,-0.2400) {$H$};\n\\end{tikzpicture}",
+      "caption": "Hình 12",
+      "pos": "right"
+     },
+     "quy_trinh": [
+      "Cái phải chứng minh là gì? Một cạnh được chân đường cao chia thành hai đoạn.",
+      "Mỗi đoạn nằm trong tam giác vuông nào? Viết nó theo cạnh huyền và côsin của góc kề.",
+      "Cộng hai đoạn lại.",
+      "Đã dùng hết giả thiết chưa? Kết luận đẳng thức."
+     ]
+    },
+    {
+     "type": "problem",
+     "label": "Bài 9.",
+     "tier": "onclass",
+     "level": 4,
+     "statement": "[VDC] Cho tam giác $ABC$ vuông tại $A$. Kẻ tia phân giác $BD$ của góc $ABC$ ($D \\in AC$). Gọi $M$ là hình chiếu của $C$ trên đường thẳng $BD$. Qua $M$ kẻ đường thẳng vuông góc với $AC$, cắt $BC$ tại $I$ (Hình 13). Chứng minh $I$ là trung điểm của $BC$.",
+     "dang_id": "VDC1",
+     "solution": "$MI \\perp AC$, $AB \\perp AC$ $\\Rightarrow MI \\parallel AB$ $\\Rightarrow \\widehat{IMB} = \\widehat{ABM}$ (so le trong).[[br]]$BD$ là tia phân giác của góc $ABC$ $\\Rightarrow \\widehat{ABM} = \\widehat{MBI}$.[[br]]$\\Rightarrow \\widehat{IMB} = \\widehat{IBM} \\Rightarrow \\triangle IBM$ cân tại $I \\Rightarrow IB = IM$.[[br]]$\\triangle BMC$ vuông tại $M$ $\\Rightarrow \\widehat{IMC} = 90^\\circ - \\widehat{IMB}$ và $\\widehat{ICM} = 90^\\circ - \\widehat{IBM}$.[[br]]$\\Rightarrow \\widehat{IMC} = \\widehat{ICM} \\Rightarrow \\triangle IMC$ cân tại $I \\Rightarrow IM = IC$.[[br]]$\\Rightarrow IB = IC$, mà $I$ nằm trên đoạn $BC$.[[br]]Vậy $I$ là trung điểm của $BC$.",
+     "figure": {
+      "tikz": "\\begin{tikzpicture}[line width=0.8pt, font=\\small]\n  \\draw[ink] (0.0000,0.0000) -- (0.0000,3.0000) -- (4.4000,0.0000) -- cycle;\n  \\draw[ink] (0.0000,3.0000) -- (2.2000,-1.1627);\n  \\draw[ink] (4.4000,0.0000) -- (2.2000,-1.1627);\n  \\draw[ink] (2.2000,-1.1627) -- (2.2000,1.5000);\n  \\draw[ink] (0.0000,0.1600) -- (0.1600,0.1600) -- (0.1600,0.0000);\n  \\draw[ink] (2.1252,-1.0212) -- (2.2667,-0.9465) -- (2.3415,-1.0879);\n  \\draw[brand] (0.0000,2.4500) arc (-90.0000:-62.1434:0.5500);\n  \\draw[brand] (0.3037,2.4253) arc (-62.1434:-34.2869:0.6500);\n  \\fill[ink] (0.0000,0.0000) circle (1.3pt);\n  \\fill[ink] (0.0000,3.0000) circle (1.3pt);\n  \\fill[ink] (4.4000,0.0000) circle (1.3pt);\n  \\fill[ink] (1.5855,0.0000) circle (1.3pt);\n  \\fill[ink] (2.2000,-1.1627) circle (1.3pt);\n  \\fill[ink] (2.2000,1.5000) circle (1.3pt);\n  \\node[inner sep=0pt] at (-0.1839,-0.1543) {$A$};\n  \\node[inner sep=0pt] at (-0.1200,3.2078) {$B$};\n  \\node[inner sep=0pt] at (4.6400,0.0000) {$C$};\n  \\node[inner sep=0pt] at (1.7055,0.2078) {$D$};\n  \\node[inner sep=0pt] at (2.1179,-1.3882) {$M$};\n  \\node[inner sep=0pt] at (2.3200,1.7078) {$I$};\n\\end{tikzpicture}",
+      "caption": "Hình 13",
+      "pos": "right"
+     },
+     "quy_trinh": [
+      "Cái phải chứng minh là gì? $IB = IC$ — tìm một đoạn trung gian bằng cả hai, chẳng hạn $IM$.",
+      "Muốn $IB = IM$ thì cần tam giác nào cân? Hai góc nào bằng nhau?",
+      "Đã dùng hết giả thiết chưa: $MI \\perp AC$ cho ta điều gì về $MI$ và $AB$? Tia phân giác cho ta điều gì?",
+      "Làm tương tự với tam giác $IMC$, rồi kết luận."
+     ]
+    }
+   ],
+   "teacher_note": "Ví dụ 4–6 mỗi ví dụ một dạng Thông hiểu, HS làm ngay bài kề sau.[[br]]Ví dụ 7 và Bài 8 là ý b) đề giữa kì: đường cao chia tam giác thành hai tam giác vuông, mỗi đoạn tính trong một tam giác.[[br]]Bài 9 là ý cuối bài hình (đề gốc): cho HS tìm đoạn trung gian $IM$ trước, ai bí mới mở khung quy trình."
+  },
+  {
+   "kind": "reflection",
+   "number": 5,
+   "title": "Sơ đồ tư duy",
+   "blocks": [
+    {
+     "type": "mindmap",
+     "caption": "Sơ đồ tư duy: Hệ thức giữa cạnh và góc trong tam giác vuông",
+     "root": "HỆ THỨC CẠNH – GÓC",
+     "branches": [
+      {
+       "label": "ĐỊNH LÍ 1",
+       "children": [
+        {
+         "label": "Cạnh góc vuông $=$ huyền $\\times \\sin$ góc đối"
+        },
+        {
+         "label": "$=$ huyền $\\times \\cos$ góc kề"
+        }
+       ]
+      },
+      {
+       "label": "ĐỊNH LÍ 2",
+       "children": [
+        {
+         "label": "Cạnh góc vuông $=$ cạnh kia $\\times \\tan$ góc đối"
+        },
+        {
+         "label": "$=$ cạnh kia $\\times \\cot$ góc kề"
+        }
+       ]
+      },
+      {
+       "label": "GIẢI TAM GIÁC VUÔNG",
+       "children": [
+        {
+         "label": "Biết 2 cạnh: Pythagore, một tỉ số, góc kia"
+        },
+        {
+         "label": "Biết 1 cạnh, 1 góc: góc kia, Định lí 1 hoặc 2"
+        }
+       ]
+      },
+      {
+       "label": "ĐƯỜNG CAO",
+       "children": [
+        {
+         "label": "Chia thành hai tam giác vuông"
+        },
+        {
+         "label": "Mỗi đoạn tính trong một tam giác con"
+        }
+       ]
+      },
+      {
+       "label": "Ý CUỐI BÀI HÌNH",
+       "children": [
+        {
+         "label": "Song song: góc so le trong"
+        },
+        {
+         "label": "Phân giác: hai góc bằng nhau"
+        },
+        {
+         "label": "Tam giác cân: hai cạnh bằng nhau"
+        }
+       ]
+      }
+     ]
+    },
+    {
+     "type": "para",
+     "text": "\\textbf{BÀI TẬP VỀ NHÀ (Hệ thức giữa cạnh và góc. Giải tam giác vuông).}"
+    },
+    {
+     "type": "problem",
+     "label": "BTVN 1.",
+     "tier": "btvn",
+     "level": 1,
+     "statement": "Trên Hình 14, tam giác $IKL$ vuông tại $I$. Điền vào chỗ chấm.[[br]]a) [NB] $IK = KL \\cdot \\sin$ [[blank:1.1cm]] $= KL \\cdot \\cos$ [[blank:1.1cm]].[[br]]b) [NB] $IL = IK \\cdot \\tan$ [[blank:1.1cm]] $= IK \\cdot \\cot$ [[blank:1.1cm]].",
+     "dang_id": "NB1",
+     "answer": "a) $IK = KL \\cdot \\sin L = KL \\cdot \\cos K$.[[br]]b) $IL = IK \\cdot \\tan K = IK \\cdot \\cot L$.",
+     "figure": {
+      "tikz": "\\begin{tikzpicture}[line width=0.8pt, font=\\small]\n  \\draw[ink] (0.0000,0.0000) -- (2.2553,-0.8208) -- (0.5336,1.4659) -- cycle;\n  \\draw[ink] (0.1504,-0.0547) -- (0.2051,0.0956) -- (0.0547,0.1504);\n  \\fill[ink] (0.0000,0.0000) circle (1.3pt);\n  \\fill[ink] (2.2553,-0.8208) circle (1.3pt);\n  \\fill[ink] (0.5336,1.4659) circle (1.3pt);\n  \\node[inner sep=0pt] at (-0.2255,-0.0821) {$I$};\n  \\node[inner sep=0pt] at (2.4391,-0.9751) {$K$};\n  \\node[inner sep=0pt] at (0.4919,1.7023) {$L$};\n\\end{tikzpicture}",
+      "caption": "Hình 14",
+      "pos": "right"
+     },
+     "figure_given": true
+    },
+    {
+     "type": "problem",
+     "label": "BTVN 2.",
+     "tier": "btvn",
+     "level": 1,
+     "statement": "Trên Hình 15, tam giác $PQR$ vuông tại $P$ có $QR = 15$ cm, $\\widehat{Q} = 25^\\circ$. Điền vào chỗ chấm (làm tròn đến hàng phần trăm).[[br]]a) [NB] $PR = QR \\cdot \\sin Q \\approx$ [[blank:1.6cm]] cm.[[br]]b) [NB] $PQ = QR \\cdot \\cos Q \\approx$ [[blank:1.6cm]] cm.",
+     "dang_id": "NB2",
+     "answer": "a) $PR = 15 \\cdot \\sin 25^\\circ \\approx 6{,}34$ cm.[[br]]b) $PQ = 15 \\cdot \\cos 25^\\circ \\approx 13{,}59$ cm.",
+     "figure": {
+      "tikz": "\\begin{tikzpicture}[line width=0.8pt, font=\\small]\n  \\draw[ink] (0.0000,0.0000) -- (2.8000,0.0000) -- (0.0000,1.3057) -- cycle;\n  \\draw[ink] (0.1600,0.0000) -- (0.1600,0.1600) -- (0.0000,0.1600);\n  \\draw[brand] (2.4556,0.1606) arc (515.0000:540.0000:0.3800);\n  \\fill[ink] (0.0000,0.0000) circle (1.3pt);\n  \\fill[ink] (2.8000,0.0000) circle (1.3pt);\n  \\fill[ink] (0.0000,1.3057) circle (1.3pt);\n  \\node[inner sep=0pt] at (-0.1839,-0.1543) {$P$};\n  \\node[inner sep=0pt] at (3.0364,-0.0417) {$Q$};\n  \\node[inner sep=0pt] at (-0.1200,1.5135) {$R$};\n  \\node[inner sep=0pt] at (1.7045,0.1845) {$25^\\circ$};\n  \\node[inner sep=0pt] at (1.7757,0.8826) {$15$ cm};\n\\end{tikzpicture}",
+      "caption": "Hình 15",
+      "pos": "right"
+     },
+     "figure_given": true
+    },
+    {
+     "type": "problem",
+     "label": "BTVN 3.",
+     "tier": "btvn",
+     "level": 1,
+     "statement": "[NB] Vẽ vào vở tam giác $EFG$ vuông tại $E$ có $EF = 5$ cm, $\\widehat{F} = 55^\\circ$ rồi điền vào chỗ chấm: $\\widehat{G} = $ [[blank:1.6cm]]; \\quad $EG = EF \\cdot \\tan F \\approx$ [[blank:1.6cm]] cm (làm tròn đến hàng phần trăm).",
+     "dang_id": "NB3",
+     "answer": "$\\widehat{G} = 35^\\circ$; $EG = 5 \\cdot \\tan 55^\\circ \\approx 7{,}14$ cm."
+    },
+    {
+     "type": "problem",
+     "label": "BTVN 4.",
+     "tier": "btvn",
+     "level": 1,
+     "statement": "[NB] Trên Hình 16, tam giác $ABC$ vuông tại $A$ có $BC = 9$, $\\widehat{C} = 53^\\circ$. Điền vào chỗ trống để hoàn thành bài giải tam giác vuông $ABC$ (cạnh làm tròn đến hàng phần trăm).[[br]]a) Tính góc $B$.[[br]]$\\widehat{B} = 90^\\circ - $ [[blank:1.6cm]] $=$ [[blank:1.6cm]].[[br]]b) Tính $AB$, $AC$.[[br]]Xét $\\triangle ABC$ vuông tại $A$, ta có:[[br]]$AB = BC \\cdot$ [[blank:1.6cm]] $= 9 \\cdot$ [[blank:2.4cm]] $\\approx$ [[blank:1.6cm]].[[br]]$AC = BC \\cdot$ [[blank:1.6cm]] $= 9 \\cdot$ [[blank:2.4cm]] $\\approx$ [[blank:1.6cm]].[[br]]Vậy $\\widehat{B} = $ [[blank:1.6cm]], $AB \\approx$ [[blank:1.6cm]], $AC \\approx$ [[blank:1.6cm]].",
+     "dang_id": "NB4",
+     "answer": "a) $\\widehat{B} = 90^\\circ - 53^\\circ = 37^\\circ$.[[br]]b) $AB = BC \\cdot \\sin C = 9 \\cdot \\sin 53^\\circ \\approx 7{,}19$; $AC = BC \\cdot \\cos C = 9 \\cdot \\cos 53^\\circ \\approx 5{,}42$.",
+     "figure": {
+      "tikz": "\\begin{tikzpicture}[line width=0.8pt, font=\\small]\n  \\draw[ink] (0.0000,0.0000) -- (1.9592,0.0000) -- (0.0000,2.6000) -- cycle;\n  \\draw[ink] (0.1600,0.0000) -- (0.1600,0.1600) -- (0.0000,0.1600);\n  \\draw[brand] (1.7306,0.3035) arc (487.0000:540.0000:0.3800);\n  \\fill[ink] (0.0000,0.0000) circle (1.3pt);\n  \\fill[ink] (1.9592,0.0000) circle (1.3pt);\n  \\fill[ink] (0.0000,2.6000) circle (1.3pt);\n  \\node[inner sep=0pt] at (-0.1839,-0.1543) {$A$};\n  \\node[inner sep=0pt] at (2.1671,-0.1200) {$C$};\n  \\node[inner sep=0pt] at (-0.0821,2.8255) {$B$};\n  \\node[inner sep=0pt] at (1.1228,0.4783) {$53^\\circ$};\n  \\node[inner sep=0pt] at (1.1635,1.4543) {$9$};\n\\end{tikzpicture}",
+      "caption": "Hình 16",
+      "pos": "right"
+     },
+     "figure_given": true
+    },
+    {
+     "type": "problem",
+     "label": "BTVN 5.",
+     "tier": "btvn",
+     "level": 2,
+     "statement": "[TH] Giải tam giác $ABC$ vuông tại $A$, biết cạnh huyền $BC = 21$ và $AC = 18$ (góc làm tròn đến độ, cạnh làm tròn đến hàng đơn vị).",
+     "dang_id": "TH1",
+     "answer": "Xét $\\triangle ABC$ vuông tại $A$, theo định lí Pythagore:[[br]]$AB^2 = BC^2 - AC^2 = 441 - 324 = 117 \\Rightarrow AB = \\sqrt{117} \\approx 11$.[[br]]$\\sin B = \\dfrac{AC}{BC} = \\dfrac{18}{21} \\Rightarrow \\widehat{B} \\approx 59^\\circ$.[[br]]$\\widehat{C} = 90^\\circ - \\widehat{B} \\approx 31^\\circ$.[[br]]Vậy $AB \\approx 11$, $\\widehat{B} \\approx 59^\\circ$, $\\widehat{C} \\approx 31^\\circ$.",
+     "hints": [
+      "Thiếu cạnh nào? Tính bằng định lí nào?",
+      "Với góc $B$, hai cạnh đề cho là gì? Chọn tỉ số chứa đúng hai cạnh đó."
+     ]
+    },
+    {
+     "type": "problem",
+     "label": "BTVN 6.",
+     "tier": "btvn",
+     "level": 2,
+     "statement": "[TH] Cho tam giác $ABC$ vuông tại $A$ ($AB < AC$), $AB = 9$ cm, $\\widehat{ABC} = 60^\\circ$. Giải tam giác vuông $ABC$ (cạnh làm tròn đến chữ số thập phân thứ hai).",
+     "dang_id": "TH2",
+     "answer": "Xét $\\triangle ABC$ vuông tại $A$, ta có:[[br]]$\\widehat{ACB} = 90^\\circ - 60^\\circ = 30^\\circ$.[[br]]$AC = AB \\cdot \\tan B = 9 \\cdot \\tan 60^\\circ = 9\\sqrt{3} \\approx 15{,}59$ (cm).[[br]]$\\cos B = \\dfrac{AB}{BC} \\Rightarrow BC = \\dfrac{9}{\\cos 60^\\circ} = 18$ (cm).[[br]]Vậy $\\widehat{ACB} = 30^\\circ$, $AC \\approx 15{,}59$ cm, $BC = 18$ cm.",
+     "hints": [
+      "Góc nhọn còn lại tìm thế nào?",
+      "Cạnh $AB$ là gì đối với góc $B$? Định lí nào nối nó với $AC$, với $BC$?"
+     ]
+    },
+    {
+     "type": "problem",
+     "label": "BTVN 7.",
+     "tier": "btvn",
+     "level": 3,
+     "statement": "[VD] Cho tam giác nhọn $DEF$, đường cao $DK$. Chứng minh $EF = DE \\cdot \\cos E + DF \\cdot \\cos F$.",
+     "dang_id": "VD1",
+     "solution": "Xét $\\triangle DEK$ vuông tại $K$, ta có $EK = DE \\cdot \\cos E$.[[br]]Xét $\\triangle DFK$ vuông tại $K$, ta có $FK = DF \\cdot \\cos F$.[[br]]$\\triangle DEF$ nhọn $\\Rightarrow K$ nằm giữa $E$ và $F$ $\\Rightarrow EF = EK + FK = DE \\cdot \\cos E + DF \\cdot \\cos F$.[[br]]Vậy $EF = DE \\cdot \\cos E + DF \\cdot \\cos F$.",
+     "quy_trinh": [
+      "Cái phải chứng minh là gì? Một cạnh được chân đường cao chia thành hai đoạn.",
+      "Mỗi đoạn nằm trong tam giác vuông nào? Viết nó theo cạnh huyền và côsin của góc kề.",
+      "Cộng hai đoạn lại.",
+      "Đã dùng hết giả thiết chưa? Kết luận đẳng thức."
+     ]
+    },
+    {
+     "type": "problem",
+     "label": "BTVN 8.",
+     "tier": "btvn",
+     "level": 4,
+     "statement": "[VDC] Để đo chiều cao $PP'$ của một tòa lâu đài, người ta đặt giác kế thẳng đứng tại $M$ thì nhìn thấy đỉnh $P'$ dưới góc $\\widehat{P'M'H} = 27^\\circ$; dời giác kế ra xa thêm đến $N$ ($NM = 20$ m) thì nhìn thấy đỉnh $P'$ dưới góc $\\widehat{P'N'H} = 19^\\circ$. Giác kế cao $MM' = NN' = HP = 1{,}6$ m; $N'$, $M'$, $H$ thẳng hàng và $P'H \\perp N'H$ (Hình 17). Tính chiều cao tòa lâu đài (làm tròn đến chữ số thập phân thứ hai).",
+     "dang_id": "VDC2",
+     "solution": "Đặt $M'H = x$ (m), $x > 0$ $\\Rightarrow N'H = x + 20$ (m).[[br]]Xét $\\triangle P'M'H$ vuông tại $H$: $P'H = M'H \\cdot \\tan 27^\\circ = x\\tan 27^\\circ$.[[br]]Xét $\\triangle P'N'H$ vuông tại $H$: $P'H = N'H \\cdot \\tan 19^\\circ = (x + 20)\\tan 19^\\circ$.[[br]]$\\Rightarrow x\\tan 27^\\circ = (x + 20)\\tan 19^\\circ \\Rightarrow x = \\dfrac{20\\tan 19^\\circ}{\\tan 27^\\circ - \\tan 19^\\circ}$.[[br]]$\\Rightarrow PP' = P'H + HP = \\dfrac{20\\tan 19^\\circ \\cdot \\tan 27^\\circ}{\\tan 27^\\circ - \\tan 19^\\circ} + 1{,}6 \\approx 22{,}84$ (m).[[br]]Vậy tòa lâu đài cao khoảng $22{,}84$ m.",
+     "figure": {
+      "tikz": "\\begin{tikzpicture}[line width=0.8pt, font=\\small]\n  \\draw[ink] (-0.3000,0.0000) -- (6.5687,0.0000);\n  \\draw[ink] (0.0000,0.0000) -- (0.0000,0.1600);\n  \\draw[ink] (2.0000,0.0000) -- (2.0000,0.1600);\n  \\draw[ink] (6.1687,0.0000) -- (6.1687,2.2840);\n  \\draw[ink, dashed] (0.0000,0.1600) -- (6.1687,0.1600);\n  \\draw[ink] (0.0000,0.1600) -- (6.1687,2.2840);\n  \\draw[ink] (2.0000,0.1600) -- (6.1687,2.2840);\n  \\draw[ink] (6.0087,0.1600) -- (6.0087,0.3200) -- (6.1687,0.3200);\n  \\draw[brand] (0.7000,0.1600) arc (0.0000:19.0000:0.7000);\n  \\draw[brand] (2.5000,0.1600) arc (0.0000:27.0000:0.5000);\n  \\fill[ink] (0.0000,0.0000) circle (1.3pt);\n  \\fill[ink] (2.0000,0.0000) circle (1.3pt);\n  \\fill[ink] (6.1687,0.0000) circle (1.3pt);\n  \\fill[ink] (0.0000,0.1600) circle (1.3pt);\n  \\fill[ink] (2.0000,0.1600) circle (1.3pt);\n  \\fill[ink] (6.1687,0.1600) circle (1.3pt);\n  \\fill[ink] (6.1687,2.2840) circle (1.3pt);\n  \\node[inner sep=0pt] at (-0.0000,-0.2400) {$N$};\n  \\node[inner sep=0pt] at (2.0000,-0.2400) {$M$};\n  \\node[inner sep=0pt] at (6.1687,-0.2400) {$P$};\n  \\node[inner sep=0pt] at (-0.2490,0.3143) {$N'$};\n  \\node[inner sep=0pt] at (1.9550,0.3964) {$M'$};\n  \\node[inner sep=0pt] at (6.4087,0.1600) {$H$};\n  \\node[inner sep=0pt] at (6.3688,2.4679) {$P'$};\n  \\node[inner sep=0pt] at (1.0566,0.7945) {$19^\\circ$};\n  \\node[inner sep=0pt] at (3.2199,0.3421) {$27^\\circ$};\n  \\node[inner sep=0pt] at (1.0000,-0.2400) {$20$ m};\n\\end{tikzpicture}",
+      "caption": "Hình 17",
+      "pos": "right"
+     }
+    }
+   ],
+   "teacher_note": "BTVN 7 cùng khuôn Bài 8 nhưng tam giác nhọn. BTVN 8 là tình huống mở đầu Bài 12 SGK (phần Vận dụng) — cùng khuôn đo chiều cao từ hai điểm nhìn, thêm chiều cao giác kế. Chữa đầu buổi sau."
+  }
+ ]
+}

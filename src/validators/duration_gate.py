@@ -242,7 +242,7 @@ def check_duration(lesson: LessonPackage) -> list[str]:
         spec = load_tier_spec()
         ratio_target = tier_ratio(spec, grade, subject, tier, getattr(lesson, "chuong", ""))
         block = subject_block(spec, grade, subject)
-        rates = rates_for(spec, grade, subject)
+        rates = rates_for(spec, grade, subject, tier)
     except KeyError:
         return vdc_warns                # chưa có rate card cho (lớp, môn, tầng)
     tier_block = block.get("tiers", {}).get(tier, {})

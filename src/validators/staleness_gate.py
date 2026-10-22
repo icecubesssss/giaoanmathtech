@@ -125,6 +125,8 @@ def _tex_hien_tai(seed: Path) -> dict[str, str] | None:
             return {"thuyetminh": _h(render_thuyetminh(spec))}
         from src.schema.lesson_package import LessonPackage
         les = LessonPackage.model_validate(data)
+        from src.main import _neo_anh
+        _neo_anh(les, seed)
         tokens = load_tokens()
         return {"handout": _h(render_handout(les, tokens)),
                 "guide": _h(render_guide(les, tokens)),
@@ -164,7 +166,15 @@ def check_stale(out_dirs) -> list[Stale]:
         hien = _tex_hien_tai(seed)
         if hien is None:
             continue                              # không dựng nổi → không kết luận
-        for pdf in pdfs:
+        # Lọc bỏ các file cũ ca-*.pdf nếu trong folder ĐÃ CÓ bản in tên mô tả mới (*-Phieu-HS...)
+        has_new = {kind: any(p.stem.endswith("-" + hau_to) for p in pdfs) for kind, hau_to in BAN_IN.items()}
+        has_new_tm = any(p.name != "thuyet-minh.pdf" and p.name.startswith("thuyet-minh-") for p in pdfs)
+        active_pdfs = [
+            p for p in pdfs
+            if not (p.name.startswith("ca-") and has_new.get(_bien_the(p), False))
+            and not (p.name == "thuyet-minh.pdf" and has_new_tm)
+        ]
+        for pdf in active_pdfs:
             sidecar = d / f"{pdf.stem}.tex.sha256"
             if not sidecar.exists():
                 ra.append(Stale(pdf, "thieu-dau"))

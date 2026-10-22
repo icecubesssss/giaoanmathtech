@@ -1,0 +1,604 @@
+{
+ "slug": "phieu-1-hinh-tru-hinh-non-hinh-cau",
+ "title": "Hình trụ và hình nón. Hình cầu",
+ "eyebrow": "PHIẾU 1 • HÌNH HỌC 9 · CHƯƠNG X — BÀI 31, BÀI 32",
+ "grade_label": "Lớp 9 • Hình học",
+ "class_tier": "B",
+ "chuong": "chuong-10-hinh-khoi-trong-thuc-tien",
+ "so_ca": 1,
+ "stages": [
+  {
+   "kind": "review",
+   "number": 1,
+   "title": "Khám phá",
+   "blocks": [
+    {
+     "type": "para",
+     "text": "\\textbf{Tờ nhãn quanh lon nước}"
+    },
+    {
+     "type": "noted",
+     "variant": "note",
+     "text": "Một lon nước ngọt hình trụ có đường kính đáy $6{,}6$ cm, chiều cao $12$ cm (Hình 1). Tờ nhãn dán kín quanh thân lon.[[br]]\\textbf{a)} Bán kính đáy của lon bằng bao nhiêu?[[br]]\\textbf{b)} Bóc tờ nhãn ra trải phẳng thì được hình gì? Một cạnh của nó dài bằng chu vi đáy lon — tính cạnh đó (lấy $\\pi \\approx 3{,}14$).[[br]]\\textbf{c)} Tính diện tích tờ nhãn.",
+     "figure": {
+      "tikz": "\\begin{tikzpicture}[line width=0.8pt, font=\\small]\n  \\draw[ink] (0.000,1.800) ellipse (1.000 and 0.280);\n  \\draw[ink] (-1.000,0.000) arc (180:360:1.000 and 0.280);\n  \\draw[ink, dashed] (1.000,0.000) arc (0:180:1.000 and 0.280);\n  \\draw[ink] (-1.000,0.000) -- (-1.000,1.800);\n  \\draw[ink] (1.000,0.000) -- (1.000,1.800);\n  \\draw[ink] (0.000,1.800) -- (1.000,1.800);\n  \\draw[ink, dashed] (0.000,0.000) -- (0.000,1.800);\n  \\fill[ink] (0.000,0.000) circle (1.2pt);\n  \\fill[ink] (0.000,1.800) circle (1.2pt);\n  \\node[inner sep=0pt] at (0.500,2.300) {$3{,}3$ cm};\n  \\node[inner sep=0pt] at (1.722,0.900) {$12$ cm};\n\\end{tikzpicture}",
+      "caption": "Hình 1",
+      "pos": "right"
+     }
+    }
+   ],
+   "teacher_note": "HS ra: hình chữ nhật dài $2 \\cdot 3{,}14 \\cdot 3{,}3 \\approx 20{,}72$ cm, rộng $12$ cm, diện tích khoảng $248{,}7$ cm$^2$. Chốt: diện tích xung quanh hình trụ $=$ chu vi đáy $\\cdot$ chiều cao $= 2\\pi Rh$."
+  },
+  {
+   "kind": "concept",
+   "number": 2,
+   "title": "Kiến thức cần nhớ",
+   "blocks": [
+    {
+     "type": "para",
+     "text": "1. Hình trụ",
+     "variant": "heading"
+    },
+    {
+     "type": "deflist",
+     "items": [
+      {
+       "term": "Bán kính đáy $R$, chiều cao $h$:",
+       "desc": "hai đáy là hai hình tròn bằng nhau; mỗi đường sinh dài bằng $h$."
+      },
+      {
+       "term": "Diện tích xung quanh:",
+       "desc": "$S_{xq} = 2\\pi Rh$."
+      },
+      {
+       "term": "Thể tích:",
+       "desc": "$V = \\pi R^2 h$ (diện tích đáy nhân chiều cao)."
+      }
+     ]
+    },
+    {
+     "type": "figure",
+     "tikz": "\\begin{tikzpicture}[line width=0.8pt, font=\\small]\n  \\draw[ink] (0.000,2.000) ellipse (1.000 and 0.280);\n  \\draw[ink] (-1.000,0.000) arc (180:360:1.000 and 0.280);\n  \\draw[ink, dashed] (1.000,0.000) arc (0:180:1.000 and 0.280);\n  \\draw[ink] (-1.000,0.000) -- (-1.000,2.000);\n  \\draw[ink] (1.000,0.000) -- (1.000,2.000);\n  \\draw[ink] (0.000,2.000) -- (1.000,2.000);\n  \\draw[ink, dashed] (0.000,0.000) -- (0.000,2.000);\n  \\fill[ink] (0.000,0.000) circle (1.2pt);\n  \\fill[ink] (0.000,2.000) circle (1.2pt);\n  \\node[inner sep=0pt] at (0.500,2.500) {$R$};\n  \\node[inner sep=0pt] at (1.280,1.000) {$h$};\n\\end{tikzpicture}",
+     "caption": "Hình trụ: bán kính đáy $R$, chiều cao $h$",
+     "width": "0.22\\linewidth"
+    },
+    {
+     "type": "para",
+     "text": "2. Hình nón",
+     "variant": "heading"
+    },
+    {
+     "type": "deflist",
+     "items": [
+      {
+       "term": "Bán kính đáy $R$, chiều cao $h$, đường sinh $l$:",
+       "desc": "$l^2 = R^2 + h^2$ (định lí Pythagore)."
+      },
+      {
+       "term": "Diện tích xung quanh:",
+       "desc": "$S_{xq} = \\pi Rl$."
+      },
+      {
+       "term": "Thể tích:",
+       "desc": "$V = \\dfrac{1}{3}\\pi R^2 h$."
+      }
+     ]
+    },
+    {
+     "type": "figure",
+     "tikz": "\\begin{tikzpicture}[line width=0.8pt, font=\\small]\n  \\draw[ink] (-1.000,0.000) -- (0.000,2.000) -- (1.000,0.000);\n  \\draw[ink] (-1.000,0.000) arc (180:360:1.000 and 0.280);\n  \\draw[ink, dashed] (1.000,0.000) arc (0:180:1.000 and 0.280);\n  \\draw[ink, dashed] (0.000,0.000) -- (1.000,0.000);\n  \\draw[ink, dashed] (0.000,0.000) -- (0.000,2.000);\n  \\draw[ink] (0.140,0.000) -- (0.140,0.140) -- (0.000,0.140);\n  \\fill[ink] (0.000,0.000) circle (1.2pt);\n  \\fill[ink] (0.000,2.000) circle (1.2pt);\n  \\node[inner sep=0pt] at (0.500,-0.520) {$R$};\n  \\node[inner sep=0pt] at (-0.200,0.600) {$h$};\n  \\node[inner sep=0pt] at (0.750,1.125) {$l$};\n\\end{tikzpicture}",
+     "caption": "Hình nón: bán kính đáy $R$, chiều cao $h$, đường sinh $l$",
+     "width": "0.22\\linewidth"
+    },
+    {
+     "type": "para",
+     "text": "3. Hình cầu",
+     "variant": "heading"
+    },
+    {
+     "type": "deflist",
+     "items": [
+      {
+       "term": "Tâm $O$, bán kính $R$:",
+       "desc": "đường kính bằng $2R$."
+      },
+      {
+       "term": "Diện tích mặt cầu:",
+       "desc": "$S = 4\\pi R^2$."
+      },
+      {
+       "term": "Thể tích hình cầu:",
+       "desc": "$V = \\dfrac{4}{3}\\pi R^3$."
+      }
+     ]
+    },
+    {
+     "type": "figure",
+     "tikz": "\\begin{tikzpicture}[line width=0.8pt, font=\\small]\n  \\draw[ink] (0.000,0.000) circle (1.000);\n  \\draw[ink] (-1.000,0.000) arc (180:360:1.000 and 0.300);\n  \\draw[ink, dashed] (1.000,0.000) arc (0:180:1.000 and 0.300);\n  \\draw[ink] (0.000,0.000) -- (0.710,0.710);\n  \\fill[ink] (0.000,0.000) circle (1.2pt);\n  \\node[inner sep=0pt] at (-0.250,0.060) {$O$};\n  \\node[inner sep=0pt] at (0.200,0.600) {$R$};\n\\end{tikzpicture}",
+     "caption": "Hình cầu tâm $O$, bán kính $R$",
+     "width": "0.2\\linewidth"
+    },
+    {
+     "type": "para",
+     "text": "\\textbf{Đổi đơn vị:} $1$ lít $= 1$ dm$^3 = 1000$ cm$^3$; \\quad $1$ m$^3 = 1000$ lít."
+    },
+    {
+     "type": "noted",
+     "variant": "target",
+     "text": "\\textbf{Đề thi hỏi gì ở phần này.} Câu IV.1 đề vào 10 ($1{,}0$ điểm, hai ý): ý a) áp đúng một công thức, ý b) mực nước, số lần múc hoặc chi phí vật liệu."
+    },
+    {
+     "type": "noted",
+     "variant": "trap",
+     "text": "\\textbf{Chỗ mất điểm.} Đề cho đường kính mà thay thẳng vào chỗ $R$. Xô không nắp thì chỉ cộng một đáy. Quên $\\dfrac{1}{3}$ ở hình nón, nhầm $R^2$ với $R^3$ ở hình cầu."
+    }
+   ],
+   "teacher_note": "Chặng này 10 phút cho cả ba hình. Mỗi công thức gắn với một vật quen: lon nước, nón lá, quả bóng."
+  },
+  {
+   "kind": "practice1",
+   "number": 3,
+   "title": "Luyện tập 1",
+   "blocks": [
+    {
+     "type": "noted",
+     "variant": "example",
+     "text": "\\textbf{Ví dụ 1.} Hình 2 gồm một hình trụ (bán kính đáy $3$ cm, cao $8$ cm) và một hình nón cùng bán kính đáy, cao $4$ cm, đường sinh $5$ cm. Chỉ ra bán kính đáy, chiều cao của hình trụ; chiều cao và đường sinh của hình nón.[[br]]{\\sffamily\\bfseries\\color{brand}Lời giải}[[br]]Hình trụ: bán kính đáy $R = [[fill:3]]$ cm, chiều cao $h = [[fill:8]]$ cm.[[br]]Hình nón có cùng bán kính đáy, chiều cao $h = [[fill:4]]$ cm, đường sinh $l = [[fill:5]]$ cm.[[br]]Vậy theo định lí Pythagore, đường sinh thoả mãn $l^2 = R^2 + h^2 = [[fill:3^2 + 4^2]]$.",
+     "figure": {
+      "tikz": "\\begin{tikzpicture}[line width=0.8pt, font=\\small]\n  \\draw[ink] (0.000,1.800) ellipse (0.900 and 0.252);\n  \\draw[ink] (-0.900,0.000) arc (180:360:0.900 and 0.252);\n  \\draw[ink, dashed] (0.900,0.000) arc (0:180:0.900 and 0.252);\n  \\draw[ink] (-0.900,0.000) -- (-0.900,1.800);\n  \\draw[ink] (0.900,0.000) -- (0.900,1.800);\n  \\draw[ink] (0.000,1.800) -- (0.900,1.800);\n  \\draw[ink, dashed] (0.000,0.000) -- (0.000,1.800);\n  \\fill[ink] (0.000,0.000) circle (1.2pt);\n  \\fill[ink] (0.000,1.800) circle (1.2pt);\n  \\node[inner sep=0pt] at (0.450,2.272) {$3$ cm};\n  \\node[inner sep=0pt] at (1.512,0.900) {$8$ cm};\n  \\draw[ink] (2.500,0.000) -- (3.400,1.600) -- (4.300,0.000);\n  \\draw[ink] (2.500,0.000) arc (180:360:0.900 and 0.252);\n  \\draw[ink, dashed] (4.300,0.000) arc (0:180:0.900 and 0.252);\n  \\draw[ink, dashed] (3.400,0.000) -- (4.300,0.000);\n  \\draw[ink, dashed] (3.400,0.000) -- (3.400,1.600);\n  \\draw[ink] (3.540,0.000) -- (3.540,0.140) -- (3.400,0.140);\n  \\fill[ink] (3.400,0.000) circle (1.2pt);\n  \\fill[ink] (3.400,1.600) circle (1.2pt);\n  \\node[inner sep=0pt] at (3.850,-0.492) {$R$};\n  \\node[inner sep=0pt] at (3.200,0.480) {$h$};\n  \\node[inner sep=0pt] at (4.094,0.937) {$l$};\n\\end{tikzpicture}",
+      "caption": "Hình 2",
+      "pos": "right"
+     }
+    },
+    {
+     "type": "problem",
+     "label": "Bài 1.",
+     "tier": "onclass",
+     "level": 1,
+     "statement": "Quan sát Hình 3. Điền vào chỗ chấm.[[br]]a) [NB] Hình trụ có đường kính đáy $10$ cm thì bán kính đáy $R = $ [[blank:1.1cm]] cm.[[br]]b) [NB] Ở hình nón, đoạn nối đỉnh với một điểm trên đường tròn đáy là [[blank:2.4cm]].[[br]]c) [NB] Vẽ phác vào vở một hình trụ có bán kính đáy $2$ cm, chiều cao $5$ cm; ghi $R$, $h$ lên hình và tô đậm một đường sinh. Đường sinh đó dài [[blank:1.1cm]] cm.",
+     "dang_id": "NB1",
+     "answer": "a) $R = 5$ cm.[[br]]b) Đường sinh $l$.[[br]]c) $5$ cm (bằng chiều cao).",
+     "figure": {
+      "tikz": "\\begin{tikzpicture}[line width=0.8pt, font=\\small]\n  \\draw[ink] (0.000,1.600) ellipse (1.000 and 0.280);\n  \\draw[ink] (-1.000,0.000) arc (180:360:1.000 and 0.280);\n  \\draw[ink, dashed] (1.000,0.000) arc (0:180:1.000 and 0.280);\n  \\draw[ink] (-1.000,0.000) -- (-1.000,1.600);\n  \\draw[ink] (1.000,0.000) -- (1.000,1.600);\n  \\draw[ink] (0.000,1.600) -- (1.000,1.600);\n  \\draw[ink, dashed] (0.000,0.000) -- (0.000,1.600);\n  \\fill[ink] (0.000,0.000) circle (1.2pt);\n  \\fill[ink] (0.000,1.600) circle (1.2pt);\n  \\node[inner sep=0pt] at (1.722,0.800) {$12$ cm};\n  \\draw[ink] (2.700,0.000) -- (3.600,1.700) -- (4.500,0.000);\n  \\draw[ink] (2.700,0.000) arc (180:360:0.900 and 0.252);\n  \\draw[ink, dashed] (4.500,0.000) arc (0:180:0.900 and 0.252);\n  \\draw[ink, dashed] (3.600,0.000) -- (4.500,0.000);\n  \\draw[ink, dashed] (3.600,0.000) -- (3.600,1.700);\n  \\draw[ink] (3.740,0.000) -- (3.740,0.140) -- (3.600,0.140);\n  \\fill[ink] (3.600,0.000) circle (1.2pt);\n  \\fill[ink] (3.600,1.700) circle (1.2pt);\n  \\node[inner sep=0pt] at (4.050,-0.492) {$R$};\n  \\node[inner sep=0pt] at (3.400,0.510) {$h$};\n  \\node[inner sep=0pt] at (4.297,0.981) {$l$};\n\\end{tikzpicture}",
+      "caption": "Hình 3",
+      "pos": "right"
+     },
+     "figure_given": true
+    },
+    {
+     "type": "noted",
+     "variant": "example",
+     "text": "\\textbf{Ví dụ 2.} Một hộp sữa hình trụ có đường kính đáy $8$ cm, chiều cao $10$ cm (Hình 4). Tính diện tích xung quanh và thể tích của hộp (lấy $\\pi \\approx 3{,}14$).[[br]]{\\sffamily\\bfseries\\color{brand}Lời giải}[[br]]Bán kính đáy $R = 8 : 2 = [[fill:4]]$ (cm).[[br]]$S_{xq} = 2\\pi Rh \\approx 2 \\cdot 3{,}14 \\cdot 4 \\cdot 10 = [[fill:251{,}2]]$ (cm$^2$).[[br]]$V = \\pi R^2 h \\approx 3{,}14 \\cdot 4^2 \\cdot 10 = [[fill:502{,}4]]$ (cm$^3$).[[br]]Vậy $S_{xq} \\approx [[fill:251{,}2]]$ cm$^2$ và $V \\approx [[fill:502{,}4]]$ cm$^3$.",
+     "figure": {
+      "tikz": "\\begin{tikzpicture}[line width=0.8pt, font=\\small]\n  \\draw[ink] (0.000,1.400) ellipse (0.900 and 0.252);\n  \\draw[ink] (-0.900,0.000) arc (180:360:0.900 and 0.252);\n  \\draw[ink, dashed] (0.900,0.000) arc (0:180:0.900 and 0.252);\n  \\draw[ink] (-0.900,0.000) -- (-0.900,1.400);\n  \\draw[ink] (0.900,0.000) -- (0.900,1.400);\n  \\draw[ink] (0.000,1.400) -- (0.900,1.400);\n  \\draw[ink, dashed] (0.000,0.000) -- (0.000,1.400);\n  \\fill[ink] (0.000,0.000) circle (1.2pt);\n  \\fill[ink] (0.000,1.400) circle (1.2pt);\n  \\node[inner sep=0pt] at (1.623,0.700) {$10$ cm};\n\\end{tikzpicture}",
+      "caption": "Hình 4",
+      "pos": "right"
+     }
+    },
+    {
+     "type": "problem",
+     "label": "Bài 2.",
+     "tier": "onclass",
+     "level": 1,
+     "statement": "Một chiếc xô hình trụ có bán kính đáy $10$ cm, chiều cao $30$ cm (Hình 5). Điền vào chỗ chấm (lấy $\\pi \\approx 3{,}14$).[[br]]a) [NB] $S_{xq} = 2\\pi Rh \\approx$ [[blank:2.4cm]] cm$^2$.[[br]]b) [NB] $V = \\pi R^2 h \\approx$ [[blank:2.4cm]] cm$^3$.[[br]]c) [NB] Thể tích đó bằng [[blank:1.6cm]] lít.",
+     "dang_id": "NB2",
+     "answer": "a) $1884$ cm$^2$.[[br]]b) $9420$ cm$^3$.[[br]]c) $9{,}42$ lít.",
+     "figure": {
+      "tikz": "\\begin{tikzpicture}[line width=0.8pt, font=\\small]\n  \\draw[ink] (0.000,1.900) ellipse (1.000 and 0.280);\n  \\draw[ink] (-1.000,0.000) arc (180:360:1.000 and 0.280);\n  \\draw[ink, dashed] (1.000,0.000) arc (0:180:1.000 and 0.280);\n  \\draw[ink] (-1.000,0.000) -- (-1.000,1.900);\n  \\draw[ink] (1.000,0.000) -- (1.000,1.900);\n  \\draw[ink] (0.000,1.900) -- (1.000,1.900);\n  \\draw[ink, dashed] (0.000,0.000) -- (0.000,1.900);\n  \\fill[ink] (0.000,0.000) circle (1.2pt);\n  \\fill[ink] (0.000,1.900) circle (1.2pt);\n  \\node[inner sep=0pt] at (0.500,2.400) {$10$ cm};\n  \\node[inner sep=0pt] at (1.722,0.950) {$30$ cm};\n\\end{tikzpicture}",
+      "caption": "Hình 5",
+      "pos": "right"
+     },
+     "figure_given": true
+    },
+    {
+     "type": "problem",
+     "label": "Bài 3.",
+     "tier": "onclass",
+     "level": 1,
+     "statement": "Hình nón ở Hình 6 có bán kính đáy $R = 6$ cm, chiều cao $h = 8$ cm. Điền vào chỗ chấm (lấy $\\pi \\approx 3{,}14$).[[br]]a) [NB] $l^2 = R^2 + h^2 = $ [[blank:2.4cm]] $\\Rightarrow l = $ [[blank:1.1cm]] cm.[[br]]b) [NB] $S_{xq} = \\pi Rl \\approx$ [[blank:2.4cm]] cm$^2$.[[br]]c) [NB] $V = \\dfrac{1}{3}\\pi R^2 h \\approx$ [[blank:2.4cm]] cm$^3$.",
+     "dang_id": "NB3",
+     "answer": "a) $36 + 64 = 100$; $l = 10$ cm.[[br]]b) $188{,}4$ cm$^2$.[[br]]c) $301{,}44$ cm$^3$.",
+     "figure": {
+      "tikz": "\\begin{tikzpicture}[line width=0.8pt, font=\\small]\n  \\draw[ink] (-1.100,0.000) -- (0.000,1.500) -- (1.100,0.000);\n  \\draw[ink] (-1.100,0.000) arc (180:360:1.100 and 0.308);\n  \\draw[ink, dashed] (1.100,0.000) arc (0:180:1.100 and 0.308);\n  \\draw[ink, dashed] (0.000,0.000) -- (1.100,0.000);\n  \\draw[ink, dashed] (0.000,0.000) -- (0.000,1.500);\n  \\draw[ink] (0.140,0.000) -- (0.140,0.140) -- (0.000,0.140);\n  \\fill[ink] (0.000,0.000) circle (1.2pt);\n  \\fill[ink] (0.000,1.500) circle (1.2pt);\n  \\node[inner sep=0pt] at (0.550,-0.548) {$R$};\n  \\node[inner sep=0pt] at (-0.200,0.450) {$h$};\n  \\node[inner sep=0pt] at (0.776,0.916) {$l$};\n\\end{tikzpicture}",
+      "caption": "Hình 6",
+      "pos": "right"
+     },
+     "figure_given": true
+    },
+    {
+     "type": "problem",
+     "label": "Bài 4.",
+     "tier": "onclass",
+     "level": 1,
+     "statement": "Một quả bóng đá có dạng hình cầu đường kính $22$ cm. Điền vào chỗ chấm (lấy $\\pi \\approx 3{,}14$).[[br]]a) [NB] Diện tích da làm bóng: $S = 4\\pi R^2 \\approx$ [[blank:2.4cm]] cm$^2$.[[br]]b) [NB] Thể tích quả bóng: $V = \\dfrac{4}{3}\\pi R^3 \\approx$ [[blank:2.4cm]] cm$^3$ (làm tròn đến hàng phần trăm).",
+     "dang_id": "NB4",
+     "answer": "a) $4 \\cdot 3{,}14 \\cdot 11^2 = 1519{,}76$ cm$^2$.[[br]]b) $\\approx 5572{,}45$ cm$^3$."
+    },
+    {
+     "type": "problem",
+     "label": "Bài 5.",
+     "tier": "onclass",
+     "level": 1,
+     "statement": "[NB] Điền vào chỗ chấm: $11\\,304$ cm$^3 = $ [[blank:1.6cm]] lít; \\quad $0{,}5024$ m$^3 = $ [[blank:1.6cm]] lít; \\quad $2$ lít $= $ [[blank:1.6cm]] cm$^3$.",
+     "dang_id": "NB5",
+     "answer": "$11{,}304$ lít; $502{,}4$ lít; $2000$ cm$^3$."
+    },
+    {
+     "type": "problem",
+     "label": "Bài 6.",
+     "tier": "onclass",
+     "level": 1,
+     "statement": "[NB] Một ly nước hình trụ cao $15$ cm, đường kính đáy $5$ cm, nước trong ly cao $10$ cm (Hình 7). Thả vào ly $5$ viên bi hình cầu giống hệt nhau, ngập hoàn toàn, nước dâng lên đúng miệng ly. Điền vào chỗ trống để hoàn thành bài giải (lấy $\\pi \\approx 3{,}14$).[[br]]a) Thể tích nước trong ly.[[br]]Bán kính đáy $R = $ [[blank:1.1cm]] cm.[[br]]$V = \\pi R^2 h \\approx 3{,}14 \\cdot$ [[blank:1.6cm]] $\\cdot 10 = $ [[blank:1.6cm]] (cm$^3$).[[br]]b) Thể tích mỗi viên bi.[[br]]Nước dâng thêm $15 - 10 = $ [[blank:1.1cm]] (cm).[[br]]Thể tích $5$ viên bi $\\approx 3{,}14 \\cdot 2{,}5^2 \\cdot 5 = $ [[blank:1.6cm]] (cm$^3$).[[br]]Vậy mỗi viên bi có thể tích khoảng [[blank:1.6cm]] cm$^3$.",
+     "dang_id": "NB6",
+     "answer": "a) $R = 2{,}5$ cm; $3{,}14 \\cdot 2{,}5^2 \\cdot 10 = 196{,}25$ (cm$^3$).[[br]]b) $5$ cm; $98{,}125$ cm$^3$; mỗi viên khoảng $19{,}625$ cm$^3$.",
+     "figure": {
+      "tikz": "\\begin{tikzpicture}[line width=0.8pt, font=\\small]\n  \\draw[ink] (0.000,2.000) ellipse (0.900 and 0.252);\n  \\draw[ink] (-0.900,0.000) arc (180:360:0.900 and 0.252);\n  \\draw[ink, dashed] (0.900,0.000) arc (0:180:0.900 and 0.252);\n  \\draw[ink] (-0.900,0.000) -- (-0.900,2.000);\n  \\draw[ink] (0.900,0.000) -- (0.900,2.000);\n  \\draw[ink] (0.000,2.000) -- (0.900,2.000);\n  \\draw[ink, dashed] (0.000,0.000) -- (0.000,2.000);\n  \\fill[ink] (0.000,0.000) circle (1.2pt);\n  \\fill[ink] (0.000,2.000) circle (1.2pt);\n  \\node[inner sep=0pt] at (0.450,2.472) {$2{,}5$ cm};\n  \\node[inner sep=0pt] at (1.623,1.000) {$15$ cm};\n\\end{tikzpicture}",
+      "caption": "Hình 7",
+      "pos": "right"
+     },
+     "figure_given": true
+    }
+   ],
+   "teacher_note": "Hai ví dụ chữa 6 phút. Bài 1–5 mỗi câu khoảng 1 phút (hình đã vẽ sẵn, chỉ thay số). Bài 6 là Câu IV.1 đề minh hoạ vào 10 dạng điền khuyết — đúng barem hai ý."
+  },
+  {
+   "kind": "practice2",
+   "number": 4,
+   "title": "Luyện tập 2",
+   "blocks": [
+    {
+     "type": "noted",
+     "variant": "example",
+     "text": "\\textbf{Ví dụ 3.} Người ta dùng một thùng phuy hình trụ để chứa dầu: đáy là hình tròn đường kính $60$ cm, thùng cao $90$ cm (Hình 8). Cần bao nhiêu xăng-ti-mét vuông tôn để làm thân thùng, và thùng chứa được bao nhiêu lít dầu (lấy $\\pi \\approx 3{,}14$)?[[br]]{\\sffamily\\bfseries\\color{brand}Lời giải}[[br]]Bán kính đáy $R = 60 : 2 = 30$ (cm).[[br]]$S_{xq} = 2\\pi Rh \\approx 2 \\cdot 3{,}14 \\cdot 30 \\cdot 90 = [[fill:16\\,956]]$ (cm$^2$).[[br]]$V = \\pi R^2 h \\approx 3{,}14 \\cdot 30^2 \\cdot 90 = 254\\,340$ (cm$^3$) $= [[fill:254{,}34]]$ (lít).[[br]]Vậy $S_{xq} \\approx [[fill:16\\,956]]$ cm$^2$, thùng chứa khoảng $[[fill:254{,}34]]$ lít.",
+     "figure": {
+      "tikz": "\\begin{tikzpicture}[line width=0.8pt, font=\\small]\n  \\draw[ink] (0.000,1.600) ellipse (1.100 and 0.308);\n  \\draw[ink] (-1.100,0.000) arc (180:360:1.100 and 0.308);\n  \\draw[ink, dashed] (1.100,0.000) arc (0:180:1.100 and 0.308);\n  \\draw[ink] (-1.100,0.000) -- (-1.100,1.600);\n  \\draw[ink] (1.100,0.000) -- (1.100,1.600);\n  \\draw[ink] (0.000,1.600) -- (1.100,1.600);\n  \\draw[ink, dashed] (0.000,0.000) -- (0.000,1.600);\n  \\fill[ink] (0.000,0.000) circle (1.2pt);\n  \\fill[ink] (0.000,1.600) circle (1.2pt);\n  \\node[inner sep=0pt] at (0.550,2.128) {$30$ cm};\n  \\node[inner sep=0pt] at (1.823,0.800) {$90$ cm};\n\\end{tikzpicture}",
+      "caption": "Hình 8",
+      "pos": "right"
+     }
+    },
+    {
+     "type": "problem",
+     "label": "Bài 7.",
+     "tier": "onclass",
+     "level": 2,
+     "statement": "[TH] Gia đình bạn Khánh dùng một thùng đựng nước hình trụ có bán kính đáy $50$ cm, chiều cao $150$ cm. Tính diện tích xung quanh và thể tích của thùng theo lít (lấy $\\pi \\approx 3{,}14$).",
+     "dang_id": "TH1",
+     "answer": "$S_{xq} = 2\\pi Rh \\approx 2 \\cdot 3{,}14 \\cdot 50 \\cdot 150 = 47\\,100$ (cm$^2$).[[br]]$V = \\pi R^2 h \\approx 3{,}14 \\cdot 50^2 \\cdot 150 = 1\\,177\\,500$ (cm$^3$) $= 1177{,}5$ (lít).[[br]]Vậy $S_{xq} \\approx 47\\,100$ cm$^2$, thùng chứa khoảng $1177{,}5$ lít.",
+     "hints": [
+      "Đề cho bán kính hay đường kính? Hai công thức cần những số nào?",
+      "Đổi cm$^3$ ra lít thì chia cho bao nhiêu?"
+     ]
+    },
+    {
+     "type": "problem",
+     "label": "Bài 8.",
+     "tier": "onclass",
+     "level": 2,
+     "statement": "[TH] Một thùng tôn hình trụ có bán kính đáy $0{,}4$ m, chiều cao $1$ m. Tính thể tích của thùng và diện tích tôn làm thân thùng (không tính nắp và đáy) (lấy $\\pi \\approx 3{,}14$).",
+     "dang_id": "TH1",
+     "answer": "$V = \\pi R^2 h \\approx 3{,}14 \\cdot 0{,}4^2 \\cdot 1 = 0{,}5024$ (m$^3$).[[br]]$S_{xq} = 2\\pi Rh \\approx 2 \\cdot 3{,}14 \\cdot 0{,}4 \\cdot 1 = 2{,}512$ (m$^2$).[[br]]Vậy thùng có thể tích khoảng $0{,}5024$ m$^3$, thân thùng cần khoảng $2{,}512$ m$^2$ tôn.",
+     "hints": [
+      "Thân thùng (không nắp, không đáy) ứng với phần diện tích nào của hình trụ?",
+      "Thể tích cần những số nào?"
+     ]
+    },
+    {
+     "type": "noted",
+     "variant": "example",
+     "text": "\\textbf{Ví dụ 4.} Một chiếc cốc giấy hình trụ không nắp có đường kính đáy $7$ cm, chiều cao $9$ cm (Hình 9). Tính diện tích giấy làm cốc (bỏ qua mép dán, làm tròn đến hàng phần mười) (lấy $\\pi \\approx 3{,}14$).[[br]]{\\sffamily\\bfseries\\color{brand}Lời giải}[[br]]Bán kính đáy $R = 3{,}5$ cm; cốc không nắp nên giấy gồm thân cốc và [[fill:một]] đáy.[[br]]$S = 2\\pi Rh + \\pi R^2 \\approx 2 \\cdot 3{,}14 \\cdot 3{,}5 \\cdot 9 + 3{,}14 \\cdot 3{,}5^2 = [[fill:236{,}285]]$ (cm$^2$).[[br]]Vậy cần khoảng $[[fill:236{,}3]]$ cm$^2$ giấy.",
+     "figure": {
+      "tikz": "\\begin{tikzpicture}[line width=0.8pt, font=\\small]\n  \\draw[ink] (0.000,2.000) ellipse (0.900 and 0.252);\n  \\draw[ink] (-0.900,0.000) arc (180:360:0.900 and 0.252);\n  \\draw[ink, dashed] (0.900,0.000) arc (0:180:0.900 and 0.252);\n  \\draw[ink] (-0.900,0.000) -- (-0.900,2.000);\n  \\draw[ink] (0.900,0.000) -- (0.900,2.000);\n  \\draw[ink] (0.000,2.000) -- (0.900,2.000);\n  \\draw[ink, dashed] (0.000,0.000) -- (0.000,2.000);\n  \\fill[ink] (0.000,0.000) circle (1.2pt);\n  \\fill[ink] (0.000,2.000) circle (1.2pt);\n  \\node[inner sep=0pt] at (0.450,2.472) {$3{,}5$ cm};\n  \\node[inner sep=0pt] at (1.512,1.000) {$9$ cm};\n\\end{tikzpicture}",
+      "caption": "Hình 9",
+      "pos": "right"
+     }
+    },
+    {
+     "type": "problem",
+     "label": "Bài 9.",
+     "tier": "onclass",
+     "level": 2,
+     "statement": "[TH] Một xô nước inox hình trụ không nắp có chiều cao $0{,}6$ m, đường kính đáy $0{,}4$ m. Tính diện tích inox để làm chiếc xô (bỏ qua phần mép nối, làm tròn đến hàng phần trăm) (lấy $\\pi \\approx 3{,}14$).",
+     "dang_id": "TH2",
+     "answer": "Bán kính đáy $R = 0{,}4 : 2 = 0{,}2$ (m).[[br]]Xô không nắp: $S = 2\\pi Rh + \\pi R^2 \\approx 2 \\cdot 3{,}14 \\cdot 0{,}2 \\cdot 0{,}6 + 3{,}14 \\cdot 0{,}2^2 = 0{,}8792$ (m$^2$).[[br]]Vậy cần khoảng $0{,}88$ m$^2$ inox.",
+     "hints": [
+      "Chiếc xô gồm những mặt nào? Mặt nào không có?",
+      "Đề cho đường kính — bán kính bằng bao nhiêu?"
+     ]
+    },
+    {
+     "type": "noted",
+     "variant": "example",
+     "text": "\\textbf{Ví dụ 5.} Một chiếc nón lá có đường kính vành nón $40$ cm, chiều cao $h = 15$ cm (Hình 10). Tính diện tích lá cần để phủ mặt nón (bỏ qua mép) (lấy $\\pi \\approx 3{,}14$).[[br]]{\\sffamily\\bfseries\\color{brand}Lời giải}[[br]]$R = 40 : 2 = 20$ (cm).[[br]]Theo định lí Pythagore: $l^2 = R^2 + h^2 = [[fill:20^2 + 15^2]] = 625 \\Rightarrow l = [[fill:25]]$ (cm).[[br]]$S_{xq} = \\pi Rl \\approx 3{,}14 \\cdot 20 \\cdot [[fill:25]] = [[fill:1570]]$ (cm$^2$).[[br]]Vậy cần khoảng $[[fill:1570]]$ cm$^2$ lá.",
+     "figure": {
+      "tikz": "\\begin{tikzpicture}[line width=0.8pt, font=\\small]\n  \\draw[ink] (-1.300,0.000) -- (0.000,1.000) -- (1.300,0.000);\n  \\draw[ink] (-1.300,0.000) arc (180:360:1.300 and 0.364);\n  \\draw[ink, dashed] (1.300,0.000) arc (0:180:1.300 and 0.364);\n  \\draw[ink, dashed] (0.000,0.000) -- (1.300,0.000);\n  \\draw[ink, dashed] (0.000,0.000) -- (0.000,1.000);\n  \\draw[ink] (0.140,0.000) -- (0.140,0.140) -- (0.000,0.140);\n  \\fill[ink] (0.000,0.000) circle (1.2pt);\n  \\fill[ink] (0.000,1.000) circle (1.2pt);\n  \\node[inner sep=0pt] at (0.650,-0.604) {$R$};\n  \\node[inner sep=0pt] at (-0.200,0.300) {$h$};\n  \\node[inner sep=0pt] at (0.821,0.722) {$l$};\n\\end{tikzpicture}",
+      "caption": "Hình 10",
+      "pos": "right"
+     }
+    },
+    {
+     "type": "problem",
+     "label": "Bài 10.",
+     "tier": "onclass",
+     "level": 2,
+     "statement": "[TH] Một cái phễu hình nón có bán kính miệng $5$ cm, đường sinh $13$ cm. Tính chiều cao và thể tích của phễu (lấy $\\pi \\approx 3{,}14$).",
+     "dang_id": "TH3",
+     "answer": "$h^2 = l^2 - R^2 = 169 - 25 = 144 \\Rightarrow h = 12$ (cm) (định lí Pythagore).[[br]]$V = \\dfrac{1}{3}\\pi R^2 h \\approx \\dfrac{1}{3} \\cdot 3{,}14 \\cdot 25 \\cdot 12 = 314$ (cm$^3$).[[br]]Vậy phễu cao $12$ cm, thể tích khoảng $314$ cm$^3$.",
+     "hints": [
+      "Chiều cao, bán kính và đường sinh của hình nón liên hệ thế nào?",
+      "Thể tích hình nón khác thể tích hình trụ cùng đáy, cùng chiều cao ở chỗ nào?"
+     ]
+    },
+    {
+     "type": "noted",
+     "variant": "example",
+     "text": "\\textbf{Ví dụ 6.} Một quả bóng rổ hình cầu có đường kính $24$ cm (Hình 11). Tính thể tích không khí trong bóng theo lít (làm tròn đến hàng phần trăm) (lấy $\\pi \\approx 3{,}14$).[[br]]{\\sffamily\\bfseries\\color{brand}Lời giải}[[br]]$R = 24 : 2 = [[fill:12]]$ (cm).[[br]]$V = \\dfrac{4}{3}\\pi R^3 \\approx \\dfrac{4}{3} \\cdot 3{,}14 \\cdot [[fill:12]]^3 = 7234{,}56$ (cm$^3$).[[br]]Vậy quả bóng chứa khoảng $[[fill:7{,}23]]$ lít không khí.",
+     "figure": {
+      "tikz": "\\begin{tikzpicture}[line width=0.8pt, font=\\small]\n  \\draw[ink] (0.000,0.000) circle (1.000);\n  \\draw[ink] (-1.000,0.000) arc (180:360:1.000 and 0.300);\n  \\draw[ink, dashed] (1.000,0.000) arc (0:180:1.000 and 0.300);\n  \\draw[ink] (0.000,0.000) -- (0.710,0.710);\n  \\fill[ink] (0.000,0.000) circle (1.2pt);\n  \\node[inner sep=0pt] at (-0.250,0.060) {$O$};\n  \\node[inner sep=0pt] at (0.200,0.600) {$R$};\n\\end{tikzpicture}",
+      "caption": "Hình 11",
+      "pos": "right"
+     }
+    },
+    {
+     "type": "problem",
+     "label": "Bài 11.",
+     "tier": "onclass",
+     "level": 2,
+     "statement": "[TH] Để bơm căng quả bóng đá ở Bài 4 (đang xẹp hoàn toàn), người ta dùng máy bơm mỗi giây đưa được $0{,}5$ lít không khí vào bóng. Hỏi sau bao nhiêu giây thì bóng đầy hơi (làm tròn đến chữ số thập phân thứ nhất)?",
+     "dang_id": "TH4",
+     "answer": "Bán kính $R = 11$ cm.[[br]]$V = \\dfrac{4}{3}\\pi R^3 \\approx \\dfrac{4}{3} \\cdot 3{,}14 \\cdot 11^3 \\approx 5572{,}45$ (cm$^3$) $\\approx 5{,}572$ (lít).[[br]]Thời gian bơm: $5{,}572 : 0{,}5 \\approx 11{,}1$ (giây).[[br]]Vậy sau khoảng $11{,}1$ giây bóng đầy hơi.",
+     "hints": [
+      "Lượng không khí cần bơm bằng gì của quả bóng?",
+      "Máy bơm tính theo lít, thể tích tính theo cm$^3$ — phải làm gì trước khi chia?"
+     ]
+    },
+    {
+     "type": "noted",
+     "variant": "example",
+     "text": "\\textbf{Ví dụ 7.} Một bể cá hình trụ có bán kính đáy $20$ cm đang chứa nước. Thả một hòn đá vào bể, đá ngập hoàn toàn và mực nước dâng thêm $3$ cm (Hình 12). Tính thể tích hòn đá (lấy $\\pi \\approx 3{,}14$).[[br]]{\\sffamily\\bfseries\\color{brand}Lời giải}[[br]]Thể tích hòn đá bằng thể tích phần nước [[fill:dâng thêm]].[[br]]Phần nước đó là hình trụ $R = 20$ cm, $h = 3$ cm: $V \\approx 3{,}14 \\cdot 20^2 \\cdot 3 = [[fill:3768]]$ (cm$^3$).[[br]]Vậy hòn đá có thể tích khoảng $[[fill:3768]]$ cm$^3$.",
+     "figure": {
+      "tikz": "\\begin{tikzpicture}[line width=0.8pt, font=\\small]\n  \\draw[ink] (0.000,1.600) ellipse (1.300 and 0.364);\n  \\draw[ink] (-1.300,0.000) arc (180:360:1.300 and 0.364);\n  \\draw[ink, dashed] (1.300,0.000) arc (0:180:1.300 and 0.364);\n  \\draw[ink] (-1.300,0.000) -- (-1.300,1.600);\n  \\draw[ink] (1.300,0.000) -- (1.300,1.600);\n  \\draw[ink] (0.000,1.600) -- (1.300,1.600);\n  \\draw[ink, dashed] (0.000,0.000) -- (0.000,1.600);\n  \\fill[ink] (0.000,0.000) circle (1.2pt);\n  \\fill[ink] (0.000,1.600) circle (1.2pt);\n  \\node[inner sep=0pt] at (0.650,2.184) {$20$ cm};\n\\end{tikzpicture}",
+      "caption": "Hình 12",
+      "pos": "right"
+     }
+    },
+    {
+     "type": "problem",
+     "label": "Bài 12.",
+     "tier": "onclass",
+     "level": 2,
+     "statement": "[TH] Sau một thời gian dùng nước, mực nước trong thùng ở Bài 7 thấp hơn $40$ cm so với lúc đầu. Tính thể tích nước gia đình bạn Khánh đã dùng (theo lít) (lấy $\\pi \\approx 3{,}14$).",
+     "dang_id": "TH5",
+     "answer": "Phần nước đã dùng là hình trụ bán kính đáy $50$ cm, chiều cao $40$ cm.[[br]]$V = \\pi R^2 h \\approx 3{,}14 \\cdot 50^2 \\cdot 40 = 314\\,000$ (cm$^3$) $= 314$ (lít).[[br]]Vậy gia đình đã dùng khoảng $314$ lít nước.",
+     "hints": [
+      "Phần nước đã dùng có hình gì? Bán kính đáy và chiều cao của nó là bao nhiêu?",
+      "Đổi kết quả sang lít."
+     ]
+    }
+   ],
+   "teacher_note": "Mỗi ví dụ một dạng Thông hiểu, HS làm ngay bài kề sau. Bài 11, Bài 12 dùng lại vật ở Bài 4, Bài 7 — đúng kiểu ý b) nối tiếp ý a) của Câu IV.1."
+  },
+  {
+   "kind": "reflection",
+   "number": 5,
+   "title": "Sơ đồ tư duy",
+   "blocks": [
+    {
+     "type": "mindmap",
+     "caption": "Sơ đồ tư duy: Hình trụ, hình nón, hình cầu",
+     "root": "HÌNH KHỐI",
+     "branches": [
+      {
+       "label": "HÌNH TRỤ",
+       "children": [
+        {
+         "label": "$S_{xq} = 2\\pi Rh$"
+        },
+        {
+         "label": "$V = \\pi R^2 h$"
+        }
+       ]
+      },
+      {
+       "label": "HÌNH NÓN",
+       "children": [
+        {
+         "label": "$l^2 = R^2 + h^2$"
+        },
+        {
+         "label": "$S_{xq} = \\pi Rl$"
+        },
+        {
+         "label": "$V = \\dfrac{1}{3}\\pi R^2 h$"
+        }
+       ]
+      },
+      {
+       "label": "HÌNH CẦU",
+       "children": [
+        {
+         "label": "$S = 4\\pi R^2$"
+        },
+        {
+         "label": "$V = \\dfrac{4}{3}\\pi R^3$"
+        }
+       ]
+      },
+      {
+       "label": "TRƯỚC KHI THAY SỐ",
+       "children": [
+        {
+         "label": "Đường kính chia đôi"
+        },
+        {
+         "label": "Có nắp, có đáy không?"
+        },
+        {
+         "label": "Đổi đơn vị"
+        }
+       ]
+      },
+      {
+       "label": "MỰC NƯỚC",
+       "children": [
+        {
+         "label": "Nước dâng $=$ thể tích vật chìm"
+        },
+        {
+         "label": "Nước dùng $=$ hình trụ cao bằng độ hạ"
+        }
+       ]
+      }
+     ]
+    },
+    {
+     "type": "para",
+     "text": "\\textbf{BÀI TẬP VỀ NHÀ (Hình trụ, hình nón, hình cầu).}"
+    },
+    {
+     "type": "problem",
+     "label": "BTVN 1.",
+     "tier": "btvn",
+     "level": 1,
+     "statement": "Quan sát Hình 13. Điền vào chỗ chấm.[[br]]a) [NB] Hình nón có chiều cao $h$ và đường sinh $l$; tam giác tạo bởi $h$, bán kính đáy $R$ và $l$ vuông tại [[blank:3.2cm]].[[br]]b) [NB] Hình cầu có đường kính $18$ cm thì bán kính $R = $ [[blank:1.1cm]] cm.",
+     "dang_id": "NB1",
+     "answer": "a) Tâm của đáy.[[br]]b) $R = 9$ cm.",
+     "figure": {
+      "tikz": "\\begin{tikzpicture}[line width=0.8pt, font=\\small]\n  \\draw[ink] (-1.000,0.000) -- (0.000,1.700) -- (1.000,0.000);\n  \\draw[ink] (-1.000,0.000) arc (180:360:1.000 and 0.280);\n  \\draw[ink, dashed] (1.000,0.000) arc (0:180:1.000 and 0.280);\n  \\draw[ink, dashed] (0.000,0.000) -- (1.000,0.000);\n  \\draw[ink, dashed] (0.000,0.000) -- (0.000,1.700);\n  \\draw[ink] (0.140,0.000) -- (0.140,0.140) -- (0.000,0.140);\n  \\fill[ink] (0.000,0.000) circle (1.2pt);\n  \\fill[ink] (0.000,1.700) circle (1.2pt);\n  \\node[inner sep=0pt] at (0.500,-0.520) {$R$};\n  \\node[inner sep=0pt] at (-0.200,0.510) {$h$};\n  \\node[inner sep=0pt] at (0.741,0.992) {$l$};\n  \\draw[ink] (3.000,0.800) circle (0.850);\n  \\draw[ink] (2.150,0.800) arc (180:360:0.850 and 0.255);\n  \\draw[ink, dashed] (3.850,0.800) arc (0:180:0.850 and 0.255);\n  \\draw[ink] (3.000,0.800) -- (3.603,1.403);\n  \\fill[ink] (3.000,0.800) circle (1.2pt);\n  \\node[inner sep=0pt] at (2.750,0.860) {$O$};\n  \\node[inner sep=0pt] at (3.170,1.310) {$R$};\n\\end{tikzpicture}",
+      "caption": "Hình 13",
+      "pos": "right"
+     },
+     "figure_given": true
+    },
+    {
+     "type": "problem",
+     "label": "BTVN 2.",
+     "tier": "btvn",
+     "level": 1,
+     "statement": "Hình trụ ở Hình 14 có bán kính đáy $5$ cm, chiều cao $20$ cm. Điền vào chỗ chấm (lấy $\\pi \\approx 3{,}14$).[[br]]a) [NB] $S_{xq} \\approx$ [[blank:1.6cm]] cm$^2$.[[br]]b) [NB] $V \\approx$ [[blank:1.6cm]] cm$^3$.",
+     "dang_id": "NB2",
+     "answer": "a) $628$ cm$^2$.[[br]]b) $1570$ cm$^3$.",
+     "figure": {
+      "tikz": "\\begin{tikzpicture}[line width=0.8pt, font=\\small]\n  \\draw[ink] (0.000,2.000) ellipse (0.800 and 0.224);\n  \\draw[ink] (-0.800,0.000) arc (180:360:0.800 and 0.224);\n  \\draw[ink, dashed] (0.800,0.000) arc (0:180:0.800 and 0.224);\n  \\draw[ink] (-0.800,0.000) -- (-0.800,2.000);\n  \\draw[ink] (0.800,0.000) -- (0.800,2.000);\n  \\draw[ink] (0.000,2.000) -- (0.800,2.000);\n  \\draw[ink, dashed] (0.000,0.000) -- (0.000,2.000);\n  \\fill[ink] (0.000,0.000) circle (1.2pt);\n  \\fill[ink] (0.000,2.000) circle (1.2pt);\n  \\node[inner sep=0pt] at (0.400,2.444) {$5$ cm};\n  \\node[inner sep=0pt] at (1.522,1.000) {$20$ cm};\n\\end{tikzpicture}",
+      "caption": "Hình 14",
+      "pos": "right"
+     },
+     "figure_given": true
+    },
+    {
+     "type": "problem",
+     "label": "BTVN 3.",
+     "tier": "btvn",
+     "level": 1,
+     "statement": "Hình nón ở Hình 15 có bán kính đáy $R = 9$ cm, chiều cao $h = 12$ cm. Điền vào chỗ chấm (lấy $\\pi \\approx 3{,}14$).[[br]]a) [NB] $l = \\sqrt{R^2 + h^2} = $ [[blank:1.1cm]] cm.[[br]]b) [NB] $S_{xq} = \\pi Rl \\approx$ [[blank:1.6cm]] cm$^2$.",
+     "dang_id": "NB3",
+     "answer": "a) $l = 15$ cm.[[br]]b) $423{,}9$ cm$^2$.",
+     "figure": {
+      "tikz": "\\begin{tikzpicture}[line width=0.8pt, font=\\small]\n  \\draw[ink] (-1.100,0.000) -- (0.000,1.500) -- (1.100,0.000);\n  \\draw[ink] (-1.100,0.000) arc (180:360:1.100 and 0.308);\n  \\draw[ink, dashed] (1.100,0.000) arc (0:180:1.100 and 0.308);\n  \\draw[ink, dashed] (0.000,0.000) -- (1.100,0.000);\n  \\draw[ink, dashed] (0.000,0.000) -- (0.000,1.500);\n  \\draw[ink] (0.140,0.000) -- (0.140,0.140) -- (0.000,0.140);\n  \\fill[ink] (0.000,0.000) circle (1.2pt);\n  \\fill[ink] (0.000,1.500) circle (1.2pt);\n  \\node[inner sep=0pt] at (0.550,-0.548) {$R$};\n  \\node[inner sep=0pt] at (-0.200,0.450) {$h$};\n  \\node[inner sep=0pt] at (0.776,0.916) {$l$};\n\\end{tikzpicture}",
+      "caption": "Hình 15",
+      "pos": "right"
+     },
+     "figure_given": true
+    },
+    {
+     "type": "problem",
+     "label": "BTVN 4.",
+     "tier": "btvn",
+     "level": 1,
+     "statement": "Một quả nặng có dạng hình cầu đường kính $4$ cm. Điền vào chỗ chấm (lấy $\\pi \\approx 3{,}14$).[[br]]a) [NB] $R = $ [[blank:1.1cm]] cm.[[br]]b) [NB] $V = \\dfrac{4}{3}\\pi R^3 \\approx$ [[blank:1.6cm]] cm$^3$ (làm tròn đến hàng phần trăm).",
+     "dang_id": "NB4",
+     "answer": "a) $R = 2$ cm.[[br]]b) $33{,}49$ cm$^3$."
+    },
+    {
+     "type": "problem",
+     "label": "BTVN 5.",
+     "tier": "btvn",
+     "level": 1,
+     "statement": "[NB] Điền vào chỗ chấm: $250\\,000$ cm$^3 = $ [[blank:1.6cm]] lít.",
+     "dang_id": "NB5",
+     "answer": "$250$ lít."
+    },
+    {
+     "type": "problem",
+     "label": "BTVN 6.",
+     "tier": "btvn",
+     "level": 1,
+     "statement": "[NB] Một xô hình trụ cao $25$ cm, bán kính đáy $12$ cm (Hình 16). Người ta dùng xô múc nước đổ vào một bể $150$ lít, mỗi lần chỉ múc $80\\%$ thể tích xô. Điền vào chỗ trống để hoàn thành bài giải (lấy $\\pi \\approx 3{,}14$).[[br]]a) Thể tích xô.[[br]]$V = \\pi R^2 h \\approx 3{,}14 \\cdot$ [[blank:1.6cm]] $\\cdot 25 = $ [[blank:1.6cm]] (cm$^3$).[[br]]b) Số lần múc.[[br]]Mỗi lần múc được $80\\% \\cdot 11\\,304 = $ [[blank:1.6cm]] (cm$^3$) $= $ [[blank:1.6cm]] (lít).[[br]]$150 : 9{,}0432 \\approx 16{,}59$ nên cần múc ít nhất [[blank:1.1cm]] xô.[[br]]Vậy cần múc ít nhất [[blank:1.1cm]] xô để đổ đầy bể.",
+     "dang_id": "NB6",
+     "answer": "a) $12^2$; $11\\,304$ cm$^3$.[[br]]b) $9043{,}2$ cm$^3$ $= 9{,}0432$ lít; $17$ xô.",
+     "figure": {
+      "tikz": "\\begin{tikzpicture}[line width=0.8pt, font=\\small]\n  \\draw[ink] (0.000,1.900) ellipse (1.100 and 0.308);\n  \\draw[ink] (-1.100,0.000) arc (180:360:1.100 and 0.308);\n  \\draw[ink, dashed] (1.100,0.000) arc (0:180:1.100 and 0.308);\n  \\draw[ink] (-1.100,0.000) -- (-1.100,1.900);\n  \\draw[ink] (1.100,0.000) -- (1.100,1.900);\n  \\draw[ink] (0.000,1.900) -- (1.100,1.900);\n  \\draw[ink, dashed] (0.000,0.000) -- (0.000,1.900);\n  \\fill[ink] (0.000,0.000) circle (1.2pt);\n  \\fill[ink] (0.000,1.900) circle (1.2pt);\n  \\node[inner sep=0pt] at (0.550,2.428) {$12$ cm};\n  \\node[inner sep=0pt] at (1.823,0.950) {$25$ cm};\n\\end{tikzpicture}",
+      "caption": "Hình 16",
+      "pos": "right"
+     },
+     "figure_given": true
+    },
+    {
+     "type": "problem",
+     "label": "BTVN 7.",
+     "tier": "btvn",
+     "level": 2,
+     "statement": "[TH] Một đoạn ống nước hình trụ dài $2$ m, đường kính trong $10$ cm. Tính diện tích xung quanh (m$^2$) và thể tích nước ống chứa được (lít) (lấy $\\pi \\approx 3{,}14$).",
+     "dang_id": "TH1",
+     "answer": "$R = 0{,}05$ m.[[br]]$S_{xq} = 2\\pi Rh \\approx 2 \\cdot 3{,}14 \\cdot 0{,}05 \\cdot 2 = 0{,}628$ (m$^2$).[[br]]$V = \\pi R^2 h \\approx 3{,}14 \\cdot 0{,}05^2 \\cdot 2 = 0{,}0157$ (m$^3$) $= 15{,}7$ (lít).[[br]]Vậy $S_{xq} \\approx 0{,}628$ m$^2$, ống chứa khoảng $15{,}7$ lít nước.",
+     "hints": [
+      "Đổi đường kính sang mét và lấy bán kính.",
+      "$1$ m$^3$ bằng bao nhiêu lít?"
+     ]
+    },
+    {
+     "type": "problem",
+     "label": "BTVN 8.",
+     "tier": "btvn",
+     "level": 2,
+     "statement": "[TH] Chi phí làm thân mỗi thùng tôn ở Bài 8 (không tính nắp và đáy) là $100$ nghìn đồng mỗi m$^2$. Tính số tiền cần để làm $400$ thùng.",
+     "dang_id": "TH2",
+     "answer": "Thân mỗi thùng: $S_{xq} \\approx 2{,}512$ m$^2$ (Bài 8).[[br]]Chi phí một thùng: $2{,}512 \\cdot 100\\,000 = 251\\,200$ (đồng).[[br]]Chi phí $400$ thùng: $251\\,200 \\cdot 400 = 100\\,480\\,000$ (đồng).[[br]]Vậy cần $100\\,480\\,000$ đồng.",
+     "hints": [
+      "Phần tôn cần cho mỗi thùng là diện tích nào?",
+      "Tính tiền một thùng trước, rồi nhân số thùng."
+     ]
+    },
+    {
+     "type": "problem",
+     "label": "BTVN 9.",
+     "tier": "btvn",
+     "level": 2,
+     "statement": "[TH] Một chiếc mũ sinh nhật hình nón có bán kính đáy $7$ cm, đường sinh $25$ cm. Tính diện tích giấy làm mũ (bỏ qua mép dán) và chiều cao của mũ (lấy $\\pi \\approx 3{,}14$).",
+     "dang_id": "TH3",
+     "answer": "$S_{xq} = \\pi Rl \\approx 3{,}14 \\cdot 7 \\cdot 25 = 549{,}5$ (cm$^2$).[[br]]Theo định lí Pythagore: $h^2 = l^2 - R^2 = 625 - 49 = 576 \\Rightarrow h = 24$ (cm).[[br]]Vậy cần khoảng $549{,}5$ cm$^2$ giấy, mũ cao $24$ cm.",
+     "hints": [
+      "Giấy làm mũ là phần nào của hình nón?",
+      "Chiều cao, bán kính đáy, đường sinh liên hệ thế nào?"
+     ]
+    },
+    {
+     "type": "problem",
+     "label": "BTVN 10.",
+     "tier": "btvn",
+     "level": 2,
+     "statement": "[TH] Một quả cầu trang trí có bán kính $6$ cm. Tính diện tích mặt cầu và thể tích quả cầu (lấy $\\pi \\approx 3{,}14$).",
+     "dang_id": "TH4",
+     "answer": "$S = 4\\pi R^2 \\approx 4 \\cdot 3{,}14 \\cdot 36 = 452{,}16$ (cm$^2$).[[br]]$V = \\dfrac{4}{3}\\pi R^3 \\approx \\dfrac{4}{3} \\cdot 3{,}14 \\cdot 216 = 904{,}32$ (cm$^3$).[[br]]Vậy $S \\approx 452{,}16$ cm$^2$, $V \\approx 904{,}32$ cm$^3$.",
+     "hints": [
+      "Diện tích mặt cầu dùng $R^2$ hay $R^3$?",
+      "Thể tích hình cầu có hệ số nào đứng trước?"
+     ]
+    },
+    {
+     "type": "problem",
+     "label": "BTVN 11.",
+     "tier": "btvn",
+     "level": 2,
+     "statement": "[TH] Thả quả nặng ở BTVN 4 vào một cốc thuỷ tinh hình trụ đang đầy nước, có bán kính đáy $3$ cm và diện tích xung quanh $60\\pi$ cm$^2$; nước tràn ra ngoài. Tính thể tích nước còn lại trong cốc (lấy $\\pi \\approx 3{,}14$).",
+     "dang_id": "TH5",
+     "answer": "$S_{xq} = 2\\pi Rh = 60\\pi$, $R = 3 \\Rightarrow h = 10$ (cm).[[br]]Thể tích cốc: $V = \\pi R^2 h \\approx 3{,}14 \\cdot 9 \\cdot 10 = 282{,}6$ (cm$^3$).[[br]]Nước tràn ra bằng thể tích quả nặng $\\approx 33{,}49$ (cm$^3$).[[br]]Nước còn lại $\\approx 282{,}6 - 33{,}49 = 249{,}11$ (cm$^3$).[[br]]Vậy còn khoảng $249{,}11$ cm$^3$ nước.",
+     "hints": [
+      "Từ diện tích xung quanh tìm được đại lượng nào của cốc?",
+      "Nước tràn ra bằng thể tích của vật nào?"
+     ]
+    }
+   ],
+   "teacher_note": "BTVN 6 là Câu IV.1 đề vào 10 năm 2026 dạng điền khuyết; BTVN 11 là Câu IV.1 dạng nước tràn. Chữa ở ca đề luyện cuối kì II."
+  }
+ ]
+}

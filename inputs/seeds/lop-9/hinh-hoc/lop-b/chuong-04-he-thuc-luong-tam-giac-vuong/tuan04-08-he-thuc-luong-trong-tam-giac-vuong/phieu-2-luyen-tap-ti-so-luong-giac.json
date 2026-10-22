@@ -1,0 +1,494 @@
+{
+ "slug": "phieu-2-luyen-tap-ti-so-luong-giac",
+ "title": "Luyện tập tỉ số lượng giác: hai góc phụ nhau, máy tính cầm tay",
+ "eyebrow": "PHIẾU 2 • HÌNH HỌC 9 · CHƯƠNG IV — BÀI 11 (TIẾP)",
+ "grade_label": "Lớp 9 • Hình học",
+ "class_tier": "B",
+ "chuong": "chuong-04-he-thuc-luong-tam-giac-vuong",
+ "so_ca": 1,
+ "stages": [
+  {
+   "kind": "review",
+   "number": 1,
+   "title": "Khám phá",
+   "blocks": [
+    {
+     "type": "para",
+     "text": "\\textbf{Hai góc của một chiếc êke}"
+    },
+    {
+     "type": "noted",
+     "variant": "note",
+     "text": "Chiếc êke $ABC$ vuông tại $C$ có $AC = 4$ cm, $BC = 3$ cm, $AB = 5$ cm; đo bằng thước đo góc được $\\widehat{A} \\approx 37^\\circ$, $\\widehat{B} \\approx 53^\\circ$ (Hình 1).[[br]]\\textbf{a)} Tính $\\sin A$ và $\\cos B$. \\quad \\textbf{b)} Tính $\\tan A$ và $\\cot B$.[[br]]\\textbf{c)} Tổng $\\widehat{A} + \\widehat{B}$ bằng bao nhiêu độ? Em có nhận xét gì về các kết quả ở a) và b)?",
+     "figure": {
+      "tikz": "\\begin{tikzpicture}[line width=0.8pt, font=\\small]\n  \\draw[ink] (0.0000,0.0000) -- (2.6000,0.0000) -- (0.0000,1.9500) -- cycle;\n  \\draw[ink] (0.1600,0.0000) -- (0.1600,0.1600) -- (0.0000,0.1600);\n  \\draw[brand] (2.2960,0.2280) arc (503.1301:540.0000:0.3800);\n  \\draw[brand] (0.0000,1.5700) arc (-90.0000:-36.8699:0.3800);\n  \\fill[ink] (0.0000,0.0000) circle (1.3pt);\n  \\fill[ink] (2.6000,0.0000) circle (1.3pt);\n  \\fill[ink] (0.0000,1.9500) circle (1.3pt);\n  \\node[inner sep=0pt] at (-0.1839,-0.1543) {$C$};\n  \\node[inner sep=0pt] at (2.8255,-0.0821) {$A$};\n  \\node[inner sep=0pt] at (-0.1200,2.1578) {$B$};\n  \\node[inner sep=0pt] at (1.5999,0.3287) {$37^\\circ$};\n  \\node[inner sep=0pt] at (0.3435,1.1233) {$53^\\circ$};\n\\end{tikzpicture}",
+      "caption": "Hình 1",
+      "pos": "right"
+     }
+    }
+   ],
+   "teacher_note": "HS tính ra $\\sin A = \\cos B = \\dfrac{3}{5}$, $\\tan A = \\cot B = \\dfrac{3}{4}$: cạnh đối của góc $A$ chính là cạnh kề của góc $B$. Chốt nhận xét rồi mới gọi tên \\textquotedblleft hai góc phụ nhau\\textquotedblright{} ở chặng 2."
+  },
+  {
+   "kind": "concept",
+   "number": 2,
+   "title": "Kiến thức cần nhớ",
+   "blocks": [
+    {
+     "type": "para",
+     "text": "1. Tỉ số lượng giác của hai góc phụ nhau",
+     "variant": "heading"
+    },
+    {
+     "type": "para",
+     "text": "Hai góc nhọn của một tam giác vuông luôn phụ nhau: $\\alpha + \\beta = 90^\\circ$. Cạnh đối của góc này là cạnh kề của góc kia, nên:"
+    },
+    {
+     "type": "deflist",
+     "items": [
+      {
+       "term": "$\\sin\\alpha = \\cos\\beta$,",
+       "desc": "$\\cos\\alpha = \\sin\\beta$,"
+      },
+      {
+       "term": "$\\tan\\alpha = \\cot\\beta$,",
+       "desc": "$\\cot\\alpha = \\tan\\beta$."
+      }
+     ]
+    },
+    {
+     "type": "para",
+     "text": "\\textbf{Định lí.} Nếu hai góc phụ nhau thì sin góc này bằng côsin góc kia, tang góc này bằng côtang góc kia.[[br]]Ví dụ: $\\sin 60^\\circ = \\cos 30^\\circ$; $\\tan 80^\\circ = \\cot 10^\\circ$."
+    },
+    {
+     "type": "figure",
+     "tikz": "\\begin{tikzpicture}[line width=0.8pt, font=\\small]\n  \\draw[ink] (0.0000,0.0000) -- (2.6000,0.0000) -- (0.0000,1.9500) -- cycle;\n  \\draw[ink] (0.1600,0.0000) -- (0.1600,0.1600) -- (0.0000,0.1600);\n  \\draw[brand] (2.2960,0.2280) arc (503.1301:540.0000:0.3800);\n  \\draw[brand] (0.0000,1.5700) arc (-90.0000:-36.8699:0.3800);\n  \\fill[ink] (0.0000,0.0000) circle (1.3pt);\n  \\fill[ink] (2.6000,0.0000) circle (1.3pt);\n  \\fill[ink] (0.0000,1.9500) circle (1.3pt);\n  \\node[inner sep=0pt] at (-0.1839,-0.1543) {$C$};\n  \\node[inner sep=0pt] at (2.8255,-0.0821) {$A$};\n  \\node[inner sep=0pt] at (-0.1200,2.1578) {$B$};\n  \\node[inner sep=0pt] at (1.7900,0.3630) {$\\alpha$};\n  \\node[inner sep=0pt] at (0.1409,1.1758) {$\\beta$};\n\\end{tikzpicture}",
+     "caption": "$\\alpha + \\beta = 90^\\circ$: cạnh $BC$ là cạnh đối của $\\alpha$ và là cạnh kề của $\\beta$",
+     "width": "0.34\\linewidth"
+    },
+    {
+     "type": "para",
+     "text": "2. Số đo góc theo độ, phút",
+     "variant": "heading"
+    },
+    {
+     "type": "para",
+     "text": "$1^\\circ = 60'$ (phút), $1' = 60''$ (giây). Góc $38^\\circ 24'$ đọc là $38$ độ $24$ phút. Làm tròn đến phút thì nhìn phần giây: từ $30''$ trở lên thì cộng thêm $1'$."
+    },
+    {
+     "type": "para",
+     "text": "3. Dùng máy tính cầm tay",
+     "variant": "heading"
+    },
+    {
+     "type": "para",
+     "text": "Để máy ở chế độ \\textbf{độ} (trên màn hình có chữ D). Phím \\fbox{\\footnotesize $^\\circ\\,'\\,''$} dùng để nhập độ, phút."
+    },
+    {
+     "type": "table",
+     "headers": [
+      "Việc cần làm",
+      "Bấm phím",
+      "Kết quả"
+     ],
+     "rows": [
+      [
+       "Tính $\\sin 38^\\circ 24'$",
+       "\\fbox{\\footnotesize sin} 38 \\fbox{\\footnotesize $^\\circ\\,'\\,''$} 24 \\fbox{\\footnotesize $^\\circ\\,'\\,''$} \\fbox{\\footnotesize =}",
+       "$\\approx 0{,}621$"
+      ],
+      [
+       "Tính $\\cot 52^\\circ 18'$",
+       "1 \\fbox{\\footnotesize :} \\fbox{\\footnotesize tan} 52 \\fbox{\\footnotesize $^\\circ\\,'\\,''$} 18 \\fbox{\\footnotesize $^\\circ\\,'\\,''$} \\fbox{\\footnotesize =}",
+       "$\\approx 0{,}773$"
+      ],
+      [
+       "Tìm $x$ biết $\\sin x = 0{,}4563$",
+       "\\fbox{\\footnotesize SHIFT} \\fbox{\\footnotesize sin} 0,4563 \\fbox{\\footnotesize =} \\fbox{\\footnotesize $^\\circ\\,'\\,''$}",
+       "$x \\approx 27^\\circ 9'$"
+      ]
+     ]
+    },
+    {
+     "type": "noted",
+     "variant": "target",
+     "text": "\\textbf{Đề thi hỏi gì ở phần này.} Ý a) bài hình đề giữa kì I hay hỏi \\textbf{số đo góc} khi biết hai cạnh, làm tròn đến độ hoặc đến phút — bấm máy sai một phím là mất trọn $0{,}25$ – $0{,}5$ điểm."
+    },
+    {
+     "type": "noted",
+     "variant": "trap",
+     "text": "\\textbf{Chỗ mất điểm.} Máy để chế độ radian (chữ R) cho ra $\\sin 30 \\approx -0{,}988$. Gõ $38{,}24$ thay cho $38^\\circ 24'$ là sai: $38{,}24^\\circ$ chỉ là $38^\\circ 14{,}4'$."
+    }
+   ],
+   "teacher_note": "Chặng này 8 phút. Cho cả lớp bật máy, kiểm tra chế độ độ (D) trước khi làm. Bấm thử ba dòng của bảng cùng HS."
+  },
+  {
+   "kind": "practice1",
+   "number": 3,
+   "title": "Luyện tập 1",
+   "blocks": [
+    {
+     "type": "noted",
+     "variant": "example",
+     "text": "\\textbf{Ví dụ 1.} Viết các tỉ số lượng giác sau thành tỉ số lượng giác của góc nhỏ hơn $45^\\circ$: $\\sin 70^\\circ$, $\\cos 58^\\circ$, $\\tan 81^\\circ$.[[br]]{\\sffamily\\bfseries\\color{brand}Lời giải}[[br]]$\\sin 70^\\circ = \\cos(90^\\circ - 70^\\circ) = [[fill:\\cos 20^\\circ]]$.[[br]]$\\cos 58^\\circ = \\sin(90^\\circ - 58^\\circ) = [[fill:\\sin 32^\\circ]]$.[[br]]$\\tan 81^\\circ = \\cot(90^\\circ - 81^\\circ) = [[fill:\\cot 9^\\circ]]$.[[br]]Vậy ba tỉ số lần lượt bằng $[[fill:\\cos 20^\\circ]]$, $[[fill:\\sin 32^\\circ]]$, $[[fill:\\cot 9^\\circ]]$."
+    },
+    {
+     "type": "problem",
+     "label": "Bài 1.",
+     "tier": "onclass",
+     "level": 1,
+     "statement": "Điền vào chỗ chấm.[[br]]a) [NB] $\\sin 55^\\circ = \\cos$ [[blank:1.1cm]]; \\quad $\\cot 64^\\circ = \\tan$ [[blank:1.1cm]].[[br]]b) [NB] Vẽ vào vở tam giác $ABC$ vuông tại $A$ có $\\widehat{B} = 35^\\circ$, đánh dấu góc vuông và góc $B$. Khi đó $\\widehat{C} = $ [[blank:1.1cm]] và $\\cos 35^\\circ = \\sin$ [[blank:1.1cm]].",
+     "dang_id": "NB1",
+     "answer": "a) $\\sin 55^\\circ = \\cos 35^\\circ$; $\\cot 64^\\circ = \\tan 26^\\circ$.[[br]]b) $\\widehat{C} = 55^\\circ$; $\\cos 35^\\circ = \\sin 55^\\circ$."
+    },
+    {
+     "type": "noted",
+     "variant": "example",
+     "text": "\\textbf{Ví dụ 2.} Dùng máy tính cầm tay, tính $\\sin 38^\\circ 24'$ và $\\cot 52^\\circ 18'$ (làm tròn đến chữ số thập phân thứ ba).[[br]]{\\sffamily\\bfseries\\color{brand}Lời giải}[[br]]\\fbox{\\footnotesize sin} 38 \\fbox{\\footnotesize $^\\circ\\,'\\,''$} 24 \\fbox{\\footnotesize $^\\circ\\,'\\,''$} \\fbox{\\footnotesize =} $\\Rightarrow \\sin 38^\\circ 24' \\approx [[fill:0{,}621]]$.[[br]]$\\cot 52^\\circ 18' = \\dfrac{1}{\\tan 52^\\circ 18'}$: bấm 1 \\fbox{\\footnotesize :} \\fbox{\\footnotesize tan} 52 \\fbox{\\footnotesize $^\\circ\\,'\\,''$} 18 \\fbox{\\footnotesize $^\\circ\\,'\\,''$} \\fbox{\\footnotesize =} $\\Rightarrow \\cot 52^\\circ 18' \\approx [[fill:0{,}773]]$.[[br]]Vậy $\\sin 38^\\circ 24' \\approx [[fill:0{,}621]]$ và $\\cot 52^\\circ 18' \\approx [[fill:0{,}773]]$."
+    },
+    {
+     "type": "problem",
+     "label": "Bài 2.",
+     "tier": "onclass",
+     "level": 1,
+     "statement": "Dùng máy tính cầm tay, tính (làm tròn đến chữ số thập phân thứ ba):[[br]]a) [NB] $\\cos 52^\\circ 54' \\approx$ [[blank:2.4cm]];[[br]]b) [NB] $\\tan 63^\\circ 36' \\approx$ [[blank:2.4cm]].",
+     "dang_id": "NB2",
+     "answer": "a) $\\cos 52^\\circ 54' \\approx 0{,}603$.[[br]]b) $\\tan 63^\\circ 36' \\approx 2{,}014$."
+    },
+    {
+     "type": "noted",
+     "variant": "example",
+     "text": "\\textbf{Ví dụ 3.} Dùng máy tính cầm tay, tìm góc nhọn $x$ biết $\\sin x = 0{,}4563$ (làm tròn đến phút) và góc nhọn $y$ biết $\\tan y = 2{,}5$ (làm tròn đến độ).[[br]]{\\sffamily\\bfseries\\color{brand}Lời giải}[[br]]\\fbox{\\footnotesize SHIFT} \\fbox{\\footnotesize sin} 0,4563 \\fbox{\\footnotesize =} \\fbox{\\footnotesize $^\\circ\\,'\\,''$} $\\Rightarrow x \\approx [[fill:27^\\circ 9']]$.[[br]]\\fbox{\\footnotesize SHIFT} \\fbox{\\footnotesize tan} 2,5 \\fbox{\\footnotesize =} $\\Rightarrow y \\approx 68{,}2^\\circ \\approx [[fill:68^\\circ]]$.[[br]]Vậy $x \\approx [[fill:27^\\circ 9']]$ và $y \\approx [[fill:68^\\circ]]$."
+    },
+    {
+     "type": "problem",
+     "label": "Bài 3.",
+     "tier": "onclass",
+     "level": 1,
+     "statement": "Dùng máy tính cầm tay, tìm góc nhọn $x$ (làm tròn đến phút):[[br]]a) [NB] $\\cos x = 0{,}6224 \\Rightarrow x \\approx$ [[blank:2.4cm]];[[br]]b) [NB] $\\tan x = 1{,}236 \\Rightarrow x \\approx$ [[blank:2.4cm]].",
+     "dang_id": "NB3",
+     "answer": "a) $x \\approx 51^\\circ 31'$.[[br]]b) $x \\approx 51^\\circ 2'$."
+    },
+    {
+     "type": "problem",
+     "label": "Bài 4.",
+     "tier": "onclass",
+     "level": 1,
+     "statement": "[NB] Trên Hình 2, tam giác $ABC$ vuông tại $A$ có $AB = 5$ cm, $AC = 12$ cm. Điền vào chỗ trống để hoàn thành bài giải tính số đo các góc $B$, $C$ (làm tròn đến phút).[[br]]a) Tính góc $B$.[[br]]Xét $\\triangle ABC$ vuông tại $A$, ta có $\\tan B = $ [[blank:1.1cm]] $=$ [[blank:1.1cm]] $\\Rightarrow \\widehat{B} \\approx$ [[blank:2.4cm]].[[br]]b) Tính góc $C$.[[br]]$\\widehat{C} = 90^\\circ - \\widehat{B} \\approx$ [[blank:2.4cm]].[[br]]Vậy $\\widehat{B} \\approx$ [[blank:1.6cm]], $\\widehat{C} \\approx$ [[blank:1.6cm]].",
+     "dang_id": "NB4",
+     "answer": "a) $\\tan B = \\dfrac{AC}{AB} = \\dfrac{12}{5} \\Rightarrow \\widehat{B} \\approx 67^\\circ 23'$.[[br]]b) $\\widehat{C} \\approx 22^\\circ 37'$.",
+     "figure": {
+      "tikz": "\\begin{tikzpicture}[line width=0.8pt, font=\\small]\n  \\draw[ink] (0.0000,0.0000) -- (1.0833,0.0000) -- (0.0000,2.6000) -- cycle;\n  \\draw[ink] (0.1600,0.0000) -- (0.1600,0.1600) -- (0.0000,0.1600);\n  \\fill[ink] (0.0000,0.0000) circle (1.3pt);\n  \\fill[ink] (1.0833,0.0000) circle (1.3pt);\n  \\fill[ink] (0.0000,2.6000) circle (1.3pt);\n  \\node[inner sep=0pt] at (-0.1839,-0.1543) {$A$};\n  \\node[inner sep=0pt] at (1.2912,-0.1200) {$B$};\n  \\node[inner sep=0pt] at (-0.0417,2.8364) {$C$};\n  \\node[inner sep=0pt] at (0.5417,-0.2400) {$5$ cm};\n  \\node[inner sep=0pt] at (-0.6825,1.3000) {$12$ cm};\n\\end{tikzpicture}",
+      "caption": "Hình 2",
+      "pos": "right"
+     },
+     "figure_given": true
+    }
+   ],
+   "teacher_note": "Ba ví dụ máy tính chữa liền tay (6 phút), sau mỗi ví dụ HS bấm ngay bài cùng dạng.[[br]]Bài 1b: HS vẽ hình vào vở rồi mới điền — thấy được góc $C$ phụ với góc $B$.[[br]]Bài 4 là khung trình bày ý a) đề giữa kì: tỉ số $\\to$ SHIFT $\\to$ góc còn lại bằng $90^\\circ$ trừ đi."
+  },
+  {
+   "kind": "practice2",
+   "number": 4,
+   "title": "Luyện tập 2",
+   "blocks": [
+    {
+     "type": "noted",
+     "variant": "example",
+     "text": "\\textbf{Ví dụ 4.} Không dùng máy tính, tính $A = \\dfrac{\\sin 32^\\circ}{\\cos 58^\\circ} + \\tan 40^\\circ \\cdot \\tan 50^\\circ$.[[br]]{\\sffamily\\bfseries\\color{brand}Lời giải}[[br]]$32^\\circ + 58^\\circ = 90^\\circ \\Rightarrow \\sin 32^\\circ = [[fill:\\cos 58^\\circ]] \\Rightarrow \\dfrac{\\sin 32^\\circ}{\\cos 58^\\circ} = 1$.[[br]]$40^\\circ + 50^\\circ = 90^\\circ \\Rightarrow \\tan 50^\\circ = [[fill:\\cot 40^\\circ]] \\Rightarrow \\tan 40^\\circ \\cdot \\tan 50^\\circ = \\tan 40^\\circ \\cdot \\cot 40^\\circ = 1$.[[br]]Vậy $A = 1 + 1 = [[fill:2]]$."
+    },
+    {
+     "type": "problem",
+     "label": "Bài 5.",
+     "tier": "onclass",
+     "level": 2,
+     "statement": "[TH] Không dùng máy tính, tính $\\dfrac{\\tan 25^\\circ}{\\cot 65^\\circ}$ và $\\tan 34^\\circ - \\cot 56^\\circ$.",
+     "dang_id": "TH1",
+     "answer": "$25^\\circ + 65^\\circ = 90^\\circ \\Rightarrow \\tan 25^\\circ = \\cot 65^\\circ \\Rightarrow \\dfrac{\\tan 25^\\circ}{\\cot 65^\\circ} = 1$.[[br]]$34^\\circ + 56^\\circ = 90^\\circ \\Rightarrow \\tan 34^\\circ = \\cot 56^\\circ \\Rightarrow \\tan 34^\\circ - \\cot 56^\\circ = 0$.[[br]]Vậy hai biểu thức lần lượt bằng $1$ và $0$.",
+     "hints": [
+      "Hai góc trong mỗi biểu thức có quan hệ gì? Cộng chúng lại thử.",
+      "Hai góc phụ nhau thì tang góc này bằng gì của góc kia?"
+     ]
+    },
+    {
+     "type": "noted",
+     "variant": "example",
+     "text": "\\textbf{Ví dụ 5.} Một tấm biển hình tam giác $MNP$ vuông tại $M$ có hai cạnh góc vuông $MN = 9$ dm, $MP = 12$ dm (Hình 3). Hãy tìm cạnh huyền $NP$ cùng hai góc nhọn $N$, $P$ (làm tròn đến phút).[[br]]{\\sffamily\\bfseries\\color{brand}Lời giải}[[br]]Xét $\\triangle MNP$ vuông tại $M$, theo định lí Pythagore:[[br]]$NP^2 = MN^2 + MP^2 = [[fill:9^2 + 12^2]] = 225 \\Rightarrow NP = [[fill:15]]$ (dm).[[br]]$\\tan N = \\dfrac{MP}{MN} = \\dfrac{12}{9} \\Rightarrow \\widehat{N} \\approx [[fill:53^\\circ 8']]$.[[br]]$\\widehat{P} = 90^\\circ - \\widehat{N} \\approx [[fill:36^\\circ 52']]$.[[br]]Vậy $NP = [[fill:15]]$ dm, $\\widehat{N} \\approx [[fill:53^\\circ 8']]$, $\\widehat{P} \\approx [[fill:36^\\circ 52']]$.",
+     "figure": {
+      "tikz": "\\begin{tikzpicture}[line width=0.8pt, font=\\small]\n  \\draw[ink] (0.0000,0.0000) -- (1.8000,0.0000) -- (0.0000,2.4000) -- cycle;\n  \\draw[ink] (0.1600,0.0000) -- (0.1600,0.1600) -- (0.0000,0.1600);\n  \\fill[ink] (0.0000,0.0000) circle (1.3pt);\n  \\fill[ink] (1.8000,0.0000) circle (1.3pt);\n  \\fill[ink] (0.0000,2.4000) circle (1.3pt);\n  \\node[inner sep=0pt] at (-0.1839,-0.1543) {$M$};\n  \\node[inner sep=0pt] at (2.0078,-0.1200) {$N$};\n  \\node[inner sep=0pt] at (-0.0821,2.6255) {$P$};\n  \\node[inner sep=0pt] at (0.9000,0.2400) {$9$ dm};\n  \\node[inner sep=0pt] at (-0.6825,1.2000) {$12$ dm};\n\\end{tikzpicture}",
+      "caption": "Hình 3",
+      "pos": "right"
+     }
+    },
+    {
+     "type": "problem",
+     "label": "Bài 6.",
+     "tier": "onclass",
+     "level": 2,
+     "statement": "[TH] Cho tam giác $ABC$ vuông tại $A$ ($AB < AC$), $AB = 6$ cm, $BC = 10$ cm. Tính $AC$ và số đo góc $ACB$ (làm tròn đến độ).",
+     "dang_id": "TH2",
+     "answer": "Xét $\\triangle ABC$ vuông tại $A$, theo định lí Pythagore:[[br]]$AC^2 = BC^2 - AB^2 = 100 - 36 = 64 \\Rightarrow AC = 8$ (cm).[[br]]$\\sin C = \\dfrac{AB}{BC} = \\dfrac{6}{10} = 0{,}6 \\Rightarrow \\widehat{ACB} \\approx 37^\\circ$.[[br]]Vậy $AC = 8$ cm, $\\widehat{ACB} \\approx 37^\\circ$.",
+     "hints": [
+      "Cạnh nào còn thiếu? Tính nó trong tam giác vuông nào?",
+      "Với góc $C$, hai cạnh đã biết là cạnh gì? Tỉ số nào chứa đúng hai cạnh đó?"
+     ]
+    },
+    {
+     "type": "noted",
+     "variant": "example",
+     "text": "\\textbf{Ví dụ 6.} Một chiếc thang dài $4$ m dựa vào tường, chân thang cách chân tường $1{,}5$ m (Hình 4). Tính góc $\\alpha$ tạo bởi thang và mặt đất (làm tròn đến phút).[[br]]{\\sffamily\\bfseries\\color{brand}Lời giải}[[br]]Xét $\\triangle ABC$ vuông tại $B$, ta có $\\cos\\alpha = \\dfrac{BC}{AC} = [[fill:\\dfrac{1{,}5}{4}]] = 0{,}375$.[[br]]$\\Rightarrow \\alpha \\approx [[fill:67^\\circ 59']]$.[[br]]Vậy thang tạo với mặt đất một góc khoảng $[[fill:67^\\circ 59']]$.",
+     "figure": {
+      "tikz": "\\begin{tikzpicture}[line width=0.8pt, font=\\small]\n  \\draw[ink] (-0.2000,0.0000) -- (2.0000,0.0000);\n  \\draw[ink] (0.0000,0.0000) -- (0.0000,3.4000);\n  \\draw[ink] (0.0000,3.0000) -- (1.1250,0.0000);\n  \\draw[ink] (0.1600,0.0000) -- (0.1600,0.1600) -- (0.0000,0.1600);\n  \\draw[brand] (1.0126,0.2996) arc (110.5560:180.0000:0.3200);\n  \\fill[ink] (0.0000,0.0000) circle (1.3pt);\n  \\fill[ink] (0.0000,3.0000) circle (1.3pt);\n  \\fill[ink] (1.1250,0.0000) circle (1.3pt);\n  \\node[inner sep=0pt] at (-0.0000,-0.2400) {$B$};\n  \\node[inner sep=0pt] at (-0.2400,3.0000) {$A$};\n  \\node[inner sep=0pt] at (1.1250,-0.2400) {$C$};\n  \\node[inner sep=0pt] at (0.7518,0.5496) {$\\alpha$};\n  \\node[inner sep=0pt] at (0.9836,1.5821) {$4$ m};\n  \\node[inner sep=0pt] at (0.5625,-0.6000) {$1{,}5$ m};\n\\end{tikzpicture}",
+      "caption": "Hình 4",
+      "pos": "right"
+     }
+    },
+    {
+     "type": "problem",
+     "label": "Bài 7.",
+     "tier": "onclass",
+     "level": 2,
+     "statement": "[TH] Một cuốn sách hình chữ nhật $ABCD$ rộng $AB = 17$ cm, dài $BC = 24$ cm. Gọi $\\alpha$ là góc giữa đường chéo $AC$ và cạnh $AB$. Tính $\\sin\\alpha$, $\\cos\\alpha$ (làm tròn đến chữ số thập phân thứ hai) và số đo góc $\\alpha$ (làm tròn đến độ).",
+     "dang_id": "TH3",
+     "answer": "Xét $\\triangle ABC$ vuông tại $B$, theo định lí Pythagore:[[br]]$AC^2 = AB^2 + BC^2 = 289 + 576 = 865 \\Rightarrow AC = \\sqrt{865}$ (cm).[[br]]$\\sin\\alpha = \\dfrac{BC}{AC} = \\dfrac{24}{\\sqrt{865}} \\approx 0{,}82$; \\quad $\\cos\\alpha = \\dfrac{AB}{AC} = \\dfrac{17}{\\sqrt{865}} \\approx 0{,}58$.[[br]]$\\tan\\alpha = \\dfrac{BC}{AB} = \\dfrac{24}{17} \\Rightarrow \\alpha \\approx 55^\\circ$.[[br]]Vậy $\\sin\\alpha \\approx 0{,}82$, $\\cos\\alpha \\approx 0{,}58$, $\\alpha \\approx 55^\\circ$.",
+     "hints": [
+      "Góc $\\alpha$ nằm trong tam giác vuông nào? Cạnh nào của tam giác đó còn thiếu?",
+      "Muốn tìm góc chỉ cần một tỉ số — nên dùng tỉ số chứa hai cạnh đề cho sẵn."
+     ]
+    },
+    {
+     "type": "noted",
+     "variant": "example",
+     "text": "\\textbf{Ví dụ 7.} Với mọi góc nhọn $\\alpha$, hãy chứng tỏ tỉ số $\\dfrac{\\sin\\alpha}{\\cos\\alpha}$ chính là $\\tan\\alpha$. Từ đó, một góc nhọn có sin bằng $0{,}6$ và côsin bằng $0{,}8$ thì tang và côtang của nó bằng bao nhiêu?[[br]]{\\sffamily\\bfseries\\color{brand}Lời giải}[[br]]Xét $\\triangle ABC$ vuông tại $A$ có $\\widehat{B} = \\alpha$ (Hình 5).[[br]]$\\dfrac{\\sin\\alpha}{\\cos\\alpha} = \\dfrac{AC}{BC} : \\dfrac{AB}{BC} = [[fill:\\dfrac{AC}{AB}]] = \\tan\\alpha$.[[br]]Áp dụng: $\\tan\\alpha = \\dfrac{0{,}6}{0{,}8} = [[fill:0{,}75]]$; \\quad $\\cot\\alpha = \\dfrac{1}{\\tan\\alpha} = [[fill:\\dfrac{4}{3}]]$.[[br]]Vậy $\\tan\\alpha = [[fill:0{,}75]]$ và $\\cot\\alpha = [[fill:\\dfrac{4}{3}]]$.",
+     "figure": {
+      "tikz": "\\begin{tikzpicture}[line width=0.8pt, font=\\small]\n  \\draw[ink] (0.0000,0.0000) -- (2.2000,0.0000) -- (0.0000,1.6500) -- cycle;\n  \\draw[ink] (0.1600,0.0000) -- (0.1600,0.1600) -- (0.0000,0.1600);\n  \\draw[brand] (1.8960,0.2280) arc (503.1301:540.0000:0.3800);\n  \\fill[ink] (0.0000,0.0000) circle (1.3pt);\n  \\fill[ink] (2.2000,0.0000) circle (1.3pt);\n  \\fill[ink] (0.0000,1.6500) circle (1.3pt);\n  \\node[inner sep=0pt] at (-0.1839,-0.1543) {$A$};\n  \\node[inner sep=0pt] at (2.4255,-0.0821) {$B$};\n  \\node[inner sep=0pt] at (-0.1200,1.8578) {$C$};\n  \\node[inner sep=0pt] at (1.3900,0.3630) {$\\alpha$};\n\\end{tikzpicture}",
+      "caption": "Hình 5",
+      "pos": "right"
+     }
+    },
+    {
+     "type": "problem",
+     "label": "Bài 8.",
+     "tier": "onclass",
+     "level": 3,
+     "statement": "[VD] Cho góc nhọn $\\alpha$. Chứng minh $\\sin^2\\alpha + \\cos^2\\alpha = 1$. Áp dụng: biết $\\cos\\alpha = \\dfrac{5}{13}$, tính $\\sin\\alpha$ và $\\tan\\alpha$.",
+     "dang_id": "VD1",
+     "solution": "Xét $\\triangle ABC$ vuông tại $A$ có $\\widehat{B} = \\alpha$.[[br]]$\\sin^2\\alpha + \\cos^2\\alpha = \\dfrac{AC^2}{BC^2} + \\dfrac{AB^2}{BC^2} = \\dfrac{AC^2 + AB^2}{BC^2}$.[[br]]Theo định lí Pythagore: $AB^2 + AC^2 = BC^2 \\Rightarrow \\sin^2\\alpha + \\cos^2\\alpha = 1$.[[br]]Áp dụng: $\\sin^2\\alpha = 1 - \\cos^2\\alpha = 1 - \\dfrac{25}{169} = \\dfrac{144}{169}$.[[br]]$\\sin\\alpha > 0 \\Rightarrow \\sin\\alpha = \\dfrac{12}{13}$.[[br]]$\\tan\\alpha = \\dfrac{\\sin\\alpha}{\\cos\\alpha} = \\dfrac{12}{13} : \\dfrac{5}{13} = \\dfrac{12}{5}$.[[br]]Vậy $\\sin^2\\alpha + \\cos^2\\alpha = 1$, $\\sin\\alpha = \\dfrac{12}{13}$, $\\tan\\alpha = \\dfrac{12}{5}$.",
+     "quy_trinh": [
+      "Cái phải chứng minh là gì? Viết từng tỉ số lượng giác theo các cạnh của một tam giác vuông.",
+      "Biến đổi vế phức tạp: thay tỉ số bằng phân số, quy đồng.",
+      "Đã dùng hết giả thiết chưa? Chỗ nào cần định lí Pythagore?",
+      "Nhìn lại: dùng đẳng thức vừa chứng minh để tính các tỉ số còn lại."
+     ]
+    },
+    {
+     "type": "problem",
+     "label": "Bài 9.",
+     "tier": "onclass",
+     "level": 4,
+     "statement": "[VDC] Hai tòa nhà $AB$ và $CD$ đứng đối diện nhau trên mặt đất phẳng ($B$, $D$ là chân tòa nhà). Từ nóc $A$ của tòa nhà $AB$ cao $20$ m, một người nhìn thấy nóc $C$ của tòa nhà $CD$ với góc nâng $25^\\circ$ và nhìn thấy chân $D$ với góc hạ $35^\\circ$ (Hình 6, $AH \\perp CD$). Tính chiều cao $CD$ (làm tròn đến hàng phần mười).",
+     "dang_id": "VDC1",
+     "solution": "Tứ giác $ABDH$ có $\\widehat{B} = \\widehat{D} = \\widehat{AHD} = 90^\\circ$ $\\Rightarrow ABDH$ là hình chữ nhật $\\Rightarrow HD = AB = 20$ m.[[br]]Xét $\\triangle AHD$ vuông tại $H$, $\\widehat{HAD} = 35^\\circ$: $\\tan 35^\\circ = \\dfrac{HD}{AH} \\Rightarrow AH = \\dfrac{20}{\\tan 35^\\circ}$ (m).[[br]]Xét $\\triangle AHC$ vuông tại $H$, $\\widehat{HAC} = 25^\\circ$: $\\tan 25^\\circ = \\dfrac{CH}{AH} \\Rightarrow CH = AH \\cdot \\tan 25^\\circ = \\dfrac{20\\tan 25^\\circ}{\\tan 35^\\circ}$ (m).[[br]]$\\Rightarrow CD = CH + HD = \\dfrac{20\\tan 25^\\circ}{\\tan 35^\\circ} + 20 \\approx 33{,}3$ (m).[[br]]Vậy tòa nhà $CD$ cao khoảng $33{,}3$ m.",
+     "figure": {
+      "tikz": "\\begin{tikzpicture}[line width=0.8pt, font=\\small]\n  \\draw[ink] (-0.3000,0.0000) -- (3.2563,0.0000);\n  \\draw[ink] (0.0000,2.0000) -- (0.0000,0.0000);\n  \\draw[ink] (2.8563,3.3319) -- (2.8563,0.0000);\n  \\draw[ink] (0.0000,2.0000) -- (2.8563,3.3319);\n  \\draw[ink] (0.0000,2.0000) -- (2.8563,0.0000);\n  \\draw[ink, dashed] (0.0000,2.0000) -- (2.8563,2.0000);\n  \\draw[ink] (0.0000,0.1600) -- (0.1600,0.1600) -- (0.1600,0.0000);\n  \\draw[ink] (2.6963,2.0000) -- (2.6963,1.8400) -- (2.8563,1.8400);\n  \\draw[brand] (0.6000,2.0000) arc (0.0000:25.0000:0.6000);\n  \\draw[brand] (0.4915,1.6559) arc (-35.0000:0.0000:0.6000);\n  \\fill[ink] (0.0000,0.0000) circle (1.3pt);\n  \\fill[ink] (0.0000,2.0000) circle (1.3pt);\n  \\fill[ink] (2.8563,0.0000) circle (1.3pt);\n  \\fill[ink] (2.8563,3.3319) circle (1.3pt);\n  \\fill[ink] (2.8563,2.0000) circle (1.3pt);\n  \\node[inner sep=0pt] at (-0.0000,-0.2400) {$B$};\n  \\node[inner sep=0pt] at (-0.2078,2.1200) {$A$};\n  \\node[inner sep=0pt] at (2.8563,-0.2400) {$D$};\n  \\node[inner sep=0pt] at (2.9763,3.5398) {$C$};\n  \\node[inner sep=0pt] at (3.0963,2.0000) {$H$};\n  \\node[inner sep=0pt] at (1.3206,2.1905) {$25^\\circ$};\n  \\node[inner sep=0pt] at (1.3008,1.7354) {$35^\\circ$};\n  \\node[inner sep=0pt] at (0.5720,1.0000) {$20$ m};\n\\end{tikzpicture}",
+      "caption": "Hình 6",
+      "pos": "right"
+     },
+     "quy_trinh": [
+      "Cái phải tìm là gì? $CD$ bị đường nằm ngang $AH$ chia thành hai đoạn $CH$ và $HD$.",
+      "Đoạn nào tính ngay được? Tứ giác $ABDH$ là hình gì?",
+      "Đoạn $AH$ là cạnh chung của hai tam giác vuông nào? Tính $AH$ trước, rồi tính $CH$.",
+      "Đã dùng hết giả thiết chưa? Cộng hai đoạn, làm tròn một lần ở bước cuối."
+     ]
+    }
+   ],
+   "teacher_note": "Ví dụ 4–6 mỗi ví dụ một dạng Thông hiểu, HS làm ngay bài kề sau (15 phút).[[br]]Ví dụ 7 + Bài 8: chứng minh đẳng thức từ định nghĩa — đây là bước biến đổi, HS phải viết tỉ số theo cạnh trước, không đoán.[[br]]Bài 9 là bài phân loại: nhắc góc hạ đo từ đường nằm ngang $AH$ đi xuống."
+  },
+  {
+   "kind": "reflection",
+   "number": 5,
+   "title": "Sơ đồ tư duy",
+   "blocks": [
+    {
+     "type": "mindmap",
+     "caption": "Sơ đồ tư duy: Luyện tập tỉ số lượng giác",
+     "root": "LUYỆN TẬP TỈ SỐ LƯỢNG GIÁC",
+     "branches": [
+      {
+       "label": "HAI GÓC PHỤ NHAU",
+       "children": [
+        {
+         "label": "$\\sin\\alpha = \\cos(90^\\circ - \\alpha)$"
+        },
+        {
+         "label": "$\\tan\\alpha = \\cot(90^\\circ - \\alpha)$"
+        },
+        {
+         "label": "Đổi về góc nhỏ hơn $45^\\circ$"
+        }
+       ]
+      },
+      {
+       "label": "MÁY TÍNH CẦM TAY",
+       "children": [
+        {
+         "label": "Chế độ độ (D)"
+        },
+        {
+         "label": "Phím $^\\circ\\,'\\,''$ nhập phút"
+        },
+        {
+         "label": "$\\cot = 1 : \\tan$"
+        },
+        {
+         "label": "SHIFT để tìm góc"
+        }
+       ]
+      },
+      {
+       "label": "TÍNH GÓC TỪ HAI CẠNH",
+       "children": [
+        {
+         "label": "Chọn tỉ số chứa hai cạnh đã biết"
+        },
+        {
+         "label": "SHIFT ra góc"
+        },
+        {
+         "label": "Góc kia $= 90^\\circ - $ góc này"
+        }
+       ]
+      },
+      {
+       "label": "BIẾN ĐỔI",
+       "children": [
+        {
+         "label": "$\\tan\\alpha = \\dfrac{\\sin\\alpha}{\\cos\\alpha}$"
+        },
+        {
+         "label": "$\\sin^2\\alpha + \\cos^2\\alpha = 1$"
+        }
+       ]
+      },
+      {
+       "label": "ĐO CHIỀU CAO",
+       "children": [
+        {
+         "label": "Kẻ đường nằm ngang hoặc đặt ẩn"
+        },
+        {
+         "label": "Một đoạn chung của hai tam giác vuông"
+        },
+        {
+         "label": "Làm tròn một lần ở cuối"
+        }
+       ]
+      }
+     ]
+    },
+    {
+     "type": "para",
+     "text": "\\textbf{BÀI TẬP VỀ NHÀ (Luyện tập tỉ số lượng giác).}"
+    },
+    {
+     "type": "problem",
+     "label": "BTVN 1.",
+     "tier": "btvn",
+     "level": 1,
+     "statement": "Điền vào chỗ chấm.[[br]]a) [NB] $\\cos 75^\\circ = \\sin$ [[blank:1.1cm]]; \\quad $\\tan 52^\\circ 30' = \\cot$ [[blank:1.6cm]].[[br]]b) [NB] Vẽ vào vở tam giác $DEF$ vuông tại $D$ có $\\widehat{E} = 62^\\circ$, đánh dấu góc vuông và góc $E$. Khi đó $\\widehat{F} = $ [[blank:1.1cm]] và $\\cos 62^\\circ = \\sin$ [[blank:1.1cm]].",
+     "dang_id": "NB1",
+     "answer": "a) $\\cos 75^\\circ = \\sin 15^\\circ$; $\\tan 52^\\circ 30' = \\cot 37^\\circ 30'$.[[br]]b) $\\widehat{F} = 28^\\circ$; $\\cos 62^\\circ = \\sin 28^\\circ$."
+    },
+    {
+     "type": "problem",
+     "label": "BTVN 2.",
+     "tier": "btvn",
+     "level": 1,
+     "statement": "Dùng máy tính cầm tay, tính (làm tròn đến chữ số thập phân thứ ba):[[br]]a) [NB] $\\sin 40^\\circ 12' \\approx$ [[blank:2.4cm]];[[br]]b) [NB] $\\cot 35^\\circ 20' \\approx$ [[blank:2.4cm]].",
+     "dang_id": "NB2",
+     "answer": "a) $\\sin 40^\\circ 12' \\approx 0{,}645$.[[br]]b) $\\cot 35^\\circ 20' \\approx 1{,}411$."
+    },
+    {
+     "type": "problem",
+     "label": "BTVN 3.",
+     "tier": "btvn",
+     "level": 1,
+     "statement": "[NB] Góc nhọn $x$ có $\\sin x = 0{,}2368$. Số đo của $x$, làm tròn đến phút, là: $x \\approx$ [[blank:2.4cm]].",
+     "dang_id": "NB3",
+     "answer": "$x \\approx 13^\\circ 42'$."
+    },
+    {
+     "type": "problem",
+     "label": "BTVN 4.",
+     "tier": "btvn",
+     "level": 1,
+     "statement": "[NB] Trên Hình 7, tam giác $ABC$ vuông tại $A$ có $AB = 7$ cm, $AC = 24$ cm. Điền vào chỗ trống để hoàn thành bài giải tính số đo các góc $B$, $C$ (làm tròn đến phút).[[br]]a) Tính góc $B$.[[br]]Xét $\\triangle ABC$ vuông tại $A$, ta có $\\tan B = $ [[blank:1.1cm]] $=$ [[blank:1.1cm]] $\\Rightarrow \\widehat{B} \\approx$ [[blank:2.4cm]].[[br]]b) Tính góc $C$.[[br]]$\\widehat{C} = 90^\\circ - \\widehat{B} \\approx$ [[blank:2.4cm]].[[br]]Vậy $\\widehat{B} \\approx$ [[blank:1.6cm]], $\\widehat{C} \\approx$ [[blank:1.6cm]].",
+     "dang_id": "NB4",
+     "answer": "a) $\\tan B = \\dfrac{AC}{AB} = \\dfrac{24}{7} \\Rightarrow \\widehat{B} \\approx 73^\\circ 44'$.[[br]]b) $\\widehat{C} \\approx 16^\\circ 16'$.",
+     "figure": {
+      "tikz": "\\begin{tikzpicture}[line width=0.8pt, font=\\small]\n  \\draw[ink] (0.0000,0.0000) -- (0.7583,0.0000) -- (0.0000,2.6000) -- cycle;\n  \\draw[ink] (0.1600,0.0000) -- (0.1600,0.1600) -- (0.0000,0.1600);\n  \\fill[ink] (0.0000,0.0000) circle (1.3pt);\n  \\fill[ink] (0.7583,0.0000) circle (1.3pt);\n  \\fill[ink] (0.0000,2.6000) circle (1.3pt);\n  \\node[inner sep=0pt] at (-0.1839,-0.1543) {$A$};\n  \\node[inner sep=0pt] at (0.9422,-0.1543) {$B$};\n  \\node[inner sep=0pt] at (-0.0417,2.8364) {$C$};\n  \\node[inner sep=0pt] at (0.3792,-0.4800) {$7$ cm};\n  \\node[inner sep=0pt] at (-0.6825,1.3000) {$24$ cm};\n\\end{tikzpicture}",
+      "caption": "Hình 7",
+      "pos": "right"
+     },
+     "figure_given": true
+    },
+    {
+     "type": "problem",
+     "label": "BTVN 5.",
+     "tier": "btvn",
+     "level": 2,
+     "statement": "[TH] Không dùng máy tính, tính $B = \\cos 20^\\circ - \\sin 70^\\circ + \\tan 15^\\circ \\cdot \\tan 75^\\circ$.",
+     "dang_id": "TH1",
+     "answer": "$20^\\circ + 70^\\circ = 90^\\circ \\Rightarrow \\cos 20^\\circ = \\sin 70^\\circ \\Rightarrow \\cos 20^\\circ - \\sin 70^\\circ = 0$.[[br]]$15^\\circ + 75^\\circ = 90^\\circ \\Rightarrow \\tan 75^\\circ = \\cot 15^\\circ \\Rightarrow \\tan 15^\\circ \\cdot \\tan 75^\\circ = \\tan 15^\\circ \\cdot \\cot 15^\\circ = 1$.[[br]]Vậy $B = 0 + 1 = 1$.",
+     "hints": [
+      "Ghép các góc thành từng cặp có tổng $90^\\circ$.",
+      "Tích của tang và côtang cùng một góc bằng bao nhiêu?"
+     ]
+    },
+    {
+     "type": "problem",
+     "label": "BTVN 6.",
+     "tier": "btvn",
+     "level": 2,
+     "statement": "[TH] Cho tam giác $ABC$ vuông tại $A$ có $AB = 6$ cm, $AC = 8$ cm. Tính $BC$ và số đo các góc $B$, $C$ (làm tròn đến độ).",
+     "dang_id": "TH2",
+     "answer": "Xét $\\triangle ABC$ vuông tại $A$, theo định lí Pythagore:[[br]]$BC^2 = AB^2 + AC^2 = 36 + 64 = 100 \\Rightarrow BC = 10$ (cm).[[br]]$\\tan B = \\dfrac{AC}{AB} = \\dfrac{8}{6} \\Rightarrow \\widehat{B} \\approx 53^\\circ$.[[br]]$\\widehat{C} = 90^\\circ - \\widehat{B} \\approx 37^\\circ$.[[br]]Vậy $BC = 10$ cm, $\\widehat{B} \\approx 53^\\circ$, $\\widehat{C} \\approx 37^\\circ$.",
+     "hints": [
+      "Hai cạnh đã biết là gì đối với góc $B$? Tỉ số nào chứa đúng hai cạnh đó?",
+      "Biết một góc nhọn rồi, góc nhọn còn lại tìm thế nào?"
+     ]
+    },
+    {
+     "type": "problem",
+     "label": "BTVN 7.",
+     "tier": "btvn",
+     "level": 3,
+     "statement": "[VD] Cho góc nhọn $\\alpha$. Chứng minh $1 + \\tan^2\\alpha = \\dfrac{1}{\\cos^2\\alpha}$. Áp dụng: biết $\\tan\\alpha = \\dfrac{3}{4}$, tính $\\cos\\alpha$ và $\\sin\\alpha$.",
+     "dang_id": "VD1",
+     "solution": "$1 + \\tan^2\\alpha = 1 + \\dfrac{\\sin^2\\alpha}{\\cos^2\\alpha} = \\dfrac{\\cos^2\\alpha + \\sin^2\\alpha}{\\cos^2\\alpha}$ (vì $\\tan\\alpha = \\dfrac{\\sin\\alpha}{\\cos\\alpha}$).[[br]]$\\sin^2\\alpha + \\cos^2\\alpha = 1$ (Bài 8) $\\Rightarrow 1 + \\tan^2\\alpha = \\dfrac{1}{\\cos^2\\alpha}$.[[br]]Áp dụng: $\\dfrac{1}{\\cos^2\\alpha} = 1 + \\dfrac{9}{16} = \\dfrac{25}{16} \\Rightarrow \\cos^2\\alpha = \\dfrac{16}{25}$.[[br]]$\\cos\\alpha > 0 \\Rightarrow \\cos\\alpha = \\dfrac{4}{5}$.[[br]]$\\sin\\alpha = \\tan\\alpha \\cdot \\cos\\alpha = \\dfrac{3}{4} \\cdot \\dfrac{4}{5} = \\dfrac{3}{5}$.[[br]]Vậy $\\cos\\alpha = \\dfrac{4}{5}$ và $\\sin\\alpha = \\dfrac{3}{5}$.",
+     "quy_trinh": [
+      "Cái phải chứng minh là gì? Viết từng tỉ số lượng giác theo các cạnh của một tam giác vuông.",
+      "Biến đổi vế phức tạp: thay tỉ số bằng phân số, quy đồng.",
+      "Đã dùng hết giả thiết chưa? Chỗ nào cần định lí Pythagore?",
+      "Nhìn lại: dùng đẳng thức vừa chứng minh để tính các tỉ số còn lại."
+     ]
+    },
+    {
+     "type": "problem",
+     "label": "BTVN 8.",
+     "tier": "btvn",
+     "level": 4,
+     "statement": "[VDC] Để đo chiều cao $CD$ của một ngọn núi, người ta đứng ở hai điểm $A$, $B$ trên mặt đất cách nhau $1000$ m, thẳng hàng với chân núi $D$ ($A$ gần núi hơn). Từ $A$ nhìn đỉnh $C$ với góc nâng $40^\\circ$, từ $B$ nhìn đỉnh $C$ với góc nâng $32^\\circ$ (Hình 8). Tính chiều cao ngọn núi (làm tròn đến mét).",
+     "dang_id": "VDC2",
+     "solution": "Đặt $AD = x$ (m), $x > 0$ $\\Rightarrow BD = x + 1000$ (m).[[br]]Xét $\\triangle ACD$ vuông tại $D$: $\\tan 40^\\circ = \\dfrac{CD}{AD} \\Rightarrow CD = x\\tan 40^\\circ$.[[br]]Xét $\\triangle BCD$ vuông tại $D$: $\\tan 32^\\circ = \\dfrac{CD}{BD} \\Rightarrow CD = (x + 1000)\\tan 32^\\circ$.[[br]]$\\Rightarrow x\\tan 40^\\circ = (x + 1000)\\tan 32^\\circ \\Rightarrow x = \\dfrac{1000\\tan 32^\\circ}{\\tan 40^\\circ - \\tan 32^\\circ}$.[[br]]$\\Rightarrow CD = x\\tan 40^\\circ = \\dfrac{1000\\tan 32^\\circ \\cdot \\tan 40^\\circ}{\\tan 40^\\circ - \\tan 32^\\circ} \\approx 2447$ (m).[[br]]Vậy ngọn núi cao khoảng $2447$ m.",
+     "figure": {
+      "tikz": "\\begin{tikzpicture}[line width=0.8pt, font=\\small]\n  \\draw[ink] (0.0000,0.0000) -- (5.8752,0.0000);\n  \\draw[ink] (5.8752,3.6712) -- (5.8752,0.0000);\n  \\draw[ink] (5.8752,3.6712) -- (1.5000,0.0000);\n  \\draw[ink] (5.8752,3.6712) -- (0.0000,0.0000);\n  \\draw[ink] (5.8752,0.1600) -- (5.7152,0.1600) -- (5.7152,0.0000);\n  \\draw[brand] (1.8500,0.0000) arc (0.0000:40.0000:0.3500);\n  \\draw[brand] (0.5500,0.0000) arc (0.0000:32.0000:0.5500);\n  \\fill[ink] (5.8752,3.6712) circle (1.3pt);\n  \\fill[ink] (5.8752,0.0000) circle (1.3pt);\n  \\fill[ink] (1.5000,0.0000) circle (1.3pt);\n  \\fill[ink] (0.0000,0.0000) circle (1.3pt);\n  \\node[inner sep=0pt] at (5.9952,3.8791) {$C$};\n  \\node[inner sep=0pt] at (6.0295,-0.1839) {$D$};\n  \\node[inner sep=0pt] at (1.5000,-0.2400) {$A$};\n  \\node[inner sep=0pt] at (-0.2255,-0.0821) {$B$};\n  \\node[inner sep=0pt] at (2.5535,0.2155) {$40^\\circ$};\n  \\node[inner sep=0pt] at (1.2593,0.2288) {$32^\\circ$};\n  \\node[inner sep=0pt] at (0.6032,-0.2255) {$1000$ m};\n\\end{tikzpicture}",
+      "caption": "Hình 8",
+      "pos": "right"
+     }
+    }
+   ],
+   "teacher_note": "BTVN 7 dùng lại hai đẳng thức của Ví dụ 7 và Bài 8. BTVN 8 là câu cuối đề giữa kì I (đề gốc), cùng khuôn Bài 9 Phiếu 1 nhưng phải bấm máy — chữa đầu buổi sau."
+  }
+ ]
+}

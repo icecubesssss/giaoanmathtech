@@ -265,9 +265,11 @@ def _build_status(json_path: Path) -> dict:
     except ValueError:
         rel = Path()
     out_dir = settings.OUTPUTS_DIR / rel / slug
+    from src.exporters.ten_file import BAN_IN
     pdfs = {}
     for fn in _BUILD_KINDS:
-        exists = len(list(out_dir.glob(f"ca-*-{fn}.pdf"))) > 0
+        hau_to = BAN_IN.get(fn, fn)
+        exists = bool(list(out_dir.glob(f"ca-*-{fn}.pdf")) or list(out_dir.glob(f"*-{hau_to}.pdf")))
         pdfs[fn] = exists
     return {"slug": slug, "ok_json": True, "pdfs": pdfs}
 
@@ -969,7 +971,7 @@ def cmd_rebuild(args: argparse.Namespace) -> int:
             lesson = _load(str(j))
             out_root = _out_root(str(j))
             # rebuild = lan thay đổi template/design_tokens → FORCE compile lại (bỏ skip-hash).
-            _build_kinds(lesson, list(_BUILD_KINDS), out_root, force=True, quiet=True)
+            _build_kinds(lesson, list(_BUILD_KINDS), out_root, force=True, quiet=True, json_path=str(j))
             _set_lesson_status(lesson.slug, "built")
             n_ok += 1
             print(f"  ✓ {lesson.slug}")

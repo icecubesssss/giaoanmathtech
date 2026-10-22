@@ -69,6 +69,21 @@ drive: ## Chép PDF đã build sang Google Drive:  make drive FOLDER=path/ (DRY=
 audit: ## SOI CẢ KHO trước khi giao: PDF lỗi thời + ví dụ sai khuôn + spec trượt cổng  [GRADE= SUBJECT=]
 	@$(PY) -m src.main audit $(if $(GRADE),--grade $(GRADE),) $(if $(SUBJECT),--subject $(SUBJECT),)
 
+bank-giao: ## Bước 0① kiểm kê inputs + sinh prompt agent quét:  make bank-giao G=lop-9 S=hinh-hoc C=5
+	@$(PY) scripts/ngan_hang_sheet.py giao --grade $(G) --subject $(S) --chuong $(C)
+
+bank-gop: ## Bước 0③ gộp bản ghi agent, soát, gán phiếu, nén + chia khối ghi Sheets:  make bank-gop G=lop-9 S=hinh-hoc C=5
+	@$(PY) scripts/ngan_hang_sheet.py gop --grade $(G) --subject $(S) --chuong $(C)
+
+bank-doi-chieu: ## Bước 0⑤ so tab (get_values) từng ô với bản gộp rồi chụp snapshot:  make bank-doi-chieu RAW=f.json G=… S=… C=…
+	@$(PY) scripts/ngan_hang_sheet.py doi-chieu "$(RAW)" --grade $(G) --subject $(S) --chuong $(C)
+
+nap-bank: ## Chụp tab phân dạng (JSON get_values) về repo:  make nap-bank RAW=f.json TAB="Phân dạng Ch.V lớp 9C" GRADE=lop-9 SUBJECT=hinh-hoc CHUONG=5
+	@$(PY) scripts/ngan_hang_sheet.py nap "$(RAW)" --sheet-id $(or $(SHEET),1ucQH5yw5bn3C1Bh_V4tAToa6NN5-F-nt8_2yxf2LNOM) --tab "$(TAB)" --grade $(GRADE) --subject $(SUBJECT) --chuong $(CHUONG)
+
+du-bai: ## Tab phân dạng đủ bài cho các phiếu chưa:  make du-bai GRADE=lop-9 SUBJECT=hinh-hoc CHUONG=5 SO_PHIEU=6 [TIER=C | SPEC=…/thuyet-minh.json]
+	@$(PY) scripts/ngan_hang_sheet.py du --grade $(GRADE) --subject $(SUBJECT) --chuong $(CHUONG) $(if $(SPEC),--spec "$(SPEC)",--so-phieu $(SO_PHIEU) --tier $(or $(TIER),C))
+
 coverage: ## Spike: bank đủ câu để bốc không (BPT lớp C)
 	@$(PY) scripts/spike_coverage.py
 

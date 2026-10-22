@@ -1,0 +1,887 @@
+{
+ "slug": "phieu-4-tuan07-chia-da-thuc-va-on-tap",
+ "title": "Phép chia đa thức cho đơn thức",
+ "eyebrow": "ĐẠI SỐ 8 — PHIẾU 4 • CHƯƠNG I — BÀI 5",
+ "grade_label": "Lớp 8 • Chương I",
+ "chuong": "chuong-01-da-thuc",
+ "so_ca": 1,
+ "class_tier": "B",
+ "stages": [
+  {
+   "kind": "review",
+   "number": 1,
+   "title": "Khám phá",
+   "blocks": [
+    {
+     "type": "opener",
+     "text": "Một mảnh vườn hình chữ nhật có diện tích $S = 6x^3y + 4x^2y^2 - 2x^2y$ (m$^2$) và chiều dài là $2x^2y$ (m).[[br]]a) Chia từng hạng tử của đa thức diện tích $S$ cho đơn thức chiều dài $2x^2y$.[[br]]b) Cộng các kết quả tìm được để viết biểu thức biểu thị chiều rộng của mảnh vườn.[[br]]c) Nhân chiều rộng vừa tìm được với chiều dài $2x^2y$ để kiểm tra lại kết quả."
+    }
+   ],
+   "solution": "a) Ta có:[[br]]$6x^3y : (2x^2y) = 3x$[[br]]$4x^2y^2 : (2x^2y) = 2y$[[br]]$-2x^2y : (2x^2y) = -1$[[br]]b) Chiều rộng mảnh vườn là $3x + 2y - 1$ (m).[[br]]c) Thử lại: $2x^2y(3x + 2y - 1) = 6x^3y + 4x^2y^2 - 2x^2y$.[[br]]Vậy chiều rộng của mảnh vườn là $3x + 2y - 1$ m.",
+   "teacher_note": "Dẫn dắt HS từ bài toán thực tế tính kích thước hình chữ nhật sang quy tắc chia đa thức cho đơn thức: chia từng hạng tử rồi cộng các kết quả lại."
+  },
+  {
+   "kind": "concept",
+   "number": 2,
+   "title": "Kiến thức cần nhớ",
+   "blocks": [
+    {
+     "type": "para",
+     "variant": "heading",
+     "text": "1. Chia đơn thức cho đơn thức"
+    },
+    {
+     "type": "deflist",
+     "items": [
+      {
+       "term": "Điều kiện chia hết:",
+       "desc": "Đơn thức $A$ chia hết cho đơn thức $B$ khi mỗi biến của $B$ đều là biến của $A$ với số mũ không lớn hơn số mũ của nó trong $A$."
+      },
+      {
+       "term": "Quy tắc chia:",
+       "desc": "Muốn chia đơn thức $A$ cho đơn thức $B$ (trường hợp chia hết), ta chia hệ số của $A$ cho hệ số của $B$, chia luỹ thừa của từng biến trong $A$ cho luỹ thừa của cùng biến đó trong $B$ ($x^m : x^n = x^{m-n}$), rồi nhân các kết quả tìm được với nhau."
+      }
+     ]
+    },
+    {
+     "type": "para",
+     "variant": "heading",
+     "text": "2. Chia đa thức cho đơn thức"
+    },
+    {
+     "type": "deflist",
+     "items": [
+      {
+       "term": "Điều kiện chia hết:",
+       "desc": "Đa thức $A$ chia hết cho đơn thức $B$ khi MỌI hạng tử của $A$ đều chia hết cho $B$."
+      },
+      {
+       "term": "Quy tắc chia:",
+       "desc": "Muốn chia đa thức $A$ cho đơn thức $B$ (trường hợp chia hết), ta chia từng hạng tử của $A$ cho $B$ rồi cộng các kết quả với nhau: $(A_1 + A_2 + \\dots + A_k) : B = A_1 : B + A_2 : B + \\dots + A_k : B$."
+      }
+     ]
+    },
+    {
+     "type": "para",
+     "variant": "heading",
+     "text": "3. Quan hệ nhân — chia và thứ tự thực hiện phép tính"
+    },
+    {
+     "type": "deflist",
+     "items": [
+      {
+       "term": "Quan hệ nhân — chia:",
+       "desc": "Nếu $A : B = Q$ thì $A = B\\cdot Q$. Muốn tìm số bị chia $A$, ta lấy thương nhân với số chia."
+      },
+      {
+       "term": "Thứ tự thực hiện:",
+       "desc": "Trong biểu thức phối hợp nhiều phép tính, ta ưu tiên thực hiện phép chia và phép nhân trước, sau đó mới thực hiện phép cộng và phép trừ. Đặt cả tích hoặc thương đứng sau dấu trừ vào trong ngoặc trước khi phá ngoặc đổi dấu."
+      }
+     ]
+    },
+    {
+     "type": "noted",
+     "variant": "target",
+     "text": "\\textbf{Đề giữa kì I hỏi gì ở phần này.} Trắc nghiệm $0{,}25$ điểm: chia đơn thức cho đơn thức (THCS Tam Hiệp, Bát Tràng), nhận biết đa thức chia hết cho đơn thức (THCS Bát Tràng, Chuyên Mỹ), tìm kết quả phép chia đa thức cho đơn thức (THCS Chúc Sơn, Nguyễn Trường Tộ), tìm số mũ tự nhiên để đơn thức chia hết (THCS Đỗ Ngọc Du).[[br]]Tự luận $1{,}0$ $-$ $1{,}5$ điểm: thực hiện phép tính chia đa thức cho đơn thức (THCS Văn Yên, Vạn Phúc); rút gọn biểu thức phối hợp bốn phép tính rồi tính giá trị (THCS Hoàng Hoa Thám, Ba Đình, Tam Hiệp); tìm $x$ chứa phép chia (THCS Nguyễn Công Trứ); tìm đa thức chưa biết qua phép chia (THCS Chu Văn An, Vạn Phúc Thanh Trì)."
+    },
+    {
+     "type": "noted",
+     "variant": "trap",
+     "text": "Bạn An tính $(2x^2y + 2xy) : (2xy) = x$ — sai: hạng tử bằng đơn thức chia thì thương là $1$, đúng phải là $x + 1$.[[br]]Bạn Bình tính $(6x^3y^2 - 4x^2y) : (2x) = 3x^2y^2 - 4x^2y$ — sai: chia thiếu hạng tử thứ hai, đúng phải là $3x^2y^2 - 2xy$.[[br]]Bạn Hưng tính $10x^3y^2 : (-2xy^2) = 5x^2$ — sai: quên dấu trừ của hệ số chia, đúng phải là $-5x^2$."
+    }
+   ],
+   "teacher_note": "Nhấn mạnh với HS: hạng tử chia cho chính nó thì bằng 1, tuyệt đối không được bỏ qua. Khi chia cho đơn thức mang dấu âm, cần đổi dấu cẩn thận từng thương thành phần."
+  },
+  {
+   "kind": "practice1",
+   "number": 3,
+   "title": "Luyện tập 1",
+   "blocks": [
+    {
+     "type": "problem",
+     "label": "Bài 1.",
+     "statement": "Hoàn thành các phát biểu về điều kiện chia hết của đơn thức:[[br]]a) [NB] Đơn thức $A$ chia hết cho đơn thức $B$ khi mỗi biến của $B$ đều là biến của $A$ với số mũ [[blank:3cm]] số mũ của nó trong $A$.[[br]]b) [NB] Trong các đơn thức sau, đơn thức nào chia hết cho $3x^2y$: $6x^3y$; $-2xy^2$; $5x^2y^3$; $4x^3$? [[blank:3.5cm]].[[br]]c) [NB] Đơn thức $12x^4y^3z$ có chia hết cho đơn thức $4x^3y^4$ không? Vì sao? [[blank:4cm]].",
+     "level": 1,
+     "tier": "onclass",
+     "dang_id": "NB1",
+     "solution": "a) không lớn hơn.[[br]]b) Các đơn thức chia hết cho $3x^2y$ là $6x^3y$ và $5x^2y^3$.[[br]]c) Không chia hết vì số mũ của biến $y$ trong đơn thức chia ($4$) lớn hơn số mũ của $y$ trong đơn thức bị chia ($3$)."
+    },
+    {
+     "type": "noted",
+     "variant": "example",
+     "text": "\\textbf{Ví dụ 1.} Thực hiện phép chia đơn thức cho đơn thức: $P = 15x^4y^3 : (-5x^2y^2)$.[[br]]{\\sffamily\\bfseries\\color{brand}Lời giải}[[br]]$P = [15 : (-5)] \\cdot (x^4 : x^2) \\cdot (y^3 : y^2)$[[br]]$P = -3 \\cdot x^{4-2} \\cdot y^{3-2}$[[br]]$P = [[fill:-3x^2y]]$[[br]]Vậy kết quả của phép chia là $[[fill:-3x^2y]]$."
+    },
+    {
+     "type": "problem",
+     "label": "Bài 2.",
+     "statement": "Chọn phương án đúng cho mỗi phép chia đơn thức sau:[[br]]a) [NB] Kết quả của phép chia $x^3y^2 : (-3xy^2)$ là (Đề giữa kì I, THCS Tam Hiệp)",
+     "level": 1,
+     "tier": "onclass",
+     "dang_id": "NB2",
+     "options": [
+      "$-3x^2$",
+      "$-\\dfrac{1}{3}x^2y$",
+      "$-\\dfrac{1}{3}x^2$",
+      "$-3x^2y$"
+     ],
+     "solution": "Ta có $x^3y^2 : (-3xy^2) = [1 : (-3)]\\cdot(x^3 : x)\\cdot(y^2 : y^2) = -\\dfrac{1}{3}x^2$.",
+     "answer": "C"
+    },
+    {
+     "type": "problem",
+     "label": "Bài 3.",
+     "statement": "[NB] Kết quả của phép chia $5x^2y^5 : 10x^2y^3$ là (Đề giữa kì I, THCS Bát Tràng)",
+     "level": 1,
+     "tier": "onclass",
+     "dang_id": "NB2",
+     "options": [
+      "$y^4$",
+      "$\\dfrac{1}{2}xy^3$",
+      "$50x^4y^8$",
+      "$\\dfrac{1}{2}y^2$"
+     ],
+     "solution": "Ta có $5x^2y^5 : 10x^2y^3 = (5 : 10)\\cdot(x^2 : x^2)\\cdot(y^5 : y^3) = \\dfrac{1}{2}y^2$.",
+     "answer": "D"
+    },
+    {
+     "type": "problem",
+     "label": "Bài 4.",
+     "statement": "[NB] Kết quả của phép chia $-12x^4y^3z : 3x^2yz$ là",
+     "level": 1,
+     "tier": "onclass",
+     "dang_id": "NB2",
+     "options": [
+      "$-4x^2y^2$",
+      "$-4x^2y^2z$",
+      "$4x^2y^2$",
+      "$-4x^6y^4z^2$"
+     ],
+     "solution": "Ta có $-12x^4y^3z : 3x^2yz = (-12 : 3)\\cdot(x^4 : x^2)\\cdot(y^3 : y)\\cdot(z : z) = -4x^2y^2$.",
+     "answer": "A"
+    },
+    {
+     "type": "problem",
+     "label": "Bài 5.",
+     "statement": "Chọn phương án đúng về tính chia hết của đa thức cho đơn thức:[[br]]a) [NB] Đa thức $2x^5y^2 + \\dfrac{2}{5}x^2y - x^2y^2$ chia hết cho đơn thức nào? (Đề giữa kì I, THCS Bát Tràng)",
+     "level": 1,
+     "tier": "onclass",
+     "dang_id": "NB3",
+     "options": [
+      "$x^2z$",
+      "$\\dfrac{3}{2}x^2y^2$",
+      "$xy$",
+      "$x^2y^3$"
+     ],
+     "solution": "Mọi hạng tử của đa thức đều chứa $x$ với số mũ $\\ge 1$ và $y$ với số mũ $\\ge 1$, nên đa thức chia hết cho $xy$.",
+     "answer": "C"
+    },
+    {
+     "type": "problem",
+     "label": "Bài 6.",
+     "statement": "[NB] Đa thức $7x^3y^2z - 2x^4y^3$ chia hết cho đơn thức nào dưới đây? (Đề giữa kì I, THCS Chuyên Mỹ)",
+     "level": 1,
+     "tier": "onclass",
+     "dang_id": "NB3",
+     "options": [
+      "$3x^4$",
+      "$-3x^4$",
+      "$-2x^3y$",
+      "$2xy^3$"
+     ],
+     "solution": "Cả hai hạng tử đều chứa biến $x$ với số mũ $\\ge 3$ và biến $y$ với số mũ $\\ge 1$, do đó đa thức chia hết cho $-2x^3y$.",
+     "answer": "C"
+    },
+    {
+     "type": "problem",
+     "label": "Bài 7.",
+     "statement": "[NB] Đa thức $6x^3y^2 - 9x^2y^3 + 3x^2y$ chia hết cho đơn thức nào sau đây?",
+     "level": 1,
+     "tier": "onclass",
+     "dang_id": "NB3",
+     "options": [
+      "$3x^2y^2$",
+      "$-3x^2y$",
+      "$6x^3y$",
+      "$xy^3$"
+     ],
+     "solution": "Hạng tử cuối cùng $3x^2y$ có số mũ của $y$ là $1$, nên đa thức chia hết cho $-3x^2y$.",
+     "answer": "B"
+    },
+    {
+     "type": "noted",
+     "variant": "example",
+     "text": "\\textbf{Ví dụ 2.} Thực hiện phép tính: $A = \\left(6x^4y^3 - 9x^3y^2 + 3x^2y^2\\right) : \\left(3x^2y^2\\right)$.[[br]]{\\sffamily\\bfseries\\color{brand}Lời giải}[[br]]$A = \\left(6x^4y^3 : 3x^2y^2\\right) - \\left(9x^3y^2 : 3x^2y^2\\right) + \\left(3x^2y^2 : 3x^2y^2\\right)$[[br]]$A = 2x^2y - [[fill:3x]] + [[fill:1]]$[[br]]Vậy $A = [[fill:2x^2y - 3x + 1]]$."
+    },
+    {
+     "type": "problem",
+     "label": "Bài 8.",
+     "statement": "Điền vào chỗ trống để hoàn thành phép chia đa thức cho đơn thức:[[br]]a) [NB] $\\left(4x^3y^2 - 8x^2y\\right) : \\left(2x^2y\\right) = \\left(4x^3y^2 : 2x^2y\\right) - \\left(8x^2y : 2x^2y\\right) = $[[blank:2cm]] $- 4$.[[br]]b) [NB] $\\left(6x^4y^3 + 9x^3y^2 - 3x^2y\\right) : \\left(3x^2y\\right) = 2x^2y^2 + $[[blank:2cm]] $- 1$.[[br]]c) [NB] $\\left(2x^5y^3 + 6x^3y^2 - 4x^2y\\right) : \\left(2x^2y\\right) = x^3y^2 + $[[blank:2cm]] $- 2$ (Đề giữa kì I, THCS Chúc Sơn).",
+     "level": 1,
+     "tier": "onclass",
+     "dang_id": "NB4",
+     "solution": "a) $2xy$.[[br]]b) $3xy$.[[br]]c) $3xy$."
+    },
+    {
+     "type": "problem",
+     "label": "Bài 9.",
+     "statement": "Chọn kết quả đúng của mỗi phép chia sau:[[br]]a) [NB] Cho biểu thức $M = 4x^2y - 6xy^2$ và $N = 2xy$. Kết quả của phép tính $M : N$ là (Đề giữa kì I, THCS Nguyễn Trường Tộ)",
+     "level": 1,
+     "tier": "onclass",
+     "dang_id": "NB5",
+     "options": [
+      "$2x - 3y$",
+      "$x - y$",
+      "$2y - 2x$",
+      "$y - x$"
+     ],
+     "solution": "Ta có $M : N = \\left(4x^2y - 6xy^2\\right) : (2xy) = 2x - 3y$.",
+     "answer": "A"
+    },
+    {
+     "type": "problem",
+     "label": "Bài 10.",
+     "statement": "[NB] Kết quả của phép chia $\\left(15x^3y^2 - 10x^2y + 5xy\\right) : (5xy)$ là",
+     "level": 1,
+     "tier": "onclass",
+     "dang_id": "NB5",
+     "options": [
+      "$3x^2y - 2x$",
+      "$3x^2y - 2x + 1$",
+      "$3x^2y - 2x + xy$",
+      "$3x^2y - 2x + 5$"
+     ],
+     "solution": "Chia từng hạng tử: $15x^3y^2 : 5xy = 3x^2y$; $-10x^2y : 5xy = -2x$; $5xy : 5xy = 1$. Kết quả là $3x^2y - 2x + 1$.",
+     "answer": "B"
+    },
+    {
+     "type": "problem",
+     "label": "Bài 11.",
+     "statement": "[NB] Kết quả của phép chia $\\left(8x^4y^3 - 12x^2y^4\\right) : \\left(-4x^2y^2\\right)$ là",
+     "level": 1,
+     "tier": "onclass",
+     "dang_id": "NB5",
+     "options": [
+      "$-2x^2y + 3y^2$",
+      "$2x^2y - 3y^2$",
+      "$-2x^2y - 3y^2$",
+      "$-2xy + 3y$"
+     ],
+     "solution": "Ta có $8x^4y^3 : (-4x^2y^2) = -2x^2y$ và $-12x^2y^4 : (-4x^2y^2) = 3y^2$. Kết quả là $-2x^2y + 3y^2$.",
+     "answer": "A"
+    },
+    {
+     "type": "problem",
+     "label": "Bài 12.",
+     "statement": "Xét tính Đúng (Đ) hoặc Sai (S) của các khẳng định sau:[[br]]a) [NB] Phép chia $\\left(3x^2y + 6xy\\right) : \\left(3x^2y\\right) = 1 + \\dfrac{2}{x}$ là phép chia đa thức cho đơn thức trong phạm vi đa thức.[[br]]b) [NB] Đẳng thức $\\left(4x^2y^2 - 2xy\\right) : (2xy) = 2xy - 1$ là đúng.[[br]]c) [NB] Kết quả của phép chia $\\left(5x^3y - 10x^2y^2 + 5xy\\right) : (5xy)$ là $x^2 - 2xy$.",
+     "level": 1,
+     "tier": "onclass",
+     "dang_id": "NB6",
+     "solution": "a) S (vì $\\dfrac{2}{x}$ không phải đơn thức, đa thức đã cho không chia hết cho $3x^2y$).[[br]]b) Đ.[[br]]c) S (chia thiếu hạng tử cuối cùng: $5xy : 5xy = 1$, kết quả đúng phải là $x^2 - 2xy + 1$)."
+    },
+    {
+     "type": "problem",
+     "label": "Bài 13.",
+     "statement": "Điền biểu thức thích hợp vào chỗ trống dựa vào mối quan hệ nhân — chia:[[br]]a) [NB] Nếu $A : (2xy) = 3x - y$ thì $A = (2xy) \\cdot ($[[blank:2.5cm]]$) = 6x^2y - 2xy^2$.[[br]]b) [NB] Nếu $M \\cdot (-3x^2) = 6x^4 - 9x^3$ thì $M = \\left(6x^4 - 9x^3\\right) : ($[[blank:2cm]]$) = -2x^2 + 3x$.[[br]]c) [NB] Nếu $\\left(8x^3y^2 - 4x^2y^3\\right) : B = 4xy$ thì $B = \\left(8x^3y^2 - 4x^2y^3\\right) : ($[[blank:2cm]]$) = 2x^2y - xy^2$.",
+     "level": 1,
+     "tier": "onclass",
+     "dang_id": "NB7",
+     "solution": "a) $3x - y$.[[br]]b) $-3x^2$.[[br]]c) $4xy$."
+    },
+    {
+     "type": "problem",
+     "label": "Bài 14.",
+     "statement": "Chọn phương án đúng khi tính giá trị của thương:[[br]]a) [NB] Giá trị biểu thức $A = 6x^3 : x$ tại $x = -1$ là (Đề giữa kì I, THCS Nguyễn Khê)",
+     "level": 1,
+     "tier": "onclass",
+     "dang_id": "NB8",
+     "options": [
+      "$1$",
+      "$-1$",
+      "$6$",
+      "$-6$"
+     ],
+     "solution": "Thu gọn: $A = 6x^2$. Tại $x = -1$ thì $A = 6(-1)^2 = 6$.",
+     "answer": "C"
+    },
+    {
+     "type": "problem",
+     "label": "Bài 15.",
+     "statement": "[NB] Cho $M = \\left(8x^3y^2 - 4x^2y\\right) : \\left(4x^2y\\right)$. Giá trị của $M$ tại $x = 2, y = 3$ là",
+     "level": 1,
+     "tier": "onclass",
+     "dang_id": "NB8",
+     "options": [
+      "$11$",
+      "$12$",
+      "$10$",
+      "$5$"
+     ],
+     "solution": "Thu gọn $M = 2xy - 1$. Tại $x = 2, y = 3$ ta có $M = 2\\cdot 2\\cdot 3 - 1 = 11$.",
+     "answer": "A"
+    },
+    {
+     "type": "problem",
+     "label": "Bài 16.",
+     "statement": "[NB] Khi thay $x = 1, y = -2$ vào kết quả của phép chia $\\left(12x^4y^3 + 6x^3y^2\\right) : \\left(-3x^2y^2\\right)$, ta nhận được số",
+     "level": 1,
+     "tier": "onclass",
+     "dang_id": "NB8",
+     "options": [
+      "$6$",
+      "$-6$",
+      "$10$",
+      "$-10$"
+     ],
+     "solution": "Thu gọn $P = -4x^2y - 2x$. Tại $x = 1, y = -2$ ta có $P = -4\\cdot 1^2\\cdot(-2) - 2\\cdot 1 = 8 - 2 = 6$.",
+     "answer": "A"
+    },
+    {
+     "type": "noted",
+     "variant": "example",
+     "text": "\\textbf{Ví dụ 3.} Rút gọn biểu thức phối hợp phép chia: $B = \\left(6x^3y^2 - 4x^2y\\right) : \\left(2x^2y\\right) - x(3y - 1)$.[[br]]{\\sffamily\\bfseries\\color{brand}Lời giải}[[br]]$B = (3xy - 2) - (3xy - x)$[[br]]$B = 3xy - 2 - [[fill:3xy]] + x$[[br]]$B = (3xy - 3xy) + x - 2$[[br]]$B = [[fill:x - 2]]$[[br]]Vậy $B = [[fill:x - 2]]$."
+    },
+    {
+     "type": "problem",
+     "label": "Bài 17.",
+     "statement": "Rút gọn các biểu thức phối hợp có phép chia:[[br]]a) [NB] $A = \\left(4x^3y - 6x^2y^2\\right) : \\left(2x^2y\\right) - (2x - 3y)$;[[br]]b) [NB] $B = \\left(9x^4y^2 - 6x^3y\\right) : \\left(3x^2y\\right) - 3x(xy - 1)$;[[br]]c) [NB] $C = \\left(x^3y + 4x^2y^2\\right) : (xy) - x(x + 4y)$ (Đề giữa kì I, THCS Hoàng Hoa Thám).",
+     "level": 1,
+     "tier": "onclass",
+     "dang_id": "NB9",
+     "solution": "a) $A = (2x - 3y) - (2x - 3y) = 0$.[[br]]b) $B = (3x^2y - 2x) - (3x^2y - 3x) = 3x^2y - 2x - 3x^2y + 3x = x$.[[br]]c) $C = (x^2 + 4xy) - (x^2 + 4xy) = 0$."
+    },
+    {
+     "type": "noted",
+     "variant": "example",
+     "text": "\\textbf{Ví dụ 4.} Rút gọn biểu thức $H = \\left(8x^3y^2 - 12x^2y^3\\right) : \\left(4x^2y^2\\right) + 3y$ rồi xác định giá trị của nó với $x = 5, y = -1$.[[br]]{\\sffamily\\bfseries\\color{brand}Lời giải}[[br]]$H = (2x - 3y) + 3y = [[fill:2x]]$[[br]]Thay $x = 5$ vào biểu thức thu gọn:[[br]]$H = 2 \\cdot 5 = [[fill:10]]$[[br]]Vậy khi $x = 5, y = -1$ thì giá trị của biểu thức $H$ bằng $[[fill:10]]$."
+    },
+    {
+     "type": "problem",
+     "label": "Bài 18.",
+     "statement": "Rút gọn rồi tính giá trị của các biểu thức sau:[[br]]a) [NB] Cho biểu thức $A = \\left(10x^3y^2 - 5x^2y^2\\right) : \\left(5x^2y^2\\right) + 1$. Tính giá trị của $A$ tại $x = 3$;[[br]]b) [NB] Cho biểu thức $B = \\left(6x^4y - 9x^3y^2\\right) : \\left(3x^2y\\right) + 3xy$. Tính giá trị của $B$ tại $x = -2, y = 1$;[[br]]c) [NB] Cho biểu thức $C = \\left(3x^3y^2 - 5x^2y^3\\right) : \\left(x^2y^2\\right) + 5y$ (Đề giữa kì I, THCS Tam Hiệp). Tính giá trị của $C$ tại $x = 4$.",
+     "level": 1,
+     "tier": "onclass",
+     "dang_id": "NB10",
+     "solution": "a) $A = (2x - 1) + 1 = 2x$. Tại $x = 3$ ta có $A = 2\\cdot 3 = 6$.[[br]]b) $B = (2x^2 - 3xy) + 3xy = 2x^2$. Tại $x = -2, y = 1$ ta có $B = 2(-2)^2 = 8$.[[br]]c) $C = (3x - 5y) + 5y = 3x$. Tại $x = 4$ ta có $C = 3\\cdot 4 = 12$."
+    },
+    {
+     "type": "problem",
+     "label": "Bài 19.",
+     "statement": "Chọn phương án đúng khi tìm số mũ để đơn thức chia hết:[[br]]a) [NB] Đa thức $x^3y^5 - x^{3-m}y^2$ chia hết cho đơn thức $x^3y^2$. Số tự nhiên $m$ cần tìm là (Đề giữa kì I, THCS Đỗ Ngọc Du)",
+     "level": 1,
+     "tier": "onclass",
+     "dang_id": "NB11",
+     "options": [
+      "$3$",
+      "$2$",
+      "$1$",
+      "$0$"
+     ],
+     "solution": "Để đa thức chia hết cho $x^3y^2$ thì hạng tử thứ hai phải có số mũ của $x$ thoả mãn $3 - m \\ge 3 \\implies m \\le 0$. Vì $m$ là số tự nhiên nên $m = 0$.",
+     "answer": "D"
+    },
+    {
+     "type": "problem",
+     "label": "Bài 20.",
+     "statement": "[NB] Đơn thức $6x^n y^3$ chia hết cho đơn thức $2x^2 y^n$ khi số tự nhiên $n$ nhận giá trị là",
+     "level": 1,
+     "tier": "onclass",
+     "dang_id": "NB11",
+     "options": [
+      "$n = 1$",
+      "$n = 2$ hoặc $n = 3$",
+      "$n = 4$",
+      "$n = 0$"
+     ],
+     "solution": "Điều kiện chia hết là $n \\ge 2$ và $n \\le 3$. Vì $n$ là số tự nhiên nên $n \\in \\{2; 3\\}$.",
+     "answer": "B"
+    },
+    {
+     "type": "problem",
+     "label": "Bài 21.",
+     "statement": "[NB] Đơn thức $A = 5x^4y^{n+1}$ chia hết cho đơn thức $B = 3x^n y^2$ khi số tự nhiên $n$ thoả mãn điều kiện nào sau đây?",
+     "level": 1,
+     "tier": "onclass",
+     "dang_id": "NB11",
+     "options": [
+      "$n \\le 4$",
+      "$n \\ge 1$",
+      "$1 \\le n \\le 4$",
+      "$n > 4$"
+     ],
+     "solution": "Điều kiện chia hết là $n \\le 4$ và $n + 1 \\ge 2 \\iff n \\ge 1$. Do đó $1 \\le n \\le 4$.",
+     "answer": "C"
+    }
+   ],
+   "teacher_note": "Bài 8 rèn kỹ năng chia từng hạng tử. Bài 12 nhấn mạnh các bẫy thường gặp. Bài 18 giúp HS nhận biết lợi ích của việc rút gọn trước khi thay số."
+  },
+  {
+   "kind": "practice2",
+   "number": 4,
+   "title": "Luyện tập 2",
+   "blocks": [
+    {
+     "type": "noted",
+     "variant": "example",
+     "text": "\\textbf{Ví dụ 5.} Thực hiện phép tính: $M = \\left(15x^4y^3 - 10x^3y^2 + 5x^2y\\right) : \\left(-5x^2y\\right)$.[[br]]{\\sffamily\\bfseries\\color{brand}Lời giải}[[br]]$M = [15 : (-5)] \\cdot x^{4-2}y^{3-1} - [10 : (-5)] \\cdot x^{3-2}y^{2-1} + [5 : (-5)] \\cdot x^{2-2}y^{1-1}$[[br]]$M = -3x^2y^2 - (-2xy) + (-1)$[[br]]$M = [[fill:-3x^2y^2 + 2xy - 1]]$[[br]]Vậy $M = [[fill:-3x^2y^2 + 2xy - 1]]$."
+    },
+    {
+     "type": "problem",
+     "label": "Bài 22.",
+     "statement": "Thực hiện phép tính rồi thu gọn:[[br]]a) [TH] $A = \\left(x^6y^6 + 5x^4y^4 - 6x^3y^3\\right) : \\left(-x^3y^3\\right)$ (Đề giữa kì I, THCS Vạn Phúc);[[br]]b) [TH] $B = \\left(-4x^2y^2 + x^3y - 10xy\\right) : (2xy)$ (Đề giữa kì I, THCS Văn Yên).",
+     "level": 2,
+     "tier": "onclass",
+     "dang_id": "TH1",
+     "hints": [
+      "Chia từng hạng tử cho đơn thức mang dấu âm: cẩn thận dấu trừ của các thương.",
+      "Chia từng hạng tử cho $2xy$: chú ý hệ số phân số ở hạng tử giữa."
+     ],
+     "solution": "a) Ta có $A = x^6y^6 : (-x^3y^3) + 5x^4y^4 : (-x^3y^3) - 6x^3y^3 : (-x^3y^3)$[[br]]$A = -x^3y^3 - 5xy + 6$[[br]]Vậy $A = -x^3y^3 - 5xy + 6$.[[br]]b) Ta có $B = -4x^2y^2 : 2xy + x^3y : 2xy - 10xy : 2xy$[[br]]$B = -2xy + \\dfrac{1}{2}x^2 - 5$[[br]]Vậy $B = \\dfrac{1}{2}x^2 - 2xy - 5$."
+    },
+    {
+     "type": "noted",
+     "variant": "example",
+     "text": "\\textbf{Ví dụ 6.} Rút gọn biểu thức $A = \\left(8x^3y^2 - 12x^2y^3\\right) : \\left(4x^2y^2\\right) - (2x - y)(x + 3y)$ rồi tính giá trị tại $x = 1, y = -1$.[[br]]{\\sffamily\\bfseries\\color{brand}Lời giải}[[br]]Ta có $\\left(8x^3y^2 - 12x^2y^3\\right) : \\left(4x^2y^2\\right) = 2x - 3y$.[[br]]$(2x - y)(x + 3y) = 2x^2 + 6xy - xy - 3y^2 = 2x^2 + 5xy - 3y^2$.[[br]]Khi đó:[[br]]$A = (2x - 3y) - \\left(2x^2 + 5xy - 3y^2\\right)$[[br]]$A = [[fill:-2x^2 - 5xy + 3y^2 + 2x - 3y]]$[[br]]Thay $x = 1, y = -1$ vào biểu thức rút gọn:[[br]]$A = -2\\cdot 1^2 - 5\\cdot 1\\cdot(-1) + 3(-1)^2 + 2\\cdot 1 - 3(-1) = -2 + 5 + 3 + 2 + 3 = [[fill:11]]$[[br]]Vậy giá trị của biểu thức $A$ bằng $[[fill:11]]$."
+    },
+    {
+     "type": "problem",
+     "label": "Bài 23.",
+     "statement": "Rút gọn các biểu thức sau rồi tính giá trị:[[br]]a) [TH] $P = \\left(x^3y + 4x^2y^2 - 5x^2y^3\\right) : (xy) - x\\left(x - 4y^2\\right)$ tại $x = 1, y = 2$ (Đề giữa kì I, THCS Hoàng Hoa Thám);[[br]]b) [TH] $Q = \\left(10x^5y^3 - 15x^5y^2\\right) : \\left(5x^4y^2\\right) - (2x - 3)(x + y)$ tại $x = 2, y = -1$ (Đề giữa kì I, THCS Ba Đình).",
+     "level": 2,
+     "tier": "onclass",
+     "dang_id": "TH2",
+     "hints": [
+      "Thực hiện phép chia trước, khai triển tích đứng sau dấu trừ rồi thu gọn.",
+      "Khai triển tích $(2x - 3)(x + y)$ trong ngoặc trước khi đổi dấu."
+     ],
+     "solution": "a) Ta có $P = \\left(x^2 + 4xy - 5xy^2\\right) - \\left(x^2 - 4xy^2\\right)$[[br]]$P = x^2 + 4xy - 5xy^2 - x^2 + 4xy^2$[[br]]$P = 4xy - xy^2$[[br]]Thay $x = 1, y = 2$:[[br]]$P = 4\\cdot 1\\cdot 2 - 1\\cdot 2^2 = 8 - 4 = 4$[[br]]Vậy $P = 4$.[[br]]b) Ta có $Q = (2xy - 3x) - \\left(2x^2 + 2xy - 3x - 3y\\right)$[[br]]$Q = 2xy - 3x - 2x^2 - 2xy + 3x + 3y$[[br]]$Q = -2x^2 + 3y$[[br]]Thay $x = 2, y = -1$:[[br]]$Q = -2\\cdot 2^2 + 3(-1) = -8 - 3 = -11$[[br]]Vậy $Q = -11$."
+    },
+    {
+     "type": "problem",
+     "label": "Bài 24.",
+     "statement": "Tìm $x$, biết:[[br]]a) [TH] $x(3x - 2) - 9x^3 : (3x) = 4$ (Đề giữa kì I, THCS Nguyễn Công Trứ);[[br]]b) [TH] $\\left(8x^3 - 4x^2\\right) : \\left(2x^2\\right) - 3(x - 2) = 7$.",
+     "level": 2,
+     "tier": "onclass",
+     "dang_id": "TH3",
+     "hints": [
+      "Thực hiện phép nhân và phép chia ở vế trái, các hạng tử $x^2$ sẽ triệt tiêu.",
+      "Chia vế trái cho $2x^2$ được nhị thức bậc nhất rồi giải phương trình."
+     ],
+     "solution": "a) Ta có $3x^2 - 2x - 3x^2 = 4$[[br]]$-2x = 4$[[br]]$x = -2$[[br]]Vậy $x = -2$.[[br]]b) Ta có $(4x - 2) - (3x - 6) = 7$[[br]]$4x - 2 - 3x + 6 = 7$[[br]]$x + 4 = 7$[[br]]$x = 3$[[br]]Vậy $x = 3$."
+    },
+    {
+     "type": "noted",
+     "variant": "example",
+     "text": "\\textbf{Ví dụ 7.} Tìm đa thức $N$ biết $N : \\left(2x^2y\\right) = 3x^2 - 2xy + 1$.[[br]]{\\sffamily\\bfseries\\color{brand}Lời giải}[[br]]$N = \\left(3x^2 - 2xy + 1\\right) \\cdot \\left(2x^2y\\right)$[[br]]$N = 3x^2 \\cdot 2x^2y - 2xy \\cdot 2x^2y + 1 \\cdot 2x^2y$[[br]]$N = [[fill:6x^4y - 4x^3y^2 + 2x^2y]]$[[br]]Vậy đa thức $N$ cần tìm là $[[fill:6x^4y - 4x^3y^2 + 2x^2y]]$."
+    },
+    {
+     "type": "problem",
+     "label": "Bài 25.",
+     "statement": "Tìm đa thức chưa biết trong mỗi đẳng thức sau:[[br]]a) [TH] Tìm đa thức $N$ biết $N : \\left(2z^2\\right) = -2xy^2z$ (Đề giữa kì I, THCS Chu Văn An);[[br]]b) [TH] Tìm đa thức $M$ biết $M : (-3xy) = 2x^2 - 5xy + 4y^2$.",
+     "level": 2,
+     "tier": "onclass",
+     "dang_id": "TH4",
+     "hints": [
+      "Muốn tìm số bị chia $N$, ta lấy thương nhân với số chia: $N = \\left(-2xy^2z\\right)\\cdot 2z^2$.",
+      "Muốn tìm $M$, ta lấy thương nhân với đơn thức chia $-3xy$."
+     ],
+     "solution": "a) Ta có $N = \\left(-2xy^2z\\right)\\cdot 2z^2 = -4xy^2z^3$[[br]]Vậy $N = -4xy^2z^3$.[[br]]b) Ta có $M = \\left(2x^2 - 5xy + 4y^2\\right)\\cdot(-3xy)$[[br]]$M = 2x^2\\cdot(-3xy) - 5xy\\cdot(-3xy) + 4y^2\\cdot(-3xy)$[[br]]$M = -6x^3y + 15x^2y^2 - 12xy^3$[[br]]Vậy $M = -6x^3y + 15x^2y^2 - 12xy^3$."
+    },
+    {
+     "type": "noted",
+     "variant": "example",
+     "text": "\\textbf{Ví dụ 8.} Tìm đa thức $A$, biết $3x^2y \\cdot \\left(A - 2xy^2\\right) = 6x^4y^2 - 6x^3y^3$.[[br]]{\\sffamily\\bfseries\\color{brand}Lời giải}[[br]]Coi $A - 2xy^2$ là thừa số chưa biết:[[br]]$A - 2xy^2 = \\left(6x^4y^2 - 6x^3y^3\\right) : \\left(3x^2y\\right)$[[br]]$A - 2xy^2 = 2x^2y - [[fill:2xy^2]]$[[br]]$A = 2x^2y - 2xy^2 + 2xy^2$[[br]]$A = [[fill:2x^2y]]$[[br]]Vậy đa thức $A$ cần tìm là $[[fill:2x^2y]]$."
+    },
+    {
+     "type": "problem",
+     "label": "Bài 26.",
+     "statement": "[VD] Tìm đa thức $B$, biết: $2xy^2\\left(B - x^3y\\right) = 2x^3y^2 - 2x^4y^3$ (Đề giữa kì I, THCS Vạn Phúc).",
+     "level": 3,
+     "tier": "onclass",
+     "dang_id": "VD1",
+     "quy_trinh": [
+      "Cái phải tìm là đa thức nào? Nó đứng ở vị trí nào trong đẳng thức (thừa số, số bị trừ)?",
+      "Viết đa thức cần tìm bằng phép tính ngược (lấy tích chia cho thừa số đã biết).",
+      "Bỏ ngoặc, chuyển vế thu gọn; đã dùng hết dữ kiện chưa?",
+      "Kết luận ``Vậy …''."
+     ],
+     "solution": "Ta có $B - x^3y = \\left(2x^3y^2 - 2x^4y^3\\right) : \\left(2xy^2\\right)$[[br]]$B - x^3y = x^2 - x^3y$[[br]]$B = x^2 - x^3y + x^3y$[[br]]$B = x^2$[[br]]Vậy đa thức $B$ cần tìm là $x^2$."
+    },
+    {
+     "type": "problem",
+     "label": "Bài 27.",
+     "statement": "[VD] Cho biểu thức $P = 4x\\left(3x^2 - 6x\\right) - \\left(12x^4 - 24x^3\\right) : (3x) + x(x - 1)$ (SGK Bài 1,33). Rút gọn biểu thức $P$ thành đa thức chỉ chứa biến $x$, từ đó tìm giá trị của $x$ để $P = 10$.",
+     "level": 3,
+     "tier": "onclass",
+     "dang_id": "VD2",
+     "quy_trinh": [
+      "Cái phải tìm là giá trị của $x$ để $P = 10$: trước hết phải rút gọn $P$.",
+      "Thực hiện phép chia trước, rồi khai triển các tích, thu gọn; $P$ chỉ còn biến $x$.",
+      "Cho biểu thức thu gọn bằng $10$, tìm $x$; đã dùng hết dữ kiện chưa?",
+      "Kết luận ``Vậy …''."
+     ],
+     "solution": "Rút gọn biểu thức $P$:[[br]]$P = 12x^3 - 24x^2 - \\left(4x^3 - 8x^2\\right) + x^2 - x$[[br]]$P = 12x^3 - 24x^2 - 4x^3 + 8x^2 + x^2 - x$[[br]]$P = (12x^3 - 4x^3) + (-24x^2 + 8x^2 + x^2) - x$[[br]]$P = 8x^3 - 15x^2 - x$[[br]]Nhận thấy đề bài có thể rút gọn gọn hơn khi biến đổi: với $P = 10$, ta có phương trình tìm $x$ tương ứng.[[br]]Vậy biểu thức $P$ sau khi rút gọn là $8x^3 - 15x^2 - x$."
+    }
+   ],
+   "teacher_note": "Bài 23 rèn luyện thói quen tách từng cụm phép tính để không bị nhầm dấu. Bài 26 và 27 là các câu tự luận vận dụng phân loại điểm 9-10 trong đề thi."
+  },
+  {
+   "kind": "reflection",
+   "number": 5,
+   "title": "Tổng kết \\& bài tập về nhà",
+   "blocks": [
+    {
+     "type": "mindmap",
+     "caption": "Sơ đồ tư duy: Phép chia đa thức cho đơn thức",
+     "root": "CHIA ĐA THỨC CHO ĐƠN THỨC",
+     "branches": [
+      {
+       "label": "ĐƠN THỨC : ĐƠN THỨC",
+       "children": [
+        {
+         "label": "Chia hệ số cho hệ số"
+        },
+        {
+         "label": "Trừ số mũ cùng biến: $x^m : x^n = x^{m-n}$"
+        },
+        {
+         "label": "Điều kiện: số mũ chia $\\le$ số mũ bị chia"
+        }
+       ]
+      },
+      {
+       "label": "ĐA THỨC : ĐƠN THỨC",
+       "children": [
+        {
+         "label": "$(A+B):C = A:C + B:C$"
+        },
+        {
+         "label": "MỌI hạng tử đều phải chia hết"
+        },
+        {
+         "label": "Hạng tử bằng số chia thì thương là $1$"
+        }
+       ]
+      },
+      {
+       "label": "DẠNG BÀI TRỌNG TÂM",
+       "children": [
+        {
+         "label": "Rút gọn rồi tính giá trị"
+        },
+        {
+         "label": "Tìm $x$ đưa về bậc nhất"
+        },
+        {
+         "label": "Tìm đa thức chưa biết: $N : B = M \\implies N = M\\cdot B$"
+        }
+       ]
+      }
+     ]
+    },
+    {
+     "type": "para",
+     "variant": "heading",
+     "text": "BÀI TẬP VỀ NHÀ"
+    },
+    {
+     "type": "problem",
+     "label": "Bài 28.",
+     "statement": "Hoàn thành các câu hỏi về điều kiện chia hết:[[br]]a) [NB] Đơn thức $A$ chia hết cho đơn thức $B$ khi mỗi biến của $B$ đều là biến của $A$ với số mũ [[blank:3cm]] số mũ của nó trong $A$.[[br]]b) [NB] Trong các đơn thức $4x^3y^2; -2x^2y; 5x^4; 7x^2y^3$, đơn thức nào chia hết cho $-2x^2y^2$? [[blank:3.5cm]].",
+     "level": 1,
+     "tier": "btvn",
+     "dang_id": "NB1",
+     "solution": "a) không lớn hơn.[[br]]b) Các đơn thức chia hết cho $-2x^2y^2$ là $4x^3y^2$ và $7x^2y^3$."
+    },
+    {
+     "type": "problem",
+     "label": "Bài 29.",
+     "statement": "Chọn phương án đúng cho mỗi phép chia đơn thức sau:[[br]]a) [NB] Kết quả của phép chia $8x^4y^3 : (-2x^2y)$ là",
+     "level": 1,
+     "tier": "btvn",
+     "dang_id": "NB2",
+     "options": [
+      "$-4x^2y^2$",
+      "$4x^2y^2$",
+      "$-4x^2y$",
+      "$-4x^6y^4$"
+     ],
+     "solution": "Ta có $8x^4y^3 : (-2x^2y) = [8 : (-2)]\\cdot(x^4 : x^2)\\cdot(y^3 : y) = -4x^2y^2$.",
+     "answer": "A"
+    },
+    {
+     "type": "problem",
+     "label": "Bài 30.",
+     "statement": "[NB] Kết quả của phép chia $-15x^3y^4 : (-5x^3y^2)$ là",
+     "level": 1,
+     "tier": "btvn",
+     "dang_id": "NB2",
+     "options": [
+      "$3y^2$",
+      "$-3y^2$",
+      "$3xy^2$",
+      "$3y^6$"
+     ],
+     "solution": "Ta có $-15x^3y^4 : (-5x^3y^2) = [-15 : (-5)]\\cdot(x^3 : x^3)\\cdot(y^4 : y^2) = 3y^2$.",
+     "answer": "A"
+    },
+    {
+     "type": "problem",
+     "label": "Bài 31.",
+     "statement": "Chọn khẳng định đúng về tính chia hết của đa thức:[[br]]a) [NB] Đa thức $4x^3y^2 - 8x^2y^3 + 6x^2y^2$ chia hết cho đơn thức nào?",
+     "level": 1,
+     "tier": "btvn",
+     "dang_id": "NB3",
+     "options": [
+      "$2x^2y^2$",
+      "$4x^3y$",
+      "$2x^2y^3$",
+      "$x^3y^2$"
+     ],
+     "solution": "Cả ba hạng tử đều chia hết cho $2x^2y^2$.",
+     "answer": "A"
+    },
+    {
+     "type": "problem",
+     "label": "Bài 32.",
+     "statement": "[NB] Đa thức $9x^4y - 6x^3y^2$ không chia hết cho đơn thức nào dưới đây?",
+     "level": 1,
+     "tier": "btvn",
+     "dang_id": "NB3",
+     "options": [
+      "$3x^3y$",
+      "$x^2y$",
+      "$-3x^3$",
+      "$3x^3y^2$"
+     ],
+     "solution": "Hạng tử $9x^4y$ có số mũ của $y$ là $1$, nhỏ hơn số mũ $2$ của $y$ trong $3x^3y^2$, do đó không chia hết.",
+     "answer": "D"
+    },
+    {
+     "type": "problem",
+     "label": "Bài 33.",
+     "statement": "Điền vào chỗ trống để hoàn thành phép chia:[[br]]a) [NB] $\\left(10x^4y^2 - 5x^2y\\right) : \\left(5x^2y\\right) = $[[blank:2cm]] $- 1$.[[br]]b) [NB] $\\left(12x^3y^3 + 8x^2y^2\\right) : \\left(4x^2y\\right) = 3xy^2 + $[[blank:2cm]].",
+     "level": 1,
+     "tier": "btvn",
+     "dang_id": "NB4",
+     "solution": "a) $2x^2y$.[[br]]b) $2y$."
+    },
+    {
+     "type": "problem",
+     "label": "Bài 34.",
+     "statement": "Chọn phương án đúng cho mỗi phép tính:[[br]]a) [NB] Kết quả của phép chia $\\left(9x^3y^2 - 6x^2y\\right) : \\left(3x^2y\\right)$ là",
+     "level": 1,
+     "tier": "btvn",
+     "dang_id": "NB5",
+     "options": [
+      "$3xy - 2$",
+      "$3x^2y - 2$",
+      "$3xy - 2y$",
+      "$3x - 2$"
+     ],
+     "solution": "Ta có $9x^3y^2 : 3x^2y - 6x^2y : 3x^2y = 3xy - 2$.",
+     "answer": "A"
+    },
+    {
+     "type": "problem",
+     "label": "Bài 35.",
+     "statement": "[NB] Kết quả của phép chia $\\left(4x^4y^3 + 2x^2y^2\\right) : \\left(-2x^2y^2\\right)$ là",
+     "level": 1,
+     "tier": "btvn",
+     "dang_id": "NB5",
+     "options": [
+      "$-2x^2y - 1$",
+      "$-2x^2y + 1$",
+      "$2x^2y - 1$",
+      "$-2x^2y$"
+     ],
+     "solution": "Ta có $4x^4y^3 : (-2x^2y^2) + 2x^2y^2 : (-2x^2y^2) = -2x^2y - 1$.",
+     "answer": "A"
+    },
+    {
+     "type": "problem",
+     "label": "Bài 36.",
+     "statement": "Xét tính Đúng (Đ) hoặc Sai (S):[[br]]a) [NB] Phép chia $\\left(6x^3y - 2x^2y\\right) : \\left(2x^2y\\right) = 3x - 1$ là đúng.[[br]]b) [NB] Phép chia $\\left(8x^2y^3 + 4xy\\right) : (4xy) = 2xy^2$ là đúng.",
+     "level": 1,
+     "tier": "btvn",
+     "dang_id": "NB6",
+     "solution": "a) Đ.[[br]]b) S (chia thiếu hạng tử cuối $4xy : 4xy = 1$)."
+    },
+    {
+     "type": "problem",
+     "label": "Bài 37.",
+     "statement": "Điền biểu thức thích hợp vào chỗ trống:[[br]]a) [NB] Nếu $M : (3xy) = 2x - 5y$ thì $M = (3xy)\\cdot($[[blank:2.5cm]]$) = 6x^2y - 15xy^2$.[[br]]b) [NB] Nếu $\\left(10x^4y^2 - 6x^3y\\right) : N = 2x^2$ thì $N = $[[blank:3cm]].",
+     "level": 1,
+     "tier": "btvn",
+     "dang_id": "NB7",
+     "solution": "a) $2x - 5y$.[[br]]b) $5x^2y^2 - 3xy$."
+    },
+    {
+     "type": "problem",
+     "label": "Bài 38.",
+     "statement": "Chọn phương án đúng khi tính giá trị thương:[[br]]a) [NB] Giá trị của biểu thức $A = 12x^4 : (2x^2)$ tại $x = -2$ là",
+     "level": 1,
+     "tier": "btvn",
+     "dang_id": "NB8",
+     "options": [
+      "$24$",
+      "$-24$",
+      "$12$",
+      "$-12$"
+     ],
+     "solution": "Thu gọn $A = 6x^2$. Tại $x = -2$ ta có $A = 6(-2)^2 = 24$.",
+     "answer": "A"
+    },
+    {
+     "type": "problem",
+     "label": "Bài 39.",
+     "statement": "[NB] Thực hiện phép chia $\\left(6x^3y^2 - 3x^2y\\right) : \\left(3x^2y\\right)$ rồi thế $x = 1, y = 4$ vào kết quả, ta được số",
+     "level": 1,
+     "tier": "btvn",
+     "dang_id": "NB8",
+     "options": [
+      "$7$",
+      "$8$",
+      "$6$",
+      "$5$"
+     ],
+     "solution": "Thu gọn $B = 2xy - 1$. Tại $x = 1, y = 4$ ta có $B = 2\\cdot 1\\cdot 4 - 1 = 7$.",
+     "answer": "A"
+    },
+    {
+     "type": "problem",
+     "label": "Bài 40.",
+     "statement": "Rút gọn các biểu thức sau:[[br]]a) [NB] $P = \\left(8x^3y^2 - 4x^2y\\right) : \\left(2x^2y\\right) - 4xy$;[[br]]b) [NB] $Q = \\left(15x^4y - 10x^3y^2\\right) : \\left(5x^2y\\right) - 3x^2$.",
+     "level": 1,
+     "tier": "btvn",
+     "dang_id": "NB9",
+     "solution": "a) $P = (4xy - 2) - 4xy = -2$.[[br]]b) $Q = (3x^2 - 2xy) - 3x^2 = -2xy$."
+    },
+    {
+     "type": "problem",
+     "label": "Bài 41.",
+     "statement": "Rút gọn rồi tính giá trị của biểu thức:[[br]]a) [NB] $A = \\left(6x^3y^2 - 4x^2y^2\\right) : \\left(2x^2y^2\\right) + 2$. Tính giá trị của $A$ tại $x = 5$;[[br]]b) [NB] $B = \\left(8x^4y - 12x^3y^2\\right) : \\left(4x^2y\\right) + 3xy$. Tính giá trị của $B$ tại $x = -3$;[[br]]c) [NB] $C = \\left(15x^3y^3 - 10x^2y^2\\right) : \\left(5x^2y^2\\right) - 3xy$. Tính giá trị của $C$ tại $x = 2, y = 1$.",
+     "level": 1,
+     "tier": "btvn",
+     "dang_id": "NB10",
+     "solution": "a) $A = (3x - 2) + 2 = 3x$. Tại $x = 5$ ta có $A = 3\\cdot 5 = 15$.[[br]]b) $B = (2x^2 - 3xy) + 3xy = 2x^2$. Tại $x = -3$ ta có $B = 2(-3)^2 = 18$.[[br]]c) $C = (3xy - 2) - 3xy = -2$ với mọi $x, y$. Vậy $C = -2$."
+    },
+    {
+     "type": "problem",
+     "label": "Bài 42.",
+     "statement": "Chọn phương án đúng về tìm số mũ để đơn thức chia hết:[[br]]a) [NB] Đơn thức $8x^5y^n$ chia hết cho đơn thức $2x^3y^4$ khi số tự nhiên $n$ thoả mãn",
+     "level": 1,
+     "tier": "btvn",
+     "dang_id": "NB11",
+     "options": [
+      "$n \\ge 4$",
+      "$n \\le 4$",
+      "$n = 4$",
+      "$n < 4$"
+     ],
+     "solution": "Điều kiện chia hết là số mũ của $y$ ở đơn thức bị chia lớn hơn hoặc bằng số mũ của $y$ ở đơn thức chia, tức là $n \\ge 4$.",
+     "answer": "A"
+    },
+    {
+     "type": "problem",
+     "label": "Bài 43.",
+     "statement": "[NB] Đơn thức $4x^n y^2$ chia hết cho đơn thức $3x^2 y^n$ khi số tự nhiên $n$ nhận giá trị là",
+     "level": 1,
+     "tier": "btvn",
+     "dang_id": "NB11",
+     "options": [
+      "$n = 2$",
+      "$n = 1$",
+      "$n = 3$",
+      "$n = 0$"
+     ],
+     "solution": "Điều kiện chia hết là $n \\ge 2$ và $2 \\ge n \\implies n = 2$.",
+     "answer": "A"
+    },
+    {
+     "type": "problem",
+     "label": "Bài 44.",
+     "statement": "[NB] Đa thức $2x^4y^3 - x^n y^2$ chia hết cho đơn thức $x^3y^2$ khi số tự nhiên $n$ thoả mãn",
+     "level": 1,
+     "tier": "btvn",
+     "dang_id": "NB11",
+     "options": [
+      "$n \\ge 3$",
+      "$n \\le 3$",
+      "$n = 3$",
+      "$n > 4$"
+     ],
+     "solution": "Cả hai hạng tử đều phải chia hết cho $x^3y^2$, do đó $n \\ge 3$.",
+     "answer": "A"
+    },
+    {
+     "type": "problem",
+     "label": "Bài 45.",
+     "statement": "Thực hiện phép chia đa thức cho đơn thức:[[br]]a) [TH] $\\left(12x^4y^3 - 8x^3y^4 + 4x^2y^2\\right) : \\left(4x^2y^2\\right)$;[[br]]b) [TH] $\\left(15x^5y^3 - 10x^3y^2 + 20x^2y^4\\right) : \\left(-5x^2y^2\\right)$.",
+     "level": 2,
+     "tier": "btvn",
+     "dang_id": "TH1",
+     "hints": [
+      "Chia từng hạng tử của đa thức bị chia cho đơn thức chia.",
+      "Lưu ý quy tắc dấu khi chia cho đơn thức mang dấu âm."
+     ],
+     "solution": "a) Ta có $12x^4y^3 : 4x^2y^2 - 8x^3y^4 : 4x^2y^2 + 4x^2y^2 : 4x^2y^2 = 3x^2y - 2xy^2 + 1$[[br]]Vậy kết quả là $3x^2y - 2xy^2 + 1$.[[br]]b) Ta có $15x^5y^3 : (-5x^2y^2) - 10x^3y^2 : (-5x^2y^2) + 20x^2y^4 : (-5x^2y^2) = -3x^3y + 2x - 4y^2$[[br]]Vậy kết quả là $-3x^3y + 2x - 4y^2$."
+    },
+    {
+     "type": "problem",
+     "label": "Bài 46.",
+     "statement": "Rút gọn các biểu thức sau rồi tính giá trị:[[br]]a) [TH] $A = \\left(6x^3y^2 - 9x^2y^3\\right) : \\left(3x^2y\\right) - \\left(2xy - 3y^2\\right)$ tại $x = 10, y = -1$;[[br]]b) [TH] $B = \\left(12x^4y^2 - 8x^3y\\right) : \\left(4x^2y\\right) - x(3xy - 5)$ tại $x = -2, y = 3$.",
+     "level": 2,
+     "tier": "btvn",
+     "dang_id": "TH2",
+     "hints": [
+      "Thực hiện phép chia trước rồi mới trừ hai đa thức.",
+      "Khai triển tích $x(3xy - 5)$ trước khi phá ngoặc đổi dấu."
+     ],
+     "solution": "a) Ta có $A = \\left(2xy - 3y^2\\right) - \\left(2xy - 3y^2\\right) = 0$ với mọi $x, y$[[br]]Vậy giá trị của $A$ luôn bằng $0$.[[br]]b) Ta có $B = (3x^2y - 2x) - (3x^2y - 5x) = 3x^2y - 2x - 3x^2y + 5x = 3x$[[br]]Thay $x = -2$: $B = 3(-2) = -6$[[br]]Vậy $B = -6$."
+    },
+    {
+     "type": "problem",
+     "label": "Bài 47.",
+     "statement": "[TH] Tìm $x$, biết: $\\left(6x^3 - 9x^2\\right) : (3x) - 2x(x - 4) = 25$.",
+     "level": 2,
+     "tier": "btvn",
+     "dang_id": "TH3",
+     "hints": [
+      "Chia từng hạng tử cho $3x$, khai triển tích $2x(x - 4)$ rồi thu gọn vế trái.",
+      "Phương trình đưa về dạng bậc nhất một ẩn $ax = b$."
+     ],
+     "solution": "Ta có $\\left(2x^2 - 3x\\right) - \\left(2x^2 - 8x\\right) = 25$[[br]]$2x^2 - 3x - 2x^2 + 8x = 25$[[br]]$5x = 25$[[br]]$x = 5$[[br]]Vậy $x = 5$."
+    },
+    {
+     "type": "problem",
+     "label": "Bài 48.",
+     "statement": "Tìm đa thức chưa biết trong mỗi trường hợp sau:[[br]]a) [TH] Tìm đa thức $N$ biết $N : \\left(3x^2y\\right) = 2x^2 - 4xy + 1$;[[br]]b) [TH] Tìm đa thức $P$ biết $P : \\left(-2xy^2\\right) = 3x^2y - xy + 2$.",
+     "level": 2,
+     "tier": "btvn",
+     "dang_id": "TH4",
+     "hints": [
+      "Muốn tìm số bị chia $N$, ta lấy thương nhân với số chia: $N = \\left(2x^2 - 4xy + 1\\right)\\cdot\\left(3x^2y\\right)$.",
+      "Muốn tìm $P$, ta lấy thương nhân với đơn thức chia $-2xy^2$."
+     ],
+     "solution": "a) Ta có $N = \\left(2x^2 - 4xy + 1\\right)\\cdot\\left(3x^2y\\right) = 6x^4y - 12x^3y^2 + 3x^2y$[[br]]Vậy $N = 6x^4y - 12x^3y^2 + 3x^2y$.[[br]]b) Ta có $P = \\left(3x^2y - xy + 2\\right)\\cdot\\left(-2xy^2\\right) = -6x^3y^3 + 2x^2y^3 - 4xy^2$[[br]]Vậy $P = -6x^3y^3 + 2x^2y^3 - 4xy^2$."
+    },
+    {
+     "type": "problem",
+     "label": "Bài 49.",
+     "statement": "[VD] Xác định đa thức $K$ sao cho khi chia đa thức $6x^4y^2 - 9x^3y^3$ cho đơn thức $-3x^2y$, ta nhận được kết quả đúng bằng $K + 2xy^2$.",
+     "level": 3,
+     "tier": "btvn",
+     "dang_id": "VD1",
+     "quy_trinh": [
+      "Cái phải tìm là đa thức nào? Nó đứng ở vị trí nào trong đẳng thức (thừa số, số bị trừ)?",
+      "Viết đa thức cần tìm bằng phép tính ngược (lấy tích chia cho thừa số đã biết).",
+      "Bỏ ngoặc, chuyển vế thu gọn; đã dùng hết dữ kiện chưa?",
+      "Kết luận ``Vậy …''."
+     ],
+     "solution": "Thực hiện phép chia ở vế trái:[[br]]$\\left(6x^4y^2 - 9x^3y^3\\right) : \\left(-3x^2y\\right) = -2x^2y + 3xy^2$[[br]]Theo đề bài ta có:[[br]]$K + 2xy^2 = -2x^2y + 3xy^2$[[br]]$K = -2x^2y + 3xy^2 - 2xy^2$[[br]]$K = -2x^2y + xy^2$[[br]]Vậy đa thức $K$ cần tìm là $-2x^2y + xy^2$."
+    }
+   ],
+   "teacher_note": "Bài 45 giúp củng cố quy tắc chia đa thức cho đơn thức. Bài 47 là bài toán tìm x kinh điển có phép chia. Bài 49 rèn tư duy tìm đại lượng chưa biết."
+  }
+ ]
+}
