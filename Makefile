@@ -90,6 +90,9 @@ nap-bank: ## Chụp tab phân dạng (JSON get_values) về repo:  make nap-bank
 du-bai: ## Tab phân dạng đủ bài cho các phiếu chưa:  make du-bai GRADE=lop-9 SUBJECT=hinh-hoc CHUONG=5 SO_PHIEU=6 [TIER=C | SPEC=…/thuyet-minh.json]
 	@$(PY) scripts/ngan_hang_sheet.py du --grade $(GRADE) --subject $(SUBJECT) --chuong $(CHUONG) $(if $(SPEC),--spec "$(SPEC)",--so-phieu $(SO_PHIEU) --tier $(or $(TIER),C))
 
+ppd-de-xuat: ## Quy trình phân dạng bước 2: chạy thử thuyết minh ra CỘT ĐỀ XUẤT cho tab:  make ppd-de-xuat RAW=tab.json SPEC=…/thuyet-minh.json
+	@$(PY) scripts/ngan_hang_sheet.py de-xuat "$(RAW)" --spec "$(SPEC)"
+
 coverage: ## Spike: bank đủ câu để bốc không (BPT lớp C)
 	@$(PY) scripts/spike_coverage.py
 
@@ -114,4 +117,4 @@ c3-c: ## Build nhanh toàn bộ 5 phiếu Lớp 9 [C] Chương 3 (PDF Handout/Gu
 tm-c3: ## Render Thuyết Minh PDF Chương 3 Lớp 9 [C]
 	@$(PY) -m src.main build-thuyetminh "inputs/seeds/lop-9/dai-so/lop-c/chuong-03-can-bac-hai-can-bac-ba/thuyet-minh.json"
 
-.PHONY: b md f prune help map test progress check new validate build rebuild docx docx-template spec thuyetminh check-tm coverage exam-report exam-check exam-weights deadcode build-folder c3-c tm-c3
+.PHONY: b md f prune help map test progress check new validate build rebuild docx docx-template spec thuyetminh check-tm coverage ppd-de-xuat exam-report exam-check exam-weights deadcode build-folder c3-c tm-c3

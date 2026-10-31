@@ -75,7 +75,7 @@ def kiem_ke(khung: dict) -> list[dict]:
     for it in items:
         by.setdefault((it["nhom"], it["goc"]), []).append(it)
     for (nhom, goc), lst in by.items():
-        n = SO_FILE_MOI_VIEC[nhom]
+        n = khung.get("so_file_moi_viec", {}).get(nhom, SO_FILE_MOI_VIEC[nhom])
         for k in range(0, len(lst), n):
             ten = re.sub(r"[^a-z0-9]+", "-", unicodedata.normalize("NFKD", goc).encode("ascii", "ignore").decode().lower()).strip("-")
             viec = f"{nhom}-{ten or 'x'}-{k // n + 1}"

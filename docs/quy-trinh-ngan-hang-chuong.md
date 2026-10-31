@@ -16,7 +16,7 @@ Ví dụ dưới đây là chương V Hình 9 (`G=lop-9 S=hinh-hoc C=5`). Lệnh
 | 4 | **Ghi tab**: mỗi khối một `update_values` (song song bằng subagent, 1 khối/agent), rồi một `batchUpdate` = `find-replace.json`, rồi `sortRange` (C giảm, E tăng, K giảm) | connector Sheets | mọi khối báo success |
 | 5 | **Đối chiếu**: `get_values` cả tab → JSON, so từng ô với bản gộp; rồi chụp snapshot | `make bank-doi-chieu RAW=… G=… S=… C=…` | 0 ô lệch, 0 mã `~XX~` sót; snapshot ghi xong |
 | 6 | **Soát đủ bài** cho các phiếu của chương | `make du-bai GRADE=… SUBJECT=… CHUONG=… SO_PHIEU=…` | ✓ ĐỦ — THIẾU thì thêm nguồn vào khung, quay lại bước 1 |
-| 7 | Dựng **thuyết minh**, `source_refs` = Mã câu (cột M); `thuyetminh_gate.check_nguon_sheet` chặn mã ngoài tab | `make spec …` | `make check-tm` sạch |
+| 7 | Dựng **thuyết minh** theo 4 bước A–D bên dưới (quy trình phân dạng 30/10/2026), `source_refs` = Mã câu (cột M); `thuyetminh_gate.check_nguon_sheet` chặn mã ngoài tab | xem mục dưới | `make check-tm` sạch |
 
 Luật cứng:
 - **Cấm lọc bằng từ khoá rồi bỏ qua file 0 hit** (22/10 làm vậy sót 12 bài/10 đề thi thử ở chương V). Bước 3 CHẶN nếu
@@ -30,6 +30,28 @@ Tối ưu đã rút ra (chương V 9C, 1083 bài):
   làm agent chết giữa chừng — 1 khối/agent thì chỉ mất khối đó, chạy lại khối đó).
 - Agent quét: ≤20 đề / 1 SGK / ≤4 tài liệu mỗi việc. Đề GK1 lớp 9 = ch.I–IV nên gần như 0 bài — vẫn phải mở.
 - Đối chiếu bằng máy (bước 5) thay cho tin báo cáo của agent: agent gõ tay JSON vẫn có thể sai một ký tự.
+
+---
+
+## Sau khi tab đủ bài — TẠO PHIẾU THUYẾT MINH THEO PHIẾU PHÂN DẠNG (sếp chốt 30/10/2026)
+
+Nguồn: tab **"Quy trình tạo phiếu TM theo PPD"** của sheet tiến độ nhóm
+(`1ucQH5yw…2LNOM`, gid 2027469515), thống nhất sau họp 30/10/2026. Thay cho bước 7 cũ
+("đủ bài ⇒ dựng thuyết minh") — giữa tab và thuyết minh nay có 3 bước:
+
+| # | Việc (nguyên văn sheet) | Làm trong repo | Xong khi |
+|---|---|---|---|
+| A | **Làm phiếu phân dạng**: đọc trước phiếu phân dạng, phân loại câu | Thêm cột **N "Phân loại câu"** vào tab, mỗi bài/ý một nhãn: `NB kiến thức cũ` · `NB của phiếu` · `NB tách TH` · `TH của phiếu` · `TH ghép VD` (nhiều ý: `a) TH của phiếu · b) TH ghép VD`). Chụp ảnh các hình trong bài vào `inputs/refs/ngan-hang-sheet/<grade>/<subject>/chuong-NN/hinh/<Mã câu>.png` cho AI đọc. Sửa tab xong chạy lại bước 5 (snapshot) | mọi bài có nhãn; snapshot mới có trường `vai` |
+| B | **Chạy thử phiếu thuyết minh ra cột đề xuất** | Dựng thuyết minh nháp theo thứ tự **VD → TH → NB** (sinh câu VD trước, rồi TH phục vụ VD, rồi NB). Mỗi câu TH đề xuất phải **tự sinh câu `NB tách TH` trỏ cùng bài gốc** (`source_refs` cùng mã). Rồi `make ppd-de-xuat RAW=<get_values tab> SPEC=<thuyet-minh.json>` ⇒ ghi `de-xuat-cot.json` vào cột **O "Đề xuất thuyết minh"** (đúng hàng theo Mã câu) | lệnh in 0 ✗ |
+| C | **Đọc lại đề xuất, từ VD (VDC) → TH → NB; chọn câu không hay để bỏ** | Chưa có câu thay ⇒ nhờ AI đề xuất vài câu thay từ tab rồi chọn; chọn được thì thay trực tiếp trong spec và **ghi mã câu thay thế vào cột "Ghi chú" của tab**. Lớp TiH: chọn đa dạng hình thức (trắc nghiệm, điền khuyết, nối…) | người soạn duyệt xong cột O |
+| D | **Chạy lại phiếu thuyết minh** | Sửa spec theo bước C, chạy lại `make ppd-de-xuat` (cột O cập nhật) rồi `make check-tm` | `check-tm` sạch |
+
+Luật đo được — nằm trong `thuyetminh_gate.check_nb_theo_ppd`:
+- **`NB tách TH` ≈ 30–40% số câu NB** của mỗi phiếu (đếm trên lớp + BTVN) — sheet ghi "khoảng" nên chỉ
+  **cảnh báo**. (31/10/2026: phần lớn phiếu 9C cũ đang 45–85%.)
+- **`NB tách TH` phải liên kết với một câu TH/VD của chính phiếu** (cùng bài gốc trong `source_refs`) — cảnh báo.
+- **Lớp C phải có cả `NB tách TH` lẫn `NB kiến thức cũ`** — CHẶN với chương đã có tab phân dạng, cảnh báo
+  với chương cũ. `NB kiến thức cũ` là nhãn `loai` thứ tám (thêm 30/10/2026); "NB của phiếu" = `NB lẻ LT` + `NB ghép bài`.
 
 ---
 

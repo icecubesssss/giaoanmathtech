@@ -381,6 +381,11 @@ class LessonPackage(BaseModel):
     # không đổi bản in của các phiếu/đề cũ đã duyệt (staleness_gate so hash .tex).
     trinh_bay: Literal["", "thoang"] = Field(
         "", description="'' = mặc định | 'thoang' = chữ 13pt, giãn dòng rộng, cách bài xa hơn, hình to hơn")
+    # Thầy chốt 26/10/2026: "Phần BTVN cần tách sang hẳn trang khác, có tiêu đề các thứ luôn,
+    # để đôi lúc tôi có thể in riêng". Bật ⇒ BTVN sang trang mới với hộp tiêu đề riêng
+    # (lớp, phiếu, tên bài, Họ và tên/Lớp). Mặc định tắt để bản in cũ của kho không đổi.
+    btvn_trang_rieng: bool = Field(
+        False, description="BTVN in sang trang riêng có hộp tiêu đề (in tách được)")
     stages: list[Stage] = Field(default_factory=list)
 
 

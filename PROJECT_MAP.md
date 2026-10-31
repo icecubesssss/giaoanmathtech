@@ -26,6 +26,63 @@ _Đọc và phân tích `feedback/active_feedback.md` của Thầy,_
 _Render THUYẾT MINH ĐỀ KIỂM TRA (DeSpec) → LaTeX (A4 ngang)._
 - `render_de(spec)`
 
+### `src/compiler/docx_builder.py`
+_Ghi bản Word (.docx) cạnh bản PDF — qua cổng `docx_gate`, có cache theo hash._
+- `build_docx(lesson, out_dir, filename, lesson_dir, force, show_solution)` — Phiếu/đề → .docx cạnh PDF. → (đường dẫn | None, lỗi). Có lỗi cổng ⇒ KHÔNG ghi (trừ force).
+- `build_thuyetminh_docx(spec, out_dir, filename, force)` — Thuyết minh → .docx A4 ngang cạnh PDF (không trang trí, y bản PDF).
+
+### `src/compiler/docx_renderer.py`
+_Phiếu (LessonPackage) → bản Word (.docx): mở KHUÔN `templates/docx/mathtech.docx`_
+- **class Report**
+- **class LessonIR** — Dựng cây khối cho phiếu HS (show_solution=False) hoặc Sổ tay GV (True).
+- `collect(blocks)`
+- **class Emitter**
+- `ensure_template(path, ngang)` — Máy nào thiếu khuôn (clone thiếu, lỡ xoá) thì tự dựng lại từ design_tokens.
+- `render_lesson_docx(lesson, lesson_dir, show_solution)` — → (Document, Report). Không ghi file — `build_docx` lo ghi sau khi cổng duyệt.
+
+### `src/compiler/docx_text.py`
+_Đọc chuỗi nội dung JSON (chữ + `$…$`/`\(…\)`/`\[…\]` + token [[…]] + lệnh LaTeX dàn_
+- **class Fmt**
+- **class T**
+- **class M**
+- **class Tab**
+- **class Img**
+- **class P**
+- **class DMath**
+- **class Fig**
+- **class Cell**
+- **class Tbl**
+- **class Box**
+- **class PageBreak**
+- **class WriteLines**
+- **class Ctx** — Ngữ cảnh đọc: bản in (HS/GV) + nơi gom lệnh lạ cho cổng.
+- `to_cm(dim, default)`
+- `dots(cm)`
+- `fill_width_cm(answer, explicit)` — CÙNG công thức với `jinja_renderer._be_rong_o` để ô Word dài như ô PDF.
+- `split_math_raw(s)` — [('text'|'math'|'dmath', chuỗi)]. Hiểu `$…$`, `\(…\)`, `\[…\]`; `\\[3pt]`
+- `tokens_in_math(s, ctx)` — Token ô trống NẰM TRONG công thức ⇒ \text{……}: giữ công thức nguyên khối (cắt đôi
+- `formulas_in(s)` — Mọi công thức của một chuỗi nội dung (bỏ tikz) — để gom lô cho omml / audit.
+- **class Reader** — Đọc một chuỗi ra list[Block]. Dùng đệ quy cho ngoặc, môi trường, ô bảng.
+- **class _State**
+- `set_palette(colors)`
+- `color_hex(spec, ctx)` — 'brand' · 'brand!40' · 'black!60' · 'brand!85!black' ⇒ hex (pha như xcolor).
+- `stars(level)` — \diffstars: 1–3 ★ vàng đủ/rỗng, 4 = ◆◆◆◆ màu kim cương (y bản PDF).
+- `tabular(rd, spec, body, fmt)`
+
+### `src/compiler/docx_xml.py`
+_Mảnh OOXML viết tay mà python-docx không có API (trường PAGE, viền đoạn, nền ô,_
+- `tblpr_set(tbl, child)`
+- `rpr_set(r, child)`
+- `ppr_set(p_or_style_el, child)` — Đặt một thuộc tính đoạn (child là phần tử w:xxx) đúng thứ tự schema.
+- `tcpr_set(tc, child)`
+- `border_xml(tag, sides)` — sides = {"top": (bề dày pt, màu hex, khoảng cách pt)}. tag = pBdr | tcBorders | tblBorders.
+- `nil_borders_xml(tag, sides)`
+- `shd(fill_hex)`
+- `mix(hex_color, pct, base)` — Màu `hex_color!pct` kiểu xcolor (pha với trắng) — để nền hộp khớp bản PDF.
+- `field_runs(instr, rpr_xml, placeholder)` — Các run của một trường đơn giản (PAGE, NUMPAGES…): begin / instrText / separate / kết quả / end.
+- `watermark_vml(rid, width_pt, height_pt, rotation_deg, shape_no, washout)` — Watermark ẢNH đúng như Word tự sinh khi bấm Design → Watermark → Picture
+- `anchor_picture_xml(rid, cx, cy, x, y, pic_id, name, behind, rel)` — Ảnh NỔI neo theo trang (python-docx chỉ có ảnh inline). Dùng cho khung viền
+
 ### `src/compiler/jinja_renderer.py`
 _Đổ dữ liệu JSON sạch (LessonPackage) vào template Jinja2 → mã LaTeX._
 - `strip_example_solution(text)` — Trên slide TV: ví dụ mẫu CHỈ CẦN ĐỀ BÀI + HÌNH VẼ, không in phần 'Lời giải'.
@@ -49,9 +106,32 @@ _Gọi Tectonic (engine XeLaTeX) biên dịch mã LaTeX → PDF._
 - **class LatexBuildError**
 - `build_pdf(tex_source, slug, filename, out_root, force)` — Ghi .tex vào <out_root>/<slug>/ rồi compile ra PDF. Trả về đường dẫn PDF.
 
+### `src/compiler/omml.py`
+_Đổi công thức LaTeX → OMML (Equation gốc của Word) — dùng cho bản Word (.docx)._
+- **class PandocMissing** — Máy chưa cài pandoc — build vẫn ra PDF, chỉ bỏ qua bản Word.
+- `pandoc_bin()`
+- `preprocess(tex)`
+- `postprocess(omath)` — Sửa OMML texmath sinh ra cho Word hiển thị đúng.
+- `is_only_space(tex)`
+- `prune_cache()` — Xoá bản cache của phiên bản cũ; trả số dòng đã xoá.
+- `convert_many(formulas)` — {LaTeX gốc: (phần tử <m:oMath> | None, lý do lỗi)}. Có cache SQLite.
+- `wrap_display(omath)` — Công thức đứng riêng dòng ⇒ <m:oMathPara> (Word hiển thị cỡ display, căn giữa).
+
+### `src/compiler/thuyetminh_docx.py`
+_PHIẾU THUYẾT MINH (ThuyetMinhSpec) → Word (.docx) A4 ngang — bản sao của_
+- **class _TM**
+- `render_thuyetminh_docx(spec)` — → (Document, Report).
+
 ### `src/compiler/thuyetminh_renderer.py`
 _Render PHIẾU THUYẾT MINH (spec) → LaTeX (A4 ngang) dùng base_thuyetminh.tex.j2._
 - `render_thuyetminh(spec)`
+
+### `src/compiler/tikz_raster.py`
+_Vẽ các mảnh LaTeX đồ hoạ (TikZ, sơ đồ forest, badge chặng, thanh hành trình…) ra PNG_
+- **class FigureError**
+- **class Raster**
+- `key(snippet)`
+- `render_many(snippets)` — {mã LaTeX: Raster | FigureError}. Hình hỏng KHÔNG kéo đổ cả phiếu — cổng
 
 ### `src/exporters/__init__.py`
 - _(không có symbol công khai)_
@@ -77,6 +157,7 @@ _Điểm chạy CLI trung tâm — MathTech Engine đầy đủ._
 - `cmd_status(args)` — Xem tình trạng tất cả bài trong run_state.json.
 - `cmd_evolve(args)` — Đọc active_feedback.md và tiến hóa style/prompt có kiểm soát.
 - `get_ca_prefix(lesson, json_path)` — Xác định tiền tố Ca ('ca-01-', 'ca-02-'...) cho phiếu học tập.
+- `cmd_build_docx(args)` — CHỈ ra bản Word (.docx) của phiếu HS — xem nhanh / sửa trong Word.
 - `cmd_build_handout(args)`
 - `cmd_build_guide(args)`
 - `cmd_build_slide(args)`
@@ -146,6 +227,38 @@ _Cấu trúc tích hợp cả 5 chặng của buổi học — khóa cứng gi�
 - **class LessonPackage**
 - **class ChapterSummary** — Phiếu TỔNG KẾT CHƯƠNG (1 trang) — gom nhiều phiếu của một chương/tuần thành
 
+### `src/schema/ngan_hang_quy_trinh.py`
+_Quy trình dựng NGÂN HÀNG BÀI theo chương (Bước 0, trước thuyết minh — Thầy chốt 22/10/2026)._
+- `khung_path(grade, subject, chuong)`
+- `load_khung(grade, subject, chuong)`
+- `chuong_dir(grade, subject, chuong)`
+- `out_dir(grade, subject, chuong)`
+- `kiem_ke(khung)` — Mọi file nguồn phải mở cho chương: [{file, nhom, viec}]. Không lọc trước bằng từ khoá.
+- `kiem_ban_ghi(recs, co_san)` — Lỗi chặn: thiếu khoá, band lạ, fmt lạ, uu lạ, id trùng (trong lô hoặc với tab), file không tồn tại.
+- `kiem_log(items, logs)` — Mỗi file kiểm kê phải có dòng trong log của việc (kể cả 0 bài + lý do).
+- `tong_hop(r)`
+- `gan_phieu(r, khung)` — Luật trong khung: chạy theo thứ tự; luật `dung` khớp ⇒ trả ngay nhãn đó; còn lại GOM nhiều nhãn
+- `phut(r)`
+- `dung_hang(recs, khung)` — Bản ghi → hàng 13 cột của tab (A Bài cụ thể … M Mã câu), sắp mức cao trước rồi ưu tiên nguồn.
+- `nen(rows, nguong, min_len, tu_them)` — Thay cụm lặp bằng mã `~XX~` (gõ ít token hơn khi ghi), trả (rows_nen, [(mã, chữ)]).
+- `giai_nen(rows, pairs)`
+- `chia_khoi(rows, start_row, max_bytes)`
+- `find_replace_requests(pairs, sheet_tab_id, r0, r1)` — Lệnh batchUpdate bung mã → chữ, chỉ trong vùng dòng [r0, r1] (đánh số 1 như Sheets).
+- `doi_chieu(values, expected)` — So tab (get_values, hàng 1 = tiêu đề) với hàng mong đợi THEO MÃ CÂU (tab có thể đã sắp lại).
+- `ma_con_sot(values)`
+
+### `src/schema/ngan_hang_sheet.py`
+_NGÂN HÀNG ĐỀ THEO CHƯƠNG = tab "Phân dạng …" trên Google Sheets (Thầy chốt 22/10/2026)._
+- `snapshot_path(grade, subject, chuong)`
+- `chuong_of_slug(text)` — 'thuyet-minh-lop-9c-chuong-05-duong-tron-ban-2' → 5.
+- `parse_muc_y(s)` — 'a) TH · b) VD · c) VDC' → [('a','TH'),('b','VD'),('c','VDC')]; 'TH' → [('', 'TH')].
+- `phieu_so(s)` — 'Phiếu 2 (bốn điểm, tiếp tuyến); luyện tập P5–P6' → {2, 5, 6}. 'Chưa có phiếu' → {}.
+- `uu_so(s)`
+- `from_values(values, sheet_id, tab, pulled_at)` — Bảng `get_values` thô (hàng 1 = tiêu đề) → snapshot dict. Bỏ hàng không có Mã câu.
+- `load(grade, subject, chuong)` — Snapshot của chương, hoặc None nếu chương chưa có tab phân dạng.
+- `index(snap)`
+- `resolve(ma, idx)` — Tìm 1 ref trong tab. Cho phép trỏ một Ý của bài: 'ck1-ai-mo-2.b' / 'ck1-ai-mo-2b'.
+
 ### `src/schema/thuyetminh_spec.py`
 _PHIẾU THUYẾT MINH (spec) — artifact MÁY-ĐỌC, là HỢP ĐỒNG chốt số câu trước khi soạn._
 - **class SpecRow** — Một DẠNG bài trong phiếu, gắn band + số câu mỗi đoạn. Thời gian tự tính.
@@ -194,6 +307,11 @@ _Cổng gác SÀN độ khó — chống đẻ ra phiếu ngây ngô dưới t�
 - `load_profile(path)`
 - `check_difficulty(lesson, profile)`
 - `check_ramp(lesson, profile)` — Cổng ĐỘ DỐC (cảnh báo, KHÔNG chặn build): tầng Mở rộng phải là thang nhiều
+
+### `src/validators/docx_gate.py`
+_Cổng soát bản Word (.docx) TRƯỚC khi giao — chạy trên file đã ghi ra, đối chiếu nguồn JSON._
+- `check_order(root, part)`
+- `check_docx(path, expect_problems, expect_maths, min_images, branded)` — `branded=False`: tài liệu KHÔNG có header/footer (thuyết minh — y bản PDF).
 
 ### `src/validators/duration_gate.py`
 _duration_gate — kiểm thời lượng & tỉ lệ NB-TH-VD(-VDC) cho phiếu PHÂN TẦNG._
@@ -276,6 +394,7 @@ _thuyetminh_gate — soi GIỜ VÔ LÝ trong phiếu THUYẾT MINH (spec) TRƯ�
 - `check_thuyetminh(spec)` — Trả (errors, warnings). errors CHẶN build; warnings chỉ cảnh báo.
 - `check_scaffold_rails(spec)` — Mỗi phiếu phải có ĐỦ hai giàn giáo NB: 've-hinh' (môn hình) và 'dien-khuyet'.
 - `check_source_refs(spec)` — KHÔNG BỊA ĐỀ: mọi dòng phải trỏ nguồn, TRỪ dòng loại 'NB lẻ LT' (câu hỏi thẳng
+- `check_nguon_sheet(spec)` — CHỈ BỐC BÀI TỪ SHEET PHÂN DẠNG (Thầy chốt 22/10/2026): chương nào đã có tab phân
 - `check_chuong_level(spec)` — Thầy chốt 14/08/2026: TỪ GIỜ CHỈ LÀM THUYẾT MINH CẤP CHƯƠNG, mọi khối.
 - `check_kiem_tra_chuong(spec)` — Spec cả chương phải chừa ≥45′ kiểm tra chương ở PHIẾU CUỐI (`kiem_tra_phut`)
 - `check_meta_wrap(tex)` — Soi BẢNG ĐẦU của thuyết minh ĐÃ RENDER: ô nào nhiều mục mà không xuống dòng,
@@ -385,6 +504,24 @@ _Dựng PDF 'TRÍCH XUẤT CÂU VDC' — in NGUYÊN VĂN đề bài để Thầy
 - `bang_phan_loai(rows)` — Chương nào chỉ TH · TH+VD · TH+VD+VDC — VDC lấy từ chính bảng trích trên.
 - `main()`
 
+### `scripts/de_gk1_lop9_60_phut.py`
+_ĐỀ KIỂM TRA GIỮA HỌC KÌ I LỚP 9 — BẢN 60 PHÚT, KHÔNG CÓ VDC (20/10/2026)._
+- `d(x)`
+- `st(text, diem)`
+- `xuong_dong(t)` — Câu văn mới (sau dấu chấm, chữ kế là chữ HOA) xuống dòng — như bo_tuong_duong của bản 90 phút.
+- `y(nhan, diem, steps)`
+- `goc(cx, cy, a0, a1, r, nhan, rn)`
+- `vuong(x, y_, dx, dy, s)` — kí hiệu góc vuông tại (x,y), hai cạnh theo hướng (dx,0) và (0,dy)
+- `vg(P, Q, R, s)` — kí hiệu góc vuông tại Q (giữa QP và QR) — vẽ theo toạ độ
+- `hinh(pts, segs, extra, scale)`
+- `kiem_nguon()`
+- `bang_mt(rows)`
+- `bang_muc(rows)`
+- `bang_so_sanh()`
+- `bang_theo_doi()`
+- `de_json()`
+- `mt_json()`
+
 ### `scripts/de_on_tap_gk1_lop8.py`
 _BỘ ĐỀ ÔN GK1 LỚP 8 (10/10/2026) — 3 đề ôn + 1 đề GK1 chính thức, theo đúng quy trình_
 - `d(x)`
@@ -475,6 +612,17 @@ _BỘ ĐỀ ÔN GK1 LỚP 9 — PHIÊN BẢN 2 (03/10/2026: rải nguồn theo t
 - `de_json(k, D)`
 - `mt_json(k, D)`
 
+### `scripts/docx_audit_all.py`
+_Dựng THỬ bản Word cho MỌI phiếu trong kho (không ghi vào outputs/), gom lỗi cổng._
+- `one(path, out_dir)`
+- `main(argv)`
+
+### `scripts/docx_math_audit.py`
+_Đổi THỬ toàn bộ công thức của kho seed sang Equation Word, báo công thức hỏng._
+- `walk(node, key)`
+- `collect(root)`
+- `main(argv)`
+
 ### `scripts/exam_annotate.py`
 _Gắn `band` (NB/TH/VD/VDC) + `phut` (thời gian HS làm, ước) vào từng câu trong_
 - `cmd_ensure_ids(args)` — Ghi trường `id` (tổng hợp từ bai+y) vào câu nào còn thiếu — chuẩn hoá bank.
@@ -506,6 +654,26 @@ _Tải SÁCH GIÁO VIÊN (SGV) Toán Kết nối tri thức khối 6-12 về inp
 - `jpegs_to_pdf(pages, dest)` — Ghép danh sách ảnh JPEG thành PDF, mỗi ảnh một trang, khổ ngang A4.
 - `fetch_grade(grade)`
 - `main(argv)`
+
+### `scripts/make_docx_template.py`
+_Dựng KHUÔN Word `templates/docx/mathtech.docx` (header · footer · watermark · styles)_
+- `tokens()`
+- `watermark_png(src, opacity)` — Nhân kênh alpha với `opacity` (PDF vẽ ảnh 20% mực với opacity 0.45).
+- `frame_png(rule_hex, brand_hex, dpi)` — Khung trang + 4 góc L — toạ độ chép đúng từ \AddToShipoutPictureBG của PDF:
+- `setup_styles(doc, C)`
+- `build_header(hdr, C, B, banner, wm_bytes, frame_bytes, n, text_w_in)`
+- `build_footer(ftr, C, B, text_w_in)`
+- `build(out, ngang)` — `ngang=False`: phiếu/đề A4 dọc CÓ header·footer·watermark.
+- `main()`
+
+### `scripts/ngan_hang_sheet.py`
+_Ngân hàng bài theo chương = tab phân dạng trên Google Sheets (Thầy chốt 22/10/2026)._
+- `cmd_nap(a)`
+- `cmd_du(a)`
+- `cmd_giao(a)`
+- `cmd_gop(a)`
+- `cmd_doi_chieu(a)`
+- `main()`
 
 ### `scripts/ocr_kho_de.py`
 _OCR KHO ĐỀ — dựng kho text cho mọi đề hợp lệ ở inputs/refs/de-thi/lop-{6..9}/<kỳ>/._

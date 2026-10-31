@@ -118,7 +118,7 @@ class _TM:
                     if not (r.loai or "").strip() or (r.loai or "").strip().startswith("TODO"))
         if thieu:
             self.out.append(P([T(f"CHƯA KHAI LOẠI CÂU HỎI (§4b) cho {thieu} dòng — bảng còn thiếu cột Loại "
-                                 "(NB lẻ LT / NB tách TH / NB ghép bài / TH lẻ LT / TH ghép bài / TH tách VD / VD lẻ).",
+                                 "(NB lẻ LT / NB tách TH / NB ghép bài / NB kiến thức cũ / TH lẻ LT / TH ghép bài / TH tách VD / VD lẻ).",
                                  Fmt(bold=True, sans=True, size=10, color=C["brand"]))], align="left"))
         return self.out
 

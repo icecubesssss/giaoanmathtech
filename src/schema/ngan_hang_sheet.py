@@ -40,6 +40,20 @@ COLS = {
     "ma": "Mã câu",
 }
 
+# Cột THÊM theo quy trình tạo phiếu thuyết minh từ phiếu phân dạng (sếp chốt 30/10/2026,
+# tab "Quy trình tạo phiếu TM theo PPD"). TUỲ CHỌN: tab cũ (ch.V 9C, 13 cột A–M) không có
+# vẫn nạp được; có thì snapshot giữ lại cho `de-xuat` và người soạn đọc.
+#   N "Phân loại câu" — bước 1, đọc trước phiếu phân dạng rồi phân loại từng câu/ý:
+#       NB kiến thức cũ · NB của phiếu · NB tách TH · TH của phiếu · TH ghép VD
+#       (nhiều ý thì ghi theo ý: "a) TH của phiếu · b) TH ghép VD").
+#   O "Đề xuất thuyết minh" — bước 2, máy điền sau khi chạy thử thuyết minh
+#       (`scripts/ngan_hang_sheet.py de-xuat`): bài đang được dòng nào của phiếu nào dùng.
+COLS_TUY_CHON = {
+    "vai": "Phân loại câu",
+    "de_xuat": "Đề xuất thuyết minh",
+}
+VAI_CAU = ("NB kiến thức cũ", "NB của phiếu", "NB tách TH", "TH của phiếu", "TH ghép VD")
+
 
 def snapshot_path(grade: str, subject: str, chuong: str | int) -> Path:
     n = int(re.sub(r"\D", "", str(chuong)) or 0)
@@ -90,6 +104,10 @@ def from_values(values: list[list[str]], *, sheet_id: str, tab: str, pulled_at: 
         if not hit:
             raise ValueError(f"không thấy cột '{label}' trong tiêu đề tab")
         idx[key] = hit[0]
+    for key, label in COLS_TUY_CHON.items():
+        hit = [i for i, h in enumerate(head) if label.lower() in (h or "").lower()]
+        if hit:
+            idx[key] = hit[0]
     rows, seen, dup = [], set(), []
     for r in values[1:]:
         r = list(r) + [""] * (len(head) - len(r))

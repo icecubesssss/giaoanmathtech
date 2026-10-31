@@ -289,8 +289,14 @@ make bank-gop  G=lop-9 S=hinh-hoc C=5     # 3. soát + gán phiếu theo khung +
 #                                            4. ghi: 1 khối/subagent → find-replace.json → sort.json (connector Sheets)
 make bank-doi-chieu RAW=… G=… S=… C=…     # 5. so tab từng ô với bản gộp → chụp snapshot vào repo
 make du-bai GRADE=lop-9 SUBJECT=hinh-hoc CHUONG=5 SO_PHIEU=6   # 6. đủ bài chưa — THIẾU thì thêm nguồn vào khung, về 1
-#                                            7. ĐỦ ⇒ dựng thuyết minh, source_refs = Mã câu; check_nguon_sheet chặn mã ngoài tab
+#                                            7. ĐỦ ⇒ thuyết minh theo QUY TRÌNH PHÂN DẠNG (A–D dưới)
 ```
+
+**Quy trình tạo phiếu thuyết minh theo phiếu phân dạng (sếp chốt 30/10/2026, tab "Quy trình tạo phiếu TM theo PPD"):**
+A) phân loại từng câu trên tab, cột "Phân loại câu": NB kiến thức cũ / NB của phiếu / NB tách TH / TH của phiếu / TH ghép VD (+ chụp ảnh hình vào `…/chuong-NN/hinh/`) →
+B) chạy thử thuyết minh, sinh **VD → TH → NB**, mỗi câu TH tự sinh câu `NB tách TH` cùng bài gốc; `make ppd-de-xuat RAW=… SPEC=…` ra cột "Đề xuất thuyết minh" ghi lên tab →
+C) đọc đề xuất từ VD (VDC) → TH → NB, bỏ câu không hay, thay câu (AI gợi ý nếu chưa có) và ghi mã câu thay vào cột Ghi chú →
+D) chạy lại thuyết minh. Cổng `check_nb_theo_ppd`: `NB tách TH` ≈ 30–40% câu NB (cảnh báo), phải liên kết câu TH (cảnh báo), **lớp C bắt buộc có `NB tách TH` + `NB kiến thức cũ`** (chặn khi chương có tab). Chi tiết: docs/quy-trinh-ngan-hang-chuong.md.
 
 **Cấm lọc bằng từ khoá rồi bỏ file 0 hit** (22/10 sót 12 bài/10 đề thi thử ở chương V) — `bank-gop` chặn file kiểm kê không có bài cũng không có dòng log.
 

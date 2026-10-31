@@ -171,3 +171,48 @@ def test_resolve_bam_nham_json_cau_hinh():
     with pytest.raises(SystemExit) as e:
         quick.resolve("config/tier_spec.json")
     assert "không phải phiếu học tập" in str(e.value)
+
+
+# ───────────────────────── quick build direct & skip-validate ─────────────────────────
+
+def test_cmd_build_skip_validate(monkeypatch):
+    """Khi skip_validate=True, cmd_build_all không được chạy _gate_before_build."""
+    import argparse
+    from src import main
+
+    called = []
+    def fake_gate(*args, **kwargs):
+        called.append(True)
+        return True
+
+    monkeypatch.setattr(main, "_gate_before_build", fake_gate)
+    monkeypatch.setattr(main, "_build_kinds", lambda *args, **kwargs: [])
+
+    args = argparse.Namespace(
+        lesson="inputs/seeds/lop-8/dai-so/lop-b/chuong-01-da-thuc/phieu-2-tuan05-cong-tru-da-thuc.json",
+        force=False,
+        only=None,
+        fast=False,
+        docx=None,
+        skip_validate=True,
+    )
+    code = main.cmd_build_all(args)
+    assert code == 0
+    assert len(called) == 0, "_gate_before_build không được gọi khi skip_validate=True"
+
+
+def test_quick_build_direct_invokes_pipeline(monkeypatch):
+    """quick build gọi trực tiếp cmd_validate và cmd_build_all không qua subprocess."""
+    from src import main
+    val_called = []
+    build_called = []
+
+    monkeypatch.setattr(main, "cmd_validate", lambda args: val_called.append(args) or 0)
+    monkeypatch.setattr(main, "cmd_build_all", lambda args: build_called.append(args) or 0)
+
+    res = quick.main(["build", "inputs/seeds/lop-8/dai-so/lop-b/chuong-01-da-thuc/phieu-2-tuan05-cong-tru-da-thuc.json"])
+    assert res == 0
+    assert len(val_called) == 1
+    assert len(build_called) == 1
+    assert getattr(build_called[0], "skip_validate", False) is True
+

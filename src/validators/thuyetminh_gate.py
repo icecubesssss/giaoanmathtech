@@ -75,6 +75,8 @@ def check_thuyetminh(spec: ThuyetMinhSpec) -> tuple[list[str], list[str]]:
     # hoàn toàn — chính vì vậy bản mẫu chương IV lớp 7 tầng C (tier_spec chỉ có tầng B)
     # đi qua mà KHÔNG một cổng nào lên tiếng.
     noi_dung = _noi_dung_errors(spec)
+    ppd_loi, ppd_canh_bao = check_nb_theo_ppd(spec)
+    noi_dung += ppd_loi
 
     try:
         ts = load_tier_spec()
@@ -85,7 +87,7 @@ def check_thuyetminh(spec: ThuyetMinhSpec) -> tuple[list[str], list[str]]:
         return noi_dung, [
             f"thuyetminh: CHƯA có chuẩn giờ cho {spec.grade}/{spec.subject} tầng "
             f"{spec.tier} trong tier_spec.json — ĐÃ BỎ QUA toàn bộ cổng giờ/tỉ lệ "
-            f"(quỹ buổi, tỉ lệ NB-TH-VD). Thêm tầng vào tier_spec để được soi."]
+            f"(quỹ buổi, tỉ lệ NB-TH-VD). Thêm tầng vào tier_spec để được soi."] + ppd_canh_bao
 
     info = session_info(spec)
     session = info.get("session_minutes") or 0
@@ -104,7 +106,7 @@ def check_thuyetminh(spec: ThuyetMinhSpec) -> tuple[list[str], list[str]]:
         gop or bool(ratio_target and ratio_target.get("VDC", 0) > 0))
 
     errors: list[str] = []
-    warnings: list[str] = []
+    warnings: list[str] = list(ppd_canh_bao)
 
     # Tầng chọn tỉ lệ THEO CHƯƠNG (tầng B từ 30/08/2026): không tra ra tỉ lệ thì nói rõ
     # vì sao, thay vì im lặng bỏ cổng tỉ lệ như trước.
@@ -488,7 +490,12 @@ def check_meta_wrap(tex: str) -> list[str]:
 
 # Bảy loại câu hỏi §4b (HUONG-DAN-THUYET-MINH-LOP-C §4b, Thầy chốt 2026-08-05).
 # Tên file có chữ "LOP-C" nhưng luật áp cho MỌI tầng, MỌI khối.
-LOAI_4B = ("NB lẻ LT", "NB tách TH", "NB ghép bài",
+# 30/10/2026 (quy trình tạo phiếu thuyết minh theo phiếu phân dạng — tab "Quy trình tạo
+# phiếu TM theo PPD" của sheet tiến độ nhóm): NB tách ba nguồn "NB kiến thức cũ / NB của
+# phiếu / NB chia ra từ TH" ⇒ thêm nhãn thứ tám 'NB kiến thức cũ' ("NB của phiếu" chính là
+# 'NB lẻ LT' + 'NB ghép bài', "NB chia ra từ TH" là 'NB tách TH').
+LOAI_NB_KIEN_THUC_CU = "NB kiến thức cũ"
+LOAI_4B = ("NB lẻ LT", "NB tách TH", "NB ghép bài", LOAI_NB_KIEN_THUC_CU,
            "TH lẻ LT", "TH ghép bài", "TH tách VD", "VD lẻ")
 
 
@@ -523,6 +530,75 @@ def check_loai_4b(spec: ThuyetMinhSpec) -> list[str]:
         if lech:
             out.append(f"thuyetminh: {tag} — nhãn `loai` lệch band của dòng: {', '.join(lech)}")
     return out
+
+# ── QUY TRÌNH TẠO PHIẾU THUYẾT MINH THEO PHIẾU PHÂN DẠNG (sếp chốt 30/10/2026) ──
+# Tab "Quy trình tạo phiếu TM theo PPD" (sheet tiến độ nhóm 1ucQH5yw…) ghi ba luật đo được:
+#   • "Câu TH đề xuất phải tự sinh ra câu NB chia từ TH LIÊN KẾT với câu TH đó"
+#   • "Câu NB từ thông hiểu chiếm khoảng 30–40% phần nhận biết"
+#   • "Với lớp C thì cần có câu NB sinh ra từ TH, và NB kiến thức cũ"
+# Đo trên kho 31/10/2026: phần lớn phiếu 9C để 'NB tách TH' 45–85% phần NB, KHÔNG phiếu nào
+# có 'NB kiến thức cũ' ⇒ tỉ lệ chỉ CẢNH BÁO (sheet ghi "khoảng"); hai loại NB bắt buộc của
+# lớp C thì CHẶN với chương đã có tab phân dạng (đi theo quy trình mới), còn chương cũ chỉ
+# cảnh báo để không đánh trượt hàng loạt phiếu Thầy duyệt trước đó.
+NB_TACH_TH_TI_LE = (30.0, 40.0)
+
+
+def _so_cau(r) -> int:
+    return (r.onclass or 0) + (r.btvn or 0)
+
+
+def check_nb_theo_ppd(spec: ThuyetMinhSpec) -> tuple[list[str], list[str]]:
+    """Trả (errors, warnings) theo quy trình tạo phiếu thuyết minh từ phiếu phân dạng."""
+    from src.schema import ngan_hang_sheet as nhs
+    so = nhs.chuong_of_slug(spec.slug) or nhs.chuong_of_slug(getattr(spec, "chuong", ""))
+    snap = nhs.load(spec.grade, spec.subject, so) if so else None
+    co_tab = bool(snap)
+    idx = nhs.index(snap) if snap else {}
+
+    def bai_goc(ref: str) -> str:   # '<mã>.b' / '<mã>b' → '<mã>' khi tra được trong tab
+        hit = nhs.resolve(ref, idx) if idx else None
+        # chưa có tab thì chỉ bỏ đuôi ý dạng '.a' — mã thật có thể chứa '.2' ('…-4.2')
+        return hit["ma"] if hit else re.sub(r"\.[a-e]$", "", ref)
+    loi: list[str] = []
+    canh_bao: list[str] = []
+    lo, hi = NB_TACH_TH_TI_LE
+    for p in spec.phieu:
+        tag = f"phiếu {p.code}"
+        nb = [r for r in p.rows if r.band == "NB"]
+        if not nb:
+            continue
+        loai = lambda r: (r.loai or "").strip()  # noqa: E731
+        tong = sum(_so_cau(r) for r in nb)
+        tach = sum(_so_cau(r) for r in nb if loai(r) == "NB tách TH")
+        if tong:
+            pct = tach / tong * 100
+            if not (lo <= pct <= hi):
+                canh_bao.append(
+                    f"thuyetminh: {tag} — 'NB tách TH' chiếm {pct:.0f}% số câu NB ({tach}/{tong}); "
+                    f"quy trình phân dạng (30/10/2026) đòi khoảng {lo:.0f}–{hi:.0f}%.")
+        # NB tách TH phải LIÊN KẾT với một câu TH (hoặc VD — TH tách VD) của chính phiếu:
+        # trỏ cùng bài gốc trong source_refs.
+        goc = {bai_goc(ref) for r in p.rows if r.band in ("TH", "VD", "VDC")
+               for ref in (r.source_refs or [])}
+        mo_coi = [f"NB{i}" for i, r in enumerate(p.rows, 1)
+                  if r.band == "NB" and loai(r) == "NB tách TH" and r.source_refs
+                  and not ({bai_goc(ref) for ref in r.source_refs} & goc)]
+        if mo_coi:
+            canh_bao.append(
+                f"thuyetminh: {tag} — {len(mo_coi)} dòng 'NB tách TH' không trỏ bài gốc nào của "
+                f"dòng TH/VD trong cùng phiếu (NB phải sinh ra TỪ câu TH đề xuất): "
+                f"{', '.join(mo_coi[:8])}")
+        if (spec.tier or "").upper() == "C":
+            thieu = [lb for lb in ("NB tách TH", LOAI_NB_KIEN_THUC_CU)
+                     if not any(loai(r) == lb for r in nb)]
+            if thieu:
+                msg = (f"thuyetminh: {tag} — lớp C phải có câu {' và '.join(repr(t) for t in thieu)} "
+                       f"(quy trình phân dạng 30/10/2026: 'Với lớp C thì cần có câu NB sinh ra từ "
+                       f"TH, và NB kiến thức cũ').")
+                (loi if co_tab else canh_bao).append(
+                    msg if co_tab else msg + " (chương chưa có tab phân dạng nên chỉ cảnh báo)")
+    return loi, canh_bao
+
 
 # ── KIẾN THỨC NỀN + THỜI LƯỢNG — hai khối chương IV/V có mà 70/75 spec khác thiếu ──
 # Thầy hỏi 19/08/2026: "sang chat mới soạn lại chương 6 thì có ra đúng output như

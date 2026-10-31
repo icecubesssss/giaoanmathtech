@@ -104,7 +104,15 @@ def resolve(query: str) -> Path:
         sys.exit("✗ Chưa có phiếu nào làm gần đây. Gõ kèm tên, vd: make b Q=\"hinh binh hanh\"")
 
     words = _fold(query).split()
-    hits = [p for p in _lessons() if all(w in _fold(str(p.relative_to(SEEDS))) for w in words)]
+    # Lọc đường dẫn trước: chỉ kiểm tra _la_phieu cho file khớp từ khoá (giảm 99% I/O)
+    hits = [
+        p for p in sorted(SEEDS.rglob("*.json"))
+        if p.stem not in SKIP_STEMS
+        and not p.stem.startswith("thuyet-minh")
+        and p.name not in ("curriculum.json", "de-kiem-tra.json", "package.json")
+        and all(w in _fold(str(p.relative_to(SEEDS))) for w in words)
+        and _la_phieu(p)
+    ]
 
     if not hits:
         sys.exit(f"✗ Không thấy phiếu nào khớp '{query}'. Thử ít chữ hơn, vd chỉ 'hbh' hoặc 'tuan07'.")
@@ -282,21 +290,25 @@ def main(argv: list[str]) -> int:
 
     if cmd == "build":
         p = resolve(query)
-        py = sys.executable
         print(f"→ Kiểm: {p.relative_to(ROOT)}")
 
         # Thuyết minh là loại file khác, build bằng lệnh khác — tự nhận, khỏi bắt Thầy nhớ.
         # (cmd_build_thuyetminh đã tự gác giờ vô lý bên trong, không cần validate riêng.)
         if loai_file(p) == "spec":
             print("→ Đây là phiếu THUYẾT MINH — dựng PDF thuyết minh…")
-            return subprocess.run([py, "-m", "src.main", "build-thuyetminh", str(p)],
-                                  cwd=ROOT).returncode
+            import argparse
+            from src.main import cmd_build_thuyetminh
+            return cmd_build_thuyetminh(argparse.Namespace(spec=str(p), force=False, docx=None))
 
-        if subprocess.run([py, "-m", "src.main", "validate", str(p)], cwd=ROOT).returncode:
+        import argparse
+        from src.main import cmd_validate, cmd_build_all
+
+        ret = cmd_validate(argparse.Namespace(lesson=str(p), fast=False))
+        if ret != 0:
             print("✗ Chưa qua cổng validate — sửa xong chạy lại.", file=sys.stderr)
-            return 1
-        print(f"→ Build 3 bản PDF…")
-        return subprocess.run([py, "-m", "src.main", "build", str(p)], cwd=ROOT).returncode
+            return ret
+        print("→ Build 3 bản PDF…")
+        return cmd_build_all(argparse.Namespace(lesson=str(p), force=False, only=None, fast=False, docx=None, skip_validate=True))
 
     if cmd == "md":
         p = resolve(query)

@@ -55,7 +55,7 @@ class SpecRow(BaseModel):
     # thấy dòng này là câu LẺ từ lý thuyết, câu TÁCH làm bước đệm, hay một Ý của bài GHÉP.
     # Để trống ⇒ renderer KHÔNG in cột Loại (spec cũ giữ nguyên bố cục).
     loai: str = Field(
-        "", description="Loại §4b: 'NB lẻ LT' | 'NB tách TH' | 'NB ghép bài' | "
+        "", description="Loại §4b: 'NB lẻ LT' | 'NB tách TH' | 'NB ghép bài' | 'NB kiến thức cũ' | "
                         "'TH lẻ LT' | 'TH ghép bài' | 'TH tách VD' | 'VD lẻ'"
     )
     # GIÀN GIÁO bắt buộc mỗi phiếu (Thầy chốt 14/08/2026, rút từ bản mẫu lớp 7 chương IV).

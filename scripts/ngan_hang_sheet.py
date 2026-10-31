@@ -155,6 +155,11 @@ KY = {"cuoi-ki-1": "ck1", "giua-ki-1": "gk1", "giua-ki-2": "gk2", "de-cuoi-ki-2"
 SHEET_ID = "1ucQH5yw5bn3C1Bh_V4tAToa6NN5-F-nt8_2yxf2LNOM"
 
 
+def _sheet_id(kh: dict) -> str:
+    """Chương có file Sheets riêng thì khai `sheet_id` trong khung; mặc định là sheet dùng chung."""
+    return kh.get("sheet_id") or SHEET_ID
+
+
 def _mau_prompt() -> str:
     t = DOC.read_text(encoding="utf-8")
     return t.split("<!-- MAU-PROMPT-BEGIN -->", 1)[1].split("<!-- MAU-PROMPT-END -->", 1)[0].strip()
@@ -257,8 +262,10 @@ def cmd_gop(a) -> int:
     end = khoi[-1]["end"]
     fr = q.find_replace_requests(pairs, kh["sheet_tab_id"], start, end)
     (day / "find-replace.json").write_text(json.dumps(fr, ensure_ascii=False), encoding="utf-8")
+    # Sắp CẢ cột N "Phân loại câu" + O "Đề xuất thuyết minh" (quy trình phân dạng 30/10/2026):
+    # chỉ sắp A–M thì hai cột này đứng yên trong khi bài chạy đi ⇒ nhãn lệch sang bài khác.
     sort = [{"sortRange": {"range": {"sheetId": kh["sheet_tab_id"], "startRowIndex": 1, "endRowIndex": end,
-                                     "startColumnIndex": 0, "endColumnIndex": 13},
+                                     "startColumnIndex": 0, "endColumnIndex": 13 + len(nhs.COLS_TUY_CHON)},
                            "sortSpecs": [{"dimensionIndex": 2, "sortOrder": "DESCENDING"},
                                          {"dimensionIndex": 4, "sortOrder": "ASCENDING"},
                                          {"dimensionIndex": 10, "sortOrder": "DESCENDING"}]}}]
@@ -275,7 +282,7 @@ def cmd_gop(a) -> int:
     print(f"Prompt ghi khối: \"Load ToolSearch 'select:mcp__claude_ai_Google_Sheets__update_values,"
           f"mcp__claude_ai_Google_Sheets__get_values'. Print rows of {day}/khoi-NN.json with "
           f"python3 -c \\\"import json;print(json.dumps(json.load(open(P))['rows'],ensure_ascii=False))\\\" and call "
-          f"update_values spreadsheetId {SHEET_ID}, range '{kh['tab']}'!A<start>:M<end>, values = rows EXACTLY. "
+          f"update_values spreadsheetId {_sheet_id(kh)}, range '{kh['tab']}'!A<start>:M<end>, values = rows EXACTLY. "
           f"Touch nothing else. Verify column M ids, report.\"")
     return 0
 
@@ -306,7 +313,7 @@ def cmd_doi_chieu(a) -> int:
         for m in loi[:40]:
             print("   ", m)
         return 1
-    snap2 = nhs.from_values(values, sheet_id=a.sheet_id, tab=kh["tab"],
+    snap2 = nhs.from_values(values, sheet_id=a.sheet_id or _sheet_id(kh), tab=kh["tab"],
                             pulled_at=datetime.now().isoformat(timespec="minutes"))
     out = nhs.snapshot_path(a.grade, a.subject, a.chuong)
     out.parent.mkdir(parents=True, exist_ok=True)
@@ -315,6 +322,54 @@ def cmd_doi_chieu(a) -> int:
     print(f"✓ Khớp {len(moi)} hàng mới từng ô, 0 mã sót; snapshot {out.relative_to(nhs.settings.ROOT)}: "
           f"{len(snap2['rows'])} bài. Bước kế: make du-bai.")
     return 0
+
+
+def cmd_de_xuat(a) -> int:
+    """Bước 2 quy trình phân dạng: CHẠY THỬ thuyết minh ra CỘT ĐỀ XUẤT trên tab.
+
+    Đọc thuyết minh (bản chạy thử) + bảng get_values thô của tab, sinh cột "Đề xuất thuyết
+    minh" khớp TỪNG HÀNG của tab (theo Mã câu, không theo thứ tự) để ghi bằng connector
+    Sheets. Người soạn đọc cột này từ VD (VDC) → TH → NB, bỏ câu không hay, thay câu khác
+    (ghi mã câu thay thế vào cột Ghi chú) rồi chạy lại thuyết minh."""
+    from src.schema.thuyetminh_spec import ThuyetMinhSpec
+    from src.validators.thuyetminh_gate import check_nb_theo_ppd
+    spec = ThuyetMinhSpec.model_validate(json.loads(Path(a.spec).read_text(encoding="utf-8")))
+    raw = json.loads(Path(a.raw).read_text(encoding="utf-8"))
+    values = raw["values"] if isinstance(raw, dict) else raw
+    head = values[0]
+    try:
+        cot_ma = next(i for i, h in enumerate(head) if nhs.COLS["ma"].lower() in (h or "").lower())
+    except StopIteration:
+        print("✗ tab không có cột 'Mã câu'")
+        return 1
+    idx = {(r + [""] * (cot_ma + 1))[cot_ma]: True for r in values[1:]}
+    idx = {m: {"ma": m} for m in idx if m}
+    dung: dict[str, list[str]] = defaultdict(list)
+    ngoai: list[str] = []
+    for p in spec.phieu:
+        for i, r in enumerate(p.rows, 1):
+            nhan = f"P{p.code} · {r.band}{i} · {(r.loai or '?').strip()}"
+            for ref in r.source_refs or []:
+                hit = nhs.resolve(ref, idx)
+                if hit is None:
+                    ngoai.append(f"P{p.code} {r.band}{i}: {ref}")
+                    continue
+                y = ref[len(hit["ma"]):].lstrip(".-")
+                dung[hit["ma"]].append(nhan + (f" (ý {y})" if y else ""))
+    cot = [["Đề xuất thuyết minh"]]
+    for r in values[1:]:
+        ma = (r + [""] * (cot_ma + 1))[cot_ma]
+        cot.append(["; ".join(dict.fromkeys(dung.get(ma, []))) if ma else ""])
+    out = Path(a.out) if a.out else Path(a.spec).with_name("de-xuat-cot.json")
+    out.write_text(json.dumps({"values": cot}, ensure_ascii=False, indent=1) + "\n", encoding="utf-8")
+    loi, canh_bao = check_nb_theo_ppd(spec)
+    print(f"✓ {out}: {sum(1 for c in cot[1:] if c[0])}/{len(cot) - 1} bài của tab được thuyết minh dùng.")
+    print("  Ghi cột này vào tab ở cột 'Đề xuất thuyết minh' (update_values, giữ đúng hàng).")
+    for m in ngoai[:20]:
+        print(f"  ✗ mã ngoài tab: {m}")
+    for m in loi + canh_bao:
+        print(f"  {'✗' if m in loi else '⚠'} {m}")
+    return 1 if (ngoai or loi) else 0
 
 
 def main() -> int:
@@ -327,7 +382,7 @@ def main() -> int:
         p.add_argument("--chuong", required=True, type=int)
         if name == "doi-chieu":
             p.add_argument("raw", help="JSON thô get_values cả tab (A1:M…)")
-            p.add_argument("--sheet-id", default=SHEET_ID)
+            p.add_argument("--sheet-id", help="mặc định: sheet_id trong khung, không có thì sheet dùng chung")
     for name in ("nap", "du"):
         p = sp.add_parser(name)
         p.add_argument("--grade", required=True)
@@ -342,7 +397,13 @@ def main() -> int:
             p.add_argument("--spec", help="thuyet-minh.json (nếu đã có)")
             p.add_argument("--so-phieu", type=int, default=0, help="số phiếu của chương (khi chưa có spec)")
             p.add_argument("--tier", default="C")
+    p = sp.add_parser("de-xuat")
+    p.add_argument("raw", help="JSON thô get_values cả tab phân dạng")
+    p.add_argument("--spec", required=True, help="thuyet-minh.json bản chạy thử")
+    p.add_argument("--out", help="mặc định: de-xuat-cot.json cạnh spec")
     a = ap.parse_args()
+    if a.cmd == "de-xuat":
+        return cmd_de_xuat(a)
     if a.cmd == "giao":
         cmd_giao(a)
         return 0

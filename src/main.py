@@ -433,8 +433,15 @@ def _build_kinds(lesson: LessonPackage, kinds, out_root: Path, force: bool = Fal
                         out_root=out_root, force=force)
         return fn, pdf
 
-    with ThreadPoolExecutor(max_workers=max(1, len(kinds))) as ex:
+    from src.compiler.docx_builder import DOCX_DEFAULT
+    need_docx = "handout" in kinds and (docx if docx is not None else DOCX_DEFAULT)
+
+    with ThreadPoolExecutor(max_workers=max(1, len(kinds) + (1 if need_docx else 0))) as ex:
+        fut_docx = ex.submit(_build_docx_one, lesson, out_root, json_path, ca_pre, force, prefix) if need_docx else None
         results = list(ex.map(one, kinds))
+        if fut_docx:
+            fut_docx.result()
+
     if not quiet:
         for _fn, pdf in results:
             print(f"{prefix}OK → {pdf}")
@@ -446,10 +453,6 @@ def _build_kinds(lesson: LessonPackage, kinds, out_root: Path, force: bool = Fal
             if fn == "handout":
                 for m in check_print_layout(pdf, dau_muc):
                     print(f"{prefix}  ⚠ {m}")
-    # Bản WORD (.docx) cạnh phiếu HS — cùng tên, cùng thư mục (Thầy 22/10/2026).
-    from src.compiler.docx_builder import DOCX_DEFAULT
-    if "handout" in kinds and (docx if docx is not None else DOCX_DEFAULT):
-        _build_docx_one(lesson, out_root, json_path, ca_pre, force=force, prefix=prefix)
     return results
 
 
@@ -520,9 +523,10 @@ def cmd_build_all(args: argparse.Namespace) -> int:
     """Sinh cả 3 bản SONG SONG từ cùng một gói bài (validate sạch trước).
     `--only handout|guide|slide` để dựng nhanh 1 bản khi soạn nháp."""
     lesson = _load(args.lesson)
-    if not _gate_before_build(lesson, getattr(args, "force", False), getattr(args, "fast", False),
-                              lesson_path=args.lesson):
-        return 1
+    if not getattr(args, "skip_validate", False):
+        if not _gate_before_build(lesson, getattr(args, "force", False), getattr(args, "fast", False),
+                                  lesson_path=args.lesson):
+            return 1
     only = getattr(args, "only", None)
     kinds = [only] if only else list(_BUILD_KINDS)
     _build_kinds(lesson, kinds, _out_root(args.lesson), force=getattr(args, "force", False), json_path=args.lesson,
@@ -1583,6 +1587,7 @@ def main(argv: list[str] | None = None) -> int:
     a.add_argument("--fast", action="store_true", help="Bỏ SymPy answer_gate khi build nháp (nhớ build full trước approve)")
     a.add_argument("--docx", dest="docx", action="store_true", default=None, help="Ra thêm bản Word (.docx) cạnh phiếu HS")
     a.add_argument("--no-docx", dest="docx", action="store_false", help="Không ra bản Word")
+    a.add_argument("--skip-validate", action="store_true", help="Bỏ qua validate trước build (dùng khi caller đã validate trước)")
     a.set_defaults(func=cmd_build_all)
 
     bw = sub.add_parser("build-docx", help="CHỈ ra bản Word (.docx) của phiếu HS (header/footer/watermark như PDF)")

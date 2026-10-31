@@ -257,7 +257,7 @@ def render_thuyetminh(spec: ThuyetMinhSpec) -> str:
     if _thieu:
         parts.append(rf"\vspace{{2pt}}{{\color{{brand}}\sffamily\bfseries\footnotesize "
                      rf"CHƯA KHAI LOẠI CÂU HỎI (\S4b) cho {_thieu} dòng — "
-                     rf"bảng còn thiếu cột \emph{{Loại}} (NB lẻ LT / NB tách TH / NB ghép bài / "
+                     rf"bảng còn thiếu cột \emph{{Loại}} (NB lẻ LT / NB tách TH / NB ghép bài / NB kiến thức cũ / "
                      rf"TH lẻ LT / TH ghép bài / TH tách VD / VD lẻ).}}")
 
     tokens = load_tokens()
