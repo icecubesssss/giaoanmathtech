@@ -113,11 +113,13 @@ def kiem_ban_ghi(recs: list[dict], co_san: set[str] = frozenset()) -> list[str]:
 
 def kiem_log(items: list[dict], logs: dict[str, str]) -> list[str]:
     """Mỗi file kiểm kê phải có dòng trong log của việc (kể cả 0 bài + lý do)."""
+    # So trên CÙNG chuẩn NFC: macOS trả tên file dạng NFD, còn agent ghi log dạng NFC
+    # (31/10/2026: 9 file chương IX đã có log vẫn bị báo "chưa mở").
+    nfc = lambda s: unicodedata.normalize("NFC", s)  # noqa: E731
     thieu = []
     for it in items:
-        txt = logs.get(it["viec"], "")
-        ten = Path(it["file"]).name
-        if ten not in txt and unicodedata.normalize("NFD", ten) not in txt and it["file"] not in txt:
+        txt = nfc(logs.get(it["viec"], ""))
+        if nfc(Path(it["file"]).name) not in txt and nfc(it["file"]) not in txt:
             thieu.append(it["file"])
     return thieu
 

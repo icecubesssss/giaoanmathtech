@@ -143,3 +143,13 @@ def test_kiem_ke_chia_viec_khong_bo_file():
     for it in items:
         per.setdefault(it["viec"], []).append(it)
     assert all(len(v) <= q.SO_FILE_MOI_VIEC[v[0]["nhom"]] for v in per.values())
+
+
+def test_kiem_log_khong_phan_biet_nfc_nfd():
+    """Tên file trên macOS là NFD, log agent ghi NFC — vẫn phải coi là đã mở (31/10/2026)."""
+    import unicodedata
+    ten = "Đề GK1 - Marie Curie.pdf"
+    it = {"file": "x/" + unicodedata.normalize("NFD", ten), "viec": "v"}
+    assert q.kiem_log([it], {"v": unicodedata.normalize("NFC", ten) + " | 0 | GK1"}) == []
+    assert q.kiem_log([it], {"v": unicodedata.normalize("NFD", ten) + " | 0"}) == []
+    assert q.kiem_log([it], {"v": "file khác | 0"}) == [it["file"]]
