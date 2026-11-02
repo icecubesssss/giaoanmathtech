@@ -29,7 +29,7 @@ def _spec(rows, grade="lop-9", subject="dai-so", tier="C", auto=True):
             SpecRow(dang="Điền khuyết", band="NB", loai="NB lẻ LT", gian_giao="dien-khuyet"),
         ]
     return ThuyetMinhSpec(
-        slug="tm-test-chuong-01", title="Test chương 1", grade=grade, subject=subject,
+        slug="tm-test-chuong-xx", title="Test chương xx", grade=grade, subject=subject,
         tier=tier, tuan="x", phieu=[SpecPhieu(code="A", title="P", rows=rows)],
         kien_thuc_nen=["Định lí Pythagore (Lớp 8)"],
         thoiluong=["Buổi 1: 1 ca $=$ 90 phút", "Tổng 1 ca $=$ 90 phút"],
