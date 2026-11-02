@@ -335,8 +335,12 @@ def cmd_de_xuat(a) -> int:
     from src.validators.thuyetminh_gate import check_nb_theo_ppd
     spec = ThuyetMinhSpec.model_validate(json.loads(Path(a.spec).read_text(encoding="utf-8")))
     raw = json.loads(Path(a.raw).read_text(encoding="utf-8"))
-    values = raw["values"] if isinstance(raw, dict) else raw
-    head = values[0]
+    if isinstance(raw, dict) and "rows" in raw and "values" not in raw:
+        head = list(nhs.COLS.values())
+        values = [head] + [[r.get(k, "") for k in nhs.COLS.keys()] for r in raw["rows"]]
+    else:
+        values = raw["values"] if isinstance(raw, dict) else raw
+        head = values[0]
     try:
         cot_ma = next(i for i, h in enumerate(head) if nhs.COLS["ma"].lower() in (h or "").lower())
     except StopIteration:
