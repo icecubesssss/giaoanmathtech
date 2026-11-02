@@ -297,6 +297,13 @@ A) phân loại từng câu trên tab, cột "Phân loại câu": NB kiến th�
 B) chạy thử thuyết minh, sinh **VD → TH → NB**, mỗi câu TH tự sinh câu `NB tách TH` cùng bài gốc; `make ppd-de-xuat RAW=… SPEC=…` ra cột "Đề xuất thuyết minh" ghi lên tab →
 C) đọc đề xuất từ VD (VDC) → TH → NB, bỏ câu không hay, thay câu (AI gợi ý nếu chưa có) và ghi mã câu thay vào cột Ghi chú →
 D) chạy lại thuyết minh. Cổng `check_nb_theo_ppd`: `NB tách TH` ≈ 30–40% câu NB (cảnh báo), phải liên kết câu TH (cảnh báo), **lớp C bắt buộc có `NB tách TH` + `NB kiến thức cũ`** (chặn khi chương có tab). Chi tiết: docs/quy-trinh-ngan-hang-chuong.md.
+E) **Quy ước màu sắc chuẩn trên Google Sheets (Thầy chốt 30/10/2026):**
+   - **Cam nhạt (`#FCE4D6`)**: câu mức `VD`/`VDC` (đỉnh leo dốc) hoặc câu `Ưu tiên 4` (cảnh báo không chọn).
+   - **Vàng kem (`#FFF2CC`)**: cột `THẦY CHỌN` (vùng Thầy nhập: Bỏ / mã thay / ghi chú).
+   - **Xanh lá nhạt (`#E2EFDA`)**: cột `CHỐT` (máy tự tính) và các câu đang được chọn vào phiếu (câu dự phòng để trắng).
+   - **Tím nhạt Lavender (`#EDE7F6`)**: câu `NB kiến thức cũ`.
+   - **Vàng tươi (`#FFE699`)**: mã câu mới soạn (`MỚI·...`, `ch...-lt...`) hoặc câu tách ý con (`·nb1`, `·th1`).
+   (Xem chi tiết bảng màu tại docs/quy-trinh-ngan-hang-chuong.md).
 
 **Cấm lọc bằng từ khoá rồi bỏ file 0 hit** (22/10 sót 12 bài/10 đề thi thử ở chương V) — `bank-gop` chặn file kiểm kê không có bài cũng không có dòng log.
 

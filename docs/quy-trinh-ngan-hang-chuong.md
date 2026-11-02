@@ -55,6 +55,34 @@ Luật đo được — nằm trong `thuyetminh_gate.check_nb_theo_ppd`:
 
 ---
 
+## Bảng quy ước màu sắc chuẩn trên Google Sheets (Thầy chốt 30/10/2026)
+
+Mọi tab **Phân dạng** và **Thuyết minh** khi dựng trên Google Sheets bắt buộc tuân theo bảng mã màu sau:
+
+### 1. Trong tab Phân dạng (Ngân hàng câu hỏi)
+- **Cam nhạt (`#FCE4D6`)**:
+  - Cột **Mức độ**: Tô các câu mức **`VD`** và **`VDC`** (đỉnh của chặng leo dốc, giúp nhận diện ngay bài chốt).
+  - Cột **Ưu tiên**: Tô câu **`Ưu tiên 4`** (Không bám SGK, câu bị gạt/loại bỏ, cảnh báo không chọn).
+- **Vàng kem (`#FFF2CC`)**:
+  - Cột **THẦY CHỌN**: Vùng dành riêng cho Thầy nhập liệu (`Bỏ`, hoặc gõ vị trí mới `P... · Trên lớp`).
+- **Xanh lá nhạt (`#E2EFDA`)**:
+  - Cột **CHỐT (tự tính)**: Máy tự tính kết quả, cấm gõ đè.
+  - **Câu đang được chọn vào phiếu**: Cột Đề xuất & Chốt (hoặc cả dòng) của câu được phân bổ vào phiếu (`P... · Trên lớp` / `P... · Ví dụ`) mang màu xanh lá nhạt; câu dự phòng để nền trắng bình thường.
+
+### 2. Trong tab Thuyết minh liên kết động (TM)
+- **Cột Nhóm câu (Loại câu §4b)** — tô màu theo 4 chặng leo dốc (Scaffolding Rails):
+  - **`VD`**: Cam nhạt (`#FCE4D6`)
+  - **`TH ghép VD` / `TH tách VD`**: Vàng kem (`#FFF2CC`)
+  - **`NB tách TH`**: Xanh lá nhạt (`#E2EFDA`)
+  - **`NB kiến thức cũ`**: Tím nhạt Lavender (`#EDE7F6`)
+- **Cột Mã câu đề xuất**:
+  - **Vàng tươi (`#FFE699`)**: Tô các câu **mới soạn** (`MỚI·...`, `ch...-p...-lt...`) hoặc câu **tách ý con** (`·nb1`, `·th1`) để Thầy phân biệt với câu ngân hàng gốc và kiểm tra đề kỹ hơn.
+- **Cột THẦY CHỌN & Mã thay thế**: Vàng kem (`#FFF2CC`).
+- **Cột Chốt mã (tự tính)**: Xanh lá nhạt (`#E2EFDA`).
+- **Dashboard Tổng hợp**: Xanh lá nhạt (`#E2EFDA`) và Xanh dương nhạt (`#DDEBF7`) cho các ô số liệu tự tính.
+
+---
+
 ## Mẫu prompt agent quét (bước 2 — `bank-giao` tự điền các {…})
 
 <!-- MAU-PROMPT-BEGIN -->
