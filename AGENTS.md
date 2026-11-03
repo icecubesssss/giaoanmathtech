@@ -98,10 +98,10 @@
 > mỗi chương"*. Mọi kế hoạch chương (spec ≥ 3 phiếu) phải có đủ ba thứ, thiếu là **CHẶN** `build-thuyetminh`:
 > 1. **Phiếu cuối khai `kiem_tra_phut: 45`** — cả trong `thuyet-minh.json` (`SpecPhieu`) lẫn phiếu JSON (`LessonPackage`).
 >    Quỹ ví dụ / luyện tập / giờ trên lớp của buổi đó co theo phần còn lại (`he_so_con_lai`: buổi 90′ − 45′ ⇒ ×0,5),
->    BTVN giữ nguyên. Phiếu buổi đó soạn cho **~45′**: ~10 NB + 2 TH + 1 VD điền khuyết (bản mẫu: phiếu 7 ch.V 9C).
+>    BTVN giữ nguyên. Phiếu buổi đó soạn cho **~45′**: ~10 NB + 2 TH + 1 VD điền khuyết (bản mẫu: phiếu 6 ch.V 9C, thư mục `chuong-05-duong-tron-ban-2`).
 > 2. **Khối `thoiluong` ghi rõ** "… 45 phút luyện tập $+$ 45 phút kiểm tra chương" ở dòng buổi cuối.
 > 3. **Đề thật + ma trận**: `de-kiem-tra.json` (DeSpec, `make check-de`/`make de`) cạnh thuyết minh, và thư mục
->    `kiem-tra-chuong/` chứa tờ đề HS + ma trận-đáp án GV (`theme: de_thi`) — bản mẫu `lop-9/hinh-hoc/lop-c/chuong-05-duong-tron/`.
+>    `kiem-tra-chuong/` chứa tờ đề HS + ma trận-đáp án GV (`theme: de_thi`) — bản mẫu `lop-9/hinh-hoc/lop-c/chuong-05-duong-tron-ban-2/`.
 >    Số liệu đề KHÔNG trùng bài trên lớp; câu hình bám khuôn đề vào 10 (Câu IV.1 đo lường, Câu IV.2 hai tiếp tuyến).
 > Cổng: `thuyetminh_gate.check_kiem_tra_chuong`. Nợ lúc chốt luật: **17 spec chương khác chưa có bài kiểm tra** (`make audit` mục 3).
 >
@@ -163,8 +163,8 @@
 > 5. **CÂU VẬN DỤNG trong phiếu luyện tập chương phải CÓ ví dụ mẫu** cùng dạng đứng trước nó (ngoài `quy_trinh` in tại bài).
 > 6. **Hai bẫy kỹ thuật đã vấp, cổng gác sẵn:** (a) ô `[[fill:…]]` nằm **trong** `$…$` thì đáp án **không được bọc `$`** (math lồng math $\Rightarrow$ Tectonic chết "Missing } inserted") — `check_fill_math_long_nhau`; (b) **sửa đề ví dụ thì phải sửa cả nhãn số trên hình** (viết lại đề mà quên hình là đề một đằng hình một nẻo) — `check_so_tren_hinh_vi_du`.
 
-> **BẢN MẪU CHUẨN = `inputs/seeds/lop-9/hinh-hoc/lop-c/chuong-05-duong-tron/phieu-1-mo-dau-ve-duong-tron.json`**
-> (Thầy chốt 24/09/2026 sau khi dựng lại trọn vẹn). Soạn phiếu mới thì MỞ FILE ĐÓ RA XEM
+> **BẢN MẪU CHUẨN = `inputs/seeds/lop-9/hinh-hoc/lop-c/chuong-05-duong-tron-ban-2/phieu-1-do-dai-cung-dien-tich-quat-vanh-khuyen.json`**
+> (phiếu 1 chương V 9C bản 2, Thầy đã duyệt; bản mẫu cũ 24/09/2026 là phiếu 1 của bản 1 — bản 1 đã xoá khỏi repo 03/11/2026, xem git lịch sử nếu cần). Soạn phiếu mới thì MỞ FILE ĐÓ RA XEM
 > trước, đừng chép phiếu cũ. Bảy luật dưới đây rút từ chính lần dựng lại đó (luật 8–9 thêm 24/09); bốn luật đầu
 > đã thành cổng `trinh_bay_gate` (chạy trong `validate`), ba luật sau người phải tự giữ.
 >
@@ -443,7 +443,7 @@ Header/logo/watermark/footer/chữ ký/badge chặng do template lo (xem HUONG-D
 
 **Đụng vào `templates/` hay `config/design_tokens.json` thì việc CHƯA xong khi chưa `make rebuild`.** Mọi PDF đã build trước đó vẫn là bản cũ; không có cổng nào tự phát hiện chuyện này. `rebuild` chỉ chạm phiếu HS / sổ tay GV / slide — phiếu **tổng kết chương** và **thuyết minh** phải build tay (xem HUONG-DAN §5).
 
-**MỘT PHIẾU = MỘT THƯ MỤC IN, KHÔNG ĐỂ BẢN SONG SONG (Thầy chốt 03/11/2026 — "kbiết file nào với file nào").** Mọi bản in (PDF/Word) chỉ nằm trong `outputs/<đường dẫn seed>/<slug>/`, tên tự mô tả (`Toan9C-…-Phieu-HS.pdf`). Làm lại phiếu thì **sửa đúng seed cũ rồi build đè** cùng thư mục — KHÔNG tạo `…-v2`, `…-moi`, `…-ban-2` song song; bản cũ đã có git/Drive giữ. Đổi slug/đổi folder thì `make prune` liệt kê thư mục cũ để xoá. Bản in dựng NGOÀI engine (không có seed, không build lại được) thì để trong `outputs/<lớp>/<…>/` kèm file `NGUON.txt` ghi nguồn gốc — `make prune` giữ nguyên thư mục đó, và báo mọi PDF/Word nằm lạc ngoài `outputs/`. Ngoại lệ đã có từ trước: `chuong-05-duong-tron-ban-2` (9C) tồn tại song song bản 1 — chờ Thầy quyết bỏ bản 1.
+**MỘT PHIẾU = MỘT THƯ MỤC IN, KHÔNG ĐỂ BẢN SONG SONG (Thầy chốt 03/11/2026 — "kbiết file nào với file nào").** Mọi bản in (PDF/Word) chỉ nằm trong `outputs/<đường dẫn seed>/<slug>/`, tên tự mô tả (`Toan9C-…-Phieu-HS.pdf`). Làm lại phiếu thì **sửa đúng seed cũ rồi build đè** cùng thư mục — KHÔNG tạo `…-v2`, `…-moi`, `…-ban-2` song song; bản cũ đã có git/Drive giữ. Đổi slug/đổi folder thì `make prune` liệt kê thư mục cũ để xoá. Bản in dựng NGOÀI engine (không có seed, không build lại được) thì để trong `outputs/<lớp>/<…>/` kèm file `NGUON.txt` ghi nguồn gốc — `make prune` giữ nguyên thư mục đó, và báo mọi PDF/Word nằm lạc ngoài `outputs/`. Ngoại lệ còn lại: chương V 9C giữ tên thư mục `chuong-05-duong-tron-ban-2` (bản 1 đã xoá 03/11/2026) vì Drive đang tách bản 2 ra thư mục riêng — đổi tên là đẩy lẫn vào thư mục bản 1 trên Drive.
 
 **ĐỔ PDF SANG GOOGLE DRIVE — `make drive FOLDER="<folder-seed>"`** (lệnh `sync-drive`, code ở [src/exporters/drive_sync.py](src/exporters/drive_sync.py), 8 test). Dịch cây `outputs/<lop>/<mon>/<tầng>/<chương>/<slug>/` sang cây Thầy dựng trên Drive `giaoanmathtech/lop9/C/Chuong N/` — **khối → TẦNG LỚP → chương**, không theo `hinh-hoc`/`dai-so`. Phiếu vào folder `Ca-NN - <tên không dấu>`, thuyết minh vào `Thuyet-minh-chuong-<số La Mã>`. Thư mục thiếu thì tạo; thư mục đã có mà chỉ khác hoa/thường hay khoảng trắng (`Chuong5` vs `Chuong 5`) thì **DÙNG LẠI**, không đẻ folder song sinh. Chép MỌI PDF trong thư mục (từ 06/09/2026 tên bản in không còn tiền tố `ca-`, xem mục 6 phần Quy trình). Drive ở máy khác thì đặt biến môi trường `MATHTECH_DRIVE_ROOT`. **Chép lên Drive là đẩy file ra ngoài — chỉ chạy khi Thầy bảo**; thử trước bằng `DRY=1`.
 
