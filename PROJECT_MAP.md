@@ -296,6 +296,10 @@ _Tầng trọng tài — kiểm thử KHÔNG ba phải trước khi cho compile.
 _Cổng đáp án — chạy SymPy đối chiếu trường `check` (máy-đọc) của từng ProblemBlock._
 - `check_answers(lesson)` — Trả (fails, inconclusive). `fails` CHẶN build; `inconclusive` chỉ cảnh báo.
 
+### `src/validators/bank_gate.py`
+_bank_gate — cổng CHẤT LƯỢNG tab phân dạng (Thầy chốt 03/11/2026, mục 8 sheet quy chuẩn)._
+- `check_bank(snap)` — Trả (errors, warnings) cho một snapshot tab phân dạng.
+
 ### `src/validators/de_gate.py`
 _de_gate — soi ĐỀ VÔ LÝ trong thuyết minh đề TRƯỚC khi Thầy chốt & người ra đề viết đề._
 - `check_de(spec)` — Trả (errors, warnings). errors CHẶN build; warnings chỉ cảnh báo.
@@ -395,10 +399,13 @@ _thuyetminh_gate — soi GIỜ VÔ LÝ trong phiếu THUYẾT MINH (spec) TRƯ�
 - `check_scaffold_rails(spec)` — Mỗi phiếu phải có ĐỦ hai giàn giáo NB: 've-hinh' (môn hình) và 'dien-khuyet'.
 - `check_source_refs(spec)` — KHÔNG BỊA ĐỀ: mọi dòng phải trỏ nguồn, TRỪ dòng loại 'NB lẻ LT' (câu hỏi thẳng
 - `check_nguon_sheet(spec)` — CHỈ BỐC BÀI TỪ SHEET PHÂN DẠNG (Thầy chốt 22/10/2026): chương nào đã có tab phân
+- `check_bai_goc(spec)` — LỖI: bốc câu đã ghi 'Bỏ' ở cột Trạng thái. CẢNH BÁO: trong một phiếu, hai dòng
+- `check_ti_le_nguon(spec)` — Cảnh báo phiếu lớp C THCS lệch tỉ lệ nguồn: đề thi ≥50% · SGK ≥20% · STK ≤30%.
 - `check_chuong_level(spec)` — Thầy chốt 14/08/2026: TỪ GIỜ CHỈ LÀM THUYẾT MINH CẤP CHƯƠNG, mọi khối.
 - `check_kiem_tra_chuong(spec)` — Spec cả chương phải chừa ≥45′ kiểm tra chương ở PHIẾU CUỐI (`kiem_tra_phut`)
 - `check_meta_wrap(tex)` — Soi BẢNG ĐẦU của thuyết minh ĐÃ RENDER: ô nào nhiều mục mà không xuống dòng,
 - `check_loai_4b(spec)` — Cảnh báo dòng spec chưa khai `loai`, hoặc khai nhãn không thuộc 7 loại §4b,
+- `check_nb_theo_ppd(spec)` — Trả (errors, warnings) theo quy trình tạo phiếu thuyết minh từ phiếu phân dạng.
 - `goi_y_kien_thuc_nen(spec)` — Nền mà spec CÓ DÙNG nhưng CHƯA KHAI. Bỏ qua thứ chính là nội dung của chương
 - `check_kien_thuc_nen(spec)` — Spec CÓ nội dung thì bắt buộc có khối KIẾN THỨC NỀN (bản mẫu chương IV/V).
 - `check_thoiluong(spec)` — Khối THỜI LƯỢNG phải có, không giả định kiểm tra 15′, và TỔNG phải khớp phép cộng.
@@ -444,6 +451,14 @@ _Dựng PDF 'BẢN ĐỒ VD/VDC THEO CHƯƠNG' từ config/ban_do_vd_vdc.json �
 - `tex(s, n)` — Escape sang LaTeX; `n` cắt bớt độ dài (trích dẫn đề bài in trong ô bảng).
 - `bang_khoi(ma_khoi, khoi, so_mt)`
 - `main()`
+
+### `scripts/build_ch4_expanded.py`
+_Build expanded question bank for Chapter IV Geometry Grade 9._
+- `clean_text(s)`
+- `get_exam_questions()`
+- `get_kntt_mcq_questions()`
+- `get_kntt_tuluan_questions()`
+- `get_lan_specialized_questions()`
 
 ### `scripts/build_exam_weights.py`
 _Sinh file WEIGHT dẫn xuất từ ngân hàng đề (đã gắn band/phut) — "trọng số tần suất"._
@@ -655,6 +670,13 @@ _Tải SÁCH GIÁO VIÊN (SGV) Toán Kết nối tri thức khối 6-12 về inp
 - `fetch_grade(grade)`
 - `main(argv)`
 
+### `scripts/harvest_all_ch4.py`
+_Harvest ALL remaining Chapter IV geometry materials in repo._
+- `clean_text(s)`
+- `harvest_word_files()`
+- `harvest_2024_2025_pdfs()`
+- `harvest_exam_review_pdfs()`
+
 ### `scripts/make_docx_template.py`
 _Dựng KHUÔN Word `templates/docx/mathtech.docx` (header · footer · watermark · styles)_
 - `tokens()`
@@ -673,6 +695,8 @@ _Ngân hàng bài theo chương = tab phân dạng trên Google Sheets (Thầy c
 - `cmd_giao(a)`
 - `cmd_gop(a)`
 - `cmd_doi_chieu(a)`
+- `cmd_de_xuat(a)` — Bước 2 quy trình phân dạng: CHẠY THỬ thuyết minh ra CỘT ĐỀ XUẤT trên tab.
+- `cmd_soat(a)` — Soi chất lượng snapshot tab phân dạng; còn LỖI thì trả mã 1.
 - `main()`
 
 ### `scripts/ocr_kho_de.py`
