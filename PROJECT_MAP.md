@@ -115,7 +115,6 @@ _Đổi công thức LaTeX → OMML (Equation gốc của Word) — dùng cho b�
 - `is_only_space(tex)`
 - `prune_cache()` — Xoá bản cache của phiên bản cũ; trả số dòng đã xoá.
 - `convert_many(formulas)` — {LaTeX gốc: (phần tử <m:oMath> | None, lý do lỗi)}. Có cache SQLite.
-- `wrap_display(omath)` — Công thức đứng riêng dòng ⇒ <m:oMathPara> (Word hiển thị cỡ display, căn giữa).
 
 ### `src/compiler/thuyetminh_docx.py`
 _PHIẾU THUYẾT MINH (ThuyetMinhSpec) → Word (.docx) A4 ngang — bản sao của_
@@ -203,7 +202,6 @@ _Loader ngân hàng đề (đã gắn band/phut) — tra cứu câu theo id cho 
 ### `src/schema/feedback_schema.py`
 _Định dạng cấu trúc tệp phản hồi (feedback_parser.py sẽ map từ active_feedback.md sang đây)._
 - **class FeedbackItem**
-- **class FeedbackBundle**
 
 ### `src/schema/lesson_package.py`
 _Cấu trúc tích hợp cả 5 chặng của buổi học — khóa cứng giữa AI và template Jinja2._
@@ -452,21 +450,10 @@ _Dựng PDF 'BẢN ĐỒ VD/VDC THEO CHƯƠNG' từ config/ban_do_vd_vdc.json �
 - `bang_khoi(ma_khoi, khoi, so_mt)`
 - `main()`
 
-### `scripts/build_ch4_expanded.py`
-_Build expanded question bank for Chapter IV Geometry Grade 9._
-- `clean_text(s)`
-- `get_exam_questions()`
-- `get_kntt_mcq_questions()`
-- `get_kntt_tuluan_questions()`
-- `get_lan_specialized_questions()`
-
 ### `scripts/build_exam_weights.py`
 _Sinh file WEIGHT dẫn xuất từ ngân hàng đề (đã gắn band/phut) — "trọng số tần suất"._
 - `build()`
 - `main()`
-
-### `scripts/build_lop9b_geometry.py`
-- `generate_all()`
 
 ### `scripts/build_ngan_hang_678.py`
 _NGÂN HÀNG CÂU lớp 6-7-8 (TẦNG 1 — máy dựng) từ kho đề Hà Nội đã tải._
@@ -669,13 +656,6 @@ _Tải SÁCH GIÁO VIÊN (SGV) Toán Kết nối tri thức khối 6-12 về inp
 - `jpegs_to_pdf(pages, dest)` — Ghép danh sách ảnh JPEG thành PDF, mỗi ảnh một trang, khổ ngang A4.
 - `fetch_grade(grade)`
 - `main(argv)`
-
-### `scripts/harvest_all_ch4.py`
-_Harvest ALL remaining Chapter IV geometry materials in repo._
-- `clean_text(s)`
-- `harvest_word_files()`
-- `harvest_2024_2025_pdfs()`
-- `harvest_exam_review_pdfs()`
 
 ### `scripts/make_docx_template.py`
 _Dựng KHUÔN Word `templates/docx/mathtech.docx` (header · footer · watermark · styles)_

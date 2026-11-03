@@ -9,7 +9,7 @@ from pydantic import BaseModel, Field
 
 
 class MathProblem(BaseModel):
-    source: str = Field(..., description="Nguồn: 'seed' hoặc URL/ID trong verified_scraped_bank")
+    source: str = Field(..., description="Nguồn: 'seed' hoặc URL/ID nguồn đề")
     topic: str = Field(..., description="Mã node trong taxonomy_matrix, vd 'bdt.xet_hieu'")
     difficulty: int = Field(..., ge=1, le=10, description="Thang độ khó 1..10")
     statement: str = Field(..., description="Đề bài (LaTeX inline math cho phép)")

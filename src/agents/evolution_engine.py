@@ -41,9 +41,13 @@ def _ensure_defaults():
 
 def _save_snapshot(rules: dict):
     """Lưu bản snapshot trước mỗi lần ghi đè để có thể rollback."""
+    noi_dung = json.dumps(rules, ensure_ascii=False, indent=2)
+    cu = sorted(HISTORY_DIR.glob("style_*.json"))
+    if cu and cu[-1].read_text(encoding="utf-8") == noi_dung:
+        return  # y hệt bản gần nhất ⇒ không đẻ thêm file trùng
     ts = datetime.now().strftime("%Y%m%d_%H%M%S")
     snap = HISTORY_DIR / f"style_{ts}.json"
-    snap.write_text(json.dumps(rules, ensure_ascii=False, indent=2), encoding="utf-8")
+    snap.write_text(noi_dung, encoding="utf-8")
 
 
 def _within_limits(candidate: dict, limits: dict) -> bool:

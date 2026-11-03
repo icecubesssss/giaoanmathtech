@@ -262,10 +262,3 @@ def convert_many(formulas: list[str]) -> dict[str, tuple[etree._Element | None, 
                 out[tex] = (None, why)
         _cache_put_many(fresh)
     return out
-
-
-def wrap_display(omath: etree._Element) -> etree._Element:
-    """Công thức đứng riêng dòng ⇒ <m:oMathPara> (Word hiển thị cỡ display, căn giữa)."""
-    para = etree.Element(_m("oMathPara"), nsmap={"m": M_NS})
-    para.append(omath)
-    return para

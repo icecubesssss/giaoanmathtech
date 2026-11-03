@@ -2,10 +2,20 @@
 from __future__ import annotations
 
 
-def test_feedback_parser_and_evolution(tmp_path):
-    """Parse active_feedback.md và áp dụng tiến hóa style có kiểm soát."""
+def test_feedback_parser_and_evolution(tmp_path, monkeypatch):
+    """Parse active_feedback.md và áp dụng tiến hóa style có kiểm soát.
+
+    Chạy trên thư mục TẠM: trước 03/11/2026 test này ghi thẳng vào
+    storage/evolution_kb/ của kho thật, mỗi lần pytest đẻ thêm một file
+    style_history/*.json giống hệt nhau (đã dồn tới 350 file)."""
     from src.agents import FeedbackSchema, parse_feedback, evolve_from_feedback
-    from src.agents.evolution_engine import STYLE_RULES, STYLE_LIMITS
+    from src.agents import evolution_engine as ee
+    kb = tmp_path / "kb"
+    monkeypatch.setattr(ee, "STYLE_RULES", kb / "global_style_rules.json")
+    monkeypatch.setattr(ee, "STYLE_LIMITS", kb / "style_boundary_limits.json")
+    monkeypatch.setattr(ee, "HISTORY_DIR", kb / "style_history")
+    kb.mkdir()
+    STYLE_RULES = ee.STYLE_RULES
 
     # Tạo file active_feedback.md giả lập
     feedback_file = tmp_path / "active_feedback.md"
