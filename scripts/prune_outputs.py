@@ -41,12 +41,35 @@ def expected_dirs() -> dict[str, set[Path]]:
     return exp
 
 
+# Thư mục có file này là bản in KHÔNG build lại được (dựng ngoài engine, không có seed):
+# prune bỏ qua, không bao giờ xoá. Ghi trong file: nguồn gốc + ngày.
+GIU = "NGUON.txt"
+# PDF/Word nằm ngoài outputs/ là bản in lạc chỗ (vd 2 đề Toán 8 nằm ở gốc repo tới 03/11/2026).
+# Nguồn đề (inputs/), tài nguyên template (assets/) và thư mục máy thì không tính.
+_KHONG_SOI = {"inputs", "outputs", "assets", ".venv", ".git", "storage", "node_modules", ".pytest_cache"}
+
+
+def _giu(d: Path) -> bool:
+    return any((p / GIU).exists() for p in (d, *d.parents) if OUTPUTS in (p, *p.parents))
+
+
+def scan_stray() -> list[Path]:
+    """PDF/DOCX nằm ngoài outputs/ (chỉ LIỆT KÊ — không có seed thì không dựng lại được)."""
+    out = []
+    for p in ROOT.iterdir():
+        if p.name in _KHONG_SOI:
+            continue
+        cands = [p] if p.is_file() else list(p.rglob("*"))
+        out += [f for f in cands if f.is_file() and f.suffix.lower() in (".pdf", ".docx")]
+    return sorted(out)
+
+
 def scan() -> tuple[list[Path], list[Path]]:
     """(lạc chỗ — seed còn nhưng đã chuyển folder, mất gốc — không seed nào khớp)."""
     exp = expected_dirs()
     misplaced, gone = [], []
     for d in sorted(OUTPUTS.rglob("*")):
-        if not d.is_dir() or not any(d.glob("*.pdf")):
+        if not d.is_dir() or not any(d.glob("*.pdf")) or _giu(d):
             continue
         if d.name in exp:
             if d not in exp[d.name]:
@@ -93,6 +116,13 @@ def main(argv: list[str]) -> int:
     misplaced, gone = scan()
     obsolete_files = scan_obsolete_files()
     exp = expected_dirs()
+    stray = scan_stray()
+    if stray:
+        print(f"▲ BẢN IN LẠC NGOÀI outputs/ ({len(stray)}) — không tự xoá; chuyển vào "
+              f"outputs/<lớp>/<…>/ kèm file {GIU} ghi nguồn gốc:")
+        for f in stray:
+            print(f"   {f.relative_to(ROOT)}")
+        print()
 
     if not misplaced and not gone and not obsolete_files:
         print("✓ outputs/ sạch — không có thư mục mồ côi hoặc file trùng lặp cũ.")
