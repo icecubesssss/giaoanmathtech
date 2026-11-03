@@ -44,3 +44,28 @@ def test_chi_ap_lop_c_thcs(monkeypatch):
     assert check_ti_le_nguon(_spec(refs, tier="B")) == []
     assert check_ti_le_nguon(_spec(refs, grade="lop-5")) == []
     assert check_ti_le_nguon(_spec(refs))  # lớp C lớp 9 thì có cảnh báo
+
+
+# ── Bài gốc + Trạng thái (mục 7) ───────────────────────────────────────────────
+from src.validators.thuyetminh_gate import check_bai_goc
+
+
+def test_boc_cau_da_bo_la_loi(monkeypatch):
+    snap = {"tab": "t", "rows": [{"ma": "a1", "uu": UU[1], "trang_thai": "Bỏ — trùng đề"}]}
+    monkeypatch.setattr(nhs, "load", lambda *a, **k: snap)
+    loi, _ = check_bai_goc(_spec(["a1"]))
+    assert loi and "Bỏ" in loi[0]
+
+
+def test_hai_dong_cung_bai_goc_canh_bao_tru_dong_tach(monkeypatch):
+    snap = {"tab": "t", "rows": [{"ma": "b4-a", "ma_goc": "b4", "uu": UU[1]},
+                                 {"ma": "b4-ab", "ma_goc": "b4", "uu": UU[1]}]}
+    monkeypatch.setattr(nhs, "load", lambda *a, **k: snap)
+    _, cb = check_bai_goc(_spec(["b4-a", "b4-ab"]))
+    assert cb and "b4" in cb[0]
+    # dòng NB tách TH trỏ chung bài gốc với dòng TH là đúng quy trình ⇒ im
+    rows = [SpecRow(dang="d", band="TH", onclass=1, source_refs=["b4-ab"]),
+            SpecRow(dang="n", band="NB", onclass=1, loai="NB tách TH", source_refs=["b4-a"])]
+    spec = ThuyetMinhSpec(slug="tm-9c-chuong-09-test", title="Chương IX", grade="lop-9", subject="hinh-hoc",
+                          tier="C", tuan="x", phieu=[SpecPhieu(code="A", title="P", rows=rows)])
+    assert check_bai_goc(spec) == ([], [])

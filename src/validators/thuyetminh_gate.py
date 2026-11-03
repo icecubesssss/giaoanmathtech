@@ -77,7 +77,9 @@ def check_thuyetminh(spec: ThuyetMinhSpec) -> tuple[list[str], list[str]]:
     noi_dung = _noi_dung_errors(spec)
     ppd_loi, ppd_canh_bao = check_nb_theo_ppd(spec)
     noi_dung += ppd_loi
-    ppd_canh_bao = ppd_canh_bao + _bank_canh_bao(spec) + check_ti_le_nguon(spec)
+    bg_loi, bg_canh_bao = check_bai_goc(spec)
+    noi_dung += bg_loi
+    ppd_canh_bao = ppd_canh_bao + _bank_canh_bao(spec) + check_ti_le_nguon(spec) + bg_canh_bao
 
     try:
         ts = load_tier_spec()
@@ -386,6 +388,44 @@ def _bank_canh_bao(spec: ThuyetMinhSpec) -> list[str]:
     if not snap:
         return []
     return [f"thuyetminh: {x}" for x in check_bank(snap)[1]]
+
+
+# ── BÀI GỐC + TRẠNG THÁI trên tab (Thầy chốt 03/11/2026, mục 7 sheet quy chuẩn) ────
+_LOAI_TACH = ("tách", "ghép")  # dòng cắt bước / ghép ý: được trỏ chung bài gốc với dòng chính
+
+
+def check_bai_goc(spec: ThuyetMinhSpec) -> tuple[list[str], list[str]]:
+    """LỖI: bốc câu đã ghi 'Bỏ' ở cột Trạng thái. CẢNH BÁO: trong một phiếu, hai dòng
+    chính (không phải dòng tách/ghép) bốc cùng một bài gốc — mỗi bài gốc chỉ bốc MỘT dòng."""
+    from src.schema import ngan_hang_sheet as nhs
+    so = nhs.chuong_of_slug(spec.slug) or nhs.chuong_of_slug(getattr(spec, "chuong", ""))
+    snap = nhs.load(spec.grade, spec.subject, so) if so else None
+    if not snap:
+        return [], []
+    idx = nhs.index(snap)
+    loi: list[str] = []
+    canh_bao: list[str] = []
+    for p in spec.phieu:
+        bo: list[str] = []
+        goc_dong: dict[str, set[int]] = {}
+        for i, r in enumerate(p.rows, 1):
+            tach = any(k in (r.loai or "").lower() for k in _LOAI_TACH)
+            for ref in r.source_refs or []:
+                hit = nhs.resolve(ref, idx)
+                if not hit:
+                    continue
+                if (hit.get("trang_thai") or "").strip().lower().startswith("bỏ"):
+                    bo.append(f"{r.band}{i}:{ref}")
+                if not tach:
+                    goc_dong.setdefault(hit.get("ma_goc") or hit["ma"], set()).add(i)
+        if bo:
+            loi.append(f"thuyetminh: phiếu {p.code} bốc câu đã ghi 'Bỏ' trên tab: "
+                       f"{', '.join(bo[:6])}" + (" …" if len(bo) > 6 else ""))
+        hai = [g for g, ds in goc_dong.items() if len(ds) > 1]
+        if hai:
+            canh_bao.append(f"thuyetminh: phiếu {p.code} bốc nhiều dòng của cùng bài gốc "
+                            f"{', '.join(hai[:5])} — mỗi bài gốc chỉ bốc một dòng (bốc liền mạch).")
+    return loi, canh_bao
 
 
 # ── TỈ LỆ NGUỒN lớp C THCS (Thầy chốt 03/11/2026, mục 5 sheet quy chuẩn) ──────────
