@@ -77,7 +77,7 @@ def check_thuyetminh(spec: ThuyetMinhSpec) -> tuple[list[str], list[str]]:
     noi_dung = _noi_dung_errors(spec)
     ppd_loi, ppd_canh_bao = check_nb_theo_ppd(spec)
     noi_dung += ppd_loi
-    ppd_canh_bao = ppd_canh_bao + _bank_canh_bao(spec)
+    ppd_canh_bao = ppd_canh_bao + _bank_canh_bao(spec) + check_ti_le_nguon(spec)
 
     try:
         ts = load_tier_spec()
@@ -386,6 +386,51 @@ def _bank_canh_bao(spec: ThuyetMinhSpec) -> list[str]:
     if not snap:
         return []
     return [f"thuyetminh: {x}" for x in check_bank(snap)[1]]
+
+
+# ── TỈ LỆ NGUỒN lớp C THCS (Thầy chốt 03/11/2026, mục 5 sheet quy chuẩn) ──────────
+# Tính theo BÀI GỐC (câu NB tách từ bài đề thi vẫn là đề thi), chỉ câu TRÊN LỚP.
+NGUON_LOP_C = {"de_thi": 0.50, "sgk": 0.20, "stk_toi_da": 0.30}
+SO_BAI_GOC_TOI_THIEU = 5  # phiếu ít bài gốc quá thì tỉ lệ không có nghĩa
+
+
+def check_ti_le_nguon(spec: ThuyetMinhSpec) -> list[str]:
+    """Cảnh báo phiếu lớp C THCS lệch tỉ lệ nguồn: đề thi ≥50% · SGK ≥20% · STK ≤30%."""
+    from src.schema import ngan_hang_sheet as nhs
+    if (spec.tier or "").upper() != "C" or spec.grade not in ("lop-6", "lop-7", "lop-8", "lop-9"):
+        return []
+    so = nhs.chuong_of_slug(spec.slug) or nhs.chuong_of_slug(getattr(spec, "chuong", ""))
+    snap = nhs.load(spec.grade, spec.subject, so) if so else None
+    if not snap:
+        return []
+    idx = nhs.index(snap)
+    out: list[str] = []
+    for p in spec.phieu:
+        goc: dict[str, int] = {}
+        for r in p.rows:
+            if not r.onclass:
+                continue
+            for ref in r.source_refs or []:
+                hit = nhs.resolve(ref, idx)
+                if hit:
+                    goc[hit["ma"]] = nhs.uu_so(hit.get("uu", ""))
+        n = len(goc)
+        if n < SO_BAI_GOC_TOI_THIEU:
+            continue
+        de = sum(1 for u in goc.values() if u == 1) / n
+        sgk = sum(1 for u in goc.values() if u == 2) / n
+        stk = 1 - de - sgk
+        lech = []
+        if de < NGUON_LOP_C["de_thi"]:
+            lech.append(f"đề thi {de:.0%} < 50%")
+        if sgk < NGUON_LOP_C["sgk"]:
+            lech.append(f"SGK {sgk:.0%} < 20%")
+        if stk > NGUON_LOP_C["stk_toi_da"]:
+            lech.append(f"sách tham khảo {stk:.0%} > 30%")
+        if lech:
+            out.append(f"thuyetminh: phiếu {p.code} — tỉ lệ nguồn lớp C lệch ({n} bài gốc trên lớp): "
+                       f"{'; '.join(lech)} (chuẩn: đề thi ≥50% · SGK ≥20% · STK ≤30%).")
+    return out
 
 
 def check_chuong_level(spec: ThuyetMinhSpec) -> list[str]:
