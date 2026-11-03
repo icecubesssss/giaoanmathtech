@@ -7,18 +7,6 @@
 ### `src/__init__.py`
 - _(không có symbol công khai)_
 
-### `src/agents/__init__.py`
-- _(không có symbol công khai)_
-
-### `src/agents/evolution_engine.py`
-_Engine tiến hóa có kiểm soát — đọc FeedbackSchema và cập nhật style/prompt,_
-- `evolve_from_feedback(feedback)` — Áp dụng phản hồi của Thầy vào bộ quy tắc style.
-
-### `src/agents/feedback_parser.py`
-_Đọc và phân tích `feedback/active_feedback.md` của Thầy,_
-- **class FeedbackSchema** — Cấu trúc phản hồi đã được phân tích từ file Markdown của Thầy.
-- `parse_feedback(feedback_path)` — Đọc file feedback Markdown và rút trích phân loại từng nhận xét.
-
 ### `src/compiler/__init__.py`
 - _(không có symbol công khai)_
 
@@ -154,7 +142,6 @@ _ten_file — đặt TÊN PDF thành phẩm tự nói ra mình là bài gì._
 _Điểm chạy CLI trung tâm — MathTech Engine đầy đủ._
 - `cmd_approve(args)` — Đánh dấu APPROVE để mở khoá compile PDF.
 - `cmd_status(args)` — Xem tình trạng tất cả bài trong run_state.json.
-- `cmd_evolve(args)` — Đọc active_feedback.md và tiến hóa style/prompt có kiểm soát.
 - `get_ca_prefix(lesson, json_path)` — Xác định tiền tố Ca ('ca-01-', 'ca-02-'...) cho phiếu học tập.
 - `cmd_build_docx(args)` — CHỈ ra bản Word (.docx) của phiếu HS — xem nhanh / sửa trong Word.
 - `cmd_build_handout(args)`
@@ -198,10 +185,6 @@ _THUYẾT MINH ĐỀ KIỂM TRA (đặc tả đề) — artifact MÁY-ĐỌC, ch
 _Loader ngân hàng đề (đã gắn band/phut) — tra cứu câu theo id cho gate/spec._
 - `load_bank(force)` — id câu → {band, phut, diem, dang, chuong, de}. Cache; rỗng nếu chưa có bank.
 - `lookup(ids)` — Các (id, record) có thật trong bank (bỏ qua id không khớp — opt-in, không báo lỗi).
-
-### `src/schema/feedback_schema.py`
-_Định dạng cấu trúc tệp phản hồi (feedback_parser.py sẽ map từ active_feedback.md sang đây)._
-- **class FeedbackItem**
 
 ### `src/schema/lesson_package.py`
 _Cấu trúc tích hợp cả 5 chặng của buổi học — khóa cứng giữa AI và template Jinja2._
@@ -686,6 +669,7 @@ _OCR KHO ĐỀ — dựng kho text cho mọi đề hợp lệ ở inputs/refs/de
 ### `scripts/prune_outputs.py`
 _prune_outputs — soi thư mục `outputs/` mồ côi (bản in cũ của phiếu đã đổi tên/xoá)._
 - `expected_dirs()` — slug → các thư mục output hợp lệ (mirror cây seeds, xem src/main.py::_out_root).
+- `scan_stray()` — PDF/DOCX nằm ngoài outputs/ (chỉ LIỆT KÊ — không có seed thì không dựng lại được).
 - `scan()` — (lạc chỗ — seed còn nhưng đã chuyển folder, mất gốc — không seed nào khớp).
 - `scan_obsolete_files()` — Các file ca-*.pdf và sidecar cũ nằm trong folder ĐÃ CÓ bản in tên mô tả (*-Phieu-HS.pdf...).
 - `main(argv)`

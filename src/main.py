@@ -305,35 +305,6 @@ def cmd_status(args: argparse.Namespace) -> int:
     return 0
 
 
-def cmd_evolve(args: argparse.Namespace) -> int:
-    """Đọc active_feedback.md và tiến hóa style/prompt có kiểm soát."""
-    from src.agents.feedback_parser import parse_feedback
-    from src.agents.evolution_engine import evolve_from_feedback
-
-    fb_path = Path(args.feedback)
-    if not fb_path.exists():
-        print(f"✗ Không tìm thấy file phản hồi: {fb_path}", file=sys.stderr)
-        return 1
-
-    print(f"▶ Đọc phản hồi từ {fb_path} …")
-    feedback = parse_feedback(fb_path)
-
-    if feedback.is_empty():
-        print("  (Không có nhận xét mới để áp dụng.)")
-        return 0
-
-    result = evolve_from_feedback(feedback)
-    print(f"  • Snapshot đã lưu trước khi sửa.")
-    if result["applied_changes"]:
-        for change in result["applied_changes"]:
-            print(f"  ✓ {change}")
-    else:
-        print("  (Không có quy tắc nào thay đổi.)")
-    return 0
-
-
-# ── S2/S3 commands (giữ nguyên từ trước) ──────────────────────────────────────
-
 def _gate_before_build(lesson: LessonPackage, force: bool, fast: bool = False,
                        lesson_path: str | None = None) -> bool:
     """Cổng AGENTS.md: 'bắt buộc validate sạch trước build'. Chạy trọng tài S2;
@@ -1559,10 +1530,6 @@ def main(argv: list[str] | None = None) -> int:
 
     st = sub.add_parser("status", help="Xem trạng thái tất cả bài trong run_state.json")
     st.set_defaults(func=cmd_status)
-
-    ev = sub.add_parser("evolve", help="Áp dụng phản hồi của Thầy để tiến hóa style/prompt")
-    ev.add_argument("feedback", nargs="?", default="feedback/active_feedback.md")
-    ev.set_defaults(func=cmd_evolve)
 
     # S3 commands
     b = sub.add_parser("build-handout", help="Render + compile phiếu HS từ file lesson JSON")

@@ -67,7 +67,7 @@ phần cố định của template, nên **mọi `build` về sau tự động c
 
 Nguồn duy nhất ở các template: `base_handout/base_summary/base_guide.tex.j2` (footer),
 `base_slide.tex.j2` (bìa), `preamble/_beamer.tex.j2` (footline). **Sửa SĐT/tên thì sửa ở
-cả 5 chỗ này** rồi `build` lại. **Đừng gỡ** chữ ký khi chỉnh template hay khi chạy `evolve`.
+cả 5 chỗ này** rồi `build` lại. **Đừng gỡ** chữ ký khi chỉnh template.
 
 ## Cấu trúc 1 phiếu — 5 chặng map 4 tầng
 

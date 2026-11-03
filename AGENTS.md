@@ -8,6 +8,25 @@
 > **"Các đầu việc học liệu"** (`1NCJHzp0…6erDs`); bản tóm tắt các quyết định đã chốt ở
 > **[docs/quy-chuan-hoc-lieu.md](docs/quy-chuan-hoc-lieu.md)** — đọc file đó TRƯỚC khi soạn/chấm câu.
 > Hai tài liệu nói khác nhau thì theo thứ tự **Sheet quy chuẩn > docs/quy-chuan-hoc-lieu.md > AGENTS.md > HUONG-DAN-*.md**.
+>
+> **BẢN ĐỒ TÀI LIỆU (quy hoạch 03/11/2026 — mỗi việc đọc đúng một file):**
+>
+> | File | Dùng khi |
+> |---|---|
+> | [docs/quy-chuan-hoc-lieu.md](docs/quy-chuan-hoc-lieu.md) | luật chọn câu, chấm câu, hình thức câu hỏi, thời lượng, nguồn, lớp A/B/C/X |
+> | [HUONG-DAN-BAT-DAU.md](HUONG-DAN-BAT-DAU.md) | người mới / máy Windows: cài đặt, phím tắt build |
+> | [HUONG-DAN-DONG-BO.md](HUONG-DAN-DONG-BO.md) | đồng bộ repo giữa các thầy cô qua GitHub |
+> | [docs/quy-trinh-ngan-hang-chuong.md](docs/quy-trinh-ngan-hang-chuong.md) | Bước 0 mỗi chương: tab phân dạng → snapshot → thuyết minh |
+> | [HUONG-DAN-THUYET-MINH-LOP-C.md](HUONG-DAN-THUYET-MINH-LOP-C.md) | soạn thuyết minh (7 loại câu §4b áp MỌI tầng) |
+> | [HUONG-DAN-PHAN-TANG-LOP.md](HUONG-DAN-PHAN-TANG-LOP.md) | chuẩn giờ / tỉ lệ theo tầng A/B/C/X |
+> | [HUONG-DAN-SOAN-PHIEU-B.md](HUONG-DAN-SOAN-PHIEU-B.md) | soạn phiếu tầng B (trần điểm, VDC) |
+> | [HUONG-DAN-SOAN-BAI.md](HUONG-DAN-SOAN-BAI.md) | luật điền lesson JSON (5 chặng, block, trình bày) |
+> | [docs/quy-trinh-khoi-678.md](docs/quy-trinh-khoi-678.md) | soạn khối 6–8 (đội agent) |
+> | [docs/quy-trinh-bo-de-on-tap.md](docs/quy-trinh-bo-de-on-tap.md) | dựng bộ đề ôn tập + đề kiểm tra |
+> | [docs/quy-trinh-dang-bai/](docs/quy-trinh-dang-bai/README.md) | tài liệu quy trình giải theo dạng (bản giao tổ 22/08) |
+> | [PROJECT_MAP.md](PROJECT_MAP.md) | bản đồ code (`make map` sinh lại) |
+>
+> Tiến độ từng buổi KHÔNG nằm trong repo: xem tab tiến độ trên sheet nhóm (vd "TIẾN ĐỘ 9C - 2026 - ThaiTD").
 
 ## ⚡ Bắt đầu nhanh (agent land-and-go — đọc cái này là chạy được)
 
@@ -354,7 +373,7 @@ python -m src.main approve <slug>              # Thầy xem PDF rồi DUYỆT (s
 7. **KIỂM SOÁT THỜI LƯỢNG (CHỐNG THIẾU CÂU):** AI rất hay tạo thiếu bài tập, làm hụt quỹ giờ của buổi học (quỹ trên lớp theo khối/môn trong `config/tier_spec.json`, vd lớp 9 Đại số 120′, lớp 9 Hình 55′). Bắt buộc xem log `[duration_gate]` sau lệnh `validate`. Nếu bị báo thiếu giờ, **PHẢI tự động sinh thêm bài tương đương hoặc kéo bài từ BTVN lên** sao cho lấp đủ quỹ thời gian. Định mức phút/câu CHỈ lấy từ `tier_spec.json` (tab "Định mức thời lượng" của sheet quy chuẩn là bản chép) — đừng gõ số cứng; bài nhiều ý tính từng ý theo mức của ý. Tuyệt đối không giao phiếu bị hụt thời lượng!
    Sửa xong checklist → build lại → mới trình Thầy.
 8. **Tự động ngắt trang bảng Thuyết minh**: Đối với các thuyết minh có số câu phân mảnh lớn (ví dụ phiếu Tầng C với 22 dòng phân mảnh), bảng tự động ngắt trang nhờ sử dụng môi trường `longtable` kết hợp cấu trúc `\endfirsthead` và `\endhead` để tự động lặp lại dòng tiêu đề bảng ở đầu các trang tiếp theo. Khi thiết kế/chỉnh sửa mã nguồn của renderer, bắt buộc giữ cấu trúc `longtable` này để tránh bảng bị tràn mất khỏi lề dưới của trang A4 ngang.
-   Kế hoạch tuần: [KE-HOACH-SOAN-BAI.md](KE-HOACH-SOAN-BAI.md). Luật soạn chi tiết: [HUONG-DAN-SOAN-BAI.md](HUONG-DAN-SOAN-BAI.md). **Hướng dẫn thuyết minh Tầng C: [HUONG-DAN-THUYET-MINH-LOP-C.md](HUONG-DAN-THUYET-MINH-LOP-C.md)** (quy trình riêng cho HS nền yếu: 4 khối trang đầu + AI hỏi Thầy 3 câu trước mỗi chương).
+   Tiến độ từng buổi: tab tiến độ trên sheet nhóm (vd "TIẾN ĐỘ 9C - 2026 - ThaiTD"). Luật soạn chi tiết: [HUONG-DAN-SOAN-BAI.md](HUONG-DAN-SOAN-BAI.md). **Hướng dẫn thuyết minh Tầng C: [HUONG-DAN-THUYET-MINH-LOP-C.md](HUONG-DAN-THUYET-MINH-LOP-C.md)** (quy trình riêng cho HS nền yếu: 4 khối trang đầu + AI hỏi Thầy 3 câu trước mỗi chương).
 
 ## Nguyên tắc BẮT BUỘC khi soạn (bám HUONG-DAN §0)
 
@@ -417,7 +436,7 @@ Số sao KHÔNG phải "cảm giác khó/dễ" mà là **cấp độ nhận th�
 
 ## Đổi `config/difficulty_profile.json` khi sang chương mới
 
-Trước khi soạn **bài đầu chương**, cập nhật `ceiling/floor/ramp/core_techniques/hook_forbidden_patterns` theo bảng trong [KE-HOACH-SOAN-BAI.md](KE-HOACH-SOAN-BAI.md). Profile là file toàn cục — chỉnh theo chương đang soạn.
+Trước khi soạn **bài đầu chương**, cập nhật `ceiling/floor/ramp/core_techniques/hook_forbidden_patterns` theo chương đang soạn (tra chương/tuần ở tab tiến độ trên sheet nhóm). Profile là file toàn cục — chỉnh theo chương đang soạn.
 
 ## Phân tầng lớp (A/B/C/X) — phiếu phân hoá theo năng lực
 
