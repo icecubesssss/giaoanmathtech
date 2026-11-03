@@ -37,6 +37,14 @@
 ((* if b.options *))\par\smallskip
 ((* for o in b.options *)){\bfseries\color{brand}((( "ABCDEFGH"[loop.index0] ))).}~((( o | tex )))\par
 ((* endfor *))((* endif *))
+((* if b.dung_sai *))\par\smallskip
+((* for s in b.dung_sai *)){\bfseries\color{brand}((( "abcdefgh"[loop.index0] ))))}~((( s | tex )))\hfill Đ\,/\,S\par
+((* endfor *))((* endif *))
+((* if b.noi_cot_trai *))\par\smallskip
+\begin{tabular}{p{0.45\linewidth}p{0.45\linewidth}}
+((* for i in range([b.noi_cot_trai | length, b.noi_cot_phai | length] | max) *))((* if i < (b.noi_cot_trai | length) *))((( i + 1 ))).~((( b.noi_cot_trai[i] | tex )))((* endif *)) & ((* if i < (b.noi_cot_phai | length) *))((( "abcdefgh"[i] ))))~((( b.noi_cot_phai[i] | tex )))((* endif *))\\
+((* endfor *))\end{tabular}\par
+((* endif *))
 \par\medskip
 ((* elif b.type == "table" *))
 ((* if b.caption *)){\color{brand}\small\textbf{((( b.caption | tex )))}}\par\vspace{2pt}

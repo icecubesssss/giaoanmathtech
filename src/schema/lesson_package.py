@@ -219,6 +219,18 @@ class ProblemBlock(BaseModel):
     figure: Optional["ProblemFigure"] = Field(
         None, description="Hình đi kèm bài; None = bài không hình"
     )
+    # Hai hình thức câu hỏi còn thiếu trong bộ 5 hình thức (sheet quy chuẩn, Cấu trúc 2;
+    # Thầy chốt 03/11/2026: tiểu học mọi phiếu, THCS chặng Khám phá + phiếu ôn tập).
+    # Đáp án ghi ở `answer` (vd "a) Đ · b) S", "1 – c · 2 – a"). Mỗi khẳng định / mỗi dòng
+    # cột trái tính là MỘT câu khi đếm quỹ giờ (duration_gate).
+    dung_sai: list[str] = Field(
+        default_factory=list,
+        description="Các khẳng định Đúng/Sai, nhãn a) b)… do template đánh; HS đánh dấu Đ hoặc S",
+    )
+    noi_cot_trai: list[str] = Field(
+        default_factory=list, description="Bảng nối 2 cột — cột A (đánh số 1, 2, …)")
+    noi_cot_phai: list[str] = Field(
+        default_factory=list, description="Bảng nối 2 cột — cột B (đánh chữ a, b, …), đã xáo thứ tự")
 
     @property
     def layout_moi(self) -> bool:
@@ -226,14 +238,15 @@ class ProblemBlock(BaseModel):
 
         Nhận biết bằng SỰ CÓ MẶT của trường mới, KHÔNG soi chuỗi `statement`: soi chuỗi
         thì một bài mới mà đề lỡ có `\\textbf` sẽ bị hiểu nhầm là bài cũ."""
-        return bool(self.options or self.figure)
+        return bool(self.options or self.figure or self.dung_sai or self.noi_cot_trai)
 
     def noi_dung_day_du(self) -> str:
         """TOÀN BỘ chữ HS đọc được của bài, gộp từ mọi trường — dùng cho CÁC CỔNG.
 
         Cổng nào đếm câu/soi chữ mà chỉ đọc `.statement` thì sau khi tách trường sẽ
         đếm hụt (vd `duration_gate` mất hết thẻ [NB] nằm trong phương án)."""
-        phan = [self.statement, self.answer, *self.options]
+        phan = [self.statement, self.answer, *self.options, *self.dung_sai,
+                *self.noi_cot_trai, *self.noi_cot_phai]
         if self.figure is not None:
             phan += [self.figure.tikz, self.figure.caption, self.figure.ref]
         return " ".join(p for p in phan if p)

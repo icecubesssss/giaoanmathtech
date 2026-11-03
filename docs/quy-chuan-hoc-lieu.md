@@ -27,7 +27,10 @@
   trên **mọi phiếu**.
 - **THCS:** 5 hình thức dùng ở **chặng Khám phá và phiếu ôn tập**. Các chặng Luyện tập giữ luật
   **không dùng câu NB rời rạc** — NB là bước của một bài lớn (giàn giáo), hoặc NB kiến thức cũ.
-- Schema hiện **chưa có** block Đúng/Sai và Nối cột riêng (nợ bước clean 4).
+- Khai trong `problem` (từ 03/11/2026): `options` (trắc nghiệm A–D), `dung_sai` (danh sách khẳng định, HS đánh Đ/S),
+  `noi_cot_trai` + `noi_cot_phai` (bảng nối, cột B đã xáo); đáp án ghi ở `answer` ("a) Đ · b) S", "1 – b · 2 – c").
+  Template tự kẻ bảng ở phiếu HS, sổ tay GV, slide và bản Word. Mỗi khẳng định / mỗi dòng cột A tính là một câu
+  khi đếm quỹ phút.
 
 ## 3. Thời lượng
 

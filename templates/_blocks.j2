@@ -63,6 +63,19 @@
 ((* for o in b.options *))\mcqitem{((( "ABCDEFGH"[loop.index0] )))}{((( o | tex )))}
 ((* endfor *))\end{mcq}
 ((* endif *))
+((= Đúng/Sai + Nối 2 cột (chốt 03/11/2026): bảng HS đánh dấu/nối thẳng trên phiếu. =))
+((* if b.dung_sai *))
+\par\nopagebreak\smallskip\nopagebreak\noindent{\renewcommand{\arraystretch}{1.35}\begin{tabular}{|p{0.78\linewidth}|>{\centering\arraybackslash}p{0.05\linewidth}|>{\centering\arraybackslash}p{0.05\linewidth}|}\hline
+\textbf{Khẳng định} & \textbf{Đ} & \textbf{S}\\\hline
+((* for s in b.dung_sai *))((( "abcdefgh"[loop.index0] ))))~((( s | tex ))) & & \\\hline
+((* endfor *))\end{tabular}}\par
+((* endif *))
+((* if b.noi_cot_trai *))
+\par\nopagebreak\smallskip\nopagebreak\noindent{\renewcommand{\arraystretch}{1.35}\begin{tabular}{|p{0.44\linewidth}|p{0.44\linewidth}|}\hline
+\textbf{Cột A} & \textbf{Cột B}\\\hline
+((* for i in range([b.noi_cot_trai | length, b.noi_cot_phai | length] | max) *))((* if i < (b.noi_cot_trai | length) *))((( i + 1 ))).~((( b.noi_cot_trai[i] | tex )))((* endif *)) & ((* if i < (b.noi_cot_phai | length) *))((( "abcdefgh"[i] ))))~((( b.noi_cot_phai[i] | tex )))((* endif *))\\\hline
+((* endfor *))\end{tabular}}\par
+((* endif *))
 ((* else *))
 ((= Hộp hình [[wrap]] treo bằng \smash (cao 0pt) nên TeX KHÔNG biết nó chiếm chỗ:
     bài rơi sát đáy trang thì hình vẽ đè lên chân trang. Môi trường `wrapclump`

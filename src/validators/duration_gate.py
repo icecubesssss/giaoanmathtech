@@ -61,8 +61,14 @@ def _problem_units(lesson: LessonPackage):
             if typ == "problem":
                 if current:
                     yield current
+                texts = [b.statement or ""]
+                # Đúng/Sai, Nối cột (03/11/2026): mỗi khẳng định / dòng cột A là MỘT câu.
+                # Đề chưa có ý a), b)… thì thêm nhãn giả để _count_items đếm đúng số câu.
+                ds = list(getattr(b, "dung_sai", []) or []) + list(getattr(b, "noi_cot_trai", []) or [])
+                if ds and not _ITEM_RE.search(b.statement or ""):
+                    texts.append(" ".join(f"{chr(97 + i)}) x" for i in range(len(ds))))
                 current = (getattr(b, "tier", "") or "onclass",
-                           getattr(b, "level", 0), [b.statement or ""],
+                           getattr(b, "level", 0), texts,
                            bool(getattr(b, "draw", False)),
                            bool(getattr(b, "figure_given", False)))
             elif typ == "para" and current:

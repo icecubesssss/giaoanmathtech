@@ -287,6 +287,22 @@ class LessonIR:
                     while len(r) < n:
                         r.append(Cell([]))
                 body.append(Tbl(rows, widths=[1 / n] * n, borders=False, cell_pad_pt=1, align="left"))
+            if b.dung_sai:
+                hang = [[Cell([P([T("Khẳng định", Fmt(bold=True))])]),
+                         Cell([P([T("Đ", Fmt(bold=True))], align="center")]),
+                         Cell([P([T("S", Fmt(bold=True))], align="center")])]]
+                for k, s in enumerate(b.dung_sai):
+                    hang.append([Cell([P([T(f"{'abcdefgh'[k]})\u00A0")] + self.inl(s, where), align="left")]),
+                                 Cell([]), Cell([])])
+                body.append(Tbl(hang, widths=[0.84, 0.08, 0.08], borders=True, cell_pad_pt=2, align="left"))
+            if b.noi_cot_trai:
+                n_hang = max(len(b.noi_cot_trai), len(b.noi_cot_phai))
+                hang = [[Cell([P([T("Cột A", Fmt(bold=True))])]), Cell([P([T("Cột B", Fmt(bold=True))])])]]
+                for k in range(n_hang):
+                    trai = ([T(f"{k + 1}.\u00A0")] + self.inl(b.noi_cot_trai[k], where)) if k < len(b.noi_cot_trai) else []
+                    phai = ([T(f"{'abcdefgh'[k]})\u00A0")] + self.inl(b.noi_cot_phai[k], where)) if k < len(b.noi_cot_phai) else []
+                    hang.append([Cell([P(trai, align="left")]), Cell([P(phai, align="left")])])
+                body.append(Tbl(hang, widths=[0.5, 0.5], borders=True, cell_pad_pt=2, align="left"))
         else:
             stmt = b.statement
             if "[[/wrap]]" in stmt:

@@ -67,8 +67,8 @@
 > 4c. ***ĐA DẠNG HÌNH THỨC CÂU HỎI — 5 HÌNH THỨC (Thầy chốt 2026-08-12; phạm vi chốt lại 03/11/2026, mục 3 sheet quy chuẩn).*** **Tiểu học: bắt buộc trên MỌI phiếu. THCS: dùng ở chặng Khám phá và phiếu ôn tập**; các chặng Luyện tập THCS giữ Nguyên tắc §9 (không NB rời rạc). Không phiếu nào được 100% tự luận tính toán thuần túy. Năm hình thức:
 >    1. **Trắc nghiệm 4 lựa chọn (A/B/C/D)**: Kiểm tra nhanh khái niệm, công thức, thương đơn thức/tích đa thức.
 >    2. **Điền khuyết (Điền chỗ chấm `\dots` / ô trống / điền số mũ $n$ / điền hệ số $k$)**: Kiểm tra biến đổi công thức, tìm yếu tố còn thiếu, đổi dấu.
->    3. **Khẳng định Đúng / Sai (hoặc Trả lời ngắn)**: Đánh bẫy các lỗi sai thường gặp (`loisai` trong spec) như dấu âm, số mũ 0, phân số.
->    4. **Bảng Nối 2 Cột (Matching table)**: Trình bày dạng `tabular` 2 cột (Cột A phép tính & Cột B kết quả xáo trộn), không kèm `writelines`.
+>    3. **Khẳng định Đúng / Sai (hoặc Trả lời ngắn)**: Đánh bẫy các lỗi sai thường gặp (`loisai` trong spec) như dấu âm, số mũ 0, phân số. Khai bằng trường **`dung_sai`** của `problem` (danh sách khẳng định; đáp án ở `answer`), template tự kẻ bảng Đ/S.
+>    4. **Bảng Nối 2 Cột (Matching table)**: khai **`noi_cot_trai`** + **`noi_cot_phai`** (cột B đã xáo) trong `problem`, template tự kẻ bảng; không gõ `tabular` tay, không kèm `writelines`.
 >    5. **Tự luận ngắn & Bài toán thực tế**: Dành cho bài Thông hiểu, Vận dụng (rút gọn tính giá trị, tìm $x$, bài toán thực tế có lời văn).
 >
 > 5. *(2026-07-27) Khung THAY THẾ, ít dạng vụn hơn — dùng cho thuyết minh CẤP CHƯƠNG*: **11 dạng NB** (10 dạng `onclass: 3` $+$ 1 dạng `onclass: 2` $=$ 32 câu $\Rightarrow$ 48′) · **4 dạng TH** (`onclass: 2` $\Rightarrow$ 48′) · **2 dạng VD** (`onclass: 1` $\Rightarrow$ 24′) $=$ 120′, đúng 40-40-20. Ví dụ: 9 dạng NB $+$ 4 TH $+$ 2 VD mỗi dạng `vidu: 1` $=$ 41′. **`lythuyet` CHỈ gắn cho 4 dạng NB** ($=$ 4′) $\Rightarrow$ GV giảng $41+4=45′$ khớp quỹ. BTVN: NB 26 câu, TH 8, VD 2 $=$ 96′. Thầy phản biện bản 16 dạng NB×2 là "chi tiết quá, luyện tập cần tăng lên".
