@@ -15,8 +15,8 @@ tầng C chỉ cần *làm được một phần Vận dụng*, còn **tầng B 
 
 | Kỳ | Trần | Nghĩa là |
 |---|---|---|
-| **GK1, CK1** | **10,0** | Phiếu phải dạy **HẾT**, kể cả câu nâng cao 0,5đ cuối đề và ý cuối bài hình. Không được bỏ dạng nào. |
-| **GK2, CK2** | **9,5** | Nhường **0,5đ ở Ý CUỐI BÀI HÌNH** — câu c)/d) quá nhiều bước, có bước HS chưa được học. |
+| **GK1, CK1** | **9,5–10** | Phiếu dạy nâng cao, kể cả câu nâng cao 0,5đ cuối đề và ý cuối bài hình. Không được bỏ dạng nào. |
+| **GK2, CK2** | **9–9,5** | Vẫn dạy một số câu cuối theo tỉ lệ ra đề; nhường **ý cuối bài hình** — câu c)/d) quá nhiều bước, có bước HS chưa được học. |
 
 > "HS có thể không đạt được hết, nhưng **mình cần dạy hết đến các phần đó**."
 > Trần điểm là đích của PHIẾU, không phải dự đoán điểm của HS.
@@ -284,7 +284,7 @@ NB **không phải bài rời** — nó là *bước* cắt ra từ chính bài 
 |---|---|---|
 | Tỉ lệ | 40-40-20 cố định | **Theo chương** — 15-30-55 chia lại theo tần suất VDC, hoặc 30-70 (gộp 2 phiếu) |
 | Mức cao nhất | level 3 (VD), **bỏ hẳn VDC** | **level 4 (VDC)** ở chương nhóm *cao* |
-| Đích | thạo 100% NB+TH, làm được **một phần** VD | **trần 10,0 kỳ I · 9,5 kỳ II** |
+| Đích | thạo 100% NB+TH, làm được **một phần** VD | **trần 9,5–10 kỳ I · 9–9,5 kỳ II** |
 | Giàn giáo | dày nhất (8 ý, ô điền từng bước) | bắt đầu **5–6 ý**, thưa nhanh hơn, BTVN gần đề trần |
 | `quy_trinh` | không bắt buộc | **bắt buộc ở mọi bài VD** (cổng chặn) |
 | Bài toán mở màn | phải gắn đời sống HS (tiền tiêu vặt, vé concert) | như C, nhưng **được dùng bối cảnh đề thi** từ bài luyện trở đi |

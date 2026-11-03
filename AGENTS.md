@@ -4,6 +4,11 @@
 
 Đây là **MathTech Engine**: soạn phiếu học tập Toán lớp 9 (ôn thi vào 10) từ PDF nguồn của Thầy → render ra 3 bản PDF (handout HS / guide GV / slide).
 
+> **NGUỒN LUẬT (Thầy chốt 03/11/2026):** bộ nguyên tắc / quy chuẩn / quy trình nằm ở Google Sheet
+> **"Các đầu việc học liệu"** (`1NCJHzp0…6erDs`); bản tóm tắt các quyết định đã chốt ở
+> **[docs/quy-chuan-hoc-lieu.md](docs/quy-chuan-hoc-lieu.md)** — đọc file đó TRƯỚC khi soạn/chấm câu.
+> Hai tài liệu nói khác nhau thì theo thứ tự **Sheet quy chuẩn > docs/quy-chuan-hoc-lieu.md > AGENTS.md > HUONG-DAN-*.md**.
+
 ## ⚡ Bắt đầu nhanh (agent land-and-go — đọc cái này là chạy được)
 
 0. **Chạy trên máy WINDOWS?** Đọc [HUONG-DAN-BAT-DAU.md §4](HUONG-DAN-BAT-DAU.md) trước khi gõ lệnh đầu tiên: Python là `.venv\Scripts\python.exe` (không phải `.venv/bin/python`), **không có `make`**, đường dẫn có `[C]…` phải bọc nháy kép, và script mới phải ép stdout sang UTF-8 kẻo nổ `UnicodeEncodeError`.
@@ -59,11 +64,11 @@
 >    * Nhãn nằm ở **cột riêng**, KHÔNG nhét vào `dang` (luật CẤM CHỮ THỪA).
 >    * ⚠️ **Vì sao luật này từng bị bỏ quên suốt 39/41 spec:** `loai` chỉ được đọc ở renderer để quyết định *có in cột hay không* — không khai thì cột **lặng lẽ biến mất**, gate im, PDF vẫn đẹp. Nay `thuyetminh_gate.check_loai_4b()` cảnh báo dòng thiếu/sai nhãn/lệch band, khung `new-thuyetminh` sinh sẵn ô `"loai": "TODO §4b"`, và PDF in dòng đỏ "CHƯA KHAI LOẠI CÂU HỎI (§4b)" khi còn thiếu. **Thấy dòng đỏ đó là chưa xong việc.**
 >
-> 4c. ***ĐA DẠNG HÌNH THỨC CÂU HỎI — 5 DẠNG BẮT BUỘC KHI SOẠN PHIẾU (Thầy chốt 2026-08-12).*** Khi soạn bất kỳ phiếu học tập nào (cả Đại số và Hình học, mọi tầng A/B/C/X, phiếu đã làm lẫn phiếu mới), **KHÔNG ĐƯỢC chỉ dùng 100% bài tự luận tính toán thuần túy**. Bắt buộc phải đan xen phong phú 5 hình thức câu hỏi để tăng phản xạ và chống nhàm chán cho HS:
+> 4c. ***ĐA DẠNG HÌNH THỨC CÂU HỎI — 5 HÌNH THỨC (Thầy chốt 2026-08-12; phạm vi chốt lại 03/11/2026, mục 3 sheet quy chuẩn).*** **Tiểu học: bắt buộc trên MỌI phiếu. THCS: dùng ở chặng Khám phá và phiếu ôn tập**; các chặng Luyện tập THCS giữ Nguyên tắc §9 (không NB rời rạc). Không phiếu nào được 100% tự luận tính toán thuần túy. Năm hình thức:
 >    1. **Trắc nghiệm 4 lựa chọn (A/B/C/D)**: Kiểm tra nhanh khái niệm, công thức, thương đơn thức/tích đa thức.
 >    2. **Điền khuyết (Điền chỗ chấm `\dots` / ô trống / điền số mũ $n$ / điền hệ số $k$)**: Kiểm tra biến đổi công thức, tìm yếu tố còn thiếu, đổi dấu.
 >    3. **Khẳng định Đúng / Sai (hoặc Trả lời ngắn)**: Đánh bẫy các lỗi sai thường gặp (`loisai` trong spec) như dấu âm, số mũ 0, phân số.
->    4. **Bảng Nối 2 Cột (Matching table)**: Trình bày dạng `tabular` 2 cột (Cột A phép tính & Cột B kết quả xáo trộn), đặt `writelines: 0`.
+>    4. **Bảng Nối 2 Cột (Matching table)**: Trình bày dạng `tabular` 2 cột (Cột A phép tính & Cột B kết quả xáo trộn), không kèm `writelines`.
 >    5. **Tự luận ngắn & Bài toán thực tế**: Dành cho bài Thông hiểu, Vận dụng (rút gọn tính giá trị, tìm $x$, bài toán thực tế có lời văn).
 >
 > 5. *(2026-07-27) Khung THAY THẾ, ít dạng vụn hơn — dùng cho thuyết minh CẤP CHƯƠNG*: **11 dạng NB** (10 dạng `onclass: 3` $+$ 1 dạng `onclass: 2` $=$ 32 câu $\Rightarrow$ 48′) · **4 dạng TH** (`onclass: 2` $\Rightarrow$ 48′) · **2 dạng VD** (`onclass: 1` $\Rightarrow$ 24′) $=$ 120′, đúng 40-40-20. Ví dụ: 9 dạng NB $+$ 4 TH $+$ 2 VD mỗi dạng `vidu: 1` $=$ 41′. **`lythuyet` CHỈ gắn cho 4 dạng NB** ($=$ 4′) $\Rightarrow$ GV giảng $41+4=45′$ khớp quỹ. BTVN: NB 26 câu, TH 8, VD 2 $=$ 96′. Thầy phản biện bản 16 dạng NB×2 là "chi tiết quá, luyện tập cần tăng lên".
@@ -71,7 +76,7 @@
 
 > **BẢN MẪU THUYẾT MINH THẦY ĐÃ DUYỆT = `inputs/seeds/lop-7/` (chương 3 Hình 7, xuất từ Google Sheets).** Chương mới bám đúng 4 khối của bản đó: (1) **THỜI LƯỢNG** — mỗi bài mấy *ca* $+$ dòng tổng ĐỐI CHIẾU SGK ("4 ca = 16 tiết, SGK 13 tiết"), khai bằng field `thoiluong` của `ThuyetMinhSpec`; (2) **MỤC TIÊU / yêu cầu cần đạt** kèm **chuẩn đầu ra ĐIỂM SỐ thật** (`lythuyet`) — không hứa "ăn trọn N điểm" khi HS chưa đủ căn cứ; (3) **VẤN ĐỀ HS** (`loisai`); (4) **NỘI DUNG PHIẾU** — bảng dạng bài × (Lý thuyết / Ví dụ / BT trên lớp / BTVN). Tên phiếu **bám tên bài SGK** ("Bài 7 $+$ Bài 8: …"), KHÔNG tự đặt tên khác sách.
 
-> **PHIẾU HÌNH — vẽ SẴN hình, dồn về trắc nghiệm / điền khuyết (Thầy chốt 2026-07-27):** _"1,5 tiếng chỉ chữa được 1–2 bài hình hẳn hoi thôi, còn lại hãy vẽ luôn hình và dồn theo dạng trắc nghiệm hoặc tự luận điền khuyết để hs có mẫu trình bày"_. Bản mẫu cách ra đề = **`inputs/seeds/lop-7/hinh-hoc/chuong-03-.../phieu-a-goc-o-vi-tri-dac-biet.json`** (Thầy đã duyệt): (1) trắc nghiệm A/B/C/D, đề trong `minipage 0.44` bên trái $+$ TikZ trong `minipage 0.36` bên phải kèm nhãn "Hình N"; (2) bài **điền chỗ chấm** nhiều ý a)–f) làm mẫu trình bày; (3) vài bài **"vẽ hình theo yêu cầu"**; mỗi `problem` kèm một `writelines`.
+> **PHIẾU HÌNH — vẽ SẴN hình, dồn về trắc nghiệm / điền khuyết (Thầy chốt 2026-07-27):** _"1,5 tiếng chỉ chữa được 1–2 bài hình hẳn hoi thôi, còn lại hãy vẽ luôn hình và dồn theo dạng trắc nghiệm hoặc tự luận điền khuyết để hs có mẫu trình bày"_. Bản mẫu cách ra đề = **`inputs/seeds/lop-7/hinh-hoc/chuong-03-.../phieu-a-goc-o-vi-tri-dac-biet.json`** (Thầy đã duyệt): (1) trắc nghiệm A/B/C/D, đề trong `minipage 0.44` bên trái $+$ TikZ trong `minipage 0.36` bên phải kèm nhãn "Hình N"; (2) bài **điền chỗ chấm** nhiều ý a)–f) làm mẫu trình bày; (3) vài bài **"vẽ hình theo yêu cầu"**. *(Bản mẫu cũ kèm `writelines` sau mỗi bài — luật mới: KHÔNG chừa dòng kẻ, xem mục "KHÔNG CHỪA DÒNG KẺ" dưới.)*
 > - **Bố cục bài có hình — chữ CHẠY QUANH HÌNH (Thầy chốt 2026-07-27):** đặt cờ **`[[wrap]]`** ở đầu `statement` ⇒ `_blocks.j2` phát `\leavevmode\hangafter=-5\hangindent=-0.38\linewidth` TRƯỚC nhãn "Bài N. ★" (đặt sau nhãn thì TeX đã mở đoạn văn và xoá tham số — vô tác dụng). Hộp hình treo góc phải bằng `\makebox[0pt][l]{\hspace{0.66\linewidth}\smash{\vtop{\hbox{…}}}}` — **KHÔNG dùng `\parbox`/`minipage` cho hộp hình** vì chúng kết đoạn bên trong, xoá luôn `\hangindent` làm chữ hết chảy quanh hình.
 > - Cờ **`figure_given`** (`ProblemBlock`) / **`hinh_san`** (`SpecRow`): câu **NB** trên hình vẽ sẵn tính **`quick_minutes` $=$ 1′/câu** (Thầy chốt: _"với mức độ này thì hs vẫn dùng 1p thôi"_), câu **TH/VD** điền khuyết chỉ giảm **nửa rate** (vẫn phải tính toán). Ngược với `draw`/`ve_hinh` ($+5$′). Nhờ đó một buổi hình 90′ chứa **~29 câu** thay vì 13.
 > - Dạy TSLG phải bắt đầu từ **nhận diện cạnh đối / cạnh kề theo từng góc** (HS mới chỉ biết cạnh huyền) và có **câu hỏi ngược** "cạnh $AB$ là cạnh đối của góc nào?".
@@ -346,7 +351,7 @@ python -m src.main approve <slug>              # Thầy xem PDF rồi DUYỆT (s
    - **Đề + các câu nhỏ a,b,c CÙNG MỘT slide** (đề dài thì renderer tự co `probfit`; KHÔNG để "đề một chỗ, câu nhỏ một nẻo").
    - Không có **chữ/hình đè footer** "MathTech … Slide N", không có trang trống.
      Renderer (`group_slide_segments`/`_seg_mode` + `_slide_blocks.j2`) đã lo các bố cục trên; nếu vẫn lệch thì sửa renderer/template rồi build lại, KHÔNG sửa tay JSON cho hợp một slide.
-7. **KIỂM SOÁT THỜI LƯỢNG (CHỐNG THIẾU CÂU):** AI rất hay tạo thiếu bài tập, làm hụt quỹ giờ của buổi học (120 phút trên lớp). Bắt buộc xem log `[duration_gate]` sau lệnh `validate`. Nếu bị báo thiếu giờ, **PHẢI tự động sinh thêm bài tương đương hoặc kéo bài từ BTVN lên** sao cho lấp đủ quỹ thời gian (định mức: NB 1.5'/câu, TH 6'/câu, VD 12'/câu). Tuyệt đối không giao phiếu bị hụt thời lượng!
+7. **KIỂM SOÁT THỜI LƯỢNG (CHỐNG THIẾU CÂU):** AI rất hay tạo thiếu bài tập, làm hụt quỹ giờ của buổi học (quỹ trên lớp theo khối/môn trong `config/tier_spec.json`, vd lớp 9 Đại số 120′, lớp 9 Hình 55′). Bắt buộc xem log `[duration_gate]` sau lệnh `validate`. Nếu bị báo thiếu giờ, **PHẢI tự động sinh thêm bài tương đương hoặc kéo bài từ BTVN lên** sao cho lấp đủ quỹ thời gian. Định mức phút/câu CHỈ lấy từ `tier_spec.json` (tab "Định mức thời lượng" của sheet quy chuẩn là bản chép) — đừng gõ số cứng; bài nhiều ý tính từng ý theo mức của ý. Tuyệt đối không giao phiếu bị hụt thời lượng!
    Sửa xong checklist → build lại → mới trình Thầy.
 8. **Tự động ngắt trang bảng Thuyết minh**: Đối với các thuyết minh có số câu phân mảnh lớn (ví dụ phiếu Tầng C với 22 dòng phân mảnh), bảng tự động ngắt trang nhờ sử dụng môi trường `longtable` kết hợp cấu trúc `\endfirsthead` và `\endhead` để tự động lặp lại dòng tiêu đề bảng ở đầu các trang tiếp theo. Khi thiết kế/chỉnh sửa mã nguồn của renderer, bắt buộc giữ cấu trúc `longtable` này để tránh bảng bị tràn mất khỏi lề dưới của trang A4 ngang.
    Kế hoạch tuần: [KE-HOACH-SOAN-BAI.md](KE-HOACH-SOAN-BAI.md). Luật soạn chi tiết: [HUONG-DAN-SOAN-BAI.md](HUONG-DAN-SOAN-BAI.md). **Hướng dẫn thuyết minh Tầng C: [HUONG-DAN-THUYET-MINH-LOP-C.md](HUONG-DAN-THUYET-MINH-LOP-C.md)** (quy trình riêng cho HS nền yếu: 4 khối trang đầu + AI hỏi Thầy 3 câu trước mỗi chương).
@@ -364,7 +369,7 @@ python -m src.main approve <slug>              # Thầy xem PDF rồi DUYỆT (s
 6. **Ưu tiên "nghiệm đẹp" cho bài đại số** — được phép chỉnh số liệu đề cho nghiệm gọn (số nguyên); soi lại bằng SymPy. (Lượng giác/đo đạc thì đáp số gần đúng/tỉ số là bình thường.)
 7. **Escape `\%` `\&` `\#`** trong MỌI field (kể cả `solution`/`teacher_note`). `visual_linter` nay có cảnh báo; `%`/`#` thô sai mọi nơi, `&` thô chỉ sai ngoài `$...$`.
 8. **Quy chuẩn thiết kế "Mở màn thực tế":** Tình huống mồi phải (1) liên quan đến cái HS đã biết, (2) liên quan đến những gì HS thích (vé concert idol, phim C16, trend giới trẻ...). (3) Tuyệt đối **chưa nhắc đến khái niệm mới** nhưng phải diễn tả đúng bản chất khái niệm đó. Cần sử dụng công cụ AI sinh ảnh (như Gemini Banana) để tạo hình ảnh bắt mắt và chèn vào thông qua trường `"image"`.
-9. **Không dùng câu Nhận biết (NB) rời rạc, trắc nghiệm đơn lẻ hay Đúng/Sai vụn vặt.** Các câu NB phải được chẻ ra từ giàn giáo (scaffolding) các bước giải của bài toán lớn mức độ Thông hiểu (TH), Vận dụng (VD) hoặc Vận dụng cao (VDC). Giúp học sinh học cách lập luận qua từng bước thay vì làm các câu hỏi vụn vặt.
+9. **THCS — chặng Luyện tập không dùng câu Nhận biết (NB) rời rạc, trắc nghiệm đơn lẻ hay Đúng/Sai vụn vặt.** Các câu NB phải được chẻ ra từ giàn giáo (scaffolding) các bước giải của bài toán lớn mức độ Thông hiểu (TH), Vận dụng (VD) hoặc Vận dụng cao (VDC), hoặc là NB kiến thức cũ. Giúp học sinh học cách lập luận qua từng bước thay vì làm các câu hỏi vụn vặt. *Phạm vi (chốt 03/11/2026):* luật này áp cho chặng Luyện tập THCS; chặng Khám phá và phiếu ôn tập THCS dùng 5 hình thức (mục 4c); **tiểu học dùng 5 hình thức trên mọi phiếu**.
 10. **VÍ DỤ MẪU PHẢI TRÌNH BÀY NHƯ BÀI LÀM ĐI THI (Thầy chốt 2026-08-12).** Ví dụ mẫu không phải chỗ ghi đáp số — nó là **bản mẫu trình bày HS chép lại y hệt khi vào phòng thi**, nên phải viết đủ như một bài thi được chấm trọn điểm. Áp cho MỌI `noted.variant == "example"` và mọi `solution` của bài GV chữa mẫu:
     - **Có căn cứ trước, kết quả sau.** Mỗi bước mở bằng cái cho phép làm bước đó: "Xét $\triangle ABC$ vuông tại $A$, theo định lí Pythagore:", "Vì $AC$ là cạnh đối của góc $B$ nên…". Cấm nhảy thẳng ra số như "Pythagore: $BC^2 = 6^2 + 8^2 = 100$".
     - **Mỗi bước một dòng** (`[[br]]`), không dồn 3 phép tính vào một câu.
@@ -407,7 +412,7 @@ Số sao KHÔNG phải "cảm giác khó/dễ" mà là **cấp độ nhận th�
 2. **Ví dụ mồi cụ thể** trước dạng trừu tượng (pizza / dòng nước / % — xem Nguyên tắc §5) — bắc cầu trực giác.
 3. **flownode chia bước** (B1→B2→B3) + **`hints` mở dần** — giàn từng bước, lộ dần khi bí.
 4. **Bài "song song bài đã chữa"** — HS bám mẫu rồi tự làm (giàn mỏng).
-5. **Bài tự làm + `writelines`** — gỡ hết giàn, HS độc lập.
+5. **Bài tự làm** (HS trình bày vào vở, phiếu không chừa dòng kẻ) — gỡ hết giàn, HS độc lập.
    ⇒ Khi CHƯA CHẮC chia bước/dẫn dắt thế nào chính là đang phân vân "đặt giàn cao bao nhiêu cho khớp ZPD" → **HỎI THẦY** (Nguyên tắc §4–5), không tự đoán.
 
 ## Đổi `config/difficulty_profile.json` khi sang chương mới
@@ -416,12 +421,12 @@ Trước khi soạn **bài đầu chương**, cập nhật `ceiling/floor/ramp/c
 
 ## Phân tầng lớp (A/B/C/X) — phiếu phân hoá theo năng lực
 
-Cùng một bài có thể soạn **phiếu riêng cho từng tầng lớp** (A khá-giỏi · B trung bình · C nền · X chuyên), điều chỉnh tỉ lệ NB-TH-VD/số câu/độ khó cho khớp.
+Cùng một bài có thể soạn **phiếu riêng cho từng tầng lớp** (A khá-giỏi · B trung bình – khá · C nền · X chuyên; Thầy chốt giữ lớp A 03/11/2026), điều chỉnh tỉ lệ NB-TH-VD/số câu/độ khó cho khớp.
 **LUẬT CHỐNG HỤT GIỜ LỚP C:** Học sinh lớp C học chậm, nhưng không vì thế mà cắt xén bài tập trên lớp để dồn hết xuống BTVN (đặc biệt là các bài Vận dụng thực tế). **Nếu quỹ 180 phút trên lớp bị hụt do ít bài thực chiến, BẮT BUỘC phải kéo các bài toán thực tế Vận dụng từ BTVN lên "Luyện tập 2/3" để GV hướng dẫn trực tiếp, và BỔ SUNG thêm các bài thực tế TƯƠNG ĐƯƠNG vào BTVN (có dàn ý/scaffolding nếu cần) để học sinh vẫn có bài tự luyện.** BTVN được thiết kế thà thừa còn hơn thiếu, "để đó phòng khi học sinh không có việc làm", GV sẽ tự linh hoạt cắt giảm lúc giao.
 Quy ước: folder được xếp vào thư mục lớp tương ứng (vd `lop-c/tuan10-11-…`) hoặc mang tiền tố `[C]`… đứng trước `tuanNN`, đặt `"class_tier":"C"`, badge "LỚP C" tự in trên PDF; `new-lesson … --tier C` (hoặc tạo file tự động trong `lop-c`) tự sinh. Bản **chuẩn** (mọi trình độ) thường để ở `lop-b`. **Chuẩn spec giờ/số câu từng tầng** (hiện có: Lớp 9 Đại số tầng C) ở **[HUONG-DAN-PHAN-TANG-LOP.md](HUONG-DAN-PHAN-TANG-LOP.md)** — đọc trước khi soạn phiếu tầng.
 
 > **TẦNG B — đọc [HUONG-DAN-SOAN-PHIEU-B.md](HUONG-DAN-SOAN-PHIEU-B.md) TRƯỚC KHI SOẠN.** Ba luật Thầy chốt 04/09/2026:
-> 1. **Trần điểm là đích của phiếu:** GK1/CK1 → **10,0** (dạy HẾT, kể cả câu nâng cao 0,5đ cuối đề); GK2/CK2 → **9,5** (nhường 0,5đ ở **ý cuối bài hình** — vẫn dạy tới đó nhưng đích là **ăn điểm từng phần**, không phải giải trọn). Tra `vdc.muc_tieu_vdc` / `vdc.tran_diem` trong [config/ban_do_vd_vdc.json](config/ban_do_vd_vdc.json) (`tier_spec.muc_tieu_vdc`).
+> 1. **Trần điểm là đích của phiếu:** GK1/CK1 → **9,5–10** (dạy nâng cao, kể cả câu 0,5đ cuối đề, nhưng câu VDC không dày như lớp A); GK2/CK2 → **9–9,5** (vẫn dạy một số câu cuối theo tỉ lệ ra đề; nhường ý cuối bài hình — đích là **ăn điểm từng phần**, không phải giải trọn). *(Khoảng trần chốt 03/11/2026, mục 12 sheet quy chuẩn; config hiện ghi cận trên 10,0 / 9,5.)* Tra `vdc.muc_tieu_vdc` / `vdc.tran_diem` trong [config/ban_do_vd_vdc.json](config/ban_do_vd_vdc.json) (`tier_spec.muc_tieu_vdc`).
 > 2. **CHỈ Ý CUỐI MỚI LÀ VDC.** Một bài nhiều ý chỉ được **MỘT** thẻ `[VDC]` và phải ở **ý cuối** (đề thi nào cũng chỉ có một ý phân loại; gắn thừa là phồng quỹ phút vì VDC 18′/câu so với TH 6′). Cổng `duration_gate.check_vdc_cuoi_bai` soi **mọi tầng**.
 > 3. **Khối 55% VD+VDC chia theo TẦN SUẤT VDC của chương**, không chia đều: `p ≥ 0,50` → VD 35 · VDC 20 · `0,20 ≤ p < 0,50` → 43/12 · `0 < p < 0,20` → 50/5 (không đủ một câu VDC 18′ ⇒ dồn VDC vào phiếu ôn tập chương) · `p = 0` → 55/0. Đo lại bằng `.venv/bin/python scripts/tan_suat_vdc.py`; số nằm ở `vdc.phan_bo_55` của bản đồ, `tier_spec.tier_ratio` tự áp. **Mẫu dưới 6 đề ⇒ `nhom_uu_tien: "mau-qua-nho"`, `phan_bo_55: null`, giữ 15-30-55 mặc định — thà không soi còn hơn soi theo 2 đề.**
 >

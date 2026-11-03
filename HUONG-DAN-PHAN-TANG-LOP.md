@@ -7,7 +7,7 @@ Trung tâm chia HS theo năng lực thành các **tầng lớp**. Mỗi tầng n
 | Tầng | Đối tượng | Yêu cầu cốt lõi | Tỉ lệ NB-TH-VD |
 |---|---|---|---|
 | **A** | Khá – giỏi | *(chuẩn hoá sau)* | *(sau)* |
-| **B** | Trung bình – khá | Nắm chắc NB, TH, rèn luyện tư duy VD và cọ xát 1 phần VDC. **Đích: trần 10,0 kỳ I · 9,5 kỳ II** | **theo CHƯƠNG** (xem §2): chương có VD **15 – 30 – 55 (VD+VDC)**, khối 55 chia lại theo **tần suất VDC**; chương không VD **30 – 70**, gộp 2 phiếu. Quy trình: [HUONG-DAN-SOAN-PHIEU-B.md](HUONG-DAN-SOAN-PHIEU-B.md) |
+| **B** | Trung bình – khá | Nắm chắc NB, TH, rèn luyện tư duy VD và cọ xát 1 phần VDC. **Đích: trần 9,5–10 kỳ I · 9–9,5 kỳ II** (VDC ít hơn lớp A) | **theo CHƯƠNG** (xem §2): chương có VD **15 – 30 – 55 (VD+VDC)**, khối 55 chia lại theo **tần suất VDC**; chương không VD **30 – 70**, gộp 2 phiếu. Quy trình: [HUONG-DAN-SOAN-PHIEU-B.md](HUONG-DAN-SOAN-PHIEU-B.md) |
 | **C** | Nền (yếu – trung bình) | Thạo **100% Nhận biết + Thông hiểu**, làm được **1 phần Vận dụng** | **40 – 40 – 20** |
 | **X** | HS chuyên | *(chuẩn hoá sau)* | *(sau)* |
 
@@ -36,7 +36,7 @@ Trung tâm chia HS theo năng lực thành các **tầng lớp**. Mỗi tầng n
 > - Chương **CÓ** VD/VDC trong đề thi → **NB 15% · TH 30% · VD+VDC 55%** (VD và VDC **gộp chung**, cổng soi tổng).
 > - **CẬP NHẬT 04/09/2026 — khối 55% CHIA THEO TẦN SUẤT VDC của chương** (Thầy: *"câu VDC có tần suất nhiều trong đề thi thì ưu tiên cho nhiều hơn"*): `p ≥ 0,50` → **VD 35 · VDC 20**; `0,20 ≤ p < 0,50` → **43 · 12**; `0 < p < 0,20` → **50 · 5** (5% của 120′ là 6′, chưa đủ một câu VDC 18′ ⇒ dồn VDC vào **phiếu ôn tập chương**); `p = 0` → **55 · 0**. Tổng vẫn luôn là 55. Số ở `vdc.phan_bo_55` trong bản đồ, đo bằng `scripts/tan_suat_vdc.py`.
 > - **CHỈ Ý CUỐI MỚI LÀ VDC:** một bài nhiều ý chỉ được MỘT thẻ `[VDC]`, ở ý cuối (cổng `duration_gate.check_vdc_cuoi_bai`, áp mọi tầng).
-> - **TRẦN ĐIỂM là đích của phiếu:** GK1/CK1 → **10,0** (dạy hết, kể cả 0,5đ cuối đề); GK2/CK2 → **9,5** (nhường 0,5đ ở ý cuối bài hình, đích là **ăn điểm từng phần**).
+> - **TRẦN ĐIỂM là đích của phiếu:** GK1/CK1 → **9,5–10** (dạy nâng cao, kể cả 0,5đ cuối đề, VDC không dày như lớp A); GK2/CK2 → **9–9,5** (vẫn dạy một số câu cuối theo tỉ lệ ra đề; nhường ý cuối bài hình, đích là **ăn điểm từng phần**). Khoảng trần chốt 03/11/2026.
 > - 👉 Quy trình soạn đầy đủ (Polya, chọn dạng theo kho đề, khác tầng C ở đâu): **[HUONG-DAN-SOAN-PHIEU-B.md](HUONG-DAN-SOAN-PHIEU-B.md)**.
 > - Tra chương nào thuộc nhóm nào ở **[config/ban_do_vd_vdc.json](config/ban_do_vd_vdc.json)** (dựng từ ma trận trường công bố kèm đề GK1/CK1/GK2/CK2 Hà Nội, khối 6–9; xem PDF `outputs/ban-do-vd-vdc/`). Chương còn ghi `"bien"` = **Thầy chưa chốt → chưa soạn phiếu**; cổng sẽ không soi tỉ lệ và cảnh báo.
 > - Spec/phiếu tầng B **phải khai `chuong`** (slug chương) thì cổng mới soi được tỉ lệ và số ca.
@@ -131,7 +131,7 @@ python -m src.main build-folder "<folder [C]…>"             # 3 PDF/phiếu �
 - **VÍ DỤ MẪU phải điền khuyết HẾT** — Thầy + HS cùng làm: blank cả **bước biến đổi LẪN câu kết luận** ("Vậy nghiệm là $x\ \rule{}{}$"), KHÔNG ghi sẵn đáp số. Đáp án dồn về trường `solution` (answer key, chỉ hiện ở bản GV). Ví dụ NHẬN BIẾT cũng để ô điền cho TỪNG ý (đừng `\underline{là}` sẵn).
 - **KHÔNG dùng dấu suy ra `⇒` (`\Rightarrow`) trong nội dung HS đọc** — THCS chưa dạy ký hiệu này. Thay bằng **xuống dòng từng bước** (`[[br]]`) hoặc chữ "nên/được". (Trường `solution`/`teacher_note` của bản GV thì chấp nhận `⇒` cho gọn.)
 - **Khai triển giữ dấu trung gian** — đừng nhảy tắt nuốt dấu: `$3(x+1)-6$` phải qua `$3x+3-6$` rồi mới gộp `$3x-3$` (viết thẳng `3x-3` khiến Thầy tưởng sai dấu `+1`).
-- **Lớp C: HS trình bày VÀO VỞ → KHÔNG kẻ dòng** trên phiếu. Dùng `{"type":"writelines","count":0}` = chỉ chừa **một dòng trắng** sau mỗi bài (không vẽ `\fillline`). `count≥1` mới ra dòng kẻ (dành tầng/bài cần viết tại chỗ).
+- **Lớp C: HS trình bày VÀO VỞ → KHÔNG kẻ dòng** trên phiếu. Không dùng block `writelines` (kể cả `count: 0` — nó vẫn sinh khoảng trắng 5mm; `trinh_bay_gate` cảnh báo). Khoảng cách giữa các bài do template lo.
 - **Không thêm chữ thừa** kiểu "— cùng làm", "— xem ví dụ trước" vào tiêu đề ví dụ; để tiêu đề gọn ("(4) Cách giải.").
 - **Câu dẫn viết bằng TỪ KHÓA, không viết văn** — bỏ hẳn câu đưa đẩy/động viên ("Đây là điểm ăn chắc của lớp mình", "(lớp 8 đã thạo)", "bộ áo mới", "Bảng này dùng suốt buổi hôm nay…", "— chắc điểm tuyệt đối"). Diễn đạt dạng đẳng thức/mệnh đề ngắn: *"BPT = PT thay dấu = bằng dấu so sánh"*, *"Dịch sai dấu = sai cả bài!"*. Hộp bẫy/chốt = **gạch đầu dòng từ khóa**, không đoạn văn.
 - **Chuỗi biến đổi nhiều bước trong phần HS đọc → MỖI BƯỚC MỘT DÒNG** kèm chú thích trong ngoặc (kể cả khi viết lời giải sai của "bạn Minh") — không viết chuỗi ngang một dòng; chuỗi ngang chỉ dành cho `solution`/`teacher_note` bản GV.

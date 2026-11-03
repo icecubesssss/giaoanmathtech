@@ -498,7 +498,7 @@ python -m src.main validate inputs/seeds/lop-9/dai-so/[C]tuan16-can-bac-hai/phie
 ```
 
 - **`spec_gate`**: Tự động so sánh tổng số câu NB, TH, VD của phiếu JSON với phiếu `thuyet-minh.json` cạnh bên. Nếu lệch quá $\pm 1$ câu/band sẽ báo lỗi ngay.
-- **`duration_gate`**: Tự động tính toán tổng số phút Luyện tập trên lớp (target = 120 phút $\pm 10\%$) và tỷ lệ 40-40-20 ($\pm 5\%$).
+- **`duration_gate`**: Tự động tính toán tổng số phút Luyện tập trên lớp (target = quỹ trên lớp trong `config/tier_spec.json`, vd lớp 9 Đại số 120 phút, $\pm 10\%$) và tỷ lệ 40-40-20 ($\pm 5\%$).
 
 ---
 
