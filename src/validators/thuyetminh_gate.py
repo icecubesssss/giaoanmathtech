@@ -77,6 +77,7 @@ def check_thuyetminh(spec: ThuyetMinhSpec) -> tuple[list[str], list[str]]:
     noi_dung = _noi_dung_errors(spec)
     ppd_loi, ppd_canh_bao = check_nb_theo_ppd(spec)
     noi_dung += ppd_loi
+    ppd_canh_bao = ppd_canh_bao + _bank_canh_bao(spec)
 
     try:
         ts = load_tier_spec()
@@ -360,6 +361,10 @@ def check_nguon_sheet(spec: ThuyetMinhSpec) -> list[str]:
         return []
     idx = nhs.index(snap)
     out: list[str] = []
+    # Cổng chất lượng tab (03/11/2026): tab còn lỗi chép đề thì chưa được bốc bài.
+    from src.validators.bank_gate import check_bank
+    loi_tab, _ = check_bank(snap)
+    out += [f"thuyetminh: {x}" for x in loi_tab]
     for p in spec.phieu:
         ngoai = [f"{r.band}{i}:{ref}" for i, r in enumerate(p.rows, 1)
                  for ref in (r.source_refs or []) if nhs.resolve(ref, idx) is None]
@@ -369,6 +374,18 @@ def check_nguon_sheet(spec: ThuyetMinhSpec) -> list[str]:
                 f"'{snap.get('tab')}' (chỉ được bốc bài từ sheet phân dạng): "
                 f"{', '.join(ngoai[:6])}" + (" …" if len(ngoai) > 6 else ""))
     return out
+
+
+def _bank_canh_bao(spec: ThuyetMinhSpec) -> list[str]:
+    """Cảnh báo chất lượng tab phân dạng của chương (đề trùng, mức/phút để mặc định,
+    cột Phân loại câu trống) — xem src/validators/bank_gate.py. Chương chưa có tab ⇒ im."""
+    from src.schema import ngan_hang_sheet as nhs
+    from src.validators.bank_gate import check_bank
+    so = nhs.chuong_of_slug(spec.slug) or nhs.chuong_of_slug(getattr(spec, "chuong", ""))
+    snap = nhs.load(spec.grade, spec.subject, so) if so else None
+    if not snap:
+        return []
+    return [f"thuyetminh: {x}" for x in check_bank(snap)[1]]
 
 
 def check_chuong_level(spec: ThuyetMinhSpec) -> list[str]:

@@ -376,6 +376,22 @@ def cmd_de_xuat(a) -> int:
     return 1 if (ngoai or loi) else 0
 
 
+def cmd_soat(a) -> int:
+    """Soi chất lượng snapshot tab phân dạng; còn LỖI thì trả mã 1."""
+    from src.validators.bank_gate import check_bank
+    snap = nhs.load(a.grade, a.subject, a.chuong)
+    if not snap:
+        print(f"Chưa có snapshot tab phân dạng {a.grade}/{a.subject} chương {a.chuong}.")
+        return 1
+    loi, canh_bao = check_bank(snap)
+    for x in loi:
+        print("LỖI   ", x)
+    for x in canh_bao:
+        print("CẢNH BÁO", x)
+    print(f"{snap.get('tab')}: {len(snap.get('rows', []))} câu · {len(loi)} lỗi · {len(canh_bao)} cảnh báo")
+    return 1 if loi else 0
+
+
 def main() -> int:
     ap = argparse.ArgumentParser(description=__doc__, formatter_class=argparse.RawDescriptionHelpFormatter)
     sp = ap.add_subparsers(dest="cmd", required=True)
@@ -401,6 +417,10 @@ def main() -> int:
             p.add_argument("--spec", help="thuyet-minh.json (nếu đã có)")
             p.add_argument("--so-phieu", type=int, default=0, help="số phiếu của chương (khi chưa có spec)")
             p.add_argument("--tier", default="C")
+    p = sp.add_parser("soat", help="cổng chất lượng tab phân dạng (bank_gate)")
+    p.add_argument("--grade", required=True)
+    p.add_argument("--subject", required=True)
+    p.add_argument("--chuong", required=True)
     p = sp.add_parser("de-xuat")
     p.add_argument("raw", help="JSON thô get_values cả tab phân dạng")
     p.add_argument("--spec", required=True, help="thuyet-minh.json bản chạy thử")
@@ -408,6 +428,8 @@ def main() -> int:
     a = ap.parse_args()
     if a.cmd == "de-xuat":
         return cmd_de_xuat(a)
+    if a.cmd == "soat":
+        return cmd_soat(a)
     if a.cmd == "giao":
         cmd_giao(a)
         return 0

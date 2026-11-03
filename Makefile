@@ -87,6 +87,9 @@ bank-doi-chieu: ## Bước 0⑤ so tab (get_values) từng ô với bản gộp 
 nap-bank: ## Chụp tab phân dạng (JSON get_values) về repo:  make nap-bank RAW=f.json TAB="Phân dạng Ch.V lớp 9C" GRADE=lop-9 SUBJECT=hinh-hoc CHUONG=5
 	@$(PY) scripts/ngan_hang_sheet.py nap "$(RAW)" --sheet-id $(or $(SHEET),1ucQH5yw5bn3C1Bh_V4tAToa6NN5-F-nt8_2yxf2LNOM) --tab "$(TAB)" --grade $(GRADE) --subject $(SUBJECT) --chuong $(CHUONG)
 
+bank-soat: ## Cổng chất lượng tab phân dạng (lời giải lẫn đề, chữ pdftotext, đề trùng, mức/phút mặc định):  make bank-soat G=lop-9 S=hinh-hoc C=9
+	@$(PY) scripts/ngan_hang_sheet.py soat --grade $(G) --subject $(S) --chuong $(C)
+
 du-bai: ## Tab phân dạng đủ bài cho các phiếu chưa:  make du-bai GRADE=lop-9 SUBJECT=hinh-hoc CHUONG=5 SO_PHIEU=6 [TIER=C | SPEC=…/thuyet-minh.json]
 	@$(PY) scripts/ngan_hang_sheet.py du --grade $(GRADE) --subject $(SUBJECT) --chuong $(CHUONG) $(if $(SPEC),--spec "$(SPEC)",--so-phieu $(SO_PHIEU) --tier $(or $(TIER),C))
 
@@ -117,4 +120,4 @@ c3-c: ## Build nhanh toàn bộ 5 phiếu Lớp 9 [C] Chương 3 (PDF Handout/Gu
 tm-c3: ## Render Thuyết Minh PDF Chương 3 Lớp 9 [C]
 	@$(PY) -m src.main build-thuyetminh "inputs/seeds/lop-9/dai-so/lop-c/chuong-03-can-bac-hai-can-bac-ba/thuyet-minh.json"
 
-.PHONY: b md f prune help map test progress check new validate build rebuild docx docx-template spec thuyetminh check-tm coverage ppd-de-xuat exam-report exam-check exam-weights deadcode build-folder c3-c tm-c3
+.PHONY: b md f prune help map test progress check new validate build rebuild docx docx-template spec thuyetminh check-tm coverage ppd-de-xuat bank-soat exam-report exam-check exam-weights deadcode build-folder c3-c tm-c3
