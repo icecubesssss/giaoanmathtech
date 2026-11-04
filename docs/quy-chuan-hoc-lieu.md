@@ -92,4 +92,9 @@ sau khi HS đã làm trọn bài đó ít nhất một lần; (4) lớp C không
   - **Khung vẽ hình chuẩn 5.0 cm (`\drawbox[5.0]`):** Các bài hình chứng minh bắt buộc phải có `draw: true` (+5′). Trên bản in Handout HS và Phiếu BTVN, render khung vẽ hình chuẩn cao 5.0 cm (không dùng khung 3.5 cm quá bé cho compa và thước kẻ).
   - **In sẵn đường tròn nền $(O)$:** Đối với các bài toán hình đường tròn thi vào 10 (ở Luyện tập 2 và BTVN tự luận), in sẵn đường tròn nền $(O)$ và tâm $O$ cố định vùng vẽ trong khung (`\drawbox[5.0]{...}`) để HS không vẽ lệch ra ngoài lề giấy hay vẽ quá to/nhỏ. Sổ tay GV in hình vẽ đầy đủ hoàn chỉnh (`tikz_gv`).
   - **Tiêu đề nguồn đề thi:** Tiêu đề trước bài Luyện tập 2 phải ghi rõ nguồn đề thi thật (ví dụ: `Đề thi Học kì I — THCS Ái Mộ (Long Biên)`), BỎ HOÀN TOÀN cụm từ nội bộ `— đích của buổi học`.
+- **Tiêu chuẩn kích thước hình nền cố định ($R = 1.5$ cm, độ rộng $0.5\linewidth$ — Thầy chốt 04/11/2026):**
+  - **Chỉ áp dụng cho các bài HS phải vẽ hình:**
+    1. Các bài Ví dụ mẫu vẽ cùng GV và các bài điền khuyết Luyện tập 1 / BTVN mà HS phải vẽ tiếp vào hình nền (`b.figure.tikz_gv`): Bán kính đường tròn nền cố định chuẩn **$R = 1.5$ cm** (đường kính $3.0$ cm, không dùng $R = 1.2$ cm bé tí). Khi render dọc dưới đề, dùng tỉ lệ chuẩn **`[5cm]{0.5}`** ($0.5\linewidth$) để hình mở rộng thoáng đạt, đủ diện tích cho học sinh đặt compa, thước kẻ, vẽ thêm tiếp tuyến, dây cung, góc vuông và điểm giao.
+    2. Các bài Luyện tập 2 và BTVN tự luận (`draw: true` trong khung `\drawbox[5.0]`): Đường tròn nền $(O)$ in sẵn trong khung cũng có bán kính chuẩn **$R = 1.5$ cm**, cố định tâm $O(0,0)$ và vùng vẽ để HS tự tay dựng hình chuẩn xác.
+  - **Với bài KHÔNG phải vẽ hình (hình cho sẵn hoàn chỉnh):** Như bài trắc nghiệm nhận biết (Bài 1, Bài 2), bài hình thực tế đo lường... giữ nguyên kích thước nhỏ gọn (`0.44\linewidth` hoặc cột phải) để tiết kiệm trang in.
 

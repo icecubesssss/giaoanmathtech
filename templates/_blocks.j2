@@ -54,7 +54,7 @@
 ((* set _de *))((( _nhan ))) ((( _dec | tex )))((* endset *))
 ((* set _hinh *))((* if b.figure and b.figure.image *))\includegraphics[width=\linewidth]{((( b.figure.image )))}((* elif b.figure *))((* if show_solution is defined and show_solution and b.figure.tikz_gv *))((( b.figure.tikz_gv )))((* elif not (b.draw and not (show_solution is defined and show_solution)) *))((( b.figure.tikz )))((* endif *))((* endif *))((* endset *))
 {\clubpenalty=10000 \widowpenalty=10000 \relax ((( _de )))\par}
-((* if _pos == "below" and (show_solution is defined and show_solution or not b.draw) *))\figbelow((* if (_dec | length) < 200 *))keep((* endif *))((* if lesson is defined and lesson.trinh_bay == "thoang" *))[6.5cm]{0.5}((* else *)){0.44}((* endif *)){((( _hinh )))}{((( b.figure.caption | tex )))}
+((* if _pos == "below" and (show_solution is defined and show_solution or not b.draw) *))\figbelow((* if (_dec | length) < 200 *))keep((* endif *))((* if (b.figure and b.figure.tikz_gv) or (lesson is defined and lesson.trinh_bay == "thoang") *))[5cm]{0.5}((* else *)){0.44}((* endif *)){((( _hinh )))}{((( b.figure.caption | tex )))}
 ((* endif *))
 ((* if _ycon *))((( _ycon | tex )))\par
 ((* endif *))

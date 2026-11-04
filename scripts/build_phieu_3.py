@@ -193,7 +193,7 @@ def nen(f: Fig, full_tikz: str) -> str:
 
 def h_vidu1_gv():
     f = Fig()
-    O, R, M = (0, 0), 1.2, (2.8, 0)
+    O, R, M = (0, 0), 1.5, (3.5, 0)
     A, B = tangent_points(O, R, M)
     if A[1] < B[1]: A, B = B, A
     I = foot(A, (0, 0), M)
@@ -209,7 +209,7 @@ def h_vidu1_gv():
 
 def h_vidu1_nen():
     f = Fig()
-    O, R, M = (0, 0), 1.2, (2.8, 0)
+    O, R, M = (0, 0), 1.5, (3.5, 0)
     for n, p in [("O", O), ("M", M)]:
         f.pt(n, p)
     f.circle(O, R)
@@ -219,7 +219,7 @@ def h_vidu1_nen():
 
 def h_bai3_gv():
     f = Fig()
-    O, R, A = (0, 0), 1.2, (2.8, 0)
+    O, R, A = (0, 0), 1.5, (3.5, 0)
     B, C = tangent_points(O, R, A)
     if B[1] < C[1]: B, C = C, B
     H = foot(B, (0, 0), A)
@@ -236,7 +236,7 @@ def h_bai3_gv():
 
 def h_bai3_nen():
     f = Fig()
-    O, R, A = (0, 0), 1.2, (2.8, 0)
+    O, R, A = (0, 0), 1.5, (3.5, 0)
     for n, p in [("O", O), ("A", A)]:
         f.pt(n, p)
     f.circle(O, R)
@@ -246,11 +246,11 @@ def h_bai3_nen():
 
 def h_vidu2_gv():
     f = Fig()
-    O, R = (0, 0), 1.3
-    A, B = (-1.3, 0), (1.3, 0)
-    C = (-1.3, 2.0)
+    O, R = (0, 0), 1.5
+    A, B = (-1.5, 0), (1.5, 0)
+    C = (-1.5, 2.5)
     tpts = tangent_points(O, R, C)
-    D = [p for p in tpts if p[0] > -1.2][0]
+    D = [p for p in tpts if p[0] > -1.4][0]
     I = foot(D, (0, 0), C)
     for n, p in [("O", O), ("A", A), ("B", B), ("C", C), ("D", D), ("I", I)]:
         f.pt(n, p)
@@ -271,9 +271,9 @@ def h_vidu2_gv():
 
 def h_vidu2_nen():
     f = Fig()
-    O, R = (0, 0), 1.3
-    A, B = (-1.3, 0), (1.3, 0)
-    C = (-1.3, 2.0)
+    O, R = (0, 0), 1.5
+    A, B = (-1.5, 0), (1.5, 0)
+    C = (-1.5, 2.5)
     for n, p in [("O", O), ("A", A), ("B", B), ("C", C)]:
         f.pt(n, p)
     f.arc(O, R, 0, 180)
@@ -285,8 +285,8 @@ def h_vidu2_nen():
 
 def h_bai4_gv():
     f = Fig()
-    O, R = (0, 0), 1.3
-    B, D = (-1.3, 0), (1.3, 0)
+    O, R = (0, 0), 1.5
+    B, D = (-1.5, 0), (1.5, 0)
     C = polar(60, R, O)
     for n, p in [("O", O), ("B", B), ("D", D), ("C", C)]:
         f.pt(n, p)
@@ -298,8 +298,8 @@ def h_bai4_gv():
 
 def h_bai4_nen():
     f = Fig()
-    O, R = (0, 0), 1.3
-    B, D = (-1.3, 0), (1.3, 0)
+    O, R = (0, 0), 1.5
+    B, D = (-1.5, 0), (1.5, 0)
     C = polar(60, R, O)
     for n, p in [("O", O), ("B", B), ("D", D), ("C", C)]:
         f.pt(n, p)
@@ -310,7 +310,7 @@ def h_bai4_nen():
 
 def h_bai5_gv():
     f = Fig()
-    O, R, A = (0, 0), 1.2, (2.8, 0)
+    O, R, A = (0, 0), 1.5, (3.5, 0)
     B, C = tangent_points(O, R, A)
     if B[1] < C[1]: B, C = C, B
     H = foot(B, (0, 0), A)
@@ -327,7 +327,7 @@ def h_bai5_gv():
 
 def h_bai5_nen():
     f = Fig()
-    O, R, A = (0, 0), 1.2, (2.8, 0)
+    O, R, A = (0, 0), 1.5, (3.5, 0)
     B, C = tangent_points(O, R, A)
     if B[1] < C[1]: B, C = C, B
     H = foot(B, (0, 0), A)
@@ -355,7 +355,7 @@ def h_btvn1():
 
 def h_btvn2_gv():
     f = Fig()
-    O, R, S = (0, 0), 1.2, (2.8, 0)
+    O, R, S = (0, 0), 1.5, (3.5, 0)
     A, B = tangent_points(O, R, S)
     if A[1] < B[1]: A, B = B, A
     H = foot(A, (0, 0), S)
@@ -371,7 +371,7 @@ def h_btvn2_gv():
 
 def h_btvn2_nen():
     f = Fig()
-    O, R, S = (0, 0), 1.2, (2.8, 0)
+    O, R, S = (0, 0), 1.5, (3.5, 0)
     for n, p in [("O", O), ("S", S)]:
         f.pt(n, p)
     f.circle(O, R)
@@ -379,15 +379,9 @@ def h_btvn2_nen():
     return nen(f, h_btvn2_gv().tikz())
 
 
-def khung(tikz: str) -> str:
-    xy = [(float(a), float(b)) for a, b in re.findall(r"\((-?\d+\.\d+),(-?\d+\.\d+)\)", tikz)]
-    xs, ys = [p[0] for p in xy], [p[1] for p in xy]
-    return f"  \\path ({min(xs) - 0.15:.4f},{min(ys) - 0.15:.4f}) rectangle ({max(xs) + 0.15:.4f},{max(ys) + 0.15:.4f});"
-
-
 def h_bai6_gv():
     f = Fig()
-    O, R, A = (0, 0), 1.2, (2.8, 0)
+    O, R, A = (0, 0), 1.5, (3.5, 0)
     B, C = tangent_points(O, R, A)
     if B[1] < C[1]: B, C = C, B
     H = foot(B, (0, 0), A)
@@ -406,7 +400,7 @@ def h_bai6_gv():
 
 def h_bai6_nen():
     f = Fig()
-    O, R, A = (0, 0), 1.2, (2.8, 0)
+    O, R, A = (0, 0), 1.5, (3.5, 0)
     for n, p in [("O", O), ("A", A)]:
         f.pt(n, p)
     f.circle(O, R)
@@ -416,7 +410,7 @@ def h_bai6_nen():
 
 def h_btvn3_gv():
     f = Fig()
-    O, R, S = (0, 0), 1.2, (2.8, 0)
+    O, R, S = (0, 0), 1.5, (3.5, 0)
     A, B = tangent_points(O, R, S)
     if A[1] < B[1]: A, B = B, A
     H = foot(A, (0, 0), S)
@@ -435,7 +429,7 @@ def h_btvn3_gv():
 
 def h_btvn3_nen():
     f = Fig()
-    O, R, S = (0, 0), 1.2, (2.8, 0)
+    O, R, S = (0, 0), 1.5, (3.5, 0)
     for n, p in [("O", O), ("S", S)]:
         f.pt(n, p)
     f.circle(O, R)
