@@ -18,8 +18,9 @@
 ((= Hộp CÓ HÌNH xếp DỌC y như bài tập: đề → HÌNH → lời giải. Thay lối gõ tay hai
     \begin{minipage}[t]{0.58\linewidth} cạnh nhau ngay trong `text` (bố cục lẫn vào
     nội dung), và thay cả kiểu treo hình sang cột phải đã bỏ ngày 22/09/2026. =))
-((* set _noi *))((* if b.figure *))((* set _de, _lg = tach_loi_giai(b.text) *))((( _de | tex )))\figbelow[3cm]{0.40}{((* if b.figure.image *))\includegraphics[width=\linewidth]{((( b.figure.image )))}((* else *))((( b.figure.tikz )))((* endif *))}{((( b.figure.caption | tex )))}((* if _lg *))((( _lg | tex )))((* endif *))((* else *))((( b.text | tex )))((* endif *))((* endset *))
-((* if b.variant == "trap" *))\begin{callouttrap}((( _noi )))\end{callouttrap}
+((* set _noi *))((* if b.figure *))((* set _de, _lg = tach_loi_giai(b.text) *))((( _de | tex )))((* if b.figure.tikz_gv *))((= Ví dụ HS vẽ cùng GV (Thầy 04/11/2026): hình nền TO; Sổ tay GV in hình đầy đủ. =))\figbelow[5cm]{0.5}{((* if show_solution is defined and show_solution *))((( b.figure.tikz_gv )))((* else *))((( b.figure.tikz )))((* endif *))}((* else *))\figbelow[3cm]{0.40}{((* if b.figure.image *))\includegraphics[width=\linewidth]{((( b.figure.image )))}((* else *))((( b.figure.tikz )))((* endif *))}((* endif *)){((( b.figure.caption | tex )))}((* if _lg *))((( _lg | tex )))((* endif *))((* else *))((( b.text | tex )))((* endif *))((* endset *))
+((* if b.variant == "theory" *))((= Thẻ lý thuyết: chữ TRÁI, hình PHẢI cùng hàng (03/11/2026). =))\begin{theorycard}{((( b.title | tex )))}((* if b.figure *))\begin{minipage}[c]{0.635\linewidth}\setlength{\parskip}{2pt}((( b.text | tex )))\end{minipage}\hfill\begin{minipage}[c]{0.335\linewidth}\centering\adjustbox{max width=\linewidth,max totalheight=3.6cm}{((* if b.figure.image *))\includegraphics[width=\linewidth]{((( b.figure.image )))}((* else *))((( b.figure.tikz )))((* endif *))}((* if b.figure.caption *))\par\vspace{3pt}{\sffamily\scriptsize\itshape\color{muted}((( b.figure.caption | tex )))}((* endif *))\end{minipage}((* else *))((( b.text | tex )))((* endif *))\end{theorycard}
+((* elif b.variant == "trap" *))\begin{callouttrap}((( _noi )))\end{callouttrap}
 ((* elif b.variant == "target" *))\begin{callouttarget}((( _noi )))\end{callouttarget}
 ((* elif b.variant == "tip" *))\begin{callouttip}((( _noi )))\end{callouttip}
 ((* elif b.variant == "example" *))\begin{calloutexample}((( _noi )))\end{calloutexample}
@@ -51,9 +52,9 @@
     `statement` nên phải tách ra, nếu không HS đọc ý trước khi thấy hình. =))
 ((* set _dec, _ycon = tach_y_con(b.statement) *))
 ((* set _de *))((( _nhan ))) ((( _dec | tex )))((* endset *))
-((* set _hinh *))((* if b.figure and b.figure.image *))\includegraphics[width=\linewidth]{((( b.figure.image )))}((* elif b.figure *))((( b.figure.tikz )))((* endif *))((* endset *))
+((* set _hinh *))((* if b.figure and b.figure.image *))\includegraphics[width=\linewidth]{((( b.figure.image )))}((* elif b.figure *))((* if show_solution is defined and show_solution and b.figure.tikz_gv *))((( b.figure.tikz_gv )))((* elif not (b.draw and not (show_solution is defined and show_solution)) *))((( b.figure.tikz )))((* endif *))((* endif *))((* endset *))
 {\clubpenalty=10000 \widowpenalty=10000 \relax ((( _de )))\par}
-((* if _pos == "below" *))\figbelow((* if (_dec | length) < 200 *))keep((* endif *))((* if lesson is defined and lesson.trinh_bay == "thoang" *))[6.5cm]{0.5}((* else *)){0.44}((* endif *)){((( _hinh )))}{((( b.figure.caption | tex )))}
+((* if _pos == "below" and (show_solution is defined and show_solution or not b.draw) *))\figbelow((* if (_dec | length) < 200 *))keep((* endif *))((* if lesson is defined and lesson.trinh_bay == "thoang" *))[6.5cm]{0.5}((* else *)){0.44}((* endif *)){((( _hinh )))}{((( b.figure.caption | tex )))}
 ((* endif *))
 ((* if _ycon *))((( _ycon | tex )))\par
 ((* endif *))
@@ -93,6 +94,10 @@
 \par}
 ((* endif *))
 ((= Từ đây trở xuống DÙNG CHUNG cho cả hai đường. =))
+((= Khung cho HS tự vẽ hình vào phiếu (Thầy chốt 04/11/2026: bài chứng minh bắt buộc HS tự vẽ hình, chuẩn 5.0cm, in sẵn đường tròn nền nếu có). =))
+((* if b.draw and not (show_solution is defined and show_solution) *))
+\drawbox[((( b.draw_height if b.draw_height else 5.0 )))]{((* if b.figure and b.figure.tikz *))((( b.figure.tikz )))((* endif *))}
+((* endif *))
 ((* if b.video *))\videoqr{((( b.video )))}((* endif *))
 ((= Chỗ viết khai thẳng trên bài (`"writelines": N`) — bằng một WriteLinesBlock đặt sau. =))
 ((* if b.writelines *))\par

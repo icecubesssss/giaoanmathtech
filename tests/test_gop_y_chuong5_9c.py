@@ -99,11 +99,12 @@ def test_he_so_con_lai_cua_buoi_co_kiem_tra():
 
 
 def _phieu_27_phut(kt):
-    """9 NB hình sẵn + 2 TH + 1 VD điền khuyết ≈ 27′ — đúng quỹ buổi còn 45′."""
+    """4 NB hình sẵn + 1 TH + 1 VD điền khuyết ≈ 28′ (rate lớp 9 hình C từ 04/11/2026:
+    NB hình sẵn 2,5′, TH 10′, VD hình sẵn 8′) — đúng quỹ buổi còn 45′."""
     bai = [{"type": "problem", "label": f"Bài {i}.", "level": 1, "tier": "onclass",
-            "figure_given": True, "statement": "[NB] x"} for i in range(1, 10)]
+            "figure_given": True, "statement": "[NB] x"} for i in range(1, 5)]
     bai += [{"type": "problem", "label": f"Bài {i}.", "level": 2, "tier": "onclass",
-             "statement": "[TH] y", "hints": ["?"]} for i in (10, 11)]
+             "statement": "[TH] y", "hints": ["?"]} for i in (10,)]
     bai += [{"type": "problem", "label": "Bài 12.", "level": 3, "tier": "onclass",
              "figure_given": True, "statement": "[VD] z"}]
     return LessonPackage.model_validate({

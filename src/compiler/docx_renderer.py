@@ -226,6 +226,7 @@ class LessonIR:
             "trap": ("trap!55", "\u261E  BẪY ĐIỂM", C["trap"], "FFFFFF"),
             "target": ("gold!75", f"\u2605  {target}", C["gold"], C["ink"]),
             "tip": ("stage2!45", "\u261B  MẸO", C["stage2"], "FFFFFF"),
+            "theory": ("stage2!45", getattr(b, "title", "") or "LÝ THUYẾT", C["stage2"], "FFFFFF"),
         }.get(v)
         if b.figure is not None and (b.figure.tikz or b.figure.image):
             de, lg = tach_loi_giai(b.text)

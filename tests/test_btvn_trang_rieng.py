@@ -11,6 +11,7 @@ _SEED = Path("inputs/seeds/lop-9/hinh-hoc/lop-c/chuong-05-duong-tron-ban-2/phieu
 def _lesson(bat: bool) -> LessonPackage:
     d = json.loads(_SEED.read_text(encoding="utf-8"))
     d["btvn_trang_rieng"] = bat
+    d["btvn_phieu_rieng"] = False
     return LessonPackage.model_validate(d)
 
 

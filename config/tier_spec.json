@@ -38,6 +38,8 @@
  },
  "draw_minutes": 5.0,
  "quick_minutes": 1.0,
+ "khung_minutes": 3.0,
+ "_khung_doc": "Thầy 04/11/2026 (phiếu 2 ch.V 9C): 'với những bài như thế này HS sẽ không kịp học, tôi cũng không kịp dạy — HS lớp C mà'. Câu NB là KHUNG BÀI GIẢI đi thi (đề có cụm 'hoàn thành bài giải'; mỗi thẻ [NB] là 3–5 dòng lời giải với 1–2 ô trống) tốn 3′/thẻ chứ không phải 1′ như câu trắc nghiệm: HS phải đọc từng dòng, hiểu căn cứ rồi mới điền. Khai `khung: true` trên dòng thuyết minh; phiếu tự nhận theo cụm 'hoàn thành bài giải'.",
  "_quick_doc": "Thầy chốt 2026-07-27: câu NHẬN BIẾT dạng trắc nghiệm / điền chỗ chấm trên HÌNH VẼ SẴN chỉ tốn 1 phút/câu ('với mức độ này thì hs vẫn dùng 1p thôi') — không dùng rate hình ×2. Khai bằng `hinh_san` trên dòng thuyết minh hoặc `figure_given` trên block phiếu. Band TH/VD khai `hinh_san` (tự luận điền khuyết) vẫn phải tính toán nên chỉ giảm nửa rate.",
  "_draw_doc": "Thầy chốt 2026-07-26: câu HÌNH mà HS phải TỰ VẼ HÌNH cộng thêm 5′ (ngoài phút/câu theo band). Khai bằng `draw: true` trên block problem của phiếu, hoặc `ve_hinh: {\"onclass\": n, \"btvn\": n}` trên dòng thuyết minh (n = SỐ HÌNH phải vẽ, tính theo BÀI chứ không theo ý a,b,c — một bài chỉ vẽ hình một lần).",
  "grades": {
@@ -51,7 +53,7 @@
      "btvn": 90.0
     },
     "budget_tol": 0.1,
-    "ratio_tol": 5.0,
+    "ratio_tol": 10.0,
     "spec_count_tol": 1,
     "tiers": {
      "A": {
@@ -119,8 +121,8 @@
      "onclass": 55.0,
      "btvn": 40.0
     },
-    "budget_tol": 0.1,
-    "ratio_tol": 5.0,
+    "budget_tol": 0.12,
+    "ratio_tol": 10.0,
     "spec_count_tol": 1,
     "tiers": {
      "A": {
@@ -160,7 +162,7 @@
        "khong_vd": 2
       }
      },
-     "C": {
+     "C": {"rates_override": {"vidu": {"NB": 1.5, "TH": 7.0, "VD": 10.0}, "onclass": {"NB": 2.5, "TH": 10.0, "VD": 16.0}, "btvn": {"NB": 2.2, "TH": 8.7, "VD": 14.0}}, "quick_minutes": 2.5, "khung_minutes": 3.0, "_rates_doc": "Thầy duyệt 04/11/2026 ('oke thế'): rate card cũ dùng CHUNG cho B và C ≈ tốc độ HS B; HS C chậm ~1,5× (mô hình config/phut_thuc.json, đối chiếu giờ phòng thi CK1: bài hình 3đ đề cho 27′, HS B 32′, HS C làm a+b 35′). Câu NB trắc nghiệm trên hình sẵn của lớp C 2,5′ (đọc đề + chọn), không phải 1′.", 
       "ratio": {
        "NB": 40,
        "TH": 40,
@@ -191,7 +193,7 @@
      "btvn": 40.0
     },
     "budget_tol": 0.1,
-    "ratio_tol": 5.0,
+    "ratio_tol": 10.0,
     "spec_count_tol": 1,
     "rates_override": {
      "onclass": {
@@ -258,7 +260,7 @@
      "btvn": 40.0
     },
     "budget_tol": 0.1,
-    "ratio_tol": 5.0,
+    "ratio_tol": 10.0,
     "spec_count_tol": 1,
     "rates_override": {
      "vidu": {

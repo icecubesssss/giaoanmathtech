@@ -84,3 +84,12 @@ sau khi HS đã làm trọn bài đó ít nhất một lần; (4) lớp C không
 | Thuyết minh | repo (`thuyet-minh.json`) → PDF; số câu/phút xem trước trên Sheet | **PDF** |
 | Phiếu | repo → 3 PDF → Drive (chỉ sau approve) | PDF |
 | Tiến độ | sheet tiến độ nhóm, tab theo khuôn 7C (vd "TIẾN ĐỘ 9C - 2026 - ThaiTD") | Sheet |
+
+## 9. Bài hình chứng minh & Tiêu chuẩn khung vẽ hình (Thầy chốt 04/11/2026)
+
+- **Luyện tập 2 & BTVN tự luận:**
+  - **Chỉ có đề:** Bắt buộc trình bày trọn vẹn từng bước như đi thi, tuyệt đối KHÔNG có khung điền khuyết (`[[blank:...]]`). Ở BTVN, HS phải tự đọc lại bài học trên lớp để làm độc lập.
+  - **Khung vẽ hình chuẩn 5.0 cm (`\drawbox[5.0]`):** Các bài hình chứng minh bắt buộc phải có `draw: true` (+5′). Trên bản in Handout HS và Phiếu BTVN, render khung vẽ hình chuẩn cao 5.0 cm (không dùng khung 3.5 cm quá bé cho compa và thước kẻ).
+  - **In sẵn đường tròn nền $(O)$:** Đối với các bài toán hình đường tròn thi vào 10 (ở Luyện tập 2 và BTVN tự luận), in sẵn đường tròn nền $(O)$ và tâm $O$ cố định vùng vẽ trong khung (`\drawbox[5.0]{...}`) để HS không vẽ lệch ra ngoài lề giấy hay vẽ quá to/nhỏ. Sổ tay GV in hình vẽ đầy đủ hoàn chỉnh (`tikz_gv`).
+  - **Tiêu đề nguồn đề thi:** Tiêu đề trước bài Luyện tập 2 phải ghi rõ nguồn đề thi thật (ví dụ: `Đề thi Học kì I — THCS Ái Mộ (Long Biên)`), BỎ HOÀN TOÀN cụm từ nội bộ `— đích của buổi học`.
+

@@ -398,18 +398,30 @@ def load_tokens() -> dict:
 
 
 def _render(template_name: str, lesson: LessonPackage, tokens: dict | None,
-            show_solution: bool = False) -> str:
+            show_solution: bool = False, **extra) -> str:
     """`show_solution` đi vào context để `_blocks.j2` in `problem.solution` — CHỈ bật ở
     Sổ tay GV. Phải truyền cho CẢ BA bản (StrictUndefined nổ nếu biến thiếu)."""
     tokens = tokens or load_tokens()
     env = _env(show_solution)
     tpl = env.get_template(template_name)
-    return tpl.render(lesson=lesson, show_solution=show_solution, **tokens)
+    return tpl.render(lesson=lesson, show_solution=show_solution, **tokens, **extra)
 
 
 def render_handout(lesson: LessonPackage, tokens: dict | None = None) -> str:
     """Mã LaTeX phiếu HS (A4 dọc, ẩn lời giải)."""
     return _render("base_handout.tex.j2", lesson, tokens, show_solution=False)
+
+
+def render_btvn(lesson: LessonPackage, tokens: dict | None = None) -> str:
+    """Mã LaTeX PHIẾU BTVN tách riêng (Thầy 04/11/2026) — cùng khung Phiếu HS, chỉ có BTVN."""
+    return _render("base_handout.tex.j2", lesson, tokens, show_solution=False, ban_btvn=True)
+
+
+def co_phieu_btvn(lesson: LessonPackage) -> bool:
+    """Phiếu bật `btvn_phieu_rieng` VÀ thật sự có bài BTVN."""
+    return bool(getattr(lesson, "btvn_phieu_rieng", False)) and any(
+        getattr(b, "type", "") == "problem" and getattr(b, "tier", "") == "btvn"
+        for st in lesson.stages for b in st.blocks)
 
 
 def render_guide(lesson: LessonPackage, tokens: dict | None = None) -> str:

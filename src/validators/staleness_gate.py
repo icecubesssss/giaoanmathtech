@@ -128,9 +128,13 @@ def _tex_hien_tai(seed: Path) -> dict[str, str] | None:
         from src.main import _neo_anh
         _neo_anh(les, seed)
         tokens = load_tokens()
-        return {"handout": _h(render_handout(les, tokens)),
-                "guide": _h(render_guide(les, tokens)),
-                "slide": _h(render_slide(les, tokens))}
+        from src.compiler.jinja_renderer import co_phieu_btvn, render_btvn
+        out = {"handout": _h(render_handout(les, tokens)),
+               "guide": _h(render_guide(les, tokens)),
+               "slide": _h(render_slide(les, tokens))}
+        if co_phieu_btvn(les):                    # Phiếu BTVN tách riêng (Thầy 04/11/2026)
+            out["btvn"] = _h(render_btvn(les, tokens))
+        return out
     except Exception:  # noqa: BLE001
         return None
 
@@ -144,7 +148,7 @@ def _bien_the(pdf: Path) -> str:
         if pdf.stem.endswith("-" + hau_to):
             return kind
     duoi = pdf.stem.rsplit("-", 1)[-1]
-    return duoi if duoi in ("handout", "guide", "slide") else "thuyetminh"
+    return duoi if duoi in ("handout", "guide", "slide", "btvn") else "thuyetminh"
 
 
 def check_stale(out_dirs) -> list[Stale]:

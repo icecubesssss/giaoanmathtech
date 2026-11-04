@@ -101,6 +101,28 @@ def _so_cau(p) -> int:
     return len(tags) if tags else _count_items(text)
 
 
+def _ma_dang(p) -> list[str]:
+    """Các mã dạng một bài khai. Bài đề thi nhiều ý khác mức (ý a TH, ý b VD) khai
+    'TH2+VD1' (04/11/2026) — mỗi thẻ [TH]/[VD] đếm về mã CÙNG BAND."""
+    return [m.strip() for m in re.split(r"[+,]", p.dang_id or "") if m.strip()]
+
+
+def _dem_theo_ma(p) -> dict[str, int]:
+    """{mã dạng: số câu} của một bài — chia thẻ mức theo band của từng mã."""
+    ma = _ma_dang(p)
+    if len(ma) <= 1:
+        return {ma[0]: _so_cau(p)} if ma else {}
+    text = " ".join([p.statement or ""] + [h or "" for h in (p.hints or [])])
+    tags = _TAG_RE.findall(text)
+    out = {m: 0 for m in ma}
+    for t in tags:
+        dich = next((m for m in ma if re.match(rf"{t}\d", m)), ma[0])
+        out[dich] += 1
+    if not tags:
+        out[ma[0]] = _so_cau(p)
+    return out
+
+
 def _spec_dang_ids(phieu) -> dict[str, object]:
     """{'NB1','NB2','TH1'…} → dòng spec. Đánh số THEO THỨ TỰ TRONG NHÓM BAND, khớp
     đúng cách bảng thuyết minh in ra (renderer cũng đánh NB1, NB2… TH1…)."""
@@ -133,7 +155,7 @@ def check_dang_mapping(lesson: LessonPackage, phieu, tol: int) -> list[str]:
                 + (" …" if len(chua_khai) > 8 else "")]
 
     warns: list[str] = []
-    la = sorted({(p.dang_id or "").strip() for p in probs} - set(hop_dong))
+    la = sorted({m for p in probs for m in _ma_dang(p)} - set(hop_dong))
     if la:
         warns.append(f"spec_gate: phiếu {phieu.code} — mã dạng KHÔNG CÓ trong thuyết minh: "
                      f"{', '.join(la)}. Mã hợp lệ: {', '.join(sorted(hop_dong))}.")
@@ -145,8 +167,8 @@ def check_dang_mapping(lesson: LessonPackage, phieu, tol: int) -> list[str]:
         dem: dict[str, int] = {}
         for p in probs:
             if p.tier == seg:
-                ma = (p.dang_id or "").strip()
-                dem[ma] = dem.get(ma, 0) + _so_cau(p)
+                for ma, n in _dem_theo_ma(p).items():
+                    dem[ma] = dem.get(ma, 0) + n
         for ma, r in hop_dong.items():
             want, got = getattr(r, seg), dem.get(ma, 0)
             if want and got == 0:

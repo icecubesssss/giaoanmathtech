@@ -1,0 +1,16 @@
+((= PHIẾU BTVN TÁCH RIÊNG (Thầy 04/11/2026: "cắt phần BTVN thành phiếu riêng, gọi là phiếu BTVN"). =))
+((* import "_blocks.j2" as B with context *))
+((* set parts = split_reflection(stage.blocks) *))
+\begin{tcolorbox}[
+  enhanced, colback=neutral, colframe=brand!40, boxrule=0.8pt, arc=4pt,
+  top=6pt, bottom=6pt, left=10pt, right=10pt, boxsep=0pt,
+  before=\vspace{2pt}, after=\vspace{10pt}
+]
+  \sffamily
+  ((* if lesson.class_tier *)){\setlength{\fboxsep}{4pt}\colorbox{ink}{\color{white}\bfseries\footnotesize\strut\,LỚP ((( lesson.class_tier )))\,}}\hspace{5pt}((* endif *))((* if lesson.eyebrow *)){\setlength{\fboxsep}{4pt}\colorbox{brand}{\color{white}\bfseries\footnotesize\strut\,((( lesson.eyebrow )))\,}}((* endif *))\hfill((* if lesson.grade_label *)){\footnotesize\color{muted}((( lesson.grade_label )))}((* endif *))\par\vspace{6pt}
+  \titlefit{\bfseries\fontsize{18pt}{21pt}\selectfont\color{brand}PHIẾU BÀI TẬP VỀ NHÀ}\par\vspace{3pt}
+  \titlefit{\bfseries\fontsize{12pt}{14pt}\selectfont\color{ink}((( lesson.title | upper )))}\par\vspace{9pt}
+  {Họ và tên:~\blank[6cm]\hfill Lớp:~\blank[3.2cm]}
+\end{tcolorbox}
+\justifying\setlength{\parindent}{0pt}
+((( B.render_blocks(parts.btvn) )))

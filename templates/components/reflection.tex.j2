@@ -13,7 +13,9 @@
 \justifying\setlength{\parindent}{0pt}
 ((( B.render_blocks(parts.tong_ket) )))
 \end{stage}
-((* if parts.btvn and lesson.btvn_trang_rieng *))
+((* if parts.btvn and lesson.btvn_phieu_rieng and not show_solution *))
+((= BTVN TÁCH FILE RIÊNG (Thầy 04/11/2026): Phiếu HS không in BTVN — xem `components/btvn_rieng.tex.j2`. =))
+((* elif parts.btvn and lesson.btvn_trang_rieng *))
 ((= BTVN TRANG RIÊNG (Thầy 26/10/2026 — "để đôi lúc tôi có thể in riêng"): sang trang mới,
     hộp tiêu đề cùng kiểu hộp đầu phiếu để tờ BTVN đứng một mình được. =))
 \clearpage

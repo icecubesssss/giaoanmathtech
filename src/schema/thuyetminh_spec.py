@@ -14,7 +14,7 @@ from typing import Literal
 from pydantic import BaseModel, Field
 
 from src.schema.tier_spec import (
-    BANDS, draw_minutes, load_tier_spec, quick_minutes, rates_for, subject_block,
+    BANDS, draw_minutes, khung_minutes, load_tier_spec, quick_minutes, rates_for, subject_block,
 )
 
 Band = Literal["NB", "TH", "VD", "VDC"]
@@ -44,12 +44,23 @@ class SpecRow(BaseModel):
         default_factory=dict,
         description="Số HÌNH HS phải tự vẽ mỗi đoạn, vd {'onclass': 2, 'btvn': 1}; mỗi hình +draw_minutes",
     )
+    # HS VẼ TIẾP lên hình nền in sẵn (Thầy 04/11/2026: +2–4′ mỗi câu): tổng PHÚT vẽ tiếp mỗi đoạn.
+    ve_tiep: dict[str, float] = Field(
+        default_factory=dict,
+        description="Tổng phút HS vẽ tiếp lên hình nền mỗi đoạn, vd {'onclass': 9, 'btvn': 7}",
+    )
     # Dòng dạng gồm câu TRẮC NGHIỆM / ĐIỀN KHUYẾT trên hình VẼ SẴN (Thầy chốt
     # 2026-07-27). Rate hình ×2 trả cho khâu dựng hình + trình bày; những câu này
     # không có hai khâu đó nên phút/câu về lại mức đại số (×0,5). Không áp cho dòng
     # có `ve_hinh` (mâu thuẫn: vừa vẽ sẵn vừa bắt HS vẽ).
     hinh_san: bool = Field(
         False, description="Dạng trắc nghiệm/điền khuyết trên hình vẽ sẵn → phút/câu ×0,5"
+    )
+    # KHUNG BÀI GIẢI đi thi (Thầy 04/11/2026: "HS sẽ không kịp học, tôi cũng không kịp
+    # dạy — HS lớp C mà"): câu NB điền khuyết mà mỗi thẻ là 3–5 dòng lời giải ⇒ tính
+    # `khung_minutes` (3′/thẻ) thay cho 1′ của câu trắc nghiệm trên hình in sẵn.
+    khung: bool = Field(
+        False, description="Câu NB là khung bài giải đi thi (điền khuyết nhiều dòng) → khung_minutes/thẻ"
     )
     # Bảy LOẠI câu hỏi của §4b HUONG-DAN-THUYET-MINH-LOP-C (Thầy chốt 2026-08-05) — cho
     # thấy dòng này là câu LẺ từ lý thuyết, câu TÁCH làm bước đệm, hay một Ý của bài GHÉP.
@@ -149,17 +160,23 @@ def row_minutes(row: SpecRow, rates: dict) -> dict[str, float]:
 
     Dòng khai `hinh_san` (trắc nghiệm/điền khuyết trên hình vẽ sẵn): band NB tính
     `quick_minutes` (1′/câu — Thầy chốt 2026-07-27), band TH/VD chỉ giảm NỬA rate
-    (tự luận điền khuyết vẫn phải tính toán, chỉ đỡ khâu dựng hình)."""
+    (tự luận điền khuyết vẫn phải tính toán, chỉ đỡ khâu dựng hình).
+
+    Dòng NB khai `khung` (khung bài giải đi thi nhiều dòng) tính `khung_minutes` (3′/thẻ —
+    Thầy 04/11/2026: lớp C không kịp làm khung bài giải trong 1′)."""
     ts = load_tier_spec()
     dm = draw_minutes(ts)
 
     def per_cau(seg: str) -> float:
         rate = rates.get(seg, {}).get(row.band, 0.0)
+        if row.khung and row.band == "NB" and seg != "vidu":   # ví dụ = GV giảng
+            return rates.get("_khung_minutes", khung_minutes(ts))
         if not row.hinh_san:
             return rate
-        return quick_minutes(ts) if row.band == "NB" else rate * 0.5
+        return rates.get("_quick_minutes", quick_minutes(ts)) if row.band == "NB" else rate * 0.5
 
-    return {seg: getattr(row, seg) * per_cau(seg) + row.ve_hinh.get(seg, 0) * dm
+    dm = rates.get("_draw_minutes", dm)
+    return {seg: getattr(row, seg) * per_cau(seg) + row.ve_hinh.get(seg, 0) * dm + row.ve_tiep.get(seg, 0)
             for seg in _SEG_ATTRS}
 
 

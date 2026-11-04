@@ -52,6 +52,14 @@ def rates_for(spec: dict, grade: str, subject: str, tier: str | None = None) -> 
         return merged
     for seg, bands in block.get("rates_override", {}).items():
         merged.setdefault(seg, {}).update(bands)
+    # Định mức RIÊNG CỦA TẦNG (Thầy duyệt 04/11/2026 cho lớp 9 hình C: HS C chậm ~1,5× HS B).
+    tb = block.get("tiers", {}).get(tier, {}) if tier else {}
+    for seg, bands in tb.get("rates_override", {}).items():
+        merged.setdefault(seg, {}).update(bands)
+    # Hằng số phút riêng của tầng đi kèm dưới khoá "_…" (mọi nơi đọc rate theo đoạn đều bỏ qua).
+    for k in ("quick_minutes", "khung_minutes", "draw_minutes"):
+        if k in tb:
+            merged["_" + k] = float(tb[k])
     return merged
 
 
@@ -69,6 +77,13 @@ def quick_minutes(spec: dict) -> float:
     Thay hẳn rate của band NB, KHÔNG nhân rate hình ×2. Band TH/VD có khai hình
     vẽ sẵn thì vẫn phải tính toán nên chỉ giảm nửa rate, không dùng hằng số này."""
     return float(spec.get("quick_minutes", 0.0)) or 1.0
+
+
+def khung_minutes(spec: dict) -> float:
+    """Phút/thẻ cho câu NHẬN BIẾT là KHUNG BÀI GIẢI đi thi (Thầy 04/11/2026: "HS sẽ không
+    kịp học, tôi cũng không kịp dạy"): mỗi thẻ [NB] là 3–5 dòng lời giải có 1–2 ô trống,
+    HS đọc từng dòng rồi mới điền — 3′/thẻ, không phải 1′ như câu trắc nghiệm."""
+    return float(spec.get("khung_minutes", 0.0)) or 3.0
 
 
 def load_ban_do(path: Path | None = None) -> dict:

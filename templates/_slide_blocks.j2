@@ -19,7 +19,8 @@
 ((* elif b.type == "math" *))
 \[ ((( b.latex | tex ))) \]
 ((* elif b.type == "noted" *))
-((* if b.variant == "trap" *))\begin{block}{\ding{43}\ \ Bẫy điểm}((( b.text | tex )))\end{block}
+((* if b.variant == "theory" *))\begin{block}{((( b.title | tex )))}((( b.text | replace("\\nhanly{", "\\textbf{") | tex )))\end{block}
+((* elif b.variant == "trap" *))\begin{block}{\ding{43}\ \ Bẫy điểm}((( b.text | tex )))\end{block}
 ((* elif b.variant == "target" *))\begin{block}{\ding{72}\ \ ((* if lesson is defined and 'Lớp 9' in (lesson.grade_label or '') *))Đích thi vào 10((* else *))Đích đề kiểm tra((* endif *))}((( b.text | tex )))\end{block}
 ((* elif b.variant == "tip" *))\begin{block}{\ding{42}\ \ Mẹo}((( b.text | tex )))\end{block}
 ((* elif b.variant == "example" *))\begin{block}{\ding{46}\ \ Ví dụ mẫu}((( (b.text_slide or (b.text | strip_example_solution)) | tex )))\end{block}

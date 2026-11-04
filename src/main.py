@@ -40,6 +40,8 @@ from src.compiler import (
     render_handout, render_guide, render_slide, render_summary, build_pdf,
     render_thuyetminh, render_de,
 )
+from src.compiler.jinja_renderer import co_phieu_btvn, render_btvn
+from src.validators.dan_dat_gate import check_dan_dat_canh_bao, check_dan_dat_chan, la_khuon_moi
 from src.validators import (
     sanitize,
     UnsafeLatexError,
@@ -182,6 +184,11 @@ CURRICULUM_PATH = settings.CONFIG_DIR / "curriculum.json"
 SUBJECT_LABELS = {"dai-so": "ĐẠI SỐ", "hinh-hoc": "HÌNH HỌC"}
 GRADE_LABELS = {"lop-9": "Lớp 9 • Ôn vào 10"}
 _BUILD_KINDS = ("handout", "guide", "slide")
+
+
+def _kinds_for(lesson) -> list[str]:
+    """Các bản in của một phiếu: 3 bản chuẩn + PHIẾU BTVN khi phiếu tách BTVN riêng (Thầy 04/11/2026)."""
+    return list(_BUILD_KINDS) + (["btvn"] if co_phieu_btvn(lesson) else [])
 
 
 def _grade_label(grade_slug: str) -> str:
@@ -386,7 +393,7 @@ def get_ca_prefix(lesson: LessonPackage | None = None, json_path: Path | str | N
 
 from src.exporters.ten_file import ten_ban_in
 
-_RENDERERS = {"handout": render_handout, "guide": render_guide, "slide": render_slide}
+_RENDERERS = {"handout": render_handout, "guide": render_guide, "slide": render_slide, "btvn": render_btvn}
 
 
 def _build_kinds(lesson: LessonPackage, kinds, out_root: Path, force: bool = False,
@@ -499,7 +506,7 @@ def cmd_build_all(args: argparse.Namespace) -> int:
                                   lesson_path=args.lesson):
             return 1
     only = getattr(args, "only", None)
-    kinds = [only] if only else list(_BUILD_KINDS)
+    kinds = [only] if only else _kinds_for(lesson)
     _build_kinds(lesson, kinds, _out_root(args.lesson), force=getattr(args, "force", False), json_path=args.lesson,
                  docx=getattr(args, "docx", None))
     _set_lesson_status(lesson.slug, "built")
@@ -534,7 +541,7 @@ def cmd_build_folder(args: argparse.Namespace) -> int:
             continue
         out_root = _out_root(str(j))
         try:
-            _build_kinds(lesson, list(_BUILD_KINDS), out_root, force=force, prefix="  ", json_path=str(j),
+            _build_kinds(lesson, _kinds_for(lesson), out_root, force=force, prefix="  ", json_path=str(j),
                          docx=getattr(args, "docx", None))
             _set_lesson_status(lesson.slug, "built")
             built.append(lesson.slug)
@@ -767,6 +774,16 @@ def _run_validation(lesson: LessonPackage, fast: bool = False,
     warns = khoa_la_warns + find_presentation_warnings(lesson)
     ramp_warns = check_ramp(lesson)
 
+    # Dẫn dắt phiếu (Thầy 04/11/2026): mượn hình bài trên, tụt mức / lộn hình thức, khuôn bốn
+    # điểm cũ, điền khuyết không ra khung bài giải, tiêu đề rơi trước BTVN. CHẶN phiếu khuôn
+    # mới (có "Đích của buổi học"); phiếu cũ chỉ cảnh báo.
+    dd = [f"[dan_dat_gate] {m}" for m in check_dan_dat_chan(lesson)]
+    if la_khuon_moi(lesson):
+        violations.extend(dd)
+    else:
+        warns = warns + dd
+    warns = warns + [f"[dan_dat_gate] {m}" for m in check_dan_dat_canh_bao(lesson)]
+
     if not fast:  # answer_gate chạy SymPy (đắt) — bỏ khi --fast, bắt buộc lại trước approve
         ans_fail, ans_incon = check_answers(lesson)
         violations.extend(f"[answer_gate] {m}" for m in ans_fail)
@@ -988,7 +1005,7 @@ def cmd_rebuild(args: argparse.Namespace) -> int:
             lesson = _load(str(j))
             out_root = _out_root(str(j))
             # rebuild = lan thay đổi template/design_tokens → FORCE compile lại (bỏ skip-hash).
-            _build_kinds(lesson, list(_BUILD_KINDS), out_root, force=True, quiet=True, json_path=str(j))
+            _build_kinds(lesson, _kinds_for(lesson), out_root, force=True, quiet=True, json_path=str(j))
             _set_lesson_status(lesson.slug, "built")
             n_ok += 1
             print(f"  ✓ {lesson.slug}")
@@ -1174,6 +1191,8 @@ def _skeleton(slug: str, title: str, eyebrow: str, grade: str, class_tier: str =
         # Tầng B chọn tỉ lệ NB-TH-VD THEO CHƯƠNG (config/ban_do_vd_vdc.json) — thiếu
         # trường này thì duration_gate không soi được tỉ lệ lẫn luật gộp phiếu.
         "chuong": chuong,
+        # Thầy chốt 04/11/2026: mọi phiếu mới tách BTVN thành file "Phiếu BTVN" riêng.
+        "btvn_phieu_rieng": True,
         "stages": [
             stage("review", 1, "Khám phá — KTBC / nhịp cầu vào bài", [
                 # MỞ MÀN THỰC TẾ (đặc sản): hook đời thực kéo HS vào bài. Xoá nếu bài
@@ -1550,7 +1569,7 @@ def main(argv: list[str] | None = None) -> int:
     a = sub.add_parser("build", help="Sinh cả 3 bản SONG SONG (handout, guide, slide) — validate sạch trước")
     a.add_argument("lesson", help="Đường dẫn file lesson .json")
     a.add_argument("--force", action="store_true", help="Build nháp dù validate còn vi phạm")
-    a.add_argument("--only", choices=["handout", "guide", "slide"], help="Chỉ dựng 1 bản (xem nhanh khi nháp)")
+    a.add_argument("--only", choices=["handout", "guide", "slide", "btvn"], help="Chỉ dựng 1 bản (xem nhanh khi nháp)")
     a.add_argument("--fast", action="store_true", help="Bỏ SymPy answer_gate khi build nháp (nhớ build full trước approve)")
     a.add_argument("--docx", dest="docx", action="store_true", default=None, help="Ra thêm bản Word (.docx) cạnh phiếu HS")
     a.add_argument("--no-docx", dest="docx", action="store_false", help="Không ra bản Word")

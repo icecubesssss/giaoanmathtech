@@ -72,6 +72,12 @@
 \AtBeginDocument{\normalsize\renewcommand{\stageseparator}{\par\vspace{13pt}{\color{brand!40}\hrule height 0.5pt}\par\vspace{13pt}}}
 ((* endif *))
 \begin{document}
+((* if ban_btvn is defined and ban_btvn *))
+((= PHIẾU BTVN (Thầy 04/11/2026): cùng khổ, đầu trang, chân trang với Phiếu HS; chỉ có BTVN. =))
+((* for stage in lesson.stages if stage.kind == "reflection" *))
+((* include "components/btvn_rieng.tex.j2" *))
+((* endfor *))
+((* else *))
 
 % Khối tiêu đề với Top Card thông tin học sinh
 \begin{tcolorbox}[
@@ -103,4 +109,5 @@
 ((* endif *))
 ((* endfor *))
 
+((* endif *))
 \end{document}

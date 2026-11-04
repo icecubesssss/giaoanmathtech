@@ -80,6 +80,10 @@ class ProblemFigure(BaseModel):
     caption: str = Field("", description="Nhãn hình, vd 'Hình 6'")
     pos: Literal["right", "below", "none"] = Field("right", description="Chỗ đặt hình so với đề")
     ref: str = Field("", description="Nhãn hình của bài khác mà bài này dùng lại, vd 'Hình 6'")
+    # HÌNH NỀN + HS VẼ TIẾP (Thầy 04/11/2026: "các hình trong bài chỉ để tam giác, điểm nằm
+    # ngoài đường tròn… còn các yếu tố phải vẽ thì để HS tự vẽ vào hình trên phiếu"):
+    # `tikz` là hình nền in cho HS; `tikz_gv` là hình ĐẦY ĐỦ chỉ in ở Sổ tay GV.
+    tikz_gv: str = Field("", description="Hình đầy đủ cho Sổ tay GV khi phiếu HS chỉ in hình nền")
 
 
 class NotedBlock(BaseModel):
@@ -91,9 +95,13 @@ class NotedBlock(BaseModel):
     #   target = "ĐÍCH THI VÀO 10" (vàng, chốt mục tiêu thi)
     #   tip    = "MẸO" (tím, mẹo nhanh)
     #   example= "VÍ DỤ MẪU" (xanh dương)
-    variant: Literal["", "note", "trap", "target", "tip", "example"] = Field(
-        "", description="Kiểu thẻ callout; rỗng = hộp xám trung tính như cũ"
+    #   theory = THẺ LÝ THUYẾT (03/11/2026, Thầy: "phần Kiến thức trọng tâm thiết kế đẹp và chuyên
+    #            nghiệp hơn"): nhãn màu chặng ở góc (`title`), chữ bên trái, HÌNH BÊN PHẢI cùng hàng
+    #            như SGK — thay lối tiêu đề mục + chữ + hình xếp dọc kéo dài 3–4 trang.
+    variant: Literal["", "note", "trap", "target", "tip", "example", "theory"] = Field(
+        "", description="Kiểu thẻ callout; rỗng = hộp xám trung tính như cũ; theory = thẻ lý thuyết có `title`"
     )
+    title: str = Field("", description="Nhãn thẻ lý thuyết (variant theory), vd '1. ĐƯỜNG TRÒN', 'DẠNG 1. …'")
     # Hình đi kèm hộp (ví dụ mẫu / mở màn có hình). Trước 22/09/2026 phải gõ tay hai
     # `\begin{minipage}[t]{0.58\linewidth}` cạnh nhau ngay trong `text` — cùng bệnh
     # trộn bố cục vào nội dung như `ProblemBlock.statement`, và minipage thì KHÔNG cắt
@@ -259,6 +267,9 @@ class ProblemBlock(BaseModel):
     # tính giờ cho duration_gate — KHÔNG in gì thêm ra phiếu, nên đề bài vẫn phải
     # tự nói "Vẽ hình, ghi giả thiết – kết luận".
     draw: bool = Field(False, description="HS phải tự vẽ hình cho bài này → +draw_minutes vào quỹ giờ")
+    draw_height: Optional[float] = Field(None, description="Chiều cao khung tự vẽ hình (cm), mặc định 5.0 cm nếu None")
+    # Phiếu in HÌNH NỀN, HS vẽ tiếp các yếu tố theo đề (Thầy 04/11/2026: "thêm 2-4 phút mỗi câu").
+    ve_tiep: int = Field(0, ge=0, le=6, description="Phút HS vẽ tiếp lên hình nền in sẵn (2–4′ tuỳ số yếu tố); 0 = không")
     # NGƯỢC LẠI với `draw`: bài HÌNH đã VẼ SẴN hình, HS chỉ đọc hình rồi chọn đáp án /
     # điền chỗ chấm (trắc nghiệm, điền khuyết). Thầy chốt 2026-07-27: "vẽ luôn hình để
     # trừ các khâu vẽ hình" — 1,5 tiếng chỉ chữa nổi 1–2 bài hình hẳn hoi, phần còn lại
@@ -272,7 +283,8 @@ class ProblemBlock(BaseModel):
     # Thầy chốt 14/08/2026: "phiếu thật PHẢI TƯƠNG ỨNG THẬT RÕ phiếu thuyết minh" —
     # trước đây spec_gate chỉ so TỔNG số câu theo band nên phiếu lệch hẳn dạng mà cổng vẫn im.
     dang_id: str = Field(
-        "", description="Mã dạng trong thuyet-minh.json, vd 'NB5' / 'TH2' / 'VD1'"
+        "", description="Mã dạng trong thuyet-minh.json, vd 'NB5' / 'TH2' / 'VD1'; bài đề thi "
+                        "nhiều ý khác mức khai 'TH2+VD1' (mỗi thẻ đếm về mã cùng band)"
     )
     # (TÙY CHỌN) Đáp án MÁY-ĐỌC để `validate` tự soi bằng SymPy. None = bỏ qua (như cũ).
     # KHÔNG in ra phiếu — chỉ phục vụ answer_gate. Phân biệt loại bằng khóa "kind".
@@ -399,6 +411,12 @@ class LessonPackage(BaseModel):
     # (lớp, phiếu, tên bài, Họ và tên/Lớp). Mặc định tắt để bản in cũ của kho không đổi.
     btvn_trang_rieng: bool = Field(
         False, description="BTVN in sang trang riêng có hộp tiêu đề (in tách được)")
+    # Thầy chốt 04/11/2026: "phiếu nào tạo từ giờ cũng sẽ cắt phần BTVN thành phiếu riêng
+    # nhé, gọi là phiếu BTVN luôn". Bật ⇒ build thêm bản `…-Phieu-BTVN.pdf` (hộp tiêu đề
+    # BÀI TẬP VỀ NHÀ + các bài BTVN); Phiếu HS KHÔNG còn BTVN; Đáp án GV vẫn giữ BTVN có lời
+    # giải. Mặc định tắt để bản in cũ trong kho không đổi; `new-lesson` bật sẵn.
+    btvn_phieu_rieng: bool = Field(
+        False, description="Tách BTVN thành file Phiếu BTVN riêng (Phiếu HS không còn BTVN)")
     stages: list[Stage] = Field(default_factory=list)
 
 

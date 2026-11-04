@@ -105,7 +105,13 @@
 > 2. **Ký hiệu góc vuông tại giao điểm đường chéo nghiêng $45^\circ$:** Tuyệt đối **CẤM dùng `-|`** (vẽ ngang/dọc làm góc vuông bị xoay lệch thành hình mũi tên). Bắt buộc dùng tọa độ xoay $45^\circ$ ôm theo hai đường chéo: `\draw[ink] (x0-d, y0+d) -- (x0, y0+2d) -- (x0+d, y0+d);`.
 > 3. **Tọa độ hình học phải khớp giải tích chính xác:** Nếu điểm $D$ thuộc cạnh huyền $BC$ của tam giác vuông $ABC$, tọa độ $D$ phải thỏa mãn phương trình đường thẳng $BC$, tuyệt đối không vẽ ước lượng làm đường thẳng không chạm đỉnh ("k chạm đỉnh $D$").
 > 4. **Không vẽ ký hiệu góc vuông bị đường khác cắt qua:** Không vẽ ô vuông góc vuông tại đỉnh xuất phát của đường chéo hoặc đoạn thẳng phân giác (bị đường nối cắt đôi trông lem nhem).
-> 5. **BẮT BUỘC có BÀI GIẢI ĐIỀN KHUYẾT (Scaffolded Proof Completion) trong phần Luyện tập:** Tại Chặng 3 hoặc Chặng 4 (Thông hiểu & Vận dụng), phải có bài tập điền vào chỗ trống (`[[blank:...]]`) cho các câu lập luận chứng minh hình học để HS nắm cấu trúc, mẫu trình bày và các bước suy luận trước khi tự làm bài tự luận độc lập.
+> 5. **LUẬT CỨNG BÀI CHỨNG MINH & TỰ VẼ HÌNH (Luyện tập 2 & BTVN — Thầy chốt 04/11/2026):**
+>    - **Chặng 3 (Luyện tập 1):** BẮT BUỘC có bài tập điền khuyết (`[[blank:...]]`) trên hình in sẵn cho các câu lập luận chứng minh hình học để HS nắm cấu trúc, từ khóa trọng tâm, mẫu trình bày và các bước suy luận trước khi tự làm bài tự luận độc lập.
+>    - **LUẬT CỨNG LUYỆN TẬP 2 & BTVN TỰ LUẬN (CHỈ CÓ ĐỀ & BẮT BUỘC TỰ VẼ HÌNH):**
+>      * **Chỉ có đề:** Tuyệt đối KHÔNG có khung điền khuyết (`[[blank:...]]`)! HS bắt buộc phải tự trình bày lời giải trọn vẹn từng bước như đi thi. Ở BTVN, HS phải tự đọc lại bài học trên lớp để làm độc lập. Lời giải mẫu chuẩn được lưu ở `answer` (dành cho Sổ tay GV và chấm tự động).
+>      * **Bắt buộc tự vẽ hình & Khung vẽ hình chuẩn 5.0 cm:** Các bài chứng minh hình học ở Luyện tập 2 và BTVN tự luận bắt buộc phải bật **`draw: true`** (tự động cộng $+5$′ vào quỹ giờ). Khung vẽ hình chuẩn cao **5.0 cm** (`\drawbox[5.0]`, không dùng 3.5 cm quá bé cho compa và thước kẻ). Với các bài hình đường tròn thi vào 10, in sẵn đường tròn nền $(O)$ và tâm $O$ cố định vùng vẽ (`\drawbox[5.0]{...}` với nhãn *"Vẽ tiếp vào hình trong khung này"*), tuyệt đối KHÔNG in sẵn hình vẽ hoàn chỉnh cho HS nhìn chép! Hình vẽ chuẩn chỉ in ở Sổ tay GV.
+>      * Cổng `dan_dat_gate.check_luyen_tap_2_va_btvn_chung_minh` tự động CHẶN nếu Luyện tập 2 hoặc bài chứng minh BTVN có điền khuyết hoặc thiếu `draw: true`.
+>    - **TIÊU ĐỀ NGUỒN ĐỀ THI:** Tiêu đề trước bài Luyện tập 2 phải ghi rõ nguồn đề thi thật (ví dụ: `Đề thi Học kì I — THCS Ái Mộ (Long Biên)`), BỎ HOÀN TOÀN cụm từ nội bộ `— đích của buổi học`.
 > 6. **QUY TRÌNH XỬ LÝ SLIDE TRÌNH CHIẾU & CHUẨN FOOTER (Thầy chốt 09/09/2026):**
 >    - **Triết lý:** Slide Beamer (16:9) là công cụ để Thầy tương tác và viết bảng, không phải sách giải. Tuyệt đối không chiếu sẵn lời giải làm lộ đáp án và làm học sinh mất tập trung.
 >    - **Ví dụ mẫu:** Tự động cắt bỏ phần Lời giải (`strip_example_solution`), chỉ chiếu đề bài + hình vẽ TikZ. Nếu cần tùy biến, khai `text_slide` trong `NotedBlock`.
@@ -148,6 +154,42 @@
 >    suy ra" (dùng ⇒), luôn có câu kết "Vậy". Dòng khung điền khuyết dài quá bề ngang thì bẻ bằng `[[br]]$\quad$ `.
 >    Bài khung điền khuyết (đề có `[[blank`) chỉ soi ĐỀ, không soi `answer` (đáp án từng ô). Toàn kho còn **862 cảnh báo
 >    ở 75 phiếu** (27/09) — chương V 9C đã về 0.
+>
+> **DẪN DẮT PHIẾU (Thầy 04/11/2026, phiếu 2 ch.V 9C):** *"sao các câu sắp xếp lộn xộn và không nhất quán thế? bài ở dưới
+> lại dùng hình ở trên là sao? chọn được bài có hình tương tự không được hả? … tạo thêm thành cổng … dẫn dắt từ dễ đến khó …
+> HS lớp C không kịp học, tôi không kịp dạy"*. Cổng [src/validators/dan_dat_gate.py](src/validators/dan_dat_gate.py) — **CHẶN**
+> phiếu có đoạn "Đích của buổi học" (khuôn thang dẫn dắt), phiếu cũ chỉ cảnh báo:
+> 1. **Mỗi bài một hình riêng** — cấm "dùng Hình 5 ở Bài 5", "tiếp tục với Hình…", "tự trình bày lại Bài 4", trỏ hình bài khác
+>    (`check_muon_hinh`). Muốn luyện lại cùng khuôn thì bốc **bài KHÁC có hình tương tự** trong tab phân dạng (đề cuối kì
+>    cùng khuôn rất nhiều: Lý Sơn / Cụm 14 / Tân Triều / Ái Mộ đều "tiếp tuyến tại A và C cắt nhau").
+> 2. **Dễ → khó** (`check_de_den_kho`): trong một chặng (và trong BTVN) mức không tụt; trong một mạch hình thức đi
+>    chọn (trắc nghiệm, Đ/S) → điền khuyết → tự trình bày. Mỗi mạch cùng một nhịp: nhớ → ví dụ → khung bài giải.
+> 3. **Khuôn bốn điểm duy nhất** (`check_khuon_bon_diem`): △ABC vuông tại A ⇒ A, B, C cùng thuộc đường tròn đường kính BC —
+>    cấm "Gọi … trung điểm", "nửa cạnh huyền", "cách đều" (trừ ví dụ nền có "Ghi nhớ").
+> 4. **Điền khuyết bài chứng minh = khung bài giải đi thi** (`check_khung_bai_giai`, cả BTVN): có "hoàn thành bài giải",
+>    ≥ 3 dòng, dòng "Vậy …" riêng, **mỗi dòng tối đa một ⇒**.
+> 5. Không đặt tiêu đề ngay trước bài BTVN đầu (`check_tieu_de_truoc_btvn`); "Đích của buổi học" phải trỏ đúng bài cuối LT2.
+> 5b. **Đề ghi ĐẦY ĐỦ, không xưng hô** (Thầy 04/11/2026): cấm đề cụt "làm tiếp ý b của Bài 7" (ghi lại đủ giả thiết) và lời dặn "em…", "hôm nay", "ở lớp" trong đề (`check_loi_xung_ho`).
+> 5c. **Hình nền + HS vẽ tiếp** (Thầy 04/11/2026): hình in cho HS chỉ là nền (tam giác, đường tròn, điểm ngoài đường tròn); `figure.tikz` = hình nền (giữ khung toạ độ hình đầy đủ để có chỗ vẽ), `figure.tikz_gv` = hình đầy đủ chỉ in ở Sổ tay GV; bài khai `ve_tiep` = 2–4 (phút, tuỳ số yếu tố phải vẽ), dòng thuyết minh khai `ve_tiep: {đoạn: phút}`.
+> 5d. **Ví dụ: HS vẽ cùng GV** (Thầy 04/11/2026): ví dụ có `figure.tikz_gv` thì phiếu HS in hình NỀN TO (`\figbelow[5cm]{0.5}`), Sổ tay GV in hình đầy đủ; câu đề thêm "Vẽ tiếp vào Hình N các yếu tố còn thiếu theo đề."; phút vẽ cùng khai ở dòng thuyết minh `ve_tiep: {vidu: 2–3}`. Hộp ví dụ không cắt trang được — hình to dễ đẩy hộp sang trang sau, soi ảnh PDF sau khi build.
+> 6. **Giờ thực**: câu NB trong khung bài giải tính **`khung_minutes` = 3′/thẻ** (tier_spec), không phải 1′ như trắc nghiệm;
+>    dòng thuyết minh khai `khung: true`. Bài đề thi nhiều ý khác mức khai `dang_id: "TH2+VD1"`. Với lớp C **đừng nhồi bài
+>    để lấp quỹ 55′** khi giờ thực đã đầy — ghi kịch bản phút thực vào `thoiluong` của thuyết minh.
+>
+> **PHIẾU BTVN TÁCH RIÊNG (Thầy chốt 04/11/2026):** *"phiếu nào tạo từ giờ cũng sẽ cắt phần BTVN thành phiếu riêng nhé,
+> gọi là phiếu BTVN luôn"*. Phiếu khai `btvn_phieu_rieng: true` (khung `new-lesson` bật sẵn; cổng `dan_dat_gate.check_phieu_btvn`
+> chặn phiếu khuôn mới quên bật) ⇒ build ra bản thứ tư `…-Phieu-BTVN.pdf` (hộp tiêu đề PHIẾU BÀI TẬP VỀ NHÀ + bài BTVN,
+> `components/btvn_rieng.tex.j2`); Phiếu HS KHÔNG còn BTVN; Đáp án GV VẪN giữ BTVN có lời giải; Slide giữ nguyên.
+> Phiếu cũ không khai ⇒ bản in không đổi.
+>
+> **BƯỚC 2a — TẦN SUẤT DẠNG Ý TRONG ĐỀ THẬT (Thầy 04/11/2026):** *"Ví dụ 2 và bài 7 có phải là những bài hay thi … theo
+> thống kê thì nó ít thi á? … thêm 1 bước thống kê tỉ lệ các câu VD vào tab phân dạng và ưu tiên bốc các bài đó"*. Trước
+> khi chấm T1–T8 chạy `python scripts/thong_ke_dang_vd.py <lớp> <môn> <chương> --json …` (luật dạng ý ở khoá `dang_y`,
+> kỹ thuật gắn tay ở `ky_thuat` trong `config/khung-phan-dang/…`); kết quả lên tab "Thống kê dạng <chương>" + 3 cột tra
+> cứu ở tab Phân dạng. **Đích/VD của phiếu lấy dạng ≥ 30% đề của kỳ thi; dạng < 20% không làm đích;** T7 = 2/1/0 theo
+> ≥30% / 10–30% / <10%. Ch.V Kì I (66 đề): bốn điểm 68%, đẳng thức tích 59%, vuông góc/trung trực 39%, **tiếp tuyến 18%**.
+>
+> **ĐỊNH MỨC LỚP 9 HÌNH TẦNG C (Thầy duyệt 04/11/2026):** HS C chậm ~1,5× HS B (mô hình `config/phut_thuc.json` + `scripts/phut_chuan_bc.py`, đối chiếu giờ phòng thi CK1). `tier_spec` tầng C khai `rates_override` riêng: ví dụ 1,5/7/10, trên lớp 2,5/10/16, BTVN 2,2/8,7/14, NB trên hình sẵn 2,5′ (khoá `_quick_minutes` trong rate). Tab Phân dạng có cột phút HS B/C. **Hệ quả: mọi thuyết minh hình 9C cũ (ch. IV, V, IX, X) vượt quỹ buổi** — dựng phiếu mới phải cân theo định mức này.
 >
 > **HAI KHỐI BẮT BUỘC của phiếu thuyết minh: `kien_thuc_nen` + `thoiluong` (Thầy chốt 19/08/2026).** Thầy hỏi *"sang chat mới soạn lại chương 6 thì có ra đúng output như chương 4, 5 không?"* — trước đó là KHÔNG, vì hai khối này **không cổng nào soi** và khung `new-thuyetminh` cũng không sinh ra ⇒ **70/75 spec lớp 8+9 thiếu**. Nay:
 > 1. **`kien_thuc_nen`** — kiến thức LỚP DƯỚI dùng lại (bản mẫu: chương IV có Pythagore $+$ tam giác đồng dạng; chương V có Pythagore $+$ trung tuyến ứng cạnh huyền $+$ đường trung trực). Spec có dòng mà bỏ trống ⇒ **CHẶN**. `goi_y_kien_thuc_nen()` **tự dò trên chính chữ của spec** và in ra nền đang dùng chùa — chạy `make check-tm SPEC=…` là biết phải thêm gì; thứ vốn là nội dung chính của chương (dò trong `title`) thì không gợi ý.
@@ -333,6 +375,12 @@ E) **Quy ước màu sắc chuẩn trên Google Sheets (Thầy chốt 30/10/2026
 
 ## Quy trình mỗi phiếu
 
+> **LUẬT CỨNG: MỘT CUỘC TRÒ CHUYỆN = MỘT PHIẾU (Thầy chốt 04/11/2026: *"thêm 1 luật cứng là 1 cuộc trò chuyện 1 phiếu
+> đi cho nó cẩn thận"*).** Mỗi phiên AI chỉ dựng/sửa MỘT phiếu. Thầy giao phiếu thứ hai trong cùng phiên ⇒ KHÔNG làm, ghi
+> bàn giao rồi nhắc Thầy mở phiên mới. Việc cấp chương (thuyết minh cả chương, tab chọn câu, quy trình, cổng) làm ở phiên
+> riêng. Cuối phiên ghi bàn giao vào memory (trạng thái phiếu, việc treo, script, bước kế); đầu phiên mới đọc AGENTS.md +
+> memory bàn giao + thuyết minh chương trước khi dựng.
+
 ```bash
 python -m src.main new-lesson <folder-tuần>   # sinh khung 5 chặng
 # → điền nội dung BÁM PDF nguồn trong folder (xem HUONG-DAN-SOAN-BAI.md)
@@ -370,7 +418,7 @@ python -m src.main approve <slug>              # Thầy xem PDF rồi DUYỆT (s
    - **Đề + các câu nhỏ a,b,c CÙNG MỘT slide** (đề dài thì renderer tự co `probfit`; KHÔNG để "đề một chỗ, câu nhỏ một nẻo").
    - Không có **chữ/hình đè footer** "MathTech … Slide N", không có trang trống.
      Renderer (`group_slide_segments`/`_seg_mode` + `_slide_blocks.j2`) đã lo các bố cục trên; nếu vẫn lệch thì sửa renderer/template rồi build lại, KHÔNG sửa tay JSON cho hợp một slide.
-7. **KIỂM SOÁT THỜI LƯỢNG (CHỐNG THIẾU CÂU):** AI rất hay tạo thiếu bài tập, làm hụt quỹ giờ của buổi học (quỹ trên lớp theo khối/môn trong `config/tier_spec.json`, vd lớp 9 Đại số 120′, lớp 9 Hình 55′). Bắt buộc xem log `[duration_gate]` sau lệnh `validate`. Nếu bị báo thiếu giờ, **PHẢI tự động sinh thêm bài tương đương hoặc kéo bài từ BTVN lên** sao cho lấp đủ quỹ thời gian. Định mức phút/câu CHỈ lấy từ `tier_spec.json` (tab "Định mức thời lượng" của sheet quy chuẩn là bản chép) — đừng gõ số cứng; bài nhiều ý tính từng ý theo mức của ý. Tuyệt đối không giao phiếu bị hụt thời lượng!
+7. **KIỂM SOÁT THỜI LƯỢNG (CHỐNG THIẾU CÂU):** AI rất hay tạo thiếu bài tập, làm hụt quỹ giờ của buổi học (quỹ trên lớp theo khối/môn trong `config/tier_spec.json`, vd lớp 9 Đại số 120′, lớp 9 Hình 55′). Bắt buộc xem log `[duration_gate]` sau lệnh `validate`. Nếu bị báo thiếu giờ, **PHẢI tự động sinh thêm bài tương đương hoặc kéo bài từ BTVN lên** sao cho lấp đủ quỹ thời gian. Định mức phút/câu CHỈ lấy từ `tier_spec.json` (tab "Định mức thời lượng" của sheet quy chuẩn là bản chép) — đừng gõ số cứng; bài nhiều ý tính từng ý theo mức của ý. Tuyệt đối không giao phiếu bị hụt thời lượng! *Ngoại lệ (Thầy 04/11/2026):* phiếu lớp C có khung bài giải / bài tự vẽ hình mà giờ THỰC đã đủ 90′ thì KHÔNG nhồi thêm — ghi kịch bản phút thực vào `thoiluong` của thuyết minh và báo Thầy (xem mục DẪN DẮT PHIẾU).
    Sửa xong checklist → build lại → mới trình Thầy.
 8. **Tự động ngắt trang bảng Thuyết minh**: Đối với các thuyết minh có số câu phân mảnh lớn (ví dụ phiếu Tầng C với 22 dòng phân mảnh), bảng tự động ngắt trang nhờ sử dụng môi trường `longtable` kết hợp cấu trúc `\endfirsthead` và `\endhead` để tự động lặp lại dòng tiêu đề bảng ở đầu các trang tiếp theo. Khi thiết kế/chỉnh sửa mã nguồn của renderer, bắt buộc giữ cấu trúc `longtable` này để tránh bảng bị tràn mất khỏi lề dưới của trang A4 ngang.
    Tiến độ từng buổi: tab tiến độ trên sheet nhóm (vd "TIẾN ĐỘ 9C - 2026 - ThaiTD"). Luật soạn chi tiết: [HUONG-DAN-SOAN-BAI.md](HUONG-DAN-SOAN-BAI.md). **Hướng dẫn thuyết minh Tầng C: [HUONG-DAN-THUYET-MINH-LOP-C.md](HUONG-DAN-THUYET-MINH-LOP-C.md)** (quy trình riêng cho HS nền yếu: 4 khối trang đầu + AI hỏi Thầy 3 câu trước mỗi chương).

@@ -218,15 +218,18 @@
 \newcommand{\fillblank}[1]{\blank[#1]}
 \newcommand{\fillans}[1]{\textcolor{brand}{\underline{\smash{#1}}}}
 
-% Khung TRỐNG để HS TỰ VẼ HÌNH vào phiếu (Thầy An 2026-07-28: "tạo thêm chỗ cho hs
-% vẽ vào đề"). #1 = chiều cao tính bằng cm. Viền đứt mảnh + nhãn nhắc việc ở góc.
-\newcommand{\drawbox}[1][3]{%
+% Khung để HS TỰ VẼ HÌNH vào phiếu (Thầy chốt 04/11/2026: chiều cao chuẩn 5.0cm;
+% có thể in sẵn đường tròn nền #2 để cố định vùng vẽ cho HS). Viền đứt mảnh + nhãn nhắc việc.
+\newcommand{\drawbox}[2][5.0]{%
   \par\nointerlineskip\vspace{6pt}\noindent
   \begin{tikzpicture}
     \draw[rule!70, dashed, line width=0.5pt, rounded corners=3pt]
       (0,0) rectangle (\linewidth, #1);
     \node[anchor=north west, font=\sffamily\scriptsize\itshape, color=muted]
-      at (4pt, #1-3pt) {Vẽ hình vào khung này};
+      at (4pt, #1-3pt) {\ifx\relax#2\relax Vẽ hình vào khung này\else Vẽ tiếp vào hình trong khung này\fi};
+    \ifx\relax#2\relax\else
+      \node[anchor=center] at (0.50\linewidth, 0.5*#1) {\mbox{#2}};
+    \fi
   \end{tikzpicture}\par\vspace{4pt}%
 }
 

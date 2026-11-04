@@ -1,6 +1,13 @@
-((= Chặng 2 — Khái niệm (lý thuyết + worked example). =))
+((= Chặng 2 — Khái niệm (lý thuyết + worked example). Thẻ lý thuyết (variant theory, 03/11/2026): định nghĩa thẻ chỉ sinh khi phiếu dùng thẻ, và chừa 8,5cm để tiêu đề chặng không trơ cuối trang — phiếu cũ giữ nguyên từng byte. =))
 ((* import "_blocks.j2" as B with context *))
-\stageneedspace{4cm}\begin{stage}{((( stage.number )))}{((( stage.title )))}{stage2}{\iconconcept}
+((* set _the = stage.blocks | selectattr("variant", "defined") | selectattr("variant", "equalto", "theory") | list *))((* if _the *))\newtcolorbox{theorycard}[1]{enhanced, breakable, colback=stage2!3, colframe=stage2!45,
+  boxrule=0.5pt, leftrule=2.6pt, arc=2pt, top=9pt, bottom=5pt, left=8pt, right=8pt,
+  before skip=11pt, after skip=5pt,
+  coltitle=white, colbacktitle=stage2, fonttitle=\sffamily\bfseries\footnotesize,
+  attach boxed title to top left={xshift=8pt,yshift=-7pt}, boxed title style={arc=1.5pt,boxrule=0pt,left=4pt,right=4pt,top=1pt,bottom=1pt},
+  title={#1}}
+\newcommand{\nhanly}[1]{{\sffamily\bfseries\color{stage2}#1}}
+((* endif *))\stageneedspace{((* if _the *))8.5cm((* else *))4cm((* endif *))}\begin{stage}{((( stage.number )))}{((( stage.title )))}{stage2}{\iconconcept}
 \justifying\setlength{\parindent}{0pt}
 ((( B.render_blocks(stage.blocks) )))
 \end{stage}

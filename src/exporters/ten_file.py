@@ -26,7 +26,7 @@ import unicodedata
 from pathlib import Path
 
 # Tên 'bản in' theo cách Thầy gọi, không phải theo tên kỹ thuật của template.
-BAN_IN = {"handout": "Phieu-HS", "guide": "Dap-an-GV", "slide": "Slide"}
+BAN_IN = {"handout": "Phieu-HS", "guide": "Dap-an-GV", "slide": "Slide", "btvn": "Phieu-BTVN"}
 
 _TEX = re.compile(r"\\[A-Za-z]+\s*|[$\\{}]")
 _TUAN = re.compile(r"^(?:\[[A-Za-z]\])?tuan(\d+(?:-\d+)*)", re.IGNORECASE)
