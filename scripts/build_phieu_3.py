@@ -181,7 +181,17 @@ def h_bai2():
     return f
 
 
-def h_vidu1():
+def khung(tikz: str) -> str:
+    xy = [(float(a), float(b)) for a, b in re.findall(r"\((-?\d+\.\d+),(-?\d+\.\d+)\)", tikz)]
+    xs, ys = [p[0] for p in xy], [p[1] for p in xy]
+    return f"  \\path ({min(xs) - 0.15:.4f},{min(ys) - 0.15:.4f}) rectangle ({max(xs) + 0.15:.4f},{max(ys) + 0.15:.4f});"
+
+
+def nen(f: Fig, full_tikz: str) -> str:
+    return f.tikz().replace("\\end{tikzpicture}", khung(full_tikz) + "\n\\end{tikzpicture}")
+
+
+def h_vidu1_gv():
     f = Fig()
     O, R, M = (0, 0), 1.2, (2.8, 0)
     A, B = tangent_points(O, R, M)
@@ -197,7 +207,17 @@ def h_vidu1():
     return f
 
 
-def h_bai3():
+def h_vidu1_nen():
+    f = Fig()
+    O, R, M = (0, 0), 1.2, (2.8, 0)
+    for n, p in [("O", O), ("M", M)]:
+        f.pt(n, p)
+    f.circle(O, R)
+    f.seg("O", "M")
+    return nen(f, h_vidu1_gv().tikz())
+
+
+def h_bai3_gv():
     f = Fig()
     O, R, A = (0, 0), 1.2, (2.8, 0)
     B, C = tangent_points(O, R, A)
@@ -214,7 +234,17 @@ def h_bai3():
     return f
 
 
-def h_vidu2():
+def h_bai3_nen():
+    f = Fig()
+    O, R, A = (0, 0), 1.2, (2.8, 0)
+    for n, p in [("O", O), ("A", A)]:
+        f.pt(n, p)
+    f.circle(O, R)
+    f.seg("O", "A")
+    return nen(f, h_bai3_gv().tikz())
+
+
+def h_vidu2_gv():
     f = Fig()
     O, R = (0, 0), 1.3
     A, B = (-1.3, 0), (1.3, 0)
@@ -239,7 +269,21 @@ def h_vidu2():
     return f
 
 
-def h_bai4():
+def h_vidu2_nen():
+    f = Fig()
+    O, R = (0, 0), 1.3
+    A, B = (-1.3, 0), (1.3, 0)
+    C = (-1.3, 2.0)
+    for n, p in [("O", O), ("A", A), ("B", B), ("C", C)]:
+        f.pt(n, p)
+    f.arc(O, R, 0, 180)
+    f.seg("A", "B")
+    f.seg("A", "C")
+    f.right("A", (0, 0), C)
+    return nen(f, h_vidu2_gv().tikz())
+
+
+def h_bai4_gv():
     f = Fig()
     O, R = (0, 0), 1.3
     B, D = (-1.3, 0), (1.3, 0)
@@ -252,7 +296,19 @@ def h_bai4():
     return f
 
 
-def h_bai5():
+def h_bai4_nen():
+    f = Fig()
+    O, R = (0, 0), 1.3
+    B, D = (-1.3, 0), (1.3, 0)
+    C = polar(60, R, O)
+    for n, p in [("O", O), ("B", B), ("D", D), ("C", C)]:
+        f.pt(n, p)
+    f.circle(O, R)
+    f.seg("B", "D")
+    return nen(f, h_bai4_gv().tikz())
+
+
+def h_bai5_gv():
     f = Fig()
     O, R, A = (0, 0), 1.2, (2.8, 0)
     B, C = tangent_points(O, R, A)
@@ -269,6 +325,20 @@ def h_bai5():
     return f
 
 
+def h_bai5_nen():
+    f = Fig()
+    O, R, A = (0, 0), 1.2, (2.8, 0)
+    B, C = tangent_points(O, R, A)
+    if B[1] < C[1]: B, C = C, B
+    H = foot(B, (0, 0), A)
+    for n, p in [("O", O), ("A", A), ("B", B), ("C", C), ("H", H)]:
+        f.pt(n, p)
+    f.circle(O, R)
+    f.seg("A", "B"); f.seg("A", "C"); f.seg("O", "A"); f.seg("B", "C")
+    f.right("H", "B", "A")
+    return nen(f, h_bai5_gv().tikz())
+
+
 def h_btvn1():
     f = Fig()
     O, R, A = (0, 0), 1.2, (2.8, 0)
@@ -283,7 +353,7 @@ def h_btvn1():
     return f
 
 
-def h_btvn2():
+def h_btvn2_gv():
     f = Fig()
     O, R, S = (0, 0), 1.2, (2.8, 0)
     A, B = tangent_points(O, R, S)
@@ -297,6 +367,16 @@ def h_btvn2():
     f.right("A", "S", "O")
     f.right("H", "A", "S")
     return f
+
+
+def h_btvn2_nen():
+    f = Fig()
+    O, R, S = (0, 0), 1.2, (2.8, 0)
+    for n, p in [("O", O), ("S", S)]:
+        f.pt(n, p)
+    f.circle(O, R)
+    f.seg("O", "S")
+    return nen(f, h_btvn2_gv().tikz())
 
 
 def khung(tikz: str) -> str:
@@ -433,10 +513,11 @@ def main():
                 "kind": "practice1",
                 "number": 3,
                 "title": "Luyện tập 1",
+                "teacher_note": "Hai ví dụ và các bài điền khuyết: GV vẽ mẫu trên bảng, HS tự vẽ các yếu tố còn thiếu vào hình nền trên phiếu (tiếp tuyến, bán kính, dây cung, ký hiệu góc vuông) trước khi điền lời giải — thêm khoảng 5 phút.",
                 "blocks": [
                     {
                         "type": "para",
-                        "text": "\\textbf{Đích của buổi học:} đề thi Câu IV.2 (đề Phúc Đồng) — ý a chứng minh bốn điểm $A$, $B$, $C$, $O$ cùng thuộc một đường tròn; ý b chứng minh $OA \\perp BC$ tại $H$ và $OA \\parallel CD$. Hai mạch dưới đây sẽ luyện từng ý."
+                        "text": "\\textbf{Đích của buổi học:} Đề thi Học kì I — THCS Phúc Đồng (Long Biên).[[br]]Ý a chứng minh bốn điểm $A$, $B$, $C$, $O$ cùng thuộc một đường tròn (Bài 6); ý b chứng minh $OA \\perp BC$ tại $H$ và $OA \\parallel CD$. Hai mạch dưới đây sẽ luyện từng ý."
                     },
                     {
                         "type": "para",
@@ -478,7 +559,7 @@ def main():
                     {
                         "type": "noted",
                         "variant": "example",
-                        "text": "\\textbf{Ví dụ 1.} (SGK Ví dụ 2 Bài 16) Cho hai tiếp tuyến $MA$ và $MB$ của đường tròn $(O; R)$ ($A$, $B$ là hai tiếp điểm). Gọi $I$ là giao điểm của $OM$ và $AB$.[[br]]"
+                        "text": "\\textbf{Ví dụ 1.} (SGK Ví dụ 2 Bài 16) Cho hai tiếp tuyến $MA$ và $MB$ của đường tròn $(O; R)$ ($A$, $B$ là hai tiếp điểm) cắt nhau tại $M$. Gọi $I$ là giao điểm của $OM$ và $AB$ (Hình 4). Vẽ tiếp vào Hình 4 các yếu tố còn thiếu theo đề.[[br]]"
                                 "Chứng minh rằng $OM \\perp AB$ tại $I$ và $I$ là trung điểm của $AB$.[[br]]"
                                 f"{LG}[[br]]"
                                 "Vì $MA$ và $MB$ là hai tiếp tuyến của $(O)$ cắt nhau tại $M$[[br]]"
@@ -487,12 +568,17 @@ def main():
                                 "$\\Rightarrow OM$ là đường trung trực của đoạn thẳng $[[fill:AB]]$.[[br]]"
                                 "$\\Rightarrow OM \\perp AB$ tại $I$ và $I$ là trung điểm của $AB$ (tính chất đường trung trực).[[br]]"
                                 "Vậy $OM \\perp AB$ tại $I$ và $I$ là $[[fill:trung điểm]]$ của $AB$.",
-                        "figure": fig(h_vidu1(), "Hình 4")
+                        "figure": {
+                            "tikz": h_vidu1_nen(),
+                            "tikz_gv": h_vidu1_gv().tikz(),
+                            "caption": "Hình 4",
+                            "pos": "right"
+                        }
                     },
                     P(
                         "Bài 3.", "NB4", "onclass",
-                        "Cho đường tròn $(O; R)$ và điểm $A$ nằm ngoài đường tròn. Kẻ hai tiếp tuyến $AB$, $AC$ ($B$, $C$ là các tiếp điểm). Gọi $H$ là giao điểm của $OA$ và $BC$.[[br]]"
-                        f"{KG}[[br]]"
+                        "Cho đường tròn $(O; R)$ và điểm $A$ nằm ngoài đường tròn. Kẻ hai tiếp tuyến $AB$, $AC$ ($B$, $C$ là các tiếp điểm). Gọi $H$ là giao điểm của $OA$ và $BC$ (Hình 5).[[br]]"
+                        "Vẽ tiếp vào Hình 5 các yếu tố còn thiếu theo đề, đánh dấu các góc vuông, rồi điền vào chỗ chấm để hoàn thành bài giải:[[br]]"
                         "a) [NB] Chứng minh bốn điểm $A$, $B$, $C$, $O$ cùng thuộc một đường tròn:[[br]]"
                         "Vì $AB$ là tiếp tuyến của $(O)$ tại $B$ $\\Rightarrow AB \\perp OB$ tại $B$[[br]]"
                         "$\\Rightarrow \\triangle ABO$ vuông tại $B$[[br]]"
@@ -509,7 +595,12 @@ def main():
                         "Vậy $OA \\perp BC$ tại $H$.",
                         answer="a) $AO$; $AO$; $AO$.[[br]]b) cắt nhau; $R$; $BC$; Vậy $OA \\perp BC$ tại $H$.",
                         level=1,
-                        figure=fig(h_bai3(), "Hình 5"),
+                        figure={
+                            "tikz": h_bai3_nen(),
+                            "tikz_gv": h_bai3_gv().tikz(),
+                            "caption": "Hình 5",
+                            "pos": "right"
+                        },
                         hints=["Góc vuông lấy từ tiếp tuyến vuông góc bán kính tại tiếp điểm", "Điểm cách đều hai đầu mút đoạn thẳng nằm trên đường trung trực"]
                     ),
                     {
@@ -520,7 +611,7 @@ def main():
                     {
                         "type": "noted",
                         "variant": "example",
-                        "text": "\\textbf{Ví dụ 2.} (Đề Ba Đình 2024) Cho nửa đường tròn $(O)$ đường kính $AB$. Kẻ tiếp tuyến $Ax$ cùng phía với nửa đường tròn. Lấy điểm $D$ thuộc nửa đường tròn ($D \\neq A, D \\neq B$). Tiếp tuyến tại $D$ của nửa đường tròn cắt $Ax$ tại $C$. Gọi $I$ là giao điểm của $OC$ và $AD$.[[br]]"
+                        "text": "\\textbf{Ví dụ 2.} (Đề Ba Đình 2024) Cho nửa đường tròn $(O)$ đường kính $AB$. Kẻ tiếp tuyến $Ax$ cùng phía với nửa đường tròn. Lấy điểm $D$ thuộc nửa đường tròn ($D \\neq A, D \\neq B$). Tiếp tuyến tại $D$ của nửa đường tròn cắt $Ax$ tại $C$. Gọi $I$ là giao điểm của $OC$ và $AD$ (Hình 6). Vẽ tiếp vào Hình 6 các yếu tố còn thiếu theo đề.[[br]]"
                                 "Chứng minh rằng $OC \\perp AD$ tại $I$ và $OC \\parallel BD$.[[br]]"
                                 f"{LG}[[br]]"
                                 "a) Vì $CA$ và $CD$ là hai tiếp tuyến của $(O)$ cắt nhau tại $C$[[br]]"
@@ -534,12 +625,17 @@ def main():
                                 "Lại có $OC \\perp AD$ (theo câu a).[[br]]"
                                 "$\\Rightarrow OC \\parallel BD$ (vì cùng vuông góc với $[[fill:AD]]$).[[br]]"
                                 "Vậy $[[fill:OC \\parallel BD]]$.",
-                        "figure": fig(h_vidu2(), "Hình 6")
+                        "figure": {
+                            "tikz": h_vidu2_nen(),
+                            "tikz_gv": h_vidu2_gv().tikz(),
+                            "caption": "Hình 6",
+                            "pos": "right"
+                        }
                     },
                     P(
                         "Bài 4.", "NB5", "onclass",
-                        "Cho đường tròn $(O)$ đường kính $BD$. Lấy điểm $C$ thuộc $(O)$ ($C$ khác $B$ và $D$).[[br]]"
-                        f"{KG}[[br]]"
+                        "Cho đường tròn $(O)$ đường kính $BD$. Lấy điểm $C$ thuộc $(O)$ ($C$ khác $B$ và $D$) (Hình 7).[[br]]"
+                        "Vẽ tiếp vào Hình 7 các đoạn thẳng $BC, CD, OC$, đánh dấu góc vuông tại $C$, rồi điền vào chỗ chấm để hoàn thành bài giải:[[br]]"
                         "Chứng minh $CD \\perp BC$:[[br]]"
                         "Xét $\\triangle BCD$ có $O$ là trung điểm của đường kính $BD$[[br]]"
                         "và điểm $C \\in (O)$ nên $OC = OB = OD = [[blank:1.0cm]]$[[br]]"
@@ -549,13 +645,18 @@ def main():
                         "Vậy $CD \\perp BC$.",
                         answer="$R$; $C$; Vậy $CD \\perp BC$.",
                         level=1,
-                        figure=fig(h_bai4(), "Hình 7"),
+                        figure={
+                            "tikz": h_bai4_nen(),
+                            "tikz_gv": h_bai4_gv().tikz(),
+                            "caption": "Hình 7",
+                            "pos": "right"
+                        },
                         hints=["Tam giác có đường trung tuyến bằng nửa cạnh huyền là tam giác vuông"]
                     ),
                     P(
                         "Bài 5.", "NB6", "onclass",
-                        "Cho đường tròn $(O)$ có hai tiếp tuyến $AB$, $AC$ cắt nhau tại $A$ ($B$, $C$ là hai tiếp điểm), $OA$ cắt $BC$ tại $H$. Kẻ đường kính $BD$. Biết $OA \\perp BC$ tại $H$.[[br]]"
-                        f"{KG}[[br]]"
+                        "Cho đường tròn $(O)$ có hai tiếp tuyến $AB$, $AC$ cắt nhau tại $A$ ($B$, $C$ là hai tiếp điểm), $OA$ cắt $BC$ tại $H$. Kẻ đường kính $BD$ của $(O)$ (Hình 8). Biết $OA \\perp BC$ tại $H$.[[br]]"
+                        "Vẽ tiếp vào Hình 8 đường kính $BD$ và đoạn thẳng $CD$, đánh dấu góc vuông tại $C$, rồi điền vào chỗ chấm để hoàn thành bài giải:[[br]]"
                         "a) [NB] Chứng minh $CD \\perp BC$:[[br]]"
                         "Xét $\\triangle BCD$ nội tiếp đường tròn $(O)$ có đường kính $BD$[[br]]"
                         "$\\Rightarrow \\triangle BCD$ vuông tại $C$[[br]]"
@@ -569,7 +670,12 @@ def main():
                         "Vậy $OA \\parallel CD$.",
                         answer="a) $BC$; Vậy $CD \\perp BC$.[[br]]b) $BC$; $BC$; Vậy $OA \\parallel CD$.",
                         level=1,
-                        figure=fig(h_bai5(), "Hình 8"),
+                        figure={
+                            "tikz": h_bai5_nen(),
+                            "tikz_gv": h_bai5_gv().tikz(),
+                            "caption": "Hình 8",
+                            "pos": "right"
+                        },
                         hints=["Hai đường thẳng phân biệt cùng vuông góc với đường thẳng thứ ba thì song song"]
                     )
                 ]
@@ -689,8 +795,8 @@ def main():
                     ),
                     P(
                         "BTVN 2.", "NB6", "btvn",
-                        "Cho đường tròn $(O)$ và điểm $S$ nằm ngoài đường tròn. Vẽ hai tiếp tuyến $SA$, $SB$ ($A$, $B$ là hai tiếp điểm). Gọi $H$ là giao điểm của $SO$ và $AB$.[[br]]"
-                        f"{KG}[[br]]"
+                        "Cho đường tròn $(O)$ và điểm $S$ nằm ngoài đường tròn. Vẽ hai tiếp tuyến $SA$, $SB$ ($A$, $B$ là hai tiếp điểm). Gọi $H$ là giao điểm của $SO$ và $AB$ (Hình 11).[[br]]"
+                        "Vẽ tiếp vào Hình 11 các yếu tố còn thiếu theo đề, đánh dấu các góc vuông, rồi điền vào chỗ chấm để hoàn thành bài giải:[[br]]"
                         "a) [NB] Nêu tính chất hai tiếp tuyến cắt nhau:[[br]]"
                         "Vì $SA$ và $SB$ là hai [[blank:2.0cm]] của $(O)$ cắt nhau tại $S$[[br]]"
                         "$\\Rightarrow SA = [[blank:1.1cm]]$ (tính chất hai tiếp tuyến [[blank:1.8cm]]).[[br]]"
@@ -706,7 +812,12 @@ def main():
                         "Vậy $SO \\perp AB$ tại $H$.",
                         answer="a) tiếp tuyến; $SB$; cắt nhau; $R$; Vậy $SA = SB$ và $OA = OB = R$.[[br]]b) trung trực; $AB$; Vậy $SO$ là đường trung trực của đoạn thẳng $AB$.[[br]]c) trung điểm; Vậy $SO \\perp AB$ tại $H$.",
                         level=1,
-                        figure=fig(h_btvn2(), "Hình 11")
+                        figure={
+                            "tikz": h_btvn2_nen(),
+                            "tikz_gv": h_btvn2_gv().tikz(),
+                            "caption": "Hình 11",
+                            "pos": "right"
+                        }
                     ),
                     P(
                         "BTVN 3.", "TH1+VD1", "btvn",
