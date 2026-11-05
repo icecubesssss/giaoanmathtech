@@ -1,17 +1,17 @@
 # Bộ quy chuẩn học liệu — bản tóm tắt trong repo
 
 > **Nguồn sự thật:** Google Sheet "Các đầu việc học liệu"
-> (`1NCJHzp0cU9zUaJIkw47UfLzrPUj09P-5prgiGG6erDs`). Các tab: *Xây dựng nguyên tắc học liệu*,
-> *Xây dựng bộ quy chuẩn học liệu* (L1–L5, T1–T8, Quy chuẩn 1–4, Cấu trúc 1–5),
-> *Quy trình chuẩn AI dựng bài*,
-> *Nguyên tắc xây dựng đề KT chương*, *Bộ quy chuẩn xây dựng đề KT chương*, *Quy trình AI soạn/dựng đề KT chương*,
-> *Nguyên tắc xây dựng đề thi GK, CK*, *Bộ quy chuẩn xây dựng đề thi GK, CK*, *Quy trình AI soạn/dựng đề thi GK, CK*,
-> *Điểm cần chốt*, *Từ điển nhãn*, *Định mức thời lượng*,
-> *Trọng số chấm câu*, *Cột chuẩn tab phân dạng*, *Lịch sử thay đổi*.
+> (`1NCJHzp0cU9zUaJIkw47UfLzrPUj09P-5prgiGG6erDs`). Các tab: _Xây dựng nguyên tắc học liệu_,
+> _Xây dựng bộ quy chuẩn học liệu_ (L1–L5, T1–T8, Quy chuẩn 1–4, Cấu trúc 1–5),
+> _Quy trình chuẩn AI dựng bài_,
+> _Nguyên tắc xây dựng đề KT chương_, _Bộ quy chuẩn xây dựng đề KT chương_, _Quy trình AI soạn/dựng đề KT chương_,
+> _Nguyên tắc xây dựng đề thi GK, CK_, _Bộ quy chuẩn xây dựng đề thi GK, CK_, _Quy trình AI soạn/dựng đề thi GK, CK_,
+> _Điểm cần chốt_, _Từ điển nhãn_, _Định mức thời lượng_,
+> _Trọng số chấm câu_, _Cột chuẩn tab phân dạng_, _Lịch sử thay đổi_.
 >
-> File này chỉ chép lại các quyết định Thầy đã chốt ngày 03/11/2026 (12 mục ở tab *Điểm cần chốt*)
+> File này chỉ chép lại các quyết định Thầy đã chốt ngày 03/11/2026 (12 mục ở tab _Điểm cần chốt_)
 > để tác nhân đọc repo là thấy. Sheet và file này lệch nhau thì **theo sheet**, rồi sửa file này.
-> Thứ tự ưu tiên khi hai tài liệu nói khác nhau: **Sheet quy chuẩn > file này > AGENTS.md > HUONG-DAN-*.md**.
+> Thứ tự ưu tiên khi hai tài liệu nói khác nhau: **Sheet quy chuẩn > file này > AGENTS.md > HUONG-DAN-\*.md**.
 
 ## 1. Chấm câu (L1–L5, T1–T8)
 
@@ -37,7 +37,7 @@
 
 ## 3. Thời lượng
 
-- **Một bảng định mức duy nhất:** `config/tier_spec.json` (chép sang tab *Định mức thời lượng*).
+- **Một bảng định mức duy nhất:** `config/tier_spec.json` (chép sang tab _Định mức thời lượng_).
   Phút/câu theo khối × vai trò (GV giảng ví dụ / HS làm trên lớp / BTVN) × mức.
 - **Bài nhiều ý:** mỗi ý là một câu theo mức của ý đó, cộng lại. HS tự vẽ hình: +5′ một lần cho cả bài.
   Ví dụ lớp 9, trên lớp, "a) NB · b) TH · c) VD" = 1,5 + 6 + 12 = 19,5′.
@@ -52,7 +52,7 @@
 
 ## 5. Tab phân dạng
 
-- Cột A–M dùng chung mọi khối (tab *Cột chuẩn tab phân dạng*); từ cột N: Phân loại câu, Đề xuất thuyết minh,
+- Cột A–M dùng chung mọi khối (tab _Cột chuẩn tab phân dạng_); từ cột N: Phân loại câu, Đề xuất thuyết minh,
   Trạng thái, Loại ngay, Đã soi ảnh, Lớp C/B/X, Chọn tay, Loại nguồn, Có hình, **Mã bài gốc**.
 - **Dòng cộng dồn là chuẩn cho tab mới:** bài nhiều ý tăng mức có thêm dòng "… - a", "… - a - b", mỗi dòng chép đủ
   giả thiết. Tab lớp 9 đã có (một dòng mỗi bài + cột "Mức độ từng ý") giữ nguyên, repo tự suy ra dòng cộng dồn.
@@ -71,22 +71,22 @@ sau khi HS đã làm trọn bài đó ít nhất một lần; (4) lớp C không
 
 ## 7. Lớp
 
-| Lớp | Học sinh | Đích | Trần |
-|---|---|---|---|
-| C | nền trung bình – yếu | chắc kiến thức SGK, điểm kiểm tra trên trường | VD |
-| B | trung bình – khá | kỳ I (GK1, CK1) trần **9,5–10**; kỳ II (GK2, CK2) trần **9–9,5** | VDC, ít câu VDC hơn lớp A; câu cuối dạy theo tỉ lệ ra đề |
-| A | khá – giỏi | điểm tối đa trên trường | VDC, dày hơn lớp B |
-| X | giỏi, thi trường chất lượng cao / chuyên | làm được cả câu cuối đề | VDC |
+| Lớp | Học sinh                                 | Đích                                                             | Trần                                                     |
+| --- | ---------------------------------------- | ---------------------------------------------------------------- | -------------------------------------------------------- |
+| C   | nền trung bình – yếu                     | chắc kiến thức SGK, điểm kiểm tra trên trường                    | VD                                                       |
+| B   | trung bình – khá                         | kỳ I (GK1, CK1) trần **9,5–10**; kỳ II (GK2, CK2) trần **9–9,5** | VDC, ít câu VDC hơn lớp A; câu cuối dạy theo tỉ lệ ra đề |
+| A   | khá – giỏi                               | điểm tối đa trên trường                                          | VDC, dày hơn lớp B                                       |
+| X   | giỏi, thi trường chất lượng cao / chuyên | làm được cả câu cuối đề                                          | VDC                                                      |
 
 ## 8. Nơi làm việc
 
-| Việc | Làm ở đâu | Duyệt ở đâu |
-|---|---|---|
-| Luật | Sheet quy chuẩn | Sheet |
-| Phân dạng, chọn câu, chấm | Google Sheet gốc, mỗi khối một file, mỗi chương một tab | Sheet |
-| Thuyết minh | repo (`thuyet-minh.json`) → PDF; số câu/phút xem trước trên Sheet | **PDF** |
-| Phiếu | repo → 3 PDF → Drive (chỉ sau approve) | PDF |
-| Tiến độ | sheet tiến độ nhóm, tab theo khuôn 7C (vd "TIẾN ĐỘ 9C - 2026 - ThaiTD") | Sheet |
+| Việc                      | Làm ở đâu                                                               | Duyệt ở đâu |
+| ------------------------- | ----------------------------------------------------------------------- | ----------- |
+| Luật                      | Sheet quy chuẩn                                                         | Sheet       |
+| Phân dạng, chọn câu, chấm | Google Sheet gốc, mỗi khối một file, mỗi chương một tab                 | Sheet       |
+| Thuyết minh               | repo (`thuyet-minh.json`) → PDF; số câu/phút xem trước trên Sheet       | **PDF**     |
+| Phiếu                     | repo → 3 PDF → Drive (chỉ sau approve)                                  | PDF         |
+| Tiến độ                   | sheet tiến độ nhóm, tab theo khuôn 7C (vd "TIẾN ĐỘ 9C - 2026 - ThaiTD") | Sheet       |
 
 ## 9. Bài hình chứng minh & Tiêu chuẩn khung vẽ hình (Thầy chốt 04/11/2026)
 
@@ -115,39 +115,36 @@ sau khi HS đã làm trọn bài đó ít nhất một lần; (4) lớp C không
 - **Phút tính từ chính bài đó, không theo cảm nhận:** có sơ đồ = đọc đề + đọc sơ đồ + số dòng lời giải × phút/dòng, bỏ phần nghĩ của mô hình `config/phut_thuc.json`; vẽ hình cộng riêng. Lệnh: `python scripts/phut_so_do.py <phiếu.json> --ghi`.
 - **Cột Đề xuất thuyết minh ghi rõ ý:** mỗi mã ghi ý a, ý b, ý a-b hoặc cả bài.
 
-## 11b. Lớp C: câu VD ưu tiên hai dạng tỉ lệ cao nhất của Kì I (Thầy nói 05/11/2026, chưa ghi lên sheet quy chuẩn)
-
-- **Chỉ dùng để chọn câu VD.** Vẫn dạy đủ kiến thức cần thiết trong SGK; không dùng luật này để cắt kiến thức, bỏ buổi.
-- **Khung chương hiện có giữ nguyên.** Thầy: "tạm thời cứ để đó", chưa dựng lại phiếu nào vì luật này.
-- **Thống kê:** tách theo kỹ thuật, tách riêng VD và VDC (xem `docs/quy-trinh-ngan-hang-chuong.md`, bước 6b).
-
 ## 12. Quy chuẩn và Quy trình Đề kiểm tra chương 45 phút (Thầy chốt 26/09/2026 & 05/11/2026)
 
 > Tra cứu chi tiết tại 3 tab chuyên biệt trên Google Sheet:
+>
 > 1. **Nguyên tắc xây dựng đề KT chương** (8 nguyên tắc khảo thí học chẩn đoán quá trình)
 > 2. **Bộ quy chuẩn xây dựng đề KT chương** (Bộ lọc Loại ngay L_KTC 1–5, Tiêu chí T_KTC 1–3, Quy chuẩn hồ sơ QC_KTC 1)
 > 3. **Quy trình AI soạn/dựng đề KT chương** (Tiến trình 6 bước phối hợp giữa Thầy và AI)
 
 ### 12.1. Quy chuẩn cốt lõi (L_KTC 1–5 & T_KTC 1–3 & QC_KTC 1)
+
 - **Mục tiêu khảo thí & Thời lượng:** Đánh giá quá trình (Diagnostic / Formative Assessment), rà soát lỗ hổng kiến thức ngay cuối chương trước khi chuyển sang chương mới. Thời lượng chuẩn **45 phút**, nằm ở buổi cuối của mỗi chương (spec ≥ 3 phiếu).
 - **Cân buổi học:** Quỹ buổi cuối co theo `he_so_con_lai`: 45' luyện tập tổng kết + 45' kiểm tra độc lập (Thầy chốt 26/09/2026).
 - **Cơ cấu hình thức câu hỏi (Bắt buộc đủ 3 hình thức — L_KTC 3):**
-  * **Trắc nghiệm 4 lựa chọn (A/B/C/D):** 2,0 điểm (khoảng 4–8 câu NB/TH nhanh).
-  * **Điền khuyết / Trả lời ngắn:** 1,0 điểm (khoảng 2–4 chỗ điền kiểm tra công thức, số mũ, ĐKXĐ, giá trị biên).
-  * **Tự luận ngắn:** 7,0 điểm (các bài toán cốt lõi của chương, có phân rã ý a/b/c).
-  * Đề thiếu 1 trong 3 hình thức bị **LOẠI NGAY** (L_KTC 3).
+  - **Trắc nghiệm 4 lựa chọn (A/B/C/D):** 2,0 điểm (khoảng 4–8 câu NB/TH nhanh).
+  - **Điền khuyết / Trả lời ngắn:** 1,0 điểm (khoảng 2–4 chỗ điền kiểm tra công thức, số mũ, ĐKXĐ, giá trị biên).
+  - **Tự luận ngắn:** 7,0 điểm (các bài toán cốt lõi của chương, có phân rã ý a/b/c).
+  - Đề thiếu 1 trong 3 hình thức bị **LOẠI NGAY** (L_KTC 3).
 - **Nghiêm cấm trùng đề trên lớp (LUẬT CỨNG — L_KTC 1):** 100% câu hỏi trong đề kiểm tra chương phải dùng số liệu mới, tuyệt đối **KHÔNG trùng số liệu** với các bài ví dụ mẫu hoặc bài luyện tập trên lớp của phiếu học tập trong chương.
 - **Bám sát tiến độ SGK KNTT (L_KTC 2):** 100% nội dung đề kiểm tra nằm trọn vẹn trong phạm vi chương vừa học theo phân phối SGK Kết nối tri thức. CẤM đưa kiến thức vượt trước hoặc đảo chương.
 - **Khung phân tầng năng lực theo lớp (T_KTC 3):**
-  * **Tầng C:** 40% NB (4,0đ) - 40% TH (4,0đ) - 20% VD (2,0đ) - **0% VDC** (CẤM câu VDC). Có phần TN và điền khuyết nhận biết rõ ràng giúp HS nắm chắc điểm cơ bản.
-  * **Tầng B:** 30% NB (3,0đ) - 40% TH (4,0đ) - 20% VD (2,0đ) - 10% VDC (1,0đ).
-  * **Tầng A/X:** 20% NB (2,0đ) - 30% TH (3,0đ) - 30% VD (3,0đ) - 20% VDC (2,0đ).
+  - **Tầng C:** 40% NB (4,0đ) - 40% TH (4,0đ) - 20% VD (2,0đ) - **0% VDC** (CẤM câu VDC). Có phần TN và điền khuyết nhận biết rõ ràng giúp HS nắm chắc điểm cơ bản.
+  - **Tầng B:** 30% NB (3,0đ) - 40% TH (4,0đ) - 20% VD (2,0đ) - 10% VDC (1,0đ).
+  - **Tầng A/X:** 20% NB (2,0đ) - 30% TH (3,0đ) - 30% VD (3,0đ) - 20% VDC (2,0đ).
 - **Lời giải chuẩn thi (`loi_giai_thi_gate` — L_KTC 5):** CẤM dấu $\Leftrightarrow$, CẤM dùng hệ thức lượng trực tiếp (phải chứng minh tam giác đồng dạng), bài hình BẮT BUỘC có hình vẽ TikZ ở đầu lời giải.
 - **Hồ sơ đóng gói chuẩn (QC_KTC 1):**
-  * File `de-kiem-tra.json` (DeSpec) đặt cạnh `thuyet-minh.json`.
-  * Thư mục `kiem-tra-chuong/` chứa tờ đề HS + ma trận-đáp án GV (`theme: de_thi`).
+  - File `de-kiem-tra.json` (DeSpec) đặt cạnh `thuyet-minh.json`.
+  - Thư mục `kiem-tra-chuong/` chứa tờ đề HS + ma trận-đáp án GV (`theme: de_thi`).
 
 ### 12.2. Tiến trình 6 bước AI & Giáo viên soạn Đề kiểm tra chương
+
 1. **Bước 1 (Khởi tạo hồ sơ & Cấu hình giờ):** Khai báo `kiem_tra_phut: 45` trong `thuyet-minh.json` (buổi cuối chương ≥ 3 phiếu); sinh khung `de-kiem-tra.json` cạnh spec.
 2. **Bước 2 (Thiết kế ma trận 45 phút):** Lập ma trận kiến thức bám sát SGK KNTT; phối hợp chuẩn 3 hình thức (TN 2,0đ + Điền 1,0đ + Tự luận 7,0đ); cân đối tỉ lệ theo tầng C/B/A/X.
 3. **Bước 3 (Soạn câu hỏi & Lời giải chuẩn thi):** Soạn câu hỏi với số liệu mới 100%; giải kiểm thử bằng SymPy; viết lời giải chuẩn thi (bỏ $\Leftrightarrow$, bỏ HTL trực tiếp, vẽ TikZ chuẩn giải tích).
@@ -160,42 +157,45 @@ sau khi HS đã làm trọn bài đó ít nhất một lần; (4) lớp C không
 ## 13. Quy chuẩn và Quy trình Đề thi Giữa kì, Cuối kì (Thầy chốt 05/11/2026)
 
 > Tra cứu chi tiết tại 3 tab chuyên biệt trên Google Sheet:
+>
 > 1. **Nguyên tắc xây dựng đề thi GK, CK** (9 nguyên tắc khảo thí tổng kết chuẩn CTT Parallel Forms)
 > 2. **Bộ quy chuẩn xây dựng đề thi GK, CK** (Bộ lọc Loại ngay L_GKCK 1–5, Tiêu chí T_GKCK 1–6, Quy chuẩn hồ sơ QC_GKCK 1–4)
 > 3. **Quy trình AI soạn/dựng đề thi GK, CK** (Tiến trình 7 bước phối hợp giữa Thầy và AI + 2 luật cứng)
 
 ### 13.1. Quy chuẩn cốt lõi (L_GKCK 1–5 & T_GKCK 1–6 & QC_GKCK 1–4)
+
 - **Nguồn đề & Năm học (LUẬT CỨNG 05/11/2026 — L_GKCK 1 & L_GKCK 2):**
-  * **Chỉ lấy đề thi từ năm học 2024–2025 trở đi** (2024–2025, 2025–2026...) vì đây là năm học chính thức toàn bộ các khối THCS hoàn tất chu trình cuốn chiếu và thi theo Chương trình GDPT 2018. Tuyệt đối **LOẠI BỎ** toàn bộ đề thuộc năm học 2023-2024 trở về trước (L_GKCK 1).
-  * **100% đề thi thật các trường THCS và Phòng GD&ĐT thuộc HÀ NỘI**. CẤM lấy đề tỉnh khác (L_GKCK 2).
-  * **100% bóc tách từ ảnh scan đề gốc rõ nét**. CẤM copy trực tiếp từ text OCR/pdftotext làm đề (L_GKCK 4).
+  - **Chỉ lấy đề thi từ năm học 2024–2025 trở đi** (2024–2025, 2025–2026...) vì đây là năm học chính thức toàn bộ các khối THCS hoàn tất chu trình cuốn chiếu và thi theo Chương trình GDPT 2018. Tuyệt đối **LOẠI BỎ** toàn bộ đề thuộc năm học 2023-2024 trở về trước (L_GKCK 1).
+  - **100% đề thi thật các trường THCS và Phòng GD&ĐT thuộc HÀ NỘI**. CẤM lấy đề tỉnh khác (L_GKCK 2).
+  - **100% bóc tách từ ảnh scan đề gốc rõ nét**. CẤM copy trực tiếp từ text OCR/pdftotext làm đề (L_GKCK 4).
 - **Lọc lệch tiến độ SGK KNTT (L_GKCK 3):** Rà soát kho đề, loại bỏ 100% đề có kiến thức kỳ sau hoặc đảo kỳ so với SGK Kết nối tri thức (Thầy chốt: "bỏ hết cho nhất quán"). Chuyển đề lệch sang `inputs/refs/de-thi-lech-kntt/` kèm `ly-do.json`.
 - **Mô hình Bộ 4 đề — 3 Đề ôn tương đương + 1 Đề thi chính thức (CTT Parallel Forms — T_GKCK 3 & T_GKCK 4):**
-  * Mỗi đợt thi xây dựng **3 đề ôn tập tương đương nhau + 1 đề thi chính thức**.
-  * **Đề ôn 1, 2:** Chứa các dạng bài top 1 (tần suất xuất hiện cao nhất trong đề thi thật Hà Nội).
-  * **Đề ôn 3:** Mở rộng sang dạng bài top 2 (tần suất thấp hơn hoặc cấu hình bài toán phong phú hơn).
-  * **Đề thi chính thức:** Cùng ma trận, cấu trúc và thang điểm với 3 đề ôn, nhưng lấy câu hỏi từ trường/quận khác chưa xuất hiện trong 3 đề ôn để đo năng lực thực chất, chống học vẹt.
+  - Mỗi đợt thi xây dựng **3 đề ôn tập tương đương nhau + 1 đề thi chính thức**.
+  - **Đề ôn 1, 2:** Chứa các dạng bài top 1 (tần suất xuất hiện cao nhất trong đề thi thật Hà Nội).
+  - **Đề ôn 3:** Mở rộng sang dạng bài top 2 (tần suất thấp hơn hoặc cấu hình bài toán phong phú hơn).
+  - **Đề thi chính thức:** Cùng ma trận, cấu trúc và thang điểm với 3 đề ôn, nhưng lấy câu hỏi từ trường/quận khác chưa xuất hiện trong 3 đề ôn để đo năng lực thực chất, chống học vẹt.
 - **Luật Rải nguồn quận/trường (Chống thiên vị cục bộ — T_GKCK 5):**
-  * Mỗi đề lấy câu từ **≥ 4 quận/huyện** khác nhau tại Hà Nội.
-  * Không quận/huyện nào chiếm **quá 40%** tổng số điểm của 1 đề.
-  * Cả bộ 4 đề: không quận nào chiếm **quá 25%**, không trường nào chiếm **quá 15%** tổng số điểm.
-  * Hàm `kiem_nguon()` trong script đề tự kiểm soát luật rải nguồn.
+  - Mỗi đề lấy câu từ **≥ 4 quận/huyện** khác nhau tại Hà Nội.
+  - Không quận/huyện nào chiếm **quá 40%** tổng số điểm của 1 đề.
+  - Cả bộ 4 đề: không quận nào chiếm **quá 25%**, không trường nào chiếm **quá 15%** tổng số điểm.
+  - Hàm `kiem_nguon()` trong script đề tự kiểm soát luật rải nguồn.
 - **Khung ma trận & Phân tầng năng lực (T_GKCK 6):**
-  * **Tầng C:** 40% NB (4,0đ) - 40% TH (4,0đ) - 20% VD (2,0đ) - **0% VDC** (CẤM VDC). Bắt buộc có phần trắc nghiệm/điền khuyết nhận biết rõ ràng để HS gỡ điểm.
-  * **Tầng B:** 20-30% NB (2-3đ) - 40-50% TH (4-5đ) - 20-30% VD (2-3đ) - 5-10% VDC (0,5-1,0đ). Đích trần 9,5-10 (Kỳ I), 9-9,5 (Kỳ II).
-  * **Tầng A/X:** Tăng cường câu phân hóa sâu, bài hình đa bước, cực trị thực tế.
+  - **Tầng C:** 40% NB (4,0đ) - 40% TH (4,0đ) - 20% VD (2,0đ) - **0% VDC** (CẤM VDC). Bắt buộc có phần trắc nghiệm/điền khuyết nhận biết rõ ràng để HS gỡ điểm.
+  - **Tầng B:** 20-30% NB (2-3đ) - 40-50% TH (4-5đ) - 20-30% VD (2-3đ) - 5-10% VDC (0,5-1,0đ). Đích trần 9,5-10 (Kỳ I), 9-9,5 (Kỳ II).
+  - **Tầng A/X:** Tăng cường câu phân hóa sâu, bài hình đa bước, cực trị thực tế.
 - **Lời giải chuẩn thi (`loi_giai_thi_gate` — L_GKCK 5):**
-  * **CẤM dấu $\Leftrightarrow$**: Mỗi phép biến đổi viết một dòng ngắt bằng `[[br]]`.
-  * **CẤM dùng hệ thức lượng trực tiếp**: Bắt buộc chứng minh 2 tam giác đồng dạng (g.g) rồi mới suy ra tỉ số và tích hình học.
-  * **Bài hình BẮT BUỘC có HÌNH VẼ TikZ chuẩn ở đầu lời giải**.
-  * Phân rã điểm thành phần đến 0,25đ từng dòng (`\hfill (0,25đ)`), tổng khớp biểu điểm câu.
-  * BĐT/Cực trị: Dùng $m - (x-a)^2 \le m$ hoặc Cauchy lớp 9; CẤM dùng công thức đỉnh parabol $x = -b/(2a)$ của lớp 10.
+  - **CẤM dấu $\Leftrightarrow$**: Mỗi phép biến đổi viết một dòng ngắt bằng `[[br]]`.
+  - **CẤM dùng hệ thức lượng trực tiếp**: Bắt buộc chứng minh 2 tam giác đồng dạng (g.g) rồi mới suy ra tỉ số và tích hình học.
+  - **Bài hình BẮT BUỘC có HÌNH VẼ TikZ chuẩn ở đầu lời giải**.
+  - Phân rã điểm thành phần đến 0,25đ từng dòng (`\hfill (0,25đ)`), tổng khớp biểu điểm câu.
+  - BĐT/Cực trị: Dùng $m - (x-a)^2 \le m$ hoặc Cauchy lớp 9; CẤM dùng công thức đỉnh parabol $x = -b/(2a)$ của lớp 10.
 - **Hình thức in ấn & Bàn giao (QC_GKCK 3 & QC_GKCK 4):**
-  * Theme `de_thi`, `"trinh_bay": "thoang"` (font 13pt, hình to rõ). Đề HS in vừa khít 2 trang A4.
-  * Bản GV có ma trận kiến thức + nguồn đề + lời giải chi tiết + lưu ý chấm. Kèm phiếu theo dõi tiến bộ.
-  * Bộ 8 file PDF đồng bộ lên đúng thư mục Google Drive của trung tâm.
+  - Theme `de_thi`, `"trinh_bay": "thoang"` (font 13pt, hình to rõ). Đề HS in vừa khít 2 trang A4.
+  - Bản GV có ma trận kiến thức + nguồn đề + lời giải chi tiết + lưu ý chấm. Kèm phiếu theo dõi tiến bộ.
+  - Bộ 8 file PDF đồng bộ lên đúng thư mục Google Drive của trung tâm.
 
 ### 13.2. Tiến trình 7 bước AI & Giáo viên soạn Đề thi Giữa kì, Cuối kì
+
 1. **Bước 1 (Thu thập & Kiểm kê):** Thu thập đề thi thật Hà Nội năm học 2024–2025 trở đi theo khối/kỳ (`fetch_de_thi_khoi.py --tu-nam 2024`); lập kho ảnh scan rõ nét và kho text tra cứu.
 2. **Bước 2 (Lọc lệch KNTT):** Quét từ khóa đối chiếu SGK KNTT (`soat_lech_kntt.py`); chuyển đề lệch sang kho riêng kèm lý do (`inputs/refs/de-thi-lech-kntt/`).
 3. **Bước 3 (Lập lưới dạng & Thống kê):** Gắn mã dạng bằng tay từng bài/ý con vào `luoi-dang/<ky>.json`; thống kê tần suất dạng bài (% xuất hiện) để chốt khung đề (`thong_ke_luoi_dang.py`).
@@ -203,5 +203,3 @@ sau khi HS đã làm trọn bài đó ít nhất một lần; (4) lớp C không
 5. **Bước 5 (Soạn đề & Lời giải chuẩn thi):** Chép đề từ ảnh scan gốc; giải thử 100% bằng SymPy; viết lời giải chuẩn thi (bỏ $\Leftrightarrow$, bỏ HTL trực tiếp, tính toạ độ vẽ TikZ chuẩn giải tích).
 6. **Bước 6 (Gác cổng & Soát PDF bằng mắt):** Chạy `loi_giai_thi_gate` và `de_gate`; build 8 file PDF (4 đề HS + 4 đáp án GV); soát PDF bằng mắt (không trang mồ côi, không tràn lề); Thầy gõ `approve`.
 7. **Bước 7 (Đóng gói & Lên Drive):** Đồng bộ trọn bộ 8 file PDF và hồ sơ học liệu lên đúng thư mục Google Drive của trung tâm (`sync-drive`).
-
-
