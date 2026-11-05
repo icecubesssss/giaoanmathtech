@@ -29,7 +29,7 @@ from config import settings
 from src.compiler import docx_xml as X
 from src.compiler.docx_text import (Box, Cell, Ctx, DMath, Fig, Fmt, Img, M, P, PageBreak, Reader,
                                     T, Tab, Tbl, WriteLines, color_hex, dots, set_palette, stars)
-from src.compiler.jinja_renderer import (_texify, fig_side, load_tokens, mcq_cols, split_reflection,
+from src.compiler.jinja_renderer import (SO_DO_NGUOC_CHU_THICH, _texify, fig_side, load_tokens, mcq_cols, split_reflection,
                                          tach_loi_giai, tach_y_con)
 from src.compiler.omml import M_NS, convert_many, is_only_space
 
@@ -231,13 +231,20 @@ class LessonIR:
         if b.figure is not None and (b.figure.tikz or b.figure.image):
             de, lg = tach_loi_giai(b.text)
             inner = self.blocks(de, where) + [self.fig_of(b.figure, where, force=0.40, max_h=3.0)]
+            inner += self.so_do_nguoc(b, where)
             inner += self.blocks(lg, where) if lg else []
         else:
-            inner = self.blocks(b.text, where)
+            inner = self.blocks(b.text, where) + self.so_do_nguoc(b, where)
         if spec:
             frame, title, bg, fg = spec
             return Box(inner, frame=self.col(frame), title=title, title_bg=bg, title_fg=fg)
         return Box(inner, frame=C["rule"], frame_pt=0.4, pad_pt=8)
+
+    def so_do_nguoc(self, b, where) -> list:
+        if not b.so_do_nguoc:
+            return []
+        nhan = r"\textbf{Sơ đồ ngược.}" + (f" {SO_DO_NGUOC_CHU_THICH}" if b.type == "noted" and b.variant == "theory" else "")
+        return self.blocks(nhan, where) + [Fig(snippet=_texify(b.so_do_nguoc, self.show), max_w_frac=1.0, max_h_cm=7.5)]
 
     def opener(self, b, where) -> Box:
         C = self.C
@@ -279,6 +286,7 @@ class LessonIR:
                                         max_h=6.5 if thoang else 5.0))
             if ycon:
                 body += self.blocks(ycon, where)
+            body += self.so_do_nguoc(b, where)
             if b.options:
                 n = mcq_cols(b.options)
                 cells = [Cell([P([T(f"{'ABCDEFGH'[k]}.", Fmt(bold=True)), T("\u00A0")] + self.inl(o, where),

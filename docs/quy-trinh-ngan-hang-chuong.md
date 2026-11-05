@@ -16,6 +16,7 @@ Ví dụ dưới đây là chương V Hình 9 (`G=lop-9 S=hinh-hoc C=5`). Lệnh
 | 4 | **Ghi tab**: mỗi khối một `update_values` (song song bằng subagent, 1 khối/agent), rồi một `batchUpdate` = `find-replace.json`, rồi `sortRange` (C giảm, E tăng, K giảm) | connector Sheets | mọi khối báo success |
 | 5 | **Đối chiếu**: `get_values` cả tab → JSON, so từng ô với bản gộp; rồi chụp snapshot | `make bank-doi-chieu RAW=… G=… S=… C=…` | 0 ô lệch, 0 mã `~XX~` sót; snapshot ghi xong |
 | 6 | **Soát đủ bài** cho các phiếu của chương | `make du-bai GRADE=… SUBJECT=… CHUONG=… SO_PHIEU=…` | ✓ ĐỦ — THIẾU thì thêm nguồn vào khung, quay lại bước 1 |
+| 6b | **Thống kê tỉ lệ dạng trong đề thật, tách riêng câu VD và câu VDC** (Thầy 05/11/2026: làm phân dạng chương thì phải có). Tính % đề theo từng kỳ (Kì I, Kì II, Vào 10). Dạng nào có nhiều cách giải thì đọc từng ý, tách theo **kỹ thuật**; nhãn gộp che mất (ch.V: "Tích 59%" nhưng khuôn hai cát tuyến bắc cầu chỉ 6%). Ghi lên tab "Thống kê dạng <chương>" trước khi dựng thuyết minh | thêm `dang_y`, `ky_thuat` vào khung chương rồi `python scripts/thong_ke_dang_vd.py <lớp> <môn> <chương> --json <file>` (script hiện gộp VD và VDC thành "VD+", tách riêng phải đếm thêm theo cột "Mức độ từng ý") | có bảng %, có kỹ thuật của dạng định làm đích |
 | 7 | Dựng **thuyết minh** theo 4 bước A–D bên dưới (quy trình phân dạng 30/10/2026), `source_refs` = Mã câu (cột M); `thuyetminh_gate.check_nguon_sheet` chặn mã ngoài tab | xem mục dưới | `make check-tm` sạch |
 
 Luật cứng:

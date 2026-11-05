@@ -316,6 +316,10 @@ def check_scaffold_rails(spec: ThuyetMinhSpec) -> list[str]:
     can_hinh = spec.subject in _SUBJ_CAN_HINH
     for p in spec.phieu:
         co = {r.gian_giao for r in p.rows if r.band == "NB"}
+        if any(r.phut_so_do for r in p.rows):   # sơ đồ ngược cũng là giàn giáo điền khuyết (Thầy 05/11/2026)
+            co.add("dien-khuyet")
+        if any(r.phut_so_do and r.ve_tiep for r in p.rows):   # HS vẽ tiếp hình nền của chính bài có sơ đồ
+            co.add("ve-hinh")
         thieu = []
         if can_hinh and "ve-hinh" not in co:
             thieu.append("'ve-hinh' (vẽ hình từ giả thiết + đánh dấu dữ kiện)")
@@ -672,7 +676,9 @@ def check_nb_theo_ppd(spec: ThuyetMinhSpec) -> tuple[list[str], list[str]]:
         loai = lambda r: (r.loai or "").strip()  # noqa: E731
         tong = sum(_so_cau(r) for r in nb)
         tach = sum(_so_cau(r) for r in nb if loai(r) == "NB tách TH")
-        if tong:
+        # Bài theo sơ đồ ngược thay chỗ câu NB tách TH; HS vẫn phải đọc sơ đồ nên bài vẫn là TH (Thầy 05/11/2026).
+        co_so_do = any(r.phut_so_do for r in p.rows)
+        if tong and not co_so_do:
             pct = tach / tong * 100
             if not (lo <= pct <= hi):
                 canh_bao.append(
@@ -692,7 +698,7 @@ def check_nb_theo_ppd(spec: ThuyetMinhSpec) -> tuple[list[str], list[str]]:
                 f"{', '.join(mo_coi[:8])}")
         if (spec.tier or "").upper() == "C":
             thieu = [lb for lb in ("NB tách TH", LOAI_NB_KIEN_THUC_CU)
-                     if not any(loai(r) == lb for r in nb)]
+                     if not any(loai(r) == lb for r in nb) and not (co_so_do and lb == "NB tách TH")]
             if thieu:
                 msg = (f"thuyetminh: {tag} — lớp C phải có câu {' và '.join(repr(t) for t in thieu)} "
                        f"(quy trình phân dạng 30/10/2026: 'Với lớp C thì cần có câu NB sinh ra từ "

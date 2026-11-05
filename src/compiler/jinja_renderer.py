@@ -131,6 +131,19 @@ def split_reflection(blocks):
     return out
 
 
+SO_DO_NGUOC_CHU_THICH = "Muốn có ô trên thì cần đủ các ô nối vào nó; ô xám có ngay từ giả thiết."
+
+
+def _ten_khoi(b) -> str:
+    """Tên ngắn của khối cho chú thích slide: 'Dạng 1', 'Bài 4', 'Ví dụ 2'."""
+    if getattr(b, "title", ""):
+        return b.title.split(".")[0].capitalize()
+    if getattr(b, "label", ""):
+        return b.label.rstrip(".")
+    m = re.match(r"\\textbf\{(Ví dụ \d+)", getattr(b, "text", "") or "")
+    return m.group(1) if m else "Ví dụ"
+
+
 class _WrapFigure:
     """Hình bóc ra từ cờ `[[wrap]]` của `statement`, đủ giống FigureBlock để
     `_slide_blocks.j2` dựng được ở cột phải."""
@@ -233,6 +246,12 @@ def group_slide_segments(blocks):
                 if fig is not None:
                     segs[-1]["figures"].append(fig)
         segs[-1]["text"].append(b)
+        # Sơ đồ ngược cao, nhét chung block chữ thì tràn slide ⇒ tách một slide riêng ngay sau thẻ.
+        if typ in ("noted", "problem") and getattr(b, "so_do_nguoc", ""):
+            sd = _WrapFigure(_texify(b.so_do_nguoc))
+            sd.width = r"0.54\textwidth"
+            sd.caption = f"Sơ đồ ngược — {_ten_khoi(b)}. Ô xám: có ngay từ giả thiết."
+            segs.append({"text": [], "figures": [sd]})
     segs = _tidy_segments(segs)
     for seg in segs:
         seg["mode"] = _seg_mode(seg)
@@ -381,6 +400,7 @@ def _env(show_solution: bool = False) -> Environment:
     env.globals["mcq_cols"] = mcq_cols
     env.globals["fig_side"] = fig_side
     env.globals["tach_loi_giai"] = tach_loi_giai
+    env.globals["so_do_nguoc_chu_thich"] = SO_DO_NGUOC_CHU_THICH
     env.globals["tach_y_con"] = tach_y_con
     return env
 

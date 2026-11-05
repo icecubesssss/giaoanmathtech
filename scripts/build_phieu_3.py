@@ -862,4 +862,6 @@ def main():
 
 
 if __name__ == "__main__":
-    main()
+    # Bản dựng cũ: chạy lại sẽ ghi đè phiếu 3 đã sửa. JSON là nguồn sự thật; bản sửa 04/11/2026 ở
+    # inputs/refs/ngan-hang-sheet/lop-9/hinh-hoc/chuong-05/p3_ban2.py.
+    raise SystemExit("build_phieu_3.py đã cũ, không chạy lại. Sửa thẳng file JSON của phiếu 3.")

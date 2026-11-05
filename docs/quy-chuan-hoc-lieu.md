@@ -3,7 +3,10 @@
 > **Nguồn sự thật:** Google Sheet "Các đầu việc học liệu"
 > (`1NCJHzp0cU9zUaJIkw47UfLzrPUj09P-5prgiGG6erDs`). Các tab: *Xây dựng nguyên tắc học liệu*,
 > *Xây dựng bộ quy chuẩn học liệu* (L1–L5, T1–T8, Quy chuẩn 1–4, Cấu trúc 1–5),
-> *Quy trình chuẩn AI dựng bài*, *Điểm cần chốt*, *Từ điển nhãn*, *Định mức thời lượng*,
+> *Quy trình chuẩn AI dựng bài*,
+> *Nguyên tắc xây dựng đề KT chương*, *Bộ quy chuẩn xây dựng đề KT chương*, *Quy trình AI soạn/dựng đề KT chương*,
+> *Nguyên tắc xây dựng đề thi GK, CK*, *Bộ quy chuẩn xây dựng đề thi GK, CK*, *Quy trình AI soạn/dựng đề thi GK, CK*,
+> *Điểm cần chốt*, *Từ điển nhãn*, *Định mức thời lượng*,
 > *Trọng số chấm câu*, *Cột chuẩn tab phân dạng*, *Lịch sử thay đổi*.
 >
 > File này chỉ chép lại các quyết định Thầy đã chốt ngày 03/11/2026 (12 mục ở tab *Điểm cần chốt*)
@@ -97,4 +100,108 @@ sau khi HS đã làm trọn bài đó ít nhất một lần; (4) lớp C không
     1. Các bài Ví dụ mẫu vẽ cùng GV và các bài điền khuyết Luyện tập 1 / BTVN mà HS phải vẽ tiếp vào hình nền (`b.figure.tikz_gv`): Bán kính đường tròn nền cố định chuẩn **$R = 1.5$ cm** (đường kính $3.0$ cm, không dùng $R = 1.2$ cm bé tí). Khi render dọc dưới đề, dùng tỉ lệ chuẩn **`[5cm]{0.5}`** ($0.5\linewidth$) để hình mở rộng thoáng đạt, đủ diện tích cho học sinh đặt compa, thước kẻ, vẽ thêm tiếp tuyến, dây cung, góc vuông và điểm giao.
     2. Các bài Luyện tập 2 và BTVN tự luận (`draw: true` trong khung `\drawbox[5.0]`): Đường tròn nền $(O)$ in sẵn trong khung cũng có bán kính chuẩn **$R = 1.5$ cm**, cố định tâm $O(0,0)$ và vùng vẽ để HS tự tay dựng hình chuẩn xác.
   - **Với bài KHÔNG phải vẽ hình (hình cho sẵn hoàn chỉnh):** Như bài trắc nghiệm nhận biết (Bài 1, Bài 2), bài hình thực tế đo lường... giữ nguyên kích thước nhỏ gọn (`0.44\linewidth` hoặc cột phải) để tiết kiệm trang in.
+
+## 10. Không trùng đề, hình nền, ô trống (Thầy chốt 04/11/2026)
+
+- **Mỗi bài, ví dụ trong phiếu một đề gốc khác.** Luyện cùng khuôn thì bốc đề khác trong tab phân dạng, kể cả câu khung bài giải và phần BTVN. Cổng `check_khong_trung_de` chặn.
+- **Hình nền đúng thứ tự vẽ:** chỉ in yếu tố đề cho trước bước dựng đầu tiên. Cổng `check_hinh_nen_thu_tu` chặn.
+- **Ô trống** rơi vào từ khoá cần nhớ hoặc chỗ phải suy ra, ít nhất 6 ô cho 10 dòng, và đáp án không được in sẵn ở đề ý hoặc dòng dưới. Cổng `check_mat_do_o_trong` cảnh báo mật độ; chỗ khoét vẫn phải đọc.
+
+## 11. Sơ đồ ngược cho phiếu chứng minh (Thầy chốt 05/11/2026)
+
+- **Ba chỗ dùng:** thẻ phương pháp (dưới các bước); ví dụ mẫu (trước Lời giải, ô trống trùng ô của lời giải để không lộ đáp án); bài HS trình bày vào vở ở Luyện tập 1 và BTVN (đề, hình, sơ đồ đầy đủ, không khung điền khuyết). Bản mẫu: phiếu 2 chương V lớp 9C.
+- **Cách đọc:** ô trên cùng là điều cần chứng minh, mũi tên đi từ ô dưới lên ô trên, ô xám là điều có ngay từ giả thiết.
+- **Mức:** sơ đồ được tính là giàn giáo điền khuyết, bài vẫn là câu TH vì HS còn phải đọc sơ đồ. Phiếu lớp C có bài theo sơ đồ thì không bắt buộc câu NB tách TH.
+- **Phút tính từ chính bài đó, không theo cảm nhận:** có sơ đồ = đọc đề + đọc sơ đồ + số dòng lời giải × phút/dòng, bỏ phần nghĩ của mô hình `config/phut_thuc.json`; vẽ hình cộng riêng. Lệnh: `python scripts/phut_so_do.py <phiếu.json> --ghi`.
+- **Cột Đề xuất thuyết minh ghi rõ ý:** mỗi mã ghi ý a, ý b, ý a-b hoặc cả bài.
+
+## 11b. Lớp C: câu VD ưu tiên hai dạng tỉ lệ cao nhất của Kì I (Thầy nói 05/11/2026, chưa ghi lên sheet quy chuẩn)
+
+- **Chỉ dùng để chọn câu VD.** Vẫn dạy đủ kiến thức cần thiết trong SGK; không dùng luật này để cắt kiến thức, bỏ buổi.
+- **Khung chương hiện có giữ nguyên.** Thầy: "tạm thời cứ để đó", chưa dựng lại phiếu nào vì luật này.
+- **Thống kê:** tách theo kỹ thuật, tách riêng VD và VDC (xem `docs/quy-trinh-ngan-hang-chuong.md`, bước 6b).
+
+## 12. Quy chuẩn và Quy trình Đề kiểm tra chương 45 phút (Thầy chốt 26/09/2026 & 05/11/2026)
+
+> Tra cứu chi tiết tại 3 tab chuyên biệt trên Google Sheet:
+> 1. **Nguyên tắc xây dựng đề KT chương** (8 nguyên tắc khảo thí học chẩn đoán quá trình)
+> 2. **Bộ quy chuẩn xây dựng đề KT chương** (Bộ lọc Loại ngay L_KTC 1–5, Tiêu chí T_KTC 1–3, Quy chuẩn hồ sơ QC_KTC 1)
+> 3. **Quy trình AI soạn/dựng đề KT chương** (Tiến trình 6 bước phối hợp giữa Thầy và AI)
+
+### 12.1. Quy chuẩn cốt lõi (L_KTC 1–5 & T_KTC 1–3 & QC_KTC 1)
+- **Mục tiêu khảo thí & Thời lượng:** Đánh giá quá trình (Diagnostic / Formative Assessment), rà soát lỗ hổng kiến thức ngay cuối chương trước khi chuyển sang chương mới. Thời lượng chuẩn **45 phút**, nằm ở buổi cuối của mỗi chương (spec ≥ 3 phiếu).
+- **Cân buổi học:** Quỹ buổi cuối co theo `he_so_con_lai`: 45' luyện tập tổng kết + 45' kiểm tra độc lập (Thầy chốt 26/09/2026).
+- **Cơ cấu hình thức câu hỏi (Bắt buộc đủ 3 hình thức — L_KTC 3):**
+  * **Trắc nghiệm 4 lựa chọn (A/B/C/D):** 2,0 điểm (khoảng 4–8 câu NB/TH nhanh).
+  * **Điền khuyết / Trả lời ngắn:** 1,0 điểm (khoảng 2–4 chỗ điền kiểm tra công thức, số mũ, ĐKXĐ, giá trị biên).
+  * **Tự luận ngắn:** 7,0 điểm (các bài toán cốt lõi của chương, có phân rã ý a/b/c).
+  * Đề thiếu 1 trong 3 hình thức bị **LOẠI NGAY** (L_KTC 3).
+- **Nghiêm cấm trùng đề trên lớp (LUẬT CỨNG — L_KTC 1):** 100% câu hỏi trong đề kiểm tra chương phải dùng số liệu mới, tuyệt đối **KHÔNG trùng số liệu** với các bài ví dụ mẫu hoặc bài luyện tập trên lớp của phiếu học tập trong chương.
+- **Bám sát tiến độ SGK KNTT (L_KTC 2):** 100% nội dung đề kiểm tra nằm trọn vẹn trong phạm vi chương vừa học theo phân phối SGK Kết nối tri thức. CẤM đưa kiến thức vượt trước hoặc đảo chương.
+- **Khung phân tầng năng lực theo lớp (T_KTC 3):**
+  * **Tầng C:** 40% NB (4,0đ) - 40% TH (4,0đ) - 20% VD (2,0đ) - **0% VDC** (CẤM câu VDC). Có phần TN và điền khuyết nhận biết rõ ràng giúp HS nắm chắc điểm cơ bản.
+  * **Tầng B:** 30% NB (3,0đ) - 40% TH (4,0đ) - 20% VD (2,0đ) - 10% VDC (1,0đ).
+  * **Tầng A/X:** 20% NB (2,0đ) - 30% TH (3,0đ) - 30% VD (3,0đ) - 20% VDC (2,0đ).
+- **Lời giải chuẩn thi (`loi_giai_thi_gate` — L_KTC 5):** CẤM dấu $\Leftrightarrow$, CẤM dùng hệ thức lượng trực tiếp (phải chứng minh tam giác đồng dạng), bài hình BẮT BUỘC có hình vẽ TikZ ở đầu lời giải.
+- **Hồ sơ đóng gói chuẩn (QC_KTC 1):**
+  * File `de-kiem-tra.json` (DeSpec) đặt cạnh `thuyet-minh.json`.
+  * Thư mục `kiem-tra-chuong/` chứa tờ đề HS + ma trận-đáp án GV (`theme: de_thi`).
+
+### 12.2. Tiến trình 6 bước AI & Giáo viên soạn Đề kiểm tra chương
+1. **Bước 1 (Khởi tạo hồ sơ & Cấu hình giờ):** Khai báo `kiem_tra_phut: 45` trong `thuyet-minh.json` (buổi cuối chương ≥ 3 phiếu); sinh khung `de-kiem-tra.json` cạnh spec.
+2. **Bước 2 (Thiết kế ma trận 45 phút):** Lập ma trận kiến thức bám sát SGK KNTT; phối hợp chuẩn 3 hình thức (TN 2,0đ + Điền 1,0đ + Tự luận 7,0đ); cân đối tỉ lệ theo tầng C/B/A/X.
+3. **Bước 3 (Soạn câu hỏi & Lời giải chuẩn thi):** Soạn câu hỏi với số liệu mới 100%; giải kiểm thử bằng SymPy; viết lời giải chuẩn thi (bỏ $\Leftrightarrow$, bỏ HTL trực tiếp, vẽ TikZ chuẩn giải tích).
+4. **Bước 4 (Gác cổng tự động):** Chạy kiểm tra qua 3 cổng gác: `loi_giai_thi_gate` (luật trình bày), `de_gate.check_de` (ma trận, thang điểm 10, thời lượng 45'), `thuyetminh_gate.check_kiem_tra_chuong`.
+5. **Bước 5 (Render PDF & Soát thẩm mỹ):** Build 2 bản PDF (`theme: de_thi`): tờ đề HS (vừa khít 1–2 trang A4) và ma trận-đáp án GV. Soát PDF bằng mắt (không trang mồ côi, không tràn lề).
+6. **Bước 6 (Thầy duyệt & Đóng gói):** Thầy xem PDF, đánh giá độ phủ và chất lượng chẩn đoán; duyệt bằng `approve`; lưu trữ đồng bộ trong thư mục `kiem-tra-chuong/`.
+
+---
+
+## 13. Quy chuẩn và Quy trình Đề thi Giữa kì, Cuối kì (Thầy chốt 05/11/2026)
+
+> Tra cứu chi tiết tại 3 tab chuyên biệt trên Google Sheet:
+> 1. **Nguyên tắc xây dựng đề thi GK, CK** (9 nguyên tắc khảo thí tổng kết chuẩn CTT Parallel Forms)
+> 2. **Bộ quy chuẩn xây dựng đề thi GK, CK** (Bộ lọc Loại ngay L_GKCK 1–5, Tiêu chí T_GKCK 1–6, Quy chuẩn hồ sơ QC_GKCK 1–4)
+> 3. **Quy trình AI soạn/dựng đề thi GK, CK** (Tiến trình 7 bước phối hợp giữa Thầy và AI + 2 luật cứng)
+
+### 13.1. Quy chuẩn cốt lõi (L_GKCK 1–5 & T_GKCK 1–6 & QC_GKCK 1–4)
+- **Nguồn đề & Năm học (LUẬT CỨNG 05/11/2026 — L_GKCK 1 & L_GKCK 2):**
+  * **Chỉ lấy đề thi từ năm học 2024–2025 trở đi** (2024–2025, 2025–2026...) vì đây là năm học chính thức toàn bộ các khối THCS hoàn tất chu trình cuốn chiếu và thi theo Chương trình GDPT 2018. Tuyệt đối **LOẠI BỎ** toàn bộ đề thuộc năm học 2023-2024 trở về trước (L_GKCK 1).
+  * **100% đề thi thật các trường THCS và Phòng GD&ĐT thuộc HÀ NỘI**. CẤM lấy đề tỉnh khác (L_GKCK 2).
+  * **100% bóc tách từ ảnh scan đề gốc rõ nét**. CẤM copy trực tiếp từ text OCR/pdftotext làm đề (L_GKCK 4).
+- **Lọc lệch tiến độ SGK KNTT (L_GKCK 3):** Rà soát kho đề, loại bỏ 100% đề có kiến thức kỳ sau hoặc đảo kỳ so với SGK Kết nối tri thức (Thầy chốt: "bỏ hết cho nhất quán"). Chuyển đề lệch sang `inputs/refs/de-thi-lech-kntt/` kèm `ly-do.json`.
+- **Mô hình Bộ 4 đề — 3 Đề ôn tương đương + 1 Đề thi chính thức (CTT Parallel Forms — T_GKCK 3 & T_GKCK 4):**
+  * Mỗi đợt thi xây dựng **3 đề ôn tập tương đương nhau + 1 đề thi chính thức**.
+  * **Đề ôn 1, 2:** Chứa các dạng bài top 1 (tần suất xuất hiện cao nhất trong đề thi thật Hà Nội).
+  * **Đề ôn 3:** Mở rộng sang dạng bài top 2 (tần suất thấp hơn hoặc cấu hình bài toán phong phú hơn).
+  * **Đề thi chính thức:** Cùng ma trận, cấu trúc và thang điểm với 3 đề ôn, nhưng lấy câu hỏi từ trường/quận khác chưa xuất hiện trong 3 đề ôn để đo năng lực thực chất, chống học vẹt.
+- **Luật Rải nguồn quận/trường (Chống thiên vị cục bộ — T_GKCK 5):**
+  * Mỗi đề lấy câu từ **≥ 4 quận/huyện** khác nhau tại Hà Nội.
+  * Không quận/huyện nào chiếm **quá 40%** tổng số điểm của 1 đề.
+  * Cả bộ 4 đề: không quận nào chiếm **quá 25%**, không trường nào chiếm **quá 15%** tổng số điểm.
+  * Hàm `kiem_nguon()` trong script đề tự kiểm soát luật rải nguồn.
+- **Khung ma trận & Phân tầng năng lực (T_GKCK 6):**
+  * **Tầng C:** 40% NB (4,0đ) - 40% TH (4,0đ) - 20% VD (2,0đ) - **0% VDC** (CẤM VDC). Bắt buộc có phần trắc nghiệm/điền khuyết nhận biết rõ ràng để HS gỡ điểm.
+  * **Tầng B:** 20-30% NB (2-3đ) - 40-50% TH (4-5đ) - 20-30% VD (2-3đ) - 5-10% VDC (0,5-1,0đ). Đích trần 9,5-10 (Kỳ I), 9-9,5 (Kỳ II).
+  * **Tầng A/X:** Tăng cường câu phân hóa sâu, bài hình đa bước, cực trị thực tế.
+- **Lời giải chuẩn thi (`loi_giai_thi_gate` — L_GKCK 5):**
+  * **CẤM dấu $\Leftrightarrow$**: Mỗi phép biến đổi viết một dòng ngắt bằng `[[br]]`.
+  * **CẤM dùng hệ thức lượng trực tiếp**: Bắt buộc chứng minh 2 tam giác đồng dạng (g.g) rồi mới suy ra tỉ số và tích hình học.
+  * **Bài hình BẮT BUỘC có HÌNH VẼ TikZ chuẩn ở đầu lời giải**.
+  * Phân rã điểm thành phần đến 0,25đ từng dòng (`\hfill (0,25đ)`), tổng khớp biểu điểm câu.
+  * BĐT/Cực trị: Dùng $m - (x-a)^2 \le m$ hoặc Cauchy lớp 9; CẤM dùng công thức đỉnh parabol $x = -b/(2a)$ của lớp 10.
+- **Hình thức in ấn & Bàn giao (QC_GKCK 3 & QC_GKCK 4):**
+  * Theme `de_thi`, `"trinh_bay": "thoang"` (font 13pt, hình to rõ). Đề HS in vừa khít 2 trang A4.
+  * Bản GV có ma trận kiến thức + nguồn đề + lời giải chi tiết + lưu ý chấm. Kèm phiếu theo dõi tiến bộ.
+  * Bộ 8 file PDF đồng bộ lên đúng thư mục Google Drive của trung tâm.
+
+### 13.2. Tiến trình 7 bước AI & Giáo viên soạn Đề thi Giữa kì, Cuối kì
+1. **Bước 1 (Thu thập & Kiểm kê):** Thu thập đề thi thật Hà Nội năm học 2024–2025 trở đi theo khối/kỳ (`fetch_de_thi_khoi.py --tu-nam 2024`); lập kho ảnh scan rõ nét và kho text tra cứu.
+2. **Bước 2 (Lọc lệch KNTT):** Quét từ khóa đối chiếu SGK KNTT (`soat_lech_kntt.py`); chuyển đề lệch sang kho riêng kèm lý do (`inputs/refs/de-thi-lech-kntt/`).
+3. **Bước 3 (Lập lưới dạng & Thống kê):** Gắn mã dạng bằng tay từng bài/ý con vào `luoi-dang/<ky>.json`; thống kê tần suất dạng bài (% xuất hiện) để chốt khung đề (`thong_ke_luoi_dang.py`).
+4. **Bước 4 (Thiết kế ma trận & Rải nguồn):** Lập `de-kiem-tra.json` (DeSpec); rải nguồn ≥ 4 quận (hàm `kiem_nguon()`); render PDF Thuyết minh ma trận đề bằng `make de` để Thầy duyệt.
+5. **Bước 5 (Soạn đề & Lời giải chuẩn thi):** Chép đề từ ảnh scan gốc; giải thử 100% bằng SymPy; viết lời giải chuẩn thi (bỏ $\Leftrightarrow$, bỏ HTL trực tiếp, tính toạ độ vẽ TikZ chuẩn giải tích).
+6. **Bước 6 (Gác cổng & Soát PDF bằng mắt):** Chạy `loi_giai_thi_gate` và `de_gate`; build 8 file PDF (4 đề HS + 4 đáp án GV); soát PDF bằng mắt (không trang mồ côi, không tràn lề); Thầy gõ `approve`.
+7. **Bước 7 (Đóng gói & Lên Drive):** Đồng bộ trọn bộ 8 file PDF và hồ sơ học liệu lên đúng thư mục Google Drive của trung tâm (`sync-drive`).
+
 

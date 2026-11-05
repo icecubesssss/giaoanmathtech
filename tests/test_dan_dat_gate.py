@@ -3,7 +3,8 @@ mượn hình bài trên, dễ → khó, khuôn bốn điểm, điền khuyết 
 trước BTVN; và giờ thực của khung bài giải (3′/thẻ) + dang_id nhiều mã."""
 from src.schema import LessonPackage
 from src.validators.dan_dat_gate import (
-    check_de_den_kho, check_dich_buoi, check_khung_bai_giai, check_khuon_bon_diem,
+    check_de_den_kho, check_dich_buoi, check_hinh_nen_thu_tu, check_khong_trung_de, check_khung_bai_giai,
+    check_khuon_bon_diem, check_mat_do_o_trong,
     check_muon_hinh, check_tieu_de_truoc_btvn, la_khuon_moi)
 from src.validators.duration_gate import check_duration
 
@@ -231,3 +232,58 @@ def test_luyen_tap_2_va_btvn_chung_minh_bi_chan():
         ]
     )
     assert check_luyen_tap_2_va_btvn_chung_minh(les_sach) == []
+
+
+# ── Luật 04/11/2026: không trùng đề · hình nền đúng thứ tự · ô trống đủ dày ──
+_DE_A = ("Cho đường tròn $(O; R)$ và điểm $A$ nằm ngoài đường tròn. Từ $A$ vẽ hai tiếp tuyến $AB$, $AC$ "
+         "($B$, $C$ là hai tiếp điểm). Gọi $H$ là giao điểm của $OA$ và $BC$.[[br]]a) Chứng minh $OA \\perp BC$.")
+
+
+def test_trung_de_cung_ten_diem_bi_chan():
+    les = _les([_bai("Bài 1.", _DE_A), _bai("Bài 2.", _DE_A + "[[br]]b) Chứng minh thêm.")])
+    assert check_khong_trung_de(les)
+
+
+def test_trung_de_chi_doi_ten_diem_bi_chan():
+    doi = _DE_A.replace("$A$", "$M$").replace("$AB$", "$MP$").replace("$AC$", "$MQ$")
+    assert check_khong_trung_de(_les([_bai("Bài 1.", _DE_A), _bai("Bài 2.", doi)]))
+
+
+def test_cung_cau_hinh_khac_loi_dan_bi_chan():
+    """Ca thật: Bài 3 phiếu 3 chép đề đích Phúc Đồng, chỉ đổi "Từ A vẽ" thành "Kẻ"."""
+    khung = ("Cho đường tròn $(O; R)$ và điểm $A$ ngoài đường tròn. Kẻ tiếp tuyến $AB$, $AC$ "
+             "($B$, $C$ là tiếp điểm), $H$ là giao của $OA$ và $BC$.[[br]]a) Chứng minh.")
+    assert check_khong_trung_de(_les([_bai("Bài 3.", khung), _bai("Bài 6.", _DE_A)]))
+
+
+def test_de_khac_cau_hinh_khong_bi_chan():
+    khac = ("Cho nửa đường tròn $(O; R)$ đường kính $BC$. Trên nửa đường tròn vẽ tiếp tuyến $Bx$, "
+            "$A$ là điểm thuộc nửa đường tròn.[[br]]a) Chứng minh bốn điểm cùng thuộc đường tròn.")
+    assert not check_khong_trung_de(_les([_bai("Bài 1.", _DE_A), _bai("Bài 2.", khac)]))
+
+
+def _nen(ten):
+    nut = "".join(f"\\node at (0,0) {{${n}$}};" for n in ten)
+    return {"tikz": "\\begin{tikzpicture}" + nut + "\\end{tikzpicture}",
+            "tikz_gv": "\\begin{tikzpicture}\\draw (0,0)--(1,0);\\end{tikzpicture}", "caption": "Hình 1"}
+
+
+def test_hinh_nen_in_diem_dung_sau_bi_chan():
+    de = "Cho nửa đường tròn $(O)$ đường kính $AB$. Kẻ tiếp tuyến $Ax$. Lấy $C$ trên $Ax$.[[br]]a) Chứng minh."
+    assert check_hinh_nen_thu_tu(_les([_bai("Bài 1.", de, figure=_nen("OABC"))]))
+    assert not check_hinh_nen_thu_tu(_les([_bai("Bài 1.", de, figure=_nen("OAB"))]))
+
+
+def test_khung_it_o_bi_canh_bao():
+    dong = "[[br]]".join(f"Dòng {i} của bài giải" for i in range(5))
+    it = _bai("Bài 1.", f"Chứng minh {KG}[[br]]{dong}[[br]]$OA = [[blank:1cm]]$")
+    assert check_mat_do_o_trong(_les([it]))
+    du = "[[br]]".join(f"Dòng {i}: $x = [[blank:1cm]]$" for i in range(4))
+    assert not check_mat_do_o_trong(_les([_bai("Bài 1.", f"Chứng minh {KG}[[br]]{du}")]))
+
+
+def test_de_ngan_khong_bi_coi_la_trung():
+    """Phiếu 1 đã duyệt: đề ngắn chỉ có $\\pi$ không phải trùng cấu hình."""
+    a = "Tính độ dài đường tròn (lấy $\\pi \\approx 3{,}14$), bán kính cho trong bảng dưới đây."
+    b = "Tính diện tích hình tròn (lấy $\\pi \\approx 3{,}14$), bán kính cho trong bảng dưới đây."
+    assert not check_khong_trung_de(_les([_bai("Bài 1.", a), _bai("Bài 2.", b)]))

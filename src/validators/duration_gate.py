@@ -142,6 +142,21 @@ def draw_counts(lesson: LessonPackage) -> dict[str, dict[str, int]]:
     return counts
 
 
+def so_do_tally(lesson: LessonPackage) -> dict[str, dict[str, list[float]]]:
+    """Bài có `phut_so_do` (Thầy 05/11/2026): {đoạn: {band: [số bài, tổng phút]}}, thay định mức của band."""
+    out = {"onclass": {b: [0, 0.0] for b in _BANDS}, "btvn": {b: [0, 0.0] for b in _BANDS}}
+    for st in lesson.stages:
+        for b in st.blocks:
+            phut = getattr(b, "phut_so_do", 0) or 0
+            if getattr(b, "type", "") != "problem" or not phut:
+                continue
+            seg = "btvn" if getattr(b, "tier", "") == "btvn" else "onclass"
+            o = out[seg][_LEVEL_TO_BAND.get(b.level, "TH")]
+            o[0] += 1
+            o[1] += phut
+    return out
+
+
 def ve_tiep_minutes(lesson: LessonPackage) -> dict[str, dict[str, float]]:
     """Phút HS VẼ TIẾP lên hình nền in sẵn (`ve_tiep`, Thầy 04/11/2026: +2–4′ mỗi câu),
     cộng vào band theo `level` của bài như phút vẽ hình."""
@@ -305,6 +320,7 @@ def check_duration(lesson: LessonPackage) -> list[str]:
     figs = figure_given_counts(lesson)  # {onclass|btvn: {band: số câu trên hình VẼ SẴN}}
     khungs = khung_counts(lesson)       # {onclass|btvn: {band: số câu trong KHUNG BÀI GIẢI}}
     vtiep = ve_tiep_minutes(lesson)     # {onclass|btvn: {band: phút HS vẽ tiếp lên hình nền}}
+    sodo = so_do_tally(lesson)          # {onclass|btvn: {band: [số bài có sơ đồ ngược, tổng phút]}}
     dm = rates.get("_draw_minutes", draw_minutes(spec))      # tầng có thể khai hằng số riêng
     qm = rates.get("_quick_minutes", quick_minutes(spec))
     km = rates.get("_khung_minutes", khung_minutes(spec))
@@ -316,8 +332,9 @@ def check_duration(lesson: LessonPackage) -> list[str]:
         n_khung = khungs[seg][b] if b == "NB" else 0
         n_fig = figs[seg][b]                # (NB trong khung đã bị loại khỏi figs)
         per_fig = qm if b == "NB" else rate * 0.5
-        n_thuong = counts[seg][b] - n_fig - n_khung
-        return n_thuong * rate + n_fig * per_fig + n_khung * km + draws[seg][b] * dm + vtiep[seg][b]
+        n_sd, phut_sd = sodo[seg][b]
+        n_thuong = counts[seg][b] - n_fig - n_khung - n_sd
+        return n_thuong * rate + n_fig * per_fig + n_khung * km + phut_sd + draws[seg][b] * dm + vtiep[seg][b]
 
     minutes = {seg: {b: _band_minutes(seg, b) for b in _BANDS} for seg in budget_dict}
 

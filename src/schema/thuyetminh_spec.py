@@ -76,6 +76,11 @@ class SpecRow(BaseModel):
         "", description="Vai trò giàn giáo: 've-hinh' = vẽ hình từ giả thiết + đánh dấu "
                         "dữ kiện; 'dien-khuyet' = điền khuyết bài giải/chứng minh mẫu"
     )
+    # Bài HS trình bày theo sơ đồ ngược (Thầy 05/11/2026): sơ đồ cũng là giàn giáo điền khuyết, bài vẫn
+    # là TH. Phút/câu theo từng đoạn do scripts/phut_so_do.py tính từ chính bài đó, chưa gồm phút vẽ.
+    phut_so_do: dict[str, float] = Field(
+        default_factory=dict, description="{đoạn: phút/câu} của bài có sơ đồ ngược; có khoá thì thay định mức"
+    )
     # QUY TRÌNH GIẢI BÀI (Thầy chốt 30/08/2026): mọi dạng VẬN DỤNG — không phải VDC —
     # phải in sẵn quy trình giải NGAY Ở TỪNG BÀI trong phiếu, chứ không để HS mò.
     # Khai các bước ở đây; thuyetminh_gate CHẶN dòng band VD của tầng B mà bỏ trống.
@@ -168,6 +173,8 @@ def row_minutes(row: SpecRow, rates: dict) -> dict[str, float]:
     dm = draw_minutes(ts)
 
     def per_cau(seg: str) -> float:
+        if seg in row.phut_so_do:
+            return row.phut_so_do[seg]
         rate = rates.get(seg, {}).get(row.band, 0.0)
         if row.khung and row.band == "NB" and seg != "vidu":   # ví dụ = GV giảng
             return rates.get("_khung_minutes", khung_minutes(ts))

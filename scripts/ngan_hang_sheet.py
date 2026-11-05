@@ -348,6 +348,9 @@ def cmd_de_xuat(a) -> int:
         return 1
     idx = {(r + [""] * (cot_ma + 1))[cot_ma]: True for r in values[1:]}
     idx = {m: {"ma": m} for m in idx if m}
+    cot_y = next((i for i, h in enumerate(head) if nhs.COLS["muc_y"].lower() in (h or "").lower()), None)
+    nhieu_y = {(r + [""] * (cot_ma + 1))[cot_ma] for r in values[1:]
+               if cot_y is not None and len(nhs.parse_muc_y((r + [""] * (cot_y + 1))[cot_y])) > 1}
     dung: dict[str, list[str]] = defaultdict(list)
     ngoai: list[str] = []
     for p in spec.phieu:
@@ -359,7 +362,8 @@ def cmd_de_xuat(a) -> int:
                     ngoai.append(f"P{p.code} {r.band}{i}: {ref}")
                     continue
                 y = ref[len(hit["ma"]):].lstrip(".-")
-                dung[hit["ma"]].append(nhan + (f" (ý {y})" if y else ""))
+                # Thầy 05/11/2026: bài a, b, c mà không ghi ý thì không biết bốc ý nào ⇒ luôn in rõ.
+                dung[hit["ma"]].append(nhan + (f" (ý {y})" if y else " (cả bài)" if hit["ma"] in nhieu_y else ""))
     cot = [["Đề xuất thuyết minh"]]
     for r in values[1:]:
         ma = (r + [""] * (cot_ma + 1))[cot_ma]

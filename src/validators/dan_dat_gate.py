@@ -26,7 +26,11 @@ CHẶN (trả về ở `check_dan_dat_chan`):
   5. `check_tieu_de_truoc_btvn` — tiêu đề (para heading) đứng ngay trước bài BTVN đầu tiên
      rơi lên trang sơ đồ tư duy khi BTVN in trang riêng.
 
+  8. `check_khong_trung_de` — hai bài/ví dụ trong phiếu không được cùng một đề (Thầy 04/11).
+  9. `check_hinh_nen_thu_tu` — hình nền không in điểm đề mới dựng ở bước sau (Thầy 04/11).
+
 CẢNH BÁO (`check_dan_dat_canh_bao`):
+ 10. `check_mat_do_o_trong` — khung điền khuyết quá ít ô (Thầy 04/11).
   6. `check_dich_buoi` — phiếu chia "Mạch" phải có đoạn "Đích của buổi học" trỏ đúng bài
      đích (bài cuối Luyện tập 2).
 """
@@ -359,12 +363,131 @@ def check_phieu_btvn(lesson: LessonPackage) -> list[str]:
     return []
 
 
+# ── 8. Không trùng đề trong một phiếu (Thầy 04/11/2026: "Thêm luật cứng không được trùng") ──
+_NHAN_NGUON = re.compile(r"^\s*(?:\\textbf\{\s*Ví dụ\s*\d+\s*[.:]?\s*\}\s*)?(?:\([^)]*\)\s*)?")
+_HET_GIA_THIET = re.compile(r"Vẽ tiếp|Điền vào|\[\[br\]\]\s*[a-e1-9]\)|Chứng minh|\(Hình\s*\d+\)")
+_THE = re.compile(r"\[(?:NB|TH|VD|VDC)\]\s*")
+NGUONG_TRUNG_CHU = 0.85      # giả thiết gần như y nguyên, kể cả tên điểm
+NGUONG_TRUNG_DOI_TEN = 0.92  # cùng câu chữ, chỉ đổi tên điểm
+NGUONG_TRUNG_TOAN = 0.7      # cùng cấu hình, cùng tên điểm, chỉ khác lời dẫn
+
+
+def _gia_thiet(b) -> str:
+    """Phần giả thiết của đề: bỏ nhãn "Ví dụ N", ngoặc nguồn đầu đề và phần yêu cầu."""
+    s = _THE.sub("", _de(b))
+    s = _NHAN_NGUON.sub("", s, count=1)
+    m = _HET_GIA_THIET.search(s)
+    return re.sub(r"\s+", " ", s[:m.start()] if m else s).strip()
+
+
+def _gia_thiet_an_ten(s: str) -> str:
+    return re.sub(r"\$[^$]*\$", "$", s)
+
+
+def _ky_hieu(s: str) -> set[str]:
+    """Các đoạn thẳng, điểm trong giả thiết: "$AB$", "$OA$"… (bỏ khoảng trắng, ngoặc)."""
+    return {re.sub(r"[\s(),;]", "", m) for m in re.findall(r"\$([^$]*)\$", s)} - {""}
+
+
+def _giong_ky_hieu(s1: str, s2: str) -> float:
+    a, b = _ky_hieu(s1), _ky_hieu(s2)
+    return len(a & b) / len(a | b) if a and b else 0.0
+
+
+def check_khong_trung_de(lesson: LessonPackage) -> list[str]:
+    """Hai bài (hoặc ví dụ và bài) trong một phiếu không được cùng một đề.
+
+    Thầy chốt sau khi Bài 3 + Bài 5 phiếu 3 ch.V 9C chép chính đề đích Phúc Đồng rồi Bài 6 lại
+    yêu cầu HS "tự trình bày" đúng đề đó. Muốn luyện cùng khuôn thì bốc ĐỀ KHÁC trong tab phân dạng.
+    """
+    from difflib import SequenceMatcher as _SM
+    out: list[str] = []
+    bai = [(n, _gia_thiet(b)) for st, _i, b, n in _problems_and_examples(lesson)
+           if st.kind not in ("review", "concept") and not getattr(b, "options", None)]
+    # Đề quá ngắn ("Tính độ dài đường tròn (lấy π ≈ 3,14).") không đủ ký hiệu để gọi là trùng cấu hình.
+    bai = [(n, gt) for n, gt in bai if len(gt) >= 40 and len(_ky_hieu(gt)) >= 4]
+    for i, (n1, s1) in enumerate(bai):
+        for n2, s2 in bai[i + 1:]:
+            chu = _SM(None, s1, s2).ratio()
+            ten = _SM(None, _gia_thiet_an_ten(s1), _gia_thiet_an_ten(s2)).ratio()
+            toan = _giong_ky_hieu(s1, s2)
+            if chu >= NGUONG_TRUNG_CHU or ten >= NGUONG_TRUNG_DOI_TEN or toan >= NGUONG_TRUNG_TOAN:
+                out.append(f"dan_dat: {n1} và {n2} trùng đề (giống {max(chu, ten, toan):.0%}) — mỗi bài trong phiếu "
+                           f"một đề gốc khác nhau, kể cả câu khung bài giải và đề đích; luyện cùng khuôn thì "
+                           f"bốc đề KHÁC trong tab phân dạng (Thầy 04/11/2026).")
+    return out
+
+
+# ── 9. Hình nền đúng thứ tự vẽ (Thầy 04/11/2026: "sao tự dưng HS lại có điểm C rồi? vẽ phải theo thứ tự") ──
+_BUOC_DUNG = re.compile(r"(?<![\w$])(?:Kẻ|kẻ|Vẽ|vẽ|Lấy|lấy|Gọi|gọi|Từ|Qua|Trên|Nối|Tiếp tuyến tại|Hai tiếp tuyến)\b")
+_NHAN_TIKZ = re.compile(r"\\node[^\n]*\{\$([A-Z])\$\}")
+
+
+def check_hinh_nen_thu_tu(lesson: LessonPackage) -> list[str]:
+    """Hình nền (có `tikz_gv`) chỉ in điểm đề CHO SẴN, trước bước dựng đầu tiên."""
+    out: list[str] = []
+    for st, _i, b, nhan in _problems_and_examples(lesson):
+        if st.kind in ("review", "concept"):
+            continue
+        fig = getattr(b, "figure", None)
+        if not fig or not getattr(fig, "tikz_gv", None) or not getattr(fig, "tikz", None):
+            continue
+        gt = _gia_thiet(b)
+        m = _BUOC_DUNG.search(gt)
+        da_cho = set(re.findall(r"[A-Z]", " ".join(re.findall(r"\$([^$]*)\$", gt[:m.start()] if m else gt))))
+        thua = sorted(set(_NHAN_TIKZ.findall(fig.tikz)) - da_cho)
+        if thua:
+            out.append(f"dan_dat: {nhan} — hình nền in sẵn {', '.join(thua)} nhưng đề mới dựng các điểm đó ở bước sau. "
+                       f"Hình nền chỉ có yếu tố đề cho trước bước dựng đầu tiên, HS vẽ tiếp đúng thứ tự (Thầy 04/11/2026).")
+    return out
+
+
+# ── 10. Ô trống rơi đúng chỗ, đủ dày (Thầy 04/11/2026: "điền khuyết của bạn hơi random, và cũng ít phải điền quá") ──
+_O_KHUNG = re.compile(r"\[\[(?:blank|mblank|fill)[:\]]")
+MAT_DO_O_TOI_THIEU = 0.6     # số ô / số dòng lời giải
+
+
+def check_mat_do_o_trong(lesson: LessonPackage) -> list[str]:
+    out: list[str] = []
+    for st, _i, b, nhan in _problems_and_examples(lesson):
+        if st.kind in ("review", "concept"):
+            continue
+        if getattr(b, "type", "") == "problem":
+            s = getattr(b, "statement", "") or ""
+            if not _KG.search(s):
+                continue
+            khung = _KG.split(s, 1)[1]
+        else:
+            phan = re.split(r"Lời\s*giải", getattr(b, "text", "") or "", maxsplit=1)
+            if len(phan) < 2:
+                continue
+            khung = phan[1]
+        dong = [d for d in khung.split("[[br]]") if d.strip() and not re.match(r"\s*[a-e]\)", d.strip())]
+        if len(dong) >= 3 and len(_O_KHUNG.findall(khung)) / len(dong) < MAT_DO_O_TOI_THIEU:
+            out.append(f"dan_dat: {nhan} — khung có {len(_O_KHUNG.findall(khung))} ô / {len(dong)} dòng, quá ít. "
+                       f"Ô phải rơi vào từ khoá cần nhớ hoặc chỗ phải suy ra (Thầy 04/11/2026).")
+    return out
+
+
 def check_dan_dat_chan(lesson: LessonPackage) -> list[str]:
     return (check_muon_hinh(lesson) + check_de_den_kho(lesson) + check_khuon_bon_diem(lesson)
             + check_khung_bai_giai(lesson) + check_tieu_de_truoc_btvn(lesson) + check_loi_xung_ho(lesson)
             + (check_phieu_btvn(lesson) if la_khuon_moi(lesson) else [])
-            + check_luyen_tap_2_va_btvn_chung_minh(lesson))
+            + check_luyen_tap_2_va_btvn_chung_minh(lesson)
+            + (_luat_04_11(lesson) if _co_dich_hoac_btvn_rieng(lesson) else []))
+
+
+def _luat_04_11(lesson: LessonPackage) -> list[str]:
+    return check_khong_trung_de(lesson) + check_hinh_nen_thu_tu(lesson)
+
+
+def _co_dich_hoac_btvn_rieng(lesson: LessonPackage) -> bool:
+    """Phiếu dựng từ khuôn 04/11/2026: phiếu cũ chưa dựng lại chỉ cảnh báo, không chặn rebuild."""
+    return bool(getattr(lesson, "btvn_phieu_rieng", False)) or any(
+        "Đích của buổi" in (getattr(b, "text", "") or "")
+        for st in lesson.stages for b in st.blocks if getattr(b, "type", "") == "para")
 
 
 def check_dan_dat_canh_bao(lesson: LessonPackage) -> list[str]:
-    return check_dich_buoi(lesson)
+    cu = _luat_04_11(lesson) if not _co_dich_hoac_btvn_rieng(lesson) else []
+    return check_dich_buoi(lesson) + check_mat_do_o_trong(lesson) + cu

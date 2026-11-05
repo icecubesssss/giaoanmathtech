@@ -109,6 +109,10 @@ class NotedBlock(BaseModel):
     figure: Optional["ProblemFigure"] = Field(
         None, description="Hình đi kèm hộp; None = hộp chỉ có chữ"
     )
+    # Sơ đồ ngược (Thầy 05/11/2026, thử ở phiếu 2 ch.V 9C): đi từ điều cần chứng minh về giả thiết.
+    so_do_nguoc: str = Field(
+        "", description="Mã TikZ sơ đồ ngược: thẻ `theory` in dưới phần phương pháp, ví dụ in trước Lời giải; rỗng = không có. Được dùng [[fill:…]]"
+    )
 
     @property
     def layout_moi(self) -> bool:
@@ -160,6 +164,11 @@ class ProblemBlock(BaseModel):
     statement: str = Field(..., description="Đề bài (LaTeX inline cho phép)")
     statement_slide: str = Field(
         "", description="Đề bài riêng cho Slide (nếu khác statement bản in, vd bài điền khuyết rút gọn còn đề)"
+    )
+    # Thầy 05/11/2026 (Bài 4, Bài 5 phiếu 2 ch.V 9C): đề + sơ đồ ngược, HS trình bày vào vở.
+    so_do_nguoc: str = Field("", description="Mã TikZ sơ đồ ngược, in sau hình của bài; rỗng = không có")
+    phut_so_do: float = Field(
+        0, ge=0, description="Phút HS C làm bài theo sơ đồ (scripts/phut_so_do.py), thay định mức TH; chưa gồm phút vẽ"
     )
     # Tầng bài = NƠI LÀM (đặt mục + gradient gate): "" | onclass | btvn | extend.
     tier: Literal["", "onclass", "btvn", "extend"] = Field(

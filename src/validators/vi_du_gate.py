@@ -161,7 +161,8 @@ def check_goi_y_thong_hieu(lesson: LessonPackage) -> list[str]:
             if getattr(b, "type", "") != "problem" or getattr(b, "level", 0) != 2:
                 continue
             nhan = b.label or "?"
-            co_goi_y = bool(getattr(b, "hints", None))
+            # Sơ đồ ngược đã là gợi ý định hướng (Thầy 05/11/2026).
+            co_goi_y = bool(getattr(b, "hints", None) or getattr(b, "so_do_nguoc", ""))
             if on_tap and co_goi_y:
                 out.append(
                     f"vi_du_gate: {nhan} (Thông hiểu) còn gợi ý — phiếu ôn tập giữa kì / cuối kì "
