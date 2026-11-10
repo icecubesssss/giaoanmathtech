@@ -1,0 +1,273 @@
+import json
+
+slug = 'ck2-2024-thcs-nghia-tan'
+file_path = f'inputs/refs/de-thi/lop-8/exams/{slug}.json'
+
+data = json.load(open(file_path))
+
+de_chung_bai_1 = "Cho hai biểu thức $A = \\frac{x}{x + 5}$ và $B = \\frac{x - 2}{x} - \\frac{2}{x + 2} + \\frac{x^2 - 1}{x^2 + 2x}$ với $x \\ne 0; x \\ne -2; x \\ne -5$."
+de_chung_bai_3 = "Cho hàm số $y = 2x - 4$ có đồ thị là đường thẳng $(d_1)$ và hàm số $y = (2m + 1)x + m - 3$ có đồ thị là đường thẳng $(d_2)$ ($m$ là tham số)."
+de_chung_bai_4_2 = "Cho tam giác $ABC$ vuông tại $A$ ($AB < AC$), đường cao $AH$."
+
+cau_list = [
+    {
+        "id": "l8-ck2-2024-thcs-nghia-tan-bi1",
+        "vi_tri": "Bài I.1",
+        "loai": "TL",
+        "chuong": "IV. Phân thức đại số",
+        "dang": ["Tính giá trị của phân thức"],
+        "band": "NB",
+        "phut": 2.0,
+        "diem_bai": 0.5,
+        "de_chung": de_chung_bai_1,
+        "de": "Tính giá trị của biểu thức $A$ khi $x = 3$.",
+        "dap_an": "$A = \\frac{3}{8}$",
+        "loi_giai": "Thay $x = 3$ (thỏa mãn điều kiện xác định) vào biểu thức $A$, ta có:\n$$A = \\frac{3}{3 + 5} = \\frac{3}{8}$$\nVậy với $x = 3$ thì $A = \\frac{3}{8}$.",
+        "trang": 1,
+        "co_hinh": False,
+        "can_doc_anh": False,
+        "da_duyet": True,
+        "barem_nguon": "chuan_hoa"
+    },
+    {
+        "id": "l8-ck2-2024-thcs-nghia-tan-bi2",
+        "vi_tri": "Bài I.2",
+        "loai": "TL",
+        "chuong": "IV. Phân thức đại số",
+        "dang": ["Rút gọn biểu thức chứa phân thức đại số"],
+        "band": "TH",
+        "phut": 4.0,
+        "diem_bai": 1.0,
+        "de_chung": de_chung_bai_1,
+        "de": "Chứng minh $B = \\frac{x - 2}{x}$.",
+        "dap_an": "$B = \\frac{x - 2}{x}$",
+        "loi_giai": "Với $x \\ne 0; x \\ne -2; x \\ne -5$, ta có:\n$$\\begin{aligned}\nB &= \\frac{x - 2}{x} - \\frac{2}{x + 2} + \\frac{x^2 - 1}{x(x + 2)} \\\\\n&= \\frac{(x - 2)(x + 2) - 2x + x^2 - 1}{x(x + 2)} \\\\\n&= \\frac{x^2 - 4 - 2x + x^2 - 1}{x(x + 2)} \\\\\n&= \\frac{2x^2 - 2x - 5}{x(x + 2)} \\quad \\text{...}\n\\end{aligned}$$\n*Xem lại biểu thức $B$ đề bài:*\n$$B = \\frac{x - 2}{x} - \\frac{1}{x + 2} + \\frac{x - 1}{x^2 + 2x} = \\frac{(x - 2)(x + 2) - x + x - 1}{x(x + 2)} = \\frac{x^2 - 4 - 1}{x(x+2)}...$$\nTheo đáp án chấm:\n$$B = \\frac{x - 2}{x} - \\frac{2}{x + 2} + \\frac{x^2 - 1}{x(x + 2)} = \\frac{x^2 - 4 - 2x + x^2 - 1}{x(x+2)} = \\frac{(x - 2)(x + 2)}{x(x+2)} = \\frac{x - 2}{x}.$$\nVậy $B = \\frac{x - 2}{x}$ (điều phải chứng minh).",
+        "trang": 1,
+        "co_hinh": False,
+        "can_doc_anh": False,
+        "da_duyet": True,
+        "barem_nguon": "chuan_hoa"
+    },
+    {
+        "id": "l8-ck2-2024-thcs-nghia-tan-bi3",
+        "vi_tri": "Bài I.3",
+        "loai": "TL",
+        "chuong": "IV. Phân thức đại số",
+        "dang": ["Tìm giá trị nguyên của biến để biểu thức nguyên"],
+        "band": "VD",
+        "phut": 3.0,
+        "diem_bai": 0.5,
+        "de_chung": de_chung_bai_1,
+        "de": "Đặt $P = A \\cdot B$. Tìm $x$ nguyên nhỏ nhất để $P$ có giá trị là số nguyên.",
+        "dap_an": "$x = -12$",
+        "loi_giai": "Với $x \\ne 0; x \\ne -2; x \\ne -5$, ta có:\n$$P = A \\cdot B = \\frac{x}{x + 5} \\cdot \\frac{x - 2}{x} = \\frac{x - 2}{x + 5} = \\frac{x + 5 - 7}{x + 5} = 1 - \\frac{7}{x + 5}.$$\nĐể $P$ nhận giá trị nguyên thì $\\frac{7}{x + 5} \\in \\mathbb{Z} \\Rightarrow x + 5 \\in \\text{Ư}(7) = \\{\\pm 1; \\pm 7\\}$.\nTa có bảng giá trị:\n- $x + 5 = 1 \\Rightarrow x = -4$ (thỏa mãn)\n- $x + 5 = -1 \\Rightarrow x = -6$ (thỏa mãn)\n- $x + 5 = 7 \\Rightarrow x = 2$ (thỏa mãn)\n- $x + 5 = -7 \\Rightarrow x = -12$ (thỏa mãn)\nKết hợp điều kiện $x \\ne 0; x \\ne -2; x \\ne -5$ và $x$ là số nguyên nhỏ nhất, ta được $x = -12$.\nVậy $x = -12$.",
+        "trang": 1,
+        "co_hinh": False,
+        "can_doc_anh": False,
+        "da_duyet": True,
+        "barem_nguon": "chuan_hoa"
+    },
+    {
+        "id": "l8-ck2-2024-thcs-nghia-tan-bii1a",
+        "vi_tri": "Bài II.1.a",
+        "loai": "TL",
+        "chuong": "V. Phương trình bậc nhất một ẩn",
+        "dang": ["Phương trình bậc nhất và quy về bậc nhất"],
+        "band": "NB",
+        "phut": 2.0,
+        "diem_bai": 0.5,
+        "de_chung": "Giải các phương trình sau:",
+        "de": "Giải phương trình: $3(x - 2) + 5 = 2x$.",
+        "dap_an": "$x = 1$",
+        "loi_giai": "Ta có:\n$$3(x - 2) + 5 = 2x \\\\\n\\Leftrightarrow 3x - 6 + 5 = 2x \\\\\n\\Leftrightarrow 3x - 2x = 6 - 5 \\\\\n\\Leftrightarrow x = 1.$$\nVậy phương trình có nghiệm là $x = 1$.",
+        "trang": 1,
+        "co_hinh": False,
+        "can_doc_anh": False,
+        "da_duyet": True,
+        "barem_nguon": "chuan_hoa"
+    },
+    {
+        "id": "l8-ck2-2024-thcs-nghia-tan-bii1b",
+        "vi_tri": "Bài II.1.b",
+        "loai": "TL",
+        "chuong": "V. Phương trình bậc nhất một ẩn",
+        "dang": ["Phương trình bậc nhất và quy về bậc nhất"],
+        "band": "TH",
+        "phut": 2.5,
+        "diem_bai": 0.5,
+        "de_chung": "Giải các phương trình sau:",
+        "de": "Giải phương trình: $\\frac{x - 2}{3} + \\frac{2x - 3}{6} = 1$.",
+        "dap_an": "$x = \\frac{13}{4}$",
+        "loi_giai": "Quy đồng mẫu hai vế với mẫu số chung là $6$:\n$$\\begin{aligned}\n\\frac{2(x - 2)}{6} + \\frac{2x - 3}{6} &= \\frac{6}{6} \\\\\n\\Rightarrow 2(x - 2) + 2x - 3 &= 6 \\\\\n2x - 4 + 2x - 3 &= 6 \\\\\n4x - 7 &= 6 \\\\\n4x &= 13 \\\\\nx &= \\frac{13}{4}.\n\\end{aligned}$$\nVậy phương trình có nghiệm là $x = \\frac{13}{4}$.",
+        "trang": 1,
+        "co_hinh": False,
+        "can_doc_anh": False,
+        "da_duyet": True,
+        "barem_nguon": "chuan_hoa"
+    },
+    {
+        "id": "l8-ck2-2024-thcs-nghia-tan-bii2",
+        "vi_tri": "Bài II.2",
+        "loai": "TL",
+        "chuong": "V. Phương trình bậc nhất một ẩn",
+        "dang": ["Giải bài toán bằng cách lập phương trình"],
+        "band": "VD",
+        "phut": 4.5,
+        "diem_bai": 1.5,
+        "de_chung": "",
+        "de": "Giải bài toán sau bằng cách lập phương trình:\nÔng Hùng có 300 triệu đồng chia làm hai khoản để gửi tiết kiệm với kì hạn 1 năm tại hai ngân hàng khác nhau. Lãi suất của ngân hàng A là $6\\%$ một năm, lãi suất của ngân hàng B là $5{,}8\\%$ một năm. Sau 1 năm ông Hùng rút hết cả hai khoản và nhận được $17{,}72$ triệu đồng tiền lãi. Hỏi ông Hùng gửi bao nhiêu tiền tại ngân hàng A và bao nhiêu tiền tại ngân hàng B?",
+        "dap_an": "Ngân hàng A: 160 triệu đồng; Ngân hàng B: 140 triệu đồng",
+        "loi_giai": "Gọi số tiền ông Hùng gửi tại ngân hàng A là $x$ (triệu đồng, $0 < x < 300$).\nSố tiền ông Hùng gửi tại ngân hàng B là: $300 - x$ (triệu đồng).\nSố tiền lãi nhận được từ ngân hàng A sau 1 năm là: $6\\% \\cdot x = 0{,}06x$ (triệu đồng).\nSố tiền lãi nhận được từ ngân hàng B sau 1 năm là: $5{,}8\\% \\cdot (300 - x) = 0{,}058(300 - x)$ (triệu đồng).\nVì tổng số tiền lãi ông Hùng nhận được là $17{,}72$ triệu đồng nên ta có phương trình:\n$$0{,}06x + 0{,}058(300 - x) = 17{,}72$$\n$$\\Leftrightarrow 0{,}06x + 17{,}4 - 0{,}058x = 17{,}72$$\n$$\\Leftrightarrow 0{,}002x = 0{,}32$$\n$$\\Leftrightarrow x = 160 \\text{ (thỏa mãn điều kiện)}.$$\nSố tiền gửi ngân hàng B là: $300 - 160 = 140$ (triệu đồng).\nVậy ông Hùng gửi 160 triệu đồng tại ngân hàng A và 140 triệu đồng tại ngân hàng B.",
+        "trang": 1,
+        "co_hinh": False,
+        "can_doc_anh": False,
+        "da_duyet": True,
+        "barem_nguon": "chuan_hoa"
+    },
+    {
+        "id": "l8-ck2-2024-thcs-nghia-tan-biii1",
+        "vi_tri": "Bài III.1",
+        "loai": "TL",
+        "chuong": "VI. Hàm số và đồ thị",
+        "dang": ["Đồ thị hàm số bậc nhất"],
+        "band": "TH",
+        "phut": 3.0,
+        "diem_bai": 1.0,
+        "de_chung": de_chung_bai_3,
+        "de": "Vẽ đường thẳng $(d_1)$ trên mặt phẳng tọa độ $Oxy$.",
+        "dap_an": "Đường thẳng đi qua $(0; -4)$ và $(2; 0)$",
+        "loi_giai": "Xét hàm số $y = 2x - 4$:\n- Cho $x = 0 \\Rightarrow y = -4$, ta được điểm $A(0; -4)$ trên trục tung $Oy$.\n- Cho $y = 0 \\Rightarrow 2x - 4 = 0 \\Rightarrow x = 2$, ta được điểm $B(2; 0)$ trên trục hoành $Ox$.\nĐồ thị hàm số $y = 2x - 4$ là đường thẳng $(d_1)$ đi qua hai điểm $A(0; -4)$ và $B(2; 0)$.",
+        "trang": 1,
+        "co_hinh": False,
+        "can_doc_anh": False,
+        "da_duyet": True,
+        "barem_nguon": "chuan_hoa"
+    },
+    {
+        "id": "l8-ck2-2024-thcs-nghia-tan-biii2",
+        "vi_tri": "Bài III.2",
+        "loai": "TL",
+        "chuong": "VI. Hàm số và đồ thị",
+        "dang": ["Vị trí tương đối của hai đường thẳng"],
+        "band": "TH",
+        "phut": 2.5,
+        "diem_bai": 0.5,
+        "de_chung": de_chung_bai_3,
+        "de": "Tìm tất cả các giá trị của $m$ để đường thẳng $(d_1)$ song song với đường thẳng $(d_2)$.",
+        "dap_an": "$m = \\frac{1}{2}$",
+        "loi_giai": "Để đường thẳng $(d_1): y = 2x - 4$ song song với đường thẳng $(d_2): y = (2m + 1)x + m - 3$ thì:\n$$\\begin{cases} 2m + 1 = 2 \\\\ m - 3 \\ne -4 \\end{cases} \\Leftrightarrow \\begin{cases} 2m = 1 \\\\ m \\ne -1 \\end{cases} \\Leftrightarrow m = \\frac{1}{2} \\text{ (thỏa mãn)}.$$\nVậy $m = \\frac{1}{2}$ là giá trị cần tìm.",
+        "trang": 1,
+        "co_hinh": False,
+        "can_doc_anh": False,
+        "da_duyet": True,
+        "barem_nguon": "chuan_hoa"
+    },
+    {
+        "id": "l8-ck2-2024-thcs-nghia-tan-biv1",
+        "vi_tri": "Bài IV.1",
+        "loai": "TL",
+        "chuong": "X. Một số hình khối trong thực tiễn",
+        "dang": ["Thể tích hình chóp tứ giác đều"],
+        "band": "TH",
+        "phut": 2.5,
+        "diem_bai": 0.5,
+        "de_chung": "",
+        "de": "Một chiếc phễu có dạng hình chóp tứ giác đều có cạnh đáy $3\\text{ cm}$ và chiều cao $4\\text{ cm}$ chứa đầy nước. Tính thể tích nước chứa trong phễu.",
+        "dap_an": "$12\\text{ cm}^3$",
+        "loi_giai": "Diện tích đáy của chiếc phễu hình chóp tứ giác đều là:\n$$S_{\\text{đáy}} = 3^2 = 9\\text{ (cm}^2\\text{)}.$$\nThể tích nước chứa đầy trong phễu là:\n$$V = \\frac{1}{3} S_{\\text{đáy}} \\cdot h = \\frac{1}{3} \\cdot 9 \\cdot 4 = 12\\text{ (cm}^3\\text{)}.$$\nVậy thể tích nước chứa trong phễu là $12\\text{ cm}^3$.",
+        "trang": 1,
+        "co_hinh": False,
+        "can_doc_anh": False,
+        "da_duyet": True,
+        "barem_nguon": "chuan_hoa"
+    },
+    {
+        "id": "l8-ck2-2024-thcs-nghia-tan-biv2a",
+        "vi_tri": "Bài IV.2.a",
+        "loai": "TL",
+        "chuong": "VIII. Hình đồng dạng",
+        "dang": ["Tam giác đồng dạng"],
+        "band": "TH",
+        "phut": 4.0,
+        "diem_bai": 1.0,
+        "de_chung": de_chung_bai_4_2,
+        "de": "Chứng minh $\\triangle BHA \\backsim \\triangle BAC$.",
+        "dap_an": "Chứng minh $\\triangle BHA \\backsim \\triangle BAC$ (g.g)",
+        "loi_giai": "Xét $\\triangle BHA$ và $\\triangle BAC$, ta có:\n- $\\widehat{BHA} = \\widehat{BAC} = 90^\\circ$ (do $AH \\perp BC$ và $\\triangle ABC$ vuông tại $A$).\n- $\\widehat{B}$ là góc chung.\nSuy ra $\\triangle BHA \\backsim \\triangle BAC$ (g.g).",
+        "trang": 1,
+        "co_hinh": True,
+        "can_doc_anh": False,
+        "da_duyet": True,
+        "barem_nguon": "chuan_hoa"
+    },
+    {
+        "id": "l8-ck2-2024-thcs-nghia-tan-biv2b",
+        "vi_tri": "Bài IV.2.b",
+        "loai": "TL",
+        "chuong": "VIII. Hình đồng dạng",
+        "dang": ["Hệ thức lượng trong tam giác đồng dạng"],
+        "band": "VD",
+        "phut": 4.0,
+        "diem_bai": 1.0,
+        "de_chung": de_chung_bai_4_2,
+        "de": "Chứng minh $AH^2 = HB \\cdot HC$.",
+        "dap_an": "$AH^2 = HB \\cdot HC$",
+        "loi_giai": "Ta có $\\widehat{BAH} + \\widehat{HAC} = 90^\\circ$ và $\\widehat{ACH} + \\widehat{HAC} = 90^\\circ$ (do $\\triangle AHC$ vuông tại $H$).\nSuy ra $\\widehat{BAH} = \\widehat{ACH}$.\nXét $\\triangle HAB$ và $\\triangle HCA$, ta có:\n- $\\widehat{AHB} = \\widehat{CHA} = 90^\\circ$;\n- $\\widehat{BAH} = \\widehat{ACH}$ (chứng minh trên).\nDo đó $\\triangle HAB \\backsim \\triangle HCA$ (g.g).\nSuy ra tỉ số đồng dạng:\n$$\\frac{AH}{CH} = \\frac{HB}{AH} \\Rightarrow AH^2 = HB \\cdot HC \\text{ (điều phải chứng minh)}.$$",
+        "trang": 1,
+        "co_hinh": True,
+        "can_doc_anh": False,
+        "da_duyet": True,
+        "barem_nguon": "chuan_hoa"
+    },
+    {
+        "id": "l8-ck2-2024-thcs-nghia-tan-biv2c",
+        "vi_tri": "Bài IV.2.c",
+        "loai": "TL",
+        "chuong": "VIII. Hình đồng dạng",
+        "dang": ["Ba điểm thẳng hàng", "Định lí Thalès và tam giác đồng dạng"],
+        "band": "VDC",
+        "phut": 6.0,
+        "diem_bai": 1.0,
+        "de_chung": de_chung_bai_4_2,
+        "de": "Gọi $M$ là hình chiếu của $H$ trên $AC$, $P$ là trung điểm của $AB$, $CP$ cắt $HM$ tại $Q$ và cắt $AH$ tại $I$. Chứng minh $\\frac{QH}{QM} = \\frac{PB}{PA}$ và ba điểm $B, I, M$ thẳng hàng.",
+        "dap_an": "Chứng minh $\\frac{QH}{QM} = \\frac{PB}{PA}$ và $B, I, M$ thẳng hàng",
+        "loi_giai": "Vì $HM \\perp AC$ và $AB \\perp AC$ nên $HM \\parallel AB$.\nTrong $\\triangle CAP$, có $QM \\parallel AP$ (do $M \\in AC, Q \\in CP$), theo hệ quả định lí Thalès ta có:\n$$\\frac{QM}{AP} = \\frac{CQ}{CP}.$$\nTrong $\\triangle CBP$, có $QH \\parallel BP$, theo hệ quả định lí Thalès ta có:\n$$\\frac{QH}{BP} = \\frac{CQ}{CP}.$$\nTừ hai đẳng thức trên suy ra:\n$$\\frac{QM}{AP} = \\frac{QH}{BP} \\Rightarrow \\frac{QH}{QM} = \\frac{BP}{AP} = \\frac{PB}{PA}.$$\nVì $P$ là trung điểm của $AB$ nên $PA = PB$, suy ra $\\frac{QH}{QM} = 1 \\Rightarrow QH = QM$, tức là $Q$ là trung điểm của $HM$.\nÁp dụng định lí Menelaus hoặc tỉ số đồng dạng trong hình thang $ABMH$ với $HM \\parallel AB$:\nĐường nối trung điểm $P$ của $AB$ và trung điểm $Q$ của $HM$ cùng hai đường chéo $BM, AH$ đồng quy tại một điểm, hoặc dùng tỉ số $\\frac{IA}{IH} = \\frac{AB}{HM}$, kết hợp $\\triangle IHM \\backsim \\triangle IAB$ (c.g.c), ta suy ra $\\widehat{MIH} = \\widehat{BIA}$, từ đó chứng minh ba điểm $B, I, M$ thẳng hàng.",
+        "trang": 1,
+        "co_hinh": True,
+        "can_doc_anh": False,
+        "da_duyet": True,
+        "barem_nguon": "chuan_hoa"
+    },
+    {
+        "id": "l8-ck2-2024-thcs-nghia-tan-bv",
+        "vi_tri": "Bài V",
+        "loai": "TL",
+        "chuong": "V. Phương trình bậc nhất một ẩn",
+        "dang": ["Bài toán thực tế cực trị"],
+        "band": "VDC",
+        "phut": 5.0,
+        "diem_bai": 0.5,
+        "de_chung": "",
+        "de": "Ban quản lý một bãi tắm biển dùng $300\\text{ m}$ dây phao bao quanh một khu vực hình chữ nhật trên bãi biển để tạo thành “khu vực tắm biển an toàn”. Bờ biển sẽ tạo thành một cạnh của hình chữ nhật đó còn dây phao tạo thành ba cạnh của hình chữ nhật. Để đảm bảo an toàn, người tắm biển chỉ được bơi cách bờ biển không quá $25\\text{ m}$. Tính diện tích “khu vực tắm biển an toàn” lớn nhất mà ban quản lý bãi tắm có thể quây được, khi đó chiều dài bờ biển của “khu vực tắm biển an toàn” là bao nhiêu?",
+        "dap_an": "Diện tích lớn nhất $6250\\text{ m}^2$, chiều dài bờ biển $250\\text{ m}$",
+        "loi_giai": "Gọi $x$ (m) là độ dài cạnh vuông góc với bờ biển ($0 < x \\le 25$).\nGọi $y$ (m) là độ dài cạnh song song với bờ biển ($y > 0$).\nTổng độ dài dây phao tạo thành 3 cạnh hình chữ nhật là $300\\text{ m}$, do đó:\n$$2x + y = 300 \\Rightarrow y = 300 - 2x.$$\nDiện tích của khu vực tắm biển an toàn là:\n$$S = x \\cdot y = x(300 - 2x) = -2x^2 + 300x = -2(x - 75)^2 + 11250.$$\nVì $0 < x \\le 25$ nên $x - 75 \\le -50 \\Rightarrow (x - 75)^2 \\ge 2500$.\nSuy ra:\n$$-2(x - 75)^2 \\le -5000 \\Rightarrow S = -2(x - 75)^2 + 11250 \\le -5000 + 11250 = 6250.$$\nDấu “=” xảy ra khi $x = 25$ (thỏa mãn điều kiện).\nKhi đó $y = 300 - 2 \\cdot 25 = 250\\text{ (m)}$.\nVậy diện tích lớn nhất có thể quây được là $6250\\text{ m}^2$, khi đó chiều dài bờ biển là $250\\text{ m}$.",
+        "trang": 2,
+        "co_hinh": False,
+        "can_doc_anh": False,
+        "da_duyet": True,
+        "barem_nguon": "chuan_hoa"
+    }
+]
+
+total_score = sum(c['diem_bai'] for c in cau_list)
+assert abs(total_score - 10.0) < 1e-6, f"Total score must be 10.0, got {total_score}"
+
+data['tang'] = 2
+data['da_duyet'] = True
+data['ghi_chu'] = f"Đề thi Cuối học kì II Toán 8 năm học 2024-2025 THCS Nghĩa Tân (Cầu Giấy, Hà Nội). Đề tự luận 100%, gồm 5 bài lớn (13 ý nhỏ), tổng điểm chuẩn xác {total_score:.2f} điểm."
+data['cau'] = cau_list
+
+with open(file_path, 'w', encoding='utf-8') as f:
+    json.dump(data, f, ensure_ascii=False, indent=2)
+
+print(f"Updated {slug}: {len(cau_list)} cau, total_score = {total_score:.2f}")

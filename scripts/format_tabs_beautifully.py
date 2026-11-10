@@ -68,28 +68,29 @@ COLUMN_WIDTHS = [
     (10, 11, 80),  # K: Bài SGK
     (11, 12, 180), # L: Ghi chú
     (12, 13, 135), # M: Mã câu
-    (13, 14, 90),  # N: Loại câu
-    (14, 15, 180), # O: Dạng quy chuẩn
-    (15, 16, 95),  # P: Mục tiêu
-    (16, 17, 75),  # Q: Đã dùng
-    (17, 18, 70),  # R: Trạng thái
-    (18, 21, 55),  # S, T, U: Lớp C, B, A
-    (21, 22, 100), # V: Ghi chú chọn
-    (22, 23, 110), # W: Loại nguồn
-    (23, 24, 130), # X: Dạng phiếu C
-    (24, 25, 120), # Y: Mã nguồn
-    (25, 26, 160), # Z: Dạng từng ý đề thật
-    (26, 27, 70),  # AA: T7 gợi ý
-    (27, 28, 60),  # AB: Link
-    (28, 29, 60),  # AC: Chương
-    (29, 31, 60),  # AD, AE: Dự phòng
-    (31, 39, 45),  # AF..AM: T1..T8
-    (39, 42, 65),  # AN..AP: Điểm C, B, A
-    (42, 43, 75),  # AQ: Ngưỡng đạt
-    (43, 44, 125), # AR: Kết luận
-    (44, 45, 110), # AS: Lý do chọn
-    (45, 46, 220), # AT: Lí do chấm
-    (46, 47, 120), # AU: Dạng bổ sung
+    (13, 14, 90),  # N: Phân loại câu
+    (14, 15, 180), # O: Đề xuất thuyết minh
+    (15, 16, 300), # P: Chi tiết tách ý giàn giáo (Scaffold)
+    (16, 17, 95),  # Q: Trạng thái
+    (17, 18, 75),  # R: Loại ngay (L1-L5)
+    (18, 19, 70),  # S: Đã soi ảnh
+    (19, 22, 55),  # T, U, V: Lớp C, B, X
+    (22, 23, 100), # W: Chọn tay
+    (23, 24, 110), # X: Loại nguồn
+    (24, 25, 130), # Y: Có hình
+    (25, 26, 120), # Z: Mã bài gốc
+    (26, 27, 160), # AA: Dạng từng ý đề thật
+    (27, 28, 70),  # AB: T7 gợi ý
+    (28, 29, 60),  # AC: Kỹ thuật giải
+    (29, 30, 60),  # AD: Chương
+    (30, 32, 60),  # AE, AF: Nhóm nghi trùng, Cần soát đề
+    (32, 40, 45),  # AG..AN: T1..T8
+    (40, 43, 65),  # AO..AQ: Điểm C, B, X
+    (43, 44, 75),  # AR: Ngưỡng đạt
+    (44, 45, 125), # AS: Kết luận
+    (45, 46, 110), # AT: Lý do chọn
+    (46, 47, 220), # AU: Lí do chấm
+    (47, 48, 120), # AV: Năm đầu của năm học đề
 ]
 
 def run_raw_batch(requests: list[dict], desc: str) -> None:

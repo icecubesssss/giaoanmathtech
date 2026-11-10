@@ -74,9 +74,11 @@ def check_trinh_bay(lesson: LessonPackage) -> list[str]:
     mon_hinh = "hinh" in (lesson.slug or "") or "hình" in (lesson.grade_label or "").lower()
 
     # (a) Dòng kẻ: HS trình bày vào VỞ, phiếu không chừa chỗ viết.
+    # Ngoại lệ (Thầy chốt 08/11/2026): Tiểu học (Lớp 5...) HS làm trực tiếp vào đề/phiếu bằng ô ly (`variant: "oly"`).
+    is_tieu_hoc = "lop-5" in (lesson.slug or "") or "lớp 5" in (lesson.grade_label or "").lower()
     n_ke = sum(1 for st in lesson.stages for b in st.blocks
                if getattr(b, "type", "") == "writelines"
-               and getattr(b, "variant", None) != "draw")
+               and getattr(b, "variant", None) not in ("draw", "oly" if is_tieu_hoc else ()))
     if n_ke:
         out.append(f"trinh_bay: còn {n_ke} khối dòng kẻ — HS trình bày vào VỞ, bỏ hết để "
                    f"tối ưu không gian phiếu (khối `variant: draw` là khung vẽ hình, được giữ).")

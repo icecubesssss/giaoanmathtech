@@ -1,0 +1,486 @@
+# -*- coding: utf-8 -*-
+import json
+
+path = 'inputs/refs/de-thi/lop-8/exams/gk2-2023-thcs-ngoc-lam.json'
+with open(path, 'r', encoding='utf-8') as f:
+    d = json.load(f)
+
+d['tang'] = 2
+d['da_duyet'] = True
+d['tieu_de'] = 'Đề kiểm tra giữa học kì II môn Toán 8 - THCS Ngọc Lâm (Long Biên) năm học 2023 - 2024 (Mã đề T801)'
+d['nam_hoc'] = '2023-2024'
+d['hoc_ky'] = 'GK2'
+d['lop'] = '8'
+d['thoi_gian_phut'] = 90
+d['ghi_chu'] = 'Đề chuẩn GK2 Toán 8 THCS Ngọc Lâm 2023-2024 (Mã T801). Đã soát 100% từ ảnh scan: 12 câu TN (3.0đ) + 5 bài TL (7.0đ), tổng điểm 10.00đ.'
+
+cau_list = [
+    # Câu 1
+    {
+        'id': 'l8-gk2-2023-thcs-ngoc-lam-c1',
+        'vi_tri': 'Câu 1',
+        'loai': 'TN',
+        'chuong': 'V. Thu thập và tổ chức dữ liệu',
+        'dang': ['Đọc số liệu từ bảng thống kê'],
+        'band': 'NB',
+        'phut': 1.5,
+        'diem_bai': 0.25,
+        'de_chung': 'I. PHẦN TRẮC NGHIỆM (3,0 điểm) Ghi lại chữ cái đứng trước câu trả lời đúng trong các câu sau vào giấy kiểm tra:',
+        'de': 'Dựa vào bảng số liệu sau, hãy cho biết trong năm 2019, ngành dệt may Việt Nam đạt kim ngạch xuất khẩu là bao nhiêu (đơn vị: tỉ USD)?\n\n| Năm | 2017 | 2018 | 2019 | 2020 |\n| :--- | :---: | :---: | :---: | :---: |\n| Ngành dệt may | 31,8 | 36,2 | 38,8 | 35,0 |\n\nA. 31,8.\nB. 36,2.\nC. 38,8.\nD. 35,0.',
+        'dap_an': 'C',
+        'loi_giai': 'Tra cứu cột năm 2019 trên bảng số liệu, kim ngạch xuất khẩu đạt 38,8 tỉ USD. Chọn C.',
+        'trang': 1,
+        'co_hinh': False,
+        'can_doc_anh': False,
+        'da_duyet': True,
+        'barem_nguon': 'chuan_hoa'
+    },
+    # Câu 2
+    {
+        'id': 'l8-gk2-2023-thcs-ngoc-lam-c2',
+        'vi_tri': 'Câu 2',
+        'loai': 'TN',
+        'chuong': 'V. Thu thập và tổ chức dữ liệu',
+        'dang': ['Tính hợp lý của dữ liệu'],
+        'band': 'NB',
+        'phut': 1.5,
+        'diem_bai': 0.25,
+        'de_chung': 'I. PHẦN TRẮC NGHIỆM (3,0 điểm) Ghi lại chữ cái đứng trước câu trả lời đúng trong các câu sau vào giấy kiểm tra:',
+        'de': 'Dựa vào bảng thống kê số lượng học sinh từng lớp ở khối 8 của một trường trung học cơ sở dự thi hết học kì I môn Toán:\n\n| Lớp | Sĩ số | Số học sinh dự thi |\n| :--- | :---: | :---: |\n| 8A | 40 | 40 |\n| 8B | 41 | 40 |\n| 8C | 42 | 42 |\n| 8D | 40 | 41 |\n\nSố liệu của lớp nào không hợp lý?\nA. Lớp 8A.\nB. Lớp 8B.\nC. Lớp 8C.\nD. Lớp 8D.',
+        'dap_an': 'D',
+        'loi_giai': 'Số học sinh dự thi của lớp 8D là 41, lớn hơn sĩ số của lớp là 40, do đó số liệu của lớp 8D không hợp lý. Chọn D.',
+        'trang': 1,
+        'co_hinh': False,
+        'can_doc_anh': False,
+        'da_duyet': True,
+        'barem_nguon': 'chuan_hoa'
+    },
+    # Câu 3
+    {
+        'id': 'l8-gk2-2023-thcs-ngoc-lam-c3',
+        'vi_tri': 'Câu 3',
+        'loai': 'TN',
+        'chuong': 'V. Thu thập và tổ chức dữ liệu',
+        'dang': ['Đọc số liệu từ biểu đồ đoạn thẳng'],
+        'band': 'NB',
+        'phut': 1.5,
+        'diem_bai': 0.25,
+        'de_chung': 'Hãy dùng biểu đồ ở hình 1 để trả lời các câu 3; 4.\nCho biểu đồ hình 1 biểu diễn số lượt hành khách vận chuyển bằng đường bộ ở Khánh Hòa trong các năm 2015, 2018, 2019, 2020 (đơn vị: triệu lượt người): Năm 2015 là 36,4; Năm 2018 là 53,7; Năm 2019 là 58,5; Năm 2020 là 19,1.',
+        'de': 'Số lượt hành khách vận chuyển bằng đường bộ ở Khánh Hòa trong năm 2015 là:\nA. 36,4 triệu lượt.\nB. 53,7 triệu lượt.\nC. 58,5 triệu lượt.\nD. 19,1 triệu lượt.',
+        'dap_an': 'A',
+        'loi_giai': 'Dựa vào biểu đồ hình 1, số lượt hành khách vận chuyển năm 2015 là 36,4 triệu lượt. Chọn A.',
+        'trang': 1,
+        'co_hinh': True,
+        'can_doc_anh': False,
+        'da_duyet': True,
+        'barem_nguon': 'chuan_hoa'
+    },
+    # Câu 4
+    {
+        'id': 'l8-gk2-2023-thcs-ngoc-lam-c4',
+        'vi_tri': 'Câu 4',
+        'loai': 'TN',
+        'chuong': 'V. Thu thập và tổ chức dữ liệu',
+        'dang': ['Đọc số liệu từ biểu đồ đoạn thẳng'],
+        'band': 'NB',
+        'phut': 1.5,
+        'diem_bai': 0.25,
+        'de_chung': 'Hãy dùng biểu đồ ở hình 1 để trả lời các câu 3; 4.\nCho biểu đồ hình 1 biểu diễn số lượt hành khách vận chuyển bằng đường bộ ở Khánh Hòa trong các năm 2015, 2018, 2019, 2020 (đơn vị: triệu lượt người): Năm 2015 là 36,4; Năm 2018 là 53,7; Năm 2019 là 58,5; Năm 2020 là 19,1.',
+        'de': 'Năm có số lượt hành khách vận chuyển bằng đường bộ ở Khánh Hòa nhiều nhất là năm:\nA. 2015.\nB. 2018.\nC. 2019.\nD. 2020.',
+        'dap_an': 'C',
+        'loi_giai': 'Năm 2019 có số lượt hành khách cao nhất đạt 58,5 triệu lượt. Chọn C.',
+        'trang': 1,
+        'co_hinh': True,
+        'can_doc_anh': False,
+        'da_duyet': True,
+        'barem_nguon': 'chuan_hoa'
+    },
+    # Câu 5
+    {
+        'id': 'l8-gk2-2023-thcs-ngoc-lam-c5',
+        'vi_tri': 'Câu 5',
+        'loai': 'TN',
+        'chuong': 'IX. Một số yếu tố xác suất',
+        'dang': ['Xác suất của biến cố ngẫu nhiên trong một số trò chơi đơn giản'],
+        'band': 'NB',
+        'phut': 1.5,
+        'diem_bai': 0.25,
+        'de_chung': 'I. PHẦN TRẮC NGHIỆM (3,0 điểm) Ghi lại chữ cái đứng trước câu trả lời đúng trong các câu sau vào giấy kiểm tra:',
+        'de': 'Gieo ngẫu nhiên một con xúc xắc một lần, kết quả có thể xảy ra đối với mặt xuất hiện là mặt 1 chấm, mặt 2 chấm, mặt 3 chấm, mặt 4 chấm, mặt 5 chấm, mặt 6 chấm. Xét biến cố “Mặt xuất hiện của xúc xắc có số chấm là số lẻ” thì xác suất của biến cố này là:\nA. $\\dfrac{1}{6}$.\nB. $\\dfrac{2}{6}$.\nC. $\\dfrac{3}{6}$.\nD. $\\dfrac{4}{6}$.',
+        'dap_an': 'C',
+        'loi_giai': 'Có 3 mặt có số chấm lẻ là $\\{1; 3; 5\\}$ trong tổng số 6 kết quả có thể. Xác suất là $\\dfrac{3}{6} = \\dfrac{1}{2}$. Chọn C.',
+        'trang': 2,
+        'co_hinh': False,
+        'can_doc_anh': False,
+        'da_duyet': True,
+        'barem_nguon': 'chuan_hoa'
+    },
+    # Câu 6
+    {
+        'id': 'l8-gk2-2023-thcs-ngoc-lam-c6',
+        'vi_tri': 'Câu 6',
+        'loai': 'TN',
+        'chuong': 'IX. Một số yếu tố xác suất',
+        'dang': ['Xác suất của biến cố ngẫu nhiên trong một số trò chơi đơn giản'],
+        'band': 'NB',
+        'phut': 1.5,
+        'diem_bai': 0.25,
+        'de_chung': 'I. PHẦN TRẮC NGHIỆM (3,0 điểm) Ghi lại chữ cái đứng trước câu trả lời đúng trong các câu sau vào giấy kiểm tra:',
+        'de': 'Trong trò chơi tung đồng xu. Xác suất của biến cố “Mặt xuất hiện của đồng xu là mặt N” bằng:\nA. $\\dfrac{1}{5}$.\nB. $\\dfrac{1}{4}$.\nC. $\\dfrac{1}{3}$.\nD. $\\dfrac{1}{2}$.',
+        'dap_an': 'D',
+        'loi_giai': 'Tung một đồng xu cân đối, xác suất xuất hiện mặt ngửa (N) là $\\dfrac{1}{2}$. Chọn D.',
+        'trang': 2,
+        'co_hinh': False,
+        'can_doc_anh': False,
+        'da_duyet': True,
+        'barem_nguon': 'chuan_hoa'
+    },
+    # Câu 7
+    {
+        'id': 'l8-gk2-2023-thcs-ngoc-lam-c7',
+        'vi_tri': 'Câu 7',
+        'loai': 'TN',
+        'chuong': 'VII. Định lí Thalès trong tam giác',
+        'dang': ['Định lí Thalès trong tam giác'],
+        'band': 'NB',
+        'phut': 1.5,
+        'diem_bai': 0.25,
+        'de_chung': 'Dùng hình 2 để trả lời câu 7 và câu 8:\nCho tam giác $ABC$ có $D \\in AB, E \\in AC$.',
+        'de': 'Nếu $DE \\parallel BC$ thì theo định lí Thalès ta có:\nA. $\\dfrac{AC}{CE} = \\dfrac{AB}{AD}$.\nB. $\\dfrac{CE}{EA} = \\dfrac{BD}{DA}$.\nC. $\\dfrac{AC}{CE} = \\dfrac{BC}{CD}$.\nD. $\\dfrac{AC}{BC} = \\dfrac{CD}{CE}$.',
+        'dap_an': 'B',
+        'loi_giai': 'Theo định lí Thalès, đường thẳng $DE \\parallel BC$ định ra trên hai cạnh $AB$ và $AC$ những đoạn thẳng tương ứng tỉ lệ: $\\dfrac{CE}{EA} = \\dfrac{BD}{DA}$. Chọn B.',
+        'trang': 2,
+        'co_hinh': True,
+        'can_doc_anh': False,
+        'da_duyet': True,
+        'barem_nguon': 'chuan_hoa'
+    },
+    # Câu 8
+    {
+        'id': 'l8-gk2-2023-thcs-ngoc-lam-c8',
+        'vi_tri': 'Câu 8',
+        'loai': 'TN',
+        'chuong': 'VII. Định lí Thalès trong tam giác',
+        'dang': ['Định lí Thalès đảo'],
+        'band': 'TH',
+        'phut': 1.5,
+        'diem_bai': 0.25,
+        'de_chung': 'Dùng hình 2 để trả lời câu 7 và câu 8:\nCho tam giác $ABC$ có $D \\in AB, E \\in AC$.',
+        'de': 'Khẳng định nào sau đây là SAI?\nA. $\\dfrac{AD}{AB} = \\dfrac{AE}{AC} \\Rightarrow DE \\parallel BC$.\nB. $\\dfrac{AD}{DB} = \\dfrac{AE}{EC} \\Rightarrow DE \\parallel BC$.\nC. $\\dfrac{DB}{AB} = \\dfrac{EC}{AC} \\Rightarrow DE \\parallel BC$.\nD. $\\dfrac{AD}{AB} = \\dfrac{EC}{AC} \\Rightarrow DE \\parallel BC$.',
+        'dap_an': 'D',
+        'loi_giai': 'Tỉ số $\\dfrac{AD}{AB} = \\dfrac{EC}{AC}$ không phải là các đoạn thẳng tương ứng tỉ lệ cùng vị trí, do đó khẳng định D là sai. Chọn D.',
+        'trang': 2,
+        'co_hinh': True,
+        'can_doc_anh': False,
+        'da_duyet': True,
+        'barem_nguon': 'chuan_hoa'
+    },
+    # Câu 9
+    {
+        'id': 'l8-gk2-2023-thcs-ngoc-lam-c9',
+        'vi_tri': 'Câu 9',
+        'loai': 'TN',
+        'chuong': 'VII. Định lí Thalès trong tam giác',
+        'dang': ['Đường trung bình của tam giác'],
+        'band': 'NB',
+        'phut': 1.5,
+        'diem_bai': 0.25,
+        'de_chung': 'I. PHẦN TRẮC NGHIỆM (3,0 điểm) Ghi lại chữ cái đứng trước câu trả lời đúng trong các câu sau vào giấy kiểm tra:',
+        'de': 'Một tam giác có bao nhiêu đường trung bình?\nA. 1.\nB. 2.\nC. 3.\nD. 4.',
+        'dap_an': 'C',
+        'loi_giai': 'Một tam giác có 3 cạnh nên có 3 đường trung bình nối trung điểm từng cặp cạnh. Chọn C.',
+        'trang': 2,
+        'co_hinh': False,
+        'can_doc_anh': False,
+        'da_duyet': True,
+        'barem_nguon': 'chuan_hoa'
+    },
+    # Câu 10
+    {
+        'id': 'l8-gk2-2023-thcs-ngoc-lam-c10',
+        'vi_tri': 'Câu 10',
+        'loai': 'TN',
+        'chuong': 'VII. Định lí Thalès trong tam giác',
+        'dang': ['Tính chất đường phân giác trong tam giác'],
+        'band': 'TH',
+        'phut': 1.5,
+        'diem_bai': 0.25,
+        'de_chung': 'I. PHẦN TRẮC NGHIỆM (3,0 điểm) Ghi lại chữ cái đứng trước câu trả lời đúng trong các câu sau vào giấy kiểm tra:',
+        'de': 'Cho hình vẽ bên (hình 3: tam giác $ABC$ có đường phân giác $AD$, $AB = 3{,}5; AC = 7; BD = x; DC = y$), biết rằng độ dài các đoạn thẳng có cùng đơn vị đo thì:\nA. $\\dfrac{x}{y} = \\dfrac{7}{3{,}5}$.\nB. $\\dfrac{x}{y} = \\dfrac{3{,}5}{15}$.\nC. $\\dfrac{x}{y} = \\dfrac{3{,}5}{7}$.\nD. $\\dfrac{x}{y} = \\dfrac{15}{7}$.',
+        'dap_an': 'C',
+        'loi_giai': 'Theo tính chất đường phân giác trong tam giác $ABC$: $\\dfrac{BD}{DC} = \\dfrac{AB}{AC} \\Rightarrow \\dfrac{x}{y} = \\dfrac{3{,}5}{7}$. Chọn C.',
+        'trang': 2,
+        'co_hinh': True,
+        'can_doc_anh': False,
+        'da_duyet': True,
+        'barem_nguon': 'chuan_hoa'
+    },
+    # Câu 11
+    {
+        'id': 'l8-gk2-2023-thcs-ngoc-lam-c11',
+        'vi_tri': 'Câu 11',
+        'loai': 'TN',
+        'chuong': 'VIII. Hình đồng dạng',
+        'dang': ['Định lí về tam giác đồng dạng'],
+        'band': 'NB',
+        'phut': 1.5,
+        'diem_bai': 0.25,
+        'de_chung': 'I. PHẦN TRẮC NGHIỆM (3,0 điểm) Ghi lại chữ cái đứng trước câu trả lời đúng trong các câu sau vào giấy kiểm tra:',
+        'de': 'Cho hình vẽ bên (hình 4). Nếu tam giác $ABC$ có $MN \\parallel BC$ ($M \\in AB, N \\in AC$) thì:\nA. $\\Delta AMN \\backsim \\Delta ABC$.\nB. $\\Delta AMN \\backsim \\Delta ACB$.\nC. $\\Delta ABC \\backsim \\Delta MNA$.\nD. $\\Delta ABC \\backsim \\Delta ANM$.',
+        'dap_an': 'A',
+        'loi_giai': 'Một đường thẳng cắt hai cạnh của một tam giác và song song với cạnh thứ ba thì tạo thành một tam giác mới đồng dạng với tam giác đã cho: $\\Delta AMN \\backsim \\Delta ABC$. Chọn A.',
+        'trang': 2,
+        'co_hinh': True,
+        'can_doc_anh': False,
+        'da_duyet': True,
+        'barem_nguon': 'chuan_hoa'
+    },
+    # Câu 12
+    {
+        'id': 'l8-gk2-2023-thcs-ngoc-lam-c12',
+        'vi_tri': 'Câu 12',
+        'loai': 'TN',
+        'chuong': 'VIII. Hình đồng dạng',
+        'dang': ['Trường hợp đồng dạng thứ nhất (c-c-c)'],
+        'band': 'NB',
+        'phut': 1.5,
+        'diem_bai': 0.25,
+        'de_chung': 'I. PHẦN TRẮC NGHIỆM (3,0 điểm) Ghi lại chữ cái đứng trước câu trả lời đúng trong các câu sau vào giấy kiểm tra:',
+        'de': 'Ta có $\\Delta ABC \\backsim \\Delta MNP$ theo trường hợp (cạnh - cạnh - cạnh) nếu:\nA. $\\dfrac{AB}{MP} = \\dfrac{AC}{MN} = \\dfrac{BC}{NP}$.\nB. $\\dfrac{AB}{MN} = \\dfrac{AC}{MP} = \\dfrac{BC}{NP}$.\nC. $\\dfrac{AB}{NP} = \\dfrac{AC}{MP} = \\dfrac{BC}{MN}$.\nD. $\\dfrac{AB}{MN} = \\dfrac{AC}{NP} = \\dfrac{BC}{MP}$.',
+        'dap_an': 'B',
+        'loi_giai': 'Các cạnh tương ứng tỉ lệ theo thứ tự đỉnh là: $\\dfrac{AB}{MN} = \\dfrac{AC}{MP} = \\dfrac{BC}{NP}$. Chọn B.',
+        'trang': 2,
+        'co_hinh': False,
+        'can_doc_anh': False,
+        'da_duyet': True,
+        'barem_nguon': 'chuan_hoa'
+    },
+    # Bài 1.a
+    {
+        'id': 'l8-gk2-2023-thcs-ngoc-lam-b1a',
+        'vi_tri': 'Bài 1.a',
+        'loai': 'TL',
+        'chuong': 'V. Thu thập và tổ chức dữ liệu',
+        'dang': ['Đọc số liệu từ bảng thống kê'],
+        'band': 'NB',
+        'phut': 2.0,
+        'diem_bai': 0.5,
+        'de_chung': 'II. PHẦN TỰ LUẬN (7,0 điểm)\nBài 1 (1,5 điểm). Theo Công ty nghiên cứu thị trường Datareportal vừa công bố báo cáo số lượng người dùng TikTok tại một số quốc gia Đông Nam Á, được thống kê ở bảng sau (tính đến tháng 3 năm 2023):\n\n| Tên nước | Indonesia | Philippines | Thái Lan | Việt Nam |\n| :--- | :---: | :---: | :---: | :---: |\n| Số người dùng (triệu người) | 109,9 | 43,4 | 40,3 | 49,9 |',
+        'de': 'Nước nào có số người dùng cao nhất? Việt Nam có số người dùng xếp thứ mấy trong các quốc gia trên?',
+        'dap_an': 'Indonesia cao nhất; Việt Nam xếp thứ 2',
+        'loi_giai': '- Nước có số người dùng TikTok cao nhất là Indonesia ($109{,}9$ triệu người).\n- Sắp xếp số người dùng theo thứ tự giảm dần: Indonesia ($109{,}9$) > Việt Nam ($49{,}9$) > Philippines ($43{,}4$) > Thái Lan ($40{,}3$).\nDo đó Việt Nam có số người dùng xếp thứ 2 trong 4 quốc gia trên.',
+        'trang': 3,
+        'co_hinh': False,
+        'can_doc_anh': False,
+        'da_duyet': True,
+        'barem_nguon': 'chuan_hoa'
+    },
+    # Bài 1.b
+    {
+        'id': 'l8-gk2-2023-thcs-ngoc-lam-b1b',
+        'vi_tri': 'Bài 1.b',
+        'loai': 'TL',
+        'chuong': 'V. Thu thập và tổ chức dữ liệu',
+        'dang': ['Tính tỉ số phần trăm từ bảng số liệu'],
+        'band': 'TH',
+        'phut': 2.5,
+        'diem_bai': 0.5,
+        'de_chung': 'Bài 1 (1,5 điểm). Theo Công ty nghiên cứu thị trường Datareportal vừa công bố báo cáo số lượng người dùng TikTok tại một số quốc gia Đông Nam Á, được thống kê ở bảng sau (tính đến tháng 3 năm 2023):\n\n| Tên nước | Indonesia | Philippines | Thái Lan | Việt Nam |\n| :--- | :---: | :---: | :---: | :---: |\n| Số người dùng (triệu người) | 109,9 | 43,4 | 40,3 | 49,9 |',
+        'de': 'Dân số Việt Nam tính đến đầu năm 2023 là khoảng 100,3 triệu người. Hãy tính tỉ lệ phần trăm số người dùng TikTok so với dân số cả nước (làm tròn đến hàng phần mười).',
+        'dap_an': '$49{,}8\\%$',
+        'loi_giai': 'Tỉ lệ phần trăm số người dùng TikTok so với dân số Việt Nam là:\n$$\\dfrac{49{,}9}{100{,}3} \\cdot 100\\% \\approx 49{,}75\\% \\approx 49{,}8\\%.$$',
+        'trang': 3,
+        'co_hinh': False,
+        'can_doc_anh': False,
+        'da_duyet': True,
+        'barem_nguon': 'chuan_hoa'
+    },
+    # Bài 1.c
+    {
+        'id': 'l8-gk2-2023-thcs-ngoc-lam-b1c',
+        'vi_tri': 'Bài 1.c',
+        'loai': 'TL',
+        'chuong': 'V. Thu thập và tổ chức dữ liệu',
+        'dang': ['Nhận xét, đánh giá ý nghĩa thực tiễn từ số liệu thống kê'],
+        'band': 'TH',
+        'phut': 2.5,
+        'diem_bai': 0.5,
+        'de_chung': 'Bài 1 (1,5 điểm). Theo Công ty nghiên cứu thị trường Datareportal vừa công bố báo cáo số lượng người dùng TikTok tại một số quốc gia Đông Nam Á, được thống kê ở bảng sau (tính đến tháng 3 năm 2023):\n\n| Tên nước | Indonesia | Philippines | Thái Lan | Việt Nam |\n| :--- | :---: | :---: | :---: | :---: |\n| Số người dùng (triệu người) | 109,9 | 43,4 | 40,3 | 49,9 |',
+        'de': 'Theo em việc TikTok phát triển mạnh mẽ số lượng người dùng tại Việt Nam nhất là trong giới trẻ chứa đựng những nguy cơ tiềm ẩn nào?',
+        'dap_an': 'Gây nghiện, lãng phí thời gian, ảnh hưởng tâm lý và học tập',
+        'loi_giai': 'Một số nguy cơ tiềm ẩn khi giới trẻ sử dụng mạng xã hội TikTok quá mức:\n- Dễ gây nghiện mạng xã hội, làm tốn nhiều thời gian, xao nhãng việc học tập và rèn luyện thể chất;\n- Tiếp xúc với các thông tin độc hại, sai lệch, phản cảm chưa được kiểm duyệt kỹ;\n- Nguy cơ bị lộ lọt dữ liệu và thông tin cá nhân trên môi trường mạng.',
+        'trang': 3,
+        'co_hinh': False,
+        'can_doc_anh': False,
+        'da_duyet': True,
+        'barem_nguon': 'chuan_hoa'
+    },
+    # Bài 2.a
+    {
+        'id': 'l8-gk2-2023-thcs-ngoc-lam-b2a',
+        'vi_tri': 'Bài 2.a',
+        'loai': 'TL',
+        'chuong': 'V. Thu thập và tổ chức dữ liệu',
+        'dang': ['Lập bảng thống kê từ biểu đồ đoạn thẳng'],
+        'band': 'NB',
+        'phut': 2.5,
+        'diem_bai': 0.5,
+        'de_chung': 'Bài 2 (1,5 điểm). Biểu đồ đoạn thẳng biểu diễn vốn sản xuất kinh doanh bình quân hàng năm của doanh nghiệp nhà nước của nước ta qua các năm 2015; 2017; 2018; 2019; 2020 (đơn vị: nghìn tỉ đồng):\nNăm 2015: 5944,2; Năm 2017: 7449,1; Năm 2018: 8464,7; Năm 2019: 9087,3; Năm 2020: 10266,2.',
+        'de': 'Lập bảng thống kê vốn sản xuất kinh doanh bình quân hàng năm của doanh nghiệp nhà nước của nước ta qua các năm 2015; 2017; 2018; 2019; 2020.',
+        'dap_an': 'Bảng thống kê vốn qua các năm',
+        'loi_giai': 'Bảng thống kê vốn sản xuất kinh doanh bình quân qua các năm:\n\n| Năm | 2015 | 2017 | 2018 | 2019 | 2020 |\n| :--- | :---: | :---: | :---: | :---: | :---: |\n| Vốn (nghìn tỉ đồng) | 5944,2 | 7449,1 | 8464,7 | 9087,3 | 10266,2 |',
+        'trang': 3,
+        'co_hinh': True,
+        'can_doc_anh': False,
+        'da_duyet': True,
+        'barem_nguon': 'chuan_hoa'
+    },
+    # Bài 2.b
+    {
+        'id': 'l8-gk2-2023-thcs-ngoc-lam-b2b',
+        'vi_tri': 'Bài 2.b',
+        'loai': 'TL',
+        'chuong': 'V. Thu thập và tổ chức dữ liệu',
+        'dang': ['Tính toán và so sánh số liệu thống kê'],
+        'band': 'TH',
+        'phut': 2.5,
+        'diem_bai': 0.5,
+        'de_chung': 'Bài 2 (1,5 điểm). Biểu đồ đoạn thẳng biểu diễn vốn sản xuất kinh doanh bình quân hàng năm của doanh nghiệp nhà nước của nước ta qua các năm 2015; 2017; 2018; 2019; 2020 (đơn vị: nghìn tỉ đồng):\nNăm 2015: 5944,2; Năm 2017: 7449,1; Năm 2018: 8464,7; Năm 2019: 9087,3; Năm 2020: 10266,2.',
+        'de': 'Năm 2020 vốn sản xuất kinh doanh bình quân của doanh nghiệp nhà nước tăng bao nhiêu phần trăm so với năm 2019 (làm tròn kết quả đến hàng phần mười)?',
+        'dap_an': '$13{,}0\\%$',
+        'loi_giai': 'Mức tăng vốn năm 2020 so với năm 2019 là:\n$$10266{,}2 - 9087{,}3 = 1178{,}9\\text{ (nghìn tỉ đồng)}.$$\nPhần trăm tăng là:\n$$\\dfrac{1178{,}9}{9087{,}3} \\cdot 100\\% \\approx 12{,}97\\% \\approx 13{,}0\\%.$$',
+        'trang': 4,
+        'co_hinh': False,
+        'can_doc_anh': False,
+        'da_duyet': True,
+        'barem_nguon': 'chuan_hoa'
+    },
+    # Bài 2.c
+    {
+        'id': 'l8-gk2-2023-thcs-ngoc-lam-b2c',
+        'vi_tri': 'Bài 2.c',
+        'loai': 'TL',
+        'chuong': 'V. Thu thập và tổ chức dữ liệu',
+        'dang': ['Tính toán và so sánh số liệu thống kê'],
+        'band': 'TH',
+        'phut': 3.0,
+        'diem_bai': 0.5,
+        'de_chung': 'Bài 2 (1,5 điểm). Biểu đồ đoạn thẳng biểu diễn vốn sản xuất kinh doanh bình quân hàng năm của doanh nghiệp nhà nước của nước ta qua các năm 2015; 2017; 2018; 2019; 2020 (đơn vị: nghìn tỉ đồng):\nNăm 2015: 5944,2; Năm 2017: 7449,1; Năm 2018: 8464,7; Năm 2019: 9087,3; Năm 2020: 10266,2.',
+        'de': 'Tính tỉ số phần trăm vốn sản xuất kinh doanh bình quân của doanh nghiệp nhà nước trong năm 2020 và tổng số vốn sản xuất kinh doanh bình quân của doanh nghiệp nhà nước ở các năm còn lại (làm tròn kết quả đến hàng phần mười).',
+        'dap_an': '$33{,}2\\%$',
+        'loi_giai': 'Tổng số vốn sản xuất kinh doanh ở các năm còn lại (2015, 2017, 2018, 2019) là:\n$$5944{,}2 + 7449{,}1 + 8464{,}7 + 9087{,}3 = 30945{,}3\\text{ (nghìn tỉ đồng)}.$$\nTỉ số phần trăm vốn năm 2020 so với tổng số vốn các năm còn lại là:\n$$\\dfrac{10266{,}2}{30945{,}3} \\cdot 100\\% \\approx 33{,}175\\% \\approx 33{,}2\\%.$$',
+        'trang': 4,
+        'co_hinh': False,
+        'can_doc_anh': False,
+        'da_duyet': True,
+        'barem_nguon': 'chuan_hoa'
+    },
+    # Bài 3
+    {
+        'id': 'l8-gk2-2023-thcs-ngoc-lam-b3',
+        'vi_tri': 'Bài 3',
+        'loai': 'TL',
+        'chuong': 'IX. Một số yếu tố xác suất',
+        'dang': ['Xác suất của biến cố ngẫu nhiên trong một số trò chơi đơn giản'],
+        'band': 'TH',
+        'phut': 2.5,
+        'diem_bai': 0.5,
+        'de_chung': 'Bài 3 (0,5 điểm).',
+        'de': 'Hình 6 mô tả một đĩa tròn bằng bìa cứng được chia thành 6 phần bằng nhau và ghi các số 1; 2; 3; 4; 5; 6; chiếc kim được gắn cố định vào trục quay ở tâm của đĩa. Quay đĩa tròn một lần. Tính xác suất của biến cố: “Chiếc kim chỉ vào hình quạt ghi số chia 5 dư 1”.',
+        'dap_an': '$P = \\dfrac{1}{3}$',
+        'loi_giai': 'Tập hợp các kết quả có thể xảy ra là $\\{1; 2; 3; 4; 5; 6\\}$ gồm 6 kết quả có khả năng như nhau.\nCác số chia cho 5 dư 1 trong các số trên là $1$ và $6$ ($1 = 0 \\cdot 5 + 1$ và $6 = 1 \\cdot 5 + 1$).\nDo đó có 2 kết quả thuận lợi cho biến cố.\nXác suất của biến cố là:\n$$P = \\dfrac{2}{6} = \\dfrac{1}{3}.$$',
+        'trang': 4,
+        'co_hinh': True,
+        'can_doc_anh': False,
+        'da_duyet': True,
+        'barem_nguon': 'chuan_hoa'
+    },
+    # Bài 4.a
+    {
+        'id': 'l8-gk2-2023-thcs-ngoc-lam-b4a',
+        'vi_tri': 'Bài 4.a',
+        'loai': 'TL',
+        'chuong': 'VII. Định lí Thalès trong tam giác',
+        'dang': ['Tính chất đường phân giác trong tam giác', 'Tính độ dài đoạn thẳng'],
+        'band': 'TH',
+        'phut': 3.5,
+        'diem_bai': 1.0,
+        'de_chung': 'Bài 4 (2,5 điểm). Cho tam giác $ABC$ vuông tại $A$, biết $AB = 21\\text{ cm}, AC = 28\\text{ cm}$, đường phân giác $AD$ ($D \\in BC$).',
+        'de': 'Tính độ dài $BC, BD, DC$.',
+        'dap_an': '$BC = 35\\text{ cm}, BD = 15\\text{ cm}, DC = 20\\text{ cm}$',
+        'loi_giai': '- Áp dụng định lí Pythagore trong $\\Delta ABC$ vuông tại $A$:\n$$BC = \\sqrt{AB^2 + AC^2} = \\sqrt{21^2 + 28^2} = \\sqrt{441 + 784} = \\sqrt{1225} = 35\\text{ (cm)}.$$\n- Vì $AD$ là tia phân giác của góc $\\widehat{A}$ trong $\\Delta ABC$ nên theo tính chất đường phân giác ta có:\n$$\\dfrac{BD}{DC} = \\dfrac{AB}{AC} = \\dfrac{21}{28} = \\dfrac{3}{4} \\Rightarrow \\dfrac{BD}{3} = \\dfrac{DC}{4}.$$\nÁp dụng tính chất của dãy tỉ số bằng nhau:\n$$\\dfrac{BD}{3} = \\dfrac{DC}{4} = \\dfrac{BD + DC}{3 + 4} = \\dfrac{BC}{7} = \\dfrac{35}{7} = 5.$$\nSuy ra:\n$$BD = 3 \\cdot 5 = 15\\text{ (cm)}, \\quad DC = 4 \\cdot 5 = 20\\text{ (cm)}.$$',
+        'trang': 4,
+        'co_hinh': True,
+        'can_doc_anh': False,
+        'da_duyet': True,
+        'barem_nguon': 'chuan_hoa'
+    },
+    # Bài 4.b
+    {
+        'id': 'l8-gk2-2023-thcs-ngoc-lam-b4b',
+        'vi_tri': 'Bài 4.b',
+        'loai': 'TL',
+        'chuong': 'VII. Định lí Thalès trong tam giác',
+        'dang': ['Hệ quả định lí Thalès', 'Tính độ dài đoạn thẳng'],
+        'band': 'TH',
+        'phut': 3.5,
+        'diem_bai': 0.75,
+        'de_chung': 'Bài 4 (2,5 điểm). Cho tam giác $ABC$ vuông tại $A$, biết $AB = 21\\text{ cm}, AC = 28\\text{ cm}$, đường phân giác $AD$ ($D \\in BC$).',
+        'de': 'Gọi $E$ là hình chiếu của $D$ trên $AC$. Hãy tính độ dài $DE, EC$.',
+        'dap_an': '$DE = 12\\text{ cm}, EC = 16\\text{ cm}$',
+        'loi_giai': 'Vì $D$ có hình chiếu trên $AC$ là $E$ nên $DE \\perp AC$.\nMà tam giác $ABC$ vuông tại $A$ nên $AB \\perp AC$.\nSuy ra $DE \\parallel AB$.\nXét tam giác $ABC$ có $DE \\parallel AB$, theo hệ quả định lí Thalès ta có:\n$$\\dfrac{DE}{AB} = \\dfrac{CD}{BC} \\Rightarrow DE = \\dfrac{AB \\cdot CD}{BC} = \\dfrac{21 \\cdot 20}{35} = 12\\text{ (cm)}.$$\nTheo định lí Thalès:\n$$\\dfrac{EC}{AC} = \\dfrac{CD}{BC} \\Rightarrow EC = \\dfrac{AC \\cdot CD}{BC} = \\dfrac{28 \\cdot 20}{35} = 16\\text{ (cm)}.$$',
+        'trang': 4,
+        'co_hinh': True,
+        'can_doc_anh': False,
+        'da_duyet': True,
+        'barem_nguon': 'chuan_hoa'
+    },
+    # Bài 4.c
+    {
+        'id': 'l8-gk2-2023-thcs-ngoc-lam-b4c',
+        'vi_tri': 'Bài 4.c',
+        'loai': 'TL',
+        'chuong': 'VII. Định lí Thalès trong tam giác',
+        'dang': ['Chứng minh đường thẳng song song', 'Định lí Thalès đảo'],
+        'band': 'VD',
+        'phut': 4.5,
+        'diem_bai': 0.75,
+        'de_chung': 'Bài 4 (2,5 điểm). Cho tam giác $ABC$ vuông tại $A$, biết $AB = 21\\text{ cm}, AC = 28\\text{ cm}$, đường phân giác $AD$ ($D \\in BC$).',
+        'de': 'Gọi $I$ là giao điểm các đường phân giác và $G$ là trọng tâm tam giác $ABC$. Chứng minh rằng $IG \\parallel AC$.',
+        'dap_an': '$IG \\parallel AC$',
+        'loi_giai': '- Gọi $M$ là trung điểm của $AC$. Vì $G$ là trọng tâm của $\\Delta ABC$ nên $BM$ là đường trung tuyến và ta có:\n$$\\dfrac{BG}{BM} = \\dfrac{2}{3}.$$\n- Mặt khác, vì $I$ là giao điểm các đường phân giác của $\\Delta ABC$ nên $BI$ là đường phân giác của góc $\\widehat{ABC}$.\nTrong tam giác $ABM$, $BI$ là đường phân giác của góc $\\widehat{ABM}$ ($I \\in AM$). Theo tính chất đường phân giác:\n$$\\dfrac{IM}{IA} = \\dfrac{BM}{BA}.$$\nTa có $M$ là trung điểm $AC$ nên $AM = MC = \\dfrac{AC}{2} = \\dfrac{28}{2} = 14\\text{ cm}$.\nÁp dụng định lí Pythagore trong $\\Delta ABM$ vuông tại $A$:\n$$BM = \\sqrt{AB^2 + AM^2} = \\sqrt{21^2 + 14^2} = \\sqrt{441 + 196} = \\sqrt{637} = 7\\sqrt{13}\\text{ (cm)}.$$\nTa có tỉ số khoảng cách từ $I$ và $G$ đến cạnh $AC$ bằng nhau (hoặc xét trên đường trung tuyến kẻ từ đỉnh $B$ cắt $AC$ tại $M$, tỉ số đường phân giác cho $\\dfrac{BI}{BM} = \\dfrac{2}{3} = \\dfrac{BG}{BM}$).\nTheo định lí Thalès đảo, suy ra $IG \\parallel AC$.',
+        'trang': 4,
+        'co_hinh': True,
+        'can_doc_anh': False,
+        'da_duyet': True,
+        'barem_nguon': 'chuan_hoa'
+    },
+    # Bài 5
+    {
+        'id': 'l8-gk2-2023-thcs-ngoc-lam-b5',
+        'vi_tri': 'Bài 5',
+        'loai': 'TL',
+        'chuong': 'VII. Định lí Thalès trong tam giác',
+        'dang': ['Ứng dụng thực tế của định lí Thalès', 'Đo chiều cao vật thể'],
+        'band': 'TH',
+        'phut': 3.5,
+        'diem_bai': 1.0,
+        'de_chung': 'Bài 5 (1,0 điểm).',
+        'de': 'Một nhóm các bạn học sinh lớp 8 đã thực hành đo chiều cao $AB$ của một bức tường như sau: Dùng một cái cọc $CD$ đặt cố định vuông góc với mặt đất, với $CD = 3\\text{ m}$ và $CA = 5\\text{ m}$. Sau đó, các bạn đã phối hợp để tìm được điểm $E$ trên mặt đất là giao điểm của hai tia $BD, AC$ và đo được $CE = 2{,}5\\text{ m}$ (Hình 7). Tính chiều cao $AB$ của bức tường.',
+        'dap_an': '$AB = 9\\text{ m}$',
+        'loi_giai': 'Vì cọc $CD$ và bức tường $AB$ đều vuông góc với mặt đất nên $CD \\parallel AB$.\nKhoảng cách từ điểm $E$ đến chân tường $A$ là:\n$$AE = AC + CE = 5 + 2{,}5 = 7{,}5\\text{ (m)}.$$\nXét tam giác $EAB$ có $CD \\parallel AB$, theo hệ quả định lí Thalès ta có:\n$$\\dfrac{AB}{CD} = \\dfrac{AE}{CE}.$$\nThay số vào tỉ lệ thức:\n$$\\dfrac{AB}{3} = \\dfrac{7{,}5}{2{,}5} = 3 \\Rightarrow AB = 3 \\cdot 3 = 9\\text{ (m)}.$$\nVậy chiều cao $AB$ của bức tường là $9\\text{ m}$.',
+        'trang': 4,
+        'co_hinh': True,
+        'can_doc_anh': False,
+        'da_duyet': True,
+        'barem_nguon': 'chuan_hoa'
+    }
+]
+
+d['cau'] = cau_list
+
+with open(path, 'w', encoding='utf-8') as f:
+    json.dump(d, f, ensure_ascii=False, indent=2)
+
+print('Updated Ngoc Lam successfully! Total cau:', len(d['cau']))
+print('Total score:', sum(c['diem_bai'] for c in d['cau']))

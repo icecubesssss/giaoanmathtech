@@ -109,10 +109,10 @@ def _soi_de_chu(xml: str) -> list[tuple[int, str, str]]:
             for a in dong[k1]:
                 if xong:
                     break
-                if a[4].strip() in _DAU_TREN or "…" in a[4]:
+                if any(c in _DAU_TREN for c in a[4]) or "…" in a[4]:
                     continue
                 for b in dong[k2]:
-                    if "…" in b[4]:
+                    if "…" in b[4] or any(c in _DAU_TREN for c in b[4]):
                         continue
                     if _la_chi_so_can(a[4], b[4]):
                         continue

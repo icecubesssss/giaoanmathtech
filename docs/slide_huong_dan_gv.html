@@ -1,0 +1,1079 @@
+<!DOCTYPE html>
+<html lang="vi">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Hướng Dẫn Cách Sử Dụng AI Soạn Phiếu — MathTech</title>
+    <!-- KaTeX CSS & JS for Math rendering -->
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/katex@0.16.8/dist/katex.min.css">
+    <script defer src="https://cdn.jsdelivr.net/npm/katex@0.16.8/dist/katex.min.js"></script>
+    <script defer src="https://cdn.jsdelivr.net/npm/katex@0.16.8/dist/contrib/auto-render.min.js"></script>
+    <style>
+        :root {
+            --bg-primary: #0f172a;
+            --bg-slide: #ffffff;
+            --text-main: #1e293b;
+            --text-muted: #64748b;
+            --primary: #1e3a8a;
+            --accent: #d97706;
+            --accent-light: #fef3c7;
+            --border: #e2e8f0;
+            --success: #15803d;
+            --success-bg: #dcfce7;
+            --card-bg: #f8fafc;
+        }
+
+        * {
+            box-sizing: border-box;
+            margin: 0;
+            padding: 0;
+        }
+
+        body {
+            font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, Helvetica, Arial, sans-serif;
+            background-color: var(--bg-primary);
+            color: var(--text-main);
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            justify-content: center;
+            min-height: 100vh;
+            overflow: hidden;
+        }
+
+        /* Slide Container */
+        #presentation {
+            position: relative;
+            width: 92vw;
+            max-width: 1240px;
+            height: 80vh;
+            max-height: 700px;
+            background: var(--bg-slide);
+            border-radius: 18px;
+            box-shadow: 0 25px 50px -12px rgba(0, 0, 0, 0.4);
+            overflow: hidden;
+            display: flex;
+            flex-direction: column;
+        }
+
+        /* Slide header & footer */
+        .slide-header {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            padding: 18px 36px 12px;
+            border-bottom: 2px solid #f1f5f9;
+        }
+
+        .slide-header .brand {
+            display: flex;
+            align-items: center;
+            gap: 12px;
+        }
+
+        .slide-header img.logo {
+            height: 38px;
+            width: auto;
+        }
+
+        .slide-header .tag {
+            font-size: 13px;
+            font-weight: 700;
+            color: var(--primary);
+            text-transform: uppercase;
+            letter-spacing: 0.8px;
+            background: #eff6ff;
+            padding: 4px 10px;
+            border-radius: 6px;
+        }
+
+        .slide-content {
+            flex: 1;
+            padding: 28px 48px;
+            overflow-y: auto;
+            display: flex;
+            flex-direction: column;
+            justify-content: center;
+        }
+
+        .slide-footer {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            padding: 12px 36px;
+            background: #f8fafc;
+            border-top: 1px solid var(--border);
+            font-size: 13px;
+            color: var(--text-muted);
+        }
+
+        /* Slide visibility */
+        .slide {
+            display: none;
+            height: 100%;
+            flex-direction: column;
+            justify-content: center;
+            animation: fadeIn 0.25s ease-in-out;
+        }
+
+        .slide.active {
+            display: flex;
+        }
+
+        @keyframes fadeIn {
+            from { opacity: 0; transform: translateY(6px); }
+            to { opacity: 1; transform: translateY(0); }
+        }
+
+        /* Typography */
+        h1.title {
+            font-size: 34px;
+            font-weight: 800;
+            color: var(--primary);
+            line-height: 1.25;
+            margin-bottom: 8px;
+        }
+
+        h2.subtitle {
+            font-size: 20px;
+            font-weight: 600;
+            color: var(--accent);
+            margin-bottom: 24px;
+        }
+
+        h3.section-title {
+            font-size: 24px;
+            font-weight: 700;
+            color: var(--primary);
+            margin-bottom: 20px;
+            display: flex;
+            align-items: center;
+            gap: 10px;
+        }
+
+        p, li {
+            font-size: 17px;
+            line-height: 1.6;
+            color: #334155;
+        }
+
+        /* Grids & Cards */
+        .grid-2 {
+            display: grid;
+            grid-template-columns: 1fr 1fr;
+            gap: 24px;
+        }
+
+        .grid-3 {
+            display: grid;
+            grid-template-columns: 1fr 1fr 1fr;
+            gap: 20px;
+        }
+
+        .grid-4 {
+            display: grid;
+            grid-template-columns: repeat(4, 1fr);
+            gap: 16px;
+        }
+
+        .card {
+            background: var(--card-bg);
+            border: 1px solid var(--border);
+            border-radius: 12px;
+            padding: 20px;
+            transition: transform 0.15s ease, box-shadow 0.15s ease;
+        }
+
+        .card:hover {
+            transform: translateY(-2px);
+            box-shadow: 0 10px 15px -3px rgba(0, 0, 0, 0.06);
+        }
+
+        .card-accent {
+            border-left: 5px solid var(--accent);
+            background: #fffbeb;
+        }
+
+        .card-primary {
+            border-left: 5px solid var(--primary);
+            background: #eff6ff;
+        }
+
+        .card-success {
+            border-left: 5px solid var(--success);
+            background: var(--success-bg);
+        }
+
+        /* Action Pill / Link Buttons */
+        .pill-btn {
+            display: inline-flex;
+            align-items: center;
+            gap: 8px;
+            padding: 8px 16px;
+            background: var(--primary);
+            color: #ffffff !important;
+            text-decoration: none;
+            border-radius: 8px;
+            font-size: 14px;
+            font-weight: 600;
+            margin-top: 8px;
+            transition: all 0.2s ease;
+        }
+
+        .pill-btn:hover {
+            background: #172554;
+            transform: translateY(-1px);
+        }
+
+        .pill-btn.secondary {
+            background: #e2e8f0;
+            color: #1e293b !important;
+        }
+
+        .pill-btn.secondary:hover {
+            background: #cbd5e1;
+        }
+
+        /* Workflow Steps */
+        .step-container {
+            display: flex;
+            align-items: center;
+            justify-content: space-between;
+            gap: 12px;
+            margin-top: 16px;
+        }
+
+        .step-card {
+            flex: 1;
+            background: var(--card-bg);
+            border: 2px solid var(--border);
+            border-radius: 12px;
+            padding: 16px;
+            text-align: center;
+        }
+
+        .step-card.active-step {
+            border-color: var(--primary);
+            background: #eff6ff;
+        }
+
+        .step-num {
+            width: 32px;
+            height: 32px;
+            background: var(--primary);
+            color: #ffffff;
+            font-weight: 800;
+            border-radius: 50%;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            margin: 0 auto 10px;
+            font-size: 15px;
+        }
+
+        .step-arrow {
+            font-size: 24px;
+            color: #94a3b8;
+            font-weight: 800;
+        }
+
+        /* Tables */
+        table.custom-table {
+            width: 100%;
+            border-collapse: collapse;
+            margin-top: 10px;
+            background: #ffffff;
+            border-radius: 10px;
+            overflow: hidden;
+            box-shadow: 0 1px 3px rgba(0,0,0,0.05);
+        }
+
+        table.custom-table th {
+            background: var(--primary);
+            color: #ffffff;
+            padding: 12px 16px;
+            text-align: left;
+            font-size: 15px;
+            font-weight: 700;
+        }
+
+        table.custom-table td {
+            padding: 12px 16px;
+            border-bottom: 1px solid var(--border);
+            font-size: 15px;
+        }
+
+        table.custom-table tr:last-child td {
+            border-bottom: none;
+        }
+
+        table.custom-table tr:nth-child(even) {
+            background: #f8fafc;
+        }
+
+        /* Controls */
+        .controls {
+            position: fixed;
+            bottom: 24px;
+            display: flex;
+            align-items: center;
+            gap: 16px;
+            background: rgba(15, 23, 42, 0.85);
+            -webkit-backdrop-filter: blur(8px);
+            backdrop-filter: blur(8px);
+            padding: 10px 24px;
+            border-radius: 40px;
+            box-shadow: 0 10px 25px rgba(0,0,0,0.3);
+            border: 1px solid rgba(255,255,255,0.1);
+        }
+
+        .controls button {
+            background: #334155;
+            color: #ffffff;
+            border: none;
+            width: 38px;
+            height: 38px;
+            border-radius: 50%;
+            font-size: 16px;
+            cursor: pointer;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            transition: all 0.2s ease;
+        }
+
+        .controls button:hover {
+            background: var(--accent);
+            transform: scale(1.08);
+        }
+
+        .controls .counter {
+            color: #ffffff;
+            font-size: 15px;
+            font-weight: 600;
+            min-width: 65px;
+            text-align: center;
+        }
+
+        /* Print formatting */
+        @media print {
+            body {
+                background: none;
+                padding: 0;
+            }
+            #presentation {
+                width: 100vw;
+                height: 100vh;
+                max-width: none;
+                max-height: none;
+                box-shadow: none;
+                border-radius: 0;
+            }
+            .slide {
+                display: flex !important;
+                page-break-after: always;
+                height: 100vh;
+            }
+            .controls {
+                display: none;
+            }
+        }
+
+        /* Utility & Semantic Classes */
+        .text-sm { font-size: 14px; }
+        .text-xs { font-size: 13px; }
+        .text-muted-13 { font-size: 13px; color: var(--text-muted); }
+        .text-muted-14 { font-size: 14px; color: var(--text-muted); }
+        .text-highlight { color: #b45309; }
+        .text-primary { color: var(--primary); }
+        .text-accent { color: var(--accent); }
+        .text-success { color: var(--success); }
+        .text-danger { color: #dc2626; }
+        .text-danger-dark { color: #991b1b; }
+        .mb-4 { margin-bottom: 4px; }
+        .mb-6 { margin-bottom: 6px; }
+        .mb-8 { margin-bottom: 8px; }
+        .mb-10 { margin-bottom: 10px; }
+        .mb-12 { margin-bottom: 12px; }
+        .mb-20 { margin-bottom: 20px; }
+        .link-bold-primary { color: var(--primary); font-weight: 700; }
+
+        /* Slide Header */
+        .slide-header-desc { font-size: 14px; font-weight: 600; color: #475569; }
+
+        /* Slide 1: Cover */
+        .cover-box { text-align: center; max-width: 860px; margin: 0 auto; }
+        .cover-tag { display: inline-block; padding: 6px 18px; background: #eff6ff; color: var(--primary); font-weight: 700; border-radius: 20px; font-size: 14px; margin-bottom: 20px; border: 1px solid #bfdbfe; }
+        .cover-title { font-size: 42px; margin-bottom: 16px; }
+        .cover-subtitle { font-size: 22px; margin-bottom: 36px; color: #64748b; font-weight: 500; }
+        .cover-meta { display: flex; justify-content: center; gap: 40px; margin-top: 20px; }
+        .cover-meta-card { text-align: left; background: #f8fafc; padding: 14px 24px; border-radius: 12px; border: 1px solid var(--border); }
+        .cover-meta-label { font-size: 13px; color: var(--text-muted); font-weight: 600; }
+        .cover-meta-val-primary { font-size: 18px; font-weight: 800; color: var(--primary); }
+        .cover-meta-val-accent { font-size: 18px; font-weight: 800; color: var(--accent); }
+
+        /* Slide 2: Quick start */
+        .card-step-title { font-size: 17px; font-weight: 800; color: var(--primary); margin-bottom: 8px; }
+        .card-step-title.text-accent { color: var(--accent); }
+        .card-sub-title { font-size: 15px; font-weight: 700; color: var(--primary); margin-bottom: 4px; }
+        .list-bullet { padding-left: 20px; margin-bottom: 10px; }
+        .btn-group { display: flex; gap: 8px; flex-wrap: wrap; margin-bottom: 14px; }
+        .ext-card { background: #ffffff; padding: 10px 14px; border-radius: 8px; }
+        .border-accent { border-left: 4px solid var(--accent); }
+        .border-primary { border-left: 4px solid var(--primary); }
+
+        /* Slide 3: Process */
+        .process-container { display: flex; align-items: center; justify-content: space-between; gap: 16px; margin: 20px 0; }
+        .process-card { flex: 1; text-align: center; }
+        .card-input { border-top: 4px solid #3b82f6; }
+        .card-process { border-top: 4px solid var(--accent); background: #fffbeb; }
+        .card-output { border-top: 4px solid var(--success); background: #f0fdf4; }
+        .process-title { font-size: 20px; font-weight: 800; }
+        .process-subtitle { font-size: 14px; color: var(--text-muted); margin: 6px 0 12px; }
+        .process-text { font-size: 15px; text-align: left; }
+        .process-arrow { font-size: 32px; color: #94a3b8; }
+        .banner-tip { background: #f1f5f9; padding: 12px 20px; border-radius: 8px; text-align: center; font-weight: 600; color: #334155; }
+
+        /* Slide 4: Table */
+        .w-10 { width: 10%; }
+        .w-35 { width: 35%; }
+        .w-30 { width: 30%; }
+        .w-25 { width: 25%; }
+        .row-highlight { background: #fef3c7; font-weight: 600; }
+        .td-tier-c { color: #b45309; font-size: 18px; font-weight: 800; }
+        .td-tier-name { font-weight: 800; color: var(--primary); }
+        .banner-warn { margin-top: 14px; font-size: 15px; color: #b45309; font-weight: 700; background: #fffbeb; padding: 8px 16px; border-radius: 8px; border-left: 4px solid var(--accent); }
+
+        /* Slide 5: Levels */
+        .level-heading { font-weight: 800; font-size: 18px; margin-bottom: 6px; }
+        .level-desc { font-size: 14px; color: var(--text-muted); margin-bottom: 8px; }
+        .example-box { background: #ffffff; padding: 10px; border-radius: 6px; font-size: 15px; }
+        .card-vdc { border-left: 5px solid #ef4444; background: #fef2f2; }
+
+        /* Slide 6: Scaffolding */
+        .principle-tag { color: #b45309; font-size: 16px; }
+        .compare-card-old { background: #ffffff; border: 1px solid #cbd5e1; }
+        .compare-title-old { font-weight: 800; color: #dc2626; margin-bottom: 8px; }
+        .compare-content-old { background: #f8fafc; padding: 12px; border-radius: 6px; font-size: 15px; line-height: 1.6; }
+        .compare-card-new { background: #ffffff; border: 2px solid var(--success); }
+        .compare-title-new { font-weight: 800; color: var(--success); margin-bottom: 8px; }
+        .compare-content-new { background: #f0fdf4; padding: 12px; border-radius: 6px; font-size: 15px; line-height: 1.6; }
+
+        /* Slide 7: Ratios */
+        .ratio-card { text-align: center; }
+        .ratio-nb { border-top: 4px solid var(--primary); }
+        .ratio-th { border-top: 4px solid var(--accent); }
+        .ratio-vd { border-top: 4px solid var(--success); }
+        .ratio-number { font-size: 28px; font-weight: 800; }
+        .ratio-label { font-weight: 700; margin: 4px 0; }
+        .ratio-desc { font-size: 14px; color: var(--text-muted); }
+        .duration-heading { font-weight: 800; margin-bottom: 8px; }
+
+        /* Slide 8: Stages */
+        .step-card-title { font-weight: 800; margin-bottom: 6px; }
+        .stage-flow-note { margin-top: 24px; background: #f8fafc; padding: 14px 20px; border-radius: 10px; border: 1px solid var(--border); }
+
+        /* Slide 9: 5 Steps */
+        .flex-wrap { flex-wrap: wrap; }
+        .min-w-170 { min-width: 170px; }
+        .step-accent { background: #fffbeb; border-color: var(--accent); }
+        .step-success { background: #f0fdf4; border-color: var(--success); }
+        .bg-accent { background: var(--accent); }
+        .bg-success { background: var(--success); }
+        .step-head-title { font-size: 15px; }
+        .step-sub-text { font-size: 13px; margin-top: 4px; }
+
+        /* Slide 10: Step 1 & 2 */
+        .step-block-title { font-weight: 800; font-size: 18px; margin-bottom: 8px; }
+        .source-list { padding-left: 18px; margin-bottom: 14px; }
+
+        /* Slide 11: Step 3 & 4 */
+        .question-list { padding-left: 20px; font-size: 15px; }
+        .chat-bubble-primary { background: #ffffff; padding: 10px; border-radius: 6px; font-style: italic; color: #1e3a8a; border: 1px dashed var(--primary); margin-bottom: 10px; }
+
+        /* Slide 12: Step 5 */
+        .chat-bubble-success { background: #ffffff; padding: 12px; border-radius: 8px; font-weight: 700; color: #166534; font-size: 16px; border: 1px dashed var(--success); }
+        .action-card-title { font-weight: 700; margin-bottom: 6px; }
+
+        /* Slide 13: Summary */
+        .summary-intro { margin-bottom: 16px; font-size: 15px; color: var(--text-muted); }
+        .summary-card-title { font-weight: 800; margin-bottom: 6px; }
+
+        /* Controls */
+        .btn-fs { margin-left: 8px; }
+    </style>
+</head>
+<body>
+
+    <div id="presentation">
+
+        <!-- HEADER -->
+        <div class="slide-header">
+            <div class="brand">
+                <img src="data:image/png;base64," class="logo" alt="MathTech Logo">
+                <span class="tag">Học Liệu Chuẩn 2026</span>
+            </div>
+            <div class="slide-header-desc">
+                Soạn bài bằng AI: Khối 3 & Khối 6
+            </div>
+        </div>
+
+        <!-- SLIDE 1: BÌA -->
+        <div class="slide-content">
+            <div class="slide active" id="slide-1">
+                <div class="cover-box">
+                    <div class="cover-tag">
+                        CẨM NANG NỘI BỘ CHO GIÁO VIÊN MỚI
+                    </div>
+                    <h1 class="title cover-title">HƯỚNG DẪN CÁCH SỬ DỤNG AI<br/>SOẠN PHIẾU HỌC TẬP</h1>
+                    <h2 class="subtitle cover-subtitle">
+                        Tư duy phân tầng sư phạm & Quy trình 5 bước phối hợp cùng Trợ lý AI
+                    </h2>
+                    <div class="cover-meta">
+                        <div class="cover-meta-card">
+                            <div class="cover-meta-label">NGƯỜI THUYẾT TRÌNH</div>
+                            <div class="cover-meta-val-primary">Trương Đình Thái</div>
+                        </div>
+                        <div class="cover-meta-card">
+                            <div class="cover-meta-label">ĐƠN VỊ</div>
+                            <div class="cover-meta-val-accent">Tổ Học Liệu MathTech</div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <!-- SLIDE 2: TẢI TOOL, CÀI EXTENSION & MỞ CHAT AI -->
+            <div class="slide" id="slide-2">
+                <h3 class="section-title">⚡ Khởi Động Nhanh (3 Phút): Tải Tool, Cài Extension & Mở AI</h3>
+                <div class="grid-2">
+                    <div class="card card-primary">
+                        <div class="card-step-title">
+                            1. Tải Mã Nguồn & Antigravity
+                        </div>
+                        <ul class="list-bullet">
+                            <li class="mb-4"><strong>Mã nguồn MathTech:</strong> Tải ZIP về giải nén ra thư mục.</li>
+                            <li><strong>Ứng dụng AI Antigravity:</strong> Tải và cài đặt vào máy.</li>
+                        </ul>
+                        <div class="btn-group">
+                            <a href="https://github.com/icecubesssss/giaoanmathtech" target="_blank" rel="noopener noreferrer" class="pill-btn">
+                                📦 GitHub Codebase
+                            </a>
+                            <a href="https://antigravity.google/download" target="_blank" rel="noopener noreferrer" class="pill-btn secondary">
+                                🚀 Tải Antigravity
+                            </a>
+                        </div>
+                        <div class="card-sub-title">
+                            2. Kích Hoạt AI Không Cần Gõ Lệnh
+                        </div>
+                        <p class="text-sm">Mở folder code $ightarrow$ Mở chat AI $ightarrow$ Nhắn: <strong class="text-highlight">"Cài đặt môi trường giúp tôi"</strong> (AI tự làm hết!).</p>
+                    </div>
+
+                    <div class="card card-accent">
+                        <div class="card-step-title text-accent">
+                            3. Cài 2 Extension Thiết Yếu (Trong VS Code)
+                        </div>
+                        <p class="text-sm mb-8">Mở mục Extensions (<code>Ctrl+Shift+X</code> / <code>Cmd+Shift+X</code>) và cài:</p>
+                        <div class="ext-card border-accent mb-10">
+                            <strong>1. Extension Claude (Claude Code):</strong><br/>
+                            <span class="text-muted-13">Dùng Claude tương tác trực tiếp, chạy lệnh soạn bài và phân dạng cùng AI.</span>
+                        </div>
+                        <div class="ext-card border-primary">
+                            <strong>2. Extension vscode-pdf:</strong><br/>
+                            <span class="text-muted-13">Mở và xem trực tiếp 3 bản PDF (Handout HS, Guide GV, Slide) ngay trong cửa sổ làm việc mà không cần ứng dụng ngoài.</span>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <!-- SLIDE 3: CƠ CHẾ HOẠT ĐỘNG -->
+            <div class="slide" id="slide-3">
+                <h3 class="section-title">🔄 Cơ Chế Hoạt Động Của Hệ Thống</h3>
+                <div class="process-container">
+                    <div class="card process-card card-input">
+                        <div class="process-title text-primary">INPUTS</div>
+                        <div class="process-subtitle">(Nguyên liệu thô)</div>
+                        <p class="process-text">
+                            • Đề thi thật chính thức Hà Nội<br/>
+                            • SGK, SGV Kết nối tri thức<br/>
+                            • Sách bài tập & tài liệu chọn lọc
+                        </p>
+                    </div>
+                    <div class="process-arrow">➔</div>
+                    <div class="card process-card card-process">
+                        <div class="process-title text-accent">PROCESS</div>
+                        <div class="process-subtitle">(MathTech Engine + AI)</div>
+                        <p class="process-text">
+                            • Giải toán kiểm thử (SymPy)<br/>
+                            • Dựng hình học chuẩn xác (TikZ)<br/>
+                            • Cân đối thời lượng 90' & dàn trang
+                        </p>
+                    </div>
+                    <div class="process-arrow">➔</div>
+                    <div class="card process-card card-output">
+                        <div class="process-title text-success">OUTPUTS</div>
+                        <div class="process-subtitle">(Bộ 3 PDF Song Song)</div>
+                        <p class="process-text">
+                            1. <strong>Handout HS:</strong> Khung thoáng làm bài<br/>
+                            2. <strong>Guide GV:</strong> Giải chi tiết + sư phạm<br/>
+                            3. <strong>Slide 16:9:</strong> Ẩn lời giải tương tác
+                        </p>
+                    </div>
+                </div>
+                <div class="banner-tip">
+                    💡 GV chỉ cần tập trung vào chất lượng nội dung — AI tự động lo toàn bộ khâu dàn trang và xuất file PDF!
+                </div>
+            </div>
+
+            <!-- SLIDE 4: PHÂN TẦNG NĂNG LỰC HỌC SINH -->
+            <div class="slide" id="slide-4">
+                <h3 class="section-title">🎯 Phân Tầng Năng Lực Học Sinh (A – B – C – X)</h3>
+                <table class="custom-table">
+                    <thead>
+                        <tr>
+                            <th class="w-10">Tầng</th>
+                            <th class="w-35">Đối tượng & Năng lực</th>
+                            <th class="w-30">Mục tiêu điểm số</th>
+                            <th class="w-25">Trần bài tập</th>
+                        </tr>
+                    </thead>
+                    <tbody>
+                        <tr class="row-highlight">
+                            <td class="td-tier-c">LỚP C</td>
+                            <td>Nền tảng <strong>trung bình – yếu</strong>, hay quên kiến thức cũ, sợ bài toán dài</td>
+                            <td>Chắc SGK, kéo điểm kiểm tra trên trường lên <strong>7,0 – 8,0 điểm</strong></td>
+                            <td class="text-highlight">Trần: Vận dụng (VD)<br/>⛔ CẤM TUYỆT ĐỐI VDC</td>
+                        </tr>
+                        <tr>
+                            <td class="td-tier-name">LỚP B</td>
+                            <td>Học lực trung bình – khá, tiếp thu tốt</td>
+                            <td>Kỳ I: trần 9,5 – 10 điểm; Kỳ II: 9,0 – 9,5 điểm</td>
+                            <td>Trần: VDC nhẹ (ít câu VDC hơn A)</td>
+                        </tr>
+                        <tr>
+                            <td class="td-tier-name">LỚP A</td>
+                            <td>Học lực khá – giỏi, tư duy nhanh</td>
+                            <td>Đạt điểm tối đa các bài kiểm tra trên trường</td>
+                            <td>Trần: VDC dày dặn</td>
+                        </tr>
+                        <tr>
+                            <td class="td-tier-name">LỚP X</td>
+                            <td>Xuất sắc, định hướng thi Chuyên / CLC</td>
+                            <td>Chinh phục trọn vẹn câu cuối đề thi</td>
+                            <td>Trần: VDC chuyên sâu</td>
+                        </tr>
+                    </tbody>
+                </table>
+                <div class="banner-warn">
+                    📌 LƯU Ý BẮT BUỘC: Đợt soạn này tập trung 100% cho <u>LỚP C</u>. Tuyệt đối không đưa bài VDC vào phiếu!
+                </div>
+            </div>
+
+            <!-- SLIDE 5: 4 CẤP ĐỘ CÂU HỎI -->
+            <div class="slide" id="slide-5">
+                <h3 class="section-title">📐 4 Cấp Độ Câu Hỏi (NB – TH – VD – VDC)</h3>
+                <div class="grid-2">
+                    <div class="card card-primary">
+                        <div class="level-heading text-primary">
+                            1. NHẬN BIẾT (NB) — 1 Bước xử lý
+                        </div>
+                        <p class="level-desc">Áp dụng trực tiếp định nghĩa, công thức, tính nhẩm 1 phép tính.</p>
+                        <div class="example-box">
+                            • <strong>Lớp 3:</strong> Tính nhẩm: $7 	imes 4 = ?$<br/>
+                            • <strong>Lớp 6:</strong> Tính giá trị: $2^3 = ?$
+                        </div>
+                    </div>
+
+                    <div class="card card-primary">
+                        <div class="level-heading text-primary">
+                            2. THÔNG HIỂU (TH) — 1–2 Bước xử lý
+                        </div>
+                        <p class="level-desc">Áp dụng quy tắc vào bài toán cơ bản, bài toán lời văn đơn giản.</p>
+                        <div class="example-box">
+                            • <strong>Lớp 3:</strong> "Mỗi hộp có 8 cái bánh. Hỏi 3 hộp có mấy cái?"<br/>
+                            • <strong>Lớp 6:</strong> Thực hiện phép tính: $A = 2^3 \cdot 5 - 3^2$
+                        </div>
+                    </div>
+
+                    <div class="card card-accent">
+                        <div class="level-heading text-accent">
+                            3. VẬN DỤNG (VD) — 2–3 Bước xử lý
+                        </div>
+                        <p class="level-desc">Liên kết nhiều dữ kiện, bài toán thực tế, tìm thành phần chưa biết.</p>
+                        <div class="example-box">
+                            • <strong>Lớp 3:</strong> "Có 35 quả cam chia 5 túi, đã bán 2 túi. Còn mấy quả?"<br/>
+                            • <strong>Lớp 6:</strong> Tìm số tự nhiên $x$: $2(x - 3)^2 = 32$
+                        </div>
+                    </div>
+
+                    <div class="card card-vdc">
+                        <div class="level-heading text-danger">
+                            4. VẬN DỤNG CAO (VDC) — $\ge 4$ Bước
+                        </div>
+                        <p class="level-desc">Phân hóa 9,5 – 10 điểm (cực trị, quy luật dãy số, toán đố logic).</p>
+                        <div class="example-box text-danger-dark">
+                            • <strong>Lớp 6:</strong> Tìm chữ số tận cùng của $S = 2 + 2^2 + \dots + 2^100$<br/>
+                            ⚠️ <strong>TẦNG C = 0% VDC</strong> (Không đưa vào phiếu).
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <!-- SLIDE 6: KỸ THUẬT "NB TÁCH CÂU" -->
+            <div class="slide" id="slide-6">
+                <h3 class="section-title">🪜 Kỹ Thuật "NB Tách Câu" (Giàn Giáo Sư Phạm Lớp C)</h3>
+                <div class="card card-accent mb-20">
+                    <strong class="principle-tag">NGUYÊN TẮC BẮT BUỘC:</strong>
+                    Tuyệt đối không dùng câu Nhận biết rời rạc, vô bổ. Mọi câu NB phải là <strong>bước đệm kỹ năng</strong> được bóc tách từ chính bài toán thi thật!
+                </div>
+
+                <div class="grid-2">
+                    <div class="card compare-card-old">
+                        <div class="compare-title-old">❌ Cách Ra Đề Cũ (HS Yếu Thường Bỏ Trắng)</div>
+                        <div class="compare-content-old">
+                            <strong>Bài toán [TH]:</strong><br/>
+                            Tính giá trị biểu thức:<br/>
+                            $$M = 150 - [100 - (3^2 \cdot 5)]$$
+                            <em>(HS trung bình – yếu nhìn ngoặc vuông và lũy thừa thường sợ và làm sai thứ tự).</em>
+                        </div>
+                    </div>
+
+                    <div class="card compare-card-new">
+                        <div class="compare-title-new">✅ Chuẩn Giàn Giáo MathTech (NB Tách Bước)</div>
+                        <div class="compare-content-new">
+                            <strong>Bài toán chẻ giàn giáo:</strong><br/>
+                            • <strong>Ý a [NB đệm]:</strong> Tính giá trị của $3^2$ và $3^2 \cdot 5$.<br/>
+                            • <strong>Ý b [TH]:</strong> Thực hiện phép tính trong ngoặc vuông $[100 - (3^2 \cdot 5)]$ rồi tính $M$.<br/>
+                            👉 <em>HS làm được ngay ý a, tự tin giải quyết trọn vẹn cả bài!</em>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <!-- SLIDE 7: TỈ LỆ CHUẨN LỚP C: 40 - 40 - 20 -->
+            <div class="slide" id="slide-7">
+                <h3 class="section-title">⚖️ Tỉ Lệ Chuẩn Vàng Lớp C: 40% – 40% – 20%</h3>
+                <div class="grid-3 mb-20">
+                    <div class="card ratio-card ratio-nb">
+                        <div class="ratio-number text-primary">40%</div>
+                        <div class="ratio-label">NHẬN BIẾT (NB)</div>
+                        <p class="ratio-desc">Xây nền móng, củng cố kỹ năng tiên quyết</p>
+                    </div>
+                    <div class="card ratio-card ratio-th">
+                        <div class="ratio-number text-accent">40%</div>
+                        <div class="ratio-label">THÔNG HIỂU (TH)</div>
+                        <p class="ratio-desc">Thành thạo dạng toán trọng tâm đề thi</p>
+                    </div>
+                    <div class="card ratio-card ratio-vd">
+                        <div class="ratio-number text-success">20%</div>
+                        <div class="ratio-label">VẬN DỤNG (VD)</div>
+                        <p class="ratio-desc">Chạm bài toán thực tế vừa sức (0% VDC)</p>
+                    </div>
+                </div>
+
+                <div class="card card-primary">
+                    <div class="duration-heading text-primary">
+                        ⏱️ Phân Bổ Thời Lượng Trong Ca Học Chuẩn 90 Phút:
+                    </div>
+                    <p class="mb-6">
+                        • <strong>Khối 3:</strong> GV giảng & làm mẫu: 30' $ightarrow$ HS luyện trên lớp: 45' $ightarrow$ BTVN: 60' (8–10 câu NB ngắn + 4–5 TH + 1–2 VD).
+                    </p>
+                    <p>
+                        • <strong>Khối 6:</strong> GV giảng: 25' $ightarrow$ HS luyện trên lớp: 55' (nghỉ 10') $ightarrow$ BTVN: 40' (10–12 câu NB đệm + 4 TH + 1–2 VD).
+                    </p>
+                </div>
+            </div>
+
+            <!-- SLIDE 8: CẤU TRÚC 4 CHẶNG TRÊN PHIẾU HỌC TẬP -->
+            <div class="slide" id="slide-8">
+                <h3 class="section-title">📖 Cấu Trúc 4 Chặng Sư Phạm Của 1 Phiếu Học Tập</h3>
+                <div class="step-container">
+                    <div class="step-card active-step">
+                        <div class="step-num">1</div>
+                        <div class="step-card-title text-primary">KIẾN THỨC NỀN</div>
+                        <p class="text-xs">Ôn lại kỹ năng lớp dưới hoặc bài trước chuẩn bị dùng đến</p>
+                    </div>
+                    <div class="step-arrow">➔</div>
+                    <div class="step-card active-step">
+                        <div class="step-num">2</div>
+                        <div class="step-card-title text-primary">KIẾN THỨC MỚI</div>
+                        <p class="text-xs">Định nghĩa, công thức ngắn gọn, dễ nhớ, có đóng khung</p>
+                    </div>
+                    <div class="step-arrow">➔</div>
+                    <div class="step-card active-step">
+                        <div class="step-num">3</div>
+                        <div class="step-card-title text-primary">VÍ DỤ MẪU</div>
+                        <p class="text-xs">GV cùng làm mẫu với HS (có khung điền khuyết làm mẫu)</p>
+                    </div>
+                    <div class="step-arrow">➔</div>
+                    <div class="step-card active-step">
+                        <div class="step-num">4</div>
+                        <div class="step-card-title text-primary">LUYỆN TẬP</div>
+                        <p class="text-xs">Hệ thống bài tập tự luyện từ dễ đến khó (NB $	o$ TH $	o$ VD)</p>
+                    </div>
+                </div>
+                <div class="stage-flow-note">
+                    💬 <strong>Tư duy dạy học:</strong> Thầy cô lên lớp chỉ cần giảng đúng theo thứ tự 4 chặng này — tài liệu đã được thiết kế sẵn để dẫn dắt học sinh tự nhiên từng bước một.
+                </div>
+            </div>
+
+            <!-- SLIDE 9: QUY TRÌNH 5 BƯỚC SOẠN PHIẾU CÙNG AI -->
+            <div class="slide" id="slide-9">
+                <h3 class="section-title">🚀 Quy Trình 5 Bước Soạn Phiếu Cùng AI</h3>
+                <div class="step-container flex-wrap">
+                    <div class="step-card min-w-170">
+                        <div class="step-num">1</div>
+                        <strong class="step-head-title text-primary">Tìm Nguồn Đề</strong>
+                        <p class="step-sub-text">TOANMATH, SGK, SGV KNTT</p>
+                    </div>
+                    <div class="step-arrow">➔</div>
+                    <div class="step-card min-w-170">
+                        <div class="step-num">2</div>
+                        <strong class="step-head-title text-primary">AI Phân Dạng</strong>
+                        <p class="step-sub-text">Lập thuyết minh & xuất phiếu nháp</p>
+                    </div>
+                    <div class="step-arrow">➔</div>
+                    <div class="step-card min-w-170 step-accent">
+                        <div class="step-num bg-accent">3</div>
+                        <strong class="step-head-title text-accent">GV Đọc Duyệt</strong>
+                        <p class="step-sub-text">Kiểm tra sư phạm & thời lượng</p>
+                    </div>
+                    <div class="step-arrow">➔</div>
+                    <div class="step-card min-w-170">
+                        <div class="step-num">4</div>
+                        <strong class="step-head-title text-primary">Đổi Câu (Nếu Cần)</strong>
+                        <p class="step-sub-text">Báo AI tinh chỉnh câu phù hợp</p>
+                    </div>
+                    <div class="step-arrow">➔</div>
+                    <div class="step-card min-w-170 step-success">
+                        <div class="step-num bg-success">5</div>
+                        <strong class="step-head-title text-success">Đóng Gói</strong>
+                        <p class="step-sub-text">Lên Drive & cập nhật Sheet</p>
+                    </div>
+                </div>
+            </div>
+
+            <!-- SLIDE 10: BƯỚC 1 & 2 -->
+            <div class="slide" id="slide-10">
+                <h3 class="section-title">📂 Bước 1 & 2: Tìm Nguồn & AI Phân Dạng</h3>
+                <div class="grid-2">
+                    <div class="card card-primary">
+                        <div class="step-block-title text-primary">
+                            BƯỚC 1: Tìm Inputs Nguồn Uy Tín
+                        </div>
+                        <ul class="source-list">
+                            <li class="mb-6">Đề thi chính thức các trường Hà Nội: <a href="https://thcs.toanmath.com" target="_blank" rel="noopener noreferrer" class="link-bold-primary">thcs.toanmath.com</a></li>
+                            <li class="mb-6">SGK, SGV Kết nối tri thức (đã có sẵn ảnh scan trong kho).</li>
+                            <li>Sách bài tập & đề thi chọn lọc các năm gần nhất.</li>
+                        </ul>
+                    </div>
+
+                    <div class="card card-accent">
+                        <div class="step-block-title text-accent">
+                            BƯỚC 2: AI Quét Đề & Lập Thuyết Minh
+                        </div>
+                        <p class="mb-10">Đưa đề cho AI đọc và quét trực tiếp vào:</p>
+                        <a href="https://docs.google.com/spreadsheets/d/1NCJHzp0cU9zUaJIkw47UfLzrPUj09P-5prgiGG6erDs/edit" target="_blank" rel="noopener noreferrer" class="pill-btn mb-12">
+                            📊 Google Sheet Các Đầu Việc Học Liệu
+                        </a>
+                        <p class="ratio-desc">
+                            👉 <strong>AI tự động làm:</strong> Chấm mã câu (NB/TH/VD), đánh dấu năm đề, thống kê dạng bài, lập Thuyết minh và xuất ra Phiếu học tập nháp đầu tiên.
+                        </p>
+                    </div>
+                </div>
+            </div>
+
+            <!-- SLIDE 11: BƯỚC 3 & 4 -->
+            <div class="slide" id="slide-11">
+                <h3 class="section-title">🔍 Bước 3 & 4: Thẩm Định Sư Phạm & Đổi Câu</h3>
+                <div class="grid-2">
+                    <div class="card card-accent">
+                        <div class="step-block-title text-accent">
+                            BƯỚC 3: GV Thẩm Định Sư Phạm
+                        </div>
+                        <p class="mb-10">Cầm bản in PDF và tự trả lời 2 câu hỏi:</p>
+                        <ol class="question-list">
+                            <li class="mb-8"><em>"Trên lớp thực tế 90', mình có dẫn dắt HS lớp C học kịp phiếu này không?"</em></li>
+                            <li><em>"Các câu NB đệm có dẫn dắt mượt mà đến câu VD đích không?"</em></li>
+                        </ol>
+                    </div>
+
+                    <div class="card card-primary">
+                        <div class="step-block-title text-primary">
+                            BƯỚC 4: Phản Hồi AI Đổi Câu (Nếu Chưa Ưng)
+                        </div>
+                        <p class="mb-10">Nếu câu quá khó hoặc bài khô khan, nhắn cho AI:</p>
+                        <div class="chat-bubble-primary">
+                            "Câu 3 phần Luyện tập hơi khó so với lớp C, hãy chọn câu khác cùng dạng từ ngân hàng đề để HS hứng thú hơn."
+                        </div>
+                        <p class="ratio-desc">
+                            👉 AI sẽ tự đọc lại ngân hàng đề $ightarrow$ đổi câu mới $ightarrow$ xuất lại bản PDF trong 10 giây!
+                        </p>
+                    </div>
+                </div>
+            </div>
+
+            <!-- SLIDE 12: BƯỚC 5 -->
+            <div class="slide" id="slide-12">
+                <h3 class="section-title">☁️ Bước 5: Đóng Gói, Lên Drive & Cập Nhật Tiến Độ</h3>
+                <div class="card card-success mb-20">
+                    <div class="step-block-title text-success">
+                        Khi Phiếu Đã Chuẩn 100% — GV Ra Lệnh Cho AI:
+                    </div>
+                    <div class="chat-bubble-success">
+                        "Phiếu đã duyệt xong, hãy đưa lên Drive và cập nhật sheet Tiến độ giúp tôi."
+                    </div>
+                </div>
+
+                <div class="grid-2">
+                    <div class="card">
+                        <div class="action-card-title text-primary">1. Đồng bộ lên Google Drive</div>
+                        <p class="text-sm">AI tự động đẩy trọn bộ 3 bản PDF (Handout HS, Guide GV, Slide) vào đúng thư mục của khối/lớp trên Drive.</p>
+                    </div>
+                    <div class="card">
+                        <div class="action-card-title text-primary">2. Cập nhật Sheet TIẾN ĐỘ C</div>
+                        <p class="text-sm mb-10">AI tự động điền link sản phẩm và đánh dấu hoàn thành vào:</p>
+                        <a href="https://docs.google.com/spreadsheets/d/1fH7vl99bXoV8AQ9xqnXOsVAC5XQ3ESWk5zM7APd1o4k/edit?gid=1752741035#gid=1752741035" target="_blank" rel="noopener noreferrer" class="pill-btn">
+                            📈 Google Sheet TIẾN ĐỘ C
+                        </a>
+                    </div>
+                </div>
+            </div>
+
+            <!-- SLIDE 13: TỔNG KẾT & HỆ SINH THÁI SẢN PHẨM HOÀN THÀNH -->
+            <div class="slide" id="slide-13">
+                <h3 class="section-title">🏆 Tổng Kết: Hệ Sinh Thái Sản Phẩm Hoàn Thành (Ví Dụ Lớp 9)</h3>
+                <p class="summary-intro">
+                    Sau khi hoàn thành một chương bài học, giáo viên và trung tâm sẽ có trọn bộ hệ sinh thái sản phẩm như sau:
+                </p>
+                <div class="grid-2">
+                    <div class="card card-primary">
+                        <div class="step-card-title text-primary">
+                            1. Sheet Phân Dạng Chương & Ngân Hàng Câu Hỏi
+                        </div>
+                        <p class="text-sm">
+                            • Hàng trăm bài toán từ đề thi thật Hà Nội đã được bóc tách ý a/b/c.<br/>
+                            • Đã chấm điểm bộ lọc L1–L5, tiêu chí T1–T8, gắn nhãn NB, TH, VD.
+                        </p>
+                    </div>
+
+                    <div class="card card-primary">
+                        <div class="step-card-title text-primary">
+                            2. Phiếu Thuyết Minh Chương (PDF / JSON)
+                        </div>
+                        <p class="text-sm">
+                            • Bảng phân bổ 10–12 dạng bài/buổi, khớp tuyệt đối quỹ giờ 90' hoặc 120'.<br/>
+                            • Bản thiết kế sư phạm được Thầy duyệt trước khi bắt tay làm phiếu.
+                        </p>
+                    </div>
+
+                    <div class="card card-success">
+                        <div class="summary-card-title text-success">
+                            3. Kho Sản Phẩm Google Drive Hoàn Chỉnh
+                        </div>
+                        <p class="text-sm">
+                            • Từng buổi học có đủ: <strong>Handout HS + Sổ tay GV + Slide trình chiếu</strong>.<br/>
+                            • Cuối mỗi chương có sẵn <strong>Đề kiểm tra 45 phút + Ma trận đáp án chuẩn thi</strong>.
+                        </p>
+                    </div>
+
+                    <div class="card card-accent">
+                        <div class="summary-card-title text-accent">
+                            4. Sheet Quản Trị TIẾN ĐỘ C Tinh Gọn
+                        </div>
+                        <p class="text-sm">
+                            • Toàn bộ tiến độ được tích xanh hoàn thành kèm link trực tiếp.<br/>
+                            • Sẵn sàng in ấn phát cho học sinh và bàn giao cho cơ sở.
+                        </p>
+                    </div>
+                </div>
+            </div>
+
+        </div>
+
+        <!-- FOOTER -->
+        <div class="slide-footer">
+            <div>MathTech AI Engine © 2026 — Trương Đình Thái</div>
+            <div>Bấm phím mũi tên ⬅️ ➡️ để chuyển slide | Phím <strong>F</strong>: Toàn màn hình</div>
+        </div>
+
+    </div>
+
+    <!-- FLOATING CONTROLS -->
+    <div class="controls">
+        <button id="prevBtn" title="Slide trước (Phím ⬅️)">❮</button>
+        <div class="counter" id="slideCounter">1 / 13</div>
+        <button id="nextBtn" title="Slide sau (Phím ➡️)">❯</button>
+        <button id="fsBtn" title="Toàn màn hình (Phím F)" class="btn-fs">⛶</button>
+    </div>
+
+    <script>
+        const slides = document.querySelectorAll('.slide');
+        let currentSlide = 0;
+        const totalSlides = slides.length;
+
+        const slideCounter = document.getElementById('slideCounter');
+        const prevBtn = document.getElementById('prevBtn');
+        const nextBtn = document.getElementById('nextBtn');
+        const fsBtn = document.getElementById('fsBtn');
+
+        function updateSlide(index) {
+            slides.forEach((s, i) => {
+                s.classList.toggle('active', i === index);
+            });
+            slideCounter.textContent = `${index + 1} / ${totalSlides}`;
+        }
+
+        function nextSlide() {
+            if (currentSlide < totalSlides - 1) {
+                currentSlide++;
+                updateSlide(currentSlide);
+            }
+        }
+
+        function prevSlide() {
+            if (currentSlide > 0) {
+                currentSlide--;
+                updateSlide(currentSlide);
+            }
+        }
+
+        nextBtn.addEventListener('click', nextSlide);
+        prevBtn.addEventListener('click', prevSlide);
+
+        document.addEventListener('keydown', (e) => {
+            if (e.key === 'ArrowRight' || e.key === ' ' || e.key === 'PageDown') {
+                nextSlide();
+            } else if (e.key === 'ArrowLeft' || e.key === 'PageUp') {
+                prevSlide();
+            } else if (e.key === 'f' || e.key === 'F') {
+                toggleFullScreen();
+            }
+        });
+
+        function toggleFullScreen() {
+            if (!document.fullscreenElement) {
+                document.documentElement.requestFullscreen().catch(() => {});
+            } else {
+                if (document.exitFullscreen) {
+                    document.exitFullscreen();
+                }
+            }
+        }
+
+        fsBtn.addEventListener('click', toggleFullScreen);
+
+        // Render KaTeX after DOM loaded
+        document.addEventListener("DOMContentLoaded", function() {
+            if (window.renderMathInElement) {
+                renderMathInElement(document.body, {
+                    delimiters: [
+                        {left: "$$", right: "$$", display: true},
+                        {left: "$", right: "$", display: false}
+                    ],
+                    throwOnError: false
+                });
+            }
+        });
+    </script>
+</body>
+</html>

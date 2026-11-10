@@ -44,6 +44,15 @@ NHOM_8 = [
     ("VI. Câu cuối", ["VDC_BINHPHUONG", "VDC_GTNN", "VDC_TOIUU", "VDC_SO", "VDC_DU"]),
     ("Khác", ["TN"]),
 ]
+# Lớp 9 CK1 (Cuối kì 1: Ch.I hệ PT, Ch.II BPT, Ch.III căn thức, Ch.IV lượng giác, Ch.V đường tròn)
+NHOM_CK1_9 = [
+    ("I. Căn thức & câu hỏi phụ", ["CAN_TINH", "CAN_RUTGON", "CAN_CAUPHU"]),
+    ("II. Toán thực tế lời văn", ["LAP_HE", "LAP_BPT"]),
+    ("III. Giải PT – BPT – hệ", ["HE_GIAI", "HE_ANPHU", "PT_TICH", "PT_MAU", "BPT_GIAI"]),
+    ("IV. Lượng giác & Hình đường tròn", ["LG_THUCTE", "DTRON_THUCTE", "DTRON_4DIEM", "DTRON_TIEPTUYEN", "DTRON_HETHUC", "DTRON_VDC"]),
+    ("V. Câu cuối", ["TOIUU_TT", "VDC_DS"]),
+    ("Khác", ["TN", "KHAC"]),
+]
 
 
 def thong_ke(du_lieu: dict) -> dict:
@@ -76,6 +85,8 @@ def main() -> int:
     global NHOM
     if a.lop == 8:
         NHOM = NHOM_8
+    elif a.lop == 9 and a.ky == "ck1":
+        NHOM = NHOM_CK1_9
     LUOI = LUOI_GOC / f"lop-{a.lop}" / "luoi-dang"
     du_lieu = json.loads((LUOI / f"{a.ky}.json").read_text(encoding="utf-8"))
     tk = thong_ke(du_lieu)

@@ -106,22 +106,21 @@ def check_vi_du_di_cung_bai(lesson: LessonPackage) -> list[str]:
     """Mỗi ví dụ phải đứng NGAY TRƯỚC nhóm bài của dạng đó (Thầy chốt 08/09 + 21/09).
 
     Hai lỗi bắt được: (a) hai ví dụ dính liền nhau ⇒ đang dồn thành chuỗi;
-    (b) ví dụ đứng cuối chặng, sau nó không còn bài nào để áp dụng."""
+    (b) ví dụ đứng cuối chặng/phiếu, sau nó không còn bài nào để áp dụng."""
     out: list[str] = []
-    for st in lesson.stages:
-        blocks = list(st.blocks)
-        for i, b in enumerate(blocks):
-            if not _la_vi_du(b):
-                continue
-            ten = _ten_vi_du(b.text)
-            sau = blocks[i + 1:]
-            ke_tiep = next((x for x in sau if _la_vi_du(x)
-                            or getattr(x, "type", "") == "problem"), None)
-            if ke_tiep is None or _la_vi_du(ke_tiep):
-                gi = "ví dụ khác" if ke_tiep is not None else "không còn bài nào"
-                out.append(
-                    f"vi_du_gate: {ten} không đi cùng bài — ngay sau nó là {gi}. Đặt mỗi ví dụ "
-                    f"SÁT TRƯỚC nhóm bài cùng dạng (giảng mẫu → trò làm ngay bài tương tự).")
+    all_blocks = [b for st in lesson.stages for b in st.blocks]
+    for i, b in enumerate(all_blocks):
+        if not _la_vi_du(b):
+            continue
+        ten = _ten_vi_du(b.text)
+        sau = all_blocks[i + 1:]
+        ke_tiep = next((x for x in sau if _la_vi_du(x)
+                        or getattr(x, "type", "") == "problem"), None)
+        if ke_tiep is None or _la_vi_du(ke_tiep):
+            gi = "ví dụ khác" if ke_tiep is not None else "không còn bài nào"
+            out.append(
+                f"vi_du_gate: {ten} không đi cùng bài — ngay sau nó là {gi}. Đặt mỗi ví dụ "
+                f"SÁT TRƯỚC nhóm bài cùng dạng (giảng mẫu → trò làm ngay bài tương tự).")
     return out
 
 
@@ -161,8 +160,12 @@ def check_goi_y_thong_hieu(lesson: LessonPackage) -> list[str]:
             if getattr(b, "type", "") != "problem" or getattr(b, "level", 0) != 2:
                 continue
             nhan = b.label or "?"
-            # Sơ đồ ngược đã là gợi ý định hướng (Thầy 05/11/2026).
-            co_goi_y = bool(getattr(b, "hints", None) or getattr(b, "so_do_nguoc", ""))
+            # Sơ đồ ngược hoặc bài tách ý con giàn giáo a) ★★ (Thầy 09/11/2026) đã là gợi ý định hướng.
+            co_goi_y = bool(
+                getattr(b, "hints", None)
+                or getattr(b, "so_do_nguoc", "")
+                or re.search(r"[a-d]\)\s*★", getattr(b, "statement", "") or "")
+            )
             if on_tap and co_goi_y:
                 out.append(
                     f"vi_du_gate: {nhan} (Thông hiểu) còn gợi ý — phiếu ôn tập giữa kì / cuối kì "

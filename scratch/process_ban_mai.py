@@ -1,0 +1,338 @@
+import json
+
+slug = 'gk2-2024-ban-mai-school'
+p = f'inputs/refs/de-thi/lop-8/exams/{slug}.json'
+with open(p, encoding='utf-8') as f:
+    d = json.load(f)
+
+cau_list = [
+    # I. PHẦN CHUNG - A. Trắc nghiệm
+    {
+        'id': f'l8-{slug}-c1',
+        'vi_tri': 'Câu 1',
+        'loai': 'TN',
+        'chuong': 'Chương X. Một số yếu tố thống kê',
+        'dang': ['Thu thập và tổ chức dữ liệu'],
+        'band': 'NB',
+        'phut': 1,
+        'diem_bai': 0.25,
+        'de': 'Cho bảng dữ liệu “Danh sách các bạn học sinh giỏi lớp 8A”:\n\\begin{tabular}{|c|l|}\n\\hline\nSTT & Họ và tên \\\\\n\\hline\n1 & Nguyễn Hoàng Xuân \\\\\n2 & Phạm Thị Hương \\\\\n3 & Đỗ Thị Hà \\\\\n4 & 03456789 \\\\\n5 & Ngô Xuân Giang \\\\\n\\hline\n\\end{tabular}\n\nEm hãy chỉ ra điểm không hợp lý của bảng dữ liệu trên.\nA. Phạm Thị Hương\nB. Đỗ Thị Hà\nC. Ngô Xuân Giang\nD. 03456789',
+        'loi_giai': 'Cột họ và tên phải là dữ liệu dạng chữ (định tính), giá trị \"03456789\" ở hàng số 4 là dãy chữ số nên không hợp lí.\nChọn D.',
+        'dap_an': 'D',
+        'trang': 1,
+        'co_hinh': False,
+        'can_doc_anh': False,
+        'da_duyet': True
+    },
+    {
+        'id': f'l8-{slug}-c2',
+        'vi_tri': 'Câu 2',
+        'loai': 'TN',
+        'chuong': 'Chương IX. Một số yếu tố xác suất',
+        'dang': ['Xác suất thực nghiệm của biến cố trong trò chơi tung đồng xu'],
+        'band': 'NB',
+        'phut': 1,
+        'diem_bai': 0.25,
+        'de': 'Hoàng chơi trò tung đồng xu trong 10 lần và thu được kết quả cho trong bảng sau (kí hiệu S là mặt sấp, N là mặt ngửa):\n\\begin{tabular}{|l|c|c|c|c|c|c|c|c|c|c|}\n\\hline\nLần thứ & 1 & 2 & 3 & 4 & 5 & 6 & 7 & 8 & 9 & 10 \\\\\n\\hline\nKết quả & S & N & S & S & N & S & N & S & N & N \\\\\n\\hline\n\\end{tabular}\n\nXác suất thực nghiệm của biến cố “Hoàng tung đồng xu được mặt sấp” là:\nA. $\\frac{1}{2}$\nB. $\\frac{2}{10}$\nC. $\\frac{1}{3}$\nD. $\\frac{2}{5}$',
+        'loi_giai': 'Số lần xuất hiện mặt sấp (S) là 5 lần (ở các lần 1, 3, 4, 6, 8).\nTổng số lần tung là 10.\nXác suất thực nghiệm của biến cố là $\\frac{5}{10} = \\frac{1}{2}$.\nChọn A.',
+        'dap_an': 'A',
+        'trang': 1,
+        'co_hinh': False,
+        'can_doc_anh': False,
+        'da_duyet': True
+    },
+    {
+        'id': f'l8-{slug}-c3',
+        'vi_tri': 'Câu 3',
+        'loai': 'TN',
+        'chuong': 'Chương VII. Định lí Thalès trong tam giác',
+        'dang': ['Định lí Thalès và tính độ dài đoạn thẳng'],
+        'band': 'NB',
+        'phut': 1,
+        'diem_bai': 0.25,
+        'de': 'Cho hình vẽ có $AB \\parallel CD$, biết $OA = 4{,}5\\text{ cm}, OB = 3{,}5\\text{ cm}, OC = 7{,}2\\text{ cm}$ và $OD = x\\text{ cm}$ (với $O$ là giao điểm của $AC$ và $BD$). Độ dài $x$ của đoạn thẳng $OD$ trong hình vẽ là:\nA. $x = 9{,}3\\text{ cm}$\nB. $x = 15{,}75\\text{ cm}$\nC. $x = 2{,}2\\text{ cm}$\nD. $x = 5{,}6\\text{ cm}$',
+        'loi_giai': 'Áp dụng hệ quả của định lí Thalès với $AB \\parallel CD$:\n$$\\frac{OD}{OB} = \\frac{OC}{OA} \\Rightarrow \\frac{x}{3{,}5} = \\frac{7{,}2}{4{,}5} \\Rightarrow x = \\frac{3{,}5 \\times 7{,}2}{4{,}5} = 5{,}6\\text{ (cm)}.$$\nChọn D.',
+        'dap_an': 'D',
+        'trang': 1,
+        'co_hinh': True,
+        'can_doc_anh': False,
+        'da_duyet': True
+    },
+    {
+        'id': f'l8-{slug}-c4',
+        'vi_tri': 'Câu 4',
+        'loai': 'TN',
+        'chuong': 'Chương VIII. Hình đồng dạng',
+        'dang': ['Tỉ số đồng dạng của hai tam giác'],
+        'band': 'NB',
+        'phut': 1,
+        'diem_bai': 0.25,
+        'de': 'Cho $\\triangle A\'B\'C\' \\backsim \\triangle ABC$ và hai cạnh tương ứng $A\'B\' = 3\\text{ cm}, AB = 6\\text{ cm}$. Vậy $\\triangle A\'B\'C\'$ đồng dạng với $\\triangle ABC$ theo tỉ số đồng dạng là:\nA. $3$\nB. $\\frac{1}{2}$\nC. $2$\nD. $18$',
+        'loi_giai': 'Tỉ số đồng dạng của $\\triangle A\'B\'C\'$ với $\\triangle ABC$ là:\n$$k = \\frac{A\'B\'}{AB} = \\frac{3}{6} = \\frac{1}{2}.$$\nChọn B.',
+        'dap_an': 'B',
+        'trang': 1,
+        'co_hinh': False,
+        'can_doc_anh': False,
+        'da_duyet': True
+    },
+    # I. PHẦN CHUNG - B. Tự luận
+    {
+        'id': f'l8-{slug}-c5',
+        'vi_tri': 'Bài 1.a',
+        'loai': 'TL',
+        'chuong': 'Chương X. Một số yếu tố thống kê',
+        'dang': ['Biểu diễn dữ liệu bằng bảng thống kê từ biểu đồ tranh'],
+        'band': 'NB',
+        'phut': 2,
+        'diem_bai': 0.5,
+        'de': 'Học sinh khối 8 một trường được phân loại học lực theo biểu đồ tranh (mỗi biểu tượng hình người ứng với 10 học sinh):\n- Tốt: 4 biểu tượng;\n- Khá: 5 biểu tượng;\n- Đạt: 6 biểu tượng;\n- Chưa đạt: 1 biểu tượng.\\na) Lập bảng số liệu theo biểu đồ tranh trên.',
+        'loi_giai': 'Bảng số liệu phân loại học lực học sinh khối 8:\n\\begin{tabular}{|l|c|c|c|c|}\n\\hline\nXếp loại & Tốt & Khá & Đạt & Chưa đạt \\\\\n\\hline\nSố lượng (học sinh) & 40 & 50 & 60 & 10 \\\\\n\\hline\n\\end{tabular}',
+        'dap_an': 'Tốt: 40, Khá: 50, Đạt: 60, Chưa đạt: 10',
+        'trang': 2,
+        'co_hinh': True,
+        'can_doc_anh': False,
+        'da_duyet': True
+    },
+    {
+        'id': f'l8-{slug}-c6',
+        'vi_tri': 'Bài 1.b',
+        'loai': 'TL',
+        'chuong': 'Chương X. Một số yếu tố thống kê',
+        'dang': ['Tính toán các đại lượng từ bảng số liệu'],
+        'band': 'TH',
+        'phut': 3,
+        'diem_bai': 0.5,
+        'de': 'Nếu mỗi học sinh xếp loại tốt được thưởng 6 quyển vở, loại khá được thưởng 2 quyển vở thì số vở nhà trường cần chuẩn bị là bao nhiêu để thưởng cho 2 loại học sinh tốt và khá?',
+        'loi_giai': 'Số vở để thưởng cho học sinh loại tốt là:\n$$40 \\times 6 = 240\\text{ (quyển vở)}.$$\nSố vở để thưởng cho học sinh loại khá là:\n$$50 \\times 2 = 100\\text{ (quyển vở)}.$$\nTổng số vở nhà trường cần chuẩn bị là:\n$$240 + 100 = 340\\text{ (quyển vở)}.$$',
+        'dap_an': '340 quyển vở',
+        'trang': 2,
+        'co_hinh': False,
+        'can_doc_anh': False,
+        'da_duyet': True
+    },
+    {
+        'id': f'l8-{slug}-c7',
+        'vi_tri': 'Bài 1.c',
+        'loai': 'TL',
+        'chuong': 'Chương X. Một số yếu tố thống kê',
+        'dang': ['Tính tỉ số phần trăm từ số liệu'],
+        'band': 'TH',
+        'phut': 2,
+        'diem_bai': 0.5,
+        'de': 'Tính tỉ số phần trăm số lượng vở của học sinh xếp loại tốt so với loại khá.',
+        'loi_giai': 'Tỉ số phần trăm số lượng vở của học sinh xếp loại tốt so với loại khá là:\n$$\\frac{240}{100} \\times 100\\% = 240\\%.$$',
+        'dap_an': '$240\\%$',
+        'trang': 2,
+        'co_hinh': False,
+        'can_doc_anh': False,
+        'da_duyet': True
+    },
+    {
+        'id': f'l8-{slug}-c8',
+        'vi_tri': 'Bài 2.a',
+        'loai': 'TL',
+        'chuong': 'Chương IX. Một số yếu tố xác suất',
+        'dang': ['Xác suất của biến cố trong trò chơi quay số'],
+        'band': 'NB',
+        'phut': 2,
+        'diem_bai': 0.5,
+        'de': 'Một đĩa tròn bằng bìa cứng được chia làm tám phần bằng nhau và ghi các số 1; 2; 3; 4; 5; 6; 7; 8. Chiếc kim được gắn cố định vào trục quay ở tâm của đĩa. Quay đĩa tròn một lần ngẫu nhiên.\\nTính xác suất của biến cố: “Mũi tên chỉ vào hình quạt ghi số nhỏ hơn 3”.',
+        'loi_giai': 'Không gian mẫu gồm 8 kết quả có thể xảy ra: $\\{1; 2; 3; 4; 5; 6; 7; 8\\}$.\nCác kết quả thuận lợi cho biến cố “Mũi tên chỉ vào hình quạt ghi số nhỏ hơn 3” là $\\{1; 2\\}$ (có 2 kết quả thuận lợi).\nXác suất của biến cố là:\n$$P = \\frac{2}{8} = \\frac{1}{4}.$$',
+        'dap_an': '$\\frac{1}{4}$',
+        'trang': 2,
+        'co_hinh': True,
+        'can_doc_anh': False,
+        'da_duyet': True
+    },
+    {
+        'id': f'l8-{slug}-c9',
+        'vi_tri': 'Bài 2.b',
+        'loai': 'TL',
+        'chuong': 'Chương IX. Một số yếu tố xác suất',
+        'dang': ['Xác suất của biến cố trong trò chơi quay số'],
+        'band': 'TH',
+        'phut': 2,
+        'diem_bai': 0.5,
+        'de': 'Tính xác suất của biến cố: “Mũi tên chỉ vào hình quạt ghi số nguyên tố”.',
+        'loi_giai': 'Các số nguyên tố trong các số từ 1 đến 8 là $\\{2; 3; 5; 7\\}$ (có 4 kết quả thuận lợi).\nXác suất của biến cố là:\n$$P = \\frac{4}{8} = \\frac{1}{2}.$$',
+        'dap_an': '$\\frac{1}{2}$',
+        'trang': 2,
+        'co_hinh': False,
+        'can_doc_anh': False,
+        'da_duyet': True
+    },
+    {
+        'id': f'l8-{slug}-c10',
+        'vi_tri': 'Bài 2.c',
+        'loai': 'TL',
+        'chuong': 'Chương IX. Một số yếu tố xác suất',
+        'dang': ['Xác suất của biến cố trong trò chơi quay số'],
+        'band': 'TH',
+        'phut': 2,
+        'diem_bai': 0.5,
+        'de': 'Tính xác suất của biến cố: “Mũi tên chỉ vào hình quạt ghi số là ước của 8”.',
+        'loi_giai': 'Các số là ước của 8 trong tập hợp $\\{1; 2; 3; 4; 5; 6; 7; 8\\}$ là $\\{1; 2; 4; 8\\}$ (có 4 kết quả thuận lợi).\nXác suất của biến cố là:\n$$P = \\frac{4}{8} = \\frac{1}{2}.$$',
+        'dap_an': '$\\frac{1}{2}$',
+        'trang': 2,
+        'co_hinh': False,
+        'can_doc_anh': False,
+        'da_duyet': True
+    },
+    {
+        'id': f'l8-{slug}-c11',
+        'vi_tri': 'Bài 3',
+        'loai': 'TL',
+        'chuong': 'Chương VII. Định lí Thalès trong tam giác',
+        'dang': ['Ứng dụng định lí Thalès vào bài toán thực tế'],
+        'band': 'TH',
+        'phut': 4,
+        'diem_bai': 1.0,
+        'de': 'Một cột đèn cao $9\\text{ m}$ chiếu sáng một cây xanh. Cây cách cột đèn $3\\text{ m}$ và có bóng trải dài dưới mặt đất là $4{,}5\\text{ m}$. Tìm chiều cao của cây đó.',
+        'loi_giai': 'Gọi cột đèn là đoạn thẳng $AB = 9\\text{ m}$ vuông góc với mặt đất tại $A$.\nCây xanh là đoạn thẳng $CD$ vuông góc với mặt đất tại $C$.\nBóng của ngọn cây và đỉnh cột đèn trùng nhau tại điểm $E$ trên mặt đất.\nTa có $AC = 3\\text{ m}, CE = 4{,}5\\text{ m} \\Rightarrow AE = AC + CE = 3 + 4{,}5 = 7{,}5\\text{ m}$.\nVì cùng vuông góc với mặt đất nên $CD \\parallel AB$.\nÁp dụng hệ quả của định lí Thalès trong $\\triangle ABE$ có $CD \\parallel AB$:\n$$\\frac{CD}{AB} = \\frac{CE}{AE} \\Rightarrow \\frac{CD}{9} = \\frac{4{,}5}{7{,}5} = \\frac{3}{5} \\Rightarrow CD = \\frac{9 \\times 3}{5} = 5{,}4\\text{ (m)}.$$\nVậy chiều cao của cây là $5{,}4\\text{ m}$.',
+        'dap_an': '$5{,}4\\text{ m}$',
+        'trang': 2,
+        'co_hinh': True,
+        'can_doc_anh': False,
+        'da_duyet': True
+    },
+    {
+        'id': f'l8-{slug}-c12',
+        'vi_tri': 'Bài 4.a',
+        'loai': 'TL',
+        'chuong': 'Chương VII. Định lí Thalès trong tam giác',
+        'dang': ['Đường trung bình của tam giác'],
+        'band': 'TH',
+        'phut': 4,
+        'diem_bai': 1.25,
+        'de': 'Cho $\\triangle ABC$ vuông tại $A$ có $AB = 18\\text{ cm}, AC = 24\\text{ cm}$. Lấy $D, E$ lần lượt là trung điểm của $AB, AC$.\\na) Chứng minh $DE \\parallel BC$ và $BC = 2DE$.',
+        'loi_giai': 'Xét $\\triangle ABC$ có:\n- $D$ là trung điểm của $AB$ (giả thiết);\n- $E$ là trung điểm của $AC$ (giả thiết).\nDo đó $DE$ là đường trung bình của $\\triangle ABC$.\nTheo tính chất đường trung bình của tam giác, ta suy ra:\n$$DE \\parallel BC \\quad \\text{và} \\quad DE = \\frac{1}{2}BC \\Leftrightarrow BC = 2DE\\text{ (đpcm)}.$$',
+        'dap_an': '$DE \\parallel BC$ và $BC = 2DE$',
+        'trang': 2,
+        'co_hinh': False,
+        'can_doc_anh': False,
+        'da_duyet': True
+    },
+    {
+        'id': f'l8-{slug}-c13',
+        'vi_tri': 'Bài 4.b',
+        'loai': 'TL',
+        'chuong': 'Chương VII. Định lí Thalès trong tam giác',
+        'dang': ['Định lí Pythagore và đường trung tuyến trong tam giác vuông'],
+        'band': 'TH',
+        'phut': 3,
+        'diem_bai': 0.75,
+        'de': 'Vẽ trung tuyến $AI$ của $\\triangle ADE$. Tính $AI$.',
+        'loi_giai': 'Ta có:\n$$AD = \\frac{1}{2}AB = \\frac{1}{2} \\times 18 = 9\\text{ (cm)},$$\n$$AE = \\frac{1}{2}AC = \\frac{1}{2} \\times 24 = 12\\text{ (cm)}.$$\nVì $\\triangle ABC$ vuông tại $A$ nên $\\triangle ADE$ vuông tại $A$.\nÁp dụng định lí Pythagore trong $\\triangle ADE$ vuông tại $A$:\n$$DE = \\sqrt{AD^2 + AE^2} = \\sqrt{9^2 + 12^2} = \\sqrt{81 + 144} = \\sqrt{225} = 15\\text{ (cm)}.$$\nVì $AI$ là đường trung tuyến ứng với cạnh huyền của tam giác vuông $ADE$, nên:\n$$AI = \\frac{1}{2}DE = \\frac{15}{2} = 7{,}5\\text{ (cm)}.$$',
+        'dap_an': '$AI = 7{,}5\\text{ cm}$',
+        'trang': 3,
+        'co_hinh': False,
+        'can_doc_anh': False,
+        'da_duyet': True
+    },
+    {
+        'id': f'l8-{slug}-c14',
+        'vi_tri': 'Bài 4.c',
+        'loai': 'TL',
+        'chuong': 'Chương VII. Định lí Thalès trong tam giác',
+        'dang': ['Dấu hiệu nhận biết hình chữ nhật'],
+        'band': 'VD',
+        'phut': 4,
+        'diem_bai': 0.5,
+        'de': 'Kéo dài $AI$ cắt $BC$ tại $F$. Chứng minh tứ giác $ADFE$ là hình chữ nhật.',
+        'loi_giai': 'Trong tam giác vuông $ADE$, trung tuyến $AI$ có $IA = ID = IE$.\nXét $\\triangle ABC$ có $DE \\parallel BC$. Vì $I$ là trung điểm $DE$ và đường thẳng $AI$ cắt $BC$ tại $F$, theo hệ quả định lí Thalès:\n$$\\frac{DI}{BF} = \\frac{AI}{AF} = \\frac{IE}{FC}.$$\nVì $DI = IE$ nên $BF = FC$, suy ra $F$ là trung điểm của $BC$.\nDo đó $AF$ là trung tuyến của tam giác vuông $ABC$, suy ra $AF = \\frac{1}{2}BC = DE = 15\\text{ cm}$.\nVì $AI = 7{,}5\\text{ cm}$ và $AF = 15\\text{ cm}$ nên $I$ là trung điểm của $AF$.\nTứ giác $ADFE$ có hai đường chéo $AF$ và $DE$ cắt nhau tại trung điểm $I$ của mỗi đường nên $ADFE$ là hình bình hành.\nLại có $\\widehat{DAE} = 90^\\circ$, do đó $ADFE$ là hình chữ nhật (đpcm).',
+        'dap_an': '$ADFE$ là hình chữ nhật',
+        'trang': 3,
+        'co_hinh': False,
+        'can_doc_anh': False,
+        'da_duyet': True
+    },
+    {
+        'id': f'l8-{slug}-c15',
+        'vi_tri': 'Bài 5',
+        'loai': 'TL',
+        'chuong': 'Chương IV. Phân thức đại số',
+        'dang': ['Chứng minh đẳng thức và biểu thức là bình phương của số hữu tỷ'],
+        'band': 'VDC',
+        'phut': 5,
+        'diem_bai': 0.5,
+        'de': 'Cho $x, y$ là các số hữu tỷ khác 1 thỏa mãn: $$\\frac{1 - 2x}{1 - x} + \\frac{1 - 2y}{1 - y} = 1.$$\nChứng minh $M = x^2 + y^2 - xy$ là bình phương của một số hữu tỷ.',
+        'loi_giai': 'Quy đồng và khử mẫu đẳng thức đã cho:\n$$\\frac{1 - 2x}{1 - x} + \\frac{1 - 2y}{1 - y} = 1$$\n$$\\Leftrightarrow (1 - 2x)(1 - y) + (1 - 2y)(1 - x) = (1 - x)(1 - y)$$\n$$\\Leftrightarrow (1 - 2x - y + 2xy) + (1 - x - 2y + 2xy) = 1 - x - y + xy$$\n$$\\Leftrightarrow 2 - 3x - 3y + 4xy = 1 - x - y + xy$$\n$$\\Leftrightarrow 3xy = 2x + 2y - 1.$$\nKhi đó ta biến đổi biểu thức $M$:\n$$\\begin{aligned}\nM &= x^2 + y^2 - xy = (x + y)^2 - 3xy \\\\\n&= (x + y)^2 - (2x + 2y - 1) \\\\\n&= (x + y)^2 - 2(x + y) + 1 \\\\\n&= (x + y - 1)^2.\n\\end{aligned}$$\nVì $x, y$ là các số hữu tỷ nên $x + y - 1$ cũng là một số hữu tỷ.\nVậy $M = (x + y - 1)^2$ là bình phương của một số hữu tỷ (đpcm).',
+        'dap_an': '$M = (x + y - 1)^2$',
+        'trang': 3,
+        'co_hinh': False,
+        'can_doc_anh': False,
+        'da_duyet': True
+    },
+    # II. PHẦN RIÊNG (Hệ chuẩn - Lớp A)
+    {
+        'id': f'l8-{slug}-c16',
+        'vi_tri': 'Bài 6a.a',
+        'loai': 'TL',
+        'chuong': 'Chương IV. Phân thức đại số',
+        'dang': ['Tính giá trị biểu thức khi biết giá trị của biến'],
+        'band': 'TH',
+        'phut': 2,
+        'diem_bai': 0.5,
+        'de': 'Cho hai biểu thức $A = \\frac{x + 5}{x - 3}$ và $B = \\frac{3x}{x - 5} - \\frac{30x}{x^2 - 25}$ với $x \\neq \\pm 5, x \\neq 3$.\\nTính giá trị của biểu thức $A$ khi $x = 9$.',
+        'loi_giai': 'Thay $x = 9$ (thỏa mãn điều kiện $x \\neq \\pm 5, x \\neq 3$) vào biểu thức $A$, ta được:\n$$A = \\frac{9 + 5}{9 - 3} = \\frac{14}{6} = \\frac{7}{3}.$$\nVậy với $x = 9$ thì $A = \\frac{7}{3}$.',
+        'dap_an': '$A = \\frac{7}{3}$',
+        'trang': 3,
+        'co_hinh': False,
+        'can_doc_anh': False,
+        'da_duyet': True
+    },
+    {
+        'id': f'l8-{slug}-c17',
+        'vi_tri': 'Bài 6a.b',
+        'loai': 'TL',
+        'chuong': 'Chương IV. Phân thức đại số',
+        'dang': ['Rút gọn biểu thức chứa phân thức'],
+        'band': 'TH',
+        'phut': 4,
+        'diem_bai': 1.0,
+        'de': 'Rút gọn biểu thức $B$.',
+        'loi_giai': 'Với $x \\neq \\pm 5, x \\neq 3$, ta có:\n$$\\begin{aligned}\nB &= \\frac{3x}{x - 5} - \\frac{30x}{x^2 - 25} \\\\\n&= \\frac{3x(x + 5) - 30x}{(x - 5)(x + 5)} \\\\\n&= \\frac{3x^2 + 15x - 30x}{(x - 5)(x + 5)} \\\\\n&= \\frac{3x^2 - 15x}{(x - 5)(x + 5)} \\\\\n&= \\frac{3x(x - 5)}{(x - 5)(x + 5)} = \\frac{3x}{x + 5}.\n\\end{aligned}$$\nVậy $B = \\frac{3x}{x + 5}$.',
+        'dap_an': '$B = \\frac{3x}{x + 5}$',
+        'trang': 3,
+        'co_hinh': False,
+        'can_doc_anh': False,
+        'da_duyet': True
+    },
+    {
+        'id': f'l8-{slug}-c18',
+        'vi_tri': 'Bài 6a.c',
+        'loai': 'TL',
+        'chuong': 'Chương IV. Phân thức đại số',
+        'dang': ['Tìm x để biểu thức đạt giá trị cho trước'],
+        'band': 'TH',
+        'phut': 3,
+        'diem_bai': 0.5,
+        'de': 'Đặt $P = A \\cdot B$. Tìm $x$ để $P = 2$.',
+        'loi_giai': 'Ta có:\n$$P = A \\cdot B = \\frac{x + 5}{x - 3} \\cdot \\frac{3x}{x + 5} = \\frac{3x}{x - 3}.$$\nĐể $P = 2$ thì:\n$$\\frac{3x}{x - 3} = 2 \\Rightarrow 3x = 2(x - 3) \\Leftrightarrow 3x = 2x - 6 \\Leftrightarrow x = -6.$$\nGiá trị $x = -6$ thỏa mãn điều kiện xác định ($x \\neq \\pm 5, x \\neq 3$).\nVậy để $P = 2$ thì $x = -6$.',
+        'dap_an': '$x = -6$',
+        'trang': 3,
+        'co_hinh': False,
+        'can_doc_anh': False,
+        'da_duyet': True
+    }
+]
+
+# Rename ids to continuous 1..N
+for idx, c in enumerate(cau_list, 1):
+    c['id'] = f'l8-{slug}-c{idx}'
+
+d['tieu_de'] = 'Đề kiểm tra giữa học kì II năm học 2024 - 2025 - Trường Ban Mai School (Hà Nội)'
+d['nam_hoc'] = '2024 - 2025'
+d['thoi_gian_phut'] = 90
+d['tang'] = 2
+d['da_duyet'] = True
+d['ghi_chu'] = 'Đề gồm Phần chung (8,0 điểm) và Phần riêng chương trình chuẩn Lớp A (2,0 điểm). Tổng điểm: 10,0 điểm.'
+d['cau'] = cau_list
+
+total_score = sum(c['diem_bai'] for c in cau_list)
+assert abs(total_score - 10.0) < 1e-6, f'Total score is {total_score}'
+
+with open(p, 'w', encoding='utf-8') as f:
+    json.dump(d, f, ensure_ascii=False, indent=2)
+
+print(f'Successfully updated {slug}, total items: {len(cau_list)}, total score: {total_score}')

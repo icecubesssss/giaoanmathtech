@@ -17,6 +17,13 @@
 % nổ "Undefined control sequence" (chương III lớp 9, 16/08/2026). Ở slide cho nó rỗng.
 \providecommand{\stageneedspace}[1]{}
 
+% Sao mức độ nhận thức cho các ý con a) ★★ trong đề bài:
+\providecommand{\diffstars}[1]{{\footnotesize%
+  \ifnum#1>3\color{diamond}\ding{72}\hspace{0.5pt}\ding{72}\hspace{0.5pt}\ding{72}\hspace{0.5pt}\ding{72}\else
+  \color{gold}\ding{72}\hspace{0.5pt}%
+  \ifnum#1>1\ding{72}\else\ding{73}\fi\hspace{0.5pt}%
+  \ifnum#1>2\ding{72}\else\ding{73}\fi\fi}}
+
 \usepackage{tikz}
 \usetikzlibrary{calc,angles,quotes,positioning,arrows.meta,shapes.geometric}
 % Sơ đồ bước giải (đặc sản) — style khối + mũi tên, dùng trong block figure.

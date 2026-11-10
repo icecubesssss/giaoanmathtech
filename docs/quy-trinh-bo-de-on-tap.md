@@ -76,6 +76,32 @@ Làm khối khác (lớp 7, 6) hay kỳ khác (CK1, GK2, CK2) thì đi **đúng 
 - **Chép đề từ ẢNH đề gốc, KHÔNG từ ngân hàng `exams/*.json`.** Trong phiên này đối chiếu ảnh đã lòi thêm 6 chỗ ngân hàng chép sai, ví dụ góc 3° bị chép thành 30°, dấu + thành −. Sửa luôn ngân hàng và ghi chú vào `ghi_chu_can_Thay_xem`.
 - Kiểm phạm vi kiến thức: không dùng câu cần kiến thức kỳ sau (ví dụ tứ giác nội tiếp ở GK1).
 
+### Cơ chế kẹp phổ điểm chuẩn Gauss (Đỉnh 6,0 – 7,0 điểm) khi thiết kế ma trận
+(Thầy chốt 07/11/2026 — Quy chuẩn khảo thí CTT & GDPT 2018)
+
+Đề thi đại trà chuẩn mực bắt buộc phải tạo được phổ điểm phân phối chuẩn (hình chuông Gauss) với đỉnh phổ điểm hội tụ đối xứng ở dải **$6{,}0 - 7{,}0$ điểm**. Để đạt được mục tiêu này, ma trận đề thiết lập cơ chế **"Hai rào chắn" (Floor & Ceiling)**:
+
+1. **Sàn an toàn (Fail-safe Floor $\ge 5{,}0$ điểm — chống điểm liệt):**
+   - Thiết kế cụm câu hỏi đơn bước Nhận biết & Thông hiểu cơ bản ở phần mở đầu mỗi bài: Bài I.1 ($0{,}5$đ) $+$ Bài III.1 ($0{,}5$đ) $+$ Bài IV.1 hình sẵn ($0{,}5$đ) $+$ bước lập hệ phương trình Bài II ($1{,}0$đ) $+$ chứng minh tam giác vuông Bài IV.2.a ($1{,}0$đ) $= 3{,}5$ điểm tuyệt đối dễ.
+   - Cộng thêm các bước khai triển nửa đầu của rút gọn I.2 và giải PT III.2 $\Rightarrow$ Học sinh trung bình lấy chắc **$4{,}5 - 5{,}0$ điểm** trong 35 phút đầu, không bị khủng hoảng tâm lý phòng thi.
+
+2. **Trần chặn tự nhiên (Ceiling Barrier $\le 7{,}0$ điểm — chống lạm phát điểm):**
+   - Cài đặt sẵn các **"Điểm trừ kiểm soát" (Friction Points)** vào các câu Thông hiểu: bẫy điều kiện xác định ($x \ge 0, x \ne 9$), bẫy đổi dấu mẫu đối ($9-x = -(\sqrt{x}-3)(\sqrt{x}+3)$), bẫy chia số âm đổi chiều BPT, và yêu cầu bắt buộc chứng minh tam giác đồng dạng thay cho hệ thức lượng $\Rightarrow$ Học sinh đại trà rơi rụng tự nhiên $1{,}0 - 1{,}5$ điểm.
+   - Khóa chặt **$2{,}5$ điểm phân hoá sâu**: Câu hỏi phụ căn thức I.3 ($0{,}5$đ), câu hình ý c IV.2.c ($1{,}0$đ), câu cuối cực trị/tối ưu Bài V ($0{,}5$đ), và nửa sau câu IV.2.b ($0{,}5$đ) $\Rightarrow$ Học sinh lực học trung bình – khá không thể chạm ngưỡng 8,0 điểm.
+   - **Điểm kỳ vọng thống kê của HS đại trà:**
+     $$1{,}25\text{đ (Bài I)} + 1{,}50\text{đ (Bài II)} + 1{,}50\text{đ (Bài III)} + 2{,}00\text{đ (Bài IV)} + 0{,}00\text{đ (Bài V)} = 6{,}25\text{ điểm.}$$
+
+---
+
+## Bảng so sánh nổi bật sự khác nhau giữa các bước trọng yếu
+
+| Cặp so sánh | Bước trước (Bản chất & Nhiệm vụ) | Bước sau (Bản chất & Nhiệm vụ) | Điểm khác biệt cốt lõi | Sai lầm tuyệt đối tránh |
+|---|---|---|---|---|
+| **1. Bước 4 (Thống kê dạng) vs Bước 5 (Thiết kế ma trận)** | **Khảo sát mô tả khách quan:** Thu thập dữ liệu từ 48 đề thi thật của các trường; đếm tần suất xuất hiện (%) từng dạng. | **Quyết định sư phạm chủ động (Spec-First):** Chốt khung 10 điểm, phân bổ band (20-55-20-5), rải nguồn $\ge 4$ quận, kẹp phổ điểm 6–7. | B4 là **THỐNG KÊ** (thực tế có gì ghi nấy), B5 là **ĐẶC TẢ** (chuẩn hoá theo mục tiêu, không copy mù quáng tần suất thực tế). | Dùng kết quả đếm từ khoá thô để làm đề mà chưa gắn tay; đưa 100% dạng ít gặp vào đề làm vỡ cấu trúc. |
+| **2. Đề Ôn tập (Đề 1, 2, 3) vs Đề Thi chính thức (Đề 4)** | **Đề Ôn (Formative Assessment):** Làm tại lớp & về nhà; tập trung dạng Top 1 & Top 2 quen thuộc; có tính giàn giáo để GV chữa bài, HS định hình phản xạ. | **Đề Thi (Summative Assessment):** Đo lường độc lập 90 phút có giám thị; câu hỏi trích từ trường/quận mới hoàn toàn; kẹp phổ điểm chuẩn Gauss tại 6–7 điểm. | **ĐỀ ÔN ĐỂ HỌC** (tìm lỗ hổng, sửa sai, rèn tâm lý); **ĐỀ THI ĐỂ ĐO** (đo năng lực độc lập, cấm học vẹt hay lặp lại đề ôn). | Lấy lại nguyên xi bài trong 3 đề ôn đưa vào đề thi chính thức; hoặc đề thi chính thức có cấu trúc ma trận khác đề ôn. |
+| **3. Sàn an toàn (Floor $\ge 5$đ) vs Trần phân hoá (Ceiling $\le 7$đ)** | **Sàn an toàn:** Quỹ 3,5 – 5,0đ câu đơn bước mở đầu (I.1, III.1, IV.1, lập hệ II, IV.2.a) ăn chắc trong 35 phút đầu. | **Trần phân hoá:** Quỹ 2,5đ câu phân hoá sâu (I.3, IV.2.c, V) kết hợp các điểm trừ kiểm soát (ĐKXĐ, dấu âm, đồng dạng). | Sàn giúp HS trung bình **không bị điểm liệt**; Trần ngăn **lạm phát điểm 8–9 ảo**, ghim đỉnh phổ điểm đúng 6,25 – 6,75đ. | Thiếu câu gỡ điểm mở đầu làm HS hoảng loạn bỏ giấy trắng; hoặc câu phân loại quá dễ khiến cả lớp 8–9 điểm. |
+| **4. Bước 6 (Soạn lời giải chuẩn thi) vs Bước 8 (Cổng gác tự động)** | **Tác nghiệp sư phạm:** Bóc tách 100% từ ảnh scan gốc, giải từng dòng kèm barem 0,25đ, cấm dấu ⇔, cấm HTL trực tiếp, TikZ chuẩn. | **Tự động hoá kiểm định (Automated Gates):** Máy quét code chặn ngay lập tức nếu vi phạm 3 luật thi (`loi_giai_thi_gate`), lệch ma trận (`de_gate`), tràn trang (`print_gate`). | B6 là **SÁNG TẠO NỘI DUNG** của con người/AI; B8 là **HÀNG RÀO KỸ THUẬT** khách quan tuyệt đối, sai 1 lỗi là từ chối build. | Chủ quan không chạy gate mà build ngay; sửa đè file tex thủ công thay vì sửa từ file JSON nguồn. |
+
 ## Bước 6 — Viết lời giải NHƯ HS ĐI THI
 
 | Luật | Thầy nói | Cổng gác |

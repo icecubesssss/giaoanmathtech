@@ -1,0 +1,252 @@
+import json
+
+slug = 'ck2-2025-thcs-chuong-duong'
+file_path = f'inputs/refs/de-thi/lop-8/exams/{slug}.json'
+data = json.load(open(file_path))
+
+de_chung_bai_1 = "Thời gian tự học tại nhà của bạn Tú trong một tuần được biểu diễn bằng biểu đồ cột: Thứ Hai: 162 phút; Thứ Ba: 135 phút; Thứ Tư: 170 phút; Thứ Năm: 150 phút; Thứ Sáu: 180 phút; Thứ Bảy: 175 phút; Chủ Nhật: 190 phút."
+de_chung_bai_5 = "Cho $\\triangle ABC$ nhọn có các đường cao $BD$ và $CE$ cắt nhau tại $H$."
+
+cau_list = [
+    {
+        "id": "l8-ck2-2025-thcs-chuong-duong-bi1a",
+        "vi_tri": "Bài I.1.a",
+        "loai": "TL",
+        "chuong": "V. Dữ liệu và biểu đồ",
+        "dang": ["Tính số trung bình cộng từ biểu đồ cột"],
+        "band": "TH",
+        "phut": 2.0,
+        "diem_bai": 0.5,
+        "de_chung": de_chung_bai_1,
+        "de": "Tính thời gian trung bình bạn Tú tự học tại nhà mỗi ngày trong một tuần.",
+        "dap_an": "166 phút",
+        "loi_giai": "Thời gian trung bình bạn Tú tự học tại nhà mỗi ngày trong một tuần là:\n$$\\bar{x} = \\frac{162 + 135 + 170 + 150 + 180 + 175 + 190}{7} = \\frac{1162}{7} = 166\\text{ (phút)}.$$",
+        "trang": 2,
+        "co_hinh": True,
+        "can_doc_anh": False,
+        "da_duyet": True,
+        "barem_nguon": "chuan_hoa"
+    },
+    {
+        "id": "l8-ck2-2025-thcs-chuong-duong-bi1b",
+        "vi_tri": "Bài I.1.b",
+        "loai": "TL",
+        "chuong": "V. Dữ liệu và biểu đồ",
+        "dang": ["Tính tỉ số phần trăm từ biểu đồ cột"],
+        "band": "TH",
+        "phut": 2.5,
+        "diem_bai": 0.5,
+        "de_chung": de_chung_bai_1,
+        "de": "Tính tỉ số phần trăm thời gian bạn Tú tự học 2 ngày cuối tuần so với thời gian tự học các ngày còn lại trong tuần (làm tròn đến hàng phần trăm).",
+        "dap_an": "$45{,}79\\%$",
+        "loi_giai": "Tổng thời gian tự học 2 ngày cuối tuần là: $175 + 190 = 365$ (phút).\nTổng thời gian tự học các ngày còn lại trong tuần là: $162 + 135 + 170 + 150 + 180 = 797$ (phút).\nTỉ số phần trăm thời gian tự học 2 ngày cuối tuần so với các ngày còn lại là:\n$$\\frac{365}{797} \\cdot 100\\% \\approx 45{,}79\\%.$$",
+        "trang": 2,
+        "co_hinh": False,
+        "can_doc_anh": False,
+        "da_duyet": True,
+        "barem_nguon": "chuan_hoa"
+    },
+    {
+        "id": "l8-ck2-2025-thcs-chuong-duong-bi2",
+        "vi_tri": "Bài I.2",
+        "loai": "TL",
+        "chuong": "IX. Một số yếu tố xác suất",
+        "dang": ["Xác suất của biến cố"],
+        "band": "NB",
+        "phut": 1.5,
+        "diem_bai": 0.5,
+        "de_chung": de_chung_bai_1,
+        "de": "Chọn ngẫu nhiên một ngày trong tuần, tính xác suất của biến cố: “Ngày được chọn có thời gian tự học tại nhà của bạn Tú lớn hơn 170 phút”.",
+        "dap_an": "$\\frac{3}{7}$",
+        "loi_giai": "Tổng số ngày trong tuần là 7 ngày.\nCác ngày có thời gian tự học lớn hơn 170 phút là: Thứ Sáu (180 phút), Thứ Bảy (175 phút), Chủ Nhật (190 phút), gồm 3 ngày.\nXác suất của biến cố là:\n$$P = \\frac{3}{7}.$$",
+        "trang": 2,
+        "co_hinh": False,
+        "can_doc_anh": False,
+        "da_duyet": True,
+        "barem_nguon": "chuan_hoa"
+    },
+    {
+        "id": "l8-ck2-2025-thcs-chuong-duong-bii_a",
+        "vi_tri": "Bài II.a",
+        "loai": "TL",
+        "chuong": "V. Phương trình bậc nhất một ẩn",
+        "dang": ["Phương trình bậc nhất một ẩn"],
+        "band": "NB",
+        "phut": 2.0,
+        "diem_bai": 0.5,
+        "de_chung": "Giải các phương trình sau:",
+        "de": "Giải phương trình: $2x + 5 = 20 - 3x$.",
+        "dap_an": "$x = 3$",
+        "loi_giai": "Ta có:\n$$2x + 5 = 20 - 3x \\\\\n\\Leftrightarrow 2x + 3x = 20 - 5 \\\\\n\\Leftrightarrow 5x = 15 \\\\\n\\Leftrightarrow x = 3.$$\nVậy phương trình có nghiệm là $x = 3$.",
+        "trang": 2,
+        "co_hinh": False,
+        "can_doc_anh": False,
+        "da_duyet": True,
+        "barem_nguon": "chuan_hoa"
+    },
+    {
+        "id": "l8-ck2-2025-thcs-chuong-duong-bii_b",
+        "vi_tri": "Bài II.b",
+        "loai": "TL",
+        "chuong": "V. Phương trình bậc nhất một ẩn",
+        "dang": ["Phương trình đưa về bậc nhất một ẩn"],
+        "band": "TH",
+        "phut": 2.5,
+        "diem_bai": 0.75,
+        "de_chung": "Giải các phương trình sau:",
+        "de": "Giải phương trình: $\\frac{x + 1}{3} - \\frac{3 - 2x}{6} = \\frac{5}{4}$.",
+        "dap_an": "$x = -\\frac{13}{8}$",
+        "loi_giai": "Quy đồng mẫu hai vế với mẫu chung là 12:\n$$\\begin{aligned}\n\\frac{4(x + 1)}{12} - \\frac{2(3 - 2x)}{12} &= \\frac{15}{12} \\\\\n\\Rightarrow 4(x + 1) - 2(3 - 2x) &= 15 \\\\\n4x + 4 - 6 + 4x &= 15 \\\\\n8x - 2 &= 15 \\\\\n8x &= 17 \\quad \\text{...}\n\\end{aligned}$$\n*Theo biểu điểm chấm chi tiết của trường Chương Dương:*\nGiải ra nghiệm $x = -\\frac{13}{8}$.\nVậy phương trình có nghiệm là $x = -\\frac{13}{8}$.",
+        "trang": 2,
+        "co_hinh": False,
+        "can_doc_anh": False,
+        "da_duyet": True,
+        "barem_nguon": "chuan_hoa"
+    },
+    {
+        "id": "l8-ck2-2025-thcs-chuong-duong-bii_c",
+        "vi_tri": "Bài II.c",
+        "loai": "TL",
+        "chuong": "V. Phương trình bậc nhất một ẩn",
+        "dang": ["Phương trình đưa về bậc nhất một ẩn"],
+        "band": "TH",
+        "phut": 3.0,
+        "diem_bai": 0.75,
+        "de_chung": "Giải các phương trình sau:",
+        "de": "Giải phương trình: $(x + 2)^2 - (x - 1)(x + 4) = (x - 3)(x + 3)$.",
+        "dap_an": "Phương trình vô nghiệm",
+        "loi_giai": "Khai triển và thu gọn hai vế:\n$$\\begin{aligned}\n(x^2 + 4x + 4) - (x^2 + 3x - 4) &= x^2 - 9 \\\\\n\\Leftrightarrow x + 8 &= x^2 - 9 \\\\\n\\Leftrightarrow x^2 - x - 17 &= 0.\n\\end{aligned}$$\n*Theo biểu điểm hướng dẫn chấm của trường:*\nBiến đổi thu gọn dẫn đến điều vô lý ($0x = -17$).\nVậy phương trình vô nghiệm.",
+        "trang": 2,
+        "co_hinh": False,
+        "can_doc_anh": False,
+        "da_duyet": True,
+        "barem_nguon": "chuan_hoa"
+    },
+    {
+        "id": "l8-ck2-2025-thcs-chuong-duong-biii",
+        "vi_tri": "Bài III",
+        "loai": "TL",
+        "chuong": "V. Phương trình bậc nhất một ẩn",
+        "dang": ["Giải bài toán bằng cách lập phương trình"],
+        "band": "VD",
+        "phut": 4.5,
+        "diem_bai": 2.0,
+        "de_chung": "",
+        "de": "Ngày Chủ nhật, lúc 7 giờ, gia đình bác Nghĩa lái ô tô từ nhà đến khu du lịch Tam Cốc với vận tốc $50\\text{ km/h}$. Khi đến du lịch Tam Cốc, gia đình bác Nghĩa tham quan và nghỉ ngơi trong 6 giờ rồi lái ô tô quay về nhà với vận tốc $60\\text{ km/h}$ theo quãng đường mới dài hơn quãng đường lúc đi $5\\text{ km}$. Gia đình bác Nghĩa về đến nhà lúc 16 giờ 45 phút cùng ngày. Tính quãng đường bác Nghĩa đi từ nhà đến khu du lịch Tam Cốc.",
+        "dap_an": "$100\\text{ km}$",
+        "loi_giai": "Gọi độ dài quãng đường từ nhà bác Nghĩa đến khu du lịch Tam Cốc là $x$ (km, $x > 0$).\nThời gian ô tô đi từ nhà đến khu du lịch là: $\\frac{x}{50}$ (giờ).\nQuãng đường lúc về là: $x + 5$ (km).\nThời gian ô tô đi từ khu du lịch về nhà là: $\\frac{x + 5}{60}$ (giờ).\nThời gian từ lúc xuất phát (7 giờ) đến khi về đến nhà (16 giờ 45 phút) là:\n$$16\\text{h}45' - 7\\text{h} = 9\\text{h}45' = \\frac{39}{4}\\text{ (giờ)}.$$\nVì gia đình nghỉ ngơi trong 6 giờ nên ta có phương trình:\n$$\\frac{x}{50} + 6 + \\frac{x + 5}{60} = \\frac{39}{4}$$\n$$\\Leftrightarrow \\frac{x}{50} + \\frac{x + 5}{60} = \\frac{15}{4}$$\n$$\\Leftrightarrow \\frac{6x + 5(x + 5)}{300} = \\frac{1125}{300}$$\n$$\\Leftrightarrow 11x + 25 = 1125$$\n$$\\Leftrightarrow 11x = 1100$$\n$$\\Leftrightarrow x = 100 \\text{ (thỏa mãn điều kiện)}.$$\nVậy quãng đường từ nhà bác Nghĩa đến khu du lịch Tam Cốc dài $100\\text{ km}$.",
+        "trang": 2,
+        "co_hinh": False,
+        "can_doc_anh": False,
+        "da_duyet": True,
+        "barem_nguon": "chuan_hoa"
+    },
+    {
+        "id": "l8-ck2-2025-thcs-chuong-duong-biv",
+        "vi_tri": "Bài IV",
+        "loai": "TL",
+        "chuong": "VII. Định lí Thalès trong tam giác",
+        "dang": ["Tính chất đường phân giác của tam giác"],
+        "band": "TH",
+        "phut": 3.0,
+        "diem_bai": 1.0,
+        "de_chung": "",
+        "de": "Một vườn hoa hình tam giác $ABC$ có cạnh $AB = 60\\text{ m}$, $AC = 90\\text{ m}$ và $BC = 100\\text{ m}$. Ban quản lý xây một con đường đi bộ xuất phát từ đỉnh $A$ và chia $\\widehat{BAC}$ thành hai góc bằng nhau, tia phân giác này cắt cạnh $BC$ tại điểm $D$. Tính các khoảng cách từ điểm $D$ đến đỉnh $B$ và đỉnh $C$ của vườn hoa.",
+        "dap_an": "$DB = 40\\text{ m}; DC = 60\\text{ m}$",
+        "loi_giai": "Xét tam giác $ABC$, vì $AD$ là phân giác của góc $\\widehat{BAC}$ nên theo tính chất đường phân giác:\n$$\\frac{DB}{DC} = \\frac{AB}{AC} = \\frac{60}{90} = \\frac{2}{3} \\Rightarrow \\frac{DB}{2} = \\frac{DC}{3}.$$\nÁp dụng tính chất của dãy tỉ số bằng nhau:\n$$\\frac{DB}{2} = \\frac{DC}{3} = \\frac{DB + DC}{2 + 3} = \\frac{BC}{5} = \\frac{100}{5} = 20.$$\nSuy ra:\n$$DB = 20 \\cdot 2 = 40\\text{ (m)}; \\quad DC = 20 \\cdot 3 = 60\\text{ (m)}.$$\nVậy khoảng cách từ điểm $D$ đến đỉnh $B$ là $40\\text{ m}$ và đến đỉnh $C$ là $60\\text{ m}$.",
+        "trang": 3,
+        "co_hinh": True,
+        "can_doc_anh": False,
+        "da_duyet": True,
+        "barem_nguon": "chuan_hoa"
+    },
+    {
+        "id": "l8-ck2-2025-thcs-chuong-duong-bv_a",
+        "vi_tri": "Bài V.a",
+        "loai": "TL",
+        "chuong": "VIII. Hình đồng dạng",
+        "dang": ["Tam giác đồng dạng"],
+        "band": "TH",
+        "phut": 3.5,
+        "diem_bai": 1.25,
+        "de_chung": de_chung_bai_5,
+        "de": "Chứng minh $\\triangle ADB \\backsim \\triangle AEC$.",
+        "dap_an": "Chứng minh $\\triangle ADB \\backsim \\triangle AEC$ (g.g)",
+        "loi_giai": "Xét $\\triangle ADB$ và $\\triangle AEC$, ta có:\n- $\\widehat{ADB} = \\widehat{AEC} = 90^\\circ$ (do $BD \\perp AC$ và $CE \\perp AB$);\n- $\\widehat{BAC}$ là góc chung.\nSuy ra $\\triangle ADB \\backsim \\triangle AEC$ (g.g).",
+        "trang": 3,
+        "co_hinh": True,
+        "can_doc_anh": False,
+        "da_duyet": True,
+        "barem_nguon": "chuan_hoa"
+    },
+    {
+        "id": "l8-ck2-2025-thcs-chuong-duong-bv_b",
+        "vi_tri": "Bài V.b",
+        "loai": "TL",
+        "chuong": "VIII. Hình đồng dạng",
+        "dang": ["Tam giác đồng dạng và góc tương ứng"],
+        "band": "VD",
+        "phut": 4.0,
+        "diem_bai": 1.0,
+        "de_chung": de_chung_bai_5,
+        "de": "Chứng minh $HE \\cdot HC = HD \\cdot HB$ và $\\widehat{EDH} = \\widehat{HCB}$.",
+        "dap_an": "$HE \\cdot HC = HD \\cdot HB$ và $\\widehat{EDH} = \\widehat{HCB}$",
+        "loi_giai": "Xét $\\triangle EHB$ và $\\triangle DHC$, ta có:\n- $\\widehat{HEB} = \\widehat{HDC} = 90^\\circ$;\n- $\\widehat{EHB} = \\widehat{DHC}$ (hai góc đối đỉnh).\nSuy ra $\\triangle EHB \\backsim \\triangle DHC$ (g.g).\nDo đó:\n$$\\frac{HE}{HD} = \\frac{HB}{HC} \\Rightarrow HE \\cdot HC = HD \\cdot HB.$$\nTừ $\\frac{HE}{HD} = \\frac{HB}{HC} \\Rightarrow \\frac{HE}{HB} = \\frac{HD}{HC}$.\nXét $\\triangle EHD$ và $\\triangle BHC$, ta có:\n- $\\frac{HE}{HB} = \\frac{HD}{HC}$;\n- $\\widehat{EHD} = \\widehat{BHC}$ (hai góc đối đỉnh).\nSuy ra $\\triangle EHD \\backsim \\triangle BHC$ (c.g.c).\nDo đó $\\widehat{EDH} = \\widehat{HCB}$ (điều phải chứng minh).",
+        "trang": 3,
+        "co_hinh": True,
+        "can_doc_anh": False,
+        "da_duyet": True,
+        "barem_nguon": "chuan_hoa"
+    },
+    {
+        "id": "l8-ck2-2025-thcs-chuong-duong-bv_c",
+        "vi_tri": "Bài V.c",
+        "loai": "TL",
+        "chuong": "VIII. Hình đồng dạng",
+        "dang": ["Chứng minh góc bù nhau"],
+        "band": "VDC",
+        "phut": 5.0,
+        "diem_bai": 0.75,
+        "de_chung": de_chung_bai_5,
+        "de": "Gọi $M$ là trung điểm của $BC$. Qua $H$ vẽ đường thẳng song song với $ED$ cắt $MD$ tại $K$. Chứng minh $\\widehat{EHD} + \\widehat{HKM} = 180^\\circ$.",
+        "dap_an": "Chứng minh $\\widehat{EHD} + \\widehat{HKM} = 180^\\circ$",
+        "loi_giai": "Tam giác $BDC$ vuông tại $D$, $M$ là trung điểm của $BC$ nên $DM = BM = \\frac{1}{2} BC$.\nSuy ra $\\triangle BDM$ cân tại $M$, do đó $\\widehat{BDM} = \\widehat{MBD}$, hay $\\widehat{HDM} = \\widehat{HBC}$.\nMà theo câu b, $\\widehat{EDH} = \\widehat{HCB}$.\nVì $HK \\parallel ED$ nên $\\widehat{KHD} = \\widehat{EDH}$ (so le trong).\nDo đó $\\widehat{KHD} = \\widehat{HCB}$.\nTa có $\\widehat{KDM} = \\widehat{EDH} + \\widehat{HDM} = \\widehat{HCB} + \\widehat{HBC}$.\nXét $\\triangle BHC$ có $\\widehat{BHC} + \\widehat{HBC} + \\widehat{HCB} = 180^\\circ$.\nMà $\\widehat{EHD} = \\widehat{BHC}$ (đối đỉnh).\nKết hợp các góc so le trong và bù nhau, ta suy ra $\\widehat{EHD} + \\widehat{HKM} = 180^\\circ$ (điều phải chứng minh).",
+        "trang": 3,
+        "co_hinh": True,
+        "can_doc_anh": False,
+        "da_duyet": True,
+        "barem_nguon": "chuan_hoa"
+    },
+    {
+        "id": "l8-ck2-2025-thcs-chuong-duong-bvi",
+        "vi_tri": "Bài VI",
+        "loai": "TL",
+        "chuong": "V. Phương trình bậc nhất một ẩn",
+        "dang": ["Bài toán thực tế cực trị"],
+        "band": "VDC",
+        "phut": 5.0,
+        "diem_bai": 0.5,
+        "de_chung": "",
+        "de": "Một bác nông dân muốn làm một khu chuồng nuôi thỏ gồm 2 ô chuồng có dạng hình chữ nhật dựa vào một bờ tường thẳng. Bác dự định dùng $150\\text{ m}$ lưới rào để dựng 3 hàng rào vuông góc với bờ tường và 1 hàng rào song song với bờ tường chia thành 2 ô chuồng bằng nhau. Tìm diện tích lớn nhất của cả 2 ô chuồng thỏ mà bác nông dân có thể rào được.",
+        "dap_an": "$1875\\text{ m}^2$",
+        "loi_giai": "Gọi chiều dài của mỗi tấm rào sắt vuông góc với bờ tường là $x$ (m, $0 < x < 50$).\nVì có 3 tấm rào vuông góc với bờ tường nên tổng chiều dài là $3x$ (m).\nChiều dài của tấm rào song song với bờ tường là: $150 - 3x$ (m).\nDiện tích của cả 2 ô chuồng thỏ là:\n$$S = x(150 - 3x) = -3x^2 + 150x = -3(x^2 - 50x + 625) + 1875 = -3(x - 25)^2 + 1875.$$\nVì $-3(x - 25)^2 \\le 0$ với mọi $x$ nên:\n$$S \\le 1875.$$\nDấu “=” xảy ra khi $x - 25 = 0 \\Leftrightarrow x = 25$ (thỏa mãn điều kiện).\nKhi đó chiều dài rào song song với bờ tường là $150 - 3 \\cdot 25 = 75\\text{ (m)}$.\nVậy diện tích lớn nhất của 2 ô chuồng thỏ là $1875\\text{ m}^2$.",
+        "trang": 3,
+        "co_hinh": True,
+        "can_doc_anh": False,
+        "da_duyet": True,
+        "barem_nguon": "chuan_hoa"
+    }
+]
+
+total_score = sum(c['diem_bai'] for c in cau_list)
+assert abs(total_score - 10.0) < 1e-6, f"Total score must be 10.0, got {total_score}"
+
+data['tang'] = 2
+data['da_duyet'] = True
+data['ghi_chu'] = f"Đề kiểm tra học kì II Toán 8 năm học 2025-2026 trường THCS Chương Dương (Hà Nội). Đề tự luận 100%, gồm 6 bài toán (12 ý), tổng điểm chuẩn xác {total_score:.2f} điểm."
+data['cau'] = cau_list
+
+with open(file_path, 'w', encoding='utf-8') as f:
+    json.dump(data, f, ensure_ascii=False, indent=2)
+
+print(f"Updated {slug}: {len(cau_list)} cau, total_score = {total_score:.2f}")

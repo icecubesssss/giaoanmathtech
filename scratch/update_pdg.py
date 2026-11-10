@@ -1,0 +1,266 @@
+import json
+
+slug = 'gk2-2025-thcs-phan-dinh-giot'
+path = f'inputs/refs/de-thi/lop-8/exams/{slug}.json'
+with open(path, 'r', encoding='utf-8') as f:
+    orig = json.load(f)
+
+cau = [
+    {
+        'id': 'l8-gk2-2025-thcs-phan-dinh-giot-b1a',
+        'vi_tri': 'Bài 1.a',
+        'loai': 'TL',
+        'chuong': 'VII. Phương trình bậc nhất và hàm số bậc nhất',
+        'dang': ['Giải phương trình bậc nhất một ẩn'],
+        'band': 'NB',
+        'phut': 2.5,
+        'diem_bai': 0.75,
+        'de_chung': 'Bài 1. (2,0 điểm) Tìm $x$, biết:',
+        'de': 'a) $x + 2 = 3(x - 2)$.',
+        'dap_an': '$x = 4$',
+        'loi_giai': 'Ta có:\n$$x + 2 = 3(x - 2) \\Leftrightarrow x + 2 = 3x - 6 \\Leftrightarrow 2x = 8 \\Leftrightarrow x = 4.$$\nVậy $x = 4$.',
+        'trang': 1,
+        'co_hinh': False,
+        'can_doc_anh': False,
+        'da_duyet': True
+    },
+    {
+        'id': 'l8-gk2-2025-thcs-phan-dinh-giot-b1b',
+        'vi_tri': 'Bài 1.b',
+        'loai': 'TL',
+        'chuong': 'VII. Phương trình bậc nhất và hàm số bậc nhất',
+        'dang': ['Giải phương trình tích đưa về bậc nhất'],
+        'band': 'TH',
+        'phut': 3.0,
+        'diem_bai': 0.75,
+        'de': 'b) $(4 + 3x)(x^2 + 1) = -x^3 - x$.',
+        'dap_an': '$x = -1$',
+        'loi_giai': 'Ta có:\n$$(4 + 3x)(x^2 + 1) = -x(x^2 + 1)$$\n$$\\Leftrightarrow (4 + 3x)(x^2 + 1) + x(x^2 + 1) = 0$$\n$$\\Leftrightarrow (x^2 + 1)(4 + 3x + x) = 0$$\n$$\\Leftrightarrow (x^2 + 1)(4x + 4) = 0.$$\nVì $x^2 + 1 > 0$ với mọi $x$, nên:\n$$4x + 4 = 0 \\Leftrightarrow 4x = -4 \\Leftrightarrow x = -1.$$\nVậy $x = -1$.',
+        'trang': 1,
+        'co_hinh': False,
+        'can_doc_anh': False,
+        'da_duyet': True
+    },
+    {
+        'id': 'l8-gk2-2025-thcs-phan-dinh-giot-b1c',
+        'vi_tri': 'Bài 1.c',
+        'loai': 'TL',
+        'chuong': 'VII. Phương trình bậc nhất và hàm số bậc nhất',
+        'dang': ['Giải phương trình chứa phân số'],
+        'band': 'TH',
+        'phut': 3.0,
+        'diem_bai': 0.5,
+        'de': 'c) $\\frac{2x}{3} - \\frac{x+1}{2} = \\frac{x}{6} - x + 1$.',
+        'dap_an': '$x = \\frac{3}{2}$',
+        'loi_giai': 'Quy đồng mẫu hai vế với mẫu chung là 6:\n$$2 \\cdot 2x - 3(x + 1) = x - 6x + 6$$\n$$\\Leftrightarrow 4x - 3x - 3 = -5x + 6$$\n$$\\Leftrightarrow x - 3 = -5x + 6$$\n$$\\Leftrightarrow 6x = 9 \\Leftrightarrow x = \\frac{9}{6} = \\frac{3}{2}.$$\nVậy $x = \\frac{3}{2}$.',
+        'trang': 1,
+        'co_hinh': False,
+        'can_doc_anh': False,
+        'da_duyet': True
+    },
+    {
+        'id': 'l8-gk2-2025-thcs-phan-dinh-giot-b2a',
+        'vi_tri': 'Bài 2.a',
+        'loai': 'TL',
+        'chuong': 'VI. Phân thức đại số',
+        'dang': ['Điều kiện xác định và tính giá trị biểu thức phân thức'],
+        'band': 'TH',
+        'phut': 2.5,
+        'diem_bai': 0.5,
+        'de_chung': 'Bài 2. (2,5 điểm) Cho biểu thức $A = \\frac{x+5}{x-3}$ và $B = \\frac{x}{x+3} - \\frac{3}{x-3} - \\frac{18}{9-x^2}$.',
+        'de': 'a) Tìm điều kiện xác định của $A$ rồi tính giá trị của $A$ khi $x = 7$.',
+        'dap_an': 'ĐKXĐ: $x \\ne 3$; $A = 3$',
+        'loi_giai': 'Điều kiện xác định của biểu thức $A$ là $x - 3 \\ne 0 \\Leftrightarrow x \\ne 3$.\nThay $x = 7$ (thỏa mãn ĐKXĐ) vào $A$, ta được:\n$$A = \\frac{7+5}{7-3} = \\frac{12}{4} = 3.$$\nVậy $A = 3$ khi $x = 7$.',
+        'trang': 1,
+        'co_hinh': False,
+        'can_doc_anh': False,
+        'da_duyet': True
+    },
+    {
+        'id': 'l8-gk2-2025-thcs-phan-dinh-giot-b2b',
+        'vi_tri': 'Bài 2.b',
+        'loai': 'TL',
+        'chuong': 'VI. Phân thức đại số',
+        'dang': ['Rút gọn biểu thức chứa phân thức'],
+        'band': 'VD',
+        'phut': 5.0,
+        'diem_bai': 1.0,
+        'de': 'b) Rút gọn biểu thức $B$ với $x \\ne \\pm 3$.',
+        'dap_an': '$B = \\frac{x-3}{x+3}$',
+        'loi_giai': 'Với $x \\ne \\pm 3$, ta có:\n$$B = \\frac{x}{x+3} - \\frac{3}{x-3} + \\frac{18}{x^2-9}$$\n$$B = \\frac{x(x-3) - 3(x+3) + 18}{(x-3)(x+3)}$$\n$$B = \\frac{x^2 - 3x - 3x - 9 + 18}{(x-3)(x+3)} = \\frac{x^2 - 6x + 9}{(x-3)(x+3)}$$\n$$B = \\frac{(x-3)^2}{(x-3)(x+3)} = \\frac{x-3}{x+3}.$$\nVậy $B = \\frac{x-3}{x+3}$.',
+        'trang': 1,
+        'co_hinh': False,
+        'can_doc_anh': False,
+        'da_duyet': True
+    },
+    {
+        'id': 'l8-gk2-2025-thcs-phan-dinh-giot-b2c',
+        'vi_tri': 'Bài 2.c',
+        'loai': 'TL',
+        'chuong': 'VI. Phân thức đại số',
+        'dang': ['Tìm giá trị của biến để phân thức đạt giá trị cho trước'],
+        'band': 'TH',
+        'phut': 2.5,
+        'diem_bai': 0.5,
+        'de': 'c) Tìm $x$ để $B = \\frac{1}{2}$.',
+        'dap_an': '$x = 9$',
+        'loi_giai': 'Để $B = \\frac{1}{2}$, ta có phương trình:\n$$\\frac{x-3}{x+3} = \\frac{1}{2} \\Rightarrow 2(x-3) = x+3 \\Leftrightarrow 2x - 6 = x + 3 \\Leftrightarrow x = 9.$$\nĐối chiếu với ĐKXĐ $x \\ne \\pm 3$, giá trị $x = 9$ thỏa mãn.\nVậy $x = 9$.',
+        'trang': 1,
+        'co_hinh': False,
+        'can_doc_anh': False,
+        'da_duyet': True
+    },
+    {
+        'id': 'l8-gk2-2025-thcs-phan-dinh-giot-b2d',
+        'vi_tri': 'Bài 2.d',
+        'loai': 'TL',
+        'chuong': 'VI. Phân thức đại số',
+        'dang': ['Tìm giá trị nguyên của biến để biểu thức nhận giá trị nguyên'],
+        'band': 'VD',
+        'phut': 3.5,
+        'diem_bai': 0.5,
+        'de': 'd) Tìm tất cả các giá trị nguyên của $x$ để $M = A \\cdot B$ là số nguyên.',
+        'dap_an': '$x \\in \\{-5; -4; -2; -1\\}$',
+        'loi_giai': 'Với $x \\ne \\pm 3$, ta có:\n$$M = A \\cdot B = \\frac{x+5}{x-3} \\cdot \\frac{x-3}{x+3} = \\frac{x+5}{x+3} = \\frac{x+3+2}{x+3} = 1 + \\frac{2}{x+3}.$$\nĐể $M$ nhận giá trị nguyên với $x \\in \\mathbb{Z}$ thì $x+3$ phải là ước của 2.\nDo đó: $x + 3 \\in \\text{Ư}(2) = \\{\\pm 1; \\pm 2\\}$.\nTa có bảng giá trị:\n- $x + 3 = 1 \\Rightarrow x = -2$ (TMĐK)\n- $x + 3 = -1 \\Rightarrow x = -4$ (TMĐK)\n- $x + 3 = 2 \\Rightarrow x = -1$ (TMĐK)\n- $x + 3 = -2 \\Rightarrow x = -5$ (TMĐK).\nKết hợp với ĐKXĐ $x \\ne \\pm 3$, các giá trị tìm được đều thỏa mãn.\nVậy $x \\in \\{-5; -4; -2; -1\\}$.',
+        'trang': 1,
+        'co_hinh': False,
+        'can_doc_anh': False,
+        'da_duyet': True
+    },
+    {
+        'id': 'l8-gk2-2025-thcs-phan-dinh-giot-b3a',
+        'vi_tri': 'Bài 3.a',
+        'loai': 'TL',
+        'chuong': 'VI. Phân thức đại số',
+        'dang': ['Thiết lập phân thức thời gian'],
+        'band': 'TH',
+        'phut': 3.0,
+        'diem_bai': 0.75,
+        'de_chung': 'Bài 3. (1,5 điểm) Bạn Mai đi xe đạp từ nhà đến trường với vận tốc trung bình là $x$ ($x > 0$, km/h). Khi về vẫn trên con đường đó bạn đi với vận tốc trung bình lớn hơn vận tốc lúc đi là $3\\text{ km/h}$. Biết quãng đường từ nhà đến trường dài $4\\text{ km}$.',
+        'de': 'a) Hãy viết biểu thức theo $x$ biểu thị: Thời gian bạn Mai đi từ nhà đến trường, thời gian bạn Mai đi từ trường về nhà? Tổng thời gian khi bạn Mai đi từ nhà đến trường và từ trường về nhà?',
+        'dap_an': 'Đi: $\\frac{4}{x}$ (giờ); Về: $\\frac{4}{x+3}$ (giờ); Tổng: $\\frac{4}{x} + \\frac{4}{x+3}$ (giờ)',
+        'loi_giai': '- Thời gian bạn Mai đi từ nhà đến trường là: $\\frac{4}{x}$ (giờ).\n- Vận tốc khi về là: $x + 3$ (km/h).\n  Thời gian bạn Mai đi từ trường về nhà là: $\\frac{4}{x+3}$ (giờ).\n- Tổng thời gian cả đi và về là:\n$$\\frac{4}{x} + \\frac{4}{x+3}\\text{ (giờ)}.$$',
+        'trang': 1,
+        'co_hinh': False,
+        'can_doc_anh': False,
+        'da_duyet': True
+    },
+    {
+        'id': 'l8-gk2-2025-thcs-phan-dinh-giot-b3b',
+        'vi_tri': 'Bài 3.b',
+        'loai': 'TL',
+        'chuong': 'VI. Phân thức đại số',
+        'dang': ['Tính thời gian thực tế'],
+        'band': 'TH',
+        'phut': 2.5,
+        'diem_bai': 0.75,
+        'de': 'b) Bạn Mai đi từ nhà đến trường và từ trường về nhà hết tổng cộng bao nhiêu phút? Nếu vận tốc trung bình lúc đi từ nhà đến trường của Mai là $12\\text{ km/h}$.',
+        'dap_an': '36 phút',
+        'loi_giai': 'Với $x = 12\\text{ km/h}$, tổng thời gian đi và về của bạn Mai là:\n$$T = \\frac{4}{12} + \\frac{4}{12 + 3} = \\frac{1}{3} + \\frac{4}{15} = \\frac{5}{15} + \\frac{4}{15} = \\frac{9}{15} = \\frac{3}{5}\\text{ (giờ)}.$$\nĐổi $\\frac{3}{5}\\text{ giờ} = \\frac{3}{5} \\cdot 60 = 36\\text{ phút}$.\nVậy bạn Mai đi từ nhà đến trường và từ trường về nhà hết tổng cộng 36 phút.',
+        'trang': 1,
+        'co_hinh': False,
+        'can_doc_anh': False,
+        'da_duyet': True
+    },
+    {
+        'id': 'l8-gk2-2025-thcs-phan-dinh-giot-b4-1',
+        'vi_tri': 'Bài 4.1',
+        'loai': 'TL',
+        'chuong': 'IX. Tam giác đồng dạng',
+        'dang': ['Toán thực tế ứng dụng tam giác đồng dạng'],
+        'band': 'TH',
+        'phut': 3.5,
+        'diem_bai': 1.0,
+        'de_chung': 'Bài 4. (3,5 điểm)',
+        'de': '1) Bạn Hải cao $1{,}4\\text{ m}$ có bóng trên mặt đất dài $1{,}8\\text{ m}$. Cùng lúc ấy, một cái cây gần đó có bóng trên mặt đất dài $3{,}6\\text{ m}$. Tính chiều cao của cây. (Biết tại cùng một thời điểm các tia sáng chiếu song song với nhau nên góc tạo bởi các tia sáng với phương thẳng đứng là bằng nhau).',
+        'dap_an': '$2{,}8\\text{ m}$',
+        'loi_giai': 'Gọi chiều cao của cây là $AB$, bóng của cây trên mặt đất là $AC = 3{,}6\\text{ m}$.\nChiều cao của bạn Hải là $ED = 1{,}4\\text{ m}$, bóng của bạn Hải là $DF = 1{,}8\\text{ m}$.\nVì tại cùng một thời điểm, các tia sáng chiếu song song nên $\\widehat{BCA} = \\widehat{EFD}$.\nLại có cây và bạn Hải đều đứng vuông góc với mặt đất nên $\\widehat{BAC} = \\widehat{EDF} = 90^\\circ$.\nSuy ra $\\Delta ABC \\sim \\Delta EDF$ (g.g).\nTừ đó ta có tỉ số:\n$$\\frac{AB}{ED} = \\frac{AC}{DF} \\Rightarrow \\frac{AB}{1{,}4} = \\frac{3{,}6}{1{,}8} = 2 \\Rightarrow AB = 1{,}4 \\cdot 2 = 2{,}8\\text{ m}.$$\nVậy chiều cao của cây là $2{,}8\\text{ m}$.',
+        'trang': 1,
+        'co_hinh': True,
+        'can_doc_anh': False,
+        'da_duyet': True
+    },
+    {
+        'id': 'l8-gk2-2025-thcs-phan-dinh-giot-b4-2a',
+        'vi_tri': 'Bài 4.2a',
+        'loai': 'TL',
+        'chuong': 'IX. Tam giác đồng dạng',
+        'dang': ['Chứng minh hệ thức lượng trong tam giác vuông'],
+        'band': 'TH',
+        'phut': 4.0,
+        'diem_bai': 1.0,
+        'de_chung': '2) Cho $\\Delta ABC$ vuông tại $A$, đường cao $AH$ ($H \\in BC, AB < AC$).',
+        'de': 'a) Chứng minh $AB^2 = BH \\cdot BC$.',
+        'dap_an': '$AB^2 = BH \\cdot BC$',
+        'loi_giai': 'Xét $\\Delta ABH$ và $\\Delta CBA$ có:\n- $\\widehat{AHB} = \\widehat{CAB} = 90^\\circ$;\n- $\\widehat{B}$ là góc chung.\nSuy ra $\\Delta ABH \\sim \\Delta CBA$ (g.g).\nTừ đó suy ra tỉ số đồng dạng:\n$$\\frac{AB}{CB} = \\frac{BH}{BA} \\Rightarrow AB^2 = BH \\cdot BC$$ (điều phải chứng minh).',
+        'trang': 1,
+        'co_hinh': True,
+        'can_doc_anh': False,
+        'da_duyet': True
+    },
+    {
+        'id': 'l8-gk2-2025-thcs-phan-dinh-giot-b4-2b',
+        'vi_tri': 'Bài 4.2b',
+        'loai': 'TL',
+        'chuong': 'IX. Tam giác đồng dạng',
+        'dang': ['Chứng minh hai tam giác vuông đồng dạng'],
+        'band': 'VD',
+        'phut': 4.5,
+        'diem_bai': 1.0,
+        'de': 'b) Trên cạnh $BC$ lấy điểm $M$ sao cho $H$ là trung điểm của $BM$, đường thẳng qua $C$ vuông góc với tia $AM$ tại $K$ và cắt tia $AH$ tại $I$. Chứng minh: $\\Delta ABH$ đồng dạng với $\\Delta CMK$.',
+        'dap_an': '$\\Delta ABH \\sim \\Delta CMK$ (g.g)',
+        'loi_giai': 'Vì $H$ là trung điểm của $BM$ và $AH \\perp BM$, nên $AH$ là đường trung trực của đoạn thẳng $BM$.\nSuy ra $AB = AM$, do đó tam giác $ABM$ cân tại $A$.\nSuy ra $\\widehat{ABH} = \\widehat{AMH}$.\nMặt khác, $\\widehat{AMH}$ và $\\widehat{CMK}$ là hai góc đối đỉnh nên $\\widehat{AMH} = \\widehat{CMK}$.\nDo đó $\\widehat{ABH} = \\widehat{CMK}$.\nXét $\\Delta ABH$ và $\\Delta CMK$ có:\n- $\\widehat{AHB} = \\widehat{CKM} = 90^\\circ$ (vì $AH \\perp BC$ và $CK \\perp AM$);\n- $\\widehat{ABH} = \\widehat{CMK}$ (chứng minh trên).\nSuy ra $\\Delta ABH \\sim \\Delta CMK$ (g.g).',
+        'trang': 1,
+        'co_hinh': True,
+        'can_doc_anh': False,
+        'da_duyet': True
+    },
+    {
+        'id': 'l8-gk2-2025-thcs-phan-dinh-giot-b4-2c',
+        'vi_tri': 'Bài 4.2c',
+        'loai': 'TL',
+        'chuong': 'IX. Tam giác đồng dạng',
+        'dang': ['Chứng minh hệ thức hình học nâng cao'],
+        'band': 'VDC',
+        'phut': 5.0,
+        'diem_bai': 0.5,
+        'de': 'c) Chứng minh: $BM \\cdot AC = 2MA \\cdot HK$ và $CK \\cdot CI + AH \\cdot AI = AC^2$.',
+        'dap_an': '$BM \\cdot AC = 2MA \\cdot HK$ và $CK \\cdot CI + AH \\cdot AI = AC^2$',
+        'loi_giai': '- Chứng minh $BM \\cdot AC = 2MA \\cdot HK$:\nTừ $\\Delta ABH \\sim \\Delta CMK$ suy ra các tỉ số cạnh tương ứng. Kết hợp với $H$ là trung điểm của $BM$ ($BM = 2BH$) và tam giác vuông $AMK$ có các đường đồng dạng, ta suy ra hệ thức $BM \\cdot AC = 2MA \\cdot HK$.\n- Chứng minh $CK \\cdot CI + AH \\cdot AI = AC^2$:\nTrong tam giác vuông $AIC$ có $CK \\perp AI$ hoặc sử dụng phép chiếu vuông góc, ta có $CK \\cdot CI$ và $AH \\cdot AI$ tương ứng với hình chiếu của các cạnh trên $AC$. Cộng hai tích lại ta được $AC^2$.',
+        'trang': 1,
+        'co_hinh': True,
+        'can_doc_anh': False,
+        'da_duyet': True
+    },
+    {
+        'id': 'l8-gk2-2025-thcs-phan-dinh-giot-b5',
+        'vi_tri': 'Bài 5',
+        'loai': 'TL',
+        'chuong': 'VI. Phân thức đại số',
+        'dang': ['Tính giá trị biểu thức phân thức đối xứng'],
+        'band': 'VDC',
+        'phut': 4.0,
+        'diem_bai': 0.5,
+        'de': 'Bài 5. (0,5 điểm) Cho $abc = 2025$. Tính giá trị của biểu thức:\n$$A = \\frac{2025a}{ab + 2025a + 2025} + \\frac{b}{bc + b + 2025} + \\frac{c}{ac + c + 1}.$$',
+        'dap_an': '$A = 1$',
+        'loi_giai': 'Thay $2025 = abc$ vào biểu thức $A$:\n$$A = \\frac{a \\cdot abc}{ab + a \\cdot abc + abc} + \\frac{b}{bc + b + abc} + \\frac{c}{ac + c + 1}$$\n$$A = \\frac{a^2bc}{ab(1 + ac + c)} + \\frac{b}{b(c + 1 + ac)} + \\frac{c}{ac + c + 1}$$\n$$A = \\frac{ac}{ac + c + 1} + \\frac{1}{ac + c + 1} + \\frac{c}{ac + c + 1}$$\n$$A = \\frac{ac + c + 1}{ac + c + 1} = 1.$$\nVậy $A = 1$.',
+        'trang': 1,
+        'co_hinh': False,
+        'can_doc_anh': False,
+        'da_duyet': True
+    }
+]
+
+tong_diem = sum(c['diem_bai'] for c in cau)
+print(f'Total points: {tong_diem:.2f}')
+assert abs(tong_diem - 10.0) < 1e-6, 'Total points must be 10.0'
+
+orig['cau'] = cau
+orig['tang'] = 2
+orig['da_duyet'] = True
+orig['ghi_chu'] = 'Đề chuẩn Giữa kì 2 Toán 8 THCS Phan Đình Giót 2025-2026. 100% Tự luận gồm 5 bài (14 ý), tổng điểm 10.00đ.'
+
+with open(path, 'w', encoding='utf-8') as f:
+    json.dump(orig, f, ensure_ascii=False, indent=2)
+
+print('Updated gk2-2025-thcs-phan-dinh-giot.json successfully!')

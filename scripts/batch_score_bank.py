@@ -68,16 +68,19 @@ def score_row(r: list) -> tuple[str, int, list[int], str, bool]:
     muc = r[2] if len(r) > 2 and r[2] in ('NB', 'TH', 'VD', 'VDC') else 'TH'
     dang = r[3] if len(r) > 3 else ''
     ma = r[12] if len(r) > 12 else ''
-    ch_raw = r[28] if len(r) > 28 else ''
+    
+    # Hỗ trợ cả schema cũ (46 cột) và schema mới có cột Scaffold (47 cột)
+    offset = 1 if len(r) >= 47 else 0
+    ch_raw = r[28 + offset] if len(r) > 28 + offset else ''
     ch_key = get_chapter_key(ch_raw)
     
     # Giữ nguyên 100% câu đã chấm
-    has_score = len(r) > 31 and r[31] != '' and r[31] is not None
+    has_score = len(r) > (31 + offset) and r[31 + offset] != '' and r[31 + offset] is not None
     if has_score:
-        z_val = r[25] if len(r) > 25 and r[25] else ''
-        aa_val = int(r[26]) if len(r) > 26 and str(r[26]).isdigit() else (0 if r[26] == '0' else '')
-        af_am = [int(x) if str(x).isdigit() else 0 for x in r[31:39]]
-        at_val = r[45] if len(r) > 45 else ''
+        z_val = r[25 + offset] if len(r) > 25 + offset and r[25 + offset] else ''
+        aa_val = int(r[26 + offset]) if len(r) > 26 + offset and str(r[26 + offset]).isdigit() else (0 if r[26 + offset] == '0' else '')
+        af_am = [int(x) if str(x).isdigit() else 0 for x in r[31 + offset : 39 + offset]]
+        at_val = r[45 + offset] if len(r) > 45 + offset else ''
         return z_val, aa_val, af_am, at_val, True
         
     # Phân loại dạng ý & tần suất
@@ -158,6 +161,13 @@ def main() -> int:
     total_chunks = (len(data) + CHUNK_SIZE - 1) // CHUNK_SIZE
     print(f"Writing to Google Sheets in {total_chunks} chunks (chunk size {CHUNK_SIZE})...")
     
+    offset = 1 if len(data[0]) >= 47 else 0
+    col_z = "AA" if offset else "Z"
+    col_aa = "AB" if offset else "AA"
+    col_af = "AG" if offset else "AF"
+    col_am = "AN" if offset else "AM"
+    col_at = "AU" if offset else "AT"
+
     for c_idx in range(total_chunks):
         start_idx = c_idx * CHUNK_SIZE
         end_idx = min(start_idx + CHUNK_SIZE, len(data))
@@ -169,9 +179,9 @@ def main() -> int:
         chunk_scores = all_scores[start_idx:end_idx]
         chunk_lido = all_lido[start_idx:end_idx]
         
-        rng_z_aa = f"'Ngân hàng câu'!Z{start_row}:AA{end_row}"
-        rng_scores = f"'Ngân hàng câu'!AF{start_row}:AM{end_row}"
-        rng_lido = f"'Ngân hàng câu'!AT{start_row}:AT{end_row}"
+        rng_z_aa = f"'Ngân hàng câu'!{col_z}{start_row}:{col_aa}{end_row}"
+        rng_scores = f"'Ngân hàng câu'!{col_af}{start_row}:{col_am}{end_row}"
+        rng_lido = f"'Ngân hàng câu'!{col_at}{start_row}:{col_at}{end_row}"
         
         batch_ops = [
             {"op": "write", "range": rng_z_aa, "data": chunk_z_aa},

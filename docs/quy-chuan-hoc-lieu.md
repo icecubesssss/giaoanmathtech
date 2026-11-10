@@ -203,3 +203,46 @@ sau khi HS đã làm trọn bài đó ít nhất một lần; (4) lớp C không
 5. **Bước 5 (Soạn đề & Lời giải chuẩn thi):** Chép đề từ ảnh scan gốc; giải thử 100% bằng SymPy; viết lời giải chuẩn thi (bỏ $\Leftrightarrow$, bỏ HTL trực tiếp, tính toạ độ vẽ TikZ chuẩn giải tích).
 6. **Bước 6 (Gác cổng & Soát PDF bằng mắt):** Chạy `loi_giai_thi_gate` và `de_gate`; build 8 file PDF (4 đề HS + 4 đáp án GV); soát PDF bằng mắt (không trang mồ côi, không tràn lề); Thầy gõ `approve`.
 7. **Bước 7 (Đóng gói & Lên Drive):** Đồng bộ trọn bộ 8 file PDF và hồ sơ học liệu lên đúng thư mục Google Drive của trung tâm (`sync-drive`).
+
+## 14. Quy chuẩn Đề thi & Phiếu học tập Tiểu học (Lớp 5 — Thông tư 27) (Thầy chốt 08/11/2026)
+
+### 14.1. Triết lý làm bài trực tiếp & Lưới ô ly chuẩn tiểu học
+- **Học sinh làm bài ngay vào đề:** Khác với cấp THCS (học sinh làm bài ra giấy thi / vở ghi riêng), ở cấp Tiểu học (đặc biệt Lớp 5), toàn bộ đề thi định kì và phiếu học tập được thiết kế để **học sinh làm bài trực tiếp vào đề** (`Em làm bài ngay vào đề.`).
+- **Bắt buộc có lưới ô ly (`variant: "oly"` / `\olyline`):**
+  - Mọi bài tự luận yêu cầu tính toán hoặc trình bày bài giải bắt buộc phải có **khung lưới ô ly chuẩn tiểu học** (ô vuông lớn 10 mm × 10 mm chia lưới 4 × 4 ô nhỏ 2,5 mm × 2,5 mm, nét mực nhạt `ink!15` và `ink!35`).
+  - **Không gian viết bài rộng rãi cho học sinh tiểu học:**
+    - **Bài 1 (Đặt tính rồi tính — 1,0 điểm):** Đề bài chia 2 cột thoáng. Phía dưới là **khung ô ly toàn trang cao 12 cm (`count: 12` = 48 hàng caro)** để học sinh đặt tính cả 4 phép tính thoải mái, thẳng hàng dấu phẩy.
+    - **Bài 2 (Tính phân số / giá trị biểu thức — 1,0 điểm):** Khung ô ly cao 4 cm (`count: 4` = 16 hàng caro) đủ cho các bước quy đồng, tính toán và rút gọn.
+    - **Bài 3 (Viết số đo thích hợp vào chỗ chấm — 1,0 điểm):** Dàn 2 cột gọn gàng, điền trực tiếp vào dấu chấm `\dots\dots\dots\dots`.
+    - **Bài 4 (Bài toán thực tế hình học — 2,0 điểm):** Khung ô ly cao 8 cm (`count: 8` = 32 hàng caro), đủ chỗ cho 2 câu lời giải, 2 phép tính và đáp số.
+    - **Bài 5 (Toán tư duy nâng cao M3 — 1,0 điểm):** Khung ô ly cao 9 cm (`count: 9` = 36 hàng caro) cho các bước suy luận tỉ mỉ.
+    - **Phiếu tự kiểm tra bài làm trước khi nộp:** Bảng tự đánh giá của học sinh (đánh dấu $\checkmark$ vào các tiêu chí hoàn thành) theo đúng tinh thần Thông tư 27.
+    - **Dòng kết thúc:** `\nopagebreak\centerline{\textbf{--- HẾT ---}}` kèm lời dặn dò sư phạm: `Em nhớ đọc lại bài trước khi nộp nhé. Chúc em làm bài thật tốt!`.
+
+### 14.2. Chuẩn căn chỉnh vừa khít đúng 4 trang A4 (1 tờ đôi A3 gập đôi — Giới hạn tiểu học)
+- **Quy cách in ấn chuẩn:** Đề thi học sinh (`Phieu-HS.pdf`) **BẮT BUỘC ĐẠT ĐÚNG 4 TRANG A4 (Pages: 4)**:
+  - **Trang 1 (Mặt bìa trước):**
+    * Top Card thông tin học sinh (Tiêu đề đề thi, Họ và tên, Lớp, Thời gian làm bài 40 phút).
+    * Khung Điểm (Số & Chữ) + Lời nhận xét của thầy cô giáo: mở rộng chiều dọc đạt chuẩn 1.8 cm (`\rule{0pt}{1.8cm}`) để thầy cô phê nhận xét chi tiết và ghi điểm thoải mái, cân đối hoàn hảo trang 1.
+    * Phần I. Trắc nghiệm (4,0 điểm): 6 câu đầu tiên (Câu 1 đến Câu 6), dàn trải đều đặn, cách dòng thoáng.
+    * Ngắt trang sang Trang 2 (`\newpage`).
+  - **Trang 2 (Mặt trong trái):**
+    * Trắc nghiệm tiếp theo: Câu 7 và Câu 8.
+    * Tiêu đề: `PHẦN II. TỰ LUẬN (6,0 điểm)`.
+    * Bài 1: Đặt tính rồi tính kèm **khung ô ly lớn cao 12 cm (`count: 12`)** phủ kín trang.
+    * Dòng chỉ dẫn: `(Học sinh đặt tính thẳng hàng dấu phẩy và làm bài vào khung ô ly trên)`.
+    * Ngắt trang sang Trang 3 (`\newpage`).
+  - **Trang 3 (Mặt trong phải):**
+    * Bài 2: Tính phân số kèm khung ô ly cao 4 cm (`count: 4`).
+    * Bài 3: Điền số thích hợp vào chỗ chấm (4 ý đổi đơn vị đo đại lượng).
+    * Bài 4: Bài toán thực tế hình học kèm **khung ô ly cao 8 cm (`count: 8`)**.
+    * Dòng chỉ dẫn: `(Học sinh trình bày câu lời giải, phép tính và đáp số vào khung ô ly trên)`.
+    * Ngắt trang sang Trang 4 (`\newpage`).
+  - **Trang 4 (Mặt bìa sau):**
+    * Tiêu đề: `PHẦN II. TỰ LUẬN (tiếp theo)`.
+    * Bài 5: Toán tư duy nâng cao M3 kèm **khung ô ly cao 9 cm (`count: 9`)**.
+    * Hộp Phiếu tự kiểm tra bài làm trước khi nộp (tcolorbox bo tròn màu chuẩn MathTech).
+    * Dòng kết thúc `--- HẾT ---` và Lời dặn dò của thầy cô giáo nằm êm ái ở chân trang.
+- **Tiêu chuẩn kiểm duyệt:** Đúng 4 trang A4 (1 tờ đôi A3 gập đôi), 0 lỗi build, 0 cảnh báo `print_gate`, không gian viết bài rộng rãi và không có khoảng trắng thừa.
+
+

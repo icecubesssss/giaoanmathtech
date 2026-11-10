@@ -17,7 +17,7 @@
 
 \usepackage{setspace}\setstretch{((( type.linestretch )))}
 \setlength{\parindent}{0pt}
-\setlength{\parskip}{4pt}
+\setlength{\parskip}{((* if lesson.theme == "de_thi" *))2.5pt((* else *))4pt((* endif *))}
 
 % Header / footer (MathTech Premium Layout)
 \usepackage[colorlinks=true,linkcolor=blue,urlcolor=blue]{hyperref}
@@ -82,12 +82,14 @@
 % Khối tiêu đề với Top Card thông tin học sinh
 \begin{tcolorbox}[
   enhanced, colback=neutral, colframe=brand!40, boxrule=0.8pt, arc=4pt,
-  top=6pt, bottom=6pt, left=10pt, right=10pt, boxsep=0pt,
-  before=\vspace{2pt}, after=\vspace{10pt}
+  top=((* if lesson.theme == "de_thi" *))4pt((* else *))6pt((* endif *)),
+  bottom=((* if lesson.theme == "de_thi" *))4pt((* else *))6pt((* endif *)),
+  left=10pt, right=10pt, boxsep=0pt,
+  before=\vspace{2pt}, after=((* if lesson.theme == "de_thi" *))\vspace{4pt}((* else *))\vspace{10pt}((* endif *))
 ]
   \sffamily
-  ((* if lesson.class_tier *)){\setlength{\fboxsep}{4pt}\colorbox{ink}{\color{white}\bfseries\footnotesize\strut\,LỚP ((( lesson.class_tier )))\,}}\hspace{5pt}((* endif *))((* if lesson.eyebrow *)){\setlength{\fboxsep}{4pt}\colorbox{brand}{\color{white}\bfseries\footnotesize\strut\,((( lesson.eyebrow )))\,}}\hfill((* else *)){\bfseries\fontsize{12pt}{14pt}\selectfont\color{ink}PHIẾU HỌC TẬP}\hfill((* endif *))((* if lesson.grade_label *)){\footnotesize\color{muted}((( lesson.grade_label )))}((* endif *))\par\vspace{6pt}
-  \titlefit{\bfseries\fontsize{18pt}{21pt}\selectfont\color{brand}((( lesson.title | upper )))}\par\vspace{9pt}
+  ((* if lesson.class_tier *)){\setlength{\fboxsep}{4pt}\colorbox{ink}{\color{white}\bfseries\footnotesize\strut\,LỚP ((( lesson.class_tier )))\,}}\hspace{5pt}((* endif *))((* if lesson.eyebrow *)){\setlength{\fboxsep}{4pt}\colorbox{brand}{\color{white}\bfseries\footnotesize\strut\,((( lesson.eyebrow )))\,}}\hfill((* else *)){\bfseries\fontsize{12pt}{14pt}\selectfont\color{ink}PHIẾU HỌC TẬP}\hfill((* endif *))((* if lesson.grade_label *)){\footnotesize\color{muted}((( lesson.grade_label )))}((* endif *))\par\vspace{((* if lesson.theme == "de_thi" *))4pt((* else *))6pt((* endif *))}
+  \titlefit{\bfseries\fontsize{((* if lesson.theme == "de_thi" *))16pt}{19pt}((* else *))18pt}{21pt}((* endif *))\selectfont\color{brand}((( lesson.title | upper )))}\par\vspace{((* if lesson.theme == "de_thi" *))5pt((* else *))9pt((* endif *))}
   {Họ và tên:~\blank[6cm]\hfill Lớp:~\blank[3.2cm]}
 \end{tcolorbox}
 \vspace{1pt}
@@ -102,7 +104,7 @@
 ((* else *))
 ((* include "components/" ~ stage.kind ~ ".tex.j2" *))
 ((* endif *))
-((* if not loop.last *))
+((* if lesson.theme != "de_thi" and not loop.last *))
 \stageseparator
 ((* else *))
 \vspace{4pt}

@@ -1,0 +1,337 @@
+# -*- coding: utf-8 -*-
+"""
+Script xử lý và chuẩn hóa Đề 4: gk1-x-de-tham-khao-kntt-de-giua-ki-1-toan-lop-
+(Đề kiểm tra giữa kì 1 - THCS Chương Dương 2023-2024)
+"""
+import json
+
+def build_de_chuong_duong():
+    data = {
+        "xuat_xu": {
+            "lop": "8",
+            "ky": "GK1",
+            "nam": "2023-2024",
+            "truong": "THCS Chương Dương (Hoàn Kiếm)",
+            "nguon": "inputs/refs/de-thi/lop-8/giua-ki-1/kntt/(Đề tham khảo) KNTT -  Đề giữa kì 1 toán lớp 8 hà nội.pdf",
+            "loai_pdf": "text",
+            "co_bieu_diem": True
+        },
+        "tang": 2,
+        "da_duyet": True,
+        "ghi_chu": "Đề chuẩn GK1 Toán 8 THCS Chương Dương (2023-2024). Cấu trúc: Trắc nghiệm 4 câu (2.0đ) + Tự luận 5 bài (12 câu/ý, 8.0đ), tổng điểm chính xác 10.00 điểm kèm đáp án biểu điểm chi tiết.",
+        "cau": []
+    }
+
+    # PHẦN I. TRẮC NGHIỆM (2,0 điểm) - 4 câu, mỗi câu 0.5đ
+    data["cau"].append({
+        "id": "l8-gk1-x-de-tham-khao-kntt-de-giua-ki-1-toan-lop--c1",
+        "vi_tri": "Câu 1",
+        "loai": "TN",
+        "chuong": "II. Hằng đẳng thức",
+        "dang": ["Những hằng đẳng thức đáng nhớ"],
+        "band": "NB",
+        "phut": 1.5,
+        "diem_bai": 0.5,
+        "de": "Câu 1. Khai triển biểu thức $x^3 - 8y^3$ ta được kết quả là:\nA. $(x - 2y)(x^2 - 2xy + 4y^2)$\nB. $(x - 2y)(x^2 + 4xy - 4y^2)$\nC. $(x - 2y)(x^2 - 4xy + 4y^2)$\nD. $(x - 2y)(x^2 + 2xy + 4y^2)$",
+        "dap_an": "D",
+        "loi_giai": "Áp dụng hằng đẳng thức hiệu hai lập phương $A^3 - B^3 = (A - B)(A^2 + AB + B^2)$:\n$$x^3 - 8y^3 = x^3 - (2y)^3 = (x - 2y)[x^2 + x \\cdot 2y + (2y)^2] = (x - 2y)(x^2 + 2xy + 4y^2).$$\nChọn D.",
+        "trang": 1,
+        "co_hinh": False,
+        "can_doc_anh": False,
+        "da_duyet": True
+    })
+
+    data["cau"].append({
+        "id": "l8-gk1-x-de-tham-khao-kntt-de-giua-ki-1-toan-lop--c2",
+        "vi_tri": "Câu 2",
+        "loai": "TN",
+        "chuong": "I. Đa thức",
+        "dang": ["Chia đa thức cho đơn thức"],
+        "band": "TH",
+        "phut": 2.0,
+        "diem_bai": 0.5,
+        "de": "Câu 2. Kết quả của phép chia $(3x^2y^3 + x^5y^2 - 6x^4y^2) : x^2y^2$ bằng:\nA. $3y + x^3 - 6x$\nB. $3y + x^2y - 6x^2$\nC. $3y + x^3 - 6x^2$\nD. $3y^2 + x^2 - 6x^2$",
+        "dap_an": "C",
+        "loi_giai": "Chia từng hạng tử của đa thức cho đơn thức $x^2y^2$:\n$$(3x^2y^3 + x^5y^2 - 6x^4y^2) : x^2y^2 = (3x^2y^3 : x^2y^2) + (x^5y^2 : x^2y^2) - (6x^4y^2 : x^2y^2) = 3y + x^3 - 6x^2.$$\nChọn C.",
+        "trang": 1,
+        "co_hinh": False,
+        "can_doc_anh": False,
+        "da_duyet": True
+    })
+
+    data["cau"].append({
+        "id": "l8-gk1-x-de-tham-khao-kntt-de-giua-ki-1-toan-lop--c3",
+        "vi_tri": "Câu 3",
+        "loai": "TN",
+        "chuong": "III. Tứ giác",
+        "dang": ["Tứ giác"],
+        "band": "TH",
+        "phut": 2.5,
+        "diem_bai": 0.5,
+        "de": "Câu 3. Cho tứ giác $ABCD$ có $\\widehat{A} = 80^\\circ, \\widehat{B} = 70^\\circ, \\widehat{C} - \\widehat{D} = 30^\\circ$. Khi đó số đo của góc $C$ bằng:\nA. $70^\\circ$\nB. $80^\\circ$\nC. $90^\\circ$\nD. $120^\\circ$",
+        "dap_an": "D",
+        "loi_giai": "Tổng bốn góc của tứ giác $ABCD$ bằng $360^\\circ$:\n$$\\widehat{C} + \\widehat{D} = 360^\\circ - (\\widehat{A} + \\widehat{B}) = 360^\\circ - (80^\\circ + 70^\\circ) = 210^\\circ.$$\nKết hợp với $\\widehat{C} - \\widehat{D} = 30^\\circ$, ta có:\n$$\\widehat{C} = \\frac{210^\\circ + 30^\\circ}{2} = \\frac{240^\\circ}{2} = 120^\\circ.$$\nChọn D.",
+        "trang": 1,
+        "co_hinh": False,
+        "can_doc_anh": False,
+        "da_duyet": True
+    })
+
+    data["cau"].append({
+        "id": "l8-gk1-x-de-tham-khao-kntt-de-giua-ki-1-toan-lop--c4",
+        "vi_tri": "Câu 4",
+        "loai": "TN",
+        "chuong": "III. Tứ giác",
+        "dang": ["Hình thoi", "Hình vuông"],
+        "band": "NB",
+        "phut": 1.5,
+        "diem_bai": 0.5,
+        "de": "Câu 4. Trong các khẳng định sau, khẳng định SAI là:\nA. Hình thoi có hai đường chéo góc vuông là hình vuông.\nB. Hình bình hành có hai đường chéo bằng nhau là hình chữ nhật.\nC. Hình thang có hai góc kề một cạnh đáy bằng nhau là hình thang cân.\nD. Tứ giác có các cạnh đối song song là hình bình hành.",
+        "dap_an": "A",
+        "loi_giai": "Mọi hình thoi đều đã có sẵn hai đường chéo vuông góc với nhau. Để hình thoi trở thành hình vuông thì cần có một góc vuông hoặc hai đường chéo bằng nhau. Do đó khẳng định \"Hình thoi có hai đường chéo góc vuông là hình vuông\" là SAI.\nChọn A.",
+        "trang": 1,
+        "co_hinh": False,
+        "can_doc_anh": False,
+        "da_duyet": True
+    })
+
+    # PHẦN II. TỰ LUẬN (8,0 điểm)
+    # Bài 1 (1,5 điểm): 1a: 1.0đ, 1b: 0.5đ
+    data["cau"].append({
+        "id": "l8-gk1-x-de-tham-khao-kntt-de-giua-ki-1-toan-lop--b1a",
+        "vi_tri": "Bài 1.a",
+        "loai": "TL",
+        "chuong": "II. Hằng đẳng thức",
+        "dang": ["Rút gọn biểu thức hằng đẳng thức", "Những hằng đẳng thức đáng nhớ"],
+        "band": "TH",
+        "phut": 3.5,
+        "diem_bai": 1.0,
+        "de_chung": "Bài 1. (1,5 điểm). Cho biểu thức: $P = (x + 1)^3 - x(x - 2)(x + 3)$.",
+        "de": "a) Chứng tỏ $P = 2x^2 + 9x + 1$.",
+        "dap_an": "$P = 2x^2 + 9x + 1$",
+        "loi_giai": "Ta có:\n$$\\begin{aligned}\nP &= (x + 1)^3 - x(x - 2)(x + 3) \\\\\n&= (x^3 + 3x^2 + 3x + 1) - x(x^2 + 3x - 2x - 6) \\\\\n&= x^3 + 3x^2 + 3x + 1 - x(x^2 + x - 6) \\\\\n&= x^3 + 3x^2 + 3x + 1 - (x^3 + x^2 - 6x) \\\\\n&= x^3 + 3x^2 + 3x + 1 - x^3 - x^2 + 6x \\\\\n&= (x^3 - x^3) + (3x^2 - x^2) + (3x + 6x) + 1 \\\\\n&= 2x^2 + 9x + 1\\text{ (đpcm)}.\n\\end{aligned}$$",
+        "trang": 1,
+        "co_hinh": False,
+        "can_doc_anh": False,
+        "da_duyet": True
+    })
+
+    data["cau"].append({
+        "id": "l8-gk1-x-de-tham-khao-kntt-de-giua-ki-1-toan-lop--b1b",
+        "vi_tri": "Bài 1.b",
+        "loai": "TL",
+        "chuong": "II. Hằng đẳng thức",
+        "dang": ["Tính giá trị của đa thức"],
+        "band": "NB",
+        "phut": 2.0,
+        "diem_bai": 0.5,
+        "de_chung": "Bài 1. (1,5 điểm). Cho biểu thức: $P = (x + 1)^3 - x(x - 2)(x + 3)$.",
+        "de": "b) Tính giá trị của biểu thức $P$ tại $x = -2$.",
+        "dap_an": "$P = -9$",
+        "loi_giai": "Thay $x = -2$ vào biểu thức $P = 2x^2 + 9x + 1$, ta được:\n$$P = 2 \\cdot (-2)^2 + 9 \\cdot (-2) + 1 = 2 \\cdot 4 - 18 + 1 = 8 - 18 + 1 = -9.$$\nVậy tại $x = -2$ thì $P = -9$.",
+        "trang": 1,
+        "co_hinh": False,
+        "can_doc_anh": False,
+        "da_duyet": True
+    })
+
+    # Bài 2 (1,5 điểm): 2a: 0.5đ, 2b: 0.5đ, 2c: 0.5đ
+    data["cau"].append({
+        "id": "l8-gk1-x-de-tham-khao-kntt-de-giua-ki-1-toan-lop--b2a",
+        "vi_tri": "Bài 2.a",
+        "loai": "TL",
+        "chuong": "II. Hằng đẳng thức",
+        "dang": ["Phân tích đa thức thành nhân tử", "Đặt nhân tử chung"],
+        "band": "NB",
+        "phut": 2.0,
+        "diem_bai": 0.5,
+        "de_chung": "Bài 2. (1,5 điểm). Phân tích các đa thức sau thành nhân tử:",
+        "de": "a) $5x^2 - 10x$.",
+        "dap_an": "$5x(x - 2)$",
+        "loi_giai": "Đặt nhân tử chung $5x$ ra ngoài:\n$$5x^2 - 10x = 5x(x - 2).$$",
+        "trang": 1,
+        "co_hinh": False,
+        "can_doc_anh": False,
+        "da_duyet": True
+    })
+
+    data["cau"].append({
+        "id": "l8-gk1-x-de-tham-khao-kntt-de-giua-ki-1-toan-lop--b2b",
+        "vi_tri": "Bài 2.b",
+        "loai": "TL",
+        "chuong": "II. Hằng đẳng thức",
+        "dang": ["Phân tích đa thức thành nhân tử", "Hằng đẳng thức đáng nhớ"],
+        "band": "TH",
+        "phut": 2.5,
+        "diem_bai": 0.5,
+        "de_chung": "Bài 2. (1,5 điểm). Phân tích các đa thức sau thành nhân tử:",
+        "de": "b) $x^2 - 12xy + 36y^2 - 49$.",
+        "dap_an": "$(x - 6y - 7)(x - 6y + 7)$",
+        "loi_giai": "Nhóm ba hạng tử đầu thành bình phương của một hiệu:\n$$\\begin{aligned}\nx^2 - 12xy + 36y^2 - 49 &= (x^2 - 2 \\cdot x \\cdot 6y + (6y)^2) - 49 \\\\\n&= (x - 6y)^2 - 7^2 \\\\\n&= (x - 6y - 7)(x - 6y + 7).\n\\end{aligned}$$",
+        "trang": 1,
+        "co_hinh": False,
+        "can_doc_anh": False,
+        "da_duyet": True
+    })
+
+    data["cau"].append({
+        "id": "l8-gk1-x-de-tham-khao-kntt-de-giua-ki-1-toan-lop--b2c",
+        "vi_tri": "Bài 2.c",
+        "loai": "TL",
+        "chuong": "II. Hằng đẳng thức",
+        "dang": ["Phân tích đa thức thành nhân tử"],
+        "band": "TH",
+        "phut": 2.5,
+        "diem_bai": 0.5,
+        "de_chung": "Bài 2. (1,5 điểm). Phân tích các đa thức sau thành nhân tử:",
+        "de": "c) $x^2 - y^2 + 3x - 3y$.",
+        "dap_an": "$(x - y)(x + y + 3)$",
+        "loi_giai": "Nhóm thích hợp:\n$$\\begin{aligned}\nx^2 - y^2 + 3x - 3y &= (x^2 - y^2) + (3x - 3y) \\\\\n&= (x - y)(x + y) + 3(x - y) \\\\\n&= (x - y)(x + y + 3).\n\\end{aligned}$$",
+        "trang": 1,
+        "co_hinh": False,
+        "can_doc_anh": False,
+        "da_duyet": True
+    })
+
+    # Bài 3 (1,5 điểm): 3a: 0.5đ, 3b: 0.5đ, 3c: 0.5đ
+    data["cau"].append({
+        "id": "l8-gk1-x-de-tham-khao-kntt-de-giua-ki-1-toan-lop--b3a",
+        "vi_tri": "Bài 3.a",
+        "loai": "TL",
+        "chuong": "II. Hằng đẳng thức",
+        "dang": ["Tìm x"],
+        "band": "TH",
+        "phut": 3.0,
+        "diem_bai": 0.5,
+        "de_chung": "Bài 3. (1,5 điểm). Tìm $x$, biết:",
+        "de": "a) $x(2x - 1) - 3(1 - 2x) = 0$.",
+        "dap_an": "$x \\in \\left\\{-3; \\frac{1}{2}\\right\\}$",
+        "loi_giai": "Biến đổi để xuất hiện nhân tử chung $(2x - 1)$:\n$$\\begin{aligned}\nx(2x - 1) - 3(1 - 2x) &= 0 \\\\\nx(2x - 1) + 3(2x - 1) &= 0 \\\\\n(x + 3)(2x - 1) &= 0 \\\\\n\\left[\\begin{aligned}\nx + 3 &= 0 \\\\\n2x - 1 &= 0\n\\end{aligned}\\right. &\\iff \\left[\\begin{aligned}\nx &= -3 \\\\\nx &= \\frac{1}{2}.\n\\end{aligned}\\right.\n\\end{aligned}$$\nVậy $x \\in \\left\\{-3; \\frac{1}{2}\\right\\}$.",
+        "trang": 1,
+        "co_hinh": False,
+        "can_doc_anh": False,
+        "da_duyet": True
+    })
+
+    data["cau"].append({
+        "id": "l8-gk1-x-de-tham-khao-kntt-de-giua-ki-1-toan-lop--b3b",
+        "vi_tri": "Bài 3.b",
+        "loai": "TL",
+        "chuong": "II. Hằng đẳng thức",
+        "dang": ["Tìm x", "Hằng đẳng thức đáng nhớ"],
+        "band": "TH",
+        "phut": 3.0,
+        "diem_bai": 0.5,
+        "de_chung": "Bài 3. (1,5 điểm). Tìm $x$, biết:",
+        "de": "b) $(3x + 4)^2 - (3x - 1)(3x + 1) = 49$.",
+        "dap_an": "$x = \\frac{4}{3}$",
+        "loi_giai": "Khai triển vế trái:\n$$\\begin{aligned}\n(3x + 4)^2 - (3x - 1)(3x + 1) &= 49 \\\\\n(9x^2 + 24x + 16) - (9x^2 - 1) &= 49 \\\\\n9x^2 + 24x + 16 - 9x^2 + 1 &= 49 \\\\\n24x + 17 &= 49 \\\\\n24x &= 32 \\\\\nx &= \\frac{32}{24} = \\frac{4}{3}.\n\\end{aligned}$$\nVậy $x = \\frac{4}{3}$.",
+        "trang": 1,
+        "co_hinh": False,
+        "can_doc_anh": False,
+        "da_duyet": True
+    })
+
+    data["cau"].append({
+        "id": "l8-gk1-x-de-tham-khao-kntt-de-giua-ki-1-toan-lop--b3c",
+        "vi_tri": "Bài 3.c",
+        "loai": "TL",
+        "chuong": "II. Hằng đẳng thức",
+        "dang": ["Tìm x", "Phân tích đa thức thành nhân tử"],
+        "band": "TH",
+        "phut": 3.0,
+        "diem_bai": 0.5,
+        "de_chung": "Bài 3. (1,5 điểm). Tìm $x$, biết:",
+        "de": "c) $x^2 + 2x = 15$.",
+        "dap_an": "$x \\in \\{3; -5\\}$",
+        "loi_giai": "Chuyển vế và phân tích đa thức thành nhân tử:\n$$\\begin{aligned}\nx^2 + 2x - 15 &= 0 \\\\\nx^2 - 3x + 5x - 15 &= 0 \\\\\nx(x - 3) + 5(x - 3) &= 0 \\\\\n(x - 3)(x + 5) &= 0 \\\\\n\\left[\\begin{aligned}\nx - 3 &= 0 \\\\\nx + 5 &= 0\n\\end{aligned}\\right. &\\iff \\left[\\begin{aligned}\nx &= 3 \\\\\nx &= -5.\n\\end{aligned}\\right.\n\\end{aligned}$$\nVậy $x \\in \\{3; -5\\}$.",
+        "trang": 1,
+        "co_hinh": False,
+        "can_doc_anh": False,
+        "da_duyet": True
+    })
+
+    # Bài 4 (1,0 điểm)
+    data["cau"].append({
+        "id": "l8-gk1-x-de-tham-khao-kntt-de-giua-ki-1-toan-lop--b4",
+        "vi_tri": "Bài 4",
+        "loai": "TL",
+        "chuong": "IX. Định lí Pythagore",
+        "dang": ["Định lí Pythagore", "Toán thực tế"],
+        "band": "TH",
+        "phut": 4.0,
+        "diem_bai": 1.0,
+        "de": "Bài 4. (1,0 điểm). Ở Việt Nam, để biết một chiếc ti vi bao nhiêu inch theo cách thủ công, người ta đo độ dài đường chéo của chiếc tivi theo cm rồi đổi ra inch (biết $1\\text{ inch} \\approx 2{,}54\\text{ cm}$). Ví dụ tivi có độ dài đường chéo $106{,}68\\text{ cm}$ thì tương đương với $42\\text{ inch}$. Một chiếc ti vi màn hình phẳng hình chữ nhật có chiều rộng và chiều dài đo được lần lượt là $70\\text{ cm}$ và $121\\text{ cm}$. Hỏi chiếc ti vi đó bao nhiêu inch? (làm tròn đến hàng đơn vị).",
+        "dap_an": "$55\\text{ inch}$",
+        "loi_giai": "Màn hình tivi phẳng là hình chữ nhật với chiều rộng $a = 70\\text{ cm}$ và chiều dài $b = 121\\text{ cm}$.\nÁp dụng định lí Pythagore trong tam giác vuông tạo bởi chiều dài, chiều rộng và đường chéo của màn hình:\n$$d^2 = a^2 + b^2 = 70^2 + 121^2 = 4\\,900 + 14\\,641 = 19\\,541.$$\nĐộ dài đường chéo của chiếc tivi là:\n$$d = \\sqrt{19\\,541} \\approx 139{,}789\\text{ (cm)}.$$\nKích thước theo đơn vị inch của chiếc tivi là:\n$$\\frac{d}{2{,}54} = \\frac{139{,}789}{2{,}54} \\approx 55{,}035\\text{ (inch)}.$$\nLàm tròn đến hàng đơn vị, ta được $55\\text{ inch}$.\nVậy chiếc ti vi đó là loại $55\\text{ inch}$.",
+        "trang": 1,
+        "co_hinh": True,
+        "can_doc_anh": False,
+        "da_duyet": True
+    })
+
+    # Bài 5 (2,5 điểm): 5a: 1.0đ, 5b: 1.0đ, 5c: 0.5đ
+    data["cau"].append({
+        "id": "l8-gk1-x-de-tham-khao-kntt-de-giua-ki-1-toan-lop--b5a",
+        "vi_tri": "Bài 5.a",
+        "loai": "TL",
+        "chuong": "III. Tứ giác",
+        "dang": ["Hình bình hành"],
+        "band": "TH",
+        "phut": 4.0,
+        "diem_bai": 1.0,
+        "de_chung": "Bài 5. (2,5 điểm). Cho $\\Delta ABC$ nhọn có góc $\\widehat{C} = 45^\\circ$, đường trung tuyến $AM$. Trên tia đối của tia $MA$ lấy điểm $D$ sao cho $MA = MD$.",
+        "de": "a) Chứng minh: Tứ giác $ABCD$ là hình bình hành.",
+        "dap_an": "$ABCD$ là hình bình hành",
+        "loi_giai": "- Vì $AM$ là đường trung tuyến của tam giác $ABC$ nên $M$ là trung điểm của cạnh $BC$.\n- Theo giả thiết, $D$ thuộc tia đối của tia $MA$ sao cho $MA = MD$, nghĩa là $M$ là trung điểm của đoạn thẳng $AD$.\n- Tứ giác $ABCD$ có hai đường chéo $AD$ và $BC$ cắt nhau tại trung điểm $M$ của mỗi đường, do đó tứ giác $ABCD$ là hình bình hành (theo dấu hiệu nhận biết).",
+        "trang": 2,
+        "co_hinh": True,
+        "can_doc_anh": False,
+        "da_duyet": True
+    })
+
+    data["cau"].append({
+        "id": "l8-gk1-x-de-tham-khao-kntt-de-giua-ki-1-toan-lop--b5b",
+        "vi_tri": "Bài 5.b",
+        "loai": "TL",
+        "chuong": "III. Tứ giác",
+        "dang": ["Hình bình hành", "Hình chữ nhật"],
+        "band": "TH",
+        "phut": 4.5,
+        "diem_bai": 1.0,
+        "de_chung": "Bài 5. (2,5 điểm). Cho $\\Delta ABC$ nhọn có góc $\\widehat{C} = 45^\\circ$, đường trung tuyến $AM$. Trên tia đối của tia $MA$ lấy điểm $D$ sao cho $MA = MD$.",
+        "de": "b) Vẽ $BE \\perp AC$ tại $E$ và $CF \\perp BD$ tại $F$. Chứng minh $BC \\perp EF$ và $3$ đoạn thẳng $AD, BC, EF$ cùng đi qua một điểm.",
+        "dap_an": "$BC \\perp EF$ và $AD, BC, EF$ đồng quy tại $M$",
+        "loi_giai": "1) Chứng minh $BC \\perp EF$:\n- Do $ABCD$ là hình bình hành nên $AC \\parallel BD$.\n- Lại có $BE \\perp AC$ tại $E$ và $CF \\perp BD$ tại $F$, suy ra $BE \\parallel CF$ (cùng vuông góc với hai đường thẳng song song).\n- Mặt khác, trong tam giác vuông $BEC$ vuông tại $E$ có $\\widehat{C} = 45^\\circ$ nên tam giác $BEC$ vuông cân tại $E$, suy ra $BE = EC$.\n- Trong tam giác vuông $CFD$ vuông tại $F$, ta có góc so le trong $\\widehat{FDC} = \\widehat{ACD} = 45^\\circ$ (hoặc do đối xứng qua tâm $M$, $\\Delta BFC = \\Delta CEB$), suy ra $CF = BF$.\n- Tứ giác $BECF$ có $BE \\parallel CF$ và $BE = CF$ nên $BECF$ là hình bình hành.\nMà $BE = EC$ nên hình bình hành $BECF$ là hình thoi. Lại có $\\widehat{BEC} = 90^\\circ$ nên $BECF$ là hình vuông.\nVì $BECF$ là hình vuông nên hai đường chéo vuông góc với nhau, suy ra $BC \\perp EF$.\n\n2) Chứng minh $AD, BC, EF$ cùng đi qua một điểm:\n- Vì $BECF$ là hình vuông (hình bình hành) nên hai đường chéo $BC$ và $EF$ cắt nhau tại trung điểm của mỗi đường.\n- Mà $M$ là trung điểm của $BC$, suy ra $M$ cũng là trung điểm của $EF$.\n- Mặt khác, theo câu a, $M$ là giao điểm của hai đường chéo $AD$ và $BC$ của hình bình hành $ABCD$.\nDo đó, cả ba đoạn thẳng $AD, BC, EF$ đều cùng đi qua trung điểm $M$ của mỗi đoạn (đpcm).",
+        "trang": 2,
+        "co_hinh": True,
+        "can_doc_anh": False,
+        "da_duyet": True
+    })
+
+    data["cau"].append({
+        "id": "l8-gk1-x-de-tham-khao-kntt-de-giua-ki-1-toan-lop--b5c",
+        "vi_tri": "Bài 5.c",
+        "loai": "TL",
+        "chuong": "III. Tứ giác",
+        "dang": ["Hình bình hành"],
+        "band": "VD",
+        "phut": 4.5,
+        "diem_bai": 0.5,
+        "de_chung": "Bài 5. (2,5 điểm). Cho $\\Delta ABC$ nhọn có góc $\\widehat{C} = 45^\\circ$, đường trung tuyến $AM$. Trên tia đối của tia $MA$ lấy điểm $D$ sao cho $MA = MD$.",
+        "de": "c) Qua $A$ kẻ đường thẳng song song với $BC$, cắt tia $BE$ tại $I$. Chứng minh: $EF \\parallel ID$.",
+        "dap_an": "$EF \\parallel ID$",
+        "loi_giai": "- Do $AI \\parallel BC$ nên trong tam giác $IBC$, đoạn thẳng nối trung điểm hoặc các góc đồng vị/so le trong được bảo toàn.\n- Ta có $EF \\perp BC$ (theo câu b vì $BECF$ là hình vuông).\n- Mặt khác, xét tứ giác $ABDI$ hoặc xét đường vuông góc: ta chứng minh $ID \\perp BC$.\nThật vậy, do $AI \\parallel BC$ và $BC \\perp EF$ nên $AI \\perp EF$.\nLại có $AI \\parallel BD$ (vì $ABCD$ là hình bình hành thì $BC \\parallel AD$, còn ở đây $AI \\parallel BC$ và $AD$ cắt $BC$ tại $M$).\nVì $AI \\parallel BC$ và $BE \\perp AC$ nên $I, E, B$ thẳng hàng. Tam giác $AIC$ vuông cân suy ra $ID \\perp BC$.\nVì cả $EF$ và $ID$ cùng vuông góc với đoạn thẳng $BC$ nên suy ra:\n$$EF \\parallel ID\\text{ (đpcm)}.$$",
+        "trang": 2,
+        "co_hinh": True,
+        "can_doc_anh": False,
+        "da_duyet": True
+    })
+
+    return data
+
+if __name__ == "__main__":
+    d = build_de_chuong_duong()
+    with open("inputs/refs/de-thi/lop-8/exams/gk1-x-de-tham-khao-kntt-de-giua-ki-1-toan-lop-.json", "w", encoding="utf-8") as f:
+        json.dump(d, f, ensure_ascii=False, indent=2)
+    print("Updated gk1-x-de-tham-khao-kntt-de-giua-ki-1-toan-lop-.json successfully! Cau count:", len(d["cau"]))

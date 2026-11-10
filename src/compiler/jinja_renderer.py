@@ -77,8 +77,17 @@ def _texify(s: str, show_solution: bool = False) -> str:
     s = _MBLANK.sub(r"\\blank[\1]", s)
     s = _OLY_W.sub(r"\\olybox{\1}", s)
     s = _BR_TRAIL.sub("", s)
+    # Tự động chuyển ký tự sao Unicode sang macro LaTeX chuẩn MathTech (\diffstars)
+    # tránh lỗi thiếu font glyph [?][?] trong pdflatex
+    s = s.replace("★★★★", r"\diffstars{4}").replace("◆◆◆◆", r"\diffstars{4}").replace("⭐⭐⭐⭐", r"\diffstars{4}")
+    s = s.replace("★★★", r"\diffstars{3}").replace("⭐⭐⭐", r"\diffstars{3}")
+    s = s.replace("★★", r"\diffstars{2}").replace("⭐⭐", r"\diffstars{2}")
+    s = s.replace("★", r"\diffstars{1}").replace("⭐", r"\diffstars{1}")
     # [[br]] -> xuống dòng kèm 3pt hở dọc, để dòng chứa \dfrac không chạm dòng kế.
     s = _BR.sub(r" \\\\[3pt] ", s)
+    # Bỏ \\ ngay sau/trước môi trường khối (vd \end{center}, \begin{center}) vì TeX đang ở vertical mode
+    s = re.sub(r"(\\end\{[a-zA-Z*]+\})\s*\\\\(?:\[[^\]]*\])?\s*", r"\1\n", s)
+    s = re.sub(r"\\\\(?:\[[^\]]*\])?\s*(\\begin\{[a-zA-Z*]+\})", r"\n\1", s)
     return s
 
 
@@ -350,6 +359,7 @@ def tach_loi_giai(text: str) -> tuple[str, str]:
 
 
 _Y_CON = re.compile(r"\[\[br\]\]\s*(?=\\textbf\{?a\)|a\))")
+_Y_CON_12 = re.compile(r"\[\[br\]\]\s*(?=\\textbf\{?2\)|2\))")
 
 
 def tach_y_con(statement: str) -> tuple[str, str]:
@@ -360,11 +370,20 @@ def tach_y_con(statement: str) -> tuple[str, str]:
     `statement` nối bằng `[[br]]`, nên nếu in cả cục rồi mới tới hình thì HS phải đọc
     ý a), b) trước khi nhìn thấy hình mà ý đó nói về — ngược chiều tư duy.
 
+    Với bài có cả ý 1) và ý 2) (như Bài IV đề thi vào 10 / đề học kì 1 gồm phần 1 thực tế
+    và phần 2 hình đường tròn): hình minh hoạ b.figure là của câu 1), phải được đặt ngay sau
+    câu 1) và TRƯỚC câu 2). Do đó cắt tại ý 2) để hình nằm đúng vị trí.
+
     Không có ý con ⇒ trả (toàn bộ, "")."""
-    m = _Y_CON.search(statement or "")
-    if not m:
-        return statement, ""
-    return statement[:m.start()].rstrip(), statement[m.end():].lstrip()
+    st = statement or ""
+    if "1)" in st:
+        m12 = _Y_CON_12.search(st)
+        if m12:
+            return st[:m12.start()].rstrip(), st[m12.end():].lstrip()
+    m = _Y_CON.search(st)
+    if m:
+        return st[:m.start()].rstrip(), st[m.end():].lstrip()
+    return st, ""
 
 
 def fig_side(prob) -> str:

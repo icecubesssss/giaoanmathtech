@@ -1,0 +1,486 @@
+# -*- coding: utf-8 -*-
+import json
+
+path = 'inputs/refs/de-thi/lop-8/exams/gk2-2023-thcs-cu-khoi.json'
+with open(path, 'r', encoding='utf-8') as f:
+    d = json.load(f)
+
+d['tang'] = 2
+d['da_duyet'] = True
+d['tieu_de'] = 'Đề kiểm tra giữa kì II môn Toán 8 - THCS Cự Khối (Long Biên) năm học 2023 - 2024'
+d['nam_hoc'] = '2023-2024'
+d['hoc_ky'] = 'GK2'
+d['lop'] = '8'
+d['thoi_gian_phut'] = 90
+d['ghi_chu'] = 'Đề chuẩn GK2 Toán 8 THCS Cự Khối 2023-2024. Đã soát 100% từ PDF gốc: 12 câu TN (3.0đ) + 4 bài TL (7.0đ), tổng điểm 10.00đ.'
+
+cau_list = [
+    # Câu 1
+    {
+        'id': 'l8-gk2-2023-thcs-cu-khoi-c1',
+        'vi_tri': 'Câu 1',
+        'loai': 'TN',
+        'chuong': 'V. Thu thập và tổ chức dữ liệu',
+        'dang': ['Thu thập, phân loại dữ liệu'],
+        'band': 'NB',
+        'phut': 1.5,
+        'diem_bai': 0.25,
+        'de_chung': 'I. Trắc nghiệm (3,0 điểm) Ghi lại vào bài làm chữ cái đứng trước câu trả lời đúng.',
+        'de': 'Cho các dữ liệu sau đây, dữ liệu nào không phải số liệu?\nA. Thời gian tự học ở nhà (đơn vị: giờ) của các bạn trong lớp.\nB. Lượng mưa trung bình (đơn vị mm) của các tháng trong năm 2022 tại Thành Phố Hồ Chí Minh.\nC. Xếp loại học tập của học sinh lớp 8A.\nD. Số học sinh nữ của mỗi lớp trong khối 8.',
+        'dap_an': 'C',
+        'loi_giai': 'Xếp loại học tập là dữ liệu không phải là số (dữ liệu định tính). Chọn C.',
+        'trang': 1,
+        'co_hinh': False,
+        'can_doc_anh': False,
+        'da_duyet': True,
+        'barem_nguon': 'chuan_hoa'
+    },
+    # Câu 2
+    {
+        'id': 'l8-gk2-2023-thcs-cu-khoi-c2',
+        'vi_tri': 'Câu 2',
+        'loai': 'TN',
+        'chuong': 'V. Thu thập và tổ chức dữ liệu',
+        'dang': ['Dữ liệu định lượng và dữ liệu định tính'],
+        'band': 'NB',
+        'phut': 1.5,
+        'diem_bai': 0.25,
+        'de_chung': 'I. Trắc nghiệm (3,0 điểm) Ghi lại vào bài làm chữ cái đứng trước câu trả lời đúng.',
+        'de': 'Cho các loại dữ liệu sau:\n- Học lực của một số bạn học sinh trong lớp: Giỏi, Khá, Đạt, Chưa đạt;\n- Các loại cây trong một khu vườn: cam, mít, xoài, ổi, táo,...;\n- Điểm kiểm tra môn Toán của các bạn Hà, Trang, Bình, An: 9, 7, 8, 7.\nDữ liệu định lượng trong các dữ liệu trên là:\nA. Học lực của một số bạn học sinh trong lớp.\nB. Các loại cây trong một khu vườn.\nC. Điểm kiểm tra môn Toán của các bạn Hà, Trang, Bình, An.\nD. Không có dữ liệu định lượng trong các dữ liệu trên.',
+        'dap_an': 'C',
+        'loi_giai': 'Dữ liệu định lượng là dữ liệu biểu diễn bằng số: Điểm kiểm tra môn Toán của các bạn Hà, Trang, Bình, An: 9, 7, 8, 7. Chọn C.',
+        'trang': 1,
+        'co_hinh': False,
+        'can_doc_anh': False,
+        'da_duyet': True,
+        'barem_nguon': 'chuan_hoa'
+    },
+    # Câu 3
+    {
+        'id': 'l8-gk2-2023-thcs-cu-khoi-c3',
+        'vi_tri': 'Câu 3',
+        'loai': 'TN',
+        'chuong': 'V. Thu thập và tổ chức dữ liệu',
+        'dang': ['Tính hợp lý của dữ liệu'],
+        'band': 'NB',
+        'phut': 1.5,
+        'diem_bai': 0.25,
+        'de_chung': 'I. Trắc nghiệm (3,0 điểm) Ghi lại vào bài làm chữ cái đứng trước câu trả lời đúng.',
+        'de': 'Thảo ghi chiều cao (cm) của các bạn học sinh tổ 1 lớp 7A trong bảng sau: 155; 141; -150; 130. Số liệu không hợp lí là:\nA. 155.\nB. 141.\nC. -150.\nD. 130.',
+        'dap_an': 'C',
+        'loi_giai': 'Chiều cao của một người không thể mang giá trị âm, do đó số liệu -150 là không hợp lí. Chọn C.',
+        'trang': 1,
+        'co_hinh': False,
+        'can_doc_anh': False,
+        'da_duyet': True,
+        'barem_nguon': 'chuan_hoa'
+    },
+    # Câu 4
+    {
+        'id': 'l8-gk2-2023-thcs-cu-khoi-c4',
+        'vi_tri': 'Câu 4',
+        'loai': 'TN',
+        'chuong': 'IX. Một số yếu tố xác suất',
+        'dang': ['Xác suất của biến cố ngẫu nhiên trong một số trò chơi đơn giản'],
+        'band': 'NB',
+        'phut': 1.5,
+        'diem_bai': 0.25,
+        'de_chung': 'I. Trắc nghiệm (3,0 điểm) Ghi lại vào bài làm chữ cái đứng trước câu trả lời đúng.',
+        'de': 'Trong trò chơi tung đồng xu. Xác suất của biến cố “Mặt xuất hiện của đồng xu là mặt sấp” là:\nA. $\\dfrac{1}{2}$.\nB. $\\dfrac{1}{3}$.\nC. $\\dfrac{1}{4}$.\nD. $\\dfrac{1}{5}$.',
+        'dap_an': 'A',
+        'loi_giai': 'Đồng xu có 2 mặt (sấp và ngửa) có khả năng xuất hiện như nhau. Xác suất xuất hiện mặt sấp là $\\dfrac{1}{2}$. Chọn A.',
+        'trang': 1,
+        'co_hinh': False,
+        'can_doc_anh': False,
+        'da_duyet': True,
+        'barem_nguon': 'chuan_hoa'
+    },
+    # Câu 5
+    {
+        'id': 'l8-gk2-2023-thcs-cu-khoi-c5',
+        'vi_tri': 'Câu 5',
+        'loai': 'TN',
+        'chuong': 'IX. Một số yếu tố xác suất',
+        'dang': ['Xác suất thực nghiệm của một biến cố'],
+        'band': 'TH',
+        'phut': 1.5,
+        'diem_bai': 0.25,
+        'de_chung': 'I. Trắc nghiệm (3,0 điểm) Ghi lại vào bài làm chữ cái đứng trước câu trả lời đúng.',
+        'de': 'Bạn An gieo một con xúc xắc 50 lần và thống kê kết quả các lần gieo ở bảng sau:\n\n| Mặt | 1 chấm | 2 chấm | 3 chấm | 4 chấm | 5 chấm | 6 chấm |\n| :--- | :---: | :---: | :---: | :---: | :---: | :---: |\n| Số lần xuất hiện | 10 | 8 | 6 | 12 | 4 | 10 |\n\nXác suất thực nghiệm của biến cố “Mặt xuất hiện của xúc xắc là mặt 1 chấm” là bao nhiêu?\nA. $\\dfrac{1}{5}$.\nB. $\\dfrac{1}{3}$.\nC. $\\dfrac{1}{4}$.\nD. $\\dfrac{1}{2}$.',
+        'dap_an': 'A',
+        'loi_giai': 'Xác suất thực nghiệm là $\\dfrac{10}{50} = \\dfrac{1}{5}$. Chọn A.',
+        'trang': 1,
+        'co_hinh': False,
+        'can_doc_anh': False,
+        'da_duyet': True,
+        'barem_nguon': 'chuan_hoa'
+    },
+    # Câu 6
+    {
+        'id': 'l8-gk2-2023-thcs-cu-khoi-c6',
+        'vi_tri': 'Câu 6',
+        'loai': 'TN',
+        'chuong': 'V. Thu thập và tổ chức dữ liệu',
+        'dang': ['Đọc và giải thích số liệu từ biểu đồ'],
+        'band': 'TH',
+        'phut': 1.5,
+        'diem_bai': 0.25,
+        'de_chung': 'I. Trắc nghiệm (3,0 điểm) Ghi lại vào bài làm chữ cái đứng trước câu trả lời đúng.',
+        'de': 'Cho biểu đồ biểu diễn tổng doanh thu du lịch (ước đạt) (đơn vị: tỉ đồng) của tỉnh Khánh Hoà trong các năm 2018, 2019, 2020. Biết doanh thu năm 2019 là 27100 tỉ đồng và năm 2020 là 6946,2 tỉ đồng. Tổng doanh thu du lịch trong năm 2020 giảm bao nhiêu so với năm 2019?\nA. 20 153,6 tỉ đồng.\nB. 20 153,8 tỉ đồng.\nC. 20 154 tỉ đồng.\nD. 20 153 tỉ đồng.',
+        'dap_an': 'B',
+        'loi_giai': 'Số tiền giảm là: $27100 - 6946{,}2 = 20153{,}8$ tỉ đồng. Chọn B.',
+        'trang': 1,
+        'co_hinh': True,
+        'can_doc_anh': False,
+        'da_duyet': True,
+        'barem_nguon': 'chuan_hoa'
+    },
+    # Câu 7
+    {
+        'id': 'l8-gk2-2023-thcs-cu-khoi-c7',
+        'vi_tri': 'Câu 7',
+        'loai': 'TN',
+        'chuong': 'IX. Một số yếu tố xác suất',
+        'dang': ['Định nghĩa xác suất thực nghiệm'],
+        'band': 'NB',
+        'phut': 1.5,
+        'diem_bai': 0.25,
+        'de_chung': 'I. Trắc nghiệm (3,0 điểm) Ghi lại vào bài làm chữ cái đứng trước câu trả lời đúng.',
+        'de': 'Tỉ số $\\dfrac{\\text{Số lần đối tượng A được chọn ra}}{\\text{Tổng số lần chọn đối tượng}}$ là:\nA. Xác suất thực nghiệm của biến cố “Đối tượng A được chọn ra”.\nB. Số kết quả thuận lợi của biến cố “Đối tượng A được chọn”.\nC. Số kết quả không thuận lợi của biến cố “Đối tượng A không được chọn ra”.\nD. Xác suất thực nghiệm của biến cố “Đối tượng A không được chọn ra”.',
+        'dap_an': 'A',
+        'loi_giai': 'Theo định nghĩa, tỉ số giữa số lần xảy ra biến cố và tổng số lần thực hiện phép thử là xác suất thực nghiệm của biến cố đó. Chọn A.',
+        'trang': 1,
+        'co_hinh': False,
+        'can_doc_anh': False,
+        'da_duyet': True,
+        'barem_nguon': 'chuan_hoa'
+    },
+    # Câu 8
+    {
+        'id': 'l8-gk2-2023-thcs-cu-khoi-c8',
+        'vi_tri': 'Câu 8',
+        'loai': 'TN',
+        'chuong': 'VIII. Hình đồng dạng',
+        'dang': ['Tỉ số đồng dạng của hai tam giác'],
+        'band': 'NB',
+        'phut': 1.5,
+        'diem_bai': 0.25,
+        'de_chung': 'I. Trắc nghiệm (3,0 điểm) Ghi lại vào bài làm chữ cái đứng trước câu trả lời đúng.',
+        'de': 'Cho $\\Delta ABC \\backsim \\Delta DEF$ theo tỉ số đồng dạng $\\dfrac{1}{2}$. Khẳng định nào sau đây là đúng?\nA. $\\dfrac{AB}{DE} = \\dfrac{1}{2}$.\nB. $\\dfrac{AB}{EF} = \\dfrac{1}{2}$.\nC. $\\dfrac{AC}{DF} = 2$.\nD. $\\dfrac{BC}{DF} = 2$.',
+        'dap_an': 'A',
+        'loi_giai': 'Vì $\\Delta ABC \\backsim \\Delta DEF$ theo tỉ số đồng dạng $k = \\dfrac{1}{2}$ nên các cạnh tương ứng có tỉ số $\\dfrac{AB}{DE} = \\dfrac{BC}{EF} = \\dfrac{AC}{DF} = \\dfrac{1}{2}$. Chọn A.',
+        'trang': 1,
+        'co_hinh': False,
+        'can_doc_anh': False,
+        'da_duyet': True,
+        'barem_nguon': 'chuan_hoa'
+    },
+    # Câu 9
+    {
+        'id': 'l8-gk2-2023-thcs-cu-khoi-c9',
+        'vi_tri': 'Câu 9',
+        'loai': 'TN',
+        'chuong': 'VIII. Hình đồng dạng',
+        'dang': ['Tính góc trong tam giác đồng dạng'],
+        'band': 'TH',
+        'phut': 1.5,
+        'diem_bai': 0.25,
+        'de_chung': 'I. Trắc nghiệm (3,0 điểm) Ghi lại vào bài làm chữ cái đứng trước câu trả lời đúng.',
+        'de': 'Cho $\\Delta ABC \\backsim \\Delta DEF$, $\\widehat{BAC} = 30^\\circ, \\widehat{ABC} = 50^\\circ$. Khi đó $\\widehat{DFE} = ?$\nA. $30^\\circ$.\nB. $50^\\circ$.\nC. $180^\\circ$.\nD. $100^\\circ$.',
+        'dap_an': 'D',
+        'loi_giai': 'Trong tam giác $ABC$, $\\widehat{C} = 180^\\circ - (\\widehat{A} + \\widehat{B}) = 180^\\circ - (30^\\circ + 50^\\circ) = 100^\\circ$.\nVì $\\Delta ABC \\backsim \\Delta DEF$ nên $\\widehat{DFE} = \\widehat{BCA} = 100^\\circ$. Chọn D.',
+        'trang': 1,
+        'co_hinh': False,
+        'can_doc_anh': False,
+        'da_duyet': True,
+        'barem_nguon': 'chuan_hoa'
+    },
+    # Câu 10
+    {
+        'id': 'l8-gk2-2023-thcs-cu-khoi-c10',
+        'vi_tri': 'Câu 10',
+        'loai': 'TN',
+        'chuong': 'V. Thu thập và tổ chức dữ liệu',
+        'dang': ['Đọc và giải thích số liệu từ biểu đồ'],
+        'band': 'TH',
+        'phut': 2.0,
+        'diem_bai': 0.25,
+        'de_chung': 'I. Trắc nghiệm (3,0 điểm) Ghi lại vào bài làm chữ cái đứng trước câu trả lời đúng.',
+        'de': 'Cho biểu đồ biểu diễn thu nhập bình quân đầu người/năm của Việt Nam (tính theo đô la Mỹ) ở một số năm trong giai đoạn từ năm 1986 đến 2020 (năm 1991 là 138 USD, năm 2020 là 2779 USD). Khẳng định nào sau đây là đúng?\nA. Từ năm 1986 đến năm 2020 thu nhập bình quân đầu người/năm tăng đều.\nB. Từ năm 2019 đến năm 2020 thu nhập bình quân đầu người/năm tăng nhanh nhất.\nC. Thu nhập bình quân đầu người/năm năm 2020 gấp hơn 20 lần năm 1991.\nD. Cả 3 đáp án trên đều sai.',
+        'dap_an': 'C',
+        'loi_giai': 'Ta có $\\dfrac{2779}{138} \\approx 20{,}14 > 20$. Do đó khẳng định C đúng. Chọn C.',
+        'trang': 2,
+        'co_hinh': True,
+        'can_doc_anh': False,
+        'da_duyet': True,
+        'barem_nguon': 'chuan_hoa'
+    },
+    # Câu 11
+    {
+        'id': 'l8-gk2-2023-thcs-cu-khoi-c11',
+        'vi_tri': 'Câu 11',
+        'loai': 'TN',
+        'chuong': 'VII. Định lí Thalès trong tam giác',
+        'dang': ['Ứng dụng định lí Thalès tính khoảng cách'],
+        'band': 'TH',
+        'phut': 2.0,
+        'diem_bai': 0.25,
+        'de_chung': 'I. Trắc nghiệm (3,0 điểm) Ghi lại vào bài làm chữ cái đứng trước câu trả lời đúng.',
+        'de': 'Giữa hai điểm $B$ và $C$ có một cái ao. Để đo khoảng cách $BC$ người ta đo được các đoạn thẳng $AD = 2\\text{ m}, BD = 10\\text{ m}$ và $DE = 5\\text{ m}$. Biết $DE \\parallel BC$, khoảng cách giữa hai điểm $B$ và $C$ là:\nA. $25\\text{ m}$.\nB. $30\\text{ m}$.\nC. $10\\text{ m}$.\nD. $2\\text{ m}$.',
+        'dap_an': 'B',
+        'loi_giai': 'Ta có $AB = AD + BD = 2 + 10 = 12\\text{ m}$.\nVì $DE \\parallel BC$, theo hệ quả của định lí Thalès ta có:\n$$\\dfrac{DE}{BC} = \\dfrac{AD}{AB} \\Rightarrow \\dfrac{5}{BC} = \\dfrac{2}{12} = \\dfrac{1}{6} \\Rightarrow BC = 5 \\cdot 6 = 30\\text{ m}.$$\nChọn B.',
+        'trang': 2,
+        'co_hinh': True,
+        'can_doc_anh': False,
+        'da_duyet': True,
+        'barem_nguon': 'chuan_hoa'
+    },
+    # Câu 12
+    {
+        'id': 'l8-gk2-2023-thcs-cu-khoi-c12',
+        'vi_tri': 'Câu 12',
+        'loai': 'TN',
+        'chuong': 'V. Thu thập và tổ chức dữ liệu',
+        'dang': ['Lựa chọn biểu đồ phù hợp để biểu diễn dữ liệu'],
+        'band': 'NB',
+        'phut': 1.5,
+        'diem_bai': 0.25,
+        'de_chung': 'I. Trắc nghiệm (3,0 điểm) Ghi lại vào bài làm chữ cái đứng trước câu trả lời đúng.',
+        'de': 'Thời gian tự luyện tập piano ở nhà các ngày trong tuần của 2 bạn Trang và Huy cho bởi bảng thống kê. Với bảng thống kê so sánh hai đối tượng theo các ngày trong tuần, theo em biểu đồ nào sẽ phù hợp nhất để biểu diễn các dữ liệu trên?\nA. Biểu đồ cột đơn.\nB. Biểu đồ cột kép.\nC. Biểu đồ tranh.\nD. Biểu đồ quạt tròn.',
+        'dap_an': 'B',
+        'loi_giai': 'Để so sánh từng ngày trong tuần giữa hai bạn Trang và Huy thì biểu đồ cột kép là phù hợp nhất. Chọn B.',
+        'trang': 2,
+        'co_hinh': False,
+        'can_doc_anh': False,
+        'da_duyet': True,
+        'barem_nguon': 'chuan_hoa'
+    },
+    # Bài 1.a
+    {
+        'id': 'l8-gk2-2023-thcs-cu-khoi-b1a',
+        'vi_tri': 'Bài 1.a',
+        'loai': 'TL',
+        'chuong': 'V. Thu thập và tổ chức dữ liệu',
+        'dang': ['Phân loại dữ liệu định tính và định lượng'],
+        'band': 'NB',
+        'phut': 2.0,
+        'diem_bai': 0.5,
+        'de_chung': 'II. Tự luận (7,0 điểm)\nBài 1 (2,5 điểm). Cho biểu đồ biểu diễn hiện trạng sử dụng đất ở Hà Nội và Hải Dương tính đến ngày 31 tháng 12 năm 2020 đối với đất sản xuất nông nghiệp, đất lâm nghiệp, đất ở.',
+        'de': 'Em hãy cho biết dữ liệu nào là dữ liệu định lượng?',
+        'dap_an': 'Diện tích các loại đất của Hà Nội và Hải Dương',
+        'loi_giai': 'Dữ liệu định lượng là diện tích sử dụng của các loại đất của Hà Nội và Hải Dương (đo bằng nghìn ha).',
+        'trang': 2,
+        'co_hinh': True,
+        'can_doc_anh': False,
+        'da_duyet': True,
+        'barem_nguon': 'chuan_hoa'
+    },
+    # Bài 1.b
+    {
+        'id': 'l8-gk2-2023-thcs-cu-khoi-b1b',
+        'vi_tri': 'Bài 1.b',
+        'loai': 'TL',
+        'chuong': 'V. Thu thập và tổ chức dữ liệu',
+        'dang': ['Lập bảng thống kê từ biểu đồ'],
+        'band': 'TH',
+        'phut': 3.0,
+        'diem_bai': 1.0,
+        'de_chung': 'Bài 1 (2,5 điểm). Cho biểu đồ biểu diễn hiện trạng sử dụng đất ở Hà Nội và Hải Dương tính đến ngày 31 tháng 12 năm 2020 đối với đất sản xuất nông nghiệp, đất lâm nghiệp, đất ở.',
+        'de': 'Lập bảng thống kê diện tích các loại đất của Hà Nội và Hải Dương.',
+        'dap_an': 'Bảng thống kê diện tích đất nông nghiệp, lâm nghiệp, đất ở',
+        'loi_giai': 'Bảng thống kê diện tích các loại đất:\n\n| Địa phương | Diện tích đất sản xuất nông nghiệp (nghìn ha) | Diện tích đất lâm nghiệp (nghìn ha) | Diện tích đất ở (nghìn ha) |\n| :--- | :---: | :---: | :---: |\n| Hà Nội | 156 | 20,3 | 39,8 |\n| Hải Dương | 83,7 | 9 | 17,3 |',
+        'trang': 2,
+        'co_hinh': True,
+        'can_doc_anh': False,
+        'da_duyet': True,
+        'barem_nguon': 'chuan_hoa'
+    },
+    # Bài 1.c
+    {
+        'id': 'l8-gk2-2023-thcs-cu-khoi-b1c',
+        'vi_tri': 'Bài 1.c',
+        'loai': 'TL',
+        'chuong': 'V. Thu thập và tổ chức dữ liệu',
+        'dang': ['Tính toán các đại lượng thống kê'],
+        'band': 'TH',
+        'phut': 2.0,
+        'diem_bai': 0.5,
+        'de_chung': 'Bài 1 (2,5 điểm). Cho biểu đồ biểu diễn hiện trạng sử dụng đất ở Hà Nội và Hải Dương tính đến ngày 31 tháng 12 năm 2020 đối với đất sản xuất nông nghiệp, đất lâm nghiệp, đất ở.',
+        'de': 'Tính tổng diện tích 3 loại đất trên của thành phố Hà Nội.',
+        'dap_an': '$216{,}1\\text{ nghìn ha}$',
+        'loi_giai': 'Tổng diện tích các loại đất trên của Hà Nội là:\n$$156 + 20{,}3 + 39{,}8 = 216{,}1\\text{ (nghìn ha)}.$$',
+        'trang': 2,
+        'co_hinh': False,
+        'can_doc_anh': False,
+        'da_duyet': True,
+        'barem_nguon': 'chuan_hoa'
+    },
+    # Bài 1.d
+    {
+        'id': 'l8-gk2-2023-thcs-cu-khoi-b1d',
+        'vi_tri': 'Bài 1.d',
+        'loai': 'TL',
+        'chuong': 'V. Thu thập và tổ chức dữ liệu',
+        'dang': ['Tính tỉ số phần trăm từ bảng số liệu'],
+        'band': 'TH',
+        'phut': 2.5,
+        'diem_bai': 0.5,
+        'de_chung': 'Bài 1 (2,5 điểm). Cho biểu đồ biểu diễn hiện trạng sử dụng đất ở Hà Nội và Hải Dương tính đến ngày 31 tháng 12 năm 2020 đối với đất sản xuất nông nghiệp, đất lâm nghiệp, đất ở.',
+        'de': 'Một bài báo nhận định rằng: “Diện tích đất ở của tỉnh Hải Dương chiếm khoảng $20{,}67\\%$ diện tích đất sản xuất nông nghiệp của tỉnh này”. Hãy cho biết nhận định của bài báo có chính xác không?',
+        'dap_an': 'Nhận định chính xác',
+        'loi_giai': 'Tỉ số phần trăm của đất ở của Hải Dương so với đất sản xuất nông nghiệp của Hải Dương là:\n$$\\dfrac{17{,}3}{83{,}7} \\cdot 100\\% \\approx 20{,}67\\%.$$\nVậy thông tin của bài báo là hoàn toàn chính xác.',
+        'trang': 2,
+        'co_hinh': False,
+        'can_doc_anh': False,
+        'da_duyet': True,
+        'barem_nguon': 'chuan_hoa'
+    },
+    # Bài 2.a
+    {
+        'id': 'l8-gk2-2023-thcs-cu-khoi-b2a',
+        'vi_tri': 'Bài 2.a',
+        'loai': 'TL',
+        'chuong': 'IX. Một số yếu tố xác suất',
+        'dang': ['Xác suất của biến cố ngẫu nhiên trong một số trò chơi đơn giản'],
+        'band': 'TH',
+        'phut': 2.0,
+        'diem_bai': 0.5,
+        'de_chung': 'Bài 2 (1,0 điểm).',
+        'de': 'Một đĩa tròn bằng bìa cứng được chia làm tám phần bằng nhau và ghi các số 1; 2; 3; 4; 5; 6; 7; 8. Chiếc kim được gắn cố định vào trục quay ở tâm của đĩa. Quay đĩa tròn một lần. Tính xác suất của biến cố sau: “Chiếc kim chỉ vào hình quạt ghi số nhỏ hơn 7”.',
+        'dap_an': '$P = \\dfrac{3}{4}$',
+        'loi_giai': 'Các kết quả có thể của phép thử là các số từ 1 đến 8 (có 8 kết quả có khả năng như nhau).\nCác kết quả thuận lợi cho biến cố “Chiếc kim chỉ vào hình quạt ghi số nhỏ hơn 7” là: $\\{1; 2; 3; 4; 5; 6\\}$, gồm 6 kết quả thuận lợi.\nXác suất của biến cố là:\n$$P = \\dfrac{6}{8} = \\dfrac{3}{4}.$$',
+        'trang': 3,
+        'co_hinh': False,
+        'can_doc_anh': False,
+        'da_duyet': True,
+        'barem_nguon': 'chuan_hoa'
+    },
+    # Bài 2.b
+    {
+        'id': 'l8-gk2-2023-thcs-cu-khoi-b2b',
+        'vi_tri': 'Bài 2.b',
+        'loai': 'TL',
+        'chuong': 'IX. Một số yếu tố xác suất',
+        'dang': ['Xác suất thực nghiệm của một biến cố'],
+        'band': 'TH',
+        'phut': 2.5,
+        'diem_bai': 0.5,
+        'de_chung': 'Bài 2 (1,0 điểm).',
+        'de': 'Một hộp có 1 quả bóng xanh, 1 quả bóng hồng và 1 quả bóng tím; các quả bóng có kích thước và khối lượng như nhau. Mỗi lần bạn Bình lấy ngẫu nhiên 1 quả bóng trong hộp, ghi lại màu của quả bóng lấy ra và bỏ lại quả bóng đó vào hộp. Sau 30 lần lấy bóng liên tiếp, bạn Bình đếm được quả bóng xanh xuất hiện 14 lần; quả bóng hồng xuất hiện 12 lần. Tính xác suất thực nghiệm của biến cố “Quả bóng lấy ra là quả bóng màu tím”.',
+        'dap_an': '$\\dfrac{2}{15}$',
+        'loi_giai': 'Tổng số lần lấy bóng thực nghiệm là $n = 30$.\nSố lần lấy được bóng màu tím là:\n$$k = 30 - 14 - 12 = 4\\text{ (lần)}.$$\nXác suất thực nghiệm của biến cố “Quả bóng lấy ra là quả bóng màu tím” là:\n$$\\dfrac{k}{n} = \\dfrac{4}{30} = \\dfrac{2}{15}.$$',
+        'trang': 3,
+        'co_hinh': False,
+        'can_doc_anh': False,
+        'da_duyet': True,
+        'barem_nguon': 'chuan_hoa'
+    },
+    # Bài 3.a
+    {
+        'id': 'l8-gk2-2023-thcs-cu-khoi-b3a',
+        'vi_tri': 'Bài 3.a',
+        'loai': 'TL',
+        'chuong': 'VII. Định lí Thalès trong tam giác',
+        'dang': ['Tính chất đường phân giác trong tam giác'],
+        'band': 'TH',
+        'phut': 3.5,
+        'diem_bai': 1.0,
+        'de_chung': 'Bài 3 (2,5 điểm). Cho tam giác $ABC$ vuông tại $A$, trung tuyến $AD$. Vẽ tia phân giác của $\\widehat{ADB}$ cắt $AB$ tại $M$, tia phân giác của $\\widehat{ADC}$ cắt $AC$ tại $N$.',
+        'de': 'Chứng minh rằng: $\\dfrac{AM}{MB} = \\dfrac{AN}{NC}$.',
+        'dap_an': '$\\dfrac{AM}{MB} = \\dfrac{AN}{NC}$',
+        'loi_giai': '- Xét $\\Delta ADB$ có $DM$ là đường phân giác của góc $\\widehat{ADB}$ ($M \\in AB$):\n$$\\dfrac{AM}{MB} = \\dfrac{AD}{BD} \\quad (1) \\quad \\text{(tính chất đường phân giác trong tam giác)}.$$\n- Xét $\\Delta ADC$ có $DN$ là đường phân giác của góc $\\widehat{ADC}$ ($N \\in AC$):\n$$\\dfrac{AN}{NC} = \\dfrac{AD}{DC} \\quad (2) \\quad \\text{(tính chất đường phân giác trong tam giác)}.$$\n- Vì $AD$ là trung tuyến của tam giác $ABC$ nên $D$ là trung điểm của $BC$, suy ra $BD = DC \\quad (3)$.\nTừ (1), (2) và (3) suy ra:\n$$\\dfrac{AM}{MB} = \\dfrac{AN}{NC}.$$',
+        'trang': 3,
+        'co_hinh': True,
+        'can_doc_anh': False,
+        'da_duyet': True,
+        'barem_nguon': 'chuan_hoa'
+    },
+    # Bài 3.b
+    {
+        'id': 'l8-gk2-2023-thcs-cu-khoi-b3b',
+        'vi_tri': 'Bài 3.b',
+        'loai': 'TL',
+        'chuong': 'VII. Định lí Thalès trong tam giác',
+        'dang': ['Định lí Thalès đảo'],
+        'band': 'TH',
+        'phut': 3.0,
+        'diem_bai': 0.75,
+        'de_chung': 'Bài 3 (2,5 điểm). Cho tam giác $ABC$ vuông tại $A$, trung tuyến $AD$. Vẽ tia phân giác của $\\widehat{ADB}$ cắt $AB$ tại $M$, tia phân giác của $\\widehat{ADC}$ cắt $AC$ tại $N$.',
+        'de': 'Chứng minh rằng: $MN \\parallel BC$.',
+        'dap_an': '$MN \\parallel BC$',
+        'loi_giai': 'Xét tam giác $ABC$ có $M \\in AB, N \\in AC$.\nTheo chứng minh ở câu a, ta có:\n$$\\dfrac{AM}{MB} = \\dfrac{AN}{NC}.$$\nTheo định lí Thalès đảo, suy ra $MN \\parallel BC$.',
+        'trang': 3,
+        'co_hinh': True,
+        'can_doc_anh': False,
+        'da_duyet': True,
+        'barem_nguon': 'chuan_hoa'
+    },
+    # Bài 3.c
+    {
+        'id': 'l8-gk2-2023-thcs-cu-khoi-b3c',
+        'vi_tri': 'Bài 3.c',
+        'loai': 'TL',
+        'chuong': 'VII. Định lí Thalès trong tam giác',
+        'dang': ['Đường trung bình của tam giác', 'Tính độ dài đoạn thẳng'],
+        'band': 'VD',
+        'phut': 4.0,
+        'diem_bai': 0.75,
+        'de_chung': 'Bài 3 (2,5 điểm). Cho tam giác $ABC$ vuông tại $A$, trung tuyến $AD$. Vẽ tia phân giác của $\\widehat{ADB}$ cắt $AB$ tại $M$, tia phân giác của $\\widehat{ADC}$ cắt $AC$ tại $N$.',
+        'de': 'Giả sử $MN = 5\\text{ cm}$. Tính độ dài cạnh $BC$.',
+        'dap_an': '$BC = 10\\text{ cm}$',
+        'loi_giai': 'Xét $\\Delta ABC$ vuông tại $A$ có $AD$ là đường trung tuyến ứng với cạnh huyền $BC$:\n$$AD = BD = CD = \\dfrac{1}{2}BC.$$\nTừ đó suy ra:\n$$\\dfrac{AM}{MB} = \\dfrac{AD}{BD} = 1 \\Rightarrow AM = MB,$$\ndo đó $M$ là trung điểm của $AB$.\nTương tự:\n$$\\dfrac{AN}{NC} = \\dfrac{AD}{CD} = 1 \\Rightarrow AN = NC,$$\ndo đó $N$ là trung điểm của $AC$.\nXét tam giác $ABC$ có $M$ là trung điểm $AB$, $N$ là trung điểm $AC$ nên $MN$ là đường trung bình của tam giác $ABC$.\nDo đó:\n$$MN = \\dfrac{1}{2}BC \\Rightarrow BC = 2MN = 2 \\cdot 5 = 10\\text{ (cm)}.$$\nVậy $BC = 10\\text{ cm}$.',
+        'trang': 3,
+        'co_hinh': True,
+        'can_doc_anh': False,
+        'da_duyet': True,
+        'barem_nguon': 'chuan_hoa'
+    },
+    # Bài 4.a
+    {
+        'id': 'l8-gk2-2023-thcs-cu-khoi-b4a',
+        'vi_tri': 'Bài 4.a',
+        'loai': 'TL',
+        'chuong': 'VII. Định lí Thalès trong tam giác',
+        'dang': ['Ứng dụng thực tế của định lí Thalès', 'Đo chiều cao vật thể'],
+        'band': 'TH',
+        'phut': 3.0,
+        'diem_bai': 0.5,
+        'de_chung': 'Bài 4 (1,0 điểm).',
+        'de': 'Bóng của một tháp trên mặt đất có độ dài $BC = 63\\text{ m}$. Cùng thời điểm đó, một cây cột $DE$ cao $2\\text{ m}$ cắm vuông góc với mặt đất có bóng dài $3\\text{ m}$ ($CE = 3\\text{ m}$). Tính chiều cao $AB$ của tháp.',
+        'dap_an': '$AB = 42\\text{ m}$',
+        'loi_giai': 'Vì tháp và cây cột đều cắm vuông góc với mặt đất nên $DE \\parallel AB$.\nXét tam giác $ABC$ có $DE \\parallel AB$, theo hệ quả của định lí Thalès ta có:\n$$\\dfrac{DE}{AB} = \\dfrac{CE}{BC}.$$\nThay số:\n$$\\dfrac{2}{AB} = \\dfrac{3}{63} \\Rightarrow \\dfrac{2}{AB} = \\dfrac{1}{21} \\Rightarrow AB = 2 \\cdot 21 = 42\\text{ (m)}.$$\nVậy chiều cao của tháp là $42\\text{ m}$.',
+        'trang': 3,
+        'co_hinh': True,
+        'can_doc_anh': False,
+        'da_duyet': True,
+        'barem_nguon': 'chuan_hoa'
+    },
+    # Bài 4.b
+    {
+        'id': 'l8-gk2-2023-thcs-cu-khoi-b4b',
+        'vi_tri': 'Bài 4.b',
+        'loai': 'TL',
+        'chuong': 'IX. Một số yếu tố xác suất',
+        'dang': ['Xác suất của biến cố ngẫu nhiên', 'Tìm số phần tử thuận lợi'],
+        'band': 'VD',
+        'phut': 3.5,
+        'diem_bai': 0.5,
+        'de_chung': 'Bài 4 (1,0 điểm).',
+        'de': 'Trong một hộp kín ban đầu đựng 15 quả bóng khác màu nhau có cùng kích thước để tham gia trò chơi, trong đó quả bóng màu đen là quả bóng của người được giải đặc biệt. Do số lượng người chơi tăng thêm 5 người nên ban tổ chức đã bỏ vào trong hộp thêm 5 quả bóng nữa. Người chơi chọn ngẫu nhiên một quả trong hộp. Biết rằng xác suất lấy được quả bóng màu đen là $\\dfrac{1}{10}$. Hỏi trong hộp có bao nhiêu quả bóng màu đen?',
+        'dap_an': '2 quả bóng màu đen',
+        'loi_giai': 'Sau khi ban tổ chức bỏ thêm 5 quả bóng, tổng số quả bóng trong hộp là:\n$$15 + 5 = 20\\text{ (quả)}.$$\nKhi người chơi chọn ngẫu nhiên một quả bóng trong hộp thì có 20 kết quả có thể xảy ra với khả năng như nhau.\nGọi $x$ là số quả bóng màu đen có trong hộp ($x \\in \\mathbb{N}^*$).\nSố kết quả thuận lợi cho việc người chơi chọn được quả bóng màu đen là $x$.\nTheo giả thiết, xác suất chọn được quả bóng màu đen là $\\dfrac{1}{10}$ nên ta có:\n$$\\dfrac{x}{20} = \\dfrac{1}{10} \\Rightarrow x = \\dfrac{20}{10} = 2.$$\nVậy trong hộp có 2 quả bóng màu đen.',
+        'trang': 3,
+        'co_hinh': False,
+        'can_doc_anh': False,
+        'da_duyet': True,
+        'barem_nguon': 'chuan_hoa'
+    }
+]
+
+d['cau'] = cau_list
+
+with open(path, 'w', encoding='utf-8') as f:
+    json.dump(d, f, ensure_ascii=False, indent=2)
+
+print('Updated Cu Khoi successfully! Total cau:', len(d['cau']))
+print('Total score:', sum(c['diem_bai'] for c in d['cau']))

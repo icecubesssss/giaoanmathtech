@@ -240,13 +240,21 @@ def build_list_header_rows() -> list[list]:
     return [r27, r28, r29, r30, r31]
 
 
-def make_vd_formulas(row_num: int) -> tuple[str, str, str, str, str]:
-    an = f'=IF(COUNT($AF{row_num}:$AM{row_num})<8,"",ROUND(SUMPRODUCT($AF{row_num}:$AM{row_num},$AF$28:$AM$28)/(2*SUM($AF$28:$AM$28))*10,1))'
-    ao = f'=IF(COUNT($AF{row_num}:$AM{row_num})<8,"",ROUND(SUMPRODUCT($AF{row_num}:$AM{row_num},$AF$29:$AM$29)/(2*SUM($AF$29:$AM$29))*10,1))'
-    ap = f'=IF(COUNT($AF{row_num}:$AM{row_num})<8,"",ROUND(SUMPRODUCT($AF{row_num}:$AM{row_num},$AF$30:$AM$30)/(2*SUM($AF$30:$AM$30))*10,1))'
-    aq = f'=IF($C{row_num}="TH",$AR$29,IF($C{row_num}="NB",$AR$30,$AR$28))'
-    ar = f'=IF($Q{row_num}<>"","Loại ("&$Q{row_num}&")",IF($AN{row_num}="","Chưa chấm",IF($AN{row_num}>=$AQ{row_num},"Đưa vào bài",IF($AN{row_num}>=5,"Dự phòng / sửa","Loại hoặc sửa"))))'
-    return an, ao, ap, aq, ar
+def make_vd_formulas(row_num: int, offset: int = 0) -> tuple[str, str, str, str, str]:
+    if offset == 1:
+        ao = f'=IF(COUNT($AG{row_num}:$AN{row_num})<8,"",ROUND(SUMPRODUCT($AG{row_num}:$AN{row_num},$AG$28:$AN$28)/(2*SUM($AG$28:$AN$28))*10,1))'
+        ap = f'=IF(COUNT($AG{row_num}:$AN{row_num})<8,"",ROUND(SUMPRODUCT($AG{row_num}:$AN{row_num},$AG$29:$AN$29)/(2*SUM($AG$29:$AN$29))*10,1))'
+        aq = f'=IF(COUNT($AG{row_num}:$AN{row_num})<8,"",ROUND(SUMPRODUCT($AG{row_num}:$AN{row_num},$AG$30:$AN$30)/(2*SUM($AG$30:$AN$30))*10,1))'
+        ar = f'=IF($C{row_num}="TH",$AS$29,IF($C{row_num}="NB",$AS$30,$AS$28))'
+        as_ = f'=IF($R{row_num}<>"","Loại ("&$R{row_num}&")",IF($AO{row_num}="","Chưa chấm",IF($AO{row_num}>=$AR{row_num},"Đưa vào bài",IF($AO{row_num}>=5,"Dự phòng / sửa","Loại hoặc sửa"))))'
+        return ao, ap, aq, ar, as_
+    else:
+        an = f'=IF(COUNT($AF{row_num}:$AM{row_num})<8,"",ROUND(SUMPRODUCT($AF{row_num}:$AM{row_num},$AF$28:$AM$28)/(2*SUM($AF$28:$AM$28))*10,1))'
+        ao = f'=IF(COUNT($AF{row_num}:$AM{row_num})<8,"",ROUND(SUMPRODUCT($AF{row_num}:$AM{row_num},$AF$29:$AM$29)/(2*SUM($AF$29:$AM$29))*10,1))'
+        ap = f'=IF(COUNT($AF{row_num}:$AM{row_num})<8,"",ROUND(SUMPRODUCT($AF{row_num}:$AM{row_num},$AF$30:$AM$30)/(2*SUM($AF$30:$AM$30))*10,1))'
+        aq = f'=IF($C{row_num}="TH",$AR$29,IF($C{row_num}="NB",$AR$30,$AR$28))'
+        ar = f'=IF($Q{row_num}<>"","Loại ("&$Q{row_num}&")",IF($AN{row_num}="","Chưa chấm",IF($AN{row_num}>=$AQ{row_num},"Đưa vào bài",IF($AN{row_num}>=5,"Dự phòng / sửa","Loại hoặc sửa"))))'
+        return an, ao, ap, aq, ar
 
 
 def step2_write_dashboard_and_header():
@@ -273,6 +281,11 @@ def step3_populate_vd_vdc_rows():
     vd_vdc_rows = [r for r in all_rows if len(r) > 2 and r[2].strip() in ("VD", "VDC")]
     print(f"Extracted {len(vd_vdc_rows)} VD & VDC rows from bank.")
     
+    offset = 1 if all_rows and len(all_rows[0]) >= 47 else 0
+    total_cols = 48 if offset else 47
+    formula_start = 40 if offset else 39
+    max_col_letter = "AV" if offset else "AU"
+    
     chunk_size = 150
     total_chunks = (len(vd_vdc_rows) + chunk_size - 1) // chunk_size
     
@@ -288,17 +301,17 @@ def step3_populate_vd_vdc_rows():
         for r_offset, r in enumerate(chunk_data):
             cur_row = start_row + r_offset
             row_copy = list(r)
-            if len(row_copy) < 47:
-                row_copy += [""] * (47 - len(row_copy))
-            an, ao, ap, aq, ar = make_vd_formulas(cur_row)
-            row_copy[39] = an
-            row_copy[40] = ao
-            row_copy[41] = ap
-            row_copy[42] = aq
-            row_copy[43] = ar
-            chunk_values.append(row_copy[:47])
+            if len(row_copy) < total_cols:
+                row_copy += [""] * (total_cols - len(row_copy))
+            f1, f2, f3, f4, f5 = make_vd_formulas(cur_row, offset)
+            row_copy[formula_start] = f1
+            row_copy[formula_start + 1] = f2
+            row_copy[formula_start + 2] = f3
+            row_copy[formula_start + 3] = f4
+            row_copy[formula_start + 4] = f5
+            chunk_values.append(row_copy[:total_cols])
             
-        op = [{"op": "write", "range": f"'{SHEET_TITLE}'!A{start_row}:AU{end_row}", "data": chunk_values}]
+        op = [{"op": "write", "range": f"'{SHEET_TITLE}'!A{start_row}:{max_col_letter}{end_row}", "data": chunk_values}]
         with tempfile.NamedTemporaryFile("w", suffix=".json", delete=False) as f:
             json.dump(op, f, ensure_ascii=False)
             tmp_path = f.name

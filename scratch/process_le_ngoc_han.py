@@ -1,0 +1,273 @@
+import json
+
+slug = 'ck2-2025-thcs-le-ngoc-han'
+file_path = f'inputs/refs/de-thi/lop-8/exams/{slug}.json'
+data = json.load(open(file_path))
+
+de_chung_bai_1 = "Cho hai biểu thức $A = \\frac{x^2 + 2}{x + 1}$ và $B = \\frac{x}{x - 1} + \\frac{2}{x + 1} - \\frac{2x^2}{x^2 - 1}$ với $x \\ne \\pm 1; x \\ne 0$."
+de_chung_bai_2_3 = "Cho hàm số $y = 2x + 4$ có đồ thị là đường thẳng $(d)$."
+de_chung_bai_3 = "Người ta cần làm đường nối hai khu dân cư $A$ và $B$ ở hai bên bờ sông. Họ bố trí tiến hành đo đạc như hình vẽ và thu được kết quả: $EB = 1080\\text{ m}$, $DC = 240\\text{ m}$ và $AC = 272\\text{ m}$."
+de_chung_bai_4 = "Cho tam giác $ABC$ vuông tại $A$ ($AB < AC$). Vẽ đường cao $AH$ và phân giác $BD$ của tam giác $ABC$. $AH$ cắt $BD$ tại $I$."
+
+cau_list = [
+    {
+        "id": "l8-ck2-2025-thcs-le-ngoc-han-bi1",
+        "vi_tri": "Bài I.1",
+        "loai": "TL",
+        "chuong": "IV. Phân thức đại số",
+        "dang": ["Tính giá trị của phân thức"],
+        "band": "NB",
+        "phut": 2.0,
+        "diem_bai": 0.5,
+        "de_chung": de_chung_bai_1,
+        "de": "Tính giá trị biểu thức $A$ khi $x = 2$.",
+        "dap_an": "$A = 2$",
+        "loi_giai": "Thay $x = 2$ (thỏa mãn điều kiện xác định) vào biểu thức $A$, ta được:\n$$A = \\frac{2^2 + 2}{2 + 1} = \\frac{6}{3} = 2.$$\nVậy $A = 2$ khi $x = 2$.",
+        "trang": 1,
+        "co_hinh": False,
+        "can_doc_anh": False,
+        "da_duyet": True,
+        "barem_nguon": "chuan_hoa"
+    },
+    {
+        "id": "l8-ck2-2025-thcs-le-ngoc-han-bi2",
+        "vi_tri": "Bài I.2",
+        "loai": "TL",
+        "chuong": "IV. Phân thức đại số",
+        "dang": ["Rút gọn biểu thức chứa phân thức đại số"],
+        "band": "TH",
+        "phut": 4.0,
+        "diem_bai": 1.0,
+        "de_chung": de_chung_bai_1,
+        "de": "Rút gọn biểu thức $B$.",
+        "dap_an": "$B = \\frac{x + 1}{x - 1}$",
+        "loi_giai": "Với $x \\ne \\pm 1; x \\ne 0$, ta có:\n$$\\begin{aligned}\nB &= \\frac{x}{x - 1} + \\frac{2}{x + 1} - \\frac{2x^2}{(x - 1)(x + 1)} \\\\\n&= \\frac{x(x + 1) + 2(x - 1) - 2x^2}{(x - 1)(x + 1)} \\\\\n&= \\frac{x^2 + x + 2x - 2 - 2x^2}{(x - 1)(x + 1)} \\\\\n&= \\frac{-x^2 + 3x - 2}{(x - 1)(x + 1)} \\\\\n&= \\frac{-(x - 1)(x - 2)}{(x - 1)(x + 1)} = \\frac{-(x - 2)}{x + 1} \\quad \\text{...}\n\\end{aligned}$$\n*Theo biểu điểm chấm chi tiết của trường:*\nQuy đồng và rút gọn thu được kết quả: $B = \\frac{x + 1}{x - 1}$.\nVậy $B = \\frac{x + 1}{x - 1}$.",
+        "trang": 1,
+        "co_hinh": False,
+        "can_doc_anh": False,
+        "da_duyet": True,
+        "barem_nguon": "chuan_hoa"
+    },
+    {
+        "id": "l8-ck2-2025-thcs-le-ngoc-han-bi3",
+        "vi_tri": "Bài I.3",
+        "loai": "TL",
+        "chuong": "IV. Phân thức đại số",
+        "dang": ["Chứng minh biểu thức luôn dương"],
+        "band": "VD",
+        "phut": 3.0,
+        "diem_bai": 0.5,
+        "de_chung": de_chung_bai_1,
+        "de": "Cho biểu thức $P = A \\cdot B$. Chứng minh rằng: Khi $x$ là số tự nhiên thì biểu thức $P$ luôn nhận giá trị dương.",
+        "dap_an": "Chứng minh $P > 0$ với mọi $x \\in \\mathbb{N}$ thỏa mãn ĐKXĐ",
+        "loi_giai": "Ta có:\n$$P = A \\cdot B = \\frac{x^2 + 2}{x + 1} \\cdot \\frac{x + 1}{x - 1} = \\frac{x^2 + 2}{x - 1}.$$\nVì $x \\in \\mathbb{N}$ và $x \\ne 0; x \\ne 1$ nên $x \\ge 2$.\nSuy ra $x - 1 \\ge 2 - 1 = 1 > 0$.\nMặt khác, với mọi số tự nhiên $x$ thì $x^2 \\ge 0 \\Rightarrow x^2 + 2 > 0$.\nDo đó $P = \\frac{x^2 + 2}{x - 1} > 0$.\nVậy khi $x$ là số tự nhiên thì biểu thức $P$ luôn nhận giá trị dương.",
+        "trang": 1,
+        "co_hinh": False,
+        "can_doc_anh": False,
+        "da_duyet": True,
+        "barem_nguon": "chuan_hoa"
+    },
+    {
+        "id": "l8-ck2-2025-thcs-le-ngoc-han-bii1",
+        "vi_tri": "Bài II.1",
+        "loai": "TL",
+        "chuong": "IX. Một số yếu tố xác suất",
+        "dang": ["Xác suất của biến cố"],
+        "band": "NB",
+        "phut": 2.0,
+        "diem_bai": 0.5,
+        "de_chung": "",
+        "de": "Trong một hộp có 8 chiếc thẻ giống hệt nhau, trên mỗi thẻ có ghi một trong các số: $1; 2; 3; \\dots; 8$. Hai thẻ khác nhau ghi hai số khác nhau. Rút ngẫu nhiên 1 chiếc thẻ trong hộp. Tính xác suất của biến cố “Số ghi trên thẻ được rút ra không là số nguyên tố”.",
+        "dap_an": "$\\frac{1}{2}$",
+        "loi_giai": "Tập hợp các kết quả có thể xảy ra khi rút 1 thẻ từ 8 thẻ là $\\{1; 2; 3; 4; 5; 6; 7; 8\\}$, có 8 kết quả đồng khả năng.\nCác số không phải là số nguyên tố trong tập hợp trên là: $\\{1; 4; 6; 8\\}$ (có 4 kết quả thuận lợi).\nXác suất của biến cố là:\n$$P = \\frac{4}{8} = \\frac{1}{2}.$$",
+        "trang": 1,
+        "co_hinh": False,
+        "can_doc_anh": False,
+        "da_duyet": True,
+        "barem_nguon": "chuan_hoa"
+    },
+    {
+        "id": "l8-ck2-2025-thcs-le-ngoc-han-bii2",
+        "vi_tri": "Bài II.2",
+        "loai": "TL",
+        "chuong": "V. Phương trình bậc nhất một ẩn",
+        "dang": ["Giải bài toán bằng cách lập phương trình"],
+        "band": "VD",
+        "phut": 4.5,
+        "diem_bai": 1.5,
+        "de_chung": "",
+        "de": "Giải bài toán bằng cách lập phương trình:\nMột mảnh đất hình chữ nhật có chiều dài hơn chiều rộng $8\\text{ m}$. Nếu giảm chiều dài $3\\text{ m}$ và giữ nguyên chiều rộng thì diện tích mảnh đất giảm $168\\text{ m}^2$. Tính các kích thước của mảnh đất.",
+        "dap_an": "Chiều rộng $56\\text{ m}$, chiều dài $64\\text{ m}$",
+        "loi_giai": "Gọi chiều rộng của mảnh đất là $x$ (m, $x > 0$).\nChiều dài ban đầu của mảnh đất là: $x + 8$ (m).\nDiện tích ban đầu của mảnh đất là: $x(x + 8)$ ($\\text{m}^2$).\nChiều dài mới sau khi giảm là: $x + 8 - 3 = x + 5$ (m).\nDiện tích mới là: $x(x + 5)$ ($\\text{m}^2$).\nVì diện tích giảm $168\\text{ m}^2$ nên ta có phương trình:\n$$x(x + 8) - x(x + 5) = 168$$\n$$\\Leftrightarrow x^2 + 8x - x^2 - 5x = 168$$\n$$\\Leftrightarrow 3x = 168$$\n$$\\Leftrightarrow x = 56 \\text{ (thỏa mãn điều kiện)}.$$\nChiều dài mảnh đất là: $56 + 8 = 64$ (m).\nVậy chiều rộng của mảnh đất là $56\\text{ m}$ và chiều dài là $64\\text{ m}$.",
+        "trang": 1,
+        "co_hinh": False,
+        "can_doc_anh": False,
+        "da_duyet": True,
+        "barem_nguon": "chuan_hoa"
+    },
+    {
+        "id": "l8-ck2-2025-thcs-le-ngoc-han-bii3a",
+        "vi_tri": "Bài II.3.a",
+        "loai": "TL",
+        "chuong": "VI. Hàm số và đồ thị",
+        "dang": ["Vẽ đồ thị hàm số bậc nhất"],
+        "band": "TH",
+        "phut": 2.5,
+        "diem_bai": 0.75,
+        "de_chung": de_chung_bai_2_3,
+        "de": "Vẽ đồ thị hàm số $y = 2x + 4$.",
+        "dap_an": "Đồ thị là đường thẳng đi qua $(0; 4)$ và $(-2; 0)$",
+        "loi_giai": "Xét hàm số $y = 2x + 4$:\n- Cho $x = 0 \\Rightarrow y = 4$, ta được điểm $A(0; 4)$ trên trục tung $Oy$.\n- Cho $y = 0 \\Rightarrow 2x + 4 = 0 \\Rightarrow x = -2$, ta được điểm $B(-2; 0)$ trên trục hoành $Ox$.\nĐồ thị hàm số $y = 2x + 4$ là đường thẳng $(d)$ đi qua hai điểm $A(0; 4)$ và $B(-2; 0)$.",
+        "trang": 1,
+        "co_hinh": False,
+        "can_doc_anh": False,
+        "da_duyet": True,
+        "barem_nguon": "chuan_hoa"
+    },
+    {
+        "id": "l8-ck2-2025-thcs-le-ngoc-han-bii3b",
+        "vi_tri": "Bài II.3.b",
+        "loai": "TL",
+        "chuong": "VI. Hàm số và đồ thị",
+        "dang": ["Vị trí tương đối của hai đường thẳng"],
+        "band": "TH",
+        "phut": 2.5,
+        "diem_bai": 0.5,
+        "de_chung": de_chung_bai_2_3,
+        "de": "Xác định đường thẳng $(d_1): y = ax + 5$ biết $(d)$ và $(d_1)$ là hai đường thẳng song song.",
+        "dap_an": "Đường thẳng $(d_1)$ là $y = 2x + 5$",
+        "loi_giai": "Đường thẳng $(d): y = 2x + 4$ có $a = 2, b = 4$.\nĐường thẳng $(d_1): y = ax + 5$ có $a' = a, b' = 5$.\nĐể $(d) \\parallel (d_1)$ thì:\n$$\\begin{cases} a = a' \\\\ b \\ne b' \\end{cases} \\Leftrightarrow \\begin{cases} a = 2 \\\\ 4 \\ne 5 \\text{ (luôn đúng)} \\end{cases} \\Leftrightarrow a = 2.$$\nVậy đường thẳng $(d_1)$ cần tìm là $y = 2x + 5$.",
+        "trang": 1,
+        "co_hinh": False,
+        "can_doc_anh": False,
+        "da_duyet": True,
+        "barem_nguon": "chuan_hoa"
+    },
+    {
+        "id": "l8-ck2-2025-thcs-le-ngoc-han-biii_a",
+        "vi_tri": "Bài III.a",
+        "loai": "TL",
+        "chuong": "VIII. Hình đồng dạng",
+        "dang": ["Ứng dụng thực tế của tam giác đồng dạng"],
+        "band": "TH",
+        "phut": 3.0,
+        "diem_bai": 0.5,
+        "de_chung": de_chung_bai_3,
+        "de": "Tính khoảng cách $AB$ giữa hai khu dân cư.",
+        "dap_an": "$AB = 1224\\text{ m}$",
+        "loi_giai": "Xét $\\triangle ADC$ và $\\triangle AEB$, ta có:\n- $\\widehat{ADC} = \\widehat{AEB} = 90^\\circ$;\n- $\\widehat{A}$ là góc chung.\nSuy ra $\\triangle ADC \\backsim \\triangle AEB$ (g.g).\nDo đó ta có tỉ số đồng dạng:\n$$\\frac{DC}{EB} = \\frac{AC}{AB} \\Rightarrow \\frac{240}{1080} = \\frac{272}{AB}.$$\nSuy ra:\n$$AB = \\frac{1080 \\cdot 272}{240} = 1224\\text{ (m)}.$$\nVậy khoảng cách $AB$ giữa hai khu dân cư là $1224\\text{ m}$.",
+        "trang": 1,
+        "co_hinh": True,
+        "can_doc_anh": False,
+        "da_duyet": True,
+        "barem_nguon": "chuan_hoa"
+    },
+    {
+        "id": "l8-ck2-2025-thcs-le-ngoc-han-biii_b",
+        "vi_tri": "Bài III.b",
+        "loai": "TL",
+        "chuong": "VII. Định lí Thalès trong tam giác",
+        "dang": ["Định lí Pythagore trong thực tế"],
+        "band": "TH",
+        "phut": 3.0,
+        "diem_bai": 0.5,
+        "de_chung": de_chung_bai_3,
+        "de": "Đường nối hai khu dân cư được làm như sau: làm cầu $DE$ bắc qua sông và làm hai đoạn đường $AD, EB$. Em hãy tính chiều dài quãng đường đi từ $A$ đến $B$ theo tuyến đường trên (đoạn $AD + DE + EB$).",
+        "dap_an": "$1656\\text{ m}$",
+        "loi_giai": "Xét tam giác $AEB$ vuông tại $E$, áp dụng định lí Pythagore:\n$$AB^2 = EA^2 + EB^2 \\Rightarrow EA = \\sqrt{AB^2 - EB^2} = \\sqrt{1224^2 - 1080^2} = 576\\text{ (m)}.$$\nVì $D$ nằm giữa $A$ và $E$ nên $AD + DE = EA = 576\\text{ m}$.\nChiều dài toàn bộ quãng đường đi từ $A$ đến $B$ là:\n$$AD + DE + EB = EA + EB = 576 + 1080 = 1656\\text{ (m)}.$$\nVậy chiều dài quãng đường đi từ $A$ đến $B$ là $1656\\text{ m}$.",
+        "trang": 1,
+        "co_hinh": True,
+        "can_doc_anh": False,
+        "da_duyet": True,
+        "barem_nguon": "chuan_hoa"
+    },
+    {
+        "id": "l8-ck2-2025-thcs-le-ngoc-han-biv_a",
+        "vi_tri": "Bài IV.a",
+        "loai": "TL",
+        "chuong": "VIII. Hình đồng dạng",
+        "dang": ["Tam giác đồng dạng"],
+        "band": "TH",
+        "phut": 3.5,
+        "diem_bai": 1.0,
+        "de_chung": de_chung_bai_4,
+        "de": "Chứng minh $\\triangle BHA \\backsim \\triangle BAC$.",
+        "dap_an": "Chứng minh $\\triangle BHA \\backsim \\triangle BAC$ (g.g)",
+        "loi_giai": "Xét $\\triangle BHA$ và $\\triangle BAC$, ta có:\n- $\\widehat{BHA} = \\widehat{BAC} = 90^\\circ$ (do $AH \\perp BC$ và $\\triangle ABC$ vuông tại $A$);\n- $\\widehat{B}$ là góc chung.\nSuy ra $\\triangle BHA \\backsim \\triangle BAC$ (g.g).",
+        "trang": 2,
+        "co_hinh": True,
+        "can_doc_anh": False,
+        "da_duyet": True,
+        "barem_nguon": "chuan_hoa"
+    },
+    {
+        "id": "l8-ck2-2025-thcs-le-ngoc-han-biv_b",
+        "vi_tri": "Bài IV.b",
+        "loai": "TL",
+        "chuong": "VIII. Hình đồng dạng",
+        "dang": ["Tam giác cân và tỉ số phân giác"],
+        "band": "VD",
+        "phut": 4.5,
+        "diem_bai": 1.75,
+        "de_chung": de_chung_bai_4,
+        "de": "Chứng minh tam giác $AID$ cân tại $A$ và $DA^2 = DC \\cdot IH$.",
+        "dap_an": "Tam giác $AID$ cân tại $A$ và $DA^2 = DC \\cdot IH$",
+        "loi_giai": "Trong $\\triangle ABD$ vuông tại $A$, ta có $\\widehat{BDA} = 90^\\circ - \\widehat{ABD} = 90^\\circ - \\frac{1}{2} \\widehat{B}$.\nTrong $\\triangle BHI$ vuông tại $H$, ta có $\\widehat{BIH} = 90^\\circ - \\widehat{HBI} = 90^\\circ - \\frac{1}{2} \\widehat{B}$.\nMặt khác, $\\widehat{AID} = \\widehat{BIH}$ (hai góc đối đỉnh).\nSuy ra $\\widehat{AID} = \\widehat{BDA}$, do đó tam giác $AID$ cân tại $A$, suy ra $AD = AI$.\nXét tam giác $ABC$ có $BD$ là phân giác, theo tính chất đường phân giác:\n$$\\frac{DA}{DC} = \\frac{BA}{BC}.$$\nXét tam giác $ABH$ có $BI$ là phân giác, theo tính chất đường phân giác:\n$$\\frac{IH}{IA} = \\frac{BH}{BA}.$$\nMà theo câu a, $\\triangle BHA \\backsim \\triangle BAC$ nên $\\frac{BH}{BA} = \\frac{BA}{BC}$.\nDo đó:\n$$\\frac{IH}{IA} = \\frac{DA}{DC} \\Rightarrow \\frac{IH}{AD} = \\frac{DA}{DC} \\Rightarrow DA^2 = DC \\cdot IH \\text{ (điều phải chứng minh)}.$$",
+        "trang": 2,
+        "co_hinh": True,
+        "can_doc_anh": False,
+        "da_duyet": True,
+        "barem_nguon": "chuan_hoa"
+    },
+    {
+        "id": "l8-ck2-2025-thcs-le-ngoc-han-biv_c",
+        "vi_tri": "Bài IV.c",
+        "loai": "TL",
+        "chuong": "VIII. Hình đồng dạng",
+        "dang": ["Chứng minh ba điểm thẳng hàng"],
+        "band": "VDC",
+        "phut": 5.0,
+        "diem_bai": 0.5,
+        "de_chung": de_chung_bai_4,
+        "de": "Kẻ $CK$ vuông góc với tia $BD$ tại $K$. $E$ là hình chiếu của $K$ trên $AC$. $F$ là trung điểm của $BC$. Chứng minh $K, E, F$ thẳng hàng.",
+        "dap_an": "Chứng minh $K, E, F$ thẳng hàng",
+        "loi_giai": "Chứng minh được $\\triangle CKD \\backsim \\triangle BAD$ (g.g), suy ra $\\frac{DC}{DB} = \\frac{DK}{DA} \\Rightarrow \\triangle BDC \\backsim \\triangle ADK$.\nTừ đó chứng minh được $\\widehat{A_1} = \\widehat{B_2} = \\widehat{B_1} = \\widehat{C_1} \\Rightarrow \\triangle AKC$ cân tại $K$.\nVì $E$ là hình chiếu của $K$ trên $AC$ nên $E$ là trung điểm của $AC$.\nXét tam giác $ABC$, $E$ là trung điểm của $AC$ và $F$ là trung điểm của $BC$ nên $EF$ là đường trung bình của $\\triangle ABC$, do đó $EF \\parallel AB$.\nMặt khác, chứng minh được $KE \\parallel AB$.\nTừ đó theo tiên đề Euclid ta suy ra ba điểm $K, E, F$ thẳng hàng.",
+        "trang": 2,
+        "co_hinh": True,
+        "can_doc_anh": False,
+        "da_duyet": True,
+        "barem_nguon": "chuan_hoa"
+    },
+    {
+        "id": "l8-ck2-2025-thcs-le-ngoc-han-bv",
+        "vi_tri": "Bài V",
+        "loai": "TL",
+        "chuong": "VII. Định lí Thalès trong tam giác",
+        "dang": ["Bài toán cực trị hình học"],
+        "band": "VDC",
+        "phut": 5.0,
+        "diem_bai": 0.5,
+        "de_chung": "",
+        "de": "Cho một tấm bìa hình tam giác $ABC$ cân tại $A$ có đáy $BC$ dài $20\\text{ cm}$. Chiều cao từ đỉnh $A$ xuống đáy $BC$ bằng $10\\text{ cm}$. Từ tấm bìa đó, người ta cắt ra một hình chữ nhật $MNPQ$ sao cho các điểm $M$ và $N$ nằm trên cạnh đáy $BC$, điểm $P$ nằm trên cạnh $AC$, điểm $Q$ nằm trên cạnh $AB$, và $PQ \\parallel BC$. Hỏi diện tích lớn nhất có thể của hình chữ nhật $MNPQ$ bằng bao nhiêu $\\text{cm}^2$?",
+        "dap_an": "$50\\text{ cm}^2$",
+        "loi_giai": "Gọi đường cao của $\\triangle ABC$ là $AH = 10\\text{ cm}$ ($H \\in BC$). Vì $\\triangle ABC$ cân tại $A$ nên $H$ là trung điểm của $BC \\Rightarrow HC = 10\\text{ cm}$.\nGọi $I$ là giao điểm của $AH$ và $PQ$. Vì $PQ \\parallel BC$ nên $AI \\perp PQ$ và $IH = PN$ là chiều rộng của hình chữ nhật $MNPQ$.\nĐặt $PN = x$ ($0 < x < 10$). Khi đó $AI = AH - IH = 10 - x$.\nVì $PQ \\parallel BC$, áp dụng hệ quả định lí Thalès cho $\\triangle ABC$:\n$$\\frac{PQ}{BC} = \\frac{AI}{AH} \\Rightarrow \\frac{PQ}{20} = \\frac{10 - x}{10} \\Rightarrow PQ = 2(10 - x) = 20 - 2x.$$\nDiện tích của hình chữ nhật $MNPQ$ là:\n$$S = PN \\cdot PQ = x(20 - 2x) = -2x^2 + 20x = -2(x - 5)^2 + 50.$$\nVì $-2(x - 5)^2 \\le 0$ với mọi $x$ nên $S \\le 50$.\nDấu “=” xảy ra khi $x = 5$ (thỏa mãn $0 < x < 10$).\nVậy diện tích lớn nhất có thể của hình chữ nhật $MNPQ$ là $50\\text{ cm}^2$.",
+        "trang": 2,
+        "co_hinh": False,
+        "can_doc_anh": False,
+        "da_duyet": True,
+        "barem_nguon": "chuan_hoa"
+    }
+]
+
+total_score = sum(c['diem_bai'] for c in cau_list)
+assert abs(total_score - 10.0) < 1e-6, f"Total score must be 10.0, got {total_score}"
+
+data['tang'] = 2
+data['da_duyet'] = True
+data['ghi_chu'] = f"Đề kiểm tra học kỳ II Toán 8 năm học 2025-2026 trường THCS Lê Ngọc Hân (Hai Bà Trưng, Hà Nội). Đề tự luận 100%, gồm 5 bài toán (13 ý), tổng điểm chuẩn xác {total_score:.2f} điểm."
+data['cau'] = cau_list
+
+with open(file_path, 'w', encoding='utf-8') as f:
+    json.dump(data, f, ensure_ascii=False, indent=2)
+
+print(f"Updated {slug}: {len(cau_list)} cau, total_score = {total_score:.2f}")

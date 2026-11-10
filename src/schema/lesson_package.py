@@ -84,6 +84,7 @@ class ProblemFigure(BaseModel):
     # ngoài đường tròn… còn các yếu tố phải vẽ thì để HS tự vẽ vào hình trên phiếu"):
     # `tikz` là hình nền in cho HS; `tikz_gv` là hình ĐẦY ĐỦ chỉ in ở Sổ tay GV.
     tikz_gv: str = Field("", description="Hình đầy đủ cho Sổ tay GV khi phiếu HS chỉ in hình nền")
+    width: str = Field("", description="Tỉ lệ bề rộng hình so với linewidth, vd '0.30', '0.44'")
 
 
 class NotedBlock(BaseModel):

@@ -51,6 +51,7 @@ COLS = {
 COLS_TUY_CHON = {
     "vai": "Phân loại câu",
     "de_xuat": "Đề xuất thuyết minh",
+    "scaffold": "Chi tiết tách ý giàn giáo",
     # Bộ cột chuẩn chốt 03/11/2026 (tab "Cột chuẩn tab phân dạng" của sheet quy chuẩn):
     # bỏ câu thì ghi "Bỏ" ở Trạng thái thay vì xoá dòng; dòng cộng dồn "… - a - b" cùng
     # một bài trỏ chung Mã bài gốc.

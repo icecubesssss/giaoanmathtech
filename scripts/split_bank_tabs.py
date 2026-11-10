@@ -21,33 +21,44 @@ ROOT = Path(__file__).resolve().parent.parent
 SPREADSHEET_ID = '1OuzuBOhfWQu5RQJ7BxRRpP98bs6aOin2xvN0udz8yqg'
 CACHE_FILE = ROOT / 'scratch' / 'ngan_hang_cau_scored_all.json'
 
-def make_formulas(row_num: int) -> tuple[str, str, str, str, str]:
-    an = f'=IF(COUNT($AF{row_num}:$AM{row_num})<8,"",ROUND(SUMPRODUCT($AF{row_num}:$AM{row_num},$AF$2:$AM$2)/(2*SUM($AF$2:$AM$2))*10,1))'
-    ao = f'=IF(COUNT($AF{row_num}:$AM{row_num})<8,"",ROUND(SUMPRODUCT($AF{row_num}:$AM{row_num},$AF$3:$AM$3)/(2*SUM($AF$3:$AM$3))*10,1))'
-    ap = f'=IF(COUNT($AF{row_num}:$AM{row_num})<8,"",ROUND(SUMPRODUCT($AF{row_num}:$AM{row_num},$AF$4:$AM$4)/(2*SUM($AF$4:$AM$4))*10,1))'
-    aq = f'=IF($C{row_num}="TH",$AR$3,IF($C{row_num}="NB",$AR$4,$AR$2))'
-    ar = f'=IF($Q{row_num}<>"","Loại ("&$Q{row_num}&")",IF($AN{row_num}="","Chưa chấm",IF($AN{row_num}>=$AQ{row_num},"Đưa vào bài",IF($AN{row_num}>=5,"Dự phòng / sửa","Loại hoặc sửa"))))'
-    return an, ao, ap, aq, ar
+def make_formulas(row_num: int, offset: int = 0) -> tuple[str, str, str, str, str]:
+    if offset == 1:
+        ao = f'=IF(COUNT($AG{row_num}:$AN{row_num})<8,"",ROUND(SUMPRODUCT($AG{row_num}:$AN{row_num},$AG$2:$AN$2)/(2*SUM($AG$2:$AN$2))*10,1))'
+        ap = f'=IF(COUNT($AG{row_num}:$AN{row_num})<8,"",ROUND(SUMPRODUCT($AG{row_num}:$AN{row_num},$AG$3:$AN$3)/(2*SUM($AG$3:$AN$3))*10,1))'
+        aq = f'=IF(COUNT($AG{row_num}:$AN{row_num})<8,"",ROUND(SUMPRODUCT($AG{row_num}:$AN{row_num},$AG$4:$AN$4)/(2*SUM($AG$4:$AN$4))*10,1))'
+        ar = f'=IF($C{row_num}="TH",$AS$3,IF($C{row_num}="NB",$AS$4,$AS$2))'
+        as_ = f'=IF($R{row_num}<>"","Loại ("&$R{row_num}&")",IF($AO{row_num}="","Chưa chấm",IF($AO{row_num}>=$AR{row_num},"Đưa vào bài",IF($AO{row_num}>=5,"Dự phòng / sửa","Loại hoặc sửa"))))'
+        return ao, ap, aq, ar, as_
+    else:
+        an = f'=IF(COUNT($AF{row_num}:$AM{row_num})<8,"",ROUND(SUMPRODUCT($AF{row_num}:$AM{row_num},$AF$2:$AM$2)/(2*SUM($AF$2:$AM$2))*10,1))'
+        ao = f'=IF(COUNT($AF{row_num}:$AM{row_num})<8,"",ROUND(SUMPRODUCT($AF{row_num}:$AM{row_num},$AF$3:$AM$3)/(2*SUM($AF$3:$AM$3))*10,1))'
+        ap = f'=IF(COUNT($AF{row_num}:$AM{row_num})<8,"",ROUND(SUMPRODUCT($AF{row_num}:$AM{row_num},$AF$4:$AM$4)/(2*SUM($AF$4:$AM$4))*10,1))'
+        aq = f'=IF($C{row_num}="TH",$AR$3,IF($C{row_num}="NB",$AR$4,$AR$2))'
+        ar = f'=IF($Q{row_num}<>"","Loại ("&$Q{row_num}&")",IF($AN{row_num}="","Chưa chấm",IF($AN{row_num}>=$AQ{row_num},"Đưa vào bài",IF($AN{row_num}>=5,"Dự phòng / sửa","Loại hoặc sửa"))))'
+        return an, ao, ap, aq, ar
 
 def build_tab_data(rows: list, tab_title: str) -> list[list]:
+    offset = 1 if rows and len(rows[0]) >= 47 else 0
+    total_cols = 48 if offset else 47
+    formula_start = 40 if offset else 39
+    
     out = []
     for idx, r in enumerate(rows):
         row_num = idx + 6
-        an, ao, ap, aq, ar = make_formulas(row_num)
+        f1, f2, f3, f4, f5 = make_formulas(row_num, offset)
         
-        # 47 columns A to AU
         row = []
-        for i in range(47):
-            if i == 39:
-                row.append(an)
-            elif i == 40:
-                row.append(ao)
-            elif i == 41:
-                row.append(ap)
-            elif i == 42:
-                row.append(aq)
-            elif i == 43:
-                row.append(ar)
+        for i in range(total_cols):
+            if i == formula_start:
+                row.append(f1)
+            elif i == formula_start + 1:
+                row.append(f2)
+            elif i == formula_start + 2:
+                row.append(f3)
+            elif i == formula_start + 3:
+                row.append(f4)
+            elif i == formula_start + 4:
+                row.append(f5)
             else:
                 val = r[i] if i < len(r) else ''
                 row.append(val)
@@ -56,18 +67,21 @@ def build_tab_data(rows: list, tab_title: str) -> list[list]:
 
 def populate_sheet(tab_name: str, title_note: str, raw_rows: list, header_template: list[list]) -> bool:
     print(f"\n==================== POPULATING TAB '{tab_name}' ({len(raw_rows)} rows) ====================")
+    offset = 1 if raw_rows and len(raw_rows[0]) >= 47 else 0
+    total_cols = 48 if offset else 47
+    max_col_letter = "AV" if offset else "AU"
     
     # 1. Header rows 1-5
     padded_header = []
     for idx, r in enumerate(header_template):
         row = list(r)
-        while len(row) < 47:
+        while len(row) < total_cols:
             row.append('')
         if idx == 0:
             row[0] = title_note
         padded_header.append(row)
         
-    op_header = [{"op": "write", "range": f"'{tab_name}'!A1:AU5", "data": padded_header}]
+    op_header = [{"op": "write", "range": f"'{tab_name}'!A1:{max_col_letter}5", "data": padded_header}]
     with tempfile.NamedTemporaryFile("w", suffix=".json", delete=False) as f:
         json.dump(op_header, f)
         tmp_h = f.name
@@ -92,7 +106,7 @@ def populate_sheet(tab_name: str, title_note: str, raw_rows: list, header_templa
         end_row = end_idx + 5
         
         chunk = tab_data[start_idx:end_idx]
-        rng = f"'{tab_name}'!A{start_row}:AU{end_row}"
+        rng = f"'{tab_name}'!A{start_row}:{max_col_letter}{end_row}"
         op = [{"op": "write", "range": rng, "data": chunk}]
         
         with tempfile.NamedTemporaryFile("w", suffix=".json", delete=False) as f:
@@ -120,8 +134,12 @@ def main() -> int:
     data = json.load(open(CACHE_FILE, 'r', encoding='utf-8'))
     print(f"Loaded {len(data)} rows.")
     
-    # Fetch exact header template from Ngân hàng câu
-    res = subprocess.run(['gsheets', 'readonly', 'read', SPREADSHEET_ID, "'Ngân hàng câu'!A1:AU5", '--json'], capture_output=True, text=True)
+    offset = 1 if data and len(data[0]) >= 47 else 0
+    max_h_col = "AV" if offset else "AU"
+    src_header_tab = 'Đề thi' if offset else 'Ngân hàng câu'
+    
+    # Fetch exact header template
+    res = subprocess.run(['gsheets', 'readonly', 'read', SPREADSHEET_ID, f"'{src_header_tab}'!A1:{max_h_col}5", '--json'], capture_output=True, text=True)
     header_template = json.loads(res.stdout)
     
     # Split rows
@@ -130,7 +148,7 @@ def main() -> int:
     stk_rows = []
     
     for r in data:
-        w = r[22] if len(r) > 22 else ''
+        w = r[22 + offset] if len(r) > (22 + offset) else ''
         ma = r[12] if len(r) > 12 else ''
         if w in ('Đề thi', 'Đề thi trên trường', 'Đề vào 6, vào 10') or any(ma.startswith(p) for p in ('gk1', 'ck1', 'gk2', 'ck2', 'v10')):
             de_thi_rows.append(r)

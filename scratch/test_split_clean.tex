@@ -1,0 +1,662 @@
+% PHIẾU HỌC SINH (A4 dọc) — sinh tự động, không sửa tay.
+\documentclass[12pt]{article}
+% Lề IN: chân trang cũ 1,49in (3,8cm) là quá rộng — chân trang chỉ cao ~40pt nên
+% 1,15in đã dư chỗ; headsep 43pt hạ còn 24pt. Hai chỗ này trả lại ~1,6cm chiều cao
+% mỗi trang, tức thêm được 1 bài mỗi trang và bớt vài trang giấy cho cả tập.
+\usepackage[a4paper,top=1.13in,bottom=1.49in,left=0.75in,right=0.75in,headsep=24pt,footskip=30pt]{geometry}
+\setlength{\headheight}{38pt}   % vừa đúng ảnh banner đầu trang kéo hết bề ngang cột chữ
+
+% Font tiếng Việt — XeLaTeX + fontspec, nhúng từ design_tokens.json
+\usepackage{fontspec}
+\usepackage{unicode-math}
+\def\FONTDIR{/Users/admin/Documents/thaitd/Code/giaoanMathtech/assets/fonts/}
+% Thân bài (serif, phủ dấu tiếng Việt)
+\setmainfont{STIXTwoText}[Path=\FONTDIR, Extension=.otf,
+  UprightFont=*-Regular, BoldFont=*-Bold, ItalicFont=*-Italic, BoldItalicFont=*-BoldItalic ]
+% Tiêu đề & nhãn (sans hình học)
+\setsansfont{BeVietnamPro}[Path=\FONTDIR, Extension=.ttf,
+  UprightFont=*-Regular, BoldFont=*-Bold, ItalicFont=*-Italic, FontFace={sb}{n}{*-SemiBold} ]
+% Toán (khớp thân bài)
+\setmathfont{STIXTwoMath-Regular.otf}[Path=\FONTDIR]% Bảng màu — sinh từ config/design_tokens.json (KHÔNG sửa tay hex ở đây)
+\usepackage{xcolor}
+\definecolor{ink}{HTML}{1B1B2A}
+\definecolor{brand}{HTML}{C0392B}
+\definecolor{neutral}{HTML}{F4F6F8}
+\definecolor{rule}{HTML}{E1E4EA}
+\definecolor{muted}{HTML}{6B7280}
+\definecolor{stage1}{HTML}{0E8A7B}
+\definecolor{stage2}{HTML}{6C5CE7}
+\definecolor{stage3}{HTML}{E08A1E}
+\definecolor{stage4}{HTML}{C0392B}
+\definecolor{stage5}{HTML}{1E8E5A}
+\definecolor{gold}{HTML}{F39C12}
+\definecolor{diamond}{HTML}{06B6D4}
+\definecolor{info}{HTML}{2563EB}
+\definecolor{trap}{HTML}{E11D48}
+\definecolor{footbar}{HTML}{C10005}
+\definecolor{foottitle}{HTML}{C51430}
+\color{ink}% Linh kiện giao diện dùng chung (bất biến đối với AI) — Design System Mục III
+\usepackage{enumitem}
+\usepackage{ragged2e}
+\usepackage{fancyhdr}
+\usepackage[most]{tcolorbox}
+\usepackage{amsmath}
+\usepackage{tabularx}
+\usepackage[edges]{forest}
+\usepackage{adjustbox}
+\usepackage{pifont}         % Zapf Dingbats (sao ★, ✓…) — bundled, không cần font ngoài
+\usepackage{qrcode}         % QR sinh thẳng trong TeX (không cần internet/shell-escape)
+\usepackage{setspace}
+% (KHÔNG nạp gói needspace — xem \stageneedspace bên dưới, gói này gây ngắt trang bậy)
+\setstretch{1.15}
+\tcbset{opacityback=0.92, opacitybacktitle=0.92}
+\AtBeginDocument{\color{ink}}
+% Thư viện TikZ cho HÌNH HỌC (block figure): calc=toạ độ suy diễn, angles/quotes=cung góc.
+% positioning: đặt nhãn dưới nút (thanh hành trình). arrows.meta: mũi tên sơ đồ bước giải.
+\usetikzlibrary{calc,angles,quotes,positioning,arrows.meta,shapes.geometric}
+
+% --- SƠ ĐỒ BƯỚC GIẢI (đặc sản): style dùng trong block figure để vẽ quy trình
+%     dạng khối + mũi tên (vd 4 bước ẩn ở mẫu) thay vì liệt kê chữ. In đen trắng rõ. ---
+\tikzset{
+  flownode/.style={draw=ink!70, line width=0.8pt, rounded corners=3pt, fill=neutral,
+    inner sep=4pt, font=\sffamily\footnotesize, align=center, minimum height=20pt, text width=2.2cm},
+  flowkey/.style={flownode, draw=trap, fill=trap!8},   % bước "bẫy"/then chốt
+  flowarrow/.style={-{Stealth[length=5pt]}, line width=0.9pt, draw=brand},
+}
+% Ký hiệu góc vuông tại đỉnh #1 giữa hai tia #1->#2 và #1->#3 (vẽ ô vuông nhỏ).
+% Dùng trong block figure: \rightanglemark{A}{B}{C}. Vẽ theo màu hiện hành.
+\newcommand{\rightanglemark}[3]{%
+  \coordinate (ra1) at ($(#1)!0.26cm!(#2)$);
+  \coordinate (ra2) at ($(#1)!0.26cm!(#3)$);
+  \draw[line width=0.6pt] (ra1)--($(ra1)+(ra2)-(#1)$)--(ra2);}
+
+% Tiêu đề tự CO cho vừa bề ngang: tên bài dài → thu nhỏ cỡ chữ cho khít một dòng,
+% KHÔNG wrap nhiều dòng đẩy các phần cố định (Họ và tên, dòng phụ) đi lung tung.
+% Tên bài ngắn giữ nguyên cỡ gốc. Cấu trúc header BẤT BIẾN.
+\newcommand{\titlefit}[1]{\adjustbox{max width=\linewidth}{#1}}
+
+% --- ĐẦU TRANG / CHÂN TRANG chuẩn MathTech (dùng chung cho phiếu · sổ tay GV · tổng kết).
+% Đầu trang: đúng một ảnh banner kéo hết bề ngang cột chữ, KHÔNG kèm chữ nào.
+% Chân trang: dựng lại theo mẫu công ty assets/images/nguon-goc/footer_mau_goc.jpg —
+% thanh đỏ dày, tên công ty đỏ đậm, dòng website; BỎ dòng hotline (Thầy chốt 2026-08-08).
+% Màu footbar/foottitle lấy đúng từ ảnh mẫu, khai báo trong config/design_tokens.json.
+% Banner rộng đúng bằng cột chữ → hai mép thẳng hàng với khối tiêu đề bên dưới,
+% lề trái/phải bằng nhau. Ảnh đã cắt sát nét (assets/header_banner.png) nên mép
+% ảnh chính là mép chữ, không còn khoảng trắng lệch một bên như file gốc.
+\newcommand{\mathtechheader}{%
+  \includegraphics[width=\textwidth]{/Users/admin/Documents/thaitd/Code/giaoanMathtech/assets/header_banner.png}}
+\newcommand{\mathtechfooter}{%
+  \makebox[\linewidth][l]{%
+    \begin{minipage}[b]{\linewidth}
+      \setstretch{1}%
+      {\color{footbar}\rule{\linewidth}{5.5pt}}\par\vspace{4pt}
+      {\bfseries\color{foottitle}\fontsize{13}{15}\selectfont CÔNG TY CỔ PHẦN GIÁO DỤC VÀ CÔNG NGHỆ MATHTECH}\par\vspace{2pt}
+      {\fontsize{12}{14}\selectfont Website:\ \href{http://www.mathtech.vn}{\underline{www.mathtech.vn}}%
+        \hfill{\bfseries\color{ink}\thepage}}
+    \end{minipage}}}
+
+% Dấu QED \square — STIX Two Math (unicode-math) không nạp sẵn ký hiệu này;
+% định nghĩa lại bằng hộp rỗng để lời giải Ground Truth dùng \square không vỡ.
+\providecommand{\square}{\ensuremath{\mathord{\hbox{\framebox[1.25ex]{\rule{0pt}{0.95ex}}}}}}
+
+% --- Bộ ICON NÉT VẼ theo chặng (vector, vẽ bằng MÀU HIỆN HÀNH → in đen trắng vẫn rõ;
+%     đây là thứ KHÔI PHỤC nhận diện chặng khi bản in mất hết màu). ---
+\newcommand{\iconreview}{\tikz[line width=1.1pt,line cap=round]{% kính lúp
+  \draw (0,1pt) circle (3.1pt); \draw (2.3pt,-1.3pt)--(4.7pt,-3.7pt);}}
+\newcommand{\iconconcept}{\tikz[line width=1.1pt,line cap=round,line join=round]{% bóng đèn
+  \draw (0,1.4pt) circle (3pt);
+  \draw (-1.5pt,-1.4pt)--(-1.5pt,-2.7pt)--(1.5pt,-2.7pt)--(1.5pt,-1.4pt);
+  \draw (-1.3pt,-3.6pt)--(1.3pt,-3.6pt);}}
+\newcommand{\iconpractice}{\tikz[line cap=round]{% tạ tay
+  \draw[line width=1.1pt] (-4.2pt,0)--(4.2pt,0);
+  \draw[line width=3pt] (-4.2pt,-2.4pt)--(-4.2pt,2.4pt);
+  \draw[line width=3pt] (4.2pt,-2.4pt)--(4.2pt,2.4pt);}}
+\newcommand{\iconapply}{\tikz[line width=1pt]{% bia bắn (vận dụng/chạm trần)
+  \draw (0,0) circle (4pt); \draw (0,0) circle (2pt); \fill (0,0) circle (0.7pt);}}
+\newcommand{\iconreflect}{\tikz[line width=1.1pt,line cap=round,line join=round]{% lá cờ
+  \draw (-1.4pt,-4.4pt)--(-1.4pt,4.4pt);
+  \draw (-1.4pt,4.4pt)--(4.6pt,2.6pt)--(-1.4pt,0.8pt);}}
+
+% Huy hiệu chặng (badge tròn) — màu nền theo chặng, ICON nét vẽ trắng bên trong.
+% #1=màu chặng, #2=icon (vd \iconreview).
+\newcommand{\stagebadge}[2]{%
+  \begin{tikzpicture}[baseline=-3pt]
+    \node[circle,fill=#1,inner sep=0pt,minimum size=26pt]{\color{white}#2};
+  \end{tikzpicture}}
+
+% Dòng "eyebrow" nhận diện chặng (sắc độ brand, chữ sans nhỏ)
+\newcommand{\stageeyebrow}[1]{{\sffamily\footnotesize\color{brand}\textbf{#1}}\par\vspace{2pt}}
+
+% Chỗ còn lại trên trang không đủ #1 thì SANG TRANG MỚI — dùng ngay trước
+% \begin{stage} để đầu mục chặng không nằm trơ cuối trang.
+% KHÔNG dùng \needspace của gói cùng tên: nó chừa chỗ bằng mẹo "glue co giãn +
+% \penalty-100", biến vị trí đó thành điểm ngắt trang RẺ NHẤT nên TeX ngắt cả khi
+% trang còn trống 2/3 (Thầy 15/08/2026: trang loãng, bài nhảy lung tung).
+% Ở đây chỉ hỏi thẳng \pagegoal-\pagetotal rồi  — không cài điểm ngắt nào.
+% \pagegoal = \maxdimen nghĩa là trang còn trắng, khỏi xét.
+\newcommand{\stageneedspace}[1]{\par
+  \ifdim\pagegoal=\maxdimen\else
+    \ifdim\dimexpr\pagegoal-\pagetotal\relax<\dimexpr#1\relax\fi
+  \fi}
+
+% Khối CHẶNG — thanh nhấn trái + nền tô NHẠT theo màu chặng (zoning thị giác).
+% #1=số chặng, #2=tiêu đề, #3=màu chặng, #4=icon nét vẽ.
+\colorlet{stagecolor}{brand}
+\newtcolorbox{stage}[4]{
+  enhanced, breakable, colback=white, colframe=#3,
+  boxrule=0pt, arc=6pt, outer arc=6pt,
+  top=10pt,bottom=10pt,left=14pt,right=14pt, boxsep=0pt,
+  borderline west={3pt}{0pt}{#3},
+  overlay unbroken and first={
+    \node[anchor=north west,xshift=14pt,yshift=-8pt] (sb) at (frame.north west) {\stagebadge{#3}{#4}};
+    \node[anchor=west,text=ink] at ([xshift=9pt]sb.east) {\adjustbox{max width=0.8\linewidth}{\sffamily\bfseries\large #1.\;\;#2}}; },
+  before upper={\colorlet{stagecolor}{#3}\vspace{32pt}} }
+
+% --- Thanh HÀNH TRÌNH 5 chặng (tuyến "metro") — ICON trong vòng tròn màu chặng,
+%     tô đậm chặng hiện tại (#1=1..5; truyền 0 = bản đồ tĩnh, không tô đậm chặng nào).
+\newcommand{\journeybar}[1]{%
+  \begin{center}\begin{tikzpicture}[x=2.55cm,baseline]
+    \draw[line width=1.4pt,rule] (0,0) -- (4,0);
+    \foreach \i/\c/\ic/\lb in {%
+        0/stage1/{\iconreview}/{Khám phá}, 1/stage2/{\iconconcept}/{Khái niệm},%
+        2/stage3/{\iconpractice}/{Luyện tập}, 3/stage4/{\iconapply}/{Vận dụng},%
+        4/stage5/{\iconreflect}/{Tổng kết}}{%
+      \pgfmathtruncatemacro{\num}{\i+1}%
+      \ifnum\num=#1\relax
+        \node[circle,fill=\c,minimum size=24pt,inner sep=0pt] (jn\i) at (\i,0) {\color{white}\ic};
+        \node[font=\sffamily\bfseries\tiny,text=\c,below=3pt of jn\i,align=center] {\lb};
+      \else
+        \node[circle,draw=\c!70,line width=0.9pt,fill=\c!12,minimum size=22pt,inner sep=0pt] (jn\i) at (\i,0) {\color{\c}\ic};
+        \node[font=\sffamily\tiny,text=muted,below=3pt of jn\i,align=center] {\lb};
+      \fi}
+  \end{tikzpicture}\end{center}}
+
+% --- Thẻ CALLOUT (nhãn màu, icon) cho block noted có 'variant'. ---
+\newtcolorbox{calloutexample}{enhanced, breakable, drop shadow=black!8, colback=white, colframe=info!50,
+  boxrule=0.6pt, arc=6pt, top=6pt,bottom=4pt,left=8pt,right=8pt, before=\vspace{2pt},
+  coltitle=white, colbacktitle=info, fonttitle=\sffamily\bfseries\small,
+  attach boxed title to top left={xshift=10pt,yshift=-8pt}, boxed title style={arc=3pt,boxrule=0pt},
+  title={\ding{46}\ \ VÍ DỤ MẪU}}
+\newtcolorbox{callouttrap}{enhanced, breakable, drop shadow=black!8, colback=white, colframe=trap!55,
+  boxrule=0.6pt, arc=6pt, top=6pt,bottom=4pt,left=8pt,right=8pt, before=\vspace{2pt},
+  coltitle=white, colbacktitle=trap, fonttitle=\sffamily\bfseries\small,
+  attach boxed title to top left={xshift=10pt,yshift=-8pt}, boxed title style={arc=3pt,boxrule=0pt},
+  title={\ding{43}\ \ BẪY ĐIỂM}}
+\newtcolorbox{callouttarget}{enhanced, breakable, drop shadow=black!8, colback=white, colframe=gold!75,
+  boxrule=0.6pt, arc=6pt, top=6pt,bottom=4pt,left=8pt,right=8pt, before=\vspace{2pt},
+  coltitle=ink, colbacktitle=gold, fonttitle=\sffamily\bfseries\small,
+  attach boxed title to top left={xshift=10pt,yshift=-8pt}, boxed title style={arc=3pt,boxrule=0pt},
+  title={\ding{72}\ \ ĐÍCH ĐỀ KIỂM TRA}}
+\newtcolorbox{callouttip}{enhanced, breakable, drop shadow=black!8, colback=white, colframe=stage2!45,
+  boxrule=0.6pt, arc=6pt, top=6pt,bottom=4pt,left=8pt,right=8pt, before=\vspace{2pt},
+  coltitle=white, colbacktitle=stage2, fonttitle=\sffamily\bfseries\small,
+  attach boxed title to top left={xshift=10pt,yshift=-8pt}, boxed title style={arc=3pt,boxrule=0pt},
+  title={\ding{42}\ \ MẸO}}
+
+% --- Thẻ MỞ MÀN THỰC TẾ (đặc sản: hook đời thực mở đầu phiếu) ---
+\newtcolorbox{openerbox}{enhanced, breakable, drop shadow=black!10, colback=white, colframe=stage1!55,
+  boxrule=0.6pt, arc=6pt, top=7pt,bottom=5pt,left=9pt,right=9pt, before=\vspace{2pt},
+  coltitle=white, colbacktitle=stage1, fonttitle=\sffamily\bfseries\small,
+  attach boxed title to top left={xshift=10pt,yshift=-8pt}, boxed title style={arc=3pt,boxrule=0pt},
+  title={\ding{44}\ \ MỞ MÀN THỰC TẾ}}
+
+% --- "Thầy mách nhỏ" (chỗ dành cho linh vật; nay dùng icon GV, sau thay ảnh mascot) ---
+\newcommand{\mascottip}[1]{%
+  \par\vspace{3pt}\noindent
+  \begin{tcolorbox}[enhanced,breakable,colback=white,colframe=stage5!40,
+    boxrule=0.5pt,arc=8pt,left=42pt,top=6pt,bottom=6pt,right=10pt,before=\vspace{2pt},
+    overlay={\node[anchor=west,font=\LARGE,text=stage5] at ([xshift=10pt]frame.west) {\ding{43}};}]
+    {\sffamily\footnotesize\bfseries\color{stage5}THẦY MÁCH NHỎ:}\; #1
+  \end{tcolorbox}}
+
+% --- Sao MỨC ĐỘ NHẬN THỨC (Bloom). #1 = level: 1 Nhận biết, 2 Thông hiểu,
+%     3 Vận dụng (★ vàng, đủ-rỗng cho rõ khi in đen trắng), 4 Vận dụng cao
+%     (◆◆◆◆ MÀU KIM CƯƠNG để nổi bật khác hẳn ba mức kia).
+\newcommand{\diffstars}[1]{{\footnotesize%
+  \ifnum#1>3\color{diamond}\ding{72}\hspace{0.5pt}\ding{72}\hspace{0.5pt}\ding{72}\hspace{0.5pt}\ding{72}\else
+  \color{gold}\ding{72}\hspace{0.5pt}%
+  \ifnum#1>1\ding{72}\else\ding{73}\fi\hspace{0.5pt}%
+  \ifnum#1>2\ding{72}\else\ding{73}\fi\fi}}
+
+% --- QR video lời giải (đặc sản: cầu nối giấy → video). #1 = URL ---
+\newcommand{\videoqr}[1]{%
+  \par\nobreak\vspace{1pt}\hfill
+  \begin{tabular}{@{}c@{}}\qrcode[height=0.95cm]{#1}\\[1pt]
+  {\tiny\sffamily\color{muted}\ding{42}\,video lời giải}\end{tabular}\par\vspace{-2pt}}
+
+% Hộp "kiến thức điền khuyết"
+\newtcolorbox{noted}{enhanced, breakable, drop shadow=black!8, colback=white, colframe=rule, boxrule=0.4pt, arc=6pt,
+  left=12pt, right=12pt, top=8pt, bottom=8pt, before=\vspace{4pt}}
+
+% Banner MỤC PHỤ (BTVN / Bài tập mở rộng) — tách hẳn khỏi hộp chặng đánh số.
+% Một thanh nền brand, chữ trắng, full width; đứng riêng ngoài hộp \begin{stage}.
+% Banner cũng mồ côi y như đầu mục chặng (4 phiếu dính, print_gate 15/08/2026): thanh
+% đỏ "BÀI TẬP VỀ NHÀ" nằm chốt cuối trang, BTVN 1 nhảy sang trang sau. Đòi đủ chỗ cho
+% banner + ít nhất một bài có hình (\wrapclumpmin 3,1cm) trước khi in.
+\newcommand{\worksheetsection}[1]{%
+  \stageneedspace{4cm}%
+  \par\addvspace{13pt}\noindent
+  \colorbox{brand}{\makebox[\dimexpr\linewidth-2\fboxsep\relax][l]{%
+    \sffamily\bfseries\color{white}\strut #1}}%
+  \par\addvspace{7pt}%
+}
+
+% Chỗ trống cho HS điền: MỘT kiểu chấm "......" cho MỌI ô — bài tập ([[blank]]), ô trong
+% công thức ([[mblank]]) lẫn ví dụ mẫu ([[fill:]]). Thầy 09/10/2026: "kí hiệu ___ hay ....
+% nhất quán, mỗi chỗ một cái khác nhau". Màu ink!85 chứ KHÔNG dùng `rule` (#E1E4EA): xám
+% nhạt đó in ra giấy gần như mất hẳn, trông như phiếu "thiếu dấu ... chỗ điền khuyết".
+\newcommand{\blank}[1][5cm]{\tikz[baseline]{\draw[ink!85,line width=1.1pt,line cap=round,dash pattern=on 0pt off 3pt](2pt,-.1ex)--(\dimexpr#1-1pt,-.1ex);}}
+\newcommand{\fillline}{\par\nointerlineskip\vspace{7pt}\noindent\blank[\dimexpr\linewidth-8pt]}
+
+% Ô khuyết TRONG VÍ DỤ MẪU (token [[fill:đáp án]]). Cùng một token in ra hai kiểu:
+%   • Phiếu HS + Slide : \fillblank{W} — ô chấm (CÙNG kiểu \blank) để trò điền cùng thầy;
+%   • Sổ tay GV        : \fillans{đáp án} — in sẵn đáp án, khỏi lặp lại bẫy
+%                        "guide.pdf trắng đáp án" (Thầy bắt 2026-08-12).
+\newcommand{\fillblank}[1]{\blank[#1]}
+\newcommand{\fillans}[1]{\textcolor{brand}{\underline{\smash{#1}}}}
+
+% Khung để HS TỰ VẼ HÌNH vào phiếu (Thầy chốt 04/11/2026: chiều cao chuẩn 5.0cm;
+% có thể in sẵn đường tròn nền #2 để cố định vùng vẽ cho HS). Viền đứt mảnh + nhãn nhắc việc.
+\newcommand{\drawbox}[2][5.0]{%
+  \par\nointerlineskip\vspace{6pt}\noindent
+  \begin{tikzpicture}
+    \draw[rule!70, dashed, line width=0.5pt, rounded corners=3pt]
+      (0,0) rectangle (\linewidth, #1);
+    \node[anchor=north west, font=\sffamily\scriptsize\itshape, color=muted]
+      at (4pt, #1-3pt) {\ifx\relax#2\relax Vẽ hình vào khung này\else Vẽ tiếp vào hình trong khung này\fi};
+    \ifx\relax#2\relax\else
+      \node[anchor=center] at (0.50\linewidth, 0.5*#1) {\mbox{#2}};
+    \fi
+  \end{tikzpicture}\par\vspace{4pt}%
+}
+
+% --- Cụm "đề bài + hộp hình treo bên phải" ([[wrap]]) ------------------------
+% Hộp hình dựng bằng \smash nên cao 0pt: TeX KHÔNG biết nó chiếm chỗ, bài rơi sát
+% đáy trang thì hình đè lên chân trang. Trước đây chừa chỗ bằng \needspace — SAI,
+% vì cụm này nằm TRONG hộp \begin{stage} (tcolorbox breakable): tcolorbox cắt hộp
+% bằng \vsplit, mà \needspace cài sẵn \penalty-100 kèm glue co giãn nên điểm đó
+% luôn là điểm cắt RẺ NHẤT ⇒ ngắt trang tại MỌI bài có [[wrap]], kể cả khi trang
+% còn trống 2/3 (đầu mục chặng mồ côi cuối trang, trang loãng — Thầy 15/08/2026).
+% Cách đúng: gói cả cụm vào MỘT hộp. \vsplit không cắt được vào trong hộp nên khi
+% hết chỗ cụm tự nhảy nguyên khối sang trang sau.
+% Đề ngắn hơn hình thì phải chừa thêm chỗ cho phần hình thò xuống — nhưng chừa bằng
+% \vspace* SAU hộp cũng hỏng nốt (\vspace* cài \hrule+\nobreak, lại đẻ ra điểm ngắt
+% xấu: banner "BÀI TẬP VỀ NHÀ" trơ cuối trang). Nên NHÉT phần bù vào ĐỘ SÂU của hộp
+% (\raisebox{0pt}[ht][dp+bù]): TeX thấy hộp cao đúng thật, không thêm glue/penalty nào.
+%
+% ⛔ ĐỪNG "tối ưu" bằng \vsplit ... to \wrapclumpmin để chỉ giữ liền khối 3,1cm đầu
+% rồi \unvbox phần đuôi. Đã thử 15/08/2026 và HỎNG NẶNG: \vsplit ép hộp cao ĐÚNG
+% 3,1cm, nhưng nó chỉ cắt được tại điểm ngắt HỢP LỆ — đề ngắn vài dòng thì điểm ngắt
+% đầu tiên nằm quá 3,1cm ⇒ hộp chứa 6cm nội dung mà khai 3,1cm, phần thừa TRÀN RA ĐÈ
+% lên bài kế tiếp (chữ chồng chữ, hình chồng hình ở cả 4 phiếu chương IV).
+% Giá phải trả của bản an toàn: bài có hình dài (tới 11,5cm) gặp trang gần đầy thì
+% nhảy nguyên khối, bỏ trắng đáy trang. Chấp nhận — thà phí giấy còn hơn chữ đè chữ.
+\newsavebox{\wrapclumpbox}
+\newlength{\wrapclumph}
+\newlength{\wrapclumpmin}\setlength{\wrapclumpmin}{3.1cm}
+\newenvironment{wrapclump}
+  {\par\begin{lrbox}{\wrapclumpbox}%
+   \begin{minipage}[t]{\linewidth}\setlength{\parindent}{0pt}}
+  {\end{minipage}\end{lrbox}%
+   \setlength{\wrapclumph}{\dimexpr\ht\wrapclumpbox+\dp\wrapclumpbox\relax}%
+   \par\noindent
+   \ifdim\wrapclumph<\wrapclumpmin
+     \raisebox{0pt}[\ht\wrapclumpbox][\dimexpr\dp\wrapclumpbox+\wrapclumpmin-\wrapclumph\relax]%
+       {\usebox{\wrapclumpbox}}%
+   \else
+     \usebox{\wrapclumpbox}%
+   \fi
+   \par}
+
+% Hộp "gợi ý mở khi bí" cho bài khó — hạ ngưỡng nhập, KHÔNG phải lời giải.
+\newtcolorbox{hintbox}{enhanced, breakable, colback=white, colframe=brand!35,
+  boxrule=0.4pt, arc=2pt, top=4pt,bottom=4pt,left=10pt,right=10pt,
+  before=\vspace{3pt}}
+
+% Hộp QUY TRÌNH GIẢI BÀI — in trên phiếu HS ngay dưới đề bài VẬN DỤNG (Thầy chốt
+% 30/08/2026: "các dạng vận dụng có phần quy trình giải bài trong phiếu từng bài").
+% Khác `hintbox` (gợi ý mở khi bí): đây là CÁC BƯỚC CHUẨN, luôn hiện, để HS bám mà làm.
+\newtcolorbox{quytrinhbox}{enhanced, breakable, colback=stage3!6, colframe=stage3!45,
+  boxrule=0.5pt, arc=3pt, top=4pt,bottom=4pt,left=10pt,right=10pt,
+  before=\vspace{3pt}}
+
+% Sơ đồ tư duy điền khuyết — style chung cho forest (nút bo, viền brand, nút gốc nổi).
+\forestset{
+  mindmap/.style={
+    for tree={
+      draw=brand!50, rounded corners=2pt, line width=0.5pt,
+      font=\sffamily\footnotesize, align=left, inner sep=3pt,
+      fill=neutral, edge={brand!45, line width=0.6pt},
+      grow'=0, parent anchor=east, child anchor=west, anchor=west,
+      l sep=14pt, s sep=5pt,
+    },
+    where level=0{fill=brand!12, draw=brand, font=\sffamily\bfseries\footnotesize}{},
+    forked edges,
+  },
+}
+
+% --- Linh kiện riêng cho Sổ tay GV (guide.pdf) ---
+% Hộp LỜI GIẢI: viền + nhãn đỏ trầm (brand), chữ giải cũng đỏ trầm để tách khỏi đề.
+\newtcolorbox{solutionbox}{enhanced, breakable, drop shadow=black!8, colback=white, colframe=brand,
+  boxrule=0.6pt, arc=6pt, top=6pt,bottom=4pt,left=8pt,right=8pt, before=\vspace{2pt},
+  coltitle=white, colbacktitle=brand, attach boxed title to top left={xshift=10pt,yshift=-8pt},
+  boxed title style={arc=3pt,boxrule=0pt}, fonttitle=\sffamily\bfseries\small,
+  title={HƯỚNG DẪN CHI TIẾT}}
+
+% Hộp LỜI GIẢI TỪNG BÀI (guide.pdf) — gọn hơn solutionbox vì mỗi phiếu có hàng trăm cái:
+% viền trái đậm, nền nhạt, không đổ bóng. Nhãn "Lời giải." nằm ngay trong dòng đầu.
+\newtcolorbox{answerbox}{enhanced, breakable, colback=white, colframe=brand!55,
+  boxrule=0pt, leftrule=2pt, arc=0pt, sharp corners,
+  top=3pt,bottom=3pt,left=8pt,right=8pt, fontupper=\small\color{brand!85!black},
+  before=\vspace{3pt}, after=\vspace{2pt}}
+
+% Hộp MẸO chung
+\newtcolorbox{tipbox}{enhanced, breakable, drop shadow=black!8, colback=white, colframe=ink!55,
+  boxrule=0.6pt, arc=6pt, top=6pt,bottom=4pt,left=8pt,right=8pt, before=\vspace{2pt},
+  coltitle=white, colbacktitle=ink, attach boxed title to top left={xshift=10pt,yshift=-8pt},
+  boxed title style={arc=3pt,boxrule=0pt}, fonttitle=\sffamily\bfseries\small,
+  title={\ding{42}\ \ MẸO SƯ PHẠM ĐIỀU PHỐI}}
+
+% Đường phân cách chặng nghệ thuật: dòng kẻ ngang màu đỏ mảnh
+\newcommand{\stageseparator}{%
+  \par\vspace{10pt}
+  {\color{brand!40}\hrule height 0.5pt}
+  \par\vspace{10pt}%
+}
+
+% --- Lưới ô ly chuẩn tiểu học (ô vuông lớn 10mm x 10mm chia 4x4 ô nhỏ 2.5mm) ---
+% #1 = số dòng ô vuông lớn (chiều cao, tính theo cm)
+\newcommand{\olyline}[1][2]{%
+  \par\nointerlineskip\vspace{5pt}\noindent
+  \begin{tikzpicture}
+    \draw[step=0.25cm,ink!15,line width=0.3pt] (0,0) grid (\linewidth, #1);
+    \draw[step=1cm,ink!35,line width=0.5pt] (0,0) grid (\linewidth, #1);
+  \end{tikzpicture}\par\vspace{2pt}%
+}
+
+% Lưới ô ly nằm ngang (inline) với chiều rộng tùy chọn
+% #1 = chiều rộng (vd 2cm, 3cm)
+\newcommand{\olybox}[1]{%
+  \begin{tikzpicture}[baseline=-0.5ex]
+    \draw[step=0.25cm,ink!15,line width=0.3pt] (0,0) grid (#1, 1);
+    \draw[step=1cm,ink!35,line width=0.5pt] (0,0) grid (#1, 1);
+  \end{tikzpicture}%
+}
+
+
+% ═══ LINH KIỆN CHO KHUÔN NỘI DUNG CÓ CẤU TRÚC (22–23/09/2026) ═══════════════
+% Đi kèm các trường mới của schema (`ParaBlock.variant`, `DefListBlock`,
+% `ProblemBlock.options/figure`). Bố cục do template tính, seed chỉ khai nội dung.
+
+% --- Tiêu đề mục trong khối lý thuyết ("1. Đường tròn", "2. Vị trí của một điểm…").
+% Trước đây chỉ gõ `\textbf{1. Đường tròn}` nên tiêu đề CHÌM vào thân bài: cùng cỡ,
+% cùng màu, không khoảng thở ⇒ cả khối lý thuyết đọc thành một mảng chữ đặc.
+% Khoảng TRÊN rộng hơn khoảng DƯỚI (8/3pt) — luật gần-xa: tiêu đề phải dính vào phần
+% nội dung của CHÍNH NÓ, tách khỏi mục trước.
+% Tiêu đề PHẦN (cấp trên \lythuyetmuc): "A. Lý thuyết" / "B. Phương pháp chứng minh…" (10/10/2026).
+% Chữ to hơn + vạch màu chặng bên dưới để mắt tách được phần với mục con.
+\newcommand{\phanmuc}[1]{%
+  \par\addvspace{12pt}%
+  {\sffamily\bfseries\large\color{stagecolor}#1}%
+  \par\nobreak\vspace{2pt}{\color{stagecolor}\hrule height 0.7pt}%
+  \par\nobreak\addvspace{5pt}}
+\newcommand{\lythuyetmuc}[1]{%
+  \par\addvspace{8pt}%
+  {\sffamily\bfseries\color{stagecolor}#1}%
+  \par\nobreak\addvspace{3pt}}% \nobreak: tiêu đề mục KHÔNG được mồ côi cuối trang
+
+% --- Danh sách ĐỊNH NGHĨA: mỗi mục MỘT DÒNG, dòng tràn thụt vào thẳng hàng.
+% Thay lối gõ tay "$\bullet$ A \quad $\bullet$ B" dán hai định nghĩa vào CÙNG một
+% dòng rồi tự ngắt ở chỗ ngẫu nhiên (Thầy chê 22/09: "lý thuyết quá khó nhìn").
+% Thuật ngữ in đậm MÀU MỰC, KHÔNG dùng màu chặng: tô cùng màu với \lythuyetmuc thì
+% hai cấp trông ngang hàng, mắt không tách được mục lớn với mục con.
+\newlist{dinhnghia}{description}{1}
+\setlist[dinhnghia]{
+  leftmargin=1.2em, labelindent=0pt, labelsep=0.4em, align=left,
+  topsep=3pt, itemsep=3.5pt, parsep=0pt, partopsep=0pt,
+  font=\normalfont\bfseries\color{ink}}
+
+% --- Lưới PHƯƠNG ÁN TRẮC NGHIỆM. Thay lối gõ tay \parbox[t]{0.30\linewidth}×4 (chỉ
+% dùng 60% bề ngang, lại phải chèn \par\vspace{6pt} giữa hai hàng). Bề rộng ô TÍNH RA
+% từ số cột; số cột do `_blocks.j2` chọn theo phương án dài nhất.
+% Trừ #1 khe chứ KHÔNG phải #1-1 (dù chỉ có #1-1 khe thật): cộng khít đúng \linewidth
+% thì TeX hết chỗ co, ô CUỐI rớt xuống dòng ⇒ 4 phương án in ra thành 3+1.
+\newlength{\mcqw}\newlength{\mcqgap}\setlength{\mcqgap}{0.02\linewidth}
+\newcounter{mcqcol}\newcounter{mcqn}
+\newenvironment{mcq}[1]
+  {\par\addvspace{3pt}\setcounter{mcqcol}{0}\setcounter{mcqn}{#1}%
+   \setlength{\mcqw}{\mcqgap}\multiply\mcqw by #1\relax
+   \setlength{\mcqw}{\dimexpr(\linewidth-\mcqw)/#1\relax}%
+   \setlength{\parindent}{0pt}\noindent}
+  {\par\addvspace{2pt}}
+\newcommand{\mcqitem}[2]{%
+  \parbox[t]{\mcqw}{\raggedright\textbf{#1.}~#2}%
+  \stepcounter{mcqcol}%
+  \ifnum\value{mcqcol}<\value{mcqn}\hspace{\mcqgap}\else
+    \setcounter{mcqcol}{0}\par\addvspace{3pt}\fi}
+
+% --- Hình ĐẶT DƯỚI đề, căn giữa (Thầy chốt 22/09: "đề bài trước → Hình → các đáp án
+% / các câu điền khuyết"; bỏ hẳn kiểu treo hình sang cột phải vì cột hẹp làm hình co
+% nhỏ đọc không ra nhãn, mà bài dài thì cột đề cũng hẹp theo).
+% `width=` (ÉP bề ngang) chứ KHÔNG `max width=` (chỉ THU NHỎ): hình TikZ hình học có
+% kích thước tự nhiên rất nhỏ nên `max width` để nguyên vẫn bé tí.
+% `\par\nobreak` mở đầu: cấm ngắt trang GIỮA đề và hình của chính nó.
+% `\nobreak` trước nhãn: cấm nhãn "Hình N" rớt sang trang sau, xa hình của nó (09/10/2026).
+\newcommand{\hinhcap}[1]{\ifx\relax#1\relax\else
+  \par\nobreak\vspace{2pt}{\sffamily\scriptsize\itshape\color{muted}#1}\fi}
+% Phạt MỀM (\penalty400) chứ KHÔNG \nobreak: \nobreak = penalty 10000 = CẤM TUYỆT ĐỐI
+% tách đề khỏi hình, nên cụm đề+hình+ý thành khối cao ~9cm nhảy nguyên khối, để lại
+% 8–10cm trắng (phiếu A trang 5, 9, 11). Phạt mềm để TeX tự cân: giữ đề với hình khi
+% còn chỗ, chịu tách khi cái giá phải trả là cả mảng giấy trắng.
+% Tham số TUỲ CHỌN #1 = trần chiều cao (mặc định 5cm). Hình trong HỘP VÍ DỤ dùng
+% trần nhỏ hơn: hộp ví dụ là tcolorbox LỒNG trong hộp chặng nên KHÔNG cắt trang được,
+% hộp cao ~9cm gặp trang còn 8cm là nhảy nguyên khối. Hạ trần hình trong hộp là cách
+% duy nhất bớt chiều cao mà vẫn giữ form đóng khung.
+\newcommand{\figbelow}[4][5cm]{\par\penalty400\addvspace{3pt}%
+  {\centering\adjustbox{width=#2\linewidth, max totalheight=#1}{#3}\hinhcap{#4}\par}\addvspace{2pt}}
+% Bản DÍNH CỨNG (\nobreak) cho đề NGẮN (1–2 dòng): tách đề ngắn khỏi hình không cứu
+% được bao nhiêu giấy (hình vẫn phải sang trang sau) mà HS phải lật trang mới thấy
+% hình (phiếu 2 ch.5 9C: Bài 2 đề cuối trang 3, Hình 3 đầu trang 4). Đề dài vẫn dùng
+% \figbelow phạt mềm như trên. Template chọn theo độ dài đề (xem _blocks.j2).
+\newcommand{\figbelowkeep}[4][5cm]{\par\nobreak\addvspace{3pt}%
+  {\centering\adjustbox{width=#2\linewidth, max totalheight=#1}{#3}\hinhcap{#4}\par}\addvspace{2pt}}
+\usepackage{setspace}\setstretch{1.16}
+\setlength{\parindent}{0pt}
+\setlength{\parskip}{2.5pt}
+
+% Header / footer (MathTech Premium Layout)
+\usepackage[colorlinks=true,linkcolor=blue,urlcolor=blue]{hyperref}
+\usepackage{eso-pic}
+\AddToShipoutPictureBG{%
+  \begin{tikzpicture}[remember picture,overlay]
+        % Watermark IN: ảnh vốn đã 20% mực, nhưng phóng 1.2 + opacity 1.0 thì nó choán
+        % gần hết vùng trống và in ra (nhất là máy in đen trắng) thành một vệt xám lớn
+        % đè lên chỗ học sinh viết. Thu nhỏ và làm nhạt thêm cho dễ đọc, đỡ tốn mực.
+        \node[rotate=60,opacity=0.45] at (current page.center) {\includegraphics[scale=0.8]{/Users/admin/Documents/thaitd/Code/giaoanMathtech/assets/Watermark_Opacity_20.png}};
+        \draw[line width=0.5pt,color=rule] 
+          ([xshift=8mm,yshift=-8mm]current page.north west) rectangle ([xshift=-8mm,yshift=8mm]current page.south east);
+        \draw[line width=1.5pt,color=brand] 
+          ([xshift=8.5mm,yshift=-8.5mm]current page.north west) -- ([xshift=18mm,yshift=-8.5mm]current page.north west);
+        \draw[line width=1.5pt,color=brand] 
+          ([xshift=8.5mm,yshift=-8.5mm]current page.north west) -- ([xshift=8.5mm,yshift=-18mm]current page.north west);
+        \draw[line width=1.5pt,color=brand] 
+          ([xshift=-8.5mm,yshift=-8.5mm]current page.north east) -- ([xshift=-18mm,yshift=-8.5mm]current page.north east);
+        \draw[line width=1.5pt,color=brand] 
+          ([xshift=-8.5mm,yshift=-8.5mm]current page.north east) -- ([xshift=-8.5mm,yshift=-18mm]current page.north east);
+        \draw[line width=1.5pt,color=brand] 
+          ([xshift=8.5mm,yshift=8.5mm]current page.south west) -- ([xshift=18mm,yshift=8.5mm]current page.south west);
+        \draw[line width=1.5pt,color=brand] 
+          ([xshift=8.5mm,yshift=8.5mm]current page.south west) -- ([xshift=8.5mm,yshift=18mm]current page.south west);
+        \draw[line width=1.5pt,color=brand] 
+          ([xshift=-8.5mm,yshift=8.5mm]current page.south east) -- ([xshift=-18mm,yshift=8.5mm]current page.south east);
+        \draw[line width=1.5pt,color=brand] 
+          ([xshift=-8.5mm,yshift=8.5mm]current page.south east) -- ([xshift=-8.5mm,yshift=18mm]current page.south east);
+  \end{tikzpicture}%
+}
+
+\pagestyle{fancy}\fancyhf{}
+\renewcommand{\headrulewidth}{0pt}
+\renewcommand{\footrulewidth}{0pt}
+
+% Đầu trang = đúng ảnh banner, không chữ. Chân trang = mẫu công ty, không hotline.
+% Cả hai linh kiện định nghĩa một chỗ ở preamble/_macros.tex.j2.
+\fancyhead[C]{\mathtechheader}
+\fancyfoot[C]{\mathtechfooter}
+
+
+\begin{document}
+
+% Khối tiêu đề với Top Card thông tin học sinh
+\begin{tcolorbox}[
+  enhanced, colback=neutral, colframe=brand!40, boxrule=0.8pt, arc=4pt,
+  top=4pt,
+  bottom=4pt,
+  left=10pt, right=10pt, boxsep=0pt,
+  before=\vspace{2pt}, after=\vspace{4pt}]
+  \sffamily
+{\setlength{\fboxsep}{4pt}\colorbox{brand}{\color{white}\bfseries\footnotesize\strut\,ĐỀ KIỂM TRA ĐỊNH KÌ CUỐI HỌC KÌ I · NĂM HỌC 2024 – 2025\,}}\hfill{\footnotesize\color{muted}Lớp 5}\par\vspace{4pt}
+  \titlefit{\bfseries\fontsize{16pt}{19pt}\selectfont\color{brand}ĐỀ KIỂM TRA CUỐI HỌC KÌ I — ĐỀ 1 (40 PHÚT)}\par\vspace{5pt}
+  {Họ và tên:~\blank[6cm]\hfill Lớp:~\blank[3.2cm]}
+\end{tcolorbox}
+\vspace{1pt}
+
+\justifying\setlength{\parindent}{0pt}
+\begin{tabular}{|p{3.2cm}|p{12.4cm}|}
+\hline
+\centering\textbf{Điểm} & \centering\textbf{Lời nhận xét của thầy cô} \tabularnewline
+\vspace{0.35cm} & \vspace{0.35cm} \tabularnewline
+\hline
+\end{tabular}
+\par\vspace{2pt}
+
+\textbf{PHẦN I. TRẮC NGHIỆM (4,0 điểm).} \textit{Em làm bài ngay vào đề. Khoanh vào chữ cái đặt trước câu trả lời đúng (mỗi câu đúng được 0,5 điểm).}
+
+\par\addvspace{2mm}
+{\clubpenalty=10000 \widowpenalty=10000 \relax \textbf{Câu 1.}~\diffstars{1} Chữ số $4$ trong số thập phân $53,412$ có giá trị là:\par}
+\begin{mcq}{4}
+\mcqitem{A}{$4$}
+\mcqitem{B}{$\dfrac{4}{10}$}
+\mcqitem{C}{$\dfrac{4}{100}$}
+\mcqitem{D}{$\dfrac{4}{1000}$}
+\end{mcq}
+
+\par\addvspace{2mm}
+{\clubpenalty=10000 \widowpenalty=10000 \relax \textbf{Câu 2.}~\diffstars{1} Số gồm $3$ chục, $2$ đơn vị, $7$ phần trăm, $6$ phần nghìn được viết là:\par}
+\begin{mcq}{4}
+\mcqitem{A}{$3,276$}
+\mcqitem{B}{$32,76$}
+\mcqitem{C}{$32,076$}
+\mcqitem{D}{$320,76$}
+\end{mcq}
+
+\par\addvspace{2mm}
+{\clubpenalty=10000 \widowpenalty=10000 \relax \textbf{Câu 3.}~\diffstars{1} Đường kính của một hình tròn có bán kính $r = 4,5\text{ cm}$ là:\par}
+\begin{mcq}{4}
+\mcqitem{A}{$9\text{ cm}$}
+\mcqitem{B}{$2,25\text{ cm}$}
+\mcqitem{C}{$14,13\text{ cm}$}
+\mcqitem{D}{$28,26\text{ cm}$}
+\end{mcq}
+
+\par\addvspace{2mm}
+{\clubpenalty=10000 \widowpenalty=10000 \relax \textbf{Câu 4.}~\diffstars{2} Số thập phân nhỏ nhất trong các số $2,454$; $4,743$; $2,345$; $3,542$ là:\par}
+\begin{mcq}{4}
+\mcqitem{A}{$2,454$}
+\mcqitem{B}{$4,743$}
+\mcqitem{C}{$2,345$}
+\mcqitem{D}{$3,542$}
+\end{mcq}
+
+\par\addvspace{2mm}
+{\clubpenalty=10000 \widowpenalty=10000 \relax \textbf{Câu 5.}~\diffstars{2} Làm tròn số thập phân $9,385$ đến hàng phần mười ta được số:\par}
+\begin{mcq}{4}
+\mcqitem{A}{$9,3$}
+\mcqitem{B}{$9,4$}
+\mcqitem{C}{$9,38$}
+\mcqitem{D}{$9,39$}
+\end{mcq}
+
+\par\addvspace{2mm}
+{\clubpenalty=10000 \widowpenalty=10000 \relax \textbf{Câu 6.}~\diffstars{2} Trong các số dưới đây, số đo bằng $2,45\text{ ha}$ là:\par}
+\begin{mcq}{4}
+\mcqitem{A}{$24\,500\text{ m}^2$}
+\mcqitem{B}{$0,245\text{ km}^2$}
+\mcqitem{C}{$245\,000\text{ m}^2$}
+\mcqitem{D}{$24\,500\text{ dm}^2$}
+\end{mcq}
+
+\par\addvspace{2mm}
+{\clubpenalty=10000 \widowpenalty=10000 \relax \textbf{Câu 7.}~\diffstars{2} Kết quả của phép tính nhẩm $765,9 \times 0,001$ là:\par}
+\begin{mcq}{4}
+\mcqitem{A}{$7,659$}
+\mcqitem{B}{$765\,900$}
+\mcqitem{C}{$0,7659$}
+\mcqitem{D}{$7\,659\,000$}
+\end{mcq}
+
+\par\addvspace{2mm}
+{\clubpenalty=10000 \widowpenalty=10000 \relax \textbf{Câu 8.}~\diffstars{3} Quan sát phép chia $43,19 : 21$ lấy đến $2$ chữ số ở phần thập phân của thương, ta được thương là $2,05$. Số dư của phép chia đó là:\par}
+\begin{mcq}{4}
+\mcqitem{A}{$14$}
+\mcqitem{B}{$1,4$}
+\mcqitem{C}{$0,14$}
+\mcqitem{D}{$0,014$}
+\end{mcq}
+
+
+\vspace{4pt}
+\justifying\setlength{\parindent}{0pt}
+\newpage
+\par\vspace{2pt}\noindent\textbf{PHẦN II. TỰ LUẬN (6,0 điểm)}
+
+\par\addvspace{2mm}
+{\clubpenalty=10000 \widowpenalty=10000 \relax
+\textbf{Bài 1.}~\diffstars{1} \textbf{(1,0 điểm)} Đặt tính rồi tính:\par\vspace{2pt}
+\textbf{a)} $52,65 + 38,7$ \hfill \textbf{b)} $104,3 - 58,46$ \hfill \textbf{c)} $18,5 \times 4,2$ \hfill \textbf{d)} $147,6 : 3,6$\par}
+
+\nopagebreak
+\olyline[2]\par
+
+
+
+\vspace{4pt}
+\justifying\setlength{\parindent}{0pt}
+\par\addvspace{2mm}
+{\clubpenalty=10000 \widowpenalty=10000 \relax
+\textbf{Bài 2.}~\diffstars{1} \textbf{(1,0 điểm)} Tính:\par\vspace{2pt}
+\textbf{a)} $\dfrac{7}{12} + \dfrac{5}{8}$ \hspace{4cm} \textbf{b)} $2\dfrac{2}{3} : \dfrac{8}{9}$\par}
+
+\nopagebreak
+\olyline[2]\par
+\par\addvspace{2mm}
+{\clubpenalty=10000 \widowpenalty=10000 \relax
+\textbf{Bài 3.}~\diffstars{2} \textbf{(1,0 điểm)} Viết số thích hợp vào chỗ chấm:\par\vspace{2pt}
+\textbf{a)} $9\text{ m } 25\text{ mm} = \dots\dots\dots\dots\text{ m}$ \hfill \textbf{b)} $7\text{ yến } 5\text{ kg} = \dots\dots\dots\dots\text{ yến}$\\[3pt] \\[3pt] \textbf{c)} $16\text{ ha } 500\text{ m}^2 = \dots\dots\dots\dots\text{ ha}$ \hfill \textbf{d)} $5\text{ km}^2\ 8\text{ ha} = \dots\dots\dots\dots\text{ km}^2$\par}
+
+
+\vspace{4pt}
+\justifying\setlength{\parindent}{0pt}
+\par\addvspace{2mm}
+{\clubpenalty=10000 \widowpenalty=10000 \relax
+\textbf{Bài 4.}~\diffstars{2} \textbf{(2,0 điểm)} Một thửa ruộng hình thang có đáy lớn $50\text{ m}$, đáy bé bằng $\dfrac{4}{5}$ đáy lớn. Chiều cao bằng trung bình cộng của hai đáy. \\[3pt] a) Tính diện tích thửa ruộng hình thang đó. \\[3pt] b) Người ta trồng lúa trên thửa ruộng, cứ $100\text{ m}^2$ thu hoạch được $70\text{ kg}$ thóc. Hỏi cả thửa ruộng thu hoạch được bao nhiêu tạ thóc?\par}
+
+\nopagebreak
+\olyline[2]\par
+
+\vspace{4pt}
+\justifying\setlength{\parindent}{0pt}
+\par\addvspace{2mm}
+{\clubpenalty=10000 \widowpenalty=10000 \relax
+\textbf{Bài 5.}~\diffstars{3} \textbf{(1,0 điểm)} Tìm một số thập phân biết rằng nếu dời dấu phẩy của số đó sang bên phải một chữ số thì số đó tăng thêm $175,05$ đơn vị.\par}
+
+\nopagebreak
+\olyline[2]\par
+\par\vspace{4pt}
+\nopagebreak\centerline{\textbf{--- HẾT ---}}
+\par\vspace{2pt}
+\centerline{\textit{\footnotesize Em nhớ đọc lại bài trước khi nộp nhé. Chúc em làm bài thật tốt!}}
+
+
+\vspace{4pt}
+
+\end{document}

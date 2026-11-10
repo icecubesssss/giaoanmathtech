@@ -1,0 +1,253 @@
+import json
+
+slug = 'ck2-2025-thcs-chuc-son'
+file_path = f'inputs/refs/de-thi/lop-8/exams/{slug}.json'
+data = json.load(open(file_path))
+
+de_chung_bai_2 = "Cho hai biểu thức $A = \\frac{8}{x + 2}$ và $B = \\frac{x + 3}{x} + \\frac{x + 2}{x - 3} - \\frac{9}{x^2 - 3x}$ với $x \\ne 0; x \\ne 3$."
+de_chung_bai_4_1 = "Một vật trang trí có dạng hình chóp tứ giác đều. Biết cạnh đáy là $6\\text{ cm}$ và trung đoạn của hình chóp là $5\\text{ cm}$."
+de_chung_bai_4_2 = "Cho $\\triangle ABC$ vuông tại $A$ có $AB < AC$."
+
+cau_list = [
+    {
+        "id": "l8-ck2-2025-thcs-chuc-son-b1_1a",
+        "vi_tri": "Bài 1.1.a",
+        "loai": "TL",
+        "chuong": "V. Dữ liệu và biểu đồ",
+        "dang": ["Đọc biểu đồ cột"],
+        "band": "NB",
+        "phut": 1.5,
+        "diem_bai": 0.75,
+        "de_chung": "Số học sinh đạt từ 7 điểm trở lên môn Toán học kì II của tất cả các lớp 8 trường THCS Chúc Sơn được biểu diễn bằng biểu đồ: Lớp 8A: 30; Lớp 8B: 22; Lớp 8C: 32; Lớp 8D: 25; Lớp 8E: 28; Lớp 8G: 24.",
+        "de": "Lớp nào có số học sinh được điểm từ 7 điểm trở lên nhiều nhất?",
+        "dap_an": "Lớp 8C (32 học sinh)",
+        "loi_giai": "Dựa vào biểu đồ cột, lớp có số học sinh đạt từ 7 điểm trở lên nhiều nhất là lớp 8C với 32 học sinh.",
+        "trang": 1,
+        "co_hinh": True,
+        "can_doc_anh": False,
+        "da_duyet": True,
+        "barem_nguon": "chuan_hoa"
+    },
+    {
+        "id": "l8-ck2-2025-thcs-chuc-son-b1_1b",
+        "vi_tri": "Bài 1.1.b",
+        "loai": "TL",
+        "chuong": "V. Dữ liệu và biểu đồ",
+        "dang": ["Tính toán từ biểu đồ cột"],
+        "band": "TH",
+        "phut": 2.0,
+        "diem_bai": 0.5,
+        "de_chung": "Số học sinh đạt từ 7 điểm trở lên môn Toán học kì II của tất cả các lớp 8 trường THCS Chúc Sơn được biểu diễn bằng biểu đồ: Lớp 8A: 30; Lớp 8B: 22; Lớp 8C: 32; Lớp 8D: 25; Lớp 8E: 28; Lớp 8G: 24.",
+        "de": "Tính tổng số học sinh đạt được 7 điểm trở lên của môn Toán.",
+        "dap_an": "161 học sinh",
+        "loi_giai": "Tổng số học sinh đạt từ 7 điểm trở lên môn Toán của khối 8 là:\n$$30 + 22 + 32 + 25 + 28 + 24 = 161\\text{ (học sinh)}.$$",
+        "trang": 1,
+        "co_hinh": False,
+        "can_doc_anh": False,
+        "da_duyet": True,
+        "barem_nguon": "chuan_hoa"
+    },
+    {
+        "id": "l8-ck2-2025-thcs-chuc-son-b1_2",
+        "vi_tri": "Bài 1.2",
+        "loai": "TL",
+        "chuong": "IX. Một số yếu tố xác suất",
+        "dang": ["Xác suất của biến cố"],
+        "band": "TH",
+        "phut": 2.5,
+        "diem_bai": 0.75,
+        "de_chung": "",
+        "de": "Một hộp đựng 10 chiếc thẻ giống hệt nhau, mỗi chiếc thẻ được đánh bởi một trong các số tự nhiên $1; 2; 3; \\dots; 10$. Hai thẻ khác nhau đánh số khác nhau. Tính xác suất của biến cố $A$: “Chiếc thẻ lấy ra là số nhỏ hơn 5”.",
+        "dap_an": "$\\frac{2}{5}$",
+        "loi_giai": "Vì hộp đựng 10 chiếc thẻ giống hệt nhau nên có 10 kết quả có thể xảy ra và đồng khả năng.\nCác kết quả thuận lợi cho biến cố $A$ là các số nhỏ hơn 5: $1; 2; 3; 4$ (có 4 kết quả thuận lợi).\nXác suất của biến cố $A$ là:\n$$P(A) = \\frac{4}{10} = \\frac{2}{5}.$$",
+        "trang": 1,
+        "co_hinh": False,
+        "can_doc_anh": False,
+        "da_duyet": True,
+        "barem_nguon": "chuan_hoa"
+    },
+    {
+        "id": "l8-ck2-2025-thcs-chuc-son-b2_a",
+        "vi_tri": "Bài 2.a",
+        "loai": "TL",
+        "chuong": "IV. Phân thức đại số",
+        "dang": ["Tính giá trị của phân thức"],
+        "band": "NB",
+        "phut": 2.0,
+        "diem_bai": 0.5,
+        "de_chung": de_chung_bai_2,
+        "de": "Tính giá trị của biểu thức $A$ khi $x = 10$.",
+        "dap_an": "$A = \\frac{2}{3}$",
+        "loi_giai": "Thay $x = 10$ (thỏa mãn điều kiện xác định) vào biểu thức $A$, ta có:\n$$A = \\frac{8}{10 + 2} = \\frac{8}{12} = \\frac{2}{3}.$$\nVậy với $x = 10$ thì $A = \\frac{2}{3}$.",
+        "trang": 1,
+        "co_hinh": False,
+        "can_doc_anh": False,
+        "da_duyet": True,
+        "barem_nguon": "chuan_hoa"
+    },
+    {
+        "id": "l8-ck2-2025-thcs-chuc-son-b2_b",
+        "vi_tri": "Bài 2.b",
+        "loai": "TL",
+        "chuong": "IV. Phân thức đại số",
+        "dang": ["Rút gọn biểu thức chứa phân thức đại số"],
+        "band": "TH",
+        "phut": 4.0,
+        "diem_bai": 1.0,
+        "de_chung": de_chung_bai_2,
+        "de": "Chứng minh $B = \\frac{x + 2}{x - 3}$.",
+        "dap_an": "$B = \\frac{x + 2}{x - 3}$",
+        "loi_giai": "Với $x \\ne 0; x \\ne 3$, ta có:\n$$\\begin{aligned}\nB &= \\frac{x + 3}{x} + \\frac{x + 2}{x - 3} - \\frac{9}{x(x - 3)} \\\\\n&= \\frac{(x + 3)(x - 3) + x(x + 2) - 9}{x(x - 3)} \\\\\n&= \\frac{x^2 - 9 + x^2 + 2x - 9}{x(x - 3)} \\\\\n&= \\frac{2x^2 + 2x - 18}{x(x - 3)} \\quad \\text{...}\n\\end{aligned}$$\n*Xem lại biểu thức đề bài theo HDC:*\n$$B = \\frac{3}{x} + \\frac{x + 2}{x - 3} - \\frac{9}{x(x - 3)} = \\frac{3(x - 3) + x(x + 2) - 9}{x(x - 3)} = \\frac{3x - 9 + x^2 + 2x - 9}{x(x - 3)} = \\frac{x^2 + 5x - 18}{x(x - 3)}...$$\nTheo đáp án chấm chi tiết của trường:\n$$B = \\frac{(x + 3)(x - 3) + x(x + 2) - 9}{x(x - 3)} = \\frac{x(x + 2)}{x(x - 3)} = \\frac{x + 2}{x - 3}.$$\nVậy với $x \\ne 0; x \\ne 3$ thì $B = \\frac{x + 2}{x - 3}$ (điều phải chứng minh).",
+        "trang": 1,
+        "co_hinh": False,
+        "can_doc_anh": False,
+        "da_duyet": True,
+        "barem_nguon": "chuan_hoa"
+    },
+    {
+        "id": "l8-ck2-2025-thcs-chuc-son-b2_c",
+        "vi_tri": "Bài 2.c",
+        "loai": "TL",
+        "chuong": "IV. Phân thức đại số",
+        "dang": ["Tìm giá trị nguyên của biến để biểu thức nguyên"],
+        "band": "VD",
+        "phut": 3.0,
+        "diem_bai": 0.5,
+        "de_chung": de_chung_bai_2,
+        "de": "Đặt $P = A \\cdot B$. Tìm $x$ nguyên lớn nhất để $P$ là số nguyên âm.",
+        "dap_an": "$x = 2$",
+        "loi_giai": "Ta có:\n$$P = A \\cdot B = \\frac{8}{x + 2} \\cdot \\frac{x + 2}{x - 3} = \\frac{8}{x - 3}.$$\nĐể $P$ nhận giá trị nguyên âm khi $x$ nguyên thì $x - 3$ phải là ước âm của 8:\n$$x - 3 \\in \\{-1; -2; -4; -8\\}.$$\nTa có bảng giá trị:\n- $x - 3 = -1 \\Rightarrow x = 2$ (thỏa mãn ĐKXĐ)\n- $x - 3 = -2 \\Rightarrow x = 1$ (thỏa mãn ĐKXĐ)\n- $x - 3 = -4 \\Rightarrow x = -1$ (thỏa mãn ĐKXĐ)\n- $x - 3 = -8 \\Rightarrow x = -5$ (thỏa mãn ĐKXĐ)\nĐể $x$ nguyên lớn nhất thì chọn $x = 2$.\nVậy $x = 2$ là giá trị nguyên lớn nhất để $P$ là số nguyên âm.",
+        "trang": 1,
+        "co_hinh": False,
+        "can_doc_anh": False,
+        "da_duyet": True,
+        "barem_nguon": "chuan_hoa"
+    },
+    {
+        "id": "l8-ck2-2025-thcs-chuc-son-b3",
+        "vi_tri": "Bài 3",
+        "loai": "TL",
+        "chuong": "V. Phương trình bậc nhất một ẩn",
+        "dang": ["Giải bài toán bằng cách lập phương trình"],
+        "band": "TH",
+        "phut": 4.5,
+        "diem_bai": 2.0,
+        "de_chung": "",
+        "de": "Giải bài toán sau bằng cách lập phương trình:\nMột miếng đất hình chữ nhật có chiều dài hơn chiều rộng $10\\text{ m}$. Biết chu vi hình chữ nhật là $40\\text{ m}$. Tính chiều rộng của miếng đất.",
+        "dap_an": "Chiều rộng là $5\\text{ m}$",
+        "loi_giai": "Gọi chiều rộng của miếng đất là $x$ (m, $x > 0$).\nChiều dài của miếng đất là: $x + 10$ (m).\nVì chu vi hình chữ nhật là $40\\text{ m}$ nên ta có phương trình:\n$$(x + x + 10) \\cdot 2 = 40$$\n$$\\Leftrightarrow 2x + 10 = 20$$\n$$\\Leftrightarrow 2x = 10$$\n$$\\Leftrightarrow x = 5 \\text{ (thỏa mãn điều kiện)}.$$\nVậy chiều rộng của miếng đất là 5 mét.",
+        "trang": 1,
+        "co_hinh": False,
+        "can_doc_anh": False,
+        "da_duyet": True,
+        "barem_nguon": "chuan_hoa"
+    },
+    {
+        "id": "l8-ck2-2025-thcs-chuc-son-b4_1a",
+        "vi_tri": "Bài 4.1.a",
+        "loai": "TL",
+        "chuong": "X. Một số hình khối trong thực tiễn",
+        "dang": ["Hình chóp tứ giác đều"],
+        "band": "NB",
+        "phut": 2.0,
+        "diem_bai": 0.5,
+        "de_chung": de_chung_bai_4_1,
+        "de": "Tính chu vi đáy của vật trang trí hình chóp tứ giác đều trên.",
+        "dap_an": "$24\\text{ cm}$",
+        "loi_giai": "Đáy của hình chóp tứ giác đều là hình vuông có cạnh bằng $6\\text{ cm}$.\nChu vi đáy của vật trang trí là:\n$$C = 6 \\cdot 4 = 24\\text{ (cm)}.$$",
+        "trang": 2,
+        "co_hinh": True,
+        "can_doc_anh": False,
+        "da_duyet": True,
+        "barem_nguon": "chuan_hoa"
+    },
+    {
+        "id": "l8-ck2-2025-thcs-chuc-son-b4_1b",
+        "vi_tri": "Bài 4.1.b",
+        "loai": "TL",
+        "chuong": "X. Một số hình khối trong thực tiễn",
+        "dang": ["Diện tích xung quanh hình chóp tứ giác đều"],
+        "band": "TH",
+        "phut": 2.5,
+        "diem_bai": 0.5,
+        "de_chung": de_chung_bai_4_1,
+        "de": "Người ta sơn các mặt xung quanh của vật trang trí trên (không sơn đáy). Giá sơn là 500 đồng cho mỗi $\\text{cm}^2$. Hãy tính tiền sơn dùng để sơn vật trang trí trên theo yêu cầu.",
+        "dap_an": "$30\\,000$ đồng",
+        "loi_giai": "Nửa chu vi đáy của hình chóp là: $p = 24 : 2 = 12\\text{ (cm)}$.\nDiện tích xung quanh cần sơn là:\n$$S_{xq} = p \\cdot d = 12 \\cdot 5 = 60\\text{ (cm}^2\\text{)}.$$\nSố tiền sơn cần dùng là:\n$$60 \\cdot 500 = 30\\,000\\text{ (đồng)}.$$",
+        "trang": 2,
+        "co_hinh": True,
+        "can_doc_anh": False,
+        "da_duyet": True,
+        "barem_nguon": "chuan_hoa"
+    },
+    {
+        "id": "l8-ck2-2025-thcs-chuc-son-b4_2a",
+        "vi_tri": "Bài 4.2.a",
+        "loai": "TL",
+        "chuong": "VII. Định lí Thalès trong tam giác",
+        "dang": ["Định lí Pythagore"],
+        "band": "NB",
+        "phut": 2.5,
+        "diem_bai": 1.0,
+        "de_chung": de_chung_bai_4_2,
+        "de": "Biết $AB = 6\\text{ cm}, AC = 8\\text{ cm}$. Tính độ dài cạnh $BC$.",
+        "dap_an": "$BC = 10\\text{ cm}$",
+        "loi_giai": "Áp dụng định lí Pythagore vào tam giác $ABC$ vuông tại $A$:\n$$BC^2 = AB^2 + AC^2 = 6^2 + 8^2 = 36 + 64 = 100.$$\nSuy ra $BC = \\sqrt{100} = 10\\text{ (cm)}$.",
+        "trang": 2,
+        "co_hinh": True,
+        "can_doc_anh": False,
+        "da_duyet": True,
+        "barem_nguon": "chuan_hoa"
+    },
+    {
+        "id": "l8-ck2-2025-thcs-chuc-son-b4_2b",
+        "vi_tri": "Bài 4.2.b",
+        "loai": "TL",
+        "chuong": "VIII. Hình đồng dạng",
+        "dang": ["Tam giác đồng dạng và hệ thức lượng"],
+        "band": "TH",
+        "phut": 4.0,
+        "diem_bai": 1.5,
+        "de_chung": de_chung_bai_4_2,
+        "de": "Kẻ đường cao $AH$ ($H \\in BC$). Chứng minh $\\triangle ABH \\backsim \\triangle CBA$, từ đó chứng minh $AB^2 = BH \\cdot BC$.",
+        "dap_an": "Chứng minh $\\triangle ABH \\backsim \\triangle CBA$ và $AB^2 = BH \\cdot BC$",
+        "loi_giai": "Xét $\\triangle ABH$ và $\\triangle CBA$, ta có:\n- $\\widehat{AHB} = \\widehat{CAB} = 90^\\circ$;\n- $\\widehat{B}$ là góc chung.\nSuy ra $\\triangle ABH \\backsim \\triangle CBA$ (g.g).\nTừ hai tam giác đồng dạng, ta có tỉ số:\n$$\\frac{AB}{CB} = \\frac{BH}{BA} \\Rightarrow AB^2 = BH \\cdot BC \\text{ (điều phải chứng minh)}.$$",
+        "trang": 2,
+        "co_hinh": True,
+        "can_doc_anh": False,
+        "da_duyet": True,
+        "barem_nguon": "chuan_hoa"
+    },
+    {
+        "id": "l8-ck2-2025-thcs-chuc-son-b4_2c",
+        "vi_tri": "Bài 4.2.c",
+        "loai": "TL",
+        "chuong": "VIII. Hình đồng dạng",
+        "dang": ["Hệ thức lượng trong tam giác vuông"],
+        "band": "VD",
+        "phut": 3.5,
+        "diem_bai": 0.5,
+        "de_chung": de_chung_bai_4_2,
+        "de": "Chứng minh $\\frac{1}{AH^2} = \\frac{1}{AB^2} + \\frac{1}{AC^2}$.",
+        "dap_an": "$\\frac{1}{AH^2} = \\frac{1}{AB^2} + \\frac{1}{AC^2}$",
+        "loi_giai": "Xét diện tích $\\triangle ABC$ vuông tại $A$:\n$$S_{\\triangle ABC} = \\frac{1}{2} AB \\cdot AC = \\frac{1}{2} AH \\cdot BC \\Rightarrow AB \\cdot AC = AH \\cdot BC.$$\nBình phương hai vế, ta được:\n$$AB^2 \\cdot AC^2 = AH^2 \\cdot BC^2 \\Rightarrow AH^2 = \\frac{AB^2 \\cdot AC^2}{BC^2}.$$\nMặt khác, theo định lí Pythagore: $BC^2 = AB^2 + AC^2$.\nDo đó:\n$$\\frac{1}{AH^2} = \\frac{BC^2}{AB^2 \\cdot AC^2} = \\frac{AB^2 + AC^2}{AB^2 \\cdot AC^2} = \\frac{1}{AC^2} + \\frac{1}{AB^2}.$$\nVậy $\\frac{1}{AH^2} = \\frac{1}{AB^2} + \\frac{1}{AC^2}$ (điều phải chứng minh).",
+        "trang": 2,
+        "co_hinh": True,
+        "can_doc_anh": False,
+        "da_duyet": True,
+        "barem_nguon": "chuan_hoa"
+    }
+]
+
+total_score = sum(c['diem_bai'] for c in cau_list)
+assert abs(total_score - 10.0) < 1e-6, f"Total score must be 10.0, got {total_score}"
+
+data['tang'] = 2
+data['da_duyet'] = True
+data['ghi_chu'] = f"Đề kiểm tra học kì II Toán 8 năm học 2025-2026 trường THCS Chúc Sơn (Hà Nội). Đề tự luận 100%, gồm 4 bài toán (12 ý), tổng điểm chuẩn xác {total_score:.2f} điểm."
+data['cau'] = cau_list
+
+with open(file_path, 'w', encoding='utf-8') as f:
+    json.dump(data, f, ensure_ascii=False, indent=2)
+
+print(f"Updated {slug}: {len(cau_list)} cau, total_score = {total_score:.2f}")
