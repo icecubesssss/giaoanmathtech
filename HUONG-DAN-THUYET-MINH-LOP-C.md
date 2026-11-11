@@ -208,6 +208,15 @@ Nếu có dạng đề chưa có dòng spec → **thêm dòng spec hoặc hỏi 
 > - **Ưu tiên 100% dạng bài có trong Đề thi Vào 10 và Đề thi học kỳ (CK1/GK1).**
 > - **CẤM gom quá 3 câu cho 1 dạng bài.** Phải tách nhỏ các dòng spec để phiếu có độ dốc mịn.
 
+### Quy trình bóc tách hạ bậc (VD → TH → NB) từ khâu phân dạng (Thầy chốt):
+
+- **Bước 1 — Chọn bài đích VD & Giải chi tiết luôn:** Chọn bài toán Vận dụng đích của buổi học (trích từ Đề thi Vào 10 / HK1). Người làm phân dạng phải giải chi tiết trọn vẹn đáp án ngay tại khâu này, không để đề thô.
+- **Bước 2 — Soi đáp án & Tách bước suy luận:**
+  * **VD $\to$ TH:** Nhìn vào lời giải, bóc các nhánh/bước chứng minh lớn thành các câu TH (ví dụ: chứng minh đường trung trực, chứng minh 2 tam giác bằng nhau/đồng dạng).
+  * **TH $\to$ NB:** Tiếp tục chẻ các câu TH thành các kỹ năng NB tối thiểu (xác định tam giác vuông, tiếp tuyến vuông góc bán kính tại tiếp điểm, đọc cạnh huyền chung, tỉ lệ thức).
+- **Bước 3 — Ghép vào phiếu:** Khi soạn phiếu học tập, chỉ việc bốc các bước đã giải sẵn để đưa vào các chặng tương ứng: Khám phá $\to$ Ví dụ mẫu $\to$ Điền khuyết Luyện tập 1 $\to$ Luyện tập 2 độc lập.
+- **Quy tắc cấp độ bài toán (Level & Sao):** Cấp độ tổng thể của cả bài toán được xác định theo Dạng bài và mục tiêu tổng thể (ví dụ: Bài thuộc Dạng Thông hiểu thì để `level: 2` tương ứng 2 sao ★★☆), dù bên trong các ý a), b) được chẻ thành bước đệm `[NB] ★` cho HS tiếp cận. Tuyệt đối không hạ sao bài toán tổng thể xuống 1 sao làm lệch cấu trúc độ khó của phiếu.
+
 ---
 
 ## §5 — Kiến thức nền HS C thiếu

@@ -109,6 +109,9 @@ class SpecPhieu(BaseModel):
     # MỖI chương có bài kiểm tra 45′ — buổi cuối chương V lớp 9C = 45′ luyện + 45′ kiểm
     # tra). Quỹ ví dụ/luyện tập/giờ trên lớp co theo phần còn lại; BTVN giữ nguyên.
     kiem_tra_phut: int = Field(0, ge=0, le=180, description="Phút kiểm tra chương trong buổi của phiếu")
+    # KHUÔN phiếu (Thầy chốt 10/11/2026), khớp `LessonPackage.khuon`: "chung_minh" ⇒
+    # thuyetminh_gate soi tỉ lệ theo `ratio_khuon` của tầng thay cho tỉ lệ chuẩn.
+    khuon: str = Field("", description="Khuôn phiếu cho cổng tỉ lệ, vd 'chung_minh'")
     rows: list[SpecRow] = Field(default_factory=list)
 
 

@@ -59,12 +59,18 @@ _NAM = re.compile(r"nam-(\d{4})-\d{4}")
 
 
 def _get(url: str, timeout: int = 60) -> bytes | None:
+    """Máy chủ hay cắt cụt (IncompleteRead) ⇒ thử lại tối đa 4 lần."""
+    import http.client
     req = urllib.request.Request(url, headers={"User-Agent": UA, "Referer": HOST + "/"})
-    try:
-        with urllib.request.urlopen(req, timeout=timeout) as r:
-            return r.read()
-    except (urllib.error.HTTPError, urllib.error.URLError, TimeoutError, OSError):
-        return None
+    for lan in range(4):
+        try:
+            with urllib.request.urlopen(req, timeout=timeout) as r:
+                return r.read()
+        except urllib.error.HTTPError:
+            return None
+        except (http.client.IncompleteRead, urllib.error.URLError, TimeoutError, OSError):
+            time.sleep(1 + lan)
+    return None
 
 
 def quet_sitemap(dung_cache: bool = True) -> list[str]:

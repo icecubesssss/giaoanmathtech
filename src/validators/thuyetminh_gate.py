@@ -32,7 +32,7 @@ from src.schema.thuyetminh_spec import (
 from src.schema.exam_bank import lookup as bank_lookup
 from src.schema.tier_spec import (
     BANDS, chuong_co_vd, gop_vd_vdc, load_tier_spec, so_ca_yeu_cau, subject_block,
-    tier_ratio,
+    khuon_ratio, tier_ratio,
 )
 
 # Một dạng (row) chiếm quá tỉ lệ này của quỹ onclass cả buổi ⇒ nghi gõ nhầm số câu.
@@ -254,9 +254,12 @@ def check_thuyetminh(spec: ThuyetMinhSpec) -> tuple[list[str], list[str]]:
                     f"({spec.grade}/{spec.subject}) KHÔNG cho VDC — bỏ hoặc hạ band.")
 
         # (W) tỉ lệ NB-TH-VD(-VDC) trên lớp lệch chuẩn tầng
-        if ratio_target and on_min > 0:
+        # Thầy chốt 10/11/2026: buổi có kiểm tra chương (`kt`) không soi tỉ lệ; phiếu khai
+        # `khuon` (vd "chung_minh") soi theo `ratio_khuon` của tầng thay tỉ lệ chuẩn.
+        if ratio_target and on_min > 0 and not kt:
             band_min = dict(phieu_band_minutes(p, rates)["onclass"])   # gồm cả phút vẽ hình
-            muc = dict(ratio_target)
+            muc = dict(khuon_ratio(ts, spec.grade, spec.subject, spec.tier,
+                                   getattr(p, "khuon", "")) or ratio_target)
             if gop:      # Thầy chốt 30/08/2026: VD và VDC là MỘT khối, soi tổng
                 band_min["VD"] = band_min.get("VD", 0.0) + band_min.pop("VDC", 0.0)
                 # Gộp PHÚT thì phải gộp cả ĐÍCH: từ 04/09/2026 `tier_ratio` tách khối

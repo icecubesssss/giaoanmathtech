@@ -8,6 +8,9 @@ outputs/
 *.out
 *.xdv
 *.synctex.gz
+*.nav
+*.snm
+*.toc
 # === Trạng thái/cache cục bộ từng máy (đẩy lên sẽ gây xung đột liên tục) ===
 storage/run_state.json
 # Cache bản Word (máy nào tự sinh lại: công thức ~10s, hình theo từng phiếu) — 22/10/2026
@@ -55,3 +58,6 @@ inputs/**/*.mp4
 
 # Bản xem trước Markdown do `make md` sinh ra (máy nào tự sinh lại)
 storage/preview/
+
+# Hàng đợi/kết quả thợ Gemini (scripts/gemini/tho.py)
+storage/gemini/

@@ -14,6 +14,7 @@
 > | File | Dùng khi |
 > |---|---|
 > | [docs/quy-chuan-hoc-lieu.md](docs/quy-chuan-hoc-lieu.md) | luật chọn câu, chấm câu, hình thức câu hỏi, thời lượng, nguồn, lớp A/B/C/X |
+> | [docs/quy-trinh-template-sheets.md](docs/quy-trinh-template-sheets.md) | 4 template sheet mẫu (ngân hàng 47 cột, thuyết minh, đề thi, tiến độ) |
 > | [HUONG-DAN-BAT-DAU.md](HUONG-DAN-BAT-DAU.md) | người mới / máy Windows: cài đặt, phím tắt build |
 > | [HUONG-DAN-DONG-BO.md](HUONG-DAN-DONG-BO.md) | đồng bộ repo giữa các thầy cô qua GitHub |
 > | [docs/quy-trinh-ngan-hang-chuong.md](docs/quy-trinh-ngan-hang-chuong.md) | Bước 0 mỗi chương: tab phân dạng → snapshot → thuyết minh |
@@ -89,6 +90,14 @@
 >    3. **Khẳng định Đúng / Sai (hoặc Trả lời ngắn)**: Đánh bẫy các lỗi sai thường gặp (`loisai` trong spec) như dấu âm, số mũ 0, phân số. Khai bằng trường **`dung_sai`** của `problem` (danh sách khẳng định; đáp án ở `answer`), template tự kẻ bảng Đ/S.
 >    4. **Bảng Nối 2 Cột (Matching table)**: khai **`noi_cot_trai`** + **`noi_cot_phai`** (cột B đã xáo) trong `problem`, template tự kẻ bảng; không gõ `tabular` tay, không kèm `writelines`.
 >    5. **Tự luận ngắn & Bài toán thực tế**: Dành cho bài Thông hiểu, Vận dụng (rút gọn tính giá trị, tìm $x$, bài toán thực tế có lời văn).
+>
+> 4d. ***QUY TRÌNH BÓC TÁCH HẠ BẬC (VD → TH → NB) TỪ KHÂU PHÂN DẠNG (Thầy chốt 10/11/2026):***
+>    - Xuất phát từ **1 bài toán đích VD** (đề thi thật Vào 10 / HK1), người làm phân dạng **quét cẩn thận và GIẢI LUÔN chi tiết đáp án**.
+>    - Dựa vào lời giải chi tiết, **tách các bước/câu hỏi trung gian** để đưa VD $\to$ TH (ý chứng minh lớn), rồi tiếp tục đưa TH $\to$ NB (kỹ năng đệm nhỏ, trắc nghiệm, điền khuyết trên hình vẽ sẵn) như khuôn mẫu các bài Chương V.
+>    - Khi biên soạn phiếu, người soạn **chỉ việc ghép các bước đã giải sẵn** vào các chặng của bài học (Khám phá $\to$ Luyện tập 1 $\to$ Luyện tập 2).
+>    - **Quy tắc cấp độ bài toán (Level Consistency):** Bài toán tổng thể thuộc Dạng nào thì giữ nguyên sao cấp độ đó (`level: 2` tương ứng 2 sao ★★☆ cho bài Thông hiểu), dù bên trong có chẻ các ý nhỏ `[NB] ★` làm bước đệm cho HS tiếp cận (như Bài 3 & BTVN 3 Phiếu 2 Chương V). Không hạ sao cả bài xuống 1 sao làm lệch thang đo độ khó.
+>    - **Tỉ lệ của phiếu chứng minh chẻ ý (Thầy chốt 10/11/2026):** NB đo theo PHÚT nên phiếu khuôn này không đạt 40% NB. Khai `"khuon": "chung_minh"` ở gốc phiếu VÀ ở dòng phiếu trong `thuyet-minh.json` ⇒ cổng soi **NB 15 – TH 55 – VD 30, lệch ±10 điểm** (`ratio_khuon` trong `config/tier_spec.json`, hiện có ở lớp 9 hình tầng C). Không khai thì vẫn 40-40-20; phiếu đo lường (vd P1 ch.V) không khai. Buổi có `kiem_tra_phut` không soi tỉ lệ. Quỹ giờ KHÔNG nới.
+>    - **Hộp "Quy trình giải" (`quy_trinh`) giữ ở bài đích Luyện tập 2** (Thầy 10/11/2026: bài đó không tách câu nên cần quy trình).
 >
 > 5. *(2026-07-27) Khung THAY THẾ, ít dạng vụn hơn — dùng cho thuyết minh CẤP CHƯƠNG*: **11 dạng NB** (10 dạng `onclass: 3` $+$ 1 dạng `onclass: 2` $=$ 32 câu $\Rightarrow$ 48′) · **4 dạng TH** (`onclass: 2` $\Rightarrow$ 48′) · **2 dạng VD** (`onclass: 1` $\Rightarrow$ 24′) $=$ 120′, đúng 40-40-20. Ví dụ: 9 dạng NB $+$ 4 TH $+$ 2 VD mỗi dạng `vidu: 1` $=$ 41′. **`lythuyet` CHỈ gắn cho 4 dạng NB** ($=$ 4′) $\Rightarrow$ GV giảng $41+4=45′$ khớp quỹ. BTVN: NB 26 câu, TH 8, VD 2 $=$ 96′. Thầy phản biện bản 16 dạng NB×2 là "chi tiết quá, luyện tập cần tăng lên".
 >    * ⚠️ **`thuyetminh_gate` KHÔNG cộng giờ cột Lý thuyết vào quỹ, nhưng dòng "Cân buổi" trên PDF thì CÓ.** Gắn `lythuyet: 1` cho MỌI dòng ⇒ PDF in "GV giảng 96′ (quỹ 45′)" mà gate vẫn báo OK — buổi học không thể dạy kịp. Chỉ gắn `lythuyet` cho vài mục lý thuyết thật.

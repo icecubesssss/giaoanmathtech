@@ -213,6 +213,20 @@ def tier_ratio(spec: dict, grade: str, subject: str, tier: str,
     return None
 
 
+def khuon_ratio(spec: dict, grade: str, subject: str, tier: str,
+                khuon: str | None) -> dict | None:
+    """Tỉ lệ riêng theo KHUÔN phiếu (Thầy chốt 10/11/2026: phiếu chứng minh hình lớp C
+    chẻ ý a/b/c soi 15-55-30). None nếu phiếu không khai khuôn hoặc tầng không có khuôn đó."""
+    if not khuon:
+        return None
+    try:
+        variants = subject_block(spec, grade, subject)["tiers"][tier].get("ratio_khuon") or {}
+    except KeyError:
+        return None
+    ratio = variants.get(khuon)
+    return dict(ratio) if isinstance(ratio, dict) else None
+
+
 def target_counts(spec: dict, grade: str, subject: str, tier: str,
                   chuong: str | None = None) -> dict:
     """Số câu MỤC TIÊU mỗi đoạn×band cho (lớp, môn, tầng). {} nếu tầng chưa có tỉ lệ.

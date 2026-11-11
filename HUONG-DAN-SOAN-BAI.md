@@ -13,6 +13,11 @@
 - **Ưu tiên "nghiệm đẹp" cho bài đại số.** Với PT/hệ, nếu nguồn cho ra nghiệm xấu (phân số lẻ), **được phép chỉnh số liệu đề** để nghiệm gọn — ưu tiên **số nguyên**; dùng SymPy soi lại cả phiếu để chắc. (Bài lượng giác/đo đạc thì đáp số dạng tỉ số hoặc gần đúng là bình thường, không ép.)
 - **Tránh `%` và `&` thô làm vỡ build.** `validate` *không* bắt lỗi này: luôn viết `\%`, `\&` trong mọi field văn bản (kể cả `solution`/`teacher_note`). Một `%` thô = comment LaTeX, nuốt luôn lệnh đóng hộp → hỏng `guide.pdf`.
 - **THCS, chặng Luyện tập: không dùng câu Nhận biết (NB) rời rạc** (tiểu học, chặng Khám phá và phiếu ôn tập THCS dùng 5 hình thức câu hỏi — xem [docs/quy-chuan-hoc-lieu.md](docs/quy-chuan-hoc-lieu.md) §2). Bỏ các câu trắc nghiệm đơn lẻ, tính toán vụn vặt, Đúng/Sai rời rạc (ví dụ: "Tính góc thứ ba của tam giác có hai góc 50 và 60"). Thay vào đó, toàn bộ câu NB phải được **sinh ra dưới dạng các ý nhỏ/bước giải (scaffold-decompose)** của các bài tự luận lớn hơn mức TH, VD hoặc VDC (ví dụ: "a) [NB] Chứng minh hai tam giác bằng nhau", "b) [NB] Suy ra các cạnh tương ứng"). Điều này giúp học sinh rèn luyện tư duy lập luận có hệ thống.
+- **Bóc tách hạ bậc (VD → TH → NB) từ khâu phân dạng, khi soạn chỉ việc ghép (Thầy chốt):**
+  * Để ra được các bước đệm NB và TH chất lượng, quy trình bắt đầu từ khâu **Phân dạng**: lấy 1 bài toán đích VD trong đề thi thật, **giải chi tiết luôn**, nhìn vào đáp án để **tách các bước/câu hỏi trung gian** đưa về TH hoặc NB (như mô hình các phiếu Chương V).
+  * Khi soạn phiếu, người soạn **chỉ việc lấy các mảnh ghép đã bóc tách và giải sẵn để ráp vào bài**:
+    - Các ý đệm kỹ năng sơ cấp làm câu nhận biết `[NB] ★` hoặc bài điền khuyết trên hình vẽ sẵn ở Luyện tập 1.
+    - Cấp độ tổng thể của bài toán thuộc Dạng nào thì giữ nguyên mức độ `level` và số sao tương ứng của bài đó (Bài thuộc Dạng Thông hiểu để `level: 2` hiển thị 2 sao ★★☆, không hạ sao của cả bài xuống 1 sao chỉ vì bên trong có các ý đệm `[NB] ★`).
 
 
 ## 1. Bám đúng tầm — chống "đần", chống "trẻ con hoá"

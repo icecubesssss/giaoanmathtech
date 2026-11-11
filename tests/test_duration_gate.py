@@ -256,3 +256,32 @@ def test_grade_subject_doc_dung_lop_6_7():
                       ("Lớp 8", "lop-8"), ("Lớp 9 • Ôn vào 10", "lop-9"), ("", "lop-9")):
         les = LessonPackage(slug="t", title="t", grade_label=nhan, stages=[])
         assert _grade_subject(les)[0] == lop, nhan
+
+
+def _lesson_hinh_c(khuon="", kiem_tra_phut=0):
+    """Phiếu hình lớp 9C: 6 NB (15′) + 5 TH (50′) + 2 VD (32′) ≈ 15-52-33."""
+    return LessonPackage(
+        slug="t", title="t", class_tier="C", grade_label="Lớp 9 • Hình học",
+        khuon=khuon, kiem_tra_phut=kiem_tra_phut, stages=[{
+            "kind": "practice1", "number": 3, "title": "LT", "blocks": [
+                {"type": "problem", "label": "Bài 1.", "tier": "onclass", "level": 2,
+                 "statement": "a) [NB] x b) [NB] x c) [TH] x"},
+                {"type": "problem", "label": "Bài 2.", "tier": "onclass", "level": 2,
+                 "statement": "a) [NB] x b) [NB] x c) [TH] x d) [TH] x"},
+                {"type": "problem", "label": "Bài 3.", "tier": "onclass", "level": 3,
+                 "statement": "a) [NB] x b) [NB] x c) [TH] x d) [TH] x e) [VD] x f) [VD] x"},
+            ]}])
+
+
+def test_khuon_chung_minh_dung_ti_le_rieng():
+    # Thầy chốt 10/11/2026: phiếu chứng minh chẻ ý soi 15-55-30 (±10), không 40-40-20.
+    assert any("tỉ lệ" in w for w in check_duration(_lesson_hinh_c()))
+    assert not any("tỉ lệ" in w for w in check_duration(_lesson_hinh_c("chung_minh")))
+
+
+def test_khuon_la_van_dung_ti_le_chuan():
+    assert any("tỉ lệ" in w for w in check_duration(_lesson_hinh_c("khong_co")))
+
+
+def test_buoi_kiem_tra_khong_soi_ti_le():
+    assert not any("tỉ lệ" in w for w in check_duration(_lesson_hinh_c(kiem_tra_phut=45)))

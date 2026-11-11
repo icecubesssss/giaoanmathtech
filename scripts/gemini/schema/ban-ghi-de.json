@@ -1,0 +1,28 @@
+{
+  "type": "object",
+  "required": ["de", "so_trang_da_doc", "cau"],
+  "properties": {
+    "de": {"type": "string"},
+    "so_trang_da_doc": {"type": "integer"},
+    "ghi_chu_de": {"type": "string"},
+    "cau": {
+      "type": "array",
+      "items": {
+        "type": "object",
+        "required": ["cau", "ht", "diem", "muc", "dang", "nd", "dap_an"],
+        "properties": {
+          "cau": {"type": "string"},
+          "ht": {"type": "string", "enum": ["TN", "TL", "Điền", "Đ-S"]},
+          "diem": {"type": "number"},
+          "diem_uoc": {"type": "boolean"},
+          "muc": {"type": "string", "enum": ["NB", "TH", "VD", "VDC"]},
+          "dang": {"type": "string", "pattern": "^D[0-9]{2}$"},
+          "nd": {"type": "string"},
+          "dap_an": {"type": "string"},
+          "co_hinh": {"type": "boolean"},
+          "can_soat": {"type": "string"}
+        }
+      }
+    }
+  }
+}

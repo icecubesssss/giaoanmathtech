@@ -42,6 +42,9 @@
 - **Bài nhiều ý:** mỗi ý là một câu theo mức của ý đó, cộng lại. HS tự vẽ hình: +5′ một lần cho cả bài.
   Ví dụ lớp 9, trên lớp, "a) NB · b) TH · c) VD" = 1,5 + 6 + 12 = 19,5′.
 - Cột "Thời lượng" trên tab phân dạng tính bằng công thức theo mức độ, không ước lượng tay.
+- **Tỉ lệ phiếu chứng minh chẻ ý, lớp 9 hình tầng C (Thầy chốt 10/11/2026):** phiếu khai
+  `"khuon": "chung_minh"` (ở phiếu và dòng phiếu của thuyết minh) soi **NB 15 – TH 55 – VD 30, lệch ±10 điểm**
+  thay cho 40-40-20, vì NB chỉ còn là ý đệm trong bài TH. Buổi có kiểm tra chương không soi tỉ lệ. Quỹ giờ không đổi.
 
 ## 4. Nguồn câu
 
@@ -83,7 +86,7 @@ sau khi HS đã làm trọn bài đó ít nhất một lần; (4) lớp C không
 | Việc                      | Làm ở đâu                                                               | Duyệt ở đâu |
 | ------------------------- | ----------------------------------------------------------------------- | ----------- |
 | Luật                      | Sheet quy chuẩn                                                         | Sheet       |
-| Phân dạng, chọn câu, chấm | Google Sheet gốc, mỗi khối một file, mỗi chương một tab                 | Sheet       |
+| Phân dạng, chọn câu, chấm | Google Sheet gốc, mỗi khối một file, mỗi chương một tab (chi tiết xem [docs/quy-trinh-template-sheets.md](quy-trinh-template-sheets.md)) | Sheet       |
 | Thuyết minh               | repo (`thuyet-minh.json`) → PDF; số câu/phút xem trước trên Sheet       | **PDF**     |
 | Phiếu                     | repo → 3 PDF → Drive (chỉ sau approve)                                  | PDF         |
 | Tiến độ                   | sheet tiến độ nhóm, tab theo khuôn 7C (vd "TIẾN ĐỘ 9C - 2026 - ThaiTD") | Sheet       |

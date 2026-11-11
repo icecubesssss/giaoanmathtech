@@ -4,6 +4,7 @@
   "eyebrow": "PHIẾU 4 • HÌNH HỌC 9 · CHƯƠNG V — BÀI 16 (LUYỆN TẬP)",
   "grade_label": "Lớp 9 • Hình học",
   "class_tier": "C",
+  "khuon": "chung_minh",
   "btvn_phieu_rieng": true,
   "stages": [
     {
@@ -263,7 +264,11 @@
             "caption": "Hình 5",
             "pos": "right"
           },
-          "ve_tiep": 3
+          "ve_tiep": 3,
+          "hints": [
+            "Tiếp tuyến tại $M$ có quan hệ gì với bán kính $OM$?",
+            "Từ hai tam giác đồng dạng, viết tỉ lệ thức chứa $OH$, $OD$ rồi đổi thành tích; $OM$ bằng bao nhiêu?"
+          ]
         }
       ]
     },
@@ -295,8 +300,7 @@
             "pos": "right"
           },
           "hints": [
-            "Đỉnh góc vuông thuộc đường tròn đường kính nào?",
-            "Hai điểm nào cùng cách đều hai đầu mút của đoạn thẳng $AB$?",
+            "Đỉnh góc vuông thuộc đường tròn nào? Hai điểm nào cách đều $A$ và $B$?",
             "Đẳng thức $OH \\cdot OM = OA^2$ có được từ tỉ lệ thức nào? Tỉ lệ thức đó đọc ra hai tam giác nào?"
           ],
           "quy_trinh": [
@@ -475,14 +479,19 @@
           "tier": "btvn",
           "dang_id": "TH2",
           "statement": "Cho tam giác $ABC$ nhọn ($AB < AC$), đường cao $AD$ ($D \\in BC$). Gọi $E$, $F$ lần lượt là hình chiếu vuông góc của $D$ lên $AB$ và $AC$ (Hình 8). Vẽ tiếp vào Hình 8 các yếu tố còn thiếu theo đề:[[br]]a) [TH] ★★ Chứng minh $\\triangle AED \\backsim \\triangle ADB$ và suy ra $AE \\cdot AB = AD^2$.[[br]]b) [TH] ★★ Chứng minh $\\triangle AFD \\backsim \\triangle ADC$ và suy ra $AE \\cdot AB = AF \\cdot AC$.",
-          "answer": "a) Xét $\\triangle AED$ và $\\triangle ADB$ có:[[br]]$\\widehat{AED} = \\widehat{ADB} = 90^\\circ$ ($DE \\perp AB$ tại $E$, $AD \\perp BC$ tại $D$)[[br]]$\\widehat{BAD}$ chung[[br]]$\\Rightarrow \\triangle AED \\backsim \\triangle ADB$ (g.g)[[br]]$\\Rightarrow \\dfrac{AE}{AD} = \\dfrac{AD}{AB} \\Rightarrow AE \\cdot AB = AD^2$.[[br]]b) Tương tự, xét $\\triangle AFD$ và $\\triangle ADC$ có:[[br]]$\\widehat{AFD} = \\widehat{ADC} = 90^\\circ$ ($DF \\perp AC$ tại $F$, $AD \\perp BC$ tại $D$)[[br]]$\\widehat{CAD}$ chung[[br]]$\\Rightarrow \\triangle AFD \\backsim \\triangle ADC$ (g.g)[[br]]$\\Rightarrow \\dfrac{AF}{AD} = \\dfrac{AD}{AC} \\Rightarrow AF \\cdot AC = AD^2$.[[br]]Từ câu a và câu b suy ra $AE \\cdot AB = AF \\cdot AC$ ($= AD^2$).[[br]]Vậy $AE \\cdot AB = AF \\cdot AC$.",
+          "answer": "a) Xét $\\triangle AED$ và $\\triangle ADB$ có:[[br]]$\\widehat{AED} = \\widehat{ADB} = 90^\\circ$ ($DE \\perp AB$ tại $E$, $AD \\perp BC$ tại $D$)[[br]]$\\widehat{BAD}$ chung[[br]]$\\Rightarrow \\triangle AED \\backsim \\triangle ADB$ (g.g)[[br]]$\\Rightarrow \\dfrac{AE}{AD} = \\dfrac{AD}{AB}$[[br]]Vậy $AE \\cdot AB = AD^2$.[[br]]b) Xét $\\triangle AFD$ và $\\triangle ADC$ có:[[br]]$\\widehat{AFD} = \\widehat{ADC} = 90^\\circ$ ($DF \\perp AC$ tại $F$, $AD \\perp BC$ tại $D$)[[br]]$\\widehat{CAD}$ chung[[br]]$\\Rightarrow \\triangle AFD \\backsim \\triangle ADC$ (g.g)[[br]]$\\Rightarrow \\dfrac{AF}{AD} = \\dfrac{AD}{AC}$[[br]]$\\Rightarrow AF \\cdot AC = AD^2$.[[br]]Mà $AE \\cdot AB = AD^2$ (câu a)[[br]]Vậy $AE \\cdot AB = AF \\cdot AC$.",
           "draw": true,
           "figure": {
-            "tikz": "\\begin{tikzpicture}[line width=0.8pt, font=\\small]\n  \\draw[ink] (1.1000,2.3000) -- (0.0000,0.0000);\n  \\draw[ink] (0.0000,0.0000) -- (4.0000,0.0000);\n  \\draw[ink] (1.1000,2.3000) -- (4.0000,0.0000);\n  \\fill[ink] (1.1000,2.3000) circle (1.3pt);\n  \\fill[ink] (0.0000,0.0000) circle (1.3pt);\n  \\fill[ink] (4.0000,0.0000) circle (1.3pt);\n  \\node[inner sep=0pt] at (1.0583,2.5364) {$A$};\n  \\node[inner sep=0pt] at (-0.2078,-0.1200) {$B$};\n  \\node[inner sep=0pt] at (4.2255,-0.0821) {$C$};\n  \\path (-0.3578,-0.3900) rectangle (4.3755,2.6864);\n\\end{tikzpicture}",
+            "tikz": "\\begin{tikzpicture}[line width=0.8pt, font=\\small, scale=0.8]\n  \\draw[ink] (1.1000,2.3000) -- (0.0000,0.0000);\n  \\draw[ink] (0.0000,0.0000) -- (4.0000,0.0000);\n  \\draw[ink] (1.1000,2.3000) -- (4.0000,0.0000);\n  \\fill[ink] (1.1000,2.3000) circle (1.3pt);\n  \\fill[ink] (0.0000,0.0000) circle (1.3pt);\n  \\fill[ink] (4.0000,0.0000) circle (1.3pt);\n  \\node[inner sep=0pt] at (1.0583,2.5364) {$A$};\n  \\node[inner sep=0pt] at (-0.2078,-0.1200) {$B$};\n  \\node[inner sep=0pt] at (4.2255,-0.0821) {$C$};\n  \\path (-0.3578,-0.3900) rectangle (4.3755,2.6864);\n\\end{tikzpicture}",
             "tikz_gv": "\\begin{tikzpicture}[line width=0.8pt, font=\\small]\n  \\draw[ink] (1.1000,2.3000) -- (0.0000,0.0000);\n  \\draw[ink] (0.0000,0.0000) -- (4.0000,0.0000);\n  \\draw[ink] (1.1000,2.3000) -- (4.0000,0.0000);\n  \\draw[ink] (1.1000,2.3000) -- (1.1000,0.0000);\n  \\draw[ink] (1.1000,0.0000) -- (0.2048,0.4282);\n  \\draw[ink] (1.1000,0.0000) -- (2.2198,1.4119);\n  \\draw[ink] (2.3451,1.3125) -- (2.2457,1.1871) -- (2.1204,1.2865);\n  \\fill[ink] (1.1000,2.3000) circle (1.3pt);\n  \\fill[ink] (0.0000,0.0000) circle (1.3pt);\n  \\fill[ink] (4.0000,0.0000) circle (1.3pt);\n  \\fill[ink] (1.1000,0.0000) circle (1.3pt);\n  \\fill[ink] (0.2048,0.4282) circle (1.3pt);\n  \\fill[ink] (2.2198,1.4119) circle (1.3pt);\n  \\node[inner sep=0pt] at (1.0583,2.5364) {$A$};\n  \\node[inner sep=0pt] at (-0.2078,-0.1200) {$B$};\n  \\node[inner sep=0pt] at (4.2255,-0.0821) {$C$};\n  \\node[inner sep=0pt] at (1.1000,-0.2400) {$D$};\n  \\node[inner sep=0pt] at (-0.0031,0.5482) {$E$};\n  \\node[inner sep=0pt] at (2.3741,1.5957) {$F$};\n\\end{tikzpicture}",
             "caption": "Hình 8",
             "pos": "right"
-          }
+          },
+          "hints": [
+            "Hai tam giác vuông $AED$ và $ADB$ có chung góc nào?",
+            "Hai tích $AE \\cdot AB$ và $AF \\cdot AC$ cùng bằng bình phương của đoạn thẳng nào?"
+          ],
+          "draw_height": 2.8
         },
         {
           "type": "problem",
@@ -491,14 +500,19 @@
           "tier": "btvn",
           "dang_id": "TH3",
           "statement": "Cho nửa đường tròn $(O; R)$, đường kính $AB$. Từ điểm $M$ bất kì trên tiếp tuyến $Ax$ của nửa đường tròn $(O)$ vẽ tiếp tuyến thứ hai $MC$ ($C$ là tiếp điểm). Gọi $I$ là giao điểm của $OM$ và $AC$ (Hình 9). Vẽ tiếp vào Hình 9 các yếu tố còn thiếu theo đề:[[br]]a) [TH] ★★ Chứng minh $OM \\perp AC$ tại $I$.[[br]]b) [TH] ★★ Chứng minh $\\triangle OIA \\backsim \\triangle OAM$ (g.g) và suy ra $OI \\cdot OM = R^2$.",
-          "answer": "a) $MA$, $MC$ là hai tiếp tuyến của $(O)$ cắt nhau tại $M$ $\\Rightarrow MA = MC$.[[br]]$OA = OC$ (bán kính của $(O)$)[[br]]$\\Rightarrow OM$ là đường trung trực của đoạn thẳng $AC \\Rightarrow OM \\perp AC$ tại $I$.[[br]]b) Xét $\\triangle OIA$ và $\\triangle OAM$ có:[[br]]$\\widehat{OIA} = \\widehat{OAM} = 90^\\circ$ ($OM \\perp AC$ tại $I$, $MA$ là tiếp tuyến của $(O)$ tại $A$)[[br]]$\\widehat{AOM}$ chung[[br]]$\\Rightarrow \\triangle OIA \\backsim \\triangle OAM$ (g.g)[[br]]$\\Rightarrow \\dfrac{OI}{OA} = \\dfrac{OA}{OM}$[[br]]$\\Rightarrow OI \\cdot OM = OA^2$.[[br]]Vậy $OI \\cdot OM = R^2$ (vì $OA = R$).",
+          "answer": "a) $MA$, $MC$ là hai tiếp tuyến của $(O)$ cắt nhau tại $M$ $\\Rightarrow MA = MC$.[[br]]$OA = OC$ (bán kính của $(O)$)[[br]]$\\Rightarrow OM$ là đường trung trực của đoạn thẳng $AC$[[br]]Vậy $OM \\perp AC$ tại $I$.[[br]]b) Xét $\\triangle OIA$ và $\\triangle OAM$ có:[[br]]$\\widehat{OIA} = \\widehat{OAM} = 90^\\circ$ ($OM \\perp AC$ tại $I$, $MA$ là tiếp tuyến của $(O)$ tại $A$)[[br]]$\\widehat{AOM}$ chung[[br]]$\\Rightarrow \\triangle OIA \\backsim \\triangle OAM$ (g.g)[[br]]$\\Rightarrow \\dfrac{OI}{OA} = \\dfrac{OA}{OM}$[[br]]$\\Rightarrow OI \\cdot OM = OA^2$.[[br]]Vậy $OI \\cdot OM = R^2$ (vì $OA = R$).",
           "draw": true,
           "figure": {
-            "tikz": "\\begin{tikzpicture}[line width=0.8pt, font=\\small]\n  \\draw[ink] (1.5000,0.0000) arc (0.0000:180.0000:1.5000);\n  \\draw[ink] (-1.5000,0.0000) -- (1.5000,0.0000);\n  \\fill[ink] (0.0000,0.0000) circle (1.3pt);\n  \\fill[ink] (-1.5000,0.0000) circle (1.3pt);\n  \\fill[ink] (1.5000,0.0000) circle (1.3pt);\n  \\node[inner sep=0pt] at (0.0000,0.2400) {$O$};\n  \\node[inner sep=0pt] at (-1.6839,-0.1543) {$A$};\n  \\node[inner sep=0pt] at (1.6839,-0.1543) {$B$};\n  \\path (-1.8900,-0.3900) rectangle (1.8339,3.5881);\n\\end{tikzpicture}",
+            "tikz": "\\begin{tikzpicture}[line width=0.8pt, font=\\small, scale=0.8]\n  \\draw[ink] (1.5000,0.0000) arc (0.0000:180.0000:1.5000);\n  \\draw[ink] (-1.5000,0.0000) -- (1.5000,0.0000);\n  \\fill[ink] (0.0000,0.0000) circle (1.3pt);\n  \\fill[ink] (-1.5000,0.0000) circle (1.3pt);\n  \\fill[ink] (1.5000,0.0000) circle (1.3pt);\n  \\node[inner sep=0pt] at (0.0000,0.2400) {$O$};\n  \\node[inner sep=0pt] at (-1.6839,-0.1543) {$A$};\n  \\node[inner sep=0pt] at (1.6839,-0.1543) {$B$};\n  \\path (-1.8900,-0.3900) rectangle (1.8339,3.5881);\n\\end{tikzpicture}",
             "tikz_gv": "\\begin{tikzpicture}[line width=0.8pt, font=\\small]\n  \\draw[ink] (1.5000,0.0000) arc (0.0000:180.0000:1.5000);\n  \\draw[ink] (-1.5000,0.0000) -- (1.5000,0.0000);\n  \\draw[ink] (-1.5000,0.0000) -- (-1.5000,3.1981);\n  \\draw[ink] (-1.5000,2.5981) -- (0.7500,1.2990);\n  \\draw[ink] (0.0000,0.0000) -- (-1.5000,2.5981);\n  \\draw[ink] (-1.5000,0.0000) -- (0.7500,1.2990);\n  \\draw[ink] (0.0000,0.0000) -- (0.7500,1.2990);\n  \\draw[ink] (-0.5136,0.5695) -- (-0.4336,0.4310) -- (-0.2950,0.5110);\n  \\fill[ink] (0.0000,0.0000) circle (1.3pt);\n  \\fill[ink] (-1.5000,0.0000) circle (1.3pt);\n  \\fill[ink] (1.5000,0.0000) circle (1.3pt);\n  \\fill[ink] (0.7500,1.2990) circle (1.3pt);\n  \\fill[ink] (-1.5000,2.5981) circle (1.3pt);\n  \\fill[ink] (-0.3750,0.6495) circle (1.3pt);\n  \\node[inner sep=0pt] at (-0.0000,-0.2400) {$O$};\n  \\node[inner sep=0pt] at (-1.6839,-0.1543) {$A$};\n  \\node[inner sep=0pt] at (1.6839,-0.1543) {$B$};\n  \\node[inner sep=0pt] at (0.9755,1.3811) {$C$};\n  \\node[inner sep=0pt] at (-1.7400,2.5981) {$M$};\n  \\node[inner sep=0pt] at (-0.2724,0.9314) {$I$};\n  \\node[inner sep=0pt] at (-1.5000,3.4381) {$x$};\n\\end{tikzpicture}",
             "caption": "Hình 9",
             "pos": "right"
-          }
+          },
+          "hints": [
+            "Hai điểm nào cùng cách đều hai đầu mút của đoạn thẳng $AC$?",
+            "Viết tỉ lệ thức từ hai tam giác đồng dạng rồi đổi thành tích; $OA$ bằng bao nhiêu?"
+          ],
+          "draw_height": 3.6
         },
         {
           "type": "problem",
@@ -511,16 +525,16 @@
           "figure_given": false,
           "draw": true,
           "figure": {
-            "tikz": "\\begin{tikzpicture}[line width=0.8pt, font=\\small]\n    \\fill[ink] (0,0) circle (1.3pt);\n\n  \\draw[ink] (0.0000,0.0000) circle (1.5000);\n  \\path (-0.3900,-1.7651) rectangle (3.8900,1.7651);\n\\end{tikzpicture}",
+            "tikz": "\\begin{tikzpicture}[line width=0.8pt, font=\\small, scale=0.85]\n    \\fill[ink] (0,0) circle (1.3pt);\n\n  \\draw[ink] (0.0000,0.0000) circle (1.5000);\n  \\path (-0.3900,-1.7651) rectangle (3.8900,1.7651);\n\\end{tikzpicture}",
             "tikz_gv": "\\begin{tikzpicture}[line width=0.8pt, font=\\small]\n  \\draw[ink] (0.0000,0.0000) circle (1.5000);\n  \\draw[ink] (3.5000,0.0000) -- (0.6429,1.3553);\n  \\draw[ink] (3.5000,0.0000) -- (0.6429,-1.3553);\n  \\draw[ink] (0.0000,0.0000) -- (0.6429,1.3553);\n  \\draw[ink] (0.0000,0.0000) -- (0.6429,-1.3553);\n  \\draw[ink] (0.0000,0.0000) -- (3.5000,0.0000);\n  \\draw[ink] (0.6429,1.3553) -- (0.6429,-1.3553);\n  \\draw[ink] (0.6429,0.1600) -- (0.8029,0.1600) -- (0.8029,0.0000);\n  \\fill[ink] (0.0000,0.0000) circle (1.3pt);\n  \\fill[ink] (3.5000,0.0000) circle (1.3pt);\n  \\fill[ink] (0.6429,1.3553) circle (1.3pt);\n  \\fill[ink] (0.6429,-1.3553) circle (1.3pt);\n  \\fill[ink] (0.6429,0.0000) circle (1.3pt);\n  \\node[inner sep=0pt] at (-0.2400,0.0000) {$O$};\n  \\node[inner sep=0pt] at (3.7400,0.0000) {$M$};\n  \\node[inner sep=0pt] at (0.7929,1.6151) {$A$};\n  \\node[inner sep=0pt] at (0.7929,-1.6151) {$B$};\n  \\node[inner sep=0pt] at (0.4886,0.1839) {$H$};\n\\end{tikzpicture}",
             "caption": "Hình 10",
             "pos": "right"
           },
           "hints": [
-            "Đỉnh góc vuông thuộc đường tròn đường kính nào?",
-            "Hai điểm nào cùng cách đều hai đầu mút của đoạn thẳng $AB$?",
+            "Đỉnh góc vuông thuộc đường tròn nào? Hai điểm nào cách đều $A$ và $B$?",
             "Đẳng thức $OA^2 = OH \\cdot OM$ có được từ tỉ lệ thức nào? Tỉ lệ thức đó đọc ra hai tam giác nào?"
-          ]
+          ],
+          "draw_height": 3.4
         }
       ]
     }

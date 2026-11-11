@@ -410,6 +410,9 @@ class LessonPackage(BaseModel):
     # Phút KIỂM TRA CHƯƠNG cắt ra từ buổi của phiếu (khớp `SpecPhieu.kiem_tra_phut`) —
     # `duration_gate` co quỹ luyện tập theo phần còn lại, không kêu oan "hụt giờ".
     kiem_tra_phut: int = Field(0, ge=0, le=180, description="Phút kiểm tra chương trong buổi của phiếu")
+    # KHUÔN phiếu (Thầy chốt 10/11/2026): "chung_minh" = phiếu chứng minh hình chẻ ý a/b/c,
+    # `duration_gate` soi tỉ lệ theo `ratio_khuon` của tầng (lớp 9C hình 15-55-30) thay 40-40-20.
+    khuon: str = Field("", description="Khuôn phiếu cho cổng tỉ lệ, vd 'chung_minh' (tier_spec ratio_khuon)")
     theme: str = Field("", description="Giao diện (vd: 'thay_thai' cho giao diện mới, để trống cho mặc định)")
     # Thầy 01/10/2026 (bộ đề ôn GK1 lớp 9): "trình bày thưa ra, chữ to lên… ríu rít và khá
     # mất thẩm mỹ, căn chỉnh lại hình vẽ cho đẹp, to, rõ ràng". Bật RIÊNG từng tài liệu để

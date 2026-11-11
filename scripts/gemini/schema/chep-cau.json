@@ -1,0 +1,39 @@
+{
+  "type": "object",
+  "required": ["de", "so_trang_da_doc", "cau"],
+  "properties": {
+    "de": {"type": "string"},
+    "so_trang_da_doc": {"type": "integer"},
+    "cau": {
+      "type": "array",
+      "items": {
+        "type": "object",
+        "required": ["cau", "de_bai", "dap_an", "loi_giai"],
+        "properties": {
+          "cau": {"type": "string"},
+          "loi_dan": {"type": "string"},
+          "de_bai": {"type": "string"},
+          "phuong_an": {"type": "array", "items": {"type": "string"}},
+          "dap_an": {"type": "string"},
+          "loi_giai": {
+            "type": "array",
+            "items": {
+              "type": "object",
+              "required": ["buoc"],
+              "properties": {"buoc": {"type": "string"}, "diem": {"type": "number"}}
+            }
+          },
+          "nguon_loi_giai": {"type": "string", "enum": ["HDC", "tu_giai"]},
+          "hinh": {
+            "type": "object",
+            "properties": {
+              "mo_ta": {"type": "string"},
+              "tikz": {"type": "string"}
+            }
+          },
+          "can_soat": {"type": "string"}
+        }
+      }
+    }
+  }
+}

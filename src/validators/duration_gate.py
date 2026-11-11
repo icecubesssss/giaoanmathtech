@@ -21,7 +21,7 @@ from src.schema.lesson_package import LessonPackage
 from src.schema.thuyetminh_spec import he_so_con_lai
 from src.schema.tier_spec import (
     chuong_co_vd, draw_minutes, gop_vd_vdc, khung_minutes, load_tier_spec, quick_minutes, subject_block,
-    rates_for, so_ca_yeu_cau, tier_ratio,
+    khuon_ratio, rates_for, so_ca_yeu_cau, tier_ratio,
 )
 
 _TAG_RE = re.compile(r"\[(NB|TH|VD|VDC)\]")
@@ -358,8 +358,13 @@ def check_duration(lesson: LessonPackage) -> list[str]:
                 f"quá ±{budget_tol*100:.0f}% — {detail}.")
         if seg != "onclass":            # 40-40-20 là tỉ lệ giờ TRÊN LỚP
             continue
+        # Thầy chốt 10/11/2026: buổi có kiểm tra chương chỉ còn một bài đích — tỉ lệ vô nghĩa.
+        if getattr(lesson, "kiem_tra_phut", 0):
+            continue
         seg_min = dict(minutes[seg])
-        muc = dict(ratio_target)
+        # Phiếu khai khuôn (vd "chung_minh") thì soi theo `ratio_khuon` của tầng.
+        muc = dict(khuon_ratio(spec, grade, subject, tier, getattr(lesson, "khuon", ""))
+                   or ratio_target)
         if gop:      # Thầy chốt 30/08/2026: tầng B soi VD và VDC như MỘT khối
             seg_min["VD"] = seg_min.get("VD", 0.0) + seg_min.pop("VDC", 0.0)
             # …thì ĐÍCH cũng phải gộp. Từ 04/09/2026 `tier_ratio` tách khối 55% thành

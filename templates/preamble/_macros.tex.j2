@@ -61,6 +61,8 @@
 % Dấu QED \square — STIX Two Math (unicode-math) không nạp sẵn ký hiệu này;
 % định nghĩa lại bằng hộp rỗng để lời giải Ground Truth dùng \square không vỡ.
 \providecommand{\square}{\ensuremath{\mathord{\hbox{\framebox[1.25ex]{\rule{0pt}{0.95ex}}}}}}
+% Ký hiệu cung tròn \wideparen cho hình học (dùng \overset{\frown}{#1}):
+\providecommand{\wideparen}[1]{\overset{\frown}{#1}}
 
 % --- Bộ ICON NÉT VẼ theo chặng (vector, vẽ bằng MÀU HIỆN HÀNH → in đen trắng vẫn rõ;
 %     đây là thứ KHÔI PHỤC nhận diện chặng khi bản in mất hết màu). ---
@@ -406,7 +408,7 @@
 % `\par\nobreak` mở đầu: cấm ngắt trang GIỮA đề và hình của chính nó.
 % `\nobreak` trước nhãn: cấm nhãn "Hình N" rớt sang trang sau, xa hình của nó (09/10/2026).
 \newcommand{\hinhcap}[1]{\ifx\relax#1\relax\else
-  \par\nobreak\vspace{2pt}{\sffamily\scriptsize\itshape\color{muted}#1}\fi}
+  \par\nobreak\vspace{2pt}\noindent{\sffamily\scriptsize\itshape\color{muted}#1}\fi}
 % Phạt MỀM (\penalty400) chứ KHÔNG \nobreak: \nobreak = penalty 10000 = CẤM TUYỆT ĐỐI
 % tách đề khỏi hình, nên cụm đề+hình+ý thành khối cao ~9cm nhảy nguyên khối, để lại
 % 8–10cm trắng (phiếu A trang 5, 9, 11). Phạt mềm để TeX tự cân: giữ đề với hình khi

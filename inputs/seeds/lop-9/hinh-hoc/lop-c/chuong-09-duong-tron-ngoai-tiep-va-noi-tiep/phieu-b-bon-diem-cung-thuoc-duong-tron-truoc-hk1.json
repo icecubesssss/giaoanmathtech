@@ -1,0 +1,454 @@
+{
+  "slug": "phieu-b-bon-diem-cung-thuoc-duong-tron-truoc-hk1",
+  "title": "Buổi 2 — Luyện tập trước HK1: Khuôn 4 điểm cùng thuộc một đường tròn",
+  "eyebrow": "PHIẾU B • HÌNH HỌC 9 · CHƯƠNG IX — ÔN TẬP TRƯỚC HK1",
+  "grade_label": "Lớp 9 • Hình học",
+  "class_tier": "C",
+  "chuong": "Chương IX. Đường tròn ngoại tiếp và đường tròn nội tiếp",
+  "so_ca": 1,
+  "kiem_tra_phut": 0,
+  "khuon": "chung_minh",
+  "btvn_phieu_rieng": true,
+  "stages": [
+    {
+      "kind": "review",
+      "number": 1,
+      "title": "Khởi động: Tam giác vuông và đường tròn",
+      "blocks": [
+        {
+          "type": "opener",
+          "text": "Trong hầu hết các đề kiểm tra cuối học kì I và đề thi tuyển sinh vào lớp 10, ý đầu tiên của bài hình học tổng hợp thường yêu cầu: \\textbf{«Chứng minh bốn điểm cùng thuộc một đường tròn»}.[[br]]Quan sát hình bên: nếu có hai tam giác vuông $\\triangle ABC$ và $\\triangle DBC$ có \\textbf{chung cạnh huyền $BC$}, thì cả bốn điểm $A, B, C, D$ cùng nằm trên một đường tròn nào? Bài học này hệ thống hóa khuôn chứng minh nhanh và chắc chắn nhất cho dạng toán trọng tâm này.",
+          "tikz": "\\begin{tikzpicture}[scale=0.85]\n  \\draw[brand, thick] (0,0) circle (1.05);\n  \\coordinate (I) at (0,0);\n  \\coordinate (B) at (-1.05,0);\n  \\coordinate (C) at (1.05,0);\n  \\coordinate (A) at (-0.493,0.927);\n  \\coordinate (D) at (0.602,0.860);\n  \\draw[ink, thick] (B)--(C) (B)--(A)--(C) (B)--(D)--(C);\n  \\draw[ink] (-0.558,0.819)--(-0.450,0.754)--(-0.385,0.862);\n  \\draw[ink] (0.490,0.802)--(0.549,0.690)--(0.660,0.749);\n  \\fill[ink] (I) circle (1.4pt) (B) circle (1.4pt) (C) circle (1.4pt) (A) circle (1.4pt) (D) circle (1.4pt);\n  \\node[inner sep=0pt] at (0,-0.25) {$I$};\n  \\node[inner sep=0pt] at (-1.28,0) {$B$};\n  \\node[inner sep=0pt] at (1.28,0) {$C$};\n  \\node[inner sep=0pt] at (-0.63,1.12) {$A$};\n  \\node[inner sep=0pt] at (0.76,1.06) {$D$};\n\\end{tikzpicture}"
+        },
+        {
+          "type": "noted",
+          "variant": "target",
+          "text": "\\textbf{Đích của buổi học:} Giải trọn vẹn Bài 6 (Đề khảo sát lớp 9 Quận Tây Hồ, tháng 4/2025): chứng minh bốn điểm $O, I, E, D$ cùng thuộc một đường tròn bằng khuôn chung cạnh huyền $ID$ và vận dụng $\\triangle AHO \\backsim \\triangle ABE$ suy ra $AH \\cdot AE = 2R^2$.[[br]]— Ý a (Mạch 1–2): nhìn nhanh góc $90^\\circ$ từ đường cao, tiếp tuyến, nửa đường tròn để chỉ ra cạnh huyền chung.[[br]]— Ý b: ghép cặp góc vuông và góc chung (hoặc cùng chắn một cung) để suy đồng dạng $g\\text{-}g$ và hệ thức tích."
+        }
+      ],
+      "solution": "",
+      "teacher_note": "Nhắc lại nhanh tính chất tam giác vuông nội tiếp đường tròn đường kính là cạnh huyền từ Bài 28 và dẫn vào khuôn 4 điểm chuẩn bị thi HKI."
+    },
+    {
+      "kind": "concept",
+      "number": 2,
+      "title": "Kiến thức trọng tâm và Khuôn 4 điểm",
+      "blocks": [
+        {
+          "type": "para",
+          "variant": "heading",
+          "text": "A. Lý thuyết"
+        },
+        {
+          "type": "noted",
+          "variant": "theory",
+          "title": "1. Đường tròn ngoại tiếp tam giác vuông (Bài 28)",
+          "text": "Nếu $\\triangle ABC$ vuông tại $A$ thì ba đỉnh $A, B, C$ cùng thuộc đường tròn đường kính $BC$ (tâm $I$ là trung điểm của cạnh huyền $BC$, bán kính $R = \\dfrac{BC}{2}$).",
+          "text_slide": "$\\triangle ABC$ vuông tại $A \\Rightarrow A, B, C$ cùng thuộc đường tròn đường kính $BC$ ($R = \\dfrac{BC}{2}$).",
+          "figure": {
+            "pos": "right",
+            "tikz": "\\begin{tikzpicture}[scale=0.9]\n  \\draw[brand, thick] (0,0) circle (1.0);\n  \\coordinate (I) at (0,0);\n  \\coordinate (B) at (-1.0,0);\n  \\coordinate (C) at (1.0,0);\n  \\coordinate (A) at (-0.469,0.883);\n  \\draw[ink, thick] (B)--(C)--(A)--cycle;\n  \\draw[ink] (-0.531,0.780)--(-0.428,0.718)--(-0.367,0.821);\n  \\fill[ink] (I) circle (1.4pt) (B) circle (1.4pt) (C) circle (1.4pt) (A) circle (1.4pt);\n  \\node[inner sep=0pt] at (0,-0.24) {$I$};\n  \\node[inner sep=0pt] at (-1.22,0) {$B$};\n  \\node[inner sep=0pt] at (1.22,0) {$C$};\n  \\node[inner sep=0pt] at (-0.58,1.08) {$A$};\n\\end{tikzpicture}"
+          }
+        },
+        {
+          "type": "noted",
+          "variant": "theory",
+          "title": "2. Khuôn chuẩn chứng minh 4 điểm cùng thuộc một đường tròn",
+          "text": "Để chứng minh bốn điểm $A, B, C, D$ cùng thuộc một đường tròn, ta tìm hai đỉnh (chẳng hạn $A$ và $D$) cùng nhìn đoạn thẳng còn lại ($BC$) dưới góc $90^\\circ$:[[br]]— Chỉ ra $\\triangle ABC$ vuông tại $A \\Rightarrow A, B, C$ cùng thuộc đường tròn đường kính $BC$.[[br]]— Chỉ ra $\\triangle DBC$ vuông tại $D \\Rightarrow D, B, C$ cùng thuộc đường tròn đường kính $BC$.[[br]]Vậy bốn điểm $A, B, C, D$ cùng thuộc đường tròn đường kính $BC$.",
+          "text_slide": "Khuôn 4 điểm: $\\triangle ABC$ vuông tại $A$ và $\\triangle DBC$ vuông tại $D \\Rightarrow A, B, C, D$ cùng thuộc đường tròn đường kính $BC$.",
+          "figure": {
+            "pos": "right",
+            "tikz": "\\begin{tikzpicture}[scale=0.9]\n  \\draw[brand, thick] (0,0) circle (1.0);\n  \\coordinate (I) at (0,0);\n  \\coordinate (B) at (-1.0,0);\n  \\coordinate (C) at (1.0,0);\n  \\coordinate (A) at (-0.469,0.883);\n  \\coordinate (D) at (0.574,0.819);\n  \\draw[ink, thick] (B)--(C) (B)--(A)--(C) (B)--(D)--(C);\n  \\draw[ink] (-0.531,0.780)--(-0.428,0.718)--(-0.367,0.821);\n  \\draw[ink] (0.467,0.764)--(0.523,0.657)--(0.629,0.713);\n  \\fill[ink] (I) circle (1.4pt) (B) circle (1.4pt) (C) circle (1.4pt) (A) circle (1.4pt) (D) circle (1.4pt);\n  \\node[inner sep=0pt] at (0,-0.24) {$I$};\n  \\node[inner sep=0pt] at (-1.22,0) {$B$};\n  \\node[inner sep=0pt] at (1.22,0) {$C$};\n  \\node[inner sep=0pt] at (-0.58,1.08) {$A$};\n  \\node[inner sep=0pt] at (0.72,1.02) {$D$};\n\\end{tikzpicture}"
+          }
+        },
+        {
+          "type": "para",
+          "variant": "heading",
+          "text": "B. Phương pháp chứng minh — các dạng quen thuộc"
+        },
+        {
+          "type": "noted",
+          "variant": "theory",
+          "title": "3. Ba nguồn góc $90^\\circ$ ẩn thường gặp trong đề thi",
+          "text": "\\textbf{1) Đường cao / hình chiếu:} $BD \\perp AC$ tại $D \\Rightarrow \\widehat{BDC} = 90^\\circ$.[[br]]\\textbf{2) Tiếp tuyến:} $Ax$ là tiếp tuyến của $(O)$ tại $A \\Rightarrow Ax \\perp OA \\Rightarrow \\widehat{OAx} = 90^\\circ$.[[br]]\\textbf{3) Góc nội tiếp chắn nửa đường tròn:} $C$ nằm trên đường tròn đường kính $AB$ ($C$ khác $A, B$) $\\Rightarrow \\widehat{ACB} = 90^\\circ$.",
+          "text_slide": "3 nguồn góc $90^\\circ$: (1) Đường cao / hình chiếu; (2) Tiếp tuyến $\\perp$ bán kính; (3) Góc nội tiếp chắn nửa đường tròn.",
+          "figure": {
+            "pos": "right",
+            "tikz": "\\begin{tikzpicture}[scale=0.9]\n  \\draw[ink, thick] (0,0) circle (0.95);\n  \\coordinate (O) at (0,0);\n  \\coordinate (A) at (-0.95,0);\n  \\coordinate (B) at (0.95,0);\n  \\coordinate (C) at (0.545,0.778);\n  \\draw[ink, thick] (A)--(B) (A)--(C)--(B);\n  \\draw[brand, thick] (-0.95,-0.3)--(-0.95,1.25);\n  \\draw[ink] (-0.95,0.14)--(-0.81,0.14)--(-0.81,0);\n  \\draw[ink] (0.447,0.727)--(0.498,0.630)--(0.596,0.681);\n  \\fill[ink] (O) circle (1.3pt) (A) circle (1.3pt) (B) circle (1.3pt) (C) circle (1.3pt);\n  \\node[inner sep=0pt] at (0,-0.22) {$O$};\n  \\node[inner sep=0pt] at (-1.18,-0.05) {$A$};\n  \\node[inner sep=0pt] at (1.16,0) {$B$};\n  \\node[inner sep=0pt] at (0.72,0.96) {$C$};\n  \\node[inner sep=0pt] at (-1.14,1.22) {$x$};\n\\end{tikzpicture}"
+          }
+        },
+        {
+          "type": "noted",
+          "variant": "trap",
+          "title": "BẪY THƯỜNG GẶP: CHỌN NHẦM ĐƯỜNG KÍNH",
+          "text": "Đường kính luôn là \\textbf{cạnh huyền chung} (cạnh đối diện với hai đỉnh góc vuông), \\textbf{không} phải đoạn nối hai đỉnh góc vuông.[[br]]Chẳng hạn, nếu $\\triangle BEC$ vuông tại $E$ và $\\triangle BDC$ vuông tại $D$ thì cạnh huyền chung là $BC$ (đường kính $BC$), không phải $ED$ hay $BE$."
+        }
+      ],
+      "solution": "",
+      "teacher_note": "Nhấn mạnh việc chỉ đích danh cạnh huyền chung của hai tam giác vuông trước khi viết khuôn trình bày."
+    },
+    {
+      "kind": "practice1",
+      "number": 3,
+      "title": "Luyện tập 1: Nhận diện và Ráp khuôn 4 điểm",
+      "blocks": [
+        {
+          "type": "para",
+          "text": "\\textbf{Đích của buổi học:} Chứng minh bốn điểm $O, I, E, D$ cùng thuộc một đường tròn và vận dụng tam giác đồng dạng ở \\textbf{Bài 6} (Đề khảo sát lớp 9 Quận Tây Hồ, tháng 4/2025)."
+        },
+        {
+          "type": "para",
+          "variant": "heading",
+          "text": "Mạch 1: Nhớ tam giác vuông — tìm góc $90^\\circ$ ẩn — hoàn thành khuôn mẫu"
+        },
+        {
+          "type": "problem",
+          "label": "Bài 1.",
+          "tier": "onclass",
+          "level": 1,
+          "dang_id": "NB2",
+          "figure_given": true,
+          "draw": false,
+          "statement": "Quan sát ba mô hình đề thi thường gặp ở hình dưới đây (các góc vuông đã được đánh dấu). Bốn điểm được nêu trong mỗi mô hình (1) $B, E, D, C$; (2) $M, A, O, B$; (3) $P, K, N, S$ lần lượt cùng thuộc đường tròn có đường kính là",
+          "figure": {
+            "pos": "below",
+            "tikz": "\\begin{tikzpicture}[scale=0.88]\n  % Mo hinh 1\n  \\coordinate (B1) at (0,0);\n  \\coordinate (C1) at (2.2,0);\n  \\coordinate (A1) at (0.8,1.8);\n  \\coordinate (E1) at (1.371,1.066);\n  \\coordinate (D1) at (0.363,0.816);\n  \\draw[ink, thick] (B1)--(C1)--(A1)--cycle (B1)--(E1) (C1)--(D1);\n  \\draw[ink] (1.284,0.999)--(1.351,0.912)--(1.438,0.979);\n  \\draw[ink] (0.463,0.772)--(0.419,0.671)--(0.318,0.716);\n  \\fill[ink] (A1) circle (1.2pt) (B1) circle (1.2pt) (C1) circle (1.2pt) (D1) circle (1.2pt) (E1) circle (1.2pt);\n  \\node[inner sep=0pt] at (-0.18,-0.15) {$B$};\n  \\node[inner sep=0pt] at (2.38,-0.15) {$C$};\n  \\node[inner sep=0pt] at (0.80,2.02) {$A$};\n  \\node[inner sep=0pt] at (1.60,1.18) {$E$};\n  \\node[inner sep=0pt] at (0.14,0.92) {$D$};\n  \\node[inner sep=0pt] at (1.1,-0.52) {\\small (1)};\n\n  % Mo hinh 2\n  \\coordinate (O2) at (4.8,0.9);\n  \\coordinate (M2) at (3.1,0.9);\n  \\coordinate (A2) at (4.469,1.573);\n  \\coordinate (B2) at (4.469,0.227);\n  \\draw[ink, thick] (O2) circle (0.75);\n  \\draw[ink, thick] (M2)--(A2)--(O2)--(B2)--cycle;\n  \\draw[ink] (4.518,1.474)--(4.419,1.426)--(4.370,1.525);\n  \\draw[ink] (4.518,0.326)--(4.419,0.374)--(4.370,0.275);\n  \\fill[ink] (O2) circle (1.2pt) (M2) circle (1.2pt) (A2) circle (1.2pt) (B2) circle (1.2pt);\n  \\node[inner sep=0pt] at (5.03,0.9) {$O$};\n  \\node[inner sep=0pt] at (2.88,0.9) {$M$};\n  \\node[inner sep=0pt] at (4.48,1.79) {$A$};\n  \\node[inner sep=0pt] at (4.48,0.01) {$B$};\n  \\node[inner sep=0pt] at (4.25,-0.52) {\\small (2)};\n\n  % Mo hinh 3\n  \\coordinate (O3) at (7.5,0.25);\n  \\coordinate (P3) at (6.45,0.25);\n  \\coordinate (Q3) at (8.55,0.25);\n  \\coordinate (S3) at (6.944,1.140);\n  \\coordinate (N3) at (7.666,0.740);\n  \\coordinate (K3) at (7.666,0.25);\n  \\draw[ink, thick] (Q3) arc (0:180:1.05);\n  \\draw[ink, thick] (P3)--(Q3) (P3)--(S3)--(Q3) (N3)--(K3);\n  \\draw[ink] (6.890,1.044)--(6.986,0.991)--(7.040,1.087);\n  \\draw[ink] (7.556,0.250)--(7.556,0.360)--(7.666,0.360);\n  \\fill[ink] (O3) circle (1.2pt) (P3) circle (1.2pt) (Q3) circle (1.2pt) (S3) circle (1.2pt) (N3) circle (1.2pt) (K3) circle (1.2pt);\n  \\node[inner sep=0pt] at (7.38,0.04) {$O$};\n  \\node[inner sep=0pt] at (6.26,0.25) {$P$};\n  \\node[inner sep=0pt] at (8.74,0.25) {$Q$};\n  \\node[inner sep=0pt] at (6.84,1.35) {$S$};\n  \\node[inner sep=0pt] at (7.86,0.88) {$N$};\n  \\node[inner sep=0pt] at (7.68,0.04) {$K$};\n  \\node[inner sep=0pt] at (7.5,-0.52) {\\small (3)};\n\\end{tikzpicture}"
+          },
+          "options": [
+            "(1) $BC$; (2) $MO$; (3) $PN$",
+            "(1) $ED$; (2) $AB$; (3) $KS$",
+            "(1) $BC$; (2) $AB$; (3) $PQ$",
+            "(1) $BD$; (2) $MO$; (3) $PS$"
+          ],
+          "answer": "A",
+          "solution": "Ở hình (1), $\\triangle BEC$ vuông tại $E$ và $\\triangle BDC$ vuông tại $D$ có chung cạnh huyền $BC$. Ở hình (2), $\\triangle MAO$ vuông tại $A$ và $\\triangle MBO$ vuông tại $B$ có chung cạnh huyền $MO$. Ở hình (3), $\\triangle PSN$ vuông tại $S$ và $\\triangle PKN$ vuông tại $K$ có chung cạnh huyền $PN$."
+        },
+        {
+          "type": "noted",
+          "variant": "example",
+          "title": "Ví dụ 1. Đọc giả thiết tìm góc $90^\\circ$ ẩn từ tiếp tuyến và hình chiếu",
+          "text": "Cho đường tròn $(O)$ đường kính $MN$. Từ $M$ kẻ tiếp tuyến $Mx$ của $(O)$, lấy điểm $S$ trên tia $Mx$ ($S$ khác $M$). Kẻ $OH \\perp SN$ tại $H$. Xác định các góc vuông ẩn từ giả thiết và chỉ ra bốn điểm $O, M, H, S$ cùng thuộc đường tròn đường kính nào.[[br]]{\\sffamily\\bfseries\\color{brand}Lời giải}[[br]]Vì $Mx$ là tiếp tuyến của $(O)$ tại $M$ nên $SM \\perp [[fill:OM]]$ và $\\widehat{OMS} = 90^\\circ$, hay $\\triangle OMS$ vuông tại $M$.[[br]]Vì $OH \\perp SN$ tại $H$ nên $\\widehat{OHS} = 90^\\circ$, hay $\\triangle OHS$ vuông tại $H$.[[br]]Hai tam giác vuông $\\triangle OMS$ và $\\triangle OHS$ có chung cạnh huyền $[[fill:OS]]$.[[br]]Vậy bốn điểm $O, M, H, S$ cùng thuộc đường tròn đường kính $[[fill:OS]]$.",
+          "text_slide": "Cho đường tròn $(O)$ đường kính $MN$. Từ $M$ kẻ tiếp tuyến $Mx$ của $(O)$, lấy điểm $S$ trên tia $Mx$ ($S$ khác $M$). Kẻ $OH \\perp SN$ tại $H$. Xác định các góc vuông ẩn từ giả thiết và chỉ ra bốn điểm $O, M, H, S$ cùng thuộc đường tròn đường kính nào.",
+          "figure": {
+            "pos": "right",
+            "tikz": "\\begin{tikzpicture}[scale=0.9]\n  \\coordinate (O) at (0,0);\n  \\coordinate (M) at (0,-1.20);\n  \\coordinate (N) at (0,1.20);\n  \\coordinate (S) at (1.60,-1.20);\n  \\coordinate (H) at (0.554,0.369);\n  \\draw[ink, thick] (O) circle (1.20);\n  \\draw[ink, thick] (M)--(N) (N)--(S) (O)--(H);\n  \\draw[ink, thick] (M)--(2.05,-1.20);\n  \\fill[ink] (O) circle (1.3pt) (M) circle (1.3pt) (N) circle (1.3pt) (S) circle (1.3pt) (H) circle (1.3pt);\n  \\node[inner sep=0pt] at (-0.24,-0.05) {$O$};\n  \\node[inner sep=0pt] at (0,-1.44) {$M$};\n  \\node[inner sep=0pt] at (0,1.44) {$N$};\n  \\node[inner sep=0pt] at (1.60,-1.44) {$S$};\n  \\node[inner sep=0pt] at (2.15,-1.02) {$x$};\n  \\node[inner sep=0pt] at (0.76,0.51) {$H$};\n\\end{tikzpicture}"
+          }
+        },
+        {
+          "type": "problem",
+          "label": "Bài 2.",
+          "tier": "onclass",
+          "level": 1,
+          "dang_id": "NB3",
+          "figure_given": true,
+          "draw": false,
+          "statement": "Cho đường tròn $(O)$ có hai đường kính $MN$ và $PQ$ vuông góc với nhau tại $O$ (hình bên). Trên cung nhỏ $NP$ lấy điểm $K$ ($K$ khác $N, P$). Kẻ $KD \\perp MN$ tại $D$ và $KH \\perp PQ$ tại $H$. Từ giả thiết, cặp góc vuông và cạnh huyền chung nào cho biết bốn điểm $O, D, K, H$ cùng thuộc một đường tròn?",
+          "figure": {
+            "pos": "right",
+            "tikz": "\\begin{tikzpicture}[scale=0.88]\n  \\coordinate (O) at (0,0);\n  \\coordinate (M) at (-1.2,0);\n  \\coordinate (N) at (1.2,0);\n  \\coordinate (P) at (0,1.2);\n  \\coordinate (Q) at (0,-1.2);\n  \\coordinate (K) at (0.946,0.739);\n  \\coordinate (D) at (0.946,0);\n  \\coordinate (H) at (0,0.739);\n  \\draw[ink, thick] (O) circle (1.2);\n  \\draw[ink, thick] (M)--(N) (P)--(Q) (K)--(D) (K)--(H) (O)--(K);\n  \\fill[ink] (O) circle (1.3pt) (M) circle (1.3pt) (N) circle (1.3pt) (P) circle (1.3pt) (Q) circle (1.3pt) (K) circle (1.3pt) (D) circle (1.3pt) (H) circle (1.3pt);\n  \\node[inner sep=0pt] at (-0.22,-0.22) {$O$};\n  \\node[inner sep=0pt] at (-1.40,0) {$M$};\n  \\node[inner sep=0pt] at (1.40,0) {$N$};\n  \\node[inner sep=0pt] at (0,1.40) {$P$};\n  \\node[inner sep=0pt] at (0,-1.40) {$Q$};\n  \\node[inner sep=0pt] at (1.12,0.88) {$K$};\n  \\node[inner sep=0pt] at (0.95,-0.22) {$D$};\n  \\node[inner sep=0pt] at (-0.22,0.74) {$H$};\n\\end{tikzpicture}"
+          },
+          "options": [
+            "$\\widehat{ODK} = 90^\\circ$ và $\\widehat{OHK} = 90^\\circ$, chung cạnh huyền $OK$",
+            "$\\widehat{OKD} = 90^\\circ$ và $\\widehat{OKH} = 90^\\circ$, chung cạnh huyền $DH$",
+            "$\\widehat{KMN} = 90^\\circ$ và $\\widehat{KPQ} = 90^\\circ$, chung cạnh huyền $DH$",
+            "$\\widehat{NOD} = 90^\\circ$ và $\\widehat{OKH} = 90^\\circ$, chung cạnh huyền $NK$"
+          ],
+          "answer": "A",
+          "solution": "Vì $KD \\perp MN$ tại $D$ nên $\\widehat{ODK} = 90^\\circ$; vì $KH \\perp PQ$ tại $H$ nên $\\widehat{OHK} = 90^\\circ$. Hai tam giác vuông $\\triangle ODK$ và $\\triangle OHK$ có chung cạnh huyền $OK$, nên bốn điểm $O, D, K, H$ cùng thuộc đường tròn đường kính $OK$."
+        },
+        {
+          "type": "problem",
+          "label": "Bài 3.",
+          "tier": "onclass",
+          "level": 1,
+          "dang_id": "NB5",
+          "figure_given": true,
+          "draw": false,
+          "statement": "Cho $\\triangle ABC$ nhọn có hai đường cao $BE$ và $CF$ (hình bên). Điền vào chỗ chấm để hoàn thành bài giải chứng minh bốn điểm $B, E, F, C$ cùng thuộc một đường tròn:[[br]]Ta có $BE \\perp AC$ ($BE$ là đường cao) nên $\\widehat{BEC} = [[blank:1.2cm]]$, hay $\\triangle BEC$ vuông tại $E$.[[br]]Vì $\\triangle BEC$ vuông tại $E$ nên ba điểm $B, E, C$ cùng thuộc đường tròn đường kính $[[blank:1.2cm]]$.[[br]]Tương tự, $CF \\perp AB$ nên $\\triangle BFC$ vuông tại $F$, nên ba điểm $B, F, C$ cùng thuộc đường tròn đường kính $[[blank:1.2cm]]$.[[br]]Vậy bốn điểm $B, E, F, C$ cùng thuộc đường tròn đường kính $[[blank:1.2cm]]$.",
+          "statement_slide": "Cho $\\triangle ABC$ nhọn có hai đường cao $BE$ và $CF$. Chứng minh bốn điểm $B, E, F, C$ cùng thuộc một đường tròn.",
+          "figure": {
+            "pos": "right",
+            "tikz": "\\begin{tikzpicture}[scale=0.85]\n  \\coordinate (B) at (0,0);\n  \\coordinate (C) at (3.2,0);\n  \\coordinate (A) at (1.1,2.4);\n  \\coordinate (E) at (1.812,1.586);\n  \\coordinate (F) at (0.556,1.212);\n  \\draw[ink, thick] (B)--(C)--(A)--cycle (B)--(E) (C)--(F);\n  \\draw[ink] (1.707,1.494)--(1.799,1.388)--(1.905,1.480);\n  \\draw[ink] (0.683,1.154)--(0.624,1.026)--(0.497,1.085);\n  \\fill[ink] (A) circle (1.3pt) (B) circle (1.3pt) (C) circle (1.3pt) (E) circle (1.3pt) (F) circle (1.3pt);\n  \\node[inner sep=0pt] at (1.1,2.62) {$A$};\n  \\node[inner sep=0pt] at (-0.22,-0.16) {$B$};\n  \\node[inner sep=0pt] at (3.40,-0.16) {$C$};\n  \\node[inner sep=0pt] at (2.02,1.72) {$E$};\n  \\node[inner sep=0pt] at (0.34,1.34) {$F$};\n\\end{tikzpicture}"
+          },
+          "answer": "$90^\\circ$; $BC$; $BC$; $BC$.",
+          "solution": ""
+        },
+        {
+          "type": "para",
+          "variant": "heading",
+          "text": "Mạch 2: Ráp khuôn 4 điểm (đường cao, tiếp tuyến \\& nửa đường tròn)"
+        },
+        {
+          "type": "noted",
+          "variant": "example",
+          "title": "Ví dụ 2. Mô hình tiếp tuyến kết hợp cát tuyến",
+          "text": "Cho đường tròn $(O)$ và điểm $M$ nằm ngoài đường tròn. Qua $M$ kẻ tiếp tuyến $MT$ với $(O)$ ($T$ là tiếp điểm) và cát tuyến $MNP$ không đi qua tâm $O$ ($N$ nằm giữa $M$ và $P$). Kẻ $OK \\perp NP$ tại $K$. Chứng minh bốn điểm $M, T, O, K$ cùng thuộc một đường tròn.[[br]]{\\sffamily\\bfseries\\color{brand}Lời giải}[[br]]Vì $MT$ là tiếp tuyến của $(O)$ tại $T$ nên $MT \\perp [[fill:OT]]$ và $\\widehat{MTO} = 90^\\circ$.[[br]]Vì $\\triangle MTO$ vuông tại $T$ nên ba điểm $M, T, O$ cùng thuộc đường tròn đường kính $[[fill:MO]]$.[[br]]Vì $OK \\perp NP$ tại $K$ nên $\\widehat{MKO} = 90^\\circ$, hay $\\triangle MKO$ vuông tại $K$.[[br]]Vì $\\triangle MKO$ vuông tại $K$ nên ba điểm $M, K, O$ cùng thuộc đường tròn đường kính $[[fill:MO]]$.[[br]]Vậy bốn điểm $M, T, O, K$ cùng thuộc đường tròn đường kính $[[fill:MO]]$.",
+          "text_slide": "Cho đường tròn $(O)$ và điểm $M$ nằm ngoài đường tròn. Qua $M$ kẻ tiếp tuyến $MT$ với $(O)$ ($T$ là tiếp điểm) và cát tuyến $MNP$ không đi qua tâm $O$ ($N$ nằm giữa $M$ và $P$). Kẻ $OK \\perp NP$ tại $K$. Chứng minh bốn điểm $M, T, O, K$ cùng thuộc một đường tròn.",
+          "figure": {
+            "pos": "right",
+            "tikz": "\\begin{tikzpicture}[scale=0.85]\n  \\coordinate (O) at (0,0);\n  \\coordinate (M) at (-2.6,0);\n  \\draw[ink, thick] (O) circle (1.1);\n  \\fill[ink] (O) circle (1.3pt) (M) circle (1.3pt);\n  \\node[inner sep=0pt] at (0.24,0.12) {$O$};\n  \\node[inner sep=0pt] at (-2.84,0) {$M$};\n\\end{tikzpicture}",
+            "tikz_gv": "\\begin{tikzpicture}[scale=0.85]\n  \\coordinate (O) at (0,0);\n  \\coordinate (M) at (-2.6,0);\n  \\coordinate (T) at (-0.465,0.997);\n  \\coordinate (K) at (-0.174,-0.650);\n  \\coordinate (N) at (-1.015,-0.425);\n  \\coordinate (P) at (0.666,-0.875);\n  \\draw[brand!55, dashed, thick] (-1.3,0) circle (1.3);\n  \\draw[ink, thick] (O) circle (1.1);\n  \\draw[ink, thick] (M)--(T)--(O) (M)--(P) (O)--(K) (M)--(O);\n  \\draw[ink] (-0.415,0.888)--(-0.523,0.837)--(-0.574,0.946);\n  \\draw[ink] (-0.143,-0.534)--(-0.259,-0.503)--(-0.290,-0.619);\n  \\fill[ink] (O) circle (1.3pt) (M) circle (1.3pt) (T) circle (1.3pt) (K) circle (1.3pt) (N) circle (1.3pt) (P) circle (1.3pt);\n  \\node[inner sep=0pt] at (0.24,0.10) {$O$};\n  \\node[inner sep=0pt] at (-2.84,0) {$M$};\n  \\node[inner sep=0pt] at (-0.52,1.22) {$T$};\n  \\node[inner sep=0pt] at (-1.18,-0.64) {$N$};\n  \\node[inner sep=0pt] at (-0.12,-0.90) {$K$};\n  \\node[inner sep=0pt] at (0.88,-0.96) {$P$};\n\\end{tikzpicture}"
+          }
+        },
+        {
+          "type": "problem",
+          "label": "Bài 4.",
+          "tier": "onclass",
+          "level": 2,
+          "dang_id": "NB2+TH1",
+          "figure_given": true,
+          "draw": false,
+          "statement": "Cho $\\triangle ABC$ nhọn ($AB < AC$) có hai đường cao $BD$ và $CE$ cắt nhau tại $H$ (hình bên).[[br]]a) [NB] (Nhắc lại kiến thức Lớp 7 — đường cao tam giác) Từ giả thiết $BD, CE$ là hai đường cao của $\\triangle ABC$, nêu hai góc vuông tại $D, E$ và chỉ ra cạnh huyền chung của hai tam giác vuông $\\triangle BEC$ và $\\triangle BDC$.[[br]]b) [TH] Trình bày hoàn chỉnh chứng minh bốn điểm $B, E, D, C$ cùng nằm trên một đường tròn và xác định tâm $I$ của đường tròn này.",
+          "figure": {
+            "pos": "right",
+            "caption": "",
+            "tikz": "\\begin{tikzpicture}[scale=0.85]\n  \\coordinate (B) at (0,0);\n  \\coordinate (C) at (3.1,0);\n  \\coordinate (A) at (0.85,2.25);\n  \\coordinate (D) at (1.55,1.55);\n  \\coordinate (E) at (0.387,1.025);\n  \\coordinate (H) at (0.85,0.85);\n  \\draw[ink, thick] (B)--(C)--(A)--cycle (B)--(D) (C)--(E);\n  \\draw[ink] (1.451,1.451)--(1.550,1.352)--(1.649,1.451);\n  \\draw[ink] (0.518,0.975)--(0.469,0.844)--(0.338,0.894);\n  \\fill[ink] (A) circle (1.3pt) (B) circle (1.3pt) (C) circle (1.3pt) (D) circle (1.3pt) (E) circle (1.3pt) (H) circle (1.3pt);\n  \\node[inner sep=0pt] at (0.85,2.47) {$A$};\n  \\node[inner sep=0pt] at (-0.22,-0.16) {$B$};\n  \\node[inner sep=0pt] at (3.30,-0.16) {$C$};\n  \\node[inner sep=0pt] at (1.76,1.72) {$D$};\n  \\node[inner sep=0pt] at (0.17,1.15) {$E$};\n  \\node[inner sep=0pt] at (0.95,0.52) {$H$};\n\\end{tikzpicture}"
+          },
+          "hints": [
+            "Ý a): Đường cao hạ từ đỉnh vuông góc với cạnh đối diện tạo góc $90^\\circ$ tại chân đường cao $D, E$; cạnh đối diện với hai đỉnh góc vuông là cạnh huyền chung.",
+            "Ý b): Áp dụng khuôn tam giác vuông cho $\\triangle BEC$ và $\\triangle BDC$ để chỉ ra đường tròn đường kính chung $BC$ và tâm $I$."
+          ],
+          "answer": "a) Vì $BD$ và $CE$ là hai đường cao của $\\triangle ABC$ nên $BD \\perp AC$ tại $D$ và $CE \\perp AB$ tại $E$, cho hai góc vuông là $\\widehat{BDC} = 90^\\circ$ và $\\widehat{BEC} = 90^\\circ$.[[br]]Hai tam giác vuông $\\triangle BEC$ (vuông tại $E$) và $\\triangle BDC$ (vuông tại $D$) có chung cạnh huyền $BC$.[[br]]b) Xét $\\triangle BEC$ vuông tại $E$ (vì $CE \\perp AB$) nên ba điểm $B, E, C$ cùng thuộc đường tròn đường kính $BC$.[[br]]Xét $\\triangle BDC$ vuông tại $D$ (vì $BD \\perp AC$) nên ba điểm $B, D, C$ cùng thuộc đường tròn đường kính $BC$.[[br]]Vậy bốn điểm $B, E, D, C$ cùng nằm trên một đường tròn, nên cùng thuộc đường tròn đường kính $BC$, có tâm $I$ là trung điểm của cạnh huyền $BC$.",
+          "solution": ""
+        },
+        {
+          "type": "problem",
+          "label": "Bài 5.",
+          "tier": "onclass",
+          "level": 2,
+          "dang_id": "NB3+TH1",
+          "figure_given": true,
+          "draw": false,
+          "statement": "Cho đường tròn $(O; R)$ đường kính $AB$. Kẻ tiếp tuyến $Ax$ với $(O)$, lấy điểm $P$ trên $Ax$ ($AP > R$). Từ $P$ kẻ tiếp tuyến $PM$ với $(O)$ ($M$ là tiếp điểm, hình bên).[[br]]a) [NB] (Nhắc lại kiến thức Chương V — tính chất tiếp tuyến) Dựa vào tính chất tiếp tuyến của đường tròn, nêu quan hệ vuông góc của $PA$ và $PM$ với bán kính tại $A, M$, từ đó chỉ ra hai tam giác vuông có chung cạnh huyền $PO$.[[br]]b) [TH] Trình bày hoàn chỉnh chứng minh bốn điểm $A, P, M, O$ cùng thuộc một đường tròn.",
+          "figure": {
+            "pos": "right",
+            "caption": "",
+            "tikz": "\\begin{tikzpicture}[scale=0.82]\n  \\coordinate (O) at (0,0);\n  \\coordinate (A) at (-1.15,0);\n  \\coordinate (B) at (1.15,0);\n  \\coordinate (P) at (-1.15,1.95);\n  \\coordinate (M) at (0.556,1.006);\n  \\draw[ink, thick] (O) circle (1.15);\n  \\draw[ink, thick] (A)--(B) (A)--(-1.15,2.45) (P)--(M) (O)--(M) (O)--(P);\n  \\draw[ink] (-1.010,0.000)--(-1.010,0.140)--(-1.150,0.140);\n  \\draw[ink] (0.489,0.884)--(0.366,0.952)--(0.434,1.074);\n  \\fill[ink] (O) circle (1.3pt) (A) circle (1.3pt) (B) circle (1.3pt) (P) circle (1.3pt) (M) circle (1.3pt);\n  \\node[inner sep=0pt] at (0,-0.25) {$O$};\n  \\node[inner sep=0pt] at (-1.38,-0.06) {$A$};\n  \\node[inner sep=0pt] at (1.38,0) {$B$};\n  \\node[inner sep=0pt] at (-1.38,1.95) {$P$};\n  \\node[inner sep=0pt] at (-1.36,2.42) {$x$};\n  \\node[inner sep=0pt] at (0.78,1.24) {$M$};\n\\end{tikzpicture}"
+          },
+          "hints": [
+            "Ý a): Tiếp tuyến vuông góc với bán kính tại tiếp điểm $A$ và $M$.",
+            "Ý b): Áp dụng khuôn tam giác vuông cho $\\triangle PAO$ và $\\triangle PMO$ có chung cạnh huyền $PO$."
+          ],
+          "answer": "a) Vì $PA$ và $PM$ là các tiếp tuyến của $(O)$ lần lượt tại $A$ và $M$ nên $PA \\perp OA$ ($\\widehat{PAO} = 90^\\circ$) và $PM \\perp OM$ ($\\widehat{PMO} = 90^\\circ$).[[br]]Hai tam giác vuông $\\triangle PAO$ (vuông tại $A$) và $\\triangle PMO$ (vuông tại $M$) có chung cạnh huyền $PO$.[[br]]b) Xét $\\triangle PAO$ vuông tại $A$ (vì $PA \\perp OA$) nên ba điểm $P, A, O$ cùng thuộc đường tròn đường kính $PO$.[[br]]Xét $\\triangle PMO$ vuông tại $M$ (vì $PM \\perp OM$) nên ba điểm $P, M, O$ cùng thuộc đường tròn đường kính $PO$.[[br]]Vậy bốn điểm $A, P, M, O$ cùng thuộc đường tròn đường kính $PO$.",
+          "solution": ""
+        },
+        {
+          "type": "noted",
+          "variant": "example",
+          "title": "Ví dụ 3. Mô hình nửa đường tròn kết hợp góc nội tiếp chắn nửa đường tròn",
+          "text": "Cho nửa đường tròn $(O; R)$ đường kính $AB$, điểm $M$ là trung điểm của $OA$. Đường thẳng qua $M$ vuông góc $AB$ cắt $(O)$ tại $C$; lấy $I \\in MC$, tia $AI$ cắt $(O)$ tại $D$. Chứng minh $B, D, I, M$ cùng thuộc một đường tròn.[[br]]{\\sffamily\\bfseries\\color{brand}Lời giải}[[br]]Vì $D$ thuộc nửa đường tròn đường kính $AB$ và $A, I, D$ thẳng hàng nên $\\widehat{[[fill:ADB]]} = \\widehat{IDB} = 90^\\circ$, hay $\\triangle IDB$ vuông tại $D$ nên $B, D, I$ thuộc đường tròn đường kính $[[fill:BI]]$.[[br]]Vì $MC \\perp AB$ tại $M$ ($I \\in MC$) nên $\\widehat{IMB} = 90^\\circ$, hay $\\triangle IMB$ vuông tại $M$ nên $B, M, I$ thuộc đường tròn đường kính $[[fill:BI]]$.[[br]]Vậy bốn điểm $B, D, I, M$ cùng thuộc đường tròn đường kính $[[fill:BI]]$.",
+          "text_slide": "Cho nửa đường tròn $(O; R)$, đường kính $AB$ và điểm $M$ là trung điểm của đoạn $OA$. Đường thẳng qua $M$ và vuông góc với $AB$, cắt nửa đường tròn $(O)$ tại $C$. Lấy điểm $I$ bất kì thuộc đoạn $MC$. Tia $AI$ cắt nửa đường tròn $(O)$ tại điểm thứ hai $D$. Chứng minh bốn điểm $B, D, I, M$ cùng thuộc một đường tròn.",
+          "figure": {
+            "pos": "right",
+            "tikz": "\\begin{tikzpicture}[scale=0.85]\n  \\coordinate (O) at (0,0);\n  \\coordinate (A) at (-1.5,0);\n  \\coordinate (B) at (1.5,0);\n  \\coordinate (M) at (-0.75,0);\n  \\draw[ink, thick] (B) arc (0:180:1.5);\n  \\draw[ink, thick] (A)--(B);\n  \\fill[ink] (O) circle (1.3pt) (A) circle (1.3pt) (B) circle (1.3pt) (M) circle (1.3pt);\n  \\node[inner sep=0pt] at (0,-0.24) {$O$};\n  \\node[inner sep=0pt] at (-1.70,0) {$A$};\n  \\node[inner sep=0pt] at (1.70,0) {$B$};\n  \\node[inner sep=0pt] at (-0.75,-0.24) {$M$};\n\\end{tikzpicture}",
+            "tikz_gv": "\\begin{tikzpicture}[scale=0.85]\n  \\coordinate (O) at (0,0);\n  \\coordinate (A) at (-1.5,0);\n  \\coordinate (B) at (1.5,0);\n  \\coordinate (M) at (-0.75,0);\n  \\coordinate (C) at (-0.75,1.299);\n  \\coordinate (I) at (-0.75,0.55);\n  \\coordinate (D) at (0.451,1.431);\n  \\draw[brand!55, dashed, thick] (0.375,0.275) circle (1.158);\n  \\draw[ink, thick] (B) arc (0:180:1.5);\n  \\draw[ink, thick] (A)--(B) (M)--(C) (A)--(D) (D)--(B) (I)--(B);\n  \\draw[ink] (-0.75,0.14)--(-0.61,0.14)--(-0.61,0);\n  \\draw[ink] (0.346,1.354)--(0.423,1.249)--(0.528,1.326);\n  \\fill[ink] (O) circle (1.3pt) (A) circle (1.3pt) (B) circle (1.3pt) (M) circle (1.3pt) (C) circle (1.3pt) (I) circle (1.3pt) (D) circle (1.3pt);\n  \\node[inner sep=0pt] at (0,-0.24) {$O$};\n  \\node[inner sep=0pt] at (-1.70,0) {$A$};\n  \\node[inner sep=0pt] at (1.70,0) {$B$};\n  \\node[inner sep=0pt] at (-0.75,-0.24) {$M$};\n  \\node[inner sep=0pt] at (-0.94,1.46) {$C$};\n  \\node[inner sep=0pt] at (-0.98,0.64) {$I$};\n  \\node[inner sep=0pt] at (0.56,1.66) {$D$};\n\\end{tikzpicture}"
+          }
+        }
+      ],
+      "solution": "",
+      "teacher_note": "Mạch 1 củng cố tam giác vuông và góc 90° ẩn trước khi học sinh tự điền khuôn bài giải; Mạch 2 hướng dẫn học sinh ghép khuôn trên mô hình tiếp tuyến, đường cao và nửa đường tròn để chuẩn bị trực tiếp cho Bài 6."
+    },
+    {
+      "kind": "practice2",
+      "number": 4,
+      "title": "Luyện tập 2: Tổng hợp đề khảo sát (Đích)",
+      "blocks": [
+        {
+          "type": "para",
+          "variant": "heading",
+          "text": "Đề khảo sát lớp 9 — Quận Tây Hồ (Tháng 4/2025)"
+        },
+        {
+          "type": "problem",
+          "label": "Bài 6.",
+          "tier": "onclass",
+          "level": 3,
+          "dang_id": "TH2+VD1",
+          "figure_given": false,
+          "draw": true,
+          "draw_height": 5.0,
+          "statement": "Cho đường tròn $(O; R)$ có hai đường kính $AB$ và $CD$ vuông góc tại $O$. Lấy điểm $I$ là trung điểm của đoạn thẳng $OB$. Tia $CI$ cắt đường tròn $(O)$ tại $E$ ($E$ khác $C$).[[br]]a) [TH] ★★ Chứng minh bốn điểm $O, I, E, D$ cùng nằm trên một đường tròn.[[br]]b) [VD] ★★★ Gọi $H$ là giao điểm của hai đường thẳng $AE$ và $CD$. Chứng minh $\\triangle AHO \\backsim \\triangle ABE$ và suy ra $AH \\cdot AE = 2R^2$.",
+          "figure": {
+            "pos": "below",
+            "width": "0.5",
+            "tikz": "\\begin{tikzpicture}\n  \\coordinate (O) at (0,0);\n  \\coordinate (A) at (-1.5,0);\n  \\coordinate (B) at (1.5,0);\n  \\coordinate (C) at (0,1.5);\n  \\coordinate (D) at (0,-1.5);\n  \\draw[ink, thick] (O) circle (1.5);\n  \\draw[ink, thick] (A)--(B) (C)--(D);\n  \\draw[ink] (0,0.14)--(0.14,0.14)--(0.14,0);\n  \\fill[ink] (O) circle (1.3pt) (A) circle (1.3pt) (B) circle (1.3pt) (C) circle (1.3pt) (D) circle (1.3pt);\n  \\node[inner sep=0pt] at (-0.24,-0.24) {$O$};\n  \\node[inner sep=0pt] at (-1.75,0) {$A$};\n  \\node[inner sep=0pt] at (1.75,0) {$B$};\n  \\node[inner sep=0pt] at (0,1.75) {$C$};\n  \\node[inner sep=0pt] at (0,-1.75) {$D$};\n\\end{tikzpicture}",
+            "tikz_gv": "\\begin{tikzpicture}\n  \\coordinate (O) at (0,0);\n  \\coordinate (A) at (-1.5,0);\n  \\coordinate (B) at (1.5,0);\n  \\coordinate (C) at (0,1.5);\n  \\coordinate (D) at (0,-1.5);\n  \\coordinate (I) at (0.75,0);\n  \\coordinate (E) at (1.2,-0.9);\n  \\coordinate (H) at (0,-0.5);\n  \\draw[brand!55, dashed, thick] (0.375,-0.75) circle (0.8385);\n  \\draw[ink, thick] (O) circle (1.5);\n  \\draw[ink, thick] (A)--(B) (C)--(D) (C)--(E) (E)--(D) (A)--(E) (E)--(B);\n  \\draw[ink] (0,0.14)--(0.14,0.14)--(0.14,0);\n  \\draw[ink] (1.142,-0.784)--(1.026,-0.842)--(1.084,-0.958);\n  \\fill[ink] (O) circle (1.3pt) (A) circle (1.3pt) (B) circle (1.3pt) (C) circle (1.3pt) (D) circle (1.3pt) (I) circle (1.3pt) (E) circle (1.3pt) (H) circle (1.3pt);\n  \\node[inner sep=0pt] at (-0.24,-0.24) {$O$};\n  \\node[inner sep=0pt] at (-1.75,0) {$A$};\n  \\node[inner sep=0pt] at (1.75,0) {$B$};\n  \\node[inner sep=0pt] at (0,1.75) {$C$};\n  \\node[inner sep=0pt] at (0,-1.75) {$D$};\n  \\node[inner sep=0pt] at (0.75,0.24) {$I$};\n  \\node[inner sep=0pt] at (1.42,-1.04) {$E$};\n  \\node[inner sep=0pt] at (-0.24,-0.55) {$H$};\n\\end{tikzpicture}"
+          },
+          "quy_trinh": [
+            "Ý a): Chỉ ra hai góc $90^\\circ$ tại $O$ (hai đường kính vuông góc) và tại $E$ (góc nội tiếp chắn nửa đường tròn đường kính $CD$) để ghép khuôn chung cạnh huyền $ID$.",
+            "Ý b): Chứng minh $\\triangle AHO \\backsim \\triangle ABE$ theo trường hợp góc–góc (chung $\\widehat{A}$ và $\\widehat{AOH} = \\widehat{AEB} = 90^\\circ$).",
+            "Lập tỉ số đồng dạng $\\dfrac{AH}{AB} = \\dfrac{AO}{AE}$ rồi nhân chéo và thay $AB = 2R$, $AO = R$."
+          ],
+          "answer": "a) Vì $AB \\perp CD$ tại $O$ nên $\\widehat{IOD} = 90^\\circ$, hay $\\triangle IOD$ vuông tại $O$, do $\\triangle IOD$ vuông tại $O$ nên ba điểm $I, O, D$ cùng thuộc đường tròn đường kính $ID$.[[br]]Vì $E$ thuộc đường tròn $(O)$ đường kính $CD$ ($E$ khác $C, D$) nên $\\widehat{CED} = 90^\\circ$.[[br]]Vì $C, I, E$ thẳng hàng nên $\\widehat{IED} = 90^\\circ$, hay $\\triangle IED$ vuông tại $E$ nên ba điểm $I, E, D$ cùng thuộc đường tròn đường kính $ID$.[[br]]Vậy bốn điểm $O, I, E, D$ cùng nằm trên đường tròn đường kính $ID$.[[br]]b) Vì $E$ thuộc đường tròn $(O)$ đường kính $AB$ ($E$ khác $A, B$) nên $\\widehat{AEB} = 90^\\circ$.[[br]]Xét $\\triangle AHO$ và $\\triangle ABE$, ta có $\\widehat{AOH} = \\widehat{AEB} = 90^\\circ$ và $\\widehat{HAO} = \\widehat{BAE}$ (góc chung).[[br]]Vì hai cặp góc tương ứng bằng nhau nên $\\triangle AHO \\backsim \\triangle ABE$ (g.g).[[br]]Từ cặp tam giác đồng dạng đó, ta có $\\dfrac{AH}{AB} = \\dfrac{AO}{AE}$, tức $AH \\cdot AE = AB \\cdot AO = 2R \\cdot R = 2R^2$.[[br]]Vậy $\\triangle AHO \\backsim \\triangle ABE$ và $AH \\cdot AE = 2R^2$.",
+          "solution": ""
+        }
+      ],
+      "solution": "",
+      "teacher_note": "Học sinh tự vẽ tiếp hình trên khung đường tròn nền cố định bán kính 1,5 cm (hình gốc chỉ cho sẵn O, A, B, C, D) và tự trình bày trọn vẹn hai ý a, b theo quy trình."
+    },
+    {
+      "kind": "reflection",
+      "number": 5,
+      "title": "Tổng kết và Bài tập về nhà",
+      "blocks": [
+        {
+          "type": "mindmap",
+          "root": "4 điểm cùng thuộc đường tròn",
+          "caption": "Sơ đồ khuôn chứng minh 4 điểm cùng thuộc một đường tròn",
+          "size": "small",
+          "branches": [
+            {
+              "label": "1. Khuôn chuẩn",
+              "children": [
+                {
+                  "label": "$\\triangle ABC$ vuông tại $A \\Rightarrow A, B, C$ thuộc ĐT đường kính $BC$"
+                },
+                {
+                  "label": "$\\triangle DBC$ vuông tại $D \\Rightarrow D, B, C$ thuộc ĐT đường kính $BC$"
+                }
+              ]
+            },
+            {
+              "label": "2. Nguồn góc $90^\\circ$ ẩn",
+              "children": [
+                {
+                  "label": "Đường cao / hình chiếu vuông góc"
+                },
+                {
+                  "label": "Tiếp tuyến vuông góc với bán kính"
+                },
+                {
+                  "label": "Góc nội tiếp chắn nửa đường tròn"
+                }
+              ]
+            },
+            {
+              "label": "3. Kết luận và Bẫy",
+              "children": [
+                {
+                  "label": "Đường kính = cạnh huyền chung"
+                },
+                {
+                  "label": "Không chọn nhầm cạnh góc vuông"
+                }
+              ]
+            }
+          ]
+        },
+        {
+          "type": "problem",
+          "label": "BTVN 1.",
+          "tier": "btvn",
+          "level": 1,
+          "dang_id": "NB2",
+          "figure_given": true,
+          "draw": false,
+          "statement": "Quan sát hình bên: $\\triangle PQR$ nhọn có hai đường cao $PM$ và $QN$ (các góc vuông tại $M$ và $N$ đã được đánh dấu). Bốn điểm $P, Q, M, N$ cùng thuộc đường tròn có đường kính là",
+          "figure": {
+            "pos": "right",
+            "tikz": "\\begin{tikzpicture}[scale=0.82]\n  \\coordinate (P) at (0,0);\n  \\coordinate (Q) at (2.8,0);\n  \\coordinate (R) at (1.1,2.2);\n  \\coordinate (M) at (1.753,1.355);\n  \\coordinate (N) at (0.560,1.120);\n  \\draw[ink, thick] (P)--(Q)--(R)--cycle (P)--(M) (Q)--(N);\n  \\draw[ink] (1.650,1.275)--(1.730,1.172)--(1.833,1.252);\n  \\draw[ink] (0.676,1.062)--(0.618,0.946)--(0.502,1.004);\n  \\fill[ink] (P) circle (1.3pt) (Q) circle (1.3pt) (R) circle (1.3pt) (M) circle (1.3pt) (N) circle (1.3pt);\n  \\node[inner sep=0pt] at (-0.22,-0.16) {$P$};\n  \\node[inner sep=0pt] at (3.00,-0.16) {$Q$};\n  \\node[inner sep=0pt] at (1.10,2.42) {$R$};\n  \\node[inner sep=0pt] at (1.96,1.48) {$M$};\n  \\node[inner sep=0pt] at (0.34,1.26) {$N$};\n\\end{tikzpicture}"
+          },
+          "options": [
+            "$PQ$",
+            "$MN$",
+            "$PR$",
+            "$QR$"
+          ],
+          "answer": "A",
+          "solution": "Vì $\\triangle PMQ$ vuông tại $M$ và $\\triangle PNQ$ vuông tại $N$ có chung cạnh huyền $PQ$ nên bốn điểm $P, Q, M, N$ cùng thuộc đường tròn đường kính $PQ$."
+        },
+        {
+          "type": "problem",
+          "label": "BTVN 2.",
+          "tier": "btvn",
+          "level": 1,
+          "dang_id": "NB3",
+          "figure_given": false,
+          "draw": false,
+          "statement": "Cho đường tròn $(O)$ và điểm $K$ nằm ngoài đường tròn; kẻ hai tiếp tuyến $KA, KB$ tới $(O)$ ($A, B$ là các tiếp điểm). Từ giả thiết trên, cặp góc vuông và cạnh huyền chung nào cho thấy bốn điểm $K, A, O, B$ cùng thuộc một đường tròn?",
+          "options": [
+            "$\\widehat{KAO} = 90^\\circ$ và $\\widehat{KBO} = 90^\\circ$, chung cạnh huyền $KO$",
+            "$\\widehat{AKB} = 90^\\circ$ và $\\widehat{AOB} = 90^\\circ$, chung cạnh huyền $AB$",
+            "$\\widehat{KAO} = 90^\\circ$ và $\\widehat{KBO} = 90^\\circ$, chung cạnh huyền $AB$",
+            "$\\widehat{OKA} = 90^\\circ$ và $\\widehat{OKB} = 90^\\circ$, chung cạnh huyền $KO$"
+          ],
+          "answer": "A",
+          "solution": "Vì $KA$ và $KB$ là các tiếp tuyến của $(O)$ tại $A$ và $B$ nên $KA \\perp OA$ ($\\widehat{KAO} = 90^\\circ$) và $KB \\perp OB$ ($\\widehat{KBO} = 90^\\circ$). Hai tam giác vuông $\\triangle KAO$ và $\\triangle KBO$ có chung cạnh huyền $KO$."
+        },
+        {
+          "type": "problem",
+          "label": "BTVN 3.",
+          "tier": "btvn",
+          "level": 1,
+          "dang_id": "NB4",
+          "figure_given": true,
+          "draw": false,
+          "ve_tiep": 0,
+          "statement": "Cho nửa đường tròn $(O)$ đường kính $AB$ và điểm $C$ trên nửa đường tròn sao cho $AC < BC$ (hình bên). Trên đoạn $BC$ lấy điểm $H$, hãy vẽ tiếp $HK \\perp AB$ ($K \\in AB$) trực tiếp vào hình, rồi ghi tên hai góc vuông cùng nhìn đoạn thẳng $AH$ là $\\widehat{[[blank:1.4cm]]} = 90^\\circ$ và $\\widehat{[[blank:1.4cm]]} = 90^\\circ$.",
+          "statement_slide": "Cho nửa đường tròn $(O)$ đường kính $AB$ và điểm $C$ trên nửa đường tròn ($AC < BC$). Lấy $H \\in BC$, vẽ tiếp $HK \\perp AB$ ($K \\in AB$) rồi xác định hai góc vuông cùng nhìn đoạn thẳng $AH$.",
+          "figure": {
+            "pos": "right",
+            "tikz": "\\begin{tikzpicture}[scale=0.85]\n  \\coordinate (O) at (0,0);\n  \\coordinate (A) at (-1.4,0);\n  \\coordinate (B) at (1.4,0);\n  \\coordinate (C) at (-0.803,1.147);\n  \\draw[ink, thick] (B) arc (0:180:1.4);\n  \\draw[ink, thick] (A)--(B) (A)--(C)--(B);\n  \\fill[ink] (O) circle (1.3pt) (A) circle (1.3pt) (B) circle (1.3pt) (C) circle (1.3pt);\n  \\node[inner sep=0pt] at (0,-0.24) {$O$};\n  \\node[inner sep=0pt] at (-1.62,0) {$A$};\n  \\node[inner sep=0pt] at (1.62,0) {$B$};\n  \\node[inner sep=0pt] at (-0.98,1.32) {$C$};\n\\end{tikzpicture}",
+            "tikz_gv": "\\begin{tikzpicture}[scale=0.85]\n  \\coordinate (O) at (0,0);\n  \\coordinate (A) at (-1.4,0);\n  \\coordinate (B) at (1.4,0);\n  \\coordinate (C) at (-0.803,1.147);\n  \\coordinate (H) at (0.409,0.516);\n  \\coordinate (K) at (0.409,0);\n  \\draw[ink, thick] (B) arc (0:180:1.4);\n  \\draw[ink, thick] (A)--(B) (A)--(C)--(B);\n  \\draw[brand, dashed, thick] (H)--(K) (A)--(H);\n  \\draw[ink] (-0.869,1.023)--(-0.745,0.957)--(-0.679,1.081);\n  \\draw[ink] (0.269,0)--(0.269,0.14)--(0.409,0.14);\n  \\fill[ink] (O) circle (1.3pt) (A) circle (1.3pt) (B) circle (1.3pt) (C) circle (1.3pt) (H) circle (1.3pt) (K) circle (1.3pt);\n  \\node[inner sep=0pt] at (0,-0.24) {$O$};\n  \\node[inner sep=0pt] at (-1.62,0) {$A$};\n  \\node[inner sep=0pt] at (1.62,0) {$B$};\n  \\node[inner sep=0pt] at (-0.98,1.32) {$C$};\n  \\node[inner sep=0pt] at (0.58,0.68) {$H$};\n  \\node[inner sep=0pt] at (0.41,-0.24) {$K$};\n\\end{tikzpicture}"
+          },
+          "answer": "$\\widehat{ACH} = 90^\\circ$ và $\\widehat{AKH} = 90^\\circ$.",
+          "solution": ""
+        },
+        {
+          "type": "problem",
+          "label": "BTVN 4.",
+          "tier": "btvn",
+          "level": 1,
+          "dang_id": "NB5",
+          "figure_given": false,
+          "draw": false,
+          "statement": "Cho $\\triangle ABC$ có ba góc nhọn, đường cao $AH$, kẻ $HE \\perp AC$ tại $E$ và $HD \\perp AB$ tại $D$. Điền vào chỗ chấm để hoàn thành bài giải chứng minh bốn điểm $A, D, H, E$ cùng thuộc một đường tròn:[[br]]Vì $HD \\perp AB$ tại $D$ nên $\\widehat{ADH} = [[blank:1.2cm]]$, hay $\\triangle ADH$ vuông tại $D$.[[br]]Vì $\\triangle ADH$ vuông tại $D$ nên ba điểm $A, D, H$ cùng thuộc đường tròn đường kính $[[blank:1.2cm]]$.[[br]]Tương tự, $HE \\perp AC$ tại $E$ nên $\\triangle AEH$ vuông tại $E$, nên ba điểm $A, E, H$ cùng thuộc đường tròn đường kính $[[blank:1.2cm]]$.[[br]]Vậy bốn điểm $A, D, H, E$ cùng thuộc đường tròn đường kính $[[blank:1.2cm]]$.",
+          "statement_slide": "Cho $\\triangle ABC$ nhọn, đường cao $AH$, kẻ $HE \\perp AC$ tại $E$ và $HD \\perp AB$ tại $D$. Chứng minh bốn điểm $A, D, H, E$ cùng thuộc một đường tròn.",
+          "answer": "$90^\\circ$; $AH$; $AH$; $AH$.",
+          "solution": ""
+        },
+        {
+          "type": "problem",
+          "label": "BTVN 5.",
+          "tier": "btvn",
+          "level": 2,
+          "dang_id": "NB3+TH1",
+          "figure_given": true,
+          "draw": false,
+          "statement": "Quan sát hình bên: cho đường tròn $(O)$ có bán kính $OA = 5$ cm, từ điểm $P$ nằm ngoài $(O)$ kẻ hai tiếp tuyến $PA$ và $PM$ tới $(O)$ ($A, M$ là các tiếp điểm) sao cho $PA = 12$ cm.[[br]]a) [NB] (Nhắc kiến thức Chương V — tính chất tiếp tuyến) Nêu hai góc vuông tạo bởi hai tiếp tuyến $PA, PM$ với bán kính tại tiếp điểm và giải thích ngắn gọn vì sao bốn điểm $A, P, M, O$ cùng nằm trên đường tròn đường kính $OP$.[[br]]b) [TH] (Vận dụng kiến thức Lớp 8 — Định lí Pythagore) Trong $\\triangle OAP$ vuông tại $A$, viết hệ thức Pythagore rồi tính độ dài $OP$ và bán kính đường tròn đi qua bốn điểm $A, P, M, O$.",
+          "figure": {
+            "pos": "right",
+            "tikz": "\\begin{tikzpicture}[scale=0.85]\n  \\coordinate (O) at (0,0);\n  \\coordinate (P) at (3.25,0);\n  \\coordinate (A) at (0.481,1.154);\n  \\coordinate (M) at (0.481,-1.154);\n  \\draw[ink, thick] (O) circle (1.25);\n  \\draw[ink, thick] (O)--(A)--(P)--(M)--(O);\n  \\draw[ink, dashed] (O)--(P);\n  \\draw[ink] (0.427,1.025)--(0.556,0.971)--(0.610,1.100);\n  \\draw[ink] (0.427,-1.025)--(0.556,-0.971)--(0.610,-1.100);\n  \\fill[ink] (O) circle (1.3pt) (P) circle (1.3pt) (A) circle (1.3pt) (M) circle (1.3pt);\n  \\node[inner sep=0pt] at (-0.26,0) {$O$};\n  \\node[inner sep=0pt] at (3.50,0) {$P$};\n  \\node[inner sep=0pt] at (0.48,1.38) {$A$};\n  \\node[inner sep=0pt] at (0.48,-1.38) {$M$};\n  \\node[inner sep=0pt] at (-0.25,0.66) {$5\\text{ cm}$};\n  \\node[inner sep=0pt] at (2.15,1.02) {$12\\text{ cm}$};\n\\end{tikzpicture}"
+          },
+          "hints": [
+            "Ý a): Tiếp tuyến vuông góc với bán kính tại tiếp điểm $A, M$ tạo ra hai tam giác vuông chung cạnh huyền $OP$.",
+            "Ý b): Viết $OP^2 = OA^2 + PA^2$ theo định lí Pythagore cho $\\triangle OAP$ vuông tại $A$, rồi tính bán kính bằng $\\dfrac{OP}{2}$."
+          ],
+          "answer": "a) Vì $PA$ và $PM$ là các tiếp tuyến của $(O)$ lần lượt tại $A$ và $M$ nên $PA \\perp OA$ ($\\widehat{OAP} = 90^\\circ$) và $PM \\perp OM$ ($\\widehat{OMP} = 90^\\circ$).[[br]]Xét $\\triangle OAP$ vuông tại $A$ và $\\triangle OMP$ vuông tại $M$ có chung cạnh huyền $OP$, nên bốn điểm $A, P, M, O$ cùng nằm trên đường tròn đường kính $OP$.[[br]]b) Áp dụng định lí Pythagore cho $\\triangle OAP$ vuông tại $A$, ta có $OP^2 = OA^2 + PA^2 = 5^2 + 12^2 = 169$.[[br]]Vì $OP > 0$ nên $OP = 13$ cm.[[br]]Bán kính đường tròn đi qua bốn điểm $A, P, M, O$ bằng $\\dfrac{OP}{2} = \\dfrac{13}{2} = 6{,}5$ cm.[[br]]Vậy $OP = 13$ cm và bán kính đường tròn đi qua bốn điểm $A, P, M, O$ bằng $6{,}5$ cm.",
+          "solution": ""
+        },
+        {
+          "type": "problem",
+          "label": "BTVN 6.",
+          "tier": "btvn",
+          "level": 3,
+          "dang_id": "TH2+VD1",
+          "figure_given": false,
+          "draw": true,
+          "draw_height": 5.0,
+          "statement": "Cho đường tròn $(O; R)$ và điểm $A$ nằm ngoài đường tròn. Từ $A$ kẻ tiếp tuyến $AB$ với $(O)$ ($B$ là tiếp điểm). Kẻ đường kính $BC$ của $(O)$, đoạn thẳng $AC$ cắt $(O)$ tại điểm thứ hai $D$. Kẻ $OH \\perp CD$ ($H \\in CD$).[[br]]a) [TH] ★★ Chứng minh bốn điểm $A, B, O, H$ cùng thuộc một đường tròn.[[br]]b) [VD] ★★★ Chứng minh $\\triangle OHC \\backsim \\triangle ABC$ và suy ra $CH \\cdot CA = 2R^2$.",
+          "figure": {
+            "pos": "below",
+            "width": "0.5",
+            "tikz": "\\begin{tikzpicture}\n  \\coordinate (O) at (0,0);\n  \\coordinate (A) at (-2.5,-1.5);\n  \\draw[ink, thick] (O) circle (1.5);\n  \\fill[ink] (O) circle (1.3pt) (A) circle (1.3pt);\n  \\node[inner sep=0pt] at (0.24,0.14) {$O$};\n  \\node[inner sep=0pt] at (-2.74,-1.50) {$A$};\n\\end{tikzpicture}",
+            "tikz_gv": "\\begin{tikzpicture}\n  \\coordinate (O) at (0,0);\n  \\coordinate (B) at (0,-1.5);\n  \\coordinate (C) at (0,1.5);\n  \\coordinate (A) at (-2.5,-1.5);\n  \\coordinate (D) at (-1.475,-0.270);\n  \\coordinate (H) at (-0.738,0.615);\n  \\draw[brand!55, dashed, thick] (-1.25,-0.75) circle (1.458);\n  \\draw[ink, thick] (O) circle (1.5);\n  \\draw[ink, thick] (A)--(B)--(C)--(A) (O)--(H);\n  \\draw[ink] (0,-1.36)--(-0.14,-1.36)--(-0.14,-1.5);\n  \\draw[ink] (-0.638,0.532)--(-0.721,0.432)--(-0.821,0.515);\n  \\fill[ink] (O) circle (1.3pt) (B) circle (1.3pt) (C) circle (1.3pt) (A) circle (1.3pt) (D) circle (1.3pt) (H) circle (1.3pt);\n  \\node[inner sep=0pt] at (0.24,0.08) {$O$};\n  \\node[inner sep=0pt] at (0.18,-1.68) {$B$};\n  \\node[inner sep=0pt] at (0.18,1.68) {$C$};\n  \\node[inner sep=0pt] at (-2.74,-1.50) {$A$};\n  \\node[inner sep=0pt] at (-1.70,-0.28) {$D$};\n  \\node[inner sep=0pt] at (-0.88,0.82) {$H$};\n\\end{tikzpicture}"
+          },
+          "answer": "a) Vì $AB$ là tiếp tuyến của $(O)$ tại $B$ nên $AB \\perp OB$, hay $\\triangle ABO$ vuông tại $B$.[[br]]Vì $\\triangle ABO$ vuông tại $B$ nên ba điểm $A, B, O$ cùng thuộc đường tròn đường kính $AO$.[[br]]Vì $OH \\perp CD$ tại $H$ và $H \\in CD$, $D \\in AC$ nên $\\widehat{AHO} = 90^\\circ$, hay $\\triangle AHO$ vuông tại $H$.[[br]]Vì $\\triangle AHO$ vuông tại $H$ nên ba điểm $A, H, O$ cùng thuộc đường tròn đường kính $AO$.[[br]]Vậy bốn điểm $A, B, O, H$ cùng thuộc đường tròn đường kính $AO$.[[br]]b) Xét $\\triangle OHC$ và $\\triangle ABC$, ta có $\\widehat{OHC} = \\widehat{ABC} = 90^\\circ$ (vì $OH \\perp CD$ và $AB \\perp BC$) và $\\widehat{C}$ chung.[[br]]Vì hai cặp góc tương ứng bằng nhau nên $\\triangle OHC \\backsim \\triangle ABC$ (g.g).[[br]]Từ cặp tam giác đồng dạng đó, ta có $\\dfrac{CH}{CB} = \\dfrac{CO}{CA}$, tức $CH \\cdot CA = CB \\cdot CO = 2R \\cdot R = 2R^2$.[[br]]Vậy $\\triangle OHC \\backsim \\triangle ABC$ và $CH \\cdot CA = 2R^2$.",
+          "solution": ""
+        }
+      ],
+      "solution": "",
+      "teacher_note": "BTVN củng cố theo đúng thứ tự NB1 -> NB2 -> NB3 -> NB4 -> NB5 -> TH1 -> TH2+VD1 (đề Cầu Giấy 2024-2025)."
+    }
+  ]
+}

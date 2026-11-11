@@ -3,7 +3,7 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Hướng Dẫn Cách Sử Dụng AI Soạn Phiếu — MathTech</title>
+    <title>Hướng Dẫn Cách Sử Dụng AI Soạn Phiếu & Hệ Thống Template Sheets — MathTech</title>
     <!-- KaTeX CSS & JS for Math rendering -->
     <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/katex@0.16.8/dist/katex.min.css">
     <script defer src="https://cdn.jsdelivr.net/npm/katex@0.16.8/dist/katex.min.js"></script>
@@ -15,12 +15,17 @@
             --text-main: #1e293b;
             --text-muted: #64748b;
             --primary: #1e3a8a;
+            --primary-light: #eff6ff;
             --accent: #d97706;
             --accent-light: #fef3c7;
             --border: #e2e8f0;
             --success: #15803d;
             --success-bg: #dcfce7;
             --card-bg: #f8fafc;
+            --danger: #b91c1c;
+            --danger-bg: #fee2e2;
+            --purple: #7e22ce;
+            --purple-bg: #ede7f6;
         }
 
         * {
@@ -44,13 +49,13 @@
         /* Slide Container */
         #presentation {
             position: relative;
-            width: 92vw;
-            max-width: 1240px;
-            height: 80vh;
-            max-height: 700px;
+            width: 94vw;
+            max-width: 1280px;
+            height: 84vh;
+            max-height: 740px;
             background: var(--bg-slide);
             border-radius: 18px;
-            box-shadow: 0 25px 50px -12px rgba(0, 0, 0, 0.4);
+            box-shadow: 0 25px 50px -12px rgba(0, 0, 0, 0.45);
             overflow: hidden;
             display: flex;
             flex-direction: column;
@@ -61,8 +66,9 @@
             display: flex;
             justify-content: space-between;
             align-items: center;
-            padding: 18px 36px 12px;
+            padding: 14px 32px 10px;
             border-bottom: 2px solid #f1f5f9;
+            background: #ffffff;
         }
 
         .slide-header .brand {
@@ -72,12 +78,12 @@
         }
 
         .slide-header img.logo {
-            height: 38px;
+            height: 34px;
             width: auto;
         }
 
         .slide-header .tag {
-            font-size: 13px;
+            font-size: 12px;
             font-weight: 700;
             color: var(--primary);
             text-transform: uppercase;
@@ -87,33 +93,79 @@
             border-radius: 6px;
         }
 
+        .slide-header-desc {
+            font-size: 13px;
+            color: var(--text-muted);
+            font-weight: 500;
+        }
+
         .slide-content {
             flex: 1;
-            padding: 28px 48px;
+            padding: 24px 40px;
             overflow-y: auto;
             display: flex;
             flex-direction: column;
             justify-content: center;
+            background: #ffffff;
         }
 
         .slide-footer {
             display: flex;
             justify-content: space-between;
             align-items: center;
-            padding: 12px 36px;
-            background: #f8fafc;
-            border-top: 1px solid var(--border);
-            font-size: 13px;
+            padding: 10px 32px;
+            border-top: 1px solid #f1f5f9;
+            font-size: 12px;
             color: var(--text-muted);
+            background: #f8fafc;
         }
 
-        /* Slide visibility */
+        /* Navigation Controls */
+        .controls {
+            display: flex;
+            align-items: center;
+            gap: 12px;
+            margin-top: 12px;
+            color: #ffffff;
+        }
+
+        .controls button {
+            background: #1e293b;
+            color: #ffffff;
+            border: 1px solid #334155;
+            border-radius: 8px;
+            width: 40px;
+            height: 36px;
+            font-size: 16px;
+            cursor: pointer;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            transition: all 0.2s ease;
+        }
+
+        .controls button:hover {
+            background: var(--primary);
+            border-color: var(--primary);
+            transform: translateY(-1px);
+        }
+
+        .controls .counter {
+            font-size: 14px;
+            font-weight: 600;
+            min-width: 80px;
+            text-align: center;
+            color: #cbd5e1;
+        }
+
+        /* Slide Visibilities */
         .slide {
             display: none;
+            width: 100%;
             height: 100%;
             flex-direction: column;
             justify-content: center;
-            animation: fadeIn 0.25s ease-in-out;
+            animation: fadeIn 0.25s ease-out;
         }
 
         .slide.active {
@@ -127,71 +179,62 @@
 
         /* Typography */
         h1.title {
-            font-size: 34px;
+            font-size: 32px;
             font-weight: 800;
             color: var(--primary);
             line-height: 1.25;
-            margin-bottom: 8px;
+            margin-bottom: 12px;
         }
 
         h2.subtitle {
-            font-size: 20px;
-            font-weight: 600;
-            color: var(--accent);
+            font-size: 18px;
+            color: var(--text-muted);
+            font-weight: 500;
             margin-bottom: 24px;
         }
 
         h3.section-title {
-            font-size: 24px;
-            font-weight: 700;
+            font-size: 22px;
+            font-weight: 800;
             color: var(--primary);
-            margin-bottom: 20px;
+            margin-bottom: 16px;
             display: flex;
             align-items: center;
             gap: 10px;
-        }
-
-        p, li {
-            font-size: 17px;
-            line-height: 1.6;
-            color: #334155;
+            border-bottom: 2px solid #e2e8f0;
+            padding-bottom: 8px;
         }
 
         /* Grids & Cards */
         .grid-2 {
             display: grid;
             grid-template-columns: 1fr 1fr;
-            gap: 24px;
+            gap: 20px;
         }
 
         .grid-3 {
             display: grid;
             grid-template-columns: 1fr 1fr 1fr;
-            gap: 20px;
+            gap: 16px;
         }
 
         .grid-4 {
             display: grid;
             grid-template-columns: repeat(4, 1fr);
-            gap: 16px;
+            gap: 12px;
         }
 
         .card {
             background: var(--card-bg);
             border: 1px solid var(--border);
             border-radius: 12px;
-            padding: 20px;
+            padding: 16px 20px;
             transition: transform 0.15s ease, box-shadow 0.15s ease;
         }
 
         .card:hover {
             transform: translateY(-2px);
-            box-shadow: 0 10px 15px -3px rgba(0, 0, 0, 0.06);
-        }
-
-        .card-accent {
-            border-left: 5px solid var(--accent);
-            background: #fffbeb;
+            box-shadow: 0 8px 16px -4px rgba(0, 0, 0, 0.08);
         }
 
         .card-primary {
@@ -199,24 +242,38 @@
             background: #eff6ff;
         }
 
+        .card-accent {
+            border-left: 5px solid var(--accent);
+            background: #fffbeb;
+        }
+
         .card-success {
             border-left: 5px solid var(--success);
             background: var(--success-bg);
         }
 
-        /* Action Pill / Link Buttons */
+        .card-danger {
+            border-left: 5px solid var(--danger);
+            background: var(--danger-bg);
+        }
+
+        .card-purple {
+            border-left: 5px solid var(--purple);
+            background: var(--purple-bg);
+        }
+
+        /* Buttons & Badges */
         .pill-btn {
             display: inline-flex;
             align-items: center;
-            gap: 8px;
-            padding: 8px 16px;
+            gap: 6px;
+            padding: 7px 14px;
             background: var(--primary);
             color: #ffffff !important;
             text-decoration: none;
-            border-radius: 8px;
-            font-size: 14px;
+            border-radius: 6px;
+            font-size: 13px;
             font-weight: 600;
-            margin-top: 8px;
             transition: all 0.2s ease;
         }
 
@@ -230,25 +287,36 @@
             color: #1e293b !important;
         }
 
-        .pill-btn.secondary:hover {
-            background: #cbd5e1;
+        .badge {
+            display: inline-block;
+            padding: 2px 8px;
+            border-radius: 4px;
+            font-size: 12px;
+            font-weight: 700;
+            text-transform: uppercase;
         }
+        .badge-cam { background: #fce4d6; color: #c2410c; }
+        .badge-vang { background: #fff2cc; color: #854d0e; }
+        .badge-xanh { background: #e2efda; color: #15803d; }
+        .badge-tim { background: #ede7f6; color: #6b21a8; }
+        .badge-do { background: #fee2e2; color: #b91c1c; }
+        .badge-lam { background: #dbeafe; color: #1d4ed8; }
 
-        /* Workflow Steps */
+        /* Step containers */
         .step-container {
             display: flex;
             align-items: center;
             justify-content: space-between;
-            gap: 12px;
-            margin-top: 16px;
+            gap: 10px;
+            margin-top: 10px;
         }
 
         .step-card {
             flex: 1;
             background: var(--card-bg);
             border: 2px solid var(--border);
-            border-radius: 12px;
-            padding: 16px;
+            border-radius: 10px;
+            padding: 12px 14px;
             text-align: center;
         }
 
@@ -258,8 +326,8 @@
         }
 
         .step-num {
-            width: 32px;
-            height: 32px;
+            width: 28px;
+            height: 28px;
             background: var(--primary);
             color: #ffffff;
             font-weight: 800;
@@ -267,12 +335,12 @@
             display: flex;
             align-items: center;
             justify-content: center;
-            margin: 0 auto 10px;
-            font-size: 15px;
+            margin: 0 auto 8px;
+            font-size: 14px;
         }
 
         .step-arrow {
-            font-size: 24px;
+            font-size: 20px;
             color: #94a3b8;
             font-weight: 800;
         }
@@ -281,226 +349,164 @@
         table.custom-table {
             width: 100%;
             border-collapse: collapse;
-            margin-top: 10px;
             background: #ffffff;
-            border-radius: 10px;
+            border-radius: 8px;
             overflow: hidden;
             box-shadow: 0 1px 3px rgba(0,0,0,0.05);
+            font-size: 13px;
         }
 
         table.custom-table th {
             background: var(--primary);
             color: #ffffff;
-            padding: 12px 16px;
+            padding: 10px 12px;
             text-align: left;
-            font-size: 15px;
             font-weight: 700;
         }
 
         table.custom-table td {
-            padding: 12px 16px;
+            padding: 8px 12px;
             border-bottom: 1px solid var(--border);
-            font-size: 15px;
         }
 
         table.custom-table tr:last-child td {
             border-bottom: none;
         }
 
-        table.custom-table tr:nth-child(even) {
-            background: #f8fafc;
+        /* Sheet Table */
+        table.sheet-table {
+            width: 100%;
+            border-collapse: collapse;
+            background: #ffffff;
+            font-size: 12px;
+            border: 1px solid #cbd5e1;
         }
 
-        /* Controls */
-        .controls {
-            position: fixed;
-            bottom: 24px;
-            display: flex;
-            align-items: center;
-            gap: 16px;
-            background: rgba(15, 23, 42, 0.85);
-            -webkit-backdrop-filter: blur(8px);
-            backdrop-filter: blur(8px);
-            padding: 10px 24px;
-            border-radius: 40px;
-            box-shadow: 0 10px 25px rgba(0,0,0,0.3);
-            border: 1px solid rgba(255,255,255,0.1);
-        }
-
-        .controls button {
-            background: #334155;
-            color: #ffffff;
-            border: none;
-            width: 38px;
-            height: 38px;
-            border-radius: 50%;
-            font-size: 16px;
-            cursor: pointer;
-            display: flex;
-            align-items: center;
-            justify-content: center;
-            transition: all 0.2s ease;
-        }
-
-        .controls button:hover {
-            background: var(--accent);
-            transform: scale(1.08);
-        }
-
-        .controls .counter {
-            color: #ffffff;
-            font-size: 15px;
-            font-weight: 600;
-            min-width: 65px;
+        table.sheet-table th {
+            background: #f1f5f9;
+            color: #475569;
+            padding: 6px 10px;
+            border: 1px solid #cbd5e1;
             text-align: center;
+            font-weight: 700;
         }
 
-        /* Print formatting */
-        @media print {
-            body {
-                background: none;
-                padding: 0;
-            }
-            #presentation {
-                width: 100vw;
-                height: 100vh;
-                max-width: none;
-                max-height: none;
-                box-shadow: none;
-                border-radius: 0;
-            }
-            .slide {
-                display: flex !important;
-                page-break-after: always;
-                height: 100vh;
-            }
-            .controls {
-                display: none;
-            }
+        table.sheet-table td {
+            padding: 6px 10px;
+            border: 1px solid #cbd5e1;
         }
 
-        /* Utility & Semantic Classes */
-        .text-sm { font-size: 14px; }
-        .text-xs { font-size: 13px; }
-        .text-muted-13 { font-size: 13px; color: var(--text-muted); }
-        .text-muted-14 { font-size: 14px; color: var(--text-muted); }
-        .text-highlight { color: #b45309; }
+        .formula-box {
+            background: #f8fafc;
+            border: 1px dashed #94a3b8;
+            border-radius: 6px;
+            padding: 8px 12px;
+            font-family: ui-monospace, SFMono-Regular, Menlo, Monaco, Consolas, monospace;
+            font-size: 12px;
+            color: #0f172a;
+            margin-top: 6px;
+        }
+
+        /* Dashboard Widget */
+        .dashboard-banner {
+            display: grid;
+            grid-template-columns: repeat(4, 1fr);
+            gap: 12px;
+            background: #f8fafc;
+            border: 2px solid #e2e8f0;
+            border-radius: 10px;
+            padding: 14px;
+            margin-top: 12px;
+        }
+
+        .dash-item {
+            text-align: center;
+            padding: 8px;
+            background: #ffffff;
+            border-radius: 8px;
+            border: 1px solid #e2e8f0;
+        }
+
+        .dash-val {
+            font-size: 20px;
+            font-weight: 800;
+            color: var(--primary);
+        }
+
+        .dash-label {
+            font-size: 11px;
+            color: var(--text-muted);
+            text-transform: uppercase;
+            font-weight: 600;
+            margin-top: 2px;
+        }
+
+        /* Chat Bubbles */
+        .chat-bubble-primary {
+            background: #ffffff;
+            padding: 10px 14px;
+            border-radius: 8px;
+            font-style: italic;
+            color: #1e3a8a;
+            border: 1px dashed var(--primary);
+            margin: 8px 0;
+            font-size: 14px;
+        }
+
+        .chat-bubble-success {
+            background: #ffffff;
+            padding: 12px 16px;
+            border-radius: 8px;
+            font-weight: 700;
+            color: #166534;
+            font-size: 15px;
+            border: 1px dashed var(--success);
+            margin: 8px 0;
+        }
+
+        .cover-box {
+            text-align: center;
+            max-width: 820px;
+            margin: 0 auto;
+        }
+
+        .cover-tag {
+            display: inline-block;
+            background: #eff6ff;
+            color: var(--primary);
+            padding: 6px 16px;
+            border-radius: 30px;
+            font-size: 13px;
+            font-weight: 800;
+            letter-spacing: 1px;
+            margin-bottom: 16px;
+        }
+
+        .cover-meta {
+            display: flex;
+            justify-content: center;
+            gap: 24px;
+            margin-top: 28px;
+        }
+
+        .cover-meta-card {
+            background: #f8fafc;
+            border: 1px solid var(--border);
+            padding: 12px 24px;
+            border-radius: 10px;
+        }
+
+        .text-sm { font-size: 13px; line-height: 1.5; }
+        .text-xs { font-size: 11px; line-height: 1.4; }
         .text-primary { color: var(--primary); }
         .text-accent { color: var(--accent); }
         .text-success { color: var(--success); }
-        .text-danger { color: #dc2626; }
-        .text-danger-dark { color: #991b1b; }
+        .text-danger { color: var(--danger); }
+        .font-bold { font-weight: 700; }
         .mb-4 { margin-bottom: 4px; }
-        .mb-6 { margin-bottom: 6px; }
         .mb-8 { margin-bottom: 8px; }
-        .mb-10 { margin-bottom: 10px; }
         .mb-12 { margin-bottom: 12px; }
-        .mb-20 { margin-bottom: 20px; }
-        .link-bold-primary { color: var(--primary); font-weight: 700; }
-
-        /* Slide Header */
-        .slide-header-desc { font-size: 14px; font-weight: 600; color: #475569; }
-
-        /* Slide 1: Cover */
-        .cover-box { text-align: center; max-width: 860px; margin: 0 auto; }
-        .cover-tag { display: inline-block; padding: 6px 18px; background: #eff6ff; color: var(--primary); font-weight: 700; border-radius: 20px; font-size: 14px; margin-bottom: 20px; border: 1px solid #bfdbfe; }
-        .cover-title { font-size: 42px; margin-bottom: 16px; }
-        .cover-subtitle { font-size: 22px; margin-bottom: 36px; color: #64748b; font-weight: 500; }
-        .cover-meta { display: flex; justify-content: center; gap: 40px; margin-top: 20px; }
-        .cover-meta-card { text-align: left; background: #f8fafc; padding: 14px 24px; border-radius: 12px; border: 1px solid var(--border); }
-        .cover-meta-label { font-size: 13px; color: var(--text-muted); font-weight: 600; }
-        .cover-meta-val-primary { font-size: 18px; font-weight: 800; color: var(--primary); }
-        .cover-meta-val-accent { font-size: 18px; font-weight: 800; color: var(--accent); }
-
-        /* Slide 2: Quick start */
-        .card-step-title { font-size: 17px; font-weight: 800; color: var(--primary); margin-bottom: 8px; }
-        .card-step-title.text-accent { color: var(--accent); }
-        .card-sub-title { font-size: 15px; font-weight: 700; color: var(--primary); margin-bottom: 4px; }
-        .list-bullet { padding-left: 20px; margin-bottom: 10px; }
-        .btn-group { display: flex; gap: 8px; flex-wrap: wrap; margin-bottom: 14px; }
-        .ext-card { background: #ffffff; padding: 10px 14px; border-radius: 8px; }
-        .border-accent { border-left: 4px solid var(--accent); }
-        .border-primary { border-left: 4px solid var(--primary); }
-
-        /* Slide 3: Process */
-        .process-container { display: flex; align-items: center; justify-content: space-between; gap: 16px; margin: 20px 0; }
-        .process-card { flex: 1; text-align: center; }
-        .card-input { border-top: 4px solid #3b82f6; }
-        .card-process { border-top: 4px solid var(--accent); background: #fffbeb; }
-        .card-output { border-top: 4px solid var(--success); background: #f0fdf4; }
-        .process-title { font-size: 20px; font-weight: 800; }
-        .process-subtitle { font-size: 14px; color: var(--text-muted); margin: 6px 0 12px; }
-        .process-text { font-size: 15px; text-align: left; }
-        .process-arrow { font-size: 32px; color: #94a3b8; }
-        .banner-tip { background: #f1f5f9; padding: 12px 20px; border-radius: 8px; text-align: center; font-weight: 600; color: #334155; }
-
-        /* Slide 4: Table */
-        .w-10 { width: 10%; }
-        .w-35 { width: 35%; }
-        .w-30 { width: 30%; }
-        .w-25 { width: 25%; }
-        .row-highlight { background: #fef3c7; font-weight: 600; }
-        .td-tier-c { color: #b45309; font-size: 18px; font-weight: 800; }
-        .td-tier-name { font-weight: 800; color: var(--primary); }
-        .banner-warn { margin-top: 14px; font-size: 15px; color: #b45309; font-weight: 700; background: #fffbeb; padding: 8px 16px; border-radius: 8px; border-left: 4px solid var(--accent); }
-
-        /* Slide 5: Levels */
-        .level-heading { font-weight: 800; font-size: 18px; margin-bottom: 6px; }
-        .level-desc { font-size: 14px; color: var(--text-muted); margin-bottom: 8px; }
-        .example-box { background: #ffffff; padding: 10px; border-radius: 6px; font-size: 15px; }
-        .card-vdc { border-left: 5px solid #ef4444; background: #fef2f2; }
-
-        /* Slide 6: Scaffolding */
-        .principle-tag { color: #b45309; font-size: 16px; }
-        .compare-card-old { background: #ffffff; border: 1px solid #cbd5e1; }
-        .compare-title-old { font-weight: 800; color: #dc2626; margin-bottom: 8px; }
-        .compare-content-old { background: #f8fafc; padding: 12px; border-radius: 6px; font-size: 15px; line-height: 1.6; }
-        .compare-card-new { background: #ffffff; border: 2px solid var(--success); }
-        .compare-title-new { font-weight: 800; color: var(--success); margin-bottom: 8px; }
-        .compare-content-new { background: #f0fdf4; padding: 12px; border-radius: 6px; font-size: 15px; line-height: 1.6; }
-
-        /* Slide 7: Ratios */
-        .ratio-card { text-align: center; }
-        .ratio-nb { border-top: 4px solid var(--primary); }
-        .ratio-th { border-top: 4px solid var(--accent); }
-        .ratio-vd { border-top: 4px solid var(--success); }
-        .ratio-number { font-size: 28px; font-weight: 800; }
-        .ratio-label { font-weight: 700; margin: 4px 0; }
-        .ratio-desc { font-size: 14px; color: var(--text-muted); }
-        .duration-heading { font-weight: 800; margin-bottom: 8px; }
-
-        /* Slide 8: Stages */
-        .step-card-title { font-weight: 800; margin-bottom: 6px; }
-        .stage-flow-note { margin-top: 24px; background: #f8fafc; padding: 14px 20px; border-radius: 10px; border: 1px solid var(--border); }
-
-        /* Slide 9: 5 Steps */
-        .flex-wrap { flex-wrap: wrap; }
-        .min-w-170 { min-width: 170px; }
-        .step-accent { background: #fffbeb; border-color: var(--accent); }
-        .step-success { background: #f0fdf4; border-color: var(--success); }
-        .bg-accent { background: var(--accent); }
-        .bg-success { background: var(--success); }
-        .step-head-title { font-size: 15px; }
-        .step-sub-text { font-size: 13px; margin-top: 4px; }
-
-        /* Slide 10: Step 1 & 2 */
-        .step-block-title { font-weight: 800; font-size: 18px; margin-bottom: 8px; }
-        .source-list { padding-left: 18px; margin-bottom: 14px; }
-
-        /* Slide 11: Step 3 & 4 */
-        .question-list { padding-left: 20px; font-size: 15px; }
-        .chat-bubble-primary { background: #ffffff; padding: 10px; border-radius: 6px; font-style: italic; color: #1e3a8a; border: 1px dashed var(--primary); margin-bottom: 10px; }
-
-        /* Slide 12: Step 5 */
-        .chat-bubble-success { background: #ffffff; padding: 12px; border-radius: 8px; font-weight: 700; color: #166534; font-size: 16px; border: 1px dashed var(--success); }
-        .action-card-title { font-weight: 700; margin-bottom: 6px; }
-
-        /* Slide 13: Summary */
-        .summary-intro { margin-bottom: 16px; font-size: 15px; color: var(--text-muted); }
-        .summary-card-title { font-weight: 800; margin-bottom: 6px; }
-
-        /* Controls */
-        .btn-fs { margin-left: 8px; }
+        .mb-16 { margin-bottom: 16px; }
     </style>
 </head>
 <body>
@@ -510,51 +516,53 @@
         <!-- HEADER -->
         <div class="slide-header">
             <div class="brand">
-                <img src="data:image/png;base64," class="logo" alt="MathTech Logo">
-                <span class="tag">Học Liệu Chuẩn 2026</span>
+                <img src="data:image/png;base64,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" class="logo" alt="MathTech Logo">
+                <span class="tag">MathTech Learning Engine 2026</span>
             </div>
             <div class="slide-header-desc">
-                Soạn bài bằng AI: Khối 3 & Khối 6
+                Cẩm nang Giáo viên: Tư duy Sư phạm, 3 Template Sheets & Quy trình 5 bước AI
             </div>
         </div>
 
-        <!-- SLIDE 1: BÌA -->
+        <!-- SLIDE CONTENT -->
         <div class="slide-content">
+
+            <!-- SLIDE 1: TIÊU ĐỀ -->
             <div class="slide active" id="slide-1">
                 <div class="cover-box">
-                    <div class="cover-tag">
-                        CẨM NANG NỘI BỘ CHO GIÁO VIÊN MỚI
-                    </div>
-                    <h1 class="title cover-title">HƯỚNG DẪN CÁCH SỬ DỤNG AI<br/>SOẠN PHIẾU HỌC TẬP</h1>
-                    <h2 class="subtitle cover-subtitle">
-                        Tư duy phân tầng sư phạm & Quy trình 5 bước phối hợp cùng Trợ lý AI
+                    <div class="cover-tag">CẨM NANG NỘI BỘ DÀNH CHO GIÁO VIÊN MỚI</div>
+                    <h1 class="title">HƯỚNG DẪN CÁCH SỬ DỤNG AI<br/>SOẠN PHIẾU HỌC TẬP & HỆ THỐNG TEMPLATE SHEETS</h1>
+                    <h2 class="subtitle">
+                        Tư duy phân tầng sư phạm, Hệ thống 3 Template Sheets liên kết động & Quy trình 5 bước phối hợp cùng Trợ lý AI
                     </h2>
                     <div class="cover-meta">
                         <div class="cover-meta-card">
-                            <div class="cover-meta-label">NGƯỜI THUYẾT TRÌNH</div>
-                            <div class="cover-meta-val-primary">Trương Đình Thái</div>
+                            <div class="dash-label">NGƯỜI THUYẾT TRÌNH</div>
+                            <div class="font-bold text-primary" style="font-size: 16px; margin-top: 4px;">Trương Đình Thái</div>
                         </div>
                         <div class="cover-meta-card">
-                            <div class="cover-meta-label">ĐƠN VỊ</div>
-                            <div class="cover-meta-val-accent">Tổ Học Liệu MathTech</div>
+                            <div class="dash-label">ĐƠN VỊ</div>
+                            <div class="font-bold text-accent" style="font-size: 16px; margin-top: 4px;">Tổ Học Liệu MathTech</div>
+                        </div>
+                        <div class="cover-meta-card">
+                            <div class="dash-label">PHIÊN BẢN</div>
+                            <div class="font-bold text-success" style="font-size: 16px; margin-top: 4px;">GDPT 2018 (Cập nhật 11/2026)</div>
                         </div>
                     </div>
                 </div>
             </div>
 
-            <!-- SLIDE 2: TẢI TOOL, CÀI EXTENSION & MỞ CHAT AI -->
+            <!-- SLIDE 2: KHỞI ĐỘNG 3 PHÚT -->
             <div class="slide" id="slide-2">
                 <h3 class="section-title">⚡ Khởi Động Nhanh (3 Phút): Tải Tool, Cài Extension & Mở AI</h3>
                 <div class="grid-2">
                     <div class="card card-primary">
-                        <div class="card-step-title">
-                            1. Tải Mã Nguồn & Antigravity
-                        </div>
-                        <ul class="list-bullet">
-                            <li class="mb-4"><strong>Mã nguồn MathTech:</strong> Tải ZIP về giải nén ra thư mục.</li>
+                        <h4 class="font-bold text-primary mb-8" style="font-size: 16px;">1. Tải Mã Nguồn & Antigravity</h4>
+                        <ul style="padding-left: 20px; line-height: 1.6;" class="text-sm mb-12">
+                            <li><strong>Mã nguồn MathTech:</strong> Tải ZIP về máy tính và giải nén.</li>
                             <li><strong>Ứng dụng AI Antigravity:</strong> Tải và cài đặt vào máy.</li>
                         </ul>
-                        <div class="btn-group">
+                        <div style="display: flex; gap: 10px;">
                             <a href="https://github.com/icecubesssss/giaoanmathtech" target="_blank" rel="noopener noreferrer" class="pill-btn">
                                 📦 GitHub Codebase
                             </a>
@@ -562,24 +570,17 @@
                                 🚀 Tải Antigravity
                             </a>
                         </div>
-                        <div class="card-sub-title">
-                            2. Kích Hoạt AI Không Cần Gõ Lệnh
-                        </div>
-                        <p class="text-sm">Mở folder code $ightarrow$ Mở chat AI $ightarrow$ Nhắn: <strong class="text-highlight">"Cài đặt môi trường giúp tôi"</strong> (AI tự làm hết!).</p>
                     </div>
 
                     <div class="card card-accent">
-                        <div class="card-step-title text-accent">
-                            3. Cài 2 Extension Thiết Yếu (Trong VS Code)
-                        </div>
-                        <p class="text-sm mb-8">Mở mục Extensions (<code>Ctrl+Shift+X</code> / <code>Cmd+Shift+X</code>) và cài:</p>
-                        <div class="ext-card border-accent mb-10">
-                            <strong>1. Extension Claude (Claude Code):</strong><br/>
-                            <span class="text-muted-13">Dùng Claude tương tác trực tiếp, chạy lệnh soạn bài và phân dạng cùng AI.</span>
-                        </div>
-                        <div class="ext-card border-primary">
-                            <strong>2. Extension vscode-pdf:</strong><br/>
-                            <span class="text-muted-13">Mở và xem trực tiếp 3 bản PDF (Handout HS, Guide GV, Slide) ngay trong cửa sổ làm việc mà không cần ứng dụng ngoài.</span>
+                        <h4 class="font-bold text-accent mb-8" style="font-size: 16px;">2. Cài 2 Extension Thiết Yếu & Mở AI</h4>
+                        <ul style="padding-left: 20px; line-height: 1.6;" class="text-sm mb-12">
+                            <li><strong>Claude Code Extension:</strong> Tương tác và gửi lệnh cho Trợ lý AI.</li>
+                            <li><strong>vscode-pdf Extension:</strong> Xem trực tiếp 3 bản PDF (Handout HS, Guide GV, Slide) ngay trong cửa sổ làm việc.</li>
+                        </ul>
+                        <div class="chat-bubble-primary" style="margin: 0;">
+                            💬 <strong>Kích hoạt môi trường (GV không cần gõ lệnh terminal):</strong><br/>
+                            Chỉ cần mở ô chat AI và nhắn: <em>"Cài đặt môi trường giúp tôi"</em> $	o$ AI tự chạy 100%.
                         </div>
                     </div>
                 </div>
@@ -587,404 +588,519 @@
 
             <!-- SLIDE 3: CƠ CHẾ HOẠT ĐỘNG -->
             <div class="slide" id="slide-3">
-                <h3 class="section-title">🔄 Cơ Chế Hoạt Động Của Hệ Thống</h3>
-                <div class="process-container">
-                    <div class="card process-card card-input">
-                        <div class="process-title text-primary">INPUTS</div>
-                        <div class="process-subtitle">(Nguyên liệu thô)</div>
-                        <p class="process-text">
-                            • Đề thi thật chính thức Hà Nội<br/>
-                            • SGK, SGV Kết nối tri thức<br/>
-                            • Sách bài tập & tài liệu chọn lọc
-                        </p>
+                <h3 class="section-title">🔄 Cơ Chế Hoạt Động: Inputs ➔ Process ➔ Outputs</h3>
+                <div class="grid-3 mb-16">
+                    <div class="card card-primary">
+                        <h4 class="font-bold text-primary mb-8">1. INPUTS (Nguyên liệu)</h4>
+                        <ul class="text-sm" style="padding-left: 18px; line-height: 1.6;">
+                            <li>Đề thi thật Hà Nội các năm học gần nhất (2024–2025 trở đi).</li>
+                            <li>Ảnh scan SGK, SGV Kết nối tri thức.</li>
+                            <li>Sách bài tập chuẩn & chuyên đề thi vào 10.</li>
+                        </ul>
                     </div>
-                    <div class="process-arrow">➔</div>
-                    <div class="card process-card card-process">
-                        <div class="process-title text-accent">PROCESS</div>
-                        <div class="process-subtitle">(MathTech Engine + AI)</div>
-                        <p class="process-text">
-                            • Giải toán kiểm thử (SymPy)<br/>
-                            • Dựng hình học chuẩn xác (TikZ)<br/>
-                            • Cân đối thời lượng 90' & dàn trang
-                        </p>
+                    <div class="card card-accent">
+                        <h4 class="font-bold text-accent mb-8">2. PROCESS (AI Engine)</h4>
+                        <ul class="text-sm" style="padding-left: 18px; line-height: 1.6;">
+                            <li>Tự động giải kiểm tra nghiệm bằng SymPy.</li>
+                            <li>Vẽ hình học giải tích chuẩn xác bằng TikZ.</li>
+                            <li>Cân đối quỹ thời lượng 90' hoặc 120'.</li>
+                            <li>Gác cổng tự động (không trùng đề, đủ giờ).</li>
+                        </ul>
                     </div>
-                    <div class="process-arrow">➔</div>
-                    <div class="card process-card card-output">
-                        <div class="process-title text-success">OUTPUTS</div>
-                        <div class="process-subtitle">(Bộ 3 PDF Song Song)</div>
-                        <p class="process-text">
-                            1. <strong>Handout HS:</strong> Khung thoáng làm bài<br/>
-                            2. <strong>Guide GV:</strong> Giải chi tiết + sư phạm<br/>
-                            3. <strong>Slide 16:9:</strong> Ẩn lời giải tương tác
-                        </p>
+                    <div class="card card-success">
+                        <h4 class="font-bold text-success mb-8">3. OUTPUTS (Bộ 3 PDF)</h4>
+                        <ul class="text-sm" style="padding-left: 18px; line-height: 1.6;">
+                            <li><strong>Handout HS:</strong> Thoáng, có khung làm bài.</li>
+                            <li><strong>Guide GV:</strong> Đáp án chi tiết + gợi ý sư phạm.</li>
+                            <li><strong>Slide Trình Chiếu:</strong> Tự ẩn lời giải, 16:9 Beamer.</li>
+                        </ul>
                     </div>
                 </div>
-                <div class="banner-tip">
-                    💡 GV chỉ cần tập trung vào chất lượng nội dung — AI tự động lo toàn bộ khâu dàn trang và xuất file PDF!
+                <div class="formula-box text-center">
+                    $$\text{INPUTS (Nguyên liệu sạch)} \xrightarrow[\text{SymPy + TikZ + Spec Gate}]{\text{MathTech AI Engine}} \text{OUTPUTS (Bộ 3 PDF Song Song + Đề Kiểm Tra)}$$
                 </div>
             </div>
 
-            <!-- SLIDE 4: PHÂN TẦNG NĂNG LỰC HỌC SINH -->
+            <!-- SLIDE 4: PHÂN TẦNG NĂNG LỰC -->
             <div class="slide" id="slide-4">
                 <h3 class="section-title">🎯 Phân Tầng Năng Lực Học Sinh (A – B – C – X)</h3>
-                <table class="custom-table">
+                <table class="custom-table mb-12">
                     <thead>
                         <tr>
-                            <th class="w-10">Tầng</th>
-                            <th class="w-35">Đối tượng & Năng lực</th>
-                            <th class="w-30">Mục tiêu điểm số</th>
-                            <th class="w-25">Trần bài tập</th>
+                            <th style="width: 10%;">Tầng</th>
+                            <th style="width: 35%;">Đối tượng học sinh</th>
+                            <th style="width: 25%;">Mục tiêu điểm số</th>
+                            <th style="width: 30%;">Giới hạn bài tập</th>
                         </tr>
                     </thead>
                     <tbody>
-                        <tr class="row-highlight">
-                            <td class="td-tier-c">LỚP C</td>
-                            <td>Nền tảng <strong>trung bình – yếu</strong>, hay quên kiến thức cũ, sợ bài toán dài</td>
-                            <td>Chắc SGK, kéo điểm kiểm tra trên trường lên <strong>7,0 – 8,0 điểm</strong></td>
-                            <td class="text-highlight">Trần: Vận dụng (VD)<br/>⛔ CẤM TUYỆT ĐỐI VDC</td>
+                        <tr style="background: #eff6ff;">
+                            <td class="font-bold text-primary" style="font-size: 16px;">C</td>
+                            <td><strong>Nền tảng trung bình – yếu</strong>, hay quên kiến thức, sợ toán</td>
+                            <td>Chắc SGK, đạt <strong>7,0 – 8,0 điểm</strong> trên trường</td>
+                            <td><strong class="text-danger">Trần: Vận dụng (VD) — CẤM TUYỆT ĐỐI VDC</strong></td>
                         </tr>
                         <tr>
-                            <td class="td-tier-name">LỚP B</td>
-                            <td>Học lực trung bình – khá, tiếp thu tốt</td>
-                            <td>Kỳ I: trần 9,5 – 10 điểm; Kỳ II: 9,0 – 9,5 điểm</td>
-                            <td>Trần: VDC nhẹ (ít câu VDC hơn A)</td>
+                            <td class="font-bold" style="font-size: 15px;">B</td>
+                            <td>Trung bình – khá, nắm được kiến thức cơ bản</td>
+                            <td>Kỳ I: 9,5 – 10đ; Kỳ II: 9,0 – 9,5đ</td>
+                            <td>Có VDC nhẹ (ít câu VDC hơn lớp A)</td>
                         </tr>
                         <tr>
-                            <td class="td-tier-name">LỚP A</td>
-                            <td>Học lực khá – giỏi, tư duy nhanh</td>
-                            <td>Đạt điểm tối đa các bài kiểm tra trên trường</td>
-                            <td>Trần: VDC dày dặn</td>
+                            <td class="font-bold" style="font-size: 15px;">A</td>
+                            <td>Khá – giỏi, tư duy toán tốt</td>
+                            <td>Đạt điểm tối đa trên trường (10đ)</td>
+                            <td>VDC dày dặn, mở rộng cấu hình hình học</td>
                         </tr>
                         <tr>
-                            <td class="td-tier-name">LỚP X</td>
-                            <td>Xuất sắc, định hướng thi Chuyên / CLC</td>
-                            <td>Chinh phục trọn vẹn câu cuối đề thi</td>
-                            <td>Trần: VDC chuyên sâu</td>
+                            <td class="font-bold text-accent" style="font-size: 15px;">X</td>
+                            <td>Chuyên Toán / Chất lượng cao</td>
+                            <td>Chinh phục trọn vẹn câu cuối đề thi vào 10</td>
+                            <td>VDC chuyên sâu, bất đẳng thức, cực trị</td>
                         </tr>
                     </tbody>
                 </table>
-                <div class="banner-warn">
-                    📌 LƯU Ý BẮT BUỘC: Đợt soạn này tập trung 100% cho <u>LỚP C</u>. Tuyệt đối không đưa bài VDC vào phiếu!
+                <div class="card card-primary text-sm">
+                    📌 <strong>Quy chuẩn sư phạm:</strong> Trọng tâm hiện tại tập trung hoàn thiện 100% tài liệu cho <strong>LỚP C</strong> — nơi học sinh cần giàn giáo sư phạm vững chắc nhất để không bị bỏ lại phía sau.
                 </div>
             </div>
 
             <!-- SLIDE 5: 4 CẤP ĐỘ CÂU HỎI -->
             <div class="slide" id="slide-5">
-                <h3 class="section-title">📐 4 Cấp Độ Câu Hỏi (NB – TH – VD – VDC)</h3>
+                <h3 class="section-title">📊 4 Cấp Độ Câu Hỏi (NB – TH – VD – VDC)</h3>
                 <div class="grid-2">
                     <div class="card card-primary">
-                        <div class="level-heading text-primary">
-                            1. NHẬN BIẾT (NB) — 1 Bước xử lý
-                        </div>
-                        <p class="level-desc">Áp dụng trực tiếp định nghĩa, công thức, tính nhẩm 1 phép tính.</p>
-                        <div class="example-box">
-                            • <strong>Lớp 3:</strong> Tính nhẩm: $7 	imes 4 = ?$<br/>
-                            • <strong>Lớp 6:</strong> Tính giá trị: $2^3 = ?$
-                        </div>
+                        <div class="badge badge-lam mb-8">NB (Nhận biết — 1 bước)</div>
+                        <p class="text-sm mb-8">Nhận diện công thức, định nghĩa, tính toán 1 bước trực tiếp:</p>
+                        <ul class="text-sm" style="padding-left: 18px; line-height: 1.5;">
+                            <li><em>Khối 3:</em> Tính nhẩm $7 	imes 4 = 28$.</li>
+                            <li><em>Khối 6:</em> Tính giá trị $2^3 = 8$.</li>
+                            <li><em>Khối 9:</em> Tìm ĐKXĐ của $\sqrt{x-3}$; nhận diện góc vuông tại tiếp điểm.</li>
+                        </ul>
                     </div>
-
-                    <div class="card card-primary">
-                        <div class="level-heading text-primary">
-                            2. THÔNG HIỂU (TH) — 1–2 Bước xử lý
-                        </div>
-                        <p class="level-desc">Áp dụng quy tắc vào bài toán cơ bản, bài toán lời văn đơn giản.</p>
-                        <div class="example-box">
-                            • <strong>Lớp 3:</strong> "Mỗi hộp có 8 cái bánh. Hỏi 3 hộp có mấy cái?"<br/>
-                            • <strong>Lớp 6:</strong> Thực hiện phép tính: $A = 2^3 \cdot 5 - 3^2$
-                        </div>
+                    <div class="card card-success">
+                        <div class="badge badge-xanh mb-8">TH (Thông hiểu — 1–2 bước)</div>
+                        <p class="text-sm mb-8">Áp dụng quy tắc, định lý vào bài toán cơ bản:</p>
+                        <ul class="text-sm" style="padding-left: 18px; line-height: 1.5;">
+                            <li><em>Khối 3:</em> "1 hộp có 8 cái bánh, 3 hộp có bao nhiêu cái?"</li>
+                            <li><em>Khối 6:</em> Tính $A = 2^3 \cdot 5 - 3^2$.</li>
+                            <li><em>Khối 9:</em> Rút gọn biểu thức chứa căn; chứng minh tam giác bằng nhau.</li>
+                        </ul>
                     </div>
-
                     <div class="card card-accent">
-                        <div class="level-heading text-accent">
-                            3. VẬN DỤNG (VD) — 2–3 Bước xử lý
-                        </div>
-                        <p class="level-desc">Liên kết nhiều dữ kiện, bài toán thực tế, tìm thành phần chưa biết.</p>
-                        <div class="example-box">
-                            • <strong>Lớp 3:</strong> "Có 35 quả cam chia 5 túi, đã bán 2 túi. Còn mấy quả?"<br/>
-                            • <strong>Lớp 6:</strong> Tìm số tự nhiên $x$: $2(x - 3)^2 = 32$
-                        </div>
+                        <div class="badge badge-cam mb-8">VD (Vận dụng — 2–3 bước)</div>
+                        <p class="text-sm mb-8">Bài toán thực tế, phối hợp nhiều bước biến đổi:</p>
+                        <ul class="text-sm" style="padding-left: 18px; line-height: 1.5;">
+                            <li><em>Khối 3:</em> "35 quả cam chia 5 túi, đã bán 2 túi, còn lại bao nhiêu quả?"</li>
+                            <li><em>Khối 6:</em> Tìm $x$ biết $2(x-3)^2 = 32$.</li>
+                            <li><em>Khối 9:</em> Chứng minh tiếp tuyến $DB \perp OB$; tính chiều cao bằng TSLG.</li>
+                        </ul>
                     </div>
-
-                    <div class="card card-vdc">
-                        <div class="level-heading text-danger">
-                            4. VẬN DỤNG CAO (VDC) — $\ge 4$ Bước
-                        </div>
-                        <p class="level-desc">Phân hóa 9,5 – 10 điểm (cực trị, quy luật dãy số, toán đố logic).</p>
-                        <div class="example-box text-danger-dark">
-                            • <strong>Lớp 6:</strong> Tìm chữ số tận cùng của $S = 2 + 2^2 + \dots + 2^100$<br/>
-                            ⚠️ <strong>TẦNG C = 0% VDC</strong> (Không đưa vào phiếu).
-                        </div>
+                    <div class="card card-danger">
+                        <div class="badge badge-do mb-8">VDC (Vận dụng cao — $\ge 4$ bước)</div>
+                        <p class="text-sm mb-8">Phân hóa điểm 9,5 – 10; cực trị, hình phụ phức tạp:</p>
+                        <ul class="text-sm" style="padding-left: 18px; line-height: 1.5;">
+                            <li>Dành riêng cho Lớp A, Lớp B và Lớp X.</li>
+                            <li><strong class="text-danger">LỚP C: 0% — TUYỆT ĐỐI CẤM ĐƯA VÀO PHIẾU!</strong></li>
+                        </ul>
                     </div>
                 </div>
             </div>
 
-            <!-- SLIDE 6: KỸ THUẬT "NB TÁCH CÂU" -->
+            <!-- SLIDE 6: KỸ THUẬT NB TÁCH CÂU -->
             <div class="slide" id="slide-6">
-                <h3 class="section-title">🪜 Kỹ Thuật "NB Tách Câu" (Giàn Giáo Sư Phạm Lớp C)</h3>
-                <div class="card card-accent mb-20">
-                    <strong class="principle-tag">NGUYÊN TẮC BẮT BUỘC:</strong>
-                    Tuyệt đối không dùng câu Nhận biết rời rạc, vô bổ. Mọi câu NB phải là <strong>bước đệm kỹ năng</strong> được bóc tách từ chính bài toán thi thật!
+                <h3 class="section-title">🧱 Kỹ Thuật Then Chốt: "NB Tách Câu" (Giàn Giáo Lớp C)</h3>
+                <div class="card card-danger mb-12">
+                    <strong class="text-danger">⚠️ NGUYÊN TẮC VÀNG: CẤM DÙNG CÂU NB RỜI RẠC, VÔ BỔ!</strong>
+                    <p class="text-sm" style="margin-top: 4px;">
+                        Không ra các câu nhận diện hình thức kiểu "đây có phải là phương trình không?" hoặc tính toán máy móc không xuất hiện trong đề thi. Mọi câu NB bắt buộc phải là <strong>bước đệm kỹ năng trích từ chính bài toán thi thật</strong>.
+                    </p>
                 </div>
-
                 <div class="grid-2">
-                    <div class="card compare-card-old">
-                        <div class="compare-title-old">❌ Cách Ra Đề Cũ (HS Yếu Thường Bỏ Trắng)</div>
-                        <div class="compare-content-old">
-                            <strong>Bài toán [TH]:</strong><br/>
-                            Tính giá trị biểu thức:<br/>
+                    <div class="card">
+                        <h4 class="font-bold text-primary mb-8">Bài Toán Đích Trong Đề Thi Thật</h4>
+                        <div class="formula-box mb-8">
+                            <strong>Bài toán [TH]:</strong> Tính giá trị biểu thức:<br/>
                             $$M = 150 - [100 - (3^2 \cdot 5)]$$
-                            <em>(HS trung bình – yếu nhìn ngoặc vuông và lũy thừa thường sợ và làm sai thứ tự).</em>
                         </div>
+                        <p class="text-sm text-muted">
+                            Học sinh lớp C thường lúng túng khi gặp ngoặc lồng ngoặc và lũy thừa dồn dập $	o$ dễ bỏ cuộc.
+                        </p>
                     </div>
-
-                    <div class="card compare-card-new">
-                        <div class="compare-title-new">✅ Chuẩn Giàn Giáo MathTech (NB Tách Bước)</div>
-                        <div class="compare-content-new">
-                            <strong>Bài toán chẻ giàn giáo:</strong><br/>
-                            • <strong>Ý a [NB đệm]:</strong> Tính giá trị của $3^2$ và $3^2 \cdot 5$.<br/>
-                            • <strong>Ý b [TH]:</strong> Thực hiện phép tính trong ngoặc vuông $[100 - (3^2 \cdot 5)]$ rồi tính $M$.<br/>
-                            👉 <em>HS làm được ngay ý a, tự tin giải quyết trọn vẹn cả bài!</em>
-                        </div>
+                    <div class="card card-success">
+                        <h4 class="font-bold text-success mb-8">Chẻ Giàn Giáo Leo Dốc (Scaffolding)</h4>
+                        <ul class="text-sm" style="padding-left: 18px; line-height: 1.6;">
+                            <li><strong>Ý a [NB đệm]:</strong> Tính giá trị $3^2$ và $3^2 \cdot 5$.</li>
+                            <li><strong>Ý b [TH]:</strong> Tính ngoặc vuông $[100 - (3^2 \cdot 5)]$ rồi tính $M$.</li>
+                        </ul>
+                        <p class="text-sm text-success font-bold" style="margin-top: 8px;">
+                            👉 Hiệu quả: HS làm được ngay ý a, tự tin giải quyết trọn vẹn cả bài!
+                        </p>
                     </div>
                 </div>
             </div>
 
-            <!-- SLIDE 7: TỈ LỆ CHUẨN LỚP C: 40 - 40 - 20 -->
+            <!-- SLIDE 7: TỈ LỆ CHUẨN LỚP C -->
             <div class="slide" id="slide-7">
-                <h3 class="section-title">⚖️ Tỉ Lệ Chuẩn Vàng Lớp C: 40% – 40% – 20%</h3>
-                <div class="grid-3 mb-20">
-                    <div class="card ratio-card ratio-nb">
-                        <div class="ratio-number text-primary">40%</div>
-                        <div class="ratio-label">NHẬN BIẾT (NB)</div>
-                        <p class="ratio-desc">Xây nền móng, củng cố kỹ năng tiên quyết</p>
+                <h3 class="section-title">⚖️ Tỉ Lệ Chuẩn Lớp C: 40% NB – 40% TH – 20% VD</h3>
+                <div class="grid-2 mb-12">
+                    <div class="card card-primary">
+                        <h4 class="font-bold text-primary mb-8">Công Thức Phân Bổ Năng Lực</h4>
+                        <ul class="text-sm" style="padding-left: 18px; line-height: 1.7;">
+                            <li><strong>40% Nhận biết (NB):</strong> Xây chắc kỹ năng cơ bản, tạo đà tâm lý.</li>
+                            <li><strong>40% Thông hiểu (TH):</strong> Áp dụng công thức, rèn tính cẩn thận.</li>
+                            <li><strong>20% Vận dụng (VD):</strong> Va chạm bài toán thực tế vừa sức.</li>
+                            <li><strong>0% Vận dụng cao (VDC):</strong> Tránh gây quá tải và sợ hãi.</li>
+                        </ul>
                     </div>
-                    <div class="card ratio-card ratio-th">
-                        <div class="ratio-number text-accent">40%</div>
-                        <div class="ratio-label">THÔNG HIỂU (TH)</div>
-                        <p class="ratio-desc">Thành thạo dạng toán trọng tâm đề thi</p>
-                    </div>
-                    <div class="card ratio-card ratio-vd">
-                        <div class="ratio-number text-success">20%</div>
-                        <div class="ratio-label">VẬN DỤNG (VD)</div>
-                        <p class="ratio-desc">Chạm bài toán thực tế vừa sức (0% VDC)</p>
+                    <div class="card card-accent">
+                        <h4 class="font-bold text-accent mb-8">Định Mức Thời Lượng Ca Học 90 Phút</h4>
+                        <ul class="text-sm" style="padding-left: 18px; line-height: 1.7;">
+                            <li><strong>GV Giảng & Ví dụ mẫu:</strong> 25 phút.</li>
+                            <li><strong>HS Luyện tập trên lớp:</strong> 55 phút (nghỉ giải lao 10 phút).</li>
+                            <li><strong>BTVN tự luyện tại nhà:</strong> 40 phút.</li>
+                            <li><em>(Định mức Khối 9: 1,5'/câu NB · 6'/câu TH · 12'/câu VD · Vẽ hình +5').</em></li>
+                        </ul>
                     </div>
                 </div>
-
-                <div class="card card-primary">
-                    <div class="duration-heading text-primary">
-                        ⏱️ Phân Bổ Thời Lượng Trong Ca Học Chuẩn 90 Phút:
-                    </div>
-                    <p class="mb-6">
-                        • <strong>Khối 3:</strong> GV giảng & làm mẫu: 30' $ightarrow$ HS luyện trên lớp: 45' $ightarrow$ BTVN: 60' (8–10 câu NB ngắn + 4–5 TH + 1–2 VD).
-                    </p>
-                    <p>
-                        • <strong>Khối 6:</strong> GV giảng: 25' $ightarrow$ HS luyện trên lớp: 55' (nghỉ 10') $ightarrow$ BTVN: 40' (10–12 câu NB đệm + 4 TH + 1–2 VD).
-                    </p>
+                <div class="dashboard-banner">
+                    <div class="dash-item"><div class="dash-val text-primary">40%</div><div class="dash-label">Nhận Biết (48')</div></div>
+                    <div class="dash-item"><div class="dash-val text-success">40%</div><div class="dash-label">Thông Hiểu (48')</div></div>
+                    <div class="dash-item"><div class="dash-val text-accent">20%</div><div class="dash-label">Vận Dụng (24')</div></div>
+                    <div class="dash-item"><div class="dash-val text-danger">0%</div><div class="dash-label">VDC (Cấm Lớp C)</div></div>
                 </div>
             </div>
 
-            <!-- SLIDE 8: CẤU TRÚC 4 CHẶNG TRÊN PHIẾU HỌC TẬP -->
+            <!-- SLIDE 8: CẤU TRÚC 4 CHẶNG TRÊN PHIẾU -->
             <div class="slide" id="slide-8">
                 <h3 class="section-title">📖 Cấu Trúc 4 Chặng Sư Phạm Của 1 Phiếu Học Tập</h3>
-                <div class="step-container">
+                <div class="step-container mb-16">
                     <div class="step-card active-step">
                         <div class="step-num">1</div>
-                        <div class="step-card-title text-primary">KIẾN THỨC NỀN</div>
-                        <p class="text-xs">Ôn lại kỹ năng lớp dưới hoặc bài trước chuẩn bị dùng đến</p>
+                        <strong class="text-primary" style="font-size: 13px;">KIẾN THỨC NỀN</strong>
+                        <p class="text-xs" style="margin-top: 4px;">Ôn lại kỹ năng lớp dưới hoặc bài trước (NB nền)</p>
                     </div>
                     <div class="step-arrow">➔</div>
                     <div class="step-card active-step">
                         <div class="step-num">2</div>
-                        <div class="step-card-title text-primary">KIẾN THỨC MỚI</div>
-                        <p class="text-xs">Định nghĩa, công thức ngắn gọn, dễ nhớ, có đóng khung</p>
+                        <strong class="text-primary" style="font-size: 13px;">KIẾN THỨC MỚI</strong>
+                        <p class="text-xs" style="margin-top: 4px;">Định nghĩa, công thức ngắn gọn, dễ nhớ, có đóng khung</p>
                     </div>
                     <div class="step-arrow">➔</div>
                     <div class="step-card active-step">
                         <div class="step-num">3</div>
-                        <div class="step-card-title text-primary">VÍ DỤ MẪU</div>
-                        <p class="text-xs">GV cùng làm mẫu với HS (có khung điền khuyết làm mẫu)</p>
+                        <strong class="text-primary" style="font-size: 13px;">VÍ DỤ MẪU</strong>
+                        <p class="text-xs" style="margin-top: 4px;">GV cùng làm mẫu với HS (có khung điền khuyết làm mẫu)</p>
                     </div>
                     <div class="step-arrow">➔</div>
                     <div class="step-card active-step">
                         <div class="step-num">4</div>
-                        <div class="step-card-title text-primary">LUYỆN TẬP</div>
-                        <p class="text-xs">Hệ thống bài tập tự luyện từ dễ đến khó (NB $	o$ TH $	o$ VD)</p>
+                        <strong class="text-primary" style="font-size: 13px;">LUYỆN TẬP</strong>
+                        <p class="text-xs" style="margin-top: 4px;">HS tự làm từ dễ đến khó (Luyện tập 1 $	o$ Luyện tập 2)</p>
                     </div>
                 </div>
-                <div class="stage-flow-note">
-                    💬 <strong>Tư duy dạy học:</strong> Thầy cô lên lớp chỉ cần giảng đúng theo thứ tự 4 chặng này — tài liệu đã được thiết kế sẵn để dẫn dắt học sinh tự nhiên từng bước một.
+                <div class="card card-primary text-sm">
+                    💬 <strong>Tư duy dạy học:</strong> Thầy cô lên lớp chỉ cần giảng đúng theo thứ tự 4 chặng này — tài liệu đã được dàn trang và lập trình sẵn để học sinh tiếp thu một cách tự nhiên nhất.
                 </div>
             </div>
 
             <!-- SLIDE 9: QUY TRÌNH 5 BƯỚC SOẠN PHIẾU CÙNG AI -->
             <div class="slide" id="slide-9">
                 <h3 class="section-title">🚀 Quy Trình 5 Bước Soạn Phiếu Cùng AI</h3>
-                <div class="step-container flex-wrap">
-                    <div class="step-card min-w-170">
+                <div class="step-container mb-16">
+                    <div class="step-card">
                         <div class="step-num">1</div>
-                        <strong class="step-head-title text-primary">Tìm Nguồn Đề</strong>
-                        <p class="step-sub-text">TOANMATH, SGK, SGV KNTT</p>
+                        <strong class="text-primary" style="font-size: 13px;">Tìm Nguồn Đề</strong>
+                        <p class="text-xs" style="margin-top: 4px;">Đề thi Hà Nội, SGK, SGV</p>
                     </div>
                     <div class="step-arrow">➔</div>
-                    <div class="step-card min-w-170">
+                    <div class="step-card">
                         <div class="step-num">2</div>
-                        <strong class="step-head-title text-primary">AI Phân Dạng</strong>
-                        <p class="step-sub-text">Lập thuyết minh & xuất phiếu nháp</p>
+                        <strong class="text-primary" style="font-size: 13px;">AI Phân Dạng</strong>
+                        <p class="text-xs" style="margin-top: 4px;">Nạp Sheet & ra Thuyết minh</p>
                     </div>
                     <div class="step-arrow">➔</div>
-                    <div class="step-card min-w-170 step-accent">
-                        <div class="step-num bg-accent">3</div>
-                        <strong class="step-head-title text-accent">GV Đọc Duyệt</strong>
-                        <p class="step-sub-text">Kiểm tra sư phạm & thời lượng</p>
+                    <div class="step-card" style="border-color: var(--accent); background: #fffbeb;">
+                        <div class="step-num" style="background: var(--accent);">3</div>
+                        <strong class="text-accent" style="font-size: 13px;">GV Đọc Duyệt</strong>
+                        <p class="text-xs" style="margin-top: 4px;">Kiểm tra sư phạm & thời lượng</p>
                     </div>
                     <div class="step-arrow">➔</div>
-                    <div class="step-card min-w-170">
+                    <div class="step-card">
                         <div class="step-num">4</div>
-                        <strong class="step-head-title text-primary">Đổi Câu (Nếu Cần)</strong>
-                        <p class="step-sub-text">Báo AI tinh chỉnh câu phù hợp</p>
+                        <strong class="text-primary" style="font-size: 13px;">Đổi Câu Phù Hợp</strong>
+                        <p class="text-xs" style="margin-top: 4px;">Báo AI tinh chỉnh câu mới</p>
                     </div>
                     <div class="step-arrow">➔</div>
-                    <div class="step-card min-w-170 step-success">
-                        <div class="step-num bg-success">5</div>
-                        <strong class="step-head-title text-success">Đóng Gói</strong>
-                        <p class="step-sub-text">Lên Drive & cập nhật Sheet</p>
+                    <div class="step-card" style="border-color: var(--success); background: #dcfce7;">
+                        <div class="step-num" style="background: var(--success);">5</div>
+                        <strong class="text-success" style="font-size: 13px;">Đóng Gói & Drive</strong>
+                        <p class="text-xs" style="margin-top: 4px;">Xuất 3 PDF & cập nhật Sheet</p>
+                    </div>
+                </div>
+                <div class="card card-accent text-sm">
+                    🔄 <strong>Vòng lặp chất lượng:</strong> Nếu ở Bước 3 GV chưa ưng ý $	o$ Bước 4 yêu cầu AI đổi câu $	o$ AI xuất lại bản PDF mới trong 10 giây $	o$ Quay lại Bước 3 duyệt tiếp.
+                </div>
+            </div>
+
+            <!-- SLIDE 10: HỆ THỐNG 3 TEMPLATE SHEETS -->
+            <div class="slide" id="slide-10">
+                <h3 class="section-title">📑 Hệ Thống 3 Template Sheets Liên Kết Động Trong MathTech</h3>
+                <div style="margin-bottom: 12px; display: flex; align-items: center; justify-content: space-between; background: #eff6ff; padding: 10px 16px; border-radius: 8px; border: 1px solid #bfdbfe;">
+                    <div style="font-size: 13px; font-weight: 700; color: #1e3a8a;">
+                        📊 Link Google Sheets Mẫu (Đầy đủ 3 Tab Chuẩn):
+                    </div>
+                    <a href="https://docs.google.com/spreadsheets/d/1ARD_4AKM_aXlyGz3tOCoUYjOEnlOgXCmcO0ISeK6boY/edit" target="_blank" rel="noopener noreferrer" class="pill-btn">
+                        🚀 Mở Spreadsheet Mẫu (Click để Tạo bản sao)
+                    </a>
+                </div>
+                <div class="grid-2 mb-12">
+                    <div class="card card-primary">
+                        <h4 class="font-bold text-primary mb-8">Template 1 & 2: Thiết Kế & Phân Dạng</h4>
+                        <ul class="text-sm" style="padding-left: 18px; line-height: 1.6;">
+                            <li><strong>Template 1 (Tab Phân Dạng 47 Cột):</strong> Ngân hàng đề thi quét sạch từ nguồn, tự động lọc L1–L5 và chấm điểm T1–T8.</li>
+                            <li><strong>Template 2 (Tab Thuyết Minh Động):</strong> Bản spec buổi học, cân đối chuẩn 40-40-20 và quỹ thời lượng 90'.</li>
+                        </ul>
+                    </div>
+                    <div class="card card-success">
+                        <h4 class="font-bold text-success mb-8">Template 3: Bàn Giao & Tiến Độ Drive</h4>
+                        <ul class="text-sm" style="padding-left: 18px; line-height: 1.6;">
+                            <li><strong>Template 3 (Sheet Quản Trị Tiến Độ):</strong> Quản lý tiến độ tuần, đồng bộ trọn bộ link Drive (Handout HS, Guide GV, Slide).</li>
+                            <li><strong>Quy chuẩn Đề thi:</strong> <span class="text-muted">Đề thi do Thầy tạo riêng. GV và AI tập trung hoàn thiện 3 template bài giảng.</span></li>
+                        </ul>
+                    </div>
+                </div>
+                <div class="formula-box text-center text-sm">
+                    <strong>Nguyên tắc cốt lõi:</strong> [Template 1: Ngân hàng 47 cột] $\xrightarrow{\text{Mã câu}}$ [Template 2: Thuyết minh spec] $\xrightarrow{\text{Duyệt}}$ [Bộ 3 PDF Song Song] $\xrightarrow{\text{Đóng gói}}$ [Template 3: Drive]
+                </div>
+            </div>
+
+            <!-- SLIDE 11: TEMPLATE 1 - 47 CỘT CHUẨN -->
+            <div class="slide" id="slide-11">
+                <h3 class="section-title">📊 Template 1: Tab Phân Dạng Chương (47 Cột Chuẩn)</h3>
+                <div class="grid-2 mb-12">
+                    <div class="card card-primary">
+                        <h4 class="font-bold text-primary mb-8" style="font-size: 15px;">Phân Khu I, II, III: Thiết Kế & Giàn Giáo</h4>
+                        <ul class="text-sm" style="padding-left: 18px; line-height: 1.6;">
+                            <li><strong class="text-primary">I. Dữ liệu đề thô (Cột A – M):</strong> Chép nguyên văn từ đề thật; gồm <em>Bài cụ thể</em>, <em>Nguồn</em>, <em>Mức độ</em>, <em>Dạng bài</em>, <em>Thời lượng</em>, <strong>Mã câu (M)</strong> (khóa định danh duy nhất).</li>
+                            <li><strong class="text-accent">II. Giàn giáo §4b (Cột N – X):</strong> Gán 7 loại câu §4b (NB lẻ LT, NB tách TH, TH tách VD...); tự động xếp C/B/X; bộ lọc <strong>Loại ngay (L1–L5)</strong>; vùng <em>Chọn tay</em>.</li>
+                            <li><strong>III. Bóc tách ý con (Cột Y – AE):</strong> Tách bài VD thành chuỗi bước đệm TH $	o$ NB; <em>Mã bài gốc</em>, <em>Kỹ thuật giải</em>, <em>Chương ([V])</em>, <em>Nhóm trùng</em>.</li>
+                        </ul>
+                    </div>
+                    <div class="card card-success">
+                        <h4 class="font-bold text-success mb-8" style="font-size: 15px;">Phân Khu IV, V: Đánh Giá & Kết Luận</h4>
+                        <ul class="text-sm" style="padding-left: 18px; line-height: 1.6;">
+                            <li><strong class="text-success">IV. Chấm 8 tiêu chí chất lượng (Cột AF – AM):</strong> Chấm 0, 1, 2 cho T1 Trọng tâm SGK $\dots$ T8 Mở rộng: Đánh giá ý toán trong sáng, nghiệm đẹp, bẫy lỗi sai kinh điển.</li>
+                            <li><strong class="text-danger">V. Đánh giá phân tầng (Cột AN – AU):</strong> Tính điểm C/B/X, so ngưỡng mức AQ $	o$ Kết luận: <em>Đưa vào bài / Dự phòng / Loại</em>. <strong>THẦY DUYỆT</strong> chốt chặn.</li>
+                        </ul>
+                        <div style="border-top: 1px dashed var(--success); margin-top: 10px; padding-top: 8px;" class="text-xs">
+                            💡 <strong>Mã màu nhận diện:</strong> <span class="badge badge-cam">Cam: VD/VDC</span> | <span class="badge badge-vang">Vàng: Thầy chọn</span> | <span class="badge badge-xanh">Xanh: Vào bài</span> | <span class="badge badge-tim">Tím: NB cũ</span> | <span class="badge badge-do">Đỏ: Loại</span>.
+                        </div>
                     </div>
                 </div>
             </div>
 
-            <!-- SLIDE 10: BƯỚC 1 & 2 -->
-            <div class="slide" id="slide-10">
-                <h3 class="section-title">📂 Bước 1 & 2: Tìm Nguồn & AI Phân Dạng</h3>
-                <div class="grid-2">
-                    <div class="card card-primary">
-                        <div class="step-block-title text-primary">
-                            BƯỚC 1: Tìm Inputs Nguồn Uy Tín
-                        </div>
-                        <ul class="source-list">
-                            <li class="mb-6">Đề thi chính thức các trường Hà Nội: <a href="https://thcs.toanmath.com" target="_blank" rel="noopener noreferrer" class="link-bold-primary">thcs.toanmath.com</a></li>
-                            <li class="mb-6">SGK, SGV Kết nối tri thức (đã có sẵn ảnh scan trong kho).</li>
-                            <li>Sách bài tập & đề thi chọn lọc các năm gần nhất.</li>
+            <!-- SLIDE 12: CƠ CHẾ LỌC L1-L5 VÀ CHẤM T1-T8 -->
+            <div class="slide" id="slide-12">
+                <h3 class="section-title">⚙️ Cơ Chế Lọc Loại Ngay (L1–L5) & Chấm Điểm (T1–T8) Tự Động</h3>
+                <div class="grid-2 mb-12">
+                    <div class="card card-danger">
+                        <h4 class="font-bold text-danger mb-8">Bộ Lọc Loại Ngay L1–L5 (Cột Q)</h4>
+                        <ul class="text-sm" style="padding-left: 18px; line-height: 1.6;">
+                            <li><strong>L1:</strong> Sai kiến thức toán học / giả thiết ngớ ngẩn.</li>
+                            <li><strong>L2:</strong> Lệch chuẩn chương trình SGK GDPT 2018.</li>
+                            <li><strong>L3:</strong> Nghiệm số cồng kềnh, số lẻ vô tỉ xấu.</li>
+                            <li><strong>L4:</strong> Quá 4 bước suy luận không thể tách giàn giáo.</li>
+                            <li><strong>L5:</strong> Trùng ý chỉ đổi số trên lớp (chỉ cho phép ở BTVN).</li>
                         </ul>
                     </div>
-
-                    <div class="card card-accent">
-                        <div class="step-block-title text-accent">
-                            BƯỚC 2: AI Quét Đề & Lập Thuyết Minh
+                    <div class="card card-success">
+                        <h4 class="font-bold text-success mb-8">Công Thức Chấm Điểm Lớp C (Cột AN & AR)</h4>
+                        <div class="formula-box mb-8">
+                            $$\text{Điểm}_C = \frac{3T_1 + 1T_2 + 2T_3 + 1T_4 + 2T_5 + 2T_6 + 2T_7 + 0T_8}{2 \times 13} \times 10$$
                         </div>
-                        <p class="mb-10">Đưa đề cho AI đọc và quét trực tiếp vào:</p>
-                        <a href="https://docs.google.com/spreadsheets/d/1NCJHzp0cU9zUaJIkw47UfLzrPUj09P-5prgiGG6erDs/edit" target="_blank" rel="noopener noreferrer" class="pill-btn mb-12">
-                            📊 Google Sheet Các Đầu Việc Học Liệu
-                        </a>
-                        <p class="ratio-desc">
-                            👉 <strong>AI tự động làm:</strong> Chấm mã câu (NB/TH/VD), đánh dấu năm đề, thống kê dạng bài, lập Thuyết minh và xuất ra Phiếu học tập nháp đầu tiên.
+                        <ul class="text-sm" style="padding-left: 18px; line-height: 1.5;">
+                            <li><strong>Ngưỡng đưa vào bài (AQ):</strong> $\text{VD} \ge 7{,}0$ · $\text{TH} \ge 6{,}0$ · $\text{NB} \ge 5{,}0$.</li>
+                            <li><strong>Công thức tự động (AR):</strong><br/>
+                            <code>=IF(Q6<>"","LOẠI",IF(V6<>"","CHỌN TAY",IF(AN6>=AQ6,"ĐƯA VÀO BÀI","DỰ PHÒNG")))</code></li>
+                        </ul>
+                    </div>
+                </div>
+            </div>
+
+            <!-- SLIDE 13: TEMPLATE 2 - THUYẾT MINH SPEC ĐỘNG -->
+            <div class="slide" id="slide-13">
+                <h3 class="section-title">📋 Template 2: Tab Thuyết Minh Liên Kết Động (Spec Dynamic Sheet)</h3>
+                <div class="grid-2 mb-12">
+                    <div class="card card-primary">
+                        <h4 class="font-bold text-primary mb-8">Cấu Trúc Ma Trận Dạng Bài</h4>
+                        <ul class="text-sm" style="padding-left: 18px; line-height: 1.6;">
+                            <li><strong>Loại câu (§4b):</strong> 7 nhãn chuẩn (NB lẻ LT, NB tách TH, NB ghép bài, TH lẻ LT, TH ghép bài, TH tách VD, VD lẻ) + NB kiến thức cũ.</li>
+                            <li><strong>Dạng bài:</strong> Tên dạng toán chuẩn (bọc trong <code>$ ... $</code>).</li>
+                            <li><strong>Mã câu đề xuất:</strong> Trỏ trực tiếp cột Mã câu (M) của Template 1.</li>
+                            <li><strong>THẦY CHỌN & ĐỔI CÂU:</strong> Vùng Thầy nhập mã câu mới.</li>
+                            <li><strong>Chốt mã:</strong> <code>=IF(Thầy_Chọn<>"", Thầy_Chọn, Đề_Xuất)</code>.</li>
+                        </ul>
+                    </div>
+                    <div class="card card-accent">
+                        <h4 class="font-bold text-accent mb-8">Gác Cổng Tự Động (thuyetminh_gate)</h4>
+                        <ul class="text-sm" style="padding-left: 18px; line-height: 1.6;">
+                            <li>Tự động chặn nếu quỹ giờ trên lớp lệch quá $\pm 10\%$.</li>
+                            <li>Tự động chặn nếu xuất hiện câu VDC ở Lớp C.</li>
+                            <li>Cảnh báo nếu thiếu khai báo nhãn Loại câu §4b.</li>
+                            <li>Tự động kiểm tra liên kết mã câu với Tab Phân dạng.</li>
+                        </ul>
+                    </div>
+                </div>
+                <div class="dashboard-banner">
+                    <div class="dash-item"><div class="dash-val text-primary">25.0'</div><div class="dash-label">GV Giảng & Mẫu</div></div>
+                    <div class="dash-item"><div class="dash-val text-success">55.0'</div><div class="dash-label">HS Làm Trên Lớp</div></div>
+                    <div class="dash-item"><div class="dash-val text-accent">40.0'</div><div class="dash-label">BTVN Tự Luyện</div></div>
+                    <div class="dash-item"><div class="dash-val text-primary">PASS</div><div class="dash-label">Thuyết Minh Gate</div></div>
+                </div>
+            </div>
+
+            <!-- SLIDE 14: TEMPLATE 3 - SHEET TIẾN ĐỘ & DRIVE -->
+            <div class="slide" id="slide-14">
+                <h3 class="section-title">📈 Template 3: Sheet Quản Trị Tiến Độ & Đồng Bộ Google Drive</h3>
+                <div class="grid-2 mb-12">
+                    <div class="card card-primary">
+                        <h4 class="font-bold text-primary mb-8">Cấu Trúc Quản Trị Tiến Độ Tuần</h4>
+                        <ul class="text-sm" style="padding-left: 18px; line-height: 1.6;">
+                            <li><strong>Thông tin ca học:</strong> Tuần / Ca $	o$ Mã phiếu $	o$ Tên bài SGK.</li>
+                            <li><strong>Hồ sơ gốc:</strong> Link Sheet Phân dạng $	o$ Link Thuyết minh PDF.</li>
+                            <li><strong>Trạng thái duyệt:</strong> 🟡 Đang soạn $	o$ 🟠 Chờ duyệt $	o$ 🟢 **ĐÃ DUYỆT**.</li>
+                            <li><strong>Nghiệm thu:</strong> Tích xanh checkbox khi bàn giao in ấn cho cơ sở.</li>
+                        </ul>
+                    </div>
+                    <div class="card card-success">
+                        <h4 class="font-bold text-success mb-8">Đồng Bộ 100% Lên Google Drive</h4>
+                        <ul class="text-sm" style="padding-left: 18px; line-height: 1.6;">
+                            <li><strong>Link Handout Học Sinh:</strong> Bản in HS có khung làm bài.</li>
+                            <li><strong>Link Sổ Tay Giáo Viên:</strong> Bản GV có đáp án + gợi ý.</li>
+                            <li><strong>Link Slide Trình Chiếu:</strong> File Beamer 16:9 tương tác.</li>
+                            <li><strong>Link File Nguồn:</strong> Mã nguồn phiếu JSON + TeX lưu trữ.</li>
+                        </ul>
+                    </div>
+                </div>
+                <div class="chat-bubble-success text-center">
+                    💬 Khi GV duyệt xong, chỉ cần nhắn AI: <em>"Hãy đưa lên Drive và cập nhật Sheet Tiến độ giúp tôi"</em> $	o$ AI tự làm 100%!
+                </div>
+            </div>
+
+            <!-- SLIDE 15: THỰC HÀNH BƯỚC 1 & 2 -->
+            <div class="slide" id="slide-15">
+                <h3 class="section-title">📂 Thực Hành Bước 1 & 2: Tìm Nguồn & AI Phân Dạng</h3>
+                <div class="grid-2">
+                    <div class="card card-primary">
+                        <h4 class="font-bold text-primary mb-8">BƯỚC 1: Chuẩn Bị Inputs Nguồn</h4>
+                        <ul class="text-sm" style="padding-left: 18px; line-height: 1.6;">
+                            <li>Đề thi chính thức các trường Hà Nội: <a href="https://thcs.toanmath.com" target="_blank" rel="noopener noreferrer" class="font-bold text-primary">thcs.toanmath.com</a>.</li>
+                            <li>Ảnh scan SGK, SGV Kết nối tri thức có sẵn trong kho.</li>
+                            <li>Sách bài tập & đề thi chọn lọc các năm học gần nhất.</li>
+                        </ul>
+                    </div>
+                    <div class="card card-accent">
+                        <h4 class="font-bold text-accent mb-8">BƯỚC 2: AI Quét Đề & Lập Template 1 & 2</h4>
+                        <p class="text-sm mb-8">Đưa đề cho AI đọc và quét trực tiếp vào Google Sheets:</p>
+                        <div class="chat-bubble-primary mb-8">
+                            "Hãy quét các file đề thi HK1 trong thư mục inputs và điền vào Template 1 phân dạng Chương 5 giúp tôi. Chấm điểm T1-T8 cho lớp C."
+                        </div>
+                        <p class="text-xs text-muted">
+                            👉 AI tự động chấm mã câu, gán nhãn §4b, chấm T1–T8, tính kết luận Lớp C và tạo dự thảo Template 2 (Thuyết minh).
                         </p>
                     </div>
                 </div>
             </div>
 
-            <!-- SLIDE 11: BƯỚC 3 & 4 -->
-            <div class="slide" id="slide-11">
-                <h3 class="section-title">🔍 Bước 3 & 4: Thẩm Định Sư Phạm & Đổi Câu</h3>
+            <!-- SLIDE 16: THỰC HÀNH BƯỚC 3 & 4 -->
+            <div class="slide" id="slide-16">
+                <h3 class="section-title">🔍 Thực Hành Bước 3 & 4: Thẩm Định Sư Phạm & Đổi Câu</h3>
                 <div class="grid-2">
                     <div class="card card-accent">
-                        <div class="step-block-title text-accent">
-                            BƯỚC 3: GV Thẩm Định Sư Phạm
-                        </div>
-                        <p class="mb-10">Cầm bản in PDF và tự trả lời 2 câu hỏi:</p>
-                        <ol class="question-list">
-                            <li class="mb-8"><em>"Trên lớp thực tế 90', mình có dẫn dắt HS lớp C học kịp phiếu này không?"</em></li>
+                        <h4 class="font-bold text-accent mb-8">BƯỚC 3: GV Thẩm Định Sư Phạm</h4>
+                        <p class="text-sm mb-8">Mở bản in PDF Thuyết minh và đối chiếu 2 câu hỏi lớn:</p>
+                        <ol class="text-sm" style="padding-left: 20px; line-height: 1.6;">
+                            <li><em>"Trên lớp thực tế 90', mình có dẫn dắt HS lớp C học kịp phiếu này không?"</em></li>
                             <li><em>"Các câu NB đệm có dẫn dắt mượt mà đến câu VD đích không?"</em></li>
                         </ol>
                     </div>
-
                     <div class="card card-primary">
-                        <div class="step-block-title text-primary">
-                            BƯỚC 4: Phản Hồi AI Đổi Câu (Nếu Chưa Ưng)
-                        </div>
-                        <p class="mb-10">Nếu câu quá khó hoặc bài khô khan, nhắn cho AI:</p>
+                        <h4 class="font-bold text-primary mb-8">BƯỚC 4: Đổi Câu Linh Hoạt</h4>
+                        <p class="text-sm mb-8">Nếu câu quá khó hoặc bài khô khan, có 2 cách đổi:</p>
+                        <ul class="text-sm mb-8" style="padding-left: 18px; line-height: 1.5;">
+                            <li><strong>Cách 1:</strong> Gõ mã câu mới vào cột <em>THẦY CHỌN</em> ở Template 2.</li>
+                            <li><strong>Cách 2:</strong> Nhắn trực tiếp trong ô chat AI:</li>
+                        </ul>
                         <div class="chat-bubble-primary">
-                            "Câu 3 phần Luyện tập hơi khó so với lớp C, hãy chọn câu khác cùng dạng từ ngân hàng đề để HS hứng thú hơn."
+                            "Câu 3 phần Luyện tập hơi khó so với lớp C, hãy chọn câu khác cùng dạng từ ngân hàng đề giúp tôi."
                         </div>
-                        <p class="ratio-desc">
-                            👉 AI sẽ tự đọc lại ngân hàng đề $ightarrow$ đổi câu mới $ightarrow$ xuất lại bản PDF trong 10 giây!
-                        </p>
                     </div>
                 </div>
             </div>
 
-            <!-- SLIDE 12: BƯỚC 5 -->
-            <div class="slide" id="slide-12">
-                <h3 class="section-title">☁️ Bước 5: Đóng Gói, Lên Drive & Cập Nhật Tiến Độ</h3>
-                <div class="card card-success mb-20">
-                    <div class="step-block-title text-success">
-                        Khi Phiếu Đã Chuẩn 100% — GV Ra Lệnh Cho AI:
-                    </div>
-                    <div class="chat-bubble-success">
-                        "Phiếu đã duyệt xong, hãy đưa lên Drive và cập nhật sheet Tiến độ giúp tôi."
+            <!-- SLIDE 17: THỰC HÀNH BƯỚC 5 -->
+            <div class="slide" id="slide-17">
+                <h3 class="section-title">☁️ Thực Hành Bước 5: Đóng Gói, Lên Drive & Cập Nhật Tiến Độ</h3>
+                <div class="card card-success mb-16">
+                    <h4 class="font-bold text-success mb-6" style="font-size: 15px;">Khi Phiếu Đã Chuẩn 100% — GV Ra Lệnh Một Chạm Cho AI:</h4>
+                    <div class="chat-bubble-success text-center">
+                        "Phiếu 2 Chương 5 đã duyệt xong, hãy đưa lên Drive và cập nhật Template 3 (Sheet Tiến độ) giúp tôi."
                     </div>
                 </div>
-
                 <div class="grid-2">
                     <div class="card">
-                        <div class="action-card-title text-primary">1. Đồng bộ lên Google Drive</div>
-                        <p class="text-sm">AI tự động đẩy trọn bộ 3 bản PDF (Handout HS, Guide GV, Slide) vào đúng thư mục của khối/lớp trên Drive.</p>
+                        <h4 class="font-bold text-primary mb-6">1. Tự Động Build & Xuất Bản</h4>
+                        <p class="text-sm">AI tự chạy gác cổng nghiệm (SymPy) $	o$ render song song 3 bản PDF (Handout HS, Guide GV, Slide Beamer) $	o$ tải lên đúng thư mục Google Drive.</p>
                     </div>
                     <div class="card">
-                        <div class="action-card-title text-primary">2. Cập nhật Sheet TIẾN ĐỘ C</div>
-                        <p class="text-sm mb-10">AI tự động điền link sản phẩm và đánh dấu hoàn thành vào:</p>
-                        <a href="https://docs.google.com/spreadsheets/d/1fH7vl99bXoV8AQ9xqnXOsVAC5XQ3ESWk5zM7APd1o4k/edit?gid=1752741035#gid=1752741035" target="_blank" rel="noopener noreferrer" class="pill-btn">
-                            📈 Google Sheet TIẾN ĐỘ C
-                        </a>
+                        <h4 class="font-bold text-primary mb-6">2. Cập Nhật Sheet Tiến Độ</h4>
+                        <p class="text-sm">AI tự động điền URL Google Drive vào các cột Handout, Guide, Slide và tích xanh nghiệm thu hoàn thành.</p>
                     </div>
                 </div>
             </div>
 
-            <!-- SLIDE 13: TỔNG KẾT & HỆ SINH THÁI SẢN PHẨM HOÀN THÀNH -->
-            <div class="slide" id="slide-13">
-                <h3 class="section-title">🏆 Tổng Kết: Hệ Sinh Thái Sản Phẩm Hoàn Thành (Ví Dụ Lớp 9)</h3>
-                <p class="summary-intro">
-                    Sau khi hoàn thành một chương bài học, giáo viên và trung tâm sẽ có trọn bộ hệ sinh thái sản phẩm như sau:
-                </p>
-                <div class="grid-2">
+            <!-- SLIDE 18: TỔNG KẾT & CHEAT-SHEET -->
+            <div class="slide" id="slide-18">
+                <h3 class="section-title">🏆 Tổng Kết: Hệ Sinh Thái Sản Phẩm & Cheat-Sheet Lệnh AI</h3>
+                <div class="grid-2 mb-12">
                     <div class="card card-primary">
-                        <div class="step-card-title text-primary">
-                            1. Sheet Phân Dạng Chương & Ngân Hàng Câu Hỏi
-                        </div>
-                        <p class="text-sm">
-                            • Hàng trăm bài toán từ đề thi thật Hà Nội đã được bóc tách ý a/b/c.<br/>
-                            • Đã chấm điểm bộ lọc L1–L5, tiêu chí T1–T8, gắn nhãn NB, TH, VD.
-                        </p>
+                        <h4 class="font-bold text-primary mb-6">Hệ Sinh Thái Hoàn Thành Mỗi Chương</h4>
+                        <ul class="text-sm" style="padding-left: 18px; line-height: 1.5;">
+                            <li><strong>Template 1:</strong> Ngân hàng đề 47 cột chấm điểm T1–T8.</li>
+                            <li><strong>Template 2:</strong> Phiếu Thuyết minh cân đối 40-40-20.</li>
+                            <li><strong>Bộ 3 PDF Song Song:</strong> Handout HS + Guide GV + Slide.</li>
+                            <li><strong>Template 3:</strong> Sheet Tiến độ tích xanh đồng bộ Drive.</li>
+                        </ul>
                     </div>
-
-                    <div class="card card-primary">
-                        <div class="step-card-title text-primary">
-                            2. Phiếu Thuyết Minh Chương (PDF / JSON)
-                        </div>
-                        <p class="text-sm">
-                            • Bảng phân bổ 10–12 dạng bài/buổi, khớp tuyệt đối quỹ giờ 90' hoặc 120'.<br/>
-                            • Bản thiết kế sư phạm được Thầy duyệt trước khi bắt tay làm phiếu.
-                        </p>
-                    </div>
-
-                    <div class="card card-success">
-                        <div class="summary-card-title text-success">
-                            3. Kho Sản Phẩm Google Drive Hoàn Chỉnh
-                        </div>
-                        <p class="text-sm">
-                            • Từng buổi học có đủ: <strong>Handout HS + Sổ tay GV + Slide trình chiếu</strong>.<br/>
-                            • Cuối mỗi chương có sẵn <strong>Đề kiểm tra 45 phút + Ma trận đáp án chuẩn thi</strong>.
-                        </p>
-                    </div>
-
                     <div class="card card-accent">
-                        <div class="summary-card-title text-accent">
-                            4. Sheet Quản Trị TIẾN ĐỘ C Tinh Gọn
-                        </div>
-                        <p class="text-sm">
-                            • Toàn bộ tiến độ được tích xanh hoàn thành kèm link trực tiếp.<br/>
-                            • Sẵn sàng in ấn phát cho học sinh và bàn giao cho cơ sở.
-                        </p>
+                        <h4 class="font-bold text-accent mb-6">Cheat-Sheet Câu Lệnh Cho Giáo Viên</h4>
+                        <ul class="text-sm" style="padding-left: 18px; line-height: 1.5;">
+                            <li><code>make b</code>: Build 3 PDF cho phiếu vừa làm (~9s).</li>
+                            <li><code>make check-tm SPEC=...</code>: Gác cổng thời lượng.</li>
+                            <li><em>"Cài đặt môi trường giúp tôi"</em>: Cài đặt tự động.</li>
+                            <li><em>"Đổi câu X sang câu Y"</em>: Đổi câu tức thì.</li>
+                            <li><em>"Đưa lên Drive và cập nhật Sheet"</em>: Hoàn tất buổi học.</li>
+                        </ul>
                     </div>
+                </div>
+                <div class="formula-box text-center text-xs">
+                    MathTech Engine 2026 — Đồng hành cùng Thầy Cô kiến tạo học liệu chuẩn mực, truyền cảm hứng cho mọi học sinh!
+                </div>
+            </div>
+                    <div class="card card-accent">
+                        <h4 class="font-bold text-accent mb-6">Cheat-Sheet Câu Lệnh Cho Giáo Viên</h4>
+                        <ul class="text-sm" style="padding-left: 18px; line-height: 1.5;">
+                            <li><code>make b</code>: Build 3 PDF cho phiếu vừa làm (~9s).</li>
+                            <li><code>make check-tm SPEC=...</code>: Gác cổng thời lượng.</li>
+                            <li><em>"Cài đặt môi trường giúp tôi"</em>: Cài đặt tự động.</li>
+                            <li><em>"Đổi câu X sang câu Y"</em>: Đổi câu tức thì.</li>
+                            <li><em>"Đưa lên Drive và cập nhật Sheet"</em>: Hoàn tất buổi học.</li>
+                        </ul>
+                    </div>
+                </div>
+                <div class="formula-box text-center text-xs">
+                    MathTech Engine 2026 — Đồng hành cùng Thầy Cô kiến tạo học liệu chuẩn mực, truyền cảm hứng cho mọi học sinh!
                 </div>
             </div>
 
@@ -1001,9 +1117,9 @@
     <!-- FLOATING CONTROLS -->
     <div class="controls">
         <button id="prevBtn" title="Slide trước (Phím ⬅️)">❮</button>
-        <div class="counter" id="slideCounter">1 / 13</div>
+        <div class="counter" id="slideCounter">1 / 18</div>
         <button id="nextBtn" title="Slide sau (Phím ➡️)">❯</button>
-        <button id="fsBtn" title="Toàn màn hình (Phím F)" class="btn-fs">⛶</button>
+        <button id="fsBtn" title="Toàn màn hình (Phím F)">⛶</button>
     </div>
 
     <script>

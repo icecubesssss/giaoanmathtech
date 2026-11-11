@@ -31,6 +31,9 @@
 \definecolor{successbg}{HTML}{DCFCE7}  % Nền xanh lá
 \definecolor{cardbg}{HTML}{F1F5F9}     % Nền card
 \definecolor{danger}{HTML}{DC2626}     % Đỏ cảnh báo
+\definecolor{dangerbg}{HTML}{FEE2E2}   % Nền đỏ
+\definecolor{purple}{HTML}{7E22CE}     % Tím
+\definecolor{purplebg}{HTML}{EDE7F6}   % Nền tím
 
 \hypersetup{
   colorlinks=true,
@@ -92,6 +95,11 @@
     left=5pt, right=5pt, top=3pt, bottom=3pt,
     fonttitle=\bfseries\sffamily\footnotesize, coltitle=success
   },
+  dangercard/.style={
+    colback=dangerbg, colframe=danger, boxrule=0.7pt, arc=3pt,
+    left=5pt, right=5pt, top=3pt, bottom=3pt,
+    fonttitle=\bfseries\sffamily\footnotesize, coltitle=danger
+  },
   quotecard/.style={
     colback=white, colframe=brand!40, boxrule=0.6pt, arc=2pt,
     left=4pt, right=4pt, top=3pt, bottom=3pt
@@ -110,16 +118,16 @@
     \fill[color=accent] ([xshift=0.35in]current page.north west) rectangle ([xshift=0.38in]current page.south west);
   \end{tikzpicture}
 
-  \vspace*{0.25in}
+  \vspace*{0.22in}
   \begin{flushleft}
     \hspace*{0.55in}
     \begin{minipage}{0.85\textwidth}
-      \includegraphics[height=28pt]{/Users/admin/Documents/thaitd/Code/giaoanMathtech/assets/logo_mathtech_compact.png}\par\vspace{12pt}
-      {\setlength{\fboxsep}{3pt}\colorbox{brand}{\color{white}\sffamily\bfseries\scriptsize\strut\,CẨM NANG NỘI BỘ GIÁO VIÊN MỚI\,}}\par\vspace{8pt}
-      {\bfseries\LARGE\color{brand}HƯỚNG DẪN CÁCH SỬ DỤNG AI\\SOẠN PHIẾU HỌC TẬP}\par\vspace{8pt}
-      {\color{accent}\rule{130pt}{2.5pt}}\par\vspace{8pt}
-      {\color{muted}\small\sffamily Tư duy phân tầng sư phạm \& Quy trình 5 bước phối hợp cùng Trợ lý AI}\par
-      \vspace{14pt}
+      \includegraphics[height=26pt]{/Users/admin/Documents/thaitd/Code/giaoanMathtech/assets/logo_mathtech_compact.png}\par\vspace{10pt}
+      {\setlength{\fboxsep}{3pt}\colorbox{brand}{\color{white}\sffamily\bfseries\scriptsize\strut\,CẨM NANG NỘI BỘ DÀNH CHO GIÁO VIÊN MỚI\,}}\par\vspace{6pt}
+      {\bfseries\LARGE\color{brand}HƯỚNG DẪN CÁCH SỬ DỤNG AI\\SOẠN PHIẾU HỌC TẬP \& HỆ THỐNG TEMPLATES}\par\vspace{6pt}
+      {\color{accent}\rule{130pt}{2.5pt}}\par\vspace{6pt}
+      {\color{muted}\small\sffamily Tư duy phân tầng sư phạm, Hệ thống 3 Template Sheets \& Quy trình 5 bước AI}\par
+      \vspace{12pt}
       {\color{ink}\small\sffamily Người thuyết trình: \textbf{Trương Đình Thái} • Tổ Học Liệu MathTech}
     \end{minipage}
   \end{flushleft}
@@ -133,35 +141,35 @@
 \begin{frame}{Khởi Động Nhanh (3 Phút): Tải Tool, Extension \& Mở AI}
   \begin{columns}[T]
     \begin{column}{0.48\textwidth}
-      \begin{tcolorbox}[slidecard, title=1. Tải Mã Nguồn \& Antigravity]
+      \begin{tcolorbox}[slidecard, top=2pt, bottom=2pt, title=1. Tải Mã Nguồn \& Antigravity]
         \scriptsize
         • \textbf{Codebase MathTech (GitHub):}\\
-        \href{https://github.com/icecubesssss/giaoanmathtech}{\textbf{\color{info}github.com/icecubesssss/giaoanmathtech}}\\
-        {\color{muted}(Bấm Code $\to$ Download ZIP $\to$ Giải nén)}\\[4pt]
+        \href{https://github.com/icecubesssss/giaoanmathtech}{\textbf{\color{info}github.com/.../giaoanmathtech}}\\
+        {\color{muted}(Bấm Code $\to$ Download ZIP $\to$ Giải nén)}\\[3pt]
         • \textbf{Ứng dụng AI Antigravity:}\\
         \href{https://antigravity.google/download}{\textbf{\color{info}antigravity.google/download}}
       \end{tcolorbox}
       \vspace{1pt}
-      \begin{tcolorbox}[slidecard, title=2. Mở Thư Mục \& Nhắn Kích Hoạt]
+      \begin{tcolorbox}[slidecard, top=2pt, bottom=2pt, title=2. Mở Thư Mục \& Kích Hoạt Môi Trường]
         \scriptsize
-        Mở Antigravity $\to$ \textbf{Open Folder} trỏ vào thư mục code vừa giải nén $\to$ Mở chat AI và nhắn:
-        \vspace{2pt}
+        Mở Antigravity $\to$ \textbf{Open Folder} trỏ vào code $\to$ Mở chat AI và nhắn:
+        \vspace{1pt}
         \begin{center}
-          \colorbox{white}{\color{accent}\bfseries "Cài đặt môi trường giúp tôi"}
+          \colorbox{white}{\color{accent}\bfseries\scriptsize "Cài đặt môi trường giúp tôi"}
         \end{center}
-        {\color{success}\textbf{👉 AI tự cài Python \& thư viện từ A – Z!}}
+        {\color{success}\textbf{$\blacktriangleright$ AI tự cài Python \& thư viện từ A – Z!}}
       \end{tcolorbox}
     \end{column}
 
     \begin{column}{0.48\textwidth}
-      \begin{tcolorbox}[accentcard, title=3. Cài 2 Extension Thiết Yếu (Trong VS Code)]
+      \begin{tcolorbox}[accentcard, top=3pt, bottom=3pt, title=3. Cài 2 Extension Thiết Yếu (Trong VS Code)]
         \scriptsize
-        Mở mục \textbf{Extensions} (\texttt{Ctrl+Shift+X} / \texttt{Cmd+Shift+X}):\\[3pt]
+        Mở mục \textbf{Extensions} (\texttt{Ctrl+Shift+X} / \texttt{Cmd+Shift+X}):\\[2pt]
         \textbf{1. Extension Claude (Claude Code):}\\
-        Dùng Claude tương tác trực tiếp, chạy lệnh soạn bài và phân dạng cùng AI.\\[5pt]
+        Dùng Claude tương tác trực tiếp, chạy lệnh soạn bài và phân dạng cùng AI.\\[4pt]
         \textbf{2. Extension vscode-pdf:}\\
-        Mở và xem trực tiếp 3 bản PDF (Handout HS, Guide GV, Slide) ngay trong cửa sổ làm việc mà không cần cài thêm app ngoài.\\[5pt]
-        {\color{brand}\textbf{Lợi ích:}} Toàn bộ thao tác chỉ diễn ra trong 1 màn hình!
+        Mở và xem trực tiếp 3 bản PDF (Handout HS, Guide GV, Slide) ngay trong cửa sổ làm việc mà không cần cài thêm app ngoài.\\[4pt]
+        {\color{brand}\textbf{Lợi ích:}} Toàn bộ thao tác chỉ diễn ra trong 1 màn hình duy nhất!
       \end{tcolorbox}
     \end{column}
   \end{columns}
@@ -173,7 +181,7 @@
 \begin{frame}{Cơ Chế Hoạt Động: Inputs $\to$ Process $\to$ Outputs}
   \vspace{-3pt}
   \begin{center}
-    \begin{tikzpicture}[node distance=0.55cm, auto]
+    \begin{tikzpicture}[node distance=0.5cm, auto]
       \node[draw=brand, fill=neutral, rounded corners=3pt, line width=0.8pt, text width=3.3cm, align=center, inner sep=4pt] (in) {
         {\bfseries\color{brand}\small INPUTS}\\[1pt]
         {\tiny (Nguyên liệu thô)}\\[2pt]
@@ -196,7 +204,7 @@
   \vspace{2pt}
   \begin{tcolorbox}[slidecard]
     \scriptsize\centering
-    💡 \textbf{Giáo viên chỉ cần tập trung vào sư phạm} — AI tự động giải toán, vẽ hình và xuất trọn bộ PDF!
+    \textbf{[Mẹo]} \textbf{Giáo viên chỉ cần tập trung vào sư phạm} — AI tự động giải toán, vẽ hình và xuất trọn bộ PDF!
   \end{tcolorbox}
 \end{frame}
 
@@ -204,28 +212,27 @@
 % SLIDE 4: PHÂN TẦNG NĂNG LỰC HỌC SINH
 % ========================================================
 \begin{frame}{Phân Tầng Năng Lực Học Sinh (A – B – C – X)}
-  \vspace{-4pt}
-  \begin{center}
-    \renewcommand{\arraystretch}{0.92}
-    \scriptsize
-    \begin{tabular}{|c|p{5.1cm}|p{3.2cm}|p{2.6cm}|}
+  \begin{adjustbox}{max width=\textwidth}
+    \begin{tabular}{|c|l|c|l|}
       \hline
-      \rowcolor{brand}\color{white}\bfseries Tầng & \color{white}\bfseries Chân dung học sinh & \color{white}\bfseries Đích điểm số & \color{white}\bfseries Trần bài tập \\
+      \rowcolor{brand!15}
+      \textbf{Tầng} & \textbf{Đối tượng học sinh} & \textbf{Mục tiêu điểm} & \textbf{Giới hạn bài tập} \\
       \hline
-      \rowcolor{accent!12}\textbf{\color{accent}C} & \textbf{Nền tảng trung bình – yếu}, hay quên kiến thức cũ & Chắc SGK, kéo điểm kiểm tra lên \textbf{7 – 8 điểm} & \textbf{\color{danger}Trần: VD (CẤM VDC)} \\
+      \rowcolor{brand!5}
+      \textbf{\color{brand}C} & \textbf{Nền tảng trung bình – yếu}, hay quên & 7,0 – 8,0 điểm & \textbf{\color{danger}Trần: Vận dụng (CẤM VDC)} \\
       \hline
-      \textbf{B} & Trung bình – khá, tiếp thu tốt & Kỳ I: 9,5 – 10đ; Kỳ II: 9 – 9,5đ & Có VDC nhẹ \\
+      \textbf{B} & Trung bình – khá, chắc cơ bản & 9,0 – 10 điểm & Có VDC nhẹ (ít hơn lớp A) \\
       \hline
-      \textbf{A} & Khá – giỏi, tư duy tốt & Điểm tối đa trên trường & VDC dày dặn \\
+      \textbf{A} & Khá – giỏi, tư duy tốt & Đạt điểm tối đa (10đ) & VDC dày dặn, mở rộng cấu hình \\
       \hline
-      \textbf{X} & Giỏi xuất sắc, thi Chuyên/CLC & Chinh phục câu cuối đề & VDC chuyên sâu \\
+      \textbf{\color{accent}X} & Chuyên Toán / Chất lượng cao & Chinh phục câu cuối đề & VDC nâng cao, cực trị, BĐT \\
       \hline
     \end{tabular}
-  \end{center}
-  \vspace{1pt}
+  \end{adjustbox}
+  \vspace{6pt}
   \begin{tcolorbox}[accentcard]
     \scriptsize
-    🎯 \textbf{Trọng tâm hiện tại:} Toàn bộ đợt soạn này phục vụ mục tiêu \textbf{LỚP C}. Tuyệt đối không đưa bài VDC vào phiếu để tránh gây quá tải cho học sinh!
+    \textbf{[Lưu ý]} \textbf{Trọng tâm hiện tại:} Toàn bộ phiếu học tập tập trung thiết kế cho \textbf{LỚP C} — nơi học sinh cần giàn giáo sư phạm vững chắc nhất để không bị bỏ lại phía sau!
   \end{tcolorbox}
 \end{frame}
 
@@ -235,34 +242,37 @@
 \begin{frame}{4 Cấp Độ Câu Hỏi (NB – TH – VD – VDC)}
   \begin{columns}[T]
     \begin{column}{0.48\textwidth}
-      \begin{tcolorbox}[slidecard, title=1. NHẬN BIẾT (NB) — 1 Bước]
+      \begin{tcolorbox}[slidecard, top=2pt, bottom=2pt, title=\textbf{NB (Nhận biết — 1 bước)}]
         \scriptsize
-        Áp dụng trực tiếp công thức, định nghĩa:\\
-        • \textbf{Lớp 3:} Tính nhẩm: $7 \times 4 = ?$\\
-        • \textbf{Lớp 6:} Tính giá trị: $2^3 = ?$
+        Định nghĩa, công thức, tính nhẩm trực tiếp:\\
+        • \textit{K3:} Tính nhẩm $7 \times 4 = 28$.\\
+        • \textit{K6:} Tính giá trị $2^3 = 8$.\\
+        • \textit{K9:} ĐKXĐ của $\sqrt{x-3}$; nhận diện góc vuông tiếp điểm.
       \end{tcolorbox}
       \vspace{1pt}
-      \begin{tcolorbox}[slidecard, title=2. THÔNG HIỂU (TH) — 1–2 Bước]
+      \begin{tcolorbox}[successcard, top=2pt, bottom=2pt, title=\textbf{TH (Thông hiểu — 1–2 bước)}]
         \scriptsize
-        Áp dụng quy tắc vào bài toán cơ bản:\\
-        • \textbf{Lớp 3:} "1 hộp có 8 cái bánh, 3 hộp có mấy cái?"\\
-        • \textbf{Lớp 6:} Tính: $A = 2^3 \cdot 5 - 3^2$
+        Áp dụng quy tắc, định lý vào bài cơ bản:\\
+        • \textit{K3:} "1 hộp 8 bánh, 3 hộp có bao nhiêu cái?"\\
+        • \textit{K6:} Tính $A = 2^3 \cdot 5 - 3^2$.\\
+        • \textit{K9:} Rút gọn biểu thức chứa căn; chứng minh $\triangle$ bằng nhau.
       \end{tcolorbox}
     \end{column}
 
     \begin{column}{0.48\textwidth}
-      \begin{tcolorbox}[accentcard, title=3. VẬN DỤNG (VD) — 2–3 Bước]
+      \begin{tcolorbox}[accentcard, top=2pt, bottom=2pt, title=\textbf{VD (Vận dụng — 2–3 bước)}]
         \scriptsize
-        Bài toán thực tế, liên kết dữ kiện:\\
-        • \textbf{Lớp 3:} "Có 35 quả cam chia 5 túi, bán 2 túi, còn mấy?"\\
-        • \textbf{Lớp 6:} Tìm số tự nhiên $x$: $2(x - 3)^2 = 32$
+        Bài toán thực tế, kết hợp nhiều phép tính:\\
+        • \textit{K3:} "35 quả chia 5 túi, bán 2 túi, còn bao nhiêu?"\\
+        • \textit{K6:} Tìm $x$ biết $2(x-3)^2 = 32$.\\
+        • \textit{K9:} Chứng minh tiếp tuyến $DB \perp OB$; tính chiều cao TSLG.
       \end{tcolorbox}
       \vspace{1pt}
-      \begin{tcolorbox}[colback=danger!4, colframe=danger!80, title=4. VẬN DỤNG CAO (VDC) — $\ge 4$ Bước]
+      \begin{tcolorbox}[dangercard, top=2pt, bottom=2pt, title=\textbf{VDC (Vận dụng cao — $\ge 4$ bước)}]
         \scriptsize
-        Phân hóa điểm 9,5 – 10 (Cực trị, logic, BĐT):\\
-        • \textbf{Lớp 6:} Tìm chữ số tận cùng của tổng lũy thừa.\\
-        • \textbf{\color{danger}Lớp C: 0\% VDC (Không đưa vào phiếu).}
+        Phân hóa điểm 9,5 – 10 (cực trị, hình phụ phức tạp):\\
+        • Dành cho Lớp B, Lớp A và Lớp X.\\
+        • \textbf{\color{danger}LỚP C: 0\% (TUYỆT ĐỐI CẤM ĐƯA VÀO PHIẾU!)}
       \end{tcolorbox}
     \end{column}
   \end{columns}
@@ -271,111 +281,90 @@
 % ========================================================
 % SLIDE 6: KỸ THUẬT "NB TÁCH CÂU"
 % ========================================================
-\begin{frame}{Kỹ Thuật "NB Tách Câu" (Giàn Giáo Sư Phạm Lớp C)}
-  \begin{tcolorbox}[accentcard]
-    \scriptsize\bfseries
-    NGUYÊN TẮC VÀNG: Cấm dùng câu NB rời rạc! Mọi câu NB phải là bước đệm kỹ năng trích từ chính bài toán thi thật.
+\begin{frame}{Kỹ Thuật Then Chốt: "NB Tách Câu" (Giàn Giáo Lớp C)}
+  \begin{tcolorbox}[dangercard]
+    \scriptsize
+    \textbf{\textbf{[CẢNH BÁO]} NGUYÊN TẮC VÀNG: CẤM DÙNG CÂU NB RỜI RẠC, VÔ BỔ!}\\
+    Không ra các câu nhận diện hình thức kiểu "đây có phải là phương trình không?" hoặc tính toán máy móc không xuất hiện trong đề thi. Mọi câu NB bắt buộc phải là \textbf{bước đệm kỹ năng trích từ chính bài toán thi thật}.
   \end{tcolorbox}
-  \vspace{1pt}
+  \vspace{2pt}
   \begin{columns}[T]
     \begin{column}{0.48\textwidth}
-      \begin{tcolorbox}[colback=danger!4, colframe=danger!60, title=Cách Ra Đề Cũ (HS Yếu Bỏ Trắng)]
+      \begin{tcolorbox}[slidecard, title=Bài Toán Đích Trong Đề Thi Thật]
         \scriptsize
-        \textbf{Bài toán Thông hiểu [TH]:}\\
-        Tính giá trị biểu thức:
+        \textbf{Bài toán [TH]:} Tính giá trị biểu thức:
         \[ M = 150 - [100 - (3^2 \cdot 5)] \]
-        {\tiny \color{muted}(HS yếu nhìn ngoặc vuông và lũy thừa thường hoảng sợ và tính sai thứ tự).}
+        {\color{muted}Học sinh lớp C thường lúng túng khi gặp ngoặc lồng ngoặc và lũy thừa $\to$ dễ bỏ cuộc.}
       \end{tcolorbox}
     \end{column}
 
     \begin{column}{0.48\textwidth}
-      \begin{tcolorbox}[successcard, title=Chuẩn Giàn Giáo MathTech (NB Tách Bước)]
+      \begin{tcolorbox}[successcard, title=Chẻ Giàn Giáo Leo Dốc (Scaffolding)]
         \scriptsize
-        \textbf{Chẻ nhỏ thành 2 bước đệm:}\\[2pt]
-        • \textbf{Ý a [NB đệm]:} Tính $3^2$ và $3^2 \cdot 5$.\\
-        • \textbf{Ý b [TH]:} Tính $[100 - (3^2 \cdot 5)]$ rồi tính $M$.\\[2pt]
-        {\color{success}\textbf{👉 HS tự tin làm được ý đầu, tạo đà làm cả bài!}}
+        • \textbf{Ý a [NB đệm]:} Tính giá trị của $3^2$ và $3^2 \cdot 5$.\\[3pt]
+        • \textbf{Ý b [TH]:} Tính ngoặc vuông $[100 - (3^2 \cdot 5)]$ rồi tính $M$.\\[5pt]
+        {\color{success}\textbf{$\blacktriangleright$ Hiệu quả:}} HS làm được ngay ý a, tự tin giải quyết trọn vẹn cả bài!
       \end{tcolorbox}
     \end{column}
   \end{columns}
 \end{frame}
 
 % ========================================================
-% SLIDE 7: TỈ LỆ CHUẨN LỚP C: 40 - 40 - 20
+% SLIDE 7: TỈ LỆ CHUẨN LỚP C
 % ========================================================
-\begin{frame}{Tỉ Lệ Chuẩn Vàng Lớp C: 40\% – 40\% – 20\%}
+\begin{frame}{Tỉ Lệ Chuẩn Lớp C: 40\% NB – 40\% TH – 20\% VD}
   \begin{columns}[T]
-    \begin{column}{0.31\textwidth}
-      \begin{tcolorbox}[slidecard]
-        \centering
-        {\large\bfseries\color{brand} 40\%}\\[1pt]
-        {\bfseries\color{brand}\scriptsize NHẬN BIẾT}\\[1pt]
-        {\tiny Xây chắc nền móng, củng cố kỹ năng tiên quyết}
+    \begin{column}{0.48\textwidth}
+      \begin{tcolorbox}[slidecard, title=Công Thức Phân Bổ Năng Lực]
+        \scriptsize
+        • \textbf{40\% Nhận biết (NB):} Xây chắc kỹ năng cơ bản, tạo đà tâm lý.\\[3pt]
+        • \textbf{40\% Thông hiểu (TH):} Áp dụng công thức, rèn tính cẩn thận.\\[3pt]
+        • \textbf{20\% Vận dụng (VD):} Va chạm bài toán thực tế vừa sức.\\[3pt]
+        • \textbf{0\% Vận dụng cao (VDC):} Tránh gây quá tải và sợ hãi.
       \end{tcolorbox}
     \end{column}
-    \begin{column}{0.31\textwidth}
-      \begin{tcolorbox}[accentcard]
-        \centering
-        {\large\bfseries\color{accent} 40\%}\\[1pt]
-        {\bfseries\color{accent}\scriptsize THÔNG HIỂU}\\[1pt]
-        {\tiny Thành thạo dạng toán trọng tâm đề thi}
-      \end{tcolorbox}
-    \end{column}
-    \begin{column}{0.31\textwidth}
-      \begin{tcolorbox}[successcard]
-        \centering
-        {\large\bfseries\color{success} 20\%}\\[1pt]
-        {\bfseries\color{success}\scriptsize VẬN DỤNG}\\[1pt]
-        {\tiny Bài toán thực tế vừa sức, không đánh đố (0\% VDC)}
+
+    \begin{column}{0.48\textwidth}
+      \begin{tcolorbox}[accentcard, title=Định Mức Thời Lượng Ca Học 90 Phút]
+        \scriptsize
+        • \textbf{GV Giảng \& Ví dụ mẫu:} 25 phút.\\[3pt]
+        • \textbf{HS Luyện tập trên lớp:} 55 phút (nghỉ giải lao 10').\\[3pt]
+        • \textbf{BTVN tự luyện tại nhà:} 40 phút.\\[3pt]
+        {\color{muted}(Định mức K9: 1,5'/câu NB • 6'/câu TH • 12'/câu VD • Vẽ hình +5').}
       \end{tcolorbox}
     \end{column}
   \end{columns}
   \vspace{3pt}
-  \begin{tcolorbox}[slidecard, title=Phân Bổ Thời Lượng Trong Ca Học Chuẩn 90 Phút]
-    \scriptsize
-    • \textbf{Khối 3:} GV giảng \& làm mẫu: 30' $\to$ HS luyện tại lớp: 45' $\to$ BTVN: 60' (8–10 NB + 4–5 TH + 1–2 VD).\\[2pt]
-    • \textbf{Khối 6:} GV giảng: 25' $\to$ HS luyện tại lớp: 55' (nghỉ 10') $\to$ BTVN: 40' (10–12 NB đệm + 4 TH + 1–2 VD).
+  \begin{tcolorbox}[slidecard]
+    \centering\scriptsize
+    \textbf{TỈ LỆ THỜI GIAN LỚP C (120'):} {\color{brand}\textbf{48' NB (40\%)}} • {\color{success}\textbf{48' TH (40\%)}} • {\color{accent}\textbf{24' VD (20\%)}} • {\color{danger}\textbf{0' VDC (0\%)}}
   \end{tcolorbox}
 \end{frame}
 
 % ========================================================
-% SLIDE 8: CẤU TRÚC 4 CHẶNG TRÊN PHIẾU HỌC TẬP
+% SLIDE 8: CẤU TRÚC 4 CHẶNG TRÊN PHIẾU
 % ========================================================
 \begin{frame}{Cấu Trúc 4 Chặng Sư Phạm Của 1 Phiếu Học Tập}
-  \begin{columns}[T]
-    \begin{column}{0.24\textwidth}
-      \begin{tcolorbox}[slidecard]
-        \centering
-        {\bfseries\color{brand}\scriptsize 1. NỀN TẢNG}\\[2pt]
-        {\tiny Ôn nhanh kỹ năng lớp dưới hoặc bài trước}
-      \end{tcolorbox}
-    \end{column}
-    \begin{column}{0.24\textwidth}
-      \begin{tcolorbox}[slidecard]
-        \centering
-        {\bfseries\color{brand}\scriptsize 2. KIẾN THỨC}\\[2pt]
-        {\tiny Công thức mới ngắn gọn, đóng khung nhớ}
-      \end{tcolorbox}
-    \end{column}
-    \begin{column}{0.24\textwidth}
-      \begin{tcolorbox}[accentcard]
-        \centering
-        {\bfseries\color{accent}\scriptsize 3. VÍ DỤ MẪU}\\[2pt]
-        {\tiny GV làm mẫu cùng HS (có khung điền khuyết)}
-      \end{tcolorbox}
-    \end{column}
-    \begin{column}{0.24\textwidth}
-      \begin{tcolorbox}[successcard]
-        \centering
-        {\bfseries\color{success}\scriptsize 4. LUYỆN TẬP}\\[2pt]
-        {\tiny HS tự làm giàn giáo (NB $\to$ TH $\to$ VD)}
-      \end{tcolorbox}
-    \end{column}
-  \end{columns}
-  \vspace{5pt}
+  \begin{adjustbox}{max width=\textwidth}
+    \begin{tikzpicture}[node distance=0.25cm, auto]
+      \tikzset{
+        stage/.style={draw=brand, fill=neutral, rounded corners=3pt, line width=0.7pt, text width=2.9cm, align=center, inner sep=4pt, font=\sffamily\scriptsize},
+        stagearrow/.style={-{Stealth[length=4pt]}, line width=1pt, draw=brand!70}
+      }
+      \node[stage] (c1) {{\bfseries\color{brand}CHẶNG 1: NỀN}\\[1pt]{\tiny Ôn kỹ năng lớp dưới/bài trước}};
+      \node[stage, right=of c1] (c2) {{\bfseries\color{brand}CHẶNG 2: MỚI}\\[1pt]{\tiny Công thức, quy tắc ngắn gọn}};
+      \node[stage, right=of c2] (c3) {{\bfseries\color{brand}CHẶNG 3: MẪU}\\[1pt]{\tiny GV làm mẫu (điền khuyết)}};
+      \node[stage, right=of c3] (c4) {{\bfseries\color{brand}CHẶNG 4: LUYỆN}\\[1pt]{\tiny HS tự làm (LT1 $\to$ LT2)}};
+
+      \draw[stagearrow] (c1) -- (c2);
+      \draw[stagearrow] (c2) -- (c3);
+      \draw[stagearrow] (c3) -- (c4);
+    \end{tikzpicture}
+  \end{adjustbox}
+  \vspace{8pt}
   \begin{tcolorbox}[slidecard]
     \scriptsize
-    💬 \textbf{Quy tắc đứng lớp:} GV chỉ cần dẫn dắt đúng theo 4 chặng này trên bản in Handout hoặc Slide Beamer. Mọi bước đi đều đã được dàn xếp tự nhiên để HS tiếp thu dễ dàng nhất.
+    \textbf{[Ghi chú]} \textbf{Tư duy dạy học:} Thầy cô lên lớp chỉ cần giảng đúng theo thứ tự 4 chặng này — tài liệu đã được dàn trang và lập trình sẵn để học sinh tiếp thu tự nhiên nhất.
   \end{tcolorbox}
 \end{frame}
 
@@ -411,136 +400,292 @@
 \end{frame}
 
 % ========================================================
-% SLIDE 10: BƯỚC 1 & 2
+% SLIDE 10: HỆ THỐNG 3 TEMPLATE SHEETS LIÊN KẾT ĐỘNG
 % ========================================================
-\begin{frame}{Bước 1 \& 2: Tìm Nguồn \& AI Phân Dạng}
+\begin{frame}{Hệ Thống 3 Template Sheets Liên Kết Động Trong MathTech}
+  \vspace{-5pt}
+  \begin{center}
+    \scriptsize\colorbox{brand!10}{%
+      \textbf{$\blacktriangleright$ Link Google Sheets Mẫu Chuẩn:}
+      \href{https://docs.google.com/spreadsheets/d/1ARD_4AKM_aXlyGz3tOCoUYjOEnlOgXCmcO0ISeK6boY/edit}{\textbf{\color{info}Bấm vào đây để mở Spreadsheet mẫu (Tạo bản sao)}}%
+    }
+  \end{center}
+  \vspace{1pt}
   \begin{columns}[T]
-    \begin{column}{0.48\textwidth}
-      \begin{tcolorbox}[slidecard, title=BƯỚC 1: Tìm Inputs Nguồn Uy Tín]
+    \begin{column}{0.485\textwidth}
+      \begin{tcolorbox}[slidecard, top=2pt, bottom=2pt, title=Template 1 \& 2: Thiết Kế \& Phân Dạng]
         \scriptsize
-        • Nguồn đề thi chính thức Hà Nội:\\
-        \href{https://thcs.toanmath.com}{\textbf{\color{info}thcs.toanmath.com}}\\[4pt]
-        • Ảnh scan SGK, SGV Kết nối tri thức (có sẵn trong kho tham khảo).\\[4pt]
-        • Sách bài tập và đề thi học kỳ chuẩn hóa các năm gần nhất.
+        • \textbf{Template 1 (Tab Phân Dạng 47 Cột):}\\
+        Ngân hàng đề quét sạch, tự động lọc L1–L5 và chấm điểm T1–T8.\\[2pt]
+        • \textbf{Template 2 (Tab Thuyết Minh Động):}\\
+        Bản spec buổi học, cân đối 40-40-20 và quỹ thời lượng 90'.
       \end{tcolorbox}
     \end{column}
 
-    \begin{column}{0.48\textwidth}
-      \begin{tcolorbox}[accentcard, title=BƯỚC 2: AI Phân Dạng \& Thuyết Minh]
+    \begin{column}{0.485\textwidth}
+      \begin{tcolorbox}[successcard, top=2pt, bottom=2pt, title=Template 3: Bàn Giao \& Tiến Độ]
         \scriptsize
-        Đưa đề cho AI quét vào Google Sheet:\\
-        \href{https://docs.google.com/spreadsheets/d/1NCJHzp0cU9zUaJIkw47UfLzrPUj09P-5prgiGG6erDs/edit}{\textbf{\color{info}Google Sheet: Các Đầu Việc Học Liệu}}\\[4pt]
-        • AI chấm mã câu (NB, TH, VD).\\
-        • Đánh dấu năm đề \& trường ra đề.\\
-        • Thống kê dạng bài \& xuất Phiếu nháp.
+        • \textbf{Template 3 (Sheet Tiến Độ):}\\
+        Quản lý tiến độ tuần, đồng bộ trọn bộ link Drive (Handout, Guide, Slide).\\[2pt]
+        • \textbf{Quy chuẩn Đề thi:}\\
+        {\color{muted}Đề thi do Thầy tạo riêng. GV và AI hoàn thiện 3 template bài giảng.}
+      \end{tcolorbox}
+    \end{column}
+  \end{columns}
+  \vspace{1pt}
+  \begin{tcolorbox}[accentcard, top=2pt, bottom=2pt]
+    \centering\scriptsize
+    \textbf{Nguyên tắc cốt lõi:}\par\vspace{1pt}
+    [T1: Ngân hàng 47 cột] $\xrightarrow{\text{Mã câu}}$ [T2: Spec] $\xrightarrow{\text{Duyệt}}$ [Bộ 3 PDF] $\xrightarrow{\text{Đóng gói}}$ [T3: Tiến độ Drive]
+  \end{tcolorbox}
+\end{frame}
+
+% ========================================================
+% SLIDE 11: TEMPLATE 1 - TAB PHÂN DẠNG 47 CỘT
+% ========================================================
+\begin{frame}{Template 1: Tab Phân Dạng Chương (47 Cột Chuẩn)}
+  \vspace{-3pt}
+  \begin{columns}[T]
+    \begin{column}{0.485\textwidth}
+      \begin{tcolorbox}[slidecard, top=3pt, bottom=3pt, title={Phân Khu I, II, III: Thiết Kế \& Giàn Giáo}]
+        \scriptsize
+        • \textbf{\color{brand}I. Dữ liệu đề thô (Cột A -- M):}\\
+        Chép nguyên văn từ đề thật; gồm `Bài cụ thể`, `Nguồn`, `Mức độ`, `Dạng bài`, `Thời lượng`, \textbf{`Mã câu` (M)} (khóa định danh duy nhất).\\[3pt]
+        • \textbf{\color{accent}II. Giàn giáo §4b (Cột N -- X):}\\
+        Gán 7 loại câu §4b (`NB lẻ LT`, `NB tách TH`, `TH tách VD`...); tự động xếp C/B/X; bộ lọc \textbf{`Loại ngay (L1--L5)`}; vùng \textit{`Chọn tay`}.\\[3pt]
+        • \textbf{III. Bóc tách ý con (Cột Y -- AE):}\\
+        Tách bài VD thành chuỗi bước đệm TH $\to$ NB; `Mã bài gốc`, `Kỹ thuật giải`, `Chương ([V])`, `Nhóm trùng`.
+      \end{tcolorbox}
+    \end{column}
+
+    \begin{column}{0.485\textwidth}
+      \begin{tcolorbox}[successcard, top=3pt, bottom=3pt, title={Phân Khu IV, V: Đánh Giá \& Kết Luận}]
+        \scriptsize
+        • \textbf{\color{success}IV. Chấm 8 tiêu chí chất lượng (AF -- AM):}\\
+        Chấm 0, 1, 2 cho T1 Trọng tâm SGK $\dots$ T8 Mở rộng: Đánh giá ý toán trong sáng, nghiệm đẹp, bẫy lỗi sai kinh điển.\\[3pt]
+        • \textbf{\color{danger}V. Đánh giá phân tầng (AN -- AU):}\\
+        Tính điểm C/B/X, so ngưỡng mức AQ $\to$ Kết luận: \textit{Đưa vào bài / Dự phòng / Loại}. \textbf{THẦY DUYỆT} chốt chặn.\\[4pt]
+        \tcblower
+        \tiny
+        \textbf{[Mẹo]} \textbf{Mã màu:} {\color{accent}Cam: VD/VDC} • {\color{brand}Vàng: Thầy chọn} • {\color{success}Xanh: Vào bài} • {\color{purple}Tím: NB cũ} • {\color{danger}Đỏ: Loại}.
       \end{tcolorbox}
     \end{column}
   \end{columns}
 \end{frame}
 
 % ========================================================
-% SLIDE 11: BƯỚC 3 & 4
+% SLIDE 12: CƠ CHẾ LỌC L1-L5 VÀ CHẤM T1-T8
 % ========================================================
-\begin{frame}{Bước 3 \& 4: Thẩm Định Sư Phạm \& Đổi Câu}
+\begin{frame}{Cơ Chế Lọc Loại Ngay (L1–L5) \& Chấm Điểm (T1–T8)}
+  \begin{columns}[T]
+    \begin{column}{0.48\textwidth}
+      \begin{tcolorbox}[dangercard, title=Bộ Lọc Loại Ngay L1–L5 (Cột Q)]
+        \scriptsize
+        • \textbf{L1:} Sai kiến thức toán / giả thiết ngớ ngẩn.\\[2pt]
+        • \textbf{L2:} Lệch chuẩn chương trình SGK GDPT 2018.\\[2pt]
+        • \textbf{L3:} Nghiệm cồng kềnh, số lẻ vô tỉ xấu.\\[2pt]
+        • \textbf{L4:} Quá 4 bước suy luận không thể tách giàn giáo.\\[2pt]
+        • \textbf{L5:} Trùng ý chỉ đổi số trên lớp (chỉ cho phép ở BTVN).
+      \end{tcolorbox}
+    \end{column}
+
+    \begin{column}{0.48\textwidth}
+      \begin{tcolorbox}[successcard, title=Công Thức Chấm Điểm Lớp C (Cột AN \& AR)]
+        \scriptsize
+        \vspace{-2pt}
+        {\footnotesize \[ \text{Điểm}_C = \frac{\sum (T_i \times W_i)}{2 \times 13} \times 10 \]}
+        \vspace{-4pt}
+        {\tiny ($W_C$: $3T_1 + 1T_2 + 2T_3 + 1T_4 + 2T_5 + 2T_6 + 2T_7 + 0T_8$)}\\[2pt]
+        • \textbf{Ngưỡng đưa vào bài (AQ):}\\
+        $\text{VD} \ge 7{,}0$ • $\text{TH} \ge 6{,}0$ • $\text{NB} \ge 5{,}0$.\\[2pt]
+        • \textbf{Công thức tự động (AR):}\\
+        {\scriptsize\texttt{=IF(Q6<>"","LOẠI",IF(V6<>"","CHỌN TAY",...))}}\\[1pt]
+        {\tiny Tự động: \textit{Đưa vào bài / Dự phòng / Loại}.}
+      \end{tcolorbox}
+    \end{column}
+  \end{columns}
+\end{frame}
+
+% ========================================================
+% SLIDE 13: TEMPLATE 2 - THUYẾT MINH SPEC ĐỘNG
+% ========================================================
+\begin{frame}{Template 2: Tab Thuyết Minh Liên Kết Động (Spec Sheet)}
+  \begin{columns}[T]
+    \begin{column}{0.48\textwidth}
+      \begin{tcolorbox}[slidecard, title=Cấu Trúc Ma Trận Dạng Bài]
+        \scriptsize
+        • \textbf{Loại câu (§4b):} 7 nhãn chuẩn (NB lẻ LT, NB tách TH, TH ghép VD, VD lẻ...) + NB kiến thức cũ.\\[3pt]
+        • \textbf{Dạng bài:} Tên dạng toán chuẩn (bọc $\$...\$$).\\[3pt]
+        • \textbf{Mã câu đề xuất:} Trỏ trực tiếp cột Mã câu (M) của Template 1.\\[3pt]
+        • \textbf{THẦY CHỌN \& ĐỔI CÂU:} Vùng Thầy nhập mã câu mới.\\[3pt]
+        • \textbf{Chốt mã:} \texttt{=IF(Thầy\_Chọn<>"", Thầy\_Chọn, Đề\_Xuất)}
+      \end{tcolorbox}
+    \end{column}
+
+    \begin{column}{0.48\textwidth}
+      \begin{tcolorbox}[accentcard, title=Gác Cổng Tự Động (thuyetminh\_gate)]
+        \scriptsize
+        • Tự động chặn nếu quỹ giờ lệch quá $\pm 10\%$.\\[3pt]
+        • Tự động chặn nếu xuất hiện câu VDC ở Lớp C.\\[3pt]
+        • Cảnh báo nếu thiếu khai báo nhãn Loại câu §4b.\\[3pt]
+        • Tự động kiểm tra liên kết mã câu với Tab Phân dạng.\\[4pt]
+        {\color{success}\textbf{Định mức ca 90':}} GV giảng 25' • HS luyện 55' • BTVN 40'.
+      \end{tcolorbox}
+    \end{column}
+  \end{columns}
+\end{frame}
+
+% ========================================================
+% SLIDE 14: TEMPLATE 3 - SHEET TIẾN ĐỘ & DRIVE
+% ========================================================
+\begin{frame}{Template 3: Sheet Quản Trị Tiến Độ \& Đồng Bộ Drive}
+  \begin{columns}[T]
+    \begin{column}{0.48\textwidth}
+      \begin{tcolorbox}[slidecard, title=Cấu Trúc Quản Trị Tiến Độ Tuần]
+        \scriptsize
+        • \textbf{Thông tin ca học:} Tuần/Ca $\to$ Mã phiếu $\to$ Tên bài SGK.\\[3pt]
+        • \textbf{Hồ sơ gốc:} Link Sheet Phân dạng $\to$ Link Thuyết minh PDF.\\[3pt]
+        • \textbf{Trạng thái duyệt:} [Soạn] Đang soạn $\to$ [Chờ duyệt] Chờ duyệt $\to$ [ĐÃ DUYỆT] \textbf{ĐÃ DUYỆT}.\\[3pt]
+        • \textbf{Nghiệm thu:} Tích xanh checkbox khi bàn giao in ấn cho cơ sở.
+      \end{tcolorbox}
+    \end{column}
+
+    \begin{column}{0.48\textwidth}
+      \begin{tcolorbox}[successcard, title=Đồng Bộ 100\% Lên Google Drive]
+        \scriptsize
+        • \textbf{Link Handout HS:} Bản in có sẵn khung làm bài.\\[3pt]
+        • \textbf{Link Guide GV:} Bản có đáp án + gợi ý sư phạm.\\[3pt]
+        • \textbf{Link Slide Beamer:} File trình chiếu tương tác 16:9.\\[3pt]
+        • \textbf{Link File Nguồn:} Mã nguồn phiếu JSON + TeX lưu trữ.
+      \end{tcolorbox}
+    \end{column}
+  \end{columns}
+  \vspace{2pt}
+  \begin{tcolorbox}[accentcard]
+    \centering\scriptsize
+    \textbf{[Ghi chú]} Khi GV duyệt xong, chỉ cần nhắn AI: \textit{"Hãy đưa lên Drive và cập nhật Sheet Tiến độ giúp tôi"} $\to$ AI tự làm 100\%!
+  \end{tcolorbox}
+\end{frame}
+
+% ========================================================
+% SLIDE 15: THỰC HÀNH BƯỚC 1 & 2
+% ========================================================
+\begin{frame}{Thực Hành Bước 1 \& 2: Tìm Nguồn \& AI Phân Dạng}
+  \begin{columns}[T]
+    \begin{column}{0.48\textwidth}
+      \begin{tcolorbox}[slidecard, title=BƯỚC 1: Chuẩn Bị Inputs Nguồn]
+        \scriptsize
+        • Đề thi chính thức các trường Hà Nội:\\
+        \href{https://thcs.toanmath.com}{\textbf{\color{info}thcs.toanmath.com}}\\[4pt]
+        • Ảnh scan SGK, SGV Kết nối tri thức (có sẵn trong kho).\\[4pt]
+        • Sách bài tập \& đề thi học kỳ chuẩn hóa các năm gần nhất.
+      \end{tcolorbox}
+    \end{column}
+
+    \begin{column}{0.48\textwidth}
+      \begin{tcolorbox}[accentcard, title=BƯỚC 2: AI Quét Đề \& Lập Template 1 \& 2]
+        \scriptsize
+        Đưa đề cho AI đọc và quét trực tiếp vào Google Sheets:
+        \vspace{2pt}
+        \begin{tcolorbox}[quotecard]
+          \color{brand}\itshape\tiny
+          "Hãy quét các file đề thi HK1 trong thư mục inputs và điền vào Template 1 phân dạng Chương 5 giúp tôi. Chấm điểm T1-T8 cho lớp C."
+        \end{tcolorbox}
+        \vspace{1pt}
+        {\color{success}\textbf{$\blacktriangleright$ AI tự làm:}} Chấm mã câu, gán nhãn §4b, chấm T1–T8, tính kết luận Lớp C và tạo dự thảo Template 2 (Thuyết minh).
+      \end{tcolorbox}
+    \end{column}
+  \end{columns}
+\end{frame}
+
+% ========================================================
+% SLIDE 16: THỰC HÀNH BƯỚC 3 & 4
+% ========================================================
+\begin{frame}{Thực Hành Bước 3 \& 4: Thẩm Định Sư Phạm \& Đổi Câu}
   \begin{columns}[T]
     \begin{column}{0.48\textwidth}
       \begin{tcolorbox}[accentcard, title=BƯỚC 3: GV Thẩm Định Sư Phạm]
         \scriptsize
-        Cầm bản in PDF và tự trả lời 2 câu hỏi:\\[3pt]
+        Mở bản in PDF Thuyết minh và đối chiếu 2 câu hỏi lớn:\\[3pt]
         1. \textit{"Trên lớp thực tế 90', mình có dẫn dắt HS lớp C học kịp phiếu này không?"}\\[4pt]
         2. \textit{"Các câu NB đệm có dẫn dắt mượt mà đến câu VD đích không?"}
       \end{tcolorbox}
     \end{column}
 
     \begin{column}{0.48\textwidth}
-      \begin{tcolorbox}[slidecard, title=BƯỚC 4: Báo AI Đổi Câu (Vòng Lặp)]
+      \begin{tcolorbox}[slidecard, title=BƯỚC 4: Đổi Câu Linh Hoạt]
         \scriptsize
-        Nếu câu quá khó hoặc chưa ưng ý, chỉ cần nhắn cho AI trong ô chat:
-        \vspace{3pt}
+        Nếu câu quá khó hoặc bài khô khan, có 2 cách đổi:\\
+        • \textbf{Cách 1:} Gõ mã câu mới vào cột \textit{THẦY CHỌN} ở Template 2.\\
+        • \textbf{Cách 2:} Nhắn trực tiếp trong ô chat AI:
+        \vspace{2pt}
         \begin{tcolorbox}[quotecard]
           \color{brand}\itshape\tiny
-          "Câu 3 phần Luyện tập hơi khó so với lớp C, hãy chọn câu khác cùng dạng từ ngân hàng đề để HS hứng thú hơn."
+          "Câu 3 phần Luyện tập hơi khó so với lớp C, hãy chọn câu khác cùng dạng từ ngân hàng đề giúp tôi."
         \end{tcolorbox}
-        \vspace{2pt}
-        {\color{success}\textbf{👉 AI tự đọc lại ngân hàng $\to$ đổi câu $\to$ xuất lại PDF trong 10 giây!}}
       \end{tcolorbox}
     \end{column}
   \end{columns}
 \end{frame}
 
 % ========================================================
-% SLIDE 12: BƯỚC 5
+% SLIDE 17: THỰC HÀNH BƯỚC 5
 % ========================================================
-\begin{frame}{Bước 5: Đóng Gói, Lên Drive \& Cập Nhật Tiến Độ}
+\begin{frame}{Thực Hành Bước 5: Đóng Gói, Lên Drive \& Cập Nhật Tiến Độ}
   \begin{tcolorbox}[successcard]
     \scriptsize\centering
-    \textbf{KHI PHIẾU ĐÃ CHUẨN 100\% — GV CHỈ CẦN RA LỆNH TRONG CHAT:}\\
-    \colorbox{white}{\color{success}\bfseries\scriptsize "Phiếu đã duyệt xong, hãy đưa lên Drive và cập nhật sheet Tiến độ giúp tôi."}
+    \textbf{KHI PHIẾU ĐÃ CHUẨN 100\% — GV CHỈ CẦN RA LỆNH MỘT CHẠM CHO AI:}\\
+    \colorbox{white}{\parbox{0.92\linewidth}{\centering\color{success}\bfseries\scriptsize "Phiếu 2 Chương 5 đã duyệt xong, hãy đưa lên Drive và cập nhật Template 3 (Sheet Tiến độ) giúp tôi."}}
   \end{tcolorbox}
   \vspace{1pt}
   \begin{columns}[T]
     \begin{column}{0.48\textwidth}
-      \begin{tcolorbox}[slidecard, title=1. Đồng Bộ Lên Google Drive]
+      \begin{tcolorbox}[slidecard, title=1. Tự Động Build \& Xuất Bản]
         \scriptsize
-        AI tự động đẩy trọn bộ 3 bản PDF vào đúng thư mục khối/lớp trên Drive:
-        \begin{itemize}
-          \setlength{\itemsep}{0pt}
-          \item Bản Học sinh (Handout)
-          \item Bản Giáo viên (Guide)
-          \item Bản Trình chiếu (Slide 16:9)
-        \end{itemize}
+        AI tự chạy gác cổng nghiệm (SymPy) $\to$ render song song 3 bản PDF (Handout HS, Guide GV, Slide Beamer) $\to$ tải lên đúng thư mục Google Drive.
       \end{tcolorbox}
     \end{column}
 
     \begin{column}{0.48\textwidth}
-      \begin{tcolorbox}[slidecard, title=2. Cập Nhật Sheet TIẾN ĐỘ C]
+      \begin{tcolorbox}[slidecard, title=2. Cập Nhật Sheet Tiến Độ]
         \scriptsize
-        AI tự động điền link sản phẩm và đánh dấu hoàn thành vào:
-        \vspace{3pt}
-        \begin{center}
-          \href{https://docs.google.com/spreadsheets/d/1fH7vl99bXoV8AQ9xqnXOsVAC5XQ3ESWk5zM7APd1o4k/edit?gid=1752741035\#gid=1752741035}{\textbf{\color{info}Google Sheet: TIẾN ĐỘ C}}
-        \end{center}
-        \vspace{1pt}
-        {\tiny (Bấm link trên để xem bảng theo dõi tiến độ chi tiết của tổ).}
+        AI tự động điền URL Google Drive vào các cột Handout, Guide, Slide và tích xanh nghiệm thu hoàn thành.
       \end{tcolorbox}
     \end{column}
   \end{columns}
 \end{frame}
 
 % ========================================================
-% SLIDE 13: TỔNG KẾT
+% SLIDE 18: TỔNG KẾT & CHEAT-SHEET
 % ========================================================
-\begin{frame}{Tổng Kết: Hệ Sinh Thái Sản Phẩm Hoàn Thành (Ví Dụ Lớp 9)}
-  \vspace{-3pt}
+\begin{frame}{Tổng Kết: Hệ Sinh Thái Sản Phẩm \& Cheat-Sheet Lệnh AI}
   \begin{columns}[T]
     \begin{column}{0.48\textwidth}
-      \begin{tcolorbox}[slidecard, title=1. Sheet Phân Dạng Chương]
+      \begin{tcolorbox}[slidecard, title=Hệ Sinh Thái Hoàn Thành Mỗi Chương]
         \scriptsize
-        • Hàng trăm bài toán từ đề thi thật Hà Nội đã bóc tách ý a/b/c.\\
-        • Chấm điểm L1–L5, tiêu chí T1–T8, gắn nhãn NB, TH, VD.
-      \end{tcolorbox}
-      \vspace{1pt}
-      \begin{tcolorbox}[slidecard, title=2. Phiếu Thuyết Minh Chương (PDF)]
-        \scriptsize
-        • Ma trận 10–12 dạng bài/buổi, chuẩn thời lượng 90' hoặc 120'.\\
-        • Bản thiết kế sư phạm được Thầy duyệt trước khi viết.
+        • \textbf{Template 1:} Ngân hàng đề 47 cột chấm điểm T1–T8.\\
+        • \textbf{Template 2:} Phiếu Thuyết minh cân đối 40-40-20.\\
+        • \textbf{Bộ 3 PDF Song Song:} Handout HS + Guide GV + Slide.\\
+        • \textbf{Template 3:} Sheet Tiến độ tích xanh đồng bộ Drive.
       \end{tcolorbox}
     \end{column}
 
     \begin{column}{0.48\textwidth}
-      \begin{tcolorbox}[successcard, title=3. Kho Google Drive Hoàn Chỉnh]
+      \begin{tcolorbox}[accentcard, title=Cheat-Sheet Câu Lệnh Cho Giáo Viên]
         \scriptsize
-        • Từng buổi: \textbf{Handout HS + Sổ tay GV + Slide Beamer}.\\
-        • Cuối chương: \textbf{Đề kiểm tra 45' + Ma trận đáp án chuẩn thi}.
-      \end{tcolorbox}
-      \vspace{1pt}
-      \begin{tcolorbox}[accentcard, title=4. Google Sheet TIẾN ĐỘ C]
-        \scriptsize
-        • Toàn bộ tiến độ được tích xanh hoàn thành kèm link trực tiếp.\\
-        • Sẵn sàng in ấn phát cho học sinh và bàn giao cơ sở.
+        • \texttt{make b}: Build 3 PDF cho phiếu vừa làm (~9s).\\
+        • \texttt{make check-tm}: Gác cổng thời lượng \& số câu.\\
+        • \textit{"Cài đặt môi trường giúp tôi"}: Cài đặt tự động.\\
+        • \textit{"Đổi câu X sang câu Y"}: Đổi câu tức thì.\\
+        • \textit{"Đưa lên Drive và cập nhật Sheet"}: Hoàn tất buổi học.
       \end{tcolorbox}
     \end{column}
   \end{columns}
+  \vspace{2pt}
+  \begin{tcolorbox}[slidecard]
+    \centering\tiny\color{muted}
+    MathTech Engine 2026 — Đồng hành cùng Thầy Cô kiến tạo học liệu chuẩn mực, truyền cảm hứng cho mọi học sinh!
+  \end{tcolorbox}
 \end{frame}
 
 \end{document}

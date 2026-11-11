@@ -1,5 +1,7 @@
 # Bước 0 mỗi chương — NGÂN HÀNG BÀI trên Google Sheets (trước thuyết minh)
 
+> **Cẩm nang 4 Template Sheets chuẩn chi tiết:** xem [`docs/quy-trinh-template-sheets.md`](quy-trinh-template-sheets.md) (đặc tả 47 cột, công thức, mã màu, quy trình 5 bước).
+
 Thầy chốt 22/10/2026: thuyết minh và phiếu **chỉ bốc bài từ tab "Phân dạng" của chương** trên sheet dùng chung
 `1ucQH5yw5bn3C1Bh_V4tAToa6NN5-F-nt8_2yxf2LNOM` (cả nhóm dùng — chỉ đụng tab của mình). Tab = ngân hàng đề:
 MỌI bài thuộc chương lọc từ đề thi / SGK / tài liệu trong `inputs/`, chép **nguyên văn**.
@@ -53,6 +55,34 @@ Luật đo được — nằm trong `thuyetminh_gate.check_nb_theo_ppd`:
 - **`NB tách TH` phải liên kết với một câu TH/VD của chính phiếu** (cùng bài gốc trong `source_refs`) — cảnh báo.
 - **Lớp C phải có cả `NB tách TH` lẫn `NB kiến thức cũ`** — CHẶN với chương đã có tab phân dạng, cảnh báo
   với chương cũ. `NB kiến thức cũ` là nhãn `loai` thứ tám (thêm 30/10/2026); "NB của phiếu" = `NB lẻ LT` + `NB ghép bài`.
+
+---
+
+## QUY TRÌNH BÓC TÁCH HẠ BẬC (VD → TH → NB) TỪ KHÂU PHÂN DẠNG (Thầy chốt)
+
+> **Mục đích:** Để HS lớp C (và các lớp đại trà) tiếp cận và làm được câu hỏi thi vào 10 (bài Vận dụng), tuyệt đối không để HS tự bơi với đề bài thô hay các bước nhảy cóc. Toàn bộ chuỗi bài tập phải được bóc tách có chủ đích theo mô hình leo dốc (Scaffolding Rails) đã thực hiện thành công ở **Chương V (Đường tròn)**.
+
+### 1. Nguyên tắc "Quét cẩn thận — Giải chi tiết luôn — Tách bước sẵn"
+1. **Dựa vào 1 bài VD gốc (bài đích đề thi thật):** Khi quét ngân hàng đề thi hoặc tài liệu, chọn bài toán Vận dụng điển hình của buổi học (ví dụ: bài hình chứng minh tiếp tuyến, chứng minh hệ thức tích $OA \cdot OH = R^2$, bài toán thực tế đo lường).
+2. **Giải chi tiết luôn từ khâu phân dạng:** KHÔNG chỉ dừng lại ở việc chép đề thô vào tab. Người/Agent làm phân dạng phải đọc và viết **lời giải mẫu hoàn chỉnh từng bước** ngay tại bước này.
+3. **Xem đáp án và bóc tách các tầng bậc suy luận:**
+   - **Tách VD $\to$ TH:** Nhìn vào lời giải của câu VD, tách các mệnh đề/chứng minh trung gian thành các câu hỏi Thông hiểu độc lập:
+     - *Ví dụ Chương V:* Từ bài chứng minh $DB$ là tiếp tuyến (VD) $\to$ Tách thành 2 bài/ý TH: (1) Chứng minh $OD$ là đường trung trực của $MB$; (2) Chứng minh $\triangle ODM = \triangle ODB$ (c.c.c) để suy ra góc vuông.
+     - Từ bài chứng minh $OH \cdot OA = R^2$ (VD) $\to$ Tách thành ý TH: Chứng minh hệ thức lượng trong tam giác vuông hoặc cặp tam giác đồng dạng.
+   - **Tách TH $\to$ NB:** Từ mỗi bài/ý TH, tiếp tục tách các bước đệm kỹ năng sơ cấp nhất thành các câu hỏi Nhận biết (làm trắc nghiệm hoặc điền khuyết trên hình vẽ sẵn):
+     - *Ví dụ Chương V:* Chỉ ra tam giác vuông tại tiếp điểm ($MA \perp OA$), nhận diện cạnh huyền chung ($MO$), nhận diện bán kính bằng nhau ($OA = OB = R$), viết tỉ lệ thức từ tam giác đồng dạng.
+4. **Phân loại nhãn chuẩn xác (§4b):** Gán đúng nhãn `loai`: `NB lẻ LT`, `NB tách TH`, `NB ghép bài`, `TH lẻ LT`, `TH ghép bài`, `TH tách VD`, `VD lẻ`.
+
+### 2. Khi soạn phiếu chỉ việc "ghép nối" (Assembly Mode)
+- Vì toàn bộ bài đích VD đã được giải chi tiết và chia nhỏ sẵn thành các mảnh ghép kỹ năng (NB, TH) ngay từ khâu phân dạng:
+  - Khi soạn phiếu JSON, người soạn **chỉ việc lấy các mảnh ghép này ghép vào các chặng của phiếu**:
+    - **Chặng 1 (Khám phá / NB lẻ):** Trắc nghiệm hoặc điền khuyết nhận diện tính chất, công thức từ các ý NB tách ra.
+    - **Chặng 2 (Kiến thức trọng tâm):** Ví dụ mẫu có lời giải chuẩn của bài VD/TH.
+    - **Chặng 3 (Luyện tập 1):** Bài tập ghép dẫn dắt điền khuyết (`[[blank:...]]`) trên hình in sẵn (`ve_tiep`) từ các bước đệm NB/TH đã tách.
+    - **Chặng 4 (Luyện tập 2) & BTVN:** Bài toán trọn vẹn (chỉ có đề, bắt buộc tự vẽ hình `draw: true`), lúc này HS đã có đủ mẫu tư duy từ các bước đệm trước đó để tự giải độc lập.
+- **Quy tắc sao & cấp độ bài toán (Level Consistency):**
+  - Bài toán tổng thể ở cấp độ nào thì giữ nguyên sao cấp độ đó: Bài thuộc Dạng Thông hiểu thì để `level: 2` (2 sao ★★☆), kể cả khi các ý a), b) bên trong là các bước đệm nhận biết `[NB] ★` (như Bài 3 & BTVN 3 Phiếu 2 Chương V).
+  - Không hạ sao của cả bài xuống 1 sao làm sai lệch cấu trúc phiếu.
 
 ---
 
