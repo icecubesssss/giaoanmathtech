@@ -78,8 +78,9 @@ def Y(nhan, diem, de, steps, ref, nd, phut, ghi=""):
     return dict(nhan=nhan, diem=diem, de=de, steps=steps, ref=ref, nd=nd, phut=phut, ghi=ghi)
 
 
-def B(so, ten, mo, ys, hinh=None, note="", hinh_pos="right", hinh_w="0.40"):
-    return dict(so=so, ten=ten, mo=mo, ys=ys, hinh=hinh, note=note, pos=hinh_pos, w=hinh_w)
+def B(so, ten, mo, ys, hinh=None, note="", hinh_pos="right", hinh_w="0.40", ys_canh=False, cot=2, het_cung_dong=False):
+    """ys_canh: xếp cả các ý vào cột chữ cạnh hình (đỡ khoảng trắng cạnh hình cao — đề ôn 3 tràn trang)."""
+    return dict(so=so, ten=ten, mo=mo, ys=ys, hinh=hinh, note=note, pos=hinh_pos, w=hinh_w, ys_canh=ys_canh, cot=cot, het_cung_dong=het_cung_dong)
 
 
 def buoc(steps):
@@ -198,8 +199,6 @@ DE["on1"] = dict(
           r"$15=3\cdot5$; $39=3\cdot13$; $51=3\cdot17$ là hợp số; $2$ là số nguyên tố.", "Số nguyên tố, hợp số"),
         T("cum14#I.1", "Số đối của số $14$ là", ["$-14$", "$14$", "$41$", "$-41$"], "A",
           "Số đối của $14$ là $-14$.", "Số đối"),
-        T("lyson#I.1", r"Nhiệt độ buổi sáng của phòng ướp lạnh là $-9^\circ$C. Nhiệt độ buổi chiều của phòng ướp lạnh đó là bao nhiêu, biết nhiệt độ tăng $4^\circ$C so với buổi sáng?",
-          [r"$13^\circ$C", r"$-13^\circ$C", r"$5^\circ$C", r"$-5^\circ$C"], "D", r"$-9+4=-5$ ($^\circ$C).", "Thực tế số nguyên (nhiệt độ)"),
         T("lengochan#I.6", r"Cho hình vuông $ABCD$ cạnh bằng $5$ cm. Khẳng định nào dưới đây là đúng?",
           [r"Chu vi của hình vuông là $25\text{ cm}^2$.", r"Các cạnh $AB$ và $AD$ song song.", r"$AC=BD$.", r"$AB=BC=AC$."], "C",
           "Hình vuông có hai đường chéo bằng nhau.", "Tính chất hình vuông"),
@@ -208,6 +207,13 @@ DE["on1"] = dict(
         T("tantrieu#I.8", "Hình nào trong các hình sau không có trục đối xứng?" + "\\par\\begin{center}" + hinh_4_hinh() + "\\end{center}",
           ["Hình (1).", "Hình (2).", "Hình (3).", "Hình (4)."], "A",
           "Hình bình hành (1) không có trục đối xứng; hình tròn, hình thang cân, hình chữ nhật đều có.", "Hình có trục đối xứng"),
+        T("lomonoxop#I.5", r"Cho $a=2^4\cdot3$; $b=2\cdot3\cdot7$. Khi đó $\mathrm{BCNN}(a,b)$ bằng",
+          [r"$2\cdot3$", r"$2^4\cdot3\cdot7$", r"$2\cdot3\cdot7$", r"$2^4\cdot3$"], "B",
+          r"Lấy các thừa số nguyên tố chung và riêng $2$, $3$, $7$ với số mũ lớn nhất: $\mathrm{BCNN}(a,b)=2^4\cdot3\cdot7$.", "BCNN"),
+        T("nguyenbinhkhiem#I.1", r"Kết quả của $3^4$ là:", ["$12$", "$81$", "$64$", "$7$"], "B",
+          r"$3^4=3\cdot3\cdot3\cdot3=81$.", "Tính luỹ thừa"),
+        T("phucdien#I.4", r"Tập hợp các ước của $7$ là", [r"$\{1;7\}$", r"$\{7;-7\}$", r"$\{-1;-7;1;7\}$", r"$\{-1;1\}$"], "C",
+          r"Ước của $7$ trong $\mathbb{Z}$ gồm $1$, $-1$, $7$, $-7$.", "Ước số nguyên"),
     ],
     bai=[
         B(1, "Thực hiện phép tính", "Thực hiện phép tính (tính hợp lí nếu có thể):", [
@@ -215,26 +221,28 @@ DE["on1"] = dict(
               "cum14#II.1a", "Cộng số nguyên, tính hợp lí", 3),
             Y("b", 0.5, r"$(-25)\cdot64+36\cdot(-25)$", [(r"$=(-25)\cdot(64+36)$", 0.25), (r"$=(-25)\cdot100=-2500$.", 0.25)],
               "cum14#II.1b", "Tính chất phân phối", 4),
-            Y("c", 0.5, r"$345+58-(145-42+150)$", [(r"$=345+58-145+42-150$", 0.25), (r"$=(345-145)+(58+42)-150=200+100-150=150$.", 0.25)],
-              "ngoclam#II.1c", "Quy tắc dấu ngoặc", 4),
-            Y("d", 0.5, r"$\{62\cdot5-[13+(10-7)^3]\}:9+2025^0$", [(r"$=\{310-[13+27]\}:9+1$", 0.25), (r"$=270:9+1=30+1=31$.", 0.25)],
+            Y("c", 0.5, r"$\{62\cdot5-[13+(10-7)^3]\}:9+2025^0$", [(r"$=\{310-[13+27]\}:9+1$", 0.25), (r"$=270:9+1=30+1=31$.", 0.25)],
               "ngosilien#II.1c", "Biểu thức nhiều tầng ngoặc, luỹ thừa", 6),
         ]),
         B(2, "Tìm x", "Tìm số nguyên $x$, biết:", [
             Y("a", 0.5, r"$x+13=-19$", [(r"$x=-19-13$", 0.25), (r"$x=-32$.", 0.25)], "lengochan#II.2a", "Tìm x một bước", 3),
             Y("b", 0.5, r"$3\cdot(x-9)=45$", [(r"$x-9=45:3=15$", 0.25), (r"$x=24$.", 0.25)], "ngogiatu#II.2b", "Tìm x hai bước", 4),
-            Y("c", 0.5, r"$(x+2)(10-5x)=0$", [(r"$x+2=0$ hoặc $10-5x=0$", 0.25), (r"$x=-2$ hoặc $x=2$. Vậy $x\in\{-2;2\}$.", 0.25)],
-              "dongocdu#II.2c", "Tích bằng 0", 5),
+            Y("c", 0.5, r"$(x-1)^3=27$", [r"$(x-1)^3=3^3$", (r"$x-1=3$", 0.25), (r"$x=4$. Vậy $x=4$.", 0.25)],
+              "aimo#II.2c", "Tìm x có luỹ thừa", 4),
         ]),
-        B(3, "Bài toán BCNN", "Khối 6 của một trường THCS đi tham quan dã ngoại. Nếu chia số học sinh thành các đội sao cho mỗi đội có $12$ bạn, $18$ bạn và $30$ bạn thì đều vừa đủ không thừa bạn nào. Biết số học sinh khối 6 trong khoảng từ $500$ đến $700$ em. Tính số học sinh khối 6 của trường đó đi tham quan dã ngoại.", [
-            Y("", 1.5, "", [
-                (r"Gọi số học sinh khối 6 là $x$ (học sinh), $x\in\mathbb{N}^*$, $500\le x\le700$.", 0.25),
+        B(3, "Bài toán thực tế", "", [
+            Y("1", 0.5, r"Trong một ngày, nhiệt độ ở Bắc Kinh lúc $7$ giờ là $-10^\circ$C, đến $12$ giờ tăng thêm $6^\circ$C và lúc $20$ giờ lại giảm $5^\circ$C so với lúc $12$ giờ. Hỏi nhiệt độ ở Bắc Kinh lúc $20$ giờ là bao nhiêu?", [
+                (r"Nhiệt độ ở Bắc Kinh lúc $12$ giờ là $(-10)+6=-4$ ($^\circ$C).", 0.25),
+                r"Nhiệt độ ở Bắc Kinh lúc $20$ giờ là $(-4)-5=-9$ ($^\circ$C).",
+                (r"Vậy nhiệt độ ở Bắc Kinh lúc $20$ giờ là $-9^\circ$C.", 0.25)], "cum14#II.3.1", "Thực tế số nguyên (nhiệt độ)", 4),
+            Y("2", 1.0, "Khối 6 của một trường THCS đi tham quan dã ngoại. Nếu chia số học sinh thành các đội sao cho mỗi đội có $12$ bạn, $18$ bạn và $30$ bạn thì đều vừa đủ không thừa bạn nào. Biết số học sinh khối 6 trong khoảng từ $500$ đến $700$ em. Tính số học sinh khối 6 của trường đó đi tham quan dã ngoại.", [
+                r"Gọi số học sinh khối 6 là $x$ (học sinh), $x\in\mathbb{N}^*$, $500\le x\le700$.",
                 (rf"Vì $x{CHIA}12$, $x{CHIA}18$, $x{CHIA}30$ nên $x\in\mathrm{{BC}}(12,18,30)$.", 0.25),
-                (r"Ta có $12=2^2\cdot3$; $18=2\cdot3^2$; $30=2\cdot3\cdot5$.", 0.25),
+                r"Ta có $12=2^2\cdot3$; $18=2\cdot3^2$; $30=2\cdot3\cdot5$.",
                 (r"$\mathrm{BCNN}(12,18,30)=2^2\cdot3^2\cdot5=180$.", 0.25),
                 (r"$\mathrm{BC}(12,18,30)=\mathrm{B}(180)=\{0;180;360;540;720;\ldots\}$.", 0.25),
                 (r"Mà $500\le x\le700$ nên $x=540$. Vậy khối 6 có $540$ học sinh.", 0.25),
-            ], "lengochan#II.3", "Bài toán thực tế BCNN", 12),
+            ], "lengochan#II.3", "Bài toán thực tế BCNN", 9),
         ]),
         B(4, "Chu vi, diện tích", "Một sân trường có dạng hình chữ nhật như hình vẽ, chiều dài $30$ m, chiều rộng $20$ m.", [
             Y("a", 0.75, "Tính chu vi và diện tích sân trường.", [
@@ -287,6 +295,10 @@ DE["on2"] = dict(
         T("ngosilien#I.2", "Cho các chữ cái sau: \\textsf{H}, \\textsf{M}, \\textsf{Z}, \\textsf{E}. Chữ cái không có trục đối xứng là:",
           ["Chữ \\textsf{H}", "Chữ \\textsf{M}", "Chữ \\textsf{Z}", "Chữ \\textsf{E}"], "C",
           "Chữ Z chỉ có tâm đối xứng, không có trục đối xứng.", "Trục đối xứng"),
+        T("phucdong24#I.6", r"Tập hợp các ước chung của $6$ và $9$ là", [r"$\{1;2;3;6\}$", r"$\{1;2;3\}$", r"$\{1;3\}$", r"$\{2;3\}$"], "C",
+          r"$\text{Ư}(6)=\{1;2;3;6\}$, $\text{Ư}(9)=\{1;3;9\}$ nên $\text{ƯC}(6,9)=\{1;3\}$.", "Ước chung"),
+        T("phucdong24#I.3", r"Kết quả phép tính $2025^0+3^2$ là", ["$7$", "$10$", "$2031$", "$2034$"], "B",
+          r"$2025^0+3^2=1+9=10$.", "Luỹ thừa, số mũ 0"),
     ],
     bai=[
         B(1, "Thực hiện phép tính", "Thực hiện phép tính (tính hợp lí nếu có thể):", [
@@ -294,9 +306,7 @@ DE["on2"] = dict(
               "dongocdu#II.1b", "Cộng số nguyên, tính hợp lí", 4),
             Y("b", 0.5, r"$63\cdot79+79\cdot38-79$", [(r"$=79\cdot(63+38-1)$", 0.25), (r"$=79\cdot100=7900$.", 0.25)],
               "ngocthuy#1c", "Tính chất phân phối", 4),
-            Y("c", 0.5, r"$65\cdot37+65\cdot63-4^3\cdot10^2$", [(r"$=65\cdot(37+63)-64\cdot100$", 0.25), (r"$=6500-6400=100$.", 0.25)],
-              "lengochan#II.1c", "Phân phối + luỹ thừa", 5),
-            Y("d", 0.5, r"$120-\{17+[3^2\cdot2:(10-2^5:2^3)]\}$", [(r"$=120-\{17+[9\cdot2:(10-4)]\}$", 0.25), (r"$=120-\{17+18:6\}=120-20=100$.", 0.25)],
+            Y("c", 0.5, r"$120-\{17+[3^2\cdot2:(10-2^5:2^3)]\}$", [(r"$=120-\{17+[9\cdot2:(10-4)]\}$", 0.25), (r"$=120-\{17+18:6\}=120-20=100$.", 0.25)],
               "tantrieu#II.1c", "Biểu thức nhiều tầng ngoặc, luỹ thừa", 6),
         ]),
         B(2, "Tìm x", "Tìm số nguyên $x$, biết:", [
@@ -305,15 +315,18 @@ DE["on2"] = dict(
             Y("c", 0.5, r"$2^{x+3}\cdot2^2=2^2\cdot3+20$", [(r"$2^{x+5}=12+20=32=2^5$", 0.25), (r"$x+5=5$, suy ra $x=0$.", 0.25)],
               "lengochan#II.2c", "Tìm x ở số mũ", 6),
         ]),
-        B(3, "Bài toán BCNN", "Học sinh của một trường THCS đồng diễn thể dục thể thao. Biết số học sinh của trường khi xếp thành $12$ hàng, $18$ hàng, $28$ hàng đều vừa đủ. Hỏi trường đó có bao nhiêu học sinh? Biết số học sinh trong khoảng từ $500$ đến $600$ em.", [
-            Y("", 1.5, "", [
-                (r"Gọi số học sinh của trường là $x$ (học sinh), $x\in\mathbb{N}^*$, $500\le x\le600$.", 0.25),
+        B(3, "Bài toán thực tế", "", [
+            Y("1", 0.5, r"Vào một ngày mùa đông tại thủ đô Paris, nhiệt độ lúc $12$ giờ trưa là $3^\circ$C, đến lúc $7$ giờ tối nhiệt độ giảm thêm $9^\circ$C nữa. Hỏi nhiệt độ ở Paris lúc $7$ giờ tối là bao nhiêu?", [
+                (r"Nhiệt độ ở Paris lúc $7$ giờ tối là $3-9=-6$ ($^\circ$C).", 0.25),
+                (r"Vậy nhiệt độ ở Paris lúc $7$ giờ tối là $-6^\circ$C.", 0.25)], "ngoclam24#II.3.2", "Thực tế số nguyên (nhiệt độ)", 3),
+            Y("2", 1.0, "Học sinh của một trường THCS đồng diễn thể dục thể thao. Biết số học sinh của trường khi xếp thành $12$ hàng, $18$ hàng, $28$ hàng đều vừa đủ. Hỏi trường đó có bao nhiêu học sinh? Biết số học sinh trong khoảng từ $500$ đến $600$ em.", [
+                r"Gọi số học sinh của trường là $x$ (học sinh), $x\in\mathbb{N}^*$, $500\le x\le600$.",
                 (rf"Vì $x{CHIA}12$, $x{CHIA}18$, $x{CHIA}28$ nên $x\in\mathrm{{BC}}(12,18,28)$.", 0.25),
-                (r"Ta có $12=2^2\cdot3$; $18=2\cdot3^2$; $28=2^2\cdot7$.", 0.25),
+                r"Ta có $12=2^2\cdot3$; $18=2\cdot3^2$; $28=2^2\cdot7$.",
                 (r"$\mathrm{BCNN}(12,18,28)=2^2\cdot3^2\cdot7=252$.", 0.25),
                 (r"$\mathrm{BC}(12,18,28)=\mathrm{B}(252)=\{0;252;504;756;\ldots\}$.", 0.25),
                 (r"Mà $500\le x\le600$ nên $x=504$. Vậy trường có $504$ học sinh.", 0.25),
-            ], "donganh#4.1", "Bài toán thực tế BCNN", 12),
+            ], "donganh#4.1", "Bài toán thực tế BCNN", 9),
         ]),
         B(4, "Chu vi, diện tích", "Sân vườn nhà bạn Dũng có dạng hình chữ nhật với chiều rộng $4$ m, chiều dài $18$ m (hình minh hoạ).", [
             Y("a", 0.75, "Tính chu vi và diện tích sân vườn.", [
@@ -349,8 +362,6 @@ DE["on3"] = dict(
     tn=[
         T("phucdien#I.2", r"Kết quả của phép tính $13^6:13^2$ là", [r"$13^4$", r"$13^3$", r"$13^{12}$", r"$13^8$"], "A",
           r"$13^6:13^2=13^{6-2}=13^4$.", "Chia hai luỹ thừa cùng cơ số"),
-        T("phucdong#I.5", r"Cho $a=2^4\cdot3$; $b=2\cdot3\cdot7$. Khi đó $\mathrm{ƯCLN}(a,b)$ bằng",
-          [r"$2\cdot3$", r"$2^4\cdot3$", r"$2\cdot3\cdot7$", r"$2^4\cdot3\cdot7$"], "A", "Lấy thừa số chung $2$, $3$ với số mũ nhỏ nhất.", "ƯCLN"),
         T("ngogiatu#I.3", "Trong các số sau, số nào là bội chung của $2$ và $3$?", ["$40$", "$60$", "$21$", "$45$"], "B",
           "$60$ chia hết cho cả $2$ và $3$.", "Bội chung"),
         T("hatmon#I.5", r"Trên tập hợp số nguyên $\mathbb{Z}$, các ước của $7$ là",
@@ -362,40 +373,49 @@ DE["on3"] = dict(
           ["Hai đường chéo song song.", "Hai đường chéo song song và cắt nhau tại trung điểm của mỗi đường.",
            "Hai đường chéo vuông góc với nhau.", "Hai đường chéo bằng nhau và cắt nhau tại trung điểm của mỗi đường."], "D",
           "Tính chất hai đường chéo của hình chữ nhật.", "Tính chất HCN", ),
-        T("lomonoxop#I.8", "Một hình thoi có độ dài hai đường chéo là $30$ cm và $20$ cm. Diện tích hình thoi đó là:",
-          [r"$600\text{ cm}^2$", r"$300\text{ cm}^2$", r"$1200\text{ cm}^2$", r"$50\text{ cm}^2$"], "B", r"$S=30\cdot20:2=300$ (cm$^2$).", "Diện tích hình thoi"),
         T("aimo#I.8", "Trong các chữ cái \\textsf{H}, \\textsf{M}, \\textsf{N}, \\textsf{X}, chữ cái nào có tâm đối xứng?",
           ["Chữ \\textsf{H}, \\textsf{X}.", "Chữ \\textsf{H}, \\textsf{N}, \\textsf{X}.", "Chữ \\textsf{H}, \\textsf{M}, \\textsf{N}, \\textsf{X}.",
            "Chữ \\textsf{M}, \\textsf{N}, \\textsf{X}."], "B", "Chữ M không có tâm đối xứng; H, N, X có.", "Tâm đối xứng"),
+        T("quocoai#I.1", r"Cho tập hợp $M$ các số nguyên tố nhỏ hơn $6$. Cách viết nào sau đây là đúng?",
+          [r"$M=\{2;3;5\}$", r"$M=\{2,3,5\}$", r"$M=(2;3;5)$", r"$M=(2,3,5)$"], "A",
+          r"Các số nguyên tố nhỏ hơn $6$ là $2$; $3$; $5$; các phần tử viết trong dấu ngoặc nhọn, ngăn cách bởi dấu chấm phẩy.", "Tập hợp: cách viết"),
+        T("lomonoxop#I.4", r"Số nào sau đây chia hết cho cả $2$, $3$, $5$ và $9$?", ["$198$", "$785$", "$630$", "$240$"], "C",
+          r"Chia hết cho $2$ và $5$ thì tận cùng là $0$: $630$, $240$; tổng chữ số của $630$ là $9$ (chia hết cho $3$ và $9$), của $240$ là $6$.", "Dấu hiệu chia hết cho 2, 3, 5, 9"),
+        T("giangbien#I.3", r"Kết quả phân tích số $12$ ra thừa số nguyên tố là:", [r"$2\cdot3$", r"$2^2\cdot3$", r"$2\cdot3^2$", r"$2^2\cdot3^2$"], "B",
+          r"$12=4\cdot3=2^2\cdot3$.", "Phân tích ra thừa số nguyên tố"),
+        T("banmai#I.5", r"Tổng các số nguyên $x$ thoả mãn $-5<x<4$ là", ["$-3$", "$-4$", "$2$", "$-1$"], "B",
+          r"$x\in\{-4;-3;\ldots;3\}$; tổng $=(-4)+[(-3)+3]+[(-2)+2]+[(-1)+1]+0=-4$.", "Tổng các số nguyên trong khoảng"),
     ],
     bai=[
-        B(1, "Thực hiện phép tính", "Thực hiện phép tính (tính hợp lí nếu có thể):", [
-            Y("a", 0.5, r"$58\cdot19+58\cdot(-119)$", [(r"$=58\cdot(19-119)$", 0.25), (r"$=58\cdot(-100)=-5800$.", 0.25)],
+        B(1, "Thực hiện phép tính", "Thực hiện phép tính (tính hợp lí nếu có thể):", cot=3, ys=[
+            Y("a", 0.5, r"$(-67)+125+(-33)+75$", [(r"$=\big[(-67)+(-33)\big]+(125+75)$", 0.25), (r"$=(-100)+200=100$.", 0.25)],
+              "phandinhgiot#1a", "Cộng số nguyên, tính hợp lí", 4),
+            Y("b", 0.5, r"$58\cdot19+58\cdot(-119)$", [(r"$=58\cdot(19-119)$", 0.25), (r"$=58\cdot(-100)=-5800$.", 0.25)],
               "hatmon#II.1b", "Tính chất phân phối", 4),
-            Y("b", 0.5, r"$47\cdot69-31\cdot(-47)$", [(r"$=47\cdot69+31\cdot47$", 0.25), (r"$=47\cdot(69+31)=4700$.", 0.25)],
-              "donganh#3c", "Phân phối với số âm", 4),
             Y("c", 0.5, r"$5\cdot2^3-4^5:4^3+81:3^2$", [(r"$=5\cdot8-4^2+81:9$", 0.25), (r"$=40-16+9=33$.", 0.25)],
               "aimo#II.1c", "Thứ tự phép tính có luỹ thừa", 4),
-            Y("d", 0.5, r"$143-[68+8\cdot(27-25)^2]$", [(r"$=143-[68+8\cdot2^2]=143-[68+32]$", 0.25), (r"$=143-100=43$.", 0.25)],
-              "lomonoxop#II.1.2", "Biểu thức có ngoặc, luỹ thừa", 5),
         ]),
-        B(2, "Tìm x", "Tìm số tự nhiên $x$, biết:", [
-            Y("a", 0.5, r"$80:2^x-70=-30$", [(r"$80:2^x=40$", 0.25), (r"$2^x=2$, suy ra $x=1$.", 0.25)], "ngosilien#II.2.2a", "Tìm x ở số mũ", 5),
-            Y("b", 0.5, r"$5^x\cdot7+5^x=1000$", [(r"$5^x\cdot(7+1)=1000$, tức là $5^x\cdot8=1000$", 0.25),
-                                             (r"$5^x=125=5^3$, suy ra $x=3$.", 0.25)], "ngosilien24#II.2c", "Tìm x ở số mũ (mở rộng)", 6),
-            Y("c", 0.5, rf"$48{CHIA}x$, $120{CHIA}x$, $168{CHIA}x$ và $x$ lớn nhất", [
+        B(2, "Tìm x", "Tìm $x$, biết (ở ý a, $x$ là số nguyên; ở ý b và ý c, $x$ là số tự nhiên):", cot=3, ys=[
+            Y("a", 0.5, r"$24-(30+x)=-7$", [(r"$30+x=24-(-7)=31$", 0.25), (r"$x=31-30=1$. Vậy $x=1$.", 0.25)],
+              "phandinhgiot#2a", "Tìm số nguyên x hai bước", 4),
+            Y("b", 0.5, r"$80:2^x-70=-30$", [(r"$80:2^x=40$", 0.25), (r"$2^x=2$, suy ra $x=1$.", 0.25)], "ngosilien#II.2.2a", "Tìm x ở số mũ", 5),
+            Y("c", 0.5, rf"$48{CHIA}x$; $120{CHIA}x$; $168{CHIA}x$; $x$ lớn nhất", [
                 (r"$x=\mathrm{ƯCLN}(48,120,168)$; $48=2^4\cdot3$, $120=2^3\cdot3\cdot5$, $168=2^3\cdot3\cdot7$", 0.25),
                 (r"$x=2^3\cdot3=24$.", 0.25)], "donganh#2d", "x là ƯCLN", 5),
         ]),
-        B(3, "Bài toán ƯCLN", "Cô Hoa muốn chia $160$ quyển vở, $96$ chiếc bút chì và $192$ chiếc bút bi thành một số phần thưởng như nhau để trao trong dịp tổng kết học kì I. Hỏi cô Hoa có thể chia thành nhiều nhất bao nhiêu phần thưởng? Khi chia được số phần thưởng nhiều nhất thì mỗi phần thưởng có bao nhiêu quyển vở, bao nhiêu bút chì và bao nhiêu bút bi?", [
-            Y("", 1.5, "", [
-                (r"Gọi số phần thưởng là $x$ (phần), $x\in\mathbb{N}^*$.", 0.25),
+        B(3, "Bài toán thực tế", "", [
+            Y("1", 0.5, r"Nhiệt độ trong phòng đông lạnh của một công ty đang là $-4^\circ$C. Bác Huy đã chỉnh nhiệt độ phòng đông lạnh hai lần: lần một giảm nhiệt độ bớt $9^\circ$C, lần hai tăng nhiệt độ thêm $3^\circ$C. Sau hai lần điều chỉnh, nhiệt độ trong phòng đông lạnh là bao nhiêu độ C?", [
+                (r"Sau hai lần điều chỉnh, nhiệt độ trong phòng đông lạnh là $(-4)-9+3=-10$ ($^\circ$C).", 0.25),
+                (r"Vậy nhiệt độ trong phòng đông lạnh là $-10^\circ$C.", 0.25)], "banmai#II.6", "Thực tế số nguyên (nhiệt độ)", 4,
+              ghi="đề gốc 1,0đ, tên công ty lược bỏ"),
+            Y("2", 1.0, "Cô Hoa muốn chia $160$ quyển vở, $96$ chiếc bút chì và $192$ chiếc bút bi thành một số phần thưởng như nhau để trao trong dịp tổng kết học kì I. Hỏi cô Hoa có thể chia thành nhiều nhất bao nhiêu phần thưởng? Khi chia được số phần thưởng nhiều nhất thì mỗi phần thưởng có bao nhiêu quyển vở, bao nhiêu bút chì và bao nhiêu bút bi?", [
+                r"Gọi số phần thưởng là $x$ (phần), $x\in\mathbb{N}^*$.",
                 (rf"Vì $160{CHIA}x$, $96{CHIA}x$, $192{CHIA}x$ và $x$ lớn nhất nên $x=\mathrm{{ƯCLN}}(160,96,192)$.", 0.25),
-                (r"Ta có $160=2^5\cdot5$; $96=2^5\cdot3$; $192=2^6\cdot3$.", 0.25),
+                r"Ta có $160=2^5\cdot5$; $96=2^5\cdot3$; $192=2^6\cdot3$.",
                 (r"$\mathrm{ƯCLN}(160,96,192)=2^5=32$, nên chia được nhiều nhất $32$ phần thưởng.", 0.25),
                 (r"Mỗi phần thưởng có $160:32=5$ quyển vở; $96:32=3$ bút chì; $192:32=6$ bút bi.", 0.25),
                 (r"Vậy chia được nhiều nhất $32$ phần thưởng, mỗi phần gồm $5$ quyển vở, $3$ bút chì, $6$ bút bi.", 0.25),
-            ], "hatmon#II.2", "Bài toán thực tế ƯCLN", 12),
+            ], "hatmon#II.2", "Bài toán thực tế ƯCLN", 9),
         ]),
         B(4, "Chu vi, diện tích", "Một khu đất hình thang cân $ABEF$ (hình bên) có đáy nhỏ $AB=30$ m, chiều cao $BC=24$ m và đáy $EF$ dài hơn đáy $AB$ là $14$ m.", [
             Y("a", 0.5, "Tính độ dài đáy $EF$ của khu đất.", [(r"$EF=30+14=44$ (m).", 0.5)], "donganh#5a", "Độ dài đáy hình thang", 2),
@@ -405,14 +425,14 @@ DE["on3"] = dict(
                 (r"Diện tích hình chữ nhật $ABCD$ là $30\cdot24=720$ (m$^2$).", 0.5),
                 (r"Diện tích đất trồng hoa hướng dương là $888-720=168$ (m$^2$).", 0.5),
                 (r"Số túi hạt giống cần dùng là $168:56=3$ (túi).", 0.25), (r"Vậy cần $3$ túi hạt giống.", 0.25)], "donganh#5c", "Thực tế: diện tích phần còn lại", 12),
-        ], hinh=hinh_thang_can_dong_anh(), hinh_w="0.30", note="Câu c: diện tích phần tô đậm = diện tích hình thang trừ diện tích hình chữ nhật."),
+        ], hinh=hinh_thang_can_dong_anh(), hinh_w="0.30", ys_canh=True, note="Câu c: diện tích phần tô đậm = diện tích hình thang trừ diện tích hình chữ nhật."),
         B(5, "Vận dụng cao", r"Cho $A=1+2+2^2+\ldots+2^{2024}+2^{2025}$ và $B=2^{2026}$. Chứng minh rằng $A$ và $B$ là hai số tự nhiên liên tiếp.", [
             Y("", 0.5, "", [
                 (r"$2A=2+2^2+2^3+\ldots+2^{2025}+2^{2026}$.", 0.25),
                 r"$2A-A=2^{2026}-1$, tức là $A=2^{2026}-1=B-1$.",
                 (r"Vậy $A$ và $B$ là hai số tự nhiên liên tiếp.", 0.25),
             ], "cum14#II.5", "Tổng luỹ thừa cùng cơ số", 8),
-        ]),
+        ], het_cung_dong=True),
     ],
 )
 
@@ -646,13 +666,13 @@ def kiem():
     loi = []
     bo_quan, bo_truong = {}, {}
     for k, D in DE.items():
-        if len(D["tn"]) != 8:
-            loi.append(f"{k}: {len(D['tn'])} câu TN")
+        if len(D["tn"]) != so_tn(D):
+            loi.append(f"{k}: {len(D['tn'])} câu TN (khung {so_tn(D)})")
         for i, c in enumerate(D["tn"], 1):
             dung(c["ref"], f"{k} TN{i}")
             if c["dap"] not in "ABCD" or len(c["opts"]) != 4:
                 loi.append(f"{k} TN{i}: phương án lỗi")
-        tong = 2.0
+        tong = 0.25 * len(D["tn"])
         quan = {}
         for c in D["tn"]:
             q = QUAN[c["ref"].split("#")[0]]
@@ -699,9 +719,18 @@ def slug(D, mt=False):
     return f"ma-tran-va-dap-an-cuoi-ki-1-de-{D['so']}" if mt else f"de-kiem-tra-cuoi-ki-1-de-{D['so']}"
 
 
-TN_DAU = (r"\textbf{PHẦN I. TRẮC NGHIỆM (2,0 điểm).} \textit{Mỗi câu 0,25 điểm. Chọn chữ cái đứng trước "
-          r"câu trả lời đúng rồi ghi vào bài làm (ví dụ: 1 -- A).}")
-TL_DAU = r"\textbf{PHẦN II. TỰ LUẬN (8,0 điểm)}"
+def so_tn(D):
+    """Khung Thầy chốt 13/11/2026: đề ÔN 10 câu TN (2,5đ, Bài 1 còn 3 ý) để phủ đủ dạng dễ; đề chính thức 8 câu."""
+    return 10 if D["loai"] == "on" else 8
+
+
+def tn_dau(D):
+    return (f"\\textbf{{PHẦN I. TRẮC NGHIỆM ({d(0.25 * so_tn(D))} điểm).}} \\textit{{Mỗi câu 0,25 điểm. Chọn chữ cái đứng trước "
+            "câu trả lời đúng rồi ghi vào bài làm (ví dụ: 1 -- A).}")
+
+
+def tl_dau(D):
+    return f"\\textbf{{PHẦN II. TỰ LUẬN ({d(10 - 0.25 * so_tn(D))} điểm)}}"
 
 
 def khoi_tn(i, c):
@@ -712,14 +741,19 @@ def khoi_tn(i, c):
 def de_bai(b):
     tong = sum(yy["diem"] for yy in b["ys"])
     st = f"\\textbf{{({d(tong)} điểm)}} " + b["mo"]
+    if b["hinh"] and b.get("ys_canh"):
+        st += "".join(BR + f"{yy['nhan']}) \\textit{{({d(yy['diem'])}đ)}} " + yy["de"] for yy in b["ys"])
+        return (f"\\begin{{minipage}}[t]{{0.62\\linewidth}}\\raggedright {st}\\end{{minipage}}\\hfill"
+                f"\\begin{{minipage}}[t]{{0.35\\linewidth}}\\centering\\adjustbox{{valign=t,max width=0.95\\linewidth,max totalheight=3.8cm}}{{{b['hinh']}}}\\end{{minipage}}")
     if b["hinh"]:  # hình đứng cạnh lời dẫn (renderer ép hình dưới đề rộng 0,44 ⇒ đề tràn trang 3)
         st = (f"\\begin{{minipage}}[t]{{0.50\\linewidth}}\\raggedright {st}\\end{{minipage}}\\hfill"
               f"\\begin{{minipage}}[t]{{0.36\\linewidth}}\\centering\\adjustbox{{valign=t,max width=\\linewidth,max totalheight=4.2cm}}{{{b['hinh']}}}\\end{{minipage}}")
     if b["so"] in (1, 2):  # ý ngắn: hai ý một dòng cho đề gọn 2 trang
-        o = [f"\\makebox[0.48\\linewidth][l]{{{yy['nhan']}) {yy['de']}}}" for yy in b["ys"]]
-        st += "".join(BR + "".join(o[i:i + 2]) for i in range(0, len(o), 2))
+        c = b.get("cot", 2)
+        o = [f"\\makebox[{0.96 / c:.2f}\\linewidth][l]{{{yy['nhan']}) {yy['de']}}}" for yy in b["ys"]]
+        st += "".join(BR + "".join(o[i:i + c]) for i in range(0, len(o), c))
     elif b["ys"][0]["nhan"]:
-        st += "".join(BR + f"{yy['nhan']}) " + (f"\\textit{{({d(yy['diem'])}đ)}} " if b["so"] == 4 else "") + yy["de"] for yy in b["ys"])
+        st += "".join(BR + f"{yy['nhan']}) " + (f"\\textit{{({d(yy['diem'])}đ)}} " if b["so"] in (3, 4) else "") + yy["de"] for yy in b["ys"])
     return st
 
 
@@ -739,13 +773,16 @@ def khoi_bai(b):
 
 def bai5_het(b):
     blk = khoi_bai(b)
-    blk["statement"] += "\\par\\smallskip\\centerline{\\textit{$-$ HẾT $-$}}"
+    if b.get("het_cung_dong"):  # đề sát 2 trang: "HẾT" cuối dòng chót, khỏi tràn sang trang 3
+        blk["statement"] += "\\hfill\\textit{$-$ HẾT $-$}"
+    else:
+        blk["statement"] += "\\par\\smallskip\\centerline{\\textit{$-$ HẾT $-$}}"
     return blk
 
 
 def de_json(D):
-    st = [dict(kind="review", number=1, title="", blocks=[dict(type="para", text=TN_DAU)] + [khoi_tn(i, c) for i, c in enumerate(D["tn"], 1)]),
-          dict(kind="concept", number=2, title="", blocks=[dict(type="para", text=TL_DAU), khoi_bai(D["bai"][0])]),
+    st = [dict(kind="review", number=1, title="", blocks=[dict(type="para", text=tn_dau(D))] + [khoi_tn(i, c) for i, c in enumerate(D["tn"], 1)]),
+          dict(kind="concept", number=2, title="", blocks=[dict(type="para", text=tl_dau(D)), khoi_bai(D["bai"][0])]),
           dict(kind="practice1", number=3, title="", blocks=[khoi_bai(D["bai"][1]), khoi_bai(D["bai"][2])]),
           dict(kind="practice2", number=4, title="", blocks=[khoi_bai(D["bai"][3])]),
           dict(kind="reflection", number=5, title="", blocks=[bai5_het(D["bai"][4])])]
@@ -810,13 +847,16 @@ def mt_json(D):
                                                                    " thứ nhì (luỹ thừa, ƯCLN, ước số nguyên, tìm $x$ ở số mũ) để mở rộng.")
            if D["loai"] == "on" else
            "\\textbf{Vai trò:} đề KIỂM TRA CHÍNH THỨC -- cùng khung với 3 đề ôn nhưng mọi câu lấy từ đề trường CHƯA dùng trong đề ôn, để đo năng lực chứ không đo trí nhớ.")
-    s1 = [dict(type="para", text=KHUNG_TXT + BR + vai),
+    khung_on = ("\\textbf{Khung đề ÔN} (chốt 13/11/2026 để phủ đủ dạng dễ thường thi): trắc nghiệm 10 câu (2,5đ) · Bài 1 ba ý (1,5đ) · "
+                "Bài 3 = 3.1 bài toán thực tế số nguyên (0,5đ) + 3.2 bài toán thực tế BCNN/ƯCLN (1,0đ); các bài khác như trên." if D["loai"] == "on" else "")
+    s1 = [dict(type="para", text=KHUNG_TXT + (BR + khung_on if khung_on else "") + BR + vai),
           dict(type="para", text=f"\\textbf{{MA TRẬN {ten_de(D).upper()} -- CUỐI HỌC KÌ I TOÁN 6 (90 phút)}}" + BR
                + f"\\textbf{{Nguồn theo quận/huyện cũ:}} {nguon_txt} (mỗi quận $\\le 40\\%$ điểm của đề)." + BR + bang_mt(rows)),
           dict(type="para", text="\\textbf{TỔNG HỢP THEO CHƯƠNG VÀ MỨC ĐỘ (điểm)}" + BR + bang_tong(rows))]
-    s2 = [dict(type="para", text="\\textbf{ĐÁP ÁN PHẦN I. TRẮC NGHIỆM (2,0 điểm)} -- mỗi câu đúng 0,25 điểm."),
-          dict(type="para", text="\\begin{center}\\small\\begin{tabular}{|c|c|c|c|c|c|c|c|}\\hline "
-               + " & ".join(f"\\textbf{{{i}}}" for i in range(1, 9)) + r" \\ \hline "
+    n_tn = len(D["tn"])
+    s2 = [dict(type="para", text=f"\\textbf{{ĐÁP ÁN PHẦN I. TRẮC NGHIỆM ({d(0.25 * n_tn)} điểm)}} -- mỗi câu đúng 0,25 điểm."),
+          dict(type="para", text="\\begin{center}\\small\\begin{tabular}{|" + "c|" * n_tn + "}\\hline "
+               + " & ".join(f"\\textbf{{{i}}}" for i in range(1, n_tn + 1)) + r" \\ \hline "
                + " & ".join(c["dap"] for c in D["tn"]) + r" \\ \hline\end{tabular}\end{center}"),
           dict(type="para", text=BR.join(f"\\textbf{{Câu {i} -- {c['dap']}.}} {c['giai']}" for i, c in enumerate(D["tn"], 1)))]
     stages = [dict(kind="review", number=1, title=f"Ma trận {ten_de(D).lower()}", blocks=s1),

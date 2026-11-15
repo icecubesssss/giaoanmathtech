@@ -1,0 +1,25 @@
+{
+ "type": "object",
+ "required": ["o_cau", "ghi_chu"],
+ "properties": {
+  "o_cau": {
+   "type": "array",
+   "items": {
+    "type": "object",
+    "required": ["o", "hinh_thuc", "de_bai", "phuong_an", "y", "dap_an", "loi_giai", "tikz"],
+    "properties": {
+     "o": {"type": "string"},
+     "hinh_thuc": {"type": "string", "enum": ["TN", "Điền", "Đ-S", "TL"]},
+     "de_bai": {"type": "string"},
+     "phuong_an": {"type": "array", "items": {"type": "string"}},
+     "y": {"type": "array", "items": {"type": "string"}},
+     "dap_an": {"type": "string"},
+     "loi_giai": {"type": "string"},
+     "tikz": {"type": "string"},
+     "doi_so_voi_goc": {"type": "string"}
+    }
+   }
+  },
+  "ghi_chu": {"type": "string"}
+ }
+}

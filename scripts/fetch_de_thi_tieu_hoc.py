@@ -55,12 +55,18 @@ MUC_LUC_JSP = [
     "de-kiem-tra-toan-lop-4/de-kiem-tra-toan-4-cuoi-ki-1.jsp",
     "de-kiem-tra-toan-lop-4/de-kiem-tra-toan-4-giua-ki-2.jsp",
     "de-kiem-tra-toan-lop-4/de-kiem-tra-toan-4-cuoi-ki-2.jsp",
+    # lớp 5 (thêm 15/11/2026)
+    "de-kiem-tra-toan-5/de-kiem-tra-toan-5-cuoi-ki-1.jsp",
+    "de-kiem-tra-toan-5/de-kiem-tra-toan-lop-5-hoc-ki-1.jsp",
+    "de-kiem-tra-toan-5/de-thi-toan-lop-5-hoc-ki-1-ket-noi-tri-thuc.jsp",
+    "de-kiem-tra-toan-5/de-kiem-tra-toan-5-giua-ki-1.jsp",
+    "de-kiem-tra-toan-5/de-kiem-tra-toan-5-cuoi-ki-2.jsp",
 ]
 # Trang danh sách bộ đề thi online (bản gõ + đáp án)
 MUC_LUC_ONLINE = [f"{KH}/trac-nghiem/Lop-{l}/mon-Toan?type=test&book={b}"
-                  for l in (3, 4) for b in (1, 2, 3)]
+                  for l in (3, 4, 5) for b in (1, 2, 3)]
 # Trang danh mục đề các trường (PDF gốc)
-MUC_LUC_CHI_TIET = [f"{KH}/dap-an-de-thi/Toan/Lop-{l}/{k}" for l in (3, 4)
+MUC_LUC_CHI_TIET = [f"{KH}/dap-an-de-thi/Toan/Lop-{l}/{k}" for l in (3, 4, 5)
                     for k in ("de-thi-giua-ki-1", "de-thi-cuoi-ki-1",
                               "de-thi-giua-ki-2", "de-thi-cuoi-ki-2")]
 
@@ -175,7 +181,9 @@ def quet_chi_tiet() -> dict[str, dict]:
 # Đề đã soi ảnh thấy SAI NHÃN ở nguồn ⇒ loại (khoá lớp|kỳ|trường)
 LOAI = {"3|ck2|thanhuyen": "VietJack gắn nhãn CK2 nhưng nội dung trùng gần hết đề CK1 Thanh Uyên (đã bóc) — loại",
         "4|gk1|anhai": "Trùng đề TH Đồng Thái (UBND phường An Hải) — giữ bản Đồng Thái có ảnh gốc",
-        "4|ck1|khanhthuy": "VietJack xếp lớp 4 nhưng ảnh đề là KTĐK cuối HK1 LỚP 5 (số thập phân, hình thang)"}
+        "4|ck1|khanhthuy": "VietJack xếp lớp 4 nhưng ảnh đề là KTĐK cuối HK1 LỚP 5 (số thập phân, hình thang)",
+        "5|ck1|xamyanhung": "Bản gõ (thi-online) của đề UBND xã Mỹ An Hưng — giữ bản có ảnh gốc",
+        "5|ck2|phuonghacthanh": "Bản gõ của đề UBND phường Hạc Thành — giữ bản có ảnh gốc"}
 
 
 def gop(*nguon: dict[str, dict]) -> list[dict]:
@@ -234,8 +242,15 @@ def tai(d: dict) -> None:
 def main() -> int:
     ap = argparse.ArgumentParser()
     ap.add_argument("--chi-in", action="store_true")
+    ap.add_argument("--lop", help="chỉ quét lớp này (giữ nguyên các lớp khác trong manifest)")
     a = ap.parse_args()
-    ds = gop(quet_jsp(), quet_chi_tiet(), quet_online())
+    global MUC_LUC_JSP, MUC_LUC_ONLINE, MUC_LUC_CHI_TIET
+    if a.lop:
+        MUC_LUC_JSP = [u for u in MUC_LUC_JSP if f"lop-{a.lop}/" in u or f"toan-{a.lop}/" in u
+                       or f"toan-lop-{a.lop}/" in u]
+        MUC_LUC_ONLINE = [u for u in MUC_LUC_ONLINE if f"Lop-{a.lop}/" in u]
+        MUC_LUC_CHI_TIET = [u for u in MUC_LUC_CHI_TIET if f"Lop-{a.lop}/" in u]
+    ds = [d for d in gop(quet_jsp(), quet_chi_tiet(), quet_online()) if not a.lop or d["lop"] == a.lop]
     for d in ds:
         if not a.chi_in:
             tai(d)
@@ -244,7 +259,8 @@ def main() -> int:
     if not a.chi_in:
         # giữ các đề nguồn khác (Violet…) do script riêng ghi vào cùng manifest
         cu = json.loads(MANIFEST.read_text(encoding="utf-8")) if MANIFEST.exists() else []
-        ds += [m for m in cu if m.get("nguon") and m.get("nguon") != "vietjack"]  # violet, drive-thay…
+        ds += [m for m in cu if (m.get("nguon") and m.get("nguon") != "vietjack")  # violet, drive-thay…
+               or (a.lop and str(m.get("lop")) != a.lop)]
         MANIFEST.write_text(json.dumps(ds, ensure_ascii=False, indent=1), encoding="utf-8")
         print(f"\n✓ {len(ds)} đề → {MANIFEST.relative_to(ROOT)}")
     return 0

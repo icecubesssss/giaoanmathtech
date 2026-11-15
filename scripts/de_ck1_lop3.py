@@ -43,6 +43,8 @@ NGUON = {
     "ck2-2425-huuthanhb": "Đề CK2 TH Hựu Thành B, Vĩnh Long 2024-2025 (câu kiến thức kì I)",
     "ck2-2526-tayhung": "Đề CK2 TH Tây Hưng, Hải Phòng 2025-2026 (câu kiến thức kì I)",
     "tt": "Đề trung tâm MathTech T3-HKI-KNTT-01",
+    "tt-kntt01": "Đề trung tâm MathTech T3-HKI-KNTT-01 (không phải đề trường)",
+    "tt-kntt02": "Đề trung tâm MathTech T3-HKI-KNTT-02 (không phải đề trường)",
 }
 
 
@@ -164,7 +166,7 @@ DE[1] = ("Đề 1", [
       "a) B – b) A", "a) Chọn \\textbf{B}: $16 : 4 = 4$. b) Chọn \\textbf{A}: $70 : 2 = 35$ (tuổi). \\textit{Bẫy: \"giảm đi 2 lần\" là chia, không phải trừ.}",
       "a) " + ng("ck1-2526-khanhthien#1a") + "; b) " + ng("ck1-2425-nguyenbinhkhiem#6"),
       ("Một phần mấy; giảm một số đi một số lần", ["ck1-2526-khanhthien#1a", "ck1-2425-nguyenbinhkhiem#6"], 1, 3)),
-    Q("Câu 3", 2, "1", fig("Quan sát hình bên rồi làm theo yêu cầu:" + y("a", "Kể tên các bán kính có trong hình: [[br]] \\dotfill\\mbox{}")
+    Q("Câu 3", 2, "1", fig("Quan sát hình bên rồi làm theo yêu cầu:" + y("a", "Kể tên các bán kính có trong hình: [[br]] \\mbox{}\\dotfill\\mbox{}")
       + y("b", "Vẽ thêm vào hình bên bán kính $OA$ và đường kính $BC$."), F_DH5),
       "a) OJ, OK – b) HS vẽ", "a) Bán kính: $OJ$, $OK$ ($0{,}5$đ). $LN$ không đi qua tâm $O$ nên $OM$, $LN$ không phải bán kính hay đường kính. b) Vẽ đúng bán kính $OA$ ($A$ trên đường tròn) và đường kính $BC$ (đi qua $O$) ($0{,}5$đ).",
       ng("ck1-2526-donghoa#5", "hình vẽ lại theo đề gốc"),
@@ -207,7 +209,7 @@ DE[2] = ("Đề 2", [
       "a) B – b) C", "a) Chọn \\textbf{B}: $12 : 4 = 3$ (quả). b) Chọn \\textbf{C}: $36 : 6 = 6$ (quả). \\textit{Bẫy: $36 - 6 = 30$.}",
       "a) " + ng("ck1-2526-nguyenvantroi#2", "đề gốc cho hình 12 quả, chuyển thành lời") + "; b) " + ng("ck1-2526-khanhthien#1c", "đề gốc in trùng phương án B và D, sửa D thành 42 quả"),
       ("Một phần mấy; giảm một số đi một số lần", ["ck1-2526-nguyenvantroi#2", "ck1-2526-khanhthien#1c"], 1, 3)),
-    Q("Câu 3", 2, "1", fig("Hình vẽ bên có mấy hình tứ giác? Hãy kể tên các hình tứ giác đó. [[br]] Trả lời: Có \\makebox[2cm]{\\dotfill} hình tứ giác, đó là: [[br]] \\dotfill\\mbox{}", F_VB9, 0.62),
+    Q("Câu 3", 2, "1", fig("Hình vẽ bên có mấy hình tứ giác? Hãy kể tên các hình tứ giác đó. [[br]] Trả lời: Có \\makebox[2cm]{\\dotfill} hình tứ giác, đó là: [[br]] \\mbox{}\\dotfill\\mbox{}", F_VB9, 0.62),
       "3 hình: ABCD, ANCD, NBCD", "Có $3$ hình tứ giác ($0{,}25$đ): $ABCD$, $ANCD$, $NBCD$ (mỗi tên đúng $0{,}25$đ).",
       ng("ck1-2526-vinhbao#9", "hình vẽ lại theo đề gốc"), ("Đếm hình tứ giác", ["ck1-2526-vinhbao#9"], 2, 3)),
     Q("Câu 4", 1, "1", y("a", "Nhiệt độ cơ thể người bình thường là:") + ops(["$39\\,^\\circ$C", "$37\\,^\\circ$C", "$40\\,^\\circ$C", "$38\\,^\\circ$C"])
@@ -282,31 +284,48 @@ DE[3] = ("Đề 3", [
 ], "$\\square$ Đã ghi \"dư\" ở phép chia (Câu 7) & $\\square$ Câu 8 có câu lời giải và đáp số")
 
 # ---------------------------------------------------------------- ÔN 1
+F_DUA = ("\\begin{tikzpicture}[scale=0.5]"
+         + "".join(f"\\draw[fill=yellow!25] ({c*0.85},{-r*0.85}) circle (0.33);" for r in range(3) for c in range(6))
+         + "\\end{tikzpicture}")
+
+F_NBK4 = ("\\begin{tikzpicture}[scale=0.62]\\draw (0,0) circle (1.3);"
+          "\\coordinate (T) at (70:1.3);\\coordinate (L) at (250:1.3);\\coordinate (K) at (135:1.3);"
+          "\\coordinate (M) at (170:1.3);\\coordinate (N) at (320:1.3);"
+          "\\coordinate (P) at (intersection of M--N and T--L);"
+          "\\draw (T)--(L) (0,0)--(K) (M)--(N);"
+          "\\foreach \\p/\\g in {T/70,K/135,M/170,L/250,N/320} \\fill (\\p) circle (1.3pt) node[shift=(\\g:9pt)]{$\\p$};"
+          "\\fill (0,0) circle (1.3pt) node[right=1pt]{$S$};\\fill (P) circle (1.3pt) node[below left=-1pt]{$P$};"
+          "\\end{tikzpicture}")
+F_HCN_NHO = F_HCN.replace("scale=0.85", "scale=0.62")
+
 DE["on1"] = ("Đề ôn số 1", [
-    Q("Câu 1", 1, "1", y("a", "Đọc số: $355$: \\dotfill\\mbox{}")
-      + y("b", "Số lớn nhất trong các số $600$; $699$; $599$; $609$ là:") + ops(["$600$", "$699$", "$599$"], 3),
-      "a) Ba trăm năm mươi lăm – b) B", "a) Ba trăm năm mươi lăm. b) Chọn \\textbf{B}: $699$.",
-      "a) " + ng("ck1-2526-donghoa#1b") + "; b) " + ng("ck1-2526-phuluong#2a"),
-      ("Đọc số; so sánh số", ["ck1-2526-donghoa#1b", "ck1-2526-phuluong#2a"], 1, 3)),
-    Q("Câu 2", 1, "1", y("a", "Thương của phép chia $72 : 8$ là:") + ops(["$9$", "$8$", "$7$", "$6$"])
-      + y("b", "Xếp đều $16$ quả dâu tây vào $4$ hộp. Lấy $3$ hộp như thế có bao nhiêu quả dâu tây?") + ops(["$4$ quả", "$3$ quả", "$12$ quả", "$13$ quả"]),
-      "a) A – b) C", "a) Chọn \\textbf{A}: $72 : 8 = 9$. b) Chọn \\textbf{C}: mỗi hộp $16 : 4 = 4$ (quả); $3$ hộp có $4 \\times 3 = 12$ (quả).",
-      "a) " + ng("ck1-2526-nguyenvantroi#1a") + "; b) " + ng("ck1-2526-nguyenvantroi#3"),
-      ("Bảng chia; bài toán hai bước nhân – chia", ["ck1-2526-nguyenvantroi#1a", "ck1-2526-nguyenvantroi#3"], 1, 3)),
-    Q("Câu 3", 2, "1", fig("Quan sát hình bên ($ABCD$ là hình chữ nhật, $H$ nằm trên cạnh $AB$) rồi điền số:"
-      + y("a", "Hình bên có \\makebox[3.2cm]{\\dotfill} hình tam giác.") + y("b", "Hình bên có \\makebox[3.2cm]{\\dotfill} hình tứ giác."), F_HCN, 0.58),
-      "a) 3 – b) 3", "a) $3$ hình tam giác: $AHD$, $HBC$, $HDC$. b) $3$ hình tứ giác: $ABCD$, $AHCD$, $HBCD$.",
-      "a) " + ng("ck1-2425-thanhhung2#4") + "; b) " + ng("ck1-2526-thanhuyen#4a") + " (cùng một hình, vẽ lại theo đề gốc)",
-      ("Đếm hình tam giác, tứ giác", ["ck1-2425-thanhhung2#4", "ck1-2526-thanhuyen#4a"], 2, 3)),
-    Q("Câu 4", 2, "1", "Đúng ghi Đ, sai ghi S vào ô trống:" + ds(["$9$ kg gấp $4$ lần được $63$ kg.", "$10$ l thêm $5$ l được $50$ l.", "$30$ mm bớt $2$ mm còn $28$ mm.", "$28$ ml giảm $4$ lần còn $7$ ml."]),
-      "S – S – Đ – Đ", "a) \\textbf{S} ($9 \\times 4 = 36$ kg); b) \\textbf{S} ($10 + 5 = 15$ l); c) \\textbf{Đ}; d) \\textbf{Đ} ($28 : 4 = 7$). Mỗi ý $0{,}25$đ.",
-      ng("ck1-2425-nguyenbinhkhiem#7"), ("Gấp, giảm, thêm, bớt với đơn vị đo", ["ck1-2425-nguyenbinhkhiem#7"], 2, 3)),
+    Q("Câu 1", 1, "1", y("a", "Đọc số: $355$: [[br]] \\mbox{}\\dotfill\\mbox{} [[br]] Số lớn nhất trong các số $600$; $699$; $599$; $609$ là: \\makebox[3.2cm]{\\dotfill}")
+      + y("b", "Thương của phép chia $72 : 8$ là:") + ops(["$9$", "$8$", "$7$", "$6$"]),
+      "a) Ba trăm năm mươi lăm; 699 – b) A", "a) Ba trăm năm mươi lăm ($0{,}25$đ); số lớn nhất là $699$ ($0{,}25$đ). b) Chọn \\textbf{A}: $72 : 8 = 9$ ($0{,}5$đ).",
+      "a) " + ng("ck1-2526-donghoa#1b") + " và " + ng("ck1-2526-phuluong#2a", "trắc nghiệm chuyển sang điền") + "; b) " + ng("ck1-2526-nguyenvantroi#1a"),
+      ("Đọc số; so sánh số; tính nhẩm bảng chia", ["ck1-2526-donghoa#1b", "ck1-2526-phuluong#2a", "ck1-2526-nguyenvantroi#1a"], 1, 3)),
+    Q("Câu 2", 2, "1", fig(y("a", "Điền số thích hợp vào chỗ chấm: [[br]] $\\frac{1}{3}$ số trái dứa là \\makebox[1.8cm]{\\dotfill} trái; [[br]] $\\frac{1}{6}$ số trái dứa là \\makebox[1.8cm]{\\dotfill} trái."), F_DUA, 0.65)
+      + y("b", "Con lợn cân nặng $50$ kg, con ngỗng nặng $5$ kg. Con lợn cân nặng gấp con ngỗng số lần là:") + ops(["$5$ lần", "$10$ lần", "$45$ lần", "$55$ lần"]),
+      "a) 6; 3 – b) B", "a) $18 : 3 = 6$ (trái); $18 : 6 = 3$ (trái) (mỗi số $0{,}25$đ). b) Chọn \\textbf{B}: $50 : 5 = 10$ (lần) ($0{,}5$đ).",
+      "a) " + ng("ck1-2526-donghoa#2a", "hình vẽ lại bằng TikZ") + "; b) " + ng("tt-kntt02#2"),
+      ("Một phần mấy; so sánh số lớn gấp mấy lần số bé", ["ck1-2526-donghoa#2a", "tt-kntt02#2"], 2, 3)),
+    Q("Câu 3", 2, "1", fig(y("a", "Quan sát Hình 1 ($ABCD$ là hình chữ nhật, $H$ nằm trên cạnh $AB$): [[br]] Hình 1 có \\makebox[2.5cm]{\\dotfill} hình tam giác.")
+      + y("b", "Quan sát Hình 2, điền vào chỗ chấm: [[br]] Hình tròn có tâm là \\makebox[2.2cm]{\\dotfill}; [[br]] \\makebox[2.2cm]{\\dotfill} là đường kính hình tròn."),
+      F_HCN_NHO.replace("\\end{tikzpicture}", "\\node at (2,-0.75) {\\footnotesize Hình 1};\\end{tikzpicture}") + "\\hspace{6pt}" + F_NBK4.replace("\\end{tikzpicture}", "\\node at (0,-2.45) {\\footnotesize Hình 2};\\end{tikzpicture}"), 0.5),
+      "a) 3 – b) S; TL", "a) $3$ hình tam giác: $AHD$, $HBC$, $HDC$ ($0{,}5$đ). b) Hình tròn có tâm là $S$ ($0{,}25$đ); đường kính là $TL$ ($0{,}25$đ).",
+      "a) " + ng("ck1-2425-thanhhung2#4") + "; b) " + ng("ck1-2425-nguyenbinhkhiem#4", "hình vẽ lại theo đề gốc"),
+      ("Đếm hình tam giác; hình tròn", ["ck1-2425-thanhhung2#4", "ck1-2425-nguyenbinhkhiem#4"], 2, 3)),
+    Q("Câu 4", 2, "1", y("a", "Nhiệt kế dùng để đo:") + ops(["Độ dài", "Nhiệt độ", "Dung tích", "Khối lượng"])
+      + y("b", "Đúng ghi Đ, sai ghi S vào ô trống:" + ds(["$9$ kg gấp $4$ lần được $63$ kg.", "$30$ mm bớt $2$ mm còn $28$ mm."])),
+      "a) B – b) S, Đ", "a) Chọn \\textbf{B}: nhiệt kế dùng để đo nhiệt độ ($0{,}5$đ). b) Ý 1: \\textbf{S} ($9 \\times 4 = 36$ kg); Ý 2: \\textbf{Đ} (mỗi ý $0{,}25$đ).",
+      "a) " + ng("ck1-2526-donghoa#4a") + "; b) " + ng("ck1-2425-nguyenbinhkhiem#7", "cắt còn 2 ý cho đủ 0,5đ"),
+      ("Nhiệt kế; tính toán với đơn vị đo", ["ck1-2526-donghoa#4a", "ck1-2425-nguyenbinhkhiem#7"], 2, 3)),
     Q("Câu 5", 2, "0,5", "Giá trị của biểu thức $42 : 7 + 10$ là: \\makebox[3.2cm]{\\dotfill}",
       "16", "$42 : 7 + 10 = 6 + 10 = 16$.", ng("ck1-2425-thanhhung2#8", "câu tự luận, chuyển sang điền kết quả"),
       ("Tính giá trị biểu thức (chia trước, cộng sau)", ["ck1-2425-thanhhung2#8"], 2, 2)),
-    Q("Câu 6", 1, "0,5", "$45 : \\square = 5$. Số điền vào ô trống là: \\makebox[3.2cm]{\\dotfill}",
-      "9", "$45 : 5 = 9$ nên số cần điền là $9$.", ng("ck1-2526-vinhbao#4a"),
-      ("Tìm thành phần trong phép chia", ["ck1-2526-vinhbao#4a"], 1, 2)),
+    Q("Câu 6", 2, "0,5", "Số dư của phép chia $715 : 7$ là:" + ops(["dư $1$", "dư $2$", "dư $3$", "dư $4$"]),
+      "A", "Chọn \\textbf{A}: $715 : 7 = 102$ (dư $1$).", ng("tt-kntt02#1b"),
+      ("Phép chia có dư", ["tt-kntt02#1b"], 2, 2)),
     Q("Câu 7", 1, "2", dat_tinh([("165 + 25", "190"), ("230 - 150", "80"), ("203 \\times 4", "812"), ("865 : 5", "173")]),
       "190; 80; 812; 173", dt_sol([("165 + 25", "190"), ("230 - 150", "80"), ("203 \\times 4", "812"), ("865 : 5", "173")]),
       ng("ck1-2425-nguyenbinhkhiem#9"), ("Đặt tính cộng, trừ, nhân, chia trong phạm vi 1000", ["ck1-2425-nguyenbinhkhiem#9"], 1, 7)),
@@ -316,34 +335,66 @@ DE["on1"] = ("Đề ôn số 1", [
                       "Đáp số: $160$ cây. \\hfill \\textit{(0,5đ)}"),
       ng("ck1-2425-nguyenbinhkhiem#10"), ("Bài toán giải bằng hai bước tính (giảm đi rồi cộng)", ["ck1-2425-nguyenbinhkhiem#10"], 2, 8)),
     Q("Câu 9", 3, "1", y("a", "Điền dấu ($+$; $-$; $\\times$; $:$) thích hợp vào ô trống để được phép tính đúng: [[br]] $12 \\;\\square\\; 4 \\;\\square\\; 3 = 51$ \\qquad\\qquad $50 \\;\\square\\; 10 \\;\\square\\; 5 = 48$")
-      + y("b", "Số tiếp theo trong dãy số $1$; $4$; $7$; $10$; \\dots\\ là:") + ops(["$15$", "$12$", "$13$", "$11$"]),
-      "a) ×, + ; −, : – b) C", "a) $12 \\times 4 + 3 = 51$; $50 - 10 : 5 = 48$ ($0{,}5$đ). b) Chọn \\textbf{C}: hai số liền nhau hơn kém nhau $3$; $10 + 3 = 13$ ($0{,}5$đ).",
-      "a) " + ng("ck1-2526-nguyenvantroi#10b") + "; b) " + ng("ck1-2526-thanhuyen#2a"),
-      ("Điền dấu phép tính; dãy số theo quy luật", ["ck1-2526-nguyenvantroi#10b", "ck1-2526-thanhuyen#2a"], 3, 6)),
+      + y("b", "$45 : \\square = 5$. Số điền vào ô trống là: \\makebox[3.2cm]{\\dotfill}"),
+      "a) ×, + ; −, : – b) 9", "a) $12 \\times 4 + 3 = 51$; $50 - 10 : 5 = 48$ ($0{,}5$đ). b) $45 : 5 = 9$ nên số điền vào ô trống là $9$ ($0{,}5$đ).",
+      "a) " + ng("ck1-2526-nguyenvantroi#10b") + "; b) " + ng("ck1-2526-vinhbao#4a"),
+      ("Điền dấu phép tính; tìm số chia", ["ck1-2526-nguyenvantroi#10b", "ck1-2526-vinhbao#4a"], 3, 6)),
 ], "$\\square$ Đã đặt tính thẳng cột (Câu 7) & $\\square$ Câu 8 có câu lời giải và đáp số")
 
 # ---------------------------------------------------------------- ÔN 2
+F_OVUONG = ("\\begin{tikzpicture}[scale=0.85]"
+            "\\fill[gray!40] (0.35,0.35) rectangle (1.05,0.7);"
+            "\\draw[step=0.35] (0,0) grid (1.4,1.05);"
+            "\\node[below] at (0.7,0) {\\footnotesize Hình A};"
+            "\\fill[gray!40] (3.55,0) rectangle (3.9,0.35);"
+            "\\fill[gray!40] (3.9,0.35) rectangle (4.25,0.7);"
+            "\\fill[gray!40] (4.25,0.7) rectangle (4.6,1.05);"
+            "\\draw[xshift=3.2cm,step=0.35] (0,0) grid (1.4,1.05);"
+            "\\node[below] at (3.9,0) {\\footnotesize Hình B};"
+            "\\fill[gray!40] (6.75,0) rectangle (7.45,0.35);"
+            "\\fill[gray!40] (6.75,0.7) rectangle (7.45,1.05);"
+            "\\draw[xshift=6.4cm,step=0.35] (0,0) grid (1.4,1.05);"
+            "\\node[below] at (7.1,0) {\\footnotesize Hình C};"
+            "\\fill[gray!40] (9.95,0.7) rectangle (10.3,1.05);"
+            "\\fill[gray!40] (9.6,0) rectangle (10.3,0.7);"
+            "\\draw[xshift=9.6cm,step=0.35] (0,0) grid (1.4,1.05);"
+            "\\node[below] at (10.3,0) {\\footnotesize Hình D};"
+            "\\end{tikzpicture}")
+F_TT5 = ("\\begin{tikzpicture}[scale=0.8]\\draw (0,0) circle (1.3);"
+         "\\coordinate (A) at (180:1.3);\\coordinate (B) at (0:1.3);\\coordinate (M) at (75:1.3);\\coordinate (N) at (243:1.3);"
+         "\\coordinate (I) at (intersection of M--N and A--B);\\draw (A)--(B) (M)--(N);"
+         "\\foreach \\p/\\g in {A/180,B/0,M/75,N/243} \\fill (\\p) circle (1.3pt) node[shift=(\\g:9pt)]{$\\p$};"
+         "\\fill (I) circle (1.3pt) node[above left=-1pt]{$I$};\\fill (0,0) circle (1.3pt) node[below right=-1pt]{$O$};"
+         "\\end{tikzpicture}")
+
 DE["on2"] = ("Đề ôn số 2", [
-    Q("Câu 1", 1, "1", y("a", "Biết số trừ là $36$, hiệu là $25$, số bị trừ là:") + ops(["$11$", "$61$", "$51$", "$41$"])
-      + y("b", "$17 + 13 - 10 = \\dots$ Số điền vào chỗ chấm là:") + ops(["$40$", "$20$", "$30$"], 3),
-      "a) B – b) B", "a) Chọn \\textbf{B}: số bị trừ $= 25 + 36 = 61$. b) Chọn \\textbf{B}: $30 - 10 = 20$.",
-      "a) " + ng("ck1-2425-nguyenbinhkhiem#1") + "; b) " + ng("ck1-2425-thanhhung2#1"),
-      ("Tìm số bị trừ; cộng, trừ trong phạm vi 1000", ["ck1-2425-nguyenbinhkhiem#1", "ck1-2425-thanhhung2#1"], 1, 3)),
-    Q("Câu 2", 1, "1", y("a", "Trong phép tính $15 : 3 = 5$, số chia là:") + ops(["$15$", "$3$", "$5$"], 3)
-      + y("b", "Có $40$ quả cam xếp vào các đĩa, mỗi đĩa $8$ quả. Hỏi xếp được mấy đĩa cam như vậy? [[br]] Trả lời: Xếp được \\makebox[3.2cm]{\\dotfill} đĩa cam."),
-      "a) B – b) 5 đĩa", "a) Chọn \\textbf{B}. b) $40 : 8 = 5$ (đĩa).",
-      "a) " + ng("ck1-2526-vinhbao#1a") + "; b) " + ng("ck1-2526-vinhbao#5"),
-      ("Thành phần phép chia; bài toán chia", ["ck1-2526-vinhbao#1a", "ck1-2526-vinhbao#5"], 1, 3)),
-    Q("Câu 3", 2, "1", y("a", "Hình vuông có bao nhiêu góc vuông?") + ops(["$3$", "$2$", "$4$", "$1$"])
-      + fig(y("b", "Hình bên có mấy góc vuông?") + ops(["$3$", "$4$", "$5$", "$6$"], 2), F_KT1D, 0.55),
-      "a) C – b) C", "a) Chọn \\textbf{C}. b) Chọn \\textbf{C}: $4$ góc vuông của hình chữ nhật $ABCD$ và góc vuông đỉnh $B$ của tam giác $BEC$.",
-      "a) " + ng("ck1-2425-nguyenbinhkhiem#5") + "; b) " + ng("ck1-2526-khanhthien#1d", "hình chữ nhật ghép tam giác vuông, vẽ lại; trùng câu 5 đề TH Nguyễn Văn Trỗi, cùng đáp án 5"),
-      ("Góc vuông, góc không vuông", ["ck1-2425-nguyenbinhkhiem#5", "ck1-2526-khanhthien#1d"], 2, 3)),
-    Q("Câu 4", 1, "1", y("a", "$5$ cm $= \\dots$ mm. Số thích hợp điền vào chỗ chấm là:") + ops(["$50$ mm", "$5$ mm", "$500$ mm"], 3)
-      + y("b", "Điền kết quả vào chỗ chấm: [[br]] $38$ g $+ 29$ g $- 30$ g $= \\makebox[3.2cm]{\\dotfill}$ \\qquad\\qquad $85$ mm $- 25$ mm $+ 20$ mm $= \\makebox[3.2cm]{\\dotfill}$"),
-      "a) A – b) 37 g; 80 mm", "a) Chọn \\textbf{A}: $1$ cm $= 10$ mm. b) $37$ g; $80$ mm (ghi đủ đơn vị).",
-      "a) " + ng("ck1-2425-thanhhung2#5") + "; b) " + ng("ck1-2526-vinhbao#3"),
-      ("Mi-li-mét, gam: đổi và tính", ["ck1-2425-thanhhung2#5", "ck1-2526-vinhbao#3"], 1, 3)),
+    Q("Câu 1", 1, "1", y("a", "Đọc số $725$: [[br]] \\mbox{}\\dotfill\\mbox{} [[br]] Viết số \"Ba trăm mười lăm\": \\makebox[3.2cm]{\\dotfill}")
+      + y("b", "Tính nhẩm: [[br]] $40 \\times 6 = \\makebox[1.6cm]{\\dotfill}$ \\quad $200 \\times 2 = \\makebox[1.6cm]{\\dotfill}$ \\quad $900 : 3 = \\makebox[1.6cm]{\\dotfill}$ \\quad $120 : 4 = \\makebox[1.6cm]{\\dotfill}$"),
+      "a) Bảy trăm hai mươi lăm; 315 – b) 240; 400; 300; 30",
+      "a) Đọc số: Bảy trăm hai mươi lăm ($0{,}25$đ); viết số: $315$ ($0{,}25$đ). b) $40 \\times 6 = 240$; $200 \\times 2 = 400$; $900 : 3 = 300$; $120 : 4 = 30$ (mỗi phép tính $0{,}125$đ, đúng cả 4 phép được $0{,}5$đ).",
+      "a) " + ng("tt-kntt01#1", "chọn 1 ý đọc số và 1 ý viết số") + "; b) " + ng("ck1-2526-phuluong#7", "chọn 4 phép tính tròn chục, tròn trăm"),
+      ("Đọc, viết số; tính nhẩm", ["tt-kntt01#1", "ck1-2526-phuluong#7"], 1, 3)),
+    Q("Câu 2", 3, "1", y("a", "Đã tô màu $\\frac{1}{4}$ số ô vuông của hình nào?")
+      + "\\par\\centering " + F_OVUONG + "\\par\\raggedright"
+      + ops(["Hình A", "Hình B", "Hình C", "Hình D"])
+      + y("b", "Nếu ta gấp một số lên $3$ lần thì được tích của $5$ và $9$. Số đó là:") + ops(["$59$", "$95$", "$45$", "$15$"]),
+      "a) B – b) D",
+      "a) Chọn \\textbf{B}: Hình B có $12$ ô vuông, đã tô màu $3$ ô vuông; $\\frac{1}{4}$ của $12$ là $12 : 4 = 3$ ô vuông ($0{,}5$đ). b) Chọn \\textbf{D}: tích của $5$ và $9$ là $45$; số đó là $45 : 3 = 15$ ($0{,}5$đ).",
+      "a) " + ng("tt-kntt02#7a") + "; b) " + ng("ck1-2526-donghoa#6a"),
+      ("Một phần mấy; gấp một số lên một số lần", ["tt-kntt02#7a", "ck1-2526-donghoa#6a"], 3, 3)),
+    Q("Câu 3", 2, "1", fig(y("a", "Hình vuông có \\makebox[2cm]{\\dotfill} góc vuông.")
+      + y("b", "Quan sát hình bên. Đúng ghi Đ, sai ghi S vào ô trống:")
+      + "\\par\\noindent (1) Đường kính là $AB$ và $MN$. \\hfill $\\square$\\par\\noindent (2) $OA = OB$. \\hfill $\\square$", F_TT5, 0.6),
+      "a) 4 – b) S – Đ",
+      "a) Hình vuông có $4$ góc vuông ($0{,}5$đ). b) (1) \\textbf{S} ($MN$ không đi qua tâm $O$ nên không phải đường kính); (2) \\textbf{Đ} ($OA$ và $OB$ đều là bán kính nên $OA = OB$). Mỗi ý $0{,}25$đ.",
+      "a) " + ng("ck1-2425-nguyenbinhkhiem#5", "trắc nghiệm chuyển sang điền") + "; b) " + ng("tt-kntt02#5", "chọn 2 ý Đ/S, hình vẽ lại theo đề gốc"),
+      ("Góc vuông; hình tròn: tâm, bán kính, đường kính", ["ck1-2425-nguyenbinhkhiem#5", "tt-kntt02#5"], 2, 3)),
+    Q("Câu 4", 1, "1", y("a", "Nhiệt độ nào dưới đây phù hợp với ngày nắng nóng?") + ops(["$0\\,^\\circ$C", "$2\\,^\\circ$C", "$100\\,^\\circ$C", "$36\\,^\\circ$C"])
+      + y("b", "$5$ cm $= \\dots$ mm. Số thích hợp điền vào chỗ chấm là:") + ops(["$50$ mm", "$5$ mm", "$500$ mm"], 3),
+      "a) D – b) A",
+      "a) Chọn \\textbf{D}: $36\\,^\\circ$C phù hợp với ngày nắng nóng ($0\\,^\\circ$C và $2\\,^\\circ$C rất lạnh, $100\\,^\\circ$C là nước sôi). b) Chọn \\textbf{A}: $5$ cm $= 50$ mm.",
+      "a) " + ng("tt-kntt02#4a") + "; b) " + ng("ck1-2425-thanhhung2#5"),
+      ("Đơn vị đo nhiệt độ, độ dài", ["tt-kntt02#4a", "ck1-2425-thanhhung2#5"], 1, 3)),
     Q("Câu 5", 2, "0,5", "Giá trị của biểu thức $118 + 168 - 32$ là: \\makebox[3.2cm]{\\dotfill}",
       "254", "$118 + 168 - 32 = 286 - 32 = 254$.", ng("ck1-2425-nguyenbinhkhiem#8", "ý a, chuyển sang điền kết quả"),
       ("Tính giá trị biểu thức (cộng, trừ)", ["ck1-2425-nguyenbinhkhiem#8"], 2, 2)),
@@ -358,39 +409,54 @@ DE["on2"] = ("Đề ôn số 2", [
                      "Cửa hàng có tất cả số ki-lô-gam gạo là: $127 + 381 = 508$ (kg) \\hfill \\textit{(0,75đ)}",
                      "Đáp số: $508$ kg gạo. \\hfill \\textit{(0,5đ)}"),
       ng("ck1-2526-khanhthien#8"), ("Bài toán giải bằng hai bước tính (gấp lên rồi cộng)", ["ck1-2526-khanhthien#8"], 2, 8)),
-    Q("Câu 9", 3, "1", y("a", "Lớp 3A tổ chức cho $34$ học sinh đi trải nghiệm bằng xe taxi, mỗi xe chở được $5$ bạn. Vậy lớp 3A phải thuê ít nhất \\makebox[3.2cm]{\\dotfill} xe để chở hết số học sinh đó.")
-      + y("b", "Cho ba số $4$, $5$, $20$ và các dấu $\\times$, $:$, $=$. Hãy viết bốn phép tính đúng."),
-      "a) 7 – b) 4 phép tính", "a) $34 : 5 = 6$ (dư $4$): $6$ xe chở $30$ bạn, còn $4$ bạn cần thêm $1$ xe. Thuê $7$ xe ($0{,}5$đ). b) $4 \\times 5 = 20$; $5 \\times 4 = 20$; $20 : 4 = 5$; $20 : 5 = 4$ (đủ 4 phép: $0{,}5$đ; 2–3 phép: $0{,}25$đ).",
-      "a) " + ng("ck1-2526-donghoa#10a", "thêm chữ \"ít nhất\" cho chặt") + "; b) " + ng("ck2-2526-tayhung#TL4"),
-      ("Phép chia có dư trong thực tế; quan hệ nhân – chia", ["ck1-2526-donghoa#10a", "ck2-2526-tayhung#TL4"], 3, 6)),
+    Q("Câu 9", 3, "1", y("a", "Biết số trừ là $36$, hiệu là $25$. Số bị trừ là: \\makebox[3.2cm]{\\dotfill}")
+      + y("b", "Lớp 3A tổ chức cho $34$ học sinh đi trải nghiệm bằng xe taxi, mỗi xe chở được $5$ bạn. Vậy lớp 3A phải thuê ít nhất \\makebox[3.2cm]{\\dotfill} xe để chở hết số học sinh đó."),
+      "a) 61 – b) 7 xe",
+      "a) Số bị trừ là: $25 + 36 = 61$ ($0{,}5$đ). b) Ta có $34 : 5 = 6$ (dư $4$). Như vậy $6$ xe chở được $30$ bạn, còn $4$ bạn cần thêm $1$ xe nữa. Vậy lớp 3A phải thuê ít nhất $6 + 1 = 7$ xe ($0{,}5$đ).",
+      "a) " + ng("ck1-2425-nguyenbinhkhiem#1", "đổi sang điền kết quả") + "; b) " + ng("ck1-2526-donghoa#10a", "thêm chữ \"ít nhất\" cho chặt"),
+      ("Tìm số bị trừ; phép chia có dư trong thực tế", ["ck1-2425-nguyenbinhkhiem#1", "ck1-2526-donghoa#10a"], 3, 6)),
 ], "$\\square$ Đã đặt tính thẳng cột (Câu 7) & $\\square$ Câu 8 có câu lời giải và đáp số")
 
 # ---------------------------------------------------------------- ÔN 3
+F_SAO = ("\\begin{tikzpicture}[scale=0.85]\\draw[rounded corners=6pt] (0,0) rectangle (3.2,2.4);"
+         "\\node at (0.6,1.9) {\\large\\ding{72}};"
+         "\\node at (1.7,2.0) {\\large\\ding{72}};"
+         "\\node at (2.6,1.6) {\\large\\ding{72}};"
+         "\\node at (0.5,1.1) {\\large\\ding{72}};"
+         "\\node at (1.5,1.2) {\\large\\ding{72}};"
+         "\\node at (2.6,0.7) {\\large\\ding{72}};"
+         "\\node at (0.9,0.4) {\\large\\ding{72}};"
+         "\\node at (1.9,0.4) {\\large\\ding{72}};"
+         "\\end{tikzpicture}")
+
 DE["on3"] = ("Đề ôn số 3", [
     Q("Câu 1", 1, "1", y("a", "Đọc số: $509$: \\dotfill\\mbox{}")
       + y("b", "Phép tính nào sau đây có kết quả bé nhất?") + ops(["$4 \\times 3$", "$45 : 5$", "$7 \\times 2$", "$48 : 8$"]),
-      "a) Năm trăm linh chín – b) D", "a) Năm trăm linh chín. b) Chọn \\textbf{D}: các kết quả là $12$; $9$; $14$; $6$.",
+      "a) Năm trăm linh chín – b) D", "a) Năm trăm linh chín ($0{,}5$đ). b) Chọn \\textbf{D}: các kết quả là $12$; $9$; $14$; $6$ ($0{,}5$đ).",
       "a) " + ng("ck2-2425-huuthanhb#1", "ý viết cách đọc số 509") + "; b) " + ng("ck1-2425-nguyenbinhkhiem#2"),
       ("Đọc số; so sánh kết quả bảng nhân, chia", ["ck2-2425-huuthanhb#1", "ck1-2425-nguyenbinhkhiem#2"], 1, 3)),
-    Q("Câu 2", 2, "1", y("a", "Kết quả của phép chia $75 : 3$ là:") + ops(["$24$", "$15$", "$25$"], 3)
+    Q("Câu 2", 2, "1", fig(y("a", "Một phần hai số ngôi sao là:") + ops(["$5$ ngôi sao", "$4$ ngôi sao", "$6$ ngôi sao", "$3$ ngôi sao"], 2), F_SAO, 0.58)
       + y("b", "Viết số thích hợp vào ô trống:") + "\\par\\centering " + SODO + "\\par\\raggedright",
-      "a) C – b) 375; 372; 62", "a) Chọn \\textbf{C}: $75 : 3 = 25$. b) $125 \\times 3 = 375$; $375 - 3 = 372$; $372 : 6 = 62$ (đủ ba ô: $0{,}5$đ).",
-      "a) " + ng("ck1-2425-thanhhung2#6") + "; b) " + ng("ck1-2526-donghoa#2b"),
-      ("Chia số có hai chữ số; gấp lên, giảm đi một số lần", ["ck1-2425-thanhhung2#6", "ck1-2526-donghoa#2b"], 2, 3)),
-    Q("Câu 3", 2, "1", fig(y("a", "Quan sát hình bên, điền vào chỗ chấm: [[br]] Hình tròn có tâm là \\makebox[3.2cm]{\\dotfill}, đường kính là \\makebox[3.2cm]{\\dotfill}"), F_TU1B, 0.6)
-      + y("b", "Khối lập phương và khối hộp chữ nhật có gì giống nhau?") + ops(["Đều có $6$ mặt là hình chữ nhật, $8$ đỉnh, $12$ cạnh", "Đều có $6$ mặt là hình vuông, $8$ đỉnh, $12$ cạnh", "Đều có $6$ mặt, $8$ đỉnh, $12$ cạnh", "Đều có $6$ mặt, $6$ đỉnh, $12$ cạnh"], 1),
-      "a) O; AB – b) C", "a) Tâm $O$; đường kính $AB$ ($MN$ không đi qua $O$ nên không phải đường kính). b) Chọn \\textbf{C}.",
-      "a) " + ng("ck1-2526-thanhuyen#1b", "hình vẽ lại theo đề gốc") + "; b) " + NGUON["tt"] + ", câu 3a (đề trung tâm, không phải đề trường)",
-      ("Hình tròn; khối lập phương, khối hộp chữ nhật", ["ck1-2526-thanhuyen#1b"], 2, 3)),
-    Q("Câu 4", 1, "1", "Tính: \\qquad \\textbf{a)} $45$ g $: 5 = \\makebox[3.2cm]{\\dotfill}$ \\qquad\\qquad \\textbf{b)} $24$ ml $: 4 = \\makebox[3.2cm]{\\dotfill}$",
-      "a) 9 g – b) 6 ml", "a) $9$ g; b) $6$ ml (thiếu đơn vị: không cho điểm ý đó).", ng("ck1-2526-vinhbao#8"),
-      ("Tính với đơn vị gam, mi-li-lít", ["ck1-2526-vinhbao#8"], 1, 3)),
+      "a) B – b) 375; 372; 62", "a) Chọn \\textbf{B}: có tất cả $8$ ngôi sao, $\\frac{1}{2}$ số ngôi sao là $8 : 2 = 4$ (ngôi sao) ($0{,}5$đ). b) $125 \\times 3 = 375$; $375 - 3 = 372$; $372 : 6 = 62$ (đủ ba ô: $0{,}5$đ).",
+      "a) " + ng("tt-kntt01#2b") + "; b) " + ng("ck1-2526-donghoa#2b"),
+      ("Một phần mấy; gấp lên, giảm đi một số lần", ["tt-kntt01#2b", "ck1-2526-donghoa#2b"], 2, 3)),
+    Q("Câu 3", 2, "1", fig(y("a", "Hình bên có mấy góc vuông?") + ops(["$4$", "$5$", "$6$", "$7$"], 2), F_KT1D, 0.58)
+      + fig(y("b", "Quan sát hình bên, điền vào chỗ chấm: [[br]] Hình tròn có tâm là \\makebox[3.2cm]{\\dotfill}, đường kính là \\makebox[3.2cm]{\\dotfill}"), F_TU1B, 0.58),
+      "a) B – b) O; AB", "a) Chọn \\textbf{B}: hình bên có $5$ góc vuông (gồm $4$ góc vuông của hình chữ nhật và $1$ góc vuông của hình tam giác) ($0{,}5$đ). b) Tâm $O$; đường kính $AB$ ($MN$ không đi qua $O$ nên không phải đường kính) ($0{,}5$đ).",
+      "a) " + ng("ck1-2526-nguyenvantroi#5", "hình vẽ lại theo đề gốc") + "; b) " + ng("ck1-2526-thanhuyen#1b", "hình vẽ lại theo đề gốc"),
+      ("Góc vuông; hình tròn: tâm, đường kính", ["ck1-2526-nguyenvantroi#5", "ck1-2526-thanhuyen#1b"], 2, 3)),
+    Q("Câu 4", 1, "1", y("a", "Nhiệt độ không khí trong cùng một ngày đo tại xã Đồng Cẩm vào buổi Sáng, Trưa, Chiều, Đêm được số đo lần lượt như sau: $18\\,^\\circ$C, $30\\,^\\circ$C, $24\\,^\\circ$C, $12\\,^\\circ$C. [[br]] Nhiệt độ cao nhất là vào buổi \\makebox[3.2cm]{\\dotfill}")
+      + y("b", "Tính: $45$ g $: 5 = \\makebox[3.2cm]{\\dotfill}$"),
+      "a) Trưa – b) 9 g", "a) Nhiệt độ cao nhất là vào buổi Trưa ($30\\,^\\circ$C) ($0{,}5$đ). b) $45$ g $: 5 = 9$ g ($0{,}5$đ, thiếu đơn vị không cho điểm).",
+      "a) " + ng("tt-kntt01#2a") + "; b) " + ng("ck1-2526-vinhbao#8", "chỉ giữ một phép tính"),
+      ("Nhiệt độ; tính với đơn vị gam", ["tt-kntt01#2a", "ck1-2526-vinhbao#8"], 1, 3)),
     Q("Câu 5", 2, "0,5", "Giá trị của biểu thức $(124 + 36) \\times 5$ là: \\makebox[3.2cm]{\\dotfill}",
       "800", "$(124 + 36) \\times 5 = 160 \\times 5 = 800$.", ng("ck1-2526-vinhbao#7", "ý a, chuyển sang điền kết quả"),
       ("Tính giá trị biểu thức có ngoặc", ["ck1-2526-vinhbao#7"], 2, 2)),
-    Q("Câu 6", 3, "0,5", "Nếu ta gấp một số lên $3$ lần thì được tích của $5$ và $9$. Số đó là:" + ops(["$59$", "$95$", "$45$", "$15$"]),
-      "D", "Chọn \\textbf{D}: tích của $5$ và $9$ là $45$; số đó là $45 : 3 = 15$.", ng("ck1-2526-donghoa#6a"),
-      ("Gấp một số lên một số lần (tính ngược)", ["ck1-2526-donghoa#6a"], 3, 2)),
+    Q("Câu 6", 2, "0,5", "Tìm $?$, biết $? : 5 = 15$ (dư $3$):" + ops(["$75$", "$76$", "$77$", "$78$"]),
+      "D", "Chọn \\textbf{D}: số bị chia bằng thương nhân với số chia rồi cộng với số dư: $15 \\times 5 + 3 = 75 + 3 = 78$.",
+      ng("tt-kntt01#5b"),
+      ("Phép chia có dư (tìm số bị chia)", ["tt-kntt01#5b"], 2, 2)),
     Q("Câu 7", 1, "2", dat_tinh([("188 + 436", "624"), ("971 - 338", "633"), ("171 \\times 4", "684"), ("808 : 8", "101")]),
       "624; 633; 684; 101", dt_sol([("188 + 436", "624"), ("971 - 338", "633"), ("171 \\times 4", "684"), ("808 : 8", "101")]),
       "a, b) " + ng("ck1-2526-thanhuyen#5") + "; c, d) " + ng("ck1-2526-vinhbao#6"),
@@ -400,12 +466,12 @@ DE["on3"] = ("Đề ôn số 3", [
                         "Cả hai ngày bán được số quyển sách là: $84 + 21 = 105$ (quyển) \\hfill \\textit{(0,75đ)}",
                         "Đáp số: $105$ quyển sách. \\hfill \\textit{(0,5đ)}"),
       ng("ck1-2526-nguyenvantroi#9"), ("Bài toán giải bằng hai bước tính (giảm đi rồi cộng)", ["ck1-2526-nguyenvantroi#9"], 2, 8)),
-    Q("Câu 9", 3, "1", "Điền dấu $>$; $<$; $=$ thích hợp vào ô trống:"
-      + y("a", "$615 + 121 - 247 \\;\\square\\; 528$") + y("b", "$573 + 505 : 5 \\;\\square\\; 630$"),
-      "a) < – b) >", "a) $615 + 121 - 247 = 489$ và $489 < 528$ ($0{,}5$đ). b) $573 + 505 : 5 = 573 + 101 = 674$ và $674 > 630$ ($0{,}5$đ). \\textit{Bẫy ý b: cộng trước rồi chia.}",
-      ng("ck1-2526-donghoa#8"), ("So sánh giá trị biểu thức", ["ck1-2526-donghoa#8"], 3, 6)),
-], "$\\square$ Đã ghi đơn vị g, ml (Câu 4) & $\\square$ Câu 8 có câu lời giải và đáp số")
-
+    Q("Câu 9", 3, "1", y("a", "Tìm $?$: [[br]] $3 \\times {?} = 147$ \\qquad ${?} = \\makebox[3.2cm]{\\dotfill}$ \\qquad\\qquad $324 : {?} = 6$ \\qquad ${?} = \\makebox[3.2cm]{\\dotfill}$")
+      + y("b", "Điền dấu ($>$; $<$; $=$) thích hợp vào ô trống: $573 + 505 : 5 \\;\\square\\; 630$"),
+      "a) 49; 54 – b) >", "a) ${?} = 147 : 3 = 49$ ($0{,}25$đ); ${?} = 324 : 6 = 54$ ($0{,}25$đ). b) Thực hiện chia trước, cộng sau: $573 + 505 : 5 = 573 + 101 = 674$. Vì $674 > 630$ nên điền dấu $>$ ($0{,}5$đ). \\textit{Bẫy: cộng trước rồi mới chia.}",
+      "a) " + ng("ck1-2526-phuluong#6") + "; b) " + ng("ck1-2526-donghoa#8", "chỉ giữ ý b"),
+      ("Tìm thành phần chưa biết; so sánh giá trị biểu thức", ["ck1-2526-phuluong#6", "ck1-2526-donghoa#8"], 3, 6)),
+], "$\\square$ Đã ghi đơn vị g (Câu 4) & $\\square$ Câu 8 có câu lời giải và đáp số")
 
 # =====================================================================
 #                              DỰNG ĐỀ

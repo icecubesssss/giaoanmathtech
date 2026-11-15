@@ -105,6 +105,13 @@ TOA_DO = {
 }
 
 
+def _bo(bo, pts, segs, dashed):
+    """Bỏ điểm và mọi đoạn chạm điểm đó."""
+    bo = set(bo)
+    return ({k: v for k, v in pts.items() if k not in bo}, [x for x in segs if not bo & set(x)],
+            [x for x in dashed if not bo & set(x)])
+
+
 def hinh_draw(pts, segs, extra="", scale=1.2, dashed=()):
     s = f"\\begin{{tikzpicture}}[scale={scale},line width=0.8pt]\n"
     for k, (xx, yy, pos) in pts.items():
@@ -140,7 +147,8 @@ def vg(P, Q, R, s=0.2):
 
 
 # TikZ cho 3 đề ôn tập
-def get_tikz_on1():
+def get_tikz_on1(bo=()):
+    """bo: điểm bỏ khỏi hình (("H",) khi ý b đổi sang BDEM là HBH — 13/11/2026)."""
     c = TOA_DO["on1"]
     pts = {
         "A": (*c["A"], "below left"),
@@ -162,12 +170,14 @@ def get_tikz_on1():
         vg(c["B"], c["A"], c["C"])
         + vg(c["A"], c["D"], c["M"])
         + vg(c["A"], c["E"], c["M"])
-        + vg(c["A"], c["H"], c["C"])
+        + ("" if "H" in bo else vg(c["A"], c["H"], c["C"]))
     )
+    pts, segs, _ = _bo(bo, pts, segs, ())
     return hinh_draw(pts, segs, extra=extra, scale=1.1)
 
 
-def get_tikz_on2():
+def get_tikz_on2(bo=()):
+    """bo: các điểm bỏ khỏi hình (vd ("Q",) khi ý b đổi sang APDE là HBH — 13/11/2026)."""
     c = TOA_DO["on2"]
     pts = {
         "A": (*c["A"], "below left"),
@@ -193,10 +203,12 @@ def get_tikz_on2():
         + vg(c["A"], c["D"], c["H"])
         + vg(c["A"], c["E"], c["H"])
     )
+    pts, segs, dashed = _bo(bo, pts, segs, dashed)
     return hinh_draw(pts, segs, extra=extra, dashed=dashed, scale=1.15)
 
 
-def get_tikz_on3():
+def get_tikz_on3(bo=()):
+    """bo: các điểm bỏ khỏi hình (vd ("H",) khi ý c đổi sang ABMK là HBH — 13/11/2026)."""
     c = TOA_DO["on3"]
     pts = {
         "A": (*c["A"], "below left"),
@@ -217,8 +229,9 @@ def get_tikz_on3():
         vg(c["B"], c["A"], c["C"])
         + vg(c["A"], c["D"], c["M"])
         + vg(c["A"], c["E"], c["M"])
-        + vg(c["A"], c["H"], c["C"])
+        + ("" if "H" in bo else vg(c["A"], c["H"], c["C"]))
     )
+    pts, segs, _ = _bo(bo, pts, segs, ())
     return hinh_draw(pts, segs, extra=extra, scale=1.1)
 
 

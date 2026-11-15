@@ -39,10 +39,13 @@ def main() -> int:
     ap.add_argument("--lop", type=int, required=True)
     ap.add_argument("--ky", required=True)
     ap.add_argument("--khung", required=True)
+    ap.add_argument("--tieu-hoc", action="store_true",
+                    help="bản ghi tiểu học: ghi vào ngan-hang-sheet/tieu-hoc/lop-N/ban-ghi, giữ cd + bai thợ gán")
     a = ap.parse_args()
     khung = json.loads((REPO / a.khung).read_text())
     dang = {d["ma"]: d for d in khung["dang"]}
-    ra_bg = REPO / f"inputs/refs/ngan-hang-sheet/lop-{a.lop}/{a.ky}/ban-ghi"
+    ra_bg = REPO / (f"inputs/refs/ngan-hang-sheet/tieu-hoc/lop-{a.lop}/ban-ghi" if a.tieu_hoc
+                    else f"inputs/refs/ngan-hang-sheet/lop-{a.lop}/{a.ky}/ban-ghi")
     ra_bg.mkdir(parents=True, exist_ok=True)
     (REPO / "storage/gemini/soat").mkdir(parents=True, exist_ok=True)
 
@@ -53,7 +56,7 @@ def main() -> int:
         cau = kq.get("cau") or []
         viec_p = next((p for p in (HANG_DOI / f"{r['id']}.json", HANG_DOI / f"{r['id']}.json.da-chay") if p.exists()), None)
         meta = json.loads(viec_p.read_text()).get("meta", {}) if viec_p else {}
-        pdf = REPO / meta.get("thu_muc", "") / meta.get("pdf", "")
+        pdf = REPO / meta.get("thu_muc", "") / meta.get("pdf", "")  # tiểu học: meta.pdf là đường dẫn đủ
         trang = so_trang(pdf) if meta else None
 
         hong, co = [], []
@@ -74,7 +77,7 @@ def main() -> int:
                 lydo.append(f"mã {q.get('dang')}")
             if q.get("can_soat"):
                 lydo.append(f"thợ ghi: {q['can_soat']}")
-            if q.get("dang") == "D23" and not re.search(r"tỉ lệ (thuận|nghịch)", q.get("nd", ""), re.I):
+            if not a.tieu_hoc and q.get("dang") == "D23" and not re.search(r"tỉ lệ (thuận|nghịch)", q.get("nd", ""), re.I):
                 lydo.append("D23 không nhắc tỉ lệ thuận/nghịch — có phải 'chia theo tỉ lệ' (giữ, chuyển D22)?")
             if q.get("diem_uoc") and q.get("ht") == "TL":
                 lydo.append("điểm ước")
@@ -103,10 +106,16 @@ def main() -> int:
                 "nguon": f"gemini:{r.get('model')}", "da_soat": False,
                 "lech_kntt": "de-thi-lech-kntt" in meta.get("thu_muc", ""),
                 "cau": [{**{k: q[k] for k in ("cau", "ht", "diem", "muc", "dang") if k in q},
-                         "cd": dang.get(q.get("dang"), {}).get("cd"),
+                         "cd": (q.get("cd") if a.tieu_hoc and q.get("cd") is not None
+                                else dang.get(q.get("dang"), {}).get("cd")),
+                         **({"bai": q.get("bai")} if a.tieu_hoc else {}),
                          **{k: q[k] for k in ("nd", "dap_an", "diem_uoc", "co_hinh", "can_soat") if k in q}}
                         for q in cau],
             }
+            for q in ([] if a.tieu_hoc else bg["cau"]):  # 12/11/2026: Gemini hay gắn ý "vẽ hình" vào D21 (nhận biết) ⇒ D99
+                if q.get("dang") == "D21" and ("hinh" in str(q.get("cau")) or "vẽ hình" in str(q.get("nd", "")).lower()):
+                    q["dang"], q["cd"] = "D99", 0
+                    q["ghi_chu_dang"] = "ý vẽ hình bị gắn nhầm D21 ⇒ D99"
             dich.write_text(json.dumps(bg, ensure_ascii=False, indent=1) + "\n")
 
         uoc = sum(1 for q in cau if q.get("diem_uoc"))

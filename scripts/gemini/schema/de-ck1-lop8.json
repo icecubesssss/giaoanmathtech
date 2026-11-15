@@ -1,0 +1,28 @@
+{
+ "type": "object",
+ "properties": {
+  "gioi_thieu": {"type": "string"},
+  "cach_dung": {"type": "string"},
+  "bay": {"type": "array", "items": {"type": "object", "properties": {
+   "vi_tri": {"type": "string"}, "noi_dung": {"type": "string"}, "loi": {"type": "string"}, "cach": {"type": "string"}},
+   "required": ["vi_tri", "noi_dung", "loi", "cach"]}},
+  "tn": {"type": "array", "items": {"type": "object", "properties": {
+   "cau": {"type": "integer"}, "de": {"type": "string"}, "options": {"type": "array", "items": {"type": "string"}},
+   "dap": {"type": "string"}, "giai": {"type": "string"}, "nd": {"type": "string"}, "ch": {"type": "string"},
+   "muc": {"type": "string"}, "nguon": {"type": "string"}, "dang": {"type": "string"}, "giu": {"type": "boolean"}},
+   "required": ["cau", "de", "options", "dap", "giai", "nd", "ch", "muc", "nguon", "dang", "giu"]}},
+  "bai": {"type": "array", "items": {"type": "object", "properties": {
+   "label": {"type": "string"}, "level": {"type": "integer"}, "statement": {"type": "string"},
+   "dap_an": {"type": "array", "items": {"type": "string"}},
+   "mt": {"type": "array", "items": {"type": "object", "properties": {
+    "ma": {"type": "string"}, "nd": {"type": "string"}, "chu_de": {"type": "string"}, "muc": {"type": "string"},
+    "diem": {"type": "number"}, "phut": {"type": "number"}, "nguon": {"type": "string"}, "dang": {"type": "string"}},
+    "required": ["ma", "nd", "chu_de", "muc", "diem", "phut", "nguon", "dang"]}},
+   "note": {"type": "string"},
+   "hinh": {"type": "string", "description": "giu_hinh_cu | moi | khong"},
+   "tikz": {"type": "string", "description": "chỉ khi hinh = moi: \\begin{tikzpicture}…\\end{tikzpicture}"}},
+   "required": ["label", "level", "statement", "dap_an", "mt", "note", "hinh"]}},
+  "ghi_chu": {"type": "string"}
+ },
+ "required": ["gioi_thieu", "cach_dung", "bay", "tn", "bai", "ghi_chu"]
+}

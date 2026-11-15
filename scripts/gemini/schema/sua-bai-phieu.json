@@ -1,0 +1,40 @@
+{
+  "type": "object",
+  "required": [
+    "sua",
+    "ghi_chu"
+  ],
+  "properties": {
+    "sua": {
+      "type": "array",
+      "items": {
+        "type": "object",
+        "required": [
+          "label",
+          "statement",
+          "solution"
+        ],
+        "properties": {
+          "label": {
+            "type": "string"
+          },
+          "statement": {
+            "type": "string"
+          },
+          "solution": {
+            "type": "string"
+          },
+          "hints": {
+            "type": "array",
+            "items": {
+              "type": "string"
+            }
+          }
+        }
+      }
+    },
+    "ghi_chu": {
+      "type": "string"
+    }
+  }
+}

@@ -112,6 +112,7 @@ def chay(path: Path, thu: bool, tu_duyet: bool) -> bool:
     if tu_duyet:
         viec["tu_duyet"] = True
     wd = Path(tempfile.mkdtemp(prefix=f"gemini-{viec['id']}-"))
+    so_pdf = sum(1 for f in viec.get("files", []) if f.lower().endswith(".pdf"))
     for f in viec.get("files", []):
         shutil.copy2(REPO / f, wd / Path(f).name)
         if viec.get("render") and f.lower().endswith(".pdf"):
@@ -120,7 +121,9 @@ def chay(path: Path, thu: bool, tu_duyet: bool) -> bool:
             pdftoppm = shutil.which("pdftoppm") or "/opt/homebrew/bin/pdftoppm"
             pdftotext = shutil.which("pdftotext") or "/opt/homebrew/bin/pdftotext"
             subprocess.run([pdftoppm, "-r", str(viec.get("dpi", 120)), "-png",
-                            str(wd / Path(f).name), str(wd / "trang")], check=True)
+                            str(wd / Path(f).name),
+                            # nhiều PDF trong một việc ⇒ ảnh <tên-pdf>-trang-N.png cho khỏi đè nhau
+                            str(wd / (f"{goc}-trang" if so_pdf > 1 else "trang"))], check=True)
             subprocess.run([pdftotext, "-layout", str(wd / Path(f).name), str(wd / f"{goc}.txt")], check=True)
             (wd / Path(f).name).unlink()
     cmd = lenh(viec, wd)
@@ -159,6 +162,7 @@ def chay(path: Path, thu: bool, tu_duyet: bool) -> bool:
 def main() -> int:
     ap = argparse.ArgumentParser()
     ap.add_argument("--mot", help="chỉ chạy việc có id này")
+    ap.add_argument("--tien-to", help="chỉ chạy các việc có id bắt đầu bằng chuỗi này (vd l9-ck1-)")
     ap.add_argument("--thu", action="store_true", help="in lệnh, không gọi agy")
     ap.add_argument("--tu-duyet", action="store_true",
                     help="thêm --dangerously-skip-permissions (chỉ khi thợ kẹt xin quyền đọc file)")
@@ -173,6 +177,8 @@ def main() -> int:
     viec = sorted(HANG_DOI.glob("*.json"))
     if a.mot:
         viec = [p for p in viec if p.stem == a.mot]
+    if a.tien_to:
+        viec = [p for p in viec if p.stem.startswith(a.tien_to)]
     if a.gioi_han:
         viec = viec[: a.gioi_han]
     if not viec:

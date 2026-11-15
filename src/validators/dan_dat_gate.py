@@ -406,12 +406,19 @@ def check_khong_trung_de(lesson: LessonPackage) -> list[str]:
            if st.kind not in ("review", "concept") and not getattr(b, "options", None)]
     # Đề quá ngắn ("Tính độ dài đường tròn (lấy π ≈ 3,14).") không đủ ký hiệu để gọi là trùng cấu hình.
     bai = [(n, gt) for n, gt in bai if len(gt) >= 40 and len(_ky_hieu(gt)) >= 4]
+    hinh = _la_phieu_hinh(lesson)
     for i, (n1, s1) in enumerate(bai):
         for n2, s2 in bai[i + 1:]:
             chu = _SM(None, s1, s2).ratio()
             ten = _SM(None, _gia_thiet_an_ten(s1), _gia_thiet_an_ten(s2)).ratio()
             toan = _giong_ky_hieu(s1, s2)
-            if chu >= NGUONG_TRUNG_CHU or ten >= NGUONG_TRUNG_DOI_TEN or toan >= NGUONG_TRUNG_TOAN:
+            if hinh:
+                trung = chu >= NGUONG_TRUNG_CHU or ten >= NGUONG_TRUNG_DOI_TEN or toan >= NGUONG_TRUNG_TOAN
+            else:
+                # Đại số (12/11/2026, phiếu Viète 9C): che $…$ thì đề nào cũng còn "Cho phương trình $ có
+                # hai nghiệm $, $" ⇒ "đổi tên" vô nghĩa. Trùng = câu chữ gần y nguyên VÀ cùng công thức.
+                trung = chu >= NGUONG_TRUNG_CHU and toan >= NGUONG_TRUNG_TOAN
+            if trung:
                 out.append(f"dan_dat: {n1} và {n2} trùng đề (giống {max(chu, ten, toan):.0%}) — mỗi bài trong phiếu "
                            f"một đề gốc khác nhau, kể cả câu khung bài giải và đề đích; luyện cùng khuôn thì "
                            f"bốc đề KHÁC trong tab phân dạng (Thầy 04/11/2026).")

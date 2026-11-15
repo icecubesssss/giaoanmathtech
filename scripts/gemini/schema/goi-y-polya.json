@@ -1,0 +1,15 @@
+{
+  "type": "object",
+  "required": ["goi_y", "ghi_chu"],
+  "properties": {
+    "goi_y": {
+      "type": "array",
+      "items": {
+        "type": "object",
+        "required": ["label", "hints"],
+        "properties": {"label": {"type": "string"}, "hints": {"type": "array", "items": {"type": "string"}}}
+      }
+    },
+    "ghi_chu": {"type": "string"}
+  }
+}

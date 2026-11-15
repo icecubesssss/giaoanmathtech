@@ -879,6 +879,16 @@ TIEN_BO = [
     ("VDC Cực trị \\& BĐT (0,5đ)", "Min hai biến $A = 2x^2+y^2-2xy-2x+2024$", "Min hai biến $A = 2x^2+y^2+2xy+2x-2y+2028$", "Min phân thức $P = \\frac{1}{a^2+b^2} + \\frac{1}{ab}$ với $a+b=2$"),
 ]
 
+THEO_DOI = [
+    "Phần I -- Trắc nghiệm 8 câu (2,0đ)",
+    "Bài 1 -- Phép tính đa thức \\& Phân tích nhân tử (1,5đ)",
+    "Bài 2 -- Phân thức đại số (2,0đ)",
+    "Bài 3 -- Thống kê \\& Toán thực tế (1,0đ)",
+    "Bài 4 -- Hình học tổng hợp (3,0đ)",
+    "Bài 5 -- VDC Cực trị \\& BĐT (0,5đ)",
+    "\\textbf{Tổng điểm (10,0đ)}",
+]
+
 
 def bang_tien_bo():
     s = (
@@ -901,15 +911,7 @@ def bang_theo_doi():
         "\\begin{tabular}{|p{7.2cm}|c|c|c|c|}\n\\hline\n"
         "\\textbf{Bài (điểm tối đa)} & \\textbf{Đề thi 1} & \\textbf{Đề thi 2} & \\textbf{Đề thi 3} & \\textbf{Xếp loại} \\\\ \\hline\n"
     )
-    for b in [
-        "Phần I -- Trắc nghiệm 8 câu (2,0đ)",
-        "Bài 1 -- Phép tính đa thức \\& Phân tích nhân tử (1,5đ)",
-        "Bài 2 -- Phân thức đại số (2,0đ)",
-        "Bài 3 -- Thống kê \\& Toán thực tế (1,0đ)",
-        "Bài 4 -- Hình học tổng hợp (3,0đ)",
-        "Bài 5 -- VDC Cực trị \\& BĐT (0,5đ)",
-        "\\textbf{Tổng điểm (10,0đ)}",
-    ]:
+    for b in THEO_DOI:
         s += b + " & & & & \\\\ \\hline\n"
     s += "\\end{tabular}\\end{center}"
     return s
@@ -934,33 +936,31 @@ def khoi_bai(b):
 
 
 def de_json(k, D):
+    """Khung 6 bài (13/11/2026, bỏ phân thức): TN · Bài 1–2 · Bài 3–4 · Bài 5 hình · Bài 6 VDC."""
     stages = []
-
-    # Chặng 1 (review, 1): Phần I Trắc nghiệm 8 câu
     st1_blocks = [dict(type="para", text=TN_DAU)]
     for c in D["tn"]:
         st1_blocks.append(khoi_tn(c, co_loi_giai=True))
     stages.append(dict(kind=KIND[0], number=1, title="", blocks=st1_blocks))
-
-    # Chặng 2 (concept, 2): Phần II Tự luận - Bài 1
-    st2_blocks = [dict(type="para", text=TL_DAU), khoi_bai(D["bai"][0])]
-    stages.append(dict(kind=KIND[1], number=2, title="", blocks=st2_blocks))
-
-    # Chặng 3 (practice1, 3): Bài 2 Phân thức đại số
-    st3_blocks = [khoi_bai(D["bai"][1])]
-    stages.append(dict(kind=KIND[2], number=3, title="", blocks=st3_blocks))
-
-    # Chặng 4 (practice2, 4): Bài 3 Thực tế & Bài 4 Hình học
-    st4_blocks = [khoi_bai(D["bai"][2]), khoi_bai(D["bai"][3])]
-    stages.append(dict(kind=KIND[3], number=4, title="", blocks=st4_blocks))
-
-    # Chặng 5 (reflection, 5): Bài 5 VDC
-    st5_blocks = [khoi_bai(D["bai"][4]), dict(type="para", text="\\begin{center}\\textit{$-$ HẾT $-$}\\end{center}")]
-    stages.append(dict(kind=KIND[4], number=5, title="", blocks=st5_blocks))
-
-    so = k[-1]
-    tit = f"Đề kiểm tra cuối học kì I — Đề chính thức {so} (90 phút)"
+    B = D["bai"]
+    nhom = [[0, 1], [2, 3], [4], [5]] if len(B) == 6 else [[0], [1], [2, 3], [4]]
+    for i, g in enumerate(nhom):
+        bl = ([dict(type="para", text=TL_DAU)] if i == 0 else []) + [khoi_bai(B[j]) for j in g]
+        if i == len(nhom) - 1:
+            bl.append(dict(type="para", text="\\begin{center}\\textit{$-$ HẾT $-$}\\end{center}"))
+        stages.append(dict(kind=KIND[i + 1], number=i + 2, title="", blocks=bl))
+    tit = f"Đề kiểm tra cuối học kì I — Đề chính thức {k[-1]} (90 phút)"
     return dict(slug=D["slug_de"], title=tit, eyebrow=D["eyebrow"], grade_label="Lớp 8", class_tier="", theme="de_thi", stages=stages)
+
+
+def khoi_dap_an_bai(D, j):
+    b = D["bai"][j]
+    out = [dict(type="para", text=f"\\textbf{{BÀI {j + 1} ({d(sum(r[4] for r in b['mt']))} điểm).}}")]
+    if b.get("hinh_da"):
+        out.append(dict(type="figure", tikz=b["hinh_da"], width="0.66\\linewidth"))
+    out += [dict(type="para", text=a) for a in b["dap_an"]]
+    out.append(dict(type="para", text="\\textit{\\footnotesize Lưu ý chấm: " + b["note"] + "}"))
+    return out
 
 
 def mt_json(k, D):
@@ -1019,38 +1019,14 @@ def mt_json(k, D):
     b2.append(dict(type="para", text="\\textit{\\footnotesize Lưu ý chấm: " + D["bai"][0]["note"] + "}"))
     stages.append(dict(kind=KIND[1], number=2, title="Đáp án Phần I và Bài 1", blocks=b2))
 
-    # Stage 3: Đáp án Bài 2
-    b3 = [
-        dict(type="para", text=f"\\textbf{{BÀI 2 ({d(sum(r[4] for r in D['bai'][1]['mt']))} điểm).}}"),
-    ]
-    for a in D["bai"][1]["dap_an"]:
-        b3.append(dict(type="para", text=a))
-    b3.append(dict(type="para", text="\\textit{\\footnotesize Lưu ý chấm: " + D["bai"][1]["note"] + "}"))
-    stages.append(dict(kind=KIND[2], number=3, title="Đáp án Bài 2", blocks=b3))
-
-    # Stage 4: Đáp án Bài 3 và Bài 4
-    b4 = [
-        dict(type="para", text=f"\\textbf{{BÀI 3 ({d(sum(r[4] for r in D['bai'][2]['mt']))} điểm).}}"),
-    ]
-    for a in D["bai"][2]["dap_an"]:
-        b4.append(dict(type="para", text=a))
-    b4.append(dict(type="para", text="\\textit{\\footnotesize Lưu ý chấm: " + D["bai"][2]["note"] + "}"))
-
-    b4.append(dict(type="para", text=f"\\textbf{{BÀI 4 ({d(sum(r[4] for r in D['bai'][3]['mt']))} điểm).}}"))
-    if D["bai"][3].get("hinh_da"):
-        b4.append(dict(type="figure", tikz=D["bai"][3]["hinh_da"], width="0.66\\linewidth"))
-    for a in D["bai"][3]["dap_an"]:
-        b4.append(dict(type="para", text=a))
-    b4.append(dict(type="para", text="\\textit{\\footnotesize Lưu ý chấm: " + D["bai"][3]["note"] + "}"))
-    stages.append(dict(kind=KIND[3], number=4, title="Đáp án Bài 3 và Bài 4", blocks=b4))
-
-    # Stage 5: Đáp án Bài 5 và biểu điểm
-    b5 = [
-        dict(type="para", text=f"\\textbf{{BÀI 5 ({d(sum(r[4] for r in D['bai'][4]['mt']))} điểm).}}"),
-    ]
-    for a in D["bai"][4]["dap_an"]:
-        b5.append(dict(type="para", text=a))
-    b5.append(dict(type="para", text="\\textit{\\footnotesize Lưu ý chấm: " + D["bai"][4]["note"] + "}"))
+    # Stage 3–5: đáp án các bài còn lại (khung 6 bài: 2–3 · 4–5 · 6 + biểu điểm)
+    n = len(D["bai"])
+    nhom = [[1, 2], [3, 4], [5]] if n == 6 else [[1], [2, 3], [4]]
+    for i, g in enumerate(nhom[:-1]):
+        bl = [x for j in g for x in khoi_dap_an_bai(D, j)]
+        stages.append(dict(kind=KIND[i + 2], number=i + 3, title="Đáp án " + " và ".join(f"Bài {j + 1}" for j in g), blocks=bl))
+    b5 = [x for j in nhom[-1] for x in khoi_dap_an_bai(D, j)]
+    ten_b5 = "Đáp án Bài " + str(nhom[-1][0] + 1) + " và Biểu điểm tổng hợp"
 
     bd = BR.join(
         ["\\textbf{Phần I. Trắc nghiệm (2,0đ):} 8 câu x 0,25đ."]
@@ -1065,10 +1041,17 @@ def mt_json(k, D):
     )
     b5.append(dict(type="para", text=bang_tien_bo()))
     b5.append(dict(type="para", text=bang_theo_doi()))
-    stages.append(dict(kind=KIND[4], number=5, title="Đáp án Bài 5 và Biểu điểm tổng hợp", blocks=b5))
+    stages.append(dict(kind=KIND[4], number=5, title=ten_b5, blocks=b5))
 
     tit = f"Ma trận đề và đáp án chi tiết — Đề chính thức số {so}"
     return dict(slug=D["slug_mt"], title=tit, eyebrow="TÀI LIỆU GIÁO VIÊN • LỚP 8 • " + D["ten"], grade_label="Lớp 8", class_tier="", theme="de_thi", trinh_bay="thoang", stages=stages)
+
+
+# Vá khung 6 bài, bỏ phân thức (Thầy chốt 13/11/2026) — dữ liệu scripts/ck1_lop8_phu_dang.json
+import ck1_lop8_phu_dang  # noqa: E402
+
+ck1_lop8_phu_dang.ap_dung(DE, QUAN)
+TIEN_BO, THEO_DOI = ck1_lop8_phu_dang.bang_moi(DE, TIEN_BO, THEO_DOI)
 
 
 # ─────────────────────────── MAIN ───────────────────────────

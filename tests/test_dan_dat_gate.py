@@ -287,3 +287,26 @@ def test_de_ngan_khong_bi_coi_la_trung():
     a = "Tính độ dài đường tròn (lấy $\\pi \\approx 3{,}14$), bán kính cho trong bảng dưới đây."
     b = "Tính diện tích hình tròn (lấy $\\pi \\approx 3{,}14$), bán kính cho trong bảng dưới đây."
     assert not check_khong_trung_de(_les([_bai("Bài 1.", a), _bai("Bài 2.", b)]))
+
+
+def _les_ds(blocks):
+    return LessonPackage(slug="t", title="Định lí Viète", grade_label="Lớp 9 • Ôn vào 10",
+                         eyebrow="ĐẠI SỐ — CHƯƠNG VI", class_tier="C",
+                         stages=[{"kind": "practice2", "number": 4, "title": "Luyện tập 2", "blocks": blocks}])
+
+
+_VIETE = ("[VD] Cho phương trình {pt} có hai nghiệm $x_1$, $x_2$ (bộ đề Vào 10). Không giải phương trình, "
+          "tính $A=\\dfrac{{x_1}}{{x_2}}+\\dfrac{{x_2}}{{x_1}}$.")
+
+
+def test_dai_so_khac_phuong_trinh_khong_bi_coi_la_trung():
+    """Phiếu Viète 9C 12/11: Bài 16 ($x^2+x-6=0$) và Bài 33 ($2x^2-x-5=0$) cùng khuôn, khác đề."""
+    a = _bai("Bài 16.", _VIETE.format(pt="$x^2+x-6=0$"), level=3)
+    b = _bai("Bài 33.", _VIETE.format(pt="$2x^2-x-5=0$"), level=3)
+    assert not check_khong_trung_de(_les_ds([a, b]))
+
+
+def test_dai_so_cung_phuong_trinh_van_bi_chan():
+    a = _bai("Bài 16.", _VIETE.format(pt="$x^2+x-6=0$"), level=3)
+    b = _bai("Bài 17.", _VIETE.format(pt="$x^2+x-6=0$"), level=3)
+    assert check_khong_trung_de(_les_ds([a, b]))

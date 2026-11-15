@@ -1,0 +1,27 @@
+{
+  "type": "object",
+  "properties": {
+    "y": {
+      "type": "array",
+      "items": {
+        "type": "object",
+        "properties": {
+          "nhan": {"type": "string"},
+          "de": {"type": "string"},
+          "buoc": {
+            "type": "array",
+            "items": {
+              "type": "object",
+              "properties": {"text": {"type": "string"}, "diem": {"type": "number"}},
+              "required": ["text", "diem"]
+            }
+          },
+          "ma_tran": {"type": "string"}
+        },
+        "required": ["nhan", "de", "buoc", "ma_tran"]
+      }
+    },
+    "ghi_chu": {"type": "string"}
+  },
+  "required": ["y", "ghi_chu"]
+}

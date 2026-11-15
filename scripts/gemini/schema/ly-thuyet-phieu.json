@@ -1,0 +1,56 @@
+{
+  "type": "object",
+  "required": [
+    "opener_text",
+    "concept_blocks",
+    "mindmap",
+    "teacher_notes",
+    "ghi_chu"
+  ],
+  "properties": {
+    "opener_text": {
+      "type": "string"
+    },
+    "concept_blocks": {
+      "type": "array",
+      "items": {
+        "type": "object"
+      }
+    },
+    "mindmap": {
+      "type": "object"
+    },
+    "teacher_notes": {
+      "type": "object",
+      "required": [
+        "review",
+        "concept",
+        "practice1",
+        "practice2"
+      ],
+      "properties": {
+        "review": {
+          "type": "string"
+        },
+        "concept": {
+          "type": "string"
+        },
+        "practice1": {
+          "type": "string"
+        },
+        "practice2": {
+          "type": "string"
+        },
+        "reflection": {
+          "type": "string"
+        }
+      }
+    },
+    "ghi_chu": {
+      "type": "string"
+    },
+    "review_note": {
+      "type": "string"
+    }
+  }
+}

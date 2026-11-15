@@ -205,6 +205,16 @@ def _seg_mode(seg) -> str:
     return "textonly"
 
 
+_TIEU_DE_SLIDE = ("heading", "part")
+
+
+def _chi_tieu_de(segs: list[dict]) -> bool:
+    """Segment cuối chỉ chứa tiêu đề (para heading/part), chưa có hình ⇒ khối kế tiếp dùng chung slide."""
+    return bool(segs and segs[-1]["text"] and not segs[-1]["figures"]
+                and all(getattr(x, "type", "") == "para" and getattr(x, "variant", "") in _TIEU_DE_SLIDE
+                        for x in segs[-1]["text"]))
+
+
 def group_slide_segments(blocks):
     """Gom blocks của một frame slide thành các "đơn vị dạy" để bố cục đẹp.
 
@@ -231,12 +241,19 @@ def group_slide_segments(blocks):
             segs[-1]["figures"].append(b)
             continue
         if typ == "para":
+            if getattr(b, "variant", "") in _TIEU_DE_SLIDE:
+                # Tiêu đề "Mạch 2 …"/"Bậc 1 …" là của KHỐI SAU: dính vào bài đứng trước thì slide
+                # bài đó phải co cả khối, chữ còn tí xíu (phiếu C ch.X 9C, 12/11/2026).
+                if not _chi_tieu_de(segs):
+                    segs.append({"text": [], "figures": []})
+                segs[-1]["text"].append(b)
+                continue
             prev = segs[-1]["text"][-1] if (segs and segs[-1]["text"]) else None
             if getattr(prev, "type", "") != "problem":
                 segs.append({"text": [], "figures": []})
             segs[-1]["text"].append(b)
             continue
-        if typ in HEADERS or not segs:
+        if (typ in HEADERS or not segs) and not _chi_tieu_de(segs):
             segs.append({"text": [], "figures": []})
         # Hình khai bằng TRƯỜNG `figure` (khuôn tách bố cục 22/09/2026) của bài/ví dụ:
         # đưa sang cột phải như block `figure`. Thiếu dòng này thì slide MẤT HÌNH —
@@ -360,21 +377,28 @@ def tach_loi_giai(text: str) -> tuple[str, str]:
 
 _Y_CON = re.compile(r"\[\[br\]\]\s*(?=\\textbf\{?a\)|a\))")
 _Y_CON_12 = re.compile(r"\[\[br\]\]\s*(?=\\textbf\{?2\)|2\))")
+_BLANK_MARKER = re.compile(r"\[\[(?:m?blank)(?::[^\]]+)?\]\]|\\l?dots\b")
+_ENV_GUARD = re.compile(r"\\begin\{(?:minipage|tabular|tikzpicture|center|array)\}")
+_COLON_BR = re.compile(r":\s*\[\[br\]\]\s*")
+_SOL_START_BR = re.compile(
+    r"\[\[br\]\]\s*(?=(?:\[(?:NB|TH|VD|VDC)\]\s*)?"
+    r"(?:Xét\s|Trong\s|Ta có\s|Vì\s|Từ\s|Vậy\s|Suy ra\s|\(1\)|[-•—]\s|\[\[(?:m?blank)|\$\s*\\?(?:widehat|triangle|Rightarrow)))"
+)
 
 
 def tach_y_con(statement: str) -> tuple[str, str]:
-    """Cắt đề thành (ĐỀ CHUNG, CÁC Ý a) b) c)…) ở ý đầu tiên.
+    """Cắt đề thành (ĐỀ CHUNG, CÁC Ý a) b) c)… hoặc KHUNG ĐIỀN KHUYẾT) ở phần cần đặt sau hình.
 
     Thầy chốt 22/09/2026: *"với những bài trắc nghiệm hay điền khuyết thì sẽ là đề bài
-    trước → Hình → các đáp án / các câu điền khuyết"*. Các ý con vốn nằm chung trong
-    `statement` nối bằng `[[br]]`, nên nếu in cả cục rồi mới tới hình thì HS phải đọc
-    ý a), b) trước khi nhìn thấy hình mà ý đó nói về — ngược chiều tư duy.
+    trước → Hình → các đáp án / các câu điền khuyết"*. Các ý con hay khung bài giải điền khuyết
+    nằm chung trong `statement` nối bằng `[[br]]`, nên nếu không tách thì HS đọc ý/bài giải
+    trước khi nhìn thấy hình, đồng thời `_dec` vượt 340 ký tự làm hình rớt sang trang sau.
 
     Với bài có cả ý 1) và ý 2) (như Bài IV đề thi vào 10 / đề học kì 1 gồm phần 1 thực tế
     và phần 2 hình đường tròn): hình minh hoạ b.figure là của câu 1), phải được đặt ngay sau
     câu 1) và TRƯỚC câu 2). Do đó cắt tại ý 2) để hình nằm đúng vị trí.
 
-    Không có ý con ⇒ trả (toàn bộ, "")."""
+    Không có ý con và không có khung điền khuyết sau `[[br]]` ⇒ trả (toàn bộ, "")."""
     st = statement or ""
     if "1)" in st:
         m12 = _Y_CON_12.search(st)
@@ -383,6 +407,14 @@ def tach_y_con(statement: str) -> tuple[str, str]:
     m = _Y_CON.search(st)
     if m:
         return st[:m.start()].rstrip(), st[m.end():].lstrip()
+    if "[[br]]" in st and _BLANK_MARKER.search(st) and not _ENV_GUARD.search(st):
+        for pat, keep_colon in ((_COLON_BR, True), (_SOL_START_BR, False)):
+            mc = pat.search(st)
+            if mc and not _BLANK_MARKER.search(st[:mc.start()]) and _BLANK_MARKER.search(st[mc.end():]):
+                head = st[:mc.start() + (1 if keep_colon else 0)].rstrip()
+                tail = st[mc.end():].lstrip()
+                if head and tail:
+                    return head, tail
     return st, ""
 
 

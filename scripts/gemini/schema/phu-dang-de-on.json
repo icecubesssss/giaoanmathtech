@@ -1,0 +1,162 @@
+{
+ "type": "object",
+ "properties": {
+  "bai3": {
+   "type": "object",
+   "properties": {
+    "statement": {
+     "type": "string"
+    },
+    "dap_an": {
+     "type": "array",
+     "items": {
+      "type": "string"
+     }
+    },
+    "mt": {
+     "type": "array",
+     "items": {
+      "type": "object",
+      "properties": {
+       "ma": {
+        "type": "string"
+       },
+       "nd": {
+        "type": "string"
+       },
+       "chu_de": {
+        "type": "string"
+       },
+       "muc": {
+        "type": "string"
+       },
+       "diem": {
+        "type": "number"
+       },
+       "phut": {
+        "type": "number"
+       },
+       "nguon": {
+        "type": "string"
+       }
+      },
+      "required": [
+       "ma",
+       "nd",
+       "chu_de",
+       "muc",
+       "diem",
+       "phut",
+       "nguon"
+      ]
+     }
+    },
+    "note": {
+     "type": "string"
+    }
+   },
+   "required": [
+    "statement",
+    "dap_an",
+    "mt",
+    "note"
+   ]
+  },
+  "bai4": {
+   "type": "object",
+   "properties": {
+    "statement": {
+     "type": "string"
+    },
+    "dap_an": {
+     "type": "array",
+     "items": {
+      "type": "string"
+     }
+    },
+    "mt": {
+     "type": "array",
+     "items": {
+      "type": "object",
+      "properties": {
+       "ma": {
+        "type": "string"
+       },
+       "nd": {
+        "type": "string"
+       },
+       "chu_de": {
+        "type": "string"
+       },
+       "muc": {
+        "type": "string"
+       },
+       "diem": {
+        "type": "number"
+       },
+       "phut": {
+        "type": "number"
+       },
+       "nguon": {
+        "type": "string"
+       }
+      },
+      "required": [
+       "ma",
+       "nd",
+       "chu_de",
+       "muc",
+       "diem",
+       "phut",
+       "nguon"
+      ]
+     }
+    },
+    "note": {
+     "type": "string"
+    }
+   },
+   "required": [
+    "statement",
+    "dap_an",
+    "mt",
+    "note"
+   ]
+  },
+  "bay": {
+   "type": "array",
+   "items": {
+    "type": "object",
+    "properties": {
+     "vi_tri": {
+      "type": "string"
+     },
+     "noi_dung": {
+      "type": "string"
+     },
+     "loi": {
+      "type": "string"
+     },
+     "cach": {
+      "type": "string"
+     }
+    },
+    "required": [
+     "vi_tri",
+     "noi_dung",
+     "loi",
+     "cach"
+    ]
+   }
+  },
+  "ghi_chu": {
+   "type": "string"
+  }
+ },
+ "required": [
+  "bai3",
+  "bai4",
+  "bay",
+  "ghi_chu"
+ ]
+}

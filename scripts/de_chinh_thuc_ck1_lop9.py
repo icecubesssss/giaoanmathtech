@@ -4,6 +4,7 @@ Sinh 3 đề kiểm tra chính thức (Đề 1, Đề 2, Đề 3) + 3 file Ma tr
 vào inputs/seeds/lop-9/bo-de/de-on-tap-cuoi-ki-1/.
 Tất cả các đề bốc từ đề thi thật của các trường/quận Hà Nội chưa dùng ở 3 đề ôn tập.
 Tỉ lệ: NB 20% · TH 55-60% · VD 17-20% · VDC 5% (bám sát thống kê 11 đề CK1 Hà Nội 2025-2026).
+11/11/2026: thêm 2 ý căn thức dạng số vào Bài III (2,5đ), Bài II còn 1,5đ — xem ck1_lop9_can_bo_sung.py.
 Đề HS căn chỉnh đúng 2 trang (Trang 1: Bài I, II, III; Trang 2: Bài IV, V).
 """
 import json
@@ -16,6 +17,7 @@ sys.path.insert(0, str(ROOT))
 sys.path.insert(0, str(Path(__file__).resolve().parent))
 
 from de_chinh_thuc_ck1_lop9_hinh import TOA_DO as T  # noqa: E402
+from ck1_lop9_can_bo_sung import QUAN_MOI, ap_dung, ban_do_dang  # noqa: E402
 
 OUT = ROOT / "inputs/seeds/lop-9/de-on-tap-cuoi-ki-1"
 OUT.mkdir(parents=True, exist_ok=True)
@@ -98,23 +100,28 @@ TIKZ_HAIDANG = (
 
 
 def hinh_ct1_da():
+    # A(-2,0), B(2,0), R = 2; C(-1, √3) ⇒ AC = 2 < BC = 2√3 (đúng giả thiết AC < BC).
+    # Tiếp tuyến tại C cắt tiếp tuyến tại A (x = -2) tại M(-2, 2/√3); I = trung điểm AC;
+    # K = MB ∩ CH = (-1, √3/2) là trung điểm CH; E = BC ∩ MA = (-2, 4/√3), M là trung điểm AE.
     return (
         "\\begin{tikzpicture}[scale=1.1,line width=0.8pt]\n"
         "  \\coordinate (O) at (0,0);\\coordinate (A) at (-2,0);\\coordinate (B) at (2,0);\n"
-        "  \\coordinate (C) at (1,1.732);\\coordinate (H) at (1,0);\\coordinate (M) at (-2,3.464);\n"
-        "  \\coordinate (K) at (1,0.866);\n"
-        "  \\draw (-2.5,0)--(2.5,0);\\draw (A)--(M)--(C)--(B);\\draw (O)--(C);\\draw (M)--(B);\n"
-        "  \\draw (C)--(H);\\draw[dashed] (O)--(M);\n"
+        "  \\coordinate (C) at (-1,1.732);\\coordinate (H) at (-1,0);\\coordinate (M) at (-2,1.155);\n"
+        "  \\coordinate (K) at (-1,0.866);\\coordinate (I) at (-1.5,0.866);\\coordinate (E) at (-2,2.309);\n"
+        "  \\draw (-2.5,0)--(2.5,0);\\draw (A)--(E);\\draw (M)--(C);\\draw (E)--(B);\\draw (A)--(C);\n"
+        "  \\draw (O)--(C);\\draw (M)--(B);\\draw (C)--(H);\\draw[dashed] (O)--(M);\n"
         "  \\draw[gray!60] (0,0) circle (2.0);\n"
         "  \\draw[line width=0.5pt] (-2,0.2)--(-1.8,0.2)--(-1.8,0);\n"
-        "  \\draw[line width=0.5pt] (1,0.2)--(0.8,0.2)--(0.8,0);\n"
+        "  \\draw[line width=0.5pt] (-1,0.2)--(-0.8,0.2)--(-0.8,0);\n"
         "  \\fill (O) circle (1.5pt);\\node[below] at (O) {$O$};\n"
         "  \\fill (A) circle (1.5pt);\\node[below left] at (A) {$A$};\n"
         "  \\fill (B) circle (1.5pt);\\node[below right] at (B) {$B$};\n"
         "  \\fill (C) circle (1.5pt);\\node[above right] at (C) {$C$};\n"
         "  \\fill (H) circle (1.5pt);\\node[below] at (H) {$H$};\n"
-        "  \\fill (M) circle (1.5pt);\\node[above left] at (M) {$M$};\n"
+        "  \\fill (M) circle (1.5pt);\\node[left] at (M) {$M$};\n"
         "  \\fill (K) circle (1.5pt);\\node[right=2pt] at (K) {$K$};\n"
+        "  \\fill (I) circle (1.5pt);\\node[above=2pt] at (I) {$I$};\n"
+        "  \\fill (E) circle (1.5pt);\\node[left] at (E) {$E$};\n"
         "\\end{tikzpicture}"
     )
 
@@ -339,7 +346,7 @@ DE_CT = {
                     + BR
                     + "a) \\textbf{(1,0 điểm)} Chứng minh bốn điểm $M, A, O, C$ cùng thuộc một đường tròn."
                     + BR
-                    + "b) \\textbf{(1,0 điểm)} Chứng minh $OM \\perp AC$ và $MC^2 = MH \\cdot MO$."
+                    + "b) \\textbf{(1,0 điểm)} Gọi $I$ là giao điểm của $OM$ và $AC$. Chứng minh $OM \\perp AC$ tại $I$ và $MC^2 = MI \\cdot MO$."
                     + BR
                     + "c) \\textbf{(1,0 điểm)} Đoạn thẳng $MB$ cắt $CH$ tại $K$. Chứng minh rằng $K$ là trung điểm của $CH$."
                 ),
@@ -362,27 +369,38 @@ DE_CT = {
                         ("Do đó bốn điểm $M, A, O, C$ cùng thuộc đường tròn đường kính $MO$.", 0.25),
                     ]),
                     y("2b)", 1.0, [
-                        ("Ta có $MA = MC$ (tính chất hai tiếp tuyến cắt nhau) và $OA = OC = R$."),
-                        ("Suy ra $OM$ là đường trung trực của $AC$, do đó $OM \\perp AC$ tại trung điểm $I$.", 0.25),
-                        ("Xét tam giác $MCO$ vuông tại $C$, có đường cao $CI$: $MC^2 = MI \\cdot MO$ (hệ quả tam giác đồng dạng)."),
-                        ("Xét $\\triangle MCI$ và $\\triangle MOC$: có $\\widehat{MCI} = \\widehat{MOC}$ và $\\widehat{M}$ chung $\\Rightarrow \\triangle MCI \\backsim \\triangle MOC$ (g.g).", 0.25),
-                        ("Suy ra $\\dfrac{MC}{MO} = \\dfrac{MI}{MC} \\Rightarrow MC^2 = MI \\cdot MO$.", 0.5),
+                        ("Ta có $MA = MC$ (tính chất của hai tiếp tuyến cắt nhau) và $OA = OC = R$."),
+                        ("Suy ra $M$ và $O$ cùng cách đều hai điểm $A$ và $C$."),
+                        ("Do đó $OM$ là đường trung trực của đoạn thẳng $AC$.", 0.25),
+                        ("Mà $I$ là giao điểm của $OM$ và $AC$, suy ra $OM \\perp AC$ tại $I$.", 0.25),
+                        ("Ta có $MC$ là tiếp tuyến của $(O)$ tại $C$ nên $MC \\perp OC$, suy ra $\\widehat{MCO} = 90^\\circ$."),
+                        ("Xét $\\triangle MIC$ và $\\triangle MCO$ có $\\widehat{MIC} = \\widehat{MCO} = 90^\\circ$ (do $OM \\perp AC$ tại $I$ và $MC \\perp OC$) và $\\widehat{CMO}$ là góc chung."),
+                        ("Suy ra $\\triangle MIC \\backsim \\triangle MCO$ (g.g).", 0.25),
+                        ("Suy ra $\\dfrac{MI}{MC} = \\dfrac{MC}{MO}$ (tỉ số các cạnh tương ứng)."),
+                        ("Do đó $MC^2 = MI \\cdot MO$.", 0.25),
                     ]),
                     y("2c)", 1.0, [
-                        ("Vì $MA \\perp AB$ và $CH \\perp AB$ nên $CH \\parallel MA$."),
-                        ("Trong $\\triangle MAB$, vì $CK \\parallel MA$ (do $K \\in CH$) nên theo hệ quả định lí Thalès:"),
-                        ("$\\dfrac{CK}{MA} = \\dfrac{BK}{BM}$ (1)"),
-                        ("Kéo dài $BC$ cắt $MA$ tại $E$. Tam giác $ABC$ vuông tại $C$ có $AC \\perp BE$."),
-                        ("Chứng minh được $M$ là trung điểm của $AE$.", 0.25),
-                        ("Trong tam giác $EBA$, vì $CK \\parallel EA$ nên $\\dfrac{CK}{EA} = \\dfrac{BK}{BE}$.", 0.25),
-                        ("Áp dụng định lí Thalès cho $KH$ và $CK$ suy ra $CK = KH$.", 0.25),
+                        ("Ta có $MA \\perp AB$ (do $MA$ là tiếp tuyến của $(O)$ tại $A$) và $CH \\perp AB$ (theo giả thiết)."),
+                        ("Suy ra $CH \\parallel MA$ (cùng vuông góc với $AB$)."),
+                        ("Gọi $E$ là giao điểm của tia $BC$ và đường thẳng $MA$.", 0.25),
+                        ("Ta có $\\widehat{ACB} = 90^\\circ$ (góc nội tiếp chắn nửa đường tròn $(O)$)."),
+                        ("Suy ra $\\widehat{ACE} = 90^\\circ$ (do hai góc $\\widehat{ACB}$ và $\\widehat{ACE}$ kề bù) nên $\\triangle ACE$ vuông tại $C$."),
+                        ("Lại có $MA = MC$ (tính chất của hai tiếp tuyến cắt nhau) nên $\\triangle MAC$ cân tại $M$, suy ra $\\widehat{MAC} = \\widehat{MCA}$."),
+                        ("Trong $\\triangle ACE$ vuông tại $C$, ta có $\\widehat{MEC} = 90^\\circ - \\widehat{MAC}$ và $\\widehat{MCE} = 90^\\circ - \\widehat{MCA}$."),
+                        ("Suy ra $\\widehat{MEC} = \\widehat{MCE}$, do đó $\\triangle MCE$ cân tại $M$."),
+                        ("Suy ra $ME = MC$, mà $MA = MC$ nên $ME = MC = MA$.", 0.25),
+                        ("Vì $CH \\parallel MA$ và ba điểm $E, M, A$ thẳng hàng nên $CK \\parallel ME$ và $KH \\parallel MA$."),
+                        ("Xét $\\triangle BME$ có $CK \\parallel ME$, suy ra $\\dfrac{CK}{ME} = \\dfrac{BK}{BM}$ (hệ quả của định lí Thalès)."),
+                        ("Xét $\\triangle BMA$ có $KH \\parallel MA$, suy ra $\\dfrac{KH}{MA} = \\dfrac{BK}{BM}$ (hệ quả của định lí Thalès).", 0.25),
+                        ("Suy ra $\\dfrac{CK}{ME} = \\dfrac{KH}{MA}$ $\\left(\\text{cùng bằng } \\dfrac{BK}{BM}\\right)$."),
+                        ("Mà $ME = MA$ (chứng minh trên) nên $CK = KH$."),
                         ("Vậy $K$ là trung điểm của $CH$.", 0.25),
                     ]),
                 ],
                 "mt": [
                     ("IVa", "Toán thực tế tỉ số lượng giác tan tính chiều cao cây cau", "HH IV", "NB", 0.5, 5, "THCS Cầu Diễn (2025–2026)"),
                     ("IVb1", "Bốn điểm cùng thuộc một đường tròn", "HH V", "TH", 1.0, 7, "THCS Phúc Đồng (2025–2026)"),
-                    ("IVb2", "Đường trung trực và hệ thức tiếp tuyến", "HH V", "TH", 1.0, 10, "THCS Dịch Vọng (2025–2026)"),
+                    ("IVb2", "Đường trung trực; $MC^2 = MI \\cdot MO$ qua đồng dạng", "HH V", "TH", 1.0, 10, "THCS Dịch Vọng (2025–2026)"),
                     ("IVb3", "Chứng minh trung điểm bằng hệ quả định lí Thalès", "HH V", "VD", 1.0, 12, "THCS Phúc Đồng (2025–2026)"),
                 ],
                 "note": "Câu c là bài toán kinh điển về tỉ số Thalès và trung điểm trong hình học đường tròn.",
@@ -852,12 +870,13 @@ KIND = ["review", "concept", "practice1", "practice2", "reflection"]
 
 def bang_mt(rows):
     s = (
-        "\\vspace{-6pt}\\begin{center}\\footnotesize\\renewcommand{\\arraystretch}{1.05}\n"
-        "\\begin{tabular}{|c|p{5.4cm}|c|c|c|c|p{2.9cm}|}\n\\hline\n"
+        "\\vspace{-6pt}\\begin{center}\\scriptsize\\renewcommand{\\arraystretch}{1.0}\n"  # 11/11: 15 dòng ⇒ cỡ nhỏ để vừa trang 1
+        "\\begin{tabular}{|c|p{5.2cm}|c|c|c|c|p{3.5cm}|}\n\\hline\n"
         "\\textbf{Câu} & \\textbf{Nội dung kiến thức, kĩ năng} & \\textbf{Chương} & \\textbf{Mức} & \\textbf{Điểm} & \\textbf{Phút} & \\textbf{Nguồn đề} \\\\ \\hline\n"
     )
     tong_d = tong_p = 0
     for c, nd, ch, m, di, ph, ng in rows:
+        ng = ng.replace("(2025–2026)", "(25–26)").replace("(2024–2025)", "(24–25)")
         s += f"{c} & {nd} & {ch} & {m} & {d(di)} & {ph} & {ng} \\\\ \\hline\n"
         tong_d += di
         tong_p += ph
@@ -890,9 +909,10 @@ def bang_muc(rows):
 
 def bang_bay(rows):
     s = (
-        "\\noindent\\textbf{CẨM NANG CHUYÊN ĐỀ: CÁC BẪY TỬ HUYỆT \\& LỖI SAI THƯỜNG GẶP} [[br]] \\par\\vspace{-6pt}\n"
-        "\\begin{center}\\footnotesize\\renewcommand{\\arraystretch}{1.1}\n"
-        "\\begin{tabular}{|c|p{3.6cm}|p{4.3cm}|p{4.7cm}|}\n\\hline\n"
+        # 11/11: tiêu đề nằm TRONG bảng (dòng đầu) ⇒ không bao giờ mồ côi cuối trang
+        "\\begin{center}\\scriptsize\\renewcommand{\\arraystretch}{1.05}\n"
+        "\\begin{tabular}{|c|p{3.6cm}|p{4.5cm}|p{5.0cm}|}\n\\hline\n"
+        "\\multicolumn{4}{|l|}{\\textbf{CẨM NANG CHUYÊN ĐỀ: CÁC BẪY TỬ HUYỆT \\& LỖI SAI THƯỜNG GẶP}} \\\\ \\hline\n"
         "\\textbf{Câu} & \\textbf{Bẫy đánh lừa} & \\textbf{Lỗi sai hay gặp (Mất điểm)} & \\textbf{Cách xử lý an toàn (Ăn trọn điểm)} \\\\ \\hline\n"
     )
     for c, b, l, k in rows:
@@ -909,16 +929,16 @@ TIEN_BO_CT = [
         "Ia: Tính giá trị $x = 9$; Ib: Rút gọn mẫu $x-9$; Ic: Tìm $x$ nguyên để $P$ nhận giá trị nguyên",
     ),
     (
-        "Toán thực tế lập hệ (2,0đ)",
+        "Toán thực tế lập hệ (1,5đ)",
         "Hai đội xe tải vận chuyển hàng (chuyển động thực tế)",
         "Năng suất máy may áo bảo hộ lao động (năng suất công việc)",
         "Hai xe máy và ô tô cùng khởi hành từ A đến B (chuyển động đuổi)",
     ),
     (
-        "Giải PT, BPT, hệ (2,0đ)",
-        "IIIa: Hệ cộng đại số; IIIb: PT ẩn ở mẫu; IIIc: BPT đổi chiều",
-        "IIIa: Hệ ẩn phụ; IIIb: PT tích bậc 3; IIIc: BPT nghiệm nguyên lớn nhất",
-        "IIIa: Hệ phương pháp thế; IIIb: PT quy về bậc hai; IIIc: BPT phân thức $\\le 0$",
+        "Giải PT, BPT, hệ, căn số (2,5đ)",
+        "IIIa: Hệ cộng đại số; IIIb: PT ẩn ở mẫu; IIIc: BPT đổi chiều; IIId, IIIe: Tính biểu thức số chứa căn",
+        "IIIa: Hệ ẩn phụ; IIIb: PT tích bậc 3; IIIc: BPT nghiệm nguyên lớn nhất; IIId: Rút gọn biểu thức số; IIIe: PT $\\sqrt{(x-3)^2} = 2x-1$",
+        "IIIa: Hệ phương pháp thế; IIIb: PT quy về bậc hai; IIIc: BPT phân thức $\\le 0$; IIId, IIIe: Tính biểu thức số, trục căn ở mẫu",
     ),
     (
         "Lượng giác thực tế (0,5đ)",
@@ -928,7 +948,7 @@ TIEN_BO_CT = [
     ),
     (
         "Hình học đường tròn (3,0đ)",
-        "4 điểm đường tròn; $OM \\perp AC$; hệ thức tiếp tuyến $MC^2 = MH \\cdot MO$; trung điểm qua Thalès",
+        "4 điểm đường tròn; $OM \\perp AC$; $MC^2 = MI \\cdot MO$ qua đồng dạng; trung điểm qua Thalès",
         "Tiếp tuyến $Ax, By$; $\\widehat{COD} = 90^\\circ$; tích $AC \\cdot BD = R^2$; tiếp tuyến thứ hai",
         "Tiếp tuyến cắt nhau; cát tuyến; tiếp tuyến vuông góc; 3 điểm thẳng hàng qua góc nội tiếp",
     ),
@@ -964,8 +984,8 @@ def bang_theo_doi_ct():
     )
     for b in [
         "Bài I -- Căn thức và câu hỏi phụ (2,0đ)",
-        "Bài II -- Toán thực tế lập hệ PT (2,0đ)",
-        "Bài III -- Phương trình, BPT, Hệ PT (2,0đ)",
+        "Bài II -- Toán thực tế lập hệ PT (1,5đ)",
+        "Bài III -- Phương trình, BPT, Hệ PT, căn thức dạng số (2,5đ)",
         "Bài IV -- Lượng giác \\& Hình đường tròn (3,5đ)",
         "Bài V -- Cực trị / Bất đẳng thức VDC (0,5đ)",
         "\\textbf{Tổng điểm (10,0đ)}",
@@ -992,6 +1012,8 @@ def de_json(k, D):
         if b.get("figure"):
             blk["figure"] = b["figure"]
         blocks = [blk]
+        if b["label"] == "Bài IV.":  # 11/11: Bài III dài thêm 2 ý ⇒ tiêu đề Bài IV mồ côi cuối trang 1; trang 2 = Bài IV, V
+            blocks.insert(0, dict(type="para", text="\\stageneedspace{6cm}"))
         if i == len(D["bai"]) - 1:
             blocks.append(dict(type="para", text="\\begin{center}\\textit{$-$ HẾT $-$}\\end{center}"))
         stages.append(dict(kind=KIND[i], number=i + 1, title="", blocks=blocks))
@@ -1025,7 +1047,6 @@ def mt_json(k, D):
             + s_mt,
         ),
         dict(type="para", text=s_muc),
-        dict(type="para", text=bang_bay(D["bay"])),
         dict(
             type="para",
             text="\\textbf{QUY TẮC CHẤM THI CHÍNH THỨC:}"
@@ -1036,6 +1057,7 @@ def mt_json(k, D):
             + BR
             + "3. Mỗi bước biến đổi viết trên một dòng riêng biệt, có điểm thành phần chi tiết tương ứng.",
         ),
+        dict(type="para", text=bang_bay(D["bay"])),
     ]
     stages.append(dict(kind="review", number=1, title=f"Ma trận Đề chính thức số {so}", blocks=b1))
 
@@ -1092,6 +1114,9 @@ def mt_json(k, D):
 
 
 def main():
+    QUAN.update(QUAN_MOI)
+    ap_dung(DE_CT, y, BR)
+    TIEN_BO_CT[:] = ban_do_dang(DE_CT)
     NGUON, NGUON_BO = kiem_nguon()
     print("✓ Kiểm tra rải nguồn 3 Đề Chính thức thành công:")
     for _k, (_n, _q) in NGUON.items():

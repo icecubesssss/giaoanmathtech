@@ -18,6 +18,8 @@ from pathlib import Path
 ROOT = Path(__file__).resolve().parent.parent
 sys.path.insert(0, str(ROOT / "scripts"))
 from de_on_tap_ck1_lop9_hinh import TOA_DO as T  # noqa: E402
+from ck1_lop9_can_bo_sung import QUAN_MOI, ap_dung, ban_do_dang  # noqa: E402
+from ck1_lop9_phu_dang import NHOM_BAN_DO_ON, ap_dung_phu_dang  # noqa: E402
 
 OUT = ROOT / "inputs/seeds/lop-9/de-on-tap-cuoi-ki-1"
 OUT.mkdir(parents=True, exist_ok=True)
@@ -289,9 +291,9 @@ DE["on-1"] = dict(
         "\\textbf{ĐỀ ÔN TẬP SỐ 1 -- CUỐI HỌC KÌ I TOÁN 9} (90 phút -- Thang điểm 10 -- 5 bài tự luận)."
         + BR
         + "\\textbf{Cấu trúc chuẩn:} Bám sát cấu trúc đề thi Cuối Kì I và Đề tuyển sinh Lớp 10 của các quận/huyện Hà Nội năm 2024–2025 và 2025–2026: "
-        "Bài I (2,0đ) Rút gọn và câu hỏi phụ căn bậc hai · Bài II (2,0đ) Lập hệ phương trình thực tế · "
-        "Bài III (2,0đ) Phương trình tích, ẩn ở mẫu, BPT và hệ phương trình · "
-        "Bài IV (3,5đ) Tỉ số lượng giác thực tế (0,5đ) và Hình học đường tròn (3,0đ) · "
+        "Bài I (2,0đ) Rút gọn và câu hỏi phụ căn bậc hai · Bài II (1,5đ) Lập hệ phương trình thực tế · "
+        "Bài III (2,5đ) Hệ phương trình, phương trình tích, BPT, căn thức dạng số, trục căn thức ở mẫu (Lý Sơn, Ngô Sĩ Liên, Ngọc Thụy) · "
+        "Bài IV (3,5đ) Tỉ số lượng giác thực tế và độ dài cung tròn quạt giấy (1,0đ), Hình học đường tròn hai tiếp tuyến (2,5đ) · "
         "Bài V (0,5đ) Bài toán tối ưu thực tế."
     ),
     bai=[
@@ -581,15 +583,15 @@ DE["on-2"] = dict(
     slug_de="de-on-tap-cuoi-ki-1-so-2",
     slug_mt="ma-tran-va-dap-an-on-tap-ck1-so-2",
     eyebrow="LỚP 9 • ĐỀ ÔN TẬP CUỐI KÌ I — SỐ 2",
-    cach_dung="Làm sau khi đã chữa Đề ôn 1. Đề 2 nâng một nấc suy luận: câu phụ căn thức chứa điều kiện số nguyên tố, hệ phương trình đặt ẩn phụ, bất phương trình rút gọn đa thức, bài hình chứng minh ba điểm thẳng hàng qua bổ đề hình thang.",
+    cach_dung="Làm sau Đề ôn 1. Đề 2 nâng một nấc: tìm $x$ thực để $P$ nguyên (chặn miền giá trị), hệ đặt ẩn phụ, phương trình chứa căn, ba điểm thẳng hàng.",
     gioi_thieu=(
         "\\textbf{ĐỀ ÔN TẬP SỐ 2 -- CUỐI HỌC KÌ I TOÁN 9} (90 phút -- Thang điểm 10 -- 5 bài tự luận)."
         + BR
         + "\\textbf{Cấu trúc nâng cao:} "
         "Bài I (2,0đ) Căn thức có câu hỏi tìm số nguyên tố (Phòng Ba Đình) · "
-        "Bài II (2,0đ) Lập hệ phương trình bài toán tài chính lãi suất (THCS Đống Đa) · "
-        "Bài III (2,0đ) Hệ phương trình đặt ẩn phụ, phương trình phân thức ẩn ở mẫu, BPT đa thức · "
-        "Bài IV (3,5đ) Tàu ngầm lặn góc nghiêng và Nửa đường tròn chứng minh ba điểm thẳng hàng (Phòng Thanh Trì) · "
+        "Bài II (1,5đ) Lập hệ phương trình bài toán tài chính lãi suất (THCS Đống Đa) · "
+        "Bài III (2,5đ) Hệ phương trình đặt ẩn phụ, phương trình tích (Đống Đa), phương trình phân thức ẩn ở mẫu, BPT đa thức, căn thức dạng số (Hoàng Liệt, Tạ Quang Bửu) · "
+        "Bài IV (3,5đ) Tàu ngầm lặn góc nghiêng, diện tích quạt giấy (Nguyễn Du) và Nửa đường tròn: tính chất hai tiếp tuyến, ba điểm thẳng hàng (Phòng Thanh Trì) · "
         "Bài V (0,5đ) Bài toán tối ưu chi phí sản xuất (THCS Đống Đa)."
     ),
     bai=[
@@ -887,15 +889,15 @@ DE["on-3"] = dict(
     slug_de="de-on-tap-cuoi-ki-1-so-3",
     slug_mt="ma-tran-va-dap-an-on-tap-ck1-so-3",
     eyebrow="LỚP 9 • ĐỀ ÔN TẬP CUỐI KÌ I — SỐ 3",
-    cach_dung="Làm sau Đề ôn 1 và 2. Đề 3 bao quát các dạng mở rộng tần suất cao: biểu thức căn chứa câu hỏi tìm x nguyên để P nguyên, toán chuyển động dòng nước hai tour du thuyền, phương trình phân thức rút gọn, tiếp tuyến thứ hai và hệ thức phân giác.",
+    cach_dung="Làm sau Đề ôn 1 và 2. Đề 3 bao quát các dạng tần suất cao: bất phương trình $P < 1$ chứa căn, chuyển động xuôi/ngược dòng, phương trình chứa ẩn ở mẫu, phương trình tích, căn thức dạng số và $\\sqrt{A^2} = |A|$, diện tích vành khuyên, tiếp tuyến thứ hai.",
     gioi_thieu=(
         "\\textbf{ĐỀ ÔN TẬP SỐ 3 -- CUỐI HỌC KÌ I TOÁN 9} (90 phút -- Thang điểm 10 -- 5 bài tự luận)."
         + BR
         + "\\textbf{Cấu trúc tổng ôn:} "
         "Bài I (2,0đ) Rút gọn căn thức và câu hỏi nguyên (Phòng Đông Anh) · "
-        "Bài II (2,0đ) Lập hệ phương trình tour du thuyền sông Hồng xuôi/ngược dòng (THCS Trưng Vương) · "
-        "Bài III (2,0đ) Hệ phương trình khử ngoặc (Hoài Đức), phương trình ẩn ở mẫu (Ái Mộ), BPT bậc nhất · "
-        "Bài IV (3,5đ) Thang dựa tường an toàn và Đường tròn hai tiếp tuyến, tiếp tuyến thứ hai, hệ thức tích (THCS Ái Mộ) · "
+        "Bài II (1,5đ) Lập hệ phương trình tour du thuyền sông Hồng xuôi/ngược dòng (THCS Trưng Vương) · "
+        "Bài III (2,5đ) Hệ phương trình khử ngoặc (Hoài Đức), phương trình tích (Lý Sơn), phương trình ẩn ở mẫu, BPT bậc nhất, căn thức dạng số (Quốc Oai, Đức Giang) · "
+        "Bài IV (3,5đ) Thang dựa tường an toàn, diện tích bồn hoa hình vành khăn (Phan Đình Giót) và Đường tròn hai tiếp tuyến, tiếp tuyến thứ hai (THCS Ái Mộ) · "
         "Bài V (0,5đ) Cực trị hình học: chia đoạn dây uốn thành 3 hình vuông (Phòng Hai Bà Trưng)."
     ),
     bai=[
@@ -1213,12 +1215,13 @@ KIND = ["review", "concept", "practice1", "practice2", "reflection"]
 
 def bang_mt(rows):
     s = (
-        "\\vspace{-6pt}\\begin{center}\\footnotesize\\renewcommand{\\arraystretch}{1.05}\n"
-        "\\begin{tabular}{|c|p{5.4cm}|c|c|c|c|p{2.9cm}|}\n\\hline\n"
+        "\\vspace{-6pt}\\begin{center}\\scriptsize\\renewcommand{\\arraystretch}{1.0}\n"  # 11/11: 15 dòng ⇒ cỡ nhỏ để vừa trang 1
+        "\\begin{tabular}{|c|p{5.2cm}|c|c|c|c|p{3.5cm}|}\n\\hline\n"
         "\\textbf{Câu} & \\textbf{Nội dung kiến thức, kĩ năng} & \\textbf{Chương} & \\textbf{Mức} & \\textbf{Điểm} & \\textbf{Phút} & \\textbf{Nguồn đề} \\\\ \\hline\n"
     )
     tong_d = tong_p = 0
     for c, nd, ch, m, di, ph, ng in rows:
+        ng = ng.replace("(2025–2026)", "(25–26)").replace("(2024–2025)", "(24–25)")
         s += f"{c} & {nd} & {ch} & {m} & {d(di)} & {ph} & {ng} \\\\ \\hline\n"
         tong_d += di
         tong_p += ph
@@ -1251,9 +1254,10 @@ def bang_muc(rows):
 
 def bang_bay(rows):
     s = (
-        "\\noindent\\textbf{CẨM NANG CHUYÊN ĐỀ: CÁC BẪY TỬ HUYỆT \\& LỖI SAI THƯỜNG GẶP} [[br]] \\par\\vspace{-6pt}\n"
-        "\\begin{center}\\footnotesize\\renewcommand{\\arraystretch}{1.1}\n"
-        "\\begin{tabular}{|c|p{3.6cm}|p{4.3cm}|p{4.7cm}|}\n\\hline\n"
+        # 11/11: tiêu đề nằm TRONG bảng (dòng đầu) ⇒ không bao giờ mồ côi cuối trang
+        "\\begin{center}\\scriptsize\\renewcommand{\\arraystretch}{1.05}\n"
+        "\\begin{tabular}{|c|p{3.6cm}|p{4.5cm}|p{5.0cm}|}\n\\hline\n"
+        "\\multicolumn{4}{|l|}{\\textbf{CẨM NANG CHUYÊN ĐỀ: CÁC BẪY TỬ HUYỆT \\& LỖI SAI THƯỜNG GẶP}} \\\\ \\hline\n"
         "\\textbf{Câu} & \\textbf{Bẫy đánh lừa} & \\textbf{Lỗi sai hay gặp (Mất điểm)} & \\textbf{Cách xử lý an toàn (Ăn trọn điểm)} \\\\ \\hline\n"
     )
     for c, b, l, k in rows:
@@ -1264,8 +1268,8 @@ def bang_bay(rows):
 
 TIEN_BO = [
     ("Căn thức \\& câu phụ (2,0đ)", "Ia: Tính giá trị $x = 7-4\\sqrt{3}$; Ib: Rút gọn mẫu đối; Ic: Giải PT $P = \\sqrt{x}$", "Ia: Tính giá trị $x = 9$; Ib: Rút gọn mẫu $x-9$; Ic: BPT $P \\le -\\frac{1}{3}$", "Ia: Tính giá trị $x = 4-2\\sqrt{3}$; Ib: Rút gọn mẫu $x-9$; Ic: Tìm $x$ nguyên để $P$ nguyên"),
-    ("Toán thực tế lập hệ (2,0đ)", "Hai vòi nước cùng chảy (toán năng suất công việc)", "Khuyến mại giảm giá hai mặt hàng điện tử", "Hai xe khởi hành ngược chiều gặp nhau (chuyển động)"),
-    ("Giải PT, BPT, hệ (2,0đ)", "IIIa: Hệ cộng đại số; IIIb: PT tích; IIIc: BPT đổi chiều", "IIIa: Hệ phương pháp thế; IIIb: PT tích khai triển; IIIc: BPT nguyên", "IIIa: Hệ đặt ẩn phụ; IIIb: PT ẩn ở mẫu; IIIc: BPT phân số"),
+    ("Toán thực tế lập hệ (1,5đ)", "Hai vòi nước cùng chảy (toán năng suất công việc)", "Khuyến mại giảm giá hai mặt hàng điện tử", "Hai xe khởi hành ngược chiều gặp nhau (chuyển động)"),
+    ("Giải PT, BPT, hệ, căn số (2,5đ)", "IIIa: Hệ cộng đại số; IIIb: PT tích; IIIc: BPT đổi chiều; IIId: Tính biểu thức số; IIIe: PT chứa căn $\\sqrt{x-2}$", "IIIa: Hệ phương pháp thế; IIIb: PT tích khai triển; IIIc: BPT nguyên; IIId: Tính $\\sqrt{98}-\\sqrt{32}+\\ldots$; IIIe: PT chứa căn $\\sqrt{x-1}$", "IIIa: Hệ đặt ẩn phụ; IIIb: PT ẩn ở mẫu; IIIc: BPT phân số; IIId: Trục căn ở mẫu; IIIe: PT $\\sqrt{(x-3)^2}$"),
     ("Lượng giác thực tế (0,5đ)", "Chiều cao tháp bằng $\\tan 40^\\circ$ (khoảng cách $135$ m)", "Độ sâu tàu ngầm bằng $\\sin 30^\\circ$ (quãng đường lặn)", "Chiều cao thang dựa tường bằng $\\sin 70^\\circ$ (thang $3{,}5$ m)"),
     ("Hình học đường tròn (3,0đ)", "Tiếp tuyến cắt nhau; $OA \\perp BC$; $CD \\parallel OA$; góc nội tiếp nửa đường tròn", "4 điểm đường tròn; $Ax, By$ tiếp tuyến; $AC \\cdot BD = R^2$; góc vuông", "Tiếp tuyến cắt nhau; $MH \\perp AB$; tiếp tuyến song song; trung điểm"),
     ("Câu cuối tối ưu / VDC (0,5đ)", "Tối ưu diện tích hình chữ nhật rào lưới: $S = -(x-20)^2 + 400$", "Tối ưu chi phí xây bể nước hình hộp: dùng BĐT Cosi", "Tối ưu doanh thu bán điện thoại: $-(x-5)^2 + 100$"),
@@ -1295,8 +1299,8 @@ def bang_theo_doi():
     )
     for b in [
         "Bài I -- Căn thức và câu hỏi phụ (2,0đ)",
-        "Bài II -- Toán thực tế lập hệ PT (2,0đ)",
-        "Bài III -- Phương trình, BPT, Hệ PT (2,0đ)",
+        "Bài II -- Toán thực tế lập hệ PT (1,5đ)",
+        "Bài III -- Phương trình, BPT, Hệ PT, căn thức dạng số (2,5đ)",
         "Bài IV -- Lượng giác \\& Hình đường tròn (3,5đ)",
         "Bài V -- Bài toán tối ưu thực tế (0,5đ)",
         "\\textbf{Tổng điểm (10,0đ)}",
@@ -1323,6 +1327,8 @@ def de_json(k, D):
         if b.get("figure"):
             blk["figure"] = b["figure"]
         blocks = [blk]
+        if b["label"] == "Bài IV.":  # 11/11: Bài III dài thêm 2 ý ⇒ tiêu đề Bài IV mồ côi cuối trang 1; trang 2 = Bài IV, V
+            blocks.insert(0, dict(type="para", text="\\stageneedspace{6cm}"))
         if i == len(D["bai"]) - 1:
             blocks.append(dict(type="para", text="\\begin{center}\\textit{$-$ HẾT $-$}\\end{center}"))
         stages.append(dict(kind=KIND[i], number=i + 1, title="", blocks=blocks))
@@ -1339,8 +1345,9 @@ def mt_json(k, D):
 
     # Stage 1: Ma trận đề thi + Bảng bẫy tử huyệt
     b1 = [
-        dict(type="para", text=D["gioi_thieu"]),
+        # 11/11: bảng lên trước (15 dòng) — giới thiệu dài đứng trước thì bảng rớt sang trang 2, tiêu đề mồ côi
         dict(type="para", text=f"\\textbf{{MA TRẬN ĐỀ ÔN TẬP SỐ {so} -- CUỐI KÌ I (90 PHÚT)}}" + BR + s_mt),
+        dict(type="para", text=D["gioi_thieu"]),
         dict(type="para", text=s_muc),
         dict(type="para", text=bang_bay(D["bay"])),
         dict(
@@ -1413,6 +1420,10 @@ def mt_json(k, D):
 
 # ─────────────────────────── MAIN ───────────────────────────
 if __name__ == "__main__":
+    QUAN.update(QUAN_MOI)
+    ap_dung(DE, y, BR)
+    ap_dung_phu_dang(DE, QUAN)  # 12/11/2026: phủ dạng (Bài III 6 ý, IV.1 thêm cung/quạt)
+    TIEN_BO[:] = ban_do_dang(DE, NHOM_BAN_DO_ON)
     NGUON, NGUON_BO = kiem_nguon()
     print("✓ Kiểm tra rải nguồn thành công:")
     for _k, (_n, _q) in NGUON.items():

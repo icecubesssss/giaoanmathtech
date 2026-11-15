@@ -1,6 +1,8 @@
 ((= Chặng 3 — Luyện tập 1 (có giàn giáo gợi ý). =))
 ((* import "_blocks.j2" as B with context *))
-\stageneedspace{8cm}\begin{stage}{((( stage.number )))}{((( stage.title )))}{stage3}{\iconpractice}
+((= Chặng mở bằng "tiêu đề mạch + ví dụ mẫu": hộp ví dụ KHÔNG cắt được (thường gần 1 trang) nên 8cm không đủ,
+  tiêu đề chặng mồ côi cuối trang (phiếu E ch.VI 9C, 12/11/2026). Đòi 17cm, thiếu thì sang trang mới. =))
+((* set _b = stage.blocks *))\stageneedspace{((* if _b|length > 1 and _b[0].type == "para" and _b[0].variant == "heading" and _b[1].type == "noted" and _b[1].variant == "example" *))17cm((* else *))8cm((* endif *))}\begin{stage}{((( stage.number )))}{((( stage.title )))}{stage3}{\iconpractice}
 \justifying\setlength{\parindent}{0pt}
 ((( B.render_blocks(stage.blocks) )))
 \end{stage}

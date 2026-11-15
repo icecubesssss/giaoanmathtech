@@ -1,0 +1,21 @@
+{
+  "type": "object",
+  "required": ["stages", "ghi_chu"],
+  "properties": {
+    "stages": {
+      "type": "array",
+      "items": {
+        "type": "object",
+        "required": ["kind", "number", "title", "teacher_note", "blocks"],
+        "properties": {
+          "kind": {"type": "string"},
+          "number": {"type": "integer"},
+          "title": {"type": "string"},
+          "teacher_note": {"type": "string"},
+          "blocks": {"type": "array", "items": {"type": "object"}}
+        }
+      }
+    },
+    "ghi_chu": {"type": "string"}
+  }
+}

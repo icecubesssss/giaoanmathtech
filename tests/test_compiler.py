@@ -167,3 +167,36 @@ def test_tieu_de_phan_A_B_in_ra_va_khong_tro_mot_minh_tren_slide():
         assert not (txt and not s["figures"]
                     and all(getattr(b, "variant", "") in ("heading", "part") for b in txt)), \
             "slide chỉ có tiêu đề, nội dung rơi sang slide sau"
+
+
+def test_tach_y_con_splits_fill_in_blanks_after_figure():
+    from src.compiler.jinja_renderer import render_handout, tach_y_con
+    from src.schema.lesson_package import LessonPackage
+
+    tikz = "\\begin{tikzpicture}\\draw (0,0) circle (1);\\end{tikzpicture}"
+    st = (
+        "[NB] Cho đường tròn $(E)$ đường kính $GH$ (Hình 4). "
+        "Điền vào chỗ chấm để hoàn thành bài giải:[[br]]"
+        "- Xét $(E)$ có $GH$ là [[blank:1.8cm]] và $K \\in (E)$."
+    )
+    de, ycon = tach_y_con(st)
+    assert de.endswith("bài giải:")
+    assert ycon.startswith("- Xét $(E)$")
+    assert "[[blank:" in ycon and "[[blank:" not in de
+
+    # Câu điền khuyết đơn dòng không có [[br]] giữ nguyên.
+    inline = "Trên Hình 2, số đo cung bằng [[blank:2cm]]."
+    assert tach_y_con(inline) == (inline, "")
+
+    # Bài hình điền khuyết phải render đề dẫn → \figbelowkeep → khung điền khuyết.
+    lesson = LessonPackage.model_validate({
+        "slug": "t", "title": "T", "stages": [{"kind": "concept", "number": 2, "title": "K", "blocks": [
+            {"type": "problem", "label": "Bài 3.", "level": 1, "statement": st,
+             "figure": {"tikz": tikz, "caption": "Hình 4"}},
+        ]}]})
+    tex = render_handout(lesson)
+    body = tex.split(r"\begin{document}")[1]
+    pos_de = body.index("hoàn thành bài giải:")
+    pos_fig = body.index(r"\figbelowkeep")
+    pos_blank = body.index(r"\blank[1.8cm]")
+    assert pos_de < pos_fig < pos_blank

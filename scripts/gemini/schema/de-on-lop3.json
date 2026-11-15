@@ -1,0 +1,27 @@
+{
+ "type": "object",
+ "properties": {
+  "code": {"type": "string"},
+  "tt_cau": {
+   "type": "array",
+   "items": {
+    "type": "object",
+    "properties": {
+     "de": {"type": "string"},
+     "cau": {"type": "string"},
+     "nd": {"type": "string"},
+     "ht": {"type": "string"},
+     "diem": {"type": "number"},
+     "dap_an": {"type": "string"},
+     "muc": {"type": "string"},
+     "cd": {"type": "integer"},
+     "bai": {"type": "integer"},
+     "dang": {"type": "string"}
+    },
+    "required": ["de", "cau", "nd", "ht", "diem", "dap_an", "muc", "cd", "bai", "dang"]
+   }
+  },
+  "ghi_chu": {"type": "string"}
+ },
+ "required": ["code", "tt_cau", "ghi_chu"]
+}

@@ -64,8 +64,13 @@ Làm khối khác (lớp 7, 6) hay kỳ khác (CK1, GK2, CK2) thì đi **đúng 
 - **Khung = khung đề của các trường.** Đọc ảnh 8–10 đề GK1 thật để chốt số bài, điểm từng bài, thời gian, và có trắc nghiệm hay không.
   - Thầy: *"Các đề thì dựa theo các đề của các trường nhé. Nếu k có trắc nghiệm thì đừng cho vào."*
   - Ví dụ khung GK1 lớp 9 Hà Nội: I 3,0 (PT tích, PT chứa ẩn ở mẫu, BPT, hệ) — II 3,0 (hai bài lập hệ/lập PT; bài thứ hai là lập BPT ở 2/4 đề vì dạng này có ở ~1/2 đề trường) — III 1,0 (lượng giác thực tế) — IV 2,5 (tam giác vuông + đường cao) — V 0,5 (tối ưu).
+- **ĐỀ ÔN PHẢI PHỦ HẾT DẠNG DỄ (luật Thầy 12/11/2026, đè lên hai dòng dưới):** *"Các đề Ôn tập CKI cần phủ hết các dạng dễ có thể thi … HS C vẫn làm được, sợ nhỡ nó ra mà HS C bỏ thì đáng tiếc quá."* (lớp 9 từng sót căn dạng số + PT chứa căn vì lưới dạng cũ là danh sách định sẵn + dò từ khoá).
+  - Dạng **dễ** = ≥ 50% số ý của dạng trong đề thật ở mức NB/TH. Dạng **có thể thi** = có ở ≥ 10% số đề thật và ≥ 2 đề.
+  - **Mỗi** đề ôn có đủ dạng dễ ≥ 30% số đề; **cả bộ** đề ôn có đủ dạng dễ ≥ 10%. Dạng phụ đặt vào trắc nghiệm hoặc ý nhỏ, bớt ý trùng dạng để giữ giờ. Đề chính thức không bị luật này chặn (vẫn mô phỏng khung đề thật).
+  - Khung dạng phải dựng **từ đề thật, đọc từng ý** (bản ghi `inputs/refs/ngan-hang-sheet/lop-N/<ky>/ban-ghi/*.json`, giao Gemini bóc: `scripts/gemini/viec_boc_de.py`), có mã D99 "ngoài khung" để lộ dạng sót. Không dùng danh sách dạng định sẵn + regex.
+  - Cổng: `python3 scripts/phu_dang_gate.py --khoi N --md storage/phu-dang/lop-N-ck1.md` (thoát 1 nếu đề ôn thiếu dạng). Chạy trước khi build bộ đề.
 - **Đề ôn 1, 2:** các dạng tần suất **cao nhất**, **bốc nguyên văn** từ đề trường. Đề ôn 2 giữ dạng nhưng nâng một nấc suy luận.
-- **Đề ôn 3:** các dạng tần suất **thứ nhì**, được mở rộng câu (ghi rõ "(mở rộng)" trong ma trận).
+- **Đề ôn 3:** các dạng tần suất **thứ nhì**, được mở rộng câu (ghi rõ "(mở rộng)" trong ma trận) — nhưng vẫn phải qua cổng phủ dạng ở trên.
 - **Đề chính thức:** câu của trường **chưa xuất hiện trong 3 đề ôn** (cùng dạng, khác trường) để đo đúng năng lực, không đo trí nhớ. File đáp án có **bản đồ dạng qua 4 đề** và **phiếu theo dõi tiến bộ**.
   - Thầy: *"đánh giá mang mục đích vì sự tiến bộ của học sinh"*.
 - **RẢI NGUỒN theo trường và quận** (03/10/2026, sếp góp ý "các đề mình lấy được toàn khu vực LB - Gia Lâm nhỉ"):

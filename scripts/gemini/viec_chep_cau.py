@@ -59,10 +59,25 @@ Chỉ trả về MỘT đối tượng JSON đúng schema, không thêm lời.
 
 
 def refs_cua(x):
+    if not isinstance(x, dict):
+        return
     if "ref" in x:
         yield x
     for y in x.get("y", []):
         yield y
+    it = x.get("items")  # bộ câu bản 2: bai = [{key, items: list|bài|ý}]
+    for z in (it if isinstance(it, list) else [it] if it else []):
+        yield from refs_cua(z)
+
+
+def da_chep(xong: Path) -> set[str]:
+    """Các ý đã có bản chép (mọi lượt chep-*/chepb*-*)."""
+    co = set()
+    for f in xong.glob("chep*-l*.json"):
+        m = f.stem.split("-", 1)[1]
+        for c in (json.loads(f.read_text()).get("ket_qua") or {}).get("cau", []):
+            co.add(f"{m}#{c['cau']}")
+    return co
 
 
 def main() -> None:
@@ -70,6 +85,8 @@ def main() -> None:
     ap.add_argument("--bo-cau", required=True)
     ap.add_argument("--ban-ghi", required=True)
     ap.add_argument("--model", default="gemini-3.8-flash-high")
+    ap.add_argument("--chi-moi", metavar="TIEN_TO",
+                    help="chỉ ý CHƯA có bản chép; id việc = <TIEN_TO>-<mã đề> (vd chepb2) để không đè kết quả cũ")
     a = ap.parse_args()
     bo = json.loads((REPO / a.bo_cau).read_text())
     can = collections.defaultdict(dict)
@@ -79,6 +96,11 @@ def main() -> None:
                 for y in refs_cua(x):
                     m, c = y["ref"].split("#")
                     can[m][c] = y.get("nd", "")
+    if a.chi_moi:
+        co = da_chep(REPO / "storage/gemini/xong")
+        can = {m: {c: v for c, v in cs.items() if f"{m}#{c}" not in co} for m, cs in can.items()}
+        can = {m: cs for m, cs in can.items() if cs}
+    tien_to = a.chi_moi or "chep"
     HANG_DOI.mkdir(parents=True, exist_ok=True)
     for m, cs in sorted(can.items()):
         bg = json.loads((REPO / a.ban_ghi / f"{m}.json").read_text())
@@ -90,14 +112,14 @@ def main() -> None:
                        for c in sorted(cs))
         lop = m.split("-")[0][1:]
         viec = {
-            "id": f"chep-{m}", "model": a.model,
+            "id": f"{tien_to}-{m}", "model": a.model,
             "prompt": MAU.format(lop=lop, txt=pdf.stem + ".txt", ds=ds, ma=m),
             "files": [str(pdf)], "render": True,
             "schema": "scripts/gemini/schema/chep-cau.json", "timeout": "900s",
             "meta": {"loai": "chep", "de": m, "cau": sorted(cs), "bo_cau": a.bo_cau},
         }
-        (HANG_DOI / f"chep-{m}.json").write_text(json.dumps(viec, ensure_ascii=False, indent=1))
-        print(f"chep-{m}: {len(cs)} ý")
+        (HANG_DOI / f"{tien_to}-{m}.json").write_text(json.dumps(viec, ensure_ascii=False, indent=1))
+        print(f"{tien_to}-{m}: {len(cs)} ý")
     print(f"{len(can)} việc, {sum(len(v) for v in can.values())} ý")
 
 

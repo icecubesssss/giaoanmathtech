@@ -1,0 +1,32 @@
+{
+  "type": "object",
+  "required": ["de"],
+  "properties": {
+    "de": {
+      "type": "array",
+      "items": {
+        "type": "object",
+        "required": ["file", "y"],
+        "properties": {
+          "file": {"type": "string"},
+          "y": {
+            "type": "array",
+            "items": {
+              "type": "object",
+              "required": ["nhan", "dang", "muc", "nd"],
+              "properties": {
+                "nhan": {"type": "string"},
+                "dang": {"type": "string", "pattern": "^D[0-9]{2}$"},
+                "muc": {"type": "string", "enum": ["NB", "TH", "VD", "VDC"]},
+                "diem": {"type": "number"},
+                "nd": {"type": "string"},
+                "can_soat": {"type": "string"}
+              }
+            }
+          }
+        }
+      }
+    },
+    "ghi_chu": {"type": "string"}
+  }
+}
