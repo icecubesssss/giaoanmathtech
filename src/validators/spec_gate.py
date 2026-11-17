@@ -78,7 +78,7 @@ def check_spec_conformance(lesson: LessonPackage, lesson_path: str | Path) -> li
 
     spec_counts = phieu_band_counts(phieu)   # {vidu|onclass|btvn: {band: n}}
     got_counts = band_counts(lesson)         # {onclass|btvn: {band: n}}
-    warns: list[str] = []
+    warns: list[str] = check_co_luat(lesson, spec, phieu)
     for seg in _SEGS:
         for band in _BANDS:
             want = spec_counts.get(seg, {}).get(band, 0)
@@ -88,6 +88,25 @@ def check_spec_conformance(lesson: LessonPackage, lesson_path: str | Path) -> li
                     f"spec_gate: phiếu {phieu.code} · {seg} · {band} = {got} câu, "
                     f"spec chốt {want} (lệch > ±{tol}).")
     return warns + check_dang_mapping(lesson, phieu, tol)
+
+
+def check_co_luat(lesson: LessonPackage, spec: ThuyetMinhSpec, phieu) -> list[str]:
+    """Cờ luật của phiếu phải khớp thuyết minh cạnh bên.
+
+    • `luat_16_11` (Thầy 16/11/2026): TM bật mà phiếu quên ⇒ `dan_dat_gate` không chặn điền
+      khuyết trong bài tập, phiếu lọt khung cũ; phiếu bật mà TM tắt ⇒ TM còn bị soi mốc cũ.
+    • `khuon` (vd "khong_vd", "chung_minh"): lệch thì `duration_gate` và `thuyetminh_gate`
+      soi hai tỉ lệ khác nhau cho cùng một buổi."""
+    out: list[str] = []
+    tm, ph = bool(getattr(spec, "luat_16_11", False)), bool(getattr(lesson, "luat_16_11", False))
+    if tm != ph:
+        out.append(f"spec_gate: phiếu {phieu.code} — `luat_16_11` lệch thuyết minh (TM {tm}, phiếu {ph}). "
+                   f"Chương theo luật hình thức câu 16/11/2026 thì bật ở CẢ HAI.")
+    k_tm, k_ph = getattr(phieu, "khuon", "") or "", getattr(lesson, "khuon", "") or ""
+    if k_tm != k_ph:
+        out.append(f"spec_gate: phiếu {phieu.code} — `khuon` lệch thuyết minh (TM '{k_tm}', phiếu '{k_ph}'): "
+                   f"hai cổng sẽ soi hai tỉ lệ khác nhau.")
+    return out
 
 
 def _so_cau(p) -> int:

@@ -168,6 +168,9 @@ _MATH = re.compile(r"(?<!\\)\$.*?(?<!\\)\$")
 _HAI_CAU = re.compile(r"\.\s+(?=Vậy|Xét|Gọi|Kẻ|Mà|Theo|Tương tự|Hai lần|§)")
 _PYTHAGORE_TINH = re.compile(r"(?:[A-Z]{2}\^2|\d+\^2)\s*[-+]\s*(?:[A-Z]{2}\^2|\d+\^2)")
 _NOI_DAI = re.compile(r"\b(?:Do đó|Mặt khác|Như vậy|suy ra|Suy ra)\b|\\implies|\\hspace\*")
+# Thụt dòng con `\hspace*{1.4em}` ĐẦU dòng là kiểu trình bày Thầy duyệt 12/11/2026 (phiếu Viète 9C:
+# mỗi bước một dòng, dòng con thụt vào) — bóc ra trước khi soi, chỉ `\hspace*` GIỮA dòng mới là nối lời.
+_THUT_DAU = re.compile(r"^\s*(?:\\hspace\*\{[^}]*\}\s*)+")
 _BAI_TRINH_BAY = ("solution", "answer")
 
 
@@ -198,6 +201,7 @@ def check_nhip_loi_giai(lesson: LessonPackage) -> list[str]:
     for nhan, dong in _dong_loi_giai(lesson):
         loi: list[str] = []
         for i, d in enumerate(dong):
+            d = _THUT_DAU.sub("", d)
             ngoai = _MATH.sub("§", d)
             if _HAI_CAU.search(ngoai) or (re.search(r";\s*§", ngoai) and d.count("=") >= 2):
                 loi.append("nhiều bước trên một dòng")

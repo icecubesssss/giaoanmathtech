@@ -1,0 +1,383 @@
+{
+  "slug": "phieu-g-chung-minh-hai-goc-bang-nhau-bang-goc-noi-tiep",
+  "title": "Chứng minh hai góc bằng nhau bằng góc nội tiếp cùng chắn một cung",
+  "eyebrow": "PHIẾU G • HÌNH HỌC 9 · CHƯƠNG IX — LUYỆN TẬP GÓC NỘI TIẾP",
+  "grade_label": "Lớp 9 • Hình học",
+  "class_tier": "C",
+  "chuong": "Chương IX. Đường tròn ngoại tiếp và đường tròn nội tiếp",
+  "so_ca": 1,
+  "khuon": "chung_minh",
+  "btvn_phieu_rieng": true,
+  "stages": [
+    {
+      "blocks": [
+        {
+          "text": "\\textbf{Quan sát các góc cùng nhìn một cung trên đường tròn $(O)$ như thế nào?}",
+          "type": "para"
+        },
+        {
+          "figure": {
+            "tikz": "\\begin{tikzpicture}[line width=0.8pt, font=\\small]\n  \\draw[ink] (0.0000,0.0000) circle (1.5000);\n  \\draw[ink] (-1.4095,0.5130) -- (0.7500,1.2990);\n  \\draw[ink] (-1.4095,0.5130) -- (0.7500,-1.2990);\n  \\draw[ink] (-1.2990,-0.7500) -- (0.7500,1.2990);\n  \\draw[ink] (-1.2990,-0.7500) -- (0.7500,-1.2990);\n  \\draw[ink, dashed] (0.0000,0.0000) -- (0.7500,1.2990);\n  \\draw[ink, dashed] (0.0000,0.0000) -- (0.7500,-1.2990);\n  \\draw[brand] (-1.0878,0.2431) arc (-40.0000:20.0000:0.4200);\n  \\fill[ink] (0.0000,0.0000) circle (1.3pt);\n  \\fill[ink] (-1.4095,0.5130) circle (1.3pt);\n  \\fill[ink] (0.7500,1.2990) circle (1.3pt);\n  \\fill[ink] (0.7500,-1.2990) circle (1.3pt);\n  \\fill[ink] (-1.2990,-0.7500) circle (1.3pt);\n  \\node[inner sep=0pt] at (-0.2400,0.0000) {$O$};\n  \\node[inner sep=0pt] at (-1.6914,0.6156) {$A$};\n  \\node[inner sep=0pt] at (0.9000,1.5588) {$B$};\n  \\node[inner sep=0pt] at (0.9000,-1.5588) {$C$};\n  \\node[inner sep=0pt] at (-1.5588,-0.9000) {$D$};\n  \\node[inner sep=0pt] at (-0.5006,0.5649) {$60^\\circ$};\n\\end{tikzpicture}",
+            "caption": "Hình 1",
+            "pos": "right"
+          },
+          "text": "Cho đường tròn $(O)$ và các điểm $A, B, C, D$ trên $(O)$ như Hình 1. Biết rằng $\\widehat{BAC} = 60^\\circ$.[[br]]\\textbf{a)} Hai góc $\\widehat{BDC}$ và $\\widehat{BAC}$ cùng chắn cung nào?[[br]]\\textbf{b)} Tính $\\widehat{BDC}$.[[br]]\\textbf{c)} Tính $\\widehat{BOC}$.[[br]](SGK Toán 9 tập hai, Bài 27, Ví dụ 2)",
+          "type": "noted",
+          "variant": "note"
+        }
+      ],
+      "kind": "review",
+      "number": 1,
+      "teacher_note": "Khoảng 5 phút, chỉ hỏi đáp miệng: dẫn học sinh nhận ra hai góc nội tiếp cùng chắn cung $BC$ nên $\\widehat{BDC} = \\widehat{BAC} = 60^\\circ$, góc ở tâm gấp đôi góc nội tiếp cùng chắn cung nên $\\widehat{BOC} = 120^\\circ$.",
+      "title": "Khám phá"
+    },
+    {
+      "blocks": [
+        {
+          "text": "A. Lý thuyết",
+          "type": "para",
+          "variant": "part"
+        },
+        {
+          "figure": {
+            "tikz": "\\begin{tikzpicture}[line width=0.8pt, font=\\small]\n  \\draw[ink] (0.0000,0.0000) circle (1.5000);\n  \\draw[ink] (-1.2990,0.7500) -- (-0.7500,-1.2990);\n  \\draw[ink] (-1.2990,0.7500) -- (1.1491,-0.9642);\n  \\draw[ink] (1.2287,0.8604) -- (-0.7500,-1.2990);\n  \\draw[ink] (1.2287,0.8604) -- (1.1491,-0.9642);\n  \\draw[brand] (-1.2085,0.4119) arc (-75.0000:-35.0000:0.3500);\n  \\draw[brand] (0.9923,0.6023) arc (-132.5000:-92.5000:0.3500);\n  \\draw[brand, line width=1.6pt] (-0.7500,-1.2990) arc (-120.0000:-40.0000:1.5000);\n  \\fill[ink] (0.0000,0.0000) circle (1.3pt);\n  \\fill[ink] (-1.2990,0.7500) circle (1.3pt);\n  \\fill[ink] (1.2287,0.8604) circle (1.3pt);\n  \\fill[ink] (-0.7500,-1.2990) circle (1.3pt);\n  \\fill[ink] (1.1491,-0.9642) circle (1.3pt);\n  \\node[inner sep=0pt] at (0.2364,0.0417) {$O$};\n  \\node[inner sep=0pt] at (-1.5588,0.9000) {$M$};\n  \\node[inner sep=0pt] at (1.4885,1.0104) {$N$};\n  \\node[inner sep=0pt] at (-0.9000,-1.5588) {$P$};\n  \\node[inner sep=0pt] at (1.3789,-1.1570) {$Q$};\n\\end{tikzpicture}",
+            "caption": "$\\widehat{PMQ}$, $\\widehat{PNQ}$ cùng chắn cung $PQ$",
+            "pos": "right"
+          },
+          "text": "\\nhanly{Định nghĩa.} Góc nội tiếp là góc có đỉnh nằm trên đường tròn và hai cạnh chứa hai dây cung của đường tròn đó. Cung nằm bên trong góc được gọi là cung bị chắn.[[br]]\\nhanly{Định lí.} Trong một đường tròn, số đo của góc nội tiếp bằng nửa số đo của cung bị chắn.[[br]]\\nhanly{Nhận xét.} Đối với các góc nội tiếp của một đường tròn:[[br]]- Các góc nội tiếp bằng nhau chắn các cung bằng nhau.[[br]]- Các góc nội tiếp cùng chắn một cung hoặc chắn các cung bằng nhau thì bằng nhau.[[br]]- Các góc nội tiếp chắn cung nhỏ thì có số đo bằng nửa số đo của góc ở tâm chắn cùng một cung.[[br]]- Góc nội tiếp chắn nửa đường tròn là góc vuông.[[br]]Trên hình: $\\widehat{PMQ}$ và $\\widehat{PNQ}$ là hai góc nội tiếp của đường tròn $(O)$ cùng chắn cung $PQ$ nên $\\widehat{PMQ} = \\widehat{PNQ}$. (SGK Toán 9 tập hai, tr.68--69)",
+          "title": "1. GÓC NỘI TIẾP",
+          "type": "noted",
+          "variant": "theory"
+        },
+        {
+          "figure": {
+            "tikz": "\\begin{tikzpicture}[line width=0.8pt, font=\\small]\n  \\draw[brand, dashed] (1.6000,0.0000) circle (1.6000);\n  \\draw[ink] (0.0000,0.0000) -- (3.2000,0.0000);\n  \\draw[ink] (0.0000,0.0000) -- (0.8488,1.4127);\n  \\draw[ink] (0.8488,1.4127) -- (3.2000,0.0000);\n  \\draw[ink] (0.0000,0.0000) -- (2.3512,1.4127);\n  \\draw[ink] (2.3512,1.4127) -- (3.2000,0.0000);\n  \\draw[ink] (0.7664,1.2756) -- (0.9036,1.1932) -- (0.9860,1.3303);\n  \\draw[ink] (2.2140,1.3303) -- (2.2964,1.1932) -- (2.4336,1.2756);\n  \\fill[ink] (0.0000,0.0000) circle (1.3pt);\n  \\fill[ink] (3.2000,0.0000) circle (1.3pt);\n  \\fill[ink] (0.8488,1.4127) circle (1.3pt);\n  \\fill[ink] (2.3512,1.4127) circle (1.3pt);\n  \\node[inner sep=0pt] at (-0.3000,0.0000) {$A$};\n  \\node[inner sep=0pt] at (3.5000,0.0000) {$B$};\n  \\node[inner sep=0pt] at (0.6988,1.6725) {$C$};\n  \\node[inner sep=0pt] at (2.5012,1.6725) {$D$};\n\\end{tikzpicture}",
+            "caption": "$C$, $D$ thuộc đường tròn đường kính $AB$",
+            "pos": "right"
+          },
+          "text": "Đường tròn ngoại tiếp tam giác vuông có tâm là trung điểm của cạnh huyền và bán kính bằng một nửa cạnh huyền. (SGK Toán 9 tập hai, tr.73)[[br]]Vì vậy đỉnh góc vuông thuộc đường tròn đường kính là cạnh huyền.[[br]]Trên hình: $\\triangle ACB$ vuông tại $C$, $\\triangle ADB$ vuông tại $D$[[br]]$\\Rightarrow A, B, C, D$ cùng thuộc đường tròn đường kính $AB$ (tứ giác $ACDB$ nội tiếp).",
+          "title": "2. ĐỈNH GÓC VUÔNG VÀ ĐƯỜNG TRÒN ĐƯỜNG KÍNH",
+          "type": "noted",
+          "variant": "theory"
+        },
+        {
+          "text": "B. Phương pháp chứng minh — các dạng quen thuộc",
+          "type": "para",
+          "variant": "part"
+        },
+        {
+          "figure": {
+            "tikz": "\\begin{tikzpicture}[line width=0.8pt, font=\\small]\n  \\draw[brand, dashed] (1.6000,0.0000) circle (1.6000);\n  \\draw[ink] (0.0000,0.0000) -- (3.2000,0.0000);\n  \\draw[ink] (0.0000,0.0000) -- (2.6285,1.2257);\n  \\draw[ink] (3.2000,0.0000) -- (0.6149,1.2608);\n  \\draw[ink] (0.6149,1.2608) -- (2.6285,1.2257);\n  \\draw[ink] (0.0000,0.0000) -- (0.6149,1.2608);\n  \\draw[ink] (3.2000,0.0000) -- (2.6285,1.2257);\n  \\draw[ink] (0.5448,1.1170) -- (0.6886,1.0469) -- (0.7587,1.1907);\n  \\draw[ink] (2.4835,1.1581) -- (2.5511,1.0130) -- (2.6961,1.0807);\n  \\draw[brand] (0.4078,0.1902) arc (25.0000:64.0000:0.4500);\n  \\draw[brand] (3.0098,0.4078) arc (115.0000:154.0000:0.4500);\n  \\fill[ink] (0.0000,0.0000) circle (1.3pt);\n  \\fill[ink] (3.2000,0.0000) circle (1.3pt);\n  \\fill[ink] (0.6149,1.2608) circle (1.3pt);\n  \\fill[ink] (2.6285,1.2257) circle (1.3pt);\n  \\node[inner sep=0pt] at (-0.3000,0.0000) {$A$};\n  \\node[inner sep=0pt] at (3.5000,0.0000) {$B$};\n  \\node[inner sep=0pt] at (0.4221,1.4906) {$E$};\n  \\node[inner sep=0pt] at (2.8213,1.4555) {$D$};\n\\end{tikzpicture}",
+            "caption": "$\\widehat{EAD}$, $\\widehat{EBD}$ cùng chắn cung $ED$",
+            "pos": "right"
+          },
+          "text": "\\nhanly{Bước 1:} Tìm một đường tròn đi qua đỉnh của hai góc và hai đầu mút của cung (đường tròn $(O)$ đề cho, hoặc đường tròn có được ở ý trước nhờ hai góc vuông).[[br]]\\nhanly{Bước 2:} Chỉ ra hai góc là góc nội tiếp cùng chắn một cung của đường tròn đó.[[br]]\\nhanly{Bước 3:} Kết luận hai góc bằng nhau.[[br]]Minh hoạ theo hình: $\\widehat{AEB} = \\widehat{ADB} = 90^\\circ$ $\\Rightarrow$ $A, B, D, E$ cùng thuộc đường tròn đường kính $AB$ (hai tam giác vuông chung cạnh huyền $AB$).[[br]]Xét đường tròn đường kính $AB$: $\\widehat{EAD}$ và $\\widehat{EBD}$ là hai góc nội tiếp cùng chắn cung $ED$ $\\Rightarrow$ $\\widehat{EAD} = \\widehat{EBD}$ (hai góc nội tiếp cùng chắn một cung).",
+          "title": "DẠNG 1. HAI GÓC NỘI TIẾP CÙNG CHẮN MỘT CUNG",
+          "type": "noted",
+          "variant": "theory"
+        },
+        {
+          "text": "Muốn chứng minh $\\widehat{X} = \\widehat{Y}$ mà hai góc không cùng nằm trong một đường tròn thì tìm góc $\\widehat{Z}$ đứng giữa:[[br]]- $\\widehat{X} = \\widehat{Z}$ (hai góc nội tiếp cùng chắn một cung của đường tròn thứ nhất).[[br]]- $\\widehat{Z} = \\widehat{Y}$ (hai góc nội tiếp cùng chắn một cung của đường tròn thứ hai, hoặc cùng bằng một số đo).[[br]]Vậy $\\widehat{X} = \\widehat{Y}$.[[br]]Trình bày: mỗi đẳng thức góc một dòng, ghi rõ xét đường tròn nào và hai góc cùng chắn cung nào.",
+          "title": "DẠNG 2. BẮC CẦU QUA GÓC THỨ BA",
+          "type": "noted",
+          "variant": "theory"
+        },
+        {
+          "text": "- Viết \"cùng chắn cung\" mà không nêu rõ xét trong đường tròn nào.[[br]]- Đọc sai cung bị chắn (cung bị chắn là cung nằm bên trong góc, nối hai giao điểm của hai cạnh góc với đường tròn).[[br]]- Dùng hai góc của hai đường tròn khác nhau mà không có góc thứ ba bắc cầu.",
+          "type": "noted",
+          "variant": "trap"
+        }
+      ],
+      "kind": "concept",
+      "number": 2,
+      "teacher_note": "Giảng khoảng 12 phút, đọc lý thuyết đúng chữ SGK, nhấn mạnh hai dạng chỉ là cách tìm đường tròn đi qua các đỉnh, ví dụ mẫu nằm ở đầu từng mạch Luyện tập.",
+      "title": "Kiến thức cần nhớ"
+    },
+    {
+      "blocks": [
+        {
+          "text": "\\textbf{Đích của buổi học:} Bài 4 (Đề thi thử vào 10 THPT Sơn Tây, Hà Nội, 2024--2025): ý 1 chứng minh tứ giác nội tiếp bằng hai góc vuông (Mạch 1), ý 2 chứng minh hai góc bằng nhau bằng cách bắc cầu qua một góc thứ ba (Mạch 2).",
+          "type": "para"
+        },
+        {
+          "text": "Mạch 1. Hai góc nội tiếp cùng chắn một cung",
+          "type": "para",
+          "variant": "heading"
+        },
+        {
+          "answer": "B",
+          "figure": {
+            "tikz": "\\begin{tikzpicture}[line width=0.8pt, font=\\small]\n  \\draw[ink] (0.0000,0.0000) circle (1.5000);\n  \\draw[ink] (-0.5130,1.4095) -- (-1.3595,-0.6339) -- (1.3595,-0.6339) -- cycle;\n  \\draw[ink] (-0.5130,1.4095) -- (-0.5130,-0.6339);\n  \\draw[ink] (-1.3595,-0.6339) -- (0.1185,0.7204);\n  \\draw[ink, dashed] (-0.5130,-0.6339) -- (0.1185,0.7204);\n  \\draw[ink] (-0.5130,-0.4739) -- (-0.3530,-0.4739) -- (-0.3530,-0.6339);\n  \\draw[ink] (0.0005,0.6123) -- (0.1086,0.4943) -- (0.2266,0.6024);\n  \\fill[ink] (0.0000,0.0000) circle (1.3pt);\n  \\fill[ink] (-0.5130,1.4095) circle (1.3pt);\n  \\fill[ink] (-1.3595,-0.6339) circle (1.3pt);\n  \\fill[ink] (1.3595,-0.6339) circle (1.3pt);\n  \\fill[ink] (-0.5130,-0.6339) circle (1.3pt);\n  \\fill[ink] (0.1185,0.7204) circle (1.3pt);\n  \\fill[ink] (-0.5130,0.1417) circle (1.3pt);\n  \\node[inner sep=0pt] at (0.2400,0.0000) {$O$};\n  \\node[inner sep=0pt] at (-0.6156,1.6914) {$A$};\n  \\node[inner sep=0pt] at (-1.6414,-0.7365) {$B$};\n  \\node[inner sep=0pt] at (1.6193,-0.7839) {$C$};\n  \\node[inner sep=0pt] at (-0.5130,-0.8739) {$D$};\n  \\node[inner sep=0pt] at (0.3023,0.8746) {$E$};\n  \\node[inner sep=0pt] at (-0.7386,0.2238) {$H$};\n\\end{tikzpicture}",
+            "caption": "Hình 2",
+            "pos": "right",
+            "width": "0.26"
+          },
+          "label": "Bài 1.",
+          "options": [
+            "$\\widehat{BAE}$",
+            "$\\widehat{BAD}$",
+            "$\\widehat{ABE}$",
+            "$\\widehat{BCA}$"
+          ],
+          "statement": "[NB] Cho $\\triangle ABC$ có $AB < AC$, nội tiếp đường tròn $(O)$. Các đường cao $AD$, $BE$ cắt nhau tại $H$ (Hình 2). Biết tứ giác $ABDE$ nội tiếp. Góc nào sau đây bằng góc $\\widehat{BED}$? \\;(Tách từ đề giữa học kì II THCS Nhật Tân, 2025--2026)",
+          "type": "problem",
+          "level": 1,
+          "tier": "onclass",
+          "dang_id": "NB1",
+          "figure_given": true
+        },
+        {
+          "figure": {
+            "tikz": "\\begin{tikzpicture}[line width=0.8pt, font=\\small]\n  \\draw[ink] (0.0000,0.0000) -- (0.0000,2.4000) -- (3.2000,0.0000) -- cycle;\n  \\draw[ink] (0.0000,0.1600) -- (0.1600,0.1600) -- (0.1600,0.0000);\n  \\fill[ink] (0.0000,0.0000) circle (1.3pt);\n  \\fill[ink] (0.0000,2.4000) circle (1.3pt);\n  \\fill[ink] (3.2000,0.0000) circle (1.3pt);\n  \\node[inner sep=0pt] at (-0.1839,-0.1543) {$A$};\n  \\node[inner sep=0pt] at (-0.1200,2.6078) {$B$};\n  \\node[inner sep=0pt] at (3.4255,-0.0821) {$C$};\n  \\path (-0.3500,-1.9500) rectangle (3.5500,2.7500);\n\\end{tikzpicture}",
+            "tikz_gv": "\\begin{tikzpicture}[line width=0.8pt, font=\\small]\n  \\draw[ink] (0.0000,0.0000) -- (0.0000,2.4000) -- (3.2000,0.0000) -- cycle;\n  \\draw[ink] (0.0000,0.1600) -- (0.1600,0.1600) -- (0.1600,0.0000);\n  \\draw[ink] (1.6000,0.0000) circle (1.6000);\n  \\draw[ink] (1.6000,0.0000) -- (0.0000,2.4000);\n  \\draw[ink] (0.0000,0.0000) -- (1.1077,0.7385);\n  \\draw[ink] (0.0000,0.0000) -- (1.1520,1.5360);\n  \\draw[ink] (0.9746,0.6497) -- (1.0633,0.5166) -- (1.1964,0.6053);\n  \\draw[ink] (1.0560,1.4080) -- (1.1840,1.3120) -- (1.2800,1.4400);\n  \\fill[ink] (0.0000,0.0000) circle (1.3pt);\n  \\fill[ink] (0.0000,2.4000) circle (1.3pt);\n  \\fill[ink] (3.2000,0.0000) circle (1.3pt);\n  \\fill[ink] (1.6000,0.0000) circle (1.3pt);\n  \\fill[ink] (1.1520,1.5360) circle (1.3pt);\n  \\fill[ink] (1.1077,0.7385) circle (1.3pt);\n  \\node[inner sep=0pt] at (-0.3000,0.0000) {$A$};\n  \\node[inner sep=0pt] at (-0.1200,2.6078) {$B$};\n  \\node[inner sep=0pt] at (3.5000,0.0000) {$C$};\n  \\node[inner sep=0pt] at (1.6000,-0.2400) {$O$};\n  \\node[inner sep=0pt] at (1.2041,1.8314) {$D$};\n  \\node[inner sep=0pt] at (1.3155,0.8585) {$E$};\n\\end{tikzpicture}",
+            "caption": "Hình 3",
+            "pos": "right",
+            "width": "0.28"
+          },
+          "text": "\\textbf{Ví dụ 1.} Cho $\\triangle ABC$ vuông tại $A$. Đường tròn tâm $O$ đường kính $AC$ cắt cạnh $BC$ tại $D$ ($D$ khác $C$). Kẻ $AE$ vuông góc với $OB$ tại $E$ (Hình 3). Vẽ tiếp vào Hình 3 các yếu tố còn thiếu theo đề.[[br]]a) [NB] ★ Chứng minh bốn điểm $A, B, D, E$ cùng thuộc một đường tròn.[[br]]b) [TH] ★★ Chứng minh $\\widehat{EAD} = \\widehat{EBD}$.[[br]]{\\sffamily\\bfseries\\color{brand}Lời giải}[[br]]\\textbf{a)} $\\widehat{ADC} = [[fill:90^\\circ]]$ ([[fill:góc nội tiếp chắn nửa đường tròn]] $(O)$).[[br]]$\\Rightarrow \\widehat{ADB} = 90^\\circ$ (kề bù với $\\widehat{ADC}$), nên $\\triangle ADB$ vuông tại $D$.[[br]]$\\Rightarrow D$ thuộc đường tròn đường kính $[[fill:AB]]$ (đỉnh góc vuông thuộc đường tròn đường kính cạnh huyền).[[br]]Lại có $AE \\perp OB$ tại $E$ (giả thiết) $\\Rightarrow \\triangle AEB$ vuông tại $E$.[[br]]$\\Rightarrow E$ thuộc đường tròn đường kính $[[fill:AB]]$ (đỉnh góc vuông thuộc đường tròn đường kính cạnh huyền).[[br]]Vậy bốn điểm $A, B, D, E$ cùng thuộc đường tròn đường kính $[[fill:AB]]$.[[br]]\\textbf{b)} Xét đường tròn đường kính $[[fill:AB]]$ (câu a): $\\widehat{EAD}$ và $\\widehat{EBD}$ là hai góc nội tiếp cùng chắn cung $[[fill:ED]]$.[[br]]Vậy $\\widehat{EAD} = \\widehat{EBD}$ ([[fill:hai góc nội tiếp cùng chắn một cung]]).",
+          "type": "noted",
+          "variant": "example"
+        },
+        {
+          "answer": "a) vuông tại $N$, $AD$, vuông tại $T$, $AD$, đường tròn đường kính $AD$, b) $AD$, hai góc nội tiếp, $DT$",
+          "figure": {
+            "tikz": "\\begin{tikzpicture}[line width=0.8pt, font=\\small]\n  \\draw[ink] (1.4000,2.6000) -- (0.0000,0.0000) -- (4.0000,0.0000) -- cycle;\n  \\draw[ink] (1.4000,2.6000) -- (1.4000,0.0000);\n  \\draw[ink] (1.4000,0.1600) -- (1.5600,0.1600) -- (1.5600,0.0000);\n  \\fill[ink] (1.4000,2.6000) circle (1.3pt);\n  \\fill[ink] (0.0000,0.0000) circle (1.3pt);\n  \\fill[ink] (4.0000,0.0000) circle (1.3pt);\n  \\fill[ink] (1.4000,0.0000) circle (1.3pt);\n  \\node[inner sep=0pt] at (1.3583,2.8364) {$A$};\n  \\node[inner sep=0pt] at (-0.2078,-0.1200) {$B$};\n  \\node[inner sep=0pt] at (4.2255,-0.0821) {$C$};\n  \\node[inner sep=0pt] at (1.4000,-0.2400) {$D$};\n  \\path (-0.3500,-0.3500) rectangle (4.3500,2.9500);\n\\end{tikzpicture}",
+            "tikz_gv": "\\begin{tikzpicture}[line width=0.8pt, font=\\small]\n  \\draw[ink] (1.4000,2.6000) -- (0.0000,0.0000) -- (4.0000,0.0000) -- cycle;\n  \\draw[ink] (1.4000,2.6000) -- (1.4000,0.0000);\n  \\draw[ink] (1.4000,0.1600) -- (1.5600,0.1600) -- (1.5600,0.0000);\n  \\draw[ink] (1.4000,0.0000) -- (0.3147,0.5844);\n  \\draw[ink] (1.4000,0.0000) -- (2.7000,1.3000);\n  \\draw[ink] (0.3147,0.5844) -- (2.7000,1.3000);\n  \\draw[ink] (0.4556,0.5085) -- (0.3797,0.3677) -- (0.2388,0.4435);\n  \\draw[ink] (2.5869,1.1869) -- (2.7000,1.0737) -- (2.8131,1.1869);\n  \\fill[ink] (1.4000,2.6000) circle (1.3pt);\n  \\fill[ink] (0.0000,0.0000) circle (1.3pt);\n  \\fill[ink] (4.0000,0.0000) circle (1.3pt);\n  \\fill[ink] (1.4000,0.0000) circle (1.3pt);\n  \\fill[ink] (0.3147,0.5844) circle (1.3pt);\n  \\fill[ink] (2.7000,1.3000) circle (1.3pt);\n  \\node[inner sep=0pt] at (1.3583,2.8364) {$A$};\n  \\node[inner sep=0pt] at (-0.2078,-0.1200) {$B$};\n  \\node[inner sep=0pt] at (4.2255,-0.0821) {$C$};\n  \\node[inner sep=0pt] at (1.4000,-0.2400) {$D$};\n  \\node[inner sep=0pt] at (0.1068,0.7044) {$N$};\n  \\node[inner sep=0pt] at (2.8839,1.4543) {$T$};\n\\end{tikzpicture}",
+            "caption": "Hình 4",
+            "pos": "right",
+            "width": "0.32"
+          },
+          "hints": [
+            "Hai tam giác vuông $\\triangle AND$ và $\\triangle ATD$ có chung cạnh huyền nào?",
+            "Trong đường tròn vừa tìm được ở câu a, hai góc $\\widehat{DNT}$ và $\\widehat{DAT}$ cùng chắn cung nào?"
+          ],
+          "label": "Bài 2.",
+          "statement": "Cho tam giác nhọn $ABC$ ($AB < AC$) có đường cao $AD$. Gọi $N$, $T$ lần lượt là chân đường vuông góc kẻ từ $D$ đến $AB$, $AC$ (Hình 4). Vẽ tiếp vào Hình 4 các yếu tố còn thiếu theo đề rồi điền vào chỗ chấm để hoàn thành bài giải:[[br]]a) [NB] ★ Chứng minh bốn điểm $A, N, D, T$ cùng thuộc một đường tròn.[[br]]$DN \\perp AB$ tại $N$ (giả thiết) $\\Rightarrow \\triangle AND$ [[blank:3.2cm]].[[br]]$\\Rightarrow N$ thuộc đường tròn đường kính [[blank:1.1cm]] (đỉnh góc vuông thuộc đường tròn đường kính cạnh huyền).[[br]]$DT \\perp AC$ tại $T$ (giả thiết) $\\Rightarrow \\triangle ATD$ [[blank:3.2cm]].[[br]]$\\Rightarrow T$ thuộc đường tròn đường kính [[blank:1.1cm]] (đỉnh góc vuông thuộc đường tròn đường kính cạnh huyền).[[br]]Vậy bốn điểm $A, N, D, T$ cùng thuộc [[blank:3.2cm]].[[br]]b) [TH] ★★ Chứng minh $\\widehat{DNT} = \\widehat{DAT}$.[[br]]Xét đường tròn đường kính [[blank:1.1cm]] (câu a):[[br]]$\\widehat{DNT}$ và $\\widehat{DAT}$ là [[blank:3.2cm]] cùng chắn cung [[blank:1.1cm]].[[br]]Vậy $\\widehat{DNT} = \\widehat{DAT}$.",
+          "statement_slide": "Cho tam giác nhọn $ABC$ ($AB < AC$) có đường cao $AD$. Gọi $N$, $T$ lần lượt là chân đường vuông góc kẻ từ $D$ đến $AB$, $AC$ (Hình 4).[[br]]a) [NB] ★ Chứng minh bốn điểm $A, N, D, T$ cùng thuộc một đường tròn.[[br]]b) [TH] ★★ Chứng minh $\\widehat{DNT} = \\widehat{DAT}$.",
+          "type": "problem",
+          "level": 2,
+          "tier": "onclass",
+          "dang_id": "NB2+TH1",
+          "figure_given": true,
+          "ve_tiep": 2
+        },
+        {
+          "text": "Mạch 2. Bắc cầu qua góc thứ ba",
+          "type": "para",
+          "variant": "heading"
+        },
+        {
+          "figure": {
+            "tikz": "\\begin{tikzpicture}[line width=0.8pt, font=\\small]\n  \\draw[ink] (0.0000,0.0000) -- (3.4000,0.0000) -- (0.0000,2.4000) -- cycle;\n  \\draw[ink] (0.1600,0.0000) -- (0.1600,0.1600) -- (0.0000,0.1600);\n  \\fill[ink] (0.0000,0.0000) circle (1.3pt);\n  \\fill[ink] (3.4000,0.0000) circle (1.3pt);\n  \\fill[ink] (0.0000,2.4000) circle (1.3pt);\n  \\node[inner sep=0pt] at (-0.1839,-0.1543) {$A$};\n  \\node[inner sep=0pt] at (3.6255,-0.0821) {$B$};\n  \\node[inner sep=0pt] at (-0.1200,2.6078) {$C$};\n  \\path (-1.2000,-0.3500) rectangle (3.7500,2.7500);\n\\end{tikzpicture}",
+            "tikz_gv": "\\begin{tikzpicture}[line width=0.8pt, font=\\small]\n  \\draw[ink] (0.0000,0.0000) -- (3.4000,0.0000) -- (0.0000,2.4000) -- cycle;\n  \\draw[ink] (0.1600,0.0000) -- (0.1600,0.1600) -- (0.0000,0.1600);\n  \\draw[ink] (0.0000,1.5500) circle (0.8500);\n  \\draw[ink] (3.4000,0.0000) -- (-0.3358,0.7691);\n  \\draw[ink] (0.0000,2.4000) -- (-0.3358,0.7691);\n  \\draw[ink] (0.0000,0.0000) -- (-0.3358,0.7691);\n  \\draw[ink] (0.0000,0.7000) -- (0.8009,1.8346);\n  \\draw[ink] (0.8009,1.8346) -- (-0.3358,0.7691);\n  \\draw[ink] (-0.1791,0.7369) -- (-0.1468,0.8936) -- (-0.3035,0.9258);\n  \\fill[ink] (0.0000,0.0000) circle (1.3pt);\n  \\fill[ink] (3.4000,0.0000) circle (1.3pt);\n  \\fill[ink] (0.0000,2.4000) circle (1.3pt);\n  \\fill[ink] (0.0000,0.7000) circle (1.3pt);\n  \\fill[ink] (0.8009,1.8346) circle (1.3pt);\n  \\fill[ink] (-0.3358,0.7691) circle (1.3pt);\n  \\node[inner sep=0pt] at (-0.1200,-0.2078) {$A$};\n  \\node[inner sep=0pt] at (3.6255,-0.0821) {$B$};\n  \\node[inner sep=0pt] at (0.0000,2.7000) {$C$};\n  \\node[inner sep=0pt] at (0.1928,0.4702) {$M$};\n  \\node[inner sep=0pt] at (1.0307,2.0275) {$E$};\n  \\node[inner sep=0pt] at (-0.5286,0.5393) {$D$};\n\\end{tikzpicture}",
+            "caption": "Hình 5",
+            "pos": "right",
+            "width": "0.34"
+          },
+          "text": "\\textbf{Ví dụ 2.} Cho tam giác $ABC$ vuông tại $A$ ($AB > AC$). Trên cạnh $AC$ lấy điểm $M$ (khác $A$ và $C$). Đường tròn đường kính $MC$ cắt $BC$ tại $E$ và cắt đường thẳng $BM$ tại $D$ ($E$ khác $C$, $D$ khác $M$) (Hình 5). Vẽ tiếp vào Hình 5 các yếu tố còn thiếu theo đề.[[br]]a) [NB] ★ Chứng minh tứ giác $ABCD$ nội tiếp.[[br]]b) [VD] ★★★ Chứng minh $\\widehat{ABD} = \\widehat{MED}$.[[br]]{\\sffamily\\bfseries\\color{brand}Lời giải}[[br]]\\textbf{a)} $\\widehat{BAC} = 90^\\circ$ (giả thiết) $\\Rightarrow A$ thuộc đường tròn đường kính $[[fill:BC]]$.[[br]]$\\widehat{MDC} = [[fill:90^\\circ]]$ ([[fill:góc nội tiếp chắn nửa đường tròn]] đường kính $MC$).[[br]]$\\Rightarrow \\widehat{BDC} = 90^\\circ$ ($D$ thuộc đường thẳng $BM$).[[br]]$\\Rightarrow D$ thuộc đường tròn đường kính $[[fill:BC]]$ (đỉnh góc vuông thuộc đường tròn đường kính cạnh huyền).[[br]]$\\Rightarrow A, B, C, D$ cùng thuộc đường tròn đường kính $[[fill:BC]]$ (hai đỉnh góc vuông cùng nhìn đoạn $BC$).[[br]]Vậy tứ giác $[[fill:ABCD]]$ nội tiếp.[[br]]\\textbf{b)} Xét đường tròn đường kính $[[fill:BC]]$: $\\widehat{ABD} = \\widehat{ACD}$ (hai góc nội tiếp cùng chắn cung $[[fill:AD]]$).[[br]]Xét đường tròn đường kính $MC$: $\\widehat{MCD} = \\widehat{MED}$ (hai góc nội tiếp cùng chắn cung $[[fill:MD]]$).[[br]]$M$ thuộc cạnh $AC$ (giả thiết) $\\Rightarrow \\widehat{ACD} = \\widehat{MCD}$.[[br]]Vậy $\\widehat{ABD} = [[fill:\\widehat{MED}]]$ (cùng bằng $\\widehat{ACD}$).",
+          "type": "noted",
+          "variant": "example"
+        },
+        {
+          "answer": "a) $90^\\circ$, $BC$, $90^\\circ$, $BC$, đường tròn đường kính $BC$[[br]]b) $OB = OC$ (bán kính đường tròn $(O)$) và $\\widehat{BOC} = 90^\\circ$ (giả thiết) $\\Rightarrow \\triangle OBC$ vuông cân tại $O$.[[br]]$\\Rightarrow \\widehat{OBC} = \\widehat{OCB} = 45^\\circ$ (tính chất tam giác vuông cân).[[br]]Xét đường tròn đường kính $BC$ (câu a): $\\widehat{BHO} = \\widehat{BCO} = 45^\\circ$ (hai góc nội tiếp cùng chắn cung $BO$).[[br]]Xét đường tròn đường kính $BC$ (câu a): $\\widehat{CHO} = \\widehat{CBO} = 45^\\circ$ (hai góc nội tiếp cùng chắn cung $CO$).[[br]]$\\Rightarrow \\widehat{BHO} = \\widehat{CHO}$ (cùng bằng $45^\\circ$), lại có tia $HO$ nằm giữa hai tia $HB$ và $HC$.[[br]]Vậy $HO$ là tia phân giác của góc $\\widehat{BHC}$.",
+          "figure": {
+            "tikz": "\\begin{tikzpicture}[line width=0.8pt, font=\\small]\n  \\draw[ink] (0.0000,0.0000) circle (1.5000);\n  \\draw[ink] (-1.5000,0.0000) -- (1.5000,0.0000);\n  \\draw[ink] (0.0000,1.5000) -- (0.0000,-1.5000);\n  \\draw[ink] (0.1600,0.0000) -- (0.1600,0.1600) -- (0.0000,0.1600);\n  \\fill[ink] (0.0000,0.0000) circle (1.3pt);\n  \\fill[ink] (-1.5000,0.0000) circle (1.3pt);\n  \\fill[ink] (1.5000,0.0000) circle (1.3pt);\n  \\fill[ink] (0.0000,1.5000) circle (1.3pt);\n  \\fill[ink] (0.0000,-1.5000) circle (1.3pt);\n  \\node[inner sep=0pt] at (-0.1543,0.1839) {$O$};\n  \\node[inner sep=0pt] at (-1.8000,0.0000) {$A$};\n  \\node[inner sep=0pt] at (1.8000,0.0000) {$B$};\n  \\node[inner sep=0pt] at (0.0000,1.8000) {$C$};\n  \\node[inner sep=0pt] at (-0.0000,-1.8000) {$D$};\n  \\path (-1.8500,-1.8500) rectangle (1.8500,2.7500);\n\\end{tikzpicture}",
+            "tikz_gv": "\\begin{tikzpicture}[line width=0.8pt, font=\\small]\n  \\draw[ink] (0.0000,0.0000) circle (1.5000);\n  \\draw[ink] (-1.5000,0.0000) -- (1.5000,0.0000);\n  \\draw[ink] (0.0000,1.5000) -- (0.0000,-1.5000);\n  \\draw[ink] (0.1600,0.0000) -- (0.1600,0.1600) -- (0.0000,0.1600);\n  \\draw[ink] (-1.5000,0.0000) -- (0.9000,2.4000);\n  \\draw[ink] (1.5000,0.0000) -- (0.9000,2.4000);\n  \\draw[ink] (0.0000,1.5000) -- (1.0588,1.7647);\n  \\draw[ink] (0.0000,1.5000) -- (1.5000,0.0000);\n  \\draw[ink] (0.0000,0.0000) -- (1.0588,1.7647);\n  \\draw[ink] (0.9036,1.7259) -- (0.9424,1.5707) -- (1.0976,1.6095);\n  \\fill[ink] (0.0000,0.0000) circle (1.3pt);\n  \\fill[ink] (-1.5000,0.0000) circle (1.3pt);\n  \\fill[ink] (1.5000,0.0000) circle (1.3pt);\n  \\fill[ink] (0.0000,1.5000) circle (1.3pt);\n  \\fill[ink] (0.0000,-1.5000) circle (1.3pt);\n  \\fill[ink] (0.9000,2.4000) circle (1.3pt);\n  \\fill[ink] (1.0588,1.7647) circle (1.3pt);\n  \\node[inner sep=0pt] at (-0.1543,0.1839) {$O$};\n  \\node[inner sep=0pt] at (-1.8000,0.0000) {$A$};\n  \\node[inner sep=0pt] at (1.8000,0.0000) {$B$};\n  \\node[inner sep=0pt] at (-0.1026,1.7819) {$C$};\n  \\node[inner sep=0pt] at (-0.0000,-1.8000) {$D$};\n  \\node[inner sep=0pt] at (0.9821,2.6255) {$M$};\n  \\node[inner sep=0pt] at (1.2952,1.8064) {$H$};\n\\end{tikzpicture}",
+            "caption": "Hình 6",
+            "pos": "right",
+            "width": "0.30"
+          },
+          "hints": [
+            "Tam giác $OBC$ là tam giác gì để tính được hai góc nhọn $\\widehat{OBC}$ và $\\widehat{OCB}$?",
+            "Trong đường tròn đường kính $BC$, hai góc $\\widehat{BHO}$ và $\\widehat{CHO}$ lần lượt cùng chắn những cung nào?"
+          ],
+          "label": "Bài 3.",
+          "statement": "Cho đường tròn $(O)$ có hai đường kính $AB$ và $CD$ vuông góc với nhau tại $O$. Trên tia đối của tia $CA$ lấy điểm $M$ ($M$ khác $C$). Kẻ $CH$ vuông góc với $BM$ tại $H$ (Hình 6). Vẽ tiếp vào Hình 6 các yếu tố còn thiếu theo đề.[[br]]a) [NB] ★ Điền vào chỗ chấm để hoàn thành bài giải chứng minh tứ giác $BOCH$ nội tiếp:[[br]]$AB \\perp CD$ tại $O$ (giả thiết) $\\Rightarrow \\widehat{BOC} = [[blank:1.1cm]]$.[[br]]$\\Rightarrow O$ thuộc đường tròn đường kính [[blank:1.1cm]] (đỉnh góc vuông thuộc đường tròn đường kính cạnh huyền).[[br]]$CH \\perp BM$ tại $H$ (giả thiết) $\\Rightarrow \\widehat{BHC} = [[blank:1.1cm]]$.[[br]]$\\Rightarrow H$ thuộc đường tròn đường kính [[blank:1.1cm]] (đỉnh góc vuông thuộc đường tròn đường kính cạnh huyền).[[br]]$\\Rightarrow B, O, C, H$ cùng thuộc [[blank:3.2cm]] (hai đỉnh góc vuông cùng nhìn một đoạn).[[br]]Vậy tứ giác $BOCH$ nội tiếp.[[br]]b) [TH] ★★ Chứng minh $HO$ là tia phân giác của góc $\\widehat{BHC}$ (trình bày vào vở).",
+          "statement_slide": "Cho đường tròn $(O)$ có hai đường kính $AB$ và $CD$ vuông góc với nhau tại $O$. Trên tia đối của tia $CA$ lấy điểm $M$ ($M$ khác $C$). Kẻ $CH$ vuông góc với $BM$ tại $H$ (Hình 6).[[br]]a) [NB] ★ Chứng minh tứ giác $BOCH$ nội tiếp.[[br]]b) [TH] ★★ Chứng minh $HO$ là tia phân giác của góc $\\widehat{BHC}$.",
+          "type": "problem",
+          "level": 2,
+          "tier": "onclass",
+          "dang_id": "NB2+TH2",
+          "figure_given": false,
+          "ve_tiep": 3
+        }
+      ],
+      "kind": "practice1",
+      "number": 3,
+      "teacher_note": "Kịch bản theo phút cho lớp C: Bài 1 khoảng 3 phút · Ví dụ 1 giáo viên vẽ hình cùng học sinh rồi điền ô khoảng 12 phút · Bài 2 học sinh tự vẽ tiếp $N$, $T$ rồi điền khung khoảng 10 phút · Ví dụ 2 khoảng 14 phút · Bài 3 vẽ tiếp hình, điền ý a rồi tự trình bày ý b vào vở khoảng 16 phút.",
+      "title": "Luyện tập 1"
+    },
+    {
+      "blocks": [
+        {
+          "text": "Đề thi thử vào 10 — THPT Sơn Tây (Hà Nội) 2024--2025",
+          "type": "para",
+          "variant": "heading"
+        },
+        {
+          "answer": "1) $ME \\perp AB$ tại $E$ (giả thiết) $\\Rightarrow \\triangle AEM$ vuông tại $E$.[[br]]$\\Rightarrow E$ thuộc đường tròn đường kính $AM$ (đỉnh góc vuông thuộc đường tròn đường kính cạnh huyền).[[br]]$MF \\perp AC$ tại $F$ (giả thiết) $\\Rightarrow \\triangle AFM$ vuông tại $F$.[[br]]$\\Rightarrow F$ thuộc đường tròn đường kính $AM$ (đỉnh góc vuông thuộc đường tròn đường kính cạnh huyền).[[br]]$\\Rightarrow A, E, M, F$ cùng thuộc đường tròn đường kính $AM$ (hai đỉnh góc vuông cùng nhìn đoạn $AM$).[[br]]Vậy tứ giác $AEMF$ là tứ giác nội tiếp.[[br]]2) Trong đường tròn $(O)$: $\\widehat{KBC} = \\widehat{KAC}$ (hai góc nội tiếp cùng chắn cung $KC$).[[br]]Xét đường tròn đường kính $AM$ (ý 1): $\\widehat{MAF} = \\widehat{MEF}$ (hai góc nội tiếp cùng chắn cung $MF$).[[br]]$K$ thuộc tia $AM$ và $F$ thuộc tia $AC$ (Hình 7) $\\Rightarrow \\widehat{KAC} = \\widehat{MAF}$.[[br]]Vậy $\\widehat{KBC} = \\widehat{MEF}$.",
+          "figure": {
+            "tikz": "\\begin{tikzpicture}[line width=0.8pt, font=\\small]\n  \\draw[ink] (0.0000,0.0000) circle (1.5000);\n  \\draw[ink] (0.3882,1.4489) -- (-1.3595,-0.6339) -- (1.3595,-0.6339) -- cycle;\n  \\fill[ink] (0.0000,0.0000) circle (1.3pt);\n  \\fill[ink] (0.3882,1.4489) circle (1.3pt);\n  \\fill[ink] (-1.3595,-0.6339) circle (1.3pt);\n  \\fill[ink] (1.3595,-0.6339) circle (1.3pt);\n  \\node[inner sep=0pt] at (0.2400,0.0000) {$O$};\n  \\node[inner sep=0pt] at (0.4908,1.7308) {$A$};\n  \\node[inner sep=0pt] at (-1.6414,-0.7365) {$B$};\n  \\node[inner sep=0pt] at (1.6193,-0.7839) {$C$};\n  \\path (-1.8500,-1.8500) rectangle (1.8500,1.8500);\n\\end{tikzpicture}",
+            "tikz_gv": "\\begin{tikzpicture}[line width=0.8pt, font=\\small]\n  \\draw[ink] (0.0000,0.0000) circle (1.5000);\n  \\draw[ink] (0.3882,1.4489) -- (-1.3595,-0.6339) -- (1.3595,-0.6339) -- cycle;\n  \\draw[ink] (-0.0000,-0.6339) -- (-0.7978,0.0355);\n  \\draw[ink] (-0.0000,-0.6339) -- (1.1167,-0.1132);\n  \\draw[ink] (-0.7978,0.0355) -- (1.1167,-0.1132);\n  \\draw[ink] (0.3882,1.4489) -- (-0.1598,-1.4915);\n  \\draw[ink] (-1.3595,-0.6339) -- (-0.1598,-1.4915);\n  \\draw[ink] (-0.6752,-0.0674) -- (-0.5724,0.0552) -- (-0.6949,0.1580);\n  \\draw[ink] (0.9716,-0.1808) -- (1.0393,-0.3259) -- (1.1843,-0.2582);\n  \\fill[ink] (0.0000,0.0000) circle (1.3pt);\n  \\fill[ink] (0.3882,1.4489) circle (1.3pt);\n  \\fill[ink] (-1.3595,-0.6339) circle (1.3pt);\n  \\fill[ink] (1.3595,-0.6339) circle (1.3pt);\n  \\fill[ink] (-0.0000,-0.6339) circle (1.3pt);\n  \\fill[ink] (-0.7978,0.0355) circle (1.3pt);\n  \\fill[ink] (1.1167,-0.1132) circle (1.3pt);\n  \\fill[ink] (-0.1598,-1.4915) circle (1.3pt);\n  \\node[inner sep=0pt] at (0.0000,0.2400) {$O$};\n  \\node[inner sep=0pt] at (0.4908,1.7308) {$A$};\n  \\node[inner sep=0pt] at (-1.6414,-0.7365) {$B$};\n  \\node[inner sep=0pt] at (1.6193,-0.7839) {$C$};\n  \\node[inner sep=0pt] at (0.1543,-0.8178) {$M$};\n  \\node[inner sep=0pt] at (-0.9816,0.1897) {$E$};\n  \\node[inner sep=0pt] at (1.3422,-0.0311) {$F$};\n  \\node[inner sep=0pt] at (-0.2119,-1.7869) {$K$};\n\\end{tikzpicture}",
+            "caption": "Hình 7",
+            "pos": "right"
+          },
+          "hints": [
+            "Ở ý 1, hai tam giác vuông $\\triangle AEM$ và $\\triangle AFM$ cùng có cạnh huyền là đoạn thẳng nào?",
+            "Ở ý 2, góc nào vừa nằm trong đường tròn $(O)$ để bằng $\\widehat{KBC}$, vừa nằm trong đường tròn ý 1 để bằng $\\widehat{MEF}$?"
+          ],
+          "label": "Bài 4.",
+          "quy_trinh": [
+            "Vẽ hình: tam giác $ABC$ nội tiếp $(O)$, trung điểm $M$ của $BC$, hai đường vuông góc $ME$, $MF$, tia $AM$ cắt $(O)$ tại $K$.",
+            "Ý 1: chỉ ra hai góc vuông tại $E$ và $F$ cùng nhìn đoạn $AM$ để kết luận bốn điểm cùng thuộc đường tròn đường kính $AM$.",
+            "Ý 2: tìm góc đứng giữa $\\widehat{KAC}$ nối hai đường tròn.",
+            "Trình bày từng đẳng thức góc: nêu rõ tên đường tròn và cung bị chắn."
+          ],
+          "statement": "Cho tam giác $ABC$ ($AB > AC$) nội tiếp đường tròn tâm $O$. Gọi $M$ là trung điểm của đoạn thẳng $BC$. Gọi $E$, $F$ lần lượt là chân đường vuông góc kẻ từ $M$ đến các đường thẳng $AB$, $AC$ (Hình 7).[[br]]1) [TH] ★★ Chứng minh tứ giác $AEMF$ là tứ giác nội tiếp.[[br]]2) [VD] ★★★ Đường thẳng $AM$ cắt đường tròn $(O)$ tại điểm thứ hai là $K$. Chứng minh $\\widehat{KBC} = \\widehat{MEF}$.",
+          "type": "problem",
+          "level": 3,
+          "tier": "onclass",
+          "dang_id": "TH3+VD1",
+          "figure_given": false,
+          "draw": true
+        }
+      ],
+      "kind": "practice2",
+      "number": 4,
+      "teacher_note": "Khoảng 30 phút: học sinh tự vẽ hình khoảng 5 phút, làm ý 1 khoảng 10 phút (tương tự Bài 2, Bài 3 ý a), làm ý 2 khoảng 15 phút (tương tự Ví dụ 2). Giáo viên chấm ý 1 trước khi học sinh chuyển sang ý 2.",
+      "title": "Luyện tập 2"
+    },
+    {
+      "blocks": [
+        {
+          "branches": [
+            {
+              "children": [
+                {
+                  "label": "Đường tròn $(O)$ đã cho"
+                },
+                {
+                  "label": "Hai góc vuông cùng nhìn một đoạn"
+                }
+              ],
+              "label": "TÌM ĐƯỜNG TRÒN"
+            },
+            {
+              "children": [
+                {
+                  "label": "Nêu rõ đường tròn"
+                },
+                {
+                  "label": "Đọc đúng cung bị chắn"
+                }
+              ],
+              "label": "CÙNG CHẮN MỘT CUNG"
+            },
+            {
+              "children": [
+                {
+                  "label": "Tìm góc đứng giữa"
+                },
+                {
+                  "label": "Mỗi bước một đường tròn"
+                }
+              ],
+              "label": "BẮC CẦU"
+            }
+          ],
+          "caption": "Sơ đồ tư duy: Góc nội tiếp cùng chắn một cung",
+          "root": "GÓC NỘI TIẾP CÙNG CHẮN MỘT CUNG",
+          "type": "mindmap"
+        },
+        {
+          "answer": "C",
+          "figure": {
+            "tikz": "\\begin{tikzpicture}[line width=0.8pt, font=\\small]\n  \\draw[ink] (0.0000,0.0000) circle (1.5000);\n  \\draw[ink] (-0.7500,1.2990) -- (-1.1491,-0.9642) -- (1.4095,-0.5130) -- cycle;\n  \\draw[ink] (-1.1491,-0.9642) -- (1.1491,0.9642);\n  \\draw[ink] (1.1491,0.9642) -- (1.4095,-0.5130);\n  \\fill[ink] (0.0000,0.0000) circle (1.3pt);\n  \\fill[ink] (-0.7500,1.2990) circle (1.3pt);\n  \\fill[ink] (-1.1491,-0.9642) circle (1.3pt);\n  \\fill[ink] (1.4095,-0.5130) circle (1.3pt);\n  \\fill[ink] (1.1491,0.9642) circle (1.3pt);\n  \\fill[ink] (0.3991,0.3349) circle (1.3pt);\n  \\node[inner sep=0pt] at (-0.1543,0.1839) {$O$};\n  \\node[inner sep=0pt] at (-0.9000,1.5588) {$A$};\n  \\node[inner sep=0pt] at (-1.3789,-1.1570) {$B$};\n  \\node[inner sep=0pt] at (1.6914,-0.6156) {$C$};\n  \\node[inner sep=0pt] at (1.3789,1.1570) {$K$};\n  \\node[inner sep=0pt] at (0.3991,0.5749) {$Q$};\n\\end{tikzpicture}",
+            "caption": "Hình 8",
+            "pos": "right",
+            "width": "0.28"
+          },
+          "label": "BTVN 1.",
+          "options": [
+            "$\\widehat{KBC}$",
+            "$\\widehat{BQC}$",
+            "$\\widehat{BKC}$",
+            "$\\widehat{ACK}$"
+          ],
+          "statement": "[NB] Cho $\\triangle ABC$ nhọn có $AB < BC$, nội tiếp đường tròn $(O)$. Kẻ đường kính $BK$ của đường tròn $(O)$ cắt cạnh $AC$ tại $Q$ (Hình 8). Góc nào sau đây bằng góc $\\widehat{BAC}$? \\;(Tách từ đề giữa học kì II xã Đông Anh, 2025--2026)",
+          "type": "problem",
+          "level": 1,
+          "tier": "btvn",
+          "dang_id": "NB1",
+          "figure_given": true
+        },
+        {
+          "answer": "D",
+          "figure": {
+            "tikz": "\\begin{tikzpicture}[line width=0.8pt, font=\\small]\n  \\draw[ink] (0.0000,0.0000) circle (1.5000);\n  \\draw[ink] (-0.2605,1.4772) -- (-1.2990,-0.7500) -- (1.2990,-0.7500) -- cycle;\n  \\draw[ink] (-1.2990,-0.7500) -- (0.4443,0.4707);\n  \\draw[ink] (1.2990,-0.7500) -- (-0.8350,0.2451);\n  \\draw[ink] (0.4443,0.4707) -- (-0.8350,0.2451);\n  \\draw[ink, dashed] (-0.2605,1.4772) -- (-0.2605,-0.0228);\n  \\draw[ink] (0.3132,0.3789) -- (0.4050,0.2479) -- (0.5361,0.3396);\n  \\draw[ink] (-0.6900,0.1775) -- (-0.7576,0.0325) -- (-0.9026,0.1001);\n  \\fill[ink] (-0.2605,1.4772) circle (1.3pt);\n  \\fill[ink] (-1.2990,-0.7500) circle (1.3pt);\n  \\fill[ink] (1.2990,-0.7500) circle (1.3pt);\n  \\fill[ink] (0.4443,0.4707) circle (1.3pt);\n  \\fill[ink] (-0.8350,0.2451) circle (1.3pt);\n  \\fill[ink] (-0.2605,-0.0228) circle (1.3pt);\n  \\node[inner sep=0pt] at (-0.3126,1.7727) {$A$};\n  \\node[inner sep=0pt] at (-1.5588,-0.9000) {$B$};\n  \\node[inner sep=0pt] at (1.5588,-0.9000) {$C$};\n  \\node[inner sep=0pt] at (0.6281,0.6250) {$E$};\n  \\node[inner sep=0pt] at (-1.0429,0.3651) {$F$};\n  \\node[inner sep=0pt] at (-0.2605,-0.2628) {$H$};\n\\end{tikzpicture}",
+            "caption": "Hình 9",
+            "pos": "right",
+            "width": "0.28"
+          },
+          "label": "BTVN 2.",
+          "options": [
+            "$\\widehat{AFE}$",
+            "$\\widehat{AHE}$",
+            "$\\widehat{BHF}$",
+            "$\\widehat{AHF}$"
+          ],
+          "statement": "[NB] Cho $\\triangle ABC$ nhọn ($AB < AC$) nội tiếp đường tròn $(O)$. Hai đường cao $BE$ và $CF$ cắt nhau tại $H$ (Hình 9). Biết bốn điểm $A, F, H, E$ cùng thuộc đường tròn đường kính $AH$. Góc nào sau đây bằng góc $\\widehat{AEF}$? \\;(Tách từ đề cuối học kì II THCS\\&THPT M.V. Lômônôxốp, 2024--2025)",
+          "type": "problem",
+          "level": 1,
+          "tier": "btvn",
+          "dang_id": "NB1",
+          "figure_given": true
+        },
+        {
+          "answer": "a) $CE \\perp CD$ tại $C$ (giả thiết) $\\Rightarrow \\triangle DCE$ vuông tại $C$.[[br]]$\\Rightarrow C$ thuộc đường tròn đường kính $DE$ (đỉnh góc vuông thuộc đường tròn đường kính cạnh huyền).[[br]]$EA$ là tiếp tuyến của $(O)$ tại $A$ (giả thiết) $\\Rightarrow EA \\perp AB$ (tính chất tiếp tuyến).[[br]]$\\Rightarrow \\triangle DAE$ vuông tại $A$ ($D$ thuộc $OA$), nên $A$ thuộc đường tròn đường kính $DE$.[[br]]Vậy bốn điểm $A, C, D, E$ cùng thuộc đường tròn đường kính $DE$.[[br]]b) $CF \\perp CD$ tại $C$ (giả thiết) $\\Rightarrow \\triangle DCF$ vuông tại $C$.[[br]]$\\Rightarrow C$ thuộc đường tròn đường kính $DF$ (đỉnh góc vuông thuộc đường tròn đường kính cạnh huyền).[[br]]$FB$ là tiếp tuyến của $(O)$ tại $B$ (giả thiết) $\\Rightarrow FB \\perp AB$ (tính chất tiếp tuyến).[[br]]$\\Rightarrow \\triangle DBF$ vuông tại $B$ ($D$ thuộc $OA$), nên $B$ thuộc đường tròn đường kính $DF$.[[br]]$\\Rightarrow B, C, D, F$ cùng thuộc đường tròn đường kính $DF$ (hai đỉnh góc vuông cùng nhìn đoạn $DF$).[[br]]Xét đường tròn đường kính $DF$: $\\widehat{CFD} = \\widehat{CBD}$ (hai góc nội tiếp cùng chắn cung $CD$).[[br]]$D$ thuộc đoạn $OA$ (giả thiết) $\\Rightarrow$ tia $BD$ trùng tia $BA$, nên $\\widehat{CBD} = \\widehat{CBA}$.[[br]]Vậy $\\widehat{CFD} = \\widehat{CBA}$.",
+          "figure": {
+            "tikz": "\\begin{tikzpicture}[line width=0.8pt, font=\\small]\n  \\draw[ink] (1.5000,0.0000) arc (0.0000:180.0000:1.5000);\n  \\draw[ink] (-1.5000,0.0000) -- (1.5000,0.0000);\n  \\fill[ink] (0.0000,0.0000) circle (1.3pt);\n  \\fill[ink] (-1.5000,0.0000) circle (1.3pt);\n  \\fill[ink] (1.5000,0.0000) circle (1.3pt);\n  \\node[inner sep=0pt] at (0.0000,0.2400) {$O$};\n  \\node[inner sep=0pt] at (-1.6839,-0.1543) {$A$};\n  \\node[inner sep=0pt] at (1.6839,-0.1543) {$B$};\n  \\path (-1.8500,-0.3500) rectangle (1.8500,1.8868);\n\\end{tikzpicture}",
+            "tikz_gv": "\\begin{tikzpicture}[line width=0.8pt, font=\\small]\n  \\draw[ink] (1.5000,0.0000) arc (0.0000:180.0000:1.5000);\n  \\draw[ink] (-1.5000,0.0000) -- (1.5000,0.0000);\n  \\draw[ink] (-1.5000,0.0000) -- (-1.5000,1.1452);\n  \\draw[ink] (1.5000,0.0000) -- (1.5000,1.5368);\n  \\draw[ink] (-1.5000,1.1452) -- (1.5000,1.5368);\n  \\draw[ink] (-0.8604,1.2287) -- (-0.7000,0.0000);\n  \\draw[ink] (-0.8604,1.2287) -- (1.5000,0.0000);\n  \\draw[ink] (-0.7000,0.0000) -- (1.5000,1.5368);\n  \\draw[ink] (-0.7000,0.0000) -- (-1.5000,1.1452);\n  \\draw[ink] (-0.8397,1.0701) -- (-0.6810,1.0908) -- (-0.7017,1.2494);\n  \\draw[ink] (-1.3400,0.0000) -- (-1.3400,0.1600) -- (-1.5000,0.1600);\n  \\draw[ink] (1.5000,0.1600) -- (1.3400,0.1600) -- (1.3400,0.0000);\n  \\fill[ink] (0.0000,0.0000) circle (1.3pt);\n  \\fill[ink] (-1.5000,0.0000) circle (1.3pt);\n  \\fill[ink] (1.5000,0.0000) circle (1.3pt);\n  \\fill[ink] (-0.8604,1.2287) circle (1.3pt);\n  \\fill[ink] (-0.7000,0.0000) circle (1.3pt);\n  \\fill[ink] (-1.5000,1.1452) circle (1.3pt);\n  \\fill[ink] (1.5000,1.5368) circle (1.3pt);\n  \\node[inner sep=0pt] at (0.0000,0.2400) {$O$};\n  \\node[inner sep=0pt] at (-1.6839,-0.1543) {$A$};\n  \\node[inner sep=0pt] at (1.6543,-0.1839) {$B$};\n  \\node[inner sep=0pt] at (-0.9020,1.4651) {$C$};\n  \\node[inner sep=0pt] at (-0.7000,-0.2400) {$D$};\n  \\node[inner sep=0pt] at (-1.6839,1.2995) {$E$};\n  \\node[inner sep=0pt] at (1.6543,1.7206) {$F$};\n\\end{tikzpicture}",
+            "caption": "Hình 10",
+            "pos": "right"
+          },
+          "hints": [
+            "Ở ý a, tiếp tuyến $EA$ vuông góc với bán kính nào để tạo thành tam giác vuông?",
+            "Ở ý b, bốn điểm nào cùng thuộc đường tròn đường kính $DF$ để đưa góc $\\widehat{CFD}$ về một góc tại đỉnh $B$?"
+          ],
+          "label": "BTVN 3.",
+          "statement": "Cho nửa đường tròn tâm $O$, đường kính $AB$. Lấy điểm $C$ thuộc nửa đường tròn $(O)$ sao cho $CA < CB$ và điểm $D$ thuộc đoạn $OA$ ($D$ khác $O$ và $A$). Đường thẳng qua $C$ vuông góc với $CD$ cắt các tiếp tuyến của nửa đường tròn $(O)$ tại $A$ và $B$ lần lượt tại $E$ và $F$ (Hình 10).[[br]]a) [TH] ★★ Chứng minh bốn điểm $A, C, D, E$ cùng thuộc một đường tròn.[[br]]b) [TH] ★★ Chứng minh $\\widehat{CFD} = \\widehat{CBA}$.",
+          "type": "problem",
+          "level": 2,
+          "tier": "btvn",
+          "dang_id": "TH3+TH1",
+          "draw": true
+        },
+        {
+          "answer": "a) $HM \\perp AB$ tại $M$ (giả thiết) $\\Rightarrow \\triangle AMH$ vuông tại $M$.[[br]]$\\Rightarrow M$ thuộc đường tròn đường kính $AH$ (đỉnh góc vuông thuộc đường tròn đường kính cạnh huyền).[[br]]$HN \\perp AC$ tại $N$ (giả thiết) $\\Rightarrow \\triangle ANH$ vuông tại $N$.[[br]]$\\Rightarrow N$ thuộc đường tròn đường kính $AH$ (đỉnh góc vuông thuộc đường tròn đường kính cạnh huyền).[[br]]Vậy bốn điểm $A, M, H, N$ cùng thuộc đường tròn đường kính $AH$.[[br]]b) Xét đường tròn đường kính $AH$ (câu a): $\\widehat{ANM} = \\widehat{AHM}$ (hai góc nội tiếp cùng chắn cung $AM$).[[br]]$\\triangle AMH$ vuông tại $M$ $\\Rightarrow \\widehat{AHM} = 90^\\circ - \\widehat{MAH}$ (tổng hai góc nhọn của tam giác vuông bằng $90^\\circ$).[[br]]$\\triangle AHB$ vuông tại $H$ ($AH$ là đường cao) $\\Rightarrow \\widehat{ABH} = 90^\\circ - \\widehat{BAH}$ (tổng hai góc nhọn của tam giác vuông bằng $90^\\circ$).[[br]]$M$ thuộc cạnh $AB$ (giả thiết) $\\Rightarrow \\widehat{MAH} = \\widehat{BAH}$.[[br]]$\\Rightarrow \\widehat{AHM} = \\widehat{ABH}$ (cùng phụ với $\\widehat{BAH}$).[[br]]Vậy $\\widehat{ANM} = \\widehat{ABC}$ ($H$ thuộc cạnh $BC$).",
+          "figure": {
+            "tikz": "\\begin{tikzpicture}[line width=0.8pt, font=\\small]\n  \\draw[ink] (0.0000,0.0000) circle (1.5000);\n  \\draw[ink] (-0.1307,1.4943) -- (-1.2287,-0.8604) -- (1.2287,-0.8604) -- cycle;\n  \\fill[ink] (0.0000,0.0000) circle (1.3pt);\n  \\fill[ink] (-0.1307,1.4943) circle (1.3pt);\n  \\fill[ink] (-1.2287,-0.8604) circle (1.3pt);\n  \\fill[ink] (1.2287,-0.8604) circle (1.3pt);\n  \\node[inner sep=0pt] at (0.2400,0.0000) {$O$};\n  \\node[inner sep=0pt] at (-0.1307,1.7943) {$A$};\n  \\node[inner sep=0pt] at (-1.4885,-1.0104) {$B$};\n  \\node[inner sep=0pt] at (1.4585,-1.0532) {$C$};\n  \\path (-1.8500,-1.8500) rectangle (1.8500,1.8500);\n\\end{tikzpicture}",
+            "tikz_gv": "\\begin{tikzpicture}[line width=0.8pt, font=\\small]\n  \\draw[ink] (0.0000,0.0000) circle (1.5000);\n  \\draw[ink] (-0.1307,1.4943) -- (-1.2287,-0.8604) -- (1.2287,-0.8604) -- cycle;\n  \\draw[ink] (-0.1307,1.4943) -- (-0.1307,-0.8604);\n  \\draw[ink] (-0.1307,-0.8604) -- (-1.0326,-0.4398);\n  \\draw[ink] (-0.1307,-0.8604) -- (0.8889,-0.2717);\n  \\draw[ink] (-1.0326,-0.4398) -- (0.8889,-0.2717);\n  \\draw[ink] (-0.1307,-0.7004) -- (0.0293,-0.7004) -- (0.0293,-0.8604);\n  \\draw[ink] (-0.8876,-0.5074) -- (-0.8200,-0.3624) -- (-0.9650,-0.2948);\n  \\draw[ink] (0.7503,-0.3517) -- (0.8303,-0.4903) -- (0.9689,-0.4103);\n  \\fill[ink] (0.0000,0.0000) circle (1.3pt);\n  \\fill[ink] (-0.1307,1.4943) circle (1.3pt);\n  \\fill[ink] (-1.2287,-0.8604) circle (1.3pt);\n  \\fill[ink] (1.2287,-0.8604) circle (1.3pt);\n  \\fill[ink] (-0.1307,-0.8604) circle (1.3pt);\n  \\fill[ink] (-1.0326,-0.4398) circle (1.3pt);\n  \\fill[ink] (0.8889,-0.2717) circle (1.3pt);\n  \\node[inner sep=0pt] at (0.2400,0.0000) {$O$};\n  \\node[inner sep=0pt] at (-0.1307,1.7943) {$A$};\n  \\node[inner sep=0pt] at (-1.4885,-1.0104) {$B$};\n  \\node[inner sep=0pt] at (1.4585,-1.0532) {$C$};\n  \\node[inner sep=0pt] at (-0.1307,-1.1004) {$H$};\n  \\node[inner sep=0pt] at (-1.2405,-0.3198) {$M$};\n  \\node[inner sep=0pt] at (1.0967,-0.1517) {$N$};\n\\end{tikzpicture}",
+            "caption": "Hình 11",
+            "pos": "right"
+          },
+          "hints": [
+            "Góc nào đứng giữa $\\widehat{ANM}$ (trong đường tròn câu a) và góc $\\widehat{ABC}$?",
+            "Tổng hai góc nhọn trong hai tam giác vuông $\\triangle AMH$ và $\\triangle AHB$ giúp so sánh hai góc nào?"
+          ],
+          "label": "BTVN 4.",
+          "statement": "Cho tam giác $ABC$ có ba góc nhọn nội tiếp đường tròn tâm $O$ bán kính $R$ và $AH$ là đường cao của tam giác $ABC$. Gọi $M$, $N$ lần lượt là chân đường vuông góc kẻ từ $H$ đến $AB$ và $AC$ (Hình 11).[[br]]a) [TH] ★★ Chứng minh bốn điểm $A, M, H, N$ cùng thuộc một đường tròn.[[br]]b) [VD] ★★★ Chứng minh $\\widehat{ANM} = \\widehat{ABC}$.",
+          "type": "problem",
+          "level": 3,
+          "tier": "btvn",
+          "dang_id": "TH3+VD1",
+          "draw": true
+        }
+      ],
+      "kind": "reflection",
+      "number": 5,
+      "teacher_note": "BTVN khoảng 55 phút (dày hơn quỹ 40 phút để học sinh có thêm bài rèn luyện): BTVN 1--2 trắc nghiệm khoảng 5 phút, BTVN 3 khoảng 22 phút, BTVN 4 khoảng 28 phút (gồm cả vẽ hình).",
+      "title": "Sơ đồ tư duy"
+    }
+  ]
+}

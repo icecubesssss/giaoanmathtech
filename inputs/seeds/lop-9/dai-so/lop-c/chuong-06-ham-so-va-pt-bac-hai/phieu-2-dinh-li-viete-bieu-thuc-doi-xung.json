@@ -1,0 +1,565 @@
+{
+  "slug": "phieu-2-dinh-li-viete-bieu-thuc-doi-xung",
+  "title": "Bài 20. Định lí Viète — biểu thức đối xứng của hai nghiệm",
+  "eyebrow": "ĐẠI SỐ — CHƯƠNG VI · PHIẾU 2",
+  "grade_label": "Lớp 9 • Ôn vào 10",
+  "class_tier": "C",
+  "chuong": "chuong-06-ham-so-va-pt-bac-hai",
+  "btvn_phieu_rieng": true,
+  "stages": [
+    {
+      "kind": "review",
+      "number": 1,
+      "title": "Khám phá",
+      "blocks": [
+        {
+          "type": "opener",
+          "text": "Xét bài toán cuối cùng trong phần luyện tập (đề kiểm tra học kì II trường THCS\\&THPT M.V. Lômônôxốp 2024--2025):[[br]]\\emph{\\textquotedblleft Cho phương trình $x^2+mx-6=0$. a) Chứng minh rằng phương trình luôn có hai nghiệm phân biệt $x_1$, $x_2$ với mọi giá trị của $m$. b) Tìm giá trị của $m$ để phương trình có hai nghiệm $x_1$, $x_2$ thỏa mãn $x_1^2+x_2^2-x_1x_2=22$.\\textquotedblright}[[br]]Ở ý a), cần nhận ra hai hệ số $a$ và $c$ trái dấu (đã học ở Phiếu 1) để khẳng định phương trình luôn có hai nghiệm phân biệt.[[br]]Ở ý b), cần viết tổng $x_1+x_2$ và tích $x_1x_2$ theo $m$ bằng định lí Viète, rồi đưa biểu thức $x_1^2+x_2^2-x_1x_2$ về tổng và tích của hai nghiệm.[[br]]Đó chính là nội dung của buổi học, và bài toán trên là Bài 19 ở cuối Luyện tập 2."
+        },
+        {
+          "type": "para",
+          "text": "\\textbf{Nhắc lại kiến thức đã học.}"
+        },
+        {
+          "type": "noted",
+          "variant": "note",
+          "text": "$\\bullet$\\; Hằng đẳng thức đáng nhớ (Toán 8): $(A+B)^2=A^2+2AB+B^2$, $(A-B)^2=A^2-2AB+B^2$, $(A+B)^3=A^3+3A^2B+3AB^2+B^3$.[[br]]$\\bullet$\\; Quy đồng mẫu hai phân thức (Toán 8): $\\dfrac{A}{B}+\\dfrac{C}{D}=\\dfrac{AD+BC}{BD}$ (với $B\\ne 0$, $D\\ne 0$).[[br]]$\\bullet$\\; Biệt thức $\\Delta=b^2-4ac$ của phương trình $ax^2+bx+c=0$ ($a\\ne 0$): nếu $\\Delta>0$ thì phương trình có hai nghiệm phân biệt, nếu $\\Delta\\ge 0$ thì phương trình có nghiệm, nếu $a$ và $c$ trái dấu thì phương trình có hai nghiệm phân biệt (Phiếu 1)."
+        }
+      ],
+      "solution": "",
+      "teacher_note": "10 phút — Nhắc lại hằng đẳng thức, quy đồng mẫu, điều kiện có nghiệm, đọc đề đích, chưa giải."
+    },
+    {
+      "kind": "concept",
+      "number": 2,
+      "title": "Kiến thức cần nhớ",
+      "blocks": [
+        {
+          "text": "1. Định lí Viète",
+          "type": "para",
+          "variant": "heading"
+        },
+        {
+          "text": "Nếu $x_1$, $x_2$ là hai nghiệm của phương trình $ax^2+bx+c=0$ ($a\\ne 0$) thì $x_1+x_2=-\\dfrac{b}{a}$ và $x_1x_2=\\dfrac{c}{a}$.[[br]]Định lí Viète chỉ dùng khi phương trình có nghiệm, nên trước hết cần tính $\\Delta$ để kiểm tra điều kiện có nghiệm (như SGK Ví dụ 1 tr.21). \\textit{(SGK Toán 9 tập hai, tr.21)}",
+          "type": "para"
+        },
+        {
+          "text": "2. Biết một nghiệm, tìm nghiệm còn lại",
+          "type": "para",
+          "variant": "heading"
+        },
+        {
+          "text": "Theo định lí Viète, nếu phương trình $ax^2+bx+c=0$ ($a\\ne 0$) có một nghiệm là $x_1$ thì nghiệm còn lại $x_2$ được tính bằng $x_2=\\dfrac{c}{a\\,x_1}$ (từ tích, khi $x_1\\ne 0$) hoặc $x_2=-\\dfrac{b}{a}-x_1$ (từ tổng). \\textit{(SGK Toán 9 tập hai, tr.23)}",
+          "type": "para"
+        },
+        {
+          "text": "3. Hai nghiệm trái dấu",
+          "type": "para",
+          "variant": "heading"
+        },
+        {
+          "text": "Nếu $a$ và $c$ trái dấu thì $ac<0$, khi đó $\\Delta=b^2-4ac>0$ nên phương trình có hai nghiệm phân biệt $x_1$, $x_2$.[[br]]Đồng thời $x_1x_2=\\dfrac{c}{a}<0$, nên hai nghiệm $x_1$ và $x_2$ trái dấu. \\textit{(hệ quả của định lí Viète)}",
+          "type": "para"
+        },
+        {
+          "text": "4. Biểu thức đối xứng của hai nghiệm viết theo tổng và tích",
+          "type": "para",
+          "variant": "heading"
+        },
+        {
+          "text": "Từ $(x_1+x_2)^2=x_1^2+2x_1x_2+x_2^2$, ta có $x_1^2+x_2^2=(x_1+x_2)^2-2x_1x_2$ \\textit{(SGK tr.28, Ví dụ 1)}[[br]]$(x_1-x_2)^2=x_1^2-2x_1x_2+x_2^2=(x_1^2+2x_1x_2+x_2^2)-4x_1x_2=(x_1+x_2)^2-4x_1x_2$[[br]]Từ $(x_1+x_2)^3=x_1^3+x_2^3+3x_1x_2(x_1+x_2)$, ta có $x_1^3+x_2^3=(x_1+x_2)^3-3x_1x_2(x_1+x_2)$[[br]]$\\dfrac{1}{x_1}+\\dfrac{1}{x_2}=\\dfrac{x_2+x_1}{x_1x_2}=\\dfrac{x_1+x_2}{x_1x_2}$ (với $x_1x_2\\ne 0$)[[br]]$\\dfrac{x_1}{x_2}+\\dfrac{x_2}{x_1}=\\dfrac{x_1^2+x_2^2}{x_1x_2}=\\dfrac{(x_1+x_2)^2-2x_1x_2}{x_1x_2}$ (với $x_1x_2\\ne 0$)[[br]]\\textit{(biến đổi bằng hằng đẳng thức đáng nhớ, Toán 8)}",
+          "type": "para"
+        }
+      ],
+      "teacher_note": "20 phút — Mục 1 và mục 4 là trọng tâm, cho học sinh tự viết lại $x_1^2+x_2^2$ theo tổng, tích ngay khi giảng."
+    },
+    {
+      "kind": "practice1",
+      "number": 3,
+      "title": "Luyện tập 1 — Nhận biết",
+      "blocks": [
+        {
+          "text": "\\textbf{Đích của buổi học:} Bài 19 — đề kiểm tra học kì II THCS\\&THPT M.V. Lômônôxốp: chứng minh phương trình luôn có hai nghiệm phân biệt và tìm $m$ để hai nghiệm thỏa mãn một hệ thức. Mạch 1--3 chuẩn bị cho ý a) và cách viết tổng, tích, Mạch 4--8 chuẩn bị cho ý b).",
+          "type": "para"
+        },
+        {
+          "type": "para",
+          "variant": "heading",
+          "text": "Mạch 1. Tổng và tích hai nghiệm"
+        },
+        {
+          "type": "noted",
+          "variant": "example",
+          "text": "\\textbf{Ví dụ 1.} Không giải phương trình, hãy tính biệt thức $\\Delta$ để kiểm tra điều kiện có nghiệm, rồi tính tổng và tích các nghiệm của các phương trình:[[br]]a) $2x^2+11x+7=0$[[br]]b) $4x^2-12x+9=0$ \\textit{(SGK Ví dụ 1 tr.21)}[[br]]{\\sffamily\\bfseries\\color{brand}Lời giải}[[br]]\\hspace*{1.4em}a) Ta có $\\Delta=11^2-4\\cdot 2\\cdot 7=[[fill:65]]>0$ nên phương trình có hai nghiệm phân biệt.[[br]]\\hspace*{1.4em}Theo định lí Viète, ta có $x_1+x_2=[[fill:-\\dfrac{11}{2}]]$ và $x_1x_2=[[fill:\\dfrac{7}{2}]]$.[[br]]\\hspace*{1.4em}Vậy $x_1+x_2=[[fill:-\\dfrac{11}{2}]]$ và $x_1x_2=[[fill:\\dfrac{7}{2}]]$.[[br]]\\hspace*{1.4em}b) Ta có $\\Delta=(-12)^2-4\\cdot 4\\cdot 9=[[fill:0]]$ nên phương trình có hai nghiệm [[fill:trùng nhau]].[[br]]\\hspace*{1.4em}Theo định lí Viète, ta có $x_1+x_2=[[fill:3]]$ và $x_1x_2=[[fill:\\dfrac{9}{4}]]$.[[br]]\\hspace*{1.4em}Vậy $x_1+x_2=[[fill:3]]$ và $x_1x_2=[[fill:\\dfrac{9}{4}]]$."
+        },
+        {
+          "dang_id": "NB2",
+          "hints": [],
+          "label": "Bài 1.",
+          "level": 1,
+          "solution": "Sai. Ta có $\\Delta=(-1)^2-4\\cdot 1\\cdot 1=-3<0$ nên phương trình vô nghiệm, không có tổng và tích các nghiệm.",
+          "statement": "[NB] Khẳng định sau đúng hay sai? Vì sao?",
+          "tier": "onclass",
+          "type": "problem",
+          "dung_sai": [
+            "Tổng và tích hai nghiệm của phương trình $x^2-x+1=0$ đều bằng $1$."
+          ]
+        },
+        {
+          "dang_id": "NB2",
+          "hints": [],
+          "label": "Bài 2.",
+          "level": 1,
+          "solution": "Chọn A. Vì $(x_1+x_2)^2=x_1^2+2x_1x_2+x_2^2$ nên $x_1^2+x_2^2=(x_1+x_2)^2-2x_1x_2$.",
+          "statement": "[NB] Biểu thức $x_1^2+x_2^2$ viết theo $x_1+x_2$ và $x_1x_2$ là",
+          "tier": "onclass",
+          "type": "problem",
+          "options": [
+            "$(x_1+x_2)^2-2x_1x_2$",
+            "$(x_1+x_2)^2+2x_1x_2$",
+            "$(x_1+x_2)^2-x_1x_2$",
+            "$(x_1+x_2)^2-4x_1x_2$"
+          ]
+        },
+        {
+          "dang_id": "NB2",
+          "hints": [],
+          "label": "Bài 3.",
+          "level": 1,
+          "solution": "Không. Ta có $\\Delta=1^2-4\\cdot 1\\cdot 1=-3<0$ nên phương trình vô nghiệm, không có tổng và tích các nghiệm.",
+          "statement": "[NB] Phương trình $x^2+x+1=0$ có tổng và tích các nghiệm là hai số đối nhau không? Vì sao?",
+          "tier": "onclass",
+          "type": "problem"
+        },
+        {
+          "dang_id": "NB2",
+          "hints": [],
+          "label": "Bài 4.",
+          "level": 1,
+          "solution": "a) Theo định lí Viète, ta có $x_1+x_2=12$ và $x_1x_2=8$.[[br]]b) Theo định lí Viète, ta có $x_1+x_2=-\\dfrac{11}{2}$ và $x_1x_2=-\\dfrac{5}{2}$.[[br]]c) Theo định lí Viète, ta có $x_1+x_2=0$ và $x_1x_2=-\\dfrac{10}{3}$.",
+          "statement": "Các phương trình sau đều có hai nghiệm phân biệt. Tính tổng và tích các nghiệm của mỗi phương trình. \\textit{(SGK 6{.}23)}[[br]]a) [NB] $x^2-12x+8=0$[[br]]b) [NB] $2x^2+11x-5=0$[[br]]c) [NB] $3x^2-10=0$",
+          "tier": "onclass",
+          "type": "problem"
+        },
+        {
+          "dang_id": "NB2",
+          "hints": [],
+          "label": "Bài 5.",
+          "level": 1,
+          "solution": "a) Vì $a\\cdot c=1\\cdot(-5)=-5<0$ nên phương trình có hai nghiệm phân biệt $x_1$, $x_2$.[[br]]b) Theo định lí Viète, ta có $x_1+x_2=-3$ và $x_1x_2=-5$.[[br]]c) Theo câu b), ta có $x_1+x_2-x_1x_2=-3-(-5)=2$.[[br]]\\hspace*{1.4em}Vậy $x_1+x_2-x_1x_2=2$.",
+          "statement": "Cho phương trình $x^2+3x-5=0$. Chứng minh rằng phương trình có hai nghiệm phân biệt $x_1$, $x_2$. Tính $x_1+x_2-x_1x_2$. \\textit{(HK2 Phòng GD\\&ĐT Gia Lâm, 2024--2025)}[[br]]a) [NB] Vì sao phương trình có hai nghiệm phân biệt?[[br]]b) [NB] Tính $x_1+x_2$ và $x_1x_2$.[[br]]c) [NB] Tính $x_1+x_2-x_1x_2$.",
+          "tier": "onclass",
+          "type": "problem"
+        },
+        {
+          "type": "para",
+          "variant": "heading",
+          "text": "Mạch 2. Biết một nghiệm, hai nghiệm trái dấu"
+        },
+        {
+          "dang_id": "NB4",
+          "hints": [],
+          "label": "Bài 6.",
+          "level": 1,
+          "solution": "Đúng. Phương trình có hai nghiệm trái dấu khi $a\\cdot c<0$, tức là $1\\cdot m<0$, hay $m<0$ (khi đó $x_1x_2=m<0$).",
+          "statement": "[NB] Khẳng định sau đúng hay sai? Vì sao?",
+          "tier": "onclass",
+          "type": "problem",
+          "dung_sai": [
+            "Phương trình $x^2-2x+m=0$ có hai nghiệm trái dấu khi $m<0$."
+          ]
+        },
+        {
+          "dang_id": "NB3",
+          "hints": [],
+          "label": "Bài 7.",
+          "level": 1,
+          "solution": "Theo định lí Viète, ta có $x_1x_2=2$ nên với $x_1=-\\sqrt{2}$ ta được $x_2=\\dfrac{2}{-\\sqrt{2}}=-\\sqrt{2}$.[[br]]\\hspace*{1.4em}Vậy nghiệm còn lại là $x_2=-\\sqrt{2}$.",
+          "statement": "[NB] Biết phương trình $x^2+2\\sqrt2\\,x+2=0$ có một nghiệm $x_1=-\\sqrt2$. Dùng tích hai nghiệm, tìm nghiệm còn lại.",
+          "tier": "onclass",
+          "type": "problem"
+        },
+        {
+          "dang_id": "NB4",
+          "hints": [],
+          "label": "Bài 8.",
+          "level": 1,
+          "solution": "Phương trình có hai nghiệm trái dấu khi $a\\cdot c<0$, tức là $1\\cdot m<0$.[[br]]\\hspace*{1.4em}Vậy $m<0$.",
+          "statement": "[NB] Tìm $m$ để phương trình $x^2+4x+m=0$ có hai nghiệm trái dấu.",
+          "tier": "onclass",
+          "type": "problem"
+        },
+        {
+          "type": "para",
+          "variant": "heading",
+          "text": "Mạch 3. Ôn quy đồng mẫu"
+        },
+        {
+          "dang_id": "NB1",
+          "hints": [],
+          "label": "Bài 9.",
+          "level": 1,
+          "solution": "Ta có $\\dfrac{1}{x_1+3}+\\dfrac{1}{x_2+3}=\\dfrac{x_2+3+x_1+3}{(x_1+3)(x_2+3)}=\\dfrac{x_1+x_2+6}{(x_1+3)(x_2+3)}$.",
+          "statement": "[NB] Quy đồng mẫu rồi cộng: $\\dfrac{1}{x_1+3}+\\dfrac{1}{x_2+3}$ (với $x_1\\ne-3$, $x_2\\ne-3$).",
+          "tier": "onclass",
+          "type": "problem"
+        }
+      ],
+      "teacher_note": "Khoảng 20 phút — Các câu nhỏ Đúng/Sai, trắc nghiệm, trả lời ngắn, gọi nhiều học sinh trả lời miệng, chữa nhanh. Ví dụ 1 giáo viên làm cùng lớp, học sinh điền ô."
+    },
+    {
+      "kind": "practice2",
+      "number": 4,
+      "title": "Luyện tập 2 — Thông hiểu và vận dụng",
+      "blocks": [
+        {
+          "type": "para",
+          "variant": "heading",
+          "text": "Mạch 4. Tổng các bình phương"
+        },
+        {
+          "type": "noted",
+          "variant": "example",
+          "text": "\\textbf{Ví dụ 2.} a) Cho phương trình $x^2-7x+5=0$. Chứng minh phương trình có hai nghiệm phân biệt $x_1$, $x_2$ và tính $A=x_1^2+x_2^2$.[[br]]b) Gọi $x_1$, $x_2$ là hai nghiệm của phương trình $x^2-5x+3=0$. Không giải phương trình, hãy tính $B=(x_1-x_2)^2$. \\textit{(SGK Ví dụ 1 tr.28, Bài 6{.}35 tr.29)}[[br]]{\\sffamily\\bfseries\\color{brand}Lời giải}[[br]]\\hspace*{1.4em}a) Ta có $\\Delta=(-7)^2-4\\cdot 1\\cdot 5=[[fill:29]]>0$ nên phương trình có hai nghiệm phân biệt.[[br]]\\hspace*{1.4em}Theo định lí Viète, ta có $x_1+x_2=[[fill:7]]$ và $x_1x_2=[[fill:5]]$.[[br]]\\hspace*{1.4em}Ta có $A=x_1^2+x_2^2=(x_1+x_2)^2-[[fill:2x_1x_2]]=[[fill:39]]$.[[br]]\\hspace*{1.4em}Vậy $A=[[fill:39]]$.[[br]]\\hspace*{1.4em}b) Ta có $\\Delta=(-5)^2-4\\cdot 1\\cdot 3=[[fill:13]]>0$ nên phương trình có hai nghiệm phân biệt.[[br]]\\hspace*{1.4em}Theo định lí Viète, ta có $x_1+x_2=[[fill:5]]$ và $x_1x_2=[[fill:3]]$.[[br]]\\hspace*{1.4em}Ta có $B=(x_1-x_2)^2=x_1^2-2x_1x_2+x_2^2=(x_1+x_2)^2-[[fill:4x_1x_2]]=[[fill:13]]$.[[br]]\\hspace*{1.4em}Vậy $B=[[fill:13]]$."
+        },
+        {
+          "dang_id": "NB6+TH1",
+          "hints": [],
+          "label": "Bài 10.",
+          "level": 2,
+          "solution": "a) Ta có $\\Delta=(-5)^2-4\\cdot 1\\cdot 2=17>0$ nên phương trình có hai nghiệm phân biệt $x_1$, $x_2$.[[br]]b) Theo định lí Viète, ta có $x_1+x_2=5$ và $x_1x_2=2$.[[br]]c) Theo câu a) và b), ta có $A=x_1^2+x_2^2=(x_1+x_2)^2-2x_1x_2=5^2-2\\cdot 2=21$.[[br]]\\hspace*{1.4em}Vậy $A=21$.",
+          "statement": "Cho phương trình $x^2-5x+2=0$. Gọi $x_1$, $x_2$ là hai nghiệm của phương trình. Không giải phương trình, hãy tính giá trị biểu thức $A=x_1^2+x_2^2$. \\textit{(GK2 THCS Cổ Đông, 2024--2025)}[[br]]a) [NB] Tính $\\Delta$.[[br]]b) [NB] Tính $x_1+x_2$ và $x_1x_2$.[[br]]c) [TH] Tính $A$.",
+          "tier": "onclass",
+          "type": "problem"
+        },
+        {
+          "dang_id": "NB6+TH1",
+          "hints": [],
+          "label": "Bài 11.",
+          "level": 2,
+          "solution": "a) Ta có $\\Delta=(-7)^2-4\\cdot 1\\cdot(-1)=53>0$ nên phương trình có hai nghiệm phân biệt $x_1$, $x_2$.[[br]]b) Theo định lí Viète, ta có $x_1+x_2=7$ và $x_1x_2=-1$.[[br]]c) Ta có $A=x_1^2+x_2^2-x_1x_2=(x_1+x_2)^2-2x_1x_2-x_1x_2=(x_1+x_2)^2-3x_1x_2$.[[br]]d) Theo câu b) và c), ta có $A=(x_1+x_2)^2-3x_1x_2=7^2-3\\cdot(-1)=52$.[[br]]\\hspace*{1.4em}Vậy $A=52$.",
+          "statement": "Cho phương trình $x^2-7x-1=0$ có hai nghiệm là $x_1$, $x_2$. Không giải phương trình, hãy tính giá trị của biểu thức $A=x_1^2+x_2^2-x_1x_2$. \\textit{(HK2 THCS Thăng Long, 2025--2026)}[[br]]a) [NB] Tính $\\Delta$.[[br]]b) [NB] Tính $x_1+x_2$ và $x_1x_2$.[[br]]c) [NB] Viết $A$ theo $x_1+x_2$ và $x_1x_2$.[[br]]d) [TH] Tính $A$.",
+          "tier": "onclass",
+          "type": "problem"
+        },
+        {
+          "type": "para",
+          "variant": "heading",
+          "text": "Mạch 5. Biểu thức chứa phân thức"
+        },
+        {
+          "type": "noted",
+          "variant": "example",
+          "text": "\\textbf{Ví dụ 3.} a) Cho phương trình $x^2-x-10=0$. Chứng tỏ phương trình có hai nghiệm phân biệt $x_1$, $x_2$ và tính $x_1^2+x_2^2$ và $\\dfrac{1}{x_1}+\\dfrac{1}{x_2}$.[[br]]b) Cho phương trình $x^2+x-6=0$. Gọi $x_1$, $x_2$ là hai nghiệm của phương trình. Không giải phương trình, hãy tính $A=\\dfrac{x_1}{x_2}+\\dfrac{x_2}{x_1}$. \\textit{(b) minh hoạ vào 10, THCS Lý Thường Kiệt, 2025--2026)}[[br]]{\\sffamily\\bfseries\\color{brand}Lời giải}[[br]]\\hspace*{1.4em}a) Vì $a\\cdot c=1\\cdot(-10)=[[fill:-10]]<0$ nên phương trình có hai nghiệm phân biệt.[[br]]\\hspace*{1.4em}Theo định lí Viète, ta có $x_1+x_2=[[fill:1]]$ và $x_1x_2=[[fill:-10]]\\ne 0$.[[br]]\\hspace*{1.4em}Ta có $x_1^2+x_2^2=(x_1+x_2)^2-2x_1x_2=[[fill:21]]$.[[br]]\\hspace*{1.4em}Ta có $\\dfrac{1}{x_1}+\\dfrac{1}{x_2}=\\dfrac{x_1+x_2}{x_1x_2}=[[fill:-\\dfrac{1}{10}]]$.[[br]]\\hspace*{1.4em}Vậy $x_1^2+x_2^2=[[fill:21]]$ và $\\dfrac{1}{x_1}+\\dfrac{1}{x_2}=[[fill:-\\dfrac{1}{10}]]$.[[br]]\\hspace*{1.4em}b) Vì $a\\cdot c=1\\cdot(-6)=[[fill:-6]]<0$ nên phương trình có hai nghiệm phân biệt.[[br]]\\hspace*{1.4em}Theo định lí Viète, ta có $x_1+x_2=[[fill:-1]]$ và $x_1x_2=[[fill:-6]]\\ne 0$.[[br]]\\hspace*{1.4em}Ta có $A=\\dfrac{x_1}{x_2}+\\dfrac{x_2}{x_1}=\\dfrac{[[fill:x_1^2+x_2^2]]}{x_1x_2}=\\dfrac{(x_1+x_2)^2-2x_1x_2}{x_1x_2}=[[fill:-\\dfrac{13}{6}]]$.[[br]]\\hspace*{1.4em}Vậy $A=[[fill:-\\dfrac{13}{6}]]$."
+        },
+        {
+          "dang_id": "NB6+TH1",
+          "hints": [],
+          "label": "Bài 12.",
+          "level": 2,
+          "solution": "a) Ta có $\\Delta=(-4)^2-4\\cdot 2\\cdot 1=8>0$ nên phương trình có hai nghiệm phân biệt $x_1$, $x_2$.[[br]]b) Theo định lí Viète, ta có $x_1+x_2=2$ và $x_1x_2=\\dfrac{1}{2}$.[[br]]c) Với $x_1\\ne 0$ và $x_2\\ne 0$, ta có $\\dfrac{1}{x_1}+\\dfrac{1}{x_2}=\\dfrac{x_1+x_2}{x_1x_2}$.[[br]]d) Theo câu b), ta có $x_1x_2=\\dfrac{1}{2}\\ne 0$ nên $x_1\\ne 0$ và $x_2\\ne 0$.[[br]]\\hspace*{1.4em}Theo câu c), tổng nghịch đảo hai nghiệm là $\\dfrac{1}{x_1}+\\dfrac{1}{x_2}=\\dfrac{x_1+x_2}{x_1x_2}=2:\\dfrac{1}{2}=4$.[[br]]\\hspace*{1.4em}Vậy tổng nghịch đảo hai nghiệm bằng $4$.",
+          "statement": "Biết phương trình bậc hai $2x^2-4x+1=0$ có hai nghiệm $x_1$ và $x_2$. Chứng minh $x_1$, $x_2$ khác $0$ và tính tổng nghịch đảo hai nghiệm. \\textit{(thi thử vào 10 lần 1, THCS Cầu Giấy, 2025--2026)}[[br]]a) [NB] Tính $\\Delta$.[[br]]b) [NB] Tính $x_1+x_2$ và $x_1x_2$.[[br]]c) [NB] Viết $\\dfrac{1}{x_1}+\\dfrac{1}{x_2}$ theo $x_1+x_2$ và $x_1x_2$.[[br]]d) [TH] Chứng minh $x_1$, $x_2$ khác $0$ và tính tổng nghịch đảo hai nghiệm.",
+          "tier": "onclass",
+          "type": "problem"
+        },
+        {
+          "dang_id": "NB6+TH1",
+          "hints": [],
+          "label": "Bài 13.",
+          "level": 2,
+          "solution": "a) Ta có $\\Delta=(-1)^2-4\\cdot 2\\cdot(-5)=41>0$ nên phương trình có hai nghiệm phân biệt $x_1$, $x_2$.[[br]]b) Theo định lí Viète, ta có $x_1+x_2=\\dfrac{1}{2}$ và $x_1x_2=-\\dfrac{5}{2}$.[[br]]c) Với $x_1\\ne 0$ và $x_2\\ne 0$, ta có $\\dfrac{x_1}{x_2}+\\dfrac{x_2}{x_1}=\\dfrac{x_1^2+x_2^2}{x_1x_2}$.[[br]]d) Theo câu b), ta có $x_1x_2=-\\dfrac{5}{2}\\ne 0$ nên $x_1\\ne 0$ và $x_2\\ne 0$.[[br]]\\hspace*{1.4em}Ta có $x_1^2+x_2^2=(x_1+x_2)^2-2x_1x_2=\\left(\\dfrac{1}{2}\\right)^2-2\\cdot\\left(-\\dfrac{5}{2}\\right)=\\dfrac{1}{4}+5=\\dfrac{21}{4}$.[[br]]\\hspace*{1.4em}Theo câu c), $\\dfrac{x_1}{x_2}+\\dfrac{x_2}{x_1}=\\dfrac{x_1^2+x_2^2}{x_1x_2}=\\dfrac{21}{4}:\\left(-\\dfrac{5}{2}\\right)=-\\dfrac{21}{10}$.[[br]]\\hspace*{1.4em}Vậy giá trị biểu thức bằng $-\\dfrac{21}{10}$.",
+          "statement": "Gọi $x_1$, $x_2$ là hai nghiệm của phương trình $2x^2-x-5=0$. Không giải phương trình, hãy tính giá trị biểu thức $\\dfrac{x_1}{x_2}+\\dfrac{x_2}{x_1}$. \\textit{(HK2 Phòng GD\\&ĐT Ba Đình, 2024--2025)}[[br]]a) [NB] Tính $\\Delta$.[[br]]b) [NB] Tính $x_1+x_2$ và $x_1x_2$.[[br]]c) [NB] Quy đồng $\\dfrac{x_1}{x_2}+\\dfrac{x_2}{x_1}$.[[br]]d) [TH] Tính giá trị biểu thức.",
+          "tier": "onclass",
+          "type": "problem"
+        },
+        {
+          "type": "noted",
+          "variant": "example",
+          "text": "\\textbf{Ví dụ 4.} Cho phương trình $-3x^2+x+1=0$. Gọi $x_1$, $x_2$ là các nghiệm của phương trình, không giải phương trình, hãy tính giá trị của biểu thức $A=\\dfrac{x_2}{x_1+3}+\\dfrac{x_1}{x_2+3}$. \\textit{(minh hoạ vào 10, THCS Nguyễn Trường Tộ, 2025--2026)}[[br]]{\\sffamily\\bfseries\\color{brand}Lời giải}[[br]]\\hspace*{1.4em}Vì $a\\cdot c=(-3)\\cdot 1=[[fill:-3]]<0$ nên phương trình có hai nghiệm phân biệt.[[br]]\\hspace*{1.4em}Vì $-3\\cdot(-3)^2+(-3)+1=-29\\ne 0$ nên $x=-3$ không là nghiệm.[[br]]\\hspace*{1.4em}Theo định lí Viète, ta có $x_1+x_2=\\dfrac{1}{3}$ và $x_1x_2=-\\dfrac{1}{3}$.[[br]]\\hspace*{1.4em}Ta có $x_1^2+x_2^2=(x_1+x_2)^2-[[fill:2x_1x_2]]=\\left(\\dfrac{1}{3}\\right)^2-2\\cdot\\left(-\\dfrac{1}{3}\\right)=\\dfrac{7}{9}$.[[br]]\\hspace*{1.4em}Quy đồng, ta được $A=\\dfrac{x_2(x_2+3)+x_1(x_1+3)}{(x_1+3)(x_2+3)}$[[br]]\\hspace*{1.4em}$A=\\dfrac{[[fill:x_1^2+x_2^2+3(x_1+x_2)]]}{x_1x_2+3(x_1+x_2)+9}$.[[br]]\\hspace*{1.4em}Tử số bằng $\\dfrac{7}{9}+3\\cdot[[fill:\\dfrac{1}{3}]]=\\dfrac{16}{9}$.[[br]]\\hspace*{1.4em}Mẫu số bằng $[[fill:-\\dfrac{1}{3}]]+3\\cdot[[fill:\\dfrac{1}{3}]]+9=\\dfrac{29}{3}$.[[br]]\\hspace*{1.4em}Ta có $A=\\dfrac{16}{9}:\\dfrac{29}{3}=[[fill:\\dfrac{16}{87}]]$.[[br]]\\hspace*{1.4em}Vậy $A=[[fill:\\dfrac{16}{87}]]$."
+        },
+        {
+          "dang_id": "NB6+TH1",
+          "hints": [],
+          "label": "Bài 14.",
+          "level": 2,
+          "solution": "a) Ta có $\\Delta=4^2-4\\cdot 1\\cdot(-6)=40>0$ nên phương trình có hai nghiệm phân biệt $x_1$, $x_2$.[[br]]b) Theo định lí Viète, ta có $x_1+x_2=-4$ và $x_1x_2=-6$.[[br]]c) Thay $x=-3$ vào vế trái phương trình, ta được $(-3)^2+4\\cdot(-3)-6=-9\\ne 0$ nên $x_1\\ne -3$ và $x_2\\ne -3$.[[br]]\\hspace*{1.4em}Ta có $A=\\dfrac{1}{x_1+3}+\\dfrac{1}{x_2+3}=\\dfrac{x_1+x_2+6}{(x_1+3)(x_2+3)}=\\dfrac{(x_1+x_2)+6}{x_1x_2+3(x_1+x_2)+9}$.[[br]]\\hspace*{1.4em}Theo câu b), thay vào ta được $A=\\dfrac{-4+6}{-6+3\\cdot(-4)+9}=\\dfrac{2}{-9}=-\\dfrac{2}{9}$.[[br]]\\hspace*{1.4em}Vậy $A=-\\dfrac{2}{9}$.",
+          "statement": "Cho phương trình $x^2+4x-6=0$, gọi $x_1$, $x_2$ là hai nghiệm của phương trình. Tính giá trị của biểu thức $A=\\dfrac{1}{x_1+3}+\\dfrac{1}{x_2+3}$. \\textit{(minh hoạ vào 10, THCS Thái Thịnh, 2025--2026)}[[br]]a) [NB] Tính $\\Delta$.[[br]]b) [NB] Tính $x_1+x_2$ và $x_1x_2$.[[br]]c) [TH] Tính $A$.",
+          "tier": "onclass",
+          "type": "problem"
+        },
+        {
+          "type": "para",
+          "variant": "heading",
+          "text": "Mạch 6. Tổng lập phương, biểu thức cần biến đổi"
+        },
+        {
+          "type": "noted",
+          "variant": "example",
+          "text": "\\textbf{Ví dụ 5.} a) Cho phương trình $x^2-11x+30=0$. Gọi $x_1$, $x_2$ là hai nghiệm của phương trình. Không giải phương trình, hãy tính $x_1^3+x_2^3$.[[br]]b) Cho phương trình $x^2-5x+4=0$. Không giải phương trình, hãy tính giá trị của biểu thức $A=\\dfrac{5x_1-x_2}{x_1}-\\dfrac{x_1-5x_2}{x_2}$. \\textit{(b) minh hoạ vào 10, THCS Quang Trung, 2025--2026)}[[br]]{\\sffamily\\bfseries\\color{brand}Lời giải}[[br]]\\hspace*{1.4em}a) Ta có $\\Delta=(-11)^2-4\\cdot 1\\cdot 30=[[fill:1]]>0$ nên phương trình có hai nghiệm phân biệt.[[br]]\\hspace*{1.4em}Theo định lí Viète, ta có $x_1+x_2=11$ và $x_1x_2=30$.[[br]]\\hspace*{1.4em}Ta có $x_1^3+x_2^3=(x_1+x_2)^3-[[fill:3x_1x_2(x_1+x_2)]]=11^3-3\\cdot 30\\cdot 11=[[fill:341]]$.[[br]]\\hspace*{1.4em}Vậy $x_1^3+x_2^3=[[fill:341]]$.[[br]]\\hspace*{1.4em}b) Ta có $\\Delta=(-5)^2-4\\cdot 1\\cdot 4=[[fill:9]]>0$ nên phương trình có hai nghiệm phân biệt.[[br]]\\hspace*{1.4em}Theo định lí Viète, ta có $x_1+x_2=5$ và $x_1x_2=4\\ne 0$.[[br]]\\hspace*{1.4em}Ta có $A=\\left(5-\\dfrac{x_2}{x_1}\\right)-\\left(\\dfrac{x_1}{x_2}-5\\right)=10-\\dfrac{x_1^2+x_2^2}{x_1x_2}=10-\\dfrac{(x_1+x_2)^2-[[fill:2x_1x_2]]}{x_1x_2}=10-\\dfrac{17}{4}=[[fill:\\dfrac{23}{4}]]$.[[br]]\\hspace*{1.4em}Vậy $A=[[fill:\\dfrac{23}{4}]]$."
+        },
+        {
+          "dang_id": "NB6+TH1",
+          "hints": [],
+          "label": "Bài 15.",
+          "level": 2,
+          "solution": "a) Ta có $\\Delta=5^2-4\\cdot 1\\cdot(-1)=29>0$ nên phương trình có hai nghiệm phân biệt $x_1$, $x_2$.[[br]]b) Theo định lí Viète, ta có $x_1+x_2=-5$ và $x_1x_2=-1$.[[br]]c) Theo câu b), ta có $x_1^3+x_2^3=(x_1+x_2)^3-3x_1x_2(x_1+x_2)=(-5)^3-3\\cdot(-1)\\cdot(-5)=-125-15=-140$.[[br]]\\hspace*{1.4em}Vậy tổng lập phương hai nghiệm của phương trình bằng $-140$.",
+          "statement": "Cho phương trình $x^2+5x-1=0$. Tính tổng lập phương hai nghiệm của phương trình. \\textit{(minh hoạ vào 10, THCS Thái Thịnh, 2025--2026)}[[br]]a) [NB] Tính $\\Delta$.[[br]]b) [NB] Tính $x_1+x_2$ và $x_1x_2$.[[br]]c) [TH] Tính $x_1^3+x_2^3$.",
+          "tier": "onclass",
+          "type": "problem"
+        },
+        {
+          "type": "para",
+          "variant": "heading",
+          "text": "Mạch 7. Biết một nghiệm, tính biểu thức"
+        },
+        {
+          "type": "noted",
+          "variant": "example",
+          "text": "\\textbf{Ví dụ 6.} Cho phương trình $x^2-2x+m-3=0$. Biết rằng phương trình có một nghiệm bằng $1-\\sqrt{2}$. Tính tổng bình phương các nghiệm của phương trình trên. \\textit{(HK2 THCS Phúc Đồng, 2024--2025)}[[br]]{\\sffamily\\bfseries\\color{brand}Lời giải}[[br]]\\hspace*{1.4em}Gọi $x_1=1-\\sqrt{2}$ và $x_2$ là nghiệm còn lại của phương trình.[[br]]\\hspace*{1.4em}Theo định lí Viète, $x_1+x_2=[[fill:2]]$, không phụ thuộc vào $m$.[[br]]\\hspace*{1.4em}Khi đó $x_2=[[fill:2]]-(1-\\sqrt{2})=[[fill:1+\\sqrt{2}]]$.[[br]]\\hspace*{1.4em}Ta có $x_1^2+x_2^2=(1-\\sqrt{2})^2+([[fill:1+\\sqrt{2}]])^2=[[fill:3-2\\sqrt{2}]]+[[fill:3+2\\sqrt{2}]]=[[fill:6]]$.[[br]]\\hspace*{1.4em}Vậy tổng bình phương các nghiệm của phương trình bằng $[[fill:6]]$."
+        },
+        {
+          "dang_id": "NB7+TH2",
+          "hints": [],
+          "label": "Bài 16.",
+          "level": 2,
+          "solution": "a) Thay $x=\\dfrac{3-\\sqrt5}{2}$ vào phương trình $x^2-3x+a=0$, ta được $\\left(\\dfrac{3-\\sqrt5}{2}\\right)^2-3\\cdot\\dfrac{3-\\sqrt5}{2}+a=0$.[[br]]\\hspace*{1.4em}$\\dfrac{7-3\\sqrt5}{2}-\\dfrac{9-3\\sqrt5}{2}+a=0$[[br]]\\hspace*{1.4em}$-1+a=0$[[br]]\\hspace*{1.4em}$a=1$.[[br]]b) Với $a=1$, phương trình trở thành $x^2-3x+1=0$.[[br]]\\hspace*{1.4em}Ta có $\\Delta=(-3)^2-4\\cdot 1\\cdot 1=5>0$ nên phương trình có hai nghiệm phân biệt $x_1$, $x_2$.[[br]]c) Theo định lí Viète, ta có $x_1+x_2=3$ và $x_1x_2=1$.[[br]]d) Theo câu c), ta có $x_1^2+x_2^2=(x_1+x_2)^2-2x_1x_2=3^2-2\\cdot 1=7$.[[br]]\\hspace*{1.4em}Vậy tổng bình phương hai nghiệm của phương trình bằng $7$.",
+          "statement": "Biết rằng phương trình bậc hai $x^2-3x+a=0$ có một nghiệm là $x=\\dfrac{3-\\sqrt5}{2}$. Tìm tổng bình phương hai nghiệm của phương trình trên. \\textit{(minh hoạ vào 10, Sở GD\\&ĐT Hà Nội)}[[br]]a) [NB] Thay nghiệm đã cho vào phương trình, tìm $a$.[[br]]b) [NB] Với $a$ vừa tìm, tính $\\Delta$.[[br]]c) [NB] Tính $x_1+x_2$ và $x_1x_2$.[[br]]d) [TH] Tính tổng bình phương hai nghiệm.",
+          "tier": "onclass",
+          "type": "problem"
+        },
+        {
+          "type": "para",
+          "variant": "heading",
+          "text": "Mạch 8. Tìm $m$ theo hệ thức đối xứng"
+        },
+        {
+          "type": "noted",
+          "variant": "example",
+          "text": "\\textbf{Ví dụ 7.} Cho phương trình $x^2+(1-m)x-m=0$ ($m$ là tham số). Tìm $m$ để phương trình có hai nghiệm phân biệt $x_1$, $x_2$ thỏa mãn $x_1^2+x_2^2=5$. \\textit{(minh hoạ vào 10, THCS Bế Văn Đàn, 2025--2026)}[[br]]{\\sffamily\\bfseries\\color{brand}Lời giải}[[br]]\\hspace*{1.4em}Ta có $\\Delta=(1-m)^2-4\\cdot 1\\cdot(-m)=1-2m+m^2+4m=[[fill:(m+1)^2]]$.[[br]]\\hspace*{1.4em}Phương trình có hai nghiệm phân biệt $x_1$, $x_2$ khi $\\Delta>0$, tức là $m\\ne [[fill:-1]]$.[[br]]\\hspace*{1.4em}Theo định lí Viète, ta có $x_1+x_2=m-1$ và $x_1x_2=-m$.[[br]]\\hspace*{1.4em}Ta có $x_1^2+x_2^2=(x_1+x_2)^2-2x_1x_2=(m-1)^2-2(-m)=[[fill:m^2+1]]$.[[br]]\\hspace*{1.4em}Theo đề bài, $x_1^2+x_2^2=5$ nên $[[fill:m^2+1]]=5$, hay $m^2=[[fill:4]]$.[[br]]\\hspace*{1.4em}Giải ra được $m=[[fill:2]]$ hoặc $m=[[fill:-2]]$, cả hai đều thỏa mãn $m\\ne -1$.[[br]]\\hspace*{1.4em}Vậy $m=[[fill:2]]$ hoặc $m=[[fill:-2]]$."
+        },
+        {
+          "dang_id": "NB8+TH3",
+          "hints": [],
+          "label": "Bài 17.",
+          "level": 2,
+          "solution": "a) Ta có $\\Delta=3^2-4\\cdot 1\\cdot m=9-4m$.[[br]]b) Theo định lí Viète, ta có $x_1+x_2=-3$ và $x_1x_2=m$.[[br]]c) Theo câu a), để phương trình có hai nghiệm thì $\\Delta\\ge 0$, tức là $9-4m\\ge 0$, hay $m\\le\\dfrac{9}{4}$.[[br]]\\hspace*{1.4em}Theo câu b), ta có $x_1^2+x_2^2=(x_1+x_2)^2-2x_1x_2=(-3)^2-2m=9-2m$.[[br]]\\hspace*{1.4em}Theo đề bài, $x_1^2+x_2^2=2025$ nên $9-2m=2025$.[[br]]\\hspace*{1.4em}Ta có $-2m=2016$, tìm được $m=-1008$.[[br]]\\hspace*{1.4em}Đối chiếu điều kiện $m\\le\\dfrac{9}{4}$, giá trị $m=-1008$ thỏa mãn.[[br]]\\hspace*{1.4em}Vậy $m=-1008$.",
+          "statement": "Cho phương trình $x^2+3x+m=0$ ($m$ là tham số). Tìm các giá trị của $m$ để phương trình có hai nghiệm thỏa mãn $x_1^2+x_2^2=2025$. \\textit{(HK2 THCS Thái Thịnh, 2025--2026)}[[br]]a) [NB] Tính $\\Delta$ theo $m$.[[br]]b) [NB] Viết $x_1+x_2$ và $x_1x_2$ theo $m$.[[br]]c) [TH] Tìm $m$.",
+          "tier": "onclass",
+          "type": "problem"
+        },
+        {
+          "dang_id": "NB8+VD1",
+          "hints": [],
+          "label": "Bài 18.",
+          "level": 3,
+          "solution": "a) Ta có $\\Delta=[-(m+2)]^2-4\\cdot 1\\cdot 2m=m^2+4m+4-8m=m^2-4m+4=(m-2)^2$.[[br]]b) Có, vì $\\Delta=(m-2)^2\\ge 0$ với mọi $m$ nên phương trình luôn có hai nghiệm với mọi $m$.[[br]]c) Theo định lí Viète, ta có $x_1+x_2=m+2$ và $x_1x_2=2m$.[[br]]d) Theo câu b) và c), phương trình luôn có hai nghiệm với mọi $m$ và $x_1^2+x_2^2=7+x_1x_2$ nên $(x_1+x_2)^2-2x_1x_2=7+x_1x_2$, hay $(x_1+x_2)^2-3x_1x_2=7$.[[br]]\\hspace*{1.4em}Thay vào, ta được $(m+2)^2-3\\cdot 2m=7$.[[br]]\\hspace*{1.4em}Ta có $m^2+4m+4-6m-7=0$, hay $m^2-2m-3=0$.[[br]]\\hspace*{1.4em}Phương trình bậc hai theo $m$ có $\\Delta_m=(-2)^2-4\\cdot 1\\cdot(-3)=16>0$ nên có hai nghiệm phân biệt:[[br]]\\hspace*{1.4em}$m_1=\\dfrac{2+\\sqrt{16}}{2}=3$ và $m_2=\\dfrac{2-\\sqrt{16}}{2}=-1$.[[br]]\\hspace*{1.4em}Vì phương trình luôn có hai nghiệm với mọi $m$ nên cả $m=-1$ và $m=3$ đều thỏa mãn.[[br]]\\hspace*{1.4em}Vậy $m=-1$ hoặc $m=3$.",
+          "statement": "Cho phương trình $x^2-(m+2)x+2m=0$ ($m$ là tham số). Tìm $m$ để phương trình có hai nghiệm $x_1$, $x_2$ thỏa mãn $x_1^2+x_2^2=7+x_1x_2$. \\textit{(HK2 Phòng GD\\&ĐT Hoài Đức, 2024--2025)}[[br]]a) [NB] Tính $\\Delta$ theo $m$.[[br]]b) [NB] Phương trình có nghiệm với mọi $m$ không? Vì sao?[[br]]c) [NB] Viết $x_1+x_2$ và $x_1x_2$ theo $m$.[[br]]d) [VD] Tìm $m$.",
+          "tier": "onclass",
+          "type": "problem"
+        },
+        {
+          "dang_id": "NB8+VD1",
+          "hints": [],
+          "label": "Bài 19.",
+          "level": 3,
+          "solution": "a) Vì $a\\cdot c=1\\cdot(-6)=-6<0$ nên phương trình luôn có hai nghiệm phân biệt $x_1$, $x_2$ với mọi giá trị của $m$.[[br]]b) Theo định lí Viète, ta có $x_1+x_2=-m$ và $x_1x_2=-6$.[[br]]c) Theo câu a) và b), phương trình luôn có hai nghiệm phân biệt $x_1$, $x_2$ với mọi $m$ và $x_1^2+x_2^2-x_1x_2=22$ nên $(x_1+x_2)^2-3x_1x_2=22$.[[br]]\\hspace*{1.4em}Thay vào, ta được $(-m)^2-3\\cdot(-6)=22$.[[br]]\\hspace*{1.4em}Ta có $m^2+18=22$, nên $m^2=4$.[[br]]\\hspace*{1.4em}Giải ra được $m=2$ hoặc $m=-2$.[[br]]\\hspace*{1.4em}Vì phương trình luôn có hai nghiệm phân biệt với mọi $m$ nên cả $m=2$ và $m=-2$ đều thỏa mãn.[[br]]\\hspace*{1.4em}Vậy $m=2$ hoặc $m=-2$.",
+          "statement": "Cho phương trình $x^2+mx-6=0$. \\textit{(HK2 THCS\\&THPT M.V. Lômônôxốp, 2024--2025)}[[br]]a) [NB] Chứng minh rằng phương trình luôn có hai nghiệm phân biệt $x_1$, $x_2$ với mọi giá trị của $m$.[[br]]b) [NB] Viết $x_1+x_2$ và $x_1x_2$ theo $m$.[[br]]c) [VD] Tìm giá trị của $m$ để phương trình có hai nghiệm $x_1$, $x_2$ thỏa mãn $x_1^2+x_2^2-x_1x_2=22$.",
+          "tier": "onclass",
+          "type": "problem"
+        }
+      ],
+      "teacher_note": "Khoảng 100 phút — Mỗi mạch giáo viên làm ví dụ cùng lớp rồi học sinh làm bài ngay sau, câu hỏi dẫn trả lời miệng, ý chính tự trình bày vào vở. Bài 18, Bài 19 ý cuối học sinh tự làm như đi thi, không gợi ý thêm. Bài 19 (đề đích) làm cá nhân rồi gọi lên bảng."
+    },
+    {
+      "kind": "reflection",
+      "number": 5,
+      "title": "Tổng kết",
+      "blocks": [
+        {
+          "type": "mindmap",
+          "caption": "Điền các ô trống để tự tóm tắt buổi học",
+          "root": "$ax^2+bx+c=0$ ($a\\ne 0$)[[br]]có hai nghiệm $x_1$, $x_2$",
+          "branches": [
+            {
+              "label": "Điều kiện",
+              "children": [
+                {
+                  "label": "$\\Delta[[blank:0.8cm]]0$ hoặc $a\\cdot c[[blank:0.8cm]]0$"
+                }
+              ]
+            },
+            {
+              "label": "Định lí Viète",
+              "children": [
+                {
+                  "label": "$x_1+x_2=[[blank:1.6cm]]$"
+                },
+                {
+                  "label": "$x_1x_2=[[blank:1.6cm]]$"
+                }
+              ]
+            },
+            {
+              "label": "Theo tổng và tích",
+              "children": [
+                {
+                  "label": "$x_1^2+x_2^2=[[blank:3.4cm]]$"
+                },
+                {
+                  "label": "$\\dfrac1{x_1}+\\dfrac1{x_2}=[[blank:1.8cm]]$"
+                }
+              ]
+            }
+          ]
+        },
+        {
+          "type": "para",
+          "text": "\\textbf{Bài tập về nhà} — làm vào vở, buổi sau nộp."
+        },
+        {
+          "dang_id": "NB2",
+          "hints": [],
+          "label": "Bài 20.",
+          "level": 1,
+          "solution": "a) Theo định lí Viète, ta có $x_1+x_2=\\dfrac{7}{2}$ và $x_1x_2=\\dfrac{3}{2}$.[[br]]b) Theo định lí Viète, ta có $x_1+x_2=\\dfrac{20}{25}=\\dfrac{4}{5}$ và $x_1x_2=\\dfrac{4}{25}$.[[br]]c) Theo định lí Viète, ta có $x_1+x_2=0$ và $x_1x_2=\\dfrac{-4}{2\\sqrt{2}}=-\\sqrt{2}$.",
+          "statement": "Các phương trình sau đều có nghiệm. Tính tổng và tích các nghiệm của mỗi phương trình.[[br]]a) [NB] $2x^2-7x+3=0$[[br]]b) [NB] $25x^2-20x+4=0$[[br]]c) [NB] $2\\sqrt2\\,x^2-4=0$",
+          "tier": "btvn",
+          "type": "problem"
+        },
+        {
+          "dang_id": "NB2",
+          "hints": [],
+          "label": "Bài 21.",
+          "level": 1,
+          "solution": "a) Ta có $\\Delta=(-7)^2-4\\cdot 2\\cdot 6=49-48=1>0$ nên phương trình có hai nghiệm phân biệt $x_1$, $x_2$.[[br]]b) Theo định lí Viète, ta có $x_1+x_2=\\dfrac{7}{2}$ và $x_1x_2=\\dfrac{6}{2}=3$.",
+          "statement": "Cho phương trình $2x^2-7x+6=0$.[[br]]a) [NB] Chứng minh phương trình có hai nghiệm phân biệt.[[br]]b) [NB] Tính tổng và tích các nghiệm.",
+          "tier": "btvn",
+          "type": "problem"
+        },
+        {
+          "dang_id": "NB5",
+          "hints": [],
+          "label": "Bài 22.",
+          "level": 1,
+          "solution": "a) Phương trình có $a=\\sqrt{2}$, $b=-(\\sqrt{2}+1)$, $c=1$.[[br]]\\hspace*{1.4em}Ta có $a+b+c=\\sqrt{2}-(\\sqrt{2}+1)+1=0$.[[br]]\\hspace*{1.4em}Phương trình có hai nghiệm $x_1=1$ và $x_2=\\dfrac{1}{\\sqrt{2}}=\\dfrac{\\sqrt{2}}{2}$.[[br]]b) Phương trình có $a=2$, $b=\\sqrt{3}-1$, $c=-3+\\sqrt{3}$.[[br]]\\hspace*{1.4em}Ta có $a-b+c=2-(\\sqrt{3}-1)+(-3+\\sqrt{3})=0$.[[br]]\\hspace*{1.4em}Phương trình có hai nghiệm $x_1=-1$ và $x_2=-\\dfrac{-3+\\sqrt{3}}{2}=\\dfrac{3-\\sqrt{3}}{2}$.",
+          "statement": "Tính nhẩm nghiệm của các phương trình sau:[[br]]a) [NB] $\\sqrt2\\,x^2-(\\sqrt2+1)x+1=0$[[br]]b) [NB] $2x^2+(\\sqrt3-1)x-3+\\sqrt3=0$",
+          "tier": "btvn",
+          "type": "problem"
+        },
+        {
+          "dang_id": "NB4",
+          "hints": [],
+          "label": "Bài 23.",
+          "level": 1,
+          "solution": "Phương trình $x^2-2(m-1)x+m+1=0$ có $a=1$ và $c=m+1$.[[br]]\\hspace*{1.4em}Để phương trình có hai nghiệm trái dấu thì $a\\cdot c<0$.[[br]]\\hspace*{1.4em}Ta có $1\\cdot(m+1)<0$[[br]]\\hspace*{1.4em}$m+1<0$[[br]]\\hspace*{1.4em}$m<-1$.[[br]]\\hspace*{1.4em}Vậy $m<-1$.",
+          "statement": "[NB] Tìm $m$ để phương trình $x^2-2(m-1)x+m+1=0$ có hai nghiệm trái dấu.",
+          "tier": "btvn",
+          "type": "problem"
+        },
+        {
+          "dang_id": "NB6+TH1",
+          "hints": [],
+          "label": "Bài 24.",
+          "level": 2,
+          "solution": "a) Ta có $\\Delta=(-4\\sqrt{3})^2-4\\cdot 1\\cdot 8=48-32=16>0$ nên phương trình có hai nghiệm phân biệt $x_1$, $x_2$.[[br]]b) Theo định lí Viète, ta có $x_1+x_2=4\\sqrt{3}$ và $x_1x_2=8$.[[br]]c) Theo câu a) và b), ta có $Q=x_1^3+x_2^3=(x_1+x_2)^3-3x_1x_2(x_1+x_2)=(4\\sqrt{3})^3-3\\cdot 8\\cdot 4\\sqrt{3}=192\\sqrt{3}-96\\sqrt{3}=96\\sqrt{3}$.[[br]]\\hspace*{1.4em}Vậy $Q=96\\sqrt{3}$.",
+          "statement": "Gọi $x_1$, $x_2$ là hai nghiệm của phương trình $x^2-4\\sqrt3\\,x+8=0$. Không giải phương trình, hãy tính $Q=x_1^3+x_2^3$. \\textit{(HK2 THCS Chu Văn An, Đà Nẵng, 2025--2026)}[[br]]a) [NB] Tính $\\Delta$.[[br]]b) [NB] Tính $x_1+x_2$ và $x_1x_2$.[[br]]c) [TH] Tính $Q$.",
+          "tier": "btvn",
+          "type": "problem"
+        },
+        {
+          "dang_id": "NB6+TH1",
+          "hints": [],
+          "label": "Bài 25.",
+          "level": 2,
+          "solution": "a) Theo định lí Viète, ta có $x_1+x_2=2$ và $x_1x_2=-9$.[[br]]b) Ta có $A=\\dfrac{x_1}{x_2}+\\dfrac{x_2}{x_1}=\\dfrac{x_1^2+x_2^2}{x_1x_2}$.[[br]]c) Theo câu a) và b), ta có $A=\\dfrac{x_1^2+x_2^2}{x_1x_2}=\\dfrac{(x_1+x_2)^2-2x_1x_2}{x_1x_2}=\\dfrac{2^2-2\\cdot(-9)}{-9}=\\dfrac{4+18}{-9}=-\\dfrac{22}{9}$.[[br]]\\hspace*{1.4em}Vậy $A=-\\dfrac{22}{9}$.",
+          "statement": "Cho phương trình $x^2-2x-9=0$ có hai nghiệm $x_1$, $x_2$ khác $0$. Không giải phương trình, hãy tính $A=\\dfrac{x_1}{x_2}+\\dfrac{x_2}{x_1}$. \\textit{(thi thử vào 10, THCS Thái Thịnh, 2026--2027)}[[br]]a) [NB] Tính $x_1+x_2$ và $x_1x_2$.[[br]]b) [NB] Quy đồng $A$.[[br]]c) [TH] Tính $A$.",
+          "tier": "btvn",
+          "type": "problem"
+        },
+        {
+          "dang_id": "NB6+TH1",
+          "hints": [],
+          "label": "Bài 26.",
+          "level": 2,
+          "solution": "a) Theo định lí Viète, ta có $x_1+x_2=5$ và $x_1x_2=-3$.[[br]]b) Với $x_1\\ne 1$ và $x_2\\ne 1$, ta có $A=\\dfrac{1}{x_1-1}+\\dfrac{1}{x_2-1}=\\dfrac{x_2-1+x_1-1}{(x_1-1)(x_2-1)}=\\dfrac{x_1+x_2-2}{(x_1-1)(x_2-1)}$.[[br]]c) Theo câu a) và b), trước hết thay $x=1$ vào vế trái phương trình, ta được $1^2-5\\cdot 1-3=-7\\ne 0$ nên $x_1\\ne 1$ và $x_2\\ne 1$.[[br]]\\hspace*{1.4em}Khai triển mẫu thức, ta được $(x_1-1)(x_2-1)=x_1x_2-(x_1+x_2)+1$.[[br]]\\hspace*{1.4em}Thay vào $A$, ta được $A=\\dfrac{5-2}{-3-5+1}=\\dfrac{3}{-7}=-\\dfrac{3}{7}$.[[br]]\\hspace*{1.4em}Vậy $A=-\\dfrac{3}{7}$.",
+          "statement": "Cho phương trình $x^2-5x-3=0$. Biết phương trình có hai nghiệm $x_1$, $x_2$. Không giải phương trình, hãy tính $A=\\dfrac{1}{x_1-1}+\\dfrac{1}{x_2-1}$. \\textit{(GK2 THCS Nguyễn Du, 2024--2025)}[[br]]a) [NB] Tính $x_1+x_2$ và $x_1x_2$.[[br]]b) [NB] Quy đồng mẫu $A$.[[br]]c) [TH] Tính $A$.",
+          "tier": "btvn",
+          "type": "problem"
+        },
+        {
+          "dang_id": "NB6+TH1",
+          "hints": [],
+          "label": "Bài 27.",
+          "level": 2,
+          "solution": "a) Theo định lí Viète, ta có $x_1+x_2=\\dfrac{13}{2}$ và $x_1x_2=\\dfrac{-6}{2}=-3$.[[br]]b) Ta có $A=(x_1+x_2)(x_1+2x_2)-x_2^2=x_1^2+2x_1x_2+x_1x_2+2x_2^2-x_2^2=x_1^2+x_2^2+3x_1x_2$.[[br]]c) Theo câu a) và b), ta có $A=x_1^2+x_2^2+3x_1x_2=(x_1+x_2)^2-2x_1x_2+3x_1x_2=(x_1+x_2)^2+x_1x_2$.[[br]]\\hspace*{1.4em}Thay vào, ta được $A=\\left(\\dfrac{13}{2}\\right)^2+(-3)=\\dfrac{169}{4}-3=\\dfrac{157}{4}$.[[br]]\\hspace*{1.4em}Vậy $A=\\dfrac{157}{4}$.",
+          "statement": "Cho phương trình $2x^2-13x-6=0$. Với $x_1$, $x_2$ là nghiệm của phương trình, không giải phương trình, hãy tính $A=(x_1+x_2)(x_1+2x_2)-x_2^2$. \\textit{(minh hoạ vào 10, THCS Tô Vĩnh Diện, 2025--2026)}[[br]]a) [NB] Tính $x_1+x_2$ và $x_1x_2$.[[br]]b) [NB] Khai triển và rút gọn $A$.[[br]]c) [TH] Tính $A$.",
+          "tier": "btvn",
+          "type": "problem"
+        },
+        {
+          "dang_id": "NB6+TH1",
+          "hints": [],
+          "label": "Bài 28.",
+          "level": 2,
+          "solution": "a) Vì $a\\cdot c=1\\cdot(-7)=-7<0$ nên phương trình có hai nghiệm phân biệt $x_1$, $x_2$.[[br]]b) Theo định lí Viète, ta có $x_1+x_2=-5$ và $x_1x_2=-7$.[[br]]c) Theo câu a) và b), ta có $A=x_1^2+x_2^2-2x_1x_2=(x_1+x_2)^2-4x_1x_2=(-5)^2-4\\cdot(-7)=25+28=53$.[[br]]\\hspace*{1.4em}Vậy $A=53$.",
+          "statement": "Cho phương trình $x^2+5x-7=0$. \\textit{(HK2 THCS Phúc Lợi, 2024--2025)}[[br]]a) [NB] Chứng minh phương trình có hai nghiệm phân biệt $x_1$, $x_2$.[[br]]b) [NB] Tính $x_1+x_2$ và $x_1x_2$.[[br]]c) [TH] Tính $A=x_1^2+x_2^2-2x_1x_2$.",
+          "tier": "btvn",
+          "type": "problem"
+        },
+        {
+          "dang_id": "NB7+TH2",
+          "hints": [],
+          "label": "Bài 29.",
+          "level": 2,
+          "solution": "a) Gọi $x_1=\\dfrac{-\\sqrt{13}-5}{2}$ và $x_2$ là nghiệm còn lại của phương trình.[[br]]\\hspace*{1.4em}Theo định lí Viète, ta có $x_1+x_2=-5$.[[br]]b) Khi đó nghiệm còn lại là $x_2=-5-x_1=-5-\\dfrac{-\\sqrt{13}-5}{2}=\\dfrac{-10+\\sqrt{13}+5}{2}=\\dfrac{-5+\\sqrt{13}}{2}$.[[br]]c) Theo câu a) và b), ta có $x_1x_2=\\dfrac{-5-\\sqrt{13}}{2}\\cdot\\dfrac{-5+\\sqrt{13}}{2}=\\dfrac{(-5)^2-(\\sqrt{13})^2}{4}=\\dfrac{25-13}{4}=3$.[[br]]\\hspace*{1.4em}Tổng bình phương hai nghiệm là $x_1^2+x_2^2=(x_1+x_2)^2-2x_1x_2=(-5)^2-2\\cdot 3=25-6=19$.[[br]]\\hspace*{1.4em}Vậy tổng bình phương hai nghiệm là $19$.",
+          "statement": "Cho phương trình $x^2+5x+m=0$, biết một nghiệm là $\\dfrac{-\\sqrt{13}-5}{2}$. Tìm tổng bình phương hai nghiệm của phương trình. \\textit{(thi thử vào 10 lần 3, THCS Thọ Lộc, 2025--2026)}[[br]]a) [NB] Tính tổng hai nghiệm.[[br]]b) [NB] Tìm nghiệm còn lại.[[br]]c) [TH] Tính tổng bình phương hai nghiệm.",
+          "tier": "btvn",
+          "type": "problem"
+        },
+        {
+          "dang_id": "NB7+TH2",
+          "hints": [],
+          "label": "Bài 30.",
+          "level": 2,
+          "solution": "a) Vì phương trình đã cho có hai nghiệm $x_1$, $x_2$ nên theo định lí Viète, ta có $x_1+x_2=1$.[[br]]\\hspace*{1.4em}Với $x_1=\\dfrac{1+\\sqrt{13}}{2}$, ta có $x_2=1-\\dfrac{1+\\sqrt{13}}{2}=\\dfrac{1-\\sqrt{13}}{2}$.[[br]]b) Theo câu a), ta có $x_1x_2=\\dfrac{1+\\sqrt{13}}{2}\\cdot\\dfrac{1-\\sqrt{13}}{2}=\\dfrac{1-13}{4}=-3$.[[br]]\\hspace*{1.4em}Ta có $A=3x_1^2x_2+3x_1x_2^2=3x_1x_2(x_1+x_2)=3\\cdot(-3)\\cdot 1=-9$.[[br]]\\hspace*{1.4em}Vậy $A=-9$.",
+          "statement": "Cho phương trình $x^2-x+m=0$ có hai nghiệm $x_1$, $x_2$ và $x_1=\\dfrac{1+\\sqrt{13}}{2}$. Tính giá trị của biểu thức $A=3x_1^2x_2+3x_1x_2^2$. \\textit{(HK2 THCS Đại Áng, 2025--2026)}[[br]]a) [NB] Tìm $x_2$.[[br]]b) [TH] Tính $A$.",
+          "tier": "btvn",
+          "type": "problem"
+        },
+        {
+          "dang_id": "NB7+TH2",
+          "hints": [],
+          "label": "Bài 31.",
+          "level": 2,
+          "solution": "a) Vì phương trình đã cho có hai nghiệm phân biệt $x_1$, $x_2$ nên theo định lí Viète, ta có $x_1+x_2=-4$.[[br]]\\hspace*{1.4em}Với $x_1=-\\sqrt{3}$, ta có $x_2=-4-(-\\sqrt{3})=-4+\\sqrt{3}$.[[br]]b) Theo câu a), ta có $x_1x_2=(-\\sqrt{3})(-4+\\sqrt{3})=4\\sqrt{3}-3$.[[br]]\\hspace*{1.4em}Tổng nghịch đảo hai nghiệm là $\\dfrac{1}{x_1}+\\dfrac{1}{x_2}=\\dfrac{x_1+x_2}{x_1x_2}=\\dfrac{-4}{4\\sqrt{3}-3}$.[[br]]\\hspace*{1.4em}Trục căn thức ở mẫu, ta được $\\dfrac{-4(4\\sqrt{3}+3)}{(4\\sqrt{3})^2-3^2}=\\dfrac{-4(4\\sqrt{3}+3)}{48-9}=-\\dfrac{16\\sqrt{3}+12}{39}$.[[br]]\\hspace*{1.4em}Vậy tổng nghịch đảo hai nghiệm là $-\\dfrac{16\\sqrt{3}+12}{39}$.",
+          "statement": "Cho phương trình $x^2+4x+m=0$ có hai nghiệm phân biệt $x_1$, $x_2$, trong đó có một nghiệm là $x_1=-\\sqrt3$. Tính tổng nghịch đảo hai nghiệm của phương trình. \\textit{(GK2 xã Đông Anh, 2025--2026)}[[br]]a) [NB] Tìm $x_2$.[[br]]b) [TH] Tính tổng nghịch đảo hai nghiệm.",
+          "tier": "btvn",
+          "type": "problem"
+        },
+        {
+          "dang_id": "NB8+VD1",
+          "hints": [],
+          "label": "Bài 32.",
+          "level": 3,
+          "solution": "a) Ta có $\\Delta=(-6)^2-4\\cdot 1\\cdot(-2m+3)=36+8m-12=8m+24$.[[br]]b) Khi phương trình có hai nghiệm, theo định lí Viète, ta có $x_1+x_2=6$ và $x_1x_2=-2m+3$.[[br]]c) Theo câu a) và b), để phương trình có hai nghiệm phân biệt thì $\\Delta>0$[[br]]\\hspace*{1.4em}$8m+24>0$[[br]]\\hspace*{1.4em}$8m>-24$[[br]]\\hspace*{1.4em}$m>-3$.[[br]]\\hspace*{1.4em}Theo đề bài, $x_1^2+x_2^2=20$[[br]]\\hspace*{1.4em}$(x_1+x_2)^2-2x_1x_2=20$[[br]]\\hspace*{1.4em}$6^2-2(-2m+3)=20$[[br]]\\hspace*{1.4em}$36+4m-6=20$[[br]]\\hspace*{1.4em}$4m+30=20$[[br]]\\hspace*{1.4em}$4m=-10$[[br]]\\hspace*{1.4em}$m=-\\dfrac{5}{2}$.[[br]]\\hspace*{1.4em}Đối chiếu điều kiện $m>-3$, ta thấy $m=-\\dfrac{5}{2}$ thỏa mãn.[[br]]\\hspace*{1.4em}Vậy $m=-\\dfrac{5}{2}$.",
+          "statement": "Cho phương trình $x^2-6x-2m+3=0$. Tìm $m$ để phương trình có hai nghiệm phân biệt $x_1$, $x_2$ thỏa mãn $x_1^2+x_2^2=20$. \\textit{(GK2 THCS Mai Dịch, 2024--2025)}[[br]]a) [NB] Tính $\\Delta$ theo $m$.[[br]]b) [NB] Viết $x_1+x_2$ và $x_1x_2$ theo $m$.[[br]]c) [VD] Tìm $m$.",
+          "tier": "btvn",
+          "type": "problem"
+        },
+        {
+          "dang_id": "NB8+VD1",
+          "hints": [],
+          "label": "Bài 33.",
+          "level": 3,
+          "solution": "a) Ta có $\\Delta=(-2m)^2-4\\cdot 1\\cdot(4m-4)=4m^2-16m+16=4(m-2)^2$.[[br]]b) Khi phương trình có hai nghiệm, theo định lí Viète, ta có $x_1+x_2=2m$ và $x_1x_2=4m-4$.[[br]]c) Theo câu a) và b), ta có $\\Delta=4(m-2)^2\\ge 0$ với mọi $m$ nên phương trình luôn có hai nghiệm $x_1$, $x_2$ với mọi $m$.[[br]]\\hspace*{1.4em}Theo đề bài, $x_1^2+x_2^2-8=0$[[br]]\\hspace*{1.4em}$(x_1+x_2)^2-2x_1x_2-8=0$[[br]]\\hspace*{1.4em}$(2m)^2-2(4m-4)-8=0$[[br]]\\hspace*{1.4em}$4m^2-8m+8-8=0$[[br]]\\hspace*{1.4em}$4m^2-8m=0$[[br]]\\hspace*{1.4em}$4m(m-2)=0$[[br]]\\hspace*{1.4em}$m=0$ hoặc $m=2$.[[br]]\\hspace*{1.4em}Cả hai giá trị $m=0$ và $m=2$ đều thỏa mãn điều kiện có nghiệm với mọi $m$.[[br]]\\hspace*{1.4em}Vậy $m=0$ hoặc $m=2$.",
+          "statement": "Tìm tất cả các giá trị của tham số $m$ để phương trình $x^2-2mx+4m-4=0$ có hai nghiệm $x_1$, $x_2$ thỏa mãn $x_1^2+x_2^2-8=0$. \\textit{(thi thử vào 10 lần 2, Phòng GD\\&ĐT Thanh Oai, 2025--2026)}[[br]]a) [NB] Tính $\\Delta$ theo $m$.[[br]]b) [NB] Viết $x_1+x_2$ và $x_1x_2$ theo $m$.[[br]]c) [VD] Tìm $m$.",
+          "tier": "btvn",
+          "type": "problem"
+        }
+      ],
+      "solution": "Đáp án sơ đồ tư duy: $\\Delta\\ge0$ hoặc $a\\cdot c<0$ · $x_1+x_2=-\\dfrac ba$, $x_1x_2=\\dfrac ca$ · $x_1^2+x_2^2=(x_1+x_2)^2-2x_1x_2$, $\\dfrac1{x_1}+\\dfrac1{x_2}=\\dfrac{x_1+x_2}{x_1x_2}$.",
+      "teacher_note": "Sơ đồ tư duy 5 phút cuối buổi. Bài tập về nhà Bài 20–33 in thành phiếu riêng. Buổi sau chữa Bài 32, Bài 33 trước."
+    }
+  ],
+  "luat_16_11": true
+}

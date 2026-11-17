@@ -120,3 +120,26 @@ def test_bo_de_ck1_lop9_sach_cong():
         les = LessonPackage.model_validate(json.load(open(f, encoding="utf-8")))
         assert check_loi_giai_thi(les) == [], f
 
+
+
+# ── Phiếu học tập cũng không dùng ⇔ (Thầy 16/11/2026, phiếu A ch.VI 9C lọt 110 dấu) ──
+from src.validators.loi_giai_thi_gate import check_tuong_duong_phieu  # noqa: E402
+
+
+def test_phieu_bat_tuong_duong_o_de_dien_khuyet_va_kien_thuc():
+    les = _de([
+        {"type": "para", "text": r"$A\cdot B=0 \Leftrightarrow A=0$ hoặc $B=0$"},
+        _bai("", statement=r"$x^2-1=5(x+1)$[[br]]$\Leftrightarrow [[blank:1.6cm]]=0$"),
+    ], theme="")
+    assert len(check_tuong_duong_phieu(les)) == 2
+
+
+def test_phieu_xuong_dong_thi_qua():
+    les = _de([_bai(r"$x^2-1=5x+5$[[br]]$x^2-5x-6=0$", statement=r"$A\cdot B=0$ thì $A=0$ hoặc $B=0$")],
+              theme="")
+    assert check_tuong_duong_phieu(les) == []
+
+
+def test_de_thi_de_cho_cong_rieng():
+    les = _de([_bai(r"$x=1\Leftrightarrow x-1=0$")])
+    assert check_tuong_duong_phieu(les) == []

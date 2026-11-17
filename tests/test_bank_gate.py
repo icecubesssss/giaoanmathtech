@@ -45,3 +45,12 @@ def test_muc_va_phut_mac_dinh_canh_bao():
 def test_tab_nho_khong_soi_phan_bo():
     rows = [_row(f"g{i}", f"Đề số {i}") for i in range(10)]
     assert check_bank({"tab": "t", "rows": rows}) == ([], [])
+
+
+def test_de_trung_bo_qua_ban_da_ghi_bo():
+    a, b = _row("e1", "Cùng một đề."), _row("e2", "Cùng một đề.")
+    _, cb = check_bank({"tab": "t", "rows": [a, b]})
+    assert any("trùng nguyên văn" in x for x in cb)
+    b["trang_thai"] = "Bỏ (trùng e1)"
+    _, cb = check_bank({"tab": "t", "rows": [a, b]})
+    assert not any("trùng nguyên văn" in x for x in cb)

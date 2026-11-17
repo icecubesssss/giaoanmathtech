@@ -14,6 +14,22 @@ from src.schema.thuyetminh_spec import (
 from src.schema.tier_spec import draw_minutes, load_tier_spec
 
 
+
+def _phieu_nhan(p) -> str:
+    """'Phiếu 1 — …' cho bảng Tên bài. Tiêu đề đã mở bằng 'Phiếu N' (mã số, quy ước
+    17/11/2026) thì không chèn mã lần nữa — tránh 'Phiếu 1 — Phiếu 1 — …'."""
+    if p.title.strip().lower().startswith("phiếu"):
+        head, sep, rest = p.title.partition(" — ")
+        return f"\\textbf{{{head}}}{sep}{rest}" if sep else f"\\textbf{{{p.title}}}"
+    return f"\\textbf{{Phiếu {p.code}}} — {p.title}"
+
+
+def _phieu_tieu_de(p) -> str:
+    if p.title.strip().lower().startswith("phiếu"):
+        head, sep, rest = p.title.partition(" — ")
+        return f"{head.upper()}: {rest}" if sep else p.title
+    return f"PHIẾU {p.code}: {p.title}"
+
 def _has_ve_hinh(spec: ThuyetMinhSpec) -> bool:
     """Spec có dòng nào khai hình HS phải tự vẽ không (để chú thích cột TG)."""
     return any(sum(r.ve_hinh.values()) for p in spec.phieu for r in p.rows)
@@ -197,7 +213,7 @@ def render_thuyetminh(spec: ThuyetMinhSpec) -> str:
             # Mỗi phiếu MỘT DÒNG (xem _cell_lines) — 6 phiếu nối bằng ';' đọc không ra.
             ("Tên bài", _cell_lines(
                 [f"\\textbf{{{spec.title}}}{badge}."]
-                + [f"\\textbf{{Phiếu {p.code}}} — {p.title}" for p in spec.phieu],
+                + [_phieu_nhan(p) for p in spec.phieu],
                 plain_first=True)),
             ("Thời gian", f"\\textbf{{1 ca $=$ {info.get('session_minutes')} phút}} "
                           f"(trừ giải lao {info.get('break_minutes')}′): GV giảng "
@@ -222,7 +238,7 @@ def render_thuyetminh(spec: ThuyetMinhSpec) -> str:
     ]
     for p in spec.phieu:
         table, _ = _phieu_table(p, rates, info)
-        parts += [r"\newpage", rf"\tmsec{{NỘI DUNG PHIẾU — PHIẾU {p.code}: {p.title}}}", table]
+        parts += [r"\newpage", rf"\tmsec{{NỘI DUNG PHIẾU — {_phieu_tieu_de(p)}}}", table]
         # QUY TRÌNH GIẢI BÀI của từng dạng VẬN DỤNG (Thầy chốt 30/08/2026) — in ngay
         # dưới bảng để Thầy đọc được cái mà học sinh sẽ thấy in trong phiếu.
         qt = [r for r in p.rows if r.quy_trinh]

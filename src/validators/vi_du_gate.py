@@ -33,6 +33,8 @@ _RAC = re.compile(r"[^\wÀ-ỹ #]+")
 # [[mblank:W]] / [[blank:W]] (bản cũ, không có đáp án).
 _O_KHUYET = re.compile(r"\[\[(?:fill|mblank|blank)[:\]]")
 _O_FILL = re.compile(r"\[\[fill:")
+# Câu hỏi dẫn [NB] trong đề bài TH (luật 16/11/2026): "a) [NB] …" hoặc "[NB]" sau dòng mới.
+_CAU_DAN_NB = re.compile(r"(?:^|\[\[br\]\]|\s)[a-h]\)\s*\[NB\]|\[\[br\]\]\s*\[NB\]")
 
 # Phiếu ÔN TẬP GIỮA KÌ / CUỐI KÌ và đề kiểm tra: bỏ gợi ý, HS tự làm như đi thi.
 _ON_TAP_THI = re.compile(
@@ -161,19 +163,25 @@ def check_goi_y_thong_hieu(lesson: LessonPackage) -> list[str]:
                 continue
             nhan = b.label or "?"
             # Sơ đồ ngược hoặc bài tách ý con giàn giáo a) ★★ (Thầy 09/11/2026) đã là gợi ý định hướng.
+            st_txt = getattr(b, "statement", "") or ""
             co_goi_y = bool(
                 getattr(b, "hints", None)
                 or getattr(b, "so_do_nguoc", "")
-                or re.search(r"[a-d]\)\s*★", getattr(b, "statement", "") or "")
+                or re.search(r"[a-d]\)\s*★", st_txt)
+                # Luật 16/11/2026: TH = bài gọn + CÂU HỎI GỢI Ý BƯỚC ngay trong đề — câu nhỏ
+                # gắn thẻ [NB] (đề cho gì, xét gì, công thức nào) đứng trước bước [TH].
+                or (getattr(lesson, "luat_16_11", False) and _CAU_DAN_NB.search(st_txt))
             )
             if on_tap and co_goi_y:
                 out.append(
                     f"vi_du_gate: {nhan} (Thông hiểu) còn gợi ý — phiếu ôn tập giữa kì / cuối kì "
                     f"phải BỎ gợi ý để HS tự làm như đi thi.")
             elif not on_tap and not co_goi_y:
+                cach = ("câu hỏi gợi ý bước gắn [NB] ngay trong đề (luật 16/11/2026) hoặc \"hints\""
+                        if getattr(lesson, "luat_16_11", False) else "\"hints\"")
                 out.append(
-                    f"vi_du_gate: {nhan} (Thông hiểu) thiếu \"hints\" — phiếu luyện tập chương "
-                    f"phải có gợi ý định hướng (không lộ lời giải).")
+                    f"vi_du_gate: {nhan} (Thông hiểu) thiếu gợi ý — phiếu luyện tập chương "
+                    f"phải có {cach} định hướng (không lộ lời giải).")
     return out
 
 

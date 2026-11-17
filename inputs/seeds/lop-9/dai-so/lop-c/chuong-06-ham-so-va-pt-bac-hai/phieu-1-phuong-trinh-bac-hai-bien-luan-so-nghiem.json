@@ -1,0 +1,588 @@
+{
+  "slug": "phieu-1-phuong-trinh-bac-hai-bien-luan-so-nghiem",
+  "title": "Bài 19. Phương trình bậc hai một ẩn — biện luận số nghiệm",
+  "eyebrow": "ĐẠI SỐ — CHƯƠNG VI · PHIẾU 1",
+  "grade_label": "Lớp 9 • Ôn vào 10",
+  "class_tier": "C",
+  "chuong": "chuong-06-ham-so-va-pt-bac-hai",
+  "btvn_phieu_rieng": true,
+  "stages": [
+    {
+      "kind": "review",
+      "number": 1,
+      "title": "Khám phá",
+      "blocks": [
+        {
+          "type": "opener",
+          "text": "Đề giữa kì II THCS Nguyễn Trường Tộ 2025--2026 có bài toán sau:[[br]]\\emph{\\textquotedblleft Cho phương trình $x^2+2(m-3)x-2m+5=0$. a) Giải phương trình với $m=5$. b) Chứng minh phương trình luôn có hai nghiệm với mọi $m$.\\textquotedblright}[[br]]Ở ý a), cần giải phương trình bậc hai bằng công thức nghiệm.[[br]]Ở ý b), cần tính biệt thức $\\Delta$ theo tham số $m$ và xét dấu của $\\Delta$.[[br]]Hai việc đó là nội dung chính của buổi học, và đề toán trên chính là Bài 19 ở cuối phần Luyện tập 2."
+        },
+        {
+          "type": "para",
+          "text": "\\textbf{Nhắc lại kiến thức đã học.}"
+        },
+        {
+          "type": "noted",
+          "variant": "note",
+          "text": "$\\bullet$\\; Hằng đẳng thức (Toán 8): $(A+B)^2=A^2+2AB+B^2$, $(A-B)^2=A^2-2AB+B^2$, $A^2-B^2=(A-B)(A+B)$.[[br]]$\\bullet$\\; Quy tắc chuyển vế: chuyển một hạng tử từ vế này sang vế kia thì đổi dấu hạng tử đó.[[br]]$\\bullet$\\; Phương trình tích (Toán 9 tập một, Chương II): $A\\cdot B=0$ khi $A=0$ hoặc $B=0$.[[br]]$\\bullet$\\; Căn bậc hai (Toán 9 tập một, Chương III): $x^2=k$ với $k>0$ thì $x=\\sqrt{k}$ hoặc $x=-\\sqrt{k}$."
+        }
+      ],
+      "solution": "",
+      "teacher_note": "10 phút — Nhắc lại hằng đẳng thức, chuyển vế, phương trình tích, đọc đề đích, chưa giải."
+    },
+    {
+      "kind": "concept",
+      "number": 2,
+      "title": "Kiến thức cần nhớ",
+      "blocks": [
+        {
+          "text": "1. Định nghĩa phương trình bậc hai một ẩn",
+          "type": "para",
+          "variant": "heading"
+        },
+        {
+          "text": "Phương trình bậc hai một ẩn (nói gọn là phương trình bậc hai) là phương trình có dạng $ax^2+bx+c=0$, trong đó $x$ là ẩn, $a$, $b$, $c$ là những số cho trước gọi là hệ số và $a\\ne 0$. \\textit{(SGK Toán 9 tập hai, tr.10)}",
+          "type": "para"
+        },
+        {
+          "text": "2. Giải phương trình bậc hai dạng khuyết",
+          "type": "para",
+          "variant": "heading"
+        },
+        {
+          "text": "Với phương trình bậc hai $ax^2+bx+c=0$ ($a\\ne 0$) dạng khuyết:[[br]]$\\bullet$\\; Khuyết $c$ ($ax^2+bx=0$): đặt nhân tử chung đưa về dạng tích $x(ax+b)=0$, suy ra $x=0$ hoặc $ax+b=0$ (áp dụng tính chất nếu $A\\cdot B=0$ thì $A=0$ hoặc $B=0$).[[br]]$\\bullet$\\; Khuyết $b$ (hoặc đưa được về dạng bình phương): chuyển vế để đưa về $x^2=k$ hoặc $(x+p)^2=k$. Nếu $k\\ge 0$ thì $x=\\sqrt{k}$ hoặc $x=-\\sqrt{k}$ (tương tự $x+p=\\sqrt{k}$ hoặc $x+p=-\\sqrt{k}$), nếu $k<0$ thì phương trình vô nghiệm. \\textit{(SGK Toán 9 tập hai, tr.11--12)}",
+          "type": "para"
+        },
+        {
+          "text": "3. Công thức nghiệm của phương trình bậc hai",
+          "type": "para",
+          "variant": "heading"
+        },
+        {
+          "text": "Xét phương trình bậc hai một ẩn $ax^2+bx+c=0$ ($a\\ne 0$).[[br]]Tính biệt thức $\\Delta=b^2-4ac$.[[br]]$\\bullet$\\; Nếu $\\Delta>0$ thì phương trình có hai nghiệm phân biệt: $x_1=\\dfrac{-b+\\sqrt{\\Delta}}{2a}$ và $x_2=\\dfrac{-b-\\sqrt{\\Delta}}{2a}$.[[br]]$\\bullet$\\; Nếu $\\Delta=0$ thì phương trình có nghiệm kép $x_1=x_2=-\\dfrac{b}{2a}$.[[br]]$\\bullet$\\; Nếu $\\Delta<0$ thì phương trình vô nghiệm. \\textit{(SGK Toán 9 tập hai, tr.13)}",
+          "type": "para"
+        },
+        {
+          "text": "4. Nhận xét khi $a$ và $c$ trái dấu",
+          "type": "para",
+          "variant": "heading"
+        },
+        {
+          "text": "Nếu $a$ và $c$ trái dấu thì $ac<0$, suy ra $-4ac>0$. Vì $b^2\\ge 0$ nên $\\Delta=b^2-4ac>0$, do đó phương trình $ax^2+bx+c=0$ có hai nghiệm phân biệt. \\textit{(SGK Toán 9 tập hai, tr.14)}",
+          "type": "para"
+        },
+        {
+          "text": "5. Tính nhẩm nghiệm",
+          "type": "para",
+          "variant": "heading"
+        },
+        {
+          "text": "Xét phương trình $ax^2+bx+c=0$ ($a\\ne 0$).[[br]]$\\bullet$\\; Nếu $a+b+c=0$ thì phương trình có một nghiệm là $x_1=1$, còn nghiệm kia là $x_2=\\dfrac{c}{a}$.[[br]]$\\bullet$\\; Nếu $a-b+c=0$ thì phương trình có một nghiệm là $x_1=-1$, còn nghiệm kia là $x_2=-\\dfrac{c}{a}$.[[br]]Kết quả này dùng để kiểm tra nhanh nghiệm vừa tìm. \\textit{(SGK Toán 9 tập hai, tr.22--23)}",
+          "type": "para"
+        },
+        {
+          "text": "6. Số nghiệm của phương trình có tham số",
+          "type": "para",
+          "variant": "heading"
+        },
+        {
+          "text": "Từ công thức nghiệm, phương trình $ax^2+bx+c=0$ ($a\\ne 0$) có hai nghiệm phân biệt khi $\\Delta>0$, có nghiệm kép khi $\\Delta=0$, vô nghiệm khi $\\Delta<0$, có nghiệm khi $\\Delta\\ge 0$.[[br]]Số $x_0$ là nghiệm của phương trình khi $ax_0^2+bx_0+c=0$. \\textit{(suy ra từ công thức nghiệm)}",
+          "type": "para"
+        }
+      ],
+      "teacher_note": "20 phút — Mục 3 và mục 6 là trọng tâm, cho học sinh tự tính $\\Delta$ của một phương trình ngay khi giảng."
+    },
+    {
+      "kind": "practice1",
+      "number": 3,
+      "title": "Luyện tập 1 — Nhận biết",
+      "blocks": [
+        {
+          "text": "\\textbf{Đích của buổi học:} Bài 19 — đề giữa kì II THCS Nguyễn Trường Tộ: giải phương trình khi cho giá trị của $m$ và chứng minh phương trình luôn có nghiệm. Mạch 1--4 chuẩn bị cho ý a), Mạch 5--7 chuẩn bị cho ý b).",
+          "type": "para"
+        },
+        {
+          "type": "para",
+          "variant": "heading",
+          "text": "Mạch 1. Nhận biết phương trình bậc hai, hệ số và số nghiệm"
+        },
+        {
+          "type": "noted",
+          "variant": "example",
+          "text": "\\textbf{Ví dụ 1.} Trong hai phương trình sau, phương trình nào là phương trình bậc hai ẩn $x$? Chỉ rõ hệ số $a$, $b$, $c$. \\textit{(SGK Ví dụ 1 tr.11)}[[br]]a) $2x^2-3x+1=0$[[br]]b) $\\left(\\dfrac{1}{x}\\right)^2+3\\cdot\\dfrac{1}{x}+2=0$[[br]]{\\sffamily\\bfseries\\color{brand}Lời giải}[[br]]\\hspace*{1.4em}a) Phương trình $2x^2-3x+1=0$ là phương trình bậc hai ẩn $x$ với $a=[[fill:2]]$, $b=[[fill:-3]]$, $c=[[fill:1]]$.[[br]]\\hspace*{1.4em}Vậy phương trình ở câu a) là phương trình bậc hai ẩn $x$.[[br]]\\hspace*{1.4em}b) Phương trình $\\left(\\dfrac{1}{x}\\right)^2+3\\cdot\\dfrac{1}{x}+2=0$ chứa $\\dfrac{1}{x}$ ([[fill:ẩn ở mẫu]]) nên [[fill:không phải]] là phương trình bậc hai ẩn $x$.[[br]]\\hspace*{1.4em}Vậy phương trình ở câu b) [[fill:không phải]] là phương trình bậc hai ẩn $x$."
+        },
+        {
+          "dang_id": "NB2",
+          "dung_sai": [
+            "Với $m$ là một số cho trước, phương trình (ẩn $x$) $mx^2+2x+1=0$ là phương trình bậc hai với $a=m$, $b=2$, $c=1$."
+          ],
+          "hints": [],
+          "label": "Bài 1.",
+          "level": 1,
+          "solution": "Sai. Phương trình $mx^2+2x+1=0$ chỉ là phương trình bậc hai khi $m\\ne 0$ (khi $m=0$, phương trình trở thành $2x+1=0$, không phải phương trình bậc hai).",
+          "statement": "[NB] Khẳng định sau đúng hay sai? Vì sao?",
+          "tier": "onclass",
+          "type": "problem"
+        },
+        {
+          "dang_id": "NB2",
+          "hints": [],
+          "label": "Bài 2.",
+          "level": 1,
+          "options": [
+            "vô nghiệm",
+            "có nghiệm kép",
+            "có hai nghiệm phân biệt",
+            "chưa kết luận được"
+          ],
+          "solution": "Chọn C. Vì $a$ và $c$ trái dấu nên $ac<0$, suy ra $-4ac>0$, do đó $\\Delta=b^2-4ac>0$.",
+          "statement": "[NB] Phương trình bậc hai $ax^2+bx+c=0$ ($a\\ne 0$) có $a$ và $c$ trái dấu thì phương trình",
+          "tier": "onclass",
+          "type": "problem"
+        },
+        {
+          "dang_id": "NB2",
+          "hints": [],
+          "label": "Bài 3.",
+          "level": 1,
+          "options": [
+            "$x_1=3$, $x_2=4$",
+            "$x_1=-3$, $x_2=-4$",
+            "$x_1=3$, $x_2=-4$",
+            "$x_1=-3$, $x_2=4$"
+          ],
+          "solution": "Chọn B. Ta có $\\Delta=7^2-4\\cdot 1\\cdot 12=49-48=1>0$ nên phương trình có hai nghiệm $x_1=\\dfrac{-7+1}{2}=-3$ và $x_2=\\dfrac{-7-1}{2}=-4$.",
+          "statement": "[NB] Các nghiệm của phương trình $x^2+7x+12=0$ là \\textit{(SGK 6{.}41)}",
+          "tier": "onclass",
+          "type": "problem"
+        },
+        {
+          "dang_id": "NB1",
+          "hints": [],
+          "label": "Bài 4.",
+          "level": 1,
+          "solution": "a) Ta có $3x^2+2x-1=x^2-x$[[br]]\\hspace*{1.4em}$2x^2+3x-1=0$.[[br]]\\hspace*{1.4em}Vậy $a=2$, $b=3$, $c=-1$.[[br]]b) Ta có $(2x+1)^2=x^2+1$[[br]]\\hspace*{1.4em}$4x^2+4x+1=x^2+1$[[br]]\\hspace*{1.4em}$3x^2+4x=0$.[[br]]\\hspace*{1.4em}Vậy $a=3$, $b=4$, $c=0$.",
+          "statement": "Đưa các phương trình sau về dạng $ax^2+bx+c=0$ rồi xác định các hệ số $a$, $b$, $c$:[[br]]a) [NB] $3x^2+2x-1=x^2-x$[[br]]b) [NB] $(2x+1)^2=x^2+1$",
+          "tier": "onclass",
+          "type": "problem"
+        },
+        {
+          "dang_id": "NB2",
+          "hints": [],
+          "label": "Bài 5.",
+          "level": 1,
+          "solution": "a) Phương trình $11x^2+13x-1=0$ có $a=11$, $b=13$, $c=-1$.[[br]]\\hspace*{1.4em}Ta có $\\Delta=13^2-4\\cdot 11\\cdot(-1)=169+44=213>0$ nên phương trình có hai nghiệm phân biệt.[[br]]b) Phương trình $9x^2+42x+49=0$ có $a=9$, $b=42$, $c=49$.[[br]]\\hspace*{1.4em}Ta có $\\Delta=42^2-4\\cdot 9\\cdot 49=1764-1764=0$ nên phương trình có nghiệm kép.[[br]]c) Phương trình $x^2-2x+3=0$ có $a=1$, $b=-2$, $c=3$.[[br]]\\hspace*{1.4em}Ta có $\\Delta=(-2)^2-4\\cdot 1\\cdot 3=4-12=-8<0$ nên phương trình vô nghiệm.",
+          "statement": "Không giải phương trình, hãy xác định các hệ số $a$, $b$, $c$, tính $\\Delta$ và cho biết số nghiệm của mỗi phương trình sau:[[br]]a) [NB] $11x^2+13x-1=0$[[br]]b) [NB] $9x^2+42x+49=0$[[br]]c) [NB] $x^2-2x+3=0$",
+          "tier": "onclass",
+          "type": "problem"
+        },
+        {
+          "type": "para",
+          "variant": "heading",
+          "text": "Mạch 2. Phương trình khuyết $b$, khuyết $c$"
+        },
+        {
+          "type": "noted",
+          "variant": "example",
+          "text": "\\textbf{Ví dụ 2.} Giải các phương trình sau: a) $2x^2-4x=0$, b) $x^2-9=0$, c) $(x+1)^2=3$. \\textit{(SGK Ví dụ 2 tr.11, Ví dụ 3 tr.12)}[[br]]{\\sffamily\\bfseries\\color{brand}Lời giải}[[br]]\\hspace*{1.4em}a) Ta có $2x^2-4x=0$[[br]]\\hspace*{1.4em}$[[fill:2x]](x-2)=0$[[br]]\\hspace*{1.4em}$x=0$ hoặc $[[fill:x-2]]=0$[[br]]\\hspace*{1.4em}Vậy phương trình có hai nghiệm $x=0$ và $x=[[fill:2]]$.[[br]]\\hspace*{1.4em}b) Ta có $x^2-9=0$[[br]]\\hspace*{1.4em}$x^2=[[fill:9]]$[[br]]\\hspace*{1.4em}Vậy phương trình có hai nghiệm $x=[[fill:3]]$ và $x=[[fill:-3]]$.[[br]]\\hspace*{1.4em}c) Ta có $(x+1)^2=3$[[br]]\\hspace*{1.4em}$x+1=[[fill:\\sqrt{3}]]$ hoặc $x+1=[[fill:-\\sqrt{3}]]$[[br]]\\hspace*{1.4em}Vậy phương trình có hai nghiệm $x=[[fill:-1+\\sqrt{3}]]$ và $x=[[fill:-1-\\sqrt{3}]]$."
+        },
+        {
+          "dang_id": "NB3",
+          "hints": [],
+          "label": "Bài 6.",
+          "level": 1,
+          "options": [
+            "$x_1=0$, $x_2=-\\dfrac12$",
+            "$x_1=0$, $x_2=-2$",
+            "$x_1=0$, $x_2=2$",
+            "$x_1=0$, $x_2=\\dfrac12$"
+          ],
+          "solution": "Chọn C. Ta có $x^2-2x=x(x-2)=0$, suy ra $x=0$ hoặc $x=2$.",
+          "statement": "[NB] Phương trình $x^2-2x=0$ có các nghiệm là: \\textit{(CK2 THCS Phan Đình Phùng, Đà Nẵng, 2025--2026)}",
+          "tier": "onclass",
+          "type": "problem"
+        },
+        {
+          "dang_id": "NB3",
+          "hints": [],
+          "label": "Bài 7.",
+          "level": 1,
+          "solution": "a) Ta có $8x^2-4x=0$[[br]]\\hspace*{1.4em}$4x(2x-1)=0$[[br]]\\hspace*{1.4em}$x=0$ hoặc $2x-1=0$[[br]]\\hspace*{1.4em}$x=0$ hoặc $x=\\dfrac12$.[[br]]\\hspace*{1.4em}Vậy phương trình có hai nghiệm $x=0$ và $x=\\dfrac12$.[[br]]b) Ta có $x^2-25=0$[[br]]\\hspace*{1.4em}$x^2=25$[[br]]\\hspace*{1.4em}$x=5$ hoặc $x=-5$.[[br]]\\hspace*{1.4em}Vậy phương trình có hai nghiệm $x=5$ và $x=-5$.[[br]]c) Ta có $(x+3)^2=5$[[br]]\\hspace*{1.4em}$x+3=\\sqrt{5}$ hoặc $x+3=-\\sqrt{5}$[[br]]\\hspace*{1.4em}$x=-3+\\sqrt{5}$ hoặc $x=-3-\\sqrt{5}$.[[br]]\\hspace*{1.4em}Vậy phương trình có hai nghiệm $x=-3+\\sqrt{5}$ và $x=-3-\\sqrt{5}$.[[br]]d) Ta có $x^2-15=3(x-5)$[[br]]\\hspace*{1.4em}$x^2-15=3x-15$[[br]]\\hspace*{1.4em}$x^2-3x=0$[[br]]\\hspace*{1.4em}$x(x-3)=0$[[br]]\\hspace*{1.4em}$x=0$ hoặc $x=3$.[[br]]\\hspace*{1.4em}Vậy phương trình có hai nghiệm $x=0$ và $x=3$.",
+          "statement": "Giải các phương trình sau:[[br]]a) [NB] $8x^2-4x=0$ \\textit{(GK1 THCS Thạch Bàn, 2024--2025)}[[br]]b) [NB] $x^2-25=0$[[br]]c) [NB] $(x+3)^2=5$[[br]]d) [NB] $x^2-15=3(x-5)$ \\textit{(GK1 THCS Nghĩa Tân, 2025--2026)}",
+          "tier": "onclass",
+          "type": "problem"
+        },
+        {
+          "type": "para",
+          "variant": "heading",
+          "text": "Mạch 3. Nhận xét để kiểm tra nghiệm nhanh"
+        },
+        {
+          "dang_id": "NB4",
+          "hints": [],
+          "label": "Bài 8.",
+          "level": 1,
+          "solution": "a) Phương trình $2x^2-9x+7=0$ có $a=2$, $b=-9$, $c=7$.[[br]]\\hspace*{1.4em}Ta có $a+b+c=2+(-9)+7=0$.[[br]]\\hspace*{1.4em}Vậy phương trình có hai nghiệm $x_1=1$ và $x_2=\\dfrac72$.[[br]]b) Phương trình $3x^2+11x+8=0$ có $a=3$, $b=11$, $c=8$.[[br]]\\hspace*{1.4em}Ta có $a-b+c=3-11+8=0$.[[br]]\\hspace*{1.4em}Vậy phương trình có hai nghiệm $x_1=-1$ và $x_2=-\\dfrac83$.",
+          "statement": "Tính $a+b+c$ hoặc $a-b+c$ rồi viết hai nghiệm của mỗi phương trình sau:[[br]]a) [NB] $2x^2-9x+7=0$[[br]]b) [NB] $3x^2+11x+8=0$",
+          "tier": "onclass",
+          "type": "problem"
+        }
+      ],
+      "teacher_note": "Khoảng 25 phút — Câu nhỏ trắc nghiệm, Đúng/Sai, trả lời ngắn, gọi nhiều học sinh trả lời miệng, chữa nhanh. Ví dụ 1, 2 giáo viên làm cùng lớp, học sinh điền ô."
+    },
+    {
+      "kind": "practice2",
+      "number": 4,
+      "title": "Luyện tập 2 — Thông hiểu",
+      "blocks": [
+        {
+          "type": "para",
+          "variant": "heading",
+          "text": "Mạch 4. Giải phương trình bằng công thức nghiệm"
+        },
+        {
+          "type": "noted",
+          "variant": "example",
+          "text": "\\textbf{Ví dụ 3.} Giải các phương trình sau bằng công thức nghiệm: a) $3x^2+7x-1=0$, b) $x^2-6x+9=0$, c) $2x^2+3x+5=0$. \\textit{(SGK Ví dụ 5, Ví dụ 6 tr.14)}[[br]]{\\sffamily\\bfseries\\color{brand}Lời giải}[[br]]\\hspace*{1.4em}a) Ta có $a=3$, $b=7$, $c=-1$.[[br]]\\hspace*{1.4em}$\\Delta=7^2-4\\cdot 3\\cdot(-1)=49+12=[[fill:61]]>0$ nên phương trình có [[fill:hai nghiệm phân biệt]][[br]]\\hspace*{1.4em}$x_1=\\dfrac{-b+\\sqrt{\\Delta}}{2a}$ và $x_2=\\dfrac{-b-\\sqrt{\\Delta}}{2a}$.[[br]]\\hspace*{1.4em}Vậy phương trình có hai nghiệm $x_1=[[fill:\\dfrac{-7+\\sqrt{61}}{6}]]$ và $x_2=[[fill:\\dfrac{-7-\\sqrt{61}}{6}]]$.[[br]]\\hspace*{1.4em}b) Ta có $\\Delta=[[fill:(-6)^2-4\\cdot 1\\cdot 9]]=36-36=[[fill:0]]$ nên phương trình có nghiệm kép.[[br]]\\hspace*{1.4em}Vậy phương trình có nghiệm kép $x_1=x_2=[[fill:3]]$.[[br]]\\hspace*{1.4em}c) Ta có $\\Delta=[[fill:3^2-4\\cdot 2\\cdot 5]]=9-40=[[fill:-31]]<0$.[[br]]\\hspace*{1.4em}Vậy phương trình [[fill:vô nghiệm]]."
+        },
+        {
+          "dang_id": "NB5+TH1",
+          "hints": [],
+          "label": "Bài 9.",
+          "level": 2,
+          "solution": "a) Các hệ số là $a=3$, $b=-4$, $c=5$.[[br]]b) Ta có $\\Delta=(-4)^2-4\\cdot 3\\cdot 5=16-60=-44<0$.[[br]]c) Vì $\\Delta=-44<0$ nên phương trình vô nghiệm.[[br]]\\hspace*{1.4em}Vậy phương trình vô nghiệm.",
+          "statement": "Chỉ rõ các hệ số $a$, $b$, $c$ và giải phương trình bậc hai $3x^2-4x+5=0$. \\textit{(CK2 THCS Hát Môn, 2025--2026)}[[br]]a) [NB] Chỉ rõ các hệ số $a$, $b$, $c$.[[br]]b) [NB] Tính $\\Delta$ và so sánh với $0$.[[br]]c) [TH] Giải phương trình.",
+          "tier": "onclass",
+          "type": "problem"
+        },
+        {
+          "dang_id": "NB5+TH1",
+          "hints": [],
+          "label": "Bài 10.",
+          "level": 2,
+          "solution": "a) Phương trình $x^2-6x-14=0$ có $a=1$, $b=-6$, $c=-14$.[[br]]\\hspace*{1.4em}Ta có $\\Delta=(-6)^2-4\\cdot 1\\cdot(-14)=36+56=92>0$.[[br]]\\hspace*{1.4em}$\\sqrt{\\Delta}=\\sqrt{92}=2\\sqrt{23}$.[[br]]b) Vì $\\Delta>0$ nên phương trình có hai nghiệm phân biệt[[br]]\\hspace*{1.4em}$x_1=\\dfrac{6+2\\sqrt{23}}{2}=3+\\sqrt{23}$ và $x_2=\\dfrac{6-2\\sqrt{23}}{2}=3-\\sqrt{23}$.[[br]]\\hspace*{1.4em}Vậy phương trình có hai nghiệm $x_1=3+\\sqrt{23}$ và $x_2=3-\\sqrt{23}$.",
+          "statement": "Sử dụng công thức nghiệm để giải phương trình $x^2-6x-14=0$. \\textit{(HK2 Phòng GD\\&ĐT Ba Đình, 2024--2025)}[[br]]a) [NB] Tính $\\Delta$ và $\\sqrt{\\Delta}$.[[br]]b) [TH] Giải phương trình.",
+          "tier": "onclass",
+          "type": "problem"
+        },
+        {
+          "dang_id": "NB5+TH1",
+          "hints": [],
+          "label": "Bài 11.",
+          "level": 2,
+          "solution": "a) Phương trình $5x^2+2\\sqrt{10}\\,x+2=0$ có $a=5$, $b=2\\sqrt{10}$, $c=2$.[[br]]\\hspace*{1.4em}Ta có $\\Delta=(2\\sqrt{10})^2-4\\cdot 5\\cdot 2=40-40=0$.[[br]]b) Vì $\\Delta=0$ nên phương trình có nghiệm kép[[br]]\\hspace*{1.4em}$x_1=x_2=-\\dfrac{2\\sqrt{10}}{2\\cdot 5}=-\\dfrac{\\sqrt{10}}{5}$.[[br]]\\hspace*{1.4em}Vậy phương trình có nghiệm kép $x_1=x_2=-\\dfrac{\\sqrt{10}}{5}$.",
+          "statement": "Giải phương trình $5x^2+2\\sqrt{10}\\,x+2=0$. \\textit{(GK2 THCS Phan Đình Giót, 2024--2025)}[[br]]a) [NB] Tính $\\Delta$.[[br]]b) [TH] Giải phương trình.",
+          "tier": "onclass",
+          "type": "problem"
+        },
+        {
+          "dang_id": "NB5+TH1",
+          "hints": [],
+          "label": "Bài 12.",
+          "level": 2,
+          "solution": "a) Phương trình (1) có $a=6$, $b=-4$, $c=-1$.[[br]]\\hspace*{1.4em}Ta có $\\Delta=(-4)^2-4\\cdot 6\\cdot(-1)=16+24=40>0$.[[br]]b) Vì $\\Delta=40>0$ nên phương trình (1) có hai nghiệm phân biệt[[br]]\\hspace*{1.4em}$x_1=\\dfrac{4+\\sqrt{40}}{12}=\\dfrac{4+2\\sqrt{10}}{12}=\\dfrac{2+\\sqrt{10}}{6}$ và $x_2=\\dfrac{4-\\sqrt{40}}{12}=\\dfrac{2-\\sqrt{10}}{6}$.[[br]]\\hspace*{1.4em}Vậy phương trình (1) có hai nghiệm $x_1=\\dfrac{2+\\sqrt{10}}{6}$ và $x_2=\\dfrac{2-\\sqrt{10}}{6}$.[[br]]c) Phương trình (2) có $a=1$, $b=-\\sqrt{3}$, $c=\\sqrt{3}-1$.[[br]]\\hspace*{1.4em}Ta có $a+b+c=1-\\sqrt{3}+\\sqrt{3}-1=0$.[[br]]\\hspace*{1.4em}Vậy phương trình (2) có hai nghiệm $x_1=1$ và $x_2=\\sqrt{3}-1$.",
+          "statement": "Giải các phương trình: (1) $6x^2-4x-1=0$, (2) $x^2-\\sqrt{3}\\,x+\\sqrt{3}-1=0$. \\textit{(GK2 xã Đông Anh, 2025--2026)}[[br]]a) [NB] Tính $\\Delta$ của phương trình (1).[[br]]b) [TH] Giải phương trình (1).[[br]]c) [NB] Tính $a+b+c$ của phương trình (2) rồi viết hai nghiệm.",
+          "tier": "onclass",
+          "type": "problem"
+        },
+        {
+          "type": "noted",
+          "variant": "example",
+          "text": "\\textbf{Ví dụ 4.} Giải các phương trình sau:[[br]]a) $(x+1)^2-3(x-2)=7$ \\textit{(GK1 THCS Giảng Võ, 2024--2025)}[[br]]b) $x^2-1=5(x+1)$ \\textit{(GK1 THCS Nguyễn Du, 2025--2026)}[[br]]{\\sffamily\\bfseries\\color{brand}Lời giải}[[br]]\\hspace*{1.4em}a) Ta có $(x+1)^2-3(x-2)=7$[[br]]\\hspace*{1.4em}$[[fill:x^2+2x+1]]-3x+6=7$[[br]]\\hspace*{1.4em}$x^2-x=0$[[br]]\\hspace*{1.4em}$x([[fill:x-1]])=0$[[br]]\\hspace*{1.4em}Vậy phương trình có hai nghiệm $x=[[fill:0]]$ và $x=[[fill:1]]$.[[br]]\\hspace*{1.4em}b) Ta có $x^2-1=5(x+1)$[[br]]\\hspace*{1.4em}$x^2-1=5x+5$[[br]]\\hspace*{1.4em}$[[fill:x^2-5x-6]]=0$[[br]]\\hspace*{1.4em}Ta có $\\Delta=(-5)^2-4\\cdot 1\\cdot(-6)=25+24=[[fill:49]]>0$ nên phương trình có hai nghiệm phân biệt.[[br]]\\hspace*{1.4em}Vậy phương trình có hai nghiệm $x_1=[[fill:6]]$ và $x_2=[[fill:-1]]$."
+        },
+        {
+          "dang_id": "NB5+TH1",
+          "hints": [],
+          "label": "Bài 13.",
+          "level": 2,
+          "solution": "a) Ta có $(x+2)(x-10)=-36$[[br]]\\hspace*{1.4em}$x^2-10x+2x-20=-36$[[br]]\\hspace*{1.4em}$x^2-8x+16=0$.[[br]]b) Phương trình $x^2-8x+16=0$ có $a=1$, $b=-8$, $c=16$.[[br]]\\hspace*{1.4em}Ta có $\\Delta=(-8)^2-4\\cdot 1\\cdot 16=64-64=0$.[[br]]\\hspace*{1.4em}Vì $\\Delta=0$ nên phương trình có nghiệm kép $x_1=x_2=-\\dfrac{-8}{2\\cdot 1}=4$.[[br]]\\hspace*{1.4em}Vậy phương trình có nghiệm kép $x=4$.",
+          "statement": "Giải phương trình $(x+2)(x-10)=-36$. \\textit{(GK1 THCS Thành Công, 2025--2026)}[[br]]a) [NB] Đưa phương trình về dạng $ax^2+bx+c=0$.[[br]]b) [TH] Giải phương trình.",
+          "tier": "onclass",
+          "type": "problem"
+        },
+        {
+          "type": "para",
+          "variant": "heading",
+          "text": "Mạch 5. Tìm $m$ theo số nghiệm của phương trình"
+        },
+        {
+          "type": "noted",
+          "variant": "example",
+          "text": "\\textbf{Ví dụ 5.} Cho phương trình $x^2-2(m+3)x+m^2-5=0$ ($m$ là tham số). Tìm điều kiện của $m$ để phương trình[[br]]a) có hai nghiệm phân biệt[[br]]b) có nghiệm kép[[br]]c) vô nghiệm.[[br]]{\\sffamily\\bfseries\\color{brand}Lời giải}[[br]]\\hspace*{1.4em}Ta có $a=1$, $b=-2(m+3)$, $c=m^2-5$.[[br]]\\hspace*{1.4em}$\\Delta=\\left[-2(m+3)\\right]^2-4\\cdot 1\\cdot(m^2-5)=[[fill:4m^2+24m+36]]-4m^2+20=24m+56$.[[br]]\\hspace*{1.4em}a) Phương trình có hai nghiệm phân biệt khi $[[fill:\\Delta>0]]$[[br]]\\hspace*{1.4em}$24m+56>0$[[br]]\\hspace*{1.4em}$24m>[[fill:-56]]$[[br]]\\hspace*{1.4em}Vậy $[[fill:m>-\\dfrac73]]$.[[br]]\\hspace*{1.4em}b) Phương trình có nghiệm kép khi $[[fill:\\Delta=0]]$[[br]]\\hspace*{1.4em}$24m+56=0$[[br]]\\hspace*{1.4em}$24m=[[fill:-56]]$[[br]]\\hspace*{1.4em}Vậy $[[fill:m=-\\dfrac73]]$.[[br]]\\hspace*{1.4em}c) Phương trình vô nghiệm khi $[[fill:\\Delta<0]]$[[br]]\\hspace*{1.4em}$24m+56<0$[[br]]\\hspace*{1.4em}$24m<[[fill:-56]]$[[br]]\\hspace*{1.4em}Vậy $[[fill:m<-\\dfrac73]]$."
+        },
+        {
+          "dang_id": "NB6+TH2",
+          "hints": [],
+          "label": "Bài 14.",
+          "level": 2,
+          "solution": "a) Phương trình có hai nghiệm phân biệt khi $\\Delta>0$.[[br]]b) Ta có $\\Delta=\\left[-(2m-1)\\right]^2-4\\cdot 1\\cdot(m^2-1)=4m^2-4m+1-4m^2+4=-4m+5$.[[br]]c) Phương trình có hai nghiệm phân biệt khi $\\Delta>0$[[br]]\\hspace*{1.4em}$-4m+5>0$[[br]]\\hspace*{1.4em}$-4m>-5$[[br]]\\hspace*{1.4em}$m<\\dfrac54$.[[br]]\\hspace*{1.4em}Vậy $m<\\dfrac54$.",
+          "statement": "Cho phương trình $x^2-(2m-1)x+m^2-1=0$. \\textit{(CK2 THCS Cầu Diễn, 2025--2026)}[[br]]a) [NB] Phương trình có hai nghiệm phân biệt khi $\\Delta$ thoả mãn điều kiện gì?[[br]]b) [NB] Tính $\\Delta$ theo $m$.[[br]]c) [TH] Tìm $m$ để phương trình có hai nghiệm phân biệt.",
+          "tier": "onclass",
+          "type": "problem"
+        },
+        {
+          "dang_id": "NB6+TH2",
+          "hints": [],
+          "label": "Bài 15.",
+          "level": 2,
+          "solution": "a) Phương trình vô nghiệm khi $\\Delta<0$.[[br]]b) Ta có $\\Delta=\\left[-(2m-1)\\right]^2-4\\cdot 1\\cdot(m^2-2)=4m^2-4m+1-4m^2+8=-4m+9$.[[br]]\\hspace*{1.4em}Phương trình vô nghiệm khi $\\Delta<0$[[br]]\\hspace*{1.4em}$-4m+9<0$[[br]]\\hspace*{1.4em}$-4m<-9$[[br]]\\hspace*{1.4em}$m>\\dfrac94$.[[br]]\\hspace*{1.4em}Vậy $m>\\dfrac94$.",
+          "statement": "Cho phương trình $x^2-(2m-1)x+m^2-2=0$. \\textit{(đề minh hoạ tuyển sinh 10, THCS Tam Khương, 2025--2026)}[[br]]a) [NB] Phương trình vô nghiệm khi $\\Delta$ thoả mãn điều kiện gì?[[br]]b) [TH] Tìm $m$ để phương trình vô nghiệm.",
+          "tier": "onclass",
+          "type": "problem"
+        },
+        {
+          "dang_id": "NB6+TH2",
+          "hints": [],
+          "label": "Bài 16.",
+          "level": 2,
+          "solution": "a) Thay $x=3$ vào vế trái của phương trình, ta được[[br]]\\hspace*{1.4em}$3^2+(m-5)\\cdot 3-3(m-2)=9+3m-15-3m+6=0$.[[br]]\\hspace*{1.4em}Kết quả bằng $0$ với mọi $m$, nên $x=3$ luôn là nghiệm của phương trình.[[br]]b) Phương trình có nghiệm kép khi $\\Delta=0$.[[br]]c) Ta có $\\Delta=(m-5)^2-4\\cdot 1\\cdot\\left[-3(m-2)\\right]=m^2-10m+25+12m-24=m^2+2m+1=(m+1)^2$.[[br]]\\hspace*{1.4em}Phương trình có nghiệm kép khi $\\Delta=0$[[br]]\\hspace*{1.4em}$(m+1)^2=0$[[br]]\\hspace*{1.4em}$m+1=0$[[br]]\\hspace*{1.4em}$m=-1$.[[br]]\\hspace*{1.4em}Vậy $m=-1$.",
+          "statement": "Cho phương trình $x^2+(m-5)x-3(m-2)=0$.[[br]]a) [NB] Thay $x=3$ vào vế trái của phương trình rồi rút gọn, nhận xét kết quả.[[br]]b) [NB] Phương trình có nghiệm kép khi $\\Delta$ thoả mãn điều kiện gì?[[br]]c) [TH] Tìm $m$ để phương trình có nghiệm kép.",
+          "tier": "onclass",
+          "type": "problem"
+        },
+        {
+          "type": "para",
+          "variant": "heading",
+          "text": "Mạch 6. Biết một nghiệm, tìm $m$"
+        },
+        {
+          "type": "noted",
+          "variant": "example",
+          "text": "\\textbf{Ví dụ 6.} Cho phương trình $x^2+(2m+3)x+3m=0$.[[br]]a) Tìm $m$ để phương trình có nghiệm $x=3$ và tìm nghiệm còn lại.[[br]]b) Chứng minh phương trình luôn có nghiệm với mọi $m$.[[br]]{\\sffamily\\bfseries\\color{brand}Lời giải}[[br]]\\hspace*{1.4em}a) Thay $x=3$ vào phương trình, ta được $9+3(2m+3)+3m=0$[[br]]\\hspace*{1.4em}$[[fill:9m+18]]=0$[[br]]\\hspace*{1.4em}$m=[[fill:-2]]$.[[br]]\\hspace*{1.4em}Khi đó phương trình trở thành $x^2-x-6=0$, có $\\Delta=(-1)^2-4\\cdot 1\\cdot(-6)=25>0$ nên phương trình có hai nghiệm phân biệt[[br]]\\hspace*{1.4em}$x_1=\\dfrac{1+5}{2}=3$ và $x_2=\\dfrac{1-5}{2}=[[fill:-2]]$.[[br]]\\hspace*{1.4em}Vậy $m=[[fill:-2]]$ và nghiệm còn lại là $x=[[fill:-2]]$.[[br]]\\hspace*{1.4em}b) Ta có $\\Delta=(2m+3)^2-4\\cdot 1\\cdot 3m=[[fill:4m^2+9]]$.[[br]]\\hspace*{1.4em}Vì $4m^2\\ge 0$ với mọi $m$ nên $\\Delta[[fill:>0]]$ với mọi $m$.[[br]]\\hspace*{1.4em}Vậy phương trình [[fill:luôn có nghiệm]] với mọi $m$."
+        },
+        {
+          "dang_id": "NB8+TH4",
+          "hints": [],
+          "label": "Bài 17.",
+          "level": 2,
+          "solution": "a) Thay $x=1$ vào phương trình $x^2+x+m=0$, ta được[[br]]\\hspace*{1.4em}$1^2+1+m=0$[[br]]\\hspace*{1.4em}$2+m=0$[[br]]\\hspace*{1.4em}$m=-2$.[[br]]b) Với $m=-2$, phương trình trở thành $x^2+x-2=0$.[[br]]\\hspace*{1.4em}Ta có $\\Delta=1^2-4\\cdot 1\\cdot(-2)=1+8=9>0$ nên phương trình có hai nghiệm phân biệt[[br]]\\hspace*{1.4em}$x_1=\\dfrac{-1+3}{2}=1$ và $x_2=\\dfrac{-1-3}{2}=-2$.[[br]]\\hspace*{1.4em}Khi đó $A=2024\\cdot 1+2025\\cdot(-2)=2024-4050=-2026$.[[br]]\\hspace*{1.4em}Vậy $A=-2026$.",
+          "statement": "Biết rằng phương trình bậc hai $x^2+x+m=0$ có hai nghiệm là $x_1=1$ và $x_2$. Tính giá trị của biểu thức $A=2024x_1+2025x_2$. \\textit{(GK2 THCS Phan Đình Giót, 2024--2025)}[[br]]a) [NB] Thay $x=1$ vào phương trình, tìm $m$.[[br]]b) [TH] Tìm $x_2$ rồi tính giá trị của biểu thức $A$.",
+          "tier": "onclass",
+          "type": "problem"
+        },
+        {
+          "type": "para",
+          "variant": "heading",
+          "text": "Mạch 7. Chứng minh phương trình luôn có nghiệm"
+        },
+        {
+          "type": "noted",
+          "variant": "example",
+          "text": "\\textbf{Ví dụ 7.} Cho phương trình $x^2+ax-1=0$ ($a$ là số thực). Chứng minh phương trình luôn có hai nghiệm phân biệt. \\textit{(HK2 Phòng GD\\&ĐT Hai Bà Trưng, 2024--2025)}[[br]]{\\sffamily\\bfseries\\color{brand}Lời giải}[[br]]\\hspace*{1.4em}Phương trình có hệ số của $x^2$ là $[[fill:1]]$, hệ số tự do là $[[fill:-1]]$.[[br]]\\hspace*{1.4em}Tích hai hệ số đó bằng $[[fill:1\\cdot(-1)]]=[[fill:-1]]<0$, tức là hai hệ số [[fill:trái dấu]].[[br]]\\hspace*{1.4em}Vậy phương trình $x^2+ax-1=0$ [[fill:luôn có hai nghiệm phân biệt]] với mọi $a$."
+        },
+        {
+          "dang_id": "NB7+TH3",
+          "hints": [],
+          "label": "Bài 18.",
+          "level": 2,
+          "solution": "a) Phương trình có hệ số $a=1$, $c=-1$ nên $a\\cdot c=1\\cdot(-1)=-1<0$ (âm).[[br]]b) Vì $a\\cdot c=-1<0$ nên $a$ và $c$ trái dấu với mọi $m$.[[br]]\\hspace*{1.4em}Vậy phương trình luôn có hai nghiệm phân biệt với mọi $m$.",
+          "statement": "Cho phương trình $x^2-2mx-1=0$ ($m$ là tham số). \\textit{(HK2 THCS Xuân Đỉnh, 2025--2026)}[[br]]a) [NB] Tính tích $a\\cdot c$ và cho biết dấu của tích đó.[[br]]b) [TH] Chứng minh phương trình luôn có hai nghiệm phân biệt với mọi $m$.",
+          "tier": "onclass",
+          "type": "problem"
+        },
+        {
+          "dang_id": "NB7+TH3",
+          "hints": [],
+          "label": "Bài 19.",
+          "level": 2,
+          "solution": "a) Thay $m=5$ vào phương trình, ta được[[br]]\\hspace*{1.4em}$x^2+2(5-3)x-2\\cdot 5+5=0$[[br]]\\hspace*{1.4em}$x^2+4x-5=0$.[[br]]b) Với $m=5$, phương trình trở thành $x^2+4x-5=0$.[[br]]\\hspace*{1.4em}Ta có $\\Delta=4^2-4\\cdot 1\\cdot(-5)=16+20=36>0$ nên phương trình có hai nghiệm phân biệt[[br]]\\hspace*{1.4em}$x_1=\\dfrac{-4+6}{2}=1$ và $x_2=\\dfrac{-4-6}{2}=-5$.[[br]]\\hspace*{1.4em}Vậy với $m=5$, phương trình có hai nghiệm $x_1=1$ và $x_2=-5$.[[br]]c) Ta có $\\Delta=\\left[2(m-3)\\right]^2-4\\cdot 1\\cdot(-2m+5)=4(m^2-6m+9)+8m-20=4m^2-24m+36+8m-20=4m^2-16m+16=4(m-2)^2$.[[br]]d) Vì $(m-2)^2\\ge 0$ với mọi $m$ nên $\\Delta=4(m-2)^2\\ge 0$ với mọi $m$.[[br]]e) Vì $\\Delta=4(m-2)^2\\ge 0$ với mọi $m$ nên phương trình luôn có nghiệm với mọi $m$ (khi $m=2$ thì $\\Delta=0$, hai nghiệm trùng nhau).",
+          "statement": "Cho phương trình $x^2+2(m-3)x-2m+5=0$ ($m$ là tham số). Giải phương trình khi $m=5$ và chứng minh phương trình luôn có hai nghiệm với mọi $m$. \\textit{(GK2 THCS Nguyễn Trường Tộ, 2025--2026)}[[br]]a) [NB] Thay $m=5$ vào phương trình, được phương trình nào?[[br]]b) [TH] Giải phương trình với $m=5$.[[br]]c) [NB] Tính $\\Delta$ theo $m$.[[br]]d) [NB] Vì $(m-2)^2\\ge 0$ với mọi $m$, kết luận gì về $\\Delta$?[[br]]e) [TH] Chứng minh phương trình luôn có hai nghiệm với mọi $m$.",
+          "tier": "onclass",
+          "type": "problem"
+        }
+      ],
+      "teacher_note": "Khoảng 105 phút — Mỗi mạch giáo viên làm ví dụ cùng lớp rồi học sinh làm bài ngay sau, câu hỏi dẫn trả lời miệng, ý chính tự trình bày vào vở. Bài 19 (đề đích) làm cá nhân rồi gọi lên bảng."
+    },
+    {
+      "kind": "reflection",
+      "number": 5,
+      "title": "Tổng kết",
+      "blocks": [
+        {
+          "type": "mindmap",
+          "caption": "Điền các ô trống để tự tóm tắt buổi học",
+          "root": "$ax^2+bx+c=0$ ($a\\ne 0$)[[br]]$\\Delta=b^2-4ac$",
+          "branches": [
+            {
+              "label": "$\\Delta>0$",
+              "children": [
+                {
+                  "label": "Phương trình có [[blank:3cm]]"
+                },
+                {
+                  "label": "$x_1=[[blank:2.2cm]]$, $x_2=[[blank:2.2cm]]$"
+                }
+              ]
+            },
+            {
+              "label": "$\\Delta=0$",
+              "children": [
+                {
+                  "label": "Phương trình có [[blank:3cm]]"
+                },
+                {
+                  "label": "$x_1=x_2=[[blank:2cm]]$"
+                }
+              ]
+            },
+            {
+              "label": "$\\Delta<0$",
+              "children": [
+                {
+                  "label": "Phương trình [[blank:3cm]]"
+                }
+              ]
+            }
+          ]
+        },
+        {
+          "type": "para",
+          "text": "\\textbf{Bài tập về nhà} — làm vào vở, buổi sau nộp."
+        },
+        {
+          "dang_id": "NB2",
+          "hints": [],
+          "label": "Bài 20.",
+          "level": 1,
+          "solution": "a) $x^2+5=0$ là phương trình bậc hai ẩn $x$ với $a=1$, $b=0$, $c=5$.[[br]]b) $2x^2+7x=0$ là phương trình bậc hai ẩn $x$ với $a=2$, $b=7$, $c=0$.[[br]]c) $\\dfrac{x^2-2x+5}{x}=0$ không phải là phương trình bậc hai ẩn $x$ (do có chứa ẩn ở mẫu).[[br]]d) $0{,}5x^2=0$ là phương trình bậc hai ẩn $x$ với $a=0{,}5$, $b=0$, $c=0$.",
+          "statement": "Trong các phương trình sau, phương trình nào là phương trình bậc hai ẩn $x$? Với phương trình bậc hai, chỉ rõ các hệ số $a$, $b$, $c$.[[br]]a) [NB] $x^2+5=0$[[br]]b) [NB] $2x^2+7x=0$[[br]]c) [NB] $\\dfrac{x^2-2x+5}{x}=0$[[br]]d) [NB] $0{,}5x^2=0$",
+          "tier": "btvn",
+          "type": "problem"
+        },
+        {
+          "dang_id": "NB2",
+          "hints": [],
+          "label": "Bài 21.",
+          "level": 1,
+          "solution": "a) Ta có $a=2$, $b=-7$, $c=5$.[[br]]\\hspace*{1.4em}$a+b+c=2+(-7)+5=0$.[[br]]b) Thay $x=1$ vào vế trái của phương trình, ta được[[br]]\\hspace*{1.4em}$2\\cdot 1^2-7\\cdot 1+5=2-7+5=0$.[[br]]\\hspace*{1.4em}Vậy $x=1$ là một nghiệm của phương trình.",
+          "statement": "Cho phương trình $2x^2-7x+5=0$.[[br]]a) [NB] Xác định các hệ số $a$, $b$, $c$ rồi tính $a+b+c$.[[br]]b) [NB] Chứng tỏ $x=1$ là một nghiệm của phương trình.",
+          "tier": "btvn",
+          "type": "problem"
+        },
+        {
+          "dang_id": "NB3",
+          "hints": [],
+          "label": "Bài 22.",
+          "level": 1,
+          "solution": "a) $2x^2+6x=0$[[br]]\\hspace*{1.4em}$2x(x+3)=0$[[br]]\\hspace*{1.4em}$2x=0$ hoặc $x+3=0$[[br]]\\hspace*{1.4em}$x=0$ hoặc $x=-3$.[[br]]\\hspace*{1.4em}Vậy phương trình có hai nghiệm $x=0$ và $x=-3$.[[br]]b) $5x^2+11x=0$[[br]]\\hspace*{1.4em}$x(5x+11)=0$[[br]]\\hspace*{1.4em}$x=0$ hoặc $5x+11=0$[[br]]\\hspace*{1.4em}$x=0$ hoặc $x=-\\dfrac{11}{5}$.[[br]]\\hspace*{1.4em}Vậy phương trình có hai nghiệm $x=0$ và $x=-\\dfrac{11}{5}$.[[br]]c) $2x^2+\\dfrac{1}{3}x=0$[[br]]\\hspace*{1.4em}$x\\left(2x+\\dfrac{1}{3}\\right)=0$[[br]]\\hspace*{1.4em}$x=0$ hoặc $2x+\\dfrac{1}{3}=0$[[br]]\\hspace*{1.4em}$x=0$ hoặc $x=-\\dfrac{1}{6}$.[[br]]\\hspace*{1.4em}Vậy phương trình có hai nghiệm $x=0$ và $x=-\\dfrac{1}{6}$.[[br]]d) $(3x+2)^2=5$[[br]]\\hspace*{1.4em}$3x+2=\\sqrt{5}$ hoặc $3x+2=-\\sqrt{5}$[[br]]\\hspace*{1.4em}$3x=-2+\\sqrt{5}$ hoặc $3x=-2-\\sqrt{5}$[[br]]\\hspace*{1.4em}$x=\\dfrac{-2+\\sqrt{5}}{3}$ hoặc $x=\\dfrac{-2-\\sqrt{5}}{3}$.[[br]]\\hspace*{1.4em}Vậy phương trình có hai nghiệm $x_1=\\dfrac{-2+\\sqrt{5}}{3}$ và $x_2=\\dfrac{-2-\\sqrt{5}}{3}$.",
+          "statement": "Giải các phương trình sau:[[br]]a) [NB] $2x^2+6x=0$[[br]]b) [NB] $5x^2+11x=0$[[br]]c) [NB] $2x^2+\\dfrac{1}{3}x=0$[[br]]d) [NB] $(3x+2)^2=5$",
+          "tier": "btvn",
+          "type": "problem"
+        },
+        {
+          "dang_id": "NB4",
+          "hints": [],
+          "label": "Bài 23.",
+          "level": 1,
+          "solution": "a) Phương trình $x^2-6x+5=0$ có $a=1$, $b=-6$, $c=5$.[[br]]\\hspace*{1.4em}Ta có $a+b+c=1+(-6)+5=0$.[[br]]\\hspace*{1.4em}Vậy phương trình có hai nghiệm $x_1=1$ và $x_2=5$.[[br]]b) Phương trình $5x^2+14x+9=0$ có $a=5$, $b=14$, $c=9$.[[br]]\\hspace*{1.4em}Ta có $a-b+c=5-14+9=0$.[[br]]\\hspace*{1.4em}Vậy phương trình có hai nghiệm $x_1=-1$ và $x_2=-\\dfrac{9}{5}$.[[br]]c) Phương trình $3x^2-x-2=0$ có $a=3$, $b=-1$, $c=-2$.[[br]]\\hspace*{1.4em}Ta có $a+b+c=3+(-1)+(-2)=0$.[[br]]\\hspace*{1.4em}Vậy phương trình có hai nghiệm $x_1=1$ và $x_2=-\\dfrac{2}{3}$.[[br]]d) Phương trình $-4x^2+x+5=0$ có $a=-4$, $b=1$, $c=5$.[[br]]\\hspace*{1.4em}Ta có $a-b+c=-4-1+5=0$.[[br]]\\hspace*{1.4em}Vậy phương trình có hai nghiệm $x_1=-1$ và $x_2=\\dfrac{5}{4}$.[[br]]e) Phương trình $x^2-(1+\\sqrt{2})x+\\sqrt{2}=0$ có $a=1$, $b=-(1+\\sqrt{2})$, $c=\\sqrt{2}$.[[br]]\\hspace*{1.4em}Ta có $a+b+c=1-(1+\\sqrt{2})+\\sqrt{2}=0$.[[br]]\\hspace*{1.4em}Vậy phương trình có hai nghiệm $x_1=1$ và $x_2=\\sqrt{2}$.",
+          "statement": "Tính nhẩm nghiệm của các phương trình sau:[[br]]a) [NB] $x^2-6x+5=0$[[br]]b) [NB] $5x^2+14x+9=0$[[br]]c) [NB] $3x^2-x-2=0$[[br]]d) [NB] $-4x^2+x+5=0$[[br]]e) [NB] $x^2-(1+\\sqrt{2})x+\\sqrt{2}=0$",
+          "tier": "btvn",
+          "type": "problem"
+        },
+        {
+          "dang_id": "NB5+TH1",
+          "hints": [],
+          "label": "Bài 24.",
+          "level": 2,
+          "solution": "a) Phương trình $3x^2+7x+2=0$ có $a=3$, $b=7$, $c=2$.[[br]]\\hspace*{1.4em}Ta có $\\Delta=7^2-4\\cdot 3\\cdot 2=49-24=25$.[[br]]b) Vì $\\Delta=25>0$ nên phương trình có hai nghiệm phân biệt[[br]]\\hspace*{1.4em}$x_1=\\dfrac{-7+\\sqrt{25}}{2\\cdot 3}=-\\dfrac{1}{3}$ và $x_2=\\dfrac{-7-\\sqrt{25}}{2\\cdot 3}=-2$.[[br]]\\hspace*{1.4em}Vậy phương trình có hai nghiệm $x_1=-\\dfrac{1}{3}$ và $x_2=-2$.",
+          "statement": "Giải phương trình $3x^2+7x+2=0$. \\textit{(GK2 Ban Mai School, 2025--2026)}[[br]]a) [NB] Tính $\\Delta$.[[br]]b) [TH] Giải phương trình.",
+          "tier": "btvn",
+          "type": "problem"
+        },
+        {
+          "dang_id": "NB5+TH1",
+          "hints": [],
+          "label": "Bài 25.",
+          "level": 2,
+          "solution": "a) Ta có $a=3$, $b=-1$, $c=-5$.[[br]]\\hspace*{1.4em}$\\Delta=(-1)^2-4\\cdot 3\\cdot(-5)=1+60=61$.[[br]]b) Vì $\\Delta=61>0$ nên phương trình có hai nghiệm phân biệt[[br]]\\hspace*{1.4em}$x_1=\\dfrac{1+\\sqrt{61}}{6}$ và $x_2=\\dfrac{1-\\sqrt{61}}{6}$.[[br]]\\hspace*{1.4em}Vậy phương trình có hai nghiệm $x_1=\\dfrac{1+\\sqrt{61}}{6}$ và $x_2=\\dfrac{1-\\sqrt{61}}{6}$.",
+          "statement": "Giải phương trình $3x^2-x-5=0$. \\textit{(GK2 THCS Tây Mỗ 3, 2025--2026)}[[br]]a) [NB] Tính $\\Delta$ của phương trình.[[br]]b) [TH] Giải phương trình.",
+          "tier": "btvn",
+          "type": "problem"
+        },
+        {
+          "dang_id": "NB5+TH1",
+          "hints": [],
+          "label": "Bài 26.",
+          "level": 2,
+          "solution": "a) Thay $m=2$ vào phương trình, ta được $x^2+3x+2=0$.[[br]]b) Với $m=2$, ta có phương trình $x^2+3x+2=0$.[[br]]\\hspace*{1.4em}Ta có $\\Delta=3^2-4\\cdot 1\\cdot 2=9-8=1>0$ nên phương trình có hai nghiệm phân biệt[[br]]\\hspace*{1.4em}$x_1=\\dfrac{-3+\\sqrt{1}}{2}=-1$ và $x_2=\\dfrac{-3-\\sqrt{1}}{2}=-2$.[[br]]\\hspace*{1.4em}Vậy khi $m=2$, phương trình có hai nghiệm $x_1=-1$ và $x_2=-2$.",
+          "statement": "Cho phương trình $x^2+3x+m=0$. \\textit{(CK2 THCS Bế Văn Đàn, 2025--2026)}[[br]]a) [NB] Khi thay $m=2$ vào phương trình, ta được phương trình nào?[[br]]b) [TH] Giải phương trình khi $m=2$.",
+          "tier": "btvn",
+          "type": "problem"
+        },
+        {
+          "dang_id": "NB5+TH1",
+          "hints": [],
+          "label": "Bài 27.",
+          "level": 2,
+          "solution": "a) $2x^2-(x+1)^2=x-3$[[br]]\\hspace*{1.4em}$2x^2-(x^2+2x+1)=x-3$[[br]]\\hspace*{1.4em}$2x^2-x^2-2x-1-x+3=0$[[br]]\\hspace*{1.4em}$x^2-3x+2=0$.[[br]]b) Xét phương trình $x^2-3x+2=0$.[[br]]\\hspace*{1.4em}Ta có $\\Delta=(-3)^2-4\\cdot 1\\cdot 2=9-8=1>0$ nên phương trình có hai nghiệm phân biệt[[br]]\\hspace*{1.4em}$x_1=\\dfrac{3+\\sqrt{1}}{2}=2$ và $x_2=\\dfrac{3-\\sqrt{1}}{2}=1$.[[br]]\\hspace*{1.4em}Vậy phương trình có hai nghiệm $x_1=2$ và $x_2=1$.",
+          "statement": "Giải phương trình $2x^2-(x+1)^2=x-3$. \\textit{(GK2 Ban Mai School, 2025--2026)}[[br]]a) [NB] Khai triển và chuyển vế để đưa phương trình về dạng $ax^2+bx+c=0$.[[br]]b) [TH] Giải phương trình.",
+          "tier": "btvn",
+          "type": "problem"
+        },
+        {
+          "dang_id": "NB5+TH1",
+          "hints": [],
+          "label": "Bài 28.",
+          "level": 2,
+          "solution": "a) $(2x+3)^2=(x-5)^2$[[br]]\\hspace*{1.4em}$4x^2+12x+9=x^2-10x+25$[[br]]\\hspace*{1.4em}$4x^2+12x+9-x^2+10x-25=0$[[br]]\\hspace*{1.4em}$3x^2+22x-16=0$.[[br]]b) Xét phương trình $3x^2+22x-16=0$.[[br]]\\hspace*{1.4em}Ta có $\\Delta=22^2-4\\cdot 3\\cdot(-16)=484+192=676>0$ nên phương trình có hai nghiệm phân biệt[[br]]\\hspace*{1.4em}$x_1=\\dfrac{-22+\\sqrt{676}}{2\\cdot 3}=\\dfrac{-22+26}{6}=\\dfrac{2}{3}$ và $x_2=\\dfrac{-22-\\sqrt{676}}{2\\cdot 3}=\\dfrac{-22-26}{6}=-8$.[[br]]\\hspace*{1.4em}Vậy phương trình có hai nghiệm $x_1=\\dfrac{2}{3}$ và $x_2=-8$.",
+          "statement": "Giải phương trình $(2x+3)^2=(x-5)^2$. \\textit{(GK1 THCS Thạch Bàn, 2024--2025)}[[br]]a) [NB] Khai triển và chuyển vế để đưa phương trình về dạng $ax^2+bx+c=0$.[[br]]b) [TH] Giải phương trình.",
+          "tier": "btvn",
+          "type": "problem"
+        },
+        {
+          "dang_id": "NB5+TH1",
+          "hints": [],
+          "label": "Bài 29.",
+          "level": 2,
+          "solution": "a) $4x^2=(x-12)^2$[[br]]\\hspace*{1.4em}$4x^2=x^2-24x+144$[[br]]\\hspace*{1.4em}$3x^2+24x-144=0$[[br]]\\hspace*{1.4em}$x^2+8x-48=0$.[[br]]b) Xét phương trình $x^2+8x-48=0$.[[br]]\\hspace*{1.4em}Ta có $\\Delta=8^2-4\\cdot 1\\cdot(-48)=64+192=256>0$ nên phương trình có hai nghiệm phân biệt[[br]]\\hspace*{1.4em}$x_1=\\dfrac{-8+\\sqrt{256}}{2}=\\dfrac{-8+16}{2}=4$ và $x_2=\\dfrac{-8-\\sqrt{256}}{2}=\\dfrac{-8-16}{2}=-12$.[[br]]\\hspace*{1.4em}Vậy phương trình có hai nghiệm $x_1=4$ và $x_2=-12$.",
+          "statement": "Giải phương trình $4x^2=(x-12)^2$. \\textit{(GK1 THCS Giảng Võ, 2024--2025)}[[br]]a) [NB] Khai triển và chuyển vế để đưa phương trình về dạng $ax^2+bx+c=0$.[[br]]b) [TH] Giải phương trình.",
+          "tier": "btvn",
+          "type": "problem"
+        },
+        {
+          "dang_id": "NB6+TH2",
+          "hints": [],
+          "label": "Bài 30.",
+          "level": 2,
+          "solution": "a) Phương trình bậc hai có nghiệm kép khi $\\Delta=0$.[[br]]b) Ta có $a=4$, $b=4m$, $c=m+6$.[[br]]\\hspace*{1.4em}$\\Delta=(4m)^2-4\\cdot 4\\cdot(m+6)=16m^2-16m-96=16(m^2-m-6)$.[[br]]c) Phương trình có nghiệm kép khi $\\Delta=0$[[br]]\\hspace*{1.4em}$16(m^2-m-6)=0$[[br]]\\hspace*{1.4em}$m^2-m-6=0$[[br]]\\hspace*{1.4em}$(m-3)(m+2)=0$[[br]]\\hspace*{1.4em}$m-3=0$ hoặc $m+2=0$[[br]]\\hspace*{1.4em}$m=3$ hoặc $m=-2$.[[br]]\\hspace*{1.4em}Vậy $m=3$ hoặc $m=-2$.",
+          "statement": "Cho phương trình $4x^2+4mx+m+6=0$.[[br]]a) [NB] Phương trình bậc hai có nghiệm kép khi $\\Delta$ thoả mãn điều kiện gì?[[br]]b) [NB] Tính $\\Delta$ theo $m$.[[br]]c) [TH] Tìm $m$ để phương trình có nghiệm kép.",
+          "tier": "btvn",
+          "type": "problem"
+        },
+        {
+          "dang_id": "NB6+TH2",
+          "hints": [],
+          "label": "Bài 31.",
+          "level": 2,
+          "solution": "a) Ta có $a=1$, $b=-2(m+3)$, $c=m^2+3$.[[br]]\\hspace*{1.4em}$\\Delta=\\left[-2(m+3)\\right]^2-4\\cdot 1\\cdot(m^2+3)=4(m^2+6m+9)-4m^2-12=24m+24$.[[br]]b) Phương trình có hai nghiệm phân biệt khi $\\Delta>0$[[br]]\\hspace*{1.4em}$24m+24>0$[[br]]\\hspace*{1.4em}$24m>-24$[[br]]\\hspace*{1.4em}$m>-1$.[[br]]\\hspace*{1.4em}Vậy $m>-1$.",
+          "statement": "Cho phương trình $x^2-2(m+3)x+m^2+3=0$.[[br]]a) [NB] Tính $\\Delta$ theo $m$.[[br]]b) [TH] Tìm $m$ để phương trình có hai nghiệm phân biệt.",
+          "tier": "btvn",
+          "type": "problem"
+        },
+        {
+          "dang_id": "NB7+TH3",
+          "hints": [],
+          "label": "Bài 32.",
+          "level": 2,
+          "solution": "a) Ta có $a=1$, $c=-3$ nên $a\\cdot c=1\\cdot(-3)=-3<0$ (mang dấu âm).[[br]]b) Vì $a\\cdot c=-3<0$ nên $a$ và $c$ trái dấu với mọi $m$.[[br]]\\hspace*{1.4em}Vậy phương trình luôn có hai nghiệm phân biệt với mọi $m$.",
+          "statement": "Cho phương trình $x^2-2mx-3=0$. \\textit{(GK2 THCS Cầu Diễn, 2025--2026)}[[br]]a) [NB] Tích $a\\cdot c$ bằng bao nhiêu và mang dấu gì?[[br]]b) [TH] Chứng minh phương trình luôn có hai nghiệm phân biệt với mọi $m$.",
+          "tier": "btvn",
+          "type": "problem"
+        },
+        {
+          "dang_id": "NB7+TH3",
+          "hints": [],
+          "label": "Bài 33.",
+          "level": 2,
+          "solution": "a) Ta có $a=1$, $b=-m$, $c=m-1$.[[br]]\\hspace*{1.4em}$\\Delta=(-m)^2-4\\cdot 1\\cdot(m-1)=m^2-4m+4=(m-2)^2$.[[br]]b) Ta có $\\Delta=(m-2)^2\\ge 0$ với mọi $m$.[[br]]\\hspace*{1.4em}Vậy phương trình luôn có nghiệm với mọi $m$.",
+          "statement": "Cho phương trình $x^2-mx+m-1=0$. \\textit{(thi thử vào 10 lần 1, Phòng GD\\&ĐT Thanh Oai, 2024--2025)}[[br]]a) [NB] Tính $\\Delta$ theo $m$ và viết kết quả dưới dạng một bình phương.[[br]]b) [TH] Chứng minh phương trình luôn có nghiệm với mọi $m$.",
+          "tier": "btvn",
+          "type": "problem"
+        }
+      ],
+      "solution": "Đáp án sơ đồ tư duy: $\\Delta>0$: hai nghiệm phân biệt, $x_1=\\dfrac{-b+\\sqrt{\\Delta}}{2a}$, $x_2=\\dfrac{-b-\\sqrt{\\Delta}}{2a}$ · $\\Delta=0$: nghiệm kép, $x_1=x_2=-\\dfrac{b}{2a}$ · $\\Delta<0$: vô nghiệm.",
+      "teacher_note": "Sơ đồ tư duy 5 phút cuối buổi. Bài tập về nhà Bài 20--33 in thành phiếu riêng, khoảng 85 phút. Buổi sau chữa Bài 30, Bài 31 trước."
+    }
+  ],
+  "luat_16_11": true,
+  "khuon": "khong_vd"
+}

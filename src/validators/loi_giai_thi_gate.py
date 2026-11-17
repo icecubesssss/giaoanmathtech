@@ -21,7 +21,7 @@ import re
 
 from src.schema import LessonPackage
 
-__all__ = ["check_loi_giai_thi"]
+__all__ = ["check_loi_giai_thi", "check_tuong_duong_phieu"]
 
 _TUONG_DUONG = re.compile(r"\\Leftrightarrow|\\iff\b|⇔")
 # Một BƯỚC có "đường cao" làm căn cứ + một đẳng thức dạng tích (có \cdot) mà KHÔNG có
@@ -75,4 +75,35 @@ def check_loi_giai_thi(lesson: LessonPackage) -> list[str]:
             if la_bai or not co_figure:
                 out.append(f"{noi} đáp án ghi \"Vẽ hình\" nhưng KHÔNG kèm hình vẽ — chèn hình ngay đầu "
                            f"lời giải bài hình (Thầy 01/10/2026: \"Hình k có\").")
+    return out
+
+
+def _cac_chuoi(o, noi=""):
+    """Mọi chuỗi trong cây dữ liệu, kèm đường dẫn để báo đúng chỗ."""
+    if isinstance(o, dict):
+        for k, v in o.items():
+            yield from _cac_chuoi(v, f"{noi}.{k}" if noi else k)
+    elif isinstance(o, list):
+        for i, v in enumerate(o):
+            yield from _cac_chuoi(v, f"{noi}[{i}]")
+    elif isinstance(o, str):
+        yield noi, o
+
+
+def check_tuong_duong_phieu(lesson: LessonPackage) -> list[str]:
+    """CHẶN (phiếu học tập, mọi theme trừ `de_thi` — đã có check_loi_giai_thi): dấu ⇔ ở BẤT KÌ
+    đâu trong phiếu — kiến thức, ví dụ, đề điền khuyết, lời giải, BTVN.
+
+    Thầy 16/11/2026 bắt phiếu A ch.VI 9C còn 110 dấu ⇔: *"luật là HS k dùng dấu tương
+    đương nữa rồi nhé"* — luật 01/10 trước chỉ gác đề thi nên phiếu lọt. Mỗi phép biến đổi
+    viết một dòng ([[br]]); câu kiến thức dạng "A·B = 0 ⇔ …" viết "A·B = 0 thì …".
+    """
+    if getattr(lesson, "theme", "") == "de_thi":
+        return []
+    out: list[str] = []
+    for noi, txt in _cac_chuoi(lesson.model_dump(mode="python")):
+        n = len(_TUONG_DUONG.findall(txt))
+        if n:
+            out.append(f"[{noi}] {n} dấu ⇔ — HS KHÔNG dùng dấu tương đương; mỗi phép biến đổi "
+                       f"xuống một dòng ([[br]]), câu kiến thức viết \"thì\" (Thầy 16/11/2026).")
     return out

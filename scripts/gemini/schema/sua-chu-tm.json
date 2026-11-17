@@ -1,0 +1,38 @@
+{
+  "type": "object",
+  "required": [
+    "sua",
+    "them_khong_day",
+    "ghi_chu"
+  ],
+  "properties": {
+    "sua": {
+      "type": "array",
+      "items": {
+        "type": "object",
+        "required": [
+          "khoa",
+          "cu",
+          "moi"
+        ],
+        "properties": {
+          "khoa": {
+            "type": "string"
+          },
+          "cu": {
+            "type": "string"
+          },
+          "moi": {
+            "type": "string"
+          }
+        }
+      }
+    },
+    "them_khong_day": {
+      "type": "string"
+    },
+    "ghi_chu": {
+      "type": "string"
+    }
+  }
+}

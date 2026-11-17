@@ -1,0 +1,47 @@
+{
+  "type": "object",
+  "required": [
+    "dong",
+    "ghi_chu"
+  ],
+  "properties": {
+    "dong": {
+      "type": "array",
+      "items": {
+        "type": "object",
+        "required": [
+          "ma",
+          "de_xuat",
+          "ly_do",
+          "ly_do_cham_moi",
+          "nghi_ngo"
+        ],
+        "properties": {
+          "ma": {
+            "type": "string"
+          },
+          "de_xuat": {
+            "type": "string",
+            "enum": [
+              "Hay",
+              "Cân nhắc",
+              "Không hay"
+            ]
+          },
+          "ly_do": {
+            "type": "string"
+          },
+          "ly_do_cham_moi": {
+            "type": "string"
+          },
+          "nghi_ngo": {
+            "type": "string"
+          }
+        }
+      }
+    },
+    "ghi_chu": {
+      "type": "string"
+    }
+  }
+}

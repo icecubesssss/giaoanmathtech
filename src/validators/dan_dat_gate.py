@@ -29,6 +29,11 @@ CHẶN (trả về ở `check_dan_dat_chan`):
   8. `check_khong_trung_de` — hai bài/ví dụ trong phiếu không được cùng một đề (Thầy 04/11).
   9. `check_hinh_nen_thu_tu` — hình nền không in điểm đề mới dựng ở bước sau (Thầy 04/11).
 
+ 11. `check_dien_khuyet_chi_vi_du` — (phiếu `luat_16_11`) bài tập không có ô điền, không
+     khung "hoàn thành bài giải": điền khuyết CHỈ trong Ví dụ (Thầy 16/11/2026).
+ 12. `check_vd_chi_de` — (phiếu `luat_16_11`) bài VD chỉ có đề: không hints, không sơ đồ
+     ngược, không lời gợi ý (Thầy 16/11/2026).
+
 CẢNH BÁO (`check_dan_dat_canh_bao`):
  10. `check_mat_do_o_trong` — khung điền khuyết quá ít ô (Thầy 04/11).
   6. `check_dich_buoi` — phiếu chia "Mạch" phải có đoạn "Đích của buổi học" trỏ đúng bài
@@ -278,7 +283,7 @@ def check_dich_buoi(lesson: LessonPackage) -> list[str]:
 
 def la_khuon_moi(lesson: LessonPackage) -> bool:
     """Phiếu dựng theo khuôn thang dẫn dắt (03/11/2026): có btvn_phieu_rieng hoặc có stage practice2."""
-    return (getattr(lesson, "btvn_phieu_rieng", False)
+    return (getattr(lesson, "btvn_phieu_rieng", False) or getattr(lesson, "luat_16_11", False)
             or any("Đích của buổi" in (getattr(b, "text", "") or "")
                    for st in lesson.stages for b in st.blocks if getattr(b, "type", "") == "para")
             or any(st.kind == "practice2" for st in lesson.stages))
@@ -476,8 +481,75 @@ def check_mat_do_o_trong(lesson: LessonPackage) -> list[str]:
     return out
 
 
+# ── 11–12. Luật hình thức câu 16/11/2026 (phiếu khai `luat_16_11: true`) ──────────
+# Thầy 16/11/2026 (ch.VI 9C): *"bài tập điền khuyết nhiều quá, HS bị thụ động … Điền khuyết
+# chắc là chỉ cho VD thôi"* và *"20 VD thì chỉ cần đề, HS tự xử lý"*. Hai luật này ĐÈ nhịp
+# "chọn → điền khuyết → tự trình bày" của `check_de_den_kho` (bài tập không còn bậc điền).
+_GOI_Y_TRONG_DE = re.compile(r"Gợi ý|Hướng dẫn|\textit\{\s*Gợi ý", re.IGNORECASE)
+
+
+def _the_cua_bai(b) -> list[str]:
+    return re.findall(r"\[(NB|TH|VD|VDC)\]", getattr(b, "statement", "") or "")
+
+
+def check_dien_khuyet_chi_vi_du(lesson: LessonPackage) -> list[str]:
+    """CHẶN (luat_16_11): bài tập — mọi chặng, cả BTVN — không có ô điền / khung "hoàn thành
+    bài giải". Điền khuyết chỉ nằm trong Ví dụ (`noted` example) GV làm mẫu."""
+    if not getattr(lesson, "luat_16_11", False):
+        return []
+    out: list[str] = []
+    for st in lesson.stages:
+        for b in st.blocks:
+            if getattr(b, "type", "") != "problem":
+                continue
+            phan = [("đề", getattr(b, "statement", "") or ""),
+                    ("lời giải", getattr(b, "solution", "") or "")]
+            phan += [("gợi ý", h or "") for h in (getattr(b, "hints", None) or [])]
+            loi = [noi for noi, t in phan if _O_KHUNG.search(t) or _KG.search(t)]
+            if loi:
+                nhan = (getattr(b, "label", "") or "?").rstrip(".")
+                bt = " (BTVN)" if getattr(b, "tier", "") == "btvn" else ""
+                out.append(f"dan_dat: {nhan}{bt} — có ô điền / khung \"hoàn thành bài giải\" ở "
+                           f"{', '.join(dict.fromkeys(loi))}. Luật 16/11/2026: điền khuyết CHỈ trong Ví dụ; "
+                           f"bài tập dùng trắc nghiệm, Đúng/Sai, trả lời ngắn hoặc câu hỏi gợi ý bước, "
+                           f"HS tự trình bày vào vở (Thầy: \"điền khuyết nhiều quá, HS bị thụ động\").")
+    return out
+
+
+def check_vd_chi_de(lesson: LessonPackage) -> list[str]:
+    """CHẶN (luat_16_11): bài VD (mọi thẻ trong đề là [VD]/[VDC], hoặc không thẻ mà level ≥ 3)
+    chỉ có ĐỀ — không `hints`, không sơ đồ ngược, không lời "Gợi ý/Hướng dẫn" trong đề.
+    Muốn dẫn thì tách lẻ thành các bước [TH] bằng câu hỏi định hướng (bài đó là TH)."""
+    if not getattr(lesson, "luat_16_11", False):
+        return []
+    out: list[str] = []
+    for st in lesson.stages:
+        for b in st.blocks:
+            if getattr(b, "type", "") != "problem":
+                continue
+            the = _the_cua_bai(b)
+            la_vd = (all(t in ("VD", "VDC") for t in the) if the
+                     else (getattr(b, "level", 0) or 0) >= 3)
+            if not la_vd:
+                continue
+            loi = []
+            if getattr(b, "hints", None):
+                loi.append("có `hints`")
+            if getattr(b, "so_do_nguoc", ""):
+                loi.append("có sơ đồ ngược")
+            if _GOI_Y_TRONG_DE.search(getattr(b, "statement", "") or ""):
+                loi.append("đề có lời gợi ý/hướng dẫn")
+            if loi:
+                nhan = (getattr(b, "label", "") or "?").rstrip(".")
+                out.append(f"dan_dat: {nhan} (VD) — {', '.join(loi)}. Luật 16/11/2026: VD = CHỈ ĐỀ, HS tự "
+                           f"giải như đi thi. Muốn dẫn thì tách lẻ thành các bước [TH] bằng câu hỏi định "
+                           f"hướng (khi đó bài là TH, không phải VD).")
+    return out
+
+
 def check_dan_dat_chan(lesson: LessonPackage) -> list[str]:
-    return (check_muon_hinh(lesson) + check_de_den_kho(lesson) + check_khuon_bon_diem(lesson)
+    return (check_dien_khuyet_chi_vi_du(lesson) + check_vd_chi_de(lesson)
+            + check_muon_hinh(lesson) + check_de_den_kho(lesson) + check_khuon_bon_diem(lesson)
             + check_khung_bai_giai(lesson) + check_tieu_de_truoc_btvn(lesson) + check_loi_xung_ho(lesson)
             + (check_phieu_btvn(lesson) if la_khuon_moi(lesson) else [])
             + check_luyen_tap_2_va_btvn_chung_minh(lesson)

@@ -48,6 +48,7 @@ from src.validators import (
     check_khoa_la,
     check_lenh_dinh_chu,
     check_loi_giai_thi,
+    check_tuong_duong_phieu,
     check_trinh_bay,
     validate_lesson_structure,
     check_difficulty,
@@ -759,6 +760,8 @@ def _run_validation(lesson: LessonPackage, fast: bool = False,
     # Đáp án đề kiểm tra / đề ôn: trình bày như HS đi thi — không ⇔, không hệ thức lượng
     # trực tiếp (phải qua đồng dạng), bài hình phải có hình (Thầy chốt 01/10/2026).
     violations.extend(f"[loi_giai_thi_gate] {m}" for m in check_loi_giai_thi(lesson))
+    # Phiếu học tập cũng KHÔNG dùng ⇔ (Thầy 16/11/2026) — trước chỉ gác đề thi.
+    violations.extend(f"[loi_giai_thi_gate] {m}" for m in check_tuong_duong_phieu(lesson))
 
     diff = check_difficulty(lesson)
     for r in diff.reasons:
@@ -1283,6 +1286,21 @@ def cmd_new_lesson(args: argparse.Namespace) -> int:
     chuong = getattr(args, "chuong", "") or next(
         (part for part in folder.resolve().parts if part.startswith("chuong-")), "")
     skeleton = _skeleton(slug, title, eyebrow, _grade_label(grade), tier, chuong)
+    # Thuyết minh cạnh bên theo luật 16/11/2026 ⇒ phiếu mang cờ + khuôn của dòng phiếu
+    # (spec_gate soi lệch; quên cờ thì dan_dat_gate không chặn điền khuyết trong bài tập).
+    tm_path = folder / "thuyet-minh.json"
+    if tm_path.exists():
+        try:
+            from src.schema.thuyetminh_spec import ThuyetMinhSpec
+            from src.validators.spec_gate import _match_phieu
+            tm = ThuyetMinhSpec.model_validate(json.loads(tm_path.read_text(encoding="utf-8")))
+            if tm.luat_16_11:
+                skeleton["luat_16_11"] = True
+            ph = _match_phieu(tm, LessonPackage.model_validate(skeleton))
+            if ph is not None and ph.khuon:
+                skeleton["khuon"] = ph.khuon
+        except Exception:                   # noqa: BLE001 — TM hỏng thì khung vẫn sinh
+            pass
     out_path.write_text(
         json.dumps(skeleton, ensure_ascii=False, indent=2), encoding="utf-8"
     )

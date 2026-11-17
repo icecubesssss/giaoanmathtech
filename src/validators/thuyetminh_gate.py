@@ -272,9 +272,15 @@ def check_thuyetminh(spec: ThuyetMinhSpec) -> tuple[list[str], list[str]]:
                     continue
                 if abs(share - target) > ratio_tol:
                     ten = "VD+VDC" if (gop and band == "VD") else band
+                    # Luật 16/11/2026: phiếu cố ý không VD soi 40-60-0 (ratio_khuon "khong_vd").
+                    goi_y = (" Phiếu cố ý không VD (luật 16/11: 32 NB + 12 TH) ⇒ khai "
+                             "`khuon: \"khong_vd\"`."
+                             if spec.luat_16_11 and not getattr(p, "khuon", "")
+                             and not any(r.band in ("VD", "VDC") and r.onclass for r in p.rows)
+                             else "")
                     warnings.append(
                         f"thuyetminh: {tag} tỉ lệ {ten} = {share:.0f}% lệch chuẩn {target:.0f}% "
-                        f"quá ±{ratio_tol:.0f} điểm (tier_spec {spec.tier}).")
+                        f"quá ±{ratio_tol:.0f} điểm (tier_spec {spec.tier}).{goi_y}")
 
         # (E) phiếu (1 buổi) vượt quỹ giờ trên lớp
         on_class = vidu_min + on_min
@@ -323,6 +329,10 @@ def check_scaffold_rails(spec: ThuyetMinhSpec) -> list[str]:
             co.add("dien-khuyet")
         if any(r.phut_so_do and r.ve_tiep for r in p.rows):   # HS vẽ tiếp hình nền của chính bài có sơ đồ
             co.add("ve-hinh")
+        # Luật 16/11/2026 (AGENTS.md "LUẬT HÌNH THỨC CÂU"): phiếu ĐẠI SỐ chỉ điền khuyết trong
+        # Ví dụ, không còn dòng NB khung điền khuyết ⇒ ví dụ GV làm mẫu là giàn giáo điền khuyết.
+        if spec.subject == "dai-so" and any(r.vidu for r in p.rows):
+            co.add("dien-khuyet")
         thieu = []
         if can_hinh and "ve-hinh" not in co:
             thieu.append("'ve-hinh' (vẽ hình từ giả thiết + đánh dấu dữ kiện)")
@@ -470,7 +480,7 @@ def check_ti_le_nguon(spec: ThuyetMinhSpec) -> list[str]:
         lech = []
         if de < NGUON_LOP_C["de_thi"]:
             lech.append(f"đề thi {de:.0%} < 50%")
-        if sgk < NGUON_LOP_C["sgk"]:
+        if sgk < NGUON_LOP_C["sgk"] and not (p.mien_sgk or "").strip():
             lech.append(f"SGK {sgk:.0%} < 20%")
         if stk > NGUON_LOP_C["stk_toi_da"]:
             lech.append(f"sách tham khảo {stk:.0%} > 30%")
@@ -681,7 +691,9 @@ def check_nb_theo_ppd(spec: ThuyetMinhSpec) -> tuple[list[str], list[str]]:
         tach = sum(_so_cau(r) for r in nb if loai(r) == "NB tách TH")
         # Bài theo sơ đồ ngược thay chỗ câu NB tách TH; HS vẫn phải đọc sơ đồ nên bài vẫn là TH (Thầy 05/11/2026).
         co_so_do = any(r.phut_so_do for r in p.rows)
-        if tong and not co_so_do:
+        # Luật 16/11/2026: NB = câu nhỏ gắn với đề (nhắc công thức, điều kiện, bước làm) ⇒ gần
+        # như mọi NB là 'NB tách TH' — mốc 30–40% của quy trình 30/10 không còn đúng.
+        if tong and not co_so_do and not spec.luat_16_11:
             pct = tach / tong * 100
             if not (lo <= pct <= hi):
                 canh_bao.append(

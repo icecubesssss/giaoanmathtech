@@ -112,6 +112,9 @@ class SpecPhieu(BaseModel):
     # KHUÔN phiếu (Thầy chốt 10/11/2026), khớp `LessonPackage.khuon`: "chung_minh" ⇒
     # thuyetminh_gate soi tỉ lệ theo `ratio_khuon` của tầng thay cho tỉ lệ chuẩn.
     khuon: str = Field("", description="Khuôn phiếu cho cổng tỉ lệ, vd 'chung_minh'")
+    # MIỄN mức SGK ≥20% của tỉ lệ nguồn lớp C (Thầy chốt 17/11/2026, Phiếu 3 ch.VI 9C: tab không có
+    # câu SGK nào ở dạng biểu thức không đối xứng). Ghi lí do — rỗng = không miễn.
+    mien_sgk: str = Field("", description="Lí do Thầy miễn mức SGK ≥20% cho phiếu này (rỗng = không miễn)")
     rows: list[SpecRow] = Field(default_factory=list)
 
 
@@ -154,6 +157,10 @@ class ThuyetMinhSpec(BaseModel):
     # Thầy cho BỎ kiểm tra chương này (15/10/2026: 8B chỉ KT ch.III, IV, VI, VII, IX — ch.I, II, V,
     # VIII, X không còn đất trong tiến độ mới). Trước đó agent phải lách bằng `kiem_tra_gop` giả.
     khong_kiem_tra: bool = Field(False, description="Thầy chốt chương này KHÔNG có kiểm tra chương 45′")
+    # LUẬT HÌNH THỨC CÂU + BẢN CHẤT 40-40-20 (Thầy chốt 16/11/2026, AGENTS.md khối đầu file):
+    # NB = câu nhỏ gắn đề ⇒ phần lớn NB là 'NB tách TH', mốc 30–40% của quy trình 30/10 không
+    # còn đúng. Bật ⇒ `check_nb_theo_ppd` bỏ mốc đó. Khớp `LessonPackage.luat_16_11`.
+    luat_16_11: bool = Field(False, description="Chương soạn theo luật hình thức câu 16/11/2026")
     phieu: list[SpecPhieu] = Field(default_factory=list)
 
 

@@ -68,6 +68,9 @@ def check_bank(snap: dict) -> tuple[list[str], list[str]]:
 
     nhom: dict[str, list[str]] = collections.defaultdict(list)
     for r in rows:
+        # bản đã ghi "Bỏ" ở Trạng thái là cách xử lý L5 mà cảnh báo yêu cầu ⇒ không đếm nữa
+        if (r.get("trang_thai") or "").strip().lower().startswith("bỏ"):
+            continue
         if r.get("de"):
             nhom[_chuan(r["de"])].append(r.get("ma", "?"))
     trung_de = [v for v in nhom.values() if len(v) > 1]

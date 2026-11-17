@@ -29,6 +29,19 @@
 >
 > Tiến độ từng buổi KHÔNG nằm trong repo: xem tab tiến độ trên sheet nhóm (vd "TIẾN ĐỘ 9C - 2026 - ThaiTD").
 
+> **LUẬT HÌNH THỨC CÂU + BẢN CHẤT 40-40-20 (Thầy chốt 16/11/2026, áp từ chương VI 9C bản 2 — ĐÈ các luật cũ ghi bên dưới khi nói khác).**
+> Chi tiết + nguồn: [docs/quy-chuan-hoc-lieu.md §15](docs/quy-chuan-hoc-lieu.md). Tóm tắt:
+> 1. **Điền khuyết CHỈ dùng trong Ví dụ** (`[[fill:]]` ở ví dụ GV làm mẫu). Thầy: *"bài tập điền khuyết nhiều quá, HS bị thụ động … Điền khuyết chắc là chỉ cho VD thôi"*. Bài tập (trên lớp, BTVN) KHÔNG có khung "hoàn thành bài giải", không `[[blank:]]` trong lời giải.
+> 2. **NB (40% phút) = câu NHỎ gắn với đề**: nhắc công thức, điều kiện, phân biệt trường hợp, "đề cho gì / cần để ý gì / làm bước nào trước". Hình thức: trắc nghiệm A–D, Đúng/Sai, trả lời ngắn (vd *"PT có hai nghiệm cần xét gì? → $\Delta\ge 0$"*). Thẻ `[NB]` trên từng câu nhỏ, 1,5′/câu (đại số 9C).
+> 3. **TH (40%) = bài gọn + câu hỏi gợi ý bước** (a) Tính $\Delta$, b) So sánh với 0, c) Kết luận) — HS tự trình bày vào vở. **Bài VD tách lẻ thành các bước cỡ TH bằng câu hỏi định hướng cũng là TH** (lớp C hạ VD theo cách này, không mớm bằng điền khuyết). 6′/câu.
+> 4. **VD (20%) = CHỈ ĐỀ**, không gợi ý, không câu dẫn, HS tự giải như đi thi. 12′/câu.
+> 5. **Bài đã tách ⇒ giờ = tổng giờ các câu nhỏ**, KHÔNG cộng thêm giờ bài gốc.
+> 6. **Quỹ 120′ = 32 NB + 8 TH + 2 VD**; phiếu không VD (P1 ch.VI) = 32 NB + 12 TH.
+> 7. **Bài tập đề gọn** kiểu phiếu mẫu `inputs/refs/2012 (Đ). Ôn tập định lí Viète.pdf`: một yêu cầu, nhiều phương trình a)–h); BTVN cùng kiểu, KHÔNG ghi điểm từng bài.
+> 8. **Phân dạng = phương pháp giải** (chuỗi bước), danh sách dạng ĐÓNG mỗi chương; bối cảnh/số liệu là biến thể. Chỉ tách dạng khi biết làm dạng này vẫn không tự làm được dạng kia. Lớp C không VDC (phân dạng vẫn giữ VDC cho lớp B/A).
+> 9. **Phạm vi:** phiếu ĐẠI SỐ từ ch.VI 9C bản 2. Phiếu HÌNH chứng minh vẫn theo khuôn điền khuyết trên hình (mục 5 bên dưới) cho tới khi Thầy nói khác — hỏi trước khi áp.
+> 10. **Cờ `luat_16_11: true`** (cổng đã sửa 16/11/2026) — khai ở thuyết minh (cấp chương) VÀ ở từng phiếu; `new-lesson` tự chép cờ + `khuon` từ `thuyet-minh.json` cạnh bên, `spec_gate` kêu khi lệch. Có cờ thì: `dan_dat_gate` **CHẶN** ô điền/khung "hoàn thành bài giải" trong bài tập (cả BTVN) và **CHẶN** `hints`/sơ đồ ngược/lời "Gợi ý" ở bài VD (thẻ toàn [VD], hoặc không thẻ mà level 3); `vi_du_gate` nhận câu hỏi dẫn `a) [NB] …` trong đề TH thay cho `hints`; `thuyetminh_gate` bỏ mốc "NB tách TH 30–40%". Phiếu cố ý không VD khai `khuon: "khong_vd"` (soi 40-60-0) ở phiếu và dòng phiếu TM. Không cờ ⇒ cổng cũ y nguyên (phiếu cũ không bị đánh trượt).
+
 ## ⚡ Bắt đầu nhanh (agent land-and-go — đọc cái này là chạy được)
 
 0. **Chạy trên máy WINDOWS?** Đọc [HUONG-DAN-BAT-DAU.md §4](HUONG-DAN-BAT-DAU.md) trước khi gõ lệnh đầu tiên: Python là `.venv\Scripts\python.exe` (không phải `.venv/bin/python`), **không có `make`**, đường dẫn có `[C]…` phải bọc nháy kép, và script mới phải ép stdout sang UTF-8 kẻo nổ `UnicodeEncodeError`.

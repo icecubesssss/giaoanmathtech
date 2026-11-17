@@ -36,6 +36,41 @@ Tối ưu đã rút ra (chương V 9C, 1083 bài):
 
 ---
 
+## PHÂN DẠNG THEO PHƯƠNG PHÁP — DANH MỤC ĐÓNG + TAB Ý (Thầy chốt 16/11/2026)
+
+Vì sao: cột "Dạng bài" do agent viết chữ tự do ⇒ ch.VI 9C có 385 tên dạng / 565 câu, Pivot mảnh, không
+chọn được dạng để dạy. Ba nguyên nhân: chữ tự do; bài nhiều ý bị ghép tên dạng; mức độ chấm lệch nhau.
+
+**Luật:** một dạng = một phương pháp giải (một chuỗi bước). Bối cảnh, số liệu, hình thức = *biến thể*,
+không phải dạng mới. Danh mục giữ cả dạng VDC (cho lớp B, A); lớp C không dạy VDC.
+
+Các bước (làm mẫu: chương VI Đại số 9):
+1. **Danh mục đóng** trong khung chương, khoá `danh_muc_dang` (mã, nhóm, cấp 1 theo tab "Danh mục dạng
+   chuẩn", phiếu, mức gốc, tên, cách làm, dấu hiệu). Sinh bằng script, ví dụ `scripts/danh_muc_dang_ch6_9.py --ghi`.
+   Đối xứng / không đối xứng / tìm m… phải tách theo KIỂU BIẾN ĐỔI (đọc đề thật để liệt kê), không gộp thô.
+2. **Gán theo ý qua Gemini:** `scripts/gemini/viec_phan_dang_y_ch6_9.py` (lô 40 câu, schema ép mã ∈ danh mục)
+   → `python3 scripts/gemini/tho.py --tien-to pd-y-ch6-9- --song-song 4` (khai `allowed_domains` Google).
+   Chạy thử 1 lô, soát, rồi mới chạy hết.
+3. **Gom + kiểm:** `scripts/gom_phan_dang_y.py [--ghi]` — chặn thiếu câu / mã lạ; cảnh báo đổi mức không lý do;
+   in % ĐỀ theo dạng và theo nhóm (một đề = nguồn "Ưu tiên 1"). Soát tay các đề Sở + ghi chú "phân vân".
+4. **Ghi Sheets:** tab "Ý Ch.N lớp 9C" (mỗi ý một dòng; mã dạng + mức là danh sách thả xuống; tên/nhóm/phiếu/kỳ
+   thi/đề = công thức) và tab "Danh mục dạng Ch.N lớp 9C" (số ý, NB/TH/VD/VDC, % đề Vào 10/CK2/GK2 = công thức,
+   cột tick "Dạy 9C" cho Thầy). Tab phân dạng chính: cột C (mức cao nhất), D (dạng chính = ý mức cao nhất),
+   F (phiếu), J (mức từng ý), P (mã dạng từng ý) = công thức đọc từ tab Ý ⇒ sửa mã ở tab Ý là cả tab tự theo.
+5. **Hai cấp Dạng ⊃ Kỹ thuật** (Thầy 16/11 lượt 4: 49 mã vẫn mảnh): mã chi tiết (VI-xx) là KỸ THUẬT, gộp thành
+   DẠNG (C6-xx; 9C 18 dạng, ngoài 9C 10) theo tiêu chí "chỉ tách khi biết làm dạng này vẫn không tự làm được dạng
+   kia; khác công thức cần nhớ = cùng dạng". Khoá `danh_muc_dang.dang_gop` + trường `dang` của mỗi kỹ thuật
+   (script assert mỗi kỹ thuật thuộc đúng một dạng). Sheets: tab "Dạng Ch.N lớp 9C" (tick + đề xuất ở đây — nơi DUY
+   NHẤT Thầy tick), tab "Kỹ thuật Ch.N lớp 9C" (cột tick là công thức đọc tab Dạng), tab Ý thêm cột Mã dạng/Tên dạng;
+   tab chính D = dạng chính, P = mã dạng từng ý, Q = mã kỹ thuật từng ý.
+6. **Thầy tick dạng dạy** → thuyết minh → bốc bài.
+
+**Bẫy Sheets:** (a) tab có bộ lọc ⇒ `copyPaste` chỉ dán vào dòng đang hiện — `clearBasicFilter`, dán, rồi
+`setBasicFilter` lại y cũ; (b) `COUNTUNIQUE(FILTER(…))` đếm lỗi của FILTER rỗng thành 1 ⇒ dùng
+`IFERROR(ROWS(UNIQUE(FILTER(…))),0)`; (c) Gemini đôi khi để rác `,ma_dang:` trong trường phụ ⇒ lọc trước khi ghi.
+
+---
+
 ## Sau khi tab đủ bài — TẠO PHIẾU THUYẾT MINH THEO PHIẾU PHÂN DẠNG (sếp chốt 30/10/2026)
 
 Nguồn: tab **"Quy trình tạo phiếu TM theo PPD"** của sheet tiến độ nhóm

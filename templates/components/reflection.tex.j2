@@ -5,8 +5,11 @@
     xanh RỖNG ở cuối trang rồi sơ đồ nhảy sang trang sau. Đòi đủ chỗ trước.
     11cm = khối chặng đo thật ~10,4cm (tiêu đề + chú thích + sơ đồ 8,5cm) + đệm. Ngưỡng cũ
     10cm để lọt ca trang còn 10–11,5cm: tiêu đề "5. Sơ đồ tư duy" nằm trơ cuối trang, sơ đồ
-    sang trang sau (phiếu 1 chương V 9C bản 2, 05/10/2026). =))
-((* if parts.tong_ket | selectattr("type", "equalto", "mindmap") | list *))\stageneedspace{11cm}
+    sang trang sau (phiếu 1 chương V 9C bản 2, 05/10/2026).
+    16/11/2026 (Thầy "gọn lên"): sơ đồ ÍT LÁ không cần 11cm — ước 3,5cm (tiêu đề + chú thích + đệm)
+    + 0,7cm/lá, kẹp [6cm; 11cm]. Sơ đồ từ 11 lá trở lên vẫn 11cm như cũ. =))
+((* set _mm = parts.tong_ket | selectattr("type", "equalto", "mindmap") | list *))
+((* if _mm *))((* set ns_la = namespace(n=0) *))((* for br in _mm[0].branches *))((* set ns_la.n = ns_la.n + ([br.children | length, 1] | max) *))((* endfor *))\stageneedspace{((( [[3.5 + 0.7 * ns_la.n, 6.0] | max, 11.0] | min | round(1) )))cm}
 ((* else *))\stageneedspace{4cm}
 ((* endif *))
 \begin{stage}{((( stage.number )))}{((( stage.title )))}{stage5}{\iconreflect}

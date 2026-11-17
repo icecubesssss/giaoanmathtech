@@ -1,310 +1,151 @@
 {
   "slug": "thuyet-minh-de-lop-9c-chuong-06-pt-bac-hai",
-  "title": "Chương VI. Phương trình bậc hai một ẩn • tuần 23–27",
+  "title": "Chương VI. Phương trình bậc hai một ẩn — bản 2 • kiểm tra chương (90 phút)",
   "grade": "lop-9",
   "subject": "dai-so",
   "tier": "C",
-  "chuong": "Chương VI (Bài 19 – Bài 21 SGK)",
+  "chuong": "Chương VI (Bài 19 – Bài 21 SGK), bản 2 (5 buổi)",
   "ghi_chu": [
-    "Đề soi ĐÚNG phần vừa dạy ở buổi liền trước cộng bài tập về nhà của buổi đó — 15 phút đầu giờ, không ra ngoài phạm vi.",
-    "KHÔNG ra dạng có tham số $m$ ở bất kì đề nào — Thầy chốt cắt. Tên đề 15 phút số 14 trong file tiến độ còn ghi \\emph{tìm m}, cần sửa lại cho khớp.",
-    "KHÔNG dùng kí hiệu tắt cho tổng và tích hai nghiệm. Đề hỏi bằng lời đúng như đề thi thật: \\emph{tổng hai nghiệm}, \\emph{tích hai nghiệm}, \\emph{tổng nghịch đảo hai nghiệm}, \\emph{tổng các lập phương hai nghiệm}.",
-    "Mỗi đề phải có ít nhất một câu KHÔNG phải tự luận (trắc nghiệm, điền khuyết hoặc đúng-sai) để soi nhanh công thức — luật đa dạng hình thức câu hỏi.",
-    "Tầng C ăn điểm ở nhận biết và thông hiểu: bốn đề 15 phút KHÔNG có câu vận dụng, dồn hết quỹ vận dụng vào đề 1 tiết.",
-    "Số liệu các câu Viète lấy nguyên từ đề vào 10 và đề thi thử Hà Nội hai năm gần đây, đã đối chiếu kết quả bằng máy.",
-    "Đáp số ghi trong bảng chỉ để Thầy soát, KHÔNG in vào đề của học sinh."
+    "Thầy chốt 16/11/2026: đề kiểm tra chương VI 9C làm trong $90$ phút (làm ở phiên Phiếu 5). Tham số $m$ quay lại ở biện luận $\\Delta$ và định lí Viète.",
+    "Thầy chốt 17/11/2026: bỏ hẳn phương trình chứa ẩn ở mẫu (C6-17) và công thức nghiệm thu gọn $\\Delta'$, $b'$ khỏi chương VI 9C.",
+    "KHÔNG dùng kí hiệu tắt $S$, $P$ cho tổng và tích hai nghiệm; KHÔNG dùng dấu $\\Leftrightarrow$ hay $\\Rightarrow$ trong lời giải.",
+    "100\\% câu hỏi lấy từ ngân hàng phân dạng, không trùng số liệu với bài ví dụ hay luyện tập trên lớp của Phiếu 1--5.",
+    "Tờ đề học sinh không in đáp số; ma trận và đáp án chi tiết ở thư mục \\texttt{kiem-tra-chuong/}."
   ],
   "de": [
     {
-      "ma": "15-11",
-      "ten": "Đề 15 phút số 11 — Bài 19: Công thức nghiệm",
-      "tuan": 23,
-      "phut": 15,
-      "diem_toi_da": 10.0,
-      "pham_vi": "Bài 19: hệ số $a$, $b$, $c$; biệt thức $\\Delta$; phương trình khuyết $b$, khuyết $c$; công thức nghiệm và công thức nghiệm thu gọn.",
-      "cau": [
-        {
-          "ma": "Câu 1",
-          "dang": "Tính $\\Delta$ của $x^2-5x+6=0$ rồi chọn kết luận đúng về số nghiệm",
-          "band": "NB",
-          "diem": 2.0,
-          "phut": 2.0,
-          "hinh_thuc": "trắc nghiệm",
-          "dap_an": "$\\Delta=1>0$, hai nghiệm phân biệt"
-        },
-        {
-          "ma": "Câu 2",
-          "dang": "Giải phương trình khuyết $b$: $2x^2-8=0$",
-          "band": "NB",
-          "diem": 2.0,
-          "phut": 2.5,
-          "hinh_thuc": "tự luận",
-          "dap_an": "$x=2$; $x=-2$"
-        },
-        {
-          "ma": "Câu 3",
-          "dang": "Giải phương trình khuyết $c$: $3x^2-6x=0$",
-          "band": "NB",
-          "diem": 2.0,
-          "phut": 2.5,
-          "hinh_thuc": "tự luận",
-          "dap_an": "$x=0$; $x=2$"
-        },
-        {
-          "ma": "Câu 4",
-          "dang": "Giải $x^2-5x+6=0$ bằng công thức nghiệm",
-          "band": "TH",
-          "diem": 2.0,
-          "phut": 4.0,
-          "hinh_thuc": "tự luận",
-          "dap_an": "$x=2$; $x=3$"
-        },
-        {
-          "ma": "Câu 5",
-          "dang": "Giải $x^2-6x+5=0$ bằng công thức nghiệm thu gọn ($b'=-3$)",
-          "band": "TH",
-          "diem": 2.0,
-          "phut": 4.0,
-          "hinh_thuc": "tự luận",
-          "dap_an": "$\\Delta'=4$; $x=1$; $x=5$"
-        }
-      ]
-    },
-    {
-      "ma": "15-12",
-      "ten": "Đề 15 phút số 12 — Luyện tập chung: phương trình quy về bậc hai",
-      "tuan": 24,
-      "phut": 15,
-      "diem_toi_da": 10.0,
-      "pham_vi": "Điều kiện xác định và phương trình chứa ẩn ở mẫu quy về bậc hai; phương trình tích; bài toán lời văn dẫn tới phương trình bậc hai.",
-      "cau": [
-        {
-          "ma": "Câu 1",
-          "dang": "Điền điều kiện xác định của $\\dfrac{300}{x}-\\dfrac{300}{x+10}=1$",
-          "band": "NB",
-          "diem": 2.0,
-          "phut": 2.0,
-          "hinh_thuc": "điền khuyết",
-          "dap_an": "$x \\ne 0$ và $x \\ne -10$"
-        },
-        {
-          "ma": "Câu 2",
-          "dang": "Giải phương trình tích $(x-1)(x^2-5x+6)=0$",
-          "band": "NB",
-          "diem": 2.0,
-          "phut": 3.0,
-          "hinh_thuc": "tự luận",
-          "dap_an": "$x=1$; $x=2$; $x=3$"
-        },
-        {
-          "ma": "Câu 3",
-          "dang": "Giải $\\dfrac{300}{x}-\\dfrac{300}{x+10}=1$ đủ bốn bước, có đối chiếu điều kiện",
-          "band": "TH",
-          "diem": 3.0,
-          "phut": 5.0,
-          "hinh_thuc": "tự luận",
-          "dap_an": "$x^2+10x-3000=0$; $x=50$ (loại $x=-60$)"
-        },
-        {
-          "ma": "Câu 4",
-          "dang": "Mảnh đất hình chữ nhật có chiều rộng ngắn hơn chiều dài 11 m, diện tích 180 m$^2$ — tìm hai kích thước",
-          "band": "TH",
-          "diem": 3.0,
-          "phut": 5.0,
-          "hinh_thuc": "tự luận",
-          "dap_an": "rộng 9 m, dài 20 m"
-        }
-      ]
-    },
-    {
-      "ma": "15-13",
-      "ten": "Đề 15 phút số 13 — Bài 20: Định lí Viète",
-      "tuan": 25,
-      "phut": 15,
-      "diem_toi_da": 10.0,
-      "pham_vi": "Tổng và tích hai nghiệm; nhẩm nghiệm khi $a+b+c=0$ và $a-b+c=0$; tính biểu thức đối xứng bậc hai; biết một nghiệm, tìm nghiệm còn lại và hệ số.",
-      "cau": [
-        {
-          "ma": "Câu 1",
-          "dang": "Cho $x^2-7x+12=0$, điền tổng hai nghiệm và tích hai nghiệm",
-          "band": "NB",
-          "diem": 2.0,
-          "phut": 2.0,
-          "hinh_thuc": "điền khuyết",
-          "dap_an": "tổng $=7$; tích $=12$"
-        },
-        {
-          "ma": "Câu 2",
-          "dang": "Nhẩm nghiệm $3x^2-5x+2=0$ nhờ $a+b+c=0$",
-          "band": "NB",
-          "diem": 2.0,
-          "phut": 3.0,
-          "hinh_thuc": "trắc nghiệm",
-          "dap_an": "$x=1$; $x=\\dfrac{2}{3}$"
-        },
-        {
-          "ma": "Câu 3",
-          "dang": "Không giải phương trình, tính $x_1^2+x_2^2$ của $x^2-6x+4=0$",
-          "band": "TH",
-          "diem": 3.0,
-          "phut": 5.0,
-          "hinh_thuc": "tự luận",
-          "dap_an": "$6^2-2 \\cdot 4 = 28$"
-        },
-        {
-          "ma": "Câu 4",
-          "dang": "Phương trình $x^2-7x+c=0$ có một nghiệm bằng $2$: tìm nghiệm còn lại và hệ số $c$",
-          "band": "TH",
-          "diem": 3.0,
-          "phut": 5.0,
-          "hinh_thuc": "tự luận",
-          "dap_an": "tổng hai nghiệm $=7$ nên nghiệm còn lại $=5$; $c=2\\cdot 5=10$"
-        }
-      ]
-    },
-    {
-      "ma": "15-14",
-      "ten": "Đề 15 phút số 14 — Định lí Viète: biểu thức của hai nghiệm",
-      "tuan": 26,
-      "phut": 15,
-      "diem_toi_da": 10.0,
-      "pham_vi": "Ba bước tính biểu thức của hai nghiệm (Câu III.3): xét $\\Delta$, viết tổng và tích hai nghiệm, ép biểu thức về tổng và tích. Số liệu lấy từ đề thi thử Hà Nội.",
-      "cau": [
-        {
-          "ma": "Câu 1",
-          "dang": "Xét $\\Delta$ của $x^2-5x+2=0$ rồi viết tổng và tích hai nghiệm",
-          "band": "NB",
-          "diem": 2.0,
-          "phut": 2.0,
-          "hinh_thuc": "tự luận",
-          "dap_an": "$\\Delta=17>0$; tổng $=5$; tích $=2$"
-        },
-        {
-          "ma": "Câu 2",
-          "dang": "Điền hai công thức $x_1^2+x_2^2$ và $\\dfrac{1}{x_1}+\\dfrac{1}{x_2}$ theo tổng và tích hai nghiệm",
-          "band": "NB",
-          "diem": 2.0,
-          "phut": 2.5,
-          "hinh_thuc": "điền khuyết",
-          "dap_an": "$(x_1+x_2)^2-2x_1x_2$; $\\dfrac{x_1+x_2}{x_1x_2}$"
-        },
-        {
-          "ma": "Câu 3",
-          "dang": "Chứng minh hai nghiệm khác 0 rồi tính tổng nghịch đảo hai nghiệm của $2x^2-4x+1=0$ (THCS Cầu Giấy 2026)",
-          "band": "TH",
-          "diem": 3.0,
-          "phut": 5.0,
-          "hinh_thuc": "tự luận",
-          "dap_an": "tổng $2$, tích $\\dfrac{1}{2}$ nên kết quả $=4$"
-        },
-        {
-          "ma": "Câu 4",
-          "dang": "Tính tổng các lập phương hai nghiệm của $x^2-3x-5=0$ (Đống Đa)",
-          "band": "TH",
-          "diem": 3.0,
-          "phut": 5.5,
-          "hinh_thuc": "tự luận",
-          "dap_an": "$3^3-3 \\cdot (-5) \\cdot 3 = 72$"
-        }
-      ]
-    },
-    {
       "ma": "KT-VI",
-      "ten": "Đề kiểm tra Chương VI — Phương trình bậc hai một ẩn (45 phút)",
-      "tuan": 27,
-      "phut": 45,
+      "ten": "Đề kiểm tra Chương VI — Phương trình bậc hai một ẩn (90 phút)",
+      "tuan": 26,
+      "phut": 90,
       "diem_toi_da": 10.0,
-      "pham_vi": "Cả chương VI: giải phương trình bậc hai, định lí Viète, phương trình chứa ẩn ở mẫu, giải bài toán bằng cách lập phương trình. Phần I trắc nghiệm 2 điểm; tự luận bám Câu III đề vào 10 (III.1 lập phương trình, III.3 Viète có hạ bậc).",
+      "pham_vi": "Trọn chương VI bản 2 (Phiếu 1--5): giải phương trình bậc hai bằng công thức nghiệm $\\Delta$ và nhẩm nghiệm, chứng minh phương trình luôn có nghiệm, định lí Viète (tính biểu thức đối xứng, tìm $m$ theo hệ thức), giải bài toán bằng cách lập phương trình.",
       "cau": [
         {
           "ma": "Câu 1",
-          "dang": "Tính $\\Delta$ của $x^2-5x+7=0$, kết luận số nghiệm",
+          "dang": "Nhận biết phương trình bậc hai một ẩn",
           "band": "NB",
           "diem": 0.5,
-          "phut": 2,
+          "phut": 3,
           "hinh_thuc": "trắc nghiệm",
-          "dap_an": "$\\Delta=-3<0$: vô nghiệm"
+          "dap_an": "$4x-7=0$ không phải"
         },
         {
           "ma": "Câu 2",
-          "dang": "Tổng và tích hai nghiệm của $x^2-8x+6=0$ (định lí Viète)",
+          "dang": "Tổng và tích hai nghiệm của $4x^2-5x-3=0$ (định lí Viète)",
           "band": "NB",
           "diem": 0.5,
-          "phut": 2,
+          "phut": 3,
           "hinh_thuc": "trắc nghiệm",
-          "dap_an": "tổng $8$, tích $6$"
+          "dap_an": "$x_1+x_2=\\dfrac54$, $x_1x_2=-\\dfrac34$"
         },
         {
           "ma": "Câu 3",
-          "dang": "Nhẩm nghiệm $5x^2-8x+3=0$ nhờ $a+b+c=0$",
+          "dang": "Tính $\\Delta$ của $-2x^2+5x-4=0$, kết luận số nghiệm",
           "band": "NB",
           "diem": 0.5,
-          "phut": 2,
+          "phut": 3,
           "hinh_thuc": "trắc nghiệm",
-          "dap_an": "$x=1$; $x=\\dfrac35$"
+          "dap_an": "$\\Delta=-7<0$: vô nghiệm"
         },
         {
           "ma": "Câu 4",
-          "dang": "Điều kiện xác định của $\\dfrac{3}{x-2}+\\dfrac{x}{x+5}=1$",
+          "dang": "Nhẩm nghiệm $x^2-9x+8=0$ nhờ $a+b+c=0$",
           "band": "NB",
           "diem": 0.5,
-          "phut": 2,
+          "phut": 3,
           "hinh_thuc": "trắc nghiệm",
-          "dap_an": "$x\\ne 2$ và $x\\ne -5$"
+          "dap_an": "$1$ và $8$"
         },
         {
           "ma": "Câu 5a",
-          "dang": "Giải phương trình khuyết $b$: $3x^2-48=0$",
+          "dang": "Giải phương trình $x^2-3x+2=0$",
           "band": "NB",
-          "diem": 1.0,
-          "phut": 3,
+          "diem": 0.5,
+          "phut": 4,
           "hinh_thuc": "tự luận",
-          "dap_an": "$x=4$; $x=-4$"
+          "dap_an": "$x_1=1$, $x_2=2$"
         },
         {
           "ma": "Câu 5b",
-          "dang": "Giải $x^2-9x+18=0$ bằng công thức nghiệm",
+          "dang": "Giải phương trình $2x^2+5x+3=0$",
           "band": "NB",
-          "diem": 1.0,
+          "diem": 0.5,
           "phut": 4,
           "hinh_thuc": "tự luận",
-          "dap_an": "$\\Delta=9$; $x=6$; $x=3$"
+          "dap_an": "$x_1=-1$, $x_2=-\\dfrac32$"
         },
         {
           "ma": "Câu 6",
-          "dang": "Giải phương trình chứa ẩn ở mẫu $\\dfrac{1}{x}+\\dfrac{1}{x+3}=\\dfrac{1}{2}$ đủ các bước",
+          "dang": "Chứng minh $x^2+(m+1)x+2m-2=0$ luôn có hai nghiệm với mọi $m$",
           "band": "TH",
-          "diem": 1.5,
+          "diem": 1.0,
           "phut": 8,
           "hinh_thuc": "tự luận",
-          "dap_an": "$x^2-x-6=0$; $x=3$; $x=-2$ (đều thỏa mãn)"
+          "dap_an": "$\\Delta=(m-3)^2\\ge0$"
         },
         {
-          "ma": "Câu 7",
-          "dang": "Giải bài toán bằng cách lập phương trình (Câu III.1): ô tô đi $180$ km, lúc về tăng $5$ km/h nên về sớm $30$ phút — tìm vận tốc lúc đi",
-          "band": "TH",
-          "diem": 2.5,
-          "phut": 12,
-          "hinh_thuc": "tự luận",
-          "dap_an": "$\\dfrac{180}{x}-\\dfrac{180}{x+5}=\\dfrac12$; $x^2+5x-1800=0$; $x=40$ km/h (loại $-45$)"
-        },
-        {
-          "ma": "Câu 8a",
-          "dang": "Chứng minh $x^2-4x-3=0$ có hai nghiệm phân biệt, viết tổng và tích hai nghiệm",
+          "ma": "Câu 7a",
+          "dang": "Chứng minh $4x^2+8x-15=0$ có hai nghiệm phân biệt",
           "band": "NB",
           "diem": 0.5,
-          "phut": 2,
+          "phut": 3,
           "hinh_thuc": "tự luận",
-          "dap_an": "$ac=-3<0$; tổng $4$, tích $-3$"
+          "dap_an": "$ac=-60<0$"
         },
         {
-          "ma": "Câu 8b",
-          "dang": "Định lí Viète, hạ bậc (Câu III.3): tính $B=x_1^2+4x_2+2x_1x_2$",
-          "band": "VD",
-          "diem": 1.5,
+          "ma": "Câu 7b",
+          "dang": "Tính $M=x_1^2+x_2^2-5x_1x_2$ theo tổng và tích hai nghiệm",
+          "band": "TH",
+          "diem": 1.0,
           "phut": 7,
           "hinh_thuc": "tự luận",
-          "dap_an": "$x_1^2=4x_1+3$ nên $B=4\\cdot4+3+2\\cdot(-3)=13$"
+          "dap_an": "$M=(x_1+x_2)^2-7x_1x_2=\\dfrac{121}{4}$"
+        },
+        {
+          "ma": "Câu 8",
+          "dang": "Biết một nghiệm $x=\\dfrac{3+\\sqrt{21}}{2}$ của $x^2-ax-3=0$, tính bình phương hiệu hai nghiệm",
+          "band": "TH",
+          "diem": 1.0,
+          "phut": 8,
+          "hinh_thuc": "tự luận",
+          "dap_an": "$x_2=\\dfrac{3-\\sqrt{21}}{2}$, $(x_1-x_2)^2=21$"
+        },
+        {
+          "ma": "Câu 9a",
+          "dang": "Giải $x^2-2x+m-1=0$ với $m=0$",
+          "band": "NB",
+          "diem": 0.5,
+          "phut": 4,
+          "hinh_thuc": "tự luận",
+          "dap_an": "$x=1\\pm\\sqrt2$"
+        },
+        {
+          "ma": "Câu 9b",
+          "dang": "Tìm $m$ để hai nghiệm phân biệt thỏa mãn $\\dfrac{3}{x_1x_2}-x_1-x_2=2$",
+          "band": "VD",
+          "diem": 1.0,
+          "phut": 10,
+          "hinh_thuc": "tự luận",
+          "dap_an": "$m<2$, $m\\ne1$, $m=\\dfrac74$"
+        },
+        {
+          "ma": "Câu 10",
+          "dang": "Giải bài toán bằng cách lập phương trình (năng suất): $300$ sản phẩm, mỗi giờ thêm $5$, sớm $2$ giờ",
+          "band": "TH",
+          "diem": 1.0,
+          "phut": 14,
+          "hinh_thuc": "tự luận",
+          "dap_an": "$x^2+5x-750=0$, $x=25$"
+        },
+        {
+          "ma": "Câu 11",
+          "dang": "Giải bài toán bằng cách lập phương trình (hai lần thay đổi): $40$ tấn, thêm $14$ tấn, thêm $2$ xe, mỗi xe thêm $0{,}5$ tấn",
+          "band": "VD",
+          "diem": 1.0,
+          "phut": 14,
+          "hinh_thuc": "tự luận",
+          "dap_an": "$x^2-26x+160=0$, $x=10$ (loại $16>15$)"
         }
       ]
     }

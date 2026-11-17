@@ -41,6 +41,11 @@ _OLY_W = re.compile(r"\[\[oly:([^\]]+)\]\]")
 # (26/09/2026): "Vẫn còn các chữ NB, TH, VD bên cạnh các bài ⇒ cần xoá". Xoá ở khâu in,
 # giữ nguyên trong JSON để cổng vẫn đếm được.
 _THE_MUC_DO = re.compile(r"\[(?:NB|TH|VD|VDC)\]\s*")
+# Thầy 16/11/2026 (Phiếu 1 ch.VI 9C): "Các câu a, b, c, d cần đánh dấu mức độ" ⇒ thẻ đứng SAU nhãn ý
+# `a) [NB]` in thành sao như nhãn bài (NB 1 · TH 2 · VD 3 · VDC 4), không in chữ NB/TH (góp ý 26/09).
+# Thẻ đứng đầu đề bài một ý vẫn xoá — nhãn "Bài N." đã có sao theo `level`.
+_SAO_MUC = {"NB": 1, "TH": 2, "VD": 3, "VDC": 4}
+_THE_SAU_Y = re.compile(r"(?<![\w\\])([a-zđ]\))\s*\[(NB|TH|VD|VDC)\]\s*")
 
 # Cờ [[wrap]]…[[/wrap]] (hộp hình treo góc phải, chữ chảy quanh) chỉ có nghĩa ở bản A4:
 # `_blocks.j2` tự tách trước khi gọi filter. Mọi nơi khác (slide, tổng kết) mà token còn
@@ -70,6 +75,7 @@ def _texify(s: str, show_solution: bool = False) -> str:
 
     `show_solution` CHỈ đổi cách in [[fill:…]]: Sổ tay GV in đáp án, hai bản kia in ô trống."""
     s = _WRAP_TAG.sub("", s)
+    s = _THE_SAU_Y.sub(lambda m: rf"{m.group(1)}~\diffstars{{{_SAO_MUC[m.group(2)]}}} ", s)
     s = _THE_MUC_DO.sub("", s)
     s = _FILL.sub(lambda m: _fill_sub(m, show_solution), s)
     s = _BLANK_W.sub(r"\\blank[\1]", s)

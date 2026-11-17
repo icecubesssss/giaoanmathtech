@@ -91,6 +91,8 @@ sau khi HS đã làm trọn bài đó ít nhất một lần; (4) lớp C không
 | Phiếu                     | repo → 3 PDF → Drive (chỉ sau approve)                                  | PDF         |
 | Tiến độ                   | sheet tiến độ nhóm, tab theo khuôn 7C (vd "TIẾN ĐỘ 9C - 2026 - ThaiTD") | Sheet       |
 
+> **Từ 16/11/2026, mục 2 + 3 được bổ sung bởi [§15](#15-hình-thức-câu-và-bản-chất-40-40-20-thầy-chốt-16112026)** (điền khuyết chỉ cho ví dụ; NB = câu nhỏ nhắc công thức; giờ bài tách = tổng câu nhỏ).
+
 ## 9. Bài hình chứng minh & Tiêu chuẩn khung vẽ hình (Thầy chốt 04/11/2026)
 
 - **Luyện tập 2 & BTVN tự luận:**
@@ -249,3 +251,42 @@ sau khi HS đã làm trọn bài đó ít nhất một lần; (4) lớp C không
 - **Tiêu chuẩn kiểm duyệt:** Đúng 4 trang A4 (1 tờ đôi A3 gập đôi), 0 lỗi build, 0 cảnh báo `print_gate`, không gian viết bài rộng rãi và không có khoảng trắng thừa.
 
 
+
+## 15. Hình thức câu và bản chất 40-40-20 (Thầy chốt 16/11/2026)
+
+Nguồn: góp ý chương VI lớp 9C ngày 16/11/2026, khi lên kế hoạch dựng lại chương (bản 2, 5 phiếu).
+Áp cho phiếu **đại số** từ chương VI 9C bản 2; phiếu hình chứng minh giữ §9–§11 cho tới khi Thầy nói khác.
+
+**Hình thức**
+
+- *"Bài tập điền khuyết nhiều quá, HS bị thụ động … Điền khuyết trình bày nó mớm quá. Điền khuyết chắc là chỉ cho VD thôi."*
+  ⇒ `[[fill:]]` chỉ có trong **Ví dụ** GV làm mẫu. Bài tập trên lớp và BTVN không có khung "hoàn thành bài giải".
+- **NB:** trắc nghiệm A–D, Đúng/Sai, trả lời ngắn — kiểm HS nhớ đúng công thức, điều kiện, phân biệt các trường hợp
+  (vd "PT có hai nghiệm cần xét gì? → $\Delta\ge 0$").
+- **Bài sau ví dụ:** đề gọn như phiếu mẫu `inputs/refs/2012 (Đ). Ôn tập định lí Viète.pdf` (một yêu cầu, nhiều phương
+  trình a–h), có thể kèm câu hỏi gợi ý bước (a) Tính $\Delta$, b) So sánh với 0, c) Kết luận). HS tự trình bày vào vở.
+- **BTVN:** đề ngắn gọn như phiếu mẫu trên, không ghi điểm từng bài.
+
+**Bản chất 40-40-20** — Thầy: *"40 NB là các câu nhắc lại về mặt công thức, gợi ý cho HS cách làm dựa trên đề bài,
+cần để ý và phân tích như thế nào … bài gộp đó thì chỉ tính thời gian của các câu nhỏ tách ra đó thôi. 40 TH … thêm việc
+tách VD, nó là kiểu như câu NB nhưng tách gọn hơn. 20 VD thì chỉ cần đề, HS tự xử lý."*
+
+| Mức | Là gì | Phút (đại số 9C, trên lớp) |
+|---|---|---|
+| NB 40% | câu nhỏ gắn với đề: nhắc công thức, điều kiện, đề cho gì, cần để ý gì, làm bước nào trước | 1,5 |
+| TH 40% | bài gọn có câu hỏi gợi ý bước; bài VD tách lẻ thành các bước cỡ TH bằng câu hỏi định hướng | 6 |
+| VD 20% | chỉ đề, không gợi ý, HS tự giải trọn | 12 |
+
+- Bài đã tách: giờ = tổng giờ các câu nhỏ, **không** cộng thêm giờ bài gốc.
+- Quỹ 120′ ⇒ **32 NB + 8 TH + 2 VD**; phiếu không VD ⇒ **32 NB + 12 TH**.
+- Lớp C không VDC. Dạng VD có thể hạ thành TH bằng cách tách lẻ câu có câu hỏi định hướng (không thụ động).
+
+**Cổng máy** (16/11/2026): thuyết minh và phiếu khai `luat_16_11: true` thì `dan_dat_gate` chặn ô điền trong bài tập
+và chặn gợi ý ở bài VD; `vi_du_gate` coi câu `a) [NB] …` trong đề TH là gợi ý; `thuyetminh_gate` bỏ mốc "NB tách TH
+30–40%" của quy trình 30/10. Phiếu không VD khai `khuon: "khong_vd"` (40-60-0). Chi tiết: AGENTS.md khối đầu file, mục 10.
+
+**Phân dạng theo phương pháp** — *"Phương pháp làm bài tương tự nhau cần xếp thành 1 dạng … HS học cùng 1 dạng bài có
+cùng 1 phương pháp và có thể suy luận ra được các bài VD đích."* Dạng = một chuỗi bước giải; danh sách dạng của
+chương là danh sách ĐÓNG (mã + tên + chuỗi bước + mức mặc định); bối cảnh, số liệu, hình thức là biến thể. Chỉ tách
+khi biết làm dạng này vẫn không tự làm được dạng kia; khác công thức cần nhớ vẫn cùng dạng. Quy trình: 
+[quy-trinh-ngan-hang-chuong.md](quy-trinh-ngan-hang-chuong.md) mục "PHÂN DẠNG THEO PHƯƠNG PHÁP".

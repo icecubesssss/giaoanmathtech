@@ -1,0 +1,443 @@
+{
+  "slug": "phieu-a-on-tap-cuoi-ki-1-dai-so",
+  "title": "Ôn tập cuối học kì I — Đại số",
+  "eyebrow": "ĐẠI SỐ — ÔN TẬP CUỐI HỌC KÌ I",
+  "grade_label": "Lớp 9 • Ôn vào 10",
+  "class_tier": "C",
+  "so_ca": 1,
+  "btvn_phieu_rieng": true,
+  "stages": [
+    {
+      "blocks": [
+        {
+          "text": "Buổi ôn tập rà lại bốn dạng bài đại số trọng tâm của học kì I: tính giá trị biểu thức chứa căn, giải phương trình chứa căn, rút gọn biểu thức chứa căn và câu hỏi phụ, giải bài toán bằng cách lập hệ phương trình, lập phương trình, lập bất phương trình.[[br]]Toàn bộ bài tập được thực hiện trực tiếp vào vở theo đúng trình tự các bước như bài làm kiểm tra.",
+          "tikz": "\\begin{tikzpicture}[node distance=4mm and 5mm, font=\\small]\n \\node[flownode](a){Tính giá trị\\\\biểu thức\\\\chứa căn};\n \\node[flownode,right=of a](b){Phương trình\\\\chứa căn};\n \\node[flownode,right=of b](c){Rút gọn\\\\và câu hỏi phụ};\n \\node[flowkey,right=of c](d){Bài toán\\\\lời văn};\n \\draw[flowarrow](a)--(b);\n \\draw[flowarrow](b)--(c);\n \\draw[flowarrow](c)--(d);\n\\end{tikzpicture}",
+          "type": "opener"
+        }
+      ],
+      "kind": "review",
+      "number": 1,
+      "teacher_note": "5 phút: giới thiệu 4 dạng bài đại số của học kì I theo sơ đồ; nhắc học sinh mở vở để ghi bài và làm bài.",
+      "title": "Khám phá"
+    },
+    {
+      "blocks": [
+        {
+          "text": "\\textbf{1. Căn bậc hai, căn thức bậc hai}",
+          "type": "para"
+        },
+        {
+          "text": "$\\bullet$\\; Căn bậc hai số học của số $a\\ge 0$ là $\\sqrt{a}$ (với $\\sqrt{a}\\ge 0$ và $(\\sqrt{a})^2=a$).[[br]]$\\bullet$\\; Căn thức bậc hai $\\sqrt{A}$ xác định khi $A\\ge 0$.[[br]]$\\bullet$\\; Hằng đẳng thức $\\sqrt{A^2}=|A|$, tức là $\\sqrt{A^2}=A$ nếu $A\\ge 0$ và $\\sqrt{A^2}=-A$ nếu $A<0$.",
+          "type": "para"
+        },
+        {
+          "text": "\\textbf{2. Khai phương một tích, một thương}",
+          "type": "para"
+        },
+        {
+          "text": "$\\bullet$\\; Khai phương một tích: $\\sqrt{AB}=\\sqrt{A}\\cdot\\sqrt{B}$ với $A\\ge 0$ và $B\\ge 0$.[[br]]$\\bullet$\\; Khai phương một thương: $\\sqrt{\\dfrac{A}{B}}=\\dfrac{\\sqrt{A}}{\\sqrt{B}}$ với $A\\ge 0$ và $B>0$.",
+          "type": "para"
+        },
+        {
+          "text": "\\textbf{3. Đưa thừa số ra ngoài, vào trong dấu căn}",
+          "type": "para"
+        },
+        {
+          "text": "$\\bullet$\\; Đưa thừa số ra ngoài dấu căn: $\\sqrt{A^2B}=|A|\\sqrt{B}$ với $B\\ge 0$.[[br]]$\\bullet$\\; Đưa thừa số vào trong dấu căn: với $A\\ge 0$ và $B\\ge 0$ thì $A\\sqrt{B}=\\sqrt{A^2B}$.[[br]]$\\bullet$\\; Với $A<0$ và $B\\ge 0$ thì $A\\sqrt{B}=-\\sqrt{A^2B}$.",
+          "type": "para"
+        },
+        {
+          "text": "\\textbf{4. Trục căn thức ở mẫu}",
+          "type": "para"
+        },
+        {
+          "text": "$\\bullet$\\; $\\dfrac{A}{\\sqrt{B}}=\\dfrac{A\\sqrt{B}}{B}$ với $B>0$.[[br]]$\\bullet$\\; $\\dfrac{C}{\\sqrt{A}+\\sqrt{B}}=\\dfrac{C(\\sqrt{A}-\\sqrt{B})}{A-B}$ với $A\\ge 0$, $B\\ge 0$ và $A\\ne B$.[[br]]$\\bullet$\\; $\\dfrac{C}{\\sqrt{A}-\\sqrt{B}}=\\dfrac{C(\\sqrt{A}+\\sqrt{B})}{A-B}$ với $A\\ge 0$, $B\\ge 0$ và $A\\ne B$.[[br]]$\\bullet$\\; Tương tự với biểu thức dạng $\\dfrac{C}{\\sqrt{A}+B}$ và $\\dfrac{C}{\\sqrt{A}-B}$ (với $A\\ge 0$ và $A\\ne B^2$).",
+          "type": "para"
+        },
+        {
+          "text": "\\textbf{5. Rút gọn biểu thức chứa căn}",
+          "type": "para"
+        },
+        {
+          "text": "$\\bullet$\\; Tìm điều kiện xác định của biểu thức.[[br]]$\\bullet$\\; Phân tích các mẫu thức thành nhân tử, chẳng hạn $x-4=(\\sqrt{x}-2)(\\sqrt{x}+2)$ và $x+2\\sqrt{x}=\\sqrt{x}(\\sqrt{x}+2)$ với $x\\ge 0$.[[br]]$\\bullet$\\; Quy đồng mẫu thức, thu gọn tử thức, phân tích tử thức thành nhân tử rồi rút gọn nhân tử chung.",
+          "type": "para"
+        },
+        {
+          "text": "\\textbf{6. Giải hệ hai phương trình bậc nhất hai ẩn}",
+          "type": "para"
+        },
+        {
+          "text": "$\\bullet$\\; Phương pháp thế: từ một phương trình biểu diễn một ẩn theo ẩn kia, thế vào phương trình còn lại để được phương trình một ẩn, giải phương trình một ẩn đó rồi suy ra ẩn còn lại.[[br]]$\\bullet$\\; Phương pháp cộng đại số: nhân hai vế mỗi phương trình với số thích hợp (nếu cần) để hệ số của một ẩn bằng nhau hoặc đối nhau, cộng hoặc trừ từng vế hai phương trình để được phương trình một ẩn, giải phương trình một ẩn đó rồi suy ra ẩn còn lại.",
+          "type": "para"
+        },
+        {
+          "text": "\\textbf{7. Giải bài toán bằng cách lập hệ phương trình (hoặc lập phương trình)}",
+          "type": "para"
+        },
+        {
+          "text": "$\\bullet$\\; Bước 1. Lập hệ phương trình (hoặc phương trình): chọn ẩn và đặt điều kiện thích hợp cho ẩn; biểu diễn các đại lượng chưa biết theo ẩn và các đại lượng đã biết; lập hệ phương trình (hoặc phương trình) biểu thị mối quan hệ giữa các đại lượng.[[br]]$\\bullet$\\; Bước 2. Giải hệ phương trình (hoặc phương trình).[[br]]$\\bullet$\\; Bước 3. Kiểm tra xem trong các nghiệm của hệ (hoặc phương trình), nghiệm nào thỏa mãn điều kiện của ẩn rồi trả lời bài toán.",
+          "type": "para"
+        },
+        {
+          "text": "\\textbf{8. Bất phương trình bậc nhất một ẩn}",
+          "type": "para"
+        },
+        {
+          "text": "$\\bullet$\\; Dạng tổng quát: $ax+b<0$ (hoặc $ax+b>0$, $ax+b\\le 0$, $ax+b\\ge 0$) với $a\\ne 0$.[[br]]$\\bullet$\\; Quy tắc chuyển vế: khi chuyển một hạng tử từ vế này sang vế kia thì đổi dấu hạng tử đó.[[br]]$\\bullet$\\; Quy tắc nhân: nhân (chia) hai vế với số dương thì giữ nguyên chiều bất phương trình, nhân (chia) hai vế với số âm thì đổi chiều bất phương trình.",
+          "type": "para"
+        }
+      ],
+      "kind": "concept",
+      "number": 2,
+      "teacher_note": "10 phút: học sinh đọc lại toàn bộ 8 mục lý thuyết; giáo viên hỏi nhanh 4 công thức cụ thể: điều kiện xác định của $\\sqrt{A}$, hằng đẳng thức $\\sqrt{A^2}=|A|$, công thức trục căn thức $\\dfrac{A}{\\sqrt{B}}$, và quy tắc đổi chiều khi nhân (chia) hai vế bất phương trình với số âm.",
+      "title": "Kiến thức cần nhớ"
+    },
+    {
+      "blocks": [
+        {
+          "text": "Dạng 1. Tính giá trị biểu thức chứa căn bậc hai",
+          "type": "para",
+          "variant": "heading"
+        },
+        {
+          "text": "\\textbf{Ví dụ 1.} Tính $\\sqrt{12}-10\\sqrt{\\dfrac{3}{25}}+\\sqrt{75}$. \\textit{(Đề cuối kì I, THCS Ngọc Lâm, 2025--2026)}[[br]]{\\sffamily\\bfseries\\color{brand}Lời giải}[[br]]\\hspace*{1.4em}$\\sqrt{12}-10\\sqrt{\\dfrac{3}{25}}+\\sqrt{75}$[[br]]\\hspace*{1.4em}$=[[fill:2\\sqrt{3}]]-10\\cdot\\dfrac{\\sqrt{3}}{[[fill:5]]}+[[fill:5\\sqrt{3}]]$[[br]]\\hspace*{1.4em}$=[[fill:2\\sqrt{3}]]-[[fill:2\\sqrt{3}]]+[[fill:5\\sqrt{3}]]$[[br]]\\hspace*{1.4em}$=[[fill:5\\sqrt{3}]]$[[br]]Vậy giá trị của biểu thức là $[[fill:5\\sqrt{3}]]$.",
+          "type": "noted",
+          "variant": "example"
+        },
+        {
+          "dang_id": "D11",
+          "hints": [],
+          "label": "Bài 1.",
+          "level": 1,
+          "solution": "a) $A=2\\sqrt{48}+4\\sqrt{27}+\\sqrt{75}+2\\sqrt{3}$[[br]]\\hspace*{1.4em}$A=2\\cdot 4\\sqrt{3}+4\\cdot 3\\sqrt{3}+5\\sqrt{3}+2\\sqrt{3}$[[br]]\\hspace*{1.4em}$A=8\\sqrt{3}+12\\sqrt{3}+5\\sqrt{3}+2\\sqrt{3}$[[br]]\\hspace*{1.4em}$A=27\\sqrt{3}$[[br]]Vậy $A=27\\sqrt{3}$.[[br]]b) $B=\\sqrt{(1-\\sqrt{3})^2}-\\sqrt{(1+\\sqrt{3})^2}$[[br]]\\hspace*{1.4em}$B=|1-\\sqrt{3}|-|1+\\sqrt{3}|$[[br]]\\hspace*{1.4em}Vì $1<\\sqrt{3}$ nên $1-\\sqrt{3}<0$ và $1+\\sqrt{3}>0$.[[br]]\\hspace*{1.4em}$B=(\\sqrt{3}-1)-(1+\\sqrt{3})$[[br]]\\hspace*{1.4em}$B=\\sqrt{3}-1-1-\\sqrt{3}$[[br]]\\hspace*{1.4em}$B=-2$[[br]]Vậy $B=-2$.",
+          "statement": "Tính giá trị của các biểu thức sau:[[br]]a) [NB] $A=2\\sqrt{48}+4\\sqrt{27}+\\sqrt{75}+2\\sqrt{3}$ \\textit{(Đề học kì I, THCS Marie Curie, 2024--2025)}[[br]]b) [NB] $B=\\sqrt{(1-\\sqrt{3})^2}-\\sqrt{(1+\\sqrt{3})^2}$ \\textit{(Đề cuối kì I, Phòng GD\\&ĐT Quốc Oai, 2024--2025)}[[br]](Điền vào chỗ chấm để hoàn thành bài giải, làm đủ các bước như Ví dụ 1.)[[br]]\\textbf{a)} $A=2\\sqrt{48}+4\\sqrt{27}+\\sqrt{75}+2\\sqrt{3}$[[br]]\\hspace*{1.4em}$A=2\\cdot[[blank:1.6cm]]+4\\cdot[[blank:1.6cm]]+[[blank:1.6cm]]+2\\sqrt{3}$[[br]]\\hspace*{1.4em}$A=[[blank:4cm]]$[[br]]Vậy $A=[[blank:1.6cm]]$.[[br]]\\textbf{b)} $B=\\sqrt{(1-\\sqrt{3})^2}-\\sqrt{(1+\\sqrt{3})^2}$[[br]]\\hspace*{1.4em}$B=[[blank:1.6cm]]-[[blank:1.6cm]]$[[br]]\\hspace*{1.4em}Vì $1<\\sqrt{3}$ nên $1-\\sqrt{3}\\;[[blank:1cm]]\\;0$ và $1+\\sqrt{3}>0$.[[br]]\\hspace*{1.4em}$B=([[blank:1.6cm]])-([[blank:1.6cm]])$[[br]]\\hspace*{1.4em}$B=[[blank:4cm]]$[[br]]Vậy $B=[[blank:1.6cm]]$.",
+          "tier": "onclass",
+          "type": "problem"
+        },
+        {
+          "text": "Dạng 2. Giải phương trình chứa căn",
+          "type": "para",
+          "variant": "heading"
+        },
+        {
+          "text": "\\textbf{Ví dụ 2.} Giải phương trình $\\sqrt{4x+8}-\\sqrt{x+2}+\\dfrac{3}{2}\\sqrt{16x+32}=14$. \\textit{(Đề cuối kì I, THCS Giang Biên, 2025--2026)}[[br]]{\\sffamily\\bfseries\\color{brand}Lời giải}[[br]]\\hspace*{1.4em}Điều kiện xác định: $x\\ge [[fill:-2]]$.[[br]]\\hspace*{1.4em}Phương trình đã cho trở thành[[br]]\\hspace*{1.4em}$[[fill:2\\sqrt{x+2}]]-\\sqrt{x+2}+\\dfrac{3}{2}\\cdot[[fill:4\\sqrt{x+2}]]=14$[[br]]\\hspace*{1.4em}$[[fill:7\\sqrt{x+2}]]=14$[[br]]\\hspace*{1.4em}$\\sqrt{x+2}=[[fill:2]]$[[br]]\\hspace*{1.4em}$x+2=[[fill:4]]$[[br]]\\hspace*{1.4em}$x=[[fill:2]]$ ([[fill:thỏa mãn]] điều kiện xác định).[[br]]Vậy phương trình đã cho có nghiệm $x=[[fill:2]]$.",
+          "type": "noted",
+          "variant": "example"
+        },
+        {
+          "dang_id": "D13",
+          "hints": [],
+          "label": "Bài 2.",
+          "level": 1,
+          "solution": "a) $\\sqrt{x-3}=2$[[br]]\\hspace*{1.4em}Điều kiện xác định: $x\\ge 3$.[[br]]\\hspace*{1.4em}Bình phương hai vế không âm, ta được $x-3=4$.[[br]]\\hspace*{1.4em}$x=7$ (thỏa mãn điều kiện xác định).[[br]]Vậy phương trình có nghiệm $x=7$.[[br]]b) $\\sqrt{x^2+4x+4}=3$[[br]]\\hspace*{1.4em}$\\sqrt{(x+2)^2}=3$[[br]]\\hspace*{1.4em}$|x+2|=3$[[br]]\\hspace*{1.4em}Trường hợp 1: $x+2=3$[[br]]\\hspace*{2.8em}$x=1$[[br]]\\hspace*{1.4em}Trường hợp 2: $x+2=-3$[[br]]\\hspace*{2.8em}$x=-5$[[br]]Vậy $x\\in\\{1;-5\\}$.",
+          "statement": "Giải các phương trình sau:[[br]]a) [NB] $\\sqrt{x-3}=2$ \\textit{(Đề học kì I, THCS Marie Curie, 2024--2025)}[[br]]b) [NB] $\\sqrt{x^2+4x+4}=3$ \\textit{(Đề học kì I, THCS Ngô Sĩ Liên, 2024--2025)}[[br]](Điền vào chỗ chấm để hoàn thành bài giải, làm đủ các bước như Ví dụ 2.)[[br]]\\textbf{a)} $\\sqrt{x-3}=2$[[br]]\\hspace*{1.4em}Điều kiện xác định: $x\\ge [[blank:1.6cm]]$.[[br]]\\hspace*{1.4em}Bình phương hai vế không âm, ta được $x-3=[[blank:1.6cm]]$.[[br]]\\hspace*{1.4em}$x=[[blank:1.6cm]]$ ([[blank:1.6cm]] điều kiện xác định).[[br]]Vậy phương trình có nghiệm $x=[[blank:1.6cm]]$.[[br]]\\textbf{b)} $\\sqrt{x^2+4x+4}=3$[[br]]\\hspace*{1.4em}$\\sqrt{([[blank:1.6cm]])^2}=3$[[br]]\\hspace*{1.4em}$[[blank:1.6cm]]=3$[[br]]\\hspace*{1.4em}Trường hợp 1: $[[blank:1.6cm]]=3$[[br]]\\hspace*{2.8em}$x=[[blank:1.6cm]]$[[br]]\\hspace*{1.4em}Trường hợp 2: $[[blank:1.6cm]]=-3$[[br]]\\hspace*{2.8em}$x=[[blank:1.6cm]]$[[br]]Vậy $x\\in\\{[[blank:1.6cm]]\\}$.",
+          "tier": "onclass",
+          "type": "problem"
+        },
+        {
+          "text": "Dạng 3. Rút gọn biểu thức chứa căn và câu hỏi phụ",
+          "type": "para",
+          "variant": "heading"
+        },
+        {
+          "text": "\\textbf{Ví dụ 3.} Cho hai biểu thức $A=\\dfrac{\\sqrt{x}+4}{\\sqrt{x}}$ và $B=\\dfrac{2}{\\sqrt{x}+2}+\\dfrac{x+4}{x-4}$ với $x>0$, $x\\ne4$.[[br]]1) Tính giá trị của biểu thức $A$ khi $x=9$.[[br]]2) Chứng minh $B=\\dfrac{\\sqrt{x}}{\\sqrt{x}-2}$.[[br]]3) Đặt $P=A\\cdot B$. Tìm các giá trị của $x$ để $P=3$. \\textit{(Đề học kì I, THCS Nhật Tân, 2024--2025)}[[br]]{\\sffamily\\bfseries\\color{brand}Lời giải}[[br]]1) Thay $x=9$ ([[fill:thỏa mãn]] điều kiện) vào $A$, ta được[[br]]\\hspace*{1.4em}$A=\\dfrac{\\sqrt{9}+4}{\\sqrt{9}}=\\dfrac{[[fill:3]]+4}{[[fill:3]]}=[[fill:\\dfrac{7}{3}]]$.[[br]]Vậy khi $x=9$ thì $A=[[fill:\\dfrac{7}{3}]]$.[[br]]2) Với $x>0$, $x\\ne4$, ta có[[br]]\\hspace*{1.4em}$B=\\dfrac{2}{\\sqrt{x}+2}+\\dfrac{x+4}{(\\sqrt{x}-2)(\\sqrt{x}+2)}$[[br]]\\hspace*{1.4em}$B=\\dfrac{[[fill:2(\\sqrt{x}-2)]]+x+4}{(\\sqrt{x}-2)(\\sqrt{x}+2)}$[[br]]\\hspace*{1.4em}$B=\\dfrac{[[fill:x+2\\sqrt{x}]]}{(\\sqrt{x}-2)(\\sqrt{x}+2)}$[[br]]\\hspace*{1.4em}$B=\\dfrac{[[fill:\\sqrt{x}(\\sqrt{x}+2)]]}{(\\sqrt{x}-2)(\\sqrt{x}+2)}$[[br]]\\hspace*{1.4em}$B=\\dfrac{\\sqrt{x}}{\\sqrt{x}-2}$.[[br]]3) Với $x>0$, $x\\ne4$, ta có[[br]]\\hspace*{1.4em}$P=A\\cdot B=\\dfrac{\\sqrt{x}+4}{\\sqrt{x}}\\cdot\\dfrac{\\sqrt{x}}{\\sqrt{x}-2}=[[fill:\\dfrac{\\sqrt{x}+4}{\\sqrt{x}-2}]]$.[[br]]\\hspace*{1.4em}Để $P=3$ thì $[[fill:\\dfrac{\\sqrt{x}+4}{\\sqrt{x}-2}]]=3$[[br]]\\hspace*{1.4em}$\\sqrt{x}+4=[[fill:3(\\sqrt{x}-2)]]$[[br]]\\hspace*{1.4em}$\\sqrt{x}+4=[[fill:3\\sqrt{x}-6]]$[[br]]\\hspace*{1.4em}$[[fill:2\\sqrt{x}]]=10$[[br]]\\hspace*{1.4em}$\\sqrt{x}=[[fill:5]]$[[br]]\\hspace*{1.4em}$x=[[fill:25]]$ ([[fill:thỏa mãn]] điều kiện).[[br]]Vậy $x=[[fill:25]]$.",
+          "type": "noted",
+          "variant": "example"
+        },
+        {
+          "dang_id": "D15",
+          "hints": [],
+          "label": "Bài 3.",
+          "level": 1,
+          "solution": "1) Thay $x=4$ (thỏa mãn điều kiện) vào $A$, ta được[[br]]\\hspace*{1.4em}$A=\\dfrac{2\\sqrt{4}-1}{\\sqrt{4}+1}=\\dfrac{2\\cdot 2-1}{2+1}=1$.[[br]]Vậy tại $x=4$ thì $A=1$.[[br]]2) Với $x\\ge0$, $x\\ne1$, ta có[[br]]\\hspace*{1.4em}$B=\\dfrac{2\\sqrt{x}+5}{\\sqrt{x}+1}-\\dfrac{\\sqrt{x}}{\\sqrt{x}-1}+\\dfrac{6}{(\\sqrt{x}-1)(\\sqrt{x}+1)}$[[br]]\\hspace*{1.4em}$B=\\dfrac{(2\\sqrt{x}+5)(\\sqrt{x}-1)-\\sqrt{x}(\\sqrt{x}+1)+6}{(\\sqrt{x}-1)(\\sqrt{x}+1)}$[[br]]\\hspace*{1.4em}$B=\\dfrac{2x+3\\sqrt{x}-5-x-\\sqrt{x}+6}{(\\sqrt{x}-1)(\\sqrt{x}+1)}$[[br]]\\hspace*{1.4em}$B=\\dfrac{x+2\\sqrt{x}+1}{(\\sqrt{x}-1)(\\sqrt{x}+1)}$[[br]]\\hspace*{1.4em}$B=\\dfrac{(\\sqrt{x}+1)^2}{(\\sqrt{x}-1)(\\sqrt{x}+1)}$[[br]]\\hspace*{1.4em}$B=\\dfrac{\\sqrt{x}+1}{\\sqrt{x}-1}$.[[br]]3) Với $x\\ge0$, $x\\ne1$, ta có[[br]]\\hspace*{1.4em}$P=A\\cdot B=\\dfrac{2\\sqrt{x}-1}{\\sqrt{x}+1}\\cdot\\dfrac{\\sqrt{x}+1}{\\sqrt{x}-1}=\\dfrac{2\\sqrt{x}-1}{\\sqrt{x}-1}$.[[br]]\\hspace*{1.4em}Để $P=\\dfrac{9}{4}$ thì $\\dfrac{2\\sqrt{x}-1}{\\sqrt{x}-1}=\\dfrac{9}{4}$[[br]]\\hspace*{1.4em}$4(2\\sqrt{x}-1)=9(\\sqrt{x}-1)$[[br]]\\hspace*{1.4em}$8\\sqrt{x}-4=9\\sqrt{x}-9$[[br]]\\hspace*{1.4em}$\\sqrt{x}=5$[[br]]\\hspace*{1.4em}$x=25$ (thỏa mãn điều kiện).[[br]]Vậy $x=25$.",
+          "statement": "Cho hai biểu thức $A=\\dfrac{2\\sqrt{x}-1}{\\sqrt{x}+1}$ và $B=\\dfrac{2\\sqrt{x}+5}{\\sqrt{x}+1}-\\dfrac{\\sqrt{x}}{\\sqrt{x}-1}+\\dfrac{6}{x-1}$ với $x\\ge0$, $x\\ne1$.[[br]]1) [NB] Tìm giá trị của $A$ tại $x=4$.[[br]]2) [NB] Chứng minh $B=\\dfrac{\\sqrt{x}+1}{\\sqrt{x}-1}$.[[br]]3) [NB] Đặt $P=A\\cdot B$. Tìm tất cả các giá trị của $x$ thỏa mãn $P=\\dfrac{9}{4}$. \\textit{(Đề học kì I, THCS Nguyễn Trường Tộ, 2025--2026)}[[br]](Điền vào chỗ chấm để hoàn thành bài giải, làm đủ các bước như Ví dụ 3.)[[br]]1) Thay $x=4$ ([[blank:1.6cm]] điều kiện) vào $A$, ta được[[br]]\\hspace*{1.4em}$A=\\dfrac{[[blank:1.6cm]]}{2+1}=[[blank:1.6cm]]$.[[br]]Vậy tại $x=4$ thì $A=[[blank:1.6cm]]$.[[br]]2) Với $x\\ge0$, $x\\ne1$, ta có[[br]]\\hspace*{1.4em}$B=\\dfrac{2\\sqrt{x}+5}{\\sqrt{x}+1}-\\dfrac{\\sqrt{x}}{\\sqrt{x}-1}+\\dfrac{6}{[[blank:4cm]]}$[[br]]\\hspace*{1.4em}$B=\\dfrac{[[blank:4cm]]-\\sqrt{x}(\\sqrt{x}+1)+6}{(\\sqrt{x}-1)(\\sqrt{x}+1)}$[[br]]\\hspace*{1.4em}$B=\\dfrac{[[blank:4cm]]}{(\\sqrt{x}-1)(\\sqrt{x}+1)}$[[br]]\\hspace*{1.4em}$B=\\dfrac{([[blank:1.6cm]])^2}{(\\sqrt{x}-1)(\\sqrt{x}+1)}$[[br]]\\hspace*{1.4em}$B=\\dfrac{\\sqrt{x}+1}{\\sqrt{x}-1}$.[[br]]3) Với $x\\ge0$, $x\\ne1$, ta có[[br]]\\hspace*{1.4em}$P=A\\cdot B=\\dfrac{2\\sqrt{x}-1}{\\sqrt{x}+1}\\cdot\\dfrac{\\sqrt{x}+1}{\\sqrt{x}-1}=[[blank:1.6cm]]$.[[br]]\\hspace*{1.4em}Để $P=\\dfrac{9}{4}$ thì $\\dfrac{[[blank:1.6cm]]}{\\sqrt{x}-1}=\\dfrac{9}{4}$[[br]]\\hspace*{1.4em}$4(2\\sqrt{x}-1)=[[blank:4cm]]$[[br]]\\hspace*{1.4em}$8\\sqrt{x}-4=9\\sqrt{x}-9$[[br]]\\hspace*{1.4em}$\\sqrt{x}=[[blank:1.6cm]]$[[br]]\\hspace*{1.4em}$x=[[blank:1.6cm]]$ ([[blank:1.6cm]] điều kiện).[[br]]Vậy $x=[[blank:1.6cm]]$.",
+          "tier": "onclass",
+          "type": "problem"
+        },
+        {
+          "dang_id": "D16",
+          "hints": [],
+          "label": "Bài 4.",
+          "level": 1,
+          "solution": "1) Thay $x=25$ (thỏa mãn điều kiện) vào $A$, ta được[[br]]\\hspace*{1.4em}$A=\\dfrac{5-2}{5-1}=\\dfrac{3}{4}$.[[br]]Vậy với $x=25$ thì $A=\\dfrac{3}{4}$.[[br]]2) Với $x\\ge0$, $x\\ne1$, ta có[[br]]\\hspace*{1.4em}$B=\\dfrac{x-5}{(\\sqrt{x}-1)(\\sqrt{x}+1)}-\\dfrac{2}{\\sqrt{x}+1}+\\dfrac{4}{\\sqrt{x}-1}$[[br]]\\hspace*{1.4em}$B=\\dfrac{x-5-2(\\sqrt{x}-1)+4(\\sqrt{x}+1)}{(\\sqrt{x}-1)(\\sqrt{x}+1)}$[[br]]\\hspace*{1.4em}$B=\\dfrac{x+2\\sqrt{x}+1}{(\\sqrt{x}-1)(\\sqrt{x}+1)}$[[br]]\\hspace*{1.4em}$B=\\dfrac{(\\sqrt{x}+1)^2}{(\\sqrt{x}-1)(\\sqrt{x}+1)}$[[br]]\\hspace*{1.4em}$B=\\dfrac{\\sqrt{x}+1}{\\sqrt{x}-1}$.[[br]]3) Với $x\\ge0$, $x\\ne1$, ta có[[br]]\\hspace*{1.4em}$P=\\dfrac{A}{B}=\\dfrac{\\sqrt{x}-2}{\\sqrt{x}-1}\\cdot\\dfrac{\\sqrt{x}-1}{\\sqrt{x}+1}=\\dfrac{\\sqrt{x}-2}{\\sqrt{x}+1}$.[[br]]\\hspace*{1.4em}Để $P<\\dfrac{1}{2}$ thì $\\dfrac{\\sqrt{x}-2}{\\sqrt{x}+1}-\\dfrac{1}{2}<0$[[br]]\\hspace*{1.4em}$\\dfrac{2(\\sqrt{x}-2)-(\\sqrt{x}+1)}{2(\\sqrt{x}+1)}<0$[[br]]\\hspace*{1.4em}$\\dfrac{\\sqrt{x}-5}{2(\\sqrt{x}+1)}<0$.[[br]]\\hspace*{1.4em}Vì $2(\\sqrt{x}+1)>0$ với mọi $x\\ge0$ nên $\\sqrt{x}-5<0$[[br]]\\hspace*{1.4em}$\\sqrt{x}<5$[[br]]\\hspace*{1.4em}$x<25$.[[br]]\\hspace*{1.4em}Kết hợp với điều kiện $x\\ge0$, $x\\ne1$, ta được $0\\le x<25$, $x\\ne1$.[[br]]Vậy số nguyên tố lớn nhất cần tìm là $x=23$.",
+          "statement": "Cho hai biểu thức $A=\\dfrac{\\sqrt{x}-2}{\\sqrt{x}-1}$ và $B=\\dfrac{x-5}{x-1}-\\dfrac{2}{\\sqrt{x}+1}+\\dfrac{4}{\\sqrt{x}-1}$ với $x\\ge0$, $x\\ne1$.[[br]]1) [NB] Tính giá trị của biểu thức $A$ tại $x=25$.[[br]]2) [NB] Chứng minh rằng $B=\\dfrac{\\sqrt{x}+1}{\\sqrt{x}-1}$.[[br]]3) [NB] Đặt $P=\\dfrac{A}{B}$. Tìm giá trị $x$ là số nguyên tố lớn nhất để $P<\\dfrac{1}{2}$. \\textit{(Đề cuối kì I, THCS Hát Môn, 2025--2026)}[[br]](Điền vào chỗ chấm để hoàn thành bài giải, ý 1 và ý 2 làm như Ví dụ 3.)[[br]]1) Thay $x=25$ ([[blank:1.6cm]] điều kiện) vào $A$, ta được[[br]]\\hspace*{1.4em}$A=\\dfrac{[[blank:1.6cm]]-2}{[[blank:1.6cm]]-1}=[[blank:1.6cm]]$.[[br]]Vậy với $x=25$ thì $A=[[blank:1.6cm]]$.[[br]]2) Với $x\\ge0$, $x\\ne1$, ta có[[br]]\\hspace*{1.4em}$B=\\dfrac{x-5}{(\\sqrt{x}-1)(\\sqrt{x}+1)}-\\dfrac{2}{\\sqrt{x}+1}+\\dfrac{4}{\\sqrt{x}-1}$[[br]]\\hspace*{1.4em}$B=\\dfrac{x-5-2([[blank:1.6cm]])+4([[blank:1.6cm]])}{(\\sqrt{x}-1)(\\sqrt{x}+1)}$[[br]]\\hspace*{1.4em}$B=\\dfrac{[[blank:4cm]]}{(\\sqrt{x}-1)(\\sqrt{x}+1)}$[[br]]\\hspace*{1.4em}$B=\\dfrac{([[blank:1.6cm]])^2}{(\\sqrt{x}-1)(\\sqrt{x}+1)}$[[br]]\\hspace*{1.4em}$B=\\dfrac{\\sqrt{x}+1}{\\sqrt{x}-1}$.[[br]]3) Với $x\\ge0$, $x\\ne1$, ta có[[br]]\\hspace*{1.4em}$P=\\dfrac{A}{B}=\\dfrac{\\sqrt{x}-2}{\\sqrt{x}-1}\\cdot[[blank:1.6cm]]=\\dfrac{\\sqrt{x}-2}{\\sqrt{x}+1}$.[[br]]\\hspace*{1.4em}Để $P<\\dfrac{1}{2}$ thì $\\dfrac{\\sqrt{x}-2}{\\sqrt{x}+1}-[[blank:1.6cm]]<0$[[br]]\\hspace*{1.4em}$\\dfrac{2(\\sqrt{x}-2)-([[blank:1.6cm]])}{2(\\sqrt{x}+1)}<0$[[br]]\\hspace*{1.4em}$\\dfrac{[[blank:1.6cm]]}{2(\\sqrt{x}+1)}<0$.[[br]]\\hspace*{1.4em}Vì $[[blank:4cm]]>0$ với mọi $x\\ge0$ nên $[[blank:1.6cm]]<0$[[br]]\\hspace*{1.4em}$\\sqrt{x}<[[blank:1.6cm]]$[[br]]\\hspace*{1.4em}$x<[[blank:1.6cm]]$.[[br]]\\hspace*{1.4em}Kết hợp với điều kiện $x\\ge0$, $x\\ne1$, ta được [[blank:4cm]].[[br]]Vậy số nguyên tố lớn nhất cần tìm là $x=[[blank:1.6cm]]$.",
+          "tier": "onclass",
+          "type": "problem"
+        },
+        {
+          "text": "Dạng 4. Giải bài toán bằng cách lập hệ phương trình, lập phương trình",
+          "type": "para",
+          "variant": "heading"
+        },
+        {
+          "text": "\\textbf{Ví dụ 4.} Một nhà hàng buffet có giá vé cho người lớn và giá vé cho \\mbox{trẻ em} theo bảng giá quy định. Gia đình ông Hải gồm hai người lớn và bốn \\mbox{trẻ em} thanh toán hết $1\\,400\\,000$ đồng, gia đình chị Hương gồm ba người lớn và hai \\mbox{trẻ em} thanh toán hết $1\\,300\\,000$ đồng. Hỏi giá vé buffet của mỗi người lớn và mỗi \\mbox{trẻ em} là bao nhiêu? \\textit{(Đề cuối kì I, THCS và THPT M.V. Lômônôxốp, 2024--2025)}[[br]]{\\sffamily\\bfseries\\color{brand}Phân tích.} Đề hỏi giá vé một người lớn và một \\mbox{trẻ em}. Mỗi gia đình cho một phương trình về số tiền.[[br]]{\\sffamily\\bfseries\\color{brand}Lời giải}[[br]]\\textbf{Bước 1.} Gọi giá vé buffet của mỗi người lớn là $x$ (nghìn đồng) và của mỗi trẻ em là $y$ (nghìn đồng), điều kiện $x>0$, $y>0$.[[br]]\\hspace*{1.4em}Gia đình ông Hải gồm $2$ người lớn và $4$ trẻ em thanh toán hết $1\\,400$ nghìn đồng nên ta có phương trình $[[fill:2x+4y=1400]]$.[[br]]\\hspace*{1.4em}Gia đình chị Hương gồm $3$ người lớn và $2$ trẻ em thanh toán hết $1\\,300$ nghìn đồng nên ta có phương trình $[[fill:3x+2y=1300]]$.[[br]]\\hspace*{1.4em}Ta có hệ phương trình $\\begin{cases}2x+4y=1400\\\\3x+2y=1300\\end{cases}$.[[br]]\\textbf{Bước 2.} Nhân hai vế của phương trình thứ hai với $2$, ta được hệ $\\begin{cases}2x+4y=1400\\\\6x+4y=[[fill:2600]]\\end{cases}$.[[br]]\\hspace*{1.4em}Trừ từng vế của phương trình thứ hai cho phương trình thứ nhất, ta được $4x=[[fill:1200]]$[[br]]\\hspace*{1.4em}$x=300$.[[br]]\\hspace*{1.4em}Thay $x=300$ vào phương trình thứ nhất, ta được $2\\cdot 300+4y=1400$[[br]]\\hspace*{1.4em}$4y=[[fill:800]]$, nên $y=[[fill:200]]$.[[br]]\\textbf{Bước 3.} Giá trị $x=300$ và $y=[[fill:200]]$ [[fill:thỏa mãn]] điều kiện.[[br]]Vậy giá vé buffet của mỗi người lớn là $[[fill:300\\,000]]$ đồng và của mỗi trẻ em là $[[fill:200\\,000]]$ đồng.",
+          "type": "noted",
+          "variant": "example"
+        },
+        {
+          "dang_id": "D04",
+          "hints": [],
+          "label": "Bài 5.",
+          "level": 1,
+          "solution": "\\textbf{Bước 1.} Gọi số vé loại I bán ra là $x$ (vé) và số vé loại II bán ra là $y$ (vé), điều kiện $x, y \\in \\mathbb{N}^*$, $x<500$, $y<500$.[[br]]\\hspace*{1.4em}Tổng số vé bán ra là $500$ vé nên ta có phương trình $x+y=500$.[[br]]\\hspace*{1.4em}Số tiền thu được từ vé loại I là $100x$ (nghìn đồng), từ vé loại II là $75y$ (nghìn đồng).[[br]]\\hspace*{1.4em}Tổng số tiền thu được là $44\\,500$ nghìn đồng nên ta có phương trình $100x+75y=44\\,500$.[[br]]\\hspace*{1.4em}Ta có hệ phương trình $\\begin{cases}x+y=500\\\\100x+75y=44\\,500\\end{cases}$.[[br]]\\textbf{Bước 2.} Nhân hai vế của phương trình thứ nhất với $75$, ta được hệ $\\begin{cases}75x+75y=37\\,500\\\\100x+75y=44\\,500\\end{cases}$.[[br]]\\hspace*{1.4em}Trừ từng vế của phương trình thứ hai cho phương trình thứ nhất, ta được $25x=7\\,000$[[br]]\\hspace*{1.4em}$x=280$.[[br]]\\hspace*{1.4em}Thay $x=280$ vào phương trình $x+y=500$, ta được $y=220$.[[br]]\\textbf{Bước 3.} Các giá trị $x=280$ và $y=220$ thỏa mãn điều kiện.[[br]]Vậy ban tổ chức đã bán được $280$ vé loại I và $220$ vé loại II.",
+          "statement": "Tại một buổi biểu diễn nhằm gây quỹ từ thiện, ban tổ chức đã bán được $500$ vé. Trong đó có hai loại vé: vé loại I giá $100\\,000$ đồng; vé loại II giá $75\\,000$ đồng. Tổng số tiền thu được từ bán vé là $44\\,500\\,000$ đồng. Tính số vé bán ra của mỗi loại. \\textit{(Đề cuối kì I, THCS Hoàng Liệt, 2025--2026)}[[br]](Điền vào chỗ chấm để hoàn thành bài giải, làm đủ các bước như Ví dụ 4.)\\par\\nopagebreak\\smallskip\\begin{center}\\footnotesize\\renewcommand\\arraystretch{1.5}\\begin{tabular}{|l|c|c|c|}\\hline & \\textbf{Số vé} & \\textbf{Giá một vé (nghìn đồng)} & \\textbf{Số tiền (nghìn đồng)} \\\\ \\hline Loại I & $x$ & $100$ & [[blank:1.6cm]] \\\\ \\hline Loại II & $y$ & [[blank:1.6cm]] & [[blank:1.6cm]] \\\\ \\hline Tổng & [[blank:1.6cm]] & --- & [[blank:1.6cm]] \\\\ \\hline \\end{tabular}\\end{center}\\smallskip[NB] \\textbf{Bước 1.} Gọi số vé loại I bán ra là $x$ (vé) và số vé loại II bán ra là $y$ (vé), điều kiện $x, y \\in \\mathbb{N}^*$, $x<500$, $y<500$.[[br]]\\hspace*{1.4em}Tổng số vé bán ra là $500$ vé nên ta có phương trình $[[blank:4cm]]$.[[br]]\\hspace*{1.4em}Số tiền thu được từ vé loại I là $[[blank:1.6cm]]$ (nghìn đồng), từ vé loại II là $[[blank:1.6cm]]$ (nghìn đồng).[[br]]\\hspace*{1.4em}Tổng số tiền thu được là $44\\,500$ nghìn đồng nên ta có phương trình $[[blank:4cm]]$.[[br]]\\hspace*{1.4em}Ta có hệ phương trình $\\begin{cases}[[blank:4cm]]\\\\[[blank:4cm]]\\end{cases}$.[[br]][NB] \\textbf{Bước 2.} Nhân hai vế của phương trình thứ nhất với $75$, ta được hệ $\\begin{cases}75x+75y=[[blank:1.6cm]]\\\\100x+75y=44\\,500\\end{cases}$.[[br]]\\hspace*{1.4em}Trừ từng vế của phương trình thứ hai cho phương trình thứ nhất, ta được $[[blank:1.6cm]]=7\\,000$[[br]]\\hspace*{1.4em}$x=[[blank:1.6cm]]$.[[br]]\\hspace*{1.4em}Thay $x=[[blank:1.6cm]]$ vào phương trình $x+y=500$, ta được $y=[[blank:1.6cm]]$.[[br]][NB] \\textbf{Bước 3.} Các giá trị $x$, $y$ vừa tìm được [[blank:1.6cm]] điều kiện.[[br]]Vậy ban tổ chức đã bán được $[[blank:1.6cm]]$ vé loại I và $[[blank:1.6cm]]$ vé loại II.",
+          "tier": "onclass",
+          "type": "problem"
+        },
+        {
+          "text": "\\textbf{Ví dụ 5.} Một xe máy đi từ A đến B với vận tốc $45$ km/h, lúc đi từ B về A người đó đi với vận tốc nhanh hơn vận tốc ban đầu là $5$ km/h nên thời gian về ít hơn thời gian đi là $12$ phút. Tính quãng đường AB. \\textit{(Đề cuối kì I, THCS Lý Sơn, 2025--2026)}[[br]]{\\sffamily\\bfseries\\color{brand}Phân tích}[[br]]Đề hỏi độ dài quãng đường AB. Chọn ẩn là quãng đường AB: $x$ (km). Thời gian biểu diễn qua $x$ và vận tốc theo công thức $t=\\dfrac{s}{v}$. Quan hệ: thời gian về ít hơn thời gian đi là $12$ phút $=\\dfrac{1}{5}$ giờ.\\par\\nopagebreak\\smallskip\\begin{center}\\footnotesize\\renewcommand\\arraystretch{1.5}\\begin{tabular}{|l|c|c|c|}\\hline & \\textbf{Quãng đường (km)} & \\textbf{Vận tốc (km/h)} & \\textbf{Thời gian (giờ)} \\\\ \\hline Lúc đi & $x$ & $45$ & $\\dfrac{x}{45}$ \\\\ \\hline Lúc về & $x$ & $50$ & $\\dfrac{x}{50}$ \\\\ \\hline \\end{tabular}\\end{center}\\smallskip{\\sffamily\\bfseries\\color{brand}Lời giải}[[br]]\\textbf{Bước 1.} Gọi độ dài quãng đường AB là $x$ (km), điều kiện $x>0$.[[br]]\\hspace*{1.4em}Vận tốc lúc về là $45+5=50$ (km/h).[[br]]\\hspace*{1.4em}Thời gian lúc đi là $\\dfrac{x}{45}$ (giờ), thời gian lúc về là $[[fill:\\dfrac{x}{50}]]$ (giờ).[[br]]\\hspace*{1.4em}Đổi $12$ phút $=[[fill:\\dfrac{1}{5}]]$ giờ.[[br]]\\hspace*{1.4em}Vì thời gian về ít hơn thời gian đi là $[[fill:\\dfrac{1}{5}]]$ giờ nên ta có phương trình $[[fill:\\dfrac{x}{45}-\\dfrac{x}{50}=\\dfrac{1}{5}]]$.[[br]]\\textbf{Bước 2.} Nhân hai vế của phương trình với $450$, ta được $[[fill:10x-9x]]=[[fill:90]]$[[br]]\\hspace*{1.4em}$x=[[fill:90]]$.[[br]]\\textbf{Bước 3.} Giá trị $x=[[fill:90]]$ [[fill:thỏa mãn]] điều kiện.[[br]]Vậy quãng đường AB dài $[[fill:90]]$ km.",
+          "type": "noted",
+          "variant": "example"
+        },
+        {
+          "dang_id": "D04",
+          "hints": [],
+          "label": "Bài 6.",
+          "level": 1,
+          "solution": "\\textbf{Bước 1.} Gọi độ dài quãng đường AB là $x$ (km), điều kiện $x>0$.[[br]]\\hspace*{1.4em}Thời gian lúc đi là $\\dfrac{x}{15}$ (giờ), thời gian lúc về là $\\dfrac{x}{12}$ (giờ).[[br]]\\hspace*{1.4em}Đổi $45$ phút $=\\dfrac{3}{4}$ giờ.[[br]]\\hspace*{1.4em}Vì thời gian về nhiều hơn thời gian đi là $45$ phút nên ta có phương trình $\\dfrac{x}{12}-\\dfrac{x}{15}=\\dfrac{3}{4}$.[[br]]\\textbf{Bước 2.} Nhân hai vế của phương trình với $60$, ta được $5x-4x=45$[[br]]\\hspace*{1.4em}$x=45$.[[br]]\\textbf{Bước 3.} Giá trị $x=45$ thỏa mãn điều kiện.[[br]]Vậy quãng đường AB dài $45$ km.",
+          "statement": "Một người đi xe đạp từ A đến B với tốc độ trung bình $15$ km/h. Lúc về người đó chỉ đi với tốc độ $12$ km/h, nên thời gian về nhiều hơn thời gian đi là $45$ phút. Tính quãng đường AB. \\textit{(Đề cuối kì I, THCS Phúc Đồng, 2025--2026)}[[br]](Điền vào chỗ chấm để hoàn thành bài giải, làm đủ các bước như Ví dụ 5.)\\par\\nopagebreak\\smallskip\\begin{center}\\footnotesize\\renewcommand\\arraystretch{1.5}\\begin{tabular}{|l|c|c|c|}\\hline & \\textbf{Quãng đường (km)} & \\textbf{Vận tốc (km/h)} & \\textbf{Thời gian (giờ)} \\\\ \\hline Lúc đi & $x$ & $15$ & [[blank:1.6cm]] \\\\ \\hline Lúc về & $x$ & $12$ & [[blank:1.6cm]] \\\\ \\hline \\end{tabular}\\end{center}\\smallskip[NB] \\textbf{Bước 1.} Gọi độ dài quãng đường AB là $x$ (km), điều kiện $[[blank:1.6cm]]$.[[br]]\\hspace*{1.4em}Thời gian lúc đi là $[[blank:1.6cm]]$ (giờ), thời gian lúc về là $[[blank:1.6cm]]$ (giờ).[[br]]\\hspace*{1.4em}Đổi $45$ phút $= [[blank:1.6cm]]$ giờ.[[br]]\\hspace*{1.4em}Vì thời gian về nhiều hơn thời gian đi là $45$ phút nên ta có phương trình $[[blank:4cm]]$.[[br]][NB] \\textbf{Bước 2.} Nhân hai vế của phương trình với $60$, ta được $[[blank:4cm]]=45$[[br]]\\hspace*{1.4em}$x=[[blank:1.6cm]]$.[[br]][NB] \\textbf{Bước 3.} Giá trị $x$ vừa tìm được [[blank:1.6cm]] điều kiện.[[br]]Vậy quãng đường AB dài $[[blank:1.6cm]]$ km.",
+          "tier": "onclass",
+          "type": "problem"
+        }
+      ],
+      "kind": "practice1",
+      "number": 3,
+      "teacher_note": "Thời lượng dự kiến: 60 phút.[[br]]1. Dạng 1 (8 phút) — Tính giá trị biểu thức chứa căn bậc hai, mức Nhận biết.[[br]]Khi học sinh bí: Đưa thừa số nào ra ngoài dấu căn để các hạng tử đồng dạng theo $\\sqrt{3}$? Với $\\sqrt{A^2}$, cần xét dấu của biểu thức bên trong giá trị tuyệt đối như thế nào?[[br]]2. Dạng 2 (8 phút) — Giải phương trình chứa căn, mức Nhận biết.[[br]]Khi học sinh bí: Biểu thức dưới dấu căn cần thỏa mãn điều kiện gì để có nghĩa? Khi vế trái có dạng $\\sqrt{A^2}$, ta biến đổi thành biểu thức nào trước khi xét hai trường hợp?[[br]]3. Dạng 3 (22 phút) — Rút gọn biểu thức chứa căn và câu hỏi phụ, mức Nhận biết.[[br]]Khi học sinh bí: Mẫu chung của các phân thức là tích nào? Ở ý 3 của Bài 4, sau khi chuyển vế và quy đồng, mẫu $2(\\sqrt{x}+1)$ mang dấu gì?[[br]]4. Dạng 4 (22 phút) — Giải bài toán bằng cách lập hệ phương trình, lập phương trình, mức Nhận biết.[[br]]Khi học sinh bí: Đề bài hỏi đại lượng nào để chọn ẩn và đặt đơn vị, điều kiện? Ở Bài 6, $45$ phút bằng bao nhiêu phần của một giờ?",
+      "title": "Luyện tập 1 — Nhận biết"
+    },
+    {
+      "blocks": [
+        {
+          "dang_id": "D12",
+          "hints": [],
+          "label": "Bài 7.",
+          "level": 2,
+          "solution": "Ta có $\\dfrac{2}{\\sqrt{3}-1}-\\sqrt{(\\sqrt{3}-1)^2}$[[br]]\\hspace*{1.4em}$=\\dfrac{2(\\sqrt{3}+1)}{(\\sqrt{3}-1)(\\sqrt{3}+1)}-|\\sqrt{3}-1|$[[br]]\\hspace*{1.4em}$=\\dfrac{2(\\sqrt{3}+1)}{3-1}-(\\sqrt{3}-1)$ (vì $\\sqrt{3}>1$ nên $\\sqrt{3}-1>0$)[[br]]\\hspace*{1.4em}$=\\dfrac{2(\\sqrt{3}+1)}{2}-\\sqrt{3}+1$[[br]]\\hspace*{1.4em}$=\\sqrt{3}+1-\\sqrt{3}+1$[[br]]\\hspace*{1.4em}$=2$.[[br]]Vậy giá trị của biểu thức đã cho là $2$.",
+          "statement": "[TH] Tính giá trị biểu thức $\\dfrac{2}{\\sqrt{3}-1}-\\sqrt{(\\sqrt{3}-1)^2}$. \\textit{(Đề học kì I, Cụm chuyên môn số 14 Hà Nội, 2025--2026)}",
+          "tier": "onclass",
+          "type": "problem"
+        },
+        {
+          "dang_id": "D13",
+          "hints": [],
+          "label": "Bài 8.",
+          "level": 2,
+          "solution": "Điều kiện xác định: $x\\ge -1$.[[br]]Phương trình đã cho trở thành[[br]]\\hspace*{1.4em}$\\sqrt{4(x+1)}-2\\sqrt{9(x+1)}=\\sqrt{x+1}-15$[[br]]\\hspace*{1.4em}$2\\sqrt{x+1}-6\\sqrt{x+1}=\\sqrt{x+1}-15$[[br]]\\hspace*{1.4em}$2\\sqrt{x+1}-6\\sqrt{x+1}-\\sqrt{x+1}=-15$[[br]]\\hspace*{1.4em}$-5\\sqrt{x+1}=-15$[[br]]\\hspace*{1.4em}$\\sqrt{x+1}=3$.[[br]]Vì hai vế đều không âm, bình phương hai vế ta được[[br]]\\hspace*{1.4em}$x+1=9$[[br]]\\hspace*{1.4em}$x=8$ (thỏa mãn điều kiện xác định).[[br]]Vậy phương trình đã cho có nghiệm $x=8$.",
+          "statement": "[TH] Giải phương trình $\\sqrt{4x+4}-2\\sqrt{9x+9}=\\sqrt{x+1}-15$. \\textit{(Đề cuối kì I, THCS Cầu Diễn, 2025--2026)}",
+          "tier": "onclass",
+          "type": "problem"
+        },
+        {
+          "dang_id": "D15",
+          "hints": [],
+          "label": "Bài 9.",
+          "level": 2,
+          "solution": "a) Với $x\\ge 0$, $x\\ne 4$, ta có[[br]]\\hspace*{1.4em}$A=\\dfrac{\\sqrt{x}+1}{\\sqrt{x}-2}+\\dfrac{2\\sqrt{x}}{\\sqrt{x}+2}-\\dfrac{2+5\\sqrt{x}}{(\\sqrt{x}-2)(\\sqrt{x}+2)}$[[br]]\\hspace*{1.4em}$=\\dfrac{(\\sqrt{x}+1)(\\sqrt{x}+2)+2\\sqrt{x}(\\sqrt{x}-2)-(2+5\\sqrt{x})}{(\\sqrt{x}-2)(\\sqrt{x}+2)}$[[br]]\\hspace*{1.4em}$=\\dfrac{x+3\\sqrt{x}+2+2x-4\\sqrt{x}-2-5\\sqrt{x}}{(\\sqrt{x}-2)(\\sqrt{x}+2)}$[[br]]\\hspace*{1.4em}$=\\dfrac{3x-6\\sqrt{x}}{(\\sqrt{x}-2)(\\sqrt{x}+2)}$[[br]]\\hspace*{1.4em}$=\\dfrac{3\\sqrt{x}(\\sqrt{x}-2)}{(\\sqrt{x}-2)(\\sqrt{x}+2)}$[[br]]\\hspace*{1.4em}$=\\dfrac{3\\sqrt{x}}{\\sqrt{x}+2}$.[[br]]Vậy $A=\\dfrac{3\\sqrt{x}}{\\sqrt{x}+2}$ với $x\\ge 0$, $x\\ne 4$.[[br]]b) Với $x\\ge 0$, $x\\ne 4$, để $A=\\dfrac{1}{2}$ thì[[br]]\\hspace*{1.4em}$\\dfrac{3\\sqrt{x}}{\\sqrt{x}+2}=\\dfrac{1}{2}$[[br]]\\hspace*{1.4em}$6\\sqrt{x}=\\sqrt{x}+2$[[br]]\\hspace*{1.4em}$5\\sqrt{x}=2$[[br]]\\hspace*{1.4em}$\\sqrt{x}=\\dfrac{2}{5}$[[br]]\\hspace*{1.4em}$x=\\dfrac{4}{25}$ (thỏa mãn điều kiện).[[br]]Vậy $x=\\dfrac{4}{25}$ thì $A=\\dfrac{1}{2}$.",
+          "statement": "Cho biểu thức $A=\\dfrac{\\sqrt{x}+1}{\\sqrt{x}-2}+\\dfrac{2\\sqrt{x}}{\\sqrt{x}+2}+\\dfrac{2+5\\sqrt{x}}{4-x}$ với $x\\ge0$, $x\\ne4$.[[br]]a) [TH] Rút gọn biểu thức $A$.[[br]]b) [TH] Tìm $x$ để $A=\\dfrac{1}{2}$. \\textit{(Đề cuối kì I, Phòng GD\\&ĐT Hoài Đức, 2024--2025)}",
+          "tier": "onclass",
+          "type": "problem"
+        },
+        {
+          "dang_id": "D04",
+          "hints": [],
+          "label": "Bài 10.",
+          "level": 2,
+          "solution": "\\textbf{Bước 1.} Gọi số xe cỡ lớn và số xe cỡ nhỏ của xí nghiệp lần lượt là $x$, $y$ (xe), điều kiện $x, y\\in\\mathbb{N}^*$, $x, y<20$.[[br]]\\hspace*{1.4em}Vì xí nghiệp huy động tất cả $20$ xe tải nên ta có phương trình $x+y=20$.[[br]]\\hspace*{1.4em}Khối lượng hàng hóa mà $x$ xe cỡ lớn chở là $10x$ (tấn), khối lượng hàng hóa mà $y$ xe cỡ nhỏ chở là $5y$ (tấn).[[br]]\\hspace*{1.4em}Vì xí nghiệp vận chuyển được tổng cộng $140$ tấn hàng hóa nên ta có phương trình $10x+5y=140$.[[br]]\\hspace*{1.4em}Ta có hệ phương trình $\\begin{cases}x+y=20\\\\10x+5y=140\\end{cases}$.[[br]]\\textbf{Bước 2.} Chia hai vế phương trình thứ hai cho $5$, hệ trở thành $\\begin{cases}x+y=20\\\\2x+y=28\\end{cases}$.[[br]]\\hspace*{1.4em}Trừ từng vế phương trình thứ hai cho phương trình thứ nhất, ta được $x=8$.[[br]]\\hspace*{1.4em}Thay $x=8$ vào phương trình $x+y=20$, ta được $8+y=20$[[br]]\\hspace*{1.4em}$y=12$.[[br]]\\textbf{Bước 3.} Các giá trị $x=8$ và $y=12$ đều thỏa mãn điều kiện.[[br]]Vậy xí nghiệp có $8$ xe cỡ lớn và $12$ xe cỡ nhỏ.",
+          "statement": "[TH] Giải bài toán sau bằng cách lập hệ phương trình: Trong đầu tháng 10 vừa qua, để chở hàng hóa ủng hộ đồng bào Thái Nguyên sau cơn bão số 11, một xí nghiệp đã huy động $20$ xe tải gồm hai loại: xe cỡ lớn với tải trọng $10$ tấn và xe cỡ nhỏ với tải trọng $5$ tấn tham gia vận chuyển. Do mỗi xe đều chở đủ tải trọng nên xí nghiệp đã vận chuyển được tổng cộng $140$ tấn hàng hóa. Tính số xe mỗi loại của xí nghiệp. \\textit{(Đề cuối kì I, THCS Giang Biên, 2025--2026)}",
+          "tier": "onclass",
+          "type": "problem"
+        },
+        {
+          "dang_id": "D04",
+          "hints": [],
+          "label": "Bài 11.",
+          "level": 2,
+          "solution": "\\textbf{Bước 1.} Gọi số cốc giấy mỗi giờ máy thứ nhất và máy thứ hai làm được lần lượt là $x$, $y$ (chiếc), điều kiện $x, y\\in\\mathbb{N}^*$, $x>100$.[[br]]\\hspace*{1.4em}Vì mỗi giờ máy thứ nhất làm được nhiều hơn máy thứ hai $100$ chiếc cốc giấy nên ta có phương trình $x-y=100$.[[br]]\\hspace*{1.4em}Trong $3$ giờ máy thứ nhất làm được $3x$ (chiếc), trong $4$ giờ máy thứ hai làm được $4y$ (chiếc).[[br]]\\hspace*{1.4em}Vì cả hai máy làm được $1700$ chiếc cốc giấy nên ta có phương trình $3x+4y=1700$.[[br]]\\hspace*{1.4em}Ta có hệ phương trình $\\begin{cases}x-y=100\\\\3x+4y=1700\\end{cases}$.[[br]]\\textbf{Bước 2.} Từ phương trình thứ nhất suy ra $x=y+100$.[[br]]\\hspace*{1.4em}Thế $x=y+100$ vào phương trình thứ hai, ta được $3(y+100)+4y=1700$[[br]]\\hspace*{1.4em}$3y+300+4y=1700$[[br]]\\hspace*{1.4em}$7y=1400$[[br]]\\hspace*{1.4em}$y=200$.[[br]]\\hspace*{1.4em}Thay $y=200$ vào $x=y+100$, ta được $x=300$.[[br]]\\textbf{Bước 3.} Các giá trị $x=300$ và $y=200$ đều thỏa mãn điều kiện.[[br]]Vậy mỗi giờ máy thứ nhất làm được $300$ chiếc cốc giấy, máy thứ hai làm được $200$ chiếc cốc giấy.",
+          "statement": "[TH] Giải bài toán bằng cách lập phương trình hoặc lập hệ phương trình: Trong một xưởng có hai chiếc máy sản xuất cốc giấy. Mỗi giờ máy thứ nhất làm được nhiều hơn máy thứ hai $100$ chiếc cốc giấy. Nếu máy thứ nhất làm trong $3$ giờ và máy thứ hai làm trong $4$ giờ thì cả hai máy làm được $1700$ cốc giấy. Hỏi mỗi giờ mỗi máy làm được bao nhiêu chiếc cốc giấy? \\textit{(Đề học kì I, Phòng Văn hóa -- Xã hội phường Ba Đình, 2025--2026)}",
+          "tier": "onclass",
+          "type": "problem"
+        },
+        {
+          "text": "\\textbf{Ví dụ 6.} Trong một cuộc thi Olympic, ban tổ chức quy định mỗi thí sinh phải trả lời hết $20$ câu hỏi, mỗi câu trả lời đúng được cộng $5$ điểm, mỗi câu trả lời sai bị trừ $2$ điểm. Thí sinh được ít nhất $30$ điểm mới được vào vòng tiếp theo. Hỏi thí sinh cần trả lời đúng ít nhất bao nhiêu câu thì được vào vòng tiếp theo? \\textit{(Đề học kì I, Cụm chuyên môn số 14 Hà Nội, 2025--2026)}[[br]]{\\sffamily\\bfseries\\color{brand}Phân tích}[[br]]Đề hỏi số câu trả lời đúng ít nhất để vào vòng tiếp theo nên chọn ẩn là số câu trả lời đúng $x$. Số câu trả lời sai biểu diễn qua $x$ là $20-x$. Cụm từ \\textquotedblleft được ít nhất $30$ điểm\\textquotedblright{} cho quan hệ bất đẳng thức tổng số điểm lớn hơn hoặc bằng $30$.[[br]]{\\sffamily\\bfseries\\color{brand}Lời giải}[[br]]\\textbf{Bước 1.} Gọi số câu thí sinh trả lời đúng là $x$ (câu), điều kiện $x\\in\\mathbb{N}$, $x\\le 20$.[[br]]\\hspace*{1.4em}Số câu trả lời sai là $[[fill:20-x]]$ (câu).[[br]]\\hspace*{1.4em}Tổng số điểm thí sinh đạt được là $5x-2([[fill:20-x]])$ (điểm).[[br]]\\hspace*{1.4em}Vì thí sinh được ít nhất $30$ điểm nên ta có bất phương trình $[[fill:5x-2(20-x)]][[fill:\\ge]]30$.[[br]]\\textbf{Bước 2.} Giải bất phương trình:[[br]]\\hspace*{1.4em}$5x-40+[[fill:2x]]\\ge 30$[[br]]\\hspace*{1.4em}$[[fill:7x]]\\ge [[fill:70]]$[[br]]\\hspace*{1.4em}$x\\ge [[fill:10]]$.[[br]]\\textbf{Bước 3.} Kết hợp điều kiện $x\\in\\mathbb{N}$, $x\\le 20$, giá trị nhỏ nhất của $x$ là $[[fill:10]]$.[[br]]Vậy thí sinh cần trả lời đúng ít nhất $[[fill:10]]$ câu thì được vào vòng tiếp theo.",
+          "type": "noted",
+          "variant": "example"
+        },
+        {
+          "dang_id": "D09",
+          "hints": [],
+          "label": "Bài 12.",
+          "level": 2,
+          "solution": "\\textbf{Bước 1.} Gọi số tháng gia đình Tùng trả góp là $x$ (tháng), điều kiện $x\\in\\mathbb{N}^*$.[[br]]\\hspace*{1.4em}Sau $x$ tháng, tổng số tiền gia đình Tùng có được để trả mua căn hộ là $300+20x$ (triệu đồng).[[br]]\\hspace*{1.4em}Để trả hết số tiền mua căn hộ thì $300+20x\\ge 790$.[[br]]\\textbf{Bước 2.} Giải bất phương trình:[[br]]\\hspace*{1.4em}$20x\\ge 790-300$[[br]]\\hspace*{1.4em}$20x\\ge 490$[[br]]\\hspace*{1.4em}$x\\ge 24{,}5$.[[br]]\\textbf{Bước 3.} Vì $x\\in\\mathbb{N}^*$ nên giá trị nhỏ nhất của $x$ là $25$.[[br]]Vậy sau ít nhất $25$ tháng gia đình Tùng có thể trả hết số tiền mua căn hộ đó.",
+          "statement": "[TH] Giải bài toán bằng cách lập bất phương trình: Trong đợt bán nhà giá rẻ cho người lao động có thu nhập thấp, nhà bạn Tùng đã được chọn mua căn hộ chung cư với giá $790$ triệu đồng và được ưu đãi trả góp không lãi suất. Gia đình Tùng đã tiết kiệm được số tiền là $300$ triệu đồng. Sau thời điểm đó, mỗi tháng gia đình Tùng đều trả góp trung bình được $20$ triệu đồng. Hỏi sau ít nhất bao nhiêu tháng gia đình Tùng có thể trả hết số tiền mua căn hộ đó? \\textit{(Đề cuối kì I, THCS Giang Biên, 2025--2026)}",
+          "tier": "onclass",
+          "type": "problem"
+        },
+        {
+          "text": "\\textbf{Ví dụ 7.} Cho hai biểu thức $A=\\dfrac{\\sqrt{x}-5}{3}$ và $B=\\dfrac{3}{\\sqrt{x}+2}$ với $x\\ge0$, $x\\ne4$. Cho $P=A\\cdot B$. Tìm số nguyên $x$ lớn nhất để $P<\\dfrac{1}{2}$. \\textit{(Trích Bài 2 đề cuối kì I, Phòng GD\\&ĐT Quốc Oai, 2024--2025; biểu thức $B$ đã rút gọn)}[[br]]{\\sffamily\\bfseries\\color{brand}Lời giải}[[br]]\\hspace*{1.4em}Với $x\\ge 0$, $x\\ne 4$, ta có $P=A\\cdot B=\\dfrac{\\sqrt{x}-5}{3}\\cdot\\dfrac{3}{\\sqrt{x}+2}=\\dfrac{\\sqrt{x}-5}{\\sqrt{x}+2}$.[[br]]\\hspace*{1.4em}Để $P<\\dfrac{1}{2}$ thì $\\dfrac{\\sqrt{x}-5}{\\sqrt{x}+2}-[[fill:\\dfrac{1}{2}]]<0$[[br]]\\hspace*{1.4em}$\\dfrac{[[fill:2(\\sqrt{x}-5)-(\\sqrt{x}+2)]]}{2(\\sqrt{x}+2)}<0$[[br]]\\hspace*{1.4em}$\\dfrac{[[fill:\\sqrt{x}-12]]}{2(\\sqrt{x}+2)}<0$.[[br]]\\hspace*{1.4em}Vì $x\\ge 0$ nên $\\sqrt{x}+2>0$[[br]]\\hspace*{1.4em}$2(\\sqrt{x}+2)[[fill:>]]0$.[[br]]\\hspace*{1.4em}$[[fill:\\sqrt{x}-12]][[fill:<]]0$[[br]]\\hspace*{1.4em}$\\sqrt{x}<[[fill:12]]$[[br]]\\hspace*{1.4em}$x<[[fill:144]]$.[[br]]\\hspace*{1.4em}Kết hợp điều kiện $x\\ge 0$, $x\\ne 4$, ta được $[[fill:0\\le x<144]]$, $x\\ne 4$.[[br]]Vậy số nguyên $x$ lớn nhất thỏa mãn yêu cầu là $x=[[fill:143]]$.",
+          "type": "noted",
+          "variant": "example"
+        },
+        {
+          "dang_id": "D16",
+          "hints": [],
+          "label": "Bài 13.",
+          "level": 3,
+          "solution": "1) Thay $x=16$ (thỏa mãn điều kiện) vào $A$, ta được[[br]]\\hspace*{1.4em}$A=\\dfrac{\\sqrt{16}}{3\\sqrt{16}+1}=\\dfrac{4}{3\\cdot 4+1}=\\dfrac{4}{13}$.[[br]]Vậy $A=\\dfrac{4}{13}$ khi $x=16$.[[br]]2) Với $x>0$, $x\\ne 9$, ta có[[br]]\\hspace*{1.4em}$B=\\dfrac{x+3}{(\\sqrt{x}-3)(\\sqrt{x}+3)}+\\dfrac{2}{\\sqrt{x}+3}+\\dfrac{1}{\\sqrt{x}-3}$[[br]]\\hspace*{1.4em}$=\\dfrac{x+3+2(\\sqrt{x}-3)+\\sqrt{x}+3}{(\\sqrt{x}-3)(\\sqrt{x}+3)}$[[br]]\\hspace*{1.4em}$=\\dfrac{x+3\\sqrt{x}}{(\\sqrt{x}-3)(\\sqrt{x}+3)}$[[br]]\\hspace*{1.4em}$=\\dfrac{\\sqrt{x}(\\sqrt{x}+3)}{(\\sqrt{x}-3)(\\sqrt{x}+3)}$[[br]]\\hspace*{1.4em}$=\\dfrac{\\sqrt{x}}{\\sqrt{x}-3}$.[[br]]Vậy $B=\\dfrac{\\sqrt{x}}{\\sqrt{x}-3}$ với $x>0$, $x\\ne 9$.[[br]]3) Với $x>0$, $x\\ne 9$, ta có[[br]]\\hspace*{1.4em}$P=B:A=\\dfrac{\\sqrt{x}}{\\sqrt{x}-3}:\\dfrac{\\sqrt{x}}{3\\sqrt{x}+1}=\\dfrac{\\sqrt{x}}{\\sqrt{x}-3}\\cdot\\dfrac{3\\sqrt{x}+1}{\\sqrt{x}}=\\dfrac{3\\sqrt{x}+1}{\\sqrt{x}-3}$.[[br]]Để $P<3$ thì $\\dfrac{3\\sqrt{x}+1}{\\sqrt{x}-3}-3<0$[[br]]\\hspace*{1.4em}$\\dfrac{3\\sqrt{x}+1-3(\\sqrt{x}-3)}{\\sqrt{x}-3}<0$[[br]]\\hspace*{1.4em}$\\dfrac{10}{\\sqrt{x}-3}<0$.[[br]]Vì $10>0$ nên $\\sqrt{x}-3<0$[[br]]\\hspace*{1.4em}$\\sqrt{x}<3$[[br]]\\hspace*{1.4em}$x<9$.[[br]]Kết hợp điều kiện $x>0$, $x\\ne 9$, ta được $0<x<9$.[[br]]Vì $x$ là số nguyên lớn nhất nên $x=8$.[[br]]Vậy số nguyên $x$ lớn nhất để $P<3$ là $x=8$.",
+          "statement": "Cho hai biểu thức $A=\\dfrac{\\sqrt{x}}{3\\sqrt{x}+1}$ và $B=\\dfrac{x+3}{x-9}+\\dfrac{2}{\\sqrt{x}+3}+\\dfrac{1}{\\sqrt{x}-3}$ với $x>0$, $x\\ne9$.[[br]]1) [NB] Tính giá trị của biểu thức $A$ khi $x=16$.[[br]]2) [TH] Chứng minh $B=\\dfrac{\\sqrt{x}}{\\sqrt{x}-3}$.[[br]]3) [VD] Cho $P=B:A$. Tìm $x$ nguyên lớn nhất để $P<3$. \\textit{(Đề cuối kì I, THCS Tân Triều, 2025--2026)}",
+          "tier": "onclass",
+          "type": "problem"
+        },
+        {
+          "text": "\\textbf{Ví dụ 8.} Theo kế hoạch hai tổ sản xuất $700$ sản phẩm. Nhưng khi thực hiện, tổ thứ nhất vượt mức $20\\%$, tổ thứ hai giảm mức $10\\%$ so với kế hoạch. Vì vậy hai tổ sản xuất được $720$ sản phẩm. Hỏi theo kế hoạch mỗi tổ sản xuất bao nhiêu sản phẩm? \\textit{(Đề cuối kì I, THCS Lý Sơn, 2025--2026; Phòng GD\\&ĐT Thanh Trì, 2024--2025)}[[br]]{\\sffamily\\bfseries\\color{brand}Phân tích}[[br]]Đề hỏi số sản phẩm mỗi tổ sản xuất theo kế hoạch nên gọi ẩn là $x$ và $y$ lần lượt là số sản phẩm theo kế hoạch của tổ thứ nhất và tổ thứ hai.\\par\\nopagebreak\\smallskip\\begin{center}\\footnotesize\\renewcommand\\arraystretch{1.5}\\begin{tabular}{|l|c|c|c|}\\hline & \\textbf{Tổ thứ nhất} & \\textbf{Tổ thứ hai} & \\textbf{Tổng cộng} \\\\ \\hline Kế hoạch & $x$ & $y$ & $700$ \\\\ \\hline Thực tế & $1{,}2x$ & $0{,}9y$ & $720$ \\\\ \\hline \\end{tabular}\\end{center}\\smallskip Tổng sản phẩm theo kế hoạch và tổng sản phẩm thực tế cho hai phương trình của hệ.[[br]]{\\sffamily\\bfseries\\color{brand}Lời giải}[[br]]\\textbf{Bước 1.} Gọi số sản phẩm tổ thứ nhất và tổ thứ hai phải sản xuất theo kế hoạch lần lượt là $x$, $y$ (sản phẩm), điều kiện $x, y\\in\\mathbb{N}^*$, $x, y<700$.[[br]]\\hspace*{1.4em}Theo kế hoạch hai tổ sản xuất $700$ sản phẩm nên $x+y=700$.[[br]]\\hspace*{1.4em}Khi thực hiện, tổ thứ nhất vượt mức $20\\%$ nên làm được $120\\%x=[[fill:1{,}2x]]$ (sản phẩm).[[br]]\\hspace*{1.4em}Tổ thứ hai giảm mức $10\\%$ nên làm được $90\\%y=[[fill:0{,}9y]]$ (sản phẩm).[[br]]\\hspace*{1.4em}Vì thực tế hai tổ sản xuất được $720$ sản phẩm nên ta có phương trình $[[fill:1{,}2x+0{,}9y=720]]$.[[br]]\\hspace*{1.4em}Ta có hệ phương trình $\\begin{cases}x+y=700\\\\1{,}2x+0{,}9y=720\\end{cases}$.[[br]]\\textbf{Bước 2.} Từ phương trình thứ nhất suy ra $y=700-x$.[[br]]\\hspace*{1.4em}Thế $y=700-x$ vào phương trình thứ hai, ta được $1{,}2x+0{,}9([[fill:700-x]])=720$[[br]]\\hspace*{1.4em}$1{,}2x+[[fill:630]]-[[fill:0{,}9x]]=720$[[br]]\\hspace*{1.4em}$[[fill:0{,}3x]]=[[fill:90]]$[[br]]\\hspace*{1.4em}$x=[[fill:300]]$.[[br]]\\hspace*{1.4em}$y=700-[[fill:300]]=[[fill:400]]$.[[br]]\\textbf{Bước 3.} Các giá trị $x=[[fill:300]]$ và $y=[[fill:400]]$ đều [[fill:thỏa mãn]] điều kiện.[[br]]Vậy theo kế hoạch tổ thứ nhất sản xuất $[[fill:300]]$ sản phẩm, tổ thứ hai sản xuất $[[fill:400]]$ sản phẩm.",
+          "type": "noted",
+          "variant": "example"
+        },
+        {
+          "dang_id": "D04",
+          "hints": [],
+          "label": "Bài 14.",
+          "level": 3,
+          "solution": "\\textbf{Bước 1.} Gọi số dụng cụ xí nghiệp I và xí nghiệp II phải làm theo kế hoạch lần lượt là $x$, $y$ (dụng cụ), điều kiện $x, y\\in\\mathbb{N}^*$, $x, y<350$.[[br]]\\hspace*{1.4em}Theo kế hoạch hai xí nghiệp phải làm tổng cộng $350$ dụng cụ nên ta có phương trình $x+y=350$.[[br]]\\hspace*{1.4em}Số dụng cụ xí nghiệp I làm thêm được là $20\\%x=0{,}2x$ (dụng cụ).[[br]]\\hspace*{1.4em}Số dụng cụ xí nghiệp II làm thêm được là $10\\%y=0{,}1y$ (dụng cụ).[[br]]\\hspace*{1.4em}Vì cả hai xí nghiệp đã làm thêm được $50$ dụng cụ nên ta có phương trình $0{,}2x+0{,}1y=50$.[[br]]\\hspace*{1.4em}Ta có hệ phương trình $\\begin{cases}x+y=350\\\\0{,}2x+0{,}1y=50\\end{cases}$.[[br]]\\textbf{Bước 2.} Nhân hai vế phương trình thứ hai với $10$, hệ trở thành $\\begin{cases}x+y=350\\\\2x+y=500\\end{cases}$.[[br]]\\hspace*{1.4em}Trừ từng vế phương trình thứ hai cho phương trình thứ nhất, ta được $x=150$.[[br]]\\hspace*{1.4em}Thay $x=150$ vào phương trình $x+y=350$, ta được $150+y=350$[[br]]\\hspace*{1.4em}$y=200$.[[br]]\\textbf{Bước 3.} Các giá trị $x=150$ và $y=200$ đều thỏa mãn điều kiện.[[br]]Vậy theo kế hoạch xí nghiệp I phải làm $150$ dụng cụ, xí nghiệp II phải làm $200$ dụng cụ.",
+          "statement": "[VD] Giải bài toán sau bằng cách lập phương trình hoặc hệ phương trình: Hai xí nghiệp theo kế hoạch phải làm tổng cộng $350$ dụng cụ. Nhờ sắp xếp hợp lí dây chuyền sản xuất nên xí nghiệp I đã vượt mức $20\\%$ kế hoạch, xí nghiệp II đã vượt mức $10\\%$ kế hoạch, do đó cả hai xí nghiệp đã làm thêm được $50$ dụng cụ. Tìm số dụng cụ mỗi xí nghiệp phải làm theo kế hoạch. \\textit{(Đề cuối kì I, THCS Ngô Gia Tự, 2025--2026)}",
+          "tier": "onclass",
+          "type": "problem"
+        }
+      ],
+      "kind": "practice2",
+      "number": 4,
+      "teacher_note": "Thời lượng dự kiến: 60 phút (thông hiểu Bài 7--12 trong 36 phút, vận dụng Bài 13--14 trong 24 phút).[[br]]Dạng và mức: Bài 7--12 ở mức thông hiểu (D12, D13, D15, D04, D09); Bài 13--14 ở mức vận dụng (D16, D04), xen kẽ Ví dụ 6--8 làm điểm tựa trình bày.[[br]]Khi học sinh bí:[[br]]- Bài 7, 8: Hỏi học sinh nhân cả tử và mẫu với biểu thức nào để khử căn ở mẫu? Nhắc hằng đẳng thức $\\sqrt{A^2}=|A|$ và đưa thừa số ra ngoài dấu căn để xuất hiện căn thức đồng dạng.[[br]]- Bài 9, 13: Hỏi mẫu chung dạng tích là gì? Khi giải bất phương trình dạng phân thức, hỏi dấu của mẫu số hoặc tử số đã biết trước rồi mới suy ra dấu phần còn lại và đối chiếu điều kiện ban đầu.[[br]]- Bài 10, 11, 12, 14: Hỏi đại lượng chưa biết là gì, cụm từ chỉ quan hệ tổng, hiệu, phần trăm vượt mức hay \\textquotedblleft ít nhất\\textquotedblright{} tương ứng với phép tính và dấu nào?[[br]]Chữa và chấm chéo: Chiếu lời giải chuẩn một số bài đại diện (Bài 8, 9, 12, 13, 14), học sinh đổi vở chấm chéo theo 3 tiêu chí: đủ điều kiện xác định và đối chiếu, mỗi phép biến đổi một dòng rõ ràng, có câu kết luận kèm đơn vị.",
+      "title": "Luyện tập 2 — Thông hiểu \\& Vận dụng"
+    },
+    {
+      "blocks": [
+        {
+          "branches": [
+            {
+              "children": [
+                {
+                  "label": "$\\sqrt{A}$ xác định khi $[[blank:1.2cm]]$"
+                },
+                {
+                  "label": "$\\sqrt{A^2}=[[blank:1.2cm]]$"
+                },
+                {
+                  "label": "$\\dfrac{A}{\\sqrt{B}}=[[blank:1.6cm]]$ ($B>0$)"
+                }
+              ],
+              "label": "Tính giá trị biểu thức chứa căn"
+            },
+            {
+              "children": [
+                {
+                  "label": "Bước 1: tìm [[blank:1.6cm]]"
+                },
+                {
+                  "label": "Dùng $\\sqrt{A^2}=[[blank:1.2cm]]$"
+                },
+                {
+                  "label": "Bình phương khi hai vế [[blank:1.6cm]]"
+                }
+              ],
+              "label": "Phương trình chứa căn"
+            },
+            {
+              "children": [
+                {
+                  "label": "Phân tích [[blank:1.6cm]] thành nhân tử"
+                },
+                {
+                  "label": "Tính giá trị: đối chiếu [[blank:1.6cm]]"
+                },
+                {
+                  "label": "Bất phương trình: chuyển vế dạng $\\dfrac{\\ldots}{\\ldots}<[[blank:1.2cm]]$"
+                }
+              ],
+              "label": "Rút gọn và câu hỏi phụ"
+            },
+            {
+              "children": [
+                {
+                  "label": "Bước 1: chọn ẩn, đơn vị, [[blank:1.4cm]]"
+                },
+                {
+                  "label": "Bước 2: giải hệ hoặc [[blank:1.6cm]]"
+                },
+                {
+                  "label": "Bước 3: đối chiếu và [[blank:1.6cm]]"
+                }
+              ],
+              "label": "Bài toán lời văn"
+            }
+          ],
+          "caption": "Điền các ô trống để tự tổng kết bốn dạng bài",
+          "root": "Đại số học kì I",
+          "type": "mindmap"
+        },
+        {
+          "dang_id": "D11",
+          "hints": [],
+          "label": "Bài 15.",
+          "level": 2,
+          "solution": "a) Ta có $2\\sqrt{20}+5\\sqrt{45}-3\\sqrt{5}$[[br]]\\hspace*{1.4em}$=2\\cdot 2\\sqrt{5}+5\\cdot 3\\sqrt{5}-3\\sqrt{5}$[[br]]\\hspace*{1.4em}$=4\\sqrt{5}+15\\sqrt{5}-3\\sqrt{5}$[[br]]\\hspace*{1.4em}$=16\\sqrt{5}$.[[br]]Vậy giá trị của biểu thức là $16\\sqrt{5}$.[[br]]b) Ta có $\\dfrac{2}{\\sqrt{3}+1}+\\sqrt{(1-\\sqrt{3})^2}$[[br]]\\hspace*{1.4em}$=\\dfrac{2(\\sqrt{3}-1)}{(\\sqrt{3}+1)(\\sqrt{3}-1)}+|1-\\sqrt{3}|$[[br]]\\hspace*{1.4em}$=\\dfrac{2(\\sqrt{3}-1)}{3-1}+(\\sqrt{3}-1)$ (vì $\\sqrt{3}>1$ nên $1-\\sqrt{3}<0$)[[br]]\\hspace*{1.4em}$=\\sqrt{3}-1+\\sqrt{3}-1$[[br]]\\hspace*{1.4em}$=2\\sqrt{3}-2$.[[br]]Vậy giá trị của biểu thức là $2\\sqrt{3}-2$.[[br]]c) Ta có $3\\sqrt{2}-4\\sqrt{18}+2\\sqrt{32}-\\sqrt{50}$[[br]]\\hspace*{1.4em}$=3\\sqrt{2}-4\\cdot 3\\sqrt{2}+2\\cdot 4\\sqrt{2}-5\\sqrt{2}$[[br]]\\hspace*{1.4em}$=3\\sqrt{2}-12\\sqrt{2}+8\\sqrt{2}-5\\sqrt{2}$[[br]]\\hspace*{1.4em}$=-6\\sqrt{2}$.[[br]]Vậy giá trị của biểu thức là $-6\\sqrt{2}$.",
+          "statement": "Tính giá trị của các biểu thức sau:[[br]]a) [TH] $2\\sqrt{20}+5\\sqrt{45}-3\\sqrt{5}$ \\textit{(Đề cuối kì I, Phòng GD\\&ĐT Chương Mỹ, 2024--2025)}[[br]]b) [TH] $\\dfrac{2}{\\sqrt{3}+1}+\\sqrt{(1-\\sqrt{3})^2}$ \\textit{(Đề học kì I, THCS Ngô Sĩ Liên, 2024--2025)}[[br]]c) [TH] $3\\sqrt{2}-4\\sqrt{18}+2\\sqrt{32}-\\sqrt{50}$ \\textit{(Đề học kì I, THCS Xuân La, 2024--2025)}",
+          "tier": "btvn",
+          "type": "problem"
+        },
+        {
+          "dang_id": "D13",
+          "hints": [],
+          "label": "Bài 16.",
+          "level": 2,
+          "solution": "a) Điều kiện xác định: $x\\ge 2$.[[br]]Phương trình đã cho trở thành[[br]]\\hspace*{1.4em}$\\sqrt{9(x-2)}-6\\sqrt{x-2}=-12$[[br]]\\hspace*{1.4em}$3\\sqrt{x-2}-6\\sqrt{x-2}=-12$[[br]]\\hspace*{1.4em}$-3\\sqrt{x-2}=-12$[[br]]\\hspace*{1.4em}$\\sqrt{x-2}=4$.[[br]]Vì hai vế đều không âm, bình phương hai vế ta được[[br]]\\hspace*{1.4em}$x-2=16$[[br]]\\hspace*{1.4em}$x=18$ (thỏa mãn điều kiện xác định).[[br]]Vậy phương trình đã cho có nghiệm $x=18$.[[br]]b) Điều kiện xác định: $x\\ge 1$.[[br]]Phương trình đã cho trở thành[[br]]\\hspace*{1.4em}$2\\sqrt{x-1}-\\dfrac{1}{4}\\sqrt{4(x-1)}+\\dfrac{1}{2}\\sqrt{9(x-1)}=3$[[br]]\\hspace*{1.4em}$2\\sqrt{x-1}-\\dfrac{1}{2}\\sqrt{x-1}+\\dfrac{3}{2}\\sqrt{x-1}=3$[[br]]\\hspace*{1.4em}$3\\sqrt{x-1}=3$[[br]]\\hspace*{1.4em}$\\sqrt{x-1}=1$.[[br]]Vì hai vế đều không âm, bình phương hai vế ta được[[br]]\\hspace*{1.4em}$x-1=1$[[br]]\\hspace*{1.4em}$x=2$ (thỏa mãn điều kiện xác định).[[br]]Vậy phương trình đã cho có nghiệm $x=2$.[[br]]c) Điều kiện xác định: $x\\ge 2$.[[br]]Phương trình đã cho trở thành[[br]]\\hspace*{1.4em}$\\sqrt{x-2}+\\sqrt{4(x-2)}=6$[[br]]\\hspace*{1.4em}$\\sqrt{x-2}+2\\sqrt{x-2}=6$[[br]]\\hspace*{1.4em}$3\\sqrt{x-2}=6$[[br]]\\hspace*{1.4em}$\\sqrt{x-2}=2$.[[br]]Vì hai vế đều không âm, bình phương hai vế ta được[[br]]\\hspace*{1.4em}$x-2=4$[[br]]\\hspace*{1.4em}$x=6$ (thỏa mãn điều kiện xác định).[[br]]Vậy phương trình đã cho có nghiệm $x=6$.",
+          "statement": "Giải các phương trình sau:[[br]]a) [TH] $\\sqrt{9x-18}-6\\sqrt{x-2}=-12$ \\textit{(Đề cuối kì I, Phòng GD\\&ĐT Hà Đông, 2024--2025)}[[br]]b) [TH] $2\\sqrt{x-1}-\\dfrac{1}{4}\\sqrt{4x-4}+\\dfrac{1}{2}\\sqrt{9x-9}=3$ \\textit{(Đề cuối kì I, THCS Phúc Đồng, 2025--2026)}[[br]]c) [TH] $\\sqrt{x-2}+\\sqrt{4x-8}=6$ \\textit{(Đề cuối kì I, THCS và THPT M.V. Lômônôxốp, 2024--2025)}",
+          "tier": "btvn",
+          "type": "problem"
+        },
+        {
+          "dang_id": "D16",
+          "hints": [],
+          "label": "Bài 17.",
+          "level": 3,
+          "solution": "1) Thay $x=16$ (thỏa mãn điều kiện) vào $A$, ta được[[br]]\\hspace*{1.4em}$A=\\dfrac{\\sqrt{16}-2}{\\sqrt{16}-3}=\\dfrac{4-2}{4-3}=2$.[[br]]Vậy $A=2$ khi $x=16$.[[br]]2) Với $x\\ge 0$, $x\\ne 4$, $x\\ne 9$, ta có[[br]]\\hspace*{1.4em}$B=\\dfrac{-9\\sqrt{x}+10}{(\\sqrt{x}-2)(\\sqrt{x}+2)}+\\dfrac{3}{\\sqrt{x}+2}+\\dfrac{\\sqrt{x}}{\\sqrt{x}-2}$[[br]]\\hspace*{1.4em}$=\\dfrac{-9\\sqrt{x}+10+3(\\sqrt{x}-2)+\\sqrt{x}(\\sqrt{x}+2)}{(\\sqrt{x}-2)(\\sqrt{x}+2)}$[[br]]\\hspace*{1.4em}$=\\dfrac{-9\\sqrt{x}+10+3\\sqrt{x}-6+x+2\\sqrt{x}}{(\\sqrt{x}-2)(\\sqrt{x}+2)}$[[br]]\\hspace*{1.4em}$=\\dfrac{x-4\\sqrt{x}+4}{(\\sqrt{x}-2)(\\sqrt{x}+2)}$[[br]]\\hspace*{1.4em}$=\\dfrac{(\\sqrt{x}-2)^2}{(\\sqrt{x}-2)(\\sqrt{x}+2)}$[[br]]\\hspace*{1.4em}$=\\dfrac{\\sqrt{x}-2}{\\sqrt{x}+2}$.[[br]]Vậy $B=\\dfrac{\\sqrt{x}-2}{\\sqrt{x}+2}$ với $x\\ge 0$, $x\\ne 4$, $x\\ne 9$.[[br]]3) Với $x\\ge 0$, $x\\ne 4$, $x\\ne 9$, ta có[[br]]\\hspace*{1.4em}$P=B:A=\\dfrac{\\sqrt{x}-2}{\\sqrt{x}+2}:\\dfrac{\\sqrt{x}-2}{\\sqrt{x}-3}=\\dfrac{\\sqrt{x}-2}{\\sqrt{x}+2}\\cdot\\dfrac{\\sqrt{x}-3}{\\sqrt{x}-2}=\\dfrac{\\sqrt{x}-3}{\\sqrt{x}+2}$.[[br]]Để $P<\\dfrac{1}{2}$ thì $\\dfrac{\\sqrt{x}-3}{\\sqrt{x}+2}-\\dfrac{1}{2}<0$[[br]]\\hspace*{1.4em}$\\dfrac{2(\\sqrt{x}-3)-(\\sqrt{x}+2)}{2(\\sqrt{x}+2)}<0$[[br]]\\hspace*{1.4em}$\\dfrac{\\sqrt{x}-8}{2(\\sqrt{x}+2)}<0$.[[br]]Vì $x\\ge 0$ nên $\\sqrt{x}+2>0$[[br]]\\hspace*{1.4em}$2(\\sqrt{x}+2)>0$.[[br]]$\\sqrt{x}-8<0$[[br]]\\hspace*{1.4em}$\\sqrt{x}<8$[[br]]\\hspace*{1.4em}$x<64$.[[br]]Kết hợp điều kiện $x\\ge 0$, $x\\ne 4$, $x\\ne 9$, ta được $0\\le x<64$, $x\\ne 4$, $x\\ne 9$.[[br]]Vậy $0\\le x<64$, $x\\ne 4$, $x\\ne 9$ thì $P<\\dfrac{1}{2}$.",
+          "statement": "Cho hai biểu thức $A=\\dfrac{\\sqrt{x}-2}{\\sqrt{x}-3}$ và $B=\\dfrac{-9\\sqrt{x}+10}{x-4}+\\dfrac{3}{\\sqrt{x}+2}+\\dfrac{\\sqrt{x}}{\\sqrt{x}-2}$ với $x\\ge0$, $x\\ne4$, $x\\ne9$.[[br]]1) [NB] Tính giá trị của biểu thức $A$ khi $x=16$.[[br]]2) [TH] Chứng minh $B=\\dfrac{\\sqrt{x}-2}{\\sqrt{x}+2}$.[[br]]3) [VD] Đặt $P=B:A$. Tìm tất cả các giá trị của $x$ để $P<\\dfrac{1}{2}$. \\textit{(Đề cuối kì I, Phòng GD\\&ĐT Thanh Trì, 2024--2025)}",
+          "tier": "btvn",
+          "type": "problem"
+        },
+        {
+          "dang_id": "D16",
+          "hints": [],
+          "label": "Bài 18.",
+          "level": 3,
+          "solution": "1) Thay $x=1$ (thỏa mãn điều kiện) vào $B$, ta được[[br]]\\hspace*{1.4em}$B=\\dfrac{\\sqrt{1}+2}{\\sqrt{1}-2}=\\dfrac{1+2}{1-2}=-3$.[[br]]Vậy $B=-3$ khi $x=1$.[[br]]2) Với $x\\ge 0$, $x\\ne 4$, ta có[[br]]\\hspace*{1.4em}$A=\\dfrac{3}{\\sqrt{x}-2}-\\dfrac{\\sqrt{x}+10}{(\\sqrt{x}-2)(\\sqrt{x}+2)}$[[br]]\\hspace*{1.4em}$=\\dfrac{3(\\sqrt{x}+2)-(\\sqrt{x}+10)}{(\\sqrt{x}-2)(\\sqrt{x}+2)}$[[br]]\\hspace*{1.4em}$=\\dfrac{3\\sqrt{x}+6-\\sqrt{x}-10}{(\\sqrt{x}-2)(\\sqrt{x}+2)}$[[br]]\\hspace*{1.4em}$=\\dfrac{2\\sqrt{x}-4}{(\\sqrt{x}-2)(\\sqrt{x}+2)}$[[br]]\\hspace*{1.4em}$=\\dfrac{2(\\sqrt{x}-2)}{(\\sqrt{x}-2)(\\sqrt{x}+2)}$[[br]]\\hspace*{1.4em}$=\\dfrac{2}{\\sqrt{x}+2}$.[[br]]Vậy $A=\\dfrac{2}{\\sqrt{x}+2}$ với $x\\ge 0$, $x\\ne 4$.[[br]]3) Với $x\\ge 0$, $x\\ne 4$, ta có[[br]]\\hspace*{1.4em}$P=A\\cdot B=\\dfrac{2}{\\sqrt{x}+2}\\cdot\\dfrac{\\sqrt{x}+2}{\\sqrt{x}-2}=\\dfrac{2}{\\sqrt{x}-2}$.[[br]]Để $P<-1$ thì $\\dfrac{2}{\\sqrt{x}-2}+1<0$[[br]]\\hspace*{1.4em}$\\dfrac{2+\\sqrt{x}-2}{\\sqrt{x}-2}<0$[[br]]\\hspace*{1.4em}$\\dfrac{\\sqrt{x}}{\\sqrt{x}-2}<0$.[[br]]Vì $\\sqrt{x}\\ge 0$ với mọi $x\\ge 0$ và phân thức nhận giá trị âm nên $\\sqrt{x}>0$ và $\\sqrt{x}-2<0$.[[br]]Từ đó $0<\\sqrt{x}<2$[[br]]\\hspace*{1.4em}$0<x<4$.[[br]]Kết hợp điều kiện $x\\ge 0$, $x\\ne 4$, ta được $0<x<4$.[[br]]Vì $x$ là số nguyên nên $x\\in\\{1; 2; 3\\}$.[[br]]Vậy các giá trị nguyên của $x$ để $P<-1$ là $x\\in\\{1; 2; 3\\}$.",
+          "statement": "Cho hai biểu thức $A=\\dfrac{3}{\\sqrt{x}-2}-\\dfrac{\\sqrt{x}+10}{x-4}$ và $B=\\dfrac{\\sqrt{x}+2}{\\sqrt{x}-2}$ với $x\\ge0$, $x\\ne4$.[[br]]1) [NB] Tính giá trị của biểu thức $B$ khi $x=1$.[[br]]2) [TH] Rút gọn biểu thức $A$.[[br]]3) [VD] Đặt $P=A\\cdot B$. Tìm các giá trị nguyên của $x$ để $P<-1$. \\textit{(Đề cuối kì I, THCS Lý Sơn, 2025--2026)}",
+          "tier": "btvn",
+          "type": "problem"
+        },
+        {
+          "dang_id": "D04",
+          "hints": [],
+          "label": "Bài 19.",
+          "level": 3,
+          "solution": "\\textbf{Bước 1.} Gọi độ dài quãng đường từ nhà Hải đến trường là $x$ (km), điều kiện $x>0$.[[br]]\\hspace*{1.4em}Thời gian Hải đi học mọi ngày với vận tốc $8$ km/h là $\\dfrac{x}{8}$ (giờ).[[br]]\\hspace*{1.4em}Sáng nay, vận tốc của Hải là $8+4=12$ (km/h), nên thời gian đi là $\\dfrac{x}{12}$ (giờ).[[br]]\\hspace*{1.4em}Đổi $10$ phút $=\\dfrac{1}{6}$ giờ.[[br]]\\hspace*{1.4em}Vì sáng nay Hải đến sớm hơn $10$ phút so với mọi ngày nên ta có phương trình $\\dfrac{x}{8}-\\dfrac{x}{12}=\\dfrac{1}{6}$.[[br]]\\textbf{Bước 2.} Nhân hai vế của phương trình với $24$, ta được[[br]]\\hspace*{1.4em}$3x-2x=4$[[br]]\\hspace*{1.4em}$x=4$.[[br]]\\textbf{Bước 3.} Giá trị $x=4$ thỏa mãn điều kiện $x>0$.[[br]]Vậy quãng đường từ nhà Hải đến trường dài $4$ km.",
+          "statement": "[VD] Giải bài toán bằng cách lập phương trình: Hằng ngày, Hải thường đạp xe với vận tốc $8$ km/h trên cung đường từ nhà đến trường để vừa kịp giờ vào lớp. Sáng nay, vì muốn tranh thủ ôn bài đầu giờ, Hải dự định đạp xe nhanh hơn $4$ km/h so với mọi ngày để đến sớm $10$ phút. Hỏi quãng đường từ nhà Hải đến trường dài bao nhiêu km? \\textit{(Đề cuối kì I, THCS Ngô Sĩ Liên, 2025--2026)}",
+          "tier": "btvn",
+          "type": "problem"
+        },
+        {
+          "dang_id": "D04",
+          "hints": [],
+          "label": "Bài 20.",
+          "level": 3,
+          "solution": "\\textbf{Bước 1.} Gọi giá tiền niêm yết của mỗi quyển vở và mỗi cây bút lần lượt là $x$, $y$ (nghìn đồng), điều kiện $x>0$, $y>0$.[[br]]\\hspace*{1.4em}Đổi $18$ triệu $400$ nghìn đồng $=18\\,400$ nghìn đồng; $17$ triệu $456$ nghìn đồng $=17\\,456$ nghìn đồng.[[br]]\\hspace*{1.4em}Theo giá niêm yết, tiền mua $2000$ quyển vở và $400$ cây bút là $18\\,400$ nghìn đồng nên ta có phương trình $2000x+400y=18\\,400$.[[br]]\\hspace*{1.4em}Vì được giảm giá $5\\%$ cho mỗi quyển vở và $6\\%$ cho mỗi cây bút nên giá bán thực tế của mỗi quyển vở là $95\\%x=0{,}95x$ (nghìn đồng), của mỗi cây bút là $94\\%y=0{,}94y$ (nghìn đồng).[[br]]\\hspace*{1.4em}Số tiền nhà trường phải trả thực tế là $2000\\cdot 0{,}95x+400\\cdot 0{,}94y=1900x+376y$ (nghìn đồng).[[br]]\\hspace*{1.4em}Theo đề bài, ta có phương trình $1900x+376y=17\\,456$.[[br]]\\hspace*{1.4em}Ta có hệ phương trình $\\begin{cases}2000x+400y=18\\,400\\\\1900x+376y=17\\,456\\end{cases}$.[[br]]\\textbf{Bước 2.} Chia hai vế phương trình thứ nhất cho $400$, ta được $5x+y=46$[[br]]\\hspace*{1.4em}$y=46-5x$.[[br]]\\hspace*{1.4em}Thế $y=46-5x$ vào phương trình thứ hai, ta được $1900x+376(46-5x)=17\\,456$[[br]]\\hspace*{1.4em}$1900x+17\\,296-1880x=17\\,456$[[br]]\\hspace*{1.4em}$20x=160$[[br]]\\hspace*{1.4em}$x=8$.[[br]]\\hspace*{1.4em}Thay $x=8$ vào $y=46-5x$, ta được $y=46-40=6$.[[br]]\\textbf{Bước 3.} Các giá trị $x=8$ và $y=6$ đều thỏa mãn điều kiện.[[br]]Vậy giá tiền niêm yết của mỗi quyển vở là $8\\,000$ đồng, của mỗi cây bút là $6\\,000$ đồng.",
+          "statement": "[VD] Giải bài toán bằng cách lập hệ phương trình: Để chuẩn bị trao thưởng cho học sinh giỏi cuối năm học, một trường THCS cần mua $2000$ quyển vở và $400$ cây bút để làm phần thưởng. Nhà trường dự tính để mua với giá niêm yết sẽ cần $18$ triệu $400$ nghìn đồng. Vì mua với số lượng lớn nên đại lý bán quyết định giảm giá $5\\%$ cho mỗi quyển vở và $6\\%$ cho mỗi cây bút, vì thế nhà trường chỉ cần trả $17$ triệu $456$ nghìn đồng. Tính giá tiền niêm yết của mỗi quyển vở và mỗi cây bút. \\textit{(Đề cuối kì I, Phòng GD\\&ĐT Hà Đông, 2024--2025)}",
+          "tier": "btvn",
+          "type": "problem"
+        }
+      ],
+      "kind": "reflection",
+      "number": 5,
+      "teacher_note": "5 phút tổng kết theo sơ đồ tư duy; nhắc học sinh làm Phiếu bài tập về nhà gồm 6 bài (Bài 15–20) in riêng, đủ bốn dạng, hoàn thành trước buổi luyện đề ôn tập số 1.",
+      "title": "Tổng kết"
+    }
+  ]
+}

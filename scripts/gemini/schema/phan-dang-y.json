@@ -1,0 +1,124 @@
+{
+  "type": "object",
+  "required": [
+    "cau",
+    "ghi_chu"
+  ],
+  "properties": {
+    "cau": {
+      "type": "array",
+      "items": {
+        "type": "object",
+        "required": [
+          "ma",
+          "y",
+          "ghi_chu"
+        ],
+        "properties": {
+          "ma": {
+            "type": "string"
+          },
+          "y": {
+            "type": "array",
+            "minItems": 1,
+            "items": {
+              "type": "object",
+              "required": [
+                "nhan",
+                "tom_tat",
+                "ma_dang",
+                "muc",
+                "bien_the",
+                "ly_do_muc"
+              ],
+              "properties": {
+                "nhan": {
+                  "type": "string"
+                },
+                "tom_tat": {
+                  "type": "string"
+                },
+                "ma_dang": {
+                  "type": "string",
+                  "enum": [
+                    "VI-01",
+                    "VI-02",
+                    "VI-03",
+                    "VI-04",
+                    "VI-05",
+                    "VI-06",
+                    "VI-07",
+                    "VI-08",
+                    "VI-09",
+                    "VI-10",
+                    "VI-11",
+                    "VI-12",
+                    "VI-13",
+                    "VI-14",
+                    "VI-15",
+                    "VI-16",
+                    "VI-17",
+                    "VI-18",
+                    "VI-19",
+                    "VI-20",
+                    "VI-21",
+                    "VI-22",
+                    "VI-23",
+                    "VI-24",
+                    "VI-25",
+                    "VI-26",
+                    "VI-27",
+                    "VI-28",
+                    "VI-29",
+                    "VI-30",
+                    "VI-31",
+                    "VI-32",
+                    "VI-33",
+                    "VI-34",
+                    "VI-35",
+                    "VI-36",
+                    "VI-37",
+                    "VI-38",
+                    "VI-39",
+                    "VI-40",
+                    "VI-41",
+                    "VI-42",
+                    "VI-43",
+                    "VI-44",
+                    "VI-45",
+                    "VI-46",
+                    "VI-47",
+                    "VI-48",
+                    "VI-49",
+                    "NGOAI"
+                  ]
+                },
+                "muc": {
+                  "type": "string",
+                  "enum": [
+                    "NB",
+                    "TH",
+                    "VD",
+                    "VDC"
+                  ]
+                },
+                "bien_the": {
+                  "type": "string"
+                },
+                "ly_do_muc": {
+                  "type": "string"
+                }
+              }
+            }
+          },
+          "ghi_chu": {
+            "type": "string"
+          }
+        }
+      }
+    },
+    "ghi_chu": {
+      "type": "string"
+    }
+  }
+}

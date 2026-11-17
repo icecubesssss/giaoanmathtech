@@ -430,6 +430,13 @@ class LessonPackage(BaseModel):
     # giải. Mặc định tắt để bản in cũ trong kho không đổi; `new-lesson` bật sẵn.
     btvn_phieu_rieng: bool = Field(
         False, description="Tách BTVN thành file Phiếu BTVN riêng (Phiếu HS không còn BTVN)")
+    # LUẬT HÌNH THỨC CÂU + BẢN CHẤT 40-40-20 (Thầy chốt 16/11/2026, phiếu ĐẠI SỐ từ ch.VI 9C
+    # bản 2): điền khuyết CHỈ trong Ví dụ; NB = câu nhỏ trắc nghiệm/Đ-S/trả lời ngắn; TH = bài
+    # gọn + câu hỏi gợi ý bước; VD = chỉ đề. Bật ⇒ `dan_dat_gate` CHẶN ô trống trong bài tập và
+    # gợi ý ở bài VD; `vi_du_gate` nhận câu hỏi gợi ý ngay trong đề TH. Khớp
+    # `ThuyetMinhSpec.luat_16_11` (spec_gate soi lệch). Mặc định tắt để phiếu cũ giữ cổng cũ.
+    luat_16_11: bool = Field(
+        False, description="Phiếu soạn theo luật hình thức câu 16/11/2026 (điền khuyết chỉ ở Ví dụ)")
     stages: list[Stage] = Field(default_factory=list)
 
 

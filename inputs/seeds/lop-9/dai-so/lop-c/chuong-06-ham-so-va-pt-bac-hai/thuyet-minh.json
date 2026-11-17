@@ -1,941 +1,1347 @@
 {
   "slug": "thuyet-minh-lop-9c-chuong-06-pt-bac-hai",
-  "title": "Chương VI. Phương trình bậc hai một ẩn (Bài 19 – Bài 21 SGK)",
+  "title": "Chương VI. Phương trình bậc hai một ẩn (Bài 19 – Bài 21 SGK) — bản 2",
   "grade": "lop-9",
   "subject": "dai-so",
   "tier": "C",
-  "tuan": "22-27",
+  "tuan": "22-26",
+  "chuong": "chuong-06",
+  "luat_16_11": true,
   "thoiluong": [
-    "Buổi 1 (tuần 22 — Bài 19. Phương trình bậc hai một ẩn): 1 ca = 180 phút (PPCT SGV 3 tiết).",
-    "Buổi 2 (tuần 23 — Luyện tập chung: phương trình chứa ẩn ở mẫu quy về phương trình bậc hai): 1 ca = 180 phút (PPCT SGV 2 tiết).",
-    "Buổi 3 (tuần 24 — Bài 20. Định lí Viète và ứng dụng): 1 ca = 180 phút (PPCT SGV 2 tiết).",
-    "Buổi 4 (tuần 25 — Luyện tập: tính giá trị biểu thức chứa hai nghiệm): 1 ca = 180 phút (không thêm tiết SGK).",
-    "Buổi 5 (tuần 26 — Bài 21. Giải bài toán bằng cách lập phương trình): 1 ca = 180 phút (PPCT SGV 2 tiết).",
-    "Buổi 6 (tuần 27 — Luyện tập chung và Bài tập cuối chương VI): 1 ca = 180 phút (135 phút luyện tập $+$ 45 phút kiểm tra chương, PPCT SGV 4 tiết).",
-    "\\textbf{Tổng 6 ca = 1080 phút $\\approx$ 24 tiết} (PPCT SGV chương VI: 16 tiết, trừ 3 tiết Bài 18 còn 13 tiết, trong đó 45 phút là bài kiểm tra chương)."
+    "Buổi 1 (Bài 19. Phương trình bậc hai một ẩn — biện luận số nghiệm theo $\\Delta$): 1 ca = 180 phút.",
+    "Buổi 2 (Bài 20. Định lí Viète — biểu thức đối xứng, tìm $m$ theo hệ thức đối xứng): 1 ca = 180 phút.",
+    "Buổi 3 (Bài 20, tiếp — biểu thức không đối xứng, tìm $m$ theo hệ thức không đối xứng): 1 ca = 180 phút.",
+    "Buổi 4 (Bài 21. Giải bài toán bằng cách lập phương trình): 1 ca = 180 phút.",
+    "Buổi 5 (Luyện tập chung, bài tập cuối chương VI): 1 ca = 180 phút (90 phút kiểm tra chương; phần còn lại là ví dụ chữa mẫu, luyện tập và nghỉ giữa giờ).",
+    "\\textbf{Tổng 5 ca = 900 phút} (PPCT SGV chương VI: 16 tiết, trừ 3 tiết Bài 18 Hàm số $y=ax^2$ không dạy lớp C, còn 13 tiết; trong đó 90 phút kiểm tra chương)."
   ],
   "kien_thuc_nen": [
-    "\\textbf{Bảy hằng đẳng thức đáng nhớ} (Lớp 8): khai triển để thu gọn phương trình về dạng $ax^2+bx+c=0$, và biến đổi $x_1^2+x_2^2$, $x_1^3+x_2^3$, $(x_1-x_2)^2$ theo tổng và tích hai nghiệm.",
-    "\\textbf{Phân tích đa thức thành nhân tử} (Lớp 8): đặt nhân tử chung và dùng $A^2-B^2$ để giải phương trình khuyết $c$, phân tích mẫu thức khi tìm điều kiện xác định.",
-    "\\textbf{Quy đồng mẫu thức và điều kiện xác định của phân thức} (Lớp 8, ôn lại ở Bài 4 tuần 7): giải phương trình chứa ẩn ở mẫu quy về bậc hai (buổi 2) và bài toán lời văn có ẩn ở mẫu (buổi 5, 6). Quên điều kiện xác định là giữ lại nghiệm đáng lẽ phải loại.",
-    "\\textbf{Căn bậc hai số học và $\\sqrt{A^2}=|A|$} (Chương III): tính $\\sqrt{\\Delta}$, rút gọn nghiệm chứa căn, phương trình có hệ số chứa căn, rút gọn biểu thức chứa căn của nghiệm (buổi 4).",
-    "\\textbf{Giải bài toán bằng cách lập phương trình, hệ phương trình} (Chương I, Bài 3): ba bước lập phương trình, giải, đối chiếu điều kiện giữ nguyên, chương VI chỉ đổi khâu giải thành phương trình bậc hai.",
-    "\\textbf{Công thức chuyển động, năng suất, diện tích hình chữ nhật} (lớp dưới): $s=v\\cdot t$, khối lượng công việc $=$ năng suất $\\times$ thời gian, $S=$ dài $\\times$ rộng, dùng để biểu diễn đại lượng theo ẩn ở buổi 5.",
-    "\\textbf{Giải phương trình bậc nhất một ẩn} (Lớp 8): bước cuối của mọi phương trình tích."
+    "\\textbf{Bảy hằng đẳng thức đáng nhớ} (Lớp 8): khai triển để đưa phương trình về dạng $ax^2+bx+c=0$; biến đổi $x_1^2+x_2^2=(x_1+x_2)^2-2x_1x_2$, $x_1^3+x_2^3=(x_1+x_2)^3-3x_1x_2(x_1+x_2)$.",
+    "\\textbf{Phân tích đa thức thành nhân tử} (Lớp 8): giải phương trình khuyết $c$, phân tích mẫu thức khi tìm điều kiện xác định.",
+    "\\textbf{Quy đồng mẫu thức và điều kiện xác định của phân thức} (Lớp 8): biểu thức $\\dfrac{1}{x_1}+\\dfrac{1}{x_2}$, $\\dfrac{x_1}{x_2}+\\dfrac{x_2}{x_1}$; khử mẫu khi lập phương trình (Phiếu 4).",
+    "\\textbf{Giải hệ hai phương trình bậc nhất hai ẩn} (Chương I lớp 9): tìm $x_1$, $x_2$ từ hệ thức bậc nhất và tổng hai nghiệm (Phiếu 3).",
+    "\\textbf{Giải bài toán bằng cách lập hệ phương trình} (Chương I lớp 9): học sinh đã luyện chọn ẩn, biểu diễn đại lượng, lập phương trình — Phiếu 4 chỉ nhắc công thức $s=vt$, năng suất $=\\dfrac{\\text{khối lượng}}{\\text{thời gian}}$.",
+    "\\textbf{Căn thức bậc hai, $\\sqrt{A^2}=|A|$} (Chương III lớp 9): biểu thức chứa căn, trị tuyệt đối của một nghiệm (Phiếu 3)."
   ],
   "lythuyet": [
-    "\\textbf{Mục tiêu chương}: học sinh giải được phương trình bậc hai (dạng khuyết, công thức nghiệm, công thức nghiệm thu gọn), phương trình chứa ẩn ở mẫu quy về bậc hai, dùng định lí Viète để tính giá trị biểu thức của hai nghiệm, và giải bài toán bằng cách lập phương trình bậc hai.",
-    "Không dùng kí hiệu tắt cho tổng và tích hai nghiệm. Viết thẳng $x_1+x_2$ và $x_1x_2$, gọi đúng tên là \\emph{tổng hai nghiệm} và \\emph{tích hai nghiệm}, như đề thi hỏi bằng lời: \\emph{tổng nghịch đảo hai nghiệm}, \\emph{tổng các lập phương hai nghiệm}.",
-    "Công thức nghiệm $\\Delta=b^2-4ac$: $\\Delta>0$ hai nghiệm phân biệt, $\\Delta=0$ nghiệm kép, $\\Delta<0$ vô nghiệm. Công thức thu gọn $\\Delta'=b'^2-ac$ khi $b=2b'$.",
-    "Phương trình chứa ẩn ở mẫu: tìm điều kiện xác định, quy đồng mẫu hai vế rồi khử mẫu, giải phương trình vừa nhận được, đối chiếu điều kiện xác định và kết luận (SGK tập một tr.29).",
-    "Hệ thức Viète: $x_1+x_2=-\\dfrac{b}{a}$ và $x_1x_2=\\dfrac{c}{a}$. Nhẩm nghiệm khi $a+b+c=0$ và khi $a-b+c=0$. Biết một nghiệm, tìm nghiệm còn lại.",
-    "Bốn công thức biến đổi: $x_1^2+x_2^2=(x_1+x_2)^2-2x_1x_2$, $\\dfrac{1}{x_1}+\\dfrac{1}{x_2}=\\dfrac{x_1+x_2}{x_1x_2}$, $x_1^3+x_2^3=(x_1+x_2)^3-3x_1x_2(x_1+x_2)$, $(x_1-x_2)^2=(x_1+x_2)^2-4x_1x_2$.",
-    "Hạ bậc: $x_1$ là nghiệm nên $ax_1^2+bx_1+c=0$, thay $ax_1^2=-bx_1-c$ để hạ bậc biểu thức trước khi dùng tổng và tích (buổi 4, buổi 6).",
-    "Ba bước giải bài toán bằng cách lập phương trình (SGK tập hai tr.25): lập phương trình (chọn ẩn và đặt điều kiện, biểu diễn các đại lượng chưa biết theo ẩn, lập phương trình), giải phương trình, đối chiếu điều kiện và trả lời.",
-    "\\textbf{Nguồn bài}: tab phân dạng chương VI (đề Vào 10 chính thức và minh họa của Sở GD\\&ĐT Hà Nội, đề thi thử, đề giữa kì và cuối kì các trường Hà Nội, SGK). Ngân hàng 21 đề GK1/CK1 không phủ chương này vì chương VI học ở kì II. Đáp số mọi bài trong phiếu đã kiểm bằng máy.",
-    "\\textbf{Chuẩn đầu ra tầng C}: trình bày trọn bài giải bài toán bằng cách lập phương trình (Câu III.1 đề Vào 10, $1{,}0$ điểm) và câu tính giá trị biểu thức của hai nghiệm (Câu III.3, $0{,}5$ điểm)."
+    "\\textbf{Mục tiêu chương}: giải được phương trình bậc hai (dạng khuyết, công thức nghiệm); biện luận số nghiệm theo tham số $m$; dùng định lí Viète tính biểu thức của hai nghiệm và tìm $m$ theo hệ thức của hai nghiệm; giải bài toán bằng cách lập phương trình bậc hai.",
+    "\\textbf{Chuẩn đầu ra}: làm được trọn Bài III đề kiểm tra học kì II và đề tuyển sinh vào 10 phần phương trình bậc hai: giải phương trình, chứng minh luôn có nghiệm, tính biểu thức đối xứng, tìm $m$ theo hệ thức đối xứng, bài toán lập phương trình.",
+    "\\textbf{Tham số $m$ có trong chương} (Thầy chốt 16/11/2026): biện luận theo $\\Delta$ ở Phiếu 1, Viète có $m$ ở Phiếu 2, 3. Năm dạng tần suất cao nhất trong đề thật (40 đề Vào 10, 30 đề CK2, 25 đề GK2): lập phương trình 70\\% / 80\\% / 96\\%; tìm $m$ theo hệ thức đối xứng 8\\% / 40\\% / 36\\%; giải phương trình 3\\% / 30\\% / 48\\%; biểu thức đối xứng 28\\% / 27\\% / 12\\%; chứng minh luôn có nghiệm 13\\% / 17\\% / 12\\%.",
+    "\\textbf{Hình thức câu hỏi} (luật 16/11/2026): câu NB là câu nhỏ gắn với đề (nhắc công thức, điều kiện, bước làm) dạng trắc nghiệm, Đúng/Sai, trả lời ngắn; câu TH là bài gọn có câu hỏi gợi ý bước; câu VD chỉ có đề. Điền khuyết chỉ dùng trong Ví dụ. Bài đã tách chỉ tính giờ các câu nhỏ.",
+    "\\textbf{Phiếu 3 có bài làm thêm} (Thầy chốt 16/11/2026): parabol và đường thẳng (C6-28) — ghi trong thuyết minh nhưng không tính giờ, GV dạy khi còn giờ.",
+    "\\textbf{Không dạy ở lớp C}: hàm số $y=ax^2$ và đồ thị (Bài 18), tìm hai số biết tổng và tích, hệ thức không phụ thuộc $m$, phương trình chứa ẩn ở mẫu quy về bậc hai (C6-17, Thầy bỏ 17/11/2026), giải phương trình bằng máy tính cầm tay, công thức nghiệm thu gọn $\\Delta'$ (Thầy bỏ 16/11/2026), các dạng VDC."
   ],
   "vidu": [
-    "Buổi 1: Giải $2x^2-5x+2=0$ bằng công thức nghiệm ($x_1=2$, $x_2=\\dfrac{1}{2}$), $4x^2+6x=0$ khuyết $c$, $2x^2-18=0$ khuyết $b$, $x^2-8x+12=0$ bằng công thức nghiệm thu gọn.",
-    "Buổi 2: Giải $\\dfrac{2x}{x+3}+\\dfrac{1}{x-1}=\\dfrac{4}{(x-1)(x+3)}$: điều kiện xác định $x\\ne -3$, $x\\ne 1$, khử mẫu được $2x^2-x-1=0$, nhẩm $a+b+c=0$ được $x=1$ (loại) và $x=-\\dfrac{1}{2}$.",
-    "Buổi 3: Phương trình $3x^2-6x+2=0$ có $x_1+x_2=2$, $x_1x_2=\\dfrac{2}{3}$, chứng minh hai nghiệm khác $0$ rồi tính tổng nghịch đảo hai nghiệm bằng $3$.",
-    "Buổi 4: Với $x^2-3x-3=0$, hạ bậc $x_1^2=3x_1+3$ nên $x_1^3=12x_1+9$, do đó $H=x_1^3-12x_1+2000=2009$.",
-    "Buổi 5: Xưởng may $480$ chiếc áo, thực tế mỗi ngày may ít hơn kế hoạch $8$ chiếc nên chậm $2$ ngày: $\\dfrac{480}{x-8}-\\dfrac{480}{x}=2 \\Rightarrow x=48$ (loại $x=-40$).",
-    "Buổi 6: Cho $x^2-3x-1=0$, hạ bậc $x_1^2=3x_1+1$ nên $A=x_1^2+3x_2=3(x_1+x_2)+1=10$."
+    "Buổi 1: $3x^2+7x-1=0$ đủ ba bước $a$, $b$, $c$ $\\to$ $\\Delta$ $\\to$ công thức nghiệm (SGK Ví dụ 5); $x^2-6x+9=0$ nghiệm kép và $2x^2+3x+5=0$ vô nghiệm; $x^2-2(m+3)x+m^2-5=0$ biện luận theo $\\Delta$; $x^2+ax-1=0$ luôn có hai nghiệm phân biệt.",
+    "Buổi 2: kiểm $\\Delta$ rồi viết tổng, tích (SGK Ví dụ 1 Bài 20); $x_1^2+x_2^2$, $\\dfrac{1}{x_1}+\\dfrac{1}{x_2}$, $x_1^3+x_2^3$, $(x_1-x_2)^2$; biết nghiệm $1-\\sqrt2$ tính tổng bình phương; $x^2+(1-m)x-m=0$ tìm $m$ để $x_1^2+x_2^2=5$.",
+    "Buổi 3: hạ bậc $4x_1^2=2x_1+1$; $x_1+2026=(x_1-1)^2$ nên căn bằng $|x_1-1|$; $3x_1+2x_2=1$ kết hợp tổng hai nghiệm; thay $x_1^2=2mx_1+4m+5$ để tìm $m$.",
+    "Buổi 4: sân bóng hình chữ nhật, tàu du lịch xuôi ngược có nghỉ, đội xe bớt xe (SGK Bài 21), xưởng in sách, hai ô tô; xe dừng giữa đường rồi tăng tốc; làm chung – làm riêng.",
+    "Buổi 5: chữa mẫu Bài III.3 (chứng minh hai nghiệm phân biệt, tính $x_1^2+x_2^2-6x_1x_2$) và Bài III.2b (tìm $m$ để $x_1^2+x_2^2=x_1x_2+46$); một bài năng suất, một bài chuyển động và bài toán lãi kép gửi tiết kiệm (SGK Bài 21 HĐ1--HĐ3)."
   ],
   "dang_vd": [
-    "Câu III.1 — bài năng suất dẫn tới phương trình chứa ẩn ở mẫu quy về bậc hai (đề minh họa của Sở, thi thử Chương Mỹ).",
-    "Câu III.1 — bài chuyển động chênh lệch thời gian (thi thử Chương Mỹ, Tự Lập).",
-    "Câu III.1 — bài diện tích hình chữ nhật biết hiệu hai kích thước (bộ đề Đống Đa).",
-    "Câu III.3 — tính biểu thức của hai nghiệm bằng tổng và tích: tổng bình phương, tổng nghịch đảo, tổng các lập phương.",
-    "Câu III.3 — hạ bậc để đưa biểu thức không đối xứng về tổng và tích (đề chính thức 2026 cho kết quả $18$, thi thử Ứng Hòa cho kết quả $1995$).",
-    "Câu III.3 — biết một nghiệm chứa căn, tìm nghiệm còn lại và hệ số còn thiếu (đề minh họa của Sở).",
-    "Câu III.3 — xét dấu hai nghiệm rồi rút gọn biểu thức chứa căn, giá trị tuyệt đối (thi thử cụm THCS công lập, THCS Tự Lập)."
+    "Bài III.2b — tìm $m$ để hai nghiệm thỏa hệ thức đối xứng (CK2 40\\%, GK2 36\\%): Phiếu 2 trên lớp Hoài Đức, Lômônôxốp; BTVN Mai Dịch, Thanh Oai.",
+    "Bài III.3 — hạ bậc, biểu thức không đối xứng (đề chính thức Hà Nội 2026, 2025): Phiếu 3.",
+    "Bài III.1 — lập phương trình hai giai đoạn, làm chung (thi thử Tự Lập 2026, Quốc Oai; BTVN Thọ Lộc, Đống Đa -- Khương Thượng): Phiếu 4.",
+    "Ôn tổng hợp Bài III.2b — tìm $m$ theo hệ thức đối xứng (Hà Đông; BTVN Nghĩa Tân, Tây Mỗ 3): Phiếu 5."
   ],
   "loisai": [
-    "Chưa đưa phương trình về dạng $ax^2+bx+c=0$ đã tính $\\Delta$.",
-    "Sai dấu khi $c$ âm: với $c=-6$ thì $-4ac=+24$, hay bị viết thành $-24$.",
-    "Dùng $\\Delta'$ khi $b$ lẻ, hoặc dùng đúng $\\Delta'$ nhưng vẫn chia $2a$ thay vì chia $a$.",
-    "Dùng tổng và tích hai nghiệm mà chưa kiểm tra phương trình có nghiệm ($\\Delta\\ge 0$ hoặc $ac<0$).",
-    "Nhớ nhầm dấu của tổng: viết $x_1+x_2=\\dfrac{b}{a}$ thay vì $-\\dfrac{b}{a}$.",
-    "Khai triển sai $x_1^2+x_2^2$ thành $(x_1+x_2)^2$ vì quên trừ $2x_1x_2$.",
-    "Tính tổng nghịch đảo mà quên chứng minh hai nghiệm khác $0$.",
-    "Giải phương trình chứa ẩn ở mẫu mà quên điều kiện xác định hoặc quên loại nghiệm.",
-    "Làm tròn ở bước giữa khi $\\sqrt{\\Delta}$ không chính phương, làm lệch kết quả cuối.",
-    "\\textbf{Bài toán lập phương trình}: thiếu câu đặt ẩn kèm đơn vị và điều kiện, giữ lại nghiệm âm, hoặc kết luận không có đơn vị.",
-    "\\textbf{Biểu thức của hai nghiệm}: viết ngay tổng và tích mà bỏ câu kiểm tra điều kiện có nghiệm ở đầu bài, và thiếu câu kết luận \\textquotedblleft Vậy giá trị của biểu thức bằng \\dots\\textquotedblright{} ở cuối.",
-    "\\textbf{Biểu thức chứa căn của nghiệm}: viết thẳng $\\sqrt{A^2}=A$ mà không xét dấu của nghiệm trước."
+    "Chưa đưa phương trình về dạng $ax^2+bx+c=0$ đã đọc hệ số, tính $\\Delta$.",
+    "Sai dấu $-4ac$ khi $c$ âm.",
+    "Khuyết $b$: quên nghiệm âm khi khai căn; khuyết $c$: chia hai vế cho $x$ làm mất nghiệm $x=0$.",
+    "Chứng minh luôn có nghiệm: $\\Delta=(m-2)^2\\ge 0$ mà kết luận có hai nghiệm phân biệt.",
+    "Viết tổng, tích hai nghiệm khi chưa kiểm tra phương trình có nghiệm; nhầm dấu tổng $x_1+x_2=\\dfrac{b}{a}$.",
+    "Tính tổng nghịch đảo mà quên hai nghiệm khác $0$; tìm $m$ xong không đối chiếu điều kiện $\\Delta$.",
+    "Hạ bậc sai dấu khi chuyển vế: từ $x_1^2-3x_1+1=0$ viết $x_1^2=-3x_1+1$.",
+    "Bài toán lập phương trình: không đổi phút ra giờ; quên điều kiện của ẩn, không loại nghiệm âm."
   ],
   "kienthuc_nb": [
-    "Phương trình bậc hai một ẩn là phương trình dạng $ax^2+bx+c=0$ với $a \\ne 0$, trong đó $a$, $b$, $c$ là các hệ số.",
-    "Công thức nghiệm: $\\Delta=b^2-4ac$, nếu $\\Delta>0$ thì $x_{1,2}=\\dfrac{-b \\pm \\sqrt{\\Delta}}{2a}$, nếu $\\Delta=0$ thì $x_1=x_2=-\\dfrac{b}{2a}$, nếu $\\Delta<0$ thì phương trình vô nghiệm.",
-    "Công thức nghiệm thu gọn khi $b=2b'$: $\\Delta'=b'^2-ac$ và $x_{1,2}=\\dfrac{-b' \\pm \\sqrt{\\Delta'}}{a}$ (chia $a$, không chia $2a$).",
-    "Phương trình khuyết $c$ giải bằng đặt nhân tử chung, phương trình khuyết $b$ giải bằng chuyển vế rồi khai căn.",
-    "Bốn bước giải phương trình chứa ẩn ở mẫu: điều kiện xác định, quy đồng và khử mẫu, giải, đối chiếu điều kiện.",
-    "Hệ thức Viète: $x_1+x_2=-\\dfrac{b}{a}$ và $x_1x_2=\\dfrac{c}{a}$, chỉ dùng sau khi đã kiểm tra phương trình có nghiệm.",
-    "Nhẩm nghiệm: $a+b+c=0$ cho $x_1=1$, $x_2=\\dfrac{c}{a}$, còn $a-b+c=0$ cho $x_1=-1$, $x_2=-\\dfrac{c}{a}$.",
-    "$ac<0$ thì phương trình luôn có hai nghiệm trái dấu, dùng thay cho việc tính $\\Delta$."
+    "Phương trình bậc hai một ẩn: $ax^2+bx+c=0$ với $a\\ne 0$ (SGK Toán 9 tập hai, Bài 19).",
+    "Công thức nghiệm: $\\Delta=b^2-4ac$; $\\Delta>0$ thì $x_{1,2}=\\dfrac{-b\\pm\\sqrt{\\Delta}}{2a}$; $\\Delta=0$ thì $x_1=x_2=-\\dfrac{b}{2a}$; $\\Delta<0$ thì vô nghiệm.",
+    "Nếu $a$ và $c$ trái dấu thì phương trình có hai nghiệm phân biệt.",
+    "Định lí Viète: nếu $x_1$, $x_2$ là hai nghiệm thì $x_1+x_2=-\\dfrac{b}{a}$, $x_1x_2=\\dfrac{c}{a}$ (SGK Bài 20); $a+b+c=0$ thì $x_1=1$, $x_2=\\dfrac{c}{a}$; $a-b+c=0$ thì $x_1=-1$, $x_2=-\\dfrac{c}{a}$.",
+    "Giải bài toán bằng cách lập phương trình: lập phương trình (chọn ẩn, điều kiện, biểu diễn đại lượng), giải phương trình, trả lời (SGK Bài 21, ba bước)."
   ],
   "phieu": [
     {
-      "code": "A",
-      "title": "Buổi 1 — Bài 19: Phương trình bậc hai một ẩn",
+      "code": "1",
+      "title": "Phiếu 1 — Bài 19: Phương trình bậc hai một ẩn, biện luận số nghiệm theo $\\Delta$",
+      "khuon": "khong_vd",
       "rows": [
         {
-          "stt": 1,
-          "dang": "Ôn Lớp 8 (khai triển, thu gọn): đưa phương trình về dạng $ax^2+bx+c=0$ rồi chỉ ra các hệ số $a$, $b$, $c$",
+          "dang": "Ôn lớp 8: khai triển hằng đẳng thức, chuyển vế, thu gọn để đưa phương trình về dạng $ax^2+bx+c=0$ rồi đọc $a$, $b$, $c$ (SGK 6.8)",
           "band": "NB",
           "loai": "NB kiến thức cũ",
-          "gian_giao": "",
-          "onclass": 3,
-          "btvn": 3,
-          "vidu": 1,
-          "lythuyet": 1,
-          "source_refs": [
-            "gk1-nguyen-du-2025-1-3"
-          ],
-          "khung": true
-        },
-        {
-          "stt": 2,
-          "dang": "Giải phương trình khuyết $c$: đặt nhân tử chung đưa về $x(ax+b)=0$",
-          "band": "NB",
-          "loai": "NB lẻ LT",
-          "gian_giao": "dien-khuyet",
-          "onclass": 3,
-          "btvn": 2,
-          "vidu": 1,
-          "lythuyet": 1,
-          "source_refs": [],
-          "khung": true
-        },
-        {
-          "stt": 3,
-          "dang": "Giải phương trình khuyết $b$: đưa về $x^2=k$ rồi khai căn",
-          "band": "NB",
-          "loai": "NB lẻ LT",
-          "gian_giao": "",
-          "onclass": 3,
-          "btvn": 3,
-          "vidu": 1,
-          "lythuyet": 0,
-          "source_refs": [],
-          "khung": true
-        },
-        {
-          "stt": 4,
-          "dang": "Hoàn thành bài giải bằng công thức nghiệm: chỉ ra $a$, $b$, $c$, tính $\\Delta$, viết hai nghiệm",
-          "band": "NB",
-          "loai": "NB tách TH",
-          "gian_giao": "",
-          "onclass": 3,
-          "btvn": 3,
-          "vidu": 1,
-          "lythuyet": 1,
-          "source_refs": [
-            "gk2-dong-anh-2025-12.a",
-            "v10-ly-thuong-kiet-2025-III3"
-          ],
-          "khung": true
-        },
-        {
-          "stt": 5,
-          "dang": "Dùng $\\Delta$ cho biết số nghiệm: $\\Delta=0$ có nghiệm kép, $\\Delta<0$ vô nghiệm",
-          "band": "NB",
-          "loai": "NB lẻ LT",
-          "gian_giao": "",
-          "onclass": 3,
-          "btvn": 3,
-          "vidu": 1,
-          "lythuyet": 0,
-          "source_refs": [],
-          "khung": true
-        },
-        {
-          "stt": 6,
-          "dang": "Hoàn thành bài giải bằng công thức nghiệm thu gọn khi $b=2b'$: tính $\\Delta'$, viết hai nghiệm (chia $a$)",
-          "band": "NB",
-          "loai": "NB tách TH",
-          "gian_giao": "",
-          "onclass": 3,
-          "btvn": 3,
-          "vidu": 1,
-          "lythuyet": 1,
-          "source_refs": [
-            "gk2-dong-anh-2025-12.a",
-            "v10-tu-lap-2026-III3",
-            "v10-cau-giay-lan1-2026-III3"
-          ],
-          "khung": true
-        },
-        {
-          "stt": 7,
-          "dang": "Giải phương trình bậc hai đầy đủ bằng công thức nghiệm hoặc công thức nghiệm thu gọn",
-          "band": "TH",
-          "loai": "TH tách VD",
-          "gian_giao": "",
-          "onclass": 4,
-          "btvn": 3,
+          "decompose": "none",
           "vidu": 0,
+          "onclass": 2,
+          "btvn": 0,
           "lythuyet": 0,
           "source_refs": [
-            "gk2-dong-anh-2025-12",
-            "ck2-ba-dinh-2024-II3",
-            "v10-cum-thcs-cong-lap-2026-III3"
-          ]
-        },
-        {
-          "stt": 8,
-          "dang": "Đưa phương trình có dấu ngoặc về dạng $ax^2+bx+c=0$ rồi giải",
-          "band": "TH",
-          "loai": "TH ghép bài",
-          "gian_giao": "",
-          "onclass": 3,
-          "btvn": 2,
-          "vidu": 1,
-          "lythuyet": 0,
-          "source_refs": [
-            "gk1-giang-vo-2024-Ia",
-            "gk1-thanh-cong-2025-II2"
-          ]
-        },
-        {
-          "stt": 9,
-          "dang": "Bài toán thực tế cho sẵn ẩn (đội xe chở hàng, ô tô đi nhanh hơn dự định): lập phương trình bậc hai, giải, đối chiếu điều kiện",
-          "band": "VD",
-          "loai": "VD lẻ",
-          "gian_giao": "",
-          "onclass": 1,
-          "btvn": 1,
-          "vidu": 1,
-          "lythuyet": 0,
-          "source_refs": [
-            "v10-chuong-my-l4-2025-III2"
-          ]
-        },
-        {
-          "stt": 10,
-          "dang": "Bài toán hình chữ nhật, tìm hai số: tự đặt ẩn, lập phương trình bậc hai và giải (bài đích: mảnh đất, bộ đề Đống Đa)",
-          "band": "VD",
-          "loai": "VD lẻ",
-          "gian_giao": "",
-          "onclass": 1,
-          "btvn": 1,
-          "vidu": 1,
-          "lythuyet": 0,
-          "source_refs": [
-            "ck2-gia-lam-2024-III1",
-            "sgk-b21-vd1"
-          ]
-        }
-      ]
-    },
-    {
-      "code": "B",
-      "title": "Buổi 2 — Luyện tập chung: phương trình chứa ẩn ở mẫu quy về phương trình bậc hai",
-      "rows": [
-        {
-          "stt": 1,
-          "dang": "Ôn Lớp 8: phân tích mẫu thành nhân tử, tìm điều kiện xác định của phương trình chứa ẩn ở mẫu",
-          "band": "NB",
-          "loai": "NB kiến thức cũ",
-          "gian_giao": "",
-          "onclass": 3,
-          "btvn": 3,
-          "vidu": 1,
-          "lythuyet": 1,
-          "source_refs": [
-            "gk1-son-dong-2024-1b.a",
-            "gk1-nhat-tan-2025-1b.a"
+            "sgk-6.8"
           ],
-          "khung": true
+          "gian_giao": "",
+          "stt": 1
         },
         {
-          "stt": 2,
-          "dang": "Quy đồng mẫu hai vế, khử mẫu, đưa về phương trình $ax^2+bx+c=0$",
-          "band": "NB",
-          "loai": "NB tách TH",
-          "gian_giao": "dien-khuyet",
-          "onclass": 3,
-          "btvn": 2,
-          "vidu": 1,
-          "lythuyet": 1,
-          "source_refs": [
-            "gk1-dich-vong-hau-2025-I3.a"
-          ],
-          "khung": true
-        },
-        {
-          "stt": 3,
-          "dang": "Nhẩm nghiệm khi $a+b+c=0$ hoặc $a-b+c=0$ (SGK tập hai Bài 20 tr.22)",
+          "dang": "Nhận biết phương trình bậc hai (điều kiện $a\\ne 0$), đọc hệ số $a$, $b$, $c$; tính $\\Delta$ rồi kết luận số nghiệm không cần giải; $a$, $c$ trái dấu thì có hai nghiệm phân biệt \\textit{(C6-01)}",
           "band": "NB",
           "loai": "NB lẻ LT",
-          "gian_giao": "",
-          "onclass": 3,
-          "btvn": 3,
-          "vidu": 1,
-          "lythuyet": 1,
-          "source_refs": [],
-          "khung": true
-        },
-        {
-          "stt": 4,
-          "dang": "Hoàn thành bài giải phương trình chứa ẩn ở mẫu theo bốn bước, loại nghiệm không thỏa mãn điều kiện xác định",
-          "band": "NB",
-          "loai": "NB tách TH",
-          "gian_giao": "",
-          "onclass": 3,
-          "btvn": 2,
-          "vidu": 1,
-          "lythuyet": 0,
-          "source_refs": [
-            "gk1-nguyen-du-2025-1-2.a"
-          ],
-          "khung": true
-        },
-        {
-          "stt": 5,
-          "dang": "Giải phương trình chứa ẩn ở mẫu quy về bậc hai (mẫu là tam thức, mẫu đối nhau, có nghiệm bị loại)",
-          "band": "TH",
-          "loai": "TH tách VD",
-          "gian_giao": "",
-          "onclass": 9,
-          "btvn": 7,
-          "vidu": 1,
-          "lythuyet": 0,
-          "source_refs": [
-            "gk1-dich-vong-hau-2025-I3",
-            "gk1-nguyen-du-2025-1-2",
-            "gk1-giang-vo-2025-I3",
-            "ck1-nguyen-truong-to-2025-I2",
-            "gk1-nguyen-truong-to-2025-I1b",
-            "gk1-ai-mo-2025-Ib",
-            "gk1-chuyen-my-2025-1b",
-            "gk1-nguyen-huy-tuong-2025-1b"
-          ]
-        },
-        {
-          "stt": 6,
-          "dang": "Bài toán chuyển động cho sẵn ẩn dẫn tới phương trình chứa ẩn ở mẫu",
-          "band": "VD",
-          "loai": "VD lẻ",
-          "gian_giao": "",
-          "onclass": 1,
-          "btvn": 1,
-          "vidu": 1,
-          "lythuyet": 0,
-          "source_refs": [
-            "v10-chuong-my-l5-2025-III1"
-          ]
-        },
-        {
-          "stt": 7,
-          "dang": "Bài toán năng suất cho sẵn ẩn dẫn tới phương trình chứa ẩn ở mẫu (bài đích: đề minh họa của Sở, 300 sản phẩm)",
-          "band": "VD",
-          "loai": "VD lẻ",
-          "gian_giao": "",
-          "onclass": 1,
-          "btvn": 1,
-          "vidu": 0,
-          "lythuyet": 0,
-          "source_refs": [
-            "so-hn-minhhoa-III2"
-          ]
-        }
-      ]
-    },
-    {
-      "code": "C",
-      "title": "Buổi 3 — Bài 20: Định lí Viète và ứng dụng",
-      "rows": [
-        {
-          "stt": 1,
-          "dang": "Nhắc lại Bài 19: kiểm tra phương trình có hai nghiệm ($\\Delta\\ge 0$ hoặc $ac<0$) trước khi dùng định lí Viète",
-          "band": "NB",
-          "loai": "NB kiến thức cũ",
-          "gian_giao": "",
-          "onclass": 3,
-          "btvn": 3,
-          "vidu": 1,
-          "lythuyet": 0,
-          "source_refs": [
-            "so-hn-2026-III3",
-            "sgk-b20-tl1"
-          ]
-        },
-        {
-          "stt": 2,
-          "dang": "Viết tổng $x_1+x_2$ và tích $x_1x_2$ theo định lí Viète, kể cả hệ số chứa căn",
-          "band": "NB",
-          "loai": "NB lẻ LT",
-          "gian_giao": "dien-khuyet",
-          "onclass": 9,
-          "btvn": 8,
+          "decompose": "none",
           "vidu": 2,
+          "onclass": 6,
+          "btvn": 6,
           "lythuyet": 1,
           "source_refs": [
-            "v10-ung-hoa-lan3-2025-III3",
-            "sgk-6.23"
-          ]
-        },
-        {
-          "stt": 3,
-          "dang": "Biến đổi rồi tính $x_1^2+x_2^2$, $x_1^3+x_2^3$, $(x_1-x_2)^2$ theo tổng và tích hai nghiệm",
-          "band": "NB",
-          "loai": "NB tách TH",
-          "gian_giao": "",
-          "onclass": 12,
-          "btvn": 8,
-          "vidu": 3,
-          "lythuyet": 1,
-          "source_refs": [
-            "v10-huy-van-2024-III3.a"
+            "sgk-b19-vd1",
+            "sgk-b19-tl1",
+            "sgk-6.10",
+            "sgk-b19-tt1",
+            "sgk-6.41",
+            "sgk-b19-lt1",
+            "sgk-b20-hd3"
           ],
-          "khung": true
-        },
-        {
-          "stt": 4,
-          "dang": "Chứng minh hai nghiệm khác $0$ rồi tính $\\dfrac{1}{x_1}+\\dfrac{1}{x_2}$",
-          "band": "NB",
-          "loai": "NB tách TH",
-          "gian_giao": "",
-          "onclass": 3,
-          "btvn": 2,
-          "vidu": 1,
-          "lythuyet": 0,
-          "source_refs": [
-            "v10-cau-giay-lan1-2026-III3.a"
-          ]
-        },
-        {
-          "stt": 5,
-          "dang": "Biết một nghiệm, tìm nghiệm còn lại bằng tổng hai nghiệm",
-          "band": "NB",
-          "loai": "NB lẻ LT",
-          "gian_giao": "",
-          "onclass": 3,
-          "btvn": 3,
-          "vidu": 1,
-          "lythuyet": 1,
-          "source_refs": [
-            "sgk-b20-vd3"
-          ]
-        },
-        {
-          "stt": 6,
-          "dang": "Xét dấu hai nghiệm từ tích và tổng hai nghiệm, không giải phương trình",
-          "band": "NB",
-          "loai": "NB lẻ LT",
-          "gian_giao": "",
-          "onclass": 2,
-          "btvn": 2,
-          "vidu": 0,
-          "lythuyet": 1,
-          "source_refs": []
-        },
-        {
-          "stt": 7,
-          "dang": "Không giải phương trình, tính tổng bình phương, tổng các lập phương hai nghiệm",
-          "band": "TH",
-          "loai": "TH tách VD",
-          "gian_giao": "",
-          "onclass": 4,
-          "btvn": 4,
-          "vidu": 0,
-          "lythuyet": 0,
-          "source_refs": [
-            "v10-cum-thcs-cong-lap-2026-III3",
-            "v10-huy-van-2024-III3"
-          ]
-        },
-        {
-          "stt": 8,
-          "dang": "Chứng minh hai nghiệm khác $0$ rồi tính tổng nghịch đảo hai nghiệm",
-          "band": "TH",
-          "loai": "TH tách VD",
-          "gian_giao": "",
-          "onclass": 2,
-          "btvn": 2,
-          "vidu": 0,
-          "lythuyet": 0,
-          "source_refs": [
-            "v10-cau-giay-lan1-2026-III3"
-          ]
-        },
-        {
-          "stt": 9,
-          "dang": "Biết một nghiệm chứa căn, tìm nghiệm còn lại và hệ số còn thiếu",
-          "band": "TH",
-          "loai": "TH ghép bài",
-          "gian_giao": "",
-          "onclass": 2,
-          "btvn": 2,
-          "vidu": 1,
-          "lythuyet": 0,
-          "source_refs": [
-            "so-hn-minhhoa-III3"
-          ]
-        },
-        {
-          "stt": 10,
-          "dang": "Tính $\\dfrac{x_1}{x_2}+\\dfrac{x_2}{x_1}$ theo tổng và tích hai nghiệm",
-          "band": "VD",
-          "loai": "VD lẻ",
-          "gian_giao": "",
-          "onclass": 1,
-          "btvn": 1,
-          "vidu": 1,
-          "lythuyet": 0,
-          "source_refs": [
-            "v10-ly-thuong-kiet-2025-III3",
-            "ck2-ba-dinh-2024-II3"
-          ]
-        },
-        {
-          "stt": 11,
-          "dang": "Xét dấu hai nghiệm rồi tính biểu thức chứa $|x_1|$, $|x_2|$",
-          "band": "VD",
-          "loai": "VD lẻ",
-          "gian_giao": "",
-          "onclass": 1,
-          "btvn": 1,
-          "vidu": 1,
-          "lythuyet": 0,
-          "source_refs": [
-            "v10-cum-thcs-cong-lap-2026-III3",
-            "v10-tu-lap-2026-III3"
-          ]
-        }
-      ]
-    },
-    {
-      "code": "D",
-      "title": "Buổi 4 — Luyện tập: Tính giá trị biểu thức chứa hai nghiệm",
-      "rows": [
-        {
-          "stt": 1,
-          "dang": "Nhắc lại Bài 20: kiểm tra điều kiện có nghiệm rồi viết tổng và tích hai nghiệm",
-          "band": "NB",
-          "loai": "NB kiến thức cũ",
           "gian_giao": "dien-khuyet",
-          "onclass": 4,
-          "btvn": 3,
-          "vidu": 1,
-          "lythuyet": 1,
-          "source_refs": [
-            "sgk-6.23"
-          ]
+          "stt": 2
         },
         {
-          "stt": 2,
-          "dang": "Hạ bậc: từ $ax_1^2+bx_1+c=0$ viết $x_1^2$ và $x_1^3$ theo $x_1$",
+          "dang": "Giải phương trình khuyết $c$ (đặt nhân tử chung) và khuyết $b$ (đưa về $x^2=k$ hoặc $(x+m)^2=k$) \\textit{(C6-02)}",
           "band": "NB",
           "loai": "NB lẻ LT",
-          "gian_giao": "",
-          "onclass": 4,
-          "btvn": 3,
-          "vidu": 1,
-          "lythuyet": 1,
-          "source_refs": []
-        },
-        {
-          "stt": 3,
-          "dang": "Hạ bậc rồi tính giá trị biểu thức của một nghiệm",
-          "band": "NB",
-          "loai": "NB tách TH",
-          "gian_giao": "",
-          "onclass": 3,
-          "btvn": 3,
-          "vidu": 1,
-          "lythuyet": 0,
-          "source_refs": [
-            "v10-ung-hoa-lan3-2025-III3.a"
-          ]
-        },
-        {
-          "stt": 4,
-          "dang": "Hoàn thành bài giải biểu thức không đối xứng: hạ bậc để đưa về tổng và tích hai nghiệm",
-          "band": "NB",
-          "loai": "NB tách TH",
-          "gian_giao": "",
-          "onclass": 6,
+          "decompose": "none",
+          "vidu": 3,
+          "onclass": 5,
           "btvn": 4,
-          "vidu": 1,
           "lythuyet": 1,
           "source_refs": [
-            "so-hn-2026-III3.a"
+            "sgk-b19-vd3",
+            "sgk-b19-vd2",
+            "ck2-phan-dinh-phung-2025-TN2",
+            "gk1-thach-ban-2024-IIa",
+            "sgk-b19-lt3",
+            "gk1-nghia-tan-2025-I1b",
+            "sgk-b19-lt2",
+            "sgk-6.9"
           ],
-          "khung": true
+          "gian_giao": "dien-khuyet",
+          "stt": 3
         },
         {
-          "stt": 5,
-          "dang": "Xét dấu hai nghiệm rồi rút gọn $\\sqrt{x_1^2}=|x_1|$",
+          "dang": "Nhẩm nghiệm khi $a+b+c=0$ hoặc $a-b+c=0$ — nêu như nhận xét khi kiểm nghiệm bằng máy tính, không thành dạng bài \\textit{(C6-03)}",
           "band": "NB",
           "loai": "NB lẻ LT",
-          "gian_giao": "",
-          "onclass": 3,
-          "btvn": 2,
-          "vidu": 1,
-          "lythuyet": 1,
-          "source_refs": []
-        },
-        {
-          "stt": 6,
-          "dang": "Hạ bậc tính biểu thức bậc ba của một nghiệm",
-          "band": "TH",
-          "loai": "TH tách VD",
-          "gian_giao": "",
+          "decompose": "none",
+          "vidu": 0,
           "onclass": 2,
-          "btvn": 3,
-          "vidu": 1,
-          "lythuyet": 0,
+          "btvn": 5,
+          "lythuyet": 1,
           "source_refs": [
-            "v10-ung-hoa-lan3-2025-III3"
-          ]
-        },
-        {
-          "stt": 7,
-          "dang": "Tính biểu thức không đối xứng của hai nghiệm bằng hạ bậc, tổng và tích",
-          "band": "TH",
-          "loai": "TH tách VD",
+            "sgk-6.24",
+            "sgk-b20-vd2",
+            "tl-viete-47-tr8"
+          ],
           "gian_giao": "",
-          "onclass": 3,
-          "btvn": 3,
-          "vidu": 1,
-          "lythuyet": 0,
-          "source_refs": [
-            "so-hn-2026-III3",
-            "ck2-phuc-dong-2025-III2"
-          ]
+          "stt": 4
         },
         {
-          "stt": 8,
-          "dang": "Biến đổi (quy đồng, khai triển) rồi tính biểu thức đối xứng của hai nghiệm theo tổng và tích",
+          "dang": "Câu nhỏ tách từ đề giải phương trình: chỉ ra $a$, $b$, $c$; đưa về dạng chuẩn; $\\Delta<0$ thì kết luận gì \\textit{(C6-01)}",
+          "band": "NB",
+          "loai": "NB tách TH",
+          "decompose": "none",
+          "vidu": 0,
+          "onclass": 7,
+          "btvn": 6,
+          "lythuyet": 0,
+          "source_refs": [
+            "ck2-hat-mon-2025-II1",
+            "ck2-ba-dinh-2024-II2",
+            "gk2-phan-dinh-giot-2024-2",
+            "gk2-dong-anh-2025-12",
+            "gk1-thanh-cong-2025-II2",
+            "gk2-ban-mai-2025-6a",
+            "gk2-ban-mai-2025-6b",
+            "gk2-tay-mo-3-2025-II",
+            "gk1-thach-ban-2024-IIc",
+            "ck2-be-van-dan-2025-III2",
+            "gk1-giang-vo-2024-Ib"
+          ],
+          "gian_giao": "",
+          "stt": 5
+        },
+        {
+          "dang": "Câu nhỏ tách từ đề tìm $m$: hai nghiệm phân biệt / nghiệm kép / vô nghiệm ứng với điều kiện nào của $\\Delta$; viết $\\Delta$ theo $m$ \\textit{(C6-04)}",
+          "band": "NB",
+          "loai": "NB tách TH",
+          "decompose": "none",
+          "vidu": 0,
+          "onclass": 5,
+          "btvn": 3,
+          "lythuyet": 0,
+          "source_refs": [
+            "ck2-cau-dien-2025-III2",
+            "v10-tam-khuong-2025-III3",
+            "tl-ptb2-16-tr6",
+            "tl-ptb2-08-tr6",
+            "tl-ptb2-18-tr6"
+          ],
+          "gian_giao": "",
+          "stt": 6
+        },
+        {
+          "dang": "Câu nhỏ tách từ đề chứng minh luôn có nghiệm: thay giá trị $m$; viết $\\Delta$ theo $m$; dấu của $ac$; $(m-2)^2\\ge 0$ cho kết luận gì \\textit{(C6-05)}",
+          "band": "NB",
+          "loai": "NB tách TH",
+          "decompose": "none",
+          "vidu": 0,
+          "onclass": 4,
+          "btvn": 2,
+          "lythuyet": 0,
+          "source_refs": [
+            "gk2-nguyen-truong-to-2025-2",
+            "ck2-xuan-dinh-2025-III2",
+            "gk2-cau-dien-2025-32",
+            "v10-thanh-oai-l1-2024-III2"
+          ],
+          "gian_giao": "",
+          "stt": 7
+        },
+        {
+          "dang": "Câu nhỏ tách từ đề biết một nghiệm: thay $x=x_0$ vào phương trình để được phương trình ẩn $m$ \\textit{(C6-06)}",
+          "band": "NB",
+          "loai": "NB tách TH",
+          "decompose": "none",
+          "vidu": 0,
+          "onclass": 1,
+          "btvn": 0,
+          "lythuyet": 0,
+          "source_refs": [
+            "gk2-phan-dinh-giot-2024-33"
+          ],
+          "gian_giao": "",
+          "stt": 8
+        },
+        {
+          "dang": "Giải phương trình bằng công thức nghiệm: hai nghiệm phân biệt, nghiệm kép, vô nghiệm, nghiệm chứa căn, hệ số chứa căn; phương trình phải biến đổi về dạng chuẩn \\textit{(C6-01)}",
           "band": "TH",
           "loai": "TH ghép bài",
-          "gian_giao": "",
-          "onclass": 4,
-          "btvn": 3,
-          "vidu": 0,
+          "decompose": "th2nb",
+          "vidu": 5,
+          "onclass": 5,
+          "btvn": 6,
           "lythuyet": 0,
           "source_refs": [
-            "v10-thai-thinh-2025-III3",
-            "v10-quang-trung-2025-III3",
-            "v10-to-vinh-dien-2025-III3",
-            "ck2-thang-long-2025-III3",
-            "v10-thai-thinh-2026-III3",
-            "tl-viete-12-tr3",
-            "tl-viete-13-tr3"
-          ]
+            "sgk-b19-vd5",
+            "sgk-b19-vd6",
+            "gk1-giang-vo-2024-Ia",
+            "gk1-nguyen-du-2025-1-3",
+            "ck2-hat-mon-2025-II1",
+            "ck2-ba-dinh-2024-II2",
+            "gk2-phan-dinh-giot-2024-2",
+            "gk2-dong-anh-2025-12",
+            "gk1-thanh-cong-2025-II2",
+            "gk2-ban-mai-2025-6a",
+            "gk2-ban-mai-2025-6b",
+            "gk2-tay-mo-3-2025-II",
+            "gk1-thach-ban-2024-IIc",
+            "ck2-be-van-dan-2025-III2",
+            "gk1-giang-vo-2024-Ib"
+          ],
+          "gian_giao": "",
+          "stt": 9
         },
         {
-          "stt": 9,
-          "dang": "Hai nghiệm cùng âm: tính biểu thức chứa căn của nghiệm",
-          "band": "VD",
-          "loai": "VD lẻ",
-          "gian_giao": "",
-          "onclass": 1,
-          "btvn": 1,
+          "dang": "Tìm $m$ để phương trình có hai nghiệm phân biệt, có nghiệm kép, vô nghiệm \\textit{(C6-04)}",
+          "band": "TH",
+          "loai": "TH tách VD",
+          "decompose": "th2nb",
           "vidu": 1,
+          "onclass": 3,
+          "btvn": 2,
           "lythuyet": 0,
           "source_refs": [
-            "v10-tu-lap-2026-III3"
-          ]
+            "tl-ptb2-07-tr5",
+            "ck2-cau-dien-2025-III2",
+            "v10-tam-khuong-2025-III3",
+            "tl-ptb2-16-tr6",
+            "tl-ptb2-08-tr6",
+            "tl-ptb2-18-tr6"
+          ],
+          "gian_giao": "",
+          "stt": 10
         },
         {
-          "stt": 10,
-          "dang": "Biểu thức phân thức không đối xứng của hai nghiệm (đề chính thức Vào 10 Hà Nội 2026)",
-          "band": "VD",
-          "loai": "VD lẻ",
-          "gian_giao": "",
-          "onclass": 1,
-          "btvn": 1,
+          "dang": "Chứng minh phương trình luôn có nghiệm (hai nghiệm phân biệt) với mọi $m$: $\\Delta$ là bình phương, hoặc $ac<0$ \\textit{(C6-05)}",
+          "band": "TH",
+          "loai": "TH tách VD",
+          "decompose": "th2nb",
           "vidu": 1,
+          "onclass": 3,
+          "btvn": 2,
           "lythuyet": 0,
           "source_refs": [
-            "so-hn-2026-III3"
-          ]
+            "ck2-hai-ba-trung-2024-III2",
+            "gk2-nguyen-truong-to-2025-2",
+            "ck2-xuan-dinh-2025-III2",
+            "gk2-cau-dien-2025-32",
+            "v10-thanh-oai-l1-2024-III2"
+          ],
+          "gian_giao": "",
+          "stt": 11
+        },
+        {
+          "dang": "Biết một nghiệm, tìm $m$ rồi giải phương trình tìm nghiệm còn lại (chưa dùng Viète) \\textit{(C6-06)}",
+          "band": "TH",
+          "loai": "TH ghép bài",
+          "decompose": "th2nb",
+          "vidu": 2,
+          "onclass": 1,
+          "btvn": 0,
+          "lythuyet": 0,
+          "source_refs": [
+            "tl-ptb2-14-tr6",
+            "gk2-phan-dinh-giot-2024-33"
+          ],
+          "gian_giao": "",
+          "stt": 12
         }
       ]
     },
     {
-      "code": "E",
-      "title": "Buổi 5 — Bài 21: Giải bài toán bằng cách lập phương trình",
+      "code": "2",
+      "title": "Phiếu 2 — Bài 20: Định lí Viète, biểu thức đối xứng của hai nghiệm, tìm $m$ theo hệ thức đối xứng",
       "rows": [
         {
-          "stt": 1,
-          "dang": "Giải phương trình vừa lập (Bài 19, phương trình chứa ẩn ở mẫu), đối chiếu điều kiện và trả lời",
+          "dang": "Ôn lớp 8: quy đồng mẫu hai phân thức $\\dfrac{1}{x_1+3}+\\dfrac{1}{x_2+3}$ trước khi thay tổng, tích",
           "band": "NB",
           "loai": "NB kiến thức cũ",
-          "gian_giao": "",
-          "onclass": 6,
-          "btvn": 8,
+          "decompose": "none",
           "vidu": 0,
+          "onclass": 1,
+          "btvn": 0,
           "lythuyet": 0,
+          "source_refs": [
+            "v10-thai-thinh-2025-III3"
+          ],
+          "gian_giao": "",
+          "stt": 1
+        },
+        {
+          "dang": "Kiểm điều kiện có nghiệm ($\\Delta\\ge 0$ hoặc $ac<0$) rồi viết tổng, tích hai nghiệm; Đ/S với phương trình vô nghiệm; trắc nghiệm $x_1^2+x_2^2$ \\textit{(C6-07)}",
+          "band": "NB",
+          "loai": "NB lẻ LT",
+          "decompose": "none",
+          "vidu": 2,
+          "onclass": 9,
+          "btvn": 5,
+          "lythuyet": 1,
+          "source_refs": [
+            "sgk-b20-vd1",
+            "sgk-6.23",
+            "sgk-b20-tl1",
+            "sgk-b20-tt1",
+            "ck2-gia-lam-2024-III2",
+            "sgk-6.43",
+            "sgk-b20-lt1",
+            "tl-viete-01-tr1"
+          ],
+          "gian_giao": "dien-khuyet",
+          "stt": 2
+        },
+        {
+          "dang": "Biết một nghiệm, tìm nghiệm còn lại bằng tích hai nghiệm \\textit{(C6-06)}",
+          "band": "NB",
+          "loai": "NB lẻ LT",
+          "decompose": "none",
+          "vidu": 0,
+          "onclass": 1,
+          "btvn": 0,
+          "lythuyet": 0,
+          "source_refs": [
+            "sgk-b20-lt2"
+          ],
+          "gian_giao": "",
+          "stt": 3
+        },
+        {
+          "dang": "Hai nghiệm trái dấu $\\Leftrightarrow ac<0$ (chỉ lấy ý trái dấu) \\textit{(C6-10)}",
+          "band": "NB",
+          "loai": "NB lẻ LT",
+          "decompose": "none",
+          "vidu": 0,
+          "onclass": 2,
+          "btvn": 1,
+          "lythuyet": 1,
+          "source_refs": [
+            "tl-viete-58-tr11",
+            "tl-viete-56-tr10",
+            "tl-viete-60-tr11"
+          ],
+          "gian_giao": "",
+          "stt": 4
+        },
+        {
+          "dang": "Ôn nhẩm nghiệm (BTVN): hệ số chứa căn \\textit{(C6-03)}",
+          "band": "NB",
+          "loai": "NB lẻ LT",
+          "decompose": "none",
+          "vidu": 0,
+          "onclass": 0,
+          "btvn": 2,
+          "lythuyet": 0,
+          "source_refs": [
+            "sgk-6.34"
+          ],
+          "gian_giao": "",
+          "stt": 5
+        },
+        {
+          "dang": "Câu nhỏ tách từ đề tính biểu thức: điều kiện có nghiệm; $x_1+x_2=?$, $x_1x_2=?$; viết biểu thức theo tổng, tích; hai nghiệm khác $0$ \\textit{(C6-07)}",
+          "band": "NB",
+          "loai": "NB tách TH",
+          "decompose": "none",
+          "vidu": 0,
+          "onclass": 15,
+          "btvn": 10,
+          "lythuyet": 0,
+          "source_refs": [
+            "gk2-co-dong-2024-III2",
+            "ck2-thang-long-2025-III3",
+            "v10-cau-giay-lan1-2026-III3",
+            "v10-thai-thinh-2025-III3-md2",
+            "ck2-ba-dinh-2024-II3",
+            "v10-thai-thinh-2025-III3",
+            "ck2-chu-van-an-dn-2025-2",
+            "v10-thai-thinh-2026-III3",
+            "gk2-nguyen-du-2024-32",
+            "v10-to-vinh-dien-2025-III3",
+            "ck2-phuc-loi-2024-3-2"
+          ],
+          "gian_giao": "",
+          "stt": 6
+        },
+        {
+          "dang": "Câu nhỏ tách từ đề biết một nghiệm dạng căn: thay nghiệm tìm hệ số, tính $\\Delta$, tổng hai nghiệm bằng bao nhiêu \\textit{(C6-08)}",
+          "band": "NB",
+          "loai": "NB tách TH",
+          "decompose": "none",
+          "vidu": 0,
+          "onclass": 3,
+          "btvn": 4,
+          "lythuyet": 0,
+          "source_refs": [
+            "so-hn-minhhoa-III3",
+            "v10-tho-loc-l3-2025-III3",
+            "ck2-dai-ang-2025-III2",
+            "gk2-dong-anh-2025-33"
+          ],
+          "gian_giao": "",
+          "stt": 7
+        },
+        {
+          "dang": "Câu nhỏ tách từ đề tìm $m$: thay $m$ để giải; điều kiện có nghiệm theo $m$; viết hệ thức theo tổng, tích \\textit{(C6-11)}",
+          "band": "NB",
+          "loai": "NB tách TH",
+          "decompose": "none",
+          "vidu": 0,
+          "onclass": 7,
+          "btvn": 4,
+          "lythuyet": 0,
+          "source_refs": [
+            "ck2-thai-thinh-2025-III2",
+            "ck2-hoai-duc-2024-III2",
+            "ck2-lomonoxop-2024-III2",
+            "gk2-mai-dich-2024-32",
+            "v10-thanh-oai-l2-2025-III3"
+          ],
+          "gian_giao": "",
+          "stt": 8
+        },
+        {
+          "dang": "Tính biểu thức đối xứng: $x_1^2+x_2^2$, $x_1^2+x_2^2-kx_1x_2$, $\\dfrac{1}{x_1}+\\dfrac{1}{x_2}$, $x_1^3+x_2^3$, $\\dfrac{x_1}{x_2}+\\dfrac{x_2}{x_1}$, $\\dfrac{1}{x_1+a}+\\dfrac{1}{x_2+a}$, biểu thức phải khai triển \\textit{(C6-07)}",
+          "band": "TH",
+          "loai": "TH ghép bài",
+          "decompose": "th2nb",
+          "vidu": 8,
+          "onclass": 6,
+          "btvn": 5,
+          "lythuyet": 0,
+          "source_refs": [
+            "sgk-ltc2-vd1",
+            "tl-viete-04-tr2",
+            "sgk-6.48",
+            "sgk-6.35",
+            "v10-ly-thuong-kiet-2025-III3",
+            "v10-nguyen-truong-to-2025-III3",
+            "v10-quang-trung-2025-III3",
+            "gk2-co-dong-2024-III2",
+            "ck2-thang-long-2025-III3",
+            "v10-cau-giay-lan1-2026-III3",
+            "v10-thai-thinh-2025-III3-md2",
+            "ck2-ba-dinh-2024-II3",
+            "v10-thai-thinh-2025-III3",
+            "ck2-chu-van-an-dn-2025-2",
+            "v10-thai-thinh-2026-III3",
+            "gk2-nguyen-du-2024-32",
+            "v10-to-vinh-dien-2025-III3",
+            "ck2-phuc-loi-2024-3-2"
+          ],
+          "gian_giao": "",
+          "stt": 9
+        },
+        {
+          "dang": "Biết một nghiệm dạng căn, tính biểu thức đối xứng (đề minh họa của Sở) \\textit{(C6-08)}",
+          "band": "TH",
+          "loai": "TH lẻ LT",
+          "decompose": "none",
+          "vidu": 1,
+          "onclass": 1,
+          "btvn": 3,
+          "lythuyet": 0,
+          "source_refs": [
+            "ck2-phuc-dong-2024-902-III2",
+            "so-hn-minhhoa-III3",
+            "v10-tho-loc-l3-2025-III3",
+            "ck2-dai-ang-2025-III2",
+            "gk2-dong-anh-2025-33"
+          ],
+          "gian_giao": "",
+          "stt": 10
+        },
+        {
+          "dang": "Tìm $m$ theo hệ thức đối xứng, hạ thành các bước có câu hỏi định hướng: điều kiện $\\Delta$, viết hệ thức theo tổng-tích, giải, đối chiếu \\textit{(C6-11)}",
+          "band": "TH",
+          "loai": "TH tách VD",
+          "decompose": "th2nb",
+          "vidu": 0,
+          "onclass": 1,
+          "btvn": 0,
+          "lythuyet": 0,
+          "source_refs": [
+            "ck2-thai-thinh-2025-III2"
+          ],
+          "gian_giao": "",
+          "stt": 11
+        },
+        {
+          "dang": "Tìm $m$ để hai nghiệm thỏa hệ thức đối xứng (chỉ đề, học sinh tự giải) \\textit{(C6-11)}",
+          "band": "VD",
+          "loai": "VD lẻ",
+          "decompose": "vd",
+          "vidu": 1,
+          "onclass": 2,
+          "btvn": 2,
+          "lythuyet": 0,
+          "source_refs": [
+            "v10-be-van-dan-2025-III3",
+            "ck2-hoai-duc-2024-III2",
+            "ck2-lomonoxop-2024-III2",
+            "gk2-mai-dich-2024-32",
+            "v10-thanh-oai-l2-2025-III3"
+          ],
+          "gian_giao": "",
+          "stt": 12
+        }
+      ]
+    },
+    {
+      "code": "3",
+      "title": "Phiếu 3 — Bài 20 (tiếp): Biểu thức không đối xứng của hai nghiệm, tìm $m$ theo hệ thức không đối xứng",
+      "rows": [
+        {
+          "dang": "Ôn chương III (Toán 9 tập một): hằng đẳng thức $\\sqrt{A^2}=|A|$, bỏ dấu căn của $\\sqrt{(x-3)^2}$ khi $x<0$",
+          "band": "NB",
+          "loai": "NB kiến thức cũ",
+          "decompose": "none",
+          "vidu": 0,
+          "onclass": 1,
+          "btvn": 0,
+          "lythuyet": 0,
+          "source_refs": [
+            "v10-tu-lap-2026-III3"
+          ],
+          "gian_giao": "",
+          "stt": 1
+        },
+        {
+          "dang": "Câu nhỏ tách từ đề hạ bậc: $x_1$ là nghiệm nên $x_1^2=?$; $x_1^3=?$; biểu thức còn lại theo tổng, tích \\textit{(C6-13)}",
+          "band": "NB",
+          "loai": "NB tách TH",
+          "decompose": "none",
+          "vidu": 0,
+          "onclass": 10,
+          "btvn": 3,
+          "lythuyet": 0,
+          "source_refs": [
+            "ck2-van-dien-2024-III2",
+            "v10-my-dinh-2-2026-III3",
+            "so-hn-2026-III3",
+            "ck2-nghia-tan-2025-III2"
+          ],
+          "gian_giao": "",
+          "stt": 2
+        },
+        {
+          "dang": "Câu nhỏ tách từ đề chứa $|x|$, căn: dấu hai nghiệm ($ac$, tổng); biểu thức dưới căn là bình phương của gì \\textit{(C6-14)}",
+          "band": "NB",
+          "loai": "NB tách TH",
+          "decompose": "none",
+          "vidu": 0,
+          "onclass": 5,
+          "btvn": 0,
+          "lythuyet": 0,
+          "source_refs": [
+            "v10-tu-lap-2026-III3",
+            "v10-cum-thcs-cong-lap-2026-III3"
+          ],
+          "gian_giao": "",
+          "stt": 3
+        },
+        {
+          "dang": "Câu nhỏ tách từ đề hệ thức bậc nhất: kết hợp với $x_1+x_2$ thành hệ; thay $x_1$, $x_2$ vào tích để tìm $m$; đối chiếu $\\Delta$ \\textit{(C6-15)}",
+          "band": "NB",
+          "loai": "NB tách TH",
+          "decompose": "none",
+          "vidu": 0,
+          "onclass": 9,
+          "btvn": 3,
+          "lythuyet": 0,
+          "source_refs": [
+            "gk2-ba-dinh-2024-III2",
+            "gk2-mai-dich-2025-32",
+            "gk2-le-ngoc-han-2024-III2",
+            "tl-viete-38-tr6"
+          ],
+          "gian_giao": "",
+          "stt": 4
+        },
+        {
+          "dang": "Câu nhỏ tách từ đề tìm $m$ bằng hạ bậc: thay $x_1^2$ theo $x_1$; rút gọn về tổng, tích; điều kiện có nghiệm \\textit{(C6-16)}",
+          "band": "NB",
+          "loai": "NB tách TH",
+          "decompose": "none",
+          "vidu": 0,
+          "onclass": 7,
+          "btvn": 3,
+          "lythuyet": 0,
+          "source_refs": [
+            "v10-luyen-de-8-2025-III3",
+            "so-hn-2025-III3",
+            "v10-luyen-de-3-2025-III3"
+          ],
+          "gian_giao": "",
+          "stt": 5
+        },
+        {
+          "dang": "Câu nhỏ tách từ đề tìm tham số (BTVN): điều kiện có nghiệm, hai nghiệm khác $0$; dùng tích $x_1x_2$ để đưa hệ thức về tổng, tích \\textit{(C6-11)}",
+          "band": "NB",
+          "loai": "NB tách TH",
+          "decompose": "none",
+          "vidu": 0,
+          "onclass": 0,
+          "btvn": 12,
+          "lythuyet": 0,
+          "source_refs": [
+            "gk2-trung-vuong-2025-III2",
+            "gk2-cau-giay-2024-II3",
+            "ck2-trung-vuong-2025-III3",
+            "ck2-ngoc-lam-2024-T901-III2"
+          ],
+          "gian_giao": "",
+          "stt": 6
+        },
+        {
+          "dang": "Câu nhỏ tách từ đề ôn Phiếu 2: viết biểu thức đối xứng theo tổng, tích để được phương trình ẩn $m$ \\textit{(C6-07)}",
+          "band": "NB",
+          "loai": "NB tách TH",
+          "decompose": "none",
+          "vidu": 0,
+          "onclass": 0,
+          "btvn": 2,
+          "lythuyet": 0,
+          "source_refs": [
+            "v10-luyen-de-20-2025-III3"
+          ],
+          "gian_giao": "",
+          "stt": 7
+        },
+        {
+          "dang": "Câu nhỏ tách từ đề biết một nghiệm dạng căn (ôn Phiếu 2): tổng hai nghiệm, tích hai nghiệm \\textit{(C6-08)}",
+          "band": "NB",
+          "loai": "NB tách TH",
+          "decompose": "none",
+          "vidu": 0,
+          "onclass": 0,
+          "btvn": 3,
+          "lythuyet": 0,
+          "source_refs": [
+            "v10-luyen-de-6-2025-III3",
+            "v10-luyen-de-17-2025-III3"
+          ],
+          "gian_giao": "",
+          "stt": 8
+        },
+        {
+          "dang": "Tìm $m$ theo hệ thức bậc nhất không đối xứng $ax_1+bx_2=c$, $x_1=kx_2$ \\textit{(C6-15)}",
+          "band": "TH",
+          "loai": "TH tách VD",
+          "decompose": "th2nb",
+          "vidu": 1,
+          "onclass": 3,
+          "btvn": 0,
+          "lythuyet": 0,
+          "source_refs": [
+            "tl-viete-40-tr6",
+            "gk2-ba-dinh-2024-III2",
+            "gk2-mai-dich-2025-32",
+            "gk2-le-ngoc-han-2024-III2"
+          ],
+          "gian_giao": "",
+          "stt": 9
+        },
+        {
+          "dang": "Hạ bậc: tính biểu thức không đối xứng bậc hai, bậc ba (bài VD tách lẻ thành các bước) \\textit{(C6-13)}",
+          "band": "TH",
+          "loai": "TH tách VD",
+          "decompose": "th2nb",
+          "vidu": 0,
+          "onclass": 2,
+          "btvn": 0,
+          "lythuyet": 1,
+          "source_refs": [
+            "ck2-van-dien-2024-III2",
+            "v10-my-dinh-2-2026-III3"
+          ],
+          "gian_giao": "",
+          "stt": 10
+        },
+        {
+          "dang": "Biểu thức chứa $|x|$, căn của một nghiệm: xét dấu hai nghiệm rồi biến đổi \\textit{(C6-14)}",
+          "band": "TH",
+          "loai": "TH tách VD",
+          "decompose": "th2nb",
+          "vidu": 0,
+          "onclass": 2,
+          "btvn": 0,
+          "lythuyet": 0,
+          "source_refs": [
+            "v10-tu-lap-2026-III3",
+            "v10-cum-thcs-cong-lap-2026-III3"
+          ],
+          "gian_giao": "",
+          "stt": 11
+        },
+        {
+          "dang": "Tìm $m$ theo hệ thức không đối xứng bằng hạ bậc \\textit{(C6-16)}",
+          "band": "TH",
+          "loai": "TH tách VD",
+          "decompose": "th2nb",
+          "vidu": 0,
+          "onclass": 1,
+          "btvn": 1,
+          "lythuyet": 0,
+          "source_refs": [
+            "v10-luyen-de-8-2025-III3",
+            "v10-luyen-de-3-2025-III3"
+          ],
+          "gian_giao": "",
+          "stt": 12
+        },
+        {
+          "dang": "Tìm tham số theo hệ thức có $\\dfrac{1}{x_1}+\\dfrac{1}{x_2}$ hoặc hệ thức lệch đưa được về tổng nhờ tích $x_1x_2$ (đề thi, BTVN) \\textit{(C6-11)}",
+          "band": "TH",
+          "loai": "TH tách VD",
+          "decompose": "th2nb",
+          "vidu": 0,
+          "onclass": 0,
+          "btvn": 4,
+          "lythuyet": 0,
+          "source_refs": [
+            "gk2-trung-vuong-2025-III2",
+            "gk2-cau-giay-2024-II3",
+            "ck2-trung-vuong-2025-III3",
+            "ck2-ngoc-lam-2024-T901-III2"
+          ],
+          "gian_giao": "",
+          "stt": 13
+        },
+        {
+          "dang": "Ôn Phiếu 2: phương trình ẩn $m$ có chứa biểu thức đối xứng của hai nghiệm \\textit{(C6-07)}",
+          "band": "TH",
+          "loai": "TH lẻ LT",
+          "decompose": "none",
+          "vidu": 0,
+          "onclass": 0,
+          "btvn": 1,
+          "lythuyet": 0,
+          "source_refs": [
+            "v10-luyen-de-20-2025-III3"
+          ],
+          "gian_giao": "",
+          "stt": 14
+        },
+        {
+          "dang": "Ôn Phiếu 2: biết một nghiệm dạng căn, tính tổng lập phương, bình phương hiệu \\textit{(C6-08)}",
+          "band": "TH",
+          "loai": "TH lẻ LT",
+          "decompose": "none",
+          "vidu": 0,
+          "onclass": 0,
+          "btvn": 2,
+          "lythuyet": 0,
+          "source_refs": [
+            "v10-luyen-de-6-2025-III3",
+            "v10-luyen-de-17-2025-III3"
+          ],
+          "gian_giao": "",
+          "stt": 15
+        },
+        {
+          "dang": "Hạ bậc rồi quy đồng (đề chính thức Hà Nội 2026) — chỉ đề \\textit{(C6-13)}",
+          "band": "VD",
+          "loai": "VD lẻ",
+          "decompose": "vd",
+          "vidu": 1,
+          "onclass": 1,
+          "btvn": 1,
+          "lythuyet": 0,
+          "source_refs": [
+            "ck2-phuc-dong-2025-III2",
+            "so-hn-2026-III3",
+            "ck2-nghia-tan-2025-III2"
+          ],
+          "gian_giao": "",
+          "stt": 16
+        },
+        {
+          "dang": "Biểu thức chứa căn và trị tuyệt đối của một nghiệm (ví dụ mẫu) \\textit{(C6-14)}",
+          "band": "VD",
+          "loai": "VD lẻ",
+          "decompose": "vd",
+          "vidu": 1,
+          "onclass": 0,
+          "btvn": 0,
+          "lythuyet": 0,
+          "source_refs": [
+            "v10-tho-loc-l4-2026-III3"
+          ],
+          "gian_giao": "",
+          "stt": 17
+        },
+        {
+          "dang": "Tìm $m$ theo hệ thức bậc nhất (nghiệm này gấp $k$ lần nghiệm kia) — chỉ đề \\textit{(C6-15)}",
+          "band": "VD",
+          "loai": "VD lẻ",
+          "decompose": "vd",
+          "vidu": 2,
+          "onclass": 0,
+          "btvn": 1,
+          "lythuyet": 0,
+          "source_refs": [
+            "tl-viete-35-tr6",
+            "v10-quoc-oai-l1-2024-3.2",
+            "tl-viete-38-tr6"
+          ],
+          "gian_giao": "",
+          "stt": 18
+        },
+        {
+          "dang": "Tìm $m$ theo hệ thức không đối xứng (đề chính thức Hà Nội 2025) — chỉ đề \\textit{(C6-16)}",
+          "band": "VD",
+          "loai": "VD lẻ",
+          "decompose": "vd",
+          "vidu": 1,
+          "onclass": 1,
+          "btvn": 0,
+          "lythuyet": 0,
+          "source_refs": [
+            "v10-tho-loc-l5-2025-III3",
+            "so-hn-2025-III3"
+          ],
+          "gian_giao": "",
+          "stt": 19
+        },
+        {
+          "dang": "Bài làm thêm (không tính giờ, GV tùy chọn): tìm $m$ để parabol qua một điểm rồi tìm tọa độ giao điểm với đường thẳng \\textit{(C6-28)}",
+          "band": "TH",
+          "loai": "TH lẻ LT",
+          "decompose": "none",
+          "vidu": 0,
+          "onclass": 0,
+          "btvn": 0,
+          "lythuyet": 0,
+          "source_refs": [
+            "gk2-ba-dinh-2025-I"
+          ],
+          "gian_giao": "",
+          "stt": 20
+        },
+        {
+          "dang": "Bài làm thêm (không tính giờ, GV tùy chọn): đường thẳng cắt parabol tại hai điểm phân biệt $\\Leftrightarrow$ phương trình hoành độ có $\\Delta>0$ \\textit{(C6-28)}",
+          "band": "TH",
+          "loai": "TH lẻ LT",
+          "decompose": "none",
+          "vidu": 0,
+          "onclass": 0,
+          "btvn": 0,
+          "lythuyet": 0,
+          "source_refs": [
+            "tl-ptb2-23-tr8"
+          ],
+          "gian_giao": "",
+          "stt": 21
+        },
+        {
+          "dang": "Bài làm thêm (không tính giờ, GV tùy chọn): giao điểm khi $m=3$; hai giao điểm khác phía trục tung và hệ thức hạ bậc \\textit{(C6-28)}",
+          "band": "VD",
+          "loai": "VD lẻ",
+          "decompose": "vd",
+          "vidu": 0,
+          "onclass": 0,
+          "btvn": 0,
+          "lythuyet": 0,
+          "source_refs": [
+            "v10-quoc-oai-l2-2024-3.2"
+          ],
+          "gian_giao": "",
+          "stt": 22
+        }
+      ],
+      "mien_sgk": "Thầy đồng ý 17/11/2026: tab phân dạng không có câu SGK nào ở các dạng biểu thức không đối xứng (C6-13…C6-16)."
+    },
+    {
+      "code": "4",
+      "title": "Phiếu 4 — Bài 21: Giải bài toán bằng cách lập phương trình",
+      "rows": [
+        {
+          "dang": "Ôn khử mẫu: nhân hai vế phương trình $\\dfrac{240}{x}-\\dfrac{240}{x+10}=2$ ($x>0$) với mẫu chung $x(x+10)$ — bước có ở mọi bài lập phương trình",
+          "band": "NB",
+          "loai": "NB kiến thức cũ",
+          "decompose": "none",
+          "vidu": 0,
+          "onclass": 1,
+          "btvn": 0,
+          "lythuyet": 0,
+          "source_refs": [
+            "gk2-cau-dien-2025-2"
+          ],
+          "gian_giao": "",
+          "stt": 1
+        },
+        {
+          "dang": "Câu nhỏ tách từ đề lập phương trình: nhắc công thức (diện tích hình chữ nhật, số ngày $=\\dfrac{\\text{khối lượng}}{\\text{năng suất}}$, chia đều, $t=\\dfrac{s}{v}$, phần việc trong 1 giờ $=\\dfrac{1}{t}$); biểu diễn thời gian, số ngày, khối lượng mỗi xe theo ẩn; đổi phút ra giờ \\textit{(C6-18)}",
+          "band": "NB",
+          "loai": "NB tách TH",
+          "decompose": "none",
+          "vidu": 0,
+          "onclass": 31,
+          "btvn": 26,
+          "lythuyet": 0,
+          "source_refs": [
+            "ck2-lomonoxop-2025-III2",
+            "v10-dong-da-de18-2025-III2",
+            "so-hn-minhhoa-III2",
+            "gk2-ba-dinh-2024-III1",
+            "sgk-6.15",
+            "v10-cat-linh-2025-III1",
+            "sgk-6.31",
+            "gk2-nguyen-du-2024-22",
+            "v10-ung-hoa-lan3-2025-III2",
+            "v10-tu-lap-2026-III2",
+            "v10-quoc-oai-l2-2024-2.1",
+            "ck2-thai-thinh-2025-III1",
+            "v10-thai-thinh-2025-III2-md2",
+            "gk2-tay-mo-3-2025-III1",
+            "gk1-son-dong-2024-22",
+            "v10-phuong-mai-2025-III2",
+            "sgk-6.28",
+            "sgk-6.13",
+            "v10-tho-loc-l5-2025-III2",
+            "v10-khuong-thuong-2025-III2"
+          ],
+          "gian_giao": "",
+          "stt": 2
+        },
+        {
+          "dang": "Giải bài toán bằng cách lập phương trình bậc hai: chuyển động, năng suất, hình học, phần trăm, mô hình cho sẵn công thức \\textit{(C6-18)}",
+          "band": "TH",
+          "loai": "TH lẻ LT",
+          "decompose": "none",
+          "vidu": 5,
+          "onclass": 8,
+          "btvn": 8,
+          "lythuyet": 1,
           "source_refs": [
             "sgk-b21-vd1",
-            "sgk-b21-lt1"
-          ]
-        },
-        {
-          "stt": 2,
-          "dang": "Biểu diễn đại lượng chưa biết theo ẩn: năng suất, thời gian $t=\\dfrac{s}{v}$, phần công việc làm trong $1$ giờ",
-          "band": "NB",
-          "loai": "NB lẻ LT",
+            "sgk-b21-vd2",
+            "sgk-b21-lt1",
+            "v10-thai-thinh-2025-III2",
+            "gk1-nguyen-binh-khiem-2025-II2-md902",
+            "ck2-lomonoxop-2025-III2",
+            "v10-dong-da-de18-2025-III2",
+            "so-hn-minhhoa-III2",
+            "gk2-ba-dinh-2024-III1",
+            "sgk-6.15",
+            "v10-cat-linh-2025-III1",
+            "sgk-6.31",
+            "gk2-nguyen-du-2024-22",
+            "v10-ung-hoa-lan3-2025-III2",
+            "ck2-thai-thinh-2025-III1",
+            "v10-thai-thinh-2025-III2-md2",
+            "gk2-tay-mo-3-2025-III1",
+            "gk1-son-dong-2024-22",
+            "v10-phuong-mai-2025-III2",
+            "sgk-6.28",
+            "sgk-6.13"
+          ],
           "gian_giao": "",
-          "onclass": 12,
-          "btvn": 6,
-          "vidu": 3,
-          "lythuyet": 2,
-          "source_refs": []
+          "stt": 3
         },
         {
-          "stt": 3,
-          "dang": "Chỉ ra câu văn cho biết quan hệ giữa các đại lượng, lập phương trình",
-          "band": "NB",
-          "loai": "NB tách TH",
-          "gian_giao": "dien-khuyet",
-          "onclass": 6,
-          "btvn": 4,
-          "vidu": 0,
-          "lythuyet": 1,
-          "source_refs": [
-            "v10-chuong-my-l4-2025-III2.a",
-            "sgk-6.32.a"
-          ]
-        },
-        {
-          "stt": 4,
-          "dang": "Giải trọn bài năng suất, số xe (kẻ bảng đại lượng)",
-          "band": "TH",
-          "loai": "TH tách VD",
-          "gian_giao": "",
-          "onclass": 3,
-          "btvn": 3,
-          "vidu": 0,
-          "lythuyet": 0,
-          "source_refs": [
-            "v10-chuong-my-l4-2025-III2",
-            "sgk-6.33"
-          ]
-        },
-        {
-          "stt": 5,
-          "dang": "Giải trọn bài chuyển động, kể cả xuôi dòng và ngược dòng",
-          "band": "TH",
-          "loai": "TH tách VD",
-          "gian_giao": "",
-          "onclass": 3,
-          "btvn": 3,
-          "vidu": 0,
-          "lythuyet": 0,
-          "source_refs": [
-            "sgk-6.32"
-          ]
-        },
-        {
-          "stt": 6,
-          "dang": "Giải trọn bài làm chung, làm riêng",
-          "band": "TH",
-          "loai": "TH ghép bài",
-          "gian_giao": "",
+          "dang": "Bài toán hai giai đoạn (dừng giữa đường rồi tăng tốc; làm được một phần rồi tăng năng suất), làm chung – làm riêng — chỉ đề \\textit{(C6-18)}",
+          "band": "VD",
+          "loai": "VD lẻ",
+          "decompose": "vd",
+          "vidu": 2,
           "onclass": 2,
           "btvn": 2,
-          "vidu": 0,
           "lythuyet": 0,
           "source_refs": [
-            "ck2-mai-dich-2025-3-2",
-            "v10-ung-hoa-lan3-2025-III2"
-          ]
-        },
-        {
-          "stt": 7,
-          "dang": "Bài năng suất vượt mức, xong sớm hơn kế hoạch",
-          "band": "VD",
-          "loai": "VD lẻ",
-          "gian_giao": "",
-          "onclass": 1,
-          "btvn": 1,
-          "vidu": 0,
-          "lythuyet": 0,
-          "source_refs": [
-            "gk2-dong-anh-2025-31"
-          ]
-        },
-        {
-          "stt": 8,
-          "dang": "Bài chuyển động hai chặng với vận tốc khác nhau",
-          "band": "VD",
-          "loai": "VD lẻ",
-          "gian_giao": "",
-          "onclass": 1,
-          "btvn": 1,
-          "vidu": 0,
-          "lythuyet": 0,
-          "source_refs": [
+            "gk2-le-ngoc-han-2025-III1",
+            "ck1-cau-dien-2025-3b",
             "v10-tu-lap-2026-III2",
-            "v10-huy-van-2024-III1"
-          ]
+            "v10-quoc-oai-l2-2024-2.1",
+            "v10-tho-loc-l5-2025-III2",
+            "v10-khuong-thuong-2025-III2"
+          ],
+          "gian_giao": "",
+          "stt": 4
         }
       ]
     },
     {
-      "code": "F",
-      "title": "Buổi 6 — Luyện tập chung và Bài tập cuối chương VI",
-      "kiem_tra_phut": 45,
+      "code": "5",
+      "title": "Phiếu 5 — Luyện tập chung, bài tập cuối chương VI và kiểm tra chương",
       "rows": [
         {
-          "stt": 1,
-          "dang": "Ôn Lớp 8: điều kiện xác định và chọn nghiệm của phương trình chứa ẩn ở mẫu",
+          "dang": "Ôn lớp 8: hằng đẳng thức $(a+b)^2=a^2+2ab+b^2$, khai triển $(x_1+x_2)^2$ trước khi viết $x_1^2+x_2^2$ theo tổng, tích",
           "band": "NB",
           "loai": "NB kiến thức cũ",
-          "gian_giao": "",
-          "onclass": 2,
-          "btvn": 2,
+          "decompose": "none",
           "vidu": 0,
-          "lythuyet": 1,
-          "source_refs": [
-            "gk1-phan-dinh-giot-2024-1b.a"
-          ]
-        },
-        {
-          "stt": 2,
-          "dang": "Chọn công thức nghiệm $\\Delta$ hay $\\Delta'$ cho từng phương trình",
-          "band": "NB",
-          "loai": "NB lẻ LT",
-          "gian_giao": "",
-          "onclass": 2,
-          "btvn": 2,
-          "vidu": 0,
-          "lythuyet": 1,
-          "source_refs": []
-        },
-        {
-          "stt": 3,
-          "dang": "Nhẩm nghiệm khi $a+b+c=0$ hoặc $a-b+c=0$",
-          "band": "NB",
-          "loai": "NB lẻ LT",
-          "gian_giao": "",
-          "onclass": 2,
-          "btvn": 2,
-          "vidu": 0,
+          "onclass": 1,
+          "btvn": 0,
           "lythuyet": 0,
-          "source_refs": []
+          "source_refs": [
+            "gk2-duc-giang-2025-III2"
+          ],
+          "gian_giao": "",
+          "stt": 1
         },
         {
-          "stt": 4,
-          "dang": "Tính biểu thức của hai nghiệm theo tổng và tích, hạ bậc $x_1^2$ và $x_1^3$",
+          "dang": "Biểu thị số tiền sau một, hai kì gửi lãi kép theo lãi suất $x$ (ví dụ SGK); trắc nghiệm một bước của bài lập phương trình: biểu diễn đại lượng theo ẩn, phương trình lập được; hình chữ nhật biết chu vi và diện tích \\textit{(C6-18)}",
           "band": "NB",
-          "loai": "NB tách TH",
-          "gian_giao": "dien-khuyet",
-          "onclass": 4,
-          "btvn": 4,
+          "loai": "NB lẻ LT",
+          "decompose": "none",
           "vidu": 2,
-          "lythuyet": 1,
-          "source_refs": [
-            "ck2-ba-dinh-2024-II3.a"
-          ]
-        },
-        {
-          "stt": 5,
-          "dang": "Đặt ẩn kèm đơn vị và điều kiện cho bài toán lời văn",
-          "band": "NB",
-          "loai": "NB lẻ LT",
-          "gian_giao": "",
-          "onclass": 2,
-          "btvn": 2,
-          "vidu": 0,
-          "lythuyet": 1,
-          "source_refs": []
-        },
-        {
-          "stt": 6,
-          "dang": "Lập phương trình từ câu văn của đề bài",
-          "band": "NB",
-          "loai": "NB tách TH",
-          "gian_giao": "",
-          "onclass": 2,
-          "btvn": 2,
-          "vidu": 0,
+          "onclass": 3,
+          "btvn": 0,
           "lythuyet": 0,
           "source_refs": [
-            "v10-chuong-my-l4-2025-III2.a"
-          ]
+            "sgk-b21-hd1",
+            "gk2-le-ngoc-han-2024-III1",
+            "ck2-dai-ang-2025-III1",
+            "sgk-6.44"
+          ],
+          "gian_giao": "dien-khuyet",
+          "stt": 2
         },
         {
-          "stt": 7,
-          "dang": "Giải phương trình chứa ẩn ở mẫu quy về bậc hai",
+          "dang": "Khởi động: nhẩm nghiệm, giải phương trình bằng công thức nghiệm \\textit{(C6-01)}",
+          "band": "NB",
+          "loai": "NB lẻ LT",
+          "decompose": "none",
+          "vidu": 0,
+          "onclass": 3,
+          "btvn": 0,
+          "lythuyet": 0,
+          "source_refs": [
+            "gk2-cau-dien-2025-31"
+          ],
+          "gian_giao": "",
+          "stt": 3
+        },
+        {
+          "dang": "Trắc nghiệm đọc ngược Viète: phương trình có hai nghiệm cho trước \\textit{(C6-07)}",
+          "band": "NB",
+          "loai": "NB lẻ LT",
+          "decompose": "none",
+          "vidu": 0,
+          "onclass": 1,
+          "btvn": 0,
+          "lythuyet": 0,
+          "source_refs": [
+            "sgk-6.42"
+          ],
+          "gian_giao": "",
+          "stt": 4
+        },
+        {
+          "dang": "Câu nhỏ tách từ đề tìm $m$: điều kiện có nghiệm, viết hệ thức theo tổng, tích \\textit{(C6-11)}",
+          "band": "NB",
+          "loai": "NB tách TH",
+          "decompose": "none",
+          "vidu": 0,
+          "onclass": 2,
+          "btvn": 6,
+          "lythuyet": 0,
+          "source_refs": [
+            "ck2-ha-dong-2024-III2",
+            "gk2-nghia-tan-2024-III2",
+            "gk2-tay-mo-3-2025-III2"
+          ],
+          "gian_giao": "",
+          "stt": 5
+        },
+        {
+          "dang": "Câu nhỏ tách từ đề: điều kiện hai nghiệm phân biệt, tổng-tích khi thay $m$ \\textit{(C6-04)}",
+          "band": "NB",
+          "loai": "NB tách TH",
+          "decompose": "none",
+          "vidu": 0,
+          "onclass": 1,
+          "btvn": 0,
+          "lythuyet": 0,
+          "source_refs": [
+            "gk2-duc-giang-2025-III2"
+          ],
+          "gian_giao": "",
+          "stt": 6
+        },
+        {
+          "dang": "Câu nhỏ tách từ đề lập phương trình: biểu diễn đại lượng theo ẩn, câu quan hệ \\textit{(C6-18)}",
+          "band": "NB",
+          "loai": "NB tách TH",
+          "decompose": "none",
+          "vidu": 0,
+          "onclass": 3,
+          "btvn": 12,
+          "lythuyet": 0,
+          "source_refs": [
+            "sgk-6.51",
+            "ck2-phuc-dong-2024-901-III1",
+            "gk2-nhat-tan-2024-III2",
+            "gk2-nghia-tan-2024-II",
+            "sgk-6.52"
+          ],
+          "gian_giao": "",
+          "stt": 7
+        },
+        {
+          "dang": "Câu nhỏ tách từ đề chứng minh luôn có hai nghiệm phân biệt: đọc $a$, $b$, $c$; viết $\\Delta$ theo $m$ \\textit{(C6-05)}",
+          "band": "NB",
+          "loai": "NB tách TH",
+          "decompose": "none",
+          "vidu": 0,
+          "onclass": 2,
+          "btvn": 0,
+          "lythuyet": 0,
+          "source_refs": [
+            "v10-phuong-mai-2025-III3"
+          ],
+          "gian_giao": "",
+          "stt": 8
+        },
+        {
+          "dang": "Câu nhỏ tách từ đề tính biểu thức: tổng, tích; đưa hệ thức về tổng, tích \\textit{(C6-07)}",
+          "band": "NB",
+          "loai": "NB tách TH",
+          "decompose": "none",
+          "vidu": 0,
+          "onclass": 0,
+          "btvn": 2,
+          "lythuyet": 0,
+          "source_refs": [
+            "ck2-nguyen-du-2025-III3"
+          ],
+          "gian_giao": "",
+          "stt": 9
+        },
+        {
+          "dang": "Câu nhỏ tách từ đề biết một nghiệm dạng căn: tổng, tích hai nghiệm \\textit{(C6-08)}",
+          "band": "NB",
+          "loai": "NB tách TH",
+          "decompose": "none",
+          "vidu": 0,
+          "onclass": 0,
+          "btvn": 2,
+          "lythuyet": 0,
+          "source_refs": [
+            "v10-luyen-de-23-2025-III3"
+          ],
+          "gian_giao": "",
+          "stt": 10
+        },
+        {
+          "dang": "Câu nhỏ tách từ đề: đưa về dạng chuẩn, nhận ra bình phương \\textit{(C6-01)}",
+          "band": "NB",
+          "loai": "NB tách TH",
+          "decompose": "none",
+          "vidu": 0,
+          "onclass": 0,
+          "btvn": 2,
+          "lythuyet": 0,
+          "source_refs": [
+            "gk1-ngo-sy-lien-2024-I1a"
+          ],
+          "gian_giao": "",
+          "stt": 11
+        },
+        {
+          "dang": "Câu nhỏ tách từ đề biết một nghiệm: đưa phương trình về dạng chuẩn; tổng hai nghiệm theo Viète \\textit{(C6-06)}",
+          "band": "NB",
+          "loai": "NB tách TH",
+          "decompose": "none",
+          "vidu": 0,
+          "onclass": 0,
+          "btvn": 2,
+          "lythuyet": 0,
+          "source_refs": [
+            "v10-thinh-quang-2025-III3"
+          ],
+          "gian_giao": "",
+          "stt": 12
+        },
+        {
+          "dang": "Biểu thức của hai nghiệm, hệ thức ẩn $m$ đưa về tổng, tích \\textit{(C6-07)}",
           "band": "TH",
           "loai": "TH ghép bài",
-          "gian_giao": "",
-          "onclass": 1,
-          "btvn": 2,
+          "decompose": "th2nb",
           "vidu": 1,
+          "onclass": 0,
+          "btvn": 1,
           "lythuyet": 0,
           "source_refs": [
-            "gk1-nghia-tan-2024-I2"
-          ]
+            "v10-dong-da-de18-2025-III3",
+            "ck2-nguyen-du-2025-III3"
+          ],
+          "gian_giao": "",
+          "stt": 13
         },
         {
-          "stt": 8,
-          "dang": "Tính biểu thức của hai nghiệm, biết một nghiệm thì tìm nghiệm còn lại và hệ số còn thiếu",
+          "dang": "Giải bài toán bằng cách lập phương trình (năng suất, chuyển động) \\textit{(C6-18)}",
           "band": "TH",
           "loai": "TH tách VD",
-          "gian_giao": "",
-          "onclass": 3,
-          "btvn": 4,
+          "decompose": "th2nb",
           "vidu": 2,
+          "onclass": 1,
+          "btvn": 4,
           "lythuyet": 0,
           "source_refs": [
-            "ck2-ba-dinh-2024-II3",
-            "so-hn-minhhoa-III3"
-          ]
+            "ck1-phuc-dong-2025-III1-md903",
+            "ck2-cau-dien-2025-III1",
+            "sgk-6.51",
+            "ck2-phuc-dong-2024-901-III1",
+            "gk2-nhat-tan-2024-III2",
+            "gk2-nghia-tan-2024-II",
+            "sgk-6.52"
+          ],
+          "gian_giao": "",
+          "stt": 14
         },
         {
-          "stt": 9,
-          "dang": "Bài hình chữ nhật: lập phương trình bậc hai và giải",
+          "dang": "Điều kiện hai nghiệm phân biệt rồi tính biểu thức đối xứng khi cho $m$ \\textit{(C6-04)}",
           "band": "TH",
           "loai": "TH ghép bài",
-          "gian_giao": "",
-          "onclass": 2,
-          "btvn": 2,
-          "vidu": 1,
-          "lythuyet": 0,
-          "source_refs": [
-            "ck2-gia-lam-2024-III1",
-            "sgk-6.27"
-          ]
-        },
-        {
-          "stt": 10,
-          "dang": "Hạ bậc tính biểu thức không đối xứng của nghiệm",
-          "band": "VD",
-          "loai": "VD lẻ",
-          "gian_giao": "",
-          "onclass": 1,
-          "btvn": 1,
-          "vidu": 1,
-          "lythuyet": 0,
-          "source_refs": [
-            "v10-ung-hoa-lan3-2025-III3"
-          ]
-        },
-        {
-          "stt": 11,
-          "dang": "Bài toán lời văn dẫn tới phương trình chứa ẩn ở mẫu (số xe, chuyển động hai chặng)",
-          "band": "VD",
-          "loai": "VD lẻ",
-          "gian_giao": "",
-          "onclass": 1,
-          "btvn": 1,
+          "decompose": "th2nb",
           "vidu": 0,
+          "onclass": 2,
+          "btvn": 0,
           "lythuyet": 0,
           "source_refs": [
-            "v10-chuong-my-l4-2025-III2",
-            "v10-tu-lap-2026-III2"
-          ]
+            "gk2-duc-giang-2025-III2"
+          ],
+          "gian_giao": "",
+          "stt": 15
+        },
+        {
+          "dang": "Chứng minh phương trình luôn có hai nghiệm phân biệt với mọi $m$ (viết $\\Delta$ thành tổng bình phương cộng số dương) \\textit{(C6-05)}",
+          "band": "TH",
+          "loai": "TH lẻ LT",
+          "decompose": "none",
+          "vidu": 0,
+          "onclass": 1,
+          "btvn": 0,
+          "lythuyet": 0,
+          "source_refs": [
+            "v10-phuong-mai-2025-III3"
+          ],
+          "gian_giao": "",
+          "stt": 16
+        },
+        {
+          "dang": "Biết một nghiệm dạng căn, tính tổng nghịch đảo bình phương \\textit{(C6-08)}",
+          "band": "TH",
+          "loai": "TH lẻ LT",
+          "decompose": "none",
+          "vidu": 0,
+          "onclass": 0,
+          "btvn": 1,
+          "lythuyet": 0,
+          "source_refs": [
+            "v10-luyen-de-23-2025-III3"
+          ],
+          "gian_giao": "",
+          "stt": 17
+        },
+        {
+          "dang": "Biến đổi về dạng chuẩn rồi giải \\textit{(C6-01)}",
+          "band": "TH",
+          "loai": "TH lẻ LT",
+          "decompose": "none",
+          "vidu": 0,
+          "onclass": 0,
+          "btvn": 1,
+          "lythuyet": 0,
+          "source_refs": [
+            "gk1-ngo-sy-lien-2024-I1a"
+          ],
+          "gian_giao": "",
+          "stt": 18
+        },
+        {
+          "dang": "Biết một nghiệm dạng căn, dùng Viète tìm nghiệm còn lại \\textit{(C6-06)}",
+          "band": "TH",
+          "loai": "TH lẻ LT",
+          "decompose": "none",
+          "vidu": 0,
+          "onclass": 0,
+          "btvn": 1,
+          "lythuyet": 0,
+          "source_refs": [
+            "v10-thinh-quang-2025-III3"
+          ],
+          "gian_giao": "",
+          "stt": 19
+        },
+        {
+          "dang": "Tìm $m$ theo hệ thức đối xứng (cấu trúc Bài III.2b đề thi) — chỉ đề \\textit{(C6-11)}",
+          "band": "VD",
+          "loai": "VD lẻ",
+          "decompose": "vd",
+          "vidu": 1,
+          "onclass": 1,
+          "btvn": 2,
+          "lythuyet": 0,
+          "source_refs": [
+            "ck2-le-hong-phong-2025-IV",
+            "ck2-ha-dong-2024-III2",
+            "gk2-nghia-tan-2024-III2",
+            "gk2-tay-mo-3-2025-III2"
+          ],
+          "gian_giao": "",
+          "stt": 20
         }
-      ]
+      ],
+      "kiem_tra_phut": 90
     }
   ]
 }
