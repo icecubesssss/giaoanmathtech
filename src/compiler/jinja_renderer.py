@@ -381,6 +381,28 @@ def tach_loi_giai(text: str) -> tuple[str, str]:
     return de, lg
 
 
+def tach_vi_du(text: str) -> tuple[str, str]:
+    """Hộp ví dụ KHÔNG hình ⇒ (ĐỀ, LỜI GIẢI kèm tiêu đề) để dựng HAI hộp nối khít (Thầy 18/11/2026 chọn).
+
+    Hộp ví dụ nằm trong hộp chặng (tcolorbox lồng) nên không ngắt trang được: hộp cao 9–17cm không lọt
+    chỗ còn lại thì cả hộp sang trang, bỏ trắng 6–12cm (phiếu 1 ch.VII 9C). Hai hộp nối (đáy mở / đỉnh mở)
+    cùng trang thì trông như một; không vừa thì ngắt ở chỗ nối. Không thấy tiêu đề "Lời giải" ⇒ ("", "")."""
+    de, lg = tach_loi_giai(text)
+    if not lg or not de.strip():
+        return "", ""
+    de = re.sub(r"(\s*\[\[br\]\])+\s*$", "", de)
+    return de, re.sub(r"^(\s*\[\[br\]\])+\s*", "", lg)
+
+
+def manh_loi_giai(lg: str) -> list[str]:
+    """Lời giải ví dụ → các MẢNH theo dòng ([[br]]) để hộp nối ngắt được từng dòng (18/11/2026).
+    Mảnh đầu giữ tiêu đề "Lời giải" + dòng đầu (không để tiêu đề mồ côi cuối trang)."""
+    dong = [d.strip() for d in re.split(r"\[\[br\]\]", lg or "") if d.strip()]
+    if len(dong) >= 2:
+        dong = [dong[0] + "[[br]]" + dong[1]] + dong[2:]
+    return dong
+
+
 _Y_CON = re.compile(r"\[\[br\]\]\s*(?=\\textbf\{?a\)|a\))")
 _Y_CON_12 = re.compile(r"\[\[br\]\]\s*(?=\\textbf\{?2\)|2\))")
 _BLANK_MARKER = re.compile(r"\[\[(?:m?blank)(?::[^\]]+)?\]\]|\\l?dots\b")
@@ -457,6 +479,8 @@ def _env(show_solution: bool = False) -> Environment:
     env.globals["mcq_cols"] = mcq_cols
     env.globals["fig_side"] = fig_side
     env.globals["tach_loi_giai"] = tach_loi_giai
+    env.globals["tach_vi_du"] = tach_vi_du
+    env.globals["manh_loi_giai"] = manh_loi_giai
     env.globals["so_do_nguoc_chu_thich"] = SO_DO_NGUOC_CHU_THICH
     env.globals["tach_y_con"] = tach_y_con
     return env

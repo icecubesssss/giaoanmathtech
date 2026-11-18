@@ -1,11 +1,11 @@
 #!/usr/bin/env python3
 """Gom kết quả Gemini phân dạng theo ý (chương VI Đại số 9) → kiểm → bảng ý + thống kê.
 
-    .venv/bin/python scripts/gom_phan_dang_y.py [--lo 01,02] [--ghi]
+    .venv/bin/python scripts/gom_phan_dang_y.py [--chuong 07] [--lo 01,02] [--ghi]
 
 Kiểm (CHẶN): thiếu câu, mã ngoài danh mục, mức ngoài NB/TH/VD/VDC.
 Cảnh báo: mức khác mức gốc mà không ghi lý do; câu có ghi_chu phân vân (in ra để Claude soát).
---ghi ⇒ inputs/refs/ngan-hang-sheet/lop-9/dai-so/chuong-06/phan-dang-y.json
+--ghi ⇒ inputs/refs/ngan-hang-sheet/lop-9/dai-so/chuong-NN/phan-dang-y.json
 Thống kê % ĐỀ (không phải % câu): một đề = một nguồn "Ưu tiên 1" (trước dấu phẩy đầu của cột nguồn).
 """
 import collections
@@ -14,12 +14,15 @@ import sys
 from pathlib import Path
 
 REPO = Path(__file__).resolve().parents[1]
-KHUNG = REPO / "config/khung-phan-dang/lop-9-dai-so-chuong-06.json"
-BANK = REPO / "inputs/refs/ngan-hang-sheet/lop-9/dai-so/chuong-06.json"
 XONG = REPO / "storage/gemini/xong"
-OUT = REPO / "inputs/refs/ngan-hang-sheet/lop-9/dai-so/chuong-06/phan-dang-y.json"
-TIEN_TO = "pd-y-ch6-9-"
 MUC = ("NB", "TH", "VD", "VDC")
+# --chuong 06 (mặc định) | 07 …: khung, snapshot, đầu ra, tiền tố việc Gemini theo chương
+CHUONG = sys.argv[sys.argv.index("--chuong") + 1] if "--chuong" in sys.argv else "06"
+LA_MA = {"06": "VI", "07": "VII", "08": "VIII"}[CHUONG]
+KHUNG = REPO / f"config/khung-phan-dang/lop-9-dai-so-chuong-{CHUONG}.json"
+BANK = REPO / f"inputs/refs/ngan-hang-sheet/lop-9/dai-so/chuong-{CHUONG}.json"
+OUT = REPO / f"inputs/refs/ngan-hang-sheet/lop-9/dai-so/chuong-{CHUONG}/phan-dang-y.json"
+TIEN_TO = f"pd-y-ch{int(CHUONG)}-9-"
 
 
 def ky_thi(ma: str) -> str:
@@ -77,7 +80,7 @@ def main():
             bang.append({
                 "ma_cau": r["ma"], "nhan": y["nhan"], "tom_tat": y["tom_tat"], "ma_dang": y["ma_dang"],
                 "dang_gop": d.get("dang", "") if d else "NGOAI",
-                "ten_dang": d["ten"] if d else "Ngoài chương VI", "nhom": d["ten_nhom"] if d else "Ngoài chương",
+                "ten_dang": d["ten"] if d else f"Ngoài chương {LA_MA}", "nhom": d["ten_nhom"] if d else "Ngoài chương",
                 "phieu_9c": d["phieu_9c"] if d else "", "muc": y["muc"], "bien_the": y.get("bien_the", ""),
                 "ly_do_muc": y.get("ly_do_muc", ""), "nguon": r["nguon"], "uu": r["uu"], "ky_thi": ky_thi(r["ma"]),
                 "de_id": de_id(r) if r["uu"].startswith("Ưu tiên 1") else "",
@@ -90,7 +93,7 @@ def main():
 
     # Thống kê
     tong_de = {k: len({b["de_id"] for b in bang if b["de_id"] and b["ky_thi"] == k}) for k in ("Vào 10", "CK2", "GK2")}
-    print("Số đề có câu chương VI:", tong_de)
+    print(f"Số đề có câu chương {LA_MA}:", tong_de)
     theo = collections.defaultdict(list)
     for b in bang:
         theo[b["ma_dang"]].append(b)
@@ -102,11 +105,11 @@ def main():
         for k in ("Vào 10", "CK2", "GK2"):
             n = len({y["de_id"] for y in ys if y["de_id"] and y["ky_thi"] == k})
             pct.append(f"{100 * n / tong_de[k]:4.0f}%" if tong_de[k] else "   -")
-        ten = dang[ma]["ten"][:60] if ma in dang else "Ngoài chương VI"
+        ten = dang[ma]["ten"][:60] if ma in dang else f"Ngoài chương {LA_MA}"
         print(f"{ma:6} {len(ys):4} {m['NB']:3} {m['TH']:3} {m['VD']:3} {m['VDC']:3} {pct[0]:>5} {pct[1]:>5} {pct[2]:>5}  {ten}")
 
     print(f"\n{'nhóm':4} {'ý':>4} {'%V10':>5} {'%CK2':>5} {'%GK2':>5}  tên nhóm")
-    for nh, ten in list(dm["nhom"].items()) + [("NGOAI", "Ngoài chương VI")]:
+    for nh, ten in list(dm["nhom"].items()) + [("NGOAI", f"Ngoài chương {LA_MA}")]:
         ys = [b for b in bang if (dang[b["ma_dang"]]["nhom"] if b["ma_dang"] in dang else "NGOAI") == nh]
         pct = []
         for k in ("Vào 10", "CK2", "GK2"):

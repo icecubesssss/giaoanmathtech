@@ -23,7 +23,7 @@
 ((* elif b.variant == "trap" *))\begin{callouttrap}((( _noi )))\end{callouttrap}
 ((* elif b.variant == "target" *))\begin{callouttarget}((( _noi )))\end{callouttarget}
 ((* elif b.variant == "tip" *))\begin{callouttip}((( _noi )))\end{callouttip}
-((* elif b.variant == "example" *))\begin{calloutexample}((( _noi )))\end{calloutexample}
+((* elif b.variant == "example" *))((* set _vd, _vl = tach_vi_du(b.text) if not b.figure and not b.so_do_nguoc else ("", "") *))((* if _vl *))((= Thầy 18/11/2026: hộp ví dụ không vừa trang thì tách — HAI hộp nối khít (đề: đáy mở · lời giải: đỉnh mở), chỗ nối là điểm ngắt trang hợp lệ của hộp chặng. =))\begin{calloutexampledau}((( _vd | tex )))\end{calloutexampledau}((* set _ms = manh_loi_giai(_vl) *))((* for _m in _ms *))\penalty0\nointerlineskip((* if loop.last *))\begin{calloutexampletiep}((( _m | tex )))\end{calloutexampletiep}((* else *))\begin{calloutexamplegiua}((( _m | tex )))\end{calloutexamplegiua}((* endif *))((* endfor *))((* else *))\begin{calloutexample}((( _noi )))\end{calloutexample}((* endif *))
 ((* else *))\begin{noted}((( _noi )))\end{noted}((* endif *))
 
 ((* elif b.type == "opener" *))

@@ -290,7 +290,9 @@ def la_khuon_moi(lesson: LessonPackage) -> bool:
 
 
 # ── 7. Lời xưng hô với HS trong đề (Thầy 04/11/2026: "bỏ những lời kiểu em làm cái này cái nọ") ──
-_XUNG_HO = re.compile(r"\b(?:các em|em hãy|em đã|em vẽ|em làm|hôm nay|ở lớp)\b|\bem\b(?=\s+[a-zà-ỹ])", re.IGNORECASE)
+# "trẻ em" là danh từ trong đề gốc (18/11/2026, phiếu thống kê ch.VII), không phải xưng hô
+_XUNG_HO = re.compile(r"\b(?:các em|em hãy|em đã|em vẽ|em làm|hôm nay|ở lớp)\b|(?<!trẻ )\bem\b(?=\s+[a-zà-ỹ])",
+                      re.IGNORECASE)
 
 
 def check_loi_xung_ho(lesson: LessonPackage) -> list[str]:

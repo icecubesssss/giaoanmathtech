@@ -65,6 +65,9 @@ Các bước (làm mẫu: chương VI Đại số 9):
    tab chính D = dạng chính, P = mã dạng từng ý, Q = mã kỹ thuật từng ý.
 6. **Thầy tick dạng dạy** → thuyết minh → bốc bài.
 
+Đã áp: chương VI (16/11, `danh_muc_dang_ch6_9.py`) và chương VII (17/11, `danh_muc_dang_ch7_9.py`, `viec_phan_dang_y_ch7_9.py`,
+`gom_phan_dang_y.py --chuong 07`, `sheets_phan_dang_y_ch7_9.py`; tab 9071–9073). Chương mới: chép bộ script chương VII, đổi danh mục.
+
 **Bẫy Sheets:** (a) tab có bộ lọc ⇒ `copyPaste` chỉ dán vào dòng đang hiện — `clearBasicFilter`, dán, rồi
 `setBasicFilter` lại y cũ; (b) `COUNTUNIQUE(FILTER(…))` đếm lỗi của FILTER rỗng thành 1 ⇒ dùng
 `IFERROR(ROWS(UNIQUE(FILTER(…))),0)`; (c) Gemini đôi khi để rác `,ma_dang:` trong trường phụ ⇒ lọc trước khi ghi.

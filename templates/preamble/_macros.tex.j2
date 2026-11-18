@@ -142,6 +142,34 @@
   coltitle=white, colbacktitle=info, fonttitle=\sffamily\bfseries\small,
   attach boxed title to top left={xshift=10pt,yshift=-8pt}, boxed title style={arc=3pt,boxrule=0pt},
   title={\ding{46}\ \ VÍ DỤ MẪU}}
+% Hộp ví dụ tách đôi (18/11/2026): cùng trang trông như một hộp calloutexample; không vừa thì ngắt ở chỗ nối.
+% Vẽ tay (frame code rỗng, nền trắng chồng lấn 0,5pt, overlay kẻ cạnh) — viền tcolorbox thường để lộ vạch mờ ở chỗ nối.
+\newtcolorbox{calloutexampledau}{enhanced, breakable, colback=white, colframe=info!50,
+  boxrule=0.6pt, top=6pt,bottom=1pt,left=8pt,right=8pt, before skip=2pt, after skip=0pt,
+  frame code={}, interior code={\fill[white] ([yshift=-0.5pt]frame.south west) -- ([yshift=-6pt]frame.north west)
+    arc[start angle=180,end angle=90,radius=6pt] -- ([xshift=-6pt]frame.north east)
+    arc[start angle=90,end angle=0,radius=6pt] -- ([yshift=-0.5pt]frame.south east) -- cycle;},
+  overlay={\draw[info!50,line width=0.6pt] ([yshift=-0.3pt]frame.south west) -- ([yshift=-6pt]frame.north west)
+    arc[start angle=180,end angle=90,radius=6pt] -- ([xshift=-6pt]frame.north east)
+    arc[start angle=90,end angle=0,radius=6pt] -- ([yshift=-0.3pt]frame.south east);},
+  coltitle=white, colbacktitle=info, fonttitle=\sffamily\bfseries\small,
+  attach boxed title to top left={xshift=10pt,yshift=-8pt}, boxed title style={arc=3pt,boxrule=0pt},
+  title={\ding{46}\ \ VÍ DỤ MẪU}}
+% mảnh giữa của lời giải (một dòng / một bảng): chỉ hai cạnh bên, ngắt trang được giữa hai mảnh
+\newtcolorbox{calloutexamplegiua}{enhanced, breakable, colback=white, colframe=info!50,
+  boxrule=0.6pt, top=3pt,bottom=1pt,left=8pt,right=8pt, before skip=0pt, after skip=0pt,
+  frame code={}, interior code={\fill[white] ([yshift=-0.5pt]frame.south west) rectangle ([yshift=0.5pt]frame.north east);},
+  overlay={\draw[info!50,line width=0.6pt] ([yshift=0.3pt]frame.north west) -- ([yshift=-0.3pt]frame.south west)
+    ([yshift=0.3pt]frame.north east) -- ([yshift=-0.3pt]frame.south east);}}
+% mảnh cuối: hai cạnh bên + đáy bo tròn
+\newtcolorbox{calloutexampletiep}{enhanced, breakable, colback=white, colframe=info!50,
+  boxrule=0.6pt, top=3pt,bottom=4pt,left=8pt,right=8pt, before skip=0pt, after skip=\baselineskip,
+  frame code={}, interior code={\fill[white] ([yshift=0.5pt]frame.north west) -- ([yshift=6pt]frame.south west)
+    arc[start angle=180,end angle=270,radius=6pt] -- ([xshift=-6pt]frame.south east)
+    arc[start angle=270,end angle=360,radius=6pt] -- ([yshift=0.5pt]frame.north east) -- cycle;},
+  overlay={\draw[info!50,line width=0.6pt] ([yshift=0.3pt]frame.north west) -- ([yshift=6pt]frame.south west)
+    arc[start angle=180,end angle=270,radius=6pt] -- ([xshift=-6pt]frame.south east)
+    arc[start angle=270,end angle=360,radius=6pt] -- ([yshift=0.3pt]frame.north east);}}
 \newtcolorbox{callouttrap}{enhanced, breakable, drop shadow=black!8, colback=white, colframe=trap!55,
   boxrule=0.6pt, arc=6pt, top=6pt,bottom=4pt,left=8pt,right=8pt, before=\vspace{2pt},
   coltitle=white, colbacktitle=trap, fonttitle=\sffamily\bfseries\small,

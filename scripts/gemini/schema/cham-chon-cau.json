@@ -1,0 +1,50 @@
+{
+  "type": "object",
+  "required": [
+    "dong",
+    "ghi_chu"
+  ],
+  "properties": {
+    "dong": {
+      "type": "array",
+      "items": {
+        "type": "object",
+        "required": [
+          "ma",
+          "T",
+          "ly_do",
+          "de_xuat",
+          "nghi_ngo"
+        ],
+        "properties": {
+          "ma": {
+            "type": "string"
+          },
+          "T": {
+            "type": "array",
+            "items": {
+              "type": "integer"
+            }
+          },
+          "ly_do": {
+            "type": "string"
+          },
+          "de_xuat": {
+            "type": "string",
+            "enum": [
+              "Hay",
+              "Cân nhắc",
+              "Không hay"
+            ]
+          },
+          "nghi_ngo": {
+            "type": "string"
+          }
+        }
+      }
+    },
+    "ghi_chu": {
+      "type": "string"
+    }
+  }
+}
