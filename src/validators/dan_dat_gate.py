@@ -57,7 +57,18 @@ _MUON = re.compile(
     re.IGNORECASE)
 _TIEU_DE = ("heading", "part")
 _KG = re.compile(r"hoàn thành (?:bài|lời) giải")
-_O_TRONG = re.compile(r"\[\[(?:blank|mblank|fill)[:\]]|\\ldots|\\dots")
+_O_TRONG_RE = re.compile(r"\[\[(?:blank|mblank|fill)[:\]]|\\ldots|\\dots")
+# 19/11/2026: "\ldots" giữa hai dấu phẩy / chấm phẩy là dấu lược của DÃY SỐ ("1, 2, 3, \ldots, 20"), không phải ô trống
+_LUOC_DAY = re.compile(r"[,;]\s*\\l?dots\s*[,;]")
+
+
+class _OTrong:
+    @staticmethod
+    def search(s):
+        return _O_TRONG_RE.search(_LUOC_DAY.sub(",", s or ""))
+
+
+_O_TRONG = _OTrong()
 _CM = re.compile(r"Chứng minh|chứng minh")
 _SUY = re.compile(r"\\Rightarrow")
 _BON_DIEM = re.compile(r"(?:bốn|ba|4|3)\s+điểm[^.]*?cùng\s+(?:thuộc|nằm trên)", re.IGNORECASE)
@@ -374,14 +385,18 @@ def check_phieu_btvn(lesson: LessonPackage) -> list[str]:
 _NHAN_NGUON = re.compile(r"^\s*(?:\\textbf\{\s*Ví dụ\s*\d+\s*[.:]?\s*\}\s*)?(?:\([^)]*\)\s*)?")
 _HET_GIA_THIET = re.compile(r"Vẽ tiếp|Điền vào|\[\[br\]\]\s*[a-e1-9]\)|Chứng minh|\(Hình\s*\d+\)")
 _THE = re.compile(r"\[(?:NB|TH|VD|VDC)\]\s*")
+_TIKZ = re.compile(r"\\begin\{tikzpicture\}.*?\\end\{tikzpicture\}", re.S)
 NGUONG_TRUNG_CHU = 0.85      # giả thiết gần như y nguyên, kể cả tên điểm
 NGUONG_TRUNG_DOI_TEN = 0.92  # cùng câu chữ, chỉ đổi tên điểm
 NGUONG_TRUNG_TOAN = 0.7      # cùng cấu hình, cùng tên điểm, chỉ khác lời dẫn
 
 
 def _gia_thiet(b) -> str:
-    """Phần giả thiết của đề: bỏ nhãn "Ví dụ N", ngoặc nguồn đầu đề và phần yêu cầu."""
-    s = _THE.sub("", _de(b))
+    """Phần giả thiết của đề: bỏ nhãn "Ví dụ N", ngoặc nguồn đầu đề và phần yêu cầu.
+
+    Hình TikZ nhúng trong đề (minipage chữ trái – hình phải, ch.VII–X 9C) KHÔNG phải giả thiết: nhãn
+    $S$, $O$, $A$ trong hình làm hai đề khác nhau "trùng ký hiệu" (19/11/2026, Phiếu 1 ch.X 9C) ⇒ bỏ trước khi so."""
+    s = _THE.sub("", _TIKZ.sub(" ", _de(b)))
     s = _NHAN_NGUON.sub("", s, count=1)
     m = _HET_GIA_THIET.search(s)
     return re.sub(r"\s+", " ", s[:m.start()] if m else s).strip()

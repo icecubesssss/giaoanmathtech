@@ -40,7 +40,7 @@ def bang_ma_tran():
             + "".join(f"{c.replace('Câu ', '')} & {nd} & {m} & ${so(d)}$ & ${so(ph)}$ \\\\ \\hline\n"
                       for c, nd, m, d, ph, _h, _a in SO_DO)
             + "\\end{tabular}\\end{center}")
-    tong = {}
+    tong = {"NB": [0, 0], "TH": [0, 0], "VD": [0, 0]}   # 19/11: không còn câu VD ⇒ cột VD ghi 0
     for _c, _n, m, d, ph, _h, _a in SO_DO:
         a = tong.setdefault(m, [0, 0]); a[0] += d; a[1] += ph
     bt = ("\\begin{center}\\footnotesize\n\\begin{tabular}{|l|c|c|c|c|}\n\\hline\n"
@@ -122,6 +122,27 @@ def main():
             if isinstance(b.get("text"), str):
                 b["text"] = b["text"].replace("lần lượt là ngày đăng ký của Bách và Chi.[[br]]Bảng mô tả không gian mẫu:",
                                               "lần lượt là ngày đăng ký của Bách và Chi. Bảng mô tả không gian mẫu:")
+    # 19/11/2026: ý 8b bài toán ngược (C8-09, ngoài lớp 9C, 0 đề Sở) ⇒ biến cố chia cho 7 dư 1 trên cùng hộp bóng.
+    # Đè lên bản Gemini (kt-9c-ch78-de / -dap-an) — chạy lại việc Gemini thì sơ đồ trong viec_kt_gop đã là ý mới.
+    de_8b = (r"b) \textbf{(1,0 điểm)} Tính xác suất của biến cố $D$: \textquotedblleft Số ghi trên quả bóng được lấy "
+             r"ra chia cho $7$ dư $1$\textquotedblright.")
+    da_8b = (r"b) Các kết quả thuận lợi cho biến cố $D$ là các số chia cho $7$ dư $1$:[[br]]$1$; $8$; $15$; $22$; $29$; $36$. "
+             r"\hfill \textit{(0,5đ)}[[br]]Do đó, số kết quả thuận lợi cho biến cố $D$ là $n(D) = 6$.[[br]]Xác suất của biến "
+             r"cố $D$ là $P(D) = \dfrac{n(D)}{n(\Omega)} = \dfrac{6}{36} = \dfrac{1}{6}$. \hfill \textit{(0,25đ)}[[br]]"
+             r"Vậy $P(D) = \dfrac{1}{6}$. \hfill \textit{(0,25đ)}")
+    for s in de_st:
+        for b in s["blocks"]:
+            if b.get("label") == "Câu 8." and "gấp $2$ lần" in b["statement"]:
+                b["statement"] = re.sub(r"\[\[br\]\]b\) .*$", lambda _m: "[[br]]" + de_8b, b["statement"], flags=re.S)
+                b["level"], b["dang_id"] = 2, "TH5"
+    for s in da_st:
+        for b in s["blocks"]:
+            t = b.get("text", "")
+            if t.startswith(r"\textbf{Câu 8 (2,0 điểm).}") and "Gọi số quả bóng" in t:
+                b["text"] = re.sub(r"\[\[br\]\]b\) Gọi số quả bóng.*$", lambda _m: "[[br]]" + da_8b, t, flags=re.S)
+            elif "Câu 8b không đối chiếu điều kiện của ẩn" in t:
+                b["text"] = t.replace(r"Câu 8b không đối chiếu điều kiện của ẩn trừ $0{,}25$đ",
+                                      r"Câu 8b bỏ sót số $1$ trừ $0{,}25$đ")
     bang, bt, tong = bang_ma_tran()
     nguon = "[[br]]".join(f"\\textbf{{{c}:}} {n}." for c, n in NGUON.items())
     head = {"kind": "review", "number": 1, "title": "Ma trận đề", "blocks": [
@@ -129,7 +150,7 @@ def main():
          "($45$ phút, thang điểm $10$, cuối buổi $31/01/2027$ sau phiếu luyện tập chương VIII). "
          "\\textbf{Phạm vi:} chương VII — bảng tần số, tần số tương đối, bảng tần số ghép nhóm và tần số tương đối ghép nhóm; "
          "chương VIII — không gian mẫu, xác suất của biến cố với phép thử một hành động và hai hành động (bảng). "
-         "Không có lấy đồng thời, không có lần lượt không trả lại. Câu 5a bám Câu I.1, Câu 6b và Câu 8a bám Câu I.2 đề vào 10 Hà Nội. "
+         "Không có lấy đồng thời, không có lần lượt không trả lại. Câu 5a bám Câu I.1, Câu 6b, 8a, 8b bám Câu I.2 đề vào 10 Hà Nội. Không có câu vận dụng. "
          "Mọi câu lấy từ đề kiểm tra thật, không trùng đề hay số liệu nào của phiếu chương VII, VIII lớp 9C."},
         {"type": "para", "text": bang}, {"type": "para", "text": bt}]}
     # nguồn đề để cuối tài liệu (đặt ở trang 1 thì tiêu đề mồ côi cuối trang)

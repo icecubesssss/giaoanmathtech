@@ -5,7 +5,7 @@
 
 Kiểm (CHẶN): thiếu câu, mã ngoài danh mục, mức ngoài NB/TH/VD/VDC.
 Cảnh báo: mức khác mức gốc mà không ghi lý do; câu có ghi_chu phân vân (in ra để Claude soát).
---ghi ⇒ inputs/refs/ngan-hang-sheet/lop-9/dai-so/chuong-NN/phan-dang-y.json
+--ghi ⇒ inputs/refs/ngan-hang-sheet/lop-9/<dai-so|hinh-hoc>/chuong-NN/phan-dang-y.json
 Thống kê % ĐỀ (không phải % câu): một đề = một nguồn "Ưu tiên 1" (trước dấu phẩy đầu của cột nguồn).
 """
 import collections
@@ -18,10 +18,11 @@ XONG = REPO / "storage/gemini/xong"
 MUC = ("NB", "TH", "VD", "VDC")
 # --chuong 06 (mặc định) | 07 …: khung, snapshot, đầu ra, tiền tố việc Gemini theo chương
 CHUONG = sys.argv[sys.argv.index("--chuong") + 1] if "--chuong" in sys.argv else "06"
-LA_MA = {"06": "VI", "07": "VII", "08": "VIII"}[CHUONG]
-KHUNG = REPO / f"config/khung-phan-dang/lop-9-dai-so-chuong-{CHUONG}.json"
-BANK = REPO / f"inputs/refs/ngan-hang-sheet/lop-9/dai-so/chuong-{CHUONG}.json"
-OUT = REPO / f"inputs/refs/ngan-hang-sheet/lop-9/dai-so/chuong-{CHUONG}/phan-dang-y.json"
+LA_MA = {"06": "VI", "07": "VII", "08": "VIII", "10": "X"}[CHUONG]
+MON = "hinh-hoc" if CHUONG in ("04", "05", "09", "10") else "dai-so"
+KHUNG = REPO / f"config/khung-phan-dang/lop-9-{MON}-chuong-{CHUONG}.json"
+BANK = REPO / f"inputs/refs/ngan-hang-sheet/lop-9/{MON}/chuong-{CHUONG}.json"
+OUT = REPO / f"inputs/refs/ngan-hang-sheet/lop-9/{MON}/chuong-{CHUONG}/phan-dang-y.json"
 TIEN_TO = f"pd-y-ch{int(CHUONG)}-9-"
 
 
@@ -58,6 +59,18 @@ def main():
     dang = {d["ma"]: d for d in dm["dang"]}
     rows = json.loads(BANK.read_text())["rows"]
     kq = doc_ket_qua(lo)
+    # Bổ sung câu không có trong tab (vd 3 câu IV.1 đề Sở ở ch.X) — rows + phân dạng gán tay
+    bs = OUT.parent / "bo-sung-so.json"
+    if bs.exists() and not lo:
+        b = json.loads(bs.read_text())
+        for r in b["rows"]:
+            rows.append({**r, "band": "", "dang": "", "muc_y": "", "bai": "", "note": "bổ sung"})
+            kq[r["ma"]] = {"ma": r["ma"], "y": b["y"][r["ma"]], "ghi_chu": ""}
+        for khoa, moi in b.get("sua", {}).items():  # "mã câu|nhãn ý" → trường ghi đè (Claude soát)
+            ma, nhan = khoa.split("|")
+            for y in kq[ma]["y"]:
+                if y["nhan"] == nhan:
+                    y.update({k: v for k, v in moi.items() if not k.startswith("_")})
     can = [r for r in rows if not lo or r["ma"] in kq]
     loi, canh = [], []
     bang = []

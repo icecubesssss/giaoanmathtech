@@ -186,7 +186,7 @@ def dung():
             x.replace(
                 "chọn sách trên giá, quay bánh xe $16$ hình quạt",
                 "quay bánh xe $10$ ô số và bánh xe $16$ hình quạt",
-            )
+            ).replace("công thức cơ bản (xúc xắc, $52$ thẻ)", "công thức cơ bản (túi kẹo $60$ viên, $52$ thẻ)")
             for x in chu["vidu"]
         ]
     else:

@@ -132,6 +132,8 @@ def main():
         })
 
     vid_cc = "cc-ch8-9c-lai" if lai is not None else "cc-ch8-9c"
+    if "--ten" in sys.argv:  # đợt chấm lại thứ 2 trở đi: không ghi đè file lai cũ
+        vid_cc = sys.argv[sys.argv.index("--ten") + 1]
     viec_cc = {
         "id": vid_cc,
         "model": MODEL,

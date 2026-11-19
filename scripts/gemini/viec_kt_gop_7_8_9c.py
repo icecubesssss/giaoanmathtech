@@ -26,7 +26,7 @@ NGUON = {
     "Câu 5": "Giữa kì II THCS Ngọc Lâm 2025--2026, mã đề T901, Bài I.1 (gk2-ngoc-lam-2025-I1) — ý a), c) đặt thêm trên cùng bảng số liệu",
     "Câu 6": "Học kì II THCS Ngô Gia Tự (Việt Hưng) 2025--2026, đề số 2, Bài 2",
     "Câu 7": "Minh họa vào 10 Phòng GD\\&ĐT Đống Đa 2025--2026, Đề 11 THCS Phương Mai, Bài II.2 (v10-phuong-mai-2025-II2) — thêm ý a)",
-    "Câu 8": "Giữa kì II THCS Lê Hồng Phong 2025--2026, Bài 2.2 (gk2-le-hong-phong-2025-22)",
+    "Câu 8": "Giữa kì II THCS Lê Hồng Phong 2025--2026, Bài 2.2 (gk2-le-hong-phong-2025-22) — ý b) đặt thêm trên cùng hộp bóng, thay ý bài toán ngược của đề gốc (lớp 9C không học)",
 }
 
 # (câu, nội dung ma trận, mức, điểm, phút, hình thức, đáp án ngắn) — số đã kiểm bằng fractions 15/11/2026
@@ -37,13 +37,15 @@ SO_DO = [
     ("Câu 4", "Gieo một xúc xắc: xác suất mặt có số chấm chia hết cho $3$", "NB", 0.5, 2, "trắc nghiệm", "$\\dfrac{2}{6}=\\dfrac{1}{3}$"),
     ("Câu 5a", "Bảng tần số ghép nhóm: tần số và tần số tương đối của nhóm $[15;20)$ (Câu I.1)", "NB", 1.0, 4, "tự luận", "$12$; $30\\%$"),
     ("Câu 5b", "Lập bảng tần số tương đối ghép nhóm", "TH", 1.0, 5, "tự luận", "$17{,}5\\%$, $25\\%$, $30\\%$, $20\\%$, $7{,}5\\%$"),
-    ("Câu 5c", "Gộp hai nhóm liền, kiểm tra một nhận định về tỉ lệ", "VD", 1.0, 4, "tự luận", "$\\dfrac{11}{40}=27{,}5\\%<30\\%$: đúng"),
+    ("Câu 5c", "Gộp hai nhóm liền, kiểm tra một nhận định về tỉ lệ", "TH", 1.0, 4, "tự luận", "$\\dfrac{11}{40}=27{,}5\\%<30\\%$: đúng"),
     ("Câu 6a", "Viết không gian mẫu (viết ngẫu nhiên số có hai chữ số), đếm $n(\\Omega)$", "NB", 0.5, 2, "tự luận", "$\\Omega=\\{10;11;\\ldots;99\\}$, $n(\\Omega)=90$"),
     ("Câu 6b", "Xác suất một hành động: số chia hết cho cả $2$ và $5$ (Câu I.2)", "TH", 1.0, 4, "tự luận", "$\\dfrac{9}{90}=\\dfrac{1}{10}$"),
     ("Câu 7a", "Phép thử hai hành động (hai bạn chọn ngày): lập bảng, đếm $n(\\Omega)$", "NB", 0.5, 4, "tự luận", "$n(\\Omega)=5\\cdot 5=25$"),
     ("Câu 7b", "Xác suất biến cố \\textquotedblleft hai bạn cùng đăng ký một ngày\\textquotedblright", "TH", 1.0, 4, "tự luận", "$\\dfrac{5}{25}=\\dfrac{1}{5}$"),
     ("Câu 8a", "Xác suất một hành động: số là bội của $4$ (Câu I.2)", "TH", 1.0, 4, "tự luận", "$\\dfrac{9}{36}=\\dfrac{1}{4}$"),
-    ("Câu 8b", "Biết quan hệ giữa hai xác suất, tìm số quả bóng mỗi màu", "VD", 1.0, 6, "tự luận", "$12$ bóng xanh, $24$ bóng đỏ"),
+    # 19/11/2026 Thầy: "nếu k có trong đề thi thì bỏ qua" ⇒ bỏ bài toán ngược P(đỏ) = 2P(xanh) (C8-09: 0 đề Sở, 3/82
+    # đề trường; lớp 9C không học). Thay bằng biến cố chia có dư trên cùng hộp bóng (khuôn Câu I.2).
+    ("Câu 8b", "Xác suất một hành động: số chia cho $7$ dư $1$ (Câu I.2)", "TH", 1.0, 4, "tự luận", "$\\dfrac{6}{36}=\\dfrac{1}{6}$"),
 ]
 
 DUNG = {"Câu 1.": "D", "Câu 2.": "B", "Câu 3.": "A", "Câu 4.": "C"}
@@ -81,7 +83,7 @@ PHẦN II. TỰ LUẬN (8,0 điểm):
   b) (1,0 điểm) Tính xác suất của biến cố $B$: \textquotedblleft Hai bạn cùng đăng ký một ngày\textquotedblright. ⇒ kết quả thuận lợi $(2;2)$, $(3;3)$, $(4;4)$, $(5;5)$, $(6;6)$ (đường chéo bảng), $n(B)=5$; $P(B)=\dfrac{5}{25}=\dfrac{1}{5}$.
 - Câu 8 (2,0 điểm). Đề: "Một hộp có $36$ quả bóng có kích thước và khối lượng như nhau, mỗi quả bóng được ghi một trong các số $1$; $2$; $3$; $\ldots$; $35$; $36$; hai quả bóng khác nhau thì ghi hai số khác nhau. Xét phép thử \textquotedblleft Lấy ngẫu nhiên một quả bóng trong hộp\textquotedblright."
   a) (1,0 điểm) Tính xác suất của biến cố $C$: \textquotedblleft Số ghi trên quả bóng được lấy ra là bội của $4$\textquotedblright. ⇒ $n(\Omega)=36$; bội của $4$: $4$; $8$; $12$; $16$; $20$; $24$; $28$; $32$; $36$, $n(C)=9$; $P(C)=\dfrac{9}{36}=\dfrac{1}{4}$.
-  b) (1,0 điểm) "Mỗi quả bóng trong hộp chỉ có một màu là đỏ hoặc xanh. Biết rằng xác suất của biến cố \textquotedblleft Lấy được quả bóng màu đỏ\textquotedblright{} gấp $2$ lần xác suất của biến cố \textquotedblleft Lấy được quả bóng màu xanh\textquotedblright. Hỏi trong hộp có bao nhiêu quả bóng đỏ, bao nhiêu quả bóng xanh?" ⇒ gọi số bóng xanh là $x$ (quả), $x$ nguyên dương, $x<36$; số bóng đỏ là $36-x$; $P(\text{xanh})=\dfrac{x}{36}$, $P(\text{đỏ})=\dfrac{36-x}{36}$; theo đề $\dfrac{36-x}{36}=2\cdot\dfrac{x}{36}$ ⇒ $36-x=2x$ ⇒ $x=12$ (thỏa mãn); vậy có $12$ quả bóng xanh và $36-12=24$ quả bóng đỏ.
+  b) (1,0 điểm) Tính xác suất của biến cố $D$: \textquotedblleft Số ghi trên quả bóng được lấy ra chia cho $7$ dư $1$\textquotedblright. ⇒ kết quả thuận lợi $1$; $8$; $15$; $22$; $29$; $36$ (nhớ số $1$), $n(D)=6$; $P(D)=\dfrac{6}{36}=\dfrac{1}{6}$.
 
 ## Luật trình bày (giáo viên đã chốt — vi phạm là bị trả lại)
 1. Đề nêu MỤC TIÊU rõ, ghi ĐỦ giả thiết. Không văn nói, không xưng hô: cấm "em", "các em", "Theo em", "hôm nay", "Kiểm" (phải "Xét"/"Kiểm tra"), "Soi". Không viết tắt.
@@ -96,7 +98,7 @@ Khuôn JSON: y như "Mẫu tờ đề" (đề kiểm tra chương VI lớp 9C đ
 - Chặng {"kind":"review","number":1}: para "\\textbf{PHẦN I. TRẮC NGHIỆM (2,0 điểm).} \\textit{Mỗi câu 0,5 điểm. Chọn phương án đúng.}", rồi para dẫn + bảng cầu thủ, rồi 4 problem Câu 1.–Câu 4.: "type":"problem","label":"Câu 1.","level":1,"tier":"onclass","dang_id":"NB1"…"NB4","statement": câu hỏi,"options": 4 chuỗi ĐÚNG thứ tự trong sơ đồ (không ghi "A."), "answer": chữ cái đúng.
 - Chặng {"kind":"concept","number":2}: para "\\textbf{PHẦN II. TỰ LUẬN (8,0 điểm).}" rồi problem "Câu 5." (level 2, dang_id "TH1"), statement bắt đầu "\\textbf{(3,0 điểm)} Số học viên …" + bảng + "a) \\textbf{(1,0 điểm)} …[[br]]b) \\textbf{(1,0 điểm)} …[[br]]c) \\textbf{(1,0 điểm)} …" (sau \end{center} viết thẳng "a)", không [[br]] thừa).
 - Chặng {"kind":"practice1","number":3}: problem "Câu 6." (level 1, dang_id "NB5", "\\textbf{(1,5 điểm)} …[[br]]a) \\textbf{(0,5 điểm)} …[[br]]b) \\textbf{(1,0 điểm)} …") và problem "Câu 7." (level 2, dang_id "TH2", "\\textbf{(1,5 điểm)} …[[br]]a) \\textbf{(0,5 điểm)} …[[br]]b) \\textbf{(1,0 điểm)} …").
-- Chặng {"kind":"practice2","number":4}: problem "Câu 8." (level 3, dang_id "VD1"), "\\textbf{(2,0 điểm)} Một hộp có …[[br]]a) \\textbf{(1,0 điểm)} …[[br]]b) \\textbf{(1,0 điểm)} …".
+- Chặng {"kind":"practice2","number":4}: problem "Câu 8." (level 2, dang_id "TH5"), "\\textbf{(2,0 điểm)} Một hộp có …[[br]]a) \\textbf{(1,0 điểm)} …[[br]]b) \\textbf{(1,0 điểm)} …".
 - Chặng {"kind":"reflection","number":5}: para "\\begin{center}\\textit{$-$ HẾT $-$}\\end{center}".
 Không có "solution", không hình, không writelines, không thẻ [NB]/[TH]/[VD] trong statement, không ghi nguồn đề trong tờ đề.
 
@@ -113,7 +115,7 @@ Trả về đúng 4 chặng, "teacher_note" để "":
 - {"kind":"concept","number":2,"title":"Đáp án Phần I và Câu 5"}: para đáp án Phần I ("\\textbf{PHẦN I (2,0 điểm).} Mỗi câu đúng $0{,}5$ điểm.[[br]]\\textbf{1 – D} (lí do ngắn bằng phép tính) …" — chữ cái PHẢI là 1 – D, 2 – B, 3 – A, 4 – C, mỗi câu một dòng), rồi para "\\textbf{Câu 5 (3,0 điểm).}[[br]]a) …".
 - {"kind":"practice1","number":3,"title":"Đáp án Câu 6 và Câu 7"}: para Câu 6 ("\\textbf{Câu 6 (1,5 điểm).}[[br]]a) …"), para Câu 7 ("\\textbf{Câu 7 (1,5 điểm).}[[br]]a) …").
 - {"kind":"practice2","number":4,"title":"Đáp án Câu 8"}: para Câu 8 ("\\textbf{Câu 8 (2,0 điểm).}[[br]]a) …").
-- {"kind":"reflection","number":5,"title":"Biểu điểm tổng hợp"}: para tóm tắt điểm từng câu/ý (như mẫu), para "\\textbf{Tổng: 10,0 điểm.} Học sinh giải cách khác đúng vẫn cho điểm tối đa từng phần." + lỗi trừ điểm đặc thù: tần số tương đối không ghi \\% hoặc tổng bảng không bằng $100\\%$ trừ $0{,}25$đ; phân số xác suất không rút gọn trừ $0{,}25$đ; không viết không gian mẫu hoặc không nêu $n(\\Omega)$ trước khi tính xác suất trừ $0{,}25$đ; thiếu câu "Vậy" trừ $0{,}25$đ mỗi bài; Câu 8b không đối chiếu điều kiện của ẩn trừ $0{,}25$đ; Câu 7a liệt kê đủ $25$ cặp thay cho bảng vẫn cho đủ điểm.
+- {"kind":"reflection","number":5,"title":"Biểu điểm tổng hợp"}: para tóm tắt điểm từng câu/ý (như mẫu), para "\\textbf{Tổng: 10,0 điểm.} Học sinh giải cách khác đúng vẫn cho điểm tối đa từng phần." + lỗi trừ điểm đặc thù: tần số tương đối không ghi \\% hoặc tổng bảng không bằng $100\\%$ trừ $0{,}25$đ; phân số xác suất không rút gọn trừ $0{,}25$đ; không viết không gian mẫu hoặc không nêu $n(\\Omega)$ trước khi tính xác suất trừ $0{,}25$đ; thiếu câu "Vậy" trừ $0{,}25$đ mỗi bài; Câu 8b bỏ sót số $1$ trừ $0{,}25$đ; Câu 7a liệt kê đủ $25$ cặp thay cho bảng vẫn cho đủ điểm.
 
 ## Đầu ra
 JSON đúng schema: {"stages": [4 chặng], "ghi_chu": "chỗ nghi ngờ hoặc chuỗi rỗng"}.

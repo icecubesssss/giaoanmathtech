@@ -1,0 +1,749 @@
+{
+  "slug": "phieu-1-phep-thu-khong-gian-mau-xac-suat-cua-bien-co",
+  "title": "Bài 25--26. Phép thử ngẫu nhiên, không gian mẫu và xác suất của biến cố",
+  "eyebrow": "ĐẠI SỐ — CHƯƠNG VIII · PHIẾU 1",
+  "grade_label": "Lớp 9 • Ôn vào 10",
+  "class_tier": "C",
+  "chuong": "chuong-08-xac-suat-cua-bien-co",
+  "btvn_phieu_rieng": true,
+  "luat_16_11": true,
+  "khuon": "khong_vd",
+  "stages": [
+    {
+      "kind": "review",
+      "number": 1,
+      "title": "Khám phá",
+      "blocks": [
+        {
+          "type": "opener",
+          "text": "Xét bài toán trích từ đề tuyển sinh lớp 10 Hà Nội năm 2025--2026:[[br]]\\emph{\\textquotedblleft Một hộp có $8$ chiếc thẻ cùng loại, mỗi thẻ được ghi một trong các số $1, 2, 3, 4, 5, 6, 7, 8$, hai thẻ khác nhau được ghi hai số khác nhau. Rút ngẫu nhiên một thẻ trong hộp. Tính xác suất của biến cố $A$: số ghi trên thẻ rút được là một số chia hết cho $3$.\\textquotedblright}[[br]]Để làm bài toán trên, cần xác định phép thử là gì, không gian mẫu có bao nhiêu phần tử, các kết quả thuận lợi cho biến cố $A$ là những kết quả nào, và áp dụng công thức tính xác suất.[[br]]Đó chính là nội dung của buổi học, bài toán mở đầu này là Bài 24 ở cuối phần luyện tập."
+        },
+        {
+          "type": "noted",
+          "variant": "note",
+          "text": "\\textbf{Nhắc lại kiến thức đã học.}[[br]]$\\bullet$\\; Toán 8: biến cố, kết quả thuận lợi cho biến cố, công thức tính xác suất của biến cố khi các kết quả có thể là đồng khả năng: $P(A)=\\frac{\\text{số kết quả thuận lợi cho } A}{\\text{số kết quả có thể}}$.[[br]]$\\bullet$\\; Toán 6: số nguyên tố là số tự nhiên lớn hơn $1$ chỉ có hai ước là $1$ và chính nó (số $1$ không phải số nguyên tố, $2$ là số nguyên tố chẵn duy nhất), số chính phương là bình phương của một số tự nhiên ($0, 1, 4, 9, 16, \\dots$), ước và bội, số chia cho $k$ dư $r$ có dạng $kq+r$ ($q \\in \\mathbb{N}$, $0 \\le r < k$).[[br]]$\\bullet$\\; Đếm số các số tự nhiên liên tiếp từ $a$ đến $b$ ($a \\le b$): có $b-a+1$ số.[[br]]$\\bullet$\\; Chương VII: tần số tương đối của một giá trị là tỉ số giữa tần số của giá trị đó và số lượng các giá trị trong mẫu dữ liệu."
+        }
+      ],
+      "solution": "",
+      "teacher_note": "10 phút — đọc đề đích, chỉ ra các việc cần làm, chưa giải. Nhắc nhanh mục Nhắc lại (số nguyên tố, chia có dư)."
+    },
+    {
+      "kind": "concept",
+      "number": 2,
+      "title": "Kiến thức cần nhớ",
+      "blocks": [
+        {
+          "text": "1. Phép thử ngẫu nhiên và không gian mẫu (Bài 25)",
+          "type": "para",
+          "variant": "heading"
+        },
+        {
+          "text": "$\\bullet$\\; Một hoặc một số hành động, thực nghiệm được tiến hành liên tiếp hay đồng thời mà kết quả của chúng không thể biết được trước khi thực hiện nhưng có thể liệt kê được tất cả các kết quả có thể xảy ra, được gọi là một phép thử ngẫu nhiên, gọi tắt là phép thử.[[br]]$\\bullet$\\; Tập hợp tất cả các kết quả có thể xảy ra của phép thử (gọi tắt là tập tất cả các kết quả có thể của phép thử) được gọi là không gian mẫu của phép thử.[[br]]Không gian mẫu của phép thử được kí hiệu là $\\Omega$. \\textit{(SGK Toán 9 tập hai, tr.57)}",
+          "type": "para"
+        },
+        {
+          "text": "2. Cách mô tả không gian mẫu của phép thử hai hành động",
+          "type": "para",
+          "variant": "heading"
+        },
+        {
+          "text": "Kết quả của phép thử gồm hai hành động liên tiếp hay đồng thời được viết dưới dạng một cặp $(a, b)$, trong đó $a$ và $b$ tương ứng là kết quả của hành động thứ nhất và hành động thứ hai.[[br]]Liệt kê tất cả các kết quả có thể của phép thử bằng cách lập bảng hai chiều, mỗi ô trong bảng là một kết quả có thể. \\textit{(SGK Toán 9 tập hai, tr.57--58)}",
+          "type": "para"
+        },
+        {
+          "text": "3. Kết quả thuận lợi cho biến cố (Bài 26)",
+          "type": "para",
+          "variant": "heading"
+        },
+        {
+          "text": "Cho phép thử $T$. Xét biến cố $E$, ở đó việc xảy ra hay không xảy ra của $E$ tuỳ thuộc vào kết quả của phép thử $T$. Kết quả của phép thử $T$ làm cho biến cố $E$ xảy ra gọi là kết quả thuận lợi cho $E$. \\textit{(SGK Toán 9 tập hai, tr.60)}",
+          "type": "para"
+        },
+        {
+          "text": "4. Cách tính xác suất của một biến cố khi các kết quả của phép thử đồng khả năng",
+          "type": "para",
+          "variant": "heading"
+        },
+        {
+          "text": "Giả sử rằng các kết quả có thể của phép thử $T$ là đồng khả năng. Khi đó xác suất $P(E)$ của biến cố $E$ bằng tỉ số giữa số kết quả thuận lợi cho biến cố $E$ và số phần tử của tập $\\Omega$:[[br]]\\hspace*{1.4em}$P(E)=\\dfrac{n(E)}{n(\\Omega)}$,\\rule[-1.2ex]{0pt}{3.7ex}[[br]]trong đó $\\Omega$ là không gian mẫu của $T$, $n(E)$ là số kết quả thuận lợi cho biến cố $E$ và $n(\\Omega)$ là số phần tử của tập $\\Omega$. \\textit{(SGK Toán 9 tập hai, tr.61)}[[br]]Việc tính xác suất của một biến cố $E$ gồm các bước sau:[[br]]Bước 1. Mô tả không gian mẫu của phép thử. Từ đó xác định số phần tử của không gian mẫu $\\Omega$.[[br]]Bước 2. Chứng tỏ các kết quả có thể của phép thử là đồng khả năng.[[br]]Bước 3. Mô tả các kết quả thuận lợi cho biến cố $E$. Từ đó xác định số kết quả thuận lợi cho biến cố $E$.[[br]]Bước 4. Lập tỉ số giữa số kết quả thuận lợi cho biến cố $E$ với số phần tử của không gian mẫu $\\Omega$. \\textit{(SGK Toán 9 tập hai, tr.62)}",
+          "type": "para"
+        }
+      ],
+      "teacher_note": "15 phút — mục 1, 3, 4 là trọng tâm. Hỏi ngay: gieo một con xúc xắc có bao nhiêu kết quả, các kết quả có đồng khả năng không, gieo hai lần thì kết quả viết thế nào."
+    },
+    {
+      "kind": "practice1",
+      "number": 3,
+      "title": "Luyện tập 1 — Nhận biết",
+      "blocks": [
+        {
+          "type": "para",
+          "text": "\\textbf{Đích của buổi học:} Bài 24 — Câu I.2 đề tuyển sinh lớp 10 Hà Nội 2025--2026: xác định không gian mẫu, liệt kê các kết quả thuận lợi cho biến cố và tính xác suất.[[br]]Mạch 1--5 luyện nhận biết phép thử, không gian mẫu, kết quả thuận lợi và công thức xác suất, Mạch 6--9 luyện các bài tự trình bày dẫn tới Bài 24."
+        },
+        {
+          "type": "para",
+          "variant": "heading",
+          "text": "Mạch 1. Phép thử ngẫu nhiên, biến cố xảy ra hay không"
+        },
+        {
+          "type": "noted",
+          "variant": "example",
+          "text": "\\textbf{Ví dụ 1.} Bạn Tùng gieo một con xúc xắc liên tiếp hai lần. Xét các biến cố sau:[[br]]\\hspace*{1.4em}$E$: \\textquotedblleft Cả hai lần gieo con xúc xắc đều xuất hiện mặt có số chấm là số nguyên tố\\textquotedblright,[[br]]\\hspace*{1.4em}$F$: \\textquotedblleft Cả hai lần gieo con xúc xắc đều không xuất hiện mặt có số chấm là số chẵn\\textquotedblright.[[br]]a) Phép thử là gì?[[br]]b) Giả sử số chấm xuất hiện trên con xúc xắc trong lần gieo thứ nhất, thứ hai tương ứng là $2$ và $5$ chấm. Khi đó, biến cố nào xảy ra? Biến cố nào không xảy ra? \\textit{(SGK Toán 9 tập hai, Bài 26, Hoạt động)}[[br]]{\\sffamily\\bfseries\\color{brand}Lời giải}[[br]]a) Phép thử là [[fill:gieo một con xúc xắc liên tiếp hai lần]] (quan sát số chấm xuất hiện mỗi lần).[[br]]b) Với kết quả $(2, 5)$:[[br]]\\hspace*{1.4em}Vì $2$ và $5$ đều là [[fill:số nguyên tố]] (chú ý $2$ là số nguyên tố chẵn duy nhất) nên biến cố $E$ [[fill:xảy ra]].[[br]]\\hspace*{1.4em}Vì lần thứ nhất xuất hiện mặt $2$ chấm là số [[fill:chẵn]] nên biến cố $F$ [[fill:không xảy ra]].[[br]]\\hspace*{1.4em}Vậy biến cố $[[fill:E]]$ xảy ra, biến cố $F$ không xảy ra."
+        },
+        {
+          "type": "problem",
+          "label": "Bài 1.",
+          "level": 1,
+          "tier": "onclass",
+          "dang_id": "NB2",
+          "statement": "[NB] Trong các thí nghiệm sau, thí nghiệm nào không phải là phép thử ngẫu nhiên? \\textit{(HK2 THCS Phan Đình Phùng (Thanh Khê, Đà Nẵng), 2025--2026)}[[br]]\\hspace*{1.4em}A. Gieo một con xúc xắc cân đối, đồng chất và xem mặt xuất hiện là số chẵn hay số lẻ.[[br]]\\hspace*{1.4em}B. Tung một đồng xu để quyết định xem nhóm mình hay nhóm bạn sẽ được thuyết trình trước.[[br]]\\hspace*{1.4em}C. Cô giáo bỏ tên của $30$ bạn trong lớp vào một chiếc hộp rồi bốc thăm xem ai là người nhận quà.[[br]]\\hspace*{1.4em}D. Đo và tính tổng số đo ba góc trong một tam giác bất kì.",
+          "solution": "Tổng số đo ba góc trong một tam giác bất kì luôn bằng $180^\\circ$ (biết trước được kết quả) nên đây không phải là phép thử ngẫu nhiên.[[br]]\\hspace*{1.4em}Chọn D.",
+          "hints": []
+        },
+        {
+          "type": "problem",
+          "label": "Bài 2.",
+          "level": 1,
+          "tier": "onclass",
+          "dang_id": "NB2",
+          "statement": "Có hai nhóm học sinh: Nhóm I có ba học sinh nam là Huy, Sơn, Tùng. Nhóm II có ba học sinh nữ là Hồng, Phương, Linh. Giáo viên chọn ngẫu nhiên một học sinh từ mỗi nhóm. \\textit{(SGK Toán 9 tập hai, Bài tập 8{.}3)}[[br]][NB] Phép thử và kết quả của phép thử là gì?",
+          "solution": "Phép thử là giáo viên chọn ngẫu nhiên một học sinh nam từ nhóm I và một học sinh nữ từ nhóm II.[[br]]\\hspace*{1.4em}Kết quả của phép thử là một cặp $(a, b)$, trong đó $a$ là tên học sinh được chọn ở nhóm I và $b$ là tên học sinh được chọn ở nhóm II.",
+          "hints": []
+        },
+        {
+          "type": "problem",
+          "label": "Bài 3.",
+          "level": 1,
+          "tier": "onclass",
+          "dang_id": "NB2",
+          "statement": "Cho phép thử gieo hai con xúc xắc cân đối và đồng chất. Giả sử kết quả của phép thử là con xúc xắc thứ nhất xuất hiện mặt $1$ chấm, con xúc xắc thứ hai xuất hiện mặt $6$ chấm. Xét các biến cố \\textit{(tài liệu Mathtech \\textquotedblleft Phép thử ngẫu nhiên và không gian mẫu. Xác suất của biến cố\\textquotedblright)}[[br]]\\hspace*{1.4em}$A$: \\textquotedblleft Tích số chấm xuất hiện là số chẵn\\textquotedblright,[[br]]\\hspace*{1.4em}$B$: \\textquotedblleft Hai mặt xuất hiện có cùng số chấm\\textquotedblright.[[br]]Mỗi khẳng định sau đúng hay sai?[[br]]a) [NB] Biến cố $A$ xảy ra.[[br]]b) [NB] Biến cố $B$ xảy ra.",
+          "solution": "a) Đúng. Tích số chấm xuất hiện trên hai con xúc xắc là $1 \\cdot 6 = 6$, là số chẵn nên biến cố $A$ xảy ra.[[br]]b) Sai. Số chấm xuất hiện trên hai con xúc xắc là $1$ và $6$ ($1 \\ne 6$) nên hai mặt không có cùng số chấm, biến cố $B$ không xảy ra.",
+          "hints": []
+        },
+        {
+          "type": "para",
+          "variant": "heading",
+          "text": "Mạch 2. Không gian mẫu và kết quả thuận lợi"
+        },
+        {
+          "type": "noted",
+          "variant": "example",
+          "text": "\\textbf{Ví dụ 2.} \\interlinepenalty=10000\\clubpenalty=10000\\widowpenalty=10000 a) Xét phép thử quay bánh xe ở Hình 1 để quan sát xem khi bánh xe dừng thì mũi kim (gắn cố định) chỉ vào ô ghi số mấy. Hãy liệt kê các phần tử của không gian mẫu.[[br]]b) Bánh xe ở Hình 2 được chia thành $16$ hình quạt bằng nhau, đánh số thứ tự từ $1$ đến $16$. Quay bánh xe và quan sát xem khi nó dừng thì mũi kim (được gắn cố định) chỉ vào hình quạt số mấy. Hãy liệt kê các kết quả thuận lợi cho mỗi biến cố sau:[[br]]\\hspace*{1.4em}$A$: \\textquotedblleft Kim chỉ vào số là bội của $5$\\textquotedblright,[[br]]\\hspace*{1.4em}$B$: \\textquotedblleft Kim chỉ vào số là ước của $14$\\textquotedblright. \\textit{(tài liệu Mathtech \\textquotedblleft Phép thử ngẫu nhiên và không gian mẫu. Xác suất của biến cố\\textquotedblright)}\\par\\nopagebreak\\interlinepenalty=0\\clubpenalty=150\\widowpenalty=150 \\nopagebreak\\smallskip\\nopagebreak{\\centering \\adjustbox{max width=0.3\\linewidth}{\\begin{tikzpicture}[font=\\small,line width=0.6pt]\\fill[stage1!22] (0,0) -- (90.00:1.0) arc (90.00:54.00:1.0) -- cycle;\\draw[ink!60] (0,0) -- (90.00:1.0);\\node[font=\\scriptsize] at (72.00:0.68) {$1$};\\fill[stage2!22] (0,0) -- (54.00:1.0) arc (54.00:18.00:1.0) -- cycle;\\draw[ink!60] (0,0) -- (54.00:1.0);\\node[font=\\scriptsize] at (36.00:0.68) {$2$};\\fill[stage3!22] (0,0) -- (18.00:1.0) arc (18.00:-18.00:1.0) -- cycle;\\draw[ink!60] (0,0) -- (18.00:1.0);\\node[font=\\scriptsize] at (0.00:0.68) {$3$};\\fill[stage4!22] (0,0) -- (-18.00:1.0) arc (-18.00:-54.00:1.0) -- cycle;\\draw[ink!60] (0,0) -- (-18.00:1.0);\\node[font=\\scriptsize] at (-36.00:0.68) {$4$};\\fill[stage5!22] (0,0) -- (-54.00:1.0) arc (-54.00:-90.00:1.0) -- cycle;\\draw[ink!60] (0,0) -- (-54.00:1.0);\\node[font=\\scriptsize] at (-72.00:0.68) {$5$};\\fill[stage1!22] (0,0) -- (-90.00:1.0) arc (-90.00:-126.00:1.0) -- cycle;\\draw[ink!60] (0,0) -- (-90.00:1.0);\\node[font=\\scriptsize] at (-108.00:0.68) {$6$};\\fill[stage2!22] (0,0) -- (-126.00:1.0) arc (-126.00:-162.00:1.0) -- cycle;\\draw[ink!60] (0,0) -- (-126.00:1.0);\\node[font=\\scriptsize] at (-144.00:0.68) {$7$};\\fill[stage3!22] (0,0) -- (-162.00:1.0) arc (-162.00:-198.00:1.0) -- cycle;\\draw[ink!60] (0,0) -- (-162.00:1.0);\\node[font=\\scriptsize] at (-180.00:0.68) {$8$};\\fill[stage4!22] (0,0) -- (-198.00:1.0) arc (-198.00:-234.00:1.0) -- cycle;\\draw[ink!60] (0,0) -- (-198.00:1.0);\\node[font=\\scriptsize] at (-216.00:0.68) {$9$};\\fill[stage5!22] (0,0) -- (-234.00:1.0) arc (-234.00:-270.00:1.0) -- cycle;\\draw[ink!60] (0,0) -- (-234.00:1.0);\\node[font=\\scriptsize] at (-252.00:0.68) {$10$};\\draw[ink!70] (0,0) circle (1.0);\\fill[ink] (-0.12,1.28) -- (0.12,1.28) -- (0,0.95) -- cycle;\\node[below,font=\\scriptsize] at (0,-1.08) {Hình 1};\\end{tikzpicture}}\\hspace{1.5cm}\\adjustbox{max width=0.3\\linewidth}{\\begin{tikzpicture}[font=\\small,line width=0.6pt]\\fill[stage1!22] (0,0) -- (90.00:1.25) arc (90.00:67.50:1.25) -- cycle;\\draw[ink!60] (0,0) -- (90.00:1.25);\\node[font=\\tiny] at (78.75:1.00) {$1$};\\fill[stage2!22] (0,0) -- (67.50:1.25) arc (67.50:45.00:1.25) -- cycle;\\draw[ink!60] (0,0) -- (67.50:1.25);\\node[font=\\tiny] at (56.25:1.00) {$2$};\\fill[stage3!22] (0,0) -- (45.00:1.25) arc (45.00:22.50:1.25) -- cycle;\\draw[ink!60] (0,0) -- (45.00:1.25);\\node[font=\\tiny] at (33.75:1.00) {$3$};\\fill[stage4!22] (0,0) -- (22.50:1.25) arc (22.50:0.00:1.25) -- cycle;\\draw[ink!60] (0,0) -- (22.50:1.25);\\node[font=\\tiny] at (11.25:1.00) {$4$};\\fill[stage5!22] (0,0) -- (0.00:1.25) arc (0.00:-22.50:1.25) -- cycle;\\draw[ink!60] (0,0) -- (0.00:1.25);\\node[font=\\tiny] at (-11.25:1.00) {$5$};\\fill[stage1!22] (0,0) -- (-22.50:1.25) arc (-22.50:-45.00:1.25) -- cycle;\\draw[ink!60] (0,0) -- (-22.50:1.25);\\node[font=\\tiny] at (-33.75:1.00) {$6$};\\fill[stage2!22] (0,0) -- (-45.00:1.25) arc (-45.00:-67.50:1.25) -- cycle;\\draw[ink!60] (0,0) -- (-45.00:1.25);\\node[font=\\tiny] at (-56.25:1.00) {$7$};\\fill[stage3!22] (0,0) -- (-67.50:1.25) arc (-67.50:-90.00:1.25) -- cycle;\\draw[ink!60] (0,0) -- (-67.50:1.25);\\node[font=\\tiny] at (-78.75:1.00) {$8$};\\fill[stage4!22] (0,0) -- (-90.00:1.25) arc (-90.00:-112.50:1.25) -- cycle;\\draw[ink!60] (0,0) -- (-90.00:1.25);\\node[font=\\tiny] at (-101.25:1.00) {$9$};\\fill[stage5!22] (0,0) -- (-112.50:1.25) arc (-112.50:-135.00:1.25) -- cycle;\\draw[ink!60] (0,0) -- (-112.50:1.25);\\node[font=\\tiny] at (-123.75:1.00) {$10$};\\fill[stage1!22] (0,0) -- (-135.00:1.25) arc (-135.00:-157.50:1.25) -- cycle;\\draw[ink!60] (0,0) -- (-135.00:1.25);\\node[font=\\tiny] at (-146.25:1.00) {$11$};\\fill[stage2!22] (0,0) -- (-157.50:1.25) arc (-157.50:-180.00:1.25) -- cycle;\\draw[ink!60] (0,0) -- (-157.50:1.25);\\node[font=\\tiny] at (-168.75:1.00) {$12$};\\fill[stage3!22] (0,0) -- (-180.00:1.25) arc (-180.00:-202.50:1.25) -- cycle;\\draw[ink!60] (0,0) -- (-180.00:1.25);\\node[font=\\tiny] at (-191.25:1.00) {$13$};\\fill[stage4!22] (0,0) -- (-202.50:1.25) arc (-202.50:-225.00:1.25) -- cycle;\\draw[ink!60] (0,0) -- (-202.50:1.25);\\node[font=\\tiny] at (-213.75:1.00) {$14$};\\fill[stage5!22] (0,0) -- (-225.00:1.25) arc (-225.00:-247.50:1.25) -- cycle;\\draw[ink!60] (0,0) -- (-225.00:1.25);\\node[font=\\tiny] at (-236.25:1.00) {$15$};\\fill[stage1!22] (0,0) -- (-247.50:1.25) arc (-247.50:-270.00:1.25) -- cycle;\\draw[ink!60] (0,0) -- (-247.50:1.25);\\node[font=\\tiny] at (-258.75:1.00) {$16$};\\draw[ink!70] (0,0) circle (1.25);\\fill[ink] (-0.12,1.53) -- (0.12,1.53) -- (0,1.20) -- cycle;\\node[below,font=\\scriptsize] at (0,-1.33) {Hình 2};\\end{tikzpicture}}\\par}\\smallskip {\\sffamily\\bfseries\\color{brand}Lời giải}[[br]]a) Không gian mẫu của phép thử là $\\Omega=\\{1; 2; 3; 4; 5; 6; 7; 8; 9; [[fill:10]]\\}$, có $n(\\Omega)=[[fill:10]]$ phần tử.[[br]]b) Các kết quả thuận lợi cho biến cố $A$ (bội của $5$) là $5$, $[[fill:10]]$, $[[fill:15]]$.[[br]]\\hspace*{1.4em}Các kết quả thuận lợi cho biến cố $B$ (ước của $14$) là $1$, $[[fill:2]]$, $[[fill:7]]$, $[[fill:14]]$.[[br]]\\hspace*{1.4em}Vậy không gian mẫu có $[[fill:10]]$ phần tử, biến cố $A$ có $3$ kết quả thuận lợi và biến cố $B$ có $4$ kết quả thuận lợi."
+        },
+        {
+          "type": "problem",
+          "label": "Bài 4.",
+          "level": 1,
+          "tier": "onclass",
+          "dang_id": "NB3",
+          "statement": "Gieo một con xúc xắc cân đối, đồng chất một lần. \\textit{(HK2 Phòng GD\\&ĐT Gia Lâm, 2024--2025)}[[br]][NB] Viết tập hợp các kết quả có thể xảy ra đối với số chấm trên mặt xuất hiện của xúc xắc. Tập hợp đó có bao nhiêu phần tử?",
+          "solution": "Tập hợp các kết quả có thể xảy ra là $\\Omega=\\{1; 2; 3; 4; 5; 6\\}$.[[br]]\\hspace*{1.4em}Tập hợp đó có $n(\\Omega)=6$ phần tử.",
+          "hints": []
+        },
+        {
+          "type": "para",
+          "variant": "heading",
+          "text": "Mạch 3. Không gian mẫu của phép thử hai hành động"
+        },
+        {
+          "type": "noted",
+          "variant": "example",
+          "text": "\\textbf{Ví dụ 3.} Bạn Lan gieo một con xúc xắc và bạn Hoà gieo một đồng xu. Quan sát số chấm xuất hiện trên con xúc xắc và mặt xuất hiện của đồng xu.[[br]]a) Phép thử và kết quả của phép thử là gì?[[br]]b) Mô tả không gian mẫu của phép thử. Không gian mẫu có bao nhiêu phần tử? \\textit{(SGK Toán 9 tập hai, Bài 25, Ví dụ 1)}[[br]]{\\sffamily\\bfseries\\color{brand}Lời giải}[[br]]a) Phép thử là bạn Lan gieo một con xúc xắc và bạn Hoà gieo một đồng xu.[[br]]\\hspace*{1.4em}Kết quả của phép thử là cặp $(a, b)$, trong đó $a$ là [[fill:số chấm]] xuất hiện trên con xúc xắc và $b$ là [[fill:mặt]] xuất hiện của đồng xu ($S$: sấp, $N$: ngửa).[[br]]b) Liệt kê tất cả các kết quả có thể của phép thử bằng bảng sau:\\par\\nopagebreak\\smallskip\\nopagebreak{\\centering \\adjustbox{max width=0.98\\linewidth}{\\footnotesize\\renewcommand\\arraystretch{1.25}\\begin{tabular}{|l|c|c|c|c|c|c|}\\hline \\textbf{Đồng xu, Xúc xắc} & $1$ & $2$ & $3$ & $4$ & $5$ & $6$ \\\\ \\hline \\textbf{$S$} & $(1, S)$ & $(2, S)$ & $(3, [[fill:S]])$ & $(4, S)$ & $(5, S)$ & $(6, S)$ \\\\ \\hline \\textbf{$N$} & $(1, N)$ & $(2, [[fill:N]])$ & $(3, N)$ & $(4, N)$ & $(5, [[fill:N]])$ & $([[fill:6]], N)$ \\\\ \\hline\\end{tabular}}\\par}\\smallskip Mỗi ô là một kết quả có thể của phép thử.[[br]]\\hspace*{1.4em}Vậy không gian mẫu có $n(\\Omega)=[[fill:12]]$ phần tử."
+        },
+        {
+          "type": "problem",
+          "label": "Bài 5.",
+          "level": 1,
+          "tier": "onclass",
+          "dang_id": "NB9",
+          "statement": "[NB] Bạn Minh gieo một đồng xu và bạn Hải lấy ngẫu nhiên một quả bóng từ một hộp chứa $4$ quả bóng với các màu xanh, đỏ, tím, vàng. Không gian mẫu của phép thử trên có số phần tử là \\textit{(HK2 THCS Phan Đình Phùng (Thanh Khê, Đà Nẵng), 2025--2026)}[[br]]\\hspace*{1.4em}\\makebox[0.22\\linewidth][l]{A. $8$}\\makebox[0.22\\linewidth][l]{B. $9$}\\makebox[0.22\\linewidth][l]{C. $12$}\\makebox[0.22\\linewidth][l]{D. $7$}",
+          "solution": "Mỗi mặt của đồng xu ($2$ mặt) ghép với một trong $4$ màu bóng nên số phần tử của không gian mẫu là $2 \\cdot 4 = 8$.[[br]]\\hspace*{1.4em}Chọn A.",
+          "hints": []
+        },
+        {
+          "type": "problem",
+          "label": "Bài 6.",
+          "level": 1,
+          "tier": "onclass",
+          "dang_id": "NB3",
+          "statement": "Bạn Hoàng lấy ngẫu nhiên một quả cầu từ một túi đựng $2$ quả cầu gồm một quả màu đen và một quả màu trắng, có cùng khối lượng và kích thước. Bạn Hải rút ngẫu nhiên một tấm thẻ từ một hộp đựng $3$ tấm thẻ $A$, $B$, $C$. Xét các biến cố sau: \\textit{(SGK Toán 9 tập hai, Bài 26, Luyện tập 1)}[[br]]\\hspace*{1.4em}$E$: \\textquotedblleft Bạn Hoàng lấy được quả cầu màu đen\\textquotedblright,[[br]]\\hspace*{1.4em}$F$: \\textquotedblleft Bạn Hoàng lấy được quả cầu màu trắng và bạn Hải không rút được tấm thẻ $A$\\textquotedblright.[[br]]a) [NB] Mô tả không gian mẫu của phép thử.[[br]]b) [NB] Mô tả các kết quả thuận lợi cho biến cố $E$.[[br]]c) [NB] Mô tả các kết quả thuận lợi cho biến cố $F$.",
+          "solution": "a) Kí hiệu quả cầu màu đen là Đ, quả cầu màu trắng là T.[[br]]\\hspace*{1.4em}Không gian mẫu của phép thử là $\\Omega=\\{(\\text{Đ}, A); \\allowbreak (\\text{Đ}, B); \\allowbreak (\\text{Đ}, C); \\allowbreak (\\text{T}, A); \\allowbreak (\\text{T}, B); \\allowbreak (\\text{T}, C)\\}$, có $n(\\Omega)=6$ phần tử.[[br]]b) Các kết quả thuận lợi cho biến cố $E$ là $(\\text{Đ}, A)$, $(\\text{Đ}, B)$, $(\\text{Đ}, C)$.[[br]]c) Các kết quả thuận lợi cho biến cố $F$ là $(\\text{T}, B)$, $(\\text{T}, C)$.",
+          "hints": []
+        },
+        {
+          "type": "problem",
+          "label": "Bài 7.",
+          "level": 1,
+          "tier": "onclass",
+          "dang_id": "NB3",
+          "statement": "\\interlinepenalty=10000\\clubpenalty=10000\\widowpenalty=10000 Một tấm bìa cứng hình tròn được chia làm bốn hình quạt bằng nhau, đánh số $1$, $2$, $3$, $4$ và được gắn vào trục quay có mũi tên ở tâm (hình bên). Bạn Tuấn quay tấm bìa hai lần, quan sát và ghi lại số của hình quạt mà mũi tên chỉ vào. \\textit{(SGK Toán 9 tập hai, Bài 26, Ví dụ 1)}\\par\\nopagebreak\\interlinepenalty=0\\clubpenalty=150\\widowpenalty=150 \\smallskip\\noindent\\begin{minipage}[t]{0.75\\linewidth}\\vspace{0pt}a) [NB] Phép thử là gì? Hãy mô tả không gian mẫu của phép thử.[[br]]b) [NB] Xét biến cố $E$: \\textquotedblleft Tổng hai số ghi trên hai hình quạt ở hai lần quay bằng $5$\\textquotedblright. Mô tả các kết quả thuận lợi cho biến cố $E$.[[br]]c) [NB] Xét biến cố $F$: \\textquotedblleft Tích hai số ghi trên hai hình quạt ở hai lần quay bằng $4$\\textquotedblright. Mô tả các kết quả thuận lợi cho biến cố $F$.\\end{minipage}\\hfill\\begin{minipage}[t]{0.22\\linewidth}\\vspace{0pt}\\centering\\adjustbox{max width=\\linewidth}{\\begin{tikzpicture}[font=\\small,line width=0.6pt]\\fill[stage1!22] (0,0) -- (90.00:1.0) arc (90.00:0.00:1.0) -- cycle;\\draw[ink!60] (0,0) -- (90.00:1.0);\\node[font=\\scriptsize] at (45.00:0.68) {$1$};\\fill[stage2!22] (0,0) -- (0.00:1.0) arc (0.00:-90.00:1.0) -- cycle;\\draw[ink!60] (0,0) -- (0.00:1.0);\\node[font=\\scriptsize] at (-45.00:0.68) {$2$};\\fill[stage3!22] (0,0) -- (-90.00:1.0) arc (-90.00:-180.00:1.0) -- cycle;\\draw[ink!60] (0,0) -- (-90.00:1.0);\\node[font=\\scriptsize] at (-135.00:0.68) {$3$};\\fill[stage4!22] (0,0) -- (-180.00:1.0) arc (-180.00:-270.00:1.0) -- cycle;\\draw[ink!60] (0,0) -- (-180.00:1.0);\\node[font=\\scriptsize] at (-225.00:0.68) {$4$};\\draw[ink!70] (0,0) circle (1.0);\\draw[-latex,line width=1.1pt,ink] (0,0) -- (60:0.55);\\fill[ink] (0,0) circle (0.06);\\end{tikzpicture}}\\end{minipage}\\par\\smallskip ",
+          "solution": "a) Phép thử là quay tấm bìa hai lần. Kết quả của phép thử là một cặp số $(i, j)$, trong đó $i$ và $j$ lần lượt là số ghi trên hình quạt mà mũi tên chỉ vào ở lần quay thứ nhất và thứ hai.[[br]]\\hspace*{1.4em}Liệt kê tất cả các kết quả có thể của phép thử bằng bảng sau:\\par\\nopagebreak\\smallskip\\nopagebreak{\\centering \\adjustbox{max width=0.98\\linewidth}{\\footnotesize\\renewcommand\\arraystretch{1.25}\\begin{tabular}{|l|c|c|c|c|}\\hline \\textbf{Lần 1, Lần 2} & $1$ & $2$ & $3$ & $4$ \\\\ \\hline \\textbf{$1$} & $(1, 1)$ & $(1, 2)$ & $(1, 3)$ & $(1, 4)$ \\\\ \\hline \\textbf{$2$} & $(2, 1)$ & $(2, 2)$ & $(2, 3)$ & $(2, 4)$ \\\\ \\hline \\textbf{$3$} & $(3, 1)$ & $(3, 2)$ & $(3, 3)$ & $(3, 4)$ \\\\ \\hline \\textbf{$4$} & $(4, 1)$ & $(4, 2)$ & $(4, 3)$ & $(4, 4)$ \\\\ \\hline\\end{tabular}}\\par}\\smallskip Không gian mẫu $\\Omega=\\{(1, 1); \\allowbreak (1, 2); \\allowbreak (1, 3); \\allowbreak (1, 4); \\allowbreak (2, 1); \\allowbreak (2, 2); \\allowbreak (2, 3); \\allowbreak (2, 4); \\allowbreak (3, 1); \\allowbreak (3, 2); \\allowbreak (3, 3); \\allowbreak (3, 4); \\allowbreak (4, 1); \\allowbreak (4, 2); \\allowbreak (4, 3); \\allowbreak (4, 4)\\}$, có $n(\\Omega)=16$ phần tử.[[br]]b) Các kết quả thuận lợi cho biến cố $E$ là $(1, 4)$, $(2, 3)$, $(3, 2)$, $(4, 1)$.[[br]]c) Các kết quả thuận lợi cho biến cố $F$ là $(1, 4)$, $(2, 2)$, $(4, 1)$.",
+          "hints": []
+        },
+        {
+          "type": "para",
+          "variant": "heading",
+          "text": "Mạch 4. Tính xác suất bằng công thức"
+        },
+        {
+          "type": "noted",
+          "variant": "example",
+          "text": "\\textbf{Ví dụ 4.} Các kết quả của mỗi phép thử sau có đồng khả năng không? Tại sao?[[br]]a) Gieo một đồng xu cân đối và đồng chất.[[br]]b) Lấy ngẫu nhiên $1$ tấm thẻ từ một hộp chứa $2$ tấm thẻ ghi số $5$ và $5$ tấm thẻ ghi số $2$ (các tấm thẻ cùng loại) và xem số ghi trên thẻ. \\textit{(tài liệu Mathtech \\textquotedblleft Phép thử ngẫu nhiên và không gian mẫu. Xác suất của biến cố\\textquotedblright)}[[br]]{\\sffamily\\bfseries\\color{brand}Lời giải}[[br]]a) Vì đồng xu cân đối và đồng chất nên hai kết quả mặt sấp ($S$) và mặt ngửa ($N$) có cùng khả năng xảy ra, tức là các kết quả của phép thử [[fill:đồng khả năng]].[[br]]b) Hộp có $[[fill:7]]$ tấm thẻ, trong đó số $2$ ghi trên $5$ thẻ còn số $5$ chỉ ghi trên $2$ thẻ nên kết quả lấy được số $2$ có khả năng xảy ra [[fill:cao hơn]] kết quả lấy được số $5$.[[br]]\\hspace*{1.4em}Các kết quả của phép thử [[fill:không đồng khả năng]].[[br]]\\hspace*{1.4em}Vậy câu a) [[fill:đồng khả năng]], câu b) [[fill:không đồng khả năng]] (chỉ khi các kết quả đồng khả năng mới dùng được công thức $P(A)=\\dfrac{n(A)}{n(\\Omega)}$).\\rule[-1.2ex]{0pt}{3.7ex}"
+        },
+        {
+          "type": "noted",
+          "variant": "example",
+          "text": "\\textbf{Ví dụ 5.} a) Túi kẹo trái cây có $60$ viên kẹo có cùng kích thước và khối lượng, trong đó có $20$ viên kẹo vị sầu riêng, $15$ viên kẹo vị cam, $7$ viên kẹo vị dâu, $10$ viên kẹo vị chanh, $8$ viên kẹo vị mít. Bạn Toàn lấy ngẫu nhiên một viên kẹo trong túi. Tính xác suất của biến cố $E$: \\textquotedblleft Bạn Toàn lấy được kẹo vị sầu riêng\\textquotedblright. \\textit{(tài liệu Mathtech \\textquotedblleft Phép thử ngẫu nhiên và không gian mẫu. Xác suất của biến cố\\textquotedblright)}[[br]]b) Một hộp có $52$ chiếc thẻ cùng loại, mỗi thẻ được ghi một trong các số $1, 2, 3, \\ldots, 52$, hai thẻ khác nhau thì ghi hai số khác nhau. Rút ngẫu nhiên một thẻ trong hộp. Tính xác suất của biến cố \\textquotedblleft Số xuất hiện trên thẻ được rút ra là số nhỏ hơn $27$\\textquotedblright. \\textit{(GK2 THCS Nghĩa Tân, 2025--2026)}[[br]]{\\sffamily\\bfseries\\color{brand}Lời giải}[[br]]a) Có $n(\\Omega)=60$ kết quả có thể, các kết quả này đồng khả năng.[[br]]\\hspace*{1.4em}Vì có $20$ viên kẹo vị sầu riêng nên $n(E)=[[fill:20]]$.[[br]]\\hspace*{1.4em}$P(E)=\\dfrac{[[fill:20]]}{[[fill:60]]}=\\dfrac{1}{3}$.\\rule[-1.2ex]{0pt}{3.7ex}[[br]]\\hspace*{1.4em}Vậy $P(E)=[[fill:\\frac{1}{3}]]$.[[br]]b) Gọi $A$ là biến cố \\textquotedblleft Số xuất hiện trên thẻ được rút ra là số nhỏ hơn $27$\\textquotedblright.[[br]]\\hspace*{1.4em}Có $n(\\Omega)=52$ kết quả có thể, các kết quả này đồng khả năng.[[br]]\\hspace*{1.4em}Các kết quả thuận lợi cho biến cố $A$ là $1$, $2$, $\\ldots$, $26$ nên $n(A)=[[fill:26]]$.[[br]]\\hspace*{1.4em}$P(A)=\\dfrac{[[fill:26]]}{[[fill:52]]}=\\dfrac{1}{2}$.\\rule[-1.2ex]{0pt}{3.7ex}[[br]]\\hspace*{1.4em}Vậy $P(A)=[[fill:\\frac{1}{2}]]$."
+        },
+        {
+          "type": "problem",
+          "label": "Bài 8.",
+          "level": 1,
+          "tier": "onclass",
+          "dang_id": "NB4",
+          "statement": "[NB] Một hộp đựng $6$ quả bóng cùng loại, mỗi quả bóng ghi một trong các số $1, 2, 3, 4, 5, 6$, hai quả bóng khác nhau được ghi hai số khác nhau. Lấy ngẫu nhiên một quả bóng trong hộp. Xác suất của biến cố $A$: \\textquotedblleft Số ghi trên quả bóng lấy được là số chẵn\\textquotedblright là \\textit{(đề tuyển sinh lớp 10 Hà Nội, 2026--2027)}[[br]]\\hspace*{1.4em}\\makebox[0.22\\linewidth][l]{A. $\\dfrac{1}{3}$}\\makebox[0.22\\linewidth][l]{B. $\\dfrac{1}{2}$}\\makebox[0.22\\linewidth][l]{C. $\\dfrac{1}{6}$}\\makebox[0.22\\linewidth][l]{D. $\\dfrac{2}{3}$}\\rule[-1.2ex]{0pt}{3.7ex}",
+          "solution": "Các kết quả thuận lợi cho biến cố $A$ là $2$, $4$, $6$ nên $n(A)=3$, khi đó $P(A)=\\frac{3}{6}=\\frac{1}{2}$.[[br]]\\hspace*{1.4em}Chọn B.",
+          "hints": []
+        },
+        {
+          "type": "problem",
+          "label": "Bài 9.",
+          "level": 1,
+          "tier": "onclass",
+          "dang_id": "NB4",
+          "statement": "\\interlinepenalty=10000\\clubpenalty=10000\\widowpenalty=10000 [NB] Hình bên mô tả một đĩa tròn bằng bìa cứng được chia làm tám phần bằng nhau và ghi các số $1, 2, 3, \\ldots, 8$. Chiếc kim được gắn cố định vào trục quay ở tâm của đĩa. Quay đĩa tròn một lần. Xác suất của biến cố $A$: \\textquotedblleft Chiếc kim chỉ vào hình quạt ghi số lớn hơn $3$\\textquotedblright là \\textit{(HK2 Phòng GD\\&ĐT Thạch Thất, 2024--2025)}\\par\\nopagebreak\\interlinepenalty=0\\clubpenalty=150\\widowpenalty=150 \\smallskip\\noindent\\begin{minipage}[t]{0.73\\linewidth}\\vspace{0pt}\\hspace*{1.4em}\\makebox[0.22\\linewidth][l]{A. $\\dfrac{3}{8}$}\\makebox[0.22\\linewidth][l]{B. $\\dfrac{1}{2}$}\\makebox[0.22\\linewidth][l]{C. $\\dfrac{5}{8}$}\\makebox[0.22\\linewidth][l]{D. $\\dfrac{3}{4}$}\\end{minipage}\\hfill\\begin{minipage}[t]{0.24\\linewidth}\\vspace{0pt}\\centering\\adjustbox{max width=\\linewidth}{\\begin{tikzpicture}[font=\\small,line width=0.6pt]\\fill[stage1!22] (0,0) -- (90.00:1.0) arc (90.00:45.00:1.0) -- cycle;\\draw[ink!60] (0,0) -- (90.00:1.0);\\node[font=\\scriptsize] at (67.50:0.68) {$1$};\\fill[stage2!22] (0,0) -- (45.00:1.0) arc (45.00:0.00:1.0) -- cycle;\\draw[ink!60] (0,0) -- (45.00:1.0);\\node[font=\\scriptsize] at (22.50:0.68) {$2$};\\fill[stage3!22] (0,0) -- (0.00:1.0) arc (0.00:-45.00:1.0) -- cycle;\\draw[ink!60] (0,0) -- (0.00:1.0);\\node[font=\\scriptsize] at (-22.50:0.68) {$3$};\\fill[stage4!22] (0,0) -- (-45.00:1.0) arc (-45.00:-90.00:1.0) -- cycle;\\draw[ink!60] (0,0) -- (-45.00:1.0);\\node[font=\\scriptsize] at (-67.50:0.68) {$4$};\\fill[stage5!22] (0,0) -- (-90.00:1.0) arc (-90.00:-135.00:1.0) -- cycle;\\draw[ink!60] (0,0) -- (-90.00:1.0);\\node[font=\\scriptsize] at (-112.50:0.68) {$5$};\\fill[stage1!22] (0,0) -- (-135.00:1.0) arc (-135.00:-180.00:1.0) -- cycle;\\draw[ink!60] (0,0) -- (-135.00:1.0);\\node[font=\\scriptsize] at (-157.50:0.68) {$6$};\\fill[stage2!22] (0,0) -- (-180.00:1.0) arc (-180.00:-225.00:1.0) -- cycle;\\draw[ink!60] (0,0) -- (-180.00:1.0);\\node[font=\\scriptsize] at (-202.50:0.68) {$7$};\\fill[stage3!22] (0,0) -- (-225.00:1.0) arc (-225.00:-270.00:1.0) -- cycle;\\draw[ink!60] (0,0) -- (-225.00:1.0);\\node[font=\\scriptsize] at (-247.50:0.68) {$8$};\\draw[ink!70] (0,0) circle (1.0);\\draw[-latex,line width=1.1pt,ink] (0,0) -- (60:0.55);\\fill[ink] (0,0) circle (0.06);\\end{tikzpicture}}\\end{minipage}\\par\\smallskip \\rule[-1.2ex]{0pt}{3.7ex}",
+          "solution": "Các kết quả thuận lợi cho biến cố $A$ (lớn hơn $3$) là $4$, $5$, $6$, $7$, $8$ nên $n(A)=5$, khi đó $P(A)=\\frac{5}{8}$.[[br]]\\hspace*{1.4em}Chọn C.",
+          "hints": []
+        },
+        {
+          "type": "noted",
+          "variant": "example",
+          "text": "\\textbf{Ví dụ 6.} Một túi đựng $30$ viên bi có kích thước và khối lượng như nhau, trong đó có $5$ viên bi đỏ, $6$ viên bi xanh, $7$ viên bi vàng, còn lại là bi trắng. Lấy ngẫu nhiên một viên bi trong túi. Tính xác suất của biến cố $A$: \\textquotedblleft Lấy được viên bi màu trắng\\textquotedblright. \\textit{(GK2 THCS Kiêu Kỵ, 2025--2026)}[[br]]{\\sffamily\\bfseries\\color{brand}Lời giải}[[br]]\\hspace*{1.4em}Số viên bi màu trắng trong túi là $30 - (5 + 6 + 7) = [[fill:12]]$ (viên).[[br]]\\hspace*{1.4em}Có $n(\\Omega)=[[fill:30]]$ kết quả có thể, các kết quả này [[fill:đồng khả năng]].[[br]]\\hspace*{1.4em}Số kết quả thuận lợi cho biến cố $A$ là $n(A)=[[fill:12]]$.[[br]]\\hspace*{1.4em}$P(A)=\\dfrac{[[fill:12]]}{[[fill:30]]}=\\dfrac{2}{5}$.\\rule[-1.2ex]{0pt}{3.7ex}[[br]]\\hspace*{1.4em}Vậy $P(A)=[[fill:\\frac{2}{5}]]$."
+        },
+        {
+          "type": "problem",
+          "label": "Bài 10.",
+          "level": 1,
+          "tier": "onclass",
+          "dang_id": "NB4",
+          "statement": "[NB] Một chiếc túi có $20$ tấm thẻ có cùng hình dạng và kích thước gồm $3$ màu, trong đó có $8$ tấm thẻ màu đỏ, $5$ tấm thẻ màu vàng và $7$ tấm thẻ màu trắng. Lấy ngẫu nhiên $1$ tấm thẻ từ túi. Xác suất của biến cố $E$: \\textquotedblleft Không lấy được tấm thẻ màu vàng\\textquotedblright là \\textit{(thi thử vào 10 lần 4 Phòng GD\\&ĐT Chương Mỹ, 2025--2026)}[[br]]\\hspace*{1.4em}\\makebox[0.22\\linewidth][l]{A. $\\dfrac{1}{4}$}\\makebox[0.22\\linewidth][l]{B. $\\dfrac{7}{20}$}\\makebox[0.22\\linewidth][l]{C. $\\dfrac{2}{5}$}\\makebox[0.22\\linewidth][l]{D. $\\dfrac{3}{4}$}\\rule[-1.2ex]{0pt}{3.7ex}",
+          "solution": "Số tấm thẻ không phải màu vàng là $8 + 7 = 15$ (tấm) nên $P(E)=\\frac{15}{20}=\\frac{3}{4}$.[[br]]\\hspace*{1.4em}Chọn D.",
+          "hints": []
+        },
+        {
+          "type": "para",
+          "variant": "heading",
+          "text": "Mạch 5. Xác suất từ tỉ lệ phần trăm, bảng số liệu"
+        },
+        {
+          "type": "problem",
+          "label": "Bài 11.",
+          "level": 1,
+          "tier": "onclass",
+          "dang_id": "NB1",
+          "statement": "\\interlinepenalty=10000\\clubpenalty=10000\\widowpenalty=10000 Thống kê điểm kiểm tra giữa kì II môn Toán của các học sinh lớp 9A được biểu diễn bởi biểu đồ sau. \\textit{(HK2 THCS Đoàn Thị Điểm (TP. Hồ Chí Minh), 2025--2026)}\\par\\nopagebreak\\interlinepenalty=0\\clubpenalty=150\\widowpenalty=150 \\smallskip\\noindent\\begin{minipage}[t]{0.56\\linewidth}\\vspace{0pt}a) [NB] Lớp 9A có tổng cộng bao nhiêu học sinh?[[br]]b) [NB] Tần số tương đối của số học sinh có điểm kiểm tra là $7$ bằng[[br]]\\hspace*{1.4em}\\makebox[0.22\\linewidth][l]{A. $9\\%$}\\makebox[0.22\\linewidth][l]{B. $25\\%$}\\makebox[0.22\\linewidth][l]{C. $36\\%$}\\makebox[0.22\\linewidth][l]{D. $0{,}25\\%$}\\end{minipage}\\hfill\\begin{minipage}[t]{0.41\\linewidth}\\vspace{0pt}\\centering\\adjustbox{max width=\\linewidth}{\\begin{tikzpicture}[font=\\small,line width=0.6pt]\\draw[ink] (-0.06,0.00) -- (0.06,0.00);\\node[left,font=\\scriptsize] at (-0.06,0.00) {$0$};\\draw[ink] (-0.06,0.45) -- (0.06,0.45);\\node[left,font=\\scriptsize] at (-0.06,0.45) {$3$};\\draw[ink] (-0.06,0.90) -- (0.06,0.90);\\node[left,font=\\scriptsize] at (-0.06,0.90) {$6$};\\draw[ink] (-0.06,1.35) -- (0.06,1.35);\\node[left,font=\\scriptsize] at (-0.06,1.35) {$9$};\\draw[ink] (-0.06,1.80) -- (0.06,1.80);\\node[left,font=\\scriptsize] at (-0.06,1.80) {$12$};\\draw[->,ink] (0,0) -- (8.05,0);\\node[anchor=south west,font=\\scriptsize,align=left] at (8.00,0.12) {Điểm số};\\draw[->,ink] (0,0) -- (0,2.25) node[above,font=\\scriptsize]{Số học sinh};\\fill[stage2!25] (0.50,0) rectangle (1.20,0.45);\\draw[stage2] (0.50,0) rectangle (1.20,0.45);\\node[above,font=\\scriptsize,inner sep=1.5pt] at (0.85,0.45) {$3$};\\node[below,font=\\scriptsize,align=center,text width=1.10cm] at (0.85,0) {5};\\fill[stage2!25] (1.70,0) rectangle (2.40,1.05);\\draw[stage2] (1.70,0) rectangle (2.40,1.05);\\node[above,font=\\scriptsize,inner sep=1.5pt] at (2.05,1.05) {$7$};\\node[below,font=\\scriptsize,align=center,text width=1.10cm] at (2.05,0) {6};\\fill[stage2!25] (2.90,0) rectangle (3.60,1.35);\\draw[stage2] (2.90,0) rectangle (3.60,1.35);\\node[above,font=\\scriptsize,inner sep=1.5pt] at (3.25,1.35) {$9$};\\node[below,font=\\scriptsize,align=center,text width=1.10cm] at (3.25,0) {7};\\fill[stage2!25] (4.10,0) rectangle (4.80,1.50);\\draw[stage2] (4.10,0) rectangle (4.80,1.50);\\node[above,font=\\scriptsize,inner sep=1.5pt] at (4.45,1.50) {$10$};\\node[below,font=\\scriptsize,align=center,text width=1.10cm] at (4.45,0) {8};\\fill[stage2!25] (5.30,0) rectangle (6.00,0.90);\\draw[stage2] (5.30,0) rectangle (6.00,0.90);\\node[above,font=\\scriptsize,inner sep=1.5pt] at (5.65,0.90) {$6$};\\node[below,font=\\scriptsize,align=center,text width=1.10cm] at (5.65,0) {9};\\fill[stage2!25] (6.50,0) rectangle (7.20,0.15);\\draw[stage2] (6.50,0) rectangle (7.20,0.15);\\node[above,font=\\scriptsize,inner sep=1.5pt] at (6.85,0.15) {$1$};\\node[below,font=\\scriptsize,align=center,text width=1.10cm] at (6.85,0) {10};\\node[font=\\scriptsize\\bfseries,align=center] at (3.85,2.95) {Số lượng học sinh theo điểm đạt được};\\end{tikzpicture}}\\end{minipage}\\par\\smallskip ",
+          "solution": "a) Tổng số học sinh lớp 9A là $3 + 7 + 9 + 10 + 6 + 1 = 36$ (học sinh).[[br]]b) Tần số tương đối của số học sinh có điểm kiểm tra là $7$ bằng $\\frac{9}{36} \\cdot 100\\% = 25\\%$.[[br]]\\hspace*{1.4em}Chọn B.",
+          "hints": []
+        },
+        {
+          "type": "noted",
+          "variant": "example",
+          "text": "\\textbf{Ví dụ 7.} Trong một kì thi học sinh giỏi Toán, tỉ lệ học sinh đạt giải là $35\\%$. Chọn ngẫu nhiên một học sinh đã tham gia kì thi đó. Tính xác suất của biến cố \\textquotedblleft Học sinh được chọn đạt giải\\textquotedblright. \\textit{(tài liệu Mathtech \\textquotedblleft Phép thử ngẫu nhiên và không gian mẫu. Xác suất của biến cố\\textquotedblright)}[[br]]{\\sffamily\\bfseries\\color{brand}Lời giải}[[br]]\\hspace*{1.4em}Gọi $A$ là biến cố \\textquotedblleft Học sinh được chọn đạt giải\\textquotedblright và $n$ là số học sinh đã tham gia kì thi.[[br]]\\hspace*{1.4em}Khi đó số học sinh đạt giải là $[[fill:35\\%]] \\cdot n$.[[br]]\\hspace*{1.4em}$P(A)=\\dfrac{[[fill:35\\%]] \\cdot n}{n}=[[fill:35\\%]]=\\dfrac{35}{100}=\\dfrac{[[fill:7]]}{[[fill:20]]}$.\\rule[-1.2ex]{0pt}{3.7ex}[[br]]\\hspace*{1.4em}Vậy $P(A)=[[fill:\\frac{7}{20}]]$."
+        },
+        {
+          "type": "problem",
+          "label": "Bài 12.",
+          "level": 1,
+          "tier": "onclass",
+          "dang_id": "NB7",
+          "statement": "\\interlinepenalty=10000\\clubpenalty=10000\\widowpenalty=10000 Nhà máy đã kiểm tra chất lượng sản phẩm do hai dây chuyền $Y$, $Z$ sản xuất và thống kê số sản phẩm đạt, không đạt chất lượng trong bảng sau. \\textit{(tài liệu Mathtech \\textquotedblleft Phép thử ngẫu nhiên và không gian mẫu. Xác suất của biến cố\\textquotedblright)}\\par\\nopagebreak\\interlinepenalty=0\\clubpenalty=150\\widowpenalty=150 \\nopagebreak\\smallskip\\nopagebreak{\\centering \\adjustbox{max width=0.98\\linewidth}{\\footnotesize\\renewcommand\\arraystretch{1.25}\\begin{tabular}{|l|c|c|c|}\\hline \\textbf{Chất lượng sản phẩm} & Đạt & Không đạt & Tổng \\\\ \\hline \\textbf{Dây chuyền $Y$} & $250$ & $14$ & $264$ \\\\ \\hline \\textbf{Dây chuyền $Z$} & $270$ & $18$ & $288$ \\\\ \\hline \\textbf{Tổng} & $520$ & $32$ & $552$ \\\\ \\hline\\end{tabular}}\\par}\\smallskip [NB] Lấy ngẫu nhiên một sản phẩm trong số những sản phẩm này. Tính xác suất của biến cố $C$: \\textquotedblleft Lấy được một phế phẩm (sản phẩm không đạt chất lượng)\\textquotedblright.",
+          "solution": "Có $n(\\Omega)=552$ kết quả có thể, các kết quả này đồng khả năng, số phế phẩm là $n(C)=32$.[[br]]\\hspace*{1.4em}Xác suất của biến cố $C$ là $P(C)=\\frac{32}{552}=\\frac{4}{69}$.",
+          "hints": []
+        }
+      ],
+      "teacher_note": "Khoảng 45 phút — câu nhỏ trắc nghiệm, Đúng/Sai, trả lời ngắn, gọi nhiều học sinh trả lời miệng, chữa nhanh. Ví dụ 1--7 giáo viên làm cùng lớp, học sinh điền ô."
+    },
+    {
+      "kind": "practice2",
+      "number": 4,
+      "title": "Luyện tập 2 — Thông hiểu",
+      "blocks": [
+        {
+          "type": "para",
+          "variant": "heading",
+          "text": "Mạch 6. Xác suất từ biểu đồ"
+        },
+        {
+          "type": "noted",
+          "variant": "example",
+          "text": "\\textbf{Ví dụ 8.} \\interlinepenalty=10000\\clubpenalty=10000\\widowpenalty=10000 Mỗi công nhân của một đội xây dựng làm việc ở một trong năm bộ phận của đội đó: Lợp mái, Ốp gạch bếp, Lát nền, Trát tường, Xây tường. Biểu đồ hình quạt tròn dưới đây thống kê tỉ lệ công nhân thuộc mỗi bộ phận. Chọn ngẫu nhiên một công nhân của đội. Tính xác suất của mỗi biến cố sau: \\textit{(tài liệu Mathtech \\textquotedblleft Phép thử ngẫu nhiên và không gian mẫu. Xác suất của biến cố\\textquotedblright)}\\par\\nopagebreak\\interlinepenalty=0\\clubpenalty=150\\widowpenalty=150 \\smallskip\\noindent\\begin{minipage}[t]{0.56\\linewidth}\\vspace{0pt}a) $A$: \\textquotedblleft Công nhân được chọn thuộc bộ phận Trát tường\\textquotedblright,[[br]]b) $B$: \\textquotedblleft Công nhân được chọn không thuộc bộ phận Lát nền hay Lợp mái\\textquotedblright.\\end{minipage}\\hfill\\begin{minipage}[t]{0.41\\linewidth}\\vspace{0pt}\\centering\\adjustbox{max width=\\linewidth}{\\begin{tikzpicture}[font=\\small,line width=0.6pt]\\fill[stage1!35] (0,0) -- (90.0:1.5) arc (90.0:18.0:1.5) -- cycle;\\node[font=\\scriptsize] at (54.0:0.99) {$20\\%$};\\fill[stage1!35] (2.3,0.78) rectangle (2.55,1.02);\\node[right,font=\\scriptsize] at (2.6,0.90) {Lợp mái};\\fill[stage2!35] (0,0) -- (18.0:1.5) arc (18.0:-18.0:1.5) -- cycle;\\node[font=\\scriptsize] at (0.0:0.99) {$10\\%$};\\fill[stage2!35] (2.3,0.33) rectangle (2.55,0.57);\\node[right,font=\\scriptsize] at (2.6,0.45) {Ốp gạch bếp};\\fill[stage3!35] (0,0) -- (-18.0:1.5) arc (-18.0:-108.0:1.5) -- cycle;\\node[font=\\scriptsize] at (-63.0:0.99) {$25\\%$};\\fill[stage3!35] (2.3,-0.12) rectangle (2.55,0.12);\\node[right,font=\\scriptsize] at (2.6,0.00) {Lát nền};\\fill[stage4!35] (0,0) -- (-108.0:1.5) arc (-108.0:-162.0:1.5) -- cycle;\\node[font=\\scriptsize] at (-135.0:0.99) {$15\\%$};\\fill[stage4!35] (2.3,-0.57) rectangle (2.55,-0.33);\\node[right,font=\\scriptsize] at (2.6,-0.45) {Trát tường};\\fill[stage5!35] (0,0) -- (-162.0:1.5) arc (-162.0:-270.0:1.5) -- cycle;\\node[font=\\scriptsize] at (-216.0:0.99) {$30\\%$};\\fill[stage5!35] (2.3,-1.02) rectangle (2.55,-0.78);\\node[right,font=\\scriptsize] at (2.6,-0.90) {Xây tường};\\draw[ink!60] (0,0) circle (1.5);\\end{tikzpicture}}\\end{minipage}\\par\\smallskip {\\sffamily\\bfseries\\color{brand}Lời giải}[[br]]a) Tỉ lệ công nhân thuộc bộ phận Trát tường là $[[fill:15\\%]]$.[[br]]\\hspace*{1.4em}$P(A)=[[fill:15\\%]]=\\dfrac{15}{100}=\\dfrac{[[fill:3]]}{20}$.\\rule[-1.2ex]{0pt}{3.7ex}[[br]]\\hspace*{1.4em}Vậy $P(A)=[[fill:\\frac{3}{20}]]$.[[br]]b) Tỉ lệ công nhân thuộc bộ phận Lát nền hoặc Lợp mái là $25\\% + 20\\% = [[fill:45\\%]]$.[[br]]\\hspace*{1.4em}Tỉ lệ công nhân không thuộc hai bộ phận đó là $100\\% - [[fill:45\\%]] = [[fill:55\\%]]$.[[br]]\\hspace*{1.4em}Vậy $P(B)=[[fill:\\frac{11}{20}]]$."
+        },
+        {
+          "type": "problem",
+          "label": "Bài 13.",
+          "level": 2,
+          "tier": "onclass",
+          "dang_id": "NB8+TH3",
+          "statement": "\\interlinepenalty=10000\\clubpenalty=10000\\widowpenalty=10000 Cho biểu đồ tần số ghép nhóm biểu diễn thời gian hoàn thành một bài kiểm tra của toàn bộ học sinh lớp 9A như sau. \\textit{(GK2 THCS Chương Dương, 2025--2026)}\\par\\nopagebreak\\interlinepenalty=0\\clubpenalty=150\\widowpenalty=150 \\smallskip\\noindent\\begin{minipage}[t]{0.56\\linewidth}\\vspace{0pt}a) [NB] Lớp 9A có bao nhiêu học sinh?[[br]]b) [TH] Chọn một học sinh bất kì trong số các học sinh trên của lớp 9A. Tính xác suất để chọn được học sinh có thời gian làm bài dưới $100$ phút.\\end{minipage}\\hfill\\begin{minipage}[t]{0.41\\linewidth}\\vspace{0pt}\\centering\\adjustbox{max width=\\linewidth}{\\begin{tikzpicture}[font=\\small,line width=0.6pt]\\draw[ink] (-0.06,0.00) -- (0.06,0.00);\\node[left,font=\\scriptsize] at (-0.06,0.00) {$0$};\\draw[ink] (-0.06,0.45) -- (0.06,0.45);\\node[left,font=\\scriptsize] at (-0.06,0.45) {$3$};\\draw[ink] (-0.06,0.90) -- (0.06,0.90);\\node[left,font=\\scriptsize] at (-0.06,0.90) {$6$};\\draw[ink] (-0.06,1.35) -- (0.06,1.35);\\node[left,font=\\scriptsize] at (-0.06,1.35) {$9$};\\draw[ink] (-0.06,1.80) -- (0.06,1.80);\\node[left,font=\\scriptsize] at (-0.06,1.80) {$12$};\\draw[->,ink] (0,0) -- (5.55,0);\\node[anchor=south west,font=\\scriptsize,align=left] at (5.50,0.12) {Thời gian (phút)};\\draw[->,ink] (0,0) -- (0,2.25) node[above,font=\\scriptsize]{Tần số};\\fill[stage2!25] (0.40,0) rectangle (1.15,0.45);\\draw[stage2] (0.40,0) rectangle (1.15,0.45);\\node[above,font=\\scriptsize,inner sep=1.5pt] at (0.78,0.45) {$3$};\\fill[stage2!25] (1.15,0) rectangle (1.90,0.75);\\draw[stage2] (1.15,0) rectangle (1.90,0.75);\\node[above,font=\\scriptsize,inner sep=1.5pt] at (1.52,0.75) {$5$};\\fill[stage2!25] (1.90,0) rectangle (2.65,0.90);\\draw[stage2] (1.90,0) rectangle (2.65,0.90);\\node[above,font=\\scriptsize,inner sep=1.5pt] at (2.27,0.90) {$6$};\\fill[stage2!25] (2.65,0) rectangle (3.40,1.05);\\draw[stage2] (2.65,0) rectangle (3.40,1.05);\\node[above,font=\\scriptsize,inner sep=1.5pt] at (3.02,1.05) {$7$};\\fill[stage2!25] (3.40,0) rectangle (4.15,1.35);\\draw[stage2] (3.40,0) rectangle (4.15,1.35);\\node[above,font=\\scriptsize,inner sep=1.5pt] at (3.77,1.35) {$9$};\\fill[stage2!25] (4.15,0) rectangle (4.90,1.50);\\draw[stage2] (4.15,0) rectangle (4.90,1.50);\\node[above,font=\\scriptsize,inner sep=1.5pt] at (4.53,1.50) {$10$};\\node[below,font=\\scriptsize] at (0.40,0) {$90$};\\node[below,font=\\scriptsize] at (1.15,0) {$95$};\\node[below,font=\\scriptsize] at (1.90,0) {$100$};\\node[below,font=\\scriptsize] at (2.65,0) {$105$};\\node[below,font=\\scriptsize] at (3.40,0) {$110$};\\node[below,font=\\scriptsize] at (4.15,0) {$115$};\\node[below,font=\\scriptsize] at (4.90,0) {$120$};\\node[font=\\scriptsize\\bfseries,align=center] at (2.60,2.95) {Thời gian hoàn thành bài kiểm tra của lớp 9A};\\end{tikzpicture}}\\end{minipage}\\par\\smallskip ",
+          "solution": "a) Số học sinh lớp 9A là $3 + 5 + 6 + 7 + 9 + 10 = 40$ (học sinh).[[br]]b) Gọi $A$ là biến cố \\textquotedblleft Chọn được học sinh có thời gian làm bài dưới $100$ phút\\textquotedblright.[[br]]\\hspace*{1.4em}Theo câu a), có $n(\\Omega)=40$ kết quả có thể, các kết quả này đồng khả năng.[[br]]\\hspace*{1.4em}Số học sinh có thời gian làm bài dưới $100$ phút thuộc hai nhóm $[90; 95)$ và $[95; 100)$ nên $n(A)=3 + 5 = 8$.[[br]]\\hspace*{1.4em}$P(A)=\\dfrac{8}{40}=\\dfrac{1}{5}$.\\rule[-1.2ex]{0pt}{3.7ex}[[br]]\\hspace*{1.4em}Vậy xác suất để chọn được học sinh có thời gian làm bài dưới $100$ phút là $\\frac{1}{5}$.",
+          "hints": []
+        },
+        {
+          "type": "problem",
+          "label": "Bài 14.",
+          "level": 2,
+          "tier": "onclass",
+          "dang_id": "NB8+TH3",
+          "statement": "\\interlinepenalty=10000\\clubpenalty=10000\\widowpenalty=10000 Thầy Nam điều tra sở thích chơi thể thao của học sinh lớp 9A do thầy phụ trách (mỗi học sinh chỉ nêu một môn thể thao yêu thích nhất). Biểu đồ cột kép dưới đây biểu diễn số học sinh nam và số học sinh nữ của lớp 9A có sở thích chơi một số môn thể thao mà thầy Nam đã điều tra. Chọn ngẫu nhiên một học sinh của lớp 9A tham gia điều tra. \\textit{(tài liệu Mathtech \\textquotedblleft Phép thử ngẫu nhiên và không gian mẫu. Xác suất của biến cố\\textquotedblright)}\\par\\nopagebreak\\interlinepenalty=0\\clubpenalty=150\\widowpenalty=150 \\nopagebreak\\smallskip\\nopagebreak{\\centering\\adjustbox{width=0.43\\linewidth}{\\begin{tikzpicture}[font=\\small,line width=0.6pt]\\draw[ink] (-0.06,0.00) -- (0.06,0.00);\\node[left,font=\\scriptsize] at (-0.06,0.00) {$0$};\\draw[ink] (-0.06,0.60) -- (0.06,0.60);\\node[left,font=\\scriptsize] at (-0.06,0.60) {$5$};\\draw[ink] (-0.06,1.20) -- (0.06,1.20);\\node[left,font=\\scriptsize] at (-0.06,1.20) {$10$};\\draw[ink] (-0.06,1.80) -- (0.06,1.80);\\node[left,font=\\scriptsize] at (-0.06,1.80) {$15$};\\draw[->,ink] (0,0) -- (6.25,0);\\node[anchor=south west,font=\\scriptsize,align=left] at (6.20,0.12) {Môn};\\draw[->,ink] (0,0) -- (0,2.25) node[above,font=\\scriptsize]{Số học sinh};\\fill[stage2!30] (0.80,0) rectangle (1.25,1.44);\\draw[stage2] (0.80,0) rectangle (1.25,1.44);\\node[above,font=\\scriptsize,inner sep=1.5pt] at (1.03,1.44) {$12$};\\fill[stage4!30] (1.25,0) rectangle (1.70,1.20);\\draw[stage4] (1.25,0) rectangle (1.70,1.20);\\node[above,font=\\scriptsize,inner sep=1.5pt] at (1.48,1.20) {$10$};\\node[below,font=\\scriptsize] at (1.25,0) {Bóng đá};\\fill[stage2!30] (2.50,0) rectangle (2.95,0.48);\\draw[stage2] (2.50,0) rectangle (2.95,0.48);\\node[above,font=\\scriptsize,inner sep=1.5pt] at (2.73,0.48) {$4$};\\fill[stage4!30] (2.95,0) rectangle (3.40,0.60);\\draw[stage4] (2.95,0) rectangle (3.40,0.60);\\node[above,font=\\scriptsize,inner sep=1.5pt] at (3.18,0.60) {$5$};\\node[below,font=\\scriptsize] at (2.95,0) {Bóng rổ};\\fill[stage2!30] (4.20,0) rectangle (4.65,0.60);\\draw[stage2] (4.20,0) rectangle (4.65,0.60);\\node[above,font=\\scriptsize,inner sep=1.5pt] at (4.42,0.60) {$5$};\\fill[stage4!30] (4.65,0) rectangle (5.10,0.72);\\draw[stage4] (4.65,0) rectangle (5.10,0.72);\\node[above,font=\\scriptsize,inner sep=1.5pt] at (4.88,0.72) {$6$};\\node[below,font=\\scriptsize] at (4.65,0) {Bóng bàn};\\fill[stage2!30] (6.20,2.25) rectangle (6.45,2.45);\\draw[stage2] (6.20,2.25) rectangle (6.45,2.45);\\node[right,font=\\scriptsize] at (6.50,2.35) {Nam};\\fill[stage4!30] (6.20,1.87) rectangle (6.45,2.07);\\draw[stage4] (6.20,1.87) rectangle (6.45,2.07);\\node[right,font=\\scriptsize] at (6.50,1.97) {Nữ};\\end{tikzpicture}}\\par}\\smallskip a) [NB] Có bao nhiêu học sinh lớp 9A tham gia điều tra?[[br]]b) [TH] Tính xác suất của mỗi biến cố $A$: \\textquotedblleft Học sinh được chọn là nam\\textquotedblright và $B$: \\textquotedblleft Học sinh được chọn là nam và yêu thích môn Bóng bàn hoặc Bóng rổ\\textquotedblright.",
+          "solution": "a) Số học sinh lớp 9A tham gia điều tra là $12 + 4 + 5 + 10 + 5 + 6 = 42$ (học sinh).[[br]]b) Theo câu a), có $n(\\Omega)=42$ kết quả có thể, các kết quả này đồng khả năng.[[br]]\\hspace*{1.4em}Số học sinh nam là $12 + 4 + 5 = 21$ nên $n(A)=21$.[[br]]\\hspace*{1.4em}$P(A)=\\dfrac{21}{42}=\\dfrac{1}{2}$.\\rule[-1.2ex]{0pt}{3.7ex}[[br]]\\hspace*{1.4em}Số học sinh nam yêu thích môn Bóng bàn hoặc Bóng rổ là $5 + 4 = 9$ nên $n(B)=9$.[[br]]\\hspace*{1.4em}$P(B)=\\dfrac{9}{42}=\\dfrac{3}{14}$.\\rule[-1.2ex]{0pt}{3.7ex}[[br]]\\hspace*{1.4em}Vậy $P(A)=\\frac{1}{2}$ và $P(B)=\\frac{3}{14}$.",
+          "hints": []
+        },
+        {
+          "type": "para",
+          "variant": "heading",
+          "text": "Mạch 7. Phép thử hai hành động"
+        },
+        {
+          "type": "problem",
+          "label": "Bài 15.",
+          "level": 2,
+          "tier": "onclass",
+          "dang_id": "NB10+TH4",
+          "statement": "\\interlinepenalty=10000\\clubpenalty=10000\\widowpenalty=10000 Một tấm bìa cứng hình tròn được chia làm ba hình quạt bằng nhau, đánh số $1$, $2$, $3$ và được gắn vào trục quay có mũi tên cố định ở tâm (hình bên). Bạn Hiền quay tấm bìa liên tiếp hai lần và quan sát xem mũi tên chỉ vào hình quạt nào khi tấm bìa dừng lại. \\textit{(SGK Toán 9 tập hai, Bài 25, Luyện tập 1)}\\par\\nopagebreak\\interlinepenalty=0\\clubpenalty=150\\widowpenalty=150 \\smallskip\\noindent\\begin{minipage}[t]{0.75\\linewidth}\\vspace{0pt}a) [NB] Phép thử và kết quả của phép thử là gì?[[br]]b) [TH] Mô tả không gian mẫu của phép thử. Không gian mẫu có bao nhiêu phần tử?\\end{minipage}\\hfill\\begin{minipage}[t]{0.22\\linewidth}\\vspace{0pt}\\centering\\adjustbox{max width=\\linewidth}{\\begin{tikzpicture}[font=\\small,line width=0.6pt]\\fill[stage1!22] (0,0) -- (90.00:1.0) arc (90.00:-30.00:1.0) -- cycle;\\draw[ink!60] (0,0) -- (90.00:1.0);\\node[font=\\scriptsize] at (30.00:0.68) {$1$};\\fill[stage2!22] (0,0) -- (-30.00:1.0) arc (-30.00:-150.00:1.0) -- cycle;\\draw[ink!60] (0,0) -- (-30.00:1.0);\\node[font=\\scriptsize] at (-90.00:0.68) {$2$};\\fill[stage3!22] (0,0) -- (-150.00:1.0) arc (-150.00:-270.00:1.0) -- cycle;\\draw[ink!60] (0,0) -- (-150.00:1.0);\\node[font=\\scriptsize] at (-210.00:0.68) {$3$};\\draw[ink!70] (0,0) circle (1.0);\\draw[-latex,line width=1.1pt,ink] (0,0) -- (60:0.55);\\fill[ink] (0,0) circle (0.06);\\end{tikzpicture}}\\end{minipage}\\par\\smallskip ",
+          "solution": "a) Phép thử là quay tấm bìa liên tiếp hai lần. Kết quả của phép thử là cặp $(i, j)$, trong đó $i$ là số ở lần quay thứ nhất và $j$ là số ở lần quay thứ hai.[[br]]b) Liệt kê tất cả các kết quả có thể của phép thử bằng bảng sau:\\par\\nopagebreak\\smallskip\\nopagebreak{\\centering \\adjustbox{max width=0.98\\linewidth}{\\footnotesize\\renewcommand\\arraystretch{1.25}\\begin{tabular}{|l|c|c|c|}\\hline \\textbf{Lần 1, Lần 2} & $1$ & $2$ & $3$ \\\\ \\hline \\textbf{$1$} & $(1, 1)$ & $(1, 2)$ & $(1, 3)$ \\\\ \\hline \\textbf{$2$} & $(2, 1)$ & $(2, 2)$ & $(2, 3)$ \\\\ \\hline \\textbf{$3$} & $(3, 1)$ & $(3, 2)$ & $(3, 3)$ \\\\ \\hline\\end{tabular}}\\par}\\smallskip Không gian mẫu là $\\Omega=\\{(1, 1); \\allowbreak (1, 2); \\allowbreak (1, 3); \\allowbreak (2, 1); \\allowbreak (2, 2); \\allowbreak (2, 3); \\allowbreak (3, 1); \\allowbreak (3, 2); \\allowbreak (3, 3)\\}$ nên $n(\\Omega)=9$.[[br]]\\hspace*{1.4em}Vậy không gian mẫu có $9$ phần tử.",
+          "hints": [
+            "Lập bảng hai chiều với các hàng là kết quả Lần 1 và các cột là kết quả Lần 2."
+          ]
+        },
+        {
+          "type": "noted",
+          "variant": "example",
+          "text": "\\textbf{Ví dụ 9.} Có hai túi I và II. Túi I chứa $3$ tấm thẻ, đánh số $2$, $3$, $4$. Túi II chứa $2$ tấm thẻ, đánh số $5$, $6$. Từ mỗi túi I và II, rút ngẫu nhiên một tấm thẻ. Tính xác suất của các biến cố sau: \\textit{(SGK Toán 9 tập hai, Bài tập 8{.}15)}[[br]]\\hspace*{1.4em}$A$: \\textquotedblleft Hai số ghi trên hai tấm thẻ chênh nhau $2$ đơn vị\\textquotedblright,[[br]]\\hspace*{1.4em}$B$: \\textquotedblleft Tổng hai số ghi trên hai tấm thẻ là một số nguyên tố\\textquotedblright.[[br]]{\\sffamily\\bfseries\\color{brand}Lời giải}[[br]]\\hspace*{1.4em}Liệt kê các kết quả có thể bằng bảng sau:\\par\\nopagebreak\\smallskip\\nopagebreak{\\centering \\adjustbox{max width=0.98\\linewidth}{\\footnotesize\\renewcommand\\arraystretch{1.25}\\begin{tabular}{|l|c|c|}\\hline \\textbf{Túi I, Túi II} & $5$ & $6$ \\\\ \\hline \\textbf{$2$} & $(2, 5)$ & $(2, [[fill:6]])$ \\\\ \\hline \\textbf{$3$} & $(3, 5)$ & $(3, 6)$ \\\\ \\hline \\textbf{$4$} & $([[fill:4]], 5)$ & $(4, 6)$ \\\\ \\hline\\end{tabular}}\\par}\\smallskip Có $n(\\Omega)=[[fill:6]]$ kết quả có thể, các kết quả này đồng khả năng.[[br]]\\hspace*{1.4em}Các kết quả thuận lợi cho biến cố $A$ là $(3, 5)$, $([[fill:4]], [[fill:6]])$ nên $n(A)=2$.[[br]]\\hspace*{1.4em}$P(A)=\\dfrac{2}{[[fill:6]]}=\\dfrac{1}{3}$.\\rule[-1.2ex]{0pt}{3.7ex}[[br]]\\hspace*{1.4em}Tổng hai số của các cặp lần lượt là $7$, $8$, $8$, $9$, $9$, $10$, trong đó chỉ có $7$ là số nguyên tố nên kết quả thuận lợi cho biến cố $B$ là $(2, 5)$ và $n(B)=1$.[[br]]\\hspace*{1.4em}$P(B)=\\dfrac{1}{[[fill:6]]}$.\\rule[-1.2ex]{0pt}{3.7ex}[[br]]\\hspace*{1.4em}Vậy $P(A)=[[fill:\\frac{1}{3}]]$ và $P(B)=[[fill:\\frac{1}{6}]]$."
+        },
+        {
+          "type": "problem",
+          "label": "Bài 16.",
+          "level": 2,
+          "tier": "onclass",
+          "dang_id": "NB10+TH4",
+          "statement": "Gieo đồng thời hai con xúc xắc cân đối và đồng chất I và II. Xét các biến cố \\textit{(SGK Toán 9 tập hai, Bài tập 8{.}6)}[[br]]\\hspace*{1.4em}$E$: \\textquotedblleft Có đúng một con xúc xắc xuất hiện mặt $6$ chấm\\textquotedblright,[[br]]\\hspace*{1.4em}$F$: \\textquotedblleft Có ít nhất một con xúc xắc xuất hiện mặt $6$ chấm\\textquotedblright.[[br]]a) [NB] Không gian mẫu của phép thử có bao nhiêu phần tử?[[br]]b) [TH] Tính xác suất của các biến cố $E$ và $F$.",
+          "solution": "a) Mỗi con xúc xắc có $6$ mặt nên số phần tử của không gian mẫu là $n(\\Omega)=6 \\cdot 6 = 36$.[[br]]b) Theo câu a), có $n(\\Omega)=36$ kết quả có thể, các kết quả này đồng khả năng.[[br]]\\hspace*{1.4em}Các kết quả thuận lợi cho biến cố $E$ là $(6, 1)$, $(6, 2)$, $(6, 3)$, $(6, 4)$, $(6, 5)$, $(1, 6)$, $(2, 6)$, $(3, 6)$, $(4, 6)$, $(5, 6)$ nên $n(E)=10$.[[br]]\\hspace*{1.4em}$P(E)=\\dfrac{10}{36}=\\dfrac{5}{18}$.\\rule[-1.2ex]{0pt}{3.7ex}[[br]]\\hspace*{1.4em}Các kết quả thuận lợi cho biến cố $F$ gồm $10$ kết quả của biến cố $E$ và kết quả $(6, 6)$ nên $n(F)=11$.[[br]]\\hspace*{1.4em}$P(F)=\\dfrac{11}{36}$.\\rule[-1.2ex]{0pt}{3.7ex}[[br]]\\hspace*{1.4em}Vậy $P(E)=\\frac{5}{18}$ và $P(F)=\\frac{11}{36}$.",
+          "hints": []
+        },
+        {
+          "type": "problem",
+          "label": "Bài 17.",
+          "level": 2,
+          "tier": "onclass",
+          "dang_id": "NB10+TH4",
+          "statement": "Bạn An gieo một đồng xu cân đối và bạn Bình rút ngẫu nhiên một tấm thẻ từ hộp chứa $5$ tấm thẻ ghi các số $1$, $2$, $3$, $4$, $5$. Xét các biến cố \\textit{(SGK Toán 9 tập hai, Bài tập 8{.}7)}[[br]]\\hspace*{1.4em}$A$: \\textquotedblleft Rút được tấm thẻ ghi số chẵn và đồng xu xuất hiện mặt sấp\\textquotedblright,[[br]]\\hspace*{1.4em}$B$: \\textquotedblleft Rút được tấm thẻ ghi số $5$ hoặc đồng xu xuất hiện mặt ngửa\\textquotedblright.[[br]]a) [NB] Không gian mẫu của phép thử có bao nhiêu phần tử?[[br]]b) [TH] Tính xác suất của các biến cố $A$ và $B$.",
+          "solution": "a) Đồng xu có $2$ mặt và hộp có $5$ tấm thẻ nên số phần tử của không gian mẫu là $n(\\Omega)=2 \\cdot 5 = 10$.[[br]]b) Theo câu a), có $n(\\Omega)=10$ kết quả có thể, các kết quả này đồng khả năng.[[br]]\\hspace*{1.4em}Các kết quả thuận lợi cho biến cố $A$ là $(S, 2)$, $(S, 4)$ nên $n(A)=2$.[[br]]\\hspace*{1.4em}$P(A)=\\dfrac{2}{10}=\\dfrac{1}{5}$.\\rule[-1.2ex]{0pt}{3.7ex}[[br]]\\hspace*{1.4em}Các kết quả thuận lợi cho biến cố $B$ là $(N, 1)$, $(N, 2)$, $(N, 3)$, $(N, 4)$, $(N, 5)$, $(S, 5)$ nên $n(B)=6$.[[br]]\\hspace*{1.4em}$P(B)=\\dfrac{6}{10}=\\dfrac{3}{5}$.\\rule[-1.2ex]{0pt}{3.7ex}[[br]]\\hspace*{1.4em}Vậy $P(A)=\\frac{1}{5}$ và $P(B)=\\frac{3}{5}$.",
+          "hints": []
+        },
+        {
+          "type": "noted",
+          "variant": "example",
+          "text": "\\textbf{Ví dụ 10.} Cho hai túi I và II, mỗi túi chứa $3$ tấm thẻ cùng loại được ghi các số $2$, $3$, $7$. Rút ngẫu nhiên từ mỗi túi ra một tấm thẻ và ghép thành số có hai chữ số với chữ số trên tấm thẻ rút từ túi I là chữ số hàng chục. Tính xác suất của biến cố $A$: \\textquotedblleft Số tạo thành là số nguyên tố\\textquotedblright. \\textit{(khảo sát lớp 9 Phòng GD\\&ĐT Hà Đông, 2025--2026)}[[br]]{\\sffamily\\bfseries\\color{brand}Lời giải}[[br]]\\hspace*{1.4em}Liệt kê các số tạo thành bằng bảng sau:\\par\\nopagebreak\\smallskip\\nopagebreak{\\centering \\adjustbox{max width=0.98\\linewidth}{\\footnotesize\\renewcommand\\arraystretch{1.25}\\begin{tabular}{|l|c|c|c|}\\hline \\textbf{Túi I, Túi II} & $2$ & $3$ & $7$ \\\\ \\hline \\textbf{$2$} & $22$ & $23$ & $27$ \\\\ \\hline \\textbf{$3$} & $32$ & $[[fill:33]]$ & $37$ \\\\ \\hline \\textbf{$7$} & $72$ & $73$ & $[[fill:77]]$ \\\\ \\hline\\end{tabular}}\\par}\\smallskip Có $n(\\Omega)=[[fill:9]]$ kết quả có thể, các kết quả này đồng khả năng.[[br]]\\hspace*{1.4em}Các kết quả thuận lợi cho biến cố $A$ là $23$, $[[fill:37]]$, $[[fill:73]]$ (các số $27$, $[[fill:33]]$, $[[fill:77]]$ là hợp số) nên $n(A)=3$.[[br]]\\hspace*{1.4em}$P(A)=\\dfrac{3}{[[fill:9]]}=\\dfrac{1}{3}$.\\rule[-1.2ex]{0pt}{3.7ex}[[br]]\\hspace*{1.4em}Vậy $P(A)=[[fill:\\frac{1}{3}]]$."
+        },
+        {
+          "type": "problem",
+          "label": "Bài 18.",
+          "level": 2,
+          "tier": "onclass",
+          "dang_id": "NB10+TH5",
+          "statement": "Cho hai túi $A$ và $B$, mỗi túi chứa $3$ tấm thẻ cùng loại được ghi các số $1$, $5$, $9$. Rút ngẫu nhiên từ mỗi túi ra một tấm thẻ và ghép thành số có hai chữ số với chữ số trên tấm thẻ rút ra từ túi $A$ là chữ số hàng chục. Xét các biến cố $M$: \\textquotedblleft Số tạo thành chia hết cho $5$\\textquotedblright và $N$: \\textquotedblleft Số tạo thành là số nguyên tố\\textquotedblright. \\textit{(HK2 THCS Chu Văn An (Thanh Khê, Đà Nẵng), 2025--2026)}[[br]]a) [NB] Mô tả không gian mẫu của phép thử. Không gian mẫu có bao nhiêu phần tử?[[br]]b) [NB] Trong các số tạo thành, những số nào chia hết cho $5$?[[br]]c) [TH] Tính xác suất của mỗi biến cố $M$ và $N$.",
+          "solution": "a) Không gian mẫu là $\\Omega=\\{11; 15; 19; 51; 55; 59; 91; 95; 99\\}$, có $n(\\Omega)=9$ phần tử.[[br]]b) Trong các số tạo thành, những số chia hết cho $5$ là $15$, $55$, $95$.[[br]]c) Theo câu a), có $n(\\Omega)=9$ kết quả có thể, các kết quả này đồng khả năng.[[br]]\\hspace*{1.4em}Theo câu b), các kết quả thuận lợi cho biến cố $M$ là $15$, $55$, $95$ nên $n(M)=3$.[[br]]\\hspace*{1.4em}$P(M)=\\dfrac{3}{9}=\\dfrac{1}{3}$.\\rule[-1.2ex]{0pt}{3.7ex}[[br]]\\hspace*{1.4em}Các kết quả thuận lợi cho biến cố $N$ (số nguyên tố) là $11$, $19$, $59$ (vì $51=3\\cdot 17$, $91=7\\cdot 13$, $99=9\\cdot 11$ là hợp số) nên $n(N)=3$.[[br]]\\hspace*{1.4em}$P(N)=\\dfrac{3}{9}=\\dfrac{1}{3}$.\\rule[-1.2ex]{0pt}{3.7ex}[[br]]\\hspace*{1.4em}Vậy $P(M)=\\frac{1}{3}$ và $P(N)=\\frac{1}{3}$.",
+          "hints": []
+        },
+        {
+          "type": "problem",
+          "label": "Bài 19.",
+          "level": 2,
+          "tier": "onclass",
+          "dang_id": "NB10+TH5",
+          "statement": "Trong ngày hội \\textquotedblleft Sống xanh\\textquotedblright, một trường THCS tổ chức ba khu vực tình nguyện: Khu $A$ (Trồng cây), Khu $B$ (Phân loại rác tái chế) và Khu $C$ (Tặng sách cũ cho trẻ em nghèo). Hai bạn Giang và Ngân cùng đăng kí tham gia tình nguyện. Mỗi bạn chọn ngẫu nhiên một khu vực để tham gia. Xét các biến cố \\textit{(HK2 THCS Phan Đình Phùng (Thanh Khê, Đà Nẵng), 2025--2026)}[[br]]\\hspace*{1.4em}$M$: \\textquotedblleft Cả hai bạn cùng tham gia vào một hoạt động để hỗ trợ nhau\\textquotedblright,[[br]]\\hspace*{1.4em}$N$: \\textquotedblleft Có ít nhất một bạn tham gia vào hoạt động trồng cây\\textquotedblright.[[br]]a) [NB] Phép thử là gì?[[br]]b) [NB] Mô tả không gian mẫu của phép thử.[[br]]c) [TH] Tính xác suất của các biến cố $M$ và $N$.",
+          "solution": "a) Phép thử là hai bạn Giang và Ngân, mỗi bạn chọn ngẫu nhiên một khu vực để tham gia.[[br]]b) Kết quả của phép thử là cặp $(x, y)$, trong đó $x$ là khu vực bạn Giang chọn và $y$ là khu vực bạn Ngân chọn.[[br]]\\hspace*{1.4em}Liệt kê tất cả các kết quả có thể bằng bảng sau:\\par\\nopagebreak\\smallskip\\nopagebreak{\\centering \\adjustbox{max width=0.98\\linewidth}{\\footnotesize\\renewcommand\\arraystretch{1.25}\\begin{tabular}{|l|c|c|c|}\\hline \\textbf{Giang, Ngân} & $A$ & $B$ & $C$ \\\\ \\hline \\textbf{$A$} & $(A, A)$ & $(A, B)$ & $(A, C)$ \\\\ \\hline \\textbf{$B$} & $(B, A)$ & $(B, B)$ & $(B, C)$ \\\\ \\hline \\textbf{$C$} & $(C, A)$ & $(C, B)$ & $(C, C)$ \\\\ \\hline\\end{tabular}}\\par}\\smallskip Không gian mẫu $\\Omega=\\{(A, A); \\allowbreak (A, B); \\allowbreak (A, C); \\allowbreak (B, A); \\allowbreak (B, B); \\allowbreak (B, C); \\allowbreak (C, A); \\allowbreak (C, B); \\allowbreak (C, C)\\}$, có $n(\\Omega)=9$ phần tử.[[br]]c) Theo câu b), có $n(\\Omega)=9$ kết quả có thể, các kết quả này đồng khả năng.[[br]]\\hspace*{1.4em}Các kết quả thuận lợi cho biến cố $M$ là $(A, A)$, $(B, B)$, $(C, C)$ nên $n(M)=3$.[[br]]\\hspace*{1.4em}$P(M)=\\dfrac{3}{9}=\\dfrac{1}{3}$.\\rule[-1.2ex]{0pt}{3.7ex}[[br]]\\hspace*{1.4em}Các kết quả thuận lợi cho biến cố $N$ là $(A, A)$, $(A, B)$, $(A, C)$, $(B, A)$, $(C, A)$ nên $n(N)=5$.[[br]]\\hspace*{1.4em}$P(N)=\\dfrac{5}{9}$.\\rule[-1.2ex]{0pt}{3.7ex}[[br]]\\hspace*{1.4em}Vậy $P(M)=\\frac{1}{3}$ và $P(N)=\\frac{5}{9}$.",
+          "hints": []
+        },
+        {
+          "type": "para",
+          "variant": "heading",
+          "text": "Mạch 8. Tự viết không gian mẫu rồi tính xác suất"
+        },
+        {
+          "type": "noted",
+          "variant": "example",
+          "text": "\\textbf{Ví dụ 11.} Viết ngẫu nhiên một số tự nhiên có hai chữ số nhỏ hơn $30$. \\textit{(HK2 THCS Ngô Gia Tự (Việt Hưng), 2025--2026)}[[br]]a) Viết tập hợp $\\Omega$ tất cả các kết quả có thể xảy ra đối với số tự nhiên được viết ra.[[br]]b) Tính xác suất của biến cố $A$: \\textquotedblleft Số tự nhiên được viết ra chia hết cho $6$\\textquotedblright.[[br]]{\\sffamily\\bfseries\\color{brand}Lời giải}[[br]]a) Vì số tự nhiên có hai chữ số nhỏ nhất là $10$ nên $\\Omega=\\{10; 11; 12; \\ldots; 29\\}$.[[br]]\\hspace*{1.4em}Số phần tử của không gian mẫu là $n(\\Omega)=29 - 10 + 1 = [[fill:20]]$.[[br]]b) Các kết quả thuận lợi cho biến cố $A$ là $[[fill:12]]$, $[[fill:18]]$, $[[fill:24]]$ nên $n(A)=[[fill:3]]$.[[br]]\\hspace*{1.4em}$P(A)=\\dfrac{[[fill:3]]}{[[fill:20]]}$.\\rule[-1.2ex]{0pt}{3.7ex}[[br]]\\hspace*{1.4em}Vậy $P(A)=[[fill:\\frac{3}{20}]]$."
+        },
+        {
+          "type": "problem",
+          "label": "Bài 20.",
+          "level": 2,
+          "tier": "onclass",
+          "dang_id": "NB6+TH2",
+          "statement": "Viết ngẫu nhiên một số tự nhiên có hai chữ số lớn hơn $84$. \\textit{(GK2 THCS Nam Từ Liêm, 2025--2026)}[[br]]a) [NB] Viết tập hợp $\\Omega$ gồm các kết quả có thể xảy ra đối với số tự nhiên được viết ra.[[br]]b) [TH] Tính xác suất của biến cố $A$: \\textquotedblleft Số tự nhiên được viết ra chia hết cho cả $2$ và $3$\\textquotedblright.",
+          "solution": "a) Tập hợp $\\Omega=\\{85; 86; \\ldots; 99\\}$, có $n(\\Omega)=99 - 85 + 1 = 15$ phần tử.[[br]]b) Theo câu a), có $n(\\Omega)=15$ kết quả có thể, các kết quả này đồng khả năng.[[br]]\\hspace*{1.4em}Số chia hết cho cả $2$ và $3$ là số chia hết cho $6$ nên các kết quả thuận lợi cho biến cố $A$ là $90$, $96$ và $n(A)=2$.[[br]]\\hspace*{1.4em}$P(A)=\\dfrac{2}{15}$.\\rule[-1.2ex]{0pt}{3.7ex}[[br]]\\hspace*{1.4em}Vậy $P(A)=\\frac{2}{15}$.",
+          "hints": []
+        },
+        {
+          "type": "problem",
+          "label": "Bài 21.",
+          "level": 2,
+          "tier": "onclass",
+          "dang_id": "NB6+TH2",
+          "statement": "Viết ngẫu nhiên một số tự nhiên có hai chữ số lớn hơn $40$. \\textit{(thi thử vào 10 lần 3 THCS Thọ Lộc, 2025--2026)}[[br]]a) [NB] Tìm số phần tử của tập hợp $M$ gồm các kết quả có thể xảy ra đối với số tự nhiên được viết ra.[[br]]b) [TH] Tính xác suất của biến cố $A$: \\textquotedblleft Số tự nhiên được viết ra là tổng của hai số tự nhiên liên tiếp\\textquotedblright.",
+          "solution": "a) Tập hợp $M=\\{41; 42; \\ldots; 99\\}$ nên số phần tử của $M$ là $n(M)=99 - 41 + 1 = 59$.[[br]]b) Theo câu a), có $n(M)=59$ kết quả có thể, các kết quả này đồng khả năng.[[br]]\\hspace*{1.4em}Tổng của hai số tự nhiên liên tiếp $n$ và $n+1$ là $n + (n + 1) = 2n + 1$ là số lẻ, ngược lại mỗi số lẻ $2n + 1$ đều là tổng của $n$ và $n + 1$.[[br]]\\hspace*{1.4em}Các kết quả thuận lợi cho biến cố $A$ là các số lẻ $41$, $43$, $\\ldots$, $99$ nên $n(A)=(99 - 41) : 2 + 1 = 30$.[[br]]\\hspace*{1.4em}$P(A)=\\dfrac{30}{59}$.\\rule[-1.2ex]{0pt}{3.7ex}[[br]]\\hspace*{1.4em}Vậy $P(A)=\\frac{30}{59}$.",
+          "hints": [
+            "Tổng của hai số tự nhiên liên tiếp $n$ và $n+1$ là số chẵn hay số lẻ?"
+          ]
+        },
+        {
+          "type": "para",
+          "variant": "heading",
+          "text": "Mạch 9. Xác suất với điều kiện số học — đề thi vào 10"
+        },
+        {
+          "type": "noted",
+          "variant": "example",
+          "text": "\\textbf{Ví dụ 12.} Một hộp có $20$ viên bi với kích thước và khối lượng như nhau. Bạn Ngân viết lên các viên bi đó các số $1, 2, 3, \\ldots, 20$, hai viên bi khác nhau thì viết hai số khác nhau. Xét phép thử \\textquotedblleft Lấy ngẫu nhiên một viên bi trong hộp\\textquotedblright. Tính xác suất của biến cố $A$: \\textquotedblleft Số xuất hiện trên viên bi được lấy ra chia $7$ dư $1$\\textquotedblright. \\textit{(HK2 THCS Phúc Đồng (Long Biên), 2025--2026)}[[br]]{\\sffamily\\bfseries\\color{brand}Lời giải}[[br]]\\hspace*{1.4em}Có $n(\\Omega)=[[fill:20]]$ kết quả có thể, các kết quả này đồng khả năng.[[br]]\\hspace*{1.4em}Số chia $7$ dư $1$ có dạng $7k + 1$ ($k \\in \\mathbb{N}$), với $k = 0; 1; 2$ ta được các kết quả thuận lợi cho biến cố $A$ là $[[fill:1]]$, $[[fill:8]]$, $[[fill:15]]$ nên $n(A)=[[fill:3]]$.[[br]]\\hspace*{1.4em}$P(A)=\\dfrac{[[fill:3]]}{[[fill:20]]}$.\\rule[-1.2ex]{0pt}{3.7ex}[[br]]\\hspace*{1.4em}Vậy $P(A)=[[fill:\\frac{3}{20}]]$."
+        },
+        {
+          "type": "problem",
+          "label": "Bài 22.",
+          "level": 2,
+          "tier": "onclass",
+          "dang_id": "NB5+TH1",
+          "statement": "\\interlinepenalty=10000\\clubpenalty=10000\\widowpenalty=10000 Hình bên mô tả một đĩa tròn bằng bìa cứng được chia làm $8$ phần bằng nhau và ghi các số $1$, $12$, $18$, $22$, $27$, $69$, $96$, $99$, chiếc kim được gắn cố định vào trục quay ở tâm của đĩa. Xét phép thử \\textquotedblleft Quay đĩa tròn một lần\\textquotedblright và biến cố $M$: \\textquotedblleft Chiếc kim chỉ vào hình quạt ghi số chia cho $5$ dư $2$\\textquotedblright. \\textit{(HK2 THCS Phúc Lợi (Long Biên), 2024--2025)}\\par\\nopagebreak\\interlinepenalty=0\\clubpenalty=150\\widowpenalty=150 \\smallskip\\noindent\\begin{minipage}[t]{0.73\\linewidth}\\vspace{0pt}a) [NB] Số chia cho $5$ dư $2$ có chữ số tận cùng là những chữ số nào?[[br]]b) [TH] Tính xác suất của biến cố $M$.\\end{minipage}\\hfill\\begin{minipage}[t]{0.24\\linewidth}\\vspace{0pt}\\centering\\adjustbox{max width=\\linewidth}{\\begin{tikzpicture}[font=\\small,line width=0.6pt]\\fill[stage1!22] (0,0) -- (90.00:1.0) arc (90.00:45.00:1.0) -- cycle;\\draw[ink!60] (0,0) -- (90.00:1.0);\\node[font=\\scriptsize] at (67.50:0.68) {$1$};\\fill[stage2!22] (0,0) -- (45.00:1.0) arc (45.00:0.00:1.0) -- cycle;\\draw[ink!60] (0,0) -- (45.00:1.0);\\node[font=\\scriptsize] at (22.50:0.68) {$12$};\\fill[stage3!22] (0,0) -- (0.00:1.0) arc (0.00:-45.00:1.0) -- cycle;\\draw[ink!60] (0,0) -- (0.00:1.0);\\node[font=\\scriptsize] at (-22.50:0.68) {$18$};\\fill[stage4!22] (0,0) -- (-45.00:1.0) arc (-45.00:-90.00:1.0) -- cycle;\\draw[ink!60] (0,0) -- (-45.00:1.0);\\node[font=\\scriptsize] at (-67.50:0.68) {$22$};\\fill[stage5!22] (0,0) -- (-90.00:1.0) arc (-90.00:-135.00:1.0) -- cycle;\\draw[ink!60] (0,0) -- (-90.00:1.0);\\node[font=\\scriptsize] at (-112.50:0.68) {$27$};\\fill[stage1!22] (0,0) -- (-135.00:1.0) arc (-135.00:-180.00:1.0) -- cycle;\\draw[ink!60] (0,0) -- (-135.00:1.0);\\node[font=\\scriptsize] at (-157.50:0.68) {$69$};\\fill[stage2!22] (0,0) -- (-180.00:1.0) arc (-180.00:-225.00:1.0) -- cycle;\\draw[ink!60] (0,0) -- (-180.00:1.0);\\node[font=\\scriptsize] at (-202.50:0.68) {$96$};\\fill[stage3!22] (0,0) -- (-225.00:1.0) arc (-225.00:-270.00:1.0) -- cycle;\\draw[ink!60] (0,0) -- (-225.00:1.0);\\node[font=\\scriptsize] at (-247.50:0.68) {$99$};\\draw[ink!70] (0,0) circle (1.0);\\draw[-latex,line width=1.1pt,ink] (0,0) -- (60:0.55);\\fill[ink] (0,0) circle (0.06);\\end{tikzpicture}}\\end{minipage}\\par\\smallskip ",
+          "solution": "a) Số chia cho $5$ dư $2$ có chữ số tận cùng là $2$ hoặc $7$.[[br]]b) Có $n(\\Omega)=8$ kết quả có thể, các kết quả này đồng khả năng.[[br]]\\hspace*{1.4em}Theo câu a), các kết quả thuận lợi cho biến cố $M$ là $12$, $22$, $27$ nên $n(M)=3$.[[br]]\\hspace*{1.4em}$P(M)=\\dfrac{3}{8}$.\\rule[-1.2ex]{0pt}{3.7ex}[[br]]\\hspace*{1.4em}Vậy $P(M)=\\frac{3}{8}$.",
+          "hints": []
+        },
+        {
+          "type": "problem",
+          "label": "Bài 23.",
+          "level": 2,
+          "tier": "onclass",
+          "dang_id": "NB5+TH1",
+          "statement": "Một hộp đựng $50$ cái thẻ cùng loại, mỗi thẻ được ghi một trong các số $50, 51, 52, \\ldots, 98, 99$ (hai thẻ khác nhau ghi hai số khác nhau). Rút ngẫu nhiên một thẻ từ hộp. Xét biến cố $A$: \\textquotedblleft Số ghi trên thẻ rút được là một số chia cho $7$ dư $1$\\textquotedblright. \\textit{(thi thử vào 10 THCS Tự Lập, 2025--2026)}[[br]]a) [NB] Số $50$ chia cho $7$ dư bao nhiêu?[[br]]b) [TH] Tính xác suất của biến cố $A$.",
+          "solution": "a) Vì $50 = 7 \\cdot 7 + 1$ nên số $50$ chia cho $7$ dư $1$.[[br]]b) Có $n(\\Omega)=50$ kết quả có thể, các kết quả này đồng khả năng.[[br]]\\hspace*{1.4em}Theo câu a), $50$ là một kết quả thuận lợi, các số tiếp theo cách nhau $7$ đơn vị nên các kết quả thuận lợi cho biến cố $A$ là $50$, $57$, $64$, $71$, $78$, $85$, $92$, $99$ và $n(A)=8$.[[br]]\\hspace*{1.4em}$P(A)=\\dfrac{8}{50}=\\dfrac{4}{25}$.\\rule[-1.2ex]{0pt}{3.7ex}[[br]]\\hspace*{1.4em}Vậy $P(A)=\\frac{4}{25}$.",
+          "hints": []
+        },
+        {
+          "type": "noted",
+          "variant": "example",
+          "text": "\\textbf{Ví dụ 13.} Trong một hộp đựng $15$ tấm thẻ cùng loại đánh số từ $1$ đến $15$ và không có hai tấm thẻ nào đánh số trùng nhau. An rút ngẫu nhiên một tấm thẻ trong hộp. Tính xác suất của biến cố $A$: \\textquotedblleft An rút được tấm thẻ đánh số chia hết cho $3$ và không vượt quá $10$\\textquotedblright. \\textit{(HK2 THCS Ngọc Thụy (Long Biên), 2024--2025)}[[br]]{\\sffamily\\bfseries\\color{brand}Lời giải}[[br]]\\hspace*{1.4em}Có $n(\\Omega)=[[fill:15]]$ kết quả có thể, các kết quả này đồng khả năng.[[br]]\\hspace*{1.4em}Các số ghi trên thẻ chia hết cho $3$ là $3$, $6$, $9$, $12$, $[[fill:15]]$.[[br]]\\hspace*{1.4em}Trong đó các số không vượt quá $10$ ($\\le 10$) là $3$, $6$, $9$ nên $n(A)=[[fill:3]]$.[[br]]\\hspace*{1.4em}$P(A)=\\dfrac{[[fill:3]]}{[[fill:15]]}=\\dfrac{1}{5}$.\\rule[-1.2ex]{0pt}{3.7ex}[[br]]\\hspace*{1.4em}Vậy $P(A)=[[fill:\\frac{1}{5}]]$."
+        },
+        {
+          "type": "problem",
+          "label": "Bài 24.",
+          "level": 2,
+          "tier": "onclass",
+          "dang_id": "NB5+TH1",
+          "statement": "Một hộp có $8$ chiếc thẻ cùng loại, mỗi thẻ được ghi một trong các số $1, 2, 3, 4, 5, 6, 7, 8$, hai thẻ khác nhau được ghi hai số khác nhau. Rút ngẫu nhiên một thẻ trong hộp. Xét biến cố $A$: \\textquotedblleft Số ghi trên thẻ rút được là một số chia hết cho $3$\\textquotedblright. \\textit{(đề tuyển sinh lớp 10 Hà Nội, 2025--2026)}[[br]]a) [NB] Không gian mẫu của phép thử có bao nhiêu phần tử?[[br]]b) [TH] Tính xác suất của biến cố $A$.",
+          "solution": "a) Số phần tử của không gian mẫu là $n(\\Omega)=8$.[[br]]b) Theo câu a), có $n(\\Omega)=8$ kết quả có thể, các kết quả này đồng khả năng.[[br]]\\hspace*{1.4em}Các kết quả thuận lợi cho biến cố $A$ là $3$, $6$ nên $n(A)=2$.[[br]]\\hspace*{1.4em}$P(A)=\\dfrac{2}{8}=\\dfrac{1}{4}$.\\rule[-1.2ex]{0pt}{3.7ex}[[br]]\\hspace*{1.4em}Vậy $P(A)=\\frac{1}{4}$.",
+          "hints": []
+        }
+      ],
+      "teacher_note": "Khoảng 90 phút — mỗi mạch giáo viên làm ví dụ cùng lớp rồi học sinh làm ngay bài sau, câu hỏi dẫn trả lời miệng, ý chính tự trình bày vào vở. Mạch 7 nhấn bảng hai chiều. Bài 24 (đề đích) làm cá nhân như đi thi rồi gọi lên bảng."
+    },
+    {
+      "kind": "reflection",
+      "number": 5,
+      "title": "Tổng kết",
+      "blocks": [
+        {
+          "type": "mindmap",
+          "caption": "Điền các ô trống để tự tóm tắt buổi học",
+          "root": "Xác suất của biến cố",
+          "branches": [
+            {
+              "label": "Không gian mẫu",
+              "children": [
+                {
+                  "label": "$\\Omega$: tập hợp tất cả các [[blank:2.4cm]]"
+                },
+                {
+                  "label": "Hai hành động: kết quả là một [[blank:1.4cm]], lập bảng"
+                }
+              ]
+            },
+            {
+              "label": "Biến cố",
+              "children": [
+                {
+                  "label": "$n(A)$: số kết quả [[blank:1.8cm]] cho $A$"
+                }
+              ]
+            },
+            {
+              "label": "Xác suất",
+              "children": [
+                {
+                  "label": "Các kết quả [[blank:2.2cm]]"
+                },
+                {
+                  "label": "$P(A)=[[blank:1.4cm]]$"
+                }
+              ]
+            }
+          ]
+        },
+        {
+          "type": "para",
+          "text": "\\textbf{Bài tập về nhà} — làm vào vở, buổi sau nộp."
+        },
+        {
+          "type": "problem",
+          "label": "Bài 25.",
+          "level": 1,
+          "tier": "btvn",
+          "dang_id": "NB2",
+          "statement": "[NB] Chọn ngẫu nhiên một gia đình có hai con và quan sát giới tính của hai người con đó. Phép thử và kết quả của phép thử là gì? \\textit{(SGK Toán 9 tập hai, Bài tập 8{.}1)}",
+          "solution": "Phép thử là chọn ngẫu nhiên một gia đình có hai con và quan sát giới tính của hai người con đó.[[br]]\\hspace*{1.4em}Kết quả của phép thử là cặp $(a, b)$, trong đó $a$ là giới tính người con thứ nhất và $b$ là giới tính người con thứ hai (mỗi người là trai hoặc gái).",
+          "hints": []
+        },
+        {
+          "type": "problem",
+          "label": "Bài 26.",
+          "level": 1,
+          "tier": "btvn",
+          "dang_id": "NB2",
+          "statement": "Mỗi khẳng định sau đúng hay sai? Giải thích. \\textit{(tài liệu Mathtech \\textquotedblleft Phép thử ngẫu nhiên và không gian mẫu. Xác suất của biến cố\\textquotedblright)}[[br]]a) [NB] Rút ngẫu nhiên $1$ tấm thẻ từ $10$ tấm thẻ cùng loại được đánh số lần lượt từ $1$ đến $10$. Các kết quả của phép thử là đồng khả năng.[[br]]b) [NB] Lấy ra ngẫu nhiên $1$ viên bi từ một hộp chứa $1$ viên bi xanh, $1$ viên bi đỏ và $8$ viên bi trắng có cùng kích thước và khối lượng rồi quan sát màu của nó. Các kết quả của phép thử là đồng khả năng.",
+          "solution": "a) Đúng. Vì $10$ tấm thẻ cùng loại và mỗi số được ghi trên đúng một thẻ nên khả năng rút được mỗi thẻ là như nhau.[[br]]b) Sai. Vì có $8$ viên bi trắng trong khi bi xanh và bi đỏ chỉ có $1$ viên nên khả năng lấy được viên bi màu trắng cao hơn.",
+          "hints": []
+        },
+        {
+          "type": "problem",
+          "label": "Bài 27.",
+          "level": 1,
+          "tier": "btvn",
+          "dang_id": "NB3",
+          "statement": "[NB] Một hộp có $12$ tấm thẻ cùng loại, mỗi thẻ được ghi một trong các số $1, 2, 3, \\ldots, 12$, hai thẻ khác nhau thì ghi hai số khác nhau. Xét phép thử \\textquotedblleft Rút ngẫu nhiên một thẻ trong hộp\\textquotedblright. Viết không gian mẫu của phép thử. \\textit{(GK2 THCS Nguyễn Bỉnh Khiêm, 2024--2025)}",
+          "solution": "Không gian mẫu của phép thử là $\\Omega=\\{1; 2; 3; 4; 5; 6; 7; 8; 9; 10; 11; 12\\}$, với $n(\\Omega)=12$.",
+          "hints": []
+        },
+        {
+          "type": "problem",
+          "label": "Bài 28.",
+          "level": 1,
+          "tier": "btvn",
+          "dang_id": "NB3",
+          "statement": "[NB] Nhóm học sinh tình nguyện khối 9 của một trường trung học cơ sở có $6$ bạn, trong đó có $3$ bạn nam là Trung (lớp 9A), Quý (lớp 9A), Việt (lớp 9C) và $3$ bạn nữ là An (lớp 9A), Châu (lớp 9B), Hương (lớp 9D). Chọn ngẫu nhiên một bạn trong nhóm đó để tham gia hoạt động tình nguyện của trường. Liệt kê tất cả các kết quả có thể xảy ra trong phép thử trên. Có tất cả bao nhiêu kết quả có thể xảy ra? \\textit{(đề minh họa tuyển sinh lớp 10, Phòng GD\\&ĐT Đống Đa, đề 08 (THCS Láng Thượng), 2025--2026)}",
+          "solution": "Các kết quả có thể xảy ra là $\\Omega=\\{\\text{Trung}; \\text{Quý}; \\text{Việt}; \\text{An}; \\text{Châu}; \\text{Hương}\\}$.[[br]]\\hspace*{1.4em}Có tất cả $6$ kết quả có thể xảy ra.",
+          "hints": []
+        },
+        {
+          "type": "problem",
+          "label": "Bài 29.",
+          "level": 1,
+          "tier": "btvn",
+          "dang_id": "NB3",
+          "statement": "\\interlinepenalty=10000\\clubpenalty=10000\\widowpenalty=10000 Bảng sau biểu diễn kết quả thống kê của một bệnh viện về cân nặng của một số trẻ sơ sinh. \\textit{(tài liệu Mathtech \\textquotedblleft Phép thử ngẫu nhiên và không gian mẫu. Xác suất của biến cố\\textquotedblright)}\\par\\nopagebreak\\interlinepenalty=0\\clubpenalty=150\\widowpenalty=150 \\nopagebreak\\smallskip\\nopagebreak{\\centering \\adjustbox{max width=0.98\\linewidth}{\\footnotesize\\renewcommand\\arraystretch{1.25}\\begin{tabular}{|l|c|c|c|c|c|}\\hline \\textbf{Cân nặng (g)} & $[2800; 3000)$ & $[3000; 3200)$ & $[3200; 3400)$ & $[3400; 3600)$ & Tổng số \\\\ \\hline \\textbf{Bé gái} & $4$ & $17$ & $10$ & $5$ & $36$ \\\\ \\hline \\textbf{Bé trai} & $3$ & $18$ & $8$ & $3$ & $32$ \\\\ \\hline\\end{tabular}}\\par}\\smallskip Chọn ngẫu nhiên một trẻ sơ sinh trong số này.[[br]]a) [NB] Có bao nhiêu kết quả thuận lợi cho biến cố $M$: \\textquotedblleft Chọn được một bé gái có cân nặng thuộc nhóm $[3200; 3400)$ (g)\\textquotedblright?[[br]]b) [NB] Có bao nhiêu kết quả thuận lợi cho biến cố $N$: \\textquotedblleft Chọn được một bé có cân nặng dưới $3000$ g\\textquotedblright?",
+          "solution": "a) Có $10$ kết quả thuận lợi cho biến cố $M$.[[br]]b) Các bé có cân nặng dưới $3000$ g thuộc nhóm $[2800; 3000)$, gồm $4$ bé gái và $3$ bé trai nên có $4+3=7$ kết quả thuận lợi cho biến cố $N$.",
+          "hints": []
+        },
+        {
+          "type": "problem",
+          "label": "Bài 30.",
+          "level": 1,
+          "tier": "btvn",
+          "dang_id": "NB4",
+          "statement": "\\interlinepenalty=10000\\clubpenalty=10000\\widowpenalty=10000 [NB] Bạn An ném ngẫu nhiên một viên bi vào bảng gồm các ô vuông như hình bên. Biết rằng mỗi lần ném, viên bi chỉ có thể nằm gọn vào một ô vuông màu trắng hoặc một ô vuông màu đen và việc viên bi nằm trong mỗi ô vuông là đồng khả năng. Xác suất để trong $1$ lần ném, viên bi nằm trong ô vuông màu đen là \\textit{(thi thử vào 10 lần 3 THCS Thọ Lộc, 2026--2027)}\\par\\nopagebreak\\interlinepenalty=0\\clubpenalty=150\\widowpenalty=150 \\smallskip\\noindent\\begin{minipage}[t]{0.67\\linewidth}\\vspace{0pt}\\hspace*{1.4em}\\makebox[0.22\\linewidth][l]{A. $\\dfrac{1}{64}$}\\makebox[0.22\\linewidth][l]{B. $\\dfrac{1}{2}$}\\makebox[0.22\\linewidth][l]{C. $\\dfrac{1}{32}$}\\makebox[0.22\\linewidth][l]{D. $\\dfrac{1}{4}$}\\end{minipage}\\hfill\\begin{minipage}[t]{0.30\\linewidth}\\vspace{0pt}\\centering\\adjustbox{max width=\\linewidth}{\\begin{tikzpicture}[line width=0.5pt]\\fill[ink!85] (0.32,0.00) rectangle (0.64,0.32);\\fill[ink!85] (0.96,0.00) rectangle (1.28,0.32);\\fill[ink!85] (1.60,0.00) rectangle (1.92,0.32);\\fill[ink!85] (2.24,0.00) rectangle (2.56,0.32);\\fill[ink!85] (0.00,0.32) rectangle (0.32,0.64);\\fill[ink!85] (0.64,0.32) rectangle (0.96,0.64);\\fill[ink!85] (1.28,0.32) rectangle (1.60,0.64);\\fill[ink!85] (1.92,0.32) rectangle (2.24,0.64);\\fill[ink!85] (0.32,0.64) rectangle (0.64,0.96);\\fill[ink!85] (0.96,0.64) rectangle (1.28,0.96);\\fill[ink!85] (1.60,0.64) rectangle (1.92,0.96);\\fill[ink!85] (2.24,0.64) rectangle (2.56,0.96);\\fill[ink!85] (0.00,0.96) rectangle (0.32,1.28);\\fill[ink!85] (0.64,0.96) rectangle (0.96,1.28);\\fill[ink!85] (1.28,0.96) rectangle (1.60,1.28);\\fill[ink!85] (1.92,0.96) rectangle (2.24,1.28);\\fill[ink!85] (0.32,1.28) rectangle (0.64,1.60);\\fill[ink!85] (0.96,1.28) rectangle (1.28,1.60);\\fill[ink!85] (1.60,1.28) rectangle (1.92,1.60);\\fill[ink!85] (2.24,1.28) rectangle (2.56,1.60);\\fill[ink!85] (0.00,1.60) rectangle (0.32,1.92);\\fill[ink!85] (0.64,1.60) rectangle (0.96,1.92);\\fill[ink!85] (1.28,1.60) rectangle (1.60,1.92);\\fill[ink!85] (1.92,1.60) rectangle (2.24,1.92);\\fill[ink!85] (0.32,1.92) rectangle (0.64,2.24);\\fill[ink!85] (0.96,1.92) rectangle (1.28,2.24);\\fill[ink!85] (1.60,1.92) rectangle (1.92,2.24);\\fill[ink!85] (2.24,1.92) rectangle (2.56,2.24);\\fill[ink!85] (0.00,2.24) rectangle (0.32,2.56);\\fill[ink!85] (0.64,2.24) rectangle (0.96,2.56);\\fill[ink!85] (1.28,2.24) rectangle (1.60,2.56);\\fill[ink!85] (1.92,2.24) rectangle (2.24,2.56);\\draw[ink] (0,0) rectangle (2.56,2.56);\\end{tikzpicture}}\\end{minipage}\\par\\smallskip \\rule[-1.2ex]{0pt}{3.7ex}",
+          "solution": "Bảng có $64$ ô vuông, trong đó có $32$ ô màu đen nên xác suất cần tìm là $\\frac{32}{64}=\\frac{1}{2}$.[[br]]\\hspace*{1.4em}Chọn B.",
+          "hints": []
+        },
+        {
+          "type": "problem",
+          "label": "Bài 31.",
+          "level": 1,
+          "tier": "btvn",
+          "dang_id": "NB4",
+          "statement": "[NB] Trên bàn học của An có $3$ quyển sách Toán, $3$ quyển sách Văn và $2$ quyển sách Tiếng Anh. An chọn ngẫu nhiên $1$ quyển sách trên bàn đó để đọc (mỗi quyển sách đều có khả năng được chọn như nhau). Tính xác suất của biến cố \\textquotedblleft An chọn được sách Toán\\textquotedblright. \\textit{(HK2 Phòng GD\\&ĐT Ba Đình, 2024--2025)}",
+          "solution": "Có $n(\\Omega)=3+3+2=8$ kết quả có thể, các kết quả này đồng khả năng.[[br]]\\hspace*{1.4em}Có $3$ quyển sách Toán nên số kết quả thuận lợi cho biến cố đã cho là $3$.[[br]]\\hspace*{1.4em}Xác suất của biến cố đã cho là $\\dfrac{3}{8}$.\\rule[-1.2ex]{0pt}{3.7ex}",
+          "hints": []
+        },
+        {
+          "type": "problem",
+          "label": "Bài 32.",
+          "level": 1,
+          "tier": "btvn",
+          "dang_id": "NB4",
+          "statement": "[NB] Trong một hộp có $20$ chiếc thẻ cùng loại, được ghi số từ $1$ đến $20$. Hai thẻ khác nhau ghi số khác nhau. Bạn Hà rút ngẫu nhiên một thẻ trong hộp rồi ghi lại số. Tính xác suất của biến cố $A$: \\textquotedblleft Số ghi trên thẻ là số lớn hơn $15$\\textquotedblright. \\textit{(HK2 Phòng GD\\&ĐT Hai Bà Trưng, 2024--2025)}",
+          "solution": "Có $n(\\Omega)=20$ kết quả có thể, các kết quả này đồng khả năng.[[br]]\\hspace*{1.4em}Các kết quả thuận lợi cho biến cố $A$ là $16$, $17$, $18$, $19$, $20$ nên $n(A)=5$.[[br]]\\hspace*{1.4em}$P(A)=\\dfrac{5}{20}=\\dfrac{1}{4}$.\\rule[-1.2ex]{0pt}{3.7ex}",
+          "hints": []
+        },
+        {
+          "type": "problem",
+          "label": "Bài 33.",
+          "level": 1,
+          "tier": "btvn",
+          "dang_id": "NB4",
+          "statement": "[NB] Một hộp có $18$ viên bi cùng loại được ghi số $1, 2, \\ldots, 18$, hai viên bi khác nhau ghi hai số khác nhau. Lấy ngẫu nhiên một viên bi trong hộp. Tìm xác suất của biến cố $M$: \\textquotedblleft Viên bi được lấy có ghi số có hai chữ số\\textquotedblright. \\textit{(HK2 THCS\\&THPT M.V. Lômônôxốp, 2024--2025)}",
+          "solution": "Có $n(\\Omega)=18$ kết quả có thể, các kết quả này đồng khả năng.[[br]]\\hspace*{1.4em}Các kết quả thuận lợi cho biến cố $M$ là $10$, $11$, $12$, $13$, $14$, $15$, $16$, $17$, $18$ nên $n(M)=9$.[[br]]\\hspace*{1.4em}$P(M)=\\dfrac{9}{18}=\\dfrac{1}{2}$.\\rule[-1.2ex]{0pt}{3.7ex}",
+          "hints": []
+        },
+        {
+          "type": "problem",
+          "label": "Bài 34.",
+          "level": 1,
+          "tier": "btvn",
+          "dang_id": "NB4",
+          "statement": "[NB] Một hộp có $20$ quả bóng được ghi số lần lượt từ $1$ đến $20$. Biết các quả bóng có cùng màu sắc, khối lượng và kích thước. Bạn Nam lấy ngẫu nhiên một quả bóng trong hộp. Tính xác suất của biến cố \\textquotedblleft Bạn Nam lấy được quả bóng có ghi số chia hết cho $4$\\textquotedblright. \\textit{(HK2 THCS Ngọc Lâm (Long Biên), 2024--2025)}",
+          "solution": "Có $n(\\Omega)=20$ kết quả có thể, các kết quả này đồng khả năng.[[br]]\\hspace*{1.4em}Các kết quả thuận lợi cho biến cố đã cho là $4$, $8$, $12$, $16$, $20$ nên số kết quả thuận lợi là $5$.[[br]]\\hspace*{1.4em}Xác suất của biến cố đã cho là $\\dfrac{5}{20}=\\dfrac{1}{4}$.\\rule[-1.2ex]{0pt}{3.7ex}",
+          "hints": []
+        },
+        {
+          "type": "problem",
+          "label": "Bài 35.",
+          "level": 1,
+          "tier": "btvn",
+          "dang_id": "NB4",
+          "statement": "[NB] Một bình đựng $20$ quả cầu có kích thước và khối lượng như nhau, được đánh số từ $1$ đến $20$ (không có hai quả cầu nào đánh cùng một số). Chọn ngẫu nhiên một quả cầu. Tính xác suất của biến cố $A$: \\textquotedblleft Chọn được quả cầu trên đó có ghi số chính phương\\textquotedblright. \\textit{(HK2 THCS Phúc Đồng (Long Biên), 2024--2025)}",
+          "solution": "Có $n(\\Omega)=20$ kết quả có thể, các kết quả này đồng khả năng.[[br]]\\hspace*{1.4em}Các kết quả thuận lợi cho biến cố $A$ là $1$, $4$, $9$, $16$ nên $n(A)=4$.[[br]]\\hspace*{1.4em}$P(A)=\\dfrac{4}{20}=\\dfrac{1}{5}$.\\rule[-1.2ex]{0pt}{3.7ex}",
+          "hints": []
+        },
+        {
+          "type": "problem",
+          "label": "Bài 36.",
+          "level": 1,
+          "tier": "btvn",
+          "dang_id": "NB4",
+          "statement": "[NB] Trong túi có $6$ quả bóng bàn được làm bằng cùng chất liệu, có kích thước và khối lượng như nhau, gồm hai quả màu đỏ được đánh số $1$, $2$, hai quả màu trắng được đánh số $3$, $4$, hai quả màu xanh được đánh số $5$, $6$. Lấy ngẫu nhiên một quả bóng từ trong túi. Tính xác suất của biến cố $A$: \\textquotedblleft Không lấy được quả bóng màu đỏ\\textquotedblright. \\textit{(GK2 THCS Nhật Tân, 2024--2025)}",
+          "solution": "Có $n(\\Omega)=6$ kết quả có thể, các kết quả này đồng khả năng.[[br]]\\hspace*{1.4em}Các kết quả thuận lợi cho biến cố $A$ là $3$, $4$, $5$, $6$ nên $n(A)=4$.[[br]]\\hspace*{1.4em}$P(A)=\\dfrac{4}{6}=\\dfrac{2}{3}$.\\rule[-1.2ex]{0pt}{3.7ex}",
+          "hints": []
+        },
+        {
+          "type": "problem",
+          "label": "Bài 37.",
+          "level": 1,
+          "tier": "btvn",
+          "dang_id": "NB4",
+          "statement": "[NB] Một hộp chứa $15$ quả cầu màu xanh được đánh số từ $1$ đến $15$ và $5$ quả cầu màu đỏ được đánh số từ $16$ đến $20$, các quả cầu có cùng kích thước và khối lượng. Lấy ngẫu nhiên một quả trong hộp. Tính xác suất của biến cố \\textquotedblleft Quả cầu được lấy ra có màu xanh\\textquotedblright. \\textit{(tài liệu Mathtech \\textquotedblleft Phép thử ngẫu nhiên và không gian mẫu. Xác suất của biến cố\\textquotedblright)}",
+          "solution": "Có $n(\\Omega)=15+5=20$ kết quả có thể, các kết quả này đồng khả năng.[[br]]\\hspace*{1.4em}Có $15$ quả cầu màu xanh nên số kết quả thuận lợi cho biến cố đã cho là $15$.[[br]]\\hspace*{1.4em}Xác suất của biến cố đã cho là $\\dfrac{15}{20}=\\dfrac{3}{4}$.\\rule[-1.2ex]{0pt}{3.7ex}",
+          "hints": []
+        },
+        {
+          "type": "problem",
+          "label": "Bài 38.",
+          "level": 1,
+          "tier": "btvn",
+          "dang_id": "NB7",
+          "statement": "[NB] Một đoàn khách quốc tế tham quan vịnh Hạ Long có tỉ lệ khách người châu Âu là $27\\%$. Chọn ngẫu nhiên một hành khách trong đoàn khách đó. Xác suất của biến cố \\textquotedblleft Hành khách được chọn là người châu Âu\\textquotedblright là \\textit{(tài liệu Mathtech \\textquotedblleft Phép thử ngẫu nhiên và không gian mẫu. Xác suất của biến cố\\textquotedblright)}[[br]]\\hspace*{1.4em}\\makebox[0.22\\linewidth][l]{A. $27$}\\makebox[0.22\\linewidth][l]{B. $\\dfrac{73}{100}$}\\makebox[0.22\\linewidth][l]{C. $0{,}27$}\\makebox[0.22\\linewidth][l]{D. $\\dfrac{1}{27}$}\\rule[-1.2ex]{0pt}{3.7ex}",
+          "solution": "Xác suất của biến cố đã cho là $27\\%=0{,}27$.[[br]]\\hspace*{1.4em}Chọn C.",
+          "hints": []
+        },
+        {
+          "type": "problem",
+          "label": "Bài 39.",
+          "level": 1,
+          "tier": "btvn",
+          "dang_id": "NB9",
+          "statement": "Tung một đồng xu cân đối, đồng chất $2$ lần. Xét các biến cố $A$: \\textquotedblleft Xuất hiện $2$ lần mặt ngửa\\textquotedblright và $B$: \\textquotedblleft Xuất hiện $1$ lần mặt sấp, $1$ lần mặt ngửa\\textquotedblright. \\textit{(đề minh họa tuyển sinh lớp 10, Phòng GD\\&ĐT Đống Đa, đề 02 (THCS Bế Văn Đàn), 2025--2026)}[[br]]a) [NB] Mô tả không gian mẫu.[[br]]b) [NB] Xác định các kết quả thuận lợi cho mỗi biến cố $A$ và $B$.",
+          "solution": "a) Không gian mẫu của phép thử là $\\Omega=\\{(S, S); \\allowbreak (S, N); \\allowbreak (N, S); \\allowbreak (N, N)\\}$, với $S$ là mặt sấp, $N$ là mặt ngửa.[[br]]b) Kết quả thuận lợi cho biến cố $A$ là $(N, N)$.[[br]]\\hspace*{1.4em}Các kết quả thuận lợi cho biến cố $B$ là $(S, N)$, $(N, S)$.",
+          "hints": []
+        },
+        {
+          "type": "problem",
+          "label": "Bài 40.",
+          "level": 2,
+          "tier": "btvn",
+          "dang_id": "NB5+TH1",
+          "statement": "\\interlinepenalty=10000\\clubpenalty=10000\\widowpenalty=10000 Một tấm bìa cứng hình tròn được chia thành $20$ hình quạt như nhau, đánh số $1, 2, 3, \\ldots, 20$ và được gắn vào trục quay có mũi tên cố định ở tâm (hình bên). Xét phép thử \\textquotedblleft Quay đĩa tròn một lần\\textquotedblright và biến cố $A$: \\textquotedblleft Số trên hình quạt mà mũi tên chỉ vào không phải là số nguyên tố\\textquotedblright. \\textit{(GK2 THCS Trưng Vương, 2025--2026)}\\par\\nopagebreak\\interlinepenalty=0\\clubpenalty=150\\widowpenalty=150 \\smallskip\\noindent\\begin{minipage}[t]{0.71\\linewidth}\\vspace{0pt}a) [NB] Từ $1$ đến $20$ có bao nhiêu số nguyên tố?[[br]]b) [TH] Tính xác suất của biến cố $A$.\\end{minipage}\\hfill\\begin{minipage}[t]{0.26\\linewidth}\\vspace{0pt}\\centering\\adjustbox{max width=\\linewidth}{\\begin{tikzpicture}[font=\\small,line width=0.6pt]\\fill[stage1!22] (0,0) -- (90.00:1.3) arc (90.00:72.00:1.3) -- cycle;\\draw[ink!60] (0,0) -- (90.00:1.3);\\node[font=\\tiny] at (81.00:1.04) {$1$};\\fill[stage2!22] (0,0) -- (72.00:1.3) arc (72.00:54.00:1.3) -- cycle;\\draw[ink!60] (0,0) -- (72.00:1.3);\\node[font=\\tiny] at (63.00:1.04) {$2$};\\fill[stage3!22] (0,0) -- (54.00:1.3) arc (54.00:36.00:1.3) -- cycle;\\draw[ink!60] (0,0) -- (54.00:1.3);\\node[font=\\tiny] at (45.00:1.04) {$3$};\\fill[stage4!22] (0,0) -- (36.00:1.3) arc (36.00:18.00:1.3) -- cycle;\\draw[ink!60] (0,0) -- (36.00:1.3);\\node[font=\\tiny] at (27.00:1.04) {$4$};\\fill[stage5!22] (0,0) -- (18.00:1.3) arc (18.00:0.00:1.3) -- cycle;\\draw[ink!60] (0,0) -- (18.00:1.3);\\node[font=\\tiny] at (9.00:1.04) {$5$};\\fill[stage1!22] (0,0) -- (0.00:1.3) arc (0.00:-18.00:1.3) -- cycle;\\draw[ink!60] (0,0) -- (0.00:1.3);\\node[font=\\tiny] at (-9.00:1.04) {$6$};\\fill[stage2!22] (0,0) -- (-18.00:1.3) arc (-18.00:-36.00:1.3) -- cycle;\\draw[ink!60] (0,0) -- (-18.00:1.3);\\node[font=\\tiny] at (-27.00:1.04) {$7$};\\fill[stage3!22] (0,0) -- (-36.00:1.3) arc (-36.00:-54.00:1.3) -- cycle;\\draw[ink!60] (0,0) -- (-36.00:1.3);\\node[font=\\tiny] at (-45.00:1.04) {$8$};\\fill[stage4!22] (0,0) -- (-54.00:1.3) arc (-54.00:-72.00:1.3) -- cycle;\\draw[ink!60] (0,0) -- (-54.00:1.3);\\node[font=\\tiny] at (-63.00:1.04) {$9$};\\fill[stage5!22] (0,0) -- (-72.00:1.3) arc (-72.00:-90.00:1.3) -- cycle;\\draw[ink!60] (0,0) -- (-72.00:1.3);\\node[font=\\tiny] at (-81.00:1.04) {$10$};\\fill[stage1!22] (0,0) -- (-90.00:1.3) arc (-90.00:-108.00:1.3) -- cycle;\\draw[ink!60] (0,0) -- (-90.00:1.3);\\node[font=\\tiny] at (-99.00:1.04) {$11$};\\fill[stage2!22] (0,0) -- (-108.00:1.3) arc (-108.00:-126.00:1.3) -- cycle;\\draw[ink!60] (0,0) -- (-108.00:1.3);\\node[font=\\tiny] at (-117.00:1.04) {$12$};\\fill[stage3!22] (0,0) -- (-126.00:1.3) arc (-126.00:-144.00:1.3) -- cycle;\\draw[ink!60] (0,0) -- (-126.00:1.3);\\node[font=\\tiny] at (-135.00:1.04) {$13$};\\fill[stage4!22] (0,0) -- (-144.00:1.3) arc (-144.00:-162.00:1.3) -- cycle;\\draw[ink!60] (0,0) -- (-144.00:1.3);\\node[font=\\tiny] at (-153.00:1.04) {$14$};\\fill[stage5!22] (0,0) -- (-162.00:1.3) arc (-162.00:-180.00:1.3) -- cycle;\\draw[ink!60] (0,0) -- (-162.00:1.3);\\node[font=\\tiny] at (-171.00:1.04) {$15$};\\fill[stage1!22] (0,0) -- (-180.00:1.3) arc (-180.00:-198.00:1.3) -- cycle;\\draw[ink!60] (0,0) -- (-180.00:1.3);\\node[font=\\tiny] at (-189.00:1.04) {$16$};\\fill[stage2!22] (0,0) -- (-198.00:1.3) arc (-198.00:-216.00:1.3) -- cycle;\\draw[ink!60] (0,0) -- (-198.00:1.3);\\node[font=\\tiny] at (-207.00:1.04) {$17$};\\fill[stage3!22] (0,0) -- (-216.00:1.3) arc (-216.00:-234.00:1.3) -- cycle;\\draw[ink!60] (0,0) -- (-216.00:1.3);\\node[font=\\tiny] at (-225.00:1.04) {$18$};\\fill[stage4!22] (0,0) -- (-234.00:1.3) arc (-234.00:-252.00:1.3) -- cycle;\\draw[ink!60] (0,0) -- (-234.00:1.3);\\node[font=\\tiny] at (-243.00:1.04) {$19$};\\fill[stage5!22] (0,0) -- (-252.00:1.3) arc (-252.00:-270.00:1.3) -- cycle;\\draw[ink!60] (0,0) -- (-252.00:1.3);\\node[font=\\tiny] at (-261.00:1.04) {$20$};\\draw[ink!70] (0,0) circle (1.3);\\draw[-latex,line width=1.1pt,ink] (0,0) -- (60:0.72);\\fill[ink] (0,0) circle (0.06);\\end{tikzpicture}}\\end{minipage}\\par\\smallskip ",
+          "solution": "a) Từ $1$ đến $20$ có $8$ số nguyên tố là $2$, $3$, $5$, $7$, $11$, $13$, $17$, $19$.[[br]]b) Có $n(\\Omega)=20$ kết quả có thể, các kết quả này đồng khả năng.[[br]]\\hspace*{1.4em}Theo câu a), các kết quả thuận lợi cho biến cố $A$ gồm $1$, $4$, $6$, $8$, $9$, $10$, $12$, $14$, $15$, $16$, $18$, $20$ nên $n(A)=20-8=12$.[[br]]\\hspace*{1.4em}$P(A)=\\dfrac{12}{20}=\\dfrac{3}{5}$.\\rule[-1.2ex]{0pt}{3.7ex}[[br]]\\hspace*{1.4em}Vậy xác suất của biến cố $A$ là $\\frac{3}{5}$.",
+          "hints": []
+        },
+        {
+          "type": "problem",
+          "label": "Bài 41.",
+          "level": 2,
+          "tier": "btvn",
+          "dang_id": "NB5+TH1",
+          "statement": "Một hộp có $20$ chiếc thẻ cùng loại, mỗi thẻ được ghi một trong các số $1, 2, 3, \\ldots, 20$, hai thẻ khác nhau ghi hai số khác nhau. Rút ngẫu nhiên một thẻ trong hộp. Xét biến cố $A$: \\textquotedblleft Số xuất hiện trên thẻ được rút ra là số lẻ và chia hết cho $3$\\textquotedblright. \\textit{(đề minh họa tuyển sinh lớp 10, Phòng GD\\&ĐT Đống Đa, đề 07 (THCS Khương Thượng), 2025--2026)}[[br]]a) [NB] Viết các số chia hết cho $3$ trong các số từ $1$ đến $20$.[[br]]b) [TH] Tính xác suất của biến cố $A$.",
+          "solution": "a) Các số chia hết cho $3$ trong các số từ $1$ đến $20$ là $3$, $6$, $9$, $12$, $15$, $18$.[[br]]b) Có $n(\\Omega)=20$ kết quả có thể, các kết quả này đồng khả năng.[[br]]\\hspace*{1.4em}Theo câu a), các kết quả thuận lợi cho biến cố $A$ là $3$, $9$, $15$ nên $n(A)=3$.[[br]]\\hspace*{1.4em}$P(A)=\\dfrac{3}{20}$.\\rule[-1.2ex]{0pt}{3.7ex}[[br]]\\hspace*{1.4em}Vậy xác suất của biến cố $A$ là $\\frac{3}{20}$.",
+          "hints": []
+        },
+        {
+          "type": "problem",
+          "label": "Bài 42.",
+          "level": 2,
+          "tier": "btvn",
+          "dang_id": "NB5+TH1",
+          "statement": "Trong hộp có $13$ quả bóng đỏ, $10$ quả bóng vàng và $80$ quả bóng trắng, các quả bóng có kích thước và khối lượng như nhau. Lấy ngẫu nhiên một quả trong hộp. Xét biến cố $A$: \\textquotedblleft Quả bóng lấy được không phải là màu trắng\\textquotedblright. \\textit{(thi thử vào 10 lần 1 THCS Cầu Giấy, 2025--2026)}[[br]]a) [NB] Trong hộp có tất cả bao nhiêu quả bóng?[[br]]b) [TH] Tính xác suất của biến cố $A$ (làm tròn kết quả đến hàng phần trăm).",
+          "solution": "a) Trong hộp có tất cả $13+10+80=103$ quả bóng.[[br]]b) Theo câu a), có $n(\\Omega)=103$ kết quả có thể, các kết quả này đồng khả năng.[[br]]\\hspace*{1.4em}Số quả bóng không phải màu trắng là $13+10=23$ nên $n(A)=23$.[[br]]\\hspace*{1.4em}$P(A)=\\dfrac{23}{103}\\approx 0{,}22$.\\rule[-1.2ex]{0pt}{3.7ex}[[br]]\\hspace*{1.4em}Vậy xác suất của biến cố $A$ khoảng $0{,}22$.",
+          "hints": []
+        },
+        {
+          "type": "problem",
+          "label": "Bài 43.",
+          "level": 2,
+          "tier": "btvn",
+          "dang_id": "NB6+TH2",
+          "statement": "Viết ngẫu nhiên một số tự nhiên lẻ có hai chữ số và nhỏ hơn $40$. Xét biến cố $M$: \\textquotedblleft Số tự nhiên được viết ra là bội của $3$\\textquotedblright. \\textit{(HK2 THCS Trưng Vương, 2025--2026)}[[br]]a) [NB] Viết tập hợp $\\Omega$ gồm các kết quả có thể xảy ra.[[br]]b) [TH] Tính xác suất của biến cố $M$.",
+          "solution": "a) Tập hợp $\\Omega=\\{11; 13; 15; 17; 19; 21; 23; 25; 27; 29; 31; 33; 35; 37; 39\\}$.[[br]]b) Theo câu a), có $n(\\Omega)=15$ kết quả có thể, các kết quả này đồng khả năng.[[br]]\\hspace*{1.4em}Các kết quả thuận lợi cho biến cố $M$ là $15$, $21$, $27$, $33$, $39$ nên $n(M)=5$.[[br]]\\hspace*{1.4em}$P(M)=\\dfrac{5}{15}=\\dfrac{1}{3}$.\\rule[-1.2ex]{0pt}{3.7ex}[[br]]\\hspace*{1.4em}Vậy xác suất của biến cố $M$ là $\\frac{1}{3}$.",
+          "hints": []
+        },
+        {
+          "type": "problem",
+          "label": "Bài 44.",
+          "level": 2,
+          "tier": "btvn",
+          "dang_id": "NB6+TH2",
+          "statement": "Viết ngẫu nhiên một số tự nhiên có hai chữ số không nhỏ hơn $80$. Xét biến cố $A$: \\textquotedblleft Số tự nhiên được viết ra có chữ số hàng chục gấp hai hoặc gấp ba lần chữ số hàng đơn vị\\textquotedblright. \\textit{(tài liệu Mathtech \\textquotedblleft Phép thử ngẫu nhiên và không gian mẫu. Xác suất của biến cố\\textquotedblright)}[[br]]a) [NB] Viết tập hợp $\\Omega$ gồm các kết quả có thể xảy ra.[[br]]b) [TH] Tính xác suất của biến cố $A$.",
+          "solution": "a) Tập hợp $\\Omega=\\{80; 81; 82; 83; 84; 85; 86; 87; 88; 89; 90; 91; 92; 93; 94; 95; 96; 97; 98; 99\\}$.[[br]]b) Theo câu a), có $n(\\Omega)=20$ kết quả có thể, các kết quả này đồng khả năng.[[br]]\\hspace*{1.4em}Các kết quả thuận lợi cho biến cố $A$ là $84$, $93$ nên $n(A)=2$.[[br]]\\hspace*{1.4em}$P(A)=\\dfrac{2}{20}=\\dfrac{1}{10}$.\\rule[-1.2ex]{0pt}{3.7ex}[[br]]\\hspace*{1.4em}Vậy xác suất của biến cố $A$ là $\\frac{1}{10}$.",
+          "hints": []
+        },
+        {
+          "type": "problem",
+          "label": "Bài 45.",
+          "level": 2,
+          "tier": "btvn",
+          "dang_id": "NB8+TH3",
+          "statement": "\\interlinepenalty=10000\\clubpenalty=10000\\widowpenalty=10000 Kết quả đo chiều cao của $40$ học sinh (đơn vị: cm) được thống kê trong bảng sau. \\textit{(GK2 THCS Chương Dương, 2024--2025)}\\par\\nopagebreak\\interlinepenalty=0\\clubpenalty=150\\widowpenalty=150 \\nopagebreak\\smallskip\\nopagebreak{\\centering \\adjustbox{max width=0.98\\linewidth}{\\footnotesize\\renewcommand\\arraystretch{1.25}\\begin{tabular}{|c|c|c|c|c|c|c|c|c|c|}\\hline $158$ & $164$ & $148$ & $150$ & $160$ & $151$ & $155$ & $152$ & $152$ & $163$ \\\\ \\hline $153$ & $154$ & $154$ & $154$ & $155$ & $155$ & $168$ & $157$ & $155$ & $156$ \\\\ \\hline $156$ & $156$ & $156$ & $157$ & $157$ & $151$ & $158$ & $150$ & $162$ & $163$ \\\\ \\hline $163$ & $163$ & $152$ & $163$ & $148$ & $165$ & $167$ & $168$ & $158$ & $170$ \\\\ \\hline\\end{tabular}}\\par}\\smallskip a) [NB] Có bao nhiêu học sinh có chiều cao từ $158$ cm trở lên?[[br]]b) [TH] Chọn một học sinh bất kì trong $40$ học sinh trên. Tính xác suất để chọn được học sinh có chiều cao từ $1$ m $58$ trở lên.",
+          "solution": "a) Các học sinh có chiều cao từ $158$ cm trở lên gồm $3$ học sinh cao $158$ cm, $1$ học sinh cao $160$ cm, $1$ học sinh cao $162$ cm, $5$ học sinh cao $163$ cm, $1$ học sinh cao $164$ cm, $1$ học sinh cao $165$ cm, $1$ học sinh cao $167$ cm, $2$ học sinh cao $168$ cm và $1$ học sinh cao $170$ cm.[[br]]\\hspace*{1.4em}Tổng cộng có $3+1+1+5+1+1+1+2+1=16$ học sinh có chiều cao từ $158$ cm trở lên.[[br]]b) Đổi $1\\text{ m }58=158\\text{ cm}$.[[br]]\\hspace*{1.4em}Có $n(\\Omega)=40$ kết quả có thể, các kết quả này đồng khả năng.[[br]]\\hspace*{1.4em}Theo câu a), số kết quả thuận lợi cho biến cố đã cho là $16$.[[br]]\\hspace*{1.4em}$P=\\dfrac{16}{40}=\\dfrac{2}{5}$.\\rule[-1.2ex]{0pt}{3.7ex}[[br]]\\hspace*{1.4em}Vậy xác suất để chọn được học sinh có chiều cao từ $1$ m $58$ trở lên là $\\frac{2}{5}$.",
+          "hints": []
+        },
+        {
+          "type": "problem",
+          "label": "Bài 46.",
+          "level": 2,
+          "tier": "btvn",
+          "dang_id": "NB10+TH4",
+          "statement": "Có hai túi I và II, mỗi túi chứa $4$ tấm thẻ được đánh số $1$, $2$, $3$, $4$. Rút ngẫu nhiên từ mỗi túi ra một tấm thẻ và nhân hai số ghi trên hai tấm thẻ với nhau. Xét các biến cố $A$: \\textquotedblleft Kết quả là một số lẻ\\textquotedblright và $B$: \\textquotedblleft Kết quả là $1$ hoặc một số nguyên tố\\textquotedblright. \\textit{(SGK Toán 9 tập hai, Bài tập 8{.}8)}[[br]]a) [NB] Không gian mẫu của phép thử có bao nhiêu phần tử?[[br]]b) [TH] Tính xác suất của các biến cố $A$ và $B$.",
+          "solution": "a) Không gian mẫu của phép thử có $4\\cdot 4=16$ phần tử.[[br]]b) Ta lập bảng ghi tích hai số trên hai tấm thẻ rút từ túi I và túi II:\\par\\nopagebreak\\smallskip\\nopagebreak{\\centering \\adjustbox{max width=0.98\\linewidth}{\\footnotesize\\renewcommand\\arraystretch{1.25}\\begin{tabular}{|l|c|c|c|c|}\\hline \\textbf{Túi I, Túi II} & $1$ & $2$ & $3$ & $4$ \\\\ \\hline \\textbf{$1$} & $1$ & $2$ & $3$ & $4$ \\\\ \\hline \\textbf{$2$} & $2$ & $4$ & $6$ & $8$ \\\\ \\hline \\textbf{$3$} & $3$ & $6$ & $9$ & $12$ \\\\ \\hline \\textbf{$4$} & $4$ & $8$ & $12$ & $16$ \\\\ \\hline\\end{tabular}}\\par}\\smallskip Theo câu a), có $n(\\Omega)=16$ kết quả có thể, các kết quả này đồng khả năng.[[br]]\\hspace*{1.4em}Các kết quả thuận lợi cho biến cố $A$ là $(1, 1)$, $(1, 3)$, $(3, 1)$, $(3, 3)$ nên $n(A)=4$.[[br]]\\hspace*{1.4em}$P(A)=\\dfrac{4}{16}=\\dfrac{1}{4}$.\\rule[-1.2ex]{0pt}{3.7ex}[[br]]\\hspace*{1.4em}Các kết quả thuận lợi cho biến cố $B$ là $(1, 1)$, $(1, 2)$, $(2, 1)$, $(1, 3)$, $(3, 1)$ nên $n(B)=5$.[[br]]\\hspace*{1.4em}$P(B)=\\dfrac{5}{16}$.\\rule[-1.2ex]{0pt}{3.7ex}[[br]]\\hspace*{1.4em}Vậy $P(A)=\\frac{1}{4}$ và $P(B)=\\frac{5}{16}$.",
+          "hints": []
+        },
+        {
+          "type": "problem",
+          "label": "Bài 47.",
+          "level": 2,
+          "tier": "btvn",
+          "dang_id": "NB10+TH4",
+          "statement": "Có hai túi đựng các tấm thẻ. Túi I đựng $4$ tấm thẻ ghi các chữ cái TT, TH, HT và HH. Túi II đựng $2$ tấm thẻ ghi các chữ cái T và H. Từ mỗi túi rút ngẫu nhiên ra một tấm thẻ rồi ghép hai thẻ lại với nhau để được ba chữ cái, trong đó thẻ hai chữ cái đặt trước, chẳng hạn tấm thẻ TT ghép với tấm thẻ H được ba chữ cái TTH. Xét các biến cố $E$: \\textquotedblleft Trong ba chữ cái, có hai chữ H và một chữ T\\textquotedblright và $F$: \\textquotedblleft Trong ba chữ cái, có nhiều nhất hai chữ T\\textquotedblright. \\textit{(SGK Toán 9 tập hai, Bài tập 8{.}9)}[[br]]a) [NB] Viết tất cả các kết quả có thể của phép thử.[[br]]b) [TH] Tính xác suất của các biến cố $E$ và $F$.",
+          "solution": "a) Các kết quả có thể của phép thử là TTT, TTH, THT, THH, HTT, HTH, HHT, HHH.[[br]]b) Theo câu a), có $n(\\Omega)=8$ kết quả có thể, các kết quả này đồng khả năng.[[br]]\\hspace*{1.4em}Các kết quả thuận lợi cho biến cố $E$ là THH, HTH, HHT nên $n(E)=3$.[[br]]\\hspace*{1.4em}$P(E)=\\dfrac{3}{8}$.\\rule[-1.2ex]{0pt}{3.7ex}[[br]]\\hspace*{1.4em}Các kết quả thuận lợi cho biến cố $F$ là TTH, THT, THH, HTT, HTH, HHT, HHH nên $n(F)=7$.[[br]]\\hspace*{1.4em}$P(F)=\\dfrac{7}{8}$.\\rule[-1.2ex]{0pt}{3.7ex}[[br]]\\hspace*{1.4em}Vậy $P(E)=\\frac{3}{8}$ và $P(F)=\\frac{7}{8}$.",
+          "hints": []
+        },
+        {
+          "type": "problem",
+          "label": "Bài 48.",
+          "level": 2,
+          "tier": "btvn",
+          "dang_id": "NB10+TH4",
+          "statement": "Gieo đồng thời hai con xúc xắc cân đối và đồng chất I và II. Xét các biến cố $A$: \\textquotedblleft Số chấm xuất hiện trên con xúc xắc I là số lẻ và số chấm xuất hiện trên con xúc xắc II lớn hơn $4$\\textquotedblright và $B$: \\textquotedblleft Số chấm xuất hiện trên cả hai con xúc xắc lớn hơn $2$\\textquotedblright. \\textit{(SGK Toán 9 tập hai, Bài tập 8{.}10)}[[br]]a) [NB] Không gian mẫu của phép thử có bao nhiêu phần tử?[[br]]b) [TH] Tính xác suất của các biến cố $A$ và $B$.",
+          "solution": "a) Không gian mẫu của phép thử có $6\\cdot 6=36$ phần tử.[[br]]b) Theo câu a), có $n(\\Omega)=36$ kết quả có thể, các kết quả này đồng khả năng.[[br]]\\hspace*{1.4em}Các kết quả thuận lợi cho biến cố $A$ là $(1, 5)$, $(1, 6)$, $(3, 5)$, $(3, 6)$, $(5, 5)$, $(5, 6)$ nên $n(A)=6$.[[br]]\\hspace*{1.4em}$P(A)=\\dfrac{6}{36}=\\dfrac{1}{6}$.\\rule[-1.2ex]{0pt}{3.7ex}[[br]]\\hspace*{1.4em}Các kết quả thuận lợi cho biến cố $B$ là $(3, 3)$, $(3, 4)$, $(3, 5)$, $(3, 6)$, $(4, 3)$, $(4, 4)$, $(4, 5)$, $(4, 6)$, $(5, 3)$, $(5, 4)$, $(5, 5)$, $(5, 6)$, $(6, 3)$, $(6, 4)$, $(6, 5)$, $(6, 6)$ nên $n(B)=16$.[[br]]\\hspace*{1.4em}$P(B)=\\dfrac{16}{36}=\\dfrac{4}{9}$.\\rule[-1.2ex]{0pt}{3.7ex}[[br]]\\hspace*{1.4em}Vậy $P(A)=\\frac{1}{6}$ và $P(B)=\\frac{4}{9}$.",
+          "hints": []
+        },
+        {
+          "type": "problem",
+          "label": "Bài 49.",
+          "level": 2,
+          "tier": "btvn",
+          "dang_id": "NB10+TH4",
+          "statement": "Trên mặt phẳng cho năm điểm phân biệt $A$, $B$, $C$, $D$, $E$, trong đó không có ba điểm nào thẳng hàng. Hai điểm $A$, $B$ được tô màu đỏ, ba điểm $C$, $D$, $E$ được tô màu xanh. Bạn Châu chọn ra ngẫu nhiên một điểm tô màu đỏ và một điểm tô màu xanh để nối thành một đoạn thẳng. Xét các biến cố $M$: \\textquotedblleft Trong hai điểm chọn ra, có điểm $A$\\textquotedblright và $N$: \\textquotedblleft Trong hai điểm chọn ra, không có điểm $C$\\textquotedblright. \\textit{(tài liệu Mathtech \\textquotedblleft Phép thử ngẫu nhiên và không gian mẫu. Xác suất của biến cố\\textquotedblright)}[[br]]a) [NB] Liệt kê các cách chọn mà bạn Châu thực hiện.[[br]]b) [TH] Tính xác suất của các biến cố $M$ và $N$.",
+          "solution": "a) Các cách chọn mà bạn Châu thực hiện là $AC$, $AD$, $AE$, $BC$, $BD$, $BE$.[[br]]b) Theo câu a), có $n(\\Omega)=6$ kết quả có thể, các kết quả này đồng khả năng.[[br]]\\hspace*{1.4em}Các kết quả thuận lợi cho biến cố $M$ là $AC$, $AD$, $AE$ nên $n(M)=3$.[[br]]\\hspace*{1.4em}$P(M)=\\dfrac{3}{6}=\\dfrac{1}{2}$.\\rule[-1.2ex]{0pt}{3.7ex}[[br]]\\hspace*{1.4em}Các kết quả thuận lợi cho biến cố $N$ là $AD$, $AE$, $BD$, $BE$ nên $n(N)=4$.[[br]]\\hspace*{1.4em}$P(N)=\\dfrac{4}{6}=\\dfrac{2}{3}$.\\rule[-1.2ex]{0pt}{3.7ex}[[br]]\\hspace*{1.4em}Vậy $P(M)=\\frac{1}{2}$ và $P(N)=\\frac{2}{3}$.",
+          "hints": []
+        }
+      ],
+      "solution": "Đáp án sơ đồ tư duy: kết quả có thể của phép thử · cặp · thuận lợi · đồng khả năng · $\\dfrac{n(A)}{n(\\Omega)}$.",
+      "teacher_note": "Sơ đồ tư duy 5 phút cuối buổi. Bài tập về nhà Bài 25--49 in thành phiếu riêng, khoảng 90 phút. Buổi sau chữa Bài 42, Bài 48 trước."
+    }
+  ]
+}

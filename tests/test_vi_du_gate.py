@@ -126,6 +126,21 @@ def test_phieu_on_tap_cuoi_ki_bo_goi_y_thi_sach():
     assert check_goi_y_thong_hieu(les) == []
 
 
+def test_phieu_on_tap_chuong_con_goi_y_thi_keu():
+    les = _les([_bai(BAI_TRUNG, level=2, hints=["Nối $OB$."])],
+               slug="phieu-2-on-tap-chuong-vii-viii", title="Ôn tập chương VII và VIII")
+    w = check_goi_y_thong_hieu(les)
+    assert len(w) == 1 and "BỎ gợi ý" in w[0]
+
+
+def test_phieu_on_tap_chuong_y_cua_de_goc_khong_tinh_goi_y():
+    """19/11/2026: ý a) [NB], b) [TH] có sẵn trong đề gốc của phiếu ôn như đi thi không bị kêu."""
+    les = _les([_bai(r"Cho bảng. [[br]]a) [NB] Tìm $n$.[[br]]b) [TH] Tính xác suất.", level=2)],
+               slug="phieu-2-on-tap-chuong-vii-viii", title="Ôn tập chương VII và VIII")
+    les.luat_16_11 = True
+    assert check_goi_y_thong_hieu(les) == []
+
+
 # ── 5. Ô [[fill:…]] lồng math trong math (bẫy làm Tectonic chết) ─────────────
 
 def test_dap_an_boc_dollar_trong_math_thi_keu():

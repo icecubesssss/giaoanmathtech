@@ -17,16 +17,19 @@ CHON_CAU_PATH = Path("inputs/refs/ngan-hang-sheet/lop-9/dai-so/chuong-08/chon-ca
 PD_TAB = "Phân dạng Ch.VIII lớp 9C"
 
 HEADERS_ROW1 = (
-    "CHỌN CÂU CHƯƠNG VIII LỚP 9C (18/11/2026). Bốc từ tab 'Phân dạng Ch.VIII lớp 9C' "
+    "CHỌN CÂU CHƯƠNG VIII LỚP 9C (18/11/2026, Claude soát lại 19/11). Bốc từ tab 'Phân dạng Ch.VIII lớp 9C' "
     "(203 câu / 376 ý) theo 6 dạng Thầy tick ở tab 'Dạng Ch.VIII lớp 9C': C8-01…C8-06; "
     "KTC = 2 câu NB kiến thức cũ (thống kê Ch.VII). Không dạy C8-07…C8-13 và không dạy VD. "
-    "Chấm T1–T8 trọng số lớp C (Gemini chấm & tự giải độc lập, Claude soát). "
+    "Chấm T1–T8 trọng số lớp C (Gemini chấm & tự giải độc lập). "
+    "19/11 Claude tự giải lại 64 câu: đáp số Gemini đúng hết; đã ĐỔI 3 câu trùng (STT 5, 47, 64) + đổi ý STT 63; "
+    "5 dòng 'Cân nhắc' (STT 13, 21, 22, 28, 37) chờ Thầy chọn — xem cột AE. "
     "Thầy chọn ở cột AB: Chờ duyệt / Hay / Không hay; ghi mã thay ở cột AC."
 )
 HEADERS_ROW2 = (
     "Khung: MỘT phiếu 180′ trọn buổi tuần 32 (Thầy chốt 18/11), khuôn không VD (40% NB – 60% TH – 0% VD): "
-    "ví dụ 42′ (10 NB + 8 TH, cộng 3′ lý thuyết = 45′) · trên lớp 120′ = 32 NB + 12 TH · BTVN 85,8′ = 26 NB + 10 TH. "
-    "Đích = Chu Văn An ĐN Câu 5 + Phan Đình Phùng Câu TL4. Ôn tập & KT gộp VII+VIII ở tuần 33. "
+    "ví dụ 42′ (10 NB + 8 TH, cộng 3′ lý thuyết = 45′) · trên lớp 120′ = 32 NB + 12 TH · BTVN 88,4′ = 28 NB + 10 TH. "
+    "Đích (phiếu dựng 19/11) = Bài 24, Câu I.2 đề vào 10 Hà Nội 2025 (C8-03, 61% câu đề thi); Chu Văn An ĐN Câu 5, "
+    "Phan Đình Phùng Câu TL4 là bài hai hành động trọn vẹn (Bài 18, 19). Ôn tập & KT gộp VII+VIII ở tuần 33. "
     "Không bốc 5 mã đề KT, không bốc trùng STK chép SGK/đề thi, mỗi nhóm trùng bốc tối đa 1. "
     "Cột M, N tự tra từ tab Phân dạng (hiện CẢ BÀI, chỉ dùng các ý ở cột K). Cột AE: nghi ngờ / lưu ý của Gemini."
 )
@@ -60,8 +63,8 @@ HEADERS_ROW4 = [
     "Lí do chấm",
     "THẦY DUYỆT (Chờ duyệt / Hay / Không hay)",
     "Ghi chú của Thầy (mã thay, chuyển phiếu…)",
-    "ĐỀ XUẤT (Gemini, Claude soát 18/11)",
-    "Lí do đề xuất",
+    "ĐỀ XUẤT (Gemini chấm, Claude soát 19/11)",
+    "Lí do đề xuất (Gemini + Claude 19/11)",
 ]
 
 
@@ -245,8 +248,8 @@ def main():
             d["nguong"],
             f_z,
             d["ly_do"],
-            "Chờ duyệt",
-            "",
+            d.get("thay_duyet", "Chờ duyệt"),
+            d.get("ghi_chu_thay", ""),
             d["de_xuat"],
             d["nghi_ngo"],
         ])

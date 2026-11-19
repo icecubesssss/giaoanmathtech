@@ -183,7 +183,7 @@ def tranh(nhom: list, so: list, chu_thich: str, rong: float | None = None) -> st
     return _khoi("".join(d), rong=rong)
 
 
-def canh(*khoi: str, rong: float = 0.47) -> str:
+def canh(*khoi: str, rong: float = 0.47, cach: str = "") -> str:
     """Đặt nhiều hình (kết quả cot/doan/…) cạnh nhau trong một khối center."""
     dau, cuoi = r"\par\nopagebreak\smallskip\nopagebreak{\centering ", r"\par}\smallskip "
     noi = []
@@ -192,7 +192,7 @@ def canh(*khoi: str, rong: float = 0.47) -> str:
         t = k[len(dau):-len(cuoi)]
         t = re.sub(r"^\\adjustbox\{max width=[0-9.]+\\linewidth\}\{(.*)\}$", r"\1", t, flags=re.S)
         noi.append(r"\adjustbox{max width=" + f"{rong}" + r"\linewidth}{" + t + "}")
-    return dau + r"\hfill".join(noi) + cuoi
+    return dau + (r"\hspace{" + cach + "}" if cach else r"\hfill").join(noi) + cuoi   # cach: hai hình đứng gần nhau ở giữa
 
 
 def ruot(k: str) -> str:
@@ -209,3 +209,68 @@ def ben_phai(trai: str, hinh: str, rong_hinh: float = 0.41) -> str:
     return (r"\par\smallskip\noindent\begin{minipage}[t]{" + f"{rt:.2f}" + r"\linewidth}\vspace{0pt}" + trai
             + r"\end{minipage}\hfill\begin{minipage}[t]{" + f"{rong_hinh:.2f}" + r"\linewidth}\vspace{0pt}\centering"
             + r"\adjustbox{max width=\linewidth}{" + ruot(hinh) + r"}\end{minipage}\par\smallskip ")
+
+
+# ── 19/11 thêm cho chương VIII (xác suất) ─────────────────────────────────────
+def dia(nhan: list, R: float = 1.0, kim: str = "tam", rong: float = 0.3, to_mau: bool = True, ten: str = "") -> str:
+    """Đĩa quay chia len(nhan) hình quạt bằng nhau. kim="tam": mũi tên ở tâm (SGK H.8.1, 8.2);
+    kim="tren": mũi kim gắn cố định phía trên đĩa."""
+    n = len(nhan)
+    d = [r"\begin{tikzpicture}[font=\small,line width=0.6pt]"]
+    co = r"\scriptsize" if n <= 10 else r"\tiny"
+    for i, t in enumerate(nhan):
+        a1, a2 = 90 - i * 360 / n, 90 - (i + 1) * 360 / n
+        if to_mau:
+            d.append(rf"\fill[{MAU[i % 5]}!22] (0,0) -- ({a1:.2f}:{R}) arc ({a1:.2f}:{a2:.2f}:{R}) -- cycle;")
+        d.append(rf"\draw[ink!60] (0,0) -- ({a1:.2f}:{R});")
+        d.append(rf"\node[font={co}] at ({(a1 + a2) / 2:.2f}:{R * (0.68 if n <= 10 else 0.8):.2f}) {{${vn(t)}$}};")
+    d.append(rf"\draw[ink!70] (0,0) circle ({R});")
+    if kim == "tam":
+        d.append(rf"\draw[-latex,line width=1.1pt,ink] (0,0) -- (60:{R * 0.55:.2f});\fill[ink] (0,0) circle (0.06);")
+    else:
+        d.append(rf"\fill[ink] (-0.12,{R + 0.28:.2f}) -- (0.12,{R + 0.28:.2f}) -- (0,{R - 0.05:.2f}) -- cycle;")
+    if ten:
+        d.append(rf"\node[below,font=\scriptsize] at (0,{-R - 0.08:.2f}) {{{ten}}};")
+    d.append(r"\end{tikzpicture}")
+    return _khoi("".join(d), rong=rong)
+
+
+def ban_co(n: int = 8, o: float = 0.32, rong: float = 0.3) -> str:
+    """Bảng n×n ô vuông tô xen kẽ trắng / đen như bàn cờ."""
+    d = [r"\begin{tikzpicture}[line width=0.5pt]"]
+    for i in range(n):
+        for j in range(n):
+            if (i + j) % 2:
+                d.append(rf"\fill[ink!85] ({j * o:.2f},{i * o:.2f}) rectangle ({(j + 1) * o:.2f},{(i + 1) * o:.2f});")
+    d.append(rf"\draw[ink] (0,0) rectangle ({n * o:.2f},{n * o:.2f});")
+    d.append(r"\end{tikzpicture}")
+    return _khoi("".join(d), rong=rong)
+
+
+def cot_kep(nhan: list, a: list, b: list, chu: tuple, tx: str, ty: str, ymax: float, buoc: float,
+            tieu_de: str = "", rong: float = 0.62, bw: float = 0.45, gap: float = 0.8) -> str:
+    """Biểu đồ cột kép: mỗi nhóm hai cột a (stage2) và b (stage4), chú thích chu = (tên a, tên b)."""
+    H = CAO
+    ymax = _tran(list(a) + list(b), ymax, buoc)
+    n = len(nhan)
+    step = 2 * bw + gap
+    w = gap + n * step
+    d = [r"\begin{tikzpicture}[font=\small,line width=0.6pt]"] + _truc(w, ymax, buoc, H, tx, ty)
+    for i in range(n):
+        x = gap + i * step
+        for k, (v, m) in enumerate(((a[i], "stage2"), (b[i], "stage4"))):
+            x0 = x + k * bw
+            h = float(v) * H / ymax
+            d.append(rf"\fill[{m}!30] ({x0:.2f},0) rectangle ({x0 + bw:.2f},{h:.2f});")
+            d.append(rf"\draw[{m}] ({x0:.2f},0) rectangle ({x0 + bw:.2f},{h:.2f});")
+            d.append(rf"\node[above,font=\scriptsize,inner sep=1.5pt] at ({x0 + bw / 2:.2f},{h:.2f}) {{${vn(v)}$}};")
+        d.append(rf"\node[below,font=\scriptsize] at ({x + bw:.2f},0) {{{nhan[i]}}};")
+    for k, (t, m) in enumerate(zip(chu, ("stage2", "stage4"))):
+        y = H + 0.55 - k * 0.38
+        d.append(rf"\fill[{m}!30] ({w + 0.3:.2f},{y - 0.1:.2f}) rectangle ({w + 0.55:.2f},{y + 0.1:.2f});")
+        d.append(rf"\draw[{m}] ({w + 0.3:.2f},{y - 0.1:.2f}) rectangle ({w + 0.55:.2f},{y + 0.1:.2f});")
+        d.append(rf"\node[right,font=\scriptsize] at ({w + 0.6:.2f},{y:.2f}) {{{t}}};")
+    if tieu_de:
+        d.append(rf"\node[font=\scriptsize\bfseries,align=center] at ({w / 2:.2f},{H + 1.15:.2f}) {{{tieu_de}}};")
+    d.append(r"\end{tikzpicture}")
+    return _khoi("".join(d), rong=rong)

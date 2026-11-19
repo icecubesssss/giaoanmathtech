@@ -29,6 +29,9 @@ def _match_phieu(spec: ThuyetMinhSpec, lesson: LessonPackage):
         idx = int(m_num.group(1)) - 1
         if 0 <= idx < len(spec.phieu):
             return spec.phieu[idx]
+        # 19/11/2026: phiếu đánh số mà TM không có (vd phiếu 2 ôn tập chương, TM chỉ 1 phiếu) — KHÔNG
+        # rơi xuống nhánh "spec chỉ 1 phiếu thì khớp luôn" (so nhầm với phiếu 1, ra hàng chục cảnh báo giả).
+        return None
 
     # 2. phieu-([a-z])
     m = re.match(r"phieu-([a-z])-", slug)
@@ -66,6 +69,10 @@ def check_spec_conformance(lesson: LessonPackage, lesson_path: str | Path) -> li
         return ["spec_gate: thuyet-minh.json cạnh bên không đọc được — bỏ qua so khớp."]
 
     phieu = _match_phieu(spec, lesson)
+    m_num = re.match(r"phieu-(\d+)-", lesson.slug or "")
+    if phieu is None and m_num and int(m_num.group(1)) > len(spec.phieu):
+        return [f"spec_gate: phiếu {m_num.group(1)} không có trong thuyết minh chương ({len(spec.phieu)} phiếu) "
+                "— bỏ so hợp đồng số câu."]
     if phieu is None:
         return [f"spec_gate: không khớp phiếu '{lesson.slug}' với spec ({len(spec.phieu)} phiếu) "
                 "— đặt slug phieu-a-/b-… để so số câu."]

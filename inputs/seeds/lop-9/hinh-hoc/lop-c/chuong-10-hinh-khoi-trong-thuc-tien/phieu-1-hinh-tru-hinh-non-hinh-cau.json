@@ -1,0 +1,380 @@
+{
+  "slug": "phieu-1-hinh-tru-hinh-non-hinh-cau",
+  "title": "Bài 31--32. Hình trụ, hình nón, hình cầu",
+  "eyebrow": "HÌNH HỌC — CHƯƠNG X · PHIẾU 1",
+  "grade_label": "Lớp 9 • Hình học",
+  "class_tier": "C",
+  "chuong": "chuong-10-hinh-khoi-trong-thuc-tien",
+  "btvn_phieu_rieng": true,
+  "luat_16_11": true,
+  "stages": [
+    {
+      "kind": "review",
+      "number": 1,
+      "title": "Khám phá",
+      "blocks": [
+        {
+          "type": "opener",
+          "text": "\\emph{\\textquotedblleft Một ly nước dạng hình trụ có chiều cao $15$ cm, đường kính đáy $5$ cm, chứa lượng nước cao $10$ cm. Tính thể tích lượng nước chứa trong ly. Khi thả vào ly $5$ viên bi hình cầu có cùng thể tích ngập hoàn toàn trong nước thì nước dâng lên bằng miệng ly, tính bán kính của mỗi viên bi.\\textquotedblright} \\textit{(HK2 THCS Đoàn Thị Điểm (TP. Hồ Chí Minh), 2025--2026)}[[br]]Để giải được bài toán này, cần nắm ba nội dung chính.[[br]]Thứ nhất, cách tính thể tích của hình trụ khi biết chiều cao và bán kính đáy.[[br]]Thứ hai, mối liên hệ giữa thể tích phần nước dâng lên trong ly với tổng thể tích của các viên bi.[[br]]Thứ ba, công thức tính thể tích của hình cầu theo bán kính $R$.[[br]]Đó là nội dung buổi học, và bài toán mở đầu trên chính là Bài 9 ở cuối phần luyện tập."
+        },
+        {
+          "type": "noted",
+          "variant": "note",
+          "text": "\\textbf{Nhắc lại kiến thức đã học.}[[br]]$\\bullet$\\; Bán kính bằng nửa đường kính: $r=\\frac{d}{2}$.[[br]]$\\bullet$\\; Chu vi và diện tích hình tròn bán kính $r$: $C=2\\pi r$, $S=\\pi r^2$ (lớp 6).[[br]]$\\bullet$\\; Định lí Pythagore trong tam giác vuông: bình phương cạnh huyền bằng tổng các bình phương của hai cạnh góc vuông (lớp 8).[[br]]$\\bullet$\\; Đổi đơn vị: $1$ m$^3=1000$ dm$^3=1000$ lít, $1$ dm$^3=1$ lít $=1000$ cm$^3$, $1$ cm $=10$ mm.[[br]]$\\bullet$\\; Làm tròn số đến hàng đơn vị, hàng phần mười, hàng phần trăm (lớp 7)."
+        }
+      ],
+      "solution": "",
+      "teacher_note": "3 phút: đọc đề đích Bài 9, chỉ ra các việc cần làm, chưa giải. Nhắc nhanh mục Nhắc lại (đường kính, đổi đơn vị)."
+    },
+    {
+      "kind": "concept",
+      "number": 2,
+      "title": "Kiến thức cần nhớ",
+      "blocks": [
+        {
+          "type": "noted",
+          "variant": "theory",
+          "title": "1. Hình trụ",
+          "text": "\\nhanly{Tạo thành.} Quay hình chữ nhật $ABCD$ một vòng quanh cạnh $AB$ cố định được một hình trụ: hai đáy là hai hình tròn bằng nhau $(A; AD)$ và $(B; BC)$, bán kính đáy $r=AD=BC$, chiều cao $h=AB$, mỗi đường sinh là một vị trí của $CD$ (các đường sinh bằng nhau và bằng $AB$).[[br]]\\nhanly{Diện tích xung quanh.} $S_{xq}=2\\pi rh$.[[br]]\\nhanly{Thể tích.} $V=S_{\\text{đáy}}\\cdot h=\\pi r^2h$.[[br]]\\textit{(SGK Toán 9 tập hai, tr.94--96)}",
+          "figure": {
+            "type": "tikz",
+            "tikz": "\\begin{tikzpicture}[line width=0.8pt, font=\\small]\n  \\draw[ink] (0,2) ellipse (1 and 0.32);\n  \\draw[ink] (-1,0) arc (180:360:1 and 0.32);\n  \\draw[ink, dashed] (-1,0) arc (180:0:1 and 0.32);\n  \\draw[ink] (-1,0) -- (-1,2);\n  \\draw[ink] (1,0) -- (1,2);\n  \\fill[ink] (0,2) circle (1.2pt);\n  \\draw[ink] (0,2) -- (1,2);\n  \\node[above, fill=white, inner sep=0.6pt, font=\\scriptsize] at (0.5,2.04) {$r$};\n  \\draw[ink, <->, line width=0.6pt] (1.28,0) -- (1.28,2);\n  \\node[right, font=\\scriptsize] at (1.32,1) {$h$};\n\\end{tikzpicture}",
+            "caption": "",
+            "pos": "right"
+          }
+        },
+        {
+          "type": "noted",
+          "variant": "theory",
+          "title": "2. Hình nón",
+          "text": "\\nhanly{Tạo thành.} Quay tam giác $SOA$ vuông tại $O$ một vòng quanh $SO$ cố định được một hình nón đỉnh $S$: đáy là hình tròn $(O; OA)$, bán kính đáy $r=OA$, mỗi đường sinh là một vị trí của $SA$ ($l=SA$, các đường sinh dài bằng nhau), $SO$ là đường cao, chiều cao $h=SO$.[[br]]\\nhanly{Liên hệ.} $l^2=r^2+h^2$ (tam giác $SOA$ vuông tại $O$).[[br]]\\nhanly{Diện tích xung quanh.} $S_{xq}=\\pi rl$.[[br]]\\nhanly{Thể tích.} $V=\\frac{1}{3}S_{\\text{đáy}}\\cdot h=\\frac{1}{3}\\pi r^2h$.[[br]]\\textit{(SGK Toán 9 tập hai, tr.97--99)}",
+          "figure": {
+            "type": "tikz",
+            "tikz": "\\begin{tikzpicture}[line width=0.8pt, font=\\small]\n  \\draw[ink] (-1.05,0) arc (180:360:1.05 and 0.336);\n  \\draw[ink, dashed] (-1.05,0) arc (180:0:1.05 and 0.336);\n  \\draw[ink] (-1.05,0) -- (0,2) -- (1.05,0);\n  \\draw[ink, dashed] (0,0) -- (0,2);\n  \\fill[ink] (0,0) circle (1.2pt);\n  \\draw[ink, line width=0.5pt] (0.14,0) -- (0.14,0.14) -- (0,0.14);\n  \\draw[ink, dashed] (0,0) -- (1.05,0);\n  \\draw[ink, line width=0.4pt] (0,-0.05) -- (0,-0.616);\n  \\draw[ink, line width=0.4pt] (1.05,-0.05) -- (1.05,-0.616);\n  \\draw[ink, <->, line width=0.6pt] (0,-0.536) -- (1.05,-0.536);\n  \\node[below, font=\\scriptsize] at (0.525,-0.536) {$r$};\n  \\node[left, font=\\scriptsize] at (-0.02,0.9) {$h$};\n  \\node[right, font=\\scriptsize] at (0.565,1.05) {$l$};\n  \\node[above, font=\\scriptsize] at (0,2) {$S$};\n  \\node[below left, font=\\scriptsize] at (0.02,0) {$O$};\n  \\node[right, font=\\scriptsize] at (1.05,0) {$A$};\n\\end{tikzpicture}",
+            "caption": "",
+            "pos": "right"
+          }
+        },
+        {
+          "type": "noted",
+          "variant": "theory",
+          "title": "3. Hình cầu",
+          "text": "\\nhanly{Tạo thành.} Quay nửa hình tròn tâm $O$, bán kính $R$ một vòng quanh đường kính $AB$ cố định được một hình cầu (quay nửa đường tròn được một mặt cầu). Tâm $O$ và bán kính $R$ của nửa hình tròn cũng là tâm và bán kính của hình cầu (mặt cầu).[[br]]\\nhanly{Diện tích mặt cầu.} $S=4\\pi R^2$.[[br]]\\nhanly{Thể tích.} $V=\\frac{4}{3}\\pi R^3$.[[br]]\\textit{(SGK Toán 9 tập hai, tr.101, 104)}",
+          "figure": {
+            "type": "tikz",
+            "tikz": "\\begin{tikzpicture}[line width=0.8pt, font=\\small]\n  \\draw[ink] (0,0) circle (1.15);\n  \\draw[ink] (-1.15,0) arc (180:360:1.15 and 0.345);\n  \\draw[ink, dashed] (-1.15,0) arc (180:0:1.15 and 0.345);\n  \\fill[ink] (0,0) circle (1.2pt);\n  \\node[below left, font=\\scriptsize] at (0,-0.02) {$O$};\n  \\draw[ink] (0,0) -- (40:1.15);\n  \\node[above left, font=\\scriptsize] at (40:0.632) {$R$};\n\\end{tikzpicture}",
+            "caption": "",
+            "pos": "right"
+          }
+        }
+      ],
+      "teacher_note": "5 phút: ba thẻ, gọi học sinh đọc công thức, chỉ trên hình đâu là $r$, $h$, $l$. Phân biệt chiều cao $h$ với đường sinh $l$ của hình nón."
+    },
+    {
+      "kind": "practice1",
+      "number": 3,
+      "title": "Luyện tập 1 — Nhận biết",
+      "blocks": [
+        {
+          "type": "para",
+          "text": "\\textbf{Đích của buổi học:} Bài 9 — Bài 5 đề kiểm tra học kì II THCS Đoàn Thị Điểm 2025--2026: tính thể tích nước trong ly hình trụ, rồi từ phần nước dâng lên tìm bán kính viên bi.[[br]]Mạch 1--2 luyện nhận biết các yếu tố và thay số vào từng công thức, Mạch 3--5 luyện các bài tự trình bày dẫn tới Bài 9."
+        },
+        {
+          "type": "para",
+          "variant": "heading",
+          "text": "Mạch 1. Các yếu tố của hình trụ, hình nón, hình cầu"
+        },
+        {
+          "type": "noted",
+          "variant": "example",
+          "text": "\\textbf{Ví dụ 1.} \\interlinepenalty=10000\\clubpenalty=10000\\widowpenalty=10000 Hãy kể tên đỉnh, đường cao, một bán kính đáy và một đường sinh của hình nón trong Hình 1. \\textit{(SGK Toán 9 tập hai, Bài 31, Ví dụ 3)}\\par\\nopagebreak\\smallskip\\nopagebreak{\\centering\\adjustbox{totalheight=3.8cm,max width=0.45\\linewidth}{\\begin{tikzpicture}[line width=0.8pt, font=\\small]\n  \\draw[ink] (-1.25,0) arc (180:360:1.25 and 0.4);\n  \\draw[ink, dashed] (-1.25,0) arc (180:0:1.25 and 0.4);\n  \\draw[ink] (-1.25,0) -- (0,2.3) -- (1.25,0);\n  \\draw[ink] (0,2.3) -- (0.587,-0.353);\n  \\draw[ink, dashed] (0,0) -- (0,2.3);\n  \\draw[ink, dashed] (-1.25,0) -- (1.25,0);\n  \\draw[ink, dashed] (0,0) -- (0.587,-0.353);\n  \\draw[ink, line width=0.5pt] (0.14,0) -- (0.14,0.14) -- (0,0.14);\n  \\fill[ink] (0,0) circle (1.2pt);\n  \\node[above, font=\\scriptsize] at (0,2.3) {$S$};\n  \\node[below left, font=\\scriptsize] at (0.02,0) {$O$};\n  \\node[left, font=\\scriptsize] at (-1.25,0) {$M$};\n  \\node[right, font=\\scriptsize] at (1.25,0) {$N$};\n  \\node[below, font=\\scriptsize] at (0.587,-0.353) {$P$};\n\\end{tikzpicture}}\\par\\vspace{2pt}{\\sffamily\\scriptsize\\itshape\\color{muted}Hình 1}\\par}\\smallskip \\interlinepenalty=0\\clubpenalty=150\\widowpenalty=150 {\\sffamily\\bfseries\\color{brand}Lời giải}[[br]]\\hspace*{1.4em}Đỉnh: $[[fill:S]]$.[[br]]\\hspace*{1.4em}Đường cao: $[[fill:SO]]$.[[br]]\\hspace*{1.4em}Một bán kính đáy: $[[fill:OM]]$.[[br]]\\hspace*{1.4em}Một đường sinh: $[[fill:SM]]$.[[br]]\\hspace*{1.4em}Vậy đường sinh nối đỉnh với một điểm của đường tròn đáy, nên $[[fill:SN]]$, $[[fill:SP]]$ cũng là đường sinh."
+        },
+        {
+          "type": "problem",
+          "label": "Bài 1.",
+          "level": 1,
+          "tier": "onclass",
+          "dang_id": "NB2",
+          "statement": "[NB] Khi quay hình chữ nhật $ABCD$ một vòng quanh cạnh $AB$ ta được một hình trụ có bán kính đáy bằng độ dài đoạn thẳng \\textit{(SGK Toán 9 tập hai, Bài tập 10{.}17)}[[br]]\\hspace*{1.4em}\\makebox[0.22\\linewidth][l]{A. $AB$.}\\makebox[0.22\\linewidth][l]{B. $CD$.}\\makebox[0.22\\linewidth][l]{C. $AD$.}\\makebox[0.22\\linewidth][l]{D. $AC$.}",
+          "solution": "Khi quay hình chữ nhật $ABCD$ quanh cạnh $AB$, cạnh $AB$ là trục (chiều cao), cạnh $AD$ vuông góc với $AB$ quét thành mặt đáy nên bán kính đáy là $r=AD$.[[br]]\\hspace*{1.4em}Chọn C.",
+          "hints": []
+        },
+        {
+          "type": "problem",
+          "label": "Bài 2.",
+          "level": 1,
+          "tier": "onclass",
+          "dang_id": "NB1",
+          "statement": "[NB] Cho tam giác $ABC$ vuông tại $A$ có $AB=4$ cm, $BC=5$ cm. Khi quay tam giác $ABC$ một vòng quanh cạnh $AC$ ta được một hình nón có chiều cao bằng \\textit{(SGK Toán 9 tập hai, Bài tập 10{.}18)}[[br]]\\hspace*{1.4em}\\makebox[0.22\\linewidth][l]{A. $4$ cm.}\\makebox[0.22\\linewidth][l]{B. $3$ cm.}\\makebox[0.22\\linewidth][l]{C. $5$ cm.}\\makebox[0.22\\linewidth][l]{D. $9$ cm.}",
+          "solution": "Quay quanh $AC$ nên chiều cao là $h=AC$, áp dụng định lí Pythagore cho tam giác $ABC$ vuông tại $A$ có $AC^2=BC^2-AB^2=5^2-4^2=9$ nên $AC=3$ (cm).[[br]]\\hspace*{1.4em}Chọn B.",
+          "hints": []
+        },
+        {
+          "type": "para",
+          "variant": "heading",
+          "text": "Mạch 2. Thay số vào một công thức"
+        },
+        {
+          "type": "noted",
+          "variant": "example",
+          "text": "\\textbf{Ví dụ 2.} Tính diện tích mặt cầu và thể tích hình cầu có bán kính bằng $10$ cm. \\textit{(SGK Toán 9 tập hai, Bài 32, Ví dụ 3)}[[br]]{\\sffamily\\bfseries\\color{brand}Lời giải}[[br]]\\hspace*{1.4em}Diện tích mặt cầu là[[br]]\\hspace*{1.4em}$S=[[fill:4\\pi R^2]]=4\\pi\\cdot 10^2=[[fill:400\\pi]]$ (cm$^2$).[[br]]\\hspace*{1.4em}Thể tích hình cầu là[[br]]\\hspace*{1.4em}$V=[[fill:\\dfrac{4}{3}\\pi R^3]]=\\dfrac{4}{3}\\pi\\cdot 10^3=[[fill:\\dfrac{4000\\pi}{3}]]$ (cm$^3$).\\rule[-1.2ex]{0pt}{3.7ex}[[br]]\\hspace*{1.4em}Vậy diện tích mặt cầu là $[[fill:400\\pi]]$ (cm$^2$) và thể tích hình cầu là $[[fill:\\dfrac{4000\\pi}{3}]]$ (cm$^3$).\\rule[-1.2ex]{0pt}{3.7ex}"
+        },
+        {
+          "type": "problem",
+          "label": "Bài 3.",
+          "level": 1,
+          "tier": "onclass",
+          "dang_id": "NB3",
+          "statement": "[NB] Một lon nước ngọt hình trụ có đường kính đáy là $6$ cm, độ dài trục là $11$ cm. Tính thể tích lon nước ngọt (cho $\\pi\\approx 3{,}14$). \\textit{(HK2 THCS Phúc Đồng (Long Biên), 2024--2025, mã đề 902)}",
+          "solution": "Bán kính đáy của lon nước ngọt là $r=6:2=3$ (cm), chiều cao là $h=11$ (cm).[[br]]\\hspace*{1.4em}Thể tích của lon nước ngọt là[[br]]\\hspace*{1.4em}$V=\\pi r^2h\\approx 3{,}14\\cdot 3^2\\cdot 11=310{,}86$ (cm$^3$).[[br]]\\hspace*{1.4em}Vậy thể tích của lon nước ngọt khoảng $310{,}86$ (cm$^3$).",
+          "hints": []
+        },
+        {
+          "type": "problem",
+          "label": "Bài 4.",
+          "level": 1,
+          "tier": "onclass",
+          "dang_id": "NB3",
+          "statement": "\\interlinepenalty=10000\\clubpenalty=10000\\widowpenalty=10000 [NB] Hình 2 mô tả một chiếc kem ốc quế có dạng hình nón với đường kính đáy khoảng $5{,}8$ cm và chiều cao khoảng $12{,}5$ cm. Tính thể tích chiếc kem (lấy $\\pi\\approx 3{,}14$, làm tròn kết quả đến hàng đơn vị của centimét khối). \\textit{(HK2 THCS Bế Văn Đàn (Đống Đa), 2025--2026)}\\par\\nopagebreak\\smallskip\\nopagebreak{\\centering\\adjustbox{totalheight=3.8cm,max width=0.45\\linewidth}{\\begin{tikzpicture}[line width=0.8pt, font=\\small]\n  \\draw[ink, fill=gold!30] (-0.85,2.4) arc (180:0:0.85 and 0.807);\n  \\draw[ink, fill=white] (0,2.4) ellipse (0.85 and 0.27);\n  \\draw[ink] (-0.85,2.4) -- (0,0) -- (0.85,2.4);\n  \\draw[ink, dashed] (0,0) -- (0,2.4);\n  \\draw[ink, line width=0.4pt] (-0.85,2.45) -- (-0.85,3.55);\n  \\draw[ink, line width=0.4pt] (0.85,2.45) -- (0.85,3.55);\n  \\draw[ink, <->, line width=0.6pt] (-0.85,3.45) -- (0.85,3.45);\n  \\node[above, font=\\scriptsize] at (0,3.45) {$5{,}8$ cm};\n  \\draw[ink, <->, line width=0.6pt] (1.1,0) -- (1.1,2.4);\n  \\node[right, font=\\scriptsize] at (1.14,1.2) {$12{,}5$ cm};\n\\end{tikzpicture}}\\par\\vspace{2pt}{\\sffamily\\scriptsize\\itshape\\color{muted}Hình 2}\\par}\\smallskip \\interlinepenalty=0\\clubpenalty=150\\widowpenalty=150 ",
+          "solution": "Bán kính đáy của chiếc kem ốc quế là $r=5{,}8:2=2{,}9$ (cm).[[br]]\\hspace*{1.4em}Thể tích của chiếc kem là[[br]]\\hspace*{1.4em}$V=\\dfrac{1}{3}\\pi r^2h\\approx \\dfrac{1}{3}\\cdot 3{,}14\\cdot 2{,}9^2\\cdot 12{,}5\\approx 110$ (cm$^3$).\\rule[-1.2ex]{0pt}{3.7ex}[[br]]\\hspace*{1.4em}Vậy thể tích chiếc kem khoảng $110$ (cm$^3$).",
+          "hints": []
+        },
+        {
+          "type": "problem",
+          "label": "Bài 5.",
+          "level": 1,
+          "tier": "onclass",
+          "dang_id": "NB3",
+          "statement": "Trong các trận thi đấu bóng đá chuyên nghiệp, người ta sử dụng loại bóng bằng da có dạng hình cầu với đường kính $22$ cm. \\textit{(HK2 THCS Trưng Vương, 2025--2026)}[[br]][NB] Hỏi diện tích da để làm một quả bóng đó là bao nhiêu cm$^2$? (Lấy $\\pi\\approx 3{,}14$, bỏ qua tỉ lệ hao hụt của da.)",
+          "solution": "Bán kính của quả bóng hình cầu là $R=22:2=11$ (cm).[[br]]\\hspace*{1.4em}Diện tích da để làm một quả bóng là[[br]]\\hspace*{1.4em}$S=4\\pi R^2\\approx 4\\cdot 3{,}14\\cdot 11^2=1519{,}76$ (cm$^2$).[[br]]\\hspace*{1.4em}Vậy diện tích da để làm một quả bóng khoảng $1519{,}76$ (cm$^2$).",
+          "hints": []
+        },
+        {
+          "type": "problem",
+          "label": "Bài 6.",
+          "level": 1,
+          "tier": "onclass",
+          "dang_id": "NB4",
+          "statement": "[NB] Đường ống nối hai bể cá trong một thủy cung có dạng hình trụ, độ dài của đường ống là $30$ m. Dung tích của đường ống nói trên là $1800$ m$^3$. Tính diện tích đáy của đường ống. \\textit{(HK2 THCS Phúc Đồng (Long Biên), 2024--2025, mã đề 901)}",
+          "solution": "Độ dài của đường ống là chiều cao của hình trụ nên $h=30$ (m).[[br]]\\hspace*{1.4em}Ta có $V=S_{\\text{đáy}}\\cdot h$ nên diện tích đáy của đường ống là[[br]]\\hspace*{1.4em}$S_{\\text{đáy}}=V:h=1800:30=60$ (m$^2$).[[br]]\\hspace*{1.4em}Vậy diện tích đáy của đường ống là $60$ (m$^2$).",
+          "hints": []
+        }
+      ],
+      "teacher_note": "Khoảng 20 phút: Ví dụ 1, 2 giáo viên làm cùng lớp, học sinh điền ô. Bài 1--6 trắc nghiệm và trả lời ngắn, gọi nhiều học sinh trả lời miệng, chữa nhanh, nhắc đổi đường kính ra bán kính."
+    },
+    {
+      "kind": "practice2",
+      "number": 4,
+      "title": "Luyện tập 2 — Thông hiểu, vận dụng",
+      "blocks": [
+        {
+          "type": "para",
+          "variant": "heading",
+          "text": "Mạch 3. Bài toán thực tế về một hình trụ"
+        },
+        {
+          "type": "noted",
+          "variant": "example",
+          "text": "\\textbf{Ví dụ 3.} \\interlinepenalty=10000\\clubpenalty=10000\\widowpenalty=10000 Một thùng nước có dạng hình trụ với chiều cao bằng $1{,}6$ m và bán kính đáy bằng $0{,}5$ m (Hình 3).\\par\\nopagebreak\\smallskip\\noindent\\begin{minipage}[t]{0.63\\linewidth}\\vspace{0pt}a) Tính diện tích xung quanh của thùng nước.[[br]]b) Hỏi thùng chứa được bao nhiêu lít nước?[[br]](Coi chiều dày của thùng không đáng kể và làm tròn kết quả ở câu b đến hàng đơn vị của lít.) \\textit{(SGK Toán 9 tập hai, Bài 31, Luyện tập 2)}\\end{minipage}\\hfill\\begin{minipage}[t]{0.34\\linewidth}\\vspace{0pt}\\centering\\adjustbox{max width=\\linewidth,max totalheight=4.2cm}{\\begin{tikzpicture}[line width=0.8pt, font=\\small]\n  \\draw[ink] (0,2) ellipse (1 and 0.32);\n  \\draw[ink] (-1,0) arc (180:360:1 and 0.32);\n  \\draw[ink, dashed] (-1,0) arc (180:0:1 and 0.32);\n  \\draw[ink] (-1,0) -- (-1,2);\n  \\draw[ink] (1,0) -- (1,2);\n  \\fill[ink] (0,2) circle (1.2pt);\n  \\draw[ink] (0,2) -- (1,2);\n  \\node[above, fill=white, inner sep=0.6pt, font=\\scriptsize] at (0.5,2.04) {$0{,}5$ m};\n  \\draw[ink, <->, line width=0.6pt] (1.28,0) -- (1.28,2);\n  \\node[right, font=\\scriptsize] at (1.32,1) {$1{,}6$ m};\n\\end{tikzpicture}}\\par\\vspace{2pt}{\\sffamily\\scriptsize\\itshape\\color{muted}Hình 3}\\end{minipage}\\par\\smallskip \\interlinepenalty=0\\clubpenalty=150\\widowpenalty=150 {\\sffamily\\bfseries\\color{brand}Lời giải}[[br]]\\hspace*{1.4em}a) Diện tích xung quanh của thùng nước là[[br]]\\hspace*{1.4em}$S_{xq}=[[fill:2\\pi rh]]=2\\pi\\cdot 0{,}5\\cdot 1{,}6=[[fill:1{,}6\\pi]]$ (m$^2$).[[br]]\\hspace*{1.4em}b) Thể tích của thùng nước là[[br]]\\hspace*{1.4em}$V=[[fill:\\pi r^2h]]=\\pi\\cdot 0{,}5^2\\cdot 1{,}6=[[fill:0{,}4\\pi]]$ (m$^3$).[[br]]\\hspace*{1.4em}Đổi $1$ m$^3=[[fill:1000]]$ lít nên thùng chứa được khoảng $[[fill:1257]]$ lít nước.[[br]]\\hspace*{1.4em}Vậy diện tích xung quanh của thùng là $[[fill:1{,}6\\pi]]$ (m$^2$) và thùng chứa được khoảng $[[fill:1257]]$ lít nước."
+        },
+        {
+          "type": "problem",
+          "label": "Bài 7.",
+          "level": 2,
+          "tier": "onclass",
+          "dang_id": "NB5+TH1",
+          "statement": "\\interlinepenalty=10000\\clubpenalty=10000\\widowpenalty=10000 Gia đình bạn Khánh đang sử dụng một thùng đựng nước dạng hình trụ với bán kính đáy bằng $50$ cm và chiều cao bằng $150$ cm (Hình 4). Thùng đựng nước được đặt thẳng đứng trên mặt sàn. (Lấy $\\pi\\approx 3{,}14$ và coi chiều dày của thùng không đáng kể.) \\textit{(đề tuyển sinh lớp 10 Hà Nội, 2025--2026)}\\par\\nopagebreak\\smallskip\\noindent\\begin{minipage}[t]{0.63\\linewidth}\\vspace{0pt}a) [NB] Tính diện tích xung quanh của thùng đựng nước.[[br]]b) [TH] Sau một thời gian gia đình bạn Khánh sử dụng nước trong thùng thì mực nước còn lại đã thấp hơn $40$ cm so với mực nước ban đầu. Tính thể tích nước trong thùng mà gia đình bạn Khánh đã sử dụng trong khoảng thời gian đó.\\end{minipage}\\hfill\\begin{minipage}[t]{0.34\\linewidth}\\vspace{0pt}\\centering\\adjustbox{max width=\\linewidth,max totalheight=4.2cm}{\\begin{tikzpicture}[line width=0.8pt, font=\\small]\n  \\draw[ink] (0,2) ellipse (1 and 0.32);\n  \\draw[ink] (-1,0) arc (180:360:1 and 0.32);\n  \\draw[ink, dashed] (-1,0) arc (180:0:1 and 0.32);\n  \\draw[ink] (-1,0) -- (-1,2);\n  \\draw[ink] (1,0) -- (1,2);\n  \\fill[ink] (0,2) circle (1.2pt);\n  \\draw[ink] (0,2) -- (1,2);\n  \\node[above, fill=white, inner sep=0.6pt, font=\\scriptsize] at (0.5,2.04) {$50$ cm};\n  \\draw[ink, <->, line width=0.6pt] (1.28,0) -- (1.28,2);\n  \\node[right, font=\\scriptsize] at (1.32,1) {$150$ cm};\n\\end{tikzpicture}}\\par\\vspace{2pt}{\\sffamily\\scriptsize\\itshape\\color{muted}Hình 4}\\end{minipage}\\par\\smallskip \\interlinepenalty=0\\clubpenalty=150\\widowpenalty=150 ",
+          "solution": "a) Diện tích xung quanh của thùng đựng nước là[[br]]\\hspace*{1.4em}$S_{xq}=2\\pi rh\\approx 2\\cdot 3{,}14\\cdot 50\\cdot 150=47\\,100$ (cm$^2$).[[br]]\\hspace*{1.4em}Vậy diện tích xung quanh của thùng đựng nước khoảng $47\\,100$ (cm$^2$).[[br]]b) Phần nước gia đình bạn Khánh đã sử dụng có dạng hình trụ với bán kính đáy $r=50$ (cm) và chiều cao $h'=40$ (cm) nên thể tích nước đã sử dụng là[[br]]\\hspace*{1.4em}$V=\\pi r^2h'\\approx 3{,}14\\cdot 50^2\\cdot 40=314\\,000$ (cm$^3$).[[br]]\\hspace*{1.4em}Vậy lượng nước gia đình bạn Khánh đã sử dụng khoảng $314\\,000$ (cm$^3$).",
+          "hints": [
+            "Phần nước đã sử dụng có dạng hình gì?",
+            "Bán kính đáy và chiều cao của phần nước đó bằng bao nhiêu?"
+          ]
+        },
+        {
+          "type": "para",
+          "variant": "heading",
+          "text": "Mạch 4. Hình nón biết bán kính đáy và đường sinh"
+        },
+        {
+          "type": "noted",
+          "variant": "example",
+          "text": "\\textbf{Ví dụ 4.} \\interlinepenalty=10000\\clubpenalty=10000\\widowpenalty=10000 Cho một hình nón có độ dài đường sinh bằng $10$ cm, bán kính đáy bằng $6$ cm (Hình 5).\\par\\nopagebreak\\smallskip\\noindent\\begin{minipage}[t]{0.63\\linewidth}\\vspace{0pt}a) Tính diện tích xung quanh của hình nón.[[br]]b) Tính thể tích của hình nón. \\textit{(SGK Toán 9 tập hai, Bài 31, Ví dụ 4)}\\end{minipage}\\hfill\\begin{minipage}[t]{0.34\\linewidth}\\vspace{0pt}\\centering\\adjustbox{max width=\\linewidth,max totalheight=4.2cm}{\\begin{tikzpicture}[line width=0.8pt, font=\\small]\n  \\draw[ink] (-1.05,0) arc (180:360:1.05 and 0.336);\n  \\draw[ink, dashed] (-1.05,0) arc (180:0:1.05 and 0.336);\n  \\draw[ink] (-1.05,0) -- (0,2) -- (1.05,0);\n  \\draw[ink, dashed] (0,0) -- (0,2);\n  \\fill[ink] (0,0) circle (1.2pt);\n  \\draw[ink, line width=0.5pt] (0.14,0) -- (0.14,0.14) -- (0,0.14);\n  \\draw[ink, dashed] (0,0) -- (1.05,0);\n  \\draw[ink, line width=0.4pt] (0,-0.05) -- (0,-0.616);\n  \\draw[ink, line width=0.4pt] (1.05,-0.05) -- (1.05,-0.616);\n  \\draw[ink, <->, line width=0.6pt] (0,-0.536) -- (1.05,-0.536);\n  \\node[below, font=\\scriptsize] at (0.525,-0.536) {$6$ cm};\n  \\node[right, font=\\scriptsize] at (0.565,1.05) {$10$ cm};\n  \\node[above, font=\\scriptsize] at (0,2) {$S$};\n  \\node[below left, font=\\scriptsize] at (0.02,0) {$O$};\n  \\node[right, font=\\scriptsize] at (1.05,0) {$A$};\n\\end{tikzpicture}}\\par\\vspace{2pt}{\\sffamily\\scriptsize\\itshape\\color{muted}Hình 5}\\end{minipage}\\par\\smallskip \\interlinepenalty=0\\clubpenalty=150\\widowpenalty=150 {\\sffamily\\bfseries\\color{brand}Lời giải}[[br]]\\hspace*{1.4em}a) Diện tích xung quanh của hình nón là[[br]]\\hspace*{1.4em}$S_{xq}=[[fill:\\pi rl]]=\\pi\\cdot 6\\cdot 10=[[fill:60\\pi]]$ (cm$^2$).[[br]]\\hspace*{1.4em}b) Tam giác $SOA$ vuông tại $O$ nên theo định lí Pythagore ta có[[br]]\\hspace*{1.4em}$OA^2+SO^2=SA^2$, hay $6^2+SO^2=10^2$.[[br]]\\hspace*{1.4em}Khi đó $SO^2=100-36=[[fill:64]]$ nên $SO=[[fill:8]]$ (cm).[[br]]\\hspace*{1.4em}Thể tích của hình nón là[[br]]\\hspace*{1.4em}$V=\\dfrac{1}{3}\\pi r^2h=\\dfrac{1}{3}\\pi\\cdot 6^2\\cdot [[fill:8]]=[[fill:96\\pi]]$ (cm$^3$).\\rule[-1.2ex]{0pt}{3.7ex}[[br]]\\hspace*{1.4em}Vậy diện tích xung quanh là $[[fill:60\\pi]]$ (cm$^2$) và thể tích hình nón là $[[fill:96\\pi]]$ (cm$^3$)."
+        },
+        {
+          "type": "problem",
+          "label": "Bài 8.",
+          "level": 2,
+          "tier": "onclass",
+          "dang_id": "NB6+TH2",
+          "statement": "\\interlinepenalty=10000\\clubpenalty=10000\\widowpenalty=10000 Khi cho tam giác $SOA$ vuông tại $O$ quay quanh cạnh $SO$ một vòng, ta được một hình nón. Biết $OA=8$ cm, $SA=17$ cm (Hình 6). \\textit{(SGK Toán 9 tập hai, Bài tập 10{.}3)}\\par\\nopagebreak\\smallskip\\noindent\\begin{minipage}[t]{0.63\\linewidth}\\vspace{0pt}a) [NB] Tính diện tích xung quanh của hình nón.[[br]]b) [TH] Tính thể tích của hình nón.\\end{minipage}\\hfill\\begin{minipage}[t]{0.34\\linewidth}\\vspace{0pt}\\centering\\adjustbox{max width=\\linewidth,max totalheight=4.2cm}{\\begin{tikzpicture}[line width=0.8pt, font=\\small]\n  \\draw[ink] (-1.05,0) arc (180:360:1.05 and 0.336);\n  \\draw[ink, dashed] (-1.05,0) arc (180:0:1.05 and 0.336);\n  \\draw[ink] (-1.05,0) -- (0,2) -- (1.05,0);\n  \\draw[ink, dashed] (0,0) -- (0,2);\n  \\fill[ink] (0,0) circle (1.2pt);\n  \\draw[ink, line width=0.5pt] (0.14,0) -- (0.14,0.14) -- (0,0.14);\n  \\draw[ink, dashed] (0,0) -- (1.05,0);\n  \\draw[ink, line width=0.4pt] (0,-0.05) -- (0,-0.616);\n  \\draw[ink, line width=0.4pt] (1.05,-0.05) -- (1.05,-0.616);\n  \\draw[ink, <->, line width=0.6pt] (0,-0.536) -- (1.05,-0.536);\n  \\node[below, font=\\scriptsize] at (0.525,-0.536) {$8$ cm};\n  \\node[right, font=\\scriptsize] at (0.565,1.05) {$17$ cm};\n  \\node[above, font=\\scriptsize] at (0,2) {$S$};\n  \\node[below left, font=\\scriptsize] at (0.02,0) {$O$};\n  \\node[right, font=\\scriptsize] at (1.05,0) {$A$};\n\\end{tikzpicture}}\\par\\vspace{2pt}{\\sffamily\\scriptsize\\itshape\\color{muted}Hình 6}\\end{minipage}\\par\\smallskip \\interlinepenalty=0\\clubpenalty=150\\widowpenalty=150 ",
+          "solution": "a) Hình nón có bán kính đáy $r=OA=8$ (cm) và đường sinh $l=SA=17$ (cm).[[br]]\\hspace*{1.4em}Diện tích xung quanh của hình nón là[[br]]\\hspace*{1.4em}$S_{xq}=\\pi rl=\\pi\\cdot 8\\cdot 17=136\\pi$ (cm$^2$).[[br]]\\hspace*{1.4em}Vậy diện tích xung quanh của hình nón là $136\\pi$ (cm$^2$).[[br]]b) Tam giác $SOA$ vuông tại $O$ nên theo định lí Pythagore ta có[[br]]\\hspace*{1.4em}$SO^2=SA^2-OA^2=17^2-8^2=289-64=225$ nên $SO=15$ (cm).[[br]]\\hspace*{1.4em}Thể tích của hình nón là[[br]]\\hspace*{1.4em}$V=\\dfrac{1}{3}\\pi r^2h=\\dfrac{1}{3}\\pi\\cdot 8^2\\cdot 15=320\\pi$ (cm$^3$).\\rule[-1.2ex]{0pt}{3.7ex}[[br]]\\hspace*{1.4em}Vậy thể tích của hình nón là $320\\pi$ (cm$^3$).",
+          "hints": [
+            "Muốn tính thể tích hình nón cần biết thêm độ dài nào?",
+            "Độ dài đó là một cạnh của tam giác vuông nào? Tính độ dài cạnh đó."
+          ]
+        },
+        {
+          "type": "para",
+          "variant": "heading",
+          "text": "Mạch 5. Thả vật chìm vào nước"
+        },
+        {
+          "type": "noted",
+          "variant": "example",
+          "text": "\\textbf{Ví dụ 5.} \\interlinepenalty=10000\\clubpenalty=10000\\widowpenalty=10000 Một cái cốc hình trụ có chiều cao là $15$ cm, bán kính đáy là $5$ cm, chiều cao mực nước trong cốc là $10$ cm (Hình 7). (Lấy $\\pi\\approx 3{,}14$, làm tròn kết quả đến hàng phần mười.)\\par\\nopagebreak\\smallskip\\noindent\\begin{minipage}[t]{0.63\\linewidth}\\vspace{0pt}a) Tính thể tích nước ở trong cốc.[[br]]b) Người ta thả một hòn đá vào trong cốc nước, nước trong cốc dâng lên đến miệng cốc và không bị tràn ra ngoài. Tính thể tích của hòn đá. \\textit{(HK2 THCS Ngọc Thụy (Long Biên), 2024--2025)}\\end{minipage}\\hfill\\begin{minipage}[t]{0.34\\linewidth}\\vspace{0pt}\\centering\\adjustbox{max width=\\linewidth,max totalheight=4.2cm}{\\begin{tikzpicture}[line width=0.8pt, font=\\small]\n  \\fill[info!25] (-1,1.333) -- (-1,0) arc (180:360:1 and 0.32) -- (1,1.333) arc (0:180:1 and 0.32) -- cycle;\n  \\draw[ink] (0,2) ellipse (1 and 0.32);\n  \\draw[ink] (-1,0) arc (180:360:1 and 0.32);\n  \\draw[ink, dashed] (-1,0) arc (180:0:1 and 0.32);\n  \\draw[ink] (-1,0) -- (-1,2);\n  \\draw[ink] (1,0) -- (1,2);\n  \\draw[ink, line width=0.6pt] (0,1.333) ellipse (1 and 0.32);\n  \\fill[ink] (0,2) circle (1.2pt);\n  \\draw[ink] (0,2) -- (1,2);\n  \\node[above, fill=white, inner sep=0.6pt, font=\\scriptsize] at (0.5,2.04) {$5$ cm};\n  \\draw[ink, <->, line width=0.6pt] (1.28,0) -- (1.28,2);\n  \\node[right, font=\\scriptsize] at (1.32,1) {$15$ cm};\n  \\draw[ink, <->, line width=0.6pt] (-1.28,0) -- (-1.28,1.333);\n  \\node[left, font=\\scriptsize] at (-1.32,0.667) {$10$ cm};\n\\end{tikzpicture}}\\par\\vspace{2pt}{\\sffamily\\scriptsize\\itshape\\color{muted}Hình 7}\\end{minipage}\\par\\smallskip \\interlinepenalty=0\\clubpenalty=150\\widowpenalty=150 {\\sffamily\\bfseries\\color{brand}Lời giải}[[br]]\\hspace*{1.4em}a) Phần nước trong cốc có dạng hình trụ với bán kính đáy $r=5$ (cm) và chiều cao $h_{\\text{nước}}=10$ (cm).[[br]]\\hspace*{1.4em}Thể tích nước ở trong cốc là[[br]]\\hspace*{1.4em}$V_{\\text{nước}}=[[fill:\\pi r^2h_{\\text{nước}}]]\\approx 3{,}14\\cdot 5^2\\cdot 10=[[fill:785]]$ (cm$^3$).[[br]]\\hspace*{1.4em}b) Hòn đá chìm hẳn trong nước nên thể tích của hòn đá bằng thể tích phần nước dâng thêm.[[br]]\\hspace*{1.4em}Chiều cao phần nước dâng thêm là $h'=[[fill:15-10]]=[[fill:5]]$ (cm).[[br]]\\hspace*{1.4em}Thể tích của hòn đá là[[br]]\\hspace*{1.4em}$V_{\\text{đá}}=\\pi r^2h'\\approx 3{,}14\\cdot [[fill:5]]^2\\cdot [[fill:5]]=[[fill:392{,}5]]$ (cm$^3$).[[br]]\\hspace*{1.4em}Vậy thể tích nước trong cốc khoảng $[[fill:785]]$ (cm$^3$) và thể tích của hòn đá khoảng $[[fill:392{,}5]]$ (cm$^3$)."
+        },
+        {
+          "type": "problem",
+          "label": "Bài 9.",
+          "level": 3,
+          "tier": "onclass",
+          "dang_id": "NB7+VD1",
+          "statement": "\\interlinepenalty=10000\\clubpenalty=10000\\widowpenalty=10000 Một ly nước dạng hình trụ có chiều cao là $15$ cm, đường kính đáy là $5$ cm. Bên trong ly có chứa một lượng nước cao $10$ cm như Hình 8. \\textit{(HK2 THCS Đoàn Thị Điểm (TP. Hồ Chí Minh), 2025--2026)}\\par\\nopagebreak\\smallskip\\nopagebreak{\\centering\\adjustbox{width=0.42\\linewidth}{\\begin{tikzpicture}[line width=0.8pt, font=\\small]\n  \\fill[info!25] (-1,1.6) -- (-1,0) arc (180:360:1 and 0.32) -- (1,1.6) arc (0:180:1 and 0.32) -- cycle;\n  \\draw[ink] (0,2.4) ellipse (1 and 0.32);\n  \\draw[ink] (-1,0) arc (180:360:1 and 0.32);\n  \\draw[ink, dashed] (-1,0) arc (180:0:1 and 0.32);\n  \\draw[ink] (-1,0) -- (-1,2.4);\n  \\draw[ink] (1,0) -- (1,2.4);\n  \\draw[ink, line width=0.6pt] (0,1.6) ellipse (1 and 0.32);\n  \\draw[ink, <->, line width=0.6pt] (-1,2.4) -- (1,2.4);\n  \\node[above, font=\\scriptsize] at (0,2.72) {$5$ cm};\n  \\draw[ink, <->, line width=0.6pt] (1.28,0) -- (1.28,2.4);\n  \\node[right, font=\\scriptsize] at (1.32,1.2) {$15$ cm};\n  \\draw[ink, <->, line width=0.6pt] (-1.28,0) -- (-1.28,1.6);\n  \\node[left, font=\\scriptsize] at (-1.32,0.8) {$10$ cm};\n  \\fill[info!25] (3.2,2.4) -- (3.2,0) arc (180:360:1 and 0.32) -- (5.2,2.4) arc (0:180:1 and 0.32) -- cycle;\n  \\draw[ink] (4.2,2.4) ellipse (1 and 0.32);\n  \\draw[ink] (3.2,0) arc (180:360:1 and 0.32);\n  \\draw[ink, dashed] (3.2,0) arc (180:0:1 and 0.32);\n  \\draw[ink] (3.2,0) -- (3.2,2.4);\n  \\draw[ink] (5.2,0) -- (5.2,2.4);\n  \\draw[ink, fill=gold!45] (3.6,0.27) circle (0.15);\n  \\draw[ink, fill=gold!45] (3.9,0.27) circle (0.15);\n  \\draw[ink, fill=gold!45] (4.2,0.27) circle (0.15);\n  \\draw[ink, fill=gold!45] (4.5,0.27) circle (0.15);\n  \\draw[ink, fill=gold!45] (4.8,0.27) circle (0.15);\n  \\node[font=\\scriptsize\\itshape] at (0,-0.65) {Hình 8};\n  \\node[font=\\scriptsize\\itshape] at (4.2,-0.65) {Hình 9};\n\\end{tikzpicture}}\\par}\\smallskip \\interlinepenalty=0\\clubpenalty=150\\widowpenalty=150 a) [NB] Tính thể tích lượng nước chứa trong ly (giả sử độ dày của ly là không đáng kể).[[br]]b) [VD] Người ta thả vào ly nước $5$ viên bi hình cầu có cùng thể tích ngập hoàn toàn trong nước làm nước trong ly dâng lên bằng miệng ly như Hình 9. Tính bán kính của mỗi viên bi.[[br]]Các kết quả được làm tròn đến hàng phần trăm.",
+          "solution": "a) Bán kính đáy của ly nước là $r=5:2=2{,}5$ (cm).[[br]]\\hspace*{1.4em}Thể tích lượng nước chứa trong ly là[[br]]\\hspace*{1.4em}$V_{\\text{nước}}=\\pi r^2h_{\\text{nước}}=\\pi\\cdot 2{,}5^2\\cdot 10=62{,}5\\pi\\approx 196{,}35$ (cm$^3$).[[br]]\\hspace*{1.4em}Vậy thể tích lượng nước chứa trong ly khoảng $196{,}35$ (cm$^3$).[[br]]b) Chiều cao phần nước dâng thêm là $h'=15-10=5$ (cm).[[br]]\\hspace*{1.4em}Vì $5$ viên bi ngập hoàn toàn trong nước nên tổng thể tích của $5$ viên bi bằng thể tích phần nước dâng thêm và bằng[[br]]\\hspace*{1.4em}$V_{\\text{5 bi}}=\\pi r^2h'=\\pi\\cdot 2{,}5^2\\cdot 5=31{,}25\\pi$ (cm$^3$).[[br]]\\hspace*{1.4em}Thể tích của mỗi viên bi là $V_{\\text{1 bi}}=31{,}25\\pi:5=6{,}25\\pi$ (cm$^3$).[[br]]\\hspace*{1.4em}Gọi $R$ (cm) là bán kính của mỗi viên bi, ta có[[br]]\\hspace*{1.4em}$\\dfrac{4}{3}\\pi R^3=6{,}25\\pi$ nên $R^3=6{,}25:\\dfrac{4}{3}=4{,}6875$, hay $R\\approx 1{,}67$ (cm).\\rule[-1.2ex]{0pt}{3.7ex}[[br]]\\hspace*{1.4em}Vậy bán kính của mỗi viên bi khoảng $1{,}67$ (cm).",
+          "hints": []
+        }
+      ],
+      "teacher_note": "Khoảng 50 phút (giải lao 10 phút giữa hai chặng luyện tập): mỗi mạch giáo viên làm ví dụ cùng lớp rồi học sinh làm ngay bài sau, ý [NB] trả lời miệng, ý [TH] tự trình bày vào vở theo câu hỏi gợi ý. Mạch 5 nhấn: thể tích vật chìm bằng thể tích phần nước dâng lên. Bài 9 (đề đích) làm cá nhân như đi thi rồi gọi lên bảng."
+    },
+    {
+      "kind": "reflection",
+      "number": 5,
+      "title": "Tổng kết",
+      "blocks": [
+        {
+          "type": "mindmap",
+          "caption": "Điền các ô trống để tự tóm tắt buổi học",
+          "root": "Hình trụ, hình nón, hình cầu",
+          "branches": [
+            {
+              "label": "Hình trụ",
+              "children": [
+                {
+                  "label": "$S_{xq}=[[blank:1.6cm]]$"
+                },
+                {
+                  "label": "$V=[[blank:1.6cm]]$"
+                }
+              ]
+            },
+            {
+              "label": "Hình nón",
+              "children": [
+                {
+                  "label": "$S_{xq}=[[blank:1.6cm]]$"
+                },
+                {
+                  "label": "$V=[[blank:1.6cm]]$"
+                },
+                {
+                  "label": "$l^2=[[blank:1.6cm]]$"
+                }
+              ]
+            },
+            {
+              "label": "Hình cầu",
+              "children": [
+                {
+                  "label": "$S=[[blank:1.6cm]]$, \\ $V=[[blank:1.6cm]]$"
+                }
+              ]
+            },
+            {
+              "label": "Vật chìm hẳn",
+              "children": [
+                {
+                  "label": "Thể tích vật bằng thể tích phần nước [[blank:1.6cm]]"
+                }
+              ]
+            }
+          ]
+        },
+        {
+          "type": "para",
+          "text": "\\textbf{Bài tập về nhà} — làm vào vở, buổi sau nộp."
+        },
+        {
+          "type": "problem",
+          "label": "Bài 10.",
+          "level": 1,
+          "tier": "btvn",
+          "dang_id": "NB2",
+          "statement": "\\interlinepenalty=10000\\clubpenalty=10000\\widowpenalty=10000 [NB] Hãy kể tên tâm và một bán kính của mặt cầu trong Hình 10. \\textit{(SGK Toán 9 tập hai, Bài 32, Ví dụ 1)}\\par\\nopagebreak\\smallskip\\nopagebreak{\\centering\\adjustbox{totalheight=3.8cm,max width=0.45\\linewidth}{\\begin{tikzpicture}[line width=0.8pt, font=\\small]\n  \\draw[ink] (0,0) circle (1.15);\n  \\draw[ink] (-1.15,0) arc (180:360:1.15 and 0.345);\n  \\draw[ink, dashed] (-1.15,0) arc (180:0:1.15 and 0.345);\n  \\fill[ink] (0,0) circle (1.2pt);\n  \\node[below left, font=\\scriptsize] at (0,-0.02) {$O$};\n  \\draw[ink] (150:1.15) -- (-30:1.15);\n  \\draw[ink] (0,0) -- (65:1.15);\n  \\fill[ink] (150:1.15) circle (1.2pt);\n  \\fill[ink] (-30:1.15) circle (1.2pt);\n  \\fill[ink] (65:1.15) circle (1.2pt);\n  \\node[above left, font=\\scriptsize] at (150:1.15) {$M$};\n  \\node[below right, font=\\scriptsize] at (-30:1.15) {$N$};\n  \\node[above right, font=\\scriptsize] at (65:1.15) {$P$};\n\\end{tikzpicture}}\\par\\vspace{2pt}{\\sffamily\\scriptsize\\itshape\\color{muted}Hình 10}\\par}\\smallskip \\interlinepenalty=0\\clubpenalty=150\\widowpenalty=150 ",
+          "solution": "Tâm mặt cầu: $O$.[[br]]\\hspace*{1.4em}Một bán kính: $OP$ (hoặc $OM$, $ON$).",
+          "hints": []
+        },
+        {
+          "type": "problem",
+          "label": "Bài 11.",
+          "level": 1,
+          "tier": "btvn",
+          "dang_id": "NB3",
+          "statement": "[NB] Một thùng đựng nước hình trụ có đường kính đáy là $40$ cm và chiều cao là $60$ cm. Tính thể tích của thùng đựng nước (lấy $\\pi\\approx 3{,}14$). \\textit{(GK2 THCS Tây Mỗ 3, 2025--2026)}",
+          "solution": "Bán kính đáy của thùng đựng nước là $r = 40 : 2 = 20$ (cm).[[br]]\\hspace*{1.4em}Thể tích của thùng đựng nước là[[br]]\\hspace*{1.4em}$V = \\pi r^2 h \\approx 3{,}14 \\cdot 20^2 \\cdot 60 = 75\\,360$ (cm$^3$).[[br]]\\hspace*{1.4em}Vậy thể tích của thùng đựng nước xấp xỉ $75\\,360$ cm$^3$.",
+          "hints": []
+        },
+        {
+          "type": "problem",
+          "label": "Bài 12.",
+          "level": 1,
+          "tier": "btvn",
+          "dang_id": "NB3",
+          "statement": "[NB] Diện tích mặt cầu có đường kính $10$ cm là \\textit{(SGK Toán 9 tập hai, Bài tập 10{.}19)}[[br]]\\hspace*{1.4em}\\makebox[0.22\\linewidth][l]{A. $10\\pi$ cm$^2$.}\\makebox[0.22\\linewidth][l]{B. $400\\pi$ cm$^2$.}\\makebox[0.22\\linewidth][l]{C. $50\\pi$ cm$^2$.}\\makebox[0.22\\linewidth][l]{D. $100\\pi$ cm$^2$.}",
+          "solution": "Bán kính mặt cầu là $R = 10 : 2 = 5$ (cm), diện tích mặt cầu là $S = 4\\pi R^2 = 4\\pi \\cdot 5^2 = 100\\pi$ (cm$^2$).[[br]]\\hspace*{1.4em}Chọn D.",
+          "hints": []
+        },
+        {
+          "type": "problem",
+          "label": "Bài 13.",
+          "level": 1,
+          "tier": "btvn",
+          "dang_id": "NB3",
+          "statement": "[NB] Kem ốc quế sử dụng loại vỏ có dạng hình nón với bán kính đáy $2{,}5$ cm và chiều cao $6$ cm. Tính thể tích lượng kem mà một vỏ ốc quế có thể chứa được, coi độ dày vỏ là không đáng kể (lấy $\\pi\\approx 3{,}14$). \\textit{(GK2 THCS Trưng Vương, 2024--2025)}",
+          "solution": "Thể tích lượng kem mà một vỏ ốc quế có thể chứa được là[[br]]\\hspace*{1.4em}$V = \\dfrac{1}{3}\\pi r^2 h \\approx \\dfrac{1}{3} \\cdot 3{,}14 \\cdot 2{,}5^2 \\cdot 6 = 39{,}25$ (cm$^3$).\\rule[-1.2ex]{0pt}{3.7ex}[[br]]\\hspace*{1.4em}Vậy thể tích lượng kem mà một vỏ ốc quế có thể chứa được xấp xỉ $39{,}25$ cm$^3$.",
+          "hints": []
+        },
+        {
+          "type": "problem",
+          "label": "Bài 14.",
+          "level": 2,
+          "tier": "btvn",
+          "dang_id": "NB5+TH1",
+          "statement": "Một bồn nước inox có dạng một hình trụ với chiều cao $1{,}75$ m và bán kính đáy là $0{,}5$ m. Lấy $\\pi\\approx 3{,}14$, làm tròn kết quả đến hàng phần trăm. \\textit{(HK2 THCS Xuân Đỉnh, 2025--2026)}[[br]]a) [NB] Tính thể tích của bồn nước inox đó.[[br]]b) [TH] Trong bồn đang chứa đầy nước, người ta tháo nước ở trong bồn ra cho đến khi mực nước trong bồn còn cao $1$ m. Hỏi số lít nước đã tháo ra ngoài là bao nhiêu? (Bỏ qua bề dày của bồn nước.)",
+          "solution": "a) Thể tích của bồn nước inox đó là[[br]]\\hspace*{1.4em}$V = \\pi r^2 h \\approx 3{,}14 \\cdot 0{,}5^2 \\cdot 1{,}75 = 1{,}37375 \\approx 1{,}37$ (m$^3$).[[br]]\\hspace*{1.4em}Vậy thể tích của bồn nước inox đó xấp xỉ $1{,}37$ m$^3$.[[br]]b) Phần nước đã tháo ra ngoài có dạng hình trụ với bán kính đáy $r = 0{,}5$ m và chiều cao $h_1 = 1{,}75 - 1 = 0{,}75$ (m) nên thể tích phần nước đã tháo ra ngoài là[[br]]\\hspace*{1.4em}$V_1 = \\pi r^2 h_1 \\approx 3{,}14 \\cdot 0{,}5^2 \\cdot 0{,}75 = 0{,}58875$ (m$^3$).[[br]]\\hspace*{1.4em}Đổi $0{,}58875$ m$^3 = 588{,}75$ lít.[[br]]\\hspace*{1.4em}Vậy số lít nước đã tháo ra ngoài xấp xỉ $588{,}75$ lít.",
+          "hints": [
+            "Phần nước đã tháo ra có dạng hình gì? Chiều cao của phần đó bằng bao nhiêu?",
+            "$1$ m$^3$ bằng bao nhiêu lít?"
+          ]
+        },
+        {
+          "type": "problem",
+          "label": "Bài 15.",
+          "level": 2,
+          "tier": "btvn",
+          "dang_id": "NB6+TH2",
+          "statement": "\\interlinepenalty=10000\\clubpenalty=10000\\widowpenalty=10000 Cho tam giác $ABC$ vuông tại $A$, $AB=5$ cm, $BC=13$ cm. Quay tam giác vuông $ABC$ một vòng xung quanh đường thẳng $AC$ ta được hình nón (Hình 11). \\textit{(tài liệu Mathtech \\textquotedblleft Hình trụ. Hình nón. Hình cầu\\textquotedblright)}\\par\\nopagebreak\\smallskip\\noindent\\begin{minipage}[t]{0.63\\linewidth}\\vspace{0pt}a) [NB] Tính chiều cao của hình nón.[[br]]b) [TH] Hỏi thể tích của hình nón đó bằng bao nhiêu centimét khối (làm tròn kết quả đến hàng phần trăm)?\\end{minipage}\\hfill\\begin{minipage}[t]{0.34\\linewidth}\\vspace{0pt}\\centering\\adjustbox{max width=\\linewidth,max totalheight=4.2cm}{\\begin{tikzpicture}[line width=0.8pt, font=\\small]\n  \\draw[ink] (-1.05,0) arc (180:360:1.05 and 0.336);\n  \\draw[ink, dashed] (-1.05,0) arc (180:0:1.05 and 0.336);\n  \\draw[ink] (-1.05,0) -- (0,2) -- (1.05,0);\n  \\draw[ink, dashed] (0,0) -- (0,2);\n  \\fill[ink] (0,0) circle (1.2pt);\n  \\draw[ink, line width=0.5pt] (0.14,0) -- (0.14,0.14) -- (0,0.14);\n  \\draw[ink, dashed] (0,0) -- (1.05,0);\n  \\draw[ink, line width=0.4pt] (0,-0.05) -- (0,-0.616);\n  \\draw[ink, line width=0.4pt] (1.05,-0.05) -- (1.05,-0.616);\n  \\draw[ink, <->, line width=0.6pt] (0,-0.536) -- (1.05,-0.536);\n  \\node[below, font=\\scriptsize] at (0.525,-0.536) {$5$ cm};\n  \\node[right, font=\\scriptsize] at (0.565,1.05) {$13$ cm};\n  \\node[above, font=\\scriptsize] at (0,2) {$C$};\n  \\node[below left, font=\\scriptsize] at (0.02,0) {$A$};\n  \\node[right, font=\\scriptsize] at (1.05,0) {$B$};\n\\end{tikzpicture}}\\par\\vspace{2pt}{\\sffamily\\scriptsize\\itshape\\color{muted}Hình 11}\\end{minipage}\\par\\smallskip \\interlinepenalty=0\\clubpenalty=150\\widowpenalty=150 ",
+          "solution": "a) Khi quay tam giác $ABC$ quanh đường thẳng $AC$, chiều cao của hình nón là $h=AC$.[[br]]\\hspace*{1.4em}Tam giác $ABC$ vuông tại $A$ nên theo định lí Pythagore ta có[[br]]\\hspace*{1.4em}$AC^2=BC^2-AB^2=13^2-5^2=169-25=144$, nên $AC=12$ cm.[[br]]\\hspace*{1.4em}Vậy chiều cao của hình nón là $12$ cm.[[br]]b) Theo câu a), chiều cao của hình nón là $h=12$ cm và bán kính đáy của hình nón là $r=AB=5$ cm.[[br]]\\hspace*{1.4em}Thể tích của hình nón là[[br]]\\hspace*{1.4em}$V=\\dfrac{1}{3}\\pi r^2h=\\dfrac{1}{3}\\pi\\cdot 5^2\\cdot 12=100\\pi\\approx 314{,}16$ (cm$^3$).\\rule[-1.2ex]{0pt}{3.7ex}[[br]]\\hspace*{1.4em}Vậy thể tích của hình nón khoảng $314{,}16$ cm$^3$.",
+          "hints": [
+            "Khi quay quanh $AC$, cạnh nào quét thành đáy của hình nón?",
+            "Bán kính đáy và chiều cao của hình nón bằng bao nhiêu?"
+          ]
+        },
+        {
+          "type": "problem",
+          "label": "Bài 16.",
+          "level": 2,
+          "tier": "btvn",
+          "dang_id": "NB7+TH3",
+          "statement": "Một cái cốc hình trụ có đường kính đáy bằng $10$ cm đựng nước với mực nước trong cốc cao $15$ cm. \\textit{(HK2 THCS Thái Thịnh (Đống Đa), 2025--2026)}[[br]]a) [NB] Tính thể tích lượng nước trong cốc (bỏ qua bề dày của thành cốc, lấy $\\pi\\approx 3{,}14$).[[br]]b) [TH] Nếu thả viên bi sắt dạng hình cầu có bán kính $2$ cm vào cốc thì lượng nước trong cốc dâng lên bao nhiêu milimét, biết rằng viên bi chìm hẳn trong nước và nước không bị tràn ra ngoài (làm tròn đến hàng đơn vị).",
+          "solution": "a) Bán kính đáy của cái cốc là $r = 10 : 2 = 5$ (cm).[[br]]\\hspace*{1.4em}Thể tích lượng nước trong cốc là[[br]]\\hspace*{1.4em}$V = \\pi r^2 h \\approx 3{,}14 \\cdot 5^2 \\cdot 15 = 1177{,}5$ (cm$^3$).[[br]]\\hspace*{1.4em}Vậy thể tích lượng nước trong cốc xấp xỉ $1177{,}5$ cm$^3$.[[br]]b) Thể tích viên bi sắt hình cầu là[[br]]\\hspace*{1.4em}$V_{\\text{bi}} = \\dfrac{4}{3}\\pi R^3 = \\dfrac{4}{3}\\pi \\cdot 2^3 = \\dfrac{32}{3}\\pi$ (cm$^3$).\\rule[-1.2ex]{0pt}{3.7ex}[[br]]\\hspace*{1.4em}Vì viên bi chìm hẳn trong nước và nước không tràn ra ngoài nên thể tích phần nước dâng lên bằng thể tích viên bi.[[br]]\\hspace*{1.4em}Gọi $x$ (cm) là chiều cao phần nước dâng lên ($x > 0$). Phần nước dâng lên có dạng hình trụ bán kính đáy $r = 5$ cm nên ta có:[[br]]\\hspace*{1.4em}$\\pi \\cdot 5^2 \\cdot x = \\dfrac{32}{3}\\pi$\\rule[-1.2ex]{0pt}{3.7ex}[[br]]\\hspace*{1.4em}$25x = \\dfrac{32}{3}$\\rule[-1.2ex]{0pt}{3.7ex}[[br]]\\hspace*{1.4em}$x = \\dfrac{32}{75}$ (cm).\\rule[-1.2ex]{0pt}{3.7ex}[[br]]\\hspace*{1.4em}Đổi $\\frac{32}{75}$ cm $= \\frac{320}{75}$ mm $\\approx 4$ mm.[[br]]\\hspace*{1.4em}Vậy lượng nước trong cốc dâng lên khoảng $4$ mm.",
+          "hints": [
+            "Thể tích phần nước dâng lên bằng thể tích của vật nào?",
+            "Phần nước dâng lên có dạng hình gì? Bán kính đáy của phần đó bằng bao nhiêu?"
+          ]
+        }
+      ],
+      "solution": "Đáp án sơ đồ tư duy: $2\\pi rh$ · $\\pi r^2h$ · $\\pi rl$ · $\\frac{1}{3}\\pi r^2h$ · $r^2+h^2$ · $4\\pi R^2$ · $\\frac{4}{3}\\pi R^3$ · dâng lên.",
+      "teacher_note": "Sơ đồ tư duy 2 phút cuối buổi. Bài tập về nhà Bài 10--16 in thành phiếu riêng, khoảng 40 phút. Buổi sau chữa Bài 14, Bài 16 trước."
+    }
+  ]
+}

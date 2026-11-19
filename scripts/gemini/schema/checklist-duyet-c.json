@@ -1,0 +1,22 @@
+{
+  "type": "object",
+  "properties": {
+    "dong": {
+      "type": "array",
+      "items": {
+        "type": "object",
+        "properties": {
+          "loai": {"type": "string", "enum": ["chuong", "phieu", "kiem_tra"]},
+          "cot_A": {"type": "string"},
+          "cot_B": {"type": "string"},
+          "ten": {"type": "string"},
+          "link_tu": {"type": "string"},
+          "gan_cu": {"type": "array", "items": {"type": "string"}}
+        },
+        "required": ["loai", "cot_A", "cot_B", "ten", "link_tu", "gan_cu"]
+      }
+    },
+    "ghi_chu": {"type": "string"}
+  },
+  "required": ["dong", "ghi_chu"]
+}

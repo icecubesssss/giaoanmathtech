@@ -175,3 +175,8 @@ def test_the_muc_sau_y_in_thanh_sao():
 def test_the_dau_de_bai_mot_y_van_xoa():
     from src.compiler.jinja_renderer import _texify
     assert _texify("[NB] Các nghiệm của phương trình là") == "Các nghiệm của phương trình là"
+
+
+def test_cau_dan_nb_trong_minipage_19_11():
+    from src.validators.vi_du_gate import _CAU_DAN_NB
+    assert _CAU_DAN_NB.search(r"\begin{minipage}[t]{0.56\linewidth}\vspace{0pt}a) [NB] Lớp 9A có bao nhiêu học sinh?")

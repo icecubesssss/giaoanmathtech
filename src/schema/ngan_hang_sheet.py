@@ -140,7 +140,15 @@ def load(grade: str, subject: str, chuong: str | int) -> dict | None:
     """Snapshot của chương, hoặc None nếu chương chưa có tab phân dạng."""
     p = snapshot_path(grade, subject, chuong)
     if p not in _CACHE:
-        _CACHE[p] = json.loads(p.read_text(encoding="utf-8")) if p.exists() else None
+        snap = json.loads(p.read_text(encoding="utf-8")) if p.exists() else None
+        # Câu tab THIẾU mà đã chép lên tab Ý của chương (vd 3 câu IV.1 đề Sở của ch.X lớp 9 —
+        # tab chính đang ẩn, không được sửa): `chuong-NN/bo-sung-so.json` {"rows": [...]} (19/11/2026).
+        bs = p.with_suffix("") / "bo-sung-so.json"
+        if snap and bs.exists():
+            co = {r["ma"] for r in snap.get("rows", [])}
+            them = [r for r in json.loads(bs.read_text(encoding="utf-8")).get("rows", []) if r["ma"] not in co]
+            snap = {**snap, "rows": snap.get("rows", []) + them}
+        _CACHE[p] = snap
     return _CACHE[p]
 
 

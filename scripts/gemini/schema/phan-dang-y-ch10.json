@@ -1,0 +1,94 @@
+{
+  "type": "object",
+  "required": [
+    "cau",
+    "ghi_chu"
+  ],
+  "properties": {
+    "cau": {
+      "type": "array",
+      "items": {
+        "type": "object",
+        "required": [
+          "ma",
+          "y",
+          "ghi_chu"
+        ],
+        "properties": {
+          "ma": {
+            "type": "string"
+          },
+          "y": {
+            "type": "array",
+            "minItems": 1,
+            "items": {
+              "type": "object",
+              "required": [
+                "nhan",
+                "tom_tat",
+                "ma_dang",
+                "muc",
+                "bien_the",
+                "ly_do_muc"
+              ],
+              "properties": {
+                "nhan": {
+                  "type": "string"
+                },
+                "tom_tat": {
+                  "type": "string"
+                },
+                "ma_dang": {
+                  "type": "string",
+                  "enum": [
+                    "X-01",
+                    "X-02",
+                    "X-03",
+                    "X-04",
+                    "X-05",
+                    "X-06",
+                    "X-07",
+                    "X-08",
+                    "X-09",
+                    "X-10",
+                    "X-11",
+                    "X-12",
+                    "X-13",
+                    "X-14",
+                    "X-15",
+                    "X-16",
+                    "X-17",
+                    "X-18",
+                    "X-19",
+                    "NGOAI"
+                  ]
+                },
+                "muc": {
+                  "type": "string",
+                  "enum": [
+                    "NB",
+                    "TH",
+                    "VD",
+                    "VDC"
+                  ]
+                },
+                "bien_the": {
+                  "type": "string"
+                },
+                "ly_do_muc": {
+                  "type": "string"
+                }
+              }
+            }
+          },
+          "ghi_chu": {
+            "type": "string"
+          }
+        }
+      }
+    },
+    "ghi_chu": {
+      "type": "string"
+    }
+  }
+}

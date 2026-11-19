@@ -64,6 +64,9 @@ TRUNG = [
     ("v10-huy-van-2024-I2", "tl-ptnn-xsbc-69-tr14"),
     ("sgk-8.1", "sgk-8.5", "v10-ly-thuong-kiet-2025-I2"),
     ("gk2-nghia-tan-2025-I2", "v10-dong-da-de18-2025-I2"),
+    # 19/11 Claude soát: cùng bài P(chẵn trên 1..6) / cùng khung 2 bạn chọn 3 chỗ
+    ("so-hn-2026-I2", "tl-ptnn-xsbc-2-tr2", "ck2-thai-thinh-2025-I2"),
+    ("ck2-phan-dinh-phung-2025-TL4", "sgk-8.11"),
 ]
 
 # Tuple: (phieu, vai, dang, muc, so_y, so_nb, loai, ma, y, hinh_thuc)
@@ -73,7 +76,7 @@ R = [
     ("P1", "Ví dụ", "C8-01", "NB", 0, 2, "NB lẻ LT", "tl-ptnn-xsbc-16-tr5", "a,c", "Ví dụ điền khuyết"),
     ("P1", "Ví dụ", "C8-02", "NB", 0, 1, "NB lẻ LT", "tl-ptnn-xsbc-12-tr4", "", "Ví dụ điền khuyết"),
     ("P1", "Ví dụ", "C8-02", "NB", 0, 2, "NB lẻ LT", "tl-ptnn-xsbc-22-tr6", "A-B", "Ví dụ điền khuyết"),
-    ("P1", "Ví dụ", "C8-03", "NB", 0, 1, "NB lẻ LT", "tl-ptnn-xsbc-2-tr2", "", "Ví dụ điền khuyết"),
+    ("P1", "Ví dụ", "C8-03", "NB", 0, 1, "NB lẻ LT", "tl-ptnn-xsbc-36-tr9", "a", "Ví dụ điền khuyết"),  # 19/11 thay tl-ptnn-xsbc-2-tr2 (trùng so-hn-2026-I2)
     ("P1", "Ví dụ", "C8-03", "NB", 0, 1, "NB lẻ LT", "gk2-nghia-tan-2025-I2", "a", "Ví dụ điền khuyết"),
     ("P1", "Ví dụ", "C8-05", "NB", 0, 1, "NB lẻ LT", "tl-ptnn-xsbc-74-tr15", "", "Ví dụ điền khuyết"),
     ("P1", "Ví dụ", "C8-03", "TH", 1, 0, "TH lẻ LT", "gk2-kieu-ky-2025-I2", "", "Ví dụ điền khuyết"),
@@ -94,12 +97,11 @@ R = [
     ("P1", "Trên lớp", "C8-01", "NB", 0, 1, "NB lẻ LT", "sgk-8.3", "a", "Trả lời ngắn"),
     ("P1", "Trên lớp", "C8-01", "NB", 0, 2, "NB lẻ LT", "tl-ptnn-xsbc-27-tr7", "", "Đúng / Sai + trả lời ngắn"),
     ("P1", "Trên lớp", "C8-02", "NB", 0, 1, "NB lẻ LT", "ck2-gia-lam-2024-I2", "a", "Trả lời ngắn"),
-    ("P1", "Trên lớp", "C8-02", "NB", 0, 2, "NB lẻ LT", "sgk-b26-lt1", "b-E,b-F", "Trả lời ngắn"),
-    ("P1", "Trên lớp", "C8-02", "NB", 0, 2, "NB lẻ LT", "sgk-b26-vd1", "b-c", "Trả lời ngắn"),
+    ("P1", "Trên lớp", "C8-02", "NB", 0, 3, "NB lẻ LT", "sgk-b26-lt1", "a,b-E,b-F", "Trả lời ngắn"),  # Thầy 19/11: bốc cả ý a
+    ("P1", "Trên lớp", "C8-02", "NB", 0, 3, "NB lẻ LT", "sgk-b26-vd1", "a-c", "Trả lời ngắn"),  # Thầy 19/11: bốc cả ý a
     ("P1", "Trên lớp", "C8-03", "NB", 0, 1, "NB lẻ LT", "so-hn-2026-I2", "", "Trắc nghiệm 4 lựa chọn"),
     ("P1", "Trên lớp", "C8-03", "NB", 0, 1, "NB lẻ LT", "ck2-thach-that-2024-1-2", "", "Trắc nghiệm 4 lựa chọn"),
-    ("P1", "Trên lớp", "C8-03", "NB", 0, 1, "NB lẻ LT", "ck2-ba-dinh-2024-I2", "", "Trả lời ngắn"),
-    ("P1", "Trên lớp", "C8-03", "NB", 0, 1, "NB lẻ LT", "ck2-hai-ba-trung-2024-I2", "", "Trả lời ngắn"),
+    # 19/11: ck2-ba-dinh-2024-I2, ck2-hai-ba-trung-2024-I2 chuyển xuống BTVN để bù 2 NB ý a ở trên (giữ 120′)
     ("P1", "Trên lớp", "C8-03", "NB", 0, 1, "NB lẻ LT", "v10-chuong-my-l4-2025-I2", "", "Trắc nghiệm / Trả lời ngắn"),
     ("P1", "Trên lớp", "C8-05", "NB", 0, 1, "NB lẻ LT", "tl-ptnn-xsbc-43-tr10", "a", "Trả lời ngắn"),
     ("P1", "Trên lớp", "C8-06", "NB", 0, 1, "NB lẻ LT", "ck2-phan-dinh-phung-2025-TN11", "", "Trắc nghiệm 4 lựa chọn"),
@@ -124,7 +126,9 @@ R = [
     ("P1", "BTVN", "C8-02", "NB", 0, 1, "NB lẻ LT", "gk2-nguyen-binh-khiem-2024-I2", "a", "Trả lời ngắn"),
     ("P1", "BTVN", "C8-02", "NB", 0, 1, "NB lẻ LT", "v10-lang-thuong-2025-II2", "a", "Trả lời ngắn"),
     ("P1", "BTVN", "C8-02", "NB", 0, 2, "NB lẻ LT", "tl-ptnn-xsbc-21-tr6", "M,N", "Trả lời ngắn"),
-    ("P1", "BTVN", "C8-03", "NB", 0, 1, "NB lẻ LT", "ck2-thai-thinh-2025-I2", "", "Trắc nghiệm 4 lựa chọn"),
+    ("P1", "BTVN", "C8-03", "NB", 0, 1, "NB lẻ LT", "v10-tho-loc-l3-2026-I2", "a", "Trắc nghiệm 4 lựa chọn"),  # 19/11 thay ck2-thai-thinh-2025-I2 (trùng so-hn-2026-I2)
+    ("P1", "BTVN", "C8-03", "NB", 0, 1, "NB lẻ LT", "ck2-ba-dinh-2024-I2", "", "Trả lời ngắn"),  # 19/11 từ Trên lớp xuống
+    ("P1", "BTVN", "C8-03", "NB", 0, 1, "NB lẻ LT", "ck2-hai-ba-trung-2024-I2", "", "Trả lời ngắn"),  # 19/11 từ Trên lớp xuống
     ("P1", "BTVN", "C8-03", "NB", 0, 1, "NB lẻ LT", "ck2-lomonoxop-2024-I2", "", "Trả lời ngắn"),
     ("P1", "BTVN", "C8-03", "NB", 0, 1, "NB lẻ LT", "ck2-ngoc-lam-2024-T901-I2", "", "Trả lời ngắn"),
     ("P1", "BTVN", "C8-03", "NB", 0, 1, "NB lẻ LT", "ck2-phuc-dong-2024-902-I2", "", "Trả lời ngắn"),
@@ -141,10 +145,40 @@ R = [
     ("P1", "BTVN", "C8-05", "TH", 1, 1, "TH lẻ LT", "gk2-chuong-duong-2024-I2", "", "Tự luận + câu hỏi gợi ý bước"),
     ("P1", "BTVN", "C8-06", "TH", 1, 1, "TH lẻ LT", "sgk-8.8", "A-B", "Tự luận + câu hỏi gợi ý bước"),
     ("P1", "BTVN", "C8-06", "TH", 1, 1, "TH lẻ LT", "sgk-8.9", "a-b", "Tự luận + câu hỏi gợi ý bước"),
-    ("P1", "BTVN", "C8-06", "TH", 1, 1, "TH lẻ LT", "sgk-8.10", "G-H", "Tự luận + câu hỏi gợi ý bước"),
-    ("P1", "BTVN", "C8-06", "TH", 1, 1, "TH lẻ LT", "sgk-8.11", "a,b-F,b-G", "Tự luận + câu hỏi gợi ý bước"),
+    ("P1", "BTVN", "C8-06", "TH", 1, 1, "TH lẻ LT", "sgk-8.10", "H-K", "Tự luận + câu hỏi gợi ý bước"),
+    ("P1", "BTVN", "C8-06", "TH", 1, 1, "TH lẻ LT", "tl-ptnn-xsbc-67-tr14", "a,P,Q", "Tự luận + câu hỏi gợi ý bước"),  # 19/11 thay sgk-8.11 (trùng khung ck2-phan-dinh-phung-2025-TL4)
 ]
 
+
+# Claude soát lại điểm Gemini (19/11/2026): (đề xuất ghi đè hoặc None = giữ của Gemini, lời soát)
+CLAUDE_SOAT = {
+    "tl-ptnn-xsbc-36-tr9": ("Hay", "Câu thay #5 (bản cũ trùng so-hn-2026-I2). Khi dựng thêm giả thiết các viên kẹo cùng kích thước, khối lượng."),
+    "sgk-b25-vd1": ("Cân nhắc", "Chỉ hỏi phép thử + mô tả Ω, chưa tính xác suất ⇒ thực chất NB, đang tính 4′ TH. Giữ làm ví dụ dẫn nhập bảng 2 chiều hoặc hạ về NB."),
+    "tl-ptnn-xsbc-27-tr7": (None, "Sửa chữ 'đồng nhất' → 'đồng chất'."),
+    "sgk-b26-lt1": ("Hay", "Thầy 19/11: bốc cả ý a (mô tả Ω) để HS có quy ước cặp ⇒ 3 NB."),
+    "sgk-b26-vd1": ("Hay", "Thầy 19/11: bốc cả ý a (mô tả Ω) để HS có quy ước cặp ⇒ 3 NB."),
+    "so-hn-2026-I2": (None, "Giữ câu Sở 2026; đã đổi 2 câu trùng bài (Ví dụ #5, BTVN #47)."),
+    "tl-ptnn-xsbc-43-tr10": ("Cân nhắc", "Ý a ra 32/552 = 4/69, ý b, c cũng lẻ. Kho C8-05 NB hết câu đẹp; phương án khác: tl-ptnn-xsbc-41-tr10 ý b (7/46, cộng 8 cột)."),
+    "v10-tho-loc-l3-2025-I2": (None, "Cần câu gợi ý: n + (n + 1) = 2n + 1 là số lẻ."),
+    "sgk-b25-lt1": ("Cân nhắc", "Chỉ mô tả Ω (9 phần tử), không tính xác suất ⇒ thực chất NB nhưng đang tính 6′ TH (TH thật trên lớp còn 11). Phương án thay: sgk-ltc8-vd1 (bìa 3 × 5 ô, có tính xác suất E, F, G)."),
+    "sgk-8.6": (None, "BTVN sgk-8.10 đã đổi ý G → K để không trùng (G là phần bù của F)."),
+    "ck2-phan-dinh-phung-2025-TL4": (None, "Đã đổi câu BTVN sgk-8.11 (cùng khung 2 bạn × 3 chỗ, cùng đáp số 5/9)."),
+    "v10-tho-loc-l3-2026-I2": (None, "Câu thay #47 (bản cũ trùng so-hn-2026-I2). Chỉ bốc ý a."),
+    "sgk-8.10": (None, "Đổi ý G-H → H-K (G trùng phần bù của sgk-8.6 ý F)."),
+    "tl-ptnn-xsbc-67-tr14": (None, "Câu thay #64 sgk-8.11 (trùng khung ck2-phan-dinh-phung-2025-TL4)."),
+}
+
+# Thầy duyệt tab 9084 (19/11/2026): cả 64 dòng "Hay"; ghi chú cột AC (áp khi dựng phiếu)
+THAY_DUYET_MAC_DINH = "Hay"
+GHI_CHU_THAY = {
+    "tl-ptnn-xsbc-16-tr5": "Cần chú ý bổ sung giả thiết nếu cho vào",
+    "tl-ptnn-xsbc-36-tr9": "Cần chú ý bổ sung giả thiết nếu cho vào",
+    "ck2-ngoc-thuy-2024-I2": "Cần chú ý bổ sung giả thiết nếu cho vào",
+    "v10-ha-dong-2025-I2": "Sửa lại đề là biến cố A: ... nếu cho vào nhé",
+    "tl-ptnn-xsbc-27-tr7": "Nhớ sửa lại khi cho vào bài nhé",
+    "sgk-b26-lt1": "Nếu bốc thì bốc cả 2 ý, k thì thôi",
+    "sgk-b26-vd1": "Nếu bốc thì bốc cả 2 ý, k thì thôi",
+}
 
 def load_bank():
     raw = json.load(BANK_PATH.open())
@@ -245,8 +279,7 @@ def ghi():
         raw_gem = json.load(GEM_PATH.open())
         gdata = raw_gem.get("ket_qua", raw_gem)
         gem = {d["ma"]: d for d in gdata.get("dong", [])}
-        lai_path = GEM_PATH.with_name("cc-ch8-9c-lai.json")
-        if lai_path.exists():
+        for lai_path in sorted(GEM_PATH.parent.glob("cc-ch8-9c-lai*.json")):  # lai, lai2, …
             raw_lai = json.load(lai_path.open())
             ldata = raw_lai.get("ket_qua", raw_lai)
             for d in ldata.get("dong", []):
@@ -281,9 +314,16 @@ def ghi():
             "diem": diem,
             "nguong": ng,
             "ket_luan": ("Đạt" if diem >= ng else "Dưới ngưỡng") if T else "",
+            "thay_duyet": THAY_DUYET_MAC_DINH,
+            "ghi_chu_thay": GHI_CHU_THAY.get(ma, ""),
             "ly_do": g.get("ly_do", ""),
-            "de_xuat": g.get("de_xuat", ""),
-            "nghi_ngo": g.get("nghi_ngo", ""),
+            "de_xuat": (CLAUDE_SOAT.get(ma, (None,))[0] or g.get("de_xuat", "")),
+            "nghi_ngo": " · ".join(
+                x for x in (
+                    ("Gemini: " + g["nghi_ngo"]) if g.get("nghi_ngo") and ma in CLAUDE_SOAT else g.get("nghi_ngo", ""),
+                    ("Claude 19/11: " + CLAUDE_SOAT[ma][1]) if ma in CLAUDE_SOAT else "",
+                ) if x
+            ),
         })
     OUT_PATH.parent.mkdir(parents=True, exist_ok=True)
     json.dump(out, OUT_PATH.open("w"), ensure_ascii=False, indent=2)

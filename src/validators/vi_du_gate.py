@@ -34,11 +34,13 @@ _RAC = re.compile(r"[^\wÀ-ỹ #]+")
 _O_KHUYET = re.compile(r"\[\[(?:fill|mblank|blank)[:\]]")
 _O_FILL = re.compile(r"\[\[fill:")
 # Câu hỏi dẫn [NB] trong đề bài TH (luật 16/11/2026): "a) [NB] …" hoặc "[NB]" sau dòng mới.
-_CAU_DAN_NB = re.compile(r"(?:^|\[\[br\]\]|\s)[a-h]\)\s*\[NB\]|\[\[br\]\]\s*\[NB\]")
+# 19/11/2026: câu hỏi xếp cạnh hình (minipage) mở bằng "\vspace{0pt}a) [NB]" ⇒ nhận cả sau "}"
+_CAU_DAN_NB = re.compile(r"(?:^|\[\[br\]\]|\s|\})[a-h]\)\s*\[NB\]|\[\[br\]\]\s*\[NB\]")
 
 # Phiếu ÔN TẬP GIỮA KÌ / CUỐI KÌ và đề kiểm tra: bỏ gợi ý, HS tự làm như đi thi.
+# 19/11/2026 (Thầy chốt phiếu ôn tập chương VII + VIII 9C "như đi thi, bỏ gợi ý"): thêm phiếu ÔN TẬP CHƯƠNG.
 _ON_TAP_THI = re.compile(
-    r"ôn\s*tập\s*(?:giữa|cuối)\s*(?:kì|kỳ|học\s*kì)|on-tap-(?:gk|ck|hk)|"
+    r"ôn\s*tập\s*(?:giữa|cuối)\s*(?:kì|kỳ|học\s*kì)|on-tap-(?:gk|ck|hk)|ôn\s*tập\s*chương|on-tap-chuong|"
     r"đề\s*kiểm\s*tra|de-kiem-tra|thi\s*thử|thi-thu|de-gki|de-cki|gki-cki",
     re.IGNORECASE,
 )
@@ -164,13 +166,17 @@ def check_goi_y_thong_hieu(lesson: LessonPackage) -> list[str]:
             nhan = b.label or "?"
             # Sơ đồ ngược hoặc bài tách ý con giàn giáo a) ★★ (Thầy 09/11/2026) đã là gợi ý định hướng.
             st_txt = getattr(b, "statement", "") or ""
+            # Câu nhỏ trong đề: ý a) ★ / câu dẫn [NB] (luật 16/11/2026: TH = bài gọn + CÂU HỎI GỢI Ý
+            # BƯỚC ngay trong đề). Phiếu ôn như đi thi giữ nguyên các ý a), b) CỦA ĐỀ GỐC — đó là
+            # đề, không phải gợi ý — nên chỉ `hints` / sơ đồ ngược mới tính là gợi ý (19/11/2026).
+            y_trong_de = bool(
+                re.search(r"[a-d]\)\s*★", st_txt)
+                or (getattr(lesson, "luat_16_11", False) and _CAU_DAN_NB.search(st_txt))
+            )
             co_goi_y = bool(
                 getattr(b, "hints", None)
                 or getattr(b, "so_do_nguoc", "")
-                or re.search(r"[a-d]\)\s*★", st_txt)
-                # Luật 16/11/2026: TH = bài gọn + CÂU HỎI GỢI Ý BƯỚC ngay trong đề — câu nhỏ
-                # gắn thẻ [NB] (đề cho gì, xét gì, công thức nào) đứng trước bước [TH].
-                or (getattr(lesson, "luat_16_11", False) and _CAU_DAN_NB.search(st_txt))
+                or (y_trong_de and not on_tap)
             )
             if on_tap and co_goi_y:
                 out.append(

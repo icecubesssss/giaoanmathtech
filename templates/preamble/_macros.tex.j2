@@ -143,13 +143,14 @@
   attach boxed title to top left={xshift=10pt,yshift=-8pt}, boxed title style={arc=3pt,boxrule=0pt},
   title={\ding{46}\ \ VÍ DỤ MẪU}}
 % Hộp ví dụ tách đôi (18/11/2026): cùng trang trông như một hộp calloutexample; không vừa thì ngắt ở chỗ nối.
-% Vẽ tay (frame code rỗng, nền trắng chồng lấn 0,5pt, overlay kẻ cạnh) — viền tcolorbox thường để lộ vạch mờ ở chỗ nối.
+% Vẽ tay (frame code rỗng, nền trắng chồng lấn 0,5pt rồi kẻ cạnh) — viền tcolorbox thường để lộ vạch mờ ở chỗ nối.
+% 19/11/2026: mảnh đầu kẻ cạnh trong interior code (vẽ TRƯỚC nhãn) — overlay vẽ sau nên gạch ngang nhãn VÍ DỤ MẪU.
 \newtcolorbox{calloutexampledau}{enhanced, breakable, colback=white, colframe=info!50,
   boxrule=0.6pt, top=6pt,bottom=1pt,left=8pt,right=8pt, before skip=2pt, after skip=0pt,
   frame code={}, interior code={\fill[white] ([yshift=-0.5pt]frame.south west) -- ([yshift=-6pt]frame.north west)
     arc[start angle=180,end angle=90,radius=6pt] -- ([xshift=-6pt]frame.north east)
-    arc[start angle=90,end angle=0,radius=6pt] -- ([yshift=-0.5pt]frame.south east) -- cycle;},
-  overlay={\draw[info!50,line width=0.6pt] ([yshift=-0.3pt]frame.south west) -- ([yshift=-6pt]frame.north west)
+    arc[start angle=90,end angle=0,radius=6pt] -- ([yshift=-0.5pt]frame.south east) -- cycle;
+    \draw[info!50,line width=0.6pt] ([yshift=-0.3pt]frame.south west) -- ([yshift=-6pt]frame.north west)
     arc[start angle=180,end angle=90,radius=6pt] -- ([xshift=-6pt]frame.north east)
     arc[start angle=90,end angle=0,radius=6pt] -- ([yshift=-0.3pt]frame.south east);},
   coltitle=white, colbacktitle=info, fonttitle=\sffamily\bfseries\small,

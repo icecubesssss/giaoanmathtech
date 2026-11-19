@@ -310,3 +310,12 @@ def test_dai_so_cung_phuong_trinh_van_bi_chan():
     a = _bai("Bài 16.", _VIETE.format(pt="$x^2+x-6=0$"), level=3)
     b = _bai("Bài 17.", _VIETE.format(pt="$x^2+x-6=0$"), level=3)
     assert check_khong_trung_de(_les_ds([a, b]))
+
+
+# ── 19/11/2026: dấu lược của dãy số không phải ô trống ─────────────────────────
+def test_dau_luoc_day_so_khong_phai_o_trong():
+    from src.validators.dan_dat_gate import _O_TRONG
+    assert not _O_TRONG.search(r"ghi các số $1, 2, 3, \ldots, 20$, hai thẻ khác nhau")
+    assert not _O_TRONG.search(r"các số $1; 2; \dots; 12$")
+    assert _O_TRONG.search(r"$x = \ldots$")
+    assert _O_TRONG.search(r"$x=[[fill:3]]$")
